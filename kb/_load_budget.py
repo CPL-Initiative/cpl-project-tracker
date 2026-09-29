@@ -57,7 +57,11 @@ SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 
 FUNDING_COLUMNS = (
     "id,name,category,source_code,yr_2025_26_budget,yr_2025_26_expense,"
-    "yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total,avg_yearly"
+    "yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total,avg_yearly,"
+    # Budget rework (2026-07-30): the structure columns. `section` groups a row
+    # into Sources / Uses / the $18M pool / pre-cutoff history; `parent_id` is
+    # the collapsible detail beneath a total; `archived` is the 2025-26 cutoff.
+    "description,archived,parent_id,section,sort_order,window_label"
 )
 PERSONNEL_COLUMNS = (
     "id,title,fte_2025_26,fte_2026_27,fte_2027_28,fte_2028_29,fte_2029_30,total_comp"

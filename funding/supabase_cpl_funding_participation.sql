@@ -1,3 +1,6 @@
+-- ⚠️ NARROWED 2026-08-28 (Sam): curating funding requires a magic-link
+-- reviewer, NOT the team phrase. Live policies were altered to match; this
+-- file is the SQL of record and must state the same gate.
 -- ─────────────────────────────────────────────────────────────────────────
 -- cpl_funding_participation — the Implementation Funding tab's baseline-
 -- eligibility OPT-IN registry (2026-07-06, migration cpl_funding_participation).
@@ -13,7 +16,7 @@
 -- map_coordinator_summary() RPC — see map/supabase_map_contacts.sql.
 --
 -- RLS: anon SELECT (everyone sees the badge). INSERT/UPDATE **and DELETE**
--- gated is_allowed_reviewer() OR team_pass_ok() — DELETE is deliberately
+-- gated is_allowed_reviewer() — DELETE is deliberately
 -- widened (the workplan_activity_associations precedent): un-checking an
 -- opt-in is the drill-in toggle's natural, reversible undo, not a
 -- destructive admin action. The tab RE-FETCHES after every write (an
@@ -37,15 +40,15 @@ create policy cfp_select on public.cpl_funding_participation for select using (t
 drop policy if exists cfp_insert on public.cpl_funding_participation;
 create policy cfp_insert on public.cpl_funding_participation for insert
   to anon, authenticated
-  with check (is_allowed_reviewer() or team_pass_ok());
+  with check (is_allowed_reviewer());
 
 drop policy if exists cfp_update on public.cpl_funding_participation;
 create policy cfp_update on public.cpl_funding_participation for update
   to anon, authenticated
-  using (is_allowed_reviewer() or team_pass_ok())
-  with check (is_allowed_reviewer() or team_pass_ok());
+  using (is_allowed_reviewer())
+  with check (is_allowed_reviewer());
 
 drop policy if exists cfp_delete on public.cpl_funding_participation;
 create policy cfp_delete on public.cpl_funding_participation for delete
   to anon, authenticated
-  using (is_allowed_reviewer() or team_pass_ok());
+  using (is_allowed_reviewer());

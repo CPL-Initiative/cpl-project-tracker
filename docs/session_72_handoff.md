@@ -10,6 +10,8 @@ related:
   - "[[docs/ccr_merge_workspace_epic_scope]]"
   - "[[docs/unverified_mid_renumber_scope]]"
   - "[[docs/kb-notes/tmc-co-review-scope]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 72

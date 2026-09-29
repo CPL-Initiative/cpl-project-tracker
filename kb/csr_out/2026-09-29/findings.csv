@@ -1,0 +1,64 @@
+id,rule,item,evidence,suggestion,needs_judgment,group
+CSR0001,cs2_dup,Agricultural Business and Related Services ↔ Auto Body Technology,both map to AUTB,,True,dup:AUTB
+CSR0002,cs4_aligned,English,"canonical ENGL == official CCN prefix (451 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0003,cs4_aligned,Economics,"canonical ECON == official CCN prefix (206 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0004,cs4_aligned,Communication Studies,"canonical COMM == official CCN prefix (192 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0005,cs4_aligned,History,"canonical HIST == official CCN prefix (189 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0006,cs4_aligned,Psychology,"canonical PSYC == official CCN prefix (150 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0007,cs4_aligned,Political Science,"canonical POLS == official CCN prefix (144 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0008,cs4_aligned,Mathematics,"canonical MATH == official CCN prefix (97 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0009,cs4_aligned,Anthropology,"canonical ANTH == official CCN prefix (50 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0010,cs4_aligned,Art History,"canonical ARTH == official CCN prefix (48 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0011,cs4_aligned,Biological Sciences,"canonical BIOL == official CCN prefix (37 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0012,cs4_aligned,Astronomy,"canonical ASTR == official CCN prefix (33 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0013,cs4_aligned,Sociology,"canonical SOCI == official CCN prefix (7 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0014,cs4_aligned,Child Development/Early Childhood Education,"canonical CDEV == official CCN prefix (2 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0015,cs4_aligned,Office Technologies,"canonical BSOT == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0016,cs4_missed_alignment,Commercial Music,official CCN prefix CMUS (0 rows) unused; twin discipline uses MUSC,curator call: converge MUSC → CMUS (Rule-7 re-mint) or record divergence reason,True,ccn
+CSR0017,cs4_aligned,Education,"canonical EDUC == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0018,cs4_aligned,Engineering,"canonical ENGR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0019,cs4_aligned,Geography,"canonical GEOG == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0020,cs4_missed_alignment,Health Information Technology,official CCN prefix HIT (0 rows) unused; twin discipline uses HEIT,curator call: converge HEIT → HIT (Rule-7 re-mint) or record divergence reason,True,ccn
+CSR0021,cs4_aligned,Computer Information Systems,"canonical ITIS == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0022,cs4_aligned,Journalism,"canonical JOUR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",bless as aligned; record alignment doctrine,True,ccn
+CSR0023,cs5_modal_diverge,Cabinet Making,"modal WOOD (share 0.67) but canonical CNSC, no _notes",confirm choice + record a note,True,
+CSR0024,cs5_modal_diverge,Legal Assisting,"modal PARA (share 0.71) but canonical PLGL, no _notes",confirm choice + record a note,True,
+CSR0025,cs6_weak_mnemonic,Artificial Intelligence,canonical CSAI not derivable from name and absent from 29 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0026,cs6_weak_mnemonic,Building Codes and Regulations,canonical CNSR not derivable from name and absent from 9 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0027,cs6_weak_mnemonic,Cabinet Making,canonical CNSC not derivable from name and absent from 2 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0028,cs6_weak_mnemonic,Diesel Mechanics,canonical AUTD not derivable from name and absent from 31 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0029,cs6_weak_mnemonic,Electromechanical Technology,canonical ELMT not derivable from name and absent from 1 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0030,cs6_weak_mnemonic,Environmental Technologies,canonical ESCI not derivable from name and absent from 40 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0031,cs6_weak_mnemonic,Furniture Making,canonical CSTF not derivable from name and absent from 3 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0032,cs6_weak_mnemonic,Graphic Arts,canonical GRAF not derivable from name and absent from 19 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0033,cs6_weak_mnemonic,Interdisciplinary Studies,canonical IDST not derivable from name and absent from 16 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0034,cs6_weak_mnemonic,Licensed Vocational Nursing,canonical NRSV not derivable from name and absent from 8 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0035,cs6_weak_mnemonic,Masonry,canonical CNMA not derivable from name and absent from 6 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0036,cs6_weak_mnemonic,Media Production,canonical FTVE not derivable from name and absent from 6 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0037,cs6_weak_mnemonic,Native American/American Indian Studies,canonical ETHA not derivable from name and absent from 8 observed variants,confirm or improve mnemonic (re-key evidence only),True,
+CSR0038,cs7_unreviewed,Agricultural Business and Related Services,no reviewed_by stamp,,True,
+CSR0039,cs7_unreviewed,Anthropology,no reviewed_by stamp,,True,
+CSR0040,cs7_unreviewed,Astronomy,no reviewed_by stamp,,True,
+CSR0041,cs7_unreviewed,Chemistry,no reviewed_by stamp,,True,
+CSR0042,cs7_unreviewed,Commercial Art,no reviewed_by stamp,,True,
+CSR0043,cs7_unreviewed,Communication Studies,no reviewed_by stamp,,True,
+CSR0044,cs7_unreviewed,Cosmetology,no reviewed_by stamp,,True,
+CSR0045,cs7_unreviewed,Court Reporting,no reviewed_by stamp,,True,
+CSR0046,cs7_unreviewed,Digital Fabrication Technician,no reviewed_by stamp,,True,
+CSR0047,cs7_unreviewed,Disabled Student Programs and,no reviewed_by stamp,,True,
+CSR0048,cs7_unreviewed,Earth Science,no reviewed_by stamp,,True,
+CSR0049,cs7_unreviewed,Economics,no reviewed_by stamp,,True,
+CSR0050,cs7_unreviewed,Electronic Technology,no reviewed_by stamp,,True,
+CSR0051,cs7_unreviewed,Engineering,no reviewed_by stamp,,True,
+CSR0052,cs7_unreviewed,English,no reviewed_by stamp,,True,
+CSR0053,cs7_unreviewed,Equine Science,no reviewed_by stamp,,True,
+CSR0054,cs7_unreviewed,Geography,no reviewed_by stamp,,True,
+CSR0055,cs7_unreviewed,Heavy Duty Equipment Mechanics,no reviewed_by stamp,,True,
+CSR0056,cs7_unreviewed,History,no reviewed_by stamp,,True,
+CSR0057,cs7_unreviewed,Mathematics,no reviewed_by stamp,,True,
+CSR0058,cs7_unreviewed,Parent Education: Noncredit,no reviewed_by stamp,,True,
+CSR0059,cs7_unreviewed,Philosophy,no reviewed_by stamp,,True,
+CSR0060,cs7_unreviewed,Physics/Astronomy,no reviewed_by stamp,,True,
+CSR0061,cs7_unreviewed,Speech Language Pathology,no reviewed_by stamp,,True,
+CSR0062,cs7_unreviewed,Upholstering,no reviewed_by stamp,,True,
+CSR0063,cs9_anchor_dead_format,common_courses.json,3 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format,promote-time re-key plan (Rule-7); anchor stays firewalled until then,True,anchor

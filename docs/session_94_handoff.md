@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_132_handoff.md
+---
+
 # Session 94 handoff — you are Session 94
 
 **Session 93 (SkyReach, 2026-07-01/02)** was the Sierra quality session: the

@@ -9,6 +9,8 @@ related:
   - docs/kb-notes/playbook-gated-bulk-autocuration.md (the durable pattern)
   - kb/automerge_out/2026-06-12/ (plan · report · apply_log)
 moniker_suggestion: Session 53 was "Bruh Infinitus" (Sam's christening, 2026-06-12 23:14 UTC — "you have taken to there and beyond"); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 54 Hand-off Prompt — the data lane

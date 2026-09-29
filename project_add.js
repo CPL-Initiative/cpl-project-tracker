@@ -16,11 +16,13 @@
  * NOT insert. The modal offers the team-phrase unlock in place when signed out
  * (the project_lifecycle.js pattern).
  *
- * The suggested ID is the next free 5.N — new work-item projects belong to the
- * 5.x family (the 1.x–4.x space is the official workplan sub-activity layer,
- * which renders as Activity cards, not grid cards — Session 95 separation).
- * Existing ids are fetched live (public read) so tabled projects (absent from
- * CPL_DATA) can't cause a duplicate-key collision.
+ * The suggested ID is the next free "N.x" under the chosen Activity — a new
+ * project takes the next open sub-activity slot beneath its parent Activity
+ * (the workplan sub-activity layer). There is no separate "5.x" family anymore:
+ * the phantom "Activity 5" was dissolved and every project now lives under one
+ * of Activities 1-4 as N.x (the one exception is 5.1 AI-Ready California, held
+ * out and tabled). Existing ids are fetched live (public read) so tabled
+ * projects (absent from CPL_DATA) can't cause a duplicate-key collision.
  *
  * On success the new project appears fully on the next daily rebuild; a
  * minimal optimistic card is added to the grid immediately so the add feels
@@ -41,14 +43,20 @@
     });
   }
 
-  // Next free 5.N given the existing id list (numeric, so 5.9 → 5.10 works).
-  function suggestId(ids) {
+  // Next free "<activityNum>.<k>" DIRECT child under the chosen Activity, given
+  // the existing id list (numeric, so 3.9 → 3.10 works). activityNum is a single
+  // digit "1".."4" (the parent Activity). Falsy/invalid → "" (no suggestion) —
+  // a new project can only be suggested once its Activity is chosen.
+  function suggestId(ids, activityNum) {
+    var n = String(activityNum == null ? "" : activityNum).trim();
+    if (!/^[1-4]$/.test(n)) return "";
+    var re = new RegExp("^" + n + "\\.(\\d+)$");
     var maxN = 0;
     (ids || []).forEach(function (id) {
-      var m = /^5\.(\d+)$/.exec(String(id == null ? "" : id).trim());
+      var m = re.exec(String(id == null ? "" : id).trim());
       if (m) maxN = Math.max(maxN, parseInt(m[1], 10));
     });
-    return "5." + (maxN + 1);
+    return n + "." + (maxN + 1);
   }
 
   // Distinct dropdown options harvested from the baked CPL_DATA.projects.
@@ -86,6 +94,11 @@
   // Refresh-before-write (Session 77 lesson: a format-valid-but-expired JWT
   // 401s silently).
   function ensureFresh(s) {
+    // Prefer the STORED session over the one handed in: refresh tokens rotate,
+    // and a caller's copy can hold a CONSUMED one after a sibling module (or
+    // the cpl_session.js keeper) renewed. Re-spending it reads to Supabase as
+    // token reuse. See credential_reference.js — same line, same reason.
+    s = getSession() || s;
     if (!s) return Promise.resolve(null);
     if (s.access_token && s.exp && s.exp <= Date.now() + 60000 && s.refresh_token) {
       return refreshToken(s.refresh_token).then(function (tok) {
@@ -256,18 +269,40 @@
     actions.appendChild(save);
     modal.appendChild(actions);
 
-    // Suggest the next free 5.N from the LIVE id list (includes tabled rows).
+    // Suggest the next free "<N>.<k>" under the chosen Activity from the LIVE id
+    // list (includes tabled rows). N is derived from the Activity <select>, whose
+    // value is a full "Activity N: …" string. The suggestion is re-computed when
+    // the Activity changes — but only while the field still holds an auto-filled
+    // value (fId._auto); once the user types their own id we leave it alone.
     var knownIds = [];
+    function currentActivityNum() {
+      var m = /Activity\s*(\d)/.exec(fAct.value || "");
+      return m ? m[1] : "";
+    }
+    function resuggest() {
+      if (fId.value && !fId._auto) return;   // user typed their own — don't clobber
+      var s = suggestId(knownIds, currentActivityNum());
+      if (s) { fId.value = s; fId._auto = true; }
+    }
+    fId.addEventListener("input", function () { fId._auto = false; });
+    fAct.addEventListener("change", resuggest);
     fetchExistingIds().then(function (ids) {
       knownIds = ids;
-      if (!fId.value) fId.value = suggestId(ids);
+      resuggest();
     });
 
     save.addEventListener("click", function () {
       var pid = (fId.value || "").trim();
       var name = (fName.value || "").trim();
       statusEl.className = "padd-status";
-      if (!pid || /\s/.test(pid)) { statusEl.className = "padd-status err"; statusEl.textContent = "Enter an ID with no spaces (e.g. " + suggestId(knownIds) + ")."; return; }
+      if (!pid || /\s/.test(pid)) {
+        statusEl.className = "padd-status err";
+        var eg = suggestId(knownIds, currentActivityNum());
+        statusEl.textContent = eg
+          ? "Enter an ID with no spaces (e.g. " + eg + ")."
+          : "Enter an ID with no spaces (e.g. 3.7) — pick the Activity to auto-suggest one.";
+        return;
+      }
       if (!name) { statusEl.className = "padd-status err"; statusEl.textContent = "Enter a project name."; return; }
       if (knownIds.indexOf(pid) !== -1) { statusEl.className = "padd-status err"; statusEl.textContent = "ID " + pid + " already exists (it may be a tabled project). Pick another."; return; }
       save.disabled = true;
@@ -321,7 +356,7 @@
     card.innerHTML =
       '<div class="project-name" style="font-weight:700;color:var(--navy-primary,#16324f);">' + escapeHtml(body.name) +
       ' <span style="color:#999;font-weight:400;font-size:0.75rem;">' + escapeHtml(body.id) + "</span></div>" +
-      (body.description ? '<div style="font-size:0.78rem;color:#555;margin-top:0.3rem;">' + escapeHtml(body.description) + "</div>" : "") +
+      (body.description ? '<div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.3rem;">' + escapeHtml(body.description) + "</div>" : "") +
       '<div style="font-size:0.7rem;color:#2C601A;margin-top:0.5rem;font-weight:600;">✓ Added — the full card (and its Annual Workplan row) appears after the next daily rebuild.</div>';
     target.insertBefore(card, target.firstChild);
   }
@@ -346,19 +381,19 @@
         "transition:background .15s;}" +
       ".padd-btn:hover{background:#faf3e0;border-color:var(--gold-accent,#E3B341);}" +
       ".padd-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9000;display:flex;align-items:center;justify-content:center;padding:1rem;}" +
-      ".padd-modal{background:#fff;border-radius:12px;padding:1.2rem 1.4rem;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 12px 40px rgba(0,0,0,0.3);}" +
+      ".padd-modal{background:var(--surface-opaque);border-radius:12px;padding:1.2rem 1.4rem;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 12px 40px rgba(0,0,0,0.3);}" +
       ".padd-modal h3{margin:0 0 0.4rem 0;font-size:1.05rem;color:var(--navy-primary,#16324f);}" +
-      ".padd-sub{font-size:0.8rem;color:#666;margin-bottom:0.7rem;line-height:1.4;}" +
-      ".padd-field{display:flex;flex-direction:column;gap:0.15rem;margin-bottom:0.5rem;font-size:0.75rem;color:#555;font-weight:600;}" +
+      ".padd-sub{font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.4;}" +
+      ".padd-field{display:flex;flex-direction:column;gap:0.15rem;margin-bottom:0.5rem;font-size:0.75rem;color:var(--text-muted);font-weight:600;}" +
       ".padd-in,.padd-ta{width:100%;font-family:inherit;font-size:0.85rem;font-weight:400;padding:0.4rem 0.5rem;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;}" +
       ".padd-ta{min-height:60px;}" +
       ".padd-dates{display:flex;gap:0.6rem;}.padd-dates .padd-field{flex:1;}" +
-      ".padd-status{font-size:0.78rem;color:#666;min-height:1.1em;margin-top:0.4rem;}" +
+      ".padd-status{font-size:0.78rem;color:var(--text-muted);min-height:1.1em;margin-top:0.4rem;}" +
       ".padd-status.err{color:var(--crimson,#a33);}" +
       ".padd-actions{display:flex;justify-content:flex-end;gap:0.5rem;margin-top:0.8rem;}" +
       ".padd-cancel,.padd-save,.padd-go{font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:#f3f3f3;}" +
-      ".padd-save,.padd-go{background:var(--navy-primary,#16324f);color:#fff;border-color:var(--navy-primary,#16324f);}" +
-      ".padd-new{border-left:4px solid var(--green-progress,#2C601A);padding:1rem;background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.08);}";
+      ".padd-save,.padd-go{background:var(--navy-primary,#16324f);color:var(--on-accent);border-color:var(--navy-primary,#16324f);}" +
+      ".padd-new{border-left:4px solid var(--green-progress,#2C601A);padding:1rem;background:var(--surface-opaque);border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.08);}";
     var st = el("style", { "id": "padd-css" });
     st.textContent = css;
     document.head.appendChild(st);

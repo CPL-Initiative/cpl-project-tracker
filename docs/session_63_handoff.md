@@ -11,6 +11,8 @@ related:
   - docs/kb-notes/methodology-synonym-map-vs-similarity-threshold.md (the CCR synonym lane)
   - docs/session_59_handoff.md (the DATA lane — Jaccard + Suggested-merges, still paused)
 moniker_suggestion: "Skyforge / Skywright / Skyhawk — the Sky* line is open (Skydriver, Skyleader, Skymarker, SkyLion)"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 63 Hand-off Prompt

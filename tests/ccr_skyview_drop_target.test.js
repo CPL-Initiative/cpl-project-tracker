@@ -1,0 +1,299 @@
+// SkyView — where a carried course LANDS.
+//
+// Sam, 2026-09-07: "courses no longer responsive after 2nd drag and drop (e.g.,
+// intro to welding — tried to drag a selected [course] into to welding and
+// processes and no go)."
+//
+// ⭐ THE FAILURE MODE THIS FILE EXISTS FOR. When an identity is open its member
+// courses ring it, and that ring SPREADS out over its neighbors. pick() gives
+// the open identity's own stars absolute priority — right for READING (a star
+// sitting inside a neighbor's circle is still the course the reader is pointing
+// at) and wrong for MOVING: the destination circle a curator aims at is
+// routinely eclipsed by one of those stars, the drop resolves to the identity
+// the course is ALREADY in, and applyMove() refuses it as "That course is
+// already there." in a hint at the foot of the window. Nothing moves and
+// nothing visible says why, so the map reads as dead.
+//
+// Measured in Chromium 2026-09-07, Introduction to Welding open at 296%: six
+// identity circles inside the viewport sat under one of its stars, and a drop
+// on each of the first three moved nothing. The fixture below reproduces that
+// geometry exactly — a second identity is placed ON one of the open identity's
+// drawn stars — so the guard is the arrangement, not a coordinate.
+//
+// Run from repo root: `node tests/ccr_skyview_drop_target.test.js`.
+const fs = require("fs");
+const path = require("path");
+const { JSDOM } = require("jsdom");
+
+const ROOT = path.dirname(__dirname);
+const results = [];
+const check = (name, cond, why) => results.push([name, !!cond, why]);
+const done = () => {
+  let pass = 0;
+  for (const [n, ok, why] of results) {
+    console.log((ok ? "PASS" : "FAIL") + "  " + n + (!ok && why ? "  — " + why : ""));
+    if (ok) pass++;
+  }
+  console.log(`\n${pass}/${results.length} checks passed`);
+  process.exit(pass === results.length ? 0 : 1);
+};
+
+// ── fixture: one discipline, two identities, one course each side ───────────
+const U = {
+  _generated_from: "fixture",
+  counts: { identities: 2, stand_alone: 0, points: 2, orbiting: 0, orbiting_cross: 0, rim: 0, disciplines: 1,
+            member_rows: 6, member_rows_all_identities: 6, described_courses: 0 },
+  why_bits: { subject: 1, subj4: 2, title: 4, top: 8, units: 16, credit: 32 },
+  bounds: { x0: -200, x1: 200, y0: -200, y1: 200 },
+  islands: [
+    { d: "Welding", sh: "welding", x: 0, y: 0, r: 90, n: 2, sa: 0, al: 0, p: [
+      { i: "WELD M1109", x: 0,  y: 0,  t: "Introduction to Welding",            n: 5, s: 0, f: 0, r: 0, u: 2 },
+      { i: "WELD M1106", x: 40, y: 40, t: "Introduction to the Welding Processes", n: 1, s: 0, f: 0, r: 0, u: 3 },
+    ] },
+  ],
+};
+const MEM = {
+  colleges: ["American River College", "Barstow Community College", "Chabot College", "Glendale Community College"],
+  counts: { identities: 2, members: 6, dropped_no_key: 0, cn_on_multiple_identities: 0 },
+  m: {
+    "WELD M1109": [[300, "WELD 300", 0], [50, "WELD 50A", 1], [70, "WELD 70", 2], [117, "WELD 117", 3], [205, "WELD 205", 0]],
+    "WELD M1106": [[901, "WELD 901", 1]],
+  },
+};
+const ATLAS = { _generated_from: "fixture", totals: { decision_components: 0, identities_inbrowser: 2,
+                suggestion_groups: 0, member_rows: 6 },
+                disciplines: [{ name: "Welding", decisions: 0, ids: 2, members: 6, flagged: 0, reviewed: 0 }], detail: {} };
+
+const tpl = fs.readFileSync(path.join(ROOT, "prototype/ccr_atlas_v1.html"), "utf8");
+const ujs = fs.readFileSync(path.join(ROOT, "prototype/ccr_universe.js"), "utf8");
+const safe = (o) => JSON.stringify(o).replace(/<\//g, "<\\/");
+const html = tpl.replace("__DATA__", safe(ATLAS)).replace("__GRAPHJS__", "")
+  .replace("__ESLDATA__", "null").replace("__ESLJS__", "")
+  .replace("__UNIVDATA__", safe(U)).replace("__UNIVMEM__", safe(MEM)).replace("__UNIVJS__", ujs);
+
+/* ⚠️ ONE CONTEXT, AND IT RECORDS. A canvas draw cannot be asserted from the DOM
+ * and jsdom reports every rectangle as zero, so the only way to check that
+ * something was DRAWN is to record the calls the draw path makes. `getContext`
+ * used to hand back a fresh noop object per call, which is fine for "do not
+ * crash" and useless for "was this stroked" — the checks below need the same
+ * instance the renderer used. */
+let CTX = null;
+function fakeCtx() {
+  if (CTX) return CTX;
+  const noop = () => {};
+  const segs = [];          // every stroked straight segment, with its pen
+  let cur = null;
+  CTX = { setTransform: noop, clearRect: noop, fillRect: noop, fill: noop,
+          closePath: noop, createRadialGradient: () => ({ addColorStop: noop }),
+          save: noop, restore: noop, setLineDash: noop, arc: noop,
+          strokeText: noop, fillText: noop, measureText: (t) => ({ width: String(t).length * 6 }),
+          fillStyle: "", strokeStyle: "", lineWidth: 1, font: "", textAlign: "", textBaseline: "",
+          lineCap: "", lineJoin: "",
+          beginPath() { cur = null; },
+          moveTo(x, y) { cur = { x0: x, y0: y }; },
+          lineTo(x, y) { if (cur) { cur.x1 = x; cur.y1 = y; } },
+          stroke() {
+            if (cur && cur.x1 != null)
+              segs.push({ ...cur, w: CTX.lineWidth, color: String(CTX.strokeStyle) });
+          },
+          _segs: segs, _reset() { segs.length = 0; } };
+  return CTX;
+}
+const dom = new JSDOM(html, {
+  runScripts: "dangerously", pretendToBeVisual: true,
+  url: "https://example.org/prototype/skyview.html",
+  beforeParse(window) {
+    /* THE STAGE RUNG (Sam, 2026-09-18: "To position courses to merge needs at
+     * least team code auth to do"). Staging is gated on curationRung() >= 1,
+     * so a fixture that drags a course has to say who is dragging. The real
+     * page loads team_phrase.js; jsdom does not fetch external scripts, so the
+     * rung is declared here instead — deliberately, because a gate that failed
+     * open when its module is missing would be no gate at all. */
+    window.CPL_TEAM_PHRASE = { get: () => "fixture-team-phrase" };
+    window.CPL_SKYVIEW_OPENS = "map";   // this suite measures the flat map; the Sky has its own (ccr_skyview_sky.test.js)
+    window.HTMLCanvasElement.prototype.getContext = function () { return fakeCtx(); };
+    window.fetch = () => Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
+  },
+});
+const w = dom.window, d = w.document;
+const q = (s) => d.querySelector(s);
+const st = () => w.__ccrUniverseState();
+const pointer = (type, x, y) => q("#u-cvs").dispatchEvent(
+  new w.MouseEvent(type, { clientX: x, clientY: y, bubbles: true, button: 0 }));
+const tick = () => new Promise((r) => setTimeout(r, 0));
+// jsdom reports every rectangle as 0, so the client falls back to 960 × 600 —
+// the canvas centre is (480, 300) and every screen coordinate below is exact.
+const CX = 480, CY = 300;
+
+(async () => {
+  await new Promise((r) => { if (d.readyState === "complete") r(); else w.addEventListener("load", r); });
+  await tick();
+  const PU = w.CPL_CCR_UNIVERSE;
+  const NODE = (id) => { for (const I of PU.islands) for (const p of I.p) if (p.i === id) return p; return null; };
+  const AT = (id) => { const p = NODE(id); return [p.x, p.y]; };
+  const K = 3;
+  const scr = (id) => { const p = NODE(id); return [(p.x + st().view.x) * K + CX, (p.y + st().view.y) * K + CY]; };
+
+  w.__ccrUniverse({ solo: true });
+  await tick();
+  w.__ccrUniverseFly(AT("WELD M1109")[0], AT("WELD M1109")[1], K);
+  pointer("pointerdown", CX, CY); pointer("pointerup", CX, CY);        // open WELD M1109
+  await tick();
+  check("(1) the open identity rings itself with its college courses",
+    st().sel === "WELD M1109" && st().memberPoints === 5, `${st().sel} / ${st().memberPoints}`);
+
+  // ⭐ Put the OTHER identity exactly under one of the drawn stars. This is the
+  // arrangement Chromium found on the live corpus; building it rather than
+  // hunting for it is what keeps the guard from depending on a layout.
+  const star = w.__ccrMemberPoints()[0];
+  const B = NODE("WELD M1106");
+  B.x = (star.x - CX) / K - st().view.x;
+  B.y = (star.y - CY) / K - st().view.y;
+  w.__ccrUniverseFly(AT("WELD M1109")[0], AT("WELD M1109")[1], K);     // redraw at the same view
+  const [bx, by] = scr("WELD M1106");
+  check("(2) the fixture reproduces the eclipse: a neighbour's circle sits under the open identity's star",
+    Math.abs(bx - star.x) < 0.5 && Math.abs(by - star.y) < 0.5,
+    `circle ${bx.toFixed(1)},${by.toFixed(1)} vs star ${star.x.toFixed(1)},${star.y.toFixed(1)}`);
+
+  // ── reading is UNCHANGED: the star still wins a hover and a click ─────────
+  // The S236 ruling this must not undo — with the pointer on a drawn star,
+  // 110 of 120 used to return the identity card instead of the course.
+  pointer("pointermove", star.x, star.y);
+  const tip = q("#u-tip");
+  check("(3) ⭐ hovering the eclipsed point still names the COLLEGE COURSE, not the circle beneath it",
+    !tip.hidden && new RegExp(star.code).test(tip.textContent) && /under WELD M1109/.test(tip.textContent),
+    tip.textContent);
+
+  // ── moving is FIXED: the drop lands on the circle ─────────────────────────
+  const before = st().moves.length;
+  const mv = q("#u-detail ul.mlist > li .mv");
+  check("(4) the panel offers the carried course a Drag… button", !!mv);
+  mv.dispatchEvent(new w.MouseEvent("pointerdown", { bubbles: true, button: 0 }));
+  check("(5) pressing Drag… picks the course up", st().carrying === mv.dataset.code, String(st().carrying));
+  pointer("pointermove", star.x, star.y);
+  check("(6) ⭐ the carry NAMES the identity the release would write to — a curator can see it land",
+    st().dropTarget === "WELD M1106", String(st().dropTarget));
+
+  /* ── (6b)-(6d) THE CONNECTOR ──────────────────────────────────────────────
+   * Sam, 2026-09-10: "when a course is dragged to merge into another course,
+   * the connecting line should be more prominent. Now it gets lost in the
+   * crowd." There was NO connector — a 2.5px ring on the target and a dot at
+   * the cursor, one color, with up to fifty thousand dots of the same palette
+   * between them, and the eye left to infer the pair.
+   *
+   * ⚠️ ASSERTED AS DRAW CALLS, because a canvas cannot be queried and jsdom
+   * reports every rectangle as zero. The recording context above keeps each
+   * stroked SEGMENT with its pen; the target ring is an `arc` and is
+   * deliberately not a segment, so these checks cannot pass on the ring alone.
+   * ⚠️ Endpoints are not asserted for LENGTH: this fixture's drop target is
+   * eclipsed by the cursor, so the connector is legitimately near-zero here.
+   * What is asserted is that it is drawn, and drawn twice with different pens —
+   * the halo is what buys legibility on a dense field, not width. */
+  /* ⚠️ THE CONNECTOR IS FOUND BY ITS SIGNATURE, NOT BY POSITION. The same draw
+   * also strokes member spokes and orbit tethers, so "the first segment" is one
+   * of those — the pair is identified as two CONSECUTIVE strokes of the SAME
+   * line with different pens, which is what the halo treatment means. */
+  CTX._reset();
+  pointer("pointermove", star.x, star.y);
+  const segs = CTX._segs;
+  let pair = null;
+  for (let i = 0; i + 1 < segs.length; i++) {
+    const a = segs[i], b = segs[i + 1];
+    if (a.x0 === b.x0 && a.y0 === b.y0 && a.x1 === b.x1 && a.y1 === b.y1 && a.w > b.w) { pair = [a, b]; break; }
+  }
+  check("(6b) ⭐ carrying over a target STROKES A CONNECTOR — the merge reads as " +
+    "a line between two things, not two marks that happen to be lit",
+    !!pair, `no haloed pair among ${segs.length} stroked segments`);
+  check("(6c) …haloed first, then drawn — two pens over the same line",
+    !!pair && pair[0].color !== pair[1].color,
+    pair ? JSON.stringify(pair) : "no pair");
+  check("(6d) …and it is thicker than the 2.5px the ring used to carry alone",
+    !!pair && pair[1].w >= 3, `connector width=${pair && pair[1].w}`);
+
+  pointer("pointerup", star.x, star.y);
+  const last = st().moves[st().moves.length - 1];
+  check("(7) ⭐ THE BUG: a drop on a circle eclipsed by the open identity's own star lands on the CIRCLE",
+    st().moves.length === before + 1 && last && last.to === "WELD M1106",
+    `moves ${before}→${st().moves.length} ${JSON.stringify(last)}`);
+  check("(8) …and it is not silently refused as already-there",
+    !/already there/i.test(q("#u-hint").textContent), q("#u-hint").textContent);
+
+  // ── the receipt must not name a pane the reader cannot see ────────────────
+  // #u-writes lives in #u-below, and body.u-solo — SkyView, the default — hides
+  // that whole pane. Telling a curator their move is "below the map" when there
+  // is no below is the same as telling them nothing happened.
+  check("(9) ⭐ in SkyView-alone the receipt says the move is staged here, not 'below the map'",
+    st().solo && /staged in this browser/i.test(q("#u-hint").textContent) &&
+    !/below the map\./i.test(q("#u-hint").textContent), q("#u-hint").textContent);
+  w.__ccrUniverse({ solo: false });
+  await tick();
+  q("#u-cvs").dispatchEvent(new w.MouseEvent("pointerdown", { clientX: CX, clientY: CY, bubbles: true, button: 0 }));
+  q("#u-cvs").dispatchEvent(new w.MouseEvent("pointerup", { clientX: CX, clientY: CY, bubbles: true, button: 0 }));
+  await tick();
+  const mv2 = q("#u-detail ul.mlist > li .mv");
+  mv2.dispatchEvent(new w.MouseEvent("pointerdown", { bubbles: true, button: 0 }));
+  const [b2x, b2y] = scr("WELD M1106");
+  pointer("pointerup", b2x, b2y);
+  check("(10) …and in the comprehensive view, where the pane IS painted, it still points at it",
+    /below the map/i.test(q("#u-hint").textContent), q("#u-hint").textContent);
+
+  // ── a drop that lands on nothing still says so ────────────────────────────
+  const before2 = st().moves.length;
+  const mv3 = q("#u-detail ul.mlist > li .mv");
+  mv3.dispatchEvent(new w.MouseEvent("pointerdown", { bubbles: true, button: 0 }));
+  pointer("pointermove", CX, CY + 900);
+  check("(11) over empty ground the carry names no destination", st().dropTarget === null, String(st().dropTarget));
+  pointer("pointerup", CX, CY + 900);
+  // ⚠️ THE CONTRACT CHANGED 2026-09-09 (Sam: a course "stays where I leave it.
+  // Currently it snaps back if I don't merge it"). A drop on empty ground still
+  // stages NOTHING — that half is unchanged and is the half that matters for the
+  // write path — but it no longer discards the gesture: the course parks where it
+  // was dropped. The hint says so instead of "empty space".
+  check("(12) a drop on empty ground stages no move",
+    st().moves.length === before2, "moves=" + st().moves.length);
+  check("(12b) …and says what became of the course",
+    /left where you dropped it/i.test(q("#u-hint").textContent), q("#u-hint").textContent);
+  // ⭐ The guard that matters: it is PARKED, in state the drawing reads — not
+  // merely described in a hint. Asserting the hint alone would have passed
+  // against the snap-back this replaced.
+  check("(12c) ⭐ the course is parked, so it stays where it was left",
+    st().parked.indexOf("2071711") >= 0 || st().parked.length === 1,
+    "parked=" + JSON.stringify(st().parked));
+
+  // ── the row that records a move has to READ on the canvas it sits on ──────
+  // Sam, 2026-09-07: "Merged courses on side view have white background and
+  // shouldn't." `.mlist li.moved` hardcoded a light green, so on the dark
+  // canvas a re-homed course rendered near-white under near-white text — in the
+  // one place a curator reads their own work back. The guard below is the CLASS,
+  // not the instance: any rule that paints a raw hex background and has no
+  // `body.u-dark` counterpart is the same defect waiting to be re-typed.
+  const css = tpl.slice(tpl.indexOf("<style"), tpl.indexOf("</style>")).replace(/\/\*[\s\S]*?\*\//g, "");
+  // Split on the closing brace: a chunk is "…{selector{declarations", so the
+  // last "{" separates the two and any @media wrapper falls away with the rest.
+  const rules = css.split("}").map((chunk) => {
+    const j = chunk.lastIndexOf("{");
+    if (j < 0) return null;
+    return { sel: chunk.slice(0, j).split("{").pop().trim(), decls: chunk.slice(j + 1) };
+  }).filter(Boolean);
+  const dark = new Set();
+  rules.forEach((r) => r.sel.split(",").forEach((sel) => {
+    sel = sel.trim();
+    if (/^body\.u-dark/.test(sel)) dark.add(sel.replace(/^body\.u-dark\s*/, ""));
+  }));
+  const stranded = [];
+  rules.forEach((r) => {
+    if (!/background(-color)?:\s*#[0-9A-Fa-f]{3,8}/.test(r.decls)) return;
+    r.sel.split(",").map((x) => x.trim()).forEach((sel) => {
+      if (!sel || /^body\.u-dark/.test(sel) || dark.has(sel)) return;
+      stranded.push(sel);
+    });
+  });
+  check("(13) ⭐ no rule paints a raw hex background with no dark-canvas counterpart",
+    stranded.length === 0, stranded.join(" · "));
+  check("(14) the moved row takes its background from a token, in both themes",
+    /\.mlist li\.moved\{[^}]*background:var\(--row-moved\)/.test(css) &&
+    /\.orbits li\.moved\{[^}]*background:var\(--row-moved\)/.test(css) &&
+    /:root\{[\s\S]*?--row-moved:#[0-9A-Fa-f]{6}[\s\S]*?\}/.test(css) &&
+    /body\.u-dark\{[\s\S]*?--row-moved:#[0-9A-Fa-f]{6}[\s\S]*?\}/.test(css));
+  done();
+})().catch((e) => { console.error(e); process.exit(1); });

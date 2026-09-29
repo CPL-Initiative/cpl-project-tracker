@@ -10,6 +10,8 @@ related:
   - docs/kb-notes/adr-cer-student-impact-counts-privacy.md (NEW)
   - CLAUDE.md §11 "Session 33" subsection + docs/roadmap_archive.md (NEW museum annex)
 moniker_suggestion: "Sleepy Goodall" was Session 33 (branch claude/sleepy-goodall-E7dW1) — claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: Legend 32 ("Busy Feynman", 8 PRs) → Legend 33 ("Sleepy Goodall", 6 PRs:

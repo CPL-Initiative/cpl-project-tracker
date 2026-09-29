@@ -1,8 +1,8 @@
 ---
 title: Re-key every id-keyed artifact — a re-mint isn't done until the side manifests move
 created: 2026-06-11
-updated: 2026-06-11
-tags: [methodology, remint, rule-7, alias, promotions, phase-a, phase-b, data-integrity]
+updated: 2026-07-27
+tags: [methodology, remint, rule-7, alias, promotions, phase-a, phase-b, data-integrity, workplan, reorg]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
@@ -71,6 +71,51 @@ Id-keyed artifact classes that MUST move together at every re-key:
 
 When adding a NEW id-keyed artifact, add it to this table and to the
 playbook checklist in the same PR that introduces it.
+
+## Second instance — a different subsystem (SkyElemental, 2026-07-27)
+
+The **#872 COBI Activities reorg** re-keyed the dashboard's sub-activity ids
+(old numbering → new) across `projects`, `item_raci`, and `item_updates` — but
+its `rekey.sql` **never touched `workplan_goals` (the annual-goal ladder table)
+or `workplan_activity_associations`**. Same silent-miss shape as the promotions
+case, in a completely different subsystem:
+
+- The **ladder table stayed on the old numbering**, so the by-id ladder overlay
+  attached the *wrong* targets to the current ids — Activity-4 rows displayed
+  the NEXT item's ladder (off-by-one under a dissolved wrapper slot). Not a
+  crash, just a convincing-but-wrong number that hid for days.
+- **10 projects had no ladder row at all** under the new ids, so they vanished
+  from any consumer that iterated the ladder table instead of `projects`.
+
+The fix was this note's pattern: apply the **same #872 crosswalk** to the two
+tables it missed (two-phase TMP__ permutation), delete the dissolved slots, sync
+names. Receipt `kb/supabase_workplan_goals_rekey.sql`.
+
+**Add a discovery step to the pattern: enumerate the full keyed-table set from
+the catalog, don't trust the original re-key's SQL to have been complete.**
+
+```sql
+select table_name, column_name
+from information_schema.columns
+where table_schema='public'
+  and column_name in ('project_id','item_id','activity_id','id')
+  and table_name in (select table_name from information_schema.tables
+                     where table_schema='public' and table_type='BASE TABLE');
+```
+
+Run it BEFORE the re-key (to scope it) and AFTER (orphan-check: any keyed value
+not present in the parent table is a table the re-key missed). Project-keyed
+tables here today: `projects`, `item_raci`, `item_updates`,
+`workplan_activity_associations`, `workplan_goals`, `project_lifecycle`,
+`update_log` — the last two were also absent from #872's SQL (they happened to
+have no affected rows, but that's luck, not coverage).
+
+**Corollary — one authoritative entity table beats N tables to keep in sync.**
+The deeper fix (Path A, `methodology-single-source-of-truth-flows-via-snapshot`)
+made `projects` the single source of the sub-activity tree and `workplan_goals`
+a pure by-id overlay, so a *left-behind* overlay row now degrades to a blank
+(visible) ladder instead of a silent id mismatch, and a consumer can't iterate
+the wrong table.
 
 ## The general claim
 

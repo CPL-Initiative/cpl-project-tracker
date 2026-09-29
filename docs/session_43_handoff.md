@@ -10,6 +10,8 @@ related:
   - docs/ccr_cluster_cleanup_lessons.md (Session 42 section)
   - CLAUDE.md §11 "Session 42" subsection
 moniker_suggestion: Session 42 ran as "Bruh Moonshot" (Sam's coinage mid-session); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: … kinship gate + R4 (41) → Session 42: the handoff's "31

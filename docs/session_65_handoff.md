@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_132_handoff.md
+---
+
 # Session 65 handoff — you are Session 65
 
 You are **Session 65** of the CPL Project Tracker. Session 64 (**Bruh Startripper**)

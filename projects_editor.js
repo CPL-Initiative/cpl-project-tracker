@@ -62,9 +62,10 @@
     return null;
   }
   function signIn(email) {
-    try {
-      sessionStorage.setItem("cpl_sb_return_tab", "dashboard");
-    } catch (e) {}
+    // Cross-browser-tab: the magic link opens a new one, where sessionStorage
+    // is empty. The keeper writes the shared copy too.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("dashboard");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "dashboard"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",
@@ -104,17 +105,17 @@
     if (state.sess) {
       widget.appendChild(el("span", { "style": "font-weight:600;" },
         ["Signed in as ", state.sess.email || "(no email)"]));
-      widget.appendChild(el("span", { "style": "color:#666;" },
+      widget.appendChild(el("span", { "style": "color:var(--text-muted);" },
         ["Click any project field to edit • Enter saves • Esc cancels"]));
       var btnOut = el("button", { "class": "proj-btn proj-btn-out", "style": "margin-left:auto;" }, ["Sign out"]);
       btnOut.addEventListener("click", function () { signOut(); onChange(); });
       widget.appendChild(btnOut);
     } else {
-      widget.appendChild(el("span", { "style": "color:#666;" },
+      widget.appendChild(el("span", { "style": "color:var(--text-muted);" },
         ["Sign in (CCCCO MAP only) to edit project details."]));
       var emailInput = el("input", { "type": "email", "placeholder": "you@example.edu" }, []);
       var btnIn = el("button", { "class": "proj-btn" }, ["Sign in"]);
-      var status = el("span", { "style": "color:#666;flex-basis:100%;font-size:0.8rem;" }, []);
+      var status = el("span", { "style": "color:var(--text-muted);flex-basis:100%;font-size:0.8rem;" }, []);
 
       btnIn.addEventListener("click", function () {
         var email = (emailInput.value || "").trim();

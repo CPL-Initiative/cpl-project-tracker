@@ -63,18 +63,161 @@
     /\bunable to find\b/i,
   ];
   var TURN_LIMIT = 500;   // newest N turns analyzed (surfaced in the UI)
-  var FEEDBACK_LIMIT = 200;
+  // Raised 200 → 500 (2026-08-07). The fetch is unfiltered, so the CI smoke rows
+  // (see isSmoke below — ~1 per run, and they can never be deleted) consume this
+  // budget alongside real reports. At 200 they would have started evicting real
+  // feedback from the queue within months. If this is ever hit, the next step is
+  // excluding page='smoke' server-side — use or=(page.is.null,page.neq.smoke),
+  // since a bare page=not.eq.smoke silently drops NULL-page rows too.
+  var FEEDBACK_LIMIT = 500;
 
   var STATUSES = ["new", "triaged", "addressed"];
+
+  // Review state for the gap pane ("questions she struggled with").
+  //
+  // WHY IT IS A SEPARATE LANE (Sam, 2026-08-13): "How can I click this
+  // resolved?" — he could not. The feedback pane has Mark this: buttons backed
+  // by sierra_feedback.status; the gap pane reads chat_interactions, an
+  // append-only log of every turn with NO status column. So the list could never
+  // shrink, and a question already fixed sat there indistinguishable from one
+  // nobody had touched. Absence of a review row means STILL OUTSTANDING.
+  var TURN_STATUSES = ["resolved", "wont_fix"];
+  function turnStatusLabel(s) {
+    return s === "resolved" ? "Handled" : s === "wont_fix" ? "Leave it" : "Still to do";
+  }
+
+  // ── Plain language (Sam, 2026-08-12) ─────────────────────────────────────
+  // "the Sierra Training tab uses a bunch of jargon I don't understand; can you
+  //  switch to using plain language and add hover overs on chips and filter to
+  //  explain what they do and how to respond?"
+  //
+  // The stored values stay as they are — `new`/`triaged`/`addressed` are written
+  // by an RPC and read by tests, so only the LABEL changes. Every hover-over
+  // answers two questions, because a definition alone still leaves you stuck:
+  // what this means, and what you should DO about it.
+  var STATUS_LABEL = { "new": "Not reviewed", triaged: "Looking into it", addressed: "Done" };
+  var STATUS_HELP = {
+    "new": "Nobody on the team has looked at this yet. Open it, read Sierra's answer, "
+      + "then mark it “Looking into it” if it needs work or “Done” if it is fine.",
+    triaged: "Someone has read this and it needs a fix. Usually the fix is a new instruction "
+      + "for Sierra — use “Write an instruction about this” below. Mark it “Done” once that is in place.",
+    addressed: "Finished — either it was fine as-is, or you have added an instruction that "
+      + "fixes it. Done items drop out of the default view."
+  };
+  var HELP = {
+    rating: "Filter by whether the person pressed thumbs-up or thumbs-down on Sierra's answer. "
+      + "Start with thumbs-down — those are the answers someone thought were wrong.",
+    audience: "Who Sierra thought she was talking to — a student, a college, or the MAP team. "
+      + "She answers differently for each, so a bad answer for one audience may be fine for another.",
+    page: "Which page the person was chatting on. Useful for telling a question asked from "
+      + "My College apart from one asked on the public assistant.",
+    status: "How far the team has got with each item. “Still to do” is the working view: "
+      + "everything except the ones marked Done.",
+    note: "Show only items where the person typed a comment explaining what was wrong. "
+      + "These are the most useful ones to read first.",
+    smoke: "Automated messages our own daily test leaves behind when it checks that the "
+      + "thumbs-up/down button still works. They are not real people and need no action — "
+      + "they are hidden unless you tick this.",
+    days: "Only show items from the last week, month, and so on. Leave it on “Any time” to see everything.",
+    bulk: "Set every item currently listed above to the same state at once. Use it to clear a "
+      + "batch you have already read — it skips the automated test messages.",
+    gapKind: "“Nothing close in the knowledge base” means Sierra had no good source to answer from. "
+      + "“Sierra said she did not know” means she declined to answer. Both point at something missing.",
+    similarity: "How closely the best thing Sierra could find matched the question, from 0 (nothing "
+      + "alike) to 1 (near-identical). Below " + LOW_SIM + " she is answering from very little.",
+    topicMatch: "Whether Sierra found a matching credential exhibit for the question. If not, either "
+      + "no college has articulated it, or it is filed under a different name.",
+    ruleSent: "This instruction is currently being sent to Sierra with every question she answers.",
+    ruleOff: "Turned off — Sierra never sees this one. Kept as a record of what was tried.",
+    testInSierra: "Opens Sierra on the CPL Assistant tab with this exact question filled in, so you can see "
+      + "whether she answers it better now. It does not send it; you press Enter yourself.",
+    testInMyCollege: "Opens Sierra on the My College tab with this exact question filled in. There she answers "
+      + "for the college picked on that tab; if none is picked yet, pick one and the question waits in her box. "
+      + "It does not send it; you press Enter yourself.",
+    // The five number cards (round 1, Sam's approval 2026-09-28). A card that
+    // filters says so AND says how to undo it, because a lit card is a filter the
+    // reader set and may not remember setting.
+    cardTodo: "People who rated an answer and whose report nobody has finished with yet. "
+      + "Press to list only these; press again to list everything.",
+    cardDown: "How many people pressed thumbs-down. These are the answers someone thought were wrong. "
+      + "Press to list only these; press again to list everything.",
+    cardConvos: "How many recent conversations we looked through to find those. "
+      + "Press to go to the questions she struggled with.",
+    cardInUse: "Instructions you have given Sierra that are currently switched on. "
+      + "Press to list only these; press again to list them all.",
+    writeRule: "Start a new instruction for Sierra with this question already quoted, so you can tell "
+      + "her how to handle this kind of question in future.",
+    ruleEdit: "Change the wording of this instruction. Saving keeps it in the same place in the list, "
+      + "so it keeps its spot among the newest instructions Sierra is actually sent.",
+    ruleTestQ: "The question you want to get a better answer to. It is kept with this editor while you "
+      + "go back and forth to Sierra, so you do not have to retype it each round.",
+    ruleSaveTest: "Saves the new wording, then opens Sierra with your test question filled in. Come back "
+      + "to this tab and the editor is still open, so you can adjust and try again."
+  };
+  function statusLabel(s) { return STATUS_LABEL[s || "new"] || (s || "new"); }
+
+  // ── The words a "Showing N of M" line uses for each filter ─────────────────
+  // Plain words, NEVER the stored value: a filter set to "punt", "cobi-tab" or
+  // "(not set)" would otherwise print that value into a sentence meant for a
+  // person (tests/sierra_training_plain.test.js bans that jargon from the
+  // rendered text). A value with no entry reads as a neutral phrase rather
+  // than leaking through.
+  var STATUS_WORD = { open: "still to do", "new": "not reviewed", triaged: "looking into it", addressed: "done" };
+  var DAYS_WORD = { "1": "last 24 hours", "7": "last 7 days", "30": "last 30 days" };
+  var AUDIENCE_WORD = {
+    student: "asked by a student", faculty: "asked by faculty",
+    administrator: "asked by a college administrator", employer: "asked by an employer",
+    civic: "asked by a civic leader", "(not set)": "no role given",
+  };
+  var PAGE_WORD = {
+    sierra: "on the public Sierra page", "cobi-tab": "inside COBI", "student-portal": "on the student portal",
+    smoke: "from the automated test", "(unknown)": "page not recorded",
+  };
+  function audienceWord(v) { return AUDIENCE_WORD[v] || "one kind of asker"; }
+  function pageWord(v) { return PAGE_WORD[v] || "on one page"; }
+  var RATING_LABEL = { down: "Thumbs-down", up: "Thumbs-up" };
+
+  /* ── The number cards are views (round 1, Sam's approval 2026-09-28) ──────
+   * "Still to do" and "Thumbs-down" each set the WHOLE feedback filter, not one
+   * field of it. The two defaults disagree on purpose — the list opens on "still
+   * to do" while the thumbs-down number counts every status — so a card that
+   * only set Rating would list the still-to-do thumbs-downs and show fewer rows
+   * than its own number. A card is lit exactly when the filter IS its view, and
+   * pressing a lit card clears every filter. */
+  var FB_FILTERS = ["fRating", "fAudience", "fPage", "fStatus", "fDays", "fNote"];
+  var FB_ALL = { fRating: "", fAudience: "", fPage: "", fStatus: "", fDays: "", fNote: false };
+  var FB_VIEWS = {
+    todo: { fRating: "", fAudience: "", fPage: "", fStatus: "open", fDays: "", fNote: false },
+    down: { fRating: "down", fAudience: "", fPage: "", fStatus: "", fDays: "", fNote: false },
+  };
+  function fbViewIs(v) { return FB_FILTERS.every(function (k) { return state[k] === v[k]; }); }
+  function setFbView(v) { FB_FILTERS.forEach(function (k) { state[k] = v[k]; }); }
+  // "Questions she struggled with" counts every gap row, handled or not, while
+  // the list defaults to still-to-do: the card widens every gap filter.
+  function showAllGaps() { state.gKind = "all"; state.gAudience = ""; state.gRev = ""; state.gDays = ""; }
+  // Depends on GUIDANCE_SENT_CAP, which is declared below — read it at call time,
+  // not at definition time, or it bakes in `undefined`.
+  // Takes the row so the message names THAT row's own cap. The two kinds have
+  // separate budgets, so telling a display-rule author about the instruction cap
+  // would send them to switch off the wrong thing.
+  function ruleNotSentHelp(r) {
+    var kind = guidKind(r);
+    var what = kind === "display" ? "display rules" : "active instructions";
+    return "Sierra only receives the newest " + capFor(kind) + " " + what + ". Newer ones "
+      + "have pushed this one out, so it is NOT reaching her. Turn off an older one to make room.";
+  }
 
   var state = {
     loading: false, error: null, gated: false,
     feedback: null, turns: null,
     // feedback-queue filters
-    fRating: "", fAudience: "", fPage: "", fStatus: "open", fNote: false, fDays: "",
+    fRating: "", fAudience: "", fPage: "", fStatus: "open", fNote: false, fSmoke: false, fDays: "",
     open: {},          // turn_id → expanded
     // gap-miner filters
     gKind: "all", gAudience: "", gDays: "",
+    // Gap-pane review filter. Defaults to "open" so the pane shows what is
+    // still outstanding, not every question Sierra ever struggled with.
+    gRev: "open", turnReviews: {}, gSmoke: false, gBulkBusy: false,
     gOpen: {},         // interaction id → expanded
     busy: {},          // turn_id → status write in flight
     bulkStatus: "triaged", bulkBusy: false,
@@ -82,21 +225,159 @@
     guidance: null,    // rows newest-first; null = load failed
     guidBusy: {},      // id → toggle write in flight
     addBusy: false,
-    draftRule: "", draftNote: "",   // composer drafts survive re-renders
+    draftRule: "", draftNote: "", draftKind: "directive",   // composer drafts survive re-renders
+    // Edit-in-place (2026-08-13). A saved instruction had no way back in: the
+    // only controls were Switch off / Switch on, so fixing a typo meant
+    // switching the old one off and retyping the whole rule as a new row —
+    // which also loses its place in the newest-N window that decides whether
+    // Sierra is sent it at all.
+    editId: null,      // id of the row being edited (null = none)
+    editRule: "", editNote: "", editTestQ: "",
+    editBusy: false,
+    // ── Built-in rules layer (sierra_rules, Session 156) ──
+    // Deliberately its OWN load state rather than reusing state.gated. The two
+    // panes have different gates — the guidance pane opens to a team-phrase
+    // holder, this one is reviewer-only — so one shared "gated" flag would
+    // either lock the team out of guidance or show them a closed pane as empty.
+    rules: null,          // overlay rows from sierra_rules; null = not loaded
+    rulesState: "idle",   // idle|loading|ok|notreviewer|error
+    rulesErr: null,
+    rulesOpen: {},        // key → expanded
+    ruleEditKey: null, ruleEditBody: "", ruleEditWhen: "", ruleEditOrder: "",
+    ruleBusy: {},         // key → write in flight
+    // "Instructions in use" card: list only the switched-on instructions.
+    guidOnlyOn: false,
+    // Focus survives a re-render (see pendingFocus). One-shot fields.
+    focusNext: null, focusHeld: null, focusFallback: null,
   };
 
   // cpl-chat v25 sends the newest N active rules — mirror the function's cap
   // so the tab can honestly mark which rules are actually reaching Sierra.
-  var GUIDANCE_SENT_CAP = 10;
+  //
+  // RAISED 10 → 20 (2026-08-21). Ten was a FOSSIL: on 2026-08-12 the per-rule
+  // cap went 500 → 1500 and the total 2500 → 9000, and this one was not touched.
+  // At the old sizes 10 × 500 exactly matched the old 2500-char budget, so the
+  // row cap cost nothing; at today's average rule length (~525 chars) the 9000
+  // budget would carry about 17, so a cap of 10 was binding about seven rules
+  // early for no cost reason.
+  //
+  // ⭐ 20 IS CHOSEN TO BE UNREACHABLE, ON PURPOSE. The row cap is INVISIBLE —
+  // exceeding it silently evicts the OLDEST active rule, which in a guidance
+  // layer is the standing one (naming, tone, safety), not the reactive one
+  // written this afternoon. The character budget is VISIBLE: the tab headlines
+  // it as a meter. Setting the row cap above what the char budget can carry
+  // (20 > ~17) makes the visible limit the one that actually binds, so a curator
+  // who runs out of room is TOLD rather than silently losing their oldest rule.
+  // See docs/kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md.
+  //
+  // MUST stay == GUIDANCE_MAX_RULES in chatbox/supabase/functions/cpl-chat/index.ts.
+  // tests/sierra_guidance.test.js compares the two files to EACH OTHER rather
+  // than to a literal — pinning one number in one file is exactly what let the
+  // rule-length caps disagree across three files on 2026-08-12.
+  var GUIDANCE_SENT_CAP = 20;
+
+  // Display rules carry their OWN row budget — mirrors GUIDANCE_MAX_DISPLAY in
+  // chatbox/supabase/functions/cpl-chat/index.ts. A display rule is a structured
+  // output shape (table columns, labels, ordering), not prose policy, so it must
+  // not occupy a slot that would otherwise carry a directive.
+  var GUIDANCE_DISPLAY_CAP = 6;
+
+  // A row written before the kind column existed has no `kind`; it is a
+  // directive. Read it through here rather than touching r.kind directly, so a
+  // null can never be rendered as a third kind or drop a row out of both caps.
+  function guidKind(r) { return String((r && r.kind) || "directive"); }
+  function capFor(kind) { return kind === "display" ? GUIDANCE_DISPLAY_CAP : GUIDANCE_SENT_CAP; }
+
+  // Per-instruction character budget. RAISED 500 → 1500 (Sam, 2026-08-12).
+  // The textarea carried maxlength="500", which stops accepting keystrokes with
+  // NO feedback — so three rules written that day were silently cut, one of them
+  // mid-table ("| ASE A1 –"). A limit the user cannot see is a limit that eats
+  // their work. Two changes, and both were needed: raise it, and SHOW it.
+  // MUST stay ==       GUIDANCE_MAX_CHARS_PER_RULE in
+  // chatbox/supabase/functions/cpl-chat/index.ts — the function slices to its own
+  // cap, so raising only this one moves the silent truncation server-side.
+  var GUIDANCE_RULE_MAX = 1500;
+  var GUIDANCE_NOTE_MAX = 300;
+  // Total budget across all sent rules, mirroring the function. Shown in the UI
+  // because exceeding it silently DROPS the oldest active rules — and the oldest
+  // is the naming rule the whole platform depends on.
+  var GUIDANCE_TOTAL_MAX = 9000;
 
   // "Test in Sierra" handoff — same-origin sessionStorage key the CPL Assistant
   // tab (cpl_chat.js) consumes on #chatbot activation: it prefills the input
   // (never auto-sends) so a reviewer can replay a logged question against the
   // live function after a fix.
   var TEST_Q_KEY = "cplSierraTestQ.v1";
-  function testInSierra(q) {
-    try { sessionStorage.setItem(TEST_Q_KEY, String(q || "").slice(0, 1000)); } catch (e) {}
-    location.hash = "#chatbot";
+  /* "Try it in: My College" (round 1, Sam's approval 2026-09-28). The question
+   * stays a plain string under TEST_Q_KEY — college_briefing.js and the tests
+   * write it that way — and a SECOND key names the destination. cpl_chat.js
+   * reads and clears both. Absent means the default, which behaves exactly as it
+   * did before this key existed.
+   *
+   * ⚠ The destination cannot be inferred on the other side. cpl_chat.js picks
+   * the pane by SUPPRESSION, not by which tab was activated, so without this key
+   * a My College hand-off would type the question into the hidden CPL Assistant
+   * input and burn it. */
+  var TEST_DEST_KEY = "cplSierraTestDest.v1";
+  var DEST_MY_COLLEGE = "college-briefing";
+
+  /* Where to send a hand-off. CPL Assistant when it is reachable; My College
+   * when it is not, because that tab mounts the SAME assistant via mountInto().
+   *
+   * Sam, 2026-08-14, planning to suppress CPL Assistant from an Admin tab on the
+   * grounds that it is now the same thing as Sierra. It is — but this hand-off
+   * named #chatbot specifically, so suppressing that tab would have left the
+   * trainer with no way to test an instruction, failing silently. cobi_orgs.js
+   * marks a hidden nav button with data-org-hidden="1", so that is the signal. */
+  function sierraHost() {
+    var pane = document.getElementById("tab-chatbot");
+    var btn = document.querySelector('.cpl-tab[data-tab="chatbot"]');
+    var suppressed = !pane || (btn && btn.getAttribute("data-org-hidden") === "1");
+    return suppressed ? "college-briefing" : "chatbot";
+  }
+  // One argument keeps today's hand-off (p1 and guidance_edit call it that way).
+  // `dest` === DEST_MY_COLLEGE sends it to My College's Sierra box instead.
+  function testInSierra(q, dest) {
+    var toMyCollege = dest === DEST_MY_COLLEGE;
+    try {
+      sessionStorage.setItem(TEST_Q_KEY, String(q || "").slice(0, 1000));
+      // The default carries NO destination, exactly as before; a stale one left
+      // by an earlier My College hop must not redirect it.
+      if (toMyCollege) sessionStorage.setItem(TEST_DEST_KEY, DEST_MY_COLLEGE);
+      else sessionStorage.removeItem(TEST_DEST_KEY);
+    } catch (e) {}
+    var host = toMyCollege ? DEST_MY_COLLEGE : sierraHost();
+    if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
+      window.CPL_TABS.navigate(host);
+    } else {
+      location.hash = "#" + host;
+    }
+  }
+
+  // Testing an instruction MEANS leaving this tab — the assistant lives at
+  // #chatbot, so the module is torn down and `state` is lost. Without this the
+  // edit-test-edit loop Sam asked for is impossible by construction: you come
+  // back to a closed editor and have to find the rule and re-open it every
+  // round. Persist the open editor (and its test question) so the return trip
+  // lands you exactly where you left off.
+  var EDIT_KEY = "cplSierraGuidEdit.v1";
+  function saveEditDraft() {
+    try {
+      if (state.editId == null) { sessionStorage.removeItem(EDIT_KEY); return; }
+      sessionStorage.setItem(EDIT_KEY, JSON.stringify({
+        id: state.editId, rule: state.editRule, note: state.editNote, testQ: state.editTestQ,
+      }));
+    } catch (e) { /* private mode — the editor still works, it just won't survive the hop */ }
+  }
+  function restoreEditDraft() {
+    try {
+      var d = JSON.parse(sessionStorage.getItem(EDIT_KEY) || "null");
+      if (!d || d.id == null) return;
+      state.editId = d.id;
+      state.editRule = String(d.rule || "");
+      state.editNote = String(d.note || "");
+      state.editTestQ = String(d.testQ || "");
+    } catch (e) { /* ignore */ }
   }
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
@@ -127,65 +408,404 @@
   var CSS_ID = "sierra-training-css";
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
+    // ⚠ ROUND 1 (Sam's approval, 2026-09-28): ported from the approved mockup,
+    // https://claude.ai/artifact/Agmbu7UNGRcdEf48Sx5PTi — left-aligned, calmer,
+    // First Light tokens only. Every var() below is defined in the LIGHT :root of
+    // both HTMLs, or is one of the four `--sit-*` locals declared on `.sit`, each
+    // derived from a :root token (color-mix has COBI precedent). No raw hex and
+    // no rgba() literal: tests/sierra_training_round1.test.js reads this sheet.
     var css = [
-      ".sit { max-width: 1150px; margin: 0 auto; color: var(--text-body); }",
-      ".sit h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
-      ".sit h3 { color: var(--navy-primary); margin: 20px 0 8px; font-size: 1.02rem; }",
-      ".sit-intro { color: var(--text-muted); max-width: 900px; margin: 0 0 12px; font-size: .92rem; }",
-      ".sit-gatechip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
-      ".sit-stat { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 14px; }",
-      ".sit-stat .box { flex:1 1 140px; border:1px solid var(--border); border-radius:8px; background: var(--surface-subtle); padding:10px 12px; }",
-      ".sit-stat .box .n { font-size:1.5rem; font-weight:700; color: var(--navy-primary); }",
-      ".sit-stat .box .l { font-size:.72rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }",
-      ".sit-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
-      ".sit-select { padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); }",
-      ".sit-check { font-size:.82rem; color: var(--text-body); display:flex; align-items:center; gap:5px; }",
-      ".sit-count { font-size:.8rem; color: var(--text-muted); margin-left:auto; }",
-      ".sit-auth { font-size:.78rem; color: var(--text-muted); }",
-      ".sit-auth b { color: var(--hunter, #2c601a); }",
-      ".sit-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
-      ".sit-gate { color: var(--text-muted); font-size:.85rem; padding:8px 4px; }",
-      ".sit-row { border:1px solid var(--border); border-radius:8px; margin:0 0 8px; background: var(--surface-opaque); }",
-      ".sit-row-head { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; padding:8px 12px; cursor:pointer; }",
-      ".sit-row-head:hover { background: var(--surface-subtle); }",
-      ".sit-q { flex:1 1 340px; font-size:.88rem; font-weight:600; color: var(--text-strong); min-width:220px; }",
-      ".sit-meta { font-size:.72rem; color: var(--text-muted); white-space:nowrap; }",
-      ".sit-chip { font-size:.68rem; border-radius:10px; padding:1px 8px; white-space:nowrap; background: var(--surface-muted); color: var(--text-muted); }",
-      ".sit-chip-down { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); font-weight:700; }",
-      ".sit-chip-up { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); font-weight:700; }",
-      ".sit-chip-new { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); }",
-      ".sit-chip-triaged { color: var(--text-strong, #4a3a00); background: var(--mustard-fill, #f2dca0); }",
-      ".sit-chip-addressed { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); }",
-      ".sit-chip-gap { color: var(--navy-secondary); background: var(--surface-muted); }",
-      ".sit-row-body { border-top:1px solid var(--border); padding:10px 14px; font-size:.85rem; }",
-      ".sit-row-body .lbl { font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color: var(--text-muted); margin:8px 0 2px; }",
-      ".sit-row-body .txt { white-space:pre-wrap; word-break:break-word; max-height:340px; overflow:auto; background: var(--surface-subtle); border-radius:6px; padding:8px 10px; }",
-      ".sit-note { border-left:3px solid var(--mustard, #d9a800); }",
-      ".sit-actions { display:flex; gap:6px; margin-top:10px; align-items:center; flex-wrap:wrap; }",
-      ".sit-btn { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:3px 10px; cursor:pointer; color: var(--text-body); font-size:.76rem; }",
-      ".sit-btn:hover { background: var(--surface-muted); }",
-      ".sit-btn[disabled] { opacity:.5; cursor:default; }",
-      ".sit-btn.on { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); }",
-      ".sit-themes { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }",
-      ".sit-theme { font-size:.76rem; background: var(--surface-muted); color: var(--text-body); border:1px solid var(--border); border-radius:12px; padding:2px 10px; }",
-      ".sit-theme b { color: var(--navy-primary); }",
-      ".sit-cap { font-size:.74rem; color: var(--text-muted); margin:4px 0 14px; }",
-      ".sit-gov { font-size:.76rem; color: var(--text-muted); border-left:3px solid var(--border-strong); padding:4px 10px; margin:16px 0 0; }",
-      ".sit-bulk { display:inline-flex; align-items:center; gap:5px; font-size:.76rem; color: var(--text-muted); }",
-      ".sit-logmatch { font-size:.78rem; color: var(--text-body); background: var(--surface-subtle); border-radius:6px; padding:6px 10px; }",
-      ".sit-logmatch b { color: var(--navy-primary); }",
+      ".sit { --sit-edge: var(--text-faint);"                                        // control edge: 3.62:1 on white
+        + " --sit-pick: color-mix(in srgb, var(--cobalt) 10%, var(--surface-opaque));"  // selected fill
+        + " --sit-hover: color-mix(in srgb, var(--cobalt) 6%, var(--surface-opaque));"  // hover fill
+        + " --sit-gap: clamp(28px, 3vw, 40px);"                                         // between sections
+        + " max-width: 1150px; margin: 0 auto; text-align: left; color: var(--text-body); font-size: 1rem; line-height: 1.55; }",
+      ".sit b { color: var(--text-strong); }",
+
+      // ── Title, badge, intro ──
+      ".sit h2 { display:flex; flex-wrap:wrap; align-items:center; gap:4px 12px; margin:4px 0 8px;"
+        + " font-size: clamp(1.45rem, 1.2rem + 1vw, 1.9rem); line-height:1.2; color: var(--text-strong); }",
+      ".sit-gatechip { display:inline-block; margin:0; padding:3px 9px; border-radius:8px; background: var(--mustard-fill);"
+        + " color: var(--on-mustard); font-family: \"Source Sans 3\", Arial, sans-serif; font-size:.7rem; font-weight:700;"
+        + " letter-spacing:.08em; line-height:1.3; text-transform:uppercase; vertical-align:middle; }",
+      ".sit-intro { max-width: var(--cpl-measure, none); margin:0 0 20px; color: var(--text-body);"
+        + " font-size: clamp(.95rem, .9rem + .2vw, 1.03rem); }",
+
+      // ── The five numbers: real buttons ──
+      ".sit-stat { display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:10px; margin:0; }",
+      ".sit-stat .box { display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:4px;"
+        + " min-height:92px; padding:12px 14px 14px; text-align:left; font:inherit; color: var(--text-body);"
+        + " background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:10px; cursor:pointer; }",
+      ".sit-stat .box .n { font-family: \"Playfair Display\", Georgia, serif; font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);"
+        + " font-weight:700; line-height:1.1; color: var(--text-strong); }",
+      ".sit-stat .box .l { font-size:.74rem; font-weight:600; line-height:1.35; letter-spacing:.06em; text-transform:uppercase;"
+        + " color: var(--text-muted); }",
+      ".sit-stat .box:hover { border-color: var(--cobalt); background: var(--sit-hover); }",
+      // The bar along the bottom is the non-color cue for a lit card.
+      ".sit-stat .box[aria-pressed=\"true\"] { border-color: var(--cobalt); background: var(--sit-pick);"
+        + " box-shadow: inset 0 0 0 1px var(--cobalt), inset 0 -4px 0 var(--cobalt); }",
+      // --seal-blue-text, not --seal-blue: the navy FILL never flips, so as TEXT it
+      // would sit at 1.3:1 on the dark ground. The text grade is the same navy in light.
+      ".sit-stat .box[aria-pressed=\"true\"] .n { color: var(--seal-blue-text); }",
+      ".sit-stat .box[aria-pressed=\"true\"] .l { color: var(--text-body); }",
+
+      // ── Section headings: the title, then a plain line under it ──
+      ".sit h3 { margin: var(--sit-gap) 0 12px; font-size: clamp(1.12rem, 1rem + .45vw, 1.35rem); line-height:1.3;"
+        + " color: var(--text-strong); scroll-margin-top:16px; }",
+      ".sit h3 .sit-meta { display:block; margin-top:2px; font-family: \"Source Sans 3\", Arial, sans-serif; font-size:.9rem;"
+        + " font-weight:400; line-height:1.45; color: var(--text-muted); white-space:normal; }",
+      ".sit h3 .sit-meta b { color: var(--text-body); }",
+      ".sit h3[tabindex]:focus { outline:none; }",
+      ".sit h3[tabindex]:focus-visible { outline:2px solid var(--focus-ring); outline-offset:4px; border-radius:4px; }",
+      ".sit .sit-landed { background: var(--sit-pick); box-shadow: 0 0 0 6px var(--sit-pick); border-radius:4px; }",
+
+      // ── Filters ──
+      ".sit-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; margin:0 0 8px; }",
+      ".sit select, .sit-select { min-height:36px; max-width:100%; padding:4px 8px; font:inherit; font-size:.9rem;"
+        + " color: var(--text-body); background-color: var(--surface-opaque); border:1px solid var(--sit-edge);"
+        + " border-radius:8px; cursor:pointer; }",
+      ".sit select:hover { border-color: var(--cobalt); }",
+      ".sit-check { display:inline-flex; align-items:center; gap:7px; min-height:36px; font-size:.9rem; color: var(--text-body); cursor:pointer; }",
+      ".sit-check input { width:18px; height:18px; margin:0; accent-color: var(--cobalt); cursor:pointer; }",
+      ".sit-check-dim { color: var(--text-muted); }",
+      ".sit-bulk { display:block; margin-left:auto; font-size:.9rem; line-height:36px; color: var(--text-muted); }",
+      ".sit-bulk > select, .sit-bulk > button { margin-left:6px; vertical-align:middle; }",
+      ".sit-toolbar > .sit-meta:empty { display:none; }",
+      ".sit-toolbar [title] { cursor:pointer; }",
+      ".sit-toolbar .sit-bulk[title] { cursor:default; }",
+
+      // ── "Showing N of M: … · Show all" ──
+      ".sit-showing { margin:6px 0 10px; font-size:.95rem; color: var(--text-body); }",
+      ".sit-showing:empty { margin:0; }",
+      ".sit-showing:focus { outline:none; }",
+      ".sit-linkbtn { display:inline-flex; align-items:center; min-height:28px; min-width:24px; padding:0 4px; margin:0 -4px;"
+        + " font:inherit; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px;"
+        + " background:none; border:0; border-radius:4px; cursor:pointer; }",
+      ".sit-linkbtn:hover { background: var(--sit-hover); }",
+
+      // ── Item rows ──
+      ".sit-list { display:grid; grid-template-columns: minmax(0, 1fr); gap:8px; }",
+      ".sit-list:empty { display:none; }",
+      ".sit-row { min-width:0; margin:0; background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; }",
+      ".sit-row-head { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; padding:12px 14px; border-radius:10px; text-align:left; }",
+      ".sit-row-head[role=\"button\"] { cursor:pointer; }",
+      ".sit-row-head[role=\"button\"]:hover { background: var(--surface-subtle); }",
+      ".sit-row-head[aria-expanded=\"true\"] { border-radius:10px 10px 0 0; }",
+      ".sit-row-head:focus-visible { outline:2px solid var(--focus-ring); outline-offset:-2px; }",
+      // user-select:text is explicit because the whole header is a click target
+      // and `cursor:pointer` reads as "this is a button, do not try to select
+      // it". The click handler ignores a click that ends a selection, so
+      // dragging across the question really does select it.
+      ".sit-q { flex:1 1 340px; min-width:0; font-size:.98rem; font-weight:600; line-height:1.45; color: var(--text-strong);"
+        + " overflow-wrap:anywhere; user-select:text; -webkit-user-select:text; cursor:text; }",
+      ".sit-row-body .txt { user-select:text; -webkit-user-select:text; }",
+      ".sit-meta { font-size:.82rem; color: var(--text-muted); white-space:nowrap; }",
+
+      // the feedback row: rating word · review status · question, then who / where / when
+      ".sit-row-head[data-open] { display:grid; grid-template-columns: 7.5rem 7.5rem minmax(0, 1fr) auto; column-gap:10px; row-gap:2px; }",
+      ".sit-row-head[data-open] > .sit-chip { justify-self:start; }",
+      ".sit-row-head[data-open] > .sit-chip:nth-child(1) { grid-column:1; grid-row:1; }",
+      ".sit-row-head[data-open] > .sit-chip:nth-child(2) { grid-column:2; grid-row:1; }",
+      ".sit-row-head[data-open] > .sit-q { grid-column:3; grid-row:1; }",
+      ".sit-row-head[data-open] > .sit-chip-note { grid-column:4; grid-row:1; }",
+      ".sit-row-head[data-open] > .sit-meta { grid-column: 3 / -1; grid-row:2; white-space:normal; }",
+
+      // chips: one quiet shape; the word carries the meaning, color only where a person must act
+      ".sit-chip { display:inline-flex; align-items:center; height:26px; max-width:100%; padding:0 9px; overflow:hidden;"
+        + " font-size:.76rem; font-weight:600; line-height:1; white-space:nowrap; text-overflow:ellipsis; color: var(--text-body);"
+        + " background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; }",
+      ".sit-chip-down { color: var(--crimson); font-weight:700; }",
+      ".sit-chip-up { color: var(--text-muted); }",
+      ".sit-chip-new { color: var(--text-strong); font-weight:700; }",
+      ".sit-chip-triaged, .sit-chip-addressed, .sit-chip-note, .sit-chip-gap { color: var(--text-body); }",
+      // An instruction that is on but not reaching Sierra is a state someone must act on.
+      ".sit-chip-notsent { color: var(--crimson); font-weight:700; }",
+      ".sit-chip-edited { color: var(--text-strong); font-weight:700; }",
+      ".sit-chip-prot { color: var(--on-mustard); background: var(--mustard-fill); border-color: var(--mustard-fill); font-weight:700; }",
+      // Anything carrying a hover-over says so, or nobody discovers it.
+      ".sit-chip[title] { cursor:help; }",
+      ".sit-stat .box[title] { cursor:pointer; }",
+
+      // ── The open item ── (no line between an item's title and its body)
+      ".sit-row-body { padding:0 14px 14px; font-size:.94rem; }",
+      ".sit-row-body .lbl { margin:12px 0 4px; font-size:.72rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color: var(--text-muted); }",
+      ".sit-row-body .txt { white-space:pre-wrap; word-break:break-word; overflow-wrap:anywhere; text-align:left; max-height:420px;"
+        + " overflow:auto; padding:10px 12px; color: var(--text-body); line-height:1.55; background: var(--surface-subtle); border-radius:8px; }",
+      ".sit-row-body .txt:focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }",
+      ".sit-row-body .txt.sit-dim { color: var(--text-muted); }",
+      ".sit-note { border-left:3px solid var(--mustard-fill); }",
+      ".sit-logmatch { padding:8px 12px; font-size:.9rem; color: var(--text-body); background: var(--surface-subtle); border-radius:8px; }",
+      ".sit-logmatch b { color: var(--text-strong); }",
       ".sit-logmatch.sit-dim { color: var(--text-muted); }",
-      ".sit-guid-warn { font-size:.8rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:8px 12px; max-width:900px; }",
-      ".sit-guid-composer { display:flex; flex-direction:column; gap:6px; margin:0 0 12px; }",
-      ".sit-guid-composer textarea { resize:vertical; padding:8px 11px; border:1px solid var(--border-strong); border-radius:8px; font: .86rem inherit; font-family:inherit; background: var(--surface-opaque); color: var(--text-body); }",
-      ".sit-guid-row { display:flex; gap:6px; }",
-      ".sit-guid-note { flex:1; padding:6px 11px; border:1px solid var(--border); border-radius:8px; font-size:.8rem; background: var(--surface-opaque); color: var(--text-body); }",
+
+      // ── The action row: status as one control, one primary, the rest quiet ──
+      ".sit-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 20px;"
+        + " margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }",
+      ".sit-act-status, .sit-act-do, .sit-try, .sit-gmark { display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; }",
+      ".sit-act-status .lbl { margin:0; }",
+      ".sit-try { gap:6px; }",
+      ".sit-try-l { margin-right:2px; font-size:.88rem; color: var(--text-muted); }",
+      ".sit-btn { display:inline-flex; align-items:center; justify-content:center; min-height:36px; padding:5px 13px; font:inherit;"
+        + " font-size:.88rem; font-weight:600; line-height:1.2; text-align:center; color: var(--cobalt); background: var(--surface-opaque);"
+        + " border:1px solid var(--sit-edge); border-radius:8px; cursor:pointer; }",
+      ".sit-btn:hover { background: var(--sit-hover); border-color: var(--cobalt); }",
+      // The action that actually changes Sierra should not look like the ones
+      // that only record where the team got to.
+      ".sit-btn-primary { color: var(--on-accent); background: var(--cobalt); border-color: var(--cobalt); }",
+      ".sit-btn-primary:hover { color: var(--on-accent); background: var(--btn-primary-hover); border-color: var(--btn-primary-hover); }",
+      ".sit-btn[disabled] { opacity:1; color: var(--text-muted); background: var(--surface-subtle); border-color: var(--sit-edge);"
+        + " border-style:dashed; cursor:not-allowed; }",
+      // The gap pane's already-set state (disabled while set) reads as chosen, not as unavailable.
+      ".sit-btn.on[disabled] { color: var(--seal-blue-text); font-weight:700; background: var(--sit-pick); border-color: var(--cobalt);"
+        + " border-style:solid; cursor:default; }",
+      ".sit-seg { display:inline-flex; gap:2px; padding:2px; background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:10px; }",
+      ".sit-seg .sit-btn { min-height:32px; padding:4px 12px; color: var(--text-body); background:transparent; border:0; border-radius:8px; }",
+      ".sit-seg .sit-btn:hover { background: var(--sit-hover); }",
+      ".sit-seg .sit-btn[disabled] { cursor:progress; }",
+      // The old selected state measured 2.99:1 (white on navy at half opacity).
+      ".sit-seg .sit-btn[aria-pressed=\"true\"] { color: var(--seal-blue-text); font-weight:700; background: var(--sit-pick);"
+        + " box-shadow: inset 0 0 0 1.5px var(--cobalt); }",
+
+      // ── Recurring words in the questions she struggled with ──
+      ".sit-themes { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }",
+      ".sit-theme { padding:2px 10px; font-size:.82rem; color: var(--text-body); background: var(--surface-opaque);"
+        + " border:1px solid var(--border-strong); border-radius:8px; }",
+      ".sit-theme b { color: var(--text-strong); }",
+
+      // ── Instructions ── (the gold note is now a white note with a gold edge)
+      ".sit-guid-warn { max-width: var(--cpl-measure, none); margin:0 0 12px; padding:10px 14px; font-size:.94rem;"
+        + " color: var(--text-body); background: var(--surface-opaque); border-left:4px solid var(--mustard-fill); border-radius:0 8px 8px 0; }",
+      ".sit-guid-budget { margin:0 0 10px; font-size:.88rem; color: var(--text-muted); cursor:help; }",
+      ".sit-guid-budget.warn { color: var(--crimson); font-weight:600; }",
+      ".sit-guid-composer { display:flex; flex-direction:column; gap:8px; margin:0 0 18px; }",
+      ".sit-guid-composer textarea { width:100%; min-height:5.5em; resize:vertical; padding:10px 12px; font:inherit; font-size:.95rem;"
+        + " color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
+      ".sit-guid-count { margin:0; font-size:.82rem; color: var(--text-muted); }",
+      ".sit-guid-count.warn { color: var(--crimson); font-weight:600; }",
+      ".sit-guid-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; }",
+      ".sit-guid-note { flex:1 1 280px; min-height:36px; padding:6px 11px; font:inherit; font-size:.9rem; color: var(--text-body);"
+        + " background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
+      ".sit ::placeholder { color: var(--text-muted); opacity:1; }",
+      ".sit label.sit-meta { display:inline-flex; flex-wrap:wrap; align-items:center; gap:4px 6px; max-width:100%; min-width:0;"
+        + " font-size:.88rem; color: var(--text-muted); white-space:normal; }",
+      ".sit label.sit-meta select { flex:0 1 auto; min-width:0; }",
+      "#sit-guid-list .sit-q { flex:1 1 calc(100% - 14rem); min-width: min(12rem, 100%); font-weight:400; }",
+      "#sit-guid-list .sit-applies { margin-left:auto; }",
+      "#sit-guid-list .sit-row-body { padding:0 14px 10px; font-size:.9rem; }",
+      ".sit-row-body .sit-inline-lbl { display:inline; margin:0; text-transform:none; letter-spacing:0; font-size:.9rem; }",
       ".sit-rule-off .sit-q { color: var(--text-muted); text-decoration: line-through; }",
+      ".sit-rule-off .sit-chip { color: var(--text-muted); }",
+      ".sit-guid-editing { border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--sit-pick); }",
+      ".sit-guid-editbox { display:flex; flex-direction:column; gap:6px; padding:12px 14px; }",
+      ".sit-guid-editlbl { font-size:.82rem; font-weight:600; color: var(--text-muted); }",
+      ".sit-guid-editbox textarea { resize:vertical; padding:8px 11px; font:inherit; font-size:.95rem; color: var(--text-body);"
+        + " background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
+      ".sit-guid-edit-note, .sit-guid-edit-testq { min-height:36px; padding:6px 11px; font:inherit; font-size:.9rem;"
+        + " color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
+      ".sit-guid-editrow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:2px; }",
+      ".sit-guid-editnote { font-size:.82rem; color: var(--text-muted); }",
+      ".sit-guid-editbox .sit-rule-body { width:100%; box-sizing:border-box; }",
+
+      // ── Built-in rules ── (no colored left edge; the .sit-rule class stays as a hook)
+      ".sit-cap { margin:0 0 12px; font-size:.88rem; color: var(--text-muted); }",
+      ".sit-row-head[data-ruleopen] .sit-q { flex:1 1 280px; }",
+      ".sit-disclose { margin-left:auto; padding-left:4px; color: var(--text-muted); }",
+
+      // ── Quiet endings ──
+      ".sit-empty { padding:14px 16px; text-align:left; color: var(--text-muted); background: var(--surface-opaque); border:0; border-radius:10px; }",
+      ".sit-gate { padding:8px 4px; font-size:.9rem; color: var(--text-muted); }",
+      ".sit-gov { max-width: var(--cpl-measure, none); margin: var(--sit-gap) 0 0; padding:0; font-size:.88rem; color: var(--text-muted); border:0; }",
+      // Unscoped on purpose: the polite announcer sits beside the root, outside .sit.
+      ".sit-vh { position:absolute !important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden;"
+        + " clip:rect(0 0 0 0); white-space:nowrap; border:0; }",
+
+      // ── Focus: one visible ring everywhere ──
+      ".sit button:focus-visible, .sit select:focus-visible, .sit input:focus-visible, .sit textarea:focus-visible"
+        + " { outline:2px solid var(--focus-ring); outline-offset:2px; }",
+      ".sit-seg .sit-btn:focus-visible { outline-offset:0; }",
+
+      // ── Motion only for readers who have not asked to reduce it ──
+      "@media (prefers-reduced-motion: no-preference) {"
+        + " .sit-stat .box, .sit-btn, .sit-row-head, .sit-linkbtn { transition: background-color .15s ease, border-color .15s ease; }"
+        + " .sit h3 { transition: background-color .4s ease, box-shadow .4s ease; } }",
+
+      // ── Narrower screens ──
+      "@media (max-width: 900px) { .sit-bulk { margin-left:0; } }",
+      "@media (max-width: 560px) {"
+        + " .sit-stat { gap:8px; }"
+        + " .sit-stat .box { min-height:84px; padding:10px 12px 12px; }"
+        + " .sit-toolbar { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:8px; }"
+        + " .sit-toolbar .sit-select { width:100%; }"
+        + " .sit-toolbar .sit-check, .sit-toolbar .sit-bulk, .sit-toolbar > .sit-meta { grid-column: 1 / -1; }"
+        + " .sit-toolbar > .sit-meta { white-space:normal; }"
+        + " .sit-bulk > select { margin-left:0; max-width: calc(100% - 5.5rem); }"
+        + " .sit-chip { height:auto; min-height:26px; padding:4px 9px; white-space:normal; line-height:1.25; }"
+        + " .sit-seg .sit-btn { font-size:.84rem; text-wrap:balance; }"
+        + " .sit-row-head[data-open] { display:flex; flex-wrap:wrap; row-gap:6px; }"
+        + " .sit-row-head[data-open] > .sit-q { flex:1 1 100%; order:3; }"
+        + " .sit-row-head[data-open] > .sit-meta { flex:1 1 100%; order:4; }"
+        + " .sit-actions, .sit-act-status, .sit-act-do { flex-direction:column; align-items:stretch; }"
+        + " .sit-seg { display:flex; }"
+        + " .sit-seg .sit-btn { flex:1 1 0; min-width:0; padding:4px 6px; white-space:normal; }"
+        + " .sit-try { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }"
+        + " .sit-try-l { grid-column: 1 / -1; }"
+        // A lone My College button takes the row, as its neighbors do.
+        + " .sit-try-one { grid-template-columns: minmax(0, 1fr); }"
+        + " #sit-guid-list .sit-q { flex:1 1 100%; }"
+        + " #sit-guid-list .sit-applies { margin-left:0; }"
+        + " .sit-guid-row > * { flex:1 1 100%; }"
+        + " .sit-row-body { padding:0 12px 12px; }"
+        + " .sit-row-head { padding:12px; } }",
     ].join("\n");
     var el = document.createElement("style");
     el.id = CSS_ID; el.textContent = css;
     document.head.appendChild(el);
   }
+
+  /* The loading placeholder in both HTMLs is an INLINE dashed frame with
+   * `text-align:center`, and inline beats every selector, so it stayed on after
+   * the tab drew: every answer, question and title read centered inside a dashed
+   * box (round 1, item 3). Cleared here rather than in the HTML, because the
+   * placeholder still has a job before this module loads and one JS edit needs
+   * no Rule-4 mirror — the same fix college_briefing.js made for My College.
+   * Idempotent, and it only removes what the placeholder sets. */
+  function shedPlaceholder(root) {
+    if (!root || !root.style || root.getAttribute("data-sit-shed") === "1") return;
+    ["border", "borderRadius", "background", "color", "padding", "textAlign"].forEach(function (k) {
+      try { root.style[k] = ""; } catch (e) { /* jsdom-safe */ }
+    });
+    root.setAttribute("data-sit-shed", "1");
+  }
+
+  /* ── Focus survives a re-render ────────────────────────────────────────────
+   * render() rewrites the whole tab, so without this every keyboard action —
+   * opening an item with Enter, changing a filter, pressing a number — dropped
+   * focus to the top of the page. The focused control is found again by its
+   * data-* attributes (they are what the handlers key on), or by id.
+   *
+   * A control that re-renders DISABLED while its write is in flight cannot take
+   * focus, so the wish is held for the next render; `focusFallback` names where
+   * to go if the control is gone by then (an item marked Done leaves a
+   * still-to-do list). A held wish never steals focus the reader has moved. */
+  function cssq(v) { return String(v).replace(/\\/g, "\\\\").replace(/"/g, '\\"'); }
+  function focusKey(el, root) {
+    if (!el || !root || el === root || !root.contains(el)) return null;
+    if (el.id) return '[id="' + cssq(el.id) + '"]';
+    var sel = el.tagName.toLowerCase(), n = 0;
+    for (var i = 0; i < el.attributes.length; i++) {
+      var a = el.attributes[i];
+      if (/^data-/.test(a.name) && a.name !== "data-flashing") { sel += "[" + a.name + '="' + cssq(a.value) + '"]'; n++; }
+    }
+    if (n) return sel;
+    var cls = String(el.className || "").split(/\s+/).filter(function (c) { return /^sit-/.test(c); })[0];
+    return cls ? sel + "." + cls : null;
+  }
+  function qs(root, sel) { try { return root.querySelector(sel); } catch (e) { return null; } }
+  function pendingFocus(root) {
+    var active = document.activeElement;
+    var lost = !active || active === document.body || active === document.documentElement;
+    var want = { sel: state.focusNext || focusKey(active, root) || (lost ? state.focusHeld : null),
+                 fallback: state.focusFallback };
+    state.focusNext = null; state.focusHeld = null; state.focusFallback = null;
+    return want;
+  }
+  function restoreFocus(root, want) {
+    if (!want || (!want.sel && !want.fallback)) return;
+    var el = want.sel ? qs(root, want.sel) : null;
+    if (el && el.disabled) { state.focusHeld = want.sel; state.focusFallback = want.fallback || null; return; }
+    if (!el && want.fallback) el = qs(root, want.fallback);
+    if (!el || el === document.activeElement) return;
+    try { el.focus({ preventScroll: true }); } catch (e) { try { el.focus(); } catch (e2) { /* hidden */ } }
+  }
+
+  /* ── One polite announcer, outside the part that re-renders ──────────────
+   * The "Showing N of M" lines change when a number, a filter or a status
+   * changes, and a screen reader should hear that. A live region only speaks
+   * when content changes INSIDE a region that already existed, and render()
+   * recreates everything under the root — a live region in there would stay
+   * silent, or repeat itself on every re-render (opening an item). So one
+   * visually hidden region lives BESIDE the root, created once, and is told only
+   * the lines that actually changed. The line focus moves to is left unsaid: the
+   * reader hears it on arrival. */
+  var lastSaid = null;
+  function announce(root, said, want) {
+    var live = document.getElementById("sit-live");
+    if (!live && root && root.parentNode) {
+      live = document.createElement("p");
+      live.id = "sit-live";
+      live.className = "sit-vh";
+      live.setAttribute("aria-live", "polite");
+      live.setAttribute("aria-atomic", "true");
+      root.parentNode.insertBefore(live, root.nextSibling);
+    }
+    var prev = lastSaid;
+    lastSaid = said;
+    if (!live || !prev) return;
+    var quiet = want && want.sel === "#sit-fb-showing" ? "fb" : want && want.sel === "#sit-gap-showing" ? "gap" : "";
+    var news = ["fb", "gap", "guid"].filter(function (k) {
+      return said[k] && said[k] !== prev[k] && k !== quiet;
+    }).map(function (k) { return said[k]; });
+    if (news.length) live.textContent = news.join(". ") + ".";
+  }
+
+  /* ── A long answer scrolls from the keyboard ──────────────────────────────
+   * A box that scrolls must be reachable and named while it scrolls (WCAG
+   * 2.1.1), and a box that does not scroll must not be a dead tab stop. Same
+   * rule and shape as sierra.js syncScrollRegions(): re-synced after every
+   * render and on resize, because it depends on the content AND the viewport. */
+  function syncScrollers(root) {
+    if (!root) return;
+    var boxes = root.querySelectorAll(".sit-row-body .txt");
+    for (var i = 0; i < boxes.length; i++) {
+      var t = boxes[i];
+      if (t.scrollHeight > t.clientHeight + 1) {
+        t.setAttribute("tabindex", "0");
+        t.setAttribute("role", "region");
+        t.setAttribute("aria-label", t.getAttribute("data-label") || "Text");
+      } else {
+        t.removeAttribute("tabindex");
+        t.removeAttribute("role");
+        t.removeAttribute("aria-label");
+      }
+    }
+  }
+  var resizeTimer = null;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () { syncScrollers(document.getElementById("sierra-training-root")); }, 150);
+  });
+
+  // ── Moving the reader ──
+  function reduceMotion() {
+    try { return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); }
+    catch (e) { return false; }
+  }
+  function scrollToEl(el) {
+    if (!el || typeof el.scrollIntoView !== "function") return;   // jsdom has none
+    try { el.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" }); }
+    catch (e) { el.scrollIntoView(); }
+  }
+  function bringIntoView(el) {
+    if (!el || typeof el.getBoundingClientRect !== "function") return;
+    var r = el.getBoundingClientRect();
+    var h = window.innerHeight || document.documentElement.clientHeight;
+    if (r.top < 0 || r.bottom > h) scrollToEl(el);
+  }
+  function land(h) {
+    if (!h) return;
+    scrollToEl(h);
+    h.classList.add("sit-landed");
+    setTimeout(function () { h.classList.remove("sit-landed"); }, 1600);
+  }
+  // A header that is a button: Enter or Space opens it, like a real one.
+  function onActivateKey(el, fn) {
+    el.addEventListener("keydown", function (e) {
+      if (e.target !== el) return;
+      if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") { e.preventDefault(); fn(); }
+    });
+  }
+  // An id built from a stored key, safe inside an id / aria-controls list.
+  function safeId(v) { return String(v == null ? "" : v).replace(/[^A-Za-z0-9_-]/g, "_"); }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -294,17 +914,120 @@
     });
   }
   function loadTurns() {
-    var url = REST + "/chat_interactions?select=id,created_at,question,response,top_similarity,topic_match,audience"
+    var url = REST + "/chat_interactions?select=id,session_id,created_at,question,response,top_similarity,topic_match,audience"
       + "&order=created_at.desc&limit=" + TURN_LIMIT;
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("turns " + r.status);
       return r.json();
     });
   }
+  // Review state for the gap pane. Soft-fails to {} so a review-table hiccup
+  // costs the ✓ marks, never the list of questions itself.
+  function loadTurnReviews() {
+    var url = REST + "/sierra_turn_review?select=turn_id,status,note,updated_by,updated_at";
+    return fetch(url, { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var by = {};
+        (rows || []).forEach(function (t) { by[t.turn_id] = t; });
+        return by;
+      }).catch(function () { return {}; });
+  }
+
+  // Mark one gap row handled / left / back to outstanding. A null status DELETEs
+  // the row, because "still outstanding" is the ABSENCE of a review — storing it
+  // as a third status would make "never looked at" and "looked at and reopened"
+  // indistinguishable, which is the whole thing this pane needs to tell apart.
+  function setTurnReview(turnId, status, root) {
+    if (state.busy[turnId]) return Promise.resolve();
+    state.busy[turnId] = true; render(root);
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    var req;
+    if (status == null) {
+      req = fetch(REST + "/sierra_turn_review?turn_id=eq." + encodeURIComponent(turnId),
+                  { method: "DELETE", headers: h })
+        .then(function (r) {
+          if (!r.ok) throw new Error("clear " + r.status);
+          delete state.turnReviews[turnId];
+        });
+    } else {
+      h["Prefer"] = "resolution=merge-duplicates,return=representation";
+      var s = getSession();
+      req = fetch(REST + "/sierra_turn_review", {
+        method: "POST", headers: h,
+        body: JSON.stringify([{
+          turn_id: turnId, status: status,
+          updated_by: (s && s.email) || "(unknown)",
+          updated_at: new Date().toISOString(),
+        }]),
+      }).then(function (r) {
+        if (!r.ok) throw new Error("review " + r.status);
+        return r.json();
+      }).then(function (rows) {
+        // RLS FILTERS a disallowed write to 200 + an EMPTY body rather than 403,
+        // so an "ok" that touched no row is a failure. Reporting it as success
+        // would show a ✓ that vanishes on the next load.
+        if (!Array.isArray(rows) || rows.length === 0) throw new Error("not saved");
+        state.turnReviews[turnId] = rows[0];
+      });
+    }
+    return req.catch(function () {
+      alert("Could not save that — unlock with the team phrase (the About menu in the header) and try again.");
+    }).then(function () {
+      delete state.busy[turnId]; render(root);
+    });
+  }
+
+  // Bulk-mark every row currently shown. Sequential, like the feedback pane's
+  // bulkTriage — the list is small once the CI rows are excluded (13 real rows
+  // on the day this shipped, against 78 before), and there is no batch endpoint.
+  //
+  // CI rows are skipped even when the toggle is showing them: marking robot
+  // traffic "handled" would be recording a human decision about something no
+  // human asked, and it is the same reasoning that keeps them out of bulkTriage.
+  function bulkTurnReview(root) {
+    if (state.gBulkBusy) return Promise.resolve();
+    var target = state.gBulkStatus || TURN_STATUSES[0];
+    var rows = gapRows().filter(function (t) {
+      var rv = (state.turnReviews || {})[t.id];
+      return !isTurnSmoke(t) && !(rv && rv.status === target);
+    });
+    if (!rows.length) { alert('Every row shown is already "' + turnStatusLabel(target) + '".'); return Promise.resolve(); }
+    if (!confirm("Mark " + rows.length + " question(s) as " + turnStatusLabel(target)
+                 + "?\n\nThis only clears them off the still-to-do list — it does not change how Sierra answers.")) {
+      return Promise.resolve();
+    }
+    state.gBulkBusy = true; render(root);
+    var s2 = getSession();
+    var by = (s2 && s2.email) || "(unknown)";
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=representation";
+    var at = new Date().toISOString();
+    return fetch(REST + "/sierra_turn_review", {
+      method: "POST", headers: h,
+      body: JSON.stringify(rows.map(function (t) {
+        return { turn_id: t.id, status: target, updated_by: by, updated_at: at };
+      })),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("bulk " + r.status);
+      return r.json();
+    }).then(function (out) {
+      // 200 with an empty body means RLS filtered the whole write.
+      if (!Array.isArray(out) || out.length === 0) throw new Error("not saved");
+      out.forEach(function (rv) { state.turnReviews[rv.turn_id] = rv; });
+    }).catch(function () {
+      alert("Could not mark those — unlock with the team phrase (the About menu in the header) and try again.");
+    }).then(function () {
+      state.gBulkBusy = false; render(root);
+    });
+  }
+
   // Guidance rows (Phase 2). Soft-fails to null so a guidance hiccup never
   // takes down the queue/miner panes.
   function loadGuidance() {
-    var url = REST + "/sierra_guidance?select=id,rule,active,note,created_by,created_at,updated_by,updated_at"
+    var url = REST + "/sierra_guidance?select=id,rule,kind,surface,active,note,created_by,created_at,updated_by,updated_at"
       + "&order=created_at.desc&limit=100";
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("guidance " + r.status);
@@ -315,7 +1038,82 @@
     var s = getSession();
     return (s && s.email) || null;
   }
-  function addGuidance(rule, note, root) {
+  /* WHERE a rule applies. "" (stored NULL) = everywhere, which is what every rule
+   * written before 2026-08-22 is, and the right default: a rule is usually about
+   * what Sierra SAYS, not about who is asking.
+   *
+   * ⚠ THE LABELS ARE THE PLACES A READER RECOGNIZES, not the internal keys. A
+   * curator scoping a rule is thinking "this only makes sense on the My College
+   * tab", not "my-college".
+   *
+   * ⚠ MUST STAY EQUAL to KNOWN_SURFACES in the edge function and to the CHECK
+   * constraint on sierra_guidance.surface. A value in none of the three scopes a
+   * rule to nobody — invisible and unfalsifiable. tests/sierra_surface.test.js
+   * pins the other two; this list is pinned in tests/sierra_training_surface.test.js. */
+  var SURFACES = [
+    { k: "", label: "Everywhere (default)" },
+    { k: "my-college", label: "Only the My College tab" },
+    { k: "cobi-assistant", label: "Only the CPL Assistant tab" },
+    { k: "public", label: "Only the public Sierra page" },
+    { k: "fact-sheet", label: "Only the Fact Sheet drawer" },
+    { k: "memory-autogen", label: "Only when drafting a memory row" },
+    { k: "memory-briefing", label: "Only when briefing on the memory entries" },
+    { k: "gr-analysis", label: "Only when re-analyzing a regulation priority" },
+    { k: "skyview-ask", label: "Only when turning a SkyView question into a map selection" },
+  ];
+  function surfaceLabel(v) {
+    for (var i = 0; i < SURFACES.length; i++) if (SURFACES[i].k === (v || "")) return SURFACES[i].label;
+    // A value the UI does not know is a real finding, not a blank: say so rather
+    // than rendering it as "Everywhere", which is the one reading that is wrong.
+    return "Unknown surface: " + v;
+  }
+  function surfaceSelect(attr, cur) {
+    var h = "<select " + attr + ">";
+    for (var i = 0; i < SURFACES.length; i++) {
+      h += '<option value="' + esc(SURFACES[i].k) + '"'
+        + ((SURFACES[i].k === (cur || "")) ? " selected" : "") + ">"
+        + esc(SURFACES[i].label) + "</option>";
+    }
+    return h + "</select>";
+  }
+
+  /* Re-scope an EXISTING rule. This is the control that actually fixes the
+   * reported problem: row 15ec666b was written for the My College tab and has
+   * been reaching all six surfaces since it was created, and nothing in the UI
+   * could express that until now.
+   *
+   * ⚠ OPTIMISTIC LOCAL UPDATE ONLY AFTER THE WRITE LANDS. Painting first and
+   * reconciling later would show a rule as scoped while Sierra still reads it
+   * everywhere — the same "displayed state disagrees with sent state" shape as
+   * the bug this whole change came from.
+   *
+   * ⚠ An RLS-filtered write returns 200 with an EMPTY body, so "no row came
+   * back" is reported as a FAILURE rather than silently treated as success. */
+  function setGuidanceSurface(id, surface, root) {
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "return=representation";
+    return fetch(REST + "/sierra_guidance?id=eq." + encodeURIComponent(id), {
+      method: "PATCH", headers: h,
+      body: JSON.stringify({ surface: surface || null, updated_by: whoAmI(), updated_at: new Date().toISOString() }),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("scope " + r.status);
+      return r.json();
+    }).then(function (rows) {
+      var row = Array.isArray(rows) ? rows[0] : rows;
+      if (!row) throw new Error("no row updated — you may not have permission");
+      (state.guidance || []).forEach(function (g) {
+        if (String(g.id) === String(id)) g.surface = row.surface;
+      });
+      render(root);
+    }).catch(function (e) {
+      alert("Could not change where this instruction applies: " + (e && e.message)
+        + "\nIt is unchanged, and Sierra still sends it exactly as before.");
+      render(root);
+    });
+  }
+
+  function addGuidance(rule, note, root, kind, surface) {
     if (state.addBusy || !rule) return Promise.resolve();
     state.addBusy = true; render(root);
     var h = authHeaders();
@@ -323,17 +1121,92 @@
     h["Prefer"] = "return=representation";
     return fetch(REST + "/sierra_guidance", {
       method: "POST", headers: h,
-      body: JSON.stringify({ rule: rule, note: note || null, created_by: whoAmI(), updated_by: whoAmI() }),
+      body: JSON.stringify({
+        rule: rule,
+        // Sent explicitly rather than relying on the column default, so the
+        // request says what it means and a future default change cannot
+        // silently re-file every new instruction as the other kind.
+        kind: kind === "display" ? "display" : "directive",
+        // "" means everywhere -> NULL, never the empty string: the function reads
+        // `surface is null or surface = <this>`, and "" would match no surface.
+        surface: surface || null,
+        note: note || null, created_by: whoAmI(), updated_by: whoAmI(),
+      }),
     }).then(function (r) {
       if (!r.ok) throw new Error("add " + r.status);
       return r.json();
     }).then(function (rows) {
       var row = Array.isArray(rows) ? rows[0] : rows;
       if (row) (state.guidance = state.guidance || []).unshift(row);
-      state.draftRule = ""; state.draftNote = "";
+      state.draftRule = ""; state.draftNote = ""; state.draftKind = "directive"; state.draftSurface = "";
     }).catch(function () {
-      alert("Could not add the rule — renew your session on the Team & RACI tab (reviewer or team phrase) and try again.");
+      alert("Could not add the rule — renew your reviewer sign-in from \u2139 About in the header and try again.");
     }).then(function () { state.addBusy = false; render(root); });
+  }
+  // Edit a saved instruction in place (2026-08-13). RLS already allowed this —
+  // sierra_guidance_team_update covers every column for a reviewer or a team-phrase
+  // holder — so this was a missing affordance, not a missing permission.
+  function openEdit(id, root) {
+    var row = (state.guidance || []).filter(function (r) { return String(r.id) === String(id); })[0];
+    if (!row) return;
+    state.editId = row.id;
+    state.editRule = String(row.rule || "");
+    state.editNote = String(row.note || "");
+    // Keep whatever question was last used to test THIS rule; otherwise blank.
+    if (String(state.editId) !== String(id)) state.editTestQ = "";
+    saveEditDraft();
+    render(root);
+  }
+  function cancelEdit(root) {
+    state.editId = null; state.editRule = ""; state.editNote = ""; state.editTestQ = "";
+    saveEditDraft();
+    render(root);
+  }
+  // `then` runs only on a CONFIRMED write. A PATCH that RLS filters out answers
+  // 200 with an empty body, so "ok" is not proof it touched a row (the
+  // team_access lesson, 2026-08-12) — require the representation back.
+  function saveGuidance(id, rule, note, root, then) {
+    if (state.editBusy) return Promise.resolve();
+    var row = (state.guidance || []).filter(function (r) { return String(r.id) === String(id); })[0];
+    if (!row) return Promise.resolve();
+    state.editBusy = true; render(root);
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "return=representation";
+    return fetch(REST + "/sierra_guidance?id=eq." + encodeURIComponent(id), {
+      method: "PATCH", headers: h,
+      body: JSON.stringify({
+        rule: rule, note: note || null,
+        updated_by: whoAmI(), updated_at: new Date().toISOString(),
+      }),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("save " + r.status);
+      return r.json();
+    }).then(function (rows) {
+      var saved = Array.isArray(rows) ? rows[0] : rows;
+      if (!saved) throw new Error("no row");   // filtered by RLS — not a save
+      row.rule = saved.rule;
+      row.note = saved.note;
+      row.updated_by = saved.updated_by;
+      row.updated_at = saved.updated_at;
+      state.editBusy = false;
+      if (typeof then === "function") then();
+      else { state.editId = null; state.editRule = ""; state.editNote = ""; state.editTestQ = ""; saveEditDraft(); }
+      render(root);
+    }).catch(function () {
+      // Hold the ATTEMPTED text, not whatever the editor last rendered. In the
+      // browser the input handler keeps state.editRule current, but a failed
+      // save must not depend on that — the whole promise of the message below
+      // is that the curator's words are still there.
+      state.editId = id;
+      state.editRule = rule;
+      state.editNote = note || "";
+      state.editBusy = false;
+      saveEditDraft();
+      render(root);
+      alert("Could not save the change — your edit is still in the box. Renew your reviewer sign-in "
+        + "from \u2139 About in the header (or enter the team phrase there) and press Save again.");
+    });
   }
   function toggleGuidance(id, root) {
     if (state.guidBusy[id]) return Promise.resolve();
@@ -349,9 +1222,186 @@
       if (!r.ok) throw new Error("toggle " + r.status);
       row.active = !row.active;
     }).catch(function () {
-      alert("Could not update the rule — renew your session on the Team & RACI tab and try again.");
+      alert("Could not update the rule — renew your reviewer sign-in from \u2139 About in the header and try again.");
     }).then(function () { delete state.guidBusy[id]; render(root); });
   }
+
+  /* ══ Sierra's built-in rules (sierra_rules) ═══════════════════════════════
+   *
+   * The ~10 rules that OUTRANK everything in the Instructions pane above. Sam
+   * wrote an instruction on 2026-08-14, re-tested an hour later and got the old
+   * behavior: STATEWIDE_RULE was suppressing the answer he wanted and he could
+   * not see it, could not edit it, and the prompt's promise that "the team
+   * guidance wins" is a sentence, not a mechanism. #1186 made the rules data;
+   * this pane is the half that lets a human SEE them.
+   *
+   * TWO THINGS HERE ARE EASY TO GET WRONG, and both are load-bearing.
+   *
+   * 1. THE TABLE IS EMPTY ON PURPOSE. Zero rows means every rule is running its
+   *    code default. So the pane CANNOT be a list of table rows — it would show
+   *    a curator nothing at all. It renders the DEFAULTS (generated into
+   *    sierra_rule_defaults.js from index.ts) and paints the overlay on top.
+   *
+   * 2. AN EMPTY READ HERE MEANS THE OPPOSITE OF WHAT IT MEANS ON TEAM PHRASES.
+   *    There, team_access is known non-empty, so [] proves "not a reviewer".
+   *    Here [] is the NORMAL state, so the same inference would tell a reviewer
+   *    they are locked out — and, worse, tell a locked-out person that Sierra
+   *    has no rules. The two cases have to be separated by a probe that cannot
+   *    be confused: a reviewer-only read of a table that IS known non-empty.
+   * ════════════════════════════════════════════════════════════════════════ */
+
+  function ruleDefaults() {
+    var d = window.SIERRA_RULE_DEFAULTS;
+    return (d && Array.isArray(d.rules)) ? d : { rules: [], when_labels: {}, protected: [] };
+  }
+  function whenLabel(key) {
+    return ruleDefaults().when_labels[key] || key;
+  }
+
+  /* Am I a reviewer? Not answerable from the sierra_rules read itself, per (2)
+   * above. team_access is reviewer-only for SELECT and holds the site phrases —
+   * known non-empty (4 rows) — so rows back proves reviewer and [] proves not.
+   * select=id keeps the phrases themselves off the wire; we need the COUNT, not
+   * the secrets.
+   *
+   * A FAILED probe is neither answer. It resolves to null and the pane says it
+   * could not check, because "not a reviewer" is an accusation and a network
+   * blip must not make it. */
+  function probeReviewer() {
+    var s = getSession();
+    if (!s || !s.access_token) return Promise.resolve(false);  // team phrase alone never opens this
+    return fetch(REST + "/team_access?select=id&limit=1", { headers: authHeaders() })
+      .then(function (r) {
+        if (!r.ok) return null;
+        return r.json().then(function (rows) { return Array.isArray(rows) && rows.length > 0; });
+      })
+      .catch(function () { return null; });
+  }
+
+  function loadRules() {
+    return fetch(REST + "/sierra_rules?select=key,body,applies_when,sort_order,active,memory_slug,updated_by,updated_at",
+      { headers: authHeaders() })
+      .then(function (r) {
+        if (!r.ok) throw new Error("rules " + r.status);
+        return r.json();
+      });
+  }
+
+  /* Merge the code defaults with the curator overlay for DISPLAY.
+   *
+   * This mirrors assembleRules() in cpl-chat/index.ts, and a mirror that drifts
+   * is worse than no pane at all: it would show a curator a rule that is not the
+   * one Sierra is running. tests/sierra_rule_defaults.test.js lifts the REAL
+   * assembleRules out of index.ts and asserts this function agrees with it over
+   * the same fixtures, so drift fails CI rather than misinforming a curator.
+   *
+   * Pure — takes the overlay rather than reading state — so the test can call it.
+   */
+  function mergeRules(defaults, overlayRows) {
+    var overlay = {};
+    (overlayRows || []).forEach(function (o) { if (o && o.key) overlay[String(o.key)] = o; });
+    var out = (defaults || []).map(function (d) {
+      var o = overlay[d.key];
+      var prot = !!d.protected;
+      if (!o) {
+        return {
+          key: d.key, title: d.title, body: d.body, defaultBody: d.body,
+          appliesWhen: d.applies_when, sortOrder: d.sort_order,
+          active: true, overridden: false, protectedKey: prot, row: null,
+        };
+      }
+      var oBody = typeof o.body === "string" ? o.body.trim() : "";
+      return {
+        key: d.key, title: d.title, defaultBody: d.body,
+        // A protected rule KEEPS its code body and gains the curator's text;
+        // an ordinary rule has its body replaced. Same rule as index.ts.
+        body: !oBody ? d.body : (prot ? d.body + "\n" + oBody : oBody),
+        curatorBody: oBody,
+        appliesWhen: (o.applies_when && ruleDefaults().when_labels[o.applies_when]) ? o.applies_when : d.applies_when,
+        sortOrder: typeof o.sort_order === "number" ? o.sort_order : d.sort_order,
+        // active=false is honoured for ordinary rules and IGNORED for protected
+        // ones — gutting a guard by switching it off is the thing the protected
+        // set exists to prevent.
+        active: prot ? true : o.active !== false,
+        overridden: !!oBody, protectedKey: prot, row: o,
+      };
+    });
+    out.sort(function (a, b) { return (a.sortOrder - b.sortOrder) || a.key.localeCompare(b.key); });
+    return out;
+  }
+
+  /* Write an overlay row. The key is the PK and the row usually does not exist
+   * yet, so this is an UPSERT — a plain PATCH would silently touch nothing on
+   * the first edit of any rule, which is every edit at the moment.
+   *
+   * `return=representation` is not decoration: PostgREST answers a policy-filtered
+   * write with 200 and an EMPTY body, so "ok" is not proof it wrote. No row back
+   * = FAILURE, with the curator's text kept in the box. */
+  function writeRule(key, patch, root, onDone) {
+    if (state.ruleBusy[key]) return Promise.resolve();
+    var merged = mergeRules(ruleDefaults().rules, state.rules).filter(function (r) { return r.key === key; })[0];
+    if (!merged) return Promise.resolve();
+    state.ruleBusy[key] = true; render(root);
+
+    var existing = merged.row || {};
+    var body = {
+      key: key,
+      title: merged.title,
+      // Every column is sent, because an upsert that merges duplicates REPLACES
+      // the row — sending only the changed field would blank the others.
+      body: patch.body != null ? patch.body : (existing.body || merged.defaultBody),
+      applies_when: patch.applies_when != null ? patch.applies_when : (existing.applies_when || merged.appliesWhen),
+      sort_order: patch.sort_order != null ? patch.sort_order : (typeof existing.sort_order === "number" ? existing.sort_order : merged.sortOrder),
+      active: patch.active != null ? patch.active : (existing.active !== false),
+      updated_by: whoAmI(),
+      updated_at: new Date().toISOString(),
+    };
+    if (existing.memory_slug) body.memory_slug = existing.memory_slug;
+
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=representation";
+    return fetch(REST + "/sierra_rules", { method: "POST", headers: h, body: JSON.stringify(body) })
+      .then(function (r) {
+        if (!r.ok) throw new Error("save " + r.status);
+        return r.json();
+      })
+      .then(function (rows) {
+        var saved = Array.isArray(rows) ? rows[0] : rows;
+        if (!saved) throw new Error("not saved — your sign-in isn’t a reviewer");
+        state.rules = (state.rules || []).filter(function (o) { return o.key !== key; });
+        state.rules.push(saved);
+        state.ruleBusy[key] = false;
+        if (typeof onDone === "function") onDone();
+        render(root);
+      })
+      .catch(function (e) {
+        state.ruleBusy[key] = false;
+        render(root);
+        alert("Could not save this rule — " + ((e && e.message) || "unknown error")
+          + ".\n\nYour text is still in the box. These rules need a magic-link reviewer sign-in "
+          + "(the team phrase does not open them); renew it from \u2139 About in the header and press Save again.");
+      });
+  }
+
+  function openRuleEdit(key, root) {
+    var m = mergeRules(ruleDefaults().rules, state.rules).filter(function (r) { return r.key === key; })[0];
+    if (!m) return;
+    state.ruleEditKey = key;
+    // Seed with what a curator is actually editing. For a protected rule that is
+    // their ADDITION (the code body ships regardless), so seeding it with the
+    // built-in text would invite them to "edit" words that are not editable.
+    state.ruleEditBody = m.protectedKey ? (m.curatorBody || "") : (m.curatorBody || m.defaultBody);
+    state.ruleEditWhen = m.appliesWhen;
+    state.ruleEditOrder = String(m.sortOrder);
+    state.rulesOpen[key] = true;
+    render(root);
+  }
+  function cancelRuleEdit(root) {
+    state.ruleEditKey = null; state.ruleEditBody = ""; state.ruleEditWhen = ""; state.ruleEditOrder = "";
+    render(root);
+  }
+
   function setStatus(turnId, status, root) {
     if (state.busy[turnId]) return Promise.resolve();
     state.busy[turnId] = true; render(root);
@@ -364,7 +1414,7 @@
       if (!r.ok) throw new Error("status " + r.status);
       (state.feedback || []).forEach(function (f) { if (f.turn_id === turnId) f.status = status; });
     }).catch(function () {
-      alert("Could not save the status — sign in on the Team & RACI tab (reviewer or team phrase) and try again.");
+      alert("Could not save the status — unlock with the team phrase (the About menu in the header) and try again.");
     }).then(function () {
       delete state.busy[turnId]; render(root);
     });
@@ -375,9 +1425,17 @@
   function bulkTriage(root) {
     if (state.bulkBusy) return Promise.resolve();
     var target = state.bulkStatus;
-    var rows = filteredFeedback().filter(function (f) { return (f.status || "new") !== target; });
-    if (!rows.length) { alert('Every filtered row is already "' + target + '".'); return Promise.resolve(); }
-    if (!confirm('Mark ' + rows.length + ' filtered feedback row(s) as "' + target + '"?')) return Promise.resolve();
+    // CI rows are excluded even when the "show N CI rows" toggle is on. Bulk-triaging
+    // them would overwrite the server-side status='ci' label with a human triage
+    // state, quietly undoing the write-time fix and re-mixing robot rows into the
+    // counts. Reviewing them is fine; re-labeling them is not what the button means.
+    var rows = filteredFeedback().filter(function (f) {
+      return !isSmoke(f) && (f.status || "new") !== target;
+    });
+    // The label, not the stored value: "triaged" is what the RPC writes, "Looking
+    // into it" is what the reader picked.
+    if (!rows.length) { alert('Every filtered row is already "' + statusLabel(target) + '".'); return Promise.resolve(); }
+    if (!confirm('Mark ' + rows.length + ' filtered feedback row(s) as "' + statusLabel(target) + '"?')) return Promise.resolve();
     state.bulkBusy = true; render(root);
     var h = authHeaders();
     h["Content-Type"] = "application/json";
@@ -396,14 +1454,46 @@
     });
     return chain.then(function () {
       state.bulkBusy = false;
-      if (failed) alert(failed + " of " + rows.length + " rows failed to save — renew your session on the Team & RACI tab and retry.");
+      if (failed) alert(failed + " of " + rows.length + " rows failed to save — renew your reviewer sign-in from \u2139 About in the header and retry.");
       render(root);
     });
   }
 
   // ── Feedback queue ──
+  // The smoke test (chatbox/smoke_test.sh MODE 12) exercises the anon 👍/👎 write
+  // path on every CI run, leaving one page='smoke' row behind each time. It CANNOT
+  // clean up after itself: the RPC is anon, and anon is deliberately write-only on
+  // this table (its SELECT returns [] — mode 12 asserts exactly that). So the rows
+  // accumulate, and by 2026-08-07 they were 28 of 53 — our own CI was 53% of the
+  // queue it fills, every row rated "down", drowning the real reports.
+  // They are hidden by DEFAULT, never silently: the count is shown next to the
+  // toggle, so a reviewer can always see how many were withheld and why.
+  //
+  // FIXED AT THE SOURCE 2026-08-09 (SkyDesk): sierra_feedback_upsert now stamps
+  // status='ci' on these at write time, so they no longer enter the human queue
+  // at all (kb/supabase_sierra_feedback_ci_status.sql; the 43 existing rows were
+  // backfilled). This display filter stays as the second of two independent
+  // guards — `page` covers anything written before the migration or by a hand-run
+  // curl, `status` is the durable server-side label. They cannot disagree: the DB
+  // derives 'ci' from page='smoke'.
+  function isSmoke(f) { return !!f && (f.page === "smoke" || f.status === "ci"); }
+  // The SAME exclusion for the gap pane, which never had one.
+  //
+  // MEASURED 2026-08-13, over the newest 500 conversations: of the 78 rows this
+  // pane was showing, 65 were the CI smoke test — 83%. Sam was looking at a list
+  // of 78 "questions Sierra struggled with" of which only 13 were real, and was
+  // about to bulk-mark 72 rows of robot traffic as handled.
+  //
+  // It also explains the duplicate pairs: the smoke test asks each question
+  // twice, so 43% of punts had a SUCCESSFUL answer to the same question within
+  // 45 seconds. Those were never two verdicts on one question — they were two
+  // different probes, one of which is meant to have no college context.
+  function isTurnSmoke(t) {
+    return !!t && typeof t.session_id === "string" && /^smoke/i.test(t.session_id);
+  }
   function filteredFeedback() {
     var rows = (state.feedback || []).slice();
+    if (!state.fSmoke) rows = rows.filter(function (f) { return !isSmoke(f); });
     if (state.fRating) rows = rows.filter(function (f) { return f.rating === state.fRating; });
     if (state.fAudience) rows = rows.filter(function (f) { return (f.audience || "(not set)") === state.fAudience; });
     if (state.fPage) rows = rows.filter(function (f) { return (f.page || "(unknown)") === state.fPage; });
@@ -413,10 +1503,13 @@
     if (state.fDays) rows = rows.filter(function (f) { return withinDays(f.created_at, +state.fDays); });
     return rows;
   }
-  function options(values, current, anyLabel) {
+  // `labels` (optional) maps a stored value to the words shown; a value with no
+  // entry prints as itself, which is what every caller got before it existed.
+  function options(values, current, anyLabel, labels) {
     var h = '<option value="">' + esc(anyLabel) + "</option>";
     values.forEach(function (v) {
-      h += '<option value="' + esc(v) + '"' + (current === v ? " selected" : "") + ">" + esc(v) + "</option>";
+      h += '<option value="' + esc(v) + '"' + (current === v ? " selected" : "") + ">"
+        + esc((labels && labels[v]) || v) + "</option>";
     });
     return h;
   }
@@ -427,49 +1520,111 @@
   }
   function statusChip(s) {
     s = s || "new";
-    return '<span class="sit-chip sit-chip-' + esc(s) + '">' + esc(s) + "</span>";
+    return '<span class="sit-chip sit-chip-' + esc(s) + '" title="' + esc(STATUS_HELP[s] || "") + '">'
+      + esc(statusLabel(s)) + "</span>";
   }
+  // "Try it in: Sierra · My College" (round 1). Quiet buttons in a named group;
+  // `data-host` is the destination testInSierra() writes for cpl_chat.js.
+  //
+  // ONE BUTTON WHERE THE SITE HIDES CPL ASSISTANT (Sam's ruling, 2026-09-29,
+  // sheet 3 card 12, as proposed): keep the word Sierra, and show only My
+  // College there. sierraHost() already sent the Sierra button to My College,
+  // so the two buttons opened one place. The Sierra button is drawn only where
+  // sierraHost() would open the CPL Assistant tab, so what the group shows and
+  // where the button goes are one decision. Asked on every render; activation
+  // re-renders, so a site switch or a curator's hide shows on the next visit,
+  // and a button painted before a late menu change still routes through
+  // sierraHost() when pressed. Guard: tests/sierra_training_round1.test.js (5d).
+  function tryGroup(src, labelId) {
+    var both = sierraHost() === "chatbot";
+    return '<span class="sit-try' + (both ? "" : " sit-try-one") + '" role="group" aria-labelledby="' + labelId + '">'
+      + '<span class="sit-try-l" id="' + labelId + '">Try it in:</span>'
+      + (both ? '<button type="button" class="sit-btn" data-qact="test" data-host="chatbot" data-qsrc="' + esc(src) + '"'
+        + ' title="' + esc(HELP.testInSierra) + '">Sierra</button>' : "")
+      + '<button type="button" class="sit-btn" data-qact="test" data-host="' + DEST_MY_COLLEGE + '" data-qsrc="' + esc(src) + '"'
+      + ' title="' + esc(HELP.testInMyCollege) + '">My College</button>'
+      + "</span>";
+  }
+  // The "do something" half of an action row: one primary, two quiet.
+  function actDo(src, tryId) {
+    return '<div class="sit-act-do">'
+      + '<button type="button" class="sit-btn sit-btn-primary" data-qact="rule" data-qsrc="' + esc(src) + '"'
+      + ' title="' + esc(HELP.writeRule) + '">Write an instruction about this</button>'
+      + tryGroup(src, tryId)
+      + '<button type="button" class="sit-btn" data-qact="copy" data-qsrc="' + esc(src) + '"'
+      + ' title="Copies the question to your clipboard.">Copy question</button>'
+      + "</div>";
+  }
+
   function feedbackRow(f) {
     var open = !!state.open[f.turn_id];
+    var sid = safeId(f.turn_id);
+    // Words, not 👍/👎 (round 1): the word already says it, and color carries
+    // only the state someone must act on — thumbs-down, as crimson TEXT.
     var ratingChip = '<span class="sit-chip sit-chip-' + (f.rating === "down" ? "down" : "up") + '">'
-      + (f.rating === "down" ? "\u{1F44E} down" : "\u{1F44D} up") + "</span>";
+      + (f.rating === "down" ? "Thumbs-down" : "Thumbs-up") + "</span>";
+    // A header that opens something is a button: focusable, Enter/Space, and it
+    // says whether it is open. aria-controls names the body only while the body
+    // exists — it renders only when open.
     var h = '<div class="sit-row">'
-      + '<div class="sit-row-head" data-open="' + esc(f.turn_id) + '">'
+      + '<div class="sit-row-head" data-open="' + esc(f.turn_id) + '" role="button" tabindex="0"'
+      + ' aria-expanded="' + (open ? "true" : "false") + '"'
+      + (open ? ' aria-controls="sit-body-' + sid + '"' : "") + ">"
       + ratingChip + statusChip(f.status)
       + '<span class="sit-q">' + esc(truncate(f.question || "(no question captured)", 150)) + "</span>"
-      + (f.note ? '<span class="sit-chip">\u{1F4DD} note</span>' : "")
+      + (f.note ? '<span class="sit-chip sit-chip-note" title="The person typed a note explaining their rating. '
+        + 'Open the item to read it.">Note</span>' : "")
       + '<span class="sit-meta">' + esc(f.audience || "—") + " · " + esc(f.page || "—") + " · " + fmtWhen(f.created_at) + "</span>"
       + "</div>";
     if (open) {
-      h += '<div class="sit-row-body">';
-      if (f.note) h += '<div class="lbl">Note from the rater</div><div class="txt sit-note">' + esc(f.note) + "</div>";
-      h += '<div class="lbl">Question</div><div class="txt">' + esc(f.question || "—") + "</div>"
-        + '<div class="lbl">Sierra’s answer</div><div class="txt">' + esc(f.response || "—") + "</div>";
+      h += '<div class="sit-row-body" id="sit-body-' + sid + '">';
+      if (f.note) h += '<div class="lbl">Note from the rater</div><div class="txt sit-note" data-label="Note from the rater">' + esc(f.note) + "</div>";
+      h += '<div class="lbl">Question</div><div class="txt" data-label="Question">' + esc(f.question || "—") + "</div>"
+        + '<div class="lbl">Sierra’s answer</div><div class="txt sit-answer" data-label="Sierra’s answer">' + esc(f.response || "—") + "</div>";
       // Retrieval telemetry from the matching chat_interactions turn — was
       // this a knowledge gap (low similarity / punt) or a wording problem?
       var m = logMatch(f);
-      h += '<div class="lbl">Chat-log turn</div>';
+      h += '<div class="lbl">What Sierra had to work with</div>';
       if (m) {
-        var sim = m.top_similarity == null ? "none" : Number(m.top_similarity).toFixed(2);
-        h += '<div class="sit-logmatch">KB similarity <b>' + sim + "</b>"
-          + (m.topic_match ? " · exhibit topic-match ✓" : " · no exhibit topic-match")
+        var sim = m.top_similarity == null ? "nothing" : Number(m.top_similarity).toFixed(2);
+        h += '<div class="sit-logmatch"><span title="' + esc(HELP.similarity) + '">Closest match in the '
+          + "knowledge base: <b>" + sim + "</b></span>"
+          + '<span title="' + esc(HELP.topicMatch) + '"> · '
+          + (m.topic_match ? "found a matching credential" : "no matching credential") + "</span>"
           + gapKinds(m).map(function (k) {
-            return ' · <span class="sit-chip sit-chip-gap">' + (k === "low-sim" ? "⚠ low similarity" : "\u{1F6A7} punt") + "</span>";
+            return ' · <span class="sit-chip sit-chip-gap">'
+              + (k === "low-sim" ? "⚠ nothing close" : "said she didn’t know") + "</span>";
           }).join("")
-          + " · logged " + fmtWhen(m.created_at) + "</div>";
+          + " · asked " + fmtWhen(m.created_at) + "</div>";
       } else {
-        h += '<div class="sit-logmatch sit-dim">No matching turn in the newest ' + TURN_LIMIT
-          + " loaded — likely older than the analysis window.</div>";
+        h += '<div class="sit-logmatch sit-dim">This conversation is older than the '
+          + TURN_LIMIT + " we look through, so we can’t show what she had to work with.</div>";
       }
-      h += '<div class="sit-actions"><span class="lbl" style="margin:0">Triage:</span>';
+      // These buttons only RECORD where the team has got to — they change nothing
+      // about Sierra. That was the confusion: "when I click Triage, there's no
+      // prompt for me to add any adjustments" (Sam, 2026-08-12). Marking is
+      // bookkeeping; the thing that actually changes Sierra is an instruction,
+      // so the button that writes one sits right beside them.
+      //
+      // ONE segmented control (round 1): the pressed part is the current state,
+      // announced by aria-pressed. The old "on" button was a disabled white-on-navy
+      // at half opacity, 2.99:1; this one is --seal-blue-text on --sit-pick.
+      // Only an in-flight write disables it.
+      h += '<div class="sit-actions"><div class="sit-act-status">'
+        + '<span class="lbl" id="sit-mark-' + sid + '" '
+        + 'title="Records how far the team has got with this item. It does not change how Sierra answers — '
+        + 'use “Write an instruction about this” for that.">Mark this</span>'
+        + '<div class="sit-seg" role="group" aria-labelledby="sit-mark-' + sid + '">';
       STATUSES.forEach(function (s) {
         var on = (f.status || "new") === s;
-        h += '<button class="sit-btn' + (on ? " on" : "") + '" data-status="' + esc(s) + '" data-turn="' + esc(f.turn_id) + '"'
-          + (on || state.busy[f.turn_id] ? " disabled" : "") + ">" + esc(s) + "</button>";
+        h += '<button type="button" class="sit-btn' + (on ? " on" : "") + '" data-status="' + esc(s) + '" data-turn="' + esc(f.turn_id) + '"'
+          + ' aria-pressed="' + (on ? "true" : "false") + '"'
+          + ' title="' + esc(STATUS_HELP[s] || "") + '"'
+          + (state.busy[f.turn_id] ? " disabled" : "") + ">" + esc(statusLabel(s)) + "</button>";
       });
-      h += '<button class="sit-btn" data-qact="test" data-qsrc="fb:' + esc(f.turn_id) + '">🧪 Test in Sierra</button>'
-        + '<button class="sit-btn" data-qact="copy" data-qsrc="fb:' + esc(f.turn_id) + '">⧉ Copy question</button>';
-      h += "</div></div>";
+      h += "</div></div>"
+        + actDo("fb:" + f.turn_id, "sit-try-" + sid)
+        + "</div></div>";
     }
     return h + "</div>";
   }
@@ -477,33 +1632,79 @@
   // ── Gap miner ──
   function gapRows() {
     var rows = (state.turns || []).filter(function (t) { return gapKinds(t).length > 0; });
+    if (!state.gSmoke) rows = rows.filter(function (t) { return !isTurnSmoke(t); });
     if (state.gKind === "low-sim") rows = rows.filter(isLowSim);
     else if (state.gKind === "punt") rows = rows.filter(isPunt);
     if (state.gAudience) rows = rows.filter(function (t) { return ((t.audience || "(not set)")) === state.gAudience; });
+    // Absence of a review row IS "still outstanding", so the default view hides
+    // anything already handled. Without this the pane never shrinks and a
+    // question Sam fixed weeks ago still reads as an open gap.
+    if (state.gRev === "open") rows = rows.filter(function (t) { return !(state.turnReviews || {})[t.id]; });
+    else if (state.gRev) rows = rows.filter(function (t) {
+      var rv = (state.turnReviews || {})[t.id];
+      return !!rv && rv.status === state.gRev;
+    });
     if (state.gDays) rows = rows.filter(function (t) { return withinDays(t.created_at, +state.gDays); });
     return rows;
   }
   function gapRow(t) {
     var open = !!state.gOpen[t.id];
+    var sid = safeId(t.id);
+    var rv = (state.turnReviews || {})[t.id] || null;
     var kinds = gapKinds(t).map(function (k) {
       var label = k === "low-sim"
-        ? "⚠ low similarity" + (t.top_similarity == null ? " (none)" : " (" + Number(t.top_similarity).toFixed(2) + ")")
-        : "\u{1F6A7} punt";
-      return '<span class="sit-chip sit-chip-gap">' + label + "</span>";
+        ? "⚠ nothing close in the knowledge base"
+          + (t.top_similarity == null ? "" : " (" + Number(t.top_similarity).toFixed(2) + ")")
+        : "Sierra said she didn’t know";
+      var tip = k === "low-sim" ? HELP.similarity
+        : "Sierra answered that she could not find this. Either the knowledge base is missing it, "
+          + "or she needs an instruction telling her where to look.";
+      return '<span class="sit-chip sit-chip-gap" title="' + esc(tip) + '">' + label + "</span>";
     }).join("");
     var h = '<div class="sit-row">'
-      + '<div class="sit-row-head" data-gopen="' + esc(t.id) + '">'
+      + '<div class="sit-row-head" data-gopen="' + esc(t.id) + '" role="button" tabindex="0"'
+      + ' aria-expanded="' + (open ? "true" : "false") + '"'
+      + (open ? ' aria-controls="sit-gbody-' + sid + '"' : "") + ">"
       + kinds
       + '<span class="sit-q">' + esc(truncate(t.question || "(empty)", 150)) + "</span>"
       + '<span class="sit-meta">' + esc(t.audience || "—") + " · " + fmtWhen(t.created_at) + "</span>"
       + "</div>";
     if (open) {
-      h += '<div class="sit-row-body">'
-        + '<div class="lbl">Question</div><div class="txt">' + esc(t.question || "—") + "</div>"
-        + '<div class="lbl">Sierra’s answer</div><div class="txt">' + esc(t.response || "—") + "</div>"
-        + '<div class="sit-actions">'
-        + '<button class="sit-btn" data-qact="test" data-qsrc="gap:' + esc(t.id) + '">🧪 Test in Sierra</button>'
-        + '<button class="sit-btn" data-qact="copy" data-qsrc="gap:' + esc(t.id) + '">⧉ Copy question</button>'
+      h += '<div class="sit-row-body" id="sit-gbody-' + sid + '">'
+        + '<div class="lbl">Question</div><div class="txt" data-label="Question">' + esc(t.question || "—") + "</div>"
+        + '<div class="lbl">Sierra’s answer</div><div class="txt sit-answer" data-label="Sierra’s answer">' + esc(t.response || "—") + "</div>"
+        // The status lane the gap pane never had, on the LEFT of the same row as
+        // the remedy (round 1), so "handled" is one glance from the thing that
+        // actually changes Sierra. The already-set button stays disabled while
+        // set; "↩ Still to do" is the way back, because still-to-do is the
+        // ABSENCE of a review row, not a third stored status.
+        + '<div class="sit-actions"><div class="sit-act-status">'
+        + '<span class="lbl" id="sit-gmark-' + sid + '" title="Records that someone has dealt with this '
+        + 'question. It does not change how Sierra answers; “Write an instruction about this” '
+        + 'does that. Marking it only takes it off the &quot;still to do&quot; list.">Mark this</span>'
+        + '<span class="sit-gmark" role="group" aria-labelledby="sit-gmark-' + sid + '">'
+        + TURN_STATUSES.map(function (s) {
+          var on = !!(rv && rv.status === s);
+          return '<button type="button" class="sit-btn' + (on ? " on" : "") + '" data-turnrev="' + esc(s)
+            + '" data-turnid="' + esc(t.id) + '" aria-pressed="' + (on ? "true" : "false") + '"'
+            + ' title="' + esc(s === "resolved"
+                ? "You have handled this — an instruction is written, or she answers it correctly now."
+                : "Nothing to do here (a one-off, or a question we do not intend to answer).")
+            + '"' + (on || state.busy[t.id] ? " disabled" : "") + ">"
+            + esc(turnStatusLabel(s)) + "</button>";
+        }).join("")
+        + (rv
+            ? '<button type="button" class="sit-btn" data-turnrev="" data-turnid="' + esc(t.id) + '"'
+              + ' title="Put it back on the still-to-do list."'
+              + (state.busy[t.id] ? " disabled" : "") + ">↩ Still to do</button>"
+            : "")
+        + "</span>"
+        + (rv
+            ? '<span class="sit-meta">' + esc(turnStatusLabel(rv.status))
+              + (rv.updated_by ? " · " + esc(rv.updated_by) : "") + "</span>"
+            : "")
+        + "</div>"
+        + actDo("gap:" + t.id, "sit-gtry-" + sid)
         + "</div></div>";
     }
     return h + "</div>";
@@ -513,39 +1714,348 @@
   function guidanceRow(r, sent) {
     var chip = r.active
       ? (sent
-        ? '<span class="sit-chip sit-chip-addressed" title="Within the newest ' + GUIDANCE_SENT_CAP + ' active rules — sent to Sierra on every question">active · sent</span>'
-        : '<span class="sit-chip sit-chip-triaged" title="More than ' + GUIDANCE_SENT_CAP + ' newer active rules exist — this one is NOT currently sent">active · beyond top-' + GUIDANCE_SENT_CAP + ", not sent</span>")
-      : '<span class="sit-chip">inactive</span>';
+        ? '<span class="sit-chip sit-chip-addressed" title="' + esc(HELP.ruleSent) + '">Sierra is using this</span>'
+        // A state someone must act on (switch an older one off), so it keeps a
+        // color: crimson TEXT on the quiet chip. "Sierra is using this" lost its
+        // green in round 1, because nothing needs doing about it.
+        : '<span class="sit-chip sit-chip-notsent" title="' + esc(ruleNotSentHelp(r)) + '">On, but not reaching Sierra</span>')
+      : '<span class="sit-chip" title="' + esc(HELP.ruleOff) + '">Switched off</span>';
     var h = '<div class="sit-row' + (r.active ? "" : " sit-rule-off") + '">'
-      + '<div class="sit-row-head" style="cursor:default">'
+      // NOT role="button": this header holds a select and two buttons, and a
+      // button may not contain controls. It opens nothing, so it needs no role.
+      + '<div class="sit-row-head">'
       + chip
       + '<span class="sit-q">' + esc(r.rule) + "</span>"
+      // Plain words, no glyph — the Admin tab's rule (#1212). A "display" label
+      // has to appear on the ROW: the two kinds have separate budgets, so a
+      // curator reading "3 of 20 sent" needs to know which 20 this row is in.
+      + (guidKind(r) === "display"
+        ? '<span class="sit-chip" title="A display rule: it shapes structured output (table columns, labels, ordering) rather than telling Sierra what to say. Display rules have their own budget and never take a slot from an instruction.">Display rule</span>'
+        : "")
+      /* ⚠ A SCOPED RULE MUST SAY SO ON THE ROW. An instruction that reaches only
+       * one place looks identical to one that reaches all six, and the whole
+       * failure this column exists to fix was a rule quietly applying where its
+       * own opening condition could not be evaluated. Unscoped rows print
+       * nothing — six chips saying "Everywhere" is noise, not information. */
+      + (r.surface
+        ? '<span class="sit-chip" title="This instruction is only sent from one place. Everywhere else, Sierra never sees it.">'
+          + esc(surfaceLabel(r.surface)) + "</span>"
+        : "")
       + '<span class="sit-meta">' + esc(r.created_by || "—") + " · " + fmtWhen(r.created_at) + "</span>"
-      + '<button class="sit-btn" data-guid-toggle="' + esc(r.id) + '"' + (state.guidBusy[r.id] ? " disabled" : "") + ">"
-      + (r.active ? "Deactivate" : "Reactivate") + "</button>"
+      + '<label class="sit-meta sit-applies" title="Where this instruction is sent. Narrow it only when the instruction names something one place has and the others do not.">'
+      + "Applies: " + surfaceSelect('data-guid-surface-row="' + esc(r.id) + '"', r.surface) + "</label>"
+      + '<button type="button" class="sit-btn" data-guid-edit="' + esc(r.id) + '"'
+      + ' title="' + esc(HELP.ruleEdit) + '">Edit</button>'
+      + '<button type="button" class="sit-btn" data-guid-toggle="' + esc(r.id) + '"' + (state.guidBusy[r.id] ? " disabled" : "")
+      + ' title="' + (r.active
+        ? "Stops sending this to Sierra. It stays on the list so you can turn it back on."
+        : "Starts sending this to Sierra again, from her next answer.") + '">'
+      + (r.active ? "Switch off" : "Switch on") + "</button>"
       + "</div>";
     if (r.note) {
-      h += '<div class="sit-row-body" style="padding:6px 14px;border-top:none"><span class="lbl" style="margin:0;display:inline">Note:</span> ' + esc(r.note) + "</div>";
+      h += '<div class="sit-row-body"><span class="lbl sit-inline-lbl">Note:</span> ' + esc(r.note) + "</div>";
+    }
+    if (String(r.updated_at || "") && r.updated_by && String(r.updated_at) !== String(r.created_at)) {
+      h += '<div class="sit-row-body">'
+        + '<span class="sit-meta">Last edited by ' + esc(r.updated_by) + " · " + fmtWhen(r.updated_at) + "</span></div>";
     }
     return h + "</div>";
   }
 
+  // The editor, rendered IN PLACE of the row being edited. It carries a test
+  // question with it: the point of editing an instruction is to change what
+  // Sierra SAYS, and the only way to know whether it worked is to ask her —
+  // so the loop (edit → ask → edit again) belongs in one control, not spread
+  // across two tabs the curator has to remember to walk between.
+  function guidanceEditor(r) {
+    var used = String(state.editRule || "").length;
+    var h = '<div class="sit-row sit-guid-editing">'
+      + '<div class="sit-guid-editbox">'
+      + '<div class="sit-guid-editlbl">Editing this instruction — Sierra follows it literally.</div>'
+      + '<textarea class="sit-guid-edit-input" aria-label="Wording of this instruction" maxlength="' + GUIDANCE_RULE_MAX + '" rows="4" '
+      + 'title="Change the wording and press Save. Sierra uses the new text on her very next answer.">'
+      + esc(state.editRule) + "</textarea>"
+      + '<div class="sit-guid-count' + (used > GUIDANCE_RULE_MAX - 150 ? " warn" : "") + '" data-guid-edit-count>'
+      + used.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
+      + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
+      + "</div>"
+      + '<input class="sit-guid-edit-note" aria-label="Note for the team" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.editNote) + '" '
+      + 'title="Just for the team — Sierra never sees the note." '
+      + 'placeholder="Optional note for the team — why this instruction exists">'
+      + '<div class="sit-guid-editlbl" id="sit-guid-testq-l" style="margin-top:8px">Try it on Sierra</div>'
+      + '<input class="sit-guid-edit-testq" aria-labelledby="sit-guid-testq-l" maxlength="500" value="' + esc(state.editTestQ) + '" '
+      + 'title="' + esc(HELP.ruleTestQ) + '" '
+      + 'placeholder="A question that should get better because of this instruction — '
+      + 'e.g. What CPL does Cerritos College offer for ironworkers?">'
+      + '<div class="sit-guid-editrow">'
+      + '<button type="button" class="sit-btn sit-btn-primary" data-guid-save="' + esc(r.id) + '"'
+      + (state.editBusy ? " disabled" : "") + ' title="Saves the new wording. Sierra uses it on her next answer.">'
+      + (state.editBusy ? "Saving…" : "Save") + "</button>"
+      + '<button type="button" class="sit-btn" data-guid-savetest="' + esc(r.id) + '"'
+      + (state.editBusy ? " disabled" : "") + ' title="' + esc(HELP.ruleSaveTest) + '">'
+      + "Save &amp; ask Sierra →</button>"
+      + '<button type="button" class="sit-btn" data-guid-cancel title="Closes without saving. Your changes are discarded.">'
+      + "Cancel</button>"
+      + "</div>"
+      + '<div class="sit-guid-editnote">Saving does not switch the instruction on. '
+      + (r.active
+        ? "This one is <b>on</b>, so the new wording reaches Sierra immediately."
+        : "This one is <b>switched off</b> — switch it on for Sierra to use it.")
+      + " Coming back from Sierra reopens this editor where you left it.</div>"
+      + "</div></div>";
+    return h;
+  }
+
+  // ── Built-in rule rows ──
+  function ruleRow(r) {
+    var open = !!state.rulesOpen[r.key];
+    var edited = r.overridden;
+    var off = !r.active;
+    var sid = safeId(r.key);
+    // `.sit-rule` stays as a hook (tests count one per rule); the colored left
+    // edge it used to carry is gone (round 1). The header opens the rule's
+    // wording, so it is a button.
+    var h = '<div class="sit-row sit-rule' + (off ? " sit-rule-off" : "") + '">';
+    h += '<div class="sit-row-head" data-ruleopen="' + esc(r.key) + '" role="button" tabindex="0"'
+      + ' aria-expanded="' + (open ? "true" : "false") + '"'
+      + (open ? ' aria-controls="sit-rbody-' + sid + '"' : "") + ">"
+      + '<span class="sit-q">' + esc(r.title) + "</span>"
+      + '<span class="sit-chip" title="The order Sierra reads the rules in. A lower number is read '
+      + 'earlier, and an earlier rule beats a later one when they disagree — which is exactly how a '
+      + 'built-in rule can quietly override an instruction you wrote.">#' + r.sortOrder + "</span>"
+      + '<span class="sit-chip" title="When this rule is sent to Sierra. Rules that do not apply to a '
+      + 'question are left out of it entirely.">' + esc(whenLabel(r.appliesWhen)) + "</span>";
+    if (r.protectedKey) {
+      h += '<span class="sit-chip sit-chip-prot" title="A safety rule. Its built-in wording is ALWAYS '
+        + "sent, switching it off does nothing, and anything you write here is ADDED to it rather than "
+        + "replacing it. These carry the never-invent-a-college and student-privacy guarantees.\">"
+        + "Protected</span>";
+    }
+    h += edited
+      ? '<span class="sit-chip sit-chip-edited" title="Someone on the team has changed this rule. '
+        + 'The built-in wording is still shown below, so you can see what was changed from.">Edited</span>'
+      : '<span class="sit-chip" title="This rule is running exactly as it ships in the code — nobody '
+        + 'has changed it.">Built-in</span>';
+    if (off) {
+      h += '<span class="sit-chip" title="Switched off, so Sierra is not sent this rule '
+        + 'at all.">Switched off</span>';
+    }
+    // ▸/▾ repeat what aria-expanded already announces, so they are hidden from
+    // a screen reader (the ▸ is on Sam's 2026-09-09 keep list).
+    h += '<span class="sit-meta sit-disclose" aria-hidden="true">' + (open ? "▾" : "▸") + "</span></div>";
+
+    if (open) {
+      h += '<div class="sit-row-body" id="sit-rbody-' + sid + '">';
+      if (edited && !r.protectedKey) {
+        h += '<div class="lbl">What Sierra is being told now (the team’s wording)</div>'
+          + '<div class="txt" data-label="The team’s wording">' + esc(r.curatorBody) + "</div>"
+          + '<div class="lbl">The built-in wording this replaced</div>'
+          + '<div class="txt sit-dim" data-label="The built-in wording">' + esc(r.defaultBody) + "</div>";
+      } else if (edited && r.protectedKey) {
+        h += '<div class="lbl">Built-in wording (always sent — this part cannot be replaced)</div>'
+          + '<div class="txt" data-label="The built-in wording">' + esc(r.defaultBody) + "</div>"
+          + '<div class="lbl">What the team added to it</div>'
+          + '<div class="txt" data-label="What the team added">' + esc(r.curatorBody) + "</div>";
+      } else {
+        h += '<div class="lbl">What Sierra is being told</div>'
+          + '<div class="txt" data-label="What Sierra is being told">' + esc(r.body) + "</div>";
+      }
+      if (r.row && r.row.updated_by) {
+        h += '<div class="sit-guid-editnote">Last changed by <b>' + esc(r.row.updated_by) + "</b>"
+          + (r.row.updated_at ? " on " + esc(fmtWhen(r.row.updated_at)) : "") + ".</div>";
+      }
+      if (state.ruleEditKey === r.key) {
+        h += ruleEditor(r);
+      } else {
+        // One group, so the row's space-between layout keeps them together on the left.
+        h += '<div class="sit-actions"><div class="sit-act-do">'
+          + '<button type="button" class="sit-btn sit-btn-primary" data-ruleedit="' + esc(r.key) + '">'
+          + (r.protectedKey ? "Add to this rule" : "Change this rule") + "</button>";
+        // A protected rule ignores active=false, so offering the switch would be
+        // a control that does nothing — the `Clear owner` no-op, repeated.
+        if (!r.protectedKey) {
+          h += '<button type="button" class="sit-btn" data-ruletoggle="' + esc(r.key) + '"'
+            + (state.ruleBusy[r.key] ? " disabled" : "")
+            + ' title="Stops this rule being sent to Sierra at all. The built-in wording is kept, so '
+            + 'you can switch it back on.">'
+            + (state.ruleBusy[r.key] ? "Working…" : (r.active ? "Switch off" : "Switch on")) + "</button>";
+        }
+        if (edited) {
+          h += '<button type="button" class="sit-btn" data-rulerestore="' + esc(r.key) + '"'
+            + (state.ruleBusy[r.key] ? " disabled" : "")
+            + ' title="Puts the original built-in wording back. The row stays in the table, marked as '
+            + 'changed, so the history of what was tried is not lost.">↩ Restore the built-in wording</button>';
+        }
+        h += "</div></div>";
+      }
+      h += "</div>";
+    }
+    return h + "</div>";
+  }
+
+  function ruleEditor(r) {
+    var when = state.ruleEditWhen || r.appliesWhen;
+    var labels = ruleDefaults().when_labels;
+    var h = '<div class="sit-guid-editbox">';
+    h += '<div class="sit-guid-editlbl" id="sit-rule-edit-l">'
+      + (r.protectedKey
+        ? "Text to ADD to this safety rule. The built-in wording above is always sent as well."
+        : "The wording Sierra follows. This replaces the built-in text above.")
+      + "</div>";
+    h += '<textarea class="sit-rule-body" rows="10" aria-labelledby="sit-rule-edit-l" '
+      + 'placeholder="Write it as you would say it to a colleague.">' + esc(state.ruleEditBody) + "</textarea>";
+    h += '<div class="sit-guid-editrow">'
+      + '<label class="sit-check" title="When this rule is sent to Sierra. Leave it alone unless you '
+      + 'know the rule should fire on a different kind of question.">When: '
+      + '<select class="sit-select sit-rule-when">'
+      + Object.keys(labels).map(function (k) {
+        return '<option value="' + esc(k) + '"' + (k === when ? " selected" : "") + ">" + esc(labels[k]) + "</option>";
+      }).join("")
+      + "</select></label>"
+      + '<label class="sit-check" title="Lower numbers are read first, and an earlier rule wins when '
+      + 'two disagree. Change this only to settle a conflict between two rules.">Order: '
+      + '<input class="sit-select sit-rule-order" type="number" min="1" max="9999" style="width:80px" value="'
+      + esc(state.ruleEditOrder || String(r.sortOrder)) + '"></label>'
+      + "</div>";
+    h += '<div class="sit-guid-editrow">'
+      + '<button type="button" class="sit-btn sit-btn-primary" data-rulesave="' + esc(r.key) + '"'
+      + (state.ruleBusy[r.key] ? " disabled" : "") + ">"
+      + (state.ruleBusy[r.key] ? "Saving…" : "Save") + "</button>"
+      + '<button type="button" class="sit-btn" data-rulecancel>Cancel</button>'
+      + "</div>";
+    h += '<div class="sit-guid-editnote">⚠ This changes <b>every</b> place Sierra appears, for everyone, '
+      + "on her next answer — there is nothing to deploy and no review in between.</div>";
+    return h + "</div>";
+  }
+
+  /* The pane, including its four DISTINCT states.
+   *
+   * Keeping them distinct is the whole job. "Signed in but not a reviewer",
+   * "the read failed" and "nobody has changed anything" all produce an empty
+   * list, and rendering them the same way would tell a locked-out person that
+   * Sierra has no rules — the exact inversion team_phrases.js exists to avoid,
+   * arrived at from the opposite direction. */
+  function renderRulesPane() {
+    var defs = ruleDefaults().rules;
+    // A plain line under the heading (round 1). "OUTRANK the instructions above"
+    // stays verbatim: tests/sierra_rule_defaults.test.js pins the precedence on
+    // screen, because it is the reason this pane exists.
+    var h = '<h3 id="sit-h-rules">Sierra’s built-in rules <span class="sit-meta">The rules that come with her. '
+      + "These OUTRANK the instructions above.</span></h3>";
+    h += '<p class="sit-guid-warn">These ship inside Sierra herself. When one of them disagrees with an '
+      + "instruction you wrote above, <b>the built-in rule usually wins</b>, because she reads the built-in "
+      + "rules first. Seeing them here tells you which rule is in play when an instruction seems to do "
+      + "nothing.</p>";
+
+    if (!defs.length) {
+      // The generated file did not load. Say which file — a curator can hand
+      // that to whoever is on call, and it is a deploy problem, not a permission one.
+      return h + '<div class="sit-empty">Could not load the built-in rules '
+        + "(<code>sierra_rule_defaults.js</code> did not load). This is a site problem, not a "
+        + "permission one — the rules are still governing Sierra normally.</div>";
+    }
+
+    if (state.rulesState === "loading") {
+      return h + '<div class="sit-empty">Loading the built-in rules…</div>';
+    }
+    if (state.rulesState === "notreviewer") {
+      return h + '<div class="sit-empty"><b>These need a personal sign-in.</b><br>'
+        + "The team phrase opens the instructions above, but not this pane — these are the rules that "
+        + "<i>govern</i> the instructions, so they are deliberately held to a narrower gate. Sign in with "
+        + "a magic link from <b>ℹ About</b> in the header using an address on the reviewer list, then "
+        + "re-open this tab. This is a closed door, not an empty list — Sierra’s rules are all present "
+        + "and working.</div>";
+    }
+    if (state.rulesState === "error") {
+      return h + '<div class="sit-empty">Could not check the built-in rules ('
+        + esc(state.rulesErr || "read failed") + "). This does <b>not</b> mean they are switched off — "
+        + "Sierra keeps running them. Re-open the tab to try again.</div>";
+    }
+    if (state.rulesState !== "ok") {
+      return h + '<div class="sit-empty">Sign in from ℹ About in the header to see Sierra’s '
+        + "built-in rules.</div>";
+    }
+
+    var merged = mergeRules(defs, state.rules);
+    var editedCount = merged.filter(function (r) { return r.overridden; }).length;
+    var offCount = merged.filter(function (r) { return !r.active; }).length;
+    h += '<p class="sit-cap">' + merged.length + " built-in rules · <b>" + editedCount
+      + "</b> changed by the team"
+      + (offCount ? " · <b>" + offCount + "</b> switched off" : "")
+      + ". Anything not marked <i>Edited</i> is running exactly as it ships. "
+      + "Rules are listed in the order Sierra reads them, first to last.</p>";
+    h += '<div class="sit-list" id="sit-rule-list">';
+    merged.forEach(function (r) { h += ruleRow(r); });
+    return h + "</div>";
+  }
+
   // ── Render ──
+  // "Showing N of M: <what the filters say> · Show all" (round 1). Returns the
+  // markup and the plain sentence the announcer speaks. No line when the list
+  // has nothing in it at all: the empty message says that.
+  function showing(key, n, total, words) {
+    if (!total) return { html: "", said: "" };
+    if (!words.length) return { html: "Showing all <b>" + total + "</b>", said: "Showing all " + total };
+    var w = words.join(", ");
+    return {
+      html: "Showing <b>" + n + "</b> of " + total + ": " + esc(w)
+        + ' · <button type="button" class="sit-linkbtn" data-show-all="' + key + '">Show all</button>',
+      said: "Showing " + n + " of " + total + ": " + w,
+    };
+  }
+  function fbWords() {
+    var w = [];
+    if (state.fRating) w.push(state.fRating === "down" ? "thumbs-down" : "thumbs-up");
+    if (state.fStatus) w.push(STATUS_WORD[state.fStatus] || "one review state");
+    if (state.fAudience) w.push(audienceWord(state.fAudience));
+    if (state.fPage) w.push(pageWord(state.fPage));
+    if (state.fNote) w.push("with a comment");
+    if (state.fDays) w.push(DAYS_WORD[state.fDays] || "a recent window");
+    return w;
+  }
+  function gapWords() {
+    var w = [];
+    if (state.gKind === "low-sim") w.push("nothing close in the knowledge base");
+    else if (state.gKind === "punt") w.push("she said she didn’t know");
+    if (state.gAudience) w.push(audienceWord(state.gAudience));
+    if (state.gRev === "open") w.push("still to do");
+    else if (state.gRev === "resolved") w.push("handled");
+    else if (state.gRev === "wont_fix") w.push("left as is");
+    if (state.gDays) w.push(DAYS_WORD[state.gDays] || "a recent window");
+    return w;
+  }
+  // A number card that filters (aria-pressed) and one that only moves the reader
+  // (no aria-pressed: it never lights up, and says where it goes to a screen reader).
+  function statCard(key, n, label, tip, pressed, controls) {
+    return '<button type="button" class="box" data-stat="' + key + '" aria-pressed="' + (pressed ? "true" : "false") + '"'
+      + ' aria-controls="' + controls + '" title="' + esc(tip) + '">'
+      + '<span class="n">' + n + '</span><span class="l">' + esc(label) + "</span></button>";
+  }
+  function goCard(key, n, label, tip, spoken) {
+    return '<button type="button" class="box sit-stat-go" data-stat="' + key + '" aria-controls="sit-gap-list"'
+      + ' title="' + esc(tip) + '">'
+      + '<span class="n">' + n + '</span><span class="l">' + esc(label) + "</span>"
+      + '<span class="sit-vh">' + esc(spoken) + "</span></button>";
+  }
+
   function render(root) {
     ensureCss();
+    shedPlaceholder(root);
     if (state.loading) { root.innerHTML = '<div class="sit"><p class="sit-gate">Loading Sierra logs…</p></div>'; return; }
 
+    var ready = signedIn() && !state.error && !state.gated;
     var html = '<div class="sit">';
     html += '<h2>Sierra Training <span class="sit-gatechip">Team only</span></h2>';
-    html += '<p class="sit-intro">The improvement loop for <b>Sierra</b>, the CPL assistant: the '
-      + "\u{1F44D}/\u{1F44E} <b>feedback queue</b> from both chat surfaces, and a <b>gap miner</b> over the "
-      + "chat logs — turns where the knowledge base had nothing close (low similarity) or Sierra "
-      + "explicitly punted. Triage the queue; the recurring themes point at the artifacts and "
-      + "guidance Sierra is missing.</p>";
+    html += '<p class="sit-intro">Where you teach <b>Sierra</b>, the CPL assistant, to answer better. '
+      + "Three parts, in the order you would use them: what people said about her answers, the "
+      + "questions she struggled to answer, and the <b>instructions</b> you give her — plain-English "
+      + "rules she follows on every question, live within a minute. "
+      + (ready ? "Press any number below to see what it counts. " : "")
+      + "Hover anything you don’t recognize; every filter and label explains itself.</p>";
 
     if (!signedIn()) {
       html += '<div class="sit-empty">This surface reads the gated Sierra logs. '
-        + 'Sign in on the <b>Team &amp; RACI</b> tab (magic-link reviewer or the shared team phrase), '
+        + 'Sign in from <b>ℹ About</b> in the header (magic-link reviewer or the shared team phrase), '
         + "then come back — the queue loads automatically.</div></div>";
       root.innerHTML = html;
       return;
@@ -553,127 +2063,302 @@
     if (state.error) {
       html += '<div class="sit-empty">Could not load the Sierra logs (' + esc(state.error)
         + "). If you just signed in, re-open this tab; otherwise your session may have expired — "
-        + 'renew it on the <b>Team &amp; RACI</b> tab.</div></div>';
+        + 'renew it from <b>ℹ About</b> in the header.</div></div>';
       root.innerHTML = html;
       return;
     }
     if (state.gated) {
       html += '<div class="sit-empty">The server returned no rows — your sign-in doesn’t appear to '
-        + "unlock the gated logs. Renew your session on the <b>Team &amp; RACI</b> tab and try again.</div></div>";
+        + "unlock the gated logs. Renew your sign-in from <b>ℹ About</b> in the header and try again.</div></div>";
       root.innerHTML = html;
       return;
     }
 
-    var fb = state.feedback || [];
+    // Read the focus wish BEFORE the markup is replaced — the focused control
+    // is about to be destroyed.
+    var focusWant = pendingFocus(root);
+
+    var fbAll = state.feedback || [];
+    var smokeCount = fbAll.filter(isSmoke).length;
+    // Stats follow the same rule as the queue: CI rows are excluded unless the
+    // reviewer opts in. Counting them made the thumbs-down total read 38 when
+    // only 10 were real reports — a headline that is 74% our own smoke test
+    // teaches a reviewer the number means nothing.
+    var fb = state.fSmoke ? fbAll : fbAll.filter(function (f) { return !isSmoke(f); });
     var turns = state.turns || [];
-    var gaps = turns.filter(function (t) { return gapKinds(t).length > 0; });
+    // Excludes the CI smoke test, like the gap list itself — otherwise the
+    // theme chips and the audience counts describe the robot's vocabulary. On
+    // 2026-08-13 the top themes read "san ×35 · contact ×24 · diego ×22 ·
+    // mesa ×24", which is the smoke suite asking about San Diego Mesa, not a
+    // pattern in what people want.
+    var gaps = turns.filter(function (t) {
+      return gapKinds(t).length > 0 && (state.gSmoke || !isTurnSmoke(t));
+    });
     var openCount = fb.filter(function (f) { return (f.status || "new") !== "addressed"; }).length;
     var downCount = fb.filter(function (f) { return f.rating === "down"; }).length;
     var activeGuidance = (state.guidance || []).filter(function (r) { return r.active; }).length;
 
-    html += '<div class="sit-stat">'
-      + '<div class="box"><div class="n">' + openCount + '</div><div class="l">Open feedback</div></div>'
-      + '<div class="box"><div class="n">' + downCount + '</div><div class="l">\u{1F44E} total</div></div>'
-      + '<div class="box"><div class="n">' + gaps.length + '</div><div class="l">Gap turns</div></div>'
-      + '<div class="box"><div class="n">' + turns.length + '</div><div class="l">Turns analyzed</div></div>'
-      + '<div class="box"><div class="n">' + activeGuidance + '</div><div class="l">🧭 Active guidance</div></div>'
+    // ── The five numbers, as buttons (round 1) ──
+    html += '<div class="sit-stat" role="group" aria-label="Counts. Press one to see those items.">'
+      + statCard("todo", openCount, "Still to do", HELP.cardTodo, fbViewIs(FB_VIEWS.todo), "sit-fb-list")
+      + statCard("down", downCount, "Thumbs-down", HELP.cardDown, fbViewIs(FB_VIEWS.down), "sit-fb-list")
+      + goCard("gaps", gaps.length, "Questions she struggled with", HELP.gapKind + " Press to go to that list.",
+          ", go to that list")
+      + goCard("convos", turns.length, "Conversations checked", HELP.cardConvos,
+          ", go to the questions she struggled with")
+      + statCard("inuse", activeGuidance, "Instructions in use", HELP.cardInUse, !!state.guidOnlyOn, "sit-guid-list")
       + "</div>";
 
     // ── Pane 1: feedback queue ──
     var rows = filteredFeedback();
-    html += "<h3>\u{1F4EC} Feedback queue</h3>";
+    var fbShow = showing("fb", rows.length, fb.length, fbWords());
+    html += '<h3 id="sit-h-fb" tabindex="-1">What people said about Sierra’s answers '
+      + '<span class="sit-meta">From the thumbs-up and thumbs-down buttons wherever Sierra appears.</span></h3>';
     html += '<div class="sit-toolbar">'
-      + '<select class="sit-select" data-f="fRating">' + options(["down", "up"], state.fRating, "Any rating") + "</select>"
-      + '<select class="sit-select" data-f="fAudience">' + options(distinct(fb, "audience", "(not set)"), state.fAudience, "Any audience") + "</select>"
-      + '<select class="sit-select" data-f="fPage">' + options(distinct(fb, "page", "(unknown)"), state.fPage, "Any page") + "</select>"
-      + '<select class="sit-select" data-f="fStatus">'
-      + '<option value="open"' + (state.fStatus === "open" ? " selected" : "") + ">Open (new + triaged)</option>"
-      + '<option value=""' + (state.fStatus === "" ? " selected" : "") + ">Any status</option>"
-      + STATUSES.map(function (s) { return '<option value="' + s + '"' + (state.fStatus === s ? " selected" : "") + ">" + s + "</option>"; }).join("")
-      + "</select>"
-      + '<label class="sit-check"><input type="checkbox" data-f-note' + (state.fNote ? " checked" : "") + "> has note</label>"
-      + '<select class="sit-select" data-f="fDays" aria-label="Feedback date range">' + dayOptions(state.fDays) + "</select>"
-      + '<span class="sit-bulk">Mark all ' + rows.length + " filtered → "
-      + '<select class="sit-select" data-bulk-status aria-label="Bulk triage status">'
-      + ["triaged", "addressed"].map(function (s) {
-        return '<option value="' + s + '"' + (state.bulkStatus === s ? " selected" : "") + ">" + s + "</option>";
+      + '<select class="sit-select" data-f="fRating" aria-label="Rating" title="' + esc(HELP.rating) + '">'
+      + options(["down", "up"], state.fRating, "Any rating", RATING_LABEL) + "</select>"
+      + '<select class="sit-select" data-f="fAudience" aria-label="Who asked" title="' + esc(HELP.audience) + '">'
+      + options(distinct(fb, "audience", "(not set)"), state.fAudience, "Anyone asking") + "</select>"
+      + '<select class="sit-select" data-f="fPage" aria-label="Page" title="' + esc(HELP.page) + '">'
+      + options(distinct(fb, "page", "(unknown)"), state.fPage, "Any page") + "</select>"
+      + '<select class="sit-select" data-f="fStatus" aria-label="Review status" title="' + esc(HELP.status) + '">'
+      + '<option value="open"' + (state.fStatus === "open" ? " selected" : "") + ">Still to do</option>"
+      + '<option value=""' + (state.fStatus === "" ? " selected" : "") + ">Everything</option>"
+      + STATUSES.map(function (s) {
+        return '<option value="' + s + '"' + (state.fStatus === s ? " selected" : "") + ">" + esc(statusLabel(s)) + "</option>";
       }).join("")
       + "</select>"
-      + '<button class="sit-btn" data-bulk-apply' + (state.bulkBusy || !rows.length ? " disabled" : "") + ">"
+      + '<select class="sit-select" data-f="fDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
+      + dayOptions(state.fDays) + "</select>"
+      + '<label class="sit-check" title="' + esc(HELP.note) + '">'
+      + '<input type="checkbox" data-f-note' + (state.fNote ? " checked" : "") + "> only ones with a comment</label>"
+      + '<label class="sit-check sit-check-dim" title="' + esc(HELP.smoke) + '">'
+      + '<input type="checkbox" data-f-smoke' + (state.fSmoke ? " checked" : "") + "> include "
+      + smokeCount + " automated test messages</label>"
+      + '<span class="sit-bulk" title="' + esc(HELP.bulk) + '">Mark all <span data-bulk-n>' + rows.length + "</span> shown as "
+      + '<select class="sit-select" data-bulk-status aria-label="State to set them all to" '
+      + 'title="' + esc(HELP.bulk) + '">'
+      + ["triaged", "addressed"].map(function (s) {
+        return '<option value="' + s + '"' + (state.bulkStatus === s ? " selected" : "") + ">" + esc(statusLabel(s)) + "</option>";
+      }).join("")
+      + "</select>"
+      + '<button type="button" class="sit-btn" data-bulk-apply' + (state.bulkBusy || !rows.length ? " disabled" : "") + ">"
       + (state.bulkBusy ? "Working…" : "Apply") + "</button></span>"
-      + '<span class="sit-count">' + rows.length + " of " + fb.length + "</span>"
       + "</div>";
+    // Replaces the old "N of M" count: says what the list holds and how to widen it.
+    html += '<p class="sit-showing" id="sit-fb-showing" tabindex="-1">' + fbShow.html + "</p>";
+    html += '<div class="sit-list" id="sit-fb-list">' + rows.map(feedbackRow).join("") + "</div>";
     if (!rows.length) {
-      html += '<div class="sit-empty">' + (fb.length ? "No feedback matches these filters." : "No feedback yet — the \u{1F44D}/\u{1F44E} bar on the Sierra surfaces feeds this queue.") + "</div>";
-    } else {
-      rows.forEach(function (f) { html += feedbackRow(f); });
+      html += '<div class="sit-empty">' + (fb.length ? "No feedback matches these filters."
+        : "No feedback yet. It arrives here when someone presses thumbs-up or thumbs-down on one of "
+          + "Sierra’s answers.") + "</div>";
     }
 
     // ── Pane 2: gap miner ──
     var g = gapRows();
+    var gapShow = showing("gap", g.length, gaps.length, gapWords());
+    // How many the CI toggle is hiding — printed on the label so the exclusion
+    // is visible rather than a silent filter.
+    var gapSmokeCount = (state.turns || []).filter(function (t) {
+      return gapKinds(t).length > 0 && isTurnSmoke(t);
+    }).length;
     var themes = themeCounts(gaps);
     var byAud = audienceCounts(gaps);
-    html += "<h3>⛏️ Gap miner <span class=\"sit-meta\">(newest " + turns.length + " turns; low similarity &lt; " + LOW_SIM + " or Sierra punted)</span></h3>";
+    html += '<h3 id="sit-h-gaps" tabindex="-1">Questions Sierra struggled with <span class="sit-meta">From the newest '
+      + turns.length + " conversations: she either had nothing close to answer from, or said she didn’t know.</span></h3>";
     if (themes.length) {
       html += '<div class="sit-themes">' + themes.map(function (t) {
         return '<span class="sit-theme">' + esc(t.word) + " <b>×" + t.n + "</b></span>";
       }).join("") + "</div>";
     }
     html += '<div class="sit-toolbar">'
-      + '<select class="sit-select" data-g="gKind">'
-      + '<option value="all"' + (state.gKind === "all" ? " selected" : "") + ">All gaps</option>"
-      + '<option value="low-sim"' + (state.gKind === "low-sim" ? " selected" : "") + ">Low similarity</option>"
-      + '<option value="punt"' + (state.gKind === "punt" ? " selected" : "") + ">Punts</option>"
+      + '<select class="sit-select" data-g="gKind" aria-label="Kind" title="' + esc(HELP.gapKind) + '">'
+      + '<option value="all"' + (state.gKind === "all" ? " selected" : "") + ">Both kinds</option>"
+      + '<option value="low-sim"' + (state.gKind === "low-sim" ? " selected" : "") + ">Nothing close in the knowledge base</option>"
+      + '<option value="punt"' + (state.gKind === "punt" ? " selected" : "") + ">Sierra said she didn’t know</option>"
       + "</select>"
-      + '<select class="sit-select" data-g="gAudience">' + options(Object.keys(byAud).sort(), state.gAudience, "Any audience") + "</select>"
-      + '<select class="sit-select" data-g="gDays" aria-label="Gap date range">' + dayOptions(state.gDays) + "</select>"
+      + '<select class="sit-select" data-g="gAudience" aria-label="Who asked" title="' + esc(HELP.audience) + '">'
+      + options(Object.keys(byAud).sort(), state.gAudience, "Anyone asking") + "</select>"
+      + '<select class="sit-select" data-g="gRev" aria-label="Review status" title="Whether to show questions somebody has already dealt with. Marking one handled does not change Sierra — it only takes it off this list.">'
+      + '<option value="open"' + (state.gRev === "open" ? " selected" : "") + ">Still to do</option>"
+      + '<option value=""' + (state.gRev === "" ? " selected" : "") + ">Everything</option>"
+      + TURN_STATUSES.map(function (s2) {
+        return '<option value="' + s2 + '"' + (state.gRev === s2 ? " selected" : "") + ">"
+          + esc(turnStatusLabel(s2)) + "</option>";
+      }).join("")
+      + "</select>"
+      // Every select before the checkbox, as in the feedback toolbar, so a phone
+      // lays the filters out two across without a gap.
+      + '<select class="sit-select" data-g="gDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
+      + dayOptions(state.gDays) + "</select>"
+      + '<label class="sit-check sit-check-dim" title="The CI smoke test asks a fixed set of questions on every deploy, twice each — robot traffic, not people. They were 83% of this list before being excluded.">'
+      + '<input type="checkbox" data-g-smoke' + (state.gSmoke ? " checked" : "") + "> include "
+      + gapSmokeCount + " automated test messages</label>"
       + '<span class="sit-meta">' + Object.keys(byAud).sort().map(function (a) { return esc(a) + " " + byAud[a]; }).join(" · ") + "</span>"
-      + '<span class="sit-count">' + g.length + " of " + gaps.length + "</span>"
+      + '<span class="sit-bulk" title="Marks every row currently shown. It does not change how Sierra answers — it only clears them off the still-to-do list.">Mark all ' + g.length + " shown as "
+      + '<select class="sit-select" data-gbulk-status aria-label="State to set them all to"'
+      + ' title="What to mark every shown row as. &quot;Handled&quot; means you have dealt with it — '
+      + 'an instruction is written, or Sierra answers it correctly now. &quot;Leave it&quot; means there is '
+      + 'nothing to do. Neither changes how Sierra answers.">'
+      + TURN_STATUSES.map(function (s2) {
+        return '<option value="' + s2 + '"' + (state.gBulkStatus === s2 ? " selected" : "") + ">"
+          + esc(turnStatusLabel(s2)) + "</option>";
+      }).join("")
+      + "</select>"
+      + '<button type="button" class="sit-btn" data-gbulk-apply' + (state.gBulkBusy || !g.length ? " disabled" : "") + ">"
+      + (state.gBulkBusy ? "Working…" : "Apply") + "</button></span>"
       + "</div>";
+    // The same line as the feedback list's, so the gap number and this list can
+    // be reconciled at a glance: the number counts everything, the list starts
+    // on "still to do".
+    html += '<p class="sit-showing" id="sit-gap-showing" tabindex="-1">' + gapShow.html + "</p>";
+    html += '<div class="sit-list" id="sit-gap-list">' + g.map(gapRow).join("") + "</div>";
     if (!g.length) {
-      html += '<div class="sit-empty">No gap turns match — nice.</div>';
-    } else {
-      g.forEach(function (t) { html += gapRow(t); });
+      html += '<div class="sit-empty">' + (gaps.length ? "No struggled questions match these filters."
+        : "No struggled questions in the conversations checked.") + "</div>";
     }
 
     // ── Pane 3: guidance layer (Phase 2) ──
-    html += "<h3>🧭 Guidance <span class=\"sit-meta\">(response directives Sierra follows — live within a minute, no redeploy)</span></h3>";
-    html += '<p class="sit-guid-warn">⚠ Guidance steers <b>every</b> Sierra surface, including the production '
-      + "map.rccd.edu widget. Sierra receives the newest <b>" + GUIDANCE_SENT_CAP + " active</b> rules on every "
-      + "question (each ≤500 characters). Deactivate instead of deleting — the list is its own audit trail.</p>";
+    html += '<h3 id="sit-h-guid" tabindex="-1">Instructions for Sierra <span class="sit-meta">Plain-English rules '
+      + "she follows. They reach her within a minute, with nothing to deploy.</span></h3>";
+    html += '<p class="sit-guid-warn">⚠ These change <b>every</b> place Sierra appears, including My College '
+      + "and the public assistant. Sierra receives the newest <b>" + GUIDANCE_SENT_CAP + "</b> switched-on "
+      + "instructions with every question, plus up to <b>" + GUIDANCE_DISPLAY_CAP + "</b> display rules, which "
+      + "have their own count and never take a slot from an instruction. To retire one, switch it off; the "
+      + "list keeps its own record of what has been tried.</p>";
+    // The total budget is a SILENT failure: past it, the function stops adding
+    // rules and the oldest simply never reach Sierra. Show it before it bites.
+    // ⚠ RANK WITHIN EACH KIND, NOT ACROSS BOTH. The edge function issues one
+    // bounded read per kind, so a display rule cannot push a directive out of
+    // the directive window. Counting them in one sequence here would report a
+    // rule as "not reaching Sierra" that is in fact being sent — the meter would
+    // be describing a mechanism that no longer exists.
+    var sentChars = 0, sentRankBy = {};
+    (state.guidance || []).forEach(function (r) {
+      if (!r.active) return;
+      var k = guidKind(r);
+      sentRankBy[k] = (sentRankBy[k] || 0) + 1;
+      if (sentRankBy[k] <= capFor(k)) sentChars += Math.min(String(r.rule || "").length, GUIDANCE_RULE_MAX) + 3;
+    });
+    var budgetPct = Math.round((sentChars / GUIDANCE_TOTAL_MAX) * 100);
+    html += '<p class="sit-guid-budget' + (budgetPct >= 80 ? " warn" : "") + '" '
+      + 'title="All the switched-on instructions are sent to Sierra together, and there is a size limit on the '
+      + 'whole set. Past it the oldest ones stop being sent — without warning. Switch off what you no longer need.">'
+      + "Space used: <b>" + sentChars.toLocaleString() + "</b> of " + GUIDANCE_TOTAL_MAX.toLocaleString()
+      + " characters (" + budgetPct + "%)"
+      + (budgetPct >= 80 ? " — getting full. Switch off an instruction you no longer need." : "")
+      + "</p>";
+    var guidShow = { html: "", said: "" };
     if (state.guidance === null) {
-      html += '<div class="sit-empty">Could not load the guidance rules — renew your session on the '
-        + "<b>Team &amp; RACI</b> tab and re-open this tab.</div>";
+      html += '<div class="sit-empty">Could not load the guidance rules — renew your sign-in from '
+        + "<b>ℹ About</b> in the header and re-open this tab.</div>";
+      // Still a list, so the "Instructions in use" card controls something that exists.
+      html += '<div class="sit-list" id="sit-guid-list"></div>';
     } else {
+      var used = String(state.draftRule || "").length;
       html += '<div class="sit-guid-composer">'
-        + '<textarea class="sit-guid-input" maxlength="500" rows="2" '
-        + 'placeholder="e.g. When a visitor asks about CPR or First Aid credit, always mention the statewide EMS pathway alongside local exhibits.">'
+        + '<textarea class="sit-guid-input" aria-label="New instruction for Sierra" maxlength="' + GUIDANCE_RULE_MAX + '" rows="3" '
+        + 'title="Write it as you would say it to a colleague. Sierra follows these literally, so be specific '
+        + 'about what she should say and when." '
+        + 'placeholder="e.g. When someone asks about CPR or First Aid credit, always mention the statewide EMS '
+        + 'pathway alongside the local exhibits.">'
         + esc(state.draftRule) + "</textarea>"
+        // A visible counter is the whole fix. maxlength alone just stops
+        // accepting keystrokes, which reads as a broken keyboard, not a limit.
+        + '<div class="sit-guid-count' + (used > GUIDANCE_RULE_MAX - 150 ? " warn" : "") + '" data-guid-count>'
+        + used.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
+        + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
+        + "</div>"
         + '<div class="sit-guid-row">'
-        + '<input class="sit-guid-note" maxlength="300" value="' + esc(state.draftNote) + '" '
-        + 'placeholder="Optional note — why this rule exists (e.g. which feedback it answers)">'
-        + '<button class="sit-btn" data-guid-add' + (state.addBusy ? " disabled" : "") + ">"
-        + (state.addBusy ? "Adding…" : "➕ Add rule") + "</button>"
+        + '<input class="sit-guid-note" aria-label="Note for the team" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.draftNote) + '" '
+        + 'title="Just for the team — why you added this. Sierra never sees the note." '
+        + 'placeholder="Optional note for the team — why this exists (e.g. which feedback it answers)">'
+        // Plain-word control, no glyph. Defaults to Instruction: that is what
+        // almost every row is, and defaulting the other way would re-file
+        // ordinary prose into a budget the curator never looks at.
+        + '<label class="sit-meta" title="An INSTRUCTION tells Sierra what to say. A DISPLAY RULE shapes structured output — which columns a table has, what they are labeled, what order the rows go in. They are kept apart because they have separate size budgets, so a display rule never crowds out an instruction.">'
+        + "This is a: "
+        + '<select data-guid-kind>'
+        + '<option value="directive"' + (state.draftKind === "display" ? "" : " selected") + ">Instruction</option>"
+        + '<option value="display"' + (state.draftKind === "display" ? " selected" : "") + ">Display rule</option>"
+        + "</select></label>"
+        + '<label class="sit-meta" title="Sierra is one assistant used in several places — the My College tab, the CPL Assistant tab, the public page, the Fact Sheet drawer, and when drafting a memory row. Most instructions belong everywhere. Narrow this only when the instruction names something one place has and the others do not — an instruction about \'the selected institution\' means nothing on a page where nothing is selected.">'
+        + "Applies: "
+        + surfaceSelect("data-guid-surface", state.draftSurface)
+        + "</label>"
+        + '<button type="button" class="sit-btn sit-btn-primary" data-guid-add' + (state.addBusy ? " disabled" : "") + ">"
+        + (state.addBusy ? "Adding…" : "Add instruction") + "</button>"
         + "</div></div>";
+      var guidRows = "", shownGuid = 0;
+      var rankBy = {};
+      state.guidance.forEach(function (r) {
+        var k = guidKind(r);
+        // Ranked over EVERY row, shown or not: hiding a switched-off row must not
+        // change which rules are marked as reaching Sierra.
+        if (r.active) rankBy[k] = (rankBy[k] || 0) + 1;
+        var editing = String(state.editId) === String(r.id);
+        // "Instructions in use" lists the switched-on rows. A row open in the
+        // editor stays, so pressing the card never throws away someone's edit.
+        if (state.guidOnlyOn && !r.active && !editing) return;
+        shownGuid++;
+        if (editing) guidRows += guidanceEditor(r);
+        else guidRows += guidanceRow(r, r.active && rankBy[k] <= capFor(k));
+      });
+      if (state.guidOnlyOn) guidShow = showing("guid", shownGuid, state.guidance.length, ["in use"]);
+      html += '<p class="sit-showing" id="sit-guid-showing" tabindex="-1">' + guidShow.html + "</p>";
+      html += '<div class="sit-list" id="sit-guid-list">' + guidRows + "</div>";
       if (!state.guidance.length) {
-        html += '<div class="sit-empty">No guidance rules yet — add the first one above. '
+        html += '<div class="sit-empty">No instructions yet — add the first one above. '
           + "It reaches Sierra on her next answer.</div>";
-      } else {
-        var activeRank = 0;
-        state.guidance.forEach(function (r) {
-          if (r.active) activeRank++;
-          html += guidanceRow(r, r.active && activeRank <= GUIDANCE_SENT_CAP);
-        });
       }
     }
 
-    html += '<p class="sit-gov">Phases 1 + 2 of the Sierra Training scope (review queue + gap miner + the '
-      + "guidance layer). Ingesting artifacts into Sierra’s knowledge (Phase 3) comes next, and nothing here "
-      + "ever writes to the public CPL Knowledge Base (that stays behind its human-reviewed curation "
-      + "pipeline).</p>";
+    // ── Pane 4: Sierra's built-in rules (sierra_rules) ──
+    // Deliberately BELOW the instructions pane: these are the rules that outrank
+    // what you write up there, and the reason the pane exists is that on
+    // 2026-08-14 one of them silently beat Sam's instruction.
+    html += renderRulesPane();
+
+    html += '<p class="sit-gov">Sierra receives every switched-on instruction with every question, wherever '
+      + "she appears, including the Sierra section of <b>My College</b>, so a change here shows up in her next "
+      + "answer with nothing to deploy. Still to come: adding documents to her knowledge so she can quote them. "
+      + "This tab never writes to the public CPL Knowledge Base; that stays behind its human-reviewed curation "
+      + "pipeline.</p>";
     html += "</div>";
     root.innerHTML = html;
     wire(root);
+    syncScrollers(root);
+    restoreFocus(root, focusWant);
+    announce(root, { fb: fbShow.said, gap: gapShow.said, guid: guidShow.said }, focusWant);
+  }
+
+  // ── The number cards and "Show all" (round 1) ──
+  function pressCard(key, root) {
+    if (FB_VIEWS[key]) {
+      // A lit card is the filter the reader set; pressing it again shows everything.
+      setFbView(fbViewIs(FB_VIEWS[key]) ? FB_ALL : FB_VIEWS[key]);
+      state.focusNext = '[data-stat="' + key + '"]';
+      render(root);
+      bringIntoView(root.querySelector("#sit-fb-showing"));
+    } else if (key === "inuse") {
+      state.guidOnlyOn = !state.guidOnlyOn;
+      state.focusNext = '[data-stat="inuse"]';
+      render(root);
+      bringIntoView(root.querySelector("#sit-h-guid"));
+    } else if (key === "gaps" || key === "convos") {
+      // These two only move the reader, and set the list to show everything
+      // the number counts. They never light up.
+      showAllGaps();
+      state.focusNext = "#sit-h-gaps";
+      render(root);
+      land(root.querySelector("#sit-h-gaps"));
+    }
+  }
+  function showAll(key, root) {
+    if (key === "fb") { setFbView(FB_ALL); state.focusNext = "#sit-fb-showing"; }
+    else if (key === "gap") { showAllGaps(); state.focusNext = "#sit-gap-showing"; }
+    else if (key === "guid") { state.guidOnlyOn = false; state.focusNext = "#sit-h-guid"; }
+    render(root);
   }
 
   function wire(root) {
@@ -682,26 +2367,68 @@
     });
     var note = root.querySelector("[data-f-note]");
     if (note) note.addEventListener("change", function () { state.fNote = note.checked; render(root); });
+    var smoke = root.querySelector("[data-f-smoke]");
+    if (smoke) smoke.addEventListener("change", function () { state.fSmoke = smoke.checked; render(root); });
+    var gsm = root.querySelector("[data-g-smoke]");
+    if (gsm) gsm.addEventListener("change", function () {
+      state.gSmoke = !!gsm.checked; render(root);
+    });
+    var gbs = root.querySelector("[data-gbulk-status]");
+    if (gbs) gbs.addEventListener("change", function () { state.gBulkStatus = gbs.value; });
+    var gba = root.querySelector("[data-gbulk-apply]");
+    if (gba) gba.addEventListener("click", function () { bulkTurnReview(root); });
+    root.querySelectorAll("[data-turnrev]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var v = btn.getAttribute("data-turnrev");
+        setTurnReview(btn.getAttribute("data-turnid"), v === "" ? null : v, root);
+      });
+    });
     root.querySelectorAll("[data-g]").forEach(function (sel) {
       sel.addEventListener("change", function () { state[sel.getAttribute("data-g")] = sel.value; render(root); });
     });
+    // ── The five numbers and "Show all" (round 1) ──
+    root.querySelectorAll("[data-stat]").forEach(function (btn) {
+      btn.addEventListener("click", function () { pressCard(btn.getAttribute("data-stat"), root); });
+    });
+    root.querySelectorAll("[data-show-all]").forEach(function (btn) {
+      btn.addEventListener("click", function () { showAll(btn.getAttribute("data-show-all"), root); });
+    });
+    // Item headers are buttons: a click, or Enter / Space from the keyboard.
+    // render() puts focus back on the header it rebuilt (pendingFocus).
+    function toggleRow(map, id) { state[map][id] = !state[map][id]; render(root); }
     root.querySelectorAll("[data-open]").forEach(function (el) {
       el.addEventListener("click", function () {
+        // A click that ENDS a text selection is someone copying the question,
+        // not asking to collapse the row (Sam, 2026-08-13: "when I tried to
+        // copy and paste the question ... the training tab doesn't allow it").
+        // The question sits inside this clickable header, so releasing the
+        // mouse re-rendered the row and destroyed the selection before it could
+        // reach the clipboard — the text was never unselectable, it was being
+        // thrown away a few milliseconds after being selected.
+        if (hasTextSelection(el)) return;
         var id = el.getAttribute("data-open");
         state.open[id] = !state.open[id];
         render(root);
       });
+      onActivateKey(el, function () { toggleRow("open", el.getAttribute("data-open")); });
     });
     root.querySelectorAll("[data-gopen]").forEach(function (el) {
       el.addEventListener("click", function () {
-        var id = el.getAttribute("data-gopen");
-        state.gOpen[id] = !state.gOpen[id];
-        render(root);
+        // The same guard as the feedback rows: the question is selectable here too.
+        if (hasTextSelection(el)) return;
+        toggleRow("gOpen", el.getAttribute("data-gopen"));
       });
+      onActivateKey(el, function () { toggleRow("gOpen", el.getAttribute("data-gopen")); });
     });
     root.querySelectorAll("[data-status]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
+        // The pressed part of the control is the current state: nothing to write.
+        if (btn.getAttribute("aria-pressed") === "true") return;
+        // Marking an item Done can take it off a still-to-do list. Focus then
+        // lands on the line that says what the list now holds.
+        state.focusFallback = "#sit-fb-showing";
         setStatus(btn.getAttribute("data-turn"), btn.getAttribute("data-status"), root);
       });
     });
@@ -709,16 +2436,119 @@
     if (bulkSel) bulkSel.addEventListener("change", function () { state.bulkStatus = bulkSel.value; });
     var bulkBtn = root.querySelector("[data-bulk-apply]");
     if (bulkBtn) bulkBtn.addEventListener("click", function () { bulkTriage(root); });
+
+    // ── Built-in rules pane ──
+    root.querySelectorAll("[data-ruleopen]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        // Same guard as the feedback rows: a click that ENDS a selection is
+        // someone copying a rule body, not asking to collapse it. These bodies
+        // are the most copy-worthy text on the tab.
+        if (hasTextSelection(el)) return;
+        var k = el.getAttribute("data-ruleopen");
+        state.rulesOpen[k] = !state.rulesOpen[k];
+        render(root);
+      });
+      onActivateKey(el, function () { toggleRow("rulesOpen", el.getAttribute("data-ruleopen")); });
+    });
+    root.querySelectorAll("[data-ruleedit]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openRuleEdit(btn.getAttribute("data-ruleedit"), root);
+      });
+    });
+    var rCancel = root.querySelector("[data-rulecancel]");
+    if (rCancel) rCancel.addEventListener("click", function (e) { e.stopPropagation(); cancelRuleEdit(root); });
+    // Drafts live in state so a re-render cannot eat typing — the same reason the
+    // guidance composer does it.
+    var rBody = root.querySelector(".sit-rule-body");
+    if (rBody) rBody.addEventListener("input", function () { state.ruleEditBody = rBody.value; });
+    var rWhen = root.querySelector(".sit-rule-when");
+    if (rWhen) rWhen.addEventListener("change", function () { state.ruleEditWhen = rWhen.value; });
+    var rOrder = root.querySelector(".sit-rule-order");
+    if (rOrder) rOrder.addEventListener("input", function () { state.ruleEditOrder = rOrder.value; });
+    root.querySelectorAll("[data-rulesave]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var key = btn.getAttribute("data-rulesave");
+        // Read the live DOM as the fallback, not just state: the guarantee that
+        // a curator's words survive must not depend on an input handler having
+        // fired (the saveGuidance lesson, #1146).
+        var ta = root.querySelector(".sit-rule-body");
+        var body = (ta ? ta.value : state.ruleEditBody) || "";
+        var sel = root.querySelector(".sit-rule-when");
+        var ord = root.querySelector(".sit-rule-order");
+        var n = parseInt((ord ? ord.value : state.ruleEditOrder), 10);
+        if (!body.trim() || body.trim().length < 3) {
+          alert("The wording needs at least a few characters. To stop this rule instead, use Switch off.");
+          return;
+        }
+        writeRule(key, {
+          body: body.trim(),
+          applies_when: sel ? sel.value : undefined,
+          sort_order: isNaN(n) ? undefined : n,
+        }, root, function () { cancelRuleEdit(root); });
+      });
+    });
+    root.querySelectorAll("[data-ruletoggle]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var key = btn.getAttribute("data-ruletoggle");
+        var m = mergeRules(ruleDefaults().rules, state.rules).filter(function (r) { return r.key === key; })[0];
+        if (!m) return;
+        writeRule(key, { active: !m.active }, root);
+      });
+    });
+    root.querySelectorAll("[data-rulerestore]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var key = btn.getAttribute("data-rulerestore");
+        var m = mergeRules(ruleDefaults().rules, state.rules).filter(function (r) { return r.key === key; })[0];
+        if (!m) return;
+        // There is no DELETE policy on sierra_rules, by design (the row and its
+        // audit trail stay). So "restore" WRITES THE BUILT-IN WORDING BACK — and
+        // the confirm says so, rather than implying the row disappears. A button
+        // that promises more than it does is the `Clear owner` no-op again.
+        if (!confirm("Put the built-in wording back for “" + m.title + "”?\n\n"
+          + "Sierra goes back to the original text on her next answer. The row stays in the table, "
+          + "marked as changed, so the record of what was tried is kept.")) return;
+        writeRule(key, { body: m.defaultBody, applies_when: m.appliesWhen, sort_order: m.sortOrder }, root);
+      });
+    });
     // guidance composer (drafts live in state so re-renders don't eat typing)
     var gi = root.querySelector(".sit-guid-input");
-    if (gi) gi.addEventListener("input", function () { state.draftRule = gi.value; });
+    if (gi) gi.addEventListener("input", function () {
+      state.draftRule = gi.value;
+      // Update the counter in place — a full render() here would move the caret
+      // to the end on every keystroke.
+      var c = root.querySelector("[data-guid-count]");
+      if (!c) return;
+      var n = gi.value.length;
+      c.className = "sit-guid-count" + (n > GUIDANCE_RULE_MAX - 150 ? " warn" : "");
+      c.textContent = n.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
+        + (n >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "");
+    });
     var gn = root.querySelector(".sit-guid-note");
     if (gn) gn.addEventListener("input", function () { state.draftNote = gn.value; });
+    var gk = root.querySelector("[data-guid-kind]");
+    // No re-render on change: re-rendering here would rebuild the composer and
+    // throw away the untyped-but-unsaved textarea state the drafts exist to keep.
+    if (gk) gk.addEventListener("change", function () { state.draftKind = gk.value; });
+    var gs = root.querySelector("[data-guid-surface]");
+    // Same reasoning as the kind select: no re-render, or the unsaved draft dies.
+    if (gs) gs.addEventListener("change", function () { state.draftSurface = gs.value; });
     var ga = root.querySelector("[data-guid-add]");
     if (ga) ga.addEventListener("click", function () {
       var rule = (state.draftRule || "").trim();
-      if (rule.length < 3) { alert("Rule text is required (3–500 characters)."); return; }
-      addGuidance(rule, (state.draftNote || "").trim(), root);
+      if (rule.length < 3) { alert("Type the instruction first (3–" + GUIDANCE_RULE_MAX + " characters)."); return; }
+      addGuidance(rule, (state.draftNote || "").trim(), root, state.draftKind, state.draftSurface);
+    });
+    root.querySelectorAll("[data-guid-surface-row]").forEach(function (sel) {
+      sel.addEventListener("change", function (e) {
+        e.stopPropagation();
+        setGuidanceSurface(sel.getAttribute("data-guid-surface-row"), sel.value, root);
+      });
+      // The row head is clickable elsewhere; a select must not trigger it.
+      sel.addEventListener("click", function (e) { e.stopPropagation(); });
     });
     root.querySelectorAll("[data-guid-toggle]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
@@ -726,15 +2556,108 @@
         toggleGuidance(btn.getAttribute("data-guid-toggle"), root);
       });
     });
+    // ── edit-in-place ──
+    root.querySelectorAll("[data-guid-edit]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openEdit(btn.getAttribute("data-guid-edit"), root);
+      });
+    });
+    var ei = root.querySelector(".sit-guid-edit-input");
+    if (ei) ei.addEventListener("input", function () {
+      state.editRule = ei.value;
+      saveEditDraft();
+      // Same reason as the composer: a full render() here parks the caret at the end.
+      var c = root.querySelector("[data-guid-edit-count]");
+      if (!c) return;
+      var n = ei.value.length;
+      c.className = "sit-guid-count" + (n > GUIDANCE_RULE_MAX - 150 ? " warn" : "");
+      c.textContent = n.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
+        + (n >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "");
+    });
+    var en = root.querySelector(".sit-guid-edit-note");
+    if (en) en.addEventListener("input", function () { state.editNote = en.value; saveEditDraft(); });
+    var eq = root.querySelector(".sit-guid-edit-testq");
+    if (eq) eq.addEventListener("input", function () { state.editTestQ = eq.value; saveEditDraft(); });
+    var ec = root.querySelector("[data-guid-cancel]");
+    if (ec) ec.addEventListener("click", function (e) { e.stopPropagation(); cancelEdit(root); });
+    root.querySelectorAll("[data-guid-save]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var rule = (state.editRule || "").trim();
+        if (rule.length < 3) { alert("The instruction cannot be empty (3–" + GUIDANCE_RULE_MAX + " characters)."); return; }
+        saveGuidance(btn.getAttribute("data-guid-save"), rule, (state.editNote || "").trim(), root);
+      });
+    });
+    root.querySelectorAll("[data-guid-savetest]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var rule = (state.editRule || "").trim();
+        if (rule.length < 3) { alert("The instruction cannot be empty (3–" + GUIDANCE_RULE_MAX + " characters)."); return; }
+        var q = (state.editTestQ || "").trim();
+        if (!q) { alert("Type the question you want to test with first — it is the box just above the buttons."); return; }
+        // Save FIRST, hop only on a confirmed write. Hopping on an unsaved edit
+        // would test the OLD wording and read as "the instruction did nothing".
+        saveGuidance(btn.getAttribute("data-guid-savetest"), rule, (state.editNote || "").trim(), root, function () {
+          saveEditDraft();          // editor stays open for the return trip
+          testInSierra(q);
+        });
+      });
+    });
     root.querySelectorAll("[data-qact]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
         var q = lookupQuestion(btn.getAttribute("data-qsrc"));
-        if (!q) return;
-        if (btn.getAttribute("data-qact") === "copy") copyText(q, btn);
-        else testInSierra(q);
+        // A silent return is indistinguishable from a broken button. If the row
+        // carries no question text there is nothing to hand off, and the person
+        // clicking deserves to be told that rather than left clicking again.
+        if (!q) { flashBtn(btn, "no question on this row"); return; }
+        var act = btn.getAttribute("data-qact");
+        if (act === "copy") copyText(q, btn);
+        else if (act === "rule") startRuleFrom(q, root, btn.getAttribute("data-qsrc"));
+        // "Try it in: Sierra · My College" — data-host is the destination.
+        else testInSierra(q, btn.getAttribute("data-host"));
       });
     });
+  }
+
+  // The missing half of triage: marking an item "Done" recorded that somebody
+  // looked, but there was no path from "this answer was wrong" to "here is how
+  // Sierra should answer it" — the two panes sat on the same page, unconnected.
+  // This seeds the instruction composer with the question and scrolls to it. It
+  // deliberately does NOT write anything: the curator still types the rule and
+  // presses Add, because only a human knows what the right answer was.
+  function startRuleFrom(q, root, src) {
+    var seed = "When someone asks something like “" + String(q || "").trim().slice(0, 160) + "”, ";
+    if (!state.draftRule) state.draftRule = seed;
+    // The note names where the instruction came from. A thumbs-UP item, or a
+    // question she struggled with, must not be filed as a thumbs-down.
+    if (!state.draftNote) state.draftNote = noteSource(src) + String(q || "").trim().slice(0, 120);
+    render(root);
+    var ta = root.querySelector(".sit-guid-input");
+    if (!ta) return;
+    // Guard on the METHOD, not just the exception — the smooth-scroll options
+    // object is the part that varies, but jsdom has no scrollIntoView at all,
+    // so a bare retry in the catch throws again.
+    if (typeof ta.scrollIntoView === "function") {
+      try { ta.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { ta.scrollIntoView(); }
+    }
+    try {
+      ta.focus();
+      if (typeof ta.setSelectionRange === "function") {
+        ta.setSelectionRange(ta.value.length, ta.value.length);   // caret after the seed
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  function noteSource(src) {
+    var m = /^(fb|gap):([\s\S]+)$/.exec(src || "");
+    if (m && m[1] === "gap") return "From a question Sierra struggled with: ";
+    if (m) {
+      var f = (state.feedback || []).filter(function (r) { return String(r.turn_id) === m[2]; })[0];
+      if (f && f.rating === "up") return "From a thumbs-up on: ";
+    }
+    return "From a thumbs-down on: ";
   }
 
   // Resolve a row's question from the id-typed data-qsrc handle ("fb:<turn_id>"
@@ -748,37 +2671,82 @@
     var hit = (rows || []).filter(function (r) { return String(r[key]) === m[2]; })[0];
     return (hit && hit.question) || null;
   }
+  // Is the user mid-selection inside this element? Used to tell "collapse this
+  // row" apart from "I am selecting the question so I can copy it".
+  function hasTextSelection(el) {
+    try {
+      var sel = window.getSelection && window.getSelection();
+      if (!sel || sel.isCollapsed) return false;
+      if (!String(sel).trim()) return false;
+      // Only OUR element's selection counts — a stale selection elsewhere on
+      // the page must not make the row permanently unclickable.
+      return !!(el && sel.anchorNode && el.contains(sel.anchorNode));
+    } catch (e) { return false; }
+  }
+
+  // Say something on the button itself. A button that does nothing when clicked
+  // reads as broken, and the person clicking has no way to tell the difference.
+  function flashBtn(btn, msg, ms) {
+    if (!btn) return;
+    if (btn.getAttribute("data-flashing") === "1") return;
+    var o = btn.textContent;
+    btn.setAttribute("data-flashing", "1");
+    btn.textContent = msg;
+    setTimeout(function () {
+      btn.textContent = o;
+      btn.removeAttribute("data-flashing");
+    }, ms || 1400);
+  }
+
   function copyText(q, btn) {
-    function flash() {
-      var o = btn.textContent;
-      btn.textContent = "✓ copied";
-      setTimeout(function () { btn.textContent = o; }, 1200);
+    function flash() { flashBtn(btn, "Copied", 1200); }
+    // The execCommand path, kept as a named fallback because the async
+    // clipboard REJECTS in ordinary situations — an unfocused document, a
+    // permissions policy, any non-secure context. It used to reject into an
+    // empty handler, so the button did nothing and said nothing.
+    function legacyCopy() {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = q;
+        ta.setAttribute("readonly", "readonly");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        if (ok) { flash(); return true; }
+      } catch (e) { /* fall through to the message below */ }
+      // Both paths failed. SAY SO — a copy button that silently does nothing is
+      // the same defect as a hand-off that silently drops the question.
+      flashBtn(btn, "couldn’t copy — select the text", 2200);
+      return false;
     }
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(q).then(flash, function () {});
+        navigator.clipboard.writeText(q).then(flash, legacyCopy);
         return;
       }
     } catch (e) { /* fall through */ }
-    try {
-      var ta = document.createElement("textarea");
-      ta.value = q;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      document.body.removeChild(ta);
-      flash();
-    } catch (e2) { /* clipboard unavailable */ }
+    legacyCopy();
   }
 
   function renderInto(root, keepData) {
+    // Hash routing keeps this page alive, so `state` normally survives the hop to
+    // #chatbot on its own. This is the reload case: a curator who hard-refreshes
+    // (or lands here from a fresh tab) still gets their open editor back.
+    if (state.editId == null) restoreEditDraft();
     if (keepData && (state.feedback || state.turns)) { render(root); return; }
     if (!signedIn()) { state.loading = false; render(root); return; }
     state.loading = true; state.error = null; state.gated = false; render(root);
-    Promise.all([loadFeedback(), loadTurns(), loadGuidance()]).then(function (res) {
+    Promise.all([loadFeedback(), loadTurns(), loadGuidance(), loadTurnReviews()]).then(function (res) {
       state.feedback = Array.isArray(res[0]) ? res[0] : [];
       state.turns = Array.isArray(res[1]) ? res[1] : [];
       state.guidance = Array.isArray(res[2]) ? res[2] : null;  // null = load failed (soft)
+      // {} on failure, never null: the gap pane defaults to "still to do", and a
+      // failed read must not silently mark every handled question outstanding
+      // again — it just shows them all, which is the honest degradation.
+      state.turnReviews = res[3] || {};
       // RLS returns 200 + [] to a non-unlocking session — surface that honestly
       // instead of rendering a confusing all-zeros dashboard.
       state.gated = state.feedback.length === 0 && state.turns.length === 0;
@@ -786,11 +2754,44 @@
     }).catch(function (e) {
       state.loading = false; state.error = (e && e.message) || "error"; render(root);
     });
+    // Loaded SEPARATELY from the Promise.all above, on purpose. This read is
+    // reviewer-only while the others open to a team phrase, so folding it in
+    // would let the stricter gate fail the whole tab for the team.
+    loadRulesPane(root);
+  }
+
+  /* Resolve the pane's state, keeping "not a reviewer" and "read failed" apart.
+   *
+   * Order matters: the probe is what disambiguates an empty read, and the empty
+   * read is the NORMAL case here (the table is seeded empty). So rows-back is a
+   * shortcut to "reviewer", and only the empty case has to wait on the probe. */
+  function loadRulesPane(root) {
+    if (!signedIn()) { state.rulesState = "signedout"; state.rules = null; render(root); return Promise.resolve(); }
+    state.rulesState = "loading"; state.rulesErr = null; render(root);
+    return Promise.all([
+      loadRules().then(function (rows) { return { rows: rows }; },
+                       function (e) { return { err: (e && e.message) || "read failed" }; }),
+      probeReviewer(),
+    ]).then(function (res) {
+      var read = res[0], isReviewer = res[1];
+      if (read.err) { state.rulesState = "error"; state.rulesErr = read.err; state.rules = null; return; }
+      var rows = Array.isArray(read.rows) ? read.rows : [];
+      if (rows.length > 0) { state.rules = rows; state.rulesState = "ok"; return; }
+      // Empty. Which empty?
+      if (isReviewer === true) { state.rules = []; state.rulesState = "ok"; return; }
+      if (isReviewer === false) { state.rules = null; state.rulesState = "notreviewer"; return; }
+      // The probe itself failed. Do NOT accuse them of not being a reviewer —
+      // say we could not check, which is the only true statement available.
+      state.rules = null; state.rulesState = "error";
+      state.rulesErr = "could not confirm your sign-in";
+    }).then(function () { render(root); });
   }
 
   function activate() {
     var root = document.getElementById("sierra-training-root");
     if (!root) return;
+    // Arriving on the tab is not a change to announce; the next change is.
+    lastSaid = null;
     renderInto(root, !!(state.feedback || state.turns));
   }
 
@@ -805,6 +2806,7 @@
     _themeCounts: themeCounts,
     _audienceCounts: audienceCounts,
     _filteredFeedback: filteredFeedback,
+    _isSmoke: isSmoke,
     _gapRows: gapRows,
     _feedbackRow: feedbackRow,
     _gapRow: gapRow,
@@ -818,11 +2820,47 @@
     _bulkTriage: bulkTriage,
     _testInSierra: testInSierra,
     TEST_Q_KEY: TEST_Q_KEY,
+    TEST_DEST_KEY: TEST_DEST_KEY,
+    DEST_MY_COLLEGE: DEST_MY_COLLEGE,
+    // round 1: the cards, the Showing lines, the scroll boxes
+    _pressCard: pressCard,
+    _showAll: showAll,
+    _fbWords: fbWords,
+    _gapWords: gapWords,
+    _syncScrollers: syncScrollers,
+    _FB_VIEWS: FB_VIEWS,
     _guidanceRow: guidanceRow,
+    _guidanceEditor: guidanceEditor,
     _addGuidance: addGuidance,
     _toggleGuidance: toggleGuidance,
+    _saveGuidance: saveGuidance,
+    _openEdit: openEdit,
+    _cancelEdit: cancelEdit,
+    _saveEditDraft: saveEditDraft,
+    _restoreEditDraft: restoreEditDraft,
+    EDIT_KEY: EDIT_KEY,
     _loadGuidance: loadGuidance,
     GUIDANCE_SENT_CAP: GUIDANCE_SENT_CAP,
+    GUIDANCE_DISPLAY_CAP: GUIDANCE_DISPLAY_CAP,
+    _guidKind: guidKind,
+    _capFor: capFor,
+    GUIDANCE_RULE_MAX: GUIDANCE_RULE_MAX,
+    GUIDANCE_TOTAL_MAX: GUIDANCE_TOTAL_MAX,
+    _statusLabel: statusLabel,
+    _STATUS_HELP: STATUS_HELP,
+    _HELP: HELP,
+    _startRuleFrom: startRuleFrom,
+    // built-in rules pane (sierra_rules)
+    _mergeRules: mergeRules,
+    _ruleRow: ruleRow,
+    _ruleEditor: ruleEditor,
+    _renderRulesPane: renderRulesPane,
+    _loadRulesPane: loadRulesPane,
+    _probeReviewer: probeReviewer,
+    _writeRule: writeRule,
+    _openRuleEdit: openRuleEdit,
+    _cancelRuleEdit: cancelRuleEdit,
+    _ruleDefaults: ruleDefaults,
   };
 
   // NOTE: tabs.js dispatches cpl-tab-activated on WINDOW (not document) — a

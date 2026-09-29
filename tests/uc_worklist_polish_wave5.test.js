@@ -91,7 +91,7 @@ function closeWorklist() {
     .forEach((b) => b.dispatchEvent(new window.Event("click")));
 }
 function goButton() {
-  return Array.from(dock().querySelectorAll("button")).find((b) => /Confirm merge|✓ Save|Create unified/.test(txt(b)));
+  return Array.from(dock().querySelectorAll("button")).find((b) => /Confirm merge|^Save$|Create unified/.test(txt(b)));
 }
 function worklistSearch() {
   return Array.from(dock().querySelectorAll("input[type=search]")).find((i) => /comma separates terms/.test(i.placeholder || ""));
@@ -149,8 +149,8 @@ function worklistSearch() {
   titleIn.value = "Russian (Beg)"; titleIn.dispatchEvent(new window.Event("input"));
   await sleep(40);
   go = goButton();
-  check("editing the title with one course checked flips the button to ✓ Save (enabled)",
-    go && /✓ Save/.test(txt(go)) && go.disabled === false);
+  check("editing the title with one course checked flips the button to Save (enabled)",
+    go && /^Save$/.test(txt(go)) && go.disabled === false);
   go.dispatchEvent(new window.Event("click"));
   await sleep(120);
   const bodies = posts.map((p) => p.body).join("\n");

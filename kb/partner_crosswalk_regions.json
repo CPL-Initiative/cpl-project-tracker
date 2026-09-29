@@ -1,0 +1,25 @@
+{
+ "_note": "Named college regions for kb/_build_partner_crosswalk.py --region-preset. A region is the set of colleges a partner's students could realistically reach; it drives the workbook's Partner Region and Regional Capacity sheets. Add a preset per engagement rather than passing --region by hand, so the next run for the same partner is reproducible.",
+ "_schema": "presets: { <slug> : { label, rationale, colleges: [ <exact college name as it appears in MAP data> ] } }. College names MUST match the adopter names in statewide_data.js exactly -- a typo silently yields an empty region rather than an error.",
+ "_updated": "2026-08-05",
+ "presets": {
+  "san-joaquin": {
+   "label": "San Joaquin County and adjacent",
+   "rationale": "San Joaquin County Office of Education engagement (2026-08-05). San Joaquin Delta is the in-county college; the rest are the Central Valley and Sacramento/East Bay colleges within commuting or online reach.",
+   "colleges": [
+    "San Joaquin Delta College",
+    "Modesto Junior College",
+    "Columbia College",
+    "Merced College",
+    "Sacramento City College",
+    "American River College",
+    "Folsom Lake College",
+    "Cosumnes River College",
+    "Las Positas College",
+    "Sierra College",
+    "Chabot College",
+    "Fresno City College"
+   ]
+  }
+ }
+}

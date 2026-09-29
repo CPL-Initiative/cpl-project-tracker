@@ -1,0 +1,103 @@
+{
+  "_about": "Every measured case where colleges award DIFFERENT HOURS for the SAME named credit recommendation, restricted to rows that name a receiving college course AND were acted on (cpl_status_plan in 'Applied to CPL Plan','In Process'). Sam's ruling, 2026-09-07 (decision sheet item 2): the articulations toggle shows PRESENCE; the disagreement is a worklist, not a map layer.",
+  "_source": "public.map_college_cr_unit (MAP's credit funnel, 206,702 rows) joined to public.map_colleges",
+  "_measured_at": "2026-09-07",
+  "_method": "Group by (exhibit_id, normalized recommendation name); keep groups held by >1 college with >1 distinct leading hour value. ⚠ Counting distinct recommendation TEXT per exhibit (2,834) or hours per exhibit (678) both count an exhibit's own tiered MENU as a disagreement — ACE writes '3 / 6 / 9 hours in air traffic control' on one exhibit and a single college holds all three lines on one course in one catalog year. Presence in the funnel is not a decision; cpl_status_plan is.",
+  "_count": 4,
+  "cases": [
+    {
+      "exhibit_id": "MC-1715-0116",
+      "exhibit": "Basic Electronics",
+      "recommendation": "hours in AC circuits",
+      "kind": "cross-college disagreement",
+      "awards": [
+        {
+          "college": "Bakersfield College",
+          "hours": 2,
+          "course": "ELET-B1B Industrial Electricity"
+        },
+        {
+          "college": "Chaffey College",
+          "hours": 4,
+          "course": "IET-401A Introduction to Electricity"
+        }
+      ],
+      "note": "Two colleges, two courses, twice the credit. The clearest case of the four."
+    },
+    {
+      "exhibit_id": "NV-2202-0165",
+      "exhibit": "Recruit Basic Military Training (BMT)",
+      "recommendation": "hours in physical fitness",
+      "kind": "cross-college disagreement",
+      "awards": [
+        {
+          "colleges": [
+            "Barstow",
+            "Glendale",
+            "Long Beach City",
+            "Madera",
+            "Merritt",
+            "Reedley"
+          ],
+          "hours": 2
+        },
+        {
+          "colleges": [
+            "Glendale",
+            "Reedley"
+          ],
+          "hours": 3
+        }
+      ],
+      "note": "Glendale and Reedley each appear at both values, against different receiving courses."
+    },
+    {
+      "exhibit_id": "MCE-0369-001",
+      "exhibit": "Infantry Unit Leader",
+      "recommendation": "hours in human resource supervision",
+      "kind": "within-college split",
+      "awards": [
+        {
+          "college": "Coastline Community College",
+          "hours": 2,
+          "course": "MS-C102 Human Relations in Business"
+        },
+        {
+          "college": "Coastline Community College",
+          "hours": 3,
+          "course": "MGMT-C115 Human Relations in Business"
+        },
+        {
+          "college": "Moreno Valley College",
+          "hours": 3,
+          "course": "MAG-56 Human Resources Management"
+        }
+      ],
+      "note": "Coastline carries two courses with the same title at different credit. Likely a duplicate course, not a judgment."
+    },
+    {
+      "exhibit_id": "MCE-1371-001",
+      "exhibit": "Combat Engineer",
+      "recommendation": "hours in field experience in management",
+      "kind": "probable data-quality defect",
+      "awards": [
+        {
+          "college": "Norco College",
+          "hours": 3,
+          "course": "MAG-200 Management Work Experience (3.0)"
+        },
+        {
+          "college": "Norco College",
+          "hours": 5,
+          "course": "MAG-200 Management Work Experience (1.0)"
+        },
+        {
+          "college": "Los Angeles Trade Technical College",
+          "hours": 3,
+          "course": "AUTORTK-100 Heating and Air Conditioning Systems Theory, Inspection & Repair"
+        }
+      ],
+      "note": "LA Trade Tech maps a management field-experience recommendation onto a heating and air conditioning course. Check before treating as an academic judgment."
+    }
+  ]
+}

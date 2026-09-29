@@ -76,7 +76,7 @@ def _fetch_supabase() -> tuple[list[dict], list[dict]]:
     try:
         rows = _fetch_table(
             "workplan_goals"
-            "?select=activity_id,name,row_type,kind,current,"
+            "?select=activity_id,name,description,row_type,kind,current,"
             "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
         )
     except Exception:

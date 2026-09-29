@@ -1,0 +1,1148 @@
+{
+ "_about": "The ESL merging sheet's data changes, as one reviewed paste: plan, apply SQL, rollback SQL.",
+ "_read_at": "2026-09-26T19:40:32Z",
+ "counts": {
+  "updates": {
+   "3": 18,
+   "6": 30,
+   "2": 6
+  },
+  "inserts": {
+   "4": 3,
+   "5": 89
+  },
+  "deletes": 1,
+  "held": {}
+ },
+ "updates": [
+  {
+   "item": 3,
+   "id": "ESOL M10PD",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:40:41.038398Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M90BQ",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M90EP",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M90LN",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M90YC",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M90YD",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M90YE",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M90YS",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M9171",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M91BE",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M91BF",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M91BG",
+   "from": "ESOL M9256",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M91GF",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M91GN",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M91GT",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M9222",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M9223",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 3,
+   "id": "ESOL M9240",
+   "from": "ESOL M9168",
+   "to": "ESOL M91IL",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:42:25.245813Z",
+   "cohort": "esl-health-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESLN M9002",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESLN M9013",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESLN M9015",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESLN M9018",
+   "from": "ESOL M1141",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:37:58.680920Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M1019",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:40:41.038398Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M1021",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:40:41.038398Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M1043",
+   "from": "ESOL M9256",
+   "to": "ESOL M1141",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M1062",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:40:41.038398Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M1085",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:40:41.038398Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M1086",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:40:41.038398Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M1302",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M1303",
+   "from": "ESOL M9256",
+   "to": "ESOL M1141",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M1333",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9043",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9046",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9048",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9049",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9054",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9056",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9057",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9058",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9065",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "relevel-esl-s188@bot",
+   "before_reviewed_at": "2026-08-24T18:27:59.093726Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9068",
+   "from": "ESOL M1141",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:37:58.680920Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9069",
+   "from": "ESOL M1141",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:37:58.680920Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9070",
+   "from": "ESOL M1141",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:37:58.680920Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9072",
+   "from": "ESOL M1141",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:37:58.680920Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9080",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9081",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9184",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 6,
+   "id": "ESOL M9200",
+   "from": "ESOL M9256",
+   "to": "ESOL M9168",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:39:09.879652Z",
+   "cohort": "esl-ladder-s294@bot"
+  },
+  {
+   "item": 2,
+   "id": "ESOL M1061",
+   "from": "ESOL M9168",
+   "to": "ESOL M1141",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:40:41.038398Z",
+   "cohort": "esl-catalog-s294@bot"
+  },
+  {
+   "item": 2,
+   "id": "ESOL M1094",
+   "from": "ESOL M9168",
+   "to": "ESOL M1141",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:40:41.038398Z",
+   "cohort": "esl-catalog-s294@bot"
+  },
+  {
+   "item": 2,
+   "id": "ESOL M1191",
+   "from": "ESOL M9168",
+   "to": "ESOL M1141",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-catalog-s294@bot"
+  },
+  {
+   "item": 2,
+   "id": "ESOL M1240",
+   "from": "ESOL M9168",
+   "to": "ESOL M9256",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-catalog-s294@bot"
+  },
+  {
+   "item": 2,
+   "id": "ESOL M1251",
+   "from": "ESOL M9168",
+   "to": "ESOL M1141",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-catalog-s294@bot"
+  },
+  {
+   "item": 2,
+   "id": "ESOL M9082",
+   "from": "ESOL M9168",
+   "to": "ESOL M1141",
+   "before_reviewer": "package-esl-s187@bot",
+   "before_reviewed_at": "2026-08-24T13:41:21.277665Z",
+   "cohort": "esl-catalog-s294@bot"
+  }
+ ],
+ "inserts": [
+  {
+   "item": 4,
+   "id": "ESOL M10AD",
+   "to": "ESOL M1141",
+   "cohort": "esl-transfer-s294@bot"
+  },
+  {
+   "item": 4,
+   "id": "ESOL M9192",
+   "to": "ESOL M1141",
+   "cohort": "esl-transfer-s294@bot"
+  },
+  {
+   "item": 4,
+   "id": "ESOL M91BQ",
+   "to": "ESOL M1141",
+   "cohort": "esl-transfer-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESLN M9025",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESLN M9026",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESLN M9027",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESLN M9028",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESLN M9274",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M10XV",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M10XW",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M10XX",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M10XY",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M10XZ",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M10YA",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M10YB",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M10YC",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M10YD",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1362",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1363",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1364",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1365",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1366",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1367",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1368",
+   "to": "ESOL M1141",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1369",
+   "to": "ESOL M1141",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1370",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1371",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1372",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1373",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1374",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1375",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1376",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1377",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1378",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M1379",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9265",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9266",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9268",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9269",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9270",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9271",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9273",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9275",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9276",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9277",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9278",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9279",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9280",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9281",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9282",
+   "to": "ESOL M1141",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9283",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9284",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9285",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9286",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9287",
+   "to": "ESOL M1141",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9288",
+   "to": "ESOL M1141",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9289",
+   "to": "ESOL M1141",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9290",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9291",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9292",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9293",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9294",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9295",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9296",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9297",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9298",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9299",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9300",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9301",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9302",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9303",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9304",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9305",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9306",
+   "to": "ESOL M9177",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9307",
+   "to": "ESOL M9177",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9308",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9310",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9311",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9312",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9313",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9314",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9315",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9316",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9317",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9318",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9319",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9320",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9321",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9322",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9323",
+   "to": "ESOL M9256",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9325",
+   "to": "ESOL M9023",
+   "cohort": "esl-newfold-s294@bot"
+  },
+  {
+   "item": 5,
+   "id": "ESOL M9326",
+   "to": "ESOL M9168",
+   "cohort": "esl-newfold-s294@bot"
+  }
+ ],
+ "deletes": [
+  {
+   "item": 9,
+   "id": "FTVE M1018",
+   "value": "ESOL M1152",
+   "reviewer": "automerge-v1@bot",
+   "reviewed_at": "2026-06-12T22:47:01.691790Z"
+  }
+ ],
+ "held": [],
+ "ladder_counts": {
+  "folds_considered": 1990,
+  "purpose_carve_outs_skipped": 181,
+  "unchanged": 1129,
+  "undecided": 555,
+  "re_levels": 125,
+  "of_which_revert_the_applied_32": 17,
+  "catalog_agrees": 20,
+  "catalog_disagrees": 38,
+  "catalog_silent": 67
+ },
+ "new_identities": {
+  "placed": 89,
+  "held": 6,
+  "by_bucket": {
+   "Beginning ESL": 48,
+   "Intermediate ESL": 23,
+   "Advanced ESL": 6,
+   "Vocational ESL": 10,
+   "Civic ESL": 2
+  },
+  "by_how": {
+   "level: identity title word": 42,
+   "level: nothing speaks, Beginning by default": 18,
+   "level: member ladder vote": 17,
+   "purpose: vocational": 10,
+   "purpose: citizenship": 2
+  }
+ },
+ "new_held": [
+  {
+   "id": "ESOL M1205",
+   "title": "ESL College Composition and Reading",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition in the first plan: held apart (unruled)"
+  },
+  {
+   "id": "ESOL M9192",
+   "title": "Composition for ESL Students",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition in the first plan: held apart (unruled)"
+  },
+  {
+   "id": "ESOL M1239",
+   "title": "Composition, Reading, and Freshman English",
+   "credit": "Credit",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition in the first plan: held apart (unruled)"
+  },
+  {
+   "id": "ESOL M9267",
+   "title": "Optical Technician 1",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "a member course's subject maps outside ESL: Health"
+  },
+  {
+   "id": "ESOL M9272",
+   "title": "Optical Technician 2",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "a member course's subject maps outside ESL: Health"
+  },
+  {
+   "id": "ESOL M9309",
+   "title": "ESL Supplemental Freshman Composition: Paragraphs",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition: held apart (unruled)"
+  }
+ ]
+}

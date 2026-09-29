@@ -1,0 +1,49 @@
+# Line endings. Sam's ruling 7, 2026-09-06.
+#
+# WHY THIS EXISTS. This repo is worked from a Windows clone and from Linux cloud
+# containers at the same time. With no rule here, Git stores whatever each
+# machine writes, so the same file can come back with every line changed and a
+# diff that is 100% noise — which is exactly what a 46-file changes list on a
+# Windows checkout turned out to be on 2026-09-06.
+#
+# MEASURED BEFORE ADDING IT: 2,486 tracked text files are in scope, and exactly
+# ONE was committed with Windows line endings. So this normalizes almost nothing
+# today and prevents the whole class from here on. It is cheap now precisely
+# because it is early.
+#
+# `text=auto` lets Git decide what is text and store it with LF, while checking
+# it out however the platform wants. Binary files are listed explicitly rather
+# than left to the heuristic: a .docx or .xlsx corrupted by newline translation
+# fails silently and late.
+
+*                 text=auto
+
+# Always LF, whatever the platform — these are read by tooling that cares.
+*.sh              text eol=lf
+*.py              text eol=lf
+*.yml             text eol=lf
+*.yaml            text eol=lf
+
+# Windows-native, always CRLF.
+*.ps1             text eol=crlf
+*.bat             text eol=crlf
+*.cmd             text eol=crlf
+
+# Never touched. Newline translation silently corrupts every one of these.
+*.png             binary
+*.jpg             binary
+*.jpeg            binary
+*.gif             binary
+*.ico             binary
+*.webp            binary
+*.pdf             binary
+*.docx            binary
+*.xlsx            binary
+*.pptx            binary
+*.zip             binary
+*.woff            binary
+*.woff2           binary
+*.ttf             binary
+*.otf             binary
+*.mp4             binary
+*.mov             binary

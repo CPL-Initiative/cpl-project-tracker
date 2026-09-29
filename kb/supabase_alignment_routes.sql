@@ -1,0 +1,107 @@
+-- Route ALIGN — "which of MY courses should I articulate against this credit
+-- recommendation, and how did other colleges do it?"
+--
+-- APPLIED LIVE 2026-08-13 via Supabase MCP (migrations
+-- chatbox_college_courses_and_alignment_rpc, alignment_content_tokens_stopword_fix).
+-- Committed so the schema is reproducible and reviewable; re-running is safe.
+--
+-- Sam, 2026-08-13: "If Sierra is answering for Cerritos College, I would want
+-- her to recommend the most aligned Cerritos welding courses to be articulated
+-- so the faculty don't have to guess, and have a link or access to the other
+-- college articulations for this same welding certificate."
+--
+-- TWO SIGNALS, ONE ROUND TRIP, NEVER MERGED
+-- ------------------------------------------
+--   row_kind 'peer'      FACT     — a named college really articulated that
+--                                   course against that recommendation
+--                                   (chatbox_peer_articulations, #1153)
+--   row_kind 'candidate' PROPOSAL — this college's own courses ranked by title
+--                                   match (chatbox_college_courses)
+--
+-- Neither is sufficient alone. Title similarity is structurally blind to the
+-- broader-course pattern: Santa Ana articulated `WELD 240 Structural Welding
+-- SMAW` against an **FCAW** recommendation, and no lexical matcher proposes
+-- that at any threshold. Peer precedent is the only signal that surfaces it.
+-- docs/kb-notes/methodology-two-signals-for-a-judgment-proposal.md
+--
+-- THE STOPWORD GATE WAS EARNED BY A FAILING RESULT, NOT ANTICIPATED
+-- -----------------------------------------------------------------
+-- The first cut scored plain token overlap and ranked
+--   `ART 100 — Introduction To World Art`  third
+-- for "Introduction to Flux Cored Arc Welding (FCAW)" at Cerritos, on the
+-- strength of "introduction" and "to" alone. A welding instructor shown an
+-- art-history course stops trusting every other suggestion on the page, so a
+-- plausible-looking false positive costs far more here than a missed match.
+--
+-- cx_align_tokens() drops structural words and the scorer requires >= 1 CONTENT
+-- token in common. After the fix every Cerritos candidate is a welding course
+-- and WELD 214L rises to 0.761 (the denominator no longer counts "introduction"
+-- and "to").
+--
+-- Deliberately NOT stopped: advanced / beginning / basic — those are exactly
+-- what separates "Introduction to FCAW" from "Advanced FCAW", two DIFFERENT
+-- recommendations on the same credential.
+--
+-- ⚠️ CANDIDATES ARE DRAWN FROM THE COLLEGE'S WHOLE CATALOGUE. Scoping by TOP
+-- code would gate a determination on TOP, which CLAUDE.md Rule 7 forbids;
+-- top_code rides along so a caller can note corroboration, never to filter.
+--
+-- Recs come from the peer table UNION the published recommendation sets, so a
+-- credential nobody has articulated yet still aligns — that is exactly the
+-- ready-to-adopt shelf surfaced in #1150.
+--
+-- Tables + loaders: kb/_build_college_courses.py, kb/_sync_college_courses.py,
+--                   kb/_build_peer_articulations.py, kb/_sync_peer_articulations.py
+-- Workflow:         .github/workflows/credential-catalog-sync.yml
+-- Consumer:         chatbox/supabase/functions/cpl-chat/index.ts (fetchAlignment)
+-- Tests:            tests/sierra_alignment.test.js (21 checks, behavioural)
+--
+-- The live definitions are the two migrations named above; this file documents
+-- them and is the receipt of record.
+
+-- ── 2026-08-13, later: THE TIERED LADDER (Sam) ──────────────────────────────
+-- Migrations: alignment_cid_first_tiered_ladder_v2,
+--             alignment_statewide_only_and_cid_divergence_flag,
+--             alignment_elective_stopword_and_relative_floor
+--
+-- Sam, after reading a live answer: "Can we enhance the algo to recommend actual
+-- Cerritos courses? first preference would be the Cerritos matching C-ID if they
+-- exist, then matching titles, then most aligned as last resort. You can always
+-- qualify it to say these recommendations are just my best judgement based on
+-- available data."
+--
+-- He was right, and the defect was mine: the scorer never read the `cid` column
+-- at all. Asked to match POST to Cerritos, Sierra had answered "I don't have
+-- Cerritos's full Administration of Justice catalog… look for an AJ 101 or
+-- equivalent" — while AJ 101 sat in chatbox_college_courses carrying C-ID
+-- AJ 110, the exact C-ID of the recommendation. Six of POST's eight distinct
+-- C-IDs match a Cerritos course exactly. 16,067 of 141,696 courses carry a
+-- C-ID across 112 colleges, so tier 1 fires broadly.
+--
+--   1. c_id    the college teaches a course carrying the rec's C-ID — the
+--              equivalence is established by the statewide standard, not guessed
+--   2. title   the titles match, with no C-ID to confirm it
+--   3. aligned closest by wording — a judgement call, labelled as one
+--
+-- ONLY THE BEST AVAILABLE TIER RENDERS. That is what removed the noise: the old
+-- scorer offered `MUS 202E Community Symphonic Band` for "Community and the
+-- Justice System" and `ADN 210 Foundational Concepts of Nursing` for "Concepts
+-- of Criminal Law", beside the correct AJ 102 at 1.000.
+--
+-- Three corrections found by RUNNING it, none anticipated:
+--   * STATEWIDE OVERRIDES LOCAL HERE TOO. Unioning peer wordings gave POST ~27
+--     near-duplicate recs where the statewide set is TEN. Sam's standing rule was
+--     implemented on the credential route but not this one.
+--   * A C-ID MATCH WHOSE NAMES DIVERGE IS FLAGGED, NEVER SUPPRESSED. POST carries
+--     AJ 110 on two lines, so tier 1 matched an Administration of Justice course
+--     to the PHYSICAL TRAINING recommendation. Sam ruled that repeat must never be
+--     auto-resolved, so `cid_title_divergent` ships and the consumer must say so.
+--   * "elective" is structural: "Introduction to Policing (Elective Course)"
+--     matched `NRSG 48T Elective Nursing - Tutorial`. Stopped, and that rec now
+--     correctly returns NOTHING.
+--   * A RELATIVE FLOOR on tier 3 (>= 60% of the best score for that rec) drops
+--     the also-rans where there is a clear winner — an absolute threshold cannot
+--     separate `AJ 105 Community Relations` from `MUS 203E Community Band`.
+--
+-- Result for POST x Cerritos: nine of ten recs get exactly one course —
+-- 6 c_id, 1 title, 1 aligned, 1 flagged — and the tenth honestly returns none.

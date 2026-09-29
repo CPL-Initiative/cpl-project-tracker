@@ -183,11 +183,11 @@ function theadTxt() { return txt(document.querySelector("#tab-tmc-builder .tmc-l
   selectVal(stf, "all"); await sleep(0);
   check("column header switches to \"This college's ADT\"", /This college's ADT/.test(theadTxt()));
   // Active vs Approved are distinct badges (Sam, 2026-06-20 split)
-  check("an ACTIVE TMC shows a ✓ Active chip (adt-ok)",
-    /✓ Active/.test(txt(rowFor(/Test Official/))) &&
+  check("an ACTIVE TMC shows a Active chip (adt-ok)",
+    /Active/.test(txt(rowFor(/Test Official/))) &&
     !!rowFor(/Test Official/).querySelector(".tmc-adt.adt-ok"));
-  check("an APPROVED-pending TMC shows a ✓ Approved chip (adt-appr)",
-    /✓ Approved/.test(txt(rowFor(/Test History/))) &&
+  check("an APPROVED-pending TMC shows a Approved chip (adt-appr)",
+    /Approved/.test(txt(rowFor(/Test History/))) &&
     !!rowFor(/Test History/).querySelector(".tmc-adt.adt-appr"));
   // Ask 3 (Session 69): not-established reads "○ Potential" (the headstart), not "—"
   check("a not-established TMC reads '○ Potential' in the ADT column",

@@ -1,0 +1,254 @@
+---
+title: "Session 231 handoff — read Sam's replies from the sheet's store, then drive his SkyView reactions"
+created: 2026-09-05
+updated: 2026-09-05
+tags: [handoff]
+obsidian-folder: cpl-project-tracker/handoffs
+superseded: true
+superseded_by: session_234_handoff.md
+---
+
+# You are Session 231
+
+Your moniker is **SkyReply** (assigned by SkyKeep at sign-off, per Sam's
+2026-09-03 template): the first thing you do is READ the replies Sam left on the
+memory sheet, and the rest of the day is executing them. Predecessors: SkyQuiet
+S228 → SkyGrain S229 → **SkyKeep S230**.
+
+## What S230 did
+
+Two asks, one PR (#1481) and a republished sheet.
+
+1. **The decision sheet takes replies on the page.** Every item of
+   `docs/visuals/2026-09-05-memory-audit-verdicts.html` carries chips (Yes takes
+   the recommendation; Keep · Retire · Edit · Later; item 1 *Older only*; the
+   class rulings Yes · No; the 31 retired rows *Undo*), a **Follow up** toggle
+   and a note — and every memory listed inside items 2 and 3 has its own
+   compact block (`2.o3`: Yes · Hold out · Rewrite · Later). On the artifact
+   they save to its store (`replies/<item>`); the
+   session reads them with the Artifact tool's `read_db`. Added by
+   `kb/_decision_sheet_replies.py --inject` — ⚠️ the committed sheet builder
+   predates the sheet (KB note); never re-run it over the committed file.
+2. **SkyView's second list, all of it** — one chip vocabulary, the zoom stack,
+   the placeholder label, the Show menu (twelve switches), the legend folding
+   from its corner, *How SkyView works*, the OS window controls (three states,
+   two steps), the ☰ that opens COBI's rail (collapsed on open), then the
+   header's second cut in the style of Claude's own header (ghosted icon
+   actions, a title field, one More menu with *Go to* and *Show or hide*),
+   the search as a selection of chips (a pick adds, Enter replaces), the dark
+   canvas — and **the CCR click opens the full window**
+   (`body.cpl-skyview-solo`). Verified in jsdom (188 + 51), the Chromium
+   harness, `npm run a11y -- skyview`, and a Chromium drive of COBI's tab.
+
+2b. **SkyView's third list, the same afternoon** (#1483, after
+   #1482): courses are dots in the legend's colors inside the packed
+   footprint, the islands spread ×1.22 at load, a click lights an identity's
+   orbit ties and fades the rest (Obsidian's graph was his reference), the
+   sidebar hides from its bar and resizes from a grip, the search list has
+   checkboxes and toggles, Clear and Fit all are chips, the title is unboxed,
+   the Search button is gone, the newest pick gets the focus, and a pick
+   switches on the Show switches it needs. `docs/ccr_atlas_lessons.md`, last
+   section, has the story; the lane file names the knobs. At the session's
+   end: the Show menu has Deselect all, and the zoom ceiling is 7,000%.
+
+⭐ **Sam's words this run (verbatim in the vault braindump and `cpl_memory`):**
+the explainer's voice — plain English, active voice, action verbs over
+adjectives, no asides, nothing that over-explains; *"These are nice controls
+from obsidian"* (the window trio, a sidebar toggle at the top left, a dark
+ground were taken; the glyph rail is his call).
+
+## Read these, in this order
+
+1. `docs/reference/lanes/memory-tab.md` — current truth and the NEXT list.
+2. `docs/reference/lanes/skyview-ccr-interface.md` — the same for SkyView.
+3. `docs/kb-notes/playbook-decision-sheet-replies.md` — how the replies work.
+4. `docs/ccr_atlas_lessons.md` and `docs/cobi_memory_tab_lessons.md`, the
+   2026-09-05 SkyKeep sections.
+
+## Your priority: Sam's replies, from the store
+
+Before anything else:
+
+```
+Artifact  action: read_db  db_op: list  collection: replies
+url: https://claude.ai/code/artifact/a233dd0c-d5ad-40e9-b85a-bae8f9f05217
+```
+
+Each document is `{item, ref, v, note, fu, t, kind, parent}` — `item` is the
+sheet number ("1" … "43", "D1" … "D31", or "2.o3" for one memory inside item
+2), `ref` the slug / id / class key the session needs, `v` the verdict word,
+`note` his words, `fu` the follow-up flag; an entry reply overrides its batch
+for that one memory. He may also
+paste the *Copy replies* line in chat; the store and the line say the same
+thing.
+
+⚠️ **Read `v` this way.** Under a memory (`2.…`, `3.…`) the chips say
+**Verify** or **Retire** since the same-day fix; a reply saved before it carries
+`v: "yes"` on an entry and means the batch's recommendation for that memory
+(verify under item 2, retire under item 3). And Sam replied in chat as well as
+on the sheet on 2026-09-05: `3.bog-amendment-is-funding-authority` is **retire
++ follow up** (his Follow up click was lost to the frozen-echo bug — see the
+lane file — and he may press it again on the fixed sheet), and his Yes on
+`3.nc-funding-targeted-plus-advisory-column` is **retire** (*"Yes to mean means
+that I agree it is no longer true"*). He held
+`3.nc-equalization-floor-plus-factor` until that was clarified; read the store
+for it. Then execute, exactly as S229's handoff laid out:
+
+- **Item 1 (the 352 promotions):** yes → `UPDATE cpl_memory SET
+  status='verified', verified_by=<verified_by_if_promoted>, verified_at=now()
+  WHERE id=<id> AND status='proposed'` per row from
+  `kb/memory_audit/2026-09-05-receipt.json` → `held_for_sam.rows`, one
+  `cpl_memory_log` row per write (action `verify`, before-image), actor
+  `SkyReply S231`, batches of ~60 as one statement each; *older only* → the
+  119 created before 2026-08-15; no → leave.
+- **Human-sourced rows:** stale → `status='stale'`, stamps cleared; retire →
+  `superseded` + `superseded_by`; verify → `verified_by='Sam Lee (sheet,
+  2026-09-05)'`.
+- **Follow-up flags:** every item with `fu` true goes on the To-Do feed with
+  his note, whatever the verdict.
+- ⚠️ Rule 10: fresh live read first (`updated_at` since the receipt); the
+  write is your own hand, one statement keyed on `id`, guarded by `status`.
+- Then re-export, `python3 kb/_memory_audit.py --from-json <export>`, commit
+  the dated report, update the lane file's counts.
+
+## Sam's 118 replies, read and interpreted (SkyKeep, 2026-09-05, 16:40 UTC)
+
+He finished the sheet late in the afternoon; the store holds **118 replies**
+(41 items, 76 memories under items 2 and 3, 1 retired row; 26 follow-ups; no
+notes), and I read every one against the live table. **Nothing has been
+written yet** — Sam signed off and left the execution to you (*"SkyReply
+will have its own cross to bear"*). Rule 10 at write time: a fresh read of
+`updated_at` per row, `WHERE status='proposed'` (or the status the action
+expects) in every statement, one `cpl_memory_log` row per change with the
+before-image in `before` (jsonb), actor `SkyReply S231`, batches of ~60, the
+direct statement through the database tool (never delegated). Do the
+supersedes before the promotions: three rows appear in both.
+
+**Promote (status verified).**
+- **Item 1, Yes:** the 352 rows in `kb/memory_audit/2026-09-05-receipt.json`
+  → `held_for_sam.rows`; `verified_by` = each row's `verified_by_if_promoted`,
+  `verified_at=now()`, log action `verify`. Hold out a row whose `updated_at`
+  moved after the receipt and say so.
+- **Item 2, 68 memories** (67 Verify plus
+  `finance-phrase-opens-far-more-than-finance`, a Yes saved before the
+  relabel): `verified_by='Sam Lee (sheet, 2026-09-05)'`, `verified_at=now()`,
+  log `verify`. Five stay proposed (no verdict, flagged for follow-up):
+  `a-public-shopfront-and-a-context-store-are-two-jobs`,
+  `a11y-one-command-npm-run-a11y`,
+  `four-thousand-students-marked-transcribed-with-no-units`,
+  `sam-no-temporary-mis-codes`, `the-tables-we-build-drop-maps-college-id`.
+- **Item 26, Yes:** the proposed rows that already carry a `verified_by`
+  (28 at audit time; fewer after items 2 and 3) → status verified, name kept,
+  `verified_at=coalesce(verified_at, now())`.
+- **Item 27, Yes:** the 38 verified rows with `verified_by is null` →
+  `verified_by = author` (an attribution repair; log `update`).
+
+**Retire by supersede** (status superseded, `superseded_by` = the slug; log
+`supersede`). Successors marked ✓ were read live; the others come from the
+audit's item file and want one `select` before the write.
+
+| Item | Row | superseded_by |
+|---|---|---|
+| 3 | `bog-amendment-is-funding-authority` (Yes + Follow up) · `nc-funding-targeted-plus-advisory-column` · `nc-equalization-floor-plus-factor` | `one-pool-model-adopted` ✓ |
+| 7 | `q1` | `sam-roles-not-groups-keep-the-phrase` ✓ |
+| 11 | `funding-rural-allowance-guaranteed-floor-first` | `rural-allowance-was-the-pools-only-unconditional-money` ✓ |
+| 14 | `p1-scores-applied-not-eligible` | `sam-ruled-three-bands-and-the-accepted-dials` |
+| 15 | `three-kinds-of-zero` | `sam-public-view-masks-under-10-but-funding-computes-on-true-numbers` ✓ |
+| 23 | `a-manager-ui-must-not-be-able-to-hide-itself` | `guard-belongs-on-the-narrowest-axis` |
+| 24 | `cobi-nav-manager-wishlist` | `the-cobi-side-menu-is-data-now-cobi-nav` ✓ |
+| 25 | `cobi-nav-manager-lives-in-an-admin-tab` | `nav-visibility-is-a-display-control-not-a-security-control` |
+| 33 | `noncredit-is-111-institutions-not-4` | `one-pool-model-adopted` ✓ |
+| 35 | `member-rehome-cn-verb-exists-and-is-unused` | `sam-drag-rehomes-membership-remints-stay-batched` |
+| 37 | `sam-nc-row-shows-zero-earned-not-an-advance` | `f1-resolved-and-never-design-for-missing-feeds` ✓ |
+| 38 | `sam-career-attainment-sits-with-the-project-pool` | `sam-ruled-goal-c-demonstrated-equity-in-3yr-reports` ✓ |
+
+Items 37 and 38 carry Sam's own name as verifier: the sheet is his word, so
+the supersede is his, not a session's (DR-19 satisfied; say so in the note).
+
+**Retire as stale** (status stale, stamps cleared, log `stale`): items 5
+`w2` · 12 `funding-35m-apportionment` · 13
+`cpl-funding-plan-2026-29-bog-amendment` · 18
+`cpr-aed-family-is-42pct-of-cpl-students` · 20
+`allocation-floor-waterfall-not-proportional` (then re-file the lesson as a
+NEW pitfall row without the old constants, as the ask says) · 36
+`never-assert-an-elapsed-time-you-did-not-measure` · 39
+`a-measure-everyone-clears-pays-automatically` · 42
+`common-subj-to-discipline-is-many-to-one-not-the-reverse` (he chose Retire
+over the rewrite).
+
+**Keep as they are (no write):** items 4 `o2` · 6 `o1` · 8 · 9 · 10 · 16 ·
+17 · 19 · 21 · 22 · 31 · 32 · 34 · 41 · 43; item 30 (no verdict, flagged).
+
+**Item 28, Yes:** clear `verified_by` and `verified_at` on
+`funding-overlay-holds-the-live-priorities` (stale, still stamped); the two
+nameless August 5 rows are already stale and have no slug — `retire` there
+means keep them stale and key any pointer on `id`; never delete (the lint's
+`2026-09-05.json` names them). **Item 29, Yes:** fix the 9 dead file paths
+and 8 dangling `related` pointers on session-written rows (each listed in
+`kb/memory_audit/2026-09-05.json`; find a moved file by `git log --follow`
+or its basename); leave the two August 30 `superseded_by` pointers.
+**Item 40, Yes:** Sam approved the redirect — `cpl_funding_public.html`
+sends readers to the explainer. A PUBLIC page: a small PR of its own (a meta
+refresh and a visible link), then supersede the question row with a new
+decision row recording his approval. **D3:** `ace-not-a-topic-class-is-6663-rows`
+stays retired; he flagged it for follow-up.
+
+**Follow-ups → the To-Do feed (26, one item each, pointing at the memory
+and the sheet; he left no notes):** items 8, 9, 10, 16, 17, 19, 21, 30, 31,
+41, 43; memories `finance-phrase-opens-far-more-than-finance`,
+`pa-and-ppa-are-disjoint-cohorts-not-a-subset`,
+`per-org-admin-is-a-filter-not-an-authority`,
+`post-pdf-says-physical-training-has-no-cid`,
+`reviewer-signin-lives-in-about`, `sam-email-in-the-signin-chip-is-enough`,
+`sam-roles-not-groups-keep-the-phrase`,
+`sam-workplan-goals-are-not-a-rival-vocabulary-to-78093`, the five
+unverdicted rows above, `bog-amendment-is-funding-authority`, and D3.
+
+Then re-export, run `python3 kb/_memory_audit.py --from-json <export>`,
+commit the dated report, and update the lane file's counts from the export.
+
+## Carryover, with status
+
+- **SkyView** — Sam drove the second list within the hour and the third list
+  shipped the same afternoon (dots, spread, the click highlight, the sidebar
+  grip); his reactions to THOSE come next, and three constants are the knobs:
+  `SPREAD_ISLANDS` (1.22), `DOT_IDENT`/`DOT_ORPHAN` (0.66/0.62), `DIM_ALPHA`
+  (0.3). Before that he had not driven the second list; his reactions decide
+  the next cut. Open from his Obsidian screenshot: whether the row's zoom
+  words become a right-edge glyph rail (his call). NEXT ① in the lane is
+  decision packs per discipline.
+- **BLOCKED on Sam: the absence color** (`--text-quiet` #6B6B66). In the feed.
+- **The a11y backlog**, unchanged from S227 (five tabs scroll sideways).
+- **Findings outside the audit's rows** (S229): the nightly
+  `map_cleanup_worklist` has lost its P1/P5 classes upstream; the disposition
+  lane file quotes pre-promotion figures; `prose_only()` blanks ~92% of
+  `CLAUDE.md`.
+- **Queued, unstarted:** config-to-tables; the live-session banner; the
+  identities-map sheet; the three HOSP anchors' discipline.
+
+## Patterns that worked
+
+- **Verify the ask against the screen.** The YES / NO screenshots were the
+  spec; a Chromium drive of `index.html#unified-courses` was the proof.
+- **Paint state from every path that changes it.** A class toggle is not a
+  re-render; `setSolo` calls `paintWins` now.
+- **When the generator lags its output, transform the output**, idempotently,
+  and say so where the next reader looks.
+
+## Safety patterns to honor
+
+- ⚠️ **A human-sourced row is never written by a session** (DR-19). His sheet
+  replies are his word; execute them, and cite the sheet in `verified_by`.
+- ⚠️ **Never re-run `kb/memory_audit/2026-09-05-sheet_builder.py` over the
+  committed sheet** — it predates the sheet and would drop item 2.
+- ⚠️ Page a slice with `order by (created_at, id)`; never delegate a bulk write.
+- ⚠️ `docs/INDEX.md` and `docs/catalog/` are GENERATED: `python3 kb/_build_docs_index.py`.
+- ⚠️ Regenerate the dependency map AFTER `git add`; `package-lock.json` is gitignored.
+- ⚠️ A harness that drives COBI must dismiss the first-visit greeting
+  (`.cplfl-overlay .cplfl-close`) before it can reach the frame.
+
+## Next concrete step
+
+`read_db` on the sheet's `replies` collection. If it is empty, ask Sam in one
+line whether he replied on the sheet or will paste the line, then start with
+item 1.

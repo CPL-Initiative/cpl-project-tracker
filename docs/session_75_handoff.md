@@ -10,6 +10,8 @@ related:
   - "[[docs/unverified_mid_renumber_scope]]"
   - "[[docs/kb-notes/tmc-co-review-scope]]"
   - "[[docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 75

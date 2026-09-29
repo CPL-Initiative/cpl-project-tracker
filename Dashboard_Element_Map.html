@@ -46,6 +46,7 @@
   .element-header .ename { font-size: 0.82rem; color: #444; flex: 1; }
   .element-header .source-tag { font-size: 0.62rem; font-weight: 600; padding: 2px 6px; border-radius: 4px; white-space: nowrap; }
   .tag-live { background: #e8f5e9; color: var(--green); }
+  .tag-supabase { background: #e6f7ef; color: #1b7a52; }
   .tag-excel { background: #fff3e0; color: #e65100; }
   .tag-exhibit { background: #e3f2fd; color: #1565c0; }
   .tag-computed { background: #f3e5f5; color: #7b1fa2; }
@@ -75,7 +76,11 @@
   .fn-output { background: #e8f5e9; color: var(--green); }
 
   .excel-ref { display: inline-flex; align-items: center; gap: 0.3rem; background: #fff3e0; color: #e65100; font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-top: 0.3rem; }
+  .supa-ref { display: inline-flex; align-items: center; gap: 0.3rem; background: #e6f7ef; color: #1b7a52; font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-top: 0.3rem; }
   .full-width { grid-column: 1 / -1; }
+  .edit-note { background: #fff8e1; border: 1px solid #f0e0a0; border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 1.2rem; font-size: 0.8rem; color: #5a4a00; line-height: 1.55; }
+  .edit-note strong { color: #4a3c00; }
+  .edit-note code { background: #fff; padding: 1px 5px; border-radius: 3px; font-family: 'SF Mono', Menlo, Monaco, monospace; font-size: 0.74rem; }
 
   .toc { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
   .toc h3 { font-size: 0.85rem; color: var(--navy); margin-bottom: 0.5rem; }
@@ -95,13 +100,13 @@
 <div class="header">
   <h1>CPL Dashboard — Element Source & Algorithm Map</h1>
   <div class="sub">Every number on the dashboard, where it comes from, and how it's computed</div>
-  <div class="desc">Click any element to expand its source, algorithm, data flow, and the Excel column where it can be adjusted.</div>
+  <div class="desc">Click any element to expand its source, algorithm, data flow, and where it can be adjusted. Values now come from <strong>Supabase</strong> + the live CCCCO API — the Excel workbook was retired.</div>
 </div>
 
 <div class="controls" id="controls">
   <button class="active" data-section="all">All Sections</button>
   <button data-section="headline">Headline KPIs (10)</button>
-  <button data-section="activity">Activity KPIs (19)</button>
+  <button data-section="activity">Activity Metrics (4 Activities)</button>
   <button data-section="trends">KPI Trends</button>
   <button data-section="college">College Activity</button>
   <button data-section="workplan">Workplan Charts</button>
@@ -112,7 +117,7 @@
 
 <div class="legend">
   <span><span class="dot" style="background:#2A7D4F;"></span> LIVE — scraped from CCCCO API</span>
-  <span><span class="dot" style="background:#e65100;"></span> EXCEL — from Project List tab</span>
+  <span><span class="dot" style="background:#1b7a52;"></span> SUPABASE — projects / workplan_goals tables</span>
   <span><span class="dot" style="background:#1565c0;"></span> EXHIBIT — from CustomReport JSON</span>
   <span><span class="dot" style="background:#7b1fa2;"></span> COMPUTED — pipeline algorithm</span>
   <span><span class="dot" style="background:#c62828;"></span> HARDCODED — static in Python</span>
@@ -123,9 +128,19 @@
 
 <div class="stats-bar">
   <div class="stat-chip"><strong>60+</strong> dashboard elements mapped</div>
-  <div class="stat-chip"><strong>3</strong> data sources (CCCCO API, Excel, CustomReport JSON)</div>
+  <div class="stat-chip"><strong>3</strong> live data sources (CCCCO API, Supabase, CustomReport JSON)</div>
   <div class="stat-chip"><strong>8</strong> dashboard sections</div>
-  <div class="stat-chip"><strong>2</strong> new Excel columns: <code>Source & Logic</code> + <code>Algorithm Override</code></div>
+  <div class="stat-chip">Reference refreshed <strong>2026-07-27</strong></div>
+</div>
+
+<div class="edit-note">
+  <strong>📖 This map is read-only documentation — you don't change values here.</strong>
+  To edit a project's <strong>title, metric, status, or notes</strong> (e.g. renaming
+  <em>1.1.3 &ldquo;WestEd CPL Scope of Work&rdquo;</em>), open the dashboard, sign in as an allowed
+  reviewer, and click the field. Project cards on the <strong>Activities</strong> tab and the
+  title cells on the <strong>Annual Workplan Goals</strong> tab write straight to Supabase
+  <code>public.projects</code> — a title edit PATCHes <code>projects.name</code>, the single source
+  of truth. The daily workflow then republishes the dashboard from Supabase.
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════ -->
@@ -145,7 +160,7 @@
         <span class="eid">KPI-1</span>
         <span class="ename">Cumulative CPL Students</span>
         <span class="source-tag tag-live">LIVE</span>
-        <span class="source-tag tag-excel">FALLBACK: Excel</span>
+        <span class="source-tag tag-supabase">FALLBACK: Supabase</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
@@ -166,14 +181,14 @@
           </div>
           <div class="detail-box">
             <h4>Fallback Source</h4>
-            <p>Excel → Project <code>3.1</code> → Column R (<code>kpi_metric</code>)</p>
-            <p>Default: <code>42,620</code></p>
-            <div class="excel-ref">📊 Excel: Row 3.1, Col R (kpi_metric)</div>
+            <p>Supabase <code>projects</code> → id <code>3.1</code> → <code>kpi_metric</code> (baseline "current")</p>
+            <p>Then a committed snapshot, then the legacy <code>.xlsx</code> — deep outage fallbacks only</p>
+            <div class="supa-ref">🗄 Supabase: projects[id=3.1].kpi_metric</div>
           </div>
           <div class="detail-box">
             <h4>Algorithm</h4>
-            <div class="algo"><span class="cm"># compute_headline_kpis()</span>
-students = get_metric(<span class="kw">"3.1"</span>, <span class="kw">"42,620"</span>)
+            <div class="algo"><span class="cm"># compute_headline_kpis() reads the Supabase projects baseline</span>
+students = get_metric(<span class="kw">"3.1"</span>)   <span class="cm"># projects[3.1].kpi_metric</span>
 <span class="cm"># Then overwritten by merge_live_metrics():</span>
 kpis[<span class="kw">"cumulative_students"</span>][<span class="kw">"value"</span>] = metric[<span class="kw">"value"</span>]
 <span class="cm"># Value = ALL COLLEGES row, Students field</span></div>
@@ -187,8 +202,8 @@ kpis[<span class="kw">"cumulative_students"</span>][<span class="kw">"value"</sp
           </div>
           <div class="detail-box full-width">
             <h4>Override / Adjust</h4>
-            <p><strong>New Excel Column AF (Source & Logic):</strong> "LIVE from CCCCO API raw.Students; fallback = Project 3.1 Col R"</p>
-            <p><strong>New Excel Column AG (Algorithm Override):</strong> Leave blank to use live data. Enter a number to override.</p>
+            <p><strong>Primary:</strong> LIVE from the CCCCO API (<code>raw.Students</code>) — nothing to set.</p>
+            <p><strong>Baseline fallback:</strong> edit <code>projects.kpi_metric</code> for id <code>3.1</code> via the signed-in editor. A hard override lives in <code>kb/dashboard_config.json</code> (the old Excel Col&nbsp;AF/AG override columns were retired).</p>
           </div>
         </div>
       </div>
@@ -226,8 +241,8 @@ kpis[<span class="kw">"eligible_units"</span>] = {
           </div>
           <div class="detail-box">
             <h4>Fallback</h4>
-            <p>Excel Project <code>3.2</code> Col R: <code>96,449</code></p>
-            <div class="excel-ref">📊 Excel: Row 3.2, Col R</div>
+            <p>Supabase <code>projects</code> id <code>3.2</code> → <code>kpi_metric</code></p>
+            <div class="supa-ref">🗄 Supabase: projects[id=3.2].kpi_metric</div>
           </div>
         </div>
       </div>
@@ -265,7 +280,7 @@ kpis[<span class="kw">"eligible_units"</span>] = {
           </div>
           <div class="detail-box">
             <h4>Fallback</h4>
-            <p>Excel Project <code>3.2</code> Col R: same as eligible units</p>
+            <p>Supabase <code>projects</code> id <code>3.2</code> → <code>kpi_metric</code> (same row as eligible units)</p>
           </div>
         </div>
       </div>
@@ -304,8 +319,8 @@ kpis[<span class="kw">"credit_recommendations"</span>] = {
           </div>
           <div class="detail-box">
             <h4>Fallback</h4>
-            <p>Excel Project <code>2.1</code> Col R: <code>576</code></p>
-            <div class="excel-ref">📊 Excel: Row 2.1, Col R</div>
+            <p>Supabase <code>projects</code> id <code>2.1</code> → <code>kpi_metric</code></p>
+            <div class="supa-ref">🗄 Supabase: projects[id=2.1].kpi_metric</div>
           </div>
         </div>
       </div>
@@ -409,7 +424,7 @@ criteria = [
           <div class="detail-box">
             <h4>Footnote</h4>
             <p>Auto-generated criteria list from Worker response</p>
-            <div class="excel-ref">📊 Excel Fallback: Row 3.3, Col R</div>
+            <div class="supa-ref">🗄 Supabase Fallback: projects[id=3.3].kpi_metric</div>
           </div>
         </div>
       </div>
@@ -475,19 +490,19 @@ savings = <span class="kw">"$269M"</span>
         <span class="arrow">&#9654;</span>
         <span class="eid">KPI-10</span>
         <span class="ename">Veteran Sprint</span>
-        <span class="source-tag tag-excel">EXCEL</span>
+        <span class="source-tag tag-supabase">SUPABASE</span>
         <span class="source-tag tag-live">+ LIVE INJECT</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
           <div class="detail-box">
             <h4>Primary Source</h4>
-            <p>Excel Project <code>4.1a</code> Col R — Star Colleges count</p>
+            <p>Supabase <code>projects</code> id <code>4.1</code> (Veteran Sprint) — <code>kpi_metric</code>. Post-reorg #872 the old <code>4.1a</code> sub-id is gone.</p>
           </div>
           <div class="detail-box">
             <h4>Algorithm</h4>
             <div class="algo"><span class="cm"># compute_headline_kpis()</span>
-value = proj_map[<span class="kw">"4.1a"</span>][<span class="kw">"kpi_metric"</span>]
+value = proj_map[<span class="kw">"4.1"</span>][<span class="kw">"kpi_metric"</span>]
 <span class="cm"># merge_live_metrics() replaces placeholders:</span>
 {jst_credits} → MilitaryStudents from live data
 {eligible_cpl} → MilitaryCredits from live data
@@ -496,7 +511,7 @@ value = proj_map[<span class="kw">"4.1a"</span>][<span class="kw">"kpi_metric"</
           <div class="detail-box full-width">
             <h4>Breakdowns (hybrid)</h4>
             <p>• <strong>JST Credits</strong> — <code>{jst_credits}</code> placeholder → replaced by <code>live_data → cumulative_students → Military breakdown</code></p>
-            <p>• <strong>Basic Training Credit</strong> — <code>4.1a kpi_metric + " Colleges"</code> (Excel)</p>
+            <p>• <strong>Basic Training Credit</strong> — <code>projects[4.1].kpi_metric + " Colleges"</code> (Supabase)</p>
             <p>• <strong>Eligible CPL</strong> — <code>{eligible_cpl}</code> placeholder → replaced by <code>live_data → eligible_units → Military breakdown</code></p>
           </div>
         </div>
@@ -535,326 +550,155 @@ value = proj_map[<span class="kw">"4.1a"</span>][<span class="kw">"kpi_metric"</
 <!-- ═══════════════════════════════════════════════════════════ -->
 <div class="section visible" data-section="activity">
   <div class="section-header">
-    <h2>2. Activity KPI Cards</h2>
-    <span class="badge">19 CARDS</span>
+    <h2>2. Activity Metrics Cards</h2>
+    <span class="badge">4 ACTIVITIES · 32 SUB-ACTIVITIES</span>
   </div>
   <div class="section-body">
 
     <div class="detail-box full-width" style="margin-bottom: 1rem;">
-      <h4>Universal Source Pattern for All 19 Activity KPIs</h4>
-      <div class="algo"><span class="cm"># build_activity_kpis() reads from Excel Project List tab:</span>
-metric  = Excel Col R (<span class="kw">kpi_metric</span>)   <span class="cm"># current value</span>
-unit    = Excel Col S (<span class="kw">kpi_unit</span>)     <span class="cm"># label (e.g. "colleges", "units")</span>
-goals   = Excel Cols T-AC            <span class="cm"># 5-year goals & stretch targets</span>
-status  = Excel Col K                <span class="cm"># project status</span>
-pct     = Excel Col L                <span class="cm"># progress % (0-100 or 0.0-1.0)</span>
-notes   = Excel Col P (update), Col AD (workplan)
-<span class="cm"># Special: 4.1 = composite of 4.1a-4.1d (count of sprint projects)</span></div>
+      <h4>Universal Source Pattern — Supabase (Excel retired)</h4>
+      <div class="algo"><span class="cm"># build_activity_kpis(projects, activities) — pure grouping over two</span>
+<span class="cm"># Supabase-loaded inputs; no Excel columns anymore.</span>
+projects   = load_projects(wb)     <span class="cm"># Supabase public.projects → snapshot → .xlsx (deep fallback)</span>
+activities = build_workplan_goals_from_supabase(...)  <span class="cm"># workplan_goals + associations</span>
+
+<span class="cm"># Per sub-activity card:</span>
+name    = projects.<span class="kw">name</span>              <span class="cm"># editable title (single source of truth)</span>
+metric  = projects.<span class="kw">kpi_metric</span>        <span class="cm"># baseline; OVERWRITTEN by apply_live_activity_current()</span>
+unit    = projects.<span class="kw">kpi_unit</span>
+status  = projects.<span class="kw">status</span>            <span class="cm"># pct = projects.percent_complete</span>
+goals   = workplan_goals.<span class="kw">yr_2025_26 … yr_2029_30</span>   <span class="cm"># annual + 2030 ladder</span>
+<span class="cm"># Grouped by projects.workplan_activity (NOT the id prefix).</span>
+<span class="cm"># Activity labels come from the Supabase workplan_goals Activity rows.</span></div>
       <div class="flow-diagram">
-        <span class="flow-node fn-source">Excel Project List</span>
+        <span class="flow-node fn-source">Supabase projects + workplan_goals</span>
         <span class="flow-arrow">→</span>
-        <span class="flow-node fn-process">read_projects()</span>
+        <span class="flow-node fn-process">load_projects() / build_workplan_goals_from_supabase()</span>
         <span class="flow-arrow">→</span>
         <span class="flow-node fn-process">build_activity_kpis()</span>
         <span class="flow-arrow">→</span>
-        <span class="flow-node fn-process">render_activity_kpis_html()</span>
+        <span class="flow-node fn-process">apply_live_activity_current()</span>
         <span class="flow-arrow">→</span>
-        <span class="flow-node fn-output">Dashboard Cards</span>
+        <span class="flow-node fn-output">Activity Metrics cards</span>
       </div>
     </div>
 
-    <!-- Activity 1 -->
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">1.1</span>
-        <span class="ename">MAP Platform Development</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Metric</h4><p>Col R value for project 1.1 — platform operational indicator</p></div>
-          <div class="detail-box"><h4>Annual Goal Current</h4><div class="algo">populate_current_metrics: <span class="kw">lambda: 1</span>  <span class="cm"># MAP platform operational = 1</span></div></div>
-        </div>
-      </div>
+    <div class="detail-box full-width" style="margin-bottom: 1rem;">
+      <h4>The "Current" big number — apply_live_activity_current()</h4>
+      <div class="algo"><span class="cm"># Priority order; card == headline KPI == Annual Workplan by construction:</span>
+<span class="kw">1.</span> PID_TO_KPI_KEY sub-activity   → LIVE merged headline KPI value   <span class="cm"># metric_source='live'</span>
+     3.1→cumulative_students · 3.2→transcribed_units · 2.1→credit_recommendations
+     3.3→active_colleges · 4.1→veteran_sprint
+<span class="kw">2.</span> PID_TO_KPI_BREAKDOWN card     → a headline KPI breakdown row      <span class="cm"># metric_source='live'</span>
+     3.1.1→workforce · 3.1.2→military · 3.1.3→apprentice
+<span class="kw">3.</span> else workplan_goals.<span class="kw">current</span>  → explicit manual value            <span class="cm"># metric_source='workplan'</span>
+<span class="kw">4.</span> else projects.<span class="kw">kpi_metric</span>       → Supabase baseline</div>
+      <p style="margin-top:0.5rem;font-size:0.78rem;color:#555;">The old <code>populate_current_metrics()</code> / <code>_pmetric_int</code> / <code>_ppct</code> / <code>_pcount</code> cluster and the "Excel Col R/S/T-AC" columns were <strong>deleted</strong> in the Excel-retirement work (PR #213) — ignore any doc that still cites them.</p>
     </div>
 
+    <!-- Activity 1 — Build AI-Enhanced CPL Infrastructure (7 sub-activities) -->
     <div class="element">
       <div class="element-header" onclick="toggle(this)">
         <span class="arrow">&#9654;</span>
-        <span class="eid">1.2</span>
-        <span class="ename">System Integrations</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Metric</h4><p>Col R: count of integrations (e.g., CCCApply, eTranscript)</p></div>
-          <div class="detail-box"><h4>Annual Goal Current</h4><div class="algo">populate_current_metrics: <span class="fn">_pcount</span>(proj_map, <span class="kw">"1.2"</span>)</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">1.3</span>
-        <span class="ename">Student Portal</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Metric</h4><p>Col R value for project 1.3</p></div>
-          <div class="detail-box"><h4>Annual Goal Current</h4><div class="algo"><span class="kw">lambda:</span> 1 <span class="kw">if</span> pct ≥ 50 <span class="kw">else</span> 0  <span class="cm"># binary: portal launched?</span></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">1.4</span>
-        <span class="ename">Credential Registry Integration</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics: <span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"1.4"</span>)
-<span class="cm"># Reads Col R, strips commas/k suffix, converts to int</span></div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Activity 2 -->
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">2.1</span>
-        <span class="ename">Credit Recommendations</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Metric</h4><p>Col R: count of credit recommendations created by workgroups</p></div>
-          <div class="detail-box"><h4>Note</h4><p>This is the <em>activity-level</em> card showing Excel value. The <em>headline</em> KPI-4 is overwritten by CustomReport JSON exhibit count.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">2.2</span>
-        <span class="ename">Faculty Workgroups</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics: <span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"2.2"</span>)
-<span class="cm"># Pathway templates ≈ workgroups (proxy metric)</span></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">2.3</span>
-        <span class="ename">Industry Partnerships</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"2.3"</span>)</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">2.4</span>
-        <span class="ename">AI-Ready Baccalaureate</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-        <span class="source-tag tag-computed">COMPUTED</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="cm"># Links to project 5.1 (AI-Ready California)</span>
-populate_current_metrics:
-  <span class="kw">lambda:</span> 1 <span class="kw">if</span> _ppct(proj_map, <span class="kw">"5.1"</span>) > 0 <span class="kw">else</span> 0</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Activity 3 -->
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">3.1</span>
-        <span class="ename">Cumulative Students (Activity)</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Note</h4><p>Same project row as headline KPI-1. Activity card shows Excel Col R value; headline KPI is overwritten by live data.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">3.2</span>
-        <span class="ename">Eligible Units (Activity)</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Note</h4><p>Activity card shows Excel Col R. Headline KPI overwritten by live data.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">3.3</span>
-        <span class="ename">Active Colleges (Activity)</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Note</h4><p>Activity card from Excel. Headline KPI overwritten by live tier classification.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">3.4</span>
-        <span class="ename">CPL Savings Analysis</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"3.4"</span>)</div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">3.5</span>
-        <span class="ename">Success Stories</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Note</h4><p>Annual goal current maps to <code>_pmetric_int(proj_map, "3.5")</code></p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">3.6</span>
-        <span class="ename">Data Reporting</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"3.6"</span>)</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Activity 4 -->
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">4.1</span>
-        <span class="ename">Sprints (Composite: 4.1a-4.1d)</span>
-        <span class="source-tag tag-computed">COMPOSITE</span>
+        <span class="eid">Act 1</span>
+        <span class="ename">Build AI-Enhanced CPL Infrastructure</span>
+        <span class="source-tag tag-supabase">SUPABASE</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
           <div class="detail-box full-width">
-            <h4>Composite Algorithm</h4>
-            <div class="algo"><span class="cm"># build_activity_kpis() aggregates sprint sub-projects:</span>
-sprint_ids = [<span class="kw">"4.1a"</span>, <span class="kw">"4.1b"</span>, <span class="kw">"4.1c"</span>, <span class="kw">"4.1d"</span>]
-metric = len(sprint_projects)  <span class="cm"># count of active sprints (currently 4)</span>
-unit = <span class="kw">"active sprints"</span>
-pct = avg(sprint_project.pct <span class="kw">for</span> each sprint)
-<span class="cm"># Components shown inline: 4.1a Veteran Sprint, 4.1b Apprenticeship, etc.</span>
-<span class="cm"># Goals aggregated: sum of 4.1a-d goals per year</span></div>
+            <h4>Sub-activities (Supabase <code>projects</code>, grouped by <code>workplan_activity</code>)</h4>
+            <p><code>1.1</code> MAP Platform Development · <code>1.1.1</code> AI Certification-to-Course Matching · <code>1.1.2</code> AI Apprenticeship CPL Tools · <code>1.1.3</code> WestEd CPL Scope of Work · <code>1.2</code> System Integration &amp; Interoperability · <code>1.3</code> CPL Student Portal · <code>1.4</code> California Credential Registry</p>
+          </div>
+          <div class="detail-box">
+            <h4>Current value</h4>
+            <p>Each card's big number = <code>projects.kpi_metric</code> unless <code>apply_live_activity_current()</code> wires it to a live headline KPI (none in Activity 1 today).</p>
+          </div>
+          <div class="detail-box">
+            <h4>Edit</h4>
+            <p>Rename / re-metric a sub-activity via the signed-in editor — the title cell PATCHes <code>projects.name</code> (e.g. <code>1.1.3</code> is the WestEd rename).</p>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Activity 2 — Faculty Workgroups & Credit Recommendations (4 sub-activities) -->
     <div class="element">
       <div class="element-header" onclick="toggle(this)">
         <span class="arrow">&#9654;</span>
-        <span class="eid">4.2</span>
-        <span class="ename">Title 5 Regulatory Updates</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-        <span class="source-tag tag-hardcoded">+ HARDCODED</span>
+        <span class="eid">Act 2</span>
+        <span class="ename">Faculty Workgroups &amp; Credit Recommendations</span>
+        <span class="source-tag tag-supabase">SUPABASE</span>
+        <span class="source-tag tag-live">1 LIVE-WIRED</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics: <span class="kw">lambda: 2</span>
-<span class="cm"># Hardcoded: "2 Title 5 regulatory updates in progress"</span>
-<span class="cm"># Col R for display, hardcoded for annual goal current</span></div></div>
+          <div class="detail-box full-width">
+            <h4>Sub-activities (Supabase <code>projects</code>)</h4>
+            <p><code>2.1</code> Statewide Credit Recommendations · <code>2.2</code> Faculty Discipline Workgroups · <code>2.3</code> Common Course Crosswalks · <code>2.4</code> Validated Skills</p>
+          </div>
+          <div class="detail-box">
+            <h4>Live-wired card</h4>
+            <p><code>2.1</code> → <code>credit_recommendations</code> headline KPI via <code>PID_TO_KPI_KEY</code> (the exhibit-count total from CustomReport JSON). The rest show <code>projects.kpi_metric</code> / <code>workplan_goals.current</code>.</p>
+          </div>
+          <div class="detail-box">
+            <h4>Edit</h4>
+            <p>Title / metric edits PATCH Supabase <code>projects</code> via the signed-in dashboard editor.</p>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Activity 3 — Build CPL Data Infrastructure (12 sub-activities) -->
     <div class="element">
       <div class="element-header" onclick="toggle(this)">
         <span class="arrow">&#9654;</span>
-        <span class="eid">4.3</span>
-        <span class="ename">Training & Professional Development</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
+        <span class="eid">Act 3</span>
+        <span class="ename">Build CPL Data Infrastructure</span>
+        <span class="source-tag tag-supabase">SUPABASE</span>
+        <span class="source-tag tag-live">LIVE-WIRED</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo"><span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"4.3"</span>)</div></div>
+          <div class="detail-box full-width">
+            <h4>Sub-activities (Supabase <code>projects</code>)</h4>
+            <p><code>3.1</code> CPL Offers &amp; Awards Tracking — All Populations · <code>3.1.1</code> Working Adults · <code>3.1.2</code> Veterans &amp; Service Members · <code>3.1.3</code> Apprentices &amp; Journeyworkers · <code>3.1.4</code> Other Populations · <code>3.2</code> CPL Units Transcription · <code>3.3</code> Statewide Adoption &amp; Participation · <code>3.4</code> Student Impact Rate Survey · <code>3.5</code> Student Stories · <code>3.6</code> College Tracking &amp; Recognition · <code>3.7</code> RP Group CPL Field Survey · <code>3.8</code> MIS Data Reconciliation</p>
+          </div>
+          <div class="detail-box">
+            <h4>Live-wired cards</h4>
+            <p><code>3.1</code>→<code>cumulative_students</code>, <code>3.2</code>→<code>transcribed_units</code>, <code>3.3</code>→<code>active_colleges</code> (headline KPIs). Population cards <code>3.1.1/3.1.2/3.1.3</code>→ the workforce / military / apprentice breakdown rows via <code>PID_TO_KPI_BREAKDOWN</code>.</p>
+          </div>
+          <div class="detail-box">
+            <h4>Edit</h4>
+            <p>Title / metric edits PATCH Supabase <code>projects</code>. Live-wired cards read the merged headline KPI, so their number can't be hand-edited here.</p>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Activity 4 — Sprints, Projects, Partnerships & Scale (9 sub-activities) -->
     <div class="element">
       <div class="element-header" onclick="toggle(this)">
         <span class="arrow">&#9654;</span>
-        <span class="eid">4.4</span>
-        <span class="ename">Technical Assistance & College Support</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-        <span class="source-tag tag-computed">PROXY</span>
+        <span class="eid">Act 4</span>
+        <span class="ename">Sprints, Projects, Partnerships &amp; Scale</span>
+        <span class="source-tag tag-supabase">SUPABASE</span>
+        <span class="source-tag tag-live">1 LIVE-WIRED</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics:
-  <span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"4.3"</span>)  <span class="cm"># ← uses 4.3's metric as proxy</span>
-<span class="cm"># TA & college support ≈ trainings delivered</span></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="element">
-      <div class="element-header" onclick="toggle(this)">
-        <span class="arrow">&#9654;</span>
-        <span class="eid">4.5</span>
-        <span class="ename">Research & Evaluation</span>
-        <span class="source-tag tag-excel">EXCEL Col R</span>
-        <span class="source-tag tag-computed">PROXY</span>
-      </div>
-      <div class="element-detail">
-        <div class="detail-grid">
-          <div class="detail-box"><h4>Algorithm</h4><div class="algo">populate_current_metrics:
-  <span class="fn">_pmetric_int</span>(proj_map, <span class="kw">"5.4"</span>)  <span class="cm"># ← uses project 5.4 (RP Group survey)</span></div></div>
+          <div class="detail-box full-width">
+            <h4>Sub-activities (Supabase <code>projects</code>)</h4>
+            <p><code>4.1</code> Veteran Sprint · <code>4.1.1</code> 29 Palms Marine Corps Base Demo · <code>4.2</code> Apprenticeship Sprint · <code>4.3</code> Strategic Partnerships · <code>4.4</code> Technical Assistance &amp; Training · <code>4.4.1</code> VRC CPL Module Revision · <code>4.5</code> Law &amp; Regulation Review · <code>4.6</code> Sustainable Funding · <code>4.7</code> CPL Legislative Advocacy (2026 Session)</p>
+          </div>
+          <div class="detail-box">
+            <h4>Sprints are tags now</h4>
+            <p>The old <code>4.1</code> composite of <code>4.1a–4.1d</code> is gone (reorg #872). Sprints are a cross-cutting <code>sprint_tag</code> (Veteran / Apprenticeship / Statewide Adoption); Statewide Adoption moved under <code>3.3</code>.</p>
+          </div>
+          <div class="detail-box">
+            <h4>Live-wired card</h4>
+            <p><code>4.1</code> Veteran Sprint → <code>veteran_sprint</code> headline KPI (<code>PID_TO_KPI_KEY</code>). Others show <code>projects.kpi_metric</code> / <code>workplan_goals.current</code>.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -995,7 +839,7 @@ source: View_StudentAggregatedValues_APIDataset
         <span class="ename">Goal Trajectory (250K target)</span>
         <span class="source-tag tag-live">LIVE</span>
         <span class="source-tag tag-hardcoded">HARDCODED BASELINES</span>
-        <span class="source-tag tag-excel">EXCEL GOALS</span>
+        <span class="source-tag tag-supabase">SUPABASE GOALS</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
@@ -1009,7 +853,7 @@ mil_now = live → MilitaryStudents (default <span class="kw">21,866</span>)
 wf_now  = live → NonMilitaryStudents (default <span class="kw">21,526</span>)
 app_now = live → AprenticeStudents (default <span class="kw">681</span>)
 
-<span class="cm"># Annual goal/stretch from workplan_goals (Excel Cols T-AC)</span>
+<span class="cm"># Annual goal/stretch from Supabase workplan_goals (yr_2025_26 … yr_2029_30)</span>
 <span class="cm"># Looked up by name containing "military"/"workforce"/"apprentice"</span>
 
 <span class="cm"># build_trajectory(baseline, annual_vals, endpoint):</span>
@@ -1031,12 +875,12 @@ app_actual = [[2024, 196],  [2025, <span class="kw">300</span>],   [2026, app_no
             <p>• <strong>Baselines</strong>: Hardcoded in Python (line 1655)</p>
             <p>• <strong>2025 actuals</strong>: Hardcoded (lines 1710-1713)</p>
             <p>• <strong>Current values</strong>: From live data sub-populations</p>
-            <p>• <strong>Goal/Stretch endpoints</strong>: From workplan_goals (Excel)</p>
+            <p>• <strong>Goal/Stretch endpoints</strong>: From Supabase <code>workplan_goals</code></p>
             <p>• <strong>Targets</strong>: 250K / 500K hardcoded</p>
           </div>
           <div class="detail-box">
-            <h4>Proposed Override</h4>
-            <p>New Excel columns can override baselines, historical actuals, and target values. Pipeline reads overrides before building trajectories.</p>
+            <h4>Adjust</h4>
+            <p>Baselines, 2025 actuals, and the 250K/500K targets are Python constants in <code>excel_to_dashboard.py</code> — change the generator to move them. Goal/stretch endpoints edit live on the Annual Workplan Goals tab (Supabase <code>workplan_goals</code>).</p>
           </div>
         </div>
       </div>
@@ -1047,22 +891,23 @@ app_actual = [[2024, 196],  [2025, <span class="kw">300</span>],   [2026, app_no
         <span class="arrow">&#9654;</span>
         <span class="eid">TABLE</span>
         <span class="ename">Annual Workplan Goals Table</span>
-        <span class="source-tag tag-excel">EXCEL</span>
+        <span class="source-tag tag-supabase">SUPABASE</span>
         <span class="source-tag tag-computed">DERIVED</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
           <div class="detail-box full-width">
-            <h4>Algorithm: build_workplan_goals_from_projects()</h4>
-            <div class="algo"><span class="cm"># Derives workplan goals from Project List tab (no separate sheet needed)</span>
-<span class="kw">for</span> each core sub-activity (1.1–4.5):
-  goal_values = [Col T, Col V, Col X, Col Z, Col AB]  <span class="cm"># goals per year</span>
-  stretch_values = [Col U, Col W, Col Y, Col AA, Col AC]
-  current_metric = Col R (kpi_metric)  <span class="cm"># placed in 2025-26 current</span>
-  goal_total = sum(goal_values)
-  stretch_total = sum(stretch_values)
+            <h4>Algorithm: build_workplan_goals_from_supabase()</h4>
+            <div class="algo"><span class="cm"># Reads Supabase workplan_goals (GOAL/STRETCH rows per activity_id) +</span>
+<span class="cm"># workplan_activity_associations; snapshot fallback.</span>
+<span class="kw">for</span> each sub-activity:
+  goal_values    = workplan_goals GOAL row     <span class="cm"># yr_2025_26 … yr_2029_30</span>
+  stretch_values = workplan_goals STRETCH row
+  current        = live headline KPI (if PID_TO_KPI_KEY-mapped)
+                   else workplan_goals.current (manual)
+                   else projects.kpi_metric
+  goal_total = sum(goal_values); stretch_total = sum(stretch_values)
 
-<span class="cm"># Special: 4.1 = aggregate sum of 4.1a-d goals per year</span>
 <span class="cm"># Percentages detected: all(0 < v < 1) → displayed as %</span></div>
           </div>
         </div>
@@ -1087,17 +932,18 @@ app_actual = [[2024, 196],  [2025, <span class="kw">300</span>],   [2026, app_no
         <span class="arrow">&#9654;</span>
         <span class="eid">BUD-1</span>
         <span class="ename">Funding Overview & Grand Total</span>
-        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+        <span class="source-tag tag-supabase">SUPABASE: budget_funding</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
           <div class="detail-box full-width">
-            <h4>Source: read_budget_plan()</h4>
-            <div class="algo"><span class="cm"># Excel tab: "20260324 CPL Budget" (or any tab with "budget" in name)</span>
-Funding Sources: rows 6–11, cols B–M
-  B=name, E=source, F–J=yearly budgets, L=total, M=avg
-Subtotals: rows 12–14 (Ops, Special Projects, Local Funding)
-Grand Total: row 15, col L
+            <h4>Source: load_budget() → build_budget_from_supabase()</h4>
+            <div class="algo"><span class="cm"># Supabase budget_funding + personnel → snapshot → .xlsx (deep fallback)</span>
+Funding rows: budget_funding (yr_2025_26_budget … yr_2029_30_budget, total, avg)
+Subtotals: Ops / Special Projects / Local Funding
+Grand Total: Σ funding rows
+<span class="cm"># Inline editor: budget_editor.js PATCHes budget_funding (7 cells/row,</span>
+<span class="cm"># RLS-gated to is_allowed_reviewer())</span>
 <span class="cm"># Stacked bar chart = % of grand total per source</span></div>
           </div>
         </div>
@@ -1109,19 +955,19 @@ Grand Total: row 15, col L
         <span class="arrow">&#9654;</span>
         <span class="eid">BUD-2</span>
         <span class="ename">Expenditure Summary (by Category & Area)</span>
-        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+        <span class="source-tag tag-supabase">SUPABASE: budget tables</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
           <div class="detail-box">
             <h4>By Category</h4>
-            <p>Rows 60–67, Cols B, F–J, L, M</p>
-            <p>Top 8 expense categories with yearly and total values</p>
+            <p>Top expense categories with yearly and total values</p>
+            <p>Reshaped from the loaded budget dataset (Supabase)</p>
           </div>
           <div class="detail-box">
             <h4>By Area</h4>
-            <p>Rows 70–72, Cols B, F–J, L</p>
             <p>All expense areas with yearly and total values</p>
+            <p>Reshaped from the loaded budget dataset (Supabase)</p>
           </div>
         </div>
       </div>
@@ -1132,16 +978,15 @@ Grand Total: row 15, col L
         <span class="arrow">&#9654;</span>
         <span class="eid">BUD-3</span>
         <span class="ename">Expenditure Detail (Line Items)</span>
-        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+        <span class="source-tag tag-supabase">SUPABASE: budget tables</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
           <div class="detail-box full-width">
             <h4>Source</h4>
-            <div class="algo"><span class="cm"># Rows 19–52 in Budget tab</span>
-Cols: B=description, C=category, D=type, E=source
-      F–J = yearly budgets (5 years)
-      L = total
+            <div class="algo"><span class="cm"># Expenditure line items from the loaded budget dataset (Supabase)</span>
+Fields: description, category, type, source,
+        yearly budgets (5 years), total
 <span class="cm"># Grouped by type: Operations, Special Projects, Local Funding</span>
 <span class="cm"># Displayed as collapsible accordion</span></div>
           </div>
@@ -1154,18 +999,17 @@ Cols: B=description, C=category, D=type, E=source
         <span class="arrow">&#9654;</span>
         <span class="eid">BUD-4</span>
         <span class="ename">Personnel Plan</span>
-        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+        <span class="source-tag tag-supabase">SUPABASE: personnel</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
           <div class="detail-box">
             <h4>Source</h4>
-            <p>Rows 87–99: B=title, F–J=FTE per year, L=total compensation</p>
-            <p>Row 100: totals (FTE in col F, total comp in col L)</p>
+            <p>Supabase <code>personnel</code>: title, FTE per year, total compensation (+ a totals row)</p>
           </div>
           <div class="detail-box">
             <h4>Algorithm</h4>
-            <p>Direct pass-through — no computation. Values from Excel cells.</p>
+            <p>Direct pass-through — no computation. Values from the Supabase <code>personnel</code> rows.</p>
           </div>
         </div>
       </div>
@@ -1176,25 +1020,20 @@ Cols: B=description, C=category, D=type, E=source
         <span class="arrow">&#9654;</span>
         <span class="eid">BUD-5</span>
         <span class="ename">Key Factors (FTE, COLA, Indirect, Platform)</span>
-        <span class="source-tag tag-excel">EXCEL: Budget Tab</span>
+        <span class="source-tag tag-excel">CONFIG carve-out (not yet migrated)</span>
         <span class="source-tag tag-computed">AVERAGED</span>
       </div>
       <div class="element-detail">
         <div class="detail-grid">
           <div class="detail-box full-width">
             <h4>Algorithm</h4>
-            <div class="algo"><span class="cm"># Rows 75–81 in Budget tab</span>
-factor_rows = {
-  75: <span class="kw">"fte"</span>,
-  76: <span class="kw">"platform_maint"</span>,
-  77: <span class="kw">"platform_dev"</span>,
-  78: <span class="kw">"college_funding"</span>,
-  79: <span class="kw">"colleges_eligible"</span>,
-  80: <span class="kw">"cola_rate"</span>,    <span class="cm"># displayed as %</span>
-  81: <span class="kw">"indirect_rate"</span>  <span class="cm"># displayed as %</span>
-}
-<span class="cm"># Each factor = average of non-zero values across 5 years</span>
-avg = sum(non_zero_vals) / len(non_zero_vals)</div>
+            <div class="algo"><span class="cm"># Carve-out: factors + year labels are still read from the legacy</span>
+<span class="cm"># workbook (read_budget_plan) — the last budget bit not yet migrated</span>
+<span class="cm"># to Supabase (blocks retiring the .xlsx; see CLAUDE.md roadmap P5).</span>
+factors = {fte, platform_maint, platform_dev, college_funding,
+           colleges_eligible, cola_rate, indirect_rate}
+<span class="cm"># cola_rate / indirect_rate displayed as %</span>
+<span class="cm"># Each factor = average of non-zero values across 5 years</span></div>
           </div>
         </div>
       </div>
@@ -1251,7 +1090,7 @@ current = <span class="kw">"MAP at 116 colleges; Dashboard live; Portal launchin
           </div>
           <div class="detail-box">
             <h4>Note</h4>
-            <p>Entirely hardcoded in main(). Not derived from any data source. Would benefit from an Excel override field.</p>
+            <p>Entirely hardcoded in <code>main()</code> — Vision 2030 is intentionally static/computed (no Excel, no Supabase migration needed). Change the generator to update it.</p>
           </div>
         </div>
       </div>
@@ -1273,7 +1112,7 @@ current = <span class="kw">"AB 123 chaptered; $20M allocated; 1,000+ trained"</s
           </div>
           <div class="detail-box">
             <h4>Note</h4>
-            <p>Entirely hardcoded. Would benefit from Excel override.</p>
+            <p>Entirely hardcoded in <code>main()</code> — static/computed by design; edit the generator to change it.</p>
           </div>
         </div>
       </div>

@@ -9,6 +9,8 @@ related:
   - "[[docs/cobi_lessons]]"
   - "[[docs/kb-notes/methodology-regen-safe-section-rework]]"
   - "[[docs/kb-notes/tmc-co-review-scope]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 69

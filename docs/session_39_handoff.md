@@ -10,6 +10,8 @@ related:
   - docs/kb-notes/methodology-fan-in-discipline-convergence.md (the durable pattern)
   - CLAUDE.md §11 "Session 38" subsection + Rule 7 (two umbrellas + the fan-in bullet)
 moniker_suggestion: Session 38 ran as "Trusting Newton" (branch name); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: … CER consolidation (35) → perf+cross-disc (36) → impact columns +

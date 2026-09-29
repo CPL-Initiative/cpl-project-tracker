@@ -26,7 +26,13 @@
   var REST = SUPABASE_URL + "/rest/v1";
   var TEAM_PASS_KEY = "cpl_team_pass";
 
-  var state = { summary: null, loading: false, error: null, q: "", sort: "users", rosterOpen: {}, nudges: {} };
+  var state = { summary: null, loading: false, error: null, q: "", sort: "users",
+                rosterOpen: {}, nudges: {},
+                // lens: "all" = the roster view; "gaps" = the student-contact worklist
+                lens: "all", gaps: null, gapsError: null,
+                // Curator-proposed contacts, keyed on the TRIMMED college name.
+                // `propEdit` is the college whose editor is open (one at a time).
+                proposals: {}, propEdit: null, propBusy: false, propErr: null };
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   // Reads-only here; the roster RLS validates the access token / x-team-pass
@@ -83,6 +89,18 @@
       ".mapu-table tr:hover { background: var(--surface-subtle); }",
       ".mapu-roles { display:flex; flex-wrap:wrap; gap:4px; }",
       ".mapu-chip { font-size:.68rem; background: var(--surface-muted); color: var(--text-muted); border-radius:10px; padding:1px 8px; white-space:nowrap; }",
+      // A curator-set proposal must be visibly different from a MAP-derived one:
+      // one is what a college designated, the other is what we would ask it to.
+      ".mapu-chip-cur { background: var(--navy-primary); color: var(--on-accent); }",
+      ".mapu-propedit > td { background: var(--surface-subtle); }",
+      ".mapu-propedit-in { padding:10px 12px; }",
+      ".mapu-propedit-hd { font-weight:600; color: var(--navy-primary); margin-bottom:4px; }",
+      ".mapu-propedit-lbl { display:inline-block; margin:0 14px 8px 0; font-size:.74rem;"
+        + " color: var(--text-muted); }",
+      ".mapu-propedit-inp { display:block; margin-top:3px; padding:4px 7px; font-size:.82rem;"
+        + " min-width:230px; border:1px solid var(--border-subtle,#ccc); border-radius:4px;"
+        + " background: var(--surface-page,#fff); color: var(--text-body); }",
+      ".mapu-propedit-act { margin-top:2px; }",
       ".mapu-rosterbtn { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:2px 9px; cursor:pointer; color: var(--text-body); font-size:.76rem; }",
       ".mapu-rosterbtn:hover { background: var(--surface-muted); }",
       ".mapu-roster { background: var(--surface-subtle); }",
@@ -95,10 +113,35 @@
       ".mapu-st-active { color: var(--hunter,#2C601A); background: rgba(44,96,26,.10); }",
       ".mapu-st-inactive { color: var(--text-muted,#5C5C55); background: var(--surface-muted); }",
       ".mapu-disc { cursor: help; }",
+      // ── Student-contact worklist (Session 120) ──
+      ".mapu-lens { display:flex; gap:6px; margin:0 0 10px; flex-wrap:wrap; }",
+      ".mapu-lensbtn { font-size:.8rem; padding:5px 12px; border:1px solid var(--border);"
+        + " border-radius:14px; background: var(--surface); color: var(--text-muted); cursor:pointer; }",
+      ".mapu-lensbtn:hover { border-color: var(--seal-blue); color:var(--seal-blue-text,#002F6D); }",
+      ".mapu-lensbtn.on { background: var(--seal-blue); border-color: var(--seal-blue); color:#fff; }",
+      ".mapu-lenscount { font-weight:700; }",
+      ".mapu-subh { color: var(--navy-primary); margin:22px 0 2px; font-size:1rem; }",
+      ".mapu-gaptable td { vertical-align: top; }",
+      ".mapu-lp { text-decoration:none; color: var(--link,var(--accent-link)); }",
+      ".mapu-propose { border-left:3px solid var(--seal-blue); padding-left:9px; }",
+      ".mapu-src { font-size:.72rem; color: var(--link,var(--accent-link)); text-decoration:none; }",
+      ".mapu-src:hover { text-decoration:underline; }",
+      ".mapu-fb { margin:0 0 4px; }",
+      ".mapu-fb-t { font-size:.72rem; color: var(--text-muted); }",
+      ".mapu-warn { font-size:.72rem; color: var(--red-alert,#920000); cursor:help; }",
+      // Proposed-for-MAP treatment (SkyWire, 2026-08-09). Deliberately distinct
+      // from every "this is what MAP holds" cell: a temporary fill that reads as
+      // MAP data is the whole risk of this feature.
+      ".mapu-prop { border-left:3px solid var(--gold-accent); background:#FFFBEC; padding:4px 7px; border-radius:4px; }",
+      ".mapu-prop-tag { display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.02em; text-transform:uppercase; color:#92400E; background:#FEF3C7; padding:1px 6px; border-radius:9px; margin-bottom:3px; }",
+      ".mapu-prop-em { font-family:ui-monospace,Menlo,monospace; font-size:.74rem; }",
+      ".mapu-prop-none { font-size:.72rem; color: var(--text-muted); font-style:italic; }",
+      ".mapu-dirtable td { vertical-align: top; font-size:.8rem; }",
+      ".mapu-via-cur { color: var(--hunter, #2c601a); }",
       ".mapu-gate { color: var(--text-muted); font-size:.82rem; padding:8px 4px; }",
       ".mapu-gate a { color: var(--navy-secondary); cursor:pointer; text-decoration:underline; }",
       ".mapu-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
-      ".mapu-draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".mapu-draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
       ".mapu-nudged { display:block; font-size:.68rem; color: var(--text-muted); margin-top:3px; }",
       // recipient picker (the confirm/uncheck dialog before the mailto opens)
       ".mapu-picker-ov { position:fixed; inset:0; background:rgba(15,23,42,.45); display:flex; align-items:center; justify-content:center; z-index:9999; padding:16px; }",
@@ -140,12 +183,18 @@
     var cls = /^active$/i.test(s) ? "mapu-st-active" : "mapu-st-inactive";
     return '<span class="mapu-st ' + cls + '">' + esc(s) + "</span>";
   }
-  // UserDisciplines (comma-delimited, can be long) → inline for ≤2, else a
-  // "N disciplines" chip with the full list in the title.
+  // UserDisciplines → inline for ≤2, else an "N disciplines" chip with the full
+  // list in the title.
+  //
+  // DELIMITER: MAP writes these PIPE-separated ("MATH | ENGL | BIOL"), not
+  // comma-separated as the original scope assumed. Splitting on "," alone made a
+  // multi-discipline value one giant part, so a user carrying their college's
+  // whole subject list rendered as a single 1,364-character cell instead of a
+  // chip. Split on both (Session 120).
   function discCell(d) {
     d = String(d == null ? "" : d).trim();
     if (!d) return "—";
-    var parts = d.split(",").map(function (x) { return x.trim(); }).filter(Boolean);
+    var parts = d.split(/[|,]/).map(function (x) { return x.trim(); }).filter(Boolean);
     var label = parts.length > 2 ? parts.length + " disciplines" : parts.join(", ");
     return '<span class="mapu-disc" title="' + esc(parts.join(", ")) + '">' + esc(label) + "</span>";
   }
@@ -162,21 +211,1022 @@
     });
   }
   function loadRoster(college) {
+    /* Every spelling of this identity, not just the one MAP happened to send.
+     * All 128 names in map_college_users are canonical today (measured
+     * 2026-09-11), so this changes nothing now and keeps working when one is
+     * not. Unresolved name → in.("<the name>"), i.e. exactly the old query. */
     var url = REST + "/map_college_users?select=first_name,last_name,email,role_name,username,user_status,disciplines,last_updated_on"
-      + "&college=eq." + encodeURIComponent(college) + "&order=role_name.asc,last_name.asc";
+      + "&college=" + encodeURIComponent(inList(spellingsFor(college))) + "&order=role_name.asc,last_name.asc";
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("roster " + r.status);
       return r.json();
     });
   }
+  // ── Fallback contacts, for colleges MAP holds no CPL designation for ──────
+  // These colleges have nobody to propose from their own MAP data. Rather than
+  // defaulting to a vice president, we offer a fallback — clearly labelled, with
+  // its PROVENANCE, because where a contact came from changes how much you should
+  // trust it. Two kinds, and the tab shows which:
+  //
+  //   via "curator" — a CPL Initiative team member who knows the college gave it
+  //     to us directly. The strongest of the fallbacks: a person made a judgment
+  //     a lookup cannot. Records who and when, so it can be questioned later.
+  //   via "web" — found on the college's own published pages. A starting point
+  //     to VERIFY (the source link is shown for exactly that reason), not an
+  //     authority.
+  //   via "search" — a CANDIDATE from search results where the page itself could
+  //     NOT be opened (added Session 132, 2026-08-09). Weaker than "web" in one
+  //     specific, load-bearing way: the sourcing rules below are rules about what
+  //     a PAGE shows — is this a department inbox, a list of counselors, a
+  //     wellness address? — and they cannot be applied to a snippet. Two of the
+  //     previous 71 lookups published ONLY a mental-health inbox, and that is
+  //     invisible from search results. So a "search" row is a lead for a human to
+  //     confirm, never a routing destination: proposedFillFor() refuses it by
+  //     construction, so it can never reach the "Proposed for MAP" column.
+  //
+  // NONE is a MAP designation, and none is ever fed into the cascade —
+  // the cascade stays strictly the college's own designations.
+  //
+  // SOURCING RULES — set by Jessica (MAP team), 2026-08-05. These supersede the
+  // stricter "department inboxes only" rule an earlier pass used; hers is sharper,
+  // and she is the one who works these contacts:
+  //  · a general counseling/advising inbox → use it;
+  //  · no general inbox, but ONE named person is the designated contact on the
+  //    counseling page → use them, and say so in `note`;
+  //  · just a LIST of all counselors → leave blank. Picking one name off a list
+  //    is the determination we don't get to make;
+  //  · the counseling page directs you to another department (Admissions &
+  //    Records, a Welcome Center) and gives its address → use that, note it;
+  //  · NEVER mental-health or wellness, whatever the page calls it. Several of
+  //    these colleges publish a "Be Well"-style address and routing a credit
+  //    question there would be a genuinely bad outcome for a student;
+  //  · nothing usable → contacts: [] plus the page, so the blank is a recorded
+  //    finding rather than an unchecked cell.
+  var FALLBACK_CONTACTS = {
+    "Gavilan College": {
+      via: "curator", by: "Jessica", on: "2026-08-05",
+      contacts: [
+        { name: "Jessica Terry", title: "Skilled Trades & Industry CAP Counselor",
+          email: "jterry@gavilan.edu" },
+        { name: "Dewitt Stuckey", title: "Veterans Resource Center",
+          email: "dstuckey@gavilan.edu" },
+      ],
+      // Jessica's own source — the strongest provenance we hold: a person who
+      // knows the college picked these two, AND named the page they came from.
+      // My automated lookup missed it because gavilan.edu returns 403 to
+      // programmatic fetches; the counseling team page lists individual
+      // counselors rather than a department inbox, which is why these are
+      // named people.
+      source: "https://www.gavilan.edu/counseling/counseling_team.php",
+      note: "Gavilan lists individual counselors rather than a department inbox.",
+    },
+    "San Diego College of Continuing Education Credit": {
+      via: "curator", by: "Jessica", on: "2026-08-05",
+      // Supplied as "sdceecc@sdccd.ed"; every sibling SDCCD address is @sdccd.edu
+      // and .ed is not a TLD in use here, so recorded as .edu and flagged back.
+      // Jessica CONFIRMED .edu (2026-08-05) — settled, don't re-litigate.
+      contacts: [
+        { name: null, title: "ECC campus counseling", email: "sdceecc@sdccd.edu" },
+      ],
+      source: "https://sdcce.edu/student-services/academic-support/counseling.html",
+      note: "Counseling is per-campus across 7 campuses; ECC is the one to use.",
+    },
+    "College of the Siskiyous": {
+      via: "web", source: "https://www.siskiyous.edu/counseling/",
+      contacts: [{ name: null, title: "Counseling & Student Support",
+                   email: "counselingservices@siskiyous.edu" }] },
+    "Cosumnes River College": {
+      via: "web",
+      source: "https://crc.losrios.edu/student-resources/counseling/contact-your-counselor",
+      contacts: [{ name: null, title: "Counseling",
+                   email: "crc-counseling@crc.losrios.edu" }] },
+    "Feather River College": {
+      via: "web", source: "https://www.frc.edu/advising/index",
+      contacts: [{ name: null, title: "Advising & Counseling Center",
+                   email: "frcadvising@frc.edu" }] },
+    "Hartnell College": {
+      via: "web", source: "https://www.hartnell.edu/support/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling & Guidance",
+                   email: "Counseling@Hartnell.edu" }] },
+    "North Orange Continuing Education Credit": {
+      via: "web", source: "https://noce.edu/home/contact-us/",
+      contacts: [{ name: null, title: "NOCE Counseling", email: "counseling@noce.edu" }] },
+    "Calbright College Credit": {
+      via: "web", source: "https://www.calbright.edu/talk-with-us/",
+      contacts: [{ name: null, title: "Student Success", email: "success@calbright.org" }],
+      note: "Calbright is online-only and has no campus counseling office." },
+    "American River College": {
+      via: "web", source: "https://arc.losrios.edu/student-resources/counseling",
+      contacts: [{ name: null, title: "Counseling Center", email: "counselingcenterarc@arc.losrios.edu" }], },
+    "Antelope Valley College": {
+      via: "web", source: "https://www.avc.edu/counseling/counseling-contact-information-hours-location",
+      contacts: [{ name: null, title: "Counseling", email: "counseling@avc.edu" }], },
+    "Barstow Community College": {
+      via: "web", source: "https://www.barstow.edu/student-services/counseling-services",
+      contacts: [{ name: null, title: "Counseling Services", email: "bcounselor@barstow.edu" }], },
+    "Berkeley City College": {
+      via: "web", source: "https://www.berkeleycitycollege.edu/counseling",
+      contacts: [{ name: null, title: "Counseling", email: "counselingbcc@peralta.edu" }], },
+    "Butte College": {
+      via: "web", source: "https://www.butte.edu/counseling/",
+      contacts: [{ name: null, title: "Counseling & Advising", email: "counseling@butte.edu" }], },
+    "Ca\u00f1ada College": {
+      via: "web", source: "https://canadacollege.edu/counselingcenter/contactus.php",
+      contacts: [{ name: null, title: "Welcome Center", email: "canadawelcomecenter@smccd.edu" }],
+      note: "Counseling directs students to the Welcome Center", },
+    "Chaffey College": {
+      via: "web", source: "https://www.chaffey.edu/counseling/counseling-contact.php",
+      contacts: [{ name: null, title: "Academic & Career Counseling", email: "counseling@chaffey.edu" }], },
+    "Coalinga College": {
+      via: "web", source: "https://westhillscollege.com/coalinga/resources/counseling/counselors.php",
+      contacts: [],
+      note: "A list of individual counselors only \u2014 no department inbox", },
+    "College of Alameda": {
+      via: "web", source: "https://alameda.edu/students/counseling/",
+      contacts: [{ name: null, title: "e-Counseling", email: "coaecounseling@peralta.edu" }], },
+    "College of Marin": {
+      via: "web", source: "https://ss.marin.edu/counseling/ask-counselor",
+      contacts: [{ name: null, title: "Counseling", email: "counseling@marin.edu" }], },
+    "College of San Mateo": {
+      via: "web", source: "https://www.collegeofsanmateo.edu/counseling/contactus.php",
+      contacts: [{ name: null, title: "Welcome Center", email: "CSMWelcomeCenter@smccd.edu" }],
+      note: "Academic counseling directs students to the Welcome Center", },
+    "College of the Sequoias": {
+      via: "web", source: "https://www.cos.edu/en-us/student-support/counseling",
+      contacts: [{ name: null, title: "Student resources inbox", email: "Preguntas@cos.edu" }],
+      note: "Counseling itself is phone-based; this is the inbox published on the counseling page", },
+    "Compton College": {
+      via: "web", source: "https://www.compton.edu/admissions-aid/counseling/index.aspx",
+      contacts: [{ name: null, title: "Interim Dean of Counseling & Guided Pathways", email: "mgarcia74@compton.edu" }],
+      note: "Named contact on the counseling page", },
+    "Contra Costa College": {
+      via: "web", source: "https://www.contracosta.edu/counseling/",
+      contacts: [],
+      note: "Phone only. The one published email is wellness@ (mental health) \u2014 deliberately not used for CPL routing", },
+    "Cuyamaca College": {
+      via: "web", source: "https://www.cuyamaca.edu/student-support/counseling-center/",
+      contacts: [{ name: null, title: "Counseling Center", email: "cuyamaca.ecounseling@gcccd.edu" }], },
+    "Cypress College ": {
+      via: "web", source: "https://www.cypresscollege.edu/academics/divisions-special-programs/counseling/",
+      contacts: [{ name: null, title: "Online Counseling", email: "onlinecounselor@CypressCollege.edu" }], },
+    "Diablo Valley College": {
+      via: "web", source: "https://www.dvc.edu/student-services/academic-counseling",
+      contacts: [{ name: null, title: "Academic Counseling", email: "cwoodson@dvc.edu" }],
+      note: "The only address published on the counseling page \u2014 verify the role", },
+    "Fresno City College": {
+      via: "web", source: "https://www.fresnocitycollege.edu/academics/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling Services", email: "fcccounseling@fresnocitycollege.edu" }], },
+    "Golden West College": {
+      via: "web", source: "https://www.goldenwestcollege.edu/counseling/index.html",
+      contacts: [],
+      note: "Phone and chat only; the sole inbox published is the Career Center", },
+    "Imperial Valley College": {
+      via: "web", source: "https://www.imperial.edu/students/counseling/index.html",
+      contacts: [{ name: null, title: "Student Services Technician", email: "tiffany.tukes@imperial.edu" }],
+      note: "Named point of contact on the counseling page", },
+    "Irvine Valley College": {
+      via: "web", source: "https://www.ivc.edu/counseling-center/contact",
+      contacts: [{ name: null, title: "Counseling Center", email: "ivccounseling@ivc.edu" }], },
+    "Lake Tahoe Community College": {
+      via: "web", source: "https://www.ltcc.edu/campusresources/counseling.php",
+      contacts: [{ name: null, title: "Counseling Services", email: "counselor@ltcc.edu" }], },
+    "Laney College": {
+      via: "web", source: "https://laney.edu/counseling",
+      contacts: [],
+      note: "Co-chairs and individual counselors listed; no department inbox", },
+    "Lassen College": {
+      via: "web", source: "https://www.lassencollege.edu/new-students/",
+      contacts: [{ name: null, title: "Counseling", email: "lcccounseling@lassencollege.edu" }], },
+    "Los Angeles City College": {
+      via: "web", source: "https://www.lacc.edu/student-services/counseling",
+      contacts: [{ name: null, title: "Counseling", email: "Counseling@lacitycollege.edu" }], },
+    "Los Angeles Harbor College": {
+      via: "web", source: "https://www.lahc.edu/academics/pathways/scc/counseling",
+      contacts: [],
+      note: "Division chair by phone; the only inbox published is the Life Skills Center (personal counseling)", },
+    "Los Angeles Southwest College": {
+      via: "web", source: "https://www.lasc.edu/student-services/counseling",
+      contacts: [{ name: null, title: "Chair, Counseling Department", email: "FORDLD@lasc.edu" }],
+      note: "Named contact on the counseling page", },
+    "Los Angeles Valley College": {
+      via: "web", source: "https://www.lavc.edu/student-services/counseling/help-desk",
+      contacts: [],
+      note: "Phone-based help desk; no department inbox published", },
+    "Madera College": {
+      via: "web", source: "https://www.maderacollege.edu/student-services/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling & Advising", email: "counseling@maderacollege.edu" }], },
+    "Mendocino College": {
+      via: "web", source: "https://www.mendocino.edu/counseling-center",
+      contacts: [{ name: null, title: "Counseling Center", email: "counselingappointments@mendocino.edu" }], },
+    "Merced College": {
+      via: "web", source: "https://www.mccd.edu/student-support/academic-counseling/",
+      contacts: [{ name: null, title: "Academic Counseling (e-counseling)", email: "ecounselor@mccd.edu" }], },
+    "Merritt College": {
+      via: "web", source: "https://merritt.edu/counseling",
+      contacts: [{ name: null, title: "Counseling", email: "counseling.merritt@peralta.edu" }], },
+    "MiraCosta College": {
+      via: "web", source: "https://miracosta.edu/student-services/counseling/index.html",
+      contacts: [{ name: null, title: "Academic Counseling", email: "onlineadvisor@miracosta.edu" }], },
+    "Mt. San Antonio College": {
+      via: "web", source: "https://www.mtsac.edu/counseling/",
+      contacts: [],
+      note: "Phone only; no department inbox published", },
+    "Napa Valley College": {
+      via: "web", source: "https://www.napavalley.edu/student-services-and-resources/general-counseling/index.html",
+      contacts: [{ name: null, title: "Dean of Counseling Services & Student Success", email: "ryan.smith@napavalley.edu" }],
+      note: "Named contact on the counseling page", },
+    "Oxnard College": {
+      via: "web", source: "https://www.oxnardcollege.edu/departments/student-services/counseling",
+      contacts: [{ name: null, title: "General Counseling", email: "occounseling@vcccd.edu" }], },
+    "Palo Verde College": {
+      via: "web", source: "https://www.paloverde.edu/counseling/index.html",
+      contacts: [{ name: null, title: "Associate Dean of Counseling", email: "irma.gonzalez@paloverde.edu" }],
+      note: "Named contact on the counseling page", },
+    "Pasadena City College": {
+      via: "web", source: "https://pasadena.edu/academics/support/counseling/about/contact.php",
+      contacts: [],
+      note: "General counseling uses an email ticketing form, not an address. The only published inbox is noncreditcounseling@pasadena.edu (noncredit division only) - flagged for review", },
+    "Porterville College": {
+      via: "web", source: "https://www.portervillecollege.edu/student-services/counseling-and-advising/index.html",
+      contacts: [{ name: null, title: "Counseling Center", email: "pccounselingcenter@portervillecollege.edu" }], },
+    "Reedley College": {
+      via: "web", source: "https://www.reedleycollege.edu/student-services/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling & Advising", email: "counseling@reedleycollege.edu" }], },
+    "Santa Barbara City College": {
+      via: "web", source: "https://www.sbcc.edu/counselingcenter/contactus.php",
+      contacts: [{ name: null, title: "Academic Counseling Center", email: "academiccounselingcenter@sbcc.edu" }], },
+    "Santa Rosa Junior College": {
+      via: "web", source: "https://counseling.santarosa.edu/staff",
+      contacts: [],
+      note: "Individual counselors listed only; no department inbox", },
+    "Santiago Canyon College": {
+      via: "web", source: "https://www.sccollege.edu/students/studentservices/counseling/",
+      contacts: [{ name: null, title: "Welcome Center", email: "welcomecenter@sccollege.edu" }],
+      note: "Counseling directs students to the Welcome Center", },
+    "Sierra College": {
+      via: "web", source: "https://www.sierracollege.edu/student-services/counseling/",
+      contacts: [],
+      note: "Uses a Counseling Intake Form rather than a published address", },
+    "Skyline College": {
+      via: "web", source: "https://skylinecollege.edu/counseling/contact.php",
+      contacts: [{ name: null, title: "Counseling", email: "skycounseling@smccd.edu" }], },
+    "Solano Community College": {
+      via: "web", source: "https://solano.edu/academic-counseling/index.php",
+      contacts: [{ name: null, title: "Academic Counseling", email: "counseling@solano.edu" }], },
+    "Southwestern College": {
+      via: "web", source: "https://www.swccd.edu/student-support/counseling-and-career-advisement/index.aspx",
+      contacts: [{ name: null, title: "Counseling & Career Advisement", email: "SWCCounsCenter@swccd.edu" }], },
+    "Taft College": {
+      via: "web", source: "https://www.taftcollege.edu/student-campus-life/student-support/counseling-center/index.php",
+      contacts: [],
+      note: "Individual counselors listed only; no department inbox", },
+    "Ventura College": {
+      via: "web", source: "https://www.venturacollege.edu/departments/student-services/counseling",
+      contacts: [{ name: null, title: "Academic Counseling (e-counseling)", email: "vc_e-counseling@vcccd.edu" }], },
+    "West Los Angeles College": {
+      via: "web", source: "https://www.wlac.edu/student-services/counseling",
+      contacts: [{ name: null, title: "Welcome Center", email: "WelcomeCenter@wlac.edu" }],
+      note: "Counseling directs students to the Welcome Center", },
+    "Calbright College Non-Credit": {
+      via: "web", source: "https://www.calbright.edu/talk-with-us/",
+      contacts: [{ name: null, title: "Student Success", email: "success@calbright.org" }],
+      note: "Same institution as Calbright College Credit; online-only, no campus counseling office", },
+    "North Orange Continuing Education": {
+      via: "web", source: "https://noce.edu/home/contact-us/",
+      contacts: [{ name: null, title: "NOCE Counseling", email: "counseling@noce.edu" }],
+      note: "Same institution as the Credit entity in MAP", },
+    "San Diego College of Continuing Education": {
+      via: "curator", source: "https://sdcce.edu/student-services/academic-support/counseling.html", by: "Jessica", on: "2026-08-05",
+      contacts: [{ name: null, title: "ECC campus counseling", email: "sdceecc@sdccd.edu" }],
+      note: "Same institution as the Credit entity in MAP; supplied by Jessica", },
+    "Allan Hancock College": {
+      via: "web", source: "https://www.hancockcollege.edu/counseling/index.php",
+      contacts: [{ name: null, title: "Counseling Department", email: "counseling@hancockcollege.edu" }], },
+    "Copper Mountain College": {
+      via: "web", source: "https://www.cmccd.edu/contact/",
+      contacts: [{ name: null, title: "Admissions & Records", email: "Admissions&Records@cmccd.edu" }],
+      note: "Counseling page directs students to Admissions & Records. Note the ampersand in the address \u2014 worth confirming before use", },
+    "Crafton Hills College": {
+      via: "web", source: "https://www.craftonhills.edu/current-students/counseling/index.php",
+      contacts: [],
+      note: "Individual counselors listed only; no department inbox", },
+    "Folsom Lake College": {
+      via: "web", source: "https://flc.losrios.edu/student-resources/counseling",
+      contacts: [{ name: null, title: "Counseling", email: "flc-counseling@flc.losrios.edu" }], },
+    "Foothill College": {
+      via: "web", source: "https://foothill.edu/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling Services", email: "fhcounseling@fhda.edu" }], },
+    "Grossmont College": {
+      via: "web", source: "https://www.grossmont.edu/student-support/counseling/",
+      contacts: [{ name: null, title: "Counseling Center", email: "grossmont.counselingcenter@gcccd.edu" }], },
+    "Mission College": {
+      via: "web", source: "https://missioncollege.edu/student-services/counseling/index.html",
+      contacts: [],
+      note: "Phone only (408-855-5034); no department inbox published", },
+    "Orange Coast College": {
+      via: "web", source: "https://orangecoastcollege.edu/services-support/counseling/index.html",
+      contacts: [],
+      note: "No general inbox; only specialized ones (occretention@ for probation/dismissal, transfercenter@)", },
+    "Sacramento City College": {
+      via: "web", source: "https://scc.losrios.edu/student-resources/counseling-and-transfer",
+      contacts: [{ name: null, title: "Counseling and Transfer", email: "counseling@scc.losrios.edu" }], },
+    "West Valley College": {
+      via: "web", source: "https://www.westvalley.edu/services/counseling/",
+      contacts: [],
+      note: "Phone and Starfish scheduling; no department inbox published", },
+
+    // ── The seven the original sweep never reached (Session 132, 2026-08-09) ──
+    // These have no primary_contact_email in MAP and were absent from this table
+    // entirely, because the 2026-08-05 sweep scoped to "colleges without a CPL
+    // Assistant" — a PROXY for the real need, which is "colleges MAP cannot route
+    // a student to". The two come apart on 7 of 25 rows.
+    //
+    // All seven are via "search": this sandbox is egress-blocked from college
+    // domains (verified — curl returns 000 for every one of these hosts), so the
+    // pages could not be opened and Jessica's sourcing rules could not be applied
+    // to them. Each carries the page a human should open to confirm it.
+    "Citrus College": {
+      via: "search", source: "https://www.citruscollege.edu/studentservices/counseling/contact.html",
+      contacts: [{ name: null, title: "Counseling and Advisement Center",
+                   email: "counseling@citruscollege.edu" }],
+      note: "Two independent searches agree on this address and the page is titled "
+        + "Counseling and Advisement Center (academic advising, not wellness). Confirm the "
+        + "address appears on the page before routing.", },
+    "College of the Canyons": {
+      via: "search", source: "https://www.canyons.edu/studentservices/counseling/contact.php",
+      contacts: [],
+      note: "No general counseling inbox surfaced. The only address found is "
+        + "ConnectsHelp@canyons.edu, which is TECHNICAL support for the Connects platform, not "
+        + "counselling — declined on Jessica's rules. The page otherwise lists individual "
+        + "counsellors and a phone number, which is the 'list of counsellors → leave blank' case. "
+        + "Worth a human check, since the page could not be opened.", },
+    "Palomar College": {
+      via: "search", source: "https://www.palomar.edu/counseling/",
+      contacts: [{ name: null, title: "Counseling Services", email: "counseling@palomar.edu" }],
+      note: "Palomar publishes a SEPARATE Behavioral Health Counseling Services department with its "
+        + "own contact page, so confirm this address belongs to the academic Counseling Department "
+        + "and not to BHCS before routing a credit question to it.", },
+    "Saddleback College": {
+      via: "search", source: "https://www.saddleback.edu/student-support/counseling-services",
+      contacts: [{ name: null, title: "eCounselor / Counselor Callback",
+                   email: "sc-ecounselor@saddleback.edu" }],
+      note: "Published for brief counselling questions; students are asked to include name and "
+        + "student ID. Confirm it accepts a CPL enquiry rather than only appointment requests.", },
+    "Yuba College": {
+      via: "search", source: "https://yc.yccd.edu/student/counseling/email-the-counseling-department/",
+      contacts: [{ name: null, title: "Counseling Department", email: "yubacounseling@yccd.edu" }],
+      note: "The strongest of the seven: the college publishes a page whose title is literally "
+        + "'email the counseling department'.", },
+
+    // The two non-college entities. Both are at ZERO awarded credit in the
+    // disposition data, so a working contact matters, but neither has the
+    // counselling structure the sourcing rules were written for.
+    "Futuro Health": {
+      via: "search", source: "https://futurohealth.org/student-support/",
+      contacts: [{ name: null, title: "Scholar support", email: "help@futurohealth.org" }],
+      note: "Not a college — a statewide allied-health training partner with Enrollment Advisors "
+        + "and Success Coaches rather than a counselling office. This is its general help address, "
+        + "so confirm who inside Futuro Health should own a CPL request before using it.", },
+    "Launch Apprenticeship": {
+      via: "search", source: "https://launchapprenticeship.org/connect/",
+      contacts: [],
+      note: "No student-facing inbox published — the site routes through an Apprenticeship Interest "
+        + "Form. Searches surfaced a regional manager at a different college's domain, which is the "
+        + "'name off a list' case Jessica's rules exclude. Needs a human to identify the right "
+        + "contact, most likely via the CCCCO apprenticeship team.", },
+  };
+  // MAP's college names are the join key for every display map in this file, and
+  // they are typed by hand: `map_college_contacts` carries "Cypress College " and
+  // "San Jose City College " WITH a trailing space today. The keys above match
+  // that exactly, so the lookup works — and would break the day MAP tidies the
+  // spelling, silently, rendering a college we DID research as "not looked up".
+  //
+  // Normalising BOTH sides is the lesson this repo already paid for once, when
+  // the funding tab normalised one side of a join and five colleges showed no
+  // implementation funding. Exact match still wins; the normalised index is only
+  // consulted on a miss, so nothing changes today.
+  var _fbNorm = null;
+  function normCollege(s) {
+    return String(s == null ? "" : s).normalize("NFC").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  /* ── THE COLLEGE TAXONOMY (2026-09-11) ────────────────────────────────────
+   * Sam: "College taxonomy should be wired to the MAP Users tab and data as
+   * well. I'm sure it already is..." It was not. This tab looked every college
+   * up by its NAME AS A PIECE OF TEXT — the roster read, the contacts read, and
+   * three hand-written lists of 95 names between them — with nothing but
+   * normCollege() above to absorb a spelling change.
+   *
+   * ⚠ AND IT WORKED, WHICH IS THE PROBLEM. Measured 2026-09-11: all 128 names in
+   * map_college_users match a canonical map_colleges.college_name exactly, and 74
+   * of the 78 distinct hand-written keys do too. Nothing is broken today. It
+   * works because MAP happens to spell things canonically, and nothing anywhere
+   * enforces that it keeps doing so — the same shape as the whitespace join this
+   * file's normCollege comment already records paying for once.
+   *
+   * ⭐ WHAT normCollege CANNOT DO, AND WHY THE TAXONOMY EARNS ITS PLACE: it folds
+   * case and whitespace, so "Cypress College " finds "Cypress College". It can
+   * never bridge a VARIANT to its canonical name — "San Diego College of
+   * Continuing Education Credit" and "San Diego College of Continuing Education"
+   * normalize to different strings, and only map_colleges.variants knows they are
+   * one institution. Measured: map_college_contacts holds 3 names that are not
+   * canonical; 2 of them are exactly that case.
+   *
+   * ⭐ AND THE TAXONOMY ENFORCES SAM'S OWN RULINGS. He ruled (2026-08-21) that
+   * Calbright and LAUNCH are TWO entities each while San Diego and North Orange
+   * are ONE. That is why merging rows across spellings below is safe: the two
+   * continuing-education arms merge because the taxonomy says they are one
+   * identity, and "Calbright College Credit" does NOT merge into "Calbright
+   * College Non-Credit" because it resolves to nothing at all. The ruling does
+   * the work; this code just reads it.
+   *
+   * ⚠ FAIL-OPEN, BUT NOT FAIL-SILENT. If the taxonomy cannot be read, every
+   * lookup degrades to exactly today's behavior (exact, then normalized) — the
+   * tab must never go blank over an enrichment. But the state is RECORDED, because
+   * a polite else-branch that hides a broken read is precisely what kept the
+   * College Identity tab's main table from ever rendering (see the KB note
+   * `methodology-a-feature-test-on-a-missing-method-fails-silent`, 2026-09-11). */
+  var taxonomy = { status: "unread", byExact: null, byNorm: null, count: 0, error: null };
+
+  function loadTaxonomy() {
+    if (taxonomy.status === "ok" || taxonomy.status === "loading") return Promise.resolve(taxonomy);
+    taxonomy.status = "loading";
+    var url = REST + "/map_colleges?select=college_id,college_name,district,"
+      + "mis_district_code,mis_college_code,variants,entity_kind&limit=2000";
+    return fetch(url, { headers: authHeaders() }).then(function (r) {
+      if (!r.ok) throw new Error("taxonomy " + r.status);
+      return r.json();
+    }).then(function (rows) {
+      /* ⚠ A VARIANT MUST NEVER SHADOW A CANONICAL NAME — the identity lane's
+       * standing invariant. "Mission College" is BOTH: its own college in the
+       * West Valley-Mission district, and a variant of Los Angeles Mission
+       * College. So canonical names are indexed FIRST, in their own pass, and
+       * the variant pass then refuses to overwrite any name a canonical already
+       * claims. Payload order cannot change the answer. */
+      var byExact = {}, byNorm = {}, n = 0;
+      function identOf(c) {
+        return {
+          college_id: c.college_id, canonical: c.college_name,
+          district: c.district || null,
+          mis: c.mis_district_code ? (c.mis_district_code + "/" + (c.mis_college_code || "—")) : null,
+          entity_kind: c.entity_kind || "college",
+          spellings: [c.college_name].concat(Array.isArray(c.variants) ? c.variants : []),
+        };
+      }
+      var rows2 = (rows || []).filter(function (c) { return c && c.college_name; });
+      rows2.forEach(function (c) {                       // pass 1 — canonical wins
+        var id = identOf(c);
+        n++;
+        byExact[c.college_name] = id;
+        byNorm[normCollege(c.college_name)] = id;
+      });
+      rows2.forEach(function (c) {                       // pass 2 — variants fill gaps only
+        var id = byExact[c.college_name];
+        (Array.isArray(c.variants) ? c.variants : []).forEach(function (v) {
+          if (!v) return;
+          if (!byExact[v]) byExact[v] = id;
+          var k = normCollege(v);
+          if (!byNorm[k]) byNorm[k] = id;
+        });
+      });
+      taxonomy.byExact = byExact; taxonomy.byNorm = byNorm; taxonomy.count = n;
+      taxonomy.status = "ok"; taxonomy.error = null;
+      return taxonomy;
+    }).catch(function (e) {
+      taxonomy.status = "failed"; taxonomy.error = (e && e.message) || "error";
+      taxonomy.byExact = null; taxonomy.byNorm = null;
+      return taxonomy;
+    });
+  }
+
+  /* The identity a name belongs to, or null. Null is a RESULT — "Calbright
+   * College Credit" resolves to nothing because MAP has not issued it an id, and
+   * inventing one would fabricate an identity the whole system trusts. */
+  function identityFor(college) {
+    if (!college || taxonomy.status !== "ok") return null;
+    return taxonomy.byExact[college] || taxonomy.byNorm[normCollege(college)] || null;
+  }
+
+  /* Every spelling a query should look for. Falls back to the name itself, so a
+   * failed taxonomy read leaves the query exactly as it was before this existed. */
+  function spellingsFor(college) {
+    var id = identityFor(college);
+    return (id && id.spellings && id.spellings.length) ? id.spellings : [college];
+  }
+
+  /* PostgREST `in.("A","B")`. Values are quoted so a comma inside a name is not
+   * read as the separator; the whole value is encoded by the caller. */
+  function inList(names) {
+    return "in.(" + names.map(function (n) {
+      return '"' + String(n).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
+    }).join(",") + ")";
+  }
+
+  /* One lookup for all three hand-written lists. Exact key, then normalized, then
+   * every other spelling of the same identity — so a list written against the
+   * canonical name still answers when MAP sends a variant, and vice versa. */
+  /* ⚠ THE INDEX IS CACHED BESIDE THE MAP, NEVER ON IT. The first cut stored it as
+   * `map.__norm`, which MUTATES the data object — and FALLBACK_CONTACTS grew an
+   * entry with no provenance, which map_users.test.js's "every entry declares a
+   * provenance" caught immediately. A cache that changes the thing it is caching
+   * is not a cache. Three maps, so a linear scan of pairs is the whole cost. */
+  var _normIdxCache = [];
+  function normIndexOf(map) {
+    for (var i = 0; i < _normIdxCache.length; i++) {
+      if (_normIdxCache[i][0] === map) return _normIdxCache[i][1];
+    }
+    var idx = {};
+    Object.keys(map).forEach(function (k) { idx[normCollege(k)] = map[k]; });
+    _normIdxCache.push([map, idx]);
+    return idx;
+  }
+  function pickByIdentity(map, college) {
+    if (!map || !college) return null;
+    if (map[college]) return map[college];
+    var normIdx = normIndexOf(map);
+    var hit = normIdx[normCollege(college)];
+    if (hit) return hit;
+    var sp = spellingsFor(college);
+    for (var i = 0; i < sp.length; i++) {
+      if (map[sp[i]]) return map[sp[i]];
+      var h2 = normIdx[normCollege(sp[i])];
+      if (h2) return h2;
+    }
+    return null;
+  }
+
+  function fallbackFor(college) {
+    if (FALLBACK_CONTACTS[college]) return FALLBACK_CONTACTS[college];
+    if (!_fbNorm) {
+      _fbNorm = {};
+      Object.keys(FALLBACK_CONTACTS).forEach(function (k) {
+        _fbNorm[normCollege(k)] = FALLBACK_CONTACTS[k];
+      });
+    }
+    return _fbNorm[normCollege(college)] || pickByIdentity(FALLBACK_CONTACTS, college) || null;
+  }
+
+  // ── Address quality: FLAG, never filter ───────────────────────────────────
+  // Found 2026-08-13 auditing the worklist: Mission College's proposal is
+  // `boothmelanie@gmail.com`, sitting in MAP's own cpl_coordinator_email and
+  // therefore FIRST in the cascade. It is a real designation, so the standing
+  // doctrine applies — propose only someone the college already designated, and
+  // never adopt a convention on their behalf. Suppressing it would substitute
+  // our judgment for theirs and hide the finding.
+  //
+  // So this warns and lets a human decide. The two things worth a second look
+  // before a public college's CPL landing page routes students there:
+  //   * a free-mail provider — a personal inbox, which usually means the person
+  //     moved, or nobody set up a college address for the role;
+  //   * a placeholder — College of Marin carries the literal string "na" in
+  //     cpl_counselor_email. map_first_email() already nulls that one out, so it
+  //     never reaches the cascade; the guard is here for the next one.
+  var FREE_MAIL = /@(gmail|yahoo|hotmail|outlook|aol|icloud|me|comcast|sbcglobal|att|verizon|protonmail|live|msn)\./i;
+  function addressWarning(addr) {
+    var a = String(addr == null ? "" : addr).trim();
+    if (!a) return null;
+    if (!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(a)) {
+      return "Not a usable email address — check MAP; a student request routed here reaches nobody.";
+    }
+    if (FREE_MAIL.test(a)) {
+      return "Personal email provider, not a college address. Worth confirming with the college "
+        + "before a public landing page routes students to it — it is still their designation, "
+        + "not ours to change.";
+    }
+    return null;
+  }
+
+  // A PROPOSED FILL — the contact we suggest MAP adopt as primary, and ONLY where
+  // MAP currently holds nothing. Sam, 2026-08-09: "the counseling contact is our
+  // best guess as to whom would serve as the best primary contact when the contact
+  // is blank", to be offered as a temporary fill the MAP team can adopt if they
+  // agree.
+  //
+  // Two invariants, both load-bearing:
+  //  1. NEVER propose over a value MAP already holds. If primary_contact_email is
+  //     set, MAP has made a designation and this is not ours to second-guess.
+  //  2. A proposal is never rendered in a column that means "what MAP holds" — it
+  //     carries its own label and provenance wherever it appears. A temporary fill
+  //     mistaken for a MAP designation is the entire risk of this feature, and it
+  //     is the same failure family as "not in this dataset" read as zero.
+  //
+  // Returns null for the 15 colleges whose lookup came back blank-with-a-finding
+  // (no published department inbox). Those need a human, and an empty proposal is
+  // the honest output — notably Contra Costa and LA Harbor, where the only
+  // published address is a mental-health inbox that we DELIBERATELY DECLINED to
+  // use for CPL routing. Declining it is why they are blank.
+  function proposedFillFor(row) {
+    if (!row || row.primary_contact_email) return null;
+    var f = fallbackFor(row.college);
+    if (!f) return null;
+    // 3. A "search" row is a lead, not a proposal. Its page was never opened, so
+    //    nobody has checked it against the sourcing rules — and the specific thing
+    //    those rules catch (a wellness inbox published as the counselling contact)
+    //    is exactly what a search snippet hides. Proposing one to the MAP team
+    //    would launder "we could not check this" into "we suggest you adopt it".
+    //    It graduates to via "web" or "curator" when a human confirms the page.
+    if (f.via === "search") return null;
+    var withEmail = (f.contacts || []).filter(function (c) { return c.email; });
+    if (!withEmail.length) return null;
+    return { meta: f, contacts: withEmail };
+  }
+
+  function proposalRows() {
+    return contactRows().filter(function (r) { return !!proposedFillFor(r); });
+  }
+
+  // ── The college's OWN CPL webpage + its contact (Jessica, 2026-08-05) ──────
+  // Separate from FALLBACK_CONTACTS because it answers a different question: not
+  // "who can a student reach" but "does this college publish a CPL page of its
+  // own, and who does it name".
+  //
+  // TWO TRAPS, both hit while gathering these:
+  //  1. A web search for "<college> credit for prior learning" surfaces OUR OWN
+  //     MAP landing page (cpldashboardcccco.azurewebsites.net/<CODE>) near the
+  //     top. That is not the college's page. Recording it would make the column
+  //     circular — us citing us as evidence the college has published something.
+  //     Never enter a cpldashboardcccco.azurewebsites.net or cpl-landing-pages
+  //     URL here.
+  //  2. Many college sites (and asccc.org) return 403 to automated fetches, so a
+  //     page can be confirmed to EXIST from search results while its contact
+  //     stays unreadable. That is `url` set + contact blank + a note — not a
+  //     blank row, and not a guess.
+  //
+  // `kind` records what was actually found, because "no CPL page" and "a catalog
+  // paragraph" and "a real CPL site" are three different answers to Jessica's
+  // question and flattening them would lose the finding:
+  //   "site"     — a dedicated CPL section of the college's website
+  //   "catalog"  — CPL described only in the course catalog
+  //   "military" — only a veterans/military CPL page
+  //   null       — nothing found
+  var CPL_PAGES = {
+    "Chaffey College": {
+      kind: "site", url: "https://www.chaffey.edu/creditforpriorlearning/index.php",
+      title: null, name: null, email: null,
+      note: "A full CPL site (apply, methods, student + faculty FAQs). The site blocks automated reads, so the contact it names could not be captured — worth a human look.",
+    },
+    "American River College": {
+      kind: "catalog",
+      url: "https://arc.losrios.edu/2025-2026-official-catalog/while-you-are-here/credit-for-prior-learning-and-alternative-study-options",
+      title: "Area dean", name: null, email: null,
+      note: "No dedicated CPL page; the catalog covers CPL and directs students to \"the area dean\" — a role, with no name or address published.",
+    },
+    "Foothill College": {
+      kind: "military", url: "https://fhweb.foothill.edu/veterans/cpl_jst_military.html",
+      title: "Veterans Resource Center", name: null, email: "contactvrc@fhda.edu",
+      note: "The only CPL page is military/JST-specific, run by the Veterans Resource Center. No general CPL page found.",
+    },
+    "Allan Hancock College": {
+      kind: null, url: null, title: null, name: null, email: null,
+      note: "No CPL page found — only AP/CLEP/IB equivalency in the catalog.",
+    },
+    "Antelope Valley College": {
+      kind: "site", url: "https://www.avc.edu/cpl",
+      title: "Extended Learning", name: null, email: "extendedlearning@avc.edu", },
+    "Berkeley City College": {
+      kind: "site", url: "https://www.peralta.edu/admissions/credit-for-prior-learning",
+      title: "District CPL contact", name: null, email: "cpl@peralta.edu",
+      note: "Peralta runs CPL at DISTRICT level \u2014 one page and inbox for all four colleges. Heather Sisneros is the District CPL Faculty Lead.", },
+    "College of Alameda": {
+      kind: "site", url: "https://www.peralta.edu/admissions/credit-for-prior-learning",
+      title: "District CPL contact", name: null, email: "cpl@peralta.edu",
+      note: "Peralta district-level CPL (shared with Berkeley City, Laney, Merritt).", },
+    "Laney College": {
+      kind: "site", url: "https://laney.edu/credit-for-prior-learning",
+      title: "District CPL contact", name: null, email: "cpl@peralta.edu",
+      note: "Laney has its own CPL page; the contact is the Peralta district inbox.", },
+    "Merritt College": {
+      kind: "site", url: "https://www.peralta.edu/admissions/credit-for-prior-learning",
+      title: "District CPL contact", name: null, email: "cpl@peralta.edu",
+      note: "Peralta district-level CPL (shared with Berkeley City, Alameda, Laney).", },
+    "West Valley College": {
+      kind: "site", url: "https://www.westvalley.edu/services/articulation/credit-for-prior-learning/",
+      title: null, name: null, email: null,
+      note: "CPL sits under Articulation. No contact captured on the page.", },
+    "Los Angeles Valley College": {
+      kind: "site", url: "https://www.lavc.edu/academics/credit-for-prior-learning",
+      title: null, name: null, email: null,
+      note: "LACCD colleges each run their own CPL page under a district framework. Contact not captured.", },
+    "West Los Angeles College": {
+      kind: "site", url: "https://www.wlac.edu/academics/credit-for-prior-learning",
+      title: null, name: null, email: null,
+      note: "LACCD per-college CPL page. Contact not captured.", },
+    "Cosumnes River College": {
+      kind: "catalog", url: "https://crc.losrios.edu/2026-2027-unofficial-catalog-preview/while-you-are-here/credit-for-prior-learning-and-alternative-study-options",
+      title: null, name: null, email: null,
+      note: "Los Rios describes CPL in the catalog rather than on a dedicated page.", },
+    "Santa Barbara City College": {
+      kind: "site", url: "https://www.sbcc.edu/cpl/index.php",
+      title: null, name: null, email: null,
+      note: "A real CPL site with faculty FAQs. Notable: SBCC states it currently awards CPL only for AP and Credit by Exam \u2014 the other forms are still in planning.", },
+    "MiraCosta College": {
+      kind: "site", url: "https://www.miracosta.edu/academics/credit-for-prior-learning/",
+      title: "CPL program inbox", name: null, email: "cpl@miracosta.edu",
+      note: "Also names counsellors by CPL type (exams/certifications/portfolio vs military transcripts).", },
+    "San Diego College of Continuing Education": {
+      kind: "site", url: "https://www.sdccd.edu/students/credit-for-prior-learning/",
+      title: "District CPL", name: null, email: null,
+      note: "SDCCD runs CPL at district level with student and faculty resource pages.", },
+  };
+  function cplPageFor(college) { return pickByIdentity(CPL_PAGES, college); }
+
+  // ── ASCCC CPL Liaison (Jessica, 2026-08-05) ───────────────────────────────
+  // A DIFFERENT thing from the CPL-page contact, and kept in its own column at
+  // Jessica's request. The Academic Senate asks each college to name a Credit
+  // for Prior Learning liaison; where one exists it is a statewide-registered
+  // designation, which makes it a stronger signal than whatever happens to be
+  // printed on a college webpage. A college can have one, the other, both, or
+  // neither.
+  //
+  // Sourced from ASCCC's per-college pages. asccc.org returns 403 to automated
+  // fetches, so these come from search results — meaning absence here means
+  // "not surfaced", NOT "the college has no liaison". The cell says so, because
+  // an unfilled cell that reads as "none" would misrepresent the Senate.
+  var CPL_LIAISONS = {
+    "Chaffey College": {
+      source: "https://www.asccc.org/content/chaffey-college",
+      people: [
+        { name: "Stephen Lux", title: "ASCCC CPL Liaison", email: "stephen.lux@chaffey.edu" },
+        { name: "Jin Liu", title: "Second ASCCC CPL Liaison (Biology)", email: "jin.liu@chaffey.edu" },
+      ],
+    },
+  };
+  function cplLiaisonFor(college) { return pickByIdentity(CPL_LIAISONS, college); }
+
+  function cplLiaisonCell(college) {
+    var l = cplLiaisonFor(college);
+    if (!l || !(l.people || []).length) {
+      return '<span class="mapu-st mapu-st-inactive">none surfaced</span>';
+    }
+    var h = "";
+    (l.people || []).forEach(function (pp) {
+      h += '<div class="mapu-fb"><b>' + esc(pp.name) + "</b> "
+        + (pp.email ? '<span class="mapu-disc">' + esc(pp.email) + "</span>" : "")
+        + (pp.title ? '<br><span class="mapu-fb-t">' + esc(pp.title) + "</span>" : "")
+        + "</div>";
+    });
+    if (l.source) {
+      h += '<div><a class="mapu-src" href="' + esc(l.source) + '" target="_blank" rel="noopener">ASCCC</a></div>';
+    }
+    return h;
+  }
+
+
+  // Renders the CPL-page cell. Mirrors the counseling column's shape: the value,
+  // then where it came from, then why it is empty when it is.
+  function cplPageCell(college) {
+    var c = cplPageFor(college);
+    if (!c) return '<span class="mapu-st mapu-st-inactive">not looked up</span>';
+    var h = "";
+    if (c.name || c.email || c.title) {
+      h += '<div class="mapu-fb">'
+        + (c.name ? "<b>" + esc(c.name) + "</b> " : "")
+        + (c.email ? '<span class="mapu-disc">' + esc(c.email) + "</span>" : "")
+        + (c.title ? '<br><span class="mapu-fb-t">' + esc(c.title) + "</span>" : "")
+        + "</div>";
+    } else if (c.url) {
+      h += '<span class="mapu-st mapu-st-inactive">page, no contact</span>';
+    } else {
+      h += '<span class="mapu-st mapu-st-inactive">no CPL page found</span>';
+    }
+    if (c.url) {
+      h += '<div><a class="mapu-src" href="' + esc(c.url) + '" target="_blank" rel="noopener">'
+        + esc(c.kind === "catalog" ? "catalog section ↗"
+             : c.kind === "military" ? "veterans CPL page ↗" : "CPL page ↗") + "</a></div>";
+    }
+    if (c.note) h += '<div class="mapu-fb-t">' + esc(c.note) + "</div>";
+    return h;
+  }
+
+
+  // ── The student-contact worklist (Session 120) ────────────────────────────
+  // map_contact_gaps is a security_invoker view over the same gated tables, so
+  // a logged-out visitor gets zero rows exactly like the roster does.
+  function loadGaps() {
+    var cols = "college,college_kind,primary_contact,primary_contact_email,"
+      + "primary_contact_multi_email,has_student_contact,proposed_source,proposed_name,"
+      + "proposed_email,needs_ask,ask_reason,landing_page_url,active_users,"
+      + "cpl_coordinator_email,cpl_assistant_email";
+    return fetch(REST + "/map_contact_gaps?select=" + cols + "&order=college.asc",
+      { headers: authHeaders() })
+      .then(function (r) {
+        if (!r.ok) throw new Error("gaps " + r.status);
+        return r.json();
+      });
+  }
+  // ── Curator-proposed contacts (2026-08-13) ───────────────────────────────
+  // Sam: "I don't see a way I can edit them if needed and keep them categorized
+  // as Proposed so they can serve as a short list of corrections needed in MAP."
+  // Before this, a curator-supplied contact meant editing FALLBACK_CONTACTS in
+  // this file and shipping a deploy — which is why only three exist, all typed
+  // by a session on Jessica's behalf.
+  //
+  // A proposal NEVER becomes what MAP holds: MAP has no write API, and Sam ruled
+  // the same day that Sierra keeps routing strictly on MAP's own designations,
+  // so nothing here reaches her. It is a worklist of corrections to make IN MAP.
+  //
+  // Keyed on the TRIMMED college name, matching the table's own check
+  // constraint — map_college_contacts is hand-typed and two colleges carry a
+  // trailing space, so an untrimmed key would split one college into two rows.
+  function ckey(college) { return String(college == null ? "" : college).trim(); }
+
+  function loadProposals() {
+    if (!signedIn()) { state.proposals = {}; return Promise.resolve({}); }
+    return fetch(REST + "/map_contact_proposals?select=college,proposed_name,proposed_email,"
+        + "note,status,updated_by,updated_at", { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var by = {};
+        (rows || []).forEach(function (p) { by[ckey(p.college)] = p; });
+        state.proposals = by;
+        return by;
+      }).catch(function () { state.proposals = {}; return {}; });
+  }
+
+  // Upsert. Clearing is an UPDATE to nulls rather than a DELETE: the table has
+  // no delete policy (matching governance_owners), and governance_owners already
+  // taught us what happens when "clear" has no path — it silently becomes a
+  // no-op. A row whose name AND email are both empty reads as "no proposal".
+  function saveProposal(college, name, email, note) {
+    var s = getSession();
+    var rec = {
+      college: ckey(college),
+      proposed_name: name || null,
+      proposed_email: email || null,
+      note: note || null,
+      status: "proposed",
+      updated_by: (s && s.email) || "(unknown)",
+      updated_at: new Date().toISOString(),
+    };
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=representation";
+    return fetch(REST + "/map_contact_proposals", {
+      method: "POST", headers: h, body: JSON.stringify([rec]),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("save " + r.status);
+      return r.json();
+    }).then(function (rows) {
+      // RLS FILTERS a write it disallows — PostgREST answers 200 with an EMPTY
+      // body rather than 403. So an "ok" that touched no row is a FAILURE, and
+      // reporting it as success would tell a locked-out curator their correction
+      // was recorded when nothing was. Same guarantee the Sierra guidance editor
+      // needed for the same reason.
+      if (!Array.isArray(rows) || rows.length === 0) {
+        throw new Error("not saved — your sign-in does not allow writing proposals");
+      }
+      state.proposals[ckey(college)] = rows[0];
+      return rows[0];
+    });
+  }
+
+  // The curator's proposal for a college, or null. Both fields empty = cleared.
+  function curatorProposalFor(college) {
+    var p = (state.proposals || {})[ckey(college)];
+    if (!p) return null;
+    if (!p.proposed_email && !p.proposed_name) return null;
+    return p;
+  }
+
+  // What the row should SHOW: the curator's value when they set one, otherwise
+  // the cascade's. Kept in one place so the table, the editor's pre-fill and the
+  // CSV can never disagree about which value is in force.
+  function effectiveProposal(g) {
+    var c = curatorProposalFor(g.college);
+    if (c) {
+      return { name: c.proposed_name || "", email: c.proposed_email || "",
+               source: "curator", note: c.note || "",
+               by: c.updated_by || "", at: c.updated_at || "" };
+    }
+    return { name: g.proposed_name || "", email: g.proposed_email || "",
+             source: g.proposed_source || "", note: "", by: "", at: "" };
+  }
+
+  // The proposed contact as rendered: curator's value when set, else MAP's.
+  function proposalCell(g) {
+    var p = effectiveProposal(g);
+    if (!p.email && !p.name) return '<span class="mapu-st mapu-st-inactive">none proposed</span>';
+    var h = p.name ? "<b>" + esc(p.name) + "</b><br>" : "";
+    h += '<span class="mapu-disc">' + esc(p.email) + "</span>";
+    // An email-only tier is not a lookup failure — MAP's cpl_assistant_email
+    // column has NO matching name column, so the assistant is on file as an
+    // address and nothing else. Saying so stops it reading as missing data.
+    if (!p.name && p.source === "CPL Assistant") {
+      h += '<br><span class="mapu-fb-t" title="MAP stores the CPL Assistant as an email address '
+        + 'only — there is no assistant name field to read.">MAP has no name for this address</span>';
+    }
+    if (addressWarning(p.email)) {
+      h += '<br><span class="mapu-warn" title="' + esc(addressWarning(p.email))
+        + '">&#9888; check this address</span>';
+    }
+    return h;
+  }
+
+  // The "Proposed because" chip. It records PROVENANCE — why this person is
+  // being suggested — which is what the bare role name failed to convey (Sam,
+  // 2026-08-13: "the Because column chips are unclear as to their meaning").
+  function becauseCell(g) {
+    var p = effectiveProposal(g);
+    if (!p.email && !p.name) return '<span class="mapu-st mapu-st-inactive">—</span>';
+    if (p.source === "curator") {
+      var who = p.by ? " by " + p.by : "";
+      return '<span class="mapu-chip mapu-chip-cur" title="Typed in here' + esc(who)
+        + '. A proposal for MAP — MAP itself still holds nothing.">curator-set</span>';
+    }
+    return '<span class="mapu-chip" title="This college designated this person as its '
+      + esc(p.source) + ' in MAP. Nobody is marked Primary Contact, so the cascade proposes '
+      + 'them as the student contact.">' + esc(p.source) + " in MAP</span>";
+  }
+
+  // The inline editor, rendered as a full-width row beneath the one being edited.
+  function propEditorRow(g, cols) {
+    var p = effectiveProposal(g);
+    var cur = curatorProposalFor(g.college);
+    var h = '<tr class="mapu-propedit"><td colspan="' + cols + '">';
+    h += '<div class="mapu-propedit-in">';
+    h += '<div class="mapu-propedit-hd">Propose a student contact for <b>' + esc(g.college) + "</b></div>";
+    h += '<p class="mapu-intro" style="margin:0 0 8px">This does <b>not</b> change MAP — MAP has no '
+      + "write API. It records what we would ask this college to set, so the list below doubles as "
+      + "the correction list to work through in MAP. It is not used by Sierra.</p>";
+    h += '<label class="mapu-propedit-lbl">Name'
+      + '<input class="mapu-propedit-inp" data-prop-name type="text" maxlength="120" value="'
+      + esc(cur ? (cur.proposed_name || "") : (p.name || "")) + '" placeholder="e.g. April Reardon"></label>';
+    h += '<label class="mapu-propedit-lbl">Email'
+      + '<input class="mapu-propedit-inp" data-prop-email type="email" maxlength="180" value="'
+      + esc(cur ? (cur.proposed_email || "") : (p.email || "")) + '" placeholder="name@college.edu"></label>';
+    h += '<label class="mapu-propedit-lbl">Note (optional)'
+      + '<input class="mapu-propedit-inp" data-prop-note type="text" maxlength="300" value="'
+      + esc(cur ? (cur.note || "") : "") + '" placeholder="Why this person — who told us, when"></label>';
+    if (state.propErr) h += '<div class="mapu-warn" style="margin:6px 0">' + esc(state.propErr) + "</div>";
+    h += '<div class="mapu-propedit-act">'
+      + '<button class="mapu-rosterbtn" data-prop-save="' + esc(ckey(g.college)) + '"'
+      + (state.propBusy ? " disabled" : "") + ">💾 Save proposal</button> "
+      + '<button class="mapu-rosterbtn" data-prop-cancel>Cancel</button>'
+      + (cur ? ' <button class="mapu-rosterbtn" data-prop-clear="' + esc(ckey(g.college)) + '"'
+               + ' title="Remove our proposal. The row falls back to whatever MAP designates.">'
+               + "Clear proposal</button>" : "");
+    if (cur && cur.updated_by) {
+      h += '<span class="mapu-fb-t" style="margin-left:10px">last set by ' + esc(cur.updated_by)
+        + (cur.updated_at ? " · " + esc(String(cur.updated_at).slice(0, 10)) : "") + "</span>";
+    }
+    h += "</div></div></td></tr>";
+    return h;
+  }
+
+  // Only real colleges belong on a worklist someone is going to act on — the
+  // MAP roster also carries sandbox entries and the statewide team account.
+  function gapRows() {
+    return (state.gaps || []).filter(function (g) {
+      return g.college_kind === "college" && !g.has_student_contact;
+    });
+  }
+
   function loadContacts(college) {
     // The gated contacts (Primary Contact / VPAA = VP Instruction / VPSS = VP
     // Student Services) for the refresh nudge. Reviewer/team-phrase only.
-    var url = REST + "/map_college_contacts?college=eq." + encodeURIComponent(college) + "&limit=1";
+    /* ⭐ EVERY SPELLING, MERGED CANONICAL-FIRST. map_college_contacts holds 3
+     * names that are not canonical (measured 2026-09-11); 2 are the "… Credit"
+     * arms of North Orange and San Diego continuing education, which Sam ruled
+     * are ONE entity each with their credit counterpart. Their canonical row
+     * carries the contacts and the variant row carries a landing_page_url the
+     * canonical one lacks, so an eq.<canonical> read silently dropped it.
+     *
+     * ⚠ MERGING IS SAFE ONLY BECAUSE THE TAXONOMY SAYS WHO IS ONE. Calbright
+     * Credit does NOT merge into Calbright Non-Credit — Sam ruled those two
+     * entities, and it resolves to no identity at all, so it is never in this
+     * set. The ruling does the work. Canonical wins every field it fills; a
+     * variant only supplies what canonical left empty. */
+    var spellings = spellingsFor(college);
+    var url = REST + "/map_college_contacts?college=" + encodeURIComponent(inList(spellings));
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("contacts " + r.status);
       return r.json();
-    }).then(function (rows) { return (rows && rows[0]) || null; });
+    }).then(function (rows) {
+      if (!rows || !rows.length) return null;
+      if (rows.length === 1) return rows[0];
+      var id = identityFor(college);
+      var canon = id && id.canonical;
+      var ordered = rows.slice().sort(function (a, b) {
+        return (b.college === canon ? 1 : 0) - (a.college === canon ? 1 : 0);
+      });
+      var merged = {}, from = [];
+      ordered.forEach(function (row) {
+        var used = false;
+        Object.keys(row).forEach(function (k) {
+          var v = row[k];
+          if (merged[k] == null || merged[k] === "") {
+            if (v != null && v !== "") { merged[k] = v; if (k !== "college") used = true; }
+            else if (!(k in merged)) merged[k] = v;
+          }
+        });
+        if (used) from.push(row.college);
+      });
+      merged.college = canon || ordered[0].college;
+      /* Say which rows contributed — a merge nobody can see is a merge nobody
+       * can question. Read by the nudge UI and by the tests. */
+      if (from.length > 1) merged._merged_from = from;
+      return merged;
+    });
   }
 
   // ── Nudge — a recipient PICKER, then a pre-filled mailto: (like the RACI
@@ -215,6 +1265,77 @@
     return "Your college's current MAP CPL users (" + userRoster.length + "):\n"
       + lines.join("\n") + "\n\n";
   }
+  // Shared boilerplate. Kept in one place so both nudges say the same thing about
+  // who we are and where to get help.
+  var MAP_HELP_BLOCK = [
+    "NEED HELP?",
+    "The CPL Initiative team at the California Community Colleges Chancellor's Office",
+    "can walk you through it or make the change with you:",
+    "  Email: MAP@rccd.edu",
+    "  CPL Initiative dashboard: https://cpl-initiative.github.io/cpl-project-tracker/",
+  ].join("\n");
+
+  // The STUDENT-CONTACT nudge (Session 120). Different job from the roster-refresh
+  // nudge: this one tells a college their landing page has no CPL contact, names
+  // the person we propose to route to, and says plainly that the choice is theirs.
+  //
+  // The proposal is always someone the college ALREADY designated in MAP — we are
+  // not appointing anyone. That distinction is the whole reason this email can be
+  // sent at all under local governance, so it is stated outright, not implied.
+  function buildContactMailto(gap, picks, landingUrl) {
+    var to = (picks || []).map(function (p) { return p.email; }).filter(Boolean).join(";");
+    var college = gap.college;
+    var who = (picks || []).map(function (p) {
+      return p.label + (p.name ? ": " + p.name : "");
+    }).join("\n");
+    var proposed = gap.proposed_email
+      ? ["WHAT WE PROPOSE",
+         "So that no student request goes unanswered, we plan to set your Primary",
+         "Contact in MAP to:",
+         "",
+         "    " + (gap.proposed_name || gap.proposed_email)
+           + (gap.proposed_name ? "  <" + gap.proposed_email + ">" : ""),
+         "    (your college's " + gap.proposed_source + " in MAP today)",
+         "",
+         "We are not choosing someone new — this is a person your college already",
+         "designated in MAP. If it should be someone else, that is entirely your",
+         "call: reply with the name and we will set it, or update it yourselves.",
+        ].join("\n")
+      : ["WHAT WE NEED FROM YOU",
+         "We do not have a CPL-side contact on file for your college, so we cannot",
+         "propose one without guessing — and that is your decision to make, not ours.",
+         "Please reply with the name and email of the person who should receive",
+         "student CPL requests.",
+        ].join("\n");
+    var body = [
+      "Hello " + college + " team,",
+      "",
+      "WHY WE ARE WRITING",
+      "Your college's CPL landing page in the MAP platform has no Primary Contact",
+      "on file. MAP sends student CPL requests to the Primary Contact's email",
+      "address, so today a student asking " + college + " for credit for prior",
+      "learning through MAP does not reach anyone.",
+      "",
+      (who ? "This note is going to:\n" + who + "\n" : ""),
+      proposed,
+      "",
+      "HOW TO CHANGE IT YOURSELVES",
+      landingUrl
+        ? "Your MAP CPL Dashboard: " + landingUrl + "\nA signed-in MAP user with\nadministrator rights at your college can update the college's contacts there."
+        : "A signed-in MAP user with administrator rights at your college can update\nthe college's contacts in the MAP platform.",
+      "",
+      MAP_HELP_BLOCK,
+      "",
+      "Thank you for making sure your students reach a real person.",
+      "",
+      "— The CPL Initiative team",
+    ].join("\n");
+    return "mailto:" + encodeURIComponent(to)
+      + "?subject=" + encodeURIComponent(
+          "Action needed: no CPL contact on your MAP landing page — " + college)
+      + "&body=" + encodeURIComponent(body);
+  }
+
   function buildNudgeMailto(college, picks, landingUrl, userRoster) {
     // Semicolon-delimited — Outlook rejects comma-separated mailto recipient
     // lists (same fix as the RACI nudges, Sam 2026-07-02).
@@ -234,6 +1355,7 @@
       + (who ? who + "\n\n" : "")
       + rosterEmailBlock(userRoster)
       + goLine
+      + MAP_HELP_BLOCK + "\n\n"
       + "Thank you for keeping your college's CPL team up to date.\n\n— The CPL Initiative team";
     return "mailto:" + encodeURIComponent(to)
       + "?subject=" + encodeURIComponent(subject)
@@ -265,7 +1387,7 @@
         return by;
       }).catch(function () { return {}; });
   }
-  function openNudge(college) {
+  function openNudge(college, mode) {
     // Load the contacts (recipients) + the college's own user roster in parallel
     // so the email can carry the roster. The roster is optional — its failure
     // never blocks the nudge.
@@ -274,15 +1396,43 @@
       loadRoster(college).catch(function () { return []; }),
     ]).then(function (res) {
       var c = res[0], userRoster = res[1] || [];
+      if (mode === "contact") {
+        var gap = (state.gaps || []).filter(function (g) { return g.college === college; })[0];
+        if (!gap) { alert("Could not find this college in the contact worklist."); return; }
+        // The person we propose to route to belongs on the email — being named as
+        // a college's student-facing CPL contact without being told is not on.
+        var picks = nudgeRoster(c);
+        if (gap.proposed_email && !picks.some(function (p) { return p.email === gap.proposed_email; })) {
+          picks.unshift({ key: "proposed", label: "Proposed CPL contact (" + gap.proposed_source + ")",
+                          name: gap.proposed_name || "", email: gap.proposed_email });
+        }
+        // For an ASK college the fallback is often the only way to reach anyone.
+        // Offered pre-checked but uncheckable-away, labelled with its provenance
+        // so nobody mistakes a website lookup for a MAP designation.
+        var f = fallbackFor(college);
+        if (!gap.proposed_email && f) {
+          (f.contacts || []).slice().reverse().forEach(function (c) {
+            if (!c.email || picks.some(function (p) { return p.email === c.email; })) return;
+            picks.unshift({
+              key: "fallback",
+              label: f.via === "curator"
+                ? "Suggested by " + (f.by || "the CPL team")
+                : "Published on their website",
+              name: c.name || c.title || "", email: c.email });
+          });
+        }
+        showNudgePicker(college, picks, (c && c.landing_page_url) || "", [], gap);
+        return;
+      }
       showNudgePicker(college, nudgeRoster(c), (c && c.landing_page_url) || "", userRoster);
     }).catch(function () {
-      alert("Could not load this college's contacts. Sign in on the Team & RACI tab "
+      alert("Could not load this college's contacts. Unlock with the team phrase "
         + "(reviewer or team phrase) and try again.");
     });
   }
   // The confirm/uncheck dialog. All present recipients start CHECKED; the draft
   // opens only after the user clicks "Open email draft".
-  function showNudgePicker(college, roster, landingUrl, userRoster) {
+  function showNudgePicker(college, roster, landingUrl, userRoster, gap) {
     var old = document.getElementById("mapu-picker");
     if (old) old.parentNode.removeChild(old);
     var ov = document.createElement("div");
@@ -320,16 +1470,26 @@
       rosterBlock = '<div class="mapu-roster-pick">' + head
         + '<div class="mapu-roster-users">' + users + "</div></div>";
     }
+    var proposeLine = gap
+      ? (gap.proposed_email
+          ? '<p class="mapu-pick-note mapu-propose">Proposes routing student CPL requests to <b>'
+            + esc(gap.proposed_name || gap.proposed_email) + "</b> — this college’s <b>"
+            + esc(gap.proposed_source) + "</b> in MAP. The email says plainly that the choice is theirs."
+            + "</p>"
+          : '<p class="mapu-pick-note mapu-propose">No CPL-side contact is on file, so the email <b>asks</b> '
+            + "this college to name one rather than proposing anybody.</p>")
+      : "";
     ov.innerHTML = '<div class="mapu-picker" role="dialog" aria-label="Nudge recipients">'
-      + "<h3>Nudge " + esc(college) + "</h3>"
+      + "<h3>" + (gap ? "Student contact — " : "Nudge ") + esc(college) + "</h3>"
       + '<p class="mapu-pick-note">This opens a pre-filled <b>draft</b> in your email app — '
       + "<b>nothing is sent</b> until you review it and click Send there. Uncheck anyone you don’t want to email.</p>"
+      + proposeLine
       + '<div class="mapu-pick-list">' + list + "</div>"
       + rosterBlock
       + mapLine
       + '<div class="mapu-pick-actions">'
       + '<button class="mapu-rosterbtn" data-pick-cancel>Cancel</button>'
-      + '<button class="mapu-rosterbtn mapu-pick-go" data-pick-go>✉ Open email draft</button>'
+      + '<button class="mapu-rosterbtn mapu-pick-go" data-pick-go>Open email draft</button>'
       + "</div></div>";
     document.body.appendChild(ov);
     function close() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
@@ -357,7 +1517,11 @@
       userBoxes.forEach(function (cb) {
         if (cb.checked) rosterForEmail.push(userRoster[parseInt(cb.getAttribute("data-roster-user"), 10)]);
       });
-      try { window.location.href = buildNudgeMailto(college, picks, landingUrl, rosterForEmail); } catch (e) {}
+      try {
+        window.location.href = gap
+          ? buildContactMailto(gap, picks, landingUrl)
+          : buildNudgeMailto(college, picks, landingUrl, rosterForEmail);
+      } catch (e) {}
       recordNudge(college);
       close();
       var root = document.getElementById("map-users-root");
@@ -420,6 +1584,29 @@
       + '<div class="box"><div class="n">' + fmtDate(lastSynced) + '</div><div class="l">Data as of</div></div>'
       + "</div>";
 
+    // Lens switch. Reviewer-only: the worklist is built from gated contact rows,
+    // so there is nothing behind it for a logged-out visitor to see.
+    if (signedIn()) {
+      var nGaps = gapRows().length;
+      html += '<div class="mapu-lens">'
+        + '<button class="mapu-lensbtn' + (state.lens === "all" ? " on" : "") + '" data-lens="all">'
+        + "All colleges</button>"
+        + '<button class="mapu-lensbtn' + (state.lens === "gaps" ? " on" : "") + '" data-lens="gaps"'
+        + ' title="Colleges whose MAP landing page has no Primary Contact — the address MAP routes student CPL requests to">'
+        + "⚠ No student contact"
+        + (state.gaps ? ' <span class="mapu-lenscount">' + nGaps + "</span>" : "")
+        + "</button>"
+        + '<button class="mapu-lensbtn' + (state.lens === "contacts" ? " on" : "") + '" data-lens="contacts"'
+        + ' title="Every college with its Primary Contact, CPL Assistant, and published counseling inbox — exportable">'
+        + "📇 Contact directory"
+        + (state.gaps ? ' <span class="mapu-lenscount">' + state.gaps.filter(function (g) {
+            return g.college_kind === "college"; }).length + "</span>" : "")
+        + "</button></div>";
+    }
+
+    if (state.lens === "gaps") { html += gapsHtml(); root.innerHTML = html + "</div>"; wire(root); return; }
+    if (state.lens === "contacts") { html += contactsHtml(); root.innerHTML = html + "</div>"; wire(root); return; }
+
     html += '<div class="mapu-toolbar">'
       + '<input class="q" type="text" placeholder="Filter colleges…" value="' + esc(state.q) + '">'
       + '<select class="mapu-select" data-sort>'
@@ -428,7 +1615,7 @@
       + "</select>"
       + '<span class="mapu-auth">' + (signedIn()
         ? "Signed in <b>✓</b> — roster visible"
-        : "Sign in on the <b>Team &amp; RACI</b> tab to see names &amp; emails") + "</span>"
+        : "Unlock with the team phrase (the About menu in the header) to see names &amp; emails") + "</span>"
       + '<span class="mapu-count">' + rows.length + " college" + (rows.length === 1 ? "" : "s") + "</span>"
       + "</div>";
 
@@ -478,11 +1665,331 @@
     rows.forEach(function (r) { if (state.rosterOpen[r.college]) fillRoster(root, r.college); });
   }
 
+  // ── The student-contact worklist ──────────────────────────────────────────
+  // One row per college with no Primary Contact email, showing WHO the cascade
+  // would route to and WHY that person. Colleges where we hold no CPL-side
+  // designation are separated out: those get asked, never defaulted.
+  function gapsHtml() {
+    if (state.gapsError) {
+      return '<div class="mapu-empty">Could not load the contact worklist ('
+        + esc(state.gapsError) + "). Unlock with the team phrase (the About menu in the header) and try again.</div>";
+    }
+    if (!state.gaps) return '<p class="mapu-gate">Loading the contact worklist…</p>';
+    var rows = gapRows();
+    var proposable = rows.filter(function (g) { return !!g.proposed_email; });
+    var asks = rows.filter(function (g) { return !g.proposed_email; });
+    if (!rows.length) {
+      return '<div class="mapu-empty">Every college has a Primary Contact email on file. '
+        + "Student CPL requests all route to a person.</div>";
+    }
+
+    var h = '<p class="mapu-intro"><b>MAP routes a student’s CPL request to the college’s '
+      + "Primary Contact email.</b> These " + rows.length + " colleges have none on file, so a "
+      + "student asking them for credit for prior learning through MAP reaches nobody. "
+      + "The proposal for each is a person <b>that college already designated in MAP</b> — "
+      + "colleges are locally governed, so we route to their people and never pick new ones.</p>"
+      + '<p class="mapu-intro">The <b>Proposed because</b> chip says <i>why</i> that person is '
+      + "suggested, not what kind of person they are: <span class=\"mapu-chip\">CPL Assistant in "
+      + "MAP</span> means this college has designated a CPL Assistant and <b>nobody as Primary "
+      + "Contact</b>, so the cascade — CPL Coordinator, then Assistant, Counselor, Articulation "
+      + "Officer, Lead Initiator, Faculty Lead — proposes them. "
+      + "<b>You can override any of these</b>; yours is recorded as "
+      + '<span class="mapu-chip mapu-chip-cur">curator-set</span> and never presented as '
+      + "something MAP holds. Sierra ignores these proposals — she keeps answering from MAP's "
+      + "own designations.</p>";
+
+    h += '<div class="mapu-stat">'
+      + '<div class="box"><div class="n">' + rows.length + '</div><div class="l">No student contact</div></div>'
+      + '<div class="box"><div class="n">' + proposable.length + '</div><div class="l">Have a proposal</div></div>'
+      + '<div class="box"><div class="n">' + asks.length + '</div><div class="l">Must be asked</div></div>'
+      + "</div>";
+
+    h += '<div class="mapu-toolbar"><button class="mapu-rosterbtn" data-gap-csv>CSV</button>'
+      + '<span class="mapu-auth">Nothing here writes to MAP — MAP has no write API. '
+      + "Set the value in MAP; this list clears itself at the next sync.</span></div>";
+
+    h += '<table class="mapu-table mapu-gaptable"><thead><tr>'
+      + "<th>College</th><th>Proposed student contact</th>"
+      + '<th title="Where this proposal came from — the role that college has '
+      + 'designated in MAP, or a person a curator typed in here.">Proposed because</th>'
+      + "<th>Actions</th>"
+      + "</tr></thead><tbody>";
+    proposable.forEach(function (g) {
+      h += "<tr><td>" + esc(g.college)
+        + (g.landing_page_url
+            ? ' <a class="mapu-lp" href="' + esc(g.landing_page_url) + '" target="_blank" rel="noopener"'
+              + ' title="Their MAP CPL landing page — the page a student uses">Open</a>'
+            : ' <span class="mapu-st mapu-st-inactive" title="No landing page URL on file">no page</span>')
+        + "</td>"
+        + "<td>" + proposalCell(g) + "</td>"
+        + "<td>" + becauseCell(g) + "</td>"
+        + '<td><button class="mapu-rosterbtn" data-prop-edit="' + esc(ckey(g.college)) + '"'
+        + ' title="Propose a different person. Yours replaces the suggestion above on this list;'
+        + ' it never changes MAP.">'
+        + (curatorProposalFor(g.college) ? "✏️ edit" : "✏️ change") + "</button> "
+        + '<button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '"'
+        + ' title="Draft the email telling this college we are routing their landing page to this person">'
+        + "\u{1F4E3} tell them</button></td></tr>";
+      if (state.propEdit === ckey(g.college)) h += propEditorRow(g, 4);
+    });
+    h += "</tbody></table>";
+
+    if (asks.length) {
+      h += '<h3 class="mapu-subh">Must be asked (' + asks.length + ")</h3>"
+        + '<p class="mapu-intro">No CPL-side contact is on file for these, so there is nobody to '
+        + "propose from their own MAP data. Leadership addresses are not used as a default: "
+        + "routing student requests into a vice president’s inbox is the college’s call. "
+        + "Where the college <b>publishes</b> a counseling or advising inbox, it is offered "
+        + "below as a starting point — <b>check the source link before using it</b>; it is a "
+        + "public web page, not a MAP designation. "
+        + "<b>You can propose a person here</b> once you know who it should be; it is recorded "
+        + "as ours, never as MAP's, and these rows stay on this list until the value is actually "
+        + "set in MAP.</p>"
+        + '<table class="mapu-table mapu-gaptable"><thead><tr>'
+        + "<th>College</th><th>Why</th><th>Proposed / fallback contact</th><th>Actions</th>"
+        + "</tr></thead><tbody>";
+      asks.forEach(function (g) {
+        var c = curatorProposalFor(g.college);
+        h += "<tr><td>" + esc(g.college) + "</td>"
+          + '<td><span class="mapu-st mapu-st-inactive">' + esc(g.ask_reason || "—") + "</span></td>"
+          + "<td>" + (c ? proposalCell(g) : fallbackCell(g.college)) + "</td>"
+          + '<td><button class="mapu-rosterbtn" data-prop-edit="' + esc(ckey(g.college)) + '">'
+          + (c ? "✏️ edit proposal" : "✏️ propose") + "</button> "
+          + '<button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '">'
+          + "\u{1F4E3} ask them</button></td></tr>";
+        if (state.propEdit === ckey(g.college)) h += propEditorRow(g, 4);
+      });
+      h += "</tbody></table>";
+    }
+    return h;
+  }
+
+  // Renders a fallback with its provenance ALWAYS visible. A curator-supplied
+  // contact says who gave it; a web-sourced one links the page it came from.
+  // Showing the address without showing where it came from is the failure mode
+  // this is written to avoid.
+  function fallbackCell(college) {
+    var f = fallbackFor(college);
+    if (!f) return '<span class="mapu-st mapu-st-inactive">not looked up</span>';
+    var h = "";
+    (f.contacts || []).forEach(function (c) {
+      h += '<div class="mapu-fb">'
+        + (c.name ? "<b>" + esc(c.name) + "</b> " : "")
+        + '<span class="mapu-disc">' + esc(c.email) + "</span>"
+        + (c.title ? '<br><span class="mapu-fb-t">' + esc(c.title) + "</span>" : "")
+        + "</div>";
+    });
+    if (!(f.contacts || []).length) {
+      h += '<span class="mapu-st mapu-st-inactive">no published inbox</span>';
+    }
+    if (f.via === "curator") {
+      h += '<div class="mapu-src mapu-via-cur">✔ from ' + esc(f.by || "the CPL team")
+        + (f.on ? ", " + esc(f.on) : "") + " — not a MAP designation</div>";
+      // A curator who also cites their source gives the strongest provenance we
+      // hold: a human judgment AND the page behind it. Show both.
+      if (f.source) {
+        h += '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+          + "their source ↗</a></div>";
+      }
+    } else if (f.via === "search") {
+      // Say plainly that nobody opened the page. The link is the whole point of
+      // the row: confirming it is a few seconds of work for someone unblocked.
+      h += '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+        + "candidate from search ↗</a> — <b>page not opened, confirm before routing</b></div>";
+    } else {
+      h += '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+        + "from their website ↗</a> — verify before use</div>";
+    }
+    if (f.note) h += '<div class="mapu-fb-t">' + esc(f.note) + "</div>";
+    return h;
+  }
+
+  // ── Contact directory (Jessica, 2026-08-05) ───────────────────────────────
+  // Every college with the four contact fields the team works from, plus the
+  // college's PUBLISHED counseling inbox where we have verified one. Built as a
+  // lens rather than a handed-over spreadsheet so it refreshes off the monthly
+  // sync — an exported sheet is a photograph and starts aging immediately (Sam's
+  // steer). The ⬇ export is right here for when a snapshot IS what's wanted.
+  function contactRows() {
+    return (state.gaps || [])
+      .filter(function (g) { return g.college_kind === "college"; })
+      .slice()
+      .sort(function (a, b) { return (a.college || "").localeCompare(b.college || ""); });
+  }
+
+  function contactsHtml() {
+    if (state.gapsError) {
+      return '<div class="mapu-empty">Could not load the contact directory ('
+        + esc(state.gapsError) + "). Unlock with the team phrase (the About menu in the header) and try again.</div>";
+    }
+    if (!state.gaps) return '<p class="mapu-gate">Loading the contact directory…</p>';
+    var rows = contactRows();
+    var withPc = rows.filter(function (r) { return !!r.primary_contact_email; }).length;
+    var withAsst = rows.filter(function (r) { return !!r.cpl_assistant_email; }).length;
+    var withCouns = rows.filter(function (r) {
+      var f = fallbackFor(r.college);
+      return f && (f.contacts || []).some(function (c) { return c.email; });
+    }).length;
+    // Proposals are counted over EVERY college, not the filtered view, so the
+    // stat and the export button never disagree with each other.
+    var nProp = rows.filter(function (r) { return !!proposedFillFor(r); }).length;
+    if (state.propOnly) rows = rows.filter(function (r) { return !!proposedFillFor(r); });
+
+    var h = '<p class="mapu-intro">Every college with the contacts MAP holds, plus the '
+      + "college's own published counseling inbox where we've verified one. "
+      + "<b>Blank means MAP has nothing on file</b> — not that it wasn't checked. "
+      + "Refreshes from the monthly MAP sync, so it stays current; use ⬇ when you need "
+      + "a snapshot to hand round.</p>";
+
+    h += '<div class="mapu-stat">'
+      + '<div class="box"><div class="n">' + rows.length + '</div><div class="l">Colleges</div></div>'
+      + '<div class="box"><div class="n">' + withPc + '</div><div class="l">Primary contact email</div></div>'
+      + '<div class="box"><div class="n">' + withAsst + '</div><div class="l">CPL Assistant email</div></div>'
+      + '<div class="box"><div class="n">' + withCouns + '</div><div class="l">Counseling inbox verified</div></div>'
+      + '<div class="box"><div class="n">' + nProp + '</div><div class="l">Proposed for MAP</div></div>'
+      + "</div>";
+
+    h += '<div class="mapu-toolbar">'
+      + '<button class="mapu-rosterbtn" data-dir-csv><b>Export to CSV / Excel</b></button>'
+      + '<button class="mapu-rosterbtn" data-prop-csv><b>Proposed fills for MAP (' + nProp + ')</b></button>'
+      + '<label class="mapu-auth"><input type="checkbox" data-prop-only'
+      + (state.propOnly ? " checked" : "") + '> Show only colleges with a proposed fill</label>'
+      + '<span class="mapu-auth">Downloads a spreadsheet file — double-click it to open in Excel.</span>'
+      + "</div>";
+
+    h += '<table class="mapu-table mapu-dirtable"><thead><tr>'
+      + "<th>College</th><th>Primary contact</th><th>Primary contact email</th>"
+      + "<th>CPL Assistant email</th><th>CPL contact (their CPL page)</th>"
+      + "<th>Counseling email / proposed fill</th>"
+      + "</tr></thead><tbody>";
+    rows.forEach(function (r) {
+      var f = fallbackFor(r.college);
+      var prop = proposedFillFor(r);
+      var couns = "";
+      if (f) {
+        var withEmail = (f.contacts || []).filter(function (c) { return c.email; });
+        var srcLink = '<a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+          + (f.via === "curator" ? "✔ from " + esc(f.by || "the CPL team") : "source") + " ↗</a>";
+        if (prop) {
+          // MAP holds nothing here, so this reads as a PROPOSAL — labelled, and
+          // never presented as something MAP has designated.
+          couns = '<div class="mapu-prop"><span class="mapu-prop-tag">Proposed for MAP</span><br>'
+            + withEmail.map(function (c) {
+                return '<span class="mapu-prop-em">' + esc(c.email) + "</span>"
+                  + (c.name ? ' <span class="mapu-fb-t">' + esc(c.name) + "</span>" : "");
+              }).join("<br>")
+            + "<br>" + srcLink + "</div>";
+        } else if (withEmail.length && f.via === "search") {
+          // MAP holds nothing here either, but this is NOT a proposal — the page
+          // was never opened. Labelled as a candidate so the two are never read as
+          // the same thing at a glance.
+          couns = '<div class="mapu-prop"><span class="mapu-prop-tag">Candidate — confirm</span><br>'
+            + withEmail.map(function (c) { return '<span class="mapu-prop-em">' + esc(c.email) + "</span>"; }).join("<br>")
+            + "<br>" + srcLink + "</div>";
+        } else if (withEmail.length) {
+          // MAP already holds a primary contact — reference only, no proposal.
+          couns = withEmail.map(function (c) { return esc(c.email); }).join("<br>") + "<br>" + srcLink;
+        } else {
+          couns = '<span class="mapu-st mapu-st-inactive">none published</span>'
+            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">checked</a>'
+            + (f.note ? '<div class="mapu-prop-none">' + esc(f.note) + "</div>" : "");
+        }
+      }
+      h += "<tr><td>" + esc(r.college) + "</td>"
+        + "<td>" + esc(r.primary_contact || "") + "</td>"
+        + "<td>" + esc(r.primary_contact_email || "") + "</td>"
+        + "<td>" + esc(r.cpl_assistant_email || "") + "</td>"
+        + "<td>" + cplPageCell(r.college) + "</td>"
+        + "<td>" + cplLiaisonCell(r.college) + "</td>"
+        + "<td>" + couns + "</td></tr>";
+    });
+    return h + "</tbody></table>";
+  }
+
+  // The handover list: exactly the colleges where MAP holds no primary contact and
+  // we have a suggestion, with the evidence attached. Shaped so the MAP team can
+  // work it top-to-bottom and adopt or reject each row on its own merits — every
+  // row carries WHERE it came from and an explicit empty Decision column, because
+  // a list of addresses with no provenance is not something anyone should act on.
+  function proposalsCsv() {
+    var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
+    var head = ["College", "Proposed primary contact email", "Proposed contact name",
+                "Proposed contact title", "Where it came from", "Source URL",
+                "Supplied by", "Date", "Note", "MAP currently holds", "Decision (MAP team)"];
+    var lines = [head.map(q).join(",")];
+    proposalRows().forEach(function (r) {
+      var pr = proposedFillFor(r); if (!pr) return;
+      var m = pr.meta;
+      pr.contacts.forEach(function (c) {
+        lines.push([r.college, c.email, c.name || "", c.title || "",
+                    m.via === "curator" ? "CPL team member" : "the college's own website",
+                    m.source || "", m.via === "curator" ? (m.by || "") : "", m.on || "",
+                    m.note || "", "(nothing — this field is blank in MAP)", ""].map(q).join(","));
+      });
+    });
+    return lines.join("\n");
+  }
+
+  function contactsCsv() {
+    var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
+    var head = ["College", "Primary contact name", "Primary contact email",
+                "CPL Assistant email", "CPL contact title", "CPL contact name",
+                "CPL contact email", "CPL webpage URL", "CPL page type",
+                "ASCCC CPL Liaison", "ASCCC CPL Liaison email", "ASCCC source",
+                "Counseling email", "Counseling email source", "Counseling source type"];
+    var lines = [head.map(q).join(",")];
+    contactRows().forEach(function (r) {
+      var f = fallbackFor(r.college);
+      var emails = f ? (f.contacts || []).filter(function (c) { return c.email; })
+        .map(function (c) { return c.email; }).join("; ") : "";
+      var cp = cplPageFor(r.college) || {};
+      var li = ((cplLiaisonFor(r.college) || {}).people) || [];
+      lines.push([r.college, r.primary_contact || "", r.primary_contact_email || "",
+                  r.cpl_assistant_email || "",
+                  cp.title || "", cp.name || "", cp.email || "", cp.url || "", cp.kind || "",
+                  li.map(function (x) { return x.name; }).join("; "),
+                  li.map(function (x) { return x.email; }).join("; "),
+                  (cplLiaisonFor(r.college) || {}).source || "",
+                  emails,
+                  f ? (f.source || "") : "",
+                  f ? (f.via === "curator" ? "CPL team (" + (f.by || "") + ")" : "college website") : ""
+                 ].map(q).join(","));
+    });
+    // BOM so Excel opens UTF-8 college names (Cañada) correctly on double-click.
+    return "﻿" + lines.join("\r\n");
+  }
+
+  function gapsCsv() {
+    var rows = gapRows();
+    var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
+    // Both layers ship, side by side and separately labelled. Collapsing them
+    // into one "proposed" column would make a curator's suggestion
+    // indistinguishable from a role the college actually designated in MAP —
+    // and this file is the list someone works through IN MAP, so that
+    // distinction is the whole point of it.
+    var head = ["College", "Proposed name", "Proposed email", "Proposed because",
+                "Curator name", "Curator email", "Curator note", "Curator set by",
+                "Curator set on", "Status", "Needs ask", "Ask reason", "Landing page"];
+    var lines = [head.map(q).join(",")];
+    rows.forEach(function (g) {
+      var c = curatorProposalFor(g.college) || {};
+      var p = effectiveProposal(g);
+      lines.push([g.college, p.name || "", p.email || "",
+                  p.source === "curator" ? "curator-set" : (g.proposed_source || ""),
+                  c.proposed_name || "", c.proposed_email || "", c.note || "",
+                  c.updated_by || "", c.updated_at ? String(c.updated_at).slice(0, 10) : "",
+                  c.proposed_email ? (c.status || "proposed") : "",
+                  g.needs_ask ? "yes" : "", g.ask_reason || "",
+                  g.landing_page_url || ""].map(q).join(","));
+    });
+    return lines.join("\n");
+  }
+
   function rosterHtml(rows) {
     if (!rows || !rows.length) {
       return '<div class="mapu-gate">No roster rows returned. '
         + (signedIn() ? "This college has no users on record." :
-          "Sign in on the <b>Team &amp; RACI</b> tab to view names &amp; emails.") + "</div>";
+          "Unlock with the team phrase (the About menu in the header) to view names &amp; emails.") + "</div>";
     }
     var h = "<table><thead><tr><th>Name</th><th>Email</th><th>Role</th>"
       + "<th>Status</th><th>Disciplines</th><th>Last updated</th><th>Username</th>"
@@ -504,7 +2011,7 @@
       cell.innerHTML = rosterHtml(rows);
     }).catch(function () {
       cell.innerHTML = '<div class="mapu-gate">Could not load the roster. '
-        + "Sign in on the <b>Team &amp; RACI</b> tab (reviewer or team phrase) and try again.</div>";
+        + "Unlock with the team phrase (the About menu in the header) and try again.</div>";
     });
   }
 
@@ -528,6 +2035,121 @@
     root.querySelectorAll("[data-nudge]").forEach(function (btn) {
       btn.addEventListener("click", function () { openNudge(btn.getAttribute("data-nudge")); });
     });
+    root.querySelectorAll("[data-lens]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        state.lens = btn.getAttribute("data-lens");
+        // Fetch the worklist the first time the lens is opened, not on tab load —
+        // it is a second gated round-trip most visits never need.
+        if ((state.lens === "gaps" || state.lens === "contacts")
+            && !state.gaps && !state.gapsError) {
+          render(root);
+          // Proposals ride along with the worklist. loadProposals never rejects
+          // (a failed read yields {}), so a proposals outage costs the curator's
+          // overlay, never the worklist itself.
+          Promise.all([loadGaps(), loadProposals()]).then(function (res) {
+            state.gaps = Array.isArray(res[0]) ? res[0] : [];
+            render(root);
+          }).catch(function (e) {
+            state.gapsError = (e && e.message) || "error";
+            render(root);
+          });
+          return;
+        }
+        render(root);
+      });
+    });
+    root.querySelectorAll("[data-fix]").forEach(function (btn) {
+      btn.addEventListener("click", function () { openNudge(btn.getAttribute("data-fix"), "contact"); });
+    });
+    // ── Curator proposals ──
+    root.querySelectorAll("[data-prop-edit]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var k = btn.getAttribute("data-prop-edit");
+        state.propEdit = (state.propEdit === k) ? null : k;
+        state.propErr = null;
+        renderInto(root, true);   // view state only — never refetch the worklist
+      });
+    });
+    var cancel = root.querySelector("[data-prop-cancel]");
+    if (cancel) cancel.addEventListener("click", function () {
+      state.propEdit = null; state.propErr = null; renderInto(root, true);
+    });
+    root.querySelectorAll("[data-prop-save]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var college = btn.getAttribute("data-prop-save");
+        var box = btn.closest(".mapu-propedit-in") || root;
+        var name = (box.querySelector("[data-prop-name]") || {}).value || "";
+        var email = ((box.querySelector("[data-prop-email]") || {}).value || "").trim();
+        var note = (box.querySelector("[data-prop-note]") || {}).value || "";
+        // Read the boxes at SAVE time rather than tracking keystrokes in state:
+        // the guarantee then lives in this function, not in whether an input
+        // handler fired (the same reason the Sierra guidance editor works this
+        // way). An address is required — a name alone routes nobody.
+        if (!email) { state.propErr = "An email address is required — a name alone routes nobody."; renderInto(root, true); return; }
+        if (!/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(email)) {
+          state.propErr = "That does not look like an email address: " + email;
+          renderInto(root, true); return;
+        }
+        state.propBusy = true; state.propErr = null; renderInto(root, true);
+        saveProposal(college, name.trim(), email, note.trim()).then(function () {
+          state.propBusy = false; state.propEdit = null; renderInto(root, true);
+        }).catch(function (e) {
+          // The typed values stay on screen — re-rendering the editor from
+          // state.proposals would silently discard what they just wrote.
+          state.propBusy = false;
+          state.propErr = (e && e.message) || "could not save";
+          renderInto(root, true);
+        });
+      });
+    });
+    root.querySelectorAll("[data-prop-clear]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var college = btn.getAttribute("data-prop-clear");
+        state.propBusy = true; state.propErr = null; renderInto(root, true);
+        // Clearing is a WRITE of nulls, not a delete — the table has no delete
+        // policy, and governance_owners already showed what a "clear" with no
+        // path becomes: a button that silently does nothing.
+        saveProposal(college, "", "", "").then(function () {
+          delete state.proposals[college];
+          state.propBusy = false; state.propEdit = null; renderInto(root, true);
+        }).catch(function (e) {
+          state.propBusy = false;
+          state.propErr = (e && e.message) || "could not clear";
+          renderInto(root, true);
+        });
+      });
+    });
+    var csv = root.querySelector("[data-gap-csv]");
+    if (csv) csv.addEventListener("click", function () {
+      downloadCsv(gapsCsv(), "map-student-contact-gaps.csv");
+    });
+    var pcsv = root.querySelector("[data-prop-csv]");
+    if (pcsv) pcsv.addEventListener("click", function () {
+      downloadCsv(proposalsCsv(), "cpl-proposed-contacts-for-map.csv");
+    });
+    var ponly = root.querySelector("[data-prop-only]");
+    if (ponly) ponly.addEventListener("change", function () {
+      state.propOnly = !!ponly.checked;
+      renderInto(root, true);   // keepData: this is a view filter, not a refetch
+    });
+    var dcsv = root.querySelector("[data-dir-csv]");
+    if (dcsv) dcsv.addEventListener("click", function () {
+      downloadCsv(contactsCsv(), "map-college-contact-directory.csv");
+    });
+  }
+
+  // Client-side CSV download so the team can work the list in MAP. Contact data
+  // is gated, so this never touches the server — it serialises what the signed-in
+  // reviewer already has on screen.
+  function downloadCsv(text, filename) {
+    try {
+      var blob = new Blob([text], { type: "text/csv;charset=utf-8;" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = filename || "export.csv";
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 0);
+    } catch (e) {}
   }
 
   // Re-render preserving scroll/focus is overkill here; a full re-render is fine
@@ -538,6 +2160,10 @@
     // The "last nudged" log (signed-in only) loads alongside the summary and
     // repaints when it lands — never blocks the public counts from rendering.
     loadNudges().then(function () { if (state.summary) render(root); });
+    /* Side-loaded like the nudges: it enriches lookups, it never gates the
+     * counts. A failure leaves every lookup at today's exact+normalized
+     * behavior and is recorded on `taxonomy.status`, not swallowed. */
+    loadTaxonomy().then(function () { if (state.summary) render(root); });
     loadSummary().then(function (data) {
       state.summary = Array.isArray(data) ? data : [];
       state.loading = false; render(root);
@@ -570,6 +2196,43 @@
     _showNudgePicker: showNudgePicker,
     _statusBadge: statusBadge,
     _discCell: discCell,
+    _gapRows: gapRows,
+    _fallbackFor: fallbackFor,
+    _FALLBACK_CONTACTS: FALLBACK_CONTACTS,
+    _proposedFillFor: proposedFillFor,
+    _proposalsCsv: proposalsCsv,
+    // Curator proposals (2026-08-13)
+    _state: state,
+    _ckey: ckey,
+    _curatorProposalFor: curatorProposalFor,
+    _effectiveProposal: effectiveProposal,
+    _proposalCell: proposalCell,
+    _becauseCell: becauseCell,
+    _gapsCsv: gapsCsv,
+    _fallbackCell: fallbackCell,
+    _cplPageFor: cplPageFor,
+    _cplPageCell: cplPageCell,
+    _cplLiaisonFor: cplLiaisonFor,
+    _cplLiaisonCell: cplLiaisonCell,
+    _CPL_LIAISONS: CPL_LIAISONS,
+    _CPL_PAGES: CPL_PAGES,
+    // the taxonomy wiring (2026-09-11)
+    _taxonomy: taxonomy,
+    _loadTaxonomy: loadTaxonomy,
+    _identityFor: identityFor,
+    _spellingsFor: spellingsFor,
+    _inList: inList,
+    _pickByIdentity: pickByIdentity,
+    _fallbackFor: fallbackFor,
+    _cplPageFor: cplPageFor,
+    _cplLiaisonFor: cplLiaisonFor,
+    _loadContacts: loadContacts,
+    _gapsHtml: gapsHtml,
+    _gapsCsv: gapsCsv,
+    _contactsCsv: contactsCsv,
+    _contactsHtml: contactsHtml,
+    _contactRows: contactRows,
+    _buildContactMailto: buildContactMailto,
   };
 
   // NOTE: tabs.js dispatches cpl-tab-activated on WINDOW (not document) — a

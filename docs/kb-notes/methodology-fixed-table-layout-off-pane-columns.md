@@ -1,8 +1,7 @@
 ---
 title: "Auto-layout tables silently park columns off-pane: diagnose with the inspector, defend with fixed layout"
-date: 2026-06-11
+created: 2026-06-11
 kb-status: published
-type: methodology
 tags: [methodology, front-end, css, tables, layout, debugging, jsdom, perf, ccr]
 artifacts:
   - unified_courses.js (ensureUcFixCss #3 + the render() colgroup — the defense)

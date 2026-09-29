@@ -1,0 +1,958 @@
+{
+  "_about": "CCCCO college/district roster with the MAP name bridge — the '09292025 Veteran Sprint' sheet of 20260812_COLL_DIST.xlsx, supplied by Sam 2026-08-12.",
+  "_source": "20260812_COLL_DIST.xlsx, sheet '09292025 Veteran Sprint' (dated 2025-09-29)",
+  "_extracted": "2026-08-12 (SkyLink, Session 141)",
+  "_value": "Its MAPCollege column is an AUTHORITATIVE bridge from the CCCCO roster to MAP's own college names, and its District column carries FULL district names rather than the ALL-CAPS abbreviations in Appendix A. Both supersede hand curation.",
+  "_warning_locationid": "⚠ DO NOT USE LocationID AS AN MIS COLLEGE CODE. Measured 2026-08-12: real MIS college codes are DISTRICT-PREFIXED (Los Angeles CCD is 741-749), a property Appendix A satisfies for 25 of 26 multi-college districts. This column satisfies it for only 3 of 23 and scatters Los Angeles CCD across 121/234/312/422/471/571/721/748/862. Only 3 of 106 shared codes agree with Appendix A. The column has lost its row alignment; the codes are real MIS codes attached to the wrong colleges. Take codes from Appendix A, joined on CollegeShortName (114 of 118 match).",
+  "_warning_districttype": "⚠ DistrictType (M/S) is unreliable: 37 rows disagree with the district's actual college count in this same file, and 14 districts carry BOTH values across their own rows (San Diego CCD has 4 colleges and is marked S; Los Angeles CCD is mixed). Derive multi-vs-single from the college count instead.",
+  "_counts": {
+    "rows": 118,
+    "districts": 73
+  },
+  "colleges": [
+    {
+      "location_id_unreliable": 611,
+      "district_type_unreliable": "S",
+      "district": "Allan Hancock Joint Community College District",
+      "college_name": "Allan Hancock College",
+      "college_short_caps": "ALLAN HANCOCK",
+      "map_college": "Allan Hancock College"
+    },
+    {
+      "location_id_unreliable": 621,
+      "district_type_unreliable": "S",
+      "district": "Barstow Community College District",
+      "college_name": "Barstow College",
+      "college_short_caps": "BARSTOW",
+      "map_college": "Barstow Community College"
+    },
+    {
+      "location_id_unreliable": 911,
+      "district_type_unreliable": "S",
+      "district": "Cabrillo Community College District",
+      "college_name": "Cabrillo College",
+      "college_short_caps": "CABRILLO",
+      "map_college": "Cabrillo College"
+    },
+    {
+      "location_id_unreliable": 111,
+      "district_type_unreliable": "S",
+      "district": "Cerritos Community College District",
+      "college_name": "Cerritos College",
+      "college_short_caps": "CERRITOS",
+      "map_college": "Cerritos College"
+    },
+    {
+      "location_id_unreliable": 411,
+      "district_type_unreliable": "S",
+      "district": "Chabot-Las Positas Community College District",
+      "college_name": "Chabot College",
+      "college_short_caps": "CHABOT HAYWARD",
+      "map_college": "Chabot College"
+    },
+    {
+      "location_id_unreliable": 211,
+      "district_type_unreliable": "S",
+      "district": "Chabot-Las Positas Community College District",
+      "college_name": "Las Positas College",
+      "college_short_caps": "LAS POSITAS",
+      "map_college": "Las Positas College"
+    },
+    {
+      "location_id_unreliable": 811,
+      "district_type_unreliable": "S",
+      "district": "Citrus Community College District",
+      "college_name": "Citrus College",
+      "college_short_caps": "CITRUS",
+      "map_college": "Citrus College"
+    },
+    {
+      "location_id_unreliable": 482,
+      "district_type_unreliable": "M",
+      "district": "Coast Community College District",
+      "college_name": "Golden West College",
+      "college_short_caps": "GOLDEN WEST",
+      "map_college": "Golden West College"
+    },
+    {
+      "location_id_unreliable": 481,
+      "district_type_unreliable": "M",
+      "district": "Mt. San Antonio Community College District",
+      "college_name": "Mt San Antonio College",
+      "college_short_caps": "MT SAN ANTONIO",
+      "map_college": "Mt. San Antonio College"
+    },
+    {
+      "location_id_unreliable": 921,
+      "district_type_unreliable": "S",
+      "district": "Coast Community College District",
+      "college_name": "Orange Coast College",
+      "college_short_caps": "ORANGE COAST",
+      "map_college": "Orange Coast College"
+    },
+    {
+      "location_id_unreliable": 821,
+      "district_type_unreliable": "S",
+      "district": "Compton Community College District",
+      "college_name": "Compton College",
+      "college_short_caps": "COMPTON",
+      "map_college": "Compton College"
+    },
+    {
+      "location_id_unreliable": 831,
+      "district_type_unreliable": "M",
+      "district": "Contra Costa Community College District",
+      "college_name": "Los Medanos College",
+      "college_short_caps": "LOS MEDANOS",
+      "map_college": "Los Medanos College"
+    },
+    {
+      "location_id_unreliable": 832,
+      "district_type_unreliable": "M",
+      "district": "Los Rios Community College District",
+      "college_name": "Folsom Lake College",
+      "college_short_caps": "FOLSOM LAKE",
+      "map_college": "Folsom Lake College"
+    },
+    {
+      "location_id_unreliable": 833,
+      "district_type_unreliable": "M",
+      "district": "San Francisco Community College District",
+      "college_name": "City College Of San Francisco",
+      "college_short_caps": "SAN FRANCISCO",
+      "map_college": "City College of San Francisco"
+    },
+    {
+      "location_id_unreliable": 711,
+      "district_type_unreliable": "S",
+      "district": "Grossmont-Cuyamaca Community College District",
+      "college_name": "Grossmont College",
+      "college_short_caps": "GROSSMONT",
+      "map_college": "Grossmont College"
+    },
+    {
+      "location_id_unreliable": 311,
+      "district_type_unreliable": "M",
+      "district": "Hartnell Community College District",
+      "college_name": "Hartnell College",
+      "college_short_caps": "HARTNELL",
+      "map_college": "Hartnell College"
+    },
+    {
+      "location_id_unreliable": 312,
+      "district_type_unreliable": "M",
+      "district": "Los Angeles Community College District",
+      "college_name": "East Los Angeles College",
+      "college_short_caps": "EAST LA",
+      "map_college": "East Los Angeles College"
+    },
+    {
+      "location_id_unreliable": 313,
+      "district_type_unreliable": "M",
+      "district": "Peralta Community College District",
+      "college_name": "Berkeley City College",
+      "college_short_caps": "BERKELEY CITY",
+      "map_college": "Berkeley City College"
+    },
+    {
+      "location_id_unreliable": 971,
+      "district_type_unreliable": "S",
+      "district": "Imperial Community College District",
+      "college_name": "Imperial Valley College",
+      "college_short_caps": "IMPERIAL",
+      "map_college": "Imperial Valley College"
+    },
+    {
+      "location_id_unreliable": 931,
+      "district_type_unreliable": "S",
+      "district": "Foothill-De Anza Community College District",
+      "college_name": "De Anza College",
+      "college_short_caps": "DEANZA",
+      "map_college": "De Anza College"
+    },
+    {
+      "location_id_unreliable": 721,
+      "district_type_unreliable": "S",
+      "district": "Los Angeles Community College District",
+      "college_name": "Los Angeles Harbor College",
+      "college_short_caps": "LA HARBOR",
+      "map_college": "Los Angeles Harbor College"
+    },
+    {
+      "location_id_unreliable": 121,
+      "district_type_unreliable": "S",
+      "district": "Los Angeles Community College District",
+      "college_name": "Los Angeles Pierce College",
+      "college_short_caps": "LA PIERCE",
+      "map_college": "Los Angeles Pierce College"
+    },
+    {
+      "location_id_unreliable": 421,
+      "district_type_unreliable": "M",
+      "district": "Long Beach Community College District",
+      "college_name": "Long Beach City College",
+      "college_short_caps": "LONG BEACH",
+      "map_college": "Long Beach City College"
+    },
+    {
+      "location_id_unreliable": 422,
+      "district_type_unreliable": "M",
+      "district": "Los Angeles Community College District",
+      "college_name": "Los Angeles Trade Technical College",
+      "college_short_caps": "LA TRADE",
+      "map_college": "Los Angeles Trade Technical College"
+    },
+    {
+      "location_id_unreliable": 441,
+      "district_type_unreliable": "S",
+      "district": "Los Rios Community College District",
+      "college_name": "American River College",
+      "college_short_caps": "AMERICAN RIVER",
+      "map_college": "American River College"
+    },
+    {
+      "location_id_unreliable": 731,
+      "district_type_unreliable": "S",
+      "district": "Los Rios Community College District",
+      "college_name": "Cosumnes River College",
+      "college_short_caps": "COSUMNES RIVER",
+      "map_college": "Cosumnes River College"
+    },
+    {
+      "location_id_unreliable": 21,
+      "district_type_unreliable": "M",
+      "district": "Lake Tahoe Community College District",
+      "college_name": "Lake Tahoe Community College",
+      "college_short_caps": "LAKE TAHOE",
+      "map_college": "Lake Tahoe Community College"
+    },
+    {
+      "location_id_unreliable": 22,
+      "district_type_unreliable": "M",
+      "district": "Los Rios Community College District",
+      "college_name": "Sacramento City College",
+      "college_short_caps": "SACRAMENTO CITY",
+      "map_college": "Sacramento City College"
+    },
+    {
+      "location_id_unreliable": 451,
+      "district_type_unreliable": "S",
+      "district": "Marin Community College District",
+      "college_name": "College Of Marin",
+      "college_short_caps": "MARIN",
+      "map_college": "College of Marin"
+    },
+    {
+      "location_id_unreliable": 31,
+      "district_type_unreliable": "S",
+      "district": "Mendocino-Lake Community College District",
+      "college_name": "Mendocino College",
+      "college_short_caps": "MENDOCINO",
+      "map_college": "Mendocino College"
+    },
+    {
+      "location_id_unreliable": 521,
+      "district_type_unreliable": "M",
+      "district": "Butte-Glenn Community College District",
+      "college_name": "Butte College",
+      "college_short_caps": "BUTTE",
+      "map_college": "Butte College"
+    },
+    {
+      "location_id_unreliable": 522,
+      "district_type_unreliable": "M",
+      "district": "Coast Community College District",
+      "college_name": "Coastline Community College",
+      "college_short_caps": "COASTLINE",
+      "map_college": "Coastline Community College"
+    },
+    {
+      "location_id_unreliable": 523,
+      "district_type_unreliable": "M",
+      "district": "San Mateo County Community College District",
+      "college_name": "Canada College",
+      "college_short_caps": "CANADA",
+      "map_college": "Cañada College"
+    },
+    {
+      "location_id_unreliable": 221,
+      "district_type_unreliable": "S",
+      "district": "MiraCosta Community College District",
+      "college_name": "Miracosta College",
+      "college_short_caps": "MIRA COSTA",
+      "map_college": "MiraCosta College"
+    },
+    {
+      "location_id_unreliable": 131,
+      "district_type_unreliable": "S",
+      "district": "Mt. San Jacinto Community College District",
+      "college_name": "Mt San Jacinto College",
+      "college_short_caps": "MT. SAN JACINTO",
+      "map_college": "Mt. San Jacinto College"
+    },
+    {
+      "location_id_unreliable": 841,
+      "district_type_unreliable": "S",
+      "district": "Napa Valley Community College District",
+      "college_name": "Napa Valley College",
+      "college_short_caps": "NAPA ",
+      "map_college": "Napa Valley College"
+    },
+    {
+      "location_id_unreliable": 748,
+      "district_type_unreliable": "M",
+      "district": "Los Angeles Community College District",
+      "college_name": "Los Angeles City College",
+      "college_short_caps": "LA CITY",
+      "map_college": "Los Angeles City College"
+    },
+    {
+      "location_id_unreliable": 741,
+      "district_type_unreliable": "M",
+      "district": "North Orange County Community College District",
+      "college_name": "Cypress College",
+      "college_short_caps": "CYPRESS",
+      "map_college": "Cypress College "
+    },
+    {
+      "location_id_unreliable": 742,
+      "district_type_unreliable": "M",
+      "district": "North Orange County Community College District",
+      "college_name": "Fullerton College",
+      "college_short_caps": "FULLERTON",
+      "map_college": "Fullerton College"
+    },
+    {
+      "location_id_unreliable": 743,
+      "district_type_unreliable": "M",
+      "district": "North Orange County Community College District",
+      "college_name": "North Orange Continuing Education",
+      "college_short_caps": "NORTH ORANGE ADULT",
+      "map_college": "North Orange Continuing Education"
+    },
+    {
+      "location_id_unreliable": 744,
+      "district_type_unreliable": "M",
+      "district": "Ohlone Community College District",
+      "college_name": "Ohlone College",
+      "college_short_caps": "OHLONE",
+      "map_college": "Ohlone College"
+    },
+    {
+      "location_id_unreliable": 745,
+      "district_type_unreliable": "M",
+      "district": "Palo Verde Community College District",
+      "college_name": "Palo Verde College",
+      "college_short_caps": "PALO VERDE",
+      "map_college": "Palo Verde College"
+    },
+    {
+      "location_id_unreliable": 746,
+      "district_type_unreliable": "M",
+      "district": "Palomar Community College District",
+      "college_name": "Palomar College",
+      "college_short_caps": "PALOMAR",
+      "map_college": "Palomar College"
+    },
+    {
+      "location_id_unreliable": 747,
+      "district_type_unreliable": "M",
+      "district": "Pasadena Area Community College District",
+      "college_name": "Pasadena City College",
+      "college_short_caps": "PASADENA",
+      "map_college": "Pasadena City College"
+    },
+    {
+      "location_id_unreliable": 749,
+      "district_type_unreliable": "M",
+      "district": "Yosemite Community College District",
+      "college_name": "Columbia College",
+      "college_short_caps": "COLUMBIA",
+      "map_college": "Columbia College"
+    },
+    {
+      "location_id_unreliable": 231,
+      "district_type_unreliable": "M",
+      "district": "Antelope Valley Community College District",
+      "college_name": "Antelope Valley College",
+      "college_short_caps": "ANTELOPE VALLEY",
+      "map_college": "Antelope Valley College"
+    },
+    {
+      "location_id_unreliable": 232,
+      "district_type_unreliable": "M",
+      "district": "Kern Community College District",
+      "college_name": "Bakersfield College",
+      "college_short_caps": "BAKERSFIELD",
+      "map_college": "Bakersfield College"
+    },
+    {
+      "location_id_unreliable": 234,
+      "district_type_unreliable": "M",
+      "district": "Los Angeles Community College District",
+      "college_name": "Los Angeles Southwest College",
+      "college_short_caps": "LA SWEST",
+      "map_college": "Los Angeles Southwest College"
+    },
+    {
+      "location_id_unreliable": 233,
+      "district_type_unreliable": "M",
+      "district": "Santa Clarita Community College District",
+      "college_name": "College Of The Canyons",
+      "college_short_caps": "CANYONS",
+      "map_college": "College of the Canyons"
+    },
+    {
+      "location_id_unreliable": 334,
+      "district_type_unreliable": "S",
+      "district": "Desert Community College District",
+      "college_name": "College Of The Desert",
+      "college_short_caps": "DESERT",
+      "map_college": "College of the Desert"
+    },
+    {
+      "location_id_unreliable": 141,
+      "district_type_unreliable": "S",
+      "district": "Peralta Community College District",
+      "college_name": "Laney College",
+      "college_short_caps": "LANEY",
+      "map_college": "Laney College"
+    },
+    {
+      "location_id_unreliable": 531,
+      "district_type_unreliable": "S",
+      "district": "Peralta Community College District",
+      "college_name": "Merritt College",
+      "college_short_caps": "MERRITT",
+      "map_college": "Merritt College"
+    },
+    {
+      "location_id_unreliable": 51,
+      "district_type_unreliable": "S",
+      "district": "Rancho Santiago Community College District",
+      "college_name": "Santiago Canyon College",
+      "college_short_caps": "SANTIAGO CANYON",
+      "map_college": "Santiago Canyon College"
+    },
+    {
+      "location_id_unreliable": 461,
+      "district_type_unreliable": "S",
+      "district": "Riverside Community College District",
+      "college_name": "Moreno Valley College",
+      "college_short_caps": "MORENO VALLEY",
+      "map_college": "Moreno Valley College"
+    },
+    {
+      "location_id_unreliable": 851,
+      "district_type_unreliable": "S",
+      "district": "San Bernardino Community College District",
+      "college_name": "Crafton Hills College",
+      "college_short_caps": "CRAFTON HILLS",
+      "map_college": "Crafton Hills College"
+    },
+    {
+      "location_id_unreliable": 941,
+      "district_type_unreliable": "S",
+      "district": "San Bernardino Community College District",
+      "college_name": "San Bernardino Valley College",
+      "college_short_caps": "SAN BERNARDINO",
+      "map_college": "San Bernardino Valley College"
+    },
+    {
+      "location_id_unreliable": 241,
+      "district_type_unreliable": "S",
+      "district": "San Diego Community College District",
+      "college_name": "San Diego City College",
+      "college_short_caps": "SAN DIEGO CITY",
+      "map_college": "San Diego City College"
+    },
+    {
+      "location_id_unreliable": 861,
+      "district_type_unreliable": "M",
+      "district": "Lassen Community College District",
+      "college_name": "Lassen Community College",
+      "college_short_caps": "LASSEN",
+      "map_college": "Lassen College"
+    },
+    {
+      "location_id_unreliable": 862,
+      "district_type_unreliable": "M",
+      "district": "Los Angeles Community College District",
+      "college_name": "West Los Angeles College",
+      "college_short_caps": "WEST LA",
+      "map_college": "West Los Angeles College"
+    },
+    {
+      "location_id_unreliable": 863,
+      "district_type_unreliable": "M",
+      "district": "San Diego Community College District",
+      "college_name": "San Diego Mesa College",
+      "college_short_caps": "SAN DIEGO MESA",
+      "map_college": "San Diego Mesa College"
+    },
+    {
+      "location_id_unreliable": 431,
+      "district_type_unreliable": "S",
+      "district": "San Diego Community College District",
+      "college_name": "San Diego Miramar College",
+      "college_short_caps": "SAN DIEGO MIRAMAR",
+      "map_college": "San Diego Miramar College"
+    },
+    {
+      "location_id_unreliable": 951,
+      "district_type_unreliable": "S",
+      "district": "San Jose-Evergreen Community College District",
+      "college_name": "Evergreen Valley College",
+      "college_short_caps": "EVERYGREEN VALLEY",
+      "map_college": "Evergreen Valley College"
+    },
+    {
+      "location_id_unreliable": 61,
+      "district_type_unreliable": "S",
+      "district": "San Jose-Evergreen Community College District",
+      "college_name": "San Jose City College",
+      "college_short_caps": "SAN JOSE CITY",
+      "map_college": "San Jose City College "
+    },
+    {
+      "location_id_unreliable": 771,
+      "district_type_unreliable": "S",
+      "district": "San Luis Obispo County Community College District",
+      "college_name": "Cuesta College",
+      "college_short_caps": "CUESTA",
+      "map_college": "Cuesta College"
+    },
+    {
+      "location_id_unreliable": 345,
+      "district_type_unreliable": "M",
+      "district": "California Online Community College District",
+      "college_name": "Calbright College",
+      "college_short_caps": "CALBRIGHT",
+      "map_college": "Calbright College"
+    },
+    {
+      "location_id_unreliable": 341,
+      "district_type_unreliable": "M",
+      "district": "Copper Mountain Community College District",
+      "college_name": "Copper Mountain College",
+      "college_short_caps": "COPPER MOUNTAIN",
+      "map_college": "Copper Mountain College"
+    },
+    {
+      "location_id_unreliable": 343,
+      "district_type_unreliable": "M",
+      "district": "Monterey Peninsula Community College District",
+      "college_name": "Monterey Peninsula College",
+      "college_short_caps": "MONTEREY",
+      "map_college": "Monterey Peninsula College"
+    },
+    {
+      "location_id_unreliable": 344,
+      "district_type_unreliable": "M",
+      "district": "Rancho Santiago Community College District",
+      "college_name": "Santa Ana College",
+      "college_short_caps": "SANTA ANA",
+      "map_college": "Santa Ana College"
+    },
+    {
+      "location_id_unreliable": 871,
+      "district_type_unreliable": "M",
+      "district": "South Orange County Community College District",
+      "college_name": "Saddleback College",
+      "college_short_caps": "SADDLEBACK",
+      "map_college": "Saddleback College"
+    },
+    {
+      "location_id_unreliable": 873,
+      "district_type_unreliable": "M",
+      "district": "State Center Community College District",
+      "college_name": "Madera Community College",
+      "college_short_caps": "MADERA",
+      "map_college": "Madera College"
+    },
+    {
+      "location_id_unreliable": 161,
+      "district_type_unreliable": "S",
+      "district": "Foothill-De Anza Community College District",
+      "college_name": "Foothill College",
+      "college_short_caps": "FOOTHILL",
+      "map_college": "Foothill College"
+    },
+    {
+      "location_id_unreliable": 881,
+      "district_type_unreliable": "S",
+      "district": "San Mateo County Community College District",
+      "college_name": "Skyline College",
+      "college_short_caps": "SKYLINE",
+      "map_college": "Skyline College"
+    },
+    {
+      "location_id_unreliable": 962,
+      "district_type_unreliable": "M",
+      "district": "Riverside Community College District",
+      "college_name": "Riverside City College",
+      "college_short_caps": "RIVERSIDE",
+      "map_college": "Riverside City College"
+    },
+    {
+      "location_id_unreliable": 963,
+      "district_type_unreliable": "M",
+      "district": "San Diego Community College District",
+      "college_name": "San Diego College of Continuing Education",
+      "college_short_caps": "SAN DIEGO ADULT",
+      "map_college": "San Diego College of Continuing Education"
+    },
+    {
+      "location_id_unreliable": 961,
+      "district_type_unreliable": "M",
+      "district": "Santa Barbara Community College District",
+      "college_name": "Santa Barbara City College",
+      "college_short_caps": "SANTA BARBARA",
+      "map_college": "Santa Barbara City College"
+    },
+    {
+      "location_id_unreliable": 981,
+      "district_type_unreliable": "M",
+      "district": "Kern Community College District",
+      "college_name": "Cerro Coso Community College",
+      "college_short_caps": "CERRO COSO",
+      "map_college": "Cerro Coso Community College"
+    },
+    {
+      "location_id_unreliable": 982,
+      "district_type_unreliable": "M",
+      "district": "Sequoias Community College District",
+      "college_name": "College Of The Sequoias",
+      "college_short_caps": "SEQUOIAS",
+      "map_college": "College of the Sequoias"
+    },
+    {
+      "location_id_unreliable": 71,
+      "district_type_unreliable": "M",
+      "district": "Shasta-Tehama-Trinity Joint Community College District",
+      "college_name": "Shasta College",
+      "college_short_caps": "SHASTA",
+      "map_college": "Shasta College"
+    },
+    {
+      "location_id_unreliable": 76,
+      "district_type_unreliable": "M",
+      "district": "Sierra Joint Community College District",
+      "college_name": "Sierra College",
+      "college_short_caps": "SIERRA",
+      "map_college": "Sierra College"
+    },
+    {
+      "location_id_unreliable": 72,
+      "district_type_unreliable": "M",
+      "district": "Siskiyou Joint Community College District",
+      "college_name": "College Of The Siskiyous",
+      "college_short_caps": "SISKIYOUS",
+      "map_college": "College of the Siskiyous"
+    },
+    {
+      "location_id_unreliable": 73,
+      "district_type_unreliable": "M",
+      "district": "Solano County Community College District",
+      "college_name": "Solano Community College",
+      "college_short_caps": "SOLANO",
+      "map_college": "Solano Community College"
+    },
+    {
+      "location_id_unreliable": 361,
+      "district_type_unreliable": "S",
+      "district": "Contra Costa Community College District",
+      "college_name": "Contra Costa College",
+      "college_short_caps": "CONTRA COSTA",
+      "map_college": "Contra Costa College"
+    },
+    {
+      "location_id_unreliable": 551,
+      "district_type_unreliable": "S",
+      "district": "Sonoma County Junior College District",
+      "college_name": "Santa Rosa Junior College",
+      "college_short_caps": "SANTA ROSA",
+      "map_college": "Santa Rosa Junior College"
+    },
+    {
+      "location_id_unreliable": 471,
+      "district_type_unreliable": "M",
+      "district": "Los Angeles Community College District",
+      "college_name": "Los Angeles Mission College",
+      "college_short_caps": "LA MISSION",
+      "map_college": "Los Angeles Mission College"
+    },
+    {
+      "location_id_unreliable": 472,
+      "district_type_unreliable": "M",
+      "district": "South Orange County Community College District",
+      "college_name": "Irvine Valley College",
+      "college_short_caps": "IRVINE",
+      "map_college": "Irvine Valley College"
+    },
+    {
+      "location_id_unreliable": 641,
+      "district_type_unreliable": "S",
+      "district": "Kern Community College District",
+      "college_name": "Porterville College",
+      "college_short_caps": "PORTERVILLE",
+      "map_college": "Porterville College"
+    },
+    {
+      "location_id_unreliable": 371,
+      "district_type_unreliable": "M",
+      "district": "Chaffey Community College District",
+      "college_name": "Chaffey College",
+      "college_short_caps": "CHAFFEY",
+      "map_college": "Chaffey College"
+    },
+    {
+      "location_id_unreliable": 372,
+      "district_type_unreliable": "M",
+      "district": "El Camino Community College District",
+      "college_name": "El Camino College",
+      "college_short_caps": "EL CAMINO",
+      "map_college": "El Camino College"
+    },
+    {
+      "location_id_unreliable": 373,
+      "district_type_unreliable": "M",
+      "district": "Ventura County Community College District",
+      "college_name": "Oxnard College",
+      "college_short_caps": "OXNARD",
+      "map_college": "Oxnard College"
+    },
+    {
+      "location_id_unreliable": 651,
+      "district_type_unreliable": "S",
+      "district": "Southwestern Community College District",
+      "college_name": "Southwestern Community College",
+      "college_short_caps": "SOUTHWESTERN",
+      "map_college": "Southwestern College"
+    },
+    {
+      "location_id_unreliable": 661,
+      "district_type_unreliable": "S",
+      "district": "Feather River Community College District",
+      "college_name": "Feather River College",
+      "college_short_caps": "FEATHER RIVER",
+      "map_college": "Feather River College"
+    },
+    {
+      "location_id_unreliable": 781,
+      "district_type_unreliable": "S",
+      "district": "State Center Community College District",
+      "college_name": "Clovis Community College",
+      "college_short_caps": "CLOVIS",
+      "map_college": "Clovis Community College"
+    },
+    {
+      "location_id_unreliable": 561,
+      "district_type_unreliable": "S",
+      "district": "Gavilan Joint Community College District",
+      "college_name": "Gavilan College",
+      "college_short_caps": "GAVILAN",
+      "map_college": "Gavilan College"
+    },
+    {
+      "location_id_unreliable": 171,
+      "district_type_unreliable": "S",
+      "district": "State Center Community College District",
+      "college_name": "Reedley College",
+      "college_short_caps": "REEDLEY COLLEGE",
+      "map_college": "Reedley College"
+    },
+    {
+      "location_id_unreliable": 271,
+      "district_type_unreliable": "S",
+      "district": "Ventura County Community College District",
+      "college_name": "Moorpark College",
+      "college_short_caps": "MOORPARK",
+      "map_college": "Moorpark College"
+    },
+    {
+      "location_id_unreliable": 181,
+      "district_type_unreliable": "S",
+      "district": "Glendale Community College District",
+      "college_name": "Glendale Community College",
+      "college_short_caps": "GLENDALE",
+      "map_college": "Glendale Community College"
+    },
+    {
+      "location_id_unreliable": 281,
+      "district_type_unreliable": "S",
+      "district": "Ventura County Community College District",
+      "college_name": "Ventura College",
+      "college_short_caps": "VENTURA",
+      "map_college": "Ventura College"
+    },
+    {
+      "location_id_unreliable": 261,
+      "district_type_unreliable": "S",
+      "district": "State Center Community College District",
+      "college_name": "Fresno City College",
+      "college_short_caps": "FRESNO CITY",
+      "map_college": "Fresno City College"
+    },
+    {
+      "location_id_unreliable": 892,
+      "district_type_unreliable": "M",
+      "district": "Merced Community College District",
+      "college_name": "Merced College",
+      "college_short_caps": "MERCED",
+      "map_college": "Merced College"
+    },
+    {
+      "location_id_unreliable": 891,
+      "district_type_unreliable": "M",
+      "district": "Santa Monica Community College District",
+      "college_name": "Santa Monica College",
+      "college_short_caps": "SANTA MONICA",
+      "map_college": "Santa Monica College"
+    },
+    {
+      "location_id_unreliable": 91,
+      "district_type_unreliable": "S",
+      "district": "Victor Valley Community College District",
+      "college_name": "Victor Valley College",
+      "college_short_caps": "VICTOR VALLEY",
+      "map_college": "Victor Valley College"
+    },
+    {
+      "location_id_unreliable": 576,
+      "district_type_unreliable": "M",
+      "district": "Contra Costa Community College District",
+      "college_name": "Diablo Valley College",
+      "college_short_caps": "DIABLO VALLEY",
+      "map_college": "Diablo Valley College"
+    },
+    {
+      "location_id_unreliable": 571,
+      "district_type_unreliable": "M",
+      "district": "Los Angeles Community College District",
+      "college_name": "Los Angeles Valley College",
+      "college_short_caps": "LA VALLEY",
+      "map_college": "Los Angeles Valley College"
+    },
+    {
+      "location_id_unreliable": 574,
+      "district_type_unreliable": "M",
+      "district": "Peralta Community College District",
+      "college_name": "College of Alameda",
+      "college_short_caps": "ALAMEDA",
+      "map_college": "College of Alameda"
+    },
+    {
+      "location_id_unreliable": 572,
+      "district_type_unreliable": "M",
+      "district": "San Mateo County Community College District",
+      "college_name": "College of San Mateo",
+      "college_short_caps": "SAN MATEO",
+      "map_college": "College of San Mateo"
+    },
+    {
+      "location_id_unreliable": 681,
+      "district_type_unreliable": "M",
+      "district": "Riverside Community College District",
+      "college_name": "Norco College",
+      "college_short_caps": "NORCO",
+      "map_college": "Norco College"
+    },
+    {
+      "location_id_unreliable": 682,
+      "district_type_unreliable": "M",
+      "district": "San Joaquin Delta Community College District",
+      "college_name": "San Joaquin Delta College",
+      "college_short_caps": "SAN JOAQUIN DELTA",
+      "map_college": "San Joaquin Delta College"
+    },
+    {
+      "location_id_unreliable": 683,
+      "district_type_unreliable": "M",
+      "district": "West Hills Community College District",
+      "college_name": "West Hills College Lemoore",
+      "college_short_caps": "WEST HILLS LEMOORE",
+      "map_college": "Lemoore College"
+    },
+    {
+      "location_id_unreliable": 991,
+      "district_type_unreliable": "S",
+      "district": "West Kern Community College District",
+      "college_name": "Taft College",
+      "college_short_caps": "TAFT",
+      "map_college": "Taft College"
+    },
+    {
+      "location_id_unreliable": 581,
+      "district_type_unreliable": "M",
+      "district": "West Valley-Mission Community College District",
+      "college_name": "Mission College",
+      "college_short_caps": "MISSION",
+      "map_college": "Mission College"
+    },
+    {
+      "location_id_unreliable": 582,
+      "district_type_unreliable": "M",
+      "district": "West Valley-Mission Community College District",
+      "college_name": "West Valley College",
+      "college_short_caps": "WEST VALLEY",
+      "map_college": "West Valley College"
+    },
+    {
+      "location_id_unreliable": 691,
+      "district_type_unreliable": "S",
+      "district": "West Hills Community College District",
+      "college_name": "West Hills College Coalinga",
+      "college_short_caps": "WEST HILLS COALINGA",
+      "map_college": "Coalinga College"
+    },
+    {
+      "location_id_unreliable": 492,
+      "district_type_unreliable": "M",
+      "district": "Redwoods Community College District",
+      "college_name": "College Of The Redwoods",
+      "college_short_caps": "REDWOODS",
+      "map_college": "College of the Redwoods"
+    },
+    {
+      "location_id_unreliable": 493,
+      "district_type_unreliable": "M",
+      "district": "Yosemite Community College District",
+      "college_name": "Modesto Junior College",
+      "college_short_caps": "MODESTO",
+      "map_college": "Modesto Junior College"
+    },
+    {
+      "location_id_unreliable": 591,
+      "district_type_unreliable": "M",
+      "district": "Grossmont-Cuyamaca Community College District",
+      "college_name": "Cuyamaca College",
+      "college_short_caps": "CUYAMACA",
+      "map_college": "Cuyamaca College"
+    },
+    {
+      "location_id_unreliable": 592,
+      "district_type_unreliable": "M",
+      "district": "Rio Hondo Community College District",
+      "college_name": "Rio Hondo College",
+      "college_short_caps": "RIO HONDO",
+      "map_college": "Rio Hondo College"
+    },
+    {
+      "location_id_unreliable": 292,
+      "district_type_unreliable": "M",
+      "district": "Yuba Community College District",
+      "college_name": "Woodland Community College",
+      "college_short_caps": "WOODLAND",
+      "map_college": "Woodland Community College"
+    },
+    {
+      "location_id_unreliable": 291,
+      "district_type_unreliable": "M",
+      "district": "Yuba Community College District",
+      "college_name": "Yuba College",
+      "college_short_caps": "YUBA",
+      "map_college": "Yuba College"
+    }
+  ]
+}

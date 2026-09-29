@@ -203,6 +203,26 @@ GUESS_COLUMNS = [
     "Faculty Lead", "Faculty Lead Email", "IT Contact", "IT Contact Email",
     "Lead Initiator", "Lead Initiator Email", "Lead Manager", "Lead Manager Email",
     "School Certifying Official", "Veteran School Certifying Official Email",
+    # ── Session 120: the STUDENT-FACING contact hunt (Sam, 2026-08-05) ─────────
+    # Goal: every college landing page routes a student CPL request to a real
+    # person. MAP routes on Primary Contact Email; Sam believes a second
+    # student-facing contact ("CPL Assistant") exists in the Contacts report.
+    # Probe the plausible spellings — Builder labels keep their SPACES (the
+    # "VPAA Email" ✓ / "VPAAEmail" ✗ finding), so try both forms.
+    "CPL Assistant", "CPL Assistant Email",
+    "CPLAssistant", "CPLAssistantEmail",
+    "CPL Assistant Contact", "CPL Assistant Contact Email",
+    "Assistant", "Assistant Email",
+    "CPL Contact", "CPL Contact Email",
+    "CPL Specialist", "CPL Specialist Email",
+    "CPL Analyst", "CPL Analyst Email",
+    "CPL Staff", "CPL Staff Email",
+    "Alternate Contact", "Alternate Contact Email",
+    "Secondary Contact", "Secondary Contact Email",
+    "Counselor", "Counselor Email",
+    "Evaluator", "Evaluator Email",
+    "Records", "Records Email", "Registrar", "Registrar Email",
+    "Admissions", "Admissions Email",
 ]
 
 
@@ -213,6 +233,11 @@ GUESS_COLUMNS = [
 # FAKE one is null / empty / a copy of the anchor. The sentinels reveal exactly
 # what "fake" looks like on this server so the threshold is data-driven.
 SENTINEL_COLUMNS = ["ZqxNotAColumn1", "FakeFieldQwerty2", "NoSuchColumn3"]
+
+# Non-null share at/above which a signature-passing column is auto-confirmed.
+# Below it (but still clearing the garbage baseline) the column is reported as
+# "weak" — real-looking but sparsely populated — for a human call. See _looks_real.
+FILL_FLOOR = 0.25
 
 
 def _column_signature(view, anchor, col):
@@ -248,21 +273,30 @@ def _column_signature(view, anchor, col):
 
 
 def _looks_real(sig, fake):
-    """A column is REAL when it carries its own data: a meaningful non-null
-    share, more than one distinct value, and it isn't just echoing the anchor —
-    AND its signature beats the calibrated FAKE baseline (so if the server
-    returns identical shapes for known-garbage, nothing is falsely accepted)."""
+    """Classify a candidate column by VALUE SIGNATURE. Returns one of:
+      "real" — carries its own data at a healthy fill rate,
+      "weak" — clears the garbage baseline and has real distinct values, but is
+               SPARSELY populated (below FILL_FLOOR),
+      ""     — indistinguishable from an unknown column.
+
+    The "weak" band was added Session 120: a genuinely real but sparsely-filled
+    contact column (e.g. a role only 12 of 123 colleges have named) sits below
+    the 0.25 fill floor and was being silently rejected as fake. Sparse ≠ fake —
+    a fake column returns NOTHING, so distinct>1 over a nonzero baseline is the
+    honest signal. Weak columns are reported, not auto-confirmed, so a human
+    reads the counts and decides.
+    """
     n = sig["n"] or 1
     nonnull_share = sig["nonnull"] / n
     copy_share = sig["copies_anchor"] / n
     if sig["http"] != 200 or sig["nonnull"] == 0:
-        return False
+        return ""
     if sig["distinct"] <= 1 or copy_share >= 0.9:
-        return False
-    if nonnull_share < 0.25:
-        return False
+        return ""
     # Must clear the fake baseline (the best a known-garbage column achieved).
-    return sig["nonnull"] > fake["nonnull"] and sig["distinct"] > fake["distinct"]
+    if not (sig["nonnull"] > fake["nonnull"] and sig["distinct"] > fake["distinct"]):
+        return ""
+    return "real" if nonnull_share >= FILL_FLOOR else "weak"
 
 
 def _confirm_columns(view, anchor, candidates):
@@ -288,6 +322,7 @@ def _confirm_columns(view, anchor, candidates):
               "/ fall back to the MAP Builder UI.")
 
     confirmed = [anchor]
+    weak = []
     have = {anchor.lower()}
     tried = set()
     for c in candidates:
@@ -295,15 +330,21 @@ def _confirm_columns(view, anchor, candidates):
             continue
         tried.add(c)
         sig = _column_signature(view, anchor, c)
-        real = _looks_real(sig, fake)
-        mark = "✓" if real else "·"
+        verdict = _looks_real(sig, fake)
+        mark = {"real": "✓", "weak": "?"}.get(verdict, "·")
         print(f"    {mark} {c}: http={sig['http']} code={sig['code']!r} "
               f"width={sig['width']} nonnull={sig['nonnull']}/{sig['n']} "
               f"distinct={sig['distinct']} copies={sig['copies_anchor']} echo={sig['echoed']}")
-        if real:
+        if verdict == "real":
             confirmed.append(c)
             have.add(c.lower())
+        elif verdict == "weak":
+            weak.append(c)
     print(f"  → confirmed {len(confirmed)} field(s) by value signature: {confirmed}")
+    if weak:
+        print(f"  ? {len(weak)} SPARSE candidate(s) cleared the garbage baseline but "
+              f"fell below the {FILL_FLOOR:.0%} fill floor — real-but-rarely-populated "
+              f"columns look like this. Read their counts above and decide: {weak}")
     return confirmed
 
 

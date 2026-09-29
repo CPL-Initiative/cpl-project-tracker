@@ -1,0 +1,541 @@
+<title>Subjects, Disciplines and Who Decides</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     Deliberately single-theme: First Light is a light identity with no dark
+     page palette, so every surface and color is painted explicitly. The sheet
+     is about a dark canvas; the page around it stays light, as the product does. */
+  :root {
+    --paper: #F4F2ED;
+    --text-strong: #1C1C1A;
+    --text-body: #3A3A36;
+    --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF;
+    --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14);
+    --border-strong: rgba(28,28,26,.30);
+    --crimson: #920000;
+    --cobalt: #0047AB;
+    --seal-blue: #002F6D;
+    --hunter: #2C601A;
+    --mustard-text: #8B6800;
+    --night: #15171A;
+    --night-ink: #ECE9E2;
+    --day: #A8C3E8;
+    --focus-ring: var(--cobalt);
+    --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper);
+    color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  h2 { font-size: 1.25rem; margin: 40px 0 4px; }
+  h3 { font-family: 'Source Sans 3', Arial, sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--text-strong); margin: 0; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; }
+  .subhead { color: var(--text-muted); margin: 0 0 4px; font-size: .95rem; }
+
+  .howto {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px;
+  }
+  .howto p { margin: 6px 0; }
+  .howto code, .assume code {
+    background: var(--surface-subtle); border: 1px solid var(--border);
+    border-radius: 5px; padding: 1px 6px; font-size: .92em;
+  }
+
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 22px; padding: 0; list-style: none; }
+  .tally li {
+    background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 14px; font-size: .9rem; color: var(--text-body);
+  }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+
+  /* the ground the calls stand on: engineering, listed so the calls are the only open ground */
+  .assume { border-left: 3px solid var(--seal-blue); padding: 2px 0 2px 18px; margin: 8px 0 34px; }
+  .assume h2 { font-size: 1.05rem; margin: 0 0 6px; }
+  .assume p { margin: 0 0 6px; }
+  .assume ul { margin: 6px 0 0; padding-left: 20px; }
+  .assume li { margin: 4px 0; }
+
+  .card {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0;
+  }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 2px; }
+  .num {
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+    font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.4em;
+  }
+  .chip {
+    margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+    border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap;
+  }
+  .chip.build   { color: var(--cobalt);       border-color: var(--cobalt);       background: var(--surface-opaque); }
+  .chip.ask     { color: var(--mustard-text); border-color: var(--mustard-text); background: var(--surface-opaque); }
+  .card dl { margin: 8px 0 0; }
+  .card dt {
+    text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700;
+    color: var(--text-muted); margin-top: 12px;
+  }
+  .card dd { margin: 2px 0 0; }
+  .card dd.ask { font-weight: 600; color: var(--text-strong); }
+  .card dd p { margin: 6px 0 0; }
+  .words { margin: 4px 0 0; padding: 8px 14px; border-left: 3px solid var(--border-strong); color: var(--text-body); font-style: italic; }
+  .words span { font-style: normal; color: var(--text-muted); font-size: .88rem; }
+
+  .tw { overflow-x: auto; margin-top: 6px; }
+  table { border-collapse: collapse; font-size: .9rem; min-width: 100%; }
+  th, td { text-align: left; padding: 5px 14px 5px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); font-weight: 700; }
+  tbody th[scope="row"] { font-size: .9rem; text-transform: none; letter-spacing: 0; color: var(--text-body); font-weight: 600; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; padding-right: 18px; white-space: nowrap; }
+  td.low { color: var(--crimson); font-weight: 700; }
+  .cap { color: var(--text-muted); font-size: .88rem; margin: 6px 0 0; }
+  /* the two skies, shown as what they are rather than described */
+  .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -1px; margin-right: 6px; border: 1px solid var(--border-strong); box-sizing: border-box; }
+  .swatch.night { background: var(--night); }
+  .swatch.day { background: var(--day); }
+  .fate td:first-child { font-weight: 600; color: var(--text-strong); width: 38%; }
+  .fate td:last-child em { font-style: normal; font-weight: 700; }
+  .quiet { color: var(--text-muted); font-size: .92rem; }
+  @media (max-width: 560px) {
+    .card header { gap: 8px; }
+    .chip { margin-left: 0; }
+    .fate td:first-child { width: auto; }
+  }
+/* replies:css:start */
+  /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
+  .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
+  .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .reply-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+    color: var(--text-muted); margin-right: 4px; }
+  .reply-chip { font: inherit; font-size: .86rem; font-weight: 600; min-height: 30px; padding: 3px 12px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); cursor: pointer; }
+  .reply-chip:hover { background: var(--surface-subtle); }
+  /* ⚠️ --seal-blue is a First Light token the HOST SHEET may not define — this
+     block has to stand on its own. Without the fallback the declaration is
+     invalid at computed-value time, background falls back to transparent, and
+     `color:#fff` paints white on the card's white: 1.00:1, so the SELECTED
+     chip is invisible and the reader cannot see which verdict they picked.
+     Measured 2026-09-06 on the seven-open-calls sheet. #002F6D on white is
+     12.90:1. */
+  .reply-chip[aria-pressed="true"] { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue, #002F6D); color: #fff; }
+  .reply-chip.reply-fu { margin-left: auto; }
+  .reply-notelbl { display: block; font-size: .78rem; color: var(--text-muted); margin: 8px 0 3px; }
+  .reply-note { width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; padding: 7px 9px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); resize: vertical; min-height: 34px; }
+  .reply-state { margin: 4px 0 0; font-size: .76rem; color: var(--text-muted); min-height: 1em; }
+  .reply-compact { margin-top: 8px; padding-top: 8px; }
+  .glist li .reply { margin: 6px 0 4px; padding-top: 6px; border-top: 1px dotted var(--border); }
+  .glist li .reply-chip { font-size: .8rem; min-height: 26px; padding: 2px 9px; }
+  .glist li .reply-note { font-size: .86rem; min-height: 30px; }
+  .glist li .reply-lbl { font-size: .66rem; }
+  .reply-compact .reply-notelbl { position: absolute; left: -9999px; }
+  .reply-compact .reply-note { margin-top: 6px; }
+  ol.done li { position: relative; }
+  .reply-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface-opaque);
+    border-top: 1px solid var(--border-strong); padding: 8px 16px; display: flex; flex-wrap: wrap;
+    gap: 6px 14px; align-items: center; font-size: .9rem; box-shadow: 0 -6px 18px rgba(28,28,26,.08); }
+  .reply-count { font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .reply-where { color: var(--text-muted); font-size: .82rem; flex: 1 1 240px; }
+  .reply-show { margin: 0; flex: 1 1 100%; }
+  .reply-show summary { font-size: .82rem; padding: 2px 0; }
+  .reply-line { width: 100%; box-sizing: border-box; font: inherit; font-size: .86rem; padding: 6px 8px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-subtle); color: var(--text-body); }
+  body { padding-bottom: 120px; }
+  @media (max-width: 560px) { .reply-chip { padding: 3px 9px; } .reply-chip.reply-fu { margin-left: 0; } }
+/* replies:css:end */</style>
+<a class="skip" href="#main">Skip to the sheet</a>
+<div class="wrap">
+<main id="main">
+
+<p class="kicker">SkyTrue &middot; Session 242 &middot; 8 September 2026</p>
+<h1>Subjects, Disciplines and Who Decides</h1>
+<p class="lede">You asked what is going on between subject and discipline, and whether our
+procedures are recursive or conflicted. Short answer: <strong>not conflicted &mdash; measured, the
+stores agree on every row where two of them have an opinion. But there is a real circular
+dependency</strong>, and <code>PSYC C1000</code> is sitting in the middle of it. This sheet lays out
+the model I believe we are running, names where authority actually lives today, and puts five
+calls to you.</p>
+
+<div class="howto">
+  <p><strong>How to rule:</strong> use the chips on each item, or reply in chat by
+  number. <code>yes</code> accepts the proposal as written; override with
+  <code>edit: your wording</code>, <code>later</code>, or <code>dismiss</code>.</p>
+  <p>Example: <code>1 yes &middot; 3 edit: keep the vote as a fallback &middot; 5 later</code></p>
+<!-- replies:start --><p><strong>Or click your reply under each item — and under each memory a batch item lists.</strong> Yes takes the recommendation. Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or <em>Retire</em> — so the word says what happens to that memory; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a retire batch. Follow up marks an item the session should come back to whatever the verdict; the note is for anything a word cannot carry. The line under each reply says what was saved. On the artifact your replies save to the sheet itself and the session reads them from there. Opened anywhere else they stay in this browser, and <em>Copy replies</em> at the foot of the page builds the numbered line for you to paste.</p><!-- replies:end --></div>
+
+<ul class="tally">
+  <li><b>326</b> identities with no discipline</li>
+  <li><b>0.4%</b> of M-IDs &mdash; <b>47.7%</b> of official ids</li>
+  <li><b>233</b> fillable from stores we already hold</li>
+  <li><b>143 of 143</b> agreement where two stores overlap</li>
+  <li><b>4</b> stores, <b>2</b> directions, <b>0</b> named owners</li>
+</ul>
+
+<section class="assume" aria-labelledby="assume-h">
+<h2 id="assume-h">What I found, before the calls</h2>
+
+<h3>Your <code>PSYC C1000</code> is the whole problem in one row</h3>
+<p>It carries <code>disc: null</code> on the map. It also carries
+<code>&quot;discipline&quot;: &quot;Psychology&quot;</code> in
+<code>kb/reference/coci_courses.json</code>, classified 2026-05-20. Both are true at once, because
+nothing joins the second to the first.</p>
+<p>Then the hover you found states the rule that closes the loop, verbatim:</p>
+<p class="words">&ldquo;No discipline yet &mdash; Common SUBJ is a function of discipline, so it
+stays blank until one is assigned (provisional local prefix: PSYC).&rdquo;
+<span>&mdash; the CCR list, <code>unified_courses.js</code></span></p>
+<p>So: the Common SUBJ needs the discipline. The discipline, for an externally-minted identifier,
+is filled by nothing. And the subject prefix <code>PSYC</code> &mdash; which is sitting right there
+on the id, and which our own map file resolves to Psychology &mdash; is never allowed to break the
+tie. <strong>That is the recursion you sensed.</strong> It is real, and it is in the display layer.</p>
+<p>One more thing I found: at 14:05 today you proposed <em>Psychology</em> on that row yourself. It
+is the only <code>anchor_discipline_proposal</code> in the table, and <strong>nothing consumes
+it</strong> &mdash; the anchor is firewalled, so a curator can propose and no step applies it.</p>
+
+<h3>The four stores, and which way each one runs</h3>
+<div class="tw" role="region" tabindex="0" aria-label="The four subject and discipline stores">
+<table>
+<thead><tr><th scope="col">Store</th><th scope="col">Direction</th><th scope="col" class="n">Entries</th><th scope="col">What it is for</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code>kb/reference/subject_discipline_map.json</code></th><td>subject &rarr; discipline</td><td class="n">314</td><td>Which faculty area a SUBJ4 belongs to</td></tr>
+<tr><th scope="row"><code>kb/discipline_canonical_subj4.json</code> (the CSR)</th><td>discipline &rarr; SUBJ4</td><td class="n">147</td><td>Which of a discipline&rsquo;s codes is canonical</td></tr>
+<tr><th scope="row"><code>kb/discipline_inference.json</code> &rarr; <code>subject_map</code></th><td>subject &rarr; discipline</td><td class="n">135</td><td>Disambiguating college-local homonyms only</td></tr>
+<tr><th scope="row"><code>kb/_seed_coci_courses.py</code> prefix table</th><td>prefix &rarr; discipline</td><td class="n">64</td><td>Hand-authored inside the C-ID/CCN seeder</td></tr>
+</tbody></table></div>
+<p class="cap">Two run subject&rarr;discipline, one runs discipline&rarr;subject, and one is buried
+in a seeder. They are not in conflict &mdash; the two that overlap on a row agree on
+<strong>143 of 143</strong>. They are simply not wired to each other.</p>
+
+<h3>Why the blank rate splits by provenance</h3>
+<div class="tw" role="region" tabindex="0" aria-label="Blank discipline rate by identifier system">
+<table>
+<thead><tr><th scope="col">Identifier system</th><th scope="col" class="n">No discipline</th><th scope="col" class="n">Total</th><th scope="col" class="n">Share blank</th></tr></thead>
+<tbody>
+<tr><th scope="row">M-ID (we mint it)</th><td class="n">67</td><td class="n">15,937</td><td class="n">0.4%</td></tr>
+<tr><th scope="row">C-ID (externally minted)</th><td class="n">231</td><td class="n">486</td><td class="n">47.5%</td></tr>
+<tr><th scope="row">CCN-ID (externally minted)</th><td class="n">28</td><td class="n">57</td><td class="n">49.1%</td></tr>
+</tbody></table></div>
+<p class="cap">Nothing about being a C-ID makes a course harder to classify. A gap that tracks
+<em>where a row came from</em> rather than <em>what the row is</em> is a plumbing gap. All five
+discipline-inference passes read <code>kb/coci_minted_courses.json</code> &mdash; 19,568 records,
+every one of them an M-ID &mdash; so no externally-minted identifier has ever been seen by one.</p>
+</section>
+
+<section class="group">
+<h2>The calls</h2>
+
+<article class="card" id="i1">
+<h3>1 &middot; Which direction is load-bearing</h3>
+<dl>
+<dt>What this is</dt>
+<dd>We hold two stores saying subject&rarr;discipline and one saying discipline&rarr;subject, with no
+statement of which is derived from which. That is what makes the loop possible.</dd>
+<dt>What I propose</dt>
+<dd class="ask"><strong>Subject &rarr; discipline is the primary edge.</strong> Every SUBJ4 belongs
+to exactly one discipline; a discipline may carry several subjects. So
+<code>subject_discipline_map.json</code> becomes the authority for that edge, and the CSR&rsquo;s
+<code>discipline_canonical_subj4.json</code> answers a genuinely different question &mdash; given a
+discipline, which of its several codes is the canonical one. The seeder&rsquo;s 64-prefix table and
+<code>discipline_inference.json</code>&rsquo;s <code>subject_map</code> become <em>inputs</em> to the
+first, not parallel authorities.</dd>
+<dt>Why</dt>
+<dd>The two questions only look circular because we never said they were different questions. The
+many-to-one edge is a fact about the vocabulary; the canonical-code choice is a judgment. Naming
+which is which dissolves the loop without changing a single value.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="1" data-ref="1 &amp;middot; Which direction is load-bearing" data-title="1 &amp;middot; Which direction is load-bearing" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 1"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-1">Notes for the session</label><textarea id="note-1" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i2">
+<h3>2 &middot; Fill the 233 blanks from what we already hold</h3>
+<dl>
+<dt>What this is</dt>
+<dd>Of the 326 blank identities: 199 have a discipline in the identifier reference, 177 resolve
+through the subject map, 143 are covered by both &mdash; and those 143 <strong>agree without a
+single disagreement</strong>. Together they fill 233. Ninety-three would still be blank.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Fill a blank discipline from the identifier reference first, then the subject map,
+and stamp a <code>discipline_source</code> of its own (<code>coci_reference</code> /
+<code>subject_map</code>) so the provenance shows on the row rather than arriving anonymously. The
+93 that remain become a named worklist, not a silent residue.</dd>
+<dt>Why</dt>
+<dd>This is a generator change, so it lands once and holds. Two independent stores agreeing on 143
+of 143 is about as much corroboration as this data ever offers. And it is not TOP: 219 of the 326
+do carry a TOP code, and under Rule 7 it stays a last-in-line corroborator &mdash; the reference&rsquo;s
+discipline comes from the identifier&rsquo;s own subject prefix against the MQ list, which is a
+separate signal.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="2" data-ref="2 &amp;middot; Fill the 233 blanks from what we already hold" data-title="2 &amp;middot; Fill the 233 blanks from what we already hold" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 2"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-2">Notes for the session</label><textarea id="note-2" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i3">
+<h3>3 &middot; Stop deriving a subject&rsquo;s discipline by voting</h3>
+<dl>
+<dt>What this is</dt>
+<dd>SkyView&rsquo;s subject table works out a subject&rsquo;s home discipline by taking the modal
+discipline of the identities carrying it. When those are blank, the vote returns blank, and the
+table reports <em>no discipline yet</em> &mdash; which reads as a statement about the subject.
+<strong>148 of 344 subjects on the map currently report that</strong>; for 11 of them our own map
+file names a discipline (AERO&nbsp;&rarr;&nbsp;Aviation, PHTO&nbsp;&rarr;&nbsp;Photography,
+STAT&nbsp;&rarr;&nbsp;Mathematics, and eight more).</dd>
+<dt>What I propose</dt>
+<dd class="ask">Read the home discipline from <code>subject_discipline_map.json</code> when it has an
+entry; fall back to the vote only when it does not; and say on the row which of the two answered.</dd>
+<dt>Why</dt>
+<dd>A derived blank that looks like an asserted blank is the failure here &mdash; it is
+self-fulfilling, and it is what sent you looking. Note this is the display layer only: your
+<code>PSYC</code> is <em>not</em> one of the 148. Its vote lands on Psychology 268 to 2, so the
+subject table is already right about PSYC. Fixing this does not fix item 2, and item 2 does not fix
+this.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="3" data-ref="3 &amp;middot; Stop deriving a subject&amp;rsquo;s discipline by voting" data-title="3 &amp;middot; Stop deriving a subject&amp;rsquo;s discipline by voting" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 3"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-3">Notes for the session</label><textarea id="note-3" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i4">
+<h3>4 &middot; The 28 firewalled anchors, and your proposal with nowhere to go</h3>
+<dl>
+<dt>What this is</dt>
+<dd>28 of the 326 blanks are locked curated anchors &mdash; all CCN-ID &mdash; where a curator can
+only <em>propose</em>. The other 298 are editable in the CCR tab today. Your <em>Psychology</em>
+proposal on <code>PSYC C1000</code> is the only row in that table, and there is no step that
+applies one.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Build the maintainer step: a proposal on a locked anchor is applied by a named
+maintainer, the applied value carries the proposer and the date, and the queue is visible rather
+than a table nobody opens. Until that ships, item 2&rsquo;s fill covers these 28 anyway &mdash; so
+the queue stops being the only route.</dd>
+<dt>Why</dt>
+<dd>A curator who can see the right answer, type it in, and watch nothing happen will stop typing.
+The firewall is worth keeping; the dead end is not.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="4" data-ref="4 &amp;middot; The 28 firewalled anchors, and your proposal with nowhere to go" data-title="4 &amp;middot; The 28 firewalled anchors, and your proposal with nowhere to go" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 4"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-4">Notes for the session</label><textarea id="note-4" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i5">
+<h3>5 &middot; Where authority actually lives &mdash; and the row that does not exist</h3>
+<dl>
+<dt>What this is</dt>
+<dd>You asked where decision-making lies. Today: <strong>DR-04</strong> covers &ldquo;M-ID identity +
+canonical SUBJ4&rdquo;, <strong>DR-03</strong> covers the TOP code, <strong>DR-17</strong> the
+canonical wording of a credit recommendation. There is <strong>no register row for
+subject&nbsp;&rarr;&nbsp;discipline</strong>, and none for the discipline of an externally-minted
+identifier. All three existing rows have <code>owner: null</code> &mdash; DR-24 is still the only
+owned row in the register.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Open one row &mdash; <strong>DR-25, the subject&ndash;discipline edge</strong> &mdash;
+covering which store is authoritative for it, who may change a mapping, and what happens to the
+rows downstream when one changes. Owner: you, unless you want it to sit with whoever owns the CSR.
+And decide whether DR-03/04/17 get owners in the same sitting or stay as they are.</dd>
+<dt>Why</dt>
+<dd>Item 1 is a decision about authority, so it needs somewhere to live that is not a code comment.
+This is also the honest answer to your question: the reason it feels conflicted is that
+<em>nobody has been named</em>, so four stores each did the sensible local thing.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="5" data-ref="5 &amp;middot; Where authority actually lives &amp;mdash; and the row that does not exist" data-title="5 &amp;middot; Where authority actually lives &amp;mdash; and the row that does not exist" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 5"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-5">Notes for the session</label><textarea id="note-5" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+</section>
+
+<p class="cap" style="margin-top:34px;">Measured 8 September 2026 from <code>unified_courses_data.js</code>,
+<code>unified_courses_standalone.js</code>, <code>kb/reference/coci_courses.json</code>,
+<code>kb/reference/subject_discipline_map.json</code>, <code>kb/discipline_canonical_subj4.json</code>,
+<code>kb/governance_register.json</code> and the live <code>kb_curation</code> table. The
+identifier joins were checked directly and through <code>kb/alias_chain.py</code> and agree at 199
+both ways, so these ids are current-era.</p>
+
+</main>
+</div>
+<!-- replies:start --><div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far"><span class="reply-count" id="reply-count">0 replied</span><span class="reply-where" id="reply-where"></span><button type="button" class="reply-chip reply-copy" id="reply-copy">Copy replies</button><details class="reply-show"><summary>Show the reply line</summary><textarea id="reply-line" class="reply-line" rows="4" readonly aria-label="The reply line, ready to paste"></textarea></details></div>
+<script>
+(function(){
+  "use strict";
+  var SHEET = "2026-09-08-subjects-disciplines-and-who-decides";
+  var LS = "sheet-replies:" + SHEET;
+  var els = Array.prototype.slice.call(document.querySelectorAll(".reply[data-item]"));
+  if (!els.length) return;
+  var state = {};        // item -> {item, ref, title, v, note, fu, t}; always this page's own objects
+  var col = null;        // the artifact's shared store, once this view can reach it
+  var where = "local";   // "db" once the store answers
+  var pending = {};      // item -> "saving" | "failed" | ""
+  var saved = {};        // item -> the `t` the store is known to hold
+
+  // What a snapshot delivers is FROZEN (the store's contract: "clone a body
+  // before editing it for a write"). The first version adopted the echoed body
+  // as state and assigned into it; outside strict mode the assignment is
+  // silently ignored, so from an item's first save on, every click painted
+  // nothing and wrote the unchanged document back (Sam, 2026-09-05: "I click
+  // Follow Up and it doesn't turn blue but does say response was saved").
+  // copy() means state is never the store's object; strict mode makes any
+  // such write throw instead of pass.
+  function copy(r){ var o = {}; if (r) for (var k in r) if (Object.prototype.hasOwnProperty.call(r, k)) o[k] = r[k]; return o; }
+
+  function read(){ try { var s = JSON.parse(localStorage.getItem(LS) || "{}"); if (s && typeof s === "object") state = s; } catch (e) {} }
+  function keep(){ try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+  function byItem(item){ for (var i = 0; i < els.length; i++) if (els[i].getAttribute("data-item") === item) return els[i]; return null; }
+  function rec(item){
+    if (state[item]) return copy(state[item]);
+    var el = byItem(item);
+    return { item: item, ref: el ? el.getAttribute("data-ref") : "", title: el ? el.getAttribute("data-title") : "", v: "", note: "", fu: false };
+  }
+  function empty(r){ return !r || (!r.v && !r.fu && !r.note); }
+  function chipWord(el, v){
+    var bs = el ? el.querySelectorAll(".reply-chip[data-v]") : [];
+    for (var i = 0; i < bs.length; i++) if (bs[i].getAttribute("data-v") === v) return bs[i].textContent;
+    return v;
+  }
+  function words(el, r){
+    var w = [];
+    if (r.v) w.push(chipWord(el, r.v));
+    if (r.fu) w.push("follow up");
+    if (r.note) w.push("a note");
+    return w.join(", ");
+  }
+  function stateWords(el, item, r){
+    if (empty(r)) return "";
+    if (pending[item] === "saving") return "Saving…";
+    if (pending[item] === "failed") return "Could not save to the sheet; kept in this browser. Use Copy replies.";
+    var w = words(el, r);
+    return where === "db" ? "Saved to the sheet: " + w + "." : "Saved in this browser only: " + w + ". Use Copy replies to send it.";
+  }
+  function paint(el){
+    if (!el) return;
+    var item = el.getAttribute("data-item"), r = state[item] || {};
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.setAttribute("aria-pressed", r.v && r.v === b.getAttribute("data-v") ? "true" : "false");
+    });
+    var fu = el.querySelector(".reply-fu"); if (fu) fu.setAttribute("aria-pressed", r.fu ? "true" : "false");
+    var note = el.querySelector(".reply-note");
+    if (note && document.activeElement !== note && (r.note || "") !== note.value) note.value = r.note || "";
+    var st = el.querySelector(".reply-state"); if (st) st.textContent = stateWords(el, item, r);
+  }
+  function paintAll(){ els.forEach(paint); bar(); }
+  function set(item, patch){
+    var r = rec(item); for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) r[k] = patch[k];
+    r.t = new Date().toISOString();
+    state[item] = r; keep();
+    paint(byItem(item)); bar(); push(item);
+  }
+  function push(item){
+    if (!col) return;
+    var r = state[item]; if (!r) return;
+    var t = r.t;
+    pending[item] = "saving"; paint(byItem(item));
+    col.doc(item).set(copy(r)).then(function(){
+      // A newer change may have gone up meanwhile; its own callbacks settle it.
+      if (state[item] && state[item].t === t) { pending[item] = ""; saved[item] = t; }
+      paint(byItem(item)); bar();
+    }, function(){ pending[item] = "failed"; paint(byItem(item)); bar(); });
+  }
+
+  /* ── the bar: how many, where they are, the line to paste ── */
+  function line(){
+    var parts = [];
+    els.forEach(function(el){
+      var item = el.getAttribute("data-item"), r = state[item];
+      if (empty(r)) return;
+      var s = item + " " + (r.v ? r.v : "(no verdict)");
+      if (r.fu) s += ", follow up";
+      if (r.note) s += " — “" + String(r.note).replace(/\s+/g, " ").trim() + "”";
+      parts.push(s);
+    });
+    return parts.length ? parts.join(" · ") : "No replies yet.";
+  }
+  function bar(){
+    var n = { item: [0, 0], entry: [0, 0], done: [0, 0] }, fu = 0;
+    els.forEach(function(el){
+      var k = el.getAttribute("data-kind") || "item"; if (!n[k]) n[k] = [0, 0];
+      var r = state[el.getAttribute("data-item")];
+      n[k][1]++; if (!empty(r)) n[k][0]++; if (r && r.fu) fu++;
+    });
+    var parts = [];
+    if (n.item[1]) parts.push(n.item[0] + " of " + n.item[1] + " items");
+    if (n.entry[1]) parts.push(n.entry[0] + " of " + n.entry[1] + " memories");
+    if (n.done[1]) parts.push(n.done[0] + " of " + n.done[1] + " retired rows");
+    var c = document.getElementById("reply-count");
+    if (c) c.textContent = parts.join(" · ") + " replied" + (fu ? " · " + fu + " to follow up" : "");
+    var w = document.getElementById("reply-where");
+    if (w) w.textContent = where === "db"
+      ? "Replies save to this sheet; the session reads them from here."
+      : "Replies stay in this browser until you copy them into the session.";
+    var t = document.getElementById("reply-line"); if (t) t.value = line();
+  }
+  var copyBtn = document.getElementById("reply-copy");
+  if (copyBtn) copyBtn.addEventListener("click", function(){
+    var text = line(), done = function(ok){
+      copyBtn.textContent = ok ? "Copied" : "Select the line below and copy it";
+      setTimeout(function(){ copyBtn.textContent = "Copy replies"; }, 2200);
+      if (!ok) { var d = document.querySelector(".reply-show"); if (d) d.open = true; }
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      else done(false);
+    } catch (e) { done(false); }
+  });
+
+  /* ── wire each item ── */
+  els.forEach(function(el){
+    var item = el.getAttribute("data-item");
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.addEventListener("click", function(){
+        var v = b.getAttribute("data-v"), cur = state[item] && state[item].v;
+        set(item, { v: cur === v ? "" : v });          // the pressed chip clears on a second click
+      });
+    });
+    var fu = el.querySelector(".reply-fu");
+    if (fu) fu.addEventListener("click", function(){ set(item, { fu: !(state[item] && state[item].fu) }); });
+    var note = el.querySelector(".reply-note"), tm = null;
+    if (note) {
+      note.addEventListener("input", function(){ clearTimeout(tm); tm = setTimeout(function(){ set(item, { note: note.value }); }, 500); });
+      note.addEventListener("blur", function(){ clearTimeout(tm); if ((state[item] ? state[item].note : "") !== note.value) set(item, { note: note.value }); });
+    }
+  });
+
+  /* ── the artifact's store, when this view has one ── */
+  function light(){
+    var C = window.claude;
+    if (!C || typeof C.use !== "function") return;
+    var p; try { p = C.use("db"); } catch (e) { return; }
+    if (!p || typeof p.then !== "function") return;
+    p.then(function(db){
+      if (!db) return;
+      col = db.collection("replies"); where = "db";
+      col.onSnapshot(function(snap){
+        var seen = {};
+        snap.docs.forEach(function(d){
+          var r = d.data(); if (!r || !r.item) return;
+          seen[r.item] = 1;
+          var cur = state[r.item];
+          // The store's copy wins when it is at least as new as this page's;
+          // COPIED, because the delivered body is frozen and stays the store's.
+          if (!cur || String(r.t || "") >= String(cur.t || "")) {
+            state[r.item] = copy(r); saved[r.item] = r.t || "";
+            if (pending[r.item] !== "saving") pending[r.item] = "";
+          }
+        });
+        // Anything this browser holds that the store does not: send it up once.
+        Object.keys(state).forEach(function(item){
+          if (!seen[item] && !pending[item] && !empty(state[item]) && saved[item] !== state[item].t) push(item);
+        });
+        keep(); paintAll();
+      }, function(){ where = "local"; col = null; paintAll(); });
+      paintAll();
+    }, function(){});
+  }
+
+  read(); paintAll(); light();
+})();
+</script>
+<!-- replies:end -->

@@ -8,7 +8,7 @@ window.CPL_STORIES = {
    "name": "Ismael M.",
    "img": "https://staging2.map.rccd.edu/wp-content/uploads/2026/07/ismael.png",
    "pathway": "Navy Veteran → College Student",
-   "quote": "Luis served in the U.S. Navy for 8 years. When he enrolled at Riverside City College, he received 14 credits from his Joint Service Transcript, including 5 for Basic Military Training.",
+   "quote": "Ismael served in the U.S. Navy for 8 years. When he enrolled at Riverside City College, he received 14 credits from his Joint Service Transcript, including 5 for Basic Military Training.",
    "meta": "Riverside City College"
   },
   {

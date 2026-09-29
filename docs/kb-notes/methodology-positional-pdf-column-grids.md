@@ -1,9 +1,8 @@
 ---
 title: "Parse PDF column grids positionally (x/y anchors), never from linearized text — the MQ Index mis-bins"
-date: 2026-07-11
+created: 2026-07-11
 kb-status: published
-type: methodology
-tags: [pdf-parsing, mq-handbook, reference-data, data-integrity, validation]
+tags: [methodology, pdf-parsing, mq-handbook, reference-data, data-integrity, validation]
 artifacts:
   - kb/reference/mq_sections.json
   - kb/reference/mq_disciplines.json

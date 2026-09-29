@@ -1,0 +1,601 @@
+{
+ "_scanned_at": "2026-09-29",
+ "_registry_synced_at": "2026-09-28T19:45:30Z",
+ "_disciplines": 147,
+ "_official_ccn_prefixes": {
+  "ANTH": 50,
+  "COMM": 192,
+  "ECON": 206,
+  "ENGL": 451,
+  "HIST": 189,
+  "POLS": 144,
+  "PSYC": 150,
+  "STAT": 169,
+  "ASTR": 33,
+  "BIOL": 37,
+  "MATH": 97,
+  "SOCI": 7,
+  "ARTH": 48,
+  "CDEV": 2,
+  "ACCT": 0,
+  "BSOT": 0,
+  "CMUS": 0,
+  "EDUC": 0,
+  "ENGR": 0,
+  "GEOG": 0,
+  "HIT": 0,
+  "HOSP": 0,
+  "ITIS": 0,
+  "JOUR": 0,
+  "SPAN": 0
+ },
+ "findings": [
+  {
+   "id": "CSR0001",
+   "rule": "cs2_dup",
+   "item": "Agricultural Business and Related Services ↔ Auto Body Technology",
+   "evidence": "both map to AUTB",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": "dup:AUTB"
+  },
+  {
+   "id": "CSR0002",
+   "rule": "cs4_aligned",
+   "item": "English",
+   "evidence": "canonical ENGL == official CCN prefix (451 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0003",
+   "rule": "cs4_aligned",
+   "item": "Economics",
+   "evidence": "canonical ECON == official CCN prefix (206 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0004",
+   "rule": "cs4_aligned",
+   "item": "Communication Studies",
+   "evidence": "canonical COMM == official CCN prefix (192 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0005",
+   "rule": "cs4_aligned",
+   "item": "History",
+   "evidence": "canonical HIST == official CCN prefix (189 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0006",
+   "rule": "cs4_aligned",
+   "item": "Psychology",
+   "evidence": "canonical PSYC == official CCN prefix (150 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0007",
+   "rule": "cs4_aligned",
+   "item": "Political Science",
+   "evidence": "canonical POLS == official CCN prefix (144 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0008",
+   "rule": "cs4_aligned",
+   "item": "Mathematics",
+   "evidence": "canonical MATH == official CCN prefix (97 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0009",
+   "rule": "cs4_aligned",
+   "item": "Anthropology",
+   "evidence": "canonical ANTH == official CCN prefix (50 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0010",
+   "rule": "cs4_aligned",
+   "item": "Art History",
+   "evidence": "canonical ARTH == official CCN prefix (48 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0011",
+   "rule": "cs4_aligned",
+   "item": "Biological Sciences",
+   "evidence": "canonical BIOL == official CCN prefix (37 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0012",
+   "rule": "cs4_aligned",
+   "item": "Astronomy",
+   "evidence": "canonical ASTR == official CCN prefix (33 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0013",
+   "rule": "cs4_aligned",
+   "item": "Sociology",
+   "evidence": "canonical SOCI == official CCN prefix (7 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0014",
+   "rule": "cs4_aligned",
+   "item": "Child Development/Early Childhood Education",
+   "evidence": "canonical CDEV == official CCN prefix (2 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0015",
+   "rule": "cs4_aligned",
+   "item": "Office Technologies",
+   "evidence": "canonical BSOT == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0016",
+   "rule": "cs4_missed_alignment",
+   "item": "Commercial Music",
+   "evidence": "official CCN prefix CMUS (0 rows) unused; twin discipline uses MUSC",
+   "suggestion": "curator call: converge MUSC → CMUS (Rule-7 re-mint) or record divergence reason",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0017",
+   "rule": "cs4_aligned",
+   "item": "Education",
+   "evidence": "canonical EDUC == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0018",
+   "rule": "cs4_aligned",
+   "item": "Engineering",
+   "evidence": "canonical ENGR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0019",
+   "rule": "cs4_aligned",
+   "item": "Geography",
+   "evidence": "canonical GEOG == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0020",
+   "rule": "cs4_missed_alignment",
+   "item": "Health Information Technology",
+   "evidence": "official CCN prefix HIT (0 rows) unused; twin discipline uses HEIT",
+   "suggestion": "curator call: converge HEIT → HIT (Rule-7 re-mint) or record divergence reason",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0021",
+   "rule": "cs4_aligned",
+   "item": "Computer Information Systems",
+   "evidence": "canonical ITIS == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0022",
+   "rule": "cs4_aligned",
+   "item": "Journalism",
+   "evidence": "canonical JOUR == official CCN prefix (0 official rows) — semantic twin, ALIGNED",
+   "suggestion": "bless as aligned; record alignment doctrine",
+   "needs_judgment": true,
+   "group": "ccn"
+  },
+  {
+   "id": "CSR0023",
+   "rule": "cs5_modal_diverge",
+   "item": "Cabinet Making",
+   "evidence": "modal WOOD (share 0.67) but canonical CNSC, no _notes",
+   "suggestion": "confirm choice + record a note",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0024",
+   "rule": "cs5_modal_diverge",
+   "item": "Legal Assisting",
+   "evidence": "modal PARA (share 0.71) but canonical PLGL, no _notes",
+   "suggestion": "confirm choice + record a note",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0025",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Artificial Intelligence",
+   "evidence": "canonical CSAI not derivable from name and absent from 29 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0026",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Building Codes and Regulations",
+   "evidence": "canonical CNSR not derivable from name and absent from 9 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0027",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Cabinet Making",
+   "evidence": "canonical CNSC not derivable from name and absent from 2 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0028",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Diesel Mechanics",
+   "evidence": "canonical AUTD not derivable from name and absent from 31 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0029",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Electromechanical Technology",
+   "evidence": "canonical ELMT not derivable from name and absent from 1 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0030",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Environmental Technologies",
+   "evidence": "canonical ESCI not derivable from name and absent from 40 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0031",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Furniture Making",
+   "evidence": "canonical CSTF not derivable from name and absent from 3 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0032",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Graphic Arts",
+   "evidence": "canonical GRAF not derivable from name and absent from 19 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0033",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Interdisciplinary Studies",
+   "evidence": "canonical IDST not derivable from name and absent from 16 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0034",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Licensed Vocational Nursing",
+   "evidence": "canonical NRSV not derivable from name and absent from 8 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0035",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Masonry",
+   "evidence": "canonical CNMA not derivable from name and absent from 6 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0036",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Media Production",
+   "evidence": "canonical FTVE not derivable from name and absent from 6 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0037",
+   "rule": "cs6_weak_mnemonic",
+   "item": "Native American/American Indian Studies",
+   "evidence": "canonical ETHA not derivable from name and absent from 8 observed variants",
+   "suggestion": "confirm or improve mnemonic (re-key evidence only)",
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0038",
+   "rule": "cs7_unreviewed",
+   "item": "Agricultural Business and Related Services",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0039",
+   "rule": "cs7_unreviewed",
+   "item": "Anthropology",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0040",
+   "rule": "cs7_unreviewed",
+   "item": "Astronomy",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0041",
+   "rule": "cs7_unreviewed",
+   "item": "Chemistry",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0042",
+   "rule": "cs7_unreviewed",
+   "item": "Commercial Art",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0043",
+   "rule": "cs7_unreviewed",
+   "item": "Communication Studies",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0044",
+   "rule": "cs7_unreviewed",
+   "item": "Cosmetology",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0045",
+   "rule": "cs7_unreviewed",
+   "item": "Court Reporting",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0046",
+   "rule": "cs7_unreviewed",
+   "item": "Digital Fabrication Technician",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0047",
+   "rule": "cs7_unreviewed",
+   "item": "Disabled Student Programs and",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0048",
+   "rule": "cs7_unreviewed",
+   "item": "Earth Science",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0049",
+   "rule": "cs7_unreviewed",
+   "item": "Economics",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0050",
+   "rule": "cs7_unreviewed",
+   "item": "Electronic Technology",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0051",
+   "rule": "cs7_unreviewed",
+   "item": "Engineering",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0052",
+   "rule": "cs7_unreviewed",
+   "item": "English",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0053",
+   "rule": "cs7_unreviewed",
+   "item": "Equine Science",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0054",
+   "rule": "cs7_unreviewed",
+   "item": "Geography",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0055",
+   "rule": "cs7_unreviewed",
+   "item": "Heavy Duty Equipment Mechanics",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0056",
+   "rule": "cs7_unreviewed",
+   "item": "History",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0057",
+   "rule": "cs7_unreviewed",
+   "item": "Mathematics",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0058",
+   "rule": "cs7_unreviewed",
+   "item": "Parent Education: Noncredit",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0059",
+   "rule": "cs7_unreviewed",
+   "item": "Philosophy",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0060",
+   "rule": "cs7_unreviewed",
+   "item": "Physics/Astronomy",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0061",
+   "rule": "cs7_unreviewed",
+   "item": "Speech Language Pathology",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0062",
+   "rule": "cs7_unreviewed",
+   "item": "Upholstering",
+   "evidence": "no reviewed_by stamp",
+   "suggestion": null,
+   "needs_judgment": true,
+   "group": null
+  },
+  {
+   "id": "CSR0063",
+   "rule": "cs9_anchor_dead_format",
+   "item": "common_courses.json",
+   "evidence": "3 anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format",
+   "suggestion": "promote-time re-key plan (Rule-7); anchor stays firewalled until then",
+   "needs_judgment": true,
+   "group": "anchor"
+  }
+ ]
+}

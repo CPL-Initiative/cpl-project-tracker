@@ -10,6 +10,8 @@ related:
   - docs/kb-notes/methodology-coded-key-over-freehand-text-join.md (the matching method)
   - docs/session_59_handoff.md (the DATA lane — Jaccard + Suggested-merges, still paused)
 moniker_suggestion: "Bruh Skyforge / Skywright — you're building on the Sky* line (Skydriver, Skyleader, Skymarker)"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 62 Hand-off Prompt

@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_132_handoff.md
+---
+
 # Session 95 handoff — you are Session 95
 
 **Session 94 (SkySierra, 2026-07-02)** was the Sierra polish + Training-tab

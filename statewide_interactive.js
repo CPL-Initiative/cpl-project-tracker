@@ -1,8 +1,22 @@
 /**
  * Statewide Exhibit Adoption — Interactive Card
  * Reads window.CPL_STATEWIDE and window.CCC_COLLEGE_LOOKUP
- * Paginated (50 rows/page), search, multi-select filters, checkboxes,
- * expandable credit recs, Statewide/Local toggle, Word/Excel/JSON export
+ * Paginated (50 rows/page), search, multi-select filters (every filter is
+ * multi-select), checkboxes, expandable credit recs, Word/Excel/JSON export,
+ * and the CER adoption matrix (sectioned by CIP sector, chunk-rendered).
+ *
+ * Sam's 2026-09-24 tweaks, in one place so the shape is legible:
+ *   1. Career Cluster → CIP Sectors, offering the COMPLETE family list.
+ *   2. An ASCCC Area filter beside SW Region (college_lookup.js `ascccArea`).
+ *   3. Vertical (bottom-to-top) college headers, so a column is as narrow as
+ *      its numbers rather than as wide as a diagonal label.
+ *   4. The exhibit drill-down names each MAP record's TITLE and TOTAL UNITS.
+ *   5. No college-scope chips, no rows-threshold chips: filters match adopters,
+ *      the could-adopt column is the M-ID "teaches a matching course" layer,
+ *      and every adopted credential is a row.
+ *   6. Matrix rows sit under CIP-sector headers, alphabetical within.
+ *   7. Hovering (or focusing) an inked cell lists what that college articulated.
+ *  10. A Create Handout button hands the college over to My College.
  */
 (function () {
   "use strict";
@@ -15,6 +29,15 @@
   // these vars and only execute after start() has run.
   var DATA = null;
   var LOOKUP = window.CCC_COLLEGE_LOOKUP || {};
+  // MAP's sandbox organisations, as named by Sam 2026-08-13. Supabase carries the
+  // same list as map_colleges.entity_kind='test' (college_briefing.js reads it as
+  // entity_kind=neq.test); this static artifact has no such column, so the EACR
+  // keeps the names. Do NOT add real institutions here — the two continuing-ed
+  // colleges and the partner entities are legitimate and must stay visible.
+  var TEST_ORGS = [
+    "CabTest", "MorTest City", "Nortest City", "RivTest City", "SantTest Ana",
+    "Testing College", "NORCO College - Syllabus Manager", "CA MAP INITIATIVE COLLEGE"
+  ];
   var exhibits = null;
   var container = null;
 
@@ -114,15 +137,45 @@
   // Derived from `exhibits` by deriveFromData() inside start(), after the lazy
   // data load. Declared here (closure scope) so the functions below can read
   // them; populated once start() runs.
-  var cplTypes = [], disciplines = [], sectors = [], collabTypes = [], issuers = [];
-  var allColleges = {}, collegeNames = [], districtSet = {}, swRegionSet = {}, districts = [], swRegions = [];
+  var cplTypes = [], disciplines = [], collabTypes = [], issuers = [];
+  // CIP sectors — Sam's word for the two-digit CIP family. cipTitles is the
+  // COMPLETE vocabulary (payload `cip_sectors`, the same `fams` the TOP to CIP
+  // tab renders), cipSectorOpts the filter's option list.
+  var cipTitles = {}, cipSectorOpts = [];
+  // cip_crosswalk.js's own wording for a card with no CIP. Matched on purpose:
+  // the same absence should read the same in every tab.
+  var NO_CIP = "No CIP assigned yet";
+  var allColleges = {}, collegeNames = [], districtSet = {}, swRegionSet = {}, ascccSet = {};
+  var districts = [], swRegions = [], ascccAreaOpts = [];
+  // unified_title → { college: [courses] } from the prescriptive (M-ID leverage)
+  // layer. This is the STRONG "could adopt" signal — the college already teaches
+  // a course that maps to the credential's identity, and we can name it. Built
+  // once in deriveFromData() so collegeNamesFor() is a lookup, not a scan.
+  var presByTitle = {};
   // Vision §6.2 — cards with modal confidence_title below this threshold get a "needs review" badge.
   var CONFIDENCE_THRESHOLD = 0.75;
   function deriveFromData() {
     cplTypes = unique(exhibits.map(function (e) { return e.cpl_type || "Unknown"; }));
     disciplines = unique(exhibits.map(function (e) { return e.discipline || "Unknown"; }));
-    sectors = unique(exhibits.map(function (e) { return e.sector || "Unassigned"; }));
     collabTypes = unique(exhibits.map(function (e) { return e.collaborative_type || "Local"; }));
+    // CIP sectors (Sam, 2026-09-24): the filter offers EVERY two-digit family,
+    // not only the ones present, so a reader can see that a sector has nothing
+    // rather than wonder whether it exists. The count beside each option is the
+    // number of cards in the whole payload carrying it. A code on a card that
+    // the vocabulary does not name still gets an option; cards with no CIP fold
+    // into one bucket at the end.
+    cipTitles = {};
+    Object.keys(DATA.cip_sectors || {}).forEach(function (k) { cipTitles[k] = String(DATA.cip_sectors[k] || ""); });
+    var cipCounts = {};
+    exhibits.forEach(function (e) {
+      var k = e.cip_sector || "";
+      cipCounts[k] = (cipCounts[k] || 0) + 1;
+      if (k && cipTitles[k] === undefined) cipTitles[k] = "";
+    });
+    cipSectorOpts = Object.keys(cipTitles).sort().map(function (k) {
+      return { value: k, label: cipLabel(k) + " (" + fmt(cipCounts[k] || 0) + ")" };
+    });
+    cipSectorOpts.push({ value: "", label: NO_CIP + " (" + fmt(cipCounts[""] || 0) + ")" });
     // Issuing agencies — only collect non-empty (cards without an issuer skip the filter).
     // Added by EACR Phase 4 PR-C2 once the generator started emitting e.issuing_agency.
     issuers = unique(exhibits.map(function (e) { return e.issuing_agency || ""; }).filter(Boolean));
@@ -131,23 +184,158 @@
     exhibits.forEach(function (e) {
       (e.adopter_names || []).concat(e.potential_names || []).forEach(function (c) { allColleges[c] = 1; });
     });
-    collegeNames = Object.keys(allColleges).sort();
+    // MAP's sandbox orgs leak into the adoption data (Sam, 2026-08-13). Supabase
+    // tags them map_colleges.entity_kind='test', but statewide_data.js is a static
+    // artifact with no such column, so the EACR excludes them by name. Only
+    // CA MAP INITIATIVE COLLEGE actually appears here today (2 rows) — the rest of
+    // Sam's list is absent — but the set is kept whole so a future rebuild that
+    // pulls one in is covered.
+    collegeNames = Object.keys(allColleges).filter(function (c) {
+      return TEST_ORGS.indexOf(c) === -1;
+    }).sort();
     districtSet = {}; swRegionSet = {};
+    // A LOOKUP miss makes a college unfilterable by district/SW region, because
+    // collegeMatchesFilters() fails closed (correctly — we must not claim an
+    // unknown college sits in the district you asked for). The danger is that it
+    // does so SILENTLY, which is how Calbright College Non-Credit lost 88 rows.
+    // Fail closed, but say so.
+    var unresolved = [];
+    ascccSet = {};
     collegeNames.forEach(function (c) {
       var info = LOOKUP[c];
       if (info) {
         if (info.district) districtSet[info.district] = 1;
         if (info.swRegion) swRegionSet[info.swRegion] = 1;
+        // ASCCC Area (A–D) — applied to the lookup from
+        // kb/reference/asccc_area_map.json by kb/_apply_asccc_areas.py.
+        if (info.ascccArea) ascccSet[info.ascccArea] = 1;
+      } else {
+        unresolved.push(c);
       }
     });
+    if (unresolved.length && window.console && console.warn) {
+      console.warn("[EACR] " + unresolved.length + " college name(s) missing from " +
+        "CCC_COLLEGE_LOOKUP — excluded from the District and SW Region filters. " +
+        "Add them to college_lookup.js: " + unresolved.join(" | "));
+    }
     districts = Object.keys(districtSet).sort();
     swRegions = Object.keys(swRegionSet).sort();
+    ascccAreaOpts = Object.keys(ascccSet).sort().map(function (a) { return { value: a, label: "Area " + a }; });
+
+    // The search haystack, built ONCE per card rather than on every keystroke
+    // for every card (2,673 string joins per keypress before this).
+    exhibits.forEach(function (e) {
+      e._hay = ((e.title || "") + " " + (e.unified_title || "") + " " + (e.cpl_type || "") + " " +
+        (e.discipline || "") + " " + (e.collaborative_type || "") + " " + (e.issuing_agency || "") + " " +
+        (e.cip_sector ? cipLabel(e.cip_sector) : NO_CIP) + " " +
+        (e.raw_titles || []).join(" ") + " " +
+        (e.adopter_names || []).join(" ") + " " +
+        (e.potential_names || []).join(" ")).toLowerCase();
+    });
+
+    // Index the prescriptive layer by unified_title → college → courses.
+    presByTitle = {};
+    var presAll = window.CPL_STATEWIDE_PRESCRIPTIVE || {};
+    Object.keys(presAll).forEach(function (t) {
+      var m = {};
+      (presAll[t].colleges || []).forEach(function (c) {
+        if (TEST_ORGS.indexOf(c.college) === -1) m[c.college] = c.courses || [];
+      });
+      presByTitle[t] = m;
+    });
+  }
+
+  // ── What a college filter matches, and what "could adopt" means ──
+  // 2026-08-16, Sam: "make sure it filters for colleges that have adopted the
+  // exhibit." The College / District / SW Region / ASCCC Area filters match on
+  // ADOPTERS only — before that they matched adopter_names ∪ potential_names
+  // and were 93.6% noise (filtering to Pasadena City College returned 1,790
+  // cards of which it had adopted 44).
+  //
+  // 2026-09-24, Sam: the three-way scope chips are gone. What survives is the
+  // one signal strong enough to name a course: the M-ID prescriptive layer
+  // (CPL_STATEWIDE_PRESCRIPTIVE), which says a college already teaches a course
+  // mapping to the credential's identity — 4,972 pairs against 122,836 for the
+  // TOP/C-ID program overlap it replaces in the UI. TOP is a last-in-line
+  // corroborator (Rule 7), so the broad "any could-adopt" lead list no longer
+  // reaches a screen or an export from this tab; `potential` stays in the
+  // payload and the table's Potential column keeps counting it.
+  var COULD_ADOPT_HINT = "Filters match colleges that have articulated the exhibit. " +
+    "Could-adopt names colleges already teaching a course that maps to this credential — the local course is named on the card.";
+
+  // The college names an exhibit "reaches" for the filters: its adopters.
+  function collegeNamesFor(e) {
+    return (e.adopter_names || []).slice();
+  }
+
+  // Colleges the M-ID layer names for a credential that have NOT adopted it —
+  // the could-adopt column, the near-me band and the exports all read this.
+  function couldAdoptNamesFor(e) {
+    var adopted = {};
+    (e.adopter_names || []).forEach(function (c) { adopted[c] = 1; });
+    var out = [];
+    var pres = presByTitle[e.unified_title || e.title || ""];
+    if (pres) Object.keys(pres).forEach(function (c) {
+      if (!adopted[c]) out.push({ college: c, likely: true });
+    });
+    return out;
+  }
+
+  // ── College roster rules (mirror of kb/reference/map_college_roster_rules.json) ──
+  // Sam, 2026-08-17: "CAlbright, etc. should only be in once and CAMAP can be
+  // left out altogether—it's our sandbox."
+  //
+  // The GENERATOR already applies these to `adopter_units` at build time, so the
+  // green half of the matrix arrives clean. The prescriptive layer — which is
+  // the brown half — is a SEPARATE artifact that does not, so the axis must fold
+  // here too or one institution renders as two columns.
+  //
+  // The mojibake entry is escaped rather than written literally: "CaÃ±ada" is
+  // "Cañada" read as latin-1 and re-encoded, and a file that spells it out
+  // invites the very corruption it is guarding against. Both spellings come out
+  // of excel_to_dashboard.py on different paths — the correct one into
+  // potential_names, the mangled one into statewide_prescriptive.js — so before
+  // this fold the axis carried a second Cañada column holding all 26 of its
+  // opportunities while the correctly-spelled one sat empty. It read as 118
+  // anyway because cplCollegeShort()'s normalize() folds Ã± → n, so the LABEL
+  // count was right while the axis under it was 119: the collision was hidden
+  // precisely by the thing that made the headers legible.
+  var ROSTER_SANDBOX = {};
+  ["CA MAP INITIATIVE COLLEGE", "CabTest College", "MorTest City College",
+   "NORCO College - Syllabus Manager", "Nortest City College", "RivTest City College",
+   "SantTest Ana College", "Testing College"].forEach(function (n) { ROSTER_SANDBOX[n] = 1; });
+  var ROSTER_FOLD = {
+    "Calbright College Credit": "Calbright College Non-Credit",
+    "North Orange Continuing Education Credit": "North Orange Continuing Education",
+    "San Diego College of Continuing Education Credit": "San Diego College of Continuing Education"
+  };
+  ROSTER_FOLD["CaÃ±ada College"] = "Cañada College";
+
+  // Canonical column name for a raw college spelling. Returns "" for a sandbox
+  // org — callers MUST drop those rather than render them, because a MAP test
+  // entity counted as an adopter publishes a number that is simply false (it
+  // published 7 adopters on California Real Estate Broker License where the
+  // truth is 6).
+  function rosterName(c) {
+    if (!c || ROSTER_SANDBOX[c]) return "";
+    return ROSTER_FOLD[c] || c;
   }
 
   // ── State ──
   var state = {
     search: "",
-    filters: { collabType: [], cplType: [], sector: [], discipline: [], issuer: [], college: [], district: [], swRegion: [] },
+    filters: { collabType: [], cplType: [], cipSector: [], discipline: [], issuer: [], college: [], district: [], swRegion: [], ascccArea: [] },
+    // Which view is showing. Two sub-tabs replaced three stacked collapsibles
+    // (2026-08-16): all three used to re-render on every keystroke, and the
+    // student framing is a MODE of the credential view, not a third place.
+    view: "credentials",
+    // ── Matrix sub-tab ──
+    // Every credential with at least one adopting college is a row (Sam,
+    // 2026-09-24: the rows-threshold chips are gone; his screen had "1 adopter"
+    // selected when he asked). 2,675 rows × 118 columns is ~316,000 cells, so
+    // the grid renders in chunks — see renderMatrix().
+    matrixCells: "both",   // both | got (adopted only) | opp (opportunity only)
+    matrixExpanded: {},    // unified_title → the folded MAP exhibit IDs are open
     selected: {},
     expanded: {},
     flags: {},   // eid → { flag: "stale" | "duplicate" | "", reviewed_by, reviewed_at }
@@ -162,12 +350,22 @@
   }
   function fmt(n) { return n.toLocaleString(); }
 
+  // The four college-shaped filters. They narrow ROWS to what the matching
+  // colleges adopted and narrow the matrix's COLUMN axis; content filters
+  // never touch the axis (a column vanishing reads as "this college has
+  // nothing", a different and false claim).
+  function hasCollegeFilter() {
+    var f = state.filters;
+    return !!(f.college.length || f.district.length || f.swRegion.length || f.ascccArea.length);
+  }
+
   function collegeMatchesFilters(name) {
     var f = state.filters;
     if (f.college.length && f.college.indexOf(name) === -1) return false;
     var info = LOOKUP[name];
     if (f.district.length && (!info || f.district.indexOf(info.district) === -1)) return false;
     if (f.swRegion.length && (!info || f.swRegion.indexOf(info.swRegion) === -1)) return false;
+    if (f.ascccArea.length && (!info || f.ascccArea.indexOf(info.ascccArea) === -1)) return false;
     return true;
   }
 
@@ -175,23 +373,22 @@
     var f = state.filters;
     if (f.collabType.length && f.collabType.indexOf(e.collaborative_type || "Local") === -1) return false;
     if (f.cplType.length && f.cplType.indexOf(e.cpl_type || "Unknown") === -1) return false;
-    if (f.sector.length && f.sector.indexOf(e.sector || "Unassigned") === -1) return false;
+    if (f.cipSector.length && f.cipSector.indexOf(e.cip_sector || "") === -1) return false;
     if (f.discipline.length && f.discipline.indexOf(e.discipline || "Unknown") === -1) return false;
     if (f.issuer.length && f.issuer.indexOf(e.issuing_agency || "") === -1) return false;
-    if (f.college.length || f.district.length || f.swRegion.length) {
-      var names = (e.adopter_names || []).concat(e.potential_names || []);
-      if (!names.some(collegeMatchesFilters)) return false;
+    if (hasCollegeFilter()) {
+      if (!collegeNamesFor(e).some(collegeMatchesFilters)) return false;
     }
     if (state.search) {
-      var q = state.search.toLowerCase();
-      var hay = (e.title || "") + " " + (e.cpl_type || "") + " " + (e.discipline || "") + " " +
-        (e.collaborative_type || "") + " " + (e.issuing_agency || "") + " " +
-        (e.raw_titles || []).join(" ") + " " +
-        (e.adopter_names || []).join(" ") + " " +
-        (e.potential_names || []).join(" ");
-      if (hay.toLowerCase().indexOf(q) === -1) return false;
+      if ((e._hay || "").indexOf(state.search.toLowerCase()) === -1) return false;
     }
     return true;
+  }
+
+  // "43 · Homeland Security, …" — the same shape cip_crosswalk.js uses.
+  function cipLabel(code) {
+    if (!code) return NO_CIP;
+    return code + " · " + (cipTitles[code] || ("CIP sector " + code));
   }
 
   function getFiltered() {
@@ -220,9 +417,58 @@
     + '.sw-gallery-tag{font-size:0.62rem;background:rgba(227,179,65,0.22);color:var(--mustard-text);padding:1px 5px;border-radius:3px;margin-left:0.35rem;font-weight:600;}'
     // Page-level filter bar — lifted out of the v1 card so search + filters sit
     // above the whole gallery and apply to every view (not repeated per card).
-    + '.sw-filterbar{margin-bottom:0.6rem;}'
+    // overflow:visible is LOAD-BEARING — .sw-interactive sets overflow:hidden (it
+    // clips the v1 table's corners to the card radius), and the filter bar reuses
+    // that class. Every .sw-filter-dropdown is position:absolute; top:100%, so
+    // inside a ~70px-tall wrapper they were clipped to a sliver: all 8 filters
+    // opened into nothing. That is why they read as "not dropdowns" AND as
+    // "don't work" — one defect, both halves of the report (Sam, 2026-08-13).
+    + '.sw-filterbar{margin-bottom:0.6rem;overflow:visible;}'
     + '.sw-filterbar .sw-toolbar{border-bottom:none;}'
     + '.sw-filterbar-hint{font-size:0.64rem;color:var(--text-muted);padding:0 0.8rem 0.6rem;font-style:italic;}'
+    // The handout hand-off row (Sam, 2026-09-24). A word on a button, a
+    // sentence beside it — no glyph.
+    + '.sw-handout{display:flex;align-items:center;flex-wrap:wrap;gap:0.5rem 0.8rem;padding:0 0.8rem 0.6rem;}'
+    + '.sw-handout .sw-action-btn{min-height:32px;}'
+    + '.sw-handout .sw-action-btn:focus-visible{outline:3px solid var(--accent-link);outline-offset:2px;}'
+    + '.sw-handout-hint{font-size:0.66rem;color:var(--text-muted);flex:1 1 320px;min-width:0;line-height:1.4;}'
+    // The CIP Sectors dropdown carries "43 · Homeland Security, Law Enforcement…"
+    // — a 220px list would wrap every line twice.
+    + '.sw-filter-group[data-filter="cipSector"] .sw-filter-dropdown{min-width:360px;}'
+    + '.sw-subtabs{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 0.6rem;}'
+    + '.sw-subtabs button{background:var(--surface-opaque);color:var(--text-body);border:1px solid var(--border-strong);'
+      + 'border-bottom:none;border-radius:8px 8px 0 0;padding:8px 16px;min-height:40px;font-size:0.85rem;'
+      + 'font-family:inherit;cursor:pointer;font-weight:600;}'
+    + '.sw-subtabs button.on{background:var(--seal-blue);color:var(--white);border-color:var(--seal-blue);}'
+    + '.sw-subtabs button:focus-visible{outline:3px solid var(--accent-link);outline-offset:2px;}'
+    + '.sw-view:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
+    // Could-adopt column: the claim is carried by a TEXT LABEL, not a colour.
+    + '.sw-could-group{margin:0 0 0.25rem;}'
+    + '.sw-could-group:last-child{margin-bottom:0;}'
+    + '.sw-could-label{display:block;font-size:0.6rem;font-weight:700;color:var(--text-muted);'
+      + 'text-transform:uppercase;letter-spacing:0.02em;}'
+    + '.sw-col-empty{opacity:0.55;font-style:italic;}'
+    // Chips are <abbr>; suppress the UA dotted underline on the pill variants
+    // (the pill is already the affordance) and keep it on the plain table lists,
+    // where it is the only cue that a full name is available.
+    + '.sv-chip,.cv-rx-college{text-decoration:none;}'
+    + 'abbr.sw-college{text-decoration:underline dotted;text-underline-offset:2px;cursor:help;}'
+    + '.sw-show-more:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
+    // Aligned MAP exhibits under a common title.
+    // A likely could-adopt chip (teaches the mapping course) reads stronger than
+    // a broad TOP/C-ID lead — same column, deliberately different weight.
+    + '.sw-potential-likely{outline:1px solid rgba(76,175,120,0.55);font-weight:600;}'
+    + '.cv-ex{margin-top:0.45rem;border-top:1px dashed var(--border);padding-top:0.35rem;}'
+    + '.cv-ex>summary{cursor:pointer;font-size:0.7rem;font-weight:600;color:var(--cobalt);list-style:none;}'
+    + '.cv-ex>summary::-webkit-details-marker{display:none;}'
+    + '.cv-ex>summary::before{content:"▸";display:inline-block;margin-right:0.35rem;transition:transform 0.15s ease;}'
+    + '.cv-ex[open]>summary::before{transform:rotate(90deg);}'
+    + '.cv-ex-body{padding:0.3rem 0 0.2rem 0.6rem;}'
+    + '.cv-ex-hint{font-size:0.6rem;color:var(--text-muted);font-style:italic;margin-bottom:0.3rem;}'
+    + '.cv-ex-row{font-size:0.68rem;color:var(--text-body);padding:0.15rem 0;line-height:1.35;}'
+    + '.cv-ex-id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--cobalt);margin-right:0.4rem;}'
+    + '.cv-ex-meta{font-size:0.62rem;color:var(--text-muted);}'
+    + '.cv-ex-raw{font-size:0.62rem;color:var(--text-muted);padding-left:0.2rem;}'
     // Dark navy card so the v2 credential view's white/grey text is readable —
     // it renders on the light dashboard page, and (unlike the v1 table, which
     // sits inside .sw-interactive) cv-body was transparent → text was invisible.
@@ -255,28 +501,196 @@
     + '.cv-rx-note{font-size:0.62rem;color:var(--mustard-text);font-style:italic;margin-top:0.3rem;}'
     // Student view (v3) — seeker lens. Renders inside the same dark .cv-body.
     + '.sv-banner{font-size:0.72rem;color:var(--cobalt);background:rgba(125,161,212,0.12);border-left:3px solid var(--cobalt);padding:0.45rem 0.7rem;border-radius:4px;margin-bottom:0.6rem;}'
-    + '.sv-banner-tip{color:var(--text-body);border-left-color:#E3B341;background:rgba(227,179,65,0.1);}'
     + '.sv-banner b{color:var(--text-strong);}'
-    + '.sv-award{font-size:0.74rem;color:var(--mustard-text);font-weight:600;margin:0.1rem 0 0.4rem;}'
-    + '.sv-award b{color:var(--mustard-text);}'
     + '.sv-status{font-size:0.7rem;line-height:1.55;padding:0.15rem 0;color:var(--text-body);}'
     + '.sv-yes b{color:var(--hunter);}'
     + '.sv-maybe b{color:var(--mustard-text);}'
     + '.sv-prog b{color:var(--text-muted);}'
-    + '.sv-none{color:var(--text-muted);font-style:italic;}'
     + '.sv-cta{font-style:italic;color:var(--text-muted);font-size:0.64rem;}'
     + '.sv-teaches{font-size:0.64rem;color:var(--text-muted);}'
     + '.sv-chip{font-size:0.62rem;padding:1px 6px;border-radius:3px;margin:0 1px;white-space:nowrap;display:inline-block;}'
     + '.sv-chip-yes{background:rgba(76,175,120,0.25);color:var(--hunter);}'
     + '.sv-chip-maybe{background:rgba(227,179,65,0.22);color:var(--mustard-text);}'
     + '.sv-chip-prog{background:var(--surface-subtle);color:var(--text-body);}'
-    + '.sv-chip-sw{background:rgba(125,161,212,0.16);color:var(--cobalt);}'
-    + '.sv-sw{font-size:0.66rem;color:var(--text-body);margin-top:0.4rem;border-top:1px dashed var(--border);padding-top:0.35rem;}'
-    + '.sv-sw-label{font-weight:600;color:var(--text-body);}'
-    + '.sv-sw-none{font-style:italic;color:var(--text-muted);}'
-    + '.sv-pres-hint{font-size:0.64rem;color:var(--mustard-text);font-style:italic;margin-top:0.25rem;}'
     + '.sv-more{font-size:0.6rem;color:var(--text-muted);}'
-    + '.sv-unclass{opacity:0.6;}'
+
+    // ── Motion / contrast preferences ──────────────────────────────────────
+    // The disclosure carets animate; honour a reduced-motion request.
+    + '@media (prefers-reduced-motion: reduce){'
+      + '.sw-gallery-sum::before,.cv-rx>summary::before,.cv-ex>summary::before{transition:none;}'
+    + '}'
+    // Forced-colours (Windows high contrast) drops background-colour, so the
+    // selected scope pill and active sub-tab would become indistinguishable.
+    // Restore the distinction with properties forced-colours keeps.
+    + '@media (forced-colors: active){'
+      + '.sw-subtabs button.on,.mx-seg input:checked + label{'
+        + 'border:2px solid Highlight;forced-color-adjust:none;background:Highlight;color:HighlightText;}'
+      + '.mx-table tbody th.mx-sec{background:Canvas;}'
+      + '.mx-tip{border:1px solid CanvasText;}'
+      + '.sw-potential-likely{outline:2px solid CanvasText;}'
+      // Forced colours drops the green/brown entirely. The matrix does not
+      // depend on them — the opportunity figure is parenthesised — but the
+      // sticky panes need an opaque ground or the scrolled cells show through.
+      + '.mx-table thead th.mx-col,.mx-table thead th.mx-corner,.mx-table tbody th.mx-row{background:Canvas;}'
+    + '}'
+
+    // ── Mobile ─────────────────────────────────────────────────────────────
+    // The EACR had NO responsive rules of its own. Two things actually break on
+    // a phone: the filter dropdowns (position:absolute, min-width:220px, anchored
+    // to a ~90px-wide button near the right edge → opens off-screen), and the
+    // touch targets.
+    + '@media (max-width: 640px){'
+      // Anchor dropdowns to the filter BAR, not the button, so they can never
+      // open past the viewport edge. .sw-filterbar already has overflow:visible.
+      + '.sw-filterbar{position:relative;}'
+      + '.sw-filter-group{position:static;}'
+      + '.sw-filter-dropdown{left:0.6rem;right:0.6rem;min-width:0;max-height:60vh;}'
+      // WCAG 2.5.8 target size — 24px minimum, 44px is the comfortable target.
+      + '.sw-filter-btn{min-height:40px;padding:0.5rem 0.8rem;font-size:0.8rem;}'
+      + '.sw-filter-dropdown label{min-height:40px;padding:0.5rem 0.7rem;font-size:0.8rem;}'
+      + '.sw-handout{padding:0 0.6rem 0.6rem;}'
+      + '.sw-handout .sw-action-btn{min-height:44px;}'
+      + '.sw-subtabs button{flex:1 1 auto;min-height:44px;padding:10px 12px;}'
+      + '.sw-action-btn,.sw-page-btn{min-height:40px;}'
+      // Cards: give the text room back that the desktop padding takes.
+      + '.cv-body{padding:0.6rem 0.55rem 0.8rem;}'
+      + '.cv-credential{padding:0.6rem 0.55rem;}'
+      // The 10-column table cannot fit a phone; the wrap scrolls it. Make that
+      // scroll discoverable + smooth rather than a silently clipped table.
+      + '.sw-table-wrap{max-height:none;-webkit-overflow-scrolling:touch;}'
+      + '.sw-table-hint{display:block;}'
+      // The matrix scrolls sideways by design; give the frozen title column
+      // back some of the phone's width so the cells are not squeezed off.
+      + '.mx-table{--mx-title-w:180px;}'
+      + '.mx-box{max-height:70vh;-webkit-overflow-scrolling:touch;}'
+      + '.mx-seg label{min-height:40px;padding:8px 13px;}'
+      // The cell panel anchors to the viewport on a phone rather than beside a
+      // 30px cell it would overhang, and never exceeds the screen.
+      + '.mx-tip{left:12px!important;right:12px;max-width:none;width:auto;}'
+    + '}'
+    + '.sw-table-hint{display:none;font-size:0.64rem;color:var(--text-muted);padding:0 1rem 0.5rem;font-style:italic;}'
+    // ── CER Adoption Matrix ──
+    // Geometry IS the design here: 118 numeric columns is about twice a
+    // desktop viewport, so the grid gets a frozen title column, VERTICAL
+    // headers and horizontal scroll rather than a density trick. The headers
+    // read bottom-to-top (Sam, 2026-09-24: vertical, not diagonal, to save
+    // width), which lets a column be exactly as wide as its widest number:
+    // "(7.5)" in 0.62rem tabular monospace needs ~30px, so --mx-col-w is 32px
+    // against the 34px the diagonal labels needed (measured in Chromium,
+    // 2026-09-24: 0.66rem overflowed 656 cells by a pixel). The header height
+    // is the longest short-caps college name stood on end.
+    + '.mx-controls{display:flex;flex-wrap:wrap;gap:0.9rem;align-items:flex-end;margin-bottom:0.5rem;}'
+    + '.mx-fs{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;min-width:0;}'
+    + '.mx-lg{padding:0;float:none;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.09em;'
+      + 'color:var(--text-muted);font-weight:700;}'
+    + '.mx-seg{display:flex;border:1px solid var(--border-strong);border-radius:4px;overflow:hidden;'
+      + 'background:var(--surface-opaque);}'
+    + '.mx-seg label{padding:6px 12px;font-size:0.74rem;cursor:pointer;color:var(--text-body);'
+      + 'border-right:1px solid var(--border);min-height:36px;display:flex;align-items:center;}'
+    + '.mx-seg label:last-of-type{border-right:0;}'
+    // Visually hidden but NOT display:none — same rule as the sub-tabs, so
+    // arrow-key navigation and the focus ring keep working.
+    + '.mx-seg input{position:absolute;opacity:0;width:0;height:0;}'
+    + '.mx-seg input:checked + label{background:var(--seal-blue);color:var(--white);font-weight:700;'
+      + 'box-shadow:inset 0 0 0 1px var(--white);}'
+    + '.mx-seg input:focus-visible + label{outline:3px solid var(--accent-link);outline-offset:-3px;}'
+    + '.mx-key{display:flex;flex-wrap:wrap;gap:1rem;font-size:0.72rem;color:var(--text-body);'
+      + 'align-items:center;margin-bottom:0.45rem;}'
+    + '.mx-key b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}'
+    + '.mx-got{color:var(--hunter);font-weight:700;}'
+    + '.mx-opp{color:var(--mustard-text);}'
+    + '.mx-box{overflow:auto;max-height:600px;border:1px solid var(--border-strong);'
+      + 'background:var(--surface-opaque);border-radius:4px;position:relative;}'
+    + '.mx-box:focus-visible{outline:3px solid var(--accent-link);outline-offset:2px;}'
+    // table-layout:fixed is LOAD-BEARING for the chunked render: with auto
+    // layout every inserted chunk re-laid out every row above it, and 2,675
+    // rows took 18 s to land (measured 2026-09-24, Chromium); with fixed
+    // layout and a colgroup each chunk costs only itself.
+    + '.mx-table{--mx-col-w:32px;--mx-head-h:156px;--mx-title-w:280px;border-collapse:separate;border-spacing:0;'
+      + 'font-variant-numeric:tabular-nums;table-layout:fixed;}'
+    // Every credential row is the same height, which is what lets the window
+    // know where any row sits without rendering the rows above it.
+    + '.mx-table tr.mx-r{height:52px;}'
+    + '.mx-table tr.mx-sec{height:30px;}'
+    + '.mx-table th,.mx-table td{padding:0;margin:0;}'
+    + '.mx-table thead th.mx-col{height:var(--mx-head-h);vertical-align:bottom;position:sticky;top:0;z-index:3;'
+      + 'background:var(--surface-opaque);border-bottom:1px solid var(--border-strong);'
+      + 'border-left:1px solid var(--border);width:var(--mx-col-w);min-width:var(--mx-col-w);max-width:var(--mx-col-w);}'
+    // Vertical writing is presentation only — the header text stays in normal
+    // DOM order, so a screen reader and find-in-page read it upright. The
+    // rotate(180deg) turns vertical-rl's top-to-bottom into bottom-to-top.
+    + '.mx-table thead th.mx-col>div{writing-mode:vertical-rl;transform:rotate(180deg);'
+      + 'height:calc(var(--mx-head-h) - 8px);margin:0 auto 4px;'
+      + 'font-size:0.6rem;letter-spacing:0.04em;font-weight:700;color:var(--text-body);'
+      + 'white-space:nowrap;text-align:left;line-height:1;overflow:hidden;text-overflow:ellipsis;}'
+    + '.mx-table thead th.mx-corner{position:sticky;left:0;top:0;z-index:5;background:var(--surface-opaque);'
+      + 'border-bottom:1px solid var(--border-strong);border-right:1px solid var(--border-strong);'
+      + 'width:var(--mx-title-w);vertical-align:bottom;text-align:left;padding:0 12px 9px;'
+      + 'font-size:0.64rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-muted);font-weight:700;}'
+    + '.mx-table tbody th.mx-row{position:sticky;left:0;z-index:2;background:var(--surface-opaque);'
+      + 'text-align:left;border-right:1px solid var(--border-strong);border-bottom:1px solid var(--border);'
+      + 'width:var(--mx-title-w);height:52px;box-sizing:border-box;overflow:hidden;padding:5px 12px;font-weight:500;vertical-align:top;}'
+    // CIP-sector section rows (Sam, 2026-09-24). Sticky under the column
+    // header so the sector a reader is scrolling through stays named.
+    + '.mx-table tbody th.mx-sec{position:sticky;top:var(--mx-head-h);left:0;z-index:4;text-align:left;'
+      + 'background:var(--surface-subtle);border-bottom:1px solid var(--border-strong);border-top:1px solid var(--border-strong);'
+      + 'height:30px;box-sizing:border-box;padding:0 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'
+      + 'font-size:0.72rem;font-weight:700;color:var(--text-strong);}'
+    + '.mx-sec-lbl{font-size:0.62rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-muted);margin-right:0.35rem;}'
+    + '.mx-sec-n{font-weight:500;color:var(--text-muted);margin-left:0.35rem;}'
+    // Two lines of title, then an ellipsis; the whole title is the th's title
+    // attribute and its DOM text, so nothing is lost to AT or to search.
+    + '.mx-rtitle{font-size:0.78rem;color:var(--text-strong);font-weight:700;line-height:1.25;'
+      + 'display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}'
+    + '.mx-rmeta{font-size:0.66rem;color:var(--text-muted);margin-top:2px;}'
+    + '.mx-disc{border:0;background:none;padding:0;cursor:pointer;color:var(--cobalt);font:inherit;'
+      + 'font-size:0.66rem;text-decoration:underline;text-underline-offset:2px;}'
+    + '.mx-disc:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
+    + '.mx-cell{width:var(--mx-col-w);min-width:var(--mx-col-w);max-width:var(--mx-col-w);text-align:center;'
+      + 'border-left:1px solid var(--border);border-bottom:1px solid var(--border);'
+      + 'font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:0.62rem;line-height:1.2;'
+      + 'padding:2px 0;vertical-align:middle;overflow:hidden;}'
+    + '.mx-cell.mx-inked{cursor:default;}'
+    + '.mx-cell.mx-inked>span{display:block;}'
+    + '.mx-cell .mx-tight{font-size:0.56rem;letter-spacing:-0.06em;}'
+    // Programmatic focus (the arrow keys) must show a ring, so :focus, not
+    // :focus-visible.
+    + '.mx-table td.mx-cell:focus{outline:2px solid var(--accent-link);outline-offset:-2px;}'
+    // The cell panel: what THIS college articulated, on hover or focus. A
+    // real element, not a title attribute — a title reaches neither a
+    // keyboard nor a touch user.
+    + '.mx-tip{position:fixed;z-index:1000;max-width:340px;background:var(--surface-opaque);color:var(--text-body);'
+      + 'border:1px solid var(--border-strong);border-radius:6px;box-shadow:0 8px 24px rgba(20,20,30,0.18);'
+      + 'padding:0.55rem 0.7rem;font-size:0.7rem;line-height:1.45;pointer-events:none;}'
+    + '.mx-tip[hidden]{display:none;}'
+    + '.mx-tip-h{font-weight:700;color:var(--text-strong);font-size:0.74rem;}'
+    + '.mx-tip-t{color:var(--text-muted);margin-bottom:0.25rem;}'
+    + '.mx-tip-l{margin-top:0.2rem;}'
+    + '.mx-tip-recs{margin:0.25rem 0 0;padding-left:1rem;}'
+    + '.mx-tip-recs li{margin:0.1rem 0;}'
+    + '.mx-tip-u{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700;color:var(--hunter);}'
+    + '.mx-tip-n{font-style:italic;color:var(--text-muted);}'
+    // Colour is REINFORCEMENT, never the message: an adopted figure is bare and
+    // an opportunity figure is parenthesised, so the two stay distinguishable in
+    // greyscale, in forced colours and when read aloud (WCAG 1.4.1).
+    + '.mx-has{color:var(--hunter);font-weight:700;}'
+    + '.mx-opp-cell{color:var(--mustard-text);}'
+    + '.mx-none{color:var(--text-muted);opacity:0.5;}'
+    + '.mx-exp td{border-bottom:1px solid var(--border-strong);background:var(--surface-subtle);'
+      + 'padding:8px 12px;font-size:0.72rem;color:var(--text-muted);}'
+    // The drill-down lists each MAP record's TITLE and TOTAL UNITS (Sam,
+    // 2026-09-24), the MAP id kept only as the chip's title attribute.
+    + '.mx-exrec{display:inline-block;background:var(--surface-opaque);border:1px solid var(--border);'
+      + 'border-radius:3px;padding:2px 7px;margin:0 4px 4px 0;font-size:0.68rem;color:var(--text-body);'
+      + 'white-space:normal;max-width:100%;}'
+    + '.mx-exunits{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700;color:var(--hunter);margin-left:0.35rem;}'
+    + '.mx-stats{font-size:0.68rem;color:var(--text-muted);margin-top:0.45rem;font-style:italic;}'
+    + '.mx-note{font-size:0.66rem;color:var(--text-muted);padding:0.4rem 0;font-style:italic;}'
+    // NAMESPACED deliberately: `.sr-only` lives in fact-sheet/factsheet.css and
+    // is NOT loaded on the dashboard page, so borrowing the name would leave the
+    // caption rendered in full at the top of the grid.
+    + '.mx-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;'
+      + 'clip:rect(0 0 0 0);white-space:nowrap;border:0;}'
     + '</style>';
 
   // ── Prescriptive adoption layer (PR-4) ──
@@ -310,7 +724,7 @@
     var note = withheld
       ? '<div class="cv-rx-note">+ ' + withheld + ' more flagged but withheld (identity over-merged).</div>'
       : "";
-    return '<details class="cv-rx"><summary>🎯 ' + n + ' college' + (n === 1 ? '' : 's') +
+    return '<details class="cv-rx"><summary>' + n + ' college' + (n === 1 ? '' : 's') +
       ' could adopt this — likely local course to articulate</summary>' +
       '<div class="cv-rx-body">' +
         '<div class="cv-rx-hint">These colleges already teach a course that maps to this credential’s identity — a likely match (membership key is approximate; confirm before articulating).</div>' +
@@ -324,14 +738,724 @@
   // Shares the v1 search + filters via getFiltered(); reuses buildCreditRecsHtml.
   // Consumer-side, additive — the per-college prescriptive layer (PR-4) appends
   // a "colleges that could adopt → likely local course" block per card.
-  function buildCredentialView() {
-    var filtered = getFiltered();
+  // ── Grouping to the CER's common reference (2026-08-16) ──
+  // The card grain is (unified_title, issuer, CPL type); the CER's grain is the
+  // unified_title alone. Grouping on title+issuer therefore split 8 credentials
+  // into TWO cards each — a classified one carrying the issuer, and an
+  // unclassified twin with a BLANK issuer (Firefighter I, Firefighter II, CNA
+  // Certification, Computer Keyboarding…). The twin sorts to the bottom with the
+  // other unclassified cards, so a curator sees one and never learns of the
+  // other.
+  //
+  // A blank issuer means UNKNOWN, not DIFFERENT, so it folds into the title's
+  // named issuer. Two genuinely different NAMED issuers on one title stay
+  // separate — that is a real distinction and we must not invent a merge. (No
+  // such case exists in the data today; the rule is what keeps it honest if one
+  // appears.)
+  function credentialKey(e, namedByTitle) {
+    var t = e.unified_title || e.title || "";
+    var iss = e.issuing_agency || "";
+    if (!iss) {
+      var named = namedByTitle[t];
+      if (named && named.length === 1) iss = named[0];
+    }
+    return t + "||" + iss;
+  }
+  function groupToCredentials(cards) {
+    var namedByTitle = {};
+    cards.forEach(function (e) {
+      var t = e.unified_title || e.title || "";
+      var iss = e.issuing_agency || "";
+      if (!iss) return;
+      if (!namedByTitle[t]) namedByTitle[t] = [];
+      if (namedByTitle[t].indexOf(iss) === -1) namedByTitle[t].push(iss);
+    });
     var groups = {}, order = [];
-    filtered.forEach(function (e) {
-      var k = (e.unified_title || e.title || "") + "||" + (e.issuing_agency || "");
+    cards.forEach(function (e) {
+      var k = credentialKey(e, namedByTitle);
       if (!groups[k]) { groups[k] = []; order.push(k); }
       groups[k].push(e);
     });
+    return { groups: groups, order: order };
+  }
+
+  // The MAP exhibits folded under one common reference — Sam: "list all the
+  // different aligned exhibits under the common title." `exhibit_ids` and
+  // `raw_titles` have always been in the payload and were rendered NOWHERE:
+  // 5,135 MAP exhibit IDs fold into 2,673 cards and none were visible.
+  function buildAlignedExhibitsHtml(cards) {
+    var seen = {}, rows = [];
+    cards.forEach(function (e) {
+      var ids = e.exhibit_ids || (e.exhibit_id ? [e.exhibit_id] : []);
+      var raws = e.raw_titles || [];
+      ids.forEach(function (id, i) {
+        if (seen[id]) return;
+        seen[id] = 1;
+        // raw_titles and exhibit_ids are independently sorted lists of the same
+        // fold, so they align only when the counts match. Pair them when they
+        // do; otherwise show the id alone rather than mislabel it.
+        var raw = (raws.length === ids.length) ? raws[i] : "";
+        rows.push({ id: id, raw: raw, cpl: e.cpl_type || "", collab: e.collaborative_type || "Local" });
+      });
+    });
+    if (!rows.length) return "";
+    var n = rows.length;
+    return '<details class="cv-ex"><summary>' + n + ' MAP exhibit' + (n === 1 ? '' : 's') +
+      ' under this common title</summary><div class="cv-ex-body">' +
+      '<div class="cv-ex-hint">These are the separate exhibit records colleges articulate against. ' +
+      'They are the same credential — the common title above is the CER reference that folds them.</div>' +
+      rows.map(function (r) {
+        return '<div class="cv-ex-row"><span class="cv-ex-id">' + esc(r.id) + '</span>' +
+          '<span class="cv-ex-meta">' + esc(r.cpl) + (r.collab === "CCC Collaborative" ? ' · CCC' : '') + '</span>' +
+          (r.raw ? '<div class="cv-ex-raw">' + esc(r.raw) + '</div>' : '') + '</div>';
+      }).join("") + '</div></details>';
+  }
+
+  // ══════════════════════════════════════════════════════════════════════
+  // CER Adoption Matrix — credentials down the side, colleges across the top
+  // ══════════════════════════════════════════════════════════════════════
+  // Sam's Excel pivot rendered on live MAP data. Four rulings from the scoping
+  // run are INPUTS here, not open choices:
+  //
+  //  1. The opportunity number is the PEER BENCHMARK — what colleges that
+  //     adopted this credential actually obtained — NEVER `rec_units_total`.
+  //     83% of adoptions are partial (a college claims a median 3.07 of 9.26
+  //     available recommendation lines) and NO college has ever reached the
+  //     line total. A brown 36.0 on AP Biology would promise roughly triple
+  //     what the strongest college in California has ever obtained, in a
+  //     column that leaves this tab as a CSV. See
+  //     docs/kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md
+  //  2. Columns open on COLLEGES (the region-first recommendation was overruled).
+  //     District/region drill-down is the EXISTING filter bar narrowing the
+  //     column set — not a second grain with its own roll-up arithmetic, which
+  //     would need its own peer-benchmark reasoning to stay honest.
+  //  3. Rows default to >= 2 adopting colleges.
+  //  4. Opportunity lands on CREDIBLE cells only. A NON-adopter gets a figure
+  //     only where the M-ID *likely* layer (`presByTitle`) says it already
+  //     teaches a course mapping to this credential's identity. Brown on all
+  //     118 would assert that every college in California should adopt every
+  //     credential. An ADOPTER's figure is a different and self-evidently
+  //     credible claim — it is already in the peer cohort, so "peers here get
+  //     more than you have claimed" is a fact about a group it belongs to.
+  //     That partial-adopter gap is 349 cells across 172 credentials, ~1,106
+  //     units; Sam approved showing it 2026-08-17.
+  //
+  // WCAG 1.4.1 — the opportunity figure is PARENTHESISED as well as brown, so
+  // the distinction survives colour-blindness, forced colours and a printout.
+
+  // Column identity, in two layers that each catch what the other cannot.
+  //
+  // FIRST the committed roster rules (`rosterName`): sandbox orgs are dropped
+  // outright and known duplicate spellings fold to a canonical name. Each of
+  // those is an explicit, listed, reviewable decision — and the Python
+  // generator reads the same file.
+  //
+  // THEN cplCollegeShort(), which absorbs anything the list has not caught yet
+  // (Credit/Non-Credit, Community/Junior, punctuation, the ñ spellings). On its
+  // own this second layer is NOT enough — resolving identity through a function
+  // whose job is shortening headers is what hid a duplicate Cañada column for a
+  // day, because the LABEL count read 118 over a 119-row axis. Belt and braces:
+  // the explicit list keeps the audit trail, the resolver keeps a new duplicate
+  // from silently splitting a column, and a test asserts no two columns collide.
+  //
+  // Measured 2026-08-17: 118 payload spellings and 119 prescriptive spellings
+  // all resolve to 118 canonical columns, 118 distinct short-caps headers, zero
+  // collisions, zero dropped cells.
+  function mxName(c, style) {
+    var n = rosterName(c);
+    if (!n) return "";              // sandbox — callers must drop it
+    var f = window.cplCollegeShort;
+    return (f ? (f(n, style) || n) : n);
+  }
+  function round1(n) { return Math.round(n * 10) / 10; }
+
+  function matrixColumns() {
+    // A College / District / SW Region / ASCCC Area filter NARROWS the column
+    // set — that is ruling 2's drill-down. Content filters (search, CPL type,
+    // CIP sector, discipline) do NOT: they narrow rows, and a column vanishing
+    // because of one would read as "this college has nothing", a different and
+    // false claim.
+    var hasFilter = hasCollegeFilter();
+    var seen = {}, cols = [];
+    collegeNames.forEach(function (c) {
+      if (hasFilter && !collegeMatchesFilters(c)) return;
+      var k = mxName(c, "full");
+      if (!k || seen[k]) return;
+      seen[k] = 1;
+      cols.push({ key: k, full: k, caps: mxName(c, "caps"), short: mxName(c, "short") });
+    });
+    cols.sort(function (a, b) { return a.short.localeCompare(b.short); });
+    return cols;
+  }
+
+  // One row per common exhibit title, merging every (issuer, CPL type) card
+  // that folds under it — the same grain the CER uses, and the grain Sam's
+  // screenshot had. Deliberately NOT credentialKey(), which splits a title
+  // carrying two NAMED issuers and yields 431 rows against this grain's 434.
+  //
+  // The peer median is RECOMPUTED over the merged per-college units rather than
+  // lifted from any one card's `peer_units_median`, because the row is the
+  // merged credential and the median has to be the median of what it shows.
+  // For a single-card title the two are identical, which the test asserts.
+  //
+  // Rows carry, per college, WHAT it articulated (adopter_rec_idx into
+  // credit_recs) for the cell panel, and the MAP records folded under the title
+  // with each record's total units for the drill-down. Both fields date from
+  // 2026-09-24; a payload built before that day yields units alone and ids
+  // paired with raw titles where the two lists align.
+  function recUnits(credit) {
+    var m = String(credit || "").match(/(\d+(?:\.\d+)?)/);
+    return m ? parseFloat(m[1]) : 0;
+  }
+  function matrixRows() {
+    var byTitle = {}, order = [];
+    getFiltered().forEach(function (e) {
+      var t = e.unified_title || e.title || "";
+      if (!t) return;
+      var r = byTitle[t];
+      if (!r) {
+        r = byTitle[t] = { title: t, units: {}, adopted: {}, recsBy: {}, records: {}, cips: {},
+                           med: 0, max: 0, nAdopt: 0, cip: "" };
+        order.push(t);
+      }
+      var u = e.adopter_units || {};
+      Object.keys(u).forEach(function (c) {
+        var k = mxName(c, "full");
+        if (!k) return;
+        r.units[k] = (r.units[k] || 0) + (u[c] || 0);
+      });
+      (e.adopter_names || []).forEach(function (c) {
+        var k = mxName(c, "full");
+        if (k) r.adopted[k] = 1;
+      });
+      var idx = e.adopter_rec_idx || {}, recs = e.credit_recs || [];
+      Object.keys(idx).forEach(function (c) {
+        var k = mxName(c, "full");
+        if (!k) return;
+        var list = r.recsBy[k] || (r.recsBy[k] = []);
+        var seen = {};
+        list.forEach(function (x) { seen[x.course + "|" + x.credit] = 1; });
+        (idx[c] || []).forEach(function (i) {
+          var rec = recs[i];
+          if (!rec) return;
+          var key = rec.course + "|" + rec.credit;
+          if (seen[key]) return;
+          seen[key] = 1;
+          list.push({ course: rec.course || "", credit: rec.credit || "", units: recUnits(rec.credit) });
+        });
+      });
+      var ids = e.exhibit_ids || (e.exhibit_id ? [e.exhibit_id] : []);
+      var raws = e.raw_titles || [];
+      if (e.exhibit_records && e.exhibit_records.length) {
+        e.exhibit_records.forEach(function (x) {
+          if (x && x.id && !r.records[x.id]) {
+            r.records[x.id] = { id: x.id, title: x.title || "", units: (x.units == null ? null : x.units) };
+          }
+        });
+      } else {
+        ids.forEach(function (id, i) {
+          if (!r.records[id]) r.records[id] = { id: id, title: raws.length === ids.length ? raws[i] : "", units: null };
+        });
+      }
+      var cs = e.cip_sector || "";
+      r.cips[cs] = (r.cips[cs] || 0) + 1;
+    });
+    var rows = [];
+    order.forEach(function (t) {
+      var r = byTitle[t];
+      // Adopters counted AFTER the fold: four spellings where one is the
+      // sandbox and two are one institution honestly has two adopters.
+      r.nAdopt = Object.keys(r.adopted).length;
+      var vals = Object.keys(r.units).map(function (k) { return r.units[k]; })
+        .filter(function (v) { return v > 0; }).sort(function (a, b) { return a - b; });
+      if (vals.length) {
+        var mid = Math.floor(vals.length / 2);
+        r.med = round1(vals.length % 2 ? vals[mid] : (vals[mid - 1] + vals[mid]) / 2);
+        r.max = round1(vals[vals.length - 1]);
+      }
+      // The title's CIP sector: the family most of its cards carry; a named
+      // family outranks a blank on a tie, then the lowest code.
+      r.cip = Object.keys(r.cips).sort(function (a, b) {
+        return (r.cips[b] - r.cips[a]) || ((a === "") - (b === "")) || (a < b ? -1 : a > b ? 1 : 0);
+      })[0] || "";
+      if (r.nAdopt >= 1) rows.push(r);
+    });
+    // Section order: CIP sector code ascending, the no-CIP bucket last;
+    // alphabetical within (Sam, 2026-09-24).
+    rows.sort(function (a, b) {
+      if (a.cip !== b.cip) {
+        if (!a.cip) return 1;
+        if (!b.cip) return -1;
+        return a.cip < b.cip ? -1 : 1;
+      }
+      return a.title.localeCompare(b.title);
+    });
+    return rows;
+  }
+
+  // Rows grouped into their CIP-sector sections, in render order.
+  function matrixSections(rows) {
+    var out = [], cur = null;
+    rows.forEach(function (r) {
+      if (!cur || cur.code !== r.cip) { cur = { code: r.cip, rows: [] }; out.push(cur); }
+      cur.rows.push(r);
+    });
+    return out;
+  }
+
+  // The colleges the M-ID *likely* layer names for a title, keyed the same way
+  // the columns are. This is ruling 4's gate for NON-adopters.
+  function matrixLikelyFor(title) {
+    var pres = presByTitle[title] || {}, out = {};
+    Object.keys(pres).forEach(function (c) {
+      var k = mxName(c, "full");
+      if (k) out[k] = 1;
+    });
+    return out;
+  }
+  // The local course(s) the likely layer names for one college on one title —
+  // the cell panel's "already teaches" line.
+  function likelyCoursesFor(title, colKey) {
+    var pres = presByTitle[title] || {};
+    var names = Object.keys(pres).filter(function (c) { return mxName(c, "full") === colKey; });
+    var out = [];
+    names.forEach(function (c) {
+      (pres[c] || []).forEach(function (q) {
+        var code = ((q.subject || "") + " " + (q.number || "")).trim();
+        if (!code) return;
+        out.push(code + ((q.units != null && q.units !== "") ? " (" + fmtUnits(q.units) + "u)" : ""));
+      });
+    });
+    return out.join(", ");
+  }
+
+  // What one cell says, as DATA — shared by the grid, the cell panel and the
+  // CSV export so the spreadsheet can never disagree with the screen. This
+  // tab has fixed that exact defect once already, and the export is the layer
+  // that reaches a college by email, so the sharing is structural rather
+  // than a discipline.
+  function matrixCell(r, colKey, likely) {
+    var got = r.units[colKey] || 0;
+    var isAdopter = !!r.adopted[colKey];
+    var opp = 0;
+    if (isAdopter) {
+      // Partial adopter: the gap to what its peers typically obtained. No M-ID
+      // gate needed — this college is already in the peer cohort.
+      var gap = round1(r.med - got);
+      if (gap >= 0.5) opp = gap;
+    } else if (likely[colKey] && r.med > 0) {
+      opp = r.med;
+    }
+    return { got: isAdopter ? round1(got) : 0, opp: opp, adopter: isAdopter };
+  }
+
+  // The MAP records folded under a row, as the drill-down renders them:
+  // the record's title and its total units; the MAP id only as a tooltip.
+  function exhibitRecordsHtml(r) {
+    var list = Object.keys(r.records).map(function (id) { return r.records[id]; });
+    list.sort(function (a, b) { return (a.title || a.id).localeCompare(b.title || b.id); });
+    return 'MAP exhibit records folded under this common title, each with the total units of its credit recommendations: ' +
+      list.map(function (x) {
+        return '<span class="mx-exrec" title="MAP ID ' + escAttr(x.id) + '"><span class="mx-extitle">' +
+          esc(x.title || x.id) + '</span>' +
+          (x.units != null ? '<span class="mx-exunits">' + fmtUnits(x.units) + 'u</span>' : '') + '</span>';
+      }).join("");
+  }
+
+  // ── Rendering: a WINDOW of rows, never the whole grid ──
+  // 2,675 rows × 118 columns is ~316,000 cells. A chunked render was tried
+  // first (2026-09-24): building the HTML is cheap, but a table that size costs
+  // ~22 s to land in Chromium and 200–500 ms per scroll frame afterwards, with
+  // or without the sticky headers. So the DOM only ever holds the rows within
+  // a viewport-and-a-bit of the scroll position: two spacer rows carry the
+  // height of everything above and below, every credential row is a fixed 52px
+  // (titles clamp to two lines; the full title is the th's title attribute and
+  // its DOM text), section headers are 30px, and an expanded drill-down row is
+  // measured once it renders. The window re-renders when the visible range
+  // nears its edge; a focused cell survives a re-render by (row, column).
+  var MX_ROW_H = 52, MX_SEC_H = 30, MX_EXP_H = 80, MX_OVERSCAN = 14, MX_EDGE = 4;
+  var mxJob = 0;
+  var mxView = null;   // the live grid: rows, cols, lines, offsets, the window
+  function mxSchedule(fn) {
+    if (typeof window.requestAnimationFrame === "function") window.requestAnimationFrame(fn);
+    else setTimeout(fn, 0);
+  }
+
+  function matrixControlsHtml() {
+    return '<div class="mx-controls">' +
+      '<fieldset class="mx-fs"><legend class="mx-lg">Show in cells</legend>' +
+        '<div class="mx-seg" role="radiogroup" aria-label="Cell contents">' +
+        [["both", "Both"], ["got", "Adopted only"], ["opp", "Opportunity only"]].map(function (o) {
+          var id = "mx-cells-" + o[0];
+          return '<input type="radio" name="mx-cells" class="mx-cells-radio" id="' + id + '" value="' + o[0] + '"' +
+            (state.matrixCells === o[0] ? ' checked' : '') + ' />' +
+            '<label for="' + id + '">' + esc(o[1]) + '</label>';
+        }).join("") + '</div></fieldset>' +
+      '<fieldset class="mx-fs"><legend class="mx-lg">Export</legend>' +
+        '<button class="sw-action-btn" id="mx-export-csv" type="button">Matrix CSV</button>' +
+      '</fieldset></div>' +
+      '<div class="mx-key">' +
+      '<span><b class="mx-got">4</b> adopted — credit-recommendation units this college has articulated</span>' +
+      '<span><b class="mx-opp">(3)</b> opportunity — units the median adopting peer obtained and this one has not</span>' +
+      '<span><b class="mx-none">·</b> no signal</span></div>';
+  }
+
+  function renderMatrix(host) {
+    mxJob++;
+    hideMxTip();
+    // Keep the reader's place across a rebuild (a disclosure click rebuilds).
+    var oldBox = host.querySelector(".mx-box");
+    var keepTop = oldBox ? oldBox.scrollTop : 0, keepLeft = oldBox ? oldBox.scrollLeft : 0;
+    var cols = matrixColumns();
+    var rows = matrixRows();
+    var showGot = state.matrixCells !== "opp";
+    var showOpp = state.matrixCells !== "got";
+
+    var out = [matrixControlsHtml()];
+    if (!rows.length) {
+      mxView = null;
+      out.push('<div class="mx-note">No credentials match the current filters.</div>');
+      host.innerHTML = out.join("");
+      return;
+    }
+    if (!cols.length) {
+      mxView = null;
+      out.push('<div class="mx-note">The active College / District / SW Region / ASCCC Area filter matches no college, ' +
+        'so the matrix has no columns.</div>');
+      host.innerHTML = out.join("");
+      return;
+    }
+
+    // The stats need every cell's verdict but not its HTML: an inked cell is
+    // an adopter or a likely non-adopter, so the pass is over those names, not
+    // over 316,000 cells.
+    var green = 0, brown = 0, oppRows = 0;
+    var colIndex = {};
+    cols.forEach(function (c, i) { colIndex[c.key] = i; });
+    var rowInk = [];   // per row: { colKey → 1 } for the cells that carry a figure
+    rows.forEach(function (r) {
+      var likely = matrixLikelyFor(r.title);
+      var ink = {}, rowOpp = 0;
+      Object.keys(r.adopted).forEach(function (k) {
+        if (colIndex[k] === undefined) return;
+        var v = matrixCell(r, k, likely);
+        if (v.got > 0 || v.opp > 0) ink[k] = 1;
+        if (v.got > 0) green++;
+      });
+      Object.keys(likely).forEach(function (k) {
+        if (colIndex[k] === undefined || r.adopted[k]) return;
+        if (matrixCell(r, k, likely).opp > 0) { ink[k] = 1; brown++; rowOpp++; }
+      });
+      if (rowOpp > 0) oppRows++;
+      rowInk.push(ink);
+    });
+
+    // The line plan: section headers, credential rows, expanded drill-downs.
+    var lines = [], lineOfRow = [];
+    var ri = 0;
+    matrixSections(rows).forEach(function (sec) {
+      lines.push({ t: "sec", code: sec.code, n: sec.rows.length });
+      sec.rows.forEach(function (r) {
+        lineOfRow[ri] = lines.length;
+        lines.push({ t: "row", ri: ri });
+        if (state.matrixExpanded[r.title] && Object.keys(r.records).length) lines.push({ t: "exp", ri: ri });
+        ri++;
+      });
+    });
+
+    var head = '<thead><tr><th class="mx-corner" scope="col">Common exhibit title</th>' +
+      cols.map(function (c) {
+        return '<th class="mx-col" scope="col"><div><abbr class="sw-college" title="' +
+          escAttr(c.full) + '">' + esc(c.caps) + '</abbr></div></th>';
+      }).join("") + '</tr></thead>';
+
+    var cells = rows.length * cols.length;
+    out.push('<div class="mx-box" tabindex="0" role="region" aria-label="Credential adoption matrix (scrollable)" ' +
+      'aria-describedby="mx-keys">' +
+      '<table class="mx-table" style="width:calc(var(--mx-title-w) + ' + cols.length + ' * var(--mx-col-w))">' +
+      '<colgroup><col style="width:var(--mx-title-w)" /><col span="' + cols.length + '" style="width:var(--mx-col-w)" /></colgroup>' +
+      '<caption class="mx-sr-only">Credit-recommendation units by credential and college, ' +
+      'grouped by CIP sector. A bare figure is what a college has articulated; a parenthesised figure is what the ' +
+      'median adopting peer obtained and this college has not.</caption>' + head + '<tbody></tbody></table></div>');
+    out.push('<div class="mx-stats">' + fmt(rows.length) + ' credentials × ' + fmt(cols.length) +
+      ' colleges = ' + fmt(cells) + ' cells · ' +
+      ((green + brown) / cells * 100).toFixed(1) + '% inked (' +
+      (green / cells * 100).toFixed(1) + '% adopted, ' + (brown / cells * 100).toFixed(1) +
+      '% opportunity) · ' + Math.round(oppRows / rows.length * 100) +
+      '% of rows carry an opportunity.</div>');
+    out.push('<div class="mx-note" id="mx-keys">Scroll sideways for the rest of the colleges — ' + fmt(cols.length) +
+      ' numeric columns is about twice a desktop viewport, so the title column stays frozen. ' +
+      'Hover or focus a cell to see what that college articulated; inside the grid the arrow keys move between cells ' +
+      'and Escape returns to the grid. ' +
+      'An opportunity figure is what adopting peers actually obtained, never the credential’s full ' +
+      'recommendation total: 83% of adoptions are partial and no college has reached that total.</div>');
+    host.innerHTML = out.join("");
+
+    mxView = { job: mxJob, host: host, rows: rows, cols: cols, lines: lines, lineOfRow: lineOfRow,
+               rowInk: rowInk, showGot: showGot, showOpp: showOpp, expH: {}, offsets: null, total: 0,
+               first: -1, last: -1 };
+    mxLayout();
+    var box = host.querySelector(".mx-box");
+    if (box && (keepTop || keepLeft)) { box.scrollTop = keepTop; box.scrollLeft = keepLeft; }
+    mxWindow(true);
+  }
+
+  function mxLineH(l) {
+    if (l.t === "sec") return MX_SEC_H;
+    if (l.t === "row") return MX_ROW_H;
+    return mxView.expH[l.ri] || MX_EXP_H;
+  }
+  // Cumulative line offsets, so the window and the spacers are one lookup.
+  function mxLayout() {
+    var v = mxView, off = new Array(v.lines.length + 1), y = 0;
+    for (var i = 0; i < v.lines.length; i++) { off[i] = y; y += mxLineH(v.lines[i]); }
+    off[v.lines.length] = y;
+    v.offsets = off; v.total = y;
+  }
+  // The last line whose top is at or above y.
+  function mxFind(off, y) {
+    var lo = 0, hi = off.length - 2;
+    while (lo < hi) { var mid = (lo + hi + 1) >> 1; if (off[mid] <= y) lo = mid; else hi = mid - 1; }
+    return lo;
+  }
+  function mxSpacer(h, n) {
+    return '<tr class="mx-spacer" aria-hidden="true"><td colspan="' + (n + 1) + '" style="height:' + Math.max(0, Math.round(h)) + 'px;padding:0;border:0"></td></tr>';
+  }
+  // "(10.5)" is six characters and ~36px at the cell's size; 43 such cells
+  // exist (measured 2026-09-24). They get a tighter setting rather than every
+  // column getting wider for them.
+  function tight(str) { return str.length >= 6 ? " mx-tight" : ""; }
+  function mxLineHtml(l) {
+    var v = mxView, cols = v.cols;
+    if (l.t === "sec") {
+      return '<tr class="mx-sec"><th class="mx-sec" scope="rowgroup" colspan="' + (cols.length + 1) + '">' +
+        (l.code ? '<span class="mx-sec-lbl">CIP Sector ' + esc(l.code) + '</span>' : '') +
+        esc(l.code ? (cipTitles[l.code] || ("CIP sector " + l.code)) : NO_CIP) +
+        '<span class="mx-sec-n">' + fmt(l.n) + (l.n === 1 ? ' credential' : ' credentials') + '</span></th></tr>';
+    }
+    var r = v.rows[l.ri];
+    if (l.t === "exp") {
+      return '<tr class="mx-exp" data-ri="' + l.ri + '"><td colspan="' + (cols.length + 1) + '">' + exhibitRecordsHtml(r) + '</td></tr>';
+    }
+    var ink = v.rowInk[l.ri];
+    var likely = matrixLikelyFor(r.title);
+    var cells = "";
+    for (var ci = 0; ci < cols.length; ci++) {
+      var k = cols[ci].key;
+      if (!ink[k]) { cells += '<td class="mx-cell mx-none">·</td>'; continue; }
+      var c = matrixCell(r, k, likely);
+      var bits = "";
+      if (v.showGot && c.got > 0) bits += '<span class="mx-has' + tight(fmtUnits(c.got)) + '">' + fmtUnits(c.got) + '</span>';
+      if (v.showOpp && c.opp > 0) bits += '<span class="mx-opp-cell' + tight("(" + fmtUnits(c.opp) + ")") + '">(' + fmtUnits(c.opp) + ')</span>';
+      cells += bits
+        ? '<td class="mx-cell mx-inked" data-r="' + l.ri + '" data-c="' + ci + '">' + bits + '</td>'
+        : '<td class="mx-cell mx-none">·</td>';
+    }
+    var nRec = Object.keys(r.records).length;
+    var open = !!state.matrixExpanded[r.title];
+    var meta = '<div class="mx-rmeta">' + r.nAdopt + ' adopting · peer median ' +
+      fmtUnits(r.med) + 'u · best ' + fmtUnits(r.max) + 'u' +
+      (nRec ? ' · <button class="mx-disc" type="button" data-mx-title="' + escAttr(r.title) +
+        '" aria-expanded="' + (open ? 'true' : 'false') + '">' + nRec +
+        ' exhibit' + (nRec === 1 ? '' : 's') + '</button>' : '') + '</div>';
+    return '<tr class="mx-r" data-ri="' + l.ri + '"><th class="mx-row" scope="row" title="' + escAttr(r.title) + '">' +
+      '<div class="mx-rtitle">' + esc(r.title) + '</div>' + meta + '</th>' + cells + '</tr>';
+  }
+
+  // Render the lines around the scroll position. `force` re-renders even when
+  // the visible range is still well inside the current window.
+  function mxWindow(force) {
+    var v = mxView;
+    if (!v || v.job !== mxJob) return;
+    var box = v.host.querySelector(".mx-box"), tbody = v.host.querySelector(".mx-table tbody");
+    if (!box || !tbody) return;
+    var thead = v.host.querySelector(".mx-table thead");
+    var headH = (thead && thead.offsetHeight) || 156;
+    var top = Math.max(0, box.scrollTop - headH);
+    var vis = box.clientHeight || 600;
+    var lo = mxFind(v.offsets, top), hi = mxFind(v.offsets, top + vis);
+    if (!force && v.first >= 0 && lo >= v.first + MX_EDGE && hi <= v.last - MX_EDGE) return;
+    var first = Math.max(0, lo - MX_OVERSCAN), last = Math.min(v.lines.length - 1, hi + MX_OVERSCAN);
+    // A focused cell survives the re-render by (row, column).
+    var keep = null, a = document.activeElement;
+    if (a && a.closest && a.closest(".mx-cell") && v.host.contains(a)) {
+      var tr = a.closest("tr");
+      keep = { ri: parseInt(tr && tr.getAttribute("data-ri"), 10),
+               ci: Array.prototype.indexOf.call(tr.querySelectorAll("td.mx-cell"), a) };
+    }
+    // The section this window starts inside is rendered at its head, one line
+    // early, so the sticky rule keeps the sector named while its rows scroll.
+    var secIdx = -1;
+    for (var i = first; i >= 0; i--) if (v.lines[i].t === "sec") { secIdx = i; break; }
+    var html = "", topH = v.offsets[first];
+    if (secIdx >= 0 && secIdx < first) { html += mxLineHtml(v.lines[secIdx]); topH -= MX_SEC_H; }
+    for (var j = first; j <= last; j++) html += mxLineHtml(v.lines[j]);
+    tbody.innerHTML = mxSpacer(topH, v.cols.length) + html + mxSpacer(v.total - v.offsets[last + 1], v.cols.length);
+    v.first = first; v.last = last;
+    // An expanded drill-down's height is only known once it is in the DOM.
+    var changed = false;
+    Array.prototype.forEach.call(tbody.querySelectorAll("tr.mx-exp[data-ri]"), function (tr) {
+      var h = tr.offsetHeight, k = tr.getAttribute("data-ri");
+      if (h && v.expH[k] !== h) { v.expH[k] = h; changed = true; }
+    });
+    if (changed) {
+      mxLayout();
+      var sp = tbody.querySelectorAll("tr.mx-spacer td");
+      if (sp[1]) sp[1].style.height = Math.max(0, Math.round(v.total - v.offsets[last + 1])) + "px";
+    }
+    if (keep && keep.ri >= 0) {
+      var tr2 = tbody.querySelector('tr.mx-r[data-ri="' + keep.ri + '"]');
+      var td2 = tr2 && tr2.querySelectorAll("td.mx-cell")[keep.ci];
+      if (td2) { td2.setAttribute("tabindex", "-1"); td2.focus(); }
+    } else if (mxTipFor && !v.host.contains(mxTipFor)) {
+      hideMxTip();
+    }
+  }
+  var mxScrollPending = false;
+  function mxOnScroll() {
+    if (mxScrollPending) return;
+    mxScrollPending = true;
+    mxSchedule(function () { mxScrollPending = false; mxWindow(false); });
+  }
+  // Bring a row into the DOM (scrolling the box to it when it is outside the
+  // window) and return its <tr>.
+  function mxRowEl(ri) {
+    var v = mxView;
+    if (!v) return null;
+    var tbody = v.host.querySelector(".mx-table tbody");
+    var tr = tbody && tbody.querySelector('tr.mx-r[data-ri="' + ri + '"]');
+    if (tr) return tr;
+    var li = v.lineOfRow[ri];
+    if (li === undefined) return null;
+    var box = v.host.querySelector(".mx-box");
+    var thead = v.host.querySelector(".mx-table thead");
+    var headH = (thead && thead.offsetHeight) || 156;
+    var vis = box.clientHeight || 600;
+    box.scrollTop = Math.max(0, v.offsets[li] + headH - Math.floor((vis - headH) / 2));
+    mxWindow(true);
+    return tbody.querySelector('tr.mx-r[data-ri="' + ri + '"]');
+  }
+
+  // ── The cell panel ──
+  var mxTip = null, mxTipFor = null;
+  function mxTipEl() {
+    if (mxTip) return mxTip;
+    mxTip = document.createElement("div");
+    mxTip.id = "mx-tip";
+    mxTip.className = "mx-tip";
+    mxTip.setAttribute("role", "tooltip");
+    mxTip.hidden = true;
+    document.body.appendChild(mxTip);
+    return mxTip;
+  }
+  function mxTipHtml(r, c) {
+    var likely = matrixLikelyFor(r.title);
+    var v = matrixCell(r, c.key, likely);
+    var h = '<div class="mx-tip-h">' + esc(c.full) + '</div><div class="mx-tip-t">' + esc(r.title) + '</div>';
+    var oppLine = v.opp > 0
+      ? '<div class="mx-tip-l"><b class="mx-opp">(' + fmtUnits(v.opp) + ')</b> opportunity — the median adopting peer obtained ' +
+        fmtUnits(r.med) + ' units' + (v.adopter ? ' against this college’s ' + fmtUnits(v.got) : '') + '.</div>'
+      : '';
+    if (v.adopter) {
+      var list = r.recsBy[c.key] || [];
+      h += '<div class="mx-tip-l"><b class="mx-got">' + fmtUnits(v.got) + ' units</b> articulated' +
+        (list.length ? ' across ' + list.length + ' credit recommendation' + (list.length === 1 ? '' : 's') + ':' : '.') + '</div>';
+      if (list.length) {
+        h += '<ul class="mx-tip-recs">' + list.map(function (x) {
+          return '<li><span class="mx-tip-u">' + fmtUnits(x.units) + 'u</span> ' + esc(x.course) + ' — ' + esc(x.credit) + '</li>';
+        }).join("") + '</ul>';
+      } else {
+        h += '<div class="mx-tip-n">The recommendation lines arrive with the next data build.</div>';
+      }
+      h += oppLine;
+    } else {
+      h += '<div class="mx-tip-l">Has not adopted this credential.</div>' + oppLine;
+      var courses = v.opp > 0 ? likelyCoursesFor(r.title, c.key) : "";
+      if (courses) h += '<div class="mx-tip-l">Already teaches ' + esc(courses) + ' — a likely course to articulate.</div>';
+    }
+    return h;
+  }
+  function showMxTip(td) {
+    if (!mxView || !td) return;
+    var r = mxView.rows[parseInt(td.getAttribute("data-r"), 10)];
+    var c = mxView.cols[parseInt(td.getAttribute("data-c"), 10)];
+    if (!r || !c) return;
+    var tip = mxTipEl();
+    tip.innerHTML = mxTipHtml(r, c);
+    tip.hidden = false;
+    if (mxTipFor && mxTipFor !== td) mxTipFor.removeAttribute("aria-describedby");
+    mxTipFor = td;
+    td.setAttribute("aria-describedby", "mx-tip");
+    // Beside the cell, flipping left when the right edge would clip it and
+    // clamped to the viewport; the phone rule pins it to the viewport instead.
+    var rect = td.getBoundingClientRect();
+    var vw = window.innerWidth || 0, vh = window.innerHeight || 0;
+    var w = tip.offsetWidth || 0, hgt = tip.offsetHeight || 0;
+    var left = rect.right + 8;
+    if (vw && left + w > vw - 8) left = Math.max(8, rect.left - w - 8);
+    var top = rect.top;
+    if (vh && top + hgt > vh - 8) top = Math.max(8, vh - hgt - 8);
+    tip.style.left = left + "px";
+    tip.style.top = top + "px";
+  }
+  function hideMxTip() {
+    if (mxTip) mxTip.hidden = true;
+    if (mxTipFor) { mxTipFor.removeAttribute("aria-describedby"); mxTipFor = null; }
+  }
+  // Arrow keys move between cells; the focused cell gets tabindex="-1" on the
+  // fly (a roving tabindex without pre-marking 316,000 cells), so the only
+  // Tab stop is the grid region itself.
+  function mxMove(td, key) {
+    var tr = td.parentNode;
+    var cells = Array.prototype.slice.call(tr.querySelectorAll("td.mx-cell"));
+    var ci = cells.indexOf(td);
+    var target = null;
+    if (key === "ArrowRight") target = cells[ci + 1];
+    else if (key === "ArrowLeft") target = cells[ci - 1];
+    else if (key === "Home") target = cells[0];
+    else if (key === "End") target = cells[cells.length - 1];
+    else if (key === "ArrowDown" || key === "ArrowUp") {
+      var ri = parseInt(tr.getAttribute("data-ri"), 10) + (key === "ArrowDown" ? 1 : -1);
+      var nt = (ri >= 0 && mxView && ri < mxView.rows.length) ? mxRowEl(ri) : null;
+      if (nt) target = nt.querySelectorAll("td.mx-cell")[ci];
+    }
+    if (target) { target.setAttribute("tabindex", "-1"); target.focus(); }
+  }
+
+  // Export. Re-derived from the SAME matrixCell() the grid uses, and led by a
+  // provenance line, because a spreadsheet outlives the screen that made it and
+  // "opportunity" is exactly the number that must not travel unexplained.
+  function exportMatrixCSV() {
+    var cols = matrixColumns(), rows = matrixRows();
+    if (!rows.length || !cols.length) { alert("The matrix is empty under the current filters."); return; }
+    var lines = [];
+    lines.push(csvCell("Credit-recommendation units by credential and college. " +
+      "Adopted = units this college has articulated. Opportunity = the median units colleges that " +
+      "adopted this credential actually obtained, minus what this one has — NOT the credential's full " +
+      "recommendation total, which no college has ever reached."));
+    lines.push(csvCell("College scope: " + scopeLabelForExport()));
+    lines.push(csvCell("Rows: every credential with at least one adopting college, grouped by CIP sector"));
+    lines.push(["Common exhibit title", "CIP sector", "Adopting colleges", "Peer median units", "Best adopter units"]
+      .concat(cols.map(function (c) { return c.short + " — adopted"; }))
+      .concat(cols.map(function (c) { return c.short + " — opportunity"; }))
+      .map(csvCell).join(","));
+    rows.forEach(function (r) {
+      var likely = matrixLikelyFor(r.title);
+      var vals = cols.map(function (c) { return matrixCell(r, c.key, likely); });
+      lines.push([csvCell(r.title), csvCell(cipLabel(r.cip)), r.nAdopt, fmtUnits(r.med), fmtUnits(r.max)]
+        .concat(vals.map(function (v) { return v.got > 0 ? fmtUnits(v.got) : ""; }))
+        .concat(vals.map(function (v) { return v.opp > 0 ? fmtUnits(v.opp) : ""; }))
+        .join(","));
+    });
+    downloadBlob(new Blob(["﻿" + lines.join("\n")], { type: "text/csv;charset=utf-8;" }),
+      "cer_adoption_matrix.csv");
+  }
+
+
+  function buildCredentialView() {
+    var filtered = getFiltered();
+    var grouped = groupToCredentials(filtered);
+    var groups = grouped.groups, order = grouped.order;
     function bestPot(cards) { return cards.reduce(function (m, e) { return Math.max(m, e.potential || 0); }, 0); }
     function allUnclassified(cards) { return cards.every(function (e) { return e.is_classified === false; }); }
     // Same ordering spirit as the table: unclassified last, best-opportunity first.
@@ -346,10 +1470,21 @@
       out.push('<div class="cv-note">Showing top ' + LIMIT + ' of ' + fmt(order.length) +
         ' credentials — use the search box / filters above to narrow.</div>');
     }
+    var nearMe = nearMeColleges();
+    if (nearMe) {
+      var scopeLbl = state.filters.college.length
+        ? state.filters.college.join(", ")
+        : state.filters.district.concat(state.filters.swRegion,
+            state.filters.ascccArea.map(function (a) { return "ASCCC Area " + a; })).join(", ");
+      out.push('<div class="sv-banner">Scoped to <b>' + esc(scopeLbl) + '</b> — ' +
+        esc(COULD_ADOPT_HINT) + '</div>');
+    }
     order.slice(0, LIMIT).forEach(function (k) {
       var cards = groups[k];
       var title = cards[0].unified_title || cards[0].title || "";
-      var issuer = cards[0].issuing_agency || "";
+      // The issuer comes from the GROUP KEY, not cards[0] — a blank-issuer card
+      // folded into a named credential must render under that credential's name.
+      var issuer = k.slice(title.length + 2);
       // Anchor = the CCC version (most adopters) if any; else the top-adopter local card.
       var byAdopt = function (a, b) { return (b.adopters || 0) - (a.adopters || 0); };
       var ccc = cards.filter(function (e) { return e.collaborative_type === "CCC Collaborative"; }).sort(byAdopt);
@@ -377,174 +1512,63 @@
               buildCreditRecsHtml(e.credit_recs) + '</div>';
           }).join("") + '</div>';
       }
-      out.push('<div class="cv-credential">' + head + std + othersHtml +
+      out.push('<div class="cv-credential">' + head +
+        (nearMe ? buildNearMeHtml(cards, title, nearMe) : "") +
+        std + othersHtml +
+        buildAlignedExhibitsHtml(cards) +
         buildPrescriptiveHtml(title) + '</div>');
     });
     return out.join("") || '<div class="cv-note">No credentials match the current filters.</div>';
   }
 
-  // ── Student view (v3) ──
-  // The seeker lens: "I hold this credential — where NEAR ME can I get credit,
-  // how much, and which local course do I ask about?" Reuses the same filtered
-  // set + (unified_title, issuer) grouping as v2, but reframes each credential
-  // against the student's selected college(s):
-  //   ✅ available now   — their college already articulated it
-  //   🎯 likely qualify  — their college teaches the matching course (prescriptive
-  //                        layer names the exact local course) → ask about CPL
-  //   ○ aligned program  — their college has an aligned program area
-  // With no college picked it's a browse view nudging them to pick one.
+  // ── Near-me band (folded in from the standalone Student view, 2026-08-16) ──
+  // Same three states the v3 seeker lens used, rendered inside the credential
+  // card instead of a third place to look: the college either HAS it, LIKELY
+  // qualifies (and we name the local course), or has an aligned program only.
+  // Each state is sourced from a different signal and they are never merged —
+  // "already teaches the matching course" is a far stronger claim than "has a
+  // program under the same TOP code", and the copy says which is which.
+  function buildNearMeHtml(cards, title, nearMe) {
+    var adoptSet = {};
+    cards.forEach(function (e) {
+      (e.adopter_names || []).forEach(function (c) { adoptSet[c] = 1; });
+    });
+    var pres = presByTitle[title] || {};
+    var avail = [], qualify = [];
+    Object.keys(nearMe).forEach(function (c) {
+      if (adoptSet[c]) avail.push(c);
+      else if (pres[c]) qualify.push({ college: c, courses: pres[c] });
+    });
+    var bits = [];
+    if (avail.length) {
+      bits.push('<div class="sv-status sv-yes"><b>Adopted</b> at ' +
+        avail.sort().map(function (c) { return collegeChip(c, "sv-chip sv-chip-yes"); }).join(" ") + '</div>');
+    }
+    if (qualify.length) {
+      bits.push('<div class="sv-status sv-maybe"><b>Could adopt — already teaches a matching course</b> at ' +
+        qualify.map(function (q) {
+          var courses = (q.courses || []).map(function (c) {
+            var code = ((c.subject || "") + " " + (c.number || "")).trim();
+            var u = (c.units != null && c.units !== "") ? " (" + fmtUnits(c.units) + "u)" : "";
+            return '<span class="cv-rx-course">' + esc(code) + u + '</span>';
+          }).join(", ");
+          return collegeChip(q.college, "sv-chip sv-chip-maybe") +
+            (courses ? ' <span class="sv-teaches">teaches ' + courses + '</span>' : '');
+        }).join(" · ") + '</div>');
+    }
+    return bits.join("");
+  }
 
   // Set of college names matching the active college/district/region filters, or
-  // null when none is active (→ browse mode). This is the student's "near me".
+  // null when none is active. This is the "near me" set the credential view's
+  // near-me band classifies against (folded in from the standalone Student view,
+  // 2026-08-16 — the seeker framing is a MODE of the credential view, not a third
+  // place to look).
   function nearMeColleges() {
-    var f = state.filters;
-    if (!f.college.length && !f.district.length && !f.swRegion.length) return null;
+    if (!hasCollegeFilter()) return null;
     var set = {};
     collegeNames.forEach(function (c) { if (collegeMatchesFilters(c)) set[c] = 1; });
     return set;
-  }
-
-  function buildStudentView() {
-    var filtered = getFiltered();
-    var nearMe = nearMeColleges();                 // null = browse mode
-    var presAll = window.CPL_STATEWIDE_PRESCRIPTIVE || {};
-
-    // Group by (unified_title, issuer), same key as the credential view.
-    var groups = {}, order = [];
-    filtered.forEach(function (e) {
-      var k = (e.unified_title || e.title || "") + "||" + (e.issuing_agency || "");
-      if (!groups[k]) { groups[k] = []; order.push(k); }
-      groups[k].push(e);
-    });
-
-    // Summarize each credential: union adopters/potential across its cards,
-    // gather recs, and (when near-me) classify the student's colleges. Award is
-    // computed later for the rendered slice only (it parses the rec list).
-    function summarize(k) {
-      var cards = groups[k];
-      var adoptSet = {}, potSet = {}, recs = [];
-      cards.forEach(function (e) {
-        (e.adopter_names || []).forEach(function (c) { adoptSet[c] = 1; });
-        (e.potential_names || []).forEach(function (c) { potSet[c] = 1; });
-        recs = recs.concat(e.credit_recs || []);
-      });
-      var title = cards[0].unified_title || cards[0].title || "";
-      var pres = presAll[title] || null;
-      var presByCollege = {};
-      if (pres) (pres.colleges || []).forEach(function (c) { presByCollege[c.college] = c.courses || []; });
-
-      var avail = [], qualify = [], aligned = [];
-      if (nearMe) {
-        Object.keys(nearMe).forEach(function (c) {
-          if (adoptSet[c]) avail.push(c);                                  // already articulated
-          else if (presByCollege[c]) qualify.push({ college: c, courses: presByCollege[c] });  // teaches the match
-          else if (potSet[c]) aligned.push(c);                             // aligned program only
-        });
-      }
-      return {
-        title: title, issuer: cards[0].issuing_agency || "",
-        unclass: cards.every(function (e) { return e.is_classified === false; }),
-        adopters: Object.keys(adoptSet).sort(), adoptCount: Object.keys(adoptSet).length,
-        presN: (pres && pres.n_colleges) || 0, recs: recs,
-        avail: avail.sort(), qualify: qualify, aligned: aligned.sort()
-      };
-    }
-    var summaries = order.map(summarize);
-
-    // Sort: classified first; in near-me mode surface the student's actionable
-    // credentials (available > qualify > aligned > none); then widest reach.
-    function rank(s) {
-      if (!nearMe) return 0;
-      if (s.avail.length) return 0;
-      if (s.qualify.length) return 1;
-      if (s.aligned.length) return 2;
-      return 3;
-    }
-    summaries.sort(function (a, b) {
-      return ((a.unclass ? 1 : 0) - (b.unclass ? 1 : 0))
-        || (rank(a) - rank(b))
-        || (b.adoptCount - a.adoptCount)
-        || a.title.localeCompare(b.title);
-    });
-
-    var out = [];
-    if (nearMe) {
-      var label = state.filters.college.length
-        ? state.filters.college.join(", ")
-        : state.filters.district.concat(state.filters.swRegion).join(", ");
-      out.push('<div class="sv-banner">📍 Showing credit options near <b>' + esc(label) +
-        '</b> — what you could earn credit for, and the local course to ask your college about.</div>');
-    } else {
-      out.push('<div class="sv-banner sv-banner-tip">📍 Pick your <b>College</b> (or District / SW Region) in the filters above to see exactly where you can get credit near you — and which local course to ask about.</div>');
-    }
-
-    var LIMIT = 50;
-    if (summaries.length > LIMIT) {
-      out.push('<div class="cv-note">Showing top ' + LIMIT + ' of ' + fmt(summaries.length) +
-        ' credentials — search / filter above to narrow.</div>');
-    }
-
-    summaries.slice(0, LIMIT).forEach(function (s) {
-      var head = '<div class="cv-title">' + esc(s.title) +
-        (s.issuer ? ' <span class="cv-issuer">· ' + esc(s.issuer) + '</span>' : '') + '</div>';
-      var award = typicalAward(s.recs).award;
-      var awardHtml = award
-        ? '<div class="sv-award">💡 You’d typically earn <b>' + esc(award.text) + '</b> for this credential</div>'
-        : '';
-
-      var nearHtml = "";
-      if (nearMe) {
-        var bits = [];
-        if (s.avail.length) {
-          bits.push('<div class="sv-status sv-yes">✅ <b>Available now</b> at ' +
-            s.avail.map(function (c) { return collegeChip(c, "sv-chip sv-chip-yes"); }).join(" ") +
-            ' <span class="sv-cta">— request CPL credit</span></div>');
-        }
-        if (s.qualify.length) {
-          bits.push('<div class="sv-status sv-maybe">🎯 <b>You likely already qualify</b> at ' +
-            s.qualify.map(function (q) {
-              var courses = (q.courses || []).map(function (c) {
-                var code = ((c.subject || "") + " " + (c.number || "")).trim();
-                var u = (c.units != null && c.units !== "") ? " (" + fmtUnits(c.units) + "u)" : "";
-                return '<span class="cv-rx-course">' + esc(code) + u + '</span>';
-              }).join(", ");
-              return collegeChip(q.college, "sv-chip sv-chip-maybe") +
-                (courses ? ' <span class="sv-teaches">teaches ' + courses + '</span>' : '');
-            }).join(" · ") +
-            ' <span class="sv-cta">— ask about CPL credit for this course</span></div>');
-        }
-        if (s.aligned.length) {
-          bits.push('<div class="sv-status sv-prog">○ <b>Aligned program</b> at ' +
-            s.aligned.slice(0, 8).map(function (c) { return collegeChip(c, "sv-chip sv-chip-prog"); }).join(" ") +
-            (s.aligned.length > 8 ? ' <span class="sv-more">+' + (s.aligned.length - 8) + ' more</span>' : '') +
-            ' <span class="sv-cta">— worth asking</span></div>');
-        }
-        nearHtml = bits.length ? bits.join("")
-          : '<div class="sv-status sv-none">Not yet offered near you — available at <b>' + s.adoptCount +
-            '</b> college' + (s.adoptCount === 1 ? '' : 's') + ' statewide (see below).</div>';
-      }
-
-      var swHtml;
-      if (s.adoptCount) {
-        var shown = s.adopters.slice(0, 10).map(function (c) { return collegeChip(c, "sv-chip sv-chip-sw"); }).join(" ");
-        var more = s.adoptCount > 10 ? ' <span class="sv-more">+' + (s.adoptCount - 10) + ' more</span>' : '';
-        swHtml = '<div class="sv-sw"><span class="sv-sw-label">🎓 Get credit at ' + s.adoptCount +
-          ' college' + (s.adoptCount === 1 ? '' : 's') + ' statewide:</span> ' + shown + more + '</div>';
-      } else {
-        swHtml = '<div class="sv-sw sv-sw-none">No college has articulated this yet' +
-          (s.presN ? ' — but ' + s.presN + ' could.' : '.') + '</div>';
-      }
-      // In browse mode, tie the prescriptive opportunity back to the near-me CTA.
-      if (!nearMe && s.presN) {
-        swHtml += '<div class="sv-pres-hint">🎯 ' + s.presN + ' more college' + (s.presN === 1 ? '' : 's') +
-          ' already teach a matching course — pick your college above to check yours.</div>';
-      }
-
-      out.push('<div class="cv-credential' + (s.unclass ? ' sv-unclass' : '') + '">' +
-        head + awardHtml + nearHtml + swHtml + '</div>');
-    });
-
-    return out.join("") || '<div class="cv-note">No credentials match the current filters.</div>';
   }
 
   // ── Build DOM ──
@@ -583,12 +1607,13 @@
       + '<input type="text" id="sw-search" placeholder="Search exhibits, colleges, courses..." />'
       + buildFilterButton("collabType", "Statewide / Local", collabTypes)
       + buildFilterButton("cplType", "CPL Type", cplTypes)
-      + buildFilterButton("sector", "Career Cluster", sectors)
+      + buildFilterButton("cipSector", "CIP Sectors", cipSectorOpts)
       + buildFilterButton("discipline", "TOP Code Category", disciplines)
       + (issuers.length ? buildFilterButton("issuer", "Issuing Agency", issuers) : "")
       + buildFilterButton("college", "College", collegeNames)
       + buildFilterButton("district", "District", districts)
       + buildFilterButton("swRegion", "SW Region", swRegions)
+      + buildFilterButton("ascccArea", "ASCCC Area", ascccAreaOpts)
       + '</div>';
 
     html += '<div class="sw-action-bar">';
@@ -600,12 +1625,17 @@
     html += '<span class="sw-count" id="sw-status"></span>';
     html += '</div>';
 
-    html += '<div class="sw-table-wrap" id="sw-table-wrap">';
+    // Shown on narrow screens only (CSS) — a 10-column table scrolls sideways
+    // there, and a silently clipped table reads as missing columns.
+    html += '<p class="sw-table-hint">This table scrolls sideways — swipe to see ' +
+      'the adoption and could-adopt columns. The Credentials view above reflows to fit.</p>';
+    html += '<div class="sw-table-wrap" id="sw-table-wrap" tabindex="0" role="region" ' +
+      'aria-label="Exhibit adoption table (scrollable)">';
     html += '<table class="exhibit-table" id="sw-table"><thead><tr>' +
       '<th style="width:30px;"></th>' +
       '<th>Exhibit &amp; Credit Recommendations</th><th>Type</th><th>CPL Type</th><th>Discipline</th>' +
       '<th>Adopted</th><th>Potential</th>' +
-      '<th>Colleges Adopted</th><th>Colleges — Potential Adopters</th>' +
+      '<th>Colleges Adopted</th><th title="Colleges that have not adopted it, under the scope selected above.">Colleges — Could Adopt</th>' +
       '<th style="width:78px;" title="Curator flag — sign in via the Common Course Reference or Credential Reference tab to flag stale or duplicate cards.">Flag</th>' +
       '</tr></thead><tbody id="sw-tbody"></tbody></table>';
 
@@ -625,34 +1655,108 @@
           '<div class="algo-row"><span class="algo-label">Assumptions:</span> ' +
             '<span class="algo-value">Potential adopters = colleges in the CCC system not currently articulating this exhibit. Credit recs count each college-course pair separately.</span></div>' +
           '<div class="algo-row"><span class="algo-label">Caveats:</span> ' +
-            '<span class="algo-value">Interactive filters (CPL Type, Discipline, District, SW Region) narrow results client-side. Exports reflect current filter state.</span></div>' +
-          '<div class="algo-meta">Description last updated: 2026-04-19</div>' +
+            '<span class="algo-value">Every filter is multi-select and narrows results client-side; College, District, SW Region and ASCCC Area match colleges that have articulated the exhibit. Exports reflect current filter state.</span></div>' +
+          '<div class="algo-row"><span class="algo-label">CIP sector:</span> ' +
+            '<span class="algo-value">The two-digit CIP family of the exhibit&apos;s TOP code — MAP&apos;s TOP id to the CCC 4-digit TOP (TOP_Code_Lookup.xlsx), then the CIP family colleges actually assigned to programs under that TOP (kb/top_cip_map.json), the published TOP-to-CIP crosswalk only where no college has. TOP is a last-in-line signal, so the sector groups and filters; it decides nothing.</span></div>' +
+          '<div class="algo-row"><span class="algo-label">ASCCC Area:</span> ' +
+            '<span class="algo-value">The Academic Senate&apos;s four areas (A&ndash;D), from asccc.org&apos;s area descriptions and college directory (kb/reference/asccc_area_map.json, provisional until confirmed against the directory).</span></div>' +
+          '<div class="algo-meta">Description last updated: 2026-09-24</div>' +
         '</div>' +
       '</details>' +
     '</div>';
 
     html += '</div>';
 
-    // ── Gallery (Sam's playground): v1 = the adoption table above (preserved
-    // intact), v2 = a credential-centric master-detail view below. Both share the
-    // same search + filters; v1 is untouched. Iterate v2 freely; graduate the winner.
+    // ── Two sub-tabs, replacing three stacked collapsibles (2026-08-16) ──
+    // The three views were `<details>` sections that ALL re-rendered on every
+    // keystroke, and the third (Student) was the same credential grouping under
+    // a different framing — so it became a MODE of the credential view (the
+    // near-me band) rather than a third place to look. Only the active view
+    // renders now.
     container.innerHTML = CV_STYLE
       // Page-level filter bar (dark wrapper so the existing dark-bg toolbar styles
-      // read correctly) — shared by every view below.
+      // read correctly) — shared by both views below.
       + '<div class="sw-interactive sw-filterbar">' + toolbarHtml
-      + '<div class="sw-filterbar-hint">Search &amp; filters apply to all views below.</div></div>'
-      + '<details class="sw-gallery-sec" open><summary class="sw-gallery-sum">📋 Adoption table'
-      + ' <span class="sw-gallery-tag">v1</span></summary>'
-      + html
-      + '</details>'
-      + '<details class="sw-gallery-sec"><summary class="sw-gallery-sum">🎓 Credential view'
-      + ' <span class="sw-gallery-tag">v2 · beta</span> — one card per credential, the standard on top</summary>'
-      + '<div id="sw-cv-body" class="cv-body"></div>'
-      + '</details>'
-      + '<details class="sw-gallery-sec"><summary class="sw-gallery-sum">🎒 Student view'
-      + ' <span class="sw-gallery-tag">v3 · beta</span> — “where can I get credit for my credential?”</summary>'
-      + '<div id="sw-sv-body" class="cv-body"></div>'
-      + '</details>';
+      + '<div class="sw-filterbar-hint">Search &amp; filters apply to whichever view is showing. ' + esc(COULD_ADOPT_HINT) + '</div>'
+      + buildHandoutRow()
+      + '</div>'
+      + '<div class="sw-subtabs" role="tablist" aria-label="Exhibit adoption views">'
+      +   '<button class="sw-subtab" data-view="credentials" role="tab" type="button"'
+      +     ' id="sw-tab-credentials" aria-controls="sw-view-credentials">Credentials</button>'
+      +   '<button class="sw-subtab" data-view="table" role="tab" type="button"'
+      +     ' id="sw-tab-table" aria-controls="sw-view-table">Adoption table</button>'
+      +   '<button class="sw-subtab" data-view="matrix" role="tab" type="button"'
+      +     ' id="sw-tab-matrix" aria-controls="sw-view-matrix">Adoption matrix</button>'
+      + '</div>'
+      + '<div id="sw-view-credentials" class="sw-view" role="tabpanel" tabindex="0"'
+      +   ' aria-labelledby="sw-tab-credentials"><div id="sw-cv-body" class="cv-body"></div></div>'
+      + '<div id="sw-view-table" class="sw-view" role="tabpanel" tabindex="0"'
+      +   ' aria-labelledby="sw-tab-table">' + html + '</div>'
+      + '<div id="sw-view-matrix" class="sw-view" role="tabpanel" tabindex="0"'
+      +   ' aria-labelledby="sw-tab-matrix"><div id="sw-mx-body"></div></div>';
+    syncSubtabs();
+  }
+
+  // ── Create Handout (Sam, 2026-09-24) ──
+  // The handout lives on My College: its Report button builds the college's
+  // briefing document and its occupation opportunity register is the port of
+  // the per-college handout page kb/_build_regional_cpl_opportunity.py writes.
+  // This button hands the reader over there. When exactly one college is in
+  // the College filter it travels as My College's REMEMBERED choice — that tab
+  // always asks first (Sam, 2026-08-21) and offers "open it again", so the
+  // hand-off is one click and can never land on someone else's college.
+  // ⚠️ MY_COLLEGE_SCOPE_KEY mirrors SCOPE_KEY in college_briefing.js;
+  // tests/eacr_handout.test.js fails if the two literals drift.
+  var MY_COLLEGE_SCOPE_KEY = "cplMyCollegeScope.v1";
+  function buildHandoutRow() {
+    return '<div class="sw-handout">' +
+      '<button class="sw-action-btn primary" id="sw-handout" type="button">Create Handout</button>' +
+      '<span class="sw-handout-hint" id="sw-handout-hint">Opens My College, where the handout is built for one college: ' +
+      'its briefing report and its occupation opportunity register. Pick one college in the College filter first and it carries over.</span>' +
+      '</div>';
+  }
+  function openHandout() {
+    var one = state.filters.college.length === 1 ? state.filters.college[0] : "";
+    if (one) {
+      try {
+        localStorage.setItem(MY_COLLEGE_SCOPE_KEY, JSON.stringify({
+          scope: "college", college: one, district: "", swpRegion: ""
+        }));
+      } catch (e) { /* storage unavailable — the tab still opens and asks */ }
+    }
+    if (window.CPL_TABS && typeof CPL_TABS.navigate === "function") CPL_TABS.navigate("college-briefing", "");
+    else location.hash = "#college-briefing";
+  }
+
+  // Complete the ARIA tab pattern. A PARTIAL one is worse than none: it
+  // announces "tab, 1 of 2" and then arrow keys do nothing, so the user is told
+  // about an interaction that isn't there. Roving tabindex + arrow/Home/End are
+  // wired in bindEvents().
+  function selectView(v) {
+    if (!v || v === state.view) return;
+    state.view = v;
+    syncSubtabs();
+    renderRows();
+  }
+
+  function syncSubtabs() {
+    if (!container) return;
+    container.querySelectorAll(".sw-subtab").forEach(function (b) {
+      var on = b.getAttribute("data-view") === state.view;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      // Only the selected tab is in the tab order; arrows move between them.
+      b.setAttribute("tabindex", on ? "0" : "-1");
+    });
+    var cred = document.getElementById("sw-view-credentials");
+    var tbl = document.getElementById("sw-view-table");
+    var mx = document.getElementById("sw-view-matrix");
+    // `hidden` (not display:none) so the panel is removed from the a11y tree
+    // and from find-in-page, which display:none alone on a wrapper can miss.
+    if (cred) cred.hidden = state.view !== "credentials";
+    if (tbl) tbl.hidden = state.view !== "table";
+    if (mx) mx.hidden = state.view !== "matrix";
+    if (state.view !== "matrix") hideMxTip();
   }
 
   function buildFilterButton(key, label, options) {
@@ -663,20 +1767,32 @@
       '<input type="text" class="sw-filter-search" placeholder="Search ' + label.toLowerCase() + '..." />' +
       '<div class="sw-filter-options">' +
       options.map(function (o) {
-        return '<label><input type="checkbox" value="' + escAttr(o) + '" /> ' + esc(o) + '</label>';
+        var v = (o && typeof o === "object") ? o.value : o;
+        var l = (o && typeof o === "object") ? o.label : o;
+        return '<label><input type="checkbox" value="' + escAttr(v) + '" /> ' + esc(l) + '</label>';
       }).join("") +
       '</div></div></div>';
   }
 
-  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
-  function escAttr(s) { return esc(s).replace(/"/g, "&quot;"); }
+  // A regex escaper, not a createElement round trip: the matrix escapes a few
+  // hundred thousand strings per render and the DOM version cost ~1s of it.
+  var ESC_RE = /[&<>"']/g;
+  var ESC_MAP = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+  function esc(s) { return String(s == null ? "" : s).replace(ESC_RE, function (c) { return ESC_MAP[c]; }); }
+  function escAttr(s) { return esc(s); }
   // Compact college label for chips (full name kept in the title attr). Looks up
   // window.cplCollegeShort lazily at call time (college_short_names.js loads after
   // this file), falling back to the full name so a chip never renders blank.
   function SHORT(c) { var f = window.cplCollegeShort; return (f ? (f(c) || c) : c); }
   // A college chip: short label, full name on hover.
+  // <abbr>, not <span> — the short label IS an abbreviation of the full college
+  // name, and on a <span> the `title` is announced inconsistently (and on touch,
+  // not at all). <abbr title> is the element assistive tech actually expands, so
+  // the full name reaches a screen-reader user instead of living in a tooltip
+  // only a mouse can reach. Visual weight is unchanged; the UA underline is
+  // suppressed on the pill variants in CSS.
   function collegeChip(c, cls) {
-    return '<span class="' + cls + '" title="' + escAttr(c) + '">' + esc(SHORT(c)) + '</span>';
+    return '<abbr class="' + cls + '" title="' + escAttr(c) + '">' + esc(SHORT(c)) + '</abbr>';
   }
 
   // ── Consolidated credit recommendations (PR-1) ──
@@ -778,7 +1894,7 @@
     var startIdx = state.page * PAGE_SIZE;
     var pageItems = filtered.slice(startIdx, startIdx + PAGE_SIZE);
 
-    var hasCollegeFilter = state.filters.college.length || state.filters.district.length || state.filters.swRegion.length;
+    var collegeFiltered = hasCollegeFilter();
     var selectedCount = 0;
     var rows = [];
 
@@ -786,25 +1902,42 @@
       var eid = e.exhibit_id || e.title;
       var checked = state.selected[eid] ? ' checked' : '';
       if (state.selected[eid]) selectedCount++;
-      var isExpanded = state.expanded[eid];
+      // Keyed `<eid>_pot` — the "+N more" handler has always WRITTEN that key
+      // while this read used the bare eid, so expanding the college list has
+      // never actually worked. One key, both sides.
+      var isExpanded = state.expanded[eid + "_pot"];
 
-      var adopters = hasCollegeFilter ? (e.adopter_names || []).filter(collegeMatchesFilters) : (e.adopter_names || []);
-      var potentials = hasCollegeFilter ? (e.potential_names || []).filter(collegeMatchesFilters) : (e.potential_names || []);
+      var adopters = collegeFiltered ? (e.adopter_names || []).filter(collegeMatchesFilters) : (e.adopter_names || []);
+      // The could-adopt column is the M-ID likely layer, narrowed by the same
+      // college filters as the adopters beside it.
+      var couldAll = couldAdoptNamesFor(e);
+      var potentials = collegeFiltered
+        ? couldAll.filter(function (c) { return collegeMatchesFilters(c.college); })
+        : couldAll;
 
       var adopterTags = adopters.length > 0
         ? adopters.map(function (c) { return collegeChip(c, "sw-college sw-adopted"); }).join(", ")
         : '<span style="opacity:0.4;font-style:italic;">none</span>';
 
-      var potentialTags;
-      if (potentials.length > 10 && !isExpanded) {
-        potentialTags = potentials.slice(0, 10).map(function (c) {
-          return collegeChip(c, "sw-college sw-potential");
-        }).join(", ") + ' <span class="sw-show-more" data-eid="' + escAttr(eid) + '">+' + (potentials.length - 10) + ' more</span>';
-      } else if (potentials.length > 0) {
-        potentialTags = potentials.map(function (c) { return collegeChip(c, "sw-college sw-potential"); }).join(", ");
-      } else {
-        potentialTags = '<span style="opacity:0.4;font-style:italic;">none identified</span>';
+      // The claim is carried by a TEXT LABEL above the chips (WCAG 1.4.1), the
+      // outline only reinforces it.
+      function couldChip(c) {
+        return collegeChip(c.college, "sw-college sw-potential sw-potential-likely");
       }
+      function couldGroup(label, list) {
+        if (!list.length) return "";
+        var shown = list, more = "";
+        if (list.length > 10 && !isExpanded) {
+          shown = list.slice(0, 10);
+          more = ' <span class="sw-show-more" data-eid="' + escAttr(eid) + '" role="button" tabindex="0">+' +
+            (list.length - 10) + ' more</span>';
+        }
+        return '<div class="sw-could-group"><span class="sw-could-label">' + esc(label) + '</span> ' +
+          shown.map(couldChip).join(", ") + more + '</div>';
+      }
+      var potentialTags = potentials.length > 0
+        ? couldGroup("Already teaches a matching course:", potentials)
+        : '<span class="sw-col-empty">none identified</span>';
 
       var typeBadge = e.collaborative_type === "CCC Collaborative"
         ? '<span class="sw-badge sw-badge-ccc">CCC</span>'
@@ -832,7 +1965,7 @@
           + '<option value="duplicate"'  + (currentFlag === "duplicate" ? ' selected' : '') + '>🚩 dup</option>'
           + '</select>';
       } else if (currentFlag) {
-        flagCell = '<span class="sw-flag-readonly" title="' + escAttr(flagTitle) + '">🚩 ' + esc(currentFlag) + '</span>';
+        flagCell = '<span class="sw-flag-readonly" title="' + escAttr(flagTitle) + '">' + esc(currentFlag) + '</span>';
       } else {
         flagCell = '<span class="sw-flag-none" title="Sign in via the Common Course Reference tab to flag cards.">—</span>';
       }
@@ -848,7 +1981,7 @@
         badgeBits += '<span class="sw-conf-badge" title="Modal title confidence ' + (e.confidence_title || 0).toFixed(2) + ' (threshold ' + CONFIDENCE_THRESHOLD.toFixed(2) + ' per vision §6.2).">needs review · ' + (e.confidence_title || 0).toFixed(2) + '</span>';
       }
       if (e.quality_flag === "suspect_course_as_exhibit") {
-        badgeBits += '<span class="sw-quality-badge" title="At least one raw row was typed Industry Certification but appears to be a course with no associated credential (data-entry artifact).">⚠ course-as-exhibit</span>';
+        badgeBits += '<span class="sw-quality-badge" title="At least one raw row was typed Industry Certification but appears to be a course with no associated credential (data-entry artifact).">course-as-exhibit</span>';
       }
       if (badgeBits) titleBits += '<div class="sw-title-badges">' + badgeBits + '</div>';
       if (e.issuing_agency) {
@@ -878,12 +2011,16 @@
 
     tbody.innerHTML = rows.join("");
 
-    // v2 credential view shares the same filtered set — re-render it alongside.
+    // The credential view shares the same filtered set. Only render it when it
+    // is the visible sub-tab — all three views used to rebuild on every
+    // keystroke, over 2,673 cards.
     var cvBody = document.getElementById("sw-cv-body");
-    if (cvBody) cvBody.innerHTML = buildCredentialView();
-    // v3 student view — same filtered set, seeker framing.
-    var svBody = document.getElementById("sw-sv-body");
-    if (svBody) svBody.innerHTML = buildStudentView();
+    if (cvBody && state.view === "credentials") cvBody.innerHTML = buildCredentialView();
+
+    // Same rule for the matrix: 434 rows × 118 columns is ~51,000 cells, so it
+    // must never rebuild while the user is typing in a different view.
+    var mxBody = document.getElementById("sw-mx-body");
+    if (mxBody && state.view === "matrix") renderMatrix(mxBody);
 
     // Pagination controls
     renderPagination(filtered.length, totalPages);
@@ -942,6 +2079,33 @@
       });
     }
 
+    // ── The cell panel follows hover and focus ──
+    container.addEventListener("mouseover", function (ev) {
+      var td = ev.target.closest && ev.target.closest(".mx-cell.mx-inked");
+      if (td) { if (td !== mxTipFor) showMxTip(td); return; }
+      if (mxTipFor && !(document.activeElement && document.activeElement === mxTipFor)) hideMxTip();
+    });
+    container.addEventListener("mouseleave", function () {
+      if (mxTipFor && !(document.activeElement && document.activeElement === mxTipFor)) hideMxTip();
+    });
+    container.addEventListener("focusin", function (ev) {
+      var td = ev.target.closest && ev.target.closest(".mx-cell");
+      if (!td) return;
+      if (td.classList.contains("mx-inked")) showMxTip(td); else hideMxTip();
+    });
+    container.addEventListener("focusout", function (ev) {
+      var td = ev.target.closest && ev.target.closest(".mx-cell.mx-inked");
+      if (td && !(ev.relatedTarget && ev.relatedTarget.closest && ev.relatedTarget.closest(".mx-cell"))) hideMxTip();
+    });
+    // A fixed-position panel does not follow a scrolled cell; close it — and
+    // move the rendered window with the scroll position.
+    container.addEventListener("scroll", function (ev) {
+      if (ev.target && ev.target.classList && ev.target.classList.contains("mx-box")) {
+        if (!(document.activeElement && document.activeElement.closest && document.activeElement.closest(".mx-cell"))) hideMxTip();
+        mxOnScroll();
+      }
+    }, true);
+
     // Curator flag select → save to Supabase + update local state.
     container.addEventListener("change", function (ev) {
       var sel = ev.target.closest(".sw-flag-select");
@@ -974,7 +2138,104 @@
         .catch(function () { sel.disabled = false; sel.value = prev.flag || ""; });
     });
 
+    // ── Sub-tab keyboard navigation (the other half of role="tablist") ──
+    // Left/Right move between tabs and ACTIVATE on arrival (the automatic
+    // activation pattern, correct when switching is cheap and lossless);
+    // Home/End jump to the ends. Without this the role is a promise we break.
+    container.addEventListener("keydown", function (ev) {
+      // "+N more" is a span carrying role="button", so it gets no native key
+      // activation — a mouse-only control is invisible to a keyboard user.
+      var more = ev.target.closest && ev.target.closest(".sw-show-more");
+      if (more && (ev.key === "Enter" || ev.key === " " || ev.key === "Spacebar")) {
+        ev.preventDefault();
+        state.expanded[more.getAttribute("data-eid") + "_pot"] = true;
+        renderRows();
+        return;
+      }
+
+      // ── The matrix grid: arrows move between cells, Escape leaves ──
+      var box = ev.target.closest && ev.target.closest(".mx-box");
+      if (box && !ev.altKey && !ev.ctrlKey && !ev.metaKey) {
+        var cellEl = ev.target.closest("td.mx-cell");
+        if (cellEl) {
+          if (ev.key === "Escape") {
+            // Consumed here: the page's own Escape handlers (the rail, the
+            // greeting) would otherwise move focus away from the grid.
+            ev.preventDefault(); ev.stopPropagation(); hideMxTip(); box.focus(); return;
+          }
+          if (["ArrowRight", "ArrowLeft", "ArrowUp", "ArrowDown", "Home", "End"].indexOf(ev.key) !== -1) {
+            ev.preventDefault();
+            mxMove(cellEl, ev.key);
+            return;
+          }
+        } else if (ev.target === box && (ev.key === "ArrowDown" || ev.key === "Enter")) {
+          // Enter the grid on its first inked cell.
+          var firstInked = box.querySelector("td.mx-cell.mx-inked");
+          if (firstInked) { ev.preventDefault(); firstInked.setAttribute("tabindex", "-1"); firstInked.focus(); }
+          return;
+        }
+      }
+
+      var tab = ev.target.closest && ev.target.closest(".sw-subtab");
+      if (!tab) return;
+      var keys = { ArrowLeft: -1, ArrowRight: 1, Home: "first", End: "last" };
+      if (!(ev.key in keys)) return;
+      if (ev.altKey || ev.ctrlKey || ev.metaKey) return;
+      var tabs = Array.prototype.slice.call(container.querySelectorAll(".sw-subtab"));
+      var i = tabs.indexOf(tab), move = keys[ev.key], next;
+      if (move === "first") next = tabs[0];
+      else if (move === "last") next = tabs[tabs.length - 1];
+      else next = tabs[(i + move + tabs.length) % tabs.length];
+      if (!next) return;
+      ev.preventDefault();
+      selectView(next.getAttribute("data-view"));
+      next.focus();
+    });
+
     container.addEventListener("click", function (ev) {
+      // Sub-tab switch. The newly-shown view may be stale (renderRows only
+      // builds the visible one), so re-render after flipping.
+      var sub = ev.target.closest(".sw-subtab");
+      if (sub) {
+        selectView(sub.getAttribute("data-view"));
+        return;
+      }
+
+      // Matrix CSV. Re-derived from the same matrixCell() the grid uses, so the
+      // spreadsheet cannot disagree with the screen.
+      if (ev.target.closest("#mx-export-csv")) {
+        exportMatrixCSV();
+        return;
+      }
+
+      // Create Handout → My College, carrying a single filtered college.
+      if (ev.target.closest("#sw-handout")) {
+        openHandout();
+        return;
+      }
+
+      // A tap on an inked cell opens its panel (touch has no hover); a tap
+      // anywhere else in the grid closes it.
+      var inked = ev.target.closest(".mx-cell.mx-inked");
+      if (inked) {
+        if (mxTipFor === inked && mxTip && !mxTip.hidden) hideMxTip();
+        else showMxTip(inked);
+        return;
+      }
+      if (ev.target.closest(".mx-box")) hideMxTip();
+
+      // Matrix row disclosure — which MAP exhibit records fold under this
+      // common title. Open state lives in `state`, not the DOM, because
+      // renderRows() rewrites the whole grid.
+      var disc = ev.target.closest(".mx-disc");
+      if (disc) {
+        var mxT = disc.getAttribute("data-mx-title");
+        if (state.matrixExpanded[mxT]) delete state.matrixExpanded[mxT];
+        else state.matrixExpanded[mxT] = 1;
+        renderRows();
+        return;
+      }
+
       // Gallery section disclosure (v1 table / v2 credential view). The native
       // <details> marker is hidden for styling, so drive the open state in JS
       // too — this is immune to any stacking/overflow quirk in the v1 table
@@ -1041,7 +2302,9 @@
 
     container.addEventListener("change", function (ev) {
       var cb = ev.target;
-      if (cb.type !== "checkbox") return;
+      // Radios (the college-scope control) as well as checkboxes — the old
+      // checkbox-only guard would have silently swallowed every scope change.
+      if (cb.type !== "checkbox" && cb.type !== "radio") return;
 
       if (cb.classList.contains("sw-row-chk")) {
         var tr = cb.closest("tr");
@@ -1063,6 +2326,15 @@
         return;
       }
 
+      // Cell contents. This changes only what the matrix DISPLAYS, not the
+      // filtered card set, so the filter cache stays valid — invalidating it
+      // here would rebuild all 2,673 cards to answer a question about display.
+      if (cb.classList.contains("mx-cells-radio")) {
+        state.matrixCells = cb.value;
+        renderRows();
+        return;
+      }
+
       var group = cb.closest(".sw-filter-group");
       if (group) {
         var filterKey = group.getAttribute("data-filter");
@@ -1070,7 +2342,7 @@
         invalidateCache();
         renderRows();
         var btnEl = group.querySelector(".sw-filter-btn");
-        var labels = { collabType: "Statewide / Local", cplType: "CPL Type", sector: "Career Cluster", discipline: "TOP Code Category", issuer: "Issuing Agency", college: "College", district: "District", swRegion: "SW Region" };
+        var labels = { collabType: "Statewide / Local", cplType: "CPL Type", cipSector: "CIP Sectors", discipline: "TOP Code Category", issuer: "Issuing Agency", college: "College", district: "District", swRegion: "SW Region", ascccArea: "ASCCC Area" };
         var count = state.filters[filterKey].length;
         btnEl.textContent = labels[filterKey] + (count > 0 ? " (" + count + ")" : "") + " ▾";
         btnEl.classList.toggle("active", count > 0);
@@ -1108,26 +2380,59 @@
   }
 
   // ── Exports ──
+  // An export that disagrees with the screen is the same defect this tab just
+  // fixed, one layer down — and it is the layer that gets emailed to a college.
+  // Every export re-derives its could-adopt list from the ACTIVE scope and
+  // labels which scope produced it, so a broad TOP/C-ID lead list can never
+  // leave here dressed as an adoption worklist.
+  function scopeLabelForExport() {
+    return "Adopted — " + COULD_ADOPT_HINT;
+  }
+  function couldAdoptForExport(e) {
+    return couldAdoptNamesFor(e).map(function (c) {
+      return c.college + " (teaches a matching course)";
+    });
+  }
+
   function exportJSON() {
     var data = getSelectedExhibits();
     if (!data.length) { alert("Select at least one exhibit to export."); return; }
-    var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    // Ship the scope alongside the rows, and re-key could-adopt to it. The raw
+    // `potential_names` stays available under its own name so nothing is lost \u2014
+    // it just no longer masquerades as the answer to "who could adopt this".
+    var payload = {
+      _scope: "adopted",
+      _scope_meaning: scopeLabelForExport(),
+      _exported_at: new Date().toISOString(),
+      exhibits: data.map(function (e) {
+        var row = {};
+        Object.keys(e).forEach(function (k) { row[k] = e[k]; });
+        row.could_adopt_names = couldAdoptForExport(e);
+        row.could_adopt = row.could_adopt_names.length;
+        return row;
+      })
+    };
+    var blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
     downloadBlob(blob, "exhibit_adoption_export.json");
   }
 
   function exportExcel() {
     var data = getSelectedExhibits();
     if (!data.length) { alert("Select at least one exhibit to export."); return; }
-    var headers = ["Exhibit Title", "Type", "CPL Type", "Discipline", "Adopters", "Potential",
-      "Credit Recs", "Colleges Adopted", "Potential Adopters", "Credit Recommendation Details"];
+    var headers = ["Exhibit Title", "Type", "CPL Type", "Discipline", "Adopters", "Could Adopt",
+      "Credit Recs", "Colleges Adopted", "Colleges Could Adopt", "Credit Recommendation Details"];
     var rows = data.map(function (e) {
       var recDetails = (e.credit_recs || []).map(function (r) { return r.course + ": " + r.credit; }).join(" | ");
+      var could = couldAdoptForExport(e);
       return [csvCell(e.title), csvCell(e.collaborative_type || "Local"), csvCell(e.cpl_type || ""),
-        csvCell(e.discipline || ""), e.adopters || 0, e.potential || 0, (e.credit_recs || []).length,
-        csvCell((e.adopter_names || []).join("; ")), csvCell((e.potential_names || []).join("; ")),
+        csvCell(e.discipline || ""), e.adopters || 0, could.length, (e.credit_recs || []).length,
+        csvCell((e.adopter_names || []).join("; ")), csvCell(could.join("; ")),
         csvCell(recDetails)].join(",");
     });
-    var csv = headers.join(",") + "\n" + rows.join("\n");
+    // A leading provenance line, because a spreadsheet outlives the screen that
+    // produced it and "Could Adopt" means three different things.
+    var scopeNote = csvCell("Could-adopt scope: " + scopeLabelForExport());
+    var csv = scopeNote + "\n" + headers.join(",") + "\n" + rows.join("\n");
     downloadBlob(new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" }), "exhibit_adoption_export.csv");
   }
 
@@ -1145,6 +2450,12 @@
     }));
     children.push(new docx.Paragraph({
       children: [new docx.TextRun({ text: "Generated: " + new Date().toLocaleDateString() + " | " + data.length + " exhibits", size: 20, color: "666666", font: "Calibri" })],
+      spacing: { after: 120 }, alignment: docx.AlignmentType.CENTER
+    }));
+    // The report can be forwarded to a college. Say what "could adopt" meant
+    // when it was generated, in the document itself.
+    children.push(new docx.Paragraph({
+      children: [new docx.TextRun({ text: "Could-adopt scope: " + scopeLabelForExport(), size: 18, color: "666666", italics: true, font: "Calibri" })],
       spacing: { after: 400 }, alignment: docx.AlignmentType.CENTER
     }));
 
@@ -1155,7 +2466,7 @@
         border: { bottom: { style: docx.BorderStyle.SINGLE, size: 1, color: "CCCCCC" } }
       }));
       children.push(new docx.Paragraph({
-        children: [new docx.TextRun({ text: "Type: " + (e.collaborative_type || "Local") + "  |  CPL: " + (e.cpl_type || "N/A") + "  |  Discipline: " + (e.discipline || "N/A") + "  |  Adopters: " + (e.adopters || 0) + "  |  Potential: " + (e.potential || 0), size: 18, color: "555555", font: "Calibri" })],
+        children: [new docx.TextRun({ text: "Type: " + (e.collaborative_type || "Local") + "  |  CPL: " + (e.cpl_type || "N/A") + "  |  Discipline: " + (e.discipline || "N/A") + "  |  Adopters: " + (e.adopters || 0) + "  |  Could adopt: " + couldAdoptForExport(e).length, size: 18, color: "555555", font: "Calibri" })],
         spacing: { after: 100 }
       }));
 
@@ -1172,8 +2483,9 @@
 
       children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: "Colleges Adopted (" + (e.adopters || 0) + "):", bold: true, size: 20, font: "Calibri" })], spacing: { before: 100 } }));
       children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: (e.adopter_names || []).join(", ") || "None", size: 18, font: "Calibri" })], spacing: { after: 100 } }));
-      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: "Potential Adopters (" + (e.potential || 0) + "):", bold: true, size: 20, font: "Calibri" })], spacing: { before: 100 } }));
-      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: (e.potential_names || []).join(", ") || "None identified", size: 18, font: "Calibri" })], spacing: { after: 200 } }));
+      var couldNames = couldAdoptForExport(e);
+      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: "Colleges That Could Adopt (" + couldNames.length + "):", bold: true, size: 20, font: "Calibri" })], spacing: { before: 100 } }));
+      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: couldNames.join(", ") || "None identified", size: 18, font: "Calibri" })], spacing: { after: 200 } }));
     });
 
     var doc = new docx.Document({ sections: [{ properties: {}, children: children }] });

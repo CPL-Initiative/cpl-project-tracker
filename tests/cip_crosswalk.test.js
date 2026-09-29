@@ -78,8 +78,10 @@ const COURSES = [
 // noncredit boilerplate codes, plus a nursing CIP reachable only by description
 // (never listed for the business TOP → the "outside the crosswalk" case).
 const RFIXTURE = {
-  fams: { "51": "Health Professions", "52": "Business", "32": "Basic Skills", "49": "Transportation", "27": "Mathematics" },
+  fams: { "51": "Health Professions", "52": "Business", "32": "Basic Skills", "49": "Transportation", "27": "Mathematics", "50": "Visual and Performing Arts" },
   rows: [
+    { code: "50.0908", t: "Voice and Opera", cat: "CTE", fam: "50", def: "A program that prepares individuals to master the human voice and its use in operatic and vocal performance and singing.", ex: "", act: "" },
+    { code: "50.0509", t: "Musical Theatre", cat: "CTE", fam: "50", def: "A program that prepares individuals for musical theatre and stage acting and dance performance.", ex: "", act: "" },
     { code: "49.0205", t: "Truck and Bus Driver/Commercial Vehicle Operator and Instructor", cat: "CTE", fam: "49", def: "A program that prepares individuals to drive trucks and buses and other commercial motor vehicles.", ex: "", act: "" },
     { code: "27.0101", t: "Mathematics, General", cat: "Non-CTE", fam: "27", def: "A general program that focuses on mathematics and statistics.", ex: "", act: "" },
     { code: "32.0202", t: "High School Equivalent Exam Preparation", cat: "Noncredit", fam: "32", def: "A noncredit program preparing students for high school equivalent examinations.", ex: "", act: "" },
@@ -96,6 +98,11 @@ const RFIXTURE = {
     "0505.00": { t: "Accounting", c: [["52.0201", "o"], ["52.0301", "o"], ["52.0302", "o"], ["32.0107", "n"], ["32.0111", "n"]] },
     "1701.00": { t: "Mathematics", c: [["27.0101", "o"], ["32.0202", "n"]] },
     "1230.00": { t: "Registered Nursing", c: [["51.3801", "o"]] },
+    // Music: this college's TOP lists BOTH Voice and Musical Theatre (title-boost → Voice leads for a
+    // "Voice" course); peers file voice courses under 1005.00, whose only credit CIP is Musical Theatre —
+    // a weak fit. Exercises the strong-own-fit veto (F1: "Intermediate Voice" must not become Musical Theatre).
+    "1004.00": { t: "Music", c: [["50.0509", "o"], ["50.0908", "o"]] },
+    "1005.00": { t: "Applied Music", c: [["50.0509", "o"]] },
     // a broad "grab-bag" TOP with candidates unrelated to any course (mirrors real TOP 0956.00) — a
     // course coded here gets only weak lexical picks, so it exercises the program-coherence default.
     "9560.00": { t: "Manufacturing and Industrial Technology", c: [["49.0205", "o"], ["27.0101", "o"], ["01.0000", "o"]] },
@@ -103,31 +110,40 @@ const RFIXTURE = {
   boiler: ["32.0107", "32.0111"],
 };
 const RCOURSES = [
-  ["BUS 101 — Business Basics", "A general business administration program covering management and organization and accounting operations.", "0505.00"],
+  ["BUS 101 — Business Basics", "A general business administration program covering management and organization and accounting operations.", "0505.00", "C"],
   ["NURS 101 — Nursing", "A program that prepares registered nurses to practice nursing and patient care.", "0505.00"],
   ["MYST 1 — Mystery", "Short.", "0505.00"],
   ["ORPH 1 — Orphan Course", "A program that prepares registered nurses to practice nursing and patient care.", "7777.00"],
   // Three ACCT courses whose generic descriptions match no crosswalk code distinctively → all land on
   // the same crosswalk code with no confident winner → status "review" (mirrors Sam's Autobody case:
   // identical-looking rows, split Ready/Review). Their why-lines exercise the "same code as N" branch.
-  ["ACCT 200 — Special Topics", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
-  ["ACCT 201 — Special Projects", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
-  ["ACCT 202 — Independent Study", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
+  // credit flag "D" = noncredit CDCP → cap 2, so the multi-CIP add/apply flow is exercisable
+  // (a credit / non-CDCP course is capped at 1 CIP — tested separately below).
+  ["ACCT 200 — Special Topics", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00", "D"],
+  ["ACCT 201 — Special Projects", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00", "D"],
+  ["ACCT 202 — Independent Study", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00", "D"],
   // ACCT 300 is coded under the grab-bag TOP 9560.00 → only weak lexical picks (none 52.030x). Its own
   // pick is uncorroborated (count 1), so it should DEFAULT to the ACCT dominant 52.0301 (Sam's IWAP→welding
   // program-coherence idea), still flagged Review — not left showing an unrelated weak code.
   ["ACCT 300 — Field Study", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "9560.00"],
+  // MUS 10 "Voice" (appended so the numeric RCOURSES[] indices above stay stable): own title strongly
+  // matches 50.0908 Voice and Opera; MUS peers file voice under 1005.00 → 50.0509 Musical Theatre (weak
+  // fit) → the strong-own-fit veto must keep Voice and Opera as the headline (Review, not a peer change).
+  ["MUS 10 — Voice", "A course in vocal performance and singing and the human voice and solo voice technique and operatic repertoire.", "1004.00"],
 ];
 // cross-college consensus fixture: peers overwhelmingly code "Nursing" under a Registered
 // Nursing TOP (1230.00); this college used 0505.00 (Accounting) — the lone outlier.
 const RCONSENSUS = {
   colleges: ["Alpha College", "Beta College", "Gamma College", "Delta College", "Test College"],
-  subjects: ["NURS", "BUS"],
+  subjects: ["NURS", "BUS", "MUS"],
   titles: {
     // all 5 "Nursing" peers are NURS-subject → a NURS course gets a SUBJECT-SCOPED consensus that
     // may override the outlier's business TOP (the legit correction). Parallel [collegeIdx],[subjIdx].
     "nursing": { n: 5, t: [["1230.00", [0, 1, 2, 3], [0, 0, 0, 0]], ["0505.00", [4], [0]]] },
     "business basics": { n: 6, t: [["0505.00", [0, 1, 2, 3, 4], [1, 1, 1, 1, 1]]] },
+    // 5 MUS peers file "voice" under 1005.00 (→ Musical Theatre, a weak fit) — a confident scoped
+    // consensus that the strong-own-fit veto must NOT let override Voice and Opera.
+    "voice": { n: 5, t: [["1005.00", [0, 1, 2, 3, 4], [2, 2, 2, 2, 2]]] },
   },
 };
 function freshR(mode) {
@@ -139,6 +155,10 @@ function freshR(mode) {
   api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
   api._setCourses("test_college", JSON.parse(JSON.stringify(RCOURSES)));
   api.activate();
+  // Browse/recommend lost their nav buttons (2026-08-14) and navNormalise() now coerces a STORED
+  // browse mode back to review on purpose, so pinning via localStorage no longer sticks. Drive the
+  // still-supported mode through the seam instead.
+  if (mode && mode !== "review") api._setMode(mode);
   // College is no longer restored from storage (ephemeral, Sam's fix) — pick it the way a user
   // would, via the dropdown, so the college-scoped views render.
   try {
@@ -158,6 +178,7 @@ function fresh(withCollege) {
   api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
   api._setCourses && api._setCourses("test_college", JSON.parse(JSON.stringify(COURSES)));
   api.activate();
+  api._setMode("browse");   // no nav button since 2026-08-14; the mode itself is untouched
   // College is ephemeral (Sam's fix — not restored from storage); pick it via the dropdown.
   if (withCollege) {
     try { const csel = dom.window.document.querySelector(".cipx-college-sel"); if (csel) { csel.value = "test_college"; csel.dispatchEvent(new dom.window.Event("change")); } } catch (e) {}
@@ -182,21 +203,54 @@ function fresh(withCollege) {
   api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
 
   let actThrew = false;
-  try { api.activate(); } catch (e) { actThrew = true; console.error("activate threw:", e); }
+  try { api.activate(); api._setMode("browse"); } catch (e) { actThrew = true; console.error("activate threw:", e); }
   check("activate() renders without throwing", !actThrew);
 
   const root = document.getElementById("cip-crosswalk-root");
   check("renders the .cipx container", root && root.querySelector(".cipx"));
-  check("renders the 'CIP Coder' header with a Beta badge", root && /CIP Coder/.test(root.querySelector(".cipx-h2").textContent) && !!root.querySelector(".cipx-h2 .cipx-beta"));
+  check("renders the 'Searchable CIP Code Taxonomy' header with a Beta badge", root && /Searchable CIP Code Taxonomy/.test(root.querySelector(".cipx-h2").textContent) && !!root.querySelector(".cipx-h2 .cipx-beta"));
+  // Intro copy (Jenni, 2026-08-11). She asked what "sync your settled codes straight to COCI" meant —
+  // whether a college could upload from this page. It cannot: the Tech Center batch/API push is Phase B
+  // (docs/cip_submission_access_plan.md §3c). A promise a reader mistakes for a feature is worse than
+  // no promise, so the copy states today's truth and marks the future as future.
+  check("intro: starts from the TOP code and its list of approved CIPs (Jenni's wording)", root && /Start from one of your current TOP codes, get a list of approved CIP codes that map to the TOP code/.test(root.querySelector(".cipx-sub").textContent));
+  check("intro: says plainly that nothing uploads from this page", root && /no upload from this page/.test(root.querySelector(".cipx-sub").textContent) && /your college enters the codes it settles on in COCI/i.test(root.querySelector(".cipx-sub").textContent));
+  check("intro: no longer implies a COCI sync exists today", src.indexOf("soon, sync your settled codes") === -1);
   check("eyebrow names Academic Affairs", root && /Academic Affairs/.test(root.querySelector(".cipx-eyebrow").textContent));
   check("renders the theme toggle", root && root.querySelector(".cipx-themetog"));
   check("renders the search box", root && root.querySelector(".cipx-panel #cipx-q"));
   check("renders 5 category pills", root && root.querySelectorAll(".cipx-pills .cipx-pill").length === 5);
-  check("renders the family select (All + 3 fams)", root && root.querySelector(".cipx-fsel") && root.querySelector(".cipx-fsel").querySelectorAll("option").length === 4);
+  check("renders the sector (2-digit) select (All + 3 sectors)", root && root.querySelector(".cipx-fsel-cip") && root.querySelector(".cipx-fsel-cip").querySelectorAll("option").length === 4);
   check("renders the college selector bar", root && root.querySelector(".cipx-collegebar .cipx-college-sel"));
   check("college selector is populated (placeholder + 1 college)", root && root.querySelector(".cipx-college-sel").querySelectorAll("option").length === 2);
   check("hides retired/reserved by default (3 go-forward rows)", root && root.querySelectorAll(".cipx-item").length === 3);
   check("_filtered returns the 3 go-forward rows", api._filtered().length === 3);
+
+  // ── CIP-code hierarchy filters (2 / 4 / 6-digit) — leftmost + Select All (#6) ──
+  const cipGrp = root.querySelector(".cipx-controls .cipx-cipfilters");
+  check("CIP-code filter group renders", !!cipGrp);
+  check("CIP-code filters are the leftmost control", root.querySelector(".cipx-controls").firstElementChild === cipGrp);
+  const cipSels = root.querySelectorAll(".cipx-cipfilters .cipx-fsel-cip");
+  check("renders 3 CIP-code selects (2/4/6-digit)", cipSels.length === 3);
+  const csel2 = cipSels[0], csel4 = cipSels[1], csel6 = cipSels[2];
+  check("each CIP select has a Select-All option at the top",
+    csel2.options[0].value === "" && csel4.options[0].value === "" && csel6.options[0].value === "" &&
+    /All sectors/.test(csel2.options[0].textContent) && /All sub-series/.test(csel4.options[0].textContent) && /All codes/.test(csel6.options[0].textContent));
+  check("4-digit select lists All + the 3 sub-series", csel4.options.length === 4 && Array.prototype.some.call(csel4.options, (o) => o.value === "51.38"));
+  check("6-digit select lists All + the 3 codes with titles", csel6.options.length === 4 && Array.prototype.some.call(csel6.options, (o) => o.value === "51.3801" && /Registered Nursing/.test(o.textContent)));
+  // cascade: picking a sector narrows results AND the sub-series list
+  csel2.value = "51"; csel2.dispatchEvent(new window.Event("change"));
+  check("selecting a sector filters results to that sector", api._filtered().length === 1 && api._filtered()[0].code === "51.3801");
+  check("selecting a sector narrows the 4-digit list", Array.prototype.every.call(csel4.options, (o) => o.value === "" || o.value.slice(0, 2) === "51"));
+  csel2.value = ""; csel2.dispatchEvent(new window.Event("change"));
+  check("Select-All sector restores all go-forward rows", api._filtered().length === 3);
+  // a 6-digit pick filters to exactly that code
+  csel6.value = "52.0201"; csel6.dispatchEvent(new window.Event("change"));
+  check("selecting a 6-digit code filters to exactly that code", api._filtered().length === 1 && api._filtered()[0].code === "52.0201");
+  csel6.value = ""; csel6.dispatchEvent(new window.Event("change"));
+  check("clearing the 6-digit code restores all rows", api._filtered().length === 3);
+  // #4 — the CTE cat chip is bold + prominent (CSS)
+  check("CTE cat chip is bold + bordered (prominent)", /\.cipx-cat-CTE\{[^}]*font-weight:800[^}]*border:1px solid var\(--cipx-cte-stripe\)/.test(src));
 
   // engine seams
   const nurse = api._score("registered nursing").ranked;
@@ -280,7 +334,7 @@ function fresh(withCollege) {
 
   // ── Part B2 — "Find my course's code" (TOP→CIP easy button) ──
   check("cip_crosswalk_data.js carries topcip{} + boiler[]", /"topcip":/.test(dataSrc) && /"boiler":/.test(dataSrc));
-  check("cip_crosswalk.js has the two-mode toggle", /cipx-modebar/.test(src) && /Find my course/.test(src));
+  check("cip_crosswalk.js has the two-destination nav (Browse + Find hidden 2026-08-14)", /cipx-modebar/.test(src) && /Review my programs/.test(src) && /Review my courses/.test(src));
   check("cip_crosswalk.js exposes the recommend seam", /_recommend:/.test(src));
 
   // logic (via the _recommend seam — no DOM)
@@ -295,13 +349,26 @@ function fresh(withCollege) {
   check("recommend carries a provenance tier per candidate", mBiz.cands[0].prov === "o");
   // a nursing description under the business TOP → strong match OUTSIDE the crosswalk, no false winner
   const mNur = rApi._recommend(RCOURSES[1]);
-  check("recommend surfaces a strong match outside the crosswalk (⚠)", mNur.beyond.some((o) => o.r.code === "51.3801"));
+  check("recommend surfaces a match under a more-appropriate TOP (51.3801, in the crosswalk under TOP 1230.00)", mNur.beyond.some((o) => o.r.code === "51.3801"));
   check("recommend withholds a winner when the signals disagree", mNur.recommended === null);
+  // Crosswalk-only (Sam, 2026-07-28): every alternative we present is in the crosswalk under SOME TOP,
+  // carrying its source TOP(s); a truly free-range code (in no TOP's crosswalk) is never surfaced.
+  check("alt-TOP: every 'more-appropriate TOP' match carries its source TOP(s)", mNur.beyond.length > 0 && mNur.beyond.every((o) => o.altTops && o.altTops.length));
+  check("alt-TOP: the nursing alternative is tagged with its crosswalk TOP 1230.00", mNur.beyond.some((o) => o.r.code === "51.3801" && o.altTops.some((a) => a.top === "1230.00")));
+  const mFree = rApi._recommend(["MGT 1 — Managerial Economics", "A program in business administration and management and organization and accounting and economics and econometrics and quantitative analysis for managers.", "0505.00"]);
+  check("crosswalk-only: a free-range CIP (52.9001, in NO TOP's crosswalk) is never surfaced as an alternative", mFree.beyond.every((o) => o.r.code !== "52.9001"));
   // a TOP absent from the crosswalk → falls back to description matches, no crash
   const mOrphan = rApi._recommend(RCOURSES[3]);
   check("recommend handles a TOP absent from the crosswalk", mOrphan.hasCross === false && mOrphan.res.ranked.length >= 1);
   // too-thin description → flagged honestly
   check("recommend flags a too-thin description", rApi._recommend(RCOURSES[2]).thin === true);
+  // Collision guard (2026-07-28): the credit/CDCP flag lives in course tuple slot [3]; the fit-check's
+  // token-memo cache used to live there too. A course carrying a credit flag must still tokenize its
+  // description (not return "C"/"D" as its "tokens") — the cache now lives in slot [4].
+  const flaggedC = ["BIO 1 — Environmental Biology", "A course in ecology and environmental biology and ecosystems and organisms.", "0401.00", "D"];
+  const flaggedToks = rApi._courseToks(flaggedC.slice());
+  check("credit flag at slot [3] does not corrupt course tokenization", flaggedToks && typeof flaggedToks === "object" && Object.keys(flaggedToks).length >= 3);
+  check("a credit-flagged course still scores against a CIP (fit-check unaffected)", typeof rApi._courseScore(rApi._courseToks(flaggedC.slice()), FIXTURE.rows[0]).score === "number");
   // bestCipForTop (drives the consensus pre-fill) is CREDIT-FIRST: the CO crosswalk attaches the
   // noncredit family (32.* exam-prep/basic-skills) to nearly every TOP, so a credit course can
   // lexically match one on an incidental word. It must never out-rank the TOP's credit CIP.
@@ -359,13 +426,52 @@ function fresh(withCollege) {
   const mWeak = rApi._recommend(["ZZZ 1 — Unrelated", "quilting macrame origami calligraphy pottery", "0505.00"]);
   check("an all-weak TOP is not falsely recommended", mWeak.recommended === null);
 
+  // ── Discipline-fit lift on the DISPLAYED confidence (Sam, 2026-07-20 — carpentry courses read 8%) ──
+  // A specialized course in a discipline that maps 1:1 to its CIP (Carpentry TOP → 46.0201) barely
+  // overlaps the generic CIP definition, so its raw description-fit reads a misleading single digit.
+  // The DISPLAY confidence `dconf` lifts a crosswalk cand by how cleanly the course's TOP title maps
+  // to that CIP's title. §7-clean (reads the authoritative TOP↔CIP crosswalk's own pairing quality)
+  // and DISPLAY-ONLY — gates keep the raw `conf`. Here TOP 0505.00 title "Accounting": 52.0301
+  // "Accounting" is a clean match (lifted); 52.0201 "Business Administration and Management" is not.
+  const mDisc = rApi._recommend(["ACCT 250 — Payroll Systems", "A hands-on course in employer payroll tax deposits, quarterly filings, and wage garnishment processing.", "0505.00"]);
+  const acctCand = mDisc.cands.filter((o) => o.r.code === "52.0301")[0];   // CIP title matches the TOP title
+  const bizCand = mDisc.cands.filter((o) => o.r.code === "52.0201")[0];    // CIP title does NOT match the TOP title
+  check("discipline-fit: crosswalk cands carry a display dconf", acctCand && typeof acctCand.dconf === "number");
+  check("discipline-fit: a CIP whose title matches the TOP title is lifted (dconf > raw conf)", acctCand && acctCand.dconf > acctCand.conf);
+  check("discipline-fit: the clean-mapping code no longer reads a misleading single digit", acctCand && acctCand.dconf >= 45);
+  check("discipline-fit: a CIP whose title does NOT match the TOP title is not lifted", bizCand && bizCand.dconf === bizCand.conf);
+  check("discipline-fit: dconf never exceeds the 95 de-inflation cap", mDisc.cands.every((o) => o.dconf <= 95));
+  check("discipline-fit: dconf never drops below the raw conf", mDisc.cands.every((o) => o.dconf >= o.conf));
+  // DISPLAY-ONLY: the lift must not move the raw gates. The raw `conf` (used by the Ready/Review split,
+  // the strong-own-fit veto, and the outside-crosswalk mis-code flag) is untouched, and `recommended`
+  // (relative-score gated) is unchanged — an all-weak TOP is still not recommended even though its
+  // display would lift where a candidate's title happens to match.
+  check("discipline-fit: raw conf is preserved alongside dconf (gates read raw)", acctCand && acctCand.conf < acctCand.dconf && typeof acctCand.conf === "number");
+  check("discipline-fit: the lift does not fabricate a recommendation (gate stays on raw signal)", rApi._recommend(["ZZZ 2 — Unrelated", "quilting macrame origami calligraphy pottery basket weaving", "0505.00"]).recommended === null);
+
+  // ── Fix A — a SOLE-credit-crosswalk mapping reads confident, even without a title match (Sam, 2026-07-20) ──
+  // BUSL 10 → the sole 22.0000 Legal Studies for TOP "Law": the lexical lift missed law≠legal, so the direct
+  // crosswalk pick read 28%. When a TOP maps to ONE credit CIP, that CIP is the approved crosswalk's field
+  // code (§7-authoritative) → full discipline-fit. TOP 1230.00 → the sole credit 51.3801; a thin-fit course
+  // still reads it confidently, while a MULTI-credit TOP (0505.00, 3 credit CIPs) gets no blanket lift.
+  const mSole = rApi._recommend(["ZZ 1 — Clinical Practicum", "supervised hours in a clinical facility setting.", "1230.00"]);
+  const soleCand = mSole.cands.filter((o) => o.r.code === "51.3801")[0];
+  check("Fix A: a sole-credit-crosswalk CIP carries a lifted display dconf (≥60)", soleCand && soleCand.dconf >= 60 && soleCand.dconf > soleCand.conf);
+  check("Fix A: the sole-credit lift is display-only — raw conf is untouched", soleCand && soleCand.conf < 60 && typeof soleCand.conf === "number");
+  // A MULTI-credit TOP gets no BLANKET sole-credit lift: a cand whose title doesn't match the TOP title
+  // reads dconf == conf (52.0201 "Business Administration" ≠ TOP 0505.00 "Accounting"). Its sibling 52.0301
+  // "Accounting" DOES lift, but only via the #860 title match — proving the exemption is scoped, not blanket.
+  const mMulti = rApi._recommend(["ZZ 2 — Thing", "quilting basket weaving pottery macrame origami.", "0505.00"]);
+  const bizC = mMulti.cands.filter((o) => o.r.code === "52.0201")[0];
+  check("Fix A: a multi-credit-crosswalk TOP is NOT blanket-lifted (a non-title-matching cand gets no lift)", bizC && bizC.dconf === bizC.conf);
+
   // ── Fix D: the boiler codes never leak into the ⚠ "outside the crosswalk" drawer ──
   const mBoiler = rApi._recommend(["WKX 1 — Workplace Intro", "Career exploration and workforce development awareness training.", "1701.00"]);
   check("Fix D: boiler codes are excluded from the outside-the-crosswalk (beyond) list", mBoiler.beyond.every((o) => o.r.code !== "32.0107" && o.r.code !== "32.0111"));
 
-  // ── work-experience courses stay in their discipline (no outside-crosswalk nudge) ──
-  // Same description as mOut (which DOES surface 52.9001 in `beyond`), but a work-
-  // experience label suppresses the drawer — the units belong to the course's discipline.
+  // ── work-experience courses stay in their discipline (no more-appropriate-TOP nudge) ──
+  // A work-experience label suppresses the alt-TOP drawer entirely — the units belong to the
+  // course's own discipline, so "how peers code work experience across fields" doesn't apply.
   const mWE = rApi._recommend(["ACCT 200 — Accounting Work Experience", "business administration and management and organization and accounting and econometrics", "0505.00"]);
   check("work-experience courses stay in discipline — outside-crosswalk drawer suppressed", mWE.beyond.length === 0);
   const mWEcoop = rApi._recommend(["BUS 90 — Cooperative Work Experience Education", "business administration and management and organization and accounting and econometrics", "0505.00"]);
@@ -383,8 +489,11 @@ function fresh(withCollege) {
   // DOM: recommend mode renders + picking a course produces a recommendation card
   const domR = freshR("recommend");
   const rdoc = domR.window.document;
-  check("recommend mode: the toggle shows all three modes", rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3);
-  check("recommend mode: the recommend tab is selected", rdoc.querySelector(".cipx-modetab.on") && /Find my course/.test(rdoc.querySelector(".cipx-modetab.on").textContent));
+  check("recommend mode: the nav shows the two visible destinations", rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 2);
+  // Recommend has no nav button since 2026-08-14, so NO tab lights up while it renders — and that is
+  // the intended read: the two review lanes stay plainly clickable, so there is always a way out of a
+  // mode you can no longer navigate INTO. (navNormalise() means a returning user never lands here.)
+  check("recommend mode: no tab is selected, and both review lanes stay clickable", !rdoc.querySelector(".cipx-modetab.on") && rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 2);
   check("recommend mode: shows the course-first panel, not the browse list", rdoc.querySelector(".cipx-rec .cipx-panel") && !rdoc.querySelector(".cipx-list"));
   await tick(); await tick();  // let loadCollege() resolve
   const rInput = rdoc.querySelector(".cipx-rec-combohost .cipx-cbwrap .cipx-fit-cb");
@@ -403,7 +512,8 @@ function fresh(withCollege) {
   rInput.focus();
   const nurOpt = Array.prototype.filter.call(rdoc.querySelector(".cipx-rec-combohost .cipx-fit-panel").querySelectorAll(".cipx-cb-opt"), (o) => /Nursing/.test(o.textContent))[0];
   nurOpt.dispatchEvent(new domR.window.MouseEvent("mousedown"));
-  check("recommend mode: a signal-disagreement opens the outside-the-crosswalk section", rHost.querySelector(".cipx-beyond-btn") && /outside the crosswalk/.test(rHost.querySelector(".cipx-beyond-btn").textContent));
+  check("recommend mode: a signal-disagreement opens the more-appropriate-TOP section", rHost.querySelector(".cipx-beyond-btn") && /more-appropriate TOP/.test(rHost.querySelector(".cipx-beyond-btn").textContent));
+  check("recommend mode: the alt-TOP card is labeled with its crosswalk TOP", rHost.querySelector(".cipx-beyond-body .cipx-alttop") && /TOP 1230\.00/.test(rHost.querySelector(".cipx-beyond-body .cipx-alttop").textContent));
   // changing the college IN recommend mode must rebuild the course-first view —
   // NOT call the browse render() (which throws on the absent countHost).
   let recSelThrew = false;
@@ -430,13 +540,23 @@ function fresh(withCollege) {
   check("recommend mode: the consensus block names the peer field's CIP", rcHost && /51\.3801/.test(rcHost.querySelector(".cipx-rev-peer").textContent));
 
   // ── Part B3 — "Review my catalog" (Phase 2 whole-catalog triage) ──
-  check("cip_crosswalk.js has the review-catalog mode", /Review my catalog/.test(src) && /cipx-rev-list/.test(src));
+  check("cip_crosswalk.js has the review-catalog mode", /Review my courses/.test(src) && /cipx-rev-list/.test(src));
   check("exposes the review seams", typeof rApi._reviewRows === "function" && typeof rApi._parseSubject === "function");
   check("parseSubject strips the course number to the department", rApi._parseSubject("BUS 101 — Business Basics") === "BUS" && rApi._parseSubject("NC ES140 — Esthetician I") === "NC");
   const revRows = rApi._reviewRows(RCOURSES);
   check("review classifies a two-signals-agree course as ready/clear", revRows.find((r) => /Business Basics/.test(r.label)).status === "clear");
   check("review row carries the suggested CIP + parsed subject", (function () { var r = revRows.find((x) => /Business Basics/.test(x.label)); return r.sug && r.sug.code === "52.0201" && r.subj === "BUS"; })());
   check("review flags a no-crosswalk course as manual", revRows.find((r) => /Orphan/.test(r.label)).status === "manual");
+  // CfC F10: a thin-description course whose TOP HAS a crosswalk is manual but still carries the crosswalk
+  // code as a starting point (the why-line must name it, not claim "no code" — DOM-checked below).
+  check("F10: a manual row on a TOP with a crosswalk keeps the code as a starting point", (function () { var r = revRows.find((x) => /Mystery/.test(x.label)); return r && r.status === "manual" && r.sug && /^52\./.test(r.sug.code); })());
+  // CfC F7: recommend-mode won't say "no single clear front-runner" when the top candidate is a strong fit.
+  check("F7: recommend lead branches on a strong top candidate", /\(m\.cands\[0\]\.conf \|\| 0\) >= 75/.test(src) && /fits this course's description best of the codes/.test(src));
+  // CfC F9: the peer-corroborated ✓· conveys itself to screen readers, not just a hover dot.
+  check("F9: peer-corroborated status carries an aria label", /peer-corroborated/.test(src));
+  // CfC F6: the browse "Closest matches" helper is gated to multi-word phrases (a single keyword is a
+  // list filter), so it no longer duplicates the code list + breaks the "N codes" count.
+  check("F6: the finder helper is gated to multi-word queries", /\.trim\(\)\.split\(\/\\s\+\/\)\.length < 2\) return/.test(src));
 
   // ── consensus PRE-FILL + the SUGGESTED-CHANGE two-box (Sam's points 1, 2, 6) ──
   // NURS 101 is coded under a business TOP (0505.00), but 4 of 5 peer colleges teaching
@@ -466,12 +586,15 @@ function fresh(withCollege) {
   check("F3: a wrong-family outside-crosswalk match is filtered from beyondOk (still present in m.beyond)",
     f3Row.m.beyond.some((o) => /^52\./.test(o.r.code)) && !f3Row.beyondOk.some((o) => /^52\./.test(o.r.code)));
   check("F3: with its only outside match filtered, the row flags no disagreement", f3Row.disagree === false);
-  // Crosswalk-primary (Sam, 2026-07-19): a strong same-family outside-crosswalk match is a "worth a look"
-  // hint (beyondOk), but the headline stays a CROSSWALK code — the outside code never auto-wins the box.
+  // Crosswalk-only (Sam, 2026-07-28): a code in NO TOP's crosswalk (52.9001, free-range) is never
+  // surfaced — not as the headline, not as a "more-appropriate TOP" alternative. The headline stays a
+  // real crosswalk code from the course's own TOP.
   const f5Course = ["BUS 90 — Econometrics", "Econometrics and econometric quantitative analysis for managers and economics.", "0505.00"];
   const f5Row = fxApi._reviewRows([f5Course])[0];
-  check("crosswalk-primary: a strong outside match (52.9001) surfaces as 'worth a look', not the headline",
-    f5Row.sug && /^52\.0[23]/.test(f5Row.sug.code) && f5Row.sug.code !== "52.9001" && f5Row.beyondOk.some((o) => o.r.code === "52.9001"));
+  check("crosswalk-only: a free-range match (52.9001) is never surfaced; the headline stays a crosswalk code",
+    f5Row.sug && /^52\.0[23]/.test(f5Row.sug.code) && f5Row.sug.code !== "52.9001"
+    && !(f5Row.m.beyond || []).some((o) => o.r.code === "52.9001")
+    && !(f5Row.beyondOk || []).some((o) => o.r.code === "52.9001"));
 
   // ── SUBJECT-SCOPED consensus (Sam's BIO 35 "Health Science" catch) ──
   // The same title can be a HEALTH course at most colleges and a BIOLOGY course at a few. A
@@ -542,10 +665,10 @@ function fresh(withCollege) {
   const domRev = freshR("review");
   domRev.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);   // peer-consensus fixture (fetch is a no-op in jsdom)
   const revdoc = domRev.window.document;
-  check("review mode: three tabs, review selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3 && /Review my catalog/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
+  check("review mode: two destinations, Review-my-courses selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 2 && /Review my courses/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
   // Sam's point 3 (2026-07-18): Review is the FIRST tab and the default mode.
-  check("Review is the FIRST mode tab (Sam's point 3)", /Review my catalog/.test(revdoc.querySelectorAll(".cipx-modebar .cipx-modetab")[0].textContent));
-  check("Review is the DEFAULT mode when nothing is stored (point 3)", (function () { var d = freshR(); var doc = d.window.document; return !!doc.querySelector(".cipx-rev") && /Review my catalog/.test(doc.querySelector(".cipx-modetab.on").textContent); })());
+  check("the two Review destinations lead the nav — programs, then courses (Sam, 2026-08-11)", (function () { var t = revdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return /Review my programs/.test(t[0].textContent) && /Review my courses/.test(t[1].textContent); })());
+  check("Review is the DEFAULT mode when nothing is stored (point 3)", (function () { var d = freshR(); var doc = d.window.document; return !!doc.querySelector(".cipx-rev") && /Review my courses/.test(doc.querySelector(".cipx-modetab.on").textContent); })());
   check("source: review status glyph is a visible '?', suggested is a distinct '⇄'", /review:\s*\{\s*g:\s*"\?"/.test(src) && /suggest:\s*\{\s*g:\s*"⇄"/.test(src));
   check("mode tabs are label-only — no glyphs (Sam, 2026-07-20)", revdoc.querySelectorAll(".cipx-modetab .cipx-tabico").length === 0 && !/📖|🎯|📋/.test(revdoc.querySelector(".cipx-modebar").textContent));
   check("review mode: shows the trust banner", revdoc.querySelector(".cipx-rev-banner") && /starting point you confirm/.test(revdoc.querySelector(".cipx-rev-banner").textContent));
@@ -569,7 +692,7 @@ function fresh(withCollege) {
   check("a 'showing …' context line ties the tile counts to the visible list (point 2c)", (function () { var s = revdoc.querySelector(".cipx-rev-showing"); return s && /Showing/.test(s.textContent); })());
   check("a reassurance line sits under the bulk-confirm buttons (point 4)", (function () { var r = revdoc.querySelector(".cipx-rev-reassure"); return r && /never final/.test(r.textContent) && /COCI/.test(r.textContent); })());
   check("the 'Confirm all' button carries a reassuring, not-irreversible tooltip (point 4)", (function () { var b = revdoc.querySelector(".cipx-rev-bulk"); return b && /never final/.test(b.getAttribute("title") || ""); })());
-  check("Theme + Expand + CSV live together in the top-right rail", !!revdoc.querySelector(".cipx-toprail .cipx-themetog") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-expand") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-csv"));
+  check("Theme + CSV in the rail; Expand moved to the sticky tiles row (Sam, 2026-07-20)", !!revdoc.querySelector(".cipx-toprail .cipx-themetog") && !!revdoc.querySelector(".cipx-toprail-rev .cipx-rev-csv") && !revdoc.querySelector(".cipx-toprail-rev .cipx-rev-expand") && !!revdoc.querySelector(".cipx-rev-tilesrow .cipx-rev-actions .cipx-rev-expand"));
   check("Coco the emotional-support pup rides in the rail (muted outlined SVG + name)", (function () { var c = revdoc.querySelector(".cipx-toprail .cipx-coco"); return c && c.querySelector(".cipx-coco-svg") && /Coco/.test(c.textContent); })());
   const revRow = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
   check("review mode: renders a course row with a suggested CIP chip", revRow && revRow.querySelector(".cipx-rev-chip .cipx-code"));
@@ -587,12 +710,23 @@ function fresh(withCollege) {
   cand.click();
   await tick();
   check("review mode: picking a candidate persists the decision (localStorage, as an array)", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.indexOf("52.0201") >= 0; } catch (e) { return false; } })());
-  // multi-CIP: a course can carry more than one code; toggling a second adds it, toggling again removes it
+  // Credit-type CIP cap (Raul, 2026-07-28): BUS 101 is a CREDIT course (flag "C", cap 1) → picking a
+  // different candidate REPLACES its single CIP; it never accumulates a second.
   const bus2 = revRow.querySelectorAll(".cipx-rev-cand")[1];
   if (bus2) { bus2.click(); await tick(); }
-  check("review mode: a course can carry more than one CIP (multi-select)", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length >= 2; } catch (e) { return false; } })());
-  if (bus2) { bus2.click(); await tick(); }
-  check("review mode: toggling a picked CIP off removes it", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length === 1; } catch (e) { return false; } })());
+  check("cap: a credit (cap-1) course keeps exactly ONE CIP when another candidate is picked (replaces, never accumulates)", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length === 1; } catch (e) { return false; } })());
+  check("cap: a credit course shows its 'Credit course' label + a disabled '+' and no active add button", !!revRow.querySelector(".cipx-rev-credit") && /Credit course/.test(revRow.querySelector(".cipx-rev-credit").textContent) && !!revRow.querySelector(".cipx-rev-addcip-off") && !revRow.querySelector("button.cipx-rev-addcip"));
+  // CTE / Non-CTE choice for a "Both"-category CIP (Jenni, 2026-07-28): assign a Both code (01.0000) and
+  // confirm the assigned box surfaces a CTE / Non-CTE toggle whose pick persists in cipx_revcte_<college>.
+  domRev.window.localStorage.setItem("cipx_rev_test_college", JSON.stringify({ "BUS 101 — Business Basics": ["01.0000"] }));
+  deptSel.value = "NURS"; deptSel.dispatchEvent(new domRev.window.Event("change")); await tick();
+  deptSel.value = "BUS"; deptSel.dispatchEvent(new domRev.window.Event("change")); await tick();
+  const busRowB = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-item"), (it) => /BUS 101/.test(it.textContent))[0];
+  const cteWrap = busRowB && busRowB.querySelector(".cipx-rev-cte");
+  check("CTE-choice: a 'Both'-category assigned CIP surfaces a CTE / Non-CTE toggle", !!cteWrap && cteWrap.querySelectorAll(".cipx-rev-ctebtn").length === 2);
+  check("CTE-choice: the toggle starts unset (prompts a choice)", !!cteWrap && cteWrap.classList.contains("cipx-rev-cte-unset"));
+  if (cteWrap) { cteWrap.querySelector(".cipx-rev-ctebtn").click(); await tick(); }
+  check("CTE-choice: picking CTE persists to cipx_revcte_<college>", (function () { try { return JSON.parse(domRev.window.localStorage.getItem("cipx_revcte_test_college") || "{}")["BUS 101 — Business Basics|01.0000"] === "cte"; } catch (e) { return false; } })());
   check("review row shows the TOP → CIP transition (current TOP beside the CIP box)", revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop") && /0505\.00/.test(revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop").textContent) && !!revRow.querySelector(".cipx-rev-tocip .cipx-rev-gbox .cipx-rev-chip"));
   // a stronger match OUTSIDE the crosswalk is a selectable candidate (assignable)
   deptSel.value = "NURS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
@@ -623,6 +757,17 @@ function fresh(withCollege) {
   await tick();
   check("review mode: assigning an outside-crosswalk code persists it", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
 
+  // Strong-own-fit veto (CfC F1–F5, 2026-07-20): MUS 10 "Voice" — own title strongly matches 50.0908
+  // Voice and Opera, but MUS peers file voice under 1005.00 → 50.0509 Musical Theatre (weak fit). The veto
+  // must keep Voice and Opera as the headline, flag Review (not a peer-suggested change), and demote the
+  // peer code to the why-line. (Guards the exact F1 failure mode without regressing the NURS override above.)
+  deptSel.value = "MUS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
+  await tick(); await tick();
+  const musItem = revdoc.querySelector(".cipx-rev-list .cipx-rev-item");
+  check("veto: MUS 10 keeps the strong own-fit (50.0908 Voice and Opera) as the box, NOT peers' Musical Theatre", (function () { var box = musItem && musItem.querySelector(".cipx-rev-chip .cipx-code"); return box && /50\.0908/.test(box.textContent) && !/50\.0509/.test(box.textContent); })());
+  check("veto: the row is flagged Review ('?'), not a peer-Suggested change (⇄) or two-box", !!musItem.querySelector(".cipx-rev-stat-warn") && !musItem.querySelector(".cipx-rev-stat-suggest") && !musItem.querySelector(".cipx-rev-2box"));
+  check("veto: the why-line names BOTH the own-fit code and the weaker peer code (demoted to a note)", (function () { var w = musItem && musItem.querySelector(".cipx-rev-whyline"); return w && /50\.0908/.test(w.textContent) && /50\.0509/.test(w.textContent) && /peers/i.test(w.textContent); })());
+
   // ── new Review UI affordances on a FRESH, unmutated instance (Sam's points 1, 4, 5, 6) ──
   const domU = freshR("review");
   domU.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);
@@ -631,8 +776,8 @@ function fresh(withCollege) {
   const uSel = udoc.querySelector(".cipx-rev-deptsel");
   uSel.value = "__all__"; uSel.dispatchEvent(new domU.window.Event("change"));
   await tick(); await tick();
-  const xall = udoc.querySelector(".cipx-toprail-rev .cipx-rev-expand");
-  check("Expand-all control is present in the top-right rail (point 6)", !!xall && /Expand all|Collapse all/.test(xall.textContent));
+  const xall = udoc.querySelector(".cipx-rev-tilesrow .cipx-rev-expand");
+  check("Expand-all control rides in the sticky tiles row (point 6; Sam 2026-07-20)", !!xall && /Expand all|Collapse all/.test(xall.textContent));
   check("suggested-change rows are expanded by default, others collapsed", udoc.querySelectorAll(".cipx-rev-detail").length >= 1 && udoc.querySelectorAll(".cipx-rev-detail").length < udoc.querySelectorAll(".cipx-rev-item").length);
   xall.click(); await tick();
   check("Expand all opens every row", udoc.querySelectorAll(".cipx-rev-detail").length === udoc.querySelectorAll(".cipx-rev-item").length);
@@ -645,10 +790,45 @@ function fresh(withCollege) {
   const uNur = Array.prototype.filter.call(udoc.querySelectorAll(".cipx-rev-item"), (it) => /Nursing/.test(it.textContent))[0];
   const uChg = uNur.querySelector(".cipx-rev-chip-rec .cipx-rev-chipchg");
   check("the CIP box carries a ▾ 'change to any code' affordance (point 5)", !!uChg);
+  // Suggested-change row: the action bar offers a MATCHED PAIR — "✓ Confirm <peer>" (primary) AND
+  // "Keep <crosswalk>" (secondary) — so keeping the course's own crosswalk code is one obvious click,
+  // not a hunt for its Select button in the list (Sam, 2026-07-20 — "not sure how to keep 13.1210").
+  const uNurActs = uNur.querySelector(".cipx-rev-detactions");
+  const uWasCode = (function () { var c = uNur.querySelector(".cipx-rev-chip-was .cipx-code"); return c && c.textContent.trim(); })();
+  check("suggested row action bar has a '✓ Confirm <peer>' button", (function () { var b = uNurActs && uNurActs.querySelector(".cipx-rev-confirm"); return b && /Confirm 51\.3801/.test(b.textContent); })());
+  check("suggested row action bar ALSO offers 'Keep <crosswalk>' (the fix for 'how do I keep the crosswalk?')", (function () { var b = uNurActs && uNurActs.querySelector(".cipx-rev-keep"); return b && uWasCode && b.textContent.indexOf("Keep " + uWasCode) >= 0 && !/51\.3801/.test(b.textContent); })());
   uChg.click(); await tick();
   check("clicking ▾ opens a change-to-any-code dropdown", !!uNur.querySelector(".cipx-rev-chgpanel .cipx-cbwrap"));
+  // Sam's recurring bug: the change-panel is a CHILD of the chip, so a click in its search field
+  // bubbled to the chip's onAccept and OK'd the CIP. Guard: clicking inside the OPEN panel (e.g. the
+  // search input) must NOT persist a decision — you should be able to type a keyword freely.
+  (function () { var inp = uNur.querySelector(".cipx-rev-chgpanel input"); if (inp) inp.click(); })(); await tick();
+  check("clicking inside the change-panel does NOT confirm the code (Sam's ▾-OKs-the-CIP bug)", (function () { try { var v = JSON.parse(domU.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return !v || (Array.isArray(v) && v.length === 0); } catch (e) { return true; } })());
+  // close-on-click-away (Sam, 2026-07-20): a pointer-down outside the chip dismisses the open search box
+  // so it doesn't hog the screen; then re-open for the accept test below.
+  udoc.dispatchEvent(new domU.window.MouseEvent("mousedown", { bubbles: true }));
+  await tick();
+  check("the change-panel closes on a click outside it (Sam — don't hog the screen)", !uNur.querySelector(".cipx-rev-chgpanel"));
+  uChg.click(); await tick();   // re-open (chip + ▾ still present after closeP)
   uNur.querySelector(".cipx-rev-chip-rec").click(); await tick();
   check("clicking the emphasized peer box uses that code (one-click accept — point 1)", (function () { try { var v = JSON.parse(domU.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf("51.3801") >= 0; } catch (e) { return false; } })());
+
+  // Keep-button click on a FRESH suggested row: clicking "Keep <crosswalk>" assigns the crosswalk code
+  // (52.0201) AND validates it (✓) — the counterpart to "✓ Confirm <peer>", so either decision is one
+  // click (Sam, 2026-07-20). Fresh instance so it doesn't disturb the mutation order above.
+  const domK = freshR("review");
+  domK.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);
+  const kdoc = domK.window.document; await tick(); await tick();
+  const kSel = kdoc.querySelector(".cipx-rev-deptsel");
+  kSel.value = "NURS"; kSel.dispatchEvent(new domK.window.Event("change"));
+  await tick(); await tick();
+  const kItem = kdoc.querySelector(".cipx-rev-list .cipx-rev-item");
+  const kCross = (function () { var c = kItem && kItem.querySelector(".cipx-rev-chip-was .cipx-code"); return c && c.textContent.trim(); })();
+  const kKeep = kItem && kItem.querySelector(".cipx-rev-detactions .cipx-rev-keep");
+  check("Keep button is present on the fresh suggested row (its crosswalk code)", !!kKeep && !!kCross && kKeep.textContent.indexOf("Keep " + kCross) >= 0);
+  kKeep.click(); await tick();
+  check("clicking 'Keep <crosswalk>' assigns the crosswalk code, not the peer 51.3801", (function () { try { var v = JSON.parse(domK.window.localStorage.getItem("cipx_rev_test_college") || "{}")["NURS 101 — Nursing"]; return Array.isArray(v) && v.indexOf(kCross) >= 0 && v.indexOf("51.3801") < 0; } catch (e) { return false; } })());
+  check("clicking 'Keep <crosswalk>' validates the row (a confirmed ✓)", (function () { var it = kdoc.querySelector(".cipx-rev-list .cipx-rev-item"); return it && it.classList.contains("cipx-rev-conf") && !it.querySelector(".cipx-rev-2box"); })());
 
   // ── Review-status rows: the visible "?" glyph + the inline "why" reason (Sam's points 1 & 2) ──
   deptSel.value = "ACCT"; deptSel.dispatchEvent(new domRev.window.Event("change"));
@@ -665,6 +845,40 @@ function fresh(withCollege) {
   check("a weak 'no clear winner' row defaults its box to the department's dominant code (Sam's IWAP→welding idea)", (function () { var c = acct300 && acct300.querySelector(".cipx-rev-chip .cipx-code"); return c && /52\.0301/.test(c.textContent); })());
   check("the defaulted row stays flagged Review (a '?' status), not silently 'Ready'", (function () { var s = acct300 && acct300.querySelector(".cipx-rev-stat-warn"); return s && /\?/.test(s.textContent); })());
   check("the defaulted row's 'why' line is honest about the default (defaulted to … N of your ACCT courses use)", (function () { var w = acct300 && acct300.querySelector(".cipx-rev-whyline-review"); return w && /defaulted to/.test(w.textContent) && /52\.0301/.test(w.textContent) && /of your ACCT courses use/.test(w.textContent); })());
+
+  // ── Fix C — the Confirm button commits what the BOX shows, never a different code (Sam, 2026-07-20) ──
+  // ACCT 300's box is dept-defaulted to 52.0301, so Confirm must read "Confirm 52.0301" — not the raw weak
+  // crosswalk sug (BUSL 10 showed 22.0302 in the box but "Confirm 22.0000"). Also guards the right-aligned
+  // decision cluster (buttons on the right, with the Select column).
+  acct300.querySelector(".cipx-rev-row").click(); await tick();
+  const acct300b = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-item"), (it) => /ACCT 300/.test(it.textContent))[0];
+  check("Fix C: Confirm targets the code the box shows (dept-default 52.0301), not the raw sug", (function () { var b = acct300b && acct300b.querySelector(".cipx-rev-confirm"); return b && /Confirm 52\.0301/.test(b.textContent); })());
+  check("Fix C: the decision buttons live in the right-aligned cluster (with the Select column)", !!(acct300b && acct300b.querySelector(".cipx-rev-actdecide .cipx-rev-confirm")) && !!(acct300b && acct300b.querySelector(".cipx-rev-actutils .cipx-rev-searchall")));
+
+  // ── Fix B — a SOLE-credit-crosswalk Review row is NOT overridden by the dept-default (Sam, 2026-07-20) ──
+  // The approved crosswalk's single mapping is the direct field code (BUSL 10 → 22.0000, not the dept's
+  // 22.0302). Set up subject ACX: three courses land on 52.0301 (→ dept dominant) plus one on the SOLE-credit
+  // TOP 1230.00 (→ 51.3801). The sole-crosswalk row keeps 51.3801 in its box; the grab-bag control above
+  // (ACCT 300) still defaults — proving the exemption is narrow, not a blanket disabling of the default.
+  const domSC = makeDom(); domSC.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+  try { domSC.window.localStorage.setItem("cipx_mode", "review"); } catch (e) {}
+  domSC.window.eval(src);
+  const scApi = domSC.window.CPL_CIP_CROSSWALK, scDoc = domSC.window.document;
+  scApi._setColleges([{ name: "B College", slug: "b_college", n: 4 }]);
+  scApi._setCourses("b_college", [
+    ["ACX 1 — Accounting A", "practice accounting and auditing and bookkeeping.", "0505.00"],
+    ["ACX 2 — Accounting B", "practice accounting and auditing and bookkeeping.", "0505.00"],
+    ["ACX 3 — Accounting C", "practice accounting and auditing and bookkeeping.", "0505.00"],
+    ["ACX 9 — Clinical Practicum", "supervised hours in a clinical facility setting.", "1230.00"],
+  ]);
+  scApi.activate();
+  await tick(); await tick();
+  const scCs = scDoc.querySelector(".cipx-college-sel"); if (scCs) { scCs.value = "b_college"; scCs.dispatchEvent(new domSC.window.Event("change")); }
+  await tick(); await tick();
+  const scSel = scDoc.querySelector(".cipx-rev-deptsel"); scSel.value = "ACX"; scSel.dispatchEvent(new domSC.window.Event("change"));
+  await tick(); await tick();
+  const acx9 = Array.prototype.filter.call(scDoc.querySelectorAll(".cipx-rev-item"), (it) => /ACX 9/.test(it.textContent))[0];
+  check("Fix B: a sole-credit-crosswalk Review row keeps the crosswalk code (51.3801) in its box, not the dept-default", (function () { var c = acx9 && acx9.querySelector(".cipx-rev-chip .cipx-code"); return c && /51\.3801/.test(c.textContent) && !/52\.0301/.test(c.textContent); })());
 
   // ── multi-CIP: inline "+" add (with anchor-OK) + apply-to-subject, targets stay in Review (Sam, 2026-07-18) ──
   const domM = freshR("review");
@@ -766,6 +980,332 @@ function fresh(withCollege) {
   await tick(); await tick();
   check("baseline: the college-overview clears once a department is chosen", !bdoc.querySelector(".cipx-rev-ovtiles"));
 
+  // ── Programs review (top-level Courses/Programs toggle) — PR4 (Sam, 2026-07-28) ──
+  const PROGRAMS_FX = {
+    colleges: ["ALPHA COLLEGE"],
+    awards: ["A.S. Degree", "Certificate"],
+    statuses: ["Active"],
+    // ROW: [collegeIdx, ctrl, title, top, cip, awardIdx, statusIdx, units, xfer, cte]
+    rows: [
+      [0, "1001", "Business Administration", "0505.00", "52.0201", 0, 0, "18.00", 0, 0],   // 52.0201 ∈ crosswalk(0505.00) → OK
+      [0, "1002", "Managerial Accounting", "0505.00", "52.9001", 0, 0, "18.00", 0, 1],       // 52.9001 ∉ crosswalk → needs revision (CTE program)
+      [0, "1003", "General Agriculture", "9560.00", "01.0000", 1, 0, "12.00", 0, 1],         // 01.0000 ∈ crosswalk(9560.00) + cat "Both" → CTE toggle
+    ],
+  };
+  const domP = makeDom();
+  domP.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+  try { domP.window.localStorage.setItem("cipx_scope", "programs"); } catch (e) {}
+  domP.window.eval(src);
+  const pApi = domP.window.CPL_CIP_CROSSWALK;
+  pApi._setPrograms(JSON.parse(JSON.stringify(PROGRAMS_FX)));
+  pApi.activate();
+  const pdoc = domP.window.document;
+  check("programs: exposes the programs seams", typeof pApi._setPrograms === "function" && typeof pApi._progNeedsRevision === "function");
+  // ── One flat nav (Sam, 2026-08-11) ────────────────────────────────────────────────────────────
+  // The two-level `Code my: [Programs][Courses]` + mode bar is gone. It made every visitor pick a
+  // scope that two of the three destinations ignored, and the scope tab kept reading "Courses"
+  // while you were browsing — a label asserting an action you are not taking.
+  check("nav: one flat bar of two destinations, no separate scope bar", (function () { var t = pdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return t.length === 2 && pdoc.querySelectorAll(".cipx-scopebar, .cipx-scopetab").length === 0; })());
+  check("nav: the two destinations read Review my programs · Review my courses", (function () { var t = Array.prototype.map.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => x.textContent.trim()); return t.length === 2 && t[0] === "Review my programs" && t[1] === "Review my courses"; })());
+  // Hidden, not deleted (Sam, after Jenni, 2026-08-14) — "Browse CIP codes" / "Find a course's code"
+  // muddy the waters while the field is walked through the two review lanes. The MODES still work;
+  // only their nav entries are withheld, so a restore is putting two objects back in NAV.
+  check("nav: the hidden destinations offer no button", (function () { var t = pdoc.querySelector(".cipx").textContent; return !/Browse CIP codes/.test(t) && !/Find a course.s code/.test(t); })());
+  check("nav: only ONE destination is selected at a time", pdoc.querySelectorAll(".cipx-modetab.on").length === 1);
+  check("nav: scope=programs + mode=review selects 'Review my programs', not 'Review my courses'", /Review my programs/.test(pdoc.querySelector(".cipx-modetab.on").textContent));
+  check("nav: the old 'Code my:' label and 'Review my catalog' tab no longer render", !/Code my:/.test(pdoc.querySelector(".cipx").textContent) && !/Review my catalog/.test(pdoc.querySelector(".cipx").textContent));
+  check("programs: needs-revision detector — a CIP outside the current crosswalk flags true", pApi._progNeedsRevision("0505.00", "52.9001") === true && pApi._progNeedsRevision("0505.00", "52.0201") === false);
+  // pick the college
+  const pcsel = pdoc.querySelector(".cipx-prog .cipx-college-sel");
+  check("programs: a program college selector renders (its own — program-export names)", !!pcsel && pcsel.querySelectorAll("option").length === 2);
+  pcsel.value = "0"; pcsel.dispatchEvent(new domP.window.Event("change"));
+  await tick();
+  const pRows = pdoc.querySelectorAll(".cipx-prog-item");
+  check("programs: picking a college lists its programs", pRows.length === 3);
+  check("programs: the summary counts programs needing revision", /1 need revision/.test(pdoc.querySelector(".cipx-prog-summary").textContent));
+  // Tweak 2 (Sam, 2026-07-28): the course college bar is suppressed in Programs review — only the
+  // program view's OWN selector shows (it was rendering twice).
+  check("programs: only ONE college selector renders (no duplicate course college bar)", pdoc.querySelectorAll(".cipx-collegebar").length === 1);
+  // Tweak 3 (Sam, 2026-07-28): programs are grouped under CIP sector headers, ascending by code.
+  const secHdrs = pdoc.querySelectorAll(".cipx-prog-sector");
+  check("programs: rows are grouped under CIP sector headers", secHdrs.length === 2);
+  check("programs: sectors are in ascending code order (01 before 52)", secHdrs.length === 2 && /^01$/.test(secHdrs[0].querySelector(".cipx-prog-sector-code").textContent.trim()) && /^52$/.test(secHdrs[1].querySelector(".cipx-prog-sector-code").textContent.trim()));
+  check("programs: a sector header shows its family title", /Business/.test((secHdrs[1] && secHdrs[1].textContent) || ""));
+  check("programs: within-list order is CIP-ascending (01.0000 program first, 52.9001 last)", (function () { var items = pdoc.querySelectorAll(".cipx-prog-item"); return items.length === 3 && /General Agriculture/.test(items[0].textContent) && /Business Administration/.test(items[1].textContent) && /Managerial Accounting/.test(items[2].textContent); })());
+  // needs-revision first
+  const flagItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /Managerial Accounting/.test(it.textContent))[0];
+  check("programs: a mismatched-CIP program is flagged 'needs revision'", flagItem && flagItem.classList.contains("cipx-prog-item-flag") && !!flagItem.querySelector(".cipx-prog-revflag"));
+  check("programs: a CTE program shows a bold CTE chip on the row", flagItem && !!flagItem.querySelector(".cipx-cat-CTE"));
+  // ── All approved CIP codes on EVERY row (Jenni + Raul, 2026-08-11) ─────────────────────────────
+  // The regression this guards: the option list used to live inside the `needs revision` branch, so a
+  // program whose assigned CIP was merely VALID showed one code and offered no way to see the other
+  // 16. Child Development (TOP 1305.00 → 19.0709, valid, CTE) is the real case — colleges moving to
+  // 19.0706 (Non-CTE) had no route to it. "Business Administration" is the fixture's stand-in: TOP
+  // 0505.00, assigned 52.0201, in the crosswalk, NOT flagged.
+  const okItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /Business Administration/.test(it.textContent))[0];
+  check("programs: an UNFLAGGED row still offers the full approved-CIP list (the Child Development case)", !!okItem && !okItem.classList.contains("cipx-prog-item-flag") && !!okItem.querySelector(".cipx-prog-optbtn"));
+  check("programs: the toggle names how many codes the TOP approves", !!okItem && /All 5 approved CIP codes for TOP 0505\.00/.test(okItem.querySelector(".cipx-prog-optbtn").textContent));
+  check("programs: an unflagged row's list starts collapsed", !!okItem && !okItem.querySelector(".cipx-prog-opts") && okItem.querySelector(".cipx-prog-optbtn").getAttribute("aria-expanded") === "false");
+  okItem.querySelector(".cipx-prog-optbtn").click(); await tick();
+  const okOpen = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /Business Administration/.test(it.textContent))[0];
+  const okOpts = okOpen.querySelectorAll(".cipx-prog-opt");
+  check("programs: expanding lists EVERY crosswalk CIP for the TOP, ascending by code", (function () { var v = Array.prototype.map.call(okOpts, (o) => o.querySelector(".cipx-code").textContent); return v.join(",") === "32.0107,32.0111,52.0201,52.0301,52.0302"; })());
+  // The whole point of Jenni's Child Development catch: the code is changing CTE→Non-CTE, so each
+  // option has to SHOW its designation or the choice can't be made from this list.
+  check("programs: every option carries its CTE / Non-CTE designation", Array.prototype.every.call(okOpts, (o) => !!o.querySelector(".cipx-cat")));
+  check("programs: the assigned code is marked as the one COCI holds", (function () { var a = Array.prototype.filter.call(okOpts, (o) => /52\.0201/.test(o.textContent))[0]; return a && !!a.querySelector(".cipx-prog-optasg") && a.classList.contains("cipx-prog-opt-on"); })());
+  check("programs: a field-submitted pairing is labelled as such", (function () { var f = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-opt"), (o) => o.querySelector(".cipx-prog-optsrc"))[0]; return f === undefined || /field-submitted/.test(f.textContent); })());
+  // Peer usage counts distinct COLLEGES, not programs — a college with three certificates on one CIP
+  // counts once, which is what "how many colleges use this code" means.
+  check("programs: peer usage counts distinct colleges, not programs", (function () { var a = Array.prototype.filter.call(okOpts, (o) => /52\.0201/.test(o.textContent))[0]; return a && a.querySelector(".cipx-prog-optuse").textContent.trim() === "1 college"; })());
+  check("programs: a CIP no college uses says so rather than showing a bare 0", (function () { var z = Array.prototype.filter.call(okOpts, (o) => /52\.0302/.test(o.textContent))[0]; return z && z.querySelector(".cipx-prog-optuse").textContent.trim() === "no colleges yet"; })());
+  // Selecting the already-assigned code must CLEAR the override, not record a no-op "revision" that
+  // would later read as a change the college made.
+  Array.prototype.filter.call(okOpts, (o) => /52\.0201/.test(o.textContent))[0].click(); await tick();
+  check("programs: re-selecting the COCI-assigned code records no revision", (function () { try { return !(JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1001"] || {}).cip; } catch (e) { return false; } })());
+  // a flagged row opens its list by default — it is the row that most needs the alternatives
+  check("programs: a needs-revision row opens the option list by default", !!flagItem.querySelector(".cipx-prog-opts"));
+  const fOpt = Array.prototype.filter.call(flagItem.querySelectorAll(".cipx-prog-opt"), (o) => /52\.0301/.test(o.textContent))[0];
+  check("programs: the option list offers only current-crosswalk CIPs for this TOP (rule #7)", (function () { var v = Array.prototype.map.call(flagItem.querySelectorAll(".cipx-prog-opt .cipx-code"), (c) => c.textContent); return v.indexOf("52.0201") >= 0 && v.indexOf("52.9001") < 0; })());
+  fOpt.click();
+  await tick();
+  check("programs: a revised row shows what it changed FROM (COCI still holds the old code)", (function () { var it = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (x) => /Managerial Accounting/.test(x.textContent))[0]; return it && /changed from/.test(it.textContent) && /52\.9001/.test(it.querySelector(".cipx-prog-changed").textContent); })());
+  check("programs: choosing a crosswalk CIP persists to cipx_prog_<collegeIdx>", (function () { try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1002"].cip === "52.0301"; } catch (e) { return false; } })());
+  check("programs: after revising, the program is no longer flagged (moves out of 'needs revision')", (function () { var it = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (x) => /Managerial Accounting/.test(x.textContent))[0]; return it && !it.classList.contains("cipx-prog-item-flag"); })());
+  check("programs: the summary count drops after a revision", /0 need revision/.test(pdoc.querySelector(".cipx-prog-summary").textContent));
+  // CTE / Non-CTE choice on a "Both"-category program CIP (General Agriculture → 01.0000)
+  const bothItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /General Agriculture/.test(it.textContent))[0];
+  const pcte = bothItem && bothItem.querySelector(".cipx-prog-cte");
+  check("programs: a 'Both'-category program CIP surfaces a CTE / Non-CTE toggle", !!pcte && pcte.querySelectorAll(".cipx-rev-ctebtn").length === 2);
+  // Jenni's wording (2026-08-11). The old label — "This CIP is Both — use as:" — read as a property
+  // of the code rather than a decision the college makes.
+  check("programs: the 'Both' prompt uses Jenni's wording (a choice the college makes, not a property of the code)", !!pcte && /This CIP can be either CTE or Non-CTE\. Select the designation your college will use for this program/.test(pcte.textContent));
+  check("programs: the old 'This CIP is Both — use as' phrasing no longer renders", !!pcte && !/This CIP is Both/.test(pcte.textContent));
+  if (pcte) { pcte.querySelector(".cipx-rev-ctebtn").click(); await tick(); }
+  check("programs: the CTE choice persists to cipx_prog_<collegeIdx>", (function () { try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1003"].cte === "cte"; } catch (e) { return false; } })());
+
+  // ── 2026-08-14 batch (Sam, after meeting Jenni) ───────────────────────────────────────────────
+
+  // "Both" reads as a property of the CIP; it is a CHOICE the college still owes. The full phrase
+  // is ~4x the width of BOTH and would push the row past the viewport, so the badge says EITHER and
+  // the sentence lives in the tooltip. Assert BOTH halves — a short label with no tooltip is just a
+  // different opaque word.
+  (function () {
+    var badge = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item .cipx-cat-Both"), function () { return true; })[0];
+    check("cat badge: a certified-Both CIP renders EITHER, never 'Both'", !!badge && /Either/i.test(badge.textContent) && !/Both/i.test(badge.textContent));
+    check("cat badge: the tooltip carries the full 'Either CTE or Non-CTE' sentence", !!badge && /Either CTE or Non-CTE/.test(badge.getAttribute("title") || ""));
+    check("cat badge: the class still keys off the raw category (styling unchanged)", !!badge && badge.className.indexOf("cipx-cat-Both") >= 0);
+  })();
+
+  // The header never said what the two-digit number WAS — a bare "01" beside a long title read as
+  // part of the title.
+  (function () {
+    var sec = pdoc.querySelector(".cipx-prog-sector .cipx-prog-sector-lbl");
+    check("sector header: carries a 'CIP Sector' label", !!sec && /CIP Sector/.test(sec.textContent));
+    var nocip = pdoc.querySelector(".cipx-prog-sector-nocip");
+    check("sector header: the no-CIP bucket gets NO sector label (it is not a sector)", !nocip || !nocip.querySelector(".cipx-prog-sector-lbl"));
+  })();
+
+  // Row typography: TOP is the code you are LEAVING (plain), CIP the one you are moving TO (labelled).
+  (function () {
+    // Rows are grouped by CIP sector ascending, so the FIRST item is sector 01 (General Agriculture,
+    // TOP 9560.00) — pick by title rather than by position, or the assertion tests the sort order.
+    var item = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), function (it) {
+      return /Business Administration/.test(it.querySelector(".cipx-prog-title").textContent);
+    })[0];
+    var l2 = item && item.querySelector(".cipx-prog-l2");
+    check("row: the TOP code is no longer bold", !!l2 && !l2.querySelector(".cipx-prog-top b"));
+    check("row: the TOP code still renders its value", !!l2 && /TOP\s*0505\.00/.test(l2.textContent.replace(/\s+/g, " ")));
+    var lbl = l2 && l2.querySelector(".cipx-prog-ciplbl");
+    check("row: a bold CIP label precedes the CIP code", !!lbl && lbl.textContent.trim() === "CIP");
+    check("row: the CIP label sits BEFORE the code, not after", (function () {
+      if (!lbl) return false;
+      var code = l2.querySelector(".cipx-code");
+      return !!code && (lbl.compareDocumentPosition(code) & 4) !== 0;   // DOCUMENT_POSITION_FOLLOWING
+    })());
+  })();
+  // A row with no CIP must not sprout a "CIP" label over an em-dash placeholder.
+  check("row: a program with no CIP renders no CIP label", (function () {
+    var none = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), function (it) { return it.querySelector(".cipx-prog-nocip"); })[0];
+    return !none || !none.querySelector(".cipx-prog-ciplbl");
+  })());
+
+  // ── The three multi-select pickers (Sam: "we want users to use this first for simplicity") ─────
+  const mpicks = pdoc.querySelectorAll(".cipx-prog-tools .cipx-mpick");
+  check("pickers: three render (Program · Award type · CIP Sector)", mpicks.length === 3);
+  check("pickers: they sit LEFT of the keyword box", (function () {
+    var tools = pdoc.querySelector(".cipx-prog-tools"), q = tools && tools.querySelector(".cipx-prog-search");
+    if (!q || !mpicks.length) return false;
+    return (mpicks[2].compareDocumentPosition(q) & 4) !== 0;
+  })());
+  check("pickers: labelled Program, Award type, CIP Sector in that order", (function () {
+    var t = Array.prototype.map.call(mpicks, function (m) { return m.querySelector(".cipx-mpick-lbl").textContent.trim(); });
+    return t[0] === "Program" && t[1] === "Award type" && t[2] === "CIP Sector";
+  })());
+  check("pickers: each starts on its 'All …' summary (no filter applied)", (function () {
+    var v = Array.prototype.map.call(mpicks, function (m) { return m.querySelector(".cipx-mpick-val").textContent.trim(); });
+    return v[0] === "All programs" && v[1] === "All award types" && v[2] === "All CIP sectors";
+  })());
+  // Sam's call: 284 titles is a FEATURE — reading your own program titles refreshes your memory of
+  // what you own. So the list is unabridged; assert every title is offered, not a truncated head.
+  mpicks[0].querySelector(".cipx-mpick-btn").click(); await tick();
+  check("picker: opens a panel with a find box", !!mpicks[0].querySelector(".cipx-mpick-panel") && !mpicks[0].querySelector(".cipx-mpick-panel").hidden && !!mpicks[0].querySelector(".cipx-mpick-find"));
+  // Click-away must close it, and the document listener must not outlive the open panel — the
+  // toolbar is re-rendered on every college switch, so a permanently-bound closure accumulates one
+  // dead listener per picker per rebuild.
+  (function () {
+    var before = mpicks[0].querySelector(".cipx-mpick-panel").hidden;
+    pdoc.body.click();
+    check("picker: clicking away closes the panel", before === false && mpicks[0].querySelector(".cipx-mpick-panel").hidden === true);
+    mpicks[0].querySelector(".cipx-mpick-btn").click();   // re-open for the assertions below
+  })();
+  check("picker: offers EVERY program title, unabridged", mpicks[0].querySelectorAll(".cipx-mpick-opt").length === 3);
+  (function () {
+    var find = mpicks[0].querySelector(".cipx-mpick-find");
+    find.value = "account"; find.dispatchEvent(new domP.window.Event("input"));
+    check("picker: the find box narrows the option list", mpicks[0].querySelectorAll(".cipx-mpick-opt").length === 1);
+    var f2 = mpicks[0].querySelector(".cipx-mpick-find");
+    f2.value = "zzzz"; f2.dispatchEvent(new domP.window.Event("input"));
+    check("picker: a find with no hits says so rather than rendering an empty panel", !!mpicks[0].querySelector(".cipx-mpick-none"));
+    var f3 = mpicks[0].querySelector(".cipx-mpick-find");
+    f3.value = ""; f3.dispatchEvent(new domP.window.Event("input"));
+  })();
+  // Selecting filters the list; the button reports the selection back.
+  (function () {
+    var opt = Array.prototype.filter.call(mpicks[0].querySelectorAll(".cipx-mpick-opt"), function (o) { return /Managerial Accounting/.test(o.textContent); })[0];
+    opt.querySelector("input").click();
+  })();
+  await tick();
+  check("picker: selecting a title filters the list to it", pdoc.querySelectorAll(".cipx-prog-item").length === 1 && /Managerial Accounting/.test(pdoc.querySelector(".cipx-prog-title").textContent));
+  check("picker: the button summarises the single selection", /Managerial Accounting/.test(mpicks[0].querySelector(".cipx-mpick-val").textContent));
+  (function () {
+    var opt = Array.prototype.filter.call(mpicks[0].querySelectorAll(".cipx-mpick-opt"), function (o) { return /Business Administration/.test(o.textContent); })[0];
+    opt.querySelector("input").click();
+  })();
+  await tick();
+  check("picker: a second selection is OR-ed within the picker (2 rows, not 0)", pdoc.querySelectorAll(".cipx-prog-item").length === 2);
+  check("picker: the button switches to a count once more than one is picked", /2 selected/.test(mpicks[0].querySelector(".cipx-mpick-val").textContent));
+  // AND across pickers: Business Administration is award 0, Managerial Accounting is award 0 too —
+  // narrow by CIP Sector instead (52 covers both; 01 covers neither) to prove the intersection.
+  (function () {
+    mpicks[2].querySelector(".cipx-mpick-btn").click();
+    var opt = Array.prototype.filter.call(mpicks[2].querySelectorAll(".cipx-mpick-opt"), function (o) { return /^01/.test(o.textContent.trim()); })[0];
+    if (opt) opt.querySelector("input").click();
+  })();
+  await tick();
+  check("pickers: selections AND across controls (title∈{2} ∩ sector 01 = 0 rows)", pdoc.querySelectorAll(".cipx-prog-item").length === 0);
+  // Clear restores "no opinion" — an empty picker must never mean "match nothing", or opening a
+  // control and closing it again would blank the page.
+  mpicks[2].querySelector(".cipx-mpick-clear").click(); await tick();
+  check("picker: Clear restores no-opinion (back to the 2 title matches)", pdoc.querySelectorAll(".cipx-prog-item").length === 2);
+  mpicks[0].querySelector(".cipx-mpick-clear").click(); await tick();
+  check("picker: clearing every picker shows the whole catalog again", pdoc.querySelectorAll(".cipx-prog-item").length === 3);
+  check("picker: a cleared picker returns to its 'All …' summary", mpicks[0].querySelector(".cipx-mpick-val").textContent.trim() === "All programs");
+  // A stale title from a previous college would filter the new one down to nothing and read as an
+  // empty catalog, so a college switch clears all three.
+  (function () {
+    var opt = mpicks[0].querySelectorAll(".cipx-mpick-opt")[0];
+    if (opt) opt.querySelector("input").click();
+  })();
+  await tick();
+  (function () { var c = pdoc.querySelector(".cipx-prog-collegesel, .cipx-prog-tools select") || pdoc.querySelector(".cipx-prog select"); })();
+  (function () {
+    var sels = pdoc.querySelectorAll(".cipx-prog select");
+    var csel = sels[0];
+    if (csel) { csel.value = "0"; csel.dispatchEvent(new domP.window.Event("change")); }
+  })();
+  await tick();
+  check("picker: switching college clears every picker (a stale title cannot blank the new catalog)", (function () {
+    var m = pdoc.querySelectorAll(".cipx-prog-tools .cipx-mpick");
+    if (m.length !== 3) return false;
+    return Array.prototype.every.call(m, function (x) { return /^All /.test(x.querySelector(".cipx-mpick-val").textContent.trim()); })
+      && pdoc.querySelectorAll(".cipx-prog-item").length === 3;
+  })());
+  // Browse / Find lost their nav buttons 2026-08-14 (Sam, after Jenni) — "they muddy the waters for
+  // now". The nav contract that survives is the one between the TWO review lanes: a click sets scope
+  // AND mode together. (The scope-free-Browse rule is still coded in navBar(); it has no button to
+  // exercise it, so asserting it here would assert the button, not the rule.)
+  Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Review my courses/.test(x.textContent))[0].click(); await tick();
+  check("nav: 'Review my courses' sets scope AND mode in one click", (function () { return domP.window.localStorage.getItem("cipx_scope") === "courses" && domP.window.localStorage.getItem("cipx_mode") === "review" && /Review my courses/.test(pdoc.querySelector(".cipx-modetab.on").textContent); })());
+  Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Review my programs/.test(x.textContent))[0].click(); await tick();
+  check("nav: 'Review my programs' sets scope back to programs in one click", domP.window.localStorage.getItem("cipx_scope") === "programs" && domP.window.localStorage.getItem("cipx_mode") === "review");
+
+  // ── Tweak 4 (Sam, 2026-07-28): authoritative 4-digit series titles in the Browse dropdown ──
+  // The builder emits sub4 (NN.NN -> series title) ONLY from an authoritative NCES export; the tab
+  // shows it when present and falls back to "code · N codes" otherwise (grounded — never invented).
+  {
+    const domS4 = makeDom();
+    const fx = JSON.parse(JSON.stringify(FIXTURE));
+    fx.sub4 = { "51.38": "Registered Nursing Series", "99.99": "Absent From Taxonomy" };
+    domS4.window.CIP_CROSSWALK = fx;
+    try { domS4.window.localStorage.setItem("cipx_mode", "browse"); } catch (e) {}
+    domS4.window.eval(src);
+    domS4.window.CPL_CIP_CROSSWALK.activate();
+    domS4.window.CPL_CIP_CROSSWALK._setMode("browse");   // no nav button since 2026-08-14
+    const s4doc = domS4.window.document;
+    const sel4 = Array.prototype.filter.call(s4doc.querySelectorAll(".cipx-fsel-cip"), (s) => /4-digit/.test(s.getAttribute("aria-label") || ""))[0];
+    const opt5138 = sel4 && Array.prototype.filter.call(sel4.options, (o) => o.value === "51.38")[0];
+    check("browse: a 4-digit option shows the authoritative series title when sub4 has it", !!opt5138 && /Registered Nursing Series/.test(opt5138.textContent) && /code/.test(opt5138.textContent));
+    const opt5202 = sel4 && Array.prototype.filter.call(sel4.options, (o) => o.value === "52.02")[0];
+    check("browse: a 4-digit option with no sub4 title still shows code + count (never invents one)", !!opt5202 && /52\.02/.test(opt5202.textContent) && /code/.test(opt5202.textContent) && !/Series/.test(opt5202.textContent));
+  }
+
+  // ── T3 cap-boundary guard (adversarial-review finding, 2026-07-29) ──
+  // A sector header must NEVER render with zero program rows beneath it when the 400-row render
+  // cap lands exactly on a sector boundary. Fixture: 400 programs in sector 01, then 3 in sector 52
+  // (entirely past the cap) — the 52 header must be omitted, not rendered empty.
+  {
+    const domCap = makeDom();
+    domCap.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+    try { domCap.window.localStorage.setItem("cipx_scope", "programs"); } catch (e) {}
+    domCap.window.eval(src);
+    const capApi = domCap.window.CPL_CIP_CROSSWALK;
+    const bigRows = [];
+    for (let i = 0; i < 400; i++) bigRows.push([0, "A" + i, "Alpha " + String(i).padStart(3, "0"), "0505.00", "01.0000", 0, 0, "3.00", 0, 0]);
+    for (let i = 0; i < 3; i++) bigRows.push([0, "B" + i, "Beta " + i, "0505.00", "52.0201", 0, 0, "3.00", 0, 0]);
+    capApi._setPrograms({ colleges: ["CAP COLLEGE"], awards: ["A.S. Degree"], statuses: ["Active"], rows: bigRows });
+    capApi.activate();
+    const capDoc = domCap.window.document;
+    const capSel = capDoc.querySelector(".cipx-prog .cipx-college-sel");
+    capSel.value = "0"; capSel.dispatchEvent(new domCap.window.Event("change"));
+    await tick();
+    const capHdrs = capDoc.querySelectorAll(".cipx-prog-sector");
+    check("programs: the 400-row cap renders exactly 400 program rows", capDoc.querySelectorAll(".cipx-prog-item").length === 400);
+    check("programs: no empty sector header at the cap boundary (sector 52 omitted, not rendered empty)", capHdrs.length === 1 && /^01$/.test(capHdrs[0].querySelector(".cipx-prog-sector-code").textContent.trim()));
+    check("programs: the 'first 400' cap note shows when truncated", /first 400/.test(capDoc.querySelector(".cipx-prog-list").textContent));
+  }
+
+  // ── 2021 first-gen crosswalk → precise old→new program-CIP flags (Sam, 2026-07-29) ──
+  // oldtopcip enriches the needs-revision message: a CIP that WAS a 2021-crosswalk value the current
+  // crosswalk changed reads differently from one off both maps; no 2021 data for a TOP → the generic msg.
+  {
+    const domOX = makeDom();
+    const fxOX = JSON.parse(JSON.stringify(RFIXTURE));
+    fxOX.oldtopcip = { "0505.00": ["52.0201", "52.9001"] };   // 52.9001 was a 2021 value now dropped; 52.0201 still current
+    domOX.window.CIP_CROSSWALK = fxOX;
+    try { domOX.window.localStorage.setItem("cipx_scope", "programs"); } catch (e) {}
+    domOX.window.eval(src);
+    const oxApi = domOX.window.CPL_CIP_CROSSWALK;
+    oxApi._setPrograms({
+      colleges: ["OLDX COLLEGE"], awards: ["A.S. Degree"], statuses: ["Active"],
+      rows: [
+        [0, "P1", "Was A 2021 Value", "0505.00", "52.9001", 0, 0, "18.00", 0, 0],   // ∈ old, ∉ current → "crosswalk changed"
+        [0, "P2", "Off Both Maps", "0505.00", "52.0399", 0, 0, "18.00", 0, 0],       // ∉ old, ∉ current → "not in 2021 or current"
+        [0, "P3", "No 2021 Data", "1230.00", "99.9999", 0, 0, "18.00", 0, 0],        // no 2021 data for 1230.00 → generic
+      ],
+    });
+    oxApi.activate();
+    const oxDoc = domOX.window.document;
+    const oxSel = oxDoc.querySelector(".cipx-prog .cipx-college-sel");
+    oxSel.value = "0"; oxSel.dispatchEvent(new domOX.window.Event("change"));
+    await tick();
+    const oxItem = (t) => Array.prototype.filter.call(oxDoc.querySelectorAll(".cipx-prog-item"), (it) => new RegExp(t).test(it.textContent))[0];
+    const p1 = oxItem("Was A 2021 Value"), p2 = oxItem("Off Both Maps"), p3 = oxItem("No 2021 Data");
+    check("old-xwalk: a former 2021-crosswalk CIP reads 'the 2021 crosswalk mapped … no longer lists it'", !!p1 && /2021 crosswalk mapped .*52\.9001.*no longer lists it/.test(p1.querySelector(".cipx-prog-rev").textContent));
+    check("old-xwalk: a CIP off both maps reads \"isn't in the 2021 or the current crosswalk\"", !!p2 && /52\.0399 isn.t in the 2021 or the current crosswalk/.test(p2.querySelector(".cipx-prog-rev").textContent));
+    check("old-xwalk: a TOP with no 2021 data falls back to the generic current-crosswalk message", !!p3 && /isn.t in the current crosswalk for TOP 1230\.00/.test(p3.querySelector(".cipx-prog-rev").textContent) && !/2021/.test(p3.querySelector(".cipx-prog-rev").textContent));
+  }
+
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
   let missThrew = false;
@@ -777,7 +1317,7 @@ function fresh(withCollege) {
   try { dom3.window.localStorage.setItem("cipx_mode", "browse"); } catch (e) {}   // browse-view empty-state test (Review is now default)
   dom3.window.eval(src);
   let emptyThrew = false;
-  try { dom3.window.CPL_CIP_CROSSWALK.activate(); } catch (e) { emptyThrew = true; console.error(e); }
+  try { dom3.window.CPL_CIP_CROSSWALK.activate(); dom3.window.CPL_CIP_CROSSWALK._setMode("browse"); } catch (e) { emptyThrew = true; console.error(e); }
   check("empty rows[] → no throw", !emptyThrew);
   check("empty rows[] → renders an empty-state message", dom3.window.document.querySelector(".cipx-empty"));
 
@@ -791,6 +1331,7 @@ function fresh(withCollege) {
   let noCoursesThrew = false;
   try {
     dom4.window.CPL_CIP_CROSSWALK.activate();
+    dom4.window.CPL_CIP_CROSSWALK._setMode("browse");   // no nav button since 2026-08-14
     var c4 = dom4.window.document.querySelector(".cipx-college-sel"); if (c4) { c4.value = "test_college"; c4.dispatchEvent(new dom4.window.Event("change")); }
     dom4.window.document.querySelector(".cipx-row").click(); await tick();
   } catch (e) { noCoursesThrew = true; console.error(e); }

@@ -10,6 +10,8 @@ artifacts:
 related:
   - "[[cer_v2_redesign_lessons]]"
   - "[[methodology-rekey-derived-identity-maps]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 You are **Session 111**. Session 110 closed the carpentry pass live alongside

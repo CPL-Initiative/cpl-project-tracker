@@ -11,6 +11,8 @@ related:
   - "[[cer_v2_redesign_lessons]]"
   - "[[cobi_lessons]]"
   - "[[exhibit_canonicalization_lessons]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 You are **Session 110**. Session 109 (SkyBreak) ran long and hot — read this

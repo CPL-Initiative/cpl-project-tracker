@@ -110,14 +110,15 @@ function gridAssertions() {
   check("#1 merge affordance is disabled (span, no link) when signed out",
     !!kineFlags && !!kineFlags.querySelector("span.uc-merge-disabled") && !kineFlags.querySelector("a.uc-merge-link"));
 
-  // #5 — Units shows a RANGE when member colleges disagree (umin/umax); a > 2.0 spread
-  // adds the over-merge ⚠ alarm (not a silent band); a row without umin/umax falls back
-  // to the scalar typical. (Units = the 6th column, cells[5].)
+  // #5 — Units shows a RANGE when member colleges disagree (umin/umax), and no width
+  // raises an alarm: units never split an identity (Sam, 2026-09-27), so the ⚠ that
+  // called a spread over 2.0 an over-merge left on 2026-09-29. A row without
+  // umin/umax falls back to the scalar typical. (Units = the 6th column, cells[5].)
   const unitsCell = (id2) => bodyRows.find((tr) => txt(tr.querySelectorAll("td")[1]).indexOf(id2) >= 0).querySelectorAll("td")[6];
   check("#5 narrow range renders 'lo–hi' (1–1.5)", txt(unitsCell("KINE M1100")).indexOf("1–1.5") >= 0);
   check("#5 narrow range (<=2.0) shows NO alarm", unitsCell("KINE M1100").textContent.indexOf("⚠") < 0);
   check("#5 wide range renders 'lo–hi' (1–4)", txt(unitsCell("KINE M1200")).indexOf("1–4") >= 0);
-  check("#5 wide range (>2.0) shows the ⚠ over-merge alarm", unitsCell("KINE M1200").textContent.indexOf("⚠") >= 0);
+  check("#5 wide range (>2.0) shows its range and no over-merge alarm", unitsCell("KINE M1200").textContent.indexOf("⚠") < 0);
   check("#5 row without umin/umax falls back to the scalar typical (1.5)", txt(unitsCell("KINE M1371")) === "1.5");
 
   memberSortAssertions();

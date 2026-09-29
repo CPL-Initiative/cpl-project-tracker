@@ -12,6 +12,8 @@ related:
   - docs/map_api_auth_handoff.md (MAP auth coordination — sent to MAP)
   - CLAUDE.md §6a (EACR) + §9 (EACR identity) + §11 "Session 27" subsection
 moniker_suggestion: Bruh 28 / "Two-Eight" / "Octa-Two" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 28 Hand-off Prompt

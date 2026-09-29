@@ -110,7 +110,7 @@ create policy iu_delete on public.item_updates for delete
 --   • team_access   — holds the phrase. RLS on, NO anon policies → not readable
 --                     by clients; only the SECURITY DEFINER funcs (running as
 --                     owner) can read it. Set/rotate the phrase with:
---                       update public.team_access set secret = 'your phrase' where id = 'raci';
+--                       update public.team_access set secret = 'your phrase' where id = 'team';
 --   • team_pass_check(p) — comparator (revoked from public so it can't be a
 --                     brute-force oracle); used for testing + internally.
 --   • team_pass_ok()    — reads the `x-team-pass` request header (sent by
@@ -126,8 +126,18 @@ alter table public.team_access enable row level security;   -- (no ANON policies
 -- One row per COBI subsite cohort (Sam's org layer, 2026-07-14). Each holds
 -- that site's curation phrase; rotate a site independently via the UPDATE above
 -- (…where id = 'ci';). team_pass_check() (below) matches ANY row's secret.
+-- ⚠ 'team' was 'raci' until 2026-08-15. The shared phrase was named after the
+-- Team & RACI tab it used to live on; Sam renamed that tab to "Team", leaving
+-- the phrase named after something that no longer existed. Renamed live with
+--   update public.team_access set id = 'team' where id = 'raci';
+-- The SECRET was untouched, so no holder was locked out — the id is internal and
+-- appears nowhere a phrase holder can see. team_phrases.js reads either id (see
+-- its `legacy` field) so the rename and the deploy did not have to be
+-- simultaneous: a card that cannot find its row renders BLANK, and saving a
+-- blank card would create a SECOND row — which team_pass_check() would then
+-- accept, giving two live shared phrases with only one of them visible.
 insert into public.team_access (id, secret) values
-  ('raci', 'cpl-team-2026'),   -- CPL cohort  — TEMPORARY, rotate via the UPDATE above / the admin UI
+  ('team', 'cpl-team-2026'),   -- shared CPL cohort — TEMPORARY, rotate via the UPDATE above / the admin UI
   ('ci',   'ci-team-2026')     -- C&I subsite cohort (ci_team_phrase_add migration, 2026-07-14)
   on conflict (id) do nothing;
 

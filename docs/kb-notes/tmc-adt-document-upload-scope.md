@@ -1,9 +1,8 @@
 ---
 title: TMC ADT submission — supporting-document upload (CORs → the contact-hours gap)
-date: 2026-06-22
+created: 2026-06-22
 kb-status: published
-type: scope
-tags: [tmc, adt, co-review, cor, contact-hours, supabase, storage, upload, compliance]
+tags: [scope, tmc, adt, co-review, cor, contact-hours, supabase, storage, upload, compliance]
 artifacts:
   - tmc_builder.js                          # the tab — gains a per-course upload affordance + reviewer COR link
   - tmc/supabase_tmc_submission_docs.sql    # NEW (proposed) — the document index + private Storage bucket

@@ -12,6 +12,8 @@ related:
   - docs/kb-notes/methodology-credential-dedup-triage.md
   - CLAUDE.md §11 "Session 37" + "Session 37 (cont.)" subsections + Rule 7 umbrella refinement
 moniker_suggestion: Session 37 ran unnamed; if you want one, claim it — lineage below
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: Lucid Wozniak (34) → CER consolidation (35) → perf+cross-disc (36) →

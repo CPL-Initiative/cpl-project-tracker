@@ -21,6 +21,28 @@
   function validTabs() {
     return navButtons().map(function (b) { return b.getAttribute('data-tab'); });
   }
+  /* Where a link that matches no page lands.
+   *
+   * Was `valid[0] || 'dashboard'` — the FIRST button in DOM order — and that is
+   * wrong in two directions now.
+   *
+   * It is the CPL dashboard for every site, so a C&I visitor following a stale
+   * link lands on CPL KPIs that their own menu deliberately hides. And DOM order
+   * became curator-editable when the Admin tab shipped, so dragging any tab
+   * above Dashboard silently moves the fallback with it — a menu edit quietly
+   * changing routing.
+   *
+   * Every site already declares its own `home` (cobi_orgs.js). Ask for that.
+   * DOM order stays as the last resort, because the org layer is optional and a
+   * router that depends on it would fail closed — with no page at all. */
+  function homeTab(valid) {
+    try {
+      var org = window.CPL_ORGS && window.CPL_ORGS.current && window.CPL_ORGS.current();
+      var home = org && org.home;
+      if (home && valid.indexOf(home) !== -1) return home;
+    } catch (e) { /* never let the org layer cost the router */ }
+    return valid[0] || 'dashboard';
+  }
   function parseHash() {
     var h = (location.hash || '').replace(/^#/, '');
     var parts = h.split('/');
@@ -29,11 +51,11 @@
   function fromHash() {
     var p = parseHash();
     var valid = validTabs();
-    return (p.tab && valid.indexOf(p.tab) !== -1) ? p.tab : (valid[0] || 'dashboard');
+    return (p.tab && valid.indexOf(p.tab) !== -1) ? p.tab : homeTab(valid);
   }
   function activate(tabName, opts) {
     var valid = validTabs();
-    if (!tabName || valid.indexOf(tabName) === -1) tabName = valid[0] || 'dashboard';
+    if (!tabName || valid.indexOf(tabName) === -1) tabName = homeTab(valid);
     navButtons().forEach(function (b) {
       var on = b.getAttribute('data-tab') === tabName;
       b.classList.toggle('active', on);
@@ -169,11 +191,20 @@
   }
 
   // -- Rail auth badge --------------------------------------------------
-  // Read-only "signed in as X" / "not signed in" indicator in the sidebar
-  // footer. Reads sessionStorage.cpl_sb (the session shape persisted by all
-  // three curator tabs — see unified_courses.js persistToken). Same-tab
-  // sign-in/out won't fire a storage event, so we also re-render on focus
-  // and on every tab activation; that covers all the natural moments.
+  // The sidebar-footer indicator. It now speaks through COBI_IDENTITY — the
+  // same reader and the same sentence the masthead chip uses — so the two
+  // surfaces cannot disagree about whether you are signed in.
+  //
+  // THIS BADGE WAS HALF-BLIND FROM THE DAY IT WAS WRITTEN. It read only
+  // sessionStorage.cpl_sb, the magic-link session, so a team-phrase holder
+  // curating happily was told "not signed in" on every tab. Reading one of two
+  // credentials and reporting the answer as the whole truth is the same shape
+  // as a capped list rendering as a census.
+  //
+  // And "use a curator tab to sign in" was an instruction with no door: it
+  // named no tab, and the tab it meant is reviewer-ONLY, so the phrase could
+  // never have opened it either. The masthead chip carries the controls; this
+  // points at it rather than at a tab that cannot help.
   function readSession() {
     try {
       var s = JSON.parse(sessionStorage.getItem('cpl_sb') || 'null');
@@ -184,30 +215,26 @@
   function renderRailAuth() {
     var el = document.getElementById('cpl-rail-auth');
     if (!el) return;
-    var s = readSession();
-    if (s) {
-      el.innerHTML = '';
-      var row = document.createElement('div');
-      row.className = 'cpl-rail-auth-on';
-      row.textContent = '✓ signed in';
-      el.appendChild(row);
-      if (s.email) {
-        var em = document.createElement('span');
-        em.className = 'cpl-rail-auth-email';
-        em.textContent = s.email;
-        el.appendChild(em);
-      }
+    var ID = window.COBI_IDENTITY;
+    el.innerHTML = '';
+    // The magic-link-only reading survives ONLY as the fallback for when the
+    // shared module is absent. Half an answer beats a blank footer; it is never
+    // the preferred one.
+    var g = (ID && ID.greeting) ? ID.greeting() : null;
+    var on = g ? g.tone !== 'none' : !!readSession();
+    var row = document.createElement('div');
+    row.className = on ? 'cpl-rail-auth-on' : 'cpl-rail-auth-off';
+    row.textContent = on ? '\u2713 ' + (g ? g.short : 'signed in') : '\u2014 not unlocked';
+    el.appendChild(row);
+    var sub = document.createElement('span');
+    sub.className = 'cpl-rail-auth-email';
+    if (g) {
+      sub.textContent = on ? g.text : 'Sign in or unlock at the top right.';
     } else {
-      el.innerHTML = '';
-      var off = document.createElement('div');
-      off.className = 'cpl-rail-auth-off';
-      off.textContent = '— not signed in';
-      el.appendChild(off);
-      var hint = document.createElement('span');
-      hint.className = 'cpl-rail-auth-email';
-      hint.textContent = 'use a curator tab to sign in';
-      el.appendChild(hint);
+      var s = readSession();
+      sub.textContent = (s && s.email) ? s.email : 'Sign in or unlock at the top right.';
     }
+    el.appendChild(sub);
   }
 
   // -- Hamburger / slide-over -------------------------------------------
@@ -255,6 +282,11 @@
     });
     window.addEventListener('focus', renderRailAuth);
     window.addEventListener('cpl-auth-change', renderRailAuth);
+    // cpl_session.js dispatches THIS name, not cpl-auth-change. Listening for
+    // only one of the two is why the keeper's announcements — a renewal, a
+    // sign-out, another browser tab signing in — never reached the rail.
+    window.addEventListener('cpl-session-changed', renderRailAuth);
+    window.addEventListener('cpl-team-pass-unlocked', renderRailAuth);
     wireHamburger();
     var p0 = parseHash();
     activate(fromHash(), { section: p0.section });
@@ -280,6 +312,20 @@
   // missing-data guard can render a graceful empty state). Used to pull the
   // heavy per-tab data files (statewide_data.js, unified_courses_data.js, …) on
   // demand rather than eagerly at page load.
+  /* name -> "name?v=<hash>" when the deploy stamped a manifest for it.
+   * Exposed on CPL_TABS so any other runtime loader can opt in without growing a
+   * second copy of this logic — the repo already pays for one assistant living in
+   * three files. `unified_courses.js` deliberately does NOT use it: its _eraSrc()
+   * pins to the DATASET era, which is a join-correctness guard a content hash
+   * cannot express. */
+  function assetUrl(src) {
+    try {
+      var m = window.CPL_ASSET_V;
+      if (m && typeof src === 'string' && m[src]) return src + '?v=' + m[src];
+    } catch (e) { /* fail open — see loadScript */ }
+    return src;
+  }
+
   function loadScript(src, globalName, cb) {
     if (globalName && window[globalName]) { cb(); return; }
     var existing = document.querySelector('script[data-lazy-src="' + src + '"]');
@@ -298,7 +344,20 @@
       }
     }
     var s = document.createElement('script');
-    s.src = src;
+    /* Cache-bust from the deploy-time manifest (scripts/stamp_asset_versions.py).
+     * COBI lazy-loads 34 tab modules through here, so this ONE line is what keeps
+     * a reader from sitting on a stale tab after a deploy — the <script> tags in
+     * the HTML are the shell, these are the substance.
+     *
+     * ⚠ THE DEDUPE KEY STAYS THE UNVERSIONED NAME. `data-lazy-src` is how the
+     * idempotency check above finds an existing tag; keying it on the stamped URL
+     * would make a second loadScript('college_briefing.js') miss the tag it just
+     * injected and load the module twice.
+     *
+     * ⚠ AND IT FAILS OPEN. No manifest (a local file:// open, an older deploy, a
+     * page that never got one) means the plain name, i.e. exactly today's
+     * behavior — never a broken src. */
+    s.src = assetUrl(src);
     s.setAttribute('data-lazy-src', src);
     s.onload = function () { s.setAttribute('data-lazy-loaded', '1'); cb(); };
     s.onerror = function () { s.setAttribute('data-lazy-loaded', 'error'); cb(); };
@@ -312,6 +371,7 @@
     current: function () { return _currentTab; },
     onActivate: onActivate,
     loadScript: loadScript,
+    assetUrl: assetUrl,
     openRail: openRail,
     closeRail: closeRail,
     renderRailAuth: renderRailAuth

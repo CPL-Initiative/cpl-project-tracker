@@ -9,6 +9,8 @@ related:
   - docs/kb-notes/methodology-token-retheme-on-generated-html.md (the durable pattern)
   - docs/kb-notes/reference-ui-design-system.md (the live palette, post-flip)
 moniker_suggestion: Session 49 was "Bruh Orbitron"; claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 52 Hand-off Prompt — the design lane

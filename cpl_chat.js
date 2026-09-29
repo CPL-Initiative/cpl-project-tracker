@@ -36,6 +36,34 @@
     'How many students has CPL served statewide?',
   ];
 
+  /* ── ONE cluster of suggested questions, and the host may own it ───────────
+   * Sam, 2026-08-21: "As it is now, My College users select a pre-seeded
+   * question and are not prompted for their role — confusing."
+   *
+   * ⭐ THE CONFUSION WAS TWO CLUSTERS STRADDLING THE ROLE PICKER. My College
+   * printed its own college-specific questions ABOVE this widget and the widget
+   * printed these generic ones BELOW the "I'm a…" chips. Clicking one of the
+   * upper set with no role chosen called needAudience(), whose message says
+   * "tap who you are above" — and the chips were BELOW it. The sentence was
+   * literally wrong, and the reader had two question lists to reconcile.
+   *
+   * ⚠ AND THE GENERIC LIST NAMES ANOTHER COLLEGE. "Does Riverside City College
+   * offer firefighter CPL?" is a fine starter on the CPL Assistant tab and is
+   * nonsense on Cabrillo's own page. A host that knows whose page this is
+   * REPLACES the list rather than adding a second one.
+   *
+   * So the host hands its questions to the widget and the widget renders them
+   * in its own slot — below the role chips, which makes the role the first
+   * thing read and needAudience()'s "above" true again.
+   *
+   * `hostSuggestions` is module-level, mirroring the existing inputEl/logEl
+   * convention: build() re-points these at whichever pane built last, and
+   * renderSuggestions() only ever touches THAT pane's row. mount() (the
+   * dedicated CPL Assistant pane) clears it, so a college's questions can never
+   * leak onto the generic tab. */
+  var hostSuggestions = null;
+  var chipsEl = null;
+
   // ── Session id (one per browser tab session, reused across tab switches) ──
   function sessionId() {
     try {
@@ -179,8 +207,59 @@
   var convo = [];
   var CONVO_MAX = 8;
 
+  /* ⚠ A THREAD MUST NOT OUTLIVE THE SUBJECT IT WAS FORMED UNDER ──────────────
+   * Sam, 2026-08-22, on a My College screenshot: he had LACCD selected as the
+   * district and "she configured her response based on RCCD" — naming Riverside
+   * City College, Moreno Valley and Norco, with Norco's exhibits and MVC's
+   * figures, under a heading that read Los Angeles Community College District.
+   *
+   * ⭐ THE HISTORY SURVIVED THE SCOPE CHANGE AND THE TRANSCRIPT DID NOT. Two
+   * facts that are individually reasonable and together are the bug:
+   *   · `convo` is module-level ON PURPOSE, so the thread follows the reader
+   *     between the CPL Assistant tab and the My College box (see mountInto);
+   *   · college_briefing.js's finish() does `root.innerHTML = h` on every scope
+   *     change, which destroys the old mount node, so mountInto() rebuilds and
+   *     the visible log starts EMPTY.
+   * So after switching RCCD -> LACCD the reader sees a clean conversation and
+   * the next question still ships eight turns about RCCD.
+   *
+   * ⭐ AND THE STALE TURNS DO NOT JUST SIT IN THE MODEL'S MESSAGES. cpl-chat
+   * folds prior user turns into the RETRIEVAL text when the new question has
+   * fewer than two topic words of its own (`isRefinement`), and that folded
+   * string is what `detectAndFetchCollegeProfile` and `searchExhibitsByTopic`
+   * are given. A short follow-up therefore RE-DETECTS the previous college from
+   * history — "riverside" is in the alias map — and the whole answer is built on
+   * data for an institution the reader has navigated away from.
+   *
+   * The invariant: WHAT WE SEND IS NEVER MORE THAN WHAT IS ON SCREEN. `convo`
+   * still follows the reader between the two panes, because there the subject is
+   * unchanged; it is dropped the moment the subject itself changes.
+   *
+   * This is the same argument mount() already makes one line down for
+   * `hostSuggestions` ("a stale host list from My College must not follow the
+   * reader here") — nobody had made it for the thread. */
+  var hostScope = null;
+  /* The last NAMED subject the thread was formed under — deliberately NOT just
+   * "the previous hostScope". The dedicated CPL Assistant pane is nobody's
+   * college page and clears the ANCHOR (see mount()), so tracking the raw
+   * previous value would read a My College -> Assistant -> My College round trip
+   * as two changes of subject and delete a conversation the reader can still see
+   * above the box. Clearing the anchor and dropping the thread are two different
+   * events; only a move to a DIFFERENT named subject is the second one. */
+  var threadSubject = null;
+  /* WHICH CALLER this is — a third axis alongside `audience` (who is reading),
+   * `ctx` (may staff contacts show) and `scope` (whose page). It exists so a
+   * guidance rule naming a fact only one surface carries stops being read on the
+   * other five.
+   *
+   * ⚠ ONE FILE, TWO SURFACES. This module mounts on the dedicated CPL Assistant
+   * pane AND embeds into My College, and those are different callers with
+   * different rules — so the surface is set at each MOUNT rather than once at the
+   * top, where a single value would necessarily be wrong for one of them. */
+  var hostSurface = null;
+
   // ── Chat transcript helpers ──
-  var logEl, inputEl, sendBtn, statusEl, audEl;
+  var logEl, inputEl, sendBtn, statusEl, audEl, viewerEl;
 
   // ── Audience (primary population) ──
   // Required before the first question (Sam, 2026-07-01): the visitor picks who
@@ -189,40 +268,150 @@
   // with the standalone sierra/ page (same origin, same localStorage key). Sent
   // as an optional `audience` body field — the production map.rccd.edu widget
   // omits it and is unaffected.
+  //
+  // TEXT LABELS, NO GLYPHS (Sam, 2026-08-14 and again 2026-08-17: "Delete emoji
+  // glyphs. Keep text labels."). The emoji were decoration on top of words that
+  // already said the same thing, and a screen reader announced each one — the
+  // chip for a college administrator read "classical building college
+  // administrator". Nothing is lost by removing them.
   var AUDIENCES = [
-    { k: 'student',       label: '🎓 Student / future student' },
-    { k: 'faculty',       label: '📚 Faculty' },
-    { k: 'administrator', label: '🏛️ College administrator' },
-    { k: 'employer',      label: '💼 Employer / industry' },
-    { k: 'civic',         label: '🤝 Civic leader' },
+    { k: 'student',       label: 'Student / future student' },
+    { k: 'faculty',       label: 'Faculty' },
+    { k: 'administrator', label: 'College administrator' },
+    { k: 'employer',      label: 'Employer / industry' },
+    { k: 'civic',         label: 'Civic leader' },
   ];
   var AUD_KEY = 'cplSierraAudience.v1';
   var audience = null;
+
+  /* ⭐ A REMEMBERED ROLE IS A SHORTCUT, NOT AN ANSWER ──────────────────
+   * Sam, 2026-08-21: "we need to prompt users to confirm select their role
+   * before or if they click a pre-seeded question."
+   *
+   * This is his OWN #1274 ruling one level down. My College stopped restoring a
+   * remembered college into state that same week, because a restored choice
+   * silently answered a question the reader had never been asked — the second
+   * person to open the tab got whoever was here last. The ROLE had exactly the
+   * same defect and nobody had looked: `audience` is persisted in localStorage
+   * under a key SHARED with the public standalone page and the Fact Sheet
+   * drawer, so a role picked once, anywhere, on any earlier visit was applied
+   * silently to every answer here forever. In the screenshot Sam sent, a chip
+   * he had not touched on this page was lit and steering the reply.
+   *
+   * So: localStorage still REMEMBERS the role (the chip comes back pre-marked
+   * and one tap keeps it — that is the shortcut), but a role is only
+   * CONFIRMED for the browser-tab session in which someone tapped it. The
+   * confirmation mark lives in sessionStorage beside `cpl_chat_session`, so it
+   * costs one tap per session, not one per question.
+   *
+   * ⚠ THE HELD QUESTION IS RESUMED, NEVER DROPPED. A confirm prompt that makes
+   * the reader hunt for the chip they just clicked is worse than the silent
+   * default it replaces — submit() leaves the text in the box and setAudience()
+   * sends it the moment a role is tapped.
+   *
+   * ⚠ SCOPE: this changes the two COBI surfaces (My College + CPL Assistant),
+   * which is what Sam asked about. sierra/sierra.js and
+   * fact-sheet/factsheet_sierra.js deliberately keep the silent restore — a
+   * one-visit member of the public should not be interrogated about a role they
+   * picked ninety seconds ago on the same page. Same divergence shape as
+   * #1274's intro wording; tests/sierra_surfaces_aligned.test.js pins that the
+   * AUDIENCES vocabulary still matches across all three, which is the part that
+   * must never drift. */
+  var AUD_OK_KEY = 'cplSierraAudienceOk.v1';
+  var audienceConfirmed = false;
+  /* ⚠ THE HELD QUESTION IS PINNED TO THE PANE THAT HELD IT — this is the
+   * element, not a boolean. Two panes can be mounted at once (My College and
+   * the CPL Assistant tab) and `inputEl` points at whichever built LAST, so a
+   * boolean would let a confirm armed on one pane fire submit() against the
+   * other's box: at best a no-op, at worst it sends a half-typed sentence the
+   * reader never pressed Send on. Same discipline the file already documents
+   * for `chipsEl` — by reference, never by id. */
+  var pendingAsk = null;
+
+  function audienceLabel(k) {
+    var out = '';
+    AUDIENCES.forEach(function (a) { if (a.k === k) out = a.label; });
+    return out;
+  }
 
   function loadAudience() {
     try {
       var v = localStorage.getItem(AUD_KEY);
       if (AUDIENCES.some(function (a) { return a.k === v; })) audience = v;
     } catch (e) { /* keep in-memory only */ }
+    /* Confirmed only if THIS role was confirmed in THIS browser-tab session.
+     * Comparing the VALUE, not just its presence: a role switched on the public
+     * page mid-session shares the localStorage key, so a presence check would
+     * hand the new role the old one's confirmation.
+     *
+     * ⚠ ASSIGNED, NOT RAISED. build() calls this on every mount, so a version
+     * that only ever set it TRUE would carry a stale confirmation: confirm
+     * "Faculty" here, switch to "Student" on the public standalone page (same
+     * localStorage key), come back — the pick has changed underneath and the
+     * old confirmation would still be standing. */
+    var confirmed = false;
+    try {
+      confirmed = !!audience && sessionStorage.getItem(AUD_OK_KEY) === audience;
+    } catch (e) { /* no sessionStorage — the gate simply asks once per mount */ }
+    audienceConfirmed = confirmed;
   }
   function setAudience(k) {
+    // A tap IS the confirmation. No separate confirm button: a second control
+    // to press would be a second thing to explain.
+    var resume = pendingAsk && pendingAsk === inputEl;
+    pendingAsk = null;
     audience = k;
+    audienceConfirmed = true;
     try { localStorage.setItem(AUD_KEY, k); } catch (e) { /* in-memory only */ }
+    try { sessionStorage.setItem(AUD_OK_KEY, k); } catch (e) { /* in-memory only */ }
+    if (audEl) audEl.classList.remove('confirm');
     renderAudience();
+    setStatus('');
+    if (resume) submit();
   }
   function renderAudience() {
     if (!audEl) return;
     audEl.textContent = '';
     audEl.appendChild(el('span', { className: 'cplchat-aud-label' }, "I'm a…"));
     AUDIENCES.forEach(function (a) {
+      var picked = audience === a.k;
       audEl.appendChild(el('button', {
         type: 'button',
-        className: 'cplchat-aud-chip' + (audience === a.k ? ' on' : ''),
-        'aria-pressed': audience === a.k ? 'true' : 'false',
-        onclick: function () { setAudience(a.k); setStatus(''); },
+        // Three states, not two: unpicked / remembered-but-unconfirmed /
+        // confirmed. `on` stays the confirmed one, so nothing that already
+        // reads that class changes meaning.
+        className: 'cplchat-aud-chip' + (picked ? (audienceConfirmed ? ' on' : ' remembered') : ''),
+        // Still the current selection, so it is still pressed. The provisional
+        // half is carried by the WORDS below, never by the outline alone
+        // (First Light: color is never the only signal).
+        'aria-pressed': picked ? 'true' : 'false',
+        onclick: function () { setAudience(a.k); },
       }, a.label));
     });
+    if (audience && !audienceConfirmed) {
+      audEl.appendChild(el('span', { className: 'cplchat-aud-note' },
+        'Carried over from a previous visit — tap to confirm, or pick another.'));
+    }
   }
+  /* Paints whichever list is in force into the row build() created. Never
+   * queries the document: two panes can hold a chip row at once (My College and
+   * the CPL Assistant tab), and getElementById would find whichever was written
+   * first — the same trap documented on `inputEl` below. */
+  function renderSuggestions() {
+    if (!chipsEl) return;
+    chipsEl.textContent = '';
+    var list = (hostSuggestions && hostSuggestions.length) ? hostSuggestions : SUGGESTED;
+    // A heading, because a bare row of pills reads as chrome. My College's own
+    // label said this; it moves with the questions rather than being lost.
+    chipsEl.appendChild(el('div', { className: 'cplchat-suggest-lab' }, 'Try one of these'));
+    list.forEach(function (q) {
+      chipsEl.appendChild(el('button', {
+        type: 'button', className: 'cplchat-chip',
+        onclick: function () { inputEl.value = q; submit(); },
+      }, q));
+    });
+  }
+
   function needAudience() {
     setStatus('First, tap who you are above — it helps the assistant tailor the answer.', 'error');
     if (!audEl) return;
@@ -230,7 +419,26 @@
     setTimeout(function () { audEl.classList.remove('need'); }, 1700);
   }
 
-  // ── Per-answer feedback (👍/👎 + optional note → Supabase sierra_feedback) ──
+  /* The remembered-role gate. Distinct from needAudience() in every way that
+   * matters to the reader: nothing is missing, so this is not an error and is
+   * not styled as one; the chip they want is already on screen and named in the
+   * prompt; and the question they asked is HELD rather than lost.
+   *
+   * ⚠ The outline persists until a tap, unlike needAudience()'s 1.7s flash. A
+   * flash is right for "you forgot something" and wrong for "I am waiting for
+   * you" — the reader may look away, and coming back to a cleared prompt with
+   * an unanswered question in the box is the confusing state this replaces. */
+  function confirmAudience() {
+    pendingAsk = inputEl;
+    // "to send" carries two facts in two words: the tap is what sends, and the
+    // question is still here. The alternative said so in a third sentence.
+    setStatus('One tap first — still ' + audienceLabel(audience)
+      + '? Tap it above to send, or pick another.', 'confirm');
+    if (!audEl) return;
+    audEl.classList.add('confirm');
+  }
+
+  // ── Per-answer feedback (Helpful / Not helpful + note → sierra_feedback) ──
   // One row per assistant turn, keyed by a client uuid: a thumb click logs
   // immediately and an added note / switched rating updates the SAME row.
   // Writes go through the SECURITY DEFINER RPC `sierra_feedback_upsert` — a
@@ -241,6 +449,102 @@
   function newTurnId() {
     return (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
       : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+  }
+
+  // ── Copy an answer ─────────────────────────────────────────────────────────
+  // Mirrors sierra/sierra.js — the two chat surfaces have carried parallel
+  // implementations since the feedback bar, and a shared module would mean a new
+  // <script> in BOTH mirrored dashboard HTMLs (Rule 4) for ~40 lines. Keep the
+  // two copies identical; change them together.
+  //
+  // Writes text/html (the rendered bubble, so a paste into Word/Outlook/Teams
+  // keeps headings, tables and links) alongside text/plain (the markdown Sierra
+  // emitted). Falls back to writeText, then to execCommand — which is the only
+  // route inside a cross-origin iframe, where the async Clipboard API is denied.
+  // Never throws into the chat flow; on total failure it selects the answer so
+  // the visitor can press Ctrl+C.
+  function copyRich(html, text) {
+    try {
+      if (html && navigator.clipboard && navigator.clipboard.write && window.ClipboardItem) {
+        return navigator.clipboard.write([new window.ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' }),
+        })]);
+      }
+    } catch (e) { /* fall through to plain */ }
+    return Promise.reject(new Error('rich copy unavailable'));
+  }
+  function copyPlain(text) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+    } catch (e) { /* fall through to execCommand */ }
+    return Promise.reject(new Error('async clipboard unavailable'));
+  }
+  function copyLegacy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-1000px';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = !!(document.execCommand && document.execCommand('copy'));
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
+  }
+  function selectNode(node) {
+    try {
+      var sel = window.getSelection();
+      var range = document.createRange();
+      range.selectNodeContents(node);
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } catch (e) { /* selection is a courtesy, not a requirement */ }
+  }
+  function copyAnswer(html, text, done) {
+    copyRich(html, text).then(
+      function () { done(true); },
+      function () {
+        copyPlain(text).then(
+          function () { done(true); },
+          function () { done(copyLegacy(text)); }
+        );
+      }
+    );
+  }
+  // Builds the Copy pill for one assistant turn. `answer` is the markdown;
+  // the bubble is looked up from the row so an error turn still copies what the
+  // visitor can see.
+  function makeCopyBtn(afterRow, answer) {
+    var timer = null;
+    var btn = el('button', {
+      type: 'button', className: 'cplchat-fb-copy',
+      title: 'Copy this answer — formatting is kept when you paste into Word, Outlook or Teams',
+      'aria-label': 'Copy this answer to the clipboard',
+      onclick: function () {
+        var bub = afterRow && afterRow.querySelector ? afterRow.querySelector('.cplchat-bubble') : null;
+        var plain = answer || (bub ? bub.textContent : '') || '';
+        copyAnswer(bub ? bub.innerHTML : '', plain, function (ok) {
+          // Words, not ticks — the state is already carried by the `on` class
+          // and its color, so the glyph was decoration on a label that says
+          // the same thing (Sam, 2026-08-17).
+          btn.textContent = ok ? 'Copied' : 'Press Ctrl+C';
+          btn.classList.toggle('on', ok);
+          if (!ok && bub) selectNode(bub);
+          if (timer) clearTimeout(timer);
+          timer = setTimeout(function () {
+            btn.textContent = 'Copy';
+            btn.classList.remove('on');
+          }, 2200);
+        });
+      },
+    }, 'Copy');
+    return btn;
   }
   function feedbackPayload(o) {
     return {
@@ -254,6 +558,13 @@
       p_note: o.note ? String(o.note).slice(0, 2000) : null,
     };
   }
+  // Resolves TRUE only when the row actually landed. A rejected promise and a
+  // non-2xx response are both failures, and fetch does not reject on HTTP
+  // errors — sierra_feedback_upsert RAISES on an invalid rating, so "it
+  // returned" never meant "it saved". Ratings stay fire-and-forget (the bar
+  // already shows its own state); the NOTE path awaits this, because telling
+  // someone their note was sent when it was not is worse than telling them
+  // nothing — they close the tab and the report is gone.
   function sendFeedback(payload) {
     try {
       return fetch(SUPABASE_URL + '/rest/v1/rpc/sierra_feedback_upsert', {
@@ -264,8 +575,9 @@
           'Authorization': 'Bearer ' + SUPABASE_ANON,
         },
         body: JSON.stringify(payload),
-      }).catch(function () { /* feedback is best-effort */ });
-    } catch (e) { return Promise.resolve(); }
+      }).then(function (res) { return !!(res && res.ok); },
+              function () { return false; });
+    } catch (e) { return Promise.resolve(false); }
   }
   function addFeedbackBar(afterRow, question, answer) {
     var tid = newTurnId();
@@ -278,7 +590,13 @@
       'aria-label': 'Optional feedback note',
     });
     var noteBtn = el('button', { type: 'button' }, 'Send note');
-    var noteWrap = el('div', { className: 'cplchat-fb-note' }, [noteIn, noteBtn]);
+    // The confirmation lives INSIDE the composer, so it appears exactly where
+    // the button was. Sam: "it turns gray but nothing else — not sure if it
+    // registers." The greying was the only local signal; the words appeared far
+    // away in the rating row next to Copy.
+    var noteDone = el('span', { className: 'cplchat-fb-done' }, '');
+    noteDone.hidden = true;
+    var noteWrap = el('div', { className: 'cplchat-fb-note' }, [noteIn, noteBtn, noteDone]);
     noteWrap.hidden = true;
 
     function upsert(note) {
@@ -289,8 +607,15 @@
     }
 
     var btns = {};
-    var bar = el('div', { className: 'cplchat-fb' }, [hint]);
-    [['up', '👍', 'This answer was helpful'], ['down', '👎', 'This answer was not helpful']]
+    // Copy sits FIRST — it is what people reach for on a GOOD answer, and it
+    // should not sit behind the rating flow.
+    var bar = el('div', { className: 'cplchat-fb' }, [makeCopyBtn(afterRow, answer), hint]);
+    // The thumbs are now WORDS. They were the one place a glyph carried meaning
+    // no text repeated, so removing them without a label would have destroyed
+    // the control — the visible label now says what the aria-label said, which
+    // is also the accessible improvement (a bare 👍 announces as "thumbs up",
+    // not as "this answer was helpful").
+    [['up', 'Helpful', 'This answer was helpful'], ['down', 'Not helpful', 'This answer was not helpful']]
       .forEach(function (spec) {
         var b = el('button', {
           type: 'button', className: 'cplchat-fb-btn', 'aria-label': spec[2],
@@ -298,7 +623,7 @@
             rating = spec[0];
             btns.up.classList.toggle('on', rating === 'up');
             btns.down.classList.toggle('on', rating === 'down');
-            hint.textContent = '✓ Thanks — logged.';
+            hint.textContent = 'Thanks — logged.';
             noteWrap.hidden = false;
             upsert(noteIn.value.trim() || null);
           },
@@ -309,12 +634,33 @@
 
     noteBtn.addEventListener('click', function () {
       var n = noteIn.value.trim();
+      // `rating` is guaranteed here now that [hidden] actually hides the
+      // composer until one is given — the guard stays as a backstop, but it can
+      // no longer swallow a click the way it did when the box was always
+      // visible: you could type a note, press Send, and get NOTHING.
       if (!n || !rating) return;
       noteBtn.disabled = true;
-      upsert(n);
-      noteWrap.hidden = true;
-      hint.textContent = '✓ Note sent — thank you!';
-      hint.className = 'cplchat-fb-done';
+      noteDone.hidden = false;
+      noteDone.className = 'cplchat-fb-sending';
+      noteDone.textContent = 'Sending…';
+      upsert(n).then(function (ok) {
+        noteDone.hidden = false;
+        if (ok) {
+          // Consume the text so it is visibly taken, and close the composer.
+          noteIn.value = '';
+          noteIn.hidden = true;
+          noteBtn.hidden = true;
+          noteDone.className = 'cplchat-fb-done';
+          noteDone.textContent = 'Note sent — thank you!';
+        } else {
+          // KEEP THE TYPED TEXT. The same guarantee the guidance editor and the
+          // contact proposals carry: a write that did not land must report as a
+          // failure with the words still in the box, never as a cheerful tick.
+          noteBtn.disabled = false;
+          noteDone.className = 'cplchat-fb-fail';
+          noteDone.textContent = 'Not sent — your note is still here, try again.';
+        }
+      });
     });
     noteIn.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') { e.preventDefault(); noteBtn.click(); }
@@ -337,20 +683,56 @@
     if (document.getElementById('cplchat-aud-css')) return;
     var css = [
       '.cplchat-audience { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin:8px 0 2px; padding:8px 11px; background:var(--surface-subtle, #f2f6fb); border:1px solid var(--border, #d8dde6); border-radius:10px; }',
+      '.cplchat-viewer { margin:4px 0 0; font-size:.78rem; color:var(--text-muted, #5C5C55); }',
+      '.cplchat-viewer[hidden] { display:none; }',
       '.cplchat-aud-label { font-size:.82rem; font-weight:600; color:var(--text-muted, #5a6478); margin-right:2px; }',
       '.cplchat-aud-chip { border:1px solid var(--border-strong, #cdd6e3); background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); border-radius:999px; padding:6px 12px; font-size:.82rem; font-weight:600; cursor:pointer; }',
       '.cplchat-aud-chip:hover { border-color:var(--cobalt, #0047AB); }',
       '.cplchat-aud-chip.on { background:var(--seal-blue, #002F6D); border-color:var(--seal-blue, #002F6D); color:#fff; }',
+      // The remembered-but-unconfirmed chip: marked as the current pick, drawn
+      // as provisional. Dashed + unfilled so it cannot be mistaken for `.on` at
+      // a glance, and never the only signal — .cplchat-aud-note carries it in
+      // words for anyone who does not see the difference.
+      '.cplchat-aud-chip.remembered { background:var(--surface-opaque, #fff); border:1px dashed var(--seal-blue, #002F6D); color:var(--seal-blue-text,#002F6D); }',
+      '.cplchat-aud-note { flex-basis:100%; font-size:.78rem; color:var(--text-muted, #5a6478); }',
       '.cplchat-audience.need { outline:2px solid var(--crimson, #920000); }',
+      // Waiting on a tap is not an error, so it is cobalt, not crimson.
+      '.cplchat-audience.confirm { outline:2px solid var(--cobalt, #0047AB); }',
+      // .cplchat-status.cplchat-error lives in both HTML <style> blocks; this
+      // sibling is injected instead, so the confirm prompt needs no Rule-4
+      // mirror. Cobalt on the subtle surface, not the crimson of an error.
+      '.cplchat-status.cplchat-confirm { color:var(--cobalt, #0047AB); font-weight:600; }',
       '.cplchat-fb { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:2px 0 8px 38px; font-size:.78rem; color:var(--text-faint, #8a94a6); }',
-      '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.85rem; line-height:1.4; opacity:.75; }',
+      // The rating buttons carry WORDS now (Helpful / Not helpful), not thumbs.
+      // A <button> inherits neither font-family nor color — which is why the
+      // Copy pill below spells both out — and a glyph did not care, but a word
+      // does: without these the two rating pills render in the UA's default
+      // button font and color right beside a Copy pill that does not. nowrap
+      // keeps "Not helpful" on one line; the row still wraps (.cplchat-fb is
+      // flex-wrap).
+      '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; line-height:1.4; opacity:.75; color:inherit; font-family:inherit; white-space:nowrap; }',
       '.cplchat-fb-btn:hover { opacity:1; border-color:var(--cobalt, #0047AB); }',
       '.cplchat-fb-btn.on { opacity:1; background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
+      // Copy shares the pill shape but NOT the .cplchat-fb-btn class — that class
+      // means "a rating button" to the code (btns.up/btns.down) and to the tests,
+      // which assert exactly two of them.
+      '.cplchat-fb-copy { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; font-family:inherit; line-height:1.4; opacity:.75; color:inherit; white-space:nowrap; }',
+      '.cplchat-fb-copy:hover { opacity:1; border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-fb-copy.on { opacity:1; background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
+      // THE ROOT DEFECT. An author `display` rule beats the UA stylesheet's
+      // `[hidden] { display:none }`, so `noteWrap.hidden = true` was INERT:
+      // the composer never closed on success, and it was on screen from the
+      // start instead of appearing after a rating — which is how a click could
+      // hit the `!rating` guard and do nothing at all. Every `display` rule on
+      // an element that gets toggled with `hidden` needs this companion.
       '.cplchat-fb-note { display:flex; flex:1 1 100%; gap:6px; margin-top:4px; }',
+      '.cplchat-fb-note[hidden] { display:none; }',
       '.cplchat-fb-note input { flex:1; border:1px solid var(--border-strong, #cdd6e3); border-radius:8px; padding:6px 10px; font-size:.82rem; background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); }',
-      '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:#fff; font-size:.8rem; font-weight:600; }',
+      '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:var(--on-accent); font-size:.8rem; font-weight:600; }',
       '.cplchat-fb-note button:disabled { opacity:.6; cursor:default; }',
       '.cplchat-fb-done { color:var(--text-muted, #5a6478); font-weight:600; }',
+      '.cplchat-fb-sending { color:var(--text-faint, #8a94a6); font-weight:600; }',
+      '.cplchat-fb-fail { color:var(--crimson, #920000); font-weight:600; }',
       // Sierra-mark avatar (SVG roundel replaces the emoji glyph)
       '.cplchat-avatar { background: transparent; }',
       '.cplchat-avatar svg { width:100%; height:100%; display:block; }',
@@ -364,6 +746,40 @@
       '.cplchat-bubble th, .cplchat-bubble td { border:1px solid var(--border, #d8dde6); padding:4px 10px; text-align:left; vertical-align:top; }',
       '.cplchat-bubble th { background:var(--surface-subtle, #f2f6fb); color:var(--navy-primary, #0b3d61); font-weight:700; }',
       '.cplchat-bubble tbody tr:nth-child(even) { background:var(--surface-subtle, #f2f6fb); }',
+      // ── The Sierra AI heading + its Whitney mark (Sam, 2026-08-17) ─────────
+      // The mark is the same roundel the answer avatars carry, at heading size.
+      // `em` so it tracks the h2 rather than needing a second breakpoint.
+      // ── The Note sentence, where the yellow Beta box used to be ──────────
+      // Distinct by a quiet RULE, never by fading. Sky175's finding on the
+      // public page was that the least legible text on it was the sentence
+      // telling a student to check with their coordinator — a caution rendered
+      // in a third, fainter gray. So this inherits the description's color
+      // exactly (no new contrast pair to verify) and earns its separation from
+      // a neutral border and spacing instead. It must out-specify the host
+      // pane's `.cplchat-intro p` rule, hence the two-class selector.
+      '.cplchat-intro .cplchat-note { border-left:3px solid var(--border-strong, #c9cfd8);'
+        + ' padding-left:11px; margin-top:10px; font-size:.95em; }',
+      // The suggestion row's heading. `.cplchat-suggest` is a wrapping flex row,
+      // so the label claims a full line of its own rather than sitting in the
+      // chip flow.
+      '.cplchat-suggest-lab { flex:1 0 100%; font-size:.72rem; text-transform:uppercase;'
+        + ' letter-spacing:.04em; color:var(--text-muted, #5a6478); margin:2px 0 2px; }',
+      '.cplchat-title { display:flex; align-items:center; gap:10px; }',
+      '.cplchat-title-mark { flex:0 0 auto; width:1.25em; height:1.25em; display:block; }',
+      '.cplchat-title-mark svg { width:100%; height:100%; display:block; }',
+      // ── Measure control, so widening the log does not widen the PROSE ─────
+      // Sam, 2026-08-17: "use as much of the screen as possible for usable
+      // space". The log and the bubble now take the container's width, which is
+      // what a table or a long list of courses needs — but a 1,200px paragraph
+      // is unreadable, so the cap is applied to the PROSE elements instead of
+      // to the bubble. Tables keep their own overflow-x and are unaffected.
+      '.cplchat-bubble > p, .cplchat-bubble > ul, .cplchat-bubble > ol { max-width:var(--cpl-measure,none); }',
+      // ── Growing log: the reader-facing half of "don't scroll so much" ─────
+      // See the .cplchat-log rule in the HTML for the growth range itself.
+      // scroll-padding keeps a smooth page-follow from parking the newest line
+      // hard against the bottom edge.
+      'html { scroll-padding-bottom:96px; }',
+      '@media (prefers-reduced-motion:reduce){ html { scroll-behavior:auto; } }',
     ].join('\n');
     var st = document.createElement('style');
     st.id = 'cplchat-aud-css';
@@ -371,8 +787,60 @@
     document.head.appendChild(st);
   }
 
+  // ── Keep the newest line in view ───────────────────────────────────────────
+  // The log used to be a FIXED 460px box, so "scroll to the bottom" meant one
+  // thing: scroll the box. It now GROWS with the answer (Sam, 2026-08-17:
+  // "allow Sierra's window to grow with her answers — so users don't have to
+  // scroll so much"), which introduces a second case the old one-liner could
+  // not reach: a growing box is not internally scrollable, so setting scrollTop
+  // is a no-op while the bottom of the answer — and the input under it — walks
+  // off the bottom of the PAGE. Growth without page-follow would have made the
+  // scrolling worse, not better.
+  //
+  // Both cases are handled, and the page half is deliberately conservative:
+  //   · only when the anchor is actually below the fold (never scroll up, and
+  //     never scroll at all when it already fits);
+  //   · only while `stick` — set at send time and cleared the moment the reader
+  //     scrolls away from the bottom themselves. Yanking someone who scrolled
+  //     up to re-read an earlier answer is the failure mode that makes chat UIs
+  //     unusable, and it is silent: they just fight the page and give up.
+  var stick = true;
+  var windowScrollWatched = false;
+  function nearBottom() {
+    var slack = 120;                                    // a comfortable "still at the end"
+    if (logEl && logEl.scrollHeight > logEl.clientHeight + 1) {
+      return logEl.scrollTop + logEl.clientHeight >= logEl.scrollHeight - slack;
+    }
+    var doc = document.documentElement;
+    if (!doc) return true;
+    var below = doc.scrollHeight - (window.pageYOffset || doc.scrollTop || 0) - doc.clientHeight;
+    return below <= slack;
+  }
+  function stickToBottom() { stick = true; }
+  function noteReaderScroll() { stick = nearBottom(); }
   function scrollDown() {
-    if (logEl) requestAnimationFrame(function () { logEl.scrollTop = logEl.scrollHeight; });
+    if (!logEl) return;
+    requestAnimationFrame(function () {
+      if (!logEl) return;
+      // Internal scroll first. Still correct for a long answer that has hit the
+      // max-height cap; a harmless no-op while the box is still growing.
+      logEl.scrollTop = logEl.scrollHeight;
+      if (!stick) return;
+      try {
+        var r = logEl.getBoundingClientRect();
+        var vh = window.innerHeight || (document.documentElement || {}).clientHeight || 0;
+        // Nothing to do unless the bottom edge is genuinely past the fold.
+        if (!vh || r.bottom <= vh - 8) return;
+        // Move by exactly the overshoot, plus room for the input row beneath.
+        // A JS `behavior:'smooth'` is NOT covered by the CSS reduced-motion
+        // rule, so the preference is read here as well.
+        var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollBy({
+          top: Math.ceil(r.bottom - vh + 96), left: 0,
+          behavior: calm ? 'auto' : 'smooth',
+        });
+      } catch (e) { /* no layout (jsdom) or no scrollBy — internal scroll stands */ }
+    });
   }
   function addUserMsg(text) {
     var row = el('div', { className: 'cplchat-msg cplchat-user' },
@@ -403,10 +871,70 @@
     scrollDown();
     return { row: row, bubble: bubble };
   }
+  /* Remove the CONVERSATION from the log and nothing else.
+   *
+   * ⚠ NOT `logEl.innerHTML = ''`. The suggested-questions row lives INSIDE the
+   * log (build() appends `chipsEl` to it), so wiping the log deletes the widget's
+   * own chrome and leaves `chipsEl` pointing at a detached node — setSuggestions()
+   * then paints into nothing and the reader gets an assistant with no starters at
+   * all. The first draft did exactly that and my_college_sierra_box.test.js
+   * caught it: EXACTLY ONE cluster -> found 0. Clear what the turns created —
+   * message rows and their feedback bars — and leave the furniture alone. */
+  function clearTranscript() {
+    if (!logEl) return;
+    var kill = logEl.querySelectorAll('.cplchat-msg, .cplchat-fb');
+    for (var i = 0; i < kill.length; i++) {
+      if (kill[i].parentNode) kill[i].parentNode.removeChild(kill[i]);
+    }
+  }
+
   function setStatus(text, kind) {
     if (!statusEl) return;
     statusEl.textContent = text || '';
     statusEl.className = 'cplchat-status' + (kind ? ' cplchat-' + kind : '');
+  }
+
+  /* The credential this COBI reader holds, sent so the FUNCTION can decide who
+   * is asking (v66, 2026-09-12). The magic-link session's JWT replaces the anon
+   * bearer when one is held; the shared team phrase rides in x-team-pass — the
+   * same two shapes every gated tab already sends to PostgREST
+   * (college_briefing.js authHeaders()). ⚠ THE PAGE NEVER DECLARES A VIEWER —
+   * no body field, no header of our own. It carries the credential, and the
+   * function asks the database what that credential is worth; that is what
+   * keeps "I am internal" from being a claim any caller can make. The public
+   * Sierra page holds no credential and is untouched: it keeps the anon key. */
+  function credentialHeaders() {
+    var h = { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON };
+    var sess = null;
+    try {
+      var K = window.CPL_SESSION;
+      sess = (K && typeof K.get === 'function') ? K.get() : null;
+    } catch (e) { sess = null; }
+    var tok = sess && sess.access_token;
+    if (typeof tok === 'string' && tok.split('.').length === 3 && tok.length > 40) h['Authorization'] = 'Bearer ' + tok;
+    try {
+      var P = window.CPL_TEAM_PHRASE;
+      if (P && typeof P.decorateHeaders === 'function') P.decorateHeaders(h, sess);
+    } catch (e) { /* helper absent — the bearer above stands */ }
+    return h;
+  }
+
+  // ── Who the FUNCTION took us to be (v66) ──
+  // The masthead's "Signed in" reports what the BROWSER holds; this line reports
+  // what the function concluded from the credential it was sent — the check no
+  // page can make for itself, and the reason the flag is derived server-side.
+  // Words only, and nothing at all for a public reader: the line's default
+  // state is empty and hidden, which is the plain-words rule's default too.
+  var VIEWER_WORDS = {
+    reviewer: 'Recognized by the assistant as a signed-in reviewer.',
+    team: 'Recognized by the assistant as CPL team.'
+  };
+  function noteViewer(meta) {
+    if (!viewerEl) return;
+    var kind = meta && typeof meta.viewer === 'string' ? meta.viewer : 'public';
+    var words = Object.prototype.hasOwnProperty.call(VIEWER_WORDS, kind) ? VIEWER_WORDS[kind] : '';
+    viewerEl.textContent = words;
+    viewerEl.hidden = !words;
   }
 
   // ── Call the Edge Function + stream the SSE response ──
@@ -420,16 +948,19 @@
     try {
       resp = await fetch(CHAT_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_ANON,
-          'Authorization': 'Bearer ' + SUPABASE_ANON,
-        },
+        headers: credentialHeaders(),
         // Send the PRIOR turns; the function appends this query as the final
         // user turn. The empty [] on turn 1 still opts us into multi-turn mode.
+        // `scope` names the institution whose page this is, so the function
+        // does not have to infer it from the question text. Without it the
+        // active `sierra_guidance` directive "confine your answers to the
+        // selected institution" is unfollowable — the model is told to answer
+        // for a selection it is never shown, which is an instruction to guess.
+        // An older deployed function ignores the extra field, so this is safe
+        // to ship ahead of the function change.
         body: JSON.stringify({
           query: query, session_id: sessionId(), history: convo.slice(),
-          audience: audience,
+          audience: audience, scope: hostScope, surface: hostSurface,
         }),
       });
     } catch (e) {
@@ -474,6 +1005,9 @@
                 scrollDown();
               }
             } catch (e) { /* skip malformed delta */ }
+          } else if (evt.event === 'meta') {
+            // Who the FUNCTION took us to be — see noteViewer().
+            try { noteViewer(JSON.parse(evt.data)); } catch (e) { /* skip malformed meta */ }
           } else if (evt.event === 'done') {
             // stream complete
           }
@@ -511,13 +1045,28 @@
     var q = (inputEl.value || '').trim();
     if (!q) { inputEl.focus(); return; }
     if (!audience) { needAudience(); return; }
+    /* ⚠ ORDER MATTERS: no role at all is a different failure from a role
+     * nobody has confirmed, and they get different prompts. Both return BEFORE
+     * `busy`, before addUserMsg() and before inputEl is cleared — which is what
+     * leaves the question in the box for setAudience() to resume. */
+    if (!audienceConfirmed) { confirmAudience(); return; }
+    pendingAsk = null;
     busy = true;
+    // Asking is an explicit "show me the answer", so re-arm page-follow even if
+    // the reader had scrolled up to look at an earlier turn.
+    stickToBottom();
     sendBtn.disabled = true; inputEl.disabled = true;
     addUserMsg(q);
     inputEl.value = '';
     setStatus('Thinking…', 'pending');
-    var firstChips = document.getElementById('cplchat-suggest');
-    if (firstChips) firstChips.remove(); // hide starter chips after first question
+    // Hide the starter chips after the first question — THIS pane's chips.
+    // ⚠ This was getElementById('cplchat-suggest'), and two panes can hold a row
+    // at once (My College mounts the same widget). The id lookup returns
+    // whichever is earlier in the document — My College — so asking on the CPL
+    // Assistant tab cleared the OTHER tab's chips and left its own on screen.
+    // Same trap as `inputEl`, documented below; `chipsEl` is re-pointed by
+    // build() alongside inputEl, so the two always refer to one pane.
+    if (chipsEl) { chipsEl.remove(); chipsEl = null; }
     try {
       await ask(q);
       setStatus('');
@@ -535,20 +1084,58 @@
     ensureChatCss();
     var wrap = el('div', { className: 'cplchat' });
 
+    // ── The one heading (Sam, 2026-08-17) ──────────────────────────────────
+    // "Change CPL Assistant title to Sierra AI with her mountain logo". She is
+    // named "Sierra AI" and not "Sierra" because Sierra alone reads as Sierra
+    // College (Sam, 2026-08-11). The mark is the SAME static SIERRA_MARK the
+    // chat avatars use, so the header and the answers beneath it carry one
+    // identity — and it needs no relative-path asset, which matters because
+    // this widget mounts in two panes and on two mirrored HTMLs.
+    //
+    // This is now the ONLY heading on My College's assistant box: that tab used
+    // to print its own "Sierra AI" h3 and purpose paragraph directly above this
+    // one, so the pane opened with two titles and two descriptions of the same
+    // thing. college_briefing.js no longer emits its copy.
+    var title = el('h2', { className: 'cplchat-title' });
+    var mark = el('span', { className: 'cplchat-title-mark', 'aria-hidden': 'true' });
+    mark.innerHTML = SIERRA_MARK;                 // static, trusted (see SIERRA_MARK)
+    title.appendChild(mark);
+    title.appendChild(el('span', null, 'Sierra AI'));
+
+    // ── One description, and the caution reads as a sentence (Sam, 2026-08-21) ──
+    // His wording, verbatim. It replaces BOTH the old four-line description and
+    // the yellow "Beta — in development" box he asked to delete: the box's two
+    // duties (say she is unfinished, say not to type personal information) are
+    // carried by the Note sentence, so nothing was dropped, only unboxed.
+    //
+    // ⚠ IT IS TWO PARAGRAPHS, NOT ONE BLOCK. The Note is a caution and has to
+    // survive being skimmed — a box earned that for free and plain prose does
+    // not. `.cplchat-note` is the quieter weight; it is deliberately NOT a
+    // colored panel, which is the thing that was removed.
+    //
+    // It has to read correctly in BOTH hosts — this widget mounts on My College
+    // and on the CPL Assistant tab, so it cannot say "the sections below" (the
+    // wording My College's deleted paragraph used, which would be a promise
+    // about a page that isn't always there).
     wrap.appendChild(el('div', { className: 'cplchat-intro' }, [
-      el('h2', null, 'CPL Assistant'),
-      el('p', null,
-        'Ask about Credit for Prior Learning — what a college offers, where to ' +
-        'find credit for a license or certification, or statewide CPL numbers. ' +
-        'Answers draw on the CPL knowledge base, live dashboard metrics, and ' +
-        '2,300+ statewide exhibits.'),
-      el('p', { className: 'cplchat-beta' },
-        '🧪 Beta — in development. Please don\'t enter personal information; ' +
-        'questions are logged to improve answers.'),
+      title,
+      el('p', null, 'Ask her anything about credit for prior learning.'),
+      el('p', { className: 'cplchat-note' },
+        'Note: Sierra is in the development phase and may present incomplete or ' +
+        'inaccurate information. Please give a thumbs up or down and include a ' +
+        'note if you notice an improvement to be made. Please don\'t enter ' +
+        'personal information; questions are logged to improve responses.'),
     ]));
 
+    /* ⚠ role="group", NOT "radiogroup" — the children are `aria-pressed`
+     * toggle buttons, and a radiogroup promises `role="radio"` + `aria-checked`
+     * children. A screen reader announced a radio group containing toggle
+     * buttons, which is neither. Sky175 fixed exactly this on the public page
+     * (sierra/index.html carries role="group"); COBI kept the old markup for a
+     * week because nothing compared the two. tests/sierra_surfaces_aligned now
+     * asserts it, so the next divergence is caught rather than noticed. */
     audEl = el('div', {
-      className: 'cplchat-audience', id: 'cplchat-audience', role: 'radiogroup',
+      className: 'cplchat-audience', id: 'cplchat-audience', role: 'group',
       'aria-label': 'Tell the assistant who you are so answers fit your needs',
     });
     loadAudience();
@@ -556,20 +1143,38 @@
     wrap.appendChild(audEl);
 
     logEl = el('div', { className: 'cplchat-log', id: 'cplchat-log', 'aria-live': 'polite' });
+    // A reader who scrolls away from the bottom takes control; asking again
+    // hands it back (see scrollDown). Passive: this must never delay a scroll.
+    // The log's own listener dies with the element, but build() runs again on
+    // every mountInto() — so the WINDOW listener is attached exactly once, or
+    // switching between My College and CPL Assistant would stack one per visit.
+    try {
+      logEl.addEventListener('scroll', noteReaderScroll, { passive: true });
+      if (!windowScrollWatched) {
+        window.addEventListener('scroll', noteReaderScroll, { passive: true });
+        windowScrollWatched = true;
+      }
+    } catch (e) { /* no addEventListener options support — follow stays armed */ }
 
-    // Starter suggestion chips
-    var chips = el('div', { className: 'cplchat-suggest', id: 'cplchat-suggest' });
-    SUGGESTED.forEach(function (s) {
-      chips.appendChild(el('button', {
-        type: 'button', className: 'cplchat-chip',
-        onclick: function () { inputEl.value = s; submit(); },
-      }, s));
-    });
-    logEl.appendChild(chips);
+    // Starter suggestion chips — the ONE question cluster (see hostSuggestions).
+    //
+    // ⚠ THEY STAY INSIDE THE LOG. Sky175 found that this log is keyboard
+    // reachable only BECAUSE these chips are focusable and live in it; moving
+    // them out would take the transcript out of the tab order to fix a layout
+    // nit. Inside the log also puts them below the role chips for free, which
+    // is the whole point of the consolidation.
+    chipsEl = el('div', { className: 'cplchat-suggest', id: 'cplchat-suggest' });
+    renderSuggestions();
+    logEl.appendChild(chipsEl);
     wrap.appendChild(logEl);
 
     statusEl = el('div', { className: 'cplchat-status', id: 'cplchat-status', 'aria-live': 'polite' });
     wrap.appendChild(statusEl);
+    // The recognition line (v66) — empty and hidden until a turn's `meta` frame
+    // says the function recognized a sign-in. See noteViewer().
+    viewerEl = el('p', { className: 'cplchat-viewer' });
+    viewerEl.hidden = true;
+    wrap.appendChild(viewerEl);
 
     var row = el('div', { className: 'cplchat-inputrow' });
     inputEl = el('input', {
@@ -591,18 +1196,110 @@
   // before replaying it. Consumed on tab activation (tabs.js dispatches
   // cpl-tab-activated on WINDOW) + once at mount for the deep-link landing.
   var TEST_Q_KEY = 'cplSierraTestQ.v1';
-  function consumeTestQuestion() {
+
+  // The #chatbot pane's OWN input, which is not necessarily `inputEl`.
+  //
+  // WHY (Sam, 2026-08-13: "tried to use Try it With Sierra but it didn't copy
+  // the question into Sierra"). My College mounts this SAME widget through
+  // mountInto(), and build() re-points the module-level `inputEl` at THAT
+  // pane's input. mount() then early-returns on the data-cplchat-mounted flag,
+  // so coming back to #chatbot never re-points it. After one visit to My
+  // College, `inputEl` is the hidden pane's input for the rest of the session —
+  // so the handoff typed the question into an invisible box.
+  // Is the dedicated CPL Assistant tab actually reachable? cobi_orgs.js hides a
+  // nav button with style.display + data-org-hidden="1"; the Admin tab Sam is
+  // planning will suppress tabs the same way. data-org-hidden is used rather
+  // than offsetParent because jsdom has no layout, so a visibility test based on
+  // rendering cannot be tested at all.
+  function chatbotTabSuppressed() {
+    var pane = document.getElementById('tab-chatbot');
+    if (!pane) return true;
+    var btn = document.querySelector('.cpl-tab[data-tab="chatbot"]');
+    return !!(btn && btn.getAttribute('data-org-hidden') === '1');
+  }
+
+  // The pane that should receive a Sierra Training hand-off.
+  //
+  // PREFERS the dedicated CPL Assistant pane, and falls back to My College —
+  // which mounts this SAME widget via mountInto() — when CPL Assistant is
+  // suppressed or absent. Sam, 2026-08-14, planning to suppress that tab from an
+  // Admin tab: the two surfaces are the same assistant, but the hand-off names
+  // #chatbot specifically, so suppressing it would have silently broken the only
+  // way to test an instruction. A button that does nothing looks like one that
+  // was never wired — the exact failure #1166 existed to fix.
+  //
+  // Still pane-scoped rather than using the module-level `inputEl`, because that
+  // reference goes stale after a second mount (see the note below).
+  function chatbotInputEl() {
+    if (!chatbotTabSuppressed()) {
+      var pane = document.getElementById('tab-chatbot');
+      var el = pane && pane.querySelector('#cplchat-input, .cplchat-input');
+      if (el) return el;
+    }
+    var mc = document.getElementById('tab-college-briefing');
+    return (mc && mc.querySelector('#cplchat-input, .cplchat-input')) || null;
+  }
+
+  // ── Where a hand-off is addressed (Sierra Training "Try it in", round 1,
+  // Sam's approval 2026-09-28) ──────────────────────────────────────────────
+  // The question stays a plain string under TEST_Q_KEY; college_briefing.js and
+  // the tests write it that way. A SECOND key names the destination, and only
+  // "Try it in: My College" writes one. ABSENT means the default, which behaves
+  // exactly as it did before this key existed: the CPL Assistant pane, or My
+  // College when that tab is suppressed.
+  //
+  // ⚠ The destination cannot be read off the activated tab. chatbotInputEl()
+  // picks the pane by SUPPRESSION, so a My College hand-off consumed on
+  // activation would type the question into the HIDDEN CPL Assistant input and
+  // burn the key. And My College builds its box lazily — after data loads, inside a
+  // collapsible section — so its hand-off is delivered from mountInto(), the
+  // moment that box exists, and never on activation.
+  var TEST_DEST_KEY = 'cplSierraTestDest.v1';
+  var DEST_MY_COLLEGE = 'college-briefing';
+  function testDest() {
+    try { return sessionStorage.getItem(TEST_DEST_KEY) || ''; } catch (e) { return ''; }
+  }
+  // My College's own input, and only inside the host a mount just built.
+  function myCollegeInputEl(host) {
+    var pane = document.getElementById('tab-' + DEST_MY_COLLEGE);
+    if (!host || !pane || !pane.contains(host)) return null;
+    return host.querySelector('#cplchat-input, .cplchat-input');
+  }
+  // My College's Sierra is a collapsible section, and Collapse all closes her.
+  // A question typed into a closed section is a question nobody can see.
+  function openSectionsAround(el) {
+    for (var n = el && el.parentNode; n && n.nodeType === 1; n = n.parentNode) {
+      if (n.tagName === 'DETAILS' && !n.open) n.open = true;
+    }
+  }
+
+  function consumeTestQuestion(host) {
     var q = null;
+    try { q = sessionStorage.getItem(TEST_Q_KEY); } catch (e) { return; }
+    if (!q) return;
+    var toMyCollege = testDest() === DEST_MY_COLLEGE;
+    var el = toMyCollege ? myCollegeInputEl(host) : (chatbotInputEl() || inputEl);
+    // KEY IS NOT REMOVED ON FAILURE. It used to be deleted before the input was
+    // known to exist, so an activation that fired before the widget was built
+    // consumed the question and dropped it — and because the key was gone, the
+    // reviewer could not retry: the button appeared to do nothing, twice. The
+    // handoff now survives until it is actually delivered.
+    if (!el) return;
+    el.value = q.slice(0, 1000);
     try {
-      q = sessionStorage.getItem(TEST_Q_KEY);
-      if (q) sessionStorage.removeItem(TEST_Q_KEY);
+      sessionStorage.removeItem(TEST_Q_KEY);
+      sessionStorage.removeItem(TEST_DEST_KEY);
     } catch (e) { /* storage unavailable */ }
-    if (!q || !inputEl) return;
-    inputEl.value = q.slice(0, 1000);
-    try { inputEl.focus(); } catch (e) { /* hidden pane */ }
+    if (toMyCollege) openSectionsAround(el);
+    try { el.focus(); } catch (e) { /* hidden pane */ }
   }
   window.addEventListener('cpl-tab-activated', function (e) {
-    if (e && e.detail && e.detail.tab === 'chatbot') consumeTestQuestion();
+    // Both hosts of this widget, so a hand-off still lands when CPL Assistant is
+    // suppressed and the reviewer is routed to My College instead. The key is
+    // not consumed until an input is actually found, so listening on the wrong
+    // one costs nothing.
+    var t = e && e.detail && e.detail.tab;
+    if (t === 'chatbot' || t === 'college-briefing') consumeTestQuestion();
   });
 
   function mount() {
@@ -611,8 +1308,56 @@
     var host = pane.querySelector('.cplchat-mount') || pane.querySelector('.main-container') || pane;
     if (host.getAttribute('data-cplchat-mounted') === '1') return; // idempotent
     host.setAttribute('data-cplchat-mounted', '1');
+    // The dedicated tab is nobody's college page, so it always gets the generic
+    // starters — a stale host list from My College must not follow the reader
+    // here and ask about a college this pane never mentioned.
+    hostSuggestions = null;
+    hostSurface = 'cobi-assistant';
+    // Same argument, same line of reasoning, for the ANCHOR: this pane has no
+    // selected institution, so it must not keep asking the function to answer
+    // for My College's. The THREAD is not cleared here on purpose — mount() is
+    // idempotent and does not rebuild, so the transcript is still on screen, and
+    // "what we send is never more than what is shown" still holds.
+    hostScope = null;
     build(host);
     consumeTestQuestion();
+  }
+
+  // ── Mount the SAME assistant somewhere else (Sam, 2026-08-11) ──────────────
+  // The My College tab embeds the assistant rather than linking out to
+  // #chatbot, so a coordinator never leaves the page. This is deliberately a
+  // SECOND MOUNT of the one instance, not a second assistant: the audience
+  // rules, the feedback path, the markdown renderer and the conversation
+  // history all stay in this file, so they cannot drift apart. `convo` is
+  // module-level on purpose — the thread follows you between the two places.
+  //
+  // Only one host is live at a time (they are tab panes), and build() re-points
+  // the module's element refs, so re-mounting on tab switch is correct rather
+  // than duplicative. `_host` tracks which one currently owns the widget.
+  var _host = null;
+  function mountInto(host, surface) {
+    if (!host || host === _host) return;
+    /* ⚠ CARRY UNSENT TYPING ACROSS A RE-MOUNT. The embedding tab re-renders for
+     * reasons that are not the reader's — My College repaints when its roster,
+     * the live metrics or the funding model arrive — and every repaint hands
+     * this a NEW host, which build() fills with a new, EMPTY input. A question
+     * half-typed there, or handed over from Sierra Training, would vanish a
+     * second later.
+     * Only the previous mount's own input is carried: if the CPL Assistant pane
+     * built last, `inputEl` is that pane's and stays where it is. */
+    var carried = (_host && inputEl && _host.contains(inputEl)) ? inputEl.value : '';
+    _host = host;
+    /* The embedding tab declares which surface it is. Absent -> null -> every
+     * guidance rule, i.e. exactly today's behavior, so an older host that has
+     * not been updated is unaffected rather than mis-scoped. */
+    hostSurface = surface || null;
+    host.innerHTML = '';
+    host.setAttribute('data-cplchat-mounted', '1');
+    build(host);
+    if (carried && inputEl && !inputEl.value) inputEl.value = carried;
+    // A Sierra Training hand-off addressed to My College lands in the box this
+    // mount just built. The default hand-off is still never consumed here.
+    if (testDest() === DEST_MY_COLLEGE) consumeTestQuestion(host);
   }
 
   if (document.readyState === 'loading') {
@@ -624,9 +1369,110 @@
   // Pure helpers exposed for the jsdom tests (tests/cpl_chat_audience.test.js,
   // tests/sierra_markdown.test.js).
   window.CPL_CHAT = {
-    AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
+    AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, AUD_OK_KEY: AUD_OK_KEY,
+    feedbackPayload: feedbackPayload,
+    credentialHeaders: credentialHeaders, noteViewer: noteViewer, VIEWER_WORDS: VIEWER_WORDS,
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
-    SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY,
+    SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY, TEST_DEST_KEY: TEST_DEST_KEY,
     consumeTestQuestion: consumeTestQuestion,
+    // The growing-log follow (tests/my_college_refinement.test.js). jsdom has no
+    // layout, so the only way to exercise the below-the-fold branch is to stub
+    // the geometry and drive scrollDown() directly; `_setStick` reproduces the
+    // reader-scrolled-away state that `nearBottom()` cannot reach with every
+    // rect at zero. Test seams, not API — underscored, and nothing calls them.
+    _scrollDown: scrollDown,
+    _setStick: function (v) { stick = !!v; },
+    // Embed the one assistant elsewhere (My College). See mountInto above.
+    mountInto: mountInto,
+    // Prefill the box without sending — the visitor edits before asking.
+    // ⚠ Do NOT make this send. The Sierra Training tab's "Test in Sierra"
+    // hand-off depends on the reviewer being able to tweak a logged question
+    // before replaying it. Use ask() when you want one click to be enough.
+    prefill: function (q) {
+      if (!inputEl) return false;
+      inputEl.value = String(q == null ? '' : q).slice(0, 1000);
+      try { inputEl.focus(); } catch (e) { /* hidden pane */ }
+      return true;
+    },
+    // Fill AND send — the behavior of this assistant's own starter chips,
+    // exposed so an embedding tab's suggested questions cost one click rather
+    // than two (Sam, 2026-08-11: "so they don't have to take 2 steps and get
+    // lost"). Returns false if the assistant is not mounted, so the caller can
+    // fall back to navigating to the full tab.
+    ask: function (q) {
+      if (!inputEl) return false;
+      inputEl.value = String(q == null ? '' : q).slice(0, 1000);
+      submit();
+      return true;
+    },
+    /* Hand the embedding tab's own questions to the widget, so there is ONE
+     * cluster and it sits below the role chips. Pass a falsy value or an empty
+     * array to go back to the generic starters. Call it AFTER mountInto() —
+     * build() creates the row this paints into. Returns false if nothing is
+     * mounted, so a caller can tell "not shown" from "shown empty". */
+    setSuggestions: function (list) {
+      hostSuggestions = (list && list.length) ? list.slice(0, 8).map(function (q) {
+        return String(q == null ? '' : q).slice(0, 300);
+      }) : null;
+      if (!chipsEl) return false;
+      renderSuggestions();
+      return true;
+    },
+    /* Tell the assistant whose page it is now sitting on. See `hostScope` above
+     * for why this exists — the short version is that the thread must not
+     * outlive the subject it was formed under.
+     *
+     * `kind` is "college" | "district" | "statewide"; `label` is the full name
+     * as the host displays it ("Los Angeles Community College District", never
+     * "LACCD" — the function resolves the district from this string through the
+     * SAME roster path a typed question uses, and an abbreviation is a second
+     * matcher that can drift). Pass null when no scope is settled.
+     *
+     * ⚠ IDENTITY IS THE KEY, NOT THE CALL. The host re-renders for reasons that
+     * are NOT a change of subject — picking a role, opening a drawer — and each
+     * one lands here. Dropping the thread on every call would delete a
+     * conversation mid-read; dropping it on none is the bug. So the comparison
+     * is on the key, and an unchanged scope is a no-op.
+     *
+     * Returns true only when the subject actually CHANGED (and the thread was
+     * therefore dropped), so a caller can tell the two apart. */
+    setScope: function (kind, label) {
+      var next = null;
+      // Statewide has no entity to resolve, so the label is only ever displayed
+      // back — carry the host's own wording rather than inventing a second name
+      // for the thing the heading already calls something.
+      if (kind === 'statewide') {
+        next = { kind: 'statewide',
+                 label: String(label == null ? '' : label).trim().slice(0, 200)
+                        || 'All California Community Colleges' };
+      }
+      else if ((kind === 'college' || kind === 'district') && label) {
+        /* ⚠ TRIM BEFORE THE KEY, not just server-side. This string becomes the
+         * subject identity, and `map_college_contacts` genuinely holds
+         * "Cypress College " with a trailing space (#1278) — an untrimmed label
+         * would make two subjects of one college and drop the reader's thread
+         * on a re-render that changed nothing. Same order as the function's
+         * normalizeHostScope, so the two agree on what one subject is. */
+        var name = String(label).trim().slice(0, 200);
+        if (name) next = { kind: kind, label: name };
+      }
+      hostScope = next;
+      // No subject (the generic pane, or a scope not yet chosen): the anchor is
+      // cleared — a stale one must never steer an answer — but the thread is a
+      // conversation the reader can still read, so it stands.
+      if (!next) return false;
+      var nextKey = next.kind + ':' + next.label;
+      if (nextKey === threadSubject) return false;   // same subject; thread stands
+      // A DIFFERENT subject. Drop the thread, and clear the transcript, so the
+      // two can never disagree about what this conversation contains.
+      threadSubject = nextKey;
+      convo = [];
+      clearTranscript();
+      return true;
+    },
+    // Test seam for the above — asserting on what would be SENT is the only way
+    // to catch a thread that is invisible on screen and still in the payload.
+    _thread: function () { return convo.slice(); },
+    _scope: function () { return hostScope; },
   };
 })();

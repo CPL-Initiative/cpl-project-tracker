@@ -1,0 +1,33 @@
+{
+ "_about": "The ESL monthly pass (Sam's verdict on item 8, 2026-09-26): what a level or purpose word places is applied; the rest is listed for him.",
+ "_read_at": "2026-09-27T12:56:51+00:00",
+ "verdict": "https://claude.ai/artifact/LaZmu7NYj11DigAEbxsUMS item 8",
+ "inserts": [],
+ "updates": [],
+ "deletes": [],
+ "listed": [],
+ "ruled_apart": [
+  {
+   "id": "ESOL M1205",
+   "title": "ESL College Composition and Reading",
+   "ruling": "item 4 of the ESL merging sheet, 2026-09-26: transfer composition stays apart"
+  },
+  {
+   "id": "ESOL M1239",
+   "title": "Composition, Reading, and Freshman English",
+   "ruling": "item 4 of the ESL merging sheet, 2026-09-26: transfer composition stays apart"
+  },
+  {
+   "id": "ESOL M9309",
+   "title": "ESL Supplemental Freshman Composition: Paragraphs",
+   "ruling": "item 1 of the ESL follow-up sheet, 2026-09-27 (his own call): stays apart with transfer composition"
+  }
+ ],
+ "skipped": [],
+ "counts": {
+  "apply": 0,
+  "listed": 0,
+  "ruled_apart": 3,
+  "skipped": 0
+ }
+}

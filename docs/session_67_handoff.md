@@ -8,6 +8,8 @@ related:
   - "[[docs/session_66_handoff]]"
   - "[[docs/kb-notes/tmc-co-review-scope]]"
   - "[[docs/kb-notes/reference-adt-acceptance-rules]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 67

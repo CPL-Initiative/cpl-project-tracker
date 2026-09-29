@@ -1,0 +1,132 @@
+name: TypeSafe (Jev) smoke test
+
+# Verifies that the TYPESAFE_API_KEY repository secret is present and that
+# TypeSafe's System One API accepts it. Nothing is written, nothing is committed.
+#
+# WHY A RUNNER: typesafe.ai is egress-blocked from the agent sandbox — the proxy
+# gateway answers 403 to CONNECT on api.typesafe.ai, docs.typesafe.ai and the
+# apex — so a Claude session cannot verify the key itself. A runner has open
+# egress and stands in as the proxy. Same runner-as-proxy pattern as
+# map-users-schema-probe.yml (Azure MAP API) and cpl-landing-pages.yml.
+#
+# WHY DISPATCH-ONLY: a `pull_request` trigger would hand the secret to any fork
+# that opens a PR, and every run spends a real API call. This is a thing you run
+# when you have just rotated or first added the key, never on a schedule.
+#
+# THE KEY NEVER REACHES THE LOG: kb/_typesafe_smoke.py prints presence and
+# length only, and redacts the key out of any error body before raising. This
+# repo's Actions logs are readable by anyone who can read the repo.
+#
+# The secret is set under Settings > Secrets and variables > Actions (a session
+# cannot create secrets). Verified working on a runner 2026-09-20: models ->
+# jev-latest, jev-preview, and one System One call answered correctly. The wire
+# format and the question shapes live in that script's docstring.
+
+on:
+  workflow_dispatch:
+    inputs:
+      full:
+        description: 'Also spend one System One call (end-to-end, not just auth)'
+        type: boolean
+        default: false
+      cr_trial:
+        description: 'Run the Common CR Reference trial (Jev suggests merges; nothing is written)'
+        type: boolean
+        default: false
+      cr_limit:
+        description: 'Cap the trial to the N highest-row pairs (blank = all)'
+        type: string
+        default: ''
+      adjudicate:
+        description: 'Jev magic half for a reference (csr / cer / ccr / ccrr) — suggests, writes nothing'
+        type: choice
+        options: ['', 'csr', 'cer', 'ccr', 'ccrr']
+        default: ''
+      adjudicate_limit:
+        description: 'Cap the adjudication to the N highest-weight findings (blank = all)'
+        type: string
+        default: ''
+      rung:
+        description: 'CCR only — one rung per run. title/description/cip are ONE question with cumulative evidence (escalate only what the last left unsettled); units/subject/aggregate are separate questions over their own populations. Each earns its own gate.'
+        type: choice
+        options: ['', 'title', 'description', 'cip', 'units', 'subject', 'aggregate']
+        default: ''
+      battery:
+        description: 'Variable battery over the below-gate band (26 calls; scores itself against Sam 51 verdicts)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: typesafe-smoke
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Smoke-test the TypeSafe key (no writes, no commit)
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          python3 kb/_typesafe_smoke.py ${{ inputs.full && '--full' || '' }}
+
+      # The magic half (kb/_jev_adjudicate.py). Same runner-as-proxy reason as
+      # the smoke test: typesafe.ai is egress-blocked from the agent sandbox.
+      # ⚠️ It SUGGESTS — nothing is written to Supabase, nothing is committed,
+      # and the output is uploaded as an artifact for a curator to read.
+      #
+      # ⚠️ A REFERENCE WITH NO MEASURED GATE RUNS AS A CALIBRATION SITTING. Only
+      # the ccrr has one (0.85, from Sam's 51 verdicts on a different question),
+      # so a ccr run ranks every row for a curator, suggests nothing, and spends
+      # no second look — one call per finding. Its verdicts are what earns the
+      # ccr a gate in `GATES`. Pick ONE rung: `title` is the cheapest and the
+      # one to calibrate first.
+      - name: Jev adjudication (suggests, never merges)
+        if: inputs.adjudicate != ''
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          python3 kb/_jev_adjudicate.py --ref '${{ inputs.adjudicate }}' \
+            ${{ inputs.adjudicate_limit && format('--limit {0}', inputs.adjudicate_limit) || '' }} \
+            ${{ inputs.rung && format('--rung {0}', inputs.rung) || '' }}
+      - name: Upload the worklist
+        if: inputs.adjudicate != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: jev-${{ inputs.adjudicate }}
+          path: kb/jev_out/
+
+      # The variable battery (kb/_jev_battery.py). 26 calls over the pairs that
+      # the 0.85 gate leaves to a curator, asking the six reasons Sam named for
+      # holding two recommendations apart. It scores ITSELF against his 51
+      # verdicts at the end — the selection rule is pre-registered in the source,
+      # so the run cannot choose its own threshold.
+      - name: Jev variable battery (asks, scores, decides nothing)
+        if: inputs.battery
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: python3 kb/_jev_battery.py --ask
+      - name: Upload the battery profiles
+        if: inputs.battery
+        uses: actions/upload-artifact@v4
+        with:
+          name: jev-battery
+          path: kb/jev_out/
+      # Reads kb/cr_reference_worklist.json, asks Jev one noul + one score per
+      # anchored pair, prints a ranked worklist. SUGGESTS ONLY — no Supabase
+      # write, no commit, nothing decided. Rung 5 reads "similarity suggests,
+      # never merges", and Rule 7's TOP doctrine says an unreliable signal must
+      # never gate identity.
+      - name: Common CR Reference trial (suggests, never merges)
+        if: ${{ inputs.cr_trial }}
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          python3 kb/_typesafe_cr_trial.py ${{ inputs.cr_limit && format('--limit {0}', inputs.cr_limit) || '' }}

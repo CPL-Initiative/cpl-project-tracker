@@ -50,6 +50,10 @@ check("strips the Curate button", !/id="btn-curate"/.test(h));
 check("strips the table of contents", !/class="toc"/.test(h));
 check("strips the live-data chip", !/id="live-chip"/.test(h));
 check("strips .no-print controls", !/btn-print/.test(h));
+// (c2) the Funding section is shipped VISIBLE (un-hidden 2026-07-23), so its
+//      content is present in the report. (The generic .fs-withheld / .fs-ov-hidden
+//      section-suppression mechanisms are covered in block (e) below.)
+check("includes the (visible) Funding section", /Funding history/.test(h));
 
 // (d) statewide grid → real table; images absolute
 check("statewide grid is rebuilt as a real <table>", /<table class="data sw-tbl">/.test(h) && /Welding/.test(h));
@@ -65,9 +69,19 @@ check("images are rewritten to absolute URLs", /<img[^>]+src="https?:\/\//.test(
   const exec = w2.document.querySelector("#exec-summary p");
   exec.textContent = "HIDDENMARKER12345";
   exec.classList.add("fs-ov-hidden");
+  // A section marked fs-withheld is stripped even though it is not `[hidden]`
+  // (guards the mechanism generically, independent of which section uses it).
+  const sec = w2.document.querySelector("#tech") || w2.document.querySelector("main > section:last-of-type");
+  if (sec) { sec.classList.add("fs-withheld"); sec.insertAdjacentHTML("afterbegin", "<p>WITHHELDMARKER999</p>"); }
+  // A whole section hidden by the curate "Hide section" toggle carries .fs-ov-hidden
+  // (like a hidden box) — it must be suppressed from the report too.
+  const secOv = w2.document.querySelector("#partnerships") || w2.document.querySelector("main > section:nth-of-type(3)");
+  if (secOv) { secOv.classList.add("fs-ov-hidden"); secOv.insertAdjacentHTML("afterbegin", "<p>SECTIONOVHIDDEN888</p>"); }
   const out2 = w2.CPL_FACTSHEET_WORD.buildDoc();
   check("doc reflects a Curate edit (current innerHTML)", /MARKER-EDIT/.test(out2.html));
   check("doc excludes a reviewer-hidden (.fs-ov-hidden) box", !/HIDDENMARKER12345/.test(out2.html));
+  check("doc excludes an fs-withheld section", sec ? !/WITHHELDMARKER999/.test(out2.html) : true);
+  check("doc excludes an fs-ov-hidden (curate Hide section) section", secOv ? !/SECTIONOVHIDDEN888/.test(out2.html) : true);
 }
 
 // (f) clone-not-mutate

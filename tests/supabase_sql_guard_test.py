@@ -1,0 +1,213 @@
+#!/usr/bin/env python3
+"""Guard the guard: `scripts/supabase_sql_guard.py` must never allow a write.
+
+    python3 tests/supabase_sql_guard_test.py
+
+The hook returns `allow` for read-only SQL so auto mode stops prompting on every
+query, and that convenience is only safe while the write cases stay `deny`. The
+asymmetry is the whole point, so the cases below are weighted accordingly:
+
+  * A FALSE ALLOW is the failure that matters — a write reaching a shared table
+    with no prompt and no receipt, which is the exact thing CLAUDE.md Rule 10
+    exists to prevent.
+  * A FALSE DENY is an annoyance: the session says so and Sam runs the
+    statement. The literal-stripping cases below exist because that annoyance
+    would otherwise be constant — `where status = 'update'` and a column named
+    `updated_at` appear throughout this repo's own queries.
+
+Anything unparseable must land on `ask`, never `allow`. `ask` is today's
+behavior, so an unrecognized statement costs a prompt rather than a surprise.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import subprocess
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+GUARD = os.path.join(ROOT, "scripts", "supabase_sql_guard.py")
+
+# (label, sql, expected decision)
+CASES = [
+    # ── reads this repo actually runs ────────────────────────────────────────
+    ("rule-8 memory query",
+     "select slug, title from cpl_memory where status <> 'superseded' "
+     "and tags && array['auth'] order by event_date desc limit 40;", "allow"),
+    ("cobi_nav audience roll-up",
+     "select kind, audience, hidden, count(*) as n from cobi_nav "
+     "group by kind, audience, hidden;", "allow"),
+    ("CTE read",
+     "with sel as (select t.oid from pg_class t) "
+     "select gate, count(*) from sel group by 1;", "allow"),
+    ("policy introspection",
+     "select c.relname, p.polname from pg_policy p "
+     "join pg_class c on c.oid=p.polrelid where c.relname in ('cobi_nav');",
+     "allow"),
+    ("explain", "explain analyze select 1;", "allow"),
+    ("show", "show statement_timeout;", "allow"),
+
+    # ── a write verb inside a LITERAL is not a write ─────────────────────────
+    ("literal equals 'update'",
+     "select * from map_data_loads where status = 'update';", "allow"),
+    ("column named updated_at",
+     "select updated_at from cobi_nav order by updated_at desc;", "allow"),
+    ("ilike '%insert%'",
+     "select slug from cpl_memory where summary ilike '%insert%';", "allow"),
+    ("comment marker inside a LIKE pattern",
+     "select polname from pg_policy where polname like '%--%';", "allow"),
+    ("quoted identifier",
+     'select "drop" from weird_table;', "allow"),
+
+    # ── ⚠️ THE ONE CARVE-OUT: Rule 8's own memory writes ─────────────────────
+    # This case read "deny" until 2026-09-19, and that was the guard blocking
+    # the doctrine it serves: Rule 9 requires EVERY checkpoint to write
+    # cpl_memory, so wherever this hook fires the checkpoint could not
+    # complete. Measured before the fix: insert -> deny, update -> deny.
+    #
+    # The carve-out counts rather than pattern-matches, so it fails closed —
+    # the four cases under it are the boundaries, and each one was written to
+    # break a looser implementation.
+    ("cpl_memory insert — Rule 8's own write",
+     "insert into cpl_memory (slug) values ('x');", "allow"),
+    ("cpl_memory update, schema-qualified",
+     "update public.cpl_memory set summary='y' where slug='x';", "allow"),
+    ("a second table in the same statement keeps the deny",
+     "insert into cpl_memory (slug) select 1; insert into kb_curation (k) values ('x');", "deny"),
+    ("a delete against cpl_memory is still a delete",
+     "update cpl_memory set a=1; delete from cpl_memory;", "deny"),
+    ("the carve-out is cpl_memory ALONE, not any table",
+     "insert into kb_curation (k) values ('x');", "deny"),
+    # ON CONFLICT DO NOTHING is the idempotent INSERT-only form Rule 10 asks for,
+    # and read "deny" until 2026-09-23: its `do` looked like a DO block, so every
+    # checkpoint receipt written the documented way was refused while a bare
+    # insert passed. DO UPDATE overwrites a row that may carry a human's verdict.
+    ("cpl_memory insert, ON CONFLICT (slug) DO NOTHING",
+     "insert into cpl_memory (slug) values ('x') on conflict (slug) do nothing;", "allow"),
+    ("ON CONFLICT DO UPDATE on cpl_memory keeps the deny",
+     "insert into cpl_memory (slug) values ('x') on conflict (slug) "
+     "do update set summary = excluded.summary;", "deny"),
+    ("DO NOTHING opens nothing on another table",
+     "insert into kb_curation (k) values ('x') on conflict (k) do nothing;", "deny"),
+    ("a memory receipt whose header comment says the repo's",
+     "-- STAGED: the repo's guard refused it\n"
+     "-- Rollback: delete from cpl_memory where verified_by like '%S284%';\n"
+     "insert into cpl_memory (slug, summary) values ('x', 'Sam''s ruling') "
+     "on conflict (slug) do nothing;", "allow"),
+    # The playbook's step 6 logs every memory write and verifies the log, and
+    # the log insert read "deny" until 2026-09-23 (Sam's yes, evening sheet
+    # item 3): S280 logged through apply_migration instead, and S284's eight
+    # rows sat unlogged. The log takes appends only; an update or a delete of
+    # it rewrites the audit trail.
+    ("the playbook's log insert (step 6)",
+     "insert into public.cpl_memory_log (memory_id, actor, action, note, after) "
+     "select m.id, 'SkyWage-s284', 'create', 'checkpoint auto-write', to_jsonb(m) "
+     "from public.cpl_memory m where m.author = 'SkyWage-s284' and not exists "
+     "(select 1 from public.cpl_memory_log l where l.memory_id = m.id "
+     "and l.action = 'create');", "allow"),
+    ("a memory insert and its log insert in one call",
+     "insert into cpl_memory (slug) values ('x') on conflict (slug) do nothing; "
+     "insert into cpl_memory_log (memory_id, actor, action) "
+     "select id, 'S1', 'create' from cpl_memory where slug = 'x';", "allow"),
+    ("an update of the log rewrites the audit trail",
+     "update cpl_memory_log set note = 'x' where actor = 'S1';", "deny"),
+    ("a delete of the log rewrites the audit trail",
+     "delete from public.cpl_memory_log where actor = 'S1';", "deny"),
+    ("a log insert beside another table's insert",
+     "insert into cpl_memory_log (actor, action) values ('S1', 'create'); "
+     "insert into kb_curation (k) values ('x');", "deny"),
+    ("a table that only starts with the log's name",
+     "insert into cpl_memory_log_archive (actor) values ('S1');", "deny"),
+
+    # ── writes: every one of these must be denied ────────────────────────────
+    ("update", "update cobi_nav set audience='everyone' where key='admin';", "deny"),
+    ("delete", "delete from kb_curation where id = 5;", "deny"),
+    ("CTE-wrapped insert",
+     "with x as (select 1) insert into t select * from x;", "deny"),
+    ("truncate", "truncate table stg_map_student_credit;", "deny"),
+    ("drop", "drop table cobi_nav;", "deny"),
+    ("alter", "alter table cobi_nav add column access text;", "deny"),
+    ("grant", "grant select on cobi_nav to anon;", "deny"),
+    ("revoke", "revoke execute on function f() from public;", "deny"),
+    ("create", "create table foo (id int);", "deny"),
+    ("write smuggled after a read",
+     "select 1; drop table cobi_nav;", "deny"),
+    ("do block hiding a delete",
+     "do $$ begin delete from t; end $$;", "deny"),
+    ("call", "call some_procedure();", "deny"),
+    ("write inside a dollar-quoted body",
+     "create function f() returns void as $body$ delete from t; $body$ "
+     "language sql;", "deny"),
+
+    # ── a quote in a comment is not a literal, and a literal is read whole ───
+    # Measured 2026-09-23: the first case came back "allow". The guard stripped
+    # literals before comments, so the apostrophe opened a string that ran to
+    # the last quote and swallowed the delete between them.
+    ("an apostrophe in a comment cannot hide a delete",
+     "select 1; -- the curator's list\ndelete from kb_curation where true; -- end'", "deny"),
+    ("an apostrophe in a comment cannot hide an update",
+     "-- don't worry\nupdate kb_curation set status = 'x' where id = 1; -- '", "deny"),
+    ("an E-string escape cannot shift the reading",
+     "select E'it\\'s'; delete from kb_curation where id = 5; select '''';", "deny"),
+    ("a block comment ends no later than Postgres's does",
+     "/* a /* b */ delete from kb_curation; */ select 1;", "deny"),
+    ("a $$ inside a tagged dollar body is text",
+     "select $a$ x $$ delete from kb_curation; $$ y $a$;", "allow"),
+    ("a positional parameter is not a dollar quote",
+     "select * from cpl_memory where slug = $1 and status = $2;", "allow"),
+    ("an unterminated string asks", "select 'abc from cobi_nav;", "ask"),
+    ("an unterminated block comment asks", "select 1 /* never closed", "ask"),
+
+    # ── ambiguous: must fall through to the prompt, never to allow ───────────
+    ("select into materializes a table",
+     "select * into backup_tbl from cobi_nav;", "ask"),
+    ("transaction control", "begin; select 1;", "ask"),
+    ("empty", "", "ask"),
+    ("whitespace only", "   \n  ", "ask"),
+    ("unparseable", "frobnicate the widgets", "ask"),
+]
+
+
+def run(sql):
+    payload = {"tool_name": "mcp__Supabase__execute_sql",
+               "tool_input": {"query": sql}}
+    p = subprocess.run([sys.executable, GUARD], input=json.dumps(payload),
+                       capture_output=True, text=True)
+    if p.returncode != 0:
+        return "EXIT%d" % p.returncode
+    try:
+        return json.loads(p.stdout)["hookSpecificOutput"]["permissionDecision"]
+    except Exception:
+        return "UNPARSEABLE(%s)" % p.stdout[:60]
+
+
+def main():
+    failures = []
+    for label, sql, want in CASES:
+        got = run(sql)
+        if got != want:
+            failures.append("  %-42s expected %-5s got %s" % (label, want, got))
+
+    # A hook fires on every tool call it is wired to; emitting a decision for a
+    # tool it does not own would hand every Bash call to this classifier.
+    p = subprocess.run(
+        [sys.executable, GUARD],
+        input=json.dumps({"tool_name": "Bash", "tool_input": {"command": "ls"}}),
+        capture_output=True, text=True)
+    if p.stdout.strip() or p.returncode != 0:
+        failures.append("  %-42s expected silence, got %r (exit %d)"
+                        % ("non-Supabase tool passes through", p.stdout[:60],
+                           p.returncode))
+
+    total = len(CASES) + 1
+    if failures:
+        print("FAIL - %d of %d guard cases wrong:\n%s"
+              % (len(failures), total, "\n".join(failures)))
+        return 1
+    print("ok - %d/%d supabase_sql_guard cases" % (total, total))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

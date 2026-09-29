@@ -1,0 +1,361 @@
+<title>The Fifteen Tables</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     Deliberately single-theme: First Light is a light identity with no dark
+     page palette, so every surface and color is painted explicitly. */
+  :root {
+    --paper: #F4F2ED;
+    --text-strong: #1C1C1A;
+    --text-body: #3A3A36;
+    --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF;
+    --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14);
+    --border-strong: rgba(28,28,26,.30);
+    --crimson: #920000;
+    --cobalt: #0047AB;
+    --hunter: #2C601A;
+    --mustard-text: #8B6800;
+    --focus-ring: var(--cobalt);
+    --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper);
+    color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; max-width: 62ch; }
+
+  .howto {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px;
+  }
+  .howto p { margin: 6px 0; }
+  .howto code {
+    background: var(--surface-subtle); border: 1px solid var(--border);
+    border-radius: 5px; padding: 1px 6px; font-size: .92em;
+  }
+
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 30px; padding: 0; list-style: none; }
+  .tally li {
+    background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 14px; font-size: .9rem; color: var(--text-body);
+  }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+
+  .card {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0;
+  }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .num {
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+    font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.6em;
+  }
+  .tname { font-weight: 700; color: var(--text-strong); font-size: 1.05rem; }
+  .chip {
+    margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+    border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap;
+  }
+  .chip.row     { color: var(--cobalt);       border-color: var(--cobalt);       background: var(--surface-opaque); }
+  .chip.fold    { color: var(--hunter);       border-color: var(--hunter);       background: var(--surface-opaque); }
+  .chip.cadence { color: var(--mustard-text); border-color: var(--mustard-text); background: var(--surface-opaque); }
+  .chip.dismiss { color: var(--text-muted);   border-color: var(--border-strong); background: var(--surface-subtle); }
+  .card dl { margin: 8px 0 0; }
+  .card dt {
+    text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700;
+    color: var(--text-muted); margin-top: 10px;
+  }
+  .card dd { margin: 2px 0 0; }
+  .cluster-note { font-size: .9rem; color: var(--text-muted); margin: -6px 0 0 0; }
+  @media (max-width: 560px) {
+    .card header { gap: 8px; }
+    .chip { margin-left: 0; }
+  }
+</style>
+
+<a class="skip" href="#sheet">Skip to the fifteen</a>
+<div class="wrap">
+
+<p class="kicker">Governance register · drift-detector backlog · 2026-08-30</p>
+<h1>The Fifteen Tables</h1>
+<p class="lede">The Governance tab's drift detector, now reading from the dependency
+map, surfaced fifteen editable tables the register has never heard of. Each needs a
+register row or a reasoned dismissal — never a bulk wave-through, because the reason
+is the point. This sheet proposes a disposition for every one, with who writes it
+today taken from the dependency map rather than guessed.</p>
+
+<div class="howto">
+  <p><strong>How to rule:</strong> reply in chat by number. <code>yes</code> accepts a
+  proposal as written; or override with <code>row</code> (give it its own new row),
+  <code>fold: DR-xx</code>, <code>cadence</code>, <code>dismiss</code>, or
+  <code>edit: your wording</code>.</p>
+  <p>Example: <code>1–6 yes · 7 edit: overrides also need my sign-off · 15 row</code></p>
+  <p>A session then writes your rulings and reasons into the surface map and the
+  register, and tightens the detector's noise guard back below thirty.</p>
+</div>
+
+<ul class="tally">
+  <li><b>5</b> new decision rights (covering 9 tables)</li>
+  <li><b>1</b> new cadence</li>
+  <li><b>4</b> folds into existing rows</li>
+  <li><b>1</b> dismissal</li>
+</ul>
+
+<div id="sheet">
+
+<h2 class="kicker">Shared memory</h2>
+
+<section class="card">
+  <header><span class="num">1</span> <span class="tname">cpl_memory</span>
+  <span class="chip row">New row · DR-19</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The shared memory table — the facts, pitfalls, and decisions every session
+    is required to read before working. What it asserts steers behavior.</dd>
+    <dt>Who writes it today</dt>
+    <dd>The Memory tab (you and the team, including the Autogenerate drafter), and
+    sessions at every checkpoint through the documented auto-write procedure.</dd>
+    <dt>Proposed decision right</dt>
+    <dd>What the shared memory asserts as true. Decider: Sam, through the
+    verify / stale / supersede controls. Sessions may only propose; a row becomes
+    trusted through the corroboration gate (a committed source, a second session,
+    or your check), and every write is logged.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Team &amp; RACI cluster — one right, three tables</h2>
+<p class="cluster-note">All three are written from the Team &amp; RACI tab, behind the
+reviewer sign-in or team phrase.</p>
+
+<section class="card">
+  <header><span class="num">2</span> <span class="tname">item_raci</span>
+  <span class="chip row">New row · DR-20</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Who is Responsible, Accountable, Consulted, and Informed for every
+    activity and project. Read by the cards, the master report, and the report
+    generator.</dd>
+    <dt>Proposed decision right</dt>
+    <dd>Who assigns responsibility. Decider: the Accountable person for the item,
+    with Sam as the default while owners are being filled in. Acceptance: a
+    signed-in team member; assignments name people, not roles.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">3</span> <span class="tname">item_updates</span>
+  <span class="chip row">Same row · DR-20</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Posted status updates per activity and project. These travel farthest of
+    the three: they surface on the card faces, in the master report, and in the
+    Annual Report — outward-facing text.</dd>
+    <dt>Proposed decision right</dt>
+    <dd>Covered by DR-20, with one added acceptance standard because of the reach:
+    an update is written as something you would be comfortable seeing quoted in
+    the Annual Report, and carries its author.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">4</span> <span class="tname">team_members</span>
+  <span class="chip row">Same row · DR-20</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The team directory — names and contact details (staff information, not
+    student data). Also feeds the nudge-email builder.</dd>
+    <dt>Proposed decision right</dt>
+    <dd>Covered by DR-20. Acceptance: entries are real staff who know they are
+    listed; removals happen when someone leaves, not by cleanup sweeps.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Program tracking</h2>
+
+<section class="card">
+  <header><span class="num">5</span> <span class="tname">liftoff_state</span>
+  <span class="chip fold">Fold into DR-13</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The Mission Control tracker's task statuses and decision-branch choices
+    for the Lift Off plan — each chosen branch doubles as the decision log.</dd>
+    <dt>Why fold</dt>
+    <dd>DR-13 already governs the workplan itself (projects, goals, associations,
+    lifecycle). Lift Off is the same family of program-tracking state, written by
+    the same signed-in team. One decision right, one owner, less register sprawl.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">6</span> <span class="tname">map_data_quality</span>
+  <span class="chip cadence">New cadence · CA-07</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Data-quality flags raised against MAP data from the quality view — a
+    worklist of things someone should fix or dismiss.</dd>
+    <dt>Why a cadence, not a decision right</dt>
+    <dd>A flag queue's failure mode is not a bad write — it is nobody ever
+    triaging it (the register already caught one cadence that never ran). Model
+    it on the Sierra feedback triage: a named owner and a rhythm, so the register
+    can measure whether triage actually happens.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">7</span> <span class="tname">factsheet_overrides</span>
+  <span class="chip row">New row · DR-21</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Hand overrides on figures shown by the public CPL Fact Sheet — the
+    highest-stakes table in this batch, because it changes numbers journalists
+    and the public read.</dd>
+    <dt>Who writes it today</dt>
+    <dd>The Fact Sheet's edit layer.</dd>
+    <dt>Proposed decision right</dt>
+    <dd>Who may make a published figure disagree with the live data, and against
+    what standard. Decider: Sam. Acceptance: every override carries its source
+    and date, and only aggregate figures are ever shown — per the standing
+    disclosure rules.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Government relations cluster — one right, three tables</h2>
+<p class="cluster-note">All three are written from the GR register tab.</p>
+
+<section class="card">
+  <header><span class="num">8</span> <span class="tname">gr_areas</span>
+  <span class="chip row">New row · DR-22</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The Chancellor's Office priority areas under policy review — the
+    register's spine, pointed at the whole CO, not just CPL.</dd>
+    <dt>Proposed decision right</dt>
+    <dd>What the GR register asserts about CO policy positions. Decider: Sam.
+    Acceptance: every entry names its instrument — whether the change contradicts
+    a statute, a regulation, or merely a practice — the test already derived from
+    the register's own rows.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">9</span> <span class="tname">gr_revisions</span>
+  <span class="chip row">Same row · DR-22</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The specific regulatory and Education Code revisions under consideration
+    within each area.</dd>
+    <dt>Proposed decision right</dt>
+    <dd>Covered by DR-22, same instrument standard.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">10</span> <span class="tname">gr_artifacts</span>
+  <span class="chip row">Same row · DR-22</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The documents and evidence informing each revision.</dd>
+    <dt>Proposed decision right</dt>
+    <dd>Covered by DR-22. Acceptance: artifacts cite their origin so a reader can
+    tell an official source from our own analysis.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Implementation funding cluster — fold all three into DR-09</h2>
+<p class="cluster-note">All three are written from the Implementation Funding tab.
+DR-09 already governs the budget ledger.</p>
+
+<section class="card">
+  <header><span class="num">11</span> <span class="tname">cpl_funding_config</span>
+  <span class="chip fold">Fold into DR-09</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The $35M model's dials — the three priorities' shares and funding factors.
+    Also read by the college briefings, so a change here reaches college-facing
+    documents.</dd>
+    <dt>Why fold</dt>
+    <dd>The model's dials and the budget ledger are one money question with one
+    decider. Extend DR-09's scope note; acceptance: a dial change states its
+    basis against the allocation memo.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">12</span> <span class="tname">cpl_funding_notes</span>
+  <span class="chip fold">Fold into DR-09</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Working notes attached to the funding model.</dd>
+    <dt>Why fold</dt>
+    <dd>Annotation on DR-09's subject — same right, no separate decider.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">13</span> <span class="tname">cpl_funding_participation</span>
+  <span class="chip fold">Fold into DR-09</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Which colleges are marked as participating in the funding model.</dd>
+    <dt>Why fold</dt>
+    <dd>Participation flags feed the same allocation DR-09 governs. Acceptance:
+    a college's flag changes only with a stated reason, since dollars follow it.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Intake and reflection</h2>
+
+<section class="card">
+  <header><span class="num">14</span> <span class="tname">cpl_adoption_interest</span>
+  <span class="chip row">New row · DR-23</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The intake queue where colleges express interest in adopting a pathway,
+    submitted from the CPL Pathways tab — requests from outside the team, waiting
+    on a response.</dd>
+    <dt>Proposed decision right</dt>
+    <dd>Who owns the intake and its follow-up. An unanswered interest queue is a
+    silent promise to a college. Decider: Sam until delegated. Acceptance: each
+    entry resolves to a real college identity, and the row names a response
+    expectation the register can measure.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">15</span> <span class="tname">cpl_reflections</span>
+  <span class="chip dismiss">Dismiss, with reason</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The team reflections stream, written from the First Light page and read
+    only by the weekly digest that goes back to the same team.</dd>
+    <dt>Proposed dismissal</dt>
+    <dd>A journaling surface whose audience is its own authors. No third party
+    relies on it, nothing downstream publishes it, and burdening it with
+    decision rights would discourage the writing it exists for. The reason lands
+    in the surface map so the dismissal stays reviewable — and reversible if the
+    digest ever grows an outside audience.</dd>
+  </dl>
+</section>
+
+</div>
+
+<p class="lede" style="margin-top:34px">That is all fifteen. Not proposed here and
+untouched: the noise-guard threshold returns below thirty once these are ruled, and
+nothing is written anywhere until you rule.</p>
+
+</div>

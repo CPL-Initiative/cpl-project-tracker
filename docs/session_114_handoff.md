@@ -3,6 +3,8 @@ title: Session 114 handoff — into CCR wave 4
 date: 2026-07-13
 tags: [handoff, ccr, wave-4, discipline, auditor]
 related: [docs/subject_discipline_cleanup_lessons.md, docs/ccr_convergence_lessons.md, docs/session_113_handoff.md]
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 114.

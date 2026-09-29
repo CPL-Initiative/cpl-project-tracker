@@ -80,7 +80,7 @@ OUT_DIR = os.environ.get("UC_CUR_ZSCHEME_OUT") or os.path.join(HERE, "uc_cur_zsc
 # disciplines legitimately span MANY SUBJ4s (per-language FL** splits, KINE/ATHL),
 # so we must NOT collapse them to their nominal canonical (FLNG / KINE); we keep
 # the members' own split code.
-UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology"}
+UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology", "Agriculture", "Agricultural Production"}
 
 UC_CUR_RE = re.compile(r"^UC-CUR-")
 SUBJ4_RE = re.compile(r"^[A-Z]{4}$")

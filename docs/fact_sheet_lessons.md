@@ -1,17 +1,22 @@
 ---
 title: CPL Fact Sheet — lessons
 created: 2026-06-25
-updated: 2026-06-25
-tags: [lessons, fact-sheet, public-page, live-data, print-to-pdf, sky-blaster]
+updated: 2026-08-21
+tags: [lessons, fact-sheet, public-page, live-data, print-to-pdf, accessibility, mobile, sky-blaster, sky-veil, sky-curate]
 obsidian-folder: cpl-project-tracker
 artifacts:
   - fact-sheet/index.html
   - fact-sheet/factsheet.css
   - fact-sheet/factsheet.js
+  - fact-sheet/factsheet_edit.js
+  - fact-sheet/factsheet_word.js
   - fact-sheet/img/
 related:
   - "[[CLAUDE]]"
   - "[[docs/kb-notes/playbook-standalone-public-page]]"
+  - "[[docs/kb-notes/methodology-hide-must-suppress-the-export]]"
+  - "[[docs/kb-notes/methodology-hiding-a-control-also-hides-the-way-in]]"
+  - "[[docs/kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect]]"
 ---
 
 # CPL Fact Sheet — lessons
@@ -449,3 +454,273 @@ the owner — don't silently "fix" figures you didn't author.**
 Tests: `tests/factsheet_edit.test.js` (35, updated for the new policy — #progress now collected,
 data-bind boxes now keyed), `tests/factsheet_edit_sections.test.js` (19, new — the three lanes +
 per-grid add), `tests/factsheet_word.test.js` (19, new). Full suite **102 files green**.
+
+---
+
+## 2026-07-23 — SkyVeil: the per-section "Hide section" toggle (+ Funding hide/un-hide)
+
+**Context.** Sam is modeling Implementation Funding scenarios that change the
+Fact Sheet's current-allocations figures + budget table, so he wanted the
+**Funding** section hidden "for now," then asked for a **general** hide control:
+*"add a hide button to each section in the curation view. If hidden, it should be
+suppressed in reporting functions for the tab."* Then, once the toggle was live,
+*"unhide the budget section now and I'll test the new function by hiding it
+myself."*
+
+**What shipped (3 PRs, all merged + deployed):**
+- **#874 — Funding hide (stopgap).** Marked the `#funding` section + its TOC link
+  with a new `.fs-withheld` class (display:none) and added it to the Word export's
+  strip list. **Key gotcha:** `factsheet_word.js` *un-hides* every `[hidden]`
+  element on its DOM clone (to flatten collapsibles for the flat doc), so a plain
+  `hidden` attribute would have made the funding table **reappear in the Word
+  export** — had to use a *stripped class*, not `[hidden]`.
+- **#875 — the general toggle.** A **🙈 Hide section** button on every reorderable
+  section in Curate mode (top-right, beside the ⠿ Move handle). Reuses the existing
+  box-hide plumbing: a reserved `<sid>|__hidden` override key (parallel to
+  `<sid>|__order`, inert to all the add/order/img machinery), and marks the section
+  **+ its TOC link** with `.fs-ov-hidden` — the *same class the box-hide uses*. That
+  class is already `display:none` publicly, ghosted+un-hideable in Curate mode, and
+  **already stripped by the Word export + hidden under `@media print`** — so
+  reporting suppression came for **free**, no new report code. `applySectionHidden()`
+  applies saved hides for every visitor on load; the button is reviewer-only.
+- **#876 — un-hide Funding.** Removed `.fs-withheld` from the section + TOC link
+  (section blob restored byte-identical to pre-hide); flipped the Word test's
+  Funding check from "excluded" to "included." Kept the `.fs-withheld` utility (CSS
+  + strip + a *generic* mechanism test) so it stays available + honest.
+
+**Design calls.**
+- **Reuse, don't parallel.** The whole feature is ~1 class + 1 reserved key
+  because the report generators already respected `.fs-ov-hidden`. Distilled into
+  KB note `methodology-hide-must-suppress-the-export.md`.
+- **Two coexisting hide triggers, one outcome.** `.fs-withheld` = source-level
+  always-hidden (dev/one-off); the toggle = curator DB-driven per-section hide via
+  `.fs-ov-hidden`. Both resolve to display:none + report suppression; they don't
+  fight in code.
+- **Funding stays independent.** After #876 Funding is visible; Sam now hides it
+  himself via the toggle (he confirmed: *"Hide function works great"*).
+
+**Tests.** New `tests/factsheet_edit_section_hide.test.js` (24 checks: public-load
+apply on section **+** TOC link, one Hide button per reorderable section, label/
+`aria-pressed`/`.is-hidden` state, toggle POSTs the reserved key + hides, un-hide,
+reserved-key inertness). `factsheet_word.test.js` also guards that an
+`.fs-ov-hidden` **section** (not just a box) is excluded from the export. Full
+suite **168 files green** across the run.
+
+**State / next.** Feature is live and Sam-verified. No carryover. Open door: if
+Sam wants, migrate the (now-removed) Funding stopgap onto the toggle so there's a
+single mechanism — but there's nothing pending since Funding is visible again.
+Side-lane — left `kb/cpl_todos.json` + the numbered handoff to the CCR mainline.
+
+
+## 2026-08-20 — SkyCurate (Session 173): hiding Curate, and what the accessibility check found
+
+Two asks in one run. Sam: *"On our public CPL Fact Sheet on COBI, I'd like to hide
+the Curate button so the public doesn't see it…but I would like it to be available
+somehow for the MAP team to curate. Please consider and recommend."* Then, mid-run:
+*"After publishing can you run a check on the Fact Sheet to make sure everything is
+accessible and mobile friendly?"* Shipped as **#1269**, merged `d14d2f2`.
+
+### The Curate button — the second door is what makes the first one safe
+
+**Say the security part out loud, in the code.** The button was never the gate:
+every write to `factsheet_overrides` is RLS'd to `is_allowed_reviewer()`, the anon
+key can read and never write, and `factsheet_edit.js` is **served publicly** — so
+anyone who opens it learns whatever reveal switch we pick. Hiding it buys exactly
+one thing: a visitor stops being offered a control they cannot use, and stops being
+asked for a *"reviewer email"* they do not have. That is worth doing and it is not
+hardening, and the module header now says so, because the next person to touch this
+file must not start treating it as a second line of defense.
+
+⭐ **HIDING AN AFFORDANCE ALSO HIDES THE WAY TO GET ACCESS.** This is the whole
+design problem and it is easy to miss: the Curate button was *itself* the sign-in
+entry point (`signIn()` fires when a non-reviewer clicks it). Hide it on "not a
+reviewer" and a curator on a new laptop — or one past the session keeper's 12h cap —
+has no way to *start* signing in. So the reveal is two paths, and the second exists
+solely to keep the first recoverable:
+
+1. **A live reviewer session** — the normal path. The page now loads
+   `cpl_session.js` (the keeper from #1205/#1207), which makes `localStorage` the
+   canonical session and mirrors it into each tab's `sessionStorage` — which is
+   exactly where `factsheet_edit`'s `getSession()` already looked. Sign in on COBI
+   (About → reviewer sign-in), open the Fact Sheet from the Share menu, and the
+   button is there. ⭐ **This also closed a latent gap nobody had filed:** the Fact
+   Sheet previously saw a session ONLY if the magic link had been opened in that
+   same browser tab, because it read `sessionStorage` directly and nothing kept it
+   fed. The fix for the new requirement repaired an old defect for free.
+2. **`?curate=1`** — the escape hatch. Stripped from the address bar the moment it
+   is read (the same treatment `captureHash()` gives an access token, and for the
+   same reason: a URL copied out of a curator's own bar should be the public one),
+   remembered per browser, forgotten by `?curate=0`. **The bookmark to keep.**
+
+⚠️ **`hidden` in the markup is not enough when a class sets `display`.** `.btn` is
+`display:inline-flex`, which outranks the UA sheet's `[hidden]{display:none}` — so
+the attribute alone was decorative and the button painted for everyone. It ships
+hidden in the MARKUP (not merely hidden by script, which flashes) *and* with a
+`.btn[hidden]` rule in the stylesheet. Both halves are load-bearing.
+
+**Considered and skipped:** a separate "Curate Fact Sheet ↗" side-menu entry (works
+— `link`-kind rows are first-class since #1213 — but with the session path landing,
+the existing Share launcher plus a live session already gets you there, and a second
+menu row is a second thing to keep in sync); and a team-phrase gate (wrong
+credential shape — the phrase is site-scoped and shared, curating is a personal
+identity, and the RLS behind it is already `is_allowed_reviewer()`).
+
+### The accessibility check — four defects, none of them visible to a test
+
+Sam apologised for asking late. He should not have: the audit found more than the
+feature did, and **every one of the four was invisible to static analysis.** They
+were found by measuring the page in Chromium.
+
+⭐ **① THE STATEWIDE GRID WAS UNUSABLE ON A PHONE, AND LOOKED FINE.** Its five-column
+track carries **322px of FIXED numeric columns**; with gaps and padding no row can
+render below **368px**. Measured at a 360px viewport: the page scrolled sideways by
+**31px** (71px at 320px), the program-area column (`minmax(0,1fr)`) collapsed to
+nothing so **"Construction Technology" printed ON TOP of its own Exhibits figure**,
+and **"Could adopt" sat entirely off-screen** inside `.sw-grid details{overflow:hidden}`
+— clipped, so it could not even be scrolled to. ⚠️ **The clipped column is the worst
+of the three, and it is the one a screenshot review would pass:** a page that
+silently drops a column looks complete. Below 560px the row now stacks — program
+area on its own line, then the four figures 4-up, each carrying its own label.
+
+⚠️ **The labels have to TRAVEL WITH THE NUMBERS.** The `.sw-head` label strip is
+hidden in the stacked layout, so a bare column of digits would be meaningless. They
+are `::before` content keyed off the `data-col` attributes already in the markup —
+which keeps them **out of `textContent`**, so `factsheet_word.js` still reads bare
+figures and the Word export is unchanged. A label rendered as real DOM would have
+leaked into the .docx.
+
+**② No skip link** (WCAG 2.4.1) — the page opens with a sticky action bar and a
+20-entry Contents list, so a keyboard user tabbed through ~25 controls before
+reaching any content.
+
+⭐ **③ THE SCROLLING TABLE WAS KEYBOARD-UNREACHABLE, AND ITS CONTAINMENT IS WHY.**
+The funding table is 674px wide inside `.tbl-wrap{overflow-x:auto}`. That container
+is why it never pushed the page sideways — the good behavior — and **also** why a
+keyboard user could never see its right-hand columns (WCAG 2.1.1: a scroll container
+is mouse-draggable but not focusable). Now a labeled region, focusable **only while
+it actually overflows** (verified `tabindex=0` at 360px, absent at 1024px), so it
+never becomes a dead tab stop on a wide screen. Its accessible name comes from the
+table's own `<caption>` rather than being invented here.
+
+**④ Skipped heading levels** (WCAG 1.3.1 / technique G141): `h1→h3` and three
+`h2→h4`. Fixed by correcting the **level** and carrying the old **look** on a
+utility class, so the semantics changed and the page did not.
+
+⚠️ **AND THAT IS WHERE I BROKE IT.** I classed the Contents heading `h-sub` while
+the rule read `h3.h-sub` — an `h2` matches nothing, so it dropped to the browser's
+default 2em. **No assertion caught it. A before/after screenshot did.** A change
+whose entire claim is *"the semantics moved and the appearance did not"* can only be
+verified by comparing appearance; the test now pins that no BARE `.h-sub`/`.h-card`
+rule exists, and the harness takes the screenshots. Final desktop pixel diff: **0 px
+changed** at 1024px; mobile differs only inside the statewide block.
+
+### Contrast: the palette was already sound — the failures were structural
+
+Every fg/bg pair the page actually paints was **computed**, including the composites
+(the sticky bar's `white@.92` over paper, and the chip fills over *that*). All 31
+pass AA. ⚠️ `--mustard-fill` as a decorative rule is **1.95:1** on white — the same
+documented class as `--border-strong` at 1.92:1 (CLAUDE.md): decorative, never the
+only signal, and explicitly not to be "fixed" by deviating from the brand. The test
+now pins that **no TEXT uses it**, so a future change cannot quietly start leaning
+on it.
+
+### Verification, split by what each instrument can actually see
+
+- `tests/factsheet_a11y.test.js` — **69 checks, runs in CI.** Structure + the
+  contrast maths. jsdom has no layout engine, so **no geometry here**.
+- `fact-sheet/check_mobile_layout.js` — **Chromium, on demand, deliberately NOT in
+  `npm test`.** CI has jsdom only, and adding playwright to `package.json` would
+  make CI download browsers for a check it never runs (I did that by accident via
+  `npm install` and reverted it). 9 viewports + keyboard + reduced motion. **This is
+  the script that found ① and ③.**
+- `tests/factsheet_edit_curate_visibility.test.js` — 25 checks on the Curate change.
+- Full suite **232/232 files**; the nine sibling Fact Sheet suites, `college_briefing`
+  (236) and `sierra_surfaces_aligned` (42) all green.
+
+⚠️ **Two of my own checks were wrong before the code was.** The overlap detector
+compared only the x-axis, which is a false positive the moment the row stacks (name
+on row 1, figures on row 2 — they share x and never y); and the "no text uses
+`--mustard-fill`" regex was unanchored, so it matched `outline-color`. Both cost a
+debugging round. **When a new check fails, suspect the check.**
+
+### Rule 8's *query* half earned its keep — the repo already knew one of these
+
+⭐ **`cpl_memory` already held the `[hidden]` defect, written six days earlier by a
+different session about a different file.** `an-author-display-rule-defeats-the-hidden-attribute`
+(Sky155, 2026-08-14, from Sierra's note composer) says it exactly: *"Any element
+toggled with `hidden` needs an explicit `[hidden]{display:none}` companion beside
+its display rule."* I rediscovered it from scratch on `.btn`.
+
+That row was `proposed`; an independent second instance is corroboration, so it is
+now **`verified`** and carries this case. It is the **third** in the family —
+Sierra's composer (#1185), the EACR `.sw-interactive` overflow clipping dropdowns
+into a sliver (#1174), and this. Three instances is a house rule, not a run of bad
+luck: **a class that sets `display` must carry its own `[hidden]` companion**, and
+when the element ships hidden that companion belongs in the **stylesheet**, not a
+JS-injected block, or it flashes before boot.
+
+⚠️ The cost of not querying is small and recurring — twenty minutes here — which is
+exactly why it keeps happening. Rule 8 gives the table *ingest*; the query is the
+part a session has to choose to do.
+
+### Small ones worth keeping
+
+- ⚠️ `*/` **inside a block comment ends the comment.** Documenting the browser path
+  as `chromium-*/chrome-linux` silently terminated the file's header docstring and
+  produced a syntax error 20 lines later.
+- The sandbox is **egress-blocked from `cpl-initiative.github.io`**, so no session
+  can verify the live page. Pages deployed green and `fact-sheet/` is served straight
+  from the repo with no build step, but the live check is Sam's to make.
+
+### Next
+
+Nothing is blocked. Open items, in value order: ① **Sam opens the Fact Sheet on his
+phone** — the mobile rework is the part no session can confirm; ② confirm Curate
+appears after signing in on COBI (the cross-tab session path is the piece that was
+reasoned rather than clicked); ③ the same measurement harness pointed at
+**`sierra/`** and the **veteran-sprint-map**, which are the other public standalone
+pages and have never had a layout audit; ④ if the mobile stack reads well, consider
+the same treatment for the other fixed-track grids in COBI.
+
+---
+
+## 2026-08-21 — SkyGlass (Session 176): confirmed on glass, and the reveal that looks like a regression
+
+**(a) What happened.** Sam reported mid-session that **the Curate button was still
+visible on the public Fact Sheet**, and asked whether the `cpl_funding.test.js`
+memory problem could be the cause. It could not — nothing under `tests/` is
+served, and no page loads it. The code was verified correct on `main` (both
+halves: `btn.hidden = !isRevealed()` **and** `.btn[hidden]{display:none
+!important}`, which is load-bearing because `.btn` sets `display:inline-flex`),
+and Pages had deployed #1269 successfully at 20:40 UTC.
+
+Three candidate explanations were put to him in order, and the first was right:
+
+1. **his own browser remembered the reveal** — `?curate=1` deliberately writes
+   `localStorage.cpl_fs_curate = "1"` so the bookmark keeps working, which means
+   any browser that has opened that link once shows the button **forever**
+   (`fact-sheet/?curate=0` forgets it);
+2. a live COBI reviewer session, which reveals it by design and, since #1207, does
+   so across browser tabs;
+3. a cached `factsheet_edit.js` / `factsheet.css` — the tags carry no version
+   query, so a hard refresh is the check.
+
+✅ **Sam then opened a private window and confirmed the button is gone.** The
+mechanism is now proven **on the deployed page**, not only in Chromium — which
+closes the last verification item SkyCurate opened and Sky175 could only exercise
+locally.
+
+**(b) The durable bit.** ⭐ **A deliberately sticky reveal will be reported as a
+regression by the person it was built for.** The curator is precisely the user
+whose browser holds the flag, so the feature's success case and its bug report
+look identical from the outside. The only question that distinguishes them is
+**"private window, plain URL, no session?"** — and that question now leads the
+carryover list rather than sitting in a session's head. Worth remembering the
+next time a per-browser convenience gets added to a public page: decide up front
+how someone will *disprove* it, and write that down beside the switch.
+
+**(c) State.** No code change. `CLAUDE.md`'s Fact Sheet row records the
+confirmation and the rule-out order; the phone pass is the one item still open.
+
+**(d) Next.** ① **Sam opens the three public pages on a phone** (Fact Sheet ·
+Sierra · Veteran map) — still the only thing no session can do.

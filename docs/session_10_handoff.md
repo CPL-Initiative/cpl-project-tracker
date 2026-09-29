@@ -12,6 +12,8 @@ related:
   - docs/exhibit_unification_vision.md (credential-identity design doc)
   - .github/codeql/codeql-config.yml (CodeQL exclusion + audit trail from Session 6)
 moniker_suggestion: Bruh Deca (with open door to claim own)
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 10 Hand-off Prompt

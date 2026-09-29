@@ -1,10 +1,9 @@
 ---
 title: CCR curation sync & live-merge durability (what's instant vs what waits for cron)
-date: 2026-06-23
+created: 2026-06-23
 updated: 2026-06-23
 kb-status: published
-type: reference
-tags: [ccr, unified-courses, curation, supabase, merge, daily-cron, regen]
+tags: [reference, ccr, unified-courses, curation, supabase, merge, daily-cron, regen]
 artifacts:
   - unified_courses.js                 # doConsolidate / replayLiveMerges / passes() / pendingSyncCount
   - kb/_apply_curation.py              # the cron step that folds kb_curation → coci_curation.json

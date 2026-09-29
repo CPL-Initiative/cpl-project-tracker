@@ -9,9 +9,18 @@ this driver runs the NONE-SKIPPABLE downstream chain in order, fail-fast:
                   (re-keys the Phase A/B official-ID fold evidence — the 5th
                   id-keyed artifact class; skipping it severed 53% of the
                   evidence once: docs/official_id_fold_scope.md)
+  1b. crnc-mirrors python3 kb/_rekey_crnc_mirrors.py --apply
+                  (re-keys kb/crnc_mirrors.json — the 6th id-keyed class, read
+                  by the dashboard's D-3 suppression; it carries curated
+                  overlay work so it is re-keyed, never regenerated. Missing
+                  from the chain until 2026-09-04: the recode left 398 of its
+                  keys on retired ids.)
   2. csr-seed     python3 kb/_seed_canonical_subj4.py
                   (CSR re-seed — variants_observed collapses to canonical;
                   curator-reviewed picks are preserved by the seeder)
+  2b. authority   python3 kb/_seed_authority_codes.py
+                  (the C-ID / CCN chip fields + canonical_source — item 19 of
+                  the 2026-09-03 rulings; the source flips when a fold lands)
   3. audit        python3 kb/_row_audit.py
                   (refresh the Trust-Card overlay; for the SUBJ4 fold the
                   receipt is subject_collision_signal -> ~0)
@@ -48,7 +57,9 @@ AUDIT_LATEST = os.path.join(ROOT, "kb", "row_audit", "latest.json")
 
 STEPS = [
     ("promotions", [sys.executable, "kb/_rekey_promotions.py", "--apply"], None),
+    ("crnc-mirrors", [sys.executable, "kb/_rekey_crnc_mirrors.py", "--apply"], None),
     ("csr-seed", [sys.executable, "kb/_seed_canonical_subj4.py"], None),
+    ("authority", [sys.executable, "kb/_seed_authority_codes.py"], None),
     ("audit", [sys.executable, "kb/_row_audit.py"], None),
     ("desc-receipt", [sys.executable, "kb/_desc_consolidation_dryrun.py"], None),
     ("title-receipt", [sys.executable, "kb/_title_consolidation_dryrun.py"], None),

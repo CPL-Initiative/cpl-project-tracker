@@ -1,8 +1,7 @@
 ---
 title: Full Excel Retirement — Final Scope (KPI ladder + D.* helpers + read_projects sunset)
-date: 2026-05-31
+created: 2026-05-31
 kb-status: published
-kb-type: playbook
 tags: [excel-to-supabase, retirement, kpi-ladder, read_projects, scope, phase-final]
 related:
   - docs/kb-notes/phase-2-projects-migration-scope.md (the Phase 2 template this builds on)
