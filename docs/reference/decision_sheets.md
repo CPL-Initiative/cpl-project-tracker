@@ -304,8 +304,10 @@ than held back for a quorum.
 carried into the lanes (S302, 2026-09-29):** Sam completed all eighteen cards at 12:39Z
 (`through: "18"`, each his own call; 14 and 15 stood as proposed under the high-water
 rule), and every ruling left with its lane's marker in one pull request, so the builder
-holds no card and writes no sheet until a lane marks a new ask. The next sheet builds as
-`2026-09-29-open-asks-4`, a fresh store. ⭐ **Each card carries its own `evidence`
+holds no card and writes no sheet until a lane marks a new ask. Sheet 4 is
+`docs/visuals/2026-09-29-open-asks-4.html` (nine cards, just the items), published S303 at
+https://claude.ai/artifact/PzVQ6KftWPtbk8afPXbZmf (`SHEET_ID` `2026-09-29-open-asks-4`, a fresh store); Sam
+answered all nine at 22:26Z (through 9, each his own call), and the lanes record them. Never republish onto it. ⭐ **Each card carries its own `evidence`
 list** (S302); a table keyed by position renumbered every card after a dropped one, so
 parallel verdict PRs collided. Sheet 3 was
 `docs/visuals/2026-09-29-open-asks-3.html` (eighteen cards: sheet 2's twelve at the same

@@ -33,7 +33,10 @@ lane's marker in the same pull request, or the sheet asks again.
 
 Sheet 4 (S303, 2026-09-29, SHEET_ID 2026-09-29-open-asks-4): nine cards from the S303
 handoff's list, less the gray-cell question Sam settled in session (round 9). JUST THE ITEMS:
-no framing, count line or how-to box (Sam, 2026-09-29). Read its replies before anything else.
+no framing, count line or how-to box (Sam, 2026-09-29). Sam answered all nine that
+evening (22:26Z, through 9, each his own call); the lanes record them. Published at
+https://claude.ai/artifact/PzVQ6KftWPtbk8afPXbZmf (capabilities db + comments). Read its
+replies before anything else; sheet 3's store keeps his eighteen answers, never republish onto it.
 
 Published: https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag (2026-09-29, S301, SHEET_ID
 2026-09-29-open-asks-3, capabilities db + comments, eighteen cards: sheet 2's twelve at the same
@@ -472,189 +475,9 @@ def items():
     """
     I = []
 
-    # ── sheet 4 (S303, 2026-09-29): the S303 handoff's list, less the gray-cell
-    # question Sam settled in session ("should not be 0"; round 9, #1761) ───
-    VIDEO = ("https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/prototype/"
-             "funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4")
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'The first condition: all three parts, or the coordinator alone',
-        'ref': 'implementation-funding · cpl_memory sam-first-condition-three-parts-2026-09-29',
-        'facts': (
-            "You named the first condition as three parts: a CPL Coordinator assigned, a primary CPL "
-            "contact, and the college's CPL landing page configured. The tab's check reads the "
-            "coordinator alone. In MAP's directory today, 48 colleges list a coordinator and 42 list all "
-            "three. The six with a coordinator but not all three: College of the Canyons, Crafton Hills, "
-            "Folsom Lake, Foothill, Grossmont and Palomar. Each lacks a primary contact."),
-        'why': (
-            "The check decides whether a college's funding counts, so the six would move from meeting "
-            "the first condition to missing it."),
-        'rec': (
-            "<strong>Check all three parts.</strong> The label already names all three, and the drill-in "
-            "shows the names and the link. <em>It might be wrong if</em> the primary contact field in MAP "
-            "is too new for colleges to have filled in; then the check reads the coordinator alone until "
-            "a date you set."),
-        'chips': chips(('Check all three', 'all3'), ('Coordinator alone', 'coord'), CH_LATER),
-        'evidence': [live("2026-09-29 (22:40Z, map_college_contacts)",
-                          "counts of coordinator, primary contact and https landing page per college")],
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'What a college reports in the Reporting box',
-        'ref': 'implementation-funding · cpl_memory sam-nova-reporting-idea-2026-09-29',
-        'facts': (
-            "You asked about a Reporting button and box beside the CO Monitor notes, with a NOVA "
-            "integration later. Round 8's mockup sketched the box. Your Scenario 2 note adds that P3 "
-            "Career Attainment will be reported with the P4 projects, in qualitative terms. The box would "
-            "be the tab's first place where anyone records a college's report, which routes it through "
-            "Governance first."),
-        'why': "The fields decide what the box asks colleges for, and what a NOVA import would fill later.",
-        'rec': (
-            "<strong>Progress first, in words</strong>: a reviewer records what the college reports on "
-            "each priority, P3 and the P4 projects among them, with the date and who reported it, in "
-            "NOVA's field names. Spending waits for NOVA. <em>It might be wrong if</em> the Chancellor's "
-            "Office needs expenditures from the first year; then the box carries both."),
-        'chips': chips(('Progress first', 'progress'), ('Spending first', 'spending'),
-                       ('Both from the start', 'both'), CH_LATER),
-        'evidence': [policy()],
-    })
-
-    I.append({
-        'lane': 'common-cr-reference',
-        'title': 'Credit recommendations that state 0 hours',
-        'ref': 'common-cr-reference · kb/cr_reference_worklist.json · kb/_build_cr_reference.py unit_range_label()',
-        'facts': (
-            "Ten recommendation wordings state 0 hours. Three sit in a group whose other wording names a "
-            "figure, so the group's range starts at 0: <em>Oral Radiology (0&ndash;2 units)</em> and two "
-            "<em>MCSE Certification Exam Prep</em> groups (0&ndash;3 units). Seven stand alone and read "
-            "<em>0 hours in &hellip;</em>, among them four Electric Vehicle courses and <em>Ultrasonic "
-            "Scaling</em>. Each comes from one college."),
-        'why': "A range that starts at 0 reads as a course that may carry no credit.",
-        'rec': (
-            "<strong>Treat 0 as no figure.</strong> A range forms from the figures above 0 (<em>Oral "
-            "Radiology (2 units)</em>), and a wording that states only 0 names its topic with no figure. "
-            "<em>It might be wrong if</em> a college enters 0 on purpose for a noncredit recommendation; "
-            "then 0 reads as <em>noncredit</em>."),
-        'chips': chips(('Treat 0 as no figure', 'nofigure'), ('Read 0 as noncredit', 'noncredit'),
-                       ('Leave the ranges', 'leave'), CH_LATER),
-        'evidence': [measured(p_crr_zero_hours)],
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'Draft 4 of the narrated video',
-        'ref': 'implementation-funding · #1756 · prototype/funding_video/README.md',
-        'facts': (
-            "<a href=\"" + VIDEO + "\">Draft 4</a> (3:07, Scenario 1) makes your sheet 3 changes: the "
-            "Timing voice names the release dates before the two-year amount, whose line now lands on its "
-            "words, and the Targets voice gives Sample College's Access target, about 44 FTES and "
-            "$112,484. Draft 3's pacing stays. The explainer links the 90-second introduction and does "
-            "not link the narrated cut."),
-        'why': "The explainer waits on your approval to link the narrated cut.",
-        'rec': (
-            "<strong>Approve draft 4 and link it</strong> from the explainer beside the introduction. "
-            "<em>It might be wrong if</em> Scenario 2 is the one the Chancellor finalizes; then the "
-            "narrated cut waits for its Scenario 2 version (card 8)."),
-        'chips': chips(('Approve and link it', 'approve'), ('Send changes', 'changes'),
-                       ('Hold for Scenario 2', 'hold'), CH_LATER),
-        'evidence': [measured(p_video_narrated_unlinked)],
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Scenario 2's Year 2 priorities",
-        'ref': 'implementation-funding · cpl_memory sam-scenario-2-chosen-2026-09-29',
-        'facts': (
-            "Scenario 2 ties college funding to P1 and P2: Year 1 is Access 50% and Completion 50%. Year 2 "
-            "is the same in both scenarios and funds three priorities: Outreach 33%, Success 33% and "
-            "Access 34%."),
-        'why': "Year 2 decides what colleges work toward after the first release.",
-        'rec': (
-            "<strong>Year 2 follows P1 and P2 too</strong>, at 50% each, so Scenario 2 means one thing "
-            "across the window. <em>It might be wrong if</em> Year 2's three priorities come from a "
-            "commitment outside the model; then Year 2 stays as it is."),
-        'chips': chips(('Year 2 follows P1 and P2', 'p1p2'), ('Year 2 stays as is', 'stay'), CH_LATER),
-        'evidence': [live("2026-09-29 (cpl_funding_config, unchanged since 13:59Z)",
-                          "Scenario 2's yearPriorities for slots 1 and 2")],
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Scenario 1's condition wording on Scenario 2",
-        'ref': 'implementation-funding · cpl_funding_config Scenario 2 coordLabel and extraReqs',
-        'facts': (
-            "You added two phrases to Scenario 1's conditions today. Scenario 2 lacks both. Its first "
-            "condition ends <em>&ldquo;the college public CPL Landing Page&rdquo;</em> without "
-            "<em>configured</em>, and its veteran condition ends <em>&ldquo;uploaded in MAP&rdquo;</em> "
-            "without <em>and processed for CPL</em>."),
-        'why': "Whichever scenario the Chancellor finalizes, colleges read these two sentences.",
-        'rec': (
-            "<strong>Carry both phrases to Scenario 2.</strong> You type them on the tab, as you did for "
-            "Scenario 1, or the reviewed config-edit workflow applies them. <em>It might be wrong if</em> "
-            "you left them off Scenario 2 on purpose."),
-        'chips': chips(('Carry both over', 'carry'), ('Leave Scenario 2 as is', 'leave'), CH_LATER),
-        'evidence': [live("2026-09-29 (cpl_funding_config, unchanged since 13:59Z)",
-                          "Scenario 2's coordLabel and extraReqs read against Scenario 1's")],
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'P3 and P4 shown as reported, with no FTES or funding figure',
-        'ref': 'implementation-funding · cpl_memory sam-scenario-2-chosen-2026-09-29',
-        'facts': (
-            "Your Scenario 2 note reports P3 Career Attainment with the P4 projects, in qualitative terms, "
-            "and ties no funding to it. The tab draws a card for each priority with a target, FTES and a "
-            "funding figure. A reported card that is also a funding priority still enters every sum, so "
-            "the display needs its own shape."),
-        'why': "Colleges will look for P3 on the dashboard and find a figure the model does not use.",
-        'rec': (
-            "<strong>Mock it first.</strong> A mockup shows P3 and P4 as reported cards, each saying what "
-            "is reported and when, with no FTES, target or funding line. You look at it before any port. "
-            "<em>It might be wrong if</em> you want P3 hidden from the dashboard until the Chancellor "
-            "finalizes Scenario 2."),
-        'chips': chips(('Mock it first', 'mock'), ('Hide P3 for now', 'hide'), CH_LATER),
-        'evidence': [policy()],
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'A Scenario 2 cut of the video',
-        'ref': 'implementation-funding · prototype/funding_video/README.md',
-        'facts': (
-            "The 90-second introduction has a Scenario 2 version, and the narrated cut is Scenario 1 "
-            "only. Scenario 2 is pending the Chancellor. A narrated Scenario 2 cut needs its own script "
-            "for the priorities, P3 and the dates."),
-        'why': "The narrated cut should match the scenario the explainer shows.",
-        'rec': (
-            "<strong>Wait for the Chancellor</strong>, then cut Scenario 2 from draft 4's script. "
-            "<em>It might be wrong if</em> you want the Scenario 2 cut ready for a meeting before the "
-            "decision; then it starts now as a draft."),
-        'chips': chips(('Wait for the decision', 'wait'), ('Start the draft now', 'start'), CH_LATER),
-        'evidence': [policy()],
-    })
-
-    I.append({
-        'lane': 'discipline-crosslist',
-        'title': 'Three ETHS routes that may look odd',
-        'ref': 'discipline-crosslist · #1755 · kb/eths_remint_out/2026-09-29/standalone+missed/report.md',
-        'facts': (
-            "The re-mint of the 43 landed today (40 moved, 3 held). It follows the pass-2 rule: the title "
-            "routes, and TOP only corroborates. Three routes follow that rule and may look odd. Grossmont's "
-            "<em>Advanced Techniques and Strategies of &hellip;</em> family splits: six titles say "
-            "Intercollegiate and went to ATHL, while Baseball, Football, Softball and Water Polo went to "
-            "KINE. <em>Athletic Competition</em> carries the intercollegiate TOP and went to KINE. "
-            "<em>Technical Analysis and Theory of Football &ndash; Defense</em> went to KINE while its "
-            "Offense twin sits merged under ATHL M1320."),
-        'why': "Faculty browsing ATHL or KINE will see these families split.",
-        'rec': (
-            "<strong>Leave them as routed.</strong> Each follows the rule, and a move later is a small "
-            "re-mint. <em>It might be wrong if</em> Grossmont teaches the whole family as intercollegiate "
-            "athletics; then its four KINE titles move to ATHL."),
-        'chips': chips(('Leave them', 'leave'), ('Move them to ATHL', 'athl'), CH_LATER),
-        'evidence': [quoted("#1755's PR body", "2026-09-29")],
-    })
+    # Sheet 4's nine cards (S303) left with their rulings: Sam answered all nine
+    # on 2026-09-29 (through 9, each his own call), and each lane records its
+    # ruling in the same change. p_crr_zero_hours stays for a later card.
     return I
 
 
