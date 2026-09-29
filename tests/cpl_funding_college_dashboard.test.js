@@ -391,8 +391,12 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   const chip = () => rowOf(doc, HELD).querySelector("button.cplfund-optin-jump");
   check("6a: the chip reads Confirm by MM-DD-YY from the deadline",
     chip().textContent === "Confirm by 12-15-99");
-  check("6b: its accessible name spells the date",
-    chip().getAttribute("aria-label") === "Confirm participation by December 15, 2099");
+  // WCAG 2.5.3 (label in name): the visible words are the whole accessible
+  // name, so a speech-input user can say what they see; the date spelled out
+  // rides the hover.
+  check("6b: its name is its visible words (no aria-label), and the hover spells the date",
+    !chip().hasAttribute("aria-label") &&
+    (chip().getAttribute("title") || "").indexOf("Confirm participation by December 15, 2099. Opens ") === 0);
   check("6c: an institution that has confirmed carries no chip", !rowOf(doc, QUAL).querySelector("button.cplfund-optin-jump"));
   const shared = T._getShared();
   shared.participationDeadline = "2099-03-07";
@@ -404,7 +408,8 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   shared.participationDeadline = "2020-01-15";
   T.render();
   check("6e: after the deadline the chip reads Confirm now",
-    chip().textContent === "Confirm now" && chip().getAttribute("aria-label") === "Confirm participation now");
+    chip().textContent === "Confirm now" && !chip().hasAttribute("aria-label") &&
+    (chip().getAttribute("title") || "").indexOf("Confirm participation now. Opens ") === 0);
   check("6f: the chip takes the page's 6px corners",
     /\.cplfund-optin-jump \{[^}]*border-radius: 6px/.test(consumerSrc));
   click(window, chip());

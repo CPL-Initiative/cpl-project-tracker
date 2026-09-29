@@ -9472,12 +9472,15 @@
     // attestation form focused. Public + private; hidden once opted in. The
     // words carry the deadline (Sam, 2026-09-28: "Confirm by MM-DD-YY", and
     // "Confirm now" once it has passed), read at render from the date a
-    // curator sets in Minimum Conditions.
+    // curator sets in Minimum Conditions. The visible words ARE the
+    // accessible name (WCAG 2.5.3, label in name: a speech-input user says
+    // what they see), so the button carries no aria-label; the date spelled
+    // out rides the hover.
     if (partShown() && !ELIG.optin[c.college]) {
       var now = partDeadlinePassed();
       chips += '<button type="button" class="cplfund-optin-jump" data-optinjump="' + esc(c.college) +
-        '" title="Confirm ' + esc(dispName(c.college)) + '&#39;s participation in CPL Implementation Funding — opens the short attestation form"' +
-        ' aria-label="' + esc(now ? "Confirm participation now" : "Confirm participation by " + deadlineSpelled()) + '">' +
+        '" title="' + esc((now ? "Confirm participation now" : "Confirm participation by " + deadlineSpelled()) +
+          ". Opens " + dispName(c.college) + "'s short attestation form for CPL Implementation Funding.") + '">' +
         (now ? "Confirm now" : "Confirm by " + esc(deadlineMdy(true))) + "</button>";
     }
     return chips;

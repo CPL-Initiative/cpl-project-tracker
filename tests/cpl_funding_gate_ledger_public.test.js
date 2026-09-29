@@ -145,7 +145,10 @@ function rowWords(row) {
   // the pie that says which condition is missing.
   check("S5: before the deadline the row says what to DO, and names no held figure",
     !!chipOf(gatedRow) && /^Confirm by 11-01-99$/.test(chipOf(gatedRow).textContent) &&
-    /confirm participation/i.test(chipOf(gatedRow).getAttribute("aria-label") || "") &&
+    // The visible words are the chip's accessible name (WCAG 2.5.3); the call
+    // to action, spelled out, rides its hover.
+    !chipOf(gatedRow).hasAttribute("aria-label") &&
+    /^Confirm participation by /.test(chipOf(gatedRow).getAttribute("title") || "") &&
     !/\bopt[- ]?in\b/i.test(chipOf(gatedRow).textContent) &&
     !/held|reserve/i.test(rowWords(gatedRow)));
   check("S5: ...and its Curr hover says the whole award is still ahead ($0 of it so far)",
