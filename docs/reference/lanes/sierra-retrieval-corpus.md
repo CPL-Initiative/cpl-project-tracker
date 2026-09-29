@@ -78,6 +78,9 @@ Guard: `tests/sierra_training_round1.test.js`.
 
 **RULED (Sam, 2026-09-29, sheet 3 card 12, as proposed):** keep the word
 *Sierra*, and where a site hides CPL Assistant show only *My College*.
-`sierraHost()` already sends the Sierra button there, so the two buttons opened
-one place. NEXT: `tryGroup()` draws one button where `sierraHost()` is not the
-CPL Assistant tab, under `tests/sierra_training_round1.test.js`.
+`sierraHost()` already sent the Sierra button there, so the two buttons opened
+one place. **Landed (#1751):** `tryGroup()` draws the Sierra button only where
+`sierraHost()` opens the CPL Assistant tab, and asks on every render; elsewhere
+the control reads *Try it in: My College*, and on a phone the lone button takes
+the row. Guard: `tests/sierra_training_round1.test.js` (5d), which also proves
+that button's question lands in My College's own box.

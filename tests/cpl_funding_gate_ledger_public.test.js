@@ -192,8 +192,9 @@ function rowWords(row) {
   check("S6: the Summary folds the held funding into the demonstrated figure", !!summary &&
     !/held in reserve/i.test(summary.textContent) &&
     /demonstrate \$[1-9]/.test(summary.textContent));
-  check("S6: ...and ends that line on local confirmation",
-    !!summary && /receives its demonstrated funding once it confirms local participation/.test(summary.textContent));
+  check("S6: ...and ends that line on the minimum conditions (Sam, 2026-09-29)",
+    !!summary && /receives its full outcomes-based funding within the two-year window once it meets the minimum conditions/.test(summary.textContent) &&
+    !/confirms local participation/.test(summary.textContent));
   check("S6: the standalone reserve pool card is retired into the Summary (R11)",
     !doc.querySelector(".cplfund-card.withheld"));
 

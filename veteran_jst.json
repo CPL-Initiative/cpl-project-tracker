@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-29T12:59:07.815473+00:00",
+  "scraped_at": "2026-09-29T15:56:22.110472+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28515,
+    "jst": 28516,
     "star_colleges": 59
   },
   "computed_star_colleges": 59,
@@ -197,7 +197,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 145,
+      "jst": 146,
       "star": false
     },
     "Fullerton College": {

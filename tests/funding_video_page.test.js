@@ -33,6 +33,10 @@
 //      never returns to what the video shows or says. A re-versioned MP4 keeps
 //      the explainer's download links pointing at files that exist.
 //
+//   9. Draft 4 (Sam's sheet 3, cards 16 and 17, 2026-09-29): the Timing voice
+//      names the release dates before the two-year amount, whose line is cued
+//      to its words, and the Targets voice says Sample College's Access target.
+//
 // Run from repo root: `npm test` (or `node tests/funding_video_page.test.js`).
 const crypto = require("crypto");
 const fs = require("fs");
@@ -149,7 +153,7 @@ function boot(file, reduced) {
   check(tag + "g9 the page plays the committed voice track", /"audio": ?"narration_s1\.mp3"/.test(raw) && fs.existsSync(path.join(DIR, "narration_s1.mp3")));
   const dl = d.getElementById("dl");
   check(tag + "g10 Download MP4 points at the narrated draft, which exists",
-    !!dl && dl.getAttribute("href") === "20260926_CPL_Funding_in_Motion_Narrated_Draft_3.mp4" && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
+    !!dl && dl.getAttribute("href") === "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   w.close();
 }
@@ -229,6 +233,27 @@ function boot(file, reduced) {
       !RETIRED.test(shown) && shown.includes("Meet the minimum conditions by November 1, 2026"));
     w.close();
   });
+}
+
+{
+  // 9. Sam's sheet 3 rulings (2026-09-29), cards 16 and 17. Draft 3's Timing
+  // voice opened with the two-year amount, which the picture shows after the
+  // release dates, so its line trailed its words by 7.6 s; the voice now names
+  // the dates first. And the Targets voice says Sample College's Access target,
+  // the figure its card shows, in the card's own words.
+  const scene = (name) => narration.scenes.find((s) => s.scene === name) || {};
+  const timing = scene("Timing"), targets = scene("Targets");
+  const at = (s, w) => (s.text || "").indexOf(w);
+  check("j1 the Timing voice names the release dates, then the two-year amount, then what remains (card 16)",
+    at(timing, "releases funding") >= 0 && at(timing, "releases funding") < at(timing, "The full two-year amount")
+      && at(timing, "The full two-year amount") < at(timing, "whatever remains after year one"));
+  check("j2 the two-year line is cued to its words, not skipped",
+    (timing.cues || []).some((c) => c.word === "The full two-year amount" && !c.skip));
+  const SAMPLE = "Sample College's Access target, for example, is about forty-four FTES, behind about a hundred twelve thousand dollars.";
+  check("j3 the Targets voice says Sample College's Access target right after the quarter-system line (card 17)",
+    at(targets, "quarter system. " + SAMPLE) >= 0);
+  check("j4 its card is cued to those words",
+    (targets.cues || []).some((c) => c.word === "Sample College's Access target" && !c.skip));
 }
 
 let fail = 0;

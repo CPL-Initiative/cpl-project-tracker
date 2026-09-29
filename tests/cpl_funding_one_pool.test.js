@@ -258,8 +258,14 @@ const POOL = 25240308;
     // the statute's "Advancing career attainment" and "advance the …
     // priority outcomes" (to further) are the allowed senses
     !/\badvances?\b(?! (the|each|Vision))/i.test(text.replace(/Advancing career attainment[^.]*\./g, "")));
-  check("D14: the priority cards read Current Total / Total Possible (Sam's labels)",
-    /Current Total/.test(text) && /Total Possible/.test(text));
+  // Demonstrated since 2026-09-29 (Sam, sheet 3 card 4). The mount still says
+  // Current for the Curr columns, so the check reads the cards alone.
+  check("D14: the priority cards read Demonstrated / Total Possible (Sam's labels)",
+    (function () {
+      const cards = Array.from(doc.querySelectorAll(".cplfund-prio .p")).map(function (c) { return c.textContent; });
+      return cards.length > 0 && cards.some(function (t) { return /Demonstrated: \$[\d,]+ of \$[\d,]+/.test(t); }) &&
+        /Total Possible/.test(cards.join(" ")) && !/Current Total/.test(cards.join(" "));
+    })());
   check("D15: a trio row expands to the origination note (not a priority table)",
     (function () {
       T._setSubview("model");

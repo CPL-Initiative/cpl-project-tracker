@@ -68,7 +68,7 @@ jobs:
           echo "Dispatched on: ${{ github.ref }} @ ${{ github.sha }}"
 
       - name: Set up Supabase CLI
-        uses: supabase/setup-cli@v1
+        uses: supabase/setup-cli@v3
         with:
           version: latest
 
@@ -236,7 +236,7 @@ jobs:
 
       - name: Upload both answer sets
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: cpl-chat-ab-${{ github.run_id }}
           path: |
