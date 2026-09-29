@@ -98,6 +98,9 @@ function liByText(w, text) {
     API._dedupe([{ t: "X", u: "3", cid: "A 1" }, { t: "X", u: "3", cid: "A 1" }]).length === 1);
   check("dedupe keeps differing units", API._dedupe([{ t: "X", u: "3", cid: "" }, { t: "X", u: "4", cid: "" }]).length === 2);
   check("unitLabel singular/plural", API._unitLabel("1") === "1 unit" && API._unitLabel("4") === "4 units");
+  // The builder's span (Sam, 2026-09-27: units never split an identity) reads as a range.
+  check("unitLabel prints the builder's span as a range", API._unitLabel("6\u20137") === "6\u20137 units"
+    && API._unitLabel("0.5\u20131") === "0.5\u20131 units");
   check("buildIndex drops empty rec arrays + lowercases keys",
     Object.keys(API._buildIndex({ "Foo": [], "Bar": [{ t: "t", u: "3", cid: "" }] })).join() === "bar");
 

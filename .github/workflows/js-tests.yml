@@ -192,6 +192,16 @@ jobs:
       - name: CSR scanner rules (compare the id, honor a ruled fan-in)
         run: python3 tests/csr_trail_rules_test.py
 
+      # The Fact Sheet's statewide recommendations, which Sierra's statewide
+      # lines are built from. Units never split an identity (Sam, 2026-09-27):
+      # a line published at 6 and 7 units reads "6–7", where the first figure
+      # seen used to win. It also loads the domain crosswalk, which imports
+      # openpyxl, so it installs it itself. Same non-required check.
+      - name: Fact Sheet statewide recommendations (a unit range, never the first figure)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/statewide_recs_test.py
+
       # The standing open-asks sheet must cover every lane that carries an open
       # ask. Sam's "always" (2026-09-22) cannot depend on a session remembering:
       # when he asked, the asks sat in eleven lane files and one reached §11.

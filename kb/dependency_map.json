@@ -1030,7 +1030,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 695
+     "line": 698
     },
     {
      "id": "script:kb/memory_audit/2026-09-05-sheet_builder.py",
@@ -4139,7 +4139,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 222
+     "line": 225
     },
     {
      "id": "script:kb/_build_regional_cpl_opportunity.py",
@@ -5963,21 +5963,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 104
+     "line": 129
     },
     {
      "id": "script:fact-sheet/_build_statewide_recs.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 104
+     "line": 129
     },
     {
      "id": "script:kb/_build_domain_cpl_crosswalk.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 117
+     "line": 120
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -9261,7 +9261,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 200
+     "line": 203
     },
     {
      "id": "script:kb/_build_regional_cpl_opportunity.py",
@@ -13884,7 +13884,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 915
+     "line": 918
     }
    ],
    "served": false,
@@ -14770,7 +14770,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 98
+     "line": 123
     },
     {
      "id": "script:kb/_build_ccr_cpl.py",
@@ -14798,7 +14798,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 119
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -15830,6 +15830,19 @@
    "main_committers": []
   },
   "file:tests/skyview_built_from_source_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/statewide_recs_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -20607,6 +20620,7 @@
     "tests/mid_short_code_gate_test.py",
     "tests/orphan_parent_worklist_test.py",
     "tests/csr_trail_rules_test.py",
+    "tests/statewide_recs_test.py",
     "kb/_build_open_asks_decision_sheet.py",
     "tests/open_asks_sheet_coverage_test.py",
     "tests/supabase_sql_guard_test.py",
