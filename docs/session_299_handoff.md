@@ -14,17 +14,25 @@ way": he talked the changes through while a mockup drawn by COBI's own code upda
 him. Method: [`methodology-mock-up-from-the-running-code`](kb-notes/methodology-mock-up-from-the-running-code.md);
 story: [`ui_mockup_lessons`](ui_mockup_lessons.md).
 
-## First thing: the College Dashboard port
+## First thing: the College Dashboard follow-ups
 
-1. **[#1726](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1726) merged 2026-09-28** (`1f55f60`, every check green):
-   funding waits on all three minimum conditions, live in production.
-2. **The College Dashboard port.** A background agent built it in a worktree on branch
-   `claude/funding-dashboard-ui-s298`. If that branch is on GitHub, open or finish its PR: merge
-   `main` in after #1726 lands, regenerate `kb/dependency_map.json` (never pick a side), run the
-   `test` check, merge on green. If it never reached GitHub, the container took it: redo the port
-   from the mockup, the lane file's status line and the `cpl_memory` rows below.
-   Spec: [mockup, round 7](https://claude.ai/artifact/2V1aWwtjwob5gSM6TEkfyQ) (read it with the
-   Artifact tool; `#view-mock` is the design, `#view-today` the old code).
+1. **Both PRs merged, every check green.** [#1726](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1726)
+   (`1f55f60`, 2026-09-28): funding waits on all three minimum conditions.
+   [#1729](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1729) (`1f60fdf`, 2026-09-29):
+   the College Dashboard redesign, described in the lane file's COLLEGE DASHBOARD paragraph.
+2. **Five follow-ups the port left, one small PR** (the lane's NEXT ⓪⁻):
+   - The code's default participation deadline is still `2026-09-01` (`cpl_funding.js` near line
+     2900); the live config sets `2026-11-01`. If the config fails to load, every chip reads
+     "Confirm now". Move the default.
+   - The explainer's Step two note (`funding-model/index.html` line 550) says the model reserves
+     demonstrated funding, against Sam's no-reserve ruling, and "Max award by institution" (line
+     443) now heads the Curr columns. Public wording: show Sam the revision before it ships.
+   - `READING_DEFAULT_HTML` (`cpl_funding.js` near line 3211) says every funding cell shows the max
+     award on top and its Current Total beneath it. The redesign gives each its own column. Find
+     where it renders and whether a saved text overrides it before changing it.
+   - The CSV's "Current total" repeats "Demonstrated", and "Withheld (baseline not met)" still says
+     baseline where Sam's term is Minimum Conditions.
+   - Two dead `.cplfund-dtl-sum` rules; print runs chips into the name ("CalbrightNC only").
 
 ## Then: Sierra Training
 
@@ -53,7 +61,8 @@ mockup (read it with the Artifact tool).
 
 ## What shipped
 
-- #1726 (draft, open at this checkpoint). This checkpoint's PR. Three `cpl_memory` decision rows.
+- #1726 (the gate) and #1729 (the College Dashboard), both merged; this checkpoint's PRs, #1727
+  and #1728. Three `cpl_memory` decision rows.
 - Two mockups (links above). The CO Monitor's note was confirmed signed-in-reviewer only at both
   layers (RLS `is_allowed_reviewer()`; the team phrase does not open it).
 - The handoff's SQL test ran: calls 1 to 3 executed; call 4 was refused by the guard. Sam has not
