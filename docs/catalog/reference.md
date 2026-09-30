@@ -39,7 +39,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [MAP Users / student contact — lane state](../reference/lanes/map-users-student-contact.md) | lanes | `map-users-student-contact.md` | 2026-08-28 | 2026-08-28 |
 | [Memory tab / Autogenerate + the Briefing — lane state](../reference/lanes/memory-tab.md) | lanes | `memory-tab.md` | 2026-08-28 | 2026-09-24 |
 | [Military (ACE) CR Reference — lane state](../reference/lanes/military-ace-cr-reference.md) | lanes | `military-ace-cr-reference.md` | 2026-08-28 | 2026-08-28 |
-| [My College (college action page) / MAP-team queue — lane state](../reference/lanes/my-college-action-page.md) | lanes | `my-college-action-page.md` | 2026-08-28 | 2026-08-28 |
+| [My College (college action page) / MAP-team queue — lane state](../reference/lanes/my-college-action-page.md) | lanes | `my-college-action-page.md` | 2026-08-28 | 2026-09-30 |
 | [NC / Learning Partners — lane state](../reference/lanes/nc-learning-partners.md) | lanes | `nc-learning-partners.md` | 2026-08-28 | 2026-08-28 |
 | [Noncredit CIP categories — lane state](../reference/lanes/noncredit-cip-categories.md) | lanes | `noncredit-cip-categories.md` | 2026-08-28 | 2026-08-28 |
 | [Org & phrase scope / auth model — lane state](../reference/lanes/org-phrase-scope-auth.md) | lanes | `org-phrase-scope-auth.md` | 2026-08-28 | 2026-09-19 |

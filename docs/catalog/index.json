@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 498,
+   "count": 499,
    "docs": [
     {
      "created": "2026-08-14",
@@ -992,6 +992,23 @@
      "title": "A conversation is scoped state \u2014 what you send must never exceed what you show",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-09-30",
+     "governs": [
+      "scripts/funding_effective.js",
+      "prototype/funding_video/build.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-copied-record-is-safe-once-its-hash-matches.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "implementation-funding"
+     ],
+     "title": "A copied record is safe once its hash matches the source",
+     "type": "methodology",
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-14",
@@ -10727,7 +10744,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-09-24"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-06-21",
@@ -13902,7 +13919,7 @@
      ],
      "title": "My College (college action page) / MAP-team queue \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-28",
@@ -14321,8 +14338,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 276,
+   "count": 277,
    "docs": [
+    {
+     "created": "2026-09-30",
+     "governs": [],
+     "n": 306,
+     "path": "docs/session_306_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "funding-video",
+      "reporting-box",
+      "my-college",
+      "decision-sheet"
+     ],
+     "title": "sheet 5 is with Sam; the Reporting box builds on his three calls",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-30",
      "governs": [],
@@ -19008,5 +19043,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 990
+ "total": 992
 }
