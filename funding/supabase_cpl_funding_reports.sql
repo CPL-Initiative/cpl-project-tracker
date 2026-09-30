@@ -5,11 +5,12 @@
 -- Sam's calls (open-asks sheet 6, cards 2–4, 2026-09-30): a college reports
 -- ONCE A YEAR, in ALL EIGHT NOVA expenditure categories (object codes 1000
 -- through 7000 and indirect costs), and each college sees its own figures on
--- My College, to its signed-in staff. This file builds the REVIEWER half: a
--- signed-in reviewer records what a college reports, in the institution's
--- drill-in under the CO Monitor's note. How a college's staff sign in to see
--- theirs is an open design on the decision sheet; nothing here opens the table
--- to them.
+-- My College, to its signed-in staff. The REVIEWER half (S307): a signed-in
+-- reviewer records what a college reports, in the institution's drill-in under
+-- the CO Monitor's note. The COLLEGE half (S308, at the end of this file):
+-- cpl_funding_my_reports() shows a college's reports, read only, to the people
+-- MAP lists as its CPL coordinator or primary CPL contact. The table itself
+-- stays reviewer-gated; the function is the only way a college reads it.
 --
 -- INSERT-ONLY. There is no UPDATE or DELETE policy, and the table-level
 -- UPDATE/DELETE/TRUNCATE grants are revoked from the API roles. A correction
@@ -92,3 +93,94 @@ drop policy if exists cfr_insert on public.cpl_funding_reports;
 create policy cfr_insert on public.cpl_funding_reports for insert
   to anon, authenticated
   with check (is_allowed_reviewer());
+
+-- ── The college half: cpl_funding_my_reports() (S308, 2026-09-30) ─────────
+-- Sam, open-asks sheet 7 card 1 (2026-09-30 17:09Z): a person MAP lists as a
+-- college's CPL coordinator or primary CPL contact signs in with the reviewer
+-- email link and sees that college's reports on My College, read only, for
+-- every college MAP lists the address under. The check reads
+-- map_college_contacts, so MAP's next nightly sync carries any change in who
+-- those people are; nothing here keeps a second list.
+--
+-- HOW A NAME BECOMES A COLLEGE. Reports carry the funding roster's short name
+-- ("Chaffey"); map_college_contacts carries MAP's ("Chaffey College"). Both
+-- resolve through map_colleges, the identity table, to one college_id: the
+-- canonical name first, then a variant, trimmed on the way in (the identity
+-- lane's rule: fix the JOIN, never the table, because the nightly rebuild puts
+-- MAP's trailing spaces back). A name that resolves to nothing shows nothing,
+-- so an unknown spelling fails closed. Measured 2026-09-30: 112 of the
+-- roster's 115 names resolve; "LA Swest", "Mt San Antonio" and "MiraCosta" wait
+-- on the identity crosswalk's variants, and those colleges' staff see no
+-- reports until they land.
+--
+-- WHO COUNTS. Each contact field can hold a list ("a@x.edu,\nb@x.edu": 26 of
+-- the 148 filled fields did on 2026-09-30), so each is split on commas,
+-- semicolons and white space and every address in it counts. The caller's
+-- address comes from the verified session (auth.jwt()), never from the request.
+--
+-- WHAT COMES BACK. For each college the caller is listed for, its report rows
+-- oldest first, or one row with empty report fields when it has none yet, all
+-- carrying the college_id My College matches on. So the page can tell "no
+-- report yet" from "MAP does not list you here".
+-- recorded_by (the reviewer's address) stays behind; reported_by is the
+-- college's own person.
+--
+-- Grants (Rule 10 b2, and one step past it): Postgres grants EXECUTE to PUBLIC
+-- at creation, AND this project's default privileges grant it to anon and
+-- authenticated by name (pg_default_acl, read 2026-09-30). Revoking PUBLIC
+-- alone left anon=X on this function (measured live, then closed by migration
+-- cpl_funding_my_reports_revoke_anon), so the revoke names both. service_role
+-- holds an explicit grant first, so the revoke cannot take it away.
+-- Governance: DR-09 in kb/governance_surface_map.json.
+create or replace function public.cpl_funding_my_reports()
+returns table (
+  college_id integer, college text, fiscal_year text, withdrawn boolean,
+  reported_by text, reported_on date,
+  c1000 numeric, c2000 numeric, c3000 numeric, c4000 numeric,
+  c5000 numeric, c6000 numeric, c7000 numeric, c_indirect numeric,
+  total numeric, note text, recorded_at timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  with me as (
+    select lower(btrim(coalesce(auth.jwt() ->> 'email', ''))) as email
+  ),
+  mine as (
+    select distinct ids.college_id
+    from public.map_college_contacts c
+    cross join me
+    cross join lateral (
+      select m.college_id from public.map_colleges m
+      where not coalesce(m.is_test, false)
+        and (m.college_name = btrim(c.college) or btrim(c.college) = any(m.variants))
+      order by (m.college_name = btrim(c.college)) desc, m.college_id
+      limit 1
+    ) ids
+    where me.email <> ''
+      and (me.email = any(regexp_split_to_array(lower(coalesce(c.cpl_coordinator_email, '')), '[,;[:space:]]+'))
+        or me.email = any(regexp_split_to_array(lower(coalesce(c.primary_contact_email, '')), '[,;[:space:]]+')))
+  )
+  select mine.college_id, r.college, r.fiscal_year, r.withdrawn, r.reported_by, r.reported_on,
+         r.c1000, r.c2000, r.c3000, r.c4000, r.c5000, r.c6000, r.c7000, r.c_indirect,
+         r.total, r.note, r.recorded_at
+  from mine
+  left join lateral (
+    select rr.* from public.cpl_funding_reports rr
+    cross join lateral (
+      select m.college_id from public.map_colleges m
+      where not coalesce(m.is_test, false)
+        and (m.college_name = btrim(rr.college) or btrim(rr.college) = any(m.variants))
+      order by (m.college_name = btrim(rr.college)) desc, m.college_id
+      limit 1
+    ) ids
+    where ids.college_id = mine.college_id
+  ) r on true
+  order by mine.college_id, r.fiscal_year nulls first, r.recorded_at;
+$$;
+
+grant execute on function public.cpl_funding_my_reports() to service_role;
+revoke execute on function public.cpl_funding_my_reports() from public, anon;
+grant execute on function public.cpl_funding_my_reports() to authenticated;

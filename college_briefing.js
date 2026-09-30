@@ -106,10 +106,14 @@
   // closes everything, Sierra included. A control that silently exempts one
   // section teaches people it is broken.
   var SECTION_IDS = ["sierra", "start", "opps", "stand", "waiting", "types", "courseshare",
-                     "tier", "funding", "advice", "contacts", "resources"];
+                     "tier", "funding", "reports", "advice", "contacts", "resources"];
 
   var state = {
     college: null, data: null, loading: false, error: null, loadedSignedIn: null,
+    // The college's own expenditure reports (the Reporting box's college half,
+    // S308): idle | signedout | loading | ready | error, the rows
+    // cpl_funding_my_reports() returned, and the session they were read for.
+    myReports: "idle", myRows: null, myToken: null, myEmail: null,
     // Which of SCOPES the visitor picked, and — for the scopes that need one —
     // the entity within it. `college` above stays the college-scope selection
     // because everything downstream of it keys on the college NAME.
@@ -691,7 +695,10 @@
       // Resources — mirrors the public CPL fact sheet's §resources.
       ".cb-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;}",
       ".cb-resi{border:1px solid var(--border);border-radius:8px;padding:11px 13px;background:var(--surface);}",
-      ".cb-resi a{font-size:.86rem;font-weight:600;color:var(--link,#0b5cad);text-decoration:none;}",
+      // 24px tall (WCAG 2.2 SC 2.5.8): each link stands alone in its card, so
+      // the inline-text exception does not cover it (the S308 sweep of My
+      // College's seeded view measured them at 15px).
+      ".cb-resi a{display:inline-block;min-height:24px;padding:4px 0;box-sizing:border-box;font-size:.86rem;font-weight:600;color:var(--link,#0b5cad);text-decoration:none;}",
       ".cb-resi a:hover{text-decoration:underline;}",
       ".cb-resi div{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
       // ── Funding, district roster, Sierra asks (2026-08-11) ──
@@ -726,6 +733,13 @@
       ".cb-dist th{text-align:left;font-size:.72rem;color:var(--text-muted);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--border-strong);}",
       ".cb-dist th:not(:first-child),.cb-dist td.n{text-align:right;font-variant-numeric:tabular-nums;}",
       ".cb-dist td{padding:7px 8px;border-bottom:1px solid var(--border);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+      // Reported expenditures (the Reporting box's college half, S308): row
+      // headers read as body text, the total row carries the weight, and the
+      // table scrolls inside its own region on a phone, never the page.
+      ".cb-rep-wrap{overflow-x:auto;max-width:100%;}",
+      ".cb-rep tbody th{text-align:left;font-size:.85rem;font-weight:400;color:var(--text-body);padding:7px 8px;border-bottom:1px solid var(--border);white-space:normal;}",
+      ".cb-rep .cb-rep-tot th,.cb-rep .cb-rep-tot td{font-weight:700;color:var(--text-strong);border-bottom:1px solid var(--border-strong);}",
+      ".cb-reports-signin{margin:8px 0 4px;}",
       ".cb-pick{background:none;border:0;padding:0;font:inherit;color:var(--link,#0b5cad);cursor:pointer;text-align:left;}",
       ".cb-pick:hover{text-decoration:underline;}",
       ".cb-roster tr.lead td{font-weight:600;color:var(--text-strong);}",
@@ -2841,6 +2855,8 @@
       if (f.alloc) fundSum += (fundSum ? " · " : "") + money(f.alloc.total) + " cap";
     }
     h += sec("funding", "My CPL Funding", esc(fundSum), fundBody);
+    var repSec = myReportsSection();
+    h += sec("reports", "Reported expenditures", esc(repSec.summary), repSec.body);
 
     // ── Where you stand ───────────────────────────────────────────────────
     // Every figure carries its denominator. Nothing here can reach 100% and
@@ -3124,6 +3140,7 @@
     var ae = document.activeElement;
     var inBox = !!(ae && ae !== root && root.contains(ae) && ae.classList && ae.classList.contains("cplchat-input"));
     root.innerHTML = h;
+    mountReportsSignin(root);
     // The pickers move INSIDE the Sierra AI box (Sam: "put all the college
     // selectors in the CPL Assistant box for simplicity"). They are built in
     // the main string, then relocated, so the bar markup stays in one place.
@@ -4109,6 +4126,115 @@
     return groupQuestions(state.scope, scopeLabel());
   }
 
+  /* ── The Reporting box's college half (S308, 2026-09-30) ────────────────
+   * Sam, open-asks sheet 7 card 1: a person MAP lists as a college's CPL
+   * coordinator or primary CPL contact signs in with the email link and reads
+   * that college's expenditure reports here, read only, for every college MAP
+   * lists the address under. cpl_funding_my_reports() decides who sees what,
+   * from the verified session (funding/supabase_cpl_funding_reports.sql); this
+   * page only asks, so a reader who edits it gains nothing. The team phrase is
+   * not a person, so it does not count here. The categories and the "newest
+   * report for a year counts" rule come from cpl_funding.js, the same code the
+   * reviewer's box uses. */
+  var MY_REPORTS_RPC = REST + "/rpc/cpl_funding_my_reports";
+  function personSession() {
+    var s = getSession();
+    return s && s.access_token ? s : null;
+  }
+  function loadMyReports(root) {
+    var s = personSession();
+    if (!s) { state.myReports = "signedout"; state.myRows = null; state.myToken = null; state.myEmail = null; return; }
+    if (state.myToken === s.access_token && state.myReports !== "error" && state.myReports !== "signedout") return;
+    state.myReports = "loading"; state.myToken = s.access_token; state.myEmail = s.email || null;
+    return fetch(MY_REPORTS_RPC, { method: "POST", body: "{}", headers: { apikey: SUPABASE_ANON,
+        Authorization: "Bearer " + s.access_token, "Content-Type": "application/json" } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) { state.myRows = Array.isArray(rows) ? rows : []; state.myReports = "ready"; })
+      .catch(function () { state.myRows = null; state.myReports = "error"; })
+      .then(function () { if (root) render(root); });
+  }
+  function collegeNameById(id) {
+    var m = (state.data && state.data.nameToId) || {};
+    for (var n in m) { if (Object.prototype.hasOwnProperty.call(m, n) && m[n] === id) return n; }
+    return null;
+  }
+  // { summary, body } for the section. EVERY state says something: a blank
+  // section on a money figure reads as broken, and "you are not listed" and
+  // "nothing recorded yet" are different claims.
+  function myReportsSection() {
+    var name = state.college;
+    var id = state.data && state.data.nameToId ? state.data.nameToId[name] : null;
+    var M = window.CPL_FUNDING_TAB, R = M && M.reports;
+    var st = state.myReports;
+    if (st === "idle" || st === "signedout") {
+      return { summary: "for college staff", body:
+        '<p class="cb-note">Once a year each college reports what it has expended of its CPL implementation '
+        + "funding, in eight expenditure categories, and the Chancellor&#39;s Office records the report. The people MAP lists as a college&#39;s CPL "
+        + "coordinator or primary CPL contact can read that college&#39;s reports here. Sign in with the address "
+        + "MAP lists for you; the email link brings you back to this page.</p>"
+        + '<div class="cb-reports-signin" id="cbReportsSignin"></div>' };
+    }
+    if (st === "error" || (!R && state.funding === "error")) return { summary: "not loaded", body:
+      '<p class="cb-note">The reports did not load. Reload the page to try again.</p>' };
+    if (st === "loading" || !R) return { summary: "loading…", body: '<p class="cb-note">Reading your college&#39;s reports…</p>' };
+    var rows = state.myRows || [];
+    var mine = {};
+    rows.forEach(function (r) { mine[r.college_id] = true; });
+    var who = state.myEmail ? esc(state.myEmail) : "this address";
+    if (id == null || !mine[id]) {
+      var names = Object.keys(mine).map(function (k) { return collegeNameById(Number(k)); })
+        .filter(Boolean).sort();
+      return { summary: "not listed for this college", body: names.length
+        ? '<p class="cb-note">You are signed in as ' + who + ". MAP lists this address as the CPL coordinator or "
+          + "primary CPL contact for " + esc(names.join(", ")) + ". Choose one of those colleges to read its reports.</p>"
+        : '<p class="cb-note">You are signed in as ' + who + ". MAP does not list this address as the CPL "
+          + "coordinator or primary CPL contact for any college. A college updates its contacts in the MAP "
+          + "platform&#39;s College Contacts, and this page reads the change after MAP&#39;s nightly sync.</p>" };
+    }
+    var own = rows.filter(function (r) { return r.college_id === id && r.fiscal_year; });
+    if (!own.length) return { summary: "none recorded", body:
+      '<p class="cb-note">No expenditure report is recorded yet for ' + esc(name) + ". When the Chancellor&#39;s "
+      + "Office records your college&#39;s report for a fiscal year, it shows here.</p>" };
+    return reportsTableHtml(name, R.mark(own), R);
+  }
+  function reportsTableHtml(name, marked, R) {
+    var latest = marked.filter(function (x) { return x.latest; })
+      .sort(function (a, b) { return a.row.fiscal_year < b.row.fiscal_year ? -1 : 1; });
+    var counting = latest.filter(function (x) { return x.counts; });
+    var toDate = counting.reduce(function (t, x) { return t + R.total(x.row); }, 0);
+    var cols = '<col style="width:' + (latest.length > 2 ? 34 : 44) + '%">' + latest.map(function () { return "<col>"; }).join("");
+    var head = '<tr><th scope="col">Category</th>' + latest.map(function (x) {
+      return '<th scope="col">' + esc(x.row.fiscal_year) + "</th>";
+    }).join("") + "</tr>";
+    var body = R.cats.map(function (c) {
+      return '<tr><th scope="row">' + esc(c.label) + "</th>" + latest.map(function (x) {
+        return '<td class="n">' + (x.counts ? money(Number(x.row[c.k]) || 0) : "—") + "</td>";
+      }).join("") + "</tr>";
+    }).join("") + '<tr class="cb-rep-tot"><th scope="row">Total</th>' + latest.map(function (x) {
+      return '<td class="n">' + (x.counts ? money(R.total(x.row)) : "Withdrawn") + "</td>";
+    }).join("") + "</tr>";
+    var notes = latest.map(function (x) {
+      var r = x.row, on = r.reported_on || String(r.recorded_at || "").slice(0, 10);
+      return x.counts
+        ? esc(r.fiscal_year) + ": reported by " + esc(r.reported_by || "the college") + (on ? " on " + esc(on) : "") + "."
+        : esc(r.fiscal_year) + ": withdrawn" + (on ? " on " + esc(on) : "") + ", so the year counts as unreported.";
+    });
+    return { summary: money(toDate) + " expended to date", body:
+      '<p class="cb-note">Expended to date: <b>' + money(toDate) + "</b>, over " + counting.length + " reported fiscal year"
+      + (counting.length === 1 ? "" : "s") + ". A newer report for a year replaces the earlier one.</p>"
+      + '<div class="cb-rep-wrap" role="region" aria-label="' + esc("Reported expenditures, " + name) + '" tabindex="0">'
+      + '<table class="cb-dist cb-rep"><colgroup>' + cols + "</colgroup><thead>" + head + "</thead><tbody>" + body
+      + "</tbody></table></div>"
+      + '<p class="cb-note">' + notes.join(" ") + "</p>" };
+  }
+  function mountReportsSignin(root) {
+    var el = root.querySelector("#cbReportsSignin");
+    if (!el || !window.CPL_REVIEWER_SIGNIN || typeof window.CPL_REVIEWER_SIGNIN.mountInto !== "function") return;
+    window.CPL_REVIEWER_SIGNIN.mountInto(el, { title: "Sign in to read your college's reports",
+      blurb: "A one-time link, sent to the address MAP lists as your college's CPL coordinator or primary CPL contact.",
+      returnTab: "college-briefing" });
+  }
+
   /* ── Load ────────────────────────────────────────────────────────────── */
   function jget(url) {
     return fetch(url, { headers: authHeaders() }).then(function (r) {
@@ -4296,6 +4422,7 @@
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
     if (state.scope === null) restoreScope();
+    loadMyReports(root);
     if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); return; }
     // No sign-in branch: a public reader loads the `_pub` mirrors through
     // sources(). `loadedSignedIn` above is what reloads from the OTHER source

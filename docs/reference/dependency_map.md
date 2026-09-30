@@ -152,6 +152,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cobi_rls_gates` | tabs: `admin` | — |
 | `college_adoption_opportunities` | `edgefn:cpl-chat` | — |
 | `college_geo_replace` | scripts: `chatbox/sync_coci_offerings.py` | — |
+| `cpl_funding_my_reports` | tabs: `college-briefing` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `implementation-funding` | — |
 | `credential_alignment_for_college` | `edgefn:cpl-chat` | — |
 | `credential_recs_for_titles` | `edgefn:cpl-chat` | — |
@@ -331,7 +332,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `contracts.js` | pages: `CPL_Dashboard.html` | — |
 | `course_top_consensus.json` | tabs: `cip-crosswalk` · scripts: `kb/_build_course_top_consensus.py` | scripts: `kb/_build_course_top_consensus.py` |
 | `cpl_chat.js` | pages: `CPL_Dashboard.html` | — |
-| `cpl_funding.js` | tabs: `college-briefing` · pages: `CPL_Dashboard.html`, `funding-model/index.html` · scripts: `kb/_build_open_asks_decision_sheet.py` | — |
+| `cpl_funding.js` | tabs: `college-briefing` · modules: `a11y.config.js` · pages: `CPL_Dashboard.html`, `funding-model/index.html` · scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `cpl_memory.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_news.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_pathways.js` | pages: `CPL_Dashboard.html` | — |
@@ -966,5 +967,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 90 Supabase tables · 31 RPCs · 5 edge functions · 558 file
-datasets · 147 external services · 385 consumers · 38 workflows · 37 tabs.
+Coverage: 90 Supabase tables · 32 RPCs · 5 edge functions · 558 file
+datasets · 147 external services · 386 consumers · 38 workflows · 37 tabs.
