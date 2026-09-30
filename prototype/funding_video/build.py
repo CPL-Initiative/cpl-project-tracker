@@ -3,6 +3,7 @@
 
   python3 prototype/funding_video/build.py               -> funding_in_motion.html (Scenario 1)
   python3 prototype/funding_video/build.py s2            -> funding_in_motion_s2.html (Scenario 2)
+  python3 prototype/funding_video/build.py n1|n2        -> funding_in_motion_n1.html / _n2.html (the narrated drafts, Scenario 1 / 2)
   python3 prototype/funding_video/build.py [s2] --render -> also render[_s2].html, the 1920x1080 frame page render.sh drives
 
 ONE source, funding_in_motion.src.html, carries the animation, the score and
@@ -45,9 +46,12 @@ CONFIG = {
                   [33, 'Career attainment', 'CPL units for students who reach a career outcome in EDD wage records, measured by the Chancellor’s Office.']],
         'target': {'ftes': 44.3, 'usd': 112484, 'ftesWords': '44.3', 'usdWords': '112,484', 'halfFtesWords': '22.2', 'halfUsdWords': '56,242'},
     },
-    # Scenario 2 (stored 2026-09-25 15:16 UTC): Access 50 / Completion 50, Career
-    # attainment and innovation projects as a reported card; Chaffey's Access
-    # target 67.1 FTES / $170,431.
+    # Scenario 2 (config read 2026-09-30, after card 7's write at 03:56 UTC):
+    # Access 50 / Completion 50; the Chancellor's Office reports career attainment
+    # with the innovation projects (Sam, 2026-09-29), one reported card here.
+    # Chaffey's Access target from the model: 67.17 FTES behind $170,430.69 (the
+    # 2026-09-25 build typed 67.1); `usd` keeps the cents so the half-target hold
+    # prints the model's half, $85,215, where half the rounded figure prints $85,216.
     's2': {
         'pageTitle': 'CPL Funding in Motion: An Introduction, Scenario 2',
         'eyebrow': 'CPL Initiative · Scenario 2',
@@ -55,16 +59,16 @@ CONFIG = {
         'linkLabel': 'CPL funding model, Scenario 2',
         'kick': 'Scenario 2 · An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges, Scenario 2.',
-        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v2.mp4',
+        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v3.mp4',
         'explainer': BASE + '?scenario=Scenario%202',
         'explainerShort': 'cpl-initiative.github.io/cpl-project-tracker/funding-model/?scenario=Scenario 2',
         'closingSuffix': ' for Scenario 2',
         'prioName': 'Two priorities',
         'prioHead': 'Two priorities carry the funding',
-        'prioText': 'Two priorities carry the funding in Scenario 2. Access, 50 percent, counts applied CPL units from students who start at the CPL Portal, a college CPL landing page, or a batch upload. Completion, 50 percent, counts transcribed CPL units with the counselor step checked. Career attainment and innovation projects are funded statewide through the project allocation and reported alongside; they add nothing to an institution’s allocation.',
+        'prioText': 'Two priorities carry the funding in Scenario 2. Access, 50 percent, counts applied CPL units from students who start at the CPL Portal, a college CPL landing page, or a batch upload. Completion, 50 percent, counts transcribed CPL units with the counselor step checked. The Chancellor’s Office reports career attainment together with the innovation projects, in qualitative terms; the institutions’ allocations follow Access and Completion.',
         'prios': [[50, 'Access', ACCESS], [50, 'Completion', COMPLETION],
-                  [None, 'Career attainment and innovation projects', 'Funded statewide through the project allocation and reported alongside. It adds nothing to an institution’s allocation.']],
-        'target': {'ftes': 67.1, 'usd': 170431, 'ftesWords': '67.1', 'usdWords': '170,431', 'halfFtesWords': '33.6', 'halfUsdWords': '85,216'},
+                  [None, 'Career attainment and innovation projects', 'Reported by the Chancellor’s Office in qualitative terms. The institutions’ allocations follow Access and Completion.']],
+        'target': {'ftes': 67.17, 'usd': 170430.69, 'ftesWords': '67.2', 'usdWords': '170,431', 'halfFtesWords': '33.6', 'halfUsdWords': '85,215'},
     },
 }
 
@@ -73,7 +77,12 @@ CONFIG = {
 # background level... slow down and lengthen the timing"). The narration drives
 # the clock: narrate.py writes the track and its layout, each scene stretches to
 # its lead-in, clip and air, and the score plays as a bed under the voice.
-LAYOUT = HERE / 'narration_s1_layout.json'
+def narration(name):
+    # the literal filename at each call, so kb/_build_dependency_map.py sees the read
+    layout = HERE / name
+    return json.loads(layout.read_text(encoding='utf8')) if layout.exists() else None
+
+
 CONFIG['n1'] = dict(
     CONFIG['s1'],
     pageTitle='CPL Funding in Motion: Narrated Draft',
@@ -82,7 +91,21 @@ CONFIG['n1'] = dict(
     mp4='20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4',
     audio='narration_s1.mp3',
     credit='Narrated with a synthetic voice (Kokoro-82M, Heart).',
-    narr=json.loads(LAYOUT.read_text(encoding='utf8')) if LAYOUT.exists() else None,
+    narr=narration('narration_s1_layout.json'),
+)
+# The narrated draft of Scenario 2 (sheet 4 card 8; Sam, 2026-09-29: "We're going
+# with Scenario 2"). Scenario 2's picture, narration_s2.json's voice. It waits on
+# Sam's review, and Scenario 2 waits on the Chancellor, so the explainer does not
+# link it.
+CONFIG['n2'] = dict(
+    CONFIG['s2'],
+    pageTitle='CPL Funding in Motion: Narrated Draft, Scenario 2',
+    eyebrow='CPL Initiative · Scenario 2 · draft',
+    dek='A narrated draft of the introduction for colleges, for Scenario 2 of the funding model, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
+    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_1.mp4',
+    audio='narration_s2.mp3',
+    credit='Narrated with a synthetic voice (Kokoro-82M, Heart).',
+    narr=narration('narration_s2_layout.json'),
 )
 
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
