@@ -309,13 +309,16 @@ for key, r in catalog.items():
         if fld.startswith("_") and fld.endswith("_from") and isinstance(val, str):
             stamped[(fld, val)].append(key)
             stamp_values[fld].add(val)
-# A map's own stamp is the field every value of which is an id that map moved.
+# A map's own stamp is the field every value of which is an id that map moved, and
+# of those the widest: card 9's `_athl_remint_from` (2026-09-30) carries four KINE
+# ids that the June fold and KIN/PE pass 2 also moved, so "every value is an id
+# this map moved" alone would hand a four-row stamp to a map that moved thousands.
 own_stamp = {}
 for p in chain:
     olds = set(alias_maps[p])
-    for fld, vals in stamp_values.items():
-        if vals <= olds:
-            own_stamp[p] = fld
+    fits = [(len(vals), fld) for fld, vals in stamp_values.items() if vals <= olds]
+    if fits:
+        own_stamp[p] = max(fits)[1]
 
 
 def through(maps_from, cid):
@@ -375,9 +378,11 @@ for receipt in (p for p in chain if p.startswith("kb/eths_remint_out/")):
         if new not in alias_maps[fold]:
             continue
         pre = through(before_fold, new)
-        fold_ok.append(through(after, new) == new and stamped[(er.STAMP, old)] == [new]
+        # "Its new course" is the row the ETHS stamp names today: card 9 (2026-09-30)
+        # moved four of these slots' courses on to ATHL, and the chain follows them.
+        fold_ok.append(stamped[(er.STAMP, old)] == [through(after, new)]
                        and pre != new and stamped[("_subj4_fold_from", new)] == [pre])
-check("the June fold vacated all 32 reused slots: stored after the apply each stays on its new course, "
+check("the June fold vacated all 32 reused slots: stored after the apply each reaches its new course, "
       "stored before the fold each reaches the row the fold moved",
       len(fold_ok) == 32 and all(fold_ok))
 

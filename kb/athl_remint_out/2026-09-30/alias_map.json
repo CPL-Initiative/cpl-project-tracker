@@ -1,0 +1,36 @@
+{
+  "_status": "Card 9 re-mint old->new alias (receipt + rollback inverse) - APPLIED",
+  "_at": "2026-09-30",
+  "_scope": [
+    "card9"
+  ],
+  "_count": 4,
+  "_ruling": "Sam, 2026-09-29 (open-asks sheet 4, card 9, \"Move them to ATHL\"): Grossmont's four KINE titles move to ATHL",
+  "aliases": {
+    "KINE M12OI": {
+      "new_id": "ATHL M11FQ",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "KINE M12OJ": {
+      "new_id": "ATHL M11FR",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "KINE M12OK": {
+      "new_id": "ATHL M11FS",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "KINE M12OL": {
+      "new_id": "ATHL M11FT",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    }
+  },
+  "_applied_at": "2026-09-30",
+  "_applied_ruling": "Sam, 2026-09-29 (open-asks sheet 4, card 9, \"Move them to ATHL\"): Grossmont's four KINE titles move to ATHL",
+  "_counts": {
+    "singletons": 4
+  }
+}

@@ -448,6 +448,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_sync_peer_articulations.py` | workflows: `credential-catalog-sync.yml` | — |
 | `kb/_typesafe_cr_trial.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_typesafe_smoke.py` | workflows: `typesafe-smoke.yml` | — |
+| `kb/athl_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/authority_recode_out/2026-09-03/ag_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/fl_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/seed_edits.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_zband_retire_dryrun.py` | — |
@@ -697,6 +698,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/admin_live_banner_control.test.js` | workflows: `js-tests.yml` | — |
 | `tests/alias_chain_single_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
+| `tests/athl_four_remint_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/bash_read_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_cpl_payload_test.py` | workflows: `js-tests.yml` | — |
@@ -957,5 +959,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 554 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 556 file
 datasets · 147 external services · 384 consumers · 38 workflows · 37 tabs.
