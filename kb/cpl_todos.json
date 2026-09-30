@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-30",
-  "_session": "S306 SkyRivet",
-  "_status": "Landed on 30 September (S306): Chaffey's 634.0 FTES on Access is correct (19,020 applied units, mostly AP exams, divided by 30), and every drill-in figure now says how it was reached on hover. The College Dashboard scrolls under a frozen header. Refresh everything on the Internal view re-reads the saved model in every open window and lists what it reached. My College follows the model again, the explainer and Public view offer My CPL Funding beside the table, and Unit sources shows where a priority's units come from, military and non-military. You answered all seven cards of sheet 6 the same hour: Scenario 2 is final, the Reporting box takes yearly reports in all eight categories and each college sees its own, and the two My College figures now carry two names. Next: the Reporting box build, and your rewrite of the Scenario 2 narration.",
+  "_session": "S307 SkyGusset",
+  "_status": "Landed on 30 September (S307): the Reporting box's reviewer half. Signed-in reviewers record what a college reports it has expended, one report a fiscal year in the eight NOVA categories, in each institution's drill-in under the CO Monitor's note; a correction or a withdrawal is a newer report, and the history keeps every one. You chose MAP's two contacts (the CPL coordinator and the primary CPL contact) as the college staff who will see their own reports on My College; that half is next. Your Public view asks shipped too: the published scenario opens every visit, As colleges see it hides the curator choices in the Public view and brings them back, My CPL Funding sits at the top of the Public view and the explainer with a college or district choice and Save as PDF (My College's box has one too), the margins line up on the explainer and the Public view at every width, and the videos link back to both. The CO style guide and the CO's color palette are filed, and a reference note now guides our writing. One card waits on sheet 8.",
   "items": [
+    {
+      "id": "s307-sam-sheet8-style-guide-kb",
+      "for": "Sam",
+      "tab": "governance",
+      "text": "Sheet 8 has one card: whether the CO style guide gets a curated copy in the public knowledge base, as a draft for your review, or stays internal. https://claude.ai/artifact/7sb3cMt8iU9YWmjKyyHCT1"
+    },
     {
       "id": "s306-sam-p1-wording",
       "for": "Sam",
@@ -41,10 +47,10 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s306-fable-reporting-box-build",
+      "id": "s307-fable-reporting-college-half",
       "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Build the Reporting box on Sam's sheet 6 answers: one report a year, all eight NOVA categories, and each college sees its own figures on My College. The cpl_funding_reports table is insert-only with reviewer access like the CO Monitor's notes; how a college's staff sign in to see theirs is the open design to propose. Governance is done (DR-09)."
+      "tab": "college-briefing",
+      "text": "Build the Reporting box's college half on Sam's sheet 7 ruling: a person MAP lists as a college's CPL coordinator or primary CPL contact signs in with the reviewer email link and sees that college's reported expenditures on My College, read only. A database function checks the address against map_college_contacts."
     },
     {
       "id": "s303-fable-chat-smoke-watch",
@@ -207,7 +213,7 @@
     {
       "id": "s271-sam-mycollege-eyes",
       "for": "Sam",
-      "tab": "my-college",
+      "tab": "college-briefing",
       "text": "Open My College signed out and tell us it reads right. A college with withheld rows should show a 'Withheld to protect small student counts' line inside the breakdown, and the contacts list should say which roles are staff-only rather than calling them blank. Our automated check cannot load this page's data, so your eyes are the check."
     },
     {
@@ -231,7 +237,7 @@
     {
       "id": "s266-fable-matcher-vocabulary",
       "for": "Fable",
-      "tab": "my-college",
+      "tab": "college-briefing",
       "text": "The occupation matcher's misses are a VOCABULARY problem, not a tuning one. Application developer and Computer Programming share no word, so no threshold reaches them. The register is live in the My College tab and discloses the gap, so this is about making it find more rather than about shipping. Closing it needs a synonym layer or the curated occupation map — and two plausible shortcuts are already measured and rejected in the code."
     },
     {
@@ -249,7 +255,7 @@
     {
       "id": "s266-fable-licenses-handout",
       "for": "Fable",
-      "tab": "my-college",
+      "tab": "college-briefing",
       "text": "Add the 369 California licenses to the college handout as a third column, beside the exhibits a college can adopt and the ones it could build. The handout already carries the accuracy caveat, so the new column needs the same treatment: say what is confirmed and what a person in the room should check."
     },
     {
