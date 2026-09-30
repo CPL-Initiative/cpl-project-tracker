@@ -197,6 +197,46 @@ end $function$;
 -- measurement is a write-path cost with no read-path benefit, and the write path
 -- here is a single statement under a fixed timeout.
 
+-- ── STORED VECTORS (2026-09-30, S308; Sam: "Go ahead with the stored vectors") ─
+-- The one-pass rewrite below still built the four tsvectors for all 22,335
+-- rows on EVERY call, and that was the floor under every question: through
+-- PostgREST pg_stat_statements read 1,391 calls at a mean of 2,353 ms (sd
+-- 1,140, max 7,951) against the anon key's 3 s, and smoke 7p's first call
+-- timed out in run 36784284959 while the next answered in 2.09 s. A per-row
+-- function call is variance as well as cost: cheap when the database is quiet,
+-- over the limit when it is busy. The row's vectors depend only on the row, so
+-- they are stored once, at write time, and the route reads them.
+--
+-- Not an index (see NO INDEXES above): no GIN, no index maintenance. The write
+-- cost is computing four vectors per inserted row, and the loader now writes
+-- 1,000 rows a request and halves a canceled chunk (sync_coci_offerings.py
+-- _load_chunked), so a chunk carries a bounded share of it. coci_programs_replace
+-- names its INSERT columns, and a generated column takes no value there.
+--
+-- ⚠️ A STORED VALUE DOES NOT FOLLOW ITS FUNCTION. cx_search_norm is defined in
+-- chatbox/supabase_search_exhibits_by_topic_v2.sql; Postgres accepts a CREATE OR
+-- REPLACE of it while these columns depend on it and keeps the old vectors. That
+-- file recomputes them right after the definition, and
+-- chatbox/verify_search_college_programs.sql A9 counts stale rows. The four
+-- expressions are the ones the function used to compute per call, verbatim.
+--
+-- Measured 2026-09-30, direct and uncontended, before → after: a 4-term call
+-- 1,473 → 415 ms; the LVN question 896 → 355–749 ms; the 30-term call 2,724 →
+-- 1,943 ms. What remains is the per-term document-frequency count (~60 ms a
+-- term, the slope in the ONE PASS note below), which is the design. The `tv`
+-- CTE still copies the rows and spills ~14 MB to temp per call; dropping the
+-- copy measured 177 vs 190 ms, so it stays. Output identical on 13 term sets
+-- (kb/receipts/search_college_programs_stored_vectors_2026-09-30.sql).
+alter table public.coci_college_programs
+  add column if not exists tsv_title_en tsvector generated always as
+    (to_tsvector('english', public.cx_search_norm(program_title))) stored,
+  add column if not exists tsv_title_simple tsvector generated always as
+    (to_tsvector('simple', public.cx_search_norm(program_title))) stored,
+  add column if not exists tsv_code_en tsvector generated always as
+    (to_tsvector('english', public.cx_search_norm(coalesce(top_title,'') || ' ' || coalesce(cip_title,'')))) stored,
+  add column if not exists tsv_code_simple tsvector generated always as
+    (to_tsvector('simple', public.cx_search_norm(coalesce(top_title,'') || ' ' || coalesce(cip_title,'')))) stored;
+
 -- ── The route ─────────────────────────────────────────────────────────────────
 -- ⚠️ ONE PASS OVER THE TABLE PER CALL, AND THAT IS A MEASURED DECISION
 -- (2026-09-17, S273). The first version of this function counted document
@@ -331,8 +371,9 @@ begin
     kinds := kinds || (case when use_simple then 'sim' else 'eng' end)::text;
   end loop;
 
-  -- ── 2. One pass: vectors once, every DF in one scan, then the ranked match. ─
-  -- PER-SURFACE document frequency. A term generic among the code vocabulary
+  -- ── 2. One pass: stored vectors, every DF in one scan, then the ranked match.
+  -- The four vectors are columns of the row (STORED VECTORS above, 2026-09-30);
+  -- nothing here builds a tsvector. PER-SURFACE document frequency. A term generic among the code vocabulary
   -- can still be the discriminating word in a freehand program title. If EVERY
   -- term looks generic on a surface, that surface keeps them all, so a broad
   -- question still answers rather than returning nothing.
@@ -341,16 +382,11 @@ begin
     with tv as materialized (
       select p.college, p.program_title, p.award, p.status,
              p.top_code, p.top_title, p.cip_code, p.cip_title,
-             v.te, v.ts, v.ce, v.cs, v.te || v.ts as tb, v.ce || v.cs as cb
+             p.tsv_title_en as te, p.tsv_title_simple as ts,
+             p.tsv_code_en as ce, p.tsv_code_simple as cs,
+             p.tsv_title_en || p.tsv_title_simple as tb,
+             p.tsv_code_en || p.tsv_code_simple as cb
       from public.coci_college_programs p
-      cross join lateral (
-        select to_tsvector('english', public.cx_search_norm(p.program_title)) as te,
-               to_tsvector('simple',  public.cx_search_norm(p.program_title)) as ts,
-               to_tsvector('english', public.cx_search_norm(
-                 coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))) as ce,
-               to_tsvector('simple',  public.cx_search_norm(
-                 coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))) as cs
-      ) v
     ),
     terms as (
       select u.ord, u.q::tsquery as q, u.kind

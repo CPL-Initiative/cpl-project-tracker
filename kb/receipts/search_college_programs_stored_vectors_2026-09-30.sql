@@ -1,0 +1,123 @@
+-- RECEIPT — the stored search vectors behind search_college_programs().
+-- 2026-09-30, S308/S309 merged session (SkyBracket, SkyCensus). Authority:
+-- Sam in session, 2026-09-30: "Go ahead with the stored vectors".
+--
+-- WHY: smoke 7p calls search_college_programs() with the anon key, whose
+-- statement_timeout is 3 s. The function built four tsvectors for all 22,335
+-- rows of coci_college_programs on every call. Through PostgREST,
+-- pg_stat_statements read 1,391 calls at a mean of 2,353 ms (sd 1,140, min
+-- 995, max 7,951). Direct, uncontended: 896 ms for the LVN question (3 terms),
+-- 1,473 ms for a 4-term call, 2,724 ms for the 30-term Boys & Girls Club call.
+-- Two of the four vectors alone took 311 ms over the table; a plain scan of it
+-- takes 17.6 ms. Run 36784284959 (PR #1794): 7p's first call timed out
+-- (57014), the next answered in 2.09 s.
+--
+-- WHAT CHANGES LIVE, in this order (migration
+-- coci_college_programs_stored_search_vectors):
+--   A. alter table public.coci_college_programs add four generated stored
+--      tsvector columns: tsv_title_en, tsv_title_simple, tsv_code_en,
+--      tsv_code_simple, each the expression the function computed per call.
+--      One table rewrite (22,335 rows, 14 MB before; the GIN index
+--      coci_programs_fts and two btrees rebuild with it). The only writer,
+--      coci_programs_replace (via chatbox/sync_coci_offerings.py, push to main
+--      on its own paths or dispatch), names its INSERT columns.
+--   B. create or replace function public.search_college_programs(text[], text,
+--      integer, numeric, real, text, text) with its `tv` CTE reading the four
+--      columns instead of building them. Same signature, same grants.
+--
+-- EQUIVALENCE, measured before the change on 13 term sets. md5_keyseq hashes
+-- the (college, program_title) sequence in the function's own order; md5_set
+-- hashes the full rows sorted. The function orders by rank, college, title,
+-- so two rows with the same college and title (an AA and a certificate) may
+-- swap between calls: the full ordered hash changed on every set between two
+-- identical runs, and these two did not.
+--   set            n    md5_keyseq                        md5_set
+--   01 lvn3      117    822b6a52195e5bee90d4a8833d0a75ed  c0eba93622f2216134578fdcf762d97e
+--   02 lvn4      150    5a9619d5e6a6ffdde2e03f4f4a22bfdf  42a1b79fa6d31d6fbbb7ad163f5db698
+--   03 emt6      150    8cc759195fad55ab2ad1e4b8765faac2  e5a2b48456f771991ba58a14ef2f93ef
+--   04 fire12    150    24dce229812fcb339df3f32569b27f76  4341d0f8f54d4f90feda9a089a582ed9
+--   05 bgc30     150    e393b69c44c3622c0fc8058ee57c9bcd  d6ef5ba9a5b6b832d1cba336c0c89cfa
+--   06 chabot      2    a7d1b67c1f08bdc218c2f1c9e7a99f61  133802880cc4c7640d5773089a5e8e21
+--   07 technology 300   afed12292e3d696141d366f76b30b7d0  544a3ef553f5203a84952c60b2ecce96
+--   08 nonsense    0    d41d8cd98f00b204e9800998ecf8427e  d41d8cd98f00b204e9800998ecf8427e
+--   09 fuzzy       7    63666cf3c5f0e59a4126dab641de855e  b349ddc4b1cc8eda8d45072211c8a487
+--   10 phrase     78    2a2dc3d2e4ece5dc442d81ba614b4e3c  fa412ee41d1a7c8d0397c4c0194567c5
+--   11 oc anchor 150    746889cf4a9d9111d696c509cdde8b35  eceec649229cf3928507ef6861c00ad3
+--                                                          or 77daadc07e0080847fee072b435b9b70
+--   12 practical 102    96b7a13d6fead24d2d0e67b2ff406b37  8eb8cfe26c113e3f9dac9d493fc217ee
+--   13 oc all    162    b67dc670a8653ac5b7e8c6da5eaaa7bc  5072837b6e66ad57bcc204bf80ba4221
+-- Set 11 has two row sets because its 150-row limit falls inside a group of
+-- tied rows; set 13 is the same question at limit 1000 and is stable. The
+-- term arrays, limits and anchors are the ones in the query below. The
+-- after-read must reproduce every md5_keyseq, every md5_set but 11's, and one
+-- of 11's two.
+--
+--   with sets(k, terms, cf, lim, ac, ar) as (values
+--     ('01 lvn3', array['lvn','practical nursing','vocational nursing'], null::text, 600, null::text, null::text),
+--     ('02 lvn4', array['lvn','licensed vocational nurse','vocational nursing','nursing'], null, 150, null, null),
+--     ('03 emt6', array['emt','emergency medical technician','paramedic','ambulance','first responder','emergency'], null, 150, null, null),
+--     ('04 fire12', array['firefighter','fire','fire science','fire technology','fire academy','emt','wildland','hazmat','rescue','fire protection','firefighting','cal fire'], null, 150, null, null),
+--     ('05 bgc30', <the 30 terms of verify Part D1>, null, 150, null, null),
+--     ('06 chabot', array['nursing'], 'Chabot College', 200, null, null),
+--     ('07 technology', array['technology'], null, 300, null, null),
+--     ('08 nonsense', array['zzqqxxjjwwvv'], null, 50, null, null),
+--     ('09 fuzzy', array['excellance'], null, 150, null, null),
+--     ('10 phrase', array['vocational nursing'], null, 300, null, null),
+--     ('11 oc anchor', array['cna','lvn','nurse assistant','certified nurse assistant','practical nursing','vocational nursing'], null, 150, 'Orange', 'Orange County'),
+--     ('12 practical', array['practical'], null, 200, null, null),
+--     ('13 oc all', <11's terms>, null, 1000, 'Orange', 'Orange County')
+--   ), res as (
+--     select s.k, r.o, concat_ws('|', r.college, r.program_title) as key2,
+--            concat_ws('|', r.college, r.program_title, r.award, r.status, r.top_code, r.top_title,
+--                      r.cip_code, r.cip_title, r.matched_via, r.region, r.county, r.landing_page_url) as full_row
+--     from sets s cross join lateral public.search_college_programs(s.terms, s.cf, s.lim, 0.15, 0.6, s.ac, s.ar)
+--       with ordinality r(college, program_title, award, status, top_code, top_title, cip_code, cip_title,
+--                         matched_via, region, county, landing_page_url, o))
+--   select s.k, count(res.o) as n,
+--          md5(coalesce(string_agg(res.key2, E'\n' order by res.o), '')) as md5_keyseq,
+--          md5(coalesce(string_agg(res.full_row, E'\n' order by res.full_row), '')) as md5_set
+--   from sets s left join res on res.k = s.k group by s.k order by s.k;
+--
+-- ⚠️ A STORED VALUE DOES NOT FOLLOW ITS FUNCTION. cx_search_norm lives in
+-- chatbox/supabase_search_exhibits_by_topic_v2.sql, which now recomputes the
+-- four columns right after defining it; chatbox/verify_search_college_programs.sql
+-- A9 counts stale rows.
+--
+-- ── ROLLBACK ─────────────────────────────────────────────────────────────
+-- B first (the function reads the columns), then A:
+--   1. re-apply the BEFORE function: the create or replace block of
+--      chatbox/supabase_search_college_programs.sql at a614059, with its
+--      comment-only lines removed (that is how it was applied; see below);
+--   2. alter table public.coci_college_programs
+--        drop column if exists tsv_title_en, drop column if exists tsv_title_simple,
+--        drop column if exists tsv_code_en,  drop column if exists tsv_code_simple;
+--   3. remove the recompute block after cx_search_norm in
+--      chatbox/supabase_search_exhibits_by_topic_v2.sql (git revert does it).
+--
+-- BEFORE — search_college_programs(), live, read 2026-09-30 22:32:46 UTC.
+--   md5(pg_get_functiondef)      = 57e66b8f61dd6c134eb56abf172d15c6
+--   md5(prosrc), 6,911 chars     = e6f7f08713b19565e65dc774d388ffc4
+--   The file at a614059, function body with comment-only lines removed,
+--   hashes to the same e6f7f08713b19565e65dc774d388ffc4, 6,911 chars: the
+--   file is the exact BEFORE text.
+--   cx_search_norm is not changed: md5(prosrc) c56b03afbd93f7cd551e046af582d769,
+--   md5(pg_get_functiondef) f7b583fc963bab5638e52c64e8010a8d.
+--
+-- AFTER — applied 2026-09-30 ~22:40 UTC as migration
+-- coci_college_programs_stored_search_vectors (Supabase apply_migration).
+--   md5(prosrc), 6,566 chars     = 9615cc398f07b1ecb47a5dbf9ee6acdf
+--     (= the new file's function body with comment-only lines removed)
+--   signatures of search_college_programs: 1; grants unchanged
+--     {=X, postgres=X, anon=X, authenticated=X, service_role=X}
+--   columns tsv_title_en, tsv_title_simple, tsv_code_en, tsv_code_simple:
+--     attgenerated 's'; 22,335 rows; 0 stale; table 12 MB (14 MB before; the
+--     rewrite compacted it)
+--   EQUIVALENCE: all 13 md5_keyseq equal the BEFORE values; every md5_set
+--     equal; set 11 read 77daadc07e0080847fee072b435b9b70, one of its two.
+--   TIMINGS (direct, one call each, explain analyze):
+--     4-term lvn4 ........ 1,473 → 415 ms
+--     LVN question ....... 896 → 749, 728 (limit 600); 355 (limit 150)
+--     30-term bgc30 ...... 2,724 → 1,943 ms
+--   The DF step for 3 terms reads 190 ms; the ranked match 79 ms. The `tv`
+--   copy spills 1,815 temp pages (~14 MB) per call; a NOT MATERIALIZED
+--   variant read 177 ms, so the copy was left as it is.
