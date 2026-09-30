@@ -1,0 +1,29 @@
+{
+ "_about": "kb/crnc_mirrors.json re-keyed through the applied alias chain (old -> new)",
+ "_at": "2026-09-30",
+ "maps_applied": [
+  "kb/athl_remint_out/2026-09-30/alias_map.json"
+ ],
+ "rekeyed_through": [
+  "kb/subj4_apply/alias_map.json",
+  "kb/crossdisc_out/alias_map.json",
+  "kb/fl_subj4_out/2026-06-09/alias_map.json",
+  "kb/kin_pe_out/2026-06-10/alias_map.json",
+  "kb/drama_theater_out/2026-06-10/alias_map.json",
+  "kb/convergence_singletons_out/2026-06-10/alias_map.json",
+  "kb/twin_merge_out/2026-06-10/alias_map.json",
+  "kb/twin_merge_out/2026-06-12/alias_map.json",
+  "kb/subj4_fold_out/2026-06-12/alias_map.json",
+  "kb/twin_merge_out/2026-06-12-postfold/alias_map.json",
+  "kb/kin_pe_pass2_out/2026-06-12/alias_map.json",
+  "kb/pols_remint_out/2026-07-10/alias_map.json",
+  "kb/authority_recode_out/2026-09-03/alias_map.json",
+  "kb/zband_retire_out/2026-09-03/alias_map.json",
+  "kb/prefix_fold_out/2026-09-03/alias_map.json",
+  "kb/eths_remint_out/2026-09-28/ruled/alias_map.json",
+  "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json",
+  "kb/athl_remint_out/2026-09-30/alias_map.json"
+ ],
+ "count": 0,
+ "moved": {}
+}

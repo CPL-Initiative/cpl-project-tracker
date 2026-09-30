@@ -1,0 +1,102 @@
+{
+  "scopes": [
+    "card9"
+  ],
+  "moves": {
+    "KINE M12OI": {
+      "old_id": "KINE M12OI",
+      "source": "singleton",
+      "title": "Adv Techniques & Strategies of Baseball",
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "from_eths": "ETHS M10BI",
+      "top_code": "0835.00",
+      "new_id": "ATHL M11FQ",
+      "how": "gap-filled"
+    },
+    "KINE M12OJ": {
+      "old_id": "KINE M12OJ",
+      "source": "singleton",
+      "title": "Adv Techniques & Strategies of Football",
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "from_eths": "ETHS M10BK",
+      "top_code": "0835.00",
+      "new_id": "ATHL M11FR",
+      "how": "gap-filled"
+    },
+    "KINE M12OK": {
+      "old_id": "KINE M12OK",
+      "source": "singleton",
+      "title": "Adv Techniques & Strategies-Water Polo",
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "from_eths": "ETHS M10BN",
+      "top_code": "0835.00",
+      "new_id": "ATHL M11FS",
+      "how": "gap-filled"
+    },
+    "KINE M12OL": {
+      "old_id": "KINE M12OL",
+      "source": "singleton",
+      "title": "Adv Techniques & Strategies of Softball",
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "from_eths": "ETHS M10BO",
+      "top_code": "0835.00",
+      "new_id": "ATHL M11FT",
+      "how": "gap-filled"
+    }
+  },
+  "alias": {
+    "KINE M12OI": "ATHL M11FQ",
+    "KINE M12OJ": "ATHL M11FR",
+    "KINE M12OK": "ATHL M11FS",
+    "KINE M12OL": "ATHL M11FT"
+  },
+  "validation": {
+    "V0_pinned_four": {
+      "pass": true,
+      "problems": [],
+      "found": 4
+    },
+    "P0_not_applied": {
+      "pass": true,
+      "applied": []
+    },
+    "V2_new_ids_unique_and_free": {
+      "pass": true,
+      "unplaced": []
+    },
+    "V3_codes_and_bands": {
+      "pass": true
+    }
+  },
+  "gapfilled": [
+    {
+      "old_id": "KINE M12OI",
+      "wanted": "ATHL M12OI",
+      "new_id": "ATHL M11FQ",
+      "why": "KINE M12OI -> ATHL (card 9)"
+    },
+    {
+      "old_id": "KINE M12OJ",
+      "wanted": "ATHL M12OJ",
+      "new_id": "ATHL M11FR",
+      "why": "KINE M12OJ -> ATHL (card 9)"
+    },
+    {
+      "old_id": "KINE M12OK",
+      "wanted": "ATHL M12OK",
+      "new_id": "ATHL M11FS",
+      "why": "KINE M12OK -> ATHL (card 9)"
+    },
+    {
+      "old_id": "KINE M12OL",
+      "wanted": "ATHL M12OL",
+      "new_id": "ATHL M11FT",
+      "why": "KINE M12OL -> ATHL (card 9)"
+    }
+  ],
+  "reused_retired_ids": []
+}

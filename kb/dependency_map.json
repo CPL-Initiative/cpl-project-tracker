@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 554,
+  "file_datasets": 556,
   "external_services": 147,
   "consumers": 384,
   "workflows": 38,
@@ -7155,6 +7155,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/athl_remint_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 85
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/authority_recode_out/2026-09-03/ag_classification.json": {
@@ -15199,6 +15212,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/athl_four_remint_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/authority_recode_apply_test.py": {
    "consumers": [
     {
@@ -20822,6 +20848,7 @@
     "tests/prefix_fold_dryrun_test.py",
     "tests/prefix_fold_apply_test.py",
     "tests/eths_remint_test.py",
+    "tests/athl_four_remint_test.py",
     "tests/rekey_crnc_mirrors_test.py",
     "tests/custom_report_response_test.py",
     "tests/probe_lifecycle_checks_test.py",
