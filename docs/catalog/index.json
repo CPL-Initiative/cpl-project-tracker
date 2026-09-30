@@ -14321,8 +14321,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 274,
+   "count": 275,
    "docs": [
+    {
+     "created": "2026-09-29",
+     "governs": [],
+     "n": 304,
+     "path": "docs/session_304_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "decision-sheet",
+      "college-dashboard",
+      "implementation-funding",
+      "eths-remint"
+     ],
+     "title": "sheet 4 is answered; the three-part check, 0 hours and Grossmont's four come first",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-29",
      "governs": [],
@@ -18972,5 +18989,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 988
+ "total": 989
 }
