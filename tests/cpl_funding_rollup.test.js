@@ -365,9 +365,15 @@ function colOf(tbl, name) {
     /\.cplfund-prio \.p \.nums \{[^}]*font-size:\s*\.8rem/.test(consumerSrc) &&
     /\.cplfund-prio \.p \.desc \{[^}]*font-size:\s*\.8rem/.test(consumerSrc) &&
     /\.cplfund-prio \.p \.metric \{[^}]*font-size:\s*\.8rem/.test(consumerSrc));
-  check("strategies list + timing rows also carry the unified size",
-    /\.cplfund-strat \{[^}]*font-size:\s*\.8rem/.test(consumerSrc) &&
-    /\.cplfund-timing \{[^}]*font-size:\s*\.8rem/.test(consumerSrc));
+  check("the strategies list also carries the unified size",
+    /\.cplfund-strat \{[^}]*font-size:\s*\.8rem/.test(consumerSrc));
+  // The Timeline left this size on 2026-09-30. It is its own section now,
+  // between Minimum Conditions and the cards, and Sam asked the Public view to
+  // "eliminate any unnecessary line breaks or font size changes with text", so
+  // it reads at the prose size (.92rem) with the text around it
+  // (cpl_funding_public_view_text.test.js holds the rest).
+  check("the Timeline reads at the prose size, not the cards' body size (2026-09-30)",
+    /\.cplfund-timing \{[^}]*font-size:\s*\.92rem/.test(consumerSrc));
   check("the priority TITLE stays larger than the body copy (1rem)",
     /\.cplfund-prio-title-input \{[^}]*font-size:\s*1rem/.test(consumerSrc) &&
     /\.cplfund-prio \.p h4 \{[^}]*font-size:\s*1rem/.test(consumerSrc));
