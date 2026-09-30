@@ -27,7 +27,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-09-29 |
 | [CPL clean-up worklist — lane state](../reference/lanes/cpl-cleanup-worklist.md) | lanes | `cpl-cleanup-worklist.md` | 2026-08-28 | 2026-08-28 |
 | [Discipline cross-listing — nest, alias or carry two homes — lane state](../reference/lanes/discipline-crosslist.md) | lanes | `discipline-crosslist.md` | 2026-09-22 | 2026-09-29 |
-| [Disposition grain / student detail — lane state](../reference/lanes/disposition-grain-student-detail.md) | lanes | `disposition-grain-student-detail.md` | 2026-08-28 | 2026-08-28 |
+| [Disposition grain / student detail — lane state](../reference/lanes/disposition-grain-student-detail.md) | lanes | `disposition-grain-student-detail.md` | 2026-08-28 | 2026-09-30 |
 | [EACR — Exhibit & CR Adoption — lane state](../reference/lanes/eacr-exhibit-cr-adoption.md) | lanes | `eacr-exhibit-cr-adoption.md` | 2026-08-28 | 2026-09-25 |
 | [ESL packaging (the first fold) — lane state](../reference/lanes/esl-packaging.md) | lanes | `esl-packaging.md` | 2026-08-28 | 2026-09-27 |
 | [Excel→Supabase Phase 2-4 — lane state](../reference/lanes/excel-to-supabase.md) | lanes | `excel-to-supabase.md` | 2026-08-28 | 2026-08-28 |
