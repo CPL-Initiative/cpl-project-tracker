@@ -77,6 +77,11 @@ alter table public.cpl_funding_reports enable row level security;
 -- INSERT-only for the API roles: RLS carries the gate, and the grants make the
 -- missing UPDATE/DELETE policies impossible to widen by accident.
 revoke update, delete, truncate on public.cpl_funding_reports from anon, authenticated;
+-- The table's own Data API grants (tests/supabase_table_grants_test.py): from
+-- 2026-10-30 Supabase stops granting them on new tables, so the file states
+-- them. Each matches a policy below; service_role reads for the publishers.
+grant select, insert on public.cpl_funding_reports to anon, authenticated;
+grant select on public.cpl_funding_reports to service_role;
 
 drop policy if exists cfr_select on public.cpl_funding_reports;
 create policy cfr_select on public.cpl_funding_reports for select
