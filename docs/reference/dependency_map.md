@@ -240,7 +240,15 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `credential_reference_data.js` | `CPL_CREDENTIAL_REFERENCE` | `excel_to_dashboard.py:export_credential_reference()` | tabs: `cpl-pathways`, `credential-reference`, `map-export`, `nc-learning-partners` · modules: `kb/_carp_apprentice_plan_s109.js`, `kb/_college_apprenticeship_cpl_roster.js` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `kb/_build_baccalaureate_pathways.py`, `kb/_build_ccr_cpl.py`, `kb/_build_ccr_cpl_universe.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_peer_articulations.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_college_short_names.py`, `kb/_sync_credential_catalog.py`, `kb/_trail_crew.py`, `kb/_trail_crew_assemble.py`, `kb/_verify_issuer_preseed.py` |
 | `fact-sheet/cpl_stories.js` | `CPL_STORIES` | `tools/source_cpl_stories.mjs` | tabs: `college-briefing`, `implementation-funding` · pages: `fact-sheet/index.html` · scripts: `tools/source_cpl_stories.mjs` |
 | `fact-sheet/statewide_recs.js` | `CPL_STATEWIDE_RECS` | `fact-sheet/_build_statewide_recs.py` | pages: `fact-sheet/index.html` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_occupation_cpl_crosswalk.py` |
-| `regional_cpl_opportunity_data.js` | `CPL_REGIONAL_OPPS` | `kb/_emit_regional_opps_data.py` | tabs: `college-briefing` · scripts: `kb/_emit_regional_opps_data.py` |
+| `regional_cpl_opportunity_bay.js` | `CPL_REGIONAL_OPPS_BAY` | `kb/_emit_regional_opps_data.py` | none found |
+| `regional_cpl_opportunity_cvml.js` | `CPL_REGIONAL_OPPS_CVML` | `kb/_emit_regional_opps_data.py` | none found |
+| `regional_cpl_opportunity_fn.js` | `CPL_REGIONAL_OPPS_FN` | `kb/_emit_regional_opps_data.py` | none found |
+| `regional_cpl_opportunity_gs.js` | `CPL_REGIONAL_OPPS_GS` | `kb/_emit_regional_opps_data.py` | none found |
+| `regional_cpl_opportunity_ied.js` | `CPL_REGIONAL_OPPS_IED` | `kb/_emit_regional_opps_data.py` | none found |
+| `regional_cpl_opportunity_la.js` | `CPL_REGIONAL_OPPS_LA` | `kb/_emit_regional_opps_data.py` | none found |
+| `regional_cpl_opportunity_oc.js` | `CPL_REGIONAL_OPPS_OC` | `kb/_emit_regional_opps_data.py` | none found |
+| `regional_cpl_opportunity_scc.js` | `CPL_REGIONAL_OPPS_SCC` | `kb/_emit_regional_opps_data.py` | none found |
+| `regional_cpl_opportunity_sdi.js` | `CPL_REGIONAL_OPPS_SDI` | `kb/_emit_regional_opps_data.py` | none found |
 | `scripts/funding_effective.js` | `CPL_FUNDING_NO_REMOTE` | not stated in header | tabs: `college-briefing`, `implementation-funding` |
 | `sierra_rule_defaults.js` | `SIERRA_RULE_DEFAULTS` | `kb/_build_sierra_rule_defaults.py` | tabs: `sierra-training` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_sierra_rule_defaults.py` |
 | `statewide_data.js` | `CPL_STATEWIDE` | not stated in header | tabs: `vision-2030` · scripts: `excel_to_dashboard.py`, `fact-sheet/_build_statewide_recs.py`, `kb/_build_ccr_cpl.py`, `kb/_build_college_offering_crosswalk.py`, `kb/_build_credential_recs.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py`, `kb/_preseed_unclassified.py`, `kb/_seed_college_short_names.py`, `kb/_seed_statewide_categories.py`, `kb/_sync_credential_catalog.py` |
@@ -574,7 +582,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/mq_disciplines.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_infer_disciplines.py`, `kb/_infer_disciplines_from_desc.py`, `kb/_infer_disciplines_from_top.py`, `kb/_infer_disciplines_from_top_division.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_courses.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py`, `kb/_verify_top_division_inference.py` | — |
 | `kb/reference/mq_sections.json` | tabs: `canonical-subj4` · scripts: `kb/_ccr_trail.py` | — |
 | `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_jev_next_steps.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
-| `kb/reference/swp_region_roster.json` | scripts: `kb/_build_regional_cpl_opportunity.py`, `kb/_emit_swp_region_data.py` | — |
+| `kb/reference/swp_region_roster.json` | scripts: `kb/_build_regional_cpl_opportunity.py`, `kb/_emit_regional_opps_data.py`, `kb/_emit_swp_region_data.py` | — |
 | `kb/reference/top_categories.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_correct_top_lookup_code4.py`, `kb/_join_cte_from_top.py`, `kb/_seed_canonical_subj4.py` | — |
 | `kb/reference/topcip_2021_crosswalk.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_correct_top_lookup_code4.py` | — |
 | `kb/remint_blast_worklist.json` | scripts: `kb/_build_remint_blast_radius.py` | committed by: `daily-dashboard.yml` |
@@ -949,5 +957,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 546 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 554 file
 datasets · 147 external services · 384 consumers · 38 workflows · 37 tabs.

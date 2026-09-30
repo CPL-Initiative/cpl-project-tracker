@@ -3,9 +3,9 @@
 //
 // Built for Sigrid's meeting with the Bay Area Strong Workforce consortium: a
 // facilitator picks any college in the room and reads what it could already give
-// credit for, then flips to the next one. The data is precomputed
-// (regional_cpl_opportunity_data.js) because the matcher behind it runs ~14
-// seconds per college and a room cannot wait on it.
+// credit for, then flips to the next one. The data is precomputed, one file per
+// region since 2026-09-30 (regional_cpl_opportunity_<slug>.js), because the matcher behind
+// it runs ~20 seconds per college and a room cannot wait on it.
 //
 // What is guarded here, and every one of these is a failure this repo has
 // already had once in another surface:
@@ -226,38 +226,47 @@ const OPPS = {
   check("(g) the evidence term is escaped", row.indexOf("<b>evidence</b>") === -1);
 }
 
-// ── The shipped data file, if it is present, must match what the view expects ──
+// ── The shipped data files (one per region) must match what the view expects ──
+// Which regions exist, and that every college key is a name the picker offers,
+// is tests/college_briefing_register_regions.test.js. This block checks the shape.
 {
-  const path = "regional_cpl_opportunity_data.js";
-  if (fs.existsSync(path)) {
+  // One file per region at the site root, named from the region code the way
+  // college_briefing.js regionSlug() names it.
+  const swp = {};
+  new Function("window", fs.readFileSync("swp_region_data.js", "utf8"))(swp);
+  const files = Object.keys(swp.CPL_SWP_REGIONS.regions)
+    .map((c) => "regional_cpl_opportunity_" + c.toLowerCase().replace(/[^a-z0-9]/g, "") + ".js")
+    .filter((f) => fs.existsSync(f));
+  check("shipped data: the per-region files are present (" + files.length + ")", files.length > 0);
+  for (const f of files) {
     const sandbox = { window: {} };
     // eslint-disable-next-line no-new-func
-    new Function("window", fs.readFileSync(path, "utf8"))(sandbox.window);
-    const D = sandbox.window.CPL_REGIONAL_OPPS;
-    check("shipped data: parses and carries meta + colleges", !!(D && D.meta && D.colleges));
-    check("shipped data: the accuracy block travels WITH the data, so the caveat cannot outlive the score",
+    new Function("window", fs.readFileSync(f, "utf8"))(sandbox.window);
+    const g = "CPL_REGIONAL_OPPS_" + f.replace(/^regional_cpl_opportunity_|\.js$/g, "").toUpperCase();
+    const D = sandbox.window[g];
+    check(f + ": parses and carries meta + colleges", !!(D && D.meta && D.colleges));
+    if (!D) continue;
+    check(f + ": the accuracy block travels WITH the data, so the caveat cannot outlive the score",
       !!(D.meta.accuracy && D.meta.accuracy.precision && D.meta.accuracy.recall));
-    check("shipped data: meta.colleges agrees with the keys actually present",
+    check(f + ": meta.colleges agrees with the keys actually present",
       D.meta.colleges.length === Object.keys(D.colleges).length);
     const first = D.colleges[D.meta.colleges[0]];
-    check("shipped data: a college carries rows and an unmatched list",
+    check(f + ": a college carries rows and an unmatched list",
       !!(first && Array.isArray(first.rows) && Array.isArray(first.unmatched)));
-    check("shipped data: every tier present in rows has a label in meta",
+    check(f + ": every tier present in rows has a label in meta",
       Object.keys(D.colleges).every(function (c) {
         return D.colleges[c].rows.every(function (r) {
           return !r.priority || !!D.meta.priority_labels[r.priority];
         });
       }));
     // The register exists for a meeting; a file with no actionable rows anywhere
-    // would render 28 empty drawers and nobody would notice until the meeting.
+    // would render a region of empty drawers and nobody would notice until then.
     const actionable = Object.keys(D.colleges).reduce(function (n, c) {
       return n + D.colleges[c].rows.filter(function (r) {
         return r.priority === "P0" || r.priority === "P1";
       }).length;
     }, 0);
-    check("shipped data: there are adopt-now rows to show (" + actionable + ")", actionable > 0);
-  } else {
-    check("shipped data: absent, so nothing to check (regenerate with kb/_emit_regional_opps_data.py)", true);
+    check(f + ": there are adopt-now rows to show (" + actionable + ")", actionable > 0);
   }
 }
 

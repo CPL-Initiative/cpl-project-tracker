@@ -4,11 +4,11 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 546,
+  "file_datasets": 554,
   "external_services": 147,
   "consumers": 384,
   "workflows": 38,
-  "data_js_files": 60,
+  "data_js_files": 68,
   "tabs": 37
  },
  "datasets": {
@@ -834,7 +834,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2205,
+     "line": 2235,
      "tabs": [
       "college-briefing"
      ]
@@ -1350,7 +1350,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2197,
+     "line": 2227,
      "tabs": [
       "college-briefing"
      ]
@@ -1792,7 +1792,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2223,
+     "line": 2253,
      "tabs": [
       "college-briefing"
      ]
@@ -2879,7 +2879,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2225,
+     "line": 2255,
      "tabs": [
       "college-briefing"
      ]
@@ -3794,7 +3794,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 96
+     "line": 121
     }
    ],
    "producers": [
@@ -4579,7 +4579,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3588,
+     "line": 3618,
      "tabs": [
       "college-briefing"
      ]
@@ -4616,7 +4616,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3528,
+     "line": 3558,
      "tabs": [
       "college-briefing"
      ]
@@ -4694,7 +4694,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2584,
+     "line": 2614,
      "tabs": [
       "college-briefing"
      ]
@@ -5714,7 +5714,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3237,
+     "line": 3267,
      "tabs": [
       "college-briefing"
      ]
@@ -12511,6 +12511,13 @@
      "line": 265
     },
     {
+     "id": "script:kb/_emit_regional_opps_data.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 145
+    },
+    {
      "id": "script:kb/_emit_swp_region_data.py",
      "kind": "script",
      "direction": "read",
@@ -13636,7 +13643,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3569,
+     "line": 3599,
      "tabs": [
       "college-briefing"
      ]
@@ -14500,26 +14507,96 @@
     "workflow:weekly-reflections-summary.yml"
    ]
   },
-  "file:regional_cpl_opportunity_data.js": {
-   "consumers": [
+  "file:regional_cpl_opportunity_bay.js": {
+   "consumers": [],
+   "producers": [
     {
-     "id": "module:college_briefing.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 3607,
-     "tabs": [
-      "college-briefing"
-     ]
-    },
-    {
-     "id": "script:kb/_emit_regional_opps_data.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 150
+     "by": "script:kb/_emit_regional_opps_data.py",
+     "how": "header"
     }
    ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:regional_cpl_opportunity_cvml.js": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "script:kb/_emit_regional_opps_data.py",
+     "how": "header"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:regional_cpl_opportunity_fn.js": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "script:kb/_emit_regional_opps_data.py",
+     "how": "header"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:regional_cpl_opportunity_gs.js": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "script:kb/_emit_regional_opps_data.py",
+     "how": "header"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:regional_cpl_opportunity_ied.js": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "script:kb/_emit_regional_opps_data.py",
+     "how": "header"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:regional_cpl_opportunity_la.js": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "script:kb/_emit_regional_opps_data.py",
+     "how": "header"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:regional_cpl_opportunity_oc.js": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "script:kb/_emit_regional_opps_data.py",
+     "how": "header"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:regional_cpl_opportunity_scc.js": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "script:kb/_emit_regional_opps_data.py",
+     "how": "header"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:regional_cpl_opportunity_sdi.js": {
+   "consumers": [],
    "producers": [
     {
      "by": "script:kb/_emit_regional_opps_data.py",
@@ -14988,7 +15065,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3540,
+     "line": 3570,
      "tabs": [
       "college-briefing"
      ]
@@ -17850,7 +17927,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1687,
+     "line": 1717,
      "tabs": [
       "college-briefing"
      ]
@@ -18123,7 +18200,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3909,
+     "line": 3991,
      "tabs": [
       "college-briefing"
      ]
@@ -19336,7 +19413,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3930,
+     "line": 4012,
      "tabs": [
       "college-briefing"
      ]
@@ -19449,7 +19526,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1684,
+     "line": 1714,
      "tabs": [
       "college-briefing"
      ]
@@ -21251,8 +21328,40 @@
    "global": "CPL_STATEWIDE_RECS",
    "producer": "fact-sheet/_build_statewide_recs.py"
   },
-  "regional_cpl_opportunity_data.js": {
-   "global": "CPL_REGIONAL_OPPS",
+  "regional_cpl_opportunity_bay.js": {
+   "global": "CPL_REGIONAL_OPPS_BAY",
+   "producer": "kb/_emit_regional_opps_data.py"
+  },
+  "regional_cpl_opportunity_cvml.js": {
+   "global": "CPL_REGIONAL_OPPS_CVML",
+   "producer": "kb/_emit_regional_opps_data.py"
+  },
+  "regional_cpl_opportunity_fn.js": {
+   "global": "CPL_REGIONAL_OPPS_FN",
+   "producer": "kb/_emit_regional_opps_data.py"
+  },
+  "regional_cpl_opportunity_gs.js": {
+   "global": "CPL_REGIONAL_OPPS_GS",
+   "producer": "kb/_emit_regional_opps_data.py"
+  },
+  "regional_cpl_opportunity_ied.js": {
+   "global": "CPL_REGIONAL_OPPS_IED",
+   "producer": "kb/_emit_regional_opps_data.py"
+  },
+  "regional_cpl_opportunity_la.js": {
+   "global": "CPL_REGIONAL_OPPS_LA",
+   "producer": "kb/_emit_regional_opps_data.py"
+  },
+  "regional_cpl_opportunity_oc.js": {
+   "global": "CPL_REGIONAL_OPPS_OC",
+   "producer": "kb/_emit_regional_opps_data.py"
+  },
+  "regional_cpl_opportunity_scc.js": {
+   "global": "CPL_REGIONAL_OPPS_SCC",
+   "producer": "kb/_emit_regional_opps_data.py"
+  },
+  "regional_cpl_opportunity_sdi.js": {
+   "global": "CPL_REGIONAL_OPPS_SDI",
    "producer": "kb/_emit_regional_opps_data.py"
   },
   "scripts/funding_effective.js": {
