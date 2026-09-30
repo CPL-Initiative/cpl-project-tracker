@@ -205,6 +205,32 @@ answer_must_not_match_unnegated() { # [-i] regex label
   fi
 }
 
+# AN ABSENCE CLAIM, NOT AN ABSENCE REPORT (2026-09-30, S308/S309). 7c and 7s ban
+# "no <place> college teaches LVN" as a statement about the world. Run 36779373913
+# failed both on right answers: "The catalog data lists no Orange County community
+# college currently teaching a full LVN entry program — Golden West, Cypress, and
+# Saddleback do offer LVN-to-RN bridge programs" is the honest form the KB note
+# asks for (methodology-an-absence-in-the-data-is-a-statement-about-the-data: name
+# the instrument, then the entries it holds), and "No San Gabriel Valley college has
+# yet articulated CNA-to-LVN" is about articulation, which is true and a different
+# claim. So two shapes leave the text before the regex runs: an absence the answer
+# attributes to the instrument ("the catalog (data) lists / shows no"), and an
+# absence of ARTICULATION ("no ... has yet articulated"). A bare "No Orange County
+# colleges teach LVN" still fails, and so does "no San Gabriel Valley college
+# offers an LVN program".
+answer_must_not_claim_absence() { # [-i] regex label
+  local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
+  local re="$1" label="$2" stripped
+  stripped="$(printf '%s' "$LAST_ANSWER" | sed -E \
+    -e "s/\\b(catalog( data)?|the data|our data|the records?) (lists|shows|holds|carries) (no|none)\\b/\\1 \\3 zero/Ig" \
+    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?articulated/zero\\2 \\3 \\4articulated/Ig")"
+  if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
+    echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
+  else
+    echo "  [assert ok] $label does not match /$re/ once instrument-attributed and articulation absences are set aside"
+  fi
+}
+
 # NAME AT LEAST N OF A SET — a THRESHOLD, not a named member. Mode 16a used to
 # require the LACCD answer to say "pierce" AND "valley" specifically, and it went
 # red twice on 2026-09-09 (runs 153/154) on DIFFERENT subsets while both answers
@@ -627,7 +653,7 @@ answer_must_match -i "saddleback|golden west|cypress|santa ana|santiago canyon|l
 answer_must_match -i "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b|VOC[ -]?VN[ -]?1\b|Vocational Nursing 1\b" "7c ⭐ names a Vocational Nursing course from the prospective course lists (Sam's bar: a course-level answer)"
 answer_head_must_match -i 400 "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b|VOC[ -]?VN[ -]?1\b|Vocational Nursing 1\b" "7c ⭐ leads with the course-level answer in the FIRST SENTENCE — the direct answer first, the limits and precedents after (Sam, 2026-09-18; 800 characters let v70's CNA opener through, VN 220 at 854)"
 answer_head_must_not_match -i 300 "VHLTH[ -]?10[1-8]\b|VMED[ -]?(10|11|70|71)\b|NURS[ -]?G06[01]|CNA[ -]?42[2-7]|\bHS[ -]?5[01]\b|NHSN[ -]?5[01]\b|NRS[ -]?10[134]\b|NURAST[ -]?60|NURS[ -]?103\b" "7c ⭐ the first course named is in the target program — no CNA course code in the first 300 characters (v70 opened with Golden West NURS G060N, then Santa Ana VHLTH 101; the CNA program is BACKGROUND)"
-answer_must_not_match -i "no orange county (community )?colleges? (currently )?(teach|teaches|offers?|runs?|has an? (lvn|vocational nursing)|have an? (lvn|vocational nursing))|none of the orange county colleges (currently )?(teach|offer|have|has|run)" "7c ⭐ never states a catalog absence as a fact about Orange County (Sam, 2026-09-18: flat wrong — say what the catalog shows and name the bridges)"
+answer_must_not_claim_absence -i "no orange county (community )?colleges? (currently )?(teach|teaches|offers?|runs?|has an? (lvn|vocational nursing)|have an? (lvn|vocational nursing))|none of the orange county colleges (currently )?(teach|offer|have|has|run)" "7c ⭐ never states a catalog absence as a fact about Orange County (Sam, 2026-09-18: flat wrong — say what the catalog shows and name the bridges)"
 answer_must_match -i "chaffey|NURVN[ -]?414|acute care nursing assistant" "7c ⭐ cites the CNA-to-LVN precedent (Chaffey NURVN 414) rather than saying no college has done it"
 answer_must_match -i "ask|request|review" "7c ⭐ frames the match as a request for review, never a determination"
 # v72 (2026-09-18, S276). Sam: "a quick list view of the typical CNA course next
@@ -678,7 +704,7 @@ answer_must_match -i "san gabriel valley" "7s names the place the visitor named"
 answer_must_match -i "pasadena|citrus|rio hondo|mt\. san antonio|mount san antonio|glendale" "7s ⭐ names a San Gabriel Valley college that teaches the LVN entry course (v72 named none and offered Los Medanos, 346 mi)"
 answer_head_must_match -i 600 "pasadena|citrus|rio hondo|mt\. san antonio|mount san antonio|glendale" "7s ⭐ …in the FIRST SENTENCE — the nearest real option leads the answer"
 # The false zero itself, in the shapes v72 produced.
-answer_must_not_match -i "(does ?n.t|do ?n.t|no|none)[^.]{0,80}san gabriel valley[^.]{0,80}(lvn|vocational nursing|entry program)|no (college|community college)s? in the san gabriel valley" "7s ⭐ never says the catalog shows no San Gabriel Valley college with an LVN entry program — five teach one (Sam, 2026-09-18)"
+answer_must_not_claim_absence -i "(does ?n.t|do ?n.t|no|none)[^.]{0,80}san gabriel valley[^.]{0,80}(lvn|vocational nursing|entry program)|no (college|community college)s? in the san gabriel valley" "7s ⭐ never says the catalog shows no San Gabriel Valley college with an LVN entry program — five teach one (Sam, 2026-09-18)"
 # ⚠️ THIS BAN IS A FAMILY, NOT A QUOTATION (2026-09-18, S277). The first version
 # listed v72's three exact phrasings and PASSED on the branch's own smoke run
 # 35398069297 while production made the identical mistake in new words: "I don't

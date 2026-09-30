@@ -1,0 +1,72 @@
+// Smoke 7c and 7s: an absence CLAIM fails, an absence REPORT passes (2026-09-30).
+//
+// Run 36779373913 went red on two right answers. Sierra wrote "The catalog data
+// lists no Orange County community college currently teaching a full LVN entry
+// program — Golden West, Cypress, and Saddleback do offer LVN-to-RN bridge
+// programs" (the honest form docs/kb-notes/methodology-an-absence-in-the-data-is-
+// a-statement-about-the-data.md asks for: name the instrument, then the entries
+// it holds) and "No San Gabriel Valley college has yet articulated CNA-to-LVN
+// specifically" (about articulation, true, and a different claim). The patterns
+// now run through answer_must_not_claim_absence, which sets those two shapes
+// aside first. This test runs THAT helper, from chatbox/smoke_test.sh, in bash,
+// with the smoke's own two patterns, so the file cannot drift from what is
+// tested: the recorded answers pass, and the false claims Sam called flat wrong
+// still fail.
+//
+// Windows: needs bash (Git Bash). Run from repo root: `npm test`
+// (or `node tests/sierra_smoke_absence_claims.test.js`).
+const fs = require("fs");
+const path = require("path");
+const { spawnSync } = require("child_process");
+
+const SMOKE = fs.readFileSync(path.join(__dirname, "..", "chatbox", "smoke_test.sh"), "utf8");
+const results = [];
+function check(name, cond) { results.push([name, !!cond]); }
+
+const at = SMOKE.indexOf("answer_must_not_claim_absence() {");
+const fn = at === -1 ? "" : SMOKE.slice(at, SMOKE.indexOf("\n}\n", at) + 3);
+check("the helper is in the smoke script", !!fn);
+function pattern(labelStart) {
+  const line = SMOKE.split("\n").find((l) => l.startsWith("answer_must_not_claim_absence -i ") && l.includes(labelStart));
+  const m = line && /^answer_must_not_claim_absence -i "(.*)" "(.*)"$/.exec(line);
+  return m ? m[1] : null;
+}
+const RE_7C = pattern("7c ⭐ never states a catalog absence as a fact about Orange County");
+const RE_7S = pattern("7s ⭐ never says the catalog shows no San Gabriel Valley college");
+check("both checks call the helper with their own pattern", !!RE_7C && !!RE_7S);
+
+function fails(answer, re) {
+  const r = spawnSync("bash", ["-c", fn + '\nfail=0\nanswer_must_not_claim_absence -i "$RE" probe >/dev/null\necho "$fail"'],
+    { env: Object.assign({}, process.env, { LAST_ANSWER: answer, RE: re }), encoding: "utf8" });
+  // The helper reads $LAST_ANSWER as a shell variable, which the environment supplies.
+  return String(r.stdout).trim() === "1";
+}
+
+// Recorded answers, run 36779373913 (2026-09-30 21:26 UTC).
+const OC_REPORT = "The catalog data lists no Orange County community college currently teaching a full LVN entry program — "
+  + "Golden West, Cypress, and Saddleback do offer LVN-to-RN bridge programs, but those are for people who already hold an LVN license.";
+const OC_ARTIC = "No Orange County college has yet articulated a CNA credential toward LVN coursework, so any request there would be a first.";
+const SGV_ARTIC = "No San Gabriel Valley college has yet articulated CNA-to-LVN specifically, so your request would likely be a first for them.";
+
+if (RE_7C && RE_7S && fn) {
+  check("7c: the recorded catalog report passes", !fails(OC_REPORT, RE_7C));
+  check("7c: the recorded articulation sentence passes", !fails(OC_ARTIC, RE_7C));
+  check("7c: the whole recorded pair passes together", !fails(OC_REPORT + " " + OC_ARTIC, RE_7C));
+  check("7c: \"No Orange County colleges teach LVN\" still fails", fails("No Orange County colleges currently teach LVN.", RE_7C));
+  check("7c: \"None of the Orange County colleges offer\" still fails",
+    fails("None of the Orange County colleges offer a vocational nursing program.", RE_7C));
+  check("7c: an attributed report does not excuse a bare claim beside it",
+    fails(OC_REPORT + " No Orange County college teaches LVN.", RE_7C));
+  check("7s: the recorded articulation sentence passes", !fails(SGV_ARTIC, RE_7S));
+  check("7s: \"No San Gabriel Valley college offers an LVN entry program\" still fails",
+    fails("No San Gabriel Valley college offers an LVN entry program.", RE_7S));
+  check("7s: \"I don't see a San Gabriel Valley college with vocational nursing\" still fails",
+    fails("I don't see a San Gabriel Valley college with vocational nursing.", RE_7S));
+  check("7s: v72's shape, \"no colleges in the San Gabriel Valley\", still fails",
+    fails("There are no colleges in the San Gabriel Valley with an LVN program.", RE_7S));
+}
+
+let pass = 0;
+for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
+console.log(`\n${pass}/${results.length} assertions passed`);
+process.exit(pass === results.length ? 0 : 1);
