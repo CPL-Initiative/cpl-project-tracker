@@ -38,7 +38,9 @@ finished_workstreams · skyview_invariants · live_session_banner ·
 Allow-Once storm: its source was the Supabase connector's Tool permissions in
 the claude.ai account, changed 2026-09-28; S298's new-session test closes it) ·
 [doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents and
-measurements behind these rules) · `lanes/` (stubs below).
+measurements behind these rules) ·
+[credential_watch_agent](docs/reference/credential_watch_agent.md) (the
+industry-credential watch; armed Mondays 05:51 PT) · `lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has

@@ -6,7 +6,8 @@
 -- Applied live via the Supabase MCP on 2026-09-18 as:
 --   program_typical_courses                     (the first version)
 --   program_typical_courses_linear_normalizer   (the linear rewrite, ~16:05Z)
---   cpl_course_title_norm_cna_expansion_flat        (this version, 2026-09-18, S277)
+--   cpl_course_title_norm_cna_expansion_flat        (the normalizer, 2026-09-18, S277)
+--   chatbox_college_courses_title_norm_stored       (the stored normal form, 2026-09-30, S308/S309)
 --
 -- ⚠️ COST IS PART OF CORRECTNESS ON THIS ROUTE (the programs-route lesson,
 -- 2026-09-17). The first version measured 65 ms on two programs and 32,986 ms
@@ -170,6 +171,32 @@ as $function$
   ), ' '), '');
 $function$;
 
+-- THE NORMAL FORM IS STORED (2026-09-30, S308/S309; Sam: "Go ahead with the
+-- stored column"). program_typical_courses() used to call the normalizer once
+-- per matching row on every call. On the smoke's 723 rows (TOP 1230.30 and
+-- 1230.20) that step measured 72 ms, 503 ms and 4,178 ms on three calls the
+-- same evening, and through PostgREST 153 calls averaged 2,552 ms (max 7,944)
+-- against the anon key's 3 s timeout, so smoke 7c failed whenever the database
+-- was busy (run 36758190827). The column computes each title once, when the
+-- loader writes it (kb/_sync_college_courses.py upserts 500 rows a call, far
+-- inside PostgREST's 8 s), and the call measured 88 ms through the PostgREST
+-- query shape with identical output on 47, 2 and 66 programs (receipt
+-- kb/receipts/program_typical_courses_title_norm_2026-09-30.sql).
+--
+-- ⚠️ A STORED VALUE DOES NOT FOLLOW ITS FUNCTION. Postgres lets the normalizer
+-- above be replaced while this column depends on it and keeps the old values.
+-- The update below recomputes every row the current definition reads
+-- differently, and does nothing when nothing changed. Keep it directly after
+-- the normalizer; verify A0 counts stale rows. Never write title_norm from a
+-- loader or a rollback: a generated column takes no value in an INSERT.
+alter table public.chatbox_college_courses
+  add column if not exists title_norm text
+  generated always as (public.cpl_course_title_norm(course_title)) stored;
+
+update public.chatbox_college_courses
+   set title_norm = default
+ where title_norm is distinct from public.cpl_course_title_norm(course_title);
+
 -- Drop-then-create on a signature change, as the other RPCs do: PostgREST
 -- resolves an rpc call by name and must never see two candidates. The grants
 -- the drop discards are restored at the end of this file.
@@ -191,8 +218,9 @@ language sql
 stable
 as $function$
   with base as (
+    -- The stored normal form, never a per-row call (see above).
     select c.top_code, c.top_title, c.college, c.course_title, c.subject, c.course_number, c.units,
-           public.cpl_course_title_norm(c.course_title) as norm
+           c.title_norm as norm
     from public.chatbox_college_courses c
     where c.top_code = any(coalesce(top_codes, '{}'::text[]))
   ),

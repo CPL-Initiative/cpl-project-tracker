@@ -13,6 +13,14 @@
 do $$
 declare n bigint; t0 timestamptz; ms numeric; s text;
 begin
+  -- A0: the stored normal form matches the normalizer on every row (2026-09-30).
+  -- Replacing cpl_course_title_norm leaves title_norm as it was; the schema of
+  -- record recomputes it right after the normalizer, and this catches a file
+  -- applied in parts.
+  select count(*) into n from public.chatbox_college_courses
+   where title_norm is distinct from public.cpl_course_title_norm(course_title);
+  if n <> 0 then raise exception 'A0 FAIL: % rows carry a stale title_norm; run the recompute in the schema of record', n; end if;
+
   -- A1: EXACTLY ONE signature of each function. Postgres keys functions by
   -- argument list; two candidates make PostgREST's rpc call ambiguous.
   select count(*) into n from pg_proc p join pg_namespace ns on ns.oid = p.pronamespace

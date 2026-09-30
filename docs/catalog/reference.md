@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-50 document(s).
+51 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -67,5 +67,6 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-08-28 |
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
+| [The industry-credential watch agent](../reference/credential_watch_agent.md) | — | `credential_watch_agent.md` | 2026-09-30 | 2026-09-30 |
 | [The live-session banner — how a session announces itself, and the two things it cannot know](../reference/live_session_banner.md) | — | `live_session_banner.md` | 2026-09-10 | 2026-09-10 |
 | [Troubleshooting — dashboard, Pages, scrape, and the stop-hook false positives](../reference/troubleshooting.md) | — | `troubleshooting.md` | 2026-08-19 | 2026-08-19 |

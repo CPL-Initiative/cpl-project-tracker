@@ -48,6 +48,7 @@
   "table:cpl_funding_notes": "DR-09",
   "table:cpl_funding_participation": "DR-09",
   "table:cpl_funding_reports": "DR-09",
+  "rpc:cpl_funding_my_reports": "DR-09",
   "table:cpl_adoption_interest": "DR-23",
   "tab:chatbot": "CA-06",
   "tab:college-briefing": "DR-09",
