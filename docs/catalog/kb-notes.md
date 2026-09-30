@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-500 document(s).
+503 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -233,6 +233,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Agreement is not corroboration when the behavior is systematic](../kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Alias maps are permutations, not graphs: resolution semantics for stacked re-keys](../kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 |  |
 | [An absence in the data is a statement about the data — say what the catalog shows, never that the county has none](../kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [An accessibility sweep does not measure alignment; probe the edges](../kb-notes/methodology-an-a11y-sweep-does-not-measure-alignment.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [An affordance gated on a problem is invisible when there isn't one](../kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [An articulation's college list belongs to the group, not to each course in it](../kb-notes/methodology-an-articulation-college-list-belongs-to-the-group-not-the-course.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [An assertion pinned to a mutable value stops being a guard](../kb-notes/methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md) | methodology | published | 2026-08-15 | 2026-08-15 |
@@ -394,7 +395,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Shared prose over-claims on the rows it was not written for](../kb-notes/methodology-shared-prose-over-claims-on-rows-it-was-not-written-for.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [Ship generator changes live-on-merge when the artifact regenerates from committed inputs](../kb-notes/methodology-ship-generator-changes-live-on-merge.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Single source of truth flows via the regenerated snapshot — de-hardcode consumers, and verify the join key](../kb-notes/methodology-single-source-of-truth-flows-via-snapshot.md) | methodology | published | 2026-07-27 | 2026-07-27 |
-| [Small-cell suppression must survive subtraction](../kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [Small-cell suppression must survive subtraction](../kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md) | methodology | published | 2026-08-06 | 2026-09-30 |
 | [Snapshot-with-stamp fallback for live-data dependencies](../kb-notes/methodology-snapshot-with-stamp-fallback.md) | methodology | published | 2026-05-28 | 2026-05-28 |
 | [Split prose from state — the register is the spine, the narrative cites it](../kb-notes/methodology-register-is-the-spine-narrative-cites-it.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [Stable DOM keys must exclude live (data-bound) text](../kb-notes/methodology-stable-dom-keys-exclude-live-text.md) | methodology | published | 2026-06-28 | 2026-06-28 |
@@ -405,6 +406,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Testing a rule without cueing the answer](../kb-notes/methodology-testing-a-rule-without-cueing-the-answer.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [The feedback queue already knew — collection is not the bottleneck, triage is](../kb-notes/methodology-the-feedback-queue-already-knew.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [The first run of a new instrument measures the instrument](../kb-notes/methodology-the-first-run-of-a-new-instrument-measures-the-instrument.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [The floor belongs to each figure](../kb-notes/methodology-the-floor-belongs-to-each-figure.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [The instrument may not live inside the system under test](../kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md) | methodology | published | 2026-08-29 | 2026-08-30 |
 | [The mark is not the footprint — draw inside what you packed, and spread at load](../kb-notes/methodology-the-mark-is-not-the-footprint.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [The measuring browser can hide the defect](../kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-20 |
@@ -507,6 +509,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The articulated-and-waiting backlog is almost entirely basic military service credit](../kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service.md) | reference | published | 2026-08-11 | 2026-08-11 |
 | [The authoritative statewide MAP exhibit is the raw row with Collaborative Type == "CCC](../kb-notes/reference-authoritative-statewide-exhibit-signal.md) | reference | published | 2026-06-28 | 2026-06-28 |
 | [The CCCCO house voice — how our outward writing should read](../kb-notes/reference-cccco-house-voice.md) | reference | internal | 2026-09-01 | 2026-09-01 |
+| [The CCCCO style guide and brand basics — the usage, names and colors our writing follows](../kb-notes/reference-cccco-style-guide.md) | reference | internal | 2026-09-30 | 2026-09-30 |
 | [The CPL guiding question, and why sufficiency is not equivalence](../kb-notes/reference-the-cpl-guiding-question.md) | reference | published | 2026-09-05 | 2026-09-05 |
 | [The workplan Activity↔Project linking model — home field vs the N-to-N association table](../kb-notes/reference-workplan-activity-project-linking-model.md) | reference | published | 2026-07-27 | 2026-07-27 |
 | [TMC confidence score & near-auto-approval — what data we hold vs still need](../kb-notes/reference-tmc-confidence-data-requirements.md) | reference | published | 2026-07-01 |  |

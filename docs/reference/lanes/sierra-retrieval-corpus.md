@@ -87,20 +87,15 @@ that button's question lands in My College's own box.
 
 ## Where applied and transcribed credit comes from (2026-09-30)
 
-Sam asked Sierra for the military and non-military split of Chaffey's applied units and the exhibits
-behind them (his Training note on turn `1b9230ce`). She has neither: her disposition block reads only
-`map_college_credit_summary`'s four college totals and `map_college_goal2`. The data exists in the student
-view (`map_student_credit`: MAP's military and non-military columns partition applied credit on 73,933 of
-73,939 in-plan rows) and the articulation view (`map_college_cr_unit`). **Seven decisions are on their own
-sheet**, [NT56gHRViNX9ZYnRg8r1KR](https://claude.ai/artifact/NT56gHRViNX9ZYnRg8r1KR)
-(`docs/visuals/2026-09-30-sierra-credit-source.html`, builder
-`kb/_build_sierra_credit_source_decision_sheet.py`, collection `replies`), kept off the standing open-asks
-sheet because that one belongs to the funding queue. Two defects surfaced on the way, both on the sheet:
-⚠️ **the summary suppresses on all students at a college**, so 8 colleges publish a transcribed total from
-fewer than 10 students (3 from one), the public `_pub` copy too; ⚠️ **`applied_credits` sums every
-status**, so Chaffey's 19,405 carries 1,206 Needs Action units of basic military service credit, which
-Sierra also counted inside the 7,641 not acted on. At k=10, a college-by-exhibit table names 90% of
-applied units statewide (94% at Chaffey) but only 6% of Chaffey's transcribed units. `cpl_memory`:
-`credit-summary-publishes-small-group-applied-and-transcribed-2026-09-30`,
-`summary-applied-includes-needs-action-articulated-2026-09-30`,
-`map-military-columns-partition-applied-credit-2026-09-30`.
+Sam asked Sierra for the military and non-military split of Chaffey's applied units and the exhibits behind them (his Training note on turn `1b9230ce`). Sheet [NT56gHRViNX9ZYnRg8r1KR](https://claude.ai/artifact/NT56gHRViNX9ZYnRg8r1KR) (`docs/visuals/2026-09-30-sierra-credit-source.html`), all seven items ruled the same day: 1 fix, 2 do, 3 hand to the funding lane (below), 4 and 5 build, 6 his ruling, 7 draft the Training rule after the data ships.
+
+⭐ **Sam's item 6 ruling (2026-09-30): *"I want Sierra to total for everyone using real numbers but when the totals (at any level) are below 10, to show "<10" on the views. This should happen without a governance gate."*** One published layer for every viewer; no reviewer tier. The condition is the student-detail ADR's decision 5: wherever a real total sits above rows, a withheld remainder spans two or more cells and 10 or more students.
+
+**All of it is live (data applied 2026-09-30, receipts in `kb/receipts/`); Sierra reads it from cpl-chat v74 (#1780, deployed 17:19 UTC after a preview A/B with no regressions):**
+- **#1777** `map_college_credit_summary` suppresses **each figure on its own students**. It had tested only the college's headcount, so 8 colleges published a transcribed total from under 10 students (3 from one), the public `_pub` copy too, and at 13 colleges `applied_credits − articulated_waiting` recovered a thin in-plan figure. It gains `applied_in_plan` and `transcribed_student_view` (student view), a `withheld` list, and **`map_college_credit_statewide`** (real totals). My College renders a withheld figure as "<10 students" (`numN()`; `num(null)` had been a false zero).
+- **#1779** **`map_college_credit_bucket`** (military / non-military, per college and statewide) and **`map_college_exhibit_credit`** (per college and exhibit: title, MAP's CPL type, units applied and transcribed, recommendations, "<10 each" roll-ups), rebuilt nightly inside the promotion, each raising on its own property check. MAP's `CPLTypeCode` now rides into the title tables (the id rule mistyped 546 of 677 Credit by Exam exhibits).
+- **#1780** Sierra leads with applied on the CPL plan, labels MAP's *Applied Credits* column as the one that CONTAINS the waiting credit (she had counted Chaffey's 1,206 units in both), splits the buckets non-military first, says "<10 students" for a withheld figure, and answers "where does this college's credit come from" by units from the exhibit table.
+
+**Item 3, handed to the funding lane (Sam: "hand to the funding lane"):** does applied FTES count credit articulated but not yet applied? Chaffey's `pa_u` reads 19,020 against 18,066 units at *Applied to CPL Plan*, so at least 954 units come from rows outside the plan, most likely the 1,206 basic-military-service units at Needs Action that MAP's *Applied Credits* column repeats. Unverified row by row (the funding pull is not stored). Recorded where a funding session's Rule 8 query finds it: `cpl_memory` `summary-applied-includes-needs-action-articulated-2026-09-30` (tag `implementation-funding`); the funding lane file sits at its size budget, so it carries no copy.
+
+⚠️ **Never infer a unit split from counts of articulated exhibits.** Her Chaffey answer read "110 Standardized, 77 Credit by Exam" off the articulated-exhibit list; by units, Standardized Assessment carried 95% of Chaffey's applied credit and Credit by Exam none. ⚠️ **MAP's two views disagree by 5% on applied in plan** (171,078 articulation view vs 162,603 student view, 26 colleges); the breakdowns use the student view so they add up to the totals beside them. Question for Pedro (MAP custom reports lane). **Item 7 is closed:** Sam added the layout rule in Training (`sierra_guidance` `f3a529ae`, a directive, 2026-09-30 18:04 UTC): one table per source answer, non-military rows first, each group ending on its "<10 each" line. It carries layout only; the substance ships in `CREDIT_STATUS_RULE`. Sessions cannot write `sierra_guidance` or `sierra_feedback` (the SQL guard denies INSERT and UPDATE), so a Training change goes to Sam as text to paste. Lessons: [`student_detail_load_lessons`](../../student_detail_load_lessons.md) (2026-09-30). `cpl_memory`: `sierra-credit-sources-live-2026-09-30`, `sam-sierra-real-totals-lt10-no-governance-gate-2026-09-30`, `credit-summary-per-figure-suppression-live-2026-09-30`, `map-military-columns-partition-applied-credit-2026-09-30`.

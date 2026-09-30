@@ -10,6 +10,12 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-09-30)
+
+- **2026-09-28 — S298 (SkyLatch):** UI fixes through a live mockup drawn by COBI's own code: Sam locked the College Dashboard redesign in seven rounds and ruled that funding waits on all three minimum conditions ([#1726](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1726)); the Sierra Training tab entered the same process. New: [`ui_mockup_lessons`](ui_mockup_lessons.md), [`methodology-mock-up-from-the-running-code`](kb-notes/methodology-mock-up-from-the-running-code.md).
+- **2026-09-28 — S297 (SkyLantern):** the SQL approval prompt's source found: the Supabase connector's Tool permissions in Sam's claude.ai account, set read-only, which he changed; seven SQL calls then ran without a prompt, and S298's three-call test in a new session closes it. The opening line's `check_hooks_live.py --fix` sentence removed on Sam's ruling; the open-asks sheet published (https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B). KB note extended: `methodology-verify-the-premise-before-you-build-on-it` (case 3). Handoff 298.
+- **2026-09-28 — S296 (SkyBeacon, emergency checkpoint):** funding asks card 1, the Annual view compares a year with a year ([#1721](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1721)); the ETHS re-mint's dry run ([#1722](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1722)) and its land, 26 KINE, 4 ATHL and 1 PEDS with the first continuation-band-2 ids, `kb_curation` re-keyed by `supabase-rekey.yml` ([#1723](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1723)). Handoff 297.
+
 ## INDEX update-history entries rotated out (2026-09-29)
 
 - **2026-09-24 — S287 (SkyLane, beside SkyMatrix):** the jsdom suite runs as four shards on four runners fanned into the one `test` check, 20 min to 7 ([#1682](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1682)); the funding drill-in's credit and noncredit lane tables and the one-line card head ([#1679](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1679)); the four rows S286 staged written; the review sheet's edit layer documented in the decision-sheets reference; KB note `methodology-a-memory-bound-suite-scales-across-machines-not-workers`. Handoff 289.

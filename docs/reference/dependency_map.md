@@ -79,6 +79,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_funding_config` | tabs: `college-briefing`, `implementation-funding` · scripts: `kb/_funding_config_edit_apply.py` | tabs: `college-briefing`, `implementation-funding` |
 | `cpl_funding_notes` | tabs: `college-briefing`, `implementation-funding` | tabs: `college-briefing`, `implementation-funding` |
 | `cpl_funding_participation` | tabs: `college-briefing`, `implementation-funding` | tabs: `college-briefing`, `implementation-funding` |
+| `cpl_funding_reports` | tabs: `college-briefing`, `implementation-funding` | tabs: `college-briefing`, `implementation-funding` |
 | `cpl_memory` | tabs: `memory` · scripts: `kb/_memory_audit.py` | tabs: `memory` |
 | `cpl_memory_log` | none found | tabs: `memory` |
 | `cpl_news` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
@@ -104,8 +105,11 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_college_contacts_pub` | tabs: `college-briefing`, `implementation-funding` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_unit` | tabs: `college-briefing`, `implementation-funding` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_waiting_pub` | tabs: `college-briefing` | scripts: `kb/_publish_college_briefing.py` |
+| `map_college_credit_bucket` | `edgefn:cpl-chat` | — |
+| `map_college_credit_statewide` | `edgefn:cpl-chat` | — |
 | `map_college_credit_summary` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
 | `map_college_credit_summary_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
+| `map_college_exhibit_credit` | `edgefn:cpl-chat` | — |
 | `map_college_goal2` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
 | `map_college_goal2_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_nudges` | tabs: `governance`, `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
@@ -363,7 +367,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks-6.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
+| `docs/visuals/<date>-open-asks-9.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docs/visuals/<date>-sierra-credit-source.html` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
@@ -964,5 +968,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 86 Supabase tables · 31 RPCs · 5 edge functions · 560 file
+Coverage: 90 Supabase tables · 31 RPCs · 5 edge functions · 560 file
 datasets · 147 external services · 387 consumers · 38 workflows · 37 tabs.

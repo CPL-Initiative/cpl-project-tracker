@@ -1294,12 +1294,20 @@ interface CreditStatus {
 // which is where the roll-up and suppression logic actually live.
 async function fetchCreditData(sb: any): Promise<any | null> {
   try {
-    const [summaryRes, collegesRes, goal2Res, loadRes] = await Promise.all([
+    const [summaryRes, collegesRes, goal2Res, loadRes, statewideRes, bucketRes] = await Promise.all([
       sb.from("map_college_credit_summary").select(
-        "college_id,students,suppressed,dormant_credits,articulated_waiting,applied_credits,transcribed_credits"),
+        "college_id,students,suppressed,dormant_credits,articulated_waiting,applied_credits,transcribed_credits,"
+        + "applied_in_plan,transcribed_student_view,withheld"),
       sb.from("map_colleges").select("college_id,college_name,entity_kind"),
       sb.from("map_college_goal2").select("college_id,dest,students,rows_n,suppressed"),
       sb.from("map_data_loads").select("loaded_at").order("loaded_at", { ascending: false }).limit(1),
+      // REAL statewide totals and the military / non-military split (sheet
+      // 2026-09-30-sierra-credit-source items 2, 4 and 6). Enrichment: a failed
+      // read leaves the older published-cell roll-up in place, never a zero.
+      sb.from("map_college_credit_statewide").select("*").limit(1),
+      sb.from("map_college_credit_bucket").select(
+        "scope,college_id,bucket,dormant_credits,articulated_waiting,students_applied,applied_in_plan,"
+        + "students_transcribed,transcribed,apprenticeship_in_plan,withheld"),
     ]);
     if (!summaryRes.data || summaryRes.data.length === 0) return null;
     return {
@@ -1307,10 +1315,35 @@ async function fetchCreditData(sb: any): Promise<any | null> {
       colleges: collegesRes.data || [],
       goal2: goal2Res.data || [],
       load: loadRes.data || [],
+      statewide: (statewideRes && statewideRes.data && statewideRes.data[0]) || null,
+      buckets: (bucketRes && bucketRes.data) || [],
     };
   } catch (e) {
     console.error("fetchCreditData failed:", e);
     return null;  // a failed read is NOT "no credit anywhere" — the context is omitted
+  }
+}
+
+// WHERE ONE COLLEGE'S APPLIED AND TRANSCRIBED CREDIT COMES FROM (2026-09-30).
+// Sam asked for the exhibits and credit recommendations behind Chaffey's
+// applied units and Sierra had none: she answered from the list of what the
+// college has ARTICULATED and counted exhibits, which says nothing about units.
+// map_college_exhibit_credit carries, per exhibit, the units applied on the
+// plan and transcribed, suppressed at write time (10 students a cell, every
+// withheld remainder under a real total at least two cells and 10 students).
+// Read for ONE college, after detection, never the whole table.
+async function fetchCollegeCreditSources(sb: any, collegeId: number | null): Promise<any[] | null> {
+  if (collegeId == null) return null;
+  try {
+    const { data, error } = await sb.from("map_college_exhibit_credit")
+      .select("exhibit_id,is_rollup,exhibits_in_rollup,exhibits_in_rollup_transcribed,title,cpl_type,bucket,"
+        + "students_applied,applied_in_plan,students_transcribed,transcribed,credit_recs,withheld")
+      .eq("college_id", collegeId);
+    if (error) { console.error("fetchCollegeCreditSources:", error.message); return null; }
+    return data || [];
+  } catch (e) {
+    console.error("fetchCollegeCreditSources failed:", e);
+    return null;   // a failed read is NOT "no sources" — the block is omitted
   }
 }
 
@@ -1342,7 +1375,7 @@ function shapeCreditStatus(
 
     // Statewide roll-up. Suppressed cells carry NULL measures; skipping them is
     // what makes the published total lower than the true one, by design.
-    const st = { students: 0, dormant: 0, ready: 0, applied: 0, transcribed: 0, transcribedPct: null };
+    const st: any = { students: 0, dormant: 0, ready: 0, applied: 0, transcribed: 0, transcribedPct: null };
     for (const r of summary) {
       st.students += Number(r.students) || 0;
       st.dormant += Number(r.dormant_credits) || 0;
@@ -1351,6 +1384,52 @@ function shapeCreditStatus(
       st.transcribed += Number(r.transcribed_credits) || 0;
     }
     st.transcribedPct = st.applied > 0 ? Math.round((st.transcribed / st.applied) * 1000) / 10 : null;
+    // Applied on the CPL plan and transcribed from the student view. MAP's
+    // Applied Credits column (`applied` above) also counts articulated credit
+    // still at Needs Action, so it carries `ready` inside it; the plan figure
+    // is the one to lead with (Sam, 2026-08-19: publish both, name the gap).
+    let appliedInPlan = 0, transcribedSV = 0, anyPlan = false;
+    for (const r of summary) {
+      if (r.applied_in_plan != null) { appliedInPlan += Number(r.applied_in_plan) || 0; anyPlan = true; }
+      if (r.transcribed_student_view != null) transcribedSV += Number(r.transcribed_student_view) || 0;
+    }
+    st.appliedInPlan = anyPlan ? appliedInPlan : null;
+    st.transcribedSV = anyPlan ? transcribedSV : null;
+    st.real = false;
+    st.collegesWithheld = null;
+    // ⭐ REAL TOTALS WHERE PUBLISHED (Sam, 2026-09-30: "I want Sierra to total
+    // for everyone using real numbers"). map_college_credit_statewide sums every
+    // college, withheld ones included; each figure is NULL only where its
+    // remainder would be a single college or fewer than 10 students.
+    const sw = raw.statewide;
+    if (sw) {
+      const n = (v: any) => (v == null ? null : Number(v));
+      st.students = n(sw.students) ?? st.students;
+      st.dormant = n(sw.dormant_credits);
+      st.ready = n(sw.articulated_waiting);
+      st.applied = n(sw.applied_credits);
+      st.transcribed = n(sw.transcribed_credits);
+      st.appliedInPlan = n(sw.applied_in_plan);
+      st.transcribedSV = n(sw.transcribed_student_view);
+      st.real = true;
+      st.collegesWithheld = sw.colleges_withheld || null;
+      st.transcribedPct = st.appliedInPlan > 0 && st.transcribedSV != null
+        ? Math.round((st.transcribedSV / st.appliedInPlan) * 1000) / 10 : null;
+    }
+    // The military / non-military split, statewide and per college.
+    const bucketRows: any[] = Array.isArray(raw.buckets) ? raw.buckets : [];
+    const shapeBucket = (b: any) => ({
+      bucket: b.bucket,
+      withheld: Array.isArray(b.withheld) ? b.withheld : [],
+      dormant: b.dormant_credits != null ? Number(b.dormant_credits) : null,
+      ready: b.articulated_waiting != null ? Number(b.articulated_waiting) : null,
+      appliedInPlan: b.applied_in_plan != null ? Number(b.applied_in_plan) : null,
+      studentsApplied: b.students_applied ?? null,
+      transcribed: b.transcribed != null ? Number(b.transcribed) : null,
+      studentsTranscribed: b.students_transcribed ?? null,
+      apprenticeship: b.apprenticeship_in_plan != null ? Number(b.apprenticeship_in_plan) : null,
+    });
+    st.buckets = bucketRows.filter((b: any) => b.scope === "statewide").map(shapeBucket);
 
     const g2map = new Map<string, { dest: string; students: number; rows: number }>();
     for (const g of goal2Rows) {
@@ -1370,6 +1449,7 @@ function shapeCreditStatus(
       const row = cid != null ? summary.find((r: any) => r.college_id === cid) : null;
       if (row) {
         college = {
+          id: row.college_id,
           name: nameById.get(row.college_id) || collegeName,
           suppressed: !!row.suppressed,
           students: row.students ?? null,
@@ -1377,6 +1457,12 @@ function shapeCreditStatus(
           ready: row.articulated_waiting != null ? Number(row.articulated_waiting) : null,
           applied: row.applied_credits != null ? Number(row.applied_credits) : null,
           transcribed: row.transcribed_credits != null ? Number(row.transcribed_credits) : null,
+          appliedInPlan: row.applied_in_plan != null ? Number(row.applied_in_plan) : null,
+          transcribedSV: row.transcribed_student_view != null ? Number(row.transcribed_student_view) : null,
+          // A NULL figure on a published row is WITHHELD (fewer than 10
+          // students behind it), never zero; this names which.
+          withheld: Array.isArray(row.withheld) ? row.withheld : [],
+          buckets: bucketRows.filter((b: any) => b.scope === "college" && b.college_id === row.college_id).map(shapeBucket),
           goal2: goal2Rows
             .filter((g: any) => g.college_id === cid)
             .map((g: any) => ({
@@ -1432,6 +1518,9 @@ function shapeCreditStatus(
           ready: row.articulated_waiting != null ? Number(row.articulated_waiting) : null,
           applied: row.applied_credits != null ? Number(row.applied_credits) : null,
           transcribed: row.transcribed_credits != null ? Number(row.transcribed_credits) : null,
+          appliedInPlan: row.applied_in_plan != null ? Number(row.applied_in_plan) : null,
+          transcribedSV: row.transcribed_student_view != null ? Number(row.transcribed_student_view) : null,
+          withheld: Array.isArray(row.withheld) ? row.withheld : [],
         };
       });
     }
@@ -2264,31 +2353,54 @@ function buildCreditContext(cs: any): string {
   if (!cs) return "";
   const s = cs.statewide;
   let out = `\n\n--- CPL CREDIT DISPOSITION (what colleges have ACTED on${cs.asOf ? `, as of ${cs.asOf}` : ""}) ---\n`;
-  out += `Statewide, across ${cs.collegesWithData} colleges with credit data:\n`;
+  out += s.real
+    ? `Statewide, across ${cs.collegesWithData} colleges with credit data (REAL totals: they include colleges whose own figure shows <10):\n`
+    : `Statewide, across ${cs.collegesWithData} colleges with credit data:\n`;
   out += `- Credit recommended but not yet acted on ("Needs Action"): ${fmtN(s.dormant)} units\n`;
   out += `- Of that, ALREADY ARTICULATED and simply waiting on a decision: ${fmtN(s.ready)} units\n`;
-  out += `- Applied to a student record: ${fmtN(s.applied)} units; of those, transcribed: ${fmtN(s.transcribed)} units`;
-  out += s.transcribedPct != null ? ` (${s.transcribedPct}%)\n` : `\n`;
+  if (s.appliedInPlan != null) {
+    out += `- Applied to students' CPL plans: ${fmtN(s.appliedInPlan)} units; transcribed: ${fmtN(s.transcribedSV)} units`;
+    out += s.transcribedPct != null ? ` (${s.transcribedPct}%)\n` : `\n`;
+    out += `- (MAP's Applied Credits column reads ${fmtN(s.applied)} units because it also counts the articulated credit still waiting at Needs Action. Lead with the plan figure; never add the waiting figure to it.)\n`;
+  } else {
+    out += `- Applied to a student record: ${fmtN(s.applied)} units; of those, transcribed: ${fmtN(s.transcribed)} units`;
+    out += s.transcribedPct != null ? ` (${s.transcribedPct}%)\n` : `\n`;
+  }
   out += `- CPL students represented: ${fmtN(s.students)}\n`;
+  if (Array.isArray(s.buckets) && s.buckets.length > 0) {
+    out += `Statewide by bucket:\n` + renderBuckets(s.buckets, "");
+  }
   if (cs.goal2.length > 0) {
-    const tot = cs.goal2.reduce((a, g) => a + g.rows, 0);
+    const tot = cs.goal2.reduce((a: number, g: any) => a + g.rows, 0);
     out += `Where awarded credit LANDS (Sprint goal 2): `
-      + cs.goal2.map((g) => `${g.dest} ${tot > 0 ? Math.round((g.rows / tot) * 1000) / 10 : 0}%`).join(" · ") + `\n`;
+      + cs.goal2.map((g: any) => `${g.dest} ${tot > 0 ? Math.round((g.rows / tot) * 1000) / 10 : 0}%`).join(" · ") + `\n`;
   }
 
   if (cs.college) {
     const c = cs.college;
+    const w = c.withheld;
     out += `\nAt ${c.name} specifically:\n`;
     if (c.suppressed) {
       out += `- Fewer than 10 CPL students — the breakdown is withheld to protect their privacy. Confirm that CPL activity exists there, give no figures, and do not estimate.\n`;
     } else {
       out += `- CPL students: ${fmtN(c.students)}\n`;
-      out += `- Credit recommended, not yet acted on: ${fmtN(c.dormant)} units\n`;
-      out += `- Of that, ALREADY ARTICULATED and waiting on a decision: ${fmtN(c.ready)} units\n`;
-      out += `- Applied: ${fmtN(c.applied)} units; transcribed: ${fmtN(c.transcribed)} units\n`;
-      const g2 = c.goal2.filter((g) => !g.suppressed && g.rows != null);
+      out += `- Credit recommended, not yet acted on: ${fmtW(c.dormant, "dormant_credits", w)} units\n`;
+      out += `- Of that, ALREADY ARTICULATED and waiting on a decision: ${fmtW(c.ready, "articulated_waiting", w)} units\n`;
+      if (c.appliedInPlan != null || (Array.isArray(w) && w.indexOf("applied_in_plan") !== -1)) {
+        out += `- Applied to students' CPL plans: ${fmtW(c.appliedInPlan, "applied_in_plan", w)} units; transcribed: ${fmtW(c.transcribedSV, "transcribed_student_view", w)} units\n`;
+        out += `- (MAP's Applied Credits column reads ${fmtW(c.applied, "applied_credits", w)} units for this college because it also counts the articulated credit still waiting at Needs Action. Lead with the plan figure; the waiting figure sits inside MAP's column, so never present the two as separate pools.)\n`;
+      } else {
+        out += `- Applied: ${fmtW(c.applied, "applied_credits", w)} units; transcribed: ${fmtW(c.transcribed, "transcribed_credits", w)} units\n`;
+      }
+      if (Array.isArray(c.buckets) && c.buckets.length > 0) {
+        out += `- By bucket:\n` + renderBuckets(c.buckets, "  ");
+      }
+      const g2 = c.goal2.filter((g: any) => !g.suppressed && g.rows != null);
       if (g2.length > 0) {
-        out += `- Awarded credit lands as: ${g2.map((g) => `${g.dest} (${fmtN(g.rows)} awards)`).join(" · ")}\n`;
+        out += `- Awarded credit lands as: ${g2.map((g: any) => `${g.dest} (${fmtN(g.rows)} awards)`).join(" · ")}\n`;
+      }
+      if (Array.isArray(cs.sources) && cs.sources.length > 0) {
+        out += renderCreditSources(c.name, cs.sources, c.appliedInPlan, c.transcribedSV);
       }
     }
   } else if (cs.collegeHasNoRow && cs.collegeAsked) {
@@ -2315,11 +2427,107 @@ function buildCreditContext(cs: any): string {
         out += `- ${r.name}: fewer than 10 CPL students, so the figures are withheld to protect `
           + `their privacy. Confirm activity exists; give no numbers and do not estimate.\n`;
       } else {
+        const rw = r.withheld;
         out += `- ${r.name}: ${fmtN(r.students)} CPL students · `
-          + `${fmtN(r.dormant)} units recommended but not yet acted on · `
-          + `${fmtN(r.ready)} of those already articulated and waiting on a decision · `
-          + `${fmtN(r.applied)} units applied · ${fmtN(r.transcribed)} units transcribed\n`;
+          + `${fmtW(r.dormant, "dormant_credits", rw)} units recommended but not yet acted on · `
+          + `${fmtW(r.ready, "articulated_waiting", rw)} of those already articulated and waiting on a decision · `
+          + (r.appliedInPlan != null || (Array.isArray(rw) && rw.indexOf("applied_in_plan") !== -1)
+            ? `${fmtW(r.appliedInPlan, "applied_in_plan", rw)} units applied on CPL plans · ${fmtW(r.transcribedSV, "transcribed_student_view", rw)} units transcribed\n`
+            : `${fmtW(r.applied, "applied_credits", rw)} units applied · ${fmtW(r.transcribed, "transcribed_credits", rw)} units transcribed\n`);
       }
+    }
+  }
+  return out;
+}
+
+// The helpers below are hoisted into buildCreditContext above; they sit AFTER
+// it so every test that lifts from `function buildCreditContext(` carries them.
+// A figure the published tables withhold (fewer than 10 students behind it)
+// is NULL and named in the row's `withheld` list. Sam, 2026-09-30: "when the
+// totals (at any level) are below 10, to show \"<10\"". A NULL the list does
+// not name is simply not published.
+function fmtW(n: any, key: string, withheld: any): string {
+  if (n != null) return fmtN(n);
+  return Array.isArray(withheld) && withheld.indexOf(key) !== -1
+    ? "<10 students (withheld)" : "not published";
+}
+
+// The military / non-military split for one scope, in one line per bucket.
+// ⚠ SEPARATING THE BUCKETS NEVER DISCOUNTS EITHER (Sam, 2026-08-13).
+function renderBuckets(buckets: any, indent: string): string {
+  if (!Array.isArray(buckets) || buckets.length === 0) return "";
+  const order = ["non_military", "military"];
+  let out = "";
+  for (const key of order) {
+    const b = buckets.find((x: any) => x.bucket === key);
+    if (!b) continue;
+    const label = key === "military" ? "Military (JST / ACE, basic military service)" : "Non-military (exams, industry certifications, portfolio and other CPL)";
+    out += `${indent}- ${label}: applied on the CPL plan ${fmtW(b.appliedInPlan, "applied_in_plan", b.withheld)} units`
+      + (b.studentsApplied != null ? ` (${fmtN(b.studentsApplied)} students)` : "")
+      + `; transcribed ${fmtW(b.transcribed, "transcribed", b.withheld)} units`
+      + `; articulated and waiting ${fmtW(b.ready, "articulated_waiting", b.withheld)} units`
+      + `; recommended, not yet acted on ${fmtW(b.dormant, "dormant_credits", b.withheld)} units`
+      + (key === "non_military" && b.apprenticeship != null ? `; of the applied, apprenticeship ${fmtN(b.apprenticeship)} units` : "")
+      + `\n`;
+  }
+  return out;
+}
+
+// WHERE ONE COLLEGE'S CREDIT COMES FROM, from map_college_exhibit_credit.
+// Pure: rows in, text out. Totals by CPL type are summed over the PUBLISHED
+// exhibit rows only; the "<10 each" roll-up lines carry the rest, by bucket.
+function renderCreditSources(name: string, rows: any, appliedTotal: any, transcribedTotal: any): string {
+  if (!Array.isArray(rows) || rows.length === 0) return "";
+  const ex = rows.filter((r: any) => !r.is_rollup);
+  const roll = rows.filter((r: any) => r.is_rollup);
+  const byType = new Map<string, { applied: number; transcribed: number; exhibits: number }>();
+  for (const r of ex) {
+    const t = r.cpl_type || "Other";
+    const e = byType.get(t) || { applied: 0, transcribed: 0, exhibits: 0 };
+    if (r.applied_in_plan != null) e.applied += Number(r.applied_in_plan) || 0;
+    if (r.transcribed != null) e.transcribed += Number(r.transcribed) || 0;
+    if (r.applied_in_plan != null || r.transcribed != null) e.exhibits += 1;
+    byType.set(t, e);
+  }
+  let out = `\nWHERE ${name.toUpperCase()}'S APPLIED AND TRANSCRIBED CREDIT COMES FROM `
+    + `(exhibits and credit recommendations; every figure here is backed by 10 or more students):\n`;
+  if (appliedTotal != null) out += `- Total applied on the CPL plan: ${fmtN(appliedTotal)} units`
+    + (transcribedTotal != null ? `; total transcribed: ${fmtN(transcribedTotal)} units` : "") + `\n`;
+  const types = Array.from(byType.entries()).filter(([, v]) => v.applied > 0 || v.transcribed > 0)
+    .sort((a, b) => b[1].applied - a[1].applied);
+  if (types.length > 0) {
+    out += `- By CPL type, across exhibits shown one by one: `
+      + types.map(([t, v]) => `${t} ${fmtN(v.applied)} applied / ${fmtN(v.transcribed)} transcribed (${v.exhibits} exhibit${v.exhibits === 1 ? "" : "s"})`).join("; ") + `\n`;
+  }
+  for (const r of roll) {
+    const scope = r.bucket === "military" ? "military" : r.bucket === "non_military" ? "non-military" : "all CPL types";
+    const parts: string[] = [];
+    if ((r.exhibits_in_rollup || 0) > 0) parts.push(`${r.exhibits_in_rollup} exhibits, ${fmtW(r.applied_in_plan, "applied_in_plan", r.withheld)} units applied together`);
+    if ((r.exhibits_in_rollup_transcribed || 0) > 0) parts.push(`${r.exhibits_in_rollup_transcribed} exhibits, ${fmtW(r.transcribed, "transcribed", r.withheld)} units transcribed together`);
+    if (parts.length) out += `- Exhibits with fewer than 10 students each (${scope}): ${parts.join("; ")}\n`;
+  }
+  const top = ex.filter((r: any) => r.applied_in_plan != null && Number(r.applied_in_plan) > 0)
+    .sort((a: any, b: any) => Number(b.applied_in_plan) - Number(a.applied_in_plan)).slice(0, 12);
+  if (top.length > 0) {
+    out += `Leading exhibits by units applied:\n`;
+    for (const r of top) {
+      out += `- ${r.title} (${r.cpl_type}): ${fmtN(r.applied_in_plan)} units applied, ${fmtN(r.students_applied)} students`
+        + `; transcribed ${fmtW(r.transcribed, "transcribed", r.withheld)}`;
+      const crs = Array.isArray(r.credit_recs) ? r.credit_recs : [];
+      if (crs.length > 0) {
+        out += `. Credit recommendations: ` + crs.slice(0, 4).map((c: any) =>
+          c.applied_in_plan != null ? `${c.cr} (${fmtN(c.applied_in_plan)} units)` : `${c.cr}`).join("; ")
+          + (crs.length > 4 ? `; and ${crs.length - 4} more` : "");
+      }
+      out += `\n`;
+    }
+  }
+  const topT = ex.filter((r: any) => r.transcribed != null && Number(r.transcribed) > 0)
+    .sort((a: any, b: any) => Number(b.transcribed) - Number(a.transcribed)).slice(0, 8);
+  if (topT.length > 0) {
+    out += `Leading exhibits by units transcribed:\n`;
+    for (const r of topT) {
+      out += `- ${r.title} (${r.cpl_type}): ${fmtN(r.transcribed)} units transcribed, ${fmtN(r.students_transcribed)} students\n`;
     }
   }
   return out;
@@ -4233,8 +4441,19 @@ HOW TO FRAME IT — this matters as much as the numbers:
 
 TRUTHFULNESS GUARDS:
 - The "Needs Action" total is a CEILING, not a backlog of mistakes. Roughly 30% of credit that gets reviewed is correctly ruled Not Applicable — a recommendation that does not fit a student's program SHOULD be declined, and doing so is real work, not a failure. Say this whenever you quote the total, so nobody reads the ceiling as a debt.
-- These totals are sourced from published aggregates with small-cell privacy suppression already applied, so they run slightly BELOW the raw internal figures. If someone compares against another number, that is why — do not accuse either of being wrong.
+- Statewide totals marked REAL include every college, even those whose own figure shows <10. A college's own figure, a bucket or an exhibit may read "<10 students (withheld)": fewer than 10 students stand behind it, so it is withheld to protect them. Say "<10 students" (or "fewer than 10 students"). Never estimate it, never derive it by subtracting one figure from another, and never call it zero.
 - If a college's cell is marked suppressed (fewer than 10 CPL students), confirm activity exists and give NO figures. Never estimate a suppressed value, and never derive one by subtracting from a total.
+
+APPLIED MEANS APPLIED TO A STUDENT'S CPL PLAN:
+- Lead with the "Applied to students' CPL plans" figure. MAP's Applied Credits column, which the section also names, counts the articulated credit still waiting at Needs Action as well, so it CONTAINS the already-articulated figure. Never present the waiting figure and MAP's column as separate pools, and never add them together.
+
+MILITARY AND NON-MILITARY — SPLIT THEM, NEVER DISCOUNT EITHER:
+- When the section carries a bucket split, give both buckets. For what a college can act on, lead with the non-military bucket (exams, industry certifications, portfolio: a student adds one or two recommendations at a time), then the military bucket with its context (a service member's Joint Services Transcript brings many ACE recommendations at once, so its totals describe how many veterans a college serves more than how much work is left). Separating them is never a reason to value military credit less.
+
+WHERE A COLLEGE'S CREDIT COMES FROM:
+- When asked what a college's applied or transcribed credit consists of, answer from the "WHERE ... CREDIT COMES FROM" block, by UNITS: the totals by CPL type, then the leading exhibits with their units and credit recommendations. Give each "exhibits with fewer than 10 students each" line as the combined figure it is.
+- Never infer a split of units from counts of articulated exhibits. A college can have many exhibits of a type on file and no student credit applied from them; the units say which exhibits carry the credit.
+- If the block is absent for a college that has a credit row, say that the exhibit breakdown did not load this time, not that there is none.
 - If a college is not in the dataset, say exactly that. "Not in this dataset" and "zero credit awarded" are completely different statements and must never be blurred.
 - Never invent a figure for a college the context does not carry.
 
@@ -5382,8 +5601,14 @@ Deno.serve(async (req: Request) => {
     const rosterNames = Array.isArray(resolvedProfile)
       ? resolvedProfile.map((p: any) => p && p.college).filter(Boolean)
       : null;
-    const creditContext = buildCreditContext(
-      shapeCreditStatus(creditData, singleProfile?.college || null, rosterNames));
+    const creditStatus = shapeCreditStatus(creditData, singleProfile?.college || null, rosterNames);
+    // Where that college's applied and transcribed credit comes from (2026-09-30):
+    // one read, for one college, only once detection has named it. A college
+    // under the floor gets none — its figures are withheld whole.
+    if (creditStatus && creditStatus.college && !creditStatus.college.suppressed) {
+      creditStatus.sources = await fetchCollegeCreditSources(sb, creditStatus.college.id);
+    }
+    const creditContext = buildCreditContext(creditStatus);
 
     // Route CRED-STD — the canonical credential record. Looked up on every
     // question because a credential can be named in any of them, and the two

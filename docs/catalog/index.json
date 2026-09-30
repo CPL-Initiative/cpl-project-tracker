@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 500,
+   "count": 503,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4238,6 +4238,26 @@
      "updated": "2026-09-18"
     },
     {
+     "created": "2026-09-30",
+     "governs": [
+      "scripts/a11y.js",
+      "a11y.config.js",
+      "funding-model/index.html"
+     ],
+     "path": "docs/kb-notes/methodology-an-a11y-sweep-does-not-measure-alignment.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "a11y",
+      "layout",
+      "margins",
+      "playwright"
+     ],
+     "title": "An accessibility sweep does not measure alignment; probe the edges",
+     "type": "methodology",
+     "updated": "2026-09-30"
+    },
+    {
      "created": "2026-08-11",
      "governs": [
       "cip_crosswalk.js",
@@ -7464,7 +7484,8 @@
      "created": "2026-08-06",
      "governs": [
       "funding/_build_cr_backlog.py",
-      "tests/funding_cr_backlog_test.py"
+      "tests/funding_cr_backlog_test.py",
+      "kb/supabase_map_college_credit_sources.sql"
      ],
      "path": "docs/kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md",
      "status": "published",
@@ -7478,7 +7499,7 @@
      ],
      "title": "Small-cell suppression must survive subtraction",
      "type": "methodology",
-     "updated": "2026-08-06"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-05-28",
@@ -7682,6 +7703,27 @@
      "title": "The first run of a new instrument measures the instrument",
      "type": "methodology",
      "updated": "2026-09-04"
+    },
+    {
+     "created": "2026-09-30",
+     "governs": [
+      "kb/supabase_map_college_credit_summary.sql",
+      "kb/supabase_map_promote_custom_reports.sql",
+      "kb/receipts/map_college_credit_summary_per_figure_2026-09-30.sql",
+      "tests/college_briefing_withheld_figure.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-the-floor-belongs-to-each-figure.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "privacy",
+      "disclosure-control",
+      "student-data",
+      "suppression"
+     ],
+     "title": "The floor belongs to each figure",
+     "type": "methodology",
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-29",
@@ -9774,6 +9816,25 @@
      "updated": "2026-09-01"
     },
     {
+     "created": "2026-09-30",
+     "governs": [],
+     "path": "docs/kb-notes/reference-cccco-style-guide.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "style-guide",
+      "house-voice",
+      "writing",
+      "naming",
+      "brand",
+      "colors",
+      "cccco"
+     ],
+     "title": "The CCCCO style guide and brand basics \u2014 the usage, names and colors our writing follows",
+     "type": "reference",
+     "updated": "2026-09-30"
+    },
+    {
      "created": "2026-09-05",
      "governs": [],
      "path": "docs/kb-notes/reference-the-cpl-guiding-question.md",
@@ -10732,7 +10793,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 archived lessons (2026-06-11 \u2192 2026-09-01)",
      "type": null,
-     "updated": "2026-09-24"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-06-11",
@@ -13806,7 +13867,7 @@
      ],
      "title": "Disposition grain / student detail \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-28",
@@ -14381,8 +14442,45 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 278,
+   "count": 280,
    "docs": [
+    {
+     "created": "2026-09-30",
+     "governs": [],
+     "n": 309,
+     "path": "docs/session_309_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "sierra-retrieval-corpus",
+      "disposition-grain",
+      "military-split",
+      "suppression"
+     ],
+     "title": "Sierra reads where credit comes from; check her answers",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-30",
+     "governs": [],
+     "n": 308,
+     "path": "docs/session_308_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "reporting-box",
+      "public-view",
+      "my-college",
+      "style-guide",
+      "decision-sheet"
+     ],
+     "title": "build the Reporting box's college half on MAP's two contacts",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-30",
      "governs": [],
@@ -19104,5 +19202,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 995
+ "total": 1000
 }

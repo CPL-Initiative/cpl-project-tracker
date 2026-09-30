@@ -102,7 +102,8 @@ window.COBI_ADMIN_SURFACE = {
       "writes": [
         "cpl_funding_config",
         "cpl_funding_notes",
-        "cpl_funding_participation"
+        "cpl_funding_participation",
+        "cpl_funding_reports"
       ],
       "rpcs": [
         "cpl_funding_optin_review",
@@ -262,7 +263,8 @@ window.COBI_ADMIN_SURFACE = {
       "writes": [
         "cpl_funding_config",
         "cpl_funding_notes",
-        "cpl_funding_participation"
+        "cpl_funding_participation",
+        "cpl_funding_reports"
       ],
       "rpcs": [
         "cpl_funding_optin_review",

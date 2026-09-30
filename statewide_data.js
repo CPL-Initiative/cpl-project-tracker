@@ -119723,755 +119723,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
-      "exhibit_id": "MAPICA-PC-1-001|MAPICI-CP/P-1-001|MAPICI-CPL-1-001|MAPICI-KCET-1-001|MAPICI-PC1-1-001|MAPICI-PC2-1-001|MAPICI-PC3-1-001|MAPICI-PL1-1-001|MAPICI-PL2-1-001|MAPICI-PN(-1-001|MAPICI-PN2-1-001|MAPICI-SETP-1-001",
-      "exhibit_ids": [
-        "MAPICA-PC-1-001",
-        "MAPICI-CP/P-1-001",
-        "MAPICI-CPL-1-001",
-        "MAPICI-KCET-1-001",
-        "MAPICI-PC1-1-001",
-        "MAPICI-PC2-1-001",
-        "MAPICI-PC3-1-001",
-        "MAPICI-PL1-1-001",
-        "MAPICI-PL2-1-001",
-        "MAPICI-PN(-1-001",
-        "MAPICI-PN2-1-001",
-        "MAPICI-SETP-1-001"
-      ],
-      "title": "Paramedic License",
-      "unified_title": "Paramedic License",
-      "is_classified": true,
-      "issuing_agency": "California Emergency Medical Services Authority (EMSA)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "California Paramedic / Paramedicine",
-        "California Paramedic License",
-        "Kern County EMT-Paramedic Training Program",
-        "Paramedic Certificate",
-        "Paramedic Certification",
-        "Paramedic License",
-        "Paramedic License 2V(EMS-60/91)",
-        "Paramedic Licensure",
-        "Paramedic NCTI (EMS-60/91)",
-        "Samaritan EMT-Paramedic training program"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Health",
-      "sector": "Health",
-      "cip_sector": "51",
-      "top_codes": [
-        "103",
-        "104",
-        "171",
-        "89"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 11,
-      "adopter_names": [
-        "Bakersfield College",
-        "Cabrillo College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "Cuesta College",
-        "Las Positas College",
-        "Merced College",
-        "Moreno Valley College",
-        "Napa Valley College",
-        "Palo Verde College",
-        "West Los Angeles College"
-      ],
-      "potential": 83,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 94,
-      "credit_recs": [
-        {
-          "course": "ALD HTH 021",
-          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
-        },
-        {
-          "course": "ALD HTH 052",
-          "credit": "9 hours in EMERGENCY MEDICAL TRAINING - BASIC"
-        },
-        {
-          "course": "ALD HTH 043CO",
-          "credit": "4 hours in ANATOMY AND PHYSIOLOGY FOR EMERGENCY HEALTH CARE PERSONNEL"
-        },
-        {
-          "course": "ALD HTH 044CO",
-          "credit": "2 hours in INTRODUCTION TO EMERGENCY MEDICAL SERVICE SYSTEMS"
-        },
-        {
-          "course": "ALD HTH 045CO",
-          "credit": "2 hours in PATIENT ASSESSMENT AND AIRWAY MANAGEMENT"
-        },
-        {
-          "course": "ALD HTH 046CO",
-          "credit": "6 hours in CARDIOLOGY ASSESSMENT AND MEDICAL EMERGENCIES"
-        },
-        {
-          "course": "ALD HTH 047CO",
-          "credit": "4 hours in EMERGENCY RESPONSE TO CRISIS"
-        },
-        {
-          "course": "ALD HTH 048CO",
-          "credit": "5 hours in MEDICAL EMERGENCIES AND PHARMACOLOGICAL INTERVENTIONS"
-        },
-        {
-          "course": "ALD HTH 049CO",
-          "credit": "4 hours in CLINICAL INTERNSHIP"
-        },
-        {
-          "course": "ALD HTH 050CO",
-          "credit": "9 hours in FIELD INTERNSHIP"
-        },
-        {
-          "course": "ALD HTH 053",
-          "credit": "3.5 hours in EMERGENCY CARE TECHNICIAN"
-        },
-        {
-          "course": "KIN 13",
-          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
-        },
-        {
-          "course": "EMS 60",
-          "credit": "4.5 hours in Patient Assess/Airway Mgmt"
-        },
-        {
-          "course": "EMS 61",
-          "credit": "3 hours in Intro Med Pathophysiology"
-        },
-        {
-          "course": "EMS 62",
-          "credit": "4 hours in Emergency Pharmacology"
-        },
-        {
-          "course": "EMS 63",
-          "credit": "4 hours in Cardiology"
-        },
-        {
-          "course": "EMS 70",
-          "credit": "3.5 hours in Trauma Management"
-        },
-        {
-          "course": "EMS 71",
-          "credit": "3 hours in Clinical Med Specialty I"
-        },
-        {
-          "course": "EMS 80",
-          "credit": "4.5 hours in Medical Emergencies"
-        },
-        {
-          "course": "EMS 81",
-          "credit": "4 hours in Special Populations"
-        },
-        {
-          "course": "EMS 82",
-          "credit": "3 hours in Special Topics"
-        },
-        {
-          "course": "EMS 83",
-          "credit": "3 hours in Clinical Med Specialty II"
-        },
-        {
-          "course": "EMS 90",
-          "credit": "3 hours in Assessment Based Management"
-        },
-        {
-          "course": "EMS 91",
-          "credit": "10 hours in Paramedic Field Internship"
-        },
-        {
-          "course": "EMER 31",
-          "credit": "10 hours in Paramedic Field Internship"
-        },
-        {
-          "course": "EMTP 121",
-          "credit": "3 hours in Introduction to EMS"
-        },
-        {
-          "course": "EMTP 122",
-          "credit": "3 hours in Pharmacology in EMS"
-        },
-        {
-          "course": "EMTP 123",
-          "credit": "3 hours in Trauma Emergencies"
-        },
-        {
-          "course": "EMTP 124",
-          "credit": "2 hours in Trauma Certification"
-        },
-        {
-          "course": "EMTP 125",
-          "credit": "4 hours in Cardiorespiratory Emergencies"
-        },
-        {
-          "course": "EMTP 126",
-          "credit": "3 hours in Neuroendocrine Emergencies"
-        },
-        {
-          "course": "EMTP 127",
-          "credit": "3 hours in Medical Emergencies"
-        },
-        {
-          "course": "EMTP 128",
-          "credit": "4 hours in OB/GYN & Pedi Emergencies"
-        },
-        {
-          "course": "EMTP 129",
-          "credit": "4 hours in Special Populations, EMS Ops"
-        },
-        {
-          "course": "EMTP 130A",
-          "credit": "7 hours in Paramedic Clinical Education"
-        },
-        {
-          "course": "EMTP 130B",
-          "credit": "9 hours in Paramedic Field Internship"
-        },
-        {
-          "course": "EMTC B10",
-          "credit": "6 hours in Paramedic 1"
-        },
-        {
-          "course": "EMTC B11",
-          "credit": "1 hour in Paramedic Skills Lab 1"
-        },
-        {
-          "course": "EMTC B12",
-          "credit": "6 hours in Paramedic 2"
-        },
-        {
-          "course": "EMTC B13",
-          "credit": "6 hours in Paramedic 3"
-        },
-        {
-          "course": "EMTC B14",
-          "credit": "1 hour in Paramedic Skills Lab 2"
-        },
-        {
-          "course": "EMTC B15",
-          "credit": "6 hours in Paramedic 4"
-        },
-        {
-          "course": "EMTC B16",
-          "credit": "3.5 hours in Paramedic Clinical Lab"
-        },
-        {
-          "course": "EMTC B17",
-          "credit": "10 hours in Paramedic Field Internship"
-        },
-        {
-          "course": "EMS 61",
-          "credit": "3 hours in Introduction to Medical Pathophysiology"
-        },
-        {
-          "course": "EMS 60",
-          "credit": "4 hours in Patient Assessment and Airway Management"
-        },
-        {
-          "course": "EMS 70",
-          "credit": "2.5 hours in Trauma Management"
-        },
-        {
-          "course": "EMS 71",
-          "credit": "1.5 hours in Clinical Medical Specialty I"
-        },
-        {
-          "course": "EMS 80",
-          "credit": "4 hours in Medical Emergencies"
-        },
-        {
-          "course": "EMS 81",
-          "credit": "3 hours in Special Populations"
-        },
-        {
-          "course": "EMS 82",
-          "credit": "2.5 hours in Special Topics"
-        },
-        {
-          "course": "EMS 83",
-          "credit": "1.5 hours in Clinical Medical Specialty II"
-        },
-        {
-          "course": "EMS 91",
-          "credit": "8.5 hours in Paramedic Field Internship"
-        },
-        {
-          "course": "EMS 95",
-          "credit": "7 hours in Emergency Medical Technician (Basic)"
-        },
-        {
-          "course": "EMS 98",
-          "credit": "24 hours in EMT-Paramedic I (Didactic)"
-        },
-        {
-          "course": "EMS 99",
-          "credit": "16 hours in EMT-Paramedic II (Clinical & Field Internship)"
-        },
-        {
-          "course": "EMS 10",
-          "credit": "6 hours in Paramedic Theory 1"
-        },
-        {
-          "course": "EMS 11",
-          "credit": "6 hours in Paramedic Theory 2"
-        },
-        {
-          "course": "EMS 12",
-          "credit": "4 hours in Paramedic Laboratory 1"
-        },
-        {
-          "course": "EMS 13",
-          "credit": "4 hours in Paramedic Laboratory 2"
-        },
-        {
-          "course": "EMS 16",
-          "credit": "3 hours in Paramedic Clinical Occupational Work Experience"
-        },
-        {
-          "course": "EMS 17",
-          "credit": "1 hour in Paramedic Capstone Occupational Work Experience"
-        },
-        {
-          "course": "EMS 20",
-          "credit": "7 hours in Emergency Medical Technician"
-        },
-        {
-          "course": "EMS 30",
-          "credit": "3 hours in Emergency Medical Responder"
-        },
-        {
-          "course": "EMS 70",
-          "credit": "0.5 hours in CPR for Health Care Providers"
-        },
-        {
-          "course": "EMER 10",
-          "credit": "12.5 hours in Paramedic I"
-        },
-        {
-          "course": "EMER 11",
-          "credit": "1.5 hours in Paramedic I Lab"
-        },
-        {
-          "course": "EMER 20",
-          "credit": "11.5 hours in Advanced Paramedic"
-        },
-        {
-          "course": "EMER 21",
-          "credit": "1.5 hours in Advanced Paramedic Lab"
-        },
-        {
-          "course": "EMER 31",
-          "credit": "9 hours in Paramedic Field Experience"
-        },
-        {
-          "course": "EMER 30",
-          "credit": "3 hours in Paramedic, Acute Clinical Lab"
-        },
-        {
-          "course": "EMER 50A",
-          "credit": "3 hours in Emergency Medical Technician 1, Module A"
-        },
-        {
-          "course": "EMER 50A",
-          "credit": "2.5 hours in Emergency Medical Technician 1, Module A"
-        },
-        {
-          "course": "EMER 50B",
-          "credit": "2.5 hours in Emergency Medical Technician 1, Module B"
-        },
-        {
-          "course": "EMER 50B",
-          "credit": "4.5 hours in Emergency Medical Technician 1, Module B"
-        },
-        {
-          "course": "EMS 210",
-          "credit": "17 hours in PARAMEDIC THEORY I"
-        },
-        {
-          "course": "EMS 211",
-          "credit": "5 hours in PARAMEDIC THEORY II"
-        },
-        {
-          "course": "EMS 211L",
-          "credit": "1.5 hours in PARAMEDIC SKILLS"
-        },
-        {
-          "course": "EMS 212",
-          "credit": "4 hours in PARAMEDIC CLINICAL"
-        },
-        {
-          "course": "EMS 213",
-          "credit": "9 hours in PARAMEDIC INTERNSHIP"
-        },
-        {
-          "course": "EMS 161",
-          "credit": "1.5 hours in Emergency Medical Technician Refresher"
-        },
-        {
-          "course": "EMTP 098",
-          "credit": "3 hours in Special Populations"
-        },
-        {
-          "course": "EMTP 090",
-          "credit": "1.5 hours in PARAMEDIC PREPARATION"
-        },
-        {
-          "course": "EMTP 093",
-          "credit": "4 hours in Paramedic Assessment and Airway Management"
-        },
-        {
-          "course": "EMTP 094",
-          "credit": "4 hours in Paramedic Cardiology"
-        },
-        {
-          "course": "EMTP 096",
-          "credit": "2.5 hours in Traumatic Emergencies Management"
-        },
-        {
-          "course": "EMTP 097",
-          "credit": "1.5 hours in Clinical Specialty I"
-        },
-        {
-          "course": "EMTP 099",
-          "credit": "2.5 hours in  Special Topics"
-        },
-        {
-          "course": "EMTP 100",
-          "credit": "1.5 hours in Clinical Specialty II Internship"
-        },
-        {
-          "course": "EMTP 091",
-          "credit": "3 hours in Paramedic Anatomy and Physiology"
-        },
-        {
-          "course": "EMTP 092",
-          "credit": "4 hours in Paramedic Pharmacology"
-        },
-        {
-          "course": "EMTP 095",
-          "credit": "4 hours in Paramedic Medical Emergencies"
-        },
-        {
-          "course": "EMTP 101",
-          "credit": "11.5 hours in Paramedic Field Internship"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "10 hours in Paramedic Field Internship",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICA-PC-1-001",
-          "title": "Paramedic Certificate",
-          "units": 10.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CP/P-1-001",
-          "title": "California Paramedic / Paramedicine",
-          "units": 49.5,
-          "lines": 12
-        },
-        {
-          "id": "MAPICI-CPL-1-001",
-          "title": "California Paramedic License",
-          "units": 45.0,
-          "lines": 11
-        },
-        {
-          "id": "MAPICI-KCET-1-001",
-          "title": "Kern County EMT-Paramedic Training Program",
-          "units": 39.5,
-          "lines": 8
-        },
-        {
-          "id": "MAPICI-PC1-1-001",
-          "title": "Paramedic Certificate",
-          "units": 47.0,
-          "lines": 3
-        },
-        {
-          "id": "MAPICI-PC2-1-001",
-          "title": "Paramedic Certificate",
-          "units": 34.5,
-          "lines": 9
-        },
-        {
-          "id": "MAPICI-PC3-1-001",
-          "title": "Paramedic Certification",
-          "units": 51.5,
-          "lines": 10
-        },
-        {
-          "id": "MAPICI-PL1-1-001",
-          "title": "Paramedic License",
-          "units": 36.5,
-          "lines": 5
-        },
-        {
-          "id": "MAPICI-PL2-1-001",
-          "title": "Paramedic Licensure",
-          "units": 43.0,
-          "lines": 12
-        },
-        {
-          "id": "MAPICI-PN(-1-001",
-          "title": "Paramedic NCTI (EMS-60/91)",
-          "units": 49.5,
-          "lines": 12
-        },
-        {
-          "id": "MAPICI-PN2-1-001",
-          "title": "Paramedic License 2V(EMS-60/91)",
-          "units": 38.5,
-          "lines": 11
-        },
-        {
-          "id": "MAPICI-SETP-1-001",
-          "title": "Samaritan EMT-Paramedic training program",
-          "units": 1.5,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 39.5,
-        "Cabrillo College": 0.5,
-        "City College of San Francisco": 45.0,
-        "College of the Desert": 43.0,
-        "Cuesta College": 36.5,
-        "Las Positas College": 34.5,
-        "Merced College": 61.5,
-        "Moreno Valley College": 80.0,
-        "Napa Valley College": 47.0,
-        "Palo Verde College": 1.5,
-        "West Los Angeles College": 49.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 8,
-        "Cabrillo College": 1,
-        "City College of San Francisco": 11,
-        "College of the Desert": 12,
-        "Cuesta College": 5,
-        "Las Positas College": 9,
-        "Merced College": 11,
-        "Moreno Valley College": 21,
-        "Napa Valley College": 3,
-        "Palo Verde College": 1,
-        "West Los Angeles College": 11
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          36,
-          37,
-          38,
-          39,
-          40,
-          41,
-          42,
-          43
-        ],
-        "Cabrillo College": [
-          11
-        ],
-        "City College of San Francisco": [
-          25,
-          26,
-          27,
-          28,
-          29,
-          30,
-          31,
-          32,
-          33,
-          34,
-          35
-        ],
-        "College of the Desert": [
-          81,
-          82,
-          83,
-          84,
-          85,
-          86,
-          87,
-          88,
-          89,
-          90,
-          91,
-          92
-        ],
-        "Cuesta College": [
-          75,
-          76,
-          77,
-          78,
-          79
-        ],
-        "Las Positas College": [
-          56,
-          57,
-          58,
-          59,
-          60,
-          61,
-          62,
-          63,
-          64
-        ],
-        "Merced College": [
-          24,
-          65,
-          66,
-          67,
-          68,
-          69,
-          70,
-          71,
-          72,
-          73,
-          74
-        ],
-        "Moreno Valley College": [
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          20,
-          21,
-          22,
-          23,
-          44,
-          45,
-          46,
-          47,
-          48,
-          49,
-          50,
-          51,
-          52
-        ],
-        "Napa Valley College": [
-          53,
-          54,
-          55
-        ],
-        "Palo Verde College": [
-          80
-        ],
-        "West Los Angeles College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10
-        ]
-      },
-      "peer_units_median": 43.0,
-      "peer_units_max": 80.0,
-      "rec_units_total": 438.0
-    },
-    {
       "exhibit_id": "MAPICI-MOSW-1-001",
       "exhibit_ids": [
         "MAPICI-MOSW-1-001"
@@ -121853,6 +121104,773 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 5.0,
       "peer_units_max": 5.0,
       "rec_units_total": 5.0
+    },
+    {
+      "exhibit_id": "MAPICA-PC-1-001|MAPICI-CP/P-1-001|MAPICI-CPL-1-001|MAPICI-KCET-1-001|MAPICI-PC1-1-001|MAPICI-PC2-1-001|MAPICI-PC3-1-001|MAPICI-PL1-1-001|MAPICI-PL2-1-001|MAPICI-PN(-1-001|MAPICI-PN2-1-001|MAPICI-SETP-1-001",
+      "exhibit_ids": [
+        "MAPICA-PC-1-001",
+        "MAPICI-CP/P-1-001",
+        "MAPICI-CPL-1-001",
+        "MAPICI-KCET-1-001",
+        "MAPICI-PC1-1-001",
+        "MAPICI-PC2-1-001",
+        "MAPICI-PC3-1-001",
+        "MAPICI-PL1-1-001",
+        "MAPICI-PL2-1-001",
+        "MAPICI-PN(-1-001",
+        "MAPICI-PN2-1-001",
+        "MAPICI-SETP-1-001"
+      ],
+      "title": "Paramedic License",
+      "unified_title": "Paramedic License",
+      "is_classified": true,
+      "issuing_agency": "California Emergency Medical Services Authority (EMSA)",
+      "training_agency": "",
+      "confidence_title": 0.85,
+      "confidence_issuer": 0.95,
+      "quality_flag": "",
+      "raw_titles": [
+        "California Paramedic / Paramedicine",
+        "California Paramedic License",
+        "Kern County EMT-Paramedic Training Program",
+        "Paramedic Certificate",
+        "Paramedic Certification",
+        "Paramedic License",
+        "Paramedic License 2V(EMS-60/91)",
+        "Paramedic Licensure",
+        "Paramedic NCTI (EMS-60/91)",
+        "Samaritan EMT-Paramedic training program"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "cip_sector": "51",
+      "top_codes": [
+        "103",
+        "104",
+        "171",
+        "89"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 12,
+      "adopter_names": [
+        "Bakersfield College",
+        "Cabrillo College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Cuesta College",
+        "Las Positas College",
+        "Merced College",
+        "Moreno Valley College",
+        "Napa Valley College",
+        "Palo Verde College",
+        "West Los Angeles College"
+      ],
+      "potential": 82,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 94,
+      "credit_recs": [
+        {
+          "course": "ALD HTH 021",
+          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
+        },
+        {
+          "course": "ALD HTH 052",
+          "credit": "9 hours in EMERGENCY MEDICAL TRAINING - BASIC"
+        },
+        {
+          "course": "ALD HTH 043CO",
+          "credit": "4 hours in ANATOMY AND PHYSIOLOGY FOR EMERGENCY HEALTH CARE PERSONNEL"
+        },
+        {
+          "course": "ALD HTH 044CO",
+          "credit": "2 hours in INTRODUCTION TO EMERGENCY MEDICAL SERVICE SYSTEMS"
+        },
+        {
+          "course": "ALD HTH 045CO",
+          "credit": "2 hours in PATIENT ASSESSMENT AND AIRWAY MANAGEMENT"
+        },
+        {
+          "course": "ALD HTH 046CO",
+          "credit": "6 hours in CARDIOLOGY ASSESSMENT AND MEDICAL EMERGENCIES"
+        },
+        {
+          "course": "ALD HTH 047CO",
+          "credit": "4 hours in EMERGENCY RESPONSE TO CRISIS"
+        },
+        {
+          "course": "ALD HTH 048CO",
+          "credit": "5 hours in MEDICAL EMERGENCIES AND PHARMACOLOGICAL INTERVENTIONS"
+        },
+        {
+          "course": "ALD HTH 049CO",
+          "credit": "4 hours in CLINICAL INTERNSHIP"
+        },
+        {
+          "course": "ALD HTH 050CO",
+          "credit": "9 hours in FIELD INTERNSHIP"
+        },
+        {
+          "course": "ALD HTH 053",
+          "credit": "3.5 hours in EMERGENCY CARE TECHNICIAN"
+        },
+        {
+          "course": "KIN 13",
+          "credit": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
+        },
+        {
+          "course": "EMS 60",
+          "credit": "4.5 hours in Patient Assess/Airway Mgmt"
+        },
+        {
+          "course": "EMS 61",
+          "credit": "3 hours in Intro Med Pathophysiology"
+        },
+        {
+          "course": "EMS 62",
+          "credit": "4 hours in Emergency Pharmacology"
+        },
+        {
+          "course": "EMS 63",
+          "credit": "4 hours in Cardiology"
+        },
+        {
+          "course": "EMS 70",
+          "credit": "3.5 hours in Trauma Management"
+        },
+        {
+          "course": "EMS 71",
+          "credit": "3 hours in Clinical Med Specialty I"
+        },
+        {
+          "course": "EMS 80",
+          "credit": "4.5 hours in Medical Emergencies"
+        },
+        {
+          "course": "EMS 81",
+          "credit": "4 hours in Special Populations"
+        },
+        {
+          "course": "EMS 82",
+          "credit": "3 hours in Special Topics"
+        },
+        {
+          "course": "EMS 83",
+          "credit": "3 hours in Clinical Med Specialty II"
+        },
+        {
+          "course": "EMS 90",
+          "credit": "3 hours in Assessment Based Management"
+        },
+        {
+          "course": "EMS 91",
+          "credit": "10 hours in Paramedic Field Internship"
+        },
+        {
+          "course": "EMT 11",
+          "credit": "7.5-14 hours in Emergency Medical Services"
+        },
+        {
+          "course": "EMT 405",
+          "credit": "7.5-14 hours in Emergency Medical Services"
+        },
+        {
+          "course": "EMER 31",
+          "credit": "10 hours in Paramedic Field Internship"
+        },
+        {
+          "course": "EMTP 121",
+          "credit": "3 hours in Introduction to EMS"
+        },
+        {
+          "course": "EMTP 122",
+          "credit": "3 hours in Pharmacology in EMS"
+        },
+        {
+          "course": "EMTP 123",
+          "credit": "3 hours in Trauma Emergencies"
+        },
+        {
+          "course": "EMTP 124",
+          "credit": "2 hours in Trauma Certification"
+        },
+        {
+          "course": "EMTP 125",
+          "credit": "4 hours in Cardiorespiratory Emergencies"
+        },
+        {
+          "course": "EMTP 126",
+          "credit": "3 hours in Neuroendocrine Emergencies"
+        },
+        {
+          "course": "EMTP 127",
+          "credit": "3 hours in Medical Emergencies"
+        },
+        {
+          "course": "EMTP 128",
+          "credit": "4 hours in OB/GYN & Pedi Emergencies"
+        },
+        {
+          "course": "EMTP 129",
+          "credit": "4 hours in Special Populations, EMS Ops"
+        },
+        {
+          "course": "EMTP 130A",
+          "credit": "7 hours in Paramedic Clinical Education"
+        },
+        {
+          "course": "EMTP 130B",
+          "credit": "9 hours in Paramedic Field Internship"
+        },
+        {
+          "course": "EMTC B10",
+          "credit": "6 hours in Paramedic 1"
+        },
+        {
+          "course": "EMTC B11",
+          "credit": "1 hour in Paramedic Skills Lab 1"
+        },
+        {
+          "course": "EMTC B12",
+          "credit": "6 hours in Paramedic 2"
+        },
+        {
+          "course": "EMTC B13",
+          "credit": "6 hours in Paramedic 3"
+        },
+        {
+          "course": "EMTC B14",
+          "credit": "1 hour in Paramedic Skills Lab 2"
+        },
+        {
+          "course": "EMTC B15",
+          "credit": "6 hours in Paramedic 4"
+        },
+        {
+          "course": "EMTC B16",
+          "credit": "3.5 hours in Paramedic Clinical Lab"
+        },
+        {
+          "course": "EMTC B17",
+          "credit": "10 hours in Paramedic Field Internship"
+        },
+        {
+          "course": "EMS 61",
+          "credit": "3 hours in Introduction to Medical Pathophysiology"
+        },
+        {
+          "course": "EMS 60",
+          "credit": "4 hours in Patient Assessment and Airway Management"
+        },
+        {
+          "course": "EMS 70",
+          "credit": "2.5 hours in Trauma Management"
+        },
+        {
+          "course": "EMS 71",
+          "credit": "1.5 hours in Clinical Medical Specialty I"
+        },
+        {
+          "course": "EMS 80",
+          "credit": "4 hours in Medical Emergencies"
+        },
+        {
+          "course": "EMS 81",
+          "credit": "3 hours in Special Populations"
+        },
+        {
+          "course": "EMS 82",
+          "credit": "2.5 hours in Special Topics"
+        },
+        {
+          "course": "EMS 83",
+          "credit": "1.5 hours in Clinical Medical Specialty II"
+        },
+        {
+          "course": "EMS 91",
+          "credit": "8.5 hours in Paramedic Field Internship"
+        },
+        {
+          "course": "EMS 95",
+          "credit": "7 hours in Emergency Medical Technician (Basic)"
+        },
+        {
+          "course": "EMS 98",
+          "credit": "24 hours in EMT-Paramedic I (Didactic)"
+        },
+        {
+          "course": "EMS 99",
+          "credit": "16 hours in EMT-Paramedic II (Clinical & Field Internship)"
+        },
+        {
+          "course": "EMS 10",
+          "credit": "6 hours in Paramedic Theory 1"
+        },
+        {
+          "course": "EMS 11",
+          "credit": "6 hours in Paramedic Theory 2"
+        },
+        {
+          "course": "EMS 12",
+          "credit": "4 hours in Paramedic Laboratory 1"
+        },
+        {
+          "course": "EMS 13",
+          "credit": "4 hours in Paramedic Laboratory 2"
+        },
+        {
+          "course": "EMS 16",
+          "credit": "3 hours in Paramedic Clinical Occupational Work Experience"
+        },
+        {
+          "course": "EMS 17",
+          "credit": "1 hour in Paramedic Capstone Occupational Work Experience"
+        },
+        {
+          "course": "EMS 20",
+          "credit": "7 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMS 30",
+          "credit": "3 hours in Emergency Medical Responder"
+        },
+        {
+          "course": "EMS 70",
+          "credit": "0.5 hours in CPR for Health Care Providers"
+        },
+        {
+          "course": "EMER 10",
+          "credit": "12.5 hours in Paramedic I"
+        },
+        {
+          "course": "EMER 11",
+          "credit": "1.5 hours in Paramedic I Lab"
+        },
+        {
+          "course": "EMER 20",
+          "credit": "11.5 hours in Advanced Paramedic"
+        },
+        {
+          "course": "EMER 21",
+          "credit": "1.5 hours in Advanced Paramedic Lab"
+        },
+        {
+          "course": "EMER 31",
+          "credit": "9 hours in Paramedic Field Experience"
+        },
+        {
+          "course": "EMER 30",
+          "credit": "3 hours in Paramedic, Acute Clinical Lab"
+        },
+        {
+          "course": "EMER 50A",
+          "credit": "3 hours in Emergency Medical Technician 1, Module A"
+        },
+        {
+          "course": "EMER 50A",
+          "credit": "2.5 hours in Emergency Medical Technician 1, Module A"
+        },
+        {
+          "course": "EMER 50B",
+          "credit": "2.5 hours in Emergency Medical Technician 1, Module B"
+        },
+        {
+          "course": "EMER 50B",
+          "credit": "4.5 hours in Emergency Medical Technician 1, Module B"
+        },
+        {
+          "course": "EMS 210",
+          "credit": "17 hours in PARAMEDIC THEORY I"
+        },
+        {
+          "course": "EMS 211",
+          "credit": "5 hours in PARAMEDIC THEORY II"
+        },
+        {
+          "course": "EMS 211L",
+          "credit": "1.5 hours in PARAMEDIC SKILLS"
+        },
+        {
+          "course": "EMS 212",
+          "credit": "4 hours in PARAMEDIC CLINICAL"
+        },
+        {
+          "course": "EMS 213",
+          "credit": "9 hours in PARAMEDIC INTERNSHIP"
+        },
+        {
+          "course": "EMS 161",
+          "credit": "1.5 hours in Emergency Medical Technician Refresher"
+        },
+        {
+          "course": "EMTP 098",
+          "credit": "3 hours in Special Populations"
+        },
+        {
+          "course": "EMTP 090",
+          "credit": "1.5 hours in PARAMEDIC PREPARATION"
+        },
+        {
+          "course": "EMTP 093",
+          "credit": "4 hours in Paramedic Assessment and Airway Management"
+        },
+        {
+          "course": "EMTP 094",
+          "credit": "4 hours in Paramedic Cardiology"
+        },
+        {
+          "course": "EMTP 096",
+          "credit": "2.5 hours in Traumatic Emergencies Management"
+        },
+        {
+          "course": "EMTP 097",
+          "credit": "1.5 hours in Clinical Specialty I"
+        },
+        {
+          "course": "EMTP 099",
+          "credit": "2.5 hours in  Special Topics"
+        },
+        {
+          "course": "EMTP 100",
+          "credit": "1.5 hours in Clinical Specialty II Internship"
+        },
+        {
+          "course": "EMTP 091",
+          "credit": "3 hours in Paramedic Anatomy and Physiology"
+        },
+        {
+          "course": "EMTP 092",
+          "credit": "4 hours in Paramedic Pharmacology"
+        },
+        {
+          "course": "EMTP 095",
+          "credit": "4 hours in Paramedic Medical Emergencies"
+        },
+        {
+          "course": "EMTP 101",
+          "credit": "11.5 hours in Paramedic Field Internship"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "7.5-14 hours in Emergency Medical Services",
+          "cid": ""
+        },
+        {
+          "credit": "10 hours in Paramedic Field Internship",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-PC-1-001",
+          "title": "Paramedic Certificate",
+          "units": 25.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPICI-CP/P-1-001",
+          "title": "California Paramedic / Paramedicine",
+          "units": 49.5,
+          "lines": 12
+        },
+        {
+          "id": "MAPICI-CPL-1-001",
+          "title": "California Paramedic License",
+          "units": 45.0,
+          "lines": 11
+        },
+        {
+          "id": "MAPICI-KCET-1-001",
+          "title": "Kern County EMT-Paramedic Training Program",
+          "units": 39.5,
+          "lines": 8
+        },
+        {
+          "id": "MAPICI-PC1-1-001",
+          "title": "Paramedic Certificate",
+          "units": 47.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPICI-PC2-1-001",
+          "title": "Paramedic Certificate",
+          "units": 34.5,
+          "lines": 9
+        },
+        {
+          "id": "MAPICI-PC3-1-001",
+          "title": "Paramedic Certification",
+          "units": 51.5,
+          "lines": 10
+        },
+        {
+          "id": "MAPICI-PL1-1-001",
+          "title": "Paramedic License",
+          "units": 36.5,
+          "lines": 5
+        },
+        {
+          "id": "MAPICI-PL2-1-001",
+          "title": "Paramedic Licensure",
+          "units": 43.0,
+          "lines": 12
+        },
+        {
+          "id": "MAPICI-PN(-1-001",
+          "title": "Paramedic NCTI (EMS-60/91)",
+          "units": 49.5,
+          "lines": 12
+        },
+        {
+          "id": "MAPICI-PN2-1-001",
+          "title": "Paramedic License 2V(EMS-60/91)",
+          "units": 38.5,
+          "lines": 11
+        },
+        {
+          "id": "MAPICI-SETP-1-001",
+          "title": "Samaritan EMT-Paramedic training program",
+          "units": 1.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 39.5,
+        "Cabrillo College": 0.5,
+        "Chaffey College": 15.0,
+        "City College of San Francisco": 45.0,
+        "College of the Desert": 43.0,
+        "Cuesta College": 36.5,
+        "Las Positas College": 34.5,
+        "Merced College": 61.5,
+        "Moreno Valley College": 80.0,
+        "Napa Valley College": 47.0,
+        "Palo Verde College": 1.5,
+        "West Los Angeles College": 49.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 8,
+        "Cabrillo College": 1,
+        "Chaffey College": 2,
+        "City College of San Francisco": 11,
+        "College of the Desert": 12,
+        "Cuesta College": 5,
+        "Las Positas College": 9,
+        "Merced College": 11,
+        "Moreno Valley College": 21,
+        "Napa Valley College": 3,
+        "Palo Verde College": 1,
+        "West Los Angeles College": 11
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ],
+        "Cabrillo College": [
+          11
+        ],
+        "Chaffey College": [
+          24,
+          25
+        ],
+        "City College of San Francisco": [
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37
+        ],
+        "College of the Desert": [
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94
+        ],
+        "Cuesta College": [
+          77,
+          78,
+          79,
+          80,
+          81
+        ],
+        "Las Positas College": [
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66
+        ],
+        "Merced College": [
+          26,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76
+        ],
+        "Moreno Valley College": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54
+        ],
+        "Napa Valley College": [
+          55,
+          56,
+          57
+        ],
+        "Palo Verde College": [
+          82
+        ],
+        "West Los Angeles College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "peer_units_median": 41.25,
+      "peer_units_max": 80.0,
+      "rec_units_total": 453.0
     },
     {
       "exhibit_id": "MAPCXN-V1TE-1-001",
@@ -253472,6 +253490,226 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Lemoore College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-CPT(1-1-001",
+      "exhibit_ids": [
+        "MAPICI-CPT(1-1-001"
+      ],
+      "title": "Certified Personal Trainer (CPT)",
+      "unified_title": "Certified Personal Trainer (CPT)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Certified Personal Trainer (CPT)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Education",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "31",
+      "top_codes": [
+        "41"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Glendale Community College"
+      ],
+      "potential": 48,
+      "potential_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 49,
+      "credit_recs": [
+        {
+          "course": "KIN 156",
+          "credit": "4 hours in Foundations for Personal Fitness Training"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CPT(1-1-001",
+          "title": "Certified Personal Trainer (CPT)",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Glendale Community College": 4.0
+      },
+      "adopter_lines": {
+        "Glendale Community College": 1
+      },
+      "adopter_rec_idx": {
+        "Glendale Community College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPICI-CGFI-1-001",
+      "exhibit_ids": [
+        "MAPICI-CGFI-1-001"
+      ],
+      "title": "Certified Group Fitness Instructor (GFI)",
+      "unified_title": "Certified Group Fitness Instructor (GFI)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Certified Group Fitness Instructor (GFI)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Education",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "31",
+      "top_codes": [
+        "41"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Glendale Community College"
+      ],
+      "potential": 48,
+      "potential_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 49,
+      "credit_recs": [
+        {
+          "course": "KIN 155",
+          "credit": "3 hours in Foundations for Group Exercise Instruction"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CGFI-1-001",
+          "title": "Certified Group Fitness Instructor (GFI)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Glendale Community College": 3.0
+      },
+      "adopter_lines": {
+        "Glendale Community College": 1
+      },
+      "adopter_rec_idx": {
+        "Glendale Community College": [
           0
         ]
       },
@@ -426038,11 +426276,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Chaffey College",
-        "credit_recs": 543,
-        "exhibits": 459,
+        "credit_recs": 545,
+        "exhibits": 460,
         "disciplines": 18,
-        "ccc_collaborative": 75,
-        "industry_certs": 124,
+        "ccc_collaborative": 77,
+        "industry_certs": 126,
         "pct": 3.9
       },
       {
@@ -426289,6 +426527,15 @@ window.CPL_STATEWIDE = {
         "pct": 1.0
       },
       {
+        "college": "Glendale Community College",
+        "credit_recs": 142,
+        "exhibits": 104,
+        "disciplines": 15,
+        "ccc_collaborative": 28,
+        "industry_certs": 36,
+        "pct": 1.0
+      },
+      {
         "college": "Napa Valley College",
         "credit_recs": 142,
         "exhibits": 125,
@@ -426303,15 +426550,6 @@ window.CPL_STATEWIDE = {
         "exhibits": 125,
         "disciplines": 12,
         "ccc_collaborative": 2,
-        "industry_certs": 34,
-        "pct": 1.0
-      },
-      {
-        "college": "Glendale Community College",
-        "credit_recs": 140,
-        "exhibits": 102,
-        "disciplines": 15,
-        "ccc_collaborative": 28,
         "industry_certs": 34,
         "pct": 1.0
       },
@@ -426976,11 +427214,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 477,
+        "credit_recs": 479,
         "exhibits": 237,
         "courses": 321,
         "colleges": 47,
-        "ccc_collaborative": 34,
+        "ccc_collaborative": 36,
         "pct": 3.4
       },
       {
@@ -427066,9 +427304,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Education",
-        "credit_recs": 93,
-        "exhibits": 38,
-        "courses": 58,
+        "credit_recs": 95,
+        "exhibits": 40,
+        "courses": 60,
         "colleges": 27,
         "ccc_collaborative": 28,
         "pct": 0.7
@@ -427143,12 +427381,12 @@ window.CPL_STATEWIDE = {
         "credit_recs": 7362,
         "exhibits": 2676,
         "colleges": 84,
-        "pct": 52.9
+        "pct": 52.8
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3748,
-        "exhibits": 1170,
+        "credit_recs": 3752,
+        "exhibits": 1172,
         "colleges": 79,
         "pct": 26.9
       },
@@ -427157,7 +427395,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 2166,
         "exhibits": 1700,
         "colleges": 60,
-        "pct": 15.6
+        "pct": 15.5
       },
       {
         "cpl_type": "Portfolio Review",
@@ -427191,14 +427429,14 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2831,
-        "exhibits": 1118,
+        "credit_recs": 2833,
+        "exhibits": 1120,
         "colleges": 76,
         "pct": 20.3
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1375,
+        "credit_recs": 1377,
         "exhibits": 401,
         "colleges": 42,
         "pct": 9.9
@@ -427256,15 +427494,15 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12347,
-        "exhibits": 5767,
+        "credit_recs": 12349,
+        "exhibits": 5769,
         "colleges": 96,
         "disciplines": 23,
-        "pct": 88.7
+        "pct": 88.6
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1360,
+        "credit_recs": 1362,
         "exhibits": 167,
         "colleges": 65,
         "disciplines": 11,
@@ -427682,8 +427920,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-30T12:40:39",
-  "total_credit_recs": 13927,
+  "generated_at": "2026-09-30T18:02:41",
+  "total_credit_recs": 13931,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

@@ -194,8 +194,11 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
       seg && Array.from(seg.querySelectorAll("button")).map((b) => b.textContent).join("|") === "All institutions|My CPL Funding");
     click(w, seg.querySelector('[data-val="one"]'));
     const pick = doc.getElementById("cplFundOnePick");
-    check("6b: My CPL Funding swaps the table for an institution picker", pick && !doc.getElementById("cplFundTable") &&
-      pick.querySelectorAll("option").length === H.D.colleges.length + 1);
+    // Every institution, then (Sam, 2026-09-30) each district of two or more in
+    // its own group: tests/cpl_funding_public_view_asks.test.js guards the districts.
+    check("6b: My CPL Funding swaps the table for an institution or district picker", pick && !doc.getElementById("cplFundTable") &&
+      pick.querySelectorAll('optgroup[label="Institutions"] option').length === H.D.colleges.length &&
+      pick.querySelector('option[value=""]') !== null);
     pick.value = SEM.college;
     pick.dispatchEvent(new w.Event("change"));
     await tick(10);

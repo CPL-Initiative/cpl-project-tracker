@@ -611,7 +611,10 @@ function MOTION(known) {
 
   for (const key of keys) {
     const cfg = PAGES[key];
-    const url = `${base}/${cfg.file}`;
+    /* `query` opens the file in a state its own link reaches (S307: the funding
+       tab's Public view by ?fundview=public). Kept apart from `file`, which
+       names a path on disk and is checked as one. */
+    const url = `${base}/${cfg.file}${cfg.query || ""}`;
     const widths = (cfg.widths || WIDTHS).slice().sort((a, b) => b - a);   // widest FIRST: it is the baseline
     const settle = cfg.settle || 450;
 
@@ -652,7 +655,7 @@ function MOTION(known) {
     }
 
     console.log(`\n══ ${cfg.title}`);
-    console.log(`   ${cfg.file} · ${routes.length} route(s) × ${widths.length} width(s)`);
+    console.log(`   ${cfg.file}${cfg.query || ""} · ${routes.length} route(s) × ${widths.length} width(s)`);
 
     const found = new Map();                          // route name -> [finding strings]
     const note = (r, s) => { if (!found.has(r)) found.set(r, []); found.get(r).push(s); };

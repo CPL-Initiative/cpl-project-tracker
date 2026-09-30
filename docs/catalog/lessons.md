@@ -46,7 +46,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [CPL Assistant (Sierra) lessons — archive](../cpl_assistant_lessons_archive.md) | `cpl_assistant_lessons_archive.md` | 2026-09-11 | 2026-09-11 |
 | [CPL executive presentations — lessons (BOG update + CBO budget workshop)](../cpl_presentations_lessons.md) | `cpl_presentations_lessons.md` | 2026-07-20 |  |
 | [CPL Fact Sheet — lessons](../fact_sheet_lessons.md) | `fact_sheet_lessons.md` | 2026-06-25 | 2026-08-21 |
-| [CPL Implementation Funding tab — archived lessons (2026-06-11 → 2026-09-01)](../cpl_funding_lessons_archive.md) | `cpl_funding_lessons_archive.md` | 2026-06-11 | 2026-09-24 |
+| [CPL Implementation Funding tab — archived lessons (2026-06-11 → 2026-09-01)](../cpl_funding_lessons_archive.md) | `cpl_funding_lessons_archive.md` | 2026-06-11 | 2026-09-30 |
 | [CPL Implementation Funding tab — workstream lessons](../cpl_funding_lessons.md) | `cpl_funding_lessons.md` | 2026-06-11 | 2026-09-30 |
 | [CPL News lane — lessons](../cpl_news_lessons.md) | `cpl_news_lessons.md` | 2026-06-21 |  |
 | [CPL Pathways tab — apprenticeship-to-baccalaureate course maps (lessons)](../cpl_pathways_lessons.md) | `cpl_pathways_lessons.md` | 2026-07-10 |  |

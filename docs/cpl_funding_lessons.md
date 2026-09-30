@@ -42,98 +42,10 @@ shell-first, then new-files-only.
 > the noncredit lane's first shape, Sam's dial-moving day and the docx
 > migration) on **2026-09-01**, and the 2026-08-31 → 2026-09-01 sections (the
 > one-pool port, its test family and the deck run: S215–S217) on **2026-09-24**, and the 2026-09-01 section on
-the two consolidations (Session 219) on **2026-09-30** (S306) — each time because the doc crossed its size
+the two consolidations (Session 219) on **2026-09-30** (S306), and the 2026-09-02 explainer audit (S219) on
+> **2026-09-30** (S307) — each time because the doc crossed its size
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
-
-## 2026-09-02 — Session 219 (SkyTrim): the explainer audit, and a figure that was never computed
-
-Sam asked for a register pass over the public explainer — *"revise any
-spoken-like text"* — and gave one example: **"Noncredit funding rides every
-award's face — not a separate pot."** His replacement named the instrument
-(MIS-reported NC FTES), the mechanism (earned against the model's priorities)
-and the counting rule (originating in noncredit, awarded at a credit college).
-
-The S217 audit was still open on the same page, so it ran as one pass. That
-turned out to matter: **the sentences that read worst were the sentences that
-were wrong.**
-
-### "Pot" was doing two kinds of damage
-
-`pot` appeared nineteen times across the two explainer pages. It is banned
-vocabulary (`CLAUDE.md`, Funding vocabulary: say **funding**, not "pool" — and
-"pot" is worse), and it is also imprecise in a way that matters here: the model
-has ONE total, and "a separate pot", "the same pot", "half that pot" invite a
-reader to picture several. Sam's own example objected to exactly that — *"could
-be misconstrued"* — and the fix is not a synonym but naming the thing: the
-appropriation, the amount allocated to institutions, a priority's share.
-
-Same for **"money"** on two section headings, **"offered"** throughout (the
-model's term is the **max award**, chosen precisely because it "communicates
-that awards are based on outcomes, not automatically awarded"), and the spoken
-asides — *"worth saying out loud"*, *"none of them onerous"*, *"a handful of
-very large colleges pull it up"*, *"would work against the point"*.
-
-⚠️ **The painted twin.** `#nc-body` has a static fallback AND a painted version,
-and the painter's copy is what a browser shows. Revising the static text alone
-would have left *"There is no separate noncredit pot"* on the live page — the
-same banned word and the same denial Sam flagged, in the one copy that renders.
-On a page with a painter, revise both or revise the painted one.
-
-### The figure that was never computed
-
-Step three said **"All three factors are currently set to 1.0"**, and the choices
-table said `1.0 / 1.0 / 1.0`. Live Year-1 factors are 0.5. The S217 handoff
-recorded this as stale STATIC prose — text the painter cannot reach because it
-carries no id.
-
-That was the wrong diagnosis, and the right one is worse. `_prios()` — the
-accessor every consumer is told to use instead of reading the config — **never
-emitted `factor`**. The payload builder read `p.factor == null ? 1 : p.factor`.
-So the page printed 1.0 at *every* setting, through a chain that looked entirely
-computed: a live page, a payload built from the engine, a defensive default. A
-reader checking the page against the tab would find the tab saying 0.5 and the
-page saying 1.0 and have no way to tell which was lying.
-
-**A defaulted field looks computed and never moves.** The tell is not the value —
-it is that the value never changes when the dial does, and no single-paint test
-can see that. So the guard is now: change a dial through the layer a curator
-writes to, repaint, and require the page to disagree with itself. Mutation-tested
-by dropping `factor` from the projection again; three assertions go red by name.
-
-### Two more the audit turned up, both invisible in prose
-
-**The worked-example cards** were still sized on `credit_ftes` over
-`D.colleges` — the two-lane basis retired on 2026-08-31 — while `rows` beside
-them used combined FTES over 118 institutions. One page said Mt San Antonio was
-26,804 FTES and 2.5% of the state in a card, and 37,634 in the table directly
-below. Both figures were computed; they were computed against different
-denominators. They are built FROM `rows` now, so the card and the table are one
-number by construction rather than by two computations agreeing.
-
-**The every-college table's "Credit FTES" header** had carried combined figures
-since the port — a mislabeled column, and the one column a reader uses to check
-the proportional share.
-
-### Why the existing guard missed all of it
-
-`tests/funding_model_page.test.js` already required every hard-coded **money**
-figure in the prose to carry an id. Both stale claims were numbers without a
-dollar sign: `1,069,182` and `1.0`. The guard now also fails on an unpainted
-thousands-separated number in the prose, which is the shape the basis claim had,
-and the dial-change check covers the factors. Mutation-verified: restoring
-`1,069,182` unpainted fails the new check and names the figure.
-
-### Not fixed, deliberately
-
-`prototype/check_funding_explainer.js` waits on `#f-pool`, an id retired long
-ago, and also pins `$24,240,308`, "115 colleges" and a 115-row count. It fails
-identically on clean `main`, it sits outside `npm test`, and repairing it means
-re-aiming four assertions onto live values — a separate change, and named here
-and in the handoff rather than folded into a register pass.
-
-**Receipts.** PR #1434. `_prios()` gained one field; the rest is prose, ids and
-guards. Full suite green; all sixteen `js-tests.yml` steps run locally.
 
 ## 2026-09-02 — Session 220 (SkyCalm): the calm pass, and the text a test does not see
 
@@ -1510,3 +1422,37 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 ✅ **COLLEGE DASHBOARD ROUNDS 8 AND 9 ARE LIVE** (S302–S303, Sam: *"mockup looks good!"*): gray Curr figures until an institution meets all its minimum conditions, showing what its measures compute to; the drill-in in the row's own columns; the coordinator, primary contact and landing page under the met first condition; the veteran count, JST count and percent beside the third. Guards: `tests/cpl_funding_round8.test.js`, `tests/cpl_funding_round9.test.js`; harness `prototype/mockup_harness/`. Detail moved verbatim to the [lessons archive](../../cpl_funding_lessons_archive.md) (S305). ⭐ **Sheet 4 rulings (Sam, 2026-09-29, all nine his own call):** the first condition's check reads **all three parts**, and the Reporting box starts with **spending** (a new write surface: Governance first). ⭐ **Card 2, S305: Governance done, mockup with Sam. NEEDS SAM (sheet 5, cards 2–4).** `cpl_funding_reports` folds into DR-09 beside `cpl_funding_notes` (`kb/governance_surface_map.json` and the register row, 2026-09-30); a report is an institution's dollars with no student record, so the student-detail disclosure boundary does not reach it, and it is reviewer-gated like the note. The mockup ([BV2Xqt49vCYicX5xdEKP5E](https://claude.ai/artifact/BV2Xqt49vCYicX5xdEKP5E), `prototype/cplfund_reporting_box_v1.html`) records a college's reported expenditures per quarter in NOVA's categories (object codes 1000 to 7000 and indirect costs), totals them to date beside the maximum award, keeps who reported and who recorded, and treats a correction as a new report. The build waits on three calls: quarterly or yearly, all eight categories, and whether a college sees its own figures on My College. ✅ **Card 1 built (S303):** `map_coordinator_summary()` answers `has_coordinator`, `has_primary_contact` and `has_landing_page` as booleans, never a name, so the public page and the tab run one check (live 2026-09-29: 49 coordinators, 43 all three); an unmet line names the missing part. Guard: `tests/cpl_funding_first_condition.test.js`.
 
 **Moved from the funding lane at the S306 checkpoint (verbatim):** Moved verbatim to the [lessons](cpl_funding_lessons.md) (S302): the origination cutover's asymmetry and the explainer's title.
+
+## S307 (2026-09-30, SkyGusset): the Reporting box's reviewer half
+
+- **Built on Sam's sheet 6 calls:** `cpl_funding_reports`, INSERT-only, reviewer-gated on read and write, the recorder
+  stamped by trigger from the session (the body's `recorded_by` is overwritten: a reviewer cannot record in another's
+  name). Re-keyed from the mockup's quarters to fiscal years; the window's years plus the close-out year, since funds
+  close out the year after the window.
+- **Reversible without SQL.** INSERT-only rules out an edit, so a mistaken entry needed a way back that a reviewer can
+  take from the tab: **Withdraw** is itself a newer row (`withdrawn`, no figures), after which the year counts as
+  unreported. The table's CHECKs make a withdrawal empty and a report name its reporter.
+- **The repo's Supabase guard blocks any statement containing INSERT,** even in a rolled-back transaction as a role
+  test. The live gate was verified from the catalog instead (`pg_policy` expressions, `has_table_privilege`) and
+  matches `cpl_funding_notes`; the first reviewer save is the live proof, and the tab's re-read confirms it (#598).
+- ⚠️ **Two mutation runs against one file, sharing one backup path, raced.** A foreground run copied the file while a
+  background run held its mutation, and both restored from that copy: the print-clone line vanished from the source
+  and every test still passed. Found by re-grepping the mutated lines after both finished. Give each run its own
+  backup, and never run two against the same file at once.
+- **Open (sheet 7 card 1):** how a college's staff sign in to see their own. MAP lists a CPL coordinator or primary
+  contact address for 105 of 123 colleges (49 and 99); three district staff are listed for three or four colleges.
+- **Sam's Public view asks (same day):** the published scenario opens every visit; *As colleges see it* flips the
+  curator choices off in the Public view; My CPL Funding at the top of both public renderings, by college or district,
+  with Save as PDF through one printer (`printPanel`). The margin audit measured edges in Chromium: the a11y sweep
+  passed every page while the explainer's header ran flush to a phone's edge, because a `padding` shorthand's 0 sides
+  erased the `.wrap` gutter. **A sweep that measures contrast and targets does not measure alignment; probe the edges.**
+- ⚠️ **A district's blocks never named their institution:** `fundingPanel` omits the name because the chooser carries it
+  in the one-college view. Only the screenshot showed it; each member now sits under its name.
+- **The dashed frame around the tab is COBI's placeholder on 18 tab roots:** measure a pattern's reach before calling it
+  one tab's defect.
+
+### Moved from the funding lane at S307 (verbatim)
+
+✅ **S306 (Sam, 2026-09-30):** the drill-in hovers say how each figure is reached (label: goal, measure, share, price; Max: funding × share, target = proportional funding ÷ price; Curr: units ÷ units per FTES, fraction × Max); the college table scrolls inside a 75vh wrap under a frozen header; **Refresh everything** (Internal view) re-reads the saved model here and in every other window of the browser (BroadcastChannel `cpl-funding-model`; a save posts it too) and lists what it reached, what is built when opened, and what is not live; My College adopts the module's config on every model change; **My CPL Funding** sits beside the table on the public renderings (`fundingPanel`, one renderer); **Unit sources** (reviewer, Internal only) reads `map_college_cr_unit`: military (ACE or a military course type, 99.5% agreement with MAP's flag) vs non-military, the exhibits and the recommendations. Guards: `cpl_funding_refresh_sources.test.js`, `college_briefing_funding_sync.test.js`.
+
+⭐ **SCENARIO 2 IS FINAL AND PUBLISHED (Sam, 2026-09-30, sheet 6 card 6; chosen 2026-09-29 after the CO demo):** *"We're going with Scenario 2."* College funding follows P1 and P2 (Year 1: 50% each); *"I will be reporting on P3 Career Attainment together with P4 projects using more qualitative data rather than tying it to FTES."* **Ruled on sheet 4 (cards 5–8):** Year 2 follows P1 and P2 at 50% each (already true: `mirrorYears` gives Year 2 Year 1's priorities, so no write; the stored Year-2 block is inert); both of Scenario 1's phrases carry to Scenario 2 (✅ written 2026-09-29 by `funding-config-edit-apply.yml`; receipt in `kb/funding_config_edits_out/2026-09-29/`); P3 and P4 get a mockup before any port (✅ **approved 2026-09-30**, *"go ahead with the card 7 mockup"*, artifact `RRTSSiTW1k6jk6gvxUAQ1D`: in Scenario 2 the measured 0%-share Career Attainment card leaves, and Career Attainment (C) and Innovation Projects (D) are reported cards that say what is reported, when (TBA) and where, with no target, FTES or funding line; `reportedAsReports` turns the shape on per scenario, so Scenario 1 keeps its card; ✅ written 2026-09-30, receipt in `kb/funding_config_edits_out/2026-09-30/`, the first plan to declare a new key, `"create": true`, and read back live in S305: `prioRemoved` [1,3], `reportedCards` [C,D], the two titles, `reportedAsReports` true); ✅ the Scenario 2 narrated draft is built (card 8, below). Card 1 (Sam, sheet 6): *"I want to rewrite it and then use the ElevenLabs connector to add a natural narration voiceover."* Unlinked until his rewrite is voiced.

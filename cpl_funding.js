@@ -93,6 +93,10 @@
     // Page actions row (Sam, 2026-08-31): expand/collapse-all, Draft memo,
     // Save as PDF, and the reviewer view preview. Words, not glyphs.
     ".cplfund-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: -6px 0 14px; }",
+    // The rows space their buttons with `gap`, so the button's own left margin
+    // (for inline runs elsewhere) doubled the spacing and set the first button
+    // 6px off the text column above it (margin audit, 2026-09-30).
+    ".cplfund-actions .cplfund-optbtn, .cplfund-toolbar .cplfund-optbtn { margin-left: 0; }",
     ".cplfund-viewlab { font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-left: 6px; }",
     '.cplfund-actions [data-viewmode][aria-pressed="true"] { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }',
     ".cplfund h3 { color: var(--navy-primary); margin: 22px 0 10px; font-size: 1.15rem; }",
@@ -565,6 +569,15 @@
     // and hosts this toolbar (the My CPL Funding view switch, 2026-09-30).
     ".cplfund-seg button.on { background: var(--seal-blue, #002F6D); color: var(--white, #FFFFFF); font-weight: 600; }",
     ".cplfund-count { font-size: .85rem; color: var(--text-muted); }",
+    // My CPL Funding for a district (2026-09-30): its line, then each
+    // institution's block with room between them. The explainer defines only
+    // its own tokens, so every token here carries a fallback.
+    ".cplfund-onedist { margin: 4px 0 12px; }",
+    ".cplfund-onedist h3 { margin: 0 0 2px; font-size: 1.1rem; color: var(--text-strong, #1C1C1A); }",
+    ".cplfund-onedist p { margin: 0; }",
+    ".cplfund-onemember-h { margin: 0 0 8px; font-size: 1rem; color: var(--text-strong, #1C1C1A); }",
+    ".cplfund-onemember + .cplfund-onemember { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border, rgba(28,28,26,.14)); }",
+    ".cplfund-toolbar #cplFundOnePdf[disabled] { opacity: .55; cursor: not-allowed; }",
     ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); }",
     "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; }",
     // FIXED LAYOUT (Sam's College Dashboard mockup, 2026-09-28): tableHtml()
@@ -939,6 +952,36 @@
     ".cplfund-notewrap { grid-column: 1 / -1; }",
     ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
     ".cplfund-note:focus { border-color: var(--gold-accent); }",
+    // The Reporting box (2026-09-30, S307): under the note, reviewers only.
+    // ⚠️ `tr.cplfund-detail td` and `.cplfund-table th` reach the history
+    // table's cells, so every table rule names the box (as Unit sources does).
+    ".cplfund-rep { grid-column: 1 / -1; display: grid; gap: 8px; margin-top: 6px; padding: 8px 10px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface-opaque); }",
+    ".cplfund-rep-sum { display: flex; flex-wrap: wrap; gap: 2px 18px; align-items: baseline; font-variant-numeric: tabular-nums; }",
+    ".cplfund-rep-sum strong { color: var(--text-strong); font-size: 1rem; }",
+    ".cplfund-rep-form { display: grid; gap: 8px; }",
+    ".cplfund-rep-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 12px; }",
+    ".cplfund-rep-cats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px 12px; margin: 0; padding: 0; border: 0; min-width: 0; }",
+    ".cplfund-rep-cats legend { padding: 0; margin-bottom: 4px; }",
+    ".cplfund-rep label { display: grid; gap: 2px; font-size: .8rem; color: var(--text-muted); min-width: 0; }",
+    ".cplfund-rep input, .cplfund-rep select { min-height: 28px; box-sizing: border-box; min-width: 0; font-family: inherit; font-size: .85rem; color: var(--text-body); " +
+      "background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 6px; }",
+    ".cplfund-rep .cplfund-rep-cats input { text-align: right; font-variant-numeric: tabular-nums; }",
+    ".cplfund-rep input:focus, .cplfund-rep select:focus { border-color: var(--gold-accent); }",
+    ".cplfund-rep .cplfund-note { max-width: none; }",
+    ".cplfund-rep-row { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }",
+    ".cplfund-rep-row .cplfund-optbtn { margin-left: 0; }",
+    ".cplfund-rep-qtotal { color: var(--text-strong); font-weight: 700; font-variant-numeric: tabular-nums; }",
+    ".cplfund-rep-msg { color: var(--text-body); font-size: .8rem; }",
+    ".cplfund-rep-hwrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; }",
+    ".cplfund-rep table.cplfund-reptable { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .8rem; font-variant-numeric: tabular-nums; }",
+    ".cplfund-rep table.cplfund-reptable th { position: static; cursor: default; background: var(--surface-muted); color: var(--text-strong); text-align: left; " +
+      "padding: 4px 8px; white-space: normal; font-weight: 600; }",
+    ".cplfund-rep table.cplfund-reptable td { padding: 4px 8px; background: var(--surface-opaque); border-top: 1px solid var(--border); text-align: left; " +
+      "white-space: normal; overflow-wrap: anywhere; }",
+    ".cplfund-rep table.cplfund-reptable .n { text-align: right; }",
+    ".cplfund-rep table.cplfund-reptable tr.cplfund-rep-old td { color: var(--text-muted); }",
+    "@media (max-width: 560px) { .cplfund-rep-fields, .cplfund-rep-cats { grid-template-columns: minmax(0, 1fr); } " +
+      ".cplfund-rep table.cplfund-reptable { table-layout: auto; min-width: 560px; } }",
     // Ghosted, not decorated: a quiet outlined word beside the title, no fill.
     ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: none; color: var(--text-muted); border: 1px solid var(--border-strong); font-size: .38em; font-weight: 600; letter-spacing: .08em; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; }",
     // ── self-service opt-in (public + private) + the CO confirm lane ──────────
@@ -1142,7 +1185,10 @@
     // The mount div carries an inline padding:28px (the pre-boot placeholder) —
     // reclaim it on small screens. !important is needed to beat the inline style
     // (the mount lives in the HTML, which this JS-only change doesn't touch).
-    "  #cplFundingMount { padding: 12px !important; }",
+    // COBI's mount only: the explainer's mount carries no placeholder padding,
+    // and this rule set its table 12px inside the text column at phone widths
+    // (margin audit, 2026-09-30).
+    "  #tab-implementation-funding #cplFundingMount { padding: 12px !important; }",
     "  .cplfund-card { padding: 11px 12px; }",
     "  .cplfund-card .v { font-size: 1.15rem; }",
     "}",
@@ -1292,8 +1338,9 @@
   var WHATIF = {};                      // per-browser what-if overlays (localStorage)
   var activeProject = DEFAULT_PID;
   var activeScenario = "Scenario 1";
-  // Has this browser CHOSEN a scenario? Until it has, it reads the published
-  // one (publishedScenario). Set by a stored selection or any switch.
+  // Has the curator CHOSEN a scenario this visit? Until then the tab reads the
+  // published one (publishedScenario). Set by any switch; a reload clears it
+  // (Sam, 2026-09-30: the published scenario is the view that opens).
   var selectionStored = false;
   var SHARED = {};      // → SUPA_CONFIG.projects[activeProject].scenarios[activeScenario]
   var SCENARIO = {};    // → WHATIF[activeProject + "::" + activeScenario]
@@ -1407,6 +1454,12 @@
       return v ? String(v).trim() : "";
     } catch (e) { return ""; }
   }
+  function fundviewParam() {
+    try {
+      var v = new URLSearchParams(window.location.search).get("fundview");
+      return v ? String(v).trim().toLowerCase() : "";
+    } catch (e) { return ""; }
+  }
   function publishedScenario() {
     var p = activeProjectObj();
     var pv = publicSurface() ? previewScenarioParam() : "";
@@ -1434,8 +1487,8 @@
   function syncActive() {
     // A public surface reads the flagship project's PUBLISHED scenario, never
     // this browser's selection or its what-if overlay: the page has to show a
-    // college what the Chancellor's Office published. A browser that never
-    // chose a scenario starts on the published one too.
+    // college what the Chancellor's Office published. The tab opens on the
+    // published one too, and a curator's pick holds for the visit.
     if (publicSurface() && SUPA_CONFIG && SUPA_CONFIG.projects && SUPA_CONFIG.projects[DEFAULT_PID]) {
       activeProject = DEFAULT_PID;
     }
@@ -1465,9 +1518,12 @@
   function loadSelection() {
     try {
       var sel = JSON.parse(localStorage.getItem(SELECTION_KEY) || "null");
+      // THE PUBLISHED SCENARIO OPENS (Sam, 2026-09-30: "make the published
+      // scenario the default view that opens"). A curator's scenario pick
+      // holds for the visit; every load starts on the published one, so the
+      // stored scenario is no longer restored here.
       if (sel && typeof sel === "object") {
         if (sel.project) activeProject = sel.project;
-        if (sel.scenario) { activeScenario = sel.scenario; selectionStored = true; }
       }
       var wf = JSON.parse(localStorage.getItem(WHATIF_KEY) || "null");
       if (isPlainObj(wf)) WHATIF = wf;
@@ -3712,7 +3768,9 @@
   // control only a signed-in curator may see.
   function publicPreview() {
     if (window.CPL_FUNDING_PUBLIC || embedMode()) return false;
-    return typeof state === "object" && !!state && !!state.previewPublic && unlocked();
+    // "As colleges see it" drops every curator control from the preview, so
+    // the curator reads exactly what a college reads.
+    return typeof state === "object" && !!state && !!state.previewPublic && !state.publicEye && unlocked();
   }
   // Every curate/edit affordance, as ONE registry. Public mode sweeps these out
   // of the DOM after each render rather than relying on each emitter to check
@@ -4663,6 +4721,161 @@
       .catch(function () { loadNotes(); });
   }
 
+  // ── The Reporting box: what a college reports it has expended ─────────
+  // Sam's calls (open-asks sheet 6, cards 2–4, 2026-09-30): one report a
+  // fiscal year, in all eight NOVA expenditure categories. A reviewer records
+  // it in the drill-in under the note. cpl_funding_reports is INSERT-only and
+  // reviewer-gated on read and write (funding/supabase_cpl_funding_reports.sql
+  // is the SQL of record): a correction is a newer report for the same year
+  // and the newest counts; a withdrawal is a newer row with withdrawn = true,
+  // after which the year counts as unreported. The history keeps every row.
+  // The college's own view (My College) waits on how its staff sign in.
+  var REPORT_CATS = [
+    { k: "c1000", label: "1000 Instructional salaries" },
+    { k: "c2000", label: "2000 Noninstructional salaries" },
+    { k: "c3000", label: "3000 Employee benefits" },
+    { k: "c4000", label: "4000 Supplies and materials" },
+    { k: "c5000", label: "5000 Other operating expenses and services" },
+    { k: "c6000", label: "6000 Capital outlay" },
+    { k: "c7000", label: "7000 Other outgo" },
+    { k: "c_indirect", label: "Indirect costs" }
+  ];
+  var REPORTS = [];      // every row, oldest first
+  var REPORT_MSG = {};   // college -> the last save's words
+  var REPORTS_URL = SUPABASE_URL + "/rest/v1/cpl_funding_reports";
+  function loadReports() {
+    if (!remoteEnabled() || publicMode()) return;   // reviewer-gated server-side; don't ask
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    applyWriteAuth(headers);
+    return fetch(REPORTS_URL + "?select=*&order=recorded_at.asc", { headers: headers })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) return;
+        REPORTS = rows;
+        render();
+      }).catch(function () { /* gated or offline — fine */ });
+  }
+  // The fiscal years a report can name: the window's, then its close-out year.
+  function reportYears() {
+    var ys = selectedYears().slice();
+    var close = nextFy(ys[ys.length - 1]);
+    if (close) ys.push(close);
+    return ys;
+  }
+  // A typed amount: commas, a dollar sign and spaces are allowed; anything
+  // else, or a negative, reads as NaN so the form refuses it.
+  function reportAmount(v) {
+    var s = String(v == null ? "" : v).replace(/[$,\s]/g, "");
+    if (s === "") return 0;
+    if (!/^\d+(\.\d{0,2})?$/.test(s)) return NaN;
+    return Number(s);
+  }
+  function reportTotal(r) {
+    return REPORT_CATS.reduce(function (s, c) { return s + (Number(r[c.k]) || 0); }, 0);
+  }
+  // One college's rows oldest first, each marked: the newest row per year
+  // counts unless it is a withdrawal.
+  function reportsFor(college) {
+    var rows = REPORTS.filter(function (r) { return r.college === college; });
+    var newest = {};
+    rows.forEach(function (r, i) { newest[r.fiscal_year] = i; });
+    return rows.map(function (r, i) {
+      var latest = newest[r.fiscal_year] === i;
+      return { row: r, counts: latest && !r.withdrawn, latest: latest };
+    });
+  }
+  function saveReport(rec) {
+    var college = rec.college;
+    var done = function (words) { REPORT_MSG[college] = words; render(); };
+    if (!remoteEnabled()) {
+      REPORTS.push(Object.assign({ recorded_by: curatorEmail() || "", recorded_at: new Date().toISOString() }, rec));
+      done(rec.withdrawn ? "Withdrawn on this page." : "Saved on this page.");
+      return Promise.resolve();
+    }
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json",
+      Prefer: "return=minimal" };
+    applyWriteAuth(headers);
+    REPORT_MSG[college] = "Saving…";
+    return fetch(REPORTS_URL, { method: "POST", headers: headers, body: JSON.stringify(rec) })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        REPORT_MSG[college] = rec.withdrawn ? "Withdrawn." : "Saved.";
+      })
+      .catch(function () {
+        REPORT_MSG[college] = "Not saved: recording a report needs a reviewer sign-in. Nothing changed.";
+      })
+      .then(function () { return loadReports(); });   // re-read = the honest confirmation (#598)
+  }
+  function reportingBoxHtml(c) {
+    var college = c.college, rows = reportsFor(college);
+    var counting = rows.filter(function (x) { return x.counts; });
+    var toDate = counting.reduce(function (s, x) { return s + reportTotal(x.row); }, 0);
+    var ys = reportYears();
+    var name = esc(dispName(college)), key = esc(college);
+    var sum = '<div class="cplfund-rep-sum" aria-live="polite"><span>Expended to date <strong>' + fmtMoney(toDate) + "</strong></span>" +
+      '<span class="dk">' + counting.length + " of " + ys.length + " fiscal years reported</span>" +
+      '<span class="dk">Max award ' + fmtMoney(c.total || 0) + "</span></div>";
+    var yearOpts = ys.map(function (y) { return '<option value="' + esc(y) + '">' + esc(y) + "</option>"; }).join("");
+    var cats = REPORT_CATS.map(function (cat) {
+      return "<label>" + esc(cat.label) + '<input type="text" inputmode="decimal" data-repcat="' + cat.k + '" value="0"></label>';
+    }).join("");
+    var msg = REPORT_MSG[college] || "";
+    var form = '<form class="cplfund-rep-form" data-repform="' + key + '" novalidate>' +
+      '<div class="cplfund-rep-fields">' +
+      '<label>Fiscal year<select data-repf="fiscal_year">' + yearOpts + "</select></label>" +
+      '<label>Reported by (at the college)<input type="text" data-repf="reported_by" maxlength="160" autocomplete="off"></label>' +
+      '<label>Reported on<input type="date" data-repf="reported_on"></label></div>' +
+      '<fieldset class="cplfund-rep-cats"><legend class="dk">Expended this fiscal year, by NOVA category</legend>' + cats + "</fieldset>" +
+      '<div class="cplfund-rep-row"><span>Total this year <span class="cplfund-rep-qtotal" data-reptotal>' + fmtMoney(0) + "</span></span></div>" +
+      '<label>Note<textarea class="cplfund-note" rows="2" data-repf="note" maxlength="2000" placeholder="What the college said about this year"></textarea></label>' +
+      '<div class="cplfund-rep-row"><button type="submit" class="cplfund-optbtn">Save report</button>' +
+      '<span class="cplfund-rep-msg" role="status" data-repmsg>' + esc(msg) + "</span></div></form>";
+    var hist;
+    if (!rows.length) {
+      hist = '<p class="dk">No reports on file.</p>';
+    } else {
+      var body = rows.slice().reverse().map(function (x) {
+        var r = x.row;
+        var standing = x.counts ? "Counts"
+          : r.withdrawn ? "Withdrawn"
+          : "Replaced by a newer report";
+        var act = x.counts
+          ? ' <button type="button" class="cplfund-optbtn" data-repwithdraw="' + key + '" data-repyear="' + esc(r.fiscal_year) +
+            '" aria-label="Withdraw the ' + esc(r.fiscal_year) + ' report for ' + name + '">Withdraw</button>'
+          : "";
+        return '<tr' + (x.counts ? "" : ' class="cplfund-rep-old"') + "><td>" + esc(r.fiscal_year) + "</td>" +
+          '<td class="n">' + (r.withdrawn ? "&mdash;" : fmtMoney(reportTotal(r))) + "</td>" +
+          "<td>" + esc(r.withdrawn ? "" : (r.reported_by || "")) + (r.reported_on ? '<br><span class="dk">' + esc(r.reported_on) + "</span>" : "") + "</td>" +
+          "<td>" + esc(r.recorded_by || "") + '<br><span class="dk">' + esc(String(r.recorded_at || "").slice(0, 10)) + "</span></td>" +
+          "<td>" + standing + act + "</td></tr>";
+      }).join("");
+      hist = '<div class="cplfund-rep-hwrap" role="region" aria-label="Reports on file for ' + name + '" tabindex="0">' +
+        '<table class="cplfund-reptable"><colgroup><col style="width:14%"><col style="width:16%"><col style="width:24%"><col style="width:24%"><col style="width:22%"></colgroup>' +
+        '<thead><tr><th scope="col">Fiscal year</th><th scope="col" class="n">Expended</th><th scope="col">Reported by</th>' +
+        '<th scope="col">Recorded by</th><th scope="col">Standing</th></tr></thead><tbody>' + body + "</tbody></table></div>";
+    }
+    return '<section class="cplfund-rep" aria-label="Reporting for ' + name + '"><span class="dk">Reporting (internal): expenditures</span>' +
+      sum + form + '<div><span class="dk">Reports on file</span>' + hist + "</div></section>";
+  }
+  // Reads a Reporting box form into a row, or returns the words that refuse it.
+  function readReportForm(form) {
+    var college = form.getAttribute("data-repform");
+    var f = function (k) { var el = form.querySelector('[data-repf="' + k + '"]'); return el ? String(el.value || "").trim() : ""; };
+    var rec = { college: college, fiscal_year: f("fiscal_year"), reported_by: f("reported_by") };
+    if (f("reported_on")) rec.reported_on = f("reported_on");
+    if (f("note")) rec.note = f("note");
+    var bad = [];
+    REPORT_CATS.forEach(function (cat) {
+      var el = form.querySelector('[data-repcat="' + cat.k + '"]');
+      var v = reportAmount(el ? el.value : "");
+      if (isNaN(v) || v > 10000000) bad.push(cat.label); else rec[cat.k] = v;
+    });
+    if (bad.length) return { error: "Check " + bad.join(", ") + ": an amount in dollars, 0 or more." };
+    if (!rec.reported_by) return { error: "Name who at the college reported it." };
+    if (!/^\d{4}-\d{2}$/.test(rec.fiscal_year)) return { error: "Choose a fiscal year." };
+    return { rec: rec };
+  }
+
   // ── exports: ⬇ Excel (CSV of the current view) + ⬇ PDF (print window) ──
   function csvEscape(v) {
     v = v == null ? "" : String(v);
@@ -4800,6 +5013,9 @@
     var mount = document.getElementById("cplFundingMount");
     if (!mount) return "";
     var clone = mount.cloneNode(true);
+    // The Reporting box's entry form prints as nothing; its total and the
+    // reports on file print as they read.
+    clone.querySelectorAll(".cplfund-rep-form").forEach(function (el) { el.parentNode.removeChild(el); });
     clone.querySelectorAll("select").forEach(function (el) {
       var span = el.ownerDocument.createElement("strong");
       var opt = el.querySelector("option[selected]") || el.querySelector("option");
@@ -9029,7 +9245,13 @@
     prioDeleting: null, // card id ("m<src>") whose Delete confirmation is open
     prioDeleteFocus: null, // that card id, or "back:<id>" after Keep it: where focus goes next render
     measureEditing: false, // the "Measured from" list's label editor is open
-    previewPublic: false,   // reviewer previewing the public rendering (session-only, never persisted)
+    // The Public view can be opened by link: ?fundview=public (the funding
+    // videos' "Back to the public view", 2026-09-30).
+    previewPublic: fundviewParam() === "public",   // the public rendering (session-only, never persisted)
+    // AS COLLEGES SEE IT (Sam, 2026-09-30): "a button to the Public View that
+    // allows curators to see the public view as they see it (without the
+    // curator choices showing)", flipping back to edit. Session-only.
+    publicEye: false,
     docType: "memo",    // memo | letter | report | brief
     textEditing: null,  // key of the prose block a signed-in reviewer is editing, else null
     cardRenaming: null, // card id whose custom-title field Rename opened (2026-09-24), else null
@@ -10527,6 +10749,9 @@
       noteLine = '<div class="cplfund-notewrap"><span class="dk">CO Monitor&#39;s note (internal):</span> ' +
         esc(noteRec.note) + "</div>";
     }
+    // The Reporting box: a signed-in reviewer's, like the note's editor. The
+    // public preview and every public rendering show none of it.
+    if (!publicMode() && unlocked()) noteLine += reportingBoxHtml(c);
     var ncols = COLS_COLLEGE().length;
     var top = '<tr class="cplfund-detail' + (alt || "") + '"><td colspan="' + ncols + '">' +
       '<div class="cplfund-detail-grid">' +
@@ -11627,7 +11852,7 @@
   }
 
   // ── model-change subscribers (My College tab, #college-briefing) ───────────
-  // Every remote loader (shared config, perf, ESS, eligibility, notes, ledger)
+  // Every remote loader (shared config, perf, ESS, eligibility, notes, reports, ledger)
   // ends by calling render(), so render IS the "the model moved" event. Other
   // tabs that read this module's math subscribe here rather than re-deriving
   // it. Fired BEFORE the mount guard on purpose: the funding pane may not be
@@ -11655,6 +11880,25 @@
       segHtml("cplFundCollegeView", [{ val: "all", label: "All institutions" },
         { val: "one", label: "My CPL Funding" }], oneCollegeView() ? "one" : "all") + "</div>";
   }
+  // The chooser offers every institution and, for a district of two or more,
+  // the district (Sam, 2026-09-30: "allowing users to select their college or
+  // district"). A district choice is stored as "d:<district>".
+  var ONE_DISTRICT = "d:";
+  function districtMembers(d) {
+    return base().colleges.filter(function (c) { return c.district === d; })
+      .map(function (c) { return c.college; })
+      .sort(function (a, b) { return dispName(a).localeCompare(dispName(b)); });
+  }
+  function multiDistricts() {
+    var n = {};
+    base().colleges.forEach(function (c) { if (c.district) n[c.district] = (n[c.district] || 0) + 1; });
+    return Object.keys(n).filter(function (d) { return n[d] > 1; })
+      .sort(function (a, b) { return districtShort(a).localeCompare(districtShort(b)); });
+  }
+  function oneChoiceName(v) {
+    v = String(v || "");
+    return v.indexOf(ONE_DISTRICT) === 0 ? districtShort(v.slice(ONE_DISTRICT.length)) : dispName(v);
+  }
   function oneCollegeHtml() {
     var opts = base().colleges.slice().sort(function (a, b) {
       return dispName(a.college).localeCompare(dispName(b.college));
@@ -11662,10 +11906,64 @@
       return '<option value="' + esc(c.college) + '"' + (c.college === state.oneCollege ? " selected" : "") + ">" +
         esc(dispName(c.college)) + "</option>";
     }).join("");
-    return '<div class="cplfund-toolbar"><label for="cplFundOnePick">Institution</label> ' +
-      '<select id="cplFundOnePick"><option value="">Choose an institution</option>' + opts + "</select></div>" +
+    var dopts = multiDistricts().map(function (d) {
+      var v = ONE_DISTRICT + d;
+      return '<option value="' + esc(v) + '"' + (v === state.oneCollege ? " selected" : "") + ">" +
+        esc(districtShort(d)) + "</option>";
+    }).join("");
+    return '<div class="cplfund-toolbar"><label for="cplFundOnePick">Institution or district</label> ' +
+      '<select id="cplFundOnePick"><option value="">Choose an institution or district</option>' +
+      '<optgroup label="Institutions">' + opts + "</optgroup>" +
+      (dopts ? '<optgroup label="Districts">' + dopts + "</optgroup>" : "") + "</select>" +
+      // A PDF of what the view shows (Sam, 2026-09-30: "add a pdf button on
+      // all the My CPL Funding views").
+      '<button type="button" class="cplfund-optbtn" id="cplFundOnePdf"' + (state.oneCollege ? "" : " disabled") +
+      ' title="Open a print-ready copy of this funding view, then choose Save as PDF">Save as PDF</button></div>' +
       '<div id="cplFundOnePanel" class="cplfund-onepanel" aria-live="polite">' +
-      '<p class="dk">' + (state.oneCollege ? "Loading this institution&#39;s funding&hellip;" : "Choose an institution to see its funding.") + "</p></div>";
+      '<p class="dk">' + (state.oneCollege ? "Loading this funding view&hellip;" : "Choose an institution or district to see its funding.") + "</p></div>";
+  }
+  // A district's line above its institutions' blocks: the same figures its
+  // subtotal row carries in the table, through the same public dollar rule.
+  function oneDistrictHeadHtml(d, members) {
+    var saved = state.q;
+    state.q = "";
+    var rows;
+    try { rows = rowsFiltered(); } finally { state.q = saved; }
+    var mine = rows.filter(function (r) { return r.district === d && members.indexOf(r.college) !== -1; });
+    var g = groupRowsByDistrict(mine)[0];
+    var line = members.length + " institutions";
+    if (g) {
+      line += " &middot; max award " + fmtMoney(g.total || 0) + " in total &middot; current total " +
+        earnedMoney(cellFig(g, "earned_total"));
+    }
+    return '<div class="cplfund-onedist"><h3>' + esc(districtShort(d)) + "</h3>" +
+      '<p class="dk">' + line + ". Each institution&#39;s own funding follows.</p></div>";
+  }
+  // Open My CPL Funding from the top of a public rendering (Sam, 2026-09-30:
+  // "Add another copy of the My CPL Funding view button ... to the top of the
+  // public view tab and Explainer view"). It switches the institution section
+  // to the one-institution view, opens the section, and puts the reader on the
+  // chooser.
+  function showMyFunding() {
+    if (!publicMode()) return false;
+    state.collegeView = "one";
+    saveSectionState("college", true);
+    render();
+    var pick = document.getElementById("cplFundOnePick");
+    if (pick) {
+      if (typeof pick.scrollIntoView === "function") pick.scrollIntoView({ block: "center" });
+      pick.focus();
+    }
+    return !!pick;
+  }
+  // The PDF of the one-institution view: the chosen institution's block, or a
+  // district's line and its institutions' blocks, printed by My College's own
+  // printer so every My CPL Funding view prints one way.
+  function printOne() {
+    var el = document.getElementById("cplFundOnePanel");
+    var B = window.CPL_COLLEGE_BRIEFING;
+    if (!el || !state.oneCollege || !B || typeof B.printPanel !== "function") return false;
+    return B.printPanel(el, "My CPL Funding: " + oneChoiceName(state.oneCollege));
   }
   function loadScriptCompat(src, globalName, cb) {
     if (window[globalName]) { cb(); return; }
@@ -11688,6 +11986,18 @@
       if (!now || state.oneCollege !== key) return;   // the reader moved on
       if (!B || typeof B.fundingPanel !== "function") {
         now.innerHTML = '<p class="dk">This view did not load. Choose All institutions for every institution&#39;s figures.</p>';
+        return;
+      }
+      if (key.indexOf(ONE_DISTRICT) === 0) {
+        var d = key.slice(ONE_DISTRICT.length), members = districtMembers(d);
+        // Each block under its institution's name: the block itself never
+        // names the institution, because the chooser does in the one-college view.
+        now.innerHTML = oneDistrictHeadHtml(d, members) + members.map(function (m, i) {
+          return '<section class="cplfund-onemember" aria-labelledby="cplFundOneM' + i + '">' +
+            '<h4 class="cplfund-onemember-h" id="cplFundOneM' + i + '">' + esc(dispName(m)) + "</h4>" +
+            '<div data-onemember="' + i + '"></div></section>';
+        }).join("");
+        members.forEach(function (m, i) { B.fundingPanel(now.querySelector('[data-onemember="' + i + '"]'), m); });
         return;
       }
       B.fundingPanel(now, key);
@@ -11757,7 +12067,7 @@
         remoteLoaded = true;
         out.config = "ok"; out.at = CONFIG_AT;
       }).catch(function () { out.config = "failed"; }),
-      safe(loadEligibility), safe(loadNotes), safe(loadLedger)
+      safe(loadEligibility), safe(loadNotes), safe(loadReports), safe(loadLedger)
     ]).then(function () { render(); return out; });
   }
   function pageName() {
@@ -11928,12 +12238,26 @@
         '" title="The MAP-team rendering — dials, diagnostics, and the Report sub-view.">Internal</button>' +
         '<button type="button" class="cplfund-optbtn" data-viewmode="public" aria-pressed="' + (!!state.previewPublic) +
         '" title="Preview what colleges see — the reviewer-only controls drop out; everyone else sees the page as it is.">Public</button>';
+      // In the Public view a curator still sees the curator-only choices
+      // (Exclude, Position, the explainer's section list). This flips them off
+      // and back, so an edit can be checked the way a college reads it.
+      if (state.previewPublic && unlocked()) {
+        view += '<button type="button" class="cplfund-optbtn" id="cplFundPublicEye" aria-pressed="' + (!!state.publicEye) +
+          '" title="' + (state.publicEye
+            ? "Showing the page exactly as colleges see it. Press again to bring back the curator choices."
+            : "Hide the curator choices and show the page exactly as colleges see it.") +
+          '">As colleges see it</button>';
+      }
     }
     return '<div class="cplfund-actions" role="toolbar" aria-label="Page actions">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundXall">' +
         (anySectionOpenNow() ? "Collapse all sections" : "Expand all sections") + "</button>" +
       (publicMode() ? "" :
         '<button type="button" class="cplfund-optbtn" id="cplFundDraftMemo" title="Open the draft memo — the Report sub-view, carrying this allocation.">Draft memo</button>') +
+      // My CPL Funding at the top of the Public view (Sam, 2026-09-30); the
+      // explainer carries its own in its header.
+      (publicMode() ? '<button type="button" class="cplfund-optbtn" id="cplFundMyFundingTop" ' +
+        'title="Choose your college or district and see its funding">My CPL Funding</button>' : "") +
       '<button type="button" class="cplfund-optbtn" id="cplFundPdfTop" title="Open a print-ready view of the whole tab, then use your browser&#39;s Print and choose Save as PDF">Save as PDF</button>' +
       // Refresh (Sam, 2026-09-30): the Internal view alone, where the edits
       // are made. It re-reads the saved model here and in every other open
@@ -12391,6 +12715,31 @@
         if (ta) saveNote(college, ta.value);
       });
     });
+    // The Reporting box: a running total as amounts are typed, Save report,
+    // and Withdraw on the report that counts.
+    holder.querySelectorAll("[data-repform]").forEach(function (form) {
+      var paintTotal = function () {
+        var t = 0;
+        form.querySelectorAll("[data-repcat]").forEach(function (el) { var v = reportAmount(el.value); if (!isNaN(v)) t += v; });
+        var out = form.querySelector("[data-reptotal]");
+        if (out) out.textContent = fmtMoney(t);
+      };
+      form.addEventListener("input", paintTotal);
+      form.addEventListener("click", function (e) { e.stopPropagation(); });
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var got = readReportForm(form);
+        var msg = form.querySelector("[data-repmsg]");
+        if (got.error) { if (msg) msg.textContent = got.error; return; }
+        saveReport(got.rec);
+      });
+    });
+    holder.querySelectorAll("[data-repwithdraw]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        saveReport({ college: b.getAttribute("data-repwithdraw"), fiscal_year: b.getAttribute("data-repyear"), withdrawn: true });
+      });
+    });
     // One-click opt-in entry from the collapsed row (Sam, 2026-08-05): open the
     // row's drill-in + attestation form, then focus the name field post-render.
     holder.querySelectorAll("[data-optinjump]").forEach(function (b) {
@@ -12687,6 +13036,10 @@
       render();
     });
     paintOnePanel();
+    var onePdf = document.getElementById("cplFundOnePdf");
+    if (onePdf) onePdf.addEventListener("click", printOne);
+    var myTop = document.getElementById("cplFundMyFundingTop");
+    if (myTop) myTop.addEventListener("click", showMyFunding);
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
     // The Lane seg control is retired (R1, 2026-08-31); the Allocation basis
     // control with it (2026-09-15) — its writer would have nothing to write to
@@ -12770,6 +13123,13 @@
         if (!!state.previewPublic === pub) return;
         state.previewPublic = pub; render();
       });
+    });
+    var eyeBtn = document.getElementById("cplFundPublicEye");
+    if (eyeBtn) eyeBtn.addEventListener("click", function () {
+      state.publicEye = !state.publicEye;
+      render();
+      var again = document.getElementById("cplFundPublicEye");
+      if (again) again.focus();
     });
 
     // Column show/hide checkboxes — toggle, persist, refresh the table only (the
@@ -13502,7 +13862,7 @@
     channel();
     loadScenario();
     if (window.CPL_FUNDING) applyCollegeDeepLink();
-    function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); loadLedger(); }
+    function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); loadReports(); loadLedger(); }
     if (window.CPL_FUNDING) { render(); loadRemotes(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
       window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { applyCollegeDeepLink(); render(); loadRemotes(); });
@@ -13517,6 +13877,8 @@
 
   window.CPL_FUNDING_TAB = {
     boot: boot, render: render, _state: state,
+    // The explainer's header button and the tab's top button open My CPL Funding.
+    showMyFunding: showMyFunding,
     // test hook: the ledger store, so suites can exercise the project-pool
     // breakdown's loaded state without a network (NO_REMOTE keeps fetch out).
     _ledger: LEDGER,
@@ -13859,6 +14221,8 @@
         loaded: remoteLoaded, published: realPublishedScenario() };
     },
     _setNotes: function (o) { NOTES = o || {}; },
+    _setReports: function (rows) { REPORTS = Array.isArray(rows) ? rows.slice() : []; REPORT_MSG = {}; },
+    _reports: function () { return REPORTS.slice(); },
     _setLedger: function (o) {
       if (!o) { LEDGER = { loaded: false, ok: false, pool: {} }; }
       else { LEDGER = { loaded: true, ok: true, pool: o }; }

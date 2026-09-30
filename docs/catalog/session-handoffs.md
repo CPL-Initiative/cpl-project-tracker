@@ -15,10 +15,12 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-278 document(s).
+280 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 309 | [Sierra reads where credit comes from; check her answers](../session_309_handoff.md) | 2026-09-30 |
+| 308 | [build the Reporting box's college half on MAP's two contacts](../session_308_handoff.md) | 2026-09-30 |
 | 307 | [sheet 6 is answered; build the Reporting box](../session_307_handoff.md) | 2026-09-30 |
 | 306 | [sheet 5 is with Sam; the Reporting box builds on his three calls](../session_306_handoff.md) | 2026-09-30 |
 | 305 | [the register is statewide, card 9 landed, card 7's Scenario 2 write is the loose end](../session_305_handoff.md) | 2026-09-30 |
