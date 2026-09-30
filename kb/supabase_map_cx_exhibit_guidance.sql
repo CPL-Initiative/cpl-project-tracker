@@ -47,14 +47,17 @@
 -- dropped for having no consumer is invisible until something needs it.
 drop table if exists public.stg_map_ace_exhibit_titles;
 create table public.stg_map_ace_exhibit_titles (
-  exhibit_id text,
-  title      text
+  exhibit_id    text,
+  title         text,
+  cpl_type_code text   -- MAP's CPLTypeCode (M, IC, SA, Cx, PR, O); 2026-09-30
 );
 
 create table if not exists public.map_ace_exhibit_titles (
-  exhibit_id text primary key,
-  title      text not null
+  exhibit_id    text primary key,
+  title         text not null,
+  cpl_type_code text   -- MAP's CPLTypeCode (M, IC, SA, Cx, PR, O); 2026-09-30
 );
+alter table public.map_ace_exhibit_titles add column if not exists cpl_type_code text;
 
 alter table public.map_ace_exhibit_titles enable row level security;
 drop policy if exists map_ace_exhibit_titles_select on public.map_ace_exhibit_titles;

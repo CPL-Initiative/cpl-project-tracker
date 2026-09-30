@@ -431,8 +431,10 @@ begin
   select count(*) into s_title from stg_map_ace_exhibit_titles;
   if s_title > 0 then
     truncate map_ace_exhibit_titles;
-    insert into map_ace_exhibit_titles (exhibit_id, title)
-    select exhibit_id, title from stg_map_ace_exhibit_titles;
+    -- cpl_type_code (2026-09-30): MAP's own CPL type, the military bucket's
+    -- source in rebuild_map_college_credit_sources(). NULL when absent.
+    insert into map_ace_exhibit_titles (exhibit_id, title, cpl_type_code)
+    select exhibit_id, title, cpl_type_code from stg_map_ace_exhibit_titles;
   else
     warnings := warnings || 'no ACE exhibit titles in staging - live titles left untouched; the Cx guidance list will show blanks where a title is missing'::text;
   end if;
@@ -440,6 +442,12 @@ begin
   -- ── Rebuild the published aggregates in the SAME transaction ─────────────
   perform rebuild_map_college_goal2();
   perform rebuild_map_college_credit_summary();
+  -- Where the applied and transcribed credit comes from: the military split and
+  -- the exhibits behind it (sheet 2026-09-30-sierra-credit-source items 4 and
+  -- 5). After the title swap, for MAP's CPL type code, and after the summary,
+  -- whose totals its breakdowns add up to. It raises on its own suppression
+  -- property, which rolls this whole promotion back.
+  perform rebuild_map_college_credit_sources();
   -- The Customer Success clean-up list. Rebuilt here rather than on its own
   -- schedule so it can never describe a different day's data from the tables it
   -- is derived from — a worklist that disagrees with the dashboard costs more
@@ -481,7 +489,8 @@ begin
   -- LIST rather than one name, so adding a rebuild without gating it fails here
   -- instead of shipping quietly.
   select count(*) into ungated from (values
-      ('map_cleanup_worklist'),('map_transcribed_gap')) t(name)
+      ('map_cleanup_worklist'),('map_transcribed_gap'),
+      ('map_college_credit_bucket'),('map_college_exhibit_credit')) t(name)
    where not exists (
      select 1 from pg_policies p
       where p.schemaname = 'public' and p.tablename = t.name

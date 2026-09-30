@@ -328,15 +328,38 @@ check(by.get("MOS-42A-001") == "Human Resources Specialist",
 check("MOS-11B-006" not in by and "" not in by,
       "a blank id or blank title must be dropped, not stored as an empty string")
 check(len(got) == 2, f"expected 2 usable titles, got {len(got)}")
-check(all(sorted(r) == ["exhibit_id", "title"] for r in got),
+check(all(sorted(r) == ["cpl_type_code", "exhibit_id", "title"] for r in got),
       "the row shape must match stg_map_ace_exhibit_titles exactly")
+check(all(r["cpl_type_code"] is None for r in got),
+      "a view without CPLTypeCode must yield None, never a type guessed from the id")
 
 # Column ORDER must not be assumed — the loader indexes by name everywhere else,
 # and this pair is read positionally out of a 14-column view.
 shuffled = sync.ace_titles(_cat(["Title", "AceID"], [["Combat Medic", "MOS-68W-001"]]))
-check(shuffled == [{"exhibit_id": "MOS-68W-001", "title": "Combat Medic"}],
+check(shuffled == [{"exhibit_id": "MOS-68W-001", "title": "Combat Medic", "cpl_type_code": None}],
       "ace_titles() read the columns positionally — it must locate AceID and "
       "Title BY NAME, or a reordered view silently swaps ids and titles")
+
+# MAP's own CPL type rides along (2026-09-30): the most frequent code across an
+# exhibit's rows, found BY NAME, and never read off the id.
+typed = sync.ace_titles(_cat(["CPLTypeCode", "Title", "AceID"], [
+    ["Cx", "Spanish Placement Exam", "MAPCXS-L2TW1-1-001"],
+    ["Cx", "Spanish Placement Exam", "MAPCXS-L2TW1-1-001"],
+    ["PR", "Spanish Placement Exam", "MAPCXS-L2TW1-1-001"],
+    ["M",  "Combat Medic", "MOS-68W-001"],
+    ["",   "Unfilled", "MAPOA-C1-1-001"],
+]))
+tby = {r["exhibit_id"]: r["cpl_type_code"] for r in typed}
+check(tby.get("MAPCXS-L2TW1-1-001") == "Cx",
+      "the majority code must win across an exhibit's catalogue rows")
+check(tby.get("MOS-68W-001") == "M", "a military exhibit must carry M")
+check(tby.get("MAPOA-C1-1-001") is None,
+      "a blank code must store None, not an empty string or a guess")
+tie = sync.ace_titles(_cat(["AceID", "Title", "CPLTypeCode"], [
+    ["X-1", "Tie", "SA"], ["X-1", "Tie", "IC"]]))
+tie_rev = sync.ace_titles(_cat(["AceID", "Title", "CPLTypeCode"], [
+    ["X-1", "Tie", "IC"], ["X-1", "Tie", "SA"]]))
+check(tie == tie_rev, "a tied vote must not depend on row order")
 
 # A renamed upstream column must be LOUD. Returning [] would read as "no titles
 # today" and quietly ship a guidance list with every title blank.
