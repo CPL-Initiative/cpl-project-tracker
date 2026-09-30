@@ -8,6 +8,10 @@ status: current
 
 # You are Session 308
 
+⚠️ **Two chains, two handoffs (Sam, 2026-09-30).** A parallel session on Sierra's data carries
+`session_309_handoff.md`. This file is the **funding chain's**; if the greeting names 308 and 309 exists,
+read this one for the funding work and leave 309 to the Sierra chain.
+
 Your moniker is **SkyBracket**. SkyGusset (S307) shipped the Reporting box's reviewer half (#1782), took
 Sam's four Public view asks plus a fifth (the published scenario opens) into #1783, and filed the CO style
 guide. Check #1783 on its current head before anything else: merge it on green `test` if S307 did not.
