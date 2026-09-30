@@ -41,106 +41,10 @@ shell-first, then new-files-only.
 > explainer rework, the maximum allocation, the rural carve-out's retirement,
 > the noncredit lane's first shape, Sam's dial-moving day and the docx
 > migration) on **2026-09-01**, and the 2026-08-31 → 2026-09-01 sections (the
-> one-pool port, its test family and the deck run: S215–S217) on **2026-09-24** — each time because the doc crossed its size
+> one-pool port, its test family and the deck run: S215–S217) on **2026-09-24**, and the 2026-09-01 section on
+the two consolidations (Session 219) on **2026-09-30** (S306) — each time because the doc crossed its size
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
-
-## 2026-09-01 (later, Session 219) — both consolidations ruled and shipped, and the condition that made one of them dangerous
-
-Sam ruled the decision sheet the day it was written — consolidate the goal
-spine, port the flat ledger — and then added two things mid-flight that changed
-the work: an introduction, and *"I don't want to lose editability of variables
-we have in the model through the simplifying and consolidation process."*
-
-### The condition was the whole risk, and it was not obvious
-
-The Funding Breakdown's seven boxes looked like a display. They were the
-**editing surface**: each box held an inline editor for its amount, another for
-its label, a control to drop it from the funding math, and another to hide it
-from the public college page. "Flatten this into a ledger" reads like a
-presentation task, and the natural way to build a ledger is to print the values
-— which would have looked *correct in a screenshot* and silently cost Sam the
-model. Nothing on the page would have said so; the numbers would all be right.
-
-Two things followed from taking that seriously.
-
-**The class vocabulary did not change.** `.cplfund-card` names a ROLE — a
-labeled figure — not a shape, so the flat treatment is CSS scoped to a
-`.cplfund-ledger` wrapper and the markup is untouched. Every editor, every
-control, every fold and every absence guard (`.feeder`, `.balance`, `.rural`)
-kept working. A rename would have been a day of re-aiming ~25 assertions that
-were each asserting the right thing about a container that had moved.
-
-**The guard came before the confidence.** `cpl_funding_ledger_editable.test.js`
-asserts the dials rather than the look, and it is mutation-verified in the
-direction that matters: make one row print its value instead of offering an
-editor and it fails eight assertions **by name**. That "by name" cost a fix of
-its own — the first version threw at an unguarded `commit(null)` and the run
-died before `finish()` printed, so the assertion that caught the bug never
-reached the log and the next reader would have seen a stack trace instead of a
-cause. **A guard that dies before it can report is only half a guard.**
-
-### One function, two surfaces
-
-The spine consolidation's real content is not the layout. Half the fold was a
-second printing of the band above it, and deleting that half is easy. The other
-half — the evidence state, the (A) equity limit, the (C)
-demonstrated-not-measured note — had to render in the BAND (where a reader
-works) while the §78093.2(d)(2) account still had to stand on its own one click
-down. That is two surfaces describing the same goal, which is exactly the shape
-that drifts.
-
-So `goalEvidence()` / `goalLimitHtml()` / `goalFundsHtml()` were extracted
-first, and both surfaces call them. A check asserts the band and the table agree
-about (C). Without it, the tab could have told a college "no performance
-measure" on the band and something else in the report, and neither would look
-wrong on its own.
-
-**And the reason the evidence line is per GOAL rather than per band:** Success
-is (B)+(C), and they differ on precisely the axis (d)(2) asks about — (B) is
-earned against a MAP measure, (C) is funded and deliberately not measured. A
-band-level sentence would have to be wrong about one of them. The consolidation
-that groups two goals into one band is the same consolidation that forbids one
-statement for the pair.
-
-### R11, and re-aiming versus weakening
-
-The introduction broke a guard: R11's check read *"the Summary sits above the
-first section"*, and an intro section precedes it. The lazy fix is to move the
-intro below the Summary; the wrong fix is to delete the check. R11's actual
-requirement is that **the Summary is never inside a fold** — "above the first
-section" was an equivalent proxy until there was a section that belonged above
-it. The check now asserts both halves directly: no enclosing `<details>`, and
-only the intro may precede it. Strictly stronger than the proxy, and it says
-what it means.
-
-Three other re-aims this run, each to a requirement rather than a phrasing: the
-goals suite addresses the (d)(2) cells **by column header** (the metric-pin fix
-from earlier today, applied before a third column could re-point anything); the
-bands suite accepts "campus" or "college" in the no-one-earns claim, which is a
-fact and not a spelling; and the hero-note check went case-insensitive when its
-phrase became the start of a sentence.
-
-### What the port actually moved, and what it did not
-
-Two of the seven boxes were never ledger lines. The **allocation basis** is a
-denominator and the **reimbursement rate** is a price; neither nets down to the
-total the ledger sums to, and standing in a money ledger they read as though
-they did. They moved into *How an allocation is computed* — with their editors,
-which is the same trap in miniature: moving a read-only figure is a layout
-change, moving an editable one and printing it as text is a lost dial.
-
-The print CSS learned the ledger too. The print window **clones the live tab**,
-so without it "Save as PDF" would have carried the ledger's markup and the
-boxes' look — the one place the two surfaces could quietly disagree about what
-the model looks like.
-
-**Receipts.** PR #1433, on top of #1432 the same day. 292 test files green; all
-sixteen `js-tests.yml` lint steps run locally before the push, which is now
-habit rather than diligence: the previous PR went red on
-`kb/_build_dependency_map.py --check`, and **editing `cpl_funding.js` at all
-moves recorded line numbers in that artifact**, so it is stale after every
-change to this tab.
 
 ## 2026-09-02 — Session 219 (SkyTrim): the explainer audit, and a figure that was never computed
 
@@ -1582,3 +1486,23 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 - ⚠️ **A typed figure slipped a decimal.** The Scenario 2 introduction showed 67.1 FTES; the model gives 67.17 (67.2). 44.3 × 50/33 = 67.12 is the likely source: another scenario's rounded figure, scaled. Read every figure from the model.
 - ⚠️ **A helper that builds a filename hides the read from the dependency map.** `narration('s1')` formatting `narration_%s_layout.json` dropped `build.py`'s read from `kb/dependency_map.json`; the literal filename at each call keeps it.
 - ⚠️ **`check_generated.sh` is the last step before a push, after every edit.** #1773's first push ran it before a lane trim changed the `updated:` date, and `lints` failed on the stale catalog.
+
+## S306 (2026-09-30, SkyRivet): P1 on `pa_u`, Refresh everything, and where the units come from
+
+**State.** Sam moved P1 (Access) from `ppa_u` to `pa_u` in both scenarios (his save, 13:41Z) and asked whether Chaffey's Curr CR of 634.0 FTES was a calculation error. It is not: 19,020 applied units ÷ 30 = 634.0, and the priority counts up to its 67.2-FTES target, so Chaffey qualifies for the whole $170,431. The model reproduced his screenshot to the dollar (total $345,220). Under `pa_u`, 49 of 115 colleges reach the P1 target (0 under `ppa_u`); 7 reach P2. His Sierra reading holds: Chaffey's applied units are mostly AP exams (MAPSAS exhibits), a use he called *"valid and useful"*. Shipped in one PR: the drill-in hovers, the frozen header, Refresh everything and its splash, My College following the model, My CPL Funding beside the table on the public renderings, and Unit sources.
+
+**What worked.**
+- **Reproduce the screenshot through the model before judging a figure.** A minimal Scenario 2 config (the dials, not the whole row) reproduced every figure in Sam's screenshot, which is what made "the arithmetic is right" a finding rather than an opinion.
+- **Measure the grain before adding a table's units.** `map_college_cr_unit` sums Chaffey's applied units to 19,405 against the measure's 19,020, so its rows carry each row's own units and add by exhibit and by recommendation. Student counts do not add (a student sits on several rows), so the panel shows units only.
+- **Measure a proxy against the flag it stands in for.** The credit report has no military column. "ACE source or a military course type" agrees with MAP's own MilitaryCredits flag on 99.5% of applied units statewide (1,193 of 238,043 differ), so the split carries its rule in its label.
+
+**What bit.**
+- ⚠️ **Subscribers heard the model before its caches cleared.** `render()` called `notifyModel()` first and cleared the caches only past the mount guard; a subscriber reading `_alloc()` in its handler got the previous model. My College escaped only because `fundingFor()` calls `_model()` first.
+- ⚠️ **My College kept its own copy of the config.** The box read the module on every paint, but its strategies came from the copy read at load and the scenario chosen then; after a publish it showed Scenario 2's funding and dropped every strategy. It now adopts the module's config on every model change, once the module has read the shared one.
+- ⚠️ **A frozen header never froze.** The header was `sticky` since 2026-08-30, inside a wrap whose `overflow-x: auto` made it the scroll container, and a wrap with no height never scrolls up and down. A 75vh cap fixed it; print releases the cap.
+- ⚠️ **A control in a figure cell broke the harness's reading of the figure.** `readCells()` takes the figure as the cell's text less its FTES line; the Unit sources word came after the line. The harness now drops `.cplfund-srclink` before reading.
+- ⚠️ **`:scope > tbody > tr`, not `tbody tr`, inside a nested table.** The outer table's tbody is an ancestor of the inner header row too.
+
+**Moved from the funding lane at the S306 checkpoint (verbatim):**
+
+✅ **COLLEGE DASHBOARD ROUNDS 8 AND 9 ARE LIVE** (S302–S303, Sam: *"mockup looks good!"*): gray Curr figures until an institution meets all its minimum conditions, showing what its measures compute to; the drill-in in the row's own columns; the coordinator, primary contact and landing page under the met first condition; the veteran count, JST count and percent beside the third. Guards: `tests/cpl_funding_round8.test.js`, `tests/cpl_funding_round9.test.js`; harness `prototype/mockup_harness/`. Detail moved verbatim to the [lessons archive](../../cpl_funding_lessons_archive.md) (S305). ⭐ **Sheet 4 rulings (Sam, 2026-09-29, all nine his own call):** the first condition's check reads **all three parts**, and the Reporting box starts with **spending** (a new write surface: Governance first). ⭐ **Card 2, S305: Governance done, mockup with Sam. NEEDS SAM (sheet 5, cards 2–4).** `cpl_funding_reports` folds into DR-09 beside `cpl_funding_notes` (`kb/governance_surface_map.json` and the register row, 2026-09-30); a report is an institution's dollars with no student record, so the student-detail disclosure boundary does not reach it, and it is reviewer-gated like the note. The mockup ([BV2Xqt49vCYicX5xdEKP5E](https://claude.ai/artifact/BV2Xqt49vCYicX5xdEKP5E), `prototype/cplfund_reporting_box_v1.html`) records a college's reported expenditures per quarter in NOVA's categories (object codes 1000 to 7000 and indirect costs), totals them to date beside the maximum award, keeps who reported and who recorded, and treats a correction as a new report. The build waits on three calls: quarterly or yearly, all eight categories, and whether a college sees its own figures on My College. ✅ **Card 1 built (S303):** `map_coordinator_summary()` answers `has_coordinator`, `has_primary_contact` and `has_landing_page` as booleans, never a name, so the public page and the tab run one check (live 2026-09-29: 49 coordinators, 43 all three); an unmet line names the missing part. Guard: `tests/cpl_funding_first_condition.test.js`.

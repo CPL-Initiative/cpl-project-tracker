@@ -1,7 +1,7 @@
 ---
 title: "Decision sheets — how to build one, and how to read the replies"
 created: 2026-09-09
-updated: 2026-09-29
+updated: 2026-09-30
 tags: [reference, governance]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -304,7 +304,13 @@ than held back for a quorum.
 carried into the lanes (S302, 2026-09-29):** Sam completed all eighteen cards at 12:39Z
 (`through: "18"`, each his own call; 14 and 15 stood as proposed under the high-water
 rule), and every ruling left with its lane's marker in one pull request, so the builder
-holds no card and writes no sheet until a lane marks a new ask. Sheet 4 is
+holds no card and writes no sheet until a lane marks a new ask. ⭐ **Sheet 6 is the standing
+sheet (S306, 2026-09-30):** `docs/visuals/2026-09-30-open-asks-6.html`, seven cards (sheet 5's five,
+which had no reply when S306 read its store, and two new: Scenario 2 reads as published, and
+Priority 1's wording against `pa_u`), published at
+https://claude.ai/artifact/KCuKxKytRRWqNvqrusvtmr (`SHEET_ID` `2026-09-30-open-asks-6`, a fresh
+store). Read its replies AND sheet 5's (https://claude.ai/artifact/4PhPMFSvUVJLxrV7PazTQr): a reply
+on either counts. Sheet 4 is
 `docs/visuals/2026-09-29-open-asks-4.html` (nine cards, just the items), published S303 at
 https://claude.ai/artifact/PzVQ6KftWPtbk8afPXbZmf (`SHEET_ID` `2026-09-29-open-asks-4`, a fresh store); Sam
 answered all nine at 22:26Z (through 9, each his own call), and the lanes record them. Never republish onto it. ⭐ **Each card carries its own `evidence`

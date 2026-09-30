@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 499,
+   "count": 500,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3515,6 +3515,23 @@
      "title": "A status lane must link to the remedy lane, or \"done\" measures attention",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-09-30",
+     "governs": [
+      "cpl_funding.js",
+      "funding-model/index.html"
+     ],
+     "path": "docs/kb-notes/methodology-a-sticky-header-sticks-only-inside-a-box-that-scrolls.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "tables"
+     ],
+     "title": "A sticky header sticks only inside a box that scrolls",
+     "type": "methodology",
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-09-05",
@@ -14170,7 +14187,7 @@
      ],
      "title": "Decision sheets \u2014 how to build one, and how to read the replies",
      "type": null,
-     "updated": "2026-09-29"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-30",
@@ -14338,8 +14355,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 277,
+   "count": 278,
    "docs": [
+    {
+     "created": "2026-09-30",
+     "governs": [],
+     "n": 307,
+     "path": "docs/session_307_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "my-college",
+      "refresh",
+      "unit-sources",
+      "decision-sheet"
+     ],
+     "title": "sheet 6 is with Sam; the funding surfaces now follow the model",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-30",
      "governs": [],
@@ -19043,5 +19078,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 992
+ "total": 994
 }

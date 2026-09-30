@@ -1,14 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-30",
-  "_session": "S305 SkyLatch",
-  "_status": "Landed on 30 September (S305): the Scenario 2 narrated draft is built and waits on your review; the explainer links it once the Chancellor finalizes Scenario 2. The Scenario 2 introduction now shows the model's 67.2 FTES for Sample College's Access target, where it showed 67.1. The Reporting box, expenditures first, passed Governance and has a mockup; it is built after your three calls on sheet 5. The CR Reference's zero-hour groups now read noncredit on the live worklist. Next: your sheet 5 answers.",
+  "_session": "S306 SkyRivet",
+  "_status": "Landed on 30 September (S306): Chaffey's 634.0 FTES on Access is correct (19,020 applied units, mostly AP exams, divided by 30), and every drill-in figure now says how it was reached on hover. The College Dashboard scrolls under a frozen header. Refresh everything on the Internal view re-reads the saved model in every open window and lists what it reached. My College follows the model again, the explainer and Public view offer My CPL Funding beside the table, and Unit sources shows where a priority's units come from, military and non-military. Next: your answers on sheet 6.",
   "items": [
     {
-      "id": "s305-sam-sheet5",
+      "id": "s306-sam-sheet6",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Open-asks sheet 5 has five cards: your review of the Scenario 2 narrated draft; how often a college reports its expenditures, which categories the Reporting box carries, and who sees a college's figures; and a name for each of the two 'units waiting' figures on My College. https://claude.ai/artifact/4PhPMFSvUVJLxrV7PazTQr"
+      "text": "Open-asks sheet 6 has seven cards: sheet 5's five (the Scenario 2 narrated draft, the Reporting box's three calls, the two 'units waiting' names) and two new ones: Scenario 2 now reads as published in the stored model, so confirm the Chancellor finalized it; and Priority 1's wording, which names the Portal and Landing Page routes while the measure counts every applied unit. https://claude.ai/artifact/KCuKxKytRRWqNvqrusvtmr"
     },
     {
       "id": "s304-sam-report-when-where",
@@ -21,12 +21,6 @@
       "for": "Sam",
       "tab": "implementation-funding",
       "text": "Card 7's two lines still read the old words in both scenarios (checked 29 September, 23:25Z): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
-    },
-    {
-      "id": "s303-sam-scenario2-chancellor",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Tell a session when the Chancellor finalizes Scenario 2. Publishing it on the tab switches the explainer and the college briefing to it. Your sheet 4 answers on it are carried out or under way: Year 2 already follows P1 and P2, the two condition phrases are written, and the P3/P4 mockup and a Scenario 2 narrated draft are next."
     },
     {
       "id": "s298-sam-sql-test-answer",

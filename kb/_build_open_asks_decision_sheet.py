@@ -31,6 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 6 (S306, 2026-09-30, SHEET_ID 2026-09-30-open-asks-6): sheet 5's five cards, which carried no
+reply when S306 read its store, and two new ones: Scenario 2 reads as published in the stored model,
+and Priority 1's wording against what `pa_u` counts. Published at
+https://claude.ai/artifact/KCuKxKytRRWqNvqrusvtmr (capabilities db + comments); read its replies first.
+Sheet 5's store stays where it is; a reply there still counts for its five.
+
 Sheet 5 (S305, 2026-09-30, SHEET_ID 2026-09-30-open-asks-5): five cards, the Scenario 2 narrated
 draft (card 8's review), the Reporting box's three calls and the "units waiting" label. Published
 at https://claude.ai/artifact/4PhPMFSvUVJLxrV7PazTQr (capabilities db + comments); read its replies first.
@@ -78,8 +84,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-5.html')
-SHEET_ID = '2026-09-30-open-asks-5'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-6.html')
+SHEET_ID = '2026-09-30-open-asks-6'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -409,6 +415,23 @@ def p_reporting_box_unbuilt():
                     else "%d reference(s) to cpl_funding_reports in the tabs" % n)
 
 
+# Priority 1 on pa_u (Sam, 2026-09-30): the feed's applied measure still
+# leaves out portal-origin students, whom ppa_u counts on their own.
+def p_pa_excludes_portal():
+    """cpl_funding_performance.js says PA and PPA describe disjoint cohorts."""
+    src = _read("cpl_funding_performance.js")
+    open_ = "PA and PPA describe disjoint cohorts" in src
+    return open_, ("the feed's basis still says PA leaves out portal-origin students" if open_
+                   else "the feed's basis no longer describes PA and PPA as disjoint")
+
+
+def _perf_statewide(key):
+    """A statewide figure from the daily artifact, read at build time."""
+    src = _read("cpl_funding_performance.js")
+    body = src[src.index("{"):src.rindex("}") + 1]
+    return json.loads(body)["statewide"].get(key)
+
+
 # My College: two different figures carry the one label "units waiting".
 def p_units_waiting_twice():
     """college_briefing.js labels two different figures 'units waiting'."""
@@ -601,6 +624,46 @@ def items():
             "if</em> you want the page to lead with the larger figure; then it takes the shorter name."),
         'chips': chips(('Rename as proposed', 'rename'), ('Other names, in my note', 'edit'), CH_LATER),
         'evidence': [measured(p_units_waiting_twice), quoted("the S304 session note", "2026-09-30")],
+    })
+
+    # ── Sheet 6 (S306, 2026-09-30): two new asks ────────────────────────────
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'Scenario 2 reads as published',
+        'ref': 'implementation-funding · the stored model · published scenario',
+        'facts': (
+            "The stored model, last saved from your browser at 13:41 UTC today, names Scenario 2 as the "
+            "published scenario. Colleges, the explainer and the Public view now read Scenario 2: Access and "
+            "Completion at half the funding each, with Career Attainment and Innovation Projects as reports. "
+            "The lane has held Scenario 2 until the Chancellor finalizes it, and the Scenario 2 narrated draft "
+            "(card 1) stays unlinked until then."),
+        'why': "Every page a college reads follows the published scenario.",
+        'rec': (
+            "<strong>Record that the Chancellor finalized Scenario 2</strong>, and the lane drops the hold. "
+            "<em>It might be wrong if</em> you published it to preview the explainer; then publish Scenario 1 "
+            "again from the tab until the Chancellor rules."),
+        'chips': chips(('Finalized, keep it published', 'final'), ('Not yet, I will publish Scenario 1', 'revert'), CH_LATER),
+        'evidence': [live("2026-09-30", "the cpl_funding_config row, read through the Supabase tools"), policy()],
+    })
+    pa, ppa = _perf_statewide("pa_u"), _perf_statewide("ppa_u")
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Priority 1's wording and what it counts",
+        'ref': 'implementation-funding · Priority 1 (Access) · METRIC_SOURCES pa_u',
+        'facts': (
+            "Priority 1 now counts every applied unit MAP holds for a college (%s units statewide today), "
+            "and 49 of 115 colleges reach its target. Its card still says the units originate from the CPL "
+            "Portal, a College CPL Landing Page, or batch upload. The measure leaves out the students who "
+            "came through the Portal or a Landing Page; MAP counts them on their own (%s applied units "
+            "statewide), as you split them on 2026-09-15."
+            % ("{:,.0f}".format(pa or 0), "{:,.1f}".format(ppa or 0))),
+        'why': "Colleges read the card's words on the explainer, and the words name the group the measure leaves out.",
+        'rec': (
+            "<strong>Reword the card to say what it counts</strong>, for example <em>Applied CPL units (FTES) "
+            "in MAP</em>; you type it on the tab. <em>It might be wrong if</em> the words should name the routes "
+            "you want colleges to build; then they stay."),
+        'chips': chips(('Reword as proposed', 'reword'), ('Keep the wording', 'keep'), CH_LATER),
+        'evidence': [measured(p_pa_excludes_portal), live("2026-09-30", "the Scenario 1 and 2 configs")],
     })
     return I
 
