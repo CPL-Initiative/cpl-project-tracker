@@ -4,9 +4,9 @@
   "supabase_tables": 90,
   "rpcs": 32,
   "edge_functions": 5,
-  "file_datasets": 558,
+  "file_datasets": 561,
   "external_services": 147,
-  "consumers": 386,
+  "consumers": 388,
   "workflows": 38,
   "data_js_files": 68,
   "tabs": 37
@@ -5147,6 +5147,13 @@
      "direction": "read",
      "how": "literal",
      "line": 64
+    },
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -10890,6 +10897,26 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/it_ai_credential_catalog.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
+    },
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 67
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/kb/reference/coci_program_course_file.csv.gz": {
    "consumers": [
     {
@@ -11600,6 +11627,13 @@
      "direction": "read",
      "how": "literal",
      "line": 83
+    },
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
     }
    ],
    "served": true,
@@ -12206,6 +12240,13 @@
   "file:kb/reference/cos_certifications.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
+    },
+    {
      "id": "script:kb/_match_cos_authority.py",
      "kind": "script",
      "direction": "read",
@@ -12245,6 +12286,19 @@
     "workflow:cos-authority-sync.yml"
    ]
   },
+  "file:kb/reference/credential_registry_national_sample.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/reference/eacr_cip_title_rules.json": {
    "consumers": [
     {
@@ -12279,6 +12333,26 @@
      "direction": "read",
      "how": "literal",
      "line": 948
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/industry_credential_watch.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
+    },
+    {
+     "id": "script:kb/_diff_credential_watch.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 24
     }
    ],
    "served": true,
