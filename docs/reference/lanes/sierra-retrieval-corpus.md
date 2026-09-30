@@ -1,7 +1,7 @@
 ---
 title: "Sierra retrieval + corpus — lane state"
 created: 2026-08-28
-updated: 2026-09-29
+updated: 2026-09-30
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -84,3 +84,23 @@ one place. **Landed (#1751):** `tryGroup()` draws the Sierra button only where
 the control reads *Try it in: My College*, and on a phone the lone button takes
 the row. Guard: `tests/sierra_training_round1.test.js` (5d), which also proves
 that button's question lands in My College's own box.
+
+## Where applied and transcribed credit comes from (2026-09-30)
+
+Sam asked Sierra for the military and non-military split of Chaffey's applied units and the exhibits
+behind them (his Training note on turn `1b9230ce`). She has neither: her disposition block reads only
+`map_college_credit_summary`'s four college totals and `map_college_goal2`. The data exists in the student
+view (`map_student_credit`: MAP's military and non-military columns partition applied credit on 73,933 of
+73,939 in-plan rows) and the articulation view (`map_college_cr_unit`). **Seven decisions are on their own
+sheet**, [NT56gHRViNX9ZYnRg8r1KR](https://claude.ai/artifact/NT56gHRViNX9ZYnRg8r1KR)
+(`docs/visuals/2026-09-30-sierra-credit-source.html`, builder
+`kb/_build_sierra_credit_source_decision_sheet.py`, collection `replies`), kept off the standing open-asks
+sheet because that one belongs to the funding queue. Two defects surfaced on the way, both on the sheet:
+⚠️ **the summary suppresses on all students at a college**, so 8 colleges publish a transcribed total from
+fewer than 10 students (3 from one), the public `_pub` copy too; ⚠️ **`applied_credits` sums every
+status**, so Chaffey's 19,405 carries 1,206 Needs Action units of basic military service credit, which
+Sierra also counted inside the 7,641 not acted on. At k=10, a college-by-exhibit table names 90% of
+applied units statewide (94% at Chaffey) but only 6% of Chaffey's transcribed units. `cpl_memory`:
+`credit-summary-publishes-small-group-applied-and-transcribed-2026-09-30`,
+`summary-applied-includes-needs-action-articulated-2026-09-30`,
+`map-military-columns-partition-applied-credit-2026-09-30`.

@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 557,
+  "file_datasets": 558,
   "external_services": 147,
-  "consumers": 384,
+  "consumers": 385,
   "workflows": 38,
   "data_js_files": 68,
   "tabs": 37
@@ -5699,6 +5699,26 @@
      "direction": "write",
      "how": "literal",
      "line": 81
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-sierra-credit-source.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_sierra_credit_source_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 28
+    },
+    {
+     "id": "script:kb/_build_sierra_credit_source_decision_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 28
     }
    ],
    "served": false,
