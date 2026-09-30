@@ -31,6 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 9 (S307, 2026-09-30, SHEET_ID 2026-09-30-open-asks-9): one card, whether Priority 1 counts credit
+still at Needs Action (the question the Sierra chain handed the funding lane), set against MAP's student
+view, which pa_u reads. Published at https://claude.ai/artifact/XnHFDLys7WRGjHC26NY9KP (capabilities db +
+comments).
+
 Sheet 8 (S307, 2026-09-30, SHEET_ID 2026-09-30-open-asks-8): one card, whether the CO style guide
 gets a curated copy in the public knowledge base. Published at
 https://claude.ai/artifact/7sb3cMt8iU9YWmjKyyHCT1 (capabilities db + comments). Sam answered it at
@@ -99,8 +104,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-8.html')
-SHEET_ID = '2026-09-30-open-asks-8'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-9.html')
+SHEET_ID = '2026-09-30-open-asks-9'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -562,6 +567,37 @@ def items():
     # Sheet 8's one card (S307) left with its ruling: Sam chose "curate" at
     # 18:52Z on 2026-09-30 (cpl-knowledge-base#24), and the governance lane
     # records it.
+
+    # Sheet 9 (S307): the question the Sierra chain handed the funding lane.
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Does Priority 1 count credit still at Needs Action?",
+        'ref': 'implementation-funding · P1 (pa_u) · map_college_cr_unit · cpl_memory summary-applied-includes-needs-action-articulated-2026-09-30',
+        'facts': (
+            "Priority 1 (Access) counts every applied CPL unit, your change of 30 September. MAP marks each articulated "
+            "credit with a plan status, and it reports that credit in two views. Its articulation view, measured 30 "
+            "September, holds 171,078 units applied to a student's CPL plan, 74,697 at Needs Action (articulated, with no "
+            "action on the plan yet) and 568 in process. Its student view, the one Priority 1's measure reads from, holds "
+            "162,603 units on plans. For credit at Needs Action, MAP's applied figure equals the articulated figure, so the "
+            "credit reads as applied before a college has acted on it. Priority 1 reads 224,898 units statewide, 62,295 "
+            "above the plan units in its own view, so it counts much of the Needs Action credit; the exact share cannot be "
+            "proven, because the model's feed carries each student's totals rather than a status split. Chaffey shows it "
+            "most: 18,066 units on plans in the student view (18,199 in the articulation view), 1,206 units of basic "
+            "military service credit at Needs Action, and a Priority 1 figure of 19,020. The Sierra session found this, "
+            "measured both views, and handed the question to the funding lane."),
+        'why': (
+            "Priority 1 pays for access to credit. Credit on a student's plan is credit the college has acted on; credit "
+            "at Needs Action is credit waiting for that step, which My College calls units not yet acted on. MAP splits "
+            "applied units by plan status for every college, so a plan-only measure can be built, and it should be built "
+            "from the student view that Priority 1 already reads, so the two figures compare one view with itself."),
+        'rec': (
+            "<strong>Count credit on a CPL plan only.</strong> Build Priority 1's measure from the units applied to a "
+            "plan in MAP's student view, so the funding follows the credit a college has acted on, and show the Needs "
+            "Action units beside it as units not yet acted on. <em>It might be wrong if</em> Needs Action credit reaches "
+            "the student without a college's step; then Priority 1 keeps every applied unit, as it does now."),
+        'chips': chips(('Plan units only', 'plan'), ('Keep every applied unit', 'keep'), CH_LATER),
+        'evidence': [live('2026-09-30', 'map_college_cr_unit by cpl_status_plan (articulation view); the student view by plan status (Sierra session); cpl_funding_performance.js pa_u')],
+    })
     return I
 
 
