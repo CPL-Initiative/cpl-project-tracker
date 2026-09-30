@@ -4,6 +4,8 @@ date: 2026-09-29
 session: 300 (SkyLoom)
 tags: [handoff, implementation-funding, college-dashboard, sierra-training, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_305_handoff.md
 ---
 
 # You are Session 301
