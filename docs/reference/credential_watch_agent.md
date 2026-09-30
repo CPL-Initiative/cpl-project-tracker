@@ -140,7 +140,8 @@ trailhead.salesforce.com  www.databricks.com  www.snowflake.com  iapp.org
 www.acenet.edu  credits.acenet.edu
 ```
 
-Cloud.google.com and cccco.edu were already reachable.
+Cloud.google.com and cccco.edu were already reachable. Sam added the hosts on 2026-09-30 (open-asks sheet 11,
+card 9); the first Monday run is the first to read them, and its report says whether it could.
 
 ## The Credential Engine Registry API
 

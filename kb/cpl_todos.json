@@ -1,14 +1,20 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-30",
-  "_session": "S308 SkyBracket + S309 SkyCensus (one session)",
-  "_status": "Landed on 30 September (S308 and S309, one session): the funding Public view reads as plain text, as you asked. The gray boxes around text are gone, the text is one size, each minimum condition reads as one paragraph, Copy requirements and Generate brief stay on the internal view, and the Timeline's dates sit apart from their labels. The Reporting box's college half is live: on My College, the people MAP lists as a college's CPL coordinator or primary CPL contact sign in with the email link and read that college's reported expenditures, read only. Sheet 10 holds six items for you, among them three choices from today you may reverse and a note to Pedro about a double count in one of MAP's views. Sierra, the same day: her typical-courses lookup no longer times out (each course title's simplified form is stored), and two of her smoke checks now accept the honest way of saying the catalog lists nothing for a place.",
+  "_session": "S308 SkyBracket + S309 SkyCensus (one session), carrying the credential side session",
+  "_status": "Landed on 30 September (S308 and S309, one session): the funding Public view reads as plain text, as you asked. The gray boxes around text are gone, the text is one size, each minimum condition reads as one paragraph, Copy requirements and Generate brief stay on the internal view, and the Timeline's dates sit apart from their labels. The Reporting box's college half is live: on My College, the people MAP lists as a college's CPL coordinator or primary CPL contact sign in with the email link and read that college's reported expenditures, read only. Sierra, the same day: her typical-courses lookup and her program search no longer time out (the simplified titles and the search vectors are stored once), and her smoke checks accept the honest way of saying the catalog lists nothing for a place. Your credential side session built the IT, cybersecurity, data and AI credential catalog (1,165 credentials, 48 articulated) and armed the Monday watch. You answered sheet 11 the same evening; sheet 12 holds the one you marked Later.",
   "items": [
     {
-      "id": "s308-sam-sheet10",
+      "id": "s310-sam-sheet12",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Sheet 10 has six items: whether Priority 1 counts credit still at Needs Action; three choices from today you may reverse (the Timeline's type size, the priority cards' boxes, where the college sign-in sits on My College); whether to send Pedro the note about MAP's two views; and a check of Sierra's City College of San Francisco answer. https://claude.ai/artifact/DSky8iUvxg5WeemRm4wpW2"
+      "text": "Sheet 12 has one item, the City College of San Francisco check in Sierra you marked Later on sheet 11. Your other eight answers are recorded. https://claude.ai/artifact/B6Gnzmha8kArgiSQw1SdTe"
+    },
+    {
+      "id": "s310-sam-pedro-note",
+      "for": "Sam",
+      "tab": "map-custom-reports",
+      "text": "Edit and send Pedro the note about MAP's two views (your answer on sheet 11). The draft is in the session 310 handoff: the catalog-year view reports exactly twice the student view's units for 253 exhibit and recommendation combinations at 24 colleges."
     },
     {
       "id": "s308-sam-style-guide-kb-review",
@@ -56,7 +62,7 @@
       "id": "s303-fable-chat-smoke-watch",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "Sierra's smoke check: the catalog timeout is fixed (the typical-courses lookup reads a stored column, 88 ms, #1789), and the two wording checks that failed right answers are fixed in #1791; merge it on green and confirm the next run. Still open: the program search (probe 7p) averages 2.3 seconds over 1,297 calls against a 3-second limit on the public key."
+      "text": "Sierra's smoke check: the catalog timeout (#1789), the two wording checks (#1791, #1794) and the program search (#1796, the four search vectors are stored on each program row; a 4-term question went from 1.5 to 0.4 seconds) are fixed. Read the next smoke run on main, and after a day read the program search's timings again; it averaged 2.4 seconds before the change."
     },
     {
       "id": "s301-fable-unit-range-rest",
@@ -68,13 +74,19 @@
       "id": "s309-fable-sierra-source-answers",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "When Sam answers sheet 10 card 6, compare Sierra's City College of San Francisco answer with the live rows: 13,138.5 units on plans from 1,882 students; non-military 65 from 15 (12 exhibits under 10 each); military 13,073.5 from 1,868, 32 exhibits one by one (10,201) and 287 under 10 each (2,872.5)."
+      "text": "When Sam answers sheet 11 card 6, compare Sierra's City College of San Francisco answer with the live rows: 13,138.5 units on plans from 1,882 students; non-military 65 from 15 (12 exhibits under 10 each); military 13,073.5 from 1,868, 32 exhibits one by one (10,201) and 287 under 10 each (2,872.5)."
     },
     {
       "id": "s308-fable-identity-three-names",
       "for": "Fable",
       "tab": "college-briefing",
       "text": "Three funding-roster names (LA Swest, Mt San Antonio, MiraCosta) resolve to no college in the identity table, so those colleges' staff cannot see their reported expenditures on My College. Add the three spellings through the identity crosswalk's own reviewed change, then re-read cpl_funding_my_reports for one of them."
+    },
+    {
+      "id": "s310-fable-credential-watch-first-run",
+      "for": "Fable",
+      "tab": "partner-crosswalks",
+      "text": "Credential lane, from Sam's sheet 11 answers: rename the three credentials their issuers renamed (CyberOps Associate, AWS SysOps, AI-900) in the CER, keeping the old names as aliases; take issuer-skill verification by college faculty and a statewide group through Governance and the privacy reviews before any table is built. After 5 October, read the first Monday watch run's pull request (it can now read the issuers' pages) and file what it flags. Then the deck's badge-course slide, an issuer-skills example and a CER mock-up with credentials not yet in MAP."
     }
   ],
   "_deferred": [

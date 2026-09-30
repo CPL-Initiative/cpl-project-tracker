@@ -3595,6 +3595,8 @@
      "created": "2026-09-30",
      "governs": [
       "chatbox/supabase_program_typical_courses.sql",
+      "chatbox/supabase_search_college_programs.sql",
+      "kb/receipts/search_college_programs_stored_vectors_2026-09-30.sql",
       "chatbox/verify_program_typical_courses.sql",
       "kb/receipts/program_typical_courses_title_norm_2026-09-30.sql"
      ],
@@ -14485,10 +14487,11 @@
       "public-view",
       "reporting-box",
       "sierra",
-      "map-custom-reports",
+      "partner-crosswalks",
+      "credential-registry",
       "decision-sheet"
      ],
-     "title": "the funding and Sierra chains, joined; sheet 10 is the queue",
+     "title": "the funding, Sierra and credential chains, joined; sheet 11 answered",
      "type": null,
      "updated": ""
     },

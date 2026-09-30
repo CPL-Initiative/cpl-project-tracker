@@ -31,6 +31,16 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 12 (S308/S309, 2026-09-30, SHEET_ID 2026-09-30-open-asks-12): one card, sheet 11's card 6 (the
+City College of San Francisco check in Sierra), which Sam marked Later. Sheet 11's other eight left with his
+rulings (replies/done at 22:48:37Z, all nine his own call), each recorded in its lane in the same change.
+Published at https://claude.ai/artifact/B6Gnzmha8kArgiSQw1SdTe (capabilities db + comments).
+Sheet 11 (S308/S309, 2026-09-30, SHEET_ID 2026-09-30-open-asks-11): sheet 10's six cards (no reply yet),
+then the credential side session's three asks for the partner-crosswalks lane: who verifies an issuer's
+skills against course outcomes for the CER as a phase 0 credential registry; retitling the three
+renamed-credential exhibits; the network allowlist for the watch agent. Published at
+https://claude.ai/artifact/8CdZcCGsDU6hMwhBLRZViM (capabilities db + comments). Sheet 10's store stays where
+it is; a reply there still counts for its card.
 Sheet 10 (S308/S309, 2026-09-30, SHEET_ID 2026-09-30-open-asks-10): six cards. Sheet 9's card (no reply
 yet) with the catalog-year view's double count added; three S308 choices Sam may reverse (the Timeline's
 type size, the priority cards' boxes, where the college sign-in sits); the note to Pedro about MAP's two
@@ -110,8 +120,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-10.html')
-SHEET_ID = '2026-09-30-open-asks-10'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-12.html')
+SHEET_ID = '2026-09-30-open-asks-12'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -574,105 +584,8 @@ def items():
     # 18:52Z on 2026-09-30 (cpl-knowledge-base#24), and the governance lane
     # records it.
 
-    # Sheet 9 (S307), carried onto sheet 10: the question the Sierra chain handed the funding lane.
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Does Priority 1 count credit still at Needs Action?",
-        'ref': 'implementation-funding · P1 (pa_u) · map_college_cr_unit · cpl_memory summary-applied-includes-needs-action-articulated-2026-09-30',
-        'facts': (
-            "Priority 1 (Access) counts every applied CPL unit, your change of 30 September. MAP marks each articulated "
-            "credit with a plan status, and it reports that credit in two views. Its articulation view, measured 30 "
-            "September, holds 171,078 units applied to a student's CPL plan, 74,697 at Needs Action (articulated, with no "
-            "action on the plan yet) and 568 in process. Its student view, the one Priority 1's measure reads from, holds "
-            "162,603 units on plans. For credit at Needs Action, MAP's applied figure equals the articulated figure, so the "
-            "credit reads as applied before a college has acted on it. Priority 1 reads 224,898 units statewide, 62,295 "
-            "above the plan units in its own view, so it counts much of the Needs Action credit; the exact share cannot be "
-            "proven, because the model's feed carries each student's totals rather than a status split. Chaffey shows it "
-            "most: 18,066 units on plans in the student view (18,199 in the articulation view), 1,206 units of basic "
-            "military service credit at Needs Action, and a Priority 1 figure of 19,020. The Sierra session found this, "
-            "measured both views, and handed the question to the funding lane. Measured later the same day: the "
-            "articulation view counts 6,782 plan units twice (card 5), so the student view is the one to build from."),
-        'why': (
-            "Priority 1 pays for access to credit. Credit on a student's plan is credit the college has acted on; credit "
-            "at Needs Action is credit waiting for that step, which My College calls units not yet acted on. MAP splits "
-            "applied units by plan status for every college, so a plan-only measure can be built, and it should be built "
-            "from the student view that Priority 1 already reads, so the two figures compare one view with itself."),
-        'rec': (
-            "<strong>Count credit on a CPL plan only.</strong> Build Priority 1's measure from the units applied to a "
-            "plan in MAP's student view, so the funding follows the credit a college has acted on, and show the Needs "
-            "Action units beside it as units not yet acted on. <em>It might be wrong if</em> Needs Action credit reaches "
-            "the student without a college's step; then Priority 1 keeps every applied unit, as it does now."),
-        'chips': chips(('Plan units only', 'plan'), ('Keep every applied unit', 'keep'), CH_LATER),
-        'evidence': [live('2026-09-30', 'map_college_cr_unit by cpl_status_plan (articulation view); the student view by plan status (Sierra session); cpl_funding_performance.js pa_u')],
-    })
-
-    # Sheet 10 (S308): three choices made on Sam's Public view asks and the
-    # Reporting box's college half, each one he may reverse.
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "The Timeline at the size of the text around it",
-        'ref': 'implementation-funding · Public view (#1788) · cpl_funding.js .cplfund-timing · tests/cpl_funding_rollup.test.js C9e',
-        'facts': (
-            "On 23 July the Timeline took the priority cards' smaller type (.8rem), when it sat under the cards. It is "
-            "now its own section between Minimum Conditions and the cards. Your ask of 30 September was to remove "
-            "unnecessary font size changes, so the Timeline now reads at the size of the text around it (.92rem), and "
-            "its dates sit at the right end of each row."),
-        'why': "One size for every block of text on the page, so the Timeline reads as part of the same document.",
-        'rec': "<strong>Keep the prose size.</strong> <em>It might be wrong if</em> you want the Timeline to read as a "
-               "compact list beside the cards; then it goes back to .8rem.",
-        'chips': chips(('Keep the prose size', 'keep'), ("Back to the cards' size", 'cards'), CH_LATER),
-        'evidence': [policy()],
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "The priority cards keep their boxes",
-        'ref': 'implementation-funding · Public view (#1788) · cpl_funding.js .cplfund-prio .p',
-        'facts': (
-            "You asked to remove the gray box from every text view where possible. Six blocks lost theirs: Minimum "
-            "Conditions, the Timeline, the totals line, the formula, the basis line and the statutory detail's opening "
-            "paragraph. The four priority cards kept theirs. They sit two across, and each carries rows (rate and "
-            "target, progress, strategies, designated activities) that would run into the neighboring card's rows "
-            "without an edge between them."),
-        'why': "A box earns its place where it separates two things side by side.",
-        'rec': "<strong>Keep the card boxes.</strong> <em>It might be wrong if</em> you would rather the cards read as "
-               "text too; then they lose the fill and keep a thin line between them.",
-        'chips': chips(('Keep the boxes', 'keep'), ('Remove them too', 'remove'), CH_LATER),
-        'evidence': [policy()],
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Where the college sign-in sits on My College",
-        'ref': 'implementation-funding · Reporting box college half (#1790) · college_briefing.js myReportsSection',
-        'facts': (
-            "My College now has a Reported expenditures section after My CPL Funding. A reader who has not signed in "
-            "sees one paragraph saying who can read the reports, and the email-link form. The section shows for any "
-            "college a reader picks, so a member of the public sees the form too. Signing in shows nothing unless MAP "
-            "lists the address as that college's CPL coordinator or primary CPL contact; the database decides that, "
-            "never the page."),
-        'why': "A coordinator finds the sign-in where the reports will appear.",
-        'rec': "<strong>Keep the form in the section.</strong> <em>It might be wrong if</em> the form reads as clutter "
-               "to students; then the section shows one line, and the form opens from it.",
-        'chips': chips(('Keep the form', 'keep'), ('One line that opens it', 'line'), CH_LATER),
-        'evidence': [policy()],
-    })
-    I.append({
-        'lane': 'map-custom-reports',
-        'title': "Send Pedro the note about MAP's two views?",
-        'ref': 'map-custom-reports · cpl_memory map-catalog-year-view-doubles-applied-2026-09-30 · docs/session_310_handoff.md (the draft)',
-        'facts': (
-            "The nightly load reads two of Pedro's custom report views, and they disagree on units applied to a CPL "
-            "plan: 171,078 in the catalog-year view, 162,603 in the student view, at 26 colleges. Most of the gap has "
-            "one shape. For 253 combinations of college, exhibit, catalog year and credit recommendation, at 24 "
-            "colleges, the catalog-year view reports exactly twice the units for the same students: 6,782 of the 8,474 "
-            "units. One example: exhibit MAPSAS-ASL2-1-001 at college 79, 918 students, 2,754 units in the student view "
-            "(three per student, as the recommendation reads) and 5,508 in the catalog-year view. The handoff holds a "
-            "short note for you to send him. Funding and Sierra already read the student view."),
-        'why': "Pedro can find the second row per student in the view's definition; nobody outside MAP can.",
-        'rec': "<strong>Send it as drafted.</strong> <em>It might be wrong if</em> you would rather raise it in your "
-               "next meeting with him; then hold it.",
-        'chips': chips(('Send as drafted', 'send'), ("I'll edit it first", 'edit'), CH_LATER),
-        'evidence': [live('2026-09-30', 'map_college_cr_unit against map_student_credit at Applied to CPL Plan, keyed by college, exhibit, catalog year and recommendation')],
-    })
+    # Sheet 10 card 6 (S309): the CCSF check. Sam marked it Later on sheet 11 (card 6),
+    # so it carries onto sheet 12 until he asks her.
     I.append({
         'lane': 'sierra-retrieval-corpus',
         'title': "Ask Sierra City College of San Francisco's split",
@@ -693,6 +606,13 @@ def items():
         'chips': chips(('Right', 'right'), ('Wrong: see note', 'wrong'), CH_LATER),
         'evidence': [live('2026-09-30', 'map_college_credit_summary, map_college_credit_bucket and map_college_exhibit_credit for college_id 30')],
     })
+
+    # Sheet 11's eight answered cards left with their rulings (Sam, 22:48:37Z on
+    # 2026-09-30, all nine his own call): P1 keeps every applied unit; the Timeline
+    # size, the card boxes and the sign-in form kept; the Pedro note his to edit
+    # and send; both faculty levels verify issuer skills; rename the three in the CER
+    # with aliases; the issuer hosts added. Each lane records its ruling. Card 6 (CCSF)
+    # came back Later, so it carries onto sheet 12.
     return I
 
 

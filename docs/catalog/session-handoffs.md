@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 310 | [the funding and Sierra chains, joined; sheet 10 is the queue](../session_310_handoff.md) | 2026-09-30 |
+| 310 | [the funding, Sierra and credential chains, joined; sheet 11 answered](../session_310_handoff.md) | 2026-09-30 |
 | 309 | [Sierra reads where credit comes from; check her answers](../session_309_handoff.md) | 2026-09-30 |
 | 308 | [build the Reporting box's college half on MAP's two contacts](../session_308_handoff.md) | 2026-09-30 |
 | 307 | [sheet 6 is answered; build the Reporting box](../session_307_handoff.md) | 2026-09-30 |

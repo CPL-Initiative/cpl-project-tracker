@@ -11,6 +11,8 @@ related:
   - "[[methodology-an-index-is-a-write-path-cost-until-measured]]"
 artifacts:
   - chatbox/supabase_program_typical_courses.sql
+  - chatbox/supabase_search_college_programs.sql
+  - kb/receipts/search_college_programs_stored_vectors_2026-09-30.sql
   - chatbox/verify_program_typical_courses.sql
   - kb/receipts/program_typical_courses_title_norm_2026-09-30.sql
 ---
@@ -58,6 +60,28 @@ S309 (joined with S308), 2026-09-30, PR #1789: the timings above, the md5 checks
 over 47, 2 and 66 programs, and the receipt with the prior definition and the
 rollback. The smoke's 7c probe then read 50 colleges without a timeout.
 
+## A second use, and how to prove the output did not move
+
+The same evening (PR #1796) `search_college_programs` got the same treatment:
+four tsvectors built over 22,335 programs on every call (1,391 PostgREST calls,
+mean 2,353 ms, max 7,951) became four generated columns. Here the function
+behind them, `cx_search_norm`, lives in another file, so that file recomputes
+the columns right after it defines the normalizer, and a test compares the
+recompute's four expressions with the column definitions so they cannot drift.
+
+**Hash only what the function's order determines.** The first baseline hashed
+every output row in the function's own order, and it changed between two
+identical calls on every term set: the function orders by rank, college and
+title, and a college often lists one title twice (a degree and a certificate),
+so those two rows swap. Two hashes held across runs: the (college, title)
+sequence, which the order does fix, and the full rows sorted, which is the set.
+A limit that cuts through a group of tied rows can return either of two sets;
+record both and accept either. The after-read matched on all thirteen sets.
+
+**Measure the next step before taking it.** With the vectors stored, the
+function still copied every row into a materialized CTE that spilled 14 MB to
+disk per call. Removing the copy measured 177 against 190 ms, so it stayed.
+
 ## When this applies (and when it doesn't)
 
 It applies to any value derived by a function from columns of the same row and
@@ -69,7 +93,7 @@ risk where the table is written in one statement under a timeout.
 
 - `[[cpl_assistant_lessons]]` — the 2026-09-30 section
 - `[[methodology-an-index-is-a-write-path-cost-until-measured]]` — the write-side cost
-- PR #1789
+- PR #1789, PR #1796
 
 ---
 
