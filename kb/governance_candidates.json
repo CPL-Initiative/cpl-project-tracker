@@ -3,9 +3,9 @@
   "_generated_by": "kb/_build_governance_candidates.py",
   "_counts": {
     "candidates": 10,
-    "already_mapped": 41,
+    "already_mapped": 42,
     "dismissed": 6,
-    "scanned": 57
+    "scanned": 58
   },
   "candidates": [
     {
@@ -100,7 +100,7 @@
       "key": "tab:implementation-funding",
       "kind": "decision_right",
       "label": "implementation-funding",
-      "detail": "Writes shared state via cpl_funding_optin_review, cpl_funding_config, cpl_funding_notes, cpl_funding_participation",
+      "detail": "Writes shared state via cpl_funding_optin_review, cpl_funding_config, cpl_funding_notes, cpl_funding_participation, cpl_funding_reports",
       "where": "cpl_funding.js",
       "why": "Covered by DR-09 and the cpl_funding_* tables proposed separately."
     },
