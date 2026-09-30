@@ -126,7 +126,12 @@
     // toggle + earned/unearned pool boxes; earned cards green, unearned mustard.
     ".cplfund-card.earned { border-left: 4px solid var(--green-progress); }",
     ".cplfund-card.unearned { border-left: 4px solid var(--mustard-fill); }",
-    ".cplfund-basis { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 4px 0 14px; padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; }",
+    // No box around a block of text (Sam, 2026-09-30: "For all text views
+    // possible on this tab eliminate the gray background box to simplify
+    // visually"). The basis line, the Total Possible strip, the formula, the
+    // goal-alignment paragraph, Minimum Conditions and the Timeline read as the
+    // section's own text, on its margin, at the prose size.
+    ".cplfund-basis { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 4px 0 14px; }",
     ".cplfund-grouphdr td { background: var(--surface-subtle); border-top: 2px solid var(--border); font-size: .78rem; }",
     ".cplfund-grouphdr td.t { letter-spacing: .01em; }",
     // The public-visibility control is a WORD (Hide from public / Show to public),
@@ -338,8 +343,7 @@
     // First Light: warm monochrome base, tokens only, no raw hex. Colour is
     // never the only signal — every state chip carries a WORD, so the section
     // reads the same in greyscale and to a screen reader.
-    ".cplfund-goal-intro, .cplfund-goal-regnote { font-size: .85rem; max-width: var(--cpl-measure, none); }",
-    ".cplfund-goal-align { padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; }",
+    ".cplfund-goal-intro, .cplfund-goal-regnote { font-size: .92rem; line-height: 1.6; max-width: var(--cpl-measure, none); }",
     ".cplfund-goals { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; margin: 12px 0 4px; }",
     ".cplfund-goal { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-goal h4 { margin: 0 0 8px; color: var(--navy-primary); font-size: 1rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }",
@@ -516,8 +520,7 @@
 
     /* ── Total Possible by outcome — the one figure no card can state ──── */
     ".cplfund-otot { display: flex; flex-wrap: wrap; gap: 5px 18px; align-items: baseline;",
-    "  margin: 0 0 10px; padding: 8px 12px; font-size: .82rem; color: var(--text-muted);",
-    "  border: 1px solid var(--border); border-radius: 8px; background: var(--surface-subtle); }",
+    "  margin: 0 0 10px; font-size: .92rem; color: var(--text-muted); }",
     ".cplfund-otot-lab { font-size: .72rem; font-weight: 700; letter-spacing: .04em;",
     "  text-transform: uppercase; color: var(--text-body); }",
     ".cplfund-otot-item strong { color: var(--text-strong); }",
@@ -543,15 +546,15 @@
     // misreading this exists to prevent.
     ".cplfund-saving.local { color: var(--mustard-text); font-weight: 600; }",
     // Timing milestone list (below the priority boxes).
-    ".cplfund-timing { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .8rem; }",
-    ".cplfund-timing-note { margin: 8px 0 0; font-size: .8rem; }",
+    ".cplfund-timing { font-size: .92rem; line-height: 1.6; }",
+    ".cplfund-timing-note { margin: 8px 0 0; font-size: .92rem; }",
     ".cplfund-timing-note p { margin: 0; }",
     ".cplfund-timing-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }",
     ".cplfund-timing-label { flex: 1 1 auto; min-width: 0; }",
-    ".cplfund-timing-date { flex: 0 0 100px; width: 100px; text-align: right; }",
+    ".cplfund-timing-date { flex: 0 0 100px; width: 100px; text-align: right; font-variant-numeric: tabular-nums; }",
     ".cplfund-timing-row.nodate .cplfund-timing-label { font-style: italic; color: var(--text-muted); }",
     ".cplfund-timingadd { margin-top: 8px; }",
-    ".cplfund-formula { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .9rem; line-height: 1.55; text-align: left; }",
+    ".cplfund-formula { font-size: .92rem; line-height: 1.6; text-align: left; }",
     ".cplfund-formula code { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }",
     // Bulleted, left-justified explainer (Sam, 2026-07-28) — each idea is its own
     // left-aligned bullet instead of one running paragraph.
@@ -805,7 +808,7 @@
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
     ".cplfund-chip { display: inline-block; font-size: .72rem; margin-left: 4px; font-weight: 400; cursor: help; }",
     ".cplfund-bound { color: var(--text-muted); margin-left: 3px; }",
-    ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; text-align: left; }",
+    ".cplfund-elig { font-size: .92rem; line-height: 1.6; text-align: left; }",
     ".cplfund-elig-intro { margin-bottom: 8px; }",
     // Requirement list: a bullet + one full-width editable line per item, all
     // left-aligned so they line up; the two built-ins carry a muted status
@@ -816,7 +819,17 @@
     ".cplfund-elig .cplfund-reqrow .cplfund-ed-t { flex: 1 1 auto; max-width: 640px; }",
     // Requirement text wraps rather than cutting off mid-word (Sam, 2026-09-22).
     ".cplfund-elig .cplfund-reqrow .cplfund-ed-area { resize: vertical; field-sizing: content; min-height: 2.2em; }",
-    ".cplfund-reqstatus { margin: 3px 0 0 20px; font-size: .82rem; color: var(--text-muted); }",
+    ".cplfund-reqstatus { margin: 3px 0 0 20px; color: var(--text-muted); }",
+    // The Public view runs the status into the requirement's own paragraph
+    // (reqItem), and the bullet sits on its first line.
+    ".cplfund-pub .cplfund-elig .cplfund-reqrow { align-items: baseline; }",
+    ".cplfund-pub .cplfund-reqstatus { display: inline; margin: 0; }",
+    ".cplfund-reqafter { margin: 4px 0 6px; }",
+    // The two folds under the priority cards share one face and size (Sam,
+    // 2026-09-30, marking the pair on the Public view).
+    ".cplfund-goalspine-fold, .cplfund-ncrules { margin-top: 10px; font-size: .92rem; }",
+    ".cplfund-goalspine-fold > summary, .cplfund-ncrules > summary { cursor: pointer; font-weight: 400; color: var(--text-body); }",
+    ".cplfund-goalspine-fold > summary strong, .cplfund-ncrules > summary strong { font-weight: 600; color: var(--text-strong); }",
     ".cplfund-reqdel { flex: 0 0 auto; background: var(--surface-opaque); color: var(--text-muted); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 9px; cursor: pointer; font-size: .8rem; line-height: 1.2; font-family: inherit; }",
     ".cplfund-reqdel:hover { border-color: var(--red-alert); color: var(--red-alert); }",
     ".cplfund-reqadd { margin-top: 10px; margin-left: 20px; }",
@@ -7096,14 +7109,23 @@
   // Timing — an editable milestone list below the priority boxes (Sam,
   // 2026-07-23). Each row is an editable label + optional right-aligned date;
   // a blank date renders the milestone italic (e.g. "Potential Year 3…").
+  // In the Public view edText returns bare text, and two bare text nodes in a
+  // flex row join into one anonymous item: the row printed "Funding Model
+  // FinalizedSep 2026" (Sam, 2026-09-30: "Fix the dates so they are
+  // appropriately spaced"). Each value there gets its own span and class.
   function timingSectionHtml() {
     var items = timingItems();
+    var pub = publicMode();
+    function cell(cls, edit, value, i, label, ph) {
+      return pub ? '<span class="' + cls + '">' + esc(value) + "</span>"
+        : edText(edit, value, { idx: i, cls: cls, label: label, placeholder: ph });
+    }
     var rows = items.map(function (it, i) {
       var noDate = !String(it.date || "").trim();
       return '<div class="cplfund-timing-row' + (noDate ? " nodate" : "") + '">' +
         '<span class="cplfund-bullet">&bull;</span>' +
-        edText("timing-label", it.label || "", { idx: i, cls: "cplfund-timing-label", label: "Timing milestone", placeholder: "Milestone…" }) +
-        edText("timing-date", it.date || "", { idx: i, cls: "cplfund-timing-date", label: "Timing date", placeholder: "Date" }) +
+        cell("cplfund-timing-label", "timing-label", it.label || "", i, "Timing milestone", "Milestone…") +
+        cell("cplfund-timing-date", "timing-date", it.date || "", i, "Timing date", "Date") +
         '<button type="button" class="cplfund-reqdel" data-timingdel="' + i +
         '" title="Remove this item" aria-label="Remove timing item ' + (i + 1) + '">Remove</button></div>';
     }).join("");
@@ -8147,7 +8169,8 @@
   // the one place the restriction and the origination rule are stated in
   // words, under the cards whose arithmetic honors them.
   function ncEarningRulesFoldHtml() {
-    return '<details class="cplfund-pool-projects cplfund-ncrules"><summary>The noncredit funding rules &mdash; show them</summary>' +
+    return '<details class="cplfund-pool-projects cplfund-ncrules"><summary><strong>The noncredit funding rules</strong> ' +
+      '<span class="dk">&mdash; show them</span></summary>' +
       proseBlockHtml("nc_rules") + "</details>";
   }
 
@@ -10968,6 +10991,21 @@
       return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
         input + (delBtn || "") + "</div>";
     }
+    // One requirement and its live status. Under an editable requirement the
+    // status needs a line of its own. In the Public view the requirement is
+    // text, so the status finishes the same paragraph at the same size (Sam,
+    // 2026-09-30: "eliminate any unnecessary line breaks or font size changes
+    // with text").
+    var pub = publicMode();
+    function stop(t) { return pub && !/[.!?]$/.test(String(t).trim()) ? "." : ""; }
+    function reqItem(text, statusHtml, delBtn) {
+      if (pub) {
+        return '<div class="cplfund-reqitem">' + bullet('<span class="cplfund-reqtext">' + text +
+          (statusHtml ? ' <span class="cplfund-reqstatus">' + statusHtml + "</span>" : "") + "</span>") + "</div>";
+      }
+      return '<div class="cplfund-reqitem">' + bullet(text, delBtn) +
+        (statusHtml ? '<div class="cplfund-reqstatus">' + statusHtml + "</div>" : "") + "</div>";
+    }
     // Extra requirements: a ✕ deletes them. The two built-ins get a ✕ too, but it
     // HIDES the row (reversibly, via the config layers) rather than deleting data;
     // a restore chip below brings it back, and the Elig badge follows suit.
@@ -10997,41 +11035,40 @@
             if (!c.nco && vs[c.college] === true) starN++;
           });
           var pfv = perf();
-          status = '<div class="cplfund-reqstatus"><strong>' + metN + " of " + total +
-            "</strong> colleges meet this. " +
+          status = "<strong>" + metN + " of " + total + "</strong> colleges meet this. " +
             '<span class="dk">' + starN + " hold the Veteran Star, with at least 75% of enrolled veterans&#39; JSTs uploaded in MAP" +
-            (pfv && pfv.vet_star_as_of ? " (as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) + ")" : "") + ".</span></div>" +
-            '<div class="dk">The three noncredit-only institutions meet this requirement with noncredit ' +
-            "certificates posted as exhibits in MAP.</div>";
+            (pfv && pfv.vet_star_as_of ? " (as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) + ")" : "") + ". " +
+            "The three noncredit-only institutions meet this requirement with noncredit " +
+            "certificates posted as exhibits in MAP.</span>";
         } else {
-          status = '<div class="cplfund-reqstatus"><span class="dk">auto-measured from Veteran Star &mdash; status arrives with the next daily data refresh</span></div>';
+          status = '<span class="dk">auto-measured from Veteran Star &mdash; status arrives with the next daily data refresh</span>';
         }
       }
-      return '<div class="cplfund-reqitem">' + bullet(
+      return reqItem(
         edArea("extra-req", txt, { idx: i, rows: 1, label: "Minimum condition",
-          placeholder: "Describe the requirement…" }),
+          placeholder: "Describe the requirement…" }) + stop(txt),
+        status,
         '<button type="button" class="cplfund-reqdel" data-reqdel="' + i +
-        '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 1) + '">Remove</button>'
-      ) + status + "</div>";
+        '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 1) + '">Remove</button>');
     }).join("");
     var pendN = (ELIG.optinReview || []).filter(function (r) { return r.status === "self_attested"; }).length;
-    var partStatus = "deadline " +
+    // The Public view reads the deadline into the requirement itself ("Local
+    // confirmation on file by 2026-11-01."), where the curator's view keeps it
+    // an editable field on the status line.
+    var partStatus = (pub ? "" : "deadline " +
       edText("deadline", participationDeadline(), { label: "participation deadline", small: true }) +
-      " &middot; <strong>" + optN + " of " + total + "</strong> colleges confirmed so far" +
+      " &middot; ") + "<strong>" + optN + " of " + total + "</strong> colleges confirmed so far" +
       (pendN && !publicMode() ? " &middot; <strong>" + pendN + "</strong> self-attested" : "") +
       ' <span class="dk">(a college&#39;s VPAA, VP of Student Services or President confirms from the college&#39;s row in the table above' +
       (unlocked() && !publicMode() ? "; review requests in the CO review panel above" : "") + ")</span>";
     var coordItem = coordShown()
-      ? '<div class="cplfund-reqitem">' +
-        bullet(edArea("coord-label", coordLabel(), { rows: 1, label: "Coordinator requirement text",
-          placeholder: "Describe the requirement…" }), hideBtn("coord", coordLabel())) +
-        '<div class="cplfund-reqstatus">' + coordLine + "</div></div>"
+      ? reqItem(edArea("coord-label", coordLabel(), { rows: 1, label: "Coordinator requirement text",
+          placeholder: "Describe the requirement…" }) + stop(coordLabel()), coordLine, hideBtn("coord", coordLabel()))
       : "";
     var partItem = partShown()
-      ? '<div class="cplfund-reqitem">' +
-        bullet(edArea("part-label", partLabel(), { rows: 1, label: "Participation requirement text",
-          placeholder: "Describe the requirement…" }), hideBtn("part", partLabel())) +
-        '<div class="cplfund-reqstatus">' + partStatus + "</div></div>"
+      ? reqItem(pub ? esc(partReqText()) + "." : edArea("part-label", partLabel(), { rows: 1,
+          label: "Participation requirement text", placeholder: "Describe the requirement…" }),
+        partStatus, hideBtn("part", partLabel()))
       : "";
     var chips = [];
     if (!coordShown()) chips.push('<button type="button" class="cplfund-optbtn" data-reqshow="coord">Restore: ' + esc(coordLabel()) + "</button>");
@@ -11043,8 +11080,13 @@
       '<div class="cplfund-elig-intro">' + proseBlockHtml("elig_intro") + "</div>" +
       coReviewLaneHtml() +
       coordItem + partItem + extraHtml +
-      '<div class="dk" style="margin:4px 0 6px;">Once an institution meets the minimum conditions, it receives ' +
+      '<div class="dk cplfund-reqafter">Once an institution meets the minimum conditions, it receives ' +
       "its full outcomes-based funding within the two-year window.</div>" +
+      // Sam, 2026-09-30, on the Public view: "Delete the 2 marked chips" (Copy
+      // requirements, Generate brief). They stay in the curator's view, where
+      // the memo and the field brief are made; the Public view keeps none of
+      // this block, the save note that belonged to Add requirement included.
+      (pub ? "" :
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
       'title="Add another minimum condition">Add requirement</button>' +
@@ -11059,7 +11101,7 @@
       '<button type="button" class="cplfund-optbtn" id="cplFundReqBrief" ' +
       'title="Open a formatted brief (reflects the current requirements + funding) to send to CBOs and field staff">Generate brief</button>' +
       '<span id="cplFundReqCopyMsg" class="cplfund-copymsg"></span>' +
-      "</div>" +
+      "</div>") +
       "</div>";
   }
 
@@ -12445,7 +12487,7 @@
       scrollToDeepLink();
       return;
     }
-    mount.innerHTML = '<div class="cplfund">' +
+    mount.innerHTML = '<div class="cplfund' + (publicMode() ? " cplfund-pub" : "") + '">' +
       controlStripHtml() +
       subviewTabsHtml() +
       // "Version as of <date>" (Sam's wording, 2026-08-31); the source detail

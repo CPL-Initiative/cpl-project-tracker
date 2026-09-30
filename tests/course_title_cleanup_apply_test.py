@@ -236,6 +236,11 @@ check("the candidate read is ordered and Range-paginated (Rule 10b)",
 w.insert([GARBLED[0]])
 check("a rollback insert sends the full image, id included",
       calls[-1][0] == "POST" and calls[-1][2] == "return=representation")
+# title_norm is a GENERATED column since 2026-09-30 (chatbox/supabase_program_
+# typical_courses.sql). A DELETE's representation carries it into the receipt,
+# and an INSERT naming it fails, so the rollback image is built from COLS alone.
+check("the rollback image never names the generated title_norm column",
+      "title_norm" not in app.COLS)
 
 # ── a transient failure is retried; a real one is not ────────────────────────
 # ⚠️ MEASURED, NOT IMAGINED: the first commit run (2026-09-27) died on one
