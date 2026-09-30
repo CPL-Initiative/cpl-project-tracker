@@ -34,7 +34,9 @@ never the agent's (a new write surface, CLAUDE.md Rule 10 a3).
 This page is the agent's standing instruction. A scheduled run reads it and
 follows it; a session changing the agent changes this page.
 
-**State: designed, NOT armed.** Arming waits on Sam's go (section *Arming*).
+**State: ARMED (2026-09-30, Sam: *"yes, arm the watch agent for Mondays"*).**
+Routine `trig_019tTcardPfntFz6ctWU9Jg1`, Mondays at 05:51 Pacific, first run
+2026-10-05. Details and its limits: section *Armed*.
 
 ## What it keeps current
 
@@ -88,10 +90,14 @@ covers what only reading can.
    open nothing, end the run.
 7. **Change:** branch `claude/credential-watch-<date>`, commit the two reference
    files, the catalog and the report, open a PR whose body is the report, and
-   follow the repo's branch policy (merge on a green `test`).
-8. File a `cpl_memory` row (tag `credential-registry`) only for a material
-   event: a tech giant launched or retired an AI credential, or a credential
-   MAP has articulated was renamed or retired.
+   follow the repo's branch policy (merge on a green `test`). If the GitHub PR
+   tools are missing from the run, push the branch and stop: the committed
+   report is the receipt, and the next interactive session opens the PR.
+8. **A material event** (a tech giant launched or retired an AI credential, or
+   a credential MAP has articulated was renamed or retired) goes at the top of
+   the PR body under *For the memory table*. The run holds no Supabase
+   connector, so the next interactive session files the `cpl_memory` row
+   (tag `credential-registry`).
 
 ## Guardrails
 
@@ -147,16 +153,26 @@ a runner step in the `cos-authority-sync` pattern
 pulls it on a schedule, and the agent's job narrows to what the Registry has not
 caught up with.
 
-## Arming
+## Armed
 
-A Claude Routine that starts a fresh session each run, in this environment:
+Armed 2026-09-30 on Sam's go, from the credential catalog side session. A
+Claude Routine that starts a fresh session each run, in this environment:
 
-- **Name:** Industry credential watch
-- **Schedule:** Mondays at 05:51 Pacific (`CRON_TZ=America/Los_Angeles 51 5 * * 1`)
-- **Prompt:** *"Run the industry credential watch. Read
-  docs/reference/credential_watch_agent.md in cpl-project-tracker and follow it
-  exactly. End the run when it says to."*
-- **Before arming:** confirm the environment attaches `cpl-project-tracker`,
-  and apply the network allowlist above or accept search-snippet evidence.
+- **Routine:** Industry credential watch, `trig_019tTcardPfntFz6ctWU9Jg1`
+- **Schedule:** Mondays at 05:51 Pacific (`CRON_TZ=America/Los_Angeles 51 5 * * 1`);
+  first run 2026-10-05
+- **Prompt (stored):** read this page on `main` and follow it exactly; attach
+  `CPL-Initiative/cpl-project-tracker` (push) and `samueltlee/CPLBrain` (read)
+  with `add_repo` when the container lacks them; branch
+  `claude/credential-watch-<date>`; no Supabase writes, no CER edits, no
+  schedule changes.
+- ⚠️ **It stores no claude.ai connectors** (the arming session held none to
+  pass through), so a run has no Supabase. Step 8 routes around it. To give runs
+  the Supabase connector, recreate the routine from the claude.ai Routines UI
+  with the connector attached, and restore step 8's direct write.
+- **Network:** until the allowlist above is applied, a run confirms rows from
+  search results quoting the issuers, as the first build did.
 
-Each run costs one session. A quiet week ends at step 6 with no commit.
+Each run costs one session. A quiet week ends at step 6 with no commit. Pause or
+change it with `update_trigger` (enabled=false keeps its history); never delete
+and recreate it to change the prompt.
