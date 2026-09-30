@@ -1290,7 +1290,7 @@
      ],
      "title": "A display name is not a key \u2014 and the entry that still matches is the one that lies",
      "type": "methodology",
-     "updated": "2026-09-15"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-09-18",
@@ -14321,8 +14321,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 275,
+   "count": 276,
    "docs": [
+    {
+     "created": "2026-09-30",
+     "governs": [],
+     "n": 305,
+     "path": "docs/session_305_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "my-college",
+      "partner-crosswalks",
+      "implementation-funding",
+      "cr-reference",
+      "eths-remint",
+      "side-menu"
+     ],
+     "title": "the register is statewide, card 9 landed, card 7's Scenario 2 write is the loose end",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-29",
      "governs": [],
@@ -18989,5 +19008,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 989
+ "total": 990
 }

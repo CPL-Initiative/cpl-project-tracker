@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-275 document(s).
+276 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 305 | [the register is statewide, card 9 landed, card 7's Scenario 2 write is the loose end](../session_305_handoff.md) | 2026-09-30 |
 | 304 | [sheet 4 is answered; the three-part check, 0 hours and Grossmont's four come first](../session_304_handoff.md) | 2026-09-29 |
 | 303 | [sheet 3 carried out; the ETHS re-key, one setup-python bump and sheet 4 come first](../session_303_handoff.md) | 2026-09-29 |
 | 302 | [eighteen asks on one sheet, the unit range on three surfaces, draft 3 of the video](../session_302_handoff.md) | 2026-09-29 |

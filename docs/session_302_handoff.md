@@ -4,6 +4,8 @@ date: 2026-09-29
 session: 301 (SkyShuttle)
 tags: [handoff, decision-sheet, unit-range, funding-video, implementation-funding, common-cr-reference]
 status: current
+superseded: true
+superseded_by: session_305_handoff.md
 ---
 
 # You are Session 302

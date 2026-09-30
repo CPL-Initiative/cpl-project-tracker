@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-29",
-  "_session": 303,
-  "_status": "Sam answered all nine cards of sheet 4 on 29 September. Landed: round 9 of the College Dashboard (the Introduction's Hide holds, veteran and JST counts beside the third condition, gray computed funding instead of $0), the ETHS re-mint of the 43 with its Supabase re-key, setup-python 7, the explainer's link to the narrated draft, and Scenario 2's two condition phrases. Year 2 already follows P1 and P2. Next: the three-part first condition (#1765, its database half is live), then 0 hours read as noncredit, Grossmont's four titles to ATHL, the P3/P4 mockup, the Scenario 2 narrated draft and the Reporting box.",
+  "_as_of": "2026-09-30",
+  "_session": 304,
+  "_status": "Landed on 30 September: the side menu reads one line per item in regular weight; My College's 'What you could already give credit for' now covers all nine regions, so San Diego City College and the rest of the state populate, and Cañada, City College of San Francisco and College of Marin show again; 0 hours reads as noncredit on the CR Reference (the next daily run renames the ten); Grossmont's four titles moved to ATHL; and Scenario 2's P3 Career Attainment and P4 Innovation Projects became reported cards with no funding lines. Next: the Scenario 2 narrated draft (card 8) and the Reporting box (card 2, Governance first).",
   "items": [
+    {
+      "id": "s304-sam-units-waiting-label",
+      "for": "Sam",
+      "tab": "college-briefing",
+      "text": "My College shows two figures both called 'units waiting': Start here gives all credit not yet acted on (96,268 at San Diego City College), and the Sierra chip gives the part already articulated (about 6,500). Say which should keep the words, and what the other should be called."
+    },
+    {
+      "id": "s304-sam-report-when-where",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
+    },
     {
       "id": "s303-sam-card7-type",
       "for": "Sam",
@@ -15,12 +27,6 @@
       "for": "Sam",
       "tab": "implementation-funding",
       "text": "Tell a session when the Chancellor finalizes Scenario 2. Publishing it on the tab switches the explainer and the college briefing to it. Your sheet 4 answers on it are carried out or under way: Year 2 already follows P1 and P2, the two condition phrases are written, and the P3/P4 mockup and a Scenario 2 narrated draft are next."
-    },
-    {
-      "id": "s303-sam-p3p4-mockup",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "A mockup of P3 and P4 shown as reported, with no FTES, target or funding line, comes to you before anything is built (sheet 4 card 7)."
     },
     {
       "id": "s298-sam-sql-test-answer",
@@ -35,10 +41,16 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s303-fable-sheet4-rest",
+      "id": "s304-fable-sheet4-rest",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Carry out the rest of sheet 4: merge #1765 (the three-part check) once test is green; card 3, a CR wording of 0 hours reads as noncredit (kb/_build_cr_reference.py); card 9, re-mint Grossmont's four KINE Advanced Techniques and Strategies titles to ATHL under the playbook; card 7, the P3/P4 mockup; card 8, the Scenario 2 narrated draft; card 2, the Reporting box, spending first, through Governance before it is built."
+      "text": "Carry out the rest of sheet 4: the Scenario 2 narrated draft from draft 4's script (card 8), and the Reporting box, spending first, which is a new write surface, so Governance and the privacy ADRs come before it is built (card 2)."
+    },
+    {
+      "id": "s304-fable-cr-noncredit-check",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "After the next daily run, confirm the CR Reference worklist carries groups_named_noncredit and that no group name opens a range at 0 (test A30 then runs on the real corpus)."
     },
     {
       "id": "s303-fable-chat-smoke-watch",

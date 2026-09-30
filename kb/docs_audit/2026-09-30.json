@@ -10,14 +10,14 @@
     "other": 150000
   },
   "summary": {
-    "files": 1002,
-    "bytes": 10645624,
+    "files": 1003,
+    "bytes": 10655921,
     "over_budget": 6,
-    "handoff_max": 304,
+    "handoff_max": 305,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59771,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "superseded_files": 4,
+    "superseded_bytes": 25982,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,44 +26,45 @@
       },
       "other": {
         "files": 116,
-        "bytes": 3255336,
+        "bytes": 3255557,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 11286,
+        "bytes": 11717,
         "over": 0
       },
       "lessons": {
         "files": 76,
-        "bytes": 2170322,
+        "bytes": 2173630,
         "over": 2
       },
       "kb_note": {
         "files": 500,
-        "bytes": 2530238,
+        "bytes": 2531062,
         "over": 0
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 263127,
+        "bytes": 263987,
         "over": 1
       },
       "handoff": {
-        "files": 275,
-        "bytes": 2355544,
+        "files": 276,
+        "bytes": 2360197,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 24,
       "oversized_doc": 6,
+      "superseded_handoff": 4,
       "vault_heavy_path": 55
     },
     "vault": {
-      "files": 3321,
-      "bytes": 1701640083,
-      "heavy_bytes": 791753602,
+      "files": 3324,
+      "bytes": 1701991753,
+      "heavy_bytes": 792085261,
       "heavy_share": 0.465,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -385,13 +386,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20113,
+        "bytes": 20274,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 113,
+        "over_by": 274,
         "ratio": 1.01
       },
-      "message": "20,113 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "20,274 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/common-cr-reference.md"
     },
     {
@@ -410,13 +411,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 685188,
+        "bytes": 685409,
         "limit": 150000,
         "lane": "other",
-        "over_by": 535188,
+        "over_by": 535409,
         "ratio": 4.57
       },
-      "message": "685,188 B is 4.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "685,409 B is 4.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -430,6 +431,50 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 301,
+        "authoritative": 305,
+        "has_frontmatter": true
+      },
+      "message": "handoff 301 is below the authoritative 305 but is not stamped `superseded: true`",
+      "path": "docs/session_301_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 302,
+        "authoritative": 305,
+        "has_frontmatter": true
+      },
+      "message": "handoff 302 is below the authoritative 305 but is not stamped `superseded: true`",
+      "path": "docs/session_302_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 303,
+        "authoritative": 305,
+        "has_frontmatter": true
+      },
+      "message": "handoff 303 is below the authoritative 305 but is not stamped `superseded: true`",
+      "path": "docs/session_303_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 304,
+        "authoritative": 305,
+        "has_frontmatter": true
+      },
+      "message": "handoff 304 is below the authoritative 305 but is not stamped `superseded: true`",
+      "path": "docs/session_304_handoff.md"
     },
     {
       "rule": "house_voice",
@@ -526,10 +571,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 24185795,
+        "bytes": 24475193,
         "kind": "dir"
       },
-      "message": "directory totals 24,185,795 B inside the vault"
+      "message": "directory totals 24,475,193 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -686,10 +731,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12222168,
+        "bytes": 12264365,
         "kind": "file"
       },
-      "message": "12,222,168 B single file inside the vault"
+      "message": "12,264,365 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -816,10 +861,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715711,
+        "bytes": 6715709,
         "kind": "file"
       },
-      "message": "6,715,711 B single file inside the vault"
+      "message": "6,715,709 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -936,10 +981,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007519,
+        "bytes": 3007522,
         "kind": "file"
       },
-      "message": "3,007,519 B single file inside the vault"
+      "message": "3,007,522 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -996,10 +1041,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354192,
+        "bytes": 2354255,
         "kind": "file"
       },
-      "message": "2,354,192 B single file inside the vault"
+      "message": "2,354,255 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -1,7 +1,7 @@
 ---
 title: A display name is not a key — and the entry that still matches is the one that lies
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-30
 tags: [methodology, identity, curation, funding, presentation]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -114,3 +114,8 @@ Anywhere a consumer holds its own gloss, label or ordering for something a
 curator names. Worth checking when a name is about to change: the report and
 memo builders' priority language, any `switch` on a status word, and any test
 fixture that hard-codes a title to find the row it means.
+
+
+## A second instance: two rosters, one college (2026-09-30)
+
+The My College occupation register keyed each college by the matcher's roster ("Canada College", "City College Of San Francisco"), and the tab's picker offers `map_colleges.name` ("Cañada College", "City College of San Francisco"). The lookup `colleges[pickedName]` missed for three Bay colleges, and a miss rendered as "not in this set", which reads as a finding about the college. The fix keys the data file by the reader's own names at build time, through the resolver that produced it, and fails the build on a name it cannot map; a test compares every shipped key against the picker's roster. When two systems name the same entity, key the artifact by the names its reader will look up, and make an unmapped name a build failure rather than an empty row.
