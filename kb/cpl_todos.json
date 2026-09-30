@@ -2,13 +2,19 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-30",
   "_session": "S306 SkyRivet",
-  "_status": "Landed on 30 September (S306): Chaffey's 634.0 FTES on Access is correct (19,020 applied units, mostly AP exams, divided by 30), and every drill-in figure now says how it was reached on hover. The College Dashboard scrolls under a frozen header. Refresh everything on the Internal view re-reads the saved model in every open window and lists what it reached. My College follows the model again, the explainer and Public view offer My CPL Funding beside the table, and Unit sources shows where a priority's units come from, military and non-military. Next: your answers on sheet 6.",
+  "_status": "Landed on 30 September (S306): Chaffey's 634.0 FTES on Access is correct (19,020 applied units, mostly AP exams, divided by 30), and every drill-in figure now says how it was reached on hover. The College Dashboard scrolls under a frozen header. Refresh everything on the Internal view re-reads the saved model in every open window and lists what it reached. My College follows the model again, the explainer and Public view offer My CPL Funding beside the table, and Unit sources shows where a priority's units come from, military and non-military. You answered all seven cards of sheet 6 the same hour: Scenario 2 is final, the Reporting box takes yearly reports in all eight categories and each college sees its own, and the two My College figures now carry two names. Next: the Reporting box build, and your rewrite of the Scenario 2 narration.",
   "items": [
     {
-      "id": "s306-sam-sheet6",
+      "id": "s306-sam-p1-wording",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Open-asks sheet 6 has seven cards: sheet 5's five (the Scenario 2 narrated draft, the Reporting box's three calls, the two 'units waiting' names) and two new ones: Scenario 2 now reads as published in the stored model, so confirm the Chancellor finalized it; and Priority 1's wording, which names the Portal and Landing Page routes while the measure counts every applied unit. https://claude.ai/artifact/KCuKxKytRRWqNvqrusvtmr"
+      "text": "Type Priority 1's new wording on the Implementation Funding tab (sheet 6 card 7): the card should say what it counts, for example 'Applied CPL units (FTES) in MAP'. The measure counts every applied unit; the old words named the Portal and Landing Page routes."
+    },
+    {
+      "id": "s306-sam-s2-narration",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Send your rewrite of the Scenario 2 narration script (sheet 6 card 1); a session voices it with the ElevenLabs connector and rebuilds the narrated cut. The current script is prototype/funding_video/narration_s2.json."
     },
     {
       "id": "s304-sam-report-when-where",
@@ -35,16 +41,10 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s305-fable-reporting-box-build",
+      "id": "s306-fable-reporting-box-build",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "On Sam's sheet 5 answers (cards 2 to 4), build the Reporting box: the cpl_funding_reports table, insert-only with reviewer access like the CO Monitor's notes, then the box in each institution's drill-in from the approved mockup, with a test. Governance is done (DR-09)."
-    },
-    {
-      "id": "s305-fable-units-waiting-rename",
-      "for": "Fable",
-      "tab": "college-briefing",
-      "text": "On Sam's sheet 5 card 5, rename the two 'units waiting' figures on My College (Start here and Where you stand) as he rules, with a test."
+      "text": "Build the Reporting box on Sam's sheet 6 answers: one report a year, all eight NOVA categories, and each college sees its own figures on My College. The cpl_funding_reports table is insert-only with reviewer access like the CO Monitor's notes; how a college's staff sign in to see theirs is the open design to propose. Governance is done (DR-09)."
     },
     {
       "id": "s303-fable-chat-smoke-watch",

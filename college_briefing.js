@@ -473,7 +473,10 @@
         var dormant = num(c.dormant_credits), art = num(c.articulated_waiting);
         if (dormant == null) return null;
         return {
-          headline: fmt(dormant) + " units waiting",
+          // "units not yet acted on" (Sam, 2026-09-30, sheet 6 card 5): Where you
+          // stand keeps "units waiting" for the articulated units alone, so the
+          // two figures no longer share one label.
+          headline: fmt(dormant) + " units not yet acted on",
           detail: art != null && art > 0
             ? fmt(art) + " of those are already articulated — the credit exists and the exhibit exists; nothing is blocking the award."
             : "Credit students have earned that has not been acted on.",

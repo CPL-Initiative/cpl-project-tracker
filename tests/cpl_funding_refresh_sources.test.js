@@ -258,7 +258,8 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
     rows.push({ source_code: "ACE", exhibit_id: "AR-1715-0001", credit_rec: "3 hours in Electronics", course_type: "Course credit (1)",
       sum_applied_credits: 30, sum_transcribed_credits: 0 });
     rows.push({ source_code: "", exhibit_id: "", credit_rec: "Lifelong Learning and Self Development",
-      course_type: "Credit for Basic Military Service-Area", sum_applied_credits: 60, sum_transcribed_credits: 0 });
+      course_type: "Credit for Basic Military Service-Area", cpl_status_plan: "Needs Action", sum_applied_credits: 60, sum_transcribed_credits: 0 });
+    rows.forEach((r) => { if (!r.cpl_status_plan) r.cpl_status_plan = "Applied to CPL Plan"; });
     const applied = rows.reduce((t, r) => t + r.sum_applied_credits, 0);
     const seen = [];
     const fetchStub = (url, o) => {
@@ -274,6 +275,7 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
     await tick(20);
     const agg = T._srcAggregate(rows, "sum_applied_credits");
     check("5c: the split is ACE or a military course type, and it adds up", agg.total === applied && agg.mil === 90 && agg.nonmil === applied - 90);
+    check("5c2: and the units split by CPL plan status", agg.byStatus["Needs Action"] === 60 && agg.byStatus["Applied to CPL Plan"] === applied - 60);
     check("5d: the lists run by units, exhibits and recommendations apart",
       agg.exhibits.length === 14 && agg.exhibits[0].id === ex(0) && agg.crs.length === 14 && agg.crs[0].units === 100);
     let dd = openDrill(w, doc, "c:" + K);
@@ -293,6 +295,9 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
     const srow2 = doc.querySelector("#cplFundTable tr.cplfund-srcrow");
     check("5j: Show all lists every exhibit", srow2.querySelectorAll("table")[0].querySelectorAll(":scope > tbody > tr").length === 14 &&
       /Basic military service credit \(no exhibit\)/.test(srow2.textContent));
+    check("5k2: it names the plan-status split, and says units outside the plan are articulated, not applied",
+      new RegExp("By CPL plan status: Applied to CPL Plan " + int(applied - 60) + " units, [\\d.]+% · Needs Action 60 units").test(st) &&
+      /the 60 units outside Applied to CPL Plan are articulated and not yet applied to a student's plan/.test(st));
     check("5k: it compares the report's total with the funding measure's",
       new RegExp("lists " + int(applied) + " applied units for this institution; the funding measure counts " + trim1(PERF.colleges[K].pa_u).replace(/\./g, "\\.")).test(st));
     const q = seen.find((x) => /map_college_cr_unit\?/.test(x.url));

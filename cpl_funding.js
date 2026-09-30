@@ -10078,7 +10078,7 @@
   function srcIsMilitary(r) { return r.source_code === "ACE" || /military/i.test(r.course_type || ""); }
   // PURE: rows for one college -> the split and the two lists, by units.
   function srcAggregate(rows, col) {
-    var out = { total: 0, mil: 0, nonmil: 0, exhibits: [], crs: [] };
+    var out = { total: 0, mil: 0, nonmil: 0, byStatus: {}, exhibits: [], crs: [] };
     var ex = {}, cr = {};
     (rows || []).forEach(function (r) {
       var u = Number(r[col]) || 0;
@@ -10086,6 +10086,8 @@
       var mil = srcIsMilitary(r);
       out.total += u;
       if (mil) out.mil += u; else out.nonmil += u;
+      var st = r.cpl_status_plan || "No plan status";
+      out.byStatus[st] = (out.byStatus[st] || 0) + u;
       var ek = r.exhibit_id || "";
       if (!ex[ek]) ex[ek] = { id: ek, units: 0, mil: mil, courseType: r.course_type || "" };
       ex[ek].units += u;
@@ -10130,7 +10132,7 @@
       var id = ids[college];
       if (id == null) throw new Error("no MAP college id");
       var url = SUPABASE_URL + "/rest/v1/map_college_cr_unit?college_id=eq." + encodeURIComponent(id) +
-        "&select=source_code,exhibit_id,credit_rec,course_type,sum_applied_credits,sum_transcribed_credits" +
+        "&select=source_code,exhibit_id,credit_rec,course_type,cpl_status_plan,sum_applied_credits,sum_transcribed_credits" +
         "&or=(sum_applied_credits.gt.0,sum_transcribed_credits.gt.0)&order=exhibit_id,credit_rec";
       // Range-paginated: PostgREST answers 1,000 rows a page (the largest
       // college held 857 on 2026-09-30), so a page that comes back full asks again.
@@ -10183,9 +10185,25 @@
     var pct = function (v) { return fmtPct(a.total > 0 ? v / a.total : 0, 1); };
     h += '<p class="cplfund-srcsplit"><span><strong>Military</strong> (ACE or basic military service credit): ' + fmtTrim1(a.mil) + " units, " + pct(a.mil) +
       '</span> <span><strong>Non-military</strong>: ' + fmtTrim1(a.nonmil) + " units, " + pct(a.nonmil) + "</span></p>";
-    var notes = ["MAP&#39;s credit report lists " + fmtTrim1(a.total) + " " + word + " units for this institution" +
+    // ⚠️ THE REPORT'S APPLIED COLUMN IS THE ARTICULATED UNITS, WHATEVER THE
+    // PLAN STATUS (measured 2026-09-30 on every row statewide: 74,697 applied
+    // units sit at Needs Action). A parallel session found it from Sierra's
+    // side (#1776: Chaffey's 1,206 units of basic military credit at Needs
+    // Action), so the panel names the split rather than let "applied" imply a
+    // student's plan.
+    var sts = Object.keys(a.byStatus).sort(function (x, y) { return a.byStatus[y] - a.byStatus[x]; });
+    h += '<p class="cplfund-srcsplit"><span><strong>By CPL plan status</strong>: ' + sts.map(function (k) {
+      return esc(k) + " " + fmtTrim1(a.byStatus[k]) + " units, " + pct(a.byStatus[k]);
+    }).join(" &middot; ") + "</span></p>";
+    var notOnPlan = sts.filter(function (k) { return k !== "Applied to CPL Plan"; }).reduce(function (t, k) { return t + a.byStatus[k]; }, 0);
+    var notes = [];
+    if (word === "applied" && notOnPlan > 0) {
+      notes.push("The credit report carries a row&#39;s articulated units in its applied column whatever the plan status, so the " +
+        fmtTrim1(notOnPlan) + " units outside Applied to CPL Plan are articulated and not yet applied to a student&#39;s plan.");
+    }
+    notes.push("MAP&#39;s credit report lists " + fmtTrim1(a.total) + " " + word + " units for this institution" +
       (measuredRaw != null ? "; the funding measure counts " + fmtTrim1(measuredRaw) +
-        ", read from MAP&#39;s student report, which leaves out portal-origin and test student records" : "") + "."];
+        ", read from MAP&#39;s student report, which leaves out portal-origin and test student records" : "") + ".");
     var cav = srcCaveat(p);
     if (cav) notes.push(esc(cav));
     h += '<p class="dk">' + notes.join(" ") + "</p>";

@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 307 | [sheet 6 is with Sam; the funding surfaces now follow the model](../session_307_handoff.md) | 2026-09-30 |
+| 307 | [sheet 6 is answered; build the Reporting box](../session_307_handoff.md) | 2026-09-30 |
 | 306 | [sheet 5 is with Sam; the Reporting box builds on his three calls](../session_306_handoff.md) | 2026-09-30 |
 | 305 | [the register is statewide, card 9 landed, card 7's Scenario 2 write is the loose end](../session_305_handoff.md) | 2026-09-30 |
 | 304 | [sheet 4 is answered; the three-part check, 0 hours and Grossmont's four come first](../session_304_handoff.md) | 2026-09-29 |

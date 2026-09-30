@@ -1,5 +1,5 @@
 ---
-title: Session 307 handoff — sheet 6 is with Sam; the funding surfaces now follow the model
+title: Session 307 handoff — sheet 6 is answered; build the Reporting box
 date: 2026-09-30
 session: 306 (SkyRivet)
 tags: [handoff, implementation-funding, my-college, refresh, unit-sources, decision-sheet]
@@ -14,23 +14,34 @@ its current head before anything else.
 
 ## First, in this order
 
-1. **Read sheet 6's replies** (`2026-09-30-open-asks-6`, https://claude.ai/artifact/KCuKxKytRRWqNvqrusvtmr,
-   collection `replies`) **and sheet 5's** (https://claude.ai/artifact/4PhPMFSvUVJLxrV7PazTQr): sheet 6 carries
-   sheet 5's five cards, and a reply on either counts. Both were empty at 15:17Z.
-2. **Cards 2 to 4 (the Reporting box):** on his calls, build `cpl_funding_reports` as the S306 handoff
-   described (INSERT-only, reviewer RLS through `is_allowed_reviewer()`, `has_function_privilege` before any
-   revoke), then port `prototype/cplfund_reporting_box_v1.html` into the drill-in with a jsdom test.
-3. **Card 6 (Scenario 2 reads as published):** the stored config names Scenario 2 as published (Sam's save,
-   13:41Z). If he confirms the Chancellor finalized it, drop the hold in the funding lane and card 1's link can
-   follow his approval of the narrated draft. If not, he republishes Scenario 1 himself.
-4. **Card 7 (P1's wording):** Sam types any new wording on the tab. Never pin P1 back or combine `pa_u` with
-   `ppa_u`: both are his rulings.
-5. **Card 5:** rename in `college_briefing.js` as he rules, with a jsdom test.
+Sam answered **all seven cards of sheet 6** at 15:26Z (`replies/done` through 7; six his own call, card 3 as
+proposed). Each ruling is in its lane, and the builder holds no card (no lane carries NEEDS SAM).
+
+1. **Build the Reporting box** on cards 2 to 4: **one report a year**, **all eight** NOVA categories, and
+   **each college sees its own figures on My College, to its signed-in staff**. `cpl_funding_reports`
+   INSERT-only with reviewer RLS through `is_allowed_reviewer()` (copy `funding/supabase_cpl_funding_notes.sql`),
+   `has_function_privilege` before any revoke (Rule 10 b2), then the box in the drill-in from
+   `prototype/cplfund_reporting_box_v1.html` re-keyed to fiscal years, with a jsdom test. ⚠️ **Open design:**
+   college staff have no sign-in today (the reviewer tier is CO staff); propose how a college's staff see their
+   own figures on a decision sheet before building that half. The reviewer half can ship first.
+2. **Card 1 (the Scenario 2 narrated draft):** no verdict; Sam: *"I want to rewrite it and then use the ElevenLabs
+   connector to add a natural narration voiceover."* Wait for his script, then voice it with the ElevenLabs tools
+   (`creative_generate_speech`; ask which voice or pick a clear one and say which) and rebuild `n2` per
+   `prototype/funding_video/README.md`.
+3. **Card 7:** Sam types Priority 1's new wording on the tab. Never pin P1 back or combine `pa_u` with `ppa_u`.
+4. **Card 6:** Scenario 2 is final and stays published; the lane dropped the hold.
+5. **A parallel session's Sierra sheet** (#1776, `docs/visuals/2026-09-30-sierra-credit-source.html`) asks Sam
+   whether to hand the funding lane one question: Chaffey's applied units include 1,206 units of basic military
+   credit at Needs Action. Measured S306: the credit report's applied column equals the articulated units on every
+   row, whatever the plan status (74,697 statewide at Needs Action). Unit sources now shows the status split. If
+   Sam hands it over, it is a question about what P1 counts: his call.
 
 ## Sam's decisions this run
 
 - **P1 (Access) measures `pa_u`**, every applied unit, in both scenarios (his save, 13:41Z; in chat: *"I made
   changes to Scenario 2 funding model P1 metric"*). 49 of 115 colleges reach the P1 target (0 under `ppa_u`).
+- **Sheet 6 (all seven):** yearly reports, all eight categories, each college sees its own; Scenario 2 final;
+  reword P1; rename the two My College figures (built: *units not yet acted on*); card 1 his rewrite.
 - **Exam credit is a valid use of applied units.** On Chaffey: *"they are largely from Standardized exam
   exhibits and Credit by Exam, which is a valid and useful application."* (`cpl_memory`
   `sam-exam-cpl-applied-units-valid-2026-09-30`.)
@@ -49,7 +60,9 @@ its current head before anything else.
 - **My CPL Funding beside the table** on the explainer and the Public view (`fundingPanel`, one renderer).
 - **Unit sources** (reviewer, Internal only): military vs non-military, the exhibits and the recommendations,
   from `map_college_cr_unit`.
-- Sheet 6 published; five `cpl_memory` rows (`SkyRivetS306`); KB note
+- **Unit sources** also splits by CPL plan status (the report's applied column is the articulated units).
+- **My College's two figures** carry two names (card 5; `tests/my_college_units_labels.test.js`).
+- Sheet 6 published and answered; six `cpl_memory` rows (`SkyRivetS306`); KB note
   [`methodology-a-sticky-header-sticks-only-inside-a-box-that-scrolls`](kb-notes/methodology-a-sticky-header-sticks-only-inside-a-box-that-scrolls.md).
 
 ## Read in order
