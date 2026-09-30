@@ -114,8 +114,10 @@ def get_path(doc, path):
     return cur
 
 
-def set_path(doc, path, value):
-    """Set an EXISTING path. A path that does not exist is a plan error, never a new key."""
+def set_path(doc, path, value, create=False):
+    """Set an EXISTING path. A path that does not exist is a plan error, never a new key,
+    unless the edit says `"create": true` (below): then only the LAST key may be new, its
+    parent must already exist, and the reviewed before-value is null."""
     cur = doc
     for step in path[:-1]:
         cur = cur[step]
@@ -123,9 +125,17 @@ def set_path(doc, path, value):
     if isinstance(last, int):
         cur[last] = value
     else:
-        if last not in cur:
+        if last not in cur and not create:
             raise KeyError(last)
         cur[last] = value
+
+
+def del_path(doc, path):
+    """Remove the last key of a path (a created key, on rollback)."""
+    cur = doc
+    for step in path[:-1]:
+        cur = cur[step]
+    del cur[path[-1]]
 
 
 def fingerprint(config):
@@ -143,6 +153,12 @@ def load_plan(plan_dir):
             raise SystemExit("every edit needs path (a list), before and after")
         if e["before"] == e["after"]:
             raise SystemExit("an edit whose before equals its after changes nothing: %s" % e["path"])
+        # ⚠️ A NEW KEY IS DECLARED, NEVER INFERRED (sheet 4, card 7, 2026-09-30). A path
+        # that does not exist stays a plan error, so a typo cannot add a key; a plan that
+        # means to add one says `"create": true` and reviews `before` as null.
+        if e.get("create") and (e["before"] is not None or isinstance(e["path"][-1], int)):
+            raise SystemExit("a create edit reviews before as null and names a key, not an index: %s"
+                             % e["path"])
     return plan
 
 
@@ -151,6 +167,11 @@ def check(plan, row):
     out = []
     for e in plan["edits"]:
         now = get_path(row["config"], e["path"])
+        if e.get("create"):
+            # Absent is the reviewed state for a key the plan creates.
+            state = ("before" if now is MISSING else "after" if now == e["after"] else "moved")
+            out.append({"path": e["path"], "state": state, "live": None if now is MISSING else now})
+            continue
         state = ("before" if now == e["before"] else
                  "after" if now == e["after"] else "moved")
         out.append({"path": e["path"], "state": state,
@@ -194,14 +215,15 @@ def run(plan_dir, mode, rest, out=print):
             return 1
         new = copy.deepcopy(row["config"])
         for e in plan["edits"]:
-            set_path(new, e["path"], e["after"])
+            set_path(new, e["path"], e["after"], create=bool(e.get("create")))
         ts = stamp()
         receipt = {
             "table": TABLE, "row_id": row["id"], "mode": "commit", "at": ts,
             "ruling": plan["ruling"], "cohort": plan["cohort"],
             "read": {"updated_at": row["updated_at"], "updated_by": row.get("updated_by"),
                      "config_sha256": fingerprint(row["config"])},
-            "edits": [{"path": e["path"], "before": e["before"], "after": e["after"]}
+            "edits": [dict({"path": e["path"], "before": e["before"], "after": e["after"]},
+                           **({"create": True} if e.get("create") else {}))
                       for e in plan["edits"]],
             "result": "pending",
         }
@@ -241,7 +263,10 @@ def run(plan_dir, mode, rest, out=print):
         for e in applied:
             now = get_path(row["config"], e["path"])
             if now == e["after"]:
-                set_path(new, e["path"], e["before"])
+                if e.get("create"):
+                    del_path(new, e["path"])       # a created key goes, rather than reading null
+                else:
+                    set_path(new, e["path"], e["before"])
                 restored.append(e)
             else:
                 held.append({"path": e["path"], "live": None if now is MISSING else now})

@@ -1018,6 +1018,14 @@
     ".cplfund-prio .cplfund-rprio .desc { font-size: .8rem; margin: 0 0 8px; text-align: left; }",
     ".cplfund-prio .cplfund-rprio .nums { font-size: .8rem; color: var(--text-body); margin: 0 0 6px; text-align: left; }",
     ".cplfund-rprio-list { margin: 6px 0 0; padding: 0 0 0 2px; list-style: none; }",
+    // A reported outcome shown AS A REPORT (sheet 4, card 7, Sam 2026-09-30:
+    // "go ahead with the card 7 mockup"): a state word, then what is reported,
+    // when and where, each a labeled row. No figure of any kind.
+    ".cplfund-rstate { display: inline-block; font-size: .74rem; font-weight: 600; letter-spacing: .04em; padding: 2px 8px; margin: 0 0 8px; border-radius: 4px; border: 1px solid var(--seal-blue, #002F6D); color: var(--seal-blue, #002F6D); }",
+    ".cplfund-rrow { display: grid; gap: 2px; border-top: 1px dashed var(--border-strong); padding: 7px 0 6px; font-size: .8rem; text-align: left; }",
+    ".cplfund-rrow-k { font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }",
+    ".cplfund-rrow-v { color: var(--text-body); }",
+    ".cplfund-rrow-tba { color: var(--mustard-text); font-weight: 600; }",
     ".cplfund-rprio-p { padding: 6px 0; border-top: 1px solid var(--border); font-size: .82rem; }",
     ".cplfund-rprio-nm { font-weight: 600; color: var(--text-strong); }",
     ".cplfund-rprio-state { font-weight: 600; color: var(--text-body); }",
@@ -7277,6 +7285,68 @@
     ov.reportedTitles[gkey] = String(v == null ? "" : v).trim();
     persistActive();
   }
+
+  // ── A REPORTED OUTCOME SHOWN AS A REPORT (sheet 4, card 7) ─────────────────
+  // Sam, 2026-09-29, on Scenario 2: "I will be reporting on P3 Career Attainment
+  // together with P4 projects using more qualitative data rather than tying it
+  // to FTES." Card 7 mocked the shape, and he approved it on 2026-09-30 ("go
+  // ahead with the card 7 mockup"): each reported card says what is reported,
+  // when and where, and carries no target, FTES or funding line.
+  //
+  // ⚠️ A SCENARIO SETTING, `reportedAsReports`, NEVER A GLOBAL CHANGE. Scenario
+  // 1 derives its reported cards and keeps the card it always had, with its
+  // project allocation line; the mockup promised that, and only the scenario
+  // that opts in changes shape.
+  function reportedAsReports() {
+    return firstDefined(SCENARIO.reportedAsReports, SHARED.reportedAsReports,
+      base().reported_as_reports) === true;
+  }
+  // The wording the approved mockup carried, per statutory goal. A curator's
+  // own text (reportedText) replaces any of it; "when" and "where" start empty
+  // and read TBA (Sam, 2026-09-28: "show TBA everywhere so when it changes, it
+  // will already be wired").
+  var REPORTED_TEXT_DEFAULTS = {
+    C: { desc: "Advancing career attainment through credit for prior learning, \u00a778093.2(d)(1)(C). " +
+           "Reported in qualitative terms, together with the innovation projects.",
+         what: "How CPL awards moved students toward licensure, certification, employment or advancement, " +
+           "in each college\u2019s words." },
+    D: { desc: "Supporting credit for prior learning through the Chancellor\u2019s Office pilot projects, " +
+           "\u00a778093.2(d)(1)(D).",
+         what: "Progress on each designated activity: what it set out to do, what it produced, " +
+           "and what it changed for students." }
+  };
+  var REPORTED_TEXT_FIELDS = ["desc", "what", "when", "where"];
+  function reportedText(gkey, field) {
+    var v = firstDefined(
+      SCENARIO.reportedText && SCENARIO.reportedText[gkey] && SCENARIO.reportedText[gkey][field],
+      SHARED.reportedText && SHARED.reportedText[gkey] && SHARED.reportedText[gkey][field],
+      base().reported_text && base().reported_text[gkey] && base().reported_text[gkey][field]);
+    if (v != null && String(v).trim()) return String(v);
+    var d = REPORTED_TEXT_DEFAULTS[gkey];
+    return (d && d[field]) || "";
+  }
+  function setReportedText(gkey, field, v) {
+    if (REPORTED_TEXT_FIELDS.indexOf(field) < 0) return;
+    var ov = activeOverride();
+    ov.reportedText = isPlainObj(ov.reportedText) ? ov.reportedText : {};
+    ov.reportedText[gkey] = isPlainObj(ov.reportedText[gkey]) ? ov.reportedText[gkey] : {};
+    ov.reportedText[gkey][field] = String(v == null ? "" : v).trim();
+    persistActive();
+  }
+  // One labeled row. An empty "when" reads TBA; an empty "where" is left off
+  // the public page (there is nothing to point at yet) and shown to a curator
+  // as a field to fill.
+  function reportedRowHtml(gkey, field, label) {
+    var v = reportedText(gkey, field);
+    var curator = !publicMode() && unlocked();
+    if (!v && field === "where" && !curator) return "";
+    var shown = curator
+      ? edText("rtext", v, { field: gkey + "::" + field, label: label + " (" + gkey + ")",
+          placeholder: field === "when" || field === "where" ? "TBA" : "" })
+      : (v ? esc(v) : '<span class="cplfund-rrow-tba">TBA</span>');
+    return '<div class="cplfund-rrow"><span class="cplfund-rrow-k">' + esc(label) + "</span>" +
+      '<span class="cplfund-rrow-v">' + shown + "</span></div>";
+  }
   function pointReportedCard(slot, id, goal) {
     var list = reportedCards(slot);
     if (!goalByKey(goal)) return;
@@ -7417,6 +7487,7 @@
     var cid = "r" + gkey;
     var title = reportedTitle(gkey);
     var ctx = "Priority " + (cardNumber(slot, cid) || "") + " \u2014 " + title;
+    var asReport = reportedAsReports();
     return '<div class="cplfund-rprio" data-rprio="' + esc(gkey) + '" data-rcard="' + esc(card.id) +
       '" data-cardid="' + esc(cid) + '">' +
       cardToolsHtml({ id: cid, drag: 'data-carddrag="' + esc(cid) + '"', rows: 'data-rcrows="' + esc(cid) + '"',
@@ -7430,20 +7501,34 @@
         titleInput: function () {
           return edText("rtitle", title, { field: gkey, cls: "cplfund-prio-title-input", label: ctx + " title", placeholder: "Title of its own" });
         } }) +
-      '<p class="desc">Funded through the statewide project allocation and reported based on the aligned activities.' +
+      (asReport
+        // Card 7's shape: the state word, the description, then what is
+        // reported, when and where. No Metric block and no Project allocation
+        // section, so the card prints no figure at all.
+        ? '<span class="cplfund-rstate">Reported</span>' +
+          '<p class="desc">' + (!publicMode() && unlocked()
+            ? edText("rtext", reportedText(gkey, "desc"), { field: gkey + "::desc", label: ctx + " description" })
+            : esc(reportedText(gkey, "desc"))) + "</p>" +
+          reportedRowHtml(gkey, "what", "What is reported") +
+          reportedRowHtml(gkey, "when", "When") +
+          reportedRowHtml(gkey, "where", "Where")
+        : '<p class="desc">Funded through the statewide project allocation and reported based on the aligned activities.' +
       // The note the (D) band carried — why no college qualifies here — moves
       // onto the card the moment no measured card serves the goal.
       (served ? "" :
         " The statute points this outcome at the Chancellor&rsquo;s Office rather than at the campuses, " +
         "so no college qualifies against it.") + "</p>" +
-      noMeasure +
-      cardSectionHtml("Project allocation",
+      noMeasure) +
+      (asReport ? "" : cardSectionHtml("Project allocation",
         fmtMoney(poolGoalKeys("scaling_projects_tech").indexOf(gkey) >= 0
           ? poolGoalAmount("scaling_projects_tech", gkey) : 0),
-        reportedFundHtml(gkey), true) +
+        reportedFundHtml(gkey), true)) +
+      // A report keeps its strategies only where it has some, or for a curator
+      // who may add them: the approved shape carried none.
+      (asReport && !reportedStrategies(gkey).length && (publicMode() || !unlocked()) ? "" :
       cardSectionHtml("Recommended strategies",
         reportedStrategies(gkey).length ? fmtInt(reportedStrategies(gkey).length) + "" : "Awaiting",
-        reportedStrategiesHtml(gkey), false, "cplfund-strat") +
+        reportedStrategiesHtml(gkey), false, "cplfund-strat")) +
       cardSectionHtml("Designated activities",
         ids.length ? fmtInt(ids.length) + "" : "Awaiting",
         designatedListHtml(gkey, true) +
@@ -9891,6 +9976,9 @@
   }
   // The detail line for each reported card a curator switched on (2026-09-23).
   function reportedDetailRows(slot, statewide) {
+    // Card 7: a reported outcome shown as a report leaves the detail entirely,
+    // so no row under a college or the Statewide total names funding for it.
+    if (reportedAsReports()) return [];
     return reportedCards(slot).filter(function (c) { return cardRowsOn("r" + c.goal); })
       .map(function (c) {
         var n = cardNumber(slot, "r" + c.goal);
@@ -10599,7 +10687,8 @@
       }
       var g = id.slice(1);
       return { label: "Priority " + n + ": " + reportedTitle(g), reported: true,
-        description: "Funded through the statewide project allocation and reported based on the aligned activities.",
+        description: reportedAsReports() ? reportedText(g, "desc")
+          : "Funded through the statewide project allocation and reported based on the aligned activities.",
         strategies: reportedStrategies(g) };
     }).filter(Boolean);
   }
@@ -11734,6 +11823,12 @@
     if (edit === "part-label") { setPartLabel(raw); return; }
     if (edit === "prio-title") { setPrio(slot, Number(idx), "title", raw); return; }
     if (edit === "rtitle") { setReportedTitle(el.getAttribute("data-field"), raw); return; }
+    // A reported outcome's report text (card 7): field carries "<goalKey>::<field>".
+    if (edit === "rtext") {
+      var rt = String(el.getAttribute("data-field") || "").split("::");
+      if (rt.length === 2) setReportedText(rt[0], rt[1], raw);
+      return;
+    }
     if (edit === "measlabel") { setMeasureLabel(el.getAttribute("data-field"), raw); return; }
     // A REPORTED outcome's strategy: goal-keyed, since a reported card is not
     // an entry in priorities(slot). field carries "<goalKey>::<index>".
