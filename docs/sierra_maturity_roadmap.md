@@ -106,7 +106,7 @@ scope); offerings slice shipped in v20. Order within the phase:
 |---|---|---|---|---|
 | 5.1 | **CER credential layer wire** | Sierra resolves a credential to its unified identity + issuing agency (kills raw-title fragmentation in answers). | 2–3 d | Pairs with 3.2's CER grain. |
 | 5.2 | **CCR course-identity crosswalk wire** | Local course ↔ C-ID/CCN/M-ID resolution in answers ("your EMT cert maps to EMS 350 at Modesto = C-ID EMS 100 elsewhere"). | 2–3 d | |
-| 5.3 | **Adoption-leverage / prescriptive layer** | The ~48k "should-articulate" opportunities surfaced college-by-college (over-merge-flagged clusters withheld). | 2 d | Data exists (`statewide_prescriptive`); it's a wire + prompt work. |
+| 5.3 | **Adoption-opportunity / prescriptive layer** | The ~48k "should-articulate" opportunities surfaced college-by-college (over-merge-flagged clusters withheld). | 2 d | Data exists (`statewide_prescriptive`); it's a wire + prompt work. |
 | 5.4 | **Multi-college detection** | Detect ALL named colleges in a query, not the first alias hit. | 1 d | Known limitation since v21. |
 | 5.5 | **M3 demand signal** | Aggregate "students are asking for X at college Y" panel (privacy ADR first; small-cell suppression). | 2–3 d | Product decision + ADR before build. |
 | 5.6 | **M2 benchmark battery** | Score Sierra vs the Student Portal's own bot on a rubric. | 2 d | **Blocked on portal-bot access.** |

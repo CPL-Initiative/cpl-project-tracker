@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 502,
+   "count": 503,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7484,7 +7484,8 @@
      "created": "2026-08-06",
      "governs": [
       "funding/_build_cr_backlog.py",
-      "tests/funding_cr_backlog_test.py"
+      "tests/funding_cr_backlog_test.py",
+      "kb/supabase_map_college_credit_sources.sql"
      ],
      "path": "docs/kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md",
      "status": "published",
@@ -7498,7 +7499,7 @@
      ],
      "title": "Small-cell suppression must survive subtraction",
      "type": "methodology",
-     "updated": "2026-08-06"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-05-28",
@@ -7702,6 +7703,27 @@
      "title": "The first run of a new instrument measures the instrument",
      "type": "methodology",
      "updated": "2026-09-04"
+    },
+    {
+     "created": "2026-09-30",
+     "governs": [
+      "kb/supabase_map_college_credit_summary.sql",
+      "kb/supabase_map_promote_custom_reports.sql",
+      "kb/receipts/map_college_credit_summary_per_figure_2026-09-30.sql",
+      "tests/college_briefing_withheld_figure.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-the-floor-belongs-to-each-figure.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "privacy",
+      "disclosure-control",
+      "student-data",
+      "suppression"
+     ],
+     "title": "The floor belongs to each figure",
+     "type": "methodology",
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-29",
@@ -14394,8 +14416,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 279,
+   "count": 280,
    "docs": [
+    {
+     "created": "2026-09-30",
+     "governs": [],
+     "n": 309,
+     "path": "docs/session_309_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "sierra-retrieval-corpus",
+      "disposition-grain",
+      "military-split",
+      "suppression"
+     ],
+     "title": "Sierra reads where credit comes from; check her answers",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-30",
      "governs": [],
@@ -19136,5 +19176,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 997
+ "total": 999
 }

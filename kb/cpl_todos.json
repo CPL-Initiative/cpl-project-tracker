@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-30",
-  "_session": "S307 SkyGusset",
-  "_status": "Landed on 30 September (S307): the Reporting box's reviewer half. Signed-in reviewers record what a college reports it has expended, one report a fiscal year in the eight NOVA categories, in each institution's drill-in under the CO Monitor's note; a correction or a withdrawal is a newer report, and the history keeps every one. You chose MAP's two contacts (the CPL coordinator and the primary CPL contact) as the college staff who will see their own reports on My College; that half is next. Your Public view asks shipped too: the published scenario opens every visit, As colleges see it hides the curator choices in the Public view and brings them back, My CPL Funding sits at the top of the Public view and the explainer with a college or district choice and Save as PDF (My College's box has one too), the margins line up on the explainer and the Public view at every width, and the videos link back to both. The CO style guide and the CO's color palette are filed, and a reference note now guides our writing. One card waits on sheet 8.",
+  "_session": "S307 SkyGusset · Sierra credit-source session",
+  "_status": "Landed on 30 September (S307): the Reporting box's reviewer half. Signed-in reviewers record what a college reports it has expended, one report a fiscal year in the eight NOVA categories, in each institution's drill-in under the CO Monitor's note; a correction or a withdrawal is a newer report, and the history keeps every one. You chose MAP's two contacts (the CPL coordinator and the primary CPL contact) as the college staff who will see their own reports on My College; that half is next. Your Public view asks shipped too: the published scenario opens every visit, As colleges see it hides the curator choices in the Public view and brings them back, My CPL Funding sits at the top of the Public view and the explainer with a college or district choice and Save as PDF (My College's box has one too), the margins line up on the explainer and the Public view at every width, and the videos link back to both. The CO style guide and the CO's color palette are filed, and a reference note now guides our writing. One card waits on sheet 8. Sierra, the same day: she now reads the military and non-military split and the exhibits and credit recommendations behind a college's applied and transcribed units, and any figure behind fewer than 10 students shows as <10.",
   "items": [
     {
       "id": "s307-sam-sheet8-style-guide-kb",
@@ -47,6 +47,12 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
+      "id": "s309-sam-sierra-chaffey-check",
+      "for": "Sam",
+      "tab": "sierra-training",
+      "text": "Set your first Sierra note on the Chaffey answer (the one asking for the military split and the exhibits behind the units) to addressed in Sierra Training. You confirmed her new answer on 30 September; the note still reads new."
+    },
+    {
       "id": "s307-fable-reporting-college-half",
       "for": "Fable",
       "tab": "college-briefing",
@@ -56,13 +62,19 @@
       "id": "s303-fable-chat-smoke-watch",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "Sierra's daily smoke check passed on 29 September (21:52Z) for the first time since 18 September, right after the COCI re-sync rebuilt the program tables. Watch the next runs; if they stay green, close the item with the 18 September partial sync as the likely cause. If they fail again, root-cause the program search's 3-second timeout."
+      "text": "Sierra's smoke check failed again on 30 September after passing on the 29th. Sierra's own answers passed; two catalog lookups on the public key hit the 3-second limit (program_typical_courses took 4.2 seconds and the program search 1.7 seconds when measured directly). Root-cause the catalog timeout, starting with program_typical_courses, so the check goes green and stays green."
     },
     {
       "id": "s301-fable-unit-range-rest",
       "for": "Fable",
       "tab": "cr-reference",
       "text": "Show the unit range on the surfaces still short of Sam's rule of 27 September (units never split an identity): SkyView, the EACR, the Common Exhibit Reference, the dashboard card and Sierra's local lines. The Fact Sheet, Sierra's statewide lines, Unified Courses and the CR Reference comply since 29 September."
+    },
+    {
+      "id": "s309-fable-sierra-source-answers",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Ask Sierra where City College of San Francisco's applied units come from and check her military rows against the live exhibit table: 32 military exhibits there each carry 10 or more students (Sam confirmed Chaffey's answer on 30 September). Draft for Sam the question to Pedro on why MAP's two views differ by 5% on credit applied to plans (171,078 against 162,603, at 26 colleges)."
     }
   ],
   "_deferred": [
