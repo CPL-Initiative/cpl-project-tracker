@@ -30,7 +30,7 @@ check("the detail still names the articulated units inside it", m && /6,500 of t
 
 const src = fs.readFileSync("college_briefing.js", "utf8");
 check("Where you stand keeps 'units waiting' for the articulated units",
-  /fmt\(st\.articulatedWaiting\) \+ " units waiting · "/.test(src));
+  /fmt\(st\.articulatedWaiting\) \+ " units waiting"/.test(src));
 check("one label per figure: 'units waiting' labels the articulated figure alone",
   (src.match(/\+ " units waiting/g) || []).length === 1);
 
