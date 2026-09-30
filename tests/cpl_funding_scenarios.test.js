@@ -105,7 +105,9 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   const css = doc.getElementById("cpl-funding-css").textContent;
   check("hero card background = seal blue", /cplfund-card\.hero \{ background: var\(--seal-blue\)/.test(css));
   check("table header background = seal blue", /cplfund-table th \{ background: var\(--seal-blue\)/.test(css));
-  check("active seg button background = seal blue", /seg button\.on \{ background: var\(--seal-blue\)/.test(css));
+  // The fallback (2026-09-30) is for the funding explainer, which hosts this
+  // toolbar and defines only its own tokens; the token still leads.
+  check("active seg button background = seal blue", /seg button\.on \{ background: var\(--seal-blue(, #002F6D)?\)/.test(css));
   check("no black/charcoal backgrounds remain (navy-primary only as text color)",
     !/background: var\(--navy-primary\)/.test(css));
   // Alignment polish (Sam's screenshot): pool values centered, priority labels

@@ -223,8 +223,14 @@ def ace_titles(report: list) -> list[dict]:
     dropped. That is the cost side of "minimisation happens twice": a column
     kept out for having no consumer is invisible until something needs it.
 
-    Deliberately NOT loading the catalogue's other 12 columns — the rollup owns
+    Deliberately NOT loading the catalogue's other 11 columns — the rollup owns
     those, and a second copy of a big table is how two numbers start disagreeing.
+
+    `CPLTypeCode` rides along (2026-09-30, sheet 2026-09-30-sierra-credit-source
+    item 5): MAP's own six-value type (M · IC · SA · Cx · PR · O), filled on every
+    catalogue row. Reading the type off the exhibit id instead mistyped 546 of
+    677 Credit by Exam exhibits (their ids start MAPCX, not MAPCBE), and the
+    military bucket is `M`. Optional: a view without it yields None, never a guess.
     """
     ds = dataset(report, CATALOG_VIEW)
     if ds is None:
@@ -239,7 +245,10 @@ def ace_titles(report: list) -> list[dict]:
             f"(saw {cols}). The Cx guidance list depends on that pair; fix the "
             "column contract rather than shipping a titleless list.")
 
+    i_type = cols.index("CPLTypeCode") if "CPLTypeCode" in cols else None
+
     best: dict[str, str] = {}
+    types: dict[str, dict[str, int]] = {}
     for row in rows_of(ds):
         if not isinstance(row, list) or len(row) <= max(i_ace, i_title):
             continue
@@ -251,7 +260,18 @@ def ace_titles(report: list) -> list[dict]:
         # abbreviated variant cannot win by arriving later.
         if len(title) > len(best.get(ace, "")):
             best[ace] = title
-    return [{"exhibit_id": k, "title": v} for k, v in sorted(best.items())]
+        if i_type is not None and len(row) > i_type:
+            code = _clean(row[i_type])
+            if code:
+                votes = types.setdefault(ace, {})
+                votes[code] = votes.get(code, 0) + 1
+    def _type(ace):
+        # The most frequent code across the exhibit's rows; ties break on the
+        # code itself so the pick never depends on row order.
+        votes = types.get(ace)
+        return max(sorted(votes), key=lambda c: votes[c]) if votes else None
+    return [{"exhibit_id": k, "title": v, "cpl_type_code": _type(k)}
+            for k, v in sorted(best.items())]
 
 
 def rows_of(ds: dict) -> list:

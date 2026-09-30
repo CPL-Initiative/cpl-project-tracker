@@ -483,7 +483,10 @@
           return { headline: "<10 students", detail: WITHHELD_NOTE, emphasis: "normal", withheld: true };
         }
         return {
-          headline: fmt(dormant) + " units waiting",
+          // "units not yet acted on" (Sam, 2026-09-30, sheet 6 card 5): Where you
+          // stand keeps "units waiting" for the articulated units alone, so the
+          // two figures no longer share one label.
+          headline: fmt(dormant) + " units not yet acted on",
           detail: art != null && art > 0
             ? fmt(art) + " of those are already articulated — the credit exists and the exhibit exists; nothing is blocking the award."
             : "Credit students have earned that has not been acted on.",
@@ -694,7 +697,13 @@
       // ── Funding, district roster, Sierra asks (2026-08-11) ──
       ".cb-fund{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}",
       ".cb-fbox{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);}",
-      ".cb-fbox header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px;}",
+      ".cb-fbox header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px;}",
+      // The block also renders on the funding explainer (fundingPanel, 2026-09-30),
+      // whose page styles every <header> as its masthead strip; the card's own
+      // header takes none of it, and the card keeps an opaque face on the page's
+      // paper background.
+      ".cb-panel .cb-fbox{background:var(--surface-opaque,var(--surface));}",
+      ".cb-panel .cb-fbox header{background:none;border:0;padding:0;}",
       ".cb-fbox h4{margin:0;font-size:.94rem;color:var(--text-strong);}",
       ".cb-fbig{font-size:1.6rem;font-weight:700;color:var(--text-strong);line-height:1.1;margin-bottom:6px;font-variant-numeric:tabular-nums;}",
       ".cb-flags{margin:10px 0 0;padding-left:18px;font-size:.79rem;color:var(--text-body);line-height:1.45;}",
@@ -2502,6 +2511,174 @@
     return h;
   }
 
+  /* ── My CPL Funding, the block (Sam, 2026-09-30) ───────────────────────
+   * "I really like the simplicity of this view and think it would be nice to
+   * add this view as another option on the funding Explainer and Public View."
+   * ONE renderer for the block, called by My College (render) and by the
+   * funding page's one-institution view (fundingPanel), so the two cannot
+   * drift. ctx: { funding, college, f, detail, b, implProg, stratsInline,
+   * standalone }. Every figure is the funding module's; nothing here derives
+   * one. */
+  function fundingBlockHtml(ctx) {
+    var f = ctx.f, implProg = ctx.implProg, stratsInline = ctx.stratsInline;
+    var fundBody = "";
+    if (ctx.funding !== "ready" && ctx.funding !== "error") {
+      fundBody += '<div class="cb-note">Loading the funding model…</div>';
+    } else if (ctx.funding === "ready" && !f) {
+      fundBody += '<div class="cb-note">Loading the funding model…</div>';
+    } else if (ctx.funding === "error") {
+      fundBody += '<div class="cb-warn">The funding model did not load, so this page cannot show an allocation for this college yet. '
+        + "Reload to read it.</div>";
+    } else if (f && !f.onRoster) {
+      fundBody += '<div class="cb-note">' + esc(ctx.college) + ' is not on the 115-college funding roster. '
+        // The carve-out figure is read from the model, never typed. It said "$1M"
+        // from the day the lane was built until 2026-08-23, when it moved to
+        // $1.8M and this sentence — shown to an institution being told why it is
+        // not on the roster — kept quoting the old number.
+        + "The noncredit institutions are funded through the " + fundCarveLabel()
+        + " noncredit carve-out, a separate mechanism from the "
+        + "college allocation below, so this institution has its own route to funding.</div>";
+    } else if (f) {
+      // (a) the $50,000 ESS 25-82 seed grant — already distributed
+      fundBody += '<div class="cb-fund">';
+      fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tag">ESS 25-82 · distributed Spring 2026</span></header>';
+      if (f.grant.declined) {
+        fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">This college declined the grant pending further review. '
+          + "That is a decision on record, not a missed payment.</div>";
+      } else {
+        fundBody += '<div class="cb-fbig">' + money(f.grant.amount) + "</div>"
+          + '<div class="cb-lab">Received. Must be fully expended by <b>June 30, 2028</b>. '
+          + "It was directed at the three priority outcomes below — progress on them is tracked through MAP, "
+          + "as ESS 25-82 specifies. <b>These are not a compliance determination.</b></div>";
+      }
+      var ess = essProgress(f, ctx.detail, window.CPL_FUNDING_ESS);
+      if (ess) {
+        fundBody += '<ol class="cb-ess-list">';
+        ess.forEach(function (e) {
+          fundBody += "<li>" + essMark(e.o) + "<div><b>" + esc(e.title) + "</b>";
+          if (e.frac && e.frac.have != null) {
+            fundBody += '<div class="cb-num">' + e.frac.have + " articulated"
+              + (e.frac.of ? " of the " + e.frac.of + " statewide credit recommendations in MAP" : "")
+              + (e.frac.available ? " · <b>" + e.frac.available + " more</b> available to adopt" : "")
+              + "</div>";
+          }
+          fundBody += '<div class="cb-d">' + esc(e.o.why) + "</div>";
+          if (e.next) fundBody += '<div class="cb-d">' + e.next + "</div>";
+          fundBody += "</div></li>";
+        });
+        fundBody += "</ol>";
+      }
+      fundBody += "</div>";
+
+      // (b) this college's share of the implementation pool. Sam, 2026-08-11:
+      // use the funding tab's own names — "$35M" is his shorthand with the
+      // session, not a label a college would recognize.
+      fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">allocation cap</span></header>';
+      if (!f.alloc) {
+        fundBody += '<div class="cb-lab">No allocation modeled for this college yet.</div>';
+      } else {
+        fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
+        // Sam's 2026-08-22 ruling retired the old negative framing here: state
+        // positively what drives the money. It also collided with the model's
+        // new $400K MAXIMUM, which is now literally a cap — two different
+        // meanings of one word, in adjacent sentences. (The retired phrase is
+        // deliberately not quoted anywhere in this file: the test greps the
+        // SOURCE, so a comment quoting it would fail the guard it explains.)
+        fundBody += '<div class="cb-lab">What this college receives is driven by <b>its own CPL results, as they happen</b>: '
+          + "the measures MAP records count toward this figure. It is modeled, and the model is under "
+          + "active revision.</div>";
+        var bits = [];
+        if (f.alloc.floored) {
+          bits.push("At the <b>" + money(f.floor) + " base award</b> — this institution's proportional share came "
+            + "out below the base, so it is brought up to it, and the base award is its allocation.");
+        }
+        // The floor's mirror image. Say where the difference WENT, not just
+        // that the college lost it — the same reason the funding explainer
+        // names the beneficiary of every amount it shows.
+        if (f.alloc.capped && f.cap) {
+          bits.push("At the <b>" + money(f.cap) + " cap</b> — this institution's proportional share came "
+            + "out above the maximum, so it is held there and the difference re-splits across the other colleges. "
+            + "Its performance targets scale down with it, so it qualifies for funding at the same rate as every other college "
+            + "above the minimum.");
+        }
+        if (f.alloc.gate_blocked) {
+          bits.push("<b>Participation requirements are outstanding</b>" +
+            (f.alloc.gate_missing && f.alloc.gate_missing.length ? " — " + esc(f.alloc.gate_missing.join(" and ")) : "") +
+            ". The cap is unchanged and the funding rolls forward; the college receives its demonstrated funding once it confirms.");
+        } else if (f.alloc.gate_pending) {
+          bits.push("Participation is recorded but not yet confirmed.");
+        }
+        if (bits.length) fundBody += '<ul class="cb-flags"><li>' + bits.join("</li><li>") + "</li></ul>";
+
+        // ── Noncredit money, stated separately and never added in ───────────
+        // The award's NONCREDIT SHARE (one pool, 2026-08-31). Its own line
+        // with its own heading, because noncredit funding folded into a credit
+        // total stops being visible as noncredit funding — and it is the
+        // noncredit dean who needs to see it. The share is INSIDE the combined
+        // figure above, restricted to noncredit outcomes.
+        if (f.nc != null && f.nc > 0) {
+          fundBody += '<div class="cb-note cb-floor"><b>Noncredit share: ' + money(f.nc) + "</b> of the combined "
+            + "award above, set by this institution's own noncredit FTES and restricted to the noncredit "
+            + "measures, so only noncredit results count toward it.</div>";
+        }
+
+        // ── What the cap is FOR — the priorities, each with this college's
+        // own target. Caps and targets both come from the funding
+        // module; nothing here multiplies a share by a pool.
+        if (f.prios && f.prios.length) {
+          fundBody += '<div class="cb-prios"><div class="cb-plab">What counts toward it</div>';
+          f.prios.forEach(function (p, i) {
+            if (unlistedAndUnfunded(p, implProg)) return;
+            var name = p.title || p.description || p.label;
+            fundBody += '<div class="cb-prow"><div class="cb-whead"><b>' + esc(name) + "</b>"
+              + '<span class="v">' + money(p.cap) + "</span></div>";
+            fundBody += '<div class="cb-ptarget">Your target: <b>'
+              + (p.target != null ? fmt(Math.round(p.target * 10) / 10) + " " + esc(p.unit) : "—")
+              + "</b>" + (p.metric ? " · " + esc(p.metric) : "") + "</div>";
+            // The team's steps for THIS priority, nested under the funding they
+            // count toward (Sam, 2026-08-12). As one flat list of 22 they read as an
+            // intimidating audit; six to ten attached to a priority read as
+            // advice about that priority.
+            var progPrio = stratsInline ? programPriorityFor(implProg, p, i) : null;
+            if (progPrio) fundBody += stratHtml(progPrio.items, null);
+            fundBody += "</div>";
+          });
+          fundBody += "</div>";
+          fundBody += '<div class="cb-lab" style="margin-top:8px;">Reaching a target qualifies the college for the <b>whole</b> share, '
+            + "and partial progress qualifies it for a proportional part, so there is no cliff to miss.</div>";
+        }
+      }
+      fundBody += "</div></div>";
+
+      // ── Do this next, per pool ──────────────────────────────────────────
+      // The steps come from the team's own strategies, not from this page.
+      var nextSeed = nextEssOutcome(ess);
+      var nextImpl = topStrategy(ctx.b);
+      if (nextSeed || nextImpl) {
+        fundBody += '<div class="cb-next"><div class="cb-plab">Do this next</div><ul>';
+        if (nextSeed) {
+          fundBody += "<li><b>For the seed funding:</b> " + esc(nextSeed.title)
+            + " — the outcome with the most ground still to cover.</li>";
+        }
+        if (nextImpl) {
+          fundBody += "<li><b>For the implementation funding:</b> " + esc(nextImpl.text)
+            + " — the team's first strategy under " + esc(nextImpl.priority) + ".</li>";
+        }
+        fundBody += "</ul></div>";
+      }
+
+      // STANDALONE (the funding explainer and the tab's Public view, Sam
+      // 2026-09-30): the block sits beside the institution table it was drawn
+      // from, so it points there rather than at a tab the reader cannot see.
+      fundBody += ctx.standalone
+        ? '<div class="cb-note">Both figures come from the same model as the institution table. '
+          + "Choose All institutions for every institution's full detail.</div>"
+        : '<div class="cb-note">Both figures come from the Implementation Funding tab\'s model, not from this page — '
+          + "open it for the full derivation and the year split.</div>";
+    }
+    return fundBody;
+  }
+
   function render(root) {
     ensureCss();
     shedPlaceholder(root);
@@ -2642,155 +2819,8 @@
     var implProg = null;
     b.programs.forEach(function (p) { if (p.id === IMPL_PROJECT) implProg = p; });
     var stratsInline = implProg && f && prioritiesAlign(f.prios, implProg);
-    var fundBody = "";
-    if (state.funding !== "ready" && state.funding !== "error") {
-      fundBody += '<div class="cb-note">Loading the funding model…</div>';
-    } else if (state.funding === "ready" && !f) {
-      fundBody += '<div class="cb-note">Loading the funding model…</div>';
-    } else if (state.funding === "error") {
-      fundBody += '<div class="cb-warn">The funding model did not load, so this page cannot show an allocation for this college yet. '
-        + "Reload to read it.</div>";
-    } else if (f && !f.onRoster) {
-      fundBody += '<div class="cb-note">' + esc(state.college) + ' is not on the 115-college funding roster. '
-        // The carve-out figure is read from the model, never typed. It said "$1M"
-        // from the day the lane was built until 2026-08-23, when it moved to
-        // $1.8M and this sentence — shown to an institution being told why it is
-        // not on the roster — kept quoting the old number.
-        + "The noncredit institutions are funded through the " + fundCarveLabel()
-        + " noncredit carve-out, a separate mechanism from the "
-        + "college allocation below, so this institution has its own route to funding.</div>";
-    } else if (f) {
-      // (a) the $50,000 ESS 25-82 seed grant — already distributed
-      fundBody += '<div class="cb-fund">';
-      fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tag">ESS 25-82 · distributed Spring 2026</span></header>';
-      if (f.grant.declined) {
-        fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">This college declined the grant pending further review. '
-          + "That is a decision on record, not a missed payment.</div>";
-      } else {
-        fundBody += '<div class="cb-fbig">' + money(f.grant.amount) + "</div>"
-          + '<div class="cb-lab">Received. Must be fully expended by <b>June 30, 2028</b>. '
-          + "It was directed at the three priority outcomes below — progress on them is tracked through MAP, "
-          + "as ESS 25-82 specifies. <b>These are not a compliance determination.</b></div>";
-      }
-      var ess = essProgress(f, state.detail, window.CPL_FUNDING_ESS);
-      if (ess) {
-        fundBody += '<ol class="cb-ess-list">';
-        ess.forEach(function (e) {
-          fundBody += "<li>" + essMark(e.o) + "<div><b>" + esc(e.title) + "</b>";
-          if (e.frac && e.frac.have != null) {
-            fundBody += '<div class="cb-num">' + e.frac.have + " articulated"
-              + (e.frac.of ? " of the " + e.frac.of + " statewide credit recommendations in MAP" : "")
-              + (e.frac.available ? " · <b>" + e.frac.available + " more</b> available to adopt" : "")
-              + "</div>";
-          }
-          fundBody += '<div class="cb-d">' + esc(e.o.why) + "</div>";
-          if (e.next) fundBody += '<div class="cb-d">' + e.next + "</div>";
-          fundBody += "</div></li>";
-        });
-        fundBody += "</ol>";
-      }
-      fundBody += "</div>";
-
-      // (b) this college's share of the implementation pool. Sam, 2026-08-11:
-      // use the funding tab's own names — "$35M" is his shorthand with the
-      // session, not a label a college would recognize.
-      fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">allocation cap</span></header>';
-      if (!f.alloc) {
-        fundBody += '<div class="cb-lab">No allocation modeled for this college yet.</div>';
-      } else {
-        fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
-        // Sam's 2026-08-22 ruling retired the old negative framing here: state
-        // positively what drives the money. It also collided with the model's
-        // new $400K MAXIMUM, which is now literally a cap — two different
-        // meanings of one word, in adjacent sentences. (The retired phrase is
-        // deliberately not quoted anywhere in this file: the test greps the
-        // SOURCE, so a comment quoting it would fail the guard it explains.)
-        fundBody += '<div class="cb-lab">What this college receives is driven by <b>its own CPL results, as they happen</b>: '
-          + "the measures MAP records count toward this figure. It is modeled, and the model is under "
-          + "active revision.</div>";
-        var bits = [];
-        if (f.alloc.floored) {
-          bits.push("At the <b>" + money(f.floor) + " base award</b> — this institution's proportional share came "
-            + "out below the base, so it is brought up to it, and the base award is its allocation.");
-        }
-        // The floor's mirror image. Say where the difference WENT, not just
-        // that the college lost it — the same reason the funding explainer
-        // names the beneficiary of every amount it shows.
-        if (f.alloc.capped && f.cap) {
-          bits.push("At the <b>" + money(f.cap) + " cap</b> — this institution's proportional share came "
-            + "out above the maximum, so it is held there and the difference re-splits across the other colleges. "
-            + "Its performance targets scale down with it, so it qualifies for funding at the same rate as every other college "
-            + "above the minimum.");
-        }
-        if (f.alloc.gate_blocked) {
-          bits.push("<b>Participation requirements are outstanding</b>" +
-            (f.alloc.gate_missing && f.alloc.gate_missing.length ? " — " + esc(f.alloc.gate_missing.join(" and ")) : "") +
-            ". The cap is unchanged and the funding rolls forward; the college receives its demonstrated funding once it confirms.");
-        } else if (f.alloc.gate_pending) {
-          bits.push("Participation is recorded but not yet confirmed.");
-        }
-        if (bits.length) fundBody += '<ul class="cb-flags"><li>' + bits.join("</li><li>") + "</li></ul>";
-
-        // ── Noncredit money, stated separately and never added in ───────────
-        // The award's NONCREDIT SHARE (one pool, 2026-08-31). Its own line
-        // with its own heading, because noncredit funding folded into a credit
-        // total stops being visible as noncredit funding — and it is the
-        // noncredit dean who needs to see it. The share is INSIDE the combined
-        // figure above, restricted to noncredit outcomes.
-        if (f.nc != null && f.nc > 0) {
-          fundBody += '<div class="cb-note cb-floor"><b>Noncredit share: ' + money(f.nc) + "</b> of the combined "
-            + "award above, set by this institution's own noncredit FTES and restricted to the noncredit "
-            + "measures, so only noncredit results count toward it.</div>";
-        }
-
-        // ── What the cap is FOR — the priorities, each with this college's
-        // own target. Caps and targets both come from the funding
-        // module; nothing here multiplies a share by a pool.
-        if (f.prios && f.prios.length) {
-          fundBody += '<div class="cb-prios"><div class="cb-plab">What counts toward it</div>';
-          f.prios.forEach(function (p, i) {
-            if (unlistedAndUnfunded(p, implProg)) return;
-            var name = p.title || p.description || p.label;
-            fundBody += '<div class="cb-prow"><div class="cb-whead"><b>' + esc(name) + "</b>"
-              + '<span class="v">' + money(p.cap) + "</span></div>";
-            fundBody += '<div class="cb-ptarget">Your target: <b>'
-              + (p.target != null ? fmt(Math.round(p.target * 10) / 10) + " " + esc(p.unit) : "—")
-              + "</b>" + (p.metric ? " · " + esc(p.metric) : "") + "</div>";
-            // The team's steps for THIS priority, nested under the funding they
-            // count toward (Sam, 2026-08-12). As one flat list of 22 they read as an
-            // intimidating audit; six to ten attached to a priority read as
-            // advice about that priority.
-            var progPrio = stratsInline ? programPriorityFor(implProg, p, i) : null;
-            if (progPrio) fundBody += stratHtml(progPrio.items, null);
-            fundBody += "</div>";
-          });
-          fundBody += "</div>";
-          fundBody += '<div class="cb-lab" style="margin-top:8px;">Reaching a target qualifies the college for the <b>whole</b> share, '
-            + "and partial progress qualifies it for a proportional part, so there is no cliff to miss.</div>";
-        }
-      }
-      fundBody += "</div></div>";
-
-      // ── Do this next, per pool ──────────────────────────────────────────
-      // The steps come from the team's own strategies, not from this page.
-      var nextSeed = nextEssOutcome(ess);
-      var nextImpl = topStrategy(b);
-      if (nextSeed || nextImpl) {
-        fundBody += '<div class="cb-next"><div class="cb-plab">Do this next</div><ul>';
-        if (nextSeed) {
-          fundBody += "<li><b>For the seed funding:</b> " + esc(nextSeed.title)
-            + " — the outcome with the most ground still to cover.</li>";
-        }
-        if (nextImpl) {
-          fundBody += "<li><b>For the implementation funding:</b> " + esc(nextImpl.text)
-            + " — the team's first strategy under " + esc(nextImpl.priority) + ".</li>";
-        }
-        fundBody += "</ul></div>";
-      }
-
-      fundBody += '<div class="cb-note">Both figures come from the Implementation Funding tab\'s model, not from this page — '
-        + "open it for the full derivation and the year split.</div>";
-    }
+    var fundBody = fundingBlockHtml({ funding: state.funding, college: state.college, f: f,
+      detail: state.detail, b: b, implProg: implProg, stratsInline: stratsInline });
     // Summary: the two appropriations, so the shut row still answers "what
     // money is on the table?". EVERY branch says something — a blank summary
     // on a money section reads as broken, and "not loaded" and "nothing" are
@@ -3650,6 +3680,58 @@
    * ledger/perf/ESS sidecars land asynchronously, so we subscribe to the
    * module's change notification and re-render when they do; without that the
    * ESS outcomes would sit on "Pending" forever. */
+  /* THE MODEL MOVED (a curated edit saved, a scenario published or switched,
+   * a Refresh press; Sam, 2026-09-30: "make sure the My College, My CPL
+   * Funding block is updated upon funding refresh"). The funding box reads the
+   * module fresh on every paint, but the strategies nested under it come from
+   * this page's own copy of the config, read once at load, and from the
+   * scenario chosen then. After a publish the box showed Scenario 2's funding
+   * and dropped every strategy, because Scenario 1's list no longer lined up.
+   * So adopt the module's copy and rebuild. Only once the module has read the
+   * shared config: before that it holds a default one, and adopting it would
+   * drop every strategy on the page. */
+  function adoptModelConfig() {
+    var M = fundingModule();
+    var s = (M && typeof M._scenario === "function") ? M._scenario() : null;
+    if (!s || !s.loaded || !s.config || !state.data || !state.data.raw) return;
+    state.data.raw.config = s.config;
+    recompute();
+  }
+  /* What this page shows, for the funding tab's Refresh splash. */
+  function describeFunding() {
+    var surface = "My College: My CPL Funding";
+    if (state.funding !== "ready" || !state.college) {
+      return { surface: surface, detail: "no college open in this window; it reads the model when one is chosen" };
+    }
+    var M = fundingModule();
+    var s = (M && typeof M._scenario === "function") ? M._scenario() : null;
+    return { surface: surface, detail: "redrawn for " + state.college + (s && s.name ? " (" + s.name + ")" : "") };
+  }
+
+  /* The block alone, for a page that is not My College: the funding explainer
+   * and the Implementation Funding tab's Public view, which offer it beside the
+   * institution table (Sam, 2026-09-30). `key` is the funding roster's own
+   * name for the institution (the table's). The seed-funding outcomes read
+   * without the college's credential detail, which only My College loads, so
+   * the one line that needs it (statewide recommendations articulated) is left
+   * out rather than shown as zero. Returns false when the model is absent. */
+  function fundingPanel(el, key) {
+    if (!el) return false;
+    ensureCss();
+    var M = fundingModule();
+    if (!M) { el.innerHTML = '<div class="cb-note">The funding model has not loaded yet.</div>'; return false; }
+    var f = key ? fundingFor(key) : null;
+    var s = typeof M._scenario === "function" ? M._scenario() : null;
+    var cfg = (s && s.config) || {};
+    var b = buildBriefing({ config: cfg, college: null }, { scenario: (s && s.name) || briefingScenario(cfg), year: YEAR });
+    var implProg = null;
+    b.programs.forEach(function (p) { if (p.id === IMPL_PROJECT) implProg = p; });
+    var stratsInline = implProg && f && prioritiesAlign(f.prios, implProg);
+    el.innerHTML = '<div class="cb-panel">' + fundingBlockHtml({ funding: "ready", college: key, f: f, detail: null,
+      b: b, implProg: implProg, stratsInline: stratsInline, standalone: true }) + "</div>";
+    return true;
+  }
+
   function loadFunding(root) {
     if (state.funding !== "idle") return;
     state.funding = "loading";
@@ -3657,7 +3739,11 @@
       var M = fundingModule();
       if (!M) { state.funding = "error"; if (root) render(root); return; }
       if (typeof M.onModelChange === "function") {
-        M.onModelChange(function () { if (state.funding === "ready" && root) render(root); });
+        M.onModelChange(function () {
+          if (state.funding !== "ready" || !root) return;
+          adoptModelConfig();
+          render(root);
+        }, describeFunding);
       }
       try { M.ensureLoaded(); } catch (e) { /* the model renders its own empty state */ }
       state.funding = "ready";
@@ -4278,6 +4364,11 @@
     _state: state,
     _SCENARIO: SCENARIO,
     _briefingScenario: briefingScenario,
+    _loadFunding: loadFunding,
+    _fundingBlockHtml: fundingBlockHtml,
+    // Public: the My CPL Funding block for one institution, on any page that
+    // has loaded cpl_funding.js (the explainer and the tab's Public view).
+    fundingPanel: fundingPanel,
     _publishedScenarioOf: publishedScenarioOf,
     _YEAR: YEAR
   };
