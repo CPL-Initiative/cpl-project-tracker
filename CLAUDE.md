@@ -35,10 +35,12 @@ Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
-Allow-Once storm: its source was the Supabase connector's Tool permissions in
-the claude.ai account, changed 2026-09-28; S298's new-session test closes it) ·
+Allow-Once storm: its source was the Supabase connector's Tool permissions,
+changed 2026-09-28; S298's new-session test closes it) ·
 [doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents and
-measurements behind these rules) · `lanes/` (stubs below).
+measurements behind these rules) ·
+[credential_watch_agent](docs/reference/credential_watch_agent.md) (the
+industry-credential watch; armed Mondays 05:51 PT) · `lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has
@@ -252,11 +254,10 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    the CER-counts and funding-metrics privacy ADRs sit beside it).
    (b) `kb_curation` reads via PostgREST
    must be Range-paginated (#718). (b2) **Close a function with `revoke ... from public, anon,
-   authenticated`** — Postgres grants EXECUTE to **PUBLIC** at creation and
-   this project's default privileges grant anon by name too, so naming either
-   alone leaves it callable (measured 2026-09-30). Check
-   `has_function_privilege('service_role', …)` holds an explicit grant first,
-   or the revoke breaks the cron; `tests/supabase_function_grants_test.py`. (c) The
+   authenticated`**: PUBLIC holds EXECUTE from creation and default
+   privileges here grant anon by name, so either alone leaves it open. First
+   check `service_role` holds an explicit grant (`has_function_privilege`),
+   or the revoke breaks the cron. (c) The
    sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
    MCP tools. Worked examples:
    `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
