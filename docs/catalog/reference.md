@@ -48,7 +48,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Reviewer session lifetime & scope — lane state](../reference/lanes/reviewer-session-lifetime.md) | lanes | `reviewer-session-lifetime.md` | 2026-08-28 | 2026-08-28 |
 | [Roadmap lanes — how the pointer index and the lane files divide](../reference/lanes/README.md) | lanes | `README.md` | 2026-09-09 | 2026-09-09 |
 | [Row-auditor rules (§11 phase 1c) — lane state](../reference/lanes/audit-rules.md) | lanes | `audit-rules.md` | 2026-08-28 | 2026-08-28 |
-| [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-09-29 |
+| [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-09-30 |
 | [Sierra: false absences + the statewide flag — lane state](../reference/lanes/sierra-false-absences.md) | lanes | `sierra-false-absences.md` | 2026-08-28 | 2026-08-28 |
 | [SkyView / the CCR curation interface — lane state](../reference/lanes/skyview-ccr-interface.md) | lanes | `skyview-ccr-interface.md` | 2026-08-28 | 2026-09-29 |
 | [Title 5 §55050 → Ed. Code Article 9 — lane state](../reference/lanes/t5-55050-article-9.md) | lanes | `t5-55050-article-9.md` | 2026-08-28 | 2026-08-30 |
@@ -57,7 +57,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Branch policy — the full record (CLAUDE.md offload)](../reference/branch_policy.md) | — | `branch_policy.md` | 2026-08-28 | 2026-08-28 |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data-write rollback — undoing a bulk write to a shared Supabase table](../reference/data_write_rollback.md) | — | `data_write_rollback.md` | 2026-08-30 |  |
-| [Decision sheets — how to build one, and how to read the replies](../reference/decision_sheets.md) | — | `decision_sheets.md` | 2026-09-09 | 2026-09-29 |
+| [Decision sheets — how to build one, and how to read the replies](../reference/decision_sheets.md) | — | `decision_sheets.md` | 2026-09-09 | 2026-09-30 |
 | [Dependency map — dataset to consuming tabs, scripts, workflows and surfaces](../reference/dependency_map.md) | — | `dependency_map.md` | 2026-08-30 |  |
 | [Doctrine provenance — the incidents behind CLAUDE.md's rules](../reference/doctrine_provenance.md) | — | `doctrine_provenance.md` | 2026-09-27 | 2026-09-27 |
 | [Engineering & UI practices (CLAUDE.md offload)](../reference/engineering_ui_practices.md) | — | `engineering_ui_practices.md` | 2026-08-28 | 2026-09-10 |

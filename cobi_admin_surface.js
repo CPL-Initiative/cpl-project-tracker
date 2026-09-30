@@ -93,8 +93,11 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [
         "budget_funding",
+        "map_ace_exhibit_titles",
         "map_college_contacts",
-        "map_college_contacts_pub"
+        "map_college_contacts_pub",
+        "map_college_cr_unit",
+        "map_colleges"
       ],
       "writes": [
         "cpl_funding_config",
@@ -244,6 +247,7 @@ window.COBI_ADMIN_SURFACE = {
       "reads": [
         "budget_funding",
         "chatbox_credentials",
+        "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
         "map_college_cr_unit",
