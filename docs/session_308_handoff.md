@@ -8,6 +8,10 @@ status: current
 
 # You are Session 308
 
+⚠️ **Two chains, two handoffs (Sam, 2026-09-30).** A parallel session on Sierra's data carries
+`session_309_handoff.md`. This file is the **funding chain's**; if the greeting names 308 and 309 exists,
+read this one for the funding work and leave 309 to the Sierra chain.
+
 Your moniker is **SkyBracket**. SkyGusset (S307) shipped the Reporting box's reviewer half (#1782), took
 Sam's four Public view asks plus a fifth (the published scenario opens) into #1783, and filed the CO style
 guide. Check #1783 on its current head before anything else: merge it on green `test` if S307 did not.
@@ -26,11 +30,19 @@ guide. Check #1783 on its current head before anything else: merge it on green `
    read surface for college staff is a decision-rights change (Rule 10 a3) — record it under DR-09 in
    `kb/governance_surface_map.json` and say so in the PR. Measured 2026-09-30: 105 of 123 colleges list an
    address (49 coordinator, 99 primary); three district staff are listed for three or four colleges.
-2. **Sheet 8** ([7sb3cMt8iU9YWmjKyyHCT1](https://claude.ai/artifact/7sb3cMt8iU9YWmjKyyHCT1)): read
-   `replies` first. One card: a curated public copy of the style guide note, or internal only. A curated copy
-   goes through `cpl-knowledge-base`'s curation pipeline as a draft PR; link the CO's PDFs on cccco.edu,
-   never copy them.
-3. **Card 1 of sheet 6** still waits on Sam's rewritten Scenario 2 script (ElevenLabs, then rebuild `n2`).
+2. **Sheet 8 is answered** (Sam, 18:52Z: *curate*). The curated page is CPL-Initiative/cpl-knowledge-base#24,
+   a draft Sam reviews and merges; never merge it from a session. Answer any review comment there. The
+   public MAP brand page's CCCCO palette differs from Brand Basics; it is flagged in #24 as a separate call.
+3. **Sheet 9** ([XnHFDLys7WRGjHC26NY9KP](https://claude.ai/artifact/XnHFDLys7WRGjHC26NY9KP)) asks whether
+   Priority 1 counts credit still at Needs Action; read its `replies` first. The Sierra chain raised it
+   (`cpl_memory` `summary-applied-includes-needs-action-articulated-2026-09-30`). Compare `pa_u` within MAP's
+   student view, the one it reads: 162,603 units on plans there against 171,078 in the articulation view
+   (Chaffey 18,066 against 18,199). On *plan*, the measure needs a plan-status split in the feed.
+4. **`kb/cpl_todos.json` carries the Sierra chain's items** (#1785). On any rebuild keep
+   `s309-sam-sierra-chaffey-check`, `s309-fable-sierra-source-answers`, the updated text of
+   `s303-fable-chat-smoke-watch`, and the `_status` sentence beginning "Sierra, the same day";
+   `node tests/cpl_todos.test.js` must pass with them in.
+5. **Card 1 of sheet 6** still waits on Sam's rewritten Scenario 2 script (ElevenLabs, then rebuild `n2`).
 
 ## Sam's decisions this run
 
@@ -74,7 +86,7 @@ guide. Check #1783 on its current head before anything else: merge it on green `
 
 - ⚠️ The repo's SQL guard blocks any statement containing INSERT outside `cpl_memory`, rolled back or not;
   verify a gate from `pg_policy` and `has_table_privilege` instead.
-- ⚠️ The funding lane (19,880 of 20,000 bytes) and lessons doc (~119,700 of 120,000) are at their caps:
+- ⚠️ The funding lane (19,964 of 20,000 bytes) and lessons doc (~119,700 of 120,000) are at their caps:
   move settled text out before adding. `CLAUDE.md` is at 59,984 of 60,000.
 - ⚠️ A branch deleted on merge rejects `--force-with-lease`; push plainly.
 - ⚠️ `scripts/check_generated.sh` after the last edit, then the push.
