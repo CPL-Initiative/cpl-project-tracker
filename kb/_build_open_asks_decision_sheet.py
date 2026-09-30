@@ -31,6 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 7 (S307, 2026-09-30, SHEET_ID 2026-09-30-open-asks-7): one card, how a college's staff sign
+in to see its own reported expenditures (the Reporting box's college half). Published at
+https://claude.ai/artifact/6VafxJwkrVpVyL8TCWFpNY (capabilities db + comments). Sam answered it at
+17:09Z the same day (`replies/done` through 1, his own call: MAP's two contacts); the funding lane
+records it and the card left in the same change.
+
 Sheet 6 was answered in full at 15:26Z the same day (`replies/done` through 7, six his own call,
 card 3 as proposed); its rulings are in the funding and My College lanes, and the builder holds no
 card until a lane marks a new ask.
@@ -88,8 +94,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-6.html')
-SHEET_ID = '2026-09-30-open-asks-6'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-7.html')
+SHEET_ID = '2026-09-30-open-asks-7'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -419,6 +425,15 @@ def p_reporting_box_unbuilt():
                     else "%d reference(s) to cpl_funding_reports in the tabs" % n)
 
 
+# The Reporting box's college half (sheet 6 card 4, S307): My College does not
+# read cpl_funding_reports until Sam picks how a college's staff sign in.
+def p_college_reports_unbuilt():
+    """My College does not read the college's own reports yet."""
+    n = _code(_read("college_briefing.js")).count("cpl_funding_reports")
+    return n == 0, ("My College does not read cpl_funding_reports" if n == 0
+                    else "My College reads cpl_funding_reports")
+
+
 # Priority 1 on pa_u (Sam, 2026-09-30): the feed's applied measure still
 # leaves out portal-origin students, whom ppa_u counts on their own.
 def p_pa_excludes_portal():
@@ -535,6 +550,9 @@ def items():
     # rulings: Sam answered all seven at 15:26Z on 2026-09-30 (through 7; six
     # his own call, card 3 as proposed), and each lane records its ruling in the
     # same change. The predicates above stay for a later card.
+
+    # Sheet 7's one card (S307) left with its ruling: Sam chose MAP's two
+    # contacts at 17:09Z on 2026-09-30, and the funding lane records it.
     return I
 
 
