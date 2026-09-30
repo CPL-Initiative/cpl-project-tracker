@@ -251,12 +251,12 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    ([`adr-student-detail-aggregate-disclosure-control`](docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md);
    the CER-counts and funding-metrics privacy ADRs sit beside it).
    (b) `kb_curation` reads via PostgREST
-   must be Range-paginated (#718). (b2) **`revoke ... on function f() from anon,
-   authenticated` does not work** — Postgres grants EXECUTE to **PUBLIC** at
-   creation and anon inherits through it, so the statement protects nothing.
-   **Name `public`**, and check `has_function_privilege('service_role', …)`
-   holds an explicit grant before you revoke PUBLIC, or the same statement
-   breaks the cron; `tests/supabase_function_grants_test.py` lints it. (c) The
+   must be Range-paginated (#718). (b2) **Close a function with `revoke ... from public, anon,
+   authenticated`** — Postgres grants EXECUTE to **PUBLIC** at creation and
+   this project's default privileges grant anon by name too, so naming either
+   alone leaves it callable (measured 2026-09-30). Check
+   `has_function_privilege('service_role', …)` holds an explicit grant first,
+   or the revoke breaks the cron; `tests/supabase_function_grants_test.py`. (c) The
    sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
    MCP tools. Worked examples:
    `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
@@ -753,7 +753,7 @@ stays here.
 
 > **Anything waiting on Sam is also a card on a sheet.** The standing one,
 > `kb/_build_open_asks_decision_sheet.py` →
-> [XnHFDLys7WRGjHC26NY9KP](https://claude.ai/artifact/XnHFDLys7WRGjHC26NY9KP) (sheet 9),
+> [DSky8iUvxg5WeemRm4wpW2](https://claude.ai/artifact/DSky8iUvxg5WeemRm4wpW2) (sheet 10),
 > **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
 > answers one, change that lane's marker in the same PR, or the sheet asks again
 > ([`decision_sheets`](docs/reference/decision_sheets.md)).

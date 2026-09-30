@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 503,
+   "count": 505,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2968,6 +2968,25 @@
      "updated": "2026-09-17"
     },
     {
+     "created": "2026-09-30",
+     "governs": [
+      "funding/supabase_cpl_funding_reports.sql",
+      "tests/supabase_function_grants_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-revoke-must-name-every-role-the-grant-named.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "security",
+      "grants",
+      "rule-10"
+     ],
+     "title": "A revoke must name every role the grant named \u2014 on this Supabase project a new function is callable by anon by name, not only through PUBLIC",
+     "type": "methodology",
+     "updated": "2026-09-30"
+    },
+    {
      "created": "2026-08-15",
      "governs": [
       "cpl_session.js",
@@ -3571,6 +3590,26 @@
      "title": "A store's freshness tracks whether its update is unconditional",
      "type": "methodology",
      "updated": "2026-08-29"
+    },
+    {
+     "created": "2026-09-30",
+     "governs": [
+      "chatbox/supabase_program_typical_courses.sql",
+      "chatbox/verify_program_typical_courses.sql",
+      "kb/receipts/program_typical_courses_title_norm_2026-09-30.sql"
+     ],
+     "path": "docs/kb-notes/methodology-a-stored-value-does-not-follow-its-function.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "postgres",
+      "performance",
+      "sierra",
+      "generated-columns"
+     ],
+     "title": "A stored value does not follow its function \u2014 precompute to remove per-row variance, and recompute whenever the function changes",
+     "type": "methodology",
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-09-29",
@@ -4235,7 +4274,7 @@
      ],
      "title": "An absence in the data is a statement about the data \u2014 say what the catalog shows, never that the county has none",
      "type": "methodology",
-     "updated": "2026-09-18"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-09-30",
@@ -14416,8 +14455,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 280,
+   "count": 281,
    "docs": [
+    {
+     "created": "2026-09-30",
+     "governs": [],
+     "n": 310,
+     "path": "docs/session_310_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "public-view",
+      "reporting-box",
+      "sierra",
+      "map-custom-reports",
+      "decision-sheet"
+     ],
+     "title": "the funding and Sierra chains, joined; sheet 10 is the queue",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-30",
      "governs": [],
@@ -19176,5 +19234,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 999
+ "total": 1002
 }

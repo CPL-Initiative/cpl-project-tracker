@@ -1,7 +1,7 @@
 ---
 title: An absence in the data is a statement about the data — say what the catalog shows, never that the county has none
 created: 2026-09-18
-updated: 2026-09-18
+updated: 2026-09-30
 tags: [methodology, sierra, house-voice, retrieval, epistemics]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -61,6 +61,20 @@ catalog builders, the place block and the offerings rule were reworded
 County's, and passed on the candidate. Which Orange County college runs an
 LVN entry program remains Sam's to name (`s271-sam-lvn-oc`); the wording
 holds either way.
+
+## The guard must pass the sentence this note recommends (2026-09-30)
+
+A ban on the false sentence can catch the true one. Smoke 7c banned "no Orange
+County college teaches LVN" with a pattern that also matched Sierra writing
+*"The catalog data lists no Orange County community college currently teaching
+a full LVN entry program — Golden West, Cypress, and Saddleback do offer
+LVN-to-RN bridge programs"*, which is this note's honest form word for word.
+7s caught *"No San Gabriel Valley college has yet articulated CNA-to-LVN"*,
+which is about articulation and true. The fix (#1791) sets both shapes aside
+before the pattern runs, and the guard's own test feeds it the recommended
+sentence as a fixture that must pass, beside the false claims that must fail.
+Test a wording guard against the wording the doctrine asks for, not only
+against the failure it was written for.
 
 ## When this applies (and when it doesn't)
 

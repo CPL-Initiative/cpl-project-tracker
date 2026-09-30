@@ -16,8 +16,16 @@ truncates or drops a live table, including the two the published dashboards
 read. The correct form was already in this repo twice
 (`cpl_funding_optin_review`, `gr_pass_check`) — it names `public`.
 
-So: every `revoke ... on function` here must name `public`. Naming anon and
-authenticated as well is documentation, not protection.
+So: every `revoke ... on function` here must name `public`.
+
+⚠️ AND `public` ALONE IS NOT ENOUGH HERE (measured 2026-09-30, S308): this
+project's default privileges (pg_default_acl on schema public) ALSO grant
+EXECUTE on each new function to anon and authenticated by name, so
+cpl_funding_my_reports() kept anon=X after `revoke ... from public` until the
+revoke named anon too. The closed rebuild/replace functions revoke from
+`public, anon, authenticated`. This lint checks the `public` half; name the
+roles as well (CLAUDE.md Rule 10 b2), and read `has_function_privilege('anon',
+...)` after applying.
 """
 
 from __future__ import annotations
