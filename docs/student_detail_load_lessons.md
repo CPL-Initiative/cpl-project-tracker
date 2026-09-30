@@ -454,3 +454,84 @@ Briefing, and Sierra's disposition answers. **Next: split the buckets wherever a
 college reads an awaiting-action figure**, leading with the tractable
 non-military number and giving the military figure with its per-student context
 ("~17 recommendations per veteran, because a JST carries the whole record").
+
+## 2026-09-30 — the Sierra credit-source session: each figure carries its own floor
+
+Sam asked Sierra where Chaffey's 19,405 applied units come from. She had no
+military split and no exhibit source to read, so she counted articulated
+exhibits instead ("110 Standardized, 77 Credit by Exam"), and she put the 1,206
+basic-military units at Needs Action inside two figures she called separate
+pools. Sheet 2026-09-30-sierra-credit-source (artifact `NT56gHRViNX9ZYnRg8r1KR`)
+took seven verdicts the same day; #1776, #1777, #1779, #1780, #1781, #1784
+shipped them. Lane state: [`sierra-retrieval-corpus`](reference/lanes/sierra-retrieval-corpus.md)
+and [`disposition-grain-student-detail`](reference/lanes/disposition-grain-student-detail.md).
+
+### (a) What was learned
+
+**1. The floor belongs to each figure, not to the row.** `map_college_credit_summary`
+tested one number per college, its student headcount, and published every figure
+on a row that passed. A college with 400 CPL students can have 3 students behind
+its transcribed total. Measured: 8 of 99 published colleges showed transcribed
+units from under 10 students (3 from a single student), 3 showed applied units
+from under 10, and the anon-readable `_pub` copy carried the same. At 13 colleges
+`applied_credits − articulated_waiting` also recovered a thin in-plan figure. The
+rebuild (#1777) counts the students behind **each** figure, withholds the figure
+and its units together, and records what it withheld in a `withheld` array. KB
+note: [`methodology-the-floor-belongs-to-each-figure`](kb-notes/methodology-the-floor-belongs-to-each-figure.md).
+
+**2. Every real total above the rows sets a partition for the complement.** The
+first per-exhibit build (#1779) ran the iterated complement per college. It
+leaked: where both buckets publish, the military total minus its published
+military exhibits hands over a lone withheld military exhibit. The withholding
+now runs inside each bucket where both buckets publish the measure, and across
+the whole college where a bucket is withheld. Each build raises on a property
+check (no withheld cell recoverable by subtraction) inside the nightly promotion,
+so a failure rolls the load back. Section added to
+[`methodology-small-cell-suppression-must-survive-subtraction`](kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md).
+
+**3. Real totals and "<10" live together (Sam's item 6 ruling).** *"I want
+Sierra to total for everyone using real numbers but when the totals (at any
+level) are below 10, to show "<10" on the views. This should happen without a
+governance gate."* `map_college_credit_statewide` carries the real totals,
+including the colleges whose own figure is withheld; the withheld remainder under
+it spans at least two colleges and ten students (the ADR's decision 5).
+
+**4. A count of exhibits is not a count of credit.** By units, Standardized
+Assessment carried 95% of Chaffey's applied credit and Credit by Exam none, while
+the exhibit list read 110 against 77. The exhibit table answers a source question
+by units; CREDIT_STATUS_RULE now forbids inferring a split from counts.
+
+**5. MAP's Applied Credits column CONTAINS the waiting credit.** Chaffey: 19,405 =
+18,199 at *Applied to CPL Plan* + 1,206 Basic Military Service area credit at
+*Needs Action*. Sierra now leads with applied on the plan (18,066, student view).
+MAP's two views disagree by 5% on applied in plan (171,078 articulation view,
+162,603 student view, 26 colleges); the breakdowns use the student view so they
+add up. Question for Pedro, open.
+
+**6. MAP's CPL type code beats the id rule.** The exhibit-id rule mistyped 546 of
+677 Credit by Exam exhibits. `CPLTypeCode` now rides into the title tables, and
+the military bucket is type code M plus Credit for Basic Military Service.
+
+**7. Sessions cannot write Sierra Training.** The SQL guard denies INSERT and
+UPDATE on `sierra_guidance` and `sierra_feedback`. A Training change goes to Sam
+as text to paste; he added the layout rule himself (`f3a529ae`).
+
+### (b) Mechanics that cost a cycle
+
+- The first sources migration timed out and rolled back whole. An index on the
+  temp source table plus one join for property check 3 fixed it; the function
+  create and its first run went as separate migrations.
+- `tests/lift_ts` strips simple TypeScript types but not `as any`; typed
+  declarations (`const st: any`) pass both Deno and the harness.
+- The district test splices `buildCreditContext` by position; helpers placed
+  before it broke the splice, so they sit after it.
+
+### (c) Roadmap · (d) Next concrete step
+
+Live: the data layer (#1777, #1779), Sierra v74 (#1780), the Training layout rule.
+Open: the Pedro question on the 5% gap; the funding lane's question whether
+applied FTES counts Needs Action credit (`cpl_memory`
+`summary-applied-includes-needs-action-articulated-2026-09-30`). Sam read
+Sierra's v74 answer to the Chaffey question the same day: *"Sierra's Chaffey answer
+looks right now."* **Next: the same question for City College of San Francisco**,
+where 32 military exhibits each carry 10 or more students and show one by one.
