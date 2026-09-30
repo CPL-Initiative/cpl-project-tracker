@@ -784,6 +784,19 @@ block("11. quick list, precedent lines, flyer, the college on every course line,
     /create or replace function public\.program_typical_courses\(/.test(sql) && /create or replace function public\.cpl_course_title_norm\(title text\)/.test(sql)
     && /grant execute on function public\.program_typical_courses\(text\[\], integer, integer\) to anon, authenticated, service_role;/.test(sql)
     && fs.existsSync("chatbox/verify_program_typical_courses.sql"));
+  // 2026-09-30 (S308/S309): the per-row normalizer call inside the function
+  // took 72 ms to 4,178 ms on the same 723 rows and failed smoke 7c against the
+  // anon key's 3 s. The normal form is a stored column now, and a normalizer
+  // revision must recompute it: a stored value does not follow its function.
+  const ptc = sql.slice(sql.indexOf("create or replace function public.program_typical_courses("));
+  const normAt = sql.indexOf("create or replace function public.cpl_course_title_norm(title text)");
+  const colAt = sql.indexOf("generated always as (public.cpl_course_title_norm(course_title)) stored");
+  const recAt = sql.indexOf("set title_norm = default");
+  check("(11) ⭐ program_typical_courses reads the stored title_norm, never the normalizer per row",
+    /c\.title_norm as norm/.test(ptc) && !/cpl_course_title_norm\(/.test(ptc.slice(0, ptc.indexOf("$function$;"))));
+  check("(11) ⭐ the file stores the normal form and recomputes it right after the normalizer",
+    normAt !== -1 && colAt > normAt && recAt > colAt && recAt < sql.indexOf("create or replace function public.program_typical_courses(")
+    && /A0 FAIL: % rows carry a stale title_norm/.test(fs.readFileSync("chatbox/verify_program_typical_courses.sql", "utf8")));
 });
 
 // ── Report ──────────────────────────────────────────────────────────────────
