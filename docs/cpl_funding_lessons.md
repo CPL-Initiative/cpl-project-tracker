@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-09-24
+updated: 2026-09-30
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -44,106 +44,6 @@ shell-first, then new-files-only.
 > one-pool port, its test family and the deck run: S215–S217) on **2026-09-24** — each time because the doc crossed its size
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
-
-## 2026-09-01 — Session 219 (SkyTrim): the targets were there all along, laid out into a 240px column
-
-Sam's pass over the college drill-in was seven items: four strikes, one "give me
-the targets", two questions. The four strikes were easy and the interesting one
-was the request, because **the thing he asked for was already rendered.**
-
-### The finding
-
-`collegeDetailHtml()` builds a `.cplfund-detail-grid` — `repeat(auto-fit,
-minmax(240px, 1fr))` — and drops every part of the drill-in into it as a sibling:
-the FTES-share line, the base/cap line, the eligibility line, the CO note, the
-county line, the district line, **and the per-priority table.** The table is
-`table-layout: fixed` with `min-width: 620px` inside an `overflow-x: auto`
-scroller, which is exactly right on a phone and catastrophic here: as a grid item
-it got ONE ~240px track, so three of its columns lived past a clip edge that no
-error, no missing node and no text-based assertion can see. Sam read the expand
-and concluded it had no targets. It had all of them.
-
-`grid-column: 1 / -1` is the entire fix. The attestation form and the CO note
-were being squeezed the same way and got the same span.
-
-**The generalizable bit:** a scroll container is a correct narrow-screen safety
-net and a silent desktop defect the moment its parent track is narrower than its
-content. `CLAUDE.md`'s presentation rules already say `overflow-x: auto` is "the
-narrow-screen safety net, never the default desktop experience" — this is what
-violating it looks like when nothing is obviously broken. And when a curator says
-a surface does not show something the code demonstrably renders, **check layout
-before you check logic.**
-
-### The column that answers the question he actually asked
-
-"Where they are and where they could be" is a distance, and the table had no
-distance — Target and Actual sit two columns apart and the reader subtracts. **To
-go** now names it, with the funding that distance would earn beside it.
-
-The interesting constraint is which rows may have one. `earnFraction()` returns
-six statuses and only three carry a measurement. Two must not print a distance:
-
-- **suppressed** — the actual is masked for privacy below 5. A mask plus a gap
-  *is* the value; the reader subtracts and the suppression has done nothing. The
-  mask has to hold across the whole ROW, not just the cell it was applied to.
-- **undelivered / bad_src / gap / pending** — there is no number to subtract from.
-  Printing "0 to go" would say *you are done*, when the true claim is *we cannot
-  see*. That is the same silent-omission class the earned column already guards.
-
-Both read the plain absence. `earnIsMeasured()` already existed for exactly this
-question and is the reason the branch is two lines rather than a status list
-copied to a fifth site.
-
-### The strikes, and why the base tail went with the cap tail
-
-Sam named the cap line. The base line is its mirror — same sentence shape, same
-tail, written as a pair so the two read as one thing. Striking one would leave a
-half-pair, which reads worse than either state. The re-split FACT is not lost:
-the formula box states it in full and `cpl_funding_cap.test.js` C7 still pins it
-there, which is what made the drill-in copy redundant in the first place.
-
-The gate chip is the same shape of judgment run in reverse. Removing a duplicated
-signal is not removing the signal, so the guard that demanded the gate read
-**without a hover** was re-aimed onto the Elig pie plus the award cell's own
-"confirm participation to start earning" — both of which were already there.
-A guard whose subject is retired gets re-aimed at the requirement, never deleted.
-
-### The lesson that recurred
-
-`a-test-coupled-to-position-or-wording-breaks-on-correct-work` was recorded on
-2026-08-27 after exactly this: a suite indexing cells by position broke when a
-column was added. Today the To go insert shifted every index in
-`cpl_funding_metric_pin.test.js` and left three checks asserting the right thing
-about the wrong cell. **Recording the lesson did not prevent the repeat, because
-the 08-27 fix repaired the assertions rather than the addressing.** The suite now
-maps header text to a key from the table's own `<th>` row and **throws on an
-unmapped header**, so the next column insert is a loud failure naming the column.
-When a coupling lesson recurs, change what the test is coupled *to*.
-
-### The two questions, and the one that had a factual answer
-
-Item 7 — "I thought we designed a simplified flat funding box yesterday, am I
-imagining things" — is checkable, and he is not. It is
-`docs/visuals/2026-08-31-if-tab-simplified.html` §Funding Breakdown: a four-line
-ledger stack with the named-projects fold, base and cap lifted into their own
-section. It never reached the tab. **The reason it stopped is not a reason:** the
-mock is read-only and the seven boxes are the curator's editing surface, but an
-inline editor sits in a ledger row exactly as it sits in a box. Worth saying
-plainly — *"a mock is read-only"* is a description of the mock, not a constraint
-on the port, and it stalled this for a day.
-
-Item 5 got the element-by-element count rather than an opinion: half the
-goal-spine fold is a second printing of the band above it (key, name, citation,
-statute quote, per-priority funding), and half has no other home. The structural
-catch is that **(B) and (C) are separate goals sharing one band and differ on
-precisely the axis §78093.2(d)(2) asks about**, so a band-level evidence sentence
-cannot say both. Both went to Sam as
-`docs/visuals/2026-09-01-if-tab-two-consolidations.html`, numbered for reply.
-
-**Receipts.** PR #1432. `cpl_memory` rows written INSERT-only under author
-`session-219-skytrim` — rollback is
-`delete from cpl_memory where author = 'session-219-skytrim'`. No data writes
-beyond that; shares, factors and titles remain curator edits through the tab.
 
 ## 2026-09-01 (later, Session 219) — both consolidations ruled and shipped, and the condition that made one of them dangerous
 
@@ -1643,3 +1543,42 @@ uses verbatim, are here.
 - ⚠️ **`open(p, 'w').write(rd(p) + more)` erases the file before it reads it.** Python opens, and truncates, before it evaluates the argument, so the S302 checkpoint wrote 847 bytes over this 113,895-byte doc. `docs_index_build_test`'s frontmatter-less check caught it: the doc lost its frontmatter, so its title fell back to its slug. The doc was rebuilt from main plus the S302 passages, recovered verbatim from the session transcript. Read into a variable first, or append with mode `'a'`, and compare a doc's size after any scripted write.
 - **Sam allowed `funding-config-edit-apply.yml` (2026-09-29): *"Allow workflow and I'll type in myself."*** The workflow landed for reviewed config edits (#1757); he types card 7's two lines himself, and a dry run confirms them. The permission check passed the same file once he had said so.
 - **A Dependabot PR's runs get no repository secrets.** #854's red `sync` check read `SUPABASE_SERVICE_KEY unset`; setup-python v7 itself installed and ran. Merging a bump that touches a workflow triggered by its own file runs that workflow on main with the real key (`coci-offerings-sync.yml` writes).
+
+## 2026-09-29 — S303 (SkyWarp): round 9, sheet 4, and a card that asked about a setting nothing reads
+
+**What worked.**
+- **The live `<details>` is the truth, not its `toggle` event.** The Introduction reopened after Hide because a browser fires `toggle` as a queued task: a redraw landing between the click and that task (a remote load, or the press-hold redraw) rebuilt the section from state that had not heard of the click. `render()` now reads every section's open state from the DOM first. Reproduced in Chromium by holding the button down and redrawing mid-press; it reopened and stayed open (#1761, `tests/cpl_funding_round9.test.js`).
+- **Bake no percent beside a masked count.** The veteran line shows veterans, JSTs and the percent (`vet_jst`, `vet_jst_counts()`); a count of 1–9 bakes as `<10` and the builder then bakes no percent, because a percent beside a masked count gives the count back.
+- **A gray figure never enters a total.** Gated Curr cells show the held figure by lane (`held_cr`, `held_nc`, `earned_withheld`; Sam: *"should not be 0"*); subtotals and the Statewide row still add qualifying funding alone.
+- **Answer a public check with booleans.** The first condition's three parts (card 1) live partly in a reviewer-only column; `map_coordinator_summary()` answers each part as a boolean, so the public page and the tab run one check and no name leaves the table. A return type change needs DROP + CREATE; restate the grant (#1765).
+
+**What bit.**
+- ⚠️ **Sheet 4 card 5 asked Sam to rule on a stored block the model never reads.** Its premise came from a `cpl_memory` row that read `yearPriorities["2"]`; `mirrorYears` is on in both scenarios, so `prioSlot()` gives every year Year 1's priorities. Scenario 2's Year 2 already followed P1 and P2. Read what the model computes (`_effective()`, `scripts/funding_effective.js`), never the stored dial, before writing a card about it.
+- **A retired-word lint that matches substrings flags the house's own wording**: "rolled" inside "enrolled veteran". Whole words, with a check that each retired word is still caught.
+- **Decision sheets carry just the items** (Sam, 2026-09-29): no framing, count line or how-to box.
+
+**State.** Round 9 live (#1761); sheet 4 answered 22:26Z, nine of nine his own call; cards 4 and 6 done (#1764; the config write at 22:53Z, receipt on main), card 5 already true, card 1 in #1765 (the RPC is live). Next: card 3 (0 hours reads noncredit), card 9 (Grossmont's four to ATHL), then the P3/P4 mockup (7), the Scenario 2 narrated draft (8) and the Reporting box (2, Governance first).
+
+
+The funding lane's S303 relocations moved on to the [archive](cpl_funding_lessons_archive.md) at S305.
+
+
+## S304 (2026-09-30, SkyHinge): card 7, P3 and P4 as reports
+
+**State.** Sam approved the card 7 mockup (*"go ahead with the card 7 mockup"*, artifact `RRTSSiTW1k6jk6gvxUAQ1D`) and #1771 ported it: a scenario setting, `reportedAsReports`, makes a reported card a report (a Reported word, a description, What is reported, When reading TBA, Where left off the public card until set; no Metric block, no Project allocation, no detail row). Scenario 1 derives its reported cards and keeps the card it had. The Scenario 2 write (`kb/funding_config_edits_out/2026-09-30/`) removes the measured 0%-share Career Attainment card (`prioRemoved` [1] → [1,3]), splits the combined reported card into C and D, and turns the setting on. It is the first plan to add a key: the applier now takes `"create": true` with a null `before`, an undeclared new key still refuses, and rollback removes a created key.
+
+**Lesson.** Card 7 said "a reported card that is also a funding priority still enters every sum"; the live read showed the real shape: Scenario 2 carried a *measured* Career Attainment card at a 0% share beside a *reported* card whose title also said Career Attainment. Read the stored scenario before designing the fix: the answer was to remove a card, not to change the sums.
+
+## S305 (2026-09-30, SkyLatch): card 8's narrated Scenario 2 draft, and the Reporting box through Governance
+
+**State.** Card 7's Scenario 2 write read back live (03:56Z, unchanged since). Card 3's rename landed on the corpus (seven groups *(noncredit)*, three ranges; A30 holds). Card 8: the Scenario 2 narrated draft, variant `n2`, 3:06 (#1774), eight scenes as draft 4 and two of Scenario 2's own, waiting on Sam and unlinked until the Chancellor finalizes Scenario 2. Card 2: `cpl_funding_reports` folds into DR-09, and the mockup ([BV2Xqt49vCYicX5xdEKP5E](https://claude.ai/artifact/BV2Xqt49vCYicX5xdEKP5E)) records quarterly expenditures in NOVA's eight categories (#1773); the build waits on three calls on sheet 5.
+
+**What worked.**
+- **A copied config is safe once its hash matches.** `funding_effective.js` warns against transcribing the config, and the sandbox cannot reach Supabase. The session copied the Scenario 2 block from an MCP read, then compared its md5 with Postgres's `md5(... ::text)` of the same jsonb before the model read it. A match means the copy is byte for byte the stored text, so `T._alloc('Chaffey')` answers for the live config.
+- **Reuse a script and change only what the figures change.** Eight of ten scenes kept draft 4's words because the model gave them the same figures under Scenario 2; the recognizer and the cue pins then only had two new scenes to prove.
+- **Keep the scenario out of the voice.** The picture says Scenario 2; the voice does not, so the read survives the Chancellor's finalizing it.
+
+**What bit.**
+- ⚠️ **A typed figure slipped a decimal.** The Scenario 2 introduction showed 67.1 FTES; the model gives 67.17 (67.2). 44.3 × 50/33 = 67.12 is the likely source: another scenario's rounded figure, scaled. Read every figure from the model.
+- ⚠️ **A helper that builds a filename hides the read from the dependency map.** `narration('s1')` formatting `narration_%s_layout.json` dropped `build.py`'s read from `kb/dependency_map.json`; the literal filename at each call keeps it.
+- ⚠️ **`check_generated.sh` is the last step before a push, after every edit.** #1773's first push ran it before a lane trim changed the `updated:` date, and `lints` failed on the stale catalog.

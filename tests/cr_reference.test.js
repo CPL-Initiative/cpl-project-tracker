@@ -416,6 +416,11 @@ peers = [
     row("AP English", "A2", "3 hours in Academic Reading and Writing"),
     row("Precalc Cred", "P1", "4 hours in Pre-Calculus Mathematics", "MATH 155", "C-ID", "MATH"),
     row("Precalc Cred", "P2", "5 hours in PRE-CALCULUS MATHEMATICS", "MATH 155", "C-ID", "MATH"),
+    # Card 3 (sheet 4): a figure of 0 reads as noncredit.
+    row("Dental Cred", "D1", "0 hours in Oral Radiology"),
+    row("Dental Cred", "D2", "2 hours in Oral Radiology"),
+    row("EV Cred", "V1", "0 hours in Electric Vehicle Safety"),
+    row("EV Cred", "V2", "0 hours in Electric Vehicle Safety"),
 ]
 creds = [
     {"rec_kind": "statewide_authoritative", "unified_title": "ASE A8",
@@ -440,9 +445,12 @@ U = lambda lo, hi: {"units_lo": lo, "units_hi": hi}
 print(json.dumps({
     "groups": {g["key"]: {k: g[k] for k in F} for g in groups},
     "named": stats.get("groups_named_by_range"),
+    "named_noncredit": stats.get("groups_named_noncredit"),
     "labels": None if lab is None else {
         "equal": lab([U(3.0, 3.0), U(3.0, 3.0)]), "one": lab([U(1.0, 1.0)]),
-        "none": lab([U(None, None)]), "half": lab([U(0.5, 0.5), U(1.0, 1.0)])},
+        "none": lab([U(None, None)]), "half": lab([U(0.5, 0.5), U(1.0, 1.0)]),
+        "zero": lab([U(0.0, 0.0)]), "zero_mix": lab([U(0.0, 0.0), U(2.0, 2.0)]),
+        "zero_range": lab([U(0.0, 0.0), U(2.0, 2.0), U(3.0, 3.0)])},
 }, sort_keys=True))
 `;
 
@@ -487,7 +495,24 @@ function fixtureRun(seed) {
   check("C9 equal ends state one figure; no figure states no range",
     L.equal === "3 units" && L.one === "1 unit" && L.none === null && L.half === "0.5–1 units");
   check("C10 _stats.groups_named_by_range counts the renamed groups",
-    F.named === 5);
+    F.named === 6);
+  // Card 3 (sheet 4, Sam, 2026-09-29): "Read 0 as noncredit". A 0 never opens
+  // a range, and a group that states only 0 reads "(noncredit)".
+  const oral = G["oral radiology"] || {};
+  check("C12 a range never starts at 0: Oral Radiology reads (2 units or noncredit)",
+    oral.canonical === "Oral Radiology (2 units or noncredit)");
+  const ev = G["electric vehicle safety"] || {};
+  check("C13 a group whose wordings state only 0 reads (noncredit)",
+    ev.canonical === "Electric Vehicle Safety (noncredit)" && F.named_noncredit === 1);
+  check("C14 the label: 0 alone is noncredit, 0 beside figures joins them as \"or noncredit\"",
+    L.zero === "noncredit" && L.zero_mix === "2 units or noncredit"
+      && L.zero_range === "2\u20133 units or noncredit");
+  const ur = makeWin().CPL_CR_REFERENCE._unitRange;
+  const Uj = (lo, hi) => ({ units_lo: lo, units_hi: hi });
+  check("C15 the tab's unitRange() is the same rule",
+    ur([Uj(0, 0)]) === L.zero && ur([Uj(0, 0), Uj(2, 2)]) === L.zero_mix
+      && ur([Uj(0, 0), Uj(2, 2), Uj(3, 3)]) === L.zero_range
+      && ur([Uj(4, 4), Uj(5, 5)]) === "4\u20135 units" && ur([Uj(null, null)]) === "units vary");
   // Seeds 1, 2, 4, 5 and 6 read Pre-Calculus Mathematics as divergent from
   // MATH 155 "Precalculus" under the set-order squash; seeds 0, 3 and 7 did not.
   const again = [1, 2, 3].map(fixtureRun);
@@ -513,9 +538,24 @@ function fixtureRun(seed) {
   // never a third derivation written here.
   const unitRange = makeWin().CPL_CR_REFERENCE._unitRange;
   const named = groups.filter(g => g.units_differ && !g.official_applied);
+  // Card 3 changed how a 0 reads. A worklist without its stamp was named by the
+  // rule before it, so its groups that state a 0 are compared once the next
+  // daily-dashboard.yml run rebuilds it — skipped loudly, never silently.
+  const card3 = "groups_named_noncredit" in stats;
+  const statesZero = g => (g.members || []).some(m => m.units_lo === 0 || m.units_hi === 0);
+  if (!card3) {
+    console.log("  … A25 compares " + named.filter(g => !statesZero(g)).length + " of " + named.length
+      + " groups — the committed worklist predates card 3 (0 reads as noncredit); "
+      + "daily-dashboard.yml rebuilds it (C12-C15 prove the builder meanwhile)\n");
+  }
   check("A25 every varying group named by a wording ends in the range the tab prints beside it",
     named.length > 0 && named.length === stats.groups_named_by_range
-      && named.every(g => g.canonical.endsWith(" (" + unitRange(g.members) + ")")));
+      && named.filter(g => card3 || !statesZero(g))
+        .every(g => g.canonical.endsWith(" (" + unitRange(g.members) + ")")));
+  if (card3) {
+    check("A30 no group names a range that starts at 0 or a lone figure of 0 (card 3)",
+      groups.every(g => !/\(0\s*[\u2013-]\s*[\d.]+ units?\)|^0(?:\.0+)?\s+hours?\s+in\s/i.test(g.canonical || "")));
+  }
   // Read with the builder's own shape, never a copy of it here.
   const oneFigure = Number(execFileSync("python3", ["-B", "-c",
     "import sys, json\nsys.path.insert(0, 'kb')\nimport _build_cr_reference as b\n"

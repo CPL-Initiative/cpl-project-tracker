@@ -37,6 +37,12 @@
 //      names the release dates before the two-year amount, whose line is cued
 //      to its words, and the Targets voice says Sample College's Access target.
 //
+//  10. The Scenario 2 narrated draft (sheet 4 card 8, 2026-09-30): n2 runs every
+//      narrated check n1 runs, on narration_s2.*; its voice names two funded
+//      priorities, the Chancellor's Office reporting career attainment with the
+//      innovation projects, and Scenario 2's own Access target; and the
+//      explainer does not link it (Scenario 2 waits on the Chancellor).
+//
 // Run from repo root: `npm test` (or `node tests/funding_video_page.test.js`).
 const crypto = require("crypto");
 const fs = require("fs");
@@ -62,15 +68,32 @@ const explainerMp4 = Array.from(explainer.matchAll(/\.\.\/prototype\/funding_vid
 check("a5 the explainer's MP4 links (Scenario 1 and 2) point at files that exist",
   explainerMp4.length === 2 && explainerMp4.every((f) => fs.existsSync(path.join(DIR, f))));
 
-const narration = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1.json"), "utf8"));
-const spoken = narration.scenes.map((s) => s.text).join(" ");
-check("n1 acronyms are written unspaced, so each reads as one quick word", !/\b[A-Z] [A-Z]\b/.test(spoken) && /\bCPL\b/.test(spoken));
-check("n2 MAP is written 'map', so it is said as the word", !/\bMAP\b/.test(spoken) && /\bmap\b/.test(spoken));
-check("n3 no digits: a year in digits reads as 'two thousand'", !/\d/.test(spoken));
-check("n4 FTES carries the letters fix (unspaced it reads 'eftess')",
-  (narration.phoneme_fixes || []).some((f) => f.find === "ˈɛftˈɛs" && f.use === "ˌɛftˌiːˌiːˈɛs"));
-check("n5 the stilted v2 readings stay banned",
-  ["sˈiː pˈiː ˈɛl", "twˈɛnti twˈɛnti", "ˌɛmˌeɪpˈiː"].every((b) => (narration.never || []).some((n) => n.phonemes === b)));
+// Sheet 4 card 4 (Sam, 2026-09-29): draft 4 approved, so the explainer links the
+// narrated cut beside the introduction. It is Scenario 1's, so the Scenario 2
+// branch hides it rather than pointing a Scenario 2 reader at Scenario 1's figures.
+check("a6 the explainer links the narrated cut, which exists",
+  /id="video-narrated" href="\.\.\/prototype\/funding_video\/funding_in_motion_n1\.html">or watch the narrated version \(3 minutes\)</.test(explainer)
+    && fs.existsSync(path.join(DIR, "funding_in_motion_n1.html")));
+check("a7 the Scenario 2 view hides the narrated link",
+  /getElementById\("video-narrated"\);\s*if \(narrated\) narrated\.hidden = true;/.test(explainer));
+
+const readScript = (s) => JSON.parse(fs.readFileSync(path.join(DIR, "narration_" + s + ".json"), "utf8"));
+const narration = readScript("s1");
+// The narrated cuts: n1 is Scenario 1's (draft 4), n2 Scenario 2's (draft 1).
+const NARRATED = [
+  { tag: "n1 ", v: "n1", s: "s1", mp4: "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" },
+  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_1.mp4" },
+];
+NARRATED.forEach(({ s }) => {
+  const script = readScript(s), spoken = script.scenes.map((x) => x.text).join(" "), tag = s + " ";
+  check(tag + "n1 acronyms are written unspaced, so each reads as one quick word", !/\b[A-Z] [A-Z]\b/.test(spoken) && /\bCPL\b/.test(spoken));
+  check(tag + "n2 MAP is written 'map', so it is said as the word", !/\bMAP\b/.test(spoken) && /\bmap\b/.test(spoken));
+  check(tag + "n3 no digits: a year in digits reads as 'two thousand'", !/\d/.test(spoken));
+  check(tag + "n4 FTES carries the letters fix (unspaced it reads 'eftess')",
+    (script.phoneme_fixes || []).some((f) => f.find === "ˈɛftˈɛs" && f.use === "ˌɛftˌiːˌiːˈɛs"));
+  check(tag + "n5 the stilted v2 readings stay banned",
+    ["sˈiː pˈiː ˈɛl", "twˈɛnti twˈɛnti", "ˌɛmˌeɪpˈiː"].every((b) => (script.never || []).some((n) => n.phonemes === b)));
+});
 
 function boot(file, reduced) {
   const html = fs.readFileSync(path.join(DIR, file), "utf8");
@@ -85,7 +108,7 @@ function boot(file, reduced) {
 }
 
 [["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v2.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v2.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v3.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
@@ -119,9 +142,9 @@ function boot(file, reduced) {
   w.close(); wr.close();
 });
 
-{
-  const tag = "n1 ", file = "funding_in_motion_n1.html";
-  const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1_layout.json"), "utf8"));
+NARRATED.forEach(({ tag, v, s, mp4 }) => {
+  const file = "funding_in_motion_" + v + ".html";
+  const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_" + s + "_layout.json"), "utf8"));
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   const w = boot(file, false), d = w.document;
   const mmss = (t) => Math.floor(t / 60) + ":" + String(Math.floor(t + 1e-6) % 60).padStart(2, "0");
@@ -150,19 +173,20 @@ function boot(file, reduced) {
   w.__film.seek(L.total - 0.3);
   check(tag + "g8 the closing scene says the voice is synthetic",
     Array.from(d.querySelectorAll("#stage p")).some((e) => /synthetic voice/.test(e.textContent)));
-  check(tag + "g9 the page plays the committed voice track", /"audio": ?"narration_s1\.mp3"/.test(raw) && fs.existsSync(path.join(DIR, "narration_s1.mp3")));
+  check(tag + "g9 the page plays the committed voice track",
+    new RegExp('"audio": ?"narration_' + s + '\\.mp3"').test(raw) && fs.existsSync(path.join(DIR, "narration_" + s + ".mp3")));
   const dl = d.getElementById("dl");
   check(tag + "g10 Download MP4 points at the narrated draft, which exists",
-    !!dl && dl.getAttribute("href") === "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
+    !!dl && dl.getAttribute("href") === mp4 && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   w.close();
-}
+});
 
-{
+NARRATED.forEach(({ tag, v, s }) => {
   // 7. The cues: each reveal pinned to the word that names it.
-  const tag = "n1 ", file = "funding_in_motion_n1.html";
-  const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1_layout.json"), "utf8"));
-  const H = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1_words.json"), "utf8"));
+  const file = "funding_in_motion_" + v + ".html", narration = readScript(s);
+  const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_" + s + "_layout.json"), "utf8"));
+  const H = JSON.parse(fs.readFileSync(path.join(DIR, "narration_" + s + "_words.json"), "utf8"));
   const w = boot(file, false), { ft, nt } = w.__film;
   // each scene's film span, from the source's scene() calls, as cues.py reads them
   const spans = Array.from(src.matchAll(/=scene\((\d+(?:\.\d+)?),(\d+(?:\.\d+)?),/g)).map((m) => [Number(m[1]), Number(m[2])]);
@@ -192,7 +216,7 @@ function boot(file, reduced) {
     !back && fastest <= 1 + 1e-6);
   check(tag + "h6 each scene still begins at its layout start",
     L.scenes.every((s, i) => Math.abs(ft(s.start) - spans[i][0]) < 1e-9 && Math.abs(nt(spans[i][0]) - s.start) < 1e-9));
-  const mp3 = crypto.createHash("sha256").update(fs.readFileSync(path.join(DIR, "narration_s1.mp3"))).digest("hex");
+  const mp3 = crypto.createHash("sha256").update(fs.readFileSync(path.join(DIR, "narration_" + s + ".mp3"))).digest("hex");
   check(tag + "h7 the words were heard from the committed voice track, with the model and the date",
     H.sha256 === mp3 && H.hearing.model === "small" && /^\d{4}-\d{2}-\d{2}$/.test(H.heard_on));
   // A barrier keeps its own pace (BAR) around its hit, while the arrow flies on
@@ -203,7 +227,7 @@ function boot(file, reduced) {
   check(tag + "h8 the arrow is under each barrier before it fires",
     BAR > 0 && hits.length === 5 && hits.every((e) => ft(nt(e) - 0.27 * BAR) >= e - 0.5 - 1e-9));
   w.close();
-}
+});
 
 [["funding_in_motion.html", ""], ["funding_in_motion_s2.html", "s2 "]].forEach(([file, tag]) => {
   const w = boot(file, false), d = w.document, ts = [];
@@ -218,13 +242,15 @@ function boot(file, reduced) {
   // 8. The retired word. Only text is read: CSS such as align-items:baseline
   // lives in style attributes and never reaches textContent.
   const RETIRED = /\bbaseline\b/i;
-  const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1_layout.json"), "utf8"));
-  const spoken8 = narration.scenes.map((s) => [s.scene, s.text].concat((s.cues || []).map((c) => c.word + " " + c.why)).join(" ")).join(" ");
-  check("t1 the narration says minimum conditions, never baseline",
-    !RETIRED.test(spoken8) && /meets three minimum conditions/.test(spoken8));
-  check("t2 the captions and the narrated timeline's scene names never say baseline",
-    !RETIRED.test(L.cues.map((c) => c.text).concat(L.scenes.map((s) => s.scene)).join(" ")));
-  [["funding_in_motion.html", ""], ["funding_in_motion_s2.html", "s2 "], ["funding_in_motion_n1.html", "n1 "]].forEach(([file, tag]) => {
+  NARRATED.forEach(({ s }) => {
+    const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_" + s + "_layout.json"), "utf8"));
+    const spoken8 = readScript(s).scenes.map((x) => [x.scene, x.text].concat((x.cues || []).map((c) => c.word + " " + c.why)).join(" ")).join(" ");
+    check(s + " t1 the narration says minimum conditions, never baseline",
+      !RETIRED.test(spoken8) && /meets three minimum conditions/.test(spoken8));
+    check(s + " t2 the captions and the narrated timeline's scene names never say baseline",
+      !RETIRED.test(L.cues.map((c) => c.text).concat(L.scenes.map((x) => x.scene)).join(" ")));
+  });
+  [["funding_in_motion.html", ""], ["funding_in_motion_s2.html", "s2 "], ["funding_in_motion_n1.html", "n1 "], ["funding_in_motion_n2.html", "n2 "]].forEach(([file, tag]) => {
     const w = boot(file, false), d = w.document;
     // every scene's text, its chapter and what the page announces, second by second of the film
     let shown = d.title + " " + d.getElementById("chapters").textContent;
@@ -254,6 +280,33 @@ function boot(file, reduced) {
     at(targets, "quarter system. " + SAMPLE) >= 0);
   check("j4 its card is cued to those words",
     (targets.cues || []).some((c) => c.word === "Sample College's Access target" && !c.skip));
+}
+
+{
+  // 10. The Scenario 2 narrated draft (sheet 4 card 8). Sam, 2026-09-29: "We're
+  // going with Scenario 2" (college funding follows P1 and P2), and "I will be
+  // reporting on P3 Career Attainment together with P4 projects using more
+  // qualitative data rather than tying it to FTES." Eight scenes read as
+  // Scenario 1's because their figures are the same under the stored config;
+  // the priorities and the target are Scenario 2's own.
+  const s1 = readScript("s1"), s2 = readScript("s2");
+  const byName = (sc, n) => (sc.scenes.find((x) => x.scene === n) || {}).text || "";
+  const prio = byName(s2, "Two priorities"), targets = byName(s2, "Targets");
+  check("k1 two funded priorities, and career attainment reported with the innovation projects",
+    /^Two priorities carry the funding/.test(prio) && /Access counts/.test(prio) && /Completion counts/.test(prio)
+      && /Chancellor's Office reports on career attainment together with the innovation projects, in qualitative terms/.test(prio)
+      && !/EDD|wage records/.test(prio));
+  check("k2 the Targets voice says Scenario 2's Access target (the model's 67.2 FTES behind $170,431)",
+    targets.includes("Sample College's Access target, for example, is about sixty-seven FTES, behind about a hundred seventy thousand dollars."));
+  check("k3 the other eight scenes read as Scenario 1's, word for word",
+    s1.scenes.length === 10 && s2.scenes.length === 10
+      && s1.scenes.every((x, i) => ["Three priorities", "Targets"].includes(x.scene) || x.text === s2.scenes[i].text));
+  check("k4 the explainer does not link the Scenario 2 narrated draft", !/funding_in_motion_n2|Scenario_2_Narrated/.test(explainer));
+  const raw = fs.readFileSync(path.join(DIR, "funding_in_motion_n2.html"), "utf8");
+  const cfg = JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(raw)[1]);
+  check("k5 the n2 picture is Scenario 2's: 50 and 50, one reported card, and its target",
+    cfg.prios.length === 3 && cfg.prios[0][0] === 50 && cfg.prios[1][0] === 50 && cfg.prios[2][0] === null
+      && cfg.target.ftesWords === "67.2" && cfg.explainer.endsWith("?scenario=Scenario%202"));
 }
 
 let fail = 0;

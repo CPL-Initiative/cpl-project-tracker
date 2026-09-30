@@ -237,8 +237,20 @@ FIXTURES = {
                                   '<a href="../prototype/funding_video/funding_in_motion_n1.html">'),
     "p_video_timing_trails": ('{"scenes": [{"scene": "Timing", "cues": [{"word": "The full two-year amount", "skip": "late"}]}]}',
                               '{"scenes": [{"scene": "Timing", "cues": [{"word": "The full two-year amount", "at": 0.1}]}]}'),
+    # S303: sheet 4's measured call on the CR Reference's zero figures.
+    "p_crr_zero_hours":      ('{"groups": [{"canonical": "Oral Radiology (0\u20132 units)"}]}',
+                              '{"groups": [{"canonical": "Oral Radiology (2 units)"}]}'),
     "p_video_sample_unnarrated": ('{"scenes": [{"scene": "Targets", "text": "Each priority has a target."}]}',
                                   '{"scenes": [{"scene": "Targets", "text": "Sample College\'s Access target is 44 FTES."}]}'),
+    # S305: sheet 5's three measured calls.
+    "p_video_n2_unlinked":   ('<a href="../prototype/funding_video/funding_in_motion_n1.html">',
+                              '<a href="../prototype/funding_video/funding_in_motion_n2.html">'),
+    "p_reporting_box_unbuilt": ('var NOTES_URL = SUPABASE_URL + "/rest/v1/cpl_funding_notes";',
+                                'var REPORTS_URL = SUPABASE_URL + "/rest/v1/cpl_funding_reports";'),
+    "p_units_waiting_twice": ('headline: fmt(dormant) + " units waiting",\n'
+                              'h += sec("stand", "Where you stand", fmt(st.articulatedWaiting) + " units waiting · ");',
+                              'headline: fmt(dormant) + " units not yet acted on",\n'
+                              'h += sec("stand", "Where you stand", fmt(st.articulatedWaiting) + " units waiting · ");'),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():

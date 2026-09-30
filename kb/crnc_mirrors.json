@@ -24406,8 +24406,9 @@
   "kb/zband_retire_out/2026-09-03/alias_map.json",
   "kb/prefix_fold_out/2026-09-03/alias_map.json",
   "kb/eths_remint_out/2026-09-28/ruled/alias_map.json",
-  "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json"
+  "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json",
+  "kb/athl_remint_out/2026-09-30/alias_map.json"
  ],
- "_rekeyed_at": "2026-09-29",
+ "_rekeyed_at": "2026-09-30",
  "_rekeyed_by": "kb/_rekey_crnc_mirrors.py"
 }

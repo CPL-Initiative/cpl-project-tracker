@@ -1,0 +1,69 @@
+{
+  "table": "cpl_funding_config",
+  "row_id": "default",
+  "mode": "commit",
+  "at": "2026-09-29T22-53-45Z",
+  "ruling": "Sam Lee, 2026-09-29, open-asks sheet 4 (2026-09-29-open-asks-4) card 6: carry; the config-edit workflow at his word in session ('go ahead with the config-edit workflow for 5 and 6')",
+  "cohort": "implementation-funding-s303@bot",
+  "read": {
+    "updated_at": "2026-09-29T13:59:35.623295+00:00",
+    "updated_by": "slee@cccco.edu",
+    "config_sha256": "1b9f7365182948fb20171750a9bb638fc74499b9365f07c894c0fa6673c9032d"
+  },
+  "edits": [
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "coordLabel"
+      ],
+      "before": "CPL Coordinator assigned and primary CPL contact listed in MAP and the college public CPL Landing Page",
+      "after": "CPL Coordinator assigned and primary CPL contact listed in MAP and the college public CPL Landing Page configured."
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "extraReqs",
+        0
+      ],
+      "before": "Minimum of 75% of enrolled veteran Joint Services Transcripts uploaded in MAP",
+      "after": "Minimum of 75% of enrolled veteran Joint Services Transcripts uploaded in MAP and processed for CPL"
+    }
+  ],
+  "result": "written",
+  "written": {
+    "updated_at": "2026-09-29T22:53:45.51941+00:00",
+    "updated_by": "implementation-funding-s303@bot",
+    "config_sha256": "be731cc5d17968dafdea51040283d19429e1627e4a411a839d540472f1dc040a"
+  },
+  "read_back": [
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "coordLabel"
+      ],
+      "state": "after",
+      "live": "CPL Coordinator assigned and primary CPL contact listed in MAP and the college public CPL Landing Page configured."
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "extraReqs",
+        0
+      ],
+      "state": "after",
+      "live": "Minimum of 75% of enrolled veteran Joint Services Transcripts uploaded in MAP and processed for CPL"
+    }
+  ]
+}

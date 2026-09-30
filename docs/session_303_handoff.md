@@ -4,6 +4,8 @@ date: 2026-09-29
 session: 302 (SkyWeft)
 tags: [handoff, decision-sheet, college-dashboard, implementation-funding, eths-remint, dependabot]
 status: current
+superseded: true
+superseded_by: session_305_handoff.md
 ---
 
 # You are Session 303

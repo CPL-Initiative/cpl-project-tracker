@@ -6,14 +6,14 @@ A 90-second animated introduction for colleges to how CPL implementation funding
 
 - `funding_in_motion.src.html`: THE source. The animation, the score and the arrow's flight live here once. Placeholders (`__CFG__`, `__LOGO__`, `__MAP__`, `__ARROW__`, the page chrome) are filled by `build.py`.
 - `build.py`: holds `CONFIG`, one entry per scenario: the priorities scene, Sample College's target, the explainer link and the page chrome. `python3 prototype/funding_video/build.py` builds Scenario 1; `build.py s2` builds Scenario 2.
-- `funding_in_motion.html`, `funding_in_motion_s2.html`: the built pages, every image inlined.
-- `20260926_CPL_Funding_in_Motion_v2.mp4`, `20260926_CPL_Funding_in_Motion_Scenario_2_v2.mp4`: 1920×1080, 30 fps, 91 seconds, with music.
+- `funding_in_motion.html`, `funding_in_motion_s2.html`: the built pages, every image inlined. `funding_in_motion_n1.html` and `funding_in_motion_n2.html` are the narrated drafts of Scenario 1 and Scenario 2 (below).
+- `20260926_CPL_Funding_in_Motion_v2.mp4`, `20260926_CPL_Funding_in_Motion_Scenario_2_v3.mp4`: 1920×1080, 30 fps, 91 seconds, with music. Scenario 2 is v3 since 2026-09-30: its target reads the model's 67.2 FTES and its reported card card 7's wording.
 - `assets/map_wordmark.png`: the MAP wordmark, cut from Sam's logo file with the red arrow removed and the background made transparent. `assets/map_arrow.png`: the arrow.
 
 ## The scenarios
 
 - **Scenario 1** (the published scenario, config read 2026-09-24): Access 33%, Completion 34%, Career attainment 33%. Sample College's Access target 44.3 FTES behind $112,484; half is 22.2 FTES for $56,242.
-- **Scenario 2** (stored 2026-09-25): Access 50%, Completion 50%; Career attainment and innovation projects is a reported card, funded statewide through the project allocation. Sample College's Access target 67.1 FTES behind $170,431; half is 33.6 FTES for $85,216.
+- **Scenario 2** (config read 2026-09-30, after sheet 4 card 7's write): Access 50%, Completion 50%; the Chancellor's Office reports career attainment together with the innovation projects, in qualitative terms (Sam, 2026-09-29), one reported card in the picture where the tab shows two. Sample College's Access target 67.2 FTES behind $170,431 (the model's 67.17 and $170,430.69; the 2026-09-25 build typed 67.1); half is 33.6 FTES for $85,215. Its maximum ($345,220), its credit and noncredit shares and the $35 million split read the same as Scenario 1's.
 
 Sample College uses Chaffey College's figures. Every figure is typed from the engine under the stored scenario config on its date; nothing is read live. If a dial moves, update `CONFIG` in `build.py` and re-render.
 
@@ -33,6 +33,12 @@ The player opens filling the window: the stage takes the largest 16:9 box that l
 ## The narrated draft
 
 A narrated cut of Scenario 1 is in draft beside the introductions (Sam, 2026-09-26: "a natural feminine voice-over that follows a script your write... tone down the music to just background level... slow down and lengthen the timing a bit to accommodate readability and narration"). It is built from the same source as variant `n1`: `funding_in_motion_n1.html` and `20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4`, 3:07 long. Draft 2 (2026-09-29) cues each reveal to the word that names it (Sam, 2026-09-27), draft 3 reads the seventh scene as minimum conditions, and draft 4 (the same day) makes the two changes Sam ruled on sheet 3 (cards 16 and 17). The Timing scene names the release dates before the two-year amount, the order the picture shows them, so the two-year line lands on its words where draft 3's trailed them by 7.6 s. The Targets scene says Sample College's Access target after the quarter-system line: "Sample College's Access target, for example, is about forty-four FTES, behind about a hundred twelve thousand dollars," cued to the card that shows 44.3 FTES and $112,484. Draft 3's pacing stays, as he ruled (card 18). The voice speaks two of Sample College's figures, its maximum and its Access target, so a dial that moves them changes `narration_s1.json` too, and takes a new read. It waits on Sam's review, and the explainer does not link the narrated cut until he approves it. The script and the build plan are in `20260926_Narration_Script_Draft.md`.
+
+**Scenario 2's narrated draft** (sheet 4 card 8, S305, 2026-09-30) is variant `n2`: Scenario 2's picture and `narration_s2.json`'s voice, `funding_in_motion_n2.html` and `20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_1.mp4`. Eight scenes read word for word as draft 4 of Scenario 1, because their figures are the same under the stored Scenario 2 config. Two scenes are Scenario 2's own: Two priorities (*"Two priorities carry the funding, in equal shares... And the Chancellor's Office reports on career attainment together with the innovation projects, in qualitative terms"*, Sam's own terms of 2026-09-29) and Targets (*"about sixty-seven FTES, behind about a hundred seventy thousand dollars"*). The voice never names the scenario, which the picture carries, so the read survives the Chancellor's finalizing it. The explainer does not link it: Scenario 2 waits on the Chancellor, and the cut on Sam's review.
+
+    python3 prototype/funding_video/narrate.py s2      # narration_s2.mp3, its layout, then cues.py --listen s2
+    python3 prototype/funding_video/build.py n2        # the page
+    FFMPEG=... bash prototype/funding_video/render.sh n2
 
     pip install kokoro-onnx soundfile imageio-ffmpeg faster-whisper
     python3 prototype/funding_video/narrate.py --check   # the phonemes only, in seconds

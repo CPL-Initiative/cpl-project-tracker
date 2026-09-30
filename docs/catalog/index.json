@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 498,
+   "count": 499,
    "docs": [
     {
      "created": "2026-08-14",
@@ -994,6 +994,23 @@
      "updated": "2026-08-22"
     },
     {
+     "created": "2026-09-30",
+     "governs": [
+      "scripts/funding_effective.js",
+      "prototype/funding_video/build.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-copied-record-is-safe-once-its-hash-matches.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "implementation-funding"
+     ],
+     "title": "A copied record is safe once its hash matches the source",
+     "type": "methodology",
+     "updated": "2026-09-30"
+    },
+    {
      "created": "2026-08-14",
      "governs": [
       "tests/team_phrase_affordance.test.js"
@@ -1290,7 +1307,7 @@
      ],
      "title": "A display name is not a key \u2014 and the entry that still matches is the one that lies",
      "type": "methodology",
-     "updated": "2026-09-15"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-09-18",
@@ -10727,7 +10744,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-09-24"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-06-21",
@@ -13850,7 +13867,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-09-29"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-28",
@@ -13928,7 +13945,7 @@
      ],
      "title": "My College (college action page) / MAP-team queue \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-28",
@@ -13980,7 +13997,7 @@
      ],
      "title": "Partner crosswalks \u2014 lane state",
      "type": null,
-     "updated": "2026-09-17"
+     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-28",
@@ -14347,8 +14364,62 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 274,
+   "count": 277,
    "docs": [
+    {
+     "created": "2026-09-30",
+     "governs": [],
+     "n": 306,
+     "path": "docs/session_306_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "funding-video",
+      "reporting-box",
+      "my-college",
+      "decision-sheet"
+     ],
+     "title": "sheet 5 is with Sam; the Reporting box builds on his three calls",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-30",
+     "governs": [],
+     "n": 305,
+     "path": "docs/session_305_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "my-college",
+      "partner-crosswalks",
+      "implementation-funding",
+      "cr-reference",
+      "eths-remint",
+      "side-menu"
+     ],
+     "title": "the register is statewide, card 9 landed, card 7's Scenario 2 write is the loose end",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-29",
+     "governs": [],
+     "n": 304,
+     "path": "docs/session_304_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "decision-sheet",
+      "college-dashboard",
+      "implementation-funding",
+      "eths-remint"
+     ],
+     "title": "sheet 4 is answered; the three-part check, 0 hours and Grossmont's four come first",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-29",
      "governs": [],
@@ -18998,5 +19069,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 989
+ "total": 993
 }

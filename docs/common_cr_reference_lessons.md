@@ -676,3 +676,8 @@ decision" counted the MECHANICAL rung ladder (108/28/46/41), not judgments.
 ⚠️ **THE PRIMARY CAME BACK BELOW CHANCE — `any_reason` AUC 0.378.** Backwards,
 not weakly right: where Jev found a reason to hold two apart, Sam was MORE
 likely to fold them.
+
+
+## S304 (2026-09-30, SkyHinge): 0 hours reads as noncredit (sheet 4, card 3)
+
+Sam overrode the proposal ("no figure"): a wording that states 0 hours reads as noncredit. `unit_range_label()` and `cr_reference.js` `unitRange()` form a range from figures above 0 and add "or noncredit" (*Oral Radiology (2 units or noncredit)*); a group that states only 0 reads "(noncredit)", counted in `_stats.groups_named_noncredit` (#1768). The builder reads a payload only the cron builds, so the change shipped code-only and the next `daily-dashboard.yml` run renames the ten; A25 skips the groups that state a 0 until the worklist carries the new stamp, and A30 then checks no name opens at 0.

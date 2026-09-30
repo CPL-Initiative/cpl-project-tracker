@@ -86,7 +86,7 @@ handled. `cross_listing_group` sits on the CCR seed (`kb/common_courses.json`).
 |---|---|---|
 | 1 | the four-kind frame | ✅ recorded here |
 | 2 | a 1-2 char subject code never decides a discipline | ✅ **landed** #1653 — `discipline_for_modal()` + `mint_token()` in `kb/_seed_coci_minted_mids.py`, `tests/mid_short_code_gate_test.py` |
-| 3 | re-mint the mis-prefixed ETHS identities | the 31: **ruled** (open-asks card 1, 2026-09-22), ✅ **applied** 2026-09-28 (S296), `kb_curation` re-keyed · the 43 beyond them: **ruled** (sheet 3 card 3, 2026-09-29), ✅ **applied in git** 2026-09-29 (S302); their `kb_curation` re-key runs after the merge · the 42 merged ones stay on their ids (the same ruling). Detail below |
+| 3 | re-mint the mis-prefixed ETHS identities | the 31: **ruled** (open-asks card 1, 2026-09-22), ✅ **applied** 2026-09-28 (S296), `kb_curation` re-keyed · the 43 beyond them: **ruled** (sheet 3 card 3, 2026-09-29), ✅ **applied** 2026-09-29 (#1755; `kb_curation` re-keyed by run 36631294479, read back 0/0/4/3) · Grossmont's four *Advanced Techniques and Strategies of …* titles on KINE (Baseball, Football, Softball, Water Polo): **ruled** to ATHL (sheet 4, card 9, 2026-09-29), ✅ **applied** 2026-09-30 (S304; `KINE M12OI`–`M12OL` → `ATHL M11FQ`–`M11FT`) · the 42 merged ones stay on their ids (the same ruling). Detail below |
 | 4 | alias Kinesiology / Physical Education | open — **smaller than the sheet implied**, see below |
 | 5 | nest the specializations on the vocabulary | open |
 | 6 | cross-list kind C through `xdisc` | open — waits on 1, 5, 7 |
@@ -175,22 +175,35 @@ the title: `ETHS M10LH` *Beginning Fitness for the Newcomer* and `ETHS M10PP`
 *Individualized Sports Conditioning* (both carry the Ethnic Studies TOP 2203.00)
 and `ETHS M90AB` *Exercise for Developmentally Disabled* (TOP 1222.00).
 
-Three routes follow the pass-2 rule (the title routes, TOP only corroborates)
-and may look odd to a curator: Grossmont's *Advanced Techniques and Strategies
-of …* family splits between ATHL (six titles say *Intercollegiate*) and KINE
-(Baseball, Football, Softball, Water Polo); *Athletic Competition* carries the
-intercollegiate TOP 0835.50 and lands on KINE beside *Concepts of
-Intercollegiate Athletic Competition* on ATHL; and *Technical Analysis and
-Theory of Football - Defense* lands on KINE while its Offense twin sits merged
-under `ATHL M1320`.
+Three routes followed the pass-2 rule (the title routes, TOP only corroborates)
+and looked odd to a curator. Sam ruled on the first (sheet 4, card 9): Grossmont's
+*Advanced Techniques and Strategies of …* family had split between ATHL (six
+titles say *Intercollegiate*) and KINE (Baseball, Football, Softball, Water Polo),
+and the four moved to ATHL beside the six. The other two stand as routed:
+*Athletic Competition* carries the intercollegiate TOP 0835.50 and lands on KINE
+beside *Concepts of Intercollegiate Athletic Competition* on ATHL; and *Technical
+Analysis and Theory of Football - Defense* lands on KINE while its Offense twin
+sits merged under `ATHL M1320`.
+
+**Card 9, applied 2026-09-30 (S304).** `kb/_athl_four_remint.py` pins the four by
+id and by the ETHS id each left, routes them by the ruling (the pass-2 title rule
+sends them to KINE, which is why they sat there), and reuses the ETHS re-mint's
+apply and gates with its own stamp, `_athl_remint_from`; each record keeps
+`_eths_remint_from`. All four kept numbers were taken, so they gap-filled beside
+the six: `ATHL M11FQ`–`M11FT`. Receipt `kb/athl_remint_out/2026-09-30/`, registered
+in `ALIAS_MAPS`; the fresh read found no live `kb_curation` row on the eight ids
+(an empty read, committed beside the receipt), and only the four singleton
+records, SkyView's layout (4 tokens per file) and the chain's stamps changed.
+Fold-verify still reads its 7 held rows and `subject_collision_signal` holds at
+113. The four slots are among the 32 the ETHS re-mint reused, so
+`tests/eths_remint_test.py` now reads a slot's course where the ETHS stamp names
+it today, and gives a map the widest stamp it owns.
 
 ## Next
 
-1. **The 43's `kb_curation` re-key, after the merge and before the next cron's
+1. **Card 9's `kb_curation` re-key, after the merge and before the next cron's
    curation sync:** dispatch `supabase-rekey.yml` with
-   `alias_map_path=kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json`,
-   read `kb_curation` back (0 rows on the 40 old ids; 4 rows on
-   `KINE M2023`–`M2025` and 3 `merge_into` pointers at them), then dispatch
-   `daily-dashboard.yml`.
+   `alias_map_path=kb/athl_remint_out/2026-09-30/alias_map.json` (a no-op: no live
+   row names the eight ids), read back, then dispatch `daily-dashboard.yml`.
 2. Items 5 and 4 — both vocabulary edits, and 5 is what item 6 sits on.
 3. Item 6, then the item-12 sitting at 50 rows from kind C.

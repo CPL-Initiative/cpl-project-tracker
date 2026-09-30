@@ -5067,3 +5067,115 @@ mapping to (B)+(C), and two measure sources — `ppe`/`ppe_u` emitting today,
 **Not shipped, deliberately:** shares and factors. Sam's standing rule — *"I
 don't want you to fix it; I want the tab to save it"* — makes those curator edits
 through the tab, not session SQL.
+
+## 2026-09-01 — Session 219 (SkyTrim): the targets were there all along, laid out into a 240px column
+
+Sam's pass over the college drill-in was seven items: four strikes, one "give me
+the targets", two questions. The four strikes were easy and the interesting one
+was the request, because **the thing he asked for was already rendered.**
+
+### The finding
+
+`collegeDetailHtml()` builds a `.cplfund-detail-grid` — `repeat(auto-fit,
+minmax(240px, 1fr))` — and drops every part of the drill-in into it as a sibling:
+the FTES-share line, the base/cap line, the eligibility line, the CO note, the
+county line, the district line, **and the per-priority table.** The table is
+`table-layout: fixed` with `min-width: 620px` inside an `overflow-x: auto`
+scroller, which is exactly right on a phone and catastrophic here: as a grid item
+it got ONE ~240px track, so three of its columns lived past a clip edge that no
+error, no missing node and no text-based assertion can see. Sam read the expand
+and concluded it had no targets. It had all of them.
+
+`grid-column: 1 / -1` is the entire fix. The attestation form and the CO note
+were being squeezed the same way and got the same span.
+
+**The generalizable bit:** a scroll container is a correct narrow-screen safety
+net and a silent desktop defect the moment its parent track is narrower than its
+content. `CLAUDE.md`'s presentation rules already say `overflow-x: auto` is "the
+narrow-screen safety net, never the default desktop experience" — this is what
+violating it looks like when nothing is obviously broken. And when a curator says
+a surface does not show something the code demonstrably renders, **check layout
+before you check logic.**
+
+### The column that answers the question he actually asked
+
+"Where they are and where they could be" is a distance, and the table had no
+distance — Target and Actual sit two columns apart and the reader subtracts. **To
+go** now names it, with the funding that distance would earn beside it.
+
+The interesting constraint is which rows may have one. `earnFraction()` returns
+six statuses and only three carry a measurement. Two must not print a distance:
+
+- **suppressed** — the actual is masked for privacy below 5. A mask plus a gap
+  *is* the value; the reader subtracts and the suppression has done nothing. The
+  mask has to hold across the whole ROW, not just the cell it was applied to.
+- **undelivered / bad_src / gap / pending** — there is no number to subtract from.
+  Printing "0 to go" would say *you are done*, when the true claim is *we cannot
+  see*. That is the same silent-omission class the earned column already guards.
+
+Both read the plain absence. `earnIsMeasured()` already existed for exactly this
+question and is the reason the branch is two lines rather than a status list
+copied to a fifth site.
+
+### The strikes, and why the base tail went with the cap tail
+
+Sam named the cap line. The base line is its mirror — same sentence shape, same
+tail, written as a pair so the two read as one thing. Striking one would leave a
+half-pair, which reads worse than either state. The re-split FACT is not lost:
+the formula box states it in full and `cpl_funding_cap.test.js` C7 still pins it
+there, which is what made the drill-in copy redundant in the first place.
+
+The gate chip is the same shape of judgment run in reverse. Removing a duplicated
+signal is not removing the signal, so the guard that demanded the gate read
+**without a hover** was re-aimed onto the Elig pie plus the award cell's own
+"confirm participation to start earning" — both of which were already there.
+A guard whose subject is retired gets re-aimed at the requirement, never deleted.
+
+### The lesson that recurred
+
+`a-test-coupled-to-position-or-wording-breaks-on-correct-work` was recorded on
+2026-08-27 after exactly this: a suite indexing cells by position broke when a
+column was added. Today the To go insert shifted every index in
+`cpl_funding_metric_pin.test.js` and left three checks asserting the right thing
+about the wrong cell. **Recording the lesson did not prevent the repeat, because
+the 08-27 fix repaired the assertions rather than the addressing.** The suite now
+maps header text to a key from the table's own `<th>` row and **throws on an
+unmapped header**, so the next column insert is a loud failure naming the column.
+When a coupling lesson recurs, change what the test is coupled *to*.
+
+### The two questions, and the one that had a factual answer
+
+Item 7 — "I thought we designed a simplified flat funding box yesterday, am I
+imagining things" — is checkable, and he is not. It is
+`docs/visuals/2026-08-31-if-tab-simplified.html` §Funding Breakdown: a four-line
+ledger stack with the named-projects fold, base and cap lifted into their own
+section. It never reached the tab. **The reason it stopped is not a reason:** the
+mock is read-only and the seven boxes are the curator's editing surface, but an
+inline editor sits in a ledger row exactly as it sits in a box. Worth saying
+plainly — *"a mock is read-only"* is a description of the mock, not a constraint
+on the port, and it stalled this for a day.
+
+Item 5 got the element-by-element count rather than an opinion: half the
+goal-spine fold is a second printing of the band above it (key, name, citation,
+statute quote, per-priority funding), and half has no other home. The structural
+catch is that **(B) and (C) are separate goals sharing one band and differ on
+precisely the axis §78093.2(d)(2) asks about**, so a band-level evidence sentence
+cannot say both. Both went to Sam as
+`docs/visuals/2026-09-01-if-tab-two-consolidations.html`, numbered for reply.
+
+**Receipts.** PR #1432. `cpl_memory` rows written INSERT-only under author
+`session-219-skytrim` — rollback is
+`delete from cpl_memory where author = 'session-219-skytrim'`. No data writes
+beyond that; shares, factors and titles remain curator edits through the tab.
+
+## Moved from the funding lane at S305 (2026-09-30; settled, verbatim)
+
+⭐ **COLLEGE DASHBOARD ROUND 8 IS LIVE (S302, 2026-09-29; Sam: "mockup looks good!"):** Curr figures read gray until an institution meets all its minimum conditions, the reason on each Curr header's hover; the drill-in's priorities are rows of the table in the row's own columns; the CPL Coordinator, primary CPL contact and landing-page link sit under the met first condition (the public page's `_pub` mirror carries no primary contact). Guard: `tests/cpl_funding_round8.test.js`; harness: `prototype/mockup_harness/`. ⭐ **ROUND 9 (S303, 2026-09-29), Sam's three asks:** the gray Curr cells show the funding the measures compute to, never $0, their hover saying it is available once the minimum conditions are met (*"The Current Funding on college rows should not be 0"*; this settles sheet 4's gray-cell question), in the rows and the drill-in, and no gray figure enters a subtotal or the Statewide row; the veteran condition carries the college's veteran count, JST count and percent beside it (`vet_jst` in `cpl_funding_performance.js`, baked by `vet_jst_counts()`: counts under 10 mask and then no percent is baked); and a redraw no longer reopens a section just closed (the Introduction's Hide), because `render()` reads each section's live open state first. Guard: `tests/cpl_funding_round9.test.js`. The counts appear after the next `daily-dashboard.yml` run rebakes the artifact.
+
+## Moved from the lessons doc at S305 (2026-09-30; the S303 relocations, verbatim)
+
+**Moved from the funding lane at the S303 checkpoint (settled; verbatim, links re-pointed):**
+
+✅ **THE COLLEGE DASHBOARD REDESIGN IS LIVE (Sam locked it 2026-09-28; seven mockup rounds, [mockup](https://claude.ai/artifact/2V1aWwtjwob5gSM6TEkfyQ) round 7).** S298's port merged as #1729; S299's duplicate port #1731 closed unmerged, and #1732 (S300) carried what it had that #1729 lacked, with the five follow-ups. The shape is the COLLEGE DASHBOARD paragraph below. **Funding waits on all three minimum conditions** (Sam, 2026-09-28: "3 conditions but the Star is a feel-good restatement of one of them"; #1726). Rulings: `cpl_memory` `sam-college-dashboard-redesign-2026-09-28`, `sam-three-minimum-conditions-gate-funding-2026-09-28`, `sam-tba-replaces-awaiting-measurement-2026-09-28`. Method: [`ui_mockup_lessons`](ui_mockup_lessons.md).
+
+**RULED — sheet 3, cards 1–7 (Sam, 2026-09-29, [XzQMks96QszUDAyXADP3Ag](https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag), each his own call; the cards' words are in the [lessons](cpl_funding_lessons.md) S302 section):** **1 leave** (review items 8–10 stand) · **2 keep** (the footer stays whole and fixed) · **4 demonstrated**, landed #1752: each card reads *Demonstrated: $X of $Y Total Possible* · **5 use**, landed #1752: the thank-you and the form's note carry his words and promise no acknowledgment · **6, a note that changes the premise**, Sam verbatim: *"The explainer is wrong. Colleges will be funded for FTES that meet the priority outcomes. The full outcomes-based funding is available within the two-year window once minimum conditions are met."* Rewrite the Step two note and the table heading to say that, check the tab's reserve wording against it, and show him the public text before it ships, landed #1753 after his *"merge prs"* · **7**, his final call: *"Allow workflow and I'll type in myself."* He types both lines on the tab; `funding-config-edit-apply.yml` and its applier landed (#1757) for later reviewed edits, and a dry run confirms his typing (each path reads `after`). ⚠️ **A SHEET'S STORE IS LIVE — RE-READ IT AT EXECUTION.** ⚠️ **THE CONFIG PATH IS NOT `config->'priorities'`:** `config -> projects -> <project> -> scenarios -> <scenario> -> yearPriorities -> <year> -> <slot>` (`jsonb_each`). **Ruled already:** the Annual view compares a year with a year (#1721); Sam waits for Pedro's CollegeID2 and no session drafts the request; COBI keeps "<10" until the public/private split ([adr](kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md)). The 2026-09-15 sheet's residue, [`map_eligible_label_note_draft`](map_eligible_label_note_draft.md), is **SAM's to send** after the reconciliation is re-measured.

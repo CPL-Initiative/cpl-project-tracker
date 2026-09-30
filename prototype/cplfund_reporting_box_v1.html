@@ -1,0 +1,218 @@
+<title>Reporting Box Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one column; the mockup's notes, then an institution's drill-in as the tab draws it,
+   the CO Monitor's note above and the Reporting box under it. First Light tokens (v1.6). */
+:root {
+  --paper: #F4F2ED;
+  --surface-opaque: #FFFFFF;
+  --surface-subtle: #F7F5F1;
+  --surface-muted: #ECE9E2;
+  --text-strong: #1C1C1A;
+  --text-body: #3A3A36;
+  --text-muted: #5C5C55;
+  --seal-blue: #002F6D;
+  --cobalt: #0047AB;
+  --gold-accent: #8B6800;
+  --border: rgba(28,28,26,.14);
+  --border-strong: rgba(28,28,26,.30);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', Arial, sans-serif;
+  --cpl-measure: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #161614; --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+    --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #B4B4AC; --seal-blue: #7DA1D4; --cobalt: #7DA1D4;
+    --gold-accent: #E3B341; --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #161614; --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+  --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #B4B4AC; --seal-blue: #7DA1D4; --cobalt: #7DA1D4;
+  --gold-accent: #E3B341; --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32); color-scheme: dark;
+}
+body { background: var(--paper); color: var(--text-body); font: 400 15px/1.5 var(--font-body); }
+.frame { max-width: 1040px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 48px; display: grid; gap: 20px; }
+h1, h2 { font-family: var(--font-display); color: var(--text-strong); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.1rem); line-height: 1.15; }
+h2 { font-size: 1.15rem; }
+p { margin: 0; max-width: var(--cpl-measure, none); }
+.round { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+.lede { margin-top: 8px; }
+.notes { display: grid; gap: 10px; }
+.notes ol { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+.small { font-size: .85rem; color: var(--text-muted); }
+
+/* the drill-in, as the tab draws it */
+.drill { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.drill-head { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; padding: 10px 14px; background: var(--surface-muted); border-bottom: 1px solid var(--border); }
+.drill-head b { font-family: var(--font-display); color: var(--text-strong); font-size: 1.05rem; }
+.drill-body { padding: 12px 14px 16px; display: grid; gap: 14px; }
+.dk { color: var(--text-muted); font-size: .8rem; }
+textarea, input, select { font: inherit; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; }
+textarea { width: 100%; max-width: 560px; font-size: .83rem; padding: 4px 8px; box-sizing: border-box; display: block; margin-top: 4px; }
+textarea:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; }
+.btn { background: var(--surface-opaque); color: var(--text-strong); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 10px; min-height: 28px; cursor: pointer; font: 600 .8rem var(--font-body); }
+.btn:hover { border-color: var(--gold-accent); }
+.row { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+
+/* the Reporting box */
+.rep { border: 1px solid var(--border-strong); border-radius: 8px; padding: 10px 12px 12px; display: grid; gap: 10px; background: var(--surface-subtle); }
+.rep-sum { display: flex; flex-wrap: wrap; gap: 4px 20px; font-variant-numeric: tabular-nums; }
+.rep-sum strong { color: var(--text-strong); font-size: 1.1rem; }
+.fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 14px; }
+.fields label, .codes label { display: grid; gap: 2px; font-size: .8rem; color: var(--text-muted); }
+.fields input, .fields select { min-height: 30px; padding: 2px 6px; font-size: .9rem; min-width: 0; }
+.codes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px 14px; margin: 0; padding: 0; border: 0; }
+.codes legend { font-size: .8rem; color: var(--text-muted); padding: 0; margin-bottom: 4px; }
+.codes input { min-height: 30px; padding: 2px 6px; text-align: right; font-variant-numeric: tabular-nums; font-size: .9rem; min-width: 0; }
+.total { font-variant-numeric: tabular-nums; color: var(--text-strong); font-weight: 700; }
+.hist-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .85rem; font-variant-numeric: tabular-nums; table-layout: fixed; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+th { color: var(--text-muted); font-weight: 600; font-size: .78rem; }
+td.num, th.num { text-align: right; }
+.status { min-height: 1.2em; }
+@media (max-width: 560px) {
+  .fields, .codes { grid-template-columns: minmax(0, 1fr); }
+  table { table-layout: auto; min-width: 520px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="frame">
+  <header>
+    <p class="round">Round 1 &middot; September 30, 2026 &middot; sheet 4, card 2</p>
+    <h1>The Reporting box, expenditures first</h1>
+    <p class="lede">You ruled that the Reporting box starts with expenditures. This is how it would sit in an institution's drill-in on the Implementation Funding tab, under the CO Monitor's note, for signed-in reviewers. The figures are examples for Sample College, whose maximum award is the model's $345,220. Nothing saves outside this page.</p>
+  </header>
+
+  <section class="notes" aria-labelledby="what-h">
+    <h2 id="what-h">What the box does</h2>
+    <ol>
+      <li>A reviewer records what a college reports it has expended, one report per quarter, in NOVA's expenditure categories: the object codes 1000 through 7000 and indirect costs.</li>
+      <li>The box totals the report and adds it to the institution's expended to date, shown beside its maximum award.</li>
+      <li>Each report keeps who at the college reported it, and which reviewer recorded it and when. A correction is a new report for the same quarter; the newest one counts, and the history keeps both.</li>
+      <li>Signed-in reviewers see it, as they see the note. The public explainer and My College show none of it.</li>
+    </ol>
+    <p class="small">Governance: the reports table joins DR-09 beside the CO Monitor's notes, as the same funding decision. Privacy: each report is an institution's dollars and carries no student record, so the student-detail disclosure boundary does not reach it.</p>
+  </section>
+
+  <section class="drill" aria-label="Sample College drill-in, as the tab draws it">
+    <div class="drill-head"><b>Sample College</b><span class="dk">Maximum award $345,220 &middot; credit $340,861 &middot; noncredit $4,358</span></div>
+    <div class="drill-body">
+      <div>
+        <span class="dk">CO Monitor's note (internal):</span>
+        <textarea id="note" rows="2" aria-label="CO Monitor note for Sample College">Coordinator and landing page confirmed at the fall check-in.</textarea>
+        <div class="row" style="margin-top:6px"><button type="button" class="btn">Save note</button><span class="dk">saved 2026-09-24 by a reviewer</span></div>
+      </div>
+
+      <div class="rep" aria-labelledby="rep-h">
+        <div class="row" style="justify-content:space-between">
+          <span id="rep-h" class="dk">Reporting (internal): expenditures</span>
+        </div>
+        <div class="rep-sum" aria-live="polite">
+          <span>Expended to date <strong id="todate">$12,480</strong></span>
+          <span class="dk" id="count">1 quarter reported</span>
+          <span class="dk">Maximum award $345,220</span>
+        </div>
+
+        <form id="rep-form" class="rep" style="background:var(--surface-opaque)" novalidate>
+          <div class="fields">
+            <label for="period">Quarter
+              <select id="period">
+                <option>2026-27 Q3 (Jan&ndash;Mar 2027)</option>
+                <option selected>2026-27 Q4 (Apr&ndash;Jun 2027)</option>
+                <option>2027-28 Q1 (Jul&ndash;Sep 2027)</option>
+                <option>2027-28 Q2 (Oct&ndash;Dec 2027)</option>
+                <option>2027-28 Q3 (Jan&ndash;Mar 2028)</option>
+                <option>2027-28 Q4 (Apr&ndash;Jun 2028)</option>
+              </select>
+            </label>
+            <label for="by">Reported by (at the college)
+              <input id="by" type="text" value="Dean of Instruction (example)">
+            </label>
+            <label for="on">Reported on
+              <input id="on" type="date" value="2027-07-15">
+            </label>
+          </div>
+          <fieldset class="codes">
+            <legend>Expended this quarter, by NOVA category</legend>
+            <label for="c1000">1000 Instructional salaries<input id="c1000" inputmode="numeric" value="9,600"></label>
+            <label for="c2000">2000 Noninstructional salaries<input id="c2000" inputmode="numeric" value="6,200"></label>
+            <label for="c3000">3000 Employee benefits<input id="c3000" inputmode="numeric" value="3,950"></label>
+            <label for="c4000">4000 Supplies and materials<input id="c4000" inputmode="numeric" value="480"></label>
+            <label for="c5000">5000 Other operating expenses and services<input id="c5000" inputmode="numeric" value="1,800"></label>
+            <label for="c6000">6000 Capital outlay<input id="c6000" inputmode="numeric" value="0"></label>
+            <label for="c7000">7000 Other outgo<input id="c7000" inputmode="numeric" value="0"></label>
+            <label for="cind">Indirect costs<input id="cind" inputmode="numeric" value="880"></label>
+          </fieldset>
+          <div class="row">
+            <span>Total this quarter <span class="total" id="qtotal">$22,910</span></span>
+          </div>
+          <label for="rnote" class="dk">Note
+            <textarea id="rnote" rows="2" placeholder="What the college said about this quarter">Reassigned time for two faculty evaluators; strike team overtime in June.</textarea>
+          </label>
+          <div class="row">
+            <button type="submit" class="btn">Save report</button>
+            <span class="dk status" id="status" role="status"></span>
+          </div>
+        </form>
+
+        <div>
+          <span class="dk">Reports on file</span>
+          <div class="hist-wrap" role="region" aria-label="Reports on file for Sample College" tabindex="0">
+            <table>
+              <colgroup><col style="width:26%"><col style="width:16%"><col style="width:22%"><col style="width:22%"><col style="width:14%"></colgroup>
+              <thead><tr><th scope="col">Quarter</th><th scope="col" class="num">Expended</th><th scope="col">Reported by</th><th scope="col">Recorded by</th><th scope="col">Recorded on</th></tr></thead>
+              <tbody id="hist">
+                <tr><td>2026-27 Q3 (Jan&ndash;Mar 2027)</td><td class="num">$12,480</td><td>Dean of Instruction (example)</td><td>a reviewer (example)</td><td>2027-04-20</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes" aria-labelledby="q-h">
+    <h2 id="q-h">What the build waits on</h2>
+    <p>Three calls, on the open-asks sheet: whether a college reports each quarter, as NOVA's expenditure reports run, or once a year; whether the box carries all eight NOVA categories; and whether a college sees its own figures on My College or reviewers alone see them.</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  var ids = ["c1000", "c2000", "c3000", "c4000", "c5000", "c6000", "c7000", "cind"];
+  var filed = { "2026-27 Q3 (Jan–Mar 2027)": 12480 };
+  function num(v) { var n = Number(String(v || "").replace(/[^0-9.]/g, "")); return isFinite(n) ? n : 0; }
+  function money(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+  function qtotal() { return ids.reduce(function (s, id) { return s + num(document.getElementById(id).value); }, 0); }
+  function paint() {
+    document.getElementById("qtotal").textContent = money(qtotal());
+    var keys = Object.keys(filed), sum = keys.reduce(function (s, k) { return s + filed[k]; }, 0);
+    document.getElementById("todate").textContent = money(sum);
+    document.getElementById("count").textContent = keys.length + (keys.length === 1 ? " quarter reported" : " quarters reported");
+  }
+  ids.forEach(function (id) { document.getElementById(id).addEventListener("input", paint); });
+  document.getElementById("rep-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var q = document.getElementById("period").value, t = qtotal();
+    var corrected = Object.prototype.hasOwnProperty.call(filed, q);
+    filed[q] = t;
+    var tr = document.createElement("tr");
+    [q, money(t), document.getElementById("by").value, "you (this page only)", new Date().toISOString().slice(0, 10)].forEach(function (v, i) {
+      var td = document.createElement("td"); td.textContent = v; if (i === 1) td.className = "num"; tr.appendChild(td);
+    });
+    document.getElementById("hist").appendChild(tr);
+    document.getElementById("status").textContent = corrected
+      ? "Saved on this page. The newer report for " + q + " counts; the earlier one stays in the history."
+      : "Saved on this page. In COBI it would save for signed-in reviewers.";
+    paint();
+  });
+  paint();
+})();
+</script>

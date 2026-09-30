@@ -96,14 +96,23 @@
   function fmt(n) { return (n == null ? "—" : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); }
   // The low–high of the units a group's wordings award ("2–5 units"); "units
   // vary" only when no wording states a figure the builder could read.
+  // ⚠ A FIGURE OF 0 READS AS NONCREDIT and never opens the range (sheet 4,
+  // card 3, Sam, 2026-09-29): "2 units or noncredit", or "noncredit" alone.
+  // kb/_build_cr_reference.py unit_range_label() is the same rule, and the
+  // test compares the two on every renamed group.
   function unitRange(members) {
-    var lo = null, hi = null;
+    var lo = null, hi = null, zero = false;
     (members || []).forEach(function (m) {
-      if (m.units_lo != null && (lo == null || m.units_lo < lo)) lo = m.units_lo;
-      if (m.units_hi != null && (hi == null || m.units_hi > hi)) hi = m.units_hi;
+      [m.units_lo, m.units_hi].forEach(function (v) {
+        if (v == null) return;
+        if (v === 0) { zero = true; return; }
+        if (lo == null || v < lo) lo = v;
+        if (hi == null || v > hi) hi = v;
+      });
     });
-    if (lo == null || hi == null) return "units vary";
-    return (lo === hi ? String(lo) : lo + "\u2013" + hi) + " unit" + (lo === 1 && hi === 1 ? "" : "s");
+    if (lo == null) return zero ? "noncredit" : "units vary";
+    var fig = (lo === hi ? String(lo) : lo + "\u2013" + hi) + " unit" + (lo === 1 && hi === 1 ? "" : "s");
+    return zero ? fig + " or noncredit" : fig;
   }
 
   // ── CSS injected from JS (Rule 4 sidestep: one static file covers both HTMLs) ──

@@ -31,9 +31,16 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Next: SHEET_ID 2026-09-29-open-asks-4, built once a lane marks a new ask. Sam answered
-all eighteen cards of sheet 3 on 2026-09-29 (through 18, each his own call), and S302
-recorded every ruling in its lane, so no card remains.
+Sheet 5 (S305, 2026-09-30, SHEET_ID 2026-09-30-open-asks-5): five cards, the Scenario 2 narrated
+draft (card 8's review), the Reporting box's three calls and the "units waiting" label. Published
+at https://claude.ai/artifact/4PhPMFSvUVJLxrV7PazTQr (capabilities db + comments); read its replies first.
+
+Sheet 4 (S303, 2026-09-29, SHEET_ID 2026-09-29-open-asks-4): nine cards from the S303
+handoff's list, less the gray-cell question Sam settled in session (round 9). JUST THE ITEMS:
+no framing, count line or how-to box (Sam, 2026-09-29). Sam answered all nine that
+evening (22:26Z, through 9, each his own call); the lanes record them. Published at
+https://claude.ai/artifact/PzVQ6KftWPtbk8afPXbZmf (capabilities db + comments). Read its
+replies before anything else; sheet 3's store keeps his eighteen answers, never republish onto it.
 
 Published: https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag (2026-09-29, S301, SHEET_ID
 2026-09-29-open-asks-3, capabilities db + comments, eighteen cards: sheet 2's twelve at the same
@@ -71,8 +78,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks-4.html')
-SHEET_ID = '2026-09-29-open-asks-4'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-5.html')
+SHEET_ID = '2026-09-30-open-asks-5'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -371,6 +378,47 @@ def p_video_sample_unnarrated():
                    else "the Targets narration names Sample College")
 
 
+_ZERO_RANGE = re.compile(r"\(0\s*[\u2013-]\s*[\d.]+ units?\)|^0(?:\.0+)?\s+hours?\s+in\s", re.I)
+
+
+def p_crr_zero_hours():
+    """Sheet 4, card 3: CR Reference groups still name a range or a figure of 0."""
+    try:
+        groups = json.loads(_read("kb/cr_reference_worklist.json") or "{}").get("groups", [])
+    except ValueError:
+        return True, "kb/cr_reference_worklist.json unparsed - premise unverified"
+    n = sum(1 for g in groups if _ZERO_RANGE.search(g.get("canonical") or ""))
+    return n > 0, "%d CR Reference group(s) named with a figure of 0" % n
+
+
+# The narrated Scenario 2 draft (sheet 4 card 8, S305): the explainer must not
+# link it until Sam approves the read AND the Chancellor finalizes Scenario 2.
+def p_video_n2_unlinked():
+    """The explainer does not link the Scenario 2 narrated draft."""
+    page = _read("funding-model/index.html")
+    open_ = "funding_in_motion_n2" not in page and "Scenario_2_Narrated" not in page
+    return open_, ("the explainer does not link the Scenario 2 narrated draft" if open_
+                   else "the explainer links the Scenario 2 narrated draft")
+
+
+# The Reporting box (sheet 4 card 2): nothing writes expenditures yet.
+def p_reporting_box_unbuilt():
+    """No consumer writes cpl_funding_reports yet."""
+    n = sum(_code(_read(f)).count("cpl_funding_reports") for f in ("cpl_funding.js", "college_briefing.js"))
+    return n == 0, ("no tab reads or writes cpl_funding_reports" if n == 0
+                    else "%d reference(s) to cpl_funding_reports in the tabs" % n)
+
+
+# My College: two different figures carry the one label "units waiting".
+def p_units_waiting_twice():
+    """college_briefing.js labels two different figures 'units waiting'."""
+    src = _code(_read("college_briefing.js"))
+    dormant = bool(re.search(r'fmt\(dormant\)\s*\+\s*" units waiting"', src))
+    art = bool(re.search(r'fmt\(st\.articulatedWaiting\)\s*\+\s*" units waiting', src))
+    return dormant and art, ("both figures read 'units waiting'" if dormant and art
+                             else "the two figures no longer share the label")
+
+
 # ⚠️ EACH CARD CARRIES ITS OWN EVIDENCE (S302, 2026-09-29), under the key
 # `evidence`. Until then a dict keyed by the card's POSITION held it, and every
 # pull request that dropped one card renumbered every card after it, so two
@@ -458,6 +506,102 @@ def items():
     a list of measured() / live() / quoted() / policy() entries.
     """
     I = []
+
+    # Sheet 4's nine cards (S303) left with their rulings: Sam answered all nine
+    # on 2026-09-29 (through 9, each his own call), and each lane records its
+    # ruling in the same change. p_crr_zero_hours stays for a later card.
+
+    # ── Sheet 5 (S305, 2026-09-30) ──────────────────────────────────────────
+    N2 = "https://cpl-initiative.github.io/cpl-project-tracker/prototype/funding_video/funding_in_motion_n2.html"
+    MOCK = "https://claude.ai/artifact/BV2Xqt49vCYicX5xdEKP5E"
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'The Scenario 2 narrated draft',
+        'ref': 'implementation-funding · sheet 4 card 8 · prototype/funding_video/README.md',
+        'facts': (
+            "The <a href=\"%s\">Scenario 2 narrated draft</a> (3:05) is built from draft 4, which you "
+            "approved for Scenario 1. Eight scenes read word for word as draft 4, because Scenario 2 gives "
+            "them the same figures. Two scenes are Scenario 2's own. The priorities scene says <em>\"Two "
+            "priorities carry the funding, in equal shares\"</em> and <em>\"the Chancellor's Office reports on "
+            "career attainment together with the innovation projects, in qualitative terms.\"</em> The Targets "
+            "scene gives Sample College's Access target, <em>\"about sixty-seven FTES, behind about a hundred "
+            "seventy thousand dollars.\"</em> The voice never names the scenario; the picture does. The "
+            "Scenario 2 introduction now shows 67.2 FTES, the model's figure, where it showed 67.1." % N2),
+        'why': (
+            "The explainer links a narrated cut only after you approve it, and Scenario 2's only after the "
+            "Chancellor finalizes it."),
+        'rec': (
+            "<strong>Approve the read</strong>, and link it from the explainer's Scenario 2 view once the "
+            "Chancellor finalizes Scenario 2. <em>It might be wrong if</em> the voice should say Scenario 2 "
+            "aloud; then the title line takes the words and the read is redone."),
+        'chips': chips(('The read works', 'approve'), ('Changes, in my note', 'changes'), CH_LATER),
+        'evidence': [measured(p_video_n2_unlinked), policy()],
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'How often a college reports its expenditures',
+        'ref': 'implementation-funding · sheet 4 card 2 · the Reporting box mockup',
+        'facts': (
+            "You ruled that the Reporting box starts with spending. The <a href=\"%s\">mockup</a> records "
+            "one report per quarter, the cadence of NOVA's expenditure reports, from the first release in "
+            "February 2027 through June 2028: six quarters." % MOCK),
+        'why': "The period decides the table's key and how often reviewers record a report.",
+        'rec': (
+            "<strong>Quarterly.</strong> A NOVA import later fills the same periods. <em>It might be wrong "
+            "if</em> the Chancellor's Office asks colleges for one report a year; then the box carries a "
+            "fiscal year and six reports become two."),
+        'chips': chips(('Quarterly', 'quarterly'), ('Once a year', 'yearly'), CH_LATER),
+        'evidence': [measured(p_reporting_box_unbuilt), policy()],
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'Which expenditure categories the box carries',
+        'ref': 'implementation-funding · sheet 4 card 2 · the Reporting box mockup',
+        'facts': (
+            "The mockup carries NOVA's eight categories, the object codes every district reports by: 1000 "
+            "instructional salaries, 2000 noninstructional salaries, 3000 employee benefits, 4000 supplies "
+            "and materials, 5000 other operating expenses and services, 6000 capital outlay, 7000 other outgo, "
+            "and indirect costs."),
+        'why': "The categories become the table's columns, and a NOVA import can fill only the ones it shares.",
+        'rec': (
+            "<strong>All eight</strong>, so a college reports in the categories its business office already "
+            "uses. <em>It might be wrong if</em> this funding does not allow capital outlay or indirect costs; "
+            "then the box drops those two."),
+        'chips': chips(('All eight', 'all'), ('Fewer, in my note', 'fewer'), CH_LATER),
+        'evidence': [policy()],
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Who sees a college's reported expenditures",
+        'ref': 'implementation-funding · sheet 4 card 2 · DR-09',
+        'facts': (
+            "Signed-in reviewers see the CO Monitor's note, and the public explainer and My College show "
+            "none of it. The mockup keeps expenditures the same way. A report is an institution's dollars "
+            "with no student record, so privacy does not decide this."),
+        'why': "A college that sees its own figures can catch a recording error; a public figure invites comparison.",
+        'rec': (
+            "<strong>Reviewers only</strong> for the first year, and revisit once the first reports are in. "
+            "<em>It might be wrong if</em> colleges should confirm what the Chancellor's Office recorded; then "
+            "My College shows each college its own figures, to its signed-in staff."),
+        'chips': chips(('Reviewers only', 'reviewers'), ('Each college sees its own', 'college'), CH_LATER),
+        'evidence': [policy()],
+    })
+    I.append({
+        'lane': 'my-college-action-page',
+        'title': 'Two figures named "units waiting" on My College',
+        'ref': 'my-college-action-page · college_briefing.js',
+        'facts': (
+            "My College uses one label for two figures. <em>Start here</em> leads with every unit not yet "
+            "acted on, and <em>Where you stand</em> leads with the articulated units still waiting for an "
+            "award. At San Diego City College they read 96,268 and about 6,500."),
+        'why': "A reader who sees both reads one number as wrong.",
+        'rec': (
+            "<strong>Name the larger figure <em>units not yet acted on</em></strong>, and keep <em>units "
+            "waiting</em> for the articulated units, where nothing blocks the award. <em>It might be wrong "
+            "if</em> you want the page to lead with the larger figure; then it takes the shorter name."),
+        'chips': chips(('Rename as proposed', 'rename'), ('Other names, in my note', 'edit'), CH_LATER),
+        'evidence': [measured(p_units_waiting_twice), quoted("the S304 session note", "2026-09-30")],
+    })
     return I
 
 
@@ -525,21 +669,16 @@ def build(check_only=False):
               + "  (every measured premise re-checked and still open)")
         return 0
 
-    framing = (
-        "%d question%s wait%s on you. Your eighteen answers on the 29 September sheet are carried out "
-        "in their lanes." % (len(I), "" if len(I) == 1 else "s", "s" if len(I) == 1 else ""))
-    counts = (f"{len(I)} items across {len(lanes)} lanes · "
-              f"every lane carrying an open ask is covered, by build-time audit")
-
     # The reader sees where each claim came from, in their own words.
     I = [dict(it, facts=it["facts"]
               + '<p class="prov"><em>' + m.E(provenance_line(EV[n]))
               + '</em></p>')
          for n, it in enumerate(I, 1)]
 
-    out = m.build_sheet(
-        "Everything outstanding for you", I,
-        framing=framing, curator="Sam Lee", counts=counts, sheet_id=SHEET_ID)
+    # JUST THE ITEMS (Sam, 2026-09-29): "Per our rules, no need for instruction
+    # section on decision sheets; just the items." No framing, no count line,
+    # no how-to box: build_sheet() draws its intro only when one is passed.
+    out = m.build_sheet("Everything outstanding for you", I, sheet_id=SHEET_ID)
     open(OUT, 'w', encoding='utf-8').write(out)
     print(f"{len(I)} items · {len(lanes)} lanes · {len(out):,} bytes "
           f"→ {os.path.relpath(OUT, ROOT)}")

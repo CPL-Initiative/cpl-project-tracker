@@ -96,14 +96,16 @@
       '.cpl-nav-group-head{display:flex;align-items:center;justify-content:space-between;width:100%;' +
         'background:none;border:none;cursor:pointer;padding:0.45rem 0.9rem 0.3rem 0.85rem;' +
         'min-height:24px;' +
-        'font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;' +
+        'font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;' +
         'color:var(--text-muted,#5C5C55);font-family:inherit;transition:color 0.12s;}' +
       '.cpl-nav-group-head:hover{color:var(--text-strong,#333);}' +
       '.cpl-nav-group-head .cpl-nav-caret{font-size:0.62rem;transition:transform 0.15s;}' +
       '.cpl-nav-group.collapsed .cpl-nav-caret{transform:rotate(-90deg);}' +
       '.cpl-nav-group.collapsed .cpl-nav-group-body{display:none;}' +
-      '.cpl-nav-group .cpl-sidebar .cpl-tab{padding-left:1.2rem;}' +
-      '.cpl-sidebar .cpl-nav-group-body .cpl-tab{padding-left:1.25rem;}';
+      /* No extra indent under a heading (Sam, 2026-09-30: "clean and sleek"): the
+       * heading's small caps already say what sits under it, and the 6px an indent
+       * spent is what let the longest label onto one line in --rail-w. */
+      '.cpl-nav-group-body{display:flex;flex-direction:column;}';
     document.head.appendChild(st);
   }
 

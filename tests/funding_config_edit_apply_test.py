@@ -14,6 +14,7 @@ import copy
 import glob
 import json
 import os
+import re
 import shutil
 import sys
 import tempfile
@@ -180,19 +181,76 @@ except SystemExit:
     check("a plan whose edit changes nothing is rejected", True)
 shutil.rmtree(d)
 
+# ── a declared new key (card 7, 2026-09-30) ──────────────────────────────────
+# A key the plan creates reviews `before` as null and says `"create": true`; one
+# that does not say so still fails as a typo would.
+CPLAN = {"row_id": "default", "ruling": "test ruling", "cohort": "test-s0@bot", "edits": [
+    {"path": P + ["Scenario 2", "newFlag"], "before": None, "after": True, "create": True},
+    {"path": P + ["Scenario 2", "text", "elig_intro"], "before": "Old intro", "after": "New intro"},
+]}
+d = plan_dir(CPLAN)
+r = FakeRest(CONFIG, d)
+code, lines = run(d, "dry-run", r)
+check("a dry run reads an absent created key as its before-state", code == 0, lines)
+code, lines = run(d, "commit", r)
+live = r.row["config"]["projects"]["cpl-implementation"]["scenarios"]["Scenario 2"]
+check("a commit creates the declared key", code == 0 and live.get("newFlag") is True, lines)
+rec = json.load(open(sorted(glob.glob(os.path.join(d, "applied_*.json")))[-1]))
+check("the receipt marks the edit as a create", any(e.get("create") for e in rec["edits"]))
+code, lines = run(d, "rollback", r)
+live = r.row["config"]["projects"]["cpl-implementation"]["scenarios"]["Scenario 2"]
+check("a rollback removes the created key rather than writing null",
+      code == 0 and "newFlag" not in live and live["text"]["elig_intro"] == "Old intro", lines)
+shutil.rmtree(d)
+bad = copy.deepcopy(CPLAN)
+bad["edits"][0]["before"] = False
+d = plan_dir(bad)
+try:
+    app.load_plan(d)
+    check("a create edit whose before is not null is rejected", False)
+except SystemExit:
+    check("a create edit whose before is not null is rejected", True)
+shutil.rmtree(d)
+d = plan_dir(CPLAN)
+r = FakeRest(CONFIG, d)
+r.row["config"]["projects"]["cpl-implementation"]["scenarios"]["Scenario 2"]["newFlag"] = "a curator's value"
+code, lines = run(d, "commit", r)
+check("a create refuses when a curator already set the key", code == 1 and r.n == 0, lines)
+shutil.rmtree(d)
+nodecl = copy.deepcopy(CPLAN)
+del nodecl["edits"][0]["create"]
+d = plan_dir(nodecl)
+r = FakeRest(CONFIG, d)
+code, lines = run(d, "commit", r)
+check("an undeclared new key still refuses, as a typo would", code == 1 and r.n == 0, lines)
+shutil.rmtree(d)
+
 # ── the committed plans are reviewed ones ────────────────────────────────────
 plans = glob.glob(os.path.join(ROOT, "kb", "funding_config_edits_out", "*", "plan.json"))
 check("a committed plan exists", bool(plans))
 RETIRED = ("accrue", "relevel", "undispersed", "baseline", "rolled")
+# Whole words: "rolled" is retired ("Rolled to Year 2"), and "enrolled veteran" is
+# the veteran condition's own wording (S303, sheet 4 card 6). A word may carry a
+# suffix (accrues, releveled); it may not sit inside another word.
+_RETIRED_RE = re.compile(r"\b(?:%s)\w*" % "|".join(RETIRED), re.I)
 for p in plans:
     pl = json.load(open(p, encoding="utf-8"))
     name = os.path.relpath(p, ROOT)
     check("%s names its row, ruling and cohort" % name,
           pl.get("row_id") and pl.get("ruling") and str(pl.get("cohort", "")).endswith("@bot"))
-    check("%s writes only strings into existing text paths" % name,
-          all(isinstance(e["after"], str) and isinstance(e["before"], str) for e in pl["edits"]))
+    # Text edits (sheets 3 and 4, card 6) and, since card 7 (2026-09-30), reviewed
+    # structural values: a card list, a removed-priority list, a declared new flag.
+    # A value is JSON, and a new key is always declared.
+    check("%s writes JSON values, each new key declared with a null before" % name,
+          all(json.loads(json.dumps(e["after"])) == e["after"]
+              and (not e.get("create") or e["before"] is None) for e in pl["edits"]))
     check("%s writes none of the retired words" % name,
-          not any(w in e["after"].lower() for e in pl["edits"] for w in RETIRED))
+          not any(_RETIRED_RE.search(e["after"] if isinstance(e["after"], str) else json.dumps(e["after"]))
+                  for e in pl["edits"]))
+check("the retired-word check reads whole words, and still catches each one",
+      not _RETIRED_RE.search("uploaded for enrolled veterans")
+      and all(_RETIRED_RE.search(t) for t in ("Rolled to Year 2", "Releveled", "accrue funding",
+                                              "Undispersed Funds", "Baseline outcomes")))
 
 passed = 0
 for name, ok, why in results:

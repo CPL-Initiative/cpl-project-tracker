@@ -429,6 +429,11 @@ jobs:
       # members' title, the two-signal gate, the ruled-only apply, the gates.
       - name: ETHS re-mint guard (kb/_eths_remint.py)
         run: python3 tests/eths_remint_test.py
+      # Card 9 (open-asks sheet 4, Sam 2026-09-29): Grossmont's four KINE titles to
+      # ATHL. The pinned four and their ETHS origins, the kept ETHS stamp, a second
+      # apply refused, and the committed receipt resolving through the one chain.
+      - name: Card 9 ATHL re-mint guard (kb/_athl_four_remint.py)
+        run: python3 tests/athl_four_remint_test.py
       # crnc_mirrors re-key (Session 225) — the 6th id-keyed artifact class,
       # missing from the post-apply chain until the recode left 398 of its
       # keys on retired ids: one lookup per map (never iterated within a map),

@@ -421,3 +421,13 @@ turning this PR dirty. Re-read the current head every time.
 disagreed about.** #1576 landed on main as a squash while this branch carried it
 as a merge. Resolution was mechanical once that was understood: verify main's
 copy is byte-identical to the pre-fix original, then take ours as the superset.
+
+
+## S304 (2026-09-30, SkyHinge): the register goes statewide, and two spellings met
+
+Sam sent a screenshot: My College at San Diego City College read "not in the Bay Region's occupation set." Two causes. The register covered the Bay's 28 colleges only, so 89 colleges read "not in this set". And the matcher keyed colleges by its own roster's spelling ("Canada College", "City College Of San Francisco", "College Of Marin") while the picker offers `map_colleges.name`: those three Bay colleges had read "not in this set" since #1591, and nothing on screen said why.
+
+- All nine Strong Workforce regions ran (117 colleges, ~20 s each, receipts `kb/regional_cpl_out/2026-09-30-<slug>/`); the emitter writes one file per region at the site root, `regional_cpl_opportunity_<slug>.js`, 116–480 KB gzipped (#1769).
+- The emitter maps each receipt name back to its roster name through the matcher's own resolver and fails on a name it cannot map. A join across two naming systems that misses renders as a finding about the college.
+- Root, not a folder: `scripts/stamp_asset_versions.py` versions root-level `.js` only, so a subfolder file would be served stale after a refresh.
+- Calbright belongs to no region and says so. A college picked in another region with the section closed reads "open to load", never the previous region's "not in this set".

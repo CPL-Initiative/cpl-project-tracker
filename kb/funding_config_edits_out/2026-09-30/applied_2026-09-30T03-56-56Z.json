@@ -1,0 +1,136 @@
+{
+  "table": "cpl_funding_config",
+  "row_id": "default",
+  "mode": "commit",
+  "at": "2026-09-30T03-56-56Z",
+  "ruling": "Sam Lee, open-asks sheet 4 (2026-09-29-open-asks-4) card 7: mock; the mockup approved in session 2026-09-30 ('go ahead with the card 7 mockup')",
+  "cohort": "implementation-funding-s304@bot",
+  "read": {
+    "updated_at": "2026-09-29T22:53:45.51941+00:00",
+    "updated_by": "implementation-funding-s303@bot",
+    "config_sha256": "be731cc5d17968dafdea51040283d19429e1627e4a411a839d540472f1dc040a"
+  },
+  "edits": [
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "prioRemoved"
+      ],
+      "before": [
+        1
+      ],
+      "after": [
+        1,
+        3
+      ]
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "reportedCards"
+      ],
+      "before": [
+        "D"
+      ],
+      "after": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "reportedTitles"
+      ],
+      "before": {
+        "D": "Career Attainment and Innovation Projects"
+      },
+      "after": {
+        "C": "Career Attainment",
+        "D": "Innovation Projects"
+      }
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "reportedAsReports"
+      ],
+      "before": null,
+      "after": true,
+      "create": true
+    }
+  ],
+  "result": "written",
+  "written": {
+    "updated_at": "2026-09-30T03:56:56.368711+00:00",
+    "updated_by": "implementation-funding-s304@bot",
+    "config_sha256": "56b424adc3cc4b0248a17140d4a10f1a74af3b6881e5bc6c5035e5a50ef57986"
+  },
+  "read_back": [
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "prioRemoved"
+      ],
+      "state": "after",
+      "live": [
+        1,
+        3
+      ]
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "reportedCards"
+      ],
+      "state": "after",
+      "live": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "reportedTitles"
+      ],
+      "state": "after",
+      "live": {
+        "C": "Career Attainment",
+        "D": "Innovation Projects"
+      }
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "reportedAsReports"
+      ],
+      "state": "after",
+      "live": true
+    }
+  ]
+}

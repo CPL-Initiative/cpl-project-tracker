@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-29T21:18:57.624425+00:00",
+  "scraped_at": "2026-09-30T02:51:21.979397+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28546,
+    "jst": 28572,
     "star_colleges": 59
   },
   "computed_star_colleges": 59,
@@ -20,14 +20,14 @@
       "jst": 347,
       "star": true
     },
+    "City College of San Francisco": {
+      "vets": 1197,
+      "jst": 1771,
+      "star": true
+    },
     "San Diego Mesa College": {
       "vets": 1070,
       "jst": 1623,
-      "star": true
-    },
-    "City College of San Francisco": {
-      "vets": 1197,
-      "jst": 1745,
       "star": true
     },
     "San Diego City College": {
@@ -300,6 +300,11 @@
       "jst": 130,
       "star": true
     },
+    "Napa Valley College": {
+      "vets": 38,
+      "jst": 52,
+      "star": true
+    },
     "Los Angeles Harbor College": {
       "vets": 109,
       "jst": 140,
@@ -428,11 +433,6 @@
     "Cuesta College": {
       "vets": 206,
       "jst": 179,
-      "star": true
-    },
-    "Napa Valley College": {
-      "vets": 38,
-      "jst": 52,
       "star": true
     },
     "Santa Monica College": {
