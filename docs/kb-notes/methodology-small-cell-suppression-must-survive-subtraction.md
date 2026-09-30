@@ -1,16 +1,18 @@
 ---
 title: Small-cell suppression must survive subtraction
 created: 2026-08-06
-updated: 2026-08-06
+updated: 2026-09-30
 tags: [methodology, privacy, ferpa, disclosure-control, funding, student-data]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[docs/kb-notes/adr-funding-priority-metrics-privacy]]"
   - "[[docs/cpl_funding_lessons]]"
+  - "[[docs/kb-notes/methodology-the-floor-belongs-to-each-figure]]"
 artifacts:
   - funding/_build_cr_backlog.py
   - tests/funding_cr_backlog_test.py
+  - kb/supabase_map_college_credit_sources.sql
 ---
 
 # Small-cell suppression must survive subtraction
@@ -67,6 +69,26 @@ When the headline metric *is* the thing you would need to hide, don't degrade
 the metric — **stop publishing the row**. A unit with fewer than *k* records in
 total is too thin to break out: every cell in it is small by construction and
 its rate is noise. Publish its existence and nothing else.
+
+### Every real total above the rows sets its own partition (2026-09-30)
+
+The complement has to close under **each** published total that sits over the
+cells, and a publication with nested totals has more than one. The per-exhibit
+credit table (`map_college_exhibit_credit`) sits under a college total and, where
+both are published, under a military and a non-military bucket total. The first
+build ran the complement once per college. It closed the college total and left
+each bucket open: the military total minus its published military exhibits
+handed over a lone withheld military exhibit.
+
+The fix partitions by what is published above: where both buckets publish a
+measure, the withholding runs inside each bucket; where a bucket is withheld, the
+college total is the only one above the exhibits, and the partition is the whole
+college. Within a partition the complement is iterated: the thin cells plus the
+k smallest published cells, for the smallest k at which that set spans at least
+two cells and ten distinct students. The withheld cells then show as one combined
+"fewer than 10 students each" line per partition. The build raises on a property
+check (no withheld cell recoverable from any published total) inside the nightly
+load, so a leak rolls the load back instead of publishing.
 
 ### Keep the suppressed record's SHAPE
 

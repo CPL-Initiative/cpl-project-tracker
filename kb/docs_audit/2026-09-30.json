@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1010,
-    "bytes": 10721346,
+    "files": 1012,
+    "bytes": 10739921,
     "over_budget": 6,
-    "handoff_max": 308,
+    "handoff_max": 309,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59984,
     "superseded_files": 0,
@@ -26,44 +26,44 @@
       },
       "other": {
         "files": 116,
-        "bytes": 3275127,
+        "bytes": 3275882,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 11437,
+        "bytes": 11660,
         "over": 0
       },
       "lessons": {
         "files": 76,
-        "bytes": 2174108,
+        "bytes": 2179183,
         "over": 2
       },
       "kb_note": {
-        "files": 504,
-        "bytes": 2553721,
+        "files": 505,
+        "bytes": 2559323,
         "over": 0
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 269782,
+        "bytes": 270312,
         "over": 1
       },
       "handoff": {
-        "files": 279,
-        "bytes": 2377187,
+        "files": 280,
+        "bytes": 2383577,
         "over": 0
       }
     },
     "by_rule": {
-      "house_voice": 24,
+      "house_voice": 23,
       "oversized_doc": 6,
       "vault_heavy_path": 56
     },
     "vault": {
-      "files": 3328,
-      "bytes": 1690836878,
-      "heavy_bytes": 780073628,
+      "files": 3330,
+      "bytes": 1690858436,
+      "heavy_bytes": 780073630,
       "heavy_share": 0.461,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -411,13 +411,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 687298,
+        "bytes": 687790,
         "limit": 150000,
         "lane": "other",
-        "over_by": 537298,
-        "ratio": 4.58
+        "over_by": 537790,
+        "ratio": 4.59
       },
-      "message": "687,298 B is 4.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "687,790 B is 4.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -431,18 +431,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "house_voice",
-      "fixable": false,
-      "detail": {
-        "total": 1,
-        "terms": {
-          "leverage": 1
-        }
-      },
-      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
-      "path": "docs/sierra_maturity_roadmap.md"
     },
     {
       "rule": "house_voice",
@@ -817,10 +805,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715708,
+        "bytes": 6715710,
         "kind": "file"
       },
-      "message": "6,715,708 B single file inside the vault"
+      "message": "6,715,710 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

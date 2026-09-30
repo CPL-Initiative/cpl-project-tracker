@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-502 document(s).
+503 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -395,7 +395,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Shared prose over-claims on the rows it was not written for](../kb-notes/methodology-shared-prose-over-claims-on-rows-it-was-not-written-for.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [Ship generator changes live-on-merge when the artifact regenerates from committed inputs](../kb-notes/methodology-ship-generator-changes-live-on-merge.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Single source of truth flows via the regenerated snapshot — de-hardcode consumers, and verify the join key](../kb-notes/methodology-single-source-of-truth-flows-via-snapshot.md) | methodology | published | 2026-07-27 | 2026-07-27 |
-| [Small-cell suppression must survive subtraction](../kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [Small-cell suppression must survive subtraction](../kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md) | methodology | published | 2026-08-06 | 2026-09-30 |
 | [Snapshot-with-stamp fallback for live-data dependencies](../kb-notes/methodology-snapshot-with-stamp-fallback.md) | methodology | published | 2026-05-28 | 2026-05-28 |
 | [Split prose from state — the register is the spine, the narrative cites it](../kb-notes/methodology-register-is-the-spine-narrative-cites-it.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [Stable DOM keys must exclude live (data-bound) text](../kb-notes/methodology-stable-dom-keys-exclude-live-text.md) | methodology | published | 2026-06-28 | 2026-06-28 |
@@ -406,6 +406,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Testing a rule without cueing the answer](../kb-notes/methodology-testing-a-rule-without-cueing-the-answer.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [The feedback queue already knew — collection is not the bottleneck, triage is](../kb-notes/methodology-the-feedback-queue-already-knew.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [The first run of a new instrument measures the instrument](../kb-notes/methodology-the-first-run-of-a-new-instrument-measures-the-instrument.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [The floor belongs to each figure](../kb-notes/methodology-the-floor-belongs-to-each-figure.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [The instrument may not live inside the system under test](../kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md) | methodology | published | 2026-08-29 | 2026-08-30 |
 | [The mark is not the footprint — draw inside what you packed, and spread at load](../kb-notes/methodology-the-mark-is-not-the-footprint.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [The measuring browser can hide the defect](../kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-20 |
