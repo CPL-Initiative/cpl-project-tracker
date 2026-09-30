@@ -153,16 +153,20 @@
     // forever depending on how the field was initialised.
     liveState: "idle", // idle | loading | ready | error
     live: null,
-    /* The occupation opportunity register (regional_cpl_opportunity_data.js,
-     * ~2MB for the Bay's 28 colleges). Precomputed rather than matched live:
-     * kb/_build_regional_cpl_opportunity.py runs ~35 seconds PER COLLEGE, and
-     * the whole point of this section is that someone can flip between colleges
-     * in front of a room. Pulled on first open of the section, not on tab open —
-     * most visits never scroll to it.
+    /* The occupation opportunity register — one file per Strong Workforce
+     * region (regional_cpl_opportunity_<slug>.js, 120–480KB on the wire). Precomputed rather
+     * than matched live: kb/_build_regional_cpl_opportunity.py runs ~20 seconds
+     * PER COLLEGE, and the whole point of this section is that someone can flip
+     * between colleges in front of a room. Pulled on first open of the section,
+     * not on tab open — most visits never scroll to it — and only the picked
+     * college's region.
      * ⚠ Its own status field, not a bare `opps == null` check: null is also the
      * failed-read value (see liveState above for the same reasoning). */
-    oppsState: "idle", // idle | loading | ready | error
+    oppsState: "idle", // idle | loading | ready | error | noregion
     opps: null,
+    // The region code whose file `opps` holds, or is loading. "" = the picked
+    // college belongs to no consortium (Calbright).
+    oppsRegion: null,
     // Priority buckets the reader has filtered to. Empty = show everything.
     // Held in state so a render() rewrite does not drop the filter, but the
     // filter itself acts on the DOM — see wireOpps().
@@ -980,9 +984,24 @@
   // purpose: the same absence should read the same in both places.
   var OPP_NO_CIP = "No CIP assigned yet";
 
+  /* The register as it stands for the PICKED college. ⚠ `state.opps` can hold
+   * another region's file: a reader who opens the section at a Bay college and
+   * then picks a San Diego one with the section closed has not triggered a load
+   * yet, and reading the Bay file for her would say "not in this set" about a
+   * college it was never meant to cover. A region mismatch reads as "idle" —
+   * open to load — which is the truth. */
+  function oppsView() {
+    if (state.college && state.swp === "ready"
+        && (regionOfCollege(state.swpData, state.college) || "") !== state.oppsRegion) {
+      return { opps: null, st: "idle" };
+    }
+    return { opps: state.opps, st: state.oppsState };
+  }
+
   function oppsFor() {
-    if (!state.opps || !state.college) return null;
-    return state.opps.colleges[state.college] || null;
+    var v = oppsView();
+    if (!v.opps || !state.college) return null;
+    return v.opps.colleges[state.college] || null;
   }
 
   /* PURE, and ⚠ NEVER EMPTY IN ANY STATE. sec() drops the value span entirely
@@ -996,6 +1015,7 @@
     if (!college) return esc("pick a college");
     if (oppsState === "loading") return esc("loading");
     if (oppsState === "error") return esc("unavailable");
+    if (oppsState === "noregion") return esc("no regional list");
     var d = opps && opps.colleges ? opps.colleges[college] : null;
     // "idle" means the drawer has never been opened, so the register has not
     // been fetched — distinct from "fetched, and this college is outside it".
@@ -1008,7 +1028,8 @@
   }
 
   function oppsSummary() {
-    return oppsSummaryFor(state.opps, state.college, state.oppsState);
+    var v = oppsView();
+    return oppsSummaryFor(v.opps, state.college, v.st);
   }
 
   function oppChips(list, cls) {
@@ -1126,6 +1147,14 @@
     if (oppsState === "idle" || oppsState === "loading") {
       return '<div class="cb-opp-empty">Loading the occupation register…</div>';
     }
+    /* ⚠ A COLLEGE WITH NO CONSORTIUM IS NOT A COLLEGE WITH NOTHING. The
+     * register reads a college against its region's occupation list; Calbright
+     * is statewide and online and belongs to no region, so there is no list to
+     * read it against. Said as that, never as an empty register. */
+    if (oppsState === "noregion") {
+      return '<div class="cb-opp-empty">' + esc(college) + " belongs to no regional Strong Workforce "
+        + "consortium, so there is no regional occupation list to read it against.</div>";
+    }
     if (oppsState === "error" || !opps) {
       return '<div class="cb-opp-empty">The occupation register could not be loaded. '
         + "Everything else on this page is unaffected.</div>";
@@ -1239,7 +1268,8 @@
   }
 
   function oppsBody() {
-    return oppsBodyFor(state.opps, state.college, state.oppsState,
+    var v = oppsView();
+    return oppsBodyFor(v.opps, state.college, v.st,
       state.oppsFilter, state.oppsCip);
   }
 
@@ -3597,15 +3627,67 @@
     });
   }
 
+  /* PURE. `SD/I` -> `sdi`. kb/_emit_regional_opps_data.py `region_slug()` is
+   * the same rule and names the files; the two must change together. */
+  function regionSlug(code) {
+    return String(code || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  }
+
+  /* PURE. The Strong Workforce region a college belongs to, by exact name —
+   * the roster and the picker both carry map_colleges.name. "" when the roster
+   * has arrived and the college is in no region; null while it has not. */
+  function regionOfCollege(swpData, college) {
+    var R = swpData && swpData.regions;
+    if (!R) return null;
+    for (var code in R) {
+      if (Object.prototype.hasOwnProperty.call(R, code)
+          && (R[code].colleges || []).indexOf(college) >= 0) return code;
+    }
+    return "";
+  }
+
   /* The occupation opportunity register. Pulled on first OPEN of its section
-   * rather than on college selection: the file carries every college in the
-   * region at once, so a second college costs nothing after the first, and a
-   * visitor who never opens the section never pays the 2MB. */
+   * rather than on college selection, and only the picked college's REGION:
+   * one file carries every college in that region, so the next college in the
+   * same room costs nothing, and a visitor who never opens the section never
+   * pays for it.
+   *
+   * ⚠ ONE FILE PER REGION (2026-09-30). The register began as the Bay's 28 in
+   * one file, and every college outside the Bay read "not in this set" — San
+   * Diego City College is how Sam found it. Idempotent per region: render()
+   * calls this after every paint, so it returns early once the region's file
+   * is loaded or in flight, and re-runs when the reader picks a college in
+   * another region or the consortium roster arrives. */
   function loadOpps(root) {
-    if (state.oppsState !== "idle") return;
+    if (!state.college) return;
+    if (state.swp !== "ready") {
+      // The region comes from the consortium roster, which loads with the tab;
+      // its own callback re-renders, and this runs again from there.
+      var waiting = state.swp === "error" ? "error" : "loading";
+      if (state.oppsState !== waiting) {
+        state.opps = null; state.oppsRegion = null; state.oppsState = waiting;
+        if (root) render(root);
+      }
+      return;
+    }
+    var code = regionOfCollege(state.swpData, state.college) || "";
+    if (state.oppsRegion === code && state.oppsState !== "idle") return;
+    state.oppsRegion = code;
+    state.opps = null;
+    if (!code) {
+      state.oppsState = "noregion";
+      if (root) render(root);
+      return;
+    }
+    var slug = regionSlug(code), g = "CPL_REGIONAL_OPPS_" + slug.toUpperCase();
     state.oppsState = "loading";
-    loadScript("regional_cpl_opportunity_data.js", "CPL_REGIONAL_OPPS", function () {
-      var D = window.CPL_REGIONAL_OPPS;
+    if (root) render(root);
+    // ⚠ A ROOT-LEVEL FILE: the deploy's version manifest covers the root only
+    // (scripts/stamp_asset_versions.py), and loadScript appends its stamp.
+    loadScript("regional_cpl_opportunity_" + slug + ".js", g, function () {
+      // The reader may have moved to another region while this was in flight.
+      if (state.oppsRegion !== code) return;
+      var D = window[g];
       state.opps = (D && D.colleges) ? D : null;
       state.oppsState = state.opps ? "ready" : "error";
       if (root) render(root);
@@ -4105,6 +4187,13 @@
     _cerBlock: cerBlock,
     _oppDrawer: oppDrawer,
     _oppsSummaryFor: oppsSummaryFor,
+    // The per-region register load: which file a college reads, and the state
+    // the section shows while it is read. Exported so the file choice is
+    // asserted through the code the tab runs, not a copy of its rule.
+    _regionSlug: regionSlug,
+    _regionOfCollege: regionOfCollege,
+    _loadOpps: loadOpps,
+    _oppsView: oppsView,
     _oppRow: oppRow,
     _setAllSections: setAllSections,
     _getSession: getSession,

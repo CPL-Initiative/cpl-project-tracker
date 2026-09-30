@@ -1,14 +1,39 @@
 #!/usr/bin/env python3
-"""Emit the COBI data file behind the My College tab's CPL opportunity register.
+"""Emit the COBI data files behind the My College tab's CPL opportunity register.
 
-Reads a `kb/_build_regional_cpl_opportunity.py` run receipt and writes
-`regional_cpl_opportunity_data.js` (`window.CPL_REGIONAL_OPPS`), so the tab can
-flip between colleges in a meeting without re-running the matcher — the build is
-~35 seconds per college and a meeting cannot wait on it.
+Reads one `kb/_build_regional_cpl_opportunity.py` run receipt per Strong
+Workforce region and writes one file per region at the site root,
+`regional_cpl_opportunity_<slug>.js` (`window.CPL_REGIONAL_OPPS_<SLUG>`), so the tab can flip between colleges in a
+meeting without re-running the matcher — the build is ~20 seconds per college
+and a meeting cannot wait on it.
 
     python3 kb/_emit_regional_opps_data.py \
-        --receipt kb/regional_cpl_out/2026-09-17-bay28/crosswalk.json \
-        --out regional_cpl_opportunity_data.js
+        --receipt kb/regional_cpl_out/2026-09-30-bay28/crosswalk.json \
+        --receipt kb/regional_cpl_out/2026-09-30-sdi10/crosswalk.json ...
+
+⚠️ ONE FILE PER REGION, NAMED FROM THE REGION CODE (Sam, 2026-09-30, asking why
+San Diego City College showed nothing). The register began as the Bay's 28
+colleges in one file, so every other college read "not in this set". All nine
+regions in one file would be ~14 MB raw for a reader who wants one college; per
+region, the tab fetches only the file for the college picked. The tab derives
+the file from the region code with the same rule as `region_slug()` below
+(`SD/I` -> `sdi`), so the two must change together.
+
+⚠️ AT THE ROOT, NOT IN A FOLDER. The deploy stamps a content hash onto every
+root-level .js (scripts/stamp_asset_versions.py `build_manifest()`), and the
+tab's loadScript appends it, so a regenerated file is fetched fresh. A file in a
+subfolder is outside that manifest and a browser would keep yesterday's copy.
+
+⚠️ KEYED BY MAP'S COLLEGE NAME, NOT THE MATCHER'S. The receipt names colleges
+the way the matcher's roster does ("Canada College", "City College Of San
+Francisco", "Southwestern Community College"); the tab's picker uses
+`map_colleges.name` ("Cañada College", "City College of San Francisco",
+"Southwestern College"), which is also what `swp_region_roster.json` carries.
+A lookup across the two spellings misses, and the miss renders as "not in this
+set" — measured 2026-09-30: Cañada, City College of San Francisco and College of
+Marin had shown nothing since the Bay register shipped. Each receipt name is
+resolved back to its roster name through the matcher's own resolver, and the
+run fails when one does not resolve.
 
 ⚠️ THE REGISTER IS MATCHER OUTPUT, NOT CURATED RULINGS, AND THE TWO LOOK
 IDENTICAL ON SCREEN. `kb/_score_occupation_matcher.py` puts the decision level
@@ -106,7 +131,58 @@ def cip_sector_labels(used):
     return {c: fams[c] for c in sorted(used) if c in fams}
 
 
-def build(receipt):
+# The file each region writes: FILE_PREFIX + region_slug(code) + ".js".
+FILE_PREFIX = "regional_cpl_opportunity_"
+
+
+def region_slug(code):
+    """`SD/I` -> `sdi`, `Bay` -> `bay`. college_briefing.js `regionSlug()` is the
+    same rule; the tab builds the file name and the global from it."""
+    return "".join(ch for ch in (code or "").lower() if ch.isalnum())
+
+
+def roster_regions():
+    with open(os.path.join(ROOT, "kb", "reference", "swp_region_roster.json"), encoding="utf-8") as fh:
+        return json.load(fh)["regions"]
+
+
+def matcher_resolver():
+    """The matcher's own name resolver, so the emitter maps names exactly the way
+    the run that wrote the receipt did."""
+    sys.path.insert(0, os.path.join(ROOT, "kb"))
+    import _build_regional_cpl_opportunity as gen   # noqa: E402 — path set above
+    R, _ = gen.make_resolver()
+    return R
+
+
+def roster_names_for(receipt_colleges, regions, R):
+    """Map each receipt college to (region code, MAP name).
+
+    Every roster name is run through the matcher's resolver, and the result is
+    inverted: matcher name -> roster name. A receipt college that no roster name
+    resolves to is a hard failure — keyed under the matcher's spelling it would
+    never be found by the picker, and nothing on screen would say why."""
+    back = {}
+    for code, blk in regions.items():
+        for name in blk["colleges"]:
+            back[R(name) or name] = (code, name)
+            back.setdefault(name, (code, name))
+    out, missing = {}, []
+    for c in receipt_colleges:
+        hit = back.get(c) or back.get(R(c) or "")
+        if hit:
+            out[c] = hit
+        else:
+            missing.append(c)
+    if missing:
+        sys.exit("ERROR: no Strong Workforce roster name for %s — add the spelling to "
+                 "the matcher's roster (kb/college_short_names.json) and re-run."
+                 % ", ".join(repr(m) for m in missing))
+    return out
+
+
+def build(receipt, names=None):
+    names = names or {}
     colleges = {}
     labels = {}
     used_cip = set()
@@ -134,7 +210,7 @@ def build(receipt):
             else:
                 unmatched.append(r.get("occupation"))
         keep.sort(key=lambda r: (r.get("priority", "P9"), r.get("occupation", "")))
-        colleges[name] = {
+        colleges[names.get(name, name)] = {
             "summary": block.get("summary") or {},
             "rows": keep,
             "unmatched": sorted(u for u in unmatched if u),
@@ -144,26 +220,32 @@ def build(receipt):
     return colleges, labels, cip_sector_labels(used_cip)
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--receipt", required=True)
-    ap.add_argument("--out", default="regional_cpl_opportunity_data.js")
-    a = ap.parse_args()
-
-    with open(a.receipt, encoding="utf-8") as fh:
+def emit_one(receipt_path, out_dir, regions, R):
+    with open(receipt_path, encoding="utf-8") as fh:
         receipt = json.load(fh)
-
-    colleges, labels, cip_labels = build(receipt)
+    mapped = roster_names_for(list(receipt.get("detail", {})), regions, R)
+    codes = sorted({code for code, _ in mapped.values()})
+    if len(codes) != 1:
+        sys.exit("ERROR: %s spans %d Strong Workforce regions (%s); one receipt per region."
+                 % (receipt_path, len(codes), ", ".join(codes) or "none"))
+    code = codes[0]
+    names = {c: n for c, (_, n) in mapped.items()}
+    colleges, labels, cip_labels = build(receipt, names)
     if not colleges:
-        sys.exit("ERROR: %s carries no per-college detail." % a.receipt)
+        sys.exit("ERROR: %s carries no per-college detail." % receipt_path)
+
+    # A roster college the receipt lacks renders "not in this set" on its page.
+    # Said here, in the run's output, so it is seen before a meeting is.
+    absent = sorted(set(regions[code]["colleges"]) - set(colleges))
 
     payload = {
         "meta": {
             "generated_at": datetime.datetime.now().isoformat(timespec="seconds"),
             "generated_by": "kb/_emit_regional_opps_data.py",
-            "source_receipt": os.path.relpath(os.path.abspath(a.receipt), ROOT),
+            "source_receipt": os.path.relpath(os.path.abspath(receipt_path), ROOT),
             "source_generated_at": receipt.get("_generated_at"),
             "region": receipt.get("region"),
+            "region_code": code,
             "n_occupations": receipt.get("n_occupations"),
             "colleges": sorted(colleges),
             "priority_labels": labels,
@@ -182,12 +264,14 @@ def main():
         "colleges": colleges,
     }
 
-    out_path = a.out if os.path.isabs(a.out) else os.path.join(ROOT, a.out)
+    slug = region_slug(code)
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, FILE_PREFIX + slug + ".js")
     with open(out_path, "w", encoding="utf-8") as fh:
         fh.write("// GENERATED by kb/_emit_regional_opps_data.py — do not hand-edit.\n")
         fh.write("// Source receipt: %s\n" % payload["meta"]["source_receipt"])
         fh.write("// Matcher output, not curated rulings. See the emitter's docstring.\n")
-        fh.write("window.CPL_REGIONAL_OPPS = ")
+        fh.write("window.CPL_REGIONAL_OPPS_%s = " % slug.upper())
         json.dump(payload, fh, ensure_ascii=False, separators=(",", ":"))
         fh.write(";\n")
 
@@ -197,13 +281,38 @@ def main():
     size = os.path.getsize(out_path)
     # Every bucket printed, so a run that silently drops everything is visible
     # in its own output rather than on screen in a meeting.
-    print("colleges %d | rows %d | not-teaching %d | adopted-no-program %d | "
+    print("%-5s colleges %d | rows %d | not-teaching %d | adopted-no-program %d | "
           "unmatched %d | CIP sectors %d | %s (%.1f KB)"
-          % (len(colleges), tot("rows"), tot("not_teaching"),
+          % (code, len(colleges), tot("rows"), tot("not_teaching"),
              tot("adopted_no_program"), tot("unmatched"), len(cip_labels),
-             out_path, size / 1024.0))
+             os.path.relpath(out_path, ROOT), size / 1024.0))
+    if absent:
+        print("      WARNING: in the roster, not in the receipt: %s" % ", ".join(absent))
     if not tot("rows"):
-        sys.exit("ERROR: every row was filtered out — the register would be empty.")
+        sys.exit("ERROR: every row was filtered out — the %s register would be empty." % code)
+    return code
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--receipt", action="append", required=True,
+                    help="repeatable; one run receipt per Strong Workforce region")
+    ap.add_argument("--out-dir", default=".")
+    a = ap.parse_args()
+
+    out_dir = a.out_dir if os.path.isabs(a.out_dir) else os.path.join(ROOT, a.out_dir)
+    regions = roster_regions()
+    R = matcher_resolver()
+    seen = {}
+    for rp in a.receipt:
+        code = emit_one(rp, out_dir, regions, R)
+        if code in seen:
+            sys.exit("ERROR: two receipts for %s (%s, %s)." % (code, seen[code], rp))
+        seen[code] = rp
+    missing = sorted(set(regions) - set(seen))
+    if missing:
+        print("NOTE: no receipt for %s — those colleges will read \"not in this set\"."
+              % ", ".join(missing))
     return 0
 
 
