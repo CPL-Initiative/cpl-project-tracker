@@ -26,10 +26,9 @@ guide. Check #1783 on its current head before anything else: merge it on green `
    read surface for college staff is a decision-rights change (Rule 10 a3) — record it under DR-09 in
    `kb/governance_surface_map.json` and say so in the PR. Measured 2026-09-30: 105 of 123 colleges list an
    address (49 coordinator, 99 primary); three district staff are listed for three or four colleges.
-2. **Sheet 8** ([7sb3cMt8iU9YWmjKyyHCT1](https://claude.ai/artifact/7sb3cMt8iU9YWmjKyyHCT1)): read
-   `replies` first. One card: a curated public copy of the style guide note, or internal only. A curated copy
-   goes through `cpl-knowledge-base`'s curation pipeline as a draft PR; link the CO's PDFs on cccco.edu,
-   never copy them.
+2. **Sheet 8 is answered** (Sam, 18:52Z: *curate*). The curated page is CPL-Initiative/cpl-knowledge-base#24,
+   a draft Sam reviews and merges; never merge it from a session. Answer any review comment there. The
+   public MAP brand page's CCCCO palette differs from Brand Basics; it is flagged in #24 as a separate call.
 3. **Card 1 of sheet 6** still waits on Sam's rewritten Scenario 2 script (ElevenLabs, then rebuild `n2`).
 
 ## Sam's decisions this run
