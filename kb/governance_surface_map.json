@@ -1,6 +1,6 @@
 {
  "_about": "Persistent memory for the drift detector (kb/_build_governance_candidates.py). 'mapped' = this surface is ALREADY covered by an existing register row. 'dismissed' = it needs no row, and why. Anything in neither is proposed as a candidate. Dismissal lives here, not in a database, so the REASON is reviewable in a diff and cannot silently diverge from the register it annotates.",
- "_as_of": "2026-09-16",
+ "_as_of": "2026-09-30",
  "mapped": {
   "workflow:daily-dashboard.yml": "CA-01",
   "workflow:map-users-sync.yml": "CA-02",
@@ -47,6 +47,7 @@
   "table:cpl_funding_config": "DR-09",
   "table:cpl_funding_notes": "DR-09",
   "table:cpl_funding_participation": "DR-09",
+  "table:cpl_funding_reports": "DR-09",
   "table:cpl_adoption_interest": "DR-23",
   "tab:chatbot": "CA-06",
   "tab:college-briefing": "DR-09",
