@@ -197054,149 +197054,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-FI1C1-1-001",
-      "exhibit_ids": [
-        "MAPICI-FI1C1-1-001"
-      ],
-      "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
-      "unified_title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Fire Inspector 1 Certification (IFSAC/ProBoard)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130",
-        "132"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santa Ana College"
-      ],
-      "potential": 60,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 61,
-      "credit_recs": [
-        {
-          "course": "FTC 104",
-          "credit": "3 hours in Fire Prevention"
-        },
-        {
-          "course": "FTC 106",
-          "credit": "3 hours in Fire Protection Systems"
-        },
-        {
-          "course": "FOT 130A",
-          "credit": "1 hour in Fire Inspector 1A: Duties and Administration"
-        },
-        {
-          "course": "FOT 130B",
-          "credit": "1 hour in Fire Inspector 1B: Introduction to Fire and Life Safety"
-        },
-        {
-          "course": "FOT 130C",
-          "credit": "1 hour in Fire Inspector 1C: Field Inspection"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-FI1C1-1-001",
-          "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
-          "units": 9.0,
-          "lines": 5
-        }
-      ],
-      "adopter_units": {
-        "Santa Ana College": 9.0
-      },
-      "adopter_lines": {
-        "Santa Ana College": 5
-      },
-      "adopter_rec_idx": {
-        "Santa Ana College": [
-          0,
-          1,
-          2,
-          3,
-          4
-        ]
-      },
-      "peer_units_median": 9.0,
-      "peer_units_max": 9.0,
-      "rec_units_total": 9.0
-    },
-    {
       "exhibit_id": "MAPICI-FI2(-1-001",
       "exhibit_ids": [
         "MAPICI-FI2(-1-001"
@@ -199625,6 +199482,163 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPICI-FI1C1-1-001",
+      "exhibit_ids": [
+        "MAPICI-FI1C1-1-001"
+      ],
+      "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+      "unified_title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Inspector 1 Certification (IFSAC/ProBoard)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130",
+        "132"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Cabrillo College",
+        "Santa Ana College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 61,
+      "credit_recs": [
+        {
+          "course": "FTC 104",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FTC 106",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "FOT 130A",
+          "credit": "1 hour in Fire Inspector 1A: Duties and Administration"
+        },
+        {
+          "course": "FOT 130B",
+          "credit": "1 hour in Fire Inspector 1B: Introduction to Fire and Life Safety"
+        },
+        {
+          "course": "FOT 130C",
+          "credit": "1 hour in Fire Inspector 1C: Field Inspection"
+        },
+        {
+          "course": "FT 2",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FT 3",
+          "credit": "3 hours in Fire Protection Systems"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-FI1C1-1-001",
+          "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+          "units": 15.0,
+          "lines": 7
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 6.0,
+        "Santa Ana College": 9.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 2,
+        "Santa Ana College": 5
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          5,
+          6
+        ],
+        "Santa Ana College": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "peer_units_median": 7.5,
+      "peer_units_max": 9.0,
+      "rec_units_total": 15.0
     },
     {
       "exhibit_id": "MAPICI-SFTL-1-001",
@@ -216900,6 +216914,979 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0.25
     },
     {
+      "exhibit_id": "MAPICI-F1AH-1-001",
+      "exhibit_ids": [
+        "MAPICI-F1AH-1-001"
+      ],
+      "title": "Firefigher 1 and HAZMAT Tech-Specialist-Incident Cmdr or HAZWOPER",
+      "unified_title": "Firefigher 1 and HAZMAT Tech-Specialist-Incident Cmdr or HAZWOPER",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Firefigher 1 and HAZMAT Tech-Specialist-Incident Cmdr or HAZWOPER"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FT 5",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-F1AH-1-001",
+          "title": "Firefigher 1 and HAZMAT Tech-Specialist-Incident Cmdr or HAZWOPER",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXI-POES-1-001",
+      "exhibit_ids": [
+        "MAPCXI-POES-1-001"
+      ],
+      "title": "Principles of Emergency Services Safety and Survival",
+      "unified_title": "Principles of Emergency Services Safety and Survival",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Principles of Emergency Services Safety and Survival"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FT 6ES",
+          "credit": "3 hours in Principles of Emergency Services Safety and Survival"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXI-POES-1-001",
+          "title": "Principles of Emergency Services Safety and Survival",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-H2-1-001",
+      "exhibit_ids": [
+        "MAPICI-H2-1-001"
+      ],
+      "title": "HAZWOPER",
+      "unified_title": "HAZWOPER",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HAZWOPER"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FT 7",
+          "credit": "3 hours in Introduction to Hazardous Materials"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-H2-1-001",
+          "title": "HAZWOPER",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-HT-1-001",
+      "exhibit_ids": [
+        "MAPICI-HT-1-001"
+      ],
+      "title": "HAZMAT Tech",
+      "unified_title": "HAZMAT Tech",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HAZMAT Tech"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FT 7",
+          "credit": "3 hours in Introduction to Hazardous Materials"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-HT-1-001",
+          "title": "HAZMAT Tech",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-CCF&-1-001",
+      "exhibit_ids": [
+        "MAPICI-CCF&-1-001"
+      ],
+      "title": "CSTI Certified FRA & FRO Instructor",
+      "unified_title": "CSTI Certified FRA & FRO Instructor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CSTI Certified FRA & FRO Instructor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FT 175",
+          "credit": "0.5 hours in Hazardous Materials - First Responder Operations"
+        },
+        {
+          "course": "FT 7",
+          "credit": "3 hours in Introduction to Hazardous Materials"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CCF&-1-001",
+          "title": "CSTI Certified FRA & FRO Instructor",
+          "units": 3.5,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.5
+      },
+      "adopter_lines": {
+        "Cabrillo College": 2
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 3.5,
+      "peer_units_max": 3.5,
+      "rec_units_total": 3.5
+    },
+    {
+      "exhibit_id": "MAPICI-N1FI-1-001",
+      "exhibit_ids": [
+        "MAPICI-N1FI-1-001"
+      ],
+      "title": "NFPA 1033: Fire Investigator",
+      "unified_title": "NFPA 1033: Fire Investigator",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "NFPA 1033: Fire Investigator"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FT 9",
+          "credit": "3 hours in Fire Investigation"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-N1FI-1-001",
+          "title": "NFPA 1033: Fire Investigator",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-FI11-1-001",
+      "exhibit_ids": [
+        "MAPICI-FI11-1-001"
+      ],
+      "title": "Fire Investigator 1A, 1B, 1C",
+      "unified_title": "Fire Investigator 1A, 1B, 1C",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Investigator 1A, 1B, 1C"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FT 9",
+          "credit": "3 hours in Fire Investigation"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-FI11-1-001",
+          "title": "Fire Investigator 1A, 1B, 1C",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-CWFA-1-001",
+      "exhibit_ids": [
+        "MAPICI-CWFA-1-001"
+      ],
+      "title": "CDF Wildland Fire Academy",
+      "unified_title": "CDF Wildland Fire Academy",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CDF Wildland Fire Academy"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FT 189",
+          "credit": "2.25 hours in CDF Wildland Firefighter 1 Academy"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CWFA-1-001",
+          "title": "CDF Wildland Fire Academy",
+          "units": 2.25,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 2.25
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.25,
+      "peer_units_max": 2.25,
+      "rec_units_total": 2.25
+    },
+    {
       "exhibit_id": "MAPCBES-REP-1-001|MAPCXS-REP-1-001|MAPCxS-PORE-1-001",
       "exhibit_ids": [
         "MAPCBES-REP-1-001",
@@ -218234,186 +219221,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 9.0
     },
     {
-      "exhibit_id": "MAPCXH-FP-1-001|MAPCXH-FU-F2-1-001|MAPCXS-F3P--1-001|MAPCXS-FP1-1-001|MAPCXS-FPCB-1-001|MAPCxS-FPF0-1-001",
-      "exhibit_ids": [
-        "MAPCXH-FP-1-001",
-        "MAPCXH-FU-F2-1-001",
-        "MAPCXS-F3P--1-001",
-        "MAPCXS-FP1-1-001",
-        "MAPCXS-FPCB-1-001",
-        "MAPCxS-FPF0-1-001"
-      ],
-      "title": "Fire Prevention",
-      "unified_title": "Fire Prevention",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "FIRETEC-5: Fire Prevention",
-        "FIRTEC -5 Fontana Unified - Fontana High - Fire Prevention",
-        "FTECH 302\tFire Prevention - Credit by Exam",
-        "Fire Prevention",
-        "Fire Prevention Credit by Exam",
-        "Fire Prevention FIRE 002 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 3,
-      "adopter_names": [
-        "Chaffey College",
-        "Copper Mountain College",
-        "Modesto Junior College"
-      ],
-      "potential": 58,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 61,
-      "credit_recs": [
-        {
-          "course": "FTECH 302",
-          "credit": "3 hours in Fire Prevention"
-        },
-        {
-          "course": "FIRETEC 5",
-          "credit": "3 hours in Fire Prevention"
-        },
-        {
-          "course": "FIRE  002",
-          "credit": "3 hours in Fire Prevention"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXH-FP-1-001",
-          "title": "FIRETEC-5: Fire Prevention",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXH-FU-F2-1-001",
-          "title": "FIRTEC -5 Fontana Unified - Fontana High - Fire Prevention",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-F3P--1-001",
-          "title": "FTECH 302\tFire Prevention - Credit by Exam",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-FP1-1-001",
-          "title": "Fire Prevention",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-FPCB-1-001",
-          "title": "Fire Prevention Credit by Exam",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCxS-FPF0-1-001",
-          "title": "Fire Prevention FIRE 002 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Chaffey College": 3.0,
-        "Copper Mountain College": 3.0,
-        "Modesto Junior College": 3.0
-      },
-      "adopter_lines": {
-        "Chaffey College": 1,
-        "Copper Mountain College": 1,
-        "Modesto Junior College": 1
-      },
-      "adopter_rec_idx": {
-        "Chaffey College": [
-          1
-        ],
-        "Copper Mountain College": [
-          2
-        ],
-        "Modesto Junior College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 9.0
-    },
-    {
       "exhibit_id": "MAPSAS-D:IT-1-001|MAPSAS-DITB-1-001|MAPSAS-DITB1-1-001",
       "exhibit_ids": [
         "MAPSAS-D:IT-1-001",
@@ -219094,160 +219901,6 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Copper Mountain College": [
-          1
-        ],
-        "Modesto Junior College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 6.0
-    },
-    {
-      "exhibit_id": "MAPCXH-F4-1-001|MAPCXS-F3PS-1-001|MAPCXS-FPS1-1-001|MAPCXS-FPSC-1-001",
-      "exhibit_ids": [
-        "MAPCXH-F4-1-001",
-        "MAPCXS-F3PS-1-001",
-        "MAPCXS-FPS1-1-001",
-        "MAPCXS-FPSC-1-001"
-      ],
-      "title": "Fire Protection Systems",
-      "unified_title": "Fire Protection Systems",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "FIRETEC-3: Fire Protection Systems",
-        "FTECH 303\tFire Protection Systems - Credit by Exam",
-        "Fire Protection Systems",
-        "Fire Protection Systems Credit by Exam"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Chaffey College",
-        "Modesto Junior College"
-      ],
-      "potential": 58,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 60,
-      "credit_recs": [
-        {
-          "course": "FTECH 303",
-          "credit": "3 hours in Fire Protection Systems"
-        },
-        {
-          "course": "FIRETEC 3",
-          "credit": "3 hours in Fire Protection Systems"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXH-F4-1-001",
-          "title": "FIRETEC-3: Fire Protection Systems",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-F3PS-1-001",
-          "title": "FTECH 303\tFire Protection Systems - Credit by Exam",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-FPS1-1-001",
-          "title": "Fire Protection Systems",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-FPSC-1-001",
-          "title": "Fire Protection Systems Credit by Exam",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Chaffey College": 3.0,
-        "Modesto Junior College": 3.0
-      },
-      "adopter_lines": {
-        "Chaffey College": 1,
-        "Modesto Junior College": 1
-      },
-      "adopter_rec_idx": {
-        "Chaffey College": [
           1
         ],
         "Modesto Junior College": [
@@ -223713,6 +224366,195 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 21.0
     },
     {
+      "exhibit_id": "MAPCXH-FP-1-001|MAPCXH-FU-F2-1-001|MAPCXS-F3P--1-001|MAPCXS-FP1-1-001|MAPCXS-FPCB-1-001|MAPCxS-FPF0-1-001",
+      "exhibit_ids": [
+        "MAPCXH-FP-1-001",
+        "MAPCXH-FU-F2-1-001",
+        "MAPCXS-F3P--1-001",
+        "MAPCXS-FP1-1-001",
+        "MAPCXS-FPCB-1-001",
+        "MAPCxS-FPF0-1-001"
+      ],
+      "title": "Fire Prevention",
+      "unified_title": "Fire Prevention",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FIRETEC-5: Fire Prevention",
+        "FIRTEC -5 Fontana Unified - Fontana High - Fire Prevention",
+        "FTECH 302\tFire Prevention - Credit by Exam",
+        "Fire Prevention",
+        "Fire Prevention Credit by Exam",
+        "Fire Prevention FIRE 002 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 4,
+      "adopter_names": [
+        "Cabrillo College",
+        "Chaffey College",
+        "Copper Mountain College",
+        "Modesto Junior College"
+      ],
+      "potential": 57,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 61,
+      "credit_recs": [
+        {
+          "course": "FTECH 302",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FT 2",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FIRETEC 5",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FIRE  002",
+          "credit": "3 hours in Fire Prevention"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-FP-1-001",
+          "title": "FIRETEC-5: Fire Prevention",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXH-FU-F2-1-001",
+          "title": "FIRTEC -5 Fontana Unified - Fontana High - Fire Prevention",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-F3P--1-001",
+          "title": "FTECH 302\tFire Prevention - Credit by Exam",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-FP1-1-001",
+          "title": "Fire Prevention",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-FPCB-1-001",
+          "title": "Fire Prevention Credit by Exam",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPCxS-FPF0-1-001",
+          "title": "Fire Prevention FIRE 002 Cx",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0,
+        "Chaffey College": 3.0,
+        "Copper Mountain College": 3.0,
+        "Modesto Junior College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1,
+        "Chaffey College": 1,
+        "Copper Mountain College": 1,
+        "Modesto Junior College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          1
+        ],
+        "Chaffey College": [
+          2
+        ],
+        "Copper Mountain College": [
+          3
+        ],
+        "Modesto Junior College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 12.0
+    },
+    {
       "exhibit_id": "MAPPRI-FBAC-1-001",
       "exhibit_ids": [
         "MAPPRI-FBAC-1-001"
@@ -224177,6 +225019,169 @@ window.CPL_STATEWIDE = {
         ],
         "Copper Mountain College": [
           1
+        ],
+        "Modesto Junior College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 9.0
+    },
+    {
+      "exhibit_id": "MAPCXH-F4-1-001|MAPCXS-F3PS-1-001|MAPCXS-FPS1-1-001|MAPCXS-FPSC-1-001",
+      "exhibit_ids": [
+        "MAPCXH-F4-1-001",
+        "MAPCXS-F3PS-1-001",
+        "MAPCXS-FPS1-1-001",
+        "MAPCXS-FPSC-1-001"
+      ],
+      "title": "Fire Protection Systems",
+      "unified_title": "Fire Protection Systems",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FIRETEC-3: Fire Protection Systems",
+        "FTECH 303\tFire Protection Systems - Credit by Exam",
+        "Fire Protection Systems",
+        "Fire Protection Systems Credit by Exam"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Cabrillo College",
+        "Chaffey College",
+        "Modesto Junior College"
+      ],
+      "potential": 57,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FTECH 303",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "FT 3",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
+          "course": "FIRETEC 3",
+          "credit": "3 hours in Fire Protection Systems"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-F4-1-001",
+          "title": "FIRETEC-3: Fire Protection Systems",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-F3PS-1-001",
+          "title": "FTECH 303\tFire Protection Systems - Credit by Exam",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-FPS1-1-001",
+          "title": "Fire Protection Systems",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-FPSC-1-001",
+          "title": "Fire Protection Systems Credit by Exam",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0,
+        "Chaffey College": 3.0,
+        "Modesto Junior College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1,
+        "Chaffey College": 1,
+        "Modesto Junior College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          1
+        ],
+        "Chaffey College": [
+          2
         ],
         "Modesto Junior College": [
           0
@@ -227365,386 +228370,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 15.0
     },
     {
-      "exhibit_id": "MAPCXH-F3-1-001|MAPCXH-FHSF1-1-001|MAPCXS-F3BA-1-001|MAPCXS-FBAC-1-001|MAPCXS-FBAC2-1-001|MAPCxS-FBAC1-1-001",
-      "exhibit_ids": [
-        "MAPCXH-F3-1-001",
-        "MAPCXH-FHSF1-1-001",
-        "MAPCXS-F3BA-1-001",
-        "MAPCXS-FBAC-1-001",
-        "MAPCXS-FBAC2-1-001",
-        "MAPCxS-FBAC1-1-001"
-      ],
-      "title": "Fire Behavior and Combustion",
-      "unified_title": "Fire Behavior and Combustion",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "FIRETEC-2: FONTANA HIGH SCHOOL-  Fire Behavior",
-        "FIRETEC-2: Fire Behavior and Combustion",
-        "FTECH 305\tFire Behavior and Combustion - Credit by Exam",
-        "Fire Behavior and Combustion",
-        "Fire Behavior and Combustion Credit by Exam",
-        "Fire Behavior and Combustion FIRE 005 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 5,
-      "adopter_names": [
-        "Chaffey College",
-        "College of the Desert",
-        "Copper Mountain College",
-        "Lake Tahoe Community College",
-        "Modesto Junior College"
-      ],
-      "potential": 56,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 61,
-      "credit_recs": [
-        {
-          "course": "FIR 105",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FTECH 305",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRE 005",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRETEC 2",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        },
-        {
-          "course": "FIRE  005",
-          "credit": "3 hours in Fire Behavior and Combustion"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXH-F3-1-001",
-          "title": "FIRETEC-2: Fire Behavior and Combustion",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXH-FHSF1-1-001",
-          "title": "FIRETEC-2: FONTANA HIGH SCHOOL-  Fire Behavior",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPCXS-F3BA-1-001",
-          "title": "FTECH 305\tFire Behavior and Combustion - Credit by Exam",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPCXS-FBAC-1-001",
-          "title": "Fire Behavior and Combustion Credit by Exam",
-          "units": 9.0,
-          "lines": 3
-        },
-        {
-          "id": "MAPCXS-FBAC2-1-001",
-          "title": "Fire Behavior and Combustion",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCxS-FBAC1-1-001",
-          "title": "Fire Behavior and Combustion FIRE 005 Cx",
-          "units": 6.0,
-          "lines": 2
-        }
-      ],
-      "adopter_units": {
-        "Chaffey College": 3.0,
-        "College of the Desert": 3.0,
-        "Copper Mountain College": 3.0,
-        "Lake Tahoe Community College": 3.0,
-        "Modesto Junior College": 3.0
-      },
-      "adopter_lines": {
-        "Chaffey College": 1,
-        "College of the Desert": 1,
-        "Copper Mountain College": 1,
-        "Lake Tahoe Community College": 1,
-        "Modesto Junior College": 1
-      },
-      "adopter_rec_idx": {
-        "Chaffey College": [
-          3
-        ],
-        "College of the Desert": [
-          2
-        ],
-        "Copper Mountain College": [
-          4
-        ],
-        "Lake Tahoe Community College": [
-          0
-        ],
-        "Modesto Junior College": [
-          1
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 15.0
-    },
-    {
-      "exhibit_id": "MAPCXS-BCFF-1-001|MAPCXS-BCFF2-1-001|MAPCXS-F3CF-1-001|MAPCxS-BCFF1-1-001",
-      "exhibit_ids": [
-        "MAPCXS-BCFF-1-001",
-        "MAPCXS-BCFF2-1-001",
-        "MAPCXS-F3CF-1-001",
-        "MAPCxS-BCFF1-1-001"
-      ],
-      "title": "Building Construction for Fire Protection",
-      "unified_title": "Building Construction for Fire Protection",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Building Construction for Fire Protection",
-        "Building Construction for Fire Protection Credit by Exam",
-        "Building Construction for Fire Protection FIRE 004 Cx",
-        "FTECH 304\tBuilding Construction for Fire Protection - Credit by Exam"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 5,
-      "adopter_names": [
-        "Chaffey College",
-        "College of the Desert",
-        "Copper Mountain College",
-        "Lake Tahoe Community College",
-        "Modesto Junior College"
-      ],
-      "potential": 56,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 61,
-      "credit_recs": [
-        {
-          "course": "FIR 104",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FTECH 304",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIRE 004",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIRE  004",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        },
-        {
-          "course": "FIRETEC 4",
-          "credit": "3 hours in Building Construction for Fire Protection"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-BCFF-1-001",
-          "title": "Building Construction for Fire Protection Credit by Exam",
-          "units": 9.0,
-          "lines": 3
-        },
-        {
-          "id": "MAPCXS-BCFF2-1-001",
-          "title": "Building Construction for Fire Protection",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-F3CF-1-001",
-          "title": "FTECH 304\tBuilding Construction for Fire Protection - Credit by Exam",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPCxS-BCFF1-1-001",
-          "title": "Building Construction for Fire Protection FIRE 004 Cx",
-          "units": 6.0,
-          "lines": 2
-        }
-      ],
-      "adopter_units": {
-        "Chaffey College": 3.0,
-        "College of the Desert": 3.0,
-        "Copper Mountain College": 3.0,
-        "Lake Tahoe Community College": 3.0,
-        "Modesto Junior College": 3.0
-      },
-      "adopter_lines": {
-        "Chaffey College": 1,
-        "College of the Desert": 1,
-        "Copper Mountain College": 1,
-        "Lake Tahoe Community College": 1,
-        "Modesto Junior College": 1
-      },
-      "adopter_rec_idx": {
-        "Chaffey College": [
-          4
-        ],
-        "College of the Desert": [
-          2
-        ],
-        "Copper Mountain College": [
-          3
-        ],
-        "Lake Tahoe Community College": [
-          0
-        ],
-        "Modesto Junior College": [
-          1
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 15.0
-    },
-    {
       "exhibit_id": "MAPICI-BCFF-1-001|MAPICI-F3CF-1-001",
       "exhibit_ids": [
         "MAPICI-BCFF-1-001",
@@ -228712,6 +229337,411 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXH-F3-1-001|MAPCXH-FHSF1-1-001|MAPCXS-F3BA-1-001|MAPCXS-FBAC-1-001|MAPCXS-FBAC2-1-001|MAPCxS-FBAC1-1-001",
+      "exhibit_ids": [
+        "MAPCXH-F3-1-001",
+        "MAPCXH-FHSF1-1-001",
+        "MAPCXS-F3BA-1-001",
+        "MAPCXS-FBAC-1-001",
+        "MAPCXS-FBAC2-1-001",
+        "MAPCxS-FBAC1-1-001"
+      ],
+      "title": "Fire Behavior and Combustion",
+      "unified_title": "Fire Behavior and Combustion",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FIRETEC-2: FONTANA HIGH SCHOOL-  Fire Behavior",
+        "FIRETEC-2: Fire Behavior and Combustion",
+        "FTECH 305\tFire Behavior and Combustion - Credit by Exam",
+        "Fire Behavior and Combustion",
+        "Fire Behavior and Combustion Credit by Exam",
+        "Fire Behavior and Combustion FIRE 005 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 6,
+      "adopter_names": [
+        "Cabrillo College",
+        "Chaffey College",
+        "College of the Desert",
+        "Copper Mountain College",
+        "Lake Tahoe Community College",
+        "Modesto Junior College"
+      ],
+      "potential": 55,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 61,
+      "credit_recs": [
+        {
+          "course": "FIR 105",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FTECH 305",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRE 005",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRETEC 2",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FIRE  005",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        },
+        {
+          "course": "FT 5",
+          "credit": "3 hours in Fire Behavior and Combustion"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-F3-1-001",
+          "title": "FIRETEC-2: Fire Behavior and Combustion",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXH-FHSF1-1-001",
+          "title": "FIRETEC-2: FONTANA HIGH SCHOOL-  Fire Behavior",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPCXS-F3BA-1-001",
+          "title": "FTECH 305\tFire Behavior and Combustion - Credit by Exam",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPCXS-FBAC-1-001",
+          "title": "Fire Behavior and Combustion Credit by Exam",
+          "units": 9.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPCXS-FBAC2-1-001",
+          "title": "Fire Behavior and Combustion",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPCxS-FBAC1-1-001",
+          "title": "Fire Behavior and Combustion FIRE 005 Cx",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0,
+        "Chaffey College": 3.0,
+        "College of the Desert": 3.0,
+        "Copper Mountain College": 3.0,
+        "Lake Tahoe Community College": 3.0,
+        "Modesto Junior College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1,
+        "Chaffey College": 1,
+        "College of the Desert": 1,
+        "Copper Mountain College": 1,
+        "Lake Tahoe Community College": 1,
+        "Modesto Junior College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          5
+        ],
+        "Chaffey College": [
+          3
+        ],
+        "College of the Desert": [
+          2
+        ],
+        "Copper Mountain College": [
+          4
+        ],
+        "Lake Tahoe Community College": [
+          0
+        ],
+        "Modesto Junior College": [
+          1
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 18.0
+    },
+    {
+      "exhibit_id": "MAPCXI-BCFF-1-001|MAPCXS-BCFF-1-001|MAPCXS-BCFF2-1-001|MAPCXS-F3CF-1-001|MAPCxS-BCFF1-1-001",
+      "exhibit_ids": [
+        "MAPCXI-BCFF-1-001",
+        "MAPCXS-BCFF-1-001",
+        "MAPCXS-BCFF2-1-001",
+        "MAPCXS-F3CF-1-001",
+        "MAPCxS-BCFF1-1-001"
+      ],
+      "title": "Building Construction for Fire Protection",
+      "unified_title": "Building Construction for Fire Protection",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.85,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Building Construction for Fire Protection",
+        "Building Construction for Fire Protection Credit by Exam",
+        "Building Construction for Fire Protection FIRE 004 Cx",
+        "FTECH 304\tBuilding Construction for Fire Protection - Credit by Exam"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 6,
+      "adopter_names": [
+        "Cabrillo College",
+        "Chaffey College",
+        "College of the Desert",
+        "Copper Mountain College",
+        "Lake Tahoe Community College",
+        "Modesto Junior College"
+      ],
+      "potential": 55,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 61,
+      "credit_recs": [
+        {
+          "course": "FIR 104",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FTECH 304",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIRE 004",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIRE  004",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FIRETEC 4",
+          "credit": "3 hours in Building Construction for Fire Protection"
+        },
+        {
+          "course": "FT 4",
+          "credit": "3 hours in Building Construction for Fire  Protection"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXI-BCFF-1-001",
+          "title": "Building Construction for Fire Protection",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-BCFF-1-001",
+          "title": "Building Construction for Fire Protection Credit by Exam",
+          "units": 9.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPCXS-BCFF2-1-001",
+          "title": "Building Construction for Fire Protection",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-F3CF-1-001",
+          "title": "FTECH 304\tBuilding Construction for Fire Protection - Credit by Exam",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPCxS-BCFF1-1-001",
+          "title": "Building Construction for Fire Protection FIRE 004 Cx",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0,
+        "Chaffey College": 3.0,
+        "College of the Desert": 3.0,
+        "Copper Mountain College": 3.0,
+        "Lake Tahoe Community College": 3.0,
+        "Modesto Junior College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1,
+        "Chaffey College": 1,
+        "College of the Desert": 1,
+        "Copper Mountain College": 1,
+        "Lake Tahoe Community College": 1,
+        "Modesto Junior College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          5
+        ],
+        "Chaffey College": [
+          4
+        ],
+        "College of the Desert": [
+          2
+        ],
+        "Copper Mountain College": [
+          3
+        ],
+        "Lake Tahoe Community College": [
+          0
+        ],
+        "Modesto Junior College": [
+          1
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 18.0
     },
     {
       "exhibit_id": "MAPICI-FI1D-1-001",
@@ -232183,6 +233213,240 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.5
     },
     {
+      "exhibit_id": "MAPCXN-MPIA-1-001",
+      "exhibit_ids": [
+        "MAPCXN-MPIA-1-001"
+      ],
+      "title": "Music Production II and  Electronic Composition",
+      "unified_title": "Music Production II and  Electronic Composition",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Music Production II and  Electronic Composition"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "10",
+      "top_codes": [
+        "73"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 55,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "West Valley College"
+      ],
+      "total_addressable": 56,
+      "credit_recs": [
+        {
+          "course": "MUS 57B",
+          "credit": "1.5 hours in Music Production II: Electronic Music Composition and Performance"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXN-MPIA-1-001",
+          "title": "Music Production II and  Electronic Composition",
+          "units": 1.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 1.5
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.5,
+      "peer_units_max": 1.5,
+      "rec_units_total": 1.5
+    },
+    {
+      "exhibit_id": "MAPCXS-MPIA-1-001",
+      "exhibit_ids": [
+        "MAPCXS-MPIA-1-001"
+      ],
+      "title": "Music Production I and MIDI",
+      "unified_title": "Music Production I and MIDI",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Music Production I and MIDI"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "10",
+      "top_codes": [
+        "73"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 55,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "Orange Coast College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "West Valley College"
+      ],
+      "total_addressable": 56,
+      "credit_recs": [
+        {
+          "course": "MUS 57A",
+          "credit": "1.5 hours in Music Production I: Digital Music Production and MIDI"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-MPIA-1-001",
+          "title": "Music Production I and MIDI",
+          "units": 1.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 1.5
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.5,
+      "peer_units_max": 1.5,
+      "rec_units_total": 1.5
+    },
+    {
       "exhibit_id": "MAPCXS-CBEM4-1-001|MAPCXS-M1-I-1-001",
       "exhibit_ids": [
         "MAPCXS-CBEM4-1-001",
@@ -234739,6 +236003,10 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Fire Protection Systems"
         },
         {
+          "course": "FT 3",
+          "credit": "3 hours in Fire Protection Systems"
+        },
+        {
           "course": "FIRE 163",
           "credit": "3 hours in Fire Prevention Technology"
         },
@@ -234760,6 +236028,10 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "FT 4",
+          "credit": "3 hours in Fire Prevention"
+        },
+        {
+          "course": "FT 2",
           "credit": "3 hours in Fire Prevention"
         },
         {
@@ -234829,14 +236101,14 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPICA-IFI1-1-001",
           "title": "ICC Fire Inspector 1 Certificate",
-          "units": 30.0,
-          "lines": 10
+          "units": 33.0,
+          "lines": 11
         },
         {
           "id": "MAPICA-NFIC-1-001",
           "title": "NFPA Fire Inspector Certification",
-          "units": 30.0,
-          "lines": 10
+          "units": 36.0,
+          "lines": 12
         },
         {
           "id": "MAPICA-SFI13-1-001",
@@ -234847,8 +236119,8 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPICI-CFIC1-1-001",
           "title": "Cal-JAC Fire Inspector Certificate",
-          "units": 30.0,
-          "lines": 10
+          "units": 36.0,
+          "lines": 12
         },
         {
           "id": "MAPICI-CFIC2-1-001",
@@ -234865,8 +236137,8 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPICI-SFI1-1-001",
           "title": "SFT Fire Inspector 1 Certification",
-          "units": 30.0,
-          "lines": 10
+          "units": 36.0,
+          "lines": 12
         },
         {
           "id": "MAPICI-SFI11-1-001",
@@ -234877,7 +236149,7 @@ window.CPL_STATEWIDE = {
       ],
       "adopter_units": {
         "Bakersfield College": 6.0,
-        "Cabrillo College": 3.0,
+        "Cabrillo College": 9.0,
         "Chabot College": 9.0,
         "Chaffey College": 9.0,
         "City College of San Francisco": 6.0,
@@ -234888,7 +236160,7 @@ window.CPL_STATEWIDE = {
       },
       "adopter_lines": {
         "Bakersfield College": 2,
-        "Cabrillo College": 1,
+        "Cabrillo College": 3,
         "Chabot College": 3,
         "Chaffey College": 3,
         "City College of San Francisco": 2,
@@ -234899,54 +236171,56 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          25,
-          26
+          27,
+          28
         ],
         "Cabrillo College": [
-          17
+          9,
+          16,
+          19
         ],
         "Chabot College": [
           7,
           8,
-          14
+          15
         ],
         "Chaffey College": [
           0,
           1,
-          10
+          11
         ],
         "City College of San Francisco": [
           4,
-          12
+          13
         ],
         "College of the Desert": [
-          16
+          18
         ],
         "College of the Sequoias": [
-          9,
-          15
+          10,
+          17
         ],
         "Santa Ana College": [
           2,
           3,
-          11,
-          18,
-          19,
+          12,
           20,
           21,
           22,
           23,
-          24
+          24,
+          25,
+          26
         ],
         "Sierra College": [
           5,
           6,
-          13
+          14
         ]
       },
-      "peer_units_median": 6.0,
+      "peer_units_median": 9.0,
       "peer_units_max": 17.5,
-      "rec_units_total": 68.5
+      "rec_units_total": 74.5
     },
     {
       "exhibit_id": "MAPICI-C3IS-1-001|MAPICI-CCC5-1-001|MAPICI-GISP-1-001|MAPICI-GISP1-1-001|MAPICS-GISP-1-001",
@@ -257868,6 +259142,112 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPCXH-MT-1-001",
           "title": "Medical Terminology High School Articulation",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 3.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 1
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-PL-F-1-001",
+      "exhibit_ids": [
+        "MAPICI-PL-F-1-001"
+      ],
+      "title": "Paramedic License - First Aid CPR",
+      "unified_title": "Paramedic License - First Aid CPR",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Paramedic License - First Aid CPR"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "cip_sector": "51",
+      "top_codes": [
+        "171"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cabrillo College"
+      ],
+      "potential": 44,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Coalinga College",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Columbia College",
+        "Cypress College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Ventura College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 45,
+      "credit_recs": [
+        {
+          "course": "KIN 13",
+          "credit": "3 hours in First Aid"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-PL-F-1-001",
+          "title": "Paramedic License - First Aid CPR",
           "units": 3.0,
           "lines": 1
         }
@@ -421467,6 +422847,124 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPSAH-APSE-1-001",
+      "exhibit_ids": [
+        "MAPSAH-APSE-1-001"
+      ],
+      "title": "AP Physical Science Exam 2 Units",
+      "unified_title": "AP Physical Science Exam 2 Units",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physical Science Exam 2 Units"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "40",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Napa Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Cal-GETC Area 5A",
+          "credit": "2 hours in Physical Science"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAH-APSE-1-001",
+          "title": "AP Physical Science Exam 2 Units",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Napa Valley College": 2.0
+      },
+      "adopter_lines": {
+        "Napa Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "Napa Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPSAH-AWCE-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AWCE-1-001"
+      ],
+      "title": "AP Written Communication Exam 3 Units",
+      "unified_title": "AP Written Communication Exam 3 Units",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Written Communication Exam 3 Units"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "09",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Napa Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CSU GE A2",
+          "credit": "3 hours in CSU GE A2 – Written Communication"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAH-AWCE-1-001",
+          "title": "AP Written Communication Exam 3 Units",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Napa Valley College": 3.0
+      },
+      "adopter_lines": {
+        "Napa Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "Napa Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -424567,12 +426065,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Cabrillo College",
-        "credit_recs": 446,
-        "exhibits": 342,
+        "credit_recs": 471,
+        "exhibits": 362,
         "disciplines": 15,
-        "ccc_collaborative": 126,
-        "industry_certs": 195,
-        "pct": 3.2
+        "ccc_collaborative": 133,
+        "industry_certs": 213,
+        "pct": 3.4
       },
       {
         "college": "Los Angeles Pierce College",
@@ -424707,7 +426205,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 1,
         "industry_certs": 53,
-        "pct": 1.4
+        "pct": 1.3
       },
       {
         "college": "Riverside City College",
@@ -424779,7 +426277,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 16,
         "ccc_collaborative": 0,
         "industry_certs": 22,
-        "pct": 1.1
+        "pct": 1.0
       },
       {
         "college": "Santa Monica College",
@@ -424788,6 +426286,15 @@ window.CPL_STATEWIDE = {
         "disciplines": 14,
         "ccc_collaborative": 0,
         "industry_certs": 57,
+        "pct": 1.0
+      },
+      {
+        "college": "Napa Valley College",
+        "credit_recs": 142,
+        "exhibits": 125,
+        "disciplines": 16,
+        "ccc_collaborative": 3,
+        "industry_certs": 19,
         "pct": 1.0
       },
       {
@@ -424806,15 +426313,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 15,
         "ccc_collaborative": 28,
         "industry_certs": 34,
-        "pct": 1.0
-      },
-      {
-        "college": "Napa Valley College",
-        "credit_recs": 140,
-        "exhibits": 123,
-        "disciplines": 16,
-        "ccc_collaborative": 3,
-        "industry_certs": 19,
         "pct": 1.0
       },
       {
@@ -425433,12 +426931,12 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6004,
-        "exhibits": 2170,
+        "credit_recs": 6006,
+        "exhibits": 2172,
         "courses": 328,
         "colleges": 86,
         "ccc_collaborative": 25,
-        "pct": 43.2
+        "pct": 43.1
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -425451,12 +426949,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1480,
-        "exhibits": 545,
-        "courses": 639,
+        "credit_recs": 1502,
+        "exhibits": 554,
+        "courses": 644,
         "colleges": 52,
-        "ccc_collaborative": 531,
-        "pct": 10.6
+        "ccc_collaborative": 538,
+        "pct": 10.8
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -425478,8 +426976,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 476,
-        "exhibits": 236,
+        "credit_recs": 477,
+        "exhibits": 237,
         "courses": 321,
         "colleges": 47,
         "ccc_collaborative": 34,
@@ -425514,9 +427012,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Fine and Applied Arts",
-        "credit_recs": 265,
-        "exhibits": 221,
-        "courses": 209,
+        "credit_recs": 267,
+        "exhibits": 223,
+        "courses": 210,
         "colleges": 38,
         "ccc_collaborative": 0,
         "pct": 1.9
@@ -425642,24 +427140,24 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 7360,
-        "exhibits": 2674,
+        "credit_recs": 7362,
+        "exhibits": 2676,
         "colleges": 84,
         "pct": 52.9
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3730,
-        "exhibits": 1162,
+        "credit_recs": 3748,
+        "exhibits": 1170,
         "colleges": 79,
-        "pct": 26.8
+        "pct": 26.9
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2159,
-        "exhibits": 1696,
+        "credit_recs": 2166,
+        "exhibits": 1700,
         "colleges": 60,
-        "pct": 15.5
+        "pct": 15.6
       },
       {
         "cpl_type": "Portfolio Review",
@@ -425686,36 +427184,36 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 8745,
-        "exhibits": 3740,
+        "credit_recs": 8749,
+        "exhibits": 3741,
         "colleges": 90,
-        "pct": 62.9
+        "pct": 62.8
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2814,
-        "exhibits": 1108,
+        "credit_recs": 2831,
+        "exhibits": 1118,
         "colleges": 76,
-        "pct": 20.2
+        "pct": 20.3
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1372,
+        "credit_recs": 1375,
         "exhibits": 401,
         "colleges": 42,
         "pct": 9.9
       },
       {
         "mode": "High school coursework (H)",
-        "credit_recs": 392,
-        "exhibits": 347,
+        "credit_recs": 394,
+        "exhibits": 349,
         "colleges": 20,
         "pct": 2.8
       },
       {
         "mode": "Noncredit, community education, and contract education coursework (N)",
-        "credit_recs": 222,
-        "exhibits": 187,
+        "credit_recs": 223,
+        "exhibits": 188,
         "colleges": 12,
         "pct": 1.6
       },
@@ -425758,19 +427256,19 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12327,
-        "exhibits": 5753,
+        "credit_recs": 12347,
+        "exhibits": 5767,
         "colleges": 96,
         "disciplines": 23,
         "pct": 88.7
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1353,
+        "credit_recs": 1360,
         "exhibits": 167,
         "colleges": 65,
         "disciplines": 11,
-        "pct": 9.7
+        "pct": 9.8
       },
       {
         "category": "Industry/Other",
@@ -426184,8 +427682,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-29T21:18:14",
-  "total_credit_recs": 13900,
+  "generated_at": "2026-09-30T02:50:39",
+  "total_credit_recs": 13927,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-29T21:18:57.292Z",
+  "scraped_at": "2026-09-30T02:51:21.618Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -278,17 +278,17 @@
       "colleges": [
         {
           "college": "City College of San Francisco",
-          "students": 2790,
-          "units": 13188,
-          "avgUnits": 4.726881720430107,
+          "students": 2818,
+          "units": 13402,
+          "avgUnits": 4.755855216465578,
           "transcriptionRate": 0.6,
-          "avgTranscribed": 0.027060931899641576,
+          "avgTranscribed": 0.026792051100070973,
           "criteriaMetCount": 2,
-          "militaryStudents": 1745,
-          "nonMilitaryStudents": 1048,
+          "militaryStudents": 1771,
+          "nonMilitaryStudents": 1050,
           "apprenticeStudents": 7,
-          "savings": 22961570,
-          "yearImpact": 80608454,
+          "savings": 23329495,
+          "yearImpact": 81902793,
           "transcribedUnits": 75.5
         },
         {
@@ -350,6 +350,21 @@
           "savings": 4240730,
           "yearImpact": 16046302,
           "transcribedUnits": 748
+        },
+        {
+          "college": "Napa Valley College",
+          "students": 148,
+          "units": 566,
+          "avgUnits": 3.824324324324324,
+          "transcriptionRate": 90.6,
+          "avgTranscribed": 3.4662162162162162,
+          "criteriaMetCount": 2,
+          "militaryStudents": 52,
+          "nonMilitaryStudents": 96,
+          "apprenticeStudents": 1,
+          "savings": 578320,
+          "yearImpact": 2735430,
+          "transcribedUnits": 513
         },
         {
           "college": "Southwestern College",
@@ -563,14 +578,14 @@
         },
         {
           "college": "Cabrillo College",
-          "students": 221,
+          "students": 223,
           "units": 1291.5,
-          "avgUnits": 5.843891402714932,
+          "avgUnits": 5.791479820627803,
           "transcriptionRate": 19.8,
-          "avgTranscribed": 1.1561085972850678,
+          "avgTranscribed": 1.1457399103139014,
           "criteriaMetCount": 1,
           "militaryStudents": 184,
-          "nonMilitaryStudents": 40,
+          "nonMilitaryStudents": 42,
           "apprenticeStudents": 6,
           "savings": 2799162.5,
           "yearImpact": 10324687,
@@ -1327,21 +1342,6 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Napa Valley College",
-          "students": 57,
-          "units": 53,
-          "avgUnits": 0.9298245614035088,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 52,
-          "nonMilitaryStudents": 5,
-          "apprenticeStudents": 1,
-          "savings": 83275,
-          "yearImpact": 306888,
-          "transcribedUnits": 0
-        },
-        {
           "college": "Chabot College",
           "students": 53,
           "units": 0,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "52,178",
+      "value": "52,299",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,546"
+          "value": "28,572"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,720"
+          "value": "23,815"
         },
         {
           "label": "Apprentice",
@@ -1775,7 +1775,7 @@
     },
     {
       "title": "ELIGIBLE UNITS",
-      "value": "225k",
+      "value": "226k",
       "avg": "4.3 avg",
       "breakdowns": [
         {
@@ -1794,7 +1794,7 @@
     },
     {
       "title": "TRANSCRIBED UNITS",
-      "value": "74k",
+      "value": "75k",
       "avg": "1.4 avg",
       "breakdowns": [
         {
@@ -1803,7 +1803,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "58k"
+          "value": "59k"
         },
         {
           "label": "Apprentice",
@@ -1821,7 +1821,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "$152M"
+          "value": "$153M"
         },
         {
           "label": "Apprentice",
@@ -1831,15 +1831,15 @@
     },
     {
       "title": "20-YEAR IMPACT",
-      "value": "$1.33B",
+      "value": "$1.34B",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$788M"
+          "value": "$789M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$603M"
+          "value": "$605M"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 52178,
-    "Units": 224822.90000000002,
-    "TranscribedUnits": 74012.2,
-    "Savings": 337536381.5,
-    "YearImpact": 1334644661.4,
-    "MilitaryStudents": 28546,
-    "NonMilitaryStudents": 23720,
+    "Students": 52299,
+    "Units": 225549.90000000002,
+    "TranscribedUnits": 74525.2,
+    "Savings": 338399351.5,
+    "YearImpact": 1338367542.3999999,
+    "MilitaryStudents": 28572,
+    "NonMilitaryStudents": 23815,
     "AprenticeStudents": 853,
-    "AverageUnits": 4.308768063168386,
-    "TranscribedAverage": 1.4184560542757483
+    "AverageUnits": 4.312700051626226,
+    "TranscribedAverage": 1.4249832692785713
   }
 }
