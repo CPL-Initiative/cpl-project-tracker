@@ -93,6 +93,10 @@
     // Page actions row (Sam, 2026-08-31): expand/collapse-all, Draft memo,
     // Save as PDF, and the reviewer view preview. Words, not glyphs.
     ".cplfund-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: -6px 0 14px; }",
+    // The rows space their buttons with `gap`, so the button's own left margin
+    // (for inline runs elsewhere) doubled the spacing and set the first button
+    // 6px off the text column above it (margin audit, 2026-09-30).
+    ".cplfund-actions .cplfund-optbtn, .cplfund-toolbar .cplfund-optbtn { margin-left: 0; }",
     ".cplfund-viewlab { font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-left: 6px; }",
     '.cplfund-actions [data-viewmode][aria-pressed="true"] { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }',
     ".cplfund h3 { color: var(--navy-primary); margin: 22px 0 10px; font-size: 1.15rem; }",
@@ -565,6 +569,15 @@
     // and hosts this toolbar (the My CPL Funding view switch, 2026-09-30).
     ".cplfund-seg button.on { background: var(--seal-blue, #002F6D); color: var(--white, #FFFFFF); font-weight: 600; }",
     ".cplfund-count { font-size: .85rem; color: var(--text-muted); }",
+    // My CPL Funding for a district (2026-09-30): its line, then each
+    // institution's block with room between them. The explainer defines only
+    // its own tokens, so every token here carries a fallback.
+    ".cplfund-onedist { margin: 4px 0 12px; }",
+    ".cplfund-onedist h3 { margin: 0 0 2px; font-size: 1.1rem; color: var(--text-strong, #1C1C1A); }",
+    ".cplfund-onedist p { margin: 0; }",
+    ".cplfund-onemember-h { margin: 0 0 8px; font-size: 1rem; color: var(--text-strong, #1C1C1A); }",
+    ".cplfund-onemember + .cplfund-onemember { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border, rgba(28,28,26,.14)); }",
+    ".cplfund-toolbar #cplFundOnePdf[disabled] { opacity: .55; cursor: not-allowed; }",
     ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); }",
     "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; }",
     // FIXED LAYOUT (Sam's College Dashboard mockup, 2026-09-28): tableHtml()
@@ -1172,7 +1185,10 @@
     // The mount div carries an inline padding:28px (the pre-boot placeholder) —
     // reclaim it on small screens. !important is needed to beat the inline style
     // (the mount lives in the HTML, which this JS-only change doesn't touch).
-    "  #cplFundingMount { padding: 12px !important; }",
+    // COBI's mount only: the explainer's mount carries no placeholder padding,
+    // and this rule set its table 12px inside the text column at phone widths
+    // (margin audit, 2026-09-30).
+    "  #tab-implementation-funding #cplFundingMount { padding: 12px !important; }",
     "  .cplfund-card { padding: 11px 12px; }",
     "  .cplfund-card .v { font-size: 1.15rem; }",
     "}",
@@ -1322,8 +1338,9 @@
   var WHATIF = {};                      // per-browser what-if overlays (localStorage)
   var activeProject = DEFAULT_PID;
   var activeScenario = "Scenario 1";
-  // Has this browser CHOSEN a scenario? Until it has, it reads the published
-  // one (publishedScenario). Set by a stored selection or any switch.
+  // Has the curator CHOSEN a scenario this visit? Until then the tab reads the
+  // published one (publishedScenario). Set by any switch; a reload clears it
+  // (Sam, 2026-09-30: the published scenario is the view that opens).
   var selectionStored = false;
   var SHARED = {};      // → SUPA_CONFIG.projects[activeProject].scenarios[activeScenario]
   var SCENARIO = {};    // → WHATIF[activeProject + "::" + activeScenario]
@@ -1437,6 +1454,12 @@
       return v ? String(v).trim() : "";
     } catch (e) { return ""; }
   }
+  function fundviewParam() {
+    try {
+      var v = new URLSearchParams(window.location.search).get("fundview");
+      return v ? String(v).trim().toLowerCase() : "";
+    } catch (e) { return ""; }
+  }
   function publishedScenario() {
     var p = activeProjectObj();
     var pv = publicSurface() ? previewScenarioParam() : "";
@@ -1464,8 +1487,8 @@
   function syncActive() {
     // A public surface reads the flagship project's PUBLISHED scenario, never
     // this browser's selection or its what-if overlay: the page has to show a
-    // college what the Chancellor's Office published. A browser that never
-    // chose a scenario starts on the published one too.
+    // college what the Chancellor's Office published. The tab opens on the
+    // published one too, and a curator's pick holds for the visit.
     if (publicSurface() && SUPA_CONFIG && SUPA_CONFIG.projects && SUPA_CONFIG.projects[DEFAULT_PID]) {
       activeProject = DEFAULT_PID;
     }
@@ -1495,9 +1518,12 @@
   function loadSelection() {
     try {
       var sel = JSON.parse(localStorage.getItem(SELECTION_KEY) || "null");
+      // THE PUBLISHED SCENARIO OPENS (Sam, 2026-09-30: "make the published
+      // scenario the default view that opens"). A curator's scenario pick
+      // holds for the visit; every load starts on the published one, so the
+      // stored scenario is no longer restored here.
       if (sel && typeof sel === "object") {
         if (sel.project) activeProject = sel.project;
-        if (sel.scenario) { activeScenario = sel.scenario; selectionStored = true; }
       }
       var wf = JSON.parse(localStorage.getItem(WHATIF_KEY) || "null");
       if (isPlainObj(wf)) WHATIF = wf;
@@ -3742,7 +3768,9 @@
   // control only a signed-in curator may see.
   function publicPreview() {
     if (window.CPL_FUNDING_PUBLIC || embedMode()) return false;
-    return typeof state === "object" && !!state && !!state.previewPublic && unlocked();
+    // "As colleges see it" drops every curator control from the preview, so
+    // the curator reads exactly what a college reads.
+    return typeof state === "object" && !!state && !!state.previewPublic && !state.publicEye && unlocked();
   }
   // Every curate/edit affordance, as ONE registry. Public mode sweeps these out
   // of the DOM after each render rather than relying on each emitter to check
@@ -9217,7 +9245,13 @@
     prioDeleting: null, // card id ("m<src>") whose Delete confirmation is open
     prioDeleteFocus: null, // that card id, or "back:<id>" after Keep it: where focus goes next render
     measureEditing: false, // the "Measured from" list's label editor is open
-    previewPublic: false,   // reviewer previewing the public rendering (session-only, never persisted)
+    // The Public view can be opened by link: ?fundview=public (the funding
+    // videos' "Back to the public view", 2026-09-30).
+    previewPublic: fundviewParam() === "public",   // the public rendering (session-only, never persisted)
+    // AS COLLEGES SEE IT (Sam, 2026-09-30): "a button to the Public View that
+    // allows curators to see the public view as they see it (without the
+    // curator choices showing)", flipping back to edit. Session-only.
+    publicEye: false,
     docType: "memo",    // memo | letter | report | brief
     textEditing: null,  // key of the prose block a signed-in reviewer is editing, else null
     cardRenaming: null, // card id whose custom-title field Rename opened (2026-09-24), else null
@@ -11846,6 +11880,25 @@
       segHtml("cplFundCollegeView", [{ val: "all", label: "All institutions" },
         { val: "one", label: "My CPL Funding" }], oneCollegeView() ? "one" : "all") + "</div>";
   }
+  // The chooser offers every institution and, for a district of two or more,
+  // the district (Sam, 2026-09-30: "allowing users to select their college or
+  // district"). A district choice is stored as "d:<district>".
+  var ONE_DISTRICT = "d:";
+  function districtMembers(d) {
+    return base().colleges.filter(function (c) { return c.district === d; })
+      .map(function (c) { return c.college; })
+      .sort(function (a, b) { return dispName(a).localeCompare(dispName(b)); });
+  }
+  function multiDistricts() {
+    var n = {};
+    base().colleges.forEach(function (c) { if (c.district) n[c.district] = (n[c.district] || 0) + 1; });
+    return Object.keys(n).filter(function (d) { return n[d] > 1; })
+      .sort(function (a, b) { return districtShort(a).localeCompare(districtShort(b)); });
+  }
+  function oneChoiceName(v) {
+    v = String(v || "");
+    return v.indexOf(ONE_DISTRICT) === 0 ? districtShort(v.slice(ONE_DISTRICT.length)) : dispName(v);
+  }
   function oneCollegeHtml() {
     var opts = base().colleges.slice().sort(function (a, b) {
       return dispName(a.college).localeCompare(dispName(b.college));
@@ -11853,10 +11906,64 @@
       return '<option value="' + esc(c.college) + '"' + (c.college === state.oneCollege ? " selected" : "") + ">" +
         esc(dispName(c.college)) + "</option>";
     }).join("");
-    return '<div class="cplfund-toolbar"><label for="cplFundOnePick">Institution</label> ' +
-      '<select id="cplFundOnePick"><option value="">Choose an institution</option>' + opts + "</select></div>" +
+    var dopts = multiDistricts().map(function (d) {
+      var v = ONE_DISTRICT + d;
+      return '<option value="' + esc(v) + '"' + (v === state.oneCollege ? " selected" : "") + ">" +
+        esc(districtShort(d)) + "</option>";
+    }).join("");
+    return '<div class="cplfund-toolbar"><label for="cplFundOnePick">Institution or district</label> ' +
+      '<select id="cplFundOnePick"><option value="">Choose an institution or district</option>' +
+      '<optgroup label="Institutions">' + opts + "</optgroup>" +
+      (dopts ? '<optgroup label="Districts">' + dopts + "</optgroup>" : "") + "</select>" +
+      // A PDF of what the view shows (Sam, 2026-09-30: "add a pdf button on
+      // all the My CPL Funding views").
+      '<button type="button" class="cplfund-optbtn" id="cplFundOnePdf"' + (state.oneCollege ? "" : " disabled") +
+      ' title="Open a print-ready copy of this funding view, then choose Save as PDF">Save as PDF</button></div>' +
       '<div id="cplFundOnePanel" class="cplfund-onepanel" aria-live="polite">' +
-      '<p class="dk">' + (state.oneCollege ? "Loading this institution&#39;s funding&hellip;" : "Choose an institution to see its funding.") + "</p></div>";
+      '<p class="dk">' + (state.oneCollege ? "Loading this funding view&hellip;" : "Choose an institution or district to see its funding.") + "</p></div>";
+  }
+  // A district's line above its institutions' blocks: the same figures its
+  // subtotal row carries in the table, through the same public dollar rule.
+  function oneDistrictHeadHtml(d, members) {
+    var saved = state.q;
+    state.q = "";
+    var rows;
+    try { rows = rowsFiltered(); } finally { state.q = saved; }
+    var mine = rows.filter(function (r) { return r.district === d && members.indexOf(r.college) !== -1; });
+    var g = groupRowsByDistrict(mine)[0];
+    var line = members.length + " institutions";
+    if (g) {
+      line += " &middot; max award " + fmtMoney(g.total || 0) + " in total &middot; current total " +
+        earnedMoney(cellFig(g, "earned_total"));
+    }
+    return '<div class="cplfund-onedist"><h3>' + esc(districtShort(d)) + "</h3>" +
+      '<p class="dk">' + line + ". Each institution&#39;s own funding follows.</p></div>";
+  }
+  // Open My CPL Funding from the top of a public rendering (Sam, 2026-09-30:
+  // "Add another copy of the My CPL Funding view button ... to the top of the
+  // public view tab and Explainer view"). It switches the institution section
+  // to the one-institution view, opens the section, and puts the reader on the
+  // chooser.
+  function showMyFunding() {
+    if (!publicMode()) return false;
+    state.collegeView = "one";
+    saveSectionState("college", true);
+    render();
+    var pick = document.getElementById("cplFundOnePick");
+    if (pick) {
+      if (typeof pick.scrollIntoView === "function") pick.scrollIntoView({ block: "center" });
+      pick.focus();
+    }
+    return !!pick;
+  }
+  // The PDF of the one-institution view: the chosen institution's block, or a
+  // district's line and its institutions' blocks, printed by My College's own
+  // printer so every My CPL Funding view prints one way.
+  function printOne() {
+    var el = document.getElementById("cplFundOnePanel");
+    var B = window.CPL_COLLEGE_BRIEFING;
+    if (!el || !state.oneCollege || !B || typeof B.printPanel !== "function") return false;
+    return B.printPanel(el, "My CPL Funding: " + oneChoiceName(state.oneCollege));
   }
   function loadScriptCompat(src, globalName, cb) {
     if (window[globalName]) { cb(); return; }
@@ -11879,6 +11986,18 @@
       if (!now || state.oneCollege !== key) return;   // the reader moved on
       if (!B || typeof B.fundingPanel !== "function") {
         now.innerHTML = '<p class="dk">This view did not load. Choose All institutions for every institution&#39;s figures.</p>';
+        return;
+      }
+      if (key.indexOf(ONE_DISTRICT) === 0) {
+        var d = key.slice(ONE_DISTRICT.length), members = districtMembers(d);
+        // Each block under its institution's name: the block itself never
+        // names the institution, because the chooser does in the one-college view.
+        now.innerHTML = oneDistrictHeadHtml(d, members) + members.map(function (m, i) {
+          return '<section class="cplfund-onemember" aria-labelledby="cplFundOneM' + i + '">' +
+            '<h4 class="cplfund-onemember-h" id="cplFundOneM' + i + '">' + esc(dispName(m)) + "</h4>" +
+            '<div data-onemember="' + i + '"></div></section>';
+        }).join("");
+        members.forEach(function (m, i) { B.fundingPanel(now.querySelector('[data-onemember="' + i + '"]'), m); });
         return;
       }
       B.fundingPanel(now, key);
@@ -12119,12 +12238,26 @@
         '" title="The MAP-team rendering — dials, diagnostics, and the Report sub-view.">Internal</button>' +
         '<button type="button" class="cplfund-optbtn" data-viewmode="public" aria-pressed="' + (!!state.previewPublic) +
         '" title="Preview what colleges see — the reviewer-only controls drop out; everyone else sees the page as it is.">Public</button>';
+      // In the Public view a curator still sees the curator-only choices
+      // (Exclude, Position, the explainer's section list). This flips them off
+      // and back, so an edit can be checked the way a college reads it.
+      if (state.previewPublic && unlocked()) {
+        view += '<button type="button" class="cplfund-optbtn" id="cplFundPublicEye" aria-pressed="' + (!!state.publicEye) +
+          '" title="' + (state.publicEye
+            ? "Showing the page exactly as colleges see it. Press again to bring back the curator choices."
+            : "Hide the curator choices and show the page exactly as colleges see it.") +
+          '">As colleges see it</button>';
+      }
     }
     return '<div class="cplfund-actions" role="toolbar" aria-label="Page actions">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundXall">' +
         (anySectionOpenNow() ? "Collapse all sections" : "Expand all sections") + "</button>" +
       (publicMode() ? "" :
         '<button type="button" class="cplfund-optbtn" id="cplFundDraftMemo" title="Open the draft memo — the Report sub-view, carrying this allocation.">Draft memo</button>') +
+      // My CPL Funding at the top of the Public view (Sam, 2026-09-30); the
+      // explainer carries its own in its header.
+      (publicMode() ? '<button type="button" class="cplfund-optbtn" id="cplFundMyFundingTop" ' +
+        'title="Choose your college or district and see its funding">My CPL Funding</button>' : "") +
       '<button type="button" class="cplfund-optbtn" id="cplFundPdfTop" title="Open a print-ready view of the whole tab, then use your browser&#39;s Print and choose Save as PDF">Save as PDF</button>' +
       // Refresh (Sam, 2026-09-30): the Internal view alone, where the edits
       // are made. It re-reads the saved model here and in every other open
@@ -12903,6 +13036,10 @@
       render();
     });
     paintOnePanel();
+    var onePdf = document.getElementById("cplFundOnePdf");
+    if (onePdf) onePdf.addEventListener("click", printOne);
+    var myTop = document.getElementById("cplFundMyFundingTop");
+    if (myTop) myTop.addEventListener("click", showMyFunding);
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
     // The Lane seg control is retired (R1, 2026-08-31); the Allocation basis
     // control with it (2026-09-15) — its writer would have nothing to write to
@@ -12986,6 +13123,13 @@
         if (!!state.previewPublic === pub) return;
         state.previewPublic = pub; render();
       });
+    });
+    var eyeBtn = document.getElementById("cplFundPublicEye");
+    if (eyeBtn) eyeBtn.addEventListener("click", function () {
+      state.publicEye = !state.publicEye;
+      render();
+      var again = document.getElementById("cplFundPublicEye");
+      if (again) again.focus();
     });
 
     // Column show/hide checkboxes — toggle, persist, refresh the table only (the
@@ -13733,6 +13877,8 @@
 
   window.CPL_FUNDING_TAB = {
     boot: boot, render: render, _state: state,
+    // The explainer's header button and the tab's top button open My CPL Funding.
+    showMyFunding: showMyFunding,
     // test hook: the ledger store, so suites can exercise the project-pool
     // breakdown's loaded state without a network (NO_REMOTE keeps fetch out).
     _ledger: LEDGER,

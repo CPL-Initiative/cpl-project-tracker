@@ -31,6 +31,10 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 8 (S307, 2026-09-30, SHEET_ID 2026-09-30-open-asks-8): one card, whether the CO style guide
+gets a curated copy in the public knowledge base. Published at
+https://claude.ai/artifact/7sb3cMt8iU9YWmjKyyHCT1 (capabilities db + comments); read its replies first.
+
 Sheet 7 (S307, 2026-09-30, SHEET_ID 2026-09-30-open-asks-7): one card, how a college's staff sign
 in to see its own reported expenditures (the Reporting box's college half). Published at
 https://claude.ai/artifact/6VafxJwkrVpVyL8TCWFpNY (capabilities db + comments). Sam answered it at
@@ -94,8 +98,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-7.html')
-SHEET_ID = '2026-09-30-open-asks-7'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-8.html')
+SHEET_ID = '2026-09-30-open-asks-8'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -553,6 +557,33 @@ def items():
 
     # Sheet 7's one card (S307) left with its ruling: Sam chose MAP's two
     # contacts at 17:09Z on 2026-09-30, and the funding lane records it.
+
+    # Sheet 8 (S307): the CO style guide, shared "for the KB".
+    I.append({
+        'lane': 'governance-team-enablement',
+        'title': "The CO style guide in the public knowledge base",
+        'ref': 'governance-team-enablement · reference-cccco-style-guide · cpl-knowledge-base CURATION.md',
+        'facts': (
+            "You shared the Chancellor's Office 2025 Communications Style Guide for the knowledge base and for our "
+            "writing and CO colors and identity. It now lives in the vault's resources beside the CO's 2018 color "
+            "palette, and an internal reference note distills it: the names (never CCC or CCCCO), numbers, dates, "
+            "punctuation, inclusive language, the palette with each color's contrast on white, the typefaces and the "
+            "logo rules. The note also records where our pages depart from the guide, which is internal. The public "
+            "knowledge base takes content only through its curation pipeline, as a draft pull request a person reviews "
+            "and merges."),
+        'why': (
+            "Colleges and partners who write about CPL would find the Chancellor's Office usage in one place, beside "
+            "the glossary they already read. The guide and the palette are the Office of Communications and "
+            "Marketing's own documents, so a public page should point to them on cccco.edu and leave their "
+            "distribution to that office."),
+        'rec': (
+            "<strong>A curated draft.</strong> A public page carrying the usage rules and names, linking to the "
+            "guide and the palette on cccco.edu rather than copying either file, opened as a draft pull request for "
+            "your review. Our own departures from the guide stay in the internal note. <em>It might be wrong if</em> "
+            "the guide circulates inside the Chancellor's Office only; then it stays internal."),
+        'chips': chips(('Curate a public draft', 'curate'), ('Keep it internal', 'internal'), CH_LATER),
+        'evidence': [policy()],
+    })
     return I
 
 

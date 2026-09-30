@@ -808,6 +808,7 @@
         + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;font-size:.8rem;cursor:pointer;"
         + "white-space:nowrap;}",
       ".cb-act:hover{border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+      ".cb-pdfrow{display:flex;justify-content:flex-end;margin:0 0 8px;}",
       ".cb-act-q{font-size:.76rem;padding:4px 11px;}",
       ".cb-allctl{display:flex;gap:8px;margin:12px 0 0;}",
 
@@ -2540,6 +2541,12 @@
         + "college allocation below, so this institution has its own route to funding.</div>";
     } else if (f) {
       // (a) the $50,000 ESS 25-82 seed grant — already distributed
+      // The PDF (Sam, 2026-09-30). The funding tab's and the explainer's views
+      // carry theirs in their own toolbar, beside the chooser.
+      if (!ctx.standalone) {
+        fundBody += '<div class="cb-pdfrow" data-noprint="1"><button type="button" class="cb-act" data-cbpdf="1" ' +
+          'title="Open a print-ready copy of this funding, then choose Save as PDF">Save as PDF</button></div>';
+      }
       fundBody += '<div class="cb-fund">';
       fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tag">ESS 25-82 · distributed Spring 2026</span></header>';
       if (f.grant.declined) {
@@ -3514,6 +3521,12 @@
   }
 
   function wire(root) {
+    Array.prototype.forEach.call(root.querySelectorAll("[data-cbpdf]"), function (b) {
+      b.onclick = function () {
+        var sec = b.closest(".cb-sec-b") || b.parentNode.parentNode;
+        printPanel(sec, "My CPL Funding: " + (state.college || ""));
+      };
+    });
     Array.prototype.forEach.call(root.querySelectorAll("[data-scope]"), function (b) {
       b.onclick = function () { setScope(b.getAttribute("data-scope"), root); };
     });
@@ -3706,6 +3719,47 @@
     var M = fundingModule();
     var s = (M && typeof M._scenario === "function") ? M._scenario() : null;
     return { surface: surface, detail: "redrawn for " + state.college + (s && s.name ? " (" + s.name + ")" : "") };
+  }
+
+  /* A PDF of a My CPL Funding view (Sam, 2026-09-30: "add a pdf button on all
+   * the My CPL Funding views"). One printer for every view: My College's block,
+   * and the funding tab's and the explainer's one-institution view. It opens a
+   * print window carrying this page's own stylesheets under the light theme
+   * (a PDF reads on paper whatever theme the reader browses in), puts the view
+   * in it with every fold open and every control removed, and opens the
+   * browser's print dialog, where the reader chooses Save as PDF. Returns
+   * false when the browser blocks the window. */
+  function printPanel(el, title) {
+    if (!el) return false;
+    var w = window.open("", "_blank");
+    if (!w) return false;
+    var head = "";
+    Array.prototype.forEach.call(document.querySelectorAll('link[rel="stylesheet"], style'), function (n) {
+      head += n.tagName === "LINK" ? '<link rel="stylesheet" href="' + esc(n.href) + '">' : n.outerHTML;
+    });
+    var body = el.cloneNode(true);
+    Array.prototype.forEach.call(body.querySelectorAll("details"), function (d) { d.setAttribute("open", ""); });
+    Array.prototype.forEach.call(body.querySelectorAll("button, select, input, textarea, [data-noprint]"), function (n) {
+      if (n.parentNode) n.parentNode.removeChild(n);
+    });
+    var M = fundingModule();
+    var s = (M && typeof M._scenario === "function") ? M._scenario() : null;
+    var asOf = new Date().toISOString().slice(0, 10);
+    var html = '<!doctype html><html lang="en" data-theme="light"><head><meta charset="utf-8">' +
+      '<base href="' + esc(document.baseURI) + '"><title>' + esc(title) + "</title>" + head +
+      "<style>@page{margin:14mm}html,body{background:var(--white,#FFFFFF)}body{margin:0;padding:0 2mm}" +
+      ".cb-print-h{margin:0 0 4px;font-size:1.3rem}.cb-print-m{margin:0 0 14px;font-size:.85rem;color:var(--text-body,#3A3A36)}</style>" +
+      '</head><body><div id="college-briefing-root" class="cb-print">' +
+      '<h1 class="cb-print-h">' + esc(title) + "</h1>" +
+      '<p class="cb-print-m">CPL Implementation Funding' + (s && s.name ? ", " + esc(s.name) : "") +
+      ", as of " + esc(asOf) + ". The funding model computes every figure; the page reads it live.</p>" +
+      body.innerHTML + "</div></body></html>";
+    w.document.open();
+    w.document.write(html);
+    w.document.close();
+    if (typeof w.focus === "function") w.focus();
+    setTimeout(function () { try { w.print(); } catch (e) { /* the reader closed it */ } }, 500);
+    return true;
   }
 
   /* The block alone, for a page that is not My College: the funding explainer
@@ -4369,6 +4423,8 @@
     // Public: the My CPL Funding block for one institution, on any page that
     // has loaded cpl_funding.js (the explainer and the tab's Public view).
     fundingPanel: fundingPanel,
+    // Public: the printer every My CPL Funding view shares.
+    printPanel: printPanel,
     _publishedScenarioOf: publishedScenarioOf,
     _YEAR: YEAR
   };

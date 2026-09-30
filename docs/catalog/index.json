@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 500,
+   "count": 501,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9774,6 +9774,25 @@
      "updated": "2026-09-01"
     },
     {
+     "created": "2026-09-30",
+     "governs": [],
+     "path": "docs/kb-notes/reference-cccco-style-guide.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "style-guide",
+      "house-voice",
+      "writing",
+      "naming",
+      "brand",
+      "colors",
+      "cccco"
+     ],
+     "title": "The CCCCO style guide and brand basics \u2014 the usage, names and colors our writing follows",
+     "type": "reference",
+     "updated": "2026-09-30"
+    },
+    {
      "created": "2026-09-05",
      "governs": [],
      "path": "docs/kb-notes/reference-the-cpl-guiding-question.md",
@@ -19078,5 +19097,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 994
+ "total": 995
 }
