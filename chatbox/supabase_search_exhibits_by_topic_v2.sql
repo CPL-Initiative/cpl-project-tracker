@@ -98,6 +98,33 @@ create or replace function public.cx_search_norm(t text)
 returns text language sql immutable parallel safe as
 $$ select regexp_replace(coalesce(t, ''), '[/\\|;:,()\[\]]+', ' ', 'g') $$;
 
+-- ⚠️ A STORED VALUE DOES NOT FOLLOW ITS FUNCTION (2026-09-30). coci_college_programs
+-- stores four tsvectors built with cx_search_norm (STORED VECTORS in
+-- chatbox/supabase_search_college_programs.sql). Postgres accepts the CREATE OR
+-- REPLACE above while those columns depend on it and leaves their rows as they
+-- were, so they are recomputed here, right after the definition. A no-op when
+-- nothing changed; skipped until the programs file has added the columns. The
+-- four expressions must stay identical to the column definitions
+-- (tests/sierra_program_search_stored_vectors.test.js compares them).
+do $$
+begin
+  if exists (select 1 from information_schema.columns
+              where table_schema = 'public' and table_name = 'coci_college_programs'
+                and column_name = 'tsv_title_en') then
+    update public.coci_college_programs
+       set tsv_title_en = default, tsv_title_simple = default,
+           tsv_code_en = default, tsv_code_simple = default
+     where tsv_title_en is distinct from
+             (to_tsvector('english', public.cx_search_norm(program_title)))
+        or tsv_title_simple is distinct from
+             (to_tsvector('simple', public.cx_search_norm(program_title)))
+        or tsv_code_en is distinct from
+             (to_tsvector('english', public.cx_search_norm(coalesce(top_title,'') || ' ' || coalesce(cip_title,''))))
+        or tsv_code_simple is distinct from
+             (to_tsvector('simple', public.cx_search_norm(coalesce(top_title,'') || ' ' || coalesce(cip_title,''))));
+  end if;
+end $$;
+
 create index if not exists chatbox_exhibits_title_trgm
   on chatbox_exhibits using gin (cx_search_norm(exhibit_title) gin_trgm_ops);
 

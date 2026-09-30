@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-503 document(s).
+505 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -167,6 +167,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A retrieval route costs what the synonym table decides, and the batch waits for the slowest route](../kb-notes/methodology-a-retrieval-route-costs-what-the-synonym-table-decides.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A revoke must name every role the grant named — on this Supabase project a new function is callable by anon by name, not only through PUBLIC](../kb-notes/methodology-a-revoke-must-name-every-role-the-grant-named.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [A rotating credential cannot be cached](../kb-notes/methodology-a-rotating-credential-cannot-be-cached.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A rule that is right for reading can be wrong for writing](../kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A rule you wrote down is not a rule you applied](../kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md) | methodology | published | 2026-08-21 | 2026-09-04 |
@@ -198,6 +199,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A sticky header sticks only inside a box that scrolls](../kb-notes/methodology-a-sticky-header-sticks-only-inside-a-box-that-scrolls.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [A store's echo is not your state — clone what a snapshot delivers](../kb-notes/methodology-a-stores-echo-is-not-your-state.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A store's freshness tracks whether its update is unconditional](../kb-notes/methodology-freshness-tracks-conditionality-not-intent.md) | methodology | published | 2026-08-29 | 2026-08-29 |
+| [A stored value does not follow its function — precompute to remove per-row variance, and recompute whenever the function changes](../kb-notes/methodology-a-stored-value-does-not-follow-its-function.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [A style rule must reach only the markup that supplies its inputs](../kb-notes/methodology-a-style-rule-must-reach-only-the-markup-that-supplies-its-inputs.md) | methodology | published | 2026-09-29 | 2026-09-29 |
 | [A styling class is an API, so borrowing one joins every selector that reads it](../kb-notes/methodology-a-styling-class-is-an-api.md) | methodology | published | 2026-09-12 | 2026-09-12 |
 | [A successful import is not a correct one](../kb-notes/methodology-a-successful-import-is-not-a-correct-one.md) | methodology | published | 2026-08-08 | 2026-08-08 |
@@ -232,7 +234,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Adversarially verify an id crosswalk before a live PK renumber](../kb-notes/methodology-adversarial-verify-crosswalk-before-live-rekey.md) | methodology | published | 2026-07-21 | 2026-07-21 |
 | [Agreement is not corroboration when the behavior is systematic](../kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Alias maps are permutations, not graphs: resolution semantics for stacked re-keys](../kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 |  |
-| [An absence in the data is a statement about the data — say what the catalog shows, never that the county has none](../kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [An absence in the data is a statement about the data — say what the catalog shows, never that the county has none](../kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md) | methodology | published | 2026-09-18 | 2026-09-30 |
 | [An accessibility sweep does not measure alignment; probe the edges](../kb-notes/methodology-an-a11y-sweep-does-not-measure-alignment.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [An affordance gated on a problem is invisible when there isn't one](../kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [An articulation's college list belongs to the group, not to each course in it](../kb-notes/methodology-an-articulation-college-list-belongs-to-the-group-not-the-course.md) | methodology | published | 2026-09-14 | 2026-09-14 |

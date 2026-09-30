@@ -35,8 +35,8 @@ Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
-Allow-Once storm: its source was the Supabase connector's Tool permissions in
-the claude.ai account, changed 2026-09-28; S298's new-session test closes it) ·
+Allow-Once storm: its source was the Supabase connector's Tool permissions,
+changed 2026-09-28; S298's new-session test closes it) ·
 [doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents and
 measurements behind these rules) ·
 [credential_watch_agent](docs/reference/credential_watch_agent.md) (the
@@ -253,12 +253,11 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    ([`adr-student-detail-aggregate-disclosure-control`](docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md);
    the CER-counts and funding-metrics privacy ADRs sit beside it).
    (b) `kb_curation` reads via PostgREST
-   must be Range-paginated (#718). (b2) **`revoke ... on function f() from anon,
-   authenticated` does not work** — Postgres grants EXECUTE to **PUBLIC** at
-   creation and anon inherits through it, so the statement protects nothing.
-   **Name `public`**, and check `has_function_privilege('service_role', …)`
-   holds an explicit grant before you revoke PUBLIC, or the same statement
-   breaks the cron; `tests/supabase_function_grants_test.py` lints it. (c) The
+   must be Range-paginated (#718). (b2) **Close a function with `revoke ... from public, anon,
+   authenticated`**: PUBLIC holds EXECUTE from creation and default
+   privileges here grant anon by name, so either alone leaves it open. First
+   check `service_role` holds an explicit grant (`has_function_privilege`),
+   or the revoke breaks the cron. (c) The
    sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
    MCP tools. Worked examples:
    `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
@@ -755,7 +754,7 @@ stays here.
 
 > **Anything waiting on Sam is also a card on a sheet.** The standing one,
 > `kb/_build_open_asks_decision_sheet.py` →
-> [XnHFDLys7WRGjHC26NY9KP](https://claude.ai/artifact/XnHFDLys7WRGjHC26NY9KP) (sheet 9),
+> [B6Gnzmha8kArgiSQw1SdTe](https://claude.ai/artifact/B6Gnzmha8kArgiSQw1SdTe) (sheet 12),
 > **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
 > answers one, change that lane's marker in the same PR, or the sheet asks again
 > ([`decision_sheets`](docs/reference/decision_sheets.md)).

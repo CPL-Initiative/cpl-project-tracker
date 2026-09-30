@@ -5774,3 +5774,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ## INDEX update history, moved 2026-09-30 (S305)
 
 - **2026-09-27 (S295 SkyHarbor, second checkpoint):** Sam's eight CLAUDE.md verdicts carried out ([#1712](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1712): the context meter installs at the session root through `check_hooks_live.py --fix`; [#1713](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1713): the emphasis sweep; vault #185, #186; knowledge base #23 waits for his merge), and the standing open-asks sheet reconciled and published fresh ([#1714](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1714)): seven of its cards were answered rulings, two contradicting his August answers. KB note extended: `methodology-a-settled-ruling-does-not-enforce-itself`. Handoff 296.
+
+## INDEX update history, moved 2026-09-30 (S308)
+
+- **2026-09-29 — S300 (SkyLoom):** two ports of the College Dashboard reconciled: what #1731 carried that #1729 lacked, and S299's five follow-ups, landed as [#1732](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1732) (TBA everywhere, the grants table's layout, the printed explainer, the CSV's Demonstrated); Sierra Training round 1 ported ([#1733](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1733)); seven asks on one sheet; the funding lane compacted under its budget. S299's own handoff carried to main as `session_300_handoff.md`.

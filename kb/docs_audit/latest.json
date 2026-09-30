@@ -10,48 +10,48 @@
     "other": 150000
   },
   "summary": {
-    "files": 1012,
-    "bytes": 10739921,
+    "files": 1016,
+    "bytes": 10786947,
     "over_budget": 6,
-    "handoff_max": 309,
+    "handoff_max": 310,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59984,
+    "always_loaded_bytes": 59975,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59984,
+        "bytes": 59975,
         "over": 0
       },
       "other": {
-        "files": 116,
-        "bytes": 3275882,
+        "files": 117,
+        "bytes": 3295102,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 11660,
+        "bytes": 12019,
         "over": 0
       },
       "lessons": {
         "files": 76,
-        "bytes": 2179183,
+        "bytes": 2180632,
         "over": 2
       },
       "kb_note": {
-        "files": 505,
-        "bytes": 2559323,
+        "files": 507,
+        "bytes": 2569341,
         "over": 0
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 270312,
+        "bytes": 275695,
         "over": 1
       },
       "handoff": {
-        "files": 280,
-        "bytes": 2383577,
+        "files": 281,
+        "bytes": 2394183,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 56
     },
     "vault": {
-      "files": 3330,
-      "bytes": 1690858436,
-      "heavy_bytes": 780073630,
+      "files": 3346,
+      "bytes": 1692195504,
+      "heavy_bytes": 780194290,
       "heavy_share": 0.461,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -228,13 +228,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 349847,
+        "bytes": 356584,
         "limit": 150000,
         "lane": "other",
-        "over_by": 199847,
-        "ratio": 2.33
+        "over_by": 206584,
+        "ratio": 2.38
       },
-      "message": "349,847 B is 2.3× the other budget (150,000 B) — candidate for compaction",
+      "message": "356,584 B is 2.4× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/cpl_funding_lessons_archive.md"
     },
     {
@@ -411,13 +411,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 687790,
+        "bytes": 688407,
         "limit": 150000,
         "lane": "other",
-        "over_by": 537790,
+        "over_by": 538407,
         "ratio": 4.59
       },
-      "message": "687,790 B is 4.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "688,407 B is 4.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -495,10 +495,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 82242138,
+        "bytes": 82362798,
         "kind": "dir"
       },
-      "message": "directory totals 82,242,138 B inside the vault"
+      "message": "directory totals 82,362,798 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
