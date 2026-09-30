@@ -4729,7 +4729,10 @@
   // is the SQL of record): a correction is a newer report for the same year
   // and the newest counts; a withdrawal is a newer row with withdrawn = true,
   // after which the year counts as unreported. The history keeps every row.
-  // The college's own view (My College) waits on how its staff sign in.
+  // The college's own view is My College (college_briefing.js): the people MAP
+  // lists as a college's CPL coordinator or primary CPL contact read its rows
+  // through cpl_funding_my_reports(), and the page marks them with
+  // markReports() below, so both views apply one "newest counts" rule.
   var REPORT_CATS = [
     { k: "c1000", label: "1000 Instructional salaries" },
     { k: "c2000", label: "2000 Noninstructional salaries" },
@@ -4776,7 +4779,9 @@
   // One college's rows oldest first, each marked: the newest row per year
   // counts unless it is a withdrawal.
   function reportsFor(college) {
-    var rows = REPORTS.filter(function (r) { return r.college === college; });
+    return markReports(REPORTS.filter(function (r) { return r.college === college; }));
+  }
+  function markReports(rows) {
     var newest = {};
     rows.forEach(function (r, i) { newest[r.fiscal_year] = i; });
     return rows.map(function (r, i) {
@@ -13879,6 +13884,9 @@
     boot: boot, render: render, _state: state,
     // The explainer's header button and the tab's top button open My CPL Funding.
     showMyFunding: showMyFunding,
+    // The Reporting box's categories and its "newest report per year counts"
+    // rule, for My College's read-only view of a college's own reports.
+    reports: { cats: REPORT_CATS, mark: markReports, total: reportTotal },
     // test hook: the ledger store, so suites can exercise the project-pool
     // breakdown's loaded state without a network (NO_REMOTE keeps fetch out).
     _ledger: LEDGER,

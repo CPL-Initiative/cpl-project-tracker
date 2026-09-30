@@ -30,6 +30,34 @@
                      so deleting it turns the exemption back into a failure.
      seed / keyboard   functions; run in Playwright, not in the page.
    =========================================================================== */
+// Seeds My College's Reported expenditures section for the two targets below.
+async function seedMyCollegeReports(page, signin) {
+  await page.evaluate(() => new Promise((res) => {
+    if (window.CPL_FUNDING_TAB) return res();
+    const s = document.createElement("script"); s.src = "cpl_funding.js"; s.onload = res; s.onerror = res;
+    document.head.appendChild(s);
+  }));
+  await page.evaluate((signin) => {
+    const M = window.CPL_COLLEGE_BRIEFING, root = document.getElementById("college-briefing-root");
+    if (!M || !root) return;
+    const N = { "Chaffey College": 9 };
+    M._state.data = { colleges: Object.keys(N), summaryByName: {}, nameToId: N, raw: { nameToId: N },
+      briefing: { unread: [], leads: [], programs: [], strategyTotal: 0, scenario: "Scenario 2", year: "1" } };
+    M._state.scope = "college"; M._state.college = "Chaffey College"; M._state.open = { reports: true };
+    const rep = (o) => Object.assign({ college_id: 9, college: "Chaffey", fiscal_year: "2026-27", withdrawn: false,
+      reported_by: "Pat Lee", reported_on: "2026-10-15", c1000: 42000, c2000: 18500, c3000: 12250, c4000: 3100,
+      c5000: 26000, c6000: 0, c7000: 0, c_indirect: 4800, recorded_at: "2026-10-16T00:00:00Z" }, o);
+    if (signin) { M._state.myReports = "signedout"; M._state.myRows = null; }
+    else {
+      M._state.myReports = "ready"; M._state.myEmail = "coord@chaffey.edu";
+      M._state.myRows = [rep({}), rep({ fiscal_year: "2027-28", withdrawn: true, c1000: 0, c2000: 0, c3000: 0, c4000: 0,
+        c5000: 0, c_indirect: 0, reported_by: null, reported_on: null, recorded_at: "2027-09-21T00:00:00Z" })];
+    }
+    M.render(root);
+  }, signin);
+  await page.waitForTimeout(400);
+}
+
 module.exports = {
   /* Served over http from the repo root — same-origin is load-bearing, not
      tidiness; the engine header says why. */
@@ -422,6 +450,29 @@ module.exports = {
       await page.waitForTimeout(900);
     },
     mayHideBelow: [],
+  },
+  /* ── My College: Reported expenditures (S308, 2026-09-30) ─────────────────
+     The Reporting box's college half. A contact MAP lists for a college reads
+     its reports, read only; everyone else gets the sign-in. The cobi target
+     opens My College on its scope question, so neither state is on screen
+     there. These two targets seed each state the way cpl_funding_my_reports()
+     would fill it (the sweep has no session to ask with); the sweep seeds once
+     per width, so each state is its own target. */
+  "my-college-reports": {
+    file: "index.html",
+    title: "My College: Reported expenditures, a contact's table",
+    routes: [{ hash: "college-briefing", name: "reports-table" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedMyCollegeReports(page, false),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "my-college-reports-signin": {
+    file: "index.html",
+    title: "My College: Reported expenditures, the sign-in",
+    routes: [{ hash: "college-briefing", name: "reports-signin" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedMyCollegeReports(page, true),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   },
 };
