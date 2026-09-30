@@ -47,6 +47,10 @@ const OC_REPORT = "The catalog data lists no Orange County community college cur
   + "Golden West, Cypress, and Saddleback do offer LVN-to-RN bridge programs, but those are for people who already hold an LVN license.";
 const OC_ARTIC = "No Orange County college has yet articulated a CNA credential toward LVN coursework, so any request there would be a first.";
 const SGV_ARTIC = "No San Gabriel Valley college has yet articulated CNA-to-LVN specifically, so your request would likely be a first for them.";
+// Recorded, run 36782710501 (2026-09-30 22:03 UTC): "no" matched inside "notes"
+// until the pattern's negation took a word boundary.
+const SGV_NOTES = "A few notes on the colleges in the San Gabriel Valley: Pasadena City College, Rio Hondo, and Citrus College "
+  + "all teach full LVN programs, and each is well positioned to review a CNA-to-LVN request.";
 
 if (RE_7C && RE_7S && fn) {
   check("7c: the recorded catalog report passes", !fails(OC_REPORT, RE_7C));
@@ -58,6 +62,10 @@ if (RE_7C && RE_7S && fn) {
   check("7c: an attributed report does not excuse a bare claim beside it",
     fails(OC_REPORT + " No Orange County college teaches LVN.", RE_7C));
   check("7s: the recorded articulation sentence passes", !fails(SGV_ARTIC, RE_7S));
+  check("7s: \"notes on the colleges in the San Gabriel Valley … teach full LVN\" passes (no word inside a word)",
+    !fails(SGV_NOTES, RE_7S));
+  check("7s: \"None of the colleges near the San Gabriel Valley run an LVN entry program\" still fails",
+    fails("None of the colleges near the San Gabriel Valley run an LVN entry program.", RE_7S));
   check("7s: \"No San Gabriel Valley college offers an LVN entry program\" still fails",
     fails("No San Gabriel Valley college offers an LVN entry program.", RE_7S));
   check("7s: \"I don't see a San Gabriel Valley college with vocational nursing\" still fails",
