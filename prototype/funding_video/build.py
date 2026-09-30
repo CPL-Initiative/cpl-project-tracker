@@ -21,6 +21,8 @@ HERE = pathlib.Path(__file__).resolve().parent
 ASSETS = HERE / 'assets'
 LOGO = HERE.parent.parent / 'sierra' / 'cpl-initiative-logo-navy.png'
 BASE = 'https://cpl-initiative.github.io/cpl-project-tracker/funding-model/'
+# The Implementation Funding tab opened on its Public view (cpl_funding.js reads ?fundview=public).
+PUBLIC_VIEW = 'https://cpl-initiative.github.io/cpl-project-tracker/?fundview=public#implementation-funding'
 
 ACCESS = 'Applied CPL units from students who start at the CPL Portal, your college’s CPL landing page, or a batch upload.'
 COMPLETION = 'Transcribed CPL units, with the MAP counselor step checked.'
@@ -118,7 +120,7 @@ def uri(p):
     return 'data:image/png;base64,' + base64.b64encode(pathlib.Path(p).read_bytes()).decode()
 
 page = (src.replace('__PAGETITLE__', cfg['pageTitle']).replace('__EYEBROW__', cfg['eyebrow'])
-        .replace('__DEK__', cfg['dek']).replace('__EXPLAINER__', cfg['explainer']).replace('__LINKLABEL__', cfg['linkLabel']).replace('__MP4__', cfg['mp4'])
+        .replace('__DEK__', cfg['dek']).replace('__EXPLAINER__', cfg['explainer']).replace('__PUBLICVIEW__', PUBLIC_VIEW).replace('__LINKLABEL__', cfg['linkLabel']).replace('__MP4__', cfg['mp4'])
         .replace('__CFG__', json.dumps(cfg, ensure_ascii=False))
         .replace('__LOGO__', uri(LOGO)).replace('__MAP__', uri(ASSETS / 'map_wordmark.png')).replace('__ARROW__', uri(ASSETS / 'map_arrow.png')))
 (HERE / ('funding_in_motion%s.html' % suffix)).write_text(page, encoding='utf8')

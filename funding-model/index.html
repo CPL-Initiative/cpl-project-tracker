@@ -74,7 +74,10 @@ a:hover{text-decoration-thickness:2px}
 
 /* ── masthead ─────────────────────────────────────────────────────────── */
 header{border-bottom:1px solid var(--border); background:var(--surface-opaque)}
-.head{padding:clamp(30px,6vw,56px) 0 clamp(24px,4vw,36px)}
+/* Block padding only: the shorthand's 0 sides erased the .wrap gutter, so the
+   header ran flush to the screen edge on a phone and 28px left of the body
+   column on a desktop (margin audit, 2026-09-30). */
+.head{padding-block:clamp(30px,6vw,56px) clamp(24px,4vw,36px)}
 .head-top{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
   gap:10px 20px; margin-bottom:.55em}
 .head-top .eyebrow{margin:0}
@@ -352,6 +355,9 @@ section[hidden]{display:none}
          the controls, and repeats the table header on each page, so what
          saves is the whole explanation and not the screen. -->
     <p class="head-actions">
+      <!-- My CPL Funding at the top (Sam, 2026-09-30): opens the institution
+           table's one-institution view, below, on its chooser. -->
+      <a class="pdfbtn" id="my-funding-btn" href="#institutions">My CPL Funding</a>
       <a class="pdfbtn" id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 90-second introduction</a>
       <a class="pdf-note" id="video-mp4" href="../prototype/funding_video/20260926_CPL_Funding_in_Motion_v2.mp4" download>or download the video (MP4)</a>
       <!-- The narrated cut (Sam approved draft 4, sheet 4 card 4, 2026-09-29). It is Scenario 1
@@ -1266,6 +1272,13 @@ window.CPL_TABS = {
   window.addEventListener("afterprint", restoreFolds);
   var pdf = document.getElementById("pdf-btn");
   if (pdf) pdf.addEventListener("click", function () { window.print(); });
+  // My CPL Funding (Sam, 2026-09-30): the link still lands on the table when
+  // the model has not loaded; once it has, it opens the one-institution view.
+  var mine = document.getElementById("my-funding-btn");
+  if (mine) mine.addEventListener("click", function (e) {
+    var T = window.CPL_FUNDING_TAB;
+    if (T && typeof T.showMyFunding === "function" && T.showMyFunding()) e.preventDefault();
+  });
 })();
 </script>
 </body>

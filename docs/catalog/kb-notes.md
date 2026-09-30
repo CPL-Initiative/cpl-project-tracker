@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-500 document(s).
+502 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -233,6 +233,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Agreement is not corroboration when the behavior is systematic](../kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Alias maps are permutations, not graphs: resolution semantics for stacked re-keys](../kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 |  |
 | [An absence in the data is a statement about the data — say what the catalog shows, never that the county has none](../kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [An accessibility sweep does not measure alignment; probe the edges](../kb-notes/methodology-an-a11y-sweep-does-not-measure-alignment.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [An affordance gated on a problem is invisible when there isn't one](../kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [An articulation's college list belongs to the group, not to each course in it](../kb-notes/methodology-an-articulation-college-list-belongs-to-the-group-not-the-course.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [An assertion pinned to a mutable value stops being a guard](../kb-notes/methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md) | methodology | published | 2026-08-15 | 2026-08-15 |
@@ -507,6 +508,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The articulated-and-waiting backlog is almost entirely basic military service credit](../kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service.md) | reference | published | 2026-08-11 | 2026-08-11 |
 | [The authoritative statewide MAP exhibit is the raw row with Collaborative Type == "CCC](../kb-notes/reference-authoritative-statewide-exhibit-signal.md) | reference | published | 2026-06-28 | 2026-06-28 |
 | [The CCCCO house voice — how our outward writing should read](../kb-notes/reference-cccco-house-voice.md) | reference | internal | 2026-09-01 | 2026-09-01 |
+| [The CCCCO style guide and brand basics — the usage, names and colors our writing follows](../kb-notes/reference-cccco-style-guide.md) | reference | internal | 2026-09-30 | 2026-09-30 |
 | [The CPL guiding question, and why sufficiency is not equivalence](../kb-notes/reference-the-cpl-guiding-question.md) | reference | published | 2026-09-05 | 2026-09-05 |
 | [The workplan Activity↔Project linking model — home field vs the N-to-N association table](../kb-notes/reference-workplan-activity-project-linking-model.md) | reference | published | 2026-07-27 | 2026-07-27 |
 | [TMC confidence score & near-auto-approval — what data we hold vs still need](../kb-notes/reference-tmc-confidence-data-requirements.md) | reference | published | 2026-07-01 |  |

@@ -272,6 +272,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   `college_report_generator.js`; `annual_report.js` polish), the docx footers,
   a live `sierra_guidance` row (id `cb226a48`, deactivatable in the Sierra training tab),
   and the public KB's `claude/CLAUDE.md`. Historical titles/quotes stay verbatim.
+- **CO style guide (Sam, 2026-09-30):** governs our writing and CO colors and
+  identity, never CCC or CCCCO; no UI change from it:
+  [`reference-cccco-style-guide`](docs/kb-notes/reference-cccco-style-guide.md).
 - **American spelling, always (Sam, 2026-08-21).** *"As a Yank, I prefer
   American, of course."* Use **color · behavior · normalize · organization ·
   analyze · center · judgment · program · catalog · license (n and v) · gray ·
@@ -750,7 +753,7 @@ stays here.
 
 > **Anything waiting on Sam is also a card on a sheet.** The standing one,
 > `kb/_build_open_asks_decision_sheet.py` →
-> [KCuKxKytRRWqNvqrusvtmr](https://claude.ai/artifact/KCuKxKytRRWqNvqrusvtmr) (sheet 6),
+> [7sb3cMt8iU9YWmjKyyHCT1](https://claude.ai/artifact/7sb3cMt8iU9YWmjKyyHCT1) (sheet 8),
 > **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
 > answers one, change that lane's marker in the same PR, or the sheet asks again
 > ([`decision_sheets`](docs/reference/decision_sheets.md)).

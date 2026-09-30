@@ -371,5 +371,57 @@ module.exports = {
     title: "Funding model explainer (public)",
     mayHideBelow: [],
   },
+
+  /* ── The funding tab's Public view, and My CPL Funding (S307, 2026-09-30) ──
+     Sam asked for the Public view and the explainer to be audited for
+     consistent margins, AA and phone widths, and for My CPL Funding at the top
+     of both with a college or district chooser. The `cobi` target measures the
+     tab in its Internal view only, so these three hold the other renderings:
+     the Public view by its link (?fundview=public), and the one-institution
+     view on each surface, opened the way a reader opens it and set to the
+     largest district, whose line and member blocks are the longest page it
+     draws. */
+  "funding-public": {
+    file: "index.html",
+    query: "?fundview=public",
+    title: "Implementation Funding, Public view",
+    routes: [{ hash: "implementation-funding", name: "public-view" }],
+    widths: [390, 768, 1024, 1440],
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "funding-public-mycpl": {
+    file: "index.html",
+    query: "?fundview=public",
+    title: "Implementation Funding, Public view: My CPL Funding for a district",
+    routes: [{ hash: "implementation-funding", name: "my-cpl-funding" }],
+    widths: [390, 768, 1024, 1440],
+    seed: async (page) => {
+      await page.evaluate(() => {
+        const T = window.CPL_FUNDING_TAB;
+        if (T && T.showMyFunding) T.showMyFunding();
+        const pick = document.getElementById("cplFundOnePick");
+        const opts = pick ? Array.from(pick.querySelectorAll('optgroup[label="Districts"] option')) : [];
+        if (opts.length) { pick.value = opts[0].value; pick.dispatchEvent(new Event("change", { bubbles: true })); }
+      });
+      await page.waitForTimeout(900);
+    },
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "funding-model-mycpl": {
+    file: "funding-model/index.html",
+    title: "Funding model explainer: My CPL Funding for a district",
+    widths: [390, 768, 1024, 1440],
+    seed: async (page) => {
+      await page.evaluate(() => {
+        const b = document.getElementById("my-funding-btn");
+        if (b) b.click();
+        const pick = document.getElementById("cplFundOnePick");
+        const opts = pick ? Array.from(pick.querySelectorAll('optgroup[label="Districts"] option')) : [];
+        if (opts.length) { pick.value = opts[0].value; pick.dispatchEvent(new Event("change", { bubbles: true })); }
+      });
+      await page.waitForTimeout(900);
+    },
+    mayHideBelow: [],
+  },
   },
 };
