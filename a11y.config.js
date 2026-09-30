@@ -382,14 +382,16 @@ module.exports = {
      largest district, whose line and member blocks are the longest page it
      draws. */
   "funding-public": {
-    file: "index.html?fundview=public",
+    file: "index.html",
+    query: "?fundview=public",
     title: "Implementation Funding, Public view",
     routes: [{ hash: "implementation-funding", name: "public-view" }],
     widths: [390, 768, 1024, 1440],
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "funding-public-mycpl": {
-    file: "index.html?fundview=public",
+    file: "index.html",
+    query: "?fundview=public",
     title: "Implementation Funding, Public view: My CPL Funding for a district",
     routes: [{ hash: "implementation-funding", name: "my-cpl-funding" }],
     widths: [390, 768, 1024, 1440],
