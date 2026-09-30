@@ -74,6 +74,12 @@ end $function$
 -- drop table if exists public.map_college_credit_statewide;
 -- Then dispatch college-briefing-publish.yml so the public copy follows.
 --
--- ── AFTER ─────────────────────────────────────────────────────────────────
--- Filled in when applied (hash of the new definition, the row counts, the
--- withheld counts, and the public copy's refresh run).
+-- ── AFTER (applied 2026-09-30 ~16:03 UTC, migration credit_summary_per_figure_suppression_2026_09_30) ──
+-- After #1777 merged and Pages deployed the My College numN() fix.
+--   rebuild_map_college_credit_summary() md5 c41fb1f976ec14de16a4d2deacc32a69 (was fd346ac3…)
+--   113 rows, 14 suppressed; withheld on published rows: transcribed 8,
+--   applied 15, applied_in_plan 13, articulated_waiting 2, dormant 2.
+--   map_college_credit_statewide: 108 colleges, every total published.
+--   Chaffey unchanged. college-briefing-publish.yml run 36741469785 refreshed
+--   map_college_credit_summary_pub: 8 of 8 transcribed and 15 of 15 applied
+--   figures NULL there too, every other figure equal to the base.
