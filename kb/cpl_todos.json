@@ -1,14 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-30",
-  "_session": 304,
-  "_status": "Landed on 30 September: the side menu reads one line per item in regular weight; My College's 'What you could already give credit for' now covers all nine regions, so San Diego City College and the rest of the state populate, and Cañada, City College of San Francisco and College of Marin show again; 0 hours reads as noncredit on the CR Reference (the next daily run renames the ten); Grossmont's four titles moved to ATHL; and Scenario 2's P3 Career Attainment and P4 Innovation Projects became reported cards with no funding lines. Next: the Scenario 2 narrated draft (card 8) and the Reporting box (card 2, Governance first).",
+  "_session": "S305 SkyLatch",
+  "_status": "Landed on 30 September (S305): the Scenario 2 narrated draft is built and waits on your review; the explainer links it once the Chancellor finalizes Scenario 2. The Scenario 2 introduction now shows the model's 67.2 FTES for Sample College's Access target, where it showed 67.1. The Reporting box, expenditures first, passed Governance and has a mockup; it is built after your three calls on sheet 5. The CR Reference's zero-hour groups now read noncredit on the live worklist. Next: your sheet 5 answers.",
   "items": [
     {
-      "id": "s304-sam-units-waiting-label",
+      "id": "s305-sam-sheet5",
       "for": "Sam",
-      "tab": "college-briefing",
-      "text": "My College shows two figures both called 'units waiting': Start here gives all credit not yet acted on (96,268 at San Diego City College), and the Sierra chip gives the part already articulated (about 6,500). Say which should keep the words, and what the other should be called."
+      "tab": "implementation-funding",
+      "text": "Open-asks sheet 5 has five cards: your review of the Scenario 2 narrated draft; how often a college reports its expenditures, which categories the Reporting box carries, and who sees a college's figures; and a name for each of the two 'units waiting' figures on My College. https://claude.ai/artifact/4PhPMFSvUVJLxrV7PazTQr"
     },
     {
       "id": "s304-sam-report-when-where",
@@ -41,28 +41,22 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s304-fable-sheet4-rest",
+      "id": "s305-fable-reporting-box-build",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Carry out the rest of sheet 4: the Scenario 2 narrated draft from draft 4's script (card 8), and the Reporting box, spending first, which is a new write surface, so Governance and the privacy ADRs come before it is built (card 2)."
+      "text": "On Sam's sheet 5 answers (cards 2 to 4), build the Reporting box: the cpl_funding_reports table, insert-only with reviewer access like the CO Monitor's notes, then the box in each institution's drill-in from the approved mockup, with a test. Governance is done (DR-09)."
     },
     {
-      "id": "s304-fable-cr-noncredit-check",
+      "id": "s305-fable-units-waiting-rename",
       "for": "Fable",
-      "tab": "cr-reference",
-      "text": "After the next daily run, confirm the CR Reference worklist carries groups_named_noncredit and that no group name opens a range at 0 (test A30 then runs on the real corpus)."
+      "tab": "college-briefing",
+      "text": "On Sam's sheet 5 card 5, rename the two 'units waiting' figures on My College (Start here and Where you stand) as he rules, with a test."
     },
     {
       "id": "s303-fable-chat-smoke-watch",
       "for": "Fable",
       "tab": "chatbot",
       "text": "Sierra's daily smoke check passed on 29 September (21:52Z) for the first time since 18 September, right after the COCI re-sync rebuilt the program tables. Watch the next runs; if they stay green, close the item with the 18 September partial sync as the likely cause. If they fail again, root-cause the program search's 3-second timeout."
-    },
-    {
-      "id": "s303-fable-funding-lane-trim",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "The funding lane file is over its 20,000-byte budget (21,006 before #1765). Move settled paragraphs verbatim to the funding lessons doc so the lane states current truth only."
     },
     {
       "id": "s301-fable-unit-range-rest",

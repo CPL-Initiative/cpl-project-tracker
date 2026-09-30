@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 498 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 499 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 80 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 50 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 276 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **990** | |
+| Session handoffs | 277 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **992** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- **2026-09-30 (S305 SkyLatch checkpoint)** — the Reporting box through Governance (`cpl_funding_reports` in DR-09) and its mockup ([#1773](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1773)); the Scenario 2 narrated draft and the Scenario 2 introduction's model figure ([#1774](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1774)); open-asks sheet 5; a KB note on hash-checking a copied record; S305 in the funding lessons; handoff 306.
 - **2026-09-30 (S304 SkyHinge checkpoint)** — the side menu on one line per item ([#1767](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1767)); 0 hours reads as noncredit ([#1768](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1768)); the My College register in all nine regions, keyed by MAP's names ([#1769](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1769)); card 9's re-mint to ATHL ([#1770](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1770)); card 7's reported cards and the writer's declared create ([#1771](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1771)). Handoff 305.
 - **2026-09-29 (S303 SkyWarp checkpoint)** — round 9 of the College Dashboard, the ETHS re-mint of the 43, setup-python 7, decision sheet 4 answered and carried out in part; S303 sections in the funding and engineering lessons; handoff 304.
 - **2026-09-29 — S302 (SkyWeft):** sheet 3's eighteen rulings recorded in their lanes ([#1750](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1750)); Sierra's one-button Try it in ([#1751](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1751)); the CR Reference names varying groups by range ([#1754](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1754)); College Dashboard mockup round 8, its harness committed on the round's branch. Close-out: the priority cards' Demonstrated and the opt-in words ([#1752](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1752)), the explainer on Sam's premise ([#1753](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1753)), draft 4 of the video ([#1756](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1756)), card 7's workflow ([#1757](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1757)); the funding lessons rebuilt after a scripted write erased them. Handoff `session_303_handoff.md`.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - **2026-09-28 — S298 (SkyLatch):** UI fixes through a live mockup drawn by COBI's own code: Sam locked the College Dashboard redesign in seven rounds and ruled that funding waits on all three minimum conditions ([#1726](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1726)); the Sierra Training tab entered the same process. New: [`ui_mockup_lessons`](ui_mockup_lessons.md), [`methodology-mock-up-from-the-running-code`](kb-notes/methodology-mock-up-from-the-running-code.md).
 - **2026-09-28 — S297 (SkyLantern):** the SQL approval prompt's source found: the Supabase connector's Tool permissions in Sam's claude.ai account, set read-only, which he changed; seven SQL calls then ran without a prompt, and S298's three-call test in a new session closes it. The opening line's `check_hooks_live.py --fix` sentence removed on Sam's ruling; the open-asks sheet published (https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B). KB note extended: `methodology-verify-the-premise-before-you-build-on-it` (case 3). Handoff 298.
 - **2026-09-28 — S296 (SkyBeacon, emergency checkpoint):** funding asks card 1, the Annual view compares a year with a year ([#1721](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1721)); the ETHS re-mint's dry run ([#1722](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1722)) and its land, 26 KINE, 4 ATHL and 1 PEDS with the first continuation-band-2 ids, `kb_curation` re-keyed by `supabase-rekey.yml` ([#1723](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1723)). Handoff 297.
-- **2026-09-27 (S295 SkyHarbor, second checkpoint):** Sam's eight CLAUDE.md verdicts carried out ([#1712](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1712): the context meter installs at the session root through `check_hooks_live.py --fix`; [#1713](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1713): the emphasis sweep; vault #185, #186; knowledge base #23 waits for his merge), and the standing open-asks sheet reconciled and published fresh ([#1714](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1714)): seven of its cards were answered rulings, two contradicting his August answers. KB note extended: `methodology-a-settled-ruling-does-not-enforce-itself`. Handoff 296.

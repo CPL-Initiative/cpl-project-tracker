@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-498 document(s).
+499 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -65,6 +65,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A control reported as broken may be live on a surface that draws nothing](../kb-notes/methodology-a-control-can-be-live-on-a-surface-that-draws-nothing.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A control that does nothing — read the request log first](../kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md) | methodology | published | 2026-09-23 | 2026-09-23 |
 | [A conversation is scoped state — what you send must never exceed what you show](../kb-notes/methodology-a-conversation-is-scoped-state.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A copied record is safe once its hash matches the source](../kb-notes/methodology-a-copied-record-is-safe-once-its-hash-matches.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [A copy detector must read the rendered string, not the lines the author typed](../kb-notes/methodology-a-copy-detector-must-read-the-rendered-string.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [A copy with no refresh path is a fossil](../kb-notes/methodology-a-copy-with-no-refresh-path-is-a-fossil.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A correct measurement can name the wrong place — re-check the attribution, not just the number](../kb-notes/methodology-a-correct-measurement-can-name-the-wrong-place.md) | methodology | published | 2026-09-06 | 2026-09-06 |

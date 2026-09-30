@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-09-24
+updated: 2026-09-30
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1560,11 +1560,7 @@ uses verbatim, are here.
 **State.** Round 9 live (#1761); sheet 4 answered 22:26Z, nine of nine his own call; cards 4 and 6 done (#1764; the config write at 22:53Z, receipt on main), card 5 already true, card 1 in #1765 (the RPC is live). Next: card 3 (0 hours reads noncredit), card 9 (Grossmont's four to ATHL), then the P3/P4 mockup (7), the Scenario 2 narrated draft (8) and the Reporting box (2, Governance first).
 
 
-**Moved from the funding lane at the S303 checkpoint (settled; verbatim, links re-pointed):**
-
-✅ **THE COLLEGE DASHBOARD REDESIGN IS LIVE (Sam locked it 2026-09-28; seven mockup rounds, [mockup](https://claude.ai/artifact/2V1aWwtjwob5gSM6TEkfyQ) round 7).** S298's port merged as #1729; S299's duplicate port #1731 closed unmerged, and #1732 (S300) carried what it had that #1729 lacked, with the five follow-ups. The shape is the COLLEGE DASHBOARD paragraph below. **Funding waits on all three minimum conditions** (Sam, 2026-09-28: "3 conditions but the Star is a feel-good restatement of one of them"; #1726). Rulings: `cpl_memory` `sam-college-dashboard-redesign-2026-09-28`, `sam-three-minimum-conditions-gate-funding-2026-09-28`, `sam-tba-replaces-awaiting-measurement-2026-09-28`. Method: [`ui_mockup_lessons`](ui_mockup_lessons.md).
-
-**RULED — sheet 3, cards 1–7 (Sam, 2026-09-29, [XzQMks96QszUDAyXADP3Ag](https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag), each his own call; the cards' words are in the [lessons](cpl_funding_lessons.md) S302 section):** **1 leave** (review items 8–10 stand) · **2 keep** (the footer stays whole and fixed) · **4 demonstrated**, landed #1752: each card reads *Demonstrated: $X of $Y Total Possible* · **5 use**, landed #1752: the thank-you and the form's note carry his words and promise no acknowledgment · **6, a note that changes the premise**, Sam verbatim: *"The explainer is wrong. Colleges will be funded for FTES that meet the priority outcomes. The full outcomes-based funding is available within the two-year window once minimum conditions are met."* Rewrite the Step two note and the table heading to say that, check the tab's reserve wording against it, and show him the public text before it ships, landed #1753 after his *"merge prs"* · **7**, his final call: *"Allow workflow and I'll type in myself."* He types both lines on the tab; `funding-config-edit-apply.yml` and its applier landed (#1757) for later reviewed edits, and a dry run confirms his typing (each path reads `after`). ⚠️ **A SHEET'S STORE IS LIVE — RE-READ IT AT EXECUTION.** ⚠️ **THE CONFIG PATH IS NOT `config->'priorities'`:** `config -> projects -> <project> -> scenarios -> <scenario> -> yearPriorities -> <year> -> <slot>` (`jsonb_each`). **Ruled already:** the Annual view compares a year with a year (#1721); Sam waits for Pedro's CollegeID2 and no session drafts the request; COBI keeps "<10" until the public/private split ([adr](kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md)). The 2026-09-15 sheet's residue, [`map_eligible_label_note_draft`](map_eligible_label_note_draft.md), is **SAM's to send** after the reconciliation is re-measured.
+The funding lane's S303 relocations moved on to the [archive](cpl_funding_lessons_archive.md) at S305.
 
 
 ## S304 (2026-09-30, SkyHinge): card 7, P3 and P4 as reports
@@ -1572,3 +1568,17 @@ uses verbatim, are here.
 **State.** Sam approved the card 7 mockup (*"go ahead with the card 7 mockup"*, artifact `RRTSSiTW1k6jk6gvxUAQ1D`) and #1771 ported it: a scenario setting, `reportedAsReports`, makes a reported card a report (a Reported word, a description, What is reported, When reading TBA, Where left off the public card until set; no Metric block, no Project allocation, no detail row). Scenario 1 derives its reported cards and keeps the card it had. The Scenario 2 write (`kb/funding_config_edits_out/2026-09-30/`) removes the measured 0%-share Career Attainment card (`prioRemoved` [1] → [1,3]), splits the combined reported card into C and D, and turns the setting on. It is the first plan to add a key: the applier now takes `"create": true` with a null `before`, an undeclared new key still refuses, and rollback removes a created key.
 
 **Lesson.** Card 7 said "a reported card that is also a funding priority still enters every sum"; the live read showed the real shape: Scenario 2 carried a *measured* Career Attainment card at a 0% share beside a *reported* card whose title also said Career Attainment. Read the stored scenario before designing the fix: the answer was to remove a card, not to change the sums.
+
+## S305 (2026-09-30, SkyLatch): card 8's narrated Scenario 2 draft, and the Reporting box through Governance
+
+**State.** Card 7's Scenario 2 write read back live (03:56Z, unchanged since). Card 3's rename landed on the corpus (seven groups *(noncredit)*, three ranges; A30 holds). Card 8: the Scenario 2 narrated draft, variant `n2`, 3:06 (#1774), eight scenes as draft 4 and two of Scenario 2's own, waiting on Sam and unlinked until the Chancellor finalizes Scenario 2. Card 2: `cpl_funding_reports` folds into DR-09, and the mockup ([BV2Xqt49vCYicX5xdEKP5E](https://claude.ai/artifact/BV2Xqt49vCYicX5xdEKP5E)) records quarterly expenditures in NOVA's eight categories (#1773); the build waits on three calls on sheet 5.
+
+**What worked.**
+- **A copied config is safe once its hash matches.** `funding_effective.js` warns against transcribing the config, and the sandbox cannot reach Supabase. The session copied the Scenario 2 block from an MCP read, then compared its md5 with Postgres's `md5(... ::text)` of the same jsonb before the model read it. A match means the copy is byte for byte the stored text, so `T._alloc('Chaffey')` answers for the live config.
+- **Reuse a script and change only what the figures change.** Eight of ten scenes kept draft 4's words because the model gave them the same figures under Scenario 2; the recognizer and the cue pins then only had two new scenes to prove.
+- **Keep the scenario out of the voice.** The picture says Scenario 2; the voice does not, so the read survives the Chancellor's finalizing it.
+
+**What bit.**
+- ⚠️ **A typed figure slipped a decimal.** The Scenario 2 introduction showed 67.1 FTES; the model gives 67.17 (67.2). 44.3 × 50/33 = 67.12 is the likely source: another scenario's rounded figure, scaled. Read every figure from the model.
+- ⚠️ **A helper that builds a filename hides the read from the dependency map.** `narration('s1')` formatting `narration_%s_layout.json` dropped `build.py`'s read from `kb/dependency_map.json`; the literal filename at each call keeps it.
+- ⚠️ **`check_generated.sh` is the last step before a push, after every edit.** #1773's first push ran it before a lane trim changed the `updated:` date, and `lints` failed on the stale catalog.
