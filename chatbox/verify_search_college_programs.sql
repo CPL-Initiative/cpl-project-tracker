@@ -75,7 +75,23 @@ begin
   if n = 0 then raise exception 'A8 FAIL: "technology" returned no title matches — it is 7.8%% of titles and must survive as a title term'; end if;
   if m > 0 then raise exception 'A8 FAIL: "technology" returned % code-only rows — it is 16.3%% of the code vocabulary and must be dropped there', m; end if;
 
-  raise notice 'PART A: 8 checks passed.';
+  -- A9 (2026-09-30): the stored vectors match their definition. Postgres keeps
+  -- a generated column's old values when cx_search_norm is replaced, and the
+  -- route would then search yesterday's normal form without an error.
+  select count(*) into n from public.coci_college_programs
+   where tsv_title_en is distinct from
+           (to_tsvector('english', public.cx_search_norm(program_title)))
+      or tsv_title_simple is distinct from
+           (to_tsvector('simple', public.cx_search_norm(program_title)))
+      or tsv_code_en is distinct from
+           (to_tsvector('english', public.cx_search_norm(coalesce(top_title,'') || ' ' || coalesce(cip_title,''))))
+      or tsv_code_simple is distinct from
+           (to_tsvector('simple', public.cx_search_norm(coalesce(top_title,'') || ' ' || coalesce(cip_title,''))));
+  if n <> 0 then
+    raise exception 'A9 FAIL: % rows carry stored vectors that no longer match cx_search_norm — re-run chatbox/supabase_search_exhibits_by_topic_v2.sql, which recomputes them', n;
+  end if;
+
+  raise notice 'PART A: 9 checks passed.';
 end $$;
 
 -- ── PART B (needs the CIP sync) ──────────────────────────────────────────────
