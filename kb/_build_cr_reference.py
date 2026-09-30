@@ -264,22 +264,44 @@ def screens_agree(profiles):
 #     always span two figures; the rule is written down for the day it can.
 #   · The word is "units", Sam's form, whatever the wording said (every member
 #     of a varying group in the 2026-09-29 corpus writes "hours").
+#   · A figure of 0 reads as NONCREDIT (sheet 4, card 3, Sam, 2026-09-29: "Read 0
+#     as noncredit"). It never opens a range: *Oral Radiology* joins a 0-hour and
+#     a 2-hour wording and reads "(2 units or noncredit)", where it read "(0–2
+#     units)" — a range starting at 0 read as a course that may carry no credit.
+#     A group whose wordings state only 0 reads "(noncredit)". Ten wordings in
+#     the 2026-09-29 corpus; each comes from one college.
 def _figure(x):
     """A unit figure the way the tab prints it: 3.0 → "3", 1.5 → "1.5"."""
     x = float(x)
     return str(int(x)) if x.is_integer() else repr(x)
 
 
+def _figures(members):
+    """(the figures above 0 the members state, whether any states 0)."""
+    vals = [v for m in members for v in (m.get("units_lo"), m.get("units_hi")) if v is not None]
+    return [v for v in vals if v > 0], any(v == 0 for v in vals)
+
+
+def states_only_zero(members):
+    """True when the members state a figure and every figure is 0: the group
+    reads "(noncredit)" (card 3)."""
+    credit, zero = _figures(members)
+    return zero and not credit
+
+
 def unit_range_label(members):
     """The range as the tab words it, "2–5 units", from the members' own
-    figures, low to high; None when no member states a figure."""
-    los = [m["units_lo"] for m in members if m.get("units_lo") is not None]
-    his = [m["units_hi"] for m in members if m.get("units_hi") is not None]
-    if not los or not his:
-        return None
-    lo, hi = min(los), max(his)
+    figures, low to high; None when no member states a figure. A figure of 0
+    reads as noncredit and never opens the range (card 3): "2 units or
+    noncredit", or "noncredit" alone. cr_reference.js unitRange() is the same
+    rule."""
+    credit, zero = _figures(members)
+    if not credit:
+        return "noncredit" if zero else None
+    lo, hi = min(credit), max(credit)
     fig = _figure(lo) if lo == hi else _figure(lo) + "–" + _figure(hi)
-    return fig + (" unit" if lo == hi == 1 else " units")
+    fig += " unit" if lo == hi == 1 else " units"
+    return fig + " or noncredit" if zero else fig
 
 
 def unit_range_name(wording, members):
@@ -310,6 +332,7 @@ def build():
     # artifact was built under the unit-range naming (cards 13-14, 2026-09-29).
     stats["groups_named_by_range"] = 0
     stats["groups_held_by_a_screen"] = 0   # 0 since card 14: a zero, not a missing key
+    stats["groups_named_noncredit"] = 0    # card 3 (sheet 4): wordings that state only 0
 
     # ── The published statewide lines: rung 1, the authority ───────────────
     # These are MAP's own curated recommendations, already public on the Fact
@@ -540,6 +563,12 @@ def build():
         if units_differ and not official_applied:
             canonical = unit_range_name(canonical, members)
             stats["groups_named_by_range"] += 1
+        elif states_only_zero(members) and not official_applied:
+            # "0 hours in Electric Vehicle Safety" reads "Electric Vehicle
+            # Safety (noncredit)" (card 3): the wording's own figure is the
+            # group's, and 0 is the one figure that names noncredit.
+            canonical = unit_range_name(canonical, members)
+            stats["groups_named_noncredit"] += 1
 
         # COLLAPSE VALUE — the ranking rule. (wordings − 1) × colleges touched.
         # The −1 is the real gain: collapsing N wordings removes N−1 of them.
