@@ -671,6 +671,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py`, `prototype/funding_video/cues.py` | — |
 | `prototype/funding_video/narration_s1.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `prototype/funding_video/narration_s1_layout.json` | scripts: `prototype/funding_video/build.py` | — |
+| `prototype/funding_video/narration_s2_layout.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/mockup_harness/CPL_Dashboard.html` | scripts: `prototype/mockup_harness/capture.mjs` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
@@ -959,5 +960,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 556 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 557 file
 datasets · 147 external services · 384 consumers · 38 workflows · 37 tabs.

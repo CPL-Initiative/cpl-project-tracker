@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 556,
+  "file_datasets": 557,
   "external_services": 147,
   "consumers": 384,
   "workflows": 38,
@@ -715,7 +715,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 22
+     "line": 23
     },
     {
      "id": "worker:cloudflare-worker-proxy.js",
@@ -14370,7 +14370,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 92
+     "line": 115
     },
     {
      "id": "script:prototype/funding_video/cues.py",
@@ -14403,7 +14403,20 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 76
+     "line": 94
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/narration_s2_layout.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/funding_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 108
     }
    ],
    "served": true,
