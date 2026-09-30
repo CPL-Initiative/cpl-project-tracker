@@ -31,6 +31,22 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 12 (S308/S309, 2026-09-30, SHEET_ID 2026-09-30-open-asks-12): one card, sheet 11's card 6 (the
+City College of San Francisco check in Sierra), which Sam marked Later. Sheet 11's other eight left with his
+rulings (replies/done at 22:48:37Z, all nine his own call), each recorded in its lane in the same change.
+Published at https://claude.ai/artifact/B6Gnzmha8kArgiSQw1SdTe (capabilities db + comments).
+Sheet 11 (S308/S309, 2026-09-30, SHEET_ID 2026-09-30-open-asks-11): sheet 10's six cards (no reply yet),
+then the credential side session's three asks for the partner-crosswalks lane: who verifies an issuer's
+skills against course outcomes for the CER as a phase 0 credential registry; retitling the three
+renamed-credential exhibits; the network allowlist for the watch agent. Published at
+https://claude.ai/artifact/8CdZcCGsDU6hMwhBLRZViM (capabilities db + comments). Sheet 10's store stays where
+it is; a reply there still counts for its card.
+Sheet 10 (S308/S309, 2026-09-30, SHEET_ID 2026-09-30-open-asks-10): six cards. Sheet 9's card (no reply
+yet) with the catalog-year view's double count added; three S308 choices Sam may reverse (the Timeline's
+type size, the priority cards' boxes, where the college sign-in sits); the note to Pedro about MAP's two
+views; and the City College of San Francisco check in Sierra. Published at
+https://claude.ai/artifact/DSky8iUvxg5WeemRm4wpW2 (capabilities db + comments). Sheet 9's store stays where
+it is; a reply there still counts for its card.
 Sheet 9 (S307, 2026-09-30, SHEET_ID 2026-09-30-open-asks-9): one card, whether Priority 1 counts credit
 still at Needs Action (the question the Sierra chain handed the funding lane), set against MAP's student
 view, which pa_u reads. Published at https://claude.ai/artifact/XnHFDLys7WRGjHC26NY9KP (capabilities db +
@@ -104,8 +120,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-9.html')
-SHEET_ID = '2026-09-30-open-asks-9'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-12.html')
+SHEET_ID = '2026-09-30-open-asks-12'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -568,36 +584,35 @@ def items():
     # 18:52Z on 2026-09-30 (cpl-knowledge-base#24), and the governance lane
     # records it.
 
-    # Sheet 9 (S307): the question the Sierra chain handed the funding lane.
+    # Sheet 10 card 6 (S309): the CCSF check. Sam marked it Later on sheet 11 (card 6),
+    # so it carries onto sheet 12 until he asks her.
     I.append({
-        'lane': 'implementation-funding',
-        'title': "Does Priority 1 count credit still at Needs Action?",
-        'ref': 'implementation-funding · P1 (pa_u) · map_college_cr_unit · cpl_memory summary-applied-includes-needs-action-articulated-2026-09-30',
+        'lane': 'sierra-retrieval-corpus',
+        'title': "Ask Sierra City College of San Francisco's split",
+        'ref': 'sierra-retrieval-corpus · map_college_credit_bucket and map_college_exhibit_credit (college_id 30) · cpl-chat v74',
         'facts': (
-            "Priority 1 (Access) counts every applied CPL unit, your change of 30 September. MAP marks each articulated "
-            "credit with a plan status, and it reports that credit in two views. Its articulation view, measured 30 "
-            "September, holds 171,078 units applied to a student's CPL plan, 74,697 at Needs Action (articulated, with no "
-            "action on the plan yet) and 568 in process. Its student view, the one Priority 1's measure reads from, holds "
-            "162,603 units on plans. For credit at Needs Action, MAP's applied figure equals the articulated figure, so the "
-            "credit reads as applied before a college has acted on it. Priority 1 reads 224,898 units statewide, 62,295 "
-            "above the plan units in its own view, so it counts much of the Needs Action credit; the exact share cannot be "
-            "proven, because the model's feed carries each student's totals rather than a status split. Chaffey shows it "
-            "most: 18,066 units on plans in the student view (18,199 in the articulation view), 1,206 units of basic "
-            "military service credit at Needs Action, and a Priority 1 figure of 19,020. The Sierra session found this, "
-            "measured both views, and handed the question to the funding lane."),
-        'why': (
-            "Priority 1 pays for access to credit. Credit on a student's plan is credit the college has acted on; credit "
-            "at Needs Action is credit waiting for that step, which My College calls units not yet acted on. MAP splits "
-            "applied units by plan status for every college, so a plan-only measure can be built, and it should be built "
-            "from the student view that Priority 1 already reads, so the two figures compare one view with itself."),
-        'rec': (
-            "<strong>Count credit on a CPL plan only.</strong> Build Priority 1's measure from the units applied to a "
-            "plan in MAP's student view, so the funding follows the credit a college has acted on, and show the Needs "
-            "Action units beside it as units not yet acted on. <em>It might be wrong if</em> Needs Action credit reaches "
-            "the student without a college's step; then Priority 1 keeps every applied unit, as it does now."),
-        'chips': chips(('Plan units only', 'plan'), ('Keep every applied unit', 'keep'), CH_LATER),
-        'evidence': [live('2026-09-30', 'map_college_cr_unit by cpl_status_plan (articulation view); the student view by plan status (Sierra session); cpl_funding_performance.js pa_u')],
+            "Your Chaffey check passed. The next college worth asking is City College of San Francisco, where 32 "
+            "military exhibits each carry 10 or more students. Ask her: <em>What is the military and non-military split "
+            "of City College of San Francisco's applied units, and which exhibits are they from?</em> A right answer "
+            "leads with 13,138.5 units on plans from 1,882 students; puts non-military first (65 units from 15 "
+            "students, all 12 exhibits on one \"under 10 each\" line); then military, 13,073.5 units from 1,868 "
+            "students, as a table of 32 exhibits led by Default Credit (4,661.5 units, 1,864 students) and Basic Combat "
+            "Training (2,046, 341), ending on one \"under 10 each\" line for the other 287 exhibits (2,872.5); and "
+            "shows transcribed credit, 75.5 units, with both halves of the split as \"<10 students\"."),
+        'why': "One college checked by hand tests every figure the answer draws from.",
+        'rec': "<strong>Ask it and mark what she said.</strong> A wrong figure goes in the note, word for word. "
+               "<em>It might be wrong if</em> the nightly load moves these figures before you ask; the next session "
+               "then compares her answer with that day's rows.",
+        'chips': chips(('Right', 'right'), ('Wrong: see note', 'wrong'), CH_LATER),
+        'evidence': [live('2026-09-30', 'map_college_credit_summary, map_college_credit_bucket and map_college_exhibit_credit for college_id 30')],
     })
+
+    # Sheet 11's eight answered cards left with their rulings (Sam, 22:48:37Z on
+    # 2026-09-30, all nine his own call): P1 keeps every applied unit; the Timeline
+    # size, the card boxes and the sign-in form kept; the Pedro note his to edit
+    # and send; both faculty levels verify issuer skills; rename the three in the CER
+    # with aliases; the issuer hosts added. Each lane records its ruling. Card 6 (CCSF)
+    # came back Later, so it carries onto sheet 12.
     return I
 
 

@@ -43,125 +43,9 @@ shell-first, then new-files-only.
 > migration) on **2026-09-01**, and the 2026-08-31 → 2026-09-01 sections (the
 > one-pool port, its test family and the deck run: S215–S217) on **2026-09-24**, and the 2026-09-01 section on
 the two consolidations (Session 219) on **2026-09-30** (S306), and the 2026-09-02 explainer audit (S219) on
-> **2026-09-30** (S307) — each time because the doc crossed its size
+> **2026-09-30** (S307), and the 2026-09-02 calm pass (S220) on **2026-09-30** (S308) — each time because the doc crossed its size
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
-
-## 2026-09-02 — Session 220 (SkyCalm): the calm pass, and the text a test does not see
-
-Sam opened with the brief in one sentence — *"get rid of any cheesy glyphs (per
-our rules) and preserve all needed functionality while eliminating any visual
-noise possible. I want folks to feel calm when they open this model"* — and
-added, mid-turn, the two things that turned out to matter most: the reserve
-note on a college row *"isn't clear when compared to 400k available"*, then
-*"put it before the $400k CR total and not on the NC total"*; and *"It would be
-nice to be able to edit while in curate, any of the text sections."* One PR.
-
-### What the sweep found that the eye had not
-
-The tab had 273 glyph characters in its source; 60-odd of them rendered. Sam's
-screenshot circled the obvious ones (the pencil, the warning sign, the tick on
-"saved", the chevrons). The guard written for the pass — a character-class
-sweep over the whole mount's `innerHTML`, on four sub-views — found two the
-eye had missed, and both were in places a reader does see:
-
-- **Tooltips.** `title="… use your browser's Print → Save as PDF"` on two
-  buttons. A hover text is rendered text.
-- **Entities.** `" per student &rarr; " + students` on every priority card.
-  The source shows `&rarr;`; the page shows an arrow.
-
-Neither is in `textContent`'s idea of the page, and neither is in a
-screenshot at rest. A sweep over the markup sees both.
-
-### `textContent` has no seams
-
-The vocabulary guard — no `pool`, `money`, `apportion`, `pot` or the advance
-concept anywhere rendered — passed with "the one institution pool" put back
-into a ledger label. Not because the label was unrendered: because the label
-ends where a button begins, and `textContent` joins the two with nothing —
-`…the one institution poolRemove`. `\bpool\b` has no boundary to match. The
-gate test had recorded the same trap on 2026-07-30 (`"$150,000held $147,606"`)
-and the lesson had not traveled to the next guard. Now the sweep reads words
-off the markup with a space where every tag was, and the mutation fails by
-name. KB note:
-[`methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads`](kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md).
-
-The method that found it is worth keeping too: a mutation that "passes" is
-first a question about the fixture, not the guard. Check that the mutated
-branch renders at all (the ledger has a single-source branch and a
-multi-source branch; only one shows in tests), and only then ask why the
-guard let it through.
-
-### A guard that dies cannot report — recurred, in my own suite
-
-S219 wrote it down: the first draft of the ledger guard threw at an unguarded
-call and the run ended before `finish()` printed. This session's first draft
-did the same thing under mutation — with the Edit control removed, the click
-on a null element crashed the process and the log showed no failure, no
-summary, nothing. Every click on a control a regression could remove now goes
-through a helper that records absence as a failure by name. The pattern is
-general enough that it belongs in the harness one day; for now it is in the
-suite, with the comment that explains it.
-
-### The reserve note was relating two quantities without saying so
-
-"$400,000" (the max award) sat in the row; "$132,000 held in reserve — this
-college would have earned that on its main allocation" sat in the fourth
-column of the drill-in, under the NC award. Two problems. "Main allocation" is
-two-lane-era vocabulary (main vs feeder) and means nothing in the one-pool
-model. And the sentence never said what the $132k was a part OF. Sam's fix
-was placement — *before the $400k CR total, not on the NC total* — and the
-wording followed: the figure now reads inside the gate sentence (*"$132,000 of
-its max award — earned on the CPL this college has already posted in MAP — is
-held in reserve, not lost, until it meets each of these: (1) … (2) …"*) and
-again in the priority caption ahead of Total Possible. No standalone item, so
-nothing lands under a column it does not belong to. The gate sentence also
-stopped joining two curator-written requirement sentences with "and", which
-had produced one unreadable clause; they are numbered now.
-
-### Prose is not a dial
-
-Every dial on the tab is editable by everyone — a signed-out visitor's edits
-land in a per-browser overlay ("just start editing to explore"). The
-eligibility introduction rode that convention as an always-open textarea,
-which is why the tab greeted every visitor with an input box above the
-requirements. The prose blocks deliberately do not: they render as prose for
-everyone and offer Edit only to a signed-in reviewer. Exploring a sentence
-has no modeling value, and a textarea is the least calm thing on a page.
-Same storage discipline as the dials, though — `text.<key>` in the config
-layers, so Reset and Publish treat words and numbers alike.
-
-### Sam's question, answered from the code
-
-*Does Publish reach the explainer?* Yes: the explainer boots the same engine
-in a hidden mount and fetches the same shared config, so a published edit is
-on it at the next load with no republish step. Two things worth knowing
-beside that. When signed in, an edit saves to the shared config immediately —
-Publish exists only for edits made before signing in. And the explainer
-shares the dashboard's origin, so in the curator's OWN browser it also shows
-the unpublished what-if overlay; it looks published from that chair and is
-not, for anyone else, until Publish. The snapshot twin under `prototype/` is
-the one copy that never updates.
-
-### Shipped
-
-`cpl_funding.js` (glyphs → words on every surface; the calm chrome; the
-five prose blocks; the reserve placement; the vocabulary), both HTML shells
-(the subtitle), `cpl_funding_public.html`, `funding-model/index.html` + the
-payload (masthead tags painted), the snapshot twin (register only), seven
-suites re-aimed, and `tests/cpl_funding_calm.test.js` (56 checks,
-mutation-verified seven ways).
-
-### Follow-up the same hour: the bound word beside the figure it bounds
-
-Sam, on the row screenshot: *"Let's move the at cap and at base notes next to
-the CR and NC total funding on main rows and put the note in parens (at cap),
-(at base)."* The chip had sat by the institution's name — where it read as a
-label on the college rather than on its award. It now renders in parentheses
-after the figure in both award cells (the NC cell only when it holds a share;
-"$0 (at cap)" would claim a bound on nothing), with the same hover text. The
-NC only word stays by the name: that one is an identity, not a bound. The
-footer legend and the cap suite followed the words.
 
 ## 2026-09-02 — Session 221 (SkyLead): lead with the table, and the default its author could not see
 
@@ -1456,3 +1340,20 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 ✅ **S306 (Sam, 2026-09-30):** the drill-in hovers say how each figure is reached (label: goal, measure, share, price; Max: funding × share, target = proportional funding ÷ price; Curr: units ÷ units per FTES, fraction × Max); the college table scrolls inside a 75vh wrap under a frozen header; **Refresh everything** (Internal view) re-reads the saved model here and in every other window of the browser (BroadcastChannel `cpl-funding-model`; a save posts it too) and lists what it reached, what is built when opened, and what is not live; My College adopts the module's config on every model change; **My CPL Funding** sits beside the table on the public renderings (`fundingPanel`, one renderer); **Unit sources** (reviewer, Internal only) reads `map_college_cr_unit`: military (ACE or a military course type, 99.5% agreement with MAP's flag) vs non-military, the exhibits and the recommendations. Guards: `cpl_funding_refresh_sources.test.js`, `college_briefing_funding_sync.test.js`.
 
 ⭐ **SCENARIO 2 IS FINAL AND PUBLISHED (Sam, 2026-09-30, sheet 6 card 6; chosen 2026-09-29 after the CO demo):** *"We're going with Scenario 2."* College funding follows P1 and P2 (Year 1: 50% each); *"I will be reporting on P3 Career Attainment together with P4 projects using more qualitative data rather than tying it to FTES."* **Ruled on sheet 4 (cards 5–8):** Year 2 follows P1 and P2 at 50% each (already true: `mirrorYears` gives Year 2 Year 1's priorities, so no write; the stored Year-2 block is inert); both of Scenario 1's phrases carry to Scenario 2 (✅ written 2026-09-29 by `funding-config-edit-apply.yml`; receipt in `kb/funding_config_edits_out/2026-09-29/`); P3 and P4 get a mockup before any port (✅ **approved 2026-09-30**, *"go ahead with the card 7 mockup"*, artifact `RRTSSiTW1k6jk6gvxUAQ1D`: in Scenario 2 the measured 0%-share Career Attainment card leaves, and Career Attainment (C) and Innovation Projects (D) are reported cards that say what is reported, when (TBA) and where, with no target, FTES or funding line; `reportedAsReports` turns the shape on per scenario, so Scenario 1 keeps its card; ✅ written 2026-09-30, receipt in `kb/funding_config_edits_out/2026-09-30/`, the first plan to declare a new key, `"create": true`, and read back live in S305: `prioRemoved` [1,3], `reportedCards` [C,D], the two titles, `reportedAsReports` true); ✅ the Scenario 2 narrated draft is built (card 8, below). Card 1 (Sam, sheet 6): *"I want to rewrite it and then use the ElevenLabs connector to add a natural narration voiceover."* Unlinked until his rewrite is voiced.
+
+## S308 (2026-09-30, SkyBracket, joined with S309 SkyCensus): the Public view reads as text, and the Reporting box's college half
+
+**Sam's four asks, verbatim:** *"1. For all text views possible on this tab eliminate the gray background box to simplify visually 2. Eliminate any unnecessary line breaks or font size changes with text to enhance readability 3. Delete the 2 marked chips 4. Fix the dates so they are appropriately spaced."* Shipped as #1788.
+
+- **The dates were a DOM bug, not a spacing choice.** In public mode `edText()` returns the bare value, and two bare text nodes inside a flex row join into ONE anonymous flex item, so the label and date printed as "Funding Model FinalizedSep 2026" with the row's `justify-content` doing nothing. The curator view never showed it (its inputs are elements). Any public-mode emitter that returns text into a flex row needs its own element.
+- **Box removal went to both views;** the chips left the Public view only (the memo and brief are curator tools). The priority cards kept their boxes (a grid needs edges); sheet 10 card 3 asks.
+- **The size change met a July ruling.** C9e in `cpl_funding_rollup.test.js` pinned the Timeline to the cards' .8rem (Sam, 2026-07-23, when it sat under the cards). CI's shard 4 caught it; the newer ruling governs, the assertion now pins .92rem and says why, and sheet 10 card 2 lets Sam reverse it. ⚠️ A local run of 69 funding suites takes ~50 minutes serially; `xargs -P 4` with a 1-hour background limit finished them.
+- **The Minimum Conditions status runs into its requirement** in the Public view (`reqItem()`), with the deadline read into the text through `partReqText()` ("Local confirmation on file by 2026-11-01.").
+
+**The college half (#1790, Sam's sheet 7 card 1: MAP's two contacts).**
+- **Names meet through `map_colleges`, never through each other.** Reports carry the roster's short name, contacts carry MAP's; both resolve to a `college_id` (canonical first, then a variant, trimmed). 112 of 115 roster names resolve; *LA Swest*, *Mt San Antonio* and *MiraCosta* fail closed until the identity crosswalk carries them.
+- **A contact field is a list.** 26 of 148 filled fields held two or more addresses (comma and newline); each is split before matching. Measured as a caller through `request.jwt.claims`, printing counts only: a four-college address reached 4, an unlisted one 0.
+- **Return one row per listed college even with no report,** or the page cannot tell "none yet" from "not listed".
+- ⚠️ **`revoke ... from public` left `anon=X`.** This project's default privileges grant anon and authenticated by name on every new function; the function stayed callable until the revoke named anon. Rule 10 b2 now says so, and the grants lint's docstring. Exposure check: no rebuild, replace or clear function is anon-callable.
+- **The page never decides who sees what.** My College only asks `cpl_funding_my_reports()` with the person's own token; the team phrase is not a person and gets the sign-in. `markReports()` is the one "newest counts" rule for both views.
+- **The seeded a11y sweep found the Resources links at 15px** (SC 2.5.8); they are 24px now. A section behind the scope question needs its own seeded target, one per state, because the sweep seeds once per width.

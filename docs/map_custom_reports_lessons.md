@@ -1072,3 +1072,7 @@ pinned the formatter's NAME in a source regex that guards a branch; and the
 drift it exists for, so the label is built from `PUBLIC_MONEY_FLOOR` now. The
 check-floor ledger records the new suite and the two raised counts. A floor is
 a number that lives in fixtures as well as in code.
+
+## 2026-09-30 — S308/S309: the catalog-year view counts some applied credit twice
+
+At *Applied to CPL Plan*, `map_college_cr_unit` (View_CollegeExhibitCRByCatalogYear) sums 171,077.6 units and `map_student_credit` (View_StudentDetailsCredits) 162,603.4, at 26 of 63 colleges. Keyed by college × exhibit × catalog year × credit recommendation, 6,782.2 of the 8,474.2 gap sits on 253 keys at 24 colleges where the catalog-year view reads **exactly twice** the student view for the same students. College 79, `MAPSAS-ASL2-1-001`, 2024-2025, "3 hours in CSU GE C2": 918 students both ways, 2,754 units in the student view (three each, as the recommendation reads), 5,508 in the catalog-year view. The rest: 62 keys only in the student view (−637), 342 other differences (+2,329). **Compare two views at the grain they share before calling one wrong; a ratio of exactly 2 on matching student counts is a join, not drift.** The student view stays the source for the breakdowns and P1's feed. The note to Pedro is drafted in `docs/session_310_handoff.md`; sending it is sheet 10 card 5.

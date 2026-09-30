@@ -1,14 +1,26 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-30",
-  "_session": "S307 SkyGusset · Sierra credit-source session",
-  "_status": "Landed on 30 September (S307): the Reporting box's reviewer half. Signed-in reviewers record what a college reports it has expended, one report a fiscal year in the eight NOVA categories, in each institution's drill-in under the CO Monitor's note; a correction or a withdrawal is a newer report, and the history keeps every one. You chose MAP's two contacts (the CPL coordinator and the primary CPL contact) as the college staff who will see their own reports on My College; that half is next. Your Public view asks shipped too: the published scenario opens every visit, As colleges see it hides the curator choices in the Public view and brings them back, My CPL Funding sits at the top of the Public view and the explainer with a college or district choice and Save as PDF (My College's box has one too), the margins line up on the explainer and the Public view at every width, and the videos link back to both. The CO style guide and the CO's color palette are filed, and a reference note now guides our writing. One card waits on sheet 8. Sierra, the same day: she now reads the military and non-military split and the exhibits and credit recommendations behind a college's applied and transcribed units, and any figure behind fewer than 10 students shows as <10.",
+  "_session": "S308 SkyBracket + S309 SkyCensus (one session), carrying the credential side session",
+  "_status": "Landed on 30 September (S308 and S309, one session): the funding Public view reads as plain text, as you asked. The gray boxes around text are gone, the text is one size, each minimum condition reads as one paragraph, Copy requirements and Generate brief stay on the internal view, and the Timeline's dates sit apart from their labels. The Reporting box's college half is live: on My College, the people MAP lists as a college's CPL coordinator or primary CPL contact sign in with the email link and read that college's reported expenditures, read only. Sierra, the same day: her typical-courses lookup and her program search no longer time out (the simplified titles and the search vectors are stored once), and her smoke checks accept the honest way of saying the catalog lists nothing for a place. Your credential side session built the IT, cybersecurity, data and AI credential catalog (1,165 credentials, 48 articulated) and armed the Monday watch. You answered sheet 11 the same evening; sheet 12 holds the one you marked Later.",
   "items": [
     {
-      "id": "s307-sam-sheet8-style-guide-kb",
+      "id": "s310-sam-sheet12",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Sheet 12 has one item, the City College of San Francisco check in Sierra you marked Later on sheet 11. Your other eight answers are recorded. https://claude.ai/artifact/B6Gnzmha8kArgiSQw1SdTe"
+    },
+    {
+      "id": "s310-sam-pedro-note",
+      "for": "Sam",
+      "tab": "map-custom-reports",
+      "text": "Edit and send Pedro the note about MAP's two views (your answer on sheet 11). The draft is in the session 310 handoff: the catalog-year view reports exactly twice the student view's units for 253 exhibit and recommendation combinations at 24 colleges."
+    },
+    {
+      "id": "s308-sam-style-guide-kb-review",
       "for": "Sam",
       "tab": "governance",
-      "text": "Sheet 8 has one card: whether the CO style guide gets a curated copy in the public knowledge base, as a draft for your review, or stays internal. https://claude.ai/artifact/7sb3cMt8iU9YWmjKyyHCT1"
+      "text": "Review the curated copy of the CO style guide in the public knowledge base, cpl-knowledge-base pull request 24, and merge it if it reads right (sheet 8: curate). A session never merges that repository."
     },
     {
       "id": "s306-sam-p1-wording",
@@ -47,16 +59,10 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s307-fable-reporting-college-half",
-      "for": "Fable",
-      "tab": "college-briefing",
-      "text": "Build the Reporting box's college half on Sam's sheet 7 ruling: a person MAP lists as a college's CPL coordinator or primary CPL contact signs in with the reviewer email link and sees that college's reported expenditures on My College, read only. A database function checks the address against map_college_contacts."
-    },
-    {
       "id": "s303-fable-chat-smoke-watch",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "Sierra's smoke check failed again on 30 September after passing on the 29th. Sierra's own answers passed; two catalog lookups on the public key hit the 3-second limit (program_typical_courses took 4.2 seconds and the program search 1.7 seconds when measured directly). Root-cause the catalog timeout, starting with program_typical_courses, so the check goes green and stays green."
+      "text": "Sierra's smoke check: the catalog timeout (#1789), the two wording checks (#1791, #1794) and the program search (#1796, the four search vectors are stored on each program row; a 4-term question went from 1.5 to 0.4 seconds) are fixed. Read the next smoke run on main, and after a day read the program search's timings again; it averaged 2.4 seconds before the change."
     },
     {
       "id": "s301-fable-unit-range-rest",
@@ -68,7 +74,19 @@
       "id": "s309-fable-sierra-source-answers",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "Ask Sierra where City College of San Francisco's applied units come from and check her military rows against the live exhibit table: 32 military exhibits there each carry 10 or more students (Sam confirmed Chaffey's answer on 30 September). Draft for Sam the question to Pedro on why MAP's two views differ by 5% on credit applied to plans (171,078 against 162,603, at 26 colleges)."
+      "text": "When Sam answers sheet 11 card 6, compare Sierra's City College of San Francisco answer with the live rows: 13,138.5 units on plans from 1,882 students; non-military 65 from 15 (12 exhibits under 10 each); military 13,073.5 from 1,868, 32 exhibits one by one (10,201) and 287 under 10 each (2,872.5)."
+    },
+    {
+      "id": "s308-fable-identity-three-names",
+      "for": "Fable",
+      "tab": "college-briefing",
+      "text": "Three funding-roster names (LA Swest, Mt San Antonio, MiraCosta) resolve to no college in the identity table, so those colleges' staff cannot see their reported expenditures on My College. Add the three spellings through the identity crosswalk's own reviewed change, then re-read cpl_funding_my_reports for one of them."
+    },
+    {
+      "id": "s310-fable-credential-watch-first-run",
+      "for": "Fable",
+      "tab": "partner-crosswalks",
+      "text": "Credential lane, from Sam's sheet 11 answers: rename the three credentials their issuers renamed (CyberOps Associate, AWS SysOps, AI-900) in the CER, keeping the old names as aliases; take issuer-skill verification by college faculty and a statewide group through Governance and the privacy reviews before any table is built. After 5 October, read the first Monday watch run's pull request (it can now read the issuers' pages) and file what it flags. Then the deck's badge-course slide, an issuer-skills example and a CER mock-up with credentials not yet in MAP."
     }
   ],
   "_deferred": [
