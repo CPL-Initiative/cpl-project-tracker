@@ -939,6 +939,36 @@
     ".cplfund-notewrap { grid-column: 1 / -1; }",
     ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
     ".cplfund-note:focus { border-color: var(--gold-accent); }",
+    // The Reporting box (2026-09-30, S307): under the note, reviewers only.
+    // ⚠️ `tr.cplfund-detail td` and `.cplfund-table th` reach the history
+    // table's cells, so every table rule names the box (as Unit sources does).
+    ".cplfund-rep { grid-column: 1 / -1; display: grid; gap: 8px; margin-top: 6px; padding: 8px 10px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface-opaque); }",
+    ".cplfund-rep-sum { display: flex; flex-wrap: wrap; gap: 2px 18px; align-items: baseline; font-variant-numeric: tabular-nums; }",
+    ".cplfund-rep-sum strong { color: var(--text-strong); font-size: 1rem; }",
+    ".cplfund-rep-form { display: grid; gap: 8px; }",
+    ".cplfund-rep-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px 12px; }",
+    ".cplfund-rep-cats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px 12px; margin: 0; padding: 0; border: 0; min-width: 0; }",
+    ".cplfund-rep-cats legend { padding: 0; margin-bottom: 4px; }",
+    ".cplfund-rep label { display: grid; gap: 2px; font-size: .8rem; color: var(--text-muted); min-width: 0; }",
+    ".cplfund-rep input, .cplfund-rep select { min-height: 28px; box-sizing: border-box; min-width: 0; font-family: inherit; font-size: .85rem; color: var(--text-body); " +
+      "background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 6px; }",
+    ".cplfund-rep .cplfund-rep-cats input { text-align: right; font-variant-numeric: tabular-nums; }",
+    ".cplfund-rep input:focus, .cplfund-rep select:focus { border-color: var(--gold-accent); }",
+    ".cplfund-rep .cplfund-note { max-width: none; }",
+    ".cplfund-rep-row { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }",
+    ".cplfund-rep-row .cplfund-optbtn { margin-left: 0; }",
+    ".cplfund-rep-qtotal { color: var(--text-strong); font-weight: 700; font-variant-numeric: tabular-nums; }",
+    ".cplfund-rep-msg { color: var(--text-body); font-size: .8rem; }",
+    ".cplfund-rep-hwrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; }",
+    ".cplfund-rep table.cplfund-reptable { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .8rem; font-variant-numeric: tabular-nums; }",
+    ".cplfund-rep table.cplfund-reptable th { position: static; cursor: default; background: var(--surface-muted); color: var(--text-strong); text-align: left; " +
+      "padding: 4px 8px; white-space: normal; font-weight: 600; }",
+    ".cplfund-rep table.cplfund-reptable td { padding: 4px 8px; background: var(--surface-opaque); border-top: 1px solid var(--border); text-align: left; " +
+      "white-space: normal; overflow-wrap: anywhere; }",
+    ".cplfund-rep table.cplfund-reptable .n { text-align: right; }",
+    ".cplfund-rep table.cplfund-reptable tr.cplfund-rep-old td { color: var(--text-muted); }",
+    "@media (max-width: 560px) { .cplfund-rep-fields, .cplfund-rep-cats { grid-template-columns: minmax(0, 1fr); } " +
+      ".cplfund-rep table.cplfund-reptable { table-layout: auto; min-width: 560px; } }",
     // Ghosted, not decorated: a quiet outlined word beside the title, no fill.
     ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: none; color: var(--text-muted); border: 1px solid var(--border-strong); font-size: .38em; font-weight: 600; letter-spacing: .08em; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; }",
     // ── self-service opt-in (public + private) + the CO confirm lane ──────────
@@ -4663,6 +4693,161 @@
       .catch(function () { loadNotes(); });
   }
 
+  // ── The Reporting box: what a college reports it has expended ─────────
+  // Sam's calls (open-asks sheet 6, cards 2–4, 2026-09-30): one report a
+  // fiscal year, in all eight NOVA expenditure categories. A reviewer records
+  // it in the drill-in under the note. cpl_funding_reports is INSERT-only and
+  // reviewer-gated on read and write (funding/supabase_cpl_funding_reports.sql
+  // is the SQL of record): a correction is a newer report for the same year
+  // and the newest counts; a withdrawal is a newer row with withdrawn = true,
+  // after which the year counts as unreported. The history keeps every row.
+  // The college's own view (My College) waits on how its staff sign in.
+  var REPORT_CATS = [
+    { k: "c1000", label: "1000 Instructional salaries" },
+    { k: "c2000", label: "2000 Noninstructional salaries" },
+    { k: "c3000", label: "3000 Employee benefits" },
+    { k: "c4000", label: "4000 Supplies and materials" },
+    { k: "c5000", label: "5000 Other operating expenses and services" },
+    { k: "c6000", label: "6000 Capital outlay" },
+    { k: "c7000", label: "7000 Other outgo" },
+    { k: "c_indirect", label: "Indirect costs" }
+  ];
+  var REPORTS = [];      // every row, oldest first
+  var REPORT_MSG = {};   // college -> the last save's words
+  var REPORTS_URL = SUPABASE_URL + "/rest/v1/cpl_funding_reports";
+  function loadReports() {
+    if (!remoteEnabled() || publicMode()) return;   // reviewer-gated server-side; don't ask
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    applyWriteAuth(headers);
+    return fetch(REPORTS_URL + "?select=*&order=recorded_at.asc", { headers: headers })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) return;
+        REPORTS = rows;
+        render();
+      }).catch(function () { /* gated or offline — fine */ });
+  }
+  // The fiscal years a report can name: the window's, then its close-out year.
+  function reportYears() {
+    var ys = selectedYears().slice();
+    var close = nextFy(ys[ys.length - 1]);
+    if (close) ys.push(close);
+    return ys;
+  }
+  // A typed amount: commas, a dollar sign and spaces are allowed; anything
+  // else, or a negative, reads as NaN so the form refuses it.
+  function reportAmount(v) {
+    var s = String(v == null ? "" : v).replace(/[$,\s]/g, "");
+    if (s === "") return 0;
+    if (!/^\d+(\.\d{0,2})?$/.test(s)) return NaN;
+    return Number(s);
+  }
+  function reportTotal(r) {
+    return REPORT_CATS.reduce(function (s, c) { return s + (Number(r[c.k]) || 0); }, 0);
+  }
+  // One college's rows oldest first, each marked: the newest row per year
+  // counts unless it is a withdrawal.
+  function reportsFor(college) {
+    var rows = REPORTS.filter(function (r) { return r.college === college; });
+    var newest = {};
+    rows.forEach(function (r, i) { newest[r.fiscal_year] = i; });
+    return rows.map(function (r, i) {
+      var latest = newest[r.fiscal_year] === i;
+      return { row: r, counts: latest && !r.withdrawn, latest: latest };
+    });
+  }
+  function saveReport(rec) {
+    var college = rec.college;
+    var done = function (words) { REPORT_MSG[college] = words; render(); };
+    if (!remoteEnabled()) {
+      REPORTS.push(Object.assign({ recorded_by: curatorEmail() || "", recorded_at: new Date().toISOString() }, rec));
+      done(rec.withdrawn ? "Withdrawn on this page." : "Saved on this page.");
+      return Promise.resolve();
+    }
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json",
+      Prefer: "return=minimal" };
+    applyWriteAuth(headers);
+    REPORT_MSG[college] = "Saving…";
+    return fetch(REPORTS_URL, { method: "POST", headers: headers, body: JSON.stringify(rec) })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        REPORT_MSG[college] = rec.withdrawn ? "Withdrawn." : "Saved.";
+      })
+      .catch(function () {
+        REPORT_MSG[college] = "Not saved: recording a report needs a reviewer sign-in. Nothing changed.";
+      })
+      .then(function () { return loadReports(); });   // re-read = the honest confirmation (#598)
+  }
+  function reportingBoxHtml(c) {
+    var college = c.college, rows = reportsFor(college);
+    var counting = rows.filter(function (x) { return x.counts; });
+    var toDate = counting.reduce(function (s, x) { return s + reportTotal(x.row); }, 0);
+    var ys = reportYears();
+    var name = esc(dispName(college)), key = esc(college);
+    var sum = '<div class="cplfund-rep-sum" aria-live="polite"><span>Expended to date <strong>' + fmtMoney(toDate) + "</strong></span>" +
+      '<span class="dk">' + counting.length + " of " + ys.length + " fiscal years reported</span>" +
+      '<span class="dk">Max award ' + fmtMoney(c.total || 0) + "</span></div>";
+    var yearOpts = ys.map(function (y) { return '<option value="' + esc(y) + '">' + esc(y) + "</option>"; }).join("");
+    var cats = REPORT_CATS.map(function (cat) {
+      return "<label>" + esc(cat.label) + '<input type="text" inputmode="decimal" data-repcat="' + cat.k + '" value="0"></label>';
+    }).join("");
+    var msg = REPORT_MSG[college] || "";
+    var form = '<form class="cplfund-rep-form" data-repform="' + key + '" novalidate>' +
+      '<div class="cplfund-rep-fields">' +
+      '<label>Fiscal year<select data-repf="fiscal_year">' + yearOpts + "</select></label>" +
+      '<label>Reported by (at the college)<input type="text" data-repf="reported_by" maxlength="160" autocomplete="off"></label>' +
+      '<label>Reported on<input type="date" data-repf="reported_on"></label></div>' +
+      '<fieldset class="cplfund-rep-cats"><legend class="dk">Expended this fiscal year, by NOVA category</legend>' + cats + "</fieldset>" +
+      '<div class="cplfund-rep-row"><span>Total this year <span class="cplfund-rep-qtotal" data-reptotal>' + fmtMoney(0) + "</span></span></div>" +
+      '<label>Note<textarea class="cplfund-note" rows="2" data-repf="note" maxlength="2000" placeholder="What the college said about this year"></textarea></label>' +
+      '<div class="cplfund-rep-row"><button type="submit" class="cplfund-optbtn">Save report</button>' +
+      '<span class="cplfund-rep-msg" role="status" data-repmsg>' + esc(msg) + "</span></div></form>";
+    var hist;
+    if (!rows.length) {
+      hist = '<p class="dk">No reports on file.</p>';
+    } else {
+      var body = rows.slice().reverse().map(function (x) {
+        var r = x.row;
+        var standing = x.counts ? "Counts"
+          : r.withdrawn ? "Withdrawn"
+          : "Replaced by a newer report";
+        var act = x.counts
+          ? ' <button type="button" class="cplfund-optbtn" data-repwithdraw="' + key + '" data-repyear="' + esc(r.fiscal_year) +
+            '" aria-label="Withdraw the ' + esc(r.fiscal_year) + ' report for ' + name + '">Withdraw</button>'
+          : "";
+        return '<tr' + (x.counts ? "" : ' class="cplfund-rep-old"') + "><td>" + esc(r.fiscal_year) + "</td>" +
+          '<td class="n">' + (r.withdrawn ? "&mdash;" : fmtMoney(reportTotal(r))) + "</td>" +
+          "<td>" + esc(r.withdrawn ? "" : (r.reported_by || "")) + (r.reported_on ? '<br><span class="dk">' + esc(r.reported_on) + "</span>" : "") + "</td>" +
+          "<td>" + esc(r.recorded_by || "") + '<br><span class="dk">' + esc(String(r.recorded_at || "").slice(0, 10)) + "</span></td>" +
+          "<td>" + standing + act + "</td></tr>";
+      }).join("");
+      hist = '<div class="cplfund-rep-hwrap" role="region" aria-label="Reports on file for ' + name + '" tabindex="0">' +
+        '<table class="cplfund-reptable"><colgroup><col style="width:14%"><col style="width:16%"><col style="width:24%"><col style="width:24%"><col style="width:22%"></colgroup>' +
+        '<thead><tr><th scope="col">Fiscal year</th><th scope="col" class="n">Expended</th><th scope="col">Reported by</th>' +
+        '<th scope="col">Recorded by</th><th scope="col">Standing</th></tr></thead><tbody>' + body + "</tbody></table></div>";
+    }
+    return '<section class="cplfund-rep" aria-label="Reporting for ' + name + '"><span class="dk">Reporting (internal): expenditures</span>' +
+      sum + form + '<div><span class="dk">Reports on file</span>' + hist + "</div></section>";
+  }
+  // Reads a Reporting box form into a row, or returns the words that refuse it.
+  function readReportForm(form) {
+    var college = form.getAttribute("data-repform");
+    var f = function (k) { var el = form.querySelector('[data-repf="' + k + '"]'); return el ? String(el.value || "").trim() : ""; };
+    var rec = { college: college, fiscal_year: f("fiscal_year"), reported_by: f("reported_by") };
+    if (f("reported_on")) rec.reported_on = f("reported_on");
+    if (f("note")) rec.note = f("note");
+    var bad = [];
+    REPORT_CATS.forEach(function (cat) {
+      var el = form.querySelector('[data-repcat="' + cat.k + '"]');
+      var v = reportAmount(el ? el.value : "");
+      if (isNaN(v) || v > 10000000) bad.push(cat.label); else rec[cat.k] = v;
+    });
+    if (bad.length) return { error: "Check " + bad.join(", ") + ": an amount in dollars, 0 or more." };
+    if (!rec.reported_by) return { error: "Name who at the college reported it." };
+    if (!/^\d{4}-\d{2}$/.test(rec.fiscal_year)) return { error: "Choose a fiscal year." };
+    return { rec: rec };
+  }
+
   // ── exports: ⬇ Excel (CSV of the current view) + ⬇ PDF (print window) ──
   function csvEscape(v) {
     v = v == null ? "" : String(v);
@@ -4800,6 +4985,9 @@
     var mount = document.getElementById("cplFundingMount");
     if (!mount) return "";
     var clone = mount.cloneNode(true);
+    // The Reporting box's entry form prints as nothing; its total and the
+    // reports on file print as they read.
+    clone.querySelectorAll(".cplfund-rep-form").forEach(function (el) { el.parentNode.removeChild(el); });
     clone.querySelectorAll("select").forEach(function (el) {
       var span = el.ownerDocument.createElement("strong");
       var opt = el.querySelector("option[selected]") || el.querySelector("option");
@@ -10527,6 +10715,9 @@
       noteLine = '<div class="cplfund-notewrap"><span class="dk">CO Monitor&#39;s note (internal):</span> ' +
         esc(noteRec.note) + "</div>";
     }
+    // The Reporting box: a signed-in reviewer's, like the note's editor. The
+    // public preview and every public rendering show none of it.
+    if (!publicMode() && unlocked()) noteLine += reportingBoxHtml(c);
     var ncols = COLS_COLLEGE().length;
     var top = '<tr class="cplfund-detail' + (alt || "") + '"><td colspan="' + ncols + '">' +
       '<div class="cplfund-detail-grid">' +
@@ -11627,7 +11818,7 @@
   }
 
   // ── model-change subscribers (My College tab, #college-briefing) ───────────
-  // Every remote loader (shared config, perf, ESS, eligibility, notes, ledger)
+  // Every remote loader (shared config, perf, ESS, eligibility, notes, reports, ledger)
   // ends by calling render(), so render IS the "the model moved" event. Other
   // tabs that read this module's math subscribe here rather than re-deriving
   // it. Fired BEFORE the mount guard on purpose: the funding pane may not be
@@ -11757,7 +11948,7 @@
         remoteLoaded = true;
         out.config = "ok"; out.at = CONFIG_AT;
       }).catch(function () { out.config = "failed"; }),
-      safe(loadEligibility), safe(loadNotes), safe(loadLedger)
+      safe(loadEligibility), safe(loadNotes), safe(loadReports), safe(loadLedger)
     ]).then(function () { render(); return out; });
   }
   function pageName() {
@@ -12389,6 +12580,31 @@
         var college = b.getAttribute("data-notesave");
         var ta = holder.querySelector('textarea[data-note="' + college.replace(/"/g, '\\"') + '"]');
         if (ta) saveNote(college, ta.value);
+      });
+    });
+    // The Reporting box: a running total as amounts are typed, Save report,
+    // and Withdraw on the report that counts.
+    holder.querySelectorAll("[data-repform]").forEach(function (form) {
+      var paintTotal = function () {
+        var t = 0;
+        form.querySelectorAll("[data-repcat]").forEach(function (el) { var v = reportAmount(el.value); if (!isNaN(v)) t += v; });
+        var out = form.querySelector("[data-reptotal]");
+        if (out) out.textContent = fmtMoney(t);
+      };
+      form.addEventListener("input", paintTotal);
+      form.addEventListener("click", function (e) { e.stopPropagation(); });
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var got = readReportForm(form);
+        var msg = form.querySelector("[data-repmsg]");
+        if (got.error) { if (msg) msg.textContent = got.error; return; }
+        saveReport(got.rec);
+      });
+    });
+    holder.querySelectorAll("[data-repwithdraw]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        saveReport({ college: b.getAttribute("data-repwithdraw"), fiscal_year: b.getAttribute("data-repyear"), withdrawn: true });
       });
     });
     // One-click opt-in entry from the collapsed row (Sam, 2026-08-05): open the
@@ -13502,7 +13718,7 @@
     channel();
     loadScenario();
     if (window.CPL_FUNDING) applyCollegeDeepLink();
-    function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); loadLedger(); }
+    function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); loadReports(); loadLedger(); }
     if (window.CPL_FUNDING) { render(); loadRemotes(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
       window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { applyCollegeDeepLink(); render(); loadRemotes(); });
@@ -13859,6 +14075,8 @@
         loaded: remoteLoaded, published: realPublishedScenario() };
     },
     _setNotes: function (o) { NOTES = o || {}; },
+    _setReports: function (rows) { REPORTS = Array.isArray(rows) ? rows.slice() : []; REPORT_MSG = {}; },
+    _reports: function () { return REPORTS.slice(); },
     _setLedger: function (o) {
       if (!o) { LEDGER = { loaded: false, ok: false, pool: {} }; }
       else { LEDGER = { loaded: true, ok: true, pool: o }; }
