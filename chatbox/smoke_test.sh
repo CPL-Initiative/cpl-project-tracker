@@ -703,8 +703,11 @@ answer_must_match -i "san gabriel valley" "7s names the place the visitor named"
 # Costa County.
 answer_must_match -i "pasadena|citrus|rio hondo|mt\. san antonio|mount san antonio|glendale" "7s ⭐ names a San Gabriel Valley college that teaches the LVN entry course (v72 named none and offered Los Medanos, 346 mi)"
 answer_head_must_match -i 600 "pasadena|citrus|rio hondo|mt\. san antonio|mount san antonio|glendale" "7s ⭐ …in the FIRST SENTENCE — the nearest real option leads the answer"
-# The false zero itself, in the shapes v72 produced.
-answer_must_not_claim_absence -i "(does ?n.t|do ?n.t|no|none)[^.]{0,80}san gabriel valley[^.]{0,80}(lvn|vocational nursing|entry program)|no (college|community college)s? in the san gabriel valley" "7s ⭐ never says the catalog shows no San Gabriel Valley college with an LVN entry program — five teach one (Sam, 2026-09-18)"
+# The false zero itself, in the shapes v72 produced. The \b pair is load-bearing:
+# without it "no" matched inside "notes", and run 36782710501 went red on "A few
+# notes on the colleges in the San Gabriel Valley: Pasadena City College, Rio
+# Hondo, and Citrus College all teach full LVN programs" (2026-09-30).
+answer_must_not_claim_absence -i "\b(does ?n.t|do ?n.t|no|none)\b[^.]{0,80}san gabriel valley[^.]{0,80}(lvn|vocational nursing|entry program)|no (college|community college)s? in the san gabriel valley" "7s ⭐ never says the catalog shows no San Gabriel Valley college with an LVN entry program — five teach one (Sam, 2026-09-18)"
 # ⚠️ THIS BAN IS A FAMILY, NOT A QUOTATION (2026-09-18, S277). The first version
 # listed v72's three exact phrasings and PASSED on the branch's own smoke run
 # 35398069297 while production made the identical mistake in new words: "I don't
