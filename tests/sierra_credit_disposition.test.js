@@ -240,8 +240,14 @@ check("9 rule names the next concrete step", /CPL coordinator or articulation of
 check("9 rule carries the ~30% Not Applicable ceiling caveat",
   /30% of credit that gets reviewed is correctly ruled Not Applicable/.test(R));
 check("9 rule says the total is a ceiling, not a debt", /CEILING, not a backlog/.test(R));
-check("9 rule explains why totals sit below internal figures",
-  /privacy suppression already applied/.test(R));
+// 2026-09-30 (Sam, sheet 2026-09-30-sierra-credit-source item 6): statewide
+// totals are REAL now, and a withheld figure reads "<10 students". The rule
+// explains both; the old "totals sit below internal figures" line is retired
+// because it stopped being true.
+check("9 rule explains that statewide totals are real and include withheld colleges",
+  /REAL include every college/.test(R));
+check("9 rule says a withheld figure reads <10 students and is never zero",
+  /<10 students/.test(R) && /never call it zero/.test(R));
 check("9 rule forbids estimating a suppressed value",
   /Never estimate a suppressed value/.test(R));
 check("9 rule forbids recovering a suppressed value by subtraction",

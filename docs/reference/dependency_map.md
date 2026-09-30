@@ -104,8 +104,11 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_college_contacts_pub` | tabs: `college-briefing`, `implementation-funding` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_unit` | tabs: `college-briefing`, `implementation-funding` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_waiting_pub` | tabs: `college-briefing` | scripts: `kb/_publish_college_briefing.py` |
+| `map_college_credit_bucket` | `edgefn:cpl-chat` | — |
+| `map_college_credit_statewide` | `edgefn:cpl-chat` | — |
 | `map_college_credit_summary` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
 | `map_college_credit_summary_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
+| `map_college_exhibit_credit` | `edgefn:cpl-chat` | — |
 | `map_college_goal2` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
 | `map_college_goal2_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_nudges` | tabs: `governance`, `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
@@ -962,5 +965,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 86 Supabase tables · 31 RPCs · 5 edge functions · 558 file
+Coverage: 89 Supabase tables · 31 RPCs · 5 edge functions · 558 file
 datasets · 147 external services · 385 consumers · 38 workflows · 37 tabs.
