@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-499 document(s).
+500 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -195,6 +195,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A staged state lives on the model, and every view asks it](../kb-notes/methodology-a-staged-state-lives-on-the-model-and-every-view-asks-it.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A static guard should assert the contract, not the argument order](../kb-notes/methodology-assert-the-contract-not-the-argument-order.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A status lane must link to the remedy lane, or "done" measures attention](../kb-notes/methodology-a-status-lane-must-link-to-the-remedy-lane.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A sticky header sticks only inside a box that scrolls](../kb-notes/methodology-a-sticky-header-sticks-only-inside-a-box-that-scrolls.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [A store's echo is not your state — clone what a snapshot delivers](../kb-notes/methodology-a-stores-echo-is-not-your-state.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A store's freshness tracks whether its update is unconditional](../kb-notes/methodology-freshness-tracks-conditionality-not-intent.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [A style rule must reach only the markup that supplies its inputs](../kb-notes/methodology-a-style-rule-must-reach-only-the-markup-that-supplies-its-inputs.md) | methodology | published | 2026-09-29 | 2026-09-29 |

@@ -98,10 +98,11 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `item_updates` | tabs: `annual-report`, `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | tabs: `raci` |
 | `kb_curation` | tabs: `canonical-subj4`, `credential-reference`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_esl_sheet_apply.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `credential-reference`, `unified-courses`, `vision-2030` · modules: `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
 | `liftoff_state` | pages: `CPL_Dashboard.html` | pages: `CPL_Dashboard.html` |
+| `map_ace_exhibit_titles` | tabs: `college-briefing`, `implementation-funding` | — |
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
 | `map_college_contacts` | tabs: `college-briefing`, `college-identity`, `implementation-funding`, `map-queue`, `map-users` · scripts: `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
 | `map_college_contacts_pub` | tabs: `college-briefing`, `implementation-funding` · scripts: `kb/_publish_college_briefing.py` | — |
-| `map_college_cr_unit` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
+| `map_college_cr_unit` | tabs: `college-briefing`, `implementation-funding` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_waiting_pub` | tabs: `college-briefing` | scripts: `kb/_publish_college_briefing.py` |
 | `map_college_credit_summary` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
 | `map_college_credit_summary_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
@@ -109,7 +110,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_college_goal2_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_nudges` | tabs: `governance`, `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_college_users` | tabs: `map-queue`, `map-users` | — |
-| `map_colleges` | tabs: `college-briefing`, `college-identity`, `map-queue`, `map-users` · scripts: `chatbox/smoke_test.sh`, `kb/_identity_daily_check.py` · `edgefn:cpl-chat` | — |
+| `map_colleges` | tabs: `college-briefing`, `college-identity`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/smoke_test.sh`, `kb/_identity_daily_check.py` · `edgefn:cpl-chat` | — |
 | `map_contact_gaps` | tabs: `governance`, `map-queue`, `map-users` | — |
 | `map_contact_proposals` | tabs: `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_credential_student_rollup` | tabs: `college-briefing` | — |
@@ -233,7 +234,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_coci_course_keys.js` | `CPL_COCI_COURSE_KEYS` | `kb/_build_coci_lookup.py` | tabs: `cpl-pathways` · scripts: `kb/_build_coci_lookup.py` |
 | `cpl_funding_data.js` | `CPL_FUNDING` | not stated in header | tabs: `college-briefing`, `implementation-funding` · modules: `prototype/build_funding_model_explainer.js` · pages: `funding-model/index.html` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `funding/_build_funding_performance.py` |
 | `cpl_funding_ess.js` | `CPL_FUNDING_ESS` | not stated in header | tabs: `college-briefing`, `implementation-funding` · scripts: `funding/_build_funding_ess.py` |
-| `cpl_funding_performance.js` | `CPL_FUNDING_PERF` | not stated in header | tabs: `college-briefing`, `implementation-funding` · scripts: `funding/_build_funding_performance.py` |
+| `cpl_funding_performance.js` | `CPL_FUNDING_PERF` | not stated in header | tabs: `college-briefing`, `implementation-funding` · scripts: `funding/_build_funding_performance.py`, `kb/_build_open_asks_decision_sheet.py` |
 | `cpl_pathways_ccr_data.js` | `CPL_PATHWAY_CCR` | `kb/_build_cpl_pathway_ccr.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_ccr.py` |
 | `cpl_pathways_data.js` | `CPL_PATHWAYS` | not stated in header | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` |
 | `cpl_pathways_membership_data.js` | `CPL_PATHWAY_MEMBERSHIP` | `kb/_build_cpl_pathway_membership.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_membership.py` |
@@ -362,7 +363,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks-5.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
+| `docs/visuals/<date>-open-asks-6.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docs/visuals/<date>-sierra-credit-source.html` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
@@ -816,7 +817,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
-| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_open_asks_decision_sheet.py`, `kb/_build_partner_crosswalk.py`, `prototype/funding_video/build.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py`, `prototype/funding_video/build.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py` · `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -961,5 +962,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 558 file
+Coverage: 86 Supabase tables · 31 RPCs · 5 edge functions · 558 file
 datasets · 147 external services · 385 consumers · 38 workflows · 37 tabs.

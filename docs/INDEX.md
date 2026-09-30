@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 499 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 500 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 80 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 50 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 277 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **992** | |
+| Session handoffs | 278 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **994** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- **2026-09-30 (S306 SkyRivet checkpoint)** — Sam's four asks on the funding surfaces: the drill-in hovers that say how each figure is reached, the frozen College Dashboard header, Refresh everything and its dialog, My College following the model, My CPL Funding beside the table, and Unit sources (military vs non-military, exhibits, recommendations); open-asks sheet 6; a KB note on sticky headers; S306 in the funding lessons; handoff 307.
 - **2026-09-30 (S305 SkyLatch checkpoint)** — the Reporting box through Governance (`cpl_funding_reports` in DR-09) and its mockup ([#1773](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1773)); the Scenario 2 narrated draft and the Scenario 2 introduction's model figure ([#1774](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1774)); open-asks sheet 5; a KB note on hash-checking a copied record; S305 in the funding lessons; handoff 306.
 - **2026-09-30 (S304 SkyHinge checkpoint)** — the side menu on one line per item ([#1767](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1767)); 0 hours reads as noncredit ([#1768](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1768)); the My College register in all nine regions, keyed by MAP's names ([#1769](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1769)); card 9's re-mint to ATHL ([#1770](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1770)); card 7's reported cards and the writer's declared create ([#1771](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1771)). Handoff 305.
 - **2026-09-29 (S303 SkyWarp checkpoint)** — round 9 of the College Dashboard, the ETHS re-mint of the 43, setup-python 7, decision sheet 4 answered and carried out in part; S303 sections in the funding and engineering lessons; handoff 304.
