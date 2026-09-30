@@ -324,6 +324,14 @@
     return h;
   }
   function num(v) { var n = Number(v); return isFinite(n) ? n : null; }
+  // ⚠ A WITHHELD FIGURE IS NULL, AND num(null) IS 0. Number(null) is 0, so a
+  // figure the summary withholds because fewer than 10 students stand behind it
+  // (2026-09-30: each figure now suppresses on its own group, not only on the
+  // college's total) would render as a false zero. Summary measures read
+  // through this instead; null stays null and renders as withheld.
+  function numN(v) { return (v == null || v === "") ? null : num(v); }
+  // Sam, 2026-09-30: "when the totals (at any level) are below 10, to show \"<10\" on the views."
+  var WITHHELD_NOTE = "Fewer than 10 students stand behind this figure, so it shows as <10 to protect student privacy.";
   function fmt(n) { return n == null ? "—" : Number(n).toLocaleString("en-US"); }
   function pct(a, b) { return (!b || b <= 0 || a == null) ? null : Math.round((a / b) * 1000) / 10; }
   function money(n) {
@@ -470,8 +478,10 @@
       match: "act on all jst credit recommendations",
       measure: function (c) {
         if (!c || c.suppressed) return null;
-        var dormant = num(c.dormant_credits), art = num(c.articulated_waiting);
-        if (dormant == null) return null;
+        var dormant = numN(c.dormant_credits), art = numN(c.articulated_waiting);
+        if (dormant == null) {
+          return { headline: "<10 students", detail: WITHHELD_NOTE, emphasis: "normal", withheld: true };
+        }
         return {
           // "units not yet acted on" (Sam, 2026-09-30, sheet 6 card 5): Where you
           // stand keeps "units waiting" for the articulated units alone, so the
@@ -488,8 +498,11 @@
       match: "complete transcribe step in map",
       measure: function (c) {
         if (!c || c.suppressed) return null;
-        var applied = num(c.applied_credits), tr = num(c.transcribed_credits);
-        if (applied == null || tr == null || applied <= 0) return null;
+        var applied = numN(c.applied_credits), tr = numN(c.transcribed_credits);
+        if (applied == null || tr == null) {
+          return { headline: "<10 students", detail: WITHHELD_NOTE, emphasis: "normal", withheld: true };
+        }
+        if (applied <= 0) return null;
         var p = pct(tr, applied);
         // ⚠️ "Transcribed" in MAP means the COLLEGE MARKED THE STEP DONE — it does
         // NOT mean the credit is on the student's transcript. The college
@@ -1789,9 +1802,9 @@
   /* PURE. The five headline figures. Each carries its own denominator. */
   function standing(summary, detail) {
     if (!summary) return null;
-    var elig = num(summary.dormant_credits), art = num(summary.articulated_waiting),
-        app = num(summary.applied_credits), tr = num(summary.transcribed_credits),
-        stu = num(summary.students);
+    var elig = numN(summary.dormant_credits), art = numN(summary.articulated_waiting),
+        app = numN(summary.applied_credits), tr = numN(summary.transcribed_credits),
+        stu = numN(summary.students);
     var appr = null;
     if (detail) {
       appr = 0;
@@ -2359,6 +2372,50 @@
       + '<div class="cb-lab">' + lab + '</div></div>';
   }
 
+  /* PURE. The "Where you stand" section, or null when there is nothing to
+   * show. Every figure carries its denominator. Nothing here can reach 100%
+   * and stop: the fractions are over the OPPORTUNITY, not over what was
+   * already done.
+   *
+   * ⚠ A NULL FIGURE ON A PUBLISHED ROW IS WITHHELD, NEVER ZERO (2026-09-30).
+   * The summary now suppresses each figure on the students behind it, so a
+   * college above the 10-student floor can still carry a withheld transcribed
+   * or applied figure. It renders as withheld, with the reason. */
+  function standSection(st, summary) {
+    if (summary && summary.suppressed) {
+      return { summary: "Withheld", body: '<div class="cb-note">This college has fewer than 10 CPL students, so its figures are withheld. '
+        + 'Activity exists — the numbers are not published at that size, to protect student privacy.</div>' };
+    }
+    if (!st || (st.eligible == null && st.articulatedWaiting == null && st.applied == null
+        && st.transcribed == null && st.students == null)) return null;
+    function box(v, of, lab, frac, cls) {
+      if (v == null) return standBox("<10", "students behind this figure", lab + " " + esc(WITHHELD_NOTE), null, cls);
+      return standBox(fmt(v), of, lab, frac, cls);
+    }
+    var hasElig = st.eligible != null && st.eligible > 0;
+    var pctApplied = hasElig && st.applied != null ? (st.applied / st.eligible) : null;
+    var body = '<div class="cb-stand">';
+    body += box(st.articulatedWaiting, st.eligible != null ? "of " + fmt(st.eligible) + " units" : "units",
+      "<b>Already articulated, waiting on a decision.</b> The agreement exists and the credit is mapped — only the award is missing. This is the cheapest credit you will ever give a student.",
+      hasElig && st.articulatedWaiting != null ? st.articulatedWaiting / st.eligible : null, "lead");
+    body += box(st.applied, "units applied",
+      "Credit you have put on a student record — the measure the funding formula rewards.",
+      pctApplied, "");
+    body += box(st.transcribed, "units marked transcribed",
+      "Marked as transcribed <b>in MAP</b> — your record-keeping step, not the posting itself. You forward the "
+      + "student's CPL plan to Admissions &amp; Records, who enter the credit in your own student system; there is "
+      + "no automatic link between MAP and that system. <b>Never compare this across colleges</b> — some batch-upload "
+      + "credit that was already posted (AP/IB/CLEP), so it reflects record-keeping practice as much as outcomes.",
+      hasElig && st.transcribed != null ? st.transcribed / st.eligible : null, "");
+    body += box(st.students, "CPL students",
+      "Students at this college with prior learning in MAP. Their credit is what every number here is made of.",
+      null, "");
+    body += "</div>";
+    var head = (st.articulatedWaiting != null ? fmt(st.articulatedWaiting) + " units waiting" : "Units waiting: <10 students")
+      + " · " + fmt(st.students) + " CPL students";
+    return { summary: esc(head), body: body };
+  }
+
   function typeBox(t) {
     var h = '<div class="cb-type"><header><h4>' + esc(t.label) + "</h4>"
       + (t.couldAdoptStatewide ? '<span class="cb-tag sw">' + t.couldAdoptStatewide + " statewide</span>" : "")
@@ -2408,9 +2465,13 @@
       if (!s) { absent++; return { n: n, waiting: "—", stu: "—" }; }
       if (s.suppressed) { withheld++; return { n: n, waiting: "withheld", stu: "&lt;10" }; }
       counted++;
-      shownWaiting += num(s.articulated_waiting) || 0;
+      // A college above the floor can still withhold its waiting figure (fewer
+      // than 10 students behind it, 2026-09-30): it adds nothing to the total
+      // and reads "<10 students", never a zero.
+      var w = numN(s.articulated_waiting);
+      shownWaiting += w || 0;
       shownStudents += num(s.students) || 0;
-      return { n: n, waiting: fmt(num(s.articulated_waiting)), stu: fmt(num(s.students)) };
+      return { n: n, waiting: w == null ? "&lt;10 students" : fmt(w), stu: fmt(num(s.students)) };
     });
 
     var title = state.scope === "district" ? state.district
@@ -2847,31 +2908,8 @@
         tierBody);
     }
 
-    if (st && st.eligible != null) {
-      var pctApplied = st.eligible > 0 && st.applied != null ? (st.applied / st.eligible) : null;
-      var standBody = '<div class="cb-stand">';
-      standBody += standBox(fmt(st.articulatedWaiting), "of " + fmt(st.eligible) + " units",
-        "<b>Already articulated, waiting on a decision.</b> The agreement exists and the credit is mapped — only the award is missing. This is the cheapest credit you will ever give a student.",
-        st.eligible > 0 ? (st.articulatedWaiting || 0) / st.eligible : 0, "lead");
-      standBody += standBox(fmt(st.applied), "units applied",
-        "Credit you have put on a student record — the measure the funding formula rewards.",
-        pctApplied, "");
-      standBody += standBox(fmt(st.transcribed), "units marked transcribed",
-        "Marked as transcribed <b>in MAP</b> — your record-keeping step, not the posting itself. You forward the "
-        + "student's CPL plan to Admissions &amp; Records, who enter the credit in your own student system; there is "
-        + "no automatic link between MAP and that system. <b>Never compare this across colleges</b> — some batch-upload "
-        + "credit that was already posted (AP/IB/CLEP), so it reflects record-keeping practice as much as outcomes.",
-        st.eligible > 0 && st.transcribed != null ? st.transcribed / st.eligible : null, "");
-      standBody += standBox(fmt(st.students), "CPL students",
-        "Students at this college with prior learning in MAP. Their credit is what every number here is made of.",
-        null, "");
-      standBody += "</div>";
-      h += sec("stand", "Where you stand",
-        fmt(st.articulatedWaiting) + " units waiting · " + fmt(st.students) + " CPL students", standBody);
-    } else if (summary && summary.suppressed) {
-      h += '<div class="cb-note">This college has fewer than 10 CPL students, so its figures are withheld. '
-        + 'Activity exists — the numbers are not published at that size, to protect student privacy.</div>';
-    }
+    var stand = standSection(st, summary);
+    if (stand) h += sec("stand", "Where you stand", stand.summary, stand.body);
 
     // ── What the waiting credit is ────────────────────────────────────────
     // Explains the lead figure directly above it. Placed here, not lower down,
@@ -4306,6 +4344,7 @@
     _RESOURCES: RESOURCES,
     _byCplType: byCplType,
     _standing: standing,
+    _standSection: standSection,
     _measureFor: measureFor,
     // Funding / district / Sierra — pure, and the join is the risky one: it
     // decides which college's money is shown, so it is tested against the
