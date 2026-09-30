@@ -147,7 +147,11 @@ function readCells(keys, tr) {
   const o = {};
   Array.from(tr.cells).forEach((td, i) => {
     const span = td.querySelector(".cf-ftes");
-    const text = td.textContent.replace(/\s+/g, " ").trim();
+    // A Curr cell may end with the reviewer's "Unit sources" word
+    // (2026-09-30); it is a control, not part of the figure or its line.
+    const bare = td.cloneNode(true);
+    bare.querySelectorAll(".cplfund-srclink").forEach((b) => b.remove());
+    const text = bare.textContent.replace(/\s+/g, " ").trim();
     const line = span ? span.textContent.replace(/\s+/g, " ").trim() : "";
     o[keys[i]] = { td, text, fig: span ? text.slice(0, text.length - line.length).trim() : text, line,
       tip: td.getAttribute("title") || "", lineTip: span ? span.getAttribute("title") || "" : "",
