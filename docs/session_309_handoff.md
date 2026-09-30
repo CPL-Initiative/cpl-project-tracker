@@ -21,10 +21,7 @@ never an existing one. If Sam's greeting names a funding task, read 308 instead 
    plans; non-military **17,392** from 1,177 students; military **674** from 123, all in exhibits under 10
    students each. Next, ask the same question for **City College of San Francisco** (college_id 30), where 32
    military exhibits each carry 10 or more students (10,201 military units on plans) and show one by one.
-2. Sam's first note, `sierra_feedback` turn `1b9230ce`, still read `new` at 18:05 UTC; he marked the
-   follow-up `83d09407` addressed. Remind him in one line if it is still open. Sessions cannot write
-   either Training table (below).
-3. The one open data question: MAP's two views disagree by 5% on applied in plan (171,078 articulation
+2. The one open data question: MAP's two views disagree by 5% on applied in plan (171,078 articulation
    view, 162,603 student view, 26 colleges). It is Pedro's (MAP custom reports lane). Draft the ask for
    Sam to send if he wants it.
 
