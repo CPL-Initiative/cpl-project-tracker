@@ -19,9 +19,10 @@ generator changed).
    show the version one past 75, ACTIVE, `verify_jwt: false`. Then dispatch **one** `cpl-chat-smoke.yml`,
    and only after the push-triggered smoke on `main` has finished: two runs at once time out
    `program_typical_courses` and fail 7c (`cpl_memory` `overlapping-smokes-time-out-rpc-2026-10-01`). Read
-   7c, 7s and 7p. If 7s still fails "never says … no San Gabriel Valley college", read the sentence: the
-   last one was an articulation-precedent line ("No college in the San Gabriel Valley catalog data shows
-   an existing CNA articulation yet") that garbles its source; fix the context or the rule, not the regex.
+   7c, 7s and 7p. #1804 also carries the smoke fix for 7s: two correct articulation-precedent sentences in
+   the noun form ("None of the three San Gabriel Valley colleges above have an existing CPL articulation
+   …") tripped the absence check once the place was spelled out; the helper now sets that form aside, and
+   `tests/sierra_smoke_absence_claims.test.js` holds the recorded sentences (18/18).
 2. **Read both sheets' `replies` (and the sweep's `edits`) before anything else Sam-facing.**
    - Sheet 13, [CyhTj4tH2sSMjKtgaW6o69](https://claude.ai/artifact/CyhTj4tH2sSMjKtgaW6o69): five cards (the
      CCSF check, carried; run the two CER renames; the Microsoft title; folding AWS's second record; a
