@@ -236,3 +236,35 @@ student.
 Same as before — run a second partner list and work its `unmapped.json`. While doing
 it, split the fourth status out; the second run is the natural moment to change the
 vocabulary, because it is the first time the change costs nothing to re-issue.
+
+
+## S311 (SkyQuill, 2026-10-01): an issuer renames an exam or a credential, and the CER cares which
+
+Sam ruled sheet 11 card 8 "Rename with aliases" for three credentials the watch found renamed.
+The card said its facts were second-hand. Checked against the issuers' announcements (their own
+pages are blocked here; read through search), two held and one did not:
+
+- **Cisco** renamed the credential: CyberOps Associate became Cisco Certified Cybersecurity
+  Associate on 2026-01-21, then CCNA Cybersecurity on 2026-02-03; holders migrated automatically.
+- **AWS** renamed the credential: SysOps Administrator - Associate became CloudOps Engineer -
+  Associate on 2025-09-30.
+- **Microsoft renamed the exam, not the credential.** Microsoft Certified: Azure AI Fundamentals
+  keeps its name; AI-901 replaced AI-900 as the exam that earns it, and "taking AI-901 will not
+  change the name of your existing credential". Renaming the CER record to "(AI-901)" would have
+  told a student who passed AI-900 that they hold something else.
+
+**The lesson:** a watch row's `formerly` (or a card's "X is now Y") names a rename; before a
+rename writes, ask whether the thing renamed is the credential a person holds or the test that
+earns it. Rule 8b keeps a code that is part of the credential's identity; an exam code that
+several exams can fill is not.
+
+**Two mechanics found on the way.** The CER's search already matches every raw variant
+(`credential_reference.js`), so "old names as aliases" needs no new field: the raws keep the old
+wording. And AWS's two KB records (`… SysOps Administrator` and `… — Associate`) cannot both take
+the new name: the dry-run's V1 refuses two renames to one target, and folding the second is a
+merge, which only a curator's confirm writes (PR-5b/2). The receipt (#1803) carries the two clean
+renames for Sam to run, because the repo's Supabase guard denies a session's `kb_curation` insert.
+
+### Moved from the lane at this checkpoint (history, verbatim)
+
+⭐ **ASHLEY'S DELTA PAGE NAMES THE CER AND STOPS THERE.** Read from Drive (id `1OS7C1oNmM6tAmOIJwp3BPfklNB5u_EAy`, 2,713 lines): `<span class="cred-name">` holds the credential title, a `tag sw` badge reads **statewide**, and there is no exhibit identifier and **no CIP anywhere in the file**. So ask ② adds a LEVEL that page never had — the credit recommendations under each CER — and ask ③ had no precedent to copy. ⚠️ **Its filter controls are WORDS** ("Adopt now", "Build first-in-state", "Confirmed", "Validate", "No match"), which is the evidence behind dropping the numbered chips.

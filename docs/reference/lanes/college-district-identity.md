@@ -42,6 +42,8 @@ view's only a11y failure, in both themes; re-verified 38→36 total). Guards:
 names against `team_phrase.js`'s own api; `college_identity_tab.test.js` block 5 (10)
 asserts ORDER, not presence.
 
+✅ **THE FUNDING ROSTER'S SPELLINGS ARE VARIANTS (S311, 2026-10-01, #1802).** `cpl_funding_my_reports()` joins a report's roster name to `map_colleges` exactly (canonical or variant, trimmed): it decides who sees a college's reports, so an unknown spelling fails closed. *LA Swest*, *Mt San Antonio* and *MiraCosta* differed from existing variants only in case or a space; the migration `map_colleges_funding_roster_variants` added them (receipt in `kb/receipts/`, rollback `array_remove`). The roster now resolves 115 of 115. ⚠️ **Fix the join stays the rule where a join can fold safely**; this one stays exact by design, so its spellings land in the table.
+
 ✅ **MAP USERS RESOLVES THROUGH THIS TAXONOMY (#1561, 2026-09-11)** — and ⚠️ **the
 wiring replaced LUCK, not a break.** Measured before building: **128 of 128** names in
 `map_college_users` match a canonical `college_name` exactly, **74 of 78** distinct

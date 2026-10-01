@@ -139,3 +139,32 @@ can see yet.
 Then Priority 3: the two-lane memory tab (`memory_slug` already exists on
 `sierra_rules`) and the drift check that reports **"decided in memory, no Sierra
 rule implements it."**
+
+## S311 (SkyQuill, 2026-10-01): an abbreviation was hiding two bugs, and two smokes at once make a third
+
+**The abbreviation.** Smoke 7s failed on `main` after #1796 because Sierra answered a visitor who
+wrote "San Gabriel Valley" with "7 miles from the SGV". The place block's heading already said
+"the San Gabriel Valley"; the abbreviation was the model's own. #1800 (v75) added one sub-rule
+under the place rule: name the place in full, as the heading names it, the first time, and never
+shorten it to an abbreviation the visitor did not write.
+
+**What the full name exposed.** With the place spelled out, the next answers carried two faults the
+letters had hidden from the smoke's regexes:
+
+- "Registered Nursing — taught at 20 San Gabriel Valley colleges". The region has six campuses.
+  Four catalog sections counted "In <place>" by proximity band, and a sub-region's band is its
+  whole county. `inAskedPlace()` (#1804) counts a sub-region by its own campuses and leaves the
+  county ranked first. Its guard drives the real builders; the unfixed code fails four of seven.
+- "No college in the San Gabriel Valley catalog data shows an existing CNA articulation yet",
+  which smoke 7s's absence check catches. The catalog shows courses, not articulations, so the
+  sentence garbles its source as well as reading as an absence about the place.
+
+**The lesson:** when a fix makes the model use words a guard can now read, expect the guard to
+find what the old words hid, and read the first failures as findings about the context.
+
+**Two smokes at once.** The push to `main` starts a smoke, and a dispatch two minutes later started
+a second. They overlapped on the database, and 7c's direct call to `program_typical_courses`
+returned nothing (a timeout swallowed as `rows=0`) in one run and passed in the other. Measured
+after: 47 ms direct, 122 ms in PostgREST's call shape, 2.1 s mean over 218 PostgREST calls with a
+7.9 s maximum. Dispatch a verifying smoke only after the push-triggered run finishes; read which
+version each mode ran against when a deploy lands mid-run.

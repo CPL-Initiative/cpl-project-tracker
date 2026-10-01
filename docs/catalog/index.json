@@ -14476,8 +14476,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 282,
+   "count": 283,
    "docs": [
+    {
+     "created": "2026-10-01",
+     "governs": [],
+     "n": 312,
+     "path": "docs/session_312_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "implementation-funding",
+      "college-district-identity",
+      "partner-crosswalks",
+      "decision-sheet"
+     ],
+     "title": "Sierra names the place in full; the roster resolves; the model sweep and the CER renames wait on Sam",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-01",
      "governs": [],
@@ -19273,5 +19291,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1004
+ "total": 1005
 }
