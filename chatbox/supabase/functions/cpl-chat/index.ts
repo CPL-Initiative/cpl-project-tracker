@@ -2757,6 +2757,19 @@ function proximityBand(geo: any | null, askedGeo: any | null): number {
   return 0;
 }
 
+// IN THE PLACE (2026-10-01, S311). The four catalog sections said "In the San
+// Gabriel Valley: 20 college(s)" because each counted the place by its band, and
+// a sub-region's band is its whole county (Los Angeles). Sierra then wrote
+// "taught at 20 San Gabriel Valley colleges". A sub-region carries its own
+// campuses (resolveAskedPlace), and those are what "in" it means; a county or a
+// region keeps the band test. The lists still rank the county first, so the
+// sub-region is still not a fence: only the count and its label change.
+function inAskedPlace(college: string, band: number, askedGeo: any | null): boolean {
+  if (!askedGeo) return false;
+  if (Array.isArray(askedGeo.colleges) && askedGeo.colleges.length) return askedGeo.colleges.includes(college);
+  return band >= (askedGeo.county ? 3 : 2);
+}
+
 // ── "NEAREST" NEEDS A DISTANCE (2026-09-18, S275) ────────────────────────────
 // The bands say which colleges are IN the place the visitor named (county,
 // region, a neighboring region) and nothing about how far the rest are: inside
@@ -3002,7 +3015,7 @@ function buildOfferingsContext(
   // says the list is not exhaustive, so without this line the model hedges
   // ("my data only surfaced two") instead of saying what the catalog shows.
   if (askedGeo && askedGeo.label && !askedCollege) {
-    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
+    const here = others.filter(([c, g]) => inAskedPlace(c, proximityBand(g, askedGeo), askedGeo));
     ctx += here.length
       ? `\n### In ${askedGeo.label}: ${here.length} college(s) teach in this area — they are listed first below.\n`
       : `\n### The current catalog data lists no college in ${askedGeo.label} teaching courses matching this. Say what the catalog data shows — never that no college in ${askedGeo.label} has or teaches it — name any related programs the program catalog section lists there, then offer the nearest colleges below (county and distance shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
@@ -3096,7 +3109,7 @@ function buildProgramsContext(
   // Same fact, same reason as the offerings builder: a county with no matching
   // program is an ANSWER, and the model must not soften it into "not certain".
   if (askedGeo && askedGeo.label && !askedCollege) {
-    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
+    const here = others.filter(([c, g]) => inAskedPlace(c, proximityBand(g, askedGeo), askedGeo));
     ctx += here.length
       ? `\n### In ${askedGeo.label}: ${here.length} college(s) have a matching program — they are listed first below. Read each title and award before calling any of them the program asked for (a bridge such as "LVN to RN" is for people who already hold the license). When another section says the catalog lists no college in ${askedGeo.label} for the entry program, these are the related programs it does list there — name them.\n`
       : `\n### The current program catalog data lists no college in ${askedGeo.label} with a matching program. Say what the catalog data shows — never that no college in ${askedGeo.label} offers it — then name the nearest colleges below that award it, with their county and distance.\n`;
@@ -3619,7 +3632,7 @@ function buildRelatedPrograms(
     if (askedCollege) {
       s += withGeo.some((r) => r.college === askedCollege) ? `; ${askedCollege} teaches it` : `; the catalog data lists no course in it at ${askedCollege}`;
     } else if (askedGeo && askedGeo.label) {
-      const here = withGeo.filter((r) => r.band >= (askedGeo.county ? 3 : 2));
+      const here = withGeo.filter((r) => inAskedPlace(r.college, r.band, askedGeo));
       if (here.length) {
         s += `; in ${askedGeo.label}: ${here.length} (${here.slice(0, FLYER_NAMES).map((r) => r.college).join(", ")}${here.length > FLYER_NAMES ? ", …" : ""})`;
         placed = true;
@@ -3715,7 +3728,7 @@ function buildProspectiveContext(
     const title = plist[0]?.top_title || top;
     let section = "";
     if (askedGeo && askedGeo.label && !askedCollege) {
-      const here = plist.filter((p) => p.band >= (askedGeo.county ? 3 : 2));
+      const here = plist.filter((p) => inAskedPlace(p.college, p.band, askedGeo));
       section += here.length > 0
         ? `In ${askedGeo.label}: ${here.length} of the colleges below.\n`
         : `The catalog data lists no college in ${askedGeo.label} teaching this program. State it as what the catalog data shows, never as a fact about ${askedGeo.label}; the program catalog section names any related programs there (a bridge such as LVN to RN is for people who already hold the license) — name them. The colleges below are the nearest that do teach it — name them with their county and distance so the visitor can judge the trip.\n`;

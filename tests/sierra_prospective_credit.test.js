@@ -202,8 +202,11 @@ block("2. proximityBand", () => {
     G.proximityBand(geo("Inland Empire", "Riverside"), { county: "San Bernardino", region: "Inland Empire" }) === 2);
   check("(2) no anchor, or no geography, is 0",
     G.proximityBand(geoMap.get("Saddleback College"), null) === 0 && G.proximityBand(null, orange) === 0);
-  check("(2) ⭐ the two catalog builders moved their in-place threshold with the bands",
-    (SRC.match(/proximityBand\(g, askedGeo\) >= \(askedGeo\.county \? 3 : 2\)/g) || []).length === 2
+  // The threshold moved into inAskedPlace() (2026-10-01, S311), which a sub-region
+  // answers by its own campuses; the county/region threshold is the same 3 : 2.
+  check("(2) ⭐ the catalog builders' in-place threshold moved with the bands",
+    /function inAskedPlace[\s\S]{0,400}?return band >= \(askedGeo\.county \? 3 : 2\);/.test(SRC)
+    && (SRC.match(/const here = [^\n]*inAskedPlace\(/g) || []).length === 4
     && !/askedGeo\.county \? 2 : 1\)/.test(SRC));
 });
 
