@@ -17,6 +17,9 @@ await new Promise(r => setTimeout(r, 3000)); await val('document.fonts.ready.the
 const DUR = (await val('window.__film.dur')) || 90; fs.writeFileSync('.dur', String(DUR));
 // The WAV comes back in 1 MB slices: one 29 MB DevTools message stalls.
 const L = await val('window.__film.audio().then(s=>{window.__w=s;return s.length;})', true); let b = '';
+// A score that throws (2026-10-01: a ReferenceError in compose) returns no length;
+// stop here rather than capture five minutes of frames over an empty WAV.
+if (!L) { console.error('the score did not render: run window.__film.audio() in the page for the error'); ch.kill(); process.exit(1); }
 for (let o = 0; o < L; o += 1e6) b += await val(`window.__w.slice(${o},${o + 1e6})`);
 fs.writeFileSync('.music.wav', Buffer.from(b, 'base64')); console.log('music rendered');
 fs.mkdirSync('.frames', {recursive: true});

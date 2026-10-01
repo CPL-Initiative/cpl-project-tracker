@@ -246,6 +246,8 @@ details.fold > .fold-body{padding-top:1.4em}
 .prio .pct{font-variant-numeric:tabular-nums; font-weight:700; color:var(--cobalt); white-space:nowrap}
 .prio .metric{margin:.5em 0 0; font-size:.94rem}
 .prio .aim{margin:.35em 0 0; font-size:.88rem; color:var(--text-muted)}
+/* the count under a minimum condition (sheet 14 card 6), quieter than the condition */
+#req-list .req-count{color:var(--text-muted)}
 
 /* ── plain tables (the page's own: the worked example and the choices table;
       scoped to .tablebox so the embedded institution table keeps its own) ── */
@@ -444,8 +446,8 @@ section[hidden]{display:none}
       <li><a href="#questions">Frequently asked questions</a></li>
     </ul>
     <p class="toc-watch">
-      <a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 90-second introduction</a>
-      <a class="toc-alt" id="video-mp4" href="../prototype/funding_video/20260926_CPL_Funding_in_Motion_v3.mp4" download>or download the video (MP4)</a>
+      <a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a>
+      <a class="toc-alt" id="video-mp4" href="../prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4" download>or download the video (MP4)</a>
       <!-- The narrated cut (Sam approved draft 4, sheet 4 card 4, 2026-09-29). It is Scenario 1
            only, so the Scenario 2 view hides it until that scenario's narrated cut exists. -->
       <a class="toc-alt" id="video-narrated" href="../prototype/funding_video/funding_in_motion_n1.html">or watch the narrated version (3 minutes)</a>
@@ -853,6 +855,9 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   });
   var money = function(n){ return "$" + Math.round(n).toLocaleString("en-US"); };
   var num = function(n){ return Math.round(n).toLocaleString("en-US"); };
+  var money2 = function(n){ return "$" + Number(n).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+  // the tab's fmtPctTrim: two decimals, trailing zeros dropped (92.82%, 100%)
+  var pct2 = function(f){ return (Math.round(f * 10000) / 100).toString() + "%"; };
   // ⚠ DEFINED HERE, NOT HALFWAY DOWN. Every write to a page element goes
   // through it, so a section this painter stops filling — or one an edit
   // removes from the markup — is a no-op rather than a thrown TypeError that
@@ -864,12 +869,13 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   if (D.scenario) document.getElementById("x-scenario").textContent = String(D.scenario).replace(/^Scenario\s+/i, "");
   // The introduction video is per scenario: each one is typed from its scenario's
   // dials, so a page showing Scenario 2 links Scenario 2's introduction (Sam,
-  // 2026-09-26). Scenario 1's stays the default for every other name.
+  // 2026-09-26). Scenario 1's stays the default for every other name. Scenario 2
+  // is the published one, so its link names no scenario (Sam, 2026-10-01).
   (function () {
     var VIDEOS = {
       "Scenario 2": { page: "../prototype/funding_video/funding_in_motion_s2.html",
-        mp4: "../prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v4.mp4",
-        label: "Watch the 90-second introduction (Scenario 2)" }
+        mp4: "../prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v5.mp4",
+        label: "Watch the 100-second introduction" }
     };
     var v = VIDEOS[String(D.scenario || "").trim()];
     var link = document.getElementById("video-link"), mp4 = document.getElementById("video-mp4");
@@ -941,6 +947,28 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     var a = document.createElement("p"); a.className = "aim";
     a.textContent = "Measured as: " + p.metric;
     el.appendChild(top); el.appendChild(m); el.appendChild(a);
+    // THE PUBLIC VIEW'S PROGRESS LINES (Sam, sheet 14 card 6, 2026-10-01:
+    // "port"), so colleges read one page: the statewide target and its price,
+    // then what MAP records demonstrate against the Total Possible. From the
+    // tab's _publicProgress, the same figures its Public view prints.
+    var pr = ((D.progress && D.progress.prios) || []).filter(function (x) { return x.label === p.label; })[0];
+    if (pr) {
+      // An FTES target only: student headcount is never a metric (Sam,
+      // 2026-09-15), and a priority with no target has none to state.
+      if (pr.ftes && pr.target > 0) {
+        var tl = document.createElement("p"); tl.className = "aim prog";
+        tl.textContent = "Target: " + pr.target.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) +
+          " CPL FTES statewide, about " + num(pr.units) + " semester units, at " + money2(pr.price) +
+          " per CPL FTES (the " + money2(pr.rate) + " base rate times a factor of " + (+pr.factor).toFixed(1) + ").";
+        el.appendChild(tl);
+      }
+      var pl = document.createElement("p"); pl.className = "aim prog";
+      pl.textContent = pr.demonstrated == null
+        ? "Progress: TBA."
+        : "Progress: MAP records demonstrate " + money(pr.demonstrated) + " of the " + money(pr.totalPossible) +
+          " Total Possible (" + pct2(pr.pct) + ").";
+      el.appendChild(pl);
+    }
     // The recommended strategies for the year, as the tab's card lists them
     // (Sam, 2026-09-02). Painted from the payload, so an edit on the tab
     // reaches this page; a priority with none gets no empty heading.
@@ -1029,9 +1057,27 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     if (!list) return;
     var R = D.requirements || { intro: "", items: [] };
     if (R.intro) setText("req-intro", R.intro);
-    (R.items || []).forEach(function (t) {
+    // The count under each condition (sheet 14 card 6), as the Public view
+    // prints it, once MAP's figures have loaded; the page repaints when they do.
+    var C = (D.progress && D.progress.conditions) || [];
+    var countLine = function (c) {
+      if (!c) return "";
+      if (c.kind === "coord") return c.n + " of " + c.of + " colleges have one on file in MAP" + (c.asOf ? " (as of " + c.asOf + ")" : "") + ".";
+      if (c.kind === "part") return c.n + " of " + c.of + " colleges have confirmed so far.";
+      if (c.kind === "jst") return c.n + " of " + c.of + " colleges meet this; " + c.star + " hold the Veteran Star" +
+        (c.asOf ? " (as of " + c.asOf + ")" : "") + ", and the three noncredit-only institutions meet it with noncredit certificates posted as exhibits in MAP.";
+      return "";
+    };
+    (R.items || []).forEach(function (t, i) {
       var li = document.createElement("li");
       li.textContent = t;
+      var cl = countLine(C[i]);
+      if (cl) {
+        var sp = document.createElement("span"); sp.className = "req-count";
+        sp.textContent = " " + cl;
+        if (!/[.!?]$/.test(String(t).trim())) li.textContent = t + ".";
+        li.appendChild(sp);
+      }
       list.appendChild(li);
     });
     if (!list.children.length) {

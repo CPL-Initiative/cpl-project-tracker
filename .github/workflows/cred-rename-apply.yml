@@ -101,6 +101,16 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python kb/_cred_rename_apply_supabase.py
 
+      # ── Step 4b: rebuild what reads the credential keys ───────────
+      # The 2026-10-01 apply rewrote credentials.json and left three derived
+      # files stale, so the lints job's freshness checks failed on main and on
+      # every PR until a session rebuilt them (S313). Both builders are
+      # standard-library Python over committed files.
+      - name: Rebuild the files derived from the credential keys
+        run: |
+          python3 kb/_build_remint_blast_radius.py
+          python3 kb/_build_ccr_cpl.py
+
       # ── Step 5: commit + push ─────────────────────────────────────
       - name: Commit + push
         run: |
@@ -112,7 +122,10 @@ jobs:
                   kb/coci_articulations.json \
                   kb/credential_review_overlay.json \
                   kb/cred_rename_dryrun/ \
-                  kb/cred_rename_out/
+                  kb/cred_rename_out/ \
+                  kb/remint_blast_worklist.json \
+                  prototype/ccr_remint_blast.json \
+                  prototype/ccr_cpl.json
           if git diff --cached --quiet; then
             echo "No changes to commit (apply was a no-op or re-ran on already-applied state)."
             exit 0

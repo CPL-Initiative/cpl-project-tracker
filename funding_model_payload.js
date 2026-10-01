@@ -245,6 +245,10 @@
     prios: prios,
     timing: timing,
     requirements: requirements,
+    // The Public view's progress lines (sheet 14 card 6): each priority's
+    // statewide target, price and progress, and the count under each minimum
+    // condition. An older engine emits none and the page prints none.
+    progress: typeof T._publicProgress === "function" ? T._publicProgress() : null,
     reported: reported,
     rows: rows,
   };
