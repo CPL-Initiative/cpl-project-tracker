@@ -13960,7 +13960,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-09-30"
+     "updated": "2026-10-01"
     },
     {
      "created": "2026-08-28",
@@ -14473,8 +14473,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 281,
+   "count": 282,
    "docs": [
+    {
+     "created": "2026-10-01",
+     "governs": [],
+     "n": 311,
+     "path": "docs/session_311_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "my-cpl-funding",
+      "house-voice",
+      "decision-sheet"
+     ],
+     "title": "My CPL Funding in Sam's words; an emergency-scope checkpoint",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-30",
      "governs": [],
@@ -19253,5 +19270,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1003
+ "total": 1004
 }

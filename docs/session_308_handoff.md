@@ -4,6 +4,8 @@ date: 2026-09-30
 session: 307 (SkyGusset)
 tags: [handoff, implementation-funding, reporting-box, public-view, my-college, style-guide, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_311_handoff.md
 ---
 
 # You are Session 308

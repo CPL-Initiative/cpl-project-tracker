@@ -4,6 +4,8 @@ date: 2026-09-30
 session: 305 (SkyLatch)
 tags: [handoff, implementation-funding, funding-video, reporting-box, my-college, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_311_handoff.md
 ---
 
 # You are Session 306
