@@ -158,7 +158,9 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
   const members = panel.querySelectorAll(".cplfund-onemember");
   check("3g: a district shows its line and one block per institution",
     !!panel.querySelector(".cplfund-onedist h3") && members.length === byD[dist].length &&
-    new RegExp(byD[dist].length + " institutions").test((panel.querySelector(".cplfund-onedist") || { textContent: "" }).textContent) &&
+    // One through nine spelled out (Sam's mockup round, 2026-10-01).
+    new RegExp("(" + byD[dist].length + "|" + ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"][byD[dist].length] + ") institutions", "i")
+      .test((panel.querySelector(".cplfund-onedist") || { textContent: "" }).textContent) &&
     Array.from(members).every((m) => m.querySelector(".cb-panel")));
   const names = Array.from(members).map((m) => (m.querySelector("h4.cplfund-onemember-h") || {}).textContent || "");
   check("3g2: each block sits under its institution's name, alphabetical, labeling its region",
@@ -167,7 +169,7 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
     Array.from(members).every((m) => m.getAttribute("aria-labelledby") === m.querySelector("h4").id));
   const distLine = (panel.querySelector(".cplfund-onedist") || { textContent: "" }).textContent;
   check("3h: the district line carries the max award total and the current total",
-    /max award \$[\d,]+ in total/.test(distLine) && /current total (\$|<\$)[\d,]+/.test(distLine));
+    /a combined max award of \$[\d,]+/.test(distLine) && /a current total of (\$|<\$)[\d,]+/.test(distLine));
   check("3i: with a choice made, Save as PDF is enabled", !!pdf() && !pdf().disabled);
   click(w, pdf());
   const html = printed.length ? printed[printed.length - 1].html : "";
