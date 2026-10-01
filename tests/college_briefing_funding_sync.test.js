@@ -63,7 +63,7 @@ B._state.data.briefing = B._buildBriefing({ config: c1, college: null }, { scena
 B._loadFunding(root);
 const block = () => {
   const t = (root.querySelector('[data-sec="funding"]') || root).textContent.replace(/\s+/g, " ");
-  return (/What counts toward it(.*?)Reaching a target/.exec(t) || [])[1] || "";
+  return (/Priority outcomes(.*?)Progress toward each priority goal/.exec(t) || [])[1] || "";
 };
 const money = (v) => "$" + Math.round(v).toLocaleString("en-US");
 
@@ -103,8 +103,8 @@ setTimeout(function () {
   const pt = panel.textContent.replace(/\s+/g, " ");
   check("(d) fundingPanel renders the same block for one institution",
     ok && /2026–2028 College Implementation Funding/.test(pt) && pt.indexOf(money(T._alloc(KEY).total)) >= 0 && /Access step 0\.5/.test(pt));
-  check("(d) it points at the table beside it, not at the tab", /Choose All institutions/.test(pt) && !/Implementation Funding tab's model/.test(pt));
-  check("(d) My College keeps its own footer", /Implementation Funding tab's model/.test(root.textContent));
+  check("(d) it points at the table beside it, not at the tab", /same procedure for every institution under All institutions\./.test(pt) && !/Implementation Funding tab shows/.test(pt));
+  check("(d) My College keeps its own footer", /The Implementation Funding tab shows the full derivation/.test(root.textContent));
   check("(d) one renderer: My College and the panel both call fundingBlockHtml",
     (src.match(/fundingBlockHtml\(\{/g) || []).length === 2);
 

@@ -1923,7 +1923,9 @@
      "governs": [
       "tests/funding_model_page.test.js",
       "tests/cpl_funding_section_order.test.js",
-      "cpl_funding.js"
+      "cpl_funding.js",
+      "college_briefing.js",
+      "tests/my_cpl_funding_words.test.js"
      ],
      "path": "docs/kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md",
      "status": "published",
@@ -1935,7 +1937,7 @@
      ],
      "title": "A guard that supplies its own input tests only the half after the input",
      "type": "methodology",
-     "updated": "2026-09-12"
+     "updated": "2026-10-01"
     },
     {
      "created": "2026-09-09",
@@ -6594,7 +6596,8 @@
      "created": "2026-09-28",
      "governs": [
       "cpl_funding.js",
-      "sierra_training.js"
+      "sierra_training.js",
+      "prototype/mockup_harness/capture_mycpl.mjs"
      ],
      "path": "docs/kb-notes/methodology-mock-up-from-the-running-code.md",
      "status": "published",
@@ -6606,7 +6609,7 @@
      ],
      "title": "Mock up a UI change with the running code, then port it",
      "type": "methodology",
-     "updated": "2026-09-28"
+     "updated": "2026-10-01"
     },
     {
      "created": "2026-08-01",
@@ -10863,7 +10866,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-09-30"
+     "updated": "2026-10-01"
     },
     {
      "created": "2026-06-21",
@@ -13986,7 +13989,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-09-30"
+     "updated": "2026-10-01"
     },
     {
      "created": "2026-08-28",
@@ -14499,8 +14502,43 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 281,
+   "count": 283,
    "docs": [
+    {
+     "created": "2026-10-01",
+     "governs": [],
+     "n": 312,
+     "path": "docs/session_312_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "implementation-funding",
+      "college-district-identity",
+      "partner-crosswalks",
+      "decision-sheet"
+     ],
+     "title": "Sierra names the place in full; the roster resolves; the model sweep and the CER renames wait on Sam",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-01",
+     "governs": [],
+     "n": 311,
+     "path": "docs/session_311_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "my-cpl-funding",
+      "house-voice",
+      "decision-sheet"
+     ],
+     "title": "My CPL Funding in Sam's words, merged; \"model\" leaves the public text next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-30",
      "governs": [],
@@ -19279,5 +19317,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1004
+ "total": 1006
 }

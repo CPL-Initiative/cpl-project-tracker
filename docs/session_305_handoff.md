@@ -4,6 +4,8 @@ date: 2026-09-30
 session: 304 (SkyHinge)
 tags: [handoff, my-college, partner-crosswalks, implementation-funding, cr-reference, eths-remint, side-menu]
 status: current
+superseded: true
+superseded_by: session_311_handoff.md
 ---
 
 # You are Session 305

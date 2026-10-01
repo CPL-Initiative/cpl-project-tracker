@@ -570,3 +570,25 @@ colleges or <100 names), because a failed read would otherwise report the entire
 roster as findings — a failure wearing the shape of a catastrophic result. And it
 restores `college_identity_data.js` from git afterwards, because the builder
 writes that file at the repo root regardless of `--out`.
+
+## S311 (SkyQuill, 2026-10-01): an exact join gets its spellings in the table
+
+The funding roster carries short names ("LA Swest", "Mt San Antonio", "MiraCosta"); the
+reports function resolves them through `map_colleges` by exact canonical name or variant.
+Read 2026-10-01 with that same join over the roster's 115 names: 112 resolved, and the three
+that did not differed from an existing variant only in case (`LA SWEST`, `MT SAN ANTONIO`) or
+a space (`MIRA COSTA`). The lane's standing rule is to fix the join, not the table, and the
+JavaScript reads do fold case and whitespace (`normCollege`). This join stays exact on
+purpose: it decides which college's reported expenditures a signed-in person sees, so a
+spelling it does not know fails closed. A fold would also not have reached `MiraCosta`.
+
+So the table took the three spellings, one per college, in a guarded idempotent migration
+(`map_colleges_funding_roster_variants`) with its receipt and an `array_remove` rollback, after
+a fresh read matched the receipt's before-values. After: 115 of 115, each to its own id.
+
+**The test that decides it:** where a join controls disclosure, prefer adding the exact
+variant over loosening the match; where a join only labels or ranks, fold.
+
+Mechanics worth keeping: `apply_migration` ran this `UPDATE` at once, while `execute_sql`
+statements carrying an `UPDATE` waited out the Supabase tool's 60-second limit three times the
+same day (inserts through `execute_sql` ran at once).

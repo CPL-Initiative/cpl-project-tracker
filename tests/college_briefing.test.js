@@ -579,20 +579,22 @@ check("questions: none without a college", M._sierraQuestions(null, null, null).
 // 2026-09-24 (Sam's no-this-not-that rule): the page says the model did not
 // load and that the allocation is unread, and asks for a reload.
 check("funding: a failed model load says the allocation is unread, never that it is absent",
-  /The funding model did not load, so this page cannot show an allocation for this college yet/.test(briefingSrc)
+  // Sam's card 14 (2026-10-01): "CPL funding", never "the funding model".
+  /The CPL funding figures did not load\. Reload the page to see the college's funding\./.test(briefingSrc)
   && !/failed read, not a finding/.test(briefingSrc));
 // Sam retired "a cap, not a cheque" on 2026-08-22 (state positively what drives
 // the money), and the model gained a literal $400K cap the same day — so the
 // old phrase was both against the ruling and newly ambiguous. Guard the
 // REPLACEMENT and guard that the retired phrasing does not creep back.
 check("funding: the allocation is stated positively — driven by the college's own CPL results",
-  /driven by <b>its own CPL results, as they happen<\/b>/.test(briefingSrc));
+  // Sam's own sentence since 2026-10-01 (mockup card 6): outcomes determine funding.
+  /Achievement of the "\s*\+\s*"following priority outcomes determines funding\./.test(briefingSrc));
 check("funding: the retired 'not a cheque' framing is gone",
   !/not a cheque/.test(briefingSrc) && !/ceiling, not a check/.test(briefingSrc));
 check("funding: a college held to the maximum is told where the difference went",
   // "cap" vocabulary (one pool + Sam's funding-vocabulary sweep, 2026-08-31);
   // the promise is unchanged — say where the difference WENT.
-  / cap<\/b>/.test(briefingSrc) && /re-splits across the other colleges/.test(briefingSrc));
+  /cap, so its funding stops at the cap and the difference is redirected to the other "/.test(briefingSrc));
 
 // ⭐ The floor waterfall must not be re-implemented here. The handoff's
 // worked example — Bakersfield at 1.83% of a $23.24M pool — is a FLAT
@@ -613,6 +615,9 @@ wf.CPL_FUNDING_ESS = { n_statewide_credentials: 84 };
 wf.CPL_FUNDING_TAB = {
   // Shape matches the post-2026-08-22 model: no rural_w component, floor $175K.
   _alloc: function () { return { total: 175000, floored: true, gate_blocked: true, gate_missing: ["a CPL Coordinator"] }; },
+  _conditions: function () { return { pending: false, blocked: true, deadline: "2026-11-01", deadlinePassed: false,
+    vetPct: "75%", demonstrated: 0, demonstratedWords: "$0", items: [{ kind: "coord", met: false, missing: "coord" },
+    { kind: "part", met: true }, { kind: "vetstar", met: true }] }; },
   _grant: FAKE._grant, _ess: FAKE._ess, _isRural: function () { return true; },
   _district: function () { return "Kern CCD"; },
   _model: function () { return { floor: 175000, cap: 400000 }; }
@@ -636,15 +641,19 @@ check("render: a floored college is TOLD it is at the floor, not left to infer",
   // where the figure comes from. Since 2026-09-24 the sentence states it
   // positively (Sam's no-this-not-that rule): the proportional share came out
   // below the base, and the base award is the allocation.
-  /base award/.test(ftxt) && /proportional share came out below the base/i.test(ftxt)
-  && /the base award is its allocation/i.test(ftxt));
+  // Sam's sentence since 2026-10-01 (mockup card 7).
+  /The college qualifies for \$[\d,]+ base funding to implement the CPL policies and procedures/.test(ftxt));
 // The rural allowance is retired (Sam, 2026-08-22) — a briefing that still
 // named it would promise a college money that no longer exists.
 check("render: no retired rural allowance is still promised",
   !/rural allowance/.test(ftxt) && !/\$76,923/.test(ftxt));
 check("render: an outstanding participation requirement is surfaced",
-  /Participation requirements are outstanding/.test(ftxt) && /CPL Coordinator/.test(ftxt));
-check("render: the ESS outcomes are listed", fr.querySelectorAll(".cb-ess-list li").length === 3);
+  // Sam's card 8 (2026-10-01): the three minimum conditions, each with its state.
+  /CPL funding requires the following three minimum conditions:/.test(ftxt) &&
+  /1\. A CPL Coordinator \(primary CPL contact\) is named in MAP/.test(ftxt) &&
+  /once the minimum conditions are met/.test(ftxt));
+// The minimum conditions reuse the outcome list's look (.cb-conds), so count the outcomes alone.
+check("render: the ESS outcomes are listed", fr.querySelectorAll(".cb-ess-list:not(.cb-conds) li").length === 3);
 check("render: Sierra AI suggested questions render as buttons",
   fr.querySelectorAll("button.cb-ask").length >= 3);
 // SUPERSEDED 2026-08-17 (Sky167). Sam's 2026-08-11 instruction was "put the
@@ -685,8 +694,8 @@ Bn.render(nr);
 // legitimately contains "$50k ESS 25-82" as a PROGRAM NAME, so a text-level
 // dollar match fails on correct output.
 check("render: a failed model read says so, and attributes NO funding to the college",
-  /The funding model did not load/.test(nr.textContent)
-  && /cannot show an allocation for this college yet/.test(nr.textContent)
+  /The CPL funding figures did not load/.test(nr.textContent)
+  && /Reload the page to see the college's funding/.test(nr.textContent)
   && nr.querySelectorAll(".cb-fbig").length === 0);
 
 // ── Part I — "transcribed" in MAP is a MARK, not a posting ──
@@ -839,7 +848,8 @@ check("(L) uses the real funding tab names",
   /2026&ndash;2028 College Implementation Funding/.test(briefingSrc));
 check("(L) does NOT label the pool '$35M' to a college", !/\$35M/.test(briefingCode));
 check("(L) a target is framed as proportional, not a pass mark",
-  /not a pass mark|proportional part/.test(briefingSrc));
+  // Sam's sentence since 2026-10-01 (mockup card 12): funded up to the cap.
+  /Progress toward each priority goal is measured in FTES/.test(briefingSrc) && /and funded up to the cap\./.test(briefingSrc));
 
 // Next steps come from the team's config, never authored by the page.
 const NEXT = { programs: [{ label: "IFM", priorities: [
@@ -1268,7 +1278,7 @@ check("(P) ⭐ Mt. San Antonio is NOT told it is off the funding roster",
 check("(P) …and its real allocation renders", /\$400,000/.test(jTxt));
 check("(P) …and it is told it is held to the maximum, and where the difference went",
   // "cap" vocabulary (one pool, 2026-08-31); the where-it-went promise holds.
-  /cap/.test(jTxt) && /re-splits across the other colleges/.test(jTxt));
+  /cap/.test(jTxt) && /redirected to the other colleges/.test(jTxt));
 
 // ── The collapsed shape ──
 // RESCOPED 2026-08-17 (Sky167). Sierra is a `details.cb-sec` now too — Sam
@@ -1384,7 +1394,8 @@ check("(P) the strategies nest inside the funding priority rows",
   nestRoot.querySelectorAll(".cb-prow details.cb-strat").length === 3,
   "one disclosure per priority, got " + nestRoot.querySelectorAll(".cb-prow details.cb-strat").length);
 check("(P) …labelled by count, so the reader knows what opening costs",
-  /2 steps the team suggests/.test(nestTxt) && /1 step the team suggests/.test(nestTxt),
+  // Spelled out and attributed since 2026-10-01 (Sam's mockup card 10).
+  /Two steps the CPL Initiative suggests/.test(nestTxt) && /One step the CPL Initiative suggests/.test(nestTxt),
   "and singular is singular");
 check("(P) the flat advice list is gone once the steps are folded in",
   !/Advice from the team/.test(nestTxt),

@@ -106,7 +106,7 @@ check("the student-subject exemption still describes a sentence that exists",
 
 /* A sweep that deleted the words and said nothing in their place would pass
  * everything above. */
-["counts toward", "count toward", "qualifies for", "demonstrated funding"].forEach((w) => {
+["counts toward", "count toward", "qualifies for", "Current outcomes demonstrate"].forEach((w) => {
   check("the confirmed replacement vocabulary is in use: " + w, RAW.indexOf(w) !== -1);
 });
 

@@ -109,9 +109,10 @@ create policy cfr_insert on public.cpl_funding_reports for insert
 -- lane's rule: fix the JOIN, never the table, because the nightly rebuild puts
 -- MAP's trailing spaces back). A name that resolves to nothing shows nothing,
 -- so an unknown spelling fails closed. Measured 2026-09-30: 112 of the
--- roster's 115 names resolve; "LA Swest", "Mt San Antonio" and "MiraCosta" wait
--- on the identity crosswalk's variants, and those colleges' staff see no
--- reports until they land.
+-- roster's 115 names resolved; "LA Swest", "Mt San Antonio" and "MiraCosta"
+-- became variants on 2026-10-01 (migration map_colleges_funding_roster_variants,
+-- receipt kb/receipts/map_colleges_funding_roster_variants_2026-10-01.sql), and
+-- all 115 resolve.
 --
 -- WHO COUNTS. Each contact field can hold a list ("a@x.edu,\nb@x.edu": 26 of
 -- the 148 filled fields did on 2026-09-30), so each is split on commas,

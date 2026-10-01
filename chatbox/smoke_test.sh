@@ -218,12 +218,16 @@ answer_must_not_match_unnegated() { # [-i] regex label
 # absence of ARTICULATION ("no ... has yet articulated"). A bare "No Orange County
 # colleges teach LVN" still fails, and so does "no San Gabriel Valley college
 # offers an LVN program".
+# The noun form too (2026-10-01, S311): "None of the three San Gabriel Valley colleges above
+# have an existing CPL articulation for CNA-to-LVN" is an articulation absence, and the
+# verb-only rule missed it once #1800 had Sierra write the place in full.
 answer_must_not_claim_absence() { # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
   stripped="$(printf '%s' "$LAST_ANSWER" | sed -E \
     -e "s/\\b(catalog( data)?|the data|our data|the records?) (lists|shows|holds|carries) (no|none)\\b/\\1 \\3 zero/Ig" \
-    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?articulated/zero\\2 \\3 \\4articulated/Ig")"
+    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?articulated/zero\\2 \\3 \\4articulated/Ig" \
+    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?([[:alnum:]-]+ ){0,3}articulations?\\b/zero\\2 \\3 an articulation/Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
     echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
   else

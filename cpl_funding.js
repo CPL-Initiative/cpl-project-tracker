@@ -1267,6 +1267,15 @@
     if (a < PUBLIC_MONEY_FLOOR) return "<" + fmtMoney(PUBLIC_MONEY_FLOOR);
     return fmtMoney(coarseDollars(v));
   }
+  // The same public rule as words for a sentence, in every mode: the My CPL
+  // Funding block is college-facing wherever it renders (Sam's card 8,
+  // 2026-10-01: "Current outcomes demonstrate $71,000 funding").
+  function publicDollarWords(v) {
+    var a = Math.abs(Number(v) || 0);
+    if (a < 0.5) return "$0";
+    if (a < PUBLIC_MONEY_FLOOR) return "less than " + fmtMoney(PUBLIC_MONEY_FLOOR);
+    return fmtMoney(coarseDollars(v));
+  }
   // The CSV twin: a number, or the same label, so the export never carries a
   // figure the screen withholds (scope, not shape).
   function earnedCsv(v) {
@@ -3333,6 +3342,8 @@
     "statewide. The receiving college counts the same CPL under its own measures &mdash; the same " +
     "CPL credits both institutions by design (ruled 2026-08-31).</li>" +
     "</ul>";
+  // The My CPL Funding view's introduction, Sam's sentence (2026-10-01).
+  var ONE_VIEW_INTRO = "My CPL Funding is a summary view of CPL funding and expected outcomes.";
   // Sam's College Dashboard intro (mockup rounds, 2026-09-28). The pie has no
   // column header to name it any more, so the intro names it once.
   var COLLEGE_INTRO_DEFAULT_HTML =
@@ -11610,52 +11621,65 @@
   // (>= 75% of MIS-reported enrolled veterans have a JST in MAP). ESS asks for "at
   // least the number" (100%); the Star is the 75% bar we compute daily, so it is
   // labeled as such rather than presented as the exact ESS threshold.
+  // The status lines read as sentences (Sam's My CPL Funding mockup, 2026-10-01,
+  // cards 3 to 5 and 16): what met the outcome, or what meets it, and no feed
+  // named while a status loads. They are also the $50K grants table's hovers.
+  var ESS_LOADING = "Status loading.";
   function essOutcome1(name) {
     var pf = perf();
     var vs = pf && pf.vet_star;
-    if (!vs) return { state: "pending", why: "veteran/JST feed not loaded yet" };
+    var pct = fmtPctTrim((pf && pf.vet_star_threshold) || 0.75);
+    if (!vs) return { state: "pending", why: ESS_LOADING };
     if (vs[name] === true) {
-      return { state: "met", why: "Veteran Star met — ≥" + fmtPctTrim(pf.vet_star_threshold || 0.75) +
-        " of MIS-reported enrolled veterans have a JST uploaded in MAP" };
+      return { state: "met", why: "JSTs in MAP cover at least " + pct + " of the enrolled veterans the college " +
+        "reports to the Chancellor's Office, which meets the Veteran Star." };
     }
     if (vs[name] === false) {
-      return { state: "not", why: "below the Veteran Star bar (≥" + fmtPctTrim(pf.vet_star_threshold || 0.75) +
-        " of enrolled veterans with a JST in MAP)" };
+      return { state: "not", why: "The Veteran Star needs JSTs in MAP for at least " + pct + " of the enrolled " +
+        "veterans the college reports to the Chancellor's Office." };
     }
-    return { state: "na", why: "no MIS-reported enrolled veterans to measure against (or not in the veteran feed)" };
+    return { state: "na", why: "The Chancellor's Office records no enrolled veterans for the college." };
   }
   // Outcome 2 — adopt/adapt statewide credit recommendations (ASCCC Pathways to
   // Credit). Signal: >= 1 local articulation on a statewide-flagged CER credential.
+  // Sam, card 4 (2026-10-01): colleges adopt or adapt ANY statewide CPL
+  // recommendation, for local course, GE area or elective credit, and there are
+  // more of those than the 84 credentials the CER flags, so no count is quoted.
   function essOutcome2(name) {
     var e = essData();
-    if (!e || !e.statewide_adopters) return { state: "pending", why: "statewide-recommendation rollup not loaded yet" };
+    if (!e || !e.statewide_adopters) return { state: "pending", why: ESS_LOADING };
     if (e.statewide_adopters[name]) {
-      return { state: "met", why: "articulates at least one of the " + (e.n_statewide_credentials || 0) +
-        " statewide credit recommendations in MAP" };
+      return { state: "met", why: "The college has adopted or adapted at least one statewide CPL recommendation in MAP." };
     }
-    return { state: "not", why: "no local articulation yet against a statewide credit recommendation" };
+    return { state: "not", why: "Adopting or adapting any statewide CPL recommendation in MAP for local course, " +
+      "GE area, or elective credit meets this outcome." };
   }
   // Outcome 3 — proactively offering CPL: identify/screen eligible students AND
   // document CPL offered + transcribed in MAP. Signal: eligible identified (pe)
   // and/or transcribed (p3/p2) in the daily MAP feed.
+  var ESS3_NOT = "Identifying an eligible student in MAP, or transcribing CPL there, meets this outcome.";
   function essOutcome3(name) {
     var pf = perf();
-    if (!pf || !pf.statewide) return { state: "pending", why: "MAP student feed not loaded yet" };
+    if (!pf || !pf.statewide) return { state: "pending", why: ESS_LOADING };
     var rec = perfFor(name);
-    if (!rec) return { state: "not", why: "no CPL activity recorded in MAP yet" };
+    if (!rec) return { state: "not", why: ESS3_NOT };
     var pe = rec.pe, tr = rec.p3 != null ? rec.p3 : rec.p2;
     var supp = rec.pe_suppressed || rec.p3_suppressed || rec.p2_suppressed;
     if (pe > 0 || tr > 0) {
-      var bits = [];
-      if (pe > 0) bits.push(fmtInt(pe) + " students identified as CPL-eligible");
-      if (tr > 0) bits.push(fmtInt(tr) + " with transcribed CPL");
-      return { state: "met", why: bits.join(" · ") + " in MAP" };
+      var why = pe > 0
+        ? "The college has identified " + fmtInt(pe) + " students in MAP as eligible for CPL" +
+          (tr > 0 ? ", and " + fmtInt(tr) + " have CPL on their transcripts." : ".")
+        : "MAP shows " + fmtInt(tr) + " students with CPL on their transcripts.";
+      return { state: "met", why: why };
     }
     // The floor comes from the feed (suppress_below, 10 under the under-10
     // ADR), never a typed number: this line said "fewer than 5" for weeks
     // after the floor moved.
-    if (supp) return { state: "partial", why: "activity present but fewer than " + suppressFloor() + " students (privacy-suppressed)" };
-    return { state: "not", why: "no CPL eligibility or transcription recorded in MAP yet" };
+    if (supp) {
+      return { state: "partial", why: "MAP shows CPL activity for fewer than " + suppressFloor() + " students, and the " +
+        "page withholds counts under " + suppressFloor() + " to protect student privacy." };
+    }
+    return { state: "not", why: ESS3_NOT };
   }
   function essGlyph(o) {
     // Words, never marks: met / partial / not yet / n/a / pending.
@@ -11978,13 +12002,15 @@
     try { rows = rowsFiltered(); } finally { state.q = saved; }
     var mine = rows.filter(function (r) { return r.district === d && members.indexOf(r.college) !== -1; });
     var g = groupRowsByDistrict(mine)[0];
-    var line = members.length + " institutions";
+    // A sentence, not a run of separators (Sam's mockup round, 2026-10-01, card 16).
+    var n = members.length, word = numWord(n);
+    var line = (word === String(n) ? word : word.charAt(0).toUpperCase() + word.slice(1)) + " institutions";
     if (g) {
-      line += " &middot; max award " + fmtMoney(g.total || 0) + " in total &middot; current total " +
+      line += ", with a combined max award of " + fmtMoney(g.total || 0) + " and a current total of " +
         earnedMoney(cellFig(g, "earned_total"));
     }
     return '<div class="cplfund-onedist"><h3>' + esc(districtShort(d)) + "</h3>" +
-      '<p class="dk">' + line + ". Each institution&#39;s own funding follows.</p></div>";
+      '<p class="dk">' + line + ". Each institution&#39;s funding follows.</p></div>";
   }
   // Open My CPL Funding from the top of a public rendering (Sam, 2026-09-30:
   // "Add another copy of the My CPL Funding view button ... to the top of the
@@ -12464,7 +12490,11 @@
     // Section titles are Sam's (renamed live, 2026-08-31).
     var oneView = oneCollegeView();
     var collegeBody =
-      proseBlockHtml("college_intro", "dk cplfund-college-intro") +
+      // My CPL Funding carries its own one-line introduction (Sam, 2026-10-01,
+      // mockup card 1, his words); the table's introduction describes columns
+      // and a pie this view does not show.
+      (oneView ? '<div class="cplfund-prose dk cplfund-college-intro" data-textblock="college_intro_one"><p>' +
+        ONE_VIEW_INTRO + "</p></div>" : proseBlockHtml("college_intro", "dk cplfund-college-intro")) +
       collegeViewSwitchHtml() +
       (oneView ? oneCollegeHtml() :
       '<div class="cplfund-toolbar">' +
@@ -14177,6 +14207,9 @@
           // priority's strategies inside its money, and pairing those by
           // position would be silently wrong the moment the cards are reordered).
           key: p.key, src: p.src, label: p.label, title: p.title || null,
+          // The measure this priority reads (`pa_u`, `ptc_u` …), so a consumer can
+          // say which priority an applied unit counts toward without a title match.
+          metric_src: p.metric_src || null,
           description: p.description || null, metric: p.metric || null,
           share: p.share,
           // ⚠ THE FACTOR WAS MISSING FROM THIS PROJECTION until 2026-09-01, and
@@ -14303,6 +14336,27 @@
       ELIG.contact = o.contacts ? ingestContacts(o.contacts, rosterByShortName()) : {};
     },
     _gate: function (c) { return baselineGate(c); },
+    // The minimum conditions for ONE institution, as the pie and the drill-in
+    // score them (eligReqList), for the My CPL Funding block (Sam's card 8,
+    // 2026-10-01). Kinds and states only; the block owns the words. The
+    // demonstrated figure is qualifying plus held (the CSV's Demonstrated),
+    // phrased by the public $1,000 rule.
+    _conditions: function (name) {
+      var c = rosterRow(name);
+      if (!c) return null;
+      var college = c.college, gate = baselineGate(college), a = collegeAlloc(c), pf = perf();
+      var demo = a ? (Number(a.earned_total) || 0) + (Number(a.earned_withheld) || 0) : 0;
+      return {
+        pending: !!gate.pending, blocked: !!gate.blocked,
+        deadline: participationDeadline(), deadlinePassed: !!partDeadlinePassed(),
+        vetPct: fmtPctTrim((pf && pf.vet_star_threshold) || 0.75),
+        demonstrated: demo, demonstratedWords: publicDollarWords(demo),
+        items: eligReqList(college).map(function (r) {
+          return { kind: r.kind, met: !!r.met, pending: !!r.pending,
+                   missing: r.kind === "coord" && !r.met ? ((ELIG.coordMissing || {})[college] || "coord") : "" };
+        })
+      };
+    },
     _optinActive: function (c) { return optinActive(c); },
     _submitOptin: function (c, form) { return submitOptIn(c, form); },
     _confirmOptin: function (c) { return confirmOptIn(c); },

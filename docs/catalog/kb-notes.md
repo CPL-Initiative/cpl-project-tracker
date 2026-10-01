@@ -113,7 +113,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A guard on the wrong generation of descendant is not a guard](../kb-notes/methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A guard that fails on truth gets muted](../kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md) | methodology | published | 2026-08-09 | 2026-08-09 |
-| [A guard that supplies its own input tests only the half after the input](../kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md) | methodology | published | 2026-09-12 | 2026-09-12 |
+| [A guard that supplies its own input tests only the half after the input](../kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md) | methodology | published | 2026-09-12 | 2026-10-01 |
 | [A guard whose protection depends on the order you work in is worse than no guard](../kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A guardrail that only forbids disables the feature — restrain salesmanship, not facts](../kb-notes/methodology-a-guardrail-that-only-forbids-disables-the-feature.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A guidance rule that references a fact the request does not carry is an instruction to guess](../kb-notes/methodology-a-guidance-rule-must-name-the-fact-it-depends-on.md) | methodology | published | 2026-08-22 | 2026-08-22 |
@@ -350,7 +350,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Methodology: dark→light recolor mapping (COBI tokens)](../kb-notes/methodology-dark-to-light-recolor-mapping.md) | methodology | published | 2026-06-30 | 2026-06-30 |
 | [Migrate the display, not just the data — a faithful migration can still lose everything that mattered](../kb-notes/methodology-migrate-the-display-not-just-the-data.md) | methodology | published | 2026-08-19 |  |
 | [Minimization happens twice — what you request, and what you keep](../kb-notes/methodology-minimisation-happens-twice.md) | methodology | published | 2026-08-19 | 2026-08-19 |
-| [Mock up a UI change with the running code, then port it](../kb-notes/methodology-mock-up-from-the-running-code.md) | methodology | published | 2026-09-28 | 2026-09-28 |
+| [Mock up a UI change with the running code, then port it](../kb-notes/methodology-mock-up-from-the-running-code.md) | methodology | published | 2026-09-28 | 2026-10-01 |
 | [Move one rung down the funnel to route around an upstream defect you can't fix](../kb-notes/methodology-move-down-the-funnel-to-route-around-an-upstream-defect.md) | methodology | published | 2026-08-01 | 2026-08-03 |
 | [Name the credential that actually failed](../kb-notes/methodology-name-the-credential-that-actually-failed.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [Normalize both sides of a join, or the resolver is decoration](../kb-notes/methodology-normalise-both-sides-of-a-join.md) | methodology | published | 2026-08-12 | 2026-08-12 |

@@ -4,6 +4,8 @@ date: 2026-09-30
 session: 306 (SkyRivet)
 tags: [handoff, implementation-funding, my-college, refresh, unit-sources, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_311_handoff.md
 ---
 
 # You are Session 307

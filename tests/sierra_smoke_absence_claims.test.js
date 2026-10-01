@@ -51,6 +51,14 @@ const SGV_ARTIC = "No San Gabriel Valley college has yet articulated CNA-to-LVN 
 // until the pattern's negation took a word boundary.
 const SGV_NOTES = "A few notes on the colleges in the San Gabriel Valley: Pasadena City College, Rio Hondo, and Citrus College "
   + "all teach full LVN programs, and each is well positioned to review a CNA-to-LVN request.";
+// Recorded 2026-10-01 (S311), after #1800 had Sierra write the place in full: two
+// articulation absences in the NOUN form, which the verb-only rule ("has yet
+// articulated") missed. Runs 36901536066 and 36899387810. The answers had already
+// named three San Gabriel Valley colleges that teach LVN.
+const SGV_ARTIC_NOUN = "None of the three San Gabriel Valley colleges above have an existing CPL articulation for CNA-to-LVN "
+  + "on file yet — so these are genuine requests to raise with their CPL coordinators, not guaranteed awards.";
+const SGV_ARTIC_SHOWS = "No college in the San Gabriel Valley catalog data shows an existing CNA articulation yet, so a request "
+  + "to Pasadena, Rio Hondo, or Citrus would be a new one for them to evaluate.";
 
 if (RE_7C && RE_7S && fn) {
   check("7c: the recorded catalog report passes", !fails(OC_REPORT, RE_7C));
@@ -72,6 +80,13 @@ if (RE_7C && RE_7S && fn) {
     fails("I don't see a San Gabriel Valley college with vocational nursing.", RE_7S));
   check("7s: v72's shape, \"no colleges in the San Gabriel Valley\", still fails",
     fails("There are no colleges in the San Gabriel Valley with an LVN program.", RE_7S));
+  check("7s: an articulation absence in the noun form passes (\"have an existing CPL articulation\")",
+    !fails(SGV_ARTIC_NOUN, RE_7S));
+  check("7s: …and with \"shows an existing CNA articulation\"", !fails(SGV_ARTIC_SHOWS, RE_7S));
+  check("7s: a noun-form articulation sentence does not excuse a bare program claim beside it",
+    fails(SGV_ARTIC_NOUN + " No San Gabriel Valley college offers an LVN entry program.", RE_7S));
+  check("7s: \"none of the San Gabriel Valley colleges have an LVN program\" still fails (a program is not an articulation)",
+    fails("None of the San Gabriel Valley colleges have an LVN program.", RE_7S));
 }
 
 let pass = 0;

@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-01T13:23:40.267366+00:00",
+  "scraped_at": "2026-10-01T16:29:35.136473+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28575,
+    "jst": 28592,
     "star_colleges": 59
   },
   "computed_star_colleges": 59,
@@ -42,12 +42,12 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 1033,
+      "jst": 1044,
       "star": true
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 577,
+      "jst": 579,
       "star": true
     },
     "Merced College": {
@@ -127,7 +127,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 379,
+      "jst": 380,
       "star": true
     },
     "Barstow Community College": {
@@ -197,7 +197,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 147,
+      "jst": 150,
       "star": false
     },
     "Fullerton College": {
@@ -435,6 +435,11 @@
       "jst": 179,
       "star": true
     },
+    "Columbia College": {
+      "vets": 33,
+      "jst": 25,
+      "star": true
+    },
     "Santa Monica College": {
       "vets": 676,
       "jst": 3,
@@ -444,11 +449,6 @@
       "vets": 70,
       "jst": 8,
       "star": false
-    },
-    "Columbia College": {
-      "vets": 33,
-      "jst": 25,
-      "star": true
     },
     "Woodland Community College": {
       "vets": 15,

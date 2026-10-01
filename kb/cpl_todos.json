@@ -1,14 +1,26 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-30",
-  "_session": "S308 SkyBracket + S309 SkyCensus (one session), carrying the credential side session",
-  "_status": "Landed on 30 September (S308 and S309, one session): the funding Public view reads as plain text, as you asked. The gray boxes around text are gone, the text is one size, each minimum condition reads as one paragraph, Copy requirements and Generate brief stay on the internal view, and the Timeline's dates sit apart from their labels. The Reporting box's college half is live: on My College, the people MAP lists as a college's CPL coordinator or primary CPL contact sign in with the email link and read that college's reported expenditures, read only. Sierra, the same day: her typical-courses lookup and her program search no longer time out (the simplified titles and the search vectors are stored once), and her smoke checks accept the honest way of saying the catalog lists nothing for a place. Your credential side session built the IT, cybersecurity, data and AI credential catalog (1,165 credentials, 48 articulated) and armed the Monday watch. You answered sheet 11 the same evening; sheet 12 holds the one you marked Later.",
+  "_as_of": "2026-10-01",
+  "_session": "S311 SkyQuill",
+  "_status": "Landed on 1 October (S311): Sierra names the place a student wrote in full, and a sub-region now counts its own campuses (it had counted every Los Angeles County college as San Gabriel Valley). The three funding-roster names that matched no college now resolve, so every college's staff can see their reported expenditures on My College. The model sweep is a 27-card sheet waiting on your replies, and two of the three credential renames you approved are ready for you to run; Microsoft renamed only the exam, so that one is a new card.",
   "items": [
     {
-      "id": "s310-sam-sheet12",
+      "id": "s311-sam-sheet13",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Sheet 12 has one item, the City College of San Francisco check in Sierra you marked Later on sheet 11. Your other eight answers are recorded. https://claude.ai/artifact/B6Gnzmha8kArgiSQw1SdTe"
+      "text": "Sheet 13 has five items: the City College of San Francisco check in Sierra (carried from sheet 12), running the two CER renames (the paste is in pull request 1803), the Microsoft Azure AI Fundamentals title (Microsoft renamed only the exam), folding AWS's second SysOps record, and a pointer to the model sweep sheet. https://claude.ai/artifact/CyhTj4tH2sSMjKtgaW6o69"
+    },
+    {
+      "id": "s311-sam-model-sweep",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Reply on the model sweep sheet: every sentence on the funding explainer and the tab's public view that says 'model', 40 in all, each with a proposed revision. Each card arrives set to its proposal, so change only what you disagree with; cards 23 and 24 are your saved text, typed on the tab. https://claude.ai/artifact/T2MTd4n2cP2LXZXRXvbBQ6"
+    },
+    {
+      "id": "s310-sam-card11-measures",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Type the two measure descriptions on the Implementation Funding tab, in both scenarios (mockup card 11): Access 'Applied CPL units (FTES) in MAP' and Completion 'Transcribed CPL units (FTES) for students with the Counselor step checked in MAP'. Neither was on the tab when checked on 1 October."
     },
     {
       "id": "s310-sam-pedro-note",
@@ -23,10 +35,10 @@
       "text": "Review the curated copy of the CO style guide in the public knowledge base, cpl-knowledge-base pull request 24, and merge it if it reads right (sheet 8: curate). A session never merges that repository."
     },
     {
-      "id": "s306-sam-p1-wording",
+      "id": "s303-sam-card7-type",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Type Priority 1's new wording on the Implementation Funding tab (sheet 6 card 7): the card should say what it counts, for example 'Applied CPL units (FTES) in MAP'. The measure counts every applied unit; the old words named the Portal and Landing Page routes."
+      "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
     },
     {
       "id": "s306-sam-s2-narration",
@@ -41,34 +53,16 @@
       "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
     },
     {
-      "id": "s303-sam-card7-type",
-      "for": "Sam",
+      "id": "s310-fable-model-sweep",
+      "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Card 7's two lines still read the old words in both scenarios (checked 29 September, 23:25Z): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
-    },
-    {
-      "id": "s298-sam-sql-test-answer",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "One question left from the database test: did you change the Supabase tool setting for the whole organization or only your own account? The new session of 29 September ran three database reads, and each answered within two seconds, so none waited for you to click Allow."
-    },
-    {
-      "id": "s296-sam-gr-rows-on-tab",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
+      "text": "Port the model sweep once Sam replies on its sheet (https://claude.ai/artifact/T2MTd4n2cP2LXZXRXvbBQ6): read the replies and edits collections first, change rendered text only, and grep tests/ for every sentence you retire before pushing. The harness is prototype/mockup_harness/capture_model_words.mjs and assemble_model_words.py."
     },
     {
       "id": "s303-fable-chat-smoke-watch",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "Sierra's smoke check: the catalog timeout (#1789), the two wording checks (#1791, #1794) and the program search (#1796, the four search vectors are stored on each program row; a 4-term question went from 1.5 to 0.4 seconds) are fixed. Read the next smoke run on main, and after a day read the program search's timings again; it averaged 2.4 seconds before the change."
-    },
-    {
-      "id": "s301-fable-unit-range-rest",
-      "for": "Fable",
-      "tab": "cr-reference",
-      "text": "Show the unit range on the surfaces still short of Sam's rule of 27 September (units never split an identity): SkyView, the EACR, the Common Exhibit Reference, the dashboard card and Sierra's local lines. The Fact Sheet, Sierra's statewide lines, Unified Courses and the CR Reference comply since 29 September."
+      "text": "Sierra's smoke after #1800 (the place by its full name, live as v75) and #1804 (a sub-region counts its own campuses): deploy #1804 with cpl-chat-deploy.yml, then dispatch ONE cpl-chat-smoke.yml after the push-triggered run finishes, and read 7c, 7s and 7p. Overlapping runs time out program_typical_courses."
     },
     {
       "id": "s309-fable-sierra-source-answers",
@@ -77,19 +71,31 @@
       "text": "When Sam answers sheet 11 card 6, compare Sierra's City College of San Francisco answer with the live rows: 13,138.5 units on plans from 1,882 students; non-military 65 from 15 (12 exhibits under 10 each); military 13,073.5 from 1,868, 32 exhibits one by one (10,201) and 287 under 10 each (2,872.5)."
     },
     {
-      "id": "s308-fable-identity-three-names",
-      "for": "Fable",
-      "tab": "college-briefing",
-      "text": "Three funding-roster names (LA Swest, Mt San Antonio, MiraCosta) resolve to no college in the identity table, so those colleges' staff cannot see their reported expenditures on My College. Add the three spellings through the identity crosswalk's own reviewed change, then re-read cpl_funding_my_reports for one of them."
-    },
-    {
       "id": "s310-fable-credential-watch-first-run",
       "for": "Fable",
       "tab": "partner-crosswalks",
-      "text": "Credential lane, from Sam's sheet 11 answers: rename the three credentials their issuers renamed (CyberOps Associate, AWS SysOps, AI-900) in the CER, keeping the old names as aliases; take issuer-skill verification by college faculty and a statewide group through Governance and the privacy reviews before any table is built. After 5 October, read the first Monday watch run's pull request (it can now read the issuers' pages) and file what it flags. Then the deck's badge-course slide, an issuer-skills example and a CER mock-up with credentials not yet in MAP."
+      "text": "CER renames from Sam's sheet 11: Cisco CyberOps Associate to CCNA Cybersecurity and AWS SysOps Administrator - Associate to CloudOps Engineer - Associate wait on Sam running receipt #1803 (the repo guard denies a session's kb_curation insert); then dispatch cred-rename-apply.yml. Microsoft and the second AWS record wait on sheet 13. The aliases are the raw titles, which CER search already matches."
     }
   ],
   "_deferred": [
+    {
+      "id": "s296-sam-gr-rows-on-tab",
+      "for": "Sam",
+      "tab": "gr-priorities",
+      "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
+    },
+    {
+      "id": "s298-sam-sql-test-answer",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "One question left from the database test: did you change the Supabase tool setting for the whole organization or only your own account? The new session of 29 September ran three database reads, and each answered within two seconds, so none waited for you to click Allow."
+    },
+    {
+      "id": "s301-fable-unit-range-rest",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Show the unit range on the surfaces still short of Sam's rule of 27 September (units never split an identity): SkyView, the EACR, the Common Exhibit Reference, the dashboard card and Sierra's local lines. The Fact Sheet, Sierra's statewide lines, Unified Courses and the CR Reference comply since 29 September."
+    },
     {
       "id": "s295-fable-esl-monthly",
       "for": "Fable",

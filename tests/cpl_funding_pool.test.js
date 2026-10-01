@@ -177,7 +177,7 @@ const {
     !!bu.querySelectorAll("td.c")[0].textContent.match(/n\/a/));
   check("Q4: outcome 2 ✓ for a statewide-recommendation adopter",
     !!al.querySelectorAll("td.c")[1].querySelector(".cf-ess.ok") &&
-    /statewide credit recommendation/.test(al.querySelectorAll("td.c")[1].querySelector(".cf-ess").getAttribute("title")));
+    /statewide CPL recommendation/.test(al.querySelectorAll("td.c")[1].querySelector(".cf-ess").getAttribute("title")));
   check("Q4: outcome 2 not-met for a non-adopter",
     !!la.querySelectorAll("td.c")[1].querySelector(".cf-ess.no"));
   check("Q5: outcome 3 ✓ when eligible/transcribed students exist in MAP",
