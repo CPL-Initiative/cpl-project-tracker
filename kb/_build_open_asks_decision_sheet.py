@@ -31,6 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 13 (S311, 2026-10-01, SHEET_ID 2026-10-01-open-asks-13): sheet 12's one card (no reply), then
+S311's three: running the CER rename receipt (#1803, Cisco and AWS), the Microsoft title (the exam was
+renamed, not the credential), folding AWS's second SysOps record; and a pointer to the "model" sweep
+sheet (artifact T2MTd4n2cP2LXZXRXvbBQ6), whose replies are the port's spec. Published at
+https://claude.ai/artifact/CyhTj4tH2sSMjKtgaW6o69 (capabilities db + comments).
 Sheet 12 (S308/S309, 2026-09-30, SHEET_ID 2026-09-30-open-asks-12): one card, sheet 11's card 6 (the
 City College of San Francisco check in Sierra), which Sam marked Later. Sheet 11's other eight left with his
 rulings (replies/done at 22:48:37Z, all nine his own call), each recorded in its lane in the same change.
@@ -120,8 +125,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-30-open-asks-12.html')
-SHEET_ID = '2026-09-30-open-asks-12'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-01-open-asks-13.html')
+SHEET_ID = '2026-10-01-open-asks-13'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -612,7 +617,69 @@ def items():
     # size, the card boxes and the sign-in form kept; the Pedro note his to edit
     # and send; both faculty levels verify issuer skills; rename the three in the CER
     # with aliases; the issuer hosts added. Each lane records its ruling. Card 6 (CCSF)
-    # came back Later, so it carries onto sheet 12.
+    # came back Later, so it carries onto sheet 12, and with no reply there onto sheet 13.
+
+    # Sheet 13 (S311): card 8's renames, checked against the issuers on 2026-10-01.
+    I.append({
+        'lane': 'partner-crosswalks',
+        'title': "Run the two CER renames",
+        'ref': 'partner-crosswalks · kb/receipts/cer_rename_issuer_renames_2026-10-01.sql (#1803) · cred-rename-apply.yml',
+        'facts': (
+            "You ruled \"Rename with aliases\" on sheet 11. Two of the three hold up against the issuers: Cisco CyberOps "
+            "Associate is now CCNA Cybersecurity, and AWS SysOps Administrator - Associate is now CloudOps Engineer - "
+            "Associate. The repo's guard stops a session from writing the curation table, so the two rows are yours to "
+            "run: paste the receipt's insert in the Supabase SQL editor, or type the two titles in the CER triage lane. "
+            "The old names stay findable because the CER's search reads each credential's raw titles."),
+        'why': "A student or counselor searching today's name finds the credit the colleges already award.",
+        'rec': "<strong>Run it.</strong> Two rows come back; the next session runs the rename apply. "
+               "<em>It might be wrong if</em> you would rather the colleges retitle their exhibits in MAP first.",
+        'chips': chips(('Ran it', 'done'), ('Hold', 'hold'), CH_LATER),
+        'evidence': [live('2026-10-01', "kb_curation read for the six keys; the issuers' announcements through search (their pages are blocked here)")],
+    })
+    I.append({
+        'lane': 'partner-crosswalks',
+        'title': "Microsoft renamed only the Azure AI Fundamentals exam",
+        'ref': 'partner-crosswalks · CER key "Microsoft Certified: Azure AI Fundamentals (AI-900)" · one college',
+        'facts': (
+            "Card 8 said AI-900 is now AI-901. Microsoft's own post says the certification keeps its name, Microsoft "
+            "Certified: Azure AI Fundamentals; AI-901 replaced AI-900 as the exam that earns it, and taking AI-901 does "
+            "not change the name of a credential already held. The CER record carries the exam code in its title."),
+        'why': "A student who passed AI-900 holds Azure AI Fundamentals; a title naming AI-901 would tell them otherwise.",
+        'rec': "<strong>Drop the exam code:</strong> the record reads Microsoft Certified: Azure AI Fundamentals, for both "
+               "exams. <em>It might be wrong if</em> you want each exam kept distinct, since AI-901 covers more generative AI.",
+        'chips': chips(('Drop the code', 'drop'), ('Keep AI-900', 'keep'), ('Rename to AI-901', 'ai901'), CH_LATER),
+        'evidence': [live('2026-10-01', "Microsoft Tech Community post on the certification, read through search")],
+    })
+    I.append({
+        'lane': 'partner-crosswalks',
+        'title': "Fold AWS's second SysOps record into CloudOps Engineer",
+        'ref': 'partner-crosswalks · CER key "AWS Certified SysOps Administrator" (one raw title) · PR-5b/2 confirm-merge',
+        'facts': (
+            "The CER holds two AWS SysOps records: \"AWS Certified SysOps Administrator - Associate\" (two raw titles), "
+            "renamed on card 2, and \"AWS Certified SysOps Administrator\" (one raw title, \"Amazon Web Services (AWS) "
+            "Certified Systems Operations (SYSOps) Administrator\"). Both name the one AWS associate credential. Giving "
+            "the second the new name is a merge, and a merge waits on a curator's confirm."),
+        'why': "One credential under two records splits its colleges and its counts.",
+        'rec': "<strong>Fold it,</strong> after card 2's rename applies: the triage lane's Confirm merge on the second "
+               "record. <em>It might be wrong if</em> that raw title names a different AWS credential.",
+        'chips': chips(('Fold it', 'fold'), ('Keep separate', 'keep'), CH_LATER),
+        'evidence': [quoted('kb/credentials.json, kb/unified_titles.json', '2026-10-01')],
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Reply on the \"model\" sweep sheet",
+        'ref': 'implementation-funding NEXT ⓪f · https://claude.ai/artifact/T2MTd4n2cP2LXZXRXvbBQ6 (#1801)',
+        'facts': (
+            "Your ruling to take \"model\" out of the explainer and the tab's public text is a 27-card sheet: every "
+            "sentence a college can read that says it (40 in all, from rendering both pages), with a revision for each, "
+            "and the lines that show only in other states. Cards 23 and 24 are your stored text, typed on the tab. Each "
+            "card arrives set to its proposal, so change only what you disagree with."),
+        'why': "Your replies are the port's spec; nothing ships until they are in.",
+        'rec': "<strong>Reply on that sheet.</strong> <em>It might be wrong if</em> you would rather approve the "
+               "proposals wholesale; then say so here and the port uses them as written.",
+        'chips': chips(('Replied there', 'done'), ('Use them all as proposed', 'all'), CH_LATER),
+        'evidence': [policy()],
+    })
     return I
 
 
