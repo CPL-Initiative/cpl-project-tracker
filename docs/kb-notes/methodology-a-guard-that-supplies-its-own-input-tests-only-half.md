@@ -1,7 +1,7 @@
 ---
 title: A guard that supplies its own input tests only the half after the input
 created: 2026-09-12
-updated: 2026-09-12
+updated: 2026-10-01
 tags: [methodology, testing, curation, funding]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -11,6 +11,8 @@ artifacts:
   - tests/funding_model_page.test.js
   - tests/cpl_funding_section_order.test.js
   - cpl_funding.js
+  - college_briefing.js
+  - tests/my_cpl_funding_words.test.js
 ---
 
 # A guard that supplies its own input tests only the half after the input
@@ -63,6 +65,17 @@ to prove it was not a priority card. True the whole time — and irrelevant, bec
 other code selects on the **class**, and the box carried `class="p"`. The guard
 named the right subject and tested nothing that could move. See
 [`methodology-a-styling-class-is-an-api`](methodology-a-styling-class-is-an-api.md).
+
+### The same failure in a field name (2026-10-01)
+
+My College's *Do this next* line takes its step from `topStrategy()`, which read
+`pr.strategies`. Its test built the briefing by hand with that field, the name
+the **config** uses, and passed. `buildBriefing()`, the only producer, turns the
+config's strategies into `pr.items`, so on a real page the implementation step
+never rendered. A language mockup drawn from the running code showed the empty
+line; the test could not. The repair is the same one: keep the seeded check and
+add one on the builder's real output, `topStrategy(buildBriefing(config, opts))`.
+PR [#1798](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1798).
 
 ## How we got here
 

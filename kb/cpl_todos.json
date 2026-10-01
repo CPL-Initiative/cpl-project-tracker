@@ -1,14 +1,20 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-30",
-  "_session": "S308 SkyBracket + S309 SkyCensus (one session), carrying the credential side session",
-  "_status": "Landed on 30 September (S308 and S309, one session): the funding Public view reads as plain text, as you asked. The gray boxes around text are gone, the text is one size, each minimum condition reads as one paragraph, Copy requirements and Generate brief stay on the internal view, and the Timeline's dates sit apart from their labels. The Reporting box's college half is live: on My College, the people MAP lists as a college's CPL coordinator or primary CPL contact sign in with the email link and read that college's reported expenditures, read only. Sierra, the same day: her typical-courses lookup and her program search no longer time out (the simplified titles and the search vectors are stored once), and her smoke checks accept the honest way of saying the catalog lists nothing for a place. Your credential side session built the IT, cybersecurity, data and AI credential catalog (1,165 credentials, 48 articulated) and armed the Monday watch. You answered sheet 11 the same evening; sheet 12 holds the one you marked Later.",
+  "_as_of": "2026-10-01",
+  "_session": "S310 SkyTandem",
+  "_status": "Landed on 1 October (S310): My CPL Funding reads in your words. You answered all sixteen cards on the language mockup, and the port follows them: your own sentences on eight cards, each institution's three minimum conditions listed with its own state (met, not yet, or pending), and the funding its current outcomes demonstrate at the public $1,000 rounding. Do this next now leads with what the conditions still need; it had never shown the implementation step on a real page, and it does now. The view says CPL funding throughout, since a finalized procedure is no longer a model, and the seed grant's expend-by date stays off as you asked. The explainer and the tab's public text drop \"model\" next, after a mockup round for you to approve.",
   "items": [
     {
       "id": "s310-sam-sheet12",
       "for": "Sam",
       "tab": "implementation-funding",
       "text": "Sheet 12 has one item, the City College of San Francisco check in Sierra you marked Later on sheet 11. Your other eight answers are recorded. https://claude.ai/artifact/B6Gnzmha8kArgiSQw1SdTe"
+    },
+    {
+      "id": "s310-sam-card11-measures",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Type the two measure descriptions on the Implementation Funding tab, in both scenarios (mockup card 11): Access 'Applied CPL units (FTES) in MAP' and Completion 'Transcribed CPL units (FTES) for students with the Counselor step checked in MAP'. Neither was on the tab when checked on 1 October."
     },
     {
       "id": "s310-sam-pedro-note",
@@ -23,10 +29,10 @@
       "text": "Review the curated copy of the CO style guide in the public knowledge base, cpl-knowledge-base pull request 24, and merge it if it reads right (sheet 8: curate). A session never merges that repository."
     },
     {
-      "id": "s306-sam-p1-wording",
+      "id": "s303-sam-card7-type",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Type Priority 1's new wording on the Implementation Funding tab (sheet 6 card 7): the card should say what it counts, for example 'Applied CPL units (FTES) in MAP'. The measure counts every applied unit; the old words named the Portal and Landing Page routes."
+      "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
     },
     {
       "id": "s306-sam-s2-narration",
@@ -41,34 +47,16 @@
       "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
     },
     {
-      "id": "s303-sam-card7-type",
-      "for": "Sam",
+      "id": "s310-fable-model-sweep",
+      "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Card 7's two lines still read the old words in both scenarios (checked 29 September, 23:25Z): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
-    },
-    {
-      "id": "s298-sam-sql-test-answer",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "One question left from the database test: did you change the Supabase tool setting for the whole organization or only your own account? The new session of 29 September ran three database reads, and each answered within two seconds, so none waited for you to click Allow."
-    },
-    {
-      "id": "s296-sam-gr-rows-on-tab",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
+      "text": "Take the word 'model' out of the funding explainer and the Implementation Funding tab's public text, as Sam ruled on 1 October ('Yes replace model on other surfaces as well'; finalized, CPL funding is a procedure). Mockup round first, then the port; file paths and code names keep the word."
     },
     {
       "id": "s303-fable-chat-smoke-watch",
       "for": "Fable",
       "tab": "chatbot",
       "text": "Sierra's smoke check: the catalog timeout (#1789), the two wording checks (#1791, #1794) and the program search (#1796, the four search vectors are stored on each program row; a 4-term question went from 1.5 to 0.4 seconds) are fixed. Read the next smoke run on main, and after a day read the program search's timings again; it averaged 2.4 seconds before the change."
-    },
-    {
-      "id": "s301-fable-unit-range-rest",
-      "for": "Fable",
-      "tab": "cr-reference",
-      "text": "Show the unit range on the surfaces still short of Sam's rule of 27 September (units never split an identity): SkyView, the EACR, the Common Exhibit Reference, the dashboard card and Sierra's local lines. The Fact Sheet, Sierra's statewide lines, Unified Courses and the CR Reference comply since 29 September."
     },
     {
       "id": "s309-fable-sierra-source-answers",
@@ -90,6 +78,24 @@
     }
   ],
   "_deferred": [
+    {
+      "id": "s296-sam-gr-rows-on-tab",
+      "for": "Sam",
+      "tab": "gr-priorities",
+      "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
+    },
+    {
+      "id": "s298-sam-sql-test-answer",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "One question left from the database test: did you change the Supabase tool setting for the whole organization or only your own account? The new session of 29 September ran three database reads, and each answered within two seconds, so none waited for you to click Allow."
+    },
+    {
+      "id": "s301-fable-unit-range-rest",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Show the unit range on the surfaces still short of Sam's rule of 27 September (units never split an identity): SkyView, the EACR, the Common Exhibit Reference, the dashboard card and Sierra's local lines. The Fact Sheet, Sierra's statewide lines, Unified Courses and the CR Reference comply since 29 September."
+    },
     {
       "id": "s295-fable-esl-monthly",
       "for": "Fable",

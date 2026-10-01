@@ -1,7 +1,7 @@
 ---
 title: Mock up a UI change with the running code, then port it
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-01
 tags: [methodology, ui, mockup, first-light]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -9,9 +9,11 @@ related:
   - "[[CLAUDE]]"
   - "[[ui_mockup_lessons]]"
   - "[[reference-ui-design-system]]"
+  - "[[cpl_funding_lessons]]"
 artifacts:
   - cpl_funding.js
   - sierra_training.js
+  - prototype/mockup_harness/capture_mycpl.mjs
 ---
 
 # Mock up a UI change with the running code, then port it
@@ -53,6 +55,17 @@ Build the round-0 mockup from the live DOM, never from a redraw:
   rather than a translation from a drawing.
 - The Today copy is always one click away, which makes every change visible as
   a difference.
+
+## Wording rounds (2026-10-01)
+
+The method carries a language round as well as a layout round. Each card holds
+one sentence, Revised beside Today, and names the rule or ruling the revision
+answers. The owner's reply on each card is the port's spec; a reply with only a
+note stores an empty verdict, and the note is the verdict. Because the Today half
+came from the product's code, the mockup also showed a line the code never
+filled: *Do this next* sat empty through a field-name mismatch no test could see
+([`methodology-a-guard-that-supplies-its-own-input-tests-only-half`](methodology-a-guard-that-supplies-its-own-input-tests-only-half.md)).
+Run: [`cpl_funding_lessons`](../cpl_funding_lessons.md), S310.
 
 ## Limits
 

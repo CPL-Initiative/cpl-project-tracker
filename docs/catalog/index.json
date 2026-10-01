@@ -1923,7 +1923,9 @@
      "governs": [
       "tests/funding_model_page.test.js",
       "tests/cpl_funding_section_order.test.js",
-      "cpl_funding.js"
+      "cpl_funding.js",
+      "college_briefing.js",
+      "tests/my_cpl_funding_words.test.js"
      ],
      "path": "docs/kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md",
      "status": "published",
@@ -1935,7 +1937,7 @@
      ],
      "title": "A guard that supplies its own input tests only the half after the input",
      "type": "methodology",
-     "updated": "2026-09-12"
+     "updated": "2026-10-01"
     },
     {
      "created": "2026-09-09",
@@ -6594,7 +6596,8 @@
      "created": "2026-09-28",
      "governs": [
       "cpl_funding.js",
-      "sierra_training.js"
+      "sierra_training.js",
+      "prototype/mockup_harness/capture_mycpl.mjs"
      ],
      "path": "docs/kb-notes/methodology-mock-up-from-the-running-code.md",
      "status": "published",
@@ -6606,7 +6609,7 @@
      ],
      "title": "Mock up a UI change with the running code, then port it",
      "type": "methodology",
-     "updated": "2026-09-28"
+     "updated": "2026-10-01"
     },
     {
      "created": "2026-08-01",
@@ -10863,7 +10866,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-09-30"
+     "updated": "2026-10-01"
     },
     {
      "created": "2026-06-21",
@@ -14488,7 +14491,7 @@
       "house-voice",
       "decision-sheet"
      ],
-     "title": "My CPL Funding in Sam's words; an emergency-scope checkpoint",
+     "title": "My CPL Funding in Sam's words, merged; \"model\" leaves the public text next",
      "type": null,
      "updated": ""
     },

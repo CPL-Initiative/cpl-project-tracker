@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 311 | [My CPL Funding in Sam's words; an emergency-scope checkpoint](../session_311_handoff.md) | 2026-10-01 |
+| 311 | [My CPL Funding in Sam's words, merged; "model" leaves the public text next](../session_311_handoff.md) | 2026-10-01 |
 | 310 | [the funding, Sierra and credential chains, joined; sheet 11 answered](../session_310_handoff.md) | 2026-09-30 |
 | 309 | [Sierra reads where credit comes from; check her answers](../session_309_handoff.md) | 2026-09-30 |
 | 308 | [build the Reporting box's college half on MAP's two contacts](../session_308_handoff.md) | 2026-09-30 |
