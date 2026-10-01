@@ -128,7 +128,7 @@ function vetCondOf(window, doc, id) {
     ["cr_current", "current_total"].every((k) => cells[k] && cells[k].gated && /^\$[1-9]/.test(cells[k].text)));
   check("3c: each gray cell's hover names the computed figure and says when it becomes available",
     ["cr_current", "current_total"].every((k) =>
-      /the model computes.*: \$[\d,]+ of \$[\d,]+\. Gray until the institution meets all its minimum conditions, and available once it meets them\.$/
+      /qualifying so far.*: \$[\d,]+ of \$[\d,]+\. Gray until the institution meets all its minimum conditions, and available once it meets them\.$/
         .test(cells[k].tip)));
   check("3d: a qualified institution's Curr cells carry no gray words",
     ["cr_current", "current_total"].every((k) => {

@@ -333,7 +333,7 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   const csv = T._csv();
   const lines = csv.split("\r\n");
   check("CSV: meta line + header + one line per institution + SYSTEM",
-    lines.length === 2 + ROSTER_N + 1 && lines[0].indexOf("DRAFT model") !== -1);
+    lines.length === 2 + ROSTER_N + 1 && lines[0].indexOf("CPL Implementation Funding (draft of ") !== -1);
   check("CSV: header carries County + per-priority target/actual + eligibility + base/cap state",
     lines[1].indexOf("County") !== -1 && lines[1].indexOf("P1 target") !== -1 && lines[1].indexOf("P1 actual") !== -1 &&
     lines[1].indexOf("Eligibility (proposed)") !== -1 && lines[1].indexOf("Base / cap applied") !== -1);
