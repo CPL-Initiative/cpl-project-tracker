@@ -165,6 +165,24 @@ const LA_COLLEGES = [
     check("a trailing period does not break college detection",
       punct && !Array.isArray(punct) && punct.college === "Cerritos College");
 
+    // ── 3b. …and neither does a possessive ───────────────────────────────────
+    // Sam's question (sheet 14 card 1, 2026-10-01): `%francisco's%` matched
+    // nothing and "city" tied across every City college, so Sierra gave the
+    // statewide split. Both apostrophes, since a phone types the curly one.
+    const CITY_COLLEGES = [
+      "Berkeley City College", "City College of San Francisco", "Fresno City College",
+      "Long Beach City College", "Los Angeles City College", "Pasadena City College",
+      "Riverside City College", "Sacramento City College", "San Diego City College",
+      "San Jose City College", "Santa Barbara City College", "Santa Rosa Junior College",
+    ];
+    for (const apos of ["'", "’"]) {
+      const poss = await detectMod.detectAndFetchCollegeProfile(
+        `What is the military and non-military split of City College of San Francisco${apos}s applied units, and which exhibits are they from?`,
+        fakeSb(CITY_COLLEGES));
+      check(`a possessive (${apos}s) does not break college detection`,
+        poss && !Array.isArray(poss) && poss.college === "City College of San Francisco");
+    }
+
     // ── 4. proximityBand semantics ───────────────────────────────────────────
     const LA = { county: "Los Angeles", region: "Los Angeles" };
     const pb = ctxMod.proximityBand;
