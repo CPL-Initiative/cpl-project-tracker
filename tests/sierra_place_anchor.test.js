@@ -394,6 +394,49 @@ block("8. the padded-table rule is gone", () => {
   check("(8) ⚠ and that the two columns are lists, not row-by-row pairings",
     /THE COLUMNS ARE TWO INDEPENDENT LISTS, NOT PAIRINGS/.test(SRC));
 });
+
+// ── 10. "IN" A SUB-REGION MEANS ITS OWN CAMPUSES (2026-10-01, S311) ──────────
+// After #1800 (the place by its full name), a live answer read "Registered
+// Nursing — taught at 20 San Gabriel Valley colleges (Pasadena, East Los
+// Angeles, and others)". The four catalog sections counted "In <place>" by the
+// place's band, and a sub-region's band is its whole county, so every Los
+// Angeles County college was labeled San Gabriel Valley. inAskedPlace() counts a
+// sub-region by its own campuses; a county keeps the band (block 3 still pins
+// "In Orange County: 4"). Driven through the real builders, not a fixture of the
+// helper alone.
+block("10. a sub-region's place line counts its own campuses", () => {
+  if (!P || !G) return;
+  const sgv = P.resolveAskedPlace(SAM_Q3, geoMap);
+  if (!sgv) { check("(10) the San Gabriel Valley resolves", false); return; }
+  const colleges = (rows, keep) => [...new Set(rows.filter(keep).map((r) => r.college))];
+  const inCounty = (r) => (geoMap.get(r.college) || {}).county === "Los Angeles";
+  const own = (r) => sgv.colleges.includes(r.college);
+
+  const laP = colleges(PROGRAMS, inCounty), ownP = colleges(PROGRAMS, own);
+  check("(10) the program fixture has a Los Angeles County college outside the San Gabriel Valley",
+    ownP.length > 0 && laP.length > ownP.length, JSON.stringify({ county: laP, own: ownP }));
+  const pc = G.buildProgramsContext(PROGRAMS, null, sgv, geoMap);
+  const mp = /### In the San Gabriel Valley: (\d+) college\(s\) have a matching program/.exec(pc);
+  check("(10) ⭐ programs: the count is the sub-region's own campuses, never its county",
+    mp && Number(mp[1]) === ownP.length, (mp ? mp[1] : "no place line") + " counted; " + ownP.length + " own, " + laP.length + " in the county");
+  const pnone = G.buildProgramsContext(PROGRAMS.filter((r) => !own(r)), null, sgv, geoMap);
+  check("(10) programs: with none of its own campuses the sub-region is told so, though its county has some",
+    /lists no college in the San Gabriel Valley with a matching program/.test(pnone), pnone.slice(0, 300));
+
+  const core = V.expandWithSynonyms(V.extractTopicKeywords(sgv.stripped));
+  const laO = colleges(OFFERINGS, inCounty), ownO = colleges(OFFERINGS, own);
+  check("(10) the offerings fixture has a Los Angeles County college outside the San Gabriel Valley",
+    ownO.length > 0 && laO.length > ownO.length, JSON.stringify({ county: laO, own: ownO }));
+  const oc = G.buildOfferingsContext(OFFERINGS, null, sgv, core, geoMap);
+  const mo = /### In the San Gabriel Valley: (\d+) college\(s\) teach in this area/.exec(oc);
+  check("(10) ⭐ offerings: the count is the sub-region's own campuses, never its county",
+    mo && Number(mo[1]) === ownO.length, (mo ? mo[1] : "no place line") + " counted; " + ownO.length + " own, " + laO.length + " in the county");
+  check("(10) the county still ranks first: the sub-region is not a fence",
+    headings(oc).length > 0 && (geoMap.get(headings(oc)[0]) || {}).county === "Los Angeles", JSON.stringify(headings(oc)));
+
+  check("(10) no catalog section counts a place by its band alone any more",
+    !/const here = [^\n]*band >= \(askedGeo\.county \? 3 : 2\)/.test(SRC) && !/const here = [^\n]*proximityBand\(g, askedGeo\) >= /.test(SRC));
+});
 // ── 9. THE PLACE BY ITS FULL NAME (2026-10-01, S311) ─────────────────────────
 // Smoke 7s on main after #1796 (run 36788086259): the answer was right on every
 // substantive check and led with Rio Hondo "(7 miles from the SGV)", so "7s names
