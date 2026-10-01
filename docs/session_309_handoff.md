@@ -4,6 +4,8 @@ date: 2026-09-30
 session: the Sierra credit-source session (ran beside S305 to S307, no number of its own)
 tags: [handoff, sierra, sierra-retrieval-corpus, disposition-grain, military-split, suppression]
 status: current
+superseded: true
+superseded_by: session_311_handoff.md
 ---
 
 # You are Session 309

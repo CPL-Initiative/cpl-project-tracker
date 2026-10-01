@@ -4,6 +4,8 @@ date: 2026-09-30
 session: 308 + 309 in one session (SkyBracket, SkyCensus), carrying Sam's credential-catalog side session
 tags: [handoff, implementation-funding, public-view, reporting-box, sierra, partner-crosswalks, credential-registry, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_311_handoff.md
 ---
 
 # You are Session 310

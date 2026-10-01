@@ -206,9 +206,9 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
     const money = "$" + int(T._alloc(SEM.college).total);
     check("6c: the panel is My College's block for that institution, read from the model",
       panel && /2026–2028 College Implementation Funding/.test(panel.textContent) && panel.textContent.indexOf(money) >= 0 &&
-      /What counts toward it/.test(panel.textContent));
+      /Priority outcomes/.test(panel.textContent));
     check("6d: it points at the table beside it, never at a tab the reader cannot see",
-      /Choose All institutions/.test(panel.textContent) && !/Implementation Funding tab's model/.test(panel.textContent));
+      /under All institutions\./.test(panel.textContent) && !/Implementation Funding tab shows/.test(panel.textContent));
     click(w, doc.querySelector('[data-viewmode="internal"]'));
     check("6e: the Internal view keeps the table alone", !doc.getElementById("cplFundCollegeView") && !!doc.getElementById("cplFundTable"));
   }
