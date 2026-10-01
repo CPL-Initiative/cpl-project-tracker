@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-09-29T07:35:30Z",
- "count": 212,
+ "_generated_at": "2026-10-01T13:26:16Z",
+ "count": 204,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -1661,86 +1661,6 @@
     "code": "NC 195",
     "share": 1.0,
     "colleges": 3,
-    "scoped": true
-   }
-  ],
-  "NESL 220A": [
-   {
-    "kind": "course",
-    "title": "Intermediate Grammar for Reading and Writing",
-    "code": "NESL 220A",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "NESL 220B": [
-   {
-    "kind": "course",
-    "title": "High-Intermediate Grammar for Reading and Writing",
-    "code": "NESL 220B",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "NESL 221A": [
-   {
-    "kind": "course",
-    "title": "Intermediate Reading and Writing",
-    "code": "NESL 221A",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "NESL 221B": [
-   {
-    "kind": "course",
-    "title": "High-Intermediate Reading and Writing",
-    "code": "NESL 221B",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "NESL 230A": [
-   {
-    "kind": "course",
-    "title": "Beginning Grammar for Reading and Writing",
-    "code": "NESL 230A",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "NESL 230B": [
-   {
-    "kind": "course",
-    "title": "High-Beginning Grammar for Reading and Writing",
-    "code": "NESL 230B",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "NESL 231A": [
-   {
-    "kind": "course",
-    "title": "Beginning Reading and Writing",
-    "code": "NESL 231A",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "NESL 231B": [
-   {
-    "kind": "course",
-    "title": "High-Beginning Reading and Writing",
-    "code": "NESL 231B",
-    "share": 1.0,
-    "colleges": 1,
     "scoped": true
    }
   ],
