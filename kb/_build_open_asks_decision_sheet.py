@@ -610,7 +610,8 @@ def items():
             "The AWS fold is the triage lane's Confirm merge on \"AWS Certified SysOps Administrator\", after the "
             "rename apply runs; the next session tells you when."),
         'why': "The repo's guard keeps a session out of the curation table, so these two are yours to type.",
-        'rec': "<strong>Type the Microsoft title now; confirm the merge when told.</strong>",
+        'rec': "<strong>Type the Microsoft title now; confirm the merge when told.</strong> "
+               "<em>It might be wrong if</em> the second AWS record names a different credential.",
         'chips': chips(('Typed it', 'done'), ('Hold', 'hold'), CH_LATER),
         'evidence': [policy()],
     })
