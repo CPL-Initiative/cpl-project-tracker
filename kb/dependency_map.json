@@ -17702,7 +17702,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 608
+     "line": 612
     }
    ],
    "main_committers": []
@@ -17733,7 +17733,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 376
+     "line": 380
     }
    ],
    "main_committers": []
@@ -17752,7 +17752,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 448
+     "line": 452
     }
    ],
    "main_committers": []
@@ -17859,7 +17859,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 951
+     "line": 955
     }
    ],
    "main_committers": []
@@ -19770,7 +19770,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 928
+     "line": 932
     },
     {
      "id": "script:kb/_identity_daily_check.py",
@@ -20217,7 +20217,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 974
+     "line": 978
     }
    ],
    "main_committers": []
