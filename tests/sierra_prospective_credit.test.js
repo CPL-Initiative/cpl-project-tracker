@@ -479,6 +479,11 @@ block("9. the direct answer first, the catalog never the world, no remark about 
   // credential the visitor holds" as excluding a same-kind credential.
   check("(9) ⭐ the LEAD bullet puts the first course before the catalog sentence even when the place has none",
     /the first sentence still names the nearest college's course, and the sentence about the catalog and the related programs FOLLOWS it/.test(rule));
+  // v76 (2026-10-01) failed 7c on a right answer: the first sentence spent 556
+  // characters on Santa Ana's CNA program, the catalog caveat and three
+  // neighbors with county and miles before VN 220. The rule names each.
+  check("(9) ⭐ the first sentence stays short: no held program, county, distance or neighbor list before the course",
+    /Keep that first sentence short: the course number, its title and its college, and nothing in front of them — not the visitor's own college's program for the credential they hold, not a county or a distance, not a list of other colleges\. The neighbors, their counties and their miles come after the course\./.test(rule));
   check("(9) ⭐ a same-kind credential counts as the visitor's for the precedent (Acute Care Nursing Assistant for a CNA holder)",
     /or one of the same kind \(for a CNA holder: Nurse Assistant and Acute Care Nursing Assistant articulations count\)/.test(rule)
     && /NEVER SAY THERE IS NONE WHEN THE RECORD SHOWS ONE/.test(rule) && /Chaffey College articulated Acute Care Nursing Assistant, 6 units, against NURVN 414/.test(rule));
