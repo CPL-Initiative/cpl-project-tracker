@@ -11,19 +11,19 @@ window.CPL_FUNDING_PERF = {
   "pe": 44221,
   "pa": 40243,
   "ppa": 105,
-  "p2": 3166,
-  "p3": 14735,
+  "p2": 3169,
+  "p3": 14740,
   "pp": 6,
   "ppe": 115,
-  "pac": 3028,
-  "ptc": 2620,
-  "pe_u": 1434529.45,
-  "pa_u": 225103.4,
+  "pac": 3029,
+  "ptc": 2621,
+  "pe_u": 1434500.45,
+  "pa_u": 225101.4,
   "ppa_u": 654.5,
   "ppe_u": 6667.5,
-  "pac_u": 26199.2,
-  "ptc_u": 22312.5,
-  "p3_u": 74470.2,
+  "pac_u": 26207.2,
+  "ptc_u": 22322.5,
+  "p3_u": 74509.2,
   "pp_u": 63.5
  },
  "colleges": {
@@ -315,9 +315,9 @@ window.CPL_FUNDING_PERF = {
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
-   "p2": 20,
-   "p3": 47,
-   "p3_u": 330.0,
+   "p2": 21,
+   "p3": 48,
+   "p3_u": 340.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
@@ -325,8 +325,8 @@ window.CPL_FUNDING_PERF = {
    "ppe_u": 91.0,
    "pac": 34,
    "pac_u": 230.5,
-   "ptc": 29,
-   "ptc_u": 196.5
+   "ptc": 30,
+   "ptc_u": 206.5
   },
   "Citrus": {
    "pe": 214,
@@ -1298,13 +1298,13 @@ window.CPL_FUNDING_PERF = {
    "pe": 2508,
    "pe_u": 54037.5,
    "pa": 2179,
-   "pa_u": 13048.0,
+   "pa_u": 13045.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
-   "p2": 478,
-   "p3": 2105,
-   "p3_u": 12407.5,
+   "p2": 480,
+   "p3": 2109,
+   "p3_u": 12436.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 38.5,
@@ -1651,8 +1651,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 106,
-   "pac_u": 868.0,
+   "pac": 107,
+   "pac_u": 876.0,
    "ptc": 87,
    "ptc_u": 748.0
   },
@@ -1802,10 +1802,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Santa Ana": {
-   "pe": 463,
-   "pe_u": 16674.0,
-   "pa": 458,
-   "pa_u": 2064.2,
+   "pe": 464,
+   "pe_u": 16681.0,
+   "pa": 459,
+   "pa_u": 2068.2,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 8.0,
@@ -2108,10 +2108,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 320.0
   },
   "West Hills Lemoore": {
-   "pe": 313,
-   "pe_u": 2714.0,
-   "pa": 306,
-   "pa_u": 1053.0,
+   "pe": 312,
+   "pe_u": 2678.0,
+   "pa": 305,
+   "pa_u": 1050.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 21.0,
@@ -2372,7 +2372,7 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": 25,
     "pa": 23,
-    "p3": 21
+    "p3": 22
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -3116,7 +3116,7 @@ window.CPL_FUNDING_PERF = {
    "Military": {
     "pe": 1024,
     "pa": 1024,
-    "p3": 961
+    "p3": 965
    },
    "Standardized Assessment": {
     "pe": 249,
@@ -3601,8 +3601,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 378,
-    "pa": 378,
+    "pe": 379,
+    "pa": 379,
     "p3": 0
    },
    "Portfolio Review": {
@@ -3765,8 +3765,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 30,
-    "pa": 29,
+    "pe": 29,
+    "pa": 28,
     "p3": 0
    }
   },
@@ -3891,7 +3891,7 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1304,
    "pa": 1282,
-   "p3": 1161
+   "p3": 1162
   },
   "Industry Certification | Military": {
    "pe": 53,
@@ -3937,7 +3937,7 @@ window.CPL_FUNDING_PERF = {
   "Military": {
    "pe": 28025,
    "pa": 25833,
-   "p3": 2558
+   "p3": 2562
   },
   "Military | Portfolio Review": {
    "pe": null,
@@ -3986,14 +3986,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1434529.45,
-   "pa_u": 225103.4,
-   "p3_u": 74470.2
+   "pe_u": 1434500.45,
+   "pa_u": 225101.4,
+   "p3_u": 74509.2
   },
   "map": {
-   "pe_u": 1441196.95,
-   "pa_u": 225757.9,
-   "p3_u": 74533.7
+   "pe_u": 1441167.95,
+   "pa_u": 225755.9,
+   "p3_u": 74572.7
   },
   "ratio": {
    "pe_u": 1.0046,
@@ -4239,8 +4239,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santa Ana": {
    "vets": 334,
-   "jst": 380,
-   "pct": 1.1377
+   "jst": 381,
+   "pct": 1.1407
   },
   "Barstow": {
    "vets": 106,
@@ -4359,8 +4359,8 @@ window.CPL_FUNDING_PERF = {
   },
   "West Hills Lemoore": {
    "vets": 61,
-   "jst": 31,
-   "pct": 0.5082
+   "jst": 30,
+   "pct": 0.4918
   },
   "East LA": {
    "vets": 637,
