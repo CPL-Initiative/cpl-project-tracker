@@ -35,3 +35,22 @@ The same method for the one-institution block the Public view and My College sha
   `docs/visuals/2026-10-01-my-cpl-funding-language.html`.
 - Measure it with `scripts/a11y.js --config <dir>/a11y.config.js` over a copy without the Google
   Fonts link (the sweep cannot read a cross-origin sheet and fails rather than pass).
+
+## The "model" sweep (S311)
+
+Sam, 2026-10-01: *"Yes replace model on other surfaces as well"*, widening the My CPL Funding
+card 14 ruling to the explainer and the tab's public text.
+
+    node prototype/mockup_harness/capture_model_words.mjs <repo tree> hits.json <fixtures.json>
+    python3 prototype/mockup_harness/assemble_model_words.py out.html "<stamp>"
+
+- `capture_model_words.mjs` renders the explainer (`funding-model/`) and the tab's Public view
+  (`?fundview=public`) on the published scenario, opens every fold and one drill-in, and lists
+  every visible "model" in text, `title`, `aria-label`, `alt` and `placeholder`. Measured
+  2026-10-01 over config md5 `0f3c6c8e…`: 412 hits, 40 distinct sentences. Strings that show only
+  in other states (a failed load, an open goal, the CSV, the memo) come from reading the source,
+  where `publicMode()` separates them from the curator-only text.
+- `assemble_model_words.py` holds the round's cards as data (no drawn view: the sentences span
+  two long pages), with reply chips into `replies` and in-place edits into `edits`. Published as
+  https://claude.ai/artifact/T2MTd4n2cP2LXZXRXvbBQ6; the copy of record is
+  `docs/visuals/2026-10-01-model-sweep.html`.

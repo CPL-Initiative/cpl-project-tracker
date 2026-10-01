@@ -61,9 +61,9 @@
       "vault_heavy_path": 56
     },
     "vault": {
-      "files": 3357,
-      "bytes": 1699854191,
-      "heavy_bytes": 780467088,
+      "files": 3360,
+      "bytes": 1700021309,
+      "heavy_bytes": 780467566,
       "heavy_share": 0.459,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -675,10 +675,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12254503,
+        "bytes": 12254621,
         "kind": "file"
       },
-      "message": "12,254,503 B single file inside the vault"
+      "message": "12,254,621 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -695,10 +695,10 @@
       "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
-        "bytes": 10095874,
+        "bytes": 10095878,
         "kind": "file"
       },
-      "message": "10,095,874 B single file inside the vault"
+      "message": "10,095,878 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -925,10 +925,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007582,
+        "bytes": 3007918,
         "kind": "file"
       },
-      "message": "3,007,582 B single file inside the vault"
+      "message": "3,007,918 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -985,10 +985,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354255,
+        "bytes": 2354275,
         "kind": "file"
       },
-      "message": "2,354,255 B single file inside the vault"
+      "message": "2,354,275 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
