@@ -3552,7 +3552,12 @@
     { id: "qualify",      label: "Eligibility requirements" },
     { id: "earning",      label: "How outcomes count toward funding" },
     { id: "timing",       label: "Disbursement and the funding window" },
-    { id: "choices",      label: "What is a choice, and what is a given" }
+    { id: "choices",      label: "What is a choice, and what is a given" },
+    // The tab's FAQ, read-only (Sam, 2026-10-01: the explainer is likely the
+    // main view for colleges, so it carries what the Public view gives them).
+    // `questions`, not `faq`: the tab's own FAQ section keeps its id, and only
+    // `timing` is shared on purpose.
+    { id: "questions",    label: "Frequently asked questions" }
   ];
   function publicHouseOrder() {
     return PUBLIC_SECTIONS.map(function (x) { return x.id; });
@@ -13999,6 +14004,10 @@
     // The ids are the page's data-fsec values; PUBLIC_SECTIONS declares them
     // and funding_model_page.test.js asserts the two lists agree.
     publicSectionOrder: publicSectionOrder,
+    // The FAQ as the tab renders it, for the explainer's own section: Sam's
+    // editable block (TEXT_BLOCKS.faq), so his edit reaches both pages. The
+    // markup is faqHtml()'s, which escapes every question and answer.
+    publicFaqHtml: function () { return faqHtml(textPlain("faq")); },
     // The statutory outcomes carried by DESIGNATED PROJECTS rather than by a
     // campus measure (Sam, 2026-09-11). Read by the public explainer, which has
     // no Activities register to look a project up in — so the NAME travels in

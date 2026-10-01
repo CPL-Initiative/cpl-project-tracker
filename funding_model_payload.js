@@ -150,6 +150,17 @@
   // the average well above what a typical college actually sees. Labelling one
   // with the other's number would state a false figure.
   const avg = Math.round(totals.reduce(function (s, v) { return s + v; }, 0) / totals.length);
+  // The average award's credit and noncredit split (Sam, 2026-10-01: "Use the
+  // average funding rather than typical ... showing an average CR/NC funding
+  // split as well"). Each institution's own two shares from the engine,
+  // averaged over the same institutions as `avg`. The credit figure is the
+  // average less the noncredit one, so the pair the page prints sums to the
+  // average it prints beside them.
+  const shares = D.colleges.map(function (c) { return T._alloc(c.college); })
+    .concat(trio.map(function (k) { return T._alloc(k); })).filter(Boolean);
+  const avgNc = shares.length ? Math.round(shares.reduce(function (s, a) {
+    return s + (Number(a.nc_award) || 0); }, 0) / shares.length) : 0;
+  const avgCr = avg - avgNc;
    const payload = {
     model_version: modelVersion, scenario: scenarioName,
     pool: { one_time: pool("one_time_2026_27"), admin: pool("admin_cost"),
@@ -182,6 +193,8 @@
              cap: model.cap, cappedCount: model.cappedCount, capReleased: Math.round(model.capReleased) },
     median: totals[Math.floor(totals.length / 2)],
     avg: avg,
+    avgCr: avgCr,
+    avgNc: avgNc,
     min: totals[0],
     max: totals[totals.length - 1],
     maxName: rows[0][0],

@@ -119,19 +119,75 @@ check("...and in the PUBLIC rendering: no curate affordance reaches the page",
 check("the institution section sits directly after the introduction, before the first step (Sam, 2026-09-02)",
   (function () {
     const inst = doc.getElementById("institutions");
-    const firstFold = doc.querySelector("main details.fold");
     const sections = Array.from(doc.querySelectorAll("main > section"));
-    return !!inst && !!firstFold && sections.indexOf(inst) === 1 &&
+    const firstStep = doc.getElementById("allocation");
+    return !!inst && !!firstStep && sections.indexOf(inst) === 1 &&
       !!inst.querySelector("#cplFundingMount") &&
-      !!(inst.compareDocumentPosition(firstFold) & 4);
+      !!(inst.compareDocumentPosition(firstStep) & 4);
   })());
-check("the steps are folds, closed on open — the introduction and the table are not",
+// EVERY SECTION IS A FOLD (Sam, 2026-10-01: the Fact Sheet's layout, "each
+// section should have a link at the top that take the user to the clicked
+// section and opens it to read or skim"). What opens with the page is
+// unchanged from 2026-09-02: the introduction, the table and the outcomes
+// open; the five steps that explain the mechanics closed.
+check("every section is one fold; the introduction, table and outcomes open, the five steps and the FAQ closed",
   (function () {
-    const folds = Array.from(doc.querySelectorAll("main details.fold"));
-    return folds.length === 5 &&
-      folds.every((f) => !f.open && !!f.querySelector("summary h2") && !!f.querySelector("summary .fold-word")) &&
-      !doc.querySelector("#institutions details.fold") &&
-      !doc.querySelector("main > section:first-of-type details.fold");
+    const sections = Array.from(doc.querySelectorAll("main > section"));
+    const folds = sections.map((sec) => sec.querySelector("details.fold"));
+    const OPEN = ["overview", "institutions", "outcomes"];
+    return sections.length === 9 && folds.every(Boolean) &&
+      folds.every((f) => !!f.querySelector(":scope > summary h2") && !!f.querySelector(":scope > summary .fold-word")) &&
+      sections.every((sec, i) => folds[i].open === OPEN.includes(sec.id)) &&
+      folds.filter((f) => !f.open).length === 6 &&
+      !!doc.querySelector("#institutions details.fold #cplFundingMount");
+  })());
+// THE FAQ is the tab's own block (Sam edits it on the tab, 2026-09-24): its
+// questions render here as the tab renders them, and an edit reaches this page.
+check("the FAQ section carries the tab's own questions, one fold each",
+  (function () {
+    const items = Array.from(doc.querySelectorAll("#faq-body details.cplfund-faq-item > summary"));
+    return items.length >= 3 && /MAP/.test(doc.getElementById("faq-body").textContent);
+  })());
+check("...and a curator's FAQ edit on the tab reaches this page, escaped",
+  (function () {
+    const T = win.CPL_FUNDING_TAB;
+    const before = JSON.parse(JSON.stringify(T._getShared() || {}));
+    T._setShared(Object.assign({}, before, { text: Object.assign({}, before.text || {},
+      { faq: "Q: Does <b>this</b> question reach the explainer?\n\nIt does." }) }));
+    T.render();
+    const items = Array.from(doc.querySelectorAll("#faq-body details.cplfund-faq-item > summary"));
+    const ok = items.length === 1 && items[0].textContent === "Does <b>this</b> question reach the explainer?" &&
+      !doc.querySelector("#faq-body summary b");
+    T._setShared(before);
+    T.render();
+    return ok;
+  })());
+// THE CONTENTS: one link per section, each to the section's own id, and a
+// link opens its section's fold. Driven through the page's own handler.
+check("the Contents list carries one link per section, in page order, to each section's id",
+  (function () {
+    const links = Array.from(doc.querySelectorAll("#toc-list a"));
+    const ids = Array.from(doc.querySelectorAll("main > section")).map((sec) => sec.id);
+    return links.length === ids.length && links.every((a, i) => a.getAttribute("href") === "#" + ids[i]);
+  })());
+check("a Contents link OPENS its section's fold, and Collapse all / Expand all flips every fold",
+  (function () {
+    const fold = doc.querySelector("#requirements details.fold");
+    if (!fold || fold.open) return false;
+    doc.querySelector('#toc-list a[href="#requirements"]').dispatchEvent(new win.MouseEvent("click", { bubbles: true, cancelable: true }));
+    const opened = fold.open === true;
+    const btn = doc.getElementById("btn-collapse-all");
+    btn.click();
+    const allShut = Array.from(doc.querySelectorAll("main > section details.fold")).every((f) => !f.open) &&
+      /Expand all/.test(btn.textContent);
+    btn.click();
+    const allOpen = Array.from(doc.querySelectorAll("main > section details.fold")).every((f) => f.open) &&
+      /Collapse all/.test(btn.textContent);
+    // leave the page as it opens, for the asserts below
+    Array.from(doc.querySelectorAll("main > section")).forEach((sec) => {
+      sec.querySelector("details.fold").open = ["overview", "institutions", "outcomes"].includes(sec.id);
+    });
+    return opened && allShut && allOpen;
   })());
 check("...with a Show / Hide WORD, not a marker glyph",
   /details\.fold > summary \.fold-word::before\{content:"Show"\}/.test(html) &&
@@ -365,11 +421,13 @@ check("the status line is empty on a successful paint",
 // no built file, because a file built once is the snapshot page this one
 // replaced. So the print rules ARE the PDF, and they are guarded like markup.
 {
-  check("a PDF control sits in the masthead, as a word rather than a mark",
+  // In the action bar since 2026-10-01 (the Fact Sheet's title row).
+  check("a PDF control sits in the action bar at the top, as a word rather than a mark",
     (function () {
       const b = doc.getElementById("pdf-btn");
       return !!b && b.tagName === "BUTTON" && /Download PDF/.test(b.textContent) &&
-        !!doc.querySelector("header #pdf-btn");
+        !!doc.querySelector(".actionbar #pdf-btn") &&
+        !!(doc.querySelector(".actionbar").compareDocumentPosition(doc.querySelector("main")) & 4);
     })());
   const print = (html.match(/@media print\{[\s\S]*?\n\}/) || [""])[0];
   check("the print stylesheet exists and sets a page box",
@@ -393,8 +451,8 @@ check("the status line is empty on a successful paint",
   check("print drops the table's controls, which have no meaning on paper",
     /cplfund-toolbar/.test(print) && /cplfund-colmenu/.test(print) &&
     /cplfund-optin-jump/.test(print) && /input\[type="search"\]/.test(print));
-  check("...and the PDF button prints nothing of itself",
-    /\.head-actions/.test(print));
+  check("...and the PDF button prints nothing of itself (the action bar and the Contents are screen navigation)",
+    /\.actionbar, #contents/.test(print));
   // The College Dashboard's table states its screen minimum INLINE (tableHtml,
   // 2026-09-28), and an inline style outranks every rule but an !important one:
   // before 2026-09-29 the printed table ran 898px wide in a 720px page box.
@@ -617,9 +675,30 @@ check("the status line is empty on a successful paint",
     Number.isFinite(instBox));
   check("...and it equals the model's own net_college figure",
     Math.round(instBox) === Math.round(D3.net_main));
-  check("the three destination boxes sum to the appropriation, by construction",
+  check("the destinations sum to the appropriation, by construction",
     Math.round(instBox + D3.pool.scaling + D3.pool.admin)
       === Math.round(D3.pool.one_time));
+  // TWO BOXES (Sam, 2026-10-01: "combine in one box the Projects & Supports
+  // with Staff funding together with projects in one value"), and the average
+  // in the middle of the range row with its credit and noncredit split.
+  const money0 = (n) => "$" + Math.round(n).toLocaleString("en-US");
+  // The page's own payload, painted now: earlier blocks moved its dials.
+  const Dp = win.CPL_FUNDING_EXPLAINER.buildPayload(win.CPL_FUNDING_TAB, win.CPL_FUNDING);
+  win.CPL_PAINT_EXPLAINER(Dp);
+  check("the statewide box is ONE figure: projects and technology plus the two posts, and no third box",
+    doc.querySelectorAll(".figs .fig").length === 2 && !doc.getElementById("f-staff") &&
+    doc.getElementById("f-proj").textContent === money0(Dp.pool.scaling + Dp.pool.admin) &&
+    doc.getElementById("f-inst").textContent === money0(Dp.pool.one_time - Dp.pool.admin - Dp.pool.scaling));
+  check("the range row's middle box is the AVERAGE, not the median, and no box says Typical",
+    doc.getElementById("r-avg").textContent === money0(Dp.avg) && !doc.getElementById("r-med") &&
+    !/Typical/i.test(doc.querySelector(".range").textContent));
+  check("...its credit and noncredit split comes from the engine and sums to the average",
+    D3.avgCr + D3.avgNc === D3.avg && D3.avgNc > 0 && D3.avgCr > D3.avgNc &&
+    doc.getElementById("r-avg-s").textContent.indexOf(money0(Dp.avgCr) + " credit and " + money0(Dp.avgNc) + " noncredit") === 0);
+  check("...and the noncredit average is the statewide noncredit total over the institutions",
+    Math.abs(D3.avgNc - D3.nc.face / D3.rows.length) <= 1);
+  check("the sentence under the row names the median as a figure, painted from the engine",
+    doc.getElementById("f-med").textContent === money0(Dp.median));
 }
 
 // ── section curation: renaming and hiding, from the tab's OWN maps ─────────
@@ -644,7 +723,7 @@ check("the status line is empty on a successful paint",
   // the two folds that held them into one open section between the table and
   // the steps.
   const IDS = ["lede", "institutions", "outcomes", "allocation", "qualify",
-               "earning", "timing", "choices"];
+               "earning", "timing", "choices", "questions"];
   const secs = Array.from(doc.querySelectorAll("[data-fsec]"));
   check("every section carries a data-fsec id, in page order",
     secs.length === IDS.length &&

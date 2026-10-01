@@ -192,11 +192,15 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const html = read("funding-model/index.html");
-  const actions = html.slice(html.indexOf('<p class="head-actions">'), html.indexOf("</p>", html.indexOf('<p class="head-actions">')));
-  check("4a: the explainer's header leads with My CPL Funding, linked to the table",
-    /^<p class="head-actions">\s*<!--[\s\S]*?-->\s*<a class="pdfbtn" id="my-funding-btn" href="#institutions">My CPL Funding<\/a>/.test(actions));
-  check("4b: …and its click opens the one-institution view through the module",
-    /getElementById\("my-funding-btn"\)[\s\S]{0,300}T\.showMyFunding\(\)/.test(html));
+  // In the action bar at the top since 2026-10-01 (the Fact Sheet's title row),
+  // the one filled button there.
+  const bar = html.slice(html.indexOf('<div class="actionbar">'), html.indexOf("<header", html.indexOf('<div class="actionbar">')));
+  check("4a: the explainer's action bar carries My CPL Funding as its lead button, linked to the table",
+    /<a class="btn primary" id="my-funding-btn" href="#institutions">My CPL Funding<\/a>/.test(bar) &&
+    (bar.match(/class="btn primary"/g) || []).length === 1);
+  check("4b: …and its click opens the table's fold, then the one-institution view through the module",
+    /getElementById\("my-funding-btn"\)[\s\S]{0,600}T\.showMyFunding\(\)/.test(html) &&
+    /getElementById\("my-funding-btn"\)[\s\S]{0,300}sectionFold\(document\.getElementById\("institutions"\)\)/.test(html));
 }
 {
   const { w, B, printed } = setup();

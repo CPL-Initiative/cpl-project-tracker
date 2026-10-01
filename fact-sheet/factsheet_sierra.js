@@ -60,6 +60,13 @@
     'Where can I get credit for a real estate license?',
     'How much money has CPL saved students?',
   ];
+  // A host page may name its own suggested questions (the funding explainer
+  // does, 2026-10-01: "money" is not a word for a funding surface, and Sierra
+  // does not read that page's figures). Strings only; a bad value keeps these.
+  if (Array.isArray(window.CPL_SIERRA_SUGGESTED) && window.CPL_SIERRA_SUGGESTED.length &&
+      window.CPL_SIERRA_SUGGESTED.every(function (q) { return typeof q === 'string' && q; })) {
+    SUGGESTED = window.CPL_SIERRA_SUGGESTED.slice(0, 6);
+  }
 
   var API = { _open: false, _built: false, _lastFocus: null, _convo: [] };
   var CONVO_MAX = 8;
@@ -366,7 +373,9 @@
     launcher = el('button', { type: 'button', id: 'btn-sierra', className: 'btn fs-sierra-launch no-print',
       title: 'Ask ' + NAME + ', the CPL assistant', 'aria-haspopup': 'dialog', 'aria-expanded': 'false',
       onclick: toggle }, 'Ask ' + NAME);
-    var before = document.getElementById('btn-print');     // sit just left of the primary CTA
+    // Sit just left of the primary CTA: the Fact Sheet's Print button, or the
+    // control a host page marks [data-sierra-before] (the funding explainer's PDF).
+    var before = document.getElementById('btn-print') || bar.querySelector('[data-sierra-before]');
     if (before && before.parentNode === bar) bar.insertBefore(launcher, before);
     else bar.appendChild(launcher);
   }

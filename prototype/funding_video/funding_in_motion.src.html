@@ -160,35 +160,35 @@ var S0=scene(0,6,'Title',CFG.titleText,function(r,o){
   o.s=E('p','kick',CFG.kick,r,'position:absolute;left:55cqw;right:4cqw;top:41.5cqw;font-size:2.2cqw');
 },function(o,t){o.lock.style.opacity=eo(k(t,0.2,1.4));fade(o.y,t,1.0,1.6);reveal(o.t.cs,t,1.4,0.035,0.7,'drop');fade(o.s,t,3.6,4.4);});
 
-var S1=scene(6,15,'The funding','The state set aside 35 million dollars in one-time funding for 2026–27. 25.2 million goes directly to 118 institutions, 9.0 million funds statewide CPL projects and technology, and 800 thousand funds two Chancellor’s Office positions that support colleges.',function(r,o){
+var S1=scene(6,15,'The funding',CFG.split.text,function(r,o){
   o.k=E('p','kick','One-time funding for 2026–27',r,'position:absolute;left:4.5cqw;top:3.6cqw');
   o.n=E('div','big abs gold','$0',r,'left:4.5cqw;top:6.6cqw;font-size:14.5cqw');
   o.l=words(r,'set aside by the state to help colleges build <b>credit for prior learning</b>.','ln abs');o.l.style.cssText='left:4.5cqw;right:4.5cqw;top:22cqw;font-size:2.9cqw';
   o.bar=E('div','bar',null,r,'left:4.5cqw;right:4.5cqw;top:29.5cqw;height:6.5cqw');
-  var segs=[[0,72.1,'var(--stage-blue)'],[72.1,25.6,'var(--stage-navy)'],[97.7,2.3,'var(--stage-seg3)']];
+  var segs=CFG.split.segs;
   o.segs=segs.map(function(s){return{d:s,el:E('div','fill',null,o.bar,'left:'+s[0]+'%;width:0;background:'+s[2])};});
-  o.lab=[[4.5,'$25,240,308','directly to 118 institutions','var(--stage-blue)'],[36,'$8,959,692','statewide CPL projects and technology','var(--stage-navy)'],[67,'$800,000','two Chancellor’s Office positions supporting colleges','var(--stage-muted)']].map(function(a){var d=E('div','abs',null,r,'left:'+a[0]+'cqw;top:38cqw;width:28.5cqw');E('div',null,a[1],d,'font:900 4.6cqw/1 '+PF+';color:'+a[3]);E('div','ln',a[2],d,'font-size:2.6cqw;margin-top:.8cqw');return d;});
+  o.lab=CFG.split.labs.map(function(a){var d=E('div','abs',null,r,'left:'+a[0]+'cqw;top:38cqw;width:'+(a[4]||28.5)+'cqw');E('div',null,a[1],d,'font:900 4.6cqw/1 '+PF+';color:'+a[3]);E('div','ln',a[2],d,'font-size:2.6cqw;margin-top:.8cqw');return d;});
 },function(o,t){fade(o.k,t,0.1,0.8);count(o.n,t,0.2,2.4,35000000);o.n.style.transform='scale('+(1+0.06*Math.sin(Math.PI*k(t,2.2,2.9)))+')';o.n.style.transformOrigin='left center';reveal(o.l.ws,t,2.2,0.06,0.5);
   o.segs.forEach(function(s,i){var p=eio(k(t,3.6+i*0.7,4.6+i*0.7));s.el.style.width=(s.d[1]*p)+'%';});o.lab.forEach(function(d,i){fade(d,t,4.0+i*0.7,4.8+i*0.7);});});
 
-var S2=scene(15,25,'Maximum allocation','Every institution has a maximum allocation, sized by its share of instruction, credit and noncredit together. It sits between a base of 150 thousand and a cap of 400 thousand across the two years. Sample College’s maximum allocation is 345,220 dollars.',function(r,o){
+var S2=scene(15,25,'Maximum allocation','Every institution has a maximum allocation, sized by its share of instruction, credit and noncredit together. It sits between a base of 150 thousand and a cap of 400 thousand across the two years. '+CFG.ex.maxText,function(r,o){
   o.h=words(r,'Every institution has a <span class="blue">maximum allocation</span>','hd');
   o.l=words(r,'sized by its share of instruction, credit and noncredit together, across the two years.','ln');o.l.style.cssText='margin-top:1.2cqw;font-size:3cqw';
   o.track=E('div','abs',null,r,'left:10cqw;right:10cqw;top:36.5cqw;height:.6cqw;background:var(--stage-ink);transform-origin:left');
-  o.ticks=[[0,'$150,000','base'],[8.9,'$172,314','typical'],[100,'$400,000','cap']].map(function(a,i){var d=E('div','abs',null,r,'left:calc(10cqw + '+a[0]+'% * 0.8);top:33.9cqw;transform:translateX('+(i===0?'-50%':i===2?'-50%':'-50%')+');text-align:center');E('div',null,null,d,'width:.4cqw;height:3.4cqw;background:var(--stage-ink);margin:0 auto');E('div',null,a[1],d,'font:900 3.2cqw/1.1 '+PF+';margin-top:.6cqw');E('div','kick',a[2],d,'margin-top:.4cqw;color:var(--stage-muted)');if(i===1){d.style.top='auto';d.style.bottom='19.4cqw';d.style.display='flex';d.style.flexDirection='column-reverse';d.firstChild.style.marginTop='.4cqw';}return d;});
-  o.m=E('div','abs',null,r,'top:24.9cqw;transform:translateX(-50%);text-align:center');E('div','pill','Sample College',o.m,'background:var(--stage-gold);color:var(--stage-ink)');o.mv=E('div',null,'$345,220',o.m,'font:900 4.6cqw/1.1 '+PF+';margin-top:.4cqw');E('div',null,null,o.m,'width:.4cqw;height:2.2cqw;background:var(--stage-gold);margin:.2cqw auto 0');
+  var TK=CFG.ex.ticks;o.ticks=TK.map(function(a,i){var d=E('div','abs',null,r,'left:calc(10cqw + '+a[0]+'% * 0.8);top:33.9cqw;transform:translateX('+(i===0?'-50%':i===2?'-50%':'-50%')+');text-align:center');E('div',null,null,d,'width:.4cqw;height:3.4cqw;background:var(--stage-ink);margin:0 auto');E('div',null,a[1],d,'font:900 3.2cqw/1.1 '+PF+';margin-top:.6cqw');E('div','kick',a[2],d,'margin-top:.4cqw;color:var(--stage-muted)');if(i>0&&i<TK.length-1){d.style.top='auto';d.style.bottom='19.4cqw';d.style.display='flex';d.style.flexDirection='column-reverse';d.firstChild.style.marginTop='.4cqw';}return d;});
+  o.m=E('div','abs',null,r,'top:24.9cqw;transform:translateX(-50%);text-align:center');E('div','pill',CFG.ex.name,o.m,'background:var(--stage-gold);color:var(--stage-ink)');o.mv=E('div',null,money(CFG.ex.max),o.m,'font:900 4.6cqw/1.1 '+PF+';margin-top:.4cqw');E('div',null,null,o.m,'width:.4cqw;height:2.2cqw;background:var(--stage-gold);margin:.2cqw auto 0');
   o.b=words(r,'Smaller institutions are brought up to the base. The largest are held at the cap.','ln abs');o.b.style.cssText='left:4.5cqw;right:4.5cqw;bottom:2.4cqw;font-size:2.8cqw';
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);reveal(o.l.ws,t,0.8,0.04,0.5);var p=eio(k(t,1.6,2.6));o.track.style.transform='scaleX('+p+')';o.ticks.forEach(function(d,i){d.style.opacity=eo(k(t,2.0+i*0.35,2.7+i*0.35));});
-  var x=back(k(t,4.0,5.6));o.m.style.left='calc(10cqw + '+(78.1*x*0.8)+'%)';o.m.style.opacity=k(t,4.0,4.3);reveal(o.b.ws,t,6.2,0.06,0.5);});
+  var x=back(k(t,4.0,5.6));o.m.style.left='calc(10cqw + '+(CFG.ex.pos*x*0.8)+'%)';o.m.style.opacity=k(t,4.0,4.3);reveal(o.b.ws,t,6.2,0.06,0.5);});
 
-var S3=scene(25,32,'Credit and noncredit','Each maximum allocation splits into a credit share and a noncredit share, by the institution’s own instructional mix. Only noncredit outcomes count toward the noncredit share.',function(r,o){
-  o.h=words(r,'Every allocation splits in two','hd');
-  o.a=E('div','big abs','$345,220',r,'left:50%;top:14cqw;transform:translateX(-50%);font-size:15cqw');
+var S3=scene(25,32,'Credit and noncredit','Each maximum allocation splits into a credit share and a noncredit share, by the institution’s own instructional mix.'+CFG.ex.splitText+' Only noncredit outcomes count toward the noncredit share.',function(r,o){
+  o.h=words(r,CFG.ex.splitHead,'hd');
+  o.a=E('div','big abs',money(CFG.ex.max),r,'left:50%;top:14cqw;transform:translateX(-50%);font-size:15cqw');
   o.c=E('div','abs',null,r,'top:14.5cqw;text-align:center;width:44cqw');o.cv=E('div','big blue',null,o.c,'font-size:11cqw');E('div','kick','credit share',o.c,'margin-top:1.2cqw;font-size:2.4cqw');
   o.n=E('div','abs',null,r,'top:14.5cqw;text-align:center;width:44cqw');o.nv=E('div','big gold',null,o.n,'font-size:11cqw');E('div','kick','noncredit share',o.n,'margin-top:1.2cqw;font-size:2.4cqw;color:var(--stage-gold-text)');
   o.l=words(r,'The split follows each institution’s own instructional mix. <b>Only noncredit outcomes count toward the noncredit share.</b>','ln abs');o.l.style.cssText='left:4.5cqw;right:4.5cqw;top:37.5cqw;font-size:3.5cqw';
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);var s=eio(k(t,1.8,3.0));o.a.style.opacity=1-k(t,1.8,2.2);o.a.style.transform='translateX(-50%) scale('+(1+0.12*Math.sin(Math.PI*k(t,1.2,1.8)))+')';
-  o.c.style.left=(28-24*s)+'cqw';o.n.style.left=(28+24*s)+'cqw';o.c.style.opacity=o.n.style.opacity=k(t,1.9,2.3);count(o.cv,t,1.9,3.4,340861);count(o.nv,t,1.9,3.4,4358);reveal(o.l.ws,t,3.8,0.05,0.5);});
+  o.c.style.left=(28-24*s)+'cqw';o.n.style.left=(28+24*s)+'cqw';o.c.style.opacity=o.n.style.opacity=k(t,1.9,2.3);count(o.cv,t,1.9,3.4,CFG.ex.cr);count(o.nv,t,1.9,3.4,CFG.ex.nc);reveal(o.l.ws,t,3.8,0.05,0.5);});
 
 var S4=scene(32,46,CFG.prioName,CFG.prioText,function(r,o){
   o.h=words(r,CFG.prioHead,'hd');o.h.style.fontSize='5.6cqw';
@@ -198,11 +198,11 @@ var S4=scene(32,46,CFG.prioName,CFG.prioText,function(r,o){
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.cols.forEach(function(c,i){var a=1.2+i*4,p=back(k(t,a,a+0.9));c.d.style.opacity=k(t,a,a+0.3);c.d.style.transform='translateY('+((1-p)*6)+'cqw) rotate('+((1-p)*(i-1)*4)+'deg)';
   if(!c.rep)count(c.n,t,a+0.2,a+1.4,c.v,function(v){return Math.round(v)+'%';});var on=t>=a&&t<a+4;c.d.style.filter=t>=13.2||on||t<a?'none':'saturate(.4) opacity(.55)';});});
 
-var S5=scene(46,56,'Targets','Every priority has a target in FTES: 30 semester units of CPL make one FTES, or 45 on a quarter calendar. Sample College’s Access target is '+CFG.target.ftesWords+' FTES behind '+CFG.target.usdWords+' dollars. Reach half the target, '+CFG.target.halfFtesWords+' FTES, and it qualifies for '+CFG.target.halfUsdWords+' dollars. Going past the target adds nothing: the share is the ceiling.',function(r,o){
+var S5=scene(46,56,'Targets','Every priority has a target in FTES: 30 semester units of CPL make one FTES, or 45 on a quarter calendar. '+CFG.ex.targetLead+' '+CFG.target.ftesWords+' FTES behind '+CFG.target.usdWords+' dollars. Reach half the target, '+CFG.target.halfFtesWords+' FTES, and '+CFG.ex.qualifier+' qualifies for '+CFG.target.halfUsdWords+' dollars. Going past the target adds nothing: the share is the ceiling.',function(r,o){
   o.h=words(r,'Every priority has a target','hd');
   o.l=words(r,'<b>30 semester units</b> of CPL make one FTES, or 45 on a quarter calendar.','ln');o.l.style.cssText='margin-top:1.2cqw;font-size:3cqw';
   o.card=E('div','abs',null,r,'left:4.5cqw;right:4.5cqw;top:19.5cqw');
-  E('div','kick','Sample College · Access · target '+CFG.target.ftes.toFixed(1)+' FTES · '+money(CFG.target.usd),o.card,'font-size:2.2cqw');
+  E('div','kick',CFG.ex.name+' · Access · target '+CFG.target.ftes.toFixed(1)+' FTES · '+money(CFG.target.usd),o.card,'font-size:2.2cqw');
   o.bar=E('div','bar',null,o.card,'position:relative;margin-top:1.4cqw;height:7cqw');o.fill=E('div','fill',null,o.bar,'background:var(--stage-gold);width:0');
   o.half=E('div','abs',null,o.bar,'left:50%;top:0;bottom:0;width:.35cqw;background:var(--stage-ink)');
   o.row=E('div',null,null,o.card,'display:flex;justify-content:space-between;align-items:baseline;margin-top:1.4cqw');
