@@ -164,7 +164,9 @@ The whole ecosystem, end-to-end:
    copies with small student counts removed before publication, while the
    protected tables behind it keep their protection: one page, not 123 — pick a college and get where it stands
    against the goals, what its already-articulated-and-waiting credit actually
-   consists of, its share of both funding pools with each priority's target,
+   consists of, its CPL funding (the seed grant, the implementation max award,
+   the three minimum conditions with its own state, the funding its current
+   outcomes demonstrate, and each priority's target),
    its tier with the missing criteria named, who MAP has on file for it, what
    occupations in its region it could already give credit for — matched against
    its own catalog, with the accuracy disclosed — and a

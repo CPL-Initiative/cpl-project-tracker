@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-09-30
+updated: 2026-10-01
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1357,3 +1357,14 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 - ⚠️ **`revoke ... from public` left `anon=X`.** This project's default privileges grant anon and authenticated by name on every new function; the function stayed callable until the revoke named anon. Rule 10 b2 now says so, and the grants lint's docstring. Exposure check: no rebuild, replace or clear function is anon-callable.
 - **The page never decides who sees what.** My College only asks `cpl_funding_my_reports()` with the person's own token; the team phrase is not a person and gets the sign-in. `markReports()` is the one "newest counts" rule for both views.
 - **The seeded a11y sweep found the Resources links at 15px** (SC 2.5.8); they are 24px now. A section behind the scope question needs its own seeded target, one per state, because the sweep seeds once per width.
+
+## S310 (2026-10-01, SkyTandem): My CPL Funding in Sam's words
+
+**Sam's ask, verbatim:** *"See screenshot for My CPL Funding view and make a mockup with revised language that follows the norms and examples in our rules and memory. Show me in the mockup your revisions before we make any changes to prod."* Round 1 #1797 (artifact C5crxcr1KY7t1JgX3HTXMx, 16 cards); the port #1798.
+
+- **The Today half came from the product.** `prototype/mockup_harness/capture_mycpl.mjs` renders the Public view with the tab's own scripts and answers Supabase from a fixture whose config is md5-checked against Postgres; the same harness verified the port (Coastline read as approved).
+- **His replies were the spec.** A note-only reply stores `v: ""` and the note is the verdict; his Follow up flags (cards 1, 2, 4, 7, 8, 12, 14) meant "use my wording". He wrote eight of the sixteen sentences himself.
+- **The mockup found a dead line.** Do this next never showed the implementation step: `topStrategy()` read `pr.strategies`, `buildBriefing()` carries `pr.items`, and the test fed it the config's field name ([note](kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md)).
+- **The conditions list reads the module's own list.** `_conditions()` builds on `eligReqList`, so the block, the pie and the drill-in agree.
+- ⚠️ **Six tests pinned the retired sentences, and the local run missed one.** CI's shard 2 caught `cpl_funding_refresh_sources`. Before pushing a wording change, grep `tests/` for a fragment of every sentence it retires.
+- **Rulings (verbatim in `cpl_memory`):** no "funding model" in college-facing text (*"as it's finalized, it's no longer a model but now a procedure"*), extended the same day to the explainer and the tab's public text (*"Yes replace model on other surfaces as well"*); "through apportionment" for the seed grant only; the 84 are CER credentials, and MAP's statewide set is 134 exhibits with 354 recommendations; the seed grant's expend-by date stays off (*"Leave this off"*).

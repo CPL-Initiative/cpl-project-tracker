@@ -11,13 +11,13 @@
   },
   "summary": {
     "files": 1017,
-    "bytes": 10791367,
+    "bytes": 10797945,
     "over_budget": 6,
     "handoff_max": 311,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59975,
-    "superseded_files": 6,
-    "superseded_bytes": 38419,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,44 +26,43 @@
       },
       "other": {
         "files": 117,
-        "bytes": 3295286,
+        "bytes": 3296605,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 12019,
+        "bytes": 11507,
         "over": 0
       },
       "lessons": {
         "files": 76,
-        "bytes": 2180632,
+        "bytes": 2182658,
         "over": 2
       },
       "kb_note": {
         "files": 507,
-        "bytes": 2569341,
+        "bytes": 2570881,
         "over": 0
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 275729,
+        "bytes": 275782,
         "over": 1
       },
       "handoff": {
         "files": 282,
-        "bytes": 2398385,
+        "bytes": 2400537,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 6,
-      "superseded_handoff": 6,
       "vault_heavy_path": 56
     },
     "vault": {
-      "files": 3356,
-      "bytes": 1699841635,
+      "files": 3357,
+      "bytes": 1699854191,
       "heavy_bytes": 780467088,
       "heavy_share": 0.459,
       "ignore_filters": [
@@ -412,13 +411,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 688407,
+        "bytes": 689467,
         "limit": 150000,
         "lane": "other",
-        "over_by": 538407,
-        "ratio": 4.59
+        "over_by": 539467,
+        "ratio": 4.6
       },
-      "message": "688,407 B is 4.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "689,467 B is 4.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -432,72 +431,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 305,
-        "authoritative": 311,
-        "has_frontmatter": true
-      },
-      "message": "handoff 305 is below the authoritative 311 but is not stamped `superseded: true`",
-      "path": "docs/session_305_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 306,
-        "authoritative": 311,
-        "has_frontmatter": true
-      },
-      "message": "handoff 306 is below the authoritative 311 but is not stamped `superseded: true`",
-      "path": "docs/session_306_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 307,
-        "authoritative": 311,
-        "has_frontmatter": true
-      },
-      "message": "handoff 307 is below the authoritative 311 but is not stamped `superseded: true`",
-      "path": "docs/session_307_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 308,
-        "authoritative": 311,
-        "has_frontmatter": true
-      },
-      "message": "handoff 308 is below the authoritative 311 but is not stamped `superseded: true`",
-      "path": "docs/session_308_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 309,
-        "authoritative": 311,
-        "has_frontmatter": true
-      },
-      "message": "handoff 309 is below the authoritative 311 but is not stamped `superseded: true`",
-      "path": "docs/session_309_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 310,
-        "authoritative": 311,
-        "has_frontmatter": true
-      },
-      "message": "handoff 310 is below the authoritative 311 but is not stamped `superseded: true`",
-      "path": "docs/session_310_handoff.md"
     },
     {
       "rule": "house_voice",
