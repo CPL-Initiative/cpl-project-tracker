@@ -682,7 +682,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/funding_video/narration_s1.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `prototype/funding_video/narration_s1_layout.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/funding_video/narration_s2_layout.json` | scripts: `prototype/funding_video/build.py` | — |
-| `prototype/mockup_harness/CPL_Dashboard.html` | scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` | — |
+| `prototype/mockup_harness/CPL_Dashboard.html` | scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
@@ -802,7 +802,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | Service | Called by |
 |---|---|
 | `127.0.0.1` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
-| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` |
+| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` |
 | `127.0.0.1:9333` | scripts: `prototype/funding_video/render.mjs` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api.anthropic.com` | tabs: `annual-report` · pages: `CPL_Dashboard.html` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
@@ -825,7 +825,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
-| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py`, `prototype/funding_video/build.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py`, `prototype/funding_video/build.py`, `prototype/mockup_harness/assemble_model_words.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py` · `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -837,8 +837,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `esm.sh` | pages: `kb-portal/index.html` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
-| `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_mycpl.py` |
-| `fonts.gstatic.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_mycpl.py` |
+| `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py` |
+| `fonts.gstatic.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py` |
 | `foothill.edu` | tabs: `map-queue`, `map-users` |
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |
 | `github.com` | pages: `kb-portal/index.html` |
@@ -971,4 +971,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 90 Supabase tables · 32 RPCs · 5 edge functions · 561 file
-datasets · 147 external services · 390 consumers · 38 workflows · 37 tabs.
+datasets · 147 external services · 392 consumers · 38 workflows · 37 tabs.
