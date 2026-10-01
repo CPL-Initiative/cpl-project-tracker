@@ -31,6 +31,10 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 14 (S312, 2026-10-01, SHEET_ID 2026-10-01-open-asks-14): sheet 13's five cards (no reply yet), then
+S312's one: whether colleges get the explainer alone or the tab's Public view as well (Sam, 2026-10-01: "I may
+also give access to the 'Public View'--depends on whether this view has everything needed").
+Published at https://claude.ai/artifact/EpuRqmsBBiwjNK6ZsD4LaU (capabilities db + comments).
 Sheet 13 (S311, 2026-10-01, SHEET_ID 2026-10-01-open-asks-13): sheet 12's one card (no reply), then
 S311's three: running the CER rename receipt (#1803, Cisco and AWS), the Microsoft title (the exam was
 renamed, not the credential), folding AWS's second SysOps record; and a pointer to the "model" sweep
@@ -125,8 +129,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-01-open-asks-13.html')
-SHEET_ID = '2026-10-01-open-asks-13'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-01-open-asks-14.html')
+SHEET_ID = '2026-10-01-open-asks-14'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -679,6 +683,25 @@ def items():
                "proposals wholesale; then say so here and the port uses them as written.",
         'chips': chips(('Replied there', 'done'), ('Use them all as proposed', 'all'), CH_LATER),
         'evidence': [policy()],
+    })
+    # Sheet 14 (S312): Sam's point 2 of 2026-10-01, answered by rendering both pages.
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Colleges' view: the explainer alone, or the Public view too",
+        'ref': 'implementation-funding · funding-model/index.html (the Fact Sheet layout, S312) · the tab at ?fundview=public',
+        'facts': (
+            "Both pages rendered on today's config. The explainer now opens on a Contents list, every section folds, "
+            "Ask Sierra sits in its top bar, and it carries the tab's FAQ, read from your block on the tab. What the "
+            "Public view adds beside it: each priority's statewide target, rate and progress (Access 7,503.4 of a "
+            "4,467.6 FTES target; Completion 744.1), a count under each minimum condition (60 of 116 colleges meet the "
+            "JST condition), and the FTES factors table (525 contact hours make one FTES). A college's own award, "
+            "conditions, targets and progress are in My CPL Funding on both pages."),
+        'why': "A college reading one page sees everything it acts on; a second link earns its place only by adding something it needs.",
+        'rec': "<strong>The explainer alone.</strong> The statewide progress lines serve the Chancellor's Office more than "
+               "a college. <em>It might be wrong if</em> you want colleges to see the statewide progress; then give them "
+               "both links, or have the progress lines brought to the explainer.",
+        'chips': chips(('Explainer alone', 'explainer'), ('Both links', 'both'), ('Bring the progress over', 'port'), CH_LATER),
+        'evidence': [live('2026-10-01', "both pages rendered in Chromium over the live funding config (md5 e21658f9) and the day's MAP data files")],
     })
     return I
 

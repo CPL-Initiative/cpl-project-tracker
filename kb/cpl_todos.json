@@ -8,7 +8,7 @@
       "id": "s311-sam-sheet13",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Sheet 13 has five items: the City College of San Francisco check in Sierra (carried from sheet 12), running the two CER renames (the paste is in pull request 1803), the Microsoft Azure AI Fundamentals title (Microsoft renamed only the exam), folding AWS's second SysOps record, and a pointer to the model sweep sheet. https://claude.ai/artifact/CyhTj4tH2sSMjKtgaW6o69"
+      "text": "Sheet 14 has six items: the City College of San Francisco check in Sierra (carried from sheet 12), running the two CER renames (the paste is in pull request 1803), the Microsoft Azure AI Fundamentals title (Microsoft renamed only the exam), folding AWS's second SysOps record, a pointer to the model sweep sheet, and whether colleges get the funding explainer alone or the Public view too. https://claude.ai/artifact/EpuRqmsBBiwjNK6ZsD4LaU"
     },
     {
       "id": "s311-sam-model-sweep",
