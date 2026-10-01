@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 561,
   "external_services": 147,
-  "consumers": 390,
+  "consumers": 392,
   "workflows": 38,
   "data_js_files": 68,
   "tabs": 37
@@ -219,6 +219,13 @@
      "direction": "read",
      "how": "url",
      "line": 71
+    },
+    {
+     "id": "script:prototype/mockup_harness/capture_model_words.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 69
     },
     {
      "id": "script:prototype/mockup_harness/capture_mycpl.mjs",
@@ -725,6 +732,13 @@
      "line": 23
     },
     {
+     "id": "script:prototype/mockup_harness/assemble_model_words.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 361
+    },
+    {
      "id": "worker:cloudflare-worker-proxy.js",
      "kind": "worker",
      "direction": "read",
@@ -1061,6 +1075,13 @@
      "line": 88
     },
     {
+     "id": "script:prototype/mockup_harness/assemble_model_words.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 572
+    },
+    {
      "id": "script:prototype/mockup_harness/assemble_mycpl.py",
      "kind": "script",
      "direction": "read",
@@ -1085,6 +1106,13 @@
      "direction": "read",
      "how": "url",
      "line": 89
+    },
+    {
+     "id": "script:prototype/mockup_harness/assemble_model_words.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 573
     },
     {
      "id": "script:prototype/mockup_harness/assemble_mycpl.py",
@@ -14559,6 +14587,13 @@
      "direction": "read",
      "how": "literal",
      "line": 16
+    },
+    {
+     "id": "script:prototype/mockup_harness/capture_model_words.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 22
     },
     {
      "id": "script:prototype/mockup_harness/capture_mycpl.mjs",
