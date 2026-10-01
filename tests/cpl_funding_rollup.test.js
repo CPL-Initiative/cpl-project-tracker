@@ -391,7 +391,7 @@ function colOf(tbl, name) {
   } catch (e) { threw = true; console.error(e); }
   check("missing-data boot does not throw", !threw);
   check("missing-data renders graceful empty state",
-    window.document.getElementById("cplFundingMount").textContent.indexOf("unavailable") !== -1);
+    window.document.getElementById("cplFundingMount").textContent.indexOf("did not load") !== -1);
   check("DRAFT chip shows even in the no-data state", !!window.document.getElementById("cplFundingDraftChip"));
 }
 
