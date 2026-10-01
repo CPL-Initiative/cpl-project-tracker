@@ -730,7 +730,7 @@ check("the status line is empty on a successful paint",
     secs.every((s2, i2) => s2.getAttribute("data-fsec") === IDS[i2]));
   check("the footer is deliberately NOT curatable — it carries the draft disclaimer",
     !doc.querySelector("footer[data-fsec]") &&
-    /working model for discussion, not adopted policy/.test(doc.querySelector("footer").textContent));
+    /working draft for discussion, not adopted policy/.test(doc.querySelector("footer").textContent));
 
   // ⚠️ AN EXPLAINER SECTION MAY NOT SHARE AN ID WITH A TAB SECTION (except the
   // one that does on purpose). This is not tidiness — curation is id-keyed, so

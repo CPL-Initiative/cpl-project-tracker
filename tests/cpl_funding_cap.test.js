@@ -375,7 +375,7 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   check("C7: the formula box explains the cap beside the base",
     /Cap:/.test(formula.textContent) && /Base award:/.test(formula.textContent));
   check("C7: …and says the two are solved together (why the base count moves)",
-    /solves the base and the cap together/.test(formula.textContent) && /back above the base/.test(formula.textContent));
+    /sets the base and the cap together/.test(formula.textContent) && /back above the base/.test(formula.textContent));
   // Stated positively since 2026-09-22 (Sam: no "this, not that").
   check("C7: …and says the targets stay proportional to the pre-cap share",
     /targets stay proportional to each institution(&#39;|')s share of statewide [^.]* before the cap/
@@ -416,7 +416,7 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   check("C7: …and does NOT re-explain the re-split there (that lives in the formula box)",
     !!detail && !/re-splits across the institutions below the cap/.test(detail.textContent) &&
     !/lowers the funding, not the bar/.test(detail.textContent) &&
-    /re-split|releasing/.test(doc.querySelector(".cplfund-formula").textContent));
+    /redirects|releasing/.test(doc.querySelector(".cplfund-formula").textContent));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

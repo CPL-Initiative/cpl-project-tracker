@@ -164,7 +164,7 @@ function rowWords(row) {
       !!cell && cell.classList.contains("cf-gated") && held > 0.5 &&
       /^\$[1-9][\d,]*$/.test(cell.textContent.trim()));
     check("S5: ...its hover names the computed figure, then says it is available once the conditions are met",
-      !!cell && /^Funding the model computes, credit and noncredit together: \$[\d,]+ of \$[\d,]+\. Gray until the institution meets all its minimum conditions, and available once it meets them\.$/
+      !!cell && /^Funding qualifying so far(?: in [^,:]+)?, credit and noncredit together: \$[\d,]+ of \$[\d,]+\. Gray until the institution meets all its minimum conditions, and available once it meets them\.$/
         .test(cell.getAttribute("title") || ""));
   })();
   check("S5: the gate is visible WITHOUT a hover — the pie plus the chip's own words",
@@ -396,9 +396,9 @@ function shareSumAll(T) {
     /src="\.\.\/cpl_funding_data\.js"/.test(exp) && /src="\.\.\/cpl_funding\.js"/.test(exp) &&
     !/CPL_Data\.js|dashboard_filters\.js|cobi_orgs\.js/.test(exp));
   check("U8: it mounts where the consumer looks (#cplFundingMount)", /id="cplFundingMount"/.test(exp));
-  check("U8: it states plainly that this is a draft model, not adopted policy",
-    /Draft model &mdash; not adopted policy/.test(exp) &&
-    /working model for discussion, not adopted policy/.test(exp));
+  check("U8: it states plainly that this is a draft, not adopted policy (the model sweep, 2026-10-01)",
+    /Draft &mdash; not adopted policy/.test(exp) &&
+    /working draft for discussion, not adopted policy/.test(exp));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
