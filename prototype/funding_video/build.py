@@ -8,7 +8,8 @@
 
 ONE source, funding_in_motion.src.html, carries the animation, the score and
 the arrow's flight. What differs per scenario is the CONFIG below: the
-priorities scene, Sample College's target, and the explainer link. Every figure
+priorities scene, the example allocation and its target, the appropriation's
+destinations, and the explainer link. Every figure
 here is typed from the engine under the stored scenario config on its date; if
 a dial moves, update the figure here and re-render (render.sh).
 
@@ -27,9 +28,53 @@ PUBLIC_VIEW = 'https://cpl-initiative.github.io/cpl-project-tracker/?fundview=pu
 ACCESS = 'Applied CPL units from students who start at the CPL Portal, your college’s CPL landing page, or a batch upload.'
 COMPLETION = 'Transcribed CPL units, with the MAP counselor step checked.'
 
+# THE APPROPRIATION'S DESTINATIONS. The introductions show two (Sam, 2026-10-01:
+# "combine in one box the Projects & Supports with Staff funding together with
+# projects in one value"): $8,959,692 of projects and technology plus $800,000
+# for the two posts. The narrated drafts keep the three their voice names.
+SPLIT_TWO = {
+    'text': 'The state set aside 35 million dollars in one-time funding for 2026–27. 25.2 million goes directly to 118 institutions, and 9.8 million funds statewide CPL projects and technology and two Chancellor’s Office positions that support colleges.',
+    'segs': [[0, 72.1, 'var(--stage-blue)'], [72.1, 27.9, 'var(--stage-navy)']],
+    'labs': [[4.5, '$25,240,308', 'directly to 118 institutions', 'var(--stage-blue)', 40],
+             [52, '$9,759,692', 'statewide CPL projects and technology, and two Chancellor’s Office positions supporting colleges', 'var(--stage-navy)', 43.5]],
+}
+SPLIT_THREE = {
+    'text': 'The state set aside 35 million dollars in one-time funding for 2026–27. 25.2 million goes directly to 118 institutions, 9.0 million funds statewide CPL projects and technology, and 800 thousand funds two Chancellor’s Office positions that support colleges.',
+    'segs': [[0, 72.1, 'var(--stage-blue)'], [72.1, 25.6, 'var(--stage-navy)'], [97.7, 2.3, 'var(--stage-seg3)']],
+    'labs': [[4.5, '$25,240,308', 'directly to 118 institutions', 'var(--stage-blue)'],
+             [36, '$8,959,692', 'statewide CPL projects and technology', 'var(--stage-navy)'],
+             [67, '$800,000', 'two Chancellor’s Office positions supporting colleges', 'var(--stage-muted)']],
+}
+# THE EXAMPLE ALLOCATION. The introductions show the average (Sam, 2026-10-01:
+# "replacing 'Sample College' with average funding (showing an average CR/NC
+# funding split as well)"): the 118 max awards, credit shares and noncredit
+# shares, each averaged by the engine under config md5 e21658f9 (saved
+# 2026-10-01 18:35 UTC). The credit figure is the average less the noncredit
+# one, so the split sums to the figure it splits. `pos` is where the marker
+# sits on the base-to-cap track: (213,901 - 150,000) / 250,000.
+# The same in both scenarios: the award, the base, the cap and the split do
+# not depend on the priorities.
+AVERAGE = {'name': 'Average allocation', 'max': 213901, 'cr': 198542, 'nc': 15359, 'pos': 25.6,
+           'ticks': [[0, '$150,000', 'base'], [100, '$400,000', 'cap']],
+           'maxText': 'The average maximum allocation is 213,901 dollars.',
+           'splitHead': 'The average splits in two',
+           'splitText': ' On average, 198,542 dollars is credit and 15,359 dollars noncredit.',
+           'targetLead': 'The average Access target is', 'qualifier': 'an institution'}
+# Sample College (Chaffey College's figures) stays in the narrated drafts until
+# their scripts change: the voice speaks its maximum and its Access target.
+SAMPLE = {'name': 'Sample College', 'max': 345220, 'cr': 340861, 'nc': 4358, 'pos': 78.1,
+          'ticks': [[0, '$150,000', 'base'], [8.9, '$172,314', 'typical'], [100, '$400,000', 'cap']],
+          'maxText': 'Sample College’s maximum allocation is 345,220 dollars.',
+          'splitHead': 'Every allocation splits in two', 'splitText': '',
+          'targetLead': 'Sample College’s Access target is', 'qualifier': 'it'}
+SAMPLE_TARGET_S1 = {'ftes': 44.3, 'usd': 112484, 'ftesWords': '44.3', 'usdWords': '112,484', 'halfFtesWords': '22.2', 'halfUsdWords': '56,242'}
+SAMPLE_TARGET_S2 = {'ftes': 67.17, 'usd': 170430.69, 'ftesWords': '67.2', 'usdWords': '170,431', 'halfFtesWords': '33.6', 'halfUsdWords': '85,215'}
+
 CONFIG = {
-    # Scenario 1, the published scenario (config read 2026-09-24): Access 33 /
-    # Completion 34 / Career attainment 33; Chaffey's Access target 44.3 FTES / $112,484.
+    # Scenario 1 (config read 2026-10-01, Scenario 2 is published): Access 33 /
+    # Completion 34 / Career attainment 33. The average Access target from the
+    # engine: 22.76 FTES behind $65,518.72 (33% of the average credit share);
+    # half is 11.4 FTES for $32,759.
     's1': {
         'pageTitle': 'CPL Funding in Motion: An Introduction',
         'eyebrow': 'CPL Initiative',
@@ -37,7 +82,7 @@ CONFIG = {
         'linkLabel': 'CPL funding model',
         'kick': 'An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
-        'mp4': '20260926_CPL_Funding_in_Motion_v2.mp4',
+        'mp4': '20260926_CPL_Funding_in_Motion_v3.mp4',
         'explainer': BASE,
         'explainerShort': 'cpl-initiative.github.io/cpl-project-tracker/funding-model',
         'closingSuffix': '',
@@ -46,14 +91,15 @@ CONFIG = {
         'prioText': 'Three priorities carry the funding. Access, 33 percent, counts applied CPL units from students who start at the CPL Portal, a college CPL landing page, or a batch upload. Completion, 34 percent, counts transcribed CPL units with the counselor step checked. Career attainment, 33 percent, counts CPL units for students who reach a career outcome in EDD wage records, measured by the Chancellor’s Office.',
         'prios': [[33, 'Access', ACCESS], [34, 'Completion', COMPLETION],
                   [33, 'Career attainment', 'CPL units for students who reach a career outcome in EDD wage records, measured by the Chancellor’s Office.']],
-        'target': {'ftes': 44.3, 'usd': 112484, 'ftesWords': '44.3', 'usdWords': '112,484', 'halfFtesWords': '22.2', 'halfUsdWords': '56,242'},
+        'split': SPLIT_TWO, 'ex': AVERAGE,
+        'target': {'ftes': 22.76, 'usd': 65518.72, 'ftesWords': '22.8', 'usdWords': '65,519', 'halfFtesWords': '11.4', 'halfUsdWords': '32,759'},
     },
-    # Scenario 2 (config read 2026-09-30, after card 7's write at 03:56 UTC):
-    # Access 50 / Completion 50; the Chancellor's Office reports career attainment
-    # with the innovation projects (Sam, 2026-09-29), one reported card here.
-    # Chaffey's Access target from the model: 67.17 FTES behind $170,430.69 (the
-    # 2026-09-25 build typed 67.1); `usd` keeps the cents so the half-target hold
-    # prints the model's half, $85,215, where half the rounded figure prints $85,216.
+    # Scenario 2, the published scenario (config read 2026-10-01): Access 50 /
+    # Completion 50; the Chancellor's Office reports career attainment with the
+    # innovation projects (Sam, 2026-09-29), one reported card here. The average
+    # Access target from the engine: 34.49 FTES behind $99,270.78 (half the
+    # average credit share); `usd` keeps the cents so the half-target hold prints
+    # the engine's half, $49,635.
     's2': {
         'pageTitle': 'CPL Funding in Motion: An Introduction, Scenario 2',
         'eyebrow': 'CPL Initiative · Scenario 2',
@@ -61,7 +107,7 @@ CONFIG = {
         'linkLabel': 'CPL funding model, Scenario 2',
         'kick': 'Scenario 2 · An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges, Scenario 2.',
-        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v3.mp4',
+        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v4.mp4',
         'explainer': BASE + '?scenario=Scenario%202',
         'explainerShort': 'cpl-initiative.github.io/cpl-project-tracker/funding-model/?scenario=Scenario 2',
         'closingSuffix': ' for Scenario 2',
@@ -70,7 +116,8 @@ CONFIG = {
         'prioText': 'Two priorities carry the funding in Scenario 2. Access, 50 percent, counts applied CPL units from students who start at the CPL Portal, a college CPL landing page, or a batch upload. Completion, 50 percent, counts transcribed CPL units with the counselor step checked. The Chancellor’s Office reports career attainment together with the innovation projects, in qualitative terms; the institutions’ allocations follow Access and Completion.',
         'prios': [[50, 'Access', ACCESS], [50, 'Completion', COMPLETION],
                   [None, 'Career attainment and innovation projects', 'Reported by the Chancellor’s Office in qualitative terms. The institutions’ allocations follow Access and Completion.']],
-        'target': {'ftes': 67.17, 'usd': 170430.69, 'ftesWords': '67.2', 'usdWords': '170,431', 'halfFtesWords': '33.6', 'halfUsdWords': '85,215'},
+        'split': SPLIT_TWO, 'ex': AVERAGE,
+        'target': {'ftes': 34.49, 'usd': 99270.78, 'ftesWords': '34.5', 'usdWords': '99,271', 'halfFtesWords': '17.2', 'halfUsdWords': '49,635'},
     },
 }
 
@@ -91,6 +138,7 @@ CONFIG['n1'] = dict(
     eyebrow='CPL Initiative · draft',
     dek='A narrated draft of the introduction for colleges, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
     mp4='20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4',
+    split=SPLIT_THREE, ex=SAMPLE, target=SAMPLE_TARGET_S1,
     audio='narration_s1.mp3',
     credit='Narrated with a synthetic voice (Kokoro-82M, Heart).',
     narr=narration('narration_s1_layout.json'),
@@ -105,6 +153,7 @@ CONFIG['n2'] = dict(
     eyebrow='CPL Initiative · Scenario 2 · draft',
     dek='A narrated draft of the introduction for colleges, for Scenario 2 of the funding model, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
     mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_1.mp4',
+    split=SPLIT_THREE, ex=SAMPLE, target=SAMPLE_TARGET_S2,
     audio='narration_s2.mp3',
     credit='Narrated with a synthetic voice (Kokoro-82M, Heart).',
     narr=narration('narration_s2_layout.json'),

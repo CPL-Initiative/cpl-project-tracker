@@ -213,7 +213,7 @@ function mountWords(doc) {
   check("the public page's header and description no longer say 'pools'", !/pools/.test(pub));
   const exp = read("funding-model/index.html");
   check("the explainer's draft tag is words, its shares read '% of the funding', and its masthead tags are painted ids",
-    /<span class="tag draft">Draft model &mdash; not adopted policy<\/span>/.test(exp) &&
+    /<span class="tag draft">Draft &mdash; not adopted policy<\/span>/.test(exp) &&
     /% of the funding/.test(exp) && !/% of the money/.test(exp) &&
     /id="x-version"/.test(exp) && /id="x-scenario"/.test(exp) &&
     /D\.model_version/.test(exp) && /D\.scenario/.test(exp));

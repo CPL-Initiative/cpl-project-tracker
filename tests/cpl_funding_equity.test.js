@@ -139,8 +139,8 @@ check("data: participation deadline default Nov 1, 2026 (the live model's date)"
   // The base cell left the drill-in (Sam, 2026-09-23, funding review item 3);
   // the row's (at base) word carries the proportional figure on its hover.
   const cmBound = cmRow && cmRow.querySelector(".cplfund-bound");
-  check("the floored row's Base chip hover gives the proportional share and says the model brings it up",
-    !!cmBound && /share of the funding by size is \$[\d,]+ for the window, below the \$[\d,]+ base award, so the model brings it up to the base/
+  check("the floored row's Base chip hover gives the proportional share and says the Chancellor's Office brings it up",
+    !!cmBound && /share of the funding by size is \$[\d,]+ for the window, below the \$[\d,]+ base award, so the Chancellor's Office brings it up to the base/
       .test(cmBound.getAttribute("title") || ""));
   const detail = doc.querySelector("tr.cplfund-detail");
   check("…and the drill-in no longer restates it",

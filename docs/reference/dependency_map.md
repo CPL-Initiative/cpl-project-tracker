@@ -186,7 +186,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 
 | Dataset | Read by | Written by |
 |---|---|---|
-| `cpl-chat` | tabs: `chatbot`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `fact-sheet/index.html`, `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts`, `cpl-chat-deploy.yml` |
+| `cpl-chat` | tabs: `chatbot`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts`, `cpl-chat-deploy.yml` |
 | `cpl-chat-preview` | none found | produced by: `cpl-chat-preview-ab.yml` |
 | `cpl-news-harvest` | none found | produced by: `chatbox/supabase/functions/cpl-news-harvest/index.ts` |
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
@@ -368,7 +368,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks-13.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
+| `docs/visuals/<date>-open-asks-15.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docs/visuals/<date>-sierra-credit-source.html` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
@@ -378,7 +378,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `fact-sheet/cpl_stories_render.js` | pages: `fact-sheet/index.html` | — |
 | `fact-sheet/factsheet.js` | pages: `fact-sheet/index.html` | — |
 | `fact-sheet/factsheet_edit.js` | pages: `fact-sheet/index.html` | — |
-| `fact-sheet/factsheet_sierra.js` | pages: `fact-sheet/index.html` | — |
+| `fact-sheet/factsheet_sierra.js` | pages: `fact-sheet/index.html`, `funding-model/index.html` | — |
 | `fact-sheet/factsheet_word.js` | pages: `fact-sheet/index.html` | — |
 | `fact-sheet/statewide_recs_render.js` | pages: `fact-sheet/index.html` | — |
 | `fact_sheet_metrics.json` | pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |

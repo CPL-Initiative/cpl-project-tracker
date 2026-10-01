@@ -1,20 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-01",
-  "_session": "S311 SkyQuill",
-  "_status": "Landed on 1 October (S311): Sierra names the place a student wrote in full, and a sub-region now counts its own campuses (it had counted every Los Angeles County college as San Gabriel Valley). The three funding-roster names that matched no college now resolve, so every college's staff can see their reported expenditures on My College. The model sweep is a 27-card sheet waiting on your replies, and two of the three credential renames you approved are ready for you to run; Microsoft renamed only the exam, so that one is a new card.",
+  "_session": "S312 SkyLantern",
+  "_status": "Landed on 1 October (S312): the funding explainer takes the Fact Sheet's layout (a Contents list that opens each section, every section foldable, Ask Sierra, the tab's FAQ), shows projects and staff as one figure and the average award with its credit and noncredit split, and the 90-second videos show the average allocation. Sam answered all six cards of sheet 14; the 'model' wording sweep is ported (pull request 1807). Next: the video round Sam asked for, the statewide progress lines on the explainer, and Sierra's City College of San Francisco answer.",
   "items": [
     {
-      "id": "s311-sam-sheet13",
+      "id": "s312-sam-sheet15",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Sheet 13 has five items: the City College of San Francisco check in Sierra (carried from sheet 12), running the two CER renames (the paste is in pull request 1803), the Microsoft Azure AI Fundamentals title (Microsoft renamed only the exam), folding AWS's second SysOps record, and a pointer to the model sweep sheet. https://claude.ai/artifact/CyhTj4tH2sSMjKtgaW6o69"
-    },
-    {
-      "id": "s311-sam-model-sweep",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Reply on the model sweep sheet: every sentence on the funding explainer and the tab's public view that says 'model', 40 in all, each with a proposed revision. Each card arrives set to its proposal, so change only what you disagree with; cards 23 and 24 are your saved text, typed on the tab. https://claude.ai/artifact/T2MTd4n2cP2LXZXRXvbBQ6"
+      "text": "Sheet 15 has three items: type the Microsoft Azure AI Fundamentals title (then confirm the AWS fold when told), cards 23 and 24 of the model sweep (type them or have them applied), and which confirmation deadline is right, December 30 or November 1. https://claude.ai/artifact/XMchMpSnVLQoisWjmc6t2k"
     },
     {
       "id": "s310-sam-card11-measures",

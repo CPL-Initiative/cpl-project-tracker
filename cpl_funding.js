@@ -3214,7 +3214,7 @@
   // college's questions about MAP student records, with names left out.
   var FAQ_DEFAULT_PLAIN = [
     "Q: Has the Chancellor's Office released guidance for this funding?",
-    "The Chancellor's Office will release detailed guidance once the funding model is final. " +
+    "The Chancellor's Office will release detailed guidance once the CPL funding procedure is final. " +
       "The outcomes respond to Education Code §78093.2(d), which directs the Chancellor's Office to allocate " +
       "designated funds using four goals: increasing access to credit for prior learning equitably for all " +
       "eligible students; increasing completion through credit for prior learning awards; advancing career " +
@@ -3230,7 +3230,7 @@
     "Q: Should a college record students who receive a CPL consultation but do not submit a petition?",
     "Record them only when the student qualifies for CPL and declines it, the articulation is denied, or the " +
       "student appeals under Title 5 §55050. A student who qualifies and does not apply the credit still counts toward " +
-      "funding: in the first draft of the priorities, the model counts public CPL requests with faculty-approved " +
+      "funding: the Access priority counts public CPL requests with faculty-approved " +
       "CPL that arrive through the College Landing Page, the student portal (CreditforBeingYou.org), or a " +
       "college's batch upload.",
     "The Education Code envisions a CPL consultation for every incoming student as part of onboarding, as " +
@@ -3243,7 +3243,7 @@
     "To show that units are ready or have been transcribed in the student information system, select Transcribe " +
       "for the student in MAP. Colleges can also batch upload this.",
     "Q: Will there be guidance on minimum data entry, so colleges report on a consistent basis?",
-    "Yes. The Chancellor's Office will release detailed guidance once the funding model is final.",
+    "Yes. The Chancellor's Office will release detailed guidance once the CPL funding procedure is final.",
     "Q: Where can a college get help setting up its MAP records?",
     "The MAP team meets with colleges to set up their records, and holds office hours listed at " +
       "https://map.rccd.edu/get-involved/."
@@ -3552,7 +3552,12 @@
     { id: "qualify",      label: "Eligibility requirements" },
     { id: "earning",      label: "How outcomes count toward funding" },
     { id: "timing",       label: "Disbursement and the funding window" },
-    { id: "choices",      label: "What is a choice, and what is a given" }
+    { id: "choices",      label: "What is a choice, and what is a given" },
+    // The tab's FAQ, read-only (Sam, 2026-10-01: the explainer is likely the
+    // main view for colleges, so it carries what the Public view gives them).
+    // `questions`, not `faq`: the tab's own FAQ section keeps its id, and only
+    // `timing` is shared on purpose.
+    { id: "questions",    label: "Frequently asked questions" }
   ];
   function publicHouseOrder() {
     return PUBLIC_SECTIONS.map(function (x) { return x.id; });
@@ -4399,7 +4404,7 @@
       bits.push("veteran JSTs at " + fmtPctTrim((perf() && perf().vet_star_threshold) || 0.75) +
         " (for the noncredit-only institutions, noncredit certificates posted in MAP)");
     }
-    if (!bits.length) return "Institutions that meet every minimum condition the model tracks.";
+    if (!bits.length) return "Institutions that meet every minimum condition.";
     var list = bits.length === 1 ? bits[0]
       : bits.slice(0, -1).join(", ") + (bits.length > 2 ? "," : "") + " and " + bits[bits.length - 1];
     return "Institutions that meet every minimum condition: " + list + ".";
@@ -5016,7 +5021,7 @@
       ["", ""],
       [Math.round(sysc.cr_award || 0), Math.round(sysc.nc_award || 0), Math.round(sysc.total || 0)],
       curCells(sysc), earnCells(sysc), [""]));
-    var meta = ["CPL Implementation Funding (DRAFT model " + base().model_version + ") — " + windowLabel() +
+    var meta = ["CPL Implementation Funding (draft of " + base().model_version + ") — " + windowLabel() +
       (frontloaded() ? " · combined (front-loaded) funding" : " · annual funding") +
       " · max awards with the Current Total beside them (Current Total = cap × actual ÷ target, capped at " +
       "100%; only the noncredit measures count toward the noncredit share)" +
@@ -6830,7 +6835,7 @@
     }
     if (broken.length) {
       return { cls: "warn", word: "Declared, awaiting delivery",
-        text: "A priority is tagged to this goal and its measure is awaiting delivery to the model. " +
+        text: "A priority is tagged to this goal, and its measure has not been delivered. " +
           "See the metric diagnostic above." };
     }
     if (f.pools.length || f.projects.length) {
@@ -6838,7 +6843,7 @@
         text: "Funded through the statewide project allocation and reported based on the aligned activities." };
     }
     return { cls: "gap", word: "Open",
-      text: "Every priority, funding line and project in the model is tagged to another goal; this one is open." };
+      text: "Every priority, funding line and project is tagged to another goal, so this one is open." };
   }
 
   // The two goals whose LIMIT is a ruling rather than a gap. Each renders in
@@ -6854,11 +6859,11 @@
       // 3-year legislative reports, never to college outcome funding.
       return '<p class="cplfund-goal-limit"><strong>&ldquo;Equitably&rdquo; is measured elsewhere &mdash; by design.</strong> ' +
         "The measures behind this goal count CPL volume; none describes how that volume is distributed " +
-        "across student populations, and the model&rsquo;s equity devices &mdash; the minimum-award floor " +
-        "and the award ceiling &mdash; equalize between <em>colleges</em>, a different claim from equitable " +
+        "across student populations, and the allocation&rsquo;s equity devices &mdash; the base award " +
+        "and the cap &mdash; equalize between <em>colleges</em>, a different claim from equitable " +
         "access <em>for students</em>. Student-level equity is deliberately left out of college outcome " +
         "funding: it belongs to the system&rsquo;s <strong>three-year reports to the Legislature</strong>, " +
-        "where MIS, CCCApply, and MAP data are pulled together, disaggregated, and analyzed (Sam, 2026-08-30).</p>";
+        "where MIS, CCCApply, and MAP data are pulled together, disaggregated, and analyzed.</p>";  // Sam, 2026-08-30
     }
     var story = gkey === "C" ? storyEvidence() : null;
     if (!story) return "";
@@ -6870,8 +6875,8 @@
     // the qualitative record beside the measure, and his intake question
     // (items 3 + 12) keeps its wording.
     return '<p class="cplfund-goal-limit"><strong>Measured by the Chancellor&rsquo;s Office.</strong> ' +
-      "The Chancellor&rsquo;s Office measures career attainment from EDD wage records and brings each " +
-      "update into the model by import, so the goal asks no reporting of colleges (Sam, 2026-09-22). " +
+      "The Chancellor&rsquo;s Office measures career attainment from EDD wage records and imports each " +
+      "update, so the goal asks no reporting of colleges. " +  // Sam, 2026-09-22
       "<strong>My CPL Stories</strong> that touch on career attainment record the work in students&rsquo; own " +
       "words, and the funded projects build the infrastructure and interagency integration behind it. Of the <strong>" +
       fmtInt(story.total) + "</strong> published stories, <strong>" + fmtInt(story.edu) + "</strong> end at an " +
@@ -6903,7 +6908,7 @@
         (f.projects.length > 6 ? ", &hellip;" : "") + "</li>");
     }
     return bits.length ? "<ul>" + bits.join("") + "</ul>"
-      : '<p class="cplfund-goal-empty">Open &mdash; every priority, funding line and project in this model is tagged to another goal.</p>';
+      : '<p class="cplfund-goal-empty">Open: every priority, funding line and project is tagged to another goal.</p>';
   }
 
   function goalSpineHtml() {
@@ -6959,10 +6964,10 @@
           : "All of them also carry a statutory goal tag.") + "</p>"
       : "";
 
-    return '<p class="cplfund-goal-intro">The chancellor&rsquo;s office must allocate this appropriation ' +
+    return '<p class="cplfund-goal-intro">The Chancellor&rsquo;s Office must allocate this appropriation ' +
       '&ldquo;using all of the following goals&rdquo; (Ed. Code &sect;78093.2(d)(1)), and &sect;78093.2(d)(2) ' +
-      "makes demonstrating them a condition of a campus allocation. This is that account, read live from the " +
-      "model rather than written down beside it. A priority&rsquo;s figure is its full funding share &mdash; " +
+      "makes demonstrating them a condition of a campus allocation. The cards below give that account, " +
+      "computed live from the current figures. A priority&rsquo;s figure is its full funding share &mdash; " +
       "its credit and noncredit shares together, the same ceiling its card calls Total Possible.</p>" +
       // Sam, 2026-08-28: the statutory goals are not a separate errand. They sit
       // inside one alignment stack, and the frames were written at different
@@ -7728,8 +7733,8 @@
           : '<span class="dk">held by this outcome alone</span>') +
         // No college award moves: pool line items are taken off the top before
         // either lane's pot exists.
-        '<span class="dk cplfund-rfund-note">A reporting designation, which leaves every college ' +
-        "award exactly as the model computes it.</span>" +
+        '<span class="dk cplfund-rfund-note">A reporting designation; it leaves every college ' +
+        "award unchanged.</span>" +
         "</div>";
     }).join("");
   }
@@ -8624,7 +8629,7 @@
     return !!(r && r.origin === "co");
   }
   var CO_MEASURE_NOTE = "The Chancellor&rsquo;s Office measures this outcome from EDD wage records " +
-    "and updates the model with each import.";
+    "and imports each update.";
   // ── MILESTONE AGREEMENT (2026-08-27) ──────────────────────────────────────
   // MAP's funnel is eligible -> applied -> transcribed, and they are three
   // different quantities (statewide: 1,382,125 / 223,384 / 80,338 units). A
@@ -9054,7 +9059,7 @@
         "</strong> applied to the " +
         fmtMoney(per) + " annual funding"
       : "The Year-" + state.viewSlot + " priority shares (" + parts + ") <span class=\"cplfund-warn-text\">sum to " +
-        fmtPctTrim(shareSum) + " &mdash; the model " + (shareSum > 1 ? "over" : "under") +
+        fmtPctTrim(shareSum) + ", which " + (shareSum > 1 ? "over" : "under") +
         "-allocates the annual funding (see Balance)</span>";
     var bal = per * (1 - shareSum);
     var balStr = Math.abs(bal) < 0.5 ? "$0" : (bal < 0 ? "−" : "") + fmtMoney(Math.abs(bal));
@@ -9063,9 +9068,9 @@
     // statement leads, and no sentence sets a claim against its opposite.
     var floorSentence = (m.floor > 0 && m.floorCount)
       ? " <strong>Base award:</strong> every institution receives at least " + fmtMoney(m.floor) +
-        " for the window. The model brings " + m.floorCount + " institutions up to the base (&asymp;" +
+        " for the window. The Chancellor&#39;s Office brings " + m.floorCount + " institutions up to the base (&asymp;" +
         fmtMoney(m.floorCost) + ", " + fmtPctTrim(m.net > 0 ? m.floorCost / m.net : 0) + " of the funding) and " +
-        "re-splits the remainder proportionally across the other institutions, so the total still balances. " +
+        "shares the remainder proportionally among the other institutions, so the total still balances. " +
         "Performance targets stay proportional to each institution&#39;s share of statewide " + basisLabel() +
         " before the base, so an institution at the base meets targets sized to it."
       : "";
@@ -9074,10 +9079,10 @@
     // back above the base — which is why the base count moves when the cap
     // moves, and why that is correct rather than a bug.
     var capSentence = (m.cap > 0 && m.cappedCount)
-      ? " <strong>Cap:</strong> the model holds " + m.cappedCount + " institutions at " + fmtMoney(m.cap) +
-        " for the window and re-splits the " + fmtMoney(m.capReleased) + " above it (" +
-        fmtPctTrim(m.net > 0 ? m.capReleased / m.net : 0) + " of the funding) across the other institutions. " +
-        "The model solves the base and the cap together, so funding the cap releases can lift an institution " +
+      ? " <strong>Cap:</strong> the Chancellor&#39;s Office holds " + m.cappedCount + " institutions at " + fmtMoney(m.cap) +
+        " for the window and redirects the " + fmtMoney(m.capReleased) + " above it (" +
+        fmtPctTrim(m.net > 0 ? m.capReleased / m.net : 0) + " of the funding) to the other institutions. " +
+        "It sets the base and the cap together, so funding the cap releases can lift an institution " +
         "back above the base. Performance targets stay proportional to each institution&#39;s share of statewide " +
         basisLabel() + " before the cap."
       : (m.cap > 0
@@ -9095,7 +9100,7 @@
         var sp = instSplit(c);
         if (c.nco) { trioHeld += sp.w; trioN++; } else ncFace += sp.nc;
       });
-      ncSentence = " <strong>The noncredit share:</strong> the model divides every award into a credit share and " +
+      ncSentence = " <strong>The noncredit share:</strong> the Chancellor&#39;s Office divides every award into a credit share and " +
         "a noncredit share by the institution&#39;s own FTES split. College awards carry " + fmtMoney(ncFace) +
         " restricted to the noncredit measures, and the " + trioN + " noncredit-only institutions qualify for " +
         fmtMoney(trioHeld) + " by origination: CPL from their programs that a credit college transcribes.";
@@ -9117,7 +9122,7 @@
     // The College Dashboard (2026-09-28) gives the max award its own column,
     // Total Funds, and what qualifies so far the Curr columns beside it.
     var basisSentence = " That allocation is the institution&#39;s <strong>max award</strong>, the Dashboard&#39;s " +
-      "Total Funds. The model awards <code>max award &times; (actual &divide; target)</code>, up to 100%, where each " +
+      "Total Funds. An institution qualifies for <code>max award &times; (actual &divide; target)</code>, up to 100%, where each " +
       "priority&#39;s <em>target</em> is its funding &divide; the reimbursement rate and MAP actuals measure progress " +
       "toward it. An institution at half its target qualifies for half its max award, and remaining funding rolls " +
       "forward. The Curr columns show the funding qualifying so far.";
@@ -9129,16 +9134,16 @@
       // annual tranche here contradicts the money cells + drill-in (Sam,
       // 2026-07-30: the toggle's job is to change the story, not hide a mismatch).
       (frontloaded()
-        ? "The model computes each institution&#39;s potential allocation per priority as <code>" + basisLabel() +
+        ? "Each institution&#39;s potential allocation per priority is <code>" + basisLabel() +
           " share &times; priority share &times; " + fmtMoney(per * nYears()) + "</code>: the full " +
           esc(windowLabel()) + " window, available in Year 1. The annual performance target stays the same, so the " +
           "effective rate per student is " + nYears() + "&times; the annual rate."
-        : "The model computes each institution&#39;s potential allocation of one annual tranche per priority as " +
+        : "Each institution&#39;s potential allocation of one annual tranche per priority is " +
           "<code>" + basisLabel() + " share &times; priority share &times; " + fmtMoney(per) + "</code>."),
       shareSentence + ".",
       cadenceSentence,
       (balanced
-        ? "Balance for Year " + state.viewSlot + ": <strong>$0</strong>. The model allocates the full annual funding."
+        ? "Balance for Year " + state.viewSlot + ": <strong>$0</strong>. The Chancellor&#39;s Office allocates the full annual funding."
         : "Balance for Year " + state.viewSlot + ': <strong><span class="cplfund-warn-text">' + balStr +
           "</span></strong>. Adjust the priority shares to allocate the full annual funding."),
       trim(basisSentence)
@@ -9147,7 +9152,7 @@
     if (capSentence) items.push(trim(capSentence));
     if (ncSentence) items.push(trim(ncSentence));
     return '<div class="cplfund-formula">' +
-      '<p class="lead">How the model computes each institution&#39;s allocation:</p>' +
+      '<p class="lead">How the Chancellor&#39;s Office computes each institution&#39;s allocation:</p>' +
       '<ul class="cplfund-formula-list">' +
       items.map(function (li) { return "<li>" + li + "</li>"; }).join("") +
       "</ul>" + contextCardsHtml() + "</div>";
@@ -10003,17 +10008,16 @@
       cap = (row.nc_award || 0) / awardDivisor();
       if (cap <= 0.5) return '<td class="cf-cur cf-cur-nc dk c" title="Credit only: this institution holds no noncredit share.">&mdash;</td>';
       fig = figOf("earned_nc");
-      words = gated ? "Noncredit funding the model computes" : "Noncredit funding " + qualifyingWords();
+      words = "Noncredit funding " + qualifyingWords();
     } else if (lane === "cr") {
       cap = (row.cr_award || 0) / awardDivisor();
       if (row.nco) return '<td class="cf-cur cf-cur-cr dk c" title="A noncredit-only institution: its whole award is the noncredit share.">$0</td>';
       fig = figOf("earned_cr");
-      words = gated ? "Credit funding the model computes" : "Credit funding " + qualifyingWords();
+      words = "Credit funding " + qualifyingWords();
     } else {
       cap = (row.total || 0) / awardDivisor();
       fig = figOf("earned_total");
-      words = gated ? "Funding the model computes, credit and noncredit together"
-        : "Funding " + qualifyingWords() + ", credit and noncredit together";
+      words = "Funding " + qualifyingWords() + ", credit and noncredit together";
     }
     // Gray while the institution has yet to meet all its minimum conditions
     // (Sam, 2026-09-29). A district subtotal and the Statewide row carry no
@@ -10052,11 +10056,11 @@
     var share = fmtMoney((c.size_pct || 0) * m.net);
     if (c.floored) return ' <span class="cplfund-chip cplfund-bound cf-boundchip" title="' +
       esc("This institution's share of the funding by size is " + share + " for the window, below the " +
-        fmtMoney(m.floor) + " base award, so the model brings it up to the base from within the same total.") +
+        fmtMoney(m.floor) + " base award, so the Chancellor's Office brings it up to the base from within the same total.") +
       '">Base</span>';
     return ' <span class="cplfund-chip cplfund-bound cf-boundchip" title="' +
       esc("This institution's share of the funding by size is " + share + " for the window, above the " +
-        fmtMoney(m.cap) + " cap, so the model holds it at the cap and the difference funds the other institutions.") +
+        fmtMoney(m.cap) + " cap, so the Chancellor's Office holds it at the cap and redirects the difference to the other institutions.") +
       '">Cap</span>';
   }
   function rowChips(c) {
@@ -10687,7 +10691,7 @@
         gated: false,
         reported: reportedDetailRows(slot, true)
       });
-      laneWords = ncFunds > 0.5 ? NC_LANE_RULE : "Credit only: the model holds no noncredit share.";
+      laneWords = ncFunds > 0.5 ? NC_LANE_RULE : "Credit only: this institution has no noncredit share.";
     }
     var ncols = COLS_COLLEGE().length;
     return '<tr class="cplfund-detail"><td colspan="' + ncols + '">' +
@@ -11189,7 +11193,7 @@
       "<div class='draft'>This is a working draft shared for field input. Its figures are potential allocations, " +
       "not awards.</div>" +
       "<div class='foot'>CPL Initiative &middot; Mapping Articulated Pathways (MAP) platform &middot; " +
-      "Live model &amp; dashboard: https://cpl-initiative.github.io/cpl-project-tracker/</div>" +
+      "Live figures and dashboard: https://cpl-initiative.github.io/cpl-project-tracker/</div>" +
       "</div>" +
       "<script>function cpCopy(b){var t=document.getElementById('brief').innerText;function d(){b.textContent='Copied!';" +
       "setTimeout(function(){b.textContent='Copy text';},1500);}if(navigator.clipboard&&navigator.clipboard.writeText){" +
@@ -11918,7 +11922,7 @@
     chip.id = "cplFundingDraftChip";
     chip.className = "cplfund-draftchip";
     chip.textContent = "Draft";
-    chip.title = "Draft funding model — under active revision; figures are potential allocations, not awards.";
+    chip.title = "CPL funding draft, under active revision. The figures are potential allocations, not awards.";
     h2.appendChild(chip);
   }
 
@@ -12460,7 +12464,7 @@
     _allocCache = null; _ncoRows = null; _earnCache = null;
     var d = base();
     if (!d || !d.colleges || !d.system) {
-      mount.innerHTML = '<div class="cplfund-empty">Funding model data is unavailable right now (cpl_funding_data.js failed to load). Try a hard refresh.</div>';
+      mount.innerHTML = '<div class="cplfund-empty">The CPL funding figures did not load. Reload the page.</div>';
       return;
     }
     // Clamp the view slot to the number of selected years.
@@ -13999,6 +14003,10 @@
     // The ids are the page's data-fsec values; PUBLIC_SECTIONS declares them
     // and funding_model_page.test.js asserts the two lists agree.
     publicSectionOrder: publicSectionOrder,
+    // The FAQ as the tab renders it, for the explainer's own section: Sam's
+    // editable block (TEXT_BLOCKS.faq), so his edit reaches both pages. The
+    // markup is faqHtml()'s, which escapes every question and answer.
+    publicFaqHtml: function () { return faqHtml(textPlain("faq")); },
     // The statutory outcomes carried by DESIGNATED PROJECTS rather than by a
     // campus measure (Sam, 2026-09-11). Read by the public explainer, which has
     // no Activities register to look a project up in — so the NAME travels in

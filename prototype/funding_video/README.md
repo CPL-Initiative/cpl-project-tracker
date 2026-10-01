@@ -5,17 +5,19 @@ A 90-second animated introduction for colleges to how CPL implementation funding
 ## Files
 
 - `funding_in_motion.src.html`: THE source. The animation, the score and the arrow's flight live here once. Placeholders (`__CFG__`, `__LOGO__`, `__MAP__`, `__ARROW__`, the page chrome) are filled by `build.py`.
-- `build.py`: holds `CONFIG`, one entry per scenario: the priorities scene, Sample College's target, the explainer link and the page chrome. `python3 prototype/funding_video/build.py` builds Scenario 1; `build.py s2` builds Scenario 2.
+- `build.py`: holds `CONFIG`, one entry per scenario: the priorities scene, the appropriation's destinations (`split`), the example allocation (`ex`) and its target, the explainer link and the page chrome. `python3 prototype/funding_video/build.py` builds Scenario 1; `build.py s2` builds Scenario 2.
 - `funding_in_motion.html`, `funding_in_motion_s2.html`: the built pages, every image inlined. `funding_in_motion_n1.html` and `funding_in_motion_n2.html` are the narrated drafts of Scenario 1 and Scenario 2 (below).
-- `20260926_CPL_Funding_in_Motion_v2.mp4`, `20260926_CPL_Funding_in_Motion_Scenario_2_v3.mp4`: 1920×1080, 30 fps, 91 seconds, with music. Scenario 2 is v3 since 2026-09-30: its target reads the model's 67.2 FTES and its reported card card 7's wording.
+- `20260926_CPL_Funding_in_Motion_v3.mp4`, `20260926_CPL_Funding_in_Motion_Scenario_2_v4.mp4`: 1920×1080, 30 fps, 91 seconds, with music. Both re-versioned 2026-10-01 for the average allocation and the two destinations (below).
 - `assets/map_wordmark.png`: the MAP wordmark, cut from Sam's logo file with the red arrow removed and the background made transparent. `assets/map_arrow.png`: the arrow.
 
 ## The scenarios
 
-- **Scenario 1** (the published scenario, config read 2026-09-24): Access 33%, Completion 34%, Career attainment 33%. Sample College's Access target 44.3 FTES behind $112,484; half is 22.2 FTES for $56,242.
-- **Scenario 2** (config read 2026-09-30, after sheet 4 card 7's write): Access 50%, Completion 50%; the Chancellor's Office reports career attainment together with the innovation projects, in qualitative terms (Sam, 2026-09-29), one reported card in the picture where the tab shows two. Sample College's Access target 67.2 FTES behind $170,431 (the model's 67.17 and $170,430.69; the 2026-09-25 build typed 67.1); half is 33.6 FTES for $85,215. Its maximum ($345,220), its credit and noncredit shares and the $35 million split read the same as Scenario 1's.
+- **Scenario 1** (config read 2026-10-01): Access 33%, Completion 34%, Career attainment 33%. The average Access target is 22.8 FTES behind $65,519; half is 11.4 FTES for $32,759.
+- **Scenario 2**, the published scenario (config read 2026-10-01): Access 50%, Completion 50%; the Chancellor's Office reports career attainment together with the innovation projects, in qualitative terms (Sam, 2026-09-29), one reported card in the picture where the tab shows two. The average Access target is 34.5 FTES behind $99,271 (the engine's 34.49 and $99,270.78); half is 17.2 FTES for $49,635.
 
-Sample College uses Chaffey College's figures. Every figure is typed from the engine under the stored scenario config on its date; nothing is read live. If a dial moves, update `CONFIG` in `build.py` and re-render.
+**The average allocation** (Sam, 2026-10-01: "Use the average funding rather than typical ... replacing 'Sample College' with average funding (showing an average CR/NC funding split as well)"). The introductions show the average of the 118 max awards, $213,901, on the base-to-cap track, and its split, $198,542 credit and $15,359 noncredit: each institution's own credit and noncredit shares from the engine, averaged, with the credit figure taken as the average less the noncredit one so the pair sums to it. The award, the split and the track read the same in both scenarios; the Access target follows each scenario's share. **The appropriation** shows two destinations, $25,240,308 to institutions and $9,759,692 for statewide projects and technology together with the two Chancellor's Office positions (Sam, the same day: "combine in one box the Projects & Supports with Staff funding"). Every figure was read from the engine under config md5 `e21658f9` (saved 2026-10-01 18:35 UTC); nothing is read live. If a dial moves, update `AVERAGE` and each scenario's `target` in `build.py` and re-render.
+
+**The narrated drafts keep Sample College** (Chaffey College's figures: maximum $345,220, credit $340,861, noncredit $4,358; Access targets 44.3 and 67.2 FTES) and the three destinations, because their voice speaks those figures. `build.py` gives them `SAMPLE` and `SPLIT_THREE`, so they rebuild to the same frames until their scripts move to the average and take a new read.
 
 The seventh scene has said minimum conditions since 2026-09-29, Sam's term of 2026-09-28, and its heading is set at 3.9cqw, down from 5.2, so the longer phrase fits on one line.
 

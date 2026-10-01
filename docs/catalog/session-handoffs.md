@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-283 document(s).
+284 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 313 | [the video round, the progress lines on the explainer, and Sierra's CCSF answer](../session_313_handoff.md) | 2026-10-01 |
 | 312 | [Sierra names the place in full; the roster resolves; the model sweep and the CER renames wait on Sam](../session_312_handoff.md) | 2026-10-01 |
 | 311 | [My CPL Funding in Sam's words, merged; "model" leaves the public text next](../session_311_handoff.md) | 2026-10-01 |
 | 310 | [the funding, Sierra and credential chains, joined; sheet 11 answered](../session_310_handoff.md) | 2026-09-30 |
