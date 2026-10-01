@@ -31,6 +31,10 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 15 (S312 checkpoint, 2026-10-01, SHEET_ID 2026-10-01-open-asks-15): Sam answered all six cards of
+sheet 14 at 21:22Z (each his own call; recorded in the lanes). Three asks remain: the Microsoft title and the
+AWS fold (partner-crosswalks), cards 23-24 of the model sweep, and the confirmation deadline.
+Published at https://claude.ai/artifact/XMchMpSnVLQoisWjmc6t2k (capabilities db + comments).
 Sheet 14 (S312, 2026-10-01, SHEET_ID 2026-10-01-open-asks-14): sheet 13's five cards (no reply yet), then
 S312's one: whether colleges get the explainer alone or the tab's Public view as well (Sam, 2026-10-01: "I may
 also give access to the 'Public View'--depends on whether this view has everything needed").
@@ -129,8 +133,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-01-open-asks-14.html')
-SHEET_ID = '2026-10-01-open-asks-14'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-01-open-asks-15.html')
+SHEET_ID = '2026-10-01-open-asks-15'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -593,115 +597,52 @@ def items():
     # 18:52Z on 2026-09-30 (cpl-knowledge-base#24), and the governance lane
     # records it.
 
-    # Sheet 10 card 6 (S309): the CCSF check. Sam marked it Later on sheet 11 (card 6),
-    # so it carries onto sheet 12 until he asks her.
-    I.append({
-        'lane': 'sierra-retrieval-corpus',
-        'title': "Ask Sierra City College of San Francisco's split",
-        'ref': 'sierra-retrieval-corpus · map_college_credit_bucket and map_college_exhibit_credit (college_id 30) · cpl-chat v74',
-        'facts': (
-            "Your Chaffey check passed. The next college worth asking is City College of San Francisco, where 32 "
-            "military exhibits each carry 10 or more students. Ask her: <em>What is the military and non-military split "
-            "of City College of San Francisco's applied units, and which exhibits are they from?</em> A right answer "
-            "leads with 13,138.5 units on plans from 1,882 students; puts non-military first (65 units from 15 "
-            "students, all 12 exhibits on one \"under 10 each\" line); then military, 13,073.5 units from 1,868 "
-            "students, as a table of 32 exhibits led by Default Credit (4,661.5 units, 1,864 students) and Basic Combat "
-            "Training (2,046, 341), ending on one \"under 10 each\" line for the other 287 exhibits (2,872.5); and "
-            "shows transcribed credit, 75.5 units, with both halves of the split as \"<10 students\"."),
-        'why': "One college checked by hand tests every figure the answer draws from.",
-        'rec': "<strong>Ask it and mark what she said.</strong> A wrong figure goes in the note, word for word. "
-               "<em>It might be wrong if</em> the nightly load moves these figures before you ask; the next session "
-               "then compares her answer with that day's rows.",
-        'chips': chips(('Right', 'right'), ('Wrong: see note', 'wrong'), CH_LATER),
-        'evidence': [live('2026-09-30', 'map_college_credit_summary, map_college_credit_bucket and map_college_exhibit_credit for college_id 30')],
-    })
-
-    # Sheet 11's eight answered cards left with their rulings (Sam, 22:48:37Z on
-    # 2026-09-30, all nine his own call): P1 keeps every applied unit; the Timeline
-    # size, the card boxes and the sign-in form kept; the Pedro note his to edit
-    # and send; both faculty levels verify issuer skills; rename the three in the CER
-    # with aliases; the issuer hosts added. Each lane records its ruling. Card 6 (CCSF)
-    # came back Later, so it carries onto sheet 12, and with no reply there onto sheet 13.
-
-    # Sheet 13 (S311): card 8's renames, checked against the issuers on 2026-10-01.
+    # Sheet 14's six cards left with Sam's rulings (21:22Z, 2026-10-01, all his own call):
+    # CCSF wrong (sierra lane), both renames typed by him, Microsoft drop, AWS fold, the
+    # sweep all as proposed (#1807), the progress lines ported to the explainer.
     I.append({
         'lane': 'partner-crosswalks',
-        'title': "Run the two CER renames",
-        'ref': 'partner-crosswalks · kb/receipts/cer_rename_issuer_renames_2026-10-01.sql (#1803) · cred-rename-apply.yml',
+        'title': "Type the Microsoft title; fold AWS's second record after the apply",
+        'ref': 'partner-crosswalks · CER triage lane · sheet 14 cards 3-4',
         'facts': (
-            "You ruled \"Rename with aliases\" on sheet 11. Two of the three hold up against the issuers: Cisco CyberOps "
-            "Associate is now CCNA Cybersecurity, and AWS SysOps Administrator - Associate is now CloudOps Engineer - "
-            "Associate. The repo's guard stops a session from writing the curation table, so the two rows are yours to "
-            "run: paste the receipt's insert in the Supabase SQL editor, or type the two titles in the CER triage lane. "
-            "The old names stay findable because the CER's search reads each credential's raw titles."),
-        'why': "A student or counselor searching today's name finds the credit the colleges already award.",
-        'rec': "<strong>Run it.</strong> Two rows come back; the next session runs the rename apply. "
-               "<em>It might be wrong if</em> you would rather the colleges retitle their exhibits in MAP first.",
-        'chips': chips(('Ran it', 'done'), ('Hold', 'hold'), CH_LATER),
-        'evidence': [live('2026-10-01', "kb_curation read for the six keys; the issuers' announcements through search (their pages are blocked here)")],
-    })
-    I.append({
-        'lane': 'partner-crosswalks',
-        'title': "Microsoft renamed only the Azure AI Fundamentals exam",
-        'ref': 'partner-crosswalks · CER key "Microsoft Certified: Azure AI Fundamentals (AI-900)" · one college',
-        'facts': (
-            "Card 8 said AI-900 is now AI-901. Microsoft's own post says the certification keeps its name, Microsoft "
-            "Certified: Azure AI Fundamentals; AI-901 replaced AI-900 as the exam that earns it, and taking AI-901 does "
-            "not change the name of a credential already held. The CER record carries the exam code in its title."),
-        'why': "A student who passed AI-900 holds Azure AI Fundamentals; a title naming AI-901 would tell them otherwise.",
-        'rec': "<strong>Drop the exam code:</strong> the record reads Microsoft Certified: Azure AI Fundamentals, for both "
-               "exams. <em>It might be wrong if</em> you want each exam kept distinct, since AI-901 covers more generative AI.",
-        'chips': chips(('Drop the code', 'drop'), ('Keep AI-900', 'keep'), ('Rename to AI-901', 'ai901'), CH_LATER),
-        'evidence': [live('2026-10-01', "Microsoft Tech Community post on the certification, read through search")],
-    })
-    I.append({
-        'lane': 'partner-crosswalks',
-        'title': "Fold AWS's second SysOps record into CloudOps Engineer",
-        'ref': 'partner-crosswalks · CER key "AWS Certified SysOps Administrator" (one raw title) · PR-5b/2 confirm-merge',
-        'facts': (
-            "The CER holds two AWS SysOps records: \"AWS Certified SysOps Administrator - Associate\" (two raw titles), "
-            "renamed on card 2, and \"AWS Certified SysOps Administrator\" (one raw title, \"Amazon Web Services (AWS) "
-            "Certified Systems Operations (SYSOps) Administrator\"). Both name the one AWS associate credential. Giving "
-            "the second the new name is a merge, and a merge waits on a curator's confirm."),
-        'why': "One credential under two records splits its colleges and its counts.",
-        'rec': "<strong>Fold it,</strong> after card 2's rename applies: the triage lane's Confirm merge on the second "
-               "record. <em>It might be wrong if</em> that raw title names a different AWS credential.",
-        'chips': chips(('Fold it', 'fold'), ('Keep separate', 'keep'), CH_LATER),
-        'evidence': [quoted('kb/credentials.json, kb/unified_titles.json', '2026-10-01')],
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Reply on the \"model\" sweep sheet",
-        'ref': 'implementation-funding NEXT ⓪f · https://claude.ai/artifact/T2MTd4n2cP2LXZXRXvbBQ6 (#1801)',
-        'facts': (
-            "Your ruling to take \"model\" out of the explainer and the tab's public text is a 27-card sheet: every "
-            "sentence a college can read that says it (40 in all, from rendering both pages), with a revision for each, "
-            "and the lines that show only in other states. Cards 23 and 24 are your stored text, typed on the tab. Each "
-            "card arrives set to its proposal, so change only what you disagree with."),
-        'why': "Your replies are the port's spec; nothing ships until they are in.",
-        'rec': "<strong>Reply on that sheet.</strong> <em>It might be wrong if</em> you would rather approve the "
-               "proposals wholesale; then say so here and the port uses them as written.",
-        'chips': chips(('Replied there', 'done'), ('Use them all as proposed', 'all'), CH_LATER),
+            "You ruled \"drop the code\" and \"fold\" on sheet 14. The Microsoft record reads Microsoft Certified: "
+            "Azure AI Fundamentals once you type that title in the CER triage lane, the way you typed the two renames. "
+            "The AWS fold is the triage lane's Confirm merge on \"AWS Certified SysOps Administrator\", after the "
+            "rename apply runs; the next session tells you when."),
+        'why': "The repo's guard keeps a session out of the curation table, so these two are yours to type.",
+        'rec': "<strong>Type the Microsoft title now; confirm the merge when told.</strong>",
+        'chips': chips(('Typed it', 'done'), ('Hold', 'hold'), CH_LATER),
         'evidence': [policy()],
     })
-    # Sheet 14 (S312): Sam's point 2 of 2026-10-01, answered by rendering both pages.
     I.append({
         'lane': 'implementation-funding',
-        'title': "Colleges' view: the explainer alone, or the Public view too",
-        'ref': 'implementation-funding · funding-model/index.html (the Fact Sheet layout, S312) · the tab at ?fundview=public',
+        'title': "Cards 23 and 24: type them, or have them applied",
+        'ref': 'implementation-funding NEXT ⓪f · the model sweep cards 23-24 · funding-config-edit-apply.yml',
         'facts': (
-            "Both pages rendered on today's config. The explainer now opens on a Contents list, every section folds, "
-            "Ask Sierra sits in its top bar, and it carries the tab's FAQ, read from your block on the tab. What the "
-            "Public view adds beside it: each priority's statewide target, rate and progress (Access 7,503.4 of a "
-            "4,467.6 FTES target; Completion 744.1), a count under each minimum condition (60 of 116 colleges meet the "
-            "JST condition), and the FTES factors table (525 contact hours make one FTES). A college's own award, "
-            "conditions, targets and progress are in My CPL Funding on both pages."),
-        'why': "A college reading one page sees everything it acts on; a second link earns its place only by adding something it needs.",
-        'rec': "<strong>The explainer alone.</strong> The statewide progress lines serve the Chancellor's Office more than "
-               "a college. <em>It might be wrong if</em> you want colleges to see the statewide progress; then give them "
-               "both links, or have the progress lines brought to the explainer.",
-        'chips': chips(('Explainer alone', 'explainer'), ('Both links', 'both'), ('Bring the progress over', 'port'), CH_LATER),
-        'evidence': [live('2026-10-01', "both pages rendered in Chromium over the live funding config (md5 e21658f9) and the day's MAP data files")],
+            "Both are text you saved on the tab, in both scenarios. Card 23, the Introduction's last paragraph: "
+            "\"The Chancellor's Office measures outcomes in equivalent FTES based on CPL units and allocates funding "
+            "to institutions proportionally for each priority at an FTES reimbursement rate\" and \"CPL funding relies "
+            "on data in the MAP platform, which serves as the Chancellor's Office systemwide CPL infrastructure.\" "
+            "Card 24, two Timeline milestones: \"CPL Funding Procedure Finalized\" and \"Guidance Memo Release.\""),
+        'why': "Until they change, the Introduction and the Timeline are the last places a college reads \"model\".",
+        'rec': "<strong>Apply them:</strong> the next session writes both through the config edit workflow, dry run "
+               "first. <em>It might be wrong if</em> you would rather type them yourself, as you did card 7.",
+        'chips': chips(('Apply them', 'apply'), ("I'll type them", 'type'), CH_LATER),
+        'evidence': [policy()],
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Which confirmation deadline is right?",
+        'ref': 'implementation-funding ⓪f · cpl_funding_config Scenario 2: timing vs participationDeadline',
+        'facts': (
+            "Scenario 2's Timeline says the Confirmation Deadline is Dec 30, 2026. Its participationDeadline says "
+            "2026-11-01, and that date prints in the explainer's minimum conditions (\"Local confirmation on file by "
+            "2026-11-01\"), on each institution's Confirm chip, and in the video (\"by November 1, 2026\")."),
+        'why': "A college reads both dates on one page.",
+        'rec': "<strong>Dec 30, 2026:</strong> the Timeline is the later word. <em>It might be wrong if</em> November 1 "
+               "is the condition date and December 30 a later step.",
+        'chips': chips(('Dec 30, 2026', 'dec30'), ('Nov 1, 2026', 'nov1'), CH_LATER),
+        'evidence': [live('2026-10-01', 'cpl_funding_config, md5 e21658f9')],
     })
     return I
 

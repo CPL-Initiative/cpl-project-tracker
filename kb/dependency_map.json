@@ -3181,7 +3181,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 223
+     "line": 227
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4299,7 +4299,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 212
+     "line": 216
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4660,7 +4660,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 212
+     "line": 216
     }
    ],
    "served": true,
@@ -4822,7 +4822,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 476
+     "line": 480
     }
    ],
    "producers": [
@@ -5748,21 +5748,21 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-14.html": {
+  "file:docs/visuals/<date>-open-asks-15.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 132
+     "line": 136
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 132
+     "line": 136
     }
    ],
    "served": false,
@@ -6218,7 +6218,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 289
+     "line": 293
     }
    ],
    "served": true,
@@ -6297,7 +6297,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 212
+     "line": 216
     }
    ],
    "served": true,
@@ -8928,7 +8928,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 265
+     "line": 269
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -9647,7 +9647,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 374
+     "line": 378
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -10228,7 +10228,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 346
+     "line": 350
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -13214,7 +13214,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 335
+     "line": 339
     }
    ],
    "served": false,
@@ -13977,7 +13977,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 212
+     "line": 216
     }
    ],
    "served": true,
@@ -14387,7 +14387,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 232
+     "line": 236
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -14555,7 +14555,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 410
+     "line": 414
     }
    ],
    "served": true,
@@ -15056,7 +15056,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 359
+     "line": 363
     }
    ],
    "served": true,
@@ -16708,7 +16708,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 246
+     "line": 250
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
