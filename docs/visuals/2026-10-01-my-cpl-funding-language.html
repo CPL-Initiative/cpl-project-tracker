@@ -1,0 +1,897 @@
+<title>My CPL Funding Language</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* ── COBI's own rules for the College Dashboard section, captured from the running tab ── */
+* { margin: 0px; padding: 0px; box-sizing: border-box; }
+:root { --cpl-measure: none; --rail-w: 280px; --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36; --text-muted: #5C5C55; --text-faint: #87877F; --surface: rgba(255,255,255,.78); --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1; --surface-muted: #ECE9E2; --surface-1: #F7F5F1; --surface-2: #ECE9E2; --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30); --crimson: #920000; --cobalt: #0047AB; --dtl-nc-head: #0047AB; --hunter: #2C601A; --violet: #6D28D9; --mustard-fill: #E3B341; --mustard-text: #8B6800; --seal-blue: #002F6D; --crimson-on-dark: #CF8F8F; --cobalt-on-dark: #7DA1D4; --hunter-on-dark: #89A67F; --violet-on-dark: #B28DEB; --mustard-on-dark: #E3B341; --accent-link: var(--cobalt); --focus-ring: var(--cobalt); --glass-blur: 14px; --glass-edge: rgba(255,255,255,.55); --on-accent: #FFFFFF; --on-mustard: #1C1C1A; --on-seal-blue-muted: #94A3B8; --rail-hover: rgba(28,28,26,.06); --seal-blue-text: #002F6D; --btn-primary-hover: #003B8E; --navy-primary: #1C1C1A; --navy-secondary: #3A3A36; --gold-accent: var(--mustard-on-dark); --light-blue: var(--cobalt-on-dark); --bg-off-white: var(--paper); --text-gray: var(--text-body); --green-progress: var(--hunter); --white: #FFFFFF; --red-alert: var(--crimson); --yellow-warning: var(--mustard-text); --status-completed: var(--hunter); --status-on-track: var(--mustard-text); --status-at-risk: var(--crimson); --status-proposed: var(--text-muted); }
+body { font-family: "Source Sans 3", Arial, sans-serif; background-color: var(--bg-off-white); color: var(--text-gray); line-height: 1.6; }
+h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; color: var(--navy-primary); }
+@media (prefers-contrast: more) {
+:root { --border: rgba(28,28,26,0.45); --text-muted: #3A3A36; }
+}
+:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+@media print {
+body { background-color: var(--white); }
+}
+.cplfund-actions .cplfund-optbtn, .cplfund-toolbar .cplfund-optbtn { margin-left: 0px; }
+.cplfund-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0px 0px 10px; }
+.cplfund-seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }
+.cplfund-seg button { background: var(--surface-opaque); color: var(--text-body); border: none; padding: 8px 12px; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
+.cplfund-seg button + button { border-left: 1px solid var(--border-strong); }
+.cplfund-seg button.on { background: var(--seal-blue, #002F6D); color: var(--white, #FFFFFF); font-weight: 600; }
+.cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; min-height: 24px; cursor: pointer; font-size: 0.75rem; font-family: inherit; margin-left: 6px; }
+.cplfund-optbtn:hover { border-color: var(--gold-accent); }
+.cplfund-sec { border: 1px solid var(--border); border-radius: 8px; margin: 0px 0px 14px; background: var(--surface-opaque); }
+.cplfund-sec > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 9px; padding: 0px 16px; }
+.cplfund-sec > summary::-webkit-details-marker { display: none; }
+.cplfund-sec > summary::marker { content: ""; }
+.cplfund-sec > summary h3 { margin: 13px 0px; }
+.cplfund-sec > summary:hover h3 { color: var(--navy-secondary); }
+.cplfund-sec > summary:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: -2px; border-radius: 8px; }
+.cplfund-sec-word { margin-left: auto; flex: 0 0 auto; font-size: 0.78rem; font-weight: 600; color: var(--text-muted); }
+.cplfund-sec-word::before { content: "Hide"; }
+.cplfund-sec > summary:hover .cplfund-sec-word { text-decoration: underline; }
+.cplfund-sec-body { padding: 2px 16px 14px; }
+.cplfund-prose p { margin: 0px 0px 10px; font-size: 0.92rem; line-height: 1.6; max-width: var(--cpl-measure, none); }
+.cplfund-prose p:last-of-type { margin-bottom: 0px; }
+.cplfund-college-intro { margin: 0px 0px 8px; }
+.cplfund-seg button:focus-visible, .cplfund-optbtn:focus-visible, .cplfund-colmenu > summary:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; }
+.cb-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 18px; line-height: 1.5; }
+.cb-lab { font-size: 0.82rem; color: var(--text-body); line-height: 1.45; }
+.cb-floor { margin-top: 0px; margin-bottom: 12px; border-left: 3px solid var(--crimson,#920000); padding-left: 10px; }
+.cb-tag { font-size: 0.66rem; padding: 2px 7px; border-radius: 999px; border: 1px solid var(--border-strong); color: var(--text-muted); white-space: nowrap; }
+.cb-whead { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 0.87rem; }
+.cb-whead .v { color: var(--text-muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cb-plab { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 7px; }
+.cb-prios { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 11px; }
+.cb-prow { padding: 8px 0px; border-top: 1px solid var(--border); }
+.cb-prow .cb-whead { font-size: 0.85rem; }
+.cb-prow .cb-whead .v { font-weight: 700; color: var(--text-strong); font-size: 0.85rem; }
+.cb-ptarget { font-size: 0.76rem; color: var(--text-muted); margin-top: 3px; line-height: 1.45; }
+.cb-next { border: 1px solid var(--border-strong); border-left: 4px solid var(--brand, var(--cobalt)); border-radius: 8px; padding: 13px 15px; margin-top: 14px; background: var(--surface-subtle); }
+.cb-next ul { margin: 0px; padding-left: 18px; font-size: 0.84rem; line-height: 1.55; }
+.cb-next li { margin-bottom: 5px; }
+.cb-next li:last-child { margin-bottom: 0px; }
+.cb-fund { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.cb-fbox { border: 1px solid var(--border); border-radius: 9px; padding: 14px 15px; background: var(--surface); }
+.cb-fbox header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+.cb-panel .cb-fbox { background: var(--surface-opaque,var(--surface)); }
+.cb-panel .cb-fbox header { background: none; border: 0px; padding: 0px; }
+.cb-fbox h4 { margin: 0px; font-size: 0.94rem; color: var(--text-strong); }
+.cb-fbig { font-size: 1.6rem; font-weight: 700; color: var(--text-strong); line-height: 1.1; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+.cb-flags { margin: 10px 0px 0px; padding-left: 18px; font-size: 0.79rem; color: var(--text-body); line-height: 1.45; }
+.cb-flags li { margin-bottom: 5px; }
+.cb-ess-list { list-style: none; margin: 12px 0px 0px; padding: 0px; display: flex; flex-direction: column; gap: 9px; }
+.cb-ess-list li { display: flex; gap: 9px; align-items: flex-start; border-top: 1px solid var(--border); padding-top: 9px; font-size: 0.83rem; }
+.cb-ess-list li:first-child { border-top: 0px; padding-top: 0px; }
+.cb-ess-list .cb-d { font-size: 0.77rem; color: var(--text-muted); margin-top: 2px; line-height: 1.45; }
+.cb-ess { flex: 0 0 auto; min-width: 4.6em; text-align: left; font-weight: 700; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 2px; }
+.cb-ess.met { color: var(--ok,#2f7a3d); }
+.cb-ess.not { color: var(--text-muted); }
+.cb-strat { margin-top: 9px; border-top: 1px solid var(--border); padding-top: 8px; }
+.cb-strat > summary { list-style: none; cursor: pointer; font-size: 0.79rem; color: var(--accent-link,var(--brand,var(--cobalt))); display: inline-flex; align-items: baseline; gap: 6px; }
+.cb-strat > summary::-webkit-details-marker { display: none; }
+.cb-strat > summary::before { content: "▸"; font-size: 0.85em; display: inline-block; transition: transform 0.12s; }
+.cb-strat > summary:hover { text-decoration: underline; }
+.cb-strat > summary:focus-visible { outline: 2px solid var(--focus-ring,var(--brand,var(--cobalt))); outline-offset: 2px; border-radius: 3px; }
+.cb-strat ol { margin: 9px 0px 0px; padding-left: 19px; font-size: 0.82rem; line-height: 1.5; color: var(--text-body); }
+.cb-strat li { margin-bottom: 7px; }
+.cb-strat li:last-child { margin-bottom: 0px; }
+.cb-strat li .cb-d { font-size: 0.76rem; color: var(--text-muted); margin-top: 2px; line-height: 1.45; }
+.cb-tag { display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.04em; padding: 1px 6px; margin-left: 6px; border-radius: 3px; white-space: nowrap; vertical-align: 1px; border: 1px solid var(--border-strong); background: var(--surface-subtle); color: var(--text-body); }
+</style>
+<style>
+
+/* My CPL Funding mockup: COBI's captured block, framed. First Light v1.6, the light identity,
+   committed to one look on purpose: the replica is of the light COBI view. */
+:root {
+  color-scheme: light;
+  --mk-paper: #F4F2ED; --mk-ink: #1C1C1A; --mk-body: #3A3A36; --mk-muted: #5C5C55;
+  --mk-card: #FFFFFF; --mk-line: rgba(28,28,26,.14); --mk-line-strong: rgba(28,28,26,.30);
+  --mk-seal: #002F6D; --mk-cobalt: #0047AB; --mk-tint: #E8EFF8; --mk-hl: #FDF6E3; --mk-gold: #8B6800;
+  --mk-display: "Playfair Display", Georgia, serif; --mk-text: "Source Sans 3", Arial, sans-serif;
+}
+html, body { background: var(--mk-paper); color: var(--mk-body); }
+body { font-family: var(--mk-text); font-size: 16px; line-height: 1.55; padding-inline: 16px; padding-block: 0 140px; }
+.mk-wrap { max-width: 1240px; margin: 0 auto; }
+.mk-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.mk-skip { position: absolute; left: -9999px; top: 0; background: var(--mk-card); color: var(--mk-cobalt); padding: 8px 14px; z-index: 10; }
+.mk-skip:focus { left: 8px; }
+:focus-visible { outline: 3px solid var(--mk-cobalt); outline-offset: 2px; }
+.mk-head { display: grid; gap: 8px; padding-block: 26px 14px; }
+.mk-head h1 { font-family: var(--mk-display); color: var(--mk-ink); font-size: clamp(1.6rem, 4.4vw, 2.2rem); line-height: 1.15; text-wrap: balance; }
+.mk-sample { color: var(--mk-body); max-width: 72ch; }
+.mk-controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-top: 6px; }
+.mk-seg { display: inline-flex; border: 1px solid var(--mk-line-strong); border-radius: 8px; overflow: hidden; }
+.mk-seg button { font: inherit; font-size: .95rem; font-weight: 600; min-height: 40px; padding: 6px 16px; border: 0;
+  background: var(--mk-card); color: var(--mk-body); cursor: pointer; }
+.mk-seg button + button { border-left: 1px solid var(--mk-line-strong); }
+.mk-seg button[aria-pressed="true"] { background: var(--mk-seal); color: #FFFFFF; }
+.mk-check { display: inline-flex; align-items: center; gap: 8px; font-size: .95rem; color: var(--mk-body); min-height: 40px; }
+.mk-check input { width: 20px; height: 20px; accent-color: var(--mk-seal); }
+.mk-viewlab { font-family: var(--mk-text); font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--mk-muted); margin: 14px 0 6px; }
+.mk-view { min-width: 0; }
+.mk-view .cplfund-sec { margin: 0; }
+/* A district of numbers: each changed passage carries its number, which links to its card. */
+.mk-n { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; min-height: 24px;
+  margin-right: 5px; padding: 0 6px; border-radius: 6px; vertical-align: middle;
+  font: 700 .74rem/1 var(--mk-text); font-variant-numeric: tabular-nums; letter-spacing: 0; text-transform: none;
+  color: var(--mk-seal); background: var(--mk-tint); text-decoration: none; }
+.mk-n:hover { text-decoration: underline; }
+.mk-on .mk-p { background: var(--mk-hl); box-shadow: 0 0 0 2px var(--mk-hl); border-radius: 2px; }
+.mk-off .mk-n { display: none; }
+.mk-flag { margin-top: 8px; }
+/* The disabled replica controls stay readable: WCAG exempts inactive controls, and the words still matter. */
+.mk-view button[disabled], .mk-view select[disabled] { cursor: not-allowed; }
+/* Inert here, drawn as COBI draws them: the disabled defaults would gray the words out. */
+.mk-view select[disabled] { color: var(--mk-ink); background: var(--mk-card); opacity: 1; border: 1px solid var(--mk-line-strong); border-radius: 4px; }
+.mk-view .cplfund-seg button[disabled] { opacity: 1; }
+.mk-changes-h { font-family: var(--mk-display); color: var(--mk-ink); font-size: 1.35rem; margin: 34px 0 4px; }
+.mk-changes-sub { color: var(--mk-muted); font-size: .95rem; margin-bottom: 6px; max-width: 72ch; }
+.mk-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 10px; max-width: 880px; }
+.card { background: var(--mk-card); border: 1px solid var(--mk-line); border-radius: 12px; padding: 16px 18px; min-width: 0; scroll-margin-top: 16px; }
+.card h3 { font-family: var(--mk-text); font-size: 1.05rem; font-weight: 700; color: var(--mk-ink); display: flex; gap: 10px; align-items: baseline; }
+.mk-cn { flex: 0 0 auto; min-width: 1.9em; padding: 0 6px; border-radius: 6px; text-align: center; font-variant-numeric: tabular-nums;
+  color: var(--mk-seal); background: var(--mk-tint); font-size: .9rem; }
+.card dl { margin-top: 8px; }
+.card dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: var(--mk-muted); margin-top: 10px; }
+.card dd { margin: 2px 0 0; color: var(--mk-body); font-size: .95rem; }
+.mk-today { color: var(--mk-muted); }
+.mk-line { display: block; }
+.mk-line + .mk-line { margin-top: 6px; }
+.mk-lbl { display: block; font-size: .75rem; font-weight: 700; color: var(--mk-muted); }
+.reply-rec .mk-lbl { color: var(--mk-seal); }
+.mk-edit { display: inline; border-radius: 3px; outline: none; }
+.mk-edit[contenteditable]:hover { box-shadow: inset 0 -1px 0 var(--mk-seal); cursor: text; }
+.mk-edit[contenteditable]:focus { box-shadow: 0 0 0 2px var(--mk-cobalt); }
+.mk-edited { background: var(--mk-hl); box-shadow: inset 3px 0 0 var(--mk-gold); }
+.mk-mark { display: inline-flex; align-items: center; gap: 6px; margin-left: 8px; font: 600 .78rem/1.5 var(--mk-text); color: var(--mk-ink); }
+.mk-undo { font: inherit; min-height: 28px; padding: 0 10px; border: 1px solid var(--mk-line-strong); border-radius: 6px;
+  background: var(--mk-card); color: var(--mk-ink); cursor: pointer; }
+.mk-others summary { cursor: pointer; color: var(--mk-cobalt); font-weight: 600; min-height: 32px; display: flex; align-items: center; }
+.mk-olist { list-style: none; display: grid; gap: 10px; margin-top: 8px; }
+.mk-orow { display: grid; gap: 2px; padding-top: 8px; border-top: 1px solid var(--mk-line); }
+.mk-olbl { font-size: .78rem; font-weight: 700; color: var(--mk-ink); }
+.mk-otoday { color: var(--mk-muted); font-size: .9rem; }
+.mk-orev { color: var(--mk-ink); font-size: .92rem; font-weight: 600; }
+.mk-otag { font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-right: 4px; }
+.mk-orev .mk-otag { color: var(--mk-seal); }
+.submit h2 { font-family: var(--mk-display); color: var(--mk-ink); }
+.reply-bar { padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px)); }
+.mk-fine { color: var(--mk-muted); font-size: .88rem; margin-top: 10px; max-width: 80ch; }
+@media (max-width: 560px) {
+  .card { padding: 14px; }
+  .mk-seg button { padding: 6px 12px; }
+}
+/* The block's two boxes sit side by side above ~650px; below that each takes the column (no sideways scroll at 320px). */
+.mk-view .cb-fund { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+
+  .submit { background: var(--surface-opaque, #FFFFFF); border: 1px solid var(--border-strong, rgba(28,28,26,.30));
+    border-radius: 14px; padding: 18px 20px; margin: 28px 0 8px; }
+  .submit h2 { margin: 0 0 4px; font-size: 1.15rem; }
+  .submit-note { margin: 0 0 12px; color: var(--text-body, #3A3A36); font-size: .95rem; }
+  /* #FFFFFF on #002F6D is 12.90:1. The fallback is load-bearing: without it an
+     undefined token leaves the background transparent and paints white on the
+     card's white, the 2026-09-06 failure. */
+  .submit-btn { font: inherit; font-size: 1rem; font-weight: 700; min-height: 44px; padding: 10px 22px;
+    border: 1px solid var(--seal-blue, #002F6D); border-radius: 8px;
+    background: var(--seal-blue, #002F6D); color: #FFFFFF; cursor: pointer; }
+  .submit-btn:hover { background: var(--cobalt, #0047AB); border-color: var(--cobalt, #0047AB); }
+  .submit-btn[disabled] { opacity: .6; cursor: default; }
+  .submit-state { margin: 10px 0 0; font-size: .9rem; color: var(--text-body, #3A3A36); min-height: 1em; }
+  /* A send that did not land gets its own rule and weight — the reader has to
+     be able to tell "it reached Claude" from "it did not" without reading
+     carefully. #1C1C1A on #FDF6E3 is 15.82:1. Color is never the only signal:
+     the words say it too, and the button relabels itself. */
+  .submit-state.missed { background: var(--rest-tint, #FDF6E3); color: var(--text-strong, #1C1C1A);
+    border-left: 4px solid var(--mustard-text, #8B6800); border-radius: 6px;
+    padding: 8px 12px; font-weight: 600; }
+
+  /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
+  .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
+  .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .reply-picks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .reply-pick { display: flex; flex-direction: column; gap: 3px; flex: 1 1 220px; min-width: 0; }
+  .reply-pick-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em;
+    font-weight: 700; color: var(--text-muted, #5C5C55); }
+  .reply-pick-in { font: inherit; font-size: .92rem; padding: 6px 9px; width: 100%;
+    color: var(--text-strong, #1C1C1A); background: var(--surface-opaque, #fff);
+    border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 8px; }
+  .reply-pick-in::placeholder { color: var(--text-muted, #5C5C55); opacity: 1; }
+  .reply-pick-in[data-off="1"] { border-color: var(--mustard-text, #8B6800); }
+  .reply-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+    color: var(--text-muted); margin-right: 4px; }
+  .reply-chip { font: inherit; font-size: .86rem; font-weight: 600; min-height: 30px; padding: 3px 12px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); cursor: pointer; }
+  .reply-chip:hover { background: var(--surface-subtle); }
+  /* ⚠️ --seal-blue is a First Light token the HOST SHEET may not define — this
+     block has to stand on its own. Without the fallback the declaration is
+     invalid at computed-value time, background falls back to transparent, and
+     `color:#fff` paints white on the card's white: 1.00:1, so the SELECTED
+     chip is invisible and the reader cannot see which verdict they picked.
+     Measured 2026-09-06 on the seven-open-calls sheet. #002F6D on white is
+     12.90:1. */
+  .reply-chip[aria-pressed="true"] { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue, #002F6D); color: #fff; }
+  .reply-chip.reply-fu { margin-left: auto; }
+
+  /* ── the proposal, above the chips ───────────────────────────────────────
+     Sam, 2026-09-20: "make your recommendation line more visually a focal
+     point. I found myself saying yes to things that I later had to flip keep
+     because I didn't pay attention to your rec." On the 51-item sheet the
+     proposal was a <dd> in the same gray as the facts, and he read past it
+     sixteen times. Here it is a tinted panel with its own rule and its own
+     label word, so the eye lands on it before it reaches the chips.
+     ⚠️ Every token carries a LITERAL FALLBACK: this block travels with the
+     module into sheets that may define none of them, and a declaration that
+     is invalid at computed-value time falls back to transparent — the same
+     failure that painted a selected chip white on white in 2026-09-06.
+     Measured on the fallbacks: #1C1C1A on #E8EFF8 is 14.74:1, the label
+     #002F6D on #E8EFF8 is 11.14:1. The rule and the label word are both
+     non-color signals, so the callout never depends on the tint alone. */
+  .reply-rec { margin: 0 0 10px; padding: 9px 13px; border-radius: 8px;
+    background: var(--rec-tint, #E8EFF8); border-left: 4px solid var(--seal-blue, #002F6D);
+    color: var(--text-strong, #1C1C1A); font-size: 1rem; line-height: 1.5; }
+  .reply-rec-lbl { display: block; font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .08em; font-weight: 700; color: var(--seal-blue, #002F6D); margin-bottom: 2px; }
+  .reply-rec-text { font-weight: 600; }
+  .reply-rec strong { font-weight: 700; }
+  /* The promoted pair inside a <dl>: an HTML5 dl may group dt/dd in a div, so
+     the panel is the group itself and the two rows lose their own margins. */
+  .reply-rec-dl { margin: 14px 0 0; }
+  .reply-rec-dl dt.reply-rec-lbl, .reply-rec-dl dd.reply-rec-text { margin: 0; padding: 0; }
+  .reply-rec-dl dd.reply-rec-text { font-weight: 600; margin-left: 0; }
+
+  /* Other: the rarer verdicts, out of the way until they are wanted. */
+  .reply-more-row { flex: 1 1 100%; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .reply-more-row[hidden] { display: none; }
+
+  /* A stopping point every twenty items (Sam, 2026-09-20: "Making decisions
+     is taxing and only so many can be made before people bail out"). It says
+     the replies are saved, so leaving reads as a sitting that ended. */
+  .reply-rest { margin: 26px 0; padding: 11px 15px; border-radius: 8px;
+    background: var(--rest-tint, #FDF6E3); border: 1px solid var(--border-strong, rgba(28,28,26,.30));
+    color: var(--text-strong, #1C1C1A); font-size: .95rem; }
+  .sheet-framing { font-size: 1.05rem; color: var(--text-strong, #1C1C1A); margin: 0 0 6px; }
+  .sheet-framing-worth { font-size: .9rem; color: var(--text-muted, #5C5C55); margin: 0 0 18px; }
+  .reply-rest-lbl { display: block; font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .08em; font-weight: 700; color: var(--mustard-text, #8B6800); margin-bottom: 2px; }
+  .reply-notelbl { display: block; font-size: .78rem; color: var(--text-muted); margin: 8px 0 3px; }
+  .reply-note { width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; padding: 7px 9px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); resize: vertical; min-height: 34px; }
+  .reply-state { margin: 4px 0 0; font-size: .76rem; color: var(--text-muted); min-height: 1em; }
+  .reply-compact { margin-top: 8px; padding-top: 8px; }
+  .glist li .reply { margin: 6px 0 4px; padding-top: 6px; border-top: 1px dotted var(--border); }
+  .glist li .reply-chip { font-size: .8rem; min-height: 26px; padding: 2px 9px; }
+  .glist li .reply-note { font-size: .86rem; min-height: 30px; }
+  .glist li .reply-lbl { font-size: .66rem; }
+  .reply-compact .reply-notelbl { position: absolute; left: -9999px; }
+  .reply-compact .reply-note { margin-top: 6px; }
+  .reply-compact .reply-rec { font-size: .92rem; padding: 7px 10px; margin-bottom: 7px; }
+  ol.done li { position: relative; }
+  .reply-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface-opaque);
+    border-top: 1px solid var(--border-strong); padding: 8px 16px; display: flex; flex-wrap: wrap;
+    gap: 6px 14px; align-items: center; font-size: .9rem; box-shadow: 0 -6px 18px rgba(28,28,26,.08); }
+  .reply-count { font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .reply-outcome { font-weight: 600; color: var(--seal-blue, #002F6D); font-variant-numeric: tabular-nums;
+    font-size: .88rem; }
+  .reply-where { color: var(--text-muted); font-size: .82rem; flex: 1 1 240px; }
+  .reply-show { margin: 0; flex: 1 1 100%; }
+  .reply-show summary { font-size: .82rem; padding: 2px 0; }
+  .reply-line { width: 100%; box-sizing: border-box; font: inherit; font-size: .86rem; padding: 6px 8px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-subtle); color: var(--text-body); }
+  body { padding-bottom: 120px; }
+  @media (max-width: 560px) { .reply-chip { padding: 3px 9px; } .reply-chip.reply-fu { margin-left: 0; } }
+
+</style>
+<a class="mk-skip" href="#changes">Skip to the changes</a>
+<div class="mk-wrap">
+<header class="mk-head">
+  <h1>My CPL Funding, revised language</h1>
+  <p class="mk-sample">Coastline, as COBI's own code draws it from the published model and today's MAP data, Oct. 1, 2026, at 6:20 a.m. PT.
+  Each number marks a change and links to its card below.</p>
+  <div class="mk-controls">
+    <div class="mk-seg" role="group" aria-label="Version shown">
+      <button type="button" data-mkview="rev" aria-pressed="true">Revised</button>
+      <button type="button" data-mkview="today" aria-pressed="false">Today</button>
+    </div>
+    <label class="mk-check" for="mk-nums"><input type="checkbox" id="mk-nums" checked> Show change numbers</label>
+  </div>
+</header>
+<main>
+<h2 class="mk-viewlab" id="mk-viewlab" aria-live="polite">Revised, Coastline</h2>
+<div id="mk-views" class="mk-on">
+  <section id="view-rev" class="mk-view cplfund" aria-label="Revised view"><details class="cplfund-sec" data-sec="college" open="" style=""><summary class="cplfund-sec-sum"><h3>College Dashboard</h3><span class="cplfund-sec-word" aria-hidden="true"></span></summary><div class="cplfund-sec-body"><div class="cplfund-prose dk cplfund-college-intro" data-textblock="college_intro"><p><a class="mk-n" href="#c1"><span class="mk-sr">Change </span>1</a><span class="mk-p" data-ref="1.1">My CPL Funding shows one institution&#x27;s seed grant and implementation funding, with the outcomes MAP tracks for each. Choose an institution, or choose a district to see each of its institutions.</span></p></div><div class="cplfund-toolbar cplfund-viewswitch"><span class="cplfund-seg" id="cplFundCollegeView-rev" role="group" aria-label="Show"><button type="button" data-val="all" aria-pressed="false" disabled title="Works in COBI">All institutions</button><button type="button" data-val="one" aria-pressed="true" class="on" disabled title="Works in COBI">My CPL Funding</button></span></div><div class="cplfund-toolbar"><label for="cplFundOnePick-rev">Institution or district</label> <select id="cplFundOnePick-rev" disabled title="Works in COBI"><option value="">Choose an institution or district</option><optgroup label="Institutions"><option value="Alameda">Alameda</option><option value="Allan Hancock">Allan Hancock</option><option value="American River">American River</option><option value="Antelope Valley">Antelope Valley</option><option value="Bakersfield">Bakersfield</option><option value="Barstow">Barstow</option><option value="Berkeley City">Berkeley City</option><option value="Butte">Butte</option><option value="Cabrillo">Cabrillo</option><option value="Canada">Canada</option><option value="Canyons">Canyons</option><option value="Cerritos">Cerritos</option><option value="Cerro Coso">Cerro Coso</option><option value="Chabot">Chabot</option><option value="Chaffey">Chaffey</option><option value="Citrus">Citrus</option><option value="Clovis">Clovis</option><option value="West Hills Coalinga">Coalinga College</option><option value="Coastline" selected="">Coastline</option><option value="Columbia">Columbia</option><option value="Compton">Compton</option><option value="Contra Costa">Contra Costa</option><option value="Copper Mountain">Copper Mountain</option><option value="Cosumnes River">Cosumnes River</option><option value="Crafton Hills">Crafton Hills</option><option value="Cuesta">Cuesta</option><option value="Cuyamaca">Cuyamaca</option><option value="Cypress">Cypress</option><option value="De Anza">DeAnza</option><option value="Desert">Desert</option><option value="Diablo Valley">Diablo Valley</option><option value="East LA">East LA</option><option value="El Camino">El Camino</option><option value="Evergreen Valley">Evergreen Valley</option><option value="Feather River">Feather River</option><option value="Folsom Lake">Folsom Lake</option><option value="Foothill">Foothill</option><option value="Fresno City">Fresno City</option><option value="Fullerton">Fullerton</option><option value="Gavilan">Gavilan</option><option value="Glendale">Glendale</option><option value="Golden West">Golden West</option><option value="Grossmont">Grossmont</option><option value="Hartnell">Hartnell</option><option value="Imperial">Imperial Valley College</option><option value="Irvine">Irvine</option><option value="LA City">LA City</option><option value="LA Harbor">LA Harbor</option><option value="LA Mission">LA Mission</option><option value="LA Pierce">LA Pierce</option><option value="LA Swest">LA Southwest</option><option value="LA Trade">LA Trade</option><option value="LA Valley">LA Valley</option><option value="Lake Tahoe">Lake Tahoe</option><option value="Laney">Laney</option><option value="Las Positas">Las Positas</option><option value="Lassen">Lassen</option><option value="Long Beach">Long Beach</option><option value="Los Medanos">Los Medanos</option><option value="Madera">Madera</option><option value="Marin">Marin</option><option value="Mendocino">Mendocino</option><option value="Merced">Merced</option><option value="Merritt">Merritt</option><option value="MiraCosta">MiraCosta</option><option value="Mission">Mission</option><option value="Modesto">Modesto</option><option value="Monterey">Monterey</option><option value="Moorpark">Moorpark</option><option value="Moreno Valley">Moreno Valley</option><option value="Mt San Antonio">Mt San Antonio</option><option value="Mt. San Jacinto">Mt. San Jacinto</option><option value="Napa">Napa</option><option value="Norco College">Norco College</option><option value="Ohlone">Ohlone</option><option value="Orange Coast">Orange Coast</option><option value="Oxnard">Oxnard</option><option value="Palo Verde">Palo Verde</option><option value="Palomar">Palomar</option><option value="Pasadena">Pasadena</option><option value="Porterville">Porterville</option><option value="Redwoods">Redwoods</option><option value="Reedley College">Reedley College</option><option value="Rio Hondo">Rio Hondo</option><option value="Riverside">Riverside City</option><option value="Sacramento City">Sacramento City</option><option value="Saddleback">Saddleback</option><option value="San Bernardino">San Bernardino</option><option value="San Diego City">San Diego City</option><option value="San Diego Mesa">San Diego Mesa</option><option value="San Diego Miramar">San Diego Miramar</option><option value="San Francisco">San Francisco</option><option value="San Joaquin Delta">San Joaquin Delta</option><option value="San Jose City">San Jose City</option><option value="San Mateo">San Mateo</option><option value="Santa Ana">Santa Ana</option><option value="Santa Barbara">Santa Barbara</option><option value="Santa Monica">Santa Monica</option><option value="Santa Rosa">Santa Rosa</option><option value="Santiago Canyon">Santiago Canyon</option><option value="Sequoias">Sequoias</option><option value="Shasta">Shasta</option><option value="Sierra">Sierra</option><option value="Siskiyous">Siskiyous</option><option value="Skyline">Skyline</option><option value="Solano">Solano</option><option value="Southwestern">Southwestern</option><option value="Taft">Taft</option><option value="Ventura">Ventura</option><option value="Victor Valley">Victor Valley</option><option value="West Hills Lemoore">West Hills Lemoore</option><option value="West LA">West LA</option><option value="West Valley">West Valley</option><option value="Woodland">Woodland</option><option value="Yuba">Yuba</option></optgroup><optgroup label="Districts"><option value="d:Chabot-Las Positas Community College District">Chabot-Las Positas CCD</option><option value="d:Coast Community College District">Coast CCD</option><option value="d:Contra Costa Community College District">Contra Costa CCD</option><option value="d:Foothill-De Anza Community College District">Foothill-De Anza CCD</option><option value="d:Grossmont-Cuyamaca Community College District">Grossmont-Cuyamaca CCD</option><option value="d:Kern Community College District">Kern CCD</option><option value="d:Los Angeles Community College District">Los Angeles CCD</option><option value="d:Los Rios Community College District">Los Rios CCD</option><option value="d:North Orange County Community College District">North Orange County CCD</option><option value="d:Peralta Community College District">Peralta CCD</option><option value="d:Rancho Santiago Community College District">Rancho Santiago CCD</option><option value="d:Riverside Community College District">Riverside CCD</option><option value="d:San Bernardino Community College District">San Bernardino CCD</option><option value="d:San Diego Community College District">San Diego CCD</option><option value="d:San Jose-Evergreen Community College District">San Jose-Evergreen CCD</option><option value="d:San Mateo County Community College District">San Mateo County CCD</option><option value="d:South Orange County Community College District">South Orange County CCD</option><option value="d:State Center Community College District">State Center CCD</option><option value="d:Ventura County Community College District">Ventura County CCD</option><option value="d:West Hills Community College District">West Hills CCD</option><option value="d:West Valley-Mission Community College District">West Valley-Mission CCD</option><option value="d:Yosemite Community College District">Yosemite CCD</option><option value="d:Yuba Community College District">Yuba CCD</option></optgroup></select><button type="button" class="cplfund-optbtn" id="cplFundOnePdf-rev" disabled title="Works in COBI">Save as PDF</button></div><div id="cplFundOnePanel-rev" class="cplfund-onepanel" aria-live="polite"><div class="cb-panel"><div class="cb-fund"><div class="cb-fbox"><header><h4>2025–2026 $50K Seed Funding</h4><span class="cb-tag"><a class="mk-n" href="#c2"><span class="mk-sr">Change </span>2</a><span class="mk-p" data-ref="2.1">ESS 25-82</span></span></header><div class="cb-fbig">$50,000</div><div class="cb-lab"><span class="mk-p" data-ref="2.2">The college received this grant in spring 2026 and has until June 30, 2028, to expend it. Under ESS 25-82, its chief instructional officer certified the college&#x27;s commitment to three priority outcomes. MAP tracks progress on each.</span></div><ol class="cb-ess-list"><li><span class="cb-ess met">Met</span><div><b><a class="mk-n" href="#c3"><span class="mk-sr">Change </span>3</a><span class="mk-p" data-ref="3.1">Upload a Joint Services Transcript (JST) for every enrolled veteran</span></b><div class="cb-d"><span class="mk-p" data-ref="3.2">JSTs in MAP cover at least 75% of the enrolled veterans the college reports to the Chancellor&#x27;s Office, which meets the Veteran Star.</span></div><div class="cb-d"><span class="mk-p" data-ref="3.3">Each JST uploaded creates a Student CPL Plan, which documents each credit the veteran is offered, accepts, and has transcribed.</span></div></div></li><li><span class="cb-ess not">Not yet</span><div><b>Adopt or adapt the statewide credit recommendations</b><div class="cb-d"><a class="mk-n" href="#c4"><span class="mk-sr">Change </span>4</a><span class="mk-p" data-ref="4.1">Articulating any one of the 84 statewide credit recommendations in MAP to a local course meets this outcome.</span></div></div></li><li><span class="cb-ess met">Met</span><div><b>Proactively identify and serve CPL-eligible students</b><div class="cb-d"><a class="mk-n" href="#c5"><span class="mk-sr">Change </span>5</a><span class="mk-p" data-ref="5.1">The college has identified 980 students in MAP as eligible for CPL.</span></div><div class="cb-d"><span class="mk-p" data-ref="5.2">Next, apply each student&#x27;s credit in MAP. Every applied unit also counts toward Access in the implementation funding.</span></div></div></li></ol></div><div class="cb-fbox"><header><h4>2026–2028 College Implementation Funding</h4><span class="cb-tag"><a class="mk-n" href="#c6"><span class="mk-sr">Change </span>6</a><span class="mk-p" data-ref="6.1">max award</span></span></header><div class="cb-fbig">$150,000</div><div class="cb-lab"><span class="mk-p" data-ref="6.2">The max award is the most the college can receive in 2026-27 and 2027-28. Each day the model reads the college&#x27;s CPL outcomes in MAP and measures them in full-time equivalent students (FTES). The priority outcomes below count toward the award.</span></div><div class="cb-lab mk-flag"><a class="mk-n" href="#c7"><span class="mk-sr">Change </span>7</a><span class="mk-p" data-ref="7.1">The college&#x27;s proportional share of the funding falls below the $150,000 base award, so the model brings it up to the base.</span></div><div class="cb-lab mk-flag"><a class="mk-n" href="#c8"><span class="mk-sr">Change </span>8</a><span class="mk-p" data-ref="8.1">Funding waits on the three minimum conditions. The college meets one, veteran JSTs at 75%, and two remain: a CPL coordinator on file in MAP, and the college&#x27;s confirmation by Nov. 1, 2026. Its outcomes so far demonstrate $71,000, which the college receives once it meets all three. The full max award stays available within the two-year window.</span></div><div class="cb-note cb-floor"><a class="mk-n" href="#c9"><span class="mk-sr">Change </span>9</a><span class="mk-p" data-ref="9.1">Noncredit share: $8,611 of the max award. The model sets this share from the college&#x27;s noncredit FTES and restricts it to noncredit outcomes.</span></div><div class="cb-prios"><div class="cb-plab"><a class="mk-n" href="#c10"><span class="mk-sr">Change </span>10</a><span class="mk-p" data-ref="10.1">Priority outcomes</span></div><div class="cb-prow"><div class="cb-whead"><b>Access</b><span class="v">$70,695</span></div><div class="cb-ptarget">Your target: <b>20 FTES</b> · <a class="mk-n" href="#c11"><span class="mk-sr">Change </span>11</a><span class="mk-p" data-ref="11.1">Applied CPL units (FTES) in MAP</span></div><details class="cb-strat"><summary><span class="mk-p" data-ref="10.2">Eight steps the CPL Initiative suggests</span></summary><ol><li>Configure your College CPL Landing Page, including a CPL Request Email, and link or embed it on the college website</li><li>Convene a CPL strike team to work the requests, opportunities, and any backlog--use CPL funding to support reassign time, special projects, overtime, workgroups, etc.</li><li>Develop procedures to obtain and batch upload CCCApply authorized JSTs for every enrolled military student and award credit</li><li>Adopt, adapt, create credit recommendations for current and prospective students</li><li>Find your top 15 ACE credit recommendations for enrolled veterans and route them to faculty for articulation and award</li><li>Process all CPL petitions and requests from the College CPL Landing Page, ensuring that essential outcomes data is credited</li><li>Create high-school articulated course exhibits in MAP and batch upload previous two year's of awarded students to MAP</li><li>List CPL on program pathway maps, flyers, and the program review process and link from your College CPL Landing Page</li></ol></details></div><div class="cb-prow"><div class="cb-whead"><b>Completion</b><span class="v">$70,695</span></div><div class="cb-ptarget">Your target: <b>20 FTES</b> · <span class="mk-p" data-ref="11.2">Transcribed CPL units (FTES) for students with the Counselor step checked in MAP</span></div><details class="cb-strat"><summary><span class="mk-p" data-ref="10.3">Six steps the CPL Initiative suggests</span></summary><ol><li>Review your CPL Administrative Procedure and remove barriers to access and completion</li><li>Make CPL screening part of student onboarding and ed planning process (Ed. Code 78093.2(b)(1)).</li><li>Act on all JST credit recommendations for enrolled service members and award course credit for Basic Training<div class="cb-d">We hold no figure for this college — that is not the same as zero.</div></li><li>Batch upload CPL recipients to MAP from Fall 2024 onward and ensure that the Counselor and Transcribed steps are checked provided they met with a counselor. Include AP, IB, CLEP, high-school articulated credit by exam, noncredit mirror courses, basic training credit, and elective and GE Area CPL previously waived but never transcribed.</li><li>Rely on your CPL Landing Page and/or CreditforBeingYou.org to serve as your automated CPL screening and petition procedure.</li><li>Check in MAP for each student the Counselor and Transcribe steps</li></ol></details></div></div><div class="cb-lab" style="margin-top:8px;"><a class="mk-n" href="#c12"><span class="mk-sr">Change </span>12</a><span class="mk-p" data-ref="12.1">Progress toward each target qualifies the college for the same proportion of the amount beside it, and reaching the target qualifies it for the full amount.</span></div></div></div><div class="cb-next"><div class="cb-plab">Do this next</div><ul><li><a class="mk-n" href="#c13"><span class="mk-sr">Change </span>13</a><span class="mk-p" data-ref="13.1">For the implementation funding: name the college&#x27;s CPL coordinator in MAP, and confirm the college&#x27;s participation by Nov. 1, 2026, with the Confirm button on its row under All institutions.</span></li><li><span class="mk-p" data-ref="13.2">For the seed funding: adopt or adapt one of the 84 statewide credit recommendations in MAP.</span></li></ul></div><div class="cb-note"><a class="mk-n" href="#c14"><span class="mk-sr">Change </span>14</a><span class="mk-p" data-ref="14.1">The funding model computes the implementation figures above, as it does for every institution under All institutions.</span></div></div></div></div></details></section>
+  <section id="view-today" class="mk-view cplfund" aria-label="Today's view" hidden><details class="cplfund-sec" data-sec="college" open="" style=""><summary class="cplfund-sec-sum"><h3>College Dashboard</h3><span class="cplfund-sec-word" aria-hidden="true"></span></summary><div class="cplfund-sec-body"><div class="cplfund-prose dk cplfund-college-intro" data-textblock="college_intro"><p><a class="mk-n" href="#c1"><span class="mk-sr">Change </span>1</a><span class="mk-p" data-ref="1.1">The Dashboard lists the potential funding and FTES for each institution. Total Funds is its <strong>max award</strong>: maximum funding to be awarded based on measurable outcomes and allocated as credit and noncredit subtotals, shown as Max CR Funds and Max NC Funds. The Curr (current) columns show the funding qualifying so far. The numbered pie before each name shows which of the three minimum conditions the institution meets, and a star marks the third, the Veteran Star. Click an institution to see its conditions and each priority's maximum and actual FTES and funding.</span></p></div><div class="cplfund-toolbar cplfund-viewswitch"><span class="cplfund-seg" id="cplFundCollegeView-today" role="group" aria-label="Show"><button type="button" data-val="all" aria-pressed="false" disabled title="Works in COBI">All institutions</button><button type="button" data-val="one" aria-pressed="true" class="on" disabled title="Works in COBI">My CPL Funding</button></span></div><div class="cplfund-toolbar"><label for="cplFundOnePick-today">Institution or district</label> <select id="cplFundOnePick-today" disabled title="Works in COBI"><option value="">Choose an institution or district</option><optgroup label="Institutions"><option value="Alameda">Alameda</option><option value="Allan Hancock">Allan Hancock</option><option value="American River">American River</option><option value="Antelope Valley">Antelope Valley</option><option value="Bakersfield">Bakersfield</option><option value="Barstow">Barstow</option><option value="Berkeley City">Berkeley City</option><option value="Butte">Butte</option><option value="Cabrillo">Cabrillo</option><option value="Canada">Canada</option><option value="Canyons">Canyons</option><option value="Cerritos">Cerritos</option><option value="Cerro Coso">Cerro Coso</option><option value="Chabot">Chabot</option><option value="Chaffey">Chaffey</option><option value="Citrus">Citrus</option><option value="Clovis">Clovis</option><option value="West Hills Coalinga">Coalinga College</option><option value="Coastline" selected="">Coastline</option><option value="Columbia">Columbia</option><option value="Compton">Compton</option><option value="Contra Costa">Contra Costa</option><option value="Copper Mountain">Copper Mountain</option><option value="Cosumnes River">Cosumnes River</option><option value="Crafton Hills">Crafton Hills</option><option value="Cuesta">Cuesta</option><option value="Cuyamaca">Cuyamaca</option><option value="Cypress">Cypress</option><option value="De Anza">DeAnza</option><option value="Desert">Desert</option><option value="Diablo Valley">Diablo Valley</option><option value="East LA">East LA</option><option value="El Camino">El Camino</option><option value="Evergreen Valley">Evergreen Valley</option><option value="Feather River">Feather River</option><option value="Folsom Lake">Folsom Lake</option><option value="Foothill">Foothill</option><option value="Fresno City">Fresno City</option><option value="Fullerton">Fullerton</option><option value="Gavilan">Gavilan</option><option value="Glendale">Glendale</option><option value="Golden West">Golden West</option><option value="Grossmont">Grossmont</option><option value="Hartnell">Hartnell</option><option value="Imperial">Imperial Valley College</option><option value="Irvine">Irvine</option><option value="LA City">LA City</option><option value="LA Harbor">LA Harbor</option><option value="LA Mission">LA Mission</option><option value="LA Pierce">LA Pierce</option><option value="LA Swest">LA Southwest</option><option value="LA Trade">LA Trade</option><option value="LA Valley">LA Valley</option><option value="Lake Tahoe">Lake Tahoe</option><option value="Laney">Laney</option><option value="Las Positas">Las Positas</option><option value="Lassen">Lassen</option><option value="Long Beach">Long Beach</option><option value="Los Medanos">Los Medanos</option><option value="Madera">Madera</option><option value="Marin">Marin</option><option value="Mendocino">Mendocino</option><option value="Merced">Merced</option><option value="Merritt">Merritt</option><option value="MiraCosta">MiraCosta</option><option value="Mission">Mission</option><option value="Modesto">Modesto</option><option value="Monterey">Monterey</option><option value="Moorpark">Moorpark</option><option value="Moreno Valley">Moreno Valley</option><option value="Mt San Antonio">Mt San Antonio</option><option value="Mt. San Jacinto">Mt. San Jacinto</option><option value="Napa">Napa</option><option value="Norco College">Norco College</option><option value="Ohlone">Ohlone</option><option value="Orange Coast">Orange Coast</option><option value="Oxnard">Oxnard</option><option value="Palo Verde">Palo Verde</option><option value="Palomar">Palomar</option><option value="Pasadena">Pasadena</option><option value="Porterville">Porterville</option><option value="Redwoods">Redwoods</option><option value="Reedley College">Reedley College</option><option value="Rio Hondo">Rio Hondo</option><option value="Riverside">Riverside City</option><option value="Sacramento City">Sacramento City</option><option value="Saddleback">Saddleback</option><option value="San Bernardino">San Bernardino</option><option value="San Diego City">San Diego City</option><option value="San Diego Mesa">San Diego Mesa</option><option value="San Diego Miramar">San Diego Miramar</option><option value="San Francisco">San Francisco</option><option value="San Joaquin Delta">San Joaquin Delta</option><option value="San Jose City">San Jose City</option><option value="San Mateo">San Mateo</option><option value="Santa Ana">Santa Ana</option><option value="Santa Barbara">Santa Barbara</option><option value="Santa Monica">Santa Monica</option><option value="Santa Rosa">Santa Rosa</option><option value="Santiago Canyon">Santiago Canyon</option><option value="Sequoias">Sequoias</option><option value="Shasta">Shasta</option><option value="Sierra">Sierra</option><option value="Siskiyous">Siskiyous</option><option value="Skyline">Skyline</option><option value="Solano">Solano</option><option value="Southwestern">Southwestern</option><option value="Taft">Taft</option><option value="Ventura">Ventura</option><option value="Victor Valley">Victor Valley</option><option value="West Hills Lemoore">West Hills Lemoore</option><option value="West LA">West LA</option><option value="West Valley">West Valley</option><option value="Woodland">Woodland</option><option value="Yuba">Yuba</option></optgroup><optgroup label="Districts"><option value="d:Chabot-Las Positas Community College District">Chabot-Las Positas CCD</option><option value="d:Coast Community College District">Coast CCD</option><option value="d:Contra Costa Community College District">Contra Costa CCD</option><option value="d:Foothill-De Anza Community College District">Foothill-De Anza CCD</option><option value="d:Grossmont-Cuyamaca Community College District">Grossmont-Cuyamaca CCD</option><option value="d:Kern Community College District">Kern CCD</option><option value="d:Los Angeles Community College District">Los Angeles CCD</option><option value="d:Los Rios Community College District">Los Rios CCD</option><option value="d:North Orange County Community College District">North Orange County CCD</option><option value="d:Peralta Community College District">Peralta CCD</option><option value="d:Rancho Santiago Community College District">Rancho Santiago CCD</option><option value="d:Riverside Community College District">Riverside CCD</option><option value="d:San Bernardino Community College District">San Bernardino CCD</option><option value="d:San Diego Community College District">San Diego CCD</option><option value="d:San Jose-Evergreen Community College District">San Jose-Evergreen CCD</option><option value="d:San Mateo County Community College District">San Mateo County CCD</option><option value="d:South Orange County Community College District">South Orange County CCD</option><option value="d:State Center Community College District">State Center CCD</option><option value="d:Ventura County Community College District">Ventura County CCD</option><option value="d:West Hills Community College District">West Hills CCD</option><option value="d:West Valley-Mission Community College District">West Valley-Mission CCD</option><option value="d:Yosemite Community College District">Yosemite CCD</option><option value="d:Yuba Community College District">Yuba CCD</option></optgroup></select><button type="button" class="cplfund-optbtn" id="cplFundOnePdf-today" disabled title="Works in COBI">Save as PDF</button></div><div id="cplFundOnePanel-today" class="cplfund-onepanel" aria-live="polite"><div class="cb-panel"><div class="cb-fund"><div class="cb-fbox"><header><h4>2025–2026 $50K Seed Funding</h4><span class="cb-tag"><a class="mk-n" href="#c2"><span class="mk-sr">Change </span>2</a><span class="mk-p" data-ref="2.1">ESS 25-82 · distributed Spring 2026</span></span></header><div class="cb-fbig">$50,000</div><div class="cb-lab"><span class="mk-p" data-ref="2.2">Received. Must be fully expended by <b>June 30, 2028</b>. It was directed at the three priority outcomes below — progress on them is tracked through MAP, as ESS 25-82 specifies. <b>These are not a compliance determination.</b></span></div><ol class="cb-ess-list"><li><span class="cb-ess met">Met</span><div><b><a class="mk-n" href="#c3"><span class="mk-sr">Change </span>3</a><span class="mk-p" data-ref="3.1">Upload a JST for every enrolled veteran</span></b><div class="cb-d"><span class="mk-p" data-ref="3.2">Veteran Star met — ≥75% of MIS-reported enrolled veterans have a JST uploaded in MAP</span></div><div class="cb-d"><span class="mk-p" data-ref="3.3">Every JST uploaded creates a Student CPL Plan — that is the step that puts a veteran's credit in front of somebody.</span></div></div></li><li><span class="cb-ess not">Not yet</span><div><b>Adopt or adapt the statewide credit recommendations</b><div class="cb-d"><a class="mk-n" href="#c4"><span class="mk-sr">Change </span>4</a><span class="mk-p" data-ref="4.1">no local articulation yet against a statewide credit recommendation</span></div></div></li><li><span class="cb-ess met">Met</span><div><b>Proactively identify and serve CPL-eligible students</b><div class="cb-d"><a class="mk-n" href="#c5"><span class="mk-sr">Change </span>5</a><span class="mk-p" data-ref="5.1">980 students identified as CPL-eligible in MAP</span></div><div class="cb-d"><span class="mk-p" data-ref="5.2">Identifying a student is the cheap half; the credit still has to be applied to their record to count.</span></div></div></li></ol></div><div class="cb-fbox"><header><h4>2026–2028 College Implementation Funding</h4><span class="cb-tag"><a class="mk-n" href="#c6"><span class="mk-sr">Change </span>6</a><span class="mk-p" data-ref="6.1">allocation cap</span></span></header><div class="cb-fbig">$150,000</div><div class="cb-lab"><span class="mk-p" data-ref="6.2">What this college receives is driven by <b>its own CPL results, as they happen</b>: the measures MAP records count toward this figure. It is modeled, and the model is under active revision.</span></div><ul class="cb-flags"><li><a class="mk-n" href="#c7"><span class="mk-sr">Change </span>7</a><span class="mk-p" data-ref="7.1">At the <b>$150,000 base award</b> — this institution's proportional share came out below the base, so it is brought up to it, and the base award is its allocation.</span></li><li><a class="mk-n" href="#c8"><span class="mk-sr">Change </span>8</a><span class="mk-p" data-ref="8.1"><b>Participation requirements are outstanding</b> — CPL Coordinator assigned and primary CPL contact listed in MAP and the college public CPL Landing Page configured. and Local confirmation on file by 2026-11-01. The cap is unchanged and the funding rolls forward; the college receives its demonstrated funding once it confirms.</span></li></ul><div class="cb-note cb-floor"><a class="mk-n" href="#c9"><span class="mk-sr">Change </span>9</a><span class="mk-p" data-ref="9.1"><b>Noncredit share: $8,611</b> of the combined award above, set by this institution's own noncredit FTES and restricted to the noncredit measures, so only noncredit results count toward it.</span></div><div class="cb-prios"><div class="cb-plab"><a class="mk-n" href="#c10"><span class="mk-sr">Change </span>10</a><span class="mk-p" data-ref="10.1">What counts toward it</span></div><div class="cb-prow"><div class="cb-whead"><b>Access</b><span class="v">$70,695</span></div><div class="cb-ptarget">Your target: <b>20 FTES</b> · <a class="mk-n" href="#c11"><span class="mk-sr">Change </span>11</a><span class="mk-p" data-ref="11.1">Applied CPL Units (FTES) originating from either CPL Portal, College CPL Landing Page, or batch upload</span></div><details class="cb-strat"><summary><span class="mk-p" data-ref="10.2">8 steps the team suggests</span></summary><ol><li>Configure your College CPL Landing Page, including a CPL Request Email, and link or embed it on the college website</li><li>Convene a CPL strike team to work the requests, opportunities, and any backlog--use CPL funding to support reassign time, special projects, overtime, workgroups, etc.</li><li>Develop procedures to obtain and batch upload CCCApply authorized JSTs for every enrolled military student and award credit</li><li>Adopt, adapt, create credit recommendations for current and prospective students</li><li>Find your top 15 ACE credit recommendations for enrolled veterans and route them to faculty for articulation and award</li><li>Process all CPL petitions and requests from the College CPL Landing Page, ensuring that essential outcomes data is credited</li><li>Create high-school articulated course exhibits in MAP and batch upload previous two year's of awarded students to MAP</li><li>List CPL on program pathway maps, flyers, and the program review process and link from your College CPL Landing Page</li></ol></details></div><div class="cb-prow"><div class="cb-whead"><b>Completion</b><span class="v">$70,695</span></div><div class="cb-ptarget">Your target: <b>20 FTES</b> · <span class="mk-p" data-ref="11.2">Transcribed CPL units (FTES) for students  with Counselor step checked</span></div><details class="cb-strat"><summary><span class="mk-p" data-ref="10.3">6 steps the team suggests</span></summary><ol><li>Review your CPL Administrative Procedure and remove barriers to access and completion</li><li>Make CPL screening part of student onboarding and ed planning process (Ed. Code 78093.2(b)(1)).</li><li>Act on all JST credit recommendations for enrolled service members and award course credit for Basic Training<div class="cb-d">We hold no figure for this college — that is not the same as zero.</div></li><li>Batch upload CPL recipients to MAP from Fall 2024 onward and ensure that the Counselor and Transcribed steps are checked provided they met with a counselor. Include AP, IB, CLEP, high-school articulated credit by exam, noncredit mirror courses, basic training credit, and elective and GE Area CPL previously waived but never transcribed.</li><li>Rely on your CPL Landing Page and/or CreditforBeingYou.org to serve as your automated CPL screening and petition procedure.</li><li>Check in MAP for each student the Counselor and Transcribe steps</li></ol></details></div></div><div class="cb-lab" style="margin-top:8px;"><a class="mk-n" href="#c12"><span class="mk-sr">Change </span>12</a><span class="mk-p" data-ref="12.1">Reaching a target qualifies the college for the <b>whole</b> share, and partial progress qualifies it for a proportional part, so there is no cliff to miss.</span></div></div></div><div class="cb-next"><div class="cb-plab">Do this next</div><ul><li><a class="mk-n" href="#c13"><span class="mk-sr">Change </span>13</a><span class="mk-p" data-ref="13.2"><b>For the seed funding:</b> Adopt or adapt the statewide credit recommendations — the outcome with the most ground still to cover.</span></li></ul></div><div class="cb-note"><a class="mk-n" href="#c14"><span class="mk-sr">Change </span>14</a><span class="mk-p" data-ref="14.1">Both figures come from the same model as the institution table. Choose All institutions for every institution's full detail.</span></div></div></div></div></details></section>
+</div>
+<p class="mk-fine">The chooser, the view switch and Save as PDF work in COBI only. The steps under Access and
+Completion open here as they do in COBI; their wording is the team's tab text and is unchanged in this round.</p>
+<h2 class="mk-changes-h" id="changes">The changes</h2>
+<p class="mk-changes-sub">Each card arrives set to Use the revision. Click into any revised line to reword it; the
+view above follows what you type. <span id="mk-edits-state" aria-live="polite"></span></p>
+<div class="mk-grid">
+<article class="card mk-card" id="c1" aria-labelledby="c1-h"><h3 id="c1-h"><span class="mk-cn">1</span> Introduction, when My CPL Funding is chosen</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl"></span>The Dashboard lists the potential funding and FTES for each institution. Total Funds is its max award: maximum funding to be awarded based on measurable outcomes and allocated as credit and noncredit subtotals, shown as Max CR Funds and Max NC Funds. The Curr (current) columns show the funding qualifying so far. The numbered pie before each name shows which of the three minimum conditions the institution meets, and a star marks the third, the Veteran Star. Click an institution to see its conditions and each priority&#x27;s maximum and actual FTES and funding.</span></dd><dt>Why</dt><dd>The paragraph above the chooser describes the institution table: Total Funds, the Curr columns, the pie, and clicking a row. None of those appear in this view. Under All institutions your Sept. 28 text stays as it is.</dd><dt>It might be wrong if</dt><dd>you would rather this view carry no introduction, since the chooser already tells the reader what to do.</dd></dl><div class="reply" data-item="1" data-ref="my-cpl-funding#1" data-title="Introduction, when My CPL Funding is chosen" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-edit" data-ref="1.1" data-item="1">My CPL Funding shows one institution&#x27;s seed grant and implementation funding, with the outcomes MAP tracks for each. Choose an institution, or choose a district to see each of its institutions.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 1"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-1">Notes for the session</label><textarea id="note-1" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c2" aria-labelledby="c2-h"><h3 id="c2-h"><span class="mk-cn">2</span> Seed grant: the tag and the opening</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl">Tag</span>ESS 25-82 · distributed Spring 2026</span><span class="mk-line"><span class="mk-lbl">Opening</span>Received. Must be fully expended by June 30, 2028. It was directed at the three priority outcomes below — progress on them is tracked through MAP, as ESS 25-82 specifies. These are not a compliance determination.</span></dd><dt>Why</dt><dd>Each sentence names its actor: the college received the grant and expends it, its chief instructional officer certified the commitment, and MAP tracks progress. The certification wording is ESS 25-82&#x27;s own. Calling the marks progress on a commitment says what they are, so the compliance sentence drops (your Sept. 16 and 22 rulings). The tag gives the date to the sentence, and spring takes the style guide&#x27;s lowercase.</dd><dt>It might be wrong if</dt><dd>the Chancellor&#x27;s Office wants the compliance point said outright. The paragraph would then end: The marks below report progress.</dd></dl><div class="reply" data-item="2" data-ref="my-cpl-funding#2" data-title="Seed grant: the tag and the opening" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-lbl">Tag</span><span class="mk-edit" data-ref="2.1" data-item="2">ESS 25-82</span></span><span class="mk-line"><span class="mk-lbl">Opening</span><span class="mk-edit" data-ref="2.2" data-item="2">The college received this grant in spring 2026 and has until June 30, 2028, to expend it. Under ESS 25-82, its chief instructional officer certified the college&#x27;s commitment to three priority outcomes. MAP tracks progress on each.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 2"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-2">Notes for the session</label><textarea id="note-2" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c3" aria-labelledby="c3-h"><h3 id="c3-h"><span class="mk-cn">3</span> Seed outcome 1, the veterans&#x27; JSTs</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl">Outcome</span>Upload a JST for every enrolled veteran</span><span class="mk-line"><span class="mk-lbl">Status line</span>Veteran Star met — ≥75% of MIS-reported enrolled veterans have a JST uploaded in MAP</span><span class="mk-line"><span class="mk-lbl">Second line</span>Every JST uploaded creates a Student CPL Plan — that is the step that puts a veteran&#x27;s credit in front of somebody.</span></dd><dt>Why</dt><dd>JST is spelled out once, as the style guide asks of an acronym on first use. Words replace the greater-than-or-equal sign, and the Chancellor&#x27;s Office replaces MIS. The line keeps the Veteran Star&#x27;s 75% bar in view, since ESS 25-82 asks for every enrolled veteran. The second line says what a Student CPL Plan records, in the CPL Initiative report&#x27;s own terms, with the veteran as the subject.</dd><dt>It might be wrong if</dt><dd>colleges know this measure as MIS-reported veterans, and the plainer wording drops a term they use.</dd></dl><div class="reply" data-item="3" data-ref="my-cpl-funding#3" data-title="Seed outcome 1, the veterans&#x27; JSTs" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-lbl">Outcome</span><span class="mk-edit" data-ref="3.1" data-item="3">Upload a Joint Services Transcript (JST) for every enrolled veteran</span></span><span class="mk-line"><span class="mk-lbl">Status line</span><span class="mk-edit" data-ref="3.2" data-item="3">JSTs in MAP cover at least 75% of the enrolled veterans the college reports to the Chancellor&#x27;s Office, which meets the Veteran Star.</span></span><span class="mk-line"><span class="mk-lbl">Second line</span><span class="mk-edit" data-ref="3.3" data-item="3">Each JST uploaded creates a Student CPL Plan, which documents each credit the veteran is offered, accepts, and has transcribed.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 3"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-3">Notes for the session</label><textarea id="note-3" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c4" aria-labelledby="c4-h"><h3 id="c4-h"><span class="mk-cn">4</span> Seed outcome 2, the statewide recommendations</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl"></span>no local articulation yet against a statewide credit recommendation</span></dd><dt>Why</dt><dd>The line says what meets the outcome and gives the number to work from. The Not yet mark already carries the state, so the line no longer repeats it in the negative.</dd><dt>It might be wrong if</dt><dd>articulation officers phrase it another way; a local course articulated to a statewide recommendation is the alternative.</dd></dl><div class="reply" data-item="4" data-ref="my-cpl-funding#4" data-title="Seed outcome 2, the statewide recommendations" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-edit" data-ref="4.1" data-item="4">Articulating any one of the 84 statewide credit recommendations in MAP to a local course meets this outcome.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 4"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-4">Notes for the session</label><textarea id="note-4" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c5" aria-labelledby="c5-h"><h3 id="c5-h"><span class="mk-cn">5</span> Seed outcome 3, the eligible students</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl">Status line</span>980 students identified as CPL-eligible in MAP</span><span class="mk-line"><span class="mk-lbl">Second line</span>Identifying a student is the cheap half; the credit still has to be applied to their record to count.</span></dd><dt>Why</dt><dd>Active voice, and the metaphor (&quot;the cheap half&quot;) goes. The second line ties the step to the funding it counts toward: Access measures every applied CPL unit since your Sept. 30 save.</dd><dt>It might be wrong if</dt><dd>you would rather keep the seed outcomes apart from the implementation funding in the reader&#x27;s mind.</dd></dl><div class="reply" data-item="5" data-ref="my-cpl-funding#5" data-title="Seed outcome 3, the eligible students" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-lbl">Status line</span><span class="mk-edit" data-ref="5.1" data-item="5">The college has identified 980 students in MAP as eligible for CPL.</span></span><span class="mk-line"><span class="mk-lbl">Second line</span><span class="mk-edit" data-ref="5.2" data-item="5">Next, apply each student&#x27;s credit in MAP. Every applied unit also counts toward Access in the implementation funding.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 5"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-5">Notes for the session</label><textarea id="note-5" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c6" aria-labelledby="c6-h"><h3 id="c6-h"><span class="mk-cn">6</span> Implementation funding: the tag and the opening</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl">Tag</span>allocation cap</span><span class="mk-line"><span class="mk-lbl">Opening</span>What this college receives is driven by its own CPL results, as they happen: the measures MAP records count toward this figure. It is modeled, and the model is under active revision.</span></dd><dt>Why</dt><dd>The dashboard above defines Total Funds as the max award, in your words of Sept. 1, and cap names the $400,000 ceiling, so &quot;allocation cap&quot; gave &quot;cap&quot; two meanings on one page. The opening keeps your Aug. 22 ask for a positive statement that funding follows CPL outcomes as MAP records them, now with the model as the actor and without the bold or the aside. FTES is spelled out once. The sentence on active revision drops, since you chose Scenario 2 on Sept. 30.</dd><dt>It might be wrong if</dt><dd>the model still waits on the Chancellor. A sentence would then stay: The Chancellor&#x27;s Office may revise the model before it releases the guidance memo. Your word for the video on Sept. 25, &quot;maximum allocation,&quot; is the other candidate for the tag.</dd></dl><div class="reply" data-item="6" data-ref="my-cpl-funding#6" data-title="Implementation funding: the tag and the opening" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-lbl">Tag</span><span class="mk-edit" data-ref="6.1" data-item="6">max award</span></span><span class="mk-line"><span class="mk-lbl">Opening</span><span class="mk-edit" data-ref="6.2" data-item="6">The max award is the most the college can receive in 2026-27 and 2027-28. Each day the model reads the college&#x27;s CPL outcomes in MAP and measures them in full-time equivalent students (FTES). The priority outcomes below count toward the award.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 6"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-6">Notes for the session</label><textarea id="note-6" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c7" aria-labelledby="c7-h"><h3 id="c7-h"><span class="mk-cn">7</span> The base award line</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl"></span>At the $150,000 base award — this institution&#x27;s proportional share came out below the base, so it is brought up to it, and the base award is its allocation.</span></dd><dt>Why</dt><dd>The model is the actor, &quot;brought up to&quot; is the sector term from your vocabulary list, and the closing clause that restated the point drops (Sept. 22). It reads as a paragraph, without the bullet or the bold.</dd><dt>It might be wrong if</dt><dd>readers need a sentence that ties the two together: The base award is the college&#x27;s max award.</dd></dl><div class="reply" data-item="7" data-ref="my-cpl-funding#7" data-title="The base award line" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-edit" data-ref="7.1" data-item="7">The college&#x27;s proportional share of the funding falls below the $150,000 base award, so the model brings it up to the base.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 7"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-7">Notes for the session</label><textarea id="note-7" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c8" aria-labelledby="c8-h"><h3 id="c8-h"><span class="mk-cn">8</span> The minimum conditions line</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl"></span>Participation requirements are outstanding — CPL Coordinator assigned and primary CPL contact listed in MAP and the college public CPL Landing Page configured. and Local confirmation on file by 2026-11-01. The cap is unchanged and the funding rolls forward; the college receives its demonstrated funding once it confirms.</span></dd><dt>Why</dt><dd>The line uses your term, minimum conditions, and counts all three (Sept. 28), named as the dashboard&#x27;s pie and drill-in name them. Today it lists two, reads &quot;configured. and Local,&quot; and says the college receives its funding once it confirms, which leaves out the coordinator. The $71,000 is the figure the College Dashboard shows in gray on Coastline&#x27;s row under your Sept. 29 ruling, at the public $1,000 rounding. The last sentence is yours: funding stays with the college, and the full funding is available within the two-year window (Sept. 25 and 29).</dd><dt>It might be wrong if</dt><dd>you would rather the block show no current figure until the conditions are met.</dd></dl><div class="reply" data-item="8" data-ref="my-cpl-funding#8" data-title="The minimum conditions line" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-edit" data-ref="8.1" data-item="8">Funding waits on the three minimum conditions. The college meets one, veteran JSTs at 75%, and two remain: a CPL coordinator on file in MAP, and the college&#x27;s confirmation by Nov. 1, 2026. Its outcomes so far demonstrate $71,000, which the college receives once it meets all three. The full max award stays available within the two-year window.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 8"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-8">Notes for the session</label><textarea id="note-8" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c9" aria-labelledby="c9-h"><h3 id="c9-h"><span class="mk-cn">9</span> The noncredit share</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl"></span>Noncredit share: $8,611 of the combined award above, set by this institution&#x27;s own noncredit FTES and restricted to the noncredit measures, so only noncredit results count toward it.</span></dd><dt>Why</dt><dd>Active voice with the model as the actor. &quot;Restricted&quot; is the sector term from your list, so the clause after it, which said the same thing again, drops.</dd><dt>It might be wrong if</dt><dd>a noncredit dean needs it said outright that only noncredit outcomes count toward this share.</dd></dl><div class="reply" data-item="9" data-ref="my-cpl-funding#9" data-title="The noncredit share" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-edit" data-ref="9.1" data-item="9">Noncredit share: $8,611 of the max award. The model sets this share from the college&#x27;s noncredit FTES and restricts it to noncredit outcomes.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 9"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-9">Notes for the session</label><textarea id="note-9" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c10" aria-labelledby="c10-h"><h3 id="c10-h"><span class="mk-cn">10</span> Labels in the priority list</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl">Heading</span>What counts toward it</span><span class="mk-line"><span class="mk-lbl">Access steps</span>8 steps the team suggests</span><span class="mk-line"><span class="mk-lbl">Completion steps</span>6 steps the team suggests</span></dd><dt>Why</dt><dd>&quot;Priority Outcomes&quot; is the tab&#x27;s own name for these, and it replaces an &quot;it&quot; with no clear antecedent. The steps name who suggests them, since a college reader does not know &quot;the team.&quot; The style guide spells out one through nine.</dd><dt>It might be wrong if</dt><dd>&quot;What counts toward it&quot; was chosen to carry the counts-toward vocabulary.</dd></dl><div class="reply" data-item="10" data-ref="my-cpl-funding#10" data-title="Labels in the priority list" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-lbl">Heading</span><span class="mk-edit" data-ref="10.1" data-item="10">Priority outcomes</span></span><span class="mk-line"><span class="mk-lbl">Access steps</span><span class="mk-edit" data-ref="10.2" data-item="10">Eight steps the CPL Initiative suggests</span></span><span class="mk-line"><span class="mk-lbl">Completion steps</span><span class="mk-edit" data-ref="10.3" data-item="10">Six steps the CPL Initiative suggests</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 10"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-10">Notes for the session</label><textarea id="note-10" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c11" aria-labelledby="c11-h"><h3 id="c11-h"><span class="mk-cn">11</span> What each priority measures (tab text you type)</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl">Access</span>Applied CPL Units (FTES) originating from either CPL Portal, College CPL Landing Page, or batch upload</span><span class="mk-line"><span class="mk-lbl">Completion</span>Transcribed CPL units (FTES) for students  with Counselor step checked</span></dd><dt>Why</dt><dd>Access has measured every applied unit since your Sept. 30 save, so the origins listed today describe the old measure. The Access wording is your example from sheet 6, card 7. Both are tab text: you type them on the tab in both scenarios, and the tab, the explainer and My College read them from there.</dd><dt>It might be wrong if</dt><dd>you want each measure to name the MAP step it counts, such as Applied to CPL Plan.</dd></dl><div class="reply" data-item="11" data-ref="my-cpl-funding#11" data-title="What each priority measures (tab text you type)" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-lbl">Access</span><span class="mk-edit" data-ref="11.1" data-item="11">Applied CPL units (FTES) in MAP</span></span><span class="mk-line"><span class="mk-lbl">Completion</span><span class="mk-edit" data-ref="11.2" data-item="11">Transcribed CPL units (FTES) for students with the Counselor step checked in MAP</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 11"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-11">Notes for the session</label><textarea id="note-11" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c12" aria-labelledby="c12-h"><h3 id="c12-h"><span class="mk-cn">12</span> How progress qualifies</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl"></span>Reaching a target qualifies the college for the whole share, and partial progress qualifies it for a proportional part, so there is no cliff to miss.</span></dd><dt>Why</dt><dd>The metaphor and the bold go. &quot;Amount&quot; replaces &quot;share,&quot; because &quot;share&quot; already names the noncredit share and the proportional share in this box.</dd><dt>It might be wrong if</dt><dd>readers know these figures as shares from the explainer.</dd></dl><div class="reply" data-item="12" data-ref="my-cpl-funding#12" data-title="How progress qualifies" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-edit" data-ref="12.1" data-item="12">Progress toward each target qualifies the college for the same proportion of the amount beside it, and reaching the target qualifies it for the full amount.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 12"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-12">Notes for the session</label><textarea id="note-12" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c13" aria-labelledby="c13-h"><h3 id="c13-h"><span class="mk-cn">13</span> Do this next</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl">Implementation step</span><em>Not shown today.</em></span><span class="mk-line"><span class="mk-lbl">Seed step</span>For the seed funding: Adopt or adapt the statewide credit recommendations — the outcome with the most ground still to cover.</span></dd><dt>Why</dt><dd>All funding waits on the minimum conditions, so they lead, with the date, and each step is one action. The metaphor and the bold go. Today the implementation step never appears: the code looks for the steps under a field name the briefing does not carry, and the port fixes that too.</dd><dt>It might be wrong if</dt><dd>the seed outcome should lead, since that grant is already in hand.</dd></dl><div class="reply" data-item="13" data-ref="my-cpl-funding#13" data-title="Do this next" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-lbl">Implementation step</span><span class="mk-edit" data-ref="13.1" data-item="13">For the implementation funding: name the college&#x27;s CPL coordinator in MAP, and confirm the college&#x27;s participation by Nov. 1, 2026, with the Confirm button on its row under All institutions.</span></span><span class="mk-line"><span class="mk-lbl">Seed step</span><span class="mk-edit" data-ref="13.2" data-item="13">For the seed funding: adopt or adapt one of the 84 statewide credit recommendations in MAP.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 13"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-13">Notes for the session</label><textarea id="note-13" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c14" aria-labelledby="c14-h"><h3 id="c14-h"><span class="mk-cn">14</span> The closing note</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl"></span>Both figures come from the same model as the institution table. Choose All institutions for every institution&#x27;s full detail.</span></dd><dt>Why</dt><dd>The $50,000 seed grant is a fixed ESS 25-82 grant, so both figures credited the model with one it does not compute.</dd><dt>It might be wrong if</dt><dd>you want the note to point readers to the institution table by name.</dd></dl><div class="reply" data-item="14" data-ref="my-cpl-funding#14" data-title="The closing note" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-edit" data-ref="14.1" data-item="14">The funding model computes the implementation figures above, as it does for every institution under All institutions.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 14"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-14">Notes for the session</label><textarea id="note-14" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c15" aria-labelledby="c15-h"><h3 id="c15-h"><span class="mk-cn">15</span> The PDF&#x27;s opening lines</h3><dl><dt>Today</dt><dd class="mk-today"><span class="mk-line"><span class="mk-lbl"></span>CPL Implementation Funding, Scenario 2, as of 2026-10-01. The funding model computes every figure; the page reads it live.</span></dd><dt>Why</dt><dd>A college reading the PDF has no use for scenario names. The date takes the style guide&#x27;s form, and the PDF spells out CPL and MAP once, since it stands alone. &quot;Every figure&quot; and &quot;reads it live&quot; do not hold for the seed grant or for paper.</dd><dt>It might be wrong if</dt><dd>the Chancellor&#x27;s Office wants the scenario named on paper for version control. The line would then read: as modeled under Scenario 2.</dd></dl><div class="reply" data-item="15" data-ref="my-cpl-funding#15" data-title="The PDF&#x27;s opening lines" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text"><span class="mk-line"><span class="mk-edit" data-ref="15.1" data-item="15">Credit for prior learning (CPL) funding, as of Oct. 1, 2026. The funding model computes the implementation figures each day from the Mapping Articulated Pathways (MAP) platform.</span></span></span></p><div class="reply-row" role="group" aria-label="Your reply to item 15"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-15">Notes for the session</label><textarea id="note-15" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+<article class="card mk-card" id="c16" aria-labelledby="c16-h"><h3 id="c16-h"><span class="mk-cn">16</span> The same block&#x27;s other states</h3><dl><dt>The lines</dt><dd class="mk-today"><details class="mk-others"><summary>Show the 18 lines, today and revised</summary><ul class="mk-olist"><li class="mk-orow"><span class="mk-olbl">A declined seed grant</span><span class="mk-otoday"><span class="mk-otag">Today</span> This college declined the grant pending further review. That is a decision on record, not a missed payment.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.1" data-item="16">The college declined this grant pending further review.</span></span></li><li class="mk-orow"><span class="mk-olbl">An institution at the cap</span><span class="mk-otoday"><span class="mk-otag">Today</span> At the $400,000 cap — this institution&#x27;s proportional share came out above the maximum, so it is held there and the difference re-splits across the other colleges. Its performance targets scale down with it, so it qualifies for funding at the same rate as every other college above the minimum.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.2" data-item="16">The college&#x27;s proportional share of the funding exceeds the $400,000 cap, so the model holds it at the cap and redirects the difference to the other colleges. Its targets scale to the cap, so it qualifies for funding at the same rate as every college above the base.</span></span></li><li class="mk-orow"><span class="mk-olbl">While the minimum conditions load</span><span class="mk-otoday"><span class="mk-otag">Today</span> Participation is recorded but not yet confirmed.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.3" data-item="16">The minimum conditions are still loading.</span></span></li><li class="mk-orow"><span class="mk-olbl">A noncredit institution&#x27;s third condition</span><span class="mk-otoday"><span class="mk-otag">Today</span> Noncredit certificates posted as exhibits in MAP (replaces the veteran-JST gate for the noncredit-only campuses — N1 a)</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.4" data-item="16">noncredit certificates posted in MAP</span></span></li><li class="mk-orow"><span class="mk-olbl">The other first-condition parts</span><span class="mk-otoday"><span class="mk-otag">Today</span> CPL Coordinator assigned and primary CPL contact listed in MAP and the college public CPL Landing Page configured.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.5" data-item="16">a primary CPL contact on file in MAP; the college&#x27;s CPL landing page configured</span></span></li><li class="mk-orow"><span class="mk-olbl">A district&#x27;s line (Coast CCD)</span><span class="mk-otoday"><span class="mk-otag">Today</span> 3 institutions · max award $592,959 in total · current total $0. Each institution&#x27;s own funding follows.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.6" data-item="16">Three institutions, with a combined max award of $592,959 and a current total of $0. Each institution&#x27;s funding follows.</span></span></li><li class="mk-orow"><span class="mk-olbl">The model did not load</span><span class="mk-otoday"><span class="mk-otag">Today</span> The funding model did not load, so this page cannot show an allocation for this college yet. Reload to read it.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.7" data-item="16">The funding model did not load. Reload the page to see the college&#x27;s funding.</span></span></li><li class="mk-orow"><span class="mk-olbl">No allocation</span><span class="mk-otoday"><span class="mk-otag">Today</span> No allocation modeled for this college yet.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.8" data-item="16">The funding model holds no allocation for this college.</span></span></li><li class="mk-orow"><span class="mk-olbl">My College, an institution off the roster</span><span class="mk-otoday"><span class="mk-otag">Today</span> [Institution] is not on the 115-college funding roster. The noncredit institutions are funded through the noncredit carve-out, a separate mechanism from the college allocation below, so this institution has its own route to funding.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.9" data-item="16">[Institution] is outside the College Implementation Funding roster.</span></span></li><li class="mk-orow"><span class="mk-olbl">Seed outcomes while MAP loads</span><span class="mk-otoday"><span class="mk-otag">Today</span> veteran/JST feed not loaded yet (and two lines like it)</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.10" data-item="16">Status loading.</span></span></li><li class="mk-orow"><span class="mk-olbl">Veteran Star not reached</span><span class="mk-otoday"><span class="mk-otag">Today</span> below the Veteran Star bar (≥75% of enrolled veterans with a JST in MAP)</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.11" data-item="16">The Veteran Star needs JSTs in MAP for at least 75% of the enrolled veterans the college reports to the Chancellor&#x27;s Office.</span></span></li><li class="mk-orow"><span class="mk-olbl">No enrolled veterans on record</span><span class="mk-otoday"><span class="mk-otag">Today</span> no MIS-reported enrolled veterans to measure against (or not in the veteran feed)</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.12" data-item="16">The Chancellor&#x27;s Office records no enrolled veterans for the college.</span></span></li><li class="mk-orow"><span class="mk-olbl">Statewide recommendation met</span><span class="mk-otoday"><span class="mk-otag">Today</span> articulates at least one of the 84 statewide credit recommendations in MAP</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.13" data-item="16">The college articulates at least one of the 84 statewide credit recommendations in MAP.</span></span></li><li class="mk-orow"><span class="mk-olbl">Eligible and transcribed students</span><span class="mk-otoday"><span class="mk-otag">Today</span> [N] students identified as CPL-eligible · [M] with transcribed CPL in MAP</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.14" data-item="16">The college has identified [N] students in MAP as eligible for CPL, and [M] have CPL on their transcripts.</span></span></li><li class="mk-orow"><span class="mk-olbl">Fewer than 10 students</span><span class="mk-otoday"><span class="mk-otag">Today</span> activity present but fewer than 10 students (privacy-suppressed)</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.15" data-item="16">MAP shows CPL activity for fewer than 10 students, and the page withholds counts under 10 to protect student privacy.</span></span></li><li class="mk-orow"><span class="mk-olbl">No CPL activity yet</span><span class="mk-otoday"><span class="mk-otag">Today</span> no CPL activity recorded in MAP yet</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.16" data-item="16">Identifying an eligible student in MAP, or transcribing CPL there, meets this outcome.</span></span></li><li class="mk-orow"><span class="mk-olbl">My College, the statewide recommendations</span><span class="mk-otoday"><span class="mk-otag">Today</span> The By CPL type section below ranks your best candidates by how many peer colleges already run them.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.17" data-item="16">The By CPL type section below ranks the recommendations by how many other colleges have adopted each one.</span></span></li><li class="mk-orow"><span class="mk-olbl">My College, the closing note</span><span class="mk-otoday"><span class="mk-otag">Today</span> Both figures come from the Implementation Funding tab&#x27;s model, not from this page — open it for the full derivation and the year split.</span><span class="mk-orev"><span class="mk-otag">Revised</span> <span class="mk-edit" data-ref="16.18" data-item="16">The Implementation Funding tab&#x27;s model computes the implementation figures. Open the tab for the full derivation and the year split.</span></span></li></ul></details></dd><dt>Why</dt><dd>The same rules, applied to what this block says in other cases: a declined grant, an institution at the cap, a district, the loading and empty states, and My College&#x27;s own lines. Coastline shows none of them. On My College, the confirmation step points to the Implementation Funding tab.</dd><dt>It might be wrong if</dt><dd>any of these needs its own look; choose Later and name it in the note.</dd></dl><div class="reply" data-item="16" data-ref="my-cpl-funding#16" data-title="The same block&#x27;s other states" data-kind="item" data-parent="" data-default="revise"><p class="reply-rec"><span class="reply-rec-lbl">What I propose</span><span class="reply-rec-text">Revise all 18 lines as shown in the list above.</span></p><div class="reply-row" role="group" aria-label="Your reply to item 16"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="revise" aria-pressed="true">Use the revision</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep today&#x27;s</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-16">Notes for the session</label><textarea id="note-16" class="reply-note" rows="2" placeholder="A condition, other wording, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div></article>
+</div>
+<section class="submit" aria-labelledby="submit-h"><h2 id="submit-h">Done?</h2><p class="submit-note" id="submit-note">Every reply is saved as you make it. Press Complete when you have finished, and the session is told the sheet is done.</p><button type="button" class="submit-btn" id="submit-btn">Complete</button><p class="submit-state" id="submit-state" aria-live="polite"></p></section>
+</main>
+</div>
+<div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far"><span class="reply-count" id="reply-count">0 replied</span><span class="reply-outcome" id="reply-outcome"></span><span class="reply-where" id="reply-where"></span><button type="button" class="reply-chip reply-copy" id="reply-copy">Copy replies</button><details class="reply-show"><summary>Show the reply line</summary><textarea id="reply-line" class="reply-line" rows="4" readonly aria-label="The reply line, ready to paste"></textarea></details></div>
+
+<script>
+(function(){
+  "use strict";
+  var SHEET = "2026-10-01-my-cpl-funding-language";
+  var LS = "sheet-replies:" + SHEET;
+  var els = Array.prototype.slice.call(document.querySelectorAll(".reply[data-item]"));
+  if (!els.length) return;
+  var state = {};        // item -> {item, ref, title, v, note, fu, t}; always this page's own objects
+  var col = null;        // the artifact's shared store, once this view can reach it
+  var where = "local";   // "db" once the store answers
+  var pending = {};      // item -> "saving" | "failed" | ""
+  var saved = {};        // item -> the `t` the store is known to hold
+
+  // What a snapshot delivers is FROZEN (the store's contract: "clone a body
+  // before editing it for a write"). The first version adopted the echoed body
+  // as state and assigned into it; outside strict mode the assignment is
+  // silently ignored, so from an item's first save on, every click painted
+  // nothing and wrote the unchanged document back (Sam, 2026-09-05: "I click
+  // Follow Up and it doesn't turn blue but does say response was saved").
+  // copy() means state is never the store's object; strict mode makes any
+  // such write throw instead of pass.
+  function copy(r){ var o = {}; if (r) for (var k in r) if (Object.prototype.hasOwnProperty.call(r, k)) o[k] = r[k]; return o; }
+
+  function read(){ try { var s = JSON.parse(localStorage.getItem(LS) || "{}"); if (s && typeof s === "object") state = s; } catch (e) {} }
+  function keep(){ try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+  function byItem(item){ for (var i = 0; i < els.length; i++) if (els[i].getAttribute("data-item") === item) return els[i]; return null; }
+  function rec(item){
+    if (state[item]) return copy(state[item]);
+    var el = byItem(item);
+    return { item: item, ref: el ? el.getAttribute("data-ref") : "", title: el ? el.getAttribute("data-title") : "", v: "", note: "", fu: false };
+  }
+  function onList(inp, v){
+    var id = inp.getAttribute("list"), dl = id ? document.getElementById(id) : null;
+    if (!dl) return true;
+    var os = dl.getElementsByTagName("option");
+    for (var i = 0; i < os.length; i++) if ((os[i].value || "") === v) return true;
+    return false;
+  }
+  // ⚠️ A PICKER VALUE COUNTS. Without this, choosing a discipline and nothing
+  // else would read as an untouched item and be handed over as the proposal.
+  function empty(r){
+    if (!r) return true;
+    if (r.v || r.fu || r.note) return false;
+    for (var k in r) if (k.indexOf("pick_") === 0 && r[k]) return false;
+    return !(r.subject || r.discipline);
+  }
+  // ⚠️ TWO STATES PER ITEM, AND THEY MUST NEVER COLLAPSE (Sam's opt-out, 2026-09-21).
+  // An item CARRYING THE PROPOSAL has no stored reply; an item a person RULED ON
+  // has one. They look the same on screen — that is the point of opt-out — so
+  // everything that counts, reports or hands over reads `state`, never the
+  // painted chip. Collapsing them is how a sheet stopped at item 30 would hand
+  // over 21 verdicts nobody read.
+  function dflt(item){ var el = byItem(item); return el ? (el.getAttribute("data-default") || "") : ""; }
+  function verdict(item){ var r = state[item]; return r && r.v ? r.v : dflt(item); }
+  function ruled(item){ var r = state[item]; return !!(r && !empty(r)); }
+  function chipWord(el, v){
+    var bs = el ? el.querySelectorAll(".reply-chip[data-v]") : [];
+    for (var i = 0; i < bs.length; i++) if (bs[i].getAttribute("data-v") === v) return bs[i].textContent;
+    return v;
+  }
+  function words(el, r){
+    var w = [];
+    if (r.v) w.push(chipWord(el, r.v));
+    if (r.fu) w.push("follow up");
+    if (r.note) w.push("a note");
+    return w.join(", ");
+  }
+  function stateWords(el, item, r){
+    if (empty(r)) {
+      var d = dflt(item);
+      // Say it is the proposal and not an answer, or the reader cannot tell
+      // a chip they set from one that was set for them.
+      return d ? "Proposed: " + chipWord(el, d) + ". Change it if needed — it stands as it is." : "";
+    }
+    if (pending[item] === "saving") return "Saving…";
+    if (pending[item] === "failed") return "Could not save to the sheet; kept in this browser. Use Copy replies.";
+    var w = words(el, r);
+    // Undo is the same chip pressed again -- say so, or it is not discoverable.
+    var undo = r.v ? " Press it again to undo." : "";
+    return where === "db" ? "Your call: " + w + "." + undo
+                          : "Your call, in this browser only: " + w + ". Use Copy replies to send it." + undo;
+  }
+  function paint(el){
+    if (!el) return;
+    var item = el.getAttribute("data-item"), r = state[item] || {};
+    var shown = r.v || (empty(r) ? dflt(item) : "");
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.setAttribute("aria-pressed", shown && shown === b.getAttribute("data-v") ? "true" : "false");
+    });
+    var fu = el.querySelector(".reply-fu"); if (fu) fu.setAttribute("aria-pressed", r.fu ? "true" : "false");
+    // A verdict that lives behind Other has to be VISIBLE once it is chosen --
+    // a selected chip inside a hidden row is a reply the reader cannot see, the
+    // same failure as the chip that painted white on white.
+    var moreRow = el.querySelector(".reply-more-row"), moreBtn = el.querySelector(".reply-more");
+    if (moreRow && moreBtn && r.v && moreRow.querySelector('.reply-chip[data-v="' + r.v + '"]')) {
+      moreRow.hidden = false; moreBtn.setAttribute("aria-expanded", "true");
+    }
+    var note = el.querySelector(".reply-note");
+    if (note && document.activeElement !== note && (r.note || "") !== note.value) note.value = r.note || "";
+    var st = el.querySelector(".reply-state"); if (st) st.textContent = stateWords(el, item, r);
+  }
+  function paintAll(){ els.forEach(paint); bar(); }
+  // ⚠️ QUALITY GOES IN THE SCORE, NEVER CLICKS (Sam, 2026-09-20, agreeing with
+  // the pushback: "Good pushback--agree!"). A reversal is a verdict REPLACED by
+  // a different verdict -- the sixteen flips on the Jev sheet were the signal
+  // that the proposal was not being read. Clearing a chip is an undo and is not
+  // a reversal; neither is a first answer. The count rides with the reply, so
+  // the session reads which items the reader changed their mind on.
+  function set(item, patch){
+    var r = rec(item), was = r.v || "";
+    for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) r[k] = patch[k];
+    if (Object.prototype.hasOwnProperty.call(patch, "v") && was && patch.v && patch.v !== was) {
+      r.flips = (r.flips || 0) + 1;
+      r.was = was;
+    }
+    r.t = new Date().toISOString();
+    r.by = "sam";                       // a stored reply is always a person's
+    // Undoing the last thing on an item returns it to CARRYING THE PROPOSAL,
+    // rather than leaving a stored reply with an empty verdict — which would
+    // read as a deliberate blank and is a different claim.
+    if (empty(r) && dflt(item)) { del(item); return; }
+    state[item] = r; keep();
+    paint(byItem(item)); bar(); push(item);
+  }
+  function del(item){
+    delete state[item]; keep();
+    if (col) { try { col.doc(item).delete(); } catch (e) {} }
+    paint(byItem(item)); bar();
+  }
+  function push(item){
+    if (!col) return;
+    var r = state[item]; if (!r) return;
+    var t = r.t;
+    pending[item] = "saving"; paint(byItem(item));
+    col.doc(item).set(copy(r)).then(function(){
+      // A newer change may have gone up meanwhile; its own callbacks settle it.
+      if (state[item] && state[item].t === t) { pending[item] = ""; saved[item] = t; }
+      paint(byItem(item)); bar();
+    }, function(){ pending[item] = "failed"; paint(byItem(item)); bar(); });
+  }
+
+  /* ── the bar: how many, where they are, the line to paste ── */
+  // ⚠️ SAM'S HIGH-WATER MARK (2026-09-22): "the last item showing some sort of
+  // input is an indicator that everything prior to it is good to go as is."
+  // It NARROWS "an item with no reply has no verdict" rather than replacing it:
+  // an untouched item BELOW the mark was read and agreed with, one ABOVE it was
+  // never reached, and both look identical in the store. The mark is the only
+  // thing that tells them apart, so it rides the paste line and the `done`
+  // record. Computed over every card in sheet order — a picker value, a note or
+  // a follow-up flag is "some sort of input" as much as a chip is.
+  function highWater(){
+    var mark = null, last = null;
+    els.forEach(function(el){
+      var item = el.getAttribute("data-item");
+      last = item;
+      if (!empty(state[item])) mark = item;
+    });
+    return { mark: mark, whole: mark !== null && mark === last };
+  }
+  // ⚠️ `hw` IS PASSED IN WHERE THE MARK MUST PREDATE THE CALLER'S OWN WRITES.
+  // Complete stores a reply for every as-proposed item, so a line built after
+  // that loop reports the whole sheet as reviewed no matter where the reader
+  // stopped. Measured live on 2026-09-22: a sheet completed with nothing ruled
+  // said "0 of 12 items your own call" and "reviewed through 12 (the whole
+  // sheet)" in the same sentence.
+  function line(hw){
+    var parts = [];
+    els.forEach(function(el){
+      var item = el.getAttribute("data-item"), r = state[item];
+      if (empty(r)) {
+        // An item carrying the proposal is reported AS the proposal, marked so
+        // — never as a verdict the reader gave.
+        var d = el.getAttribute("data-default");
+        if (d) parts.push(item + " " + d + " (as proposed)");
+        return;
+      }
+      // ⚠️ The provenance rides the PASTE LINE too. This line is the fallback
+      // when the send is refused, which is precisely the path where "he ruled
+      // on it" and "it rode the proposal" would otherwise become the same.
+      var s = item + " " + (r.v ? r.v : "(no verdict)") + (r.by === "default" ? " (as proposed)" : "");
+      if (r.fu) s += ", follow up";
+      if (r.note) s += " — “" + String(r.note).replace(/\s+/g, " ").trim() + "”";
+      parts.push(s);
+    });
+    var text = parts.length ? parts.join(" · ") : "No replies yet.";
+    var h = hw || highWater();
+    if (h.mark) text += " — reviewed through " + h.mark
+      + (h.whole ? " (the whole sheet)." : "; the items after it were not reached.");
+    return text;
+  }
+  // ⚠️ THE RUNNING TOTAL IS IN OUTCOME TERMS (Sam, 2026-09-20). What a sitting
+  // is worth is articulation rows collapsed and colleges reached, never clicks
+  // logged. Rows are this item's own and add up; COLLEGES REPEAT across items,
+  // so the ids are unioned -- a sum of per-item college counts would report a
+  // reach the sitting did not have, which is the one number a reader takes at
+  // face value. An item that carries neither stays out of the outcome clause
+  // rather than contributing a zero.
+  function outcome(){
+    var rows = 0, colleges = {}, any = false;
+    els.forEach(function(el){
+      if (empty(state[el.getAttribute("data-item")])) return;
+      var rv = parseInt(el.getAttribute("data-rows") || "0", 10);
+      if (rv > 0) { rows += rv; any = true; }
+      var ids = (el.getAttribute("data-reach") || "").split(/\s+/);
+      ids.forEach(function(id){ if (id) { colleges[id] = 1; any = true; } });
+    });
+    if (!any) return "";
+    var out = [], nc = Object.keys(colleges).length;
+    if (rows) out.push(rows + (rows === 1 ? " articulation row" : " articulation rows") + " settled");
+    if (nc) out.push(nc + (nc === 1 ? " college" : " colleges") + " reached");
+    return out.join(" · ");
+  }
+  function bar(){
+    var n = { item: [0, 0], entry: [0, 0], done: [0, 0] }, fu = 0, flips = 0;
+    els.forEach(function(el){
+      var k = el.getAttribute("data-kind") || "item"; if (!n[k]) n[k] = [0, 0];
+      var r = state[el.getAttribute("data-item")];
+      n[k][1]++; if (!empty(r)) n[k][0]++; if (r && r.fu) fu++;
+      if (r && r.flips) flips += r.flips;
+    });
+    var parts = [], proposed = 0;
+    els.forEach(function(el){
+      if ((el.getAttribute("data-kind") || "item") !== "item") return;
+      if (el.getAttribute("data-default") && !ruled(el.getAttribute("data-item"))) proposed++;
+    });
+    if (n.item[1]) parts.push(n.item[0] + " of " + n.item[1] + " items");
+    if (n.entry[1]) parts.push(n.entry[0] + " of " + n.entry[1] + " memories");
+    if (n.done[1]) parts.push(n.done[0] + " of " + n.done[1] + " retired rows");
+    var c = document.getElementById("reply-count");
+    if (c) c.textContent = parts.join(" · ") + " your call"
+      + (proposed ? " · " + proposed + " as proposed" : "")
+      + (fu ? " · " + fu + " to follow up" : "");
+    var o = document.getElementById("reply-outcome");
+    if (o) {
+      var text = outcome();
+      if (flips) text += (text ? " · " : "") + flips + (flips === 1 ? " changed" : " changed");
+      o.textContent = text;
+    }
+    var w = document.getElementById("reply-where");
+    if (w) w.textContent = where === "db"
+      ? "Replies save to this sheet; the session reads them from here."
+      : "Replies stay in this browser until you copy them into the session.";
+    var t = document.getElementById("reply-line"); if (t) t.value = line();
+  }
+  var copyBtn = document.getElementById("reply-copy");
+  if (copyBtn) copyBtn.addEventListener("click", function(){
+    var text = line(), done = function(ok){
+      copyBtn.textContent = ok ? "Copied" : "Select the line below and copy it";
+      setTimeout(function(){ copyBtn.textContent = "Copy replies"; }, 2200);
+      if (!ok) { var d = document.querySelector(".reply-show"); if (d) d.open = true; }
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      else done(false);
+    } catch (e) { done(false); }
+  });
+
+  /* ── wire each item ── */
+  els.forEach(function(el){
+    var item = el.getAttribute("data-item");
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.addEventListener("click", function(){
+        var v = b.getAttribute("data-v"), cur = state[item] && state[item].v;
+        set(item, { v: cur === v ? "" : v });          // the pressed chip clears on a second click
+      });
+    });
+    var fu = el.querySelector(".reply-fu");
+    if (fu) fu.addEventListener("click", function(){ set(item, { fu: !(state[item] && state[item].fu) }); });
+    var more = el.querySelector(".reply-more"), moreRow = el.querySelector(".reply-more-row");
+    if (more && moreRow) more.addEventListener("click", function(){
+      var open = more.getAttribute("aria-expanded") === "true";
+      more.setAttribute("aria-expanded", open ? "false" : "true");
+      moreRow.hidden = open;
+    });
+    var note = el.querySelector(".reply-note"), tm = null;
+    if (note) {
+      note.addEventListener("input", function(){ clearTimeout(tm); tm = setTimeout(function(){ set(item, { note: note.value }); }, 500); });
+      note.addEventListener("blur", function(){ clearTimeout(tm); if ((state[item] ? state[item].note : "") !== note.value) set(item, { note: note.value }); });
+    }
+    // ⚠️ A PICKER SAVES INTO THE SAME RECORD AS THE CHIP. `set()` merges any
+    // key, so the chosen subject and discipline ride the reply rather than
+    // living in a second store the session would have to know to read.
+    var picks = el.querySelectorAll(".reply-pick-in[data-pick]");
+    for (var pi = 0; pi < picks.length; pi++) {
+      (function(inp){
+        var key = inp.getAttribute("data-pick"), pt = null;
+        function commit(){
+          var v = inp.value.trim(), cur = state[item] ? (state[item][key] || "") : "";
+          // ⚠️ A TYPED VALUE THAT IS NOT ON THE OFFICIAL LIST IS STILL SAVED,
+          // and marked rather than rejected. Sam asked to SEE the official
+          // choices, not to be confined to them — and a name he reaches for
+          // that the list lacks is itself a finding about the list.
+          inp.setAttribute("data-off", (v && !onList(inp, v)) ? "1" : "0");
+          if (v !== cur) { var patch = {}; patch[key] = v; set(item, patch); }
+        }
+        inp.addEventListener("input", function(){ clearTimeout(pt); pt = setTimeout(commit, 400); });
+        inp.addEventListener("change", function(){ clearTimeout(pt); commit(); });
+        inp.addEventListener("blur", function(){ clearTimeout(pt); commit(); });
+      })(picks[pi]);
+    }
+  });
+
+  /* ── the artifact's store, when this view has one ── */
+  function light(){
+    var C = window.claude;
+    if (!C || typeof C.use !== "function") return;
+    var p; try { p = C.use("db"); } catch (e) { return; }
+    if (!p || typeof p.then !== "function") return;
+    p.then(function(db){
+      if (!db) return;
+      col = db.collection("replies"); where = "db";
+      col.onSnapshot(function(snap){
+        var seen = {};
+        snap.docs.forEach(function(d){
+          var r = d.data(); if (!r || !r.item) return;
+          seen[r.item] = 1;
+          var cur = state[r.item];
+          // The store's copy wins when it is at least as new as this page's;
+          // COPIED, because the delivered body is frozen and stays the store's.
+          if (!cur || String(r.t || "") >= String(cur.t || "")) {
+            state[r.item] = copy(r); saved[r.item] = r.t || "";
+            if (pending[r.item] !== "saving") pending[r.item] = "";
+          }
+        });
+        // Anything this browser holds that the store does not: send it up once.
+        Object.keys(state).forEach(function(item){
+          if (!seen[item] && !pending[item] && !empty(state[item]) && saved[item] !== state[item].t) push(item);
+        });
+        keep(); paintAll();
+      }, function(){ where = "local"; col = null; paintAll(); });
+      paintAll();
+    }, function(){});
+  }
+
+  /* ── Complete: write the record, then ring the doorbell ── */
+  var sbtn = document.getElementById("submit-btn"), sstate = document.getElementById("submit-state");
+  var snote = document.getElementById("submit-note");
+
+  // ⚠️ SAY IT BEFORE THE PRESS, NOT AFTER (Sam, 2026-09-21). He pressed
+  // Complete, the send found no session listening, and he had to come and ask
+  // whether it had worked. canSendToClaude() posts nothing and never prompts —
+  // the capability notes call it cheap on each render of the control — so the
+  // button can know its own reach at load and say so in the note above it.
+  // A reachable session is the common case, so the note only changes when the
+  // answer is that nothing is listening.
+  function reach(){
+    if (!snote || !sbtn) return;
+    var C = window.claude, p;
+    try { p = C && typeof C.use === "function" ? C.use("comments") : null; } catch (e) { return; }
+    if (!p || typeof p.then !== "function") return;
+    p.then(function(cm){
+      if (!cm || typeof cm.canSendToClaude !== "function") return;
+      cm.canSendToClaude().then(function(can){
+        if (can === "available") return;               // the button can ring; say nothing
+        snote.textContent = "Every reply is saved as you make it. Press Complete when you have "
+          + "finished — it records that this sheet is done, and a session reads the record "
+          + "straight off the sheet. To have it picked up right away, say \u201cdecisions "
+          + "done\u201d in the chat.";
+        sbtn.textContent = "Complete";
+      }, function(){});
+    }, function(){});
+  }
+  reach();
+  function tally(){
+    var done = 0, total = 0, asProposed = [], blank = 0;
+    els.forEach(function(el){
+      if ((el.getAttribute("data-kind") || "item") !== "item") return;
+      total++;
+      var item = el.getAttribute("data-item");
+      if (ruled(item)) { done++; return; }
+      if (el.getAttribute("data-default")) asProposed.push(item); else blank++;
+    });
+    return { done: done, total: total, asProposed: asProposed, blank: blank };
+  }
+  function say(t, missed){
+    if (!sstate) return;
+    sstate.textContent = t;
+    sstate.className = "submit-state" + (missed ? " missed" : "");
+  }
+  if (sbtn) sbtn.addEventListener("click", function(){
+    var n = tally();
+    sbtn.disabled = true;
+    // ⚠️ THE MARK IS READ BEFORE THE COMMIT, OR IT IS GONE. The loop below
+    // stores a reply for every as-proposed item, so after it runs EVERY card
+    // carries input and the high-water mark reads as the last card on the
+    // sheet. Capture it first: it is the only record of how far the reader
+    // actually got before pressing Complete.
+    var hw0 = highWater(), through = hw0.mark;
+    // ⚠️ COMMIT THE PROPOSALS, AND SAY THEY ARE PROPOSALS. Under opt-out the
+    // reader only touches what they disagree with, so the untouched items DO
+    // carry a verdict — but `by: "default"` records that nobody ruled on them
+    // individually, and the message says how many. An item with neither a
+    // reply nor a proposal is still a blank, and is still named as one.
+    var now = new Date().toISOString();
+    n.asProposed.forEach(function(item){
+      var r = { item: item, ref: (byItem(item) || {getAttribute:function(){return "";}}).getAttribute("data-ref"),
+                title: byItem(item) ? byItem(item).getAttribute("data-title") : "",
+                v: dflt(item), note: "", fu: false, by: "default", t: now };
+      state[item] = r;
+      if (col) { try { col.doc(item).set(copy(r)); } catch (e) {} }
+    });
+    keep(); paintAll();
+    var text = "Decisions done on " + SHEET + " — " + n.done + " of " + n.total + " items your own call"
+      + (n.asProposed.length ? ", " + n.asProposed.length + " taken as proposed (not individually reviewed)" : "")
+      + (n.blank ? ", " + n.blank + " left blank (no verdict on those)" : "") + ". " + line(hw0);
+    var rec = { sheet: SHEET, ruled: n.done, as_proposed: n.asProposed.length, blank: n.blank,
+                items: n.total, through: through, at: now, sent: false };
+    function finish(sent, why){
+      rec.sent = sent;
+      if (col) { try { col.doc("done").set(copy(rec)); } catch (e) {} }
+      // ⚠️ A FAILED DOORBELL MUST NOT READ LIKE A DELIVERED ONE (Sam,
+      // 2026-09-21: "I hit complete on the new decision sheet but I don't know
+      // if it alerted you in context"). The send failed silently enough that he
+      // had to come and ask. It says so plainly now, and it says the thing that
+      // is actually true: the replies are ON the sheet and the session reads
+      // them from here, so a refused send costs a sentence in chat, never the
+      // work.
+      say(sent ? "Sent. The session has it — " + n.done + " of " + n.total + " your own call"
+                 + (n.asProposed.length ? ", " + n.asProposed.length + " as proposed." : ".")
+               : "Recorded on the sheet — " + n.done + " of " + n.total + " your own call"
+                 + (n.asProposed.length ? ", " + n.asProposed.length + " as proposed" : "")
+                 + ". No session was listening just now"
+                 + (why && why !== "no session is listening" ? " (" + why + ")" : "")
+                 + ", so say \u201cdecisions done\u201d in the chat and Claude reads them "
+                 + "straight off this sheet.", !sent);
+      sbtn.textContent = sent ? "Completed — sent" : "Completed — tell Claude";
+      // ⚠️ MEASURED 2026-09-21: sendToClaude() reports "no session is listening"
+      // for a Claude Code session in a remote container even with a live,
+      // confirmed artifact watch. Sam pressed Complete a minute after the watch
+      // was re-registered and got the same answer. The button therefore records
+      // and offers the send; the RELIABLE path is the session reading
+      // `replies/done` off this sheet, which needs nothing from this page.
+    }
+    // The store is the record and is written whether or not the send lands.
+    var C = window.claude, p;
+    try { p = C && typeof C.use === "function" ? C.use("comments") : null; } catch (e) { p = null; }
+    if (!p || typeof p.then !== "function") { finish(false, "commenting is off here"); return; }
+    say("Sending…");
+    p.then(function(cm){
+      if (!cm || typeof cm.sendToClaude !== "function") { finish(false, "commenting is off here"); return; }
+      cm.canSendToClaude().then(function(can){
+        if (can !== "available") { finish(false, can === "writers_only" ? "you are not an editor of this sheet" : "no session is listening"); return; }
+        cm.anchorFor(sbtn).then(function(anchor){
+          // One deliberate send, from the viewer's own click. Never retried:
+          // a rejected write is not proof nothing was written.
+          cm.sendToClaude({ anchor: anchor, text: text.slice(0, 3800) })
+            .then(function(){ finish(true); }, function(err){ finish(false, (err && err.code) || "it could not be sent"); });
+        }, function(){ finish(false, "the button could not be anchored"); });
+      }, function(){ finish(false, "commenting is off here"); });
+    }, function(){ finish(false, "commenting is off here"); });
+  });
+
+  read(); paintAll(); light();
+})();
+</script>
+
+
+<script>
+(function(){
+  "use strict";
+  var SHEET = "2026-10-01-my-cpl-funding-language", LS = "sheet-edits:" + SHEET;
+  var col = null, timers = {}, saved = {};
+  var lines = {};
+  function norm(t){ return String(t || "").replace(/\s+/g, " ").trim(); }
+  Array.prototype.forEach.call(document.querySelectorAll(".mk-edit[data-ref]"), function(el){
+    var ref = el.getAttribute("data-ref");
+    var L = { ref: ref, item: el.getAttribute("data-item"), el: el, orig: norm(el.textContent),
+      today: el.getAttribute("data-today") || "" };
+    lines[ref] = L;
+    try { el.contentEditable = "plaintext-only"; } catch (e) {}
+    if (el.contentEditable !== "plaintext-only") el.contentEditable = "true";
+    el.setAttribute("role", "textbox");
+    el.setAttribute("aria-multiline", "true");
+    el.setAttribute("spellcheck", "true");
+    el.setAttribute("aria-label", "Revised wording, change " + ref + ", editable");
+    el.addEventListener("input", function(){ mirror(L); clearTimeout(timers[ref]); mark(L, "saving"); timers[ref] = setTimeout(function(){ commit(L); }, 700); });
+    el.addEventListener("blur", function(){ clearTimeout(timers[ref]); commit(L); });
+    el.addEventListener("keydown", function(ev){ if (ev.key === "Enter") { ev.preventDefault(); el.blur(); } });
+  });
+  // The drawn view follows the card: what Sam types is what the view shows.
+  function mirror(L){
+    var t = norm(L.el.textContent);
+    Array.prototype.forEach.call(document.querySelectorAll('#view-rev .mk-p[data-ref="' + L.ref + '"]'), function(p){ p.textContent = t; });
+  }
+  function mark(L, state, why){
+    var host = L.el.parentNode, m = host.querySelector(":scope > .mk-mark");
+    if (!state) { if (m) host.removeChild(m); L.el.classList.remove("mk-edited"); count(); return; }
+    if (!m) {
+      m = document.createElement("span"); m.className = "mk-mark";
+      m.innerHTML = '<span class="mk-mark-txt"></span><button type="button" class="mk-undo">Undo</button>';
+      m.querySelector(".mk-undo").addEventListener("click", function(ev){ ev.preventDefault(); undo(L); });
+      host.appendChild(m);
+    }
+    L.el.classList.add("mk-edited");
+    m.querySelector(".mk-mark-txt").textContent = state === "saved" ? "Edited, saved" :
+      state === "saving" ? "Edited, saving" : state === "local" ? "Edited, saved in this browser only" : "Edited, not saved: " + (why || "try again");
+    count();
+  }
+  function local(){ try { return JSON.parse(localStorage.getItem(LS) || "{}") || {}; } catch (e) { return {}; } }
+  function keepLocal(ref, rec){ try { var o = local(); if (rec) o[ref] = rec; else delete o[ref]; localStorage.setItem(LS, JSON.stringify(o)); } catch (e) {} }
+  function commit(L){
+    var now = norm(L.el.textContent);
+    if (now === L.orig) { if (saved[L.ref] !== undefined || local()[L.ref]) drop(L); else mark(L, null); return; }
+    if (saved[L.ref] === now) { mark(L, col ? "saved" : "local"); return; }
+    var rec = { ref: L.ref, item: L.item, before: L.orig, after: now, t: new Date().toISOString() };
+    keepLocal(L.ref, rec);
+    if (!col) { mark(L, "local"); return; }
+    col.doc(L.ref).set(rec).then(function(){ saved[L.ref] = now; mark(L, "saved"); },
+      function(e){ mark(L, "failed", e && e.code ? e.code : ""); });
+  }
+  function drop(L){
+    keepLocal(L.ref, null); delete saved[L.ref]; mark(L, null);
+    if (col) { try { col.doc(L.ref).delete(); } catch (e) {} }
+  }
+  function undo(L){ L.el.textContent = L.orig; mirror(L); clearTimeout(timers[L.ref]); drop(L); }
+  function count(){
+    var n = Object.keys(lines).filter(function(r){ return lines[r].el.classList.contains("mk-edited"); }).length;
+    var s = document.getElementById("mk-edits-state");
+    if (s) s.textContent = n ? (n + (n === 1 ? " line" : " lines") + " reworded by you" + (col ? ", saved to this mockup." : ", kept in this browser.")) : "";
+  }
+  function apply(rec){
+    var L = rec && lines[rec.ref]; if (!L || typeof rec.after !== "string") return;
+    if (norm(L.el.textContent) !== rec.after && document.activeElement !== L.el) { L.el.textContent = rec.after; mirror(L); }
+    saved[rec.ref] = rec.after; mark(L, col ? "saved" : "local");
+  }
+  var lo = local(); Object.keys(lo).forEach(function(r){ apply(lo[r]); });
+  // Views and numbers.
+  var root = document.getElementById("mk-views");
+  Array.prototype.forEach.call(document.querySelectorAll("[data-mkview]"), function(b){
+    b.addEventListener("click", function(){
+      var want = b.getAttribute("data-mkview");
+      Array.prototype.forEach.call(document.querySelectorAll("[data-mkview]"), function(x){ x.setAttribute("aria-pressed", String(x === b)); });
+      document.getElementById("view-rev").hidden = want !== "rev";
+      document.getElementById("view-today").hidden = want !== "today";
+      document.getElementById("mk-viewlab").textContent = want === "rev" ? "Revised, Coastline" : "Today, Coastline";
+    });
+  });
+  var nums = document.getElementById("mk-nums");
+  if (nums) nums.addEventListener("change", function(){
+    root.classList.toggle("mk-on", nums.checked); root.classList.toggle("mk-off", !nums.checked);
+  });
+  var C = window.claude;
+  if (!C || typeof C.use !== "function") return;
+  var p; try { p = C.use("db"); } catch (e) { return; }
+  if (!p || typeof p.then !== "function") return;
+  p.then(function(db){
+    if (!db) return;
+    col = db.collection("edits");
+    col.get().then(function(snap){
+      var seen = {};
+      snap.docs.forEach(function(d){ var r = d.data(); if (r && r.ref) { seen[r.ref] = 1; apply(r); } });
+      Object.keys(lo).forEach(function(r){ if (!seen[r] && lines[r]) commit(lines[r]); });
+      count();
+    }, function(){});
+  }, function(){});
+})();
+</script>
+
