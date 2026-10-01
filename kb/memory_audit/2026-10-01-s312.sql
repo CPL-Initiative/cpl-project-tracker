@@ -40,3 +40,22 @@ where m.author = 'SkyLantern-s312'
 
 select m.slug, m.status, (select count(*) from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create') as creates
 from public.cpl_memory m where m.author = 'SkyLantern-s312' order by m.slug;
+
+-- Added later in S312, after the dispatched smoke (run 36910604096) came back:
+insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, source, related, status, author, event_date)
+select x.slug, x.kind, 'cpl', x.title, x.summary, x.detail, x.plain, x.tags, x.source, '{}'::text[], x.status, 'SkyLantern-s312', date '2026-10-01'
+from jsonb_to_recordset($json$[
+{"slug":"smoke-7c-course-past-400-on-v76-2026-10-01","kind":"pitfall","status":"proposed",
+ "title":"Smoke 7c failed on cpl-chat v76: the first LVN course came at character 556",
+ "summary":"The one clean smoke on v76 (run 36910604096, 2026-10-01) failed only 7c: Sierra's Orange County CNA-to-LVN answer named VN 220 at character 556, past the 400 the check allows. Her first sentence spent itself on Santa Ana's CNA program, the no-LVN caveat and three neighbors written in full with county and miles. program_typical_courses answered (not the overlap flake).",
+ "detail":"Every other assert passed (7s, 7p included). Likely cause: since #1800 she spells each place in full, which lengthens the opener the v70 rule (direct answer first) was tuned for. Next: a prompt change that puts the course before the neighbor list, then a deploy and one smoke. chatbox/smoke_test.sh line 658, answer_head_must_match.",
+ "plain":"Sierra's answer about turning a nursing assistant certificate into vocational nursing credit gave the right course, but only after a long first sentence. The automated check wants the course named near the start, so it failed.",
+ "tags":["sierra","smoke","cpl-chat","pitfall"],"source":"GitHub Actions run 36910604096, job 110532003925 (S312)"}
+]$json$::jsonb)
+  as x(slug text, kind text, status text, title text, summary text, detail text, plain text, tags text[], source text)
+where not exists (select 1 from public.cpl_memory c where c.slug = x.slug);
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select m.id, 'SkyLantern-s312', 'create', 'S312 session write', to_jsonb(m)
+from public.cpl_memory m
+where m.author = 'SkyLantern-s312'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
