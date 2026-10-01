@@ -394,6 +394,21 @@ block("8. the padded-table rule is gone", () => {
   check("(8) ⚠ and that the two columns are lists, not row-by-row pairings",
     /THE COLUMNS ARE TWO INDEPENDENT LISTS, NOT PAIRINGS/.test(SRC));
 });
+// ── 9. THE PLACE BY ITS FULL NAME (2026-10-01, S311) ─────────────────────────
+// Smoke 7s on main after #1796 (run 36788086259): the answer was right on every
+// substantive check and led with Rio Hondo "(7 miles from the SGV)", so "7s names
+// the place the visitor named" failed. The block's heading already said "the San
+// Gabriel Valley"; the abbreviation was the model's own. The rule sits under the
+// place rule, so the model reads it with the block it governs.
+block("9. the place is named in full", () => {
+  const i = SRC.indexOf("WHEN THE VISITOR NAMED A PLACE");
+  const j = SRC.indexOf("NAME THE PLACE IN FULL");
+  check("(9) ⭐ the rule names the place in full, as the block's heading names it", j > 0,
+    "without it the model may write SGV to a visitor who wrote San Gabriel Valley");
+  check("(9) …and sits under the place rule it qualifies", i > 0 && j > i && j - i < 4000);
+  check("(9) …and bars an abbreviation the visitor did not write",
+    /Never shorten it to an abbreviation the visitor did not write/.test(SRC));
+});
 
 const failed = results.filter((r) => !r[1]);
 results.forEach(([name, ok, why]) =>
