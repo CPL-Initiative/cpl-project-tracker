@@ -8,8 +8,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 44204,
-  "pa": 40223,
+  "pe": 44221,
+  "pa": 40243,
   "ppa": 105,
   "p2": 3166,
   "p3": 14735,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 115,
   "pac": 3028,
   "ptc": 2620,
-  "pe_u": 1433891.45,
-  "pa_u": 224957.4,
+  "pe_u": 1434529.45,
+  "pa_u": 225103.4,
   "ppa_u": 654.5,
   "ppe_u": 6667.5,
   "pac_u": 26199.2,
@@ -108,10 +108,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Bakersfield": {
-   "pe": 607,
-   "pe_u": 26493.0,
-   "pa": 599,
-   "pa_u": 8771.0,
+   "pe": 609,
+   "pe_u": 26526.0,
+   "pa": 601,
+   "pa_u": 8784.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 66.0,
@@ -391,9 +391,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Columbia": {
    "pe": 25,
-   "pe_u": 1444.0,
-   "pa": 14,
-   "pa_u": 17.0,
+   "pe_u": 1450.0,
+   "pa": 19,
+   "pa_u": 59.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -941,10 +941,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "LA Pierce": {
-   "pe": 396,
-   "pe_u": 6840.0,
-   "pa": 372,
-   "pa_u": 1458.0,
+   "pe": 399,
+   "pe_u": 6908.0,
+   "pa": 373,
+   "pa_u": 1460.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 9.0,
@@ -1295,10 +1295,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2497,
-   "pe_u": 53516.5,
-   "pa": 2168,
-   "pa_u": 12963.0,
+   "pe": 2508,
+   "pe_u": 54037.5,
+   "pa": 2179,
+   "pa_u": 13048.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
@@ -1802,10 +1802,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Santa Ana": {
-   "pe": 462,
-   "pe_u": 16664.0,
-   "pa": 457,
-   "pa_u": 2060.2,
+   "pe": 463,
+   "pe_u": 16674.0,
+   "pa": 458,
+   "pa_u": 2064.2,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 8.0,
@@ -2250,8 +2250,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 562,
-    "pa": 558,
+    "pe": 564,
+    "pa": 560,
     "p3": 30
    }
   },
@@ -2426,7 +2426,7 @@ window.CPL_FUNDING_PERF = {
   "Columbia": {
    "Military": {
     "pe": 25,
-    "pa": 14,
+    "pa": 19,
     "p3": 0
    }
   },
@@ -3114,8 +3114,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1013,
-    "pa": 1013,
+    "pe": 1024,
+    "pa": 1024,
     "p3": 961
    },
    "Standardized Assessment": {
@@ -3601,8 +3601,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 377,
-    "pa": 377,
+    "pe": 378,
+    "pa": 378,
     "p3": 0
    },
    "Portfolio Review": {
@@ -3935,8 +3935,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28008,
-   "pa": 25813,
+   "pe": 28025,
+   "pa": 25833,
    "p3": 2558
   },
   "Military | Portfolio Review": {
@@ -3986,13 +3986,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1433891.45,
-   "pa_u": 224957.4,
+   "pe_u": 1434529.45,
+   "pa_u": 225103.4,
    "p3_u": 74470.2
   },
   "map": {
-   "pe_u": 1440558.95,
-   "pa_u": 225611.9,
+   "pe_u": 1441196.95,
+   "pa_u": 225757.9,
    "p3_u": 74533.7
   },
   "ratio": {
@@ -4087,9 +4087,9 @@ window.CPL_FUNDING_PERF = {
   "Merritt": false,
   "Alameda": false,
   "Cuesta": true,
+  "Columbia": true,
   "Santa Monica": false,
   "Mendocino": false,
-  "Columbia": true,
   "Woodland": false,
   "Rio Hondo": false,
   "Moorpark": true,
@@ -4154,13 +4154,13 @@ window.CPL_FUNDING_PERF = {
   },
   "Moreno Valley": {
    "vets": 916,
-   "jst": 1033,
-   "pct": 1.1277
+   "jst": 1044,
+   "pct": 1.1397
   },
   "Bakersfield": {
    "vets": 416,
-   "jst": 577,
-   "pct": 1.387
+   "jst": 579,
+   "pct": 1.3918
   },
   "Merced": {
    "vets": 142,
@@ -4239,8 +4239,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santa Ana": {
    "vets": 334,
-   "jst": 379,
-   "pct": 1.1347
+   "jst": 380,
+   "pct": 1.1377
   },
   "Barstow": {
    "vets": 106,
@@ -4309,8 +4309,8 @@ window.CPL_FUNDING_PERF = {
   },
   "LA Pierce": {
    "vets": 296,
-   "jst": 147,
-   "pct": 0.4966
+   "jst": 150,
+   "pct": 0.5068
   },
   "Fullerton": {
    "vets": 291,
@@ -4547,6 +4547,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 179,
    "pct": 0.8689
   },
+  "Columbia": {
+   "vets": 33,
+   "jst": 25,
+   "pct": 0.7576
+  },
   "Santa Monica": {
    "vets": 676,
    "jst": null,
@@ -4556,11 +4561,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 70,
    "jst": null,
    "jst_suppressed": true
-  },
-  "Columbia": {
-   "vets": 33,
-   "jst": 25,
-   "pct": 0.7576
   },
   "Woodland": {
    "vets": 15,
