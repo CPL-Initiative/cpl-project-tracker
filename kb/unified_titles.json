@@ -9441,7 +9441,7 @@
     "_notes": null
   },
   "AWS Certified SysOps Administrator": {
-    "unified_title": "AWS Certified SysOps Administrator — Associate",
+    "unified_title": "AWS CloudOps Engineer - Associate",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9454,7 +9454,7 @@
     "_notes": null
   },
   "AWS Certified SysOps Administrator - Associate Certification": {
-    "unified_title": "AWS Certified SysOps Administrator — Associate",
+    "unified_title": "AWS CloudOps Engineer - Associate",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19502,7 +19502,7 @@
     "_notes": "Lists CCNA cert plus Networking Academy intro course; clustered to CCNA."
   },
   "Cisco Certified CyberOps Associate Certification": {
-    "unified_title": "Cisco Certified CyberOps Associate",
+    "unified_title": "CCNA Cybersecurity",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -19557,7 +19557,7 @@
     "_notes": "Wireless specialization; kept separate from base CCNA."
   },
   "Cisco Cyber Security Operations (Cisco Network Academy)": {
-    "unified_title": "Cisco Certified CyberOps Associate",
+    "unified_title": "CCNA Cybersecurity",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
