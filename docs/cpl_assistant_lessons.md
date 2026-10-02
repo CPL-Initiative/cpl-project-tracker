@@ -1747,3 +1747,11 @@ Sam ruled v76's City College of San Francisco answer wrong (sheet 14 card 1): sh
 **7c's timeout (run 36943057866) was the database, not the wording.** Three catalog reads hit the 8 s limit together; `program_typical_courses` ran 48 ms quiet and 3,800 ms while a smoke ran; `chatbox_college_courses` has no `top_code` index. Recorded as a measured candidate (`cpl_memory` `sierra-catalog-reads-timeout-under-load-2026-10-02`); the SQL guard refuses a session's index DDL, so it goes by migration.
 
 **The 7s guard read markdown emphasis as text.** "none of the three San Gabriel Valley colleges above currently has an *articulated* CPL exhibit" failed the absence check; the helper now strips `*` and reads the adjective form (`sierra_smoke_absence_claims`, red before).
+
+## 2026-10-02 — S315 SkyLedger: v80's clean smoke, and the top_code index
+
+**v80 holds.** The first smoke after the #1813 deploy that ran alone (run 36961860002, 03:50Z) passed every 7c and 7s check: 7c opens on Long Beach City College's VN 220 with Orange County in the same sentence, 7s on Rio Hondo's VN 61 with the San Gabriel Valley named. No CNA course leads.
+
+**The catalog index, measured first.** `program_typical_courses` filters `chatbox_college_courses` by `top_code` alone, and the table had no index on it: a sequential scan of 4,215 buffers keeping 723 of 141,696 rows took 3.4 s, then 1.9 s, on a quiet database (`explain (analyze, buffers, timing off)`); the whole function took 1,521 ms. The same table's `college` btree answered a lookup of similar selectivity in 28 ms. The loader upserts 500-row batches, so the write side carries per-batch maintenance only. Migration `chatbox_college_courses_top_code_idx` (#1817, receipt `kb/receipts/chatbox_college_courses_top_code_idx_2026-10-02.sql`): 15.5 ms, 419 buffers, the same 21 rows. The methodology note gained the counter-case.
+
+**Lesson:** "48 ms quiet" from an earlier session was a different instance state; the same scan read 1.9-3.4 s today with nothing else running. Time both sides in one sitting, minutes apart, before deciding.

@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-02",
-  "_session": "S314 SkyVerdict",
-  "_status": "Landed on 2 October (S314): Scenario 2's confirmation deadline is December 30, 2026, your answer on sheet 16, written to the funding configuration with a receipt, and the Scenario 2 introduction re-rendered to match. Sierra gives City College of San Francisco's own split on the current version (the wrong answer came from the version before the fix). Sierra now leads an Orange County or San Gabriel Valley answer with the nearest course in the program the student wants, and names the place after it (live as v80). Next: your answers on sheet 17, and the Scenario 2 narration script for the ElevenLabs voice.",
+  "_session": "S315 SkyLedger",
+  "_status": "Landed on 2 October (S315): your saved funding text no longer says 'model' in either scenario. The Introduction now reads 'The Chancellor's Office measures outcomes' and 'CPL funding relies on data', and the Timeline reads 'CPL Funding Procedure Finalized' and 'Guidance Memo Release' (sheet 17, 'Apply them'). Sierra's Orange County and San Gabriel Valley answers lead with the nearest LVN course, and her catalog lookup runs in 15 milliseconds instead of 1.5 seconds. Next: your answers on sheet 19 (the Credential Reference entry, and which statewide Access target the state publishes), and the Scenario 2 narration script for the ElevenLabs voice.",
   "items": [
     {
       "id": "s315-sam-sheet19",
@@ -47,22 +47,10 @@
       "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
     },
     {
-      "id": "s314-fable-sheet17",
+      "id": "s315-fable-sheet19",
       "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Act on sheet 17: after Sam types the titles, check the curation table for the AWS merge and Microsoft title and dispatch the rename workflow; if he says apply, write cards 23 and 24 through the funding config edit workflow, dry run first."
-    },
-    {
-      "id": "s314-fable-sierra-v80",
-      "for": "Fable",
-      "tab": "sierra",
-      "text": "Read the first clean smoke on Sierra v80: the Orange County answer should open on the nearest LVN course (Long Beach City College's VN 220) and name Orange County in the next sentence."
-    },
-    {
-      "id": "s314-fable-catalog-index",
-      "for": "Fable",
-      "tab": "sierra",
-      "text": "Sierra's catalog reads time out when several run at once; the course table has no index on its program code. Measure, then add one by migration, and re-run the smoke."
+      "tab": "credential-reference",
+      "text": "Act on sheet 19. Card 1: if Sam says write, build the small workflow that adds the AWS title, its merge confirmation and the Microsoft title to the curation table under a bot name with a receipt, map it in Governance, then run the rename workflow; if he types them, check the table and run the rename. Card 2: measure the statewide Access target over the live configuration, then make the card, the explainer and the film agree with his answer."
     }
   ],
   "_deferred": [
