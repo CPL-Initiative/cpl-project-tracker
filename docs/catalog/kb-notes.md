@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-511 document(s).
+512 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -250,6 +250,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An incentive teaches where the finish line is](../kb-notes/methodology-an-incentive-teaches-where-the-finish-line-is.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [An index is a write-path cost until a measurement says otherwise](../kb-notes/methodology-an-index-is-a-write-path-cost-until-measured.md) | methodology | published | 2026-09-17 | 2026-10-02 |
 | [An inline placeholder style outranks the CSS your module injects](../kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [An input read outside the repo carries its text, and its gaps](../kb-notes/methodology-an-input-read-outside-the-repo-carries-its-text-and-its-gaps.md) | methodology | published | 2026-10-02 | 2026-10-02 |
 | [An inside term leaks through the context, never through the prose rules](../kb-notes/methodology-an-inside-term-leaks-through-the-context-not-the-prose.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [An instruction that names another surface is a dependency nothing enforces](../kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [An opportunity figure must be what peers ACHIEVED, not what the record allows](../kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md) | methodology | published | 2026-08-17 | 2026-08-17 |
