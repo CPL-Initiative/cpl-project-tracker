@@ -120,7 +120,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_contact_proposals` | tabs: `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_credential_student_rollup` | tabs: `college-briefing` | — |
 | `map_cx_exhibit_guidance` | tabs: `map-data-quality` | — |
-| `map_data_loads` | tabs: `map-queue` · `edgefn:cpl-chat` | — |
+| `map_data_loads` | tabs: `map-queue` · scripts: `kb/_sync_map_custom_reports.py` · `edgefn:cpl-chat` | — |
 | `map_data_quality` | tabs: `map-data-quality` | tabs: `map-data-quality` |
 | `map_student_credit` | scripts: `chatbox/smoke_test.sh` | — |
 | `map_student_key_sketch` | scripts: `kb/_sync_map_custom_reports.py` | — |
@@ -369,7 +369,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks-19.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
+| `docs/visuals/<date>-open-asks-20.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docs/visuals/<date>-sierra-credit-source.html` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
@@ -682,9 +682,11 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/check_contrast.py` | workflows: `js-tests.yml` | — |
 | `prototype/funding_video/.dur` | none found | scripts: `prototype/funding_video/render.mjs` |
 | `prototype/funding_video/.music.wav` | none found | scripts: `prototype/funding_video/render.mjs` |
-| `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py`, `prototype/funding_video/cues.py` | — |
+| `prototype/funding_video/README.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
+| `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py`, `prototype/funding_video/cues.py`, `prototype/funding_video/narrate.py` | — |
 | `prototype/funding_video/narration_s1.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `prototype/funding_video/narration_s1_layout.json` | scripts: `prototype/funding_video/build.py` | — |
+| `prototype/funding_video/narration_s2.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `prototype/funding_video/narration_s2_layout.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/mockup_harness/CPL_Dashboard.html` | scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
@@ -758,7 +760,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/kpi_history_no_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
-| `tests/map_custom_report_sync_test.py` | workflows: `map-custom-report-load.yml` | — |
+| `tests/map_custom_report_sync_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/memory_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_candidate_queue_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
@@ -975,5 +977,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 90 Supabase tables · 32 RPCs · 5 edge functions · 565 file
+Coverage: 90 Supabase tables · 32 RPCs · 5 edge functions · 567 file
 datasets · 147 external services · 396 consumers · 39 workflows · 37 tabs.
