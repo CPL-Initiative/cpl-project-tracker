@@ -1755,3 +1755,34 @@ Sam ruled v76's City College of San Francisco answer wrong (sheet 14 card 1): sh
 **The catalog index, measured first.** `program_typical_courses` filters `chatbox_college_courses` by `top_code` alone, and the table had no index on it: a sequential scan of 4,215 buffers keeping 723 of 141,696 rows took 3.4 s, then 1.9 s, on a quiet database (`explain (analyze, buffers, timing off)`); the whole function took 1,521 ms. The same table's `college` btree answered a lookup of similar selectivity in 28 ms. The loader upserts 500-row batches, so the write side carries per-batch maintenance only. Migration `chatbox_college_courses_top_code_idx` (#1817, receipt `kb/receipts/chatbox_college_courses_top_code_idx_2026-10-02.sql`): 15.5 ms, 419 buffers, the same 21 rows. The methodology note gained the counter-case.
 
 **Lesson:** "48 ms quiet" from an earlier session was a different instance state; the same scan read 1.9-3.4 s today with nothing else running. Time both sides in one sitting, minutes apart, before deciding.
+
+## 2026-10-02 — S318 SkyKeel: a program's own course list, joined at last
+
+Sam: *"Goal is to be able to list the courses in particular programs at a given college."* The data had sat
+in the repo since 2026-07-16 (`kb/reference/coci_program_course_file.csv.gz`, the Data Mart Program Course
+File, 401,163 rows); Sierra never read it. She listed a program's courses as every course at the college
+sharing its TOP code. Measured over 19,883 active programs: a median 33% of a program's courses found, a
+median 44% of what she returned in the program; Mt. San Antonio's LVN-to-RN A.S. lists 27 and the proxy found
+the 7 NURS courses. The anatomy, physiology, microbiology, English and psychology a program lists sit outside
+its TOP by construction.
+
+- **#1826** `coci_program_courses` (313,710 rows, 20,451 of 22,335 programs) and `coci_college_programs.control_number`.
+  The MIS college code resolves through two signals that must agree (programs and courses); MIS
+  `CB_COLLEGE_ID` decides which college owns a course, because the course list files College of the Desert's
+  AUTO 10 under Citrus College.
+- **#1827, #1829** the loader: upsert under a load id, prune earlier loads only after an exact count. The
+  count timed out right after each 313,710-row write (8 s+ for two minutes, 93 ms once autovacuum finished),
+  and the write itself was needless: the payload had not changed. The load id is now a content hash and an
+  unchanged payload writes nothing. KB note: `methodology-a-load-id-should-be-the-content`.
+- **#1828** the route: `college_program_courses()` calls `search_college_programs` narrowed to one college
+  (one matcher), returns 8 candidates, and Sierra re-ranks them by the visitor's own words, because inside one
+  college the matcher's order is loose ("nurs" matches Nursery Management, so Vocational Nursing ranked 5th
+  for "LVN"). A program LISTS a course; she never says "required" or totals units.
+- **The connector's confirm.** `apply_migration` timed out at 60 s, applying nothing, on every statement
+  carrying drop, revoke or delete. Sam ran that SQL himself (the first paste was the file's name: hand over the
+  SQL, never a path). The same SQL closed three catalog loaders that `authenticated` could run.
+- **A smoke during a catalog reload fails on load.** 7r/7p timed out while `coci-offerings-sync` truncated and
+  reloaded the offerings and programs tables; nothing in the answers failed.
+
+**Next:** the reload that fills `control_number`, Mt. San Antonio 08086 joining 27 rows, the A/B preview, then
+Sam's deploy go. The prospective-credit block (`fetchProgramCourses`) still reads the TOP proxy.

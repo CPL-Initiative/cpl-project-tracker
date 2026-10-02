@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 510,
+   "count": 511,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2253,6 +2253,24 @@
      "title": "A liveness set must be able to contain what it judges \u2014 or it condemns by construction",
      "type": "methodology",
      "updated": "2026-09-05"
+    },
+    {
+     "created": "2026-10-02",
+     "governs": [
+      "chatbox/sync_program_courses.py",
+      "tests/program_courses_build_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-load-id-should-be-the-content.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "loaders",
+      "reliability"
+     ],
+     "title": "A load id should be the content, so an unchanged load writes nothing",
+     "type": "methodology",
+     "updated": "2026-10-02"
     },
     {
      "created": "2026-08-31",
@@ -14569,8 +14587,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 289,
+   "count": 290,
    "docs": [
+    {
+     "created": "2026-10-02",
+     "governs": [],
+     "n": 319,
+     "path": "docs/session_319_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra-retrieval-corpus",
+      "program-course",
+      "coci",
+      "implementation-funding"
+     ],
+     "title": "Sierra can read each program's own course list; confirm the link, A/B it, ask to deploy",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-02",
      "governs": [],
@@ -19488,5 +19523,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1016
+ "total": 1018
 }

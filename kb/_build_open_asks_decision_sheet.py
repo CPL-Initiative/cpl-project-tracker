@@ -31,6 +31,9 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 22 (S318 checkpoint, 2026-10-02, SHEET_ID 2026-10-02-open-asks-22): sheet 21 was answered (card 1
+ran, card 3 keep); its card 2, the ElevenLabs plan, answered "later", is the one card. Published at
+https://claude.ai/artifact/NwAWv98uo2ytzYjQu4CYzo (capabilities db + comments).
 Sheet 21 (S318, 2026-10-02, SHEET_ID 2026-10-02-open-asks-21): sheet 20 carried no replies when it was
 superseded. Its two cards, plus the program-course migration (the programs loader that fills Sierra's join
 key, and the grants closing the three catalog loaders; the connector's confirm had no one to answer it).
@@ -154,8 +157,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-21.html')
-SHEET_ID = '2026-10-02-open-asks-21'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-22.html')
+SHEET_ID = '2026-10-02-open-asks-22'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -664,35 +667,9 @@ def items():
     # target becomes the institutions' sum on the card, the explainer and the film; S316 builds it).
     # p_cap_trims_targets stays above for a later card.
 
-    # Sam, 2026-10-02 (S318): "Goal is to be able to list the courses in particular programs at a
-    # given college." The data and the route are built; one migration waits on a person.
-    I.append({
-        'lane': 'sierra-retrieval-corpus',
-        'title': "Run one migration so Sierra can list a program's courses, and close three loaders",
-        'ref': 'sierra-retrieval-corpus NEEDS SAM · chatbox/20261002_S318_pending_migration.sql · #1826 · #1828',
-        'facts': (
-            "Each program's own course list is loaded: 313,710 rows from the Data Mart Program Course File, "
-            "covering 20,451 of the 22,335 programs Sierra searches (#1826). Sierra's route reads it when a "
-            "question names one college and asks for courses (#1828). Today she lists every course sharing the "
-            "program's TOP code, which finds a median 33% of a program's courses."
-            "<br><br>One migration joins the two: the programs loader writes each program's control number. "
-            "The same SQL closes <code>coci_programs_replace</code>, <code>coci_offerings_replace</code> and "
-            "<code>college_geo_replace</code> to the service key; each empties a Sierra table, and today any "
-            "signed-in Supabase user may run them. The Supabase connector asks a person to confirm any "
-            "statement carrying delete or revoke, and no one could answer it during the session: four calls "
-            "timed out and applied nothing, each read back."),
-        'why': "Until it runs, the course lists stay dark and three table-emptying functions stay open.",
-        'rec': "<strong>Paste it:</strong> open the Supabase SQL editor, paste "
-               "<code>chatbox/20261002_S318_pending_migration.sql</code>, and run it. The next session reads the "
-               "grants and the loader back, reloads the catalog, runs the A/B preview, and asks you to deploy. "
-               "<em>It might be wrong if</em> you would rather approve the connector's prompt; choose the second "
-               "chip, and the next session you are watching runs it.",
-        'chips': chips(('Pasted it', 'pasted'), ('Run it while I watch', 'attended'), CH_LATER),
-        'evidence': [measured(p_program_ctl_pending, 'chatbox/supabase_search_college_programs.sql marks '
-                              'the loader and grants not yet applied'),
-                     live('2026-10-02', "pg_proc.proacl and the live coci_programs_replace body, read "
-                          "through the Supabase connector")],
-    })
+    # Sheet 21 (S318) was answered at 19:04Z on 2026-10-02 (through 3, each his own call): card 1
+    # "pasted" (he ran the loader and grants SQL at ~19:40Z, read back 19:42Z), card 2 "later" (carried
+    # below), card 3 "keep" (the funding lane records it). p_program_ctl_pending stays for a later card.
     # Sam, 2026-10-02 (S317): "write a script for the scenario 2 video for an ElevenLabs narrator.
     # Keep it very simple and focused and see if you can select a female voice model to narrate and
     # give her the name Sierra on the video as a sample." Ten scenes read; the eleventh met the block.
@@ -719,29 +696,6 @@ def items():
         'evidence': [measured(p_video_n2_pending, 'prototype/funding_video/narration_s2.json, the scene\'s '
                               '`pending` reason'),
                      live('2026-10-02', "the ElevenLabs connector's reply to generation iGGZHtHe1XJdFXj2xmqO")],
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "The Sierra sample: her voice, her name on screen, and the music bed",
-        'ref': 'implementation-funding · prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_2.mp4',
-        'facts': (
-            "The sample is <code>20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_2.mp4</code>, 2:23, "
-            "with its page <code>funding_in_motion_n2.html</code>, both in <code>prototype/funding_video/</code>. "
-            "It plays the Scenario 2 introduction's picture. The title scene shows &ldquo;Narrated by Sierra&rdquo; "
-            "beneath the logo as she says &ldquo;Hi, I'm Sierra&rdquo;, and the closing scene says &ldquo;Sierra "
-            "is a synthetic voice made with ElevenLabs.&rdquo;"
-            "<br><br>The music plays as a bed, 14 dB under the introduction and 6 dB lower again while she "
-            "speaks; her speech sits 2 dB above the Kokoro draft's. A local recognizer hears every clip as "
-            "written, with CPL and FTES said as letters. The explainer does not link the cut."),
-        'why': "You asked for a sample. The voice, the name and the music level are judged by ear, which no "
-               "session can do.",
-        'rec': "<strong>Keep it:</strong> Sierra narrates Scenario 2, with her name and credit as drawn and the "
-               "bed where it is; once Minimum conditions is read, the explainer's Scenario 2 view links the cut. "
-               "<em>It might be wrong if</em> the voice sounds wrong to you; say what to change in the note "
-               "(another voice, a slower read, the bed lower), and the next session reads the scenes again.",
-        'chips': chips(('Keep it', 'keep'), ('Change it', 'change'), CH_LATER),
-        'evidence': [measured(p_video_n2_unlinked, 'funding-model/index.html does not link the Scenario 2 cut'),
-                     quoted('prototype/funding_video/README.md', '2026-10-02')],
     })
     return I
 
