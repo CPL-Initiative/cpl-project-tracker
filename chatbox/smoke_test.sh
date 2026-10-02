@@ -886,6 +886,21 @@ run "15c absent college is not zero (Calbright)" \
 answer_must_not_match_unnegated -i "(awarded|applied|transcribed)[^.—–-]{0,40}\b(0|zero|none)\b" \
   "15c does not report an absent college as zero"
 
+# One college's military / non-military split and the exhibits behind it, asked
+# with a possessive. v76 answered it statewide ("I don't have City College of San
+# Francisco's own college-level … breakdown") because "Francisco's" matched no
+# college; #1808 (v77) strips the possessive. Sam marked v76's answer wrong
+# (sheets 14 and 16, card 1), and no live ask had reached v77, so this mode asks
+# his exact question. Figures move nightly, so it pins the shape: the college's
+# own answer, its leading exhibit, no statewide fallback.
+run "15e one college's split and its exhibits, asked with a possessive (CCSF)" \
+  '{"query":"What is the military and non-military split of City College of San Francisco'"'"'s applied units, and which exhibits are they from?","session_id":"smoke-ci"}'
+answer_must_match -i "san francisco|ccsf" "15e names the college asked about"
+answer_must_not_match -i "don.?t have [^.]{0,80}(college-level|own (split|breakdown|numbers)|san francisco.s own|ccsf.s own)" \
+  "15e ⭐ answers with the college's own split, never the statewide fallback (Sam, sheet 16 card 1)"
+answer_must_match -i "default credit" "15e names the leading exhibit"
+answer_head_must_match -i 900 "[0-9],[0-9]{3}" "15e leads with the college's figure"
+
 # ── 15d. THE GATE (deterministic, and the reason this feature is safe) ────────
 # The edge function reads these aggregates with the SERVICE ROLE key, so RLS does
 # not constrain Sierra. It must still constrain everyone else: per-college
