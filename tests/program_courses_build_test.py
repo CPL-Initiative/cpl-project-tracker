@@ -206,6 +206,34 @@ try:
 except SystemExit:
     check("a missing exact count stops the prune", True)
 
+print("5. an unchanged payload writes nothing; a failed read never skips a load")
+base = [{"college": "A", "program_control_number": "1", "course_control_number": "C1", "course_code": "X 1",
+         "course_title": "T", "units": 3.0, "cid": None, "course_college": None},
+        {"college": "A", "program_control_number": "1", "course_control_number": "C2", "course_code": "X 2",
+         "course_title": "U", "units": 4.0, "cid": None, "course_college": None}]
+lid = S.content_load_id("2026-07-16", base)
+check("the load id is the content: same rows, same id, in any order",
+      lid == S.content_load_id("2026-07-16", list(reversed(base))) and lid.startswith("20260716-"), lid)
+changed = [dict(base[0], course_title="T2"), base[1]]
+check("a changed row changes the id", S.content_load_id("2026-07-16", changed) != lid)
+check("the id is filter-safe (letters, digits, a dash)", all(ch.isalnum() or ch == "-" for ch in lid), lid)
+
+
+def live_store(count, others, fail=False):
+    def request(method, path, body, key, prefer=None):
+        if fail:
+            raise S._HttpError(path, 500, '{"code":"57014"}')
+        if "load_id=eq." in path:
+            return None, f"0-0/{count}"
+        return ([{"load_id": "old"}] if others else []), ""
+    return request
+
+
+check("this load already live and alone -> skip", S.already_live("L", 10, "k", request=live_store(10, False)) is True)
+check("a short count -> load", S.already_live("L", 10, "k", request=live_store(9, False)) is False)
+check("another load still present -> load", S.already_live("L", 10, "k", request=live_store(10, True)) is False)
+check("a failed read -> load, never skip", S.already_live("L", 10, "k", request=live_store(10, False, fail=True)) is False)
+
 print()
 if FAILS:
     print(f"FAILED {len(FAILS)}: {FAILS}")
