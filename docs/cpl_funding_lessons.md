@@ -1199,7 +1199,7 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 **What we did and learned.**
 - **The ruling was the authority for the write.** The question was "which date is right"; the config held the date he ruled wrong. `funding-config-edit-apply.yml` wrote Scenario 2's `participationDeadline` from a committed plan (`kb/funding_config_edits_out/2026-10-02`): dry run (1 at before), then commit at 01:46Z under `implementation-funding-s314@bot`, receipt on `main`. The config md5 moved from `e21658f9` to `7e59830b`; the film's money figures are untouched by a date. Moving the date later only softens `partDeadlinePassed()`.
 - **A longer date wrapped the conditions heading.** "December 30, 2026" is one character past what the 3.9cqw heading holds; the first `_v6` render put the year on its own line. The heading now shrinks for a date over 16 characters (`3.9 × 16 / length`), so Scenario 1 and the narrated drafts render byte-identical. Caught on the MP4's stills, as the S312 memory row on render fonts says to.
-- **Scenario 2's introduction is `_Scenario_2_v6.mp4`** (100.6 s); `_v5` left the repo; the explainer links `_v6` and its choices-table fallback reads 30 Dec 2026.
+- **Scenario 2's introduction is `_Scenario_2_v7.mp4`** (100.6 s, S316: the target slide prints the institutions' summed target, 4,366.7, and says FTES reimbursement rate); `_v6` left the repo; the explainer links `_v7` and its choices-table fallback reads 30 Dec 2026.
 
 **Open.** Cards 23–24 (sheet 17 card 2: apply, or he types them); card 11's measure texts and card 7's two lines, still his on the tab; the Scenario 2 narration script for the ElevenLabs voice.
 
