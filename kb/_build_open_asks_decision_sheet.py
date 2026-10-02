@@ -31,6 +31,10 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 19 (S315, 2026-10-02, SHEET_ID 2026-10-02-open-asks-19): sheet 18's one card, unanswered, plus the
+statewide Access target (the 2.3% gap, measured: the maximum award trims the capped institutions' targets).
+Sheet 18 carried no replies when it was superseded. Published at
+https://claude.ai/artifact/HSGh2r1HAE5CzfWTW49K44 (capabilities db + comments).
 Sheet 18 (S315, 2026-10-02, SHEET_ID 2026-10-02-open-asks-18): Sam answered sheet 17 at 04:18Z (card 2
 "Apply them", written at 04:52Z; card 1 "Done" with no kb_curation row and no CER load). One card: the
 session writes the AWS fold and the Microsoft title through a workflow, or he types them. Published at
@@ -143,8 +147,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-18.html')
-SHEET_ID = '2026-10-02-open-asks-18'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-19.html')
+SHEET_ID = '2026-10-02-open-asks-19'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -220,6 +224,18 @@ def _code(src):
 # ── the repo-checkable premises ──────────────────────────────────────────────
 # Each returns (still_open, detail). A False is not an error: it means the work
 # landed and the card has to go.
+
+def p_cap_trims_targets():
+    """Card: the statewide Access target. Open while a capped institution's target is still
+    sized to the maximum (prioEntitlement scales by capScale), which is what makes the
+    institutions' targets sum below the statewide division."""
+    code = _code(_read("cpl_funding.js"))
+    i = code.find("function prioEntitlement(")
+    body = code[i:code.find("\n  }", i)] if i >= 0 else ""
+    trims = "capScale(c)" in body
+    return trims, ("prioEntitlement scales a capped institution's target by capScale()" if trims
+                   else "prioEntitlement no longer scales by capScale(): re-measure the gap")
+
 
 def p_phantom_tokens():
     bare = []
@@ -622,7 +638,7 @@ def items():
     I.append({
         'lane': 'partner-crosswalks',
         'title': "The AWS merge and the Microsoft title: I write them, or you type them",
-        'ref': 'partner-crosswalks · CER triage lane · sheet 17 card 1',
+        'ref': 'partner-crosswalks · CER triage lane · sheet 17 card 1 · sheet 18 card 1',
         'facts': (
             "Your Done on sheet 17 left no row in the curation table. The CER loads its saved decisions "
             "each time it opens, and the API log shows no such load after the rename run at 22:46 UTC on "
@@ -642,6 +658,37 @@ def items():
         'chips': chips(('Write them for me', 'write'), ("I'll type them", 'type'), CH_LATER),
         'evidence': [live('2026-10-02', 'kb_curation (newest row 2026-09-27) and the API log (no CER '
                           'overlay read after 22:46Z on 2026-10-01), read-only')],
+    })
+    # S315 measured S313's open 2.3% gap with the engine over the e21658f9 fixture: lifting the
+    # $400,000 maximum award makes the 118 institutions' Access targets sum to 4,467.60, the
+    # statewide division, exactly; with it, the seven institutions at the maximum carry 78.8 FTES
+    # each and the sum is 4,366.66. No other institution's target moves. Which figure the state
+    # publishes is a definition, so it is his.
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "The statewide Access target: the funding divided by the price, or the institutions' targets added up",
+        'ref': 'implementation-funding NEEDS SAM · the 2.3% gap · cpl_memory statewide-target-exceeds-institution-sum-2026-10-01',
+        'facts': (
+            "The Access card prints a statewide target of 4,467.6 CPL FTES: $12,620,154 divided by the "
+            "$2,824.82 price, as the explainer and the Scenario 2 film state it. The Statewide row's detail adds "
+            "the institutions' own targets and reads 4,366.7 (credit 4,069.3, noncredit 297.4), 100.9 FTES less."
+            "<br><br>The difference is the seven institutions at the $400,000 maximum award. The model sizes "
+            "each of their targets to the maximum, 78.8 FTES, rather than to the institution's size. "
+            "Mt. San Antonio accounts for 62.0 of the 100.9 FTES; Pasadena 14.0, Santa Ana 10.5, Long Beach "
+            "7.4, Fresno City 4.6, Bakersfield 2.0 and El Camino 0.4. No other institution's target moves "
+            "with the maximum. When every institution meets its own target, the state demonstrates 4,366.7 "
+            "FTES and every institution qualifies for its full award."),
+        'why': "One target appears as two figures on the same tab, and a reader who adds the detail's lanes "
+               "arrives at the second.",
+        'rec': "<strong>Use the sum:</strong> the card, the explainer and the film print 4,366.7, the figure "
+               "at which every institution qualifies for its full award; the film is rendered again. "
+               "<em>It might be wrong if</em> you want the public figure to stay the funding divided by the "
+               "price; the detail then keeps its sum and says in one line that the maximum award accounts "
+               "for the difference.",
+        'chips': chips(('Use the sum', 'sum'), ('Keep the division', 'division'), CH_LATER),
+        'evidence': [measured(p_cap_trims_targets, 'S315 ran cpl_funding.js over '
+                              'tests/fixtures/cpl_funding_config_e21658f9.json, Scenario 2, with and without '
+                              'the $400,000 maximum (cap_window)')],
     })
     return I
 
