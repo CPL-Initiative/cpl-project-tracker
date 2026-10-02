@@ -1,0 +1,95 @@
+name: CER decision apply
+
+# Manual dispatch only. Writes a curator's ruled Credential Reference (CER) decisions into
+# kb_curation from a committed plan (kb/cer_decisions_out/<date>/plan.json; a later plan the same
+# day takes <date>-2): dry-run reads and reports each row's state, commit inserts, rollback removes
+# the rows this cohort wrote. Sam, 2026-10-02 (open-asks sheet 19, card 1, "Write them for me"):
+# a session writes the rows the CER would have written, then dispatches cred-rename-apply.yml.
+# The repo's Supabase guard denies a session's kb_curation INSERT, so a session dispatches this,
+# as it does esl-sheet-apply.yml. Governance: DR-07 (unified credential titles).
+#
+# The applier refuses unless every row is absent or already holds its value: a row a curator wrote
+# with another value is held, and the INSERT ignores duplicates (Rule 10). Receipts land in the plan
+# dir and are pushed to main.
+#
+# concurrency: daily-dashboard -> serializes against the daily cron and cred-rename-apply.yml,
+# which both read kb_curation.
+
+on:
+  workflow_dispatch:
+    inputs:
+      plan_dir:
+        description: "Plan directory, e.g. kb/cer_decisions_out/2026-10-02 (a second plan that day: 2026-10-02-2)"
+        required: true
+        type: string
+      mode:
+        description: "dry-run reads and reports; commit writes; rollback removes this cohort's rows"
+        required: true
+        default: dry-run
+        type: choice
+        options: [dry-run, commit, rollback]
+
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Run the applier
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          PLAN_DIR: ${{ inputs.plan_dir }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          set -euo pipefail
+          case "$PLAN_DIR" in
+            kb/cer_decisions_out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]|kb/cer_decisions_out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-[2-9]) ;;
+            *) echo "::error::plan_dir must be kb/cer_decisions_out/<YYYY-MM-DD>, or <YYYY-MM-DD>-<2-9> for a later plan that day"; exit 1 ;;
+          esac
+          test -f "$PLAN_DIR/plan.json"
+          case "$MODE" in
+            dry-run)  python kb/_cer_decision_apply.py "$PLAN_DIR" | tee -a "$GITHUB_STEP_SUMMARY" ;;
+            commit)   python kb/_cer_decision_apply.py "$PLAN_DIR" --commit | tee -a "$GITHUB_STEP_SUMMARY" ;;
+            rollback) python kb/_cer_decision_apply.py "$PLAN_DIR" --rollback | tee -a "$GITHUB_STEP_SUMMARY" ;;
+          esac
+
+      # always(): a write refused at the INSERT still wrote a receipt, and a receipt that never
+      # reaches main cannot roll anything back.
+      - name: Commit the receipt
+        if: ${{ always() && inputs.mode != 'dry-run' }}
+        env:
+          PLAN_DIR: ${{ inputs.plan_dir }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          set -euo pipefail
+          case "$PLAN_DIR" in
+            kb/cer_decisions_out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]|kb/cer_decisions_out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-[2-9]) ;;
+            *) echo "No receipt: plan_dir is not a plan directory."; exit 0 ;;
+          esac
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$PLAN_DIR"
+          if git diff --cached --quiet; then echo "No receipt to commit."; exit 0; fi
+          git commit -m "CER decision apply ($MODE): receipt for $PLAN_DIR"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          exit 1

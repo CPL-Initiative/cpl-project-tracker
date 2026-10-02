@@ -26,6 +26,7 @@ closes the PR path only; THIS lane stays open by design.
 
 | Workflow | Schedule | Push shape | Commits |
 |---|---|---|---|
+| `cer-decision-apply.yml` | dispatch-only | main | — |
 | `cos-authority-sync.yml` | `17 8 3 * *` | main (cron checkout) | `kb/reference/cos_certifications.json`, `kb/cos_matches.json`, `kb/cos_match_out/` |
 | `course-title-cleanup-apply.yml` | dispatch-only | main | — |
 | `cpl-landing-pages.yml` | `37 14 * * 1` | main (cron checkout) | `chatbox/college_landing_pages.json` |
@@ -97,7 +98,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `gr_revisions` | tabs: `gr-priorities` | tabs: `gr-priorities` |
 | `item_raci` | tabs: `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` | tabs: `raci` |
 | `item_updates` | tabs: `annual-report`, `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | tabs: `raci` |
-| `kb_curation` | tabs: `canonical-subj4`, `credential-reference`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_esl_sheet_apply.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `credential-reference`, `unified-courses`, `vision-2030` · modules: `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
+| `kb_curation` | tabs: `canonical-subj4`, `credential-reference`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cer_decision_apply.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_esl_sheet_apply.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `credential-reference`, `unified-courses`, `vision-2030` · modules: `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
 | `liftoff_state` | pages: `CPL_Dashboard.html` | pages: `CPL_Dashboard.html` |
 | `map_ace_exhibit_titles` | tabs: `college-briefing`, `implementation-funding` | — |
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
@@ -293,7 +294,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `TOP_Code_Lookup.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_correct_top_lookup_code4.py` | scripts: `kb/_correct_top_lookup_code4.py` |
 | `admin.js` | pages: `CPL_Dashboard.html` | — |
 | `annual_report.js` | pages: `CPL_Dashboard.html` | — |
-| `applied_*.json` | scripts: `kb/_esl_monthly_pass.py`, `kb/_esl_sheet_apply.py`, `kb/_funding_config_edit_apply.py` | — |
+| `applied_*.json` | scripts: `kb/_cer_decision_apply.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_sheet_apply.py`, `kb/_funding_config_edit_apply.py` | — |
 | `assoc_editor.js` | pages: `CPL_Dashboard.html` | — |
 | `budget-support/web/config.js` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `budget-support/web/curator.html` | pages: `CPL_Dashboard.html` | — |
@@ -422,6 +423,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_peer_articulations.py` | workflows: `credential-catalog-sync.yml`, `daily-dashboard.yml` | — |
 | `kb/_build_program_course_graph.py` | workflows: `daily-dashboard.yml`, `program-course-fetch.yml` | — |
 | `kb/_build_remint_blast_radius.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml`, `js-tests.yml` | — |
+| `kb/_cer_decision_apply.py` | workflows: `cer-decision-apply.yml` | — |
 | `kb/_course_title_cleanup_apply.py` | workflows: `course-title-cleanup-apply.yml` | — |
 | `kb/_cred_rename_apply.py` | workflows: `cred-rename-apply.yml` | — |
 | `kb/_cred_rename_apply_supabase.py` | workflows: `cred-rename-apply.yml` | — |
@@ -719,6 +721,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/ccr_sky_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
+| `tests/cer_decision_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cobi_live_banner.test.js` | workflows: `js-tests.yml` | — |
 | `tests/coci_offerings_sync_chunk_test.py` | workflows: `js-tests.yml` | — |
 | `tests/coci_program_cip_test.py` | workflows: `js-tests.yml` | — |
@@ -970,5 +973,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 90 Supabase tables · 32 RPCs · 5 edge functions · 561 file
-datasets · 147 external services · 392 consumers · 38 workflows · 37 tabs.
+Coverage: 90 Supabase tables · 32 RPCs · 5 edge functions · 563 file
+datasets · 147 external services · 394 consumers · 39 workflows · 37 tabs.
