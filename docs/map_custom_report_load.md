@@ -129,6 +129,31 @@ was written, so the only question is what to fix.
    **`dry-run`** to parse and report without writing at all.
 4. Re-dispatch with `apply` once the cause is understood.
 
+### A gateway error is not an answer (S317)
+
+An HTTP 5xx, a timeout or a dropped connection says the call failed to answer,
+and nothing about what Postgres did. On 2026-09-18 a 504 on the promotion
+printed "rolled back" over a promotion that had committed (`map_data_loads` 35);
+on 2026-09-30 a 520 on one 5,000-row staging batch ended the night's load. The
+loader now reads back before it says anything:
+
+- **A staging batch** waits (`RETRY_WAITS`, 15/45/90 s), then counts the table.
+  The count before the batch means it did not land, so the loader sends it
+  again; the count plus the batch means it landed, so it moves on. Any other
+  count stops the run.
+- **Before the promotion**, `verify_staging()` checks that each staging table
+  holds exactly the rows sent. The gates refuse a short table (G2/G3) and never
+  a long one, and the staging tables carry no key, so a batch that landed twice
+  would otherwise publish as doubled credit.
+- **The promotion is never sent twice.** After a 5xx or a timeout the loader
+  polls `map_data_loads` for a promote row newer than the one before the call
+  (every 30 s, up to 10 minutes). A new row means it committed and the run
+  ends green; none means **PROMOTION NOT CONFIRMED** and a red run. Read
+  `map_data_loads` before you re-dispatch.
+
+A 4xx stays a refusal and stops at once. Guard: section 10 of
+`tests/map_custom_report_sync_test.py`.
+
 ### Reconciling a suspicious pull by hand
 
 ```sql

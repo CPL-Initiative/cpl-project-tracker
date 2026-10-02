@@ -70,6 +70,7 @@ import glob
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.request
 from collections import Counter
@@ -78,6 +79,17 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
 BATCH = 5000
+
+# A gateway error is not an answer (S317). Twice in September an HTTP 5xx said
+# nothing about what Postgres did: on 2026-09-18 a 504 on the promotion printed
+# "rolled back" over a promotion that had committed (map_data_loads 35), and on
+# 2026-09-30 a 520 on one 5,000-row staging batch ended the night's load, so
+# live kept the day before. A transient failure is now followed by a read-back,
+# never by a guess. RETRY_WAITS is the wait before each read-back, and its
+# length is the number of times a batch may be sent again.
+RETRY_WAITS = (15, 45, 90)
+PROMOTE_POLL, PROMOTE_WAIT = 30, 600
+_sleep = time.sleep  # the tests replace it
 
 # How many of the lexicographically-smallest student hashes to retain as the
 # salt-rotation sketch. A uniform sample of the key set, so overlap between
@@ -565,20 +577,104 @@ def clear_staging(key: str) -> dict:
     return json.loads(raw or b"{}")
 
 
+def _transient(e: BaseException) -> bool:
+    """A 5xx, a timeout or a dropped connection: the call failed to answer, and
+    the server may or may not have done the work. A 4xx is a real refusal."""
+    if isinstance(e, urllib.error.HTTPError):
+        return 500 <= e.code < 600
+    return isinstance(e, (urllib.error.URLError, TimeoutError, ConnectionError))
+
+
+def _why(e: BaseException) -> str:
+    return f"HTTP {e.code}" if isinstance(e, urllib.error.HTTPError) else type(e).__name__
+
+
+def count_rows(table: str, key: str) -> int:
+    """Exact row count: a HEAD with `Prefer: count=exact` answers in its
+    Content-Range header ("*/N") and carries no rows. A read, so it retries."""
+    headers = _headers(key)
+    headers["Prefer"] = "count=exact"
+    for wait in RETRY_WAITS + (None,):
+        req = urllib.request.Request(f"{SUPABASE_URL}/rest/v1/{table}?select=*",
+                                     headers=headers, method="HEAD")
+        try:
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                rng = resp.headers.get("Content-Range") or ""
+            break
+        except Exception as e:
+            if wait is None or not _transient(e):
+                raise SystemExit(f"FATAL: could not count {table} ({_why(e)}). "
+                                 "NOTHING LIVE HAS CHANGED.")
+            _sleep(wait)
+    total = rng.rpartition("/")[2]
+    if not total.isdigit():
+        raise SystemExit(f"FATAL: could not count {table}: Content-Range {rng!r}")
+    return int(total)
+
+
+def _insert_chunk(table: str, chunk: list, key: str, at: int, before: int) -> None:
+    """POST one batch. After a transient failure, count the table: `before`
+    rows means the batch did not land, so send it again; `before + len(chunk)`
+    means it landed and only the answer was lost, so move on. Any other count
+    stops the run. The staging tables carry no key, so a batch sent twice would
+    sit there twice, and verify_staging() refuses that before the promotion."""
+    for wait in RETRY_WAITS + (None,):
+        try:
+            _request("POST", table, key, chunk)
+            return
+        except Exception as e:
+            if isinstance(e, urllib.error.HTTPError) and not _transient(e):
+                detail = e.read().decode("utf-8", errors="replace")[:400]
+                raise SystemExit(f"FATAL: insert into {table} failed at row {at}: "
+                                 f"HTTP {e.code} {detail}")
+            if not _transient(e):
+                raise
+            if wait is None:
+                raise SystemExit(
+                    f"FATAL: insert into {table} failed at row {at}: {_why(e)}, "
+                    f"after {len(RETRY_WAITS)} retries. NOTHING LIVE HAS CHANGED: "
+                    "this runs before the promotion.")
+            print(f"      {table}: {_why(e)} at row {at:,}; reading the table "
+                  f"back in {wait} s")
+            _sleep(wait)
+            n = count_rows(table, key)
+            if n == before + len(chunk):
+                print(f"      {table}: the batch at row {at:,} landed; "
+                      "only the answer was lost")
+                return
+            if n != before:
+                raise SystemExit(
+                    f"FATAL: {table} holds {n:,} rows after a failed batch at row "
+                    f"{at:,}; expected {before:,} (not landed) or "
+                    f"{before + len(chunk):,} (landed). NOTHING LIVE HAS CHANGED.")
+            print(f"      {table}: the batch at row {at:,} did not land; "
+                  "sending it again")
+
+
 def insert(table: str, rows: list, key: str) -> int:
+    base = count_rows(table, key)
     sent = 0
     for i in range(0, len(rows), BATCH):
         chunk = rows[i:i + BATCH]
-        try:
-            _request("POST", table, key, chunk)
-        except urllib.error.HTTPError as e:
-            detail = e.read().decode("utf-8", errors="replace")[:400]
-            raise SystemExit(f"FATAL: insert into {table} failed at row {i}: "
-                             f"HTTP {e.code} {detail}")
+        _insert_chunk(table, chunk, key, i, base + sent)
         sent += len(chunk)
         if sent % (BATCH * 25) == 0:
             print(f"      {table}: {sent:,}/{len(rows):,}")
     return sent
+
+
+def verify_staging(expected: dict, key: str) -> None:
+    """The last check before the promotion: each staging table holds exactly
+    the rows this run sent. The promotion's gates refuse a SHORT table (G2/G3)
+    and never a LONG one, so a batch that landed twice would publish as doubled
+    credit. A retry can send a batch twice, so this check stands beside it."""
+    for table, want in expected.items():
+        have = count_rows(table, key)
+        if have != want:
+            raise SystemExit(
+                f"FATAL: {table} holds {have:,} rows; this run sent {want:,}. "
+                "Refusing to promote. NOTHING LIVE HAS CHANGED.")
+    print("   staging holds exactly the rows sent")
 
 
 def write_sketch(sample: list, key: str, pull_date: str) -> dict:
@@ -630,17 +726,61 @@ def promote(key: str) -> dict:
     don't have to do a staging to live approval every day." So the human gate is
     gone and the machine gates fail closed.
     """
+    last = last_promote_id(key)
     try:
         _, raw = _request("POST", "rpc/map_promote_custom_reports", key, {},
                           timeout=900)
-    except urllib.error.HTTPError as e:
-        detail = e.read().decode("utf-8", errors="replace")[:800]
-        raise SystemExit(
-            f"PROMOTION REFUSED (HTTP {e.code}). Live is UNCHANGED — the whole "
-            f"transaction rolled back.\n  {detail}\n"
-            "  A G-numbered message is a gate doing its job: fix the pull, do not "
-            "loosen the gate.")
+    except Exception as e:
+        if not _transient(e):
+            if not isinstance(e, urllib.error.HTTPError):
+                raise
+            detail = e.read().decode("utf-8", errors="replace")[:800]
+            raise SystemExit(
+                f"PROMOTION REFUSED (HTTP {e.code}). Live is UNCHANGED — the whole "
+                f"transaction rolled back.\n  {detail}\n"
+                "  A G-numbered message is a gate doing its job: fix the pull, do not "
+                "loosen the gate.")
+        return promote_readback(key, last, _why(e))
     return json.loads(raw or b"{}")
+
+
+def last_promote_id(key: str) -> int:
+    """The newest promotion's map_data_loads id. The promotion writes its row
+    inside its own transaction, so a higher id exists only if it committed."""
+    _, raw = _request("GET", "map_data_loads?select=id"
+                             "&table_name=eq.map_custom_report_promote"
+                             "&order=id.desc&limit=1", key)
+    rows = json.loads(raw or b"[]")
+    return rows[0]["id"] if rows else 0
+
+
+def promote_readback(key: str, last: int, why: str) -> dict:
+    """The promotion call failed without an answer. A gateway timeout ends the
+    HTTP call and never the Postgres transaction (2026-09-18, handoff 277 item
+    9), so poll map_data_loads for a row newer than `last` before saying
+    anything. Never send the promotion again."""
+    print(f"   the promotion call ended with {why}; reading map_data_loads back "
+          f"(every {PROMOTE_POLL} s, up to {PROMOTE_WAIT} s)")
+    waited = 0
+    while waited < PROMOTE_WAIT:
+        _sleep(PROMOTE_POLL)
+        waited += PROMOTE_POLL
+        try:
+            _, raw = _request("GET", "map_data_loads?select=id,loaded_at,note"
+                                     "&table_name=eq.map_custom_report_promote"
+                                     f"&id=gt.{last}&order=id.desc&limit=1", key)
+        except Exception as e:
+            if not _transient(e):
+                raise
+            continue
+        rows = json.loads(raw or b"[]")
+        if rows:
+            return {"readback": rows[0], "why": why}
+    raise SystemExit(
+        f"PROMOTION NOT CONFIRMED ({why}). No map_data_loads row newer than id "
+        f"{last} appeared in {PROMOTE_WAIT} s, so the transaction most likely "
+        "rolled back and live is UNCHANGED. Read map_data_loads before you "
+        "re-dispatch; never re-send the promotion blind.")
 
 
 # ── Main ───────────────────────────────────────────────────────────────────
@@ -725,6 +865,10 @@ def main() -> int:
               "counts are NOT comparable across these two pulls until this is "
               "explained. Ask ITPI before publishing any headcount trend.")
 
+    verify_staging({"stg_map_college_cr_unit": n1,
+                    "stg_map_student_credit": n2,
+                    "stg_map_ace_exhibit_titles": n3}, key)
+
     if args.no_promote:
         print("\nStaging loaded. --no-promote: NOTHING LIVE HAS CHANGED.")
         print("Promote with docs/map_custom_report_load.md, or re-run without the flag.")
@@ -732,6 +876,13 @@ def main() -> int:
 
     print("\nPromoting staging -> live (gated, one transaction)...")
     rep = promote(key)
+    if "readback" in rep:
+        rb = rep["readback"]
+        print(f"   the call ended with {rep['why']}, and the promotion committed: "
+              f"map_data_loads {rb['id']} at {rb['loaded_at']}")
+        print(f"   {rb['note']}")
+        print("\nLive is current.")
+        return 0
     cr, st, stu = rep.get("cr_unit", {}), rep.get("student", {}), rep.get("students", {})
     print(f"   map_college_cr_unit   {cr.get('was'):,} -> {cr.get('now'):,}")
     print(f"   map_student_credit    {st.get('was'):,} -> {st.get('now'):,}")
