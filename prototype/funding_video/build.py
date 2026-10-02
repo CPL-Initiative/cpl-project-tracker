@@ -26,8 +26,8 @@ BASE = 'https://cpl-initiative.github.io/cpl-project-tracker/funding-model/'
 PUBLIC_VIEW = 'https://cpl-initiative.github.io/cpl-project-tracker/?fundview=public#implementation-funding'
 
 # Access counts every applied unit (Sam, 2026-10-01: "P1 no longer requires CPL
-# requests to originate from landing page, portal, or batch upload"). The
-# narrated drafts keep ACCESS_VOICED, the box their voice reads, until re-voiced.
+# requests to originate from landing page, portal, or batch upload"). Scenario
+# 1's narrated draft keeps ACCESS_VOICED, the box its voice reads, until re-voiced.
 ACCESS = 'Applied CPL units, from every CPL request.'
 ACCESS_VOICED = 'Applied CPL units from students who start at the CPL Portal, your college’s CPL landing page, or a batch upload.'
 COMPLETION = 'Transcribed CPL units, with the MAP counselor step checked.'
@@ -35,7 +35,7 @@ COMPLETION = 'Transcribed CPL units, with the MAP counselor step checked.'
 # THE APPROPRIATION'S DESTINATIONS. The introductions show two (Sam, 2026-10-01:
 # "combine in one box the Projects & Supports with Staff funding together with
 # projects in one value"): $8,959,692 of projects and technology plus $800,000
-# for the two posts. The narrated drafts keep the three their voice names.
+# for the two posts. Scenario 1's narrated draft keeps the three its voice names.
 SPLIT_TWO = {
     'text': 'The state set aside 35 million dollars in one-time funding for 2026–27. 25.2 million goes directly to 118 institutions, and 9.8 million funds statewide CPL projects and technology and two Chancellor’s Office positions that support colleges.',
     'segs': [[0, 72.1, 'var(--stage-blue)'], [72.1, 27.9, 'var(--stage-navy)']],
@@ -66,8 +66,8 @@ AVERAGE = {'name': 'Average allocation', 'max': 213901, 'cr': 198542, 'nc': 1535
            'targetLead': 'The average Access target is', 'qualifier': 'an institution',
            # Sam, 2026-10-01: "Priority 1 · Access · average allocation · target 34.5 FTES · $99,271"
            'kickLead': 'Priority 1 · Access · average allocation', 'kickSize': 1.9}
-# Sample College (Chaffey College's figures) stays in the narrated drafts until
-# their scripts change: the voice speaks its maximum and its Access target.
+# Sample College (Chaffey College's figures) stays in Scenario 1's narrated draft
+# until its script changes: the voice speaks its maximum and its Access target.
 SAMPLE = {'name': 'Sample College', 'max': 345220, 'cr': 340861, 'nc': 4358, 'pos': 78.1,
           'ticks': [[0, '$150,000', 'base'], [8.9, '$172,314', 'typical'], [100, '$400,000', 'cap']],
           'maxText': 'Sample College’s maximum allocation is 345,220 dollars.',
@@ -76,8 +76,8 @@ SAMPLE = {'name': 'Sample College', 'max': 345220, 'cr': 340861, 'nc': 4358, 'po
           'kickLead': 'Sample College · Access'}
 # THE CLOSING SCENE (Sam, 2026-10-01, and sweep card 25): a plain label linked to
 # the real address in the web player, no github.io address and no scenario name
-# in the film (an MP4 cannot carry a link). The narrated drafts keep the heading
-# and the address their voice names until they are re-voiced.
+# in the film (an MP4 cannot carry a link). Scenario 1's narrated draft keeps the
+# heading and the address its voice names until it is re-voiced.
 CLOSE = {'head': 'Find your college on the <span class="blue">CPL funding page</span>',
          'label': 'How CPL Funding Works', 'size': 3.2,
          'text': 'Find your college’s maximum allocation, targets, and progress on the CPL funding page.'}
@@ -107,7 +107,6 @@ TIMING_VOICED = [[0, 'Sep 2026', 'Model released'], [18, 'Nov 2026', 'Confirmati
 # The slide then subtracts the difference. "FTES reimbursement rate", never price
 # (Sam, 2026-10-02).
 SAMPLE_TARGET_S1 = {'ftes': 44.3, 'usd': 112484, 'ftesWords': '44.3', 'usdWords': '112,484', 'halfFtesWords': '22.2', 'halfUsdWords': '56,242'}
-SAMPLE_TARGET_S2 = {'ftes': 67.17, 'usd': 170430.69, 'ftesWords': '67.2', 'usdWords': '170,431', 'halfFtesWords': '33.6', 'halfUsdWords': '85,215'}
 
 CONFIG = {
     # Scenario 1 (config read 2026-10-01, Scenario 2 is published): Access 33 /
@@ -202,26 +201,23 @@ CONFIG['n1'] = dict(
     credit='Narrated with a synthetic voice (Kokoro-82M, Heart).',
     narr=narration('narration_s1_layout.json'),
 )
-# The narrated draft of Scenario 2 (sheet 4 card 8; Sam, 2026-09-29: "We're going
-# with Scenario 2"). Scenario 2's picture, narration_s2.json's voice. It waits on
-# Sam's review, and Scenario 2 waits on the Chancellor, so the explainer does not
-# link it.
+# The narrated cut of Scenario 2, draft 2 (Sam, 2026-10-02: "write a script for
+# the scenario 2 video for an ElevenLabs narrator. Keep it very simple and
+# focused... select a female voice model to narrate and give her the name Sierra
+# on the video as a sample"; "The music can drop to background level"). The
+# introduction's own picture (every figure above, the targets slide, December
+# 30, 2026, the CPL funding page) under narration_s2.json's voice, Sierra, read
+# in ElevenLabs. Only the page, the title's name line and the closing credit
+# differ from s2. The explainer does not link it while it waits on Sam's review.
 CONFIG['n2'] = dict(
     CONFIG['s2'],
     pageTitle='CPL Funding in Motion: Narrated Draft, Scenario 2',
-    eyebrow='CPL Initiative · Scenario 2 · draft',
-    dek='A narrated draft of the introduction to CPL funding for colleges, for Scenario 2, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
-    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_1.mp4',
-    split=SPLIT_THREE, ex=SAMPLE, target=SAMPLE_TARGET_S2,
-    kick='Scenario 2 · An introduction for colleges', explainer=BASE + '?scenario=Scenario%202',
-    how=None, timing=TIMING_VOICED, deadline='November 1, 2026',
-    titleText='2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges, Scenario 2.',
-    prioText='Two priorities carry the funding in Scenario 2. Access, 50 percent, counts applied CPL units from students who start at the CPL Portal, a college CPL landing page, or a batch upload. Completion, 50 percent, counts transcribed CPL units with the counselor step checked. The Chancellor’s Office reports career attainment together with the innovation projects, in qualitative terms; the institutions’ allocations follow Access and Completion.',
-    prios=[[50, 'Access', ACCESS_VOICED], [50, 'Completion', COMPLETION],
-           [None, 'Career attainment and innovation projects', 'Reported by the Chancellor’s Office in qualitative terms. The institutions’ allocations follow Access and Completion.']],
-    close=close_voiced('cpl-initiative.github.io/cpl-project-tracker/funding-model/?scenario=Scenario 2', ' for Scenario 2'),
+    eyebrow='CPL Initiative · draft',
+    dek='A narrated draft of the introduction to CPL funding for colleges, about two minutes, voiced by Sierra. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
+    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_2.mp4',
+    narrator='Narrated by Sierra',
     audio='narration_s2.mp3',
-    credit='Narrated with a synthetic voice (Kokoro-82M, Heart).',
+    credit='Sierra is a synthetic voice made with ElevenLabs.',
     narr=narration('narration_s2_layout.json'),
 )
 

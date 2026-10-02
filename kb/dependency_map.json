@@ -4,7 +4,7 @@
   "supabase_tables": 90,
   "rpcs": 32,
   "edge_functions": 5,
-  "file_datasets": 563,
+  "file_datasets": 565,
   "external_services": 147,
   "consumers": 394,
   "workflows": 39,
@@ -576,7 +576,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 37
+     "line": 40
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -1253,7 +1253,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 32
+     "line": 41
     }
    ],
    "main_committers": []
@@ -3181,7 +3181,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 253
+     "line": 256
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4306,7 +4306,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 242
+     "line": 245
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4667,7 +4667,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 232
+     "line": 235
     }
    ],
    "served": true,
@@ -4829,7 +4829,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 506
+     "line": 522
     }
    ],
    "producers": [
@@ -5755,21 +5755,21 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-19.html": {
+  "file:docs/visuals/<date>-open-asks-20.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 150
+     "line": 153
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 150
+     "line": 153
     }
    ],
    "served": false,
@@ -6225,7 +6225,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 319
+     "line": 322
     }
    ],
    "served": true,
@@ -6304,7 +6304,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 242
+     "line": 245
     }
    ],
    "served": true,
@@ -8962,7 +8962,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 295
+     "line": 298
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -9681,7 +9681,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 404
+     "line": 407
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -10262,7 +10262,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 376
+     "line": 379
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -13253,7 +13253,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 365
+     "line": 368
     }
    ],
    "served": false,
@@ -14016,7 +14016,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 242
+     "line": 245
     }
    ],
    "served": true,
@@ -14436,7 +14436,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 262
+     "line": 265
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -14577,6 +14577,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:prototype/funding_video/README.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 701
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:prototype/funding_video/funding_in_motion.src.html": {
    "consumers": [
     {
@@ -14584,14 +14597,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 232
+     "line": 228
     },
     {
      "id": "script:prototype/funding_video/cues.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 70
+     "line": 72
+    },
+    {
+     "id": "script:prototype/funding_video/narrate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
     }
    ],
    "served": true,
@@ -14604,7 +14624,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 440
+     "line": 443
     }
    ],
    "served": true,
@@ -14617,7 +14637,20 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 203
+     "line": 202
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/narration_s2.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 493
     }
    ],
    "served": true,
@@ -14630,7 +14663,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 225
+     "line": 221
     }
    ],
    "served": true,
@@ -15105,7 +15138,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 389
+     "line": 392
     }
    ],
    "served": true,
@@ -16770,7 +16803,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 276
+     "line": 279
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
