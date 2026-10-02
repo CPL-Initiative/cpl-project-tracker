@@ -10554,7 +10554,7 @@
       nc_award: "Max NC Funds", nc_current: currHeadHtml("NC Funds"), total: "Total Funds",
       current_total: currHeadHtml("Total Funds") };
     var HEAD_TIP = {
-      cr_award: "This priority's credit funding " + when + ", with its Max FTES beneath: the credit measure's target at the priority's rate per CPL FTES.",
+      cr_award: "This priority's credit funding " + when + ", with its Max FTES beneath: the credit measure's target at the priority's FTES reimbursement rate.",
       cr_current: "Credit funding this priority has qualified for so far, with the Actual FTES beneath. Hover a figure for what remains." + GRAY_WORDS,
       nc_award: "This priority's noncredit funding " + when + ", with its Max FTES beneath. " + NC_LANE_RULE,
       nc_current: "Noncredit funding this priority has qualified for so far, with the Actual FTES beneath. " + NC_LANE_RULE + GRAY_WORDS,

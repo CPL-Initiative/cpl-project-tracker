@@ -329,8 +329,8 @@ NARRATED.forEach(({ tag, v, s }) => {
    ["funding_in_motion_s2.html", "s2 ", "Access", "$12,620,154", "4,366.7", "Dec 2026"]].forEach(([file, tag, first, funding, target, conf]) => {
     const raw = fs.readFileSync(path.join(DIR, file), "utf8"), cfg = cfgOf(file), w = boot(file, false);
     const how = stageAt(w, 54.5);
-    check(tag + "m1 the targets slide divides the statewide funding by the rate per CPL FTES, and never says price (Sam, 2026-10-02)",
-      how.includes("How a target is set") && how.includes(funding) && how.includes("$2,824.82") && how.includes("rate per CPL FTES")
+    check(tag + "m1 the targets slide divides the statewide funding by the FTES reimbursement rate, and never says price (Sam, 2026-10-02)",
+      how.includes("How a target is set") && how.includes(funding) && how.includes("$2,824.82") && how.includes("FTES reimbursement rate")
         && how.includes("the $5,649.63 base rate times a factor of 0.5") && how.includes(target) && !/\bpric(e|ed|es|ing)\b/i.test(how));
     // Sheet 19 card 2 ("sum"): where the published target is the institutions'
     // targets added up, the slide takes the maximum award's difference off the

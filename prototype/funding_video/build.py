@@ -97,14 +97,15 @@ def timing(conf):
 TIMING_VOICED = [[0, 'Sep 2026', 'Model released'], [18, 'Nov 2026', 'Confirmation deadline'],
                  [40, 'Feb 2027', 'Release 1'], [58, 'Jul 2027', 'Release 2'], [80, 'Dec 2027', 'Release 3'], [100, 'Jun 2028', 'Release 4']]
 # HOW A TARGET IS SET (Sam, 2026-10-01): a slide after the priorities, statewide.
-# A priority's statewide funding divided by its rate per CPL FTES, the base rate
-# times the priority's factor. Each figure read from the engine under config md5
+# A priority's statewide funding divided by its FTES reimbursement rate, the base
+# rate times the priority's factor. Each figure read from the engine under config md5
 # e21658f9 (the Public view's priority cards): base rate $5,649.63, factor 0.5,
 # $2,824.82 per CPL FTES in both scenarios. A row is [title, statewide funding,
 # the division, the published target]; the fourth figure, when present, is the
 # institutions' targets added up (Sam, sheet 19 card 2, 2026-10-02: "sum"), and
 # `capped` counts the institutions at the maximum award, whose targets it lowers.
-# The slide then subtracts the difference. Rate, never price (Sam, 2026-10-02).
+# The slide then subtracts the difference. "FTES reimbursement rate", never price
+# (Sam, 2026-10-02).
 SAMPLE_TARGET_S1 = {'ftes': 44.3, 'usd': 112484, 'ftesWords': '44.3', 'usdWords': '112,484', 'halfFtesWords': '22.2', 'halfUsdWords': '56,242'}
 SAMPLE_TARGET_S2 = {'ftes': 67.17, 'usd': 170430.69, 'ftesWords': '67.2', 'usdWords': '170,431', 'halfFtesWords': '33.6', 'halfUsdWords': '85,215'}
 

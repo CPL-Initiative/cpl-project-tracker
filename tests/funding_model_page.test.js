@@ -876,12 +876,12 @@ check("the status line is empty on a successful paint",
   // card 2, 2026-10-02: "sum"), 4,366.7; the division, $12,620,154 / $2,824.82,
   // is 4,467.6, and the maximum award accounts for the difference.
   check("p2b ...the engine's figures: Access 4,366.7 CPL FTES at $2,824.82 against $12,620,154",
-    prog[0][0].indexOf("Target: 4,366.7 CPL FTES statewide") === 0 && prog[0][0].indexOf("$2,824.82 per CPL FTES (the $5,649.63 base rate times a factor of 0.5)") > 0
+    prog[0][0].indexOf("Target: 4,366.7 CPL FTES statewide") === 0 && prog[0][0].indexOf("at an FTES reimbursement rate of $2,824.82 (the $5,649.63 base rate times a factor of 0.5)") > 0
       && Math.round(P0.totalPossible) === 12620154);
   check("p3 the target line is the engine's: statewide FTES, its semester units, the price, the rate and the factor",
     prog[0][0] === "Target: " + P0.target.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) +
-      " CPL FTES statewide, about " + Math.round(P0.units).toLocaleString("en-US") + " semester units, at $" +
-      P0.price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " per CPL FTES (the $" +
+      " CPL FTES statewide, about " + Math.round(P0.units).toLocaleString("en-US") + " semester units, at an FTES reimbursement rate of $" +
+      P0.price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " (the $" +
       P0.rate.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " base rate times a factor of " +
       (+P0.factor).toFixed(1) + "). The institutions' targets add up to this figure; the maximum award lowers the targets of the seven institutions that reach it.");
   // Sheet 19 card 2 ("sum"): the count is the model's, and the film's slide
