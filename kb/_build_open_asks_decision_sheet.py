@@ -133,8 +133,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-01-open-asks-16.html')
-SHEET_ID = '2026-10-01-open-asks-16'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-17.html')
+SHEET_ID = '2026-10-02-open-asks-17'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -565,6 +565,27 @@ def audit_coverage(items):
     return found, missing, stale, dead
 
 
+# Sheet 16 card 1 carried forward, pending smoke 15e's read of v77 (S314).
+CARD_SIERRA_CCSF = {
+    'lane': 'sierra-retrieval-corpus',
+    'title': "Ask Sierra City College of San Francisco's split on v77",
+    'ref': 'sierra-retrieval-corpus · cpl-chat v77 (#1808) · sheet 16 card 1 · smoke 15e',
+    'facts': (
+        "Your note says Sierra said she did not have the split for San Francisco. That answer came at 21:14 UTC "
+        "on October 1, from v76; v77 went live at 23:23 UTC and no one has asked her since. Ask her again: "
+        "<em>What is the military and non-military split of City College of San Francisco's applied units, and "
+        "which exhibits are they from?</em> Today's rows: 13,914 units on plans from 1,910 students, military "
+        "13,843.5 and non-military 70.5, led by Default Credit (4,726.5 units, 1,890 students)."),
+    'why': "One college checked by hand tests every figure the answer draws from.",
+    'rec': "<strong>Ask it and mark what she said.</strong> <em>It might be wrong if</em> the nightly load has "
+           "moved these figures; the next session compares her answer with that day's rows.",
+    'chips': [('Right', 'right'), ('Wrong: see note', 'wrong'), ('Later', 'later')],
+    'evidence': [{"kind": "live", "checked": "2026-10-02",
+                  "how": "map_college_credit_summary, _bucket and map_college_exhibit_credit, college_id 30; "
+                         "chat_interactions"}],
+}
+
+
 # ── the items ────────────────────────────────────────────────────────────────
 def items():
     """The cards: every ask a lane marks, one card each.
@@ -597,92 +618,53 @@ def items():
     # 18:52Z on 2026-09-30 (cpl-knowledge-base#24), and the governance lane
     # records it.
 
-    # Sheet 14's six cards left with Sam's rulings (21:22Z, 2026-10-01, all his own call):
-    # CCSF wrong (sierra lane), both renames typed by him, Microsoft drop, AWS fold, the
-    # sweep all as proposed (#1807), the progress lines ported to the explainer.
-    # Sheet 15's three cards (S312) carried unanswered into sheet 16 (S313): the AWS
-    # fold became ready when the rename applied (22:46Z), the deadline card names
-    # the video, and two cards are new: Sierra's CCSF re-ask (v77) and the video.
-    I.append({
-        'lane': 'sierra-retrieval-corpus',
-        'title': "Ask Sierra City College of San Francisco's split again",
-        'ref': 'sierra-retrieval-corpus · cpl-chat v77 (#1808) · sheet 14 card 1',
-        'facts': (
-            "You marked her v76 answer wrong: she gave the statewide split. The data was there; her college "
-            "matcher missed the name, because \"Francisco's\" matched no college with its apostrophe on. v77 reads "
-            "a possessive, and its smoke passed every mode. Ask her the same question: <em>What is the military and "
-            "non-military split of City College of San Francisco's applied units, and which exhibits are they "
-            "from?</em> A right answer leads with 13,138.5 units on plans from 1,882 students, non-military 65 and "
-            "military 13,073.5, led by Default Credit (4,661.5 units, 1,864 students)."),
-        'why': "One college checked by hand tests every figure the answer draws from.",
-        'rec': "<strong>Ask it and mark what she said.</strong> <em>It might be wrong if</em> the nightly load has "
-               "moved these figures; the next session compares her answer with that day's rows.",
-        'chips': chips(('Right', 'right'), ('Wrong: see note', 'wrong'), CH_LATER),
-        'evidence': [live('2026-09-30', 'map_college_credit_summary and map_college_credit_bucket, college_id 30')],
-    })
+    # Sheet 14's six cards left with Sam's rulings (21:22Z, 2026-10-01, all his own call).
+    # Sheet 16's five cards (S313) were all answered at 00:36Z on 2026-10-02 (through 5):
+    # card 4 Dec 30 (applied, S314), card 5 keep $9,759,692. Card 1 "wrong" restated v76's
+    # answer: no ask had reached v77, so smoke 15e asked it (below). Card 2 "Done" left
+    # no write in kb_curation, and the card itself was wrong: the CER shows Confirm merge
+    # only after the new title is typed. Card 3 asked what cards 23-24 are.
+    I.append(CARD_SIERRA_CCSF)
     I.append({
         'lane': 'partner-crosswalks',
-        'title': "Confirm the AWS merge; type the Microsoft title",
-        'ref': 'partner-crosswalks · CER triage lane · sheet 14 cards 3-4',
+        'title': "Type two titles in the CER; the AWS merge button appears after the first",
+        'ref': 'partner-crosswalks · CER triage lane · sheet 16 card 2',
         'facts': (
-            "Your two renames applied at 22:46 UTC: the CER reads CCNA Cybersecurity and AWS CloudOps Engineer - "
-            "Associate. The AWS fold is ready: the triage lane's Confirm merge on \"AWS Certified SysOps "
-            "Administrator\" into \"AWS CloudOps Engineer - Associate\". The Microsoft record reads Microsoft "
-            "Certified: Azure AI Fundamentals once you type that title, the way you typed the renames."),
+            "You marked this Done, but nothing reached the curation table after your two renames at 21:18 UTC "
+            "on October 1. The card was wrong: the CER shows Confirm merge only after a new title is typed, so "
+            "there was no button to press. The steps: on the record <em>AWS Certified SysOps Administrator</em>, "
+            "type the title <em>AWS CloudOps Engineer - Associate</em>. The row then reads \"matches existing\" "
+            "with a Confirm merge button; press it. On <em>Microsoft Certified: Azure AI Fundamentals (AI-900)</em>, "
+            "type <em>Microsoft Certified: Azure AI Fundamentals</em>."),
         'why': "The repo's guard keeps a session out of the curation table, so these two are yours to type.",
-        'rec': "<strong>Confirm the merge and type the title.</strong> <em>It might be wrong if</em> the second AWS "
-               "record names a different credential.",
+        'rec': "<strong>Type both, then press Confirm merge.</strong> The next session applies them through the "
+               "rename workflow. <em>It might be wrong if</em> the second AWS record names a different credential.",
         'chips': chips(('Done', 'done'), ('Hold', 'hold'), CH_LATER),
-        'evidence': [quoted('kb/credentials.json, kb/cred_rename_out/2026-10-01/', '2026-10-01')],
+        'evidence': [live('2026-10-02', 'kb_curation rows and the API log, read-only; credential_reference.js '
+                          'mergeSig() and pendingMerges()')],
     })
     I.append({
         'lane': 'implementation-funding',
-        'title': "Cards 23 and 24: type them, or have them applied",
+        'title': "The last two places your saved text says \"model\"",
         'ref': 'implementation-funding NEEDS SAM · the model sweep cards 23-24 · funding-config-edit-apply.yml',
         'facts': (
-            "Both are text you saved on the tab, in both scenarios. Card 23, the Introduction's last paragraph: "
-            "\"The Chancellor's Office measures outcomes in equivalent FTES based on CPL units and allocates funding "
-            "to institutions proportionally for each priority at an FTES reimbursement rate\" and \"CPL funding relies "
-            "on data in the MAP platform, which serves as the Chancellor's Office systemwide CPL infrastructure.\" "
-            "Card 24, two Timeline milestones: \"CPL Funding Procedure Finalized\" and \"Guidance Memo Release.\""),
-        'why': "Until they change, the Introduction and the Timeline are the last places a college reads \"model\".",
-        'rec': "<strong>Apply them:</strong> the next session writes both through the config edit workflow, dry run "
-               "first. <em>It might be wrong if</em> you would rather type them yourself, as you did card 7.",
+            "You asked what cards 23 and 24 are. They are your own words, saved on the funding tab in both "
+            "scenarios, and the model sweep (October 1) approved new wording for them. The words have not "
+            "changed yet. "
+            "<br><br><strong>The Introduction's last paragraph.</strong> Today: \"The model measures outcomes in "
+            "equivalent FTES based on CPL units and allocates funding to institutions proportionally for each "
+            "priority at an FTES reimbursement rate.\" Revised: \"The Chancellor's Office measures outcomes "
+            "...\" Today: \"The model relies on data in the MAP platform...\" Revised: \"CPL funding relies on "
+            "data in the MAP platform...\" The middle sentence and the statute quotation stay as they are."
+            "<br><br><strong>Two Timeline milestones.</strong> Today: \"Funding Model Finalized\" and \"Guidance "
+            "Memo and Funding Model Release.\" Revised: \"CPL Funding Procedure Finalized\" and \"Guidance Memo "
+            "Release.\""),
+        'why': "A college reads \"model\" in these two places and nowhere else on the page.",
+        'rec': "<strong>Apply them:</strong> the next session writes the four lines through the config edit "
+               "workflow, dry run first, as it wrote the confirmation deadline. <em>It might be wrong if</em> you "
+               "would rather type them yourself on the tab.",
         'chips': chips(('Apply them', 'apply'), ("I'll type them", 'type'), CH_LATER),
-        'evidence': [policy()],
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Which confirmation deadline is right?",
-        'ref': 'implementation-funding NEEDS SAM · cpl_funding_config Scenario 2: timing vs participationDeadline',
-        'facts': (
-            "Scenario 2's Timeline says the Confirmation Deadline is Dec 30, 2026. Its participationDeadline says "
-            "2026-11-01, and that date prints in the explainer's minimum conditions (\"Local confirmation on file by "
-            "2026-11-01\"), on each institution's Confirm chip, and in the introduction's Timing and minimum "
-            "conditions scenes, which re-render on your answer."),
-        'why': "A college reads both dates on one page.",
-        'rec': "<strong>Dec 30, 2026:</strong> the Timeline is the later word. <em>It might be wrong if</em> November 1 "
-               "is the condition date and December 30 a later step.",
-        'chips': chips(('Dec 30, 2026', 'dec30'), ('Nov 1, 2026', 'nov1'), CH_LATER),
-        'evidence': [live('2026-10-01', 'cpl_funding_config, md5 e21658f9')],
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Watch the new introduction; one figure is yours",
-        'ref': 'implementation-funding · prototype/funding_video (#1809) · your video round of 2026-10-01',
-        'facts': (
-            "Your asks are in it: the slide on how a target is set ($12,620,154 divided by $2,824.82 per CPL FTES, "
-            "4,467.6 FTES), the statewide funding under each priority, Priority 1 leading the Targets line, the "
-            "Timeline from the config, Access as every applied unit, and a plain How CPL Funding Works label with "
-            "no scenario named. The slide took the film to 100 seconds, so the page now says a 100-second "
-            "introduction. The reported box shows $9,759,692 statewide, the projects, technology and the two "
-            "positions together; $8,959,692 is the projects and technology alone. "
-            "<a href=\"https://cpl-initiative.github.io/cpl-project-tracker/prototype/funding_video/funding_in_motion_s2.html\">Watch it</a>."),
-        'why': "The reported box is the one figure on the film that is a choice rather than the engine's.",
-        'rec': "<strong>Keep $9,759,692:</strong> it matches the explainer's statewide box. <em>It might be wrong if</em> "
-               "the positions read as funding for career attainment.",
-        'chips': chips(('Keep $9,759,692', 'keep'), ('Use $8,959,692', 'alt'), CH_LATER),
-        'evidence': [quoted('prototype/funding_video/build.py (read from the engine under config md5 e21658f9)', '2026-10-01')],
+        'evidence': [live('2026-10-02', 'cpl_funding_config text.about and timing, md5 e21658f9')],
     })
     return I
 
