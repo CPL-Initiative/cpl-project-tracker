@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 507,
+   "count": 508,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4065,6 +4065,26 @@
      "updated": "2026-09-08"
     },
     {
+     "created": "2026-10-02",
+     "governs": [
+      "credential_reference.js",
+      "kb/_build_open_asks_decision_sheet.py",
+      "docs/reference/decision_sheets.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-verdict-that-reports-an-action-is-checked-in-the-store.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "decision-sheet",
+      "governance",
+      "supabase",
+      "curation"
+     ],
+     "title": "A verdict that reports an action is checked in the store before the next step",
+     "type": "methodology",
+     "updated": "2026-10-02"
+    },
+    {
      "created": "2026-08-25",
      "governs": [
       "prototype/ccr_universe.js",
@@ -4487,7 +4507,7 @@
      ],
      "title": "An index is a write-path cost until a measurement says otherwise",
      "type": "methodology",
-     "updated": "2026-09-17"
+     "updated": "2026-10-02"
     },
     {
      "created": "2026-08-21",
@@ -14537,8 +14557,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 286,
+   "count": 287,
    "docs": [
+    {
+     "created": "2026-10-02",
+     "governs": [],
+     "n": 316,
+     "path": "docs/session_316_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "partner-crosswalks",
+      "sierra",
+      "decision-sheet"
+     ],
+     "title": "sheet 19's two asks, the CER entry, and which statewide target the state publishes",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-02",
      "governs": [],
@@ -19405,5 +19442,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1011
+ "total": 1013
 }

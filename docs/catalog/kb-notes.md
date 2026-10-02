@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-507 document(s).
+508 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -224,6 +224,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A typed answer is not a boolean, and reading it as one fails silently](../kb-notes/methodology-a-typed-answer-is-not-a-boolean.md) | methodology | published | 2026-09-20 | 2026-09-20 |
 | [A value can exist in the repo and never reach the payload — two minting paths, one inference pipeline](../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [A verdict that reports an action is checked in the store before the next step](../kb-notes/methodology-a-verdict-that-reports-an-action-is-checked-in-the-store.md) | methodology | published | 2026-10-02 | 2026-10-02 |
 | [A view must not fly where it cannot draw](../kb-notes/methodology-a-view-must-not-fly-where-it-cannot-draw.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A view swap that does not move the hash strands the user](../kb-notes/methodology-a-view-swap-that-does-not-move-the-hash-strands-the-user.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A window saves only over the version it read](../kb-notes/methodology-a-window-saves-only-over-the-version-it-read.md) | methodology | published | 2026-09-23 | 2026-09-23 |
@@ -245,7 +246,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An empty read is only evidence if the set cannot legitimately be empty](../kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [An error that arrives inside a successful response is invisible to every status check](../kb-notes/methodology-an-error-inside-a-success-is-invisible-to-every-status-check.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [An incentive teaches where the finish line is](../kb-notes/methodology-an-incentive-teaches-where-the-finish-line-is.md) | methodology | published | 2026-08-06 | 2026-08-06 |
-| [An index is a write-path cost until a measurement says otherwise](../kb-notes/methodology-an-index-is-a-write-path-cost-until-measured.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [An index is a write-path cost until a measurement says otherwise](../kb-notes/methodology-an-index-is-a-write-path-cost-until-measured.md) | methodology | published | 2026-09-17 | 2026-10-02 |
 | [An inline placeholder style outranks the CSS your module injects](../kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [An inside term leaks through the context, never through the prose rules](../kb-notes/methodology-an-inside-term-leaks-through-the-context-not-the-prose.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [An instruction that names another surface is a dependency nothing enforces](../kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency.md) | methodology | published | 2026-08-14 | 2026-08-14 |

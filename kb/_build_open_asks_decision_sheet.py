@@ -31,6 +31,14 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 19 (S315, 2026-10-02, SHEET_ID 2026-10-02-open-asks-19): sheet 18's one card, unanswered, plus the
+statewide Access target (the 2.3% gap, measured: the maximum award trims the capped institutions' targets).
+Sheet 18 carried no replies when it was superseded. Published at
+https://claude.ai/artifact/HSGh2r1HAE5CzfWTW49K44 (capabilities db + comments).
+Sheet 18 (S315, 2026-10-02, SHEET_ID 2026-10-02-open-asks-18): Sam answered sheet 17 at 04:18Z (card 2
+"Apply them", written at 04:52Z; card 1 "Done" with no kb_curation row and no CER load). One card: the
+session writes the AWS fold and the Microsoft title through a workflow, or he types them. Published at
+https://claude.ai/artifact/NopXsApvXCGbnGjSTPRC5A (capabilities db + comments).
 Sheet 17 (S314, 2026-10-02, SHEET_ID 2026-10-02-open-asks-17): Sam answered all five cards of sheet 16 at
 00:36Z. Two asks remain: the CER titles and the AWS merge (sheet 16 named a button the CER draws only after
 a title is typed), and cards 23-24 shown today beside the revision. Published at
@@ -139,8 +147,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-17.html')
-SHEET_ID = '2026-10-02-open-asks-17'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-19.html')
+SHEET_ID = '2026-10-02-open-asks-19'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -216,6 +224,18 @@ def _code(src):
 # ── the repo-checkable premises ──────────────────────────────────────────────
 # Each returns (still_open, detail). A False is not an error: it means the work
 # landed and the card has to go.
+
+def p_cap_trims_targets():
+    """Card: the statewide Access target. Open while a capped institution's target is still
+    sized to the maximum (prioEntitlement scales by capScale), which is what makes the
+    institutions' targets sum below the statewide division."""
+    code = _code(_read("cpl_funding.js"))
+    i = code.find("function prioEntitlement(")
+    body = code[i:code.find("\n  }", i)] if i >= 0 else ""
+    trims = "capScale(c)" in body
+    return trims, ("prioEntitlement scales a capped institution's target by capScale()" if trims
+                   else "prioEntitlement no longer scales by capScale(): re-measure the gap")
+
 
 def p_phantom_tokens():
     bare = []
@@ -609,46 +629,66 @@ def items():
     # answer: no ask had reached v77; smoke 15e asked it and v77 answers right (sierra lane). Card 2 "Done" left
     # no write in kb_curation, and the card itself was wrong: the CER shows Confirm merge
     # only after the new title is typed. Card 3 asked what cards 23-24 are.
+    # Sheet 17's two cards (S314) were answered at 04:18Z on 2026-10-02 (through 2, both his
+    # own call). Card 2 "Apply them": written by funding-config-edit-apply.yml at 04:52Z
+    # (plan 2026-10-02-2, S315). Card 1 "Done" again left no kb_curation row: the CER reads
+    # its overlay on every load, and the API log shows no such read after the 22:46Z rename
+    # run on 2026-10-01, so the CER was not opened. The substance was ruled on sheet 14
+    # (cpl_memory sam-sheet14-rulings-2026-10-01); only the entry is open.
     I.append({
         'lane': 'partner-crosswalks',
-        'title': "Type two titles in the CER; the AWS merge button appears after the first",
-        'ref': 'partner-crosswalks · CER triage lane · sheet 16 card 2',
+        'title': "The AWS merge and the Microsoft title: I write them, or you type them",
+        'ref': 'partner-crosswalks · CER triage lane · sheet 17 card 1 · sheet 18 card 1',
         'facts': (
-            "You marked this Done, but nothing reached the curation table after your two renames at 21:18 UTC "
-            "on October 1. The card was wrong: the CER shows Confirm merge only after a new title is typed, so "
-            "there was no button to press. The steps: on the record <em>AWS Certified SysOps Administrator</em>, "
-            "type the title <em>AWS CloudOps Engineer - Associate</em>. The row then reads \"matches existing\" "
-            "with a Confirm merge button; press it. On <em>Microsoft Certified: Azure AI Fundamentals (AI-900)</em>, "
-            "type <em>Microsoft Certified: Azure AI Fundamentals</em>."),
-        'why': "The repo's guard keeps a session out of the curation table, so these two are yours to type.",
-        'rec': "<strong>Type both, then press Confirm merge.</strong> The next session applies them through the "
-               "rename workflow. <em>It might be wrong if</em> the second AWS record names a different credential.",
-        'chips': chips(('Done', 'done'), ('Hold', 'hold'), CH_LATER),
-        'evidence': [live('2026-10-02', 'kb_curation rows and the API log, read-only; credential_reference.js '
-                          'mergeSig() and pendingMerges()')],
+            "Your Done on sheet 17 left no row in the curation table. The CER loads its saved decisions "
+            "each time it opens, and the API log shows no such load after the rename run at 22:46 UTC on "
+            "October 1, so nothing was typed there. You ruled on both on sheet 14: fold "
+            "<em>AWS Certified SysOps Administrator</em> into <em>AWS CloudOps Engineer - Associate</em>, and "
+            "drop the exam code from <em>Microsoft Certified: Azure AI Fundamentals (AI-900)</em>. Only the "
+            "entry is left."
+            "<br><br>To type them yourself: on <em>AWS Certified SysOps Administrator</em>, type "
+            "<em>AWS CloudOps Engineer - Associate</em> and press Confirm merge; on the Microsoft record, type "
+            "<em>Microsoft Certified: Azure AI Fundamentals</em>."),
+        'why': "The repo's guard keeps a session out of the curation table, so a session writes there only "
+               "through a reviewed workflow, as it wrote your funding text this morning.",
+        'rec': "<strong>Write them for me:</strong> the session adds a small workflow that inserts the three "
+               "rows (the AWS title, its merge confirmation, the Microsoft title) under a bot name with a "
+               "receipt, maps it in Governance, then runs the rename. <em>It might be wrong if</em> you want "
+               "CER decisions entered only by a curator's hand.",
+        'chips': chips(('Write them for me', 'write'), ("I'll type them", 'type'), CH_LATER),
+        'evidence': [live('2026-10-02', 'kb_curation (newest row 2026-09-27) and the API log (no CER '
+                          'overlay read after 22:46Z on 2026-10-01), read-only')],
     })
+    # S315 measured S313's open 2.3% gap with the engine over the e21658f9 fixture: lifting the
+    # $400,000 maximum award makes the 118 institutions' Access targets sum to 4,467.60, the
+    # statewide division, exactly; with it, the seven institutions at the maximum carry 78.8 FTES
+    # each and the sum is 4,366.66. No other institution's target moves. Which figure the state
+    # publishes is a definition, so it is his.
     I.append({
         'lane': 'implementation-funding',
-        'title': "The last two places your saved text says \"model\"",
-        'ref': 'implementation-funding NEEDS SAM · the model sweep cards 23-24 · funding-config-edit-apply.yml',
+        'title': "The statewide Access target: the funding divided by the price, or the institutions' targets added up",
+        'ref': 'implementation-funding NEEDS SAM · the 2.3% gap · cpl_memory statewide-target-exceeds-institution-sum-2026-10-01',
         'facts': (
-            "You asked what cards 23 and 24 are. They are your own words, saved on the funding tab in both "
-            "scenarios, and the model sweep (October 1) approved new wording for them. The words have not "
-            "changed yet. "
-            "<br><br><strong>The Introduction's last paragraph.</strong> Today: \"The model measures outcomes in "
-            "equivalent FTES based on CPL units and allocates funding to institutions proportionally for each "
-            "priority at an FTES reimbursement rate.\" Revised: \"The Chancellor's Office measures outcomes "
-            "...\" Today: \"The model relies on data in the MAP platform...\" Revised: \"CPL funding relies on "
-            "data in the MAP platform...\" The middle sentence and the statute quotation stay as they are."
-            "<br><br><strong>Two Timeline milestones.</strong> Today: \"Funding Model Finalized\" and \"Guidance "
-            "Memo and Funding Model Release.\" Revised: \"CPL Funding Procedure Finalized\" and \"Guidance Memo "
-            "Release.\""),
-        'why': "These four lines are the only places your saved text still says \"model\", in either scenario.",
-        'rec': "<strong>Apply them:</strong> the next session writes the four lines through the config edit "
-               "workflow, dry run first, as it wrote the confirmation deadline. <em>It might be wrong if</em> you "
-               "would rather type them yourself on the tab.",
-        'chips': chips(('Apply them', 'apply'), ("I'll type them", 'type'), CH_LATER),
-        'evidence': [live('2026-10-02', 'cpl_funding_config text.about and timing, md5 e21658f9')],
+            "The Access card prints a statewide target of 4,467.6 CPL FTES: $12,620,154 divided by the "
+            "$2,824.82 price, as the explainer and the Scenario 2 film state it. The Statewide row's detail adds "
+            "the institutions' own targets and reads 4,366.7 (credit 4,069.3, noncredit 297.4), 100.9 FTES less."
+            "<br><br>The difference is the seven institutions at the $400,000 maximum award. The model sizes "
+            "each of their targets to the maximum, 78.8 FTES, rather than to the institution's size. "
+            "Mt. San Antonio accounts for 62.0 of the 100.9 FTES; Pasadena 14.0, Santa Ana 10.5, Long Beach "
+            "7.4, Fresno City 4.6, Bakersfield 2.0 and El Camino 0.4. No other institution's target moves "
+            "with the maximum. When every institution meets its own target, the state demonstrates 4,366.7 "
+            "FTES and every institution qualifies for its full award."),
+        'why': "One target appears as two figures on the same tab, and a reader who adds the detail's lanes "
+               "arrives at the second.",
+        'rec': "<strong>Use the sum:</strong> the card, the explainer and the film print 4,366.7, the figure "
+               "at which every institution qualifies for its full award; the film is rendered again. "
+               "<em>It might be wrong if</em> you want the public figure to stay the funding divided by the "
+               "price; the detail then keeps its sum and says in one line that the maximum award accounts "
+               "for the difference.",
+        'chips': chips(('Use the sum', 'sum'), ('Keep the division', 'division'), CH_LATER),
+        'evidence': [measured(p_cap_trims_targets, 'S315 ran cpl_funding.js over '
+                              'tests/fixtures/cpl_funding_config_e21658f9.json, Scenario 2, with and without '
+                              'the $400,000 maximum (cap_window)')],
     })
     return I
 

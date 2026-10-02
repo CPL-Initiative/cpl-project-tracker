@@ -47,9 +47,9 @@
 -- read of the rows would return an alphabetical HALF of the state and call it
 -- typical. Aggregating here returns one row per (program × normalized title)
 -- — 174 rows for CNA + LVN + RN together, measured 2026-09-18 — in 65 ms
--- (explain analyze, seq scan on top_code; the table has no top_code index and
--- does not need one at this size: docs/kb-notes/methodology-an-index-is-a-
--- write-path-cost-until-measured.md).
+-- (explain analyze, seq scan on top_code). That seq scan later cost 1.9-3.4 s on
+-- a quiet database and lost the 8 s limit under load, so the table carries a
+-- top_code btree since 2026-10-02 (below): 1,521 -> 15.5 ms for CNA + LVN.
 --
 --
 -- THE NORMALIZATION, AND WHAT IT MEASURED (2026-09-18, live)
@@ -200,6 +200,18 @@ update public.chatbox_college_courses
 -- Drop-then-create on a signature change, as the other RPCs do: PostgREST
 -- resolves an rpc call by name and must never see two candidates. The grants
 -- the drop discards are restored at the end of this file.
+-- THE top_code INDEX (2026-10-02, S315; migration chatbox_college_courses_top_code_idx)
+-- ------------------------------------------------------------------
+-- The function filters by top_code alone. Measured on the live table, a minute apart on a
+-- quiet database (explain analyze, buffers, timing off): the seq scan read 4,215 buffers,
+-- kept 723 of 141,696 rows and took 1.9-3.4 s; the whole function took 1,521 ms. With the
+-- btree: a bitmap scan of 419 buffers, 15.5 ms, the same 21 rows. The index is 1 MB. The
+-- loader (kb/_sync_college_courses.py) upserts 500-row batches, so the btree is per-batch
+-- maintenance, unlike the whole-table replace that made three GIN indexes a loader failure
+-- (docs/kb-notes/methodology-an-index-is-a-write-path-cost-until-measured.md).
+create index if not exists chatbox_college_courses_top_code_idx
+  on public.chatbox_college_courses using btree (top_code);
+
 drop function if exists public.program_typical_courses(text[], integer, integer);
 
 create or replace function public.program_typical_courses(

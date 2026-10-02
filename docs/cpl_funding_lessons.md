@@ -1202,3 +1202,16 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 - **Scenario 2's introduction is `_Scenario_2_v6.mp4`** (100.6 s); `_v5` left the repo; the explainer links `_v6` and its choices-table fallback reads 30 Dec 2026.
 
 **Open.** Cards 23–24 (sheet 17 card 2: apply, or he types them); card 11's measure texts and card 7's two lines, still his on the tab; the Scenario 2 narration script for the ElevenLabs voice.
+
+## 2026-10-02 — S315 (SkyLedger): the last "model" in the saved text, and where the 2.3% gap comes from
+
+**Sam's rulings (sheet 17, 04:18Z, through 2, both his own call).** Card 2: *"Apply them"*, the model sweep's cards 23-24. Card 1: "Done" (the CER entry; see `docs/partner_crosswalk_lessons.md`).
+
+**What we did and learned.**
+- **Cards 23-24 are written.** `funding-config-edit-apply.yml` wrote six paths at 04:52Z (#1815, plan `kb/funding_config_edits_out/2026-10-02-2/`): in both scenarios the Introduction's last paragraph now reads "The Chancellor's Office measures outcomes..." and "CPL funding relies on data in the MAP platform...", and the Timeline reads "CPL Funding Procedure Finalized" and "Guidance Memo Release". Config md5 `7e59830b` → `764fd264`, read back at after. No saved text in either scenario says "model".
+- **One plan per directory, so the workflow takes a suffix.** The `2026-10-02` directory already held the deadline plan and its receipt, and rollback reads every receipt in a directory, so a second plan there would have tied the two writes together. The workflow now accepts `<date>-2` to `-9`.
+- **`about` is one string, so its before-value is the whole field.** The plan rebuilt the 1,600-character field from the live read and hashed it locally; the md5 matched the live field in both scenarios (`48e7e484`) before the plan was committed, and the dry run read 6 at before.
+- **The 2.3% gap is the maximum award.** The engine over the `e21658f9` fixture: with the $400,000 maximum the 118 institutions' Access targets sum to 4,366.66 FTES; with it lifted they sum to 4,467.60, the statewide division, exactly. `prioEntitlement` scales a capped institution's target by `capScale()`, so the seven at the maximum each carry 78.8 FTES (Mt. San Antonio −62.0 of the 100.9); no other target moves. The Access card prints the division and the Statewide row's detail prints the sum, so which one the state publishes is sheet 19 card 2.
+- **The built-in `DEFAULT_TIMING` and introduction in `cpl_funding.js` still say "model"** (and "Undispersed ... Rolled"). They render only for a scenario with no saved text, and both scenarios have it; left as inert fallbacks.
+
+**Open.** Sheet 19 card 2 (the sum or the division; "sum" re-renders the film); card 11's measure texts and card 7's two lines, still his on the tab; the Scenario 2 narration script for the ElevenLabs voice.
