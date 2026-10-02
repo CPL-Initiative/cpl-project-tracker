@@ -399,10 +399,144 @@ _, sb = sync.assign_student_keys(dsb, rb, ib)
 check(len(sb["sketch"]) == sync.SKETCH_N,
       f"sketch must be capped at SKETCH_N; got {len(sb['sketch'])}")
 
+# ── 10. A gateway error is followed by a read-back, never a guess ─────────
+# 2026-09-30: a 520 on one staging batch ended the night's load. 2026-09-18: a
+# 504 on the promotion printed "rolled back" over a promotion that committed.
+# The staging tables carry no key and the gates refuse only a SHORT table, so
+# the one outcome worse than a lost night is a batch that lands twice.
+
+import io
+import urllib.error
+
+
+def _http(code):
+    return urllib.error.HTTPError("https://x", code, "err", {}, io.BytesIO(b"{}"))
+
+
+class FakeRest:
+    """PostgREST in miniature: row counts per table, and a script of what each
+    POST does: "ok", "lost" (fails before landing), "late" (lands, then the
+    answer is lost) or "bad" (a 4xx)."""
+
+    def __init__(self, script=(), promote="ok", loads_after=None):
+        self.rows, self.script, self.posts = {}, list(script), 0
+        self.promote, self.promote_calls, self.loads_after = promote, 0, loads_after
+
+    def request(self, method, path, key, body=None, timeout=180):
+        if path == "rpc/map_promote_custom_reports":
+            self.promote_calls += 1
+            if self.promote == "ok":
+                return 200, b'{"promoted": true}'
+            raise _http(self.promote)
+        if path.startswith("map_data_loads"):
+            if "id=gt." in path:
+                n = self.loads_after
+                return 200, (b"[]" if n is None else json.dumps(
+                    [{"id": n, "loaded_at": "t", "note": "promoted"}]).encode())
+            return 200, b'[{"id": 47}]'
+        self.posts += 1
+        step = self.script.pop(0) if self.script else "ok"
+        if step == "bad":
+            raise _http(400)
+        if step == "lost":
+            raise _http(520)
+        self.rows[path] = self.rows.get(path, 0) + len(body)
+        if step == "late":
+            raise _http(520)
+        if step == "timeout":
+            raise TimeoutError("read timed out")
+        return 201, b""
+
+    def count(self, table, key):
+        return self.rows.get(table, 0)
+
+
+import json  # noqa: E402
+
+_real = (sync._request, sync.count_rows, sync._sleep, sync.BATCH)
+
+
+def run(fake, fn):
+    sync._request, sync.count_rows = fake.request, fake.count
+    sync._sleep, sync.BATCH = (lambda s: None), 10
+    try:
+        return fn(), None
+    except SystemExit as e:
+        return None, str(e)
+    except Exception as e:          # an escaped exception is a failed check, not a crash
+        return None, f"escaped {type(e).__name__}: {e}"
+    finally:
+        sync._request, sync.count_rows, sync._sleep, sync.BATCH = _real
+
+
+ROWS = [{"r": i} for i in range(35)]   # four batches of ten at BATCH = 10
+
+f = FakeRest(["ok", "lost", "ok", "ok", "ok"])
+n, err = run(f, lambda: sync.insert("stg_t", ROWS, "k"))
+check(err is None and f.rows.get("stg_t") == 35 and f.posts == 5,
+      f"a batch that did not land must be sent again: rows {f.rows}, posts "
+      f"{f.posts}, err {err}")
+
+f = FakeRest(["ok", "late", "ok", "ok"])
+n, err = run(f, lambda: sync.insert("stg_t", ROWS, "k"))
+check(err is None and f.rows.get("stg_t") == 35 and f.posts == 4,
+      f"a batch that landed before its answer was lost must NOT be sent again "
+      f"(it would sit in staging twice): rows {f.rows}, posts {f.posts}, err {err}")
+
+f = FakeRest(["timeout", "ok", "ok", "ok"])
+n, err = run(f, lambda: sync.insert("stg_t", ROWS, "k"))
+check(err is None and f.rows.get("stg_t") == 35 and f.posts == 4,
+      f"a timeout is a lost answer too: read back, and do not re-send a batch "
+      f"that landed: rows {f.rows}, posts {f.posts}, err {err}")
+
+f = FakeRest(["ok", "bad"])
+n, err = run(f, lambda: sync.insert("stg_t", ROWS, "k"))
+check(err and "HTTP 400" in err and f.posts == 2,
+      f"a 4xx is a refusal, not a lost answer: stop at once ({err}, posts {f.posts})")
+
+f = FakeRest(["lost"] * 9)
+n, err = run(f, lambda: sync.insert("stg_t", ROWS, "k"))
+check(err and "NOTHING LIVE HAS CHANGED" in err
+      and f.posts == len(sync.RETRY_WAITS) + 1,
+      f"retries must be bounded by RETRY_WAITS and end the run ({err}, posts {f.posts})")
+
+f = FakeRest(["lost"])
+_counts = iter([0, 7])              # opens empty; then neither 0 (not landed) nor 10 (landed)
+f.count = lambda table, key: next(_counts)
+n, err = run(f, lambda: sync.insert("stg_t", ROWS, "k"))
+check(err and "expected 0 (not landed) or 10 (landed)" in err,
+      f"a count that is neither outcome must stop the run, not guess ({err})")
+
+f = FakeRest()
+f.rows = {"stg_a": 10, "stg_b": 15}
+n, err = run(f, lambda: sync.verify_staging({"stg_a": 10, "stg_b": 10}, "k"))
+check(err and "stg_b holds 15 rows; this run sent 10" in err,
+      f"a LONG staging table must be refused before the promotion; the gates "
+      f"only refuse a short one ({err})")
+
+f = FakeRest(promote=504, loads_after=48)
+rep, err = run(f, lambda: sync.promote("k"))
+check(err is None and rep and rep.get("readback", {}).get("id") == 48
+      and f.promote_calls == 1,
+      f"a 504 on the promotion must read map_data_loads back and report the "
+      f"commit, sending the promotion once: {rep}, {err}, calls {f.promote_calls}")
+
+f = FakeRest(promote=504, loads_after=None)
+rep, err = run(f, lambda: sync.promote("k"))
+check(err and "NOT CONFIRMED" in err and f.promote_calls == 1,
+      f"no new map_data_loads row: say NOT CONFIRMED, never re-send ({err}, "
+      f"calls {f.promote_calls})")
+
+f = FakeRest(promote=400)
+rep, err = run(f, lambda: sync.promote("k"))
+check(err and "PROMOTION REFUSED" in err and f.promote_calls == 1,
+      f"a gate's refusal is a real rollback and stays one ({err})")
+
 if failures:
     print(f"FAIL — {len(failures)} problem(s):")
     for f in failures:
         print(f"  ✗ {f}")
     sys.exit(1)
 print("OK — status-field mapping, rename guard, minimisation, surrogate keys, "
-      "ExhibitID variants, live-table guard and sketch bound all hold.")
+      "ExhibitID variants, live-table guard, sketch bound and the read-back "
+      "after a gateway error all hold.")

@@ -120,7 +120,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_contact_proposals` | tabs: `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_credential_student_rollup` | tabs: `college-briefing` | — |
 | `map_cx_exhibit_guidance` | tabs: `map-data-quality` | — |
-| `map_data_loads` | tabs: `map-queue` · `edgefn:cpl-chat` | — |
+| `map_data_loads` | tabs: `map-queue` · scripts: `kb/_sync_map_custom_reports.py` · `edgefn:cpl-chat` | — |
 | `map_data_quality` | tabs: `map-data-quality` | tabs: `map-data-quality` |
 | `map_student_credit` | scripts: `chatbox/smoke_test.sh` | — |
 | `map_student_key_sketch` | scripts: `kb/_sync_map_custom_reports.py` | — |
@@ -758,7 +758,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/kpi_history_no_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
-| `tests/map_custom_report_sync_test.py` | workflows: `map-custom-report-load.yml` | — |
+| `tests/map_custom_report_sync_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/memory_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_candidate_queue_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |

@@ -168,6 +168,14 @@ jobs:
       # grants. Pure-stdlib python; same non-required check.
       - name: Supabase table-grant lint (new and recreated tables carry grants)
         run: python3 tests/supabase_table_grants_test.py
+      # The MAP Custom Report loader's guard (S317). The nightly load runs it
+      # before every load, so a PR that breaks it used to surface only as a
+      # red cron that night. Its section 10 checks the read-back after a
+      # gateway error: a lost batch is sent again, a landed one never twice,
+      # and a 504 on the promotion is read from map_data_loads. Pure-stdlib
+      # python; same non-required check.
+      - name: MAP Custom Report loader guard (mapping, minimization, read-back)
+        run: python3 tests/map_custom_report_sync_test.py
       # A 1-2 character subject code never decides a discipline on its own
       # (Sam's cross-list sheet item 2, 2026-09-22). `ES` maps to Ethnic Studies
       # and means Exercise Science at many colleges, which is how 31
