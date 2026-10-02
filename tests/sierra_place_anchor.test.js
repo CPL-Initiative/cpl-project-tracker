@@ -456,8 +456,13 @@ block("9. the place is named in full", () => {
   // keeps the county out of the first sentence, and the place had no other home.
   const k = SRC.indexOf("AND MENTION IT IN THE FIRST PARAGRAPH");
   check("(9) ⭐ the place is named in the first paragraph, in the sentence after the first course", k > j && k - j < 1200
-    && /the place goes in the sentence after it/.test(SRC),
+    && /in the sentence after the first course, with that course's college and its distance/.test(SRC),
     "without it the first-sentence rule can push the place out of the answer entirely");
+  // The first wording of that rule (cpl-chat v78) led smoke 7c with a nurse
+  // assistant course in Orange County, the place's own, ahead of the nearest LVN
+  // course (run 36951885947). The rule now says the place never picks the course.
+  check("(9) ⭐ …and the place never changes which course leads, inside the place or outside it",
+    /The place never changes which course leads: the first course still comes from the program the visitor wants to enter, at the nearest college that teaches it, inside the place or outside it\./.test(SRC));
 });
 
 const failed = results.filter((r) => !r[1]);

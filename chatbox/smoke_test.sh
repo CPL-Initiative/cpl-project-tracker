@@ -224,10 +224,14 @@ answer_must_not_match_unnegated() { # [-i] regex label
 answer_must_not_claim_absence() { # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
+  # Markdown emphasis first: run 36951885947 (2026-10-02) wrote "none of the three
+  # San Gabriel Valley colleges above currently has an *articulated* CPL exhibit",
+  # and the asterisks kept the articulation form below from matching.
   stripped="$(printf '%s' "$LAST_ANSWER" | sed -E \
+    -e "s/[*]//g" \
     -e "s/\\b(catalog( data)?|the data|our data|the records?) (lists|shows|holds|carries) (no|none)\\b/\\1 \\3 zero/Ig" \
     -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?articulated/zero\\2 \\3 \\4articulated/Ig" \
-    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?([[:alnum:]-]+ ){0,3}articulations?\\b/zero\\2 \\3 an articulation/Ig")"
+    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?([[:alnum:]-]+ ){0,3}articulat(ions?|ed)\\b/zero\\2 \\3 an articulation/Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
     echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
   else
