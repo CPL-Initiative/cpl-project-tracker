@@ -14,28 +14,26 @@ pipeline did not move) and `README.md` / `kb/README.md` (no user-facing surface 
 
 ## First, in this order
 
-1. **The checkpoint PR.** If it is open, merge it on a green `test` (squash).
-2. **Read sheet 19's `replies`** (https://claude.ai/artifact/HSGh2r1HAE5CzfWTW49K44; high-water rule,
-   `docs/reference/decision_sheets.md`). Also list sheet 18's store (https://claude.ai/artifact/NopXsApvXCGbnGjSTPRC5A)
-   in case he answered there; both were empty at 06:12Z. Two cards:
-   1. **The CER entry.** "Write" means: build a small workflow on the `funding-config-edit-apply.yml` pattern that
-      INSERTs, `ON CONFLICT DO NOTHING` under `partner-crosswalks-s316@bot`, with a receipt: on
-      `_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator` a `unified_title_override` and a
-      `unified_title_merge_confirm`, both *AWS CloudOps Engineer - Associate* (the value the CER's `saveGridRowCore`
-      writes for each); on `_CREDENTIAL_REVIEW::Microsoft Certified: Azure AI Fundamentals (AI-900)` a
-      `unified_title_override` of *Microsoft Certified: Azure AI Fundamentals*. Map the writer in
-      `kb/governance_surface_map.json` (Rule 10 a3; `kb_curation` already has bot cohorts, so the reason is the
-      point). Cross-check pending `unified_title_merge_confirm` targets first (Rule 10 a). Then dispatch
-      `cred-rename-apply.yml` (it fresh-syncs and dry-runs itself). "Type" means: re-read `kb_curation` and run the
-      rename once the rows exist; if they do not, read the edge log before asking again
-      (`methodology-a-verdict-that-reports-an-action-is-checked-in-the-store`).
-   2. **The statewide Access target.** "Sum": the card, the explainer and the Scenario 2 film print 4,366.7
-      (the institutions' targets added up). Find where `prioTarget(null, p)` feeds the card and `_publicProgress()`,
-      decide with the code whether to sum through `earnAgg()` (crTarget + ncTarget), and re-render the film
-      (`_Scenario_2_v7`). "Division": keep 4,467.6 and add one line to the Statewide row's detail naming the maximum
-      award as the difference. Either way, measure again over the live config first: the S315 numbers came from
-      the `e21658f9` fixture.
-3. **ElevenLabs** still waits on Sam's Scenario 2 script (sheet 6 card 1).
+Sam answered sheet 19 at 11:52Z (both his own call): card 1 **"write"**, card 2 **"sum"**. S315 shipped card 1's
+workflow and ran out of context before card 2. `cpl_memory` `sam-sheet19-rulings-2026-10-02`.
+
+1. **The open PR.** #1820 (the CER workflow, carrying this checkpoint) or its successor: merge on a green `test`.
+2. **Card 1, the CER entry.** If `kb/cer_decisions_out/2026-10-02/applied_*.json` is on `main`, the rows were
+   written; confirm in `kb_curation` (cohort `partner-crosswalks-s315@bot`). If not, dispatch
+   `cer-decision-apply.yml` with `plan_dir=kb/cer_decisions_out/2026-10-02`: `dry-run` (expect 3 to write, 0 held),
+   then `commit`. Then dispatch `cred-rename-apply.yml` (it fresh-syncs and dry-runs: expect 1 confirmed merge,
+   AWS SysOps into *AWS CloudOps Engineer - Associate*, and 1 clean rename, the Microsoft title). Confirm
+   `kb/cred_rename_out/2026-10-02/` lands and the derived files rebuild.
+3. **Card 2, "sum": the statewide Access target becomes the institutions' sum.** Re-measure over the LIVE config
+   first (dump `select config from cpl_funding_config where id='default'` through the MCP to a file;
+   `scripts/funding_effective.js --config`; the S315 figures, 4,366.66 vs 4,467.60, came from the `e21658f9`
+   fixture). Today the Access card and `_publicProgress()` read `prioTarget(null, p)` (funding ÷ price); the
+   Statewide row's detail sums `earnAgg()`'s `crTarget + ncTarget`. Make the card, `_publicProgress()` (the
+   explainer reads it) and the film's figure the sum; keep `prioTarget(null, p)` wherever a price, not a target,
+   is meant. Grep tests for 4,467.6 and the retired sentences before pushing (`cpl_memory`
+   `wording-change-grep-tests-for-retired-sentences-2026-10-01`). Re-render Scenario 2's introduction as `_v7`
+   (`prototype/funding_video/build.py`) and point the explainer at it.
+4. **ElevenLabs** still waits on Sam's Scenario 2 script (sheet 6 card 1).
 
 ## What shipped
 
@@ -49,10 +47,11 @@ pipeline did not move) and `README.md` / `kb/README.md` (no user-facing surface 
   at the $400,000 maximum carry 78.8 FTES each (Mt. San Antonio 62.0 of the 100.9); no other target moves.
 - **Sierra v80's first clean smoke** (run 36961860002): 7c leads LBCC VN 220, 7s Rio Hondo VN 61; all checks pass.
 
-## Sam's rulings this run (sheet 17, 04:18Z)
+## Sam's rulings this run (sheet 17, 04:18Z; sheet 19, 11:52Z)
 
 - Card 2 **"Apply them"** (executed). Card 1 **"Done"**, with no `kb_curation` row and no CER load in the edge log
-  after 22:46Z on 1 October; sheet 19 card 1 changes the mechanism. `cpl_memory` `sam-sheet17-rulings-2026-10-02`.
+  after 22:46Z on 1 October; sheet 19 card 1 changed the mechanism. `cpl_memory` `sam-sheet17-rulings-2026-10-02`.
+- Sheet 19: card 1 **"write"** (a session writes the CER rows; #1820), card 2 **"sum"** (step 3 above).
 
 ## Carryover
 

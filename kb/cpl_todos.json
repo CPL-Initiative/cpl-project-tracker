@@ -2,14 +2,8 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-02",
   "_session": "S315 SkyLedger",
-  "_status": "Landed on 2 October (S315): your saved funding text no longer says 'model' in either scenario. The Introduction now reads 'The Chancellor's Office measures outcomes' and 'CPL funding relies on data', and the Timeline reads 'CPL Funding Procedure Finalized' and 'Guidance Memo Release' (sheet 17, 'Apply them'). Sierra's Orange County and San Gabriel Valley answers lead with the nearest LVN course, and her catalog lookup runs in 15 milliseconds instead of 1.5 seconds. Next: your answers on sheet 19 (the Credential Reference entry, and which statewide Access target the state publishes), and the Scenario 2 narration script for the ElevenLabs voice.",
+  "_status": "Landed on 2 October (S315): your saved funding text no longer says 'model' in either scenario. The Introduction now reads 'The Chancellor's Office measures outcomes' and 'CPL funding relies on data', and the Timeline reads 'CPL Funding Procedure Finalized' and 'Guidance Memo Release' (sheet 17, 'Apply them'). Sierra's Orange County and San Gabriel Valley answers lead with the nearest LVN course, and her catalog lookup runs in 15 milliseconds instead of 1.5 seconds. You answered sheet 19: a session writes the Credential Reference entry, and the statewide Access target becomes the colleges' targets added up. Next: the Scenario 2 narration script for the ElevenLabs voice.",
   "items": [
-    {
-      "id": "s315-sam-sheet19",
-      "for": "Sam",
-      "tab": "credential-reference",
-      "text": "Sheet 19 has two items: the AWS merge and the Microsoft title in the Credential Reference (your Done on sheet 17 left no saved row, so a session can write them through a small workflow, or you type them), and which statewide Access target the state publishes: the funding divided by the price (4,467.6 FTES) or the institutions' targets added up (4,366.7). Cards 23 and 24 are applied. https://claude.ai/artifact/HSGh2r1HAE5CzfWTW49K44"
-    },
     {
       "id": "s310-sam-card11-measures",
       "for": "Sam",
@@ -47,10 +41,10 @@
       "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
     },
     {
-      "id": "s315-fable-sheet19",
+      "id": "s316-fable-sheet19",
       "for": "Fable",
-      "tab": "credential-reference",
-      "text": "Act on sheet 19. Card 1: if Sam says write, build the small workflow that adds the AWS title, its merge confirmation and the Microsoft title to the curation table under a bot name with a receipt, map it in Governance, then run the rename workflow; if he types them, check the table and run the rename. Card 2: measure the statewide Access target over the live configuration, then make the card, the explainer and the film agree with his answer."
+      "tab": "implementation-funding",
+      "text": "Carry out Sam's two answers on sheet 19. The credential entry: confirm the reviewed workflow wrote the AWS title, its merge confirmation and the Microsoft title, and that the rename ran (run both if not). The statewide Access target: measure it again over the live configuration, then make the card, the explainer and the Scenario 2 film print the institutions' sum (about 4,366.7 FTES) and render the film again."
     }
   ],
   "_deferred": [

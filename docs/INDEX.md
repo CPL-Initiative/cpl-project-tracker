@@ -122,7 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- 2026-10-02 (S315 SkyLedger): KB note `methodology-a-verdict-that-reports-an-action-is-checked-in-the-store`; handoff 316; cards 23-24 written; the `top_code` index; the 2.3% gap traced to the maximum award; sheets 18-19.
+- 2026-10-02 (S315 SkyLedger): KB note `methodology-a-verdict-that-reports-an-action-is-checked-in-the-store`; handoff 316; cards 23-24 written; the `top_code` index; the 2.3% gap traced to the maximum award; sheets 18-19 (19 answered: write, sum); the CER decision workflow.
 - 2026-10-02 (S314 SkyVerdict): KB note `methodology-a-prompt-that-quotes-the-wrong-sentence-teaches-it`; handoff 315; Sierra v78-v80 and the Dec 30 deadline in the lessons docs.
 - **2026-10-02 (S313 SkyReel)** — Sierra v77 names City College of San Francisco (a possessive hid it) ([#1808](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1808)); Sam's two CER renames applied; the video round and the explainer's progress lines, and the rename workflow rebuilds its derived files ([#1809](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1809)); sheet 16; a KB note (a Postgres md5 proves a transcribed jsonb copy); handoff 314.
 - **2026-10-01 (S312 SkyLantern)** — the funding explainer in the Fact Sheet's layout, with Ask Sierra, the tab's FAQ, one statewide box and the average award; the introductions with the average allocation ([#1806](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1806)); Sam answered sheet 14; the "model" sweep ported ([#1807](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1807)); sheet 15; the S221 funding lessons archived; handoff 313.

@@ -210,6 +210,9 @@ jobs:
         run: |
           python3 kb/_build_open_asks_decision_sheet.py --check
           python3 tests/open_asks_sheet_coverage_test.py
+      # The reviewed CER write (sheet 19 card 1, 2026-10-02): a curator's row always wins.
+      - name: CER decision applier holds a curator's row
+        run: python3 tests/cer_decision_apply_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a
