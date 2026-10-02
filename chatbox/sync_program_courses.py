@@ -86,18 +86,42 @@ def range_total(content_range: str) -> int:
     return int(tail)
 
 
-def prune(load_id: str, expected: int, key: str, request=_request) -> int:
+# The first statements after a bulk load run beside autovacuum and analyze of
+# the table just written. Measured on the first load (run 37047373446,
+# 2026-10-02): autovacuum 18:28:38, autoanalyze 18:28:40, and the prune's exact
+# count died on the 8 s statement timeout moments later; the same count read
+# 93 ms seven minutes after. Both prune statements are safe to repeat (a count
+# reads, a delete of earlier loads finds nothing left the second time), so a
+# timeout or 5xx on either waits and tries again.
+PRUNE_TRIES = 4
+PRUNE_WAIT_S = 20
+
+
+def _patient(request, sleep, method, path, key, prefer):
+    for attempt in range(1, PRUNE_TRIES + 1):
+        try:
+            return request(method, path, None, key, prefer=prefer)
+        except _HttpError as e:
+            if not is_retryable(e) or attempt == PRUNE_TRIES:
+                raise
+            wait = PRUNE_WAIT_S * attempt
+            print(f"    prune {method}: HTTP {e.code} (try {attempt}/{PRUNE_TRIES}); "
+                  f"waiting {wait}s for the table to settle")
+            sleep(wait)
+
+
+def prune(load_id: str, expected: int, key: str, request=_request, sleep=time.sleep) -> int:
     """Count this load's rows; delete the earlier loads' only on an exact match."""
     q = urllib.parse.quote(load_id, safe="")
-    _, cr = request("GET", f"{TABLE}?select=college&load_id=eq.{q}&limit=1", None, key,
-                    prefer="count=exact")
+    _, cr = _patient(request, sleep, "GET", f"{TABLE}?select=college&load_id=eq.{q}&limit=1",
+                     key, "count=exact")
     n = range_total(cr)
     if n != expected:
         raise SystemExit(f"prune refused, nothing deleted: load {load_id} holds {n} rows, "
                          f"expected {expected}. The previous load's rows are still there "
                          f"beside this one's, so Sierra reads a superset.")
-    _, cr = request("DELETE", f"{TABLE}?load_id=neq.{q}", None, key,
-                    prefer="return=minimal,count=exact")
+    _, cr = _patient(request, sleep, "DELETE", f"{TABLE}?load_id=neq.{q}", key,
+                     "return=minimal,count=exact")
     return range_total(cr)
 
 

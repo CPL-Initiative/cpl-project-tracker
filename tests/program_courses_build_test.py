@@ -162,6 +162,44 @@ try:
     check("a short count deletes nothing", False, "no SystemExit")
 except SystemExit:
     check("a short count deletes nothing", [m for m, _ in seen] == ["GET"], str(seen))
+def settling(fail_first, total=10, deleted=0):
+    """The first `fail_first` calls die on the statement timeout, as the first
+    load's count did beside autovacuum."""
+    state = {"n": 0}
+
+    def request(method, path, body, key, prefer=None):
+        state["n"] += 1
+        seen.append(method)
+        if state["n"] <= fail_first:
+            raise S._HttpError(path, 500, '{"code":"57014"}')
+        return None, (f"0-0/{total}" if method == "GET" else f"*/{deleted}")
+    return request
+
+
+seen.clear()
+check("a count that times out beside autovacuum is retried, then the prune runs",
+      S.prune("L", 10, "k", request=settling(2), sleep=lambda s: None) == 0
+      and seen == ["GET", "GET", "GET", "DELETE"], str(seen))
+seen.clear()
+try:
+    S.prune("L", 10, "k", request=settling(S.PRUNE_TRIES), sleep=lambda s: None)
+    check("the prune's retries are bounded and delete nothing", False, "no error")
+except S._HttpError:
+    check("the prune's retries are bounded and delete nothing",
+          seen == ["GET"] * S.PRUNE_TRIES, str(seen))
+
+
+def refusing(method, path, body, key, prefer=None):
+    seen.append(method)
+    raise S._HttpError(path, 401, "JWT expired")
+
+
+seen.clear()
+try:
+    S.prune("L", 10, "k", request=refusing, sleep=lambda s: None)
+    check("a 4xx on the prune is not retried", False, "no error")
+except S._HttpError:
+    check("a 4xx on the prune is not retried", seen == ["GET"], str(seen))
 try:
     S.range_total("0-0/*")
     check("a missing exact count stops the prune", False)
