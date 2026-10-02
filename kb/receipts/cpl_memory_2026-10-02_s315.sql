@@ -110,3 +110,5 @@ insert into public.cpl_memory_log (memory_id, actor, action, note, before, after
 select upd.id, 'SkyLedger-s315', 'supersede', 'resolved: the top_code index (chatbox-college-courses-top-code-index-2026-10-02); a session-sourced row', before.b, upd.a
 from upd join before using (id);
 select slug, status from public.cpl_memory where slug in ('sam-sheet17-rulings-2026-10-02', 'funding-text-model-words-written-2026-10-02', 'cer-done-twice-without-a-load-2026-10-02', 'chatbox-college-courses-top-code-index-2026-10-02', 'statewide-target-gap-is-the-maximum-award-2026-10-02', 'sierra-catalog-reads-timeout-under-load-2026-10-02') order by 1;
+-- Second write, 12:01Z: one row, sam-sheet19-rulings-2026-10-02 (decision, verified by the sheet 19 reply store),
+-- inserted under author 'SkyLedger-s315' with its cpl_memory_log 'create' row (same shape as above).

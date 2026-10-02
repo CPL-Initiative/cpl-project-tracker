@@ -1215,3 +1215,5 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 - **The built-in `DEFAULT_TIMING` and introduction in `cpl_funding.js` still say "model"** (and "Undispersed ... Rolled"). They render only for a scenario with no saved text, and both scenarios have it; left as inert fallbacks.
 
 **Open.** Sheet 19 card 2 (the sum or the division; "sum" re-renders the film); card 11's measure texts and card 7's two lines, still his on the tab; the Scenario 2 narration script for the ElevenLabs voice.
+
+**Ruled later the same day (sheet 19 card 2, 11:52Z): "sum".** The card, the explainer and the Scenario 2 film print the institutions' summed Access target (4,366.7 FTES on the fixture), the figure at which every institution qualifies for its full award. Built in S316: re-measure over the live config first; the card reads `prioTarget(null, p)` today and the detail sums `earnAgg()`'s `crTarget + ncTarget`.
