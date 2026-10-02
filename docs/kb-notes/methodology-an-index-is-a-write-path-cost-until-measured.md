@@ -1,7 +1,7 @@
 ---
 title: An index is a write-path cost until a measurement says otherwise
 created: 2026-09-17
-updated: 2026-09-17
+updated: 2026-10-02
 tags: [methodology, supabase, postgres, performance, pipeline-safety]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -91,6 +91,16 @@ not a preference against indexes.
 It also does not apply to a corpus large enough that a seq scan is genuinely
 expensive. 22,335 rows is small; at 22 million the arithmetic inverts. **Take
 the timing at the size you actually have.**
+
+### The counter-case, measured the same way (2026-10-02)
+
+`chatbox_college_courses` (141,696 rows) is loaded by 500-row upserts, and
+`program_typical_courses` filters it on `top_code` alone, keeping **0.5%** of
+the rows. The seq scan took 1.9-3.4 s on a quiet database; a btree brought the
+function from **1,521 ms to 15.5 ms** (4,215 buffers to 419), and the same
+table's `college` btree answered a lookup of similar selectivity in 28 ms. A
+selective predicate, a batched write path, and a timing on both sides: the
+index earned its place (migration `chatbox_college_courses_top_code_idx`).
 
 ## See also
 
