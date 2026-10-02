@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1023,
-    "bytes": 10847452,
+    "files": 1025,
+    "bytes": 10862621,
     "over_budget": 6,
-    "handoff_max": 315,
+    "handoff_max": 316,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59975,
     "superseded_files": 0,
@@ -26,44 +26,44 @@
       },
       "other": {
         "files": 117,
-        "bytes": 3319611,
+        "bytes": 3320498,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 11264,
+        "bytes": 11043,
         "over": 0
       },
       "lessons": {
         "files": 76,
-        "bytes": 2178987,
+        "bytes": 2184114,
         "over": 2
       },
       "kb_note": {
-        "files": 509,
-        "bytes": 2577953,
+        "files": 510,
+        "bytes": 2582194,
         "over": 0
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 277083,
+        "bytes": 277059,
         "over": 1
       },
       "handoff": {
-        "files": 286,
-        "bytes": 2422579,
+        "files": 287,
+        "bytes": 2427738,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 6,
-      "vault_heavy_path": 57
+      "vault_heavy_path": 56
     },
     "vault": {
-      "files": 3933,
-      "bytes": 1711178618,
-      "heavy_bytes": 785031968,
+      "files": 3389,
+      "bytes": 1702261836,
+      "heavy_bytes": 782108683,
       "heavy_share": 0.459,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -111,7 +111,6 @@
         "cpl-project-tracker/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/regional_cpl_opportunity_la.js",
         "cpl-project-tracker/credential_reference_data.js",
-        "cpl-project-tracker/prototype/funding_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
         "cpl-project-tracker/coci_lookup_desc_B.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
         "cpl-project-tracker/coci_lookup_desc_D.js",
@@ -412,13 +411,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 690420,
+        "bytes": 690951,
         "limit": 150000,
         "lane": "other",
-        "over_by": 540420,
-        "ratio": 4.6
+        "over_by": 540951,
+        "ratio": 4.61
       },
-      "message": "690,420 B is 4.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "690,951 B is 4.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -930,16 +929,6 @@
         "kind": "file"
       },
       "message": "3,007,918 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype/funding_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
-      "detail": {
-        "bytes": 2923285,
-        "kind": "file"
-      },
-      "message": "2,923,285 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
