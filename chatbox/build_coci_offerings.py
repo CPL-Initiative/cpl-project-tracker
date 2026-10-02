@@ -243,6 +243,9 @@ def build_programs(full_names):
                 "cip_code": cip_code,
                 "cip_title": cip_title,
                 "status": status,
+                # With college, the key into coci_program_courses
+                # (chatbox/build_program_courses.py). Zero-padded; never int().
+                "control_number": (r.get("CONTROL NUMBER") or "").strip(),
             })
     return rows, os.path.basename(path), dict(unresolved)
 

@@ -4,9 +4,9 @@
   "supabase_tables": 90,
   "rpcs": 32,
   "edge_functions": 5,
-  "file_datasets": 565,
+  "file_datasets": 568,
   "external_services": 147,
-  "consumers": 394,
+  "consumers": 395,
   "workflows": 39,
   "data_js_files": 68,
   "tabs": 37
@@ -3645,6 +3645,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:chatbox/build_program_courses.py": {
+   "consumers": [
+    {
+     "id": "workflow:coci-offerings-sync.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:chatbox/college_geo.json": {
    "consumers": [
     {
@@ -3760,6 +3773,19 @@
    "main_committers": []
   },
   "file:chatbox/sync_coci_offerings.py": {
+   "consumers": [
+    {
+     "id": "workflow:coci-offerings-sync.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:chatbox/sync_program_courses.py": {
    "consumers": [
     {
      "id": "workflow:coci-offerings-sync.yml",
@@ -11766,6 +11792,13 @@
   "file:kb/reference/cb_course_basic_fall2025.csv": {
    "consumers": [
     {
+     "id": "script:chatbox/build_program_courses.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
+    },
+    {
      "id": "script:kb/_build_futuro_hth_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -16216,6 +16249,19 @@
    "main_committers": []
   },
   "file:tests/probe_lifecycle_checks_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/program_courses_build_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -20860,7 +20906,9 @@
    "crons": [],
    "scripts": [
     "chatbox/build_coci_offerings.py",
-    "chatbox/sync_coci_offerings.py"
+    "chatbox/sync_coci_offerings.py",
+    "chatbox/build_program_courses.py",
+    "chatbox/sync_program_courses.py"
    ],
    "adds": [],
    "push": null,
@@ -21257,6 +21305,7 @@
     "tests/supabase_function_grants_test.py",
     "tests/supabase_table_grants_test.py",
     "tests/map_custom_report_sync_test.py",
+    "tests/program_courses_build_test.py",
     "tests/mid_short_code_gate_test.py",
     "tests/orphan_parent_worklist_test.py",
     "tests/csr_trail_rules_test.py",
@@ -21913,6 +21962,7 @@
   "kb/credentials.json rebuilt by kb/_match_cos_authority.py under cos-authority-sync.yml but not in its commit list"
  ],
  "unresolved": [
+  "chatbox/sync_program_courses.py",
   "cpl_session.js",
   "reviewer_signin.js"
  ],

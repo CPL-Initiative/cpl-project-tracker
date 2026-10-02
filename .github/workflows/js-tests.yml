@@ -176,6 +176,11 @@ jobs:
       # python; same non-required check.
       - name: MAP Custom Report loader guard (mapping, minimization, read-back)
         run: python3 tests/map_custom_report_sync_test.py
+      # Sierra's program -> course membership (S318): the two-signal college
+      # crosswalk, the status filters, MIS as the owner of a course, and the
+      # loader's re-send (an upsert lands once). Pure-stdlib python.
+      - name: Program course membership guard (crosswalk, filters, re-send)
+        run: python3 tests/program_courses_build_test.py
       # A 1-2 character subject code never decides a discipline on its own
       # (Sam's cross-list sheet item 2, 2026-09-22). `ES` maps to Ethnic Studies
       # and means Exercise Science at many colleges, which is how 31
