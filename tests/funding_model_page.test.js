@@ -872,20 +872,39 @@ check("the status line is empty on a successful paint",
   const P0 = D3.progress.prios[0];
   check("p2 under the stored config every priority card carries a target line and a progress line",
     prog.length === D3.prios.length && prog.length === 2 && prog.every((x) => x.length === 2 && /^Target: /.test(x[0]) && /^Progress: /.test(x[1])));
-  check("p2b ...the engine's figures: Access 4,467.6 CPL FTES at $2,824.82 against $12,620,154",
-    prog[0][0].indexOf("Target: 4,467.6 CPL FTES statewide") === 0 && prog[0][0].indexOf("$2,824.82 per CPL FTES (the $5,649.63 base rate times a factor of 0.5)") > 0
+  // The statewide target is the institutions' targets added up (Sam, sheet 19
+  // card 2, 2026-10-02: "sum"), 4,366.7; the division, $12,620,154 / $2,824.82,
+  // is 4,467.6, and the maximum award accounts for the difference.
+  check("p2b ...the engine's figures: Access 4,366.7 CPL FTES at $2,824.82 against $12,620,154",
+    prog[0][0].indexOf("Target: 4,366.7 CPL FTES statewide") === 0 && prog[0][0].indexOf("at an FTES reimbursement rate of $2,824.82 (the $5,649.63 base rate times a factor of 0.5)") > 0
       && Math.round(P0.totalPossible) === 12620154);
   check("p3 the target line is the engine's: statewide FTES, its semester units, the price, the rate and the factor",
     prog[0][0] === "Target: " + P0.target.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) +
-      " CPL FTES statewide, about " + Math.round(P0.units).toLocaleString("en-US") + " semester units, at $" +
-      P0.price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " per CPL FTES (the $" +
+      " CPL FTES statewide, about " + Math.round(P0.units).toLocaleString("en-US") + " semester units, at an FTES reimbursement rate of $" +
+      P0.price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " (the $" +
       P0.rate.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " base rate times a factor of " +
-      (+P0.factor).toFixed(1) + ").");
+      (+P0.factor).toFixed(1) + "). The institutions' targets add up to this figure; the maximum award lowers the targets of the seven institutions that reach it.");
+  // Sheet 19 card 2 ("sum"): the count is the model's, and the film's slide
+  // prints the same target and the same count (build.py HOW, Scenario 2).
+  const filmCfg = JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(ROOT, "prototype", "funding_video", "funding_in_motion_s2.html"), "utf8"))[1]);
+  check("p3b the explainer and the film print the engine's target and its count of institutions at the maximum",
+    D3.atMax === 7 && filmCfg.how.capped === D3.atMax &&
+      D3.progress.prios.every((x, i) => filmCfg.how.rows[i] && filmCfg.how.rows[i][3] === Math.round(x.target * 10) / 10));
+  // rendered text only: the page's own script names `pr.price`, an identifier
+  const vis = doc.body.cloneNode(true);
+  vis.querySelectorAll("script, style, template").forEach((e) => e.remove());
+  const priceHits = (vis.textContent.match(/.{0,80}\b(pric(e|ed|es|ing)|premium)\b.{0,40}/gi) || []);
+  check("p3c the page never says price, priced or premium (Sam, 2026-10-02)" + (priceHits.length ? " — " + priceHits.join(" | ") : ""),
+    priceHits.length === 0);
   check("p4 the progress line is the Public view's Demonstrated of Total Possible, or TBA",
     P0.demonstrated == null ? prog[0][1] === "Progress: TBA."
       : prog[0][1].indexOf(money(P0.demonstrated) + " of the " + money(P0.totalPossible) + " Total Possible") > 0);
-  check("p5 the target times the price is the Total Possible, for each FTES priority",
-    D3.progress.prios.every((x) => Math.abs(x.target * x.price - x.totalPossible) < 1 || !x.ftes));
+  // Sheet 19 card 2 ("sum"): the target is the institutions' targets added up,
+  // so the target times the price falls short of the Total Possible by what the
+  // maximum award trims from the capped institutions (it would equal it with no
+  // institution at the maximum).
+  check("p5 the target times the price is at most the Total Possible, for each FTES priority",
+    D3.progress.prios.every((x) => !x.ftes || (x.target > 0 && x.target * x.price <= x.totalPossible + 1)));
   check("p6 no glyph in the ported lines (plain words: times, about)", prog.every((x) => !/[×≈—]/.test(x.join(" "))));
   // The counts arrive with MAP's eligibility read, which ends in render() and
   // fires onModelChange; the page repaints and the counts appear.

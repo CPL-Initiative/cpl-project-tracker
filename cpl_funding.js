@@ -2234,6 +2234,31 @@
     if (c) laneFrac = (p && p.lane === "nc") ? laneShareOf(c).nc : laneShareOf(c).cr;
     return (c ? sizeOf(c) * capScale(c) * laneFrac : totalSize()) * p.target_rate;   // target in students
   }
+  // THE STATEWIDE TARGET THE STATE PUBLISHES IS THE INSTITUTIONS' TARGETS ADDED
+  // UP (Sam, open-asks sheet 19 card 2, 2026-10-02: "sum"). prioTarget(null, p)
+  // divides the priority's statewide funding by its price; the maximum award
+  // scales each capped institution's target down (capScale), so the
+  // institutions' targets add up to less than that division (2.3% under config
+  // 764fd264: 4,366.7 against 4,467.6 CPL FTES). The sum is the figure at which
+  // every institution qualifies for its full award, so the priority card, the
+  // explainer (_publicProgress) and the Statewide CSV row print it. Both lanes
+  // together, as the card's Total Possible is: the credit priority on each
+  // institution's credit share plus its noncredit twin on the noncredit share,
+  // the same terms earnAgg() adds into crTarget + ncTarget for the Statewide
+  // detail. prioTarget(null, p) stays wherever the division itself is meant.
+  function sysTarget(p, slot) {
+    if (!prioIsFtes(p)) return prioTarget(null, p);
+    var ncP = null;
+    if (p.lane !== "nc") ncPriorities(slot).forEach(function (q) { if (q.src === p.src) ncP = q; });
+    var t = 0;
+    oneRoster().forEach(function (col) {
+      var sp = instSplit(col);
+      if (p.lane === "nc") { if (sp.nc > 0) t += prioTarget(col, p); return; }
+      if (sp.cr > 0) t += prioTarget(col, p);
+      if (ncP && sp.nc > 0) t += prioTarget(col, ncP);
+    });
+    return t;
+  }
   // What a target is counted in — drives every label and the actual's conversion.
   function prioUnitLabel(p) { return prioIsFtes(p) ? "FTES" : "students"; }
   // ── CPL FTES ──────────────────────────────────────────────────────────
@@ -7349,7 +7374,7 @@
       // front-load changes is how much is on the table to earn against that same
       // target, which gets its own line below.
       var sysDollars = p.share * per;
-      var sysHeads = prioTarget(null, p);
+      var sysHeads = sysTarget(p, slot);
       // Under an FTES metric the target is CPL FTES, the per-student rate is a
       // fossil of the dormant per_student layer, and "% of statewide headcount"
       // divides FTES by people. All three read as fact on screen, so branch the
@@ -8850,9 +8875,8 @@
         perPrio[i].earned += prioCap(sp.cr, slot, p) * fr.f;
         if (!a.gate_blocked) perPrio[i].crReleased += prioCap(sp.cr, slot, p) * fr.f;
         // Each lane's statewide target is the SUM of the institutions' lane
-        // targets (the statewide drill-in's Max FTES, 2026-09-24); the
-        // statewide prioTarget(null, p) reads the full share, both lanes
-        // together, which is the card's figure and not a lane's.
+        // targets (the statewide drill-in's Max FTES, 2026-09-24); the two
+        // lanes together are sysTarget(p), the card's figure (sheet 19, "sum").
         if (sp.cr > 0) perPrio[i].crTarget += prioTarget(col, p);
         // Status counts describe the CREDIT measures; the noncredit-only rows
         // hold no credit slice, so counting their (empty) credit status would
@@ -9031,7 +9055,7 @@
       // its own line at card width, and the label already says what it is.
       out.push(card({ v: edNum("ftesrate", fmtNum2(ftesRate()),
           { label: "Reimbursement rate per CPL FTES",
-            title: "The price a CPL FTES is valued at. Raising it LOWERS every target " +
+            title: "The rate a CPL FTES is valued at. Raising it LOWERS every target " +
                    "(target = allocation ÷ rate); lowering it raises them." }),
         l: "Reimbursement rate per <strong>CPL FTES</strong>, the rate that sets each performance target: " +
           fmtMoney(per) + " &divide; " + fmtMoney2(ftesRate()) +
@@ -9189,7 +9213,7 @@
     var out = [];
     priorities(state.viewSlot).forEach(function (p) {
       var heads = isSystem ? totalHeads() : (c.headcount || 0);
-      out.push(Math.round(prioTarget(isSystem ? null : c, p)));
+      out.push(Math.round(isSystem ? sysTarget(p, state.viewSlot) : prioTarget(c, p)));
       var fr = earnFraction(isSystem ? null : c, p);
       out.push(fr.status === "earned" ? fr.actual :
         fr.status === "suppressed" ? maskLt(false) :
@@ -10257,7 +10281,7 @@
       fmtMoney(prop) + ", ÷ " + priceWords(p) + ".");
     var m = allocModel();
     if (m.floored[c.college]) {
-      lines.push("The base award lifts this institution's funding above its proportional share; its target stays priced on that share.");
+      lines.push("The base award lifts this institution's funding above its proportional share; its target stays set on that share.");
     } else if (prop > 0) {
       lines.push("The funding is " + fmtPctTrim(f.maxFunds / prop) + " of the proportional figure, the same for every institution above the base, " +
         "because the base awards come out of the same total" +
@@ -10530,7 +10554,7 @@
       nc_award: "Max NC Funds", nc_current: currHeadHtml("NC Funds"), total: "Total Funds",
       current_total: currHeadHtml("Total Funds") };
     var HEAD_TIP = {
-      cr_award: "This priority's credit funding " + when + ", with its Max FTES beneath: the credit measure's target at the priority's price.",
+      cr_award: "This priority's credit funding " + when + ", with its Max FTES beneath: the credit measure's target at the priority's FTES reimbursement rate.",
       cr_current: "Credit funding this priority has qualified for so far, with the Actual FTES beneath. Hover a figure for what remains." + GRAY_WORDS,
       nc_award: "This priority's noncredit funding " + when + ", with its Max FTES beneath. " + NC_LANE_RULE,
       nc_current: "Noncredit funding this priority has qualified for so far, with the Actual FTES beneath. " + NC_LANE_RULE + GRAY_WORDS,
@@ -14212,7 +14236,7 @@
       _allocCache = null; _ncoRows = null; _earnCache = null;
       var agg = earnAgg();
       var prios = agg.ps.map(function (p, i) {
-        var pp = agg.perPrio[i] || {}, ftes = prioIsFtes(p), target = prioTarget(null, p);
+        var pp = agg.perPrio[i] || {}, ftes = prioIsFtes(p), target = sysTarget(p, state.viewSlot);
         return { label: p.label, title: p.title || "", ftes: ftes, target: target,
                  units: ftes ? target * unitsPerCplFtes(null) : null,
                  factor: prioFactor(p), price: prioPrice(p), rate: ftesRate(),

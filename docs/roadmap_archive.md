@@ -5791,3 +5791,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### Moved from docs/INDEX.md update history (S315 checkpoint, 2026-10-02, verbatim)
 
 - **2026-09-30 (S306 SkyRivet checkpoint)** — Sam's four asks on the funding surfaces: the drill-in hovers that say how each figure is reached, the frozen College Dashboard header, Refresh everything and its dialog, My College following the model, My CPL Funding beside the table, and Unit sources (military vs non-military, exhibits, recommendations); open-asks sheet 6; a KB note on sticky headers; S306 in the funding lessons; handoff 307.
+
+<!-- moved from docs/INDEX.md Update history, 2026-10-02 (S316) -->
+- **2026-09-30 (S307 SkyGusset checkpoint)** — the Reporting box's reviewer half, `cpl_funding_reports` INSERT-only ([#1782](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1782)); Sam's Public view asks: the published scenario opens, As colleges see it, My CPL Funding at the top by college or district with Save as PDF, the margin audit, the videos' ways back ([#1783](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1783)); the CO style guide as a reference note; open-asks sheets 7 (answered) and 8; KB notes on the style guide and on alignment; handoff 308.

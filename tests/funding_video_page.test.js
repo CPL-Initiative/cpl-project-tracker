@@ -108,7 +108,7 @@ function boot(file, reduced) {
 }
 
 [["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v4.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v6.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v7.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
@@ -326,12 +326,22 @@ NARRATED.forEach(({ tag, v, s }) => {
   const cfgOf = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const stageAt = (w, t) => { w.__film.seek(t); return w.document.getElementById("stage").textContent.replace(/\s+/g, " "); };
   [["funding_in_motion.html", "", "Access", "$8,329,302", "2,948.6", "Dec 2026"],
-   ["funding_in_motion_s2.html", "s2 ", "Access", "$12,620,154", "4,467.6", "Dec 2026"]].forEach(([file, tag, first, funding, target, conf]) => {
+   ["funding_in_motion_s2.html", "s2 ", "Access", "$12,620,154", "4,366.7", "Dec 2026"]].forEach(([file, tag, first, funding, target, conf]) => {
     const raw = fs.readFileSync(path.join(DIR, file), "utf8"), cfg = cfgOf(file), w = boot(file, false);
     const how = stageAt(w, 54.5);
-    check(tag + "m1 the targets slide divides the statewide funding by the price per CPL FTES",
-      how.includes("How a target is set") && how.includes(funding) && how.includes("$2,824.82")
-        && how.includes("the $5,649.63 base rate times a factor of 0.5") && how.includes(target));
+    check(tag + "m1 the targets slide divides the statewide funding by the FTES reimbursement rate, and never says price (Sam, 2026-10-02)",
+      how.includes("How a target is set") && how.includes(funding) && how.includes("$2,824.82") && how.includes("FTES reimbursement rate")
+        && how.includes("the $5,649.63 base rate times a factor of 0.5") && how.includes(target) && !/\bpric(e|ed|es|ing)\b/i.test(how));
+    // Sheet 19 card 2 ("sum"): where the published target is the institutions'
+    // targets added up, the slide takes the maximum award's difference off the
+    // division, and the arithmetic it shows holds to the printed tenth.
+    const sum = cfg.how.rows[0][3] != null;
+    check(tag + "m1b " + (sum ? "the slide subtracts the maximum award's difference and names the target the institutions' sum"
+                               : "the slide prints the division as the target"),
+      sum ? how.includes("100.9") && how.includes("the maximum award lowers seven institutions’ targets")
+              && how.includes("the institutions’ targets added up") && !how.includes("4,467.6")
+              && cfg.how.rows.every((r) => Math.round(r[2] * 10) - Math.round((r[2] - r[3]) * 10) === Math.round(r[3] * 10))
+          : !/maximum award/.test(how));
     check(tag + "m2 its figures are the engine's: target = funding / (rate x factor), to the printed tenth",
       cfg.how.rows.every((r) => Math.abs(r[1] / (cfg.how.rate * cfg.how.factor) - r[2]) < 0.05)
         && Math.round(cfg.how.rate * cfg.how.factor * 100) === Math.round(cfg.how.price * 100));
