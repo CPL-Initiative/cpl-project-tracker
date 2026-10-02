@@ -260,7 +260,10 @@ var S5=scene(46,56,'Targets','Every priority has a target in FTES: 30 semester u
   o.cap.textContent=t<6.4?(t>5.0?'Half the target qualifies for half the share.':''):'The share is the ceiling.';o.cap.style.opacity=t<6.4?k(t,5.0,5.4):k(t,7.6,8.0);});
 
 var S6=scene(56,65,'Minimum conditions','Meet the minimum conditions by '+CFG.deadline+': a CPL coordinator assigned and listed in MAP and on the college CPL landing page; local confirmation on file; and at least 75 percent of enrolled veterans’ Joint Services Transcripts uploaded in MAP. Until then, the funding your college demonstrates is held in reserve for it.',function(r,o){
-  o.h=words(r,'Meet the minimum conditions by <span class="blue">'+CFG.deadline+'</span>','hd');o.h.style.fontSize='3.9cqw';
+  // One line at 3.9cqw holds a 16-character date ("December 1, 2026"); a longer one
+  // ("December 30, 2026", S314) wrapped its year, so the heading shrinks to fit.
+  var dn=String(CFG.deadline).length;
+  o.h=words(r,'Meet the minimum conditions by <span class="blue">'+CFG.deadline+'</span>','hd');o.h.style.fontSize=dn>16?(3.9*16/dn).toFixed(2)+'cqw':'3.9cqw';
   var L=['A CPL coordinator assigned and listed in MAP and on your college’s CPL landing page','Local confirmation of participation on file','At least 75% of enrolled veterans’ Joint Services Transcripts uploaded in MAP'];
   o.rows=L.map(function(s,i){var d=E('div','abs',null,r,'left:8cqw;right:4.5cqw;top:'+([11.6,22.2,29.8][i])+'cqw;display:flex;gap:2.2cqw;align-items:center');
     var n=E('div',null,String(i+1),d,'flex:none;width:6cqw;height:6cqw;border-radius:50%;display:grid;place-items:center;font:900 3.4cqw/1 '+PF+';border:.35cqw solid var(--stage-ink)');
