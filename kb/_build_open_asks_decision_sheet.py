@@ -31,7 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Sheet 20 (S317, 2026-10-02, SHEET_ID 2026-10-02-open-asks-20): sheet 19 was answered and carried out
+Sheet 21 (S318, 2026-10-02, SHEET_ID 2026-10-02-open-asks-21): sheet 20 carried no replies when it was
+superseded. Its two cards, plus the program-course migration (the programs loader that fills Sierra's join
+key, and the grants closing the three catalog loaders; the connector's confirm had no one to answer it).
+Published at https://claude.ai/artifact/2z9impotUrBZS5SDd4Rg2K (capabilities db + comments).
+Sheet 20 (S317, 2026-10-02, SHEET_ID 2026-10-02-open-asks-20, https://claude.ai/artifact/2FmMPxYqndY2oKnobcKZQi): sheet 19 was answered and carried out
 (S316). Two cards from Sam's Sierra ask: the ElevenLabs plan (ElevenLabs disabled the account's free tier
 before Minimum conditions was read) and his verdict on the sample.
 Sheet 19 (S315, 2026-10-02, SHEET_ID 2026-10-02-open-asks-19): sheet 18's one card, unanswered, plus the
@@ -150,8 +154,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-20.html')
-SHEET_ID = '2026-10-02-open-asks-20'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-21.html')
+SHEET_ID = '2026-10-02-open-asks-21'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -498,6 +502,16 @@ def p_video_n2_pending():
                            else "every scene of the Scenario 2 narration is read")
 
 
+# Sierra's program course lists (S318): the programs loader that fills the join
+# key, and the grants that close the three catalog loaders, are not yet live.
+def p_program_ctl_pending():
+    """The programs schema file still marks its loader and grants block unapplied."""
+    sql = _read("chatbox/supabase_search_college_programs.sql")
+    open_ = "are NOT yet" in sql and "applied" in sql
+    return open_, ("the programs loader and the loader grants are marked not yet applied" if open_
+                   else "the programs loader and the loader grants are marked applied")
+
+
 # The Reporting box (sheet 4 card 2): nothing writes expenditures yet.
 def p_reporting_box_unbuilt():
     """No consumer writes cpl_funding_reports yet."""
@@ -650,6 +664,35 @@ def items():
     # target becomes the institutions' sum on the card, the explainer and the film; S316 builds it).
     # p_cap_trims_targets stays above for a later card.
 
+    # Sam, 2026-10-02 (S318): "Goal is to be able to list the courses in particular programs at a
+    # given college." The data and the route are built; one migration waits on a person.
+    I.append({
+        'lane': 'sierra-retrieval-corpus',
+        'title': "Run one migration so Sierra can list a program's courses, and close three loaders",
+        'ref': 'sierra-retrieval-corpus NEEDS SAM · chatbox/20261002_S318_pending_migration.sql · #1826 · #1828',
+        'facts': (
+            "Each program's own course list is loaded: 313,710 rows from the Data Mart Program Course File, "
+            "covering 20,451 of the 22,335 programs Sierra searches (#1826). Sierra's route reads it when a "
+            "question names one college and asks for courses (#1828). Today she lists every course sharing the "
+            "program's TOP code, which finds a median 33% of a program's courses."
+            "<br><br>One migration joins the two: the programs loader writes each program's control number. "
+            "The same SQL closes <code>coci_programs_replace</code>, <code>coci_offerings_replace</code> and "
+            "<code>college_geo_replace</code> to the service key; each empties a Sierra table, and today any "
+            "signed-in Supabase user may run them. The Supabase connector asks a person to confirm any "
+            "statement carrying delete or revoke, and no one could answer it during the session: four calls "
+            "timed out and applied nothing, each read back."),
+        'why': "Until it runs, the course lists stay dark and three table-emptying functions stay open.",
+        'rec': "<strong>Paste it:</strong> open the Supabase SQL editor, paste "
+               "<code>chatbox/20261002_S318_pending_migration.sql</code>, and run it. The next session reads the "
+               "grants and the loader back, reloads the catalog, runs the A/B preview, and asks you to deploy. "
+               "<em>It might be wrong if</em> you would rather approve the connector's prompt; choose the second "
+               "chip, and the next session you are watching runs it.",
+        'chips': chips(('Pasted it', 'pasted'), ('Run it while I watch', 'attended'), CH_LATER),
+        'evidence': [measured(p_program_ctl_pending, 'chatbox/supabase_search_college_programs.sql marks '
+                              'the loader and grants not yet applied'),
+                     live('2026-10-02', "pg_proc.proacl and the live coci_programs_replace body, read "
+                          "through the Supabase connector")],
+    })
     # Sam, 2026-10-02 (S317): "write a script for the scenario 2 video for an ElevenLabs narrator.
     # Keep it very simple and focused and see if you can select a female voice model to narrate and
     # give her the name Sierra on the video as a sample." Ten scenes read; the eleventh met the block.
