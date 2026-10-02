@@ -398,13 +398,16 @@ function mountWords(doc) {
   // The IDENTIFIERS stay (earnedMoney, earnFraction, .cplfund-earned-line, the
   // status value "earned", the explainer's `earning` section id — a stored
   // curation key); this reads rendered TEXT, so it never sees them.
+  // Sam, 2026-10-02: "Stay away from commercial terms like 'price'." A priority
+  // has a rate per CPL FTES (the base rate times its factor); the identifiers
+  // (prioPrice, priceWords) stay.
   const bad = [/\bpools?\b/i, /\bmoney\b/i, /\bapportion\w*/i, /\bpot\b/i, /\badvances?\b(?! (the|each|Vision))/i,
     /\bdraws?\b/i, /\bdrawn\b/i, /\bdraw(ing|-?down)\b/i, /\bunspent\b/i, /\bthe dollars\b/i,
     /\bbaked\b/i, /\bscored\b/i, /\bfalling back\b/i, /\bpin it\b/i, /\bno data yet\b/i,
-    /\b(un)?earn(s|ed|ing|ings|able)?\b/i]
+    /\b(un)?earn(s|ed|ing|ings|able)?\b/i, /\bpric(e|ed|es|ing)\b/i, /\bpremium\b/i]
     .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
     .filter(Boolean);
-  check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' / earn in the curate view's rendered text — " +
+  check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' / earn / price in the curate view's rendered text — " +
     (bad.length ? bad.join(" | ") : "clean"), bad.length === 0);
   // Sam, 2026-09-13: "revise all text that starts with a negative statement and
   // just start with the positive." Sentence-initial only: a mid-sentence "no"

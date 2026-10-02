@@ -462,7 +462,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 12568,
+     "line": 12592,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -694,7 +694,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 11197,
+     "line": 11221,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -1410,7 +1410,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3250,
+     "line": 3275,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -3226,7 +3226,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 6642,
+     "line": 6667,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4460,7 +4460,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1344
+     "line": 1352
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -4660,7 +4660,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1345
+     "line": 1353
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
@@ -4690,7 +4690,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13950,
+     "line": 13974,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4718,7 +4718,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1335
+     "line": 1343
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -4768,7 +4768,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13895,
+     "line": 13919,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4811,7 +4811,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13880,
+     "line": 13904,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5832,7 +5832,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 11850,
+     "line": 11874,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5947,7 +5947,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 6766,
+     "line": 6791,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -6046,7 +6046,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1359
+     "line": 1367
     }
    ],
    "served": true,
@@ -6264,7 +6264,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1336
+     "line": 1344
     }
    ],
    "served": true,
@@ -14584,7 +14584,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 225
+     "line": 232
     },
     {
      "id": "script:prototype/funding_video/cues.py",
@@ -14617,7 +14617,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 196
+     "line": 203
     }
    ],
    "served": true,
@@ -14630,7 +14630,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 218
+     "line": 225
     }
    ],
    "served": true,
@@ -14959,7 +14959,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3856,
+     "line": 3881,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -18099,7 +18099,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4107,
+     "line": 4132,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -18516,7 +18516,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 3999,
+     "line": 4024,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -18539,7 +18539,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4718,
+     "line": 4743,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -18550,7 +18550,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 4743,
+     "line": 4768,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -18577,7 +18577,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 4171,
+     "line": 4196,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -18593,7 +18593,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4778,
+     "line": 4803,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -18604,7 +18604,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 4834,
+     "line": 4859,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -19396,7 +19396,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 10424,
+     "line": 10448,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -19454,7 +19454,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4055,
+     "line": 4080,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -19498,7 +19498,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4056,
+     "line": 4081,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -19531,7 +19531,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 10400,
+     "line": 10424,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -19825,7 +19825,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 10379,
+     "line": 10403,
      "tabs": [
       "college-briefing",
       "implementation-funding"

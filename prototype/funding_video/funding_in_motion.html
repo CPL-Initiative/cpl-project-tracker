@@ -212,33 +212,45 @@ var S4=scene(32,46,CFG.prioName,CFG.prioText,function(r,o){
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.cols.forEach(function(c,i){var a=1.2+i*4,p=back(k(t,a,a+0.9));c.d.style.opacity=k(t,a,a+0.3);c.d.style.transform='translateY('+((1-p)*6)+'cqw) rotate('+((1-p)*(i-1)*4)+'deg)';
   if(!c.rep)count(c.n,t,a+0.2,a+1.4,c.v,function(v){return Math.round(v)+'%';});if(c.sv&&!c.rep)count(c.sv,t,a+0.2,a+1.4,c.sw);var on=t>=a&&t<a+4;c.d.style.filter=t>=13.2||on||t<a?'none':'saturate(.4) opacity(.55)';});});
 
-/* ---- how a target is set: the statewide division (Sam, 2026-10-01). Each
-   figure is the engine's (build.py HOW): a priority's statewide funding divided
-   by its price per CPL FTES, the base rate times its factor. Statewide only; an
-   institution's own target follows its size. ---- */
+/* ---- how a target is set (Sam, 2026-10-01). Each figure is the engine's
+   (build.py HOW): a priority's statewide funding divided by its FTES
+   reimbursement rate, the base rate times its factor. A row carrying a fourth figure is the
+   statewide target as the state publishes it, the institutions' targets added
+   up (Sam, sheet 19 card 2, 2026-10-02: "sum"): the maximum award lowers the
+   targets of the institutions that reach it, so the slide takes that difference
+   off the division before the target. "FTES reimbursement rate", never price
+   (Sam, 2026-10-02). ---- */
 function money2(n){return '$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function ftes1(n){return Number(n).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});}
-function howTail(){var R=HOW.rows;if(R.length===2)return R[1][0]+' is set the same way: <b>'+ftes1(R[1][2])+' FTES</b>.';
-  return R.slice(1).map(function(x){return x[0];}).join(' and ').replace(/ and (.)/,function(m,c){return ' and '+c.toLowerCase();})+' are set the same way: <b>'+R.slice(1).map(function(x){return ftes1(x[2]);}).join('</b> and <b>')+' FTES</b>.';}
-var SH=HOW?scene(46,46+D,'How a target is set','A priority’s target is its statewide funding divided by its price per CPL FTES. '+HOW.rows[0][0]+': '+money(HOW.rows[0][1]).slice(1)+' dollars divided by '+money2(HOW.price).slice(1)+' dollars per FTES, the '+money2(HOW.rate).slice(1)+' dollar base rate times a factor of '+HOW.factor+', sets a target of '+ftes1(HOW.rows[0][2])+' FTES statewide. '+howTail().replace(/<\/?b>/g,''),function(r,o){
+function tgt(x){return x[3]!=null?x[3]:x[2];}
+function count9(n){return ['no','one','two','three','four','five','six','seven','eight','nine'][n]||String(n);}
+var SUM=!!(HOW&&HOW.rows[0][3]!=null),CUT=SUM?HOW.rows[0][2]-HOW.rows[0][3]:0,HS=SUM?0.6:0;
+function howTail(){var R=HOW.rows;if(R.length===2)return R[1][0]+' is set the same way: <b>'+ftes1(tgt(R[1]))+' FTES</b>.';
+  return R.slice(1).map(function(x){return x[0];}).join(' and ').replace(/ and (.)/,function(m,c){return ' and '+c.toLowerCase();})+' are set the same way: <b>'+R.slice(1).map(function(x){return ftes1(tgt(x));}).join('</b> and <b>')+' FTES</b>.';}
+var SH=HOW?scene(46,46+D,'How a target is set','A priority’s target is its statewide funding divided by its FTES reimbursement rate'+(SUM?', adjusted for the maximum award':'')+'. '+HOW.rows[0][0]+': '+money(HOW.rows[0][1]).slice(1)+' dollars divided by an FTES reimbursement rate of '+money2(HOW.price).slice(1)+' dollars, the '+money2(HOW.rate).slice(1)+' dollar base rate times a factor of '+HOW.factor+(SUM?', less the '+ftes1(CUT)+' FTES by which the maximum award lowers '+count9(HOW.capped)+' institutions’ targets':'')+', sets a target of '+ftes1(tgt(HOW.rows[0]))+' FTES statewide'+(SUM?', the institutions’ targets added up':'')+'. '+howTail().replace(/<\/?b>/g,''),function(r,o){
   o.h=words(r,'How a target is set','hd');
-  o.l=words(r,'A priority’s statewide funding, divided by its <b>price per CPL FTES</b>.','ln');o.l.style.cssText='margin-top:1.2cqw;font-size:3cqw';
+  o.l=words(r,'A priority’s statewide funding, divided by its <b>FTES reimbursement rate</b>.','ln');o.l.style.cssText='margin-top:1.2cqw;font-size:3cqw';
   var R0=HOW.rows[0];
-  o.box=E('div','abs',null,r,'left:4.5cqw;right:4.5cqw;top:16.4cqw;display:grid;grid-template-columns:5.5cqw 37cqw 1fr;align-items:baseline;row-gap:1.1cqw');
-  function row(op,cls,val,label){var c0=E('div',null,op,o.box,'font:900 5.6cqw/1 '+PF+';color:var(--stage-muted)');var v=E('div',cls,val,o.box,'font:900 6.2cqw/1 '+PF+';justify-self:end;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums');
-    var l=E('div','ln',label,o.box,'font-size:2.7cqw;padding-left:2.6cqw');return{els:[c0,v,l],v:v};}
+  /* four rows when the target is the sum: each sets a step smaller, and the
+     figures' column narrows so every label fits above the closing line */
+  var Z=SUM?{col:30,gap:0.8,op:4.6,val:5.1,lab:2.45}:{col:37,gap:1.1,op:5.6,val:6.2,lab:2.7};
+  o.box=E('div','abs',null,r,'left:4.5cqw;right:4.5cqw;top:16.4cqw;display:grid;grid-template-columns:5.5cqw '+Z.col+'cqw 1fr;align-items:baseline;row-gap:'+Z.gap+'cqw');
+  function row(op,cls,val,label){var c0=E('div',null,op,o.box,'font:900 '+Z.op+'cqw/1 '+PF+';color:var(--stage-muted)');var v=E('div',cls,val,o.box,'font:900 '+Z.val+'cqw/1 '+PF+';justify-self:end;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums');
+    var l=E('div','ln',label,o.box,'font-size:'+Z.lab+'cqw;padding-left:2.6cqw');return{els:[c0,v,l],v:v};}
   o.r1=row('',  'blue','$0',R0[0]+' funding, statewide');
-  o.r2=row('÷',null,money2(HOW.price),'per CPL FTES: the '+money2(HOW.rate)+' base rate times a factor of '+HOW.factor);
+  o.r2=row('÷',null,money2(HOW.price),'FTES reimbursement rate: the '+money2(HOW.rate)+' base rate times a factor of '+HOW.factor);
+  if(SUM)o.rc=row('−',null,ftes1(CUT),'FTES: the maximum award lowers '+count9(HOW.capped)+' institutions’ targets');
   o.rule=E('div',null,null,o.box,'grid-column:1 / 3;height:.4cqw;background:var(--stage-ink);transform-origin:left');
   E('div',null,null,o.box);
-  o.r3=row('=','gold','0.0',R0[0]+' target, in CPL FTES');
+  o.r3=row('=','gold','0.0',R0[0]+(SUM?' target: the institutions’ targets added up':' target, in CPL FTES'));
   o.b=words(r,howTail(),'ln abs');o.b.style.cssText='left:4.5cqw;right:4.5cqw;bottom:2.4cqw;font-size:3.2cqw';
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);reveal(o.l.ws,t,0.8,0.05,0.5);
   o.r1.els.forEach(function(e){fade(e,t,1.6,2.2);});count(o.r1.v,t,1.6,2.8,HOW.rows[0][1]);
   o.r2.els.forEach(function(e){fade(e,t,3.0,3.6);});
-  o.rule.style.transform='scaleX('+eio(k(t,4.2,4.8))+')';
-  o.r3.els.forEach(function(e){fade(e,t,4.6,5.1);});o.r3.v.textContent=ftes1(HOW.rows[0][2]*eio(k(t,4.6,5.8)));
-  reveal(o.b.ws,t,6.6,0.06,0.5);},true):null;
+  if(o.rc)o.rc.els.forEach(function(e){fade(e,t,3.9,4.5);});
+  o.rule.style.transform='scaleX('+eio(k(t,4.2+HS,4.8+HS))+')';
+  o.r3.els.forEach(function(e){fade(e,t,4.6+HS,5.1+HS);});o.r3.v.textContent=ftes1(tgt(HOW.rows[0])*eio(k(t,4.6+HS,5.8+HS)));
+  reveal(o.b.ws,t,6.6+HS,0.06,0.5);},true):null;
 
 var S5=scene(46,56,'Targets','Every priority has a target in FTES: 30 semester units of CPL make one FTES, or 45 on a quarter calendar. '+CFG.ex.targetLead+' '+CFG.target.ftesWords+' FTES behind '+CFG.target.usdWords+' dollars. Reach half the target, '+CFG.target.halfFtesWords+' FTES, and '+CFG.ex.qualifier+' qualifies for '+CFG.target.halfUsdWords+' dollars. Going past the target adds nothing: the share is the ceiling.',function(r,o){
   o.h=words(r,'Every priority has a target','hd');
@@ -359,10 +371,14 @@ function buildK(){var st=stage.getBoundingClientRect();if(!st.width)return;
   a=at(S3,3.5,function(o){return o.nv;},'above');K.push(Q(29.7,a),Q(31.3,a),P(32.0,112,30,90),P(33.0,-10,9,90));
   [0,1,2].forEach(function(i){a=at(S4,13.5,function(o){return o.cols[i].d;},'above');K.push(Q(33.6+i*4,a),Q(i<2?36.8+i*4:45.2,a));});
   enc(ENC[1]);
-  /* the targets slide: the funding, the price, the target */
-  if(SH){a=at(SH,8,function(o){return o.r1.v;},'left');K.push(Q(47.6,a),Q(49.2,a));
+  /* the targets slide: the funding, the rate, the maximum award's difference when the target is the sum, the target */
+  if(SH&&!SUM){a=at(SH,8,function(o){return o.r1.v;},'left');K.push(Q(47.6,a),Q(49.2,a));
     a=at(SH,8,function(o){return o.r2.v;},'left');K.push(Q(49.8,a),Q(51.6,a));
     a=at(SH,8,function(o){return o.r3.v;},'left');K.push(Q(52.4,a),Q(55.0,a));}
+  if(SH&&SUM){a=at(SH,8,function(o){return o.r1.v;},'left');K.push(Q(47.6,a),Q(49.0,a));
+    a=at(SH,8,function(o){return o.r2.v;},'left');K.push(Q(49.4,a),Q(50.5,a));
+    a=at(SH,8,function(o){return o.rc.v;},'left');K.push(Q(50.9,a),Q(52.1,a));
+    a=at(SH,8,function(o){return o.r3.v;},'left');K.push(Q(52.6,a),Q(55.0,a));}
   a=at(S5,8.5,function(o){return o.half;},'below');K.push(Q(LS(48.2),a),Q(LS(52.4),a));
   a=at(S5,8.5,function(o){return o.bar;},'below',0.985);K.push(Q(LS(53.6),a),Q(LS(55.3),a),P(LS(56.0),112,40,90));
   [0,1,2].forEach(function(i){a=at(S6,5,function(o){return o.rows[i].n;},'left');if(!i)K.push(P(LS(56.8),a.x,-8,180));K.push(Q(LS([57.4,58.9,60.2][i]),a),Q(LS([58.5,59.8,64.2][i]),a));});
