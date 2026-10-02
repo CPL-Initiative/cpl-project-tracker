@@ -31,6 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 17 (S314, 2026-10-02, SHEET_ID 2026-10-02-open-asks-17): Sam answered all five cards of sheet 16 at
+00:36Z. Two asks remain: the CER titles and the AWS merge (sheet 16 named a button the CER draws only after
+a title is typed), and cards 23-24 shown today beside the revision. Published at
+https://claude.ai/artifact/BUSR19kLbQ8yponfQVk1AP (capabilities db + comments).
+Sheet 16 (S313, 2026-10-01, SHEET_ID 2026-10-01-open-asks-16): five cards, published onto sheet 15's artifact
+https://claude.ai/artifact/49Rh1tw4TZy4MS9o1jF7UH; its replies stay there.
 Sheet 15 (S312 checkpoint, 2026-10-01, SHEET_ID 2026-10-01-open-asks-15): Sam answered all six cards of
 sheet 14 at 21:22Z (each his own call; recorded in the lanes). Three asks remain: the Microsoft title and the
 AWS fold (partner-crosswalks), cards 23-24 of the model sweep, and the confirmation deadline.
@@ -565,27 +571,6 @@ def audit_coverage(items):
     return found, missing, stale, dead
 
 
-# Sheet 16 card 1 carried forward, pending smoke 15e's read of v77 (S314).
-CARD_SIERRA_CCSF = {
-    'lane': 'sierra-retrieval-corpus',
-    'title': "Ask Sierra City College of San Francisco's split on v77",
-    'ref': 'sierra-retrieval-corpus · cpl-chat v77 (#1808) · sheet 16 card 1 · smoke 15e',
-    'facts': (
-        "Your note says Sierra said she did not have the split for San Francisco. That answer came at 21:14 UTC "
-        "on October 1, from v76; v77 went live at 23:23 UTC and no one has asked her since. Ask her again: "
-        "<em>What is the military and non-military split of City College of San Francisco's applied units, and "
-        "which exhibits are they from?</em> Today's rows: 13,914 units on plans from 1,910 students, military "
-        "13,843.5 and non-military 70.5, led by Default Credit (4,726.5 units, 1,890 students)."),
-    'why': "One college checked by hand tests every figure the answer draws from.",
-    'rec': "<strong>Ask it and mark what she said.</strong> <em>It might be wrong if</em> the nightly load has "
-           "moved these figures; the next session compares her answer with that day's rows.",
-    'chips': [('Right', 'right'), ('Wrong: see note', 'wrong'), ('Later', 'later')],
-    'evidence': [{"kind": "live", "checked": "2026-10-02",
-                  "how": "map_college_credit_summary, _bucket and map_college_exhibit_credit, college_id 30; "
-                         "chat_interactions"}],
-}
-
-
 # ── the items ────────────────────────────────────────────────────────────────
 def items():
     """The cards: every ask a lane marks, one card each.
@@ -621,10 +606,9 @@ def items():
     # Sheet 14's six cards left with Sam's rulings (21:22Z, 2026-10-01, all his own call).
     # Sheet 16's five cards (S313) were all answered at 00:36Z on 2026-10-02 (through 5):
     # card 4 Dec 30 (applied, S314), card 5 keep $9,759,692. Card 1 "wrong" restated v76's
-    # answer: no ask had reached v77, so smoke 15e asked it (below). Card 2 "Done" left
+    # answer: no ask had reached v77; smoke 15e asked it and v77 answers right (sierra lane). Card 2 "Done" left
     # no write in kb_curation, and the card itself was wrong: the CER shows Confirm merge
     # only after the new title is typed. Card 3 asked what cards 23-24 are.
-    I.append(CARD_SIERRA_CCSF)
     I.append({
         'lane': 'partner-crosswalks',
         'title': "Type two titles in the CER; the AWS merge button appears after the first",
@@ -659,7 +643,7 @@ def items():
             "<br><br><strong>Two Timeline milestones.</strong> Today: \"Funding Model Finalized\" and \"Guidance "
             "Memo and Funding Model Release.\" Revised: \"CPL Funding Procedure Finalized\" and \"Guidance Memo "
             "Release.\""),
-        'why': "A college reads \"model\" in these two places and nowhere else on the page.",
+        'why': "These four lines are the only places your saved text still says \"model\", in either scenario.",
         'rec': "<strong>Apply them:</strong> the next session writes the four lines through the config edit "
                "workflow, dry run first, as it wrote the confirmation deadline. <em>It might be wrong if</em> you "
                "would rather type them yourself on the tab.",
