@@ -1,7 +1,16 @@
 {
- "_about": "The narration the voice reads, Scenario 2, draft 1 (S305, 2026-09-30), made from Scenario 1's v3 script (narration_s1.json, draft 4) for sheet 4 card 8: Sam, 2026-09-29, after the CO demo, \"We're going with Scenario 2\", college funding follows P1 and P2, and \"I will be reporting on P3 Career Attainment together with P4 projects using more qualitative data rather than tying it to FTES.\" Eight scenes read word for word as Scenario 1's, because their figures are the same under the stored Scenario 2 config (read 2026-09-30, the model's own figures: $35,000,000; $25,240,308 to 118 institutions; Sample College's maximum $345,220 and its $340,861 credit and $4,358 noncredit shares). Two scenes differ: Two priorities (Access and Completion at half each, and the Chancellor's Office reporting career attainment with the innovation projects, card 7's reported cards) and Targets (Sample College's Access target, 67.2 FTES behind $170,431). The voice never names the scenario, which the picture carries, so the read survives the Chancellor's finalizing it. Spoken form, voice, fixes, bans and cues follow narration_s1.json; see its note. Not linked from the explainer: Scenario 2 waits on the Chancellor, and the cut on Sam's review.",
- "voice": "af_heart",
- "speed": 1.0,
+ "_about": "The narration of Scenario 2's narrated cut, draft 2 (S317 SkyCompass, 2026-10-02), voiced by Sierra. Sam, 2026-10-02: \"write a script for the scenario 2 video for an ElevenLabs narrator. Keep it very simple and focused and see if you can select a female voice model to narrate and give her the name Sierra on the video as a sample\", and \"The music can drop to background level.\" One or two plain sentences per scene of the current Scenario 2 picture (the introduction's v7: the average allocation, the targets slide, December 30, 2026, the CPL funding page), about 330 words where draft 1 had 430. Every figure is the film's, read from the engine under the live config, md5 764fd264 (checked live 2026-10-02): $35,000,000; about $25 million to 118 institutions; the $150,000 to $400,000 range and the $213,901 average; 4,366.7 FTES statewide for each priority; 34.5 FTES for the average Access target. The voice says the figures in words and writes MAP as map, so the captions and the aligner read what she says.",
+ "voice": "Sierra",
+ "engine": {
+  "name": "elevenlabs",
+  "voice": "Bella - Professional, Bright, Warm",
+  "voice_id": "hpp4J3VqNfWAUOO0d1Us",
+  "model": "eleven_multilingual_v2",
+  "flow": "https://elevenlabs.io/app/flows/DORtbrSu16j7ETeqaSkB",
+  "clips": "voice_s2",
+  "speech_rms_dbfs": -20.0,
+  "_why": "Bella is an ElevenLabs premade voice (always available, unlike a library voice, which its owner can withdraw): \"warm, bright, and professional... Standard American accent... crisp diction and a deliberate, rhythmic pace\". Sierra is the name the film gives her (Sam, 2026-10-02). One generation per scene through the ElevenLabs connector; each scene's `read` names its clip and generation, and `text_sha1` is the SHA-1 of the text it was read from. narrate.py brings every clip to one speech level, -20 dBFS RMS, 2 dB over the Kokoro read it replaces, so the score sits further back."
+ },
  "layout": {
   "lead_s": 1.0,
   "tail_s": 0.8,
@@ -9,68 +18,21 @@
   "last_tail_s": 3.4,
   "_why": "The narrated cut paces each scene as its lead-in (the seam, its barrier and the first reveal), its clip, and its air; Sam, 2026-09-26: \"slow down and lengthen the timing a bit to accommodate readability and narration.\""
  },
- "phoneme_fixes": [
-  {
-   "find": "ˈɛftˈɛs",
-   "use": "ˌɛftˌiːˌiːˈɛs",
-   "why": "FTES unspaced reads as one word, 'eftess'; say the four letters quickly, as the tokenizer says CPL (sˌiːpˌiːˈɛl)"
-  },
-  {
-   "find": "twˈɛnti twˈɛntisˈɪks",
-   "use": "twˌɛnti twˌɛntisˈɪks",
-   "why": "a year: a lighter stress on both twenties, so twenty twenty-six runs as one phrase"
-  },
-  {
-   "find": "θɹuː twˈɛntiˈeɪt",
-   "use": "θɹuː twˌɛntiˈeɪt",
-   "why": "the short end year of the title's range"
-  },
-  {
-   "find": "twˈɛntisˈɪks, twˈɛntisˈɛvən",
-   "use": "twˌɛntisˈɪks, twˌɛntisˈɛvən",
-   "why": "the budget year said as people say it, twenty-six, twenty-seven; without the comma a listener hears one number (2627)"
-  }
- ],
- "never": [
-  {
-   "phonemes": "sˈiː pˈiː ˈɛl",
-   "why": "C P L spaced: three full stresses, the v2 read Sam called stilted"
-  },
-  {
-   "phonemes": "ˈiː dˈiː dˈiː",
-   "why": "E D D spaced, the same stilted read"
-  },
-  {
-   "phonemes": "ˈɛf tˈiː ˈiː ˈɛs",
-   "why": "F T E S spaced, the same stilted read"
-  },
-  {
-   "phonemes": "ˈɛftˈɛs",
-   "why": "FTES read as the word 'eftess'"
-  },
-  {
-   "phonemes": "ˌɛmˌeɪpˈiː",
-   "why": "MAP in capitals is spelled out; Sam: MAP is read as the word 'map'"
-  },
-  {
-   "phonemes": "twˈɛnti twˈɛnti",
-   "why": "a year with every twenty at full stress, the v2 read Sam called stilted"
-  },
-  {
-   "phonemes": "tˈuː θˈaʊzənd",
-   "why": "a year written in digits reads as 'two thousand'"
-  }
- ],
  "scenes": [
   {
    "scene": "Title",
-   "text": "Let's walk through how CPL Initiative funding works for twenty twenty-six through twenty-eight, and what it means for your college.",
+   "text": "Hi, I'm Sierra. Here's how CPL Initiative funding works for your college.",
+   "read": {
+    "clip": "01.mp3",
+    "generation": "WWmLAY8g4hE0beYuzrnp",
+    "read_on": "2026-10-02",
+    "text_sha1": "bc729e3149ba1684a8223a535d46c141cd2f2dad"
+   },
    "cues": [
     {
-     "at": 1.0,
-     "word": "twenty twenty-six through twenty-eight",
-     "why": "the years, 2026–2028",
-     "skip": "the picture shows the years before the title, and the voice names them after it; the title takes the cue"
+     "at": 0.3,
+     "word": "I'm Sierra",
+     "why": "the name beneath the lockup, Narrated by Sierra"
     },
     {
      "at": 1.4,
@@ -86,7 +48,13 @@
   },
   {
    "scene": "The funding",
-   "text": "The state set aside thirty-five million dollars in one-time funding for the twenty-six, twenty-seven year. Just over twenty-five million of it goes straight to a hundred and eighteen institutions. The rest funds statewide CPL projects and technology, plus two Chancellor's Office positions that support colleges.",
+   "text": "The state set aside thirty-five million dollars in one-time funding. About twenty-five million goes directly to one hundred eighteen institutions. The rest funds statewide CPL projects, technology, and two Chancellor's Office positions that support colleges.",
+   "read": {
+    "clip": "02.mp3",
+    "generation": "eSojnEVlA97fG5PZFkBR",
+    "read_on": "2026-10-02",
+    "text_sha1": "94feeef8485490268c058840def378ac40bc65ea"
+   },
    "cues": [
     {
      "at": 0.1,
@@ -98,7 +66,7 @@
      "at": 2.2,
      "word": "set aside",
      "why": "the line, set aside by the state to help colleges build credit for prior learning",
-     "skip": "the voice says it 1.3 seconds before the counter lands, and the picture needs 2.2 seconds of film before it; pinned, it would hurry the count, so the counter takes the cue"
+     "skip": "the voice says it about a second before the counter lands, and the picture needs 2.2 seconds of film before it; pinned, it would hurry the count, so the counter takes the cue and the line follows its words"
     },
     {
      "at": 2.4,
@@ -107,86 +75,86 @@
     },
     {
      "at": 3.6,
-     "word": "twenty-five million",
+     "word": "About twenty-five million",
      "why": "the bar's first segment and its label, $25,240,308 directly to 118 institutions"
     },
     {
      "at": 4.3,
      "word": "The rest funds",
-     "why": "the second segment and its label, $8,959,692 for statewide CPL projects and technology"
-    },
-    {
-     "at": 5.0,
-     "word": "plus two Chancellor's Office positions",
-     "why": "the third segment and its label, $800,000 for two Chancellor’s Office positions"
+     "why": "the second segment and its label, $9,759,692 for statewide CPL projects and technology and two Chancellor’s Office positions"
     }
    ]
   },
   {
    "scene": "Maximum allocation",
-   "text": "Every institution has a maximum allocation for the two years. It's based on the institution's share of instruction, credit and noncredit together, and it falls between a hundred and fifty thousand dollars and four hundred thousand. Sample College's maximum, for example, is about three hundred forty-five thousand.",
+   "text": "Each institution has a maximum allocation for the two years, from one hundred fifty thousand to four hundred thousand dollars. The average is about two hundred fourteen thousand.",
+   "read": {
+    "clip": "03.mp3",
+    "generation": "ym64b87qI8lAvYjtcab7",
+    "read_on": "2026-10-02",
+    "text_sha1": "768a8f16bf00c8204e7d33ed4a73e3876c971e78"
+   },
+   "air_s": 2.4,
+   "air_why": "The picture runs six seconds past the average marker (its bottom line, Smaller institutions are brought up to the base. The largest are held at the cap.), and the voice ends two seconds after naming the average; with the usual 0.8 s of air the marker and the cap led their words by 2.6 and 2.2 s.",
    "cues": [
     {
      "at": 0.1,
-     "word": "Every institution has a maximum allocation",
+     "word": "Each institution has a maximum allocation",
      "why": "the heading, Every institution has a maximum allocation"
     },
     {
-     "at": 0.8,
-     "word": "It's based on the institution's share",
-     "why": "the line, sized by its share of instruction, credit and noncredit together"
-    },
-    {
      "at": 1.6,
-     "word": "falls between",
-     "why": "the range line the figures sit on"
+     "word": "from one hundred fifty thousand",
+     "why": "the range line, and the base, $150,000, at its left"
     },
     {
-     "at": 2.0,
-     "word": "a hundred and fifty thousand",
-     "why": "the base, $150,000"
-    },
-    {
-     "at": 2.7,
-     "word": "four hundred thousand",
+     "at": 2.35,
+     "word": "four hundred thousand dollars",
      "why": "the cap, $400,000"
     },
     {
      "at": 4.0,
-     "word": "Sample College's maximum",
-     "why": "the Sample College marker, $345,220, slides onto the range"
+     "word": "The average is about",
+     "why": "the Average allocation marker, $213,901, slides onto the range"
     }
    ]
   },
   {
    "scene": "Credit and noncredit",
-   "text": "That maximum splits into a credit share and a noncredit share, following each institution's own mix of instruction. And only noncredit outcomes count toward the noncredit share.",
+   "text": "Each allocation splits into a credit share and a noncredit share. Only noncredit outcomes count toward the noncredit share.",
+   "read": {
+    "clip": "04.mp3",
+    "generation": "SR6A6BXgaIy6s1cE13Tr",
+    "read_on": "2026-10-02",
+    "text_sha1": "ed0451c5d8df6d193ba520938d14e26625dddd3c"
+   },
    "cues": [
     {
      "at": 0.1,
-     "word": "That maximum splits",
-     "why": "the heading, Every allocation splits in two"
+     "word": "Each allocation splits",
+     "why": "the heading, The average splits in two"
     },
     {
      "at": 1.8,
-     "word": "credit share",
-     "why": "$345,220 splits into the credit share and the noncredit share, which count up"
-    },
-    {
-     "at": 3.8,
-     "word": "following each institution's own mix",
-     "why": "the line, The split follows each institution’s own instructional mix"
+     "word": "a credit share",
+     "why": "$213,901 splits into the credit share and the noncredit share, which count up"
     },
     {
      "at": 4.2,
-     "word": "only noncredit outcomes count",
+     "word": "Only noncredit outcomes count",
      "why": "its bold sentence, Only noncredit outcomes count toward the noncredit share"
     }
    ]
   },
   {
    "scene": "Two priorities",
-   "text": "Two priorities carry the funding, in equal shares. Access counts applied CPL units from students who start at the CPL Portal, at your college's landing page, or through a batch upload. Completion counts transcribed CPL units, with the map counselor step checked. And the Chancellor's Office reports on career attainment together with the innovation projects, in qualitative terms.",
+   "text": "Two priorities carry the funding, in equal shares. Access counts applied CPL units. Completion counts transcribed CPL units, with the map counselor step checked. The Chancellor's Office reports on career attainment together with the innovation projects.",
+   "read": {
+    "clip": "05.mp3",
+    "generation": "QWfavGqbodpp43aq0CKM",
+    "read_on": "2026-10-02",
+    "text_sha1": "1cbeb26df53c3ed567d915988fcb0b43aa01fe3f"
+   },
    "cues": [
     {
      "at": 0.1,
@@ -196,27 +164,71 @@
     {
      "at": 1.2,
      "word": "Access counts",
-     "why": "the Access card, 50 percent"
+     "why": "the Access card, 50 percent and $12,620,154 statewide"
     },
     {
      "at": 5.2,
      "word": "Completion counts",
-     "why": "the Completion card, 50 percent"
+     "why": "the Completion card, 50 percent and $12,620,154 statewide"
     },
     {
      "at": 9.2,
-     "word": "career attainment together",
+     "word": "The Chancellor's Office reports",
      "why": "the reported card, Career attainment and innovation projects"
     }
    ]
   },
   {
-   "scene": "Targets",
-   "text": "Each priority has a target, measured in FTES. Thirty semester units of CPL make one FTES, or forty-five if you're on the quarter system. Sample College's Access target, for example, is about sixty-seven FTES, behind about a hundred seventy thousand dollars. Here's the part to remember: reach half of a target, and your college qualifies for half that share. Go past the target, and the share stays where it is. It's the ceiling.",
+   "scene": "How a target is set",
+   "text": "The model sets each priority's statewide target from its funding and the FTES reimbursement rate: about four thousand three hundred sixty-seven FTES for each.",
+   "read": {
+    "clip": "06.mp3",
+    "generation": "HkJp5oAtyStUZkk3dfbr",
+    "read_on": "2026-10-02",
+    "text_sha1": "d71c3a20612c4e2bad93f4a2d449b495ac59334b"
+   },
    "cues": [
     {
      "at": 0.1,
-     "word": "Each priority has a target",
+     "word": "The model sets each priority's statewide target",
+     "why": "the heading, How a target is set"
+    },
+    {
+     "at": 0.8,
+     "word": "from its funding",
+     "why": "the line, A priority's statewide funding, divided by its FTES reimbursement rate",
+     "skip": "the voice names the funding and the rate in one breath, and the picture needs 2.2 seconds between the line and the rate row while the funding counts up; pinned, the line led its words by 1.9 seconds, so the rate row takes the cue"
+    },
+    {
+     "at": 3.0,
+     "word": "the FTES reimbursement rate",
+     "why": "the rate row, $2,824.82: the $5,649.63 base rate times a factor of 0.5"
+    },
+    {
+     "at": 6.4,
+     "word": "about four thousand three hundred sixty-seven",
+     "why": "the Access target lands on 4,366.7 FTES, the institutions’ targets added up"
+    },
+    {
+     "at": 7.2,
+     "word": "for each",
+     "why": "the line, Completion is set the same way: 4,366.7 FTES"
+    }
+   ]
+  },
+  {
+   "scene": "Targets",
+   "text": "Your college has its own target under each priority. Thirty semester units of CPL make one FTES. For the average allocation, the Access target is about thirty-four and a half FTES. Reach half the target, and your college qualifies for half the share. The full target qualifies for the full share, and that share is the ceiling.",
+   "read": {
+    "clip": "07.mp3",
+    "generation": "RczRtywXW3geI3ubpL2w",
+    "read_on": "2026-10-02",
+    "text_sha1": "c05cb534d3205debb7109ccf274228f4ccef29a6"
+   },
+   "cues": [
+    {
+     "at": 0.1,
+     "word": "Your college has its own target",
      "why": "the heading, Every priority has a target"
     },
     {
@@ -226,75 +238,81 @@
     },
     {
      "at": 2.0,
-     "word": "Sample College's Access target",
-     "why": "the card, Sample College · Access · target 67.2 FTES · $170,431, fades in above its empty bar"
+     "word": "For the average allocation",
+     "why": "the card, Priority 1 · Access · average allocation · target 34.5 FTES · $99,271, fades in above its empty bar"
     },
     {
      "at": 3.0,
-     "word": "reach half of a target",
-     "why": "Sample College’s Access bar fills to half its target"
+     "word": "Reach half the target",
+     "why": "the bar fills to half its target"
     },
     {
      "at": 5.0,
-     "word": "qualifies for half that share",
+     "word": "qualifies for half the share",
      "why": "the caption, Half the target qualifies for half the share"
     },
     {
      "at": 6.6,
-     "word": "Go past the target",
+     "word": "The full target qualifies",
      "why": "the bar fills to the whole target"
     },
     {
      "at": 7.6,
-     "word": "the share stays where it is",
+     "word": "that share is the ceiling",
      "why": "the bar stops at its ceiling and the caption turns to The share is the ceiling"
     }
    ]
   },
   {
    "scene": "Minimum conditions",
-   "text": "Before any funding is released, your college meets three minimum conditions by November first. Name a CPL coordinator, then list that person in map and on your college's CPL landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in map. Until all three are met, the funding your college demonstrates is held in reserve for it.",
+   "text": "Before the Chancellor's Office releases any funding, your college meets three minimum conditions by December thirtieth: name a CPL coordinator, put your local confirmation of participation on file, and upload Joint Services Transcripts for at least seventy-five percent of enrolled veterans. Until then, the funding your college demonstrates is held in reserve for it.",
+   "pending": "ElevenLabs refused this read on 2026-10-02 (generation iGGZHtHe1XJdFXj2xmqO): \"Unusual activity has been detected on your account, so Free Tier access has been disabled. This can be triggered by using a proxy or VPN.\" It waits on a paid plan; then read it in the flow, commit it as 08.mp3 and run narrate.py s2.",
    "cues": [
     {
      "at": 0.1,
      "word": "meets three minimum conditions",
-     "why": "the heading, Meet the minimum conditions by November 1, 2026"
+     "why": "the heading, Meet the minimum conditions by December 30, 2026"
     },
     {
      "at": 1.3,
-     "word": "Name a CPL coordinator",
+     "word": "name a CPL coordinator",
      "why": "the first condition, a CPL coordinator assigned and listed in MAP and on the landing page"
     },
     {
      "at": 2.6,
-     "word": "Put your local confirmation",
+     "word": "put your local confirmation",
      "why": "the second condition, local confirmation of participation on file"
     },
     {
      "at": 3.9,
-     "word": "at least seventy-five percent",
+     "word": "upload Joint Services Transcripts",
      "why": "the third condition, at least 75% of enrolled veterans’ Joint Services Transcripts uploaded in MAP"
     },
     {
      "at": 6.0,
-     "word": "Until all three are met",
+     "word": "Until then",
      "why": "the closing line, the funding your college demonstrates is held in reserve for it"
     }
    ]
   },
   {
    "scene": "Timing",
-   "text": "The Chancellor's Office releases funding twice a year, based on your college's CPL to date. The full two-year amount is available from year one, and whatever remains after year one carries forward to year two for your college.",
+   "text": "The Chancellor's Office releases funding twice a year, based on your college's CPL to date. The full two-year amount is available from year one, and what remains carries forward to year two.",
+   "read": {
+    "clip": "09.mp3",
+    "generation": "jW784xL8hfyMX2ErdrHZ",
+    "read_on": "2026-10-02",
+    "text_sha1": "2ac3c20ba13c7e762ea5b9e6a5e73ebde07f0362"
+   },
    "cues": [
     {
      "at": 0.1,
-     "word": "releases funding twice a year",
-     "why": "the heading, Funding arrives in stages",
-     "skip": "the voice names it with the words that name the release dates, and the dates take the cue, so the heading opens the scene"
+     "word": "The Chancellor's Office releases funding",
+     "why": "the heading, Funding arrives in stages"
     },
     {
      "at": 1.9,
-     "word": "releases funding",
+     "word": "twice a year",
      "why": "the release dates, Feb 2027 Release 1 through Jun 2028 Release 4"
     },
     {
@@ -304,18 +322,24 @@
     },
     {
      "at": 6.4,
-     "word": "whatever remains after year one",
+     "word": "what remains carries forward",
      "why": "the line, What remains after year one carries forward to year two for your college"
     }
    ]
   },
   {
    "scene": "Support",
-   "text": "And you won't be doing this alone. Every priority comes with recommended strategies, a CPL Initiative help team supports every college, and more detailed guidance is on the way.",
+   "text": "You won't do this alone. Every priority comes with recommended strategies, a CPL Initiative help team supports every college, and detailed guidance will follow.",
+   "read": {
+    "clip": "10.mp3",
+    "generation": "JPR8TFSh7skMZBKH9jw6",
+    "read_on": "2026-10-02",
+    "text_sha1": "466ca367b771a484b7541ab257e6f45c90ec7fdf"
+   },
    "cues": [
     {
      "at": 0.1,
-     "word": "you won't be doing this alone",
+     "word": "You won't do this alone",
      "why": "the heading, You won’t do this alone"
     },
     {
@@ -330,24 +354,31 @@
     },
     {
      "at": 6.6,
-     "word": "more detailed guidance",
+     "word": "detailed guidance",
      "why": "the line, Detailed guidance will follow"
     }
    ]
   },
   {
    "scene": "Find your college",
-   "text": "To see your college's maximum allocation, targets, and progress, visit the CPL funding model page.",
+   "text": "Find your college on the CPL funding page.",
+   "read": {
+    "clip": "11.mp3",
+    "generation": "OgWSE0NGt1C7LPaYMv7W",
+    "read_on": "2026-10-02",
+    "text_sha1": "beb8222d6273604c001269e3dfde27f4b47696dd"
+   },
    "cues": [
     {
      "at": 0.9,
-     "word": "To see your college's",
-     "why": "the heading, Find your college on the funding model page"
+     "word": "Find your college",
+     "why": "the heading, Find your college on the CPL funding page"
     },
     {
      "at": 2.4,
-     "word": "visit the CPL funding model page",
-     "why": "the link to the full explainer"
+     "word": "the CPL funding page",
+     "why": "the label How CPL Funding Works, linked to the funding page",
+     "skip": "the voice reads the heading, which names the page, in under a second, and the picture needs 1.5 seconds between the heading and the label; pinned, the label trailed its words, so the heading takes the cue and the label follows at the film's pace"
     }
    ]
   }

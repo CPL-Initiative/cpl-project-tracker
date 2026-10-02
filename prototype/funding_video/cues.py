@@ -30,7 +30,8 @@ closer in the narration than in the picture, the earlier one moves earlier, so a
 reveal may lead its word but never trails it. A cue with `skip` stays off the
 clock, and its reason is the point: usually the voice names things in another
 order than the picture shows them, and a clock can stretch the picture but never
-reorder it.
+reorder it. A scene that waits on its read (`pending` in the narration) has no
+words to hear, so none of its cues is pinned and its picture keeps the film's pace.
 
 Needs, for --listen only: pip install faster-whisper imageio-ffmpeg (onnxruntime
 comes with faster-whisper). The first run downloads faster-whisper small and the
@@ -65,12 +66,11 @@ def sha256(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
-def film_spans():
-    """Each scene's [t0, t1] in film seconds, read from the page source's scene() calls."""
-    src = (HERE / 'funding_in_motion.src.html').read_text(encoding='utf8')
-    spans = [(float(a), float(b)) for a, b in re.findall(r'=scene\((\d+(?:\.\d+)?),(\d+(?:\.\d+)?),', src)]
-    assert spans and all(spans[i][1] == spans[i + 1][0] for i in range(len(spans) - 1)), spans
-    return spans
+def spans_of(spec):
+    """Each scene's [t0, t1] in film seconds (film_spans.py), with the targets slide where the narration voices it."""
+    from film_spans import film_spans, SLIDE
+    return film_spans((HERE / 'funding_in_motion.src.html').read_text(encoding='utf8'),
+                      any(s['scene'] == SLIDE for s in spec['scenes']))
 
 
 def listen(spec, layout):
@@ -146,6 +146,10 @@ def listen(spec, layout):
 
     scenes, worst = [], (0.0, '')
     for sc, lay in zip(spec['scenes'], layout['scenes']):
+        if sc.get('pending'):
+            scenes.append({'scene': sc['scene'], 'pending': sc['pending'], 'heard': '', 'words': [], 'whisper': []})
+            print('heard %-20s pending: %s' % (sc['scene'], sc['pending'][:60]))
+            continue
         s0, s1 = lay['start'], lay['end']
         clip = audio[int(s0 * RATE):int(s1 * RATE)]
         segs, _ = ear.transcribe(clip, language='en', word_timestamps=True, beam_size=HEAR['beam_size'],
@@ -201,9 +205,15 @@ def listen(spec, layout):
 
 def pin(spec, layout, heard):
     """Resolve each scene's cues to anchors; return the rows of the report."""
-    spans, rows = film_spans(), []
+    spans, rows = spans_of(spec), []
     assert len(spans) == len(layout['scenes']) == len(spec['scenes']) == len(heard['scenes'])
     for sc, lay, hs, (f0, f1) in zip(spec['scenes'], layout['scenes'], heard['scenes'], spans):
+        if sc.get('pending'):
+            # nothing heard, nothing pinned: the picture keeps the film's pace until the scene is read
+            lay['anchors'] = []
+            rows += [(sc['scene'], c['why'], c['word'], float('nan'), lay['start'] + c['at'], lay['start'] + c['at'], True)
+                     for c in sc.get('cues', [])]
+            continue
         assert [w[0] for w in hs['words']] == sc['text'].split(), '%s: the words file was heard from other text' % sc['scene']
         toks = [norm(w[0]) for w in hs['words']]
         cues = []

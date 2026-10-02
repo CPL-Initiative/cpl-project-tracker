@@ -31,6 +31,9 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 20 (S317, 2026-10-02, SHEET_ID 2026-10-02-open-asks-20): sheet 19 was answered and carried out
+(S316). Two cards from Sam's Sierra ask: the ElevenLabs plan (ElevenLabs disabled the account's free tier
+before Minimum conditions was read) and his verdict on the sample.
 Sheet 19 (S315, 2026-10-02, SHEET_ID 2026-10-02-open-asks-19): sheet 18's one card, unanswered, plus the
 statewide Access target (the 2.3% gap, measured: the maximum award trims the capped institutions' targets).
 Sheet 18 carried no replies when it was superseded. Published at
@@ -147,8 +150,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-19.html')
-SHEET_ID = '2026-10-02-open-asks-19'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-20.html')
+SHEET_ID = '2026-10-02-open-asks-20'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -482,6 +485,19 @@ def p_video_n2_unlinked():
                    else "the explainer links the Scenario 2 narrated draft")
 
 
+# Sierra's read of Scenario 2 (S317): a scene still waits on its read while the
+# ElevenLabs account cannot generate.
+def p_video_n2_pending():
+    """narration_s2.json still carries a scene waiting on its read."""
+    try:
+        scenes = json.loads(_read("prototype/funding_video/narration_s2.json") or "{}").get("scenes", [])
+    except ValueError:
+        return True, "narration_s2.json unparsed - premise unverified"
+    waiting = [s.get("scene") for s in scenes if s.get("pending")]
+    return bool(waiting), ("%s still waits on its read" % ", ".join(waiting) if waiting
+                           else "every scene of the Scenario 2 narration is read")
+
+
 # The Reporting box (sheet 4 card 2): nothing writes expenditures yet.
 def p_reporting_box_unbuilt():
     """No consumer writes cpl_funding_reports yet."""
@@ -633,6 +649,57 @@ def items():
     # call): card 1 "write" (cer-decision-apply.yml, #1820) and card 2 "sum" (the statewide Access
     # target becomes the institutions' sum on the card, the explainer and the film; S316 builds it).
     # p_cap_trims_targets stays above for a later card.
+
+    # Sam, 2026-10-02 (S317): "write a script for the scenario 2 video for an ElevenLabs narrator.
+    # Keep it very simple and focused and see if you can select a female voice model to narrate and
+    # give her the name Sierra on the video as a sample." Ten scenes read; the eleventh met the block.
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Sierra's last scene: a paid ElevenLabs plan, so she can read Minimum conditions",
+        'ref': 'implementation-funding NEEDS SAM · prototype/funding_video/README.md · ElevenLabs flow DORtbrSu16j7ETeqaSkB',
+        'facts': (
+            "The Scenario 2 script runs 329 words over the eleven scenes of the introduction, and Sierra is "
+            "ElevenLabs' premade voice Bella. ElevenLabs read ten scenes. On Minimum conditions it answered: "
+            "&ldquo;Unusual activity has been detected on your account, so Free Tier access has been disabled. "
+            "This can be triggered by using a proxy or VPN, or by creating multiple free accounts. Please upgrade "
+            "to a paid subscription to continue.&rdquo; The session reached ElevenLabs from a cloud container "
+            "behind a proxy, and it sent ten reads at once."
+            "<br><br>The sample plays Minimum conditions without a voice, at the film's own pace. The free tier "
+            "also asks for attribution and does not cover commercial use. The Starter plan, about $5 a month, "
+            "carries a commercial license."),
+        'why': "A film for colleges with one silent scene, voiced under a license that does not cover a public film.",
+        'rec': "<strong>Upgrade:</strong> move the account to the Starter plan, and the next session reads the "
+               "scene in the same flow and renders the film again, about 25 minutes. <em>It might be wrong if</em> "
+               "the Chancellor's Office should hold the voice; name that account in a note, and the next session "
+               "reads all eleven scenes there, so one account owns the whole read.",
+        'chips': chips(('Upgraded', 'upgraded'), ('Another account', 'other-account'), CH_LATER),
+        'evidence': [measured(p_video_n2_pending, 'prototype/funding_video/narration_s2.json, the scene\'s '
+                              '`pending` reason'),
+                     live('2026-10-02', "the ElevenLabs connector's reply to generation iGGZHtHe1XJdFXj2xmqO")],
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "The Sierra sample: her voice, her name on screen, and the music bed",
+        'ref': 'implementation-funding · prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_2.mp4',
+        'facts': (
+            "The sample is <code>20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_2.mp4</code>, 2:23, "
+            "with its page <code>funding_in_motion_n2.html</code>, both in <code>prototype/funding_video/</code>. "
+            "It plays the Scenario 2 introduction's picture. The title scene shows &ldquo;Narrated by Sierra&rdquo; "
+            "beneath the logo as she says &ldquo;Hi, I'm Sierra&rdquo;, and the closing scene says &ldquo;Sierra "
+            "is a synthetic voice made with ElevenLabs.&rdquo;"
+            "<br><br>The music plays as a bed, 14 dB under the introduction and 6 dB lower again while she "
+            "speaks; her speech sits 2 dB above the Kokoro draft's. A local recognizer hears every clip as "
+            "written, with CPL and FTES said as letters. The explainer does not link the cut."),
+        'why': "You asked for a sample. The voice, the name and the music level are judged by ear, which no "
+               "session can do.",
+        'rec': "<strong>Keep it:</strong> Sierra narrates Scenario 2, with her name and credit as drawn and the "
+               "bed where it is; once Minimum conditions is read, the explainer's Scenario 2 view links the cut. "
+               "<em>It might be wrong if</em> the voice sounds wrong to you; say what to change in the note "
+               "(another voice, a slower read, the bed lower), and the next session reads the scenes again.",
+        'chips': chips(('Keep it', 'keep'), ('Change it', 'change'), CH_LATER),
+        'evidence': [measured(p_video_n2_unlinked, 'funding-model/index.html does not link the Scenario 2 cut'),
+                     quoted('prototype/funding_video/README.md', '2026-10-02')],
+    })
     return I
 
 

@@ -235,14 +235,14 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
   });
   check("5a: every video page carries both ways back in its control row, which stays on screen", ok);
   // Scenario 2 is the published scenario, so its introduction leads to the bare
-  // address, which shows it, and names no scenario (Sam, 2026-10-01); Scenario
-  // 1's introduction names its own, and the voiced Scenario 2 draft keeps the
-  // address it was built with until it is re-voiced.
+  // address, which shows it, and names no scenario (Sam, 2026-10-01), and so does
+  // its narrated cut since Sierra re-voiced it over the introduction's picture
+  // (2026-10-02); Scenario 1's introduction names its own.
   const toEx = (f) => (/id="to-explainer" href="([^"]+)"/.exec(read("prototype/funding_video/" + f)) || [])[1] || "";
   check("5b: each video page leads back to its own scenario's explainer",
     /\/funding-model\/$/.test(toEx("funding_in_motion_s2.html")) &&
     /\?scenario=Scenario%201$/.test(toEx("funding_in_motion.html")) &&
-    /\?scenario=Scenario%202$/.test(toEx("funding_in_motion_n2.html")));
+    /\/funding-model\/$/.test(toEx("funding_in_motion_n2.html")));
 }
 
 let pass = 0;
