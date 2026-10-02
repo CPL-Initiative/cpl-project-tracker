@@ -1,0 +1,175 @@
+{
+  "table": "cpl_funding_config",
+  "row_id": "default",
+  "mode": "commit",
+  "at": "2026-10-02T04-52-27Z",
+  "ruling": "Sam Lee, open-asks sheet 17 (2026-10-02-open-asks-17) card 2: 'Apply them' (replies store, 2026-10-02T04:18:48Z)",
+  "cohort": "implementation-funding-s315@bot",
+  "read": {
+    "updated_at": "2026-10-02T01:46:39.383688+00:00",
+    "updated_by": "implementation-funding-s314@bot",
+    "config_sha256": "0661470327b2afd1ea05230756a4cfd2a185f955dfc990b7a04d5fd609fa1eb4"
+  },
+  "edits": [
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 1",
+        "text",
+        "about"
+      ],
+      "before": "In 2026, the Legislature appropriated $35 million in one-time funds to the Chancellor’s Office to support colleges as they build the capacity to offer, award, and transcribe credit for prior learning (CPL) leading to completion and career attainment. This site details the allocation of funds based on per-program current and potential outcomes in compliance with §78093.2(d), which states:\n\n(d)(1) Upon appropriation by the Legislature for purposes of this article, the chancellor’s office shall allocate designated funds to support implementation of this article at each campus using all of the following goals:\n(A) Increasing access to credit for prior learning opportunities equitably for all eligible students.\n(B) Increasing completion through credit for prior learning awards.\n(C) Advancing career attainment through credit for prior learning.\n(D) Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects, such as the California Mapping Articulated Pathways Initiative.\n\n(d)(2) Each campus shall demonstrate that it has implemented the credit for prior learning initiative established pursuant to this article through the metrics described in paragraph (1) before receiving an allocation of funding for purposes of implementing this article.\n\nThe model measures outcomes in equivalent FTES based on CPL units and allocates funding to institutions proportionally for each priority at an FTES reimbursement rate. Minimum (base) and maximum (cap) funding ensure sustainable support for every participant. The model relies on data in the MAP platform, which serves as the Chancellor’s Office systemwide CPL infrastructure.",
+      "after": "In 2026, the Legislature appropriated $35 million in one-time funds to the Chancellor’s Office to support colleges as they build the capacity to offer, award, and transcribe credit for prior learning (CPL) leading to completion and career attainment. This site details the allocation of funds based on per-program current and potential outcomes in compliance with §78093.2(d), which states:\n\n(d)(1) Upon appropriation by the Legislature for purposes of this article, the chancellor’s office shall allocate designated funds to support implementation of this article at each campus using all of the following goals:\n(A) Increasing access to credit for prior learning opportunities equitably for all eligible students.\n(B) Increasing completion through credit for prior learning awards.\n(C) Advancing career attainment through credit for prior learning.\n(D) Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects, such as the California Mapping Articulated Pathways Initiative.\n\n(d)(2) Each campus shall demonstrate that it has implemented the credit for prior learning initiative established pursuant to this article through the metrics described in paragraph (1) before receiving an allocation of funding for purposes of implementing this article.\n\nThe Chancellor’s Office measures outcomes in equivalent FTES based on CPL units and allocates funding to institutions proportionally for each priority at an FTES reimbursement rate. Minimum (base) and maximum (cap) funding ensure sustainable support for every participant. CPL funding relies on data in the MAP platform, which serves as the Chancellor’s Office systemwide CPL infrastructure."
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 1",
+        "timing",
+        0,
+        "label"
+      ],
+      "before": "Funding Model Finalized",
+      "after": "CPL Funding Procedure Finalized"
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 1",
+        "timing",
+        1,
+        "label"
+      ],
+      "before": "Guidance Memo and Funding Model Release",
+      "after": "Guidance Memo Release"
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "text",
+        "about"
+      ],
+      "before": "In 2026, the Legislature appropriated $35 million in one-time funds to the Chancellor’s Office to support colleges as they build the capacity to offer, award, and transcribe credit for prior learning (CPL) leading to completion and career attainment. This site details the allocation of funds based on per-program current and potential outcomes in compliance with §78093.2(d), which states:\n\n(d)(1) Upon appropriation by the Legislature for purposes of this article, the chancellor’s office shall allocate designated funds to support implementation of this article at each campus using all of the following goals:\n(A) Increasing access to credit for prior learning opportunities equitably for all eligible students.\n(B) Increasing completion through credit for prior learning awards.\n(C) Advancing career attainment through credit for prior learning.\n(D) Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects, such as the California Mapping Articulated Pathways Initiative.\n\n(d)(2) Each campus shall demonstrate that it has implemented the credit for prior learning initiative established pursuant to this article through the metrics described in paragraph (1) before receiving an allocation of funding for purposes of implementing this article.\n\nThe model measures outcomes in equivalent FTES based on CPL units and allocates funding to institutions proportionally for each priority at an FTES reimbursement rate. Minimum (base) and maximum (cap) funding ensure sustainable support for every participant. The model relies on data in the MAP platform, which serves as the Chancellor’s Office systemwide CPL infrastructure.",
+      "after": "In 2026, the Legislature appropriated $35 million in one-time funds to the Chancellor’s Office to support colleges as they build the capacity to offer, award, and transcribe credit for prior learning (CPL) leading to completion and career attainment. This site details the allocation of funds based on per-program current and potential outcomes in compliance with §78093.2(d), which states:\n\n(d)(1) Upon appropriation by the Legislature for purposes of this article, the chancellor’s office shall allocate designated funds to support implementation of this article at each campus using all of the following goals:\n(A) Increasing access to credit for prior learning opportunities equitably for all eligible students.\n(B) Increasing completion through credit for prior learning awards.\n(C) Advancing career attainment through credit for prior learning.\n(D) Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects, such as the California Mapping Articulated Pathways Initiative.\n\n(d)(2) Each campus shall demonstrate that it has implemented the credit for prior learning initiative established pursuant to this article through the metrics described in paragraph (1) before receiving an allocation of funding for purposes of implementing this article.\n\nThe Chancellor’s Office measures outcomes in equivalent FTES based on CPL units and allocates funding to institutions proportionally for each priority at an FTES reimbursement rate. Minimum (base) and maximum (cap) funding ensure sustainable support for every participant. CPL funding relies on data in the MAP platform, which serves as the Chancellor’s Office systemwide CPL infrastructure."
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "timing",
+        0,
+        "label"
+      ],
+      "before": "Funding Model Finalized",
+      "after": "CPL Funding Procedure Finalized"
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "timing",
+        1,
+        "label"
+      ],
+      "before": "Guidance Memo and Funding Model Release",
+      "after": "Guidance Memo Release"
+    }
+  ],
+  "result": "written",
+  "written": {
+    "updated_at": "2026-10-02T04:52:27.6004+00:00",
+    "updated_by": "implementation-funding-s315@bot",
+    "config_sha256": "857244b1126c402952bf5a699f4bdee03677e4fc8f9a1fcdce475f2a8c8a5602"
+  },
+  "read_back": [
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 1",
+        "text",
+        "about"
+      ],
+      "state": "after",
+      "live": "In 2026, the Legislature appropriated $35 million in one-time funds to the Chancellor’s Office to support colleges as they build the capacity to offer, award, and transcribe credit for prior learning (CPL) leading to completion and career attainment. This site details the allocation of funds based on per-program current and potential outcomes in compliance with §78093.2(d), which states:\n\n(d)(1) Upon appropriation by the Legislature for purposes of this article, the chancellor’s office shall allocate designated funds to support implementation of this article at each campus using all of the following goals:\n(A) Increasing access to credit for prior learning opportunities equitably for all eligible students.\n(B) Increasing completion through credit for prior learning awards.\n(C) Advancing career attainment through credit for prior learning.\n(D) Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects, such as the California Mapping Articulated Pathways Initiative.\n\n(d)(2) Each campus shall demonstrate that it has implemented the credit for prior learning initiative established pursuant to this article through the metrics described in paragraph (1) before receiving an allocation of funding for purposes of implementing this article.\n\nThe Chancellor’s Office measures outcomes in equivalent FTES based on CPL units and allocates funding to institutions proportionally for each priority at an FTES reimbursement rate. Minimum (base) and maximum (cap) funding ensure sustainable support for every participant. CPL funding relies on data in the MAP platform, which serves as the Chancellor’s Office systemwide CPL infrastructure."
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 1",
+        "timing",
+        0,
+        "label"
+      ],
+      "state": "after",
+      "live": "CPL Funding Procedure Finalized"
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 1",
+        "timing",
+        1,
+        "label"
+      ],
+      "state": "after",
+      "live": "Guidance Memo Release"
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "text",
+        "about"
+      ],
+      "state": "after",
+      "live": "In 2026, the Legislature appropriated $35 million in one-time funds to the Chancellor’s Office to support colleges as they build the capacity to offer, award, and transcribe credit for prior learning (CPL) leading to completion and career attainment. This site details the allocation of funds based on per-program current and potential outcomes in compliance with §78093.2(d), which states:\n\n(d)(1) Upon appropriation by the Legislature for purposes of this article, the chancellor’s office shall allocate designated funds to support implementation of this article at each campus using all of the following goals:\n(A) Increasing access to credit for prior learning opportunities equitably for all eligible students.\n(B) Increasing completion through credit for prior learning awards.\n(C) Advancing career attainment through credit for prior learning.\n(D) Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects, such as the California Mapping Articulated Pathways Initiative.\n\n(d)(2) Each campus shall demonstrate that it has implemented the credit for prior learning initiative established pursuant to this article through the metrics described in paragraph (1) before receiving an allocation of funding for purposes of implementing this article.\n\nThe Chancellor’s Office measures outcomes in equivalent FTES based on CPL units and allocates funding to institutions proportionally for each priority at an FTES reimbursement rate. Minimum (base) and maximum (cap) funding ensure sustainable support for every participant. CPL funding relies on data in the MAP platform, which serves as the Chancellor’s Office systemwide CPL infrastructure."
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "timing",
+        0,
+        "label"
+      ],
+      "state": "after",
+      "live": "CPL Funding Procedure Finalized"
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "timing",
+        1,
+        "label"
+      ],
+      "state": "after",
+      "live": "Guidance Memo Release"
+    }
+  ]
+}
