@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-02)
+
+- **2026-09-30 (S304 SkyHinge checkpoint)** — the side menu on one line per item ([#1767](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1767)); 0 hours reads as noncredit ([#1768](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1768)); the My College register in all nine regions, keyed by MAP's names ([#1769](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1769)); card 9's re-mint to ATHL ([#1770](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1770)); card 7's reported cards and the writer's declared create ([#1771](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1771)). Handoff 305.
+- **2026-09-29 (S303 SkyWarp checkpoint)** — round 9 of the College Dashboard, the ETHS re-mint of the 43, setup-python 7, decision sheet 4 answered and carried out in part; S303 sections in the funding and engineering lessons; handoff 304.
+
 ## INDEX update-history entries rotated out (2026-09-30)
 
 - **2026-09-28 — S298 (SkyLatch):** UI fixes through a live mockup drawn by COBI's own code: Sam locked the College Dashboard redesign in seven rounds and ruled that funding waits on all three minimum conditions ([#1726](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1726)); the Sierra Training tab entered the same process. New: [`ui_mockup_lessons`](ui_mockup_lessons.md), [`methodology-mock-up-from-the-running-code`](kb-notes/methodology-mock-up-from-the-running-code.md).

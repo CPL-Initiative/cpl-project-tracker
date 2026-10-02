@@ -719,6 +719,13 @@
      "line": 75
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 680
+    },
+    {
      "id": "script:kb/_build_partner_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5748,7 +5755,7 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-15.html": {
+  "file:docs/visuals/<date>-open-asks-16.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",

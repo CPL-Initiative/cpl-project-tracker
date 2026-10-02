@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-01
+updated: 2026-10-02
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 505 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 506 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 80 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 51 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 284 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1006** | |
+| Session handoffs | 285 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1008** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- **2026-10-02 (S313 SkyReel)** — Sierra v77 names City College of San Francisco (a possessive hid it) ([#1808](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1808)); Sam's two CER renames applied; the video round and the explainer's progress lines, and the rename workflow rebuilds its derived files ([#1809](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1809)); sheet 16; a KB note (a Postgres md5 proves a transcribed jsonb copy); handoff 314.
 - **2026-10-01 (S312 SkyLantern)** — the funding explainer in the Fact Sheet's layout, with Ask Sierra, the tab's FAQ, one statewide box and the average award; the introductions with the average allocation ([#1806](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1806)); Sam answered sheet 14; the "model" sweep ported ([#1807](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1807)); sheet 15; the S221 funding lessons archived; handoff 313.
 - **2026-10-01 (S310 SkyTandem)** — My CPL Funding in Sam's words: the language mockup ([#1797](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1797)) and the port, with each institution's three minimum conditions, the demonstrated funding at the $1,000 rule and the Do this next fix ([#1798](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1798)); Sam ruled "model" out of every public surface (the sweep is next); an emergency checkpoint, then the full one; handoff 311.
 - **2026-09-30 (S308 SkyBracket + S309 SkyCensus, one session)** — the funding Public view reads as text ([#1788](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1788)); Sierra's catalog timeout fixed with a stored `title_norm` ([#1789](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1789)); the Reporting box's college half on My College ([#1790](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1790)); smoke 7c/7s accept the honest absence ([#1791](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1791), [#1794](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1794)); Sierra's program search reads stored vectors ([#1796](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1796)); sheet 11; two KB notes (a revoke names every role; a stored value does not follow its function); the funding, Sierra and credential chains joined in `session_310_handoff.md`.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - **2026-09-30 (S307 SkyGusset checkpoint)** — the Reporting box's reviewer half, `cpl_funding_reports` INSERT-only ([#1782](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1782)); Sam's Public view asks: the published scenario opens, As colleges see it, My CPL Funding at the top by college or district with Save as PDF, the margin audit, the videos' ways back ([#1783](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1783)); the CO style guide as a reference note; open-asks sheets 7 (answered) and 8; KB notes on the style guide and on alignment; handoff 308.
 - **2026-09-30 (S306 SkyRivet checkpoint)** — Sam's four asks on the funding surfaces: the drill-in hovers that say how each figure is reached, the frozen College Dashboard header, Refresh everything and its dialog, My College following the model, My CPL Funding beside the table, and Unit sources (military vs non-military, exhibits, recommendations); open-asks sheet 6; a KB note on sticky headers; S306 in the funding lessons; handoff 307.
 - **2026-09-30 (S305 SkyLatch checkpoint)** — the Reporting box through Governance (`cpl_funding_reports` in DR-09) and its mockup ([#1773](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1773)); the Scenario 2 narrated draft and the Scenario 2 introduction's model figure ([#1774](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1774)); open-asks sheet 5; a KB note on hash-checking a copied record; S305 in the funding lessons; handoff 306.
-- **2026-09-30 (S304 SkyHinge checkpoint)** — the side menu on one line per item ([#1767](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1767)); 0 hours reads as noncredit ([#1768](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1768)); the My College register in all nine regions, keyed by MAP's names ([#1769](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1769)); card 9's re-mint to ATHL ([#1770](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1770)); card 7's reported cards and the writer's declared create ([#1771](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1771)). Handoff 305.
-- **2026-09-29 (S303 SkyWarp checkpoint)** — round 9 of the College Dashboard, the ETHS re-mint of the 43, setup-python 7, decision sheet 4 answered and carried out in part; S303 sections in the funding and engineering lessons; handoff 304.

@@ -4,6 +4,8 @@ date: 2026-10-01
 session: 310 (SkyTandem)
 tags: [handoff, implementation-funding, my-cpl-funding, house-voice, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_314_handoff.md
 ---
 
 # You are Session 311
