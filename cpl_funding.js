@@ -9055,7 +9055,7 @@
       // its own line at card width, and the label already says what it is.
       out.push(card({ v: edNum("ftesrate", fmtNum2(ftesRate()),
           { label: "Reimbursement rate per CPL FTES",
-            title: "The price a CPL FTES is valued at. Raising it LOWERS every target " +
+            title: "The rate a CPL FTES is valued at. Raising it LOWERS every target " +
                    "(target = allocation ÷ rate); lowering it raises them." }),
         l: "Reimbursement rate per <strong>CPL FTES</strong>, the rate that sets each performance target: " +
           fmtMoney(per) + " &divide; " + fmtMoney2(ftesRate()) +
@@ -10281,7 +10281,7 @@
       fmtMoney(prop) + ", ÷ " + priceWords(p) + ".");
     var m = allocModel();
     if (m.floored[c.college]) {
-      lines.push("The base award lifts this institution's funding above its proportional share; its target stays priced on that share.");
+      lines.push("The base award lifts this institution's funding above its proportional share; its target stays set on that share.");
     } else if (prop > 0) {
       lines.push("The funding is " + fmtPctTrim(f.maxFunds / prop) + " of the proportional figure, the same for every institution above the base, " +
         "because the base awards come out of the same total" +
@@ -10554,7 +10554,7 @@
       nc_award: "Max NC Funds", nc_current: currHeadHtml("NC Funds"), total: "Total Funds",
       current_total: currHeadHtml("Total Funds") };
     var HEAD_TIP = {
-      cr_award: "This priority's credit funding " + when + ", with its Max FTES beneath: the credit measure's target at the priority's price.",
+      cr_award: "This priority's credit funding " + when + ", with its Max FTES beneath: the credit measure's target at the priority's rate per CPL FTES.",
       cr_current: "Credit funding this priority has qualified for so far, with the Actual FTES beneath. Hover a figure for what remains." + GRAY_WORDS,
       nc_award: "This priority's noncredit funding " + when + ", with its Max FTES beneath. " + NC_LANE_RULE,
       nc_current: "Noncredit funding this priority has qualified for so far, with the Actual FTES beneath. " + NC_LANE_RULE + GRAY_WORDS,

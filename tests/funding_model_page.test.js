@@ -883,7 +883,19 @@ check("the status line is empty on a successful paint",
       " CPL FTES statewide, about " + Math.round(P0.units).toLocaleString("en-US") + " semester units, at $" +
       P0.price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " per CPL FTES (the $" +
       P0.rate.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " base rate times a factor of " +
-      (+P0.factor).toFixed(1) + ").");
+      (+P0.factor).toFixed(1) + "). The institutions' targets add up to this figure; the maximum award lowers the targets of the seven institutions that reach it.");
+  // Sheet 19 card 2 ("sum"): the count is the model's, and the film's slide
+  // prints the same target and the same count (build.py HOW, Scenario 2).
+  const filmCfg = JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(ROOT, "prototype", "funding_video", "funding_in_motion_s2.html"), "utf8"))[1]);
+  check("p3b the explainer and the film print the engine's target and its count of institutions at the maximum",
+    D3.atMax === 7 && filmCfg.how.capped === D3.atMax &&
+      D3.progress.prios.every((x, i) => filmCfg.how.rows[i] && filmCfg.how.rows[i][3] === Math.round(x.target * 10) / 10));
+  // rendered text only: the page's own script names `pr.price`, an identifier
+  const vis = doc.body.cloneNode(true);
+  vis.querySelectorAll("script, style, template").forEach((e) => e.remove());
+  const priceHits = (vis.textContent.match(/.{0,80}\b(pric(e|ed|es|ing)|premium)\b.{0,40}/gi) || []);
+  check("p3c the page never says price, priced or premium (Sam, 2026-10-02)" + (priceHits.length ? " — " + priceHits.join(" | ") : ""),
+    priceHits.length === 0);
   check("p4 the progress line is the Public view's Demonstrated of Total Possible, or TBA",
     P0.demonstrated == null ? prog[0][1] === "Progress: TBA."
       : prog[0][1].indexOf(money(P0.demonstrated) + " of the " + money(P0.totalPossible) + " Total Possible") > 0);

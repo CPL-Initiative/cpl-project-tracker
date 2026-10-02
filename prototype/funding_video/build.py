@@ -97,12 +97,14 @@ def timing(conf):
 TIMING_VOICED = [[0, 'Sep 2026', 'Model released'], [18, 'Nov 2026', 'Confirmation deadline'],
                  [40, 'Feb 2027', 'Release 1'], [58, 'Jul 2027', 'Release 2'], [80, 'Dec 2027', 'Release 3'], [100, 'Jun 2028', 'Release 4']]
 # HOW A TARGET IS SET (Sam, 2026-10-01): a slide after the priorities, statewide.
-# A priority's target is its statewide funding divided by its price per CPL FTES,
-# the base rate times the priority's factor. Each figure read from the engine
-# under config md5 e21658f9 (the Public view's priority cards): base rate
-# $5,649.63, factor 0.5, $2,824.82 per CPL FTES in both scenarios. The slide
-# claims only the statewide division; an institution's target follows its size,
-# so its own target and its own funding do not divide the same way.
+# A priority's statewide funding divided by its rate per CPL FTES, the base rate
+# times the priority's factor. Each figure read from the engine under config md5
+# e21658f9 (the Public view's priority cards): base rate $5,649.63, factor 0.5,
+# $2,824.82 per CPL FTES in both scenarios. A row is [title, statewide funding,
+# the division, the published target]; the fourth figure, when present, is the
+# institutions' targets added up (Sam, sheet 19 card 2, 2026-10-02: "sum"), and
+# `capped` counts the institutions at the maximum award, whose targets it lowers.
+# The slide then subtracts the difference. Rate, never price (Sam, 2026-10-02).
 SAMPLE_TARGET_S1 = {'ftes': 44.3, 'usd': 112484, 'ftesWords': '44.3', 'usdWords': '112,484', 'halfFtesWords': '22.2', 'halfUsdWords': '56,242'}
 SAMPLE_TARGET_S2 = {'ftes': 67.17, 'usd': 170430.69, 'ftesWords': '67.2', 'usdWords': '170,431', 'halfFtesWords': '33.6', 'halfUsdWords': '85,215'}
 
@@ -148,7 +150,7 @@ CONFIG = {
         'linkLabel': 'How CPL funding works',
         'kick': 'An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
-        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v6.mp4',
+        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v7.mp4',
         'explainer': BASE,
         'prioName': 'Two priorities',
         'prioHead': 'Two priorities carry the funding',
@@ -159,8 +161,12 @@ CONFIG = {
         'prios': [[50, 'Access', ACCESS, 12620154], [50, 'Completion', COMPLETION, 12620154],
                   [None, 'Career attainment and innovation projects', 'Reported by the Chancellor’s Office in qualitative terms. The institutions’ allocations follow Access and Completion.', 9759692]],
         'timing': timing('Dec 2026'), 'deadline': 'December 30, 2026', 'close': CLOSE,
-        'how': {'rows': [['Access', 12620154, 4467.6], ['Completion', 12620154, 4467.6]],
-                'rate': 5649.63, 'factor': 0.5, 'price': 2824.82},
+        # The published target is the sum (sheet 19 card 2): the engine's
+        # _publicProgress over the live config, md5 764fd264 (2026-10-02),
+        # 4,366.66 for each priority; the seven institutions at the $400,000
+        # maximum account for the 100.9 FTES.
+        'how': {'rows': [['Access', 12620154, 4467.6, 4366.7], ['Completion', 12620154, 4467.6, 4366.7]],
+                'rate': 5649.63, 'factor': 0.5, 'price': 2824.82, 'capped': 7},
         'split': SPLIT_TWO, 'ex': AVERAGE,
         'target': {'ftes': 34.49, 'usd': 99270.78, 'ftesWords': '34.5', 'usdWords': '99,271', 'halfFtesWords': '17.2', 'halfUsdWords': '49,635'},
     },

@@ -691,13 +691,13 @@ section[hidden]{display:none}
       quarter calendar.</p>
 
     <h3 style="margin-top:1.6em">How a share becomes a target</h3>
-    <p>The Chancellor&rsquo;s Office divides each priority&rsquo;s share by a price to set its target. The price is the 2026-27
+    <p>The Chancellor&rsquo;s Office divides each priority&rsquo;s share by a rate per FTES to set its target. That rate is the 2026-27
       state rate of <strong><span id="l-rate">$5,649.63</span> per FTES</strong>, multiplied by that
       priority&rsquo;s <strong>funding factor</strong>. <span id="l-factors">The factors currently set are 1.0, 1.0
       and 1.0.</span></p>
     <div class="note plain">
-      <p><strong>What the funding factor does.</strong> A factor above 1.0 prices each FTES higher, so
-        <em>fewer</em> units of prior learning reach the priority&rsquo;s share &mdash; a premium on outcomes
+      <p><strong>What the funding factor does.</strong> A factor above 1.0 raises the rate for each FTES, so
+        <em>fewer</em> units of prior learning reach the priority&rsquo;s share, which gives more weight to outcomes
         the Chancellor&rsquo;s Office intends to encourage. A factor below 1.0 has the opposite effect. The
         share sets how much funding stands behind a priority; the factor sets the volume of prior learning
         that qualifies for it.</p>
@@ -874,7 +874,7 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   (function () {
     var VIDEOS = {
       "Scenario 2": { page: "../prototype/funding_video/funding_in_motion_s2.html",
-        mp4: "../prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v6.mp4",
+        mp4: "../prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v7.mp4",
         label: "Watch the 100-second introduction" }
     };
     var v = VIDEOS[String(D.scenario || "").trim()];
@@ -948,7 +948,7 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     a.textContent = "Measured as: " + p.metric;
     el.appendChild(top); el.appendChild(m); el.appendChild(a);
     // THE PUBLIC VIEW'S PROGRESS LINES (Sam, sheet 14 card 6, 2026-10-01:
-    // "port"), so colleges read one page: the statewide target and its price,
+    // "port"), so colleges read one page: the statewide target and its rate,
     // then what MAP records demonstrate against the Total Possible. From the
     // tab's _publicProgress, the same figures its Public view prints.
     var pr = ((D.progress && D.progress.prios) || []).filter(function (x) { return x.label === p.label; })[0];
@@ -959,7 +959,15 @@ window.CPL_PAINT_EXPLAINER = function (D) {
         var tl = document.createElement("p"); tl.className = "aim prog";
         tl.textContent = "Target: " + pr.target.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) +
           " CPL FTES statewide, about " + num(pr.units) + " semester units, at " + money2(pr.price) +
-          " per CPL FTES (the " + money2(pr.rate) + " base rate times a factor of " + (+pr.factor).toFixed(1) + ").";
+          " per CPL FTES (the " + money2(pr.rate) + " base rate times a factor of " + (+pr.factor).toFixed(1) + ")." +
+          // The statewide target is the institutions' targets added up (Sam,
+          // sheet 19 card 2, 2026-10-02: "sum"), so it falls short of the funding
+          // divided by the rate; one sentence says why, from the model's count.
+          (D.pool && D.pool.cap > 0 && D.atMax > 0
+            ? " The institutions' targets add up to this figure; the maximum award lowers the targets of the " +
+              (D.atMax === 1 ? "one institution" : (["two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"][D.atMax - 2] || num(D.atMax)) + " institutions") +
+              " that reach it."
+            : "");
         el.appendChild(tl);
       }
       var pl = document.createElement("p"); pl.className = "aim prog";
@@ -1219,9 +1227,9 @@ window.CPL_PAINT_EXPLAINER = function (D) {
       ? facList.slice(0, -1).join(", ") + " and " + facList[facList.length - 1] : facList.join("");
     setText("l-factors", uniq.length === 1
       ? (uniq[0] === "1.0"
-          ? allw + " factors are currently set to 1.0, so each priority is priced at the state rate and "
+          ? allw + " factors are currently set to 1.0, so each priority's rate is the state rate and "
             + "the " + nw + " targets differ only because the shares do."
-          : allw + " factors are currently set to " + uniq[0] + ", so each priority is priced at "
+          : allw + " factors are currently set to " + uniq[0] + ", so each priority's rate is "
             + uniq[0] + " times the state rate and the " + nw + " targets differ only because the shares do.")
       : "The factors currently set are " + andList + ".");
   }
