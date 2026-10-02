@@ -60,7 +60,16 @@ const SGV_ARTIC_NOUN = "None of the three San Gabriel Valley colleges above have
 const SGV_ARTIC_SHOWS = "No college in the San Gabriel Valley catalog data shows an existing CNA articulation yet, so a request "
   + "to Pasadena, Rio Hondo, or Citrus would be a new one for them to evaluate.";
 
+// Recorded, run 36951885947 (2026-10-02, S314): the adjective form inside markdown
+// emphasis. The answer had already named Rio Hondo, Pasadena and Citrus as LVN colleges.
+const SGV_ARTIC_ADJ = "A couple of honest caveats: none of the three San Gabriel Valley colleges above currently has an "
+  + "*articulated* CPL exhibit matching CNA to LVN credit specifically — so this would be a request for the college to review.";
+
 if (RE_7C && RE_7S && fn) {
+  check("7s: an articulation absence in the adjective form, in markdown emphasis, passes (\"has an *articulated* CPL exhibit\")",
+    !fails(SGV_ARTIC_ADJ, RE_7S));
+  check("7s: …and does not excuse a bare program claim beside it",
+    fails(SGV_ARTIC_ADJ + " No San Gabriel Valley college offers an LVN entry program.", RE_7S));
   check("7c: the recorded catalog report passes", !fails(OC_REPORT, RE_7C));
   check("7c: the recorded articulation sentence passes", !fails(OC_ARTIC, RE_7C));
   check("7c: the whole recorded pair passes together", !fails(OC_REPORT + " " + OC_ARTIC, RE_7C));
