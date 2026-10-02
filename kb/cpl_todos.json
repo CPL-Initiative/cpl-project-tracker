@@ -1,14 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-10-01",
-  "_session": "S312 SkyLantern",
-  "_status": "Landed on 1 October (S312): the funding explainer takes the Fact Sheet's layout (a Contents list that opens each section, every section foldable, Ask Sierra, the tab's FAQ), shows projects and staff as one figure and the average award with its credit and noncredit split, and the 90-second videos show the average allocation. Sam answered all six cards of sheet 14; the 'model' wording sweep is ported (pull request 1807). Next: the video round Sam asked for, the statewide progress lines on the explainer, and Sierra's City College of San Francisco answer.",
+  "_as_of": "2026-10-02",
+  "_session": "S313 SkyReel",
+  "_status": "Landed on 1 October (S313): Sierra names City College of San Francisco again (a possessive had hidden the college; live as v77, its smoke passed), your two credential renames applied, the introduction videos carry your video round (a slide on how a target is set, the statewide funding under each priority, dates from the configuration, a plain closing label, 100 seconds now), and the funding explainer shows each priority's target and progress and the count under each minimum condition (pull request 1809). Next: your answers on sheet 16, and the Scenario 2 narration script for the ElevenLabs voice.",
   "items": [
     {
-      "id": "s312-sam-sheet15",
+      "id": "s313-sam-sheet16",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Sheet 15 has three items: type the Microsoft Azure AI Fundamentals title (then confirm the AWS fold when told), cards 23 and 24 of the model sweep (type them or have them applied), and which confirmation deadline is right, December 30 or November 1. https://claude.ai/artifact/XMchMpSnVLQoisWjmc6t2k"
+      "text": "Sheet 16 has five items: ask Sierra City College of San Francisco's split again (she runs v77 now), confirm the AWS merge and type the Microsoft Azure AI Fundamentals title, cards 23 and 24 of the model sweep, which confirmation deadline is right, and watch the new introduction and choose the reported box's figure. https://claude.ai/artifact/49Rh1tw4TZy4MS9o1jF7UH"
     },
     {
       "id": "s310-sam-card11-measures",
@@ -47,28 +47,22 @@
       "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
     },
     {
-      "id": "s310-fable-model-sweep",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Port the model sweep once Sam replies on its sheet (https://claude.ai/artifact/T2MTd4n2cP2LXZXRXvbBQ6): read the replies and edits collections first, change rendered text only, and grep tests/ for every sentence you retire before pushing. The harness is prototype/mockup_harness/capture_model_words.mjs and assemble_model_words.py."
-    },
-    {
-      "id": "s303-fable-chat-smoke-watch",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Sierra's smoke after #1800 (the place by its full name, live as v75) and #1804 (a sub-region counts its own campuses): deploy #1804 with cpl-chat-deploy.yml, then dispatch ONE cpl-chat-smoke.yml after the push-triggered run finishes, and read 7c, 7s and 7p. Overlapping runs time out program_typical_courses."
-    },
-    {
       "id": "s309-fable-sierra-source-answers",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "When Sam answers sheet 11 card 6, compare Sierra's City College of San Francisco answer with the live rows: 13,138.5 units on plans from 1,882 students; non-military 65 from 15 (12 exhibits under 10 each); military 13,073.5 from 1,868, 32 exhibits one by one (10,201) and 287 under 10 each (2,872.5)."
+      "text": "When Sam answers sheet 16 card 1, compare Sierra's City College of San Francisco answer (v77) with that day's rows; on 30 September they read 13,138.5 units on plans from 1,882 students, non-military 65 and military 13,073.5, led by Default Credit (4,661.5 units, 1,864 students)."
     },
     {
-      "id": "s310-fable-credential-watch-first-run",
+      "id": "s313-fable-aws-fold",
       "for": "Fable",
       "tab": "partner-crosswalks",
-      "text": "CER renames from Sam's sheet 11: Cisco CyberOps Associate to CCNA Cybersecurity and AWS SysOps Administrator - Associate to CloudOps Engineer - Associate wait on Sam running receipt #1803 (the repo guard denies a session's kb_curation insert); then dispatch cred-rename-apply.yml. Microsoft and the second AWS record wait on sheet 13. The aliases are the raw titles, which CER search already matches."
+      "text": "When Sam confirms the AWS merge (sheet 16 card 2), dispatch cred-rename-apply.yml once the daily dry run lists it under Confirmed merges; the workflow now rebuilds the re-mint worklist and the CCR payload itself."
+    },
+    {
+      "id": "s313-fable-video-deadline",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "When Sam answers the confirmation deadline (sheet 16 card 4), set the Timing node and the minimum-conditions date in prototype/funding_video/build.py and re-render both introductions (render.sh, about five minutes each, re-versioned names)."
     }
   ],
   "_deferred": [

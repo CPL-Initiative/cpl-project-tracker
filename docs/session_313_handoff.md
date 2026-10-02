@@ -4,6 +4,8 @@ date: 2026-10-01
 session: 312 (SkyLantern)
 tags: [handoff, implementation-funding, funding-video, sierra, partner-crosswalks, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_314_handoff.md
 ---
 
 # You are Session 313

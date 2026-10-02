@@ -34,7 +34,7 @@ lane's marker in the same pull request, or the sheet asks again.
 Sheet 15 (S312 checkpoint, 2026-10-01, SHEET_ID 2026-10-01-open-asks-15): Sam answered all six cards of
 sheet 14 at 21:22Z (each his own call; recorded in the lanes). Three asks remain: the Microsoft title and the
 AWS fold (partner-crosswalks), cards 23-24 of the model sweep, and the confirmation deadline.
-Published at https://claude.ai/artifact/XMchMpSnVLQoisWjmc6t2k (capabilities db + comments).
+Published at https://claude.ai/artifact/49Rh1tw4TZy4MS9o1jF7UH (capabilities db + comments).
 Sheet 14 (S312, 2026-10-01, SHEET_ID 2026-10-01-open-asks-14): sheet 13's five cards (no reply yet), then
 S312's one: whether colleges get the explainer alone or the tab's Public view as well (Sam, 2026-10-01: "I may
 also give access to the 'Public View'--depends on whether this view has everything needed").
@@ -133,8 +133,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-01-open-asks-15.html')
-SHEET_ID = '2026-10-01-open-asks-15'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-01-open-asks-16.html')
+SHEET_ID = '2026-10-01-open-asks-16'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -600,25 +600,45 @@ def items():
     # Sheet 14's six cards left with Sam's rulings (21:22Z, 2026-10-01, all his own call):
     # CCSF wrong (sierra lane), both renames typed by him, Microsoft drop, AWS fold, the
     # sweep all as proposed (#1807), the progress lines ported to the explainer.
+    # Sheet 15's three cards (S312) carried unanswered into sheet 16 (S313): the AWS
+    # fold became ready when the rename applied (22:46Z), the deadline card names
+    # the video, and two cards are new: Sierra's CCSF re-ask (v77) and the video.
+    I.append({
+        'lane': 'sierra-retrieval-corpus',
+        'title': "Ask Sierra City College of San Francisco's split again",
+        'ref': 'sierra-retrieval-corpus · cpl-chat v77 (#1808) · sheet 14 card 1',
+        'facts': (
+            "You marked her v76 answer wrong: she gave the statewide split. The data was there; her college "
+            "matcher missed the name, because \"Francisco's\" matched no college with its apostrophe on. v77 reads "
+            "a possessive, and its smoke passed every mode. Ask her the same question: <em>What is the military and "
+            "non-military split of City College of San Francisco's applied units, and which exhibits are they "
+            "from?</em> A right answer leads with 13,138.5 units on plans from 1,882 students, non-military 65 and "
+            "military 13,073.5, led by Default Credit (4,661.5 units, 1,864 students)."),
+        'why': "One college checked by hand tests every figure the answer draws from.",
+        'rec': "<strong>Ask it and mark what she said.</strong> <em>It might be wrong if</em> the nightly load has "
+               "moved these figures; the next session compares her answer with that day's rows.",
+        'chips': chips(('Right', 'right'), ('Wrong: see note', 'wrong'), CH_LATER),
+        'evidence': [live('2026-09-30', 'map_college_credit_summary and map_college_credit_bucket, college_id 30')],
+    })
     I.append({
         'lane': 'partner-crosswalks',
-        'title': "Type the Microsoft title; fold AWS's second record after the apply",
+        'title': "Confirm the AWS merge; type the Microsoft title",
         'ref': 'partner-crosswalks · CER triage lane · sheet 14 cards 3-4',
         'facts': (
-            "You ruled \"drop the code\" and \"fold\" on sheet 14. The Microsoft record reads Microsoft Certified: "
-            "Azure AI Fundamentals once you type that title in the CER triage lane, the way you typed the two renames. "
-            "The AWS fold is the triage lane's Confirm merge on \"AWS Certified SysOps Administrator\", after the "
-            "rename apply runs; the next session tells you when."),
+            "Your two renames applied at 22:46 UTC: the CER reads CCNA Cybersecurity and AWS CloudOps Engineer - "
+            "Associate. The AWS fold is ready: the triage lane's Confirm merge on \"AWS Certified SysOps "
+            "Administrator\" into \"AWS CloudOps Engineer - Associate\". The Microsoft record reads Microsoft "
+            "Certified: Azure AI Fundamentals once you type that title, the way you typed the renames."),
         'why': "The repo's guard keeps a session out of the curation table, so these two are yours to type.",
-        'rec': "<strong>Type the Microsoft title now; confirm the merge when told.</strong> "
-               "<em>It might be wrong if</em> the second AWS record names a different credential.",
-        'chips': chips(('Typed it', 'done'), ('Hold', 'hold'), CH_LATER),
-        'evidence': [policy()],
+        'rec': "<strong>Confirm the merge and type the title.</strong> <em>It might be wrong if</em> the second AWS "
+               "record names a different credential.",
+        'chips': chips(('Done', 'done'), ('Hold', 'hold'), CH_LATER),
+        'evidence': [quoted('kb/credentials.json, kb/cred_rename_out/2026-10-01/', '2026-10-01')],
     })
     I.append({
         'lane': 'implementation-funding',
         'title': "Cards 23 and 24: type them, or have them applied",
-        'ref': 'implementation-funding NEXT ⓪f · the model sweep cards 23-24 · funding-config-edit-apply.yml',
+        'ref': 'implementation-funding NEEDS SAM · the model sweep cards 23-24 · funding-config-edit-apply.yml',
         'facts': (
             "Both are text you saved on the tab, in both scenarios. Card 23, the Introduction's last paragraph: "
             "\"The Chancellor's Office measures outcomes in equivalent FTES based on CPL units and allocates funding "
@@ -634,16 +654,35 @@ def items():
     I.append({
         'lane': 'implementation-funding',
         'title': "Which confirmation deadline is right?",
-        'ref': 'implementation-funding ⓪f · cpl_funding_config Scenario 2: timing vs participationDeadline',
+        'ref': 'implementation-funding NEEDS SAM · cpl_funding_config Scenario 2: timing vs participationDeadline',
         'facts': (
             "Scenario 2's Timeline says the Confirmation Deadline is Dec 30, 2026. Its participationDeadline says "
             "2026-11-01, and that date prints in the explainer's minimum conditions (\"Local confirmation on file by "
-            "2026-11-01\"), on each institution's Confirm chip, and in the video (\"by November 1, 2026\")."),
+            "2026-11-01\"), on each institution's Confirm chip, and in the introduction's Timing and minimum "
+            "conditions scenes, which re-render on your answer."),
         'why': "A college reads both dates on one page.",
         'rec': "<strong>Dec 30, 2026:</strong> the Timeline is the later word. <em>It might be wrong if</em> November 1 "
                "is the condition date and December 30 a later step.",
         'chips': chips(('Dec 30, 2026', 'dec30'), ('Nov 1, 2026', 'nov1'), CH_LATER),
         'evidence': [live('2026-10-01', 'cpl_funding_config, md5 e21658f9')],
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Watch the new introduction; one figure is yours",
+        'ref': 'implementation-funding · prototype/funding_video (#1809) · your video round of 2026-10-01',
+        'facts': (
+            "Your asks are in it: the slide on how a target is set ($12,620,154 divided by $2,824.82 per CPL FTES, "
+            "4,467.6 FTES), the statewide funding under each priority, Priority 1 leading the Targets line, the "
+            "Timeline from the config, Access as every applied unit, and a plain How CPL Funding Works label with "
+            "no scenario named. The slide took the film to 100 seconds, so the page now says a 100-second "
+            "introduction. The reported box shows $9,759,692 statewide, the projects, technology and the two "
+            "positions together; $8,959,692 is the projects and technology alone. "
+            "<a href=\"https://cpl-initiative.github.io/cpl-project-tracker/prototype/funding_video/funding_in_motion_s2.html\">Watch it</a>."),
+        'why': "The reported box is the one figure on the film that is a choice rather than the engine's.",
+        'rec': "<strong>Keep $9,759,692:</strong> it matches the explainer's statewide box. <em>It might be wrong if</em> "
+               "the positions read as funding for career attainment.",
+        'chips': chips(('Keep $9,759,692', 'keep'), ('Use $8,959,692', 'alt'), CH_LATER),
+        'evidence': [quoted('prototype/funding_video/build.py (read from the engine under config md5 e21658f9)', '2026-10-01')],
     })
     return I
 
