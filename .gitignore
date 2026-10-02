@@ -62,6 +62,7 @@ nudges/nudges.json
 nudges/nudges_preview.md
 raci/team_members_seed.json
 chatbox/coci_offerings_payload.json
+chatbox/coci_program_courses_payload.json
 kb/program_course_graph.json
 
 # Partner occupation→CPL crosswalk deliverables (kb/_build_partner_crosswalk.py).

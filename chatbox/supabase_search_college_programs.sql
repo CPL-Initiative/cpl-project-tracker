@@ -138,6 +138,17 @@ alter table public.coci_college_programs
   add column if not exists cip_code  text,
   add column if not exists cip_title text;
 
+-- The program's COCI control number (2026-10-02, S318). With college it is the
+-- key into coci_program_courses (chatbox/supabase_program_courses.sql): 130
+-- control numbers repeat across colleges, so the control alone is no key.
+-- The column is live (migration coci_college_programs_control_number). ⚠️ The
+-- loader below that fills it, and the grants block after it, are NOT yet
+-- applied: the MCP asks a person to confirm a statement carrying delete or
+-- revoke, and S318 had no one to answer. Until they run, the live loader
+-- ignores the payload's control_number and the column stays empty.
+alter table public.coci_college_programs
+  add column if not exists control_number text;
+
 -- ── The loader carries them (chunked replace: first chunk truncates) ──────────
 -- Unchanged otherwise. CREATE OR REPLACE preserves existing grants, so this does
 -- not widen who may call a definer function that truncates a live table.
@@ -152,17 +163,34 @@ declare n integer;
 begin
   if p_truncate then delete from public.coci_college_programs where true; end if;
   insert into public.coci_college_programs
-    (college, program_title, award, top_code, top_title, cip_code, cip_title, status)
+    (college, program_title, award, top_code, top_title, cip_code, cip_title, status,
+     control_number)
   select r.college, nullif(r.program_title,''), nullif(r.award,''),
          nullif(r.top_code,''), nullif(r.top_title,''),
-         nullif(r.cip_code,''), nullif(r.cip_title,''), nullif(r.status,'')
+         nullif(r.cip_code,''), nullif(r.cip_title,''), nullif(r.status,''),
+         nullif(r.control_number,'')
   from jsonb_to_recordset(p_rows) as r(
     college text, program_title text, award text, top_code text, top_title text,
-    cip_code text, cip_title text, status text)
+    cip_code text, cip_title text, status text, control_number text)
   where coalesce(r.college,'') <> '';
   get diagnostics n = row_count;
   return n;
 end $function$;
+
+-- ── WHO MAY RUN THE CATALOG LOADERS (2026-10-02, S318) ───────────────────────
+-- Read live 2026-10-02: this function, coci_offerings_replace and
+-- college_geo_replace (each SECURITY DEFINER, each deletes its whole table
+-- before it inserts) granted EXECUTE to `authenticated`, so any signed-in
+-- Supabase user could empty Sierra's catalog. Only chatbox/sync_coci_offerings.py
+-- calls them, with the service key. The other two have no schema-of-record
+-- file, so their grants close here beside their sibling (Rule 10 b2: name
+-- PUBLIC, anon and authenticated, and grant service_role by name first).
+grant execute on function public.coci_programs_replace(jsonb, boolean) to service_role;
+grant execute on function public.coci_offerings_replace(jsonb, boolean) to service_role;
+grant execute on function public.college_geo_replace(jsonb) to service_role;
+revoke all on function public.coci_programs_replace(jsonb, boolean) from public, anon, authenticated;
+revoke all on function public.coci_offerings_replace(jsonb, boolean) from public, anon, authenticated;
+revoke all on function public.college_geo_replace(jsonb) from public, anon, authenticated;
 
 -- ── NO INDEXES ARE ADDED HERE, and that is a measured decision ────────────────
 -- This file originally created three GIN indexes over cx_search_norm(program_title)
