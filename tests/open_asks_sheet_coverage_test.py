@@ -251,6 +251,9 @@ FIXTURES = {
                               'h += sec("stand", "Where you stand", fmt(st.articulatedWaiting) + " units waiting · ");',
                               'headline: fmt(dormant) + " units not yet acted on",\n'
                               'h += sec("stand", "Where you stand", fmt(st.articulatedWaiting) + " units waiting · ");'),
+    # S315: sheet 19's statewide Access target (the maximum award trims capped targets).
+    "p_cap_trims_targets":   ("  function prioEntitlement(c, p) {\n    return (c ? sizePct(c) * capScale(c) * laneFrac : 1) * net;\n  }",
+                              "  function prioEntitlement(c, p) {\n    return (c ? sizePct(c) * laneFrac : 1) * net;\n  }"),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():
