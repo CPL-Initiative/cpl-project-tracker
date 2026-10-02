@@ -5,10 +5,10 @@
   "_status": "Landed on 2 October (S314): Scenario 2's confirmation deadline is December 30, 2026, your answer on sheet 16, written to the funding configuration with a receipt, and the Scenario 2 introduction re-rendered to match. Sierra gives City College of San Francisco's own split on the current version (the wrong answer came from the version before the fix). Sierra now leads an Orange County or San Gabriel Valley answer with the nearest course in the program the student wants, and names the place after it (live as v80). Next: your answers on sheet 17, and the Scenario 2 narration script for the ElevenLabs voice.",
   "items": [
     {
-      "id": "s314-sam-sheet17",
+      "id": "s315-sam-sheet18",
       "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Sheet 17 has two items: type two credential titles in the Credential Reference (the AWS merge button appears only after you type the first title; the steps are on the card), and say whether a session should apply cards 23 and 24, the last two places your saved funding text says 'model' (today's words sit beside the new ones). https://claude.ai/artifact/BUSR19kLbQ8yponfQVk1AP"
+      "tab": "credential-reference",
+      "text": "Sheet 18 has one item: the AWS merge and the Microsoft title in the Credential Reference. Your Done on sheet 17 left no saved row, so the card offers both ways: a session writes them through a small workflow, or you type them. Cards 23 and 24 are applied: your saved funding text no longer says 'model'. https://claude.ai/artifact/NopXsApvXCGbnGjSTPRC5A"
     },
     {
       "id": "s310-sam-card11-measures",

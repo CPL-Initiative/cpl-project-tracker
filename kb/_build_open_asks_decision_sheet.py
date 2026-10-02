@@ -31,6 +31,10 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 18 (S315, 2026-10-02, SHEET_ID 2026-10-02-open-asks-18): Sam answered sheet 17 at 04:18Z (card 2
+"Apply them", written at 04:52Z; card 1 "Done" with no kb_curation row and no CER load). One card: the
+session writes the AWS fold and the Microsoft title through a workflow, or he types them. Published at
+https://claude.ai/artifact/NopXsApvXCGbnGjSTPRC5A (capabilities db + comments).
 Sheet 17 (S314, 2026-10-02, SHEET_ID 2026-10-02-open-asks-17): Sam answered all five cards of sheet 16 at
 00:36Z. Two asks remain: the CER titles and the AWS merge (sheet 16 named a button the CER draws only after
 a title is typed), and cards 23-24 shown today beside the revision. Published at
@@ -139,8 +143,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-17.html')
-SHEET_ID = '2026-10-02-open-asks-17'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-18.html')
+SHEET_ID = '2026-10-02-open-asks-18'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -609,46 +613,35 @@ def items():
     # answer: no ask had reached v77; smoke 15e asked it and v77 answers right (sierra lane). Card 2 "Done" left
     # no write in kb_curation, and the card itself was wrong: the CER shows Confirm merge
     # only after the new title is typed. Card 3 asked what cards 23-24 are.
+    # Sheet 17's two cards (S314) were answered at 04:18Z on 2026-10-02 (through 2, both his
+    # own call). Card 2 "Apply them": written by funding-config-edit-apply.yml at 04:52Z
+    # (plan 2026-10-02-2, S315). Card 1 "Done" again left no kb_curation row: the CER reads
+    # its overlay on every load, and the API log shows no such read after the 22:46Z rename
+    # run on 2026-10-01, so the CER was not opened. The substance was ruled on sheet 14
+    # (cpl_memory sam-sheet14-rulings-2026-10-01); only the entry is open.
     I.append({
         'lane': 'partner-crosswalks',
-        'title': "Type two titles in the CER; the AWS merge button appears after the first",
-        'ref': 'partner-crosswalks · CER triage lane · sheet 16 card 2',
+        'title': "The AWS merge and the Microsoft title: I write them, or you type them",
+        'ref': 'partner-crosswalks · CER triage lane · sheet 17 card 1',
         'facts': (
-            "You marked this Done, but nothing reached the curation table after your two renames at 21:18 UTC "
-            "on October 1. The card was wrong: the CER shows Confirm merge only after a new title is typed, so "
-            "there was no button to press. The steps: on the record <em>AWS Certified SysOps Administrator</em>, "
-            "type the title <em>AWS CloudOps Engineer - Associate</em>. The row then reads \"matches existing\" "
-            "with a Confirm merge button; press it. On <em>Microsoft Certified: Azure AI Fundamentals (AI-900)</em>, "
-            "type <em>Microsoft Certified: Azure AI Fundamentals</em>."),
-        'why': "The repo's guard keeps a session out of the curation table, so these two are yours to type.",
-        'rec': "<strong>Type both, then press Confirm merge.</strong> The next session applies them through the "
-               "rename workflow. <em>It might be wrong if</em> the second AWS record names a different credential.",
-        'chips': chips(('Done', 'done'), ('Hold', 'hold'), CH_LATER),
-        'evidence': [live('2026-10-02', 'kb_curation rows and the API log, read-only; credential_reference.js '
-                          'mergeSig() and pendingMerges()')],
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "The last two places your saved text says \"model\"",
-        'ref': 'implementation-funding NEEDS SAM · the model sweep cards 23-24 · funding-config-edit-apply.yml',
-        'facts': (
-            "You asked what cards 23 and 24 are. They are your own words, saved on the funding tab in both "
-            "scenarios, and the model sweep (October 1) approved new wording for them. The words have not "
-            "changed yet. "
-            "<br><br><strong>The Introduction's last paragraph.</strong> Today: \"The model measures outcomes in "
-            "equivalent FTES based on CPL units and allocates funding to institutions proportionally for each "
-            "priority at an FTES reimbursement rate.\" Revised: \"The Chancellor's Office measures outcomes "
-            "...\" Today: \"The model relies on data in the MAP platform...\" Revised: \"CPL funding relies on "
-            "data in the MAP platform...\" The middle sentence and the statute quotation stay as they are."
-            "<br><br><strong>Two Timeline milestones.</strong> Today: \"Funding Model Finalized\" and \"Guidance "
-            "Memo and Funding Model Release.\" Revised: \"CPL Funding Procedure Finalized\" and \"Guidance Memo "
-            "Release.\""),
-        'why': "These four lines are the only places your saved text still says \"model\", in either scenario.",
-        'rec': "<strong>Apply them:</strong> the next session writes the four lines through the config edit "
-               "workflow, dry run first, as it wrote the confirmation deadline. <em>It might be wrong if</em> you "
-               "would rather type them yourself on the tab.",
-        'chips': chips(('Apply them', 'apply'), ("I'll type them", 'type'), CH_LATER),
-        'evidence': [live('2026-10-02', 'cpl_funding_config text.about and timing, md5 e21658f9')],
+            "Your Done on sheet 17 left no row in the curation table. The CER loads its saved decisions "
+            "each time it opens, and the API log shows no such load after the rename run at 22:46 UTC on "
+            "October 1, so nothing was typed there. You ruled on both on sheet 14: fold "
+            "<em>AWS Certified SysOps Administrator</em> into <em>AWS CloudOps Engineer - Associate</em>, and "
+            "drop the exam code from <em>Microsoft Certified: Azure AI Fundamentals (AI-900)</em>. Only the "
+            "entry is left."
+            "<br><br>To type them yourself: on <em>AWS Certified SysOps Administrator</em>, type "
+            "<em>AWS CloudOps Engineer - Associate</em> and press Confirm merge; on the Microsoft record, type "
+            "<em>Microsoft Certified: Azure AI Fundamentals</em>."),
+        'why': "The repo's guard keeps a session out of the curation table, so a session writes there only "
+               "through a reviewed workflow, as it wrote your funding text this morning.",
+        'rec': "<strong>Write them for me:</strong> the session adds a small workflow that inserts the three "
+               "rows (the AWS title, its merge confirmation, the Microsoft title) under a bot name with a "
+               "receipt, maps it in Governance, then runs the rename. <em>It might be wrong if</em> you want "
+               "CER decisions entered only by a curator's hand.",
+        'chips': chips(('Write them for me', 'write'), ("I'll type them", 'type'), CH_LATER),
+        'evidence': [live('2026-10-02', 'kb_curation (newest row 2026-09-27) and the API log (no CER '
+                          'overlay read after 22:46Z on 2026-10-01), read-only')],
     })
     return I
 
