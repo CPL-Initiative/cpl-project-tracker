@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 508,
+   "count": 509,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7153,6 +7153,26 @@
      "title": "Re-mint split invariants \u2014 id\u2194SUBJ4, control-number atomicity, dry-run\u2194apply cross-check",
      "type": "methodology",
      "updated": "2026-05-29"
+    },
+    {
+     "created": "2026-10-02",
+     "governs": [
+      "scripts/pg_jsonb_md5.py",
+      "scripts/funding_effective.js",
+      "tests/fixtures/cpl_funding_config_e21658f9.json",
+      "kb/funding_config_edits_out/"
+     ],
+     "path": "docs/kb-notes/methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "implementation-funding",
+      "verification"
+     ],
+     "title": "Rebuild a jsonb value from its receipts and check its md5",
+     "type": "methodology",
+     "updated": "2026-10-02"
     },
     {
      "created": "2026-07-30",
@@ -14531,8 +14551,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 287,
+   "count": 288,
    "docs": [
+    {
+     "created": "2026-10-02",
+     "governs": [],
+     "n": 317,
+     "path": "docs/session_317_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "partner-crosswalks",
+      "funding-video",
+      "decision-sheet"
+     ],
+     "title": "sheet 19 executed (the CER fold and the summed target), and the FTES reimbursement rate",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-02",
      "governs": [],
@@ -19416,5 +19453,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1012
+ "total": 1014
 }
