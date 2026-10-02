@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-02",
-  "_session": "S315 SkyLedger",
-  "_status": "Landed on 2 October (S316): the statewide target on the funding tab, the explainer and the introduction film is now the institutions' targets added up, 4,366.7 FTES for Access and for Completion, and each of them calls $2,824.82 the FTES reimbursement rate. The Credential Reference files AWS Certified SysOps Administrator under AWS CloudOps Engineer - Associate, and the Microsoft title no longer carries its exam code. Next: the Scenario 2 narration script for the ElevenLabs voice.",
+  "_session": "S317 SkyCompass",
+  "_status": "Landed on 2 October (S317): the nightly MAP data load no longer gives up or misreports when a server error hides what happened. It counts what arrived, sends a batch again only if it did not, checks the staging tables hold exactly the rows sent before it publishes, and reads the load log instead of guessing after a failed publish call. The data access grants that Supabase's 30 October change could have stripped are confirmed in place. Next: the Scenario 2 narration script for the ElevenLabs voice, and the first nightly run on the new code.",
   "items": [
     {
       "id": "s310-sam-card11-measures",
@@ -41,10 +41,10 @@
       "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
     },
     {
-      "id": "s317-fable-memory-row-term",
+      "id": "s317-fable-nightly-readback-check",
       "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Update the summary of the memory row sam-no-price-on-funding-surfaces-2026-10-02 to name the FTES reimbursement rate, Sam's term of 2 October. Three updates through the database tool timed out on 2 October; the companion row sam-ftes-reimbursement-rate-term-2026-10-02 already carries the term."
+      "tab": "map-custom-reports",
+      "text": "Confirm the first scheduled MAP Custom Report load on the new read-back code (pull request 1824) ran clean: its log prints 'staging holds exactly the rows sent' and the load log gains a promotion row after id 47. If a batch hit a server error, read what the loader did with it."
     }
   ],
   "_deferred": [
@@ -101,12 +101,6 @@
       "for": "Sam",
       "tab": "implementation-funding",
       "text": "Two funding-tab items are yours. Move the six transcription strategies from Career attainment to Completion in Year 1. Pressing Publish on Scenario 1 again is optional: an older window's save erased the marker, and an unset marker already falls back to Scenario 1, which is what colleges see. (Your review-sheet titles and timeline labels are in the saved configuration as of 2026-09-24 20:15 UTC.)"
-    },
-    {
-      "id": "s284-fable-supabase-grants",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "The five nightly rebuilds now grant their own Data API access (applied live on 23 September, ahead of Supabase's 30 October change). Today's 13:40 UTC promotion had not run by 16:5x UTC (no load row for the day; all five tables still readable by every API role). A 19:05 UTC check-in re-runs the one statement; once a promote row dated today exists and the roles still read all five tables, retire this item."
     },
     {
       "id": "s283-sam-retry-designate",

@@ -1,7 +1,7 @@
 ---
 title: MAP Custom Reports (3 new) — wiring, reconciliation & lessons
 date: 2026-08-19
-prs: [1246, 1247, 1248, 1251, 1252, 1253, 1254]
+prs: [1246, 1247, 1248, 1251, 1252, 1253, 1254, 1824]
 tags: [map-api, custom-report, catalog-year, student-detail, pii, reconciliation, probe, itpi, salt-hash]
 artifacts:
   - fetch_custom_report.py
@@ -1076,3 +1076,52 @@ a number that lives in fixtures as well as in code.
 ## 2026-09-30 — S308/S309: the catalog-year view counts some applied credit twice
 
 At *Applied to CPL Plan*, `map_college_cr_unit` (View_CollegeExhibitCRByCatalogYear) sums 171,077.6 units and `map_student_credit` (View_StudentDetailsCredits) 162,603.4, at 26 of 63 colleges. Keyed by college × exhibit × catalog year × credit recommendation, 6,782.2 of the 8,474.2 gap sits on 253 keys at 24 colleges where the catalog-year view reads **exactly twice** the student view for the same students. College 79, `MAPSAS-ASL2-1-001`, 2024-2025, "3 hours in CSU GE C2": 918 students both ways, 2,754 units in the student view (three each, as the recommendation reads), 5,508 in the catalog-year view. The rest: 62 keys only in the student view (−637), 342 other differences (+2,329). **Compare two views at the grain they share before calling one wrong; a ratio of exactly 2 on matching student counts is a join, not drift.** The student view stays the source for the breakdowns and P1's feed. The note to Pedro is drafted in `docs/session_310_handoff.md`; sending it is sheet 10 card 5.
+
+## 2026-10-02 — S317 (SkyCompass): a gateway error is not an answer
+
+Two of September's five red nightly loads were one failure class, and only one
+of them had been written down. On 2026-09-18 (run 35372830989) a 504 on the
+promotion printed "rolled back, live unchanged" over a promotion that had
+committed at 17:16:52Z (`map_data_loads` 35); handoff 277 item 9 named the fix
+and nobody built it. On 2026-09-30 (run 36759361182) a 520 on the staging batch
+at row 125,000 of 635,580 ended the load, so live kept 2026-09-29; no doc held
+it until this run read the log. The other three: 09-24 was the key-range CHECK
+(real, fixed that day), and 09-08 and 09-09 were not read.
+
+**The trap in the obvious fix.** A retry on 5xx looks like a one-line change.
+It is unsafe here because the staging tables carry no key and the promotion's
+gates refuse a SHORT table (G2/G3) and never a LONG one. A 5xx can arrive after
+the batch committed, so a blind retry lands 5,000 rows twice and the promotion
+publishes doubled credit with every gate green. The fix has three parts, and
+the third is the one that makes the first safe:
+
+- After a transient failure the loader counts the table. The count before the
+  batch means it did not land (send it again); the count plus the batch means
+  it landed (move on); anything else stops the run.
+- `verify_staging()` checks each staging table holds exactly the rows sent,
+  just before the promotion. It closes the window where a failed request's
+  rows commit after the read-back.
+- The promotion is never sent twice. After a 5xx or a timeout the loader polls
+  `map_data_loads` for a promote row newer than the one it read before the
+  call. The promotion writes that row inside its own transaction, so a newer
+  id exists only if it committed. Comparing ids sidesteps the runner's clock.
+
+**Verified, not assumed.** Section 10 of `tests/map_custom_report_sync_test.py`
+holds ten checks over a fake PostgREST that can fail a batch before or after it
+lands; six mutations each trip at least one (two first escaped as crashes, so
+the harness now reports an escaped exception as a failed check). The new HEAD
+count could not be exercised from the sandbox, so a `staging-only` dispatch of
+the branch (run 37024910352) proved it against real PostgREST: 227,273 +
+641,744 + 26,658 rows, "staging holds exactly the rows sent". An exact count of
+640,917 staging rows takes 614 ms against the 8 s statement timeout the
+`authenticator` role sets. The test was running only inside the nightly load,
+so a PR could break it unseen; it is in `js-tests.yml`'s lints now. #1824.
+
+**The grants re-check (⓪a2) is closed.** After the 2026-10-01 19:00Z promotion
+all five rebuilt tables grant SELECT to anon, authenticated and service_role,
+and each live `rebuild_*` body carries its own grant, so the 2026-10-30 change
+in Supabase's default grants cannot strip them.
+
+**Open:** the first scheduled run on the new code is tonight's. Its log should
+print "staging holds exactly the rows sent" and `map_data_loads` should gain id
+48 or later.
