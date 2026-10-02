@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 115,
   "pac": 3029,
   "ptc": 2627,
-  "pe_u": 1435356.45,
-  "pa_u": 225173.4,
+  "pe_u": 1435377.45,
+  "pa_u": 225217.4,
   "ppa_u": 654.5,
   "ppe_u": 6667.5,
   "pac_u": 26211.2,
@@ -109,9 +109,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Bakersfield": {
    "pe": 609,
-   "pe_u": 26526.0,
+   "pe_u": 26547.0,
    "pa": 601,
-   "pa_u": 8788.0,
+   "pa_u": 8809.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 66.0,
@@ -273,7 +273,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 181,
    "pe_u": 9122.5,
    "pa": 177,
-   "pa_u": 975.0,
+   "pa_u": 998.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -2244,14 +2244,14 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification | Military": {
-    "pe": 11,
-    "pa": 11,
+    "pe": 12,
+    "pa": 12,
     "p3": null,
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 564,
-    "pa": 560,
+    "pe": 563,
+    "pa": 559,
     "p3": 31
    }
   },
@@ -3894,8 +3894,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 1163
   },
   "Industry Certification | Military": {
-   "pe": 53,
-   "pa": 52,
+   "pe": 54,
+   "pa": 53,
    "p3": 31
   },
   "Industry Certification | Military | Portfolio Review": {
@@ -3935,8 +3935,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28045,
-   "pa": 25842,
+   "pe": 28044,
+   "pa": 25841,
    "p3": 2571
   },
   "Military | Portfolio Review": {
@@ -3986,13 +3986,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1435356.45,
-   "pa_u": 225173.4,
+   "pe_u": 1435377.45,
+   "pa_u": 225217.4,
    "p3_u": 74700.7
   },
   "map": {
-   "pe_u": 1442023.95,
-   "pa_u": 225827.9,
+   "pe_u": 1442044.95,
+   "pa_u": 225871.9,
    "p3_u": 74764.2
   },
   "ratio": {

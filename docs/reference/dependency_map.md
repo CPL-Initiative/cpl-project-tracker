@@ -153,6 +153,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cobi_rls_gates` | tabs: `admin` | — |
 | `college_adoption_opportunities` | `edgefn:cpl-chat` | — |
 | `college_geo_replace` | scripts: `chatbox/sync_coci_offerings.py` | — |
+| `college_program_courses` | `edgefn:cpl-chat` | — |
 | `cpl_funding_my_reports` | tabs: `college-briefing` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `implementation-funding` | — |
 | `credential_alignment_for_college` | `edgefn:cpl-chat` | — |
@@ -305,6 +306,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `card_raci.js` | pages: `CPL_Dashboard.html` | — |
 | `card_updates.js` | pages: `CPL_Dashboard.html` | — |
 | `chatbox/build_coci_offerings.py` | workflows: `coci-offerings-sync.yml` | — |
+| `chatbox/build_program_courses.py` | workflows: `coci-offerings-sync.yml` | — |
 | `chatbox/college_geo.json` | scripts: `chatbox/_seed_college_geo.py`, `chatbox/build_coci_offerings.py` | scripts: `chatbox/_seed_college_geo.py` |
 | `chatbox/college_landing_pages.json` | scripts: `chatbox/scrape_landing_pages.py` | scripts: `chatbox/scrape_landing_pages.py` · committed by: `cpl-landing-pages.yml` |
 | `chatbox/health_check.sh` | workflows: `cpl-chat-health.yml` | — |
@@ -312,6 +314,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `chatbox/scrape_landing_pages.py` | workflows: `cpl-landing-pages.yml` | — |
 | `chatbox/smoke_test.sh` | workflows: `cpl-chat-preview-ab.yml`, `cpl-chat-smoke.yml` | — |
 | `chatbox/sync_coci_offerings.py` | workflows: `coci-offerings-sync.yml` | — |
+| `chatbox/sync_program_courses.py` | workflows: `coci-offerings-sync.yml` | — |
 | `cip_crosswalk.js` | pages: `CPL_Dashboard.html` | — |
 | `cip_fitcheck/*.json` | tabs: `cip-crosswalk` | — |
 | `cip_fitcheck_colleges.json` | tabs: `cip-crosswalk` · scripts: `kb/_build_cip_fitcheck.py` | scripts: `kb/_build_cip_fitcheck.py` |
@@ -369,7 +372,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks-20.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
+| `docs/visuals/<date>-open-asks-21.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docs/visuals/<date>-sierra-credit-source.html` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
@@ -570,7 +573,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/CIPCode2020.csv` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/asccc_area_map.json` | scripts: `kb/_apply_asccc_areas.py` | — |
 | `kb/reference/authority_subject_codes.json` | scripts: `kb/_seed_authority_codes.py` | scripts: `kb/_seed_authority_codes.py` |
-| `kb/reference/cb_course_basic_fall2025.csv` | scripts: `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_program_course_graph.py` | — |
+| `kb/reference/cb_course_basic_fall2025.csv` | scripts: `chatbox/build_program_courses.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_program_course_graph.py` | — |
 | `kb/reference/ccc_coll_dist_2025.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/ccc_colleges_ceo_2026.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/ccc_ge_exam_credit.json` | scripts: `excel_to_dashboard.py` | — |
@@ -771,6 +774,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/prefix_fold_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_courses_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_crnc_mirrors_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/remint_blast_radius_test.py` | workflows: `js-tests.yml` | — |
@@ -974,8 +978,9 @@ and the meta-scanners whose rest/v1 regexes are data, not dependencies:
 Files with network/read markers where nothing could be attributed —
 check these BY HAND before trusting an absence:
 
+- `chatbox/sync_program_courses.py`
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 90 Supabase tables · 32 RPCs · 5 edge functions · 567 file
-datasets · 147 external services · 396 consumers · 39 workflows · 37 tabs.
+Coverage: 90 Supabase tables · 33 RPCs · 5 edge functions · 570 file
+datasets · 147 external services · 397 consumers · 39 workflows · 37 tabs.

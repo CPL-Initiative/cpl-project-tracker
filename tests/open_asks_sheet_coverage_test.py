@@ -254,6 +254,9 @@ FIXTURES = {
     # S317: sheet 20's Sierra read (a scene still waits on its read).
     "p_video_n2_pending":    ('{"scenes": [{"scene": "Minimum conditions", "pending": "refused"}]}',
                               '{"scenes": [{"scene": "Minimum conditions", "read": {"clip": "08.mp3"}}]}'),
+    # S318: sheet 21's program-course migration (the programs loader and grants not yet live).
+    "p_program_ctl_pending": ("-- loader below that fills it, and the grants block after it, are NOT yet\n-- applied: the MCP asks",
+                              "-- loader below fills it; the grants block after it closes the loaders."),
     # S315: sheet 19's statewide Access target (the maximum award trims capped targets).
     "p_cap_trims_targets":   ("  function prioEntitlement(c, p) {\n    return (c ? sizePct(c) * capScale(c) * laneFrac : 1) * net;\n  }",
                               "  function prioEntitlement(c, p) {\n    return (c ? sizePct(c) * laneFrac : 1) * net;\n  }"),

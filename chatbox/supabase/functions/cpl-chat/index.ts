@@ -3125,6 +3125,140 @@ function buildProgramsContext(
   return ctx;
 }
 
+// ── The courses a program lists, at the one college asked (S318, 2026-10-02) ──
+// Sam: "Goal is to be able to list the courses in particular programs at a
+// given college." Until this, the only course list Sierra could give for a
+// program was every course at the college sharing the program's TOP code.
+// Measured against the CO's Program Course File over 19,883 active programs:
+// that proxy finds a median 33% of a program's courses, and a median 44% of
+// what it returns is in the program. Mt. San Antonio's LVN-to-RN A.S. lists
+// 27 courses; the proxy found the 7 NURS courses and none of the anatomy,
+// physiology, microbiology, English or psychology the program lists.
+//
+// One RPC, college_program_courses (chatbox/supabase_college_program_courses.sql),
+// runs search_college_programs narrowed to the asked college and returns each
+// matching program with the courses it lists in coci_program_courses.
+//
+// WHAT THE BLOCK MAY SAY. The source carries no required/elective flag, so a
+// course is one the program LISTS: never "required", and never a unit total
+// (honors twins and alternatives sit side by side). A program whose list is
+// absent from the catalog data is said to be absent from the data, never to
+// have no courses. And a program whose key is not loaded yet (list_size null)
+// renders nothing about courses at all.
+const PROGRAM_COURSES_AS_OF = "July 2026";
+const PROGRAM_COURSES_LISTED = 3;      // programs shown with their lists
+const PROGRAM_COURSES_PER_LIST = 40;   // course lines per program
+
+// The question asks about a program's courses. Never fires on a bare program
+// question ("does Cerritos have welding?"), which the program block answers.
+const PROGRAM_COURSE_ASK = /\b(courses?|class(?:es)?|curriculum|coursework|requirements?|required|units?)\b|\bwhat (?:do|would|will) i (?:need to |have to )?take\b/i;
+function asksProgramCourses(q: string): boolean {
+  return PROGRAM_COURSE_ASK.test(q || "");
+}
+
+// Words about the question, never the program's name. Inside one college the
+// matcher weighs every term it is handed, so these would only blur its order.
+const PROGRAM_ASK_WORDS = new Set([
+  "course", "courses", "class", "classes", "curriculum", "coursework", "requirement",
+  "requirements", "required", "unit", "units", "list", "need", "take", "program", "programs",
+  "degree", "degrees", "certificate", "certificates", "cert", "certs", "associate", "award",
+]);
+
+// The program terms: the topic keywords minus ask words and minus the words of
+// the college's own name ("Cerritos", "Santa", "Ana"), before synonyms.
+function programTerms(keywords: string[], college: string): string[] {
+  const own = new Set(String(college || "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean));
+  return (keywords || []).filter((k) => !PROGRAM_ASK_WORDS.has(k) && !own.has(k));
+}
+
+// How many of the visitor's terms a title carries, each as a word (or phrase)
+// starting at a word boundary. Ranks the RPC's candidates; the RPC's own order
+// breaks ties.
+function titleCoverage(title: string, terms: string[]): number {
+  const t = " " + String(title || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim() + " ";
+  let n = 0;
+  for (const raw of terms || []) {
+    const term = String(raw || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    if (term.length >= 3 && t.includes(" " + term)) n++;
+  }
+  return n;
+}
+
+function fmtUnits(u: any): string {
+  const n = Number(u);
+  if (u === null || u === undefined || u === "" || !isFinite(n)) return "";
+  const s = Number.isInteger(n) ? String(n) : String(Math.round(n * 100) / 100);
+  return ` (${s} unit${n === 1 ? "" : "s"})`;
+}
+
+function buildProgramCoursesContext(college: string, rows: any[], terms: string[]): string {
+  if (!college || !rows || rows.length === 0) return "";
+  const groups: any[] = [];
+  const byKey = new Map<string, any>();
+  for (const r of rows) {
+    const key = [r.program_title, r.award, r.status, r.control_number].join("|");
+    let g = byKey.get(key);
+    if (!g) {
+      g = { title: r.program_title, award: r.award, status: r.status, control: r.control_number,
+            size: r.list_size, courses: [], order: groups.length };
+      byKey.set(key, g);
+      groups.push(g);
+    }
+    if (r.course_code || r.course_title) g.courses.push(r);
+  }
+  // A key not loaded yet: say nothing about courses (a false absence otherwise).
+  const known = groups.filter((g) => g.control && g.size !== null && g.size !== undefined);
+  if (known.length === 0) return "";
+  known.sort((a, b) => (titleCoverage(b.title, terms) - titleCoverage(a.title, terms)) || (a.order - b.order));
+  const shown = known.slice(0, PROGRAM_COURSES_LISTED);
+  const rest = known.slice(PROGRAM_COURSES_LISTED);
+
+  let ctx = `\n\n--- Program Course Lists: ${college} (catalog data, as of ${PROGRAM_COURSES_AS_OF}) ---\n`;
+  ctx += `These are the courses each program LISTS in the state's catalog data. Rules for using them:\n`;
+  ctx += `- Name the program and its award, then list its courses by number and title.\n`;
+  ctx += `- Say the program "lists" these courses. The data has no required/elective flag, so never call a course required and never add up the units: honors versions and alternatives appear side by side.\n`;
+  ctx += `- Point the visitor to ${college}'s catalog or a counselor for which courses are required and in what order.\n`;
+  ctx += `- If the program asked about is not below, say the catalog data shows no matching program at ${college} by that name; never say the college does not offer it.\n`;
+  for (const g of shown) {
+    ctx += `\n### ${g.title}${g.award ? ` — ${g.award}` : ""}${g.status && g.status !== "Active" ? ` (status ${g.status})` : ""}\n`;
+    if (!g.size) {
+      ctx += `  The catalog data carries no course list for this program. Say exactly that; never say the program has no courses.\n`;
+      continue;
+    }
+    for (const c of g.courses.slice(0, PROGRAM_COURSES_PER_LIST)) {
+      let line = `  - ${c.course_code || ""}${c.course_title ? ` — ${c.course_title}` : ""}${fmtUnits(c.units)}`;
+      if (c.cid) line += ` [C-ID ${c.cid}]`;
+      if (c.course_college) line += ` (a ${c.course_college} course)`;
+      ctx += line + `\n`;
+    }
+    const left = g.size - Math.min(g.courses.length, PROGRAM_COURSES_PER_LIST);
+    if (left > 0) ctx += `  ... and ${left} more course(s) the program lists; say the list continues.\n`;
+  }
+  if (rest.length) {
+    ctx += `\nOther matching programs at ${college} (lists not shown; offer them if the visitor meant one of these):\n`;
+    for (const g of rest) ctx += `  - ${g.title}${g.award ? ` — ${g.award}` : ""}\n`;
+  }
+  return ctx;
+}
+
+// One read, for one college. Fails safe to null: an unavailable read costs
+// this one section and nothing else.
+async function fetchCollegeProgramCourses(college: string, query: string, sb: any): Promise<any[] | null> {
+  const terms = programTerms(extractTopicKeywords(query), college);
+  if (terms.length === 0) return null;
+  const { data, error } = await sb.rpc("college_program_courses", {
+    p_college: college,
+    search_terms: expandWithSynonyms(terms),
+    program_limit: 8,
+    course_limit: PROGRAM_COURSES_PER_LIST,
+  });
+  if (error) {
+    console.error("college_program_courses unavailable:", error.message);
+    return null;
+  }
+  return data && data.length > 0 ? data : null;
+}
+
 // ── Prospective credit: the courses a held credential could count toward ──────
 // (2026-09-18, S274.) Sam, on v67's answer to his Orange County question — "I
 // have a cna cert and I want to go to a college in orange county. What CNA
@@ -5604,6 +5738,17 @@ Deno.serve(async (req: Request) => {
     if (programsResults && programsResults.length > 0) {
       programsContext = buildProgramsContext(
         programsResults, singleProfile?.college || null, askedGeo, geoMap);
+    }
+    // The courses a program lists, when ONE college is asked and the question
+    // asks for courses (S318). After the program block, so the model reads
+    // which programs the college awards before their lists.
+    if (singleProfile?.college && asksProgramCourses(routeText)) {
+      const listRows = await fetchCollegeProgramCourses(singleProfile.college, routeText, sb);
+      if (listRows) {
+        programsContext += buildProgramCoursesContext(
+          singleProfile.college, listRows,
+          expandWithSynonyms(programTerms(extractTopicKeywords(routeText), singleProfile.college)));
+      }
     }
 
     // Credit disposition — shaped once detection has resolved, so "at MY college"
