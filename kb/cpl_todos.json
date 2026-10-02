@@ -1,14 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-02",
-  "_session": "S313 SkyReel",
-  "_status": "Landed on 1 October (S313): Sierra names City College of San Francisco again (a possessive had hidden the college; live as v77, its smoke passed), your two credential renames applied, the introduction videos carry your video round (a slide on how a target is set, the statewide funding under each priority, dates from the configuration, a plain closing label, 100 seconds now), and the funding explainer shows each priority's target and progress and the count under each minimum condition (pull request 1809). Next: your answers on sheet 16, and the Scenario 2 narration script for the ElevenLabs voice.",
+  "_session": "S314 SkyVerdict",
+  "_status": "Landed on 2 October (S314): Scenario 2's confirmation deadline is December 30, 2026, your answer on sheet 16, written to the funding configuration with a receipt, and the Scenario 2 introduction re-rendered to match. Sierra gives City College of San Francisco's own split on the current version (the wrong answer came from the version before the fix). Sierra now leads an Orange County or San Gabriel Valley answer with the nearest course in the program the student wants, and names the place after it (live as v80). Next: your answers on sheet 17, and the Scenario 2 narration script for the ElevenLabs voice.",
   "items": [
     {
-      "id": "s313-sam-sheet16",
+      "id": "s314-sam-sheet17",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Sheet 16 has five items: ask Sierra City College of San Francisco's split again (she runs v77 now), confirm the AWS merge and type the Microsoft Azure AI Fundamentals title, cards 23 and 24 of the model sweep, which confirmation deadline is right, and watch the new introduction and choose the reported box's figure. https://claude.ai/artifact/49Rh1tw4TZy4MS9o1jF7UH"
+      "text": "Sheet 17 has two items: type two credential titles in the Credential Reference (the AWS merge button appears only after you type the first title; the steps are on the card), and say whether a session should apply cards 23 and 24, the last two places your saved funding text says 'model' (today's words sit beside the new ones). https://claude.ai/artifact/BUSR19kLbQ8yponfQVk1AP"
     },
     {
       "id": "s310-sam-card11-measures",
@@ -47,22 +47,22 @@
       "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
     },
     {
-      "id": "s309-fable-sierra-source-answers",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "When Sam answers sheet 16 card 1, compare Sierra's City College of San Francisco answer (v77) with that day's rows; on 30 September they read 13,138.5 units on plans from 1,882 students, non-military 65 and military 13,073.5, led by Default Credit (4,661.5 units, 1,864 students)."
-    },
-    {
-      "id": "s313-fable-aws-fold",
-      "for": "Fable",
-      "tab": "partner-crosswalks",
-      "text": "When Sam confirms the AWS merge (sheet 16 card 2), dispatch cred-rename-apply.yml once the daily dry run lists it under Confirmed merges; the workflow now rebuilds the re-mint worklist and the CCR payload itself."
-    },
-    {
-      "id": "s313-fable-video-deadline",
+      "id": "s314-fable-sheet17",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "When Sam answers the confirmation deadline (sheet 16 card 4), set the Timing node and the minimum-conditions date in prototype/funding_video/build.py and re-render both introductions (render.sh, about five minutes each, re-versioned names)."
+      "text": "Act on sheet 17: after Sam types the titles, check the curation table for the AWS merge and Microsoft title and dispatch the rename workflow; if he says apply, write cards 23 and 24 through the funding config edit workflow, dry run first."
+    },
+    {
+      "id": "s314-fable-sierra-v80",
+      "for": "Fable",
+      "tab": "sierra",
+      "text": "Read the first clean smoke on Sierra v80: the Orange County answer should open on the nearest LVN course (Long Beach City College's VN 220) and name Orange County in the next sentence."
+    },
+    {
+      "id": "s314-fable-catalog-index",
+      "for": "Fable",
+      "tab": "sierra",
+      "text": "Sierra's catalog reads time out when several run at once; the course table has no index on its program code. Measure, then add one by migration, and re-run the smoke."
     }
   ],
   "_deferred": [

@@ -1191,3 +1191,14 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 **Rulings (Sam).** The video round's asks are verbatim in the S312 chat and the S313 handoff; card 6's "port"; card 25's wording, adapted to the film's true length (100 seconds, since the slide took it past 90).
 
 **Open.** The confirmation deadline (sheet 15) re-renders the Timing and conditions scenes; Sam's Scenario 2 script for the ElevenLabs voice; the 2.3% gap between the statewide target and the institutions' sum.
+
+## 2026-10-02 — S314 (SkyVerdict): Dec 30 is the confirmation deadline
+
+**Sam's rulings (sheet 16, 00:36Z).** Card 4: **Dec 30, 2026** is the right confirmation deadline (the Timeline's date, over `participationDeadline`'s 2026-11-01). Card 5: keep **$9,759,692** in the video's reported box. Card 3: *"I don't know what cards 23 and 24 are. Advise"* (sheet 17 now shows today's text beside each revision).
+
+**What we did and learned.**
+- **The ruling was the authority for the write.** The question was "which date is right"; the config held the date he ruled wrong. `funding-config-edit-apply.yml` wrote Scenario 2's `participationDeadline` from a committed plan (`kb/funding_config_edits_out/2026-10-02`): dry run (1 at before), then commit at 01:46Z under `implementation-funding-s314@bot`, receipt on `main`. The config md5 moved from `e21658f9` to `7e59830b`; the film's money figures are untouched by a date. Moving the date later only softens `partDeadlinePassed()`.
+- **A longer date wrapped the conditions heading.** "December 30, 2026" is one character past what the 3.9cqw heading holds; the first `_v6` render put the year on its own line. The heading now shrinks for a date over 16 characters (`3.9 × 16 / length`), so Scenario 1 and the narrated drafts render byte-identical. Caught on the MP4's stills, as the S312 memory row on render fonts says to.
+- **Scenario 2's introduction is `_Scenario_2_v6.mp4`** (100.6 s); `_v5` left the repo; the explainer links `_v6` and its choices-table fallback reads 30 Dec 2026.
+
+**Open.** Cards 23–24 (sheet 17 card 2: apply, or he types them); card 11's measure texts and card 7's two lines, still his on the tab; the Scenario 2 narration script for the ElevenLabs voice.
