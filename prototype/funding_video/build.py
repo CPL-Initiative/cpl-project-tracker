@@ -208,13 +208,18 @@ CONFIG['n1'] = dict(
 # introduction's own picture (every figure above, the targets slide, December
 # 30, 2026, the CPL funding page) under narration_s2.json's voice, Sierra, read
 # in ElevenLabs. Only the page, the title's name line and the closing credit
-# differ from s2. The explainer does not link it while it waits on Sam's review.
+# differ from s2. Sam ruled on the sample (2026-10-02: "Narration sounds good to
+# start with"), and the ElevenLabs account moved to a paid plan the same day, so
+# all eleven scenes are read and the explainer's Scenario 2 view links the cut.
 CONFIG['n2'] = dict(
     CONFIG['s2'],
-    pageTitle='CPL Funding in Motion: Narrated Draft, Scenario 2',
-    eyebrow='CPL Initiative · draft',
-    dek='A narrated draft of the introduction to CPL funding for colleges, about two minutes, voiced by Sierra. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
-    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_2.mp4',
+    # Linked from the explainer's Scenario 2 view since Sam's verdict (2026-10-02:
+    # "Narration sounds good to start with"); the published scenario's page names
+    # no scenario (Sam, 2026-10-01), and the file names keep it.
+    pageTitle='CPL Funding in Motion: The Narrated Introduction',
+    eyebrow='CPL Initiative',
+    dek='The introduction to CPL funding for colleges, narrated by Sierra, about two and a half minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
+    mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4',
     narrator='Narrated by Sierra',
     audio='narration_s2.mp3',
     credit='Sierra is a synthetic voice made with ElevenLabs.',
