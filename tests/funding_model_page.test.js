@@ -850,6 +850,62 @@ check("the status line is empty on a successful paint",
     fsecOrder().join(",") === IDS.join(","));
 }
 
+{
+  // ── THE PUBLIC VIEW'S PROGRESS LINES, PORTED (Sam, sheet 14 card 6, 2026-10-01) ──
+  // "Port": colleges read the explainer, so each priority carries the statewide
+  // target, its price and its progress, and each minimum condition its count,
+  // from the tab's _publicProgress (the figures its Public view prints).
+  const T3 = win.CPL_FUNDING_TAB;
+  check("p1 the tab exposes _publicProgress and the payload carries it",
+    typeof T3._publicProgress === "function" && !!D.progress && D.progress.prios.length === D.prios.length);
+  // The baked defaults still carry the legacy headcount priorities; the page
+  // states no student target from them (Sam, 2026-09-15: headcount is not a metric).
+  check("p1b no target counted in students, even from the baked defaults",
+    !/students statewide/.test(doc.getElementById("prios").textContent));
+  // The stored config (cpl_funding_config, md5 e21658f9, read 2026-10-01):
+  // Scenario 2, Access and Completion, both FTES priorities at factor 0.5.
+  T3._setConfig(JSON.parse(fs.readFileSync(path.join(ROOT, "tests", "fixtures", "cpl_funding_config_e21658f9.json"), "utf8")));
+  const D3 = win.CPL_FUNDING_EXPLAINER.buildPayload(T3, win.CPL_FUNDING);
+  win.CPL_PAINT_EXPLAINER(D3);
+  const prog = Array.from(doc.querySelectorAll("#prios .prio")).map((el) =>
+    Array.from(el.querySelectorAll(".prog")).map((x) => x.textContent));
+  const P0 = D3.progress.prios[0];
+  check("p2 under the stored config every priority card carries a target line and a progress line",
+    prog.length === D3.prios.length && prog.length === 2 && prog.every((x) => x.length === 2 && /^Target: /.test(x[0]) && /^Progress: /.test(x[1])));
+  check("p2b ...the engine's figures: Access 4,467.6 CPL FTES at $2,824.82 against $12,620,154",
+    prog[0][0].indexOf("Target: 4,467.6 CPL FTES statewide") === 0 && prog[0][0].indexOf("$2,824.82 per CPL FTES (the $5,649.63 base rate times a factor of 0.5)") > 0
+      && Math.round(P0.totalPossible) === 12620154);
+  check("p3 the target line is the engine's: statewide FTES, its semester units, the price, the rate and the factor",
+    prog[0][0] === "Target: " + P0.target.toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) +
+      " CPL FTES statewide, about " + Math.round(P0.units).toLocaleString("en-US") + " semester units, at $" +
+      P0.price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " per CPL FTES (the $" +
+      P0.rate.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " base rate times a factor of " +
+      (+P0.factor).toFixed(1) + ").");
+  check("p4 the progress line is the Public view's Demonstrated of Total Possible, or TBA",
+    P0.demonstrated == null ? prog[0][1] === "Progress: TBA."
+      : prog[0][1].indexOf(money(P0.demonstrated) + " of the " + money(P0.totalPossible) + " Total Possible") > 0);
+  check("p5 the target times the price is the Total Possible, for each FTES priority",
+    D3.progress.prios.every((x) => Math.abs(x.target * x.price - x.totalPossible) < 1 || !x.ftes));
+  check("p6 no glyph in the ported lines (plain words: times, about)", prog.every((x) => !/[×≈—]/.test(x.join(" "))));
+  // The counts arrive with MAP's eligibility read, which ends in render() and
+  // fires onModelChange; the page repaints and the counts appear.
+  const names = win.CPL_FUNDING.colleges.slice(0, 7).map((c) => c.college);
+  const coord = {}, optin = {};
+  names.forEach((n) => { coord[n] = true; });
+  names.slice(0, 3).forEach((n) => { optin[n] = true; });
+  T3._setElig({ coordOk: true, coord: coord, optin: optin });
+  win.CPL_PAINT_EXPLAINER(win.CPL_FUNDING_EXPLAINER.buildPayload(T3, win.CPL_FUNDING));
+  const reqs = Array.from(doc.querySelectorAll("#req-list li")), D4 = win.CPL_FUNDING_EXPLAINER.buildPayload(T3, win.CPL_FUNDING);
+  const counts = reqs.map((li) => (li.querySelector(".req-count") || {}).textContent || "");
+  const total = T3._publicProgress().conditions.filter(Boolean)[0].of;
+  check("p7 the coordinator condition carries its count from MAP",
+    counts.some((t) => t.indexOf("7 of " + total + " colleges have one on file in MAP") >= 0));
+  check("p8 the confirmation condition carries its count",
+    counts.some((t) => t.indexOf("3 of " + total + " colleges have confirmed so far.") >= 0));
+  check("p9 each condition's own words still lead its line, ending in a period before the count",
+    reqs.length === D4.requirements.items.length && reqs.every((li, i) => li.textContent.indexOf(D4.requirements.items[i]) === 0));
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);

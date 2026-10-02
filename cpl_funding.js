@@ -3228,11 +3228,12 @@
       "the request is not necessarily the catalog year, which is authoritative only in the college's student " +
       "information system.",
     "Q: Should a college record students who receive a CPL consultation but do not submit a petition?",
+    // Access counts every request (Sam, 2026-10-01: "P1 no longer requires CPL
+    // requests to originate from landing page, portal, or batch upload").
     "Record them only when the student qualifies for CPL and declines it, the articulation is denied, or the " +
       "student appeals under Title 5 §55050. A student who qualifies and does not apply the credit still counts toward " +
-      "funding: the Access priority counts public CPL requests with faculty-approved " +
-      "CPL that arrive through the College Landing Page, the student portal (CreditforBeingYou.org), or a " +
-      "college's batch upload.",
+      "funding: the Access priority counts every CPL request with faculty-approved CPL, wherever the " +
+      "request began.",
     "The Education Code envisions a CPL consultation for every incoming student as part of onboarding, as " +
       "colleges already provide for AP and IB.",
     "Q: How should a college distinguish consultations, submitted petitions, and transcribed CPL units?",
@@ -14195,6 +14196,53 @@
                deadline: participationDeadline(),
                items: requirementsList().map(function (r) { return String(r.text || ""); })
                         .filter(function (t) { return t.trim(); }) };
+    },
+    // THE PUBLIC VIEW'S PROGRESS LINES, for the explainer (Sam, sheet 14 card
+    // 6, 2026-10-01: "port" them, so colleges read one page). The same figures
+    // the Public view's priority cards and minimum conditions print, from the
+    // same functions (earnAgg, prioTarget, prioPrice, the eligibility counts),
+    // so the two pages cannot disagree. The counts were kept off the explainer
+    // while it was a snapshot (see _requirements); it repaints now, because the
+    // eligibility and perf loaders each end in render(), which fires
+    // onModelChange. `conditions` follows requirementsList()'s order, one entry
+    // per item, null where nothing is measured or the count has not loaded.
+    _publicProgress: function () {
+      // fresh, never the per-render cache: a caller may read between a config
+      // change and the render that clears it (the explainer's test does)
+      _allocCache = null; _ncoRows = null; _earnCache = null;
+      var agg = earnAgg();
+      var prios = agg.ps.map(function (p, i) {
+        var pp = agg.perPrio[i] || {}, ftes = prioIsFtes(p), target = prioTarget(null, p);
+        return { label: p.label, title: p.title || "", ftes: ftes, target: target,
+                 units: ftes ? target * unitsPerCplFtes(null) : null,
+                 factor: prioFactor(p), price: prioPrice(p), rate: ftesRate(),
+                 totalPossible: pp.cap || 0,
+                 // TBA wherever a measure has yet to arrive, as progressSummary reads
+                 demonstrated: pp.cap > 0 ? pp.earned : null,
+                 pct: pp.cap > 0 ? pp.earned / pp.cap : null };
+      });
+      var cols = eligColleges(), total = cols.length, optN = 0;
+      cols.forEach(function (c) { if (ELIG.optin[c.college]) optN++; });
+      var conditions = [];
+      if (coordShown()) {
+        conditions.push(ELIG.coordOk ? { kind: "coord", n: ELIG.coordN, of: total,
+          asOf: ELIG.asOf ? String(ELIG.asOf).slice(0, 10) : "" } : null);
+      }
+      if (partShown()) conditions.push(ELIG.loaded ? { kind: "part", n: optN, of: total } : null);
+      extraReqs().forEach(function (t) {
+        if (!String(t).trim()) return;
+        var vs = isVetJstReq(t) ? vetStar() : null;
+        if (!vs) { conditions.push(null); return; }
+        var metN = 0, starN = 0;
+        cols.forEach(function (c) {
+          if (c.nco ? ncExhibitsMet(c.college).met : vs[c.college] === true) metN++;
+          if (!c.nco && vs[c.college] === true) starN++;
+        });
+        var pfv = perf();
+        conditions.push({ kind: "jst", n: metN, of: total, star: starN,
+          asOf: pfv && pfv.vet_star_as_of ? String(pfv.vet_star_as_of).slice(0, 10) : "" });
+      });
+      return { prios: prios, conditions: conditions };
     },
     _prios: function (name, slot) {
       var c = rosterRow(name);
