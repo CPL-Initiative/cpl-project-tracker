@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-288 document(s).
+289 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 318 | [the MAP load reads back after a gateway error; Scenario 2 narrated draft 2 waits on an ElevenLabs plan](../session_318_handoff.md) | 2026-10-02 |
 | 317 | [sheet 19 executed (the CER fold and the summed target), and the FTES reimbursement rate](../session_317_handoff.md) | 2026-10-02 |
 | 316 | [sheet 19's two asks, the CER entry, and which statewide target the state publishes](../session_316_handoff.md) | 2026-10-02 |
 | 315 | [sheet 17's two asks, Sierra v80's first read, and the catalog index](../session_315_handoff.md) | 2026-10-02 |

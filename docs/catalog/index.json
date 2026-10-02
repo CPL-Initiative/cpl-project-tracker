@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 509,
+   "count": 510,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1689,6 +1689,24 @@
      "title": "A gate cannot protect the step that fills it",
      "type": "methodology",
      "updated": "2026-08-19"
+    },
+    {
+     "created": "2026-10-02",
+     "governs": [
+      "kb/_sync_map_custom_reports.py",
+      "tests/map_custom_report_sync_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-gateway-error-is-not-an-answer.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "pipeline",
+      "reliability"
+     ],
+     "title": "A gateway error is not an answer",
+     "type": "methodology",
+     "updated": "2026-10-02"
     },
     {
      "created": "2026-09-18",
@@ -14551,8 +14569,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 288,
+   "count": 289,
    "docs": [
+    {
+     "created": "2026-10-02",
+     "governs": [],
+     "n": 318,
+     "path": "docs/session_318_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "map-custom-reports",
+      "implementation-funding",
+      "funding-video",
+      "reliability"
+     ],
+     "title": "the MAP load reads back after a gateway error; Scenario 2 narrated draft 2 waits on an ElevenLabs plan",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-02",
      "governs": [],
@@ -19453,5 +19488,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1014
+ "total": 1016
 }
