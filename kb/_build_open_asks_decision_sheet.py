@@ -629,67 +629,10 @@ def items():
     # answer: no ask had reached v77; smoke 15e asked it and v77 answers right (sierra lane). Card 2 "Done" left
     # no write in kb_curation, and the card itself was wrong: the CER shows Confirm merge
     # only after the new title is typed. Card 3 asked what cards 23-24 are.
-    # Sheet 17's two cards (S314) were answered at 04:18Z on 2026-10-02 (through 2, both his
-    # own call). Card 2 "Apply them": written by funding-config-edit-apply.yml at 04:52Z
-    # (plan 2026-10-02-2, S315). Card 1 "Done" again left no kb_curation row: the CER reads
-    # its overlay on every load, and the API log shows no such read after the 22:46Z rename
-    # run on 2026-10-01, so the CER was not opened. The substance was ruled on sheet 14
-    # (cpl_memory sam-sheet14-rulings-2026-10-01); only the entry is open.
-    I.append({
-        'lane': 'partner-crosswalks',
-        'title': "The AWS merge and the Microsoft title: I write them, or you type them",
-        'ref': 'partner-crosswalks · CER triage lane · sheet 17 card 1 · sheet 18 card 1',
-        'facts': (
-            "Your Done on sheet 17 left no row in the curation table. The CER loads its saved decisions "
-            "each time it opens, and the API log shows no such load after the rename run at 22:46 UTC on "
-            "October 1, so nothing was typed there. You ruled on both on sheet 14: fold "
-            "<em>AWS Certified SysOps Administrator</em> into <em>AWS CloudOps Engineer - Associate</em>, and "
-            "drop the exam code from <em>Microsoft Certified: Azure AI Fundamentals (AI-900)</em>. Only the "
-            "entry is left."
-            "<br><br>To type them yourself: on <em>AWS Certified SysOps Administrator</em>, type "
-            "<em>AWS CloudOps Engineer - Associate</em> and press Confirm merge; on the Microsoft record, type "
-            "<em>Microsoft Certified: Azure AI Fundamentals</em>."),
-        'why': "The repo's guard keeps a session out of the curation table, so a session writes there only "
-               "through a reviewed workflow, as it wrote your funding text this morning.",
-        'rec': "<strong>Write them for me:</strong> the session adds a small workflow that inserts the three "
-               "rows (the AWS title, its merge confirmation, the Microsoft title) under a bot name with a "
-               "receipt, maps it in Governance, then runs the rename. <em>It might be wrong if</em> you want "
-               "CER decisions entered only by a curator's hand.",
-        'chips': chips(('Write them for me', 'write'), ("I'll type them", 'type'), CH_LATER),
-        'evidence': [live('2026-10-02', 'kb_curation (newest row 2026-09-27) and the API log (no CER '
-                          'overlay read after 22:46Z on 2026-10-01), read-only')],
-    })
-    # S315 measured S313's open 2.3% gap with the engine over the e21658f9 fixture: lifting the
-    # $400,000 maximum award makes the 118 institutions' Access targets sum to 4,467.60, the
-    # statewide division, exactly; with it, the seven institutions at the maximum carry 78.8 FTES
-    # each and the sum is 4,366.66. No other institution's target moves. Which figure the state
-    # publishes is a definition, so it is his.
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "The statewide Access target: the funding divided by the price, or the institutions' targets added up",
-        'ref': 'implementation-funding NEEDS SAM · the 2.3% gap · cpl_memory statewide-target-exceeds-institution-sum-2026-10-01',
-        'facts': (
-            "The Access card prints a statewide target of 4,467.6 CPL FTES: $12,620,154 divided by the "
-            "$2,824.82 price, as the explainer and the Scenario 2 film state it. The Statewide row's detail adds "
-            "the institutions' own targets and reads 4,366.7 (credit 4,069.3, noncredit 297.4), 100.9 FTES less."
-            "<br><br>The difference is the seven institutions at the $400,000 maximum award. The model sizes "
-            "each of their targets to the maximum, 78.8 FTES, rather than to the institution's size. "
-            "Mt. San Antonio accounts for 62.0 of the 100.9 FTES; Pasadena 14.0, Santa Ana 10.5, Long Beach "
-            "7.4, Fresno City 4.6, Bakersfield 2.0 and El Camino 0.4. No other institution's target moves "
-            "with the maximum. When every institution meets its own target, the state demonstrates 4,366.7 "
-            "FTES and every institution qualifies for its full award."),
-        'why': "One target appears as two figures on the same tab, and a reader who adds the detail's lanes "
-               "arrives at the second.",
-        'rec': "<strong>Use the sum:</strong> the card, the explainer and the film print 4,366.7, the figure "
-               "at which every institution qualifies for its full award; the film is rendered again. "
-               "<em>It might be wrong if</em> you want the public figure to stay the funding divided by the "
-               "price; the detail then keeps its sum and says in one line that the maximum award accounts "
-               "for the difference.",
-        'chips': chips(('Use the sum', 'sum'), ('Keep the division', 'division'), CH_LATER),
-        'evidence': [measured(p_cap_trims_targets, 'S315 ran cpl_funding.js over '
-                              'tests/fixtures/cpl_funding_config_e21658f9.json, Scenario 2, with and without '
-                              'the $400,000 maximum (cap_window)')],
-    })
+    # Sheet 19's two cards (S315) were answered at 11:52Z on 2026-10-02 (through 2, both his own
+    # call): card 1 "write" (cer-decision-apply.yml, #1820) and card 2 "sum" (the statewide Access
+    # target becomes the institutions' sum on the card, the explainer and the film; S316 builds it).
+    # p_cap_trims_targets stays above for a later card.
     return I
 
 

@@ -4,10 +4,10 @@
   "supabase_tables": 90,
   "rpcs": 32,
   "edge_functions": 5,
-  "file_datasets": 563,
+  "file_datasets": 565,
   "external_services": 147,
-  "consumers": 394,
-  "workflows": 38,
+  "consumers": 396,
+  "workflows": 39,
   "data_js_files": 68,
   "tabs": 37
  },
@@ -3491,6 +3491,13 @@
   "file:applied_*.json": {
    "consumers": [
     {
+     "id": "script:kb/_cer_decision_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 177
+    },
+    {
      "id": "script:kb/_esl_monthly_pass.py",
      "kind": "script",
      "direction": "read",
@@ -6838,6 +6845,19 @@
     },
     {
      "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_cer_decision_apply.py": {
+   "consumers": [
+    {
+     "id": "workflow:cer-decision-apply.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -15659,6 +15679,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/cer_decision_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/cobi_live_banner.test.js": {
    "consumers": [
     {
@@ -19327,6 +19360,13 @@
      "line": 78
     },
     {
+     "id": "script:kb/_cer_decision_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 60
+    },
+    {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "read",
@@ -20852,6 +20892,18 @@
   ]
  },
  "workflows": {
+  "cer-decision-apply.yml": {
+   "name": "CER decision apply",
+   "crons": [],
+   "scripts": [
+    "kb/_cer_decision_apply.py"
+   ],
+   "adds": [],
+   "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "coci-offerings-sync.yml": {
    "name": "COCI offerings sync (Sierra catalog)",
    "crons": [],
@@ -21259,6 +21311,7 @@
     "tests/statewide_recs_test.py",
     "kb/_build_open_asks_decision_sheet.py",
     "tests/open_asks_sheet_coverage_test.py",
+    "tests/cer_decision_apply_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",

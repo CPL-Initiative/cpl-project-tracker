@@ -1,0 +1,113 @@
+{
+  "table": "kb_curation",
+  "mode": "commit",
+  "at": "2026-10-02T12-36-43Z",
+  "ruling": "Sam Lee, open-asks sheet 19 (2026-10-02-open-asks-19) card 1: 'write' (replies store, 2026-10-02T11:52:03Z); substance ruled on sheet 14 (2026-10-01 21:22Z)",
+  "cohort": "partner-crosswalks-s315@bot",
+  "read": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_override",
+      "value": "AWS CloudOps Engineer - Associate",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_merge_confirm",
+      "value": "AWS CloudOps Engineer - Associate",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Microsoft Certified: Azure AI Fundamentals (AI-900)",
+      "field": "unified_title_override",
+      "value": "Microsoft Certified: Azure AI Fundamentals",
+      "state": "write",
+      "why": "",
+      "live": null
+    }
+  ],
+  "rows": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_override",
+      "value": "AWS CloudOps Engineer - Associate",
+      "reviewer_email": "partner-crosswalks-s315@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_merge_confirm",
+      "value": "AWS CloudOps Engineer - Associate",
+      "reviewer_email": "partner-crosswalks-s315@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Microsoft Certified: Azure AI Fundamentals (AI-900)",
+      "field": "unified_title_override",
+      "value": "Microsoft Certified: Azure AI Fundamentals",
+      "reviewer_email": "partner-crosswalks-s315@bot"
+    }
+  ],
+  "result": "written",
+  "inserted": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_override",
+      "value": "AWS CloudOps Engineer - Associate",
+      "reviewer_email": "partner-crosswalks-s315@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_merge_confirm",
+      "value": "AWS CloudOps Engineer - Associate",
+      "reviewer_email": "partner-crosswalks-s315@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Microsoft Certified: Azure AI Fundamentals (AI-900)",
+      "field": "unified_title_override",
+      "value": "Microsoft Certified: Azure AI Fundamentals",
+      "reviewer_email": "partner-crosswalks-s315@bot"
+    }
+  ],
+  "skipped_as_duplicate": [],
+  "read_back": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_override",
+      "value": "AWS CloudOps Engineer - Associate",
+      "state": "written",
+      "why": "already holds this value (by partner-crosswalks-s315@bot)",
+      "live": {
+        "value": "AWS CloudOps Engineer - Associate",
+        "reviewer_email": "partner-crosswalks-s315@bot",
+        "reviewed_at": "2026-10-02T12:36:43.679096+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_merge_confirm",
+      "value": "AWS CloudOps Engineer - Associate",
+      "state": "written",
+      "why": "already holds this value (by partner-crosswalks-s315@bot)",
+      "live": {
+        "value": "AWS CloudOps Engineer - Associate",
+        "reviewer_email": "partner-crosswalks-s315@bot",
+        "reviewed_at": "2026-10-02T12:36:43.679096+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Microsoft Certified: Azure AI Fundamentals (AI-900)",
+      "field": "unified_title_override",
+      "value": "Microsoft Certified: Azure AI Fundamentals",
+      "state": "written",
+      "why": "already holds this value (by partner-crosswalks-s315@bot)",
+      "live": {
+        "value": "Microsoft Certified: Azure AI Fundamentals",
+        "reviewer_email": "partner-crosswalks-s315@bot",
+        "reviewed_at": "2026-10-02T12:36:43.679096+00:00"
+      }
+    }
+  ]
+}

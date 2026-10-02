@@ -1,0 +1,26 @@
+{
+  "about": "Sam's verdict on open-asks sheet 19, card 1 ('The AWS merge and the Microsoft title: I write them, or you type them'): 'Write them for me'. The substance is his ruling on sheet 14 (cpl_memory sam-sheet14-rulings-2026-10-01): fold 'AWS Certified SysOps Administrator' into 'AWS CloudOps Engineer - Associate', and drop the exam code from 'Microsoft Certified: Azure AI Fundamentals (AI-900)'. These are the three rows the CER writes for those two edits (saveGridRowCore: a unified_title_override, plus a unified_title_merge_confirm naming the same target when the new title matches an existing key). Sheets 16 and 17 came back Done with no row because the CER was not opened. After the commit, cred-rename-apply.yml applies them: the AWS record folds into the existing key (a confirmed merge), the Microsoft record is a clean rename, and the old names stay as aliases.",
+  "ruling": "Sam Lee, open-asks sheet 19 (2026-10-02-open-asks-19) card 1: 'write' (replies store, 2026-10-02T11:52:03Z); substance ruled on sheet 14 (2026-10-01 21:22Z)",
+  "cohort": "partner-crosswalks-s315@bot",
+  "read_by_session": {
+    "at": "2026-10-02T11:58Z",
+    "how": "read-only selects through the Supabase MCP tool, S315: no unified_title_override rows in the CER namespace; one unified_title_merge_confirm (Intermediate Algebra, a curator's July row naming itself) that touches neither title; credentials.json holds 'AWS Certified SysOps Administrator', 'AWS CloudOps Engineer - Associate' and 'Microsoft Certified: Azure AI Fundamentals (AI-900)'"
+  },
+  "rows": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_override",
+      "value": "AWS CloudOps Engineer - Associate"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::AWS Certified SysOps Administrator",
+      "field": "unified_title_merge_confirm",
+      "value": "AWS CloudOps Engineer - Associate"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Microsoft Certified: Azure AI Fundamentals (AI-900)",
+      "field": "unified_title_override",
+      "value": "Microsoft Certified: Azure AI Fundamentals"
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-10-01T18:31:14.133262+00:00",
+  "scraped_at": "2026-10-02T12:43:48.009403+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28592,
-    "star_colleges": 59
+    "jst": 28612,
+    "star_colleges": 58
   },
-  "computed_star_colleges": 59,
+  "computed_star_colleges": 58,
   "colleges": {
     "Santiago Canyon College": {
       "vets": 288,
@@ -22,7 +22,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1771,
+      "jst": 1778,
       "star": true
     },
     "San Diego Mesa College": {
@@ -107,7 +107,7 @@
     },
     "Fresno City College": {
       "vets": 724,
-      "jst": 728,
+      "jst": 731,
       "star": true
     },
     "College of the Desert": {
@@ -437,8 +437,8 @@
     },
     "Columbia College": {
       "vets": 33,
-      "jst": 25,
-      "star": true
+      "jst": 24,
+      "star": false
     },
     "Santa Monica College": {
       "vets": 676,
@@ -502,7 +502,7 @@
     },
     "Chabot College": {
       "vets": 304,
-      "jst": 53,
+      "jst": 64,
       "star": false
     },
     "Gavilan College": {

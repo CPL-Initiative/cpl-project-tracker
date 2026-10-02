@@ -10124,7 +10124,7 @@
     "_notes": null
   },
   "Amazon Web Services (AWS) Certified Systems Operations (SYSOps) Administrator": {
-    "unified_title": "AWS Certified SysOps Administrator",
+    "unified_title": "AWS CloudOps Engineer - Associate",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35701,7 +35701,7 @@
     "_notes": null
   },
   "Microsoft Certified: Azure AI Fundamentals (AI- 900)": {
-    "unified_title": "Microsoft Certified: Azure AI Fundamentals (AI-900)",
+    "unified_title": "Microsoft Certified: Azure AI Fundamentals",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",

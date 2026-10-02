@@ -1,6 +1,6 @@
-# Credential Rename Dry-Run — 2026-10-01
+# Credential Rename Dry-Run — 2026-10-02
 
-Generated: `2026-10-01T22:46:20Z`
+Generated: `2026-10-02T12:46:30Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -12,7 +12,7 @@ Generated: `2026-10-01T22:46:20Z`
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
 | — | Queued collisions (non-blocking — wait for a curator decision) | 0 |
-| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
+| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **NO** |
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
 
@@ -20,10 +20,7 @@ _None._ A queued collision becomes a confirmed merge when the curator clicks **�
 
 ## Clean renames (would land on apply)
 
-| Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
-|---|---|---|---:|---:|---|
-| `AWS Certified SysOps Administrator — Associate` | → | `AWS CloudOps Engineer - Associate` | 2 | 3 | ✓ |
-| `Cisco Certified CyberOps Associate` | → | `CCNA Cybersecurity` | 2 | 4 | ✓ |
+_None today._ Infrastructure populates the moment a curator enters a rename.
 
 ## Collisions (queued, non-blocking — curator decision required)
 
