@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 509 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 510 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 81 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 51 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 288 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1015** | |
+| Session handoffs | 289 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1017** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-02 (S317 SkyCompass): KB note `methodology-a-gateway-error-is-not-an-answer`; handoff 318; the MAP Custom Report loader reads back after a 5xx and never re-sends a landed batch or the promotion ([#1824](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1824)); the grants re-check closed.
 - 2026-10-02 (S316 SkyTally): KB note `methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5` (+ `scripts/pg_jsonb_md5.py`); handoff 317; sheet 19 executed (the CER fold and Microsoft title; the summed statewide target, film `_v7`, [#1821](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1821)); "FTES reimbursement rate", never price.
 - 2026-10-02 (S315 SkyLedger): KB note `methodology-a-verdict-that-reports-an-action-is-checked-in-the-store`; handoff 316; cards 23-24 written; the `top_code` index; the 2.3% gap traced to the maximum award; sheets 18-19 (19 answered: write, sum); the CER decision workflow.
 - 2026-10-02 (S314 SkyVerdict): KB note `methodology-a-prompt-that-quotes-the-wrong-sentence-teaches-it`; handoff 315; Sierra v78-v80 and the Dec 30 deadline in the lessons docs.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - **2026-10-01 (S312 SkyLantern)** — the funding explainer in the Fact Sheet's layout, with Ask Sierra, the tab's FAQ, one statewide box and the average award; the introductions with the average allocation ([#1806](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1806)); Sam answered sheet 14; the "model" sweep ported ([#1807](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1807)); sheet 15; the S221 funding lessons archived; handoff 313.
 - **2026-10-01 (S310 SkyTandem)** — My CPL Funding in Sam's words: the language mockup ([#1797](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1797)) and the port, with each institution's three minimum conditions, the demonstrated funding at the $1,000 rule and the Do this next fix ([#1798](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1798)); Sam ruled "model" out of every public surface (the sweep is next); an emergency checkpoint, then the full one; handoff 311.
 - **2026-09-30 (S308 SkyBracket + S309 SkyCensus, one session)** — the funding Public view reads as text ([#1788](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1788)); Sierra's catalog timeout fixed with a stored `title_norm` ([#1789](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1789)); the Reporting box's college half on My College ([#1790](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1790)); smoke 7c/7s accept the honest absence ([#1791](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1791), [#1794](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1794)); Sierra's program search reads stored vectors ([#1796](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1796)); sheet 11; two KB notes (a revoke names every role; a stored value does not follow its function); the funding, Sierra and credential chains joined in `session_310_handoff.md`.
-- **2026-09-30 (Sierra credit-source checkpoint, beside S305 to S307)** — Sierra reads where credit comes from: each summary figure suppressed on its own students with real statewide totals ([#1777](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1777)), the military/non-military bucket and per-exhibit source tables ([#1779](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1779)), cpl-chat v74 ([#1780](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1780)); a KB note on the floor belonging to each figure; the partition section in the subtraction note; the 2026-09-30 section in the student-detail lessons; handoff 309 (the Sierra lane; the funding chain's 308 landed first).
