@@ -6,12 +6,9 @@
 --   coci_program_courses_table · coci_program_courses_read_policy ·
 --   coci_college_programs_control_number
 --
--- ⚠️ ONE BLOCK IS NOT YET APPLIED: the REVOKE below. The MCP asks a person to
--- confirm any statement carrying drop, revoke or delete, and S318 had no one
--- to answer, so each such call timed out after 60 s and applied nothing (read
--- back each time). Until it runs, the table keeps Supabase's default grants;
--- RLS with only a read policy refuses every API write by anon and
--- authenticated, the posture of chatbox_college_courses beside it.
+-- The REVOKE below was applied by Sam in the Supabase SQL editor on 2026-10-02
+-- (~19:40Z), since the MCP's confirm for revoke had no one to answer it. Read
+-- back 19:42Z: anon and authenticated hold SELECT only.
 --
 --
 -- WHY THIS EXISTS

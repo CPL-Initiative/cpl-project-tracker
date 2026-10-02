@@ -4,7 +4,7 @@
   "supabase_tables": 90,
   "rpcs": 33,
   "edge_functions": 5,
-  "file_datasets": 570,
+  "file_datasets": 569,
   "external_services": 147,
   "consumers": 397,
   "workflows": 39,
@@ -576,7 +576,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 37
+     "line": 36
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -3195,7 +3195,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 260
+     "line": 263
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4367,7 +4367,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 249
+     "line": 252
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4728,7 +4728,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 239
+     "line": 242
     }
    ],
    "served": true,
@@ -4890,7 +4890,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 536
+     "line": 539
     }
    ],
    "producers": [
@@ -5816,21 +5816,21 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-21.html": {
+  "file:docs/visuals/<date>-open-asks-22.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 157
+     "line": 160
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 157
+     "line": 160
     }
    ],
    "served": false,
@@ -6286,7 +6286,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 326
+     "line": 329
     }
    ],
    "served": true,
@@ -6365,7 +6365,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 249
+     "line": 252
     }
    ],
    "served": true,
@@ -9023,7 +9023,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 302
+     "line": 305
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -9742,7 +9742,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 411
+     "line": 414
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -10323,7 +10323,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 383
+     "line": 386
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -13375,7 +13375,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 372
+     "line": 375
     }
    ],
    "served": false,
@@ -14138,7 +14138,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 249
+     "line": 252
     }
    ],
    "served": true,
@@ -14558,7 +14558,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 269
+     "line": 272
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -14699,19 +14699,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:prototype/funding_video/README.md": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 744
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:prototype/funding_video/funding_in_motion.src.html": {
    "consumers": [
     {
@@ -14746,7 +14733,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 447
+     "line": 450
     }
    ],
    "served": true,
@@ -14772,7 +14759,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 497
+     "line": 500
     }
    ],
    "served": true,
@@ -15260,7 +15247,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 396
+     "line": 399
     }
    ],
    "served": true,
@@ -16952,7 +16939,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 283
+     "line": 286
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",

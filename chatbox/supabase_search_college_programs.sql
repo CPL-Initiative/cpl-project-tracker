@@ -141,11 +141,12 @@ alter table public.coci_college_programs
 -- The program's COCI control number (2026-10-02, S318). With college it is the
 -- key into coci_program_courses (chatbox/supabase_program_courses.sql): 130
 -- control numbers repeat across colleges, so the control alone is no key.
--- The column is live (migration coci_college_programs_control_number). ⚠️ The
--- loader below that fills it, and the grants block after it, are NOT yet
--- applied: the MCP asks a person to confirm a statement carrying delete or
--- revoke, and S318 had no one to answer. Until they run, the live loader
--- ignores the payload's control_number and the column stays empty.
+-- The column is live (migration coci_college_programs_control_number). The
+-- loader below that fills it and the grants block after it were applied by Sam
+-- in the Supabase SQL editor on 2026-10-02 (~19:40Z): the MCP asks a person to
+-- confirm a statement carrying delete or revoke, and S318 had no one to answer
+-- it. Read back 19:42Z: the loader carries control_number, and the three
+-- loaders grant EXECUTE to postgres and service_role only.
 alter table public.coci_college_programs
   add column if not exists control_number text;
 

@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 510 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 511 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 81 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 51 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 289 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1017** | |
+| Session handoffs | 290 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1019** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-02 (S318 SkyKeel): KB note `methodology-a-load-id-should-be-the-content`; handoff 319; Sierra can read each program's own course list (#1826-#1829); sheet 22.
 - 2026-10-02 (S317 SkyCompass): KB note `methodology-a-gateway-error-is-not-an-answer`; handoff 318; the MAP Custom Report loader reads back after a 5xx and never re-sends a landed batch or the promotion ([#1824](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1824)); the grants re-check closed.
 - 2026-10-02 (S316 SkyTally): KB note `methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5` (+ `scripts/pg_jsonb_md5.py`); handoff 317; sheet 19 executed (the CER fold and Microsoft title; the summed statewide target, film `_v7`, [#1821](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1821)); "FTES reimbursement rate", never price.
 - 2026-10-02 (S315 SkyLedger): KB note `methodology-a-verdict-that-reports-an-action-is-checked-in-the-store`; handoff 316; cards 23-24 written; the `top_code` index; the 2.3% gap traced to the maximum award; sheets 18-19 (19 answered: write, sum); the CER decision workflow.
