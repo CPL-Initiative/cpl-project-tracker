@@ -35,7 +35,10 @@ lanes record).
       workflow on his word), and the explainer and the Confirm chips follow.
    5. **The new introduction.** "Use $8,959,692" changes the s2 reported box (`prios[2][3]` in
       `build.py`) and re-renders Scenario 2.
-3. **ElevenLabs** waits on Sam's Scenario 2 script (sheet 6 card 1). With it: `creative_list_voices`,
+3. **Smoke run 36943057866 (23:52 UTC, against v77) failed one wording assertion**, seven minutes after the
+   dispatched run 36942436624 passed every mode on the same v77. Read its `::error::` lines first; a mode
+   that fails once and passes once is a prompt that half-holds, so decide whether v77 needs a change.
+4. **ElevenLabs** waits on Sam's Scenario 2 script (sheet 6 card 1). With it: `creative_list_voices`,
    pick an American English female voice and say which, voice each scene, and feed the audio to
    `narrate.py`'s layout and `cues.py --listen` in place of Kokoro.
 
