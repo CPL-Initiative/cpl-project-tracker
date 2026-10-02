@@ -451,6 +451,13 @@ block("9. the place is named in full", () => {
   check("(9) …and sits under the place rule it qualifies", i > 0 && j > i && j - i < 4000);
   check("(9) …and bars an abbreviation the visitor did not write",
     /Never shorten it to an abbreviation the visitor did not write/.test(SRC));
+  // Smoke run 36947828031 on v77 (2026-10-02, S314): 7s answered right on every
+  // substantive check and never wrote "San Gabriel Valley": the v77 LEAD rule
+  // keeps the county out of the first sentence, and the place had no other home.
+  const k = SRC.indexOf("AND MENTION IT IN THE FIRST PARAGRAPH");
+  check("(9) ⭐ the place is named in the first paragraph, in the sentence after the first course", k > j && k - j < 1200
+    && /the place goes in the sentence after it/.test(SRC),
+    "without it the first-sentence rule can push the place out of the answer entirely");
 });
 
 const failed = results.filter((r) => !r[1]);

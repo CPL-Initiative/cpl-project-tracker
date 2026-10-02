@@ -88,9 +88,9 @@ def close_voiced(short, suffix):
 # THE TIMING SCENE's nodes, [position, date, label], dated from each scenario's
 # stored Timeline (config md5 e21658f9): Oct 2026 for the procedure and the
 # guidance memo. The confirmation node and the minimum-conditions date follow
-# participationDeadline (Scenario 2: 2026-11-01; Scenario 1: 2026-12-01).
-# ⚠️ Scenario 2's Timeline reads Dec 30, 2026 for the confirmation deadline;
-# Sam rules which is right (open-asks sheet 15), and the film follows.
+# participationDeadline (Scenario 2: 2026-12-30; Scenario 1: 2026-12-01). Sam
+# ruled Scenario 2's date Dec 30, 2026, the Timeline's (open-asks sheet 16 card 4,
+# 2026-10-02); the node prints the month, as Scenario 1's does.
 def timing(conf):
     return [[0, 'Oct 2026', 'Procedure and guidance memo'], [18, conf, 'Confirmation deadline'],
             [40, 'Feb 2027', 'Release 1'], [58, 'Jul 2027', 'Release 2'], [80, 'Dec 2027', 'Release 3'], [100, 'Jun 2028', 'Release 4']]
@@ -148,7 +148,7 @@ CONFIG = {
         'linkLabel': 'How CPL funding works',
         'kick': 'An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
-        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v5.mp4',
+        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2_v6.mp4',
         'explainer': BASE,
         'prioName': 'Two priorities',
         'prioHead': 'Two priorities carry the funding',
@@ -158,7 +158,7 @@ CONFIG = {
         # projects and technology alone).
         'prios': [[50, 'Access', ACCESS, 12620154], [50, 'Completion', COMPLETION, 12620154],
                   [None, 'Career attainment and innovation projects', 'Reported by the Chancellor’s Office in qualitative terms. The institutions’ allocations follow Access and Completion.', 9759692]],
-        'timing': timing('Nov 2026'), 'deadline': 'November 1, 2026', 'close': CLOSE,
+        'timing': timing('Dec 2026'), 'deadline': 'December 30, 2026', 'close': CLOSE,
         'how': {'rows': [['Access', 12620154, 4467.6], ['Completion', 12620154, 4467.6]],
                 'rate': 5649.63, 'factor': 0.5, 'price': 2824.82},
         'split': SPLIT_TWO, 'ex': AVERAGE,
