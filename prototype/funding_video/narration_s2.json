@@ -266,7 +266,12 @@
   {
    "scene": "Minimum conditions",
    "text": "Before the Chancellor's Office releases any funding, your college meets three minimum conditions by December thirtieth: name a CPL coordinator, put your local confirmation of participation on file, and upload Joint Services Transcripts for at least seventy-five percent of enrolled veterans. Until then, the funding your college demonstrates is held in reserve for it.",
-   "pending": "ElevenLabs refused this read on 2026-10-02 (generation iGGZHtHe1XJdFXj2xmqO): \"Unusual activity has been detected on your account, so Free Tier access has been disabled. This can be triggered by using a proxy or VPN.\" It waits on a paid plan; then read it in the flow, commit it as 08.mp3 and run narrate.py s2.",
+   "read": {
+    "clip": "08.mp3",
+    "generation": "CT0yA3ktnhDqeEjEuERd",
+    "read_on": "2026-10-02",
+    "text_sha1": "6f6a5c89241dd24d137bc454709729f58658b39c"
+   },
    "cues": [
     {
      "at": 0.1,

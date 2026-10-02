@@ -9,7 +9,7 @@
   "last_tail_s": 3.4,
   "_why": "The narrated cut paces each scene as its lead-in (the seam, its barrier and the first reveal), its clip, and its air; Sam, 2026-09-26: \"slow down and lengthen the timing a bit to accommodate readability and narration.\""
  },
- "total": 141.974,
+ "total": 156.944,
  "scenes": [
   {
    "scene": "Title",
@@ -246,88 +246,118 @@
    "scene": "Minimum conditions",
    "start": 101.344,
    "speech_start": 102.344,
-   "speech_end": 102.344,
-   "end": 110.344,
-   "pending": "ElevenLabs refused this read on 2026-10-02 (generation iGGZHtHe1XJdFXj2xmqO): \"Unusual activity has been detected on your account, so Free Tier access has been disabled. This can be triggered by using a proxy or VPN.\" It waits on a paid plan; then read it in the flow, commit it as 08.mp3 and run narrate.py s2.",
-   "anchors": []
-  },
-  {
-   "scene": "Timing",
-   "start": 110.344,
-   "speech_start": 111.344,
-   "speech_end": 122.494,
-   "end": 123.294,
+   "speech_end": 124.514,
+   "end": 125.314,
    "anchors": [
     {
      "at": 0.1,
-     "t": 111.395,
-     "said": 111.395,
+     "t": 105.946,
+     "said": 105.946,
+     "word": "meets three minimum conditions"
+    },
+    {
+     "at": 1.3,
+     "t": 109.475,
+     "said": 109.475,
+     "word": "name a CPL coordinator"
+    },
+    {
+     "at": 2.6,
+     "t": 111.845,
+     "said": 111.845,
+     "word": "put your local confirmation"
+    },
+    {
+     "at": 3.9,
+     "t": 115.15,
+     "said": 115.15,
+     "word": "upload Joint Services Transcripts"
+    },
+    {
+     "at": 6.0,
+     "t": 120.575,
+     "said": 120.575,
+     "word": "Until then"
+    }
+   ]
+  },
+  {
+   "scene": "Timing",
+   "start": 125.314,
+   "speech_start": 126.314,
+   "speech_end": 137.464,
+   "end": 138.264,
+   "anchors": [
+    {
+     "at": 0.1,
+     "t": 126.365,
+     "said": 126.365,
      "word": "The Chancellor's Office releases funding"
     },
     {
      "at": 1.9,
-     "t": 113.406,
-     "said": 113.406,
+     "t": 128.376,
+     "said": 128.376,
      "word": "twice a year"
     },
     {
      "at": 4.6,
-     "t": 117.48,
-     "said": 117.48,
+     "t": 132.45,
+     "said": 132.45,
      "word": "The full two-year amount"
     },
     {
      "at": 6.4,
-     "t": 119.694,
-     "said": 120.232,
+     "t": 134.664,
+     "said": 135.202,
      "word": "what remains carries forward"
     }
    ]
   },
   {
    "scene": "Support",
-   "start": 123.294,
-   "speech_start": 124.294,
-   "speech_end": 134.294,
-   "end": 135.094,
+   "start": 138.264,
+   "speech_start": 139.264,
+   "speech_end": 149.264,
+   "end": 150.064,
    "anchors": [
     {
      "at": 0.1,
-     "t": 123.7,
-     "said": 124.34,
+     "t": 138.67,
+     "said": 139.31,
      "word": "You won't do this alone"
     },
     {
      "at": 0.8,
-     "t": 124.4,
-     "said": 125.775,
+     "t": 139.37,
+     "said": 140.745,
      "word": "Every priority comes with recommended strategies"
     },
     {
      "at": 5.2,
-     "t": 128.8,
-     "said": 128.8,
+     "t": 143.77,
+     "said": 143.77,
      "word": "a CPL Initiative help team"
     },
     {
      "at": 6.6,
-     "t": 132.61,
-     "said": 132.61,
+     "t": 147.58,
+     "said": 147.58,
      "word": "detailed guidance"
     }
    ]
   },
   {
    "scene": "Find your college",
-   "start": 135.094,
-   "speech_start": 136.094,
-   "speech_end": 138.574,
-   "end": 141.974,
+   "start": 150.064,
+   "speech_start": 151.064,
+   "speech_end": 153.544,
+   "end": 156.944,
    "anchors": [
     {
      "at": 0.9,
-     "t": 136.165,
-     "said": 136.165,
+     "t": 151.135,
+     "said": 151.135,
      "word": "Find your college"
     }
    ]
@@ -445,43 +475,68 @@
    "text": "The full target qualifies for the full share, and that share is the ceiling."
   },
   {
-   "start": 111.344,
-   "end": 114.379,
+   "start": 102.344,
+   "end": 105.204,
+   "text": "Before the Chancellor's Office releases any funding,"
+  },
+  {
+   "start": 105.204,
+   "end": 109.134,
+   "text": "your college meets three minimum conditions by December thirtieth:"
+  },
+  {
+   "start": 109.134,
+   "end": 114.714,
+   "text": "name a CPL coordinator, put your local confirmation of participation on file,"
+  },
+  {
+   "start": 114.714,
+   "end": 120.289,
+   "text": "and upload Joint Services Transcripts for at least seventy-five percent of enrolled veterans."
+  },
+  {
+   "start": 120.289,
+   "end": 124.514,
+   "text": "Until then, the funding your college demonstrates is held in reserve for it."
+  },
+  {
+   "start": 126.314,
+   "end": 129.349,
    "text": "The Chancellor's Office releases funding twice a year,"
   },
   {
-   "start": 114.379,
-   "end": 117.249,
+   "start": 129.349,
+   "end": 132.219,
    "text": "based on your college's CPL to date."
   },
   {
-   "start": 117.249,
-   "end": 119.994,
+   "start": 132.219,
+   "end": 134.964,
    "text": "The full two-year amount is available from year one,"
   },
   {
-   "start": 119.994,
-   "end": 122.494,
+   "start": 134.964,
+   "end": 137.464,
    "text": "and what remains carries forward to year two."
   },
   {
-   "start": 124.294,
-   "end": 125.604,
+   "start": 139.264,
+   "end": 140.574,
    "text": "You won't do this alone."
   },
   {
-   "start": 125.604,
-   "end": 128.654,
+   "start": 140.574,
+   "end": 143.624,
    "text": "Every priority comes with recommended strategies,"
   },
   {
-   "start": 128.654,
-   "end": 134.294,
+   "start": 143.624,
+   "end": 149.264,
    "text": "a CPL Initiative help team supports every college, and detailed guidance will follow."
   },
   {
-   "start": 136.094,
-   "end": 138.574,
+   "start": 151.064,
+   "end": 153.544,
    "text": "Find your college on the CPL funding page."
   }
  ]

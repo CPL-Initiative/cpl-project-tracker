@@ -26,8 +26,8 @@ threshold (110k left), so it is a full checkpoint written short.
    assert a non-NURS course by number appears, for example ANAT 35 at Mt. San Antonio), run
    `cpl-chat-preview-ab.yml` on main, read the grid and the candidate's answer, and ask Sam for the deploy go.
    Sierra is **not deployed** with #1828; `cpl-chat-deploy.yml` is the dispatch.
-4. **Sheet 22** (https://claude.ai/artifact/NwAWv98uo2ytzYjQu4CYzo): one card, the ElevenLabs plan. Read its
-   `replies` before acting.
+4. **Sheet 22 is answered** (Sam in chat, ~21:05Z: *"OK, we're on a paid plan with Elevenlabs"*). No lane carries a
+   NEEDS-SAM marker, so no sheet is open. Confirm the Sierra PR below merged and Pages carries `_Draft_3`.
 
 ## What shipped (all merged)
 
@@ -75,3 +75,14 @@ threshold (110k left), so it is a full checkpoint written short.
   confirm). Read back after each timeout; never reword a statement to dodge it. Create-only DDL applies.
 - ⚠️ A count right after a 300k-row write can exceed PostgREST's 8 s timeout for minutes.
 - ⚠️ Budgets: lanes `sierra-retrieval-corpus` 19,980 and `implementation-funding` 19,946 of 20,000 bytes.
+
+## Later the same day: S317 SkyCompass finished Sierra's narration
+
+- Sam: *"Narration sounds good to start with."* Sierra (ElevenLabs premade Bella) read the last scene, Minimum
+  conditions, once the account moved to a paid plan. `_Draft_3` (2:37) renders from `narration_s2.json`, and the
+  explainer's Scenario 2 view links `funding_in_motion_n2.html`. `cpl_memory` `sam-sierra-narration-approved-2026-10-02`.
+- KB note: `methodology-an-input-read-outside-the-repo-carries-its-text-and-its-gaps`. Send ElevenLabs reads one
+  at a time: ten parallel calls from this container tripped its abuse check.
+- If Sam asks for changes "to start with" covers: edit the scene text, read it again in flow
+  `DORtbrSu16j7ETeqaSkB` (voice `hpp4J3VqNfWAUOO0d1Us`), update `read`, then `narrate.py s2`, `build.py n2` and
+  `render.sh n2` (README).

@@ -40,7 +40,8 @@
 //  10. The Scenario 2 narrated draft (sheet 4 card 8, 2026-09-30): n2 runs every
 //      narrated check n1 runs, on narration_s2.*; its voice names two funded
 //      priorities and the Chancellor's Office reporting career attainment with
-//      the innovation projects; and the explainer does not link it.
+//      the innovation projects; and the explainer's Scenario 2 view links it
+//      (Sam, 2026-10-02: "Narration sounds good to start with").
 //
 //  11. Its second draft (Sam, 2026-10-02: "write a script for the scenario 2
 //      video for an ElevenLabs narrator. Keep it very simple and focused... give
@@ -67,7 +68,7 @@ const explainer = fs.readFileSync("funding-model/index.html", "utf8");
 check("a1 the explainer's link says introduction, not guide, and the film's true length",
   /id="video-link"[^>]*>Watch the 100-second introduction</.test(explainer));
 check("a2 the Scenario 2 label says introduction and names no scenario (it is the published one)",
-  explainer.includes('label: "Watch the 100-second introduction" }') && !/label: "Watch[^"]*Scenario/.test(explainer));
+  explainer.includes('label: "Watch the 100-second introduction",') && !/label: "Watch[^"]*Scenario/.test(explainer));
 check("a3 the explainer's MP4 link downloads", /id="video-mp4"[^>]*\sdownload[\s>]/.test(explainer));
 check("a4 the source never calls itself a guide for colleges", !/guide for colleges|Play the guide/i.test(src));
 // A re-version renames the MP4s (the original date code and a version suffix),
@@ -82,8 +83,13 @@ check("a5 the explainer's MP4 links (Scenario 1 and 2) point at files that exist
 check("a6 the explainer links the narrated cut, which exists",
   /id="video-narrated" href="\.\.\/prototype\/funding_video\/funding_in_motion_n1\.html">or watch the narrated version \(3 minutes\)</.test(explainer)
     && fs.existsSync(path.join(DIR, "funding_in_motion_n1.html")));
-check("a7 the Scenario 2 view hides the narrated link",
-  /getElementById\("video-narrated"\);\s*if \(narrated\) narrated\.hidden = true;/.test(explainer));
+// Sam, 2026-10-02: "Narration sounds good to start with" -- the Scenario 2 view
+// points the link at Sierra's narration of that scenario, and a scenario with no
+// narrated cut of its own still hides it.
+check("a7 the Scenario 2 view links Sierra's narrated cut; a scenario without one hides the link",
+  /narrated: \{ page: "\.\.\/prototype\/funding_video\/funding_in_motion_n2\.html",\s*label: "or watch the narrated version \(2\.5 minutes\)" \}/.test(explainer)
+    && /if \(narrated && v\.narrated\) \{ narrated\.href = v\.narrated\.page; narrated\.textContent = v\.narrated\.label; \}\s*else if \(narrated\) narrated\.hidden = true;/.test(explainer)
+    && fs.existsSync(path.join(DIR, "funding_in_motion_n2.html")));
 
 const readScript = (s) => JSON.parse(fs.readFileSync(path.join(DIR, "narration_" + s + ".json"), "utf8"));
 // Each scene's film span, from the source's scene() calls, as film_spans.py reads them: a
@@ -97,10 +103,10 @@ function spansFor(L) {
   return spans;
 }
 const narration = readScript("s1");
-// The narrated cuts: n1 is Scenario 1's (draft 4, Kokoro), n2 Scenario 2's (draft 2, Sierra).
+// The narrated cuts: n1 is Scenario 1's (draft 4, Kokoro), n2 Scenario 2's (draft 3, Sierra).
 const NARRATED = [
   { tag: "n1 ", v: "n1", s: "s1", mp4: "20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4" },
-  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_2.mp4" },
+  { tag: "n2 ", v: "n2", s: "s2", mp4: "20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4" },
 ];
 const sha1 = (t) => crypto.createHash("sha1").update(t, "utf8").digest("hex");
 NARRATED.forEach(({ s }) => {
@@ -345,7 +351,8 @@ NARRATED.forEach(({ tag, v, s }) => {
   check("k3 a short script (" + words + " words, under 360) voicing each of the picture's eleven scenes, the targets slide included, in its order",
     words < 360 && s2.scenes.length === 11 && L2.scenes.map((x) => x.scene).join("|") === s2.scenes.map((x) => x.scene).join("|")
       && s2.scenes[5].scene === "How a target is set" && /^Hi, I'm Sierra\./.test(s2.scenes[0].text));
-  check("k4 the explainer does not link the Scenario 2 narrated draft", !/funding_in_motion_n2|Scenario_2_Narrated/.test(explainer));
+  check("k4 every scene is read (the plan moved to paid, 2026-10-02), so the explainer's Scenario 2 view links the cut",
+    s2.scenes.every((x) => !x.pending && x.read) && /funding_in_motion_n2\.html/.test(explainer));
   const cfgOf2 = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const cfg = cfgOf2("funding_in_motion_n2.html"), intro = cfgOf2("funding_in_motion_s2.html");
   const PICTURE = ["prios", "prioText", "how", "split", "ex", "target", "timing", "deadline", "close", "explainer", "kick", "titleText"];
