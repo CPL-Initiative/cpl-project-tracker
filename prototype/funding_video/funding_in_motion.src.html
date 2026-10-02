@@ -127,7 +127,14 @@ output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)
 <script>
 (function(){
 'use strict';
-var LOGO='__LOGO__',MAP='__MAP__',CFG=__CFG__,EXPLAINER=CFG.explainer,FILM=90,NARR=CFG.narr||null,DUR=NARR?NARR.total:FILM;
+var LOGO='__LOGO__',MAP='__MAP__',CFG=__CFG__,EXPLAINER=CFG.explainer,HOW=CFG.how||null,D=HOW?9.6:0,FILM=90+D,NARR=CFG.narr||null,DUR=NARR?NARR.total:FILM;
+/* The targets slide (Sam, 2026-10-01) plays at 46 s, after the priorities, in
+   the introductions only, and runs D: four bars of the score, so every phrase
+   after it still lands on its scene. Every moment from 46 s on moves by D. The
+   narrated drafts carry no slide (D = 0), so their frames are unchanged. */
+// LS, not L: buildK declares its own `var L` for the closing loop, which would
+// shadow a function of that name inside it (measured: a blank film in Chromium).
+function LS(t){return t>=46?t+D:t;}
 var $=function(i){return document.getElementById(i);};
 var stage=$('stage'),said=$('said'),arrow=$('arrow'),player=$('player');
 var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -151,7 +158,7 @@ var PF="'Playfair Display',Georgia,serif";
 function lockup(r){var d=E('div','lock',null,r);var c=E('img','cpl',null,d);c.src=LOGO;c.alt='California Community Colleges Credit for Prior Learning Initiative';E('div','rule',null,d);var m=E('img','map',null,d);m.src=MAP;m.alt='MAP';E('p','l1','Mapping Articulated Pathways',d);E('p','l2','With Credit for Prior Learning for Working Adults &amp; Veterans',d);d.map=m;return d;}
 /* ---- the script ---- */
 var S=[];
-function scene(t0,t1,name,text,build,update){var root=E('div','sc',null,stage);var o={t0:t0,t1:t1,name:name,text:text,root:root,u:update};build(root,o);S.push(o);return o;}
+function scene(t0,t1,name,text,build,update,raw){if(!raw){t0=LS(t0);t1=t1>46?t1+D:t1;}var root=E('div','sc',null,stage);var o={t0:t0,t1:t1,name:name,text:text,root:root,u:update};build(root,o);S.push(o);return o;}
 
 var S0=scene(0,6,'Title',CFG.titleText,function(r,o){
   o.lock=lockup(r);
@@ -194,15 +201,50 @@ var S4=scene(32,46,CFG.prioName,CFG.prioText,function(r,o){
   o.h=words(r,CFG.prioHead,'hd');o.h.style.fontSize='5.6cqw';
   var P=CFG.prios;
   o.cols=P.map(function(p,i){var rep=p[0]==null;var d=E('div','abs',null,r,'left:'+(4.5+i*30.8)+'cqw;top:13.2cqw;width:29.2cqw;min-height:39cqw;padding:2.2cqw 2.2cqw 2cqw;border-top:.6cqw solid '+(rep?'var(--stage-gold)':'var(--stage-blue)')+';background:var(--surface);border-radius:.5cqw;box-shadow:0 1cqw 2.5cqw -1.5cqw var(--stage-shadow)');
-    var n=rep?E('div','pill','Reported',d,'background:var(--stage-gold);color:var(--stage-ink);margin:.6cqw 0 1cqw'):E('div','big blue','0%',d,'font-size:9cqw');E('div',null,p[1],d,'font:700 '+(rep?'2.9':'3.8')+'cqw/1.08 '+PF+';margin:1cqw 0 1.2cqw');E('div','ln',p[2],d,'font-size:'+(rep?'2.3':'2.45')+'cqw;line-height:1.3');return{d:d,n:n,v:p[0],rep:rep};});
+    var n=rep?E('div','pill','Reported',d,'background:var(--stage-gold);color:var(--stage-ink);margin:.6cqw 0 1cqw'):E('div','big blue','0%',d,'font-size:9cqw');E('div',null,p[1],d,'font:700 '+(rep?'2.9':'3.8')+'cqw/1.08 '+PF+';margin:1cqw 0 1.2cqw');E('div','ln',p[2],d,'font-size:'+(rep?'2.3':'2.45')+'cqw;line-height:1.3');
+    /* the statewide funding under each box (Sam, 2026-10-01), the Public view's Total Possible */
+    var sv=null;if(p[3]!=null){d.style.paddingBottom=rep?'7.4cqw':'8.6cqw';var sw=E('div',null,null,d,'position:absolute;left:2.2cqw;right:2.2cqw;bottom:'+(rep?'1.6cqw':'2cqw'));
+      /* a box carrying its statewide figure sets its type a step smaller, so the longest (Scenario 1's career attainment) stays in frame */
+      if(rep){d.children[1].style.fontSize='2.6cqw';d.children[2].style.fontSize='2.1cqw';d.children[2].style.lineHeight='1.26';}
+      else{d.style.paddingBottom='7.6cqw';sw.style.bottom='1.7cqw';n.style.fontSize='7.4cqw';d.children[1].style.fontSize='3.5cqw';d.children[2].style.fontSize='2.3cqw';d.children[2].style.lineHeight='1.26';}
+      sv=E('div',rep?'gold':'blue',money(p[3]),sw,'font:900 3.7cqw/1 '+PF+';font-variant-numeric:lining-nums tabular-nums');E('div','kick','statewide',sw,'margin-top:.6cqw;font-size:1.7cqw'+(rep?';color:var(--stage-gold-text)':''));}
+    return{d:d,n:n,v:p[0],rep:rep,sv:sv,sw:p[3]};});
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.cols.forEach(function(c,i){var a=1.2+i*4,p=back(k(t,a,a+0.9));c.d.style.opacity=k(t,a,a+0.3);c.d.style.transform='translateY('+((1-p)*6)+'cqw) rotate('+((1-p)*(i-1)*4)+'deg)';
-  if(!c.rep)count(c.n,t,a+0.2,a+1.4,c.v,function(v){return Math.round(v)+'%';});var on=t>=a&&t<a+4;c.d.style.filter=t>=13.2||on||t<a?'none':'saturate(.4) opacity(.55)';});});
+  if(!c.rep)count(c.n,t,a+0.2,a+1.4,c.v,function(v){return Math.round(v)+'%';});if(c.sv&&!c.rep)count(c.sv,t,a+0.2,a+1.4,c.sw);var on=t>=a&&t<a+4;c.d.style.filter=t>=13.2||on||t<a?'none':'saturate(.4) opacity(.55)';});});
+
+/* ---- how a target is set: the statewide division (Sam, 2026-10-01). Each
+   figure is the engine's (build.py HOW): a priority's statewide funding divided
+   by its price per CPL FTES, the base rate times its factor. Statewide only; an
+   institution's own target follows its size. ---- */
+function money2(n){return '$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function ftes1(n){return Number(n).toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1});}
+function howTail(){var R=HOW.rows;if(R.length===2)return R[1][0]+' is set the same way: <b>'+ftes1(R[1][2])+' FTES</b>.';
+  return R.slice(1).map(function(x){return x[0];}).join(' and ').replace(/ and (.)/,function(m,c){return ' and '+c.toLowerCase();})+' are set the same way: <b>'+R.slice(1).map(function(x){return ftes1(x[2]);}).join('</b> and <b>')+' FTES</b>.';}
+var SH=HOW?scene(46,46+D,'How a target is set','A priority’s target is its statewide funding divided by its price per CPL FTES. '+HOW.rows[0][0]+': '+money(HOW.rows[0][1]).slice(1)+' dollars divided by '+money2(HOW.price).slice(1)+' dollars per FTES, the '+money2(HOW.rate).slice(1)+' dollar base rate times a factor of '+HOW.factor+', sets a target of '+ftes1(HOW.rows[0][2])+' FTES statewide. '+howTail().replace(/<\/?b>/g,''),function(r,o){
+  o.h=words(r,'How a target is set','hd');
+  o.l=words(r,'A priority’s statewide funding, divided by its <b>price per CPL FTES</b>.','ln');o.l.style.cssText='margin-top:1.2cqw;font-size:3cqw';
+  var R0=HOW.rows[0];
+  o.box=E('div','abs',null,r,'left:4.5cqw;right:4.5cqw;top:16.4cqw;display:grid;grid-template-columns:5.5cqw 37cqw 1fr;align-items:baseline;row-gap:1.1cqw');
+  function row(op,cls,val,label){var c0=E('div',null,op,o.box,'font:900 5.6cqw/1 '+PF+';color:var(--stage-muted)');var v=E('div',cls,val,o.box,'font:900 6.2cqw/1 '+PF+';justify-self:end;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums');
+    var l=E('div','ln',label,o.box,'font-size:2.7cqw;padding-left:2.6cqw');return{els:[c0,v,l],v:v};}
+  o.r1=row('',  'blue','$0',R0[0]+' funding, statewide');
+  o.r2=row('÷',null,money2(HOW.price),'per CPL FTES: the '+money2(HOW.rate)+' base rate times a factor of '+HOW.factor);
+  o.rule=E('div',null,null,o.box,'grid-column:1 / 3;height:.4cqw;background:var(--stage-ink);transform-origin:left');
+  E('div',null,null,o.box);
+  o.r3=row('=','gold','0.0',R0[0]+' target, in CPL FTES');
+  o.b=words(r,howTail(),'ln abs');o.b.style.cssText='left:4.5cqw;right:4.5cqw;bottom:2.4cqw;font-size:3.2cqw';
+},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);reveal(o.l.ws,t,0.8,0.05,0.5);
+  o.r1.els.forEach(function(e){fade(e,t,1.6,2.2);});count(o.r1.v,t,1.6,2.8,HOW.rows[0][1]);
+  o.r2.els.forEach(function(e){fade(e,t,3.0,3.6);});
+  o.rule.style.transform='scaleX('+eio(k(t,4.2,4.8))+')';
+  o.r3.els.forEach(function(e){fade(e,t,4.6,5.1);});o.r3.v.textContent=ftes1(HOW.rows[0][2]*eio(k(t,4.6,5.8)));
+  reveal(o.b.ws,t,6.6,0.06,0.5);},true):null;
 
 var S5=scene(46,56,'Targets','Every priority has a target in FTES: 30 semester units of CPL make one FTES, or 45 on a quarter calendar. '+CFG.ex.targetLead+' '+CFG.target.ftesWords+' FTES behind '+CFG.target.usdWords+' dollars. Reach half the target, '+CFG.target.halfFtesWords+' FTES, and '+CFG.ex.qualifier+' qualifies for '+CFG.target.halfUsdWords+' dollars. Going past the target adds nothing: the share is the ceiling.',function(r,o){
   o.h=words(r,'Every priority has a target','hd');
   o.l=words(r,'<b>30 semester units</b> of CPL make one FTES, or 45 on a quarter calendar.','ln');o.l.style.cssText='margin-top:1.2cqw;font-size:3cqw';
   o.card=E('div','abs',null,r,'left:4.5cqw;right:4.5cqw;top:19.5cqw');
-  E('div','kick',CFG.ex.name+' · Access · target '+CFG.target.ftes.toFixed(1)+' FTES · '+money(CFG.target.usd),o.card,'font-size:2.2cqw');
+  E('div','kick',CFG.ex.kickLead+' · target '+CFG.target.ftes.toFixed(1)+' FTES · '+money(CFG.target.usd),o.card,'font-size:'+(CFG.ex.kickSize?CFG.ex.kickSize+'cqw;white-space:nowrap':'2.2cqw'));
   o.bar=E('div','bar',null,o.card,'position:relative;margin-top:1.4cqw;height:7cqw');o.fill=E('div','fill',null,o.bar,'background:var(--stage-gold);width:0');
   o.half=E('div','abs',null,o.bar,'left:50%;top:0;bottom:0;width:.35cqw;background:var(--stage-ink)');
   o.row=E('div',null,null,o.card,'display:flex;justify-content:space-between;align-items:baseline;margin-top:1.4cqw');
@@ -217,8 +259,8 @@ var S5=scene(46,56,'Targets','Every priority has a target in FTES: 30 semester u
   o.fte.textContent=(v===0.5?CFG.target.halfFtesWords:v===1?CFG.target.ftesWords:(CFG.target.ftes*v).toFixed(1))+' FTES';o.usd.textContent=money(CFG.target.usd*v);
   o.cap.textContent=t<6.4?(t>5.0?'Half the target qualifies for half the share.':''):'The share is the ceiling.';o.cap.style.opacity=t<6.4?k(t,5.0,5.4):k(t,7.6,8.0);});
 
-var S6=scene(56,65,'Minimum conditions','Meet the minimum conditions by November 1, 2026: a CPL coordinator assigned and listed in MAP and on the college CPL landing page; local confirmation on file; and at least 75 percent of enrolled veterans’ Joint Services Transcripts uploaded in MAP. Until then, the funding your college demonstrates is held in reserve for it.',function(r,o){
-  o.h=words(r,'Meet the minimum conditions by <span class="blue">November 1, 2026</span>','hd');o.h.style.fontSize='3.9cqw';
+var S6=scene(56,65,'Minimum conditions','Meet the minimum conditions by '+CFG.deadline+': a CPL coordinator assigned and listed in MAP and on the college CPL landing page; local confirmation on file; and at least 75 percent of enrolled veterans’ Joint Services Transcripts uploaded in MAP. Until then, the funding your college demonstrates is held in reserve for it.',function(r,o){
+  o.h=words(r,'Meet the minimum conditions by <span class="blue">'+CFG.deadline+'</span>','hd');o.h.style.fontSize='3.9cqw';
   var L=['A CPL coordinator assigned and listed in MAP and on your college’s CPL landing page','Local confirmation of participation on file','At least 75% of enrolled veterans’ Joint Services Transcripts uploaded in MAP'];
   o.rows=L.map(function(s,i){var d=E('div','abs',null,r,'left:8cqw;right:4.5cqw;top:'+([11.6,22.2,29.8][i])+'cqw;display:flex;gap:2.2cqw;align-items:center');
     var n=E('div',null,String(i+1),d,'flex:none;width:6cqw;height:6cqw;border-radius:50%;display:grid;place-items:center;font:900 3.4cqw/1 '+PF+';border:.35cqw solid var(--stage-ink)');
@@ -229,7 +271,7 @@ var S6=scene(56,65,'Minimum conditions','Meet the minimum conditions by November
 var S7=scene(65,75,'Timing','The full two-year amount is available from year one. Funding is released twice a year based on cumulative CPL: February and July 2027, then December 2027 and June 2028. What remains after year one carries forward to year two for your college.',function(r,o){
   o.h=words(r,'Funding arrives in stages','hd');
   o.line=E('div','abs',null,r,'left:10cqw;right:10cqw;top:28cqw;height:.55cqw;background:var(--stage-ink);transform-origin:left');
-  var N=[[0,'Sep 2026','Model released'],[18,'Nov 2026','Confirmation deadline'],[40,'Feb 2027','Release 1'],[58,'Jul 2027','Release 2'],[80,'Dec 2027','Release 3'],[100,'Jun 2028','Release 4']];
+  var N=CFG.timing;
   o.nodes=N.map(function(n,i){var d=E('div','abs',null,r,'left:calc(10cqw + '+n[0]+'% * 0.8);top:26.2cqw;transform:translateX(-50%);text-align:center;width:17cqw');
     E('div',null,null,d,'width:4cqw;height:4cqw;border-radius:50%;margin:0 auto;background:'+(i>1?'var(--stage-gold)':'var(--stage-blue)')+';border:.5cqw solid var(--stage-paper)');
     E('div',null,n[1],d,'font:900 3.3cqw/1.1 '+PF+';margin-top:.8cqw');E('div','ln',n[2],d,'font-size:2.3cqw;line-height:1.15');if(i%2){d.style.top='13.4cqw';d.insertBefore(d.lastChild,d.firstChild);d.insertBefore(d.lastChild,d.firstChild);d.lastChild.style.marginTop='.8cqw';}return d;});
@@ -247,10 +289,10 @@ var S8=scene(75,84,'Support','You won’t do this alone. Recommended strategies 
   o.b=words(r,'<b>Detailed guidance</b> will follow.','ln abs');o.b.style.cssText='left:4.5cqw;right:4.5cqw;top:40cqw;font-size:4.2cqw';
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);fade(o.k,t,0.8,1.3);fade(o.win,t,0.9,1.4);var pos=0;for(var i=1;i<6;i++)pos+=eio(k(t,1.2+i*0.95,1.2+i*0.95+0.45));o.list.style.transform='translateY('+(-10*pos)+'cqw)';reveal(o.a.ws,t,5.2,0.06,0.5);reveal(o.b.ws,t,6.6,0.08,0.5);});
 
-var S9=scene(84,90,'Find your college','Find your college’s maximum allocation, targets, and progress on the CPL funding model page'+CFG.closingSuffix+'.',function(r,o){
+var S9=scene(84,90,'Find your college',CFG.close.text,function(r,o){
   o.lock=lockup(r);
-  o.t=words(r,'Find your college on the <span class="blue">funding model page</span>','hd');o.t.style.cssText='position:absolute;left:55cqw;right:4cqw;top:14cqw;font-size:5.2cqw';
-  o.s=E('p',null,null,r,'position:absolute;left:55cqw;right:4cqw;top:36.5cqw;margin:0');var a=E('a',null,'Read the full explainer: '+CFG.explainerShort,o.s,'font:700 2.3cqw/1.25 \'Source Sans 3\',Arial,sans-serif;color:var(--stage-blue);position:relative;z-index:6;overflow-wrap:anywhere');a.href=EXPLAINER;a.target='_blank';a.rel='noopener';
+  o.t=words(r,CFG.close.head,'hd');o.t.style.cssText='position:absolute;left:55cqw;right:4cqw;top:14cqw;font-size:5.2cqw';
+  o.s=E('p',null,null,r,'position:absolute;left:55cqw;right:4cqw;top:36.5cqw;margin:0');var a=E('a',null,CFG.close.label,o.s,'font:700 '+(CFG.close.size||2.3)+'cqw/1.25 \'Source Sans 3\',Arial,sans-serif;color:var(--stage-blue);position:relative;z-index:6;overflow-wrap:anywhere');a.href=EXPLAINER;a.target='_blank';a.rel='noopener';
   if(NARR&&CFG.credit)o.cr=E('p',null,CFG.credit,r,'position:absolute;left:55cqw;right:4cqw;top:46.5cqw;margin:0;font:600 1.6cqw/1.3 \'Source Sans 3\',Arial,sans-serif;color:var(--stage-muted)');
 },function(o,t){o.lock.style.opacity=eo(k(t,0.1,1.0));reveal(o.t.ws,t,0.9,0.1,0.6);fade(o.s,t,2.4,3.0);if(o.cr)fade(o.cr,t,3.0,3.6);});
 
@@ -261,9 +303,9 @@ var S9=scene(84,90,'Find your college','Find your college’s maximum allocation
    wink rather than a second story. `t` is the moment the bolt lands. */
 var ENC=[{t:15.35,x:76,y:25,label:'Retaking what you know'},
          {t:46.35,x:78,y:26,label:'No transcript on file'},
-         {t:65.35,x:74,y:36,label:'Nobody to ask'},
-         {t:75.35,x:77,y:31,label:'Unclear local policy'},
-         {t:83.55,x:80,y:40,label:'Credit left on the table'}];
+         {t:LS(65.35),x:74,y:36,label:'Nobody to ask'},
+         {t:LS(75.35),x:77,y:31,label:'Unclear local policy'},
+         {t:LS(83.55),x:80,y:40,label:'Credit left on the table'}];
 var SPRITE=[['..X.....X..','...X...X...','..XXXXXXX..','.XX.XXX.XX.','XXXXXXXXXXX','X.XXXXXXX.X','X.X.....X.X','...XX.XX...'],
             ['..X.....X..','X..X...X..X','X.XXXXXXX.X','XXX.XXX.XXX','XXXXXXXXXXX','.XXXXXXXXX.','..X.....X..','.X.......X.']];
 var PX=0.72,GAP=5.5,fx=$('fx');
@@ -314,17 +356,21 @@ function buildK(){var st=stage.getBoundingClientRect();if(!st.width)return;
   a=at(S3,3.5,function(o){return o.nv;},'above');K.push(Q(29.7,a),Q(31.3,a),P(32.0,112,30,90),P(33.0,-10,9,90));
   [0,1,2].forEach(function(i){a=at(S4,13.5,function(o){return o.cols[i].d;},'above');K.push(Q(33.6+i*4,a),Q(i<2?36.8+i*4:45.2,a));});
   enc(ENC[1]);
-  a=at(S5,8.5,function(o){return o.half;},'below');K.push(Q(48.2,a),Q(52.4,a));
-  a=at(S5,8.5,function(o){return o.bar;},'below',0.985);K.push(Q(53.6,a),Q(55.3,a),P(56.0,112,40,90));
-  [0,1,2].forEach(function(i){a=at(S6,5,function(o){return o.rows[i].n;},'left');if(!i)K.push(P(56.8,a.x,-8,180));K.push(Q([57.4,58.9,60.2][i],a),Q([58.5,59.8,64.2][i],a));});
+  /* the targets slide: the funding, the price, the target */
+  if(SH){a=at(SH,8,function(o){return o.r1.v;},'left');K.push(Q(47.6,a),Q(49.2,a));
+    a=at(SH,8,function(o){return o.r2.v;},'left');K.push(Q(49.8,a),Q(51.6,a));
+    a=at(SH,8,function(o){return o.r3.v;},'left');K.push(Q(52.4,a),Q(55.0,a));}
+  a=at(S5,8.5,function(o){return o.half;},'below');K.push(Q(LS(48.2),a),Q(LS(52.4),a));
+  a=at(S5,8.5,function(o){return o.bar;},'below',0.985);K.push(Q(LS(53.6),a),Q(LS(55.3),a),P(LS(56.0),112,40,90));
+  [0,1,2].forEach(function(i){a=at(S6,5,function(o){return o.rows[i].n;},'left');if(!i)K.push(P(LS(56.8),a.x,-8,180));K.push(Q(LS([57.4,58.9,60.2][i]),a),Q(LS([58.5,59.8,64.2][i]),a));});
   enc(ENC[2]);
-  a=at(S7,4,function(o){return o.line;},'left');K.push(Q(65.9,{x:a.x+1.5,y:a.y,r:90}));var b=at(S7,4,function(o){return o.line;},'right');K.push(P(68.6,b.x-2.5,a.y,90),P(74.2,b.x-2.5,a.y,90));
+  a=at(S7,4,function(o){return o.line;},'left');K.push(Q(LS(65.9),{x:a.x+1.5,y:a.y,r:90}));var b=at(S7,4,function(o){return o.line;},'right');K.push(P(LS(68.6),b.x-2.5,a.y,90),P(LS(74.2),b.x-2.5,a.y,90));
   enc(ENC[3]);
-  a=at(S8,8,function(o){return o.win;},'left');K.push(Q(76.1,a),Q(82.8,a));
+  a=at(S8,8,function(o){return o.win;},'left');K.push(Q(LS(76.1),a),Q(LS(82.8),a));
   enc(ENC[4]);
   /* the closing loop: one lap around the lockup, then home with a small bounce */
-  var L=rel(S9.lock),cx=L.l+L.w/2,cy=L.t+L.h/2,rx=L.w/2+4,ry=L.h/2+3;for(var i=0;i<=8;i++){var th=Math.PI*(0.5+i*0.25);K.push(P(84.4+i*0.28,cx+rx*Math.cos(th),cy+ry*Math.sin(th),(th*180/Math.PI+180)%360,1.2));}
-  K.push(P(87.3,HOME.x,HOME.y-1.2,0,1.3),P(87.7,HOME.x,HOME.y,0,1),P(90,HOME.x,HOME.y,0,1));
+  var L=rel(S9.lock),cx=L.l+L.w/2,cy=L.t+L.h/2,rx=L.w/2+4,ry=L.h/2+3;for(var i=0;i<=8;i++){var th=Math.PI*(0.5+i*0.25);K.push(P(LS(84.4)+i*0.28,cx+rx*Math.cos(th),cy+ry*Math.sin(th),(th*180/Math.PI+180)%360,1.2));}
+  K.push(P(LS(87.3),HOME.x,HOME.y-1.2,0,1.3),P(LS(87.7),HOME.x,HOME.y,0,1),P(LS(90),HOME.x,HOME.y,0,1));
   K.sort(function(p,q){return p.t-q.t;});window.__K=K;return K;}
 function arrowAt(T){var i=0;while(i<K.length-1&&K[i+1].t<=T)i++;var a=K[i],b=K[Math.min(i+1,K.length-1)];if(a===b||b.t<=a.t)return a;var p=eio(k(T,a.t,b.t));
   var dr=b.r-a.r;dr=((dr+540)%360)-180;return{x:a.x+(b.x-a.x)*p,y:a.y+(b.y-a.y)*p,r:a.r+dr*p,s:a.s+(b.s-a.s)*p};}
@@ -334,8 +380,8 @@ var trailBox=$('trail'),GH=[];for(var gi=0;gi<7;gi++){var g=E('img','ghost',null
 function placeArrow(el,a,bob,alpha,shrink){var s=a.s*shrink,d=0.58*AH*s,rr=a.r*Math.PI/180,ox=a.x-d*Math.sin(rr),oy=a.y+d*Math.cos(rr)+bob;
   el.style.display='block';el.style.left=(ox-AW/2)+'cqw';el.style.top=(oy-0.58*AH)+'cqw';el.style.transform='rotate('+a.r+'deg) scale('+s+')';el.style.opacity=alpha;}
 function recoil(b){return b<-0.27||b>-0.05?0:0.7*(b<-0.2?eio(k(b,-0.27,-0.2)):1-eio(k(b,-0.2,-0.05)));}
-function drawArrow(T,t){if(!K.length)return;if(reduced){var home=T<6||T>=87.7;arrow.style.display=home?'block':'none';placeArrow(arrow,P(0,HOME.x,HOME.y,0,1),0,1,1);GH.forEach(function(g){g.style.display='none';});return;}
-  var fly=T>5.4&&T<87.6,a=arrowAt(T),bob=(T>6&&T<87)?0.35*Math.sin(T*6.3):0;ENC.forEach(function(e){var b=(t-e.h)/BAR;if(Math.abs(b)<0.55)bob=0;if(NARR)bob+=recoil(b);});placeArrow(arrow,a,bob,1,1);
+function drawArrow(T,t){if(!K.length)return;if(reduced){var home=T<6||T>=LS(87.7);arrow.style.display=home?'block':'none';placeArrow(arrow,P(0,HOME.x,HOME.y,0,1),0,1,1);GH.forEach(function(g){g.style.display='none';});return;}
+  var fly=T>5.4&&T<LS(87.6),a=arrowAt(T),bob=(T>6&&T<LS(87))?0.35*Math.sin(T*6.3):0;ENC.forEach(function(e){var b=(t-e.h)/BAR;if(Math.abs(b)<0.55)bob=0;if(NARR)bob+=recoil(b);});placeArrow(arrow,a,bob,1,1);
   // The trail: the arrow's own recent positions, 40 ms apart. Sampling the
   // path rather than a fixed offset keeps the trail behind the ship through a
   // turn, and it only appears while the ship is under way.
@@ -395,6 +441,8 @@ var Music=(function(){
   var CM=[[[0,76,2],[2,72,1],[3,71,1]],[[0,72,2],[2,69,2]],[[0,67,1],[1,72,1],[2,76,2]],[[0,74,3],[3,71,1]]];
   function compose(){
     var e=[],bar=4*B,bars=35,edge=[2,6,10,18,26,30];
+    /* the targets slide: section C (the theme in the horns) runs four bars longer */
+    if(HOW){var nb4=Math.round(D/bar);edge=[2,6,10,18,26+nb4,30+nb4];bars=35+nb4;}
     /* the narrated cut: each section arrives just ahead of the scene it belongs
        to, at the same tempo, so a longer scene repeats more of its phrase */
     if(NARR){edge=[1,2,3,5,7,8].map(function(i){return Math.max(1,Math.floor((NS[i].start-0.6)/bar));});
@@ -448,9 +496,9 @@ var Music=(function(){
     e.push({t:end,k:'str',ms:[36,48,55,60,64,67,72,76].map(function(m){return m+T2;}),d:3.6,g:0.022});e.push({t:end,k:'bass',m:24+T2,d:3.2,g:0.07});e.push({t:end,k:'crash',g:0.28});e.push({t:end,k:'timp',m:38,g:0.55});e.push({t:end,k:'snare',g:0.6});
     [[0,72,0.3],[0.3,76,0.3],[0.6,79,2.8]].forEach(function(n){e.push({t:end+n[0],k:'horn',m:n[1]+T2,d:n[2],g:0.15,bright:true});e.push({t:end+n[0],k:'horn',m:n[1]+T2-12,d:n[2],g:0.1});});
     /* scene seams: a soft swell, never a crash, so the sections carry the shape */
-    [6,15,25,32,46,56,65,75].forEach(function(s){e.push({t:nt(s)-1.0,k:'swell',g:0.06});});
+    [6,15,25,32,46].concat(HOW?[LS(46)]:[]).concat([56,65,75].map(LS)).forEach(function(s){e.push({t:nt(s)-1.0,k:'swell',g:0.06});});
     /* the barriers: a small shot and a pop, pitched in the key of the moment */
-    ENC.forEach(function(x){var hi=x.t>72?2:0;e.push({t:x.h-0.27*BAR,k:'zap',m:84+hi,g:0.05});e.push({t:x.h,k:'pop',m:48+hi,g:0.16});});
+    ENC.forEach(function(x){var hi=x.t>LS(72)?2:0;e.push({t:x.h-0.27*BAR,k:'zap',m:84+hi,g:0.05});e.push({t:x.h,k:'pop',m:48+hi,g:0.16});});
     /* under narration the score is a bed, 14 dB down, and dips 6 dB more under the voice */
     if(NARR)e.forEach(function(x){x.g*=0.2*duck(x.t);});
     e.sort(function(a,b){return a.t-b.t;});return e;
