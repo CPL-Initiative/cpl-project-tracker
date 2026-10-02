@@ -26,6 +26,7 @@ Usage (on a runner, or locally with the key):
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import sys
@@ -87,14 +88,16 @@ def range_total(content_range: str) -> int:
 
 
 # The first statements after a bulk load run beside autovacuum and analyze of
-# the table just written. Measured on the first load (run 37047373446,
-# 2026-10-02): autovacuum 18:28:38, autoanalyze 18:28:40, and the prune's exact
-# count died on the 8 s statement timeout moments later; the same count read
-# 93 ms seven minutes after. Both prune statements are safe to repeat (a count
-# reads, a delete of earlier loads finds nothing left the second time), so a
-# timeout or 5xx on either waits and tries again.
-PRUNE_TRIES = 4
-PRUNE_WAIT_S = 20
+# the table just written, and they are slow until the table settles. Measured
+# on the first two loads (runs 37047373446 and 37049825510, 2026-10-02): the
+# prune's exact count died on the 8 s statement timeout on every try within two
+# minutes of a 313,710-row write, read 3.5 s a minute later, and 93 ms once
+# autovacuum had finished. Both prune statements are safe to repeat (a count
+# reads; a delete of earlier loads finds nothing left the second time), so a
+# timeout or 5xx on either waits 30, 60, 90, 120, then 150 s and tries again.
+# The real fix is upstream: an unchanged payload never writes (see main).
+PRUNE_TRIES = 6
+PRUNE_WAIT_S = 30
 
 
 def _patient(request, sleep, method, path, key, prefer):
@@ -170,14 +173,37 @@ def upsert_all(rows: list, key: str, post=_post, sleep=time.sleep) -> int:
     return sent
 
 
+def content_load_id(source_as_of: str, rows: list) -> str:
+    """The load id is the content: the source date and a hash of the rows, so an
+    unchanged payload carries the same id on every run. Digits, letters and a
+    dash only, because it travels in a PostgREST filter."""
+    body = json.dumps(sorted(rows, key=lambda r: (r["college"], r["program_control_number"],
+                                                   r["course_control_number"])),
+                      sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    return source_as_of.replace("-", "") + "-" + hashlib.sha256(body.encode("utf-8")).hexdigest()[:16]
+
+
+def already_live(load_id: str, expected: int, key: str, request=_request) -> bool:
+    """True when the table holds exactly this load and nothing else. One failed
+    read answers False, which only costs a full load; it never skips one."""
+    q = urllib.parse.quote(load_id, safe="")
+    try:
+        _, cr = request("GET", f"{TABLE}?select=college&load_id=eq.{q}&limit=1", None, key,
+                        prefer="count=exact")
+        if range_total(cr) != expected:
+            return False
+        others, _ = request("GET", f"{TABLE}?select=load_id&load_id=neq.{q}&limit=1", None, key)
+        return not others
+    except (_HttpError, SystemExit):
+        return False
+
+
 def main() -> int:
     if not os.path.exists(PAYLOAD):
         raise SystemExit(f"payload not found: {PAYLOAD} — run build_program_courses.py first")
     p = json.load(open(PAYLOAD, encoding="utf-8"))
     meta, rows = p["_meta"], p["program_courses"]
-    # Digits and a dash only: it travels in a PostgREST filter.
-    load_id = (meta["source_as_of"].replace("-", "") + "-"
-               + "".join(ch for ch in meta["generated_at"][:19] if ch.isdigit()))
+    load_id = content_load_id(meta["source_as_of"], rows)
     rows = with_load_id(rows, load_id)
     keys = {(r["college"], r["program_control_number"], r["course_control_number"]) for r in rows}
     if len(keys) != len(rows):
@@ -193,6 +219,12 @@ def main() -> int:
     key = os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
     if not key:
         raise SystemExit("SUPABASE_SERVICE_KEY unset — cannot write. (Set it in the workflow env.)")
+
+    # An unchanged payload writes nothing. Every merge that touches the builder's
+    # paths re-runs this, and a 313,710-row rewrite is what slowed the table.
+    if already_live(load_id, len(rows), key):
+        print(f"\n✓ load {load_id} is already live ({len(rows)} rows, no other load); nothing to write.")
+        return 0
 
     print("\nUpserting via service key…")
     sent = upsert_all(rows, key)
