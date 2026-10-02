@@ -1174,3 +1174,20 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 - **`pkill -f` on a pattern your own command line contains kills your shell** (exit 144, twice). Match with a bracketed first character.
 
 **Open.** Card 6's port (statewide progress per priority and the condition counts on the explainer); the video round (Sam's four asks of 2026-10-01 evening, in the S313 handoff); the confirmation deadline (Timeline Dec 30, 2026 against `participationDeadline` 2026-11-01).
+
+## 2026-10-01 — S313 (SkyReel): the video round, and the explainer carries the Public view's progress
+
+**Sam's asks** (the S312 evening round, sheet 14 card 6 "port", sweep card 25), shipped in #1809.
+
+**What we learned.**
+- **A film's figures come from the engine over a hashed config, and the hash is the proof of the copy.** The sandbox cannot reach Supabase's REST endpoint, so the stored config came through the MCP and was transcribed to a file; a jsonb-order encoder reproduced Postgres's `md5(config::text)` exactly (`e21658f9`, 23,594 characters), which proves every character. The copy is committed as `tests/fixtures/cpl_funding_config_e21658f9.json`; booting the tab over it with `T._setConfig()` and reading the Public view's own cards gave every figure the slide prints.
+- **The statewide division is exact; the per-institution one is not.** $12,620,154 ÷ $2,824.82 = 4,467.6 FTES statewide. An institution's target rides its size while its award is clamped between base and cap, so the average target (34.49) is not the average funding over the price (35.14), and the 118 targets sum to 4,366.66. The slide and the explainer state only the statewide division (`cpl_memory` `statewide-target-exceeds-institution-sum-2026-10-01`).
+- **A new scene shifts the clock, and a shift function named `L` was shadowed.** `buildK` declares its own `var L`; inside it, `L(48.2)` threw in Chromium (a blank film), and a missed `.map(L)` silenced the score. jsdom never runs `buildK`'s measured path (zero-width stage) or the offline score, so test `m0` reads the source; `render.mjs` now stops on a score with no length rather than capture five minutes of frames over an empty WAV.
+- **Prove "frame-identical" with the DOM, not screenshots.** `main`'s build against itself differed at 11 of 41 JPEG frames; the stage's `outerHTML` after each seek matched 82 of 82, and the one real difference it found (a `white-space:nowrap` the narrated kick did not need) was made conditional.
+- **Check a layout change on the render page with the render fonts**, every scenario: Scenario 1's third box and its slide's two-line closing sentence overflowed where Scenario 2's fit.
+- **`earnAgg()` caches per render.** An API read between a config change and the render that clears the cache returns the old model; `_publicProgress()` clears all three caches first.
+- **Student headcount is never a metric** (Sam, 2026-09-15): the baked defaults still carry legacy headcount priorities, so the explainer prints a target only for an FTES priority with a target above zero.
+
+**Rulings (Sam).** The video round's asks are verbatim in the S312 chat and the S313 handoff; card 6's "port"; card 25's wording, adapted to the film's true length (100 seconds, since the slide took it past 90).
+
+**Open.** The confirmation deadline (sheet 15) re-renders the Timing and conditions scenes; Sam's Scenario 2 script for the ElevenLabs voice; the 2.3% gap between the statewide target and the institutions' sum.

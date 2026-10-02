@@ -451,6 +451,34 @@ block("9. the place is named in full", () => {
   check("(9) …and sits under the place rule it qualifies", i > 0 && j > i && j - i < 4000);
   check("(9) …and bars an abbreviation the visitor did not write",
     /Never shorten it to an abbreviation the visitor did not write/.test(SRC));
+  // Smoke run 36947828031 on v77 (2026-10-02, S314): 7s answered right on every
+  // substantive check and never wrote "San Gabriel Valley": the v77 LEAD rule
+  // keeps the county out of the first sentence, and the place had no other home.
+  const k = SRC.indexOf("AND MENTION IT IN THE FIRST PARAGRAPH");
+  check("(9) ⭐ the place is named in the first paragraph, in the sentence after the first course", k > j && k - j < 1200
+    && /in the sentence after the first course, with that course's college and its distance/.test(SRC),
+    "without it the first-sentence rule can push the place out of the answer entirely");
+  // The first wording of that rule (cpl-chat v78) led smoke 7c with a nurse
+  // assistant course in Orange County, the place's own, ahead of the nearest LVN
+  // course (run 36951885947). The rule now says the place never picks the course.
+  check("(9) ⭐ …and the place never changes which course leads, inside the place or outside it",
+    /The place never changes which course leads: the first course still comes from the program the visitor wants to enter, at the nearest college that teaches it, inside the place or outside it\./.test(SRC));
+});
+
+// ── 10. THE CATALOG'S ABSENCE, SAID ONCE (2026-10-02, S314) ─────────────────
+// The preview of the place fix (A/B run 36953527862) led 7c right, with Long Beach
+// City College's VN 220, and closed with "Since no Orange County college currently
+// teaches an LVN entry program": the very sentence the old rule quoted as the one
+// to avoid. The rule now says the absence once, attributed, in the first paragraph,
+// and no longer quotes the wrong sentence for the model to copy.
+block("10. the catalog's absence is said once", () => {
+  check("(10) ⭐ the absence is stated once, in the first paragraph, attributed to the catalog",
+    /STATE THE CATALOG'S ABSENCE ONCE, IN THE FIRST PARAGRAPH, ATTRIBUTED TO THE CATALOG/.test(SRC)
+    && /and do not return to it\./.test(SRC));
+  check("(10) ⭐ the prompt no longer quotes the unattributed restatement for the model to copy",
+    !/since no Orange County college currently teaches an LVN entry program/.test(SRC));
+  check("(10) …and a later paragraph that must touch it repeats the attribution",
+    /If a later paragraph must touch it, it says "the catalog data lists" again\./.test(SRC));
 });
 
 const failed = results.filter((r) => !r[1]);

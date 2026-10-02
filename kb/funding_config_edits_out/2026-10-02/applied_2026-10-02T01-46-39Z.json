@@ -1,0 +1,45 @@
+{
+  "table": "cpl_funding_config",
+  "row_id": "default",
+  "mode": "commit",
+  "at": "2026-10-02T01-46-39Z",
+  "ruling": "Sam Lee, open-asks sheet 16 (2026-10-01-open-asks-16) card 4: 'Dec 30, 2026' (replies store, 2026-10-02T00:36:15Z)",
+  "cohort": "implementation-funding-s314@bot",
+  "read": {
+    "updated_at": "2026-10-01T18:35:32.473448+00:00",
+    "updated_by": "slee@cccco.edu",
+    "config_sha256": "1f1f95191805925978d806769faf0331d9ddefc35412d1251896f781866a35e0"
+  },
+  "edits": [
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "participationDeadline"
+      ],
+      "before": "2026-11-01",
+      "after": "2026-12-30"
+    }
+  ],
+  "result": "written",
+  "written": {
+    "updated_at": "2026-10-02T01:46:39.383688+00:00",
+    "updated_by": "implementation-funding-s314@bot",
+    "config_sha256": "0661470327b2afd1ea05230756a4cfd2a185f955dfc990b7a04d5fd609fa1eb4"
+  },
+  "read_back": [
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "participationDeadline"
+      ],
+      "state": "after",
+      "live": "2026-12-30"
+    }
+  ]
+}

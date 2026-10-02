@@ -18,5 +18,32 @@
     "Cisco Certified CyberOps Associate": "CCNA Cybersecurity"
   },
   "merges": {},
-  "merge_details": []
+  "merge_details": [],
+  "_applied_at": "2026-10-01T22:46:20Z",
+  "_apply_results": {
+    "credentials.json": {
+      "before_count": 1987,
+      "after_count": 1987,
+      "rekeyed": 2,
+      "already_applied": 0,
+      "not_found": 0
+    },
+    "unified_titles.json": {
+      "before_count": 3813,
+      "rewrites": 4,
+      "untouched": 3809
+    },
+    "coci_articulations.json": {
+      "articulation_records": 4592,
+      "rewrites": 7,
+      "pre_counts_old": {
+        "AWS Certified SysOps Administrator — Associate": 3,
+        "Cisco Certified CyberOps Associate": 4
+      },
+      "post_counts_new": {
+        "AWS CloudOps Engineer - Associate": 3,
+        "CCNA Cybersecurity": 4
+      }
+    }
+  }
 }

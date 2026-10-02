@@ -234,9 +234,15 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
       ctl.indexOf('<a class="btn" id="to-public" href="' + PUBLIC_VIEW + '">Back to the public view</a>') !== -1;
   });
   check("5a: every video page carries both ways back in its control row, which stays on screen", ok);
-  check("5b: the Scenario 2 pages lead back to the Scenario 2 explainer",
-    ["funding_in_motion_s2.html", "funding_in_motion_n2.html"].every((f) =>
-      /id="to-explainer" href="[^"]*\?scenario=Scenario%202"/.test(read("prototype/funding_video/" + f))));
+  // Scenario 2 is the published scenario, so its introduction leads to the bare
+  // address, which shows it, and names no scenario (Sam, 2026-10-01); Scenario
+  // 1's introduction names its own, and the voiced Scenario 2 draft keeps the
+  // address it was built with until it is re-voiced.
+  const toEx = (f) => (/id="to-explainer" href="([^"]+)"/.exec(read("prototype/funding_video/" + f)) || [])[1] || "";
+  check("5b: each video page leads back to its own scenario's explainer",
+    /\/funding-model\/$/.test(toEx("funding_in_motion_s2.html")) &&
+    /\?scenario=Scenario%201$/.test(toEx("funding_in_motion.html")) &&
+    /\?scenario=Scenario%202$/.test(toEx("funding_in_motion_n2.html")));
 }
 
 let pass = 0;

@@ -26,7 +26,7 @@
 //      clock passes through every anchor within 0.05 s, never runs backward and
 //      never plays the picture faster than the introduction, and each anchor
 //      is its word's onset in the words file heard from the committed track.
-//      The 90-second introductions keep the film's own clock.
+//      The introductions keep the film's own clock.
 //
 //   8. The conditions a college meets before any funding is released are its
 //      minimum conditions (Sam's term, 2026-09-28): the retired word "baseline"
@@ -56,10 +56,10 @@ const DIR = "prototype/funding_video";
 const src = fs.readFileSync(path.join(DIR, "funding_in_motion.src.html"), "utf8");
 const explainer = fs.readFileSync("funding-model/index.html", "utf8");
 
-check("a1 the explainer's link says introduction, not guide",
-  /id="video-link"[^>]*>Watch the 90-second introduction</.test(explainer));
-check("a2 the Scenario 2 label says introduction",
-  explainer.includes('label: "Watch the 90-second introduction (Scenario 2)"'));
+check("a1 the explainer's link says introduction, not guide, and the film's true length",
+  /id="video-link"[^>]*>Watch the 100-second introduction</.test(explainer));
+check("a2 the Scenario 2 label says introduction and names no scenario (it is the published one)",
+  explainer.includes('label: "Watch the 100-second introduction" }') && !/label: "Watch[^"]*Scenario/.test(explainer));
 check("a3 the explainer's MP4 link downloads", /id="video-mp4"[^>]*\sdownload[\s>]/.test(explainer));
 check("a4 the source never calls itself a guide for colleges", !/guide for colleges|Play the guide/i.test(src));
 // A re-version renames the MP4s (the original date code and a version suffix),
@@ -107,8 +107,8 @@ function boot(file, reduced) {
   return dom.window;
 }
 
-[["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v3.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v4.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+[["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v4.mp4", ""],
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v6.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
@@ -132,9 +132,12 @@ function boot(file, reduced) {
   // ROUNDED target printed 22.1 FTES where the engine's half is 22.2.
   const cfg = JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(raw)[1]);
   const ftesShown = () => Array.from(d.querySelectorAll("#stage div")).map((e) => e.textContent).find((x) => /^\d+\.\d FTES$/.test(x));
-  w.__film.seek(51.8);
+  // The targets slide (2026-10-01) plays at 46 s for 9.6 s; the Targets scene follows it.
+  const SHIFT = w.__film.dur - 90;
+  check(tag + "e0 the introduction runs 99.6 s: the 90-second film and the 9.6-second targets slide", Math.abs(w.__film.dur - 99.6) < 1e-9);
+  w.__film.seek(51.8 + SHIFT);
   check(tag + "e1 the half-target hold shows the engine's half figure (" + cfg.target.halfFtesWords + ")", ftesShown() === cfg.target.halfFtesWords + " FTES");
-  w.__film.seek(55.5);
+  w.__film.seek(55.5 + SHIFT);
   check(tag + "e2 the full target shows the engine's figure (" + cfg.target.ftesWords + ")", ftesShown() === cfg.target.ftesWords + " FTES");
   const wr = boot(file, true);
   wr.__film.seek(15.1);
@@ -223,7 +226,8 @@ NARRATED.forEach(({ tag, v, s }) => {
   // the picture's clock: the arrow must already sit under the invader when its
   // recoil begins, 0.27 barrier-seconds before the hit.
   const BAR = Number((/var BAR=NARR\?([\d.]+):1/.exec(src) || [])[1]);
-  const hits = Array.from(src.matchAll(/\{t:([\d.]+),x:/g)).map((m) => Number(m[1]));
+  // a barrier after the targets slide is written LS(t), which is t in a narrated draft
+  const hits = Array.from(src.matchAll(/\{t:(?:LS\()?([\d.]+)\)?,x:/g)).map((m) => Number(m[1]));
   check(tag + "h8 the arrow is under each barrier before it fires",
     BAR > 0 && hits.length === 5 && hits.every((e) => ft(nt(e) - 0.27 * BAR) >= e - 0.5 - 1e-9));
   w.close();
@@ -231,10 +235,10 @@ NARRATED.forEach(({ tag, v, s }) => {
 
 [["funding_in_motion.html", ""], ["funding_in_motion_s2.html", "s2 "]].forEach(([file, tag]) => {
   const w = boot(file, false), d = w.document, ts = [];
-  for (let t = -1; t <= 91; t += 0.25) ts.push(t);
+  for (let t = -1; t <= 101; t += 0.25) ts.push(t);
   check(tag + "i1 " + file + " keeps the film's own clock", ts.every((t) => w.__film.ft(t) === t && w.__film.nt(t) === t));
-  check(tag + "i2 its chapters keep the 90-second times",
-    Array.from(d.querySelectorAll(".chap .tc")).map((e) => e.textContent).join(" ") === "0:00 0:06 0:15 0:25 0:32 0:46 0:56 1:05 1:15 1:24");
+  check(tag + "i2 its chapters: the 90-second times, the targets slide at 0:46, and the rest 9.6 s later",
+    Array.from(d.querySelectorAll(".chap .tc")).map((e) => e.textContent).join(" ") === "0:00 0:06 0:15 0:25 0:32 0:46 0:55 1:05 1:14 1:24 1:33");
   w.close();
 });
 
@@ -250,13 +254,17 @@ NARRATED.forEach(({ tag, v, s }) => {
     check(s + " t2 the captions and the narrated timeline's scene names never say baseline",
       !RETIRED.test(L.cues.map((c) => c.text).concat(L.scenes.map((x) => x.scene)).join(" ")));
   });
-  [["funding_in_motion.html", ""], ["funding_in_motion_s2.html", "s2 "], ["funding_in_motion_n1.html", "n1 "], ["funding_in_motion_n2.html", "n2 "]].forEach(([file, tag]) => {
+  // Each introduction dates its minimum conditions from its scenario's
+  // participationDeadline (Scenario 1: 2026-12-01); the narrated drafts keep
+  // the date their voice reads.
+  [["funding_in_motion.html", "", "December 1, 2026"], ["funding_in_motion_s2.html", "s2 ", "December 30, 2026"],
+   ["funding_in_motion_n1.html", "n1 ", "November 1, 2026"], ["funding_in_motion_n2.html", "n2 ", "November 1, 2026"]].forEach(([file, tag, by]) => {
     const w = boot(file, false), d = w.document;
     // every scene's text, its chapter and what the page announces, second by second of the film
     let shown = d.title + " " + d.getElementById("chapters").textContent;
-    for (let t = 0; t <= 90; t += 1) { w.__film.seek(w.__film.nt(t)); shown += " " + d.getElementById("stage").textContent; }
+    for (let t = 0; t <= 100; t += 1) { w.__film.seek(w.__film.nt(Math.min(t, 99.6))); shown += " " + d.getElementById("stage").textContent; }
     check(tag + "t3 " + file + " shows minimum conditions, never baseline",
-      !RETIRED.test(shown) && shown.includes("Meet the minimum conditions by November 1, 2026"));
+      !RETIRED.test(shown) && shown.includes("Meet the minimum conditions by " + by));
     w.close();
   });
 }
@@ -307,6 +315,70 @@ NARRATED.forEach(({ tag, v, s }) => {
   check("k5 the n2 picture is Scenario 2's: 50 and 50, one reported card, and its target",
     cfg.prios.length === 3 && cfg.prios[0][0] === 50 && cfg.prios[1][0] === 50 && cfg.prios[2][0] === null
       && cfg.target.ftesWords === "67.2" && cfg.explainer.endsWith("?scenario=Scenario%202"));
+}
+
+{
+  // 10. The 2026-10-01 round (Sam, the S312 evening asks): the introductions
+  // gain a slide on how a target is set, the statewide funding under each
+  // priority, the Targets kick led by the priority, dates from the config, and
+  // a plain closing label; neither film nor page names the published scenario.
+  // The narrated drafts keep the frames their voice was laid out on.
+  const cfgOf = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
+  const stageAt = (w, t) => { w.__film.seek(t); return w.document.getElementById("stage").textContent.replace(/\s+/g, " "); };
+  [["funding_in_motion.html", "", "Access", "$8,329,302", "2,948.6", "Dec 2026"],
+   ["funding_in_motion_s2.html", "s2 ", "Access", "$12,620,154", "4,467.6", "Dec 2026"]].forEach(([file, tag, first, funding, target, conf]) => {
+    const raw = fs.readFileSync(path.join(DIR, file), "utf8"), cfg = cfgOf(file), w = boot(file, false);
+    const how = stageAt(w, 54.5);
+    check(tag + "m1 the targets slide divides the statewide funding by the price per CPL FTES",
+      how.includes("How a target is set") && how.includes(funding) && how.includes("$2,824.82")
+        && how.includes("the $5,649.63 base rate times a factor of 0.5") && how.includes(target));
+    check(tag + "m2 its figures are the engine's: target = funding / (rate x factor), to the printed tenth",
+      cfg.how.rows.every((r) => Math.abs(r[1] / (cfg.how.rate * cfg.how.factor) - r[2]) < 0.05)
+        && Math.round(cfg.how.rate * cfg.how.factor * 100) === Math.round(cfg.how.price * 100));
+    const prios = stageAt(w, 45.5);
+    check(tag + "m3 the statewide funding sits under each priority", cfg.prios.every((p) => prios.includes("$" + p[3].toLocaleString("en-US"))) && /statewide/i.test(prios));
+    check(tag + "m4 Access counts every applied unit (no origin clause in the film or its text)",
+      !/start at the CPL Portal|landing page, or a batch upload/i.test(raw) && prios.includes("Applied CPL units, from every CPL request."));
+    check(tag + "m5 the Targets kick leads with the priority", stageAt(w, 50 + 9.6).includes("Priority 1 · Access · average allocation · target"));
+    const timing = stageAt(w, 72 + 9.6);
+    check(tag + "m6 the Timing nodes come from the config: Oct 2026 for the procedure and memo, " + conf + " for confirmation",
+      timing.includes("Oct 2026") && timing.includes("Procedure and guidance memo") && timing.includes(conf) && !/Sep 2026|Model released/.test(timing));
+    const close = stageAt(w, 98);
+    const a = w.document.querySelector("#stage a");
+    check(tag + "m7 the closing scene: the CPL funding page, a plain label linked to the real address",
+      close.includes("Find your college on the CPL funding page") && a && a.textContent === "How CPL Funding Works" && a.getAttribute("href") === cfg.explainer);
+    check(tag + "m8 no github.io address and no scenario name in the film or the page chrome",
+      !/github\.io/.test(Array.from({ length: 100 }, (_, t) => stageAt(w, t)).join(" "))
+        && !/Scenario 2/.test(w.document.querySelector("header").textContent + " " + w.document.title + " " + a.textContent));
+    check(tag + "m9 the page says what the film is: a 100-second introduction to CPL funding",
+      /^A 100-second introduction to CPL funding for colleges, with music\./.test(w.document.querySelector(".dek").textContent)
+        && w.document.querySelector("main a").textContent === "How CPL funding works");
+    w.close();
+  });
+  // The clock's shift is LS, never L: buildK declares its own `var L` (the
+  // closing loop's box), and a reference to L anywhere else either shadows or
+  // misses (2026-10-01: a blank film, then a silent score, `.map(L)`). jsdom
+  // never runs buildK's measured path or the offline score, so read the source.
+  {
+    const bk = src.slice(src.indexOf("function buildK(){"), src.indexOf("function arrowAt("));
+    const rest = src.replace(bk, "");
+    // the two shapes that broke: a call, L(…), and L passed as a value, map(L)
+    const code = rest.replace(/\/\*[\s\S]*?\*\/|\/\/[^\n]*/g, "");
+    check("m0 nothing outside buildK calls L or passes it as a function (the slide's shift is LS)",
+      !/[^\w.$]L\s*\(/.test(code) && !/[(,]\s*L\s*[),]/.test(code) && /function LS\(t\)/.test(src));
+  }
+  check("m10 Scenario 2 is the published scenario, so its introduction links the bare address; Scenario 1's names its own",
+    cfgOf("funding_in_motion_s2.html").explainer === "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/"
+      && cfgOf("funding_in_motion.html").explainer.endsWith("?scenario=Scenario%201"));
+  [["funding_in_motion_n1.html", "n1 "], ["funding_in_motion_n2.html", "n2 "]].forEach(([file, tag]) => {
+    const cfg = cfgOf(file), w = boot(file, false);
+    check(tag + "m11 the narrated draft keeps its voiced frames: no slide, the voiced box, dates and closing",
+      cfg.how === null && w.__film.dur === cfg.narr.total && cfg.prios.every((p) => p.length === 3)
+        && /start at the CPL Portal/.test(cfg.prios[0][2]) && cfg.timing[0][1] === "Sep 2026"
+        && cfg.close.head.includes("funding model page") && /^Read the full explainer: /.test(cfg.close.label)
+        && cfg.ex.kickLead === "Sample College · Access");
+    w.close();
+  });
 }
 
 let fail = 0;

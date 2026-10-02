@@ -1,0 +1,20 @@
+{
+  "about": "Sam's verdict on open-asks sheet 16, card 4 ('Which confirmation deadline is right?'): Dec 30, 2026. Scenario 2's Timeline already reads Dec 30, 2026 for the Confirmation Deadline; its participationDeadline read 2026-11-01, which printed in the explainer's minimum conditions, on each institution's Confirm chip and in the introduction's Timing and conditions scenes. This plan sets participationDeadline to the ruled date. Moving it later is the softer direction: partDeadlinePassed() marks no college late before 2026-12-30. Scenario 1 (2026-12-01, Timeline Dec 2026) is not touched.",
+  "ruling": "Sam Lee, open-asks sheet 16 (2026-10-01-open-asks-16) card 4: 'Dec 30, 2026' (replies store, 2026-10-02T00:36:15Z)",
+  "row_id": "default",
+  "cohort": "implementation-funding-s314@bot",
+  "read_by_session": {
+    "at": "2026-10-02T00:50Z",
+    "updated_at": "2026-10-01 18:35:32.473448+00",
+    "updated_by": "slee@cccco.edu",
+    "config_md5": "e21658f9bd86a75d9b7cf327f60c4276",
+    "how": "read-only select through the Supabase MCP tool, S314"
+  },
+  "edits": [
+    {
+      "path": ["projects", "cpl-implementation", "scenarios", "Scenario 2", "participationDeadline"],
+      "before": "2026-11-01",
+      "after": "2026-12-30"
+    }
+  ]
+}

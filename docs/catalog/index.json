@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 505,
+   "count": 506,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2712,6 +2712,23 @@
      "title": "A place is an anchor, not a college \u2014 and the words that describe the ask are not the topic",
      "type": "methodology",
      "updated": "2026-09-18"
+    },
+    {
+     "created": "2026-10-01",
+     "governs": [
+      "tests/fixtures/cpl_funding_config_e21658f9.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-postgres-md5-proves-a-transcribed-jsonb-copy.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "verification",
+      "implementation-funding"
+     ],
+     "title": "A Postgres md5 proves a transcribed jsonb copy",
+     "type": "methodology",
+     "updated": "2026-10-01"
     },
     {
      "created": "2026-09-17",
@@ -14502,8 +14519,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 284,
+   "count": 285,
    "docs": [
+    {
+     "created": "2026-10-02",
+     "governs": [],
+     "n": 314,
+     "path": "docs/session_314_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "funding-video",
+      "sierra",
+      "partner-crosswalks",
+      "decision-sheet"
+     ],
+     "title": "sheet 16's verdicts, the AWS fold, and the deadline re-render",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-01",
      "governs": [],
@@ -19335,5 +19370,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1007
+ "total": 1009
 }
