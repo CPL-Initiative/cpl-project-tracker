@@ -1,6 +1,6 @@
-# Credential Rename Dry-Run — 2026-10-01
+# Credential Rename Dry-Run — 2026-10-02
 
-Generated: `2026-10-01T22:46:20Z`
+Generated: `2026-10-02T12:40:36Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -16,14 +16,15 @@ Generated: `2026-10-01T22:46:20Z`
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
 
-_None._ A queued collision becomes a confirmed merge when the curator clicks **✓ Confirm merge** in the CER triage lane (writes `unified_title_merge_confirm` naming the exact target).
+| Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |
+|---|---|---:|---:|---:|---:|
+| `AWS Certified SysOps Administrator` | ⇒ `AWS CloudOps Engineer - Associate` | 1 | 1 | 1 | 2 |
 
 ## Clean renames (would land on apply)
 
 | Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
 |---|---|---|---:|---:|---|
-| `AWS Certified SysOps Administrator — Associate` | → | `AWS CloudOps Engineer - Associate` | 2 | 3 | ✓ |
-| `Cisco Certified CyberOps Associate` | → | `CCNA Cybersecurity` | 2 | 4 | ✓ |
+| `Microsoft Certified: Azure AI Fundamentals (AI-900)` | → | `Microsoft Certified: Azure AI Fundamentals` | 1 | 1 | ✓ |
 
 ## Collisions (queued, non-blocking — curator decision required)
 

@@ -30,5 +30,40 @@
       "confirmed_by": "partner-crosswalks-s315@bot",
       "confirmed_at": "2026-10-02T12:36:43.679096+00:00"
     }
-  ]
+  ],
+  "_applied_at": "2026-10-02T12:40:36Z",
+  "_apply_results": {
+    "credentials.json": {
+      "before_count": 1987,
+      "after_count": 1987,
+      "rekeyed": 1,
+      "already_applied": 0,
+      "not_found": 0
+    },
+    "credentials.json (merge fold)": {
+      "before_count": 1987,
+      "after_count": 1986,
+      "keys_folded": 1,
+      "already_applied": 0,
+      "records_moved": 0,
+      "records_deduped": 1
+    },
+    "unified_titles.json": {
+      "before_count": 3813,
+      "rewrites": 2,
+      "untouched": 3811
+    },
+    "coci_articulations.json": {
+      "articulation_records": 4592,
+      "rewrites": 3,
+      "pre_counts_old": {
+        "Microsoft Certified: Azure AI Fundamentals (AI-900)": 1,
+        "AWS Certified SysOps Administrator": 2
+      },
+      "post_counts_new": {
+        "Microsoft Certified: Azure AI Fundamentals": 1,
+        "AWS CloudOps Engineer - Associate": 5
+      }
+    }
+  }
 }
