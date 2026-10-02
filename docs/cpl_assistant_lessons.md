@@ -24,110 +24,10 @@ section every checkpoint.
 
 ---
 
-> **History before 2026-08-09 moved to
+> **History before 2026-08-23 moved to
 > [`docs/cpl_assistant_lessons_archive.md`](cpl_assistant_lessons_archive.md)**
 > (2026-09-11, `oversized_doc` at 1.02×). Fourteen sections, verbatim, nothing
 > summarized. This doc keeps the recent ones and is still the one to append to.
-
----
-
-## 2026-08-09 — SkyMind: Sierra reaches the disposition data, and two guards that fired on truth
-
-### What shipped
-
-**cpl-chat v36 (#1064–#1066), live and smoke-verified.** Sierra can now answer what a college has *acted on* —
-statewide and per named college — off the published aggregates (`map_college_credit_summary`,
-`map_college_goal2`). 68 committed checks; live smoke run 55 `ALL MODES OK`; deploy byte-verified from the
-runner with `verify_jwt:false` intact.
-
-### The finding that reframed the task
-
-The session-129 handoff scoped Priority 1 as carrying **"no new disclosure decision"** because the COBI Sierra
-was internal. It also, to its credit, said *"confirm the deployment topology before touching anything."* Two
-greps:
-
-| Caller | Endpoint |
-|---|---|
-| `cpl_chat.js` (COBI tab) | `/functions/v1/cpl-chat` |
-| `sierra/sierra.js` (PUBLIC map.rccd.edu widget) | **the same** |
-| `fact-sheet/factsheet_sierra.js` | **the same** |
-
-One function, reading with the **service-role key** (RLS constrains nothing on that path) and deployed
-`--no-verify-jwt` (anyone can curl it). There was no internal Sierra to start with — so what the handoff recorded
-as "no decision" **was** the decision. Sam made it explicitly: per-college open to all callers.
-
-⭐ **Blast radius was narrower than either of us assumed.** Every non-college entity carrying data is *already*
-`suppressed=true` under k=10 — North Orange (1 student), San Diego CCE (4), Launch (2); Futuro Health has no row.
-Partner figures cannot be stated at all, and the write-time suppression already covered the case we were worried
-about. Durable: `methodology-rls-is-not-a-gate-in-front-of-a-service-role-function`.
-
-### Sam's framing, which was a substance decision not a tone one
-
-*Transparency and truth, framed as opportunity rather than deficiency — colleges want to do this work and have
-not had the tools or the data visibility until now.* That last clause is a claim about **cause**, and it is
-credible precisely because these figures sat in an Access database until 2026-08-08. A backlog is evidence of a
-visibility gap closing, not indifference. `CREDIT_STATUS_RULE` encodes it: lead with the already-articulated
-block, state real numbers plainly, never a report card, and answer comparative questions as opportunities rather
-than a best-to-worst ranking.
-
-Live proof, from smoke 55 on San Diego Mesa:
-
-> **🟡 The Biggest Opportunity: Credit Ready to Act On** — 83,656 units recommended but not yet acted on… Of
-> that, **4,593 units are already articulated** — the agreement is already built, and all that's needed is a
-> decision to award it… **Note:** roughly 30% of recommendations reviewed system-wide are correctly ruled "Not
-> Applicable"… **🔑 Next Step:** Mesa's CPL contact is **Monica Romero**…
-
-### The mistake, twice, hours apart
-
-**Both guards I wrote fired on CORRECT behavior**, and the second was written *after* diagnosing the first.
-
-1. The anon-key boundary check asserted `response == "[]"` and printed **`STUDENT GRAIN LEAKED to anon`** for a
-   PostgREST statement timeout (`57014`). Nothing leaked — it conflated "not the empty array" with "rows were
-   served."
-2. Then "tightening" the absent-college regex. One query before shipping: of the **17** institutions absent from
-   the disposition aggregate, exactly **one** has any exhibits at all. So for an absent college "zero" is
-   approximately **true**, and the wider pattern would have failed Sierra for being right. Reverted the same day.
-
-Durable: `methodology-a-guard-that-fails-on-truth-gets-muted`. The rule that would have caught both: *enumerate
-the response space and name what failure looks like positively; before widening a pattern, query which real cases
-it would newly catch.* Positive controls added — an expired anon key would otherwise make every gate assertion
-pass vacuously.
-
-### Numbers must be computed, and now carry their provenance
-
-Rolling totals up from the same four objects `college_goal2.js` reads (rather than pasting a headline into prompt
-text) immediately surfaced that the docs' figure was unsourceable: **docs said 1,052,531 / 64,074; the published
-table sums to 1,051,870 / 63,991**, because 13 of 111 cells carry NULL measures. The 🎓 tab had the same property
-all along.
-
-Sam's first ruling was published-everywhere; **on reflection he revised it to show BOTH with a suppression chip**
-— *13 of 111 colleges withheld, each under 10 students*. That is the better answer and the same pattern as the
-ceiling caveat. ⚠️ With one safety condition: showing both implicitly publishes their difference (661 units).
-Across 13 cells that identifies nobody; at **one** suppressed cell the difference *is* that college's figure.
-**Show both only while ≥3 cells are suppressed**, and re-check after every refresh.
-
-### Confirmed, not assumed: the CPL contacts
-
-Sam recalled assigning contacts to all remaining nulls. Measured: `map_users.js` → `FALLBACK_CONTACTS` holds all
-**71** looked-up colleges — **56 with a contact, 15 blank-with-a-finding**, 3 curator-supplied. But it is a
-**display-layer fallback, not a write to MAP** (read-only system of record), so `map_college_contacts` still shows
-Gavilan's `primary_contact` empty and 27 of 130 profiles have no `primary_contact_email`. Gavilan is the
-documented case: Jessica supplied it because gavilan.edu 403s programmatic fetches.
-
-Of the 15: 5 list individual counselors only, 6 are phone/form-only, **2 publish only a mental-health inbox**
-(Contra Costa `wellness@`, LA Harbor Life Skills Center) — **found early, then deliberately DECLINED for CPL
-routing; declining them is precisely why those two are blank, and nothing routes there via us** — and 2 are
-specialized-only. Sam's call: use the settled counseling contacts as **temporary fills on the COBI side** so the
-MAP team can adopt them. Design: a dedicated **"Proposed for MAP"** column populating only where MAP is blank —
-never inside "Primary contact email", which means *what MAP holds*.
-
-### Next
-
-1. The proposed-fills build (above), with the **MAP-team queue designed in from the start**, not bolted on.
-2. The college action page — one page, pick college + role, briefing-first (never a blank chat box). ⭐ **Inbound
-   CPL requests outrank every stat**: colleges will start receiving them daily for the first time, and the 15
-   unroutable colleges become urgent. This also makes the nightly feed a **prerequisite**.
-3. `docs/map_custom_report_request_for_malone.md` is forwardable; blocked only on the view name.
 
 ---
 
@@ -1831,3 +1731,19 @@ been burned by. Filed as
 ## 2026-10-01 — S313 SkyReel: a possessive hid the college (v77)
 
 Sam ruled v76's City College of San Francisco answer wrong (sheet 14 card 1): she gave the statewide split. The rows were there. `detectAndFetchCollegeProfile` stripped punctuation only at a word's ends, so "Francisco's" searched `%francisco's%` and matched nothing; "city" then tied across a dozen City colleges, nothing resolved, and the credit context carried only the statewide block. It strips `'s` and `’s` now; `sierra_geo_ranking` 3b runs his question against twelve City colleges, red before and green after (#1808, v77). The same deploy keeps 7c's first sentence to the course, its title and its college; the dispatched smoke on v77 passed every mode. **Lesson:** when a named college gets a statewide answer, test detection on the exact sentence first; the data was never the problem.
+
+## 2026-10-02 — S314 SkyVerdict: v77 checked on his question, then three versions to keep the place without losing the lead (v78–v80)
+
+**The "wrong" was about v76.** Sam's sheet 16 card 1 said "Sierra said she didn't have the split for SF". `chat_interactions` held one CCSF ask, at 21:14Z on 1 October, two hours before v77 shipped; nobody had asked v77. Smoke mode 15e now asks his exact question (run 36947828031): 13,914 units, military 13,844, non-military 71, led by Default Credit, each matching the day's rows. **Lesson:** before fixing a verdict, find the answer it judged and the version that wrote it.
+
+**Three rounds on one paragraph.**
+- v77's LEAD rule kept the county out of the first sentence, and the place rule asked for the full name only "the first time you mention it", so 7s dropped "San Gabriel Valley" one run in three.
+- v78 (#1811) put the place in the first paragraph. 7c then led with Santa Ana's VHLTH 101, a nurse assistant course, because a course *in* Orange County was the easy way to name it. That shipped without a preview A/B; the A/B is the instrument for prompt changes, and this round is why.
+- #1812's first A/B led 7c right (Long Beach City College, VN 220) and closed with the absence rule's own quoted counterexample, word for word. The quote left the prompt (KB note: [`methodology-a-prompt-that-quotes-the-wrong-sentence-teaches-it`](kb-notes/methodology-a-prompt-that-quotes-the-wrong-sentence-teaches-it.md)); the second A/B passed; v79 deployed.
+- v79's smoke led 7c with Golden West's NURS G060N. The root: "Treat the place as home: lead with its colleges" in the rule, and "Lead with what the colleges in <place> teach and award" in the place block, both pull against LEAD WITH THE ANSWER whenever the place lacks the program. #1813 lets the place lead only when its colleges teach the program asked; a place college teaching only the held credential never leads. Third A/B clean; v80 deployed 03:05Z.
+
+**Lesson:** a half-holding behavior with two instructions in play is a conflict to find, not a sentence to strengthen. Each patch to the first-paragraph wording moved the failure; removing the competing instruction fixed it.
+
+**7c's timeout (run 36943057866) was the database, not the wording.** Three catalog reads hit the 8 s limit together; `program_typical_courses` ran 48 ms quiet and 3,800 ms while a smoke ran; `chatbox_college_courses` has no `top_code` index. Recorded as a measured candidate (`cpl_memory` `sierra-catalog-reads-timeout-under-load-2026-10-02`); the SQL guard refuses a session's index DDL, so it goes by migration.
+
+**The 7s guard read markdown emphasis as text.** "none of the three San Gabriel Valley colleges above currently has an *articulated* CPL exhibit" failed the absence check; the helper now strips `*` and reads the adjective form (`sierra_smoke_absence_claims`, red before).

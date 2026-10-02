@@ -481,6 +481,23 @@ block("10. the catalog's absence is said once", () => {
     /If a later paragraph must touch it, it says "the catalog data lists" again\./.test(SRC));
 });
 
+// ── 11. THE PLACE IS HOME ONLY FOR THE PROGRAM ASKED (2026-10-02, S314) ──────
+// Smoke run 36956075626 on cpl-chat v79 opened 7c with Golden West College, "about
+// 7 miles from the center of Orange County", and its nurse assistant courses NURS
+// G060N/G061N, before any LVN course. "Treat the place as home: lead with its
+// colleges" pulled against LEAD WITH THE ANSWER whenever the place does not teach
+// the program asked about. The place rule now leads with the place's colleges only
+// when they teach that program.
+block("11. the place leads only when it teaches the program asked", () => {
+  check("(11) ⭐ the place's colleges lead only when they teach the program the visitor wants to enter",
+    /Treat the place as home: its colleges that teach the program the visitor wants to enter lead\./.test(SRC));
+  check("(11) ⭐ …otherwise the nearest college that teaches it leads, wherever it is",
+    /the nearest college that does teach it leads instead, wherever it is \(LEAD WITH THE ANSWER\)/.test(SRC));
+  check("(11) ⭐ a place college teaching only the credential already held never leads",
+    /A college in the place that teaches only the credential the visitor already holds never leads\./.test(SRC));
+  check("(11) the old unconditional lead is gone", !/Treat the place as home: lead with its colleges,/.test(SRC));
+});
+
 const failed = results.filter((r) => !r[1]);
 results.forEach(([name, ok, why]) =>
   console.log((ok ? "  ok  " : "  FAIL ") + name + (ok || !why ? "" : "\n        " + why)));

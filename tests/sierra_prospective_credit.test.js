@@ -466,7 +466,15 @@ block("9. the direct answer first, the catalog never the world, no remark about 
     /The current program catalog data lists no college in \$\{askedGeo\.label\} with a matching program/.test(SRC)
     && /these are the related programs it does list there — name them/.test(SRC));
   check("(9) the place block and the offerings rule say the same", /say what the catalog shows \(never that no college in \$\{place\.label\} has it\)/.test(SRC)
-    && /when a section says the catalog lists none of them, say what the catalog shows \(never that no college in the place has it\)/.test(SRC));
+    && /When a section says the catalog lists none of them, the nearest college that does teach it leads instead[^.]*: say what the catalog shows \(never that no college in the place has it\)/.test(SRC));
+  // v79 (smoke run 36956075626) led 7c with Golden West's nurse assistant courses:
+  // the place block said "Lead with what the colleges in <place> teach" and put the
+  // related programs before the nearest colleges. Both now lead with the program
+  // asked about, and a place college teaching only the held credential never leads.
+  check("(9) ⭐ the place block leads with the place only when it teaches the program asked, else the nearest college's course",
+    /When colleges in \$\{place\.label\} teach the program asked about, they lead\. When none of them does, the catalog sections say the catalog lists none: the nearest college that teaches it leads, its course first/.test(SRC)
+    && /A college in \$\{place\.label\} that teaches only the credential the visitor already holds never leads\./.test(SRC)
+    && !/Lead with what the colleges in \$\{place\.label\} teach and award/.test(SRC));
   check("(9) no builder says 'Say so plainly' about a place any more", !/NO college in \$\{askedGeo\.label\}/.test(SRC) && !/Say so plainly, then (offer|name) the nearest/.test(SRC));
   check("(9) ⭐ smoke fails EVERY mode whose answer opens with a remark about the question",
     /answer should NOT match \/opens with a remark about the question\/ \(sierra_guidance cafb92af/.test(SMOKE) && SMOKE.indexOf("head -c 160 | grep -E -i -q") < SMOKE.indexOf("sleep 1   # stay well under"));

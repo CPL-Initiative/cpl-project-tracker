@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 506,
+   "count": 507,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2789,6 +2789,24 @@
      "title": "A program's CIP labels the program, not the courses it lists",
      "type": "methodology",
      "updated": "2026-09-25"
+    },
+    {
+     "created": "2026-10-02",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "tests/sierra_place_anchor.test.js",
+      "chatbox/smoke_test.sh"
+     ],
+     "path": "docs/kb-notes/methodology-a-prompt-that-quotes-the-wrong-sentence-teaches-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "prompting",
+      "sierra"
+     ],
+     "title": "A prompt that quotes the wrong sentence teaches it",
+     "type": "methodology",
+     "updated": "2026-10-02"
     },
     {
      "created": "2026-08-13",
@@ -14519,8 +14537,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 285,
+   "count": 286,
    "docs": [
+    {
+     "created": "2026-10-02",
+     "governs": [],
+     "n": 315,
+     "path": "docs/session_315_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "sierra",
+      "partner-crosswalks",
+      "decision-sheet"
+     ],
+     "title": "sheet 17's two asks, Sierra v80's first read, and the catalog index",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-02",
      "governs": [],
@@ -19370,5 +19405,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1009
+ "total": 1011
 }
