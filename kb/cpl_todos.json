@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-02",
   "_session": "S315 SkyLedger",
-  "_status": "Landed on 2 October (S315): your saved funding text no longer says 'model' in either scenario. The Introduction now reads 'The Chancellor's Office measures outcomes' and 'CPL funding relies on data', and the Timeline reads 'CPL Funding Procedure Finalized' and 'Guidance Memo Release' (sheet 17, 'Apply them'). Sierra's Orange County and San Gabriel Valley answers lead with the nearest LVN course, and her catalog lookup runs in 15 milliseconds instead of 1.5 seconds. You answered sheet 19: a session writes the Credential Reference entry, and the statewide Access target becomes the colleges' targets added up. Next: the Scenario 2 narration script for the ElevenLabs voice.",
+  "_status": "Landed on 2 October (S316): the statewide target on the funding tab, the explainer and the introduction film is now the institutions' targets added up, 4,366.7 FTES for Access and for Completion, and each of them calls $2,824.82 the FTES reimbursement rate. The Credential Reference files AWS Certified SysOps Administrator under AWS CloudOps Engineer - Associate, and the Microsoft title no longer carries its exam code. Next: the Scenario 2 narration script for the ElevenLabs voice.",
   "items": [
     {
       "id": "s310-sam-card11-measures",
@@ -41,10 +41,10 @@
       "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
     },
     {
-      "id": "s316-fable-sheet19",
+      "id": "s317-fable-memory-row-term",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Carry out Sam's two answers on sheet 19. The credential entry: confirm the reviewed workflow wrote the AWS title, its merge confirmation and the Microsoft title, and that the rename ran (run both if not). The statewide Access target: measure it again over the live configuration, then make the card, the explainer and the Scenario 2 film print the institutions' sum (about 4,366.7 FTES) and render the film again."
+      "text": "Update the summary of the memory row sam-no-price-on-funding-surfaces-2026-10-02 to name the FTES reimbursement rate, Sam's term of 2 October. Three updates through the database tool timed out on 2 October; the companion row sam-ftes-reimbursement-rate-term-2026-10-02 already carries the term."
     }
   ],
   "_deferred": [

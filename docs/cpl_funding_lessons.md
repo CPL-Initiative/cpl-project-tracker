@@ -1217,3 +1217,16 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 **Open.** Sheet 19 card 2 (the sum or the division; "sum" re-renders the film); card 11's measure texts and card 7's two lines, still his on the tab; the Scenario 2 narration script for the ElevenLabs voice.
 
 **Ruled later the same day (sheet 19 card 2, 11:52Z): "sum".** The card, the explainer and the Scenario 2 film print the institutions' summed Access target (4,366.7 FTES on the fixture), the figure at which every institution qualifies for its full award. Built in S316: re-measure over the live config first; the card reads `prioTarget(null, p)` today and the detail sums `earnAgg()`'s `crTarget + ncTarget`.
+
+## 2026-10-02 — S316 (SkyTally): the statewide target is the sum, and the FTES reimbursement rate
+
+**Sam's rulings.** Sheet 19 card 2 (11:52Z): *"sum"*. In session: *"I'll go with you recommendation on script revisions. Stay away from commercial terms like 'price'"*, then *"instead of price per FTES, it should be 'FTES reimbursement rate'"* (`cpl_memory` `sam-no-price-on-funding-surfaces-2026-10-02`, `sam-ftes-reimbursement-rate-term-2026-10-02`).
+
+**What we did and learned.**
+- **The live config was rebuilt, not transcribed.** The `e21658f9` fixture plus the two committed edit plans (`2026-10-02`, `2026-10-02-2`) hashed to `764fd264`, the live `md5(config::text)`, once serialized the way `jsonb` prints itself ([methodology note](kb-notes/methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5.md)). The S315 figures held: 4,366.66 summed, 4,467.60 divided.
+- **`sysTarget(p, slot)` is the published target** (#1821): each institution's credit target plus its noncredit twin, the terms `earnAgg()` adds for the Statewide detail. The card, the Statewide CSV row and `_publicProgress()` read it; `prioTarget(null, p)` stays where the division is meant. Completion takes it too: same share, same factor, same gap.
+- **The sum breaks an identity a test pinned.** Target times rate no longer equals the Total Possible ($12,335,010 against $12,620,154), so p5 now checks "at most", and the explainer's target line says why in one sentence from the payload's `atMax`.
+- **The slide carries the difference as arithmetic**: funding ÷ rate − 100.9 = 4,366.7, so every printed figure checks. A fourth row and the longer term overflowed 1920×1080; a screenshot of the render page with the render's own fonts caught it before a 25-minute render. Four rows now set a step smaller; Scenario 1 keeps three.
+- **Three traps.** A rendered-text scan must drop `<script>` first (p3c matched `pr.price`). The explainer's `word()` is assigned later in the same painter, so the target line uses its own list. Killing `render.sh` leaves Chrome on port 9333; kill it before the next render.
+
+**Open.** The Scenario 2 script for the ElevenLabs voice (sheet 6 card 1); card 11's measure texts, still Sam's on the tab; Scenario 1's unpublished v4 still says "price per CPL FTES" on its slide (re-render on request).
