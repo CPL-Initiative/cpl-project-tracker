@@ -58,3 +58,11 @@ select m.id, 'SkyKeel-s318', 'create', 'S318 ingest', to_jsonb(m)
 from public.cpl_memory m
 where m.author = 'SkyKeel-s318'
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+
+-- S318 checkpoint (2026-10-02 ~19:50Z): three more rows by 'SkyKeel-s318' and one supersede, all logged
+-- (cpl_memory_log note 'S318 checkpoint'): sam-sheet21-rulings-2026-10-02 (decision, verified: his replies),
+-- catalog-loaders-closed-to-service-role-2026-10-02 (milestone, verified: live read), and
+-- content-load-id-unchanged-load-writes-nothing-2026-10-02 (pitfall). catalog-loader-functions-open-to-
+-- authenticated-2026-10-02 superseded by the milestone (Sam ran the SQL; read back 19:42Z).
+-- Rollback: restore that row's status from its 'supersede' log row's `after`, and supersede the three
+-- new rows under actor 'SkyKeel-s318-rollback'.
