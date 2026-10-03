@@ -670,33 +670,10 @@ def items():
     # Sheet 21 (S318) was answered at 19:04Z on 2026-10-02 (through 3, each his own call): card 1
     # "pasted" (he ran the loader and grants SQL at ~19:40Z, read back 19:42Z), card 2 "later" (carried
     # below), card 3 "keep" (the funding lane records it). p_program_ctl_pending stays for a later card.
-    # Sam, 2026-10-02 (S317): "write a script for the scenario 2 video for an ElevenLabs narrator.
-    # Keep it very simple and focused and see if you can select a female voice model to narrate and
-    # give her the name Sierra on the video as a sample." Ten scenes read; the eleventh met the block.
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Sierra's last scene: a paid ElevenLabs plan, so she can read Minimum conditions",
-        'ref': 'implementation-funding NEEDS SAM · prototype/funding_video/README.md · ElevenLabs flow DORtbrSu16j7ETeqaSkB',
-        'facts': (
-            "The Scenario 2 script runs 329 words over the eleven scenes of the introduction, and Sierra is "
-            "ElevenLabs' premade voice Bella. ElevenLabs read ten scenes. On Minimum conditions it answered: "
-            "&ldquo;Unusual activity has been detected on your account, so Free Tier access has been disabled. "
-            "This can be triggered by using a proxy or VPN, or by creating multiple free accounts. Please upgrade "
-            "to a paid subscription to continue.&rdquo; The session reached ElevenLabs from a cloud container "
-            "behind a proxy, and it sent ten reads at once."
-            "<br><br>The sample plays Minimum conditions without a voice, at the film's own pace. The free tier "
-            "also asks for attribution and does not cover commercial use. The Starter plan, about $5 a month, "
-            "carries a commercial license."),
-        'why': "A film for colleges with one silent scene, voiced under a license that does not cover a public film.",
-        'rec': "<strong>Upgrade:</strong> move the account to the Starter plan, and the next session reads the "
-               "scene in the same flow and renders the film again, about 25 minutes. <em>It might be wrong if</em> "
-               "the Chancellor's Office should hold the voice; name that account in a note, and the next session "
-               "reads all eleven scenes there, so one account owns the whole read.",
-        'chips': chips(('Upgraded', 'upgraded'), ('Another account', 'other-account'), CH_LATER),
-        'evidence': [measured(p_video_n2_pending, 'prototype/funding_video/narration_s2.json, the scene\'s '
-                              '`pending` reason'),
-                     live('2026-10-02', "the ElevenLabs connector's reply to generation iGGZHtHe1XJdFXj2xmqO")],
-    })
+    # Sheet 22's one card (S318, the ElevenLabs plan) was answered in chat at ~21:05Z on 2026-10-02:
+    # "OK, we're on a paid plan with Elevenlabs" (Sam), with "Narration sounds good to start with".
+    # S317 read Minimum conditions the same hour, rendered _Draft_3 and linked it from the explainer's
+    # Scenario 2 view. p_video_n2_pending stays above for a later card.
     return I
 
 

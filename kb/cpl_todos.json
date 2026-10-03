@@ -2,14 +2,8 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-02",
   "_session": "S318 SkyKeel",
-  "_status": "Sierra can now read each program's own course list: 313,710 rows from the state's Program Course File, joined to the programs she searches (#1826-#1829). Sam ran the database change that links them on 2 October. The next session confirms the link, tests Sierra side by side with production, and asks Sam to deploy. One card waits on Sam: the ElevenLabs plan for the film's last scene.",
+  "_status": "Sierra can now read each program's own course list: 313,710 rows from the state's Program Course File, joined to the programs she searches (#1826-#1829). Sam ran the database change that links them on 2 October. The next session confirms the link, tests Sierra side by side with production, and asks Sam to deploy. Sierra now narrates the whole Scenario 2 film, and the funding explainer links it. Nothing waits on Sam.",
   "items": [
-    {
-      "id": "s318-sam-elevenlabs-plan",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Sheet 22, one card: move the ElevenLabs account to a paid plan when you are ready (you answered 'later'), so Sierra can read the last scene of the Scenario 2 film. You kept her voice, name and music as drawn."
-    },
     {
       "id": "s310-sam-card11-measures",
       "for": "Sam",

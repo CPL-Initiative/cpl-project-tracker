@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 511,
+   "count": 512,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4564,6 +4564,24 @@
      "title": "An inline placeholder style outranks the CSS your module injects",
      "type": "methodology",
      "updated": "2026-08-21"
+    },
+    {
+     "created": "2026-10-02",
+     "governs": [
+      "prototype/funding_video/narrate.py",
+      "prototype/funding_video/narration_s2.json",
+      "prototype/funding_video/voice_s2/"
+     ],
+     "path": "docs/kb-notes/methodology-an-input-read-outside-the-repo-carries-its-text-and-its-gaps.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "funding-video",
+      "elevenlabs"
+     ],
+     "title": "An input read outside the repo carries its text, and its gaps",
+     "type": "methodology",
+     "updated": "2026-10-02"
     },
     {
      "created": "2026-09-18",
@@ -19549,5 +19567,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1019
+ "total": 1020
 }

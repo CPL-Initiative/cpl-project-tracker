@@ -1230,3 +1230,13 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 - **Three traps.** A rendered-text scan must drop `<script>` first (p3c matched `pr.price`). The explainer's `word()` is assigned later in the same painter, so the target line uses its own list. Killing `render.sh` leaves Chrome on port 9333; kill it before the next render.
 
 **Open.** The Scenario 2 script for the ElevenLabs voice (sheet 6 card 1); card 11's measure texts, still Sam's on the tab; Scenario 1's unpublished v4 still says "price per CPL FTES" on its slide (re-render on request).
+
+## 2026-10-02 — S317 (SkyCompass): Sierra narrates Scenario 2
+
+Sam asked for "a script for the scenario 2 video for an ElevenLabs narrator... very simple and focused... a female voice model... the name Sierra on the video", with the music at background level. The script runs 329 words, one or two sentences a scene, over the introduction's own picture (draft 1 had read 430 over Sample College's frames). Sierra is ElevenLabs' premade Bella, read one scene at a time; the clips live in `prototype/funding_video/voice_s2/` (#1823, then this run's PR).
+
+- **An outside service can stop mid-batch.** ElevenLabs disabled the account's free tier after ten reads ("unusual activity... a proxy or VPN"): ten parallel calls from a cloud container. The narration carried the eleventh scene as `pending` with that reason, so the sample shipped with one silent scene and a test that requires the reason. Sam moved the account to a paid plan the same day, which also carries a commercial license; the free tier excludes commercial use.
+- **A clip read outside the repo is tied to its text by hash.** `read.text_sha1` makes `narrate.py` refuse a clip whose scene text changed after its read.
+- **The background bed, measured on the mix:** her voice about 16.5 dB over the score; -17.4 LUFS integrated.
+- **Two fixed checks rested on the old draft.** Check 5b expected the old `?scenario=Scenario%202` address "until it is re-voiced", and a2 matched a one-line label. Each was updated with the change it described.
+- **Sam's rulings:** "Narration sounds good to start with"; the explainer's Scenario 2 view links the cut (`_Draft_3`, 2:37). `cpl_memory` `sam-sierra-narration-approved-2026-10-02`.

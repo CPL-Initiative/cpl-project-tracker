@@ -448,8 +448,8 @@ section[hidden]{display:none}
     <p class="toc-watch">
       <a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a>
       <a class="toc-alt" id="video-mp4" href="../prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4" download>or download the video (MP4)</a>
-      <!-- The narrated cut (Sam approved draft 4, sheet 4 card 4, 2026-09-29). It is Scenario 1
-           only, so the Scenario 2 view hides it until that scenario's narrated cut exists. -->
+      <!-- The narrated cut (Sam approved draft 4, sheet 4 card 4, 2026-09-29). This is Scenario 1's;
+           the Scenario 2 view points it at Sierra's narration of that scenario (2026-10-02). -->
       <a class="toc-alt" id="video-narrated" href="../prototype/funding_video/funding_in_motion_n1.html">or watch the narrated version (3 minutes)</a>
     </p>
     <p class="toc-note" id="pdf-note">Download PDF opens your browser&rsquo;s print dialog; choose
@@ -875,7 +875,10 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     var VIDEOS = {
       "Scenario 2": { page: "../prototype/funding_video/funding_in_motion_s2.html",
         mp4: "../prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v7.mp4",
-        label: "Watch the 100-second introduction" }
+        label: "Watch the 100-second introduction",
+        // Sierra's narration (Sam, 2026-10-02: "Narration sounds good to start with")
+        narrated: { page: "../prototype/funding_video/funding_in_motion_n2.html",
+          label: "or watch the narrated version (2.5 minutes)" } }
     };
     var v = VIDEOS[String(D.scenario || "").trim()];
     var link = document.getElementById("video-link"), mp4 = document.getElementById("video-mp4");
@@ -883,7 +886,8 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     link.href = v.page; link.textContent = v.label;
     if (mp4) mp4.href = v.mp4;
     var narrated = document.getElementById("video-narrated");
-    if (narrated) narrated.hidden = true;   // no narrated cut of this scenario yet
+    if (narrated && v.narrated) { narrated.href = v.narrated.page; narrated.textContent = v.narrated.label; }
+    else if (narrated) narrated.hidden = true;   // no narrated cut of this scenario yet
   })();
   // A draft scenario opened by ?scenario= (Sam, 2026-09-25) says so in words
   // at the top, so a preview link passed along is never mistaken for the
