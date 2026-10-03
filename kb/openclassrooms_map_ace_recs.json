@@ -1,0 +1,471 @@
+{
+ "_source": "Supabase map_college_cr_unit + map_ace_exhibit_titles, read 2026-09-29 (read-only)",
+ "recs": [
+  {
+   "exhibit_id": "AR-1512-0018",
+   "exhibit_title": "Psychological Operations Officer",
+   "credit_rec": "1 hour in Marketing And Advertising",
+   "colleges": [
+    {
+     "college": "Monterey Peninsula College",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "AR-1512-0021",
+   "exhibit_title": "Psychological Operations Specialist",
+   "credit_rec": "1 hour in Marketing or Advertising",
+   "colleges": [
+    {
+     "college": "Santa Rosa Junior College",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "MOS-79R-001",
+   "exhibit_title": "Recruiter",
+   "credit_rec": "2 hours in Principles Of Advertising",
+   "colleges": [
+    {
+     "college": "Chaffey College",
+     "region": "Inland Empire/Desert",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "City College of San Francisco",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Columbia College",
+     "region": "Central Valley/Mother Lode",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Golden West College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "region": "Far North",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles City College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "region": "Inland Empire/Desert",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "region": "Far North",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "region": "Inland Empire/Desert",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "MOS-79R-001",
+   "exhibit_title": "Recruiter",
+   "credit_rec": "3 hours in Advertising Media",
+   "colleges": [
+    {
+     "college": "Chaffey College",
+     "region": "Inland Empire/Desert",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Columbia College",
+     "region": "Central Valley/Mother Lode",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "region": "Far North",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles City College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "region": "Inland Empire/Desert",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "region": "Far North",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "region": "Inland Empire/Desert",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "NER-MC-002",
+   "exhibit_title": "Mass Communication Specialist",
+   "credit_rec": "3 hours in Digital Media Analytics",
+   "colleges": [
+    {
+     "college": "San Diego City College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "CGR-SK-004",
+   "exhibit_title": "Storekeeper",
+   "credit_rec": "3 hours in Marketing Research",
+   "colleges": [
+    {
+     "college": "Diablo Valley College",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Medanos College",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "region": "Inland Empire/Desert",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Solano Community College",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "MOS-79R-001",
+   "exhibit_title": "Recruiter",
+   "credit_rec": "3 hours in Principles Of Advertising",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Columbia College",
+     "region": "Central Valley/Mother Lode",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Cypress College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "region": "Far North",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "region": "Inland Empire/Desert",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "CGR-PA-006",
+   "exhibit_title": "Public Affairs Specialist",
+   "credit_rec": "3 hours in Social Media Management",
+   "colleges": [
+    {
+     "college": "Los Angeles Valley College",
+     "region": "Los Angeles",
+     "status": "Not Applicable"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "MOS-79T-002",
+   "exhibit_title": "Recruiting and Retention NCO (Army National Guard)",
+   "credit_rec": "3 hours in Social Media Marketing",
+   "colleges": [
+    {
+     "college": "Chaffey College",
+     "region": "Inland Empire/Desert",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Cypress College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "region": "Inland Empire/Desert",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "region": "Inland Empire/Desert",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "region": "Far North",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "region": "Inland Empire/Desert",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "NER-MC-002",
+   "exhibit_title": "Mass Communication Specialist",
+   "credit_rec": "3 hours in Social Media Marketing",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "region": "Orange County",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "region": "Los Angeles",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "region": "Inland Empire/Desert",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego City College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "region": "San Diego/Imperial",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "CGR-PA-005",
+   "exhibit_title": "Public Affairs Specialist",
+   "credit_rec": "3 hours in Social Media Strategy",
+   "colleges": [
+    {
+     "college": "Los Angeles Valley College",
+     "region": "Los Angeles",
+     "status": "Not Applicable"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  },
+  {
+   "exhibit_id": "DD-1719-0018",
+   "exhibit_title": "Digital Multimedia",
+   "credit_rec": "3 hours in Web Design And Content",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "region": "Bay Area",
+     "status": "Needs Action"
+    }
+   ],
+   "note": "ACE (military) credit recommendation in MAP; no college course is articulated to it yet"
+  }
+ ]
+}
