@@ -132,10 +132,13 @@ program-map pages at 15; a public curriculum-system view at 50.
   colleges (City, Harbor, Pierce, Valley, West); Canyons, Harbor, Valley and West
   also publish Program Mapper maps.
 
-**NEEDS SAM (open-asks sheet 24):** (1) paste the two memory receipts
-(`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`); (2) enter the six
-catalog addresses in `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql`,
-the registry's correction path (`corrected_by`), which the census then keeps.
+**NEEDS SAM (open-asks sheet 25; sheet 24 carried no replies at 21:10Z):** (1) paste the two
+memory receipts (`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`); (2) enter the
+six catalog addresses in `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql`,
+the registry's correction path (`corrected_by`), which the census then keeps; (3) Riverside
+City's program (proposed: the Culinary Arts Certificate of Achievement, 22804, where ServSafe
+lands); (4) who checks the 20-program sample (proposed: Jessica); (5) who asks the Tech Center
+for its ROE field definitions (proposed: Sam, after the pilot's first records).
 
 **NEXT:** read the registry back after Sam's corrections; the weekly apply
 runs Sundays 10:29 UTC and keeps a corrected row as entered. Check the seven 2025-26 years. If many
