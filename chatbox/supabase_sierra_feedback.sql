@@ -184,3 +184,20 @@ alter table public.chat_interactions drop constraint if exists chat_interactions
 alter table public.chat_interactions add constraint chat_interactions_viewer_ck
   check (viewer is null or viewer in ('reviewer', 'team', 'public'));
 alter table public.chat_interactions add column if not exists surface text;
+
+-- ── chat_interactions addition — timings (2026-10-03, S319) ─────────────────
+
+-- WHERE A TURN'S TIME WENT. Sam, 2026-10-03: "add the timing log after the
+-- deploy and let's see how best to use Jev as we continue to expand Sierra's
+-- knowledgebase and capability." Written by the edge function under the service
+-- key, never by a caller: the phases from request to last word (embed,
+-- retrieval, prep, model wait, writing), every PostgREST read with its own
+-- duration, and the prompt's size and token counts. No question text, no
+-- visitor detail: durations, read names and counts only. The shape is
+-- timingsRow() in chatbox/supabase/functions/cpl-chat/index.ts (v: 1).
+--
+-- ⚠ APPLY THIS BEFORE DEPLOYING THE FUNCTION THAT WRITES IT. PostgREST rejects
+-- an insert naming a column the table lacks, and the turn's row is lost (the
+-- function now logs that rejection; it used to drop it silently). Nullable and
+-- additive: rows from before carry none, and an older function never writes it.
+alter table public.chat_interactions add column if not exists timings jsonb;
