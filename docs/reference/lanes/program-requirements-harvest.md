@@ -116,15 +116,16 @@ them: Riverside City's program, the person who checks the sample, and who contac
   workflow calls an Edge Function that holds the Anthropic key. The census uses
   no model yet.
 
-**The registry after the first apply (2026-10-03, run 37142060932, four
-slices, 118 history rows).** 112 of 118 colleges carry a catalog address, 77 a
-year, 71 of them 2026-27; 111 sites let the browser in. The last dry read (run
-37141321117) gave 112, 78 and 71 (one page's title sets its year late); the
-first (run 37137334059) gave 109, 67 and 61, and no college reads worse now.
-Platforms: CourseLeaf 29, curriQunet 27, eLumen 19, PDF 16, custom HTML 15,
-SmartCatalog, Coursedog and Acalog 2 each. Formats: 81 HTML per program, 16
-single PDFs, 5 PDFs by section. Program Pathways Mapper links at 11 colleges,
-program-map pages at 15; a public curriculum-system view at 50.
+**The registry after the S322 apply (2026-10-03, run 37157737048, four
+slices).** 112 of 118 colleges carry a catalog address and 95 a year, 91 of
+them 2026-27 (the first apply, run 37142060932, gave 112, 77 and 71). Three
+branch reads confirmed the reader before it ran (runs 37154900912,
+37156161286, 37157042439), each compared row by row with the last, and no
+college lost an address or a year, or moved to an older year. Platforms:
+CourseLeaf 29, curriQunet 27, eLumen 19, PDF 16, custom HTML 15, SmartCatalog,
+Coursedog and Acalog 2 each. Formats: 81 HTML per program, 16 single PDFs, 5
+PDFs by section. Program Pathways Mapper links at 11 colleges, program-map
+pages at 15; a public curriculum-system view at 50.
 - Six colleges the census cannot reach (no address): the four Los Rios colleges
   (American River, Cosumnes River, Folsom Lake, Sacramento City: the homepage
   answers 404) and De Anza and City College of San Francisco (Cloudflare
@@ -132,15 +133,24 @@ program-map pages at 15; a public curriculum-system view at 50.
   each address; they wait on a person's entry (below).
 - Cerro Coso's catalog PDF is disallowed by robots.txt; the address is recorded
   and the census never loads it.
-- Years to check (2025-26): Cuyamaca, Evergreen Valley, Los Angeles City,
-  Madera, Palo Verde, San Diego City (its own homepage links `city25-26`) and
-  Santiago Canyon. 34 rows with an address carry no year.
+- 2025-26 years: Los Angeles City, Palo Verde, Santiago Canyon and Evergreen
+  Valley name 2025-26 on their own catalog pages, and a web search found no
+  2026-27 catalog for them (October 2026); the weekly read moves them when they
+  publish. About 23 rows with an address carry no year, most on custom college
+  pages, an Acalog list or a PDF whose address names none.
+- A site that fails one read keeps its address: Columbia timed out in one
+  branch read and Santa Monica showed no catalog link in another.
 - San Diego College of Continuing Education stays on the district's catalogs
   page: no link on it names the college.
-- The pilot's single-PDF candidates: Barstow, Clovis, Lassen, Mendocino, Shasta,
-  Woodland, Yuba, College of the Canyons, Compton and five Los Angeles district
-  colleges (City, Harbor, Pierce, Valley, West); Canyons, Harbor, Valley and West
-  also publish Program Mapper maps.
+
+**The pilot (Phase 1).** Five colleges, one fixed program each: Cerritos
+(Ironworker pathway, CourseLeaf), Mt. San Antonio (LVN-to-RN A.S., CourseLeaf),
+Miramar (a program with a PPM map, curriQunet), Riverside City (Sam's pick,
+curriQunet) and West Los Angeles (a Real Estate certificate with an electives
+block, from its single 2026-27 PDF). The census picked West Los Angeles (S322):
+MAP shows 7,748 units of CPL transcribed there, the most of the 21 colleges
+whose catalog is a PDF (Pierce is next at 1,042), and 206 students hold Real
+Estate Appraiser Trainee credit.
 
 **NEEDS SAM (open-asks sheet 25; sheet 24 carried no replies at 21:10Z):** (1) paste the two
 memory receipts (`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`); (2) enter the
@@ -150,10 +160,11 @@ City's program (proposed: the Culinary Arts Certificate of Achievement, 22804, w
 lands); (4) who checks the 20-program sample (proposed: Jessica); (5) who asks the Tech Center
 for its ROE field definitions (proposed: Sam, after the pilot's first records).
 
-**NEXT:** read the registry back after Sam's corrections; the weekly apply
-runs Sundays 10:29 UTC and keeps a corrected row as entered. Check the seven 2025-26 years. If many
-rows stay without a year or `unknown`, a model pass through an Edge Function
-(call 6) picks among the census's own candidate links. Then Phase 1, the pilot:
-five colleges, four program shapes each, scored on course coverage, no invented
-courses, unit arithmetic, and agreement with a person; the fifth college comes
-from the PDF list above.
+**NEXT:** read Sam's replies on sheet 25 and run what he answers (enter the six
+addresses through `corrected_by`; the weekly apply keeps a corrected row as
+entered). Then build the pilot reader on a runner, with model calls through a
+Supabase Edge Function (call 6, the `cpl-news.yml` pattern): each program's
+required, list-choice and elective courses with units, scored on course
+coverage against the Program Course File, no invented courses, unit arithmetic
+and agreement with the named checker. If the yearless rows matter to the
+pilot, a model pass picks among the census's own candidate links.

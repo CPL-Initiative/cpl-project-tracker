@@ -5810,3 +5810,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 <!-- moved from docs/INDEX.md Update history, 2026-10-03 (S321) -->
 - 2026-10-02 (S314 SkyVerdict): KB note `methodology-a-prompt-that-quotes-the-wrong-sentence-teaches-it`; handoff 315; Sierra v78-v80 and the Dec 30 deadline in the lessons docs.
+
+<!-- moved from docs/INDEX.md Update history, 2026-10-03 (S322) -->
+- 2026-10-02 (S315 SkyLedger): KB note `methodology-a-verdict-that-reports-an-action-is-checked-in-the-store`; handoff 316; cards 23-24 written; the `top_code` index; the 2.3% gap traced to the maximum award; sheets 18-19 (19 answered: write, sum); the CER decision workflow.
