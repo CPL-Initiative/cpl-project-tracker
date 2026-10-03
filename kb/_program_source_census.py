@@ -344,14 +344,17 @@ def vendor_catalog_link(links: list[dict], current_start: int,
         if not ((vendor and ("catalog" in path or catalog_host)) or catalog_host):
             continue
         text = " ".join((a.get("text") or "").split())
+        # An archive is never the current catalog: with its siblings' links
+        # refused, San Diego Continuing Education took City's
+        # Catalog/archive/13 (run 37140411314).
+        if re.search(r"archive|previous|\bpast\b", text.lower() + " " + path):
+            continue
         if sibling_link(text, raw, tokens, foreign):
             continue
         s = 3 + (2 if vendor else 0)
         y = year_of_link(text.lower(), full)
         if y is not None:
             s += 2 if y >= current_start else (1 if y == current_start - 1 else -3)
-        if re.search(r"archive|previous|past", text.lower() + " " + path):
-            s -= 2
         # One word of this college's name outweighs the widest year swing (5).
         s += 6 * names_college(text, raw, tokens)
         cand = {"text": text[:80], "href": raw.split("#")[0], "score": s}
@@ -624,14 +627,17 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
     if (not is_pdf and platform == "custom_html" and year is None
             and depth == 0 and reader.loads < MAX_PAGES):
         tokens = college_tokens(college)
-        # An addendum is never the catalog, and a sibling's catalog never
-        # this college's: Merced's index handed over a 2025-26 addendum.
-        yearly = [c for c in pick_catalog_candidates(links, current_start, limit=12)
-                  if year_of_link(c["text"], c["href"]) is not None
-                  and not re.search(r"addend|supplement|errata",
-                                    (c["text"] + " " + c["href"]).lower())
+        listed = [c for c in pick_catalog_candidates(links, current_start, limit=12)
+                  if year_of_link(c["text"], c["href"]) is not None]
+        # Every year-named link says the page is an index; the choice is
+        # never an addendum (Merced's index handed over a 2025-26 addendum)
+        # or a sibling's catalog. Yuba's page lists its 2026-27 catalog and
+        # its addendum, so the count comes before the filter (run 37140411314).
+        yearly = [c for c in listed
+                  if not re.search(r"addend|supplement|errata",
+                                   (c["text"] + " " + c["href"]).lower())
                   and not sibling_link(c["text"], c["href"], tokens, foreign)]
-        if len(yearly) >= 2:
+        if len(listed) >= 2 and yearly:
             newest = max(yearly, key=lambda c: (names_college(c["text"], c["href"], tokens),
                                                 year_of_link(c["text"], c["href"])))
             newest["found_by"] = "the catalog index"

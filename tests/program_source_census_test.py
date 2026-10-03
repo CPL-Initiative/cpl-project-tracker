@@ -400,6 +400,47 @@ row = C.census_one(fr, "San Diego College of Continuing Education", "https://sdc
                    CUR, SD)
 check(row["catalog_url"] == "https://www.sdccd.edu/catalogs/",
       "a district index hands no sibling's PDF to this college, got %r" % (row["catalog_url"],))
+# The third read (run 37140411314): an archive is never the hop, and an
+# index's addendum still counts toward calling the page an index (Yuba).
+check(C.vendor_catalog_link(
+    [{"text": "Catalog Archives", "href": "https://sdccd.curriqunet.com/Catalog/archive/13"}],
+    CUR) is None, "a vendor catalog archive is never the hop")
+fr = FakeReader({
+    "https://sdcce.edu/": {
+        "status": 200, "access": "ok", "title": "Continuing Education",
+        "links": [{"text": "College Catalogs",
+                   "href": "https://www.sdccd.edu/students/college-catalogs/index.aspx"}]},
+    "https://www.sdccd.edu/students/college-catalogs/index.aspx": {
+        "status": 200, "access": "ok", "title": "College Catalogs",
+        "html": "<p>Catalogs are published in CurriQunet.</p>",
+        "links": sdccd[:3] + [{"text": "Catalog Archives",
+                               "href": "https://sdccd.curriqunet.com/Catalog/archive/13"}]},
+    "https://sdccd.curriqunet.com/Catalog/archive/13": {
+        "status": 200, "access": "ok", "title": "View - CurriQunet META"},
+})
+row = C.census_one(fr, "San Diego College of Continuing Education", "https://sdcce.edu/",
+                   CUR, SD)
+check(row["catalog_url"] == "https://www.sdccd.edu/students/college-catalogs/index.aspx",
+      "with siblings refused, a catalog archive is not taken either, got %r" % (
+          row["catalog_url"],))
+fr = FakeReader({
+    "https://yc.yccd.edu/": {
+        "status": 200, "access": "ok", "title": "Yuba College",
+        "links": [{"text": "Catalog", "href": "https://yc.yccd.edu/academics/catalog/"}]},
+    "https://yc.yccd.edu/academics/catalog/": {
+        "status": 200, "access": "ok", "title": "Catalog | Yuba College",
+        "links": [{"text": "2026-2027 Catalog",
+                   "href": "https://yc.yccd.edu/uploads/Yuba-College-Catalog-26.pdf"},
+                  {"text": "2026-2027 Catalog Addendum",
+                   "href": "https://yc.yccd.edu/uploads/Yuba-Catalog-Addendum-2026-27.pdf"}]},
+    "https://yc.yccd.edu/uploads/Yuba-College-Catalog-26.pdf": {
+        "status": 200, "access": "ok", "content_type": "application/pdf"},
+})
+row = C.census_one(fr, "Yuba College", "https://yc.yccd.edu/", CUR, SD + ["Yuba College"])
+check(row["catalog_url"] == "https://yc.yccd.edu/uploads/Yuba-College-Catalog-26.pdf",
+      "a catalog and its addendum make an index; the catalog is chosen, got %r" % (
+          row["catalog_url"],))
+
 # Every college's name reaches the reader, not just the slice's: a sibling
 # read in another slice is still a sibling.
 seen = {}
