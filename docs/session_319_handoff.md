@@ -4,6 +4,8 @@ date: 2026-10-02
 session: 318 (SkyKeel)
 tags: [handoff, sierra-retrieval-corpus, program-course, coci, implementation-funding]
 status: current
+superseded: true
+superseded_by: session_320_handoff.md
 ---
 
 # You are Session 319

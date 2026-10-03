@@ -157,8 +157,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-22.html')
-SHEET_ID = '2026-10-02-open-asks-22'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-03-open-asks-23.html')
+SHEET_ID = '2026-10-03-open-asks-23'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -674,6 +674,9 @@ def items():
     # "OK, we're on a paid plan with Elevenlabs" (Sam), with "Narration sounds good to start with".
     # S317 read Minimum conditions the same hour, rendered _Draft_3 and linked it from the explainer's
     # Scenario 2 view. p_video_n2_pending stays above for a later card.
+
+    # Sheet 23 (S319), the program requirements harvest's eight calls, was answered at 15:05Z on
+    # 2026-10-03: "As proposed" (his own pick). The lane records the rulings.
     return I
 
 
