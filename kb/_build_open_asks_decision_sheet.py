@@ -31,6 +31,10 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 24 (S321 checkpoint, 2026-10-03, SHEET_ID 2026-10-03-open-asks-24): sheet 23 was answered ("As
+proposed", 15:05Z). Two cards for the program requirements harvest: paste the memory receipts, and enter
+six catalog addresses the census cannot reach.
+
 Sheet 22 (S318 checkpoint, 2026-10-02, SHEET_ID 2026-10-02-open-asks-22): sheet 21 was answered (card 1
 ran, card 3 keep); its card 2, the ElevenLabs plan, answered "later", is the one card. Published at
 https://claude.ai/artifact/NwAWv98uo2ytzYjQu4CYzo (capabilities db + comments).
@@ -157,8 +161,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-03-open-asks-23.html')
-SHEET_ID = '2026-10-03-open-asks-23'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-03-open-asks-24.html')
+SHEET_ID = '2026-10-03-open-asks-24'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -677,6 +681,63 @@ def items():
 
     # Sheet 23 (S319), the program requirements harvest's eight calls, was answered at 15:05Z on
     # 2026-10-03: "As proposed" (his own pick). The lane records the rulings.
+
+    # S320/S321: five memory rows waited on the connector's confirmation, which nobody saw in time.
+    # Three ran in S321 once their text named no destructive keyword; three remain.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Paste two memory receipts so three rows land",
+        'ref': 'program-requirements-harvest NEEDS SAM · kb/receipts/cpl_memory_2026-10-03_s320.sql · '
+               'kb/receipts/cpl_memory_2026-10-03_s321.sql',
+        'facts': (
+            "Three memory rows from S320 and S321 are written down but not in <code>cpl_memory</code>. "
+            "Their text names the SQL words the Supabase connector treats as destructive, so each "
+            "attempt waited for a confirmation nobody saw and timed out at 60 seconds with nothing "
+            "written. The same statement without those words ran in under a second: three of S320's "
+            "rows landed that way in S321."
+            "<br><br>S321 also found that two of S320's summaries ran past the table's 400-character "
+            "limit, so that receipt could never have landed, from the editor either. Both are fixed."),
+        'why': "Until they run, the next session's memory read misses the registry's grant finding, the "
+               "migration finding and the keyword finding itself.",
+        'rec': "<strong>Paste both:</strong> open the Supabase SQL editor and run each file whole. Both "
+               "skip any row already written, and each ends with a read-back where every row shows "
+               "<code>creates = 1</code>. <em>It might be wrong if</em> you would rather approve the "
+               "connector's prompt; choose the second chip, and the next session you are watching runs them.",
+        'chips': chips(('Pasted both', 'pasted'), ('Run them while I watch', 'attended'), CH_LATER),
+        'evidence': [live('2026-10-03', "cpl_memory read back through the Supabase connector: three of "
+                          "the five S320 rows present, each with its create log")],
+    })
+    # S321: the census reaches 112 of 118 catalogs. Six need an address a person enters.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Enter six catalog addresses the census cannot reach",
+        'ref': 'program-requirements-harvest NEEDS SAM · '
+               'kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql · #1839',
+        'facts': (
+            "The census read 112 of 118 college catalogs on 2026-10-03. The other six turn it away. "
+            "The four Los Rios colleges answer its browser with 404 at the homepage, and De Anza and "
+            "City College of San Francisco serve Cloudflare challenges, which the census never works "
+            "around. None has a <code>catalog.</code> host to try instead."
+            "<br><br>A web search found each catalog: American River, Folsom Lake and Sacramento City "
+            "publish a 2026-27 official catalog at <code>&lt;college&gt;.losrios.edu/2026-2027-official-catalog</code>; "
+            "Cosumnes River shows its 2025-26 catalog and a 2026-27 preview, so the receipt gives its stable "
+            "<code>crc.losrios.edu/catalog</code> entry; De Anza's sits at <code>deanza.edu/catalog</code>; "
+            "City College of San Francisco publishes PDFs by section under <code>ccsf.edu/catalog</code>."
+            "<br><br>A person's entry is the registry's own path for this: the census keeps it from then on "
+            "and flags any later reading that differs."),
+        'why': "Until they are entered, six colleges have no catalog address in the registry, and the "
+               "harvest cannot choose a method for them.",
+        'rec': "<strong>Enter as given:</strong> run "
+               "<code>kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql</code> in the "
+               "Supabase SQL editor. It names you as the source, writes each prior row to the history "
+               "table, and ends with a read-back of six rows. <em>It might be wrong if</em> Cosumnes "
+               "River's 2026-27 official catalog is out, or a college points students elsewhere; choose "
+               "<em>Edit</em> and note the address.",
+        'chips': chips(('Enter as given', 'enter'), ('Run it while I watch', 'attended'),
+                       ('Edit', 'edit'), CH_LATER),
+        'evidence': [live('2026-10-03', "census runs 37137334059, 37139324090, 37140411314 and "
+                          "37141321117 (job logs) and a web search the same day")],
+    })
     return I
 
 

@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [1836]
+prs: [1836, 1838, 1839]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -138,9 +138,12 @@ a public read. "Approved" on the push that adds the weekly apply.
     page loads). Two-digit pairs are read only in a curriQunet `/alias/`
     name, where San Diego mints one alias a year.
 
-**State at checkpoint.** Registry: 118 rows, homepage only. Census: on `main`,
-weekly apply Sundays 10:29 UTC, first dry run reading.
+**State at checkpoint (S321).** Census: four full dry reads and #1839 took it
+from 109 catalog addresses, 67 years and 61 at 2026-27 to 112, 78 and 71, with
+no college worse off. Registry: the first apply (run 37142060932) on `main`
+filled 112 addresses and 77 years; weekly apply Sundays 10:29 UTC. Six colleges wait on a person's entry (open-asks
+sheet 24).
 
-**NEXT.** Read the dry run's JSON block; fix reader gaps on a fresh branch;
-dispatch the first apply on `main`; read the registry back and pick the
-pilot's PDF-catalog college from it.
+**NEXT.** Read the registry back; enter the six addresses once Sam confirms
+them; check the seven 2025-26 years; then pick the pilot's PDF-catalog college
+and start Phase 1.
