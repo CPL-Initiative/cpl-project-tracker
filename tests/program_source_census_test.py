@@ -552,6 +552,60 @@ y, words = C.year_in_body("Skip to content\n2026-2027 Edition\nCatalog Archives 
 check(y == "2026-2027" and "Edition" in (words or ""),
       "the body's latest year and its words, got %r" % ((y, words),))
 check(C.year_in_body("") == (None, None), "no body, no year")
+
+# A vendor catalog's own banner names its edition (run 37154900912): it fills
+# a yearless page and outranks an older link or slug, on a vendor page only.
+by = C.banner_year
+check(by("Academic Catalog Cuyamaca College GCCCD 2026-2027 EDITION Cuyamaca College Catalog")
+      == "2026-2027", "a CourseLeaf edition banner reads")
+check(by("Login Academic Catalog 2026-2027 Search Export Page as PDF") == "2026-2027",
+      "a curriQunet catalog header reads")
+check(by("PROGRAMS A-Z PROGRAM SEARCH CATALOG ARCHIVE APPLY 2026-2027 CATALOG HOME")
+      == "2026-2027", "an archive link in the menu is not the banner's phrase (Golden West)")
+check(by("Download 2026-2027 Catalog Catalog Archives Previous years' catalogs") == "2026-2027",
+      "an archive link after the catalog's own word does not refuse it (West Valley)")
+check(by("Give to Crafton Logins Home » 2026-2027 Catalog 2018-2019 Catalog 2019-2020 Catalog")
+      == "2026-2027", "a menu of older catalogs reads its newest; a college word is a menu word")
+check(by("Hi there! How can I help you today? 2026-2027 FAFSA Applications NOW OPEN") is None,
+      "a FAFSA banner names no catalog")
+check(by("Merced College Home 2026-27 Academic Calendar Search") is None,
+      "an academic calendar names no catalog")
+check(by("Catalog Archive: View past catalogs from 2004-2005 to present.") is None,
+      "a list of past catalogs names no banner")
+check(by("Toggle Catalog Archive 2019-2020 Search") is None,
+      "a year an archive names never counts")
+check(by("2025-2026 [ARCHIVED] Catalog") is None, "a year marked archived never counts")
+check(by("GCC Catalogs by Academic Year 2026-2027 Catalog Coming Soon") is None,
+      "a catalog coming soon is not published")
+cuy = {"title": "Cuyamaca College Catalog | Grossmont-Cuyamaca Community College District",
+       "h1": "Academic Catalog",
+       "body": "Academic Catalog Cuyamaca College GCCCD 2026-2027 EDITION Cuyamaca College"}
+check(C.catalog_year_from(cuy, "https://catalog.gcccd.edu/cuyamaca/", "2025-2026 Catalog",
+                          "courseleaf", "assets")
+      == ("2026-2027", "banner"),
+      "the page's banner outranks the college's older link")
+check(C.catalog_year_from(cuy, "https://catalog.gcccd.edu/cuyamaca/", "2025-2026 Catalog",
+                          "custom_html", "none")
+      == ("2025-2026", "link text"), "a college's own page reads no banner")
+check(C.catalog_year_from(cuy, "https://catalog.gcccd.edu/cuyamaca/", "2025-2026 Catalog",
+                          "acalog", "assets")
+      == ("2025-2026", "link text"), "an Acalog option list is not a banner (Delta's archived catalog)")
+check(C.catalog_year_from(cuy, "https://catalog.gcccd.edu/cuyamaca/", "2025-2026 Catalog",
+                          "courseleaf", "html")
+      == ("2025-2026", "link text"), "a vendor named only in the page's text reads no banner")
+check(C.catalog_year_from({"title": "2025-2026 Catalog", "body": "Catalog 2026-2027"},
+                          "https://x.elumenapp.com/catalog/", "", "elumen", "url")
+      == ("2025-2026", "title"), "the title still comes first")
+mad = {"title": "View - CurriQunet META", "h1": "",
+       "body": "Madera Community College Catalog 2026-2027 Search Export Page as PDF"}
+check(C.catalog_year_from(mad, "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover",
+                          "College Catalog", "curriqunet", "url")
+      == ("2026-2027", "banner"), "the banner outranks a page slug's older year (Madera)")
+cra = {"title": "Crafton Hills College - SmartCatalog", "h1": "",
+       "body": "Home » 2018-2019 Catalog 2019-2020 Catalog"}
+check(C.catalog_year_from(cra, "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+                          "Catalog", "smartcatalog", "url")
+      == ("2026-2027", "address"), "a banner never lowers the address's year (Crafton Hills)")
 check("innerText" in C.BODY_JS, "the body evidence reads the page's own words")
 
 # ── The pass splits into slices ─────────────────────────────────────────────

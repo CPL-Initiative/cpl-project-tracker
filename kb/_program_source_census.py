@@ -622,26 +622,94 @@ class Reader:
         return out
 
 
-def catalog_year_from(page: dict, url: str, link_text: str) -> tuple[str | None, str | None]:
+# A vendor's catalog prints its edition in a banner near the top of the page:
+# CourseLeaf "Cuyamaca College GCCCD 2026-2027 EDITION", curriQunet "Laney
+# College Academic Catalog 2026-2027", eLumen "2025-2026 Catalog". The branch
+# read of S322 (run 37154900912) found such a banner on 19 vendor pages whose
+# title and h1 name no year: 17 had no year at all, Cuyamaca took 2025-26 from
+# an older link on the college's own page, and Madera took 2025-26 from a page
+# slug while its banner reads 2026-2027. Only a page the address or its assets
+# place on a vendor counts: on a college's own page, an Acalog option list or a
+# page that names a vendor only in its text, a year beside "catalog" is as
+# often an archive, a calendar or a sibling's catalog (Cuesta's "past catalogs
+# from 2004-2005", Delta's "[ARCHIVED CATALOG]", San Diego Continuing
+# Education's "City College 2026-2027").
+BANNER_PLATFORMS = {"courseleaf", "curriqunet", "elumen", "coursedog", "smartcatalog"}
+BANNER_WORD = re.compile(r"\b(catalog|edition)\b", re.I)
+BANNER_REFUSE = re.compile(r"archiv|previous|\bpast\b|\bprior\b", re.I)
+
+
+def banner_year(text: str, max_start: int | None = None) -> str | None:
+    """The latest year the opening of a vendor catalog's own words names beside
+    "catalog" or "edition". Refused: a year whose own phrase, between it and
+    that word, names an archive or a previous catalog (Delta's "2025-2026 San
+    Joaquin Delta College Catalog [ARCHIVED"), and one "coming soon" follows
+    (Glendale's "2026-2027 Catalog Coming Soon"). The menu around a banner is
+    not its phrase: CourseLeaf's "CATALOG ARCHIVE APPLY 2026-2027 CATALOG HOME"
+    names the 2026-27 catalog. A FAFSA banner or an academic calendar names no
+    catalog and never counts. There is no sibling check: the census has
+    already chosen this college's catalog page, and the words of a college's
+    name are menu words too (Crafton Hills' "Give to Crafton ... Mission" read
+    as Mission College, run 37154900912)."""
+    if max_start is None:
+        max_start = datetime.now(timezone.utc).year + 1
+    best = None
+    for m in YEAR_PAIR.finditer(text or ""):
+        a = int(m.group(1))
+        b = int((m.group(2) or str(a)[:2]) + m.group(3))
+        if b != a + 1 or not 2000 <= a <= max_start:
+            continue
+        before = text[max(0, m.start() - 25):m.start()]
+        after = text[m.end():m.end() + 25]
+        word_after = BANNER_WORD.search(after)
+        words_before = list(BANNER_WORD.finditer(before))
+        if word_after:
+            phrase = after[:word_after.start()]
+        elif words_before:
+            phrase = before[words_before[-1].end():]
+        else:
+            continue
+        if BANNER_REFUSE.search(phrase) or re.search(r"coming soon", after, re.I):
+            continue
+        if best is None or a > best:
+            best = a
+    return "%d-%d" % (best, best + 1) if best is not None else None
+
+
+def catalog_year_from(page: dict, url: str, link_text: str, platform: str | None = None,
+                      tier: str | None = None) -> tuple[str | None, str | None]:
     """The catalog's year and which text named it: the page's title, its h1,
-    its address, the words of the link that led to it, or a vendor alias.
-    Cuyamaca read 2025-26 and Grossmont 2026-27 off one CourseLeaf host with
-    the same yearless title (run 37142060932); naming the source says whether
-    the page or a college's older link supplied the year."""
-    for source, text in (("title", page.get("title", "")), ("h1", page.get("h1", "")),
-                         ("address", urllib.parse.unquote(url)),
-                         ("link text", link_text)):
+    a vendor catalog's own banner, its address, the words of the link that led
+    to it, or a vendor alias. The page's own words outrank a college's link to
+    it: Cuyamaca read 2025-26 and Grossmont 2026-27 off one CourseLeaf host
+    with the same yearless title (run 37142060932), and Cuyamaca's banner reads
+    2026-2027 (run 37154900912). A banner never lowers a year the address or
+    the link named: Crafton Hills' SmartCatalog address names 2026-2027 beside
+    a menu of older catalogs."""
+    for source, text in (("title", page.get("title", "")), ("h1", page.get("h1", ""))):
         y = parse_catalog_year(text)
         if y:
             return y, source
-    y = short_year_in_vendor_path(url)
-    return (y, "vendor alias") if y else (None, None)
+    other, other_from = None, None
+    for source, text in (("address", urllib.parse.unquote(url)), ("link text", link_text)):
+        other = parse_catalog_year(text)
+        if other:
+            other_from = source
+            break
+    if not other:
+        other = short_year_in_vendor_path(url)
+        other_from = "vendor alias" if other else None
+    if platform in BANNER_PLATFORMS and tier in ("url", "assets"):
+        y = banner_year(page.get("body", ""))
+        if y and (other is None or y > other):
+            return y, "banner"
+    return other, other_from
 
 
 def year_in_body(text: str) -> tuple[str | None, str | None]:
     """The latest academic year the opening of the page's own text names, and
-    the words around it. Evidence only: it sets no year until a full read
-    shows, row by row, what it would move."""
+    the words around it, whatever the page. Evidence for a person: the year
+    itself comes from banner_year(), on a vendor's page only."""
     y = parse_catalog_year(text or "")
     if not y:
         return None, None
@@ -668,7 +736,7 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
     else:
         platform, tier = fingerprint_platform(url, page.get("assets", []),
                                               page.get("html", ""))
-    year, year_from = catalog_year_from(page, url, cand.get("text", ""))
+    year, year_from = catalog_year_from(page, url, cand.get("text", ""), platform, tier)
     links = page.get("links") or []
     pdf_links = sum(1 for a in links
                     if (a.get("href") or "").lower().split("?")[0].endswith(".pdf"))
