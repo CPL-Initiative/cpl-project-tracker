@@ -65,7 +65,16 @@ jobs:
   census:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    # Four slices of the colleges, each its own job and its own log. The first
+    # full pass in one job (run 37133680797) died after 45 minutes and left no
+    # log; a slice reads about 30 colleges in about 8 minutes, and a lost
+    # runner costs that slice alone. Each slice applies its own rows under its
+    # own run id (census-<time>-s<k>of<n>).
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v7
 
@@ -86,7 +95,7 @@ jobs:
           LIMIT: ${{ github.event.inputs.limit }}
           ONLY: ${{ github.event.inputs.only }}
         run: |
-          args=()
+          args=(--shard "${{ matrix.shard }}/${{ strategy.job-total }}")
           [ -n "$LIMIT" ] && args+=(--limit "$LIMIT")
           [ -n "$ONLY" ] && args+=(--only "$ONLY")
           if [ "$MODE" = "apply" ]; then

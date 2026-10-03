@@ -97,13 +97,22 @@ them: Riverside City's program, the person who checks the sample, and who contac
   workflow calls an Edge Function that holds the Anthropic key. The census uses
   no model yet.
 
-**NEXT:** read the first dry run (run 37133680797, job 111233705892, through
-`get_job_logs` once it completes; the JSON block sits between
-`=== CENSUS ROWS JSON BEGIN/END ===`). Fix any reader gaps it shows on a fresh
-`claude/*` branch. Then dispatch `program-source-census.yml` on `main` with mode
-apply and read the registry back: catalog URL coverage, the platform mix, the
-blocked count, the PDF-catalog candidates for the pilot's fifth college. If
-many rows land `unknown`, a model pass through an Edge Function (call 6) picks
-among the census's own candidate links. Then Phase 1, the pilot: five colleges,
-four program shapes each, scored on course coverage, no invented courses, unit
-arithmetic, and agreement with a person.
+**First reads (2026-10-03).** The full dry run in one job (run 37133680797)
+died after 45 minutes with no log. An 8-college dry run on `main` (run
+37136549708) read all eight in 2 minutes: curriQunet at Allan Hancock and eLumen
+at Antelope Valley, both 2026-27; Barstow's 2026-27 catalog as one PDF through
+its index page; a Program Mapper link at Bakersfield; American River's homepage
+answered 404 to the browser. At Bakersfield, Berkeley City and Butte the census
+stopped at the college's own catalog page while the vendor catalog sat one link
+away (Cabrillo's only vendor link was a Coursedog login). The census now
+follows that vendor link one hop (never a login), and the pass runs as four
+parallel slices, each with its own log.
+
+**NEXT:** read the four-slice dry run from the branch push that carries the
+vendor hop; fix what it shows; merge; then dispatch `program-source-census.yml`
+on `main` with mode apply and read the registry back: catalog URL coverage, the
+platform mix, the blocked and 404 counts, the PDF-catalog candidates for the
+pilot's fifth college. If many rows land `unknown`, a model pass through an
+Edge Function (call 6) picks among the census's own candidate links. Then Phase
+1, the pilot: five colleges, four program shapes each, scored on course
+coverage, no invented courses, unit arithmetic, and agreement with a person.

@@ -14,11 +14,13 @@ squash `3e52f4c`), and the registry is live in Supabase.
 
 ## First, in this order
 
-1. **Read the first dry run.** Run 37133680797, job 111233705892 (a branch push of #1836's first
-   commit, all 118 colleges, writes nothing). It was still reading at this checkpoint, about an hour in.
-   `get_job_logs` 404s until the job ends; then read it with `return_content: true` and enough
-   `tail_lines` to reach `=== CENSUS SUMMARY ===` and the rows between `=== CENSUS ROWS JSON BEGIN ===`
-   and `END`. If the run failed or timed out (150 min), read why before anything else.
+1. **Read the four-slice dry run.** The first full pass in one job (run 37133680797) died after 45
+   minutes with no log. An 8-college run on `main` (run 37136549708) worked in 2 minutes and showed the
+   census stopping at a college's own catalog page when the vendor catalog sat one link away. The
+   follow-up PR from S320 adds the vendor hop and splits the pass into four matrix slices; its branch
+   push runs all 118 as a dry run, four jobs with four logs. Read each with `get_job_logs`
+   (`return_content: true`, enough `tail_lines` for `=== CENSUS SUMMARY ===` and the rows between
+   `=== CENSUS ROWS JSON BEGIN/END ===`). `get_job_logs` 404s while a job runs.
 2. **Fix reader gaps** it shows (wrong catalog picked, platform missed, year missed) on a fresh `claude/*`
    branch off `main`, with a check in `tests/program_source_census_test.py` per gap. A push to that branch
    starts a dry run; the workflow queues behind a running pass rather than canceling it.

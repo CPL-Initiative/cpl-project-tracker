@@ -237,6 +237,46 @@ def pick_catalog_candidates(links: list[dict], current_start: int,
     return out[:limit]
 
 
+# Hosts that serve a vendor's public catalog. A college's own "Catalogs" page
+# often names the vendor only through a link like these; the first dry run on
+# main (2026-10-03) stopped at that page for Bakersfield, Berkeley City and
+# Butte while the catalog itself sat one link away.
+VENDOR_CATALOG_HOSTS = [r"curriqunet\.com", r"elumenapp\.com", r"coursedog\.com",
+                        r"smartcatalogiq\.com", r"cleancatalog", r"kuali\.co",
+                        r"acalog"]
+
+
+def vendor_catalog_link(links: list[dict], current_start: int) -> dict | None:
+    """The link on a college's catalog page that opens the vendor's catalog:
+    a vendor host (or a catalog.* host) whose path names a catalog, never a
+    login page or a library. The current year wins over an older one."""
+    best = None
+    for a in links:
+        raw = a.get("href") or ""
+        full = raw.lower()
+        if not full.startswith(("http://", "https://")):
+            continue
+        if re.search(r"login|signin|sign-in|/admin|library|worldcat", full):
+            continue
+        u = urllib.parse.urlparse(raw.split("#")[0])
+        host, path = u.netloc.lower(), u.path.lower()
+        vendor = any(re.search(p, host) for p in VENDOR_CATALOG_HOSTS)
+        catalog_host = host.startswith("catalog.") or ".catalog." in host
+        if not ((vendor and ("catalog" in path or catalog_host)) or catalog_host):
+            continue
+        text = " ".join((a.get("text") or "").split())
+        s = 3 + (2 if vendor else 0)
+        y = year_of_link(text.lower(), full)
+        if y is not None:
+            s += 2 if y >= current_start else (1 if y == current_start - 1 else -3)
+        if re.search(r"archive|previous|past", text.lower() + " " + path):
+            s -= 2
+        cand = {"text": text[:80], "href": raw.split("#")[0], "score": s}
+        if best is None or (s, -len(cand["href"])) > (best["score"], -len(best["href"])):
+            best = cand
+    return best
+
+
 def hub_links(links: list[dict], limit: int = 2) -> list[str]:
     """Pages worth one more hop when the homepage names no catalog."""
     out = []
@@ -449,9 +489,11 @@ class Reader:
         return out
 
 
-def read_catalog(reader: Reader, cand: dict, current_start: int) -> dict:
-    """Load a candidate and describe it; follow one hop to the newest year
-    when the page is an index of catalogs rather than a catalog."""
+def read_catalog(reader: Reader, cand: dict, current_start: int,
+                 depth: int = 0) -> dict:
+    """Load a candidate and describe it; follow one hop to the vendor's
+    catalog when the page names a vendor only in its text, or to the newest
+    year when the page is an index of catalogs rather than a catalog."""
     page = reader.load(cand["href"])
     page["found_by"] = cand.get("found_by", "homepage")
     url = page.get("final_url") or cand["href"]
@@ -467,15 +509,26 @@ def read_catalog(reader: Reader, cand: dict, current_start: int) -> dict:
     links = page.get("links") or []
     pdf_links = sum(1 for a in links
                     if (a.get("href") or "").lower().split("?")[0].endswith(".pdf"))
+    # The college's page names a vendor only in its text: the catalog is the
+    # vendor link on it, one hop away.
+    if (not is_pdf and tier == "html" and depth == 0
+            and page.get("access") == "ok" and reader.loads < MAX_PAGES):
+        hop = vendor_catalog_link(links, current_start)
+        if hop is not None:
+            hop["found_by"] = "the vendor link on " + url
+            inner = read_catalog(reader, hop, current_start, depth + 1)
+            if inner.get("access") == "ok":
+                inner["index_url"] = url
+                return inner
     # An index of catalogs: no year of its own, several year-named catalog links.
     if (not is_pdf and platform == "custom_html" and year is None
-            and reader.loads < MAX_PAGES):
+            and depth == 0 and reader.loads < MAX_PAGES):
         yearly = [c for c in pick_catalog_candidates(links, current_start, limit=12)
                   if year_of_link(c["text"], c["href"]) is not None]
         if len(yearly) >= 2:
             newest = max(yearly, key=lambda c: year_of_link(c["text"], c["href"]))
             newest["found_by"] = "the catalog index"
-            inner = read_catalog(reader, newest, current_start)
+            inner = read_catalog(reader, newest, current_start, depth + 1)
             inner["index_url"] = url
             return inner
     page.update(platform=platform, tier=tier, year=year,
@@ -578,6 +631,16 @@ def run(colleges: list[dict], delay_ms: int) -> list[dict]:
     return rows
 
 
+def shard_of(spec: str) -> tuple[int, int]:
+    """'2/4' -> (2, 4). A pass split four ways loses one quarter, not the
+    hour, when a runner dies: the first full dry run (run 37133680797) ended
+    after 45 minutes with no log at all."""
+    m = re.fullmatch(r"\s*(\d+)\s*/\s*(\d+)\s*", spec or "")
+    if not m or not (1 <= int(m.group(1)) <= int(m.group(2))):
+        raise SystemExit("--shard wants k/n with 1 <= k <= n, got %r" % spec)
+    return int(m.group(1)), int(m.group(2))
+
+
 def apply_rows(rows: list[dict], run_id: str) -> dict:
     import urllib.request
 
@@ -616,6 +679,7 @@ def main(argv: list[str] | None = None) -> int:
                     help="send the rows to program_source_census_apply()")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", default="", help="colleges whose name contains this")
+    ap.add_argument("--shard", default="", help="k/n: every n-th college from the k-th")
     args = ap.parse_args(argv)
 
     colleges = load_registry()
@@ -629,8 +693,12 @@ def main(argv: list[str] | None = None) -> int:
         colleges = [c for c in colleges if args.only.lower() in c["college"].lower()]
     if args.limit:
         colleges = colleges[:args.limit]
-    delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
     run_id = "census-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    if args.shard:
+        k, n = shard_of(args.shard)
+        colleges = [c for i, c in enumerate(colleges) if i % n == k - 1]
+        run_id += "-s%dof%d" % (k, n)
+    delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
     print("program-source census %s: %d colleges from %s, %.1f s between loads, %s" % (
         run_id, len(colleges), source, delay / 1000,
         "APPLY" if args.apply else "dry run"))

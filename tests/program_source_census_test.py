@@ -155,6 +155,52 @@ check(C.best_method("pdf", "single_pdf") == "pdf_extraction", "PDF extraction")
 check(C.best_method("custom_html", "unknown") == "unknown",
       "custom HTML claims no method until a reader exists")
 
+# ── The vendor link one hop past a college's own catalog page ───────────────
+# The first dry run on main (2026-10-03, run 37136549708) stopped at the
+# college's own page for Berkeley City, Butte and Bakersfield while the catalog
+# sat one vendor link away, and Cabrillo's only vendor link was a login page.
+berkeley = [
+    {"text": "Fall Schedule", "href": "https://www.berkeleycitycollege.edu/schedule"},
+    {"text": "Course Catalog", "href": "https://bcc.curriqunet.com/catalog/view/"},
+    {"text": "Library", "href": "https://library.berkeleycitycollege.edu/catalog"},
+]
+hop = C.vendor_catalog_link(berkeley, CUR)
+check(hop and hop["href"] == "https://bcc.curriqunet.com/catalog/view/",
+      "the curriQunet catalog link is the hop, got %r" % (hop,))
+check(C.vendor_catalog_link(
+    [{"text": "Curriculum (Coursedog)",
+      "href": "https://app.coursedog.com/#/login/cabrillo_colleague_ethos"}], CUR) is None,
+      "a vendor login page is never the catalog")
+check(C.vendor_catalog_link(
+    [{"text": "Catalog editor", "href": "https://x.elumenapp.com/catalog/login"}], CUR) is None,
+      "a login path on a vendor catalog host is never the catalog")
+check(C.vendor_catalog_link(
+    [{"text": "Program Review", "href": "https://x.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1"}],
+    CUR) is None, "a vendor link whose path names no catalog is not a hop")
+bakersfield = [
+    {"text": "2025-2026 Catalog", "href": "https://bakersfield.elumenapp.com/catalog/2025-2026-Catalog/about-bc"},
+    {"text": "2026-2027 Catalog", "href": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc"},
+]
+hop = C.vendor_catalog_link(bakersfield, CUR)
+check(hop and "2026-2027" in hop["href"], "the current year's vendor catalog wins, got %r" % (hop,))
+check(C.vendor_catalog_link([{"text": "Catalog", "href": "https://catalog.x.edu/"}], CUR)["href"]
+      == "https://catalog.x.edu/", "a catalog.* host is a hop without a vendor name")
+check(C.vendor_catalog_link([{"text": "Catalog", "href": "/catalog"}], CUR) is None,
+      "a relative href is never a hop")
+
+# ── The pass splits into slices ─────────────────────────────────────────────
+check(C.shard_of("2/4") == (2, 4), "k/n parses")
+for bad in ("0/4", "5/4", "4", "a/b", ""):
+    try:
+        C.shard_of(bad)
+        check(False, "shard %r must be refused" % bad)
+    except SystemExit:
+        pass
+names = ["c%03d" % i for i in range(118)]
+slices = [[c for i, c in enumerate(names) if i % 4 == k - 1] for k in (1, 2, 3, 4)]
+check(sorted(sum(slices, [])) == names and all(len(s) in (29, 30) for s in slices),
+      "four slices cover every college exactly once")
+
 # ── Rows ─────────────────────────────────────────────────────────────────────
 row = C.build_row("X College", "https://x.edu/",
                   {"access": "blocked", "status": 403, "title": "Access denied"},
