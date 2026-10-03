@@ -18,7 +18,11 @@ known before any page is read:
   * and, from the first full read (run 37137334059): a district page's sibling
     catalog taken for this college's, a homepage failure that skipped the
     catalog.<domain> probe, a hop onto an older year or a change log, and link
-    text lost inside a hidden menu.
+    text lost inside a hidden menu;
+  * and, from the second (run 37139324090): a sibling's catalog taken when the
+    district page has none for this college, an eLumen slug read as a year, a
+    "Class Schedule & Catalog" link scored as a schedule, and an addendum or a
+    yearly PDF chosen over the catalog host on the same page.
 
 Each is pinned below against the module's OWN functions, with no browser and
 no network. Run from repo root: python3 tests/program_source_census_test.py
@@ -338,6 +342,117 @@ fr = FakeReader({
 row = C.census_one(fr, "San Diego Miramar College", "https://sdmiramar.edu/", CUR)
 check(row["catalog_url"] == "https://www.sdccd.edu/catalogs/miramar-2025-2026.pdf",
       "a district index of catalogs yields this college's own, got %r" % (row["catalog_url"],))
+
+# ── The second full read (run 37139324090, 2026-10-03) ───────────────────────
+# An eLumen slug is no year: Mission's current catalog lives under 24-25.
+check(C.short_year_in_vendor_path("https://mission.elumenapp.com/catalog/24-25/cataloghome")
+      is None, "an eLumen slug is not read as a year; only a curriQunet alias is")
+# A combined schedule-and-catalog page is a catalog link (Diablo Valley).
+check(C.score_catalog_link("Class Schedule & Catalog",
+                           "https://www.dvc.edu/academics/class-schedule-catalog", CUR) >= 3,
+      "a link naming the schedule AND the catalog is a candidate")
+check(C.score_catalog_link("Class Schedule", "https://www.dvc.edu/schedule/", CUR) < 3,
+      "a schedule link alone is never a candidate")
+# A district page with no link for this college: every sibling's link names
+# "diego" too, and none of them is San Diego Continuing Education's catalog.
+SD = ["San Diego City College", "San Diego Mesa College", "San Diego Miramar College",
+      "San Diego College of Continuing Education", "Long Beach City College"]
+ce_foreign = C.foreign_tokens("San Diego College of Continuing Education", SD)
+check({"city", "mesa", "miramar"} <= ce_foreign and "diego" not in ce_foreign,
+      "foreign words are the siblings' own, got %r" % (sorted(ce_foreign),))
+check(C.vendor_catalog_link(sdccd[:3], CUR, "San Diego College of Continuing Education",
+                            ce_foreign) is None,
+      "no sibling's catalog is taken when the page has none for this college")
+hop = C.vendor_catalog_link(sdccd[:3], CUR, "San Diego Miramar College",
+                            C.foreign_tokens("San Diego Miramar College", SD))
+check(hop and "miramar26-27" in hop["href"], "Miramar still finds its own with siblings known")
+fr = FakeReader({
+    "https://sdcce.edu/": {
+        "status": 200, "access": "ok", "title": "Continuing Education",
+        "links": [{"text": "College Catalogs",
+                   "href": "https://www.sdccd.edu/students/college-catalogs/index.aspx"}]},
+    "https://www.sdccd.edu/students/college-catalogs/index.aspx": {
+        "status": 200, "access": "ok", "title": "College Catalogs",
+        "html": "<p>Catalogs are published in CurriQunet.</p>", "links": sdccd[:3]},
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27": {
+        "status": 200, "access": "ok", "title": "View - CurriQunet META"},
+})
+row = C.census_one(fr, "San Diego College of Continuing Education", "https://sdcce.edu/",
+                   CUR, SD)
+check(row["catalog_url"] == "https://www.sdccd.edu/students/college-catalogs/index.aspx",
+      "with no link of its own, the row stays on the district page, got %r" % (
+          row["catalog_url"],))
+# The same on a district index of PDFs: no sibling's catalog for this college.
+fr = FakeReader({
+    "https://sdcce.edu/": {
+        "status": 200, "access": "ok", "title": "Continuing Education",
+        "links": [{"text": "Catalog", "href": "https://www.sdccd.edu/catalogs/"}]},
+    "https://www.sdccd.edu/catalogs/": {
+        "status": 200, "access": "ok", "title": "Catalogs",
+        "links": [{"text": "City College Catalog 2026-2027",
+                   "href": "https://www.sdccd.edu/catalogs/city-2026-2027.pdf"},
+                  {"text": "Mesa College Catalog 2026-2027",
+                   "href": "https://www.sdccd.edu/catalogs/mesa-2026-2027.pdf"}]},
+    "https://www.sdccd.edu/catalogs/city-2026-2027.pdf": {
+        "status": 200, "access": "ok", "content_type": "application/pdf"},
+})
+row = C.census_one(fr, "San Diego College of Continuing Education", "https://sdcce.edu/",
+                   CUR, SD)
+check(row["catalog_url"] == "https://www.sdccd.edu/catalogs/",
+      "a district index hands no sibling's PDF to this college, got %r" % (row["catalog_url"],))
+# Every college's name reaches the reader, not just the slice's: a sibling
+# read in another slice is still a sibling.
+seen = {}
+real_run, real_registry = C.run, C.load_registry
+C.run = lambda colleges, delay, all_names=(): seen.update(n=len(colleges),
+                                                         names=list(all_names)) or []
+C.load_registry = lambda: None   # the CEO list; never the network
+try:
+    import contextlib
+    import io
+    with contextlib.redirect_stdout(io.StringIO()):
+        C.main(["--shard", "1/4"])
+finally:
+    C.run, C.load_registry = real_run, real_registry
+check(seen.get("n") in (29, 30) and len(seen.get("names") or []) == 118,
+      "a slice reads its 30 colleges knowing all 118 names, got %r" % (
+          (seen.get("n"), len(seen.get("names") or [])),))
+
+# A yearless college page that links its catalog host beside yearly PDFs
+# (Merced): the catalog host wins, and an addendum never wins an index.
+merced_links = [
+    {"text": "2026-2027 Catalog Addendum",
+     "href": "https://www.mccd.edu/uploads/Catalog-PDF-2026-27-Addendum.pdf"},
+    {"text": "2025-2026 Catalog", "href": "https://www.mccd.edu/uploads/Catalog-2025-26.pdf"},
+    {"text": "2025-2026 Catalog (Spring update)",
+     "href": "https://www.mccd.edu/uploads/Catalog-2025-26-spring.pdf"},
+]
+merced = {
+    "https://www.mccd.edu/": {
+        "status": 200, "access": "ok", "title": "Merced College",
+        "links": [{"text": "Course Catalog", "href": "https://www.mccd.edu/course-catalog/"}]},
+    "https://www.mccd.edu/course-catalog/": {
+        "status": 200, "access": "ok", "title": "Course Catalog",
+        "links": merced_links + [{"text": "Online Catalog", "href": "https://catalog.mccd.edu/"}]},
+    "https://catalog.mccd.edu/": {
+        "status": 200, "access": "ok", "title": "Merced College Catalog",
+        "assets": ["https://static.coursedog.com/catalog.js"]},
+    "https://www.mccd.edu/uploads/Catalog-PDF-2026-27-Addendum.pdf": {
+        "status": 200, "access": "ok", "content_type": "application/pdf"},
+    "https://www.mccd.edu/uploads/Catalog-2025-26.pdf": {
+        "status": 200, "access": "ok", "content_type": "application/pdf"},
+    "https://www.mccd.edu/uploads/Catalog-2025-26-spring.pdf": {
+        "status": 200, "access": "ok", "content_type": "application/pdf"},
+}
+row = C.census_one(FakeReader(merced), "Merced College", "https://www.mccd.edu/", CUR)
+check(row["catalog_url"] == "https://catalog.mccd.edu/" and row["catalog_platform"] == "coursedog",
+      "a yearless page's catalog host wins over its yearly PDFs, got %r" % (
+          {k: row[k] for k in ("catalog_url", "catalog_platform")},))
+merced["https://www.mccd.edu/course-catalog/"]["links"] = merced_links
+row = C.census_one(FakeReader(merced), "Merced College", "https://www.mccd.edu/", CUR)
+check(row["catalog_url"] in ("https://www.mccd.edu/uploads/Catalog-2025-26.pdf",
+                             "https://www.mccd.edu/uploads/Catalog-2025-26-spring.pdf"),
+      "an index never hands over an addendum, even a newer one, got %r" % (row["catalog_url"],))
 
 # ── The pass splits into slices ─────────────────────────────────────────────
 check(C.shard_of("2/4") == (2, 4), "k/n parses")

@@ -177,18 +177,24 @@ def parse_catalog_year(*texts: str, max_start: int | None = None) -> str | None:
 
 
 # A vendor catalog's alias can carry the year in two digits on each side:
-# San Diego's curriQunet aliases read city26-27 and city25-26. Read only on a
-# vendor host, where an alias names a catalog; elsewhere 10-11 is a date.
+# San Diego's curriQunet aliases read city26-27 and city25-26, one alias a
+# year. Read only in an /alias/ segment on a vendor host. An eLumen slug is
+# no year: Mission's current catalog lives under /catalog/24-25/, and the same
+# page titled itself 2026-2027 in one read and "Catalog 24-25" in the next.
 SHORT_YEAR = re.compile(r"(?<![0-9])([1-9][0-9])-([0-9]{2})(?![0-9])")
+ALIAS_SEGMENT = re.compile(r"/alias/([^/]+)")
 
 
 def short_year_in_vendor_path(url: str) -> str | None:
-    """'2026-2027' for a vendor-host URL whose path names 26-27, else None."""
+    """'2026-2027' for a vendor alias like /alias/city26-27, else None."""
     u = urllib.parse.urlparse(url or "")
     if not any(re.search(p, u.netloc.lower()) for p in VENDOR_CATALOG_HOSTS):
         return None
+    alias = ALIAS_SEGMENT.search(urllib.parse.unquote(u.path).lower())
+    if not alias:
+        return None
     best = None
-    for m in SHORT_YEAR.finditer(urllib.parse.unquote(u.path)):
+    for m in SHORT_YEAR.finditer(alias.group(1)):
         a, b = int(m.group(1)), int(m.group(2))
         if b == a + 1 and (best is None or a > best):
             best = a
@@ -212,6 +218,25 @@ def college_tokens(college: str | None) -> set[str]:
     plain = unicodedata.normalize("NFKD", college or "").encode("ascii", "ignore").decode()
     return {w for w in re.findall(r"[a-z]+", plain.lower())
             if w not in GENERIC_NAME_WORDS and len(w) > 1}
+
+
+def foreign_tokens(college: str | None, colleges=()) -> frozenset[str]:
+    """Words that name some OTHER college and not this one: on a district
+    page, a link naming city or miramar is a sibling's catalog."""
+    own = college_tokens(college)
+    out: set[str] = set()
+    for other in colleges or ():
+        if other != college:
+            out |= college_tokens(other)
+    return frozenset(out - own)
+
+
+def sibling_link(text: str, href: str, tokens: set[str], foreign) -> bool:
+    """A link that names another college's words at least as often as this
+    college's own. San Diego Continuing Education has no link on the
+    district's catalogs page, and each sibling's link names "diego" too."""
+    theirs = names_college(text, href, foreign) if foreign else 0
+    return theirs > 0 and theirs >= names_college(text, href, tokens)
 
 
 def names_college(text: str, href: str, tokens: set[str]) -> int:
@@ -254,7 +279,10 @@ def score_catalog_link(text: str, href: str, current_start: int) -> int:
             s -= 2
     if "library" in t or "library" in host or "/library" in path or "worldcat" in h:
         s -= 6
-    if re.search(r"\b(class|course) schedule\b|schedule of classes", t):
+    # A schedule link loses, unless it names the catalog too: Diablo Valley's
+    # catalog page is "Class Schedule & Catalog" (run 37139324090).
+    if re.search(r"\b(class|course) schedule\b|schedule of classes", t) \
+            and not re.search(r"\bcatalog(ue)?s?\b", t):
         s -= 2
     if re.search(r"addend|supplement|errata|archive|previous|past catalog|change ?log",
                  t + " " + path):
@@ -291,7 +319,8 @@ VENDOR_CATALOG_HOSTS = [r"curriqunet\.com", r"elumenapp\.com", r"coursedog\.com"
 
 
 def vendor_catalog_link(links: list[dict], current_start: int,
-                        college: str | None = None) -> dict | None:
+                        college: str | None = None,
+                        foreign=frozenset()) -> dict | None:
     """The link on a college's catalog page that opens the vendor's catalog:
     a vendor host (or a catalog.* host) whose path names a catalog, never a
     login page, a change log or a library. On a district page that lists
@@ -315,6 +344,8 @@ def vendor_catalog_link(links: list[dict], current_start: int,
         if not ((vendor and ("catalog" in path or catalog_host)) or catalog_host):
             continue
         text = " ".join((a.get("text") or "").split())
+        if sibling_link(text, raw, tokens, foreign):
+            continue
         s = 3 + (2 if vendor else 0)
         y = year_of_link(text.lower(), full)
         if y is not None:
@@ -549,7 +580,8 @@ class Reader:
 
 
 def read_catalog(reader: Reader, cand: dict, current_start: int,
-                 depth: int = 0, college: str | None = None) -> dict:
+                 depth: int = 0, college: str | None = None,
+                 foreign=frozenset()) -> dict:
     """Load a candidate and describe it; follow one hop to the vendor's
     catalog when the page names a vendor only in its text, or to the newest
     year when the page is an index of catalogs rather than a catalog."""
@@ -569,14 +601,18 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
     links = page.get("links") or []
     pdf_links = sum(1 for a in links
                     if (a.get("href") or "").lower().split("?")[0].endswith(".pdf"))
-    # The college's page names a vendor only in its text: the catalog is the
-    # vendor link on it, one hop away.
-    if (not is_pdf and tier == "html" and depth == 0
+    # The college's page names a vendor only in its text, or names no year
+    # and no vendor at all: the catalog is the vendor (or catalog.*) link on
+    # it, one hop away. Merced's catalog page links catalog.mccd.edu beside
+    # its yearly PDFs (run 37139324090).
+    yearless_custom = platform == "custom_html" and year is None
+    if (not is_pdf and (tier == "html" or yearless_custom) and depth == 0
             and page.get("access") == "ok" and reader.loads < MAX_PAGES):
-        hop = vendor_catalog_link(links, current_start, college)
+        hop = vendor_catalog_link(links, current_start, college, foreign)
         if hop is not None:
             hop["found_by"] = "the vendor link on " + url
-            inner = read_catalog(reader, hop, current_start, depth + 1, college)
+            inner = read_catalog(reader, hop, current_start, depth + 1, college,
+                                 foreign)
             # A hop that lands on an older year than the page it left is a
             # wrong turn: Porterville's "2026-2027 CATALOG" page led to an
             # eLumen change log read as 2021-22 (run 37137334059).
@@ -587,14 +623,20 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
     # An index of catalogs: no year of its own, several year-named catalog links.
     if (not is_pdf and platform == "custom_html" and year is None
             and depth == 0 and reader.loads < MAX_PAGES):
+        tokens = college_tokens(college)
+        # An addendum is never the catalog, and a sibling's catalog never
+        # this college's: Merced's index handed over a 2025-26 addendum.
         yearly = [c for c in pick_catalog_candidates(links, current_start, limit=12)
-                  if year_of_link(c["text"], c["href"]) is not None]
+                  if year_of_link(c["text"], c["href"]) is not None
+                  and not re.search(r"addend|supplement|errata",
+                                    (c["text"] + " " + c["href"]).lower())
+                  and not sibling_link(c["text"], c["href"], tokens, foreign)]
         if len(yearly) >= 2:
-            tokens = college_tokens(college)
             newest = max(yearly, key=lambda c: (names_college(c["text"], c["href"], tokens),
                                                 year_of_link(c["text"], c["href"])))
             newest["found_by"] = "the catalog index"
-            inner = read_catalog(reader, newest, current_start, depth + 1, college)
+            inner = read_catalog(reader, newest, current_start, depth + 1, college,
+                                 foreign)
             inner["index_url"] = url
             return inner
     page.update(platform=platform, tier=tier, year=year,
@@ -605,7 +647,10 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
 
 
 def census_one(reader: Reader, college: str, homepage_url: str,
-               current_start: int) -> dict:
+               current_start: int, others=()) -> dict:
+    """One college's row. others: every college's name, so a district page's
+    sibling links can be told from this college's own."""
+    foreign = foreign_tokens(college, others)
     reader.loads = 0
     t0 = time.time()
     home = reader.load(homepage_url)
@@ -638,7 +683,8 @@ def census_one(reader: Reader, college: str, homepage_url: str,
     for cand in cands[:2]:
         if reader.loads >= MAX_PAGES:
             break
-        page = read_catalog(reader, cand, current_start, college=college)
+        page = read_catalog(reader, cand, current_start, college=college,
+                            foreign=foreign)
         tried.append({k: page.get(k) for k in
                       ("url", "final_url", "status", "access", "title",
                        "platform", "tier", "year", "format", "found_by",
@@ -679,7 +725,7 @@ def census_one(reader: Reader, college: str, homepage_url: str,
     return build_row(college, homepage_url, home, catalog, seq, cms, evidence)
 
 
-def run(colleges: list[dict], delay_ms: int) -> list[dict]:
+def run(colleges: list[dict], delay_ms: int, all_names=()) -> list[dict]:
     from playwright.sync_api import sync_playwright  # runner only
 
     current_start = datetime.now(timezone.utc).year
@@ -697,7 +743,8 @@ def run(colleges: list[dict], delay_ms: int) -> list[dict]:
         reader = Reader(page, ctx.request, delay_ms)
         for i, c in enumerate(colleges, 1):
             try:
-                row = census_one(reader, c["college"], c["homepage_url"], current_start)
+                row = census_one(reader, c["college"], c["homepage_url"], current_start,
+                                 all_names)
             except Exception as exc:
                 row = build_row(c["college"], c["homepage_url"],
                                 {"access": "unreachable", "status": None, "title": ""},
@@ -770,6 +817,7 @@ def main(argv: list[str] | None = None) -> int:
             print("program_source_registry is not there yet; --apply needs its rows.")
             return 2
         colleges, source = load_colleges(), "the CEO list (no registry yet)"
+    all_names = [c["college"] for c in colleges]   # before any slice or filter
     if args.only:
         colleges = [c for c in colleges if args.only.lower() in c["college"].lower()]
     if args.limit:
@@ -784,7 +832,7 @@ def main(argv: list[str] | None = None) -> int:
         run_id, len(colleges), source, delay / 1000,
         "APPLY" if args.apply else "dry run"))
 
-    rows = run(colleges, delay)
+    rows = run(colleges, delay, all_names)
     print("\n=== CENSUS SUMMARY ===")
     print(json.dumps(summarize(rows), indent=1))
     print("=== CENSUS ROWS JSON BEGIN ===")
