@@ -1,0 +1,99 @@
+name: Program source census
+
+# Phase 0 of the program requirements harvest
+# (docs/reference/lanes/program-requirements-harvest.md): for each college, find
+# where its program requirements live (the current catalog's address and year,
+# the platform serving it, any program-map source) and how its site answers a
+# real browser. kb/_program_source_census.py holds the reasons for each rule.
+#
+# Sam's call 5 on sheet 23 (2026-10-03) approves reading college websites from
+# GitHub runners on a slow schedule that names the CPL Initiative. The session
+# container cannot reach college sites; the runner can.
+#
+# DRY RUN BY DEFAULT, and the only mode a branch can reach. A dry run writes
+# nothing: it prints a line per college and a JSON block that a session reads
+# from the job log through the GitHub MCP. Writing to Supabase needs the run to
+# be on main AND either the weekly schedule or a hand dispatch with mode
+# apply. A paths filter is not a branch filter (cpl_memory
+# coci-sync-wrote-production-from-a-feature-branch), so the guard is the ref.
+#
+# Apply writes program_source_registry (kb/supabase_program_source_registry.sql,
+# Sam's go 2026-10-03) through program_source_census_apply(), which never
+# overwrites a row a person corrected and files every prior row in
+# program_source_registry_history. Governance: dismissed in
+# kb/governance_surface_map.json until Phase 1 names the person who owns the
+# outcome.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run (read and report, write nothing) or apply (main only)"
+        required: true
+        default: "dry-run"
+        type: choice
+        options: [dry-run, apply]
+      limit:
+        description: "Only the first N colleges (blank = all)"
+        required: false
+        default: ""
+      only:
+        description: "Only colleges whose name contains this text"
+        required: false
+        default: ""
+  # Weekly, Sundays 10:29 UTC (~3:29 AM PT): clear of the daily dashboard's
+  # 06:17/09:17/12:17 windows; a full pass takes about an hour.
+  schedule:
+    - cron: '29 10 * * 0'
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/program-source-census.yml'
+      - 'kb/_program_source_census.py'
+
+permissions:
+  contents: read
+
+# A newer run waits behind a running one rather than cancelling it: a pass
+# reads for about an hour and writes only at its end, so a cancel throws the
+# hour away. Cancel a queued duplicate by hand when it adds nothing.
+concurrency:
+  group: program-source-census-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  census:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Census
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          CENSUS_DELAY_MS: '4000'
+          MODE: ${{ github.event.inputs.mode || (github.event_name == 'schedule' && 'apply') || 'dry-run' }}
+          LIMIT: ${{ github.event.inputs.limit }}
+          ONLY: ${{ github.event.inputs.only }}
+        run: |
+          args=()
+          [ -n "$LIMIT" ] && args+=(--limit "$LIMIT")
+          [ -n "$ONLY" ] && args+=(--only "$ONLY")
+          if [ "$MODE" = "apply" ]; then
+            if [ "$GITHUB_REF" != "refs/heads/main" ] || { [ "$GITHUB_EVENT_NAME" != "workflow_dispatch" ] && [ "$GITHUB_EVENT_NAME" != "schedule" ]; }; then
+              echo "::error::apply runs only on main, from the schedule or a hand dispatch (ref $GITHUB_REF, event $GITHUB_EVENT_NAME)"
+              exit 1
+            fi
+            args+=(--apply)
+          fi
+          python3 kb/_program_source_census.py "${args[@]}"
