@@ -1786,3 +1786,31 @@ its TOP by construction.
 
 **Next:** the reload that fills `control_number`, Mt. San Antonio 08086 joining 27 rows, the A/B preview, then
 Sam's deploy go. The prospective-credit block (`fetchProgramCourses`) still reads the TOP proxy.
+
+## 2026-10-03 — S319 SkyRudder: the course lists deployed, a rule Sierra repeated, and the timing log
+
+The reload filled `control_number` on all 22,335 programs and Mt. San Antonio 08086 joined 27 rows. Smoke mode
+**7l** (#1832) asks for the LVN-to-RN courses at Mt. San Antonio and asserts a course outside nursing by number,
+which only the new route can supply; retrieval first (27 listed, 7 subjects outside NURS, 0.33 s), then the
+prose. `tests/sierra_program_courses.test.js` block 9 re-derives the smoke's terms from `index.ts`.
+
+- **The A/B read the answer, and the answer carried the rule.** Run 37126608238 passed every mode and listed all
+  27 courses, then wrote that honors versions "appear side by side rather than as substitutes you'd choose
+  between". The block's rule said "honors versions and alternatives appear side by side". A student reading the
+  answer takes ENGL C1000 and C1000H both. The rule now states the claim a student needs: a student takes one
+  course of each honors pair. The second A/B said "a student takes one from each pair, not both". KB note:
+  `methodology-write-the-rule-as-the-sentence-you-want-said`.
+- **Deployed 2026-10-03 14:15Z** (run 37128917426, Sam: "go ahead and deploy once the A/B is clean"). The smoke
+  after it failed 7c (the quick-list table at character 1,891 of an 1,800 window) and 7s (a true articulation
+  absence the helper missed: "has an exhibit specifically articulating"). Neither question reaches the new block.
+  #1833 sets "exhibit" and "-ing" aside as articulation; its push smoke against production passed every mode.
+- **The timing log** (#1834, deployed 14:57Z, Sam's ask after his Jev question): `chat_interactions.timings`
+  per turn, five phases plus every PostgREST read. First 23 turns (the preview's smoke): median 15.2 s, first
+  word 6.1 s, writing 8.8 s, prep 2.2 s, retrieval 1.4 s, model wait 0.9 s, embed 0.15 s. The model's writing is
+  the largest share, so faster reads alone cannot halve the wait. The insert's returned error is now logged:
+  supabase-js returns it, never throws it, so a row the table refused vanished with clean logs.
+- **One suite at a time, by cancelling.** Every push touching `index.ts` or the smoke starts a smoke against
+  production. Four times this run a second suite was due while one ran; cancelling the redundant run (and
+  saying why once on the PR) kept every grid readable.
+
+**Next:** read `timings` over real traffic; switch the prospective-credit block from TOP to the real lists.

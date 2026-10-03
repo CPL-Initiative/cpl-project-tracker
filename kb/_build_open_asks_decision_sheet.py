@@ -157,8 +157,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-02-open-asks-22.html')
-SHEET_ID = '2026-10-02-open-asks-22'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-03-open-asks-23.html')
+SHEET_ID = '2026-10-03-open-asks-23'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -674,6 +674,32 @@ def items():
     # "OK, we're on a paid plan with Elevenlabs" (Sam), with "Narration sounds good to start with".
     # S317 read Minimum conditions the same hour, rendered _Draft_3 and linked it from the explainer's
     # Scenario 2 view. p_video_n2_pending stays above for a later card.
+
+    # Sheet 23 (S319): the program requirements harvest, opened by Sam's three statements of
+    # 2026-10-03. His eight calls live in the plan doc, where he can comment beside each; one
+    # card carries them so the standing sheet asks.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "The program requirements harvest: your eight calls",
+        'ref': 'program-requirements-harvest · the plan doc, "Your calls" · Program Course File (2026-07-16)',
+        'facts': (
+            "The state's Program Course File names every course a program lists (313,710 rows, 20,451 of "
+            "22,335 programs) and none of the rules: no column marks a course required, places it in a "
+            "\"choose N\" block, or gives a unit total. 115 colleges award active credit programs. The "
+            "<a href=\"https://claude.ai/code/artifact/77ae8cb2-443b-45e3-b287-594c9c9b8744\">Program "
+            "Requirements Harvest Plan</a> proposes a source registry for all 115, a pilot at five colleges "
+            "(Cerritos, Mt. San Antonio, Miramar, Riverside City, a PDF-catalog college), and four checks "
+            "against the catalog. It waits on eight calls, each with a proposed answer: which source wins, the "
+            "pilot colleges, who checks the 20-program sample, sequencing in the pilot, reading college "
+            "websites from runners, the model key path, publication, and the Tech Center contact."),
+        'why': "The census and the pilot start once these are settled; nothing reaches a college site before call 5.",
+        'rec': "<strong>Take the proposed answers, and change any by number in the note</strong> (\"2: swap "
+               "Riverside City for Norco\"). <em>It might be wrong if</em> a call needs a person to answer it, "
+               "such as who checks the sample; name them in the note.",
+        'chips': chips(('As proposed', 'proposed'), ('Changes: see note', 'changes'), CH_LATER),
+        'evidence': [live('2026-10-03', 'the Program Course File header and coci_college_programs (115 credit colleges)'),
+                     quoted("Sam's three statements, CPLBrain braindump 2026-10-03-1433", '2026-10-03')],
+    })
     return I
 
 
