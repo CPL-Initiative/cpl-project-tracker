@@ -10,60 +10,59 @@
     "other": 150000
   },
   "summary": {
-    "files": 1035,
-    "bytes": 10921524,
+    "files": 1037,
+    "bytes": 10939984,
     "over_budget": 6,
-    "handoff_max": 320,
+    "handoff_max": 321,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59989,
-    "superseded_files": 6,
-    "superseded_bytes": 31624,
+    "always_loaded_bytes": 59999,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59989,
+        "bytes": 59999,
         "over": 0
       },
       "other": {
         "files": 117,
-        "bytes": 3327721,
+        "bytes": 3330766,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9370,
+        "bytes": 9223,
         "over": 0
       },
       "lessons": {
-        "files": 76,
-        "bytes": 2198077,
+        "files": 77,
+        "bytes": 2203247,
         "over": 2
       },
       "kb_note": {
         "files": 515,
-        "bytes": 2596855,
+        "bytes": 2597658,
         "over": 0
       },
       "roadmap_lane": {
         "files": 34,
-        "bytes": 280792,
+        "bytes": 284132,
         "over": 1
       },
       "handoff": {
-        "files": 291,
-        "bytes": 2448720,
+        "files": 292,
+        "bytes": 2454959,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 6,
-      "superseded_handoff": 6,
       "vault_heavy_path": 55
     },
     "vault": {
-      "files": 3442,
-      "bytes": 1718025875,
+      "files": 3448,
+      "bytes": 1718099537,
       "heavy_bytes": 778916764,
       "heavy_share": 0.453,
       "ignore_filters": [
@@ -411,13 +410,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 694324,
+        "bytes": 694867,
         "limit": 150000,
         "lane": "other",
-        "over_by": 544324,
+        "over_by": 544867,
         "ratio": 4.63
       },
-      "message": "694,324 B is 4.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "694,867 B is 4.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -431,72 +430,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 314,
-        "authoritative": 320,
-        "has_frontmatter": true
-      },
-      "message": "handoff 314 is below the authoritative 320 but is not stamped `superseded: true`",
-      "path": "docs/session_314_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 315,
-        "authoritative": 320,
-        "has_frontmatter": true
-      },
-      "message": "handoff 315 is below the authoritative 320 but is not stamped `superseded: true`",
-      "path": "docs/session_315_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 316,
-        "authoritative": 320,
-        "has_frontmatter": true
-      },
-      "message": "handoff 316 is below the authoritative 320 but is not stamped `superseded: true`",
-      "path": "docs/session_316_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 317,
-        "authoritative": 320,
-        "has_frontmatter": true
-      },
-      "message": "handoff 317 is below the authoritative 320 but is not stamped `superseded: true`",
-      "path": "docs/session_317_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 318,
-        "authoritative": 320,
-        "has_frontmatter": true
-      },
-      "message": "handoff 318 is below the authoritative 320 but is not stamped `superseded: true`",
-      "path": "docs/session_318_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 319,
-        "authoritative": 320,
-        "has_frontmatter": true
-      },
-      "message": "handoff 319 is below the authoritative 320 but is not stamped `superseded: true`",
-      "path": "docs/session_319_handoff.md"
     },
     {
       "rule": "house_voice",

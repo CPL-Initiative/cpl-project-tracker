@@ -4,6 +4,8 @@ date: 2026-10-03
 session: 319 (SkyRudder)
 tags: [handoff, sierra-retrieval-corpus, program-requirements-harvest, timing, jev]
 status: current
+superseded: true
+superseded_by: session_321_handoff.md
 ---
 
 # You are Session 320

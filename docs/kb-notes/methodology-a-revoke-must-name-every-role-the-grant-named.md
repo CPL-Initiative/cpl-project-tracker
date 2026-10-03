@@ -1,7 +1,7 @@
 ---
 title: A revoke must name every role the grant named — on this Supabase project a new function is callable by anon by name, not only through PUBLIC
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-03
 tags: [methodology, supabase, security, grants, rule-10]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -65,6 +65,19 @@ default). It does not apply to a function meant for anon, such as a public
 aggregate, where the grant is the point; there the check is that the body
 returns nothing private. Tables have their own default ACL and their own lint
 (`tests/supabase_table_grants_test.py`).
+
+## Tables too: a new table starts with every privilege (S320, 2026-10-03)
+
+The same default ACL covers tables. `program_source_registry`, created
+2026-10-03 with an explicit `grant select ... to anon, authenticated`, read back
+`has_table_privilege('anon', ..., 'insert')` true and TRUNCATE true: the
+schema's defaults had granted the API roles everything before the file's own
+grant ran. RLS stops a row INSERT, UPDATE or DELETE that no policy allows; it
+does not stop TRUNCATE, which is a table privilege. So a table meant to be
+read-only to the API roles revokes the rest by name
+(`revoke insert, update, delete, truncate, references, trigger ... from anon,
+authenticated`), and a table with no API reader revokes all. Read it back with
+`has_table_privilege` per role and command, as for a function.
 
 ## See also
 
