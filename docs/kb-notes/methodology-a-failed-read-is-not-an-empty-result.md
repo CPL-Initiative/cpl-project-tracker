@@ -1,7 +1,7 @@
 ---
 title: A failed read is not an empty result — and an optimistic write must precede its repaint
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-10-03
 tags: [methodology, front-end, error-handling, optimistic-ui, trust, governance]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -11,6 +11,8 @@ related:
 artifacts:
   - governance.js
   - tests/governance.test.js
+  - kb/_program_source_census.py
+  - tests/program_source_census_test.py
 ---
 
 # A failed read is not an empty result
@@ -119,3 +121,24 @@ find what the screen is asserting without evidence.
 
 > When a surface cannot know something, it must say it cannot know it. Silence and zero are both answers, and
 > neither one is honest.
+
+## The same rule on a write path: a failed read must not erase what an earlier read found (2026-10-03)
+
+The program-source census reads each college's site from a runner and writes one registry row per college
+through `program_source_census_apply()`, which files the row exactly as read. On the second branch read of
+S322 (run 37156161286), Columbia College's homepage timed out at 30 seconds and its `catalog.` host did not
+resolve. The read was honest about itself: access `unreachable`, no address. The write would not have been.
+Applied on a Sunday, that row would have replaced a good eLumen catalog address with nothing, and the registry
+would have stated for a week that Columbia has no catalog the census can find. The next read (run 37157042439)
+reached Columbia normally and lost Santa Monica's link instead.
+
+This is the front-end lie above, moved into the data: a transient failure written as an absence. The repair has
+the same shape. The census now reads each row's current address, year, platform, format and method, and a read
+that finds no catalog keeps them while still filing its own access status, its evidence, and a note naming the
+run the address came from (`keep_known_address()` in `kb/_program_source_census.py`; the test drives `main()`
+with a fake read so the guard is proven wired, not just defined).
+
+**The rule, for any scheduled reader that writes:** an absence the reader observed and an absence it failed to
+observe are different facts. Keep the last value an earlier read established, record the failure beside it, and
+let a later successful read replace it. A history table makes the erasure recoverable; it does not make it true.
+

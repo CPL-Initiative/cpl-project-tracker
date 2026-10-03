@@ -191,6 +191,11 @@ names. Two branch reads (runs 37154900912, 37156161286) took the census from
     an academic calendar, while the banner rule took 2026-27 from a "catalog"
     phrase further down. The banner's own words are now recorded beside it.
 
+**The apply (run 37157737048).** Registry read back at 22:25Z: 112 addresses, 95
+years, 91 at 2026-27. The guard from lesson 19 kept three addresses on its first
+real run: Los Angeles Mission and Los Angeles Valley answered the runner 403, and
+Santa Monica's homepage showed no catalog link.
+
 **State (S322).** The pilot's PDF college is West Los Angeles (7,748 units of
 CPL transcribed, the most of the 21 PDF-catalog colleges; Real Estate
 certificates for the electives use case). Sheet 25 asks Sam for Riverside

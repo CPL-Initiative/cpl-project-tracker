@@ -1353,7 +1353,9 @@
      "created": "2026-08-07",
      "governs": [
       "governance.js",
-      "tests/governance.test.js"
+      "tests/governance.test.js",
+      "kb/_program_source_census.py",
+      "tests/program_source_census_test.py"
      ],
      "path": "docs/kb-notes/methodology-a-failed-read-is-not-an-empty-result.md",
      "status": "published",
@@ -1367,7 +1369,7 @@
      ],
      "title": "A failed read is not an empty result \u2014 and an optimistic write must precede its repaint",
      "type": "methodology",
-     "updated": "2026-08-07"
+     "updated": "2026-10-03"
     },
     {
      "created": "2026-09-11",
@@ -14705,8 +14707,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 293,
+   "count": 294,
    "docs": [
+    {
+     "created": "2026-10-03",
+     "governs": [],
+     "n": 323,
+     "path": "docs/session_323_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "census",
+      "registry",
+      "pilot"
+     ],
+     "title": "the census reads each catalog's own year (95 of 118); sheet 25 asks the pilot's three names; build the pilot reader",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-03",
      "governs": [],
@@ -19691,5 +19710,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1027
+ "total": 1028
 }
