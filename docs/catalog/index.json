@@ -3057,7 +3057,7 @@
      ],
      "title": "A revoke must name every role the grant named \u2014 on this Supabase project a new function is callable by anon by name, not only through PUBLIC",
      "type": "methodology",
-     "updated": "2026-09-30"
+     "updated": "2026-10-03"
     },
     {
      "created": "2026-08-15",
@@ -10321,7 +10321,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 80,
+   "count": 81,
    "docs": [
     {
      "created": "2026-08-14",
@@ -11661,6 +11661,30 @@
       "sjcoe"
      ],
      "title": "Partner occupation \u2192 CPL crosswalk \u2014 lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-03",
+     "governs": [
+      "kb/_program_source_census.py",
+      "kb/supabase_program_source_registry.sql",
+      ".github/workflows/program-source-census.yml",
+      "tests/program_source_census_test.py",
+      "kb/governance_surface_map.json"
+     ],
+     "path": "docs/program_requirements_harvest_lessons.md",
+     "status": null,
+     "tags": [
+      "program-requirements",
+      "catalog-harvest",
+      "census",
+      "supabase",
+      "playwright",
+      "governance",
+      "lessons"
+     ],
+     "title": "Program requirements harvest \u2014 Decisions & Lessons",
      "type": null,
      "updated": ""
     },
@@ -14385,7 +14409,7 @@
      ],
      "title": "Approval-prompt guards \u2014 why the allowlist never worked, and where the hooks must live",
      "type": null,
-     "updated": "2026-09-28"
+     "updated": "2026-10-03"
     },
     {
      "created": "2026-08-28",
@@ -14637,8 +14661,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 291,
+   "count": 292,
    "docs": [
+    {
+     "created": "2026-10-03",
+     "governs": [],
+     "n": 321,
+     "path": "docs/session_321_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "census",
+      "registry",
+      "governance"
+     ],
+     "title": "the census and its registry are live; read the first dry run, then fill the registry",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-03",
      "governs": [],
@@ -19590,5 +19631,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1022
+ "total": 1024
 }
