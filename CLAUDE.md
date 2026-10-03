@@ -753,7 +753,7 @@ stays here.
 
 > **Anything waiting on Sam is also a card on a sheet.** The standing one,
 > `kb/_build_open_asks_decision_sheet.py` →
-> [1fvmFT24WLJz3sa7RZBZSB](https://claude.ai/artifact/1fvmFT24WLJz3sa7RZBZSB) (sheet 23, open),
+> [1fvmFT24WLJz3sa7RZBZSB](https://claude.ai/artifact/1fvmFT24WLJz3sa7RZBZSB) (sheet 23, answered),
 > **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
 > answers one, change that lane's marker in the same PR, or the sheet asks again
 > ([`decision_sheets`](docs/reference/decision_sheets.md)).
@@ -794,7 +794,7 @@ stays here.
 | **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |
 | **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
-| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 planning · NEEDS SAM — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
+| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 planning · census next — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |

@@ -2,14 +2,8 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-03",
   "_session": "S319 SkyRudder",
-  "_status": "Sierra now lists the courses a program lists at the college asked, live since 3 October: ask her for the LVN to RN courses at Mt. San Antonio College and she names all 27, with a note that a student takes one course of each honors pair. Each Sierra answer now records how long it took and where the time went, so the next step on speed starts from measurements. A new plan opened today: a record of which of each program's courses are required, chosen from a list, or elective, at all 115 credit colleges, so a learner can see the CPL units they save. It waits on eight calls from Sam, on sheet 23 and in the plan doc.",
+  "_status": "Sierra now lists the courses a program lists at the college asked, live since 3 October: ask her for the LVN to RN courses at Mt. San Antonio College and she names all 27, with a note that a student takes one course of each honors pair. Each Sierra answer now records how long it took and where the time went, so the next step on speed starts from measurements. A new plan opened today: a record of which of each program's courses are required, chosen from a list, or elective, at all 115 credit colleges, so a learner can see the CPL units they save. Sam approved its eight calls as proposed on 3 October, so the census of the 115 colleges' catalog sources starts next.",
   "items": [
-    {
-      "id": "s319-sam-harvest-calls",
-      "for": "Sam",
-      "tab": "sierra",
-      "text": "Answer the eight calls in the Program Requirements Harvest Plan (https://claude.ai/code/artifact/77ae8cb2-443b-45e3-b287-594c9c9b8744): each has a proposed answer, so \"as proposed\" on sheet 23 (https://claude.ai/artifact/1fvmFT24WLJz3sa7RZBZSB) settles all of them. The census of the 115 colleges starts after."
-    },
     {
       "id": "s310-sam-card11-measures",
       "for": "Sam",
@@ -44,7 +38,7 @@
       "id": "s319-fable-harvest-census",
       "for": "Fable",
       "tab": "sierra",
-      "text": "Once Sam answers sheet 23: build the program source registry table and the census agent that fills one row per credit college (catalog home and year, platform, format, sequence source), then pick the pilot's PDF-catalog college from it."
+      "text": "Sam approved the harvest plan as proposed (sheet 23): build the program source registry table and the census agent that fills one row per credit college (catalog home and year, platform, format, sequence source), then pick the pilot's PDF-catalog college from it."
     },
     {
       "id": "s319-fable-read-timings",

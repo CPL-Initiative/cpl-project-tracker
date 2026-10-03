@@ -71,3 +71,7 @@ select m.id, 'SkyRudder-s319', 'create', 'S319 ingest', to_jsonb(m)
 from public.cpl_memory m
 where m.author = 'SkyRudder-s319'
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+
+-- S319, after the checkpoint (2026-10-03 ~15:15Z): one more row by 'SkyRudder-s319', logged
+-- (note 'S319 ingest (sheet 23)'): sam-sheet23-harvest-calls-as-proposed-2026-10-03 (decision, verified: his
+-- reply on sheet 23, replies/1 = "proposed", replies/done through 1). Rollback as above.

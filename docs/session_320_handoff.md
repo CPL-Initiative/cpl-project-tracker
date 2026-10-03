@@ -13,15 +13,13 @@ course-list work, deployed it twice, and opened a new lane from three statements
 
 ## First, in this order
 
-1. **Read sheet 23's replies** before anything else: `ArtifactData` `list`, collection `replies`, on
-   https://claude.ai/artifact/1fvmFT24WLJz3sa7RZBZSB. Its one card carries the eight calls in the
-   [Program Requirements Harvest Plan](https://claude.ai/code/artifact/77ae8cb2-443b-45e3-b287-594c9c9b8744).
-   Sam may also answer by comment on the plan doc (read it with the Claude Docs connector). When he answers,
-   change the lane's NEEDS SAM marker in the same PR.
+1. **Sheet 23 is answered** (Sam, 15:05Z on 2026-10-03: "As proposed" on all eight calls; the lane lists
+   them). Start Phase 0, the census: lane `program-requirements-harvest`, NEXT. Reading college websites from
+   GitHub runners is approved (call 5). Still to name in Phase 1: Riverside City's program and who checks the
+   sample.
 2. **Read the timing log** over real traffic once a few days have passed:
    `chat_interactions.timings` (v1). The first 23 turns were smoke questions: median 15.2 s, first word 6.1 s,
    writing 8.8 s, prep 2.2 s, retrieval 1.4 s. Rows from before 14:57Z on 2026-10-03 carry none.
-3. On Sam's answers: Phase 0, the census (lane `program-requirements-harvest`, NEXT).
 
 ## What shipped (all merged, all deployed)
 

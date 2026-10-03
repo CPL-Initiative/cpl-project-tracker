@@ -49,13 +49,16 @@ team own and train.
 - `cpl-news.yml` is the worked pattern for an agentic harvest: a scheduled
   workflow calls an Edge Function that holds the Anthropic key.
 
-**NEEDS SAM:** the eight calls in the plan's "Your calls" section, carried as one
-card on the open-asks sheet: which source wins on disagreement, the pilot
-colleges, who checks the 20-program sample, sequencing in the pilot, reading
-college websites from runners, the model key path, publication, and the Tech
-Center contact.
+**Sam's calls, ruled (sheet 23, 2026-10-03 15:05Z, "As proposed", his own pick):** the catalog of the
+academic year wins on disagreement (CMS and COCI values kept and shown); pilot at Cerritos, Mt. San Antonio,
+Miramar, Riverside City and a census-picked PDF-catalog college; a named MAP team member checks the 20-program
+sample, with articulation officers invited; sequencing in the pilot only from Miramar's PPM map; yes to reading
+college websites from GitHub runners on a slow schedule that names the CPL Initiative; model calls through a
+Supabase Edge Function; nothing public until a college's records pass all four checks, first public use through
+Governance; the Tech Center asked for ROE field definitions when convenient. Still to name when Phase 1 reaches
+them: Riverside City's program, the person who checks the sample, and who contacts the Tech Center.
 
-**NEXT (on Sam's answers):** Phase 0, the census: a `program_source_registry`
+**NEXT:** Phase 0, the census: a `program_source_registry`
 table and an agent that fills one row per credit college (catalog home and year,
 platform, format, CMS public view, sequence source, access notes). Then Phase 1,
 the pilot: five colleges, four program shapes each, scored on course coverage,
