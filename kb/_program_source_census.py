@@ -309,6 +309,42 @@ def pick_catalog_candidates(links: list[dict], current_start: int,
     return out[:limit]
 
 
+def newer_year_first(cands: list[dict], college: str | None = None,
+                     foreign=frozenset()) -> list[dict]:
+    """Two candidates on one host that name different years: the newer goes
+    first, whatever their words scored. San Diego City's homepage links
+    city25-26 as "Course Catalog" and city26-27 as "City College Catolog";
+    the misspelling cost the newer link its catalog word, and the first apply
+    (run 37142060932) filed 2025-26. An addendum, an archive or a sibling's
+    link never moves ahead."""
+    tokens = college_tokens(college)
+
+    def eligible(c):
+        blob = (c.get("text", "") + " " + c.get("href", "")).lower()
+        return not re.search(r"addend|supplement|errata|archive|previous|past catalog"
+                             r"|change ?log", blob) \
+            and not sibling_link(c.get("text", ""), c.get("href", ""), tokens, foreign)
+
+    out = list(cands)
+    i = 0
+    while i < len(out):
+        c = out[i]
+        y = year_of_link(c.get("text", ""), c.get("href", ""))
+        host = urllib.parse.urlparse(c.get("href", "")).netloc.lower()
+        later = [j for j in range(i + 1, len(out))
+                 if urllib.parse.urlparse(out[j].get("href", "")).netloc.lower() == host
+                 and eligible(out[j])
+                 and (year_of_link(out[j].get("text", ""), out[j].get("href", ""))
+                      or 0) > (y or 9999)]
+        if later:
+            j = max(later, key=lambda k: year_of_link(out[k]["text"], out[k]["href"]))
+            moved = dict(out.pop(j), ahead_of=c.get("href"))
+            out.insert(i, moved)
+            continue
+        i += 1
+    return out
+
+
 # Hosts that serve a vendor's public catalog. A college's own "Catalogs" page
 # often names the vendor only through a link like these; the first dry run on
 # main (2026-10-03) stopped at that page for Bakersfield, Berkeley City and
@@ -526,6 +562,9 @@ ASSETS_JS = """() => [
   ...Array.from(document.querySelectorAll('meta[name=generator]')).map(m => 'generator:' + m.content)
 ].slice(0, 300)"""
 HEADING_JS = """() => { const h = document.querySelector('h1'); return h ? h.innerText : ''; }"""
+# The opening of the page's own words: a catalog often names its edition in a
+# banner rather than its title or h1.
+BODY_JS = """() => (document.body ? document.body.innerText : '').slice(0, 6000)"""
 
 
 class Reader:
@@ -570,6 +609,7 @@ class Reader:
                 out["links"] = self.page.evaluate(LINKS_JS)
                 out["assets"] = self.page.evaluate(ASSETS_JS)
                 out["h1"] = self.page.evaluate(HEADING_JS) or ""
+                out["body"] = self.page.evaluate(BODY_JS) or ""
                 out["html"] = self.page.content()[:400000]
             out["access"] = classify_access(status, out.get("title", ""))
         except Exception as exc:  # navigation error, timeout, download
@@ -580,6 +620,36 @@ class Reader:
             else:
                 out.update(status=None, error=msg, access="unreachable")
         return out
+
+
+def catalog_year_from(page: dict, url: str, link_text: str) -> tuple[str | None, str | None]:
+    """The catalog's year and which text named it: the page's title, its h1,
+    its address, the words of the link that led to it, or a vendor alias.
+    Cuyamaca read 2025-26 and Grossmont 2026-27 off one CourseLeaf host with
+    the same yearless title (run 37142060932); naming the source says whether
+    the page or a college's older link supplied the year."""
+    for source, text in (("title", page.get("title", "")), ("h1", page.get("h1", "")),
+                         ("address", urllib.parse.unquote(url)),
+                         ("link text", link_text)):
+        y = parse_catalog_year(text)
+        if y:
+            return y, source
+    y = short_year_in_vendor_path(url)
+    return (y, "vendor alias") if y else (None, None)
+
+
+def year_in_body(text: str) -> tuple[str | None, str | None]:
+    """The latest academic year the opening of the page's own text names, and
+    the words around it. Evidence only: it sets no year until a full read
+    shows, row by row, what it would move."""
+    y = parse_catalog_year(text or "")
+    if not y:
+        return None, None
+    for m in YEAR_PAIR.finditer(text):
+        if int(m.group(1)) == int(y[:4]):
+            words = " ".join(text[max(0, m.start() - 50):m.end() + 50].split())
+            return y, words[:140]
+    return y, None
 
 
 def read_catalog(reader: Reader, cand: dict, current_start: int,
@@ -598,9 +668,7 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
     else:
         platform, tier = fingerprint_platform(url, page.get("assets", []),
                                               page.get("html", ""))
-    year = parse_catalog_year(page.get("title", ""), page.get("h1", ""),
-                              urllib.parse.unquote(url), cand.get("text", "")) \
-        or short_year_in_vendor_path(url)
+    year, year_from = catalog_year_from(page, url, cand.get("text", ""))
     links = page.get("links") or []
     pdf_links = sum(1 for a in links
                     if (a.get("href") or "").lower().split("?")[0].endswith(".pdf"))
@@ -645,7 +713,9 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
                                  foreign)
             inner["index_url"] = url
             return inner
-    page.update(platform=platform, tier=tier, year=year,
+    body_year, body_words = year_in_body(page.get("body", ""))
+    page.update(platform=platform, tier=tier, year=year, year_from=year_from,
+                body_year=body_year, body_year_words=body_words,
                 format=catalog_format(platform, url, page.get("content_type", ""),
                                       pdf_links),
                 pdf_links=pdf_links)
@@ -676,6 +746,7 @@ def census_one(reader: Reader, college: str, homepage_url: str,
                 c["found_by"] = "one hop in (%s)" % hub
                 cands.append(c)
         cands.sort(key=lambda r: -r["score"])
+    cands = newer_year_first(cands, college, foreign)
     # Probe catalog.<domain> whenever nothing named a catalog, the homepage's
     # own failure included: the four Los Rios homepages answered 404 and De
     # Anza's and City College of San Francisco's served challenges (run
@@ -692,9 +763,10 @@ def census_one(reader: Reader, college: str, homepage_url: str,
         page = read_catalog(reader, cand, current_start, college=college,
                             foreign=foreign)
         tried.append({k: page.get(k) for k in
-                      ("url", "final_url", "status", "access", "title",
-                       "platform", "tier", "year", "format", "found_by",
-                       "index_url", "error")})
+                      ("url", "final_url", "status", "access", "title", "h1",
+                       "platform", "tier", "year", "year_from", "body_year",
+                       "body_year_words", "format", "found_by", "index_url",
+                       "error")})
         if page.get("access") == "ok":
             catalog = page
             break

@@ -22,7 +22,9 @@ known before any page is read:
   * and, from the second (run 37139324090): a sibling's catalog taken when the
     district page has none for this college, an eLumen slug read as a year, a
     "Class Schedule & Catalog" link scored as a schedule, and an addendum or a
-    yearly PDF chosen over the catalog host on the same page.
+    yearly PDF chosen over the catalog host on the same page;
+  * and, from the first apply (run 37142060932): an older year taken over a
+    newer one on the same host because the newer link's words were misspelled.
 
 Each is pinned below against the module's OWN functions, with no browser and
 no network. Run from repo root: python3 tests/program_source_census_test.py
@@ -494,6 +496,63 @@ row = C.census_one(FakeReader(merced), "Merced College", "https://www.mccd.edu/"
 check(row["catalog_url"] in ("https://www.mccd.edu/uploads/Catalog-2025-26.pdf",
                              "https://www.mccd.edu/uploads/Catalog-2025-26-spring.pdf"),
       "an index never hands over an addendum, even a newer one, got %r" % (row["catalog_url"],))
+
+# San Diego City's homepage links both years on one vendor host; the newer
+# link's misspelled text ("Catolog") scored below the older one's, and the
+# first apply (run 37142060932) filed 2025-26. The newer year goes first.
+sdcity = {
+    "https://www.sdcity.edu/": {
+        "status": 200, "access": "ok", "title": "Home",
+        "links": [{"text": "Course Catalog",
+                   "href": "https://sdccd.curriqunet.com/catalog/alias/city25-26/iq/7056"},
+                  {"text": "City College Catolog",
+                   "href": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489"}]},
+    "https://sdccd.curriqunet.com/catalog/alias/city25-26/iq/7056": {
+        "status": 200, "access": "ok", "title": "Active Catalogs - CurriQunet META"},
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489": {
+        "status": 200, "access": "ok", "title": "Active Catalogs - CurriQunet META"},
+}
+row = C.census_one(FakeReader(sdcity), "San Diego City College", "https://www.sdcity.edu/",
+                   CUR, SD)
+check(row["catalog_year"] == "2026-2027" and "city26-27" in (row["catalog_url"] or ""),
+      "two years on one host: the newer goes first, got %r" % (
+          (row["catalog_year"], row["catalog_url"]),))
+check(row["census_evidence"]["catalog_pages"][0].get("year_from") == "vendor alias",
+      "the evidence names where the year came from, got %r" % (
+          row["census_evidence"]["catalog_pages"][0].get("year_from"),))
+nyf = C.newer_year_first
+same = [{"text": "> catalog", "href": "https://lmc.elumenapp.com/catalog/26-27/art"},
+        {"text": "> catalog", "href": "https://lmc.elumenapp.com/catalog/26-27/drama"}]
+check(nyf(same) == same, "one year on one host keeps the scored order (Los Medanos)")
+other_host = [{"text": "2025-2026 Catalog", "href": "https://x.edu/catalog-2025-26.pdf"},
+              {"text": "Catalog 2026-2027", "href": "https://catalog.x.edu/2026-2027/"}]
+check(nyf(other_host) == other_host,
+      "different hosts keep the scored order; the year already weighs in the score")
+addendum = [{"text": "2025-2026 Catalog", "href": "https://x.edu/c/2025-26.pdf"},
+            {"text": "2026-2027 Addendum", "href": "https://x.edu/c/2026-27-addendum.pdf"}]
+check(nyf(addendum) == addendum, "an addendum never moves ahead of a catalog")
+sib = [{"text": "Mesa College Catalog 2025-2026",
+        "href": "https://sdccd.curriqunet.com/catalog/alias/mesa25-26/iq/1"},
+       {"text": "Miramar College Catalog 2026-2027",
+        "href": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27/iq/2"}]
+check(nyf(sib, "San Diego Mesa College", C.foreign_tokens("San Diego Mesa College", SD)) == sib,
+      "a sibling's newer catalog never moves ahead of this college's")
+three = [{"text": "Catalog 2024-2025", "href": "https://x.edu/c/2024-25"},
+         {"text": "Catalog 2025-2026", "href": "https://x.edu/c/2025-26"},
+         {"text": "Catalog 2026-2027", "href": "https://x.edu/c/2026-27"}]
+check([c["href"][-7:] for c in nyf(three)] == ["2026-27", "2025-26", "2024-25"],
+      "three years on one host read newest first")
+
+# The year's source, and the year the page's own words name (evidence only).
+y, src = C.catalog_year_from({"title": "Cuyamaca College Catalog", "h1": ""},
+                             "https://catalog.gcccd.edu/cuyamaca/", "2025-2026 Catalog")
+check((y, src) == ("2025-2026", "link text"),
+      "a year from the link's words says so, got %r" % ((y, src),))
+y, words = C.year_in_body("Skip to content\n2026-2027 Edition\nCatalog Archives 2025-2026")
+check(y == "2026-2027" and "Edition" in (words or ""),
+      "the body's latest year and its words, got %r" % ((y, words),))
+check(C.year_in_body("") == (None, None), "no body, no year")
+check("innerText" in C.BODY_JS, "the body evidence reads the page's own words")
 
 # ── The pass splits into slices ─────────────────────────────────────────────
 check(C.shard_of("2/4") == (2, 4), "k/n parses")
