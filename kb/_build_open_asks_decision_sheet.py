@@ -31,6 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 27 (S322, 2026-10-03, SHEET_ID 2026-10-03-open-asks-27): Sam answered all of sheet 26 at 23:01Z
+(his own calls): card 1 later, card 2 "go", card 3 he asks the Tech Center after the first records. The
+"go" met the repo's Supabase guard, which refuses a session's UPDATE to a shared table, so card 2 asks him
+to paste the file or lift the guard for one run. Card 3 left with its ruling. Published at
+https://claude.ai/artifact/Vhc8F8kDntLczhDeVdsdxu (capabilities db + comments).
+
 Sheet 26 (S322, 2026-10-03, SHEET_ID 2026-10-03-open-asks-26): Sam answered sheet 25 at 22:57Z through
 card 4 (his own picks). Card 1 "run while I watch": the connector's confirmation never reached him and the
 call timed out with nothing written, so it is re-asked for the SQL editor. Card 2 "enter as given": his own
@@ -174,8 +180,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-03-open-asks-26.html')
-SHEET_ID = '2026-10-03-open-asks-26'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-03-open-asks-27.html')
+SHEET_ID = '2026-10-03-open-asks-27'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -703,7 +709,8 @@ def items():
         'ref': 'program-requirements-harvest NEEDS SAM · kb/receipts/cpl_memory_2026-10-03_s320.sql · '
                'kb/receipts/cpl_memory_2026-10-03_s321.sql',
         'facts': (
-            "You chose to have these run while you watched (sheet 25, card 1). S322 ran the S320 file at "
+            "You marked this for later on sheet 26. You had chosen to have these run while you watched "
+            "(sheet 25, card 1); S322 ran the S320 file at "
             "about 23:00Z, and the connector's confirmation never reached you: the call timed out at 60 "
             "seconds and wrote nothing, as it did in S320 and S321. Three rows remain, two from S320 and one "
             "from S321, and each names one of the SQL words the connector stops on. The SQL editor is the "
@@ -721,43 +728,27 @@ def items():
     # S321: the census reaches 112 of 118 catalogs. Six need an address a person enters.
     I.append({
         'lane': 'program-requirements-harvest',
-        'title': "Enter the six catalog addresses, or say go",
+        'title': "Run the six catalog addresses yourself, or lift the guard for one run",
         'ref': 'program-requirements-harvest NEEDS SAM · '
-               'kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql',
+               'kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql · CLAUDE.md Rule 10',
         'facts': (
-            "You approved the six addresses as given and chose to enter them yourself (sheet 25, card 2). "
-            "At 23:00Z the registry held none of them. The file names no word the connector stops on, so a "
-            "session can run it at once: it sets <code>corrected_by</code> to you, writes each prior row to "
-            "the history table, and ends with a read-back of six rows. The census keeps a corrected row as "
-            "entered from then on."),
+            "You said go on sheet 26 (23:01Z). S322 sent the file and the repo's Supabase guard refused it "
+            "before it reached the database: the statement is an UPDATE to a shared table, and Rule 10 asks a "
+            "person to run such a write or lift the guard for the run. Nothing was written. The file now names "
+            "you as <code>Sam (open-asks sheets 25 and 26)</code>, writes each prior row to the history table "
+            "through the registry's trigger, and ends with a read-back of six rows."),
         'why': "Until they are entered, six colleges have no catalog address in the registry, and the "
                "harvest cannot choose a method for them.",
-        'rec': "<strong>Go:</strong> a session runs the file now and reads the six rows back. "
-               "<em>It might be wrong if</em> you have already pasted it; choose the second chip.",
-        'chips': chips(('Go: run it', 'go'), ('I entered them', 'entered'), CH_LATER),
-        'evidence': [live('2026-10-03', "program_source_registry read through the Supabase connector at "
-                          "about 23:00Z: no row with corrected_by set")],
+        'rec': "<strong>Paste it:</strong> run the file in the Supabase SQL editor. <em>It might be wrong "
+               "if</em> you would rather a session run it; lift the guard for one run and say so, and a "
+               "session runs it while you watch.",
+        'chips': chips(('Pasted it', 'pasted'), ('Guard lifted: run it', 'lifted'), CH_LATER),
+        'evidence': [live('2026-10-03', "the guard's refusal at about 23:05Z; program_source_registry read "
+                          "through the Supabase connector: no row with corrected_by set")],
     })
     # S322: Phase 1, the pilot. Sheet 25 (22:57Z) ruled Riverside City's program (the Culinary Arts
-    # certificate) and the sample checker (Sam); the lane records both. The Tech Center card was not reached.
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Who asks the Tech Center for its field definitions",
-        'ref': 'program-requirements-harvest NEEDS SAM · Program Requirements Harvest Plan, call 8',
-        'facts': (
-            "You ruled the Butte College Tech Center's COCI work a parallel track and never a gate. "
-            "The plan proposes one request: the definitions of its ROE fields, so the harvest's names "
-            "for required, list and elective courses match the ones COCI may adopt. Nothing in the "
-            "pilot waits on the answer."),
-        'why': "The plan names no one to send the request, so it will not go out.",
-        'rec': "<strong>You, after the pilot's first records exist:</strong> one short email, which a "
-               "session drafts, asking for the field definitions and showing one harvested program. A "
-               "real record gives the Tech Center something concrete to compare. <em>It might be "
-               "wrong if</em> someone on the team already talks with the Tech Center; name them in the note.",
-        'chips': chips(("Me, after the first records", 'sam-later'), ('Someone else (note)', 'other'),
-                       ('No one for now', 'none'), CH_LATER),
-        'evidence': [policy()],
-    })
+    # certificate) and the sample checker (Sam); sheet 26 (23:01Z) ruled the Tech Center contact (Sam, after
+    # the pilot's first records). The lane records all three.
     return I
 
 

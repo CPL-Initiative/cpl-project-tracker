@@ -1,6 +1,6 @@
 -- S321 (SkyCatalog), 2026-10-03: six catalog addresses the census cannot reach, for a person to enter.
--- Staged for Sam's confirmation (open-asks sheet 24, card 2). Run it in the Supabase SQL editor, or
--- say "go" and a session you are watching runs it. Nothing here runs until a person confirms it.
+-- Staged for Sam's confirmation (open-asks sheet 24, card 2). Sam approved the six as given on sheet 25
+-- (2026-10-03 22:57Z) and said "go" on sheet 26 (23:01Z); S322 ran it through the Supabase connector.
 --
 -- Why a person: the four Los Rios homepages answer the census's browser 404, De Anza and City College
 -- of San Francisco serve Cloudflare challenges (the census never works around one), and
@@ -21,7 +21,7 @@ update public.program_source_registry as r set
   catalog_platform = v.platform,
   catalog_format   = v.fmt,
   best_method      = 'person',
-  corrected_by     = 'Sam (open-asks sheet 24)',
+  corrected_by     = 'Sam (open-asks sheets 25 and 26)',
   corrected_at     = now(),
   correction_note  = v.note
 from (values
@@ -50,5 +50,5 @@ where r.college = v.college
 -- Read back: six rows, each corrected.
 select college, catalog_url, catalog_year, catalog_platform, corrected_by, corrected_at
 from public.program_source_registry
-where corrected_by = 'Sam (open-asks sheet 24)'
+where corrected_by = 'Sam (open-asks sheets 25 and 26)'
 order by college;

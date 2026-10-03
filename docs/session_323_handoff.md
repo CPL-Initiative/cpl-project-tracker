@@ -14,16 +14,17 @@ three more ways over three full branch reads (#1841, squash `35b3fb3`), ran the 
 
 ## First, in this order
 
-1. **Read Sam's replies on open-asks sheet 26**
-   ([J2mUFwbcpgFsifSjFgVaWV](https://claude.ai/artifact/J2mUFwbcpgFsifSjFgVaWV); the ArtifactData tool's
-   `list` on collection `replies`, then `replies/done`), and the thread on sheet 25
-   ([SqKFZpLcY9Q4Jg1GLVGk1B](https://claude.ai/artifact/SqKFZpLcY9Q4Jg1GLVGk1B)), where S322 asked whether
-   to run the six addresses. **Sam answered sheet 25 at 22:57Z, through card 4:** Riverside City's
-   program is the Culinary Arts Certificate of Achievement (22804); Sam checks the 20-program sample
-   himself; the memory receipts were to run while he watched (S322 tried at about 23:00Z; the connector's
-   confirmation never reached him, timed out at 60 s, nothing written; sheet 26 card 1 asks him to paste
-   them); the six addresses go in as given, his own entry (sheet 26 card 2: or "go" and a session runs
-   the file, which names no stall word). The Tech Center card was not reached and is sheet 26 card 3.
+1. **Read Sam's replies on open-asks sheet 27**
+   ([Vhc8F8kDntLczhDeVdsdxu](https://claude.ai/artifact/Vhc8F8kDntLczhDeVdsdxu); the ArtifactData tool's
+   `list` on collection `replies`, then `replies/done`), and the threads on sheets 25
+   ([SqKFZpLcY9Q4Jg1GLVGk1B](https://claude.ai/artifact/SqKFZpLcY9Q4Jg1GLVGk1B)) and 26
+   ([J2mUFwbcpgFsifSjFgVaWV](https://claude.ai/artifact/J2mUFwbcpgFsifSjFgVaWV)). **Sam's calls on 25 and
+   26 (22:57Z, 23:01Z, his own):** Riverside City's program is the Culinary Arts Certificate of
+   Achievement (22804); Sam checks the 20-program sample; Sam asks the Tech Center after the pilot's first
+   records; the memory receipts wait for later (the connector's confirmation never reached him when S322
+   ran them); the six addresses: "go", but the repo's Supabase guard refused the session's UPDATE (Rule
+   10), so sheet 27 card 2 asks him to paste the receipt or lift the guard for one run. Never route a
+   guarded write around the guard (`seed-stepped-around-the-sql-guard-2026-10-03`).
 2. **Read the registry back** (`program_source_registry`). After run 37157737048 (read back 22:25Z) it held
    112 addresses, 95 years and 91 at 2026-27, four at 2025-26, 236 history rows. Three rows kept an
    earlier address with a note: Los Angeles Mission and Los Angeles Valley (homepage 403 to the runner)
@@ -58,13 +59,14 @@ three more ways over three full branch reads (#1841, squash `35b3fb3`), ran the 
 
 ## Sam's rulings this run
 
-Sheet 25, 22:57Z (his own picks, through card 4): Riverside City's pilot program is the Culinary Arts
-Certificate of Achievement; Sam checks the 20-program sample; run the memory receipts while he watches
-(it could not: the connector's prompt never reached him); enter the six addresses as given, himself.
+Sheets 25 (22:57Z) and 26 (23:01Z), his own picks: Riverside City's pilot program is the Culinary Arts
+Certificate of Achievement; Sam checks the 20-program sample; Sam asks the Tech Center after the pilot's
+first records; the memory receipts wait for later; the six addresses go in as given ("go"), which the
+repo's Supabase guard refused from a session, so they wait on his paste or a lifted guard.
 
 ## Open
 
-- Sheet 26's three cards (above).
+- Sheet 27's two cards (above).
 - The seven 2025-26 years: San Diego City, Cuyamaca and Madera now read 2026-27. Los Angeles City, Palo
   Verde, Santiago Canyon and Evergreen Valley name 2025-26 on their own pages, and a web search found no
   2026-27 catalog for them (October 2026). The weekly read moves them when they publish.

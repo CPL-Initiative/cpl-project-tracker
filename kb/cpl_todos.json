@@ -2,13 +2,13 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-03",
   "_session": "S322 SkyPilot",
-  "_status": "Sierra lists the courses a program lists at the college asked, and each of her answers records how long it took. The plan for a record of which of each program's courses are required, chosen from a list, or elective has its first piece in place: a registry with one row per college (118), and a census that reads each college's website once a week to find where its catalog lives, what system serves it, and whether the site lets a browser in. On 3 October the census learned to read the year a catalog prints for itself, so it now finds a catalog address for 112 colleges and the catalog year for 95, 91 of them 2026-27, and a site that fails to answer for one reading keeps the address an earlier reading found. Six colleges turn the reader away; their addresses and one pilot question wait on sheet 26, and the five-college pilot comes next: Riverside City's Culinary Arts certificate is one of its five programs, and you check the sample.",
+  "_status": "Sierra lists the courses a program lists at the college asked, and each of her answers records how long it took. The plan for a record of which of each program's courses are required, chosen from a list, or elective has its first piece in place: a registry with one row per college (118), and a census that reads each college's website once a week to find where its catalog lives, what system serves it, and whether the site lets a browser in. On 3 October the census learned to read the year a catalog prints for itself, so it now finds a catalog address for 112 colleges and the catalog year for 95, 91 of them 2026-27, and a site that fails to answer for one reading keeps the address an earlier reading found. Six colleges turn the reader away; their addresses wait on your paste (sheet 27), and the five-college pilot comes next: Riverside City's Culinary Arts certificate is one of its five programs, and you check the sample.",
   "items": [
     {
-      "id": "s322-sam-sheet26",
+      "id": "s322-sam-sheet27",
       "for": "Sam",
       "tab": "sierra",
-      "text": "Answer open-asks sheet 26 (three cards): paste the two memory receipts in the Supabase SQL editor (the connector's confirmation never reached you, so a session cannot run them); enter the six catalog addresses, or say go and a session runs the file; and who asks the Butte College Tech Center for its field definitions (proposed: you, after the pilot's first records)."
+      "text": "Open-asks sheet 27 (two cards): paste the six catalog addresses file in the Supabase SQL editor (you said go; the repo's guard refuses a session's update to a shared table), or lift the guard for one run; and, when convenient, paste the two memory receipts there too."
     },
     {
       "id": "s310-sam-card11-measures",

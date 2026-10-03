@@ -160,22 +160,22 @@ MAP shows 7,748 units of CPL transcribed there, the most of the 21 colleges
 whose catalog is a PDF (Pierce is next at 1,042), and 206 students hold Real
 Estate Appraiser Trainee credit.
 
-**Sam's calls on sheet 25 (2026-10-03 22:57Z, his own picks, reviewed through
-card 4):** Riverside City's program is the Culinary Arts certificate; Sam
-himself checks the 20-program sample; the memory receipts are to run while he
-watches (the connector's confirmation never reached him, so they wait on the
-SQL editor); the six catalog addresses go in as given, entered by him.
+**Sam's calls on sheets 25 and 26 (2026-10-03, 22:57Z and 23:01Z, his own
+picks):** Riverside City's program is the Culinary Arts certificate; Sam
+himself checks the 20-program sample; Sam asks the Butte College Tech Center
+for its ROE field definitions after the pilot's first records; the six catalog
+addresses go in as given ("go"); the memory receipts wait for later.
 
-**NEEDS SAM (open-asks sheet 26):** (1) paste the two memory receipts
-(`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`) in the SQL editor:
-three rows name a stall word, and the connector's confirmation timed out at 60 s
-with nothing written when S322 ran them while Sam watched; (2) enter the six
-catalog addresses in `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql`
-(his call: as given, entered by him; the file names no stall word, so a session
-runs it on his "go"); (3) who asks the Tech Center for its ROE field definitions
-(proposed: Sam, after the pilot's first records; sheet 25 did not reach it).
+**NEEDS SAM (open-asks sheet 27):** (1) paste the two memory receipts
+(`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`) in the SQL editor
+when convenient (his call: later): three rows name a stall word, and the
+connector's confirmation never reached him when S322 ran them; (2) the six
+catalog addresses: he said "go", and the repo's Supabase guard refused the
+session's UPDATE to the shared registry (Rule 10), so he pastes
+`kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql` in the SQL
+editor or lifts the guard for one run.
 
-**NEXT:** read Sam's replies on sheet 26 and run what he answers (the six
+**NEXT:** read Sam's replies on sheet 27 and run what he answers (the six
 addresses through `corrected_by`; the weekly apply keeps a corrected row as
 entered). Then build the pilot reader on a runner, with model calls through a
 Supabase Edge Function (call 6, the `cpl-news.yml` pattern): each program's
