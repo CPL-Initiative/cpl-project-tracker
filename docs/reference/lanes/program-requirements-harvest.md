@@ -97,22 +97,33 @@ them: Riverside City's program, the person who checks the sample, and who contac
   workflow calls an Edge Function that holds the Anthropic key. The census uses
   no model yet.
 
-**First reads (2026-10-03).** The full dry run in one job (run 37133680797)
-died after 45 minutes with no log. An 8-college dry run on `main` (run
-37136549708) read all eight in 2 minutes: curriQunet at Allan Hancock and eLumen
-at Antelope Valley, both 2026-27; Barstow's 2026-27 catalog as one PDF through
-its index page; a Program Mapper link at Bakersfield; American River's homepage
-answered 404 to the browser. At Bakersfield, Berkeley City and Butte the census
-stopped at the college's own catalog page while the vendor catalog sat one link
-away (Cabrillo's only vendor link was a Coursedog login). The census now
-follows that vendor link one hop (never a login), and the pass runs as four
-parallel slices, each with its own log.
+**The first full read (2026-10-03, run 37137334059, dry run, four slices of
+8 to 10 minutes, keyed by the registry's own 118 names).** 109 of 118 colleges
+yielded a catalog address; 111 sites let the browser in. Platforms: curriQunet
+24, CourseLeaf 23, eLumen 19, PDF 15 (plus 7 catalogs published as PDFs by
+section), SmartCatalog, Coursedog and Acalog 2 each, custom HTML or unknown 25.
+61 catalogs read as 2026-27. Program Pathways Mapper links at 11 colleges,
+program-map pages at 13. The vendor-link hop fired at 33 colleges, and
+Bakersfield, Berkeley City and Butte now resolve to their vendor catalogs.
+- No catalog address (9): the four Los Rios colleges (American River,
+  Cosumnes River, Folsom Lake, Sacramento City: homepages 404 to the browser),
+  De Anza and City College of San Francisco (Cloudflare challenges), Compton,
+  Laney, Rio Hondo. Cerro Coso's catalog PDF is disallowed by robots.txt.
+- Years to check: Porterville read 2021-22 from an eLumen changelog page; Palo
+  Verde, Santiago Canyon, Cuyamaca, Los Angeles City and Madera read 2025-26.
+- Miramar's catalog link points at the San Diego district curriQunet alias
+  named `city26-27`; check that it is Miramar's catalog.
+- The pilot's PDF-catalog candidates include Barstow, Clovis, Lassen, Mendocino,
+  Shasta, Woodland, Yuba and five Los Angeles district colleges; Harbor, Valley
+  and West Los Angeles also publish Program Mapper maps.
 
-**NEXT:** read the four-slice dry run from the branch push that carries the
-vendor hop; fix what it shows; merge; then dispatch `program-source-census.yml`
-on `main` with mode apply and read the registry back: catalog URL coverage, the
-platform mix, the blocked and 404 counts, the PDF-catalog candidates for the
-pilot's fifth college. If many rows land `unknown`, a model pass through an
-Edge Function (call 6) picks among the census's own candidate links. Then Phase
-1, the pilot: five colleges, four program shapes each, scored on course
-coverage, no invented courses, unit arithmetic, and agreement with a person.
+**NEXT:** the first apply fills the registry: the weekly run (Sundays 10:29
+UTC) on `main`, or a hand dispatch with mode apply. Read the registry back.
+Then the gaps above: a seed path for the four Los Rios colleges, a source for
+De Anza and City College of San Francisco (the college, or the district's
+catalog host), the years to check, and Miramar's alias. If many rows stay
+`unknown`, a model pass through an Edge Function (call 6) picks among the
+census's own candidate links. Then Phase 1, the pilot: five colleges, four
+program shapes each, scored on course coverage, no invented courses, unit
+arithmetic, and agreement with a person; the fifth college comes from the PDF
+list above.

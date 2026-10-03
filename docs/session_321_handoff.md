@@ -14,19 +14,15 @@ squash `3e52f4c`), and the registry is live in Supabase.
 
 ## First, in this order
 
-1. **Read the four-slice dry run.** The first full pass in one job (run 37133680797) died after 45
-   minutes with no log. An 8-college run on `main` (run 37136549708) worked in 2 minutes and showed the
-   census stopping at a college's own catalog page when the vendor catalog sat one link away. The
-   follow-up PR from S320 adds the vendor hop and splits the pass into four matrix slices; its branch
-   push runs all 118 as a dry run, four jobs with four logs. Read each with `get_job_logs`
-   (`return_content: true`, enough `tail_lines` for `=== CENSUS SUMMARY ===` and the rows between
-   `=== CENSUS ROWS JSON BEGIN/END ===`). `get_job_logs` 404s while a job runs.
-2. **Fix reader gaps** it shows (wrong catalog picked, platform missed, year missed) on a fresh `claude/*`
-   branch off `main`, with a check in `tests/program_source_census_test.py` per gap. A push to that branch
-   starts a dry run; the workflow queues behind a running pass rather than canceling it.
-3. **Fill the registry.** Dispatch `program-source-census.yml` on `main` with `mode: apply` (or wait for
-   the Sunday 10:29 UTC run). Read `program_source_registry` back: catalog URL coverage, platform mix,
-   `access_status` counts, and the PDF-catalog colleges (the pilot's fifth college comes from them).
+1. **The four-slice dry run is read** (run 37137334059, S320): 109 of 118 colleges with a catalog address,
+   111 sites open, platforms and gaps in the lane file. The vendor-link hop and the slices merged in #1838.
+2. **Fill the registry and read it back.** The weekly run applies on Sunday 2026-10-04 at 10:29 UTC; a hand
+   dispatch of `program-source-census.yml` on `main` with `mode: apply` does the same sooner. Read
+   `program_source_registry` back: catalog URL coverage, platform mix, `access_status` counts, and the
+   PDF-catalog colleges (the pilot's fifth college comes from them).
+3. **Close the named gaps** (lane file): a seed path for the four Los Rios colleges, a source for De Anza and
+   City College of San Francisco, the years to check, Miramar's alias. A reader change goes on a fresh
+   `claude/*` branch off `main` with a check in `tests/program_source_census_test.py`; its push runs a dry run.
 
 ## What shipped (merged, applied)
 

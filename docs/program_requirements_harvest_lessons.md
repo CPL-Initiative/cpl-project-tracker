@@ -103,6 +103,13 @@ a public read. "Approved" on the push that adds the weekly apply.
     follows `vendor_catalog_link()` one hop when the platform came from page
     text alone, and never a login, admin or library link.
 
+11. **The four-slice full read worked: 118 colleges in 10 minutes.** 109 gave
+    a catalog address. What it cannot read is specific and nameable: the Los
+    Rios colleges' homepages answer 404 to the browser, De Anza and City College
+    of San Francisco serve Cloudflare challenges, and Cerro Coso's robots.txt
+    disallows its catalog PDF. Each is a seed or a source question for a
+    person, not a reader bug.
+
 **State at checkpoint.** Registry: 118 rows, homepage only. Census: on `main`,
 weekly apply Sundays 10:29 UTC, first dry run reading.
 
