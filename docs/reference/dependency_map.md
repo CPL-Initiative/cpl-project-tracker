@@ -153,7 +153,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cobi_rls_gates` | tabs: `admin` | — |
 | `college_adoption_opportunities` | `edgefn:cpl-chat` | — |
 | `college_geo_replace` | scripts: `chatbox/sync_coci_offerings.py` | — |
-| `college_program_courses` | `edgefn:cpl-chat` | — |
+| `college_program_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `cpl_funding_my_reports` | tabs: `college-briefing` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `implementation-funding` | — |
 | `credential_alignment_for_college` | `edgefn:cpl-chat` | — |
