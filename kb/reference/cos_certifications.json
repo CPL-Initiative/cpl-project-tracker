@@ -2,9 +2,29 @@
  "_about": "CareerOneStop Certification Finder registry, slimmed for the CER authority-anchoring lane (kb/_match_cos_authority.py). Synced by kb/_sync_cos_certifications.py on a GitHub Actions runner (cos-authority-sync.yml) — the agent sandbox cannot reach careeronestop.org. Tracker-internal: display requires the attribution below; do not republish in the public KB without a CareerOneStop permission check.",
  "_attribution": "Source: CareerOneStop (www.careeronestop.org), sponsored by the U.S. Department of Labor, Employment and Training Administration; data maintained by the Minnesota Department of Employment and Economic Development (DEED).",
  "_lane": "api",
- "_synced_at": "2026-09-03T12:52:40Z",
- "count": 6493,
+ "_synced_at": "2026-10-03T13:28:00Z",
+ "count": 6492,
  "certifications": [
+  {
+   "name": "",
+   "org": "",
+   "id": "1"
+  },
+  {
+   "name": "",
+   "org": "",
+   "id": "2"
+  },
+  {
+   "name": "",
+   "org": "",
+   "id": "8"
+  },
+  {
+   "name": "",
+   "org": "",
+   "id": "6"
+  },
   {
    "name": "",
    "org": "",
@@ -18,27 +38,7 @@
   {
    "name": "",
    "org": "",
-   "id": "2"
-  },
-  {
-   "name": "",
-   "org": "",
-   "id": "1"
-  },
-  {
-   "name": "",
-   "org": "",
-   "id": "8"
-  },
-  {
-   "name": "",
-   "org": "",
    "id": "4"
-  },
-  {
-   "name": "",
-   "org": "",
-   "id": "6"
   },
   {
    "name": "50001 Certified Professional - 50001 CP",
@@ -596,18 +596,18 @@
   {
    "name": "ACRP Certified Professional",
    "org": "Association of Clinical Research Professionals",
-   "id": "14051-B",
+   "id": "14051-A",
    "acronym": "ACRP-CP",
-   "type": "Advanced",
+   "type": "Core",
    "url": "https://acrpnet.org/certification/acrp-cp-certification",
    "org_url": "https://acrpnet.org/"
   },
   {
    "name": "ACRP Certified Professional",
    "org": "Association of Clinical Research Professionals",
-   "id": "14051-A",
+   "id": "14051-B",
    "acronym": "ACRP-CP",
-   "type": "Core",
+   "type": "Advanced",
    "url": "https://acrpnet.org/certification/acrp-cp-certification",
    "org_url": "https://acrpnet.org/"
   },
@@ -1468,16 +1468,16 @@
   {
    "name": "Advanced Generalist Social Work Licensing Examination",
    "org": "Association of Social Work Boards (ASWB)",
-   "id": "14053-C",
-   "type": "Specialty",
+   "id": "14053-B",
+   "type": "Advanced",
    "url": "https://www.aswb.org/exam/",
    "org_url": "https://www.aswb.org/"
   },
   {
    "name": "Advanced Generalist Social Work Licensing Examination",
    "org": "Association of Social Work Boards (ASWB)",
-   "id": "14053-B",
-   "type": "Advanced",
+   "id": "14053-C",
+   "type": "Specialty",
    "url": "https://www.aswb.org/exam/",
    "org_url": "https://www.aswb.org/"
   },
@@ -2175,24 +2175,16 @@
   {
    "name": "Amateur Radio Service Operator License - General Class",
    "org": "Federal Communications Commission",
-   "id": "14088-A",
-   "type": "Core",
-   "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service",
-   "org_url": "https://www.fcc.gov/about/overview"
-  },
-  {
-   "name": "Amateur Radio Service Operator License - General Class",
-   "org": "Federal Communications Commission",
    "id": "14088-D",
    "type": "Product/Equipment",
    "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service",
    "org_url": "https://www.fcc.gov/about/overview"
   },
   {
-   "name": "Amateur Radio Service Operator License - Technician Class",
+   "name": "Amateur Radio Service Operator License - General Class",
    "org": "Federal Communications Commission",
-   "id": "14089-D",
-   "type": "Product/Equipment",
+   "id": "14088-A",
+   "type": "Core",
    "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service",
    "org_url": "https://www.fcc.gov/about/overview"
   },
@@ -2201,6 +2193,14 @@
    "org": "Federal Communications Commission",
    "id": "14089-A",
    "type": "Core",
+   "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service",
+   "org_url": "https://www.fcc.gov/about/overview"
+  },
+  {
+   "name": "Amateur Radio Service Operator License - Technician Class",
+   "org": "Federal Communications Commission",
+   "id": "14089-D",
+   "type": "Product/Equipment",
    "url": "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service",
    "org_url": "https://www.fcc.gov/about/overview"
   },
@@ -6530,7 +6530,7 @@
   {
    "name": "Carbon Monoxide & Combustion Analysis Certification",
    "org": "ESCO Group",
-   "id": "12136-A",
+   "id": "12058-A",
    "type": "Core",
    "url": "https://www.escogroup.org/certifications/employmentready.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
@@ -6538,15 +6538,7 @@
   {
    "name": "Carbon Monoxide & Combustion Analysis Certification",
    "org": "ESCO Group",
-   "id": "12058-A",
-   "type": "Core",
-   "url": "https://www.escogroup.org/certifications/employmentready.aspx",
-   "org_url": "https://www.escogroup.org/hvac/"
-  },
-  {
-   "name": "Carbon Monoxide Safety Certification",
-   "org": "ESCO Group",
-   "id": "12043-A",
+   "id": "12136-A",
    "type": "Core",
    "url": "https://www.escogroup.org/certifications/employmentready.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
@@ -6555,6 +6547,14 @@
    "name": "Carbon Monoxide Safety Certification",
    "org": "ESCO Group",
    "id": "12131-A",
+   "type": "Core",
+   "url": "https://www.escogroup.org/certifications/employmentready.aspx",
+   "org_url": "https://www.escogroup.org/hvac/"
+  },
+  {
+   "name": "Carbon Monoxide Safety Certification",
+   "org": "ESCO Group",
+   "id": "12043-A",
    "type": "Core",
    "url": "https://www.escogroup.org/certifications/employmentready.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
@@ -8588,18 +8588,18 @@
   {
    "name": "Certification of Capability in Business Analysis",
    "org": "International Institute of Business Analysis",
-   "id": "13308-B",
+   "id": "12742-A",
    "acronym": "CCBA",
-   "type": "Advanced",
+   "type": "Core",
    "url": "https://www.iiba.org/business-analysis-certifications/ccba/",
    "org_url": "https://www.iiba.org/"
   },
   {
    "name": "Certification of Capability in Business Analysis",
    "org": "International Institute of Business Analysis",
-   "id": "12742-A",
+   "id": "13308-B",
    "acronym": "CCBA",
-   "type": "Core",
+   "type": "Advanced",
    "url": "https://www.iiba.org/business-analysis-certifications/ccba/",
    "org_url": "https://www.iiba.org/"
   },
@@ -9725,18 +9725,18 @@
   {
    "name": "Certified Breast Health Clinical Navigator",
    "org": "National Consortium of Breast Centers, Inc.",
-   "id": "14286-B",
+   "id": "14286-C",
    "acronym": "BHCN",
-   "type": "Advanced",
+   "type": "Specialty",
    "url": "https://www.navigatorcertifications.org/certification/",
    "org_url": "https://www.breastcare.org/"
   },
   {
    "name": "Certified Breast Health Clinical Navigator",
    "org": "National Consortium of Breast Centers, Inc.",
-   "id": "14286-C",
+   "id": "14286-B",
    "acronym": "BHCN",
-   "type": "Specialty",
+   "type": "Advanced",
    "url": "https://www.navigatorcertifications.org/certification/",
    "org_url": "https://www.breastcare.org/"
   },
@@ -11948,18 +11948,18 @@
   {
    "name": "Certified Dental Technician - Crown and Bridge",
    "org": "National Board for Certification in Dental Laboratory Technology",
-   "id": "14161-A",
+   "id": "14161-C",
    "acronym": "CDT-CB",
-   "type": "Core",
+   "type": "Specialty",
    "url": "https://nbccert.org/certificants/certified-dental-technician/index.cfm",
    "org_url": "https://nbccert.org/homepage.cfm"
   },
   {
    "name": "Certified Dental Technician - Crown and Bridge",
    "org": "National Board for Certification in Dental Laboratory Technology",
-   "id": "14161-C",
+   "id": "14161-A",
    "acronym": "CDT-CB",
-   "type": "Specialty",
+   "type": "Core",
    "url": "https://nbccert.org/certificants/certified-dental-technician/index.cfm",
    "org_url": "https://nbccert.org/homepage.cfm"
   },
@@ -12028,18 +12028,18 @@
   {
    "name": "Certified Designated Infection Control Officer",
    "org": "International Board of Specialty Certification",
-   "id": "14294-B",
+   "id": "14294-C",
    "acronym": "DICO-C",
-   "type": "Advanced",
+   "type": "Specialty",
    "url": "https://www.ibscertifications.org/roles/designated-infection-control-officer",
    "org_url": "https://www.ibscertifications.org/"
   },
   {
    "name": "Certified Designated Infection Control Officer",
    "org": "International Board of Specialty Certification",
-   "id": "14294-C",
+   "id": "14294-B",
    "acronym": "DICO-C",
-   "type": "Specialty",
+   "type": "Advanced",
    "url": "https://www.ibscertifications.org/roles/designated-infection-control-officer",
    "org_url": "https://www.ibscertifications.org/"
   },
@@ -13828,7 +13828,7 @@
   {
    "name": "Certified Functional Continuity Professional",
    "org": "Disaster Recovery Institute International",
-   "id": "6335-B",
+   "id": "11929-B",
    "acronym": "CFCP",
    "type": "Advanced",
    "url": "https://drii.org/certification/cfcp",
@@ -13837,7 +13837,7 @@
   {
    "name": "Certified Functional Continuity Professional",
    "org": "Disaster Recovery Institute International",
-   "id": "11929-B",
+   "id": "6335-B",
    "acronym": "CFCP",
    "type": "Advanced",
    "url": "https://drii.org/certification/cfcp",
@@ -15567,15 +15567,6 @@
    "org_url": "https://iapp.org/"
   },
   {
-   "name": "Certified Information Privacy Professional",
-   "org": "International Association of Privacy Professionals",
-   "id": "10737-D",
-   "acronym": "CIPP/G",
-   "type": "Product/Equipment",
-   "url": "https://iapp.org/certify/cipp/",
-   "org_url": "https://iapp.org/"
-  },
-  {
    "name": "Certified Information Privacy Professional - Asia",
    "org": "International Association of Privacy Professionals",
    "id": "13933-D",
@@ -16039,19 +16030,19 @@
   {
    "name": "Certified Internet of Things Practitioner",
    "org": "CertNexus",
-   "id": "12168-B",
-   "acronym": "CIoT",
-   "type": "Advanced",
-   "url": "https://certnexus.com/ciotp-readiness/",
+   "id": "15070-A",
+   "acronym": "CIoTP",
+   "type": "Core",
+   "url": "https://certnexus.com/certified-internet-of-things-practitioner-ciotp/",
    "org_url": "https://certnexus.com/"
   },
   {
    "name": "Certified Internet of Things Practitioner",
    "org": "CertNexus",
-   "id": "15070-A",
-   "acronym": "CIoTP",
-   "type": "Core",
-   "url": "https://certnexus.com/certified-internet-of-things-practitioner-ciotp/",
+   "id": "12168-B",
+   "acronym": "CIoT",
+   "type": "Advanced",
+   "url": "https://certnexus.com/ciotp-readiness/",
    "org_url": "https://certnexus.com/"
   },
   {
@@ -17053,19 +17044,19 @@
   {
    "name": "Certified Manufacturing Specialist",
    "org": "Association of Technology, Management, and Applied Engineering",
-   "id": "8182-C",
+   "id": "8181-C",
    "acronym": "CMS",
    "type": "Specialty",
-   "url": "https://atmae.org/certification/certified-manufacturing-specialist-cms/",
+   "url": "https://atmae.org/certification/",
    "org_url": "https://atmae.org/"
   },
   {
    "name": "Certified Manufacturing Specialist",
    "org": "Association of Technology, Management, and Applied Engineering",
-   "id": "8181-C",
+   "id": "8182-C",
    "acronym": "CMS",
    "type": "Specialty",
-   "url": "https://atmae.org/certification/",
+   "url": "https://atmae.org/certification/certified-manufacturing-specialist-cms/",
    "org_url": "https://atmae.org/"
   },
   {
@@ -17423,7 +17414,7 @@
   {
    "name": "Certified Medical Device Management Systems Auditor",
    "org": "Exemplar Global",
-   "id": "12102-C",
+   "id": "12088-C",
    "type": "Specialty",
    "url": "https://exemplarglobal.org/certification/medical-device-management-systems-auditor/",
    "org_url": "https://exemplarglobal.org/"
@@ -17431,7 +17422,7 @@
   {
    "name": "Certified Medical Device Management Systems Auditor",
    "org": "Exemplar Global",
-   "id": "12088-C",
+   "id": "12102-C",
    "type": "Specialty",
    "url": "https://exemplarglobal.org/certification/medical-device-management-systems-auditor/",
    "org_url": "https://exemplarglobal.org/"
@@ -17740,7 +17731,7 @@
   {
    "name": "Certified Mortgage Examiner",
    "org": "Conference of State Bank Supervisors",
-   "id": "8797-A",
+   "id": "8801-A",
    "acronym": "CME",
    "type": "Core",
    "url": "https://www.csbs.org/certified-mortgage-examiner-cme",
@@ -17749,7 +17740,7 @@
   {
    "name": "Certified Mortgage Examiner",
    "org": "Conference of State Bank Supervisors",
-   "id": "8801-A",
+   "id": "8797-A",
    "acronym": "CME",
    "type": "Core",
    "url": "https://www.csbs.org/certified-mortgage-examiner-cme",
@@ -23941,18 +23932,18 @@
   {
    "name": "Certified Wireless Specialist",
    "org": "Certified Wireless Network Professional",
-   "id": "3765-B",
+   "id": "11835-A",
    "acronym": "CWS",
-   "type": "Advanced",
+   "type": "Core",
    "url": "https://www.cwnp.com/certifications/cws-101/",
    "org_url": "https://www.cwnp.com/"
   },
   {
    "name": "Certified Wireless Specialist",
    "org": "Certified Wireless Network Professional",
-   "id": "11835-A",
+   "id": "3765-B",
    "acronym": "CWS",
-   "type": "Core",
+   "type": "Advanced",
    "url": "https://www.cwnp.com/certifications/cws-101/",
    "org_url": "https://www.cwnp.com/"
   },
@@ -25006,16 +24997,16 @@
   {
    "name": "Clinical Social Work Licensing Examination",
    "org": "Association of Social Work Boards (ASWB)",
-   "id": "14056-B",
-   "type": "Advanced",
+   "id": "14056-C",
+   "type": "Specialty",
    "url": "https://www.aswb.org/exam/",
    "org_url": "https://www.aswb.org/"
   },
   {
    "name": "Clinical Social Work Licensing Examination",
    "org": "Association of Social Work Boards (ASWB)",
-   "id": "14056-C",
-   "type": "Specialty",
+   "id": "14056-B",
+   "type": "Advanced",
    "url": "https://www.aswb.org/exam/",
    "org_url": "https://www.aswb.org/"
   },
@@ -25438,14 +25429,6 @@
   {
    "name": "Combustion Appliance Zone Certification",
    "org": "ESCO Group",
-   "id": "12135-A",
-   "type": "Core",
-   "url": "https://www.escogroup.org/certifications/employmentready.aspx",
-   "org_url": "https://www.escogroup.org/hvac/"
-  },
-  {
-   "name": "Combustion Appliance Zone Certification",
-   "org": "ESCO Group",
    "id": "12057-A",
    "type": "Core",
    "url": "https://www.escogroup.org/certifications/employmentready.aspx",
@@ -25455,6 +25438,14 @@
    "name": "Combustion Appliance Zone Certification",
    "org": "ESCO Group",
    "id": "12134-A",
+   "type": "Core",
+   "url": "https://www.escogroup.org/certifications/employmentready.aspx",
+   "org_url": "https://www.escogroup.org/hvac/"
+  },
+  {
+   "name": "Combustion Appliance Zone Certification",
+   "org": "ESCO Group",
+   "id": "12135-A",
    "type": "Core",
    "url": "https://www.escogroup.org/certifications/employmentready.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
@@ -26334,18 +26325,18 @@
   {
    "name": "Corrections Certification Program",
    "org": "American Correctional Association",
-   "id": "11514-B",
+   "id": "11515-A",
    "acronym": "CCP",
-   "type": "Advanced",
+   "type": "Core",
    "url": "https://www.aca.org/certifications-and-accreditation/correctional-certification",
    "org_url": "https://www.aca.org/"
   },
   {
    "name": "Corrections Certification Program",
    "org": "American Correctional Association",
-   "id": "11515-A",
+   "id": "11514-B",
    "acronym": "CCP",
-   "type": "Core",
+   "type": "Advanced",
    "url": "https://www.aca.org/certifications-and-accreditation/correctional-certification",
    "org_url": "https://www.aca.org/"
   },
@@ -26820,16 +26811,16 @@
   {
    "name": "Credentialed Financial Advisor",
    "org": "Financial Advisor Training Institute",
-   "id": "14358-A",
-   "type": "Core",
+   "id": "14358-D",
+   "type": "Product/Equipment",
    "url": "https://financialadvisortraininginstitute.org/enrollment/",
    "org_url": "https://financialadvisortraininginstitute.org/"
   },
   {
    "name": "Credentialed Financial Advisor",
    "org": "Financial Advisor Training Institute",
-   "id": "14358-D",
-   "type": "Product/Equipment",
+   "id": "14358-A",
+   "type": "Core",
    "url": "https://financialadvisortraininginstitute.org/enrollment/",
    "org_url": "https://financialadvisortraininginstitute.org/"
   },
@@ -28245,16 +28236,16 @@
   {
    "name": "DoDEA Certification",
    "org": "Department of Defense Education Activity",
-   "id": "14081-B",
-   "type": "Advanced",
+   "id": "14081-A",
+   "type": "Core",
    "url": "https://www.dodea.edu/offices/human-resources/work-dodea/licensure",
    "org_url": "https://www.dodea.edu/"
   },
   {
    "name": "DoDEA Certification",
    "org": "Department of Defense Education Activity",
-   "id": "14081-A",
-   "type": "Core",
+   "id": "14081-B",
+   "type": "Advanced",
    "url": "https://www.dodea.edu/offices/human-resources/work-dodea/licensure",
    "org_url": "https://www.dodea.edu/"
   },
@@ -29371,18 +29362,18 @@
   {
    "name": "EPDM Systems Installer",
    "org": "National Roofing Contractors Association",
-   "id": "14219-A",
+   "id": "14219-C",
    "acronym": "EPDMSI",
-   "type": "Core",
+   "type": "Specialty",
    "url": "https://www.nrca.net/procertification/certifications/EPDM-systems-installer",
    "org_url": "https://www.nrca.net/"
   },
   {
    "name": "EPDM Systems Installer",
    "org": "National Roofing Contractors Association",
-   "id": "14219-C",
+   "id": "14219-A",
    "acronym": "EPDMSI",
-   "type": "Specialty",
+   "type": "Core",
    "url": "https://www.nrca.net/procertification/certifications/EPDM-systems-installer",
    "org_url": "https://www.nrca.net/"
   },
@@ -29575,16 +29566,16 @@
   {
    "name": "Examination in Marital and Family Therapy",
    "org": "Association of Marital & Family Therapy Regulatory Boards",
-   "id": "14052-B",
-   "type": "Advanced",
+   "id": "14052-C",
+   "type": "Specialty",
    "url": "https://amftrb.org/exam-info/",
    "org_url": "https://amftrb.org/"
   },
   {
    "name": "Examination in Marital and Family Therapy",
    "org": "Association of Marital & Family Therapy Regulatory Boards",
-   "id": "14052-C",
-   "type": "Specialty",
+   "id": "14052-B",
+   "type": "Advanced",
    "url": "https://amftrb.org/exam-info/",
    "org_url": "https://amftrb.org/"
   },
@@ -32805,18 +32796,18 @@
   {
    "name": "Holistic Nutritionist Certification",
    "org": "American Fitness Professionals and Associates",
-   "id": "10480-C",
-   "type": "Specialty",
-   "url": "https://www.afpafitness.com/product/holistic-nutrition-coach-certification/",
+   "id": "1068-A",
+   "acronym": "HNC",
+   "type": "Core",
+   "url": "https://www.afpafitness.com/product/holistic-nutritionist-certification/",
    "org_url": "https://www.afpafitness.com/"
   },
   {
    "name": "Holistic Nutritionist Certification",
    "org": "American Fitness Professionals and Associates",
-   "id": "1068-A",
-   "acronym": "HNC",
-   "type": "Core",
-   "url": "https://www.afpafitness.com/product/holistic-nutritionist-certification/",
+   "id": "10480-C",
+   "type": "Specialty",
+   "url": "https://www.afpafitness.com/product/holistic-nutrition-coach-certification/",
    "org_url": "https://www.afpafitness.com/"
   },
   {
@@ -32867,19 +32858,19 @@
   {
    "name": "Home Care Specialist - Compliance",
    "org": "Board of Medical Specialty Coding and Compliance",
-   "id": "12747-A",
+   "id": "11999-A",
    "acronym": "HCS-C",
    "type": "Core",
-   "url": "https://ahcc.decisionhealth.com/about-bmsc-credentials",
+   "url": "https://ahcc.decisionhealth.com/about-ahcc-credentials/",
    "org_url": "https://ahcc.decisionhealth.com/ahcc-blog/bmsc-physician-specialty-credentials/"
   },
   {
    "name": "Home Care Specialist - Compliance",
    "org": "Board of Medical Specialty Coding and Compliance",
-   "id": "11999-A",
+   "id": "12747-A",
    "acronym": "HCS-C",
    "type": "Core",
-   "url": "https://ahcc.decisionhealth.com/about-ahcc-credentials/",
+   "url": "https://ahcc.decisionhealth.com/about-bmsc-credentials",
    "org_url": "https://ahcc.decisionhealth.com/ahcc-blog/bmsc-physician-specialty-credentials/"
   },
   {
@@ -33228,7 +33219,7 @@
   {
    "name": "IBM Certified Administrator - Aspera High-Speed Transfer Server v4.3",
    "org": "IBM Corporation",
-   "id": "11351-D",
+   "id": "13667-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-aspera-high-speed-transfer-server-v43-C9004100",
    "org_url": "https://www.ibm.com/us-en"
@@ -33236,7 +33227,7 @@
   {
    "name": "IBM Certified Administrator - Aspera High-Speed Transfer Server v4.3",
    "org": "IBM Corporation",
-   "id": "13667-D",
+   "id": "11351-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-aspera-high-speed-transfer-server-v43-C9004100",
    "org_url": "https://www.ibm.com/us-en"
@@ -33260,7 +33251,7 @@
   {
    "name": "IBM Certified Administrator - Cloud Pak for Multicloud Management v1.3 PLUS Red Hat Certified Specialist in OpenShift Administration",
    "org": "IBM Corporation",
-   "id": "13703-D",
+   "id": "13682-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-cloud-pak-for-multicloud-management-v13-plus-red-hat-certified-specialist-in-openshift-administration-C0006620",
    "org_url": "https://www.ibm.com/us-en"
@@ -33268,7 +33259,7 @@
   {
    "name": "IBM Certified Administrator - Cloud Pak for Multicloud Management v1.3 PLUS Red Hat Certified Specialist in OpenShift Administration",
    "org": "IBM Corporation",
-   "id": "13682-D",
+   "id": "13703-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-cloud-pak-for-multicloud-management-v13-plus-red-hat-certified-specialist-in-openshift-administration-C0006620",
    "org_url": "https://www.ibm.com/us-en"
@@ -33292,7 +33283,7 @@
   {
    "name": "IBM Certified Administrator - Cloud Pak for Network Automation v2.4",
    "org": "IBM Corporation",
-   "id": "12577-D",
+   "id": "11389-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-cloud-pak-for-network-automation-v24-C9004900",
    "org_url": "https://www.ibm.com/us-en"
@@ -33300,7 +33291,7 @@
   {
    "name": "IBM Certified Administrator - Cloud Pak for Network Automation v2.4",
    "org": "IBM Corporation",
-   "id": "11389-D",
+   "id": "12577-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-cloud-pak-for-network-automation-v24-C9004900",
    "org_url": "https://www.ibm.com/us-en"
@@ -33356,7 +33347,7 @@
   {
    "name": "IBM Certified Administrator - Db2 12 for z/OS",
    "org": "IBM Corporation",
-   "id": "12572-D",
+   "id": "11395-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-db2-12-for-zos-C0005400",
    "org_url": "https://www.ibm.com/us-en"
@@ -33364,7 +33355,7 @@
   {
    "name": "IBM Certified Administrator - Db2 12 for z/OS",
    "org": "IBM Corporation",
-   "id": "11395-D",
+   "id": "12572-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-db2-12-for-zos-C0005400",
    "org_url": "https://www.ibm.com/us-en"
@@ -33412,7 +33403,7 @@
   {
    "name": "IBM Certified Administrator - Maximo Manage v8.x",
    "org": "IBM Corporation",
-   "id": "13687-D",
+   "id": "12582-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-maximo-manage-v8x-C9002600",
    "org_url": "https://www.ibm.com/us-en"
@@ -33420,7 +33411,7 @@
   {
    "name": "IBM Certified Administrator - Maximo Manage v8.x",
    "org": "IBM Corporation",
-   "id": "12582-D",
+   "id": "13687-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-administrator-maximo-manage-v8x-C9002600",
    "org_url": "https://www.ibm.com/us-en"
@@ -33643,6 +33634,14 @@
   {
    "name": "IBM Certified Business Analyst - Blueworks Live and Business Automation Workflow v18",
    "org": "IBM Corporation",
+   "id": "12550-D",
+   "type": "Product/Equipment",
+   "url": "https://www.ibm.com/training/certification/ibm-certified-business-analyst-blueworks-live-and-business-automation-workflow-v18-C0002504",
+   "org_url": "https://www.ibm.com/us-en"
+  },
+  {
+   "name": "IBM Certified Business Analyst - Blueworks Live and Business Automation Workflow v18",
+   "org": "IBM Corporation",
    "id": "12551-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-business-analyst-blueworks-live-and-business-automation-workflow-v18-C0002504",
@@ -33652,14 +33651,6 @@
    "name": "IBM Certified Business Analyst - Blueworks Live and Business Automation Workflow v18",
    "org": "IBM Corporation",
    "id": "9383-D",
-   "type": "Product/Equipment",
-   "url": "https://www.ibm.com/training/certification/ibm-certified-business-analyst-blueworks-live-and-business-automation-workflow-v18-C0002504",
-   "org_url": "https://www.ibm.com/us-en"
-  },
-  {
-   "name": "IBM Certified Business Analyst - Blueworks Live and Business Automation Workflow v18",
-   "org": "IBM Corporation",
-   "id": "12550-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-business-analyst-blueworks-live-and-business-automation-workflow-v18-C0002504",
    "org_url": "https://www.ibm.com/us-en"
@@ -33715,7 +33706,7 @@
   {
    "name": "IBM Certified Deployment Professional - Maximo Manage v8.0",
    "org": "IBM Corporation",
-   "id": "13673-D",
+   "id": "9277-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-deployment-professional-maximo-manage-v80-C4018302",
    "org_url": "https://www.ibm.com/us-en"
@@ -33723,7 +33714,7 @@
   {
    "name": "IBM Certified Deployment Professional - Maximo Manage v8.0",
    "org": "IBM Corporation",
-   "id": "9277-D",
+   "id": "13673-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-deployment-professional-maximo-manage-v80-C4018302",
    "org_url": "https://www.ibm.com/us-en"
@@ -33779,8 +33770,7 @@
   {
    "name": "IBM Certified Developer - Cloud Pak for Applications v4.1 PLUS Red Hat Certified Specialist in OpenShift Application Development",
    "org": "IBM Corporation",
-   "id": "12549-D",
-   "acronym": "C0007320",
+   "id": "13655-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-developer-cloud-pak-for-applications-v41-plus-red-hat-certified-specialist-in-openshift-application-development-C0007320",
    "org_url": "https://www.ibm.com/us-en"
@@ -33788,7 +33778,8 @@
   {
    "name": "IBM Certified Developer - Cloud Pak for Applications v4.1 PLUS Red Hat Certified Specialist in OpenShift Application Development",
    "org": "IBM Corporation",
-   "id": "13655-D",
+   "id": "12549-D",
+   "acronym": "C0007320",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-developer-cloud-pak-for-applications-v41-plus-red-hat-certified-specialist-in-openshift-application-development-C0007320",
    "org_url": "https://www.ibm.com/us-en"
@@ -33917,7 +33908,7 @@
   {
    "name": "IBM Certified Solution Architect - Cloud Pak for Business Automation v21.0.3",
    "org": "IBM Corporation",
-   "id": "12580-D",
+   "id": "13678-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-solution-architect-cloud-pak-for-business-automation-v2103-C9003400",
    "org_url": "https://www.ibm.com/us-en"
@@ -33925,7 +33916,7 @@
   {
    "name": "IBM Certified Solution Architect - Cloud Pak for Business Automation v21.0.3",
    "org": "IBM Corporation",
-   "id": "13678-D",
+   "id": "12580-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-solution-architect-cloud-pak-for-business-automation-v2103-C9003400",
    "org_url": "https://www.ibm.com/us-en"
@@ -33998,7 +33989,7 @@
   {
    "name": "IBM Certified Solution Implementer - API Connect v10.0.3",
    "org": "IBM Corporation",
-   "id": "13699-D",
+   "id": "12548-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-solution-implementer-api-connect-v1003-C0002604",
    "org_url": "https://www.ibm.com/us-en"
@@ -34006,7 +33997,7 @@
   {
    "name": "IBM Certified Solution Implementer - API Connect v10.0.3",
    "org": "IBM Corporation",
-   "id": "12548-D",
+   "id": "13699-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-solution-implementer-api-connect-v1003-C0002604",
    "org_url": "https://www.ibm.com/us-en"
@@ -34064,7 +34055,7 @@
   {
    "name": "IBM Certified Technical Advocate - Cloud v5",
    "org": "IBM Corporation",
-   "id": "13708-D",
+   "id": "13681-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-technical-advocate-cloud-v5-C9005600",
    "org_url": "https://www.ibm.com/us-en"
@@ -34080,7 +34071,7 @@
   {
    "name": "IBM Certified Technical Advocate - Cloud v5",
    "org": "IBM Corporation",
-   "id": "13681-D",
+   "id": "13708-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-technical-advocate-cloud-v5-C9005600",
    "org_url": "https://www.ibm.com/us-en"
@@ -34088,7 +34079,7 @@
   {
    "name": "IBM Certified watsonx AI Assistant Engineer v1 - Professional",
    "org": "IBM Corporation",
-   "id": "12562-D",
+   "id": "12564-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-watsonx-ai-assistant-engineer-v1-professional-C9006900",
    "org_url": "https://www.ibm.com/us-en"
@@ -34096,7 +34087,7 @@
   {
    "name": "IBM Certified watsonx AI Assistant Engineer v1 - Professional",
    "org": "IBM Corporation",
-   "id": "12564-D",
+   "id": "12562-D",
    "type": "Product/Equipment",
    "url": "https://www.ibm.com/training/certification/ibm-certified-watsonx-ai-assistant-engineer-v1-professional-C9006900",
    "org_url": "https://www.ibm.com/us-en"
@@ -34449,7 +34440,7 @@
   {
    "name": "Industrial Carpenter",
    "org": "National Center for Construction Education and Research",
-   "id": "14747-A",
+   "id": "14746-A",
    "type": "Core",
    "url": "https://www.nccer.org/media/2023/03/indutrial-carpenter-assessment.pdf",
    "org_url": "https://www.nccer.org"
@@ -34457,7 +34448,7 @@
   {
    "name": "Industrial Carpenter",
    "org": "National Center for Construction Education and Research",
-   "id": "14746-A",
+   "id": "14747-A",
    "type": "Core",
    "url": "https://www.nccer.org/media/2023/03/indutrial-carpenter-assessment.pdf",
    "org_url": "https://www.nccer.org"
@@ -37252,19 +37243,19 @@
   {
    "name": "ManageFirst Professional",
    "org": "National Restaurant Association Educational Foundation",
-   "id": "7863-A",
+   "id": "1748-B",
    "acronym": "MFP",
-   "type": "Core",
-   "url": "https://managefirst.restaurant.org/",
+   "type": "Advanced",
+   "url": "https://managefirst.restaurant.org/student/credential.aspx",
    "org_url": "https://chooserestaurants.org/"
   },
   {
    "name": "ManageFirst Professional",
    "org": "National Restaurant Association Educational Foundation",
-   "id": "1748-B",
+   "id": "7863-A",
    "acronym": "MFP",
-   "type": "Advanced",
-   "url": "https://managefirst.restaurant.org/student/credential.aspx",
+   "type": "Core",
+   "url": "https://managefirst.restaurant.org/",
    "org_url": "https://chooserestaurants.org/"
   },
   {
@@ -38027,16 +38018,16 @@
   {
    "name": "Master Specialist Hands On Calculating Indoor Air CFM",
    "org": "ESCO Group",
-   "id": "12063-A",
-   "type": "Core",
+   "id": "12284-B",
+   "type": "Advanced",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
   {
    "name": "Master Specialist Hands On Calculating Indoor Air CFM",
    "org": "ESCO Group",
-   "id": "12284-B",
-   "type": "Advanced",
+   "id": "12063-A",
+   "type": "Core",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
@@ -38099,23 +38090,15 @@
   {
    "name": "Master Specialist Hands On Duct Leak Testing",
    "org": "ESCO Group",
-   "id": "12061-A",
-   "type": "Core",
-   "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
-   "org_url": "https://www.escogroup.org/hvac/"
-  },
-  {
-   "name": "Master Specialist Hands On Duct Leak Testing",
-   "org": "ESCO Group",
    "id": "12273-B",
    "type": "Advanced",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
   {
-   "name": "Master Specialist Hands On Economizer Set-up and Commissioning",
+   "name": "Master Specialist Hands On Duct Leak Testing",
    "org": "ESCO Group",
-   "id": "12065-A",
+   "id": "12061-A",
    "type": "Core",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
@@ -38129,9 +38112,9 @@
    "org_url": "https://www.escogroup.org/hvac/"
   },
   {
-   "name": "Master Specialist Hands On Envelope Leak Testing",
+   "name": "Master Specialist Hands On Economizer Set-up and Commissioning",
    "org": "ESCO Group",
-   "id": "12060-A",
+   "id": "12065-A",
    "type": "Core",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
@@ -38145,10 +38128,10 @@
    "org_url": "https://www.escogroup.org/hvac/"
   },
   {
-   "name": "Master Specialist Hands On Fault Detection & Diagnostics for Packaged DX Units Set-up and Commissioning",
+   "name": "Master Specialist Hands On Envelope Leak Testing",
    "org": "ESCO Group",
-   "id": "12296-B",
-   "type": "Advanced",
+   "id": "12060-A",
+   "type": "Core",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
@@ -38157,6 +38140,14 @@
    "org": "ESCO Group",
    "id": "12075-A",
    "type": "Core",
+   "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
+   "org_url": "https://www.escogroup.org/hvac/"
+  },
+  {
+   "name": "Master Specialist Hands On Fault Detection & Diagnostics for Packaged DX Units Set-up and Commissioning",
+   "org": "ESCO Group",
+   "id": "12296-B",
+   "type": "Advanced",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
@@ -38195,24 +38186,16 @@
   {
    "name": "Master Specialist Hands On Outdoor Air Set-up and Commissioning",
    "org": "ESCO Group",
-   "id": "12069-A",
-   "type": "Core",
-   "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
-   "org_url": "https://www.escogroup.org/hvac/"
-  },
-  {
-   "name": "Master Specialist Hands On Outdoor Air Set-up and Commissioning",
-   "org": "ESCO Group",
    "id": "12290-B",
    "type": "Advanced",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
   {
-   "name": "Master Specialist Hands On Residential Air Conditioning",
+   "name": "Master Specialist Hands On Outdoor Air Set-up and Commissioning",
    "org": "ESCO Group",
-   "id": "12149-B",
-   "type": "Advanced",
+   "id": "12069-A",
+   "type": "Core",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
@@ -38221,6 +38204,14 @@
    "org": "ESCO Group",
    "id": "5517-A",
    "type": "Core",
+   "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
+   "org_url": "https://www.escogroup.org/hvac/"
+  },
+  {
+   "name": "Master Specialist Hands On Residential Air Conditioning",
+   "org": "ESCO Group",
+   "id": "12149-B",
+   "type": "Advanced",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
@@ -38235,7 +38226,7 @@
   {
    "name": "Master Specialist Hands On Residential Heat Gain and Heat Loss Calculation",
    "org": "ESCO Group",
-   "id": "12280-A",
+   "id": "12062-A",
    "type": "Core",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
@@ -38243,7 +38234,7 @@
   {
    "name": "Master Specialist Hands On Residential Heat Gain and Heat Loss Calculation",
    "org": "ESCO Group",
-   "id": "12062-A",
+   "id": "12280-A",
    "type": "Core",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
@@ -38267,24 +38258,16 @@
   {
    "name": "Master Specialist Hands On Supply Water Temperature Reset Controls Set-up and Testing",
    "org": "ESCO Group",
-   "id": "12074-A",
-   "type": "Core",
-   "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
-   "org_url": "https://www.escogroup.org/hvac/"
-  },
-  {
-   "name": "Master Specialist Hands On Supply Water Temperature Reset Controls Set-up and Testing",
-   "org": "ESCO Group",
    "id": "12295-B",
    "type": "Advanced",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
   {
-   "name": "Master Specialist Hands On System Charging and Start-up",
+   "name": "Master Specialist Hands On Supply Water Temperature Reset Controls Set-up and Testing",
    "org": "ESCO Group",
-   "id": "12285-B",
-   "type": "Advanced",
+   "id": "12074-A",
+   "type": "Core",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
@@ -38293,6 +38276,14 @@
    "org": "ESCO Group",
    "id": "12064-A",
    "type": "Core",
+   "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
+   "org_url": "https://www.escogroup.org/hvac/"
+  },
+  {
+   "name": "Master Specialist Hands On System Charging and Start-up",
+   "org": "ESCO Group",
+   "id": "12285-B",
+   "type": "Advanced",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
@@ -38315,16 +38306,16 @@
   {
    "name": "Master Specialist Hands On Water Valve Leakage Testing",
    "org": "ESCO Group",
-   "id": "12073-A",
-   "type": "Core",
+   "id": "12294-B",
+   "type": "Advanced",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
   {
    "name": "Master Specialist Hands On Water Valve Leakage Testing",
    "org": "ESCO Group",
-   "id": "12294-B",
-   "type": "Advanced",
+   "id": "12073-A",
+   "type": "Core",
    "url": "https://www.escogroup.org/certifications/masterspecialist.aspx",
    "org_url": "https://www.escogroup.org/hvac/"
   },
@@ -38432,15 +38423,6 @@
   {
    "name": "Masters Level - Registered Addiction Specialist",
    "org": "The Breining Institute",
-   "id": "14069-B",
-   "acronym": "M-RAS",
-   "type": "Advanced",
-   "url": "https://wp.breining.edu/index.php/professional-certification/registered-addiction-specialist-ras-career-track/",
-   "org_url": "https://www.breining.edu/"
-  },
-  {
-   "name": "Masters Level - Registered Addiction Specialist",
-   "org": "The Breining Institute",
    "id": "14069-C",
    "acronym": "M-RAS",
    "type": "Specialty",
@@ -38448,18 +38430,27 @@
    "org_url": "https://www.breining.edu/"
   },
   {
-   "name": "Masters Social Work Licensing Examination",
-   "org": "Association of Social Work Boards (ASWB)",
-   "id": "14057-B",
+   "name": "Masters Level - Registered Addiction Specialist",
+   "org": "The Breining Institute",
+   "id": "14069-B",
+   "acronym": "M-RAS",
    "type": "Advanced",
-   "url": "https://www.aswb.org/exam/",
-   "org_url": "https://www.aswb.org/"
+   "url": "https://wp.breining.edu/index.php/professional-certification/registered-addiction-specialist-ras-career-track/",
+   "org_url": "https://www.breining.edu/"
   },
   {
    "name": "Masters Social Work Licensing Examination",
    "org": "Association of Social Work Boards (ASWB)",
    "id": "14057-C",
    "type": "Specialty",
+   "url": "https://www.aswb.org/exam/",
+   "org_url": "https://www.aswb.org/"
+  },
+  {
+   "name": "Masters Social Work Licensing Examination",
+   "org": "Association of Social Work Boards (ASWB)",
+   "id": "14057-B",
+   "type": "Advanced",
    "url": "https://www.aswb.org/exam/",
    "org_url": "https://www.aswb.org/"
   },
@@ -39250,7 +39241,7 @@
   {
    "name": "Microsoft 365 Certified: Teams Application Developer Associate",
    "org": "Microsoft Corporation",
-   "id": "14137-D",
+   "id": "12770-D",
    "type": "Product/Equipment",
    "url": "https://learn.microsoft.com/en-us/credentials/certifications/m365-teams-application-developer-associate/",
    "org_url": "https://www.microsoft.com/en-us/"
@@ -39258,7 +39249,7 @@
   {
    "name": "Microsoft 365 Certified: Teams Application Developer Associate",
    "org": "Microsoft Corporation",
-   "id": "12770-D",
+   "id": "14137-D",
    "type": "Product/Equipment",
    "url": "https://learn.microsoft.com/en-us/credentials/certifications/m365-teams-application-developer-associate/",
    "org_url": "https://www.microsoft.com/en-us/"
@@ -39520,7 +39511,7 @@
   {
    "name": "Microsoft Certified: Dynamics 365: Finance and Operations Apps Developer Associate",
    "org": "Microsoft Corporation",
-   "id": "14143-D",
+   "id": "12756-D",
    "type": "Product/Equipment",
    "url": "https://learn.microsoft.com/en-us/credentials/certifications/d365-finance-and-operations-apps-developer-associate/",
    "org_url": "https://www.microsoft.com/en-us/"
@@ -39528,7 +39519,7 @@
   {
    "name": "Microsoft Certified: Dynamics 365: Finance and Operations Apps Developer Associate",
    "org": "Microsoft Corporation",
-   "id": "12756-D",
+   "id": "14143-D",
    "type": "Product/Equipment",
    "url": "https://learn.microsoft.com/en-us/credentials/certifications/d365-finance-and-operations-apps-developer-associate/",
    "org_url": "https://www.microsoft.com/en-us/"
@@ -41666,7 +41657,7 @@
   {
    "name": "NetApp Certified Hybrid Cloud Administrator",
    "org": "Network Appliance, Inc.",
-   "id": "12014-D",
+   "id": "12013-D",
    "type": "Product/Equipment",
    "url": "https://www.netapp.com/support-and-training/netapp-learning-services/certifications/cloud-administrator/",
    "org_url": "https://www.netapp.com/"
@@ -41674,7 +41665,7 @@
   {
    "name": "NetApp Certified Hybrid Cloud Administrator",
    "org": "Network Appliance, Inc.",
-   "id": "12013-D",
+   "id": "12014-D",
    "type": "Product/Equipment",
    "url": "https://www.netapp.com/support-and-training/netapp-learning-services/certifications/cloud-administrator/",
    "org_url": "https://www.netapp.com/"
@@ -43312,7 +43303,7 @@
   {
    "name": "Oracle Risk Management Cloud 2024 Implementation Professional",
    "org": "Oracle Corporation",
-   "id": "12656-D",
+   "id": "12459-D",
    "type": "Product/Equipment",
    "url": "https://www.oracle.com/education/certification/#erp",
    "org_url": "https://www.oracle.com/"
@@ -43320,7 +43311,7 @@
   {
    "name": "Oracle Risk Management Cloud 2024 Implementation Professional",
    "org": "Oracle Corporation",
-   "id": "12459-D",
+   "id": "12656-D",
    "type": "Product/Equipment",
    "url": "https://www.oracle.com/education/certification/#erp",
    "org_url": "https://www.oracle.com/"
@@ -45702,14 +45693,6 @@
    "org_url": "https://www.asaporg.com/"
   },
   {
-   "name": "Professional Certification in Customer Service and Sales",
-   "org": "National Retail Federation Foundation",
-   "id": "5263-A",
-   "type": "Core",
-   "url": "https://nrffoundation.org/rise-up/credentials/retail-industry-fundamentals",
-   "org_url": "https://nrf.com"
-  },
-  {
    "name": "Professional Certification Program",
    "org": "National Association of County Collectors, Treasurers and Finance Officers",
    "id": "14151-A",
@@ -46877,18 +46860,18 @@
   {
    "name": "Radon Mitigation Specialist",
    "org": "National Radon Proficiency Program",
-   "id": "14345-D",
+   "id": "14345-A",
    "acronym": "RMS",
-   "type": "Product/Equipment",
+   "type": "Core",
    "url": "https://nrpp.info/certification/types-of-certification/",
    "org_url": "https://nrpp.info/"
   },
   {
    "name": "Radon Mitigation Specialist",
    "org": "National Radon Proficiency Program",
-   "id": "14345-A",
+   "id": "14345-D",
    "acronym": "RMS",
-   "type": "Core",
+   "type": "Product/Equipment",
    "url": "https://nrpp.info/certification/types-of-certification/",
    "org_url": "https://nrpp.info/"
   },
@@ -48400,16 +48383,16 @@
   {
    "name": "Residential HVAC  NC3 Certifications - Airflow",
    "org": "Trane",
-   "id": "14502-D",
-   "type": "Product/Equipment",
+   "id": "14501-A",
+   "type": "Core",
    "url": "https://www.nc3.net/partner-trane/",
    "org_url": "https://www.trane.com/index.html"
   },
   {
    "name": "Residential HVAC  NC3 Certifications - Airflow",
    "org": "Trane",
-   "id": "14501-A",
-   "type": "Core",
+   "id": "14502-D",
+   "type": "Product/Equipment",
    "url": "https://www.nc3.net/partner-trane/",
    "org_url": "https://www.trane.com/index.html"
   },
@@ -48835,15 +48818,6 @@
   {
    "name": "Rocheston Certified Cybersecurity Engineer - Level 1",
    "org": "Rocheston",
-   "id": "15025-A",
-   "acronym": "RCCE",
-   "type": "Core",
-   "url": "https://www.rocheston.com/training/extremehacking/",
-   "org_url": "https://rocheston.com/"
-  },
-  {
-   "name": "Rocheston Certified Cybersecurity Engineer - Level 1",
-   "org": "Rocheston",
    "id": "15088-A",
    "acronym": "RCCE-L2",
    "type": "Core",
@@ -48851,12 +48825,13 @@
    "org_url": "https://rocheston.com/"
   },
   {
-   "name": "Roofing Foreman - Asphalt Shingle Systems",
-   "org": "National Roofing Contractors Association",
-   "id": "14221-B",
-   "type": "Advanced",
-   "url": "https://nrca.net/procertification/certifications/for-roofing-foreman",
-   "org_url": "https://www.nrca.net/"
+   "name": "Rocheston Certified Cybersecurity Engineer - Level 1",
+   "org": "Rocheston",
+   "id": "15025-A",
+   "acronym": "RCCE",
+   "type": "Core",
+   "url": "https://www.rocheston.com/training/extremehacking/",
+   "org_url": "https://rocheston.com/"
   },
   {
    "name": "Roofing Foreman - Asphalt Shingle Systems",
@@ -48867,11 +48842,11 @@
    "org_url": "https://www.nrca.net/"
   },
   {
-   "name": "Roofing Foreman - EPDM Systems",
+   "name": "Roofing Foreman - Asphalt Shingle Systems",
    "org": "National Roofing Contractors Association",
-   "id": "14222-C",
-   "type": "Specialty",
-   "url": "https://www.nrca.net/procertification/certifications/for-roofing-foreman",
+   "id": "14221-B",
+   "type": "Advanced",
+   "url": "https://nrca.net/procertification/certifications/for-roofing-foreman",
    "org_url": "https://www.nrca.net/"
   },
   {
@@ -48879,6 +48854,14 @@
    "org": "National Roofing Contractors Association",
    "id": "14222-B",
    "type": "Advanced",
+   "url": "https://www.nrca.net/procertification/certifications/for-roofing-foreman",
+   "org_url": "https://www.nrca.net/"
+  },
+  {
+   "name": "Roofing Foreman - EPDM Systems",
+   "org": "National Roofing Contractors Association",
+   "id": "14222-C",
+   "type": "Specialty",
    "url": "https://www.nrca.net/procertification/certifications/for-roofing-foreman",
    "org_url": "https://www.nrca.net/"
   },
@@ -49335,7 +49318,7 @@
   {
    "name": "SAP Certified Associate - Data Engineer - Data Fabric",
    "org": "SAP America, Inc.",
-   "id": "12113-D",
+   "id": "11600-D",
    "acronym": "C_BW4H",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-reporting-modelling-and-data-acquisition-with-sap-bw-4hana",
@@ -49353,7 +49336,7 @@
   {
    "name": "SAP Certified Associate - Data Engineer - Data Fabric",
    "org": "SAP America, Inc.",
-   "id": "11600-D",
+   "id": "12113-D",
    "acronym": "C_BW4H",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-reporting-modelling-and-data-acquisition-with-sap-bw-4hana",
@@ -49443,7 +49426,7 @@
   {
    "name": "SAP Certified Associate - Implementation Consultant - SAP Ariba Supplier Management",
    "org": "SAP America, Inc.",
-   "id": "10239-D",
+   "id": "13070-D",
    "acronym": "C_ARSUM",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-ariba-supplier-management",
@@ -49452,7 +49435,7 @@
   {
    "name": "SAP Certified Associate - Implementation Consultant - SAP Ariba Supplier Management",
    "org": "SAP America, Inc.",
-   "id": "13070-D",
+   "id": "10239-D",
    "acronym": "C_ARSUM",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-ariba-supplier-management",
@@ -49515,8 +49498,8 @@
   {
    "name": "SAP Certified Associate - Implementation Consultant - SAP Sales Cloud Version 2",
    "org": "SAP America, Inc.",
-   "id": "13094-D",
-   "acronym": "C_C4H47_2503",
+   "id": "13089-D",
+   "acronym": "C_C4H47",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-implementation-consultant-sap-sales-cloud-version-2",
    "org_url": "https://www.sap.com/index.html"
@@ -49524,8 +49507,8 @@
   {
    "name": "SAP Certified Associate - Implementation Consultant - SAP Sales Cloud Version 2",
    "org": "SAP America, Inc.",
-   "id": "13089-D",
-   "acronym": "C_C4H47",
+   "id": "13094-D",
+   "acronym": "C_C4H47_2503",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-implementation-consultant-sap-sales-cloud-version-2",
    "org_url": "https://www.sap.com/index.html"
@@ -49587,8 +49570,8 @@
   {
    "name": "SAP Certified Associate - Implementation Consultant - SAP SuccessFactors Recruiting: Candidate Experience",
    "org": "SAP America, Inc.",
-   "id": "13109-D",
-   "acronym": "THR84",
+   "id": "13108-D",
+   "acronym": "C_THR84_2411",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-successfactors-recruiting-candidate-experience",
    "org_url": "https://www.sap.com/index.html"
@@ -49596,8 +49579,8 @@
   {
    "name": "SAP Certified Associate - Implementation Consultant - SAP SuccessFactors Recruiting: Candidate Experience",
    "org": "SAP America, Inc.",
-   "id": "13108-D",
-   "acronym": "C_THR84_2411",
+   "id": "13109-D",
+   "acronym": "THR84",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-successfactors-recruiting-candidate-experience",
    "org_url": "https://www.sap.com/index.html"
@@ -49731,6 +49714,15 @@
   {
    "name": "SAP Certified Associate - SAP S/4HANA Asset Management",
    "org": "SAP America, Inc.",
+   "id": "13098-D",
+   "acronym": "C_S43",
+   "type": "Product/Equipment",
+   "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-s-4hana-asset-management",
+   "org_url": "https://www.sap.com/index.html"
+  },
+  {
+   "name": "SAP Certified Associate - SAP S/4HANA Asset Management",
+   "org": "SAP America, Inc.",
    "id": "13076-D",
    "acronym": "C_S43",
    "type": "Product/Equipment",
@@ -49749,25 +49741,16 @@
   {
    "name": "SAP Certified Associate - SAP S/4HANA Asset Management",
    "org": "SAP America, Inc.",
-   "id": "12192-D",
-   "acronym": "C_S43",
-   "type": "Product/Equipment",
-   "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-s-4hana-asset-management",
-   "org_url": "https://www.sap.com/index.html"
-  },
-  {
-   "name": "SAP Certified Associate - SAP S/4HANA Asset Management",
-   "org": "SAP America, Inc.",
-   "id": "13098-D",
-   "acronym": "C_S43",
-   "type": "Product/Equipment",
-   "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-s-4hana-asset-management",
-   "org_url": "https://www.sap.com/index.html"
-  },
-  {
-   "name": "SAP Certified Associate - SAP S/4HANA Asset Management",
-   "org": "SAP America, Inc.",
    "id": "13120-D",
+   "acronym": "C_S43",
+   "type": "Product/Equipment",
+   "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-s-4hana-asset-management",
+   "org_url": "https://www.sap.com/index.html"
+  },
+  {
+   "name": "SAP Certified Associate - SAP S/4HANA Asset Management",
+   "org": "SAP America, Inc.",
+   "id": "12192-D",
    "acronym": "C_S43",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-s-4hana-asset-management",
@@ -49821,6 +49804,15 @@
   {
    "name": "SAP Certified Associate - SAP S/4HANA for Management Accounting Associates",
    "org": "SAP America, Inc.",
+   "id": "13134-D",
+   "acronym": "C_TS4CO",
+   "type": "Product/Equipment",
+   "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-s-4hana-for-management-accounting-associates",
+   "org_url": "https://www.sap.com/index.html"
+  },
+  {
+   "name": "SAP Certified Associate - SAP S/4HANA for Management Accounting Associates",
+   "org": "SAP America, Inc.",
    "id": "13135-D",
    "acronym": "C_TS4CO",
    "type": "Product/Equipment",
@@ -49831,15 +49823,6 @@
    "name": "SAP Certified Associate - SAP S/4HANA for Management Accounting Associates",
    "org": "SAP America, Inc.",
    "id": "13133-D",
-   "acronym": "C_TS4CO",
-   "type": "Product/Equipment",
-   "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-s-4hana-for-management-accounting-associates",
-   "org_url": "https://www.sap.com/index.html"
-  },
-  {
-   "name": "SAP Certified Associate - SAP S/4HANA for Management Accounting Associates",
-   "org": "SAP America, Inc.",
-   "id": "13134-D",
    "acronym": "C_TS4CO",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-s-4hana-for-management-accounting-associates",
@@ -49938,7 +49921,7 @@
   {
    "name": "SAP Certified Associate -Implementation Consultant - SAP SuccessFactors Onboarding",
    "org": "SAP America, Inc.",
-   "id": "12183-D",
+   "id": "13117-D",
    "acronym": "THR97",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-successfactors-onboarding",
@@ -49947,7 +49930,7 @@
   {
    "name": "SAP Certified Associate -Implementation Consultant - SAP SuccessFactors Onboarding",
    "org": "SAP America, Inc.",
-   "id": "13117-D",
+   "id": "12183-D",
    "acronym": "THR97",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-associate-sap-successfactors-onboarding",
@@ -49992,8 +49975,8 @@
   {
    "name": "SAP Certified Specialist - SAP S/4HANA Conversion and SAP System Upgrade",
    "org": "SAP America, Inc.",
-   "id": "13148-D",
-   "acronym": "E_S4HCON2023",
+   "id": "13149-D",
+   "acronym": "E_S4CON",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-specialist-sap-s-4hana-conversion-and-sap-system-upgrade",
    "org_url": "https://www.sap.com/index.html"
@@ -50001,8 +49984,8 @@
   {
    "name": "SAP Certified Specialist - SAP S/4HANA Conversion and SAP System Upgrade",
    "org": "SAP America, Inc.",
-   "id": "13149-D",
-   "acronym": "E_S4CON",
+   "id": "13148-D",
+   "acronym": "E_S4HCON2023",
    "type": "Product/Equipment",
    "url": "https://learning.sap.com/certifications/sap-certified-specialist-sap-s-4hana-conversion-and-sap-system-upgrade",
    "org_url": "https://www.sap.com/index.html"
@@ -50694,18 +50677,18 @@
   {
    "name": "Service Manager",
    "org": "OpenText",
-   "id": "12639-D",
-   "type": "Product/Equipment",
-   "url": "https://www.opentext.com/learning-services/learning-paths-service-manager#/",
-   "org_url": "https://www.opentext.com/?o=mf"
-  },
-  {
-   "name": "Service Manager",
-   "org": "OpenText",
    "id": "14417-D",
    "type": "Product/Equipment",
    "url": "https://www.opentext.com/learning-services/learning-paths-service-manager#/",
    "org_url": "https://www.opentext.com/"
+  },
+  {
+   "name": "Service Manager",
+   "org": "OpenText",
+   "id": "12639-D",
+   "type": "Product/Equipment",
+   "url": "https://www.opentext.com/learning-services/learning-paths-service-manager#/",
+   "org_url": "https://www.opentext.com/?o=mf"
   },
   {
    "name": "Service Manager for Admins Certified",
@@ -52562,16 +52545,16 @@
   {
    "name": "Subspecialty Certification in Mohs Micrographic Surgery",
    "org": "American Osteopathic Board of Dermatology",
-   "id": "14388-C",
-   "type": "Specialty",
+   "id": "14379-A",
+   "type": "Core",
    "url": "https://certification.osteopathic.org/dermatology/certification-process/mohs-micrographic-surgery/",
    "org_url": "https://certification.osteopathic.org/"
   },
   {
    "name": "Subspecialty Certification in Mohs Micrographic Surgery",
    "org": "American Osteopathic Board of Dermatology",
-   "id": "14379-A",
-   "type": "Core",
+   "id": "14388-C",
+   "type": "Specialty",
    "url": "https://certification.osteopathic.org/dermatology/certification-process/mohs-micrographic-surgery/",
    "org_url": "https://certification.osteopathic.org/"
   },
@@ -52747,6 +52730,15 @@
    "org_url": "https://www.worldcc.com/"
   },
   {
+   "name": "Supply Chain, Inventory and Logistics",
+   "org": "National Retail Federation Foundation",
+   "id": "15347-A",
+   "acronym": "SCIL",
+   "type": "Core",
+   "url": "https://nrffoundation.org/rise-up/credentials/supply-chain-inventory-logistics",
+   "org_url": "https://nrf.com"
+  },
+  {
    "name": "Supported Scaffold Competent Person Training",
    "org": "Scaffold & Access Industry Association",
    "id": "13462-A",
@@ -52828,7 +52820,7 @@
   {
    "name": "Sustainability for Automotive Career Tech Programs",
    "org": "Safety and Pollution Prevention",
-   "id": "14554-A",
+   "id": "14555-A",
    "type": "Core",
    "url": "https://www.sp2.org/sustainability-schools/",
    "org_url": "https://www.sp2.org/courses-schools/"
@@ -52836,7 +52828,7 @@
   {
    "name": "Sustainability for Automotive Career Tech Programs",
    "org": "Safety and Pollution Prevention",
-   "id": "14555-A",
+   "id": "14554-A",
    "type": "Core",
    "url": "https://www.sp2.org/sustainability-schools/",
    "org_url": "https://www.sp2.org/courses-schools/"
@@ -54831,19 +54823,19 @@
   {
    "name": "VMware Certified Professional - Cloud Management and Automation 2022",
    "org": "VMWare",
-   "id": "10960-D",
+   "id": "11312-D",
    "acronym": "VCP-CMA",
    "type": "Product/Equipment",
-   "url": "https://www.vmware.com/products/cloud-infrastructure/vmware-cloud-foundation",
+   "url": "https://www.broadcom.com/support/education/vmware/certification/vcp-cma",
    "org_url": "https://www.vmware.com/"
   },
   {
    "name": "VMware Certified Professional - Cloud Management and Automation 2022",
    "org": "VMWare",
-   "id": "11312-D",
+   "id": "10960-D",
    "acronym": "VCP-CMA",
    "type": "Product/Equipment",
-   "url": "https://www.broadcom.com/support/education/vmware/certification/vcp-cma",
+   "url": "https://www.vmware.com/products/cloud-infrastructure/vmware-cloud-foundation",
    "org_url": "https://www.vmware.com/"
   },
   {

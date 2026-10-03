@@ -1,9 +1,9 @@
 {
  "_about": "CareerOneStop authority matches for CER unified titles (kb/_match_cos_authority.py). DERIVED overlay — the CER renders these as ✓ COS badges; display requires the attribution below.",
  "_attribution": "Source: CareerOneStop (www.careeronestop.org), sponsored by the U.S. Department of Labor, Employment and Training Administration; data maintained by the Minnesota Department of Employment and Economic Development (DEED).",
- "_authority_synced_at": "2026-08-03T11:48:08Z",
- "_generated_at": "2026-08-03T11:48:18Z",
- "count": 91,
+ "_authority_synced_at": "2026-10-03T13:28:00Z",
+ "_generated_at": "2026-10-03T13:28:08Z",
+ "count": 89,
  "matches": {
   "ACE Health Coach Certification": {
    "name": "ACE Health Coach Certification",
@@ -54,20 +54,6 @@
    "org": "Amazon.com Web Services",
    "tier": "exact",
    "id": "11431-D",
-   "type": "Product/Equipment"
-  },
-  "AWS Certified SysOps Administrator": {
-   "name": "AWS Certified SysOps Administrator - Associate",
-   "org": "Amazon.com Web Services",
-   "tier": "contains",
-   "id": "11435-D",
-   "type": "Product/Equipment"
-  },
-  "AWS Certified SysOps Administrator — Associate": {
-   "name": "AWS Certified SysOps Administrator - Associate",
-   "org": "Amazon.com Web Services",
-   "tier": "exact",
-   "id": "11435-D",
    "type": "Product/Equipment"
   },
   "Administrative Professional": {
@@ -191,13 +177,6 @@
    "id": "0865-A",
    "acronym": "CDA",
    "type": "Core"
-  },
-  "Cisco Certified CyberOps Associate": {
-   "name": "Cisco Certified CyberOps Associate",
-   "org": "Cisco Systems, Inc.",
-   "tier": "exact",
-   "id": "10827-D",
-   "type": "Product/Equipment"
   },
   "Commercial Building Inspector": {
    "name": "Commercial Building Inspector",
@@ -516,7 +495,7 @@
    "id": "13751-C",
    "type": "Specialty"
   },
-  "Microsoft Certified: Azure AI Fundamentals (AI-900)": {
+  "Microsoft Certified: Azure AI Fundamentals": {
    "name": "Microsoft Certified: Azure AI Fundamentals",
    "org": "Microsoft Corporation",
    "tier": "exact",
@@ -659,6 +638,14 @@
    "tier": "exact",
    "id": "3428-B",
    "type": "Advanced"
+  },
+  "Supply Chain and Logistics": {
+   "name": "Supply Chain, Inventory and Logistics",
+   "org": "National Retail Federation Foundation",
+   "tier": "contains",
+   "id": "15347-A",
+   "acronym": "SCIL",
+   "type": "Core"
   },
   "Traffic Control Technician": {
    "name": "Traffic Control Technician",
