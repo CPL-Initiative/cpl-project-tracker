@@ -820,7 +820,11 @@ fi
 run "7l program course list (Mt. San Antonio, LVN to RN)" \
   "$(printf '{"query":"%s","session_id":"smoke-ci","history":[]}' "$PL_QUESTION")"
 answer_must_match "\b(ANAT|MICR|PSYC|ENGL|COMM|CHLD|AMLA)[ -]?C?[0-9]" "7l ⭐ names a course the LVN-to-RN program lists outside nursing, BY NUMBER (ANAT 35, MICR 22, PSYC 14 …; the TOP proxy reaches none of them)"
-answer_must_not_match -i "total(ing|s)? (of )?[0-9]+(\.[0-9]+)? units|[0-9]+(\.[0-9]+)? units (in )?total" "7l ⭐ never adds up the units — honors twins and alternatives sit side by side in the list"
+answer_must_not_match -i "total(ing|s)? (of )?[0-9]+(\.[0-9]+)? units|[0-9]+(\.[0-9]+)? units (in )?total" "7l ⭐ never adds up the units — honors twins and alternatives are listed together"
+# The S319 A/B candidate wrote that honors versions "appear side by side rather
+# than as substitutes you'd choose between": a student reading it takes ENGL
+# C1000 and ENGL C1000H both. An honors pair is one choice.
+answer_must_not_match -i "rather than (as )?(substitutes|alternatives)|(are|as) not (substitutes|alternatives)|take both (the )?honors" "7l ⭐ never tells the visitor an honors pair is two courses to take"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).

@@ -79,6 +79,13 @@ block("5. the lists render with the rules that keep them honest", () => {
   check("the list says how many it left out", /and 25 more course\(s\) the program lists/.test(ctx), ctx);
   check("the rules forbid 'required' and a unit total",
     /never call a course required and never add up the units/.test(ctx), ctx);
+  // The S319 A/B: the old rule ("honors versions and alternatives appear side by
+  // side") came back as "side by side rather than as substitutes you'd choose
+  // between", which tells a student to take ENGL C1000 and C1000H both.
+  check("the rules say a student takes one course of each honors pair",
+    /a student takes one course of each honors pair/.test(ctx), ctx);
+  check("the rules route alternatives to the catalog or a counselor",
+    /look like alternatives, say the catalog or a counselor confirms which ones count/.test(ctx), ctx);
   check("the block says catalog data and its date, never COCI",
     /catalog data, as of July 2026/.test(ctx) && !/COCI/.test(ctx), ctx);
 });

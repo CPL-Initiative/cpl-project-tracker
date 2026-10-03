@@ -3141,7 +3141,7 @@ function buildProgramsContext(
 //
 // WHAT THE BLOCK MAY SAY. The source carries no required/elective flag, so a
 // course is one the program LISTS: never "required", and never a unit total
-// (honors twins and alternatives sit side by side). A program whose list is
+// (honors twins and alternatives are listed together). A program whose list is
 // absent from the catalog data is said to be absent from the data, never to
 // have no courses. And a program whose key is not loaded yet (list_size null)
 // renders nothing about courses at all.
@@ -3216,7 +3216,8 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
   let ctx = `\n\n--- Program Course Lists: ${college} (catalog data, as of ${PROGRAM_COURSES_AS_OF}) ---\n`;
   ctx += `These are the courses each program LISTS in the state's catalog data. Rules for using them:\n`;
   ctx += `- Name the program and its award, then list its courses by number and title.\n`;
-  ctx += `- Say the program "lists" these courses. The data has no required/elective flag, so never call a course required and never add up the units: honors versions and alternatives appear side by side.\n`;
+  ctx += `- Say the program "lists" these courses. The data has no required/elective flag, so never call a course required and never add up the units.\n`;
+  ctx += `- The list holds more courses than one student takes. An honors version sits beside its standard course, and a student takes one course of each honors pair. Where other courses look like alternatives, say the catalog or a counselor confirms which ones count.\n`;
   ctx += `- Point the visitor to ${college}'s catalog or a counselor for which courses are required and in what order.\n`;
   ctx += `- If the program asked about is not below, say the catalog data shows no matching program at ${college} by that name; never say the college does not offer it.\n`;
   for (const g of shown) {
