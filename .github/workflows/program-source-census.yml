@@ -1,0 +1,89 @@
+name: Program source census
+
+# Phase 0 of the program requirements harvest
+# (docs/reference/lanes/program-requirements-harvest.md): for each college, find
+# where its program requirements live (the current catalog's address and year,
+# the platform serving it, any program-map source) and how its site answers a
+# real browser. kb/_program_source_census.py holds the reasons for each rule.
+#
+# Sam's call 5 on sheet 23 (2026-10-03) approves reading college websites from
+# GitHub runners on a slow schedule that names the CPL Initiative. The session
+# container cannot reach college sites; the runner can.
+#
+# DRY RUN BY DEFAULT, and the only mode a branch can reach. A dry run writes
+# nothing: it prints a line per college and a JSON block that a session reads
+# from the job log through the GitHub MCP. Writing to Supabase needs all three
+# of: the run is on main, it was dispatched by hand, and mode is apply. A
+# paths filter is not a branch filter (cpl_memory
+# coci-sync-wrote-production-from-a-feature-branch), so the guard is the ref.
+#
+# No schedule yet: apply writes program_source_registry through
+# program_source_census_apply(), and that table waits on Sam's go. Add the
+# weekly cron in the PR that lands the table, with its governance-map entry.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run (read and report, write nothing) or apply (main only)"
+        required: true
+        default: "dry-run"
+        type: choice
+        options: [dry-run, apply]
+      limit:
+        description: "Only the first N colleges (blank = all)"
+        required: false
+        default: ""
+      only:
+        description: "Only colleges whose name contains this text"
+        required: false
+        default: ""
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/program-source-census.yml'
+      - 'kb/_program_source_census.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: program-source-census-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  census:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Census
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          CENSUS_DELAY_MS: '4000'
+          MODE: ${{ github.event.inputs.mode || 'dry-run' }}
+          LIMIT: ${{ github.event.inputs.limit }}
+          ONLY: ${{ github.event.inputs.only }}
+        run: |
+          args=()
+          [ -n "$LIMIT" ] && args+=(--limit "$LIMIT")
+          [ -n "$ONLY" ] && args+=(--only "$ONLY")
+          if [ "$MODE" = "apply" ]; then
+            if [ "$GITHUB_REF" != "refs/heads/main" ] || [ "$GITHUB_EVENT_NAME" != "workflow_dispatch" ]; then
+              echo "::error::apply runs only from a hand dispatch on main (ref $GITHUB_REF, event $GITHUB_EVENT_NAME)"
+              exit 1
+            fi
+            args+=(--apply)
+          fi
+          python3 kb/_program_source_census.py "${args[@]}"

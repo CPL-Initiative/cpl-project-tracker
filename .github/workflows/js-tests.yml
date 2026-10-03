@@ -168,6 +168,13 @@ jobs:
       # grants. Pure-stdlib python; same non-required check.
       - name: Supabase table-grant lint (new and recreated tables carry grants)
         run: python3 tests/supabase_table_grants_test.py
+      # The program-source census (S320) reads 118 college sites from a runner
+      # and files where each one's catalog lives. Its pure half is pinned
+      # without a browser: a library catalog never wins, an old year never
+      # outranks the current one, a challenge page is blocked, robots.txt is
+      # honored. Pure-stdlib python; same non-required check.
+      - name: Program source census (catalog link, year, platform, robots)
+        run: python3 tests/program_source_census_test.py
       # The MAP Custom Report loader's guard (S317). The nightly load runs it
       # before every load, so a PR that breaks it used to surface only as a
       # red cron that night. Its section 10 checks the read-back after a
