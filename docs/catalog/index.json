@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 513,
+   "count": 514,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2938,6 +2938,24 @@
      "title": "A ranking rule is a claim about where variance lives \u2014 re-derive it per corpus",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-10-03",
+     "governs": [
+      "kb/_program_source_census.py",
+      "tests/program_source_census_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-reader-fix-moves-rows-it-was-not-aimed-at.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "census",
+      "scraping",
+      "verification"
+     ],
+     "title": "A reader fix moves rows it was not aimed at, so compare each full read row by row",
+     "type": "methodology",
+     "updated": "2026-10-03"
     },
     {
      "created": "2026-09-04",
@@ -14687,8 +14705,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 292,
+   "count": 293,
    "docs": [
+    {
+     "created": "2026-10-03",
+     "governs": [],
+     "n": 322,
+     "path": "docs/session_322_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "census",
+      "registry"
+     ],
+     "title": "the census reads 112 of 118 catalogs and the registry is filled; enter the six it cannot reach, then start the pilot",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-03",
      "governs": [],
@@ -19657,5 +19691,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1025
+ "total": 1027
 }

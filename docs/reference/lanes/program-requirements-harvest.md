@@ -21,8 +21,9 @@ it: which courses a learner qualifies for through CPL, and the units saved.
 
 ## Status
 
-🔨 **Phase 0 (the census) built and merged (S320, #1836); the registry is live
-and seeded, the first dry run was still reading at checkpoint.** Sam's three
+🔨 **Phase 0 (the census) built (S320, #1836), its reader corrected over four
+full reads (S321, #1839), and the registry filled by the first apply (S321,
+run 37142060932).** Sam's three
 statements that opened the lane are verbatim in the vault:
 `CPLBrain/03-professional/braindumps/braindump-2026-10-03-1433-program-requirements-from-local-catalogs.md`.
 The plan is a Claude Doc Sam edits and comments on:
@@ -51,7 +52,15 @@ The plan is a Claude Doc Sam edits and comments on:
 runner reads each homepage, scores catalog links (a library catalog, an old
 year, an archive or an addendum lose), follows one hop to Academics or
 Programs pages when the homepage names no catalog, then probes
-`catalog.<domain>`. It fingerprints the platform from the page's URL, then its
+`catalog.<domain>`, also when the homepage itself fails. From a college page
+that names a vendor only in its text, or names no year and no vendor, it
+follows the vendor or `catalog.*` link one hop, never a login, change log,
+archive or library link, and never onto an older year than the page it left.
+On a district page it takes the link naming this college's own words and
+refuses one naming a sibling's (every college's name reaches each slice). A
+page listing two or more year-named catalogs is an index; the choice drops
+addenda and siblings. Link text falls back to `textContent` for hidden
+menus. Two-digit years are read only in a curriQunet `/alias/` name. It fingerprints the platform from the page's URL, then its
 assets, then its text (a text-only hit is noted), reads the academic year, and
 picks up Program Mapper and program-map links and curriculum-system links.
 robots.txt first for every host; 4 s between loads; at most 6 pages a college;
@@ -97,33 +106,41 @@ them: Riverside City's program, the person who checks the sample, and who contac
   workflow calls an Edge Function that holds the Anthropic key. The census uses
   no model yet.
 
-**The first full read (2026-10-03, run 37137334059, dry run, four slices of
-8 to 10 minutes, keyed by the registry's own 118 names).** 109 of 118 colleges
-yielded a catalog address; 111 sites let the browser in. Platforms: curriQunet
-24, CourseLeaf 23, eLumen 19, PDF 15 (plus 7 catalogs published as PDFs by
-section), SmartCatalog, Coursedog and Acalog 2 each, custom HTML or unknown 25.
-61 catalogs read as 2026-27. Program Pathways Mapper links at 11 colleges,
-program-map pages at 13. The vendor-link hop fired at 33 colleges, and
-Bakersfield, Berkeley City and Butte now resolve to their vendor catalogs.
-- No catalog address (9): the four Los Rios colleges (American River,
-  Cosumnes River, Folsom Lake, Sacramento City: homepages 404 to the browser),
-  De Anza and City College of San Francisco (Cloudflare challenges), Compton,
-  Laney, Rio Hondo. Cerro Coso's catalog PDF is disallowed by robots.txt.
-- Years to check: Porterville read 2021-22 from an eLumen changelog page; Palo
-  Verde, Santiago Canyon, Cuyamaca, Los Angeles City and Madera read 2025-26.
-- Miramar's catalog link points at the San Diego district curriQunet alias
-  named `city26-27`; check that it is Miramar's catalog.
-- The pilot's PDF-catalog candidates include Barstow, Clovis, Lassen, Mendocino,
-  Shasta, Woodland, Yuba and five Los Angeles district colleges; Harbor, Valley
-  and West Los Angeles also publish Program Mapper maps.
+**The registry after the first apply (2026-10-03, run 37142060932, four
+slices, 118 history rows).** 112 of 118 colleges carry a catalog address, 77 a
+year, 71 of them 2026-27; 111 sites let the browser in. The last dry read (run
+37141321117) gave 112, 78 and 71 (one page's title sets its year late); the
+first (run 37137334059) gave 109, 67 and 61, and no college reads worse now.
+Platforms: CourseLeaf 29, curriQunet 27, eLumen 19, PDF 16, custom HTML 15,
+SmartCatalog, Coursedog and Acalog 2 each. Formats: 81 HTML per program, 16
+single PDFs, 5 PDFs by section. Program Pathways Mapper links at 11 colleges,
+program-map pages at 15; a public curriculum-system view at 50.
+- Six colleges the census cannot reach (no address): the four Los Rios colleges
+  (American River, Cosumnes River, Folsom Lake, Sacramento City: the homepage
+  answers 404) and De Anza and City College of San Francisco (Cloudflare
+  challenges). No `catalog.<domain>` host resolves for them. A web search found
+  each address; they wait on a person's entry (below).
+- Cerro Coso's catalog PDF is disallowed by robots.txt; the address is recorded
+  and the census never loads it.
+- Years to check (2025-26): Cuyamaca, Evergreen Valley, Los Angeles City,
+  Madera, Palo Verde, San Diego City (its own homepage links `city25-26`) and
+  Santiago Canyon. 34 rows with an address carry no year.
+- San Diego College of Continuing Education stays on the district's catalogs
+  page: no link on it names the college.
+- The pilot's single-PDF candidates: Barstow, Clovis, Lassen, Mendocino, Shasta,
+  Woodland, Yuba, College of the Canyons, Compton and five Los Angeles district
+  colleges (City, Harbor, Pierce, Valley, West); Canyons, Harbor, Valley and West
+  also publish Program Mapper maps.
 
-**NEXT:** the first apply fills the registry: the weekly run (Sundays 10:29
-UTC) on `main`, or a hand dispatch with mode apply. Read the registry back.
-Then the gaps above: a seed path for the four Los Rios colleges, a source for
-De Anza and City College of San Francisco (the college, or the district's
-catalog host), the years to check, and Miramar's alias. If many rows stay
-`unknown`, a model pass through an Edge Function (call 6) picks among the
-census's own candidate links. Then Phase 1, the pilot: five colleges, four
-program shapes each, scored on course coverage, no invented courses, unit
-arithmetic, and agreement with a person; the fifth college comes from the PDF
-list above.
+**NEEDS SAM (open-asks sheet 24):** (1) paste the two memory receipts
+(`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`); (2) enter the six
+catalog addresses in `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql`,
+the registry's correction path (`corrected_by`), which the census then keeps.
+
+**NEXT:** read the registry back after Sam's corrections; the weekly apply
+runs Sundays 10:29 UTC and keeps a corrected row as entered. Check the seven 2025-26 years. If many
+rows stay without a year or `unknown`, a model pass through an Edge Function
+(call 6) picks among the census's own candidate links. Then Phase 1, the pilot:
+five colleges, four program shapes each, scored on course coverage, no invented
+courses, unit arithmetic, and agreement with a person; the fifth college comes
+from the PDF list above.

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-292 document(s).
+293 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 322 | [the census reads 112 of 118 catalogs and the registry is filled; enter the six it cannot reach, then start the pilot](../session_322_handoff.md) | 2026-10-03 |
 | 321 | [the census and its registry are live; read the first dry run, then fill the registry](../session_321_handoff.md) | 2026-10-03 |
 | 320 | [Sierra's course lists and timing log are live; the program requirements harvest waits on Sam's eight calls](../session_320_handoff.md) | 2026-10-03 |
 | 319 | [Sierra can read each program's own course list; confirm the link, A/B it, ask to deploy](../session_319_handoff.md) | 2026-10-02 |

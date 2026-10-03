@@ -753,7 +753,7 @@ stays here.
 
 > **Anything waiting on Sam is also a card on a sheet.** The standing one,
 > `kb/_build_open_asks_decision_sheet.py` →
-> [1fvmFT24WLJz3sa7RZBZSB](https://claude.ai/artifact/1fvmFT24WLJz3sa7RZBZSB) (sheet 23, answered),
+> [PNcwBXXZZpb6wKXDheDfnA](https://claude.ai/artifact/PNcwBXXZZpb6wKXDheDfnA) (sheet 24),
 > **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
 > answers one, change that lane's marker in the same PR, or the sheet asks again
 > ([`decision_sheets`](docs/reference/decision_sheets.md)).

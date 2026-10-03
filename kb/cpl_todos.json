@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-03",
-  "_session": "S320 SkyCensus",
-  "_status": "Sierra lists the courses a program lists at the college asked, and each of her answers records how long it took. The plan for a record of which of each program's courses are required, chosen from a list, or elective has its first piece in place since 3 October: a registry with one row per college (118), and a census that reads each college's website once a week to find where its catalog lives, what system serves it, and whether the site lets a browser in. Its first full reading on 3 October found a catalog address for 109 of the 118 colleges; the registry fills on its first run on main, and the pilot's five colleges come next.",
+  "_session": "S321 SkyCatalog",
+  "_status": "Sierra lists the courses a program lists at the college asked, and each of her answers records how long it took. The plan for a record of which of each program's courses are required, chosen from a list, or elective has its first piece in place: a registry with one row per college (118), and a census that reads each college's website once a week to find where its catalog lives, what system serves it, and whether the site lets a browser in. After four readings on 3 October it finds a catalog address for 112 of the 118 colleges and the catalog year for 78, and its first run on main filled the registry with 112 of them. Six colleges turn the reader away; their addresses wait on your confirmation, and the pilot's five colleges come next.",
   "items": [
+    {
+      "id": "s321-sam-sheet24",
+      "for": "Sam",
+      "tab": "sierra",
+      "text": "Answer open-asks sheet 24 (two cards): paste two memory receipts in the Supabase SQL editor, and confirm the catalog addresses for six colleges the census cannot reach (the four Los Rios colleges, De Anza and City College of San Francisco). Each card names its file; each file ends with a read-back."
+    },
     {
       "id": "s310-sam-card11-measures",
       "for": "Sam",
@@ -35,22 +41,22 @@
       "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
     },
     {
-      "id": "s320-fable-census-read-and-fill",
+      "id": "s320-sam-pilot-names",
+      "for": "Sam",
+      "tab": "sierra",
+      "text": "When the pilot starts, name three things the harvest plan left open: the Riverside City College program to test, the MAP team member who checks the 20-program sample, and who asks the Tech Center for the ROE field definitions."
+    },
+    {
+      "id": "s321-fable-registry-and-pilot",
       "for": "Fable",
       "tab": "sierra",
-      "text": "The census's first full reading is in (3 October): 109 of 118 colleges have a catalog address. Fill the program source registry (the weekly run applies on Sunday 4 October, or start it by hand), read it back, then close the named gaps: the four Los Rios colleges (their homepages answer 404 to the reader), De Anza and City College of San Francisco (security challenges), six catalog years to check, and Miramar's catalog link."
+      "text": "The program source registry holds 112 catalog addresses after its first run on main. Read it back once sheet 24's six addresses are entered, check the seven catalogs still reading 2025-26, then pick the pilot's PDF-catalog college and start the pilot."
     },
     {
       "id": "s319-fable-read-timings",
       "for": "Fable",
       "tab": "sierra",
       "text": "Read Sierra's timing log over a week of real questions (chat_interactions.timings, live since 3 October) and report where the wait goes: the first 23 test answers took a median 15 seconds, most of it the model writing."
-    },
-    {
-      "id": "s320-sam-pilot-names",
-      "for": "Sam",
-      "tab": "sierra",
-      "text": "When the pilot starts, name three things the harvest plan left open: the Riverside City College program to test, the MAP team member who checks the 20-program sample, and who asks the Tech Center for the ROE field definitions."
     }
   ],
   "_deferred": [

@@ -5807,3 +5807,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 <!-- moved from docs/INDEX.md Update history, 2026-10-03 (S320) -->
 - **2026-10-02 (S313 SkyReel)** — Sierra v77 names City College of San Francisco (a possessive hid it) ([#1808](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1808)); Sam's two CER renames applied; the video round and the explainer's progress lines, and the rename workflow rebuilds its derived files ([#1809](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1809)); sheet 16; a KB note (a Postgres md5 proves a transcribed jsonb copy); handoff 314.
+
+<!-- moved from docs/INDEX.md Update history, 2026-10-03 (S321) -->
+- 2026-10-02 (S314 SkyVerdict): KB note `methodology-a-prompt-that-quotes-the-wrong-sentence-teaches-it`; handoff 315; Sierra v78-v80 and the Dec 30 deadline in the lessons docs.
