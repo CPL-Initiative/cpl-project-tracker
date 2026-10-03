@@ -22,8 +22,8 @@ it: which courses a learner qualifies for through CPL, and the units saved.
 ## Status
 
 🔨 **Phase 0 (the census) built (S320, #1836), its reader corrected over four
-full reads (S321, #1839), and the registry filled by the first apply (S321,
-run 37142060932).** Sam's three
+full reads (S321, #1839) and two more (S322, #1841: a catalog's own banner
+names its year), and the registry filled by apply on `main`.** Sam's three
 statements that opened the lane are verbatim in the vault:
 `CPLBrain/03-professional/braindumps/braindump-2026-10-03-1433-program-requirements-from-local-catalogs.md`.
 The plan is a Claude Doc Sam edits and comments on:
@@ -60,9 +60,19 @@ On a district page it takes the link naming this college's own words and
 refuses one naming a sibling's (every college's name reaches each slice). A
 page listing two or more year-named catalogs is an index; the choice drops
 addenda and siblings. Link text falls back to `textContent` for hidden
-menus. Two-digit years are read only in a curriQunet `/alias/` name. It fingerprints the platform from the page's URL, then its
-assets, then its text (a text-only hit is noted), reads the academic year, and
-picks up Program Mapper and program-map links and curriculum-system links.
+menus. Two links on one host that name different years put the newer first.
+It fingerprints the platform from the page's URL, then its assets, then its
+text (a text-only hit is noted), and picks up Program Mapper, program-map and
+curriculum-system links. The year comes from the page's title, then its h1,
+then a vendor catalog's own edition banner, then the address, the link's
+words, and a curriQunet `/alias/` name (the only place two-digit years are
+read). The banner counts only on a page the address or assets place on
+CourseLeaf, curriQunet, eLumen, Coursedog or SmartCatalog, only beside
+"catalog" or "edition", never when its phrase names an archive or a previous
+catalog or "coming soon" follows, and it never lowers a year the address or
+the link named. A read that finds no catalog keeps the registry's address and
+says so in the notes. Each catalog page's evidence names where its year came
+from, the banner's words, and the year its opening words name.
 robots.txt first for every host; 4 s between loads; at most 6 pages a college;
 the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
 - A branch push is a dry run (job log only). Apply runs only on `main`: weekly
@@ -132,10 +142,13 @@ program-map pages at 15; a public curriculum-system view at 50.
   colleges (City, Harbor, Pierce, Valley, West); Canyons, Harbor, Valley and West
   also publish Program Mapper maps.
 
-**NEEDS SAM (open-asks sheet 24):** (1) paste the two memory receipts
-(`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`); (2) enter the six
-catalog addresses in `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql`,
-the registry's correction path (`corrected_by`), which the census then keeps.
+**NEEDS SAM (open-asks sheet 25; sheet 24 carried no replies at 21:10Z):** (1) paste the two
+memory receipts (`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`); (2) enter the
+six catalog addresses in `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql`,
+the registry's correction path (`corrected_by`), which the census then keeps; (3) Riverside
+City's program (proposed: the Culinary Arts Certificate of Achievement, 22804, where ServSafe
+lands); (4) who checks the 20-program sample (proposed: Jessica); (5) who asks the Tech Center
+for its ROE field definitions (proposed: Sam, after the pilot's first records).
 
 **NEXT:** read the registry back after Sam's corrections; the weekly apply
 runs Sundays 10:29 UTC and keeps a corrected row as entered. Check the seven 2025-26 years. If many

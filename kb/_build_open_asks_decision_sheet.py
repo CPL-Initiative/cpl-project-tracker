@@ -31,6 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 25 (S322, 2026-10-03, SHEET_ID 2026-10-03-open-asks-25): sheet 24 carried no replies when S322
+read it (21:10Z). Its two cards carry over unchanged, and three join them: the pilot's three names
+(Riverside City's program, who checks the 20-program sample, who asks the Tech Center). Published at
+https://claude.ai/artifact/SqKFZpLcY9Q4Jg1GLVGk1B (capabilities db + comments). Sheet 24
+(https://claude.ai/artifact/PNcwBXXZZpb6wKXDheDfnA) keeps its own store; never republish onto it.
+
 Sheet 24 (S321 checkpoint, 2026-10-03, SHEET_ID 2026-10-03-open-asks-24): sheet 23 was answered ("As
 proposed", 15:05Z). Two cards for the program requirements harvest: paste the memory receipts, and enter
 six catalog addresses the census cannot reach.
@@ -161,8 +167,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-03-open-asks-24.html')
-SHEET_ID = '2026-10-03-open-asks-24'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-03-open-asks-25.html')
+SHEET_ID = '2026-10-03-open-asks-25'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -737,6 +743,74 @@ def items():
                        ('Edit', 'edit'), CH_LATER),
         'evidence': [live('2026-10-03', "census runs 37137334059, 37139324090, 37140411314 and "
                           "37141321117 (job logs) and a web search the same day")],
+    })
+    # S322: Phase 1, the pilot. Sheet 23 ruled the plan as proposed and left three names open.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Riverside City's program in the pilot",
+        'ref': 'program-requirements-harvest NEEDS SAM · Program Requirements Harvest Plan, call 2',
+        'facts': (
+            "The pilot reads five colleges, each through one fixed program. Four are set: Cerritos's "
+            "Ironworker pathway, Mt. San Antonio's LVN-to-RN A.S., a Miramar program with a Program "
+            "Pathways Mapper map, and a certificate with an electives block at the PDF-catalog college. "
+            "The census picked West Los Angeles for that slot: its 2026-27 catalog is one PDF, and MAP "
+            "shows 7,748 units of CPL transcribed there, the most of the 21 colleges whose catalog is a "
+            "PDF (Pierce is next at 1,042). Its Real Estate certificates fit the electives use case; "
+            "206 students hold Real Estate Appraiser Trainee credit."
+            "<br><br>Riverside City's catalog is on curriQunet (2026-27). ServSafe Food Protection "
+            "Manager is the one exhibit there with enough students to show by name: 10 students, 20 "
+            "units transcribed. The rest are military exhibits with fewer than 10 students each. "
+            "Riverside City offers a Culinary Arts Certificate of Achievement (30 to 60 units, "
+            "control number 22804), a Culinary Arts A.S. and a Foundational Culinary Arts certificate."),
+        'why': "The pilot cannot start Riverside City's read until it has a program, and the plan left "
+               "the choice to you.",
+        'rec': "<strong>Culinary Arts certificate:</strong> it is the program where a named CPL exhibit "
+               "already lands, so the pilot can show which of its courses ServSafe covers and the units "
+               "that saves. <em>It might be wrong if</em> you want a program that military credit reaches, "
+               "since most of the college's CPL is military; name it in the note.",
+        'chips': chips(('Culinary Arts certificate', 'culinary'), ('Edit', 'edit'), CH_LATER),
+        'evidence': [live('2026-10-03', "program_source_registry, map_college_exhibit_credit and "
+                          "coci_college_programs read through the Supabase connector")],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Who checks the pilot's 20-program sample",
+        'ref': 'program-requirements-harvest NEEDS SAM · Program Requirements Harvest Plan, call 3',
+        'facts': (
+            "The pilot scores each college's records four ways. Three are mechanical: every course "
+            "is in the state's Program Course File, no course is invented, and the units add up. The "
+            "fourth needs a person. Someone reads 20 harvested programs against their catalog pages "
+            "and marks where a course's role (required, chosen from a list, or elective) or the unit "
+            "total is wrong. You ruled on sheet 23 that a named MAP team member does this, and that "
+            "articulation officers are invited to check their own colleges' programs."
+            "<br><br>Jessica's two rulings of 2026-08-27 set how a credit recommendation maps to "
+            "courses and how far units may differ. That is the closest work on the team to this check."),
+        'why': "The pilot's fourth check has no reviewer until a person is named.",
+        'rec': "<strong>Jessica:</strong> she already rules on how courses and units line up. "
+               "<em>It might be wrong if</em> Ashley, who built the program crosswalks, is the better "
+               "fit, or the work lands in a busy month. Choose her chip or name someone in the note.",
+        'chips': chips(('Jessica', 'jessica'), ('Ashley', 'ashley'),
+                       ('Someone else (note)', 'other'), CH_LATER),
+        'evidence': [live('2026-10-03', "cpl_memory rows jessica-unit-rule-drop-beyond-one-unit and "
+                          "a-cr-can-serve-several-courses-and-a-course-several-crs")],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Who asks the Tech Center for its field definitions",
+        'ref': 'program-requirements-harvest NEEDS SAM · Program Requirements Harvest Plan, call 8',
+        'facts': (
+            "You ruled the Butte College Tech Center's COCI work a parallel track and never a gate. "
+            "The plan proposes one request: the definitions of its ROE fields, so the harvest's names "
+            "for required, list and elective courses match the ones COCI may adopt. Nothing in the "
+            "pilot waits on the answer."),
+        'why': "The plan names no one to send the request, so it will not go out.",
+        'rec': "<strong>You, after the pilot's first records exist:</strong> one short email, which a "
+               "session drafts, asking for the field definitions and showing one harvested program. A "
+               "real record gives the Tech Center something concrete to compare. <em>It might be "
+               "wrong if</em> someone on the team already talks with the Tech Center; name them in the note.",
+        'chips': chips(("Me, after the first records", 'sam-later'), ('Someone else (note)', 'other'),
+                       ('No one for now', 'none'), CH_LATER),
+        'evidence': [policy()],
     })
     return I
 
