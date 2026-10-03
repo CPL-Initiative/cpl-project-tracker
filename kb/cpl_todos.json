@@ -2,13 +2,13 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-03",
   "_session": "S322 SkyPilot",
-  "_status": "Sierra lists the courses a program lists at the college asked, and each of her answers records how long it took. The plan for a record of which of each program's courses are required, chosen from a list, or elective has its first piece in place: a registry with one row per college (118), and a census that reads each college's website once a week to find where its catalog lives, what system serves it, and whether the site lets a browser in. On 3 October the census learned to read the year a catalog prints for itself, so it now finds a catalog address for 112 colleges and the catalog year for 95, 91 of them 2026-27, and a site that fails to answer for one reading keeps the address an earlier reading found. Six colleges turn the reader away; their addresses and the pilot's three open names wait on your answers to sheet 25, and the five-college pilot comes next.",
+  "_status": "Sierra lists the courses a program lists at the college asked, and each of her answers records how long it took. The plan for a record of which of each program's courses are required, chosen from a list, or elective has its first piece in place: a registry with one row per college (118), and a census that reads each college's website once a week to find where its catalog lives, what system serves it, and whether the site lets a browser in. On 3 October the census learned to read the year a catalog prints for itself, so it now finds a catalog address for 112 colleges and the catalog year for 95, 91 of them 2026-27, and a site that fails to answer for one reading keeps the address an earlier reading found. Six colleges turn the reader away; their addresses and one pilot question wait on sheet 26, and the five-college pilot comes next: Riverside City's Culinary Arts certificate is one of its five programs, and you check the sample.",
   "items": [
     {
-      "id": "s322-sam-sheet25",
+      "id": "s322-sam-sheet26",
       "for": "Sam",
       "tab": "sierra",
-      "text": "Answer open-asks sheet 25 (five cards). Two carry over from sheet 24: paste two memory receipts in the Supabase SQL editor, and confirm the catalog addresses for six colleges the census cannot reach. Three are the pilot's names: Riverside City College's program (proposed: Culinary Arts certificate), who checks the 20-program sample (proposed: Jessica), and who asks the Butte College Tech Center for its field definitions (proposed: you, after the pilot's first records)."
+      "text": "Answer open-asks sheet 26 (three cards): paste the two memory receipts in the Supabase SQL editor (the connector's confirmation never reached you, so a session cannot run them); enter the six catalog addresses, or say go and a session runs the file; and who asks the Butte College Tech Center for its field definitions (proposed: you, after the pilot's first records)."
     },
     {
       "id": "s310-sam-card11-measures",
@@ -44,7 +44,7 @@
       "id": "s322-fable-pilot-reader",
       "for": "Fable",
       "tab": "sierra",
-      "text": "Build the pilot reader for the program requirements harvest: five colleges, one program each (Cerritos Ironworker, Mt. San Antonio LVN-to-RN, a Miramar program with a map, Riverside City's program once Sam names it, and a West Los Angeles Real Estate certificate from its PDF catalog). Score each on course coverage, no invented courses, unit arithmetic and a person's check. Read the registry back first: about 112 addresses and 95 years."
+      "text": "Build the pilot reader for the program requirements harvest: five colleges, one program each (Cerritos Ironworker, Mt. San Antonio LVN-to-RN, a Miramar program with a map, Riverside City's Culinary Arts certificate, and a West Los Angeles Real Estate certificate from its PDF catalog). Score each on course coverage, no invented courses, unit arithmetic and Sam's check of the 20-program sample. Read the registry back first: about 112 addresses and 95 years."
     },
     {
       "id": "s319-fable-read-timings",

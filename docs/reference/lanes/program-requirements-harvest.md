@@ -152,26 +152,34 @@ pages at 15; a public curriculum-system view at 50.
 
 **The pilot (Phase 1).** Five colleges, one fixed program each: Cerritos
 (Ironworker pathway, CourseLeaf), Mt. San Antonio (LVN-to-RN A.S., CourseLeaf),
-Miramar (a program with a PPM map, curriQunet), Riverside City (Sam's pick,
-curriQunet) and West Los Angeles (a Real Estate certificate with an electives
+Miramar (a program with a PPM map, curriQunet), Riverside City (the Culinary
+Arts Certificate of Achievement, control number 22804, where the college's
+ServSafe credit lands; curriQunet) and West Los Angeles (a Real Estate certificate with an electives
 block, from its single 2026-27 PDF). The census picked West Los Angeles (S322):
 MAP shows 7,748 units of CPL transcribed there, the most of the 21 colleges
 whose catalog is a PDF (Pierce is next at 1,042), and 206 students hold Real
 Estate Appraiser Trainee credit.
 
-**NEEDS SAM (open-asks sheet 25; sheet 24 carried no replies at 21:10Z):** (1) paste the two
-memory receipts (`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`); (2) enter the
-six catalog addresses in `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql`,
-the registry's correction path (`corrected_by`), which the census then keeps; (3) Riverside
-City's program (proposed: the Culinary Arts Certificate of Achievement, 22804, where ServSafe
-lands); (4) who checks the 20-program sample (proposed: Jessica); (5) who asks the Tech Center
-for its ROE field definitions (proposed: Sam, after the pilot's first records).
+**Sam's calls on sheet 25 (2026-10-03 22:57Z, his own picks, reviewed through
+card 4):** Riverside City's program is the Culinary Arts certificate; Sam
+himself checks the 20-program sample; the memory receipts are to run while he
+watches (the connector's confirmation never reached him, so they wait on the
+SQL editor); the six catalog addresses go in as given, entered by him.
 
-**NEXT:** read Sam's replies on sheet 25 and run what he answers (enter the six
+**NEEDS SAM (open-asks sheet 26):** (1) paste the two memory receipts
+(`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`) in the SQL editor:
+three rows name a stall word, and the connector's confirmation timed out at 60 s
+with nothing written when S322 ran them while Sam watched; (2) enter the six
+catalog addresses in `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql`
+(his call: as given, entered by him; the file names no stall word, so a session
+runs it on his "go"); (3) who asks the Tech Center for its ROE field definitions
+(proposed: Sam, after the pilot's first records; sheet 25 did not reach it).
+
+**NEXT:** read Sam's replies on sheet 26 and run what he answers (the six
 addresses through `corrected_by`; the weekly apply keeps a corrected row as
 entered). Then build the pilot reader on a runner, with model calls through a
 Supabase Edge Function (call 6, the `cpl-news.yml` pattern): each program's
 required, list-choice and elective courses with units, scored on course
 coverage against the Program Course File, no invented courses, unit arithmetic
-and agreement with the named checker. If the yearless rows matter to the
+and agreement with Sam, who checks the 20-program sample. If the yearless rows matter to the
 pilot, a model pass picks among the census's own candidate links.
