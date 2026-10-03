@@ -17606,6 +17606,13 @@
      "direction": "call",
      "how": "literal",
      "line": 3249
+    },
+    {
+     "id": "script:chatbox/smoke_test.sh",
+     "kind": "script",
+     "direction": "call",
+     "how": "literal",
+     "line": 764
     }
    ],
    "main_committers": []
@@ -18014,7 +18021,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 974
+     "line": 1058
     }
    ],
    "main_committers": []
@@ -19932,7 +19939,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 951
+     "line": 1035
     },
     {
      "id": "script:kb/_identity_daily_check.py",
@@ -20386,7 +20393,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 997
+     "line": 1081
     }
    ],
    "main_committers": []

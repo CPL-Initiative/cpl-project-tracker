@@ -116,6 +116,29 @@ block("8. wired in the handler behind the intent and one college", () => {
     /programsContext \+= buildProgramCoursesContext\(/.test(FN));
 });
 
+block("9. smoke mode 7l asks what index.ts would build", () => {
+  const SMOKE = fs.readFileSync("chatbox/smoke_test.sh", "utf8");
+  const V = liftBlock(FN, "const TOPIC_SYNONYMS", "// ── Topic-based exhibit search",
+    ["extractTopicKeywords", "expandWithSynonyms"]);
+  const college = (SMOKE.match(/^PL_COLLEGE='([^']+)'/m) || [])[1];
+  const q = (SMOKE.match(/^PL_QUESTION='([^']+)'/m) || [])[1];
+  const terms = (SMOKE.match(/^PL_TERMS='([^']+)'/m) || [])[1];
+  check("7l pins its college, question and terms", !!college && !!q && !!terms);
+  if (!college || !q || !terms) return;
+  check("the 7l question names the 7l college", q.includes(college));
+  check("the 7l question fires the course intent", M.asksProgramCourses(q));
+  const derived = V.expandWithSynonyms(M.programTerms(V.extractTopicKeywords(q), college));
+  check("⭐ PL_TERMS is what index.ts builds for the 7l question",
+    JSON.stringify(derived) === JSON.stringify(JSON.parse(terms)),
+    "index.ts builds " + JSON.stringify(derived) + " — re-derive the smoke literal");
+  check("index.ts reads 8 programs and PROGRAM_COURSES_PER_LIST courses",
+    /program_limit: 8,\s*course_limit: PROGRAM_COURSES_PER_LIST,/.test(FN) && M.PROGRAM_COURSES_PER_LIST === 40);
+  const CODE = SMOKE.split("\n").filter((l) => !/^\s*#/.test(l)).join("\n");
+  check("7l calls the RPC with the same limits", /"program_limit":8,"course_limit":40/.test(CODE));
+  check("7l asks the question of the function", /run "7l program course list/.test(CODE));
+  check("7l asserts a course outside nursing, by number", /7l ⭐ names a course the LVN-to-RN program lists outside nursing/.test(CODE));
+});
+
 const failed = results.filter((r) => !r[1]);
 for (const [name, ok, why] of results) console.log(`${ok ? "ok  " : "FAIL"} ${name}${ok || !why ? "" : " — " + String(why).slice(0, 400)}`);
 console.log(`\n${results.length - failed.length}/${results.length} passed`);
