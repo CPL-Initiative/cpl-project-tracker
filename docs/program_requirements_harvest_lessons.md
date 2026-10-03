@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [1836, 1838, 1839]
+prs: [1836, 1838, 1839, 1841]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -147,3 +147,52 @@ sheet 24).
 **NEXT.** Read the registry back; enter the six addresses once Sam confirms
 them; check the seven 2025-26 years; then pick the pilot's PDF-catalog college
 and start Phase 1.
+
+## S322 SkyPilot, 2026-10-03: the year a catalog names for itself
+
+**What shipped.** #1841: two links on one host naming different years put the
+newer first; a vendor catalog's own edition banner names its year; a read that
+finds no catalog keeps the registry's address; each catalog page records its h1,
+where its year came from, the banner's words and the year its opening words
+name. Open-asks sheet 25 carries sheet 24's two cards and the pilot's three
+names. Two branch reads (runs 37154900912, 37156161286) took the census from
+78 years and 72 at 2026-27 to 94 and 90, with no college worse off.
+
+16. **A college's link to its catalog can name last year.** Cuyamaca's own
+    page linked "2025-2026" to a CourseLeaf catalog whose banner reads
+    "GCCCD 2026-2027 EDITION", and Grossmont, on the same host, read
+    2026-27 only because its link said so. The page's own words outrank the
+    link and the address; the link is someone else's description of it.
+
+17. **A misspelling can cost a link its year.** San Diego City's homepage links
+    `city25-26` as "Course Catalog" and `city26-27` as "City College Catolog".
+    The newer link lost its catalog word and the older one won. Two links on one
+    host that name different years are the same catalog in two years, and the
+    newer goes first whatever their words scored.
+
+18. **Measure a rule against stored evidence before the read, then read.** The
+    newer-year rule was checked against the registry's stored candidates
+    (it moves San Diego City alone) and the banner rule against the first
+    branch read's body words (16 fills, 2 corrections). The simulation also
+    caught a regression before any push: Crafton Hills' SmartCatalog menu
+    lists older catalogs, and a sibling check read "Mission" in its menu as
+    Mission College, so the banner fell to 2019-20. Two fixes followed: no
+    sibling check inside a vendor's own page, and a banner never lowers a year
+    the address or the link named.
+
+19. **A failed read must not erase what an earlier read found.** The second
+    branch read lost Columbia's eLumen catalog to a 30-second homepage timeout.
+    The apply writes a row as read, so a timeout during the Sunday apply would
+    have emptied a good address for a week. The census now keeps the address,
+    and the failed read still files its status, its evidence and a note.
+
+20. **Evidence words must be the words that decided.** The body-words field
+    shows the first place the latest year appears; on Merced's page that is
+    an academic calendar, while the banner rule took 2026-27 from a "catalog"
+    phrase further down. The banner's own words are now recorded beside it.
+
+**State (S322).** The pilot's PDF college is West Los Angeles (7,748 units of
+CPL transcribed, the most of the 21 PDF-catalog colleges; Real Estate
+certificates for the electives use case). Sheet 25 asks Sam for Riverside
+City's program, the sample checker and the Tech Center contact.
+
