@@ -89,6 +89,27 @@ a public read. "Approved" on the push that adds the weekly apply.
    `catalog_2026_27.pdf` the underscore is a word character, so `\b` finds no
    edge before 2026. The guard test caught it.
 
+9. **One long job is a single point of failure.** The first full dry run
+   (run 37133680797) ended as a failure after 45 minutes with its step never
+   closed and no log to download; the check run carried no output either. An
+   8-college run on `main` (run 37136549708) finished in 2 minutes, so the
+   pass is about 15 s a college. The census now runs as four matrix slices
+   (`--shard k/n`), each its own job, log and run id.
+
+10. **A college's catalog page often names the vendor only by linking to it.**
+    Bakersfield (eLumen), Berkeley City and Butte (curriQunet) each answered
+    with their own "Catalogs" page; the catalog itself was the vendor link on
+    it, and Cabrillo's only vendor link was a Coursedog login. The census
+    follows `vendor_catalog_link()` one hop when the platform came from page
+    text alone, and never a login, admin or library link.
+
+11. **The four-slice full read worked: 118 colleges in 10 minutes.** 109 gave
+    a catalog address. What it cannot read is specific and nameable: the Los
+    Rios colleges' homepages answer 404 to the browser, De Anza and City College
+    of San Francisco serve Cloudflare challenges, and Cerro Coso's robots.txt
+    disallows its catalog PDF. Each is a seed or a source question for a
+    person, not a reader bug.
+
 **State at checkpoint.** Registry: 118 rows, homepage only. Census: on `main`,
 weekly apply Sundays 10:29 UTC, first dry run reading.
 

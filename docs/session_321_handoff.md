@@ -14,17 +14,15 @@ squash `3e52f4c`), and the registry is live in Supabase.
 
 ## First, in this order
 
-1. **Read the first dry run.** Run 37133680797, job 111233705892 (a branch push of #1836's first
-   commit, all 118 colleges, writes nothing). It was still reading at this checkpoint, about an hour in.
-   `get_job_logs` 404s until the job ends; then read it with `return_content: true` and enough
-   `tail_lines` to reach `=== CENSUS SUMMARY ===` and the rows between `=== CENSUS ROWS JSON BEGIN ===`
-   and `END`. If the run failed or timed out (150 min), read why before anything else.
-2. **Fix reader gaps** it shows (wrong catalog picked, platform missed, year missed) on a fresh `claude/*`
-   branch off `main`, with a check in `tests/program_source_census_test.py` per gap. A push to that branch
-   starts a dry run; the workflow queues behind a running pass rather than canceling it.
-3. **Fill the registry.** Dispatch `program-source-census.yml` on `main` with `mode: apply` (or wait for
-   the Sunday 10:29 UTC run). Read `program_source_registry` back: catalog URL coverage, platform mix,
-   `access_status` counts, and the PDF-catalog colleges (the pilot's fifth college comes from them).
+1. **The four-slice dry run is read** (run 37137334059, S320): 109 of 118 colleges with a catalog address,
+   111 sites open, platforms and gaps in the lane file. The vendor-link hop and the slices merged in #1838.
+2. **Fill the registry and read it back.** The weekly run applies on Sunday 2026-10-04 at 10:29 UTC; a hand
+   dispatch of `program-source-census.yml` on `main` with `mode: apply` does the same sooner. Read
+   `program_source_registry` back: catalog URL coverage, platform mix, `access_status` counts, and the
+   PDF-catalog colleges (the pilot's fifth college comes from them).
+3. **Close the named gaps** (lane file): a seed path for the four Los Rios colleges, a source for De Anza and
+   City College of San Francisco, the years to check, Miramar's alias. A reader change goes on a fresh
+   `claude/*` branch off `main` with a check in `tests/program_source_census_test.py`; its push runs a dry run.
 
 ## What shipped (merged, applied)
 

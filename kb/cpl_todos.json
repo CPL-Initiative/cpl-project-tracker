@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-03",
   "_session": "S320 SkyCensus",
-  "_status": "Sierra lists the courses a program lists at the college asked, and each of her answers records how long it took. The plan for a record of which of each program's courses are required, chosen from a list, or elective has its first piece in place since 3 October: a registry with one row per college (118), and a census that reads each college's website once a week to find where its catalog lives, what system serves it, and whether the site lets a browser in. The census's first reading was finishing on 3 October; the registry fills on its first run on main, and the pilot's five colleges come next.",
+  "_status": "Sierra lists the courses a program lists at the college asked, and each of her answers records how long it took. The plan for a record of which of each program's courses are required, chosen from a list, or elective has its first piece in place since 3 October: a registry with one row per college (118), and a census that reads each college's website once a week to find where its catalog lives, what system serves it, and whether the site lets a browser in. Its first full reading on 3 October found a catalog address for 109 of the 118 colleges; the registry fills on its first run on main, and the pilot's five colleges come next.",
   "items": [
     {
       "id": "s310-sam-card11-measures",
@@ -38,7 +38,7 @@
       "id": "s320-fable-census-read-and-fill",
       "for": "Fable",
       "tab": "sierra",
-      "text": "Read the census's first dry run (run 37133680797), fix any catalog the reader missed, then run the census on main to fill the program source registry and read it back: how many colleges have a catalog address, which systems serve them, how many sites blocked the browser, and which colleges publish the catalog as a PDF (the pilot's fifth college comes from those)."
+      "text": "The census's first full reading is in (3 October): 109 of 118 colleges have a catalog address. Fill the program source registry (the weekly run applies on Sunday 4 October, or start it by hand), read it back, then close the named gaps: the four Los Rios colleges (their homepages answer 404 to the reader), De Anza and City College of San Francisco (security challenges), six catalog years to check, and Miramar's catalog link."
     },
     {
       "id": "s319-fable-read-timings",
