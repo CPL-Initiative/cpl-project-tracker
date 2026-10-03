@@ -54,9 +54,12 @@ on:
 permissions:
   contents: read
 
+# A newer run waits behind a running one rather than cancelling it: a pass
+# reads for about an hour and writes only at its end, so a cancel throws the
+# hour away. Cancel a queued duplicate by hand when it adds nothing.
 concurrency:
   group: program-source-census-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   census:
