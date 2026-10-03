@@ -138,8 +138,15 @@ pages at 15; a public curriculum-system view at 50.
   2026-27 catalog for them (October 2026); the weekly read moves them when they
   publish. About 23 rows with an address carry no year, most on custom college
   pages, an Acalog list or a PDF whose address names none.
-- A site that fails one read keeps its address: Columbia timed out in one
-  branch read and Santa Monica showed no catalog link in another.
+- A site that fails one read keeps its address. In the S322 apply three did:
+  Los Angeles Mission and Los Angeles Valley answered 403 at the homepage (the
+  branch reads reached both), and Santa Monica's homepage showed no catalog
+  link. Without the guard the registry would hold 109 addresses. Columbia had
+  timed out the same way in one branch read.
+- ⚠️ The Los Angeles district's sites refused the runner (403) during the
+  apply. West Los Angeles, the pilot's PDF college, is a district college: a
+  pilot read of its catalog PDF may meet the same refusal, and the census
+  never works around one.
 - San Diego College of Continuing Education stays on the district's catalogs
   page: no link on it names the college.
 

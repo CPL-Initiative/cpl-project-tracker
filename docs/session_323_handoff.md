@@ -23,9 +23,11 @@ three more ways over three full branch reads (#1841, squash `35b3fb3`), ran the 
    the Culinary Arts Certificate of Achievement, 22804), who checks the 20-program sample (proposed:
    Jessica), and who asks the Tech Center (proposed: Sam, after the pilot's first records). Execute what he
    answered, change the lane's NEEDS SAM marker in the same PR, and drop answered cards from the builder.
-2. **Read the registry back** (`program_source_registry`). Expect about 112 addresses, 95 years and 91 at
-   2026-27 after run 37157737048 (read 3 on the branch gave exactly that). `year_from` sits in each row's
-   `census_evidence.catalog_pages`; a `banner` year carries `banner_words`.
+2. **Read the registry back** (`program_source_registry`). After run 37157737048 (read back 22:25Z) it held
+   112 addresses, 95 years and 91 at 2026-27, four at 2025-26, 236 history rows. Three rows kept an
+   earlier address with a note: Los Angeles Mission and Los Angeles Valley (homepage 403 to the runner)
+   and Santa Monica (no catalog link). `year_from` sits in each row's `census_evidence.catalog_pages`; a
+   `banner` year carries `banner_words`.
 3. **Phase 1, the pilot reader.** Five colleges, one fixed program each: Cerritos (Ironworker pathway,
    CourseLeaf), Mt. San Antonio (LVN-to-RN A.S., CourseLeaf), Miramar (a program with a PPM map,
    curriQunet), Riverside City (Sam's pick; curriQunet) and **West Los Angeles** (a Real Estate certificate
@@ -87,6 +89,10 @@ None. Sheet 24 had no replies; its cards moved to sheet 25.
 - ⚠️ `cpl_memory.summary` is capped at 400 characters, `detail` at 4,000.
 - ⚠️ A person's correction is a person's: never set `corrected_by` from a session's inference.
 - ⚠️ The census never works around a challenge page and never loads what robots.txt disallows.
+- ⚠️ The Los Angeles district's homepages answered the runner 403 during the apply (Mission, Valley).
+  West Los Angeles is the pilot's PDF college and a district college; its PDF may meet the same
+  refusal. Never work around one: if it is refused, read the PDF from the registry's address once, and
+  if that fails, ask Sam whether to swap in Pierce (the next PDF college, 1,042 CPL units).
 - ⚠️ This container reaches no college site and not the Actions log host; logs through the GitHub MCP,
   data through the Supabase MCP.
 - ⚠️ Budgets: `CLAUDE.md` 59,989 of 60,000 bytes. The §11 row reads "in progress · census built".
