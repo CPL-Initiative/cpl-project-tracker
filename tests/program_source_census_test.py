@@ -24,7 +24,10 @@ known before any page is read:
     "Class Schedule & Catalog" link scored as a schedule, and an addendum or a
     yearly PDF chosen over the catalog host on the same page;
   * and, from the first apply (run 37142060932): an older year taken over a
-    newer one on the same host because the newer link's words were misspelled.
+    newer one on the same host because the newer link's words were misspelled;
+  * and, from the S322 branch reads (runs 37154900912, 37156161286): a
+    college's older link outranking the year a vendor catalog's own banner
+    names, and a timeout that would have erased a known address on apply.
 
 Each is pinned below against the module's OWN functions, with no browser and
 no network. Run from repo root: python3 tests/program_source_census_test.py
@@ -607,6 +610,56 @@ check(C.catalog_year_from(cra, "https://craftonhills.smartcatalogiq.com/en/2026-
                           "Catalog", "smartcatalog", "url")
       == ("2026-2027", "address"), "a banner never lowers the address's year (Crafton Hills)")
 check("innerText" in C.BODY_JS, "the body evidence reads the page's own words")
+
+# A read that finds no catalog never erases one the registry holds: the S322
+# branch read (run 37156161286) lost Columbia's address to a timeout.
+prior = {"catalog_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/",
+         "catalog_year": "2026-2027", "catalog_platform": "elumen",
+         "catalog_format": "html_per_program", "best_method": "platform_reader",
+         "census_run_id": "census-20261003T1800Z-s2of4"}
+lost = C.build_row("Columbia College", "https://www.gocolumbia.edu/",
+                   {"access": "unreachable", "status": None, "title": None},
+                   None, ("unknown", None), None, {"pages_loaded": 2})
+kept = C.keep_known_address(lost, prior)
+check(kept["catalog_url"] == prior["catalog_url"] and kept["catalog_year"] == "2026-2027"
+      and kept["catalog_platform"] == "elumen" and kept["best_method"] == "platform_reader",
+      "a failed read keeps the registry's address, got %r" % (
+          {k: kept[k] for k in C.KEPT_FIELDS},))
+check(kept["access_status"] == "unreachable" and "is kept" in kept["access_notes"]
+      and prior["census_run_id"] in kept["access_notes"]
+      and kept["census_evidence"].get("kept_from") == prior["census_run_id"]
+      and kept["census_evidence"].get("pages_loaded") == 2,
+      "the failed read still files its status, its evidence and where the address came from")
+check(C.keep_known_address(lost, None) is lost, "no prior row: the read stands")
+check(C.keep_known_address(lost, dict(prior, catalog_url=None)) is lost,
+      "a prior row without an address: the read stands")
+found = dict(lost, catalog_url="https://gocolumbia.elumenapp.com/catalog/2027-2028-Catalog/")
+check(C.keep_known_address(found, prior) is found,
+      "a read that finds an address files it, even a different one")
+check("KEPT_FIELDS" in C.load_registry.__code__.co_names,
+      "the registry read brings the fields a failed read keeps")
+# main() sends the kept row: a fake registry and a fake read, no network.
+real_run, real_registry = C.run, C.load_registry
+C.run = lambda colleges, delay, all_names=(): [lost]
+C.load_registry = lambda: [{"college": "Columbia College",
+                            "homepage_url": "https://www.gocolumbia.edu/", "prior": prior}]
+try:
+    import contextlib
+    import io
+    out = io.StringIO()
+    with contextlib.redirect_stdout(out):
+        C.main([])
+finally:
+    C.run, C.load_registry = real_run, real_registry
+printed = out.getvalue()
+sent = [l for l in printed.splitlines() if l.startswith('{"college"')]
+check("kept a known address for 1 college(s)" in printed and sent
+      and '"catalog_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/"' in sent[0],
+      "main() sends the kept address and says so in the log")
+y, words = C.banner_match("Merced College Home 2026-27 Academic Calendar Search About "
+                          "Catalog 2026-2027 Programs")
+check(y == "2026-2027" and words and "Catalog 2026-2027" in words and "Calendar" not in words.split("Catalog")[1],
+      "the banner's own words are kept as evidence, got %r" % ((y, words),))
 
 # ── The pass splits into slices ─────────────────────────────────────────────
 check(C.shard_of("2/4") == (2, 4), "k/n parses")

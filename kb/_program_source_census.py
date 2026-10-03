@@ -145,7 +145,8 @@ def load_registry() -> list[dict] | None:
         return None
     req = urllib.request.Request(
         url.rstrip("/") + "/rest/v1/program_source_registry"
-        "?select=college,homepage_url&order=college",
+        "?select=college,homepage_url," + ",".join(KEPT_FIELDS) + ",census_run_id"
+        "&order=college",
         headers={"apikey": key, "Authorization": "Bearer " + key})
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
@@ -154,7 +155,35 @@ def load_registry() -> list[dict] | None:
         if exc.code == 404:
             return None
         raise
-    return [{"college": r["college"], "homepage_url": r["homepage_url"]} for r in rows]
+    return [{"college": r["college"], "homepage_url": r["homepage_url"],
+             "prior": {k: r.get(k) for k in KEPT_FIELDS + ("census_run_id",)}}
+            for r in rows]
+
+
+# A read that finds no catalog never erases one the registry already holds.
+# The S322 branch read (run 37156161286) lost Columbia's eLumen catalog to a
+# 30-second homepage timeout and a catalog.* host that does not resolve; the
+# apply writes the row as read, so a Sunday timeout would have emptied a good
+# address for a week. The read itself still files: its access status, its
+# evidence, and a note naming the run the address came from.
+KEPT_FIELDS = ("catalog_url", "catalog_year", "catalog_platform", "catalog_format",
+               "best_method")
+
+
+def keep_known_address(row: dict, prior: dict | None) -> dict:
+    """The row to send: as read, unless this read found no catalog address and
+    the registry holds one, which then stays with a note saying so."""
+    if row.get("catalog_url") or not prior or not prior.get("catalog_url"):
+        return row
+    out = dict(row)
+    for k in KEPT_FIELDS:
+        out[k] = prior.get(k)
+    note = "This read found no catalog (%s); the address from %s is kept." % (
+        row.get("access_status") or "none", prior.get("census_run_id") or "an earlier run")
+    out["access_notes"] = ((row.get("access_notes") or "") + " " + note).strip()
+    out["census_evidence"] = dict(row.get("census_evidence") or {},
+                                  kept_from=prior.get("census_run_id"))
+    return out
 
 
 def parse_catalog_year(*texts: str, max_start: int | None = None) -> str | None:
@@ -640,6 +669,10 @@ BANNER_REFUSE = re.compile(r"archiv|previous|\bpast\b|\bprior\b", re.I)
 
 
 def banner_year(text: str, max_start: int | None = None) -> str | None:
+    return banner_match(text, max_start)[0]
+
+
+def banner_match(text: str, max_start: int | None = None) -> tuple[str | None, str | None]:
     """The latest year the opening of a vendor catalog's own words names beside
     "catalog" or "edition". Refused: a year whose own phrase, between it and
     that word, names an archive or a previous catalog (Delta's "2025-2026 San
@@ -653,7 +686,7 @@ def banner_year(text: str, max_start: int | None = None) -> str | None:
     as Mission College, run 37154900912)."""
     if max_start is None:
         max_start = datetime.now(timezone.utc).year + 1
-    best = None
+    best, words = None, None
     for m in YEAR_PAIR.finditer(text or ""):
         a = int(m.group(1))
         b = int((m.group(2) or str(a)[:2]) + m.group(3))
@@ -673,7 +706,8 @@ def banner_year(text: str, max_start: int | None = None) -> str | None:
             continue
         if best is None or a > best:
             best = a
-    return "%d-%d" % (best, best + 1) if best is not None else None
+            words = " ".join((before + text[m.start():m.end()] + after).split())
+    return ("%d-%d" % (best, best + 1), words) if best is not None else (None, None)
 
 
 def catalog_year_from(page: dict, url: str, link_text: str, platform: str | None = None,
@@ -782,7 +816,9 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
             inner["index_url"] = url
             return inner
     body_year, body_words = year_in_body(page.get("body", ""))
+    banner_words = banner_match(page.get("body", ""))[1] if year_from == "banner" else None
     page.update(platform=platform, tier=tier, year=year, year_from=year_from,
+                banner_words=banner_words,
                 body_year=body_year, body_year_words=body_words,
                 format=catalog_format(platform, url, page.get("content_type", ""),
                                       pdf_links),
@@ -832,7 +868,7 @@ def census_one(reader: Reader, college: str, homepage_url: str,
                             foreign=foreign)
         tried.append({k: page.get(k) for k in
                       ("url", "final_url", "status", "access", "title", "h1",
-                       "platform", "tier", "year", "year_from", "body_year",
+                       "platform", "tier", "year", "year_from", "banner_words", "body_year",
                        "body_year_words", "format", "found_by", "index_url",
                        "error")})
         if page.get("access") == "ok":
@@ -978,7 +1014,13 @@ def main(argv: list[str] | None = None) -> int:
         run_id, len(colleges), source, delay / 1000,
         "APPLY" if args.apply else "dry run"))
 
-    rows = run(colleges, delay, all_names)
+    read = run(colleges, delay, all_names)
+    prior = {c["college"]: c.get("prior") for c in colleges}
+    rows = [keep_known_address(r, prior.get(r["college"])) for r in read]
+    kept = [a["college"] for a, b in zip(read, rows) if a is not b]
+    if kept:
+        print("kept a known address for %d college(s) this read could not find: %s"
+              % (len(kept), "; ".join(kept)))
     print("\n=== CENSUS SUMMARY ===")
     print(json.dumps(summarize(rows), indent=1))
     print("=== CENSUS ROWS JSON BEGIN ===")
