@@ -4,6 +4,8 @@ date: 2026-10-02
 session: 316 (SkyTally)
 tags: [handoff, implementation-funding, partner-crosswalks, funding-video, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_320_handoff.md
 ---
 
 # You are Session 317
