@@ -730,7 +730,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 56
+     "line": 58
     },
     {
      "id": "script:prototype/funding_video/build.py",
@@ -2493,7 +2493,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 64
+     "line": 66
     }
    ],
    "main_committers": []
@@ -2752,7 +2752,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 65
+     "line": 67
     }
    ],
    "main_committers": []
@@ -2844,7 +2844,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 66
+     "line": 68
     }
    ],
    "main_committers": []
@@ -2956,7 +2956,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 67
+     "line": 69
     }
    ],
    "main_committers": []
@@ -11911,7 +11911,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 52
+     "line": 54
     }
    ],
    "served": true,
@@ -17945,7 +17945,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 585
+     "line": 587
     }
    ],
    "main_committers": []
@@ -20327,7 +20327,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 144
+     "line": 146
     }
    ],
    "main_committers": []
@@ -21672,7 +21672,9 @@
   },
   "program-source-census.yml": {
    "name": "Program source census",
-   "crons": [],
+   "crons": [
+    "29 10 * * 0"
+   ],
    "scripts": [
     "kb/_program_source_census.py"
    ],

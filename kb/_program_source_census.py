@@ -22,8 +22,10 @@ GitHub runners "on a slow schedule that names the CPL Initiative". So:
 
 DRY RUN IS THE DEFAULT. It writes nothing: it prints one line per college and
 a JSON block between markers, which a session reads from the job log.
---apply sends the rows to program_source_census_apply() with the service key;
-that function does not exist until the registry migration lands.
+--apply sends the rows to program_source_census_apply() with the service key
+(kb/supabase_program_source_registry.sql). That function never overwrites a
+row a person corrected, and the table's trigger files every prior row in
+program_source_registry_history, so a run rolls back from its run id.
 
 Input: the registry's own rows (program_source_registry, keyed by the
 catalog-data college name) when the table exists. Until then a dry run reads
