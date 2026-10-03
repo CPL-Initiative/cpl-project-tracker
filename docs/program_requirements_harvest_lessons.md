@@ -107,8 +107,36 @@ a public read. "Approved" on the push that adds the weekly apply.
     a catalog address. What it cannot read is specific and nameable: the Los
     Rios colleges' homepages answer 404 to the browser, De Anza and City College
     of San Francisco serve Cloudflare challenges, and Cerro Coso's robots.txt
-    disallows its catalog PDF. Each is a seed or a source question for a
-    person, not a reader bug.
+    disallows its catalog PDF. S321 found that several of these were reader
+    rules after all (items 12 to 15); the rest are named in item 13.
+
+12. **A district page lists every college's catalog, and a link that names no
+    college ties to the shortest URL.** Miramar and San Diego Continuing
+    Education both read City College's `city26-27`. The census now prefers
+    the link naming this college's own words and refuses one naming a
+    sibling's words at least as often, and every college's name reaches the
+    reader before the pass is cut into slices (S321, #1839).
+
+13. **A probe needs a host that exists.** `catalog.losrios.edu`,
+    `catalog.deanza.edu` and `catalog.ccsf.edu` do not resolve. Los Rios
+    publishes each catalog on the college's own site under a year path
+    (`arc.losrios.edu/2026-2027-official-catalog`), while the college's root
+    answers the runner 404. De Anza and City College of San Francisco serve
+    Cloudflare challenges, and the census never works around a challenge.
+    These rows take a person's correction in the registry (`corrected_by`),
+    which the census then keeps.
+
+14. **A reader change moves rows it was not aimed at.** Reading hidden menu
+    text found Compton's and Rio Hondo's catalogs, and it changed which hub
+    pages Diablo Valley and Merced read, so both regressed in the same run.
+    Compare each dry run row by row against the last before merging; a
+    summary count hides a swap.
+
+15. **A vendor slug is not a year.** Mission's current eLumen catalog lives
+    under `/catalog/24-25/`, and the same URL titled itself "2026-2027" in
+    one load and "Catalog 24-25" in the next (the title is set after the
+    page loads). Two-digit pairs are read only in a curriQunet `/alias/`
+    name, where San Diego mints one alias a year.
 
 **State at checkpoint.** Registry: 118 rows, homepage only. Census: on `main`,
 weekly apply Sundays 10:29 UTC, first dry run reading.
