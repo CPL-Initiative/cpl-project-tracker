@@ -4,9 +4,9 @@
   "supabase_tables": 91,
   "rpcs": 34,
   "edge_functions": 5,
-  "file_datasets": 569,
+  "file_datasets": 571,
   "external_services": 151,
-  "consumers": 397,
+  "consumers": 399,
   "workflows": 40,
   "data_js_files": 68,
   "tabs": 37
@@ -1062,6 +1062,13 @@
      "line": 698
     },
     {
+     "id": "script:kb/_write_openclassrooms_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 118
+    },
+    {
      "id": "script:kb/memory_audit/2026-09-05-sheet_builder.py",
      "kind": "script",
      "direction": "read",
@@ -1107,6 +1114,13 @@
      "direction": "read",
      "how": "url",
      "line": 479
+    },
+    {
+     "id": "script:kb/_write_openclassrooms_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 119
     },
     {
      "id": "script:prototype/mockup_harness/assemble.py",
@@ -4134,6 +4148,13 @@
      "line": 163
     },
     {
+     "id": "script:kb/_build_openclassrooms_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 258
+    },
+    {
      "id": "script:kb/_csr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -4161,6 +4182,13 @@
      "tabs": [
       "coci-lookup"
      ]
+    },
+    {
+     "id": "script:kb/_build_openclassrooms_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 261
     }
    ],
    "served": false,
@@ -4299,6 +4327,13 @@
      "direction": "read",
      "how": "literal",
      "line": 225
+    },
+    {
+     "id": "script:kb/_build_openclassrooms_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 370
     },
     {
      "id": "script:kb/_build_regional_cpl_opportunity.py",
@@ -11345,6 +11380,39 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/openclassrooms_map_ace_recs.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_openclassrooms_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 389
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/openclassrooms_out/openclassrooms_digital_marketer_crosswalk.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_write_openclassrooms_html.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 19
+    },
+    {
+     "id": "script:kb/_write_openclassrooms_html.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 19
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/orphan_parent_worklist.json": {
    "consumers": [
     {
@@ -11872,6 +11940,13 @@
      "direction": "read",
      "how": "literal",
      "line": 47
+    },
+    {
+     "id": "script:kb/_build_openclassrooms_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 254
     },
     {
      "id": "script:kb/_build_program_course_graph.py",
@@ -12769,6 +12844,13 @@
      "line": 64
     },
     {
+     "id": "script:kb/_build_openclassrooms_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 242
+    },
+    {
      "id": "script:kb/_build_orphan_parent_worklist.py",
      "kind": "script",
      "direction": "read",
@@ -12823,6 +12905,13 @@
   },
   "file:kb/reference/swp_region_roster.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_openclassrooms_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 186
+    },
     {
      "id": "script:kb/_build_regional_cpl_opportunity.py",
      "kind": "script",
@@ -15319,6 +15408,13 @@
      "direction": "read",
      "how": "literal",
      "line": 208
+    },
+    {
+     "id": "script:kb/_build_openclassrooms_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 271
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
