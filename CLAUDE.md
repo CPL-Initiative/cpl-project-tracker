@@ -35,12 +35,11 @@ Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
-Allow-Once storm: its source was the Supabase connector's Tool permissions,
-changed 2026-09-28; S298's new-session test closes it) ·
+Allow-Once storm) ·
 [doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents and
 measurements behind these rules) ·
 [credential_watch_agent](docs/reference/credential_watch_agent.md) (the
-industry-credential watch; armed Mondays 05:51 PT) · `lanes/` (stubs below).
+industry-credential watch) · `lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has
@@ -754,14 +753,14 @@ stays here.
 
 > **Anything waiting on Sam is also a card on a sheet.** The standing one,
 > `kb/_build_open_asks_decision_sheet.py` →
-> [NwAWv98uo2ytzYjQu4CYzo](https://claude.ai/artifact/NwAWv98uo2ytzYjQu4CYzo) (sheet 22, answered),
+> [1fvmFT24WLJz3sa7RZBZSB](https://claude.ai/artifact/1fvmFT24WLJz3sa7RZBZSB) (sheet 23, answered),
 > **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
 > answers one, change that lane's marker in the same PR, or the sheet asks again
 > ([`decision_sheets`](docs/reference/decision_sheets.md)).
 
 | Phase | What | Status |
 |---|---|---|
-| 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (low immediate value — 1 cluster; build when ≥5 clusters exist) |
+| 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (build when ≥5 clusters exist) |
 | 1c | More audit rules in `kb/_row_audit.py` — **9 of 10 landed**; `cluster_title_drift` still queued. | in progress — [lane state](docs/reference/lanes/audit-rules.md) |
 | **Activity↔Project PR-D** | (Optional) split Workplan Goals into its own top-level tab if the page gets dense (Sam's prior preference: one page with two sections). | parked unless curator usage signals demand |
 | **Excel→Supabase Phase 2-4** | Retire the master `.xlsx`; Supabase is the system of record. | 🔨 in progress · open work — [lane state](docs/reference/lanes/excel-to-supabase.md) |
@@ -789,12 +788,13 @@ stays here.
 | **GR register / CO policy & regulation review** | Every CO priority area's regulatory / Ed. Code revisions under consideration, with the artifacts informing them — pointed at the whole CO, not just CPL. | ✅ live · open work — [lane state](docs/reference/lanes/gr-register.md) |
 | **Public/private repo split** | Partition the truly public views (Sierra, Fact Sheet, veteran map, landing pages) from COBI + the methodology, so the approach is not trivially cloneable. | 🔨 in progress · open work — [lane state](docs/reference/lanes/public-private-repo-split.md) |
 | **MAP Custom Reports (3 new) / ITPI automation** | Wire the three new MAP Custom Reports, load them, keep them fresh. | ✅ live · open work — [lane state](docs/reference/lanes/map-custom-reports.md) |
-| **Discipline cross-listing** | Nest, alias, or let a course carry two homes — the 1,210 rows whose colleges disagree about discipline. Sam's 12-item sheet; 4 of 12 landed (the ETHS re-mint: the 31 in S296, the 43 in S303). | 🔨 in progress · open work — [lane state](docs/reference/lanes/discipline-crosslist.md) |
+| **Discipline cross-listing** | Nest, alias, or let a course carry two homes — the 1,210 rows whose colleges disagree about discipline. Sam's 12-item sheet. | 🔨 in progress · open work — [lane state](docs/reference/lanes/discipline-crosslist.md) |
 | **SkyView / the CCR curation interface** | An interactive view of the Common Course Reference — common courses by discipline, their constituent local courses, and moving a course to where it belongs. | ✅ live · open work — [lane state](docs/reference/lanes/skyview-ccr-interface.md) |
 | **ESL packaging (the first fold)** | Collapse the ESL discipline to comprehensives + carve-outs — the proof that packaging reaches the target. | ✅ live · open work — [lane state](docs/reference/lanes/esl-packaging.md) |
 | **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |
 | **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
+| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · census built — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |

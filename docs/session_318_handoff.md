@@ -4,6 +4,8 @@ date: 2026-10-02
 session: 317 (SkyCompass)
 tags: [handoff, map-custom-reports, implementation-funding, funding-video, reliability]
 status: current
+superseded: true
+superseded_by: session_320_handoff.md
 ---
 
 # You are Session 318

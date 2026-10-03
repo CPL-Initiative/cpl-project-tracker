@@ -107,7 +107,9 @@ block("4. what the limit leaves alone", () => {
 
 block("5. the wiring", () => {
   check("(5) ⭐ the service-role client is created with the limited fetch",
-    /createClient\(SUPABASE_URL, SUPABASE_SERVICE_KEY, \{ global: \{ fetch: routeLimitedFetch \} \}\)/.test(SRC));
+    // S319: the timing log wraps it (timedFetch records each read's duration
+    // and hands the call to routeLimitedFetch, so the limit still applies).
+    /createClient\(SUPABASE_URL, SUPABASE_SERVICE_KEY, \{\s*global: \{ fetch: \(input: any, init\?: any\) => timedFetch\(input, init, timings, routeLimitedFetch, Date\.now\) \},\s*\}\)/.test(SRC));
   check("(5) ⭐ the user-scoped (anon) client too, keeping its headers",
     /createClient\(SUPABASE_URL, anonKey, \{ global: \{ headers: extraHeaders, fetch: routeLimitedFetch \} \}\)/.test(SRC));
   check("(5) the limited fetch binds the constant and the real fetch", /const routeLimitedFetch = \(input: any, init\?: any\) => fetchWithRouteLimit\(input, init, ROUTE_TIMEOUT_MS, fetch\);/.test(SRC));

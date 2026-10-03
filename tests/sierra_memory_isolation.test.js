@@ -106,7 +106,8 @@ block("(2)", function () {
     ["the input cap", /const trimmedQuery = query\.trim\(\)\.slice\(0, queryCapFor\([^;]*\bhostSurface\b[^;]*\)/],
     ["the guidance filter", /fetchTeamGuidance\([^;]*\bhostSurface\b[^;]*\)/],
     ["the system prompt", /if \(drafting\) systemPrompt\.volatile \+= DRAFTING_BLOCK/],
-    ["the interactions log", /if \(!drafting\) await sb\.from\("chat_interactions"\)/],
+    // S319: the insert's returned error is read, so the guard became an assignment.
+    ["the interactions log", /const logged = drafting \? null : await sb\.from\("chat_interactions"\)/],
     /* v66 (2026-09-12): the surface is now FILED with the turn and ECHOED to the
      * caller in the meta frame, so a read of chat_interactions can separate the
      * COBI tabs from the public page and a COBI reader can see how the server
@@ -171,7 +172,7 @@ block("(3)", function () {
  * this guard is what stops the briefing surface adding more. */
 block("(4)", function () {
   check("(4) ⭐ a drafting call is NOT filed as a Sierra interaction",
-    /if \(!drafting\) await sb\.from\("chat_interactions"\)\.insert\(/.test(HANDLER));
+    /const logged = drafting \? null : await sb\.from\("chat_interactions"\)\.insert\(/.test(HANDLER));
   check("(4) ⚠ …and there is no second, unguarded insert into that table",
     (HANDLER.match(/sb\.from\("chat_interactions"\)\.insert\(/g) || []).length === 1,
     "a second write path would re-open the channel this guard closes");

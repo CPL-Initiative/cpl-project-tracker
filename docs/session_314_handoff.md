@@ -4,6 +4,8 @@ date: 2026-10-02
 session: 313 (SkyReel)
 tags: [handoff, implementation-funding, funding-video, sierra, partner-crosswalks, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_320_handoff.md
 ---
 
 # You are Session 314

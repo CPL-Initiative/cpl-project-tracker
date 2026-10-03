@@ -221,6 +221,10 @@ answer_must_not_match_unnegated() { # [-i] regex label
 # The noun form too (2026-10-01, S311): "None of the three San Gabriel Valley colleges above
 # have an existing CPL articulation for CNA-to-LVN" is an articulation absence, and the
 # verb-only rule missed it once #1800 had Sierra write the place in full.
+# And MAP's own word for the record (2026-10-03, S319): run 37129004481, the smoke
+# after a deploy, wrote "No San Gabriel Valley college has an exhibit specifically
+# articulating CNA-to-LVN credit yet" beside three LVN colleges named by course.
+# An exhibit is an articulation, and "articulating" is the -ing form.
 answer_must_not_claim_absence() { # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
@@ -231,7 +235,7 @@ answer_must_not_claim_absence() { # [-i] regex label
     -e "s/[*]//g" \
     -e "s/\\b(catalog( data)?|the data|our data|the records?) (lists|shows|holds|carries) (no|none)\\b/\\1 \\3 zero/Ig" \
     -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?articulated/zero\\2 \\3 \\4articulated/Ig" \
-    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?([[:alnum:]-]+ ){0,3}articulat(ions?|ed)\\b/zero\\2 \\3 an articulation/Ig")"
+    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?(([[:alnum:]-]+ ){0,3}articulat(ions?|ed|ing)|([[:alnum:]-]+ ){0,2}exhibits?)\\b/zero\\2 \\3 an articulation/Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
     echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
   else
@@ -737,6 +741,94 @@ answer_must_not_match -i "los medanos|merritt college|city college of san franci
 # were four of the six rows v72 drew.
 answer_must_not_match -i "acute care cna[^a-z]|cna acute care|acute care theory for cnas" "7s ⭐ the quick list does not restate the acute-care course under its raw title variants (cpl_course_title_norm expands CNA; 22 colleges were split seven ways)"
 answer_must_match -i "ask|request|review" "7s ⭐ frames the match as a request for review, never a determination"
+
+# ── MODE 7l: the courses a program LISTS, at the one college asked (S319) ─────
+# Sam, 2026-10-02: "Goal is to be able to list the courses in particular programs
+# at a given college." Before college_program_courses (#1828) the only list
+# Sierra had was every course at the college sharing the program's TOP code,
+# which finds a median 33% of a program's courses. Mt. San Antonio's LVN-to-RN
+# A.S. lists 27; the proxy found its 7 NURS courses and none of the anatomy,
+# microbiology, English, psychology or communication the program lists.
+#
+# So the assertion that proves the route is a course OUTSIDE nursing, by number:
+# no TOP-coded list can supply one, and the model's own knowledge does not hold
+# Mt. SAC's course numbers. Retrieval is asserted first, as in 7p and 7r, so a
+# red prose line can be told apart from an empty data layer.
+#
+# ⚠ PL_TERMS is a TRANSCRIPTION of what index.ts builds for PL_QUESTION
+# (programTerms drops the ask words and the college's own name; "rn" is under
+# the keyword length, so the terms are the lvn family alone).
+# tests/sierra_program_courses.test.js block 9 re-derives it from index.ts and
+# fails the moment they part. 8 and 40 are index.ts's program_limit and
+# PROGRAM_COURSES_PER_LIST; the same block pins them.
+PL_COLLEGE='Mt. San Antonio College'
+PL_QUESTION='What courses are in the LVN to RN program at Mt. San Antonio College?'
+PL_TERMS='["lvn","practical nursing","vocational nursing"]'
+program_courses_call() { # json array of terms
+  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/college_program_courses" \
+    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+    -d "$(printf '{"p_college":"%s","search_terms":%s,"program_limit":8,"course_limit":40}' "$PL_COLLEGE" "$1")"
+}
+echo "===================================================================="
+echo "MODE: 7l program course lists reach the one college asked (Mt. San Antonio, LVN to RN)"
+negl="$(program_courses_call '["zzq qqz"]')"
+case "$negl" in
+  "[]") echo "  [assert ok] negative control: a nonsense phrase returns no program lists" ;;
+  *) echo "::error::7l negative control FAILED — a nonsense phrase returned $(printf '%s' "$negl" | head -c 160). The assertions below cannot be trusted."; fail=1 ;;
+esac
+lrows="$(program_courses_call "$PL_TERMS")"
+case "$lrows" in
+  "[{"*) echo "  [assert ok] positive control: college_program_courses returned rows" ;;
+  *) echo "::error::7l positive control FAILED — college_program_courses returned $(printf '%s' "$lrows" | head -c 200)"; fail=1 ;;
+esac
+lstat=$(printf '%s' "$lrows" | python3 -c '
+import json, re, sys
+try:
+    rows = json.loads(sys.stdin.read())
+    rows = rows if isinstance(rows, list) else []
+except Exception:
+    rows = []
+bridge = [r for r in rows if re.search(r"\blvn\b.*\brn\b", r.get("program_title") or "", re.I)]
+size = bridge[0].get("list_size") if bridge else None
+subjects = {(re.match(r"[A-Za-z]*", r.get("course_code") or "").group(0)).upper() for r in bridge}
+outside = sorted(s for s in subjects if s and not s.startswith("NURS"))
+print("-" if size is None else size, len(outside), ",".join(outside) or "-", sep="|")
+')
+lsize=$(printf '%s' "$lstat" | cut -d'|' -f1)
+lout=$(printf '%s' "$lstat" | cut -d'|' -f2)
+lsubj=$(printf '%s' "$lstat" | cut -d'|' -f3)
+# THRESHOLDS, not counts: 27 courses and 7 subjects outside NURS measured
+# 2026-10-03 (Data Mart Program Course File of 2026-07-16). A null list_size
+# means coci_college_programs.control_number is not loaded, which is the state
+# the block renders nothing for.
+if [ "$lsize" != "-" ] && [ "${lsize:-0}" -ge 20 ]; then
+  echo "  [assert ok] 7l ⭐ the LVN-to-RN option lists $lsize courses (27 measured)"
+else
+  echo "::error::7l ⭐ the LVN-to-RN option's list_size is ${lsize} — expected 20+. '-' means the program was not returned or control_number is null (re-run coci-offerings-sync; check the join in chatbox/supabase_college_program_courses.sql)."; fail=1
+fi
+if [ "${lout:-0}" -ge 4 ]; then
+  echo "  [assert ok] 7l ⭐ the list reaches $lout subjects outside nursing ($lsubj; 7 measured, the TOP proxy reached 0)"
+else
+  echo "::error::7l ⭐ the list reaches only ${lout:-0} subjects outside nursing (${lsubj}) — the TOP proxy's shape. Check that coci_program_courses is loaded and keyed by control_number."; fail=1
+fi
+# Same cost bar as 7p: the anon key's statement timeout is 3 s, and the handler
+# awaits this read before it builds the prompt. 0.33 s measured in the database.
+lsecs=$(curl -sS --max-time 45 -o /dev/null -w '%{time_total}' -X POST "$REST_BASE/rpc/college_program_courses" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -d "$(printf '{"p_college":"%s","search_terms":%s,"program_limit":8,"course_limit":40}' "$PL_COLLEGE" "$PL_TERMS")" 2>/dev/null || echo 99)
+if awk -v s="${lsecs:-99}" 'BEGIN { exit !(s + 0 < 4.0) }'; then
+  echo "  [assert ok] 7l ⭐ the program course read answered in ${lsecs}s (0.33 s measured in the database)"
+else
+  echo "::error::7l ⭐ the program course read took ${lsecs}s — over 4 s, near the anon key's 3 s timeout, which drops the Program Course Lists section silently."; fail=1
+fi
+run "7l program course list (Mt. San Antonio, LVN to RN)" \
+  "$(printf '{"query":"%s","session_id":"smoke-ci","history":[]}' "$PL_QUESTION")"
+answer_must_match "\b(ANAT|MICR|PSYC|ENGL|COMM|CHLD|AMLA)[ -]?C?[0-9]" "7l ⭐ names a course the LVN-to-RN program lists outside nursing, BY NUMBER (ANAT 35, MICR 22, PSYC 14 …; the TOP proxy reaches none of them)"
+answer_must_not_match -i "total(ing|s)? (of )?[0-9]+(\.[0-9]+)? units|[0-9]+(\.[0-9]+)? units (in )?total" "7l ⭐ never adds up the units — honors twins and alternatives are listed together"
+# The S319 A/B candidate wrote that honors versions "appear side by side rather
+# than as substitutes you'd choose between": a student reading it takes ENGL
+# C1000 and ENGL C1000H both. An honors pair is one choice.
+answer_must_not_match -i "rather than (as )?(substitutes|alternatives)|(are|as) not (substitutes|alternatives)|take both (the )?honors" "7l ⭐ never tells the visitor an honors pair is two courses to take"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).

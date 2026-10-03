@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 512,
+   "count": 513,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3057,7 +3057,7 @@
      ],
      "title": "A revoke must name every role the grant named \u2014 on this Supabase project a new function is callable by anon by name, not only through PUBLIC",
      "type": "methodology",
-     "updated": "2026-09-30"
+     "updated": "2026-10-03"
     },
     {
      "created": "2026-08-15",
@@ -8607,6 +8607,25 @@
      "updated": ""
     },
     {
+     "created": "2026-10-03",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "tests/sierra_program_courses.test.js",
+      "chatbox/smoke_test.sh"
+     ],
+     "path": "docs/kb-notes/methodology-write-the-rule-as-the-sentence-you-want-said.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "prompt-rules",
+      "a-b-testing"
+     ],
+     "title": "Write a model's rule as the sentence you want the reader to leave with, because the model will say it",
+     "type": "methodology",
+     "updated": "2026-10-03"
+    },
+    {
      "created": "2026-09-17",
      "governs": [
       "kb/_build_regional_cpl_opportunity.py"
@@ -10302,7 +10321,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 81,
+   "count": 82,
    "docs": [
     {
      "created": "2026-08-14",
@@ -11668,6 +11687,30 @@
       "sjcoe"
      ],
      "title": "Partner occupation \u2192 CPL crosswalk \u2014 lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-03",
+     "governs": [
+      "kb/_program_source_census.py",
+      "kb/supabase_program_source_registry.sql",
+      ".github/workflows/program-source-census.yml",
+      "tests/program_source_census_test.py",
+      "kb/governance_surface_map.json"
+     ],
+     "path": "docs/program_requirements_harvest_lessons.md",
+     "status": null,
+     "tags": [
+      "program-requirements",
+      "catalog-harvest",
+      "census",
+      "supabase",
+      "playwright",
+      "governance",
+      "lessons"
+     ],
+     "title": "Program requirements harvest \u2014 Decisions & Lessons",
      "type": null,
      "updated": ""
     },
@@ -13921,7 +13964,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 51,
+   "count": 52,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14251,6 +14294,19 @@
      "updated": "2026-09-30"
     },
     {
+     "created": "2026-10-03",
+     "governs": [],
+     "path": "docs/reference/lanes/program-requirements-harvest.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Program requirements harvest \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-03"
+    },
+    {
      "created": "2026-08-28",
      "governs": [],
      "path": "docs/reference/lanes/public-private-repo-split.md",
@@ -14314,7 +14370,7 @@
      ],
      "title": "Sierra retrieval + corpus \u2014 lane state",
      "type": null,
-     "updated": "2026-09-30"
+     "updated": "2026-10-03"
     },
     {
      "created": "2026-08-28",
@@ -14379,7 +14435,7 @@
      ],
      "title": "Approval-prompt guards \u2014 why the allowlist never worked, and where the hooks must live",
      "type": null,
-     "updated": "2026-09-28"
+     "updated": "2026-10-03"
     },
     {
      "created": "2026-08-28",
@@ -14631,8 +14687,42 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 290,
+   "count": 292,
    "docs": [
+    {
+     "created": "2026-10-03",
+     "governs": [],
+     "n": 321,
+     "path": "docs/session_321_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "census",
+      "registry",
+      "governance"
+     ],
+     "title": "the census and its registry are live; read the first dry run, then fill the registry",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-03",
+     "governs": [],
+     "n": 320,
+     "path": "docs/session_320_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra-retrieval-corpus",
+      "program-requirements-harvest",
+      "timing",
+      "jev"
+     ],
+     "title": "Sierra's course lists and timing log are live; the program requirements harvest waits on Sam's eight calls",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-02",
      "governs": [],
@@ -19567,5 +19657,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1020
+ "total": 1025
 }

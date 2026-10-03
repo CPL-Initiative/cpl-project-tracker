@@ -4,6 +4,8 @@ date: 2026-10-02
 session: 314 (SkyVerdict)
 tags: [handoff, implementation-funding, sierra, partner-crosswalks, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_320_handoff.md
 ---
 
 # You are Session 315

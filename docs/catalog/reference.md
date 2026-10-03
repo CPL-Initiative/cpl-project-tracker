@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-51 document(s).
+52 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -44,16 +44,17 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Noncredit CIP categories — lane state](../reference/lanes/noncredit-cip-categories.md) | lanes | `noncredit-cip-categories.md` | 2026-08-28 | 2026-08-28 |
 | [Org & phrase scope / auth model — lane state](../reference/lanes/org-phrase-scope-auth.md) | lanes | `org-phrase-scope-auth.md` | 2026-08-28 | 2026-09-19 |
 | [Partner crosswalks — lane state](../reference/lanes/partner-crosswalks.md) | lanes | `partner-crosswalks.md` | 2026-08-28 | 2026-09-30 |
+| [Program requirements harvest — lane state](../reference/lanes/program-requirements-harvest.md) | lanes | `program-requirements-harvest.md` | 2026-10-03 | 2026-10-03 |
 | [Public/private repo split — lane state](../reference/lanes/public-private-repo-split.md) | lanes | `public-private-repo-split.md` | 2026-08-28 | 2026-08-28 |
 | [Reviewer session lifetime & scope — lane state](../reference/lanes/reviewer-session-lifetime.md) | lanes | `reviewer-session-lifetime.md` | 2026-08-28 | 2026-08-28 |
 | [Roadmap lanes — how the pointer index and the lane files divide](../reference/lanes/README.md) | lanes | `README.md` | 2026-09-09 | 2026-09-09 |
 | [Row-auditor rules (§11 phase 1c) — lane state](../reference/lanes/audit-rules.md) | lanes | `audit-rules.md` | 2026-08-28 | 2026-08-28 |
-| [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-09-30 |
+| [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-10-03 |
 | [Sierra: false absences + the statewide flag — lane state](../reference/lanes/sierra-false-absences.md) | lanes | `sierra-false-absences.md` | 2026-08-28 | 2026-08-28 |
 | [SkyView / the CCR curation interface — lane state](../reference/lanes/skyview-ccr-interface.md) | lanes | `skyview-ccr-interface.md` | 2026-08-28 | 2026-09-29 |
 | [Title 5 §55050 → Ed. Code Article 9 — lane state](../reference/lanes/t5-55050-article-9.md) | lanes | `t5-55050-article-9.md` | 2026-08-28 | 2026-08-30 |
 | [Primary-source statutory and regulatory text](../reference/statute/README.md) | statute | `README.md` |  |  |
-| [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-09-28 |
+| [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-10-03 |
 | [Branch policy — the full record (CLAUDE.md offload)](../reference/branch_policy.md) | — | `branch_policy.md` | 2026-08-28 | 2026-08-28 |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data-write rollback — undoing a bulk write to a shared Supabase table](../reference/data_write_rollback.md) | — | `data_write_rollback.md` | 2026-08-30 |  |

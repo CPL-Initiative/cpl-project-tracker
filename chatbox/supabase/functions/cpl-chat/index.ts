@@ -232,6 +232,79 @@ function fetchWithRouteLimit(input: any, init: any, limitMs: number, doFetch: an
   });
 }
 // End of the route time limit helpers
+
+// ── TIMING LOG (2026-10-03, S319) ─────────────────────────────────────────────
+// Sam, 2026-10-03: "add the timing log after the deploy and let's see how best
+// to use Jev as we continue to expand Sierra's knowledgebase and capability."
+// chat_interactions held the question, the answer and the output tokens, and no
+// time at all, so "where does a visitor's wait go?" had no measured answer. Each
+// turn now files `timings`: the phases from request to last word, every database
+// read with its own duration, and the size of the prompt the model read. It is
+// telemetry: nothing reads it to shape an answer.
+//
+// The phases, each in ms, measured from the request's arrival:
+//   embed_ms       the question embedding and the geography read (run together)
+//   retrieval_ms   the parallel retrieval routes, as long as the slowest of them
+//   prep_ms        the follow-on reads (program course lists, prospective credit)
+//                  and building the prompt
+//   model_wait_ms  request sent to the model until its first word
+//   writing_ms     first word to last
+// `reads` lists every PostgREST call in completion order; the retrieval routes
+// run concurrently, so their durations overlap and never sum to a phase.
+// Pure helpers below are lifted by tests/sierra_timing_log.test.js.
+const TIMING_READS_KEPT = 40;
+function newTimings(startMs: number): any {
+  return { start: startMs, marks: {}, reads: [] };
+}
+// The FIRST mark of a name wins, so the first word is marked once however many
+// text frames follow it.
+function markTiming(t: any, name: string, atMs: number): void {
+  if (!t || !t.marks || Object.prototype.hasOwnProperty.call(t.marks, name)) return;
+  t.marks[name] = Math.max(0, Math.round(atMs - t.start));
+}
+function readLabel(url: string): string {
+  const p = routePath(url);
+  const m = p.match(/\/rest\/v1\/(.+)$/);
+  return m ? m[1] : p;
+}
+function recordRead(t: any, url: string, ms: number, ok: boolean): void {
+  if (!t || !Array.isArray(t.reads) || t.reads.length >= TIMING_READS_KEPT) return;
+  t.reads.push({ p: readLabel(url), ms: Math.max(0, Math.round(ms)), ok: !!ok });
+}
+// Wraps the route-limited fetch, so every read keeps its time limit and gains a
+// duration. A read that throws (a cut, a network failure) is recorded as not ok
+// and the error is rethrown unchanged.
+function timedFetch(input: any, init: any, t: any, doFetch: any, now: any): Promise<any> {
+  const url = typeof input === "string" ? input : (input && input.href) ? input.href : (input && input.url) || "";
+  const started = now();
+  return doFetch(input, init).then(
+    (res: any) => { recordRead(t, url, now() - started, !!(res && res.ok)); return res; },
+    (e: any) => { recordRead(t, url, now() - started, false); throw e; },
+  );
+}
+function timingsRow(t: any, endMs: number, extra: any): any {
+  const m = (t && t.marks) || {};
+  const at = (k: string) => (typeof m[k] === "number" ? m[k] : null);
+  const span = (a: number | null, b: number | null) => (a === null || b === null ? null : Math.max(0, b - a));
+  const start = t && typeof t.start === "number" ? t.start : endMs;
+  const total = Math.max(0, Math.round(endMs - start));
+  const embedded = at("embedded"), retrieved = at("retrieved"), sent = at("model_sent"), first = at("first_text");
+  const reads = (t && Array.isArray(t.reads)) ? t.reads : [];
+  return {
+    v: 1,
+    total_ms: total,
+    first_text_ms: first,
+    embed_ms: embedded,
+    retrieval_ms: span(embedded, retrieved),
+    prep_ms: span(retrieved, sent),
+    model_wait_ms: span(sent, first),
+    writing_ms: span(first, first === null ? null : total),
+    reads,
+    slowest_read: reads.reduce((a: any, r: any) => (!a || r.ms > a.ms ? r : a), null),
+    ...(extra || {}),
+  };
+}
+// End of the timing log helpers
 const routeLimitedFetch = (input: any, init?: any) => fetchWithRouteLimit(input, init, ROUTE_TIMEOUT_MS, fetch);
 const RATE_LIMIT_PER_MIN = 20;
 
@@ -3141,7 +3214,7 @@ function buildProgramsContext(
 //
 // WHAT THE BLOCK MAY SAY. The source carries no required/elective flag, so a
 // course is one the program LISTS: never "required", and never a unit total
-// (honors twins and alternatives sit side by side). A program whose list is
+// (honors twins and alternatives are listed together). A program whose list is
 // absent from the catalog data is said to be absent from the data, never to
 // have no courses. And a program whose key is not loaded yet (list_size null)
 // renders nothing about courses at all.
@@ -3216,7 +3289,8 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
   let ctx = `\n\n--- Program Course Lists: ${college} (catalog data, as of ${PROGRAM_COURSES_AS_OF}) ---\n`;
   ctx += `These are the courses each program LISTS in the state's catalog data. Rules for using them:\n`;
   ctx += `- Name the program and its award, then list its courses by number and title.\n`;
-  ctx += `- Say the program "lists" these courses. The data has no required/elective flag, so never call a course required and never add up the units: honors versions and alternatives appear side by side.\n`;
+  ctx += `- Say the program "lists" these courses. The data has no required/elective flag, so never call a course required and never add up the units.\n`;
+  ctx += `- The list holds more courses than one student takes. An honors version sits beside its standard course, and a student takes one course of each honors pair. Where other courses look like alternatives, say the catalog or a counselor confirms which ones count.\n`;
   ctx += `- Point the visitor to ${college}'s catalog or a counselor for which courses are required and in what order.\n`;
   ctx += `- If the program asked about is not below, say the catalog data shows no matching program at ${college} by that name; never say the college does not offer it.\n`;
   for (const g of shown) {
@@ -5469,6 +5543,7 @@ Deno.serve(async (req: Request) => {
     });
   }
 
+  const timings = newTimings(Date.now());
   try {
     const { query, session_id, history, audience, ctx, scope, surface, retrieval_query } = await req.json();
     if (!query || typeof query !== "string" || query.trim().length === 0) {
@@ -5560,7 +5635,9 @@ Deno.serve(async (req: Request) => {
     const searchText = (retrievalText
       || (isRefinement ? `${trimmedQuery}  ${priorUserText}` : trimmedQuery)).slice(0, 1000);
 
-    const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, { global: { fetch: routeLimitedFetch } });
+    const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
+      global: { fetch: (input: any, init?: any) => timedFetch(input, init, timings, routeLimitedFetch, Date.now) },
+    });
 
     // 1. Generate query embedding (over the retrieval text) — and read the
     //    geography table beside it, because the PLACE parse below needs the
@@ -5572,6 +5649,7 @@ Deno.serve(async (req: Request) => {
       session.run(searchText, { mean_pool: true, normalize: true }),
       fetchCollegeGeoMap(sb),                 // region/county for every college (v30) — now before detection
     ]);
+    markTiming(timings, "embedded", Date.now());
 
     /* ⚠ A PLACE IS AN ANCHOR, NOT A COLLEGE (2026-09-18, S273; the measured
      * failure is on resolveAskedPlace). The place anchors askedGeo and the
@@ -5606,6 +5684,7 @@ Deno.serve(async (req: Request) => {
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
       deriveViewer(req.headers),              // who is asking, from the credential — never the body (v66)
     ]);
+    markTiming(timings, "retrieved", Date.now());
 
     const sections = searchResult.data;
     if (searchResult.error) {
@@ -5958,6 +6037,7 @@ Deno.serve(async (req: Request) => {
     if (drafting) systemPrompt.volatile += DRAFTING_BLOCK;
 
     // 4. Call the model
+    markTiming(timings, "model_sent", Date.now());
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
@@ -6037,6 +6117,7 @@ Deno.serve(async (req: Request) => {
     let responseTokens = 0;
     let cacheRead = 0;
     let cacheWrite = 0;
+    let inputUncached = 0;  // uncached input tokens, for the timing log
 
     const stream = new ReadableStream({
       async start(controller) {
@@ -6077,6 +6158,7 @@ Deno.serve(async (req: Request) => {
                 try {
                   const event = JSON.parse(data);
                   if (event.type === "content_block_delta" && event.delta?.text) {
+                    markTiming(timings, "first_text", Date.now());
                     fullResponse += event.delta.text;
                     controller.enqueue(
                       encoder.encode(`event: text\ndata: ${JSON.stringify({ text: event.delta.text })}\n\n`)
@@ -6122,6 +6204,7 @@ Deno.serve(async (req: Request) => {
                     const u = event.message.usage;
                     cacheRead = u.cache_read_input_tokens || 0;
                     cacheWrite = u.cache_creation_input_tokens || 0;
+                    inputUncached = u.input_tokens || 0;
                     /* ⚠ NAME THE MODEL THAT ANSWERED — Sam's ruling, decision sheet
                      * item 3, 2026-09-11. Taken from `event.message.model`, the
                      * model the API says it SERVED, never the MODEL constant we
@@ -6173,6 +6256,24 @@ Deno.serve(async (req: Request) => {
         controller.enqueue(encoder.encode(`event: done\ndata: {}\n\n`));
         controller.close();
 
+        // The timing log: one line to the function log for a read today, one
+        // jsonb value on the turn's row for the analysis.
+        const timingRow = timingsRow(timings, Date.now(), {
+          prompt_chars: (systemPrompt.stable || "").length + (systemPrompt.volatile || "").length,
+          context_chars: (systemPrompt.volatile || "").length,
+          input_uncached: inputUncached,
+          input_cache_read: cacheRead,
+          input_cache_write: cacheWrite,
+          output_tokens: responseTokens,
+        });
+        console.log(
+          `cpl-chat timing: total=${timingRow.total_ms} first_text=${timingRow.first_text_ms} ` +
+          `embed=${timingRow.embed_ms} retrieval=${timingRow.retrieval_ms} prep=${timingRow.prep_ms} ` +
+          `model_wait=${timingRow.model_wait_ms} writing=${timingRow.writing_ms} ` +
+          `slowest=${timingRow.slowest_read ? `${timingRow.slowest_read.p}:${timingRow.slowest_read.ms}` : "-"} ` +
+          `context_chars=${timingRow.context_chars} reads=${timingRow.reads.length}`
+        );
+
         try {
           /* ⚠ A DRAFTING CALL IS NOT A TURN, so it is not filed as one.
            * chat_interactions is read by the Sierra Training tab's Gap Miner —
@@ -6182,7 +6283,11 @@ Deno.serve(async (req: Request) => {
            * team memory entry…", carrying a 0.86 similarity earned by its own
            * boilerplate, and pushes a real question off the list. Three such
            * rows exist today; the briefing surface would have added more. */
-          if (!drafting) await sb.from("chat_interactions").insert({
+          /* ⚠ supabase-js RETURNS an insert's error; it never throws it, so the
+           * catch below never saw a rejected row. Read it. A row the table
+           * refuses (a column the migration has not added yet) is otherwise
+           * lost with clean logs. */
+          const logged = drafting ? null : await sb.from("chat_interactions").insert({
             session_id: session_id || null,
             question: trimmedQuery,
             response: fullResponse,
@@ -6203,7 +6308,10 @@ Deno.serve(async (req: Request) => {
             // may have changed, and the overlay certainly may have.
             rules_fired: ruleReport.fired,
             rules_overridden: ruleReport.overridden,
+            // Where this turn's time went (S319). Telemetry only.
+            timings: timingRow,
           });
+          if (logged && logged.error) console.error("Failed to log interaction:", logged.error.message);
         } catch (logErr) {
           console.error("Failed to log interaction:", logErr);
         }

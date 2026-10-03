@@ -65,7 +65,18 @@ const SGV_ARTIC_SHOWS = "No college in the San Gabriel Valley catalog data shows
 const SGV_ARTIC_ADJ = "A couple of honest caveats: none of the three San Gabriel Valley colleges above currently has an "
   + "*articulated* CPL exhibit matching CNA to LVN credit specifically — so this would be a request for the college to review.";
 
+// Recorded, run 37129004481 (2026-10-03, S319, the smoke after the cpl-chat deploy):
+// "exhibit ... articulating", the -ing form beside MAP's word for the record. The
+// answer had already named Rio Hondo VN 61, Pasadena NURS 102 and Citrus VNRS 150.
+const SGV_ARTIC_EXHIBIT = "No San Gabriel Valley college has an exhibit specifically articulating CNA-to-LVN credit yet, "
+  + "so this would be a request you're initiating, not one already on file — which is exactly how new articulations get built.";
+
 if (RE_7C && RE_7S && fn) {
+  check("7s: an articulation absence with \"an exhibit ... articulating\" passes", !fails(SGV_ARTIC_EXHIBIT, RE_7S));
+  check("7s: \"has no exhibit for LVN\" passes as an articulation absence",
+    !fails("No San Gabriel Valley college has an existing LVN exhibit yet.", RE_7S));
+  check("7s: …and neither excuses a bare program claim beside it",
+    fails(SGV_ARTIC_EXHIBIT + " No San Gabriel Valley college offers an LVN entry program.", RE_7S));
   check("7s: an articulation absence in the adjective form, in markdown emphasis, passes (\"has an *articulated* CPL exhibit\")",
     !fails(SGV_ARTIC_ADJ, RE_7S));
   check("7s: …and does not excuse a bare program claim beside it",
