@@ -221,6 +221,10 @@ answer_must_not_match_unnegated() { # [-i] regex label
 # The noun form too (2026-10-01, S311): "None of the three San Gabriel Valley colleges above
 # have an existing CPL articulation for CNA-to-LVN" is an articulation absence, and the
 # verb-only rule missed it once #1800 had Sierra write the place in full.
+# And MAP's own word for the record (2026-10-03, S319): run 37129004481, the smoke
+# after a deploy, wrote "No San Gabriel Valley college has an exhibit specifically
+# articulating CNA-to-LVN credit yet" beside three LVN colleges named by course.
+# An exhibit is an articulation, and "articulating" is the -ing form.
 answer_must_not_claim_absence() { # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
@@ -231,7 +235,7 @@ answer_must_not_claim_absence() { # [-i] regex label
     -e "s/[*]//g" \
     -e "s/\\b(catalog( data)?|the data|our data|the records?) (lists|shows|holds|carries) (no|none)\\b/\\1 \\3 zero/Ig" \
     -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?articulated/zero\\2 \\3 \\4articulated/Ig" \
-    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?([[:alnum:]-]+ ){0,3}articulat(ions?|ed)\\b/zero\\2 \\3 an articulation/Ig")"
+    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?(([[:alnum:]-]+ ){0,3}articulat(ions?|ed|ing)|([[:alnum:]-]+ ){0,2}exhibits?)\\b/zero\\2 \\3 an articulation/Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
     echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
   else
