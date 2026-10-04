@@ -207,6 +207,38 @@ himself checks the 20-program sample; Sam asks the Butte College Tech Center
 for its ROE field definitions after the pilot's first records; the six catalog
 addresses go in as given ("go"); the memory receipts wait for later.
 
+**The sequence pass (S325, PR #1847):** `kb/_program_sequence_ppm.py` on its own
+workflow (`program-sequence-ppm.yml`, so a change never reruns the capture's 20
+reads) enters a college's Program Mapper from the college's own pages, follows
+the link into the mapper, and accepts a page naming half the program's listed
+courses and at least two terms. **Run 1 (37197332656, 2026-10-04):** a web search
+found Miramar's own mapper page (`sdmiramar.edu/program-mapper`, with deep links
+`?pg=/academics/interest-clusters/<id>/programs/<id>`), and its "View Program
+Mapper" link leads to `san-diego-miramar.programmapper.com`, which answered all
+seven requests **403 Forbidden**. The reader never works around a refusal. None of
+the 20 captured catalog pages prints a term sequence. By default the pass now
+probes each sequence source the census filed, one load each, and re-reads
+Miramar's mapper only on a person's request (dispatch input `read: 1`).
+
+**Sam's ruling (2026-10-04, 11:1xZ, in chat):** *"No need for governance at this
+point. Everything is public record and we can mark the tab and contents as beta
+draft."* The harvest's tab shows its records without a Governance pass, marked
+**Beta draft** (vault braindump
+`braindump-2026-10-04-1115-program-requirements-tab-public-record.md`). Then:
+*"Integrate Sierra in the tab design."*
+
+**The tab (mock-up, First Light):**
+[Program Requirements Harvest](https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f)
+v2. Three views (Catalogs, Pilot records, Sequences) and Sierra docked beside
+them, scoped to a program by "Ask Sierra about this program". Each course shows
+how many MAP credit recommendations its college has articulated to it (counts of
+`map_college_cr_unit.credit_rec` by course code, never a student figure); 14 of 20
+programs hold one. Porting it means `CPL_CHAT.mountInto(host,
+"program-requirements")` with `setScope` / `setSuggestions`, and the surface added
+to `KNOWN_SURFACES` in `cpl-chat` (a deploy). ⚠️ Cerritos's Field Ironworker A.S.
+reads 0: its apprenticeship credit lives in the hand-built CPL Pathways map, not in
+MAP's credit recommendations.
+
 **NEEDS SAM (open-asks sheet 27):** (1) paste the two memory receipts
 (`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`) in the SQL editor
 when convenient (his call: later): three rows name a stall word, and the
