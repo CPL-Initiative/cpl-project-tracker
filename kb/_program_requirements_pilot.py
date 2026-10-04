@@ -365,8 +365,11 @@ def locate_html(reader, program: dict, courses: list[dict], start: str, cache: d
                       "access": got.get("access"), "title": (got.get("title") or "")[:120],
                       "h1": (got.get("h1") or "")[:120], "codes": len(found),
                       "coverage": round(cov, 2), "links": len(got.get("links") or []),
-                      "clickables": (got.get("clickables") or [])[:25]
-                      if not got.get("links") else None})
+                      "link_sample": [[(ln.get("text") or "")[:60], ln.get("href")]
+                                      for ln in (got.get("links") or [])[:40]]
+                      if cov < ACCEPT_SHARE else None,
+                      "clickables": (got.get("clickables") or [])[:40]
+                      if cov < ACCEPT_SHARE else None})
         if best is None or cov > best["coverage"]:
             best = {"url": got.get("final_url") or url, "coverage": cov, "found": found,
                     "text": text, "field": field, "got": got}
@@ -380,6 +383,63 @@ def locate_html(reader, program: dict, courses: list[dict], start: str, cache: d
             if s > 0:
                 queue.append((s, href, "link '%s' on %s" % (ln.get("text", "")[:60], url)))
     return {"best": best, "trail": trail}
+
+
+CLICKABLE_JS = """() => Array.from(document.querySelectorAll(
+    'a, [role=link], [role=treeitem], [role=button], li, [onclick], [ng-click], [data-href]'))
+  .filter(e => e.offsetParent !== null)
+  .map(e => (e.innerText || '').trim())
+  .filter(t => t && t.length < 120 && t.indexOf('\\n') < 0)"""
+
+
+def click_through(reader, program: dict, courses: list[dict], trail: list,
+                  max_clicks: int = MAX_LOADS) -> dict | None:
+    """A JavaScript catalog (curriQunet) draws its navigation as items that
+    open a section when clicked, without a link to follow. Click the item whose
+    words best match the program, or a hub ("Degree Curricula and Certificate
+    Programs") until a section names the program's courses. Each click waits
+    the census's delay, as a page load does."""
+    page, clicked, best = reader.page, set(), None
+    for _ in range(max_clicks):
+        try:
+            texts = page.evaluate(CLICKABLE_JS)
+        except Exception:
+            break
+        ranked = sorted({t for t in texts if t not in clicked},
+                        key=lambda t: -score_link(t, "", program))
+        ranked = [t for t in ranked if score_link(t, "", program) > 0]
+        if not ranked:
+            break
+        target = ranked[0]
+        clicked.add(target)
+        time.sleep(reader.delay)
+        reader.loads += 1
+        try:
+            page.get_by_text(target, exact=True).first.click(timeout=10000)
+            try:
+                page.wait_for_load_state("networkidle", timeout=8000)
+            except Exception:
+                pass
+            page.wait_for_timeout(2500)
+            got = page.evaluate(PAGE_JS)
+        except Exception as exc:
+            trail.append({"click": target, "error": str(exc).splitlines()[0][:160]})
+            continue
+        fb = find_codes(got.get("body") or "", courses)
+        fc = find_codes(got.get("content") or "", courses)
+        text, found, field = best_text(got, fb, fc)
+        cov = coverage(found, courses)
+        trail.append({"click": target, "url": page.url, "title": (got.get("title") or "")[:120],
+                      "codes": len(found), "coverage": round(cov, 2),
+                      "link_sample": [[(ln.get("text") or "")[:60], ln.get("href")]
+                                      for ln in (got.get("links") or [])[:40]]
+                      if cov < ACCEPT_SHARE else None})
+        if best is None or cov > best["coverage"]:
+            best = {"url": page.url, "coverage": cov, "found": found, "text": text,
+                    "field": field, "got": got}
+        if cov >= ACCEPT_SHARE:
+            break
+    return best
 
 
 def read_pdf(reader, url: str, cache: dict) -> dict:
@@ -410,6 +470,27 @@ def read_pdf(reader, url: str, cache: dict) -> dict:
     except Exception as exc:
         out.update(access="unreachable", error=str(exc).splitlines()[0][:200], pages=[])
     cache[url] = out
+    return out
+
+
+def pdf_probe(pages: list[str], courses: list[dict], n: int = 4) -> list[str]:
+    """When no page names a listed code: the words around the first listed
+    subject wherever it appears, so a session can see how the PDF spells it."""
+    subj = ""
+    for c in courses:
+        m = re.match(r"^([A-Za-z&]+)", (c.get("code") or "").strip())
+        if m and len(m.group(1)) >= 3:
+            subj = m.group(1)
+            break
+    out = []
+    if not subj:
+        return out
+    pat = re.compile(re.escape(subj), re.I)
+    for i, txt in enumerate(pages):
+        for m in pat.finditer(txt or ""):
+            out.append("p%d: %r" % (i + 1, txt[max(0, m.start() - 40):m.end() + 60]))
+            if len(out) >= n:
+                return out
     return out
 
 
@@ -456,12 +537,22 @@ def capture(reader, entry: dict, cache: dict) -> dict:
         rec.update(method="pdf_pages", source={"url": start, "access": pdf.get("access"),
                    "status": pdf.get("status"), "bytes": pdf.get("bytes"),
                    "pages_total": len(pages), "pages": [i + 1 for i in run],
+                   "chars_total": sum(len(p) for p in pages),
+                   "empty_pages": sum(1 for p in pages if len(p.strip()) < 40),
+                   "probe": [] if run else pdf_probe(pages, courses),
                    "error": pdf.get("error")},
                    coverage=round(coverage(found, courses), 3),
                    codes_found=sorted(found), text=text[:TEXT_CAP])
         return rec
     spa = reg.get("catalog_platform") == "curriqunet"
     res = locate_html(reader, program, courses, start, cache, spa)
+    if spa and (res["best"] or {}).get("coverage", 0.0) < ACCEPT_SHARE:
+        # Start each program's clicks from the catalog's front page.
+        reader.load(start)
+        reader.page.wait_for_timeout(2500)
+        clicked = click_through(reader, program, courses, res["trail"])
+        if clicked and clicked["coverage"] > (res["best"] or {}).get("coverage", 0.0):
+            res["best"] = clicked
     best = res["best"] or {}
     got = best.get("got") or {}
     rec.update(method="html_page", trail=res["trail"],
