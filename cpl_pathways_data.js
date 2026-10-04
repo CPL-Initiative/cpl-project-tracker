@@ -11,7 +11,7 @@
 // (alternate-track lists would otherwise double-count the major).
 //
 // First pathway: Cerritos College — Field Ironworker Supervisor BS (first
-// cohort fall 2027), built for the California Apprenticeship Council
+// cohort spring 2027, per Cerritos's Field Ironwork page, read 2026-10-04), built for the California Apprenticeship Council
 // presentation (2026-08-13). Sourcing (researched 2026-07-10):
 //  · regionalcte.org/browse/ZyxAg — the LAOCRC program record (TOP 095700;
 //    two-part structure; GE gate). Its course table renders only in a browser:
@@ -75,8 +75,9 @@ window.CPL_PATHWAYS = {
           title: "Ironworkers Locals 433 and 416",
           what: "Paid on-the-job training with classroom instruction. This training is what Cerritos credits through CPL.",
           points: [
-            { t: "Local 433's joint apprenticeship committee runs a 48-month program at its La Palma training center; Local 416 trains in Norwalk.", s: "confirm" },
-            { t: "Classroom hours: published figures disagree, 480 or more than 700.", s: "confirm" },
+            { t: "The apprenticeship runs four years, joining related technical instruction to on-the-job training (Cerritos's Field Ironwork page).", s: "data" },
+            { t: "Classroom hours at Cerritos: the Reinforcing track's 16 courses carry 878 contact hours (622 lecture, 256 laboratory) and the Structural track's 898 (677 and 221), per the 2026–27 course descriptions.", s: "data" },
+            { t: "Local 433's joint apprenticeship committee trains at La Palma, and Local 416 in Norwalk.", s: "confirm" },
           ],
           cpl_map: "Credit by exam",
           cpl: "The apprenticeship's coursework earns credit by exam toward the certificates and the A.S." },
@@ -98,7 +99,8 @@ window.CPL_PATHWAYS = {
             { t: "Cerritos lists it as approved, its second bachelor's degree beside Dental Hygiene (State of the College, May 2026).", s: "data" },
             { t: "Admission follows two years of prerequisite courses and a completed general education pattern: Cerritos GE, IGETC or CSU GE Breadth.", s: "data" },
             { t: "The proposed upper division: 23 courses and 60 units over years 3 and 4, IWAP 301–310 and 401–410 with intercultural communication and two statistics courses (regional program record, recommended June 2024).", s: "data" },
-            { t: "Whether the approved degree keeps that course list and runs online, and its first cohort: the 2024 record projected August 2026, and the 2026–27 catalog does not list the degree yet.", s: "confirm" },
+            { t: "Graduates of the apprenticeship can begin the B.S. in Spring 2027 (Cerritos's Field Ironwork page).", s: "data" },
+            { t: "Whether the approved degree keeps the 2024 course list and runs online; the 2026–27 catalog does not list it yet.", s: "confirm" },
           ],
           cpl_map: "A.S. credit carries",
           cpl: "The A.S. credit carries into the lower division; exams such as CLEP can meet general education through the systemwide credit chart.",
@@ -114,16 +116,17 @@ window.CPL_PATHWAYS = {
           cpl_map: "1,810 supervisor openings a year" },
       ],
       confirm: [
-        "Whether the approved B.S. keeps the 2024 course list, and when its first cohort starts.",
+        "Whether the approved B.S. keeps the 2024 course list.",
         "The high school articulation list.",
         "Whether the 26 noncredit AED courses still run.",
-        "The apprenticeship's classroom hours.",
       ],
       confirm_note: "The harvest agent reads these pages first, from a runner. A request goes to Cerritos only after Cerritos's procedure record shows every step tried.",
       sources: [
         { label: "Cerritos College catalog 2026–27, Apprenticeship: Field Ironworkers A.S.", url: "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/field-ironworkers-aa/" },
         { label: "Cerritos College catalog 2026–27, Pre-Apprenticeship (Non Credit)", url: "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/pre-apprenticeship-certificate-completion/" },
         { label: "Field Ironworker Supervisor, Los Angeles regional program record (recommended June 2024)", url: "https://regionalcte.org/browse/ZyxAg" },
+        { label: "Cerritos College, Field Ironwork apprenticeship", url: "https://www.cerritos.edu/academics/aed/apprenticeship-programs/Field_Ironwork.htm" },
+        { label: "Cerritos College catalog 2026–27, IWAP course descriptions", url: "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/iwap/" },
         { label: "Cerritos College, 2026 State of the College (May 19, 2026)", url: "https://www.cerritos.edu/newsroom/releases/2026/05/SOTC.htm" },
         { label: "Chancellor's Office COCI program and course files (load of 16 July 2026)" },
         { label: "MAP articulated-exhibit records (read 4 October 2026)" },
@@ -139,7 +142,7 @@ window.CPL_PATHWAYS = {
       // "discussion-draft" | "active" | "tabled". The on-page selector is a
       // per-browser view override; THIS is the published default.
       stage: "discussion-draft",
-      start: "Fall 2027",
+      start: "Spring 2027",
       status: "Approved Feb 2026 — AB 927 CCC baccalaureate",
       audience: "Ironworker journeyworkers — any JATC, anywhere",
       blurb: "The nation's first bachelor's degree built on a field-ironworker "
@@ -289,7 +292,7 @@ window.CPL_PATHWAYS = {
       footnotes: [
         "CPL ✓ courses are articulated by Cerritos College in the Mapping Articulated Pathways (MAP) platform as Credit by Exam for the ironworker apprenticeship curriculum — available to journeyworkers regardless of where they completed their training.",
         "◆ CLEP GE options reflect the CCCCO systemwide exam-credit charts (ESLEI 24-35, title 5 §55052.5): a passing score of 50 grants a minimum of 3 semester units in the GE division shown. The college applies the credit on receipt of scores.",
-        "Degree structure per the title 5 baccalaureate regulations effective Aug 2025 (governing a fall 2027 start): ≥120 units total, ≥40 upper-division units (major + GE inclusive), ≥36 GE units with ≥9 upper-division. Tuition ≈$46/unit lower division, ≈$130/unit upper division — about $10,560 total on the 60/60 model. Admission to the upper division requires the completed associate degree and GE pattern.",
+        "Degree structure per the title 5 baccalaureate regulations effective Aug 2025 (governing a spring 2027 start): ≥120 units total, ≥40 upper-division units (major + GE inclusive), ≥36 GE units with ≥9 upper-division. Tuition ≈$46/unit lower division, ≈$130/unit upper division — about $10,560 total on the 60/60 model. Admission to the upper division requires the completed associate degree and GE pattern.",
         "The associate-degree major (27–29 units, Reinforcing or Structural core) is fully covered by the 31.5 articulated units; surplus apprenticeship credit applies as electives. Stackable along the way: Certificates of Achievement in Field Ironworks Reinforcing (34 units) and Structural (38 units).",
         "Approval: provisionally approved 2025; CSU withdrew its duplication objection and the Chancellor's Office granted final approval under AB 927 in February 2026 (EdSource, 2026-02-20).",
         "Veterans: Cerritos also articulates Basic Military Training (health/kinesiology GE-area credit) — service members entering the trades bring additional CPL.",
