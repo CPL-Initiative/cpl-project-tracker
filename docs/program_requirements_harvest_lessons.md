@@ -201,3 +201,49 @@ CPL transcribed, the most of the 21 PDF-catalog colleges; Real Estate
 certificates for the electives use case). Sheet 25 asks Sam for Riverside
 City's program, the sample checker and the Tech Center contact.
 
+
+## S323 SkyHarvest, 2026-10-04: the pilot finds 16 of 20 pages and drafts its first records
+
+**What shipped (PR #1844, draft).** The 20-program sample; the capture pass
+and its workflow; the scorer; the extraction pass, its workflow and the
+`program-requirements-extract` Edge Function (deployed, version 1); 16 fixtures
+under `kb/program_requirements_pilot/sources/`. Capture run 4 (37166814546)
+found 16 of 20 programs; extraction run 1 (37167619551) passed 7 of 16 at
+$0.046 a program.
+
+21. **A page that names the program's own courses is the program's page.** The
+    state's closed list is the acceptance test for finding a page, not only for
+    scoring a record: a title match proved nothing (Cerritos's "Programs &
+    Services" is student services), while half the listed codes on one page
+    found the right page at four colleges.
+
+22. **When every read comes back empty, suspect the reader first.** Run 2 read
+    all 20 programs at 0%, and the PDF probe found no listed subject in 1.5
+    million characters. The cause was a key: capture() passed Supabase rows
+    keyed `course_code` to a matcher that reads `code`. The guard now drives
+    capture() end to end with rows in Supabase's own shape.
+
+23. **Build a code's pattern from the code as stored, before any normal form.**
+    The normal form drops the decimal point (`IWAP 40.1` and `IWAP 40.10` are one
+    course), and a pattern built after it cannot find `IWAP 40.05`. A sibling
+    rule refuses `KIN 251-1` for `KIN 251` and `ADJ 1H` for `ADJ 1`.
+
+24. **Follow links on the catalog's host only.** Riverside's reader left
+    curriQunet for rcc.edu's marketing pages and a Microsoft form; Mt. San
+    Antonio's left its catalog for the Fire department's site.
+
+25. **The model's notes name the schema's gaps.** Each of the 9 failing records
+    explained itself: hours where the scorer wanted units, a choice between two
+    whole blocks, a block total with no field, an alternative it could not
+    flag. Read the notes before tuning the prompt; the fix was the record shape.
+
+26. **Regenerate after `git add`, and gate on the check's own exit code.** The
+    dependency map reads tracked files only, and `check_generated.sh | tail -1`
+    hid a STALE result from the `&&` chain. Both reached CI once.
+
+**State (S323).** Capture: 16 of 20 (Miramar 0 of 4: views open, codes not in
+the page text; next route its per-program export PDF). Extraction: 7 of 16 pass
+the three automatic bars, $0.73 for the run.
+
+**NEXT.** Record shape version 2, rerun the 16, read Miramar's export PDFs,
+then the 20 to Sam.

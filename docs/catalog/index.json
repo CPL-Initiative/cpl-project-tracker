@@ -14324,7 +14324,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-03"
+     "updated": "2026-10-04"
     },
     {
      "created": "2026-08-28",
@@ -14707,8 +14707,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 294,
+   "count": 295,
    "docs": [
+    {
+     "created": "2026-10-04",
+     "governs": [],
+     "n": 324,
+     "path": "docs/session_324_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "pilot",
+      "edge-function",
+      "extraction"
+     ],
+     "title": "the pilot finds 16 of 20 pages and drafts its first records (7 of 16 pass); widen the record shape, then Miramar",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-03",
      "governs": [],
@@ -19710,5 +19727,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1028
+ "total": 1029
 }
