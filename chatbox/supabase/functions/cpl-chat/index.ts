@@ -3218,6 +3218,17 @@ function buildProgramsContext(
 // absent from the catalog data is said to be absent from the data, never to
 // have no courses. And a program whose key is not loaded yet (list_size null)
 // renders nothing about courses at all.
+//
+// THE ONE EXCEPTION, A CHECKED RECORD (S326; Sam, open-asks sheet 29 card 4,
+// 2026-10-04: "yes"). The program requirements harvest reads a program's rules
+// from its college's catalog: required courses, choose blocks, option groups
+// and the program total. Where that record passed all four checks (coverage, no
+// invented course, unit arithmetic, a person's reading against the catalog), it
+// sits in program_requirement_records (chatbox/supabase_program_requirement_records.sql,
+// public read of checked rows only), and the program renders as CATALOG
+// REQUIREMENTS: Sierra may say required, name each choice in the catalog's own
+// words and give the total the catalog prints, naming the catalog and its year.
+// Every other program keeps "lists".
 const PROGRAM_COURSES_AS_OF = "July 2026";
 const PROGRAM_COURSES_LISTED = 3;      // programs shown with their lists
 const PROGRAM_COURSES_PER_LIST = 40;   // course lines per program
@@ -3264,7 +3275,77 @@ function fmtUnits(u: any): string {
   return ` (${s} unit${n === 1 ? "" : "s"})`;
 }
 
-function buildProgramCoursesContext(college: string, rows: any[], terms: string[]): string {
+// An amount in the record's own measure: "3 units", "4-5 units", "136 hours".
+function fmtAmount(min: any, max: any, measure: string): string {
+  const lo = Number(min);
+  if (min === null || min === undefined || min === "" || !isFinite(lo)) return "";
+  const f = (n: number) => Number.isInteger(n) ? String(n) : String(Math.round(n * 100) / 100);
+  const hiN = Number(max);
+  const hi = (max === null || max === undefined || max === "" || !isFinite(hiN) || hiN === lo) ? "" : `-${f(hiN)}`;
+  const unit = measure === "hours" ? "hour" : "unit";
+  return `${f(lo)}${hi} ${unit}${lo === 1 && !hi ? "" : "s"}`;
+}
+
+// "ANAT 10A", "anat10a" and "ANAT-10A" are one course.
+function courseKey(code: any): string {
+  return String(code || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+}
+
+// One record, as the lines the model reads. The block names are the catalog's
+// own words ("List A (Select one course for 4-5 units)"), so they lead; the
+// rule after them says what the record holds. Titles come from the program's
+// list in the state's catalog data, joined by course number.
+function requirementLines(rec: any, titles: Map<string, string>): string {
+  const r = (rec && rec.record) || {};
+  const prog = r.program || {};
+  const measure = rec.measure || prog.measure || "units";
+  const course = (c: any): string => {
+    const t = titles.get(courseKey(c.code));
+    const amt = fmtAmount(c.units, c.units_max, measure);
+    let line = `${c.code}${t ? ` — ${t}` : ""}${amt ? ` (${amt})` : ""}`;
+    for (const a of c.alternatives || []) {
+      const at = titles.get(courseKey(a.code));
+      const aa = fmtAmount(a.units, a.units_max, measure);
+      line += ` or ${a.code}${at ? ` — ${at}` : ""}${aa ? ` (${aa})` : ""}`;
+    }
+    return line;
+  };
+  const ruleOf = (b: any): string => {
+    if (b.rule === "choose_courses") {
+      const n = Number(b.minimum) || 1;
+      return `choose ${n} course${n === 1 ? "" : "s"}`;
+    }
+    if (b.rule === "choose_units") return `choose ${fmtAmount(b.minimum, null, measure) || "the units the catalog names"}`;
+    return "all required";
+  };
+  const blockLines = (b: any, pad: string): string => {
+    const stated = b.stated ? fmtAmount(b.stated.min, b.stated.max, measure) : "";
+    let out = `${pad}${b.name || "Requirement"} [${ruleOf(b)}${stated ? `; the catalog prints ${stated}` : ""}]\n`;
+    for (const c of b.courses || []) out += `${pad}  - ${course(c)}\n`;
+    return out;
+  };
+  let out = "";
+  const done = new Set<string>();
+  const blocks = r.blocks || [];
+  for (const b of blocks) {
+    if (!b.option_group) { out += blockLines(b, "  "); continue; }
+    if (done.has(b.option_group)) continue;
+    done.add(b.option_group);
+    const opts = blocks.filter((x: any) => x.option_group === b.option_group);
+    out += `  Complete ONE of these ${opts.length} options (${b.option_group}):\n`;
+    for (const o of opts) out += blockLines(o, "    ");
+  }
+  const total = fmtAmount(rec.total_min, rec.total_max, measure);
+  out += total
+    ? `  Program total, as the catalog prints it: ${total}.\n`
+    : `  The catalog prints no program total. Say so; never add one up.\n`;
+  if (prog.open_elective_units) out += `  Open electives: ${fmtAmount(prog.open_elective_units, null, measure)}.\n`;
+  if (prog.ge_pattern) out += `  General education: the ${prog.ge_pattern} pattern, beside the major.\n`;
+  return out;
+}
+
+function buildProgramCoursesContext(college: string, rows: any[], terms: string[],
+                                    recs?: Map<string, any> | null): string {
   if (!college || !rows || rows.length === 0) return "";
   const groups: any[] = [];
   const byKey = new Map<string, any>();
@@ -3289,12 +3370,26 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
   let ctx = `\n\n--- Program Course Lists: ${college} (catalog data, as of ${PROGRAM_COURSES_AS_OF}) ---\n`;
   ctx += `These are the courses each program LISTS in the state's catalog data. Rules for using them:\n`;
   ctx += `- Name the program and its award, then list its courses by number and title.\n`;
-  ctx += `- Say the program "lists" these courses. The data has no required/elective flag, so never call a course required and never add up the units.\n`;
+  const checked = (g: any) => !!(recs && g.control && recs.get(String(g.control)));
+  if (shown.some(checked)) {
+    ctx += `- A program marked CATALOG REQUIREMENTS carries the rules ${college}'s own catalog prints, read from that catalog and checked against it. For that program you may say a course is required, name each choice in the catalog's own words ("choose 1 course from List A"), and give the program total the catalog prints, naming the catalog and its year (for example "${college}'s 2026-2027 catalog"). Give only the totals printed there; never add units up yourself. Courses joined by "or" are one requirement, met by either.\n`;
+    ctx += `- Every other program below only LISTS its courses: the data has no required/elective flag, so never call one of its courses required and never add up its units.\n`;
+  } else {
+    ctx += `- Say the program "lists" these courses. The data has no required/elective flag, so never call a course required and never add up the units.\n`;
+  }
   ctx += `- The list holds more courses than one student takes. An honors version sits beside its standard course, and a student takes one course of each honors pair. Where other courses look like alternatives, say the catalog or a counselor confirms which ones count.\n`;
-  ctx += `- Point the visitor to ${college}'s catalog or a counselor for which courses are required and in what order.\n`;
+  ctx += `- Point the visitor to ${college}'s catalog or a counselor for the order to take courses in, and, for a program that only lists its courses, for which ones are required.\n`;
   ctx += `- If the program asked about is not below, say the catalog data shows no matching program at ${college} by that name; never say the college does not offer it.\n`;
   for (const g of shown) {
     ctx += `\n### ${g.title}${g.award ? ` — ${g.award}` : ""}${g.status && g.status !== "Active" ? ` (status ${g.status})` : ""}\n`;
+    if (checked(g)) {
+      const rec = recs ? recs.get(String(g.control)) : null;
+      const titles = new Map<string, string>();
+      for (const c of g.courses) if (c.course_code && c.course_title) titles.set(courseKey(c.course_code), c.course_title);
+      ctx += `CATALOG REQUIREMENTS, from ${college}'s ${rec.catalog_year || "current"} catalog (checked against the catalog):\n`;
+      ctx += requirementLines(rec, titles);
+      continue;
+    }
     if (!g.size) {
       ctx += `  The catalog data carries no course list for this program. Say exactly that; never say the program has no courses.\n`;
       continue;
@@ -3331,6 +3426,23 @@ async function fetchCollegeProgramCourses(college: string, query: string, sb: an
     return null;
   }
   return data && data.length > 0 ? data : null;
+}
+
+// The checked records for the programs a list read returned, keyed by control
+// number. Fails safe to null: no record means the program keeps "lists".
+async function fetchCheckedRequirements(college: string, rows: any[], sb: any): Promise<Map<string, any> | null> {
+  const controls = [...new Set((rows || []).map((r: any) => r.control_number).filter(Boolean).map(String))];
+  if (!college || controls.length === 0) return null;
+  const { data, error } = await sb.from("program_requirement_records")
+    .select("control_number,catalog_year,source_url,measure,total_min,total_max,record")
+    .eq("college", college).eq("checked", true).in("control_number", controls);
+  if (error) {
+    console.error("program_requirement_records unavailable:", error.message);
+    return null;
+  }
+  const out = new Map<string, any>();
+  for (const d of data || []) out.set(String(d.control_number), d);
+  return out.size ? out : null;
 }
 
 // ── Prospective credit: the courses a held credential could count toward ──────
@@ -5824,9 +5936,10 @@ Deno.serve(async (req: Request) => {
     if (singleProfile?.college && asksProgramCourses(routeText)) {
       const listRows = await fetchCollegeProgramCourses(singleProfile.college, routeText, sb);
       if (listRows) {
+        const reqs = await fetchCheckedRequirements(singleProfile.college, listRows, sb);
         programsContext += buildProgramCoursesContext(
           singleProfile.college, listRows,
-          expandWithSynonyms(programTerms(extractTopicKeywords(routeText), singleProfile.college)));
+          expandWithSynonyms(programTerms(extractTopicKeywords(routeText), singleProfile.college)), reqs);
       }
     }
 

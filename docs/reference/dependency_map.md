@@ -132,6 +132,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_integration_backlog` | tabs: `nc-learning-partners` | — |
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
+| `program_requirement_records` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `program_source_registry` | scripts: `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py` | — |
 | `project_lifecycle` | tabs: `raci` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
 | `projects` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
@@ -713,6 +714,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `report_generator.js` | pages: `CPL_Dashboard.html` | — |
 | `reports/CPL_Master_Report.docx` | none found | committed by: `daily-dashboard.yml` |
 | `reports/projects/*.docx` | none found | committed by: `daily-dashboard.yml` |
+| `review_<date>.json` | scripts: `kb/_program_requirements_load.py` | — |
 | `reviewer_signin.js` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `scripts/stamp_asset_versions.py` | workflows: `pages.yml` | — |
@@ -1006,5 +1008,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 93 Supabase tables · 35 RPCs · 6 edge functions · 577 file
-datasets · 157 external services · 406 consumers · 43 workflows · 37 tabs.
+Coverage: 94 Supabase tables · 35 RPCs · 6 edge functions · 578 file
+datasets · 157 external services · 407 consumers · 43 workflows · 37 tabs.

@@ -24,7 +24,7 @@ block("lift", () => {
   M = liftBlock(FN, "// ── The courses a program lists, at the one college asked",
     "// ── Prospective credit: the courses a held credential could count toward",
     ["asksProgramCourses", "programTerms", "titleCoverage", "buildProgramCoursesContext",
-     "PROGRAM_COURSES_LISTED", "PROGRAM_COURSES_PER_LIST"]);
+     "PROGRAM_COURSES_LISTED", "PROGRAM_COURSES_PER_LIST", "requirementLines", "fmtAmount", "courseKey"]);
 });
 
 const MTSAC = "Mt. San Antonio College";
@@ -121,6 +121,86 @@ block("8. wired in the handler behind the intent and one college", () => {
     /if \(singleProfile\?\.college && asksProgramCourses\(routeText\)\)/.test(FN));
   check("the block appends to the program context",
     /programsContext \+= buildProgramCoursesContext\(/.test(FN));
+});
+
+// Sam, open-asks sheet 29 card 4 (2026-10-04, "yes"): a program whose record
+// passed all four checks renders as CATALOG REQUIREMENTS, and Sierra may say
+// required and give the total the catalog prints. Every other program keeps
+// "lists". The records are the harvest's own files, rendered for real here.
+const RECDIR = "kb/program_requirements_pilot/records/";
+function recOf(key) {
+  const d = JSON.parse(fs.readFileSync(RECDIR + key + ".json", "utf8"));
+  const src = JSON.parse(fs.readFileSync(d.source_file, "utf8"));
+  const p = d.record.program;
+  return { d, src, rec: { control_number: d.control_number, catalog_year: src.catalog_year, measure: p.measure,
+    total_min: (p.total_units || {}).min, total_max: (p.total_units || {}).max, record: d.record } };
+}
+function rowsOf(src, ctl) {
+  return src.closed_list.map((c) => row(src.title, src.award, ctl, src.closed_list.length,
+    { course_code: c.code, course_title: c.title, units: c.units }));
+}
+
+block("10. a checked record renders the catalog's rules, and only for its own program", () => {
+  const { d, src, rec } = recOf("cerritos_42158");          // Ironworker: an option group, a range total
+  const other = row("Welding Technology", "A.S. Degree", "99999", 1, { course_code: "WELD 100", course_title: "Welding I", units: 3 });
+  const rows = rowsOf(src, d.control_number).concat([other]);
+  const ctx = M.buildProgramCoursesContext("Cerritos College", rows, ["ironworkers", "welding"],
+    new Map([[d.control_number, rec]]));
+  check("the checked program is marked, naming the catalog and its year",
+    ctx.includes("CATALOG REQUIREMENTS, from Cerritos College's 2026-2027 catalog"), ctx);
+  check("the option group renders once, as one choice among its options",
+    (ctx.match(/Complete ONE of these 2 options \(Reinforcing or Structural option\)/g) || []).length === 1
+    && (ctx.match(/Option 2: Structural Program/g) || []).length === 1, ctx);
+  check("the total is the one the catalog prints, as a range",
+    ctx.includes("Program total, as the catalog prints it: 34-38 units."), ctx);
+  check("the rule permits 'required' and the printed total for the marked program only",
+    /A program marked CATALOG REQUIREMENTS/.test(ctx) && /never add units up yourself/.test(ctx), ctx);
+  check("every other program keeps 'lists'",
+    /Every other program below only LISTS its courses/.test(ctx) && ctx.includes("  - WELD 100 — Welding I (3 units)"), ctx);
+  check("a course in the record carries its title from the state list",
+    /IWAP 40\.07 — \S/.test(ctx), ctx);
+});
+
+block("11. without a checked record, nothing changes", () => {
+  const { d, src } = recOf("cerritos_42158");
+  const ctx = M.buildProgramCoursesContext("Cerritos College", rowsOf(src, d.control_number), ["ironworkers"]);
+  check("no marker", !/CATALOG REQUIREMENTS/.test(ctx), ctx);
+  check("the old rule stands word for word",
+    /never call a course required and never add up the units/.test(ctx), ctx);
+  const elsewhere = M.buildProgramCoursesContext("Cerritos College", rowsOf(src, d.control_number), ["ironworkers"],
+    new Map([["00000", recOf("cerritos_42158").rec]]));
+  check("a record for a program not shown marks nothing", !/CATALOG REQUIREMENTS/.test(elsewhere), elsewhere);
+});
+
+block("12. the record's own shapes read right", () => {
+  const { rec } = recOf("mtsac_42916");                    // Vocational Nursing: the catalog prints no total
+  check("no printed total says so and forbids adding one",
+    /The catalog prints no program total\. Say so; never add one up\./.test(M.requirementLines(rec, new Map())));
+  const pub = recOf("cerritos_45549").rec;                  // Public Health: choose blocks, alternatives
+  const lines = M.requirementLines(pub, new Map([["HO102", "Introduction to Public Health"]]));
+  check("a choose block carries the catalog's words and the rule",
+    lines.includes("List A (Select one course for 4-5 units) [choose 1 course; the catalog prints 4-5 units]"), lines);
+  check("alternatives join with 'or' and carry their own titles",
+    lines.includes("or HO 102 — Introduction to Public Health"), lines);
+  check("hours read as hours", M.fmtAmount(136, 136, "hours") === "136 hours");
+  check("a course number matches across spacing", M.courseKey("ANAT 10A") === M.courseKey("anat-10a"));
+});
+
+block("13. the read is of checked records only, end to end", () => {
+  const RSQL = fs.readFileSync("chatbox/supabase_program_requirement_records.sql", "utf8");
+  check("the public read policy shows checked rows only", /for select to anon, authenticated using \(checked\)/.test(RSQL));
+  check("index.ts asks for checked rows by college and control number",
+    /\.from\("program_requirement_records"\)[\s\S]{0,200}\.eq\("college", college\)\.eq\("checked", true\)\.in\("control_number", controls\)/.test(FN));
+  check("the handler passes the records into the block",
+    /const reqs = await fetchCheckedRequirements\(singleProfile\.college, listRows, sb\);/.test(FN)
+    && /singleProfile\.college\)\), reqs\);/.test(FN));
+  const { execFileSync } = require("child_process");
+  let out = "";
+  try { out = execFileSync("python3", ["kb/_program_requirements_load.py", "--check"], { encoding: "utf8" }); }
+  catch (e) { out = String(e.stdout || e.message); }
+  check("the committed load matches the record files", /current \(20 records\)/.test(out), out);
+  const LOAD = fs.readFileSync("kb/receipts/program_requirement_records_load_2026-10-04.sql", "utf8");
+  check("all 20 pilot records load checked", /\(20 records, 20 checked\)/.test(LOAD));
 });
 
 block("9. smoke mode 7l asks what index.ts would build", () => {
