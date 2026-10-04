@@ -311,6 +311,11 @@ accumulate*; this one makes the sheet the **standing form of the backlog** —
 anything waiting on him belongs on it, and it is rebuilt and handed over rather
 than held back for a quorum.
 
+**A paste card carries the text to paste (S326, 2026-10-04).** Sheet 31 named file
+paths; Sam pasted a path and the SQL editor answered with a syntax error. Put the
+SQL on the card itself, cut to what is still missing after a live read, ending in
+one read-back; the builder refuses a "paste" card with no `<pre>` block.
+
 **Builder:** `kb/_build_open_asks_decision_sheet.py`. ⭐ **Sheet 3 is answered and
 carried into the lanes (S302, 2026-09-29):** Sam completed all eighteen cards at 12:39Z
 (`through: "18"`, each his own call; 14 and 15 stood as proposed under the high-water

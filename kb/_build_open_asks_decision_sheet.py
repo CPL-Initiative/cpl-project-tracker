@@ -726,38 +726,9 @@ def items():
     # Sheet 29 (S325) was answered at 11:54-12:00Z on 2026-10-04 (through 5, each his own call): card 2
     # guard lifted, card 3 a note on the college's record, card 4 yes, card 5 go. Each lane records its
     # ruling in the same change (S326). Card 1 "later" is carried into the one card below.
-    # S320/S321: three memory rows wait on the connector's confirmation; S326: the addenda table's
-    # privilege close met the same confirmation and wrote nothing.
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Paste four files in the SQL editor",
-        'ref': 'program-requirements-harvest NEEDS SAM · kb/receipts/cpl_memory_2026-10-03_s320.sql · '
-               'kb/receipts/cpl_memory_2026-10-03_s321.sql · '
-               'kb/receipts/program_source_addenda_close_2026-10-04_s326.sql · '
-               'kb/receipts/program_requirement_records_close_2026-10-04_s326.sql',
-        'facts': (
-            "Two are the memory receipts you marked for later on sheet 29: three rows, each naming one of "
-            "the SQL words the Supabase connector holds for a confirmation that never reaches you (the call "
-            "times out at 60 seconds and writes nothing). The other two are new. On your go and your yes "
-            "(sheet 29, cards 5 and 4) the catalog addenda table and the program requirement records table "
-            "are live, and each privilege close met the same confirmation. Until they run, the default "
-            "privileges still hand the public roles every table privilege on the three new tables. Row-level security refuses their inserts, updates and deletes, and the write function "
-            "runs with the caller's own rights, so nothing has been exposed to a write; the close removes "
-            "the extras outright, as on the registry."),
-        'why': "The memory rows complete a session's memory read; the close finishes the addenda table to "
-               "the standard every shared table here meets (CLAUDE.md Rule 10 b2).",
-        'rec': "<strong>Paste all four:</strong> open the Supabase SQL editor and run each file whole. The "
-               "memory files skip any row already written and end with a read-back where every row shows "
-               "<code>creates = 1</code>; each close ends with a read-back where every public-role row reads "
-               "false. <em>It might be wrong if</em> the connector's prompt now reaches you; then reply here "
-               "and a session runs them while you watch.",
-        'chips': chips(('Pasted all four', 'pasted'), CH_LATER),
-        'evidence': [live('2026-10-04', "program_source_addenda privileges read through the Supabase "
-                          "connector after Part A: RLS on, one SELECT policy, anon holds the default table "
-                          "privileges, the write function is security invoker"),
-                     live('2026-10-03', "cpl_memory read back after the S320 and S321 timeouts: three "
-                          "rows absent")],
-    })
+    # Sheet 31 (S326) was answered at 16:56Z on 2026-10-04: card 1 pasted (as proposed). S326
+    # handed the SQL in one paste, cut to the three memory rows still missing and both
+    # privilege closes; the live read-back matched. No lane carries a NEEDS-SAM marker now.
     return I
 
 
@@ -787,6 +758,18 @@ def build(check_only=False):
               "2026-09-22 sheet asked Sam to rule on work that had already "
               "shipped — one of them citing his own ask, by date, in the very "
               "file that implemented it.", file=sys.stderr)
+        return 1
+
+    # ── a paste card carries the text to paste ───────────────────────────────
+    # Sheet 31 named four file paths; Sam pasted a path into the SQL editor and
+    # got a syntax error (2026-10-04). The SQL goes on the card, in a <pre> block.
+    bare = [n for n, it in enumerate(I, 1)
+            if re.search(r'\bpaste\b', it['title'], re.I)
+            and '<pre' not in (it.get('facts', '') + it.get('rec', ''))]
+    if bare:
+        print("REFUSING TO BUILD — these paste cards carry no text to paste: %s\n"
+              "Put the SQL itself on the card in a <pre> block, cut to what a live "
+              "read shows is still missing." % ", ".join(map(str, bare)), file=sys.stderr)
         return 1
 
     if missing:

@@ -282,15 +282,11 @@ checked rows only) holds the 20 pilot records, all checked, loaded by
 Sierra's Program Course Lists block renders a checked program as CATALOG
 REQUIREMENTS (the catalog's block names, "or" alternatives, option groups, the
 printed total). Smoke 7q pins the anon read and keeps "never adds up" on El Camino
-(no record); 7l expects Mt. SAC's 2026-2027 catalog. (5) the addenda table.
+(no record); 7l expects Mt. SAC's 2026-2027 catalog. Live 15:33Z (deploy 37213391271); smoke green. (5) the addenda table.
 
-**NEEDS SAM (open-asks sheet 31):** paste four files in the SQL editor:
-`kb/receipts/cpl_memory_2026-10-03_s320.sql` and `..._s321.sql` (his call on
-sheet 29: later; three rows name a word the connector stalls on), and the two
-privilege closes, `program_source_addenda_close_2026-10-04_s326.sql` and
-`program_requirement_records_close_2026-10-04_s326.sql`.
+**Sheet 31 done** (Sam pasted it, 2026-10-04 16:5xZ): the three memory rows S320 and S321 held are written, and both new tables are closed to public writes; his read-back matched.
 
-**NEXT:** deploy Sierra's catalog requirements after the A/B; Sam's
+**NEXT:** Sam's
 reaction to the tab mock-up, then the port into COBI (a static tab plus the
 Sierra surface); the addenda reading agent once the table has rows; a sequence
 read that looks for Miramar's map on its own pages (`read: 1`); the Butte College Tech

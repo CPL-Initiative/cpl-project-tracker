@@ -1,5 +1,5 @@
 ---
-title: Session 327 handoff — sheet 29 carried out; Sierra's catalog requirements await the A/B and a deploy; sheet 31 holds one paste card
+title: Session 327 handoff — sheet 29 carried out; Sierra's catalog requirements live; sheet 31 pasted
 date: 2026-10-04
 session: 326 (SkyAddendum)
 tags: [handoff, program-requirements-harvest, addenda, sierra, decision-sheet]
@@ -14,34 +14,17 @@ its A/B preview running.
 
 ## First, in this order
 
-1. **PR #1851** (card 4, Sierra's catalog requirements). Read the A/B preview run
-   **37210570623** (`cpl-chat-preview-ab.yml` on this branch): read the PASS/FAIL
-   grid AND the candidate's answers to 7l (Mt. SAC LVN to RN) and 7q (El Camino
-   Welding), never only the run's conclusion. Expected on production (the A side):
-   7l's new line (the 2026-2027 catalog) and 7q's anon read are the only reds, and
-   both pass on the candidate. If clean: mark ready, wait for `test` on the head,
-   squash-merge, then dispatch `cpl-chat-deploy.yml` on main and confirm the next
-   smoke passes 7l and 7q. If S326 already did any of these, the PR and the run
-   list say so.
-2. **Open-asks [sheet 31](https://claude.ai/artifact/89S8oEi5Yi1ZpDeUwBsfJu)**
-   (current; collection `replies`): one card, paste four receipts. Sheet 30
-   (SKczLvwB5BxQMXNfJRdyD3) is superseded by 31; sheet 29 (FhxQ5HXM1EBffhS5ce3Tj7)
-   is answered and retitled superseded.
+1. **Done (S326): #1851 merged (4837edc), Sierra deployed 15:33Z** (run 37213391271);
+   smoke on main green (run 37213710695, second attempt; the first missed 7c's quick-list
+   window, a question that never reaches the changed code). 7l names the 2026-2027
+   catalog and the printed total; 7q passes.
+2. **Done (S326): [sheet 31](https://claude.ai/artifact/89S8oEi5Yi1ZpDeUwBsfJu) pasted**
+   at 16:56Z, read back live: the three memory rows written, both tables closed to
+   public writes. No lane carries NEEDS SAM, so the builder writes no sheet. A paste
+   card now carries its SQL (the builder refuses one that does not).
 3. **The tab mock-up** ([Program Requirements Harvest](https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f), v3):
    still waits on Sam's next round. Its Cerritos Ironworker row reads 0 MAP credit
    recs (its credit lives in the CPL Pathways map); fix before the port.
-
-## Addendum (S326, 15:00Z, EMERGENCY line reached after the full checkpoint)
-
-The full Rule 9 checkpoint ran at 019fdcb; nothing in its list is stale except
-this finding. #1851's push-triggered `smoke` (run 37210552092, against
-PRODUCTION) failed four asserts: 7l's new catalog-year line (expected until the
-deploy) and three 7s asserts (San Gabriel Valley LVN), which passed on main's
-last full smoke (37131616028, 2026-10-03) on the same production code, so they
-are production's answer varying, not this diff. 7q passed in full. Comment
-posted on #1851. **Decide the merge on the A/B run 37210570623:** 7s must not
-fail on the candidate while passing on production. A send_later check-in was
-armed for 15:15Z to do this; if this session is gone, you do it.
 
 ## What shipped (S326)
 
@@ -59,10 +42,10 @@ armed for 15:15Z to do this; if this session is gone, you do it.
     5 not read, 2 open (Irvine Valley, Santa Monica). The sequence reader never
     requests a refused host, follows the college's own map links, and the probe
     prints `CHANGED: file it` when a refused host or an unreached page answers.
-- **#1851, open.** `program_requirement_records` live: 20 pilot records, all
+- **#1851, merged (4837edc) and deployed.** `program_requirement_records` live: 20 pilot records, all
   checked, anon reads checked rows only; hashes verified against the repo files.
   cpl-chat renders a checked program as CATALOG REQUIREMENTS. Smoke 7l re-scoped,
-  7q added. Not deployed until merge.
+  7q added.
 - Seven `cpl_memory` rows (author `SkyAddendum-s326`), two verified by Sam;
   more from this checkpoint. Lessons 39-47; KB note
   `playbook-ship-a-table-before-its-privilege-close`.
