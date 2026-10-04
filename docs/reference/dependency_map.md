@@ -450,6 +450,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_probe_lifecycle_checks.py` | workflows: `discover-map-datasets.yml` | — |
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
+| `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
 | `kb/_program_source_census.py` | workflows: `program-source-census.yml` | — |
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |
 | `kb/_rekey_kb_curation_supabase.py` | workflows: `supabase-rekey.yml` | — |
@@ -897,6 +898,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `schemas.openxmlformats.org` | scripts: `kb/_build_55050_redline_docx.py` |
 | `sdcce.edu` | tabs: `map-queue`, `map-users` |
+| `sdmiramar.edu` | scripts: `kb/_program_sequence_ppm.py` |
 | `sdmiramar.programmapper.ws` | scripts: `kb/_program_requirements_pilot.py` |
 | `skylinecollege.edu` | tabs: `map-queue`, `map-users` |
 | `solano.edu` | tabs: `map-queue`, `map-users` |
@@ -1002,5 +1004,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 93 Supabase tables · 34 RPCs · 6 edge functions · 576 file
-datasets · 155 external services · 404 consumers · 42 workflows · 37 tabs.
+Coverage: 93 Supabase tables · 34 RPCs · 6 edge functions · 577 file
+datasets · 156 external services · 406 consumers · 43 workflows · 37 tabs.

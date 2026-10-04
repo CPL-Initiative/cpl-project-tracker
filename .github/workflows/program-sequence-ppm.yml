@@ -1,0 +1,55 @@
+name: Program requirements pilot, sequence
+
+# Phase 1 of the program requirements harvest
+# (docs/reference/lanes/program-requirements-harvest.md). Sam's call 4 on
+# sheet 23 (2026-10-03) takes the pilot's sequencing only from Miramar's
+# Program Pathways Mapper, for its Fire Technology A.S. (05100).
+#
+# SEQUENCE PASS. kb/_program_sequence_ppm.py enters the mapper from the
+# college's own pages, finds the program's map, and accepts a page that names
+# the program's listed courses and at least two terms. It WRITES NOTHING: it
+# prints the map's text, the trail and the JSON the mapper fetched in the job
+# log, which a session reads through the GitHub MCP and files as a fixture.
+#
+# It is its own workflow so that a change to it never reruns the capture
+# pass's 20 program reads. It uses the census's reader (Sam's call 5 on
+# sheet 23: robots.txt first, 4 s between loads, the census user agent) and
+# runs only by hand or from a branch push. No schedule, no secrets: the tables
+# it reads grant SELECT to the public anon key.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/program-sequence-ppm.yml'
+      - 'kb/_program_sequence_ppm.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: program-sequence-ppm-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sequence:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium, pypdf, pdfminer
+        run: |
+          pip install --quiet playwright pypdf pdfminer.six
+          python -m playwright install --with-deps chromium
+
+      - name: Read the sequence
+        env:
+          CENSUS_DELAY_MS: '4000'
+        run: python3 kb/_program_sequence_ppm.py

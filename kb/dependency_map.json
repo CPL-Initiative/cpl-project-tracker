@@ -4,10 +4,10 @@
   "supabase_tables": 93,
   "rpcs": 34,
   "edge_functions": 6,
-  "file_datasets": 576,
-  "external_services": 155,
-  "consumers": 404,
-  "workflows": 42,
+  "file_datasets": 577,
+  "external_services": 156,
+  "consumers": 406,
+  "workflows": 43,
   "data_js_files": 68,
   "tabs": 37
  },
@@ -1807,6 +1807,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:sdmiramar.edu": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_sequence_ppm.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 58
     }
    ],
    "main_committers": []
@@ -7245,6 +7257,19 @@
    "consumers": [
     {
      "id": "workflow:program-requirements-pilot.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_program_sequence_ppm.py": {
+   "consumers": [
+    {
+     "id": "workflow:program-sequence-ppm.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -21952,6 +21977,18 @@
    "crons": [],
    "scripts": [
     "kb/_program_requirements_pilot.py"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "program-sequence-ppm.yml": {
+   "name": "Program requirements pilot, sequence",
+   "crons": [],
+   "scripts": [
+    "kb/_program_sequence_ppm.py"
    ],
    "adds": [],
    "push": null,
