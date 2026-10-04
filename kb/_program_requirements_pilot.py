@@ -130,14 +130,19 @@ def coverage(found: dict, courses: list[dict]) -> float:
     return len(listed & set(found)) / len(listed) if listed else 0.0
 
 
-def text_window(text: str, found: dict) -> str:
+def text_window(text: str, found: dict, from_start: bool = False) -> str:
     """The stretch of page text from a little before the first listed code to
-    a little after the last: the requirements, without the site's menus."""
+    a little after the last: the requirements, without the site's menus. A
+    document that holds one program (a curriQunet export) keeps its top, where
+    its heading names the award: Miramar's Fire Technology exports name a
+    course in their outcomes, and a window opened there lost the heading
+    (capture run 6)."""
     if not found:
         return (text or "")[:TEXT_CAP]
     first = min(p[0] for p in found.values())
     last = max(p[-1] for p in found.values())
-    a, b = max(0, first - WINDOW_BEFORE), min(len(text), last + WINDOW_AFTER)
+    a = 0 if from_start else max(0, first - WINDOW_BEFORE)
+    b = min(len(text), last + WINDOW_AFTER)
     return text[a:b][:TEXT_CAP]
 
 
@@ -232,6 +237,44 @@ def click_score(text: str, program: dict) -> int:
     if s <= 0 and REQ_WORDS.search(text or "") and not NOT_REQ.search(text or ""):
         s = 1
     return s
+
+
+def program_view(text: str, program: dict) -> bool:
+    """Whether a clicked item is the program's own entry: every word of its
+    title is in the item ("Business Administration 2.0 - Associate in Science
+    for Transfer Degree: Miramar"). A hub ("Degree Curricula and Certificate
+    Programs") names none of them."""
+    tokens = title_tokens(program["title"])
+    low = (text or "").lower()
+    return bool(tokens) and all(re.search(r"\b" + re.escape(w) + r"\b", low) for w in tokens)
+
+
+# curriQunet prints an "Export Page as PDF" link on every catalog view, for that
+# view's own outline (Catalog/Export?id=71&outlineId=20004 on Miramar's Business
+# Administration 2.0 view). Miramar's views draw their course lists where the
+# page text never names them (run 4, S323), and the export does.
+EXPORT_TEXT = re.compile(r"export (?:page )?as pdf", re.I)
+EXPORT_HREF = re.compile(r"/catalog/export\?", re.I)
+
+
+def export_link(links: list[dict]) -> str | None:
+    """The view's own PDF export, from the links a page carries."""
+    for ln in links or []:
+        href = ln.get("href") or ""
+        if href.startswith("http") and (EXPORT_HREF.search(href) or EXPORT_TEXT.search(ln.get("text") or "")):
+            return href
+    return None
+
+
+def click_rank(text: str, program: dict) -> tuple:
+    """The order the reader clicks in: the stronger match first; among equals,
+    the item that begins with the program's title, then the shorter item, then
+    the words themselves, so no run depends on a set's order. Miramar lists
+    "Early Education Entrepreneurship" beside "Entrepreneurship", and both name
+    every word of the title: run 6 clicked the right one and run 7 the other."""
+    t = re.sub(r"\s+", " ", (text or "").strip().lower())
+    title = re.sub(r"\s+", " ", (program.get("title") or "").strip().lower())
+    return (-click_score(text, program), not (title and t.startswith(title)), len(t), t)
 
 
 def clickable_candidate(text: str, program: dict) -> bool:
@@ -439,20 +482,29 @@ CLICKABLE_JS = """() => Array.from(document.querySelectorAll(
 
 
 def click_through(reader, program: dict, courses: list[dict], trail: list,
-                  max_clicks: int = MAX_LOADS) -> dict | None:
+                  max_clicks: int = MAX_LOADS, cache: dict | None = None) -> dict | None:
     """A JavaScript catalog (curriQunet) draws its navigation as items that
     open a section when clicked, without a link to follow. Click the item whose
     words best match the program, or a hub ("Degree Curricula and Certificate
     Programs") until a section names the program's courses. Each click waits
-    the census's delay, as a page load does."""
-    page, clicked, best = reader.page, set(), None
+    the census's delay, as a page load does.
+
+    When a click opens the program's own view and its text names too few of
+    the courses, read the view's PDF export (robots first, through read_pdf).
+    An export that names the courses ends the search. One that does not leaves
+    only other program items to click: past a program's view the clicks
+    wandered into the catalog's "Academic Requirements" menu (Miramar, run 4)."""
+    page, clicked, best, viewed = reader.page, set(), None, False
+    cache = {} if cache is None else cache
     for _ in range(max_clicks):
         try:
             texts = page.evaluate(CLICKABLE_JS)
         except Exception:
             break
-        ranked = sorted({t for t in texts if t not in clicked and clickable_candidate(t, program)},
-                        key=lambda t: -click_score(t, program))
+        pool = {t for t in texts if t not in clicked and clickable_candidate(t, program)}
+        if viewed:
+            pool = {t for t in pool if program_view(t, program)}
+        ranked = sorted(pool, key=lambda t: click_rank(t, program))
         if not ranked:
             break
         target = ranked[0]
@@ -497,7 +549,40 @@ def click_through(reader, program: dict, courses: list[dict], trail: list,
                     "field": field, "got": got}
         if cov >= ACCEPT_SHARE:
             break
+        if program_view(target, program):
+            exported = read_export(reader, export_link(got.get("links")), courses, cache)
+            exported["view"] = page.url
+            trail.append({k: v for k, v in exported.items() if k not in ("text", "found")})
+            if exported.get("coverage", 0.0) > best["coverage"]:
+                best = {"url": exported["url"], "coverage": exported["coverage"],
+                        "found": exported["found"], "text": exported["text"],
+                        "field": "export_pdf", "view": page.url, "got": got}
+            if best["coverage"] >= ACCEPT_SHARE:
+                break
+            viewed = True
     return best
+
+
+def read_export(reader, url: str | None, courses: list[dict], cache: dict) -> dict:
+    """A curriQunet view's PDF export, read whole: pypdf first, pdfminer when
+    pypdf's text names none of the listed codes."""
+    if not url:
+        return {"export": None, "url": None, "coverage": 0.0,
+                "why": "the program's view carries no PDF export link"}
+    pdf = read_pdf(reader, url, cache)
+    pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
+    text = "\n\n".join("[page %d]\n%s" % (i + 1, t) for i, t in enumerate(pages))
+    found = find_codes(text, courses)
+    if not found and pdf.get("data"):
+        alt = pdfminer_pages(pdf)
+        alt_text = "\n\n".join("[page %d]\n%s" % (i + 1, t) for i, t in enumerate(alt["pages"]))
+        alt_found = find_codes(alt_text, courses)
+        if alt_found:
+            text, found, extractor = alt_text, alt_found, alt["extractor"]
+    return {"export": url, "url": url, "access": pdf.get("access"), "status": pdf.get("status"),
+            "bytes": pdf.get("bytes"), "pages_total": len(pages), "extractor": extractor,
+            "error": pdf.get("error"), "codes": len(found),
+            "coverage": round(coverage(found, courses), 2), "found": found, "text": text}
 
 
 def read_pdf(reader, url: str, cache: dict) -> dict:
@@ -651,17 +736,19 @@ def capture(reader, entry: dict, cache: dict) -> dict:
         # Start each program's clicks from the catalog's front page.
         reader.load(start)
         reader.page.wait_for_timeout(2500)
-        clicked = click_through(reader, program, courses, res["trail"])
+        clicked = click_through(reader, program, courses, res["trail"], cache=cache)
         if clicked and clicked["coverage"] > (res["best"] or {}).get("coverage", 0.0):
             res["best"] = clicked
     best = res["best"] or {}
     got = best.get("got") or {}
-    rec.update(method="html_page", trail=res["trail"],
+    rec.update(method="export_pdf" if best.get("field") == "export_pdf" else "html_page",
+               trail=res["trail"],
                source={"url": best.get("url"), "title": got.get("title"), "h1": got.get("h1"),
-                       "text_from": best.get("field")},
+                       "text_from": best.get("field"), "view": best.get("view")},
                coverage=round(best.get("coverage") or 0.0, 3),
                codes_found=sorted(best.get("found") or {}),
-               text=text_window(best.get("text") or "", best.get("found") or {}),
+               text=text_window(best.get("text") or "", best.get("found") or {},
+                                from_start=best.get("field") == "export_pdf"),
                courseleaf_lists=courseleaf_lists(got, courses)
                if reg.get("catalog_platform") == "courseleaf" else [])
     return rec

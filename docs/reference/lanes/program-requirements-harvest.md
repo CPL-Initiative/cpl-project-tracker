@@ -150,46 +150,65 @@ pages at 15; a public curriculum-system view at 50.
 - San Diego College of Continuing Education stays on the district's catalogs
   page: no link on it names the college.
 
-**The pilot (Phase 1): capture and extraction built (S323, PR #1844, draft).**
-The 20 programs Sam checks are five colleges by four shapes
-(`kb/program_requirements_pilot_sample.json`): an ADT, an A.S./A.A. with a
-choose block, a certificate with an electives block, a noncredit certificate.
-Each college's fixed use case fills one slot: Cerritos Ironworker A.S. (42158),
-Mt. San Antonio LVN-to-RN A.S. (08086), Riverside City Culinary Arts
-certificate (22804, Sam's pick), West Los Angeles Real Estate Salesperson
-certificate (37839), Miramar Fire Technology A.S. (05100, the PPM sequence
-program, in the noncredit slot because Miramar offers no noncredit programs).
-The other picks lead their shape on MAP CPL articulations at that college.
+**The pilot (Phase 1): all 20 records pass the three automatic bars (S324,
+PR #1845); the fourth bar, Sam's reading, is on his review sheet.** The 20
+programs are five colleges by four shapes (`kb/program_requirements_pilot_sample.json`):
+an ADT, an A.S./A.A. with a choose block, a certificate with an electives block,
+a noncredit certificate. Each college's fixed use case fills one slot: Cerritos
+Ironworker A.S. (42158), Mt. San Antonio LVN-to-RN A.S. (08086), Riverside City
+Culinary Arts certificate (22804, Sam's pick), West Los Angeles Real Estate
+Salesperson certificate (37839), Miramar Fire Technology A.S. (05100, the PPM
+sequence program, in the noncredit slot because Miramar offers no noncredit
+programs). The other picks lead their shape on MAP CPL articulations at that
+college.
 - **Capture** (`kb/_program_requirements_pilot.py`,
   `program-requirements-pilot.yml`): starts at the registry's catalog address
   and accepts a page only when it names half the courses the Program Course File
   lists for the program; follows links on the catalog's own host, clicks through
-  curriQunet's navigation, reads a PDF catalog whole. Writes nothing. Run 4
-  (37166814546) found **16 of 20**: Cerritos, Mt. San Antonio, Riverside City and
-  West Los Angeles 4 of 4 each, most with every listed course on the page. The 16
-  are filed byte for byte under `kb/program_requirements_pilot/sources/`.
-- **Miramar: 0 of 4.** Its curriQunet program views open (the URL ends
-  `.../20004/20338`) but name none of the listed courses in their page text.
-  Each view carries an "Export Page as PDF" link for its own outline
-  (`Catalog/Export?id=71&outlineId=20004`); reading that export is the next
-  route. The PPM host probes found no Miramar Program Mapper.
+  curriQunet's navigation, reads a PDF catalog whole. On a curriQunet program view
+  whose text names too few courses it reads the view's own "Export Page as PDF"
+  (`Catalog/Export?id=71&outlineId=<view>`, robots first) and keeps the export
+  from its top; among items that tie on the title's words it clicks the one that
+  begins with the title. Writes nothing. **20 of 20 found**: run 4
+  (37166814546) for Cerritos, Mt. San Antonio, Riverside City and West Los
+  Angeles; run 8 (37173160158) for Miramar, all four at coverage 1.0. Filed byte
+  for byte under `kb/program_requirements_pilot/sources/`.
 - **Extraction** (`kb/_program_requirements_extract.py`,
   `program-requirements-extract.yml`, the `program-requirements-extract` Edge
-  Function, deployed version 1, Claude Opus 5.5 at effort high, structured
-  output): reads only the fixtures, never a college site. Run 1 (37167619551):
-  **7 of 16 pass** coverage, no invented courses and unit arithmetic, at **$0.73
-  in all, $0.046 a program**, 6 to 20 s a call. The 9 failures are the record
-  shape, named in the model's own notes: noncredit totals in hours (4); a choice
-  between whole blocks (Ironworker Reinforcing or Structural; ECE and LVN-to-RN
-  sequences); block totals the catalog prints ("6-22 units") with no field; an
-  alternative missing from the closed list with no flag (SOC-48); one code
-  written without its subject ("67L").
+  Function, **deployed version 2**, Claude Opus 5.5 at effort high, structured
+  output): reads only the fixtures, never a college site. **Record shape
+  version 2**: `program.measure` (units or hours), `block.option_group` (one of
+  several whole blocks), `block.stated` (a block total the catalog prints),
+  `units_max` (a range beside a course), alternatives as objects carrying their
+  own units and `catalog_addition`. Run 2 (37171952080) passed **16 of 16** at
+  $0.8535 ($0.053 a program); run 3 (37173589029, only Miramar) passed **4 of 4**
+  at $0.2762. The records are filed under `kb/program_requirements_pilot/records/`.
+- **The scorer** (`kb/_program_requirements_score.py`): coverage, no unflagged
+  invented course, unit arithmetic. Arithmetic is `equal`, `unequal`,
+  `incomplete` or `unstated`; `unstated` (Mt. San Antonio Vocational Nursing,
+  which prints no hours, units or total) passes only when the record carries no
+  figure, the closed list stores no units, and the catalog text names no hours or
+  units. 19 records are `equal`.
+- **What the bars cannot see** (this session read every record against its
+  text): Mt. San Antonio Fire lists FIRE 86 twice, and Mt. San Antonio LVN-to-RN
+  pairs the anatomy courses one by one where the catalog says "one of the
+  following sequences". Both are proposed as fixes on the review sheet; the other
+  18 are proposed as matching the catalog, with any doubt named on the card.
+- **Guard:** `tests/program_requirements_pilot_test.py` (160 checks): every
+  fixture re-read with today's matcher, every filed record re-scored with today's
+  scorer.
 
 **Sam's calls on sheets 25 and 26 (2026-10-03, 22:57Z and 23:01Z, his own
 picks):** Riverside City's program is the Culinary Arts certificate; Sam
 himself checks the 20-program sample; Sam asks the Butte College Tech Center
 for its ROE field definitions after the pilot's first records; the six catalog
 addresses go in as given ("go"); the memory receipts wait for later.
+
+**NEEDS SAM (pilot records review sheet,
+[8vJNG2XYjJNyfGiECXPpZk](https://claude.ai/artifact/8vJNG2XYjJNyfGiECXPpZk),
+SHEET_ID `2026-10-04-pilot-records-review`):** his check of the 20 records (his
+sheet-25 call), one card each, the proposal already selected. Built by
+`kb/_build_pilot_records_review_sheet.py`.
 
 **NEEDS SAM (open-asks sheet 27):** (1) paste the two memory receipts
 (`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`) in the SQL editor
@@ -200,11 +219,10 @@ session's UPDATE to the shared registry (Rule 10), so he pastes
 `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql` in the SQL
 editor or lifts the guard for one run.
 
-**NEXT:** read Sam's replies on sheet 27 and run what he answers. Then the
-record shape, version 2 (Edge Function, scorer, tests together): a `measure`
-(units or hours); per-block `stated` units; an `option_group` for blocks the
-student chooses one of; `units_max` for a printed range; alternatives as
-objects carrying `catalog_addition`; and a prompt line that writes every code
-with its subject. Redeploy, push the extract script to rerun all 16, then read
-Miramar through its per-program export PDF. When 20 records pass, hand Sam the
-20 for his check (the fourth bar) as a decision sheet.
+**NEXT:** read the replies on the pilot records review sheet (and sheet 27),
+then carry out each "Needs a fix" through the record shape or the prompt, never
+by editing a filed record by hand, and rerun the extraction on the programs it
+touches. When Sam has passed the 20, Phase 1's last pieces are the Miramar PPM
+sequence (the Program Mapper hosts answered 403 or did not resolve) and the
+Butte College Tech Center's ROE field definitions (Sam asks them); then the
+harvest widens past the pilot.

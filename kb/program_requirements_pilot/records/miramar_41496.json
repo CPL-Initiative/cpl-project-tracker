@@ -1,0 +1,219 @@
+{
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37173589029 (2026-10-04, S324, dispatched with only=Miramar). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "extracted_run": 37173589029,
+ "college": "San Diego Miramar College",
+ "control_number": "41496",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "source_file": "kb/program_requirements_pilot/sources/miramar_41496.json",
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8590,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8590,
+    "output_tokens": 1507,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1507,
+  "output_tokens_details": {
+   "thinking_tokens": 454
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0645,
+ "ms": 12547,
+ "seconds": 13.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 10,
+   "share": 0.8,
+   "missing": [
+    "ECON120",
+    "ECON121"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    28.0
+   ],
+   "stated": [
+    26.0,
+    28.0
+   ],
+   "why": []
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BUSINESS ADMINISTRATION 2.0 - ASSOCIATE IN SCIENCE FOR TRANSFER DEGREE: MIRAMAR",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC"
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "BUSE 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSE 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 116A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 116B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following statistics courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUSE 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following calculus courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "missing_explained": [
+   {
+    "code": "ECON 120",
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "ECON 121",
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
+   }
+  ],
+  "notes": [
+   "ECON C2002 and ECON C2001 (common course numbering) replace closed-list ECON 120 and ECON 121; their descriptions state they are not open to students with previous credit for ECON 120/121. Recorded as catalog additions.",
+   "Closed list prints STATC1000 without a space; treated as the same course as catalog's STAT C1000 (not a catalog addition).",
+   "The 'COURSES REQUIRED FOR THE MAJOR' heading prints 20.0 units, which matches only the six required courses; the two selection lists are recorded as separate choose-one blocks. Program total 26.0-28.0 is the 'Courses Total Units' line."
+  ]
+ }
+}

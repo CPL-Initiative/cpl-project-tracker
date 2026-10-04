@@ -1,0 +1,101 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37173160158 (2026-10-04, S324): the text is the program view's own PDF export, read whole and kept from its top. The extraction pass reads this file; it never reads the college's site again.",
+ "college": "San Diego Miramar College",
+ "control_number": "18207",
+ "shape": "cert_electives",
+ "title": "Fire Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "status": "Approved",
+ "catalog_year": "2026-2027",
+ "platform": "curriqunet",
+ "format": "html_per_program",
+ "method": "export_pdf",
+ "source": {
+  "url": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20044",
+  "title": "View - CurriQunet META",
+  "h1": "",
+  "text_from": "export_pdf",
+  "view": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27/iq/20879/20988/20044/20378"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "EMGM105A",
+  "EMGM106",
+  "FIPT101",
+  "FIPT102",
+  "FIPT103",
+  "FIPT104",
+  "FIPT105",
+  "FIPT120"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000357662",
+   "code": "EMGM 105A",
+   "title": "Emergency Medical Technician - National Registry",
+   "units": 7.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000378461",
+   "code": "EMGM 106",
+   "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training",
+   "units": 0.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000594154",
+   "code": "FIPT 101",
+   "title": "Fire Protection Organization",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000594155",
+   "code": "FIPT 102",
+   "title": "Fire Prevention Technology",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000368233",
+   "code": "FIPT 103",
+   "title": "Fire Protection Equipment and Systems",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000624402",
+   "code": "FIPT 104",
+   "title": "Building Construction for Fire Protection",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000372968",
+   "code": "FIPT 105",
+   "title": "Fire Behavior and Combustion",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000528132",
+   "code": "FIPT 120",
+   "title": "Firefighter Safety and Survival",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "[page 1]\n \nFIRE TECHNOLOGY - CERTIFICATE OF ACHIEVEMENT: MIRAMAR \n \n \nSummary \n \nAdmission Criteria \nThe Fire Technology Associate Degree program provides students with the foundational knowledge and practical \nskills necessary to pursue a career in fire service, emergency management, and fire safety. Classroom instruction is \ndesigned to prepare students to enter the fire academy and advance throughout their career. This program is \ndesigned to enhance general knowledge of firefighting, building construction, fire prevention, and leadership \ntraits for students pursuing a career in the fire service or related field. \nAward Note: \nThe Associate Degree requires a minimum of 60 degree applicable semester units. \nLearning Outcome(s): Students who complete the Fire Technology Program will be able to: \n1. Identify minimum qualifications and entry level skills for firefighter hiring. The student will be able to describe \nthe following elements: application process; written exam process; physical agility exam, oral interview, chief’s \ninterview; background investigation; and fire fighter probationary process. Students will identify fire service \nhistory, culture and diversity. \n2. Demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify \ncomponents of emergency management and fire fighter safety including: Size-up, report on conditions, \nIncident Command System; RECEO; 10 Standard Firefighting Orders; 18 Situations that Shout “Watch Out “; \nand common factors associated with injuries and line of duty deaths. \n3. Identify and comprehend laws, regulations, codes and standards that influence fire department operations, \nand identify regulatory and advisory organizations that create and mandate them, especially in the areas of \nfire prevention, building codes and ordinances, and firefighter health and safety. \n4. Analyze the causes of fire, determine extinguishing agents and methods, differentiate the stages of the fire \nand fire development, and compare methods of heat transfer. \n5. Calculate flow requirements for fire apparatus, diagram a pump and plumbing schematic for fire apparatus, \nand apply mathematic formulae to hydraulics problems. \n6. Identify and describe the apparatus used in the fire service, and the equipment and maintenance of fire \napparatus and equipment. \n7. Identify and describe common types of building construction and conditions associated with structural \ncollapse and firefighter safety. Differentiate between fire detection and fire suppression systems. Student will \ndesign and diagram a wet and dry fire protection system, and identify alarm system components and their \noperations. \nThe Miramar Fire Technology program offers an option for students to earn their State Fire Training Firefighter I \nCertification required for entry-level employment by attending a “cohort” of courses on campus. Students \ninterested in attending the On Campus Fire Academy option should visit the Fire Technology Program website to \nreview the application process and requirements to attend. The cohort of courses will be offered in sequence \nduring the Fall and Spring Semesters. The courses include: FIPT 150W, 150A, 150B, 150C, 150T, 322A, 322C, 322F, \n323B, 324A, 381G, and 322D. The FIPT 381G Skills Review and Certification course includes the State Fire Training \nWritten and Skills Exam for Structure, Wildland and Hazardous Materials meeting the IFSAC and ProBoard \nAccreditation. Live Fire Control 3B Certification is provided as an accreditation requirement for Firefighter I \nCertification. The Certification of Completion and course hours are identical to the traditional Regional Accredited \nFire Academy. There are three prerequisites that must be completed prior to the start of the Fire Academy: 1. \nCompletion of EMT course 2. FIPT 101, Fire Protection Organization 3. FACD 100D, Fire Department Testing \nProcedures. \nCAL FIRE Hiring Requirements \nThe Miramar Fire Academy is partnered with CAL FIRE San Diego and meets all requirements for all eligible entry \nlevel employment. Students interested in working for CAL FIRE are encouraged to complete the Firefighter 1 \nAcademy to be considered for employment. The courses also prepare the student to enter a fire academy, \ndepending upon the employer. \n1\n\n[page 2]\n \nSafety and Minimum Requirements \n \nRequirements \n \nCourses \nDue to safety concerns, as well as minimum requirement by regulatory agencies, potential students should be \naware applicable courses may require participants to demonstrate physically demanding skills, along with both \nverbal and nonverbal communication skills. The Department may impose physical qualifications for participation \nwhen a physical ability is validly deemed essential. If you have any concerns as to your ability to safely participate \nin these courses, please contact the Fire Academy Director at 619-388-7737. \nTotal Units: 25.5 \nCOURSES REQUIRED FOR THE MAJOR: Semester Units: 25.5 \nFIPT 101 Fire Protection Organization (Active) 3.0 \nFIPT 102 Fire Prevention Technology (Active) 3.0 \nFIPT 103 Fire Protection Equipment and Systems (Active) 3.0 \nFIPT 104 Building Construction for Fire Protection (Active) 3.0 \nFIPT 105 Fire Behavior and Combustion (Active) 3.0 \nFIPT 120 Firefighter Safety and Survival (Active) 3.0 \nEMGM 105A Emergency Medical Technician - National Registry (Active) 7.0 \nEMGM 106 Perilaryngeal Airway Adjuncts/Defibrillation Training (Active) 0.5 \nFIPT 101 Fire Protection Organization \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nLimitation on Enrollment: This course is not open to \nstudents with previous credit for FIRE 101 \nThis course introduces students to the philosophy and \nhistory of fire protection as well as to career opportunities \nin fire protection and related fields. Topics include fire loss \nanalysis; the organization and function of public and \nprivate fire protection services and systems; the fire \ndepartment as part of local government; laws and \nregulations affecting the fire service; fire service \nnomenclature; basic fire chemistry and physics; and fire \nstrategy and tactics. This course is intended for students \nmajoring in Fire Technology or anyone interested in fire \nprotection. \nFT; AA/AS; CSU. \nFIPT 102 Fire Prevention Technology \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nThis course provides fundamental information about the \nhistory and philosophy of fire prevention and the \norganization and operation of fire prevention bureaus. \nOther topics include the use of fire codes; the identification \nand correction of fire hazards; and the relationships among \nfire prevention, fire safety education, and fire detection and \nsuppression systems. This course is intended for students \nmajoring in Fire Technology. \nFT; AA/AS; CSU. \nFIPT 103 Fire Protection Equipment and Systems \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nThis course provides students with an overview of fire \nprotection equipment and systems. Topics include the \ndesign and operational features of fire detection and alarm \nsystems; heat and smoke control systems; special \nprotection and sprinkler systems; water supply for fire \nprotection; and portable fire extinguishers. This course is \nintended for students majoring in Fire Technology. \nFT; AA/AS; CSU. \nFIPT 104 Building Construction for Fire Protection \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nThis course introduces building construction components \nthat relate to fire safety. Students learn about key building \ninspection factors such as construction and structure \ndesign; pre-fire planning operations; and operating at fires. \nOther topics include the development and evolution of \nbuilding and fire codes in relation to past fires in \nresidential, commercial, and industrial occupancies. This \ncourse is intended for students majoring in Fire \nTechnology. \nFT; AA/AS; CSU. \n2\n\n[page 3]\nFIPT 105 Fire Behavior and Combustion \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nThis course introduces students to the theory and \nfundamentals of fire behavior including how fires start; \nhow and why they spread; and how they are controlled. \nTopics include fire chemistry and physics; fire \ncharacteristics of materials; extinguishing agents; and fire \ncontrol techniques. This course is intended for students \nmajoring in Fire Technology or anyone interested in fire \nscience. \nFT; AA/AS; CSU. \nFIPT 120 Firefighter Safety and Survival \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nThis course provides students with the basic principles and \nhistory related to the national firefighter life safety \ninitiatives, with a focus on the need for cultural and \nbehavior change throughout the emergency services. \nTopics include assessment of fire dangers; common fire \nsituations; risk abatement; personal preparation for \nunforeseen fire emergencies; roles and responsibilities in \neducating the public on fire safety; and development of a \nsurvival attitude. Students learn problem-solving \ntechniques for increased situational awareness and self-\nreliance in emergencies. This course is intended for \nstudents majoring in Fire Technology; practicing firefighters \nand other emergency service personnel; or anyone with an \ninterest in fire safety. \nFT; AA/AS; CSU. \nEMGM 105A Emergency Medical Technician - \nNational Registry \n96 - 108 hours lecture/48-54 hours lab; 7 units \nGrading: Letter Grade Only \nPrerequisite: EMGM 50A with a Grade of \"C\" or better, or \nequivalent \nCorequisite: Completion of or concurrent enrollment \nin: EMGM 106 with a Grade of \"C\" or better, or equivalent \nLimitation on Enrollment: This course is not open to \nstudents with previous credit for FIPT 130 or EMGM 105 \nHealth and Safety. Students must have a current BLS/\nHealthcare Provider Level CPR Card approved by the \nAmerican Heart Association or the American Red Cross, \nhealth record indicating immunizations are current, and a \nTB test administered within 14-30 days of course start \n(depending on course length). \nThis course covers the techniques of emergency medical \ncare and transportation of the sick and injured within the \nresponsibilities of the Emergency Medical Technician (EMT). \nThe course content is based upon the State of California \nEmergency Medical Services (EMS) Authority requirements \nreferenced in Title 22, Division 9, Chapter 2, Emergency \nMedical Technician of the California Code of Regulations. \nCourse approval is with the County of San Diego \nEmergency Medical Services. Upon successful completion, \nthe student will be eligible to take the National Registry of \nEmergency Medical Technicians-EMT Cognitive and \nPsychomotor Examination for Emergency Medical \nTechnician. This course is intended for students preparing \nfor a career as an EMT, paramedic, firefighter, lifeguard, \nnurse, physician assistant, or medical doctor. \nFT; AA/AS; CSU. \n3\n\n[page 4]\nEMGM 106 Perilaryngeal Airway Adjuncts/\nDefibrillation Training \n4 - 4.5 hours lecture/12 - 13.5 hours lab; 0.5 units \nGrading: Letter Grade Only \nCorequisite: Completion of or concurrent enrollment \nin: EMGM 105A with a Grade of \"C\" or better, or equivalent \nEMT certification. \nLimitation on Enrollment: This course is not open to \nstudents with previous credit for FIPT 136. \nHealth and Safety. San Diego County Division of \nEmergency Medical Services Policy D-320 requirement: \nCurrent BLS/Healthcare Provider Level CPR Card approved \nby the American Heart Association or the American Red \nCross. \nThis course covers the skills required to integrate the use \nof the Automated External Defibrillator (AED), Esophageal/\nTracheal Airway Device \"Combitube®,\" and Laryngeal/\nTracheal Airway \"King®\" in the prehospital care/\nmanagement of the victim of cardiac/respiratory arrest. \nTopics include skill proficiency in basic life support; airway \nmanagement; use of the AED; and intubation utilizing a \nSan Diego Emergency Medical Services Authority (EMSA)-\napproved perilaryngeal airway adjunct. This course is \nintended for practicing Emergency Medical Technicians \n(EMTs), students seeking initial EMT certification, or others \nworking in the healthcare field. Students must be \nemployed with an approved provider agency in order to \nutilize the airway device in the provision of care. \nFT; AA/AS; CSU. \n4",
+ "courseleaf_lists": [],
+ "captured_run": 37173160158
+}

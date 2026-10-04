@@ -104,6 +104,12 @@ check(P.coverage(found, CUL) == 1.0, "every listed culinary course is on the pag
 win = P.text_window(page, found)
 check("CUL 36" in win and "Total 33.5" in win and len(win) < len(page) / 2,
       "the window keeps the requirements and drops the site's menus")
+export = ("FIRE TECHNOLOGY - CERTIFICATE OF ACHIEVEMENT: MIRAMAR Summary " + "Outcomes text. " * 300
+          + "Prerequisite: CUL 36 " + "More outcomes. " * 300 + "Required: CUL 36 8.5 CUL 37 8.5")
+ex_found = P.find_codes(export, CUL)
+check(P.text_window(export, ex_found, from_start=True).startswith("FIRE TECHNOLOGY - CERTIFICATE")
+      and not P.text_window(export, ex_found).startswith("FIRE TECHNOLOGY"),
+      "a one-program export keeps its heading; a catalog page's window starts near its first code")
 check(P.coverage(P.find_codes("Culinary Arts overview, no courses", CUL), CUL) == 0.0,
       "a title match with none of the courses is not the page")
 
@@ -233,6 +239,156 @@ check(P.clickable_candidate("Program Requirements", biz)
       and not P.clickable_candidate("Graduation and Transfer Requirements", biz),
       "inside a program's view, its requirements item is clicked; the college's graduation rules are not")
 
+# ── Miramar (run 4, 0 of 4): the program's view hides its list; its export does not ──
+check(P.program_view("Business Administration 2.0 - Associate in Science for Transfer Degree: Miramar", biz)
+      and not P.program_view("Degree Curricula and Certificate Programs", biz)
+      and not P.program_view("Academic Requirements", biz)
+      and not P.program_view("Business Information Technology - Certificate of Achievement: Miramar", biz),
+      "the program's own item is its view; the hub, the requirements menu and a "
+      "program sharing one title word are not")
+VIEW_LINKS = [{"text": "Export Page as PDF",
+               "href": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20004"},
+              {"text": "Academic Requirements", "href": "javascript:void(0)"}]
+check(P.export_link(VIEW_LINKS) == "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20004"
+      and P.export_link([{"text": "Academic Requirements", "href": "javascript:void(0)"}]) is None,
+      "a view's PDF export is read from its own link")
+
+MIR = "https://sdccd.curriqunet.com/catalog/alias/miramar26-27/iq/"
+NAV = ["Academic Requirements", "Degree Curricula and Certificate Programs"]
+BIZ_ITEM = "Business Administration 2.0 - Associate in Science for Transfer Degree: Miramar"
+BIZ = [{"code": c} for c in ("ACCT 116A", "ACCT 116B", "BUSE 115", "ECON 120", "STATC1000")]
+MIR_VIEWS = {   # what each click shows: run 4's trail, cut down
+    None: (MIR + "20891", NAV, []),
+    NAV[1]: (MIR + "20879/20988", NAV + [BIZ_ITEM],
+             [{"text": "Export Page as PDF",
+               "href": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20879"}]),
+    BIZ_ITEM: (MIR + "20879/20988/20004/20338", NAV, VIEW_LINKS),
+    NAV[0]: (MIR + "20879/20990", NAV, []),
+}
+
+
+class _ClickPage:
+    """A curriQunet catalog: items that open a view when clicked; the view's
+    page text names no listed course (Miramar, run 4)."""
+    def __init__(self, views=None):
+        self.views = views or MIR_VIEWS
+        self.view, self.clicks = None, []
+
+    @property
+    def url(self):
+        return self.views[self.view][0]
+
+    def evaluate(self, js):
+        url, items, links = self.views[self.view]
+        if js == P.CLICKABLE_JS:
+            return items
+        return {"title": "View - CurriQunet META", "h1": "", "links": links,
+                "body": "Search Export Page as PDF Catalog Navigation " + " ".join(items),
+                "content": "", "courselists": [], "clickables": []}
+
+    def get_by_text(self, text, exact=True):
+        page = self
+
+        class _Hit:
+            class first:
+                @staticmethod
+                def click(timeout=None):
+                    page.clicks.append(text)
+                    page.view = text
+        return _Hit
+
+    def wait_for_load_state(self, *a, **k):
+        pass
+
+    def wait_for_timeout(self, ms):
+        pass
+
+
+EXPORT_TEXT = ("Business Administration 2.0 Associate in Science for Transfer Degree\n"
+               "Courses Required for the Major: ACCT 116A Financial 4 ACCT 116B Managerial 4 "
+               "ECON 120 Macro 3 STAT C1000 Statistics 4 BUSE 115 Law 3 Total 18")
+exports = []
+
+
+def _fake_pdf(reader, url, cache):
+    exports.append(url)
+    return {"url": url, "access": "ok", "status": 200, "bytes": 9000, "extractor": "pypdf",
+            "pages": [EXPORT_TEXT]}
+
+
+class _ClickReader:
+    def __init__(self, views=None):
+        self.page, self.loads, self.delay = _ClickPage(views), 0, 0
+
+
+saved_pdf = P.read_pdf
+P.read_pdf = _fake_pdf
+try:
+    trail = []
+    cr = _ClickReader()
+    got = P.click_through(cr, biz, BIZ, trail, cache={})
+finally:
+    P.read_pdf = saved_pdf
+check(got and got["coverage"] == 1.0 and got["field"] == "export_pdf"
+      and got["url"].endswith("outlineId=20004") and got["view"].endswith("20004/20338"),
+      "Miramar: the program's view is reached and its export names every listed course: %s"
+      % ({k: got.get(k) for k in ("coverage", "field", "url", "view")} if got else None))
+check(exports == ["https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20004"],
+      "only the program's own export is read, never the hub's: %s" % exports)
+check(cr.page.clicks == [NAV[1], BIZ_ITEM],
+      "the reader stops clicking at the program's view (run 4 went on to "
+      "'Academic Requirements'): %s" % cr.page.clicks)
+
+exports.clear()
+P.read_pdf = lambda reader, url, cache: {"url": url, "access": "robots_disallow", "pages": []}
+try:
+    cr2 = _ClickReader()
+    got2 = P.click_through(cr2, biz, BIZ, [], cache={})
+finally:
+    P.read_pdf = saved_pdf
+check(got2["coverage"] == 0.0 and got2["field"] != "export_pdf" and cr2.page.clicks == [NAV[1], BIZ_ITEM],
+      "an export robots.txt refuses is never read, and the reader still stops at the view")
+
+# Run 7: two items name every title word ("Early Education Entrepreneurship"
+# beside "Entrepreneurship"); a set's order picked the wrong one.
+ent = {"title": "Entrepreneurship", "award": "A.S. Degree"}
+EARLY = "Early Education Entrepreneurship - Associate of Science Degree: Miramar"
+ENT = "Entrepreneurship - Associate of Science Degree: Miramar"
+check(sorted([EARLY, ENT], key=lambda t: P.click_rank(t, ent))[0] == ENT
+      and sorted([ENT, EARLY], key=lambda t: P.click_rank(t, ent))[0] == ENT,
+      "among items naming every title word, the one that begins with the title is clicked first")
+
+
+def _export(oid):
+    return [{"text": "Export Page as PDF",
+             "href": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=%s" % oid}]
+
+
+fire = {"title": "Fire Technology", "award": "A.S. Degree"}
+FIRE_AS = "Fire Technology - Associate of Science Degree: Miramar"
+FIRE_COA = "Fire Technology - Certificate of Achievement: Miramar"
+FIRE_VIEWS = {
+    None: (MIR + "20891", NAV, []),
+    NAV[1]: (MIR + "20879/20988", NAV + [FIRE_COA, FIRE_AS], []),
+    FIRE_AS: (MIR + "20879/20988/20043/20377", NAV + [FIRE_COA, FIRE_AS], _export(20043)),
+    FIRE_COA: (MIR + "20879/20988/20044/20378", NAV + [FIRE_COA, FIRE_AS], _export(20044)),
+    NAV[0]: (MIR + "20879/20990", NAV, []),
+}
+FIRE_LIST = [{"code": c} for c in ("FIPT 101", "FIPT 102", "FIPT 103", "EMGM 106")]
+FIRE_PAGES = {"20043": "FIRE TECHNOLOGY - A.S. Summary only FIPT 101",
+              "20044": "FIRE TECHNOLOGY - CERTIFICATE FIPT 101 3 FIPT 102 3 FIPT 103 3 EMGM 106 0.5"}
+P.read_pdf = lambda reader, url, cache: {"url": url, "access": "ok", "status": 200,
+                                         "pages": [FIRE_PAGES[url.rsplit("=", 1)[1]]]}
+try:
+    cr3 = _ClickReader(FIRE_VIEWS)
+    got3 = P.click_through(cr3, fire, FIRE_LIST, [], cache={})
+finally:
+    P.read_pdf = saved_pdf
+check(cr3.page.clicks == [NAV[1], FIRE_AS, FIRE_COA] and got3["url"].endswith("outlineId=20044")
+      and got3["coverage"] == 1.0,
+      "an export that names too few courses leaves only other program items to click, "
+      "never 'Academic Requirements': %s" % cr3.page.clicks)
+
 # ── The filed fixtures: real catalog text the matcher must keep reading ──────
 fixtures = sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_pilot", "sources", "*.json")))
 check(len(fixtures) >= 16, "the capture pass's 16 programs are filed (run 4)")
@@ -245,6 +401,23 @@ for path in fixtures:
           "(%d now, %d then)" % (os.path.basename(path), len(again), len(fx["codes_found"])))
     check(fx["coverage"] >= 0.5 and fx.get("captured_run"),
           "%s: only a page that named half the listed codes is filed, with its run" % os.path.basename(path))
+
+# ── The filed records: today's scorer must agree with the run that filed them ─
+records = sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_pilot", "records", "*.json")))
+check(len(records) >= 16, "extraction run 2's 16 records are filed (37171952080)")
+for path in records:
+    with open(path) as fh:
+        fr = json.load(fh)
+    with open(os.path.join(ROOT, fr["source_file"])) as fh:
+        fx = json.load(fh)
+    again = S.score(fr["record"], fx["closed_list"], fx["text"])
+    check(again["pass"] == fr["score"]["pass"]
+          and again["arithmetic"]["status"] == fr["score"]["arithmetic"]["status"]
+          and again["coverage"]["missing"] == fr["score"]["coverage"]["missing"]
+          and again["invented"]["codes"] == fr["score"]["invented"]["codes"],
+          "%s: today's scorer reads the filed record as the run did (%s %s now, %s %s then)"
+          % (os.path.basename(path), again["pass"], again["arithmetic"]["status"],
+             fr["score"]["pass"], fr["score"]["arithmetic"]["status"]))
 
 # ── The extraction pass reads fixtures only and calls only the function ──────
 import _program_requirements_extract as X  # noqa: E402
@@ -313,6 +486,108 @@ check(r["arithmetic"]["pass"], "a total given as a range is read as one")
 r = S.score({"program": {}, "blocks": adj["blocks"]}, ADJ)
 check(not r["arithmetic"]["pass"] and "names no total" in " ".join(r["arithmetic"]["why"]),
       "a record that names no total cannot pass the arithmetic")
+
+# ── Record shape v2: what extraction run 1 (37167619551) could not hold ──────
+# Each case is one of run 1's nine failures, cut to its smallest shape.
+# Noncredit hours (Cerritos Energy Corps, "136 Hours"): course units hold hours,
+# and the closed list's 0 units are never read in their place.
+AED = [{"code": c, "units": 0} for c in ("AED 90.01", "AED 90.02", "AED 90.03", "AED 90.05")]
+aed = {"program": {"measure": "hours", "total_units": {"min": 136, "max": 136}},
+       "blocks": [{"name": "Required Courses", "rule": "all",
+                   "courses": [{"code": c, "units": h} for c, h in
+                               zip(("AED 90.01", "AED 90.02", "AED 90.03", "AED 90.05"), (40, 40, 40, 16))]}]}
+r = S.score(aed, AED)
+check(r["pass"] and r["measure"] == "hours" and r["arithmetic"]["computed"] == [136.0, 136.0],
+      "a noncredit program's course hours add to its stated hours: %s" % json.dumps(r["arithmetic"]))
+aed_blank = json.loads(json.dumps(aed))
+for c in aed_blank["blocks"][0]["courses"]:
+    c["units"] = None
+r = S.score(aed_blank, AED)
+check(not r["arithmetic"]["pass"] and r["arithmetic"]["status"] == "incomplete",
+      "in hours, a course with no printed hours never borrows the state file's 0 units")
+
+# One of several whole blocks (Cerritos Ironworker: Reinforcing 15 or Structural 19).
+IW = [{"code": c, "units": u} for c, u in
+      [("IWAP 40.07", 4), ("IWAP 40.12", 2), ("IWAP 41.03", 1), ("IWAP 40.21", 2.5), ("IWAP 41.06", 2)]]
+iw = {"program": {"total_units": {"min": 7, "max": 8.5}},
+      "blocks": [{"name": "Core", "rule": "all", "courses": [{"code": "IWAP 40.07"}]},
+                 {"name": "Option 1", "rule": "all", "option_group": "Option",
+                  "courses": [{"code": "IWAP 40.12"}, {"code": "IWAP 41.03"}]},
+                 {"name": "Option 2", "rule": "all", "option_group": "Option",
+                  "courses": [{"code": "IWAP 40.21"}, {"code": "IWAP 41.06"}]}]}
+r = S.score(iw, IW)
+check(r["pass"] and r["arithmetic"]["computed"] == [7.0, 8.5],
+      "an option group runs from its smallest block to its largest: %s" % json.dumps(r["arithmetic"]))
+iw_flat = json.loads(json.dumps(iw))
+for b in iw_flat["blocks"]:
+    b.pop("option_group", None)
+check(not S.score(iw_flat, IW)["arithmetic"]["pass"],
+      "two options read as two required blocks overstate the total, and the arithmetic catches it")
+
+# A block total the catalog prints (Mt. San Antonio Fire "6-22 units"; Riverside List B "6-7").
+FIRE = [{"code": "FIRE 1", "units": 3}, {"code": "FIRE 6", "units": 3}, {"code": "FIRE86", "units": None}]
+fire = {"program": {"total_units": {"min": 9, "max": 25}},
+        "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "FIRE 1"}]},
+                   {"name": "Electives", "rule": "choose_courses", "minimum": 2,
+                    "stated": {"min": 6, "max": 22},
+                    "courses": [{"code": "FIRE 6"}, {"code": "FIRE 86"}]}]}
+r = S.score(fire, FIRE)
+check(r["pass"] and r["arithmetic"]["computed"] == [9.0, 25.0],
+      "a choose block whose courses lack units counts its printed total: %s" % json.dumps(r["arithmetic"]))
+adj_b = json.loads(json.dumps(adj))
+adj_b["blocks"][1]["stated"] = {"min": 6, "max": 7}
+check(S.score({**adj_b, "program": {"total_units": {"min": 12, "max": 13}}}, ADJ)["arithmetic"]["pass"],
+      "a choose-units block counts the range the catalog prints for it")
+
+# A range printed beside a course (Mt. San Antonio MICR 1 "4-5").
+MICR = [{"code": "MICR1", "units": None}, {"code": "NURS 114", "units": 3}]
+micr = {"program": {"total_units": {"min": 7, "max": 8}},
+        "blocks": [{"name": "Required", "rule": "all",
+                    "courses": [{"code": "MICR 1", "units": 4, "units_max": 5}, {"code": "NURS 114"}]}]}
+check(S.score(micr, MICR)["arithmetic"]["computed"] == [7.0, 8.0],
+      "a course printed '4-5' runs from units to units_max")
+
+# Alternatives as objects carry their own flag (Riverside SOC-48 beside STAT C1000).
+STAT = [{"code": "STAT C1000", "units": 4}]
+stat = {"program": {"total_units": 4},
+        "blocks": [{"name": "Statistics", "rule": "all",
+                    "courses": [{"code": "STAT C1000", "catalog_addition": False,
+                                 "alternatives": [{"code": "SOC-48", "units": 4,
+                                                   "catalog_addition": True}]}]}]}
+r = S.score(stat, STAT)
+check(r["pass"] and r["invented"]["flagged"] == ["SOC48"],
+      "an alternative flagged as a catalog addition passes: %s" % json.dumps(r["invented"]))
+stat["blocks"][0]["courses"][0]["alternatives"][0]["catalog_addition"] = False
+check(not S.score(stat, STAT)["invented"]["pass"],
+      "an unflagged alternative the state list lacks fails as invented (run 1 let SOC-48 through)")
+check(S.score({**adj, "blocks": [{**adj["blocks"][0]}, adj["blocks"][1]]}, ADJ)["pass"],
+      "version 1's bare-code alternatives still score")
+
+# A catalog that prints no figure at all (Mt. San Antonio Vocational Nursing).
+VN = [{"code": c, "units": 0} for c in ("VOC VN100", "VOC VN101")]
+vn = {"program": {"measure": "hours", "total_units": {"min": None, "max": None}},
+      "blocks": [{"name": "Required Courses", "rule": "all",
+                  "courses": [{"code": "VOC VN100", "units": None}, {"code": "VOC VN101", "units": None}]}]}
+r = S.score(vn, VN, "Required Courses Course Prefix Course Name Units VOC VN100 VOC VN101")
+check(r["pass"] and r["arithmetic"]["status"] == "unstated",
+      "a page that prints no hours, units or total leaves nothing to add: %s" % json.dumps(r["arithmetic"]))
+r = S.score(vn, VN, "VOC VN100 Anatomy (40 Hours) VOC VN101 Fundamentals (60 Hours)")
+check(not r["pass"] and "40 Hours" in " ".join(r["arithmetic"]["why"]),
+      "a record that drops hours the page prints fails, naming them")
+check(not S.score(vn, VN)["pass"], "without the catalog text, a record that states no figure cannot pass")
+r = S.score({"program": {}, "blocks": [{"name": "Core", "rule": "all",
+                                         "courses": [{"code": "CUL 36"}]}]}, CUL, "CUL 36")
+check(not r["arithmetic"]["pass"] and r["arithmetic"]["status"] == "incomplete",
+      "a credit record with no total is never 'unstated': the state file holds its units")
+
+# The function writes what the scorer reads.
+fn = open(os.path.join(ROOT, "chatbox", "supabase", "functions", "program-requirements-extract",
+                       "index.ts")).read()
+for field in ('"measure"', '"option_group"', '"stated"', '"units_max"'):
+    check(re.search(r"required: \[[^\]]*%s" % field, fn),
+          "the function's schema requires %s, the field the scorer reads" % field)
+check("Write every code with its subject" in fn,
+      "the prompt tells the model 'CHLD 67 & 67L' is CHLD 67 and CHLD 67L (run 1 wrote '67L')")
 
 # ── The sample: five colleges, four shapes each, the fixed use cases in ──────
 with open(P.SAMPLE_FILE) as fh:

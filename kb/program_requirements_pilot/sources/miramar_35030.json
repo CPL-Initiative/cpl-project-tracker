@@ -1,0 +1,380 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37173160158 (2026-10-04, S324): the text is the program view's own PDF export, read whole and kept from its top. The extraction pass reads this file; it never reads the college's site again.",
+ "college": "San Diego Miramar College",
+ "control_number": "35030",
+ "shape": "degree_list",
+ "title": "Entrepreneurship",
+ "award": "A.S. Degree",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "curriqunet",
+ "format": "html_per_program",
+ "method": "export_pdf",
+ "source": {
+  "url": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20041",
+  "title": "View - CurriQunet META",
+  "h1": "",
+  "text_from": "export_pdf",
+  "view": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27/iq/20879/20988/20041/20375"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "ACCT102",
+  "ACCT150",
+  "AUTO151T",
+  "AUTO153G",
+  "AUTO156G",
+  "AUTO156T",
+  "AVIA101",
+  "AVIA105",
+  "AVIM101G",
+  "BUSE100",
+  "BUSE101",
+  "BUSE102",
+  "BUSE119",
+  "BUSE120",
+  "BUSE129",
+  "BUSE140",
+  "BUSE150",
+  "BUSE155",
+  "BUSE157",
+  "BUSE201",
+  "BUSE229A",
+  "BUSE229B",
+  "BUSE229C",
+  "BUSE229D",
+  "BUSE270",
+  "BUSE290",
+  "CBTE165",
+  "CBTE180",
+  "CBTE210",
+  "CHIL101",
+  "CISC181",
+  "DIES100",
+  "DIES105",
+  "EXSC242B",
+  "EXSC292A",
+  "MARK100",
+  "MUSI190",
+  "REAL101",
+  "WORK272"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000358554",
+   "code": "ACCT 102",
+   "title": "Basic Accounting",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635275",
+   "code": "ACCT150",
+   "title": "Computer Accounting Applications",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623406",
+   "code": "AUTO 151T",
+   "title": "Honda/Toyota Quick Service Lube, Pre-Delivery Inspection Technician",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623407",
+   "code": "AUTO 153G",
+   "title": "Introduction to Automotive Technology",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623408",
+   "code": "AUTO 156G",
+   "title": "Engine and Related Systems",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623409",
+   "code": "AUTO 156T",
+   "title": "Honda/Toyota Engine and Related Systems",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000593311",
+   "code": "AVIA 101",
+   "title": "Private Pilot Grounded School",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000593313",
+   "code": "AVIA 105",
+   "title": "Introduction to Aviation and Aerospace",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000448949",
+   "code": "AVIM 101G",
+   "title": "General Aviation Technology Theory I",
+   "units": 6.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000594023",
+   "code": "BUSE 100",
+   "title": "Introduction to Business",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000374538",
+   "code": "BUSE 101",
+   "title": "Business Mathematics",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623542",
+   "code": "BUSE 102",
+   "title": "Introduction to Customer Service",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000376716",
+   "code": "BUSE 119",
+   "title": "Business Communications",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000570981",
+   "code": "BUSE 120",
+   "title": "Personal Financial Management",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000602033",
+   "code": "BUSE 129",
+   "title": "Introduction to Entrepreneurship",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000624999",
+   "code": "BUSE 140",
+   "title": "Business Law and the Legal Environment",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000348209",
+   "code": "BUSE 150",
+   "title": "Human Relations in Business",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000594481",
+   "code": "BUSE 155",
+   "title": "Small Business Management",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000598299",
+   "code": "BUSE 157",
+   "title": "Developing a Plan for the Small Business",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000594482",
+   "code": "BUSE 201",
+   "title": "Business Organization and Management",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623543",
+   "code": "BUSE 229A",
+   "title": "Gazelle Path Business Incubator I",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623544",
+   "code": "BUSE 229B",
+   "title": "Gazelle Path Business Incubator II",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623545",
+   "code": "BUSE 229C",
+   "title": "Gazelle Path Business Incubator III",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623546",
+   "code": "BUSE 229D",
+   "title": "Gazelle Path Business Incubator IV",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000631381",
+   "code": "BUSE 270",
+   "title": "Business Internship / Work Experience",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000594483",
+   "code": "BUSE 290",
+   "title": "Independent Study",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000631382",
+   "code": "CBTE 165",
+   "title": "Webpage Creation with Dreamweaver",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000350459",
+   "code": "CBTE 180",
+   "title": "Microsoft Office",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000380092",
+   "code": "CBTE 210",
+   "title": "Computers in Business",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000624110",
+   "code": "CHIL 101",
+   "title": "Human Growth and Development",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000626718",
+   "code": "CISC 181",
+   "title": "Principles of Information Systems",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000376610",
+   "code": "DIES 100",
+   "title": "Introduction to Diesel Technology",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000369416",
+   "code": "DIES 105",
+   "title": "Measuring Tools and Applied Mathematics",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000603465",
+   "code": "EXSC 242B",
+   "title": "Care and Prevention of Injuries",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000609607",
+   "code": "EXSC 292A",
+   "title": "Yoga Teacher Training Essentials",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000366561",
+   "code": "MARK 100",
+   "title": "Principles of Marketing",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635276",
+   "code": "MUSI 190",
+   "title": "Introduction to Music Technology",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000352664",
+   "code": "REAL 101",
+   "title": "Real Estate Principles",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000647811",
+   "code": "WORK 272",
+   "title": "General Work Experience",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "[page 1]\n \nENTREPRENEURSHIP - ASSOCIATE OF SCIENCE DEGREE: MIRAMAR \n \n \nSummary \n \nRequirements \nBusiness entrepreneurs plan, start, and operate new businesses or new ventures within existing companies. They \ngenerate new business ideas and innovate to produce new products, services, and business processes. \nThis program helps students understand the elements of successful high growth ventures, what is involved in \nlaunching and marketing a startup, and the entrepreneurial process. The experience includes both theoretical \ncourses to help develop the entrepreneurial mindset and learn the fundamentals of entrepreneurship, as well as \nan optional lab component where students can practice the theory by participating in an incubation program. \nThe Entrepreneurship degree prepares students to plan, start, and manage a new business. Students also develop \ncompetencies needed to work in existing businesses where innovation and high growth are priorities. \n \nAward Note: \nThe Associate Degree requires a minimum of 60 degree applicable semester units. \nLearning Outcome(s): Students who complete the Entrepreneurship Program will be able to: \n1. Identify opportunities using ideation and trend-spotting techniques. \n2. Describe the process and multiple ways to become an entrepreneur. \n3. Evaluate and critique opportunities by assessing the impact and feasibility of ideas by examining critical \ncomponents of a business model. \nCOURSES REQUIRED FOR THE MAJOR: Semester Units: 21.0 \nBUSE 100 Introduction to Business (Active) 3.0 \nBUSE 101 Business Mathematics (Active) 3.0 \n 3.0 \nBUSE 102 Introduction to Customer Service (Active) 3.0 \nOR \nBUSE 150 Human Relations in Business (Active) 3.0 \nBUSE 119 Business Communications (Active) 3.0 \nBUSE 129 Introduction to Entrepreneurship (Active) 3.0 \n 3.0 \nBUSE 155 Small Business Management (Active) 3.0 \nOR \nBUSE 157 Developing a Plan for the Small Business (Active) 3.0 \nMARK 100 Principles of Marketing (Active) 3.0 \nComplete at least three (3) units from the following supplemental business \ncourses (not already selected above): \nSemester Units: 3.0-4.0 \nBUSE 140 Business Law and the Legal Environment (Active) 3.0 \nBUSE 155 Small Business Management (Active) 3.0 \nBUSE 157 Developing a Plan for the Small Business (Active) 3.0 \nBUSE 201 Business Organization and Management (Active) 3.0 \nBUSE 229A Gazelle Path Business Incubator I (Active) 4.0 \nBUSE 229B Gazelle Path Business Incubator II (Active) 4.0 \nBUSE 229C Gazelle Path Business Incubator III (Active) 4.0 \nBUSE 229D Gazelle Path Business Incubator IV (Active) 4.0 \n1\n\n[page 2]\n \nCourses \nTotal Units: 27.0-31.0 \nACCT 102 Basic Accounting (Active) 3.0 \nACCT 150 Computer Accounting Applications (Active) 3.0 \nCISC 181 Principles of Information Systems (Active) 4.0 \nComplete at least three (3) units from the following occupational courses(not \nalready selected above): \nSemester Units: 3.0-6.0 \nBUSE 120 Personal Financial Management (Active) 3.0 \nBUSE 155 Small Business Management (Active) 3.0 \nBUSE 157 Developing a Plan for the Small Business (Active) 3.0 \nBUSE 229A Gazelle Path Business Incubator I (Active) 4.0 \nBUSE 229B Gazelle Path Business Incubator II (Active) 4.0 \nBUSE 229C Gazelle Path Business Incubator III (Active) 4.0 \nBUSE 229D Gazelle Path Business Incubator IV (Active) 4.0 \nBUSE 270 Business Internship / Work Experience (Active) 1.0-4.0 \nBUSE 290 Independent Study (Active) 1.0-3.0 \nAUTO 151T Honda/Toyota Quick Service Lube, Pre-Delivery Inspection Technician \n(Active) \n4.0 \nAUTO 153G Introduction to Automotive Technology (Active) 3.0 \nAUTO 156G Engine and Related Systems (Active) 4.0 \nAUTO 156T Honda/Toyota Engine and Related Systems (Active) 4.0 \nAVIA 101 Private Pilot Ground School (Active) 3.0 \nAVIA 105 Introduction to Aviation and Aerospace (Active) 3.0 \nAVIM 101G General Aviation Technology Theory I (Active) 6.0 \nCBTE 165 Webpage Creation with Dreamweaver (Active) 3.0 \nCBTE 180 Microsoft Office (Active) 3.0 \nCBTE 210 Computers in Business (Active) 3.0 \nCHIL 101 Human Growth and Development (Active) 3.0 \nDIES 100 Introduction to Diesel Technology (Active) 2.0 \nDIES 105 Measuring Tools and Applied Mathematics (Active) 2.0 \nEXSC 292A Yoga Teacher Training Essentials (Active) 3.0 \nEXSC 242B Care and Prevention of Injuries (Active) 3.0 \nMUSI 190 Introduction to Music Technology (Active) 3.0 \nREAL 101 Real Estate Principles (Active) 3.0 \nWORK 272 General Work Experience (Active) 1.0-3.0 \n2\n\n[page 3]\nBUSE 100 Introduction to Business \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nAdvisory: BUSE 92 with a Grade of \"C\" or better, or \nequivalent \nThis introductory course for both business and non-\nbusiness majors provides a broad understanding of the \nbusiness community, including how culture; society; \neconomic systems; legal, international, political, and \nfinancial institutions; and human behavior interact to affect \na business organization's policies and practices within the \nU.S. and a global society. Topics include business functions \nand terminology; organizational structure and design; \nleadership; human resource management; organized labor \npractices; marketing; organizational communication; \ntechnology; entrepreneurship; legal, accounting, and \nfinancial practices; the stock and securities market; and \nbusiness career planning. This course is intended for \nstudents majoring in Business or anyone interested in the \nfunction and role of the business community. \nFT; AA/AS; CSU; UC. \nBUSE 101 Business Mathematics \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nPrerequisite: Successful completion of Intermediate \nAlgebra with a grade of C or better or appropriate \nplacement Milestone M40 or M50 based on California Title \n5 regulation. \nThis course provides a comprehensive study of \nmathematical concepts, quantitative reasoning, and \ncomputational techniques used in business and finance. \nTopics include quantitative information development, \npresentation, and analysis; algebraic equations; functions; \ngeometric series; and descriptive statistics. These \nmathematical techniques are applied to solve a variety of \nproblems in fields such as banking, investments, insurance, \ninventory control, pricing, payroll, taxes, and loans. \nThroughout the course, students develop, present, use, and \nanalyze quantitative information in order to select among \ndifferent options in business-related decisions. This course \nis intended for students majoring in business or others \nwho work or intend to work in a business setting. \nFT; AA/AS; CSU. \nBUSE 102 Introduction to Customer Service \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nThis course provides students with basic knowledge of \ncustomer service by examining customer service from the \nprovider's and customer's perspectives. It takes a \npragmatic approach to applying the principles of service \nwithin an organization. Topics include leadership in \ncustomer service, customer retention and satisfaction, \nclassifications of service organizations, and principles and \npractices of internal service. This course is intended for \nstudents majoring in business or others interested in \nbusiness. \nFT; AA/AS; CSU. \nBUSE 150 Human Relations in Business \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade or Pass/No Pass \nThis course introduces students to human behavior as it \nrelates to business. Topics include leadership, \ncommunication, goal-setting, conflict resolution, problem-\nsolving, team dynamics, and ethics. This course is intended \nfor students majoring in business and others who work or \nintend to work in a business setting, such as managers, \nsupervisors, and work team members. \nFT; AA/AS; CSU. \nBUSE 119 Business Communications \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nPrerequisite: ENGL C1000 with a Grade of \"C\" or better, or \nequivalent \nThis course applies the principles of effective and ethical \ncommunication to the creation of letters, memos, emails, \nand written and oral reports for a variety of business \nsituations. The course emphasizes the development, \nanalysis, organization, and composition of various types of \nprofessionally written messages, analytical reports, and \nbusiness presentations using word processing and \npresentation-graphics software. Other topics include \ninterpersonal communication, electronic media, and \ninternational/cross-cultural communication. This course is \nintended for students majoring in business and for others \nworking in a business environment. \nFT; AA/AS; CSU; C-ID: BUS 115. \n3\n\n[page 4]\nBUSE 129 Introduction to Entrepreneurship \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade or Pass/No Pass \nStudents in this course develop an understanding of the \ncomplex tasks faced by individuals engaged in \nentrepreneurial activities. Emphasis is placed on \nunderstanding and identifying the psychological traits and \nbehaviors of the entrepreneurial mindset, the ideation \nprocess, feasibility planning, financial projections and \nstartup budgets, resource acquisition, pitching a business \nidea, and the conceptual steps for launching a new \nbusiness venture. This course is designed for all students \ninterested in understanding entrepreneurship and how \nsmall businesses prepare to launch. \nFT; AA/AS; CSU. \nBUSE 155 Small Business Management \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nAdvisory: BUSE 101 with a Grade of \"C\" or better, or \nequivalent and BUSE 100 with a Grade of \"C\" or better, or \nequivalent \nThis course is a study of the elements involved in \nsuccessfully operating a small business. Topics include \nhuman resource management, marketing for small \nbusiness, and legal issues. This course is intended for \nstudents majoring in Business or anyone interested in \nowning or operating a small business. \nFT; AA/AS; CSU. \nBUSE 157 Developing a Plan for the Small \nBusiness \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nAdvisory: ENGL C1000 with a Grade of \"C\" or better, or \nequivalent or ENGL 105 with a Grade of \"C\" or better, or \nequivalent and BUSE 101 with a Grade of \"C\" or better, or \nequivalent \nThis course prepares students to create an effective plan \nfor developing a new business. Emphasis is placed on the \nkey decisions facing the entrepreneur, including financing, \nmarketing, and business location. This course is designed \nfor students majoring in Business or planning to start their \nown business. \nFT; AA/AS; CSU. \nMARK 100 Principles of Marketing \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nAdvisory: ENGL C1000 with a Grade of \"C\" or better, or \nequivalent or ENGL 105 with a Grade of \"C\" or better, or \nequivalent \nThis course is an overview of the foundations, principles, \nprocesses, and goals of marketing. Topics include ethics \nand social responsibility; global marketing and world trade; \ncorporate marketing strategies; and emerging \ntechnologies. Marketing strategies include product \nplanning, development, pricing, distribution, and \npromotion. This course is intended for students majoring in \nbusiness or others working in a business environment such \nas managers and supervisors. \nFT; AA/AS; CSU. \nBUSE 140 Business Law and the Legal \nEnvironment \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nAdvisory: ENGL C1000 with a Grade of \"C\" or better, or \nequivalent or BUSE 92 with a Grade of \"C\" or better, or \nequivalent \nThis course introduces students to the legal system, the \nlaws that govern business in America, and the principles \nunderlying fundamental legal concepts. Topics include \njudicial and administrative systems; ethics; contracts; torts; \nbankruptcy; agency; business organizations and ownership \ntypes; government agencies and regulation; protection of \nintellectual property interest; and the international \nbusiness environment. This course is intended for students \nmajoring in business and for others interested in business \nlaw. \nFT; AA/AS; CSU; UC; C-ID: BUS 120, BUS 125. \nBUSE 155 Small Business Management \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nAdvisory: BUSE 101 with a Grade of \"C\" or better, or \nequivalent and BUSE 100 with a Grade of \"C\" or better, or \nequivalent \nThis course is a study of the elements involved in \nsuccessfully operating a small business. Topics include \nhuman resource management, marketing for small \nbusiness, and legal issues. This course is intended for \nstudents majoring in Business or anyone interested in \nowning or operating a small business. \nFT; AA/AS; CSU. \n4\n\n[page 5]\nBUSE 157 Developing a Plan for the Small \nBusiness \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nAdvisory: ENGL C1000 with a Grade of \"C\" or better, or \nequivalent or ENGL 105 with a Grade of \"C\" or better, or \nequivalent and BUSE 101 with a Grade of \"C\" or better, or \nequivalent \nThis course prepares students to create an effective plan \nfor developing a new business. Emphasis is placed on the \nkey decisions facing the entrepreneur, including financing, \nmarketing, and business location. This course is designed \nfor students majoring in Business or planning to start their \nown business. \nFT; AA/AS; CSU. \nBUSE 201 Business Organization and \nManagement \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade or Pass/No Pass \nAdvisory: ENGL C1000 with a Grade of \"C\" or better, or \nequivalent or ENGL 105 with a Grade of \"C\" or better, or \nequivalent \nThis course covers business organization and management \nfundamentals with a focus on the managerial functions of \nplanning, organizing, leading, and controlling. Other topics \ninclude managerial ethics, corporate social responsibility, \nand personal management skills and techniques. This \ncourse is intended for students majoring in business and \nfor others who work or intend to work in a position of \norganizational responsibility such as managers and \nsupervisors. \nFT; AA/AS; CSU. \nBUSE 229A Gazelle Path Business Incubator I \n64 - 72 hours lecture; 4 units \nGrading: Letter Grade or Pass/No Pass \nCorequisite: Completion of or concurrent enrollment \nin: BUSE 129 with a Grade of \"C\" or better, or equivalent \nThis course is intended for students who have a high-\ngrowth, high-value business idea and are ready to \nimmediately start or expand their company. It is the first in \na series of four courses teaching the \"gazelle path\" method \nof ideation and development for high-growth, high-value \ncompanies. Throughout the series students learn to apply \nentrepreneurship concepts and lean methodology to turn \ntheir business ideas into startups that use technology and \ninnovation to solve business problems. Topics include local \nbusiness development resources, introductory-level \nbusiness pitches, problem testing, offer testing, and the \ncreation and implementation of marketing messages and \nchannels. The course emphasizes experiential learning and \nutilizes resources from the Miramar College Regional \nEntrepreneurship Center (REC), including volunteer \nmentors and subject matter experts, virtual and augmented \nreality training, and access to co-working space, \nprototyping tools, and business equipment. \nFT; AA/AS; CSU. \nBUSE 229B Gazelle Path Business Incubator II \n64 - 72 hours lecture; 4 units \nGrading: Letter Grade or Pass/No Pass \nCorequisite: Completion of or concurrent enrollment \nin: BUSE 129 with a Grade of \"C\" or better, or equivalent \nAdvisory: BUSE 229A with a Grade of \"C\" or better, or \nequivalent \nThis course is intended for students who have a high-\ngrowth, high-value business idea and are ready to \nimmediately start or expand their company. It is the second \nin a series of four courses teaching the \"gazelle path\" \nmethod of ideation and development for high-growth, \nhigh-value companies. Throughout the series students \nlearn to apply entrepreneurship concepts and lean \nmethodology to turn their business ideas into startups that \nuse technology and innovation to solve business problems. \nTopics include local business development",
+ "courseleaf_lists": [],
+ "captured_run": 37173160158
+}

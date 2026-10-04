@@ -5813,3 +5813,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 <!-- moved from docs/INDEX.md Update history, 2026-10-03 (S322) -->
 - 2026-10-02 (S315 SkyLedger): KB note `methodology-a-verdict-that-reports-an-action-is-checked-in-the-store`; handoff 316; cards 23-24 written; the `top_code` index; the 2.3% gap traced to the maximum award; sheets 18-19 (19 answered: write, sum); the CER decision workflow.
+
+<!-- moved from docs/INDEX.md Update history, 2026-10-04 (S324) -->
+- 2026-10-02 (S316 SkyTally): KB note `methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5` (+ `scripts/pg_jsonb_md5.py`); handoff 317; sheet 19 executed (the CER fold and Microsoft title; the summed statewide target, film `_v7`, [#1821](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1821)); "FTES reimbursement rate", never price.

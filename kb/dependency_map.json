@@ -4,9 +4,9 @@
   "supabase_tables": 93,
   "rpcs": 34,
   "edge_functions": 6,
-  "file_datasets": 575,
+  "file_datasets": 576,
   "external_services": 155,
-  "consumers": 403,
+  "consumers": 404,
   "workflows": 42,
   "data_js_files": 68,
   "tabs": 37
@@ -1599,7 +1599,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 675
+     "line": 762
     }
    ],
    "main_committers": []
@@ -1702,7 +1702,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 677
+     "line": 764
     }
    ],
    "main_committers": []
@@ -1714,7 +1714,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 678
+     "line": 765
     }
    ],
    "main_committers": []
@@ -1818,7 +1818,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 676
+     "line": 763
     }
    ],
    "main_committers": []
@@ -5944,6 +5944,26 @@
      "direction": "write",
      "how": "literal",
      "line": 183
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-pilot-records-review.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_pilot_records_review_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    },
+    {
+     "id": "script:kb/_build_pilot_records_review_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 34
     }
    ],
    "served": false,
@@ -18462,7 +18482,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 149
+     "line": 187
     }
    ],
    "main_committers": []
@@ -18747,7 +18767,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 300
+     "line": 343
     }
    ],
    "main_committers": []
@@ -18759,7 +18779,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 306
+     "line": 349
     }
    ],
    "main_committers": []
@@ -20564,7 +20584,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 323
+     "line": 366
     },
     {
      "id": "script:kb/_program_source_census.py",
