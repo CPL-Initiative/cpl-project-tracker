@@ -4,9 +4,9 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 587,
+  "file_datasets": 589,
   "external_services": 157,
-  "consumers": 409,
+  "consumers": 410,
   "workflows": 44,
   "data_js_files": 69,
   "tabs": 37
@@ -760,6 +760,13 @@
      "direction": "read",
      "how": "url",
      "line": 24
+    },
+    {
+     "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 26
     },
     {
      "id": "script:prototype/mockup_harness/assemble_model_words.py",
@@ -15145,6 +15152,39 @@
      "direction": "read",
      "how": "literal",
      "line": 226
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/ironworker_video/ironworker_in_motion.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 152
+    },
+    {
+     "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 138
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/ironworker_video/ironworker_in_motion.src.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 125
     }
    ],
    "served": true,

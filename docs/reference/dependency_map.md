@@ -709,6 +709,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/funding_video/narration_s1_layout.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/funding_video/narration_s2.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `prototype/funding_video/narration_s2_layout.json` | scripts: `prototype/funding_video/build.py` | — |
+| `prototype/ironworker_video/ironworker_in_motion.html` | scripts: `prototype/ironworker_video/build.py` | scripts: `prototype/ironworker_video/build.py` |
+| `prototype/ironworker_video/ironworker_in_motion.src.html` | scripts: `prototype/ironworker_video/build.py` | — |
 | `prototype/mockup_harness/CPL_Dashboard.html` | scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
@@ -861,7 +863,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
-| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/mockup_harness/assemble_model_words.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py` · `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -1017,5 +1019,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 94 Supabase tables · 35 RPCs · 6 edge functions · 587 file
-datasets · 157 external services · 409 consumers · 44 workflows · 37 tabs.
+Coverage: 94 Supabase tables · 35 RPCs · 6 edge functions · 589 file
+datasets · 157 external services · 410 consumers · 44 workflows · 37 tabs.
