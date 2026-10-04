@@ -68,6 +68,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cobi_live_session` | tabs: `admin` · pages: `CPL_Dashboard.html` | — |
 | `cobi_nav` | pages: `CPL_Dashboard.html` | tabs: `admin` |
 | `coci_college_offerings` | `edgefn:cpl-chat` | — |
+| `coci_college_programs` | scripts: `kb/_program_requirements_pilot.py` | — |
+| `coci_program_courses` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `college` | scripts: `kb/_identity_daily_check.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
@@ -130,7 +132,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_integration_backlog` | tabs: `nc-learning-partners` | — |
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
-| `program_source_registry` | scripts: `kb/_program_source_census.py` | — |
+| `program_source_registry` | scripts: `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py` | — |
 | `project_lifecycle` | tabs: `raci` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
 | `projects` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
 | `sierra_feedback` | tabs: `governance`, `map-queue`, `sierra-training` · scripts: `chatbox/smoke_test.sh` | — |
@@ -444,6 +446,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_overmerge_apply.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_probe_lifecycle_checks.py` | workflows: `discover-map-datasets.yml` | — |
+| `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
 | `kb/_program_source_census.py` | workflows: `program-source-census.yml` | — |
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |
 | `kb/_rekey_kb_curation_supabase.py` | workflows: `supabase-rekey.yml` | — |
@@ -565,6 +568,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/prefix_fold_out/<date>/alias_map.json` | scripts: `kb/_esl_monthly_pass.py`, `kb/alias_chain.py` | — |
 | `kb/preseed_out/2026-07-07/live_values.json` | scripts: `kb/_preseed_unclassified.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
+| `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
 | `kb/projects_seed_plan.md` | none found | scripts: `kb/_seed_projects.py` · committed by: `projects-seed-apply.yml` |
@@ -777,6 +781,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_courses_build_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_crnc_mirrors_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
@@ -873,12 +878,15 @@ collapse to one `<date>` family so writer and reader edges join.
 | `mapwebapinew.azurewebsites.net` | scripts: `fetch_custom_report.py`, `kb/_discover_map_datasets.py`, `kb/_probe_confirmed_custom_reports.py`, `kb/_probe_exhibit_evidence_fields.py`, `kb/_probe_lifecycle_checks.py`, `kb/_probe_new_custom_reports.py`, `kb/_probe_new_custom_reports_followup.py`, `kb/_probe_student_detail_view.py`, `map/probe_users_schema.py`, `map/sync_map_users.py`, `statewide/_probe_exhibit_authority.py` |
 | `merritt.edu` | tabs: `map-queue`, `map-users` |
 | `miracosta.edu` | tabs: `map-queue`, `map-users` |
+| `miramar.programmapper.ws` | scripts: `kb/_program_requirements_pilot.py` |
 | `missioncollege.edu` | tabs: `map-queue`, `map-users` |
 | `nces.ed.gov` | tabs: `cip-crosswalk` |
 | `news.google.com` | `edgefn:cpl-news-harvest` |
 | `noce.edu` | tabs: `map-queue`, `map-users` |
 | `orangecoastcollege.edu` | tabs: `map-queue`, `map-users` |
 | `pasadena.edu` | tabs: `map-queue`, `map-users` |
+| `programmap.sdmiramar.edu` | scripts: `kb/_program_requirements_pilot.py` |
+| `programmapper.sdmiramar.edu` | scripts: `kb/_program_requirements_pilot.py` |
 | `public.api.bsky.app` | `edgefn:cpl-news-harvest` |
 | `raw.githubusercontent.com` | modules: `kb-portal/config.js` |
 | `raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker` | `edgefn:cpl-chat` |
@@ -886,6 +894,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `schemas.openxmlformats.org` | scripts: `kb/_build_55050_redline_docx.py` |
 | `sdcce.edu` | tabs: `map-queue`, `map-users` |
+| `sdmiramar.programmapper.ws` | scripts: `kb/_program_requirements_pilot.py` |
 | `skylinecollege.edu` | tabs: `map-queue`, `map-users` |
 | `solano.edu` | tabs: `map-queue`, `map-users` |
 | `ss.marin.edu` | tabs: `map-queue`, `map-users` |
@@ -989,5 +998,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 91 Supabase tables · 34 RPCs · 5 edge functions · 571 file
-datasets · 151 external services · 399 consumers · 40 workflows · 37 tabs.
+Coverage: 93 Supabase tables · 34 RPCs · 5 edge functions · 574 file
+datasets · 155 external services · 401 consumers · 41 workflows · 37 tabs.

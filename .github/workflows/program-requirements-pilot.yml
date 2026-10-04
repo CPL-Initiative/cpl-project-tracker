@@ -1,0 +1,78 @@
+name: Program requirements pilot
+
+# Phase 1 of the program requirements harvest
+# (docs/reference/lanes/program-requirements-harvest.md): the pilot's 20
+# programs at five colleges (kb/program_requirements_pilot_sample.json).
+#
+# CAPTURE PASS. kb/_program_requirements_pilot.py finds each program's own page
+# in the college's catalog (the address the census filed in
+# program_source_registry) and accepts a page only when it names the courses
+# the state's Program Course File lists for that program. It WRITES NOTHING:
+# it prints the page text and the closed course list as JSON in the job log,
+# which a session reads through the GitHub MCP and files as test fixtures.
+#
+# Sam's call 5 on sheet 23 (2026-10-03) approves reading college websites from
+# runners on a slow schedule that names the CPL Initiative; this pass uses the
+# census's reader (robots.txt first, 4 s between loads, the census user agent)
+# and runs only by hand or from a branch push. No schedule, no secrets: the two
+# tables it reads grant SELECT to the public anon key.
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Only colleges whose name contains this text (blank = all five)"
+        required: false
+        default: ""
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/program-requirements-pilot.yml'
+      - 'kb/_program_requirements_pilot.py'
+      - 'kb/program_requirements_pilot_sample.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: program-requirements-pilot-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  capture:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    # One job per college: each its own log, small enough to read back whole,
+    # and a refusal at one college costs that college alone.
+    strategy:
+      fail-fast: false
+      matrix:
+        college:
+          - Cerritos College
+          - Mt. San Antonio College
+          - San Diego Miramar College
+          - Riverside City College
+          - West Los Angeles College
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium, pypdf
+        run: |
+          pip install --quiet playwright pypdf
+          python -m playwright install --with-deps chromium
+
+      - name: Capture
+        env:
+          CENSUS_DELAY_MS: '4000'
+          ONLY: ${{ github.event.inputs.only }}
+          COLLEGE: ${{ matrix.college }}
+        run: |
+          if [ -n "$ONLY" ] && ! echo "$COLLEGE" | grep -qi -- "$ONLY"; then
+            echo "skipped: $COLLEGE does not match '$ONLY'"; exit 0
+          fi
+          python3 kb/_program_requirements_pilot.py --only "$COLLEGE"

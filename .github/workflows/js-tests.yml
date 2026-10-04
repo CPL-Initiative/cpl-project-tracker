@@ -175,6 +175,12 @@ jobs:
       # honored. Pure-stdlib python; same non-required check.
       - name: Program source census (catalog link, year, platform, robots)
         run: python3 tests/program_source_census_test.py
+      # The program requirements pilot (S323) finds each pilot program's page
+      # by its own listed courses and scores every drafted record against the
+      # state's closed list: coverage, no invented courses, unit arithmetic.
+      # Pure-stdlib python; same non-required check.
+      - name: Program requirements pilot (course codes, page finder, scorer)
+        run: python3 tests/program_requirements_pilot_test.py
       # The MAP Custom Report loader's guard (S317). The nightly load runs it
       # before every load, so a PR that breaks it used to surface only as a
       # red cron that night. Its section 10 checks the read-back after a
