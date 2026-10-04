@@ -580,6 +580,34 @@ r = S.score({"program": {}, "blocks": [{"name": "Core", "rule": "all",
 check(not r["arithmetic"]["pass"] and r["arithmetic"]["status"] == "incomplete",
       "a credit record with no total is never 'unstated': the state file holds its units")
 
+# Sam's review, card 5: a course listed twice in one block is refused; the same
+# course in two blocks is not (Miramar Entrepreneurship's BUSE 155).
+TWICE = [{"code": "FIRE 1", "units": 3}, {"code": "FIRE 6", "units": 3}, {"code": "FIRE86", "units": None}]
+twice = {"program": {"total_units": {"min": 9, "max": 25}},
+         "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "FIRE 1"}]},
+                    {"name": "Electives", "rule": "choose_courses", "minimum": 2,
+                     "stated": {"min": 6, "max": 22},
+                     "courses": [{"code": "FIRE 6"}, {"code": "FIRE 86"}, {"code": "FIRE 86"}]}]}
+r = S.score(twice, TWICE)
+check(not r["pass"] and r["repeated"]["codes"] == ["FIRE86 in 'Electives'"] and r["arithmetic"]["pass"],
+      "a course listed twice in one block fails, though every other bar passes: %s" % json.dumps(r["repeated"]))
+twice["blocks"][1]["courses"].pop()
+check(S.score(twice, TWICE)["pass"], "listed once, the same record passes")
+both = {"program": {"total_units": 6},
+        "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "FIRE 1"}]},
+                   {"name": "Electives", "rule": "choose_courses", "minimum": 1,
+                    "courses": [{"code": "FIRE 1"}, {"code": "FIRE 6"}]}]}
+check(S.score(both, TWICE)["repeated"]["pass"], "the same course in two blocks is not a repeat")
+
+# Sam's verdicts: every filed record carries one, and only a fix carries a reason.
+with open(os.path.join(ROOT, "kb", "program_requirements_pilot", "review_2026-10-04.json")) as fh:
+    review = json.load(fh)
+filed = {os.path.splitext(os.path.basename(p))[0] for p in records}
+check(set(review["verdicts"]) == filed and review["ruled"] == 20 and review["by"] == "Sam",
+      "Sam's review covers exactly the 20 filed records: %s" % sorted(set(review["verdicts"]) ^ filed))
+check(sorted(k for k, v in review["verdicts"].items() if v["v"] == "fix") == sorted(review["fixes"]),
+      "a fix verdict and a fix reason travel together")
+
 # The function writes what the scorer reads.
 fn = open(os.path.join(ROOT, "chatbox", "supabase", "functions", "program-requirements-extract",
                        "index.ts")).read()

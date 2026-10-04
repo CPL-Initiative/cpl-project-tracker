@@ -1,6 +1,6 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
- "extracted_run": 37171952080,
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 3) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37195340082 (2026-10-04, S324, dispatched with only=086), the rerun that carries out Sam's review (kb/program_requirements_pilot/review_2026-10-04.json). Nothing public reads a record until a college's records pass all four checks.",
+ "extracted_run": 37195340082,
  "college": "Mt. San Antonio College",
  "control_number": "08086",
  "shape": "degree_list",
@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8024,
+  "input_tokens": 8237,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8024,
-    "output_tokens": 3259,
+    "input_tokens": 8237,
+    "output_tokens": 2746,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 3259,
+  "output_tokens": 2746,
   "output_tokens_details": {
-   "thinking_tokens": 1531
+   "thinking_tokens": 897
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.09728,
- "ms": 28842,
- "seconds": 29.2,
+ "cost_usd": 0.08787,
+ "ms": 22674,
+ "seconds": 23.1,
  "error": null,
  "score": {
   "measure": "units",
@@ -76,6 +76,10 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -87,14 +91,14 @@
     "max": 52.5
    },
    "open_elective_units": null,
-   "ge_pattern": "local GE"
+   "ge_pattern": "Mt. SAC local associate degree GE areas"
   },
   "blocks": [
    {
-    "name": "Select one of the following sequences:",
+    "name": "Select one of the following sequences: (ANAT 10A, ANAT 10B)",
     "rule": "all",
     "minimum": null,
-    "option_group": null,
+    "option_group": "anatomy_physiology_sequence",
     "stated": {
      "min": 8,
      "max": 10
@@ -104,26 +108,40 @@
       "code": "ANAT 10A",
       "units": null,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "ANAT 35",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANAT 10B",
       "units": null,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "ANAT 36",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following sequences: (ANAT 35, ANAT 36)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "anatomy_physiology_sequence",
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANAT 35",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
       "catalog_addition": false
      }
     ]
@@ -145,17 +163,17 @@
       "alternatives": [
        {
         "code": "CHLD 10H",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "PSYC 14",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "PSYC 14H",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -168,22 +186,22 @@
       "alternatives": [
        {
         "code": "COMM C1000H",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "COMM 2",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "COMM 8",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "COMM 8H",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -196,12 +214,12 @@
       "alternatives": [
        {
         "code": "ENGL C1000H",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        },
        {
         "code": "AMLA 1A",
-        "units": 4,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -276,7 +294,7 @@
       "alternatives": [
        {
         "code": "PSYC C1000H",
-        "units": 3,
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -288,20 +306,18 @@
   "missing_explained": [
    {
     "code": "NURS 11",
-    "why": "not in the text; catalog lists NURS 212 Preceptorship in Nursing (2 units) instead, likely a renumbering"
+    "why": "not in the text; catalog prints NURS 212 Preceptorship in Nursing (same title) instead"
    }
   ],
   "notes": [
-   "The 'Select one of the following sequences' (8-10 units) row prints per-course 'or' pairs (ANAT 10A or ANAT 35; ANAT 10B or ANAT 36) with no units beside each course; recorded as one block with alternatives. It may instead mean two whole sequences (ANAT 10A+10B or ANAT 35+36); reviewer should check.",
-   "ANAT units left null because the Required Courses table prints only the 8-10 block total; the Prerequisite table prints 4-5 for each ANAT line.",
-   "MICR 22 alternative units left null: the 4-5 range is printed once for the MICR 1 / MICR 22 line.",
-   "Alternative units for CHLD/PSYC/COMM/ENGL options taken from the single number printed on their shared line.",
-   "Closed list stores 'MICR1' (no space); treated as the same course as catalog 'MICR 1'.",
-   "NURS 212 is not in the closed list; marked catalog_addition. Closed list has NURS 11 with the same title and units.",
-   "Prerequisite Courses and ADN General Education Requirements tables repeat courses also in the Required Courses list; only the Required Courses list was recorded.",
-   "NURS 200 Role Transition is named as a non-course entrance requirement, not part of the required course list; not recorded.",
-   "Footnotes: CHLD 10 group must be completed before NURS 115; PSYC C1000 before NURS 207.",
-   "ge_pattern recorded as local GE: text lists additional Mt. SAC associate degree GE areas without naming a transfer pattern."
+   "The 8-10 unit total is printed once for the 'Select one of the following sequences' heading; it is recorded on both sequence blocks. The catalog prints the sequences as paired 'or' rows (ANAT 10A or ANAT 35; ANAT 10B or ANAT 36), read as sequence ANAT 10A+10B or ANAT 35+36.",
+   "No units are printed beside the individual ANAT courses in the Required Courses list (the Prerequisite list prints 4-5 for each pair); units left null.",
+   "Alternatives ('or' rows) print no units of their own; their units are left null. The row's printed units appear only on the first course.",
+   "Closed list stores 'MICR1' without a space; the catalog prints 'MICR 1' Medical Microbiology. Treated as the same course (catalog_addition false); reviewer may confirm.",
+   "NURS 212 Preceptorship in Nursing (2 units) is not in the closed list, which has NURS 11 Preceptorship in Nursing (2 units) — possible renumbering.",
+   "The Prerequisite Courses and ADN General Education Requirements lists repeat courses already in Required Courses and were not recorded as separate blocks.",
+   "NURS 200 Role Transition is a non-course entrance requirement (credit grade prior to entry) and is not in the Required Courses list or total.",
+   "Additional GE areas (Math, Arts and Humanities, History/Political Science, Ethnic Studies) and graduation requirements are named but not part of the major total."
   ]
  }
 }

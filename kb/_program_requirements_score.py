@@ -5,7 +5,7 @@ The program requirements harvest (docs/reference/lanes/program-requirements-harv
 tests every record before anything reads it. The plan (Sam's Claude Doc, section
 "Testing against the catalog") names four checks; three run without a person,
 because the Data Mart Program Course File (coci_program_courses) names every
-course the program lists:
+course the program lists, and Sam's review added a structural one:
 
   coverage       the listed courses the record places in a block, out of all
                  of them. Bar: 100%, or each missing course explained.
@@ -13,8 +13,15 @@ course the program lists:
                  each one flagged as a catalog addition.
   arithmetic     required units plus each block's minimum plus open electives,
                  against the catalog's stated total. Bar: equal.
+  repeated       a course placed twice in one block. Bar: none. Sam's review of
+                 the 20 pilot records (2026-10-04, card 5) ruled Mt. San Antonio
+                 Fire's elective block, which listed FIRE 86 twice, a fix; a
+                 repeat inflates a choose block's options and double-counts an
+                 all-required block, so the scorer now refuses it.
 
-The fourth, agreement with a person, is Sam's reading of the same 20 programs.
+The plan's fourth, agreement with a person, is Sam's reading of the same 20
+programs: on 2026-10-04 he passed 18 as matching the catalog and ruled two fixes
+(kb/program_requirements_pilot/review_2026-10-04.json).
 
 THE RECORD, version 2 (one per program per catalog year; the extractor writes it):
 
@@ -220,8 +227,24 @@ def has_figure(record: dict) -> bool:
     return False
 
 
+def repeated(record: dict) -> list[str]:
+    """Codes placed more than once inside one block, alternatives included.
+    The same course in two blocks is legitimate (Miramar Entrepreneurship's
+    BUSE 155 sits in the required list and both elective lists)."""
+    out = []
+    for b in record.get("blocks") or []:
+        seen: dict[str, int] = {}
+        for c in b.get("courses") or []:
+            for entry in [c] + alternatives(c):
+                k = norm_code(entry.get("code"))
+                if k:
+                    seen[k] = seen.get(k, 0) + 1
+        out += ["%s in '%s'" % (k, b.get("name")) for k, n in seen.items() if n > 1]
+    return out
+
+
 def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
-    """The three automatic bars. text is the catalog text the record was read
+    """The automatic bars. text is the catalog text the record was read
     from; without it a record that states no figure cannot pass."""
     listed = {}
     for c in closed:
@@ -266,6 +289,7 @@ def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
 
+    rep_codes = repeated(record)
     n = len(listed)
     return {
         "measure": measure(record),
@@ -276,5 +300,6 @@ def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
         "invented": {"count": len(invented), "codes": invented, "flagged": flagged,
                      "pass": not unflagged},
         "arithmetic": arith,
-        "pass": not unexplained and not unflagged and arith["pass"],
+        "repeated": {"codes": rep_codes, "pass": not rep_codes},
+        "pass": not unexplained and not unflagged and arith["pass"] and not rep_codes,
     }

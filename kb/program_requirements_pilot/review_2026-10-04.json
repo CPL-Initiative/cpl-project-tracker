@@ -1,0 +1,94 @@
+{
+ "_what": "Sam's reading of the 20 pilot records (the plan's fourth check, his sheet-25 call), read from the review sheet's own store: https://claude.ai/artifact/8vJNG2XYjJNyfGiECXPpZk, SHEET_ID 2026-10-04-pilot-records-review. Every card carries by: sam (his own call); replies/done reads ruled 20, through 20, at 2026-10-04T10:22:45.714Z. No card carried a note. A fix is carried out through the record shape, the prompt or the scorer, never a hand edit of a filed record.",
+ "sheet": "2026-10-04-pilot-records-review",
+ "by": "Sam",
+ "at": "2026-10-04T10:22:45.714Z",
+ "ruled": 20,
+ "through": 20,
+ "verdicts": {
+  "cerritos_36675": {
+   "item": 1,
+   "v": "ok"
+  },
+  "cerritos_41982": {
+   "item": 2,
+   "v": "ok"
+  },
+  "cerritos_42158": {
+   "item": 3,
+   "v": "ok"
+  },
+  "cerritos_45549": {
+   "item": 4,
+   "v": "ok"
+  },
+  "mtsac_03086": {
+   "item": 5,
+   "v": "fix"
+  },
+  "mtsac_08086": {
+   "item": 6,
+   "v": "fix"
+  },
+  "mtsac_33876": {
+   "item": 7,
+   "v": "ok"
+  },
+  "mtsac_42916": {
+   "item": 8,
+   "v": "ok"
+  },
+  "riverside_22804": {
+   "item": 9,
+   "v": "ok"
+  },
+  "riverside_31456": {
+   "item": 10,
+   "v": "ok"
+  },
+  "riverside_39033": {
+   "item": 11,
+   "v": "ok"
+  },
+  "riverside_40061": {
+   "item": 12,
+   "v": "ok"
+  },
+  "miramar_05100": {
+   "item": 13,
+   "v": "ok"
+  },
+  "miramar_18207": {
+   "item": 14,
+   "v": "ok"
+  },
+  "miramar_35030": {
+   "item": 15,
+   "v": "ok"
+  },
+  "miramar_41496": {
+   "item": 16,
+   "v": "ok"
+  },
+  "wlac_17111": {
+   "item": 17,
+   "v": "ok"
+  },
+  "wlac_37050": {
+   "item": 18,
+   "v": "ok"
+  },
+  "wlac_37839": {
+   "item": 19,
+   "v": "ok"
+  },
+  "wlac_39618": {
+   "item": 20,
+   "v": "ok"
+  }
+ },
+ "fixes": {
+  "mtsac_03086": "The elective block lists FIRE 86 twice; the catalog prints it once.",
+  "mtsac_08086": "The catalog heads the anatomy courses 'Select one of the following sequences: 8-10'; record two whole sequences (ANAT 10A and 10B, or ANAT 35 and 36) as one option group."
+ }
+}

@@ -189,12 +189,15 @@ college.
   which prints no hours, units or total) passes only when the record carries no
   figure, the closed list stores no units, and the catalog text names no hours or
   units. 19 records are `equal`.
-- **What the bars cannot see** (this session read every record against its
-  text): Mt. San Antonio Fire lists FIRE 86 twice, and Mt. San Antonio LVN-to-RN
-  pairs the anatomy courses one by one where the catalog says "one of the
-  following sequences". Both are proposed as fixes on the review sheet; the other
-  18 are proposed as matching the catalog, with any doubt named on the card.
-- **Guard:** `tests/program_requirements_pilot_test.py` (160 checks): every
+- **Sam's check (the fourth bar), 2026-10-04 10:22Z:** all 20 cards his own call:
+  18 match the catalog, and two fixes (receipt
+  `kb/program_requirements_pilot/review_2026-10-04.json`). Both are carried out:
+  the scorer's `repeated` check refuses a course twice in one block (Mt. San
+  Antonio Fire listed FIRE 86 twice), and prompt v3 (Edge Function version 3)
+  reads "one of the following sequences" as whole sequences in one option group
+  (Mt. San Antonio LVN-to-RN). The rerun (37195340082, $0.1377) passed both, and
+  the two records are filed. **All 20 pilot records now pass all four checks.**
+- **Guard:** `tests/program_requirements_pilot_test.py` (165 checks): every
   fixture re-read with today's matcher, every filed record re-scored with today's
   scorer.
 
@@ -203,12 +206,6 @@ picks):** Riverside City's program is the Culinary Arts certificate; Sam
 himself checks the 20-program sample; Sam asks the Butte College Tech Center
 for its ROE field definitions after the pilot's first records; the six catalog
 addresses go in as given ("go"); the memory receipts wait for later.
-
-**NEEDS SAM (pilot records review sheet,
-[8vJNG2XYjJNyfGiECXPpZk](https://claude.ai/artifact/8vJNG2XYjJNyfGiECXPpZk),
-SHEET_ID `2026-10-04-pilot-records-review`):** his check of the 20 records (his
-sheet-25 call), one card each, the proposal already selected. Built by
-`kb/_build_pilot_records_review_sheet.py`.
 
 **NEEDS SAM (open-asks sheet 27):** (1) paste the two memory receipts
 (`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`) in the SQL editor
@@ -219,10 +216,6 @@ session's UPDATE to the shared registry (Rule 10), so he pastes
 `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql` in the SQL
 editor or lifts the guard for one run.
 
-**NEXT:** read the replies on the pilot records review sheet (and sheet 27),
-then carry out each "Needs a fix" through the record shape or the prompt, never
-by editing a filed record by hand, and rerun the extraction on the programs it
-touches. When Sam has passed the 20, Phase 1's last pieces are the Miramar PPM
-sequence (the Program Mapper hosts answered 403 or did not resolve) and the
-Butte College Tech Center's ROE field definitions (Sam asks them); then the
-harvest widens past the pilot.
+**NEXT:** Phase 1's last pieces: the Miramar PPM sequence (the Program Mapper
+hosts answered 403 or did not resolve) and the Butte College Tech Center's ROE
+field definitions (Sam asks them); then the harvest widens past the pilot.

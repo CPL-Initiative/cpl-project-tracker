@@ -1,5 +1,5 @@
 ---
-title: Session 325 handoff — 20 of 20 pilot records pass the automatic bars; read Sam's review sheet and carry out its fixes
+title: Session 325 handoff — Sam passed 18 of the 20 pilot records and ruled two fixes; file the rerun, then Phase 1's last pieces
 date: 2026-10-04
 session: 324 (SkyGrader)
 tags: [handoff, program-requirements-harvest, pilot, edge-function, extraction, decision-sheet]
@@ -14,22 +14,18 @@ bars**, on **PR #1845** (branch `claude/skygrader-session-324-m9qqbv`). Nothing 
 
 ## First, in this order
 
-1. **Read Sam's replies on the pilot records review sheet**
-   ([8vJNG2XYjJNyfGiECXPpZk](https://claude.ai/artifact/8vJNG2XYjJNyfGiECXPpZk), SHEET_ID
-   `2026-10-04-pilot-records-review`; ArtifactData `list` on collection `replies`, then `replies/done`).
-   Twenty cards, one per record, each arriving with its proposal selected: 18 "Matches the catalog",
-   2 "Needs a fix" (Mt. San Antonio Fire 03086 lists FIRE 86 twice; Mt. San Antonio LVN-to-RN 08086
-   pairs ANAT courses one by one where the catalog says "one of the following sequences"). Apply the
-   high-water rule (`docs/reference/decision_sheets.md`): no reply above the mark is no verdict.
-2. **Then open-asks sheet 27** ([Vhc8F8kDntLczhDeVdsdxu](https://claude.ai/artifact/Vhc8F8kDntLczhDeVdsdxu)):
-   its two cards (the memory receipts; the six catalog addresses the Supabase guard refused) carried no
-   reply at S324's end. Never route a guarded write around the guard.
-3. **PR #1845.** If it has not merged, drive it: it merges when `test` succeeds on the head (branch
-   policy). Then restart this lane's work from `main` on a fresh `claude/*` branch.
-4. **Carry out each "Needs a fix"** through the record shape or the extraction prompt, never by editing
-   a filed record by hand; redeploy the Edge Function if the prompt changes (deploy_edge_function,
-   verify_jwt **false**), then dispatch `program-requirements-extract.yml` with `only` naming the
-   programs touched, and file the new records over the old (`extracted_run` changes).
+1. **Sam answered the review sheet** (2026-10-04 10:22Z, all 20 cards his own call): 18 match the
+   catalog and two fixes, receipt `kb/program_requirements_pilot/review_2026-10-04.json`. **Both
+   are done** (S324): the scorer's `repeated` check, prompt v3 (Edge Function **version 3**), and
+   rerun 37195340082 passed both records, now filed. All 20 pilot records pass all four checks.
+   If the PR from branch `claude/skygrader-session-324-m9qqbv` has not merged, merge it on a green
+   `test`.
+2. **Open-asks sheet 27** ([Vhc8F8kDntLczhDeVdsdxu](https://claude.ai/artifact/Vhc8F8kDntLczhDeVdsdxu)):
+   its two cards (the memory receipts; the six catalog addresses the Supabase guard refused) carried
+   no reply. Never route a guarded write around the guard.
+3. **Then Phase 1's last pieces:** the Miramar PPM sequence (the Program Mapper hosts answered 403 or
+   did not resolve) and the Butte College Tech Center's ROE field definitions (Sam asks them); then
+   the harvest widens past the pilot.
 
 ## What shipped (PR #1845)
 
@@ -61,7 +57,11 @@ bars**, on **PR #1845** (branch `claude/skygrader-session-324-m9qqbv`). Nothing 
 
 ## Decisions Sam made this run
 
-None. Sam's only message was the session's opening line.
+- 2026-10-04 10:22Z, pilot records review sheet: 18 of 20 records match the catalog; the two
+  proposed fixes stand (Fire 03086 lists FIRE 86 twice; LVN-to-RN 08086 reads two sequences course
+  by course). Every card his own call, no notes.
+- 10:24Z: "I can move to a new session if we don't have room" (S324 had 126K tokens left; it
+  closed the fix loop and signed off).
 
 ## Patterns that worked
 

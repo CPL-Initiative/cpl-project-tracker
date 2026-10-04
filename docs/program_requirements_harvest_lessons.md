@@ -301,5 +301,9 @@ $1.13 for both), filed under `kb/program_requirements_pilot/records/`. Sam's
 review sheet holds the 20, two proposed as fixes:
 https://claude.ai/artifact/8vJNG2XYjJNyfGiECXPpZk.
 
-**NEXT.** Read the review sheet's replies; carry out each fix through the record
-shape or the prompt, then rerun the programs it touches.
+**Sam's check (10:22Z).** All 20 cards his own call: 18 match the catalog, two
+fixes. Both carried out (the scorer's `repeated` check; prompt v3 reads sequences
+whole, with neutral BIOL and HIST examples so the rerun tested the rule) and the
+rerun passed both. All 20 pilot records pass all four checks.
+
+**NEXT.** The Miramar PPM sequence and the Tech Center's ROE definitions.
