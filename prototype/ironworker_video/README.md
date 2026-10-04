@@ -23,7 +23,7 @@ Five, each at the top of the scene whose fact brings it down: *Retaking high sch
 
 ## The score
 
-The funding film's orchestra and theme, in this film's order: the horn call; the theme on bell and pizzicato under high school; the strings and snare under the apprenticeship; the horn countermelody under the certificates; the theme in the horns under the A.S., its peak; the last statement a whole step up under the B.S. and the career; the breakdown, quiet, under the recap, climbing into the closing chord as the lockup lands at 90 s. The beat is 90/148 s so 37 bars end exactly there.
+The funding film's orchestra and theme, in this film's order: the horn call; the theme on bell and pizzicato under high school; the strings and snare under the apprenticeship; the horn countermelody under the certificates; the theme in the horns under the A.S., its peak; the last statement a whole step up under the B.S. and the career; the breakdown, quiet, under the recap, climbing into the closing chord as the lockup lands at 90 s. The beat is 90/148 s so 37 bars end exactly there. Measured on v1 (mean volume per scene, dBFS): intro -23.6, high school -24.4, apprenticeship -21.8, certificates -20.4, A.S. -17.2, B.S. and career -16.8, recap -22.6, close -21.1; peak -2.9, no clipped samples. If you rebalance, keep the climb to the A.S.
 
 ## To change it
 
