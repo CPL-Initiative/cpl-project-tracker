@@ -54,7 +54,8 @@ window.CPL_PATHWAYS = {
           what: "The earliest doors into the trade, before a learner enrolls at Cerritos.",
           points: [
             { t: "Columbus High School's welding pathway (Downey Unified) maps to Cerritos's WELD 160 Welding and Metal Fabrication Safety (formerly WELD 60, 1 unit) and WELD 100 Welding Fundamentals (2.5 units), per the district's June 2023 board presentation.", s: "data" },
-            { t: "Whether that credit comes by articulation or by dual enrollment, and which other high school courses Cerritos has articulated: Cerritos publishes its agreements through Statewide Career Pathways.", s: "confirm" },
+            { t: "Cerritos grants credit for an articulated high school, ROP or adult school course through Credit by Exam, and waives residency for it; dual enrollment (CCAP) is the other route, a Cerritos course taken while in high school (2026–27 catalog).", s: "data" },
+            { t: "Which route Columbus High's pathway uses, and which other high school courses Cerritos has articulated: Cerritos's pages point to Statewide Career Pathways, whose address is now a parked domain, and its own pages publish no list.", s: "confirm" },
             { t: "Norwalk-La Mirada Adult School and Southeast ROP teach welding.", s: "confirm" },
             { t: "MAP holds no high school, adult school or ROP credit for prior learning at Cerritos.", s: "data" },
           ],
@@ -98,6 +99,7 @@ window.CPL_PATHWAYS = {
           what: "A bachelor's degree for journeyworkers moving into supervision.",
           points: [
             { t: "Cerritos lists it as approved, its second bachelor's degree beside Dental Hygiene (State of the College, May 2026).", s: "data" },
+            { t: "The Chancellor's Office lists Field Ironworker Supervision among the approved bachelor's degree programs, marked coming soon.", s: "data" },
             { t: "Admission follows two years of prerequisite courses and a completed general education pattern: Cerritos GE, IGETC or CSU GE Breadth.", s: "data" },
             { t: "The proposed upper division: 23 courses and 60 units over years 3 and 4, IWAP 301–310 and 401–410 with intercultural communication and two statistics courses (regional program record, recommended June 2024).", s: "data" },
             { t: "Graduates of the apprenticeship can begin the B.S. in Spring 2027 (Cerritos's Field Ironwork page).", s: "data" },
@@ -118,7 +120,7 @@ window.CPL_PATHWAYS = {
       ],
       confirm: [
         "Whether the approved B.S. keeps the 2024 course list.",
-        "Cerritos's high school articulation agreements, published through Statewide Career Pathways, and how Columbus High's welding pathway earns its credit.",
+        "Cerritos's list of articulated high school courses (its pages point to Statewide Career Pathways, now a parked domain) and which route Columbus High's welding pathway uses.",
         "Whether the 26 noncredit AED courses have sections this term (Schedule+ lists the term's sections).",
       ],
       confirm_note: "The harvest agent reads these pages first, from a runner. A request goes to Cerritos only after Cerritos's procedure record shows every step tried.",
@@ -131,6 +133,8 @@ window.CPL_PATHWAYS = {
         { label: "Cerritos College catalog 2026–27, WELD and AED course descriptions", url: "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/weld/" },
         { label: "Downey Unified, CTE pathways board presentation (June 27, 2023)", url: "https://web.dusd.net/wp-content/uploads/2023/06/CTE_6-27-23_BoE.pdf" },
         { label: "Cerritos College, 2026 State of the College (May 19, 2026)", url: "https://www.cerritos.edu/newsroom/releases/2026/05/SOTC.htm" },
+        { label: "Cerritos College catalog 2026–27, Educational Partnerships and Programs", url: "https://cerritos-public.courseleaf.com/cerritos-college/programs-and-services/educational-partnerships-and-programs/" },
+        { label: "California Community Colleges Chancellor's Office, Baccalaureate Degree Program (read 4 October 2026)", url: "https://www.cccco.edu/About-Us/Chancellors-Office/Divisions/Educational-Services-and-Support/What-we-do/Curriculum-and-Instruction-Unit/Curriculum/Baccalaureate-Degree-Program" },
         { label: "Chancellor's Office COCI program and course files (load of 16 July 2026)" },
         { label: "MAP articulated-exhibit records (read 4 October 2026)" },
         { label: "Centers of Excellence occupational demand 2024–2029" },
