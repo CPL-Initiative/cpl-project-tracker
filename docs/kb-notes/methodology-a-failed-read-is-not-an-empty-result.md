@@ -142,3 +142,19 @@ with a fake read so the guard is proven wired, not just defined).
 observe are different facts. Keep the last value an earlier read established, record the failure beside it, and
 let a later successful read replace it. A history table makes the erasure recoverable; it does not make it true.
 
+
+## When every read is empty, the reader is the first suspect (2026-10-04)
+
+The program requirements pilot's second capture read 20 catalog pages at five
+colleges and reported that none named a single course the program lists; a
+358-page PDF yielded 1.5 million characters in which no listed subject
+appeared. A result that uniform is a statement about the reader. The capture
+passed Supabase rows keyed `course_code` to a matcher that reads `code`, so
+every pattern was empty and every page read as wrong. The same pages, read
+again with one key changed, gave 16 of 20 programs, most at 100%.
+
+The rule: before concluding that the world is empty, feed the reader one input
+whose answer you already know, in the exact shape production hands it. The
+pilot's guard now drives the whole capture with rows shaped as Supabase returns
+them and a fake page that names the program's courses
+(`tests/program_requirements_pilot_test.py`).

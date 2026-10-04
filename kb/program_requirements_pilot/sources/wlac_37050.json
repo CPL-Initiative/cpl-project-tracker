@@ -1,0 +1,242 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "West Los Angeles College",
+ "control_number": "37050",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "pdf",
+ "format": "single_pdf",
+ "method": "pdf_pages",
+ "source": {
+  "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+  "pages": [
+   123,
+   124
+  ],
+  "extractor": "pypdf",
+  "pages_total": 358
+ },
+ "coverage": 0.792,
+ "codes_found": [
+  "ANATOMY1",
+  "CHEM101",
+  "CHEM51",
+  "CHEM60",
+  "DANCETQ111",
+  "DANCETQ121",
+  "HEALTH12",
+  "KIN229",
+  "KIN251",
+  "KIN2511",
+  "KIN287",
+  "KIN329",
+  "KIN3341",
+  "KIN350",
+  "KIN387",
+  "KINMAJ100",
+  "PHYSICS6",
+  "PHYSIOL1",
+  "STATC1000"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000169999",
+   "code": "ANATOMY 1",
+   "title": "Introduction To Human Anatomy",
+   "units": 4.0,
+   "cid": "BIOL 110 B",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000079626",
+   "code": "BIOLOGY 3",
+   "title": "Introduction to Biology",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000309629",
+   "code": "CHEM 101",
+   "title": "General Chemistry I",
+   "units": 5.0,
+   "cid": "CHEM 120 S",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000217422",
+   "code": "CHEM 51",
+   "title": "Fundamentals Of Chemistry I",
+   "units": 5.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000297386",
+   "code": "CHEM 60",
+   "title": "Introduction To General Chemistry",
+   "units": 5.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000583139",
+   "code": "DANCETQ 111",
+   "title": "BALLET TECHNIQUES I",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000580063",
+   "code": "DANCETQ 121",
+   "title": "JAZZ DANCE TECHNIQUES I",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000183878",
+   "code": "HEALTH 12",
+   "title": "Safety Education And First Aid",
+   "units": 3.0,
+   "cid": "KIN 101",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000455680",
+   "code": "KIN 229",
+   "title": "BODY CONDITIONING SKILLS",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000225676",
+   "code": "KIN 232",
+   "title": "STEP AEROBICS ACTIVITY",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000221829",
+   "code": "KIN 251",
+   "title": "YOGA SKILLS",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000562740",
+   "code": "KIN 251-1",
+   "title": "YOGA SKILLS- I",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000468456",
+   "code": "KIN 287",
+   "title": "BASKETBALL SKILLS",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000107995",
+   "code": "KIN 288",
+   "title": "FLAG/TOUCH FOOTBALL SKILLS",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000243866",
+   "code": "KIN 303",
+   "title": "AQUA AEROBICS",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000014778",
+   "code": "KIN 329",
+   "title": "BODY CONDITIONING",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000562741",
+   "code": "KIN 334-1",
+   "title": "Fitness Walking I",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000264720",
+   "code": "KIN 345",
+   "title": "BODY DYNAMICS ACTIVITY",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000042570",
+   "code": "KIN 350",
+   "title": "WEIGHT TRAINING",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000174605",
+   "code": "KIN 387",
+   "title": "BASKETBALL",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000468432",
+   "code": "KIN MAJ 100",
+   "title": "INTRODUCTION TO KINESIOLOGY",
+   "units": 3.0,
+   "cid": "KIN 100",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000261291",
+   "code": "PHYSICS 6",
+   "title": "General Physics I",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000300040",
+   "code": "PHYSIOL 1",
+   "title": "INTRODUCTION TO HUMAN PHYSIOLOGY",
+   "units": 4.0,
+   "cid": "BIOL 120 B",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000121117",
+   "code": "STAT C1000",
+   "title": "Introduction to Statistics",
+   "units": 4.0,
+   "cid": "MATH 110",
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "[page 123]\nCREDIT PROGRAMS: DEGREES & CERTIFICATES \nWest Los Angeles College 2026-2027 Catalog  122 \n1. Understand, recognize, and appreciate the maximum \nbenefits provided by physical movement for \ndeveloping individual health and wellness. \n2. Understand the five components of fitness: \ncardiovascular endurance, muscle strength, muscle \nendurance, flexibility and body composition. \n3. Assess the risk factors of specific training activity and \npractice safety precautions. \n4. List activities that are beneficial for modifying body \ncomposition. \n5. List activities that benefit the cardiovascular system. \n6. Apply and practice the concepts of teamwork, \ncooperation, communication and respect for each \nother. \nRequired core courses ...................................................... 11 \nANATOMY 001 Introduction to Human Anatomy  ............. 4 \nKIN MAJ 100 Introduction to Kinesiology ....................... 3 \nPHYSIOL 001 Introduction to Human Physiology  .......... 4 \nMovement-based electives (choose one course from three \nof the following areas) ......................................................... 3 \n \nArea 3: Dance: \nDANCETQ 111 Ballet Techniques I .................................. 1 \nDANCETQ 121 Jazz Dance Techniques I ........................ 1 \nArea 4: Fitness: \nKIN 229 Body Conditioning .................................... 1 \nKIN 250 Weight Training Skills .............................. 1 \nKIN 329 Body Conditioning .................................... 1 \nKIN 334-1 Walking for Fitness I ................................ 1 \nKIN 350 Weight Training ........................................ 1 \nArea 5: Individual Sports: \nKIN 251 Yoga Skills  .............................................. 1 \nKIN 251-1 Yoga Skills - I ........................................... 1 \nArea 6: Team Sports: \nKIN 287 Basketball Skills ....................................... 1 \nKIN 387 Basketball ................................................ 1 \nList A (Select two courses) .............................................. 7-9 \nSTAT C1000 Introduction to Statistics ........................... 4 \nHEALTH 012 Safety Education and First Aid ................ 3 \nPHYSICS 006 General Physics I ..................................... 4 \nCHEM 051 Fundamental Chemistry I ......................... 5 \n OR \nCHEM 060 Introduction to General Chemistry ........... 5 \n OR \nCHEM 101* General Chemistry I ................................. 5 \nTotal Major Units  .......................................................... 21-23 \n \nCal-GETC GE Units (less double-counted) ................. 24-27 \nCSU-transferable Elective Units .................................. 10-15 \n \nTotal Units  ............................................................... 60 \nKINESIOLOGY (AA) \nMAJOR CODE:  0835.00 \nACADEMIC PROGRAM CODE: W003311C \n \nThe Associate of Arts degree in Kinesiology is a degree that \nprovides a solid lower-division preparation for students who \nintend to transfer to a 4-year institution for a bachelor's degree \nin kinesiology. Completion of this degree will provide students \nthe foundation to pursue careers in education, professional \nsports, writing, and healthcare. This degree includes \ncoursework that aligns with lower-division major requirements \nat various universities within the UC and CSU systems.  \nStudents pursuing this AA degree are encouraged to meet \nwith a counselor to develop and align a Student Educational \nPlan. \n \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n \n1. Understand the five components of fitness: \ncardiovascular endurance, muscle strength, muscle \nendurance, flexibility and body composition. \n2. Assess the risk factors of a specific training activity \nand practice safety precautions. \n3. Distinguish how different types of activities (ex. Jazz \nDance vs. Weight Training) relate to the five \ncomponents of fitness. \n4. List activities that are beneficial for modifying body \ncomposition. \n5. List activities that benefit the cardiovascular system. \n6. Apply and practice the concepts of teamwork, \ncooperation, communication and respect for each \nother. \n7. Demonstrate increased movement vocabulary. \nRequired courses ............................................................... 11 \nANATOMY 001 Introduction to Human Anatomy  ............ 4 \nKIN MAJ 100 Introduction to Kinesiology ...................... 3 \nPHYSIOL 001 Introduction to Human Physiology  ......... 4 \nMajor elective units (choose one course) .......................... 3 \nHEALTH 012 Safety, Education & First Aid .................. 3 \nKIN MAJ 126 Fundamentals of Athletic Training .......... 3 \nMovement-based electives (choose 4 courses total from \nat least three of the following areas) .................................. 4 \n \nArea 3: Dance: \n\n[page 124]\nCREDIT PROGRAMS: DEGREES & CERTIFICATES \nWest Los Angeles College 2026-2027 Catalog  123 \nDANCETQ 111 Ballet Techniques I .................................. 1 \nDANCETQ 121 Jazz Dance Techniques I ........................ 1 \nArea 4: Fitness: \nKIN 329 Body Conditioning .................................... 1 \nKIN 350 Weight Training ........................................ 1 \nArea 5: Mind/Body \nKIN 247 Pilates for Fitness .................................... 1 \nKIN 251-1 Yoga Skills - I ........................................... 1 \nArea 6: Team Sports: \nKIN 287 Basketball Skills ....................................... 1 \nKIN 291 Volleyball Skills ........................................ 1 \nKIN 387 Basketball ................................................ 1 \nTotal Major Units   ............................................................... 18 \nLACCD GE Plan Units (less double-counted) ................. 21 \nAdditional Degree-applicable Elective Units ................... 21 \nTotal Units  ............................................................... 60 \n \nLAW, PUBLIC POLICY AND \nSOCIETY \nPUBLIC SAFETY & PARALEGAL STUDIES \nDIVISION \nLAW, PUBLIC POLICY AND SOCIETY \n(AA-T) \nMAJOR CODE:  1401.00 \nACADEMIC PROGRAM CODE: W037003G \n \nThe Associate in Arts in Law, Public Policy and Society for \nTransfer Degree (AA-T) is designed to provide a solid, multi-\ndisciplinary lower-division preparation for students who intend \nto transfer to a California State University (CSU) for a \nbachelor’s degree in public policy, law, sociology, economics \nor similar major. This degree is designed to provide a clear \npathway to a CSU and guarantee admissions to a CSU. \nAlthough, students are guaranteed admissions, it is not to any \nparticular campus or program in the CSU system. This \ncoursework will satisfy the lower division law, public policy and \nsociety requirements at some CSU campuses. Students are \nencouraged to visit the Transfer Center for complete \ninformation regarding transfer requirements for the institution \nof their choice. Students interested in transfer are also \nencouraged to consult the Counseling Office for individualized \neducational planning in order to facilitate a seamless \ntransition. \nInformation on which CSU campuses accept this degree can \nbe found at the CSU ADT Major & Transfer Search website.  \nThis degree complies with The Student Transfer Achievement \nReform Act (Senate Bill 1440).   \nTo earn the Associate in Arts in Law, Public Policy and \nSociety for Transfer (AA-T) Degree, students must meet the \nfollowing requirements:  \n• Completion of 60 semester units or 90 quarter units \nof degree-applicable courses,  \n• Minimum overall grade point average of 2.0,  \n• Minimum grade of \"C\" (or \"P\") for each course in the \nmajor, and  \n• Completion of the Cal-GETC GE Pattern. \n \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n1. Analyze social science concepts and theories \n2. Evaluate diverse viewpoints related to the human \nexperience \n3. Produce evidence-based arguments. \nRequired Courses .............................................................. 25 \nENGL C1000 Academic Reading and Writing ............... 3 \nSTAT C1000 Introduction to Statistics .......................... 4  \nPHILOS 020 Ethics ...................................................... 3 \nPOLS C1000 American Government and Politics ......... 3  \nADM JUS 001 Introduction to Administration  ................. 3 \n of Justice  \n OR \nBUS 005 Business Law I ........................................ 3  \nCOMM C1000 Introduction to Public Speaking .............. 3  \n OR \nCOMM 104 Argumentation and Debate ..................... 3  \n OR \nCOMM 151 Small Group Communication .................. 3  \nCOMM 104 Argumentation and Debate ..................... 3  \n OR \nENGL C1001* Critical Thinking and Writing ................... 3  \n OR \nPHILOS 008 Deductive Logic....................................... 3  \nHIST C1001 United States History to 1877 ................. 3  \n OR  \nHIST C1002 United States History since 1865 ............ 3 \nMajor Elective units (Select two courses from two of the \nareas listed below. Note: courses must not have been \nused above)  ................................................................ 6 \nArea 1: \nADM JUS 002 Concepts of Criminal Law  ...................... 3  \nADM JUS 003 Legal Aspects of Evidence ...................... 3  \nADM JUS 008 Juvenile Procedures................................ 3  \nADM JUS 067 Community Relations I ............................ 3  \nADM JUS 075 Introduction to Corrections ...................... 3  \nArea 2: ",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

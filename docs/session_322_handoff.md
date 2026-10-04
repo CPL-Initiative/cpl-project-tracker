@@ -4,6 +4,8 @@ date: 2026-10-03
 session: 321 (SkyCatalog)
 tags: [handoff, program-requirements-harvest, census, registry]
 status: current
+superseded: true
+superseded_by: session_324_handoff.md
 ---
 
 # You are Session 322

@@ -1,0 +1,163 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Mt. San Antonio College",
+ "control_number": "03086",
+ "shape": "cert_electives",
+ "title": "Fire Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "courseleaf",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/fire-technology-certificate/",
+  "title": "Fire Technology (Certificate N0486) < Mt. San Antonio College",
+  "h1": "Fire Technology (Certificate N0486)",
+  "text_from": "innerText"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "FIRE1",
+  "FIRE10",
+  "FIRE11",
+  "FIRE12",
+  "FIRE13",
+  "FIRE2",
+  "FIRE3",
+  "FIRE4",
+  "FIRE5",
+  "FIRE6",
+  "FIRE7",
+  "FIRE8",
+  "FIRE86",
+  "FIRE9",
+  "KINF53"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000635318",
+   "code": "FIRE 1",
+   "title": "Fire Protection Organization",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000403555",
+   "code": "FIRE 10",
+   "title": "Arson and Fire Investigation",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000419076",
+   "code": "FIRE 11",
+   "title": "Fire Apparatus and Equipment",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000520882",
+   "code": "FIRE 12",
+   "title": "Wildland Fire Control",
+   "units": 4.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000616278",
+   "code": "FIRE 13",
+   "title": "Principles of Fire and Emergency Services Safety and Survival",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000399754",
+   "code": "FIRE 3",
+   "title": "Fire Protection Equipment and Systems",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000414758",
+   "code": "FIRE 4",
+   "title": "Building Construction for Fire Protection",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000387627",
+   "code": "FIRE 5",
+   "title": "Fire Behavior and Combustion",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000542207",
+   "code": "FIRE 6",
+   "title": "Hazardous Materials/ICS",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000419004",
+   "code": "FIRE 7",
+   "title": "Fire Fighting Tactics and Strategy",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000536205",
+   "code": "FIRE 8",
+   "title": "Fire Company Organization and Management",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000407104",
+   "code": "FIRE 9",
+   "title": "Fire Hydraulics",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000627777",
+   "code": "FIRE2",
+   "title": "Fire Prevention Technology",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000660004",
+   "code": "FIRE86",
+   "title": "Basic Fire Academy",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000524359",
+   "code": "KINF 53",
+   "title": "Physical Training for the Basic Fire Academy",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "Skip to Content AZ Index Catalog Home Institution Home\nPrint Options\nSearch Catalog\nSearch Courses\n2026-2027 Academic Catalog\nSchedule of Classes College Calendar Campus Map College Directory Catalog PDF\nHOME\n \nCATALOG A-​Z INDEX\n \nPROGRAMS \n \nREGISTRATION &​ POLICIES\n \nSTUDENT RESOURCES \n \nTHE COLLEGE\nfireTech_wideV1\nApply Now\nExplore Your Future\nHome/\nCatalog A-Z Index/\nPrograms A-Z/\nFire Certification & Technology/\nFire Technology (Certificate N0486)\nFire Certification & Technology\nFire Officer Certification (Certificate E0381)\nToggle Fire Officer Certification (Certificate E0381)\nFire Technology (AS Degree S2105)\nToggle Fire Technology (AS Degree S2105)\nFire Technology (Certificate N0486)\nToggle Fire Technology (Certificate N0486)\nOverview\nAccreditation\nAdmission\nOutcomes\nWildland Fire Technology (AS Degree S0890)\nToggle Wildland Fire Technology (AS Degree S0890)\nWildland Fire Technology (Certificate T0882)\nToggle Wildland Fire Technology (Certificate T0882)\nFire Technology (Certificate N0486)\n\nTechnology and Health Division\nPublic Safety Programs Department\nThe Fire Science Certificate has been developed to offer pre-employment education for the undergraduate who desires to enter the field of fire science. It also provides the employed firefighters an opportunity for professional education. Students intending to pursue a bachelor’s degree (transfer program) should consult with a counselor or advisor to discuss transferability of courses.\n\nRequired Courses\nCourse List\nCourse Prefix\tCourse Name\tUnits\nFIRE 1\tFire Protection Organization\t3\nFIRE 2\tFire Prevention Technology\t3\nFIRE 3\tFire Protection Equipment and Systems\t3\nFIRE 4\tBuilding Construction for Fire Protection\t3\nFIRE 5\tFire Behavior and Combustion\t3\nFIRE 13\tPrinciples of Fire and Emergency Services Safety and Survival\t3\nChoose two FIRE courses or FIRE 86 and KINF 53 plus one other FIRE Course:\t6-22\n\nFIRE 6\n\tHazardous Materials/ICS\t\n\nFIRE 7\n\tFire Fighting Tactics and Strategy\t\n\nFIRE 8\n\tFire Company Organization and Management\t\n\nFIRE 9\n\tFire Hydraulics\t\n\nFIRE 10\n\tArson and Fire Investigation\t\n\nFIRE 11\n\tFire Apparatus and Equipment\t\n\nFIRE 12\n\tWildland Fire Control\t\n\nFIRE 86\n\tBasic Fire Academy\t\n\nKINF 53\n\tPhysical Training for the Basic Fire Academy\t\nTotal Units\t24-40\nPrint Options\nENROLL\nAdmissions\nAssessment\nCounseling\nFinancial Aid\nSchool of Continuing Education\nEXPLORE\nAcademic Catalog\nEmployment\nFinding Events\nLibrary\nSchedule of Classes\nWhy Mt. SAC\nVISIT\nAthletics\nBox Office\nCampus Map\nParking\nPlanetarium\nTours\nTRANSPARENCY\nAccreditation\nAccessibility\nBoard of Trustees Agenda\nConstruction\nCovid 19 Updates\nDoing Business with Mt. SAC\nEducational & Facilities Master Plan\nPrivacy\nHELP\nA-to-Z Site Index\nContact Mt. SAC\nDirectory\nPolice & Campus Safety\nWeb Feedback\nMt. San Antonio College\n\n1100 N. Grand Ave., Walnut, CA 91789\n\nPhone\n(909) 274-7500\n\nVideo Phone\n(909) 895-6634\n\nCampus Police\n(909) 274-4555\n\nText-A-Tip\n(909) 274-9560",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

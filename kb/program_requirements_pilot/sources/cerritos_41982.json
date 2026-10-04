@@ -1,0 +1,116 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Cerritos College",
+ "control_number": "41982",
+ "shape": "cert_electives",
+ "title": "Community Health Worker",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "courseleaf",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/community-health-worker-certificate-achievement/",
+  "title": "Cerritos College Academic Catalog",
+  "h1": "Academic Catalog",
+  "text_from": "innerText"
+ },
+ "coverage": 0.8,
+ "codes_found": [
+  "HED100",
+  "HED102",
+  "HED110",
+  "HED202",
+  "HED204",
+  "HO102",
+  "KIN110",
+  "STATC1000"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000394739",
+   "code": "HED 100",
+   "title": "Contemporary Health Problems",
+   "units": 3.0,
+   "cid": "PH 100",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000606255",
+   "code": "HED 102",
+   "title": "Introduction to Public Health",
+   "units": 3.0,
+   "cid": "PH 101",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000388251",
+   "code": "HED 110",
+   "title": "Community First Aid and CPR",
+   "units": 3.0,
+   "cid": "KIN 101",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000592777",
+   "code": "HED 202",
+   "title": "Health Systems and Perspectives",
+   "units": 3.0,
+   "cid": "PH 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000630163",
+   "code": "HED 204",
+   "title": "Work Experience in Community Health Worker",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000606256",
+   "code": "HO 102",
+   "title": "Introduction to Public Health",
+   "units": 3.0,
+   "cid": "PH 101",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000583870",
+   "code": "KIN 110",
+   "title": "Community First Aid and CPR",
+   "units": 3.0,
+   "cid": "KIN 101",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000638105",
+   "code": "PSYC 210",
+   "title": "Elementary Statistics",
+   "units": 4.0,
+   "cid": "MATH 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000401549",
+   "code": "STAT C1000",
+   "title": "Introduction to Statistics",
+   "units": 4.0,
+   "cid": "MATH 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000624976",
+   "code": "STAT C1000E",
+   "title": "Introduction to Statistics",
+   "units": 4.5,
+   "cid": "MATH 110",
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "facturing Technologies (CERT)\nWoodworking Manufacturing Technologies: Cabinetmaking (A.S.)\nWoodworking Manufacturing Technologies: Cabinetmaking (CERT)\nWoodworking Manufacturing Technologies: CNC Woodworking (CERT)\nWoodworking Manufacturing Technologies: Furniture Design\nWoodworking Manufacturing Technologies: Furniture Design\nWoodworking Manufacturing Technologies: Furniture Making (A.S.)\nWoodworking Manufacturing Technologies: Furniture Making (CERT)\nZoology (A.A.)\nGraduation &​ Transfer Requirements\nLearning &​ Career Pathways\nNoncredit Programs &​ Courses\nSearch Courses\nAdmissions &​ Enrollment\nInformación en Español\nPrograms &​ Services\nPolicies &​ Resources\n PRINT OPTIONS\nHome›\nDegrees, Courses & Pathways›\nDegrees & Certificates›\nCommunity Health Worker (CERT)\nCommunity Health Worker (CERT)\n\nDepartment website: https://www.cerritos.edu/health/\n\nCERTIFICATE OF ACHIEVEMENT\n\nThe Certificate of Achievement for Community Health Worker (CHW) will prepare the student to assist individuals in accessing health care services, recognize the specific needs of the community, collect community data to improve health education efforts, and network with public health, clinical, and social service agencies. The student will learn to interpret and monitor community health data for improvement in population well-being, explore possible environmental or systemic causes of adverse health conditions, identify need for changes in policies to improve the health and safety of the community, and investigate legal and regulatory actions for greater understanding of services. Students will be able to assist specific populations in communities by improving access to health care services, increase access to health screenings, help the community members in better understanding the health and social service system, facilitate communication between community members and health providers, provide increased use of health care services, work to improve adherence to health recommendations, and strive to reduce the need for emergency and specialty services.\n\nProgram Student Learning Outcomes\nDescribe the concepts of healthy living, lifelong wellness, and stress reduction techniques\nDistinguish the components of the U.S. health systems as it relate to their options in healthcare\nExplain the importance of interpersonal relationships and health\nIdentify the behavior concepts that enhance their quality of life\nProgram Requirements\nCourse List\nCode Number\tCourse Title\tUnits\nRequired Courses\t\nHED 100\tContemporary Health Problems\t3.0\nHED 102\tIntroduction to Public Health\t3.0\nor HO 102\tIntroduction to Public Health\nHED 110\tCommunity First Aid and CPR\t3.0\nor KIN 110\tCommunity First Aid and CPR\nHED 201\tPrinciples of the Community Health Worker\t3.0\nHED 202\tHealth Systems and Perspectives\t3.0\nHED 204\tWork Experience in Community Health Worker\t1.0\nSTAT C1000\tIntroduction to Statistics\t4.0\nTotal Units\t20\nRecommended Courses\nCourse List\nCode Number\tCourse Title\tUnits\nHED 101\tStress Management\t3.0\nHED 103\tWomen, Their Bodies and Health\t3.0\nor WGS 103\tWomen, Their Bodies and Health\nHED 104\tIntroduction to Health and Society\t3.0\nHED 200\tNutrition for Health, Fitness and Wellness\t3.0\nMA 161\tMedical Terminology\t3.0\n\n© 2026-2027 Cerritos College\n\nBack to top",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

@@ -1,0 +1,217 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Cerritos College",
+ "control_number": "45549",
+ "shape": "adt",
+ "title": "Public Health",
+ "award": "A.S. T Degree",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "courseleaf",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/public-health-science-as-t/",
+  "title": "Cerritos College Academic Catalog",
+  "h1": "Academic Catalog",
+  "text_from": "innerText"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "A&P150",
+  "A&P151",
+  "BIOL120",
+  "CHEM110",
+  "CHEM111",
+  "HED100",
+  "HED102",
+  "HED103",
+  "HED104",
+  "HED106",
+  "HED108",
+  "HED202",
+  "HO102",
+  "HO103",
+  "HO245",
+  "MICR200",
+  "PSYC210",
+  "PSYC245",
+  "STATC1000",
+  "STATC1000E",
+  "WGS103"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000425969",
+   "code": "A&P 150",
+   "title": "Introduction to Human Anatomy",
+   "units": 4.0,
+   "cid": "BIOL 110 B",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000403923",
+   "code": "A&P 151",
+   "title": "Introduction to Human Physiology",
+   "units": 4.0,
+   "cid": "BIOL 120 B",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000406339",
+   "code": "BIOL 120",
+   "title": "Introduction To Biological Science",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000389335",
+   "code": "CHEM 110",
+   "title": "Elementary Chemistry",
+   "units": 4.0,
+   "cid": "CHEM 101",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000409850",
+   "code": "CHEM 111",
+   "title": "General Chemistry",
+   "units": 5.0,
+   "cid": "CHEM 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000394739",
+   "code": "HED 100",
+   "title": "Contemporary Health Problems",
+   "units": 3.0,
+   "cid": "PH 100",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000606255",
+   "code": "HED 102",
+   "title": "Introduction to Public Health",
+   "units": 3.0,
+   "cid": "PH 101",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000413976",
+   "code": "HED 103",
+   "title": "Women, Their Bodies and Health",
+   "units": 3.0,
+   "cid": "PH 116",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000592729",
+   "code": "HED 104",
+   "title": "Introduction to Health and Society",
+   "units": 3.0,
+   "cid": "PH 102",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000648279",
+   "code": "HED 106",
+   "title": "Cultural Competence in Health and Social Services",
+   "units": 3.0,
+   "cid": "PH 104",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000648281",
+   "code": "HED 108",
+   "title": "Explorations of Health Professions",
+   "units": 3.0,
+   "cid": "PH 105",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000592777",
+   "code": "HED 202",
+   "title": "Health Systems and Perspectives",
+   "units": 3.0,
+   "cid": "PH 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000606256",
+   "code": "HO 102",
+   "title": "Introduction to Public Health",
+   "units": 3.0,
+   "cid": "PH 101",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000606257",
+   "code": "HO 103",
+   "title": "Health and Social Justice",
+   "units": 3.0,
+   "cid": "PHS 102",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000610260",
+   "code": "HO 245",
+   "title": "Drugs and Behavior",
+   "units": 3.0,
+   "cid": "PH 103",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000385288",
+   "code": "MICR 200",
+   "title": "Principles and Applications of Microbiology",
+   "units": 5.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000638105",
+   "code": "PSYC 210",
+   "title": "Elementary Statistics",
+   "units": 4.0,
+   "cid": "MATH 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000604699",
+   "code": "PSYC 245",
+   "title": "Drugs and Behavior",
+   "units": 3.0,
+   "cid": "PH 103",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000401549",
+   "code": "STAT C1000",
+   "title": "Introduction to Statistics",
+   "units": 4.0,
+   "cid": "MATH 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000624976",
+   "code": "STAT C1000E",
+   "title": "Introduction to Statistics",
+   "units": 4.5,
+   "cid": "MATH 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587580",
+   "code": "WGS 103",
+   "title": "Women, their Bodies and Health",
+   "units": 3.0,
+   "cid": "PH 116",
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": ".)\nWoodworking Manufacturing Technologies (CERT)\nWoodworking Manufacturing Technologies: Cabinetmaking (A.S.)\nWoodworking Manufacturing Technologies: Cabinetmaking (CERT)\nWoodworking Manufacturing Technologies: CNC Woodworking (CERT)\nWoodworking Manufacturing Technologies: Furniture Design\nWoodworking Manufacturing Technologies: Furniture Design\nWoodworking Manufacturing Technologies: Furniture Making (A.S.)\nWoodworking Manufacturing Technologies: Furniture Making (CERT)\nZoology (A.A.)\nGraduation &​ Transfer Requirements\nLearning &​ Career Pathways\nNoncredit Programs &​ Courses\nSearch Courses\nAdmissions &​ Enrollment\nInformación en Español\nPrograms &​ Services\nPolicies &​ Resources\n PRINT OPTIONS\nHome›\nDegrees, Courses & Pathways›\nDegrees & Certificates›\nPublic Health (AS-T)\nPublic Health (AS-T)\n\nDepartment website: https://www.cerritos.edu/health/\n\nASSOCIATE IN SCIENCE FOR TRANSFER (AS-T)\n\nThe Associate in Science degree in Public Health for Transfer is an interdisciplinary degree grounded in the biological and health sciences that is designed to prepare leaders who promote community health, prevent disease, and improve environmental conditions where people can be healthy. The study of public health explores the factors that affect the overall health of a population and the factors that contribute to the spread, treatment, and prevention of disease. Students completing this program will exemplify a high level of health literacy and will be exposed to a wide variety of disciplines. Through this preparation, they will improve their understanding of the relationship of the environment to health, global health, public policy, and recognize and evaluate the economic impact of changing demographics on health care, identify disease outbreaks, and develop interventions to promote healthy behavior. This program is for transfer to CSU.\n\nFormerly known as Public Health Science (AS-T)\n\nProgram Student Learning Outcomes\nDescribe the relationships between the prevention, transmission, intervention, and treatment of chronic and infectious diseases\nExplain methods for tracing chronic and infectious disease outbreaks\nIdentify the primary social determinants of health that influence health outcomes in communities\nIdentify the impact of economic factors on population demographics and disease outbreaks\nEvaluate the influence of the environment on a community’s health and the role of public policy\nProgram Requirements\nCourse List\nCode Number\tCourse Title\tUnits\nRequired Core\t\nHED 100\tContemporary Health Problems\t3.0\nHED 102\tIntroduction to Public Health\t3.0\nor HO 102\tIntroduction to Public Health\nSTAT C1000\tIntroduction to Statistics\t4.0-4.5\nor STAT C1000E\tIntroduction to Statistics\nor PSYC 210\tElementary Statistics\nBIOL 120\tIntroduction To Biological Science\t4.0\nList A (Select one course for 4-5 units)\t4.0-5.0\n\nA&P 150\n\tIntroduction to Human Anatomy (4)\t\n\nor A&P 151\n\tIntroduction to Human Physiology\n\nCHEM 110\n\tElementary Chemistry (4-5)\t\n\nor CHEM 111\n\tGeneral Chemistry\n\nMICR 200\n\tPrinciples and Applications of Microbiology (5)\t\nList B: Select one course - 3 units\t3.0\n\nHED 104\n\tIntroduction to Health and Society (3)\t\n\nor HO 103\n\tHealth and Social Justice\n\nHED 106\n\tCultural Competence in Health and Social Services (3)\t\nList C - Select one course - 3 units\t3.0\n\nHED 103\n\tWomen, Their Bodies and Health (3)\t\n\nor WGS 103\n\tWomen, Their Bodies and Health\n\nHED 108\n\tExplorations of Health Professions (3)\t\n\nHED 202\n\tHealth Systems and Perspectives (3)\t\n\nHO 245\n\tDrugs and Behavior (3)\t\n\nor PSYC 245\n\tDrugs and Behavior\nTotal Units\t24-25.5\nASSOCIATE IN SCIENCE FOR TRANSFER DEGREE REQUIREMENTS\nCompletion of 60 CSU-transferable semester units or 90 quarter units.\nAchievement of a minimum GPA of at least 2.0 in all CSU-transferable coursework. (Some majors may require a higher GPA. Students should consult with a counselor for more information.)\nCompletion of the major with a grade of \"C\" or better in each course or a \"P\" if the course was taken on a Pass/No Pass basis and the \"P\" is equal to a \"C\" or better.\nCompletion of the California General Education Transfer Curriculum (Cal-GETC).\n\nNote: The CSU GE (California State University General Education-Breadth) or IGETC (Intersegmental General Education Transfer Curriculum) pattern may be used in some cases; please see a counselor for details. \n\n© 2026-2027 Cerritos College\n\nBack to top",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

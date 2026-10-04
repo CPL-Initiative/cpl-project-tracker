@@ -1,0 +1,174 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "West Los Angeles College",
+ "control_number": "17111",
+ "shape": "degree_list",
+ "title": "Computer Network & Security Management",
+ "award": "A.S. Degree",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "pdf",
+ "format": "single_pdf",
+ "method": "pdf_pages",
+ "source": {
+  "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+  "pages": [
+   88,
+   89,
+   90,
+   91
+  ],
+  "extractor": "pypdf",
+  "pages_total": 358
+ },
+ "coverage": 0.812,
+ "codes_found": [
+  "CIS101",
+  "CIS110",
+  "CIS112",
+  "CIS192",
+  "CIS211",
+  "CIS212",
+  "CIS213",
+  "CIS214",
+  "CIS215",
+  "CIS225",
+  "CIS227",
+  "CIS229",
+  "CIS230"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000608379",
+   "code": "CIS 101",
+   "title": "Introduction to Computers and Their Uses",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608149",
+   "code": "CIS 110",
+   "title": "Apple Administration",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000625756",
+   "code": "CIS 112",
+   "title": "OPERATING SYSTEMS - BEGINNING LINUX",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608380",
+   "code": "CIS 113",
+   "title": "Intermediate Linux",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608384",
+   "code": "CIS 192",
+   "title": "Introduction to Cloud Computing",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608152",
+   "code": "CIS 211",
+   "title": "Security+ Certification Preparation",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608388",
+   "code": "CIS 212",
+   "title": "A+ Certification Preparation-Hardware",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608342",
+   "code": "CIS 213",
+   "title": "A+ Certification Preparation-Software",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608389",
+   "code": "CIS 214",
+   "title": "Introduction to Network+",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608362",
+   "code": "CIS 215",
+   "title": "Network Security Fundamentals",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000623876",
+   "code": "CIS 225",
+   "title": "Enterprise Networking, Security, & Automation",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608390",
+   "code": "CIS 227",
+   "title": "Server Administration and Network Security",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608366",
+   "code": "CIS 229",
+   "title": "Introduction to Cisco Network Fundamentals",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608367",
+   "code": "CIS 230",
+   "title": "Introduction to Cisco Routers",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608371",
+   "code": "CIS 236",
+   "title": "Palo Alto Network Cyber Security Essentials",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608372",
+   "code": "CIS 237",
+   "title": "Installing, Configuring and Administering Microsoft SQL",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "[page 88]\nCREDIT PROGRAMS: DEGREES & CERTIFICATES \nWest Los Angeles College 2026-2027 Catalog  87 \n2. Use general and specialized computer software employed \nin offices and the courts.  \n3. Attend to details accurately in the preparation, perfection \nand assembly of appropriate forms, documents, exhibits, \nand records.  \n4. Demonstrate knowledge of practices used in major \ncorporations, businesses and industry.  \n \nRequired core courses ...................................................... 17 \nCIS 101  Introduction to Computers \n  and Their Uses ........................................ 3  \nPALEGAL 010 Intro to Law and Legal Profession ........... 3 \nPALEGAL 014 Law Office Management & Procedures .... 3 \nCAOT 079 Microsoft Word: Advanced  ....................... 3 \nCIS 104 Microcomputer Application Software ....... 3 \nCAOT 114 Adobe Acrobat for the Office and  \n Web ......................................................... 2 \nTotal Units  ............................................................... 17 \nCOMPUTER NETWORK \nAND SECURITY \nMANAGEMENT  \nCOMPUTER SCIENCE & APPLICATION \nDIVISION \nCOMPUTER NETWORK AND \nSECURITY MANAGEMENT (AS) \nMAJOR CODE:  0708.10 \nACADEMIC PROGRAM CODE: W017111C \n \nThe Computer Network and Security Management Associate \nof Science degree is a two-y ear degree program. This \nprogram prepares individuals for employment in the \nInformation Technology (IT) field in such positions as network \nsystem and security administrator. Network security specialist \nmay plan, coordinate, and implement the organization’s \nnetwork and information security. These workers may be \ncalled upon to educate users about computer security, install \nsecurity software, monitor the network for security breaches, \nrespond to cyber-attacks, and, in some cases, gather data and \nevidence to be used in prosecuting cybercrime. Students \npursuing this AS degree are encouraged to meet with a \ncounselor to develop and align a Student Educational Plan. \n \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n1. Install, configure and manage industry standard \ncomputer operating system with security emphasis.  \n2. Install, configure, manage and troubleshoot industry \nleading network systems.  \n3. Install and configure routers and switches \ninternetwork operating systems.  \n4. Understand a full range of security concepts & \ntechniques.  \n5. Learn cloud technology and virtualization \ntechnologies. \n \nRequired courses ............................................................... 21 \nCIS 211 Security+ Certification Preparation ......... 3 \nCIS 213 A+ Certification Preparation Software ..... 3 \nCIS 214 Introduction to Network + ........................ 3 \nCIS 215 Network Security Fundamentals ............. 3 \nCIS 227 Server Administration and Network \nSecurity ................................................... 3 \nCIS 229 Introduction to CISCO Network \nFundamentals ......................................... 3 \nCIS 225 Enterprise Networking, Security,  \n & Automation ........................................... 3 \nOR \nCIS 230 Intro to Cisco Routers ............................. 3 \nMajor elective units (choose three from the following) .... 9 \nCIS 104 Microcomputer Application Software ...... 3 \nCIS 106 Introduction to Foundations of AI ............ 3 \nCIS 107 AI Generative Prompt Engineering \n and Applications ...................................... 3 \nCIS 110 Apple Administration ............................... 3 \nCIS 112 Operating Systems - Beginning Linux ..... 3 \nCIS 192 Introduction to Cloud Computing ............ 3 \nCIS 212 A+ Certification Preparation-Hardware ... 3 \nCS 125 Artificial Intelligence and Machine \n Learning .................................................. 3 \nTotal Major Units  ............................................................... 30 \nLACCD GE Plan Units (less double-counted) .................. 24 \nAdditional Degree-applicable Elective Units ..................... 6 \nTotal Units  ............................................................... 60 \nCOMPUTER NETWORK AND \nSECURITY MANAGEMENT (CA) \nMAJOR CODE:  0708.10 \nACADEMIC PROGRAM CODE: W020236D \n \nThe Certificate of Achievement in Computer Network and \nSecurity Management combi nes CompTIA, Microsoft system \nadministration, CISCO networking, VMware virtualization \ntechnology and other in-demand IT certification training to help \nstudents develop skills to manage and maintain industry \nleading computer operating and network system with security \nemphasis. Microsoft and Cisco network training prepare \nstudents to pass Microsoft and Cisco certification exams. \nThese industry-demand certifications are important to those \nwho wish to pursue a career working with Microsoft and \nCISCO network. This program helps students build core \n\n[page 89]\nCREDIT PROGRAMS: DEGREES & CERTIFICATES \nWest Los Angeles College 2026-2027 Catalog  88 \nfoundation for Microsoft domain network and learn Cisco \nrouter configuration techniques. This program is also intended \nto help students develop skills to administer industry \nstandards network and information system with security \nemphasis.  \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n1. Install, configure and manage industry standard \ncomputer operating system with security emphasis \n2. Install, configure, manage and troubleshoot industry \nleading network systems \n3. Install and configure routers and switches internetwork \noperating systems \n4. Administer server network operating systems and \ninfrastructure \n5. Understand a full range of security concepts & \ntechniques and apply them to the network, application \nand information system \n6. Learn cloud technology and manage virtualized \nenvironments. \nRequired courses ............................................................... 21 \nCIS 211 Security+ Certification Preparation .......... 3 \nCIS 213 A+ Certification Preparation Software ..... 3 \nCIS 214 Introduction to Network + ......................... 3 \nCIS 215 Network Security Fundamentals .............. 3 \nCIS 227 Server Administration and Network \nSecurity .................................................... 3 \nCIS 229 Introduction to CISCO Network \nFundamentals .......................................... 3 \nCIS 225 Enterprise Networking, Security,  \n & Automation ........................................... 3 \nOR \nCIS 230 Intro to Cisco Routers .............................. 3 \nMajor elective units (choose three from the following) .... 9 \nCIS 104 Microcomputer Application Software ....... 3 \nCIS 106 Introduction to Foundations of AI ............. 3 \nCIS 107 AI Generative Prompt Engineering \n and Applications ...................................... 3 \nCIS 110 Apple Administration ................................ 3 \nCIS 112 Operating Systems - Beginning Linux ..... 3 \nCIS 192 Introduction to Cloud Computing ............. 3 \nCIS 212 A+ Certification Preparation-Hardware .... 3 \nCS 125 Artificial Intelligence and Machine \n Learning ................................................... 3 \nTotal Units  ............................................................... 30 \nCOMPUTER NETWORK MANAGEMENT \n(CA) \nMAJOR CODE:  0708.10 \nACADEMIC PROGRAM CODE: W016585D \n \nThe Computer Network Management Certificate of \nAchievement program prepares individuals for employment in \nthe Information Technology field in such positions as network \nsystem and security administrator. Network security specialist \nmay plan, coordinate, and implement the organization’s \nnetwork and information security. These workers may be \ncalled upon to educate users about computer security, install \nsecurity software, monitor the network for security breaches, \nrespond to cyber-attacks, and, in some cases, gather data and \nevidence to be used in prosecuting cybercrime. This program \nis intended to help students develop skills to design, \nadminister and manage the heterogeneous corporate network \nwith security emphasis. The courses examine and illustrate \nnetwork security with various industrial leading network \noperating systems. Individual courses will assist students in \npreparing for related industry certification exams.  \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n1. Install, configure and manage industry standard \ncomputer operating system with security emphasis \n2. Install, configure, manage and troubleshoot industry \nleading network systems \n3. Install and configure routers and switches \ninternetwork operating systems \n4. Understand a full range of security concepts & \ntechniques  \n5. Learn cloud technology and virtualization \ntechnologies \n \nRequired core courses ...................................................... 12 \nCIS 225 Enterprise Networking, Security, & \nAutomation .............................................. 3 \nCIS 227 Server Administration and Network \nSecurity ................................................... 3 \nCIS 229 Introduction to CISCO Network \nFundamentals ......................................... 3 \nCIS 230 Intro to Cisco Routers ............................. 3 \nMajor elective units (choose two from the  \nfollowing)  ................................................................. 6 \nCIS 105 Introduction to Data Analytic Techniques \nand Tools ............................................... 3 \nCIS 124 Data Analytics (Advanced Excel and \nAccess) .................................................. 3 \nCIS 110 Apple Administration ............................... 3 \nCIS 192 Introduction to Cloud Computing ............ 3 \nCIS 212 A+ Certification Preparation-Hardware ... 3 \nCIS 213 A+ Certification Preparation Software ..... 3 \nTotal Units  ............................................................... 18 \n \n\n[page 90]\nCREDIT PROGRAMS: DEGREES & CERTIFICATES \nWest Los Angeles College 2026-2027 Catalog  89 \nNETWORK & INFORMATION SYSTEM \nSECURITY (CA) \nMAJOR CODE:  0708.10 \nACADEMIC PROGRAM CODE: W019525D \n \nThe Network and Information Security Management Certificate \nof Achievement program pr epares individuals for employment \nin the Information Technology field in such positions as \nnetwork system and security administrator. Network security \nspecialist may plan, coordinate, and implement the \norganization’s network and information security. These \nworkers may be called upon to educate users about computer \nsecurity, install security software, monitor the network for \nsecurity breaches, respond to cyber-attacks, and, in some \ncases, gather data and evidence to be used in prosecuting \ncybercrime. This program is intended to help students develop \nskills to design, administer and manage the heterogeneous \ncorporate network with security emphasis. The courses \nexamine and illustrate network security with various industrial \nleading network operating systems. Individual courses will \nassist students in preparing for related industry certification \nexams.  \n \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n1. Install, configure and manage industry standard \ncomputer operating system with security emphasis \n2. Install, configure, manage and troubleshoot industry \nleading network systems \n3. Install and configure routers and switches \ninternetwork operating systems \n4. Understand a full range of security concepts & \ntechniques  \n5. Learn cloud technology and virtualization \ntechnologies \nRequired core courses ...................................................... 12 \nCIS 211 Security+ Certification Preparation .......... 3 \nCIS 214 Introduction to Network + ......................... 3 \nCIS 215 Network Security Fundamentals .............. 3 \nMajor elective units (choose two from the following) ...... 6 \nCIS 104 Microcomputer Applications ..................... 3s \nCIS 110 Apple Administration ................................ 3 \nCIS 112 Operating Systems - Beginning Linux ..... 3 \nCIS 192 Introduction to Cloud Computing ............. 3 \nCIS 212 A+ Certification Preparation-Hardware .... 3 \nCIS 213 A+ Certification Preparation-Software ..... 3 \nCS 101 Introduction to Computer Science ........... 3 \nTotal Units  ............................................................... 18 \n \nCYBER SECURITY ESSENTIALS (CA)  \nMAJOR CODE:  0708.10 \nACADEMIC PROGRAM CODE: W043359D \n  \nThe Cyber Security Essentials Certificate of Achievement \nprepares individuals for employment in Information \nTechnology fields in positions such as system and security \ntechnicians. This program is intended to help students develop \nskills to administer heterogeneous operating systems with a \nsecurity emphasis. The courses examine and illustrate \nnetwork security with various industrial leading network \noperating systems. Individual courses also assist students in \npreparing for related industry certification exams. To complete \nthe certificate of achievement in Cyber Security Essentials, it \nis recommended that students meet with a counselor to \ndevelop and align a Student Educational Plan. \n  \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n1. Install, configure and administer industry standard \ncomputer operating systems with security \nemphasis.  \n2. Configure, administer and troubleshoot industry \nleading network systems.  \n3. Understand a full range of security concepts & \ntechniques. \n  \nRequired core courses ........................................................ 9 \nCIS 112 Operating Systems Beginning Linux ....... 3 \nCIS 211 Security + Certification Preparation ........ 3 \nCIS 213 A+ Certification Preparation - Software ... 3 \nTotal Units  ................................................................. 9  \n \nCOMPUTER SCIENCE \nINFORMATION \nTECHNOLOGY  \nCOMPUTER SCIENCE & APPLICATION \nDIVISION \nCOMPUTER SCIENCE (AS-T) \nMAJOR CODE:  0706.00 \nACADEMIC PROGRAM CODE: W039126H \nThe Associate in Science in Computer Science for Transfer \nDegree is designed for students desiring advanced degrees in \ncomputer science. This degree is designed to provide a clear \npathway to a CSU and guarantee admissions to a CSU. \nAlthough, students are guaranteed admissions, it is not to any \nparticular campus or program in the CSU system. The \n\n[page 91]\nCREDIT PROGRAMS: DEGREES & CERTIFICATES \nWest Los Angeles College 2026-2027 Catalog  90 \ncoursework of this degree may satisfy the lower division \nrequirements at some CSU campuses. Students should meet \nwith a counselor for specific university major preparation at the \ncollege of their choice in order to facilitate a seamless \ntransition. Students are encouraged to visit the Transfer \nCenter for complete information regarding transfer \nrequirements for the institution of their choice.   \nThis degree complies with The Student Transfer Achievement \nReform Act (Senate Bill 1440). Information on which CSU \ncampuses accept this degree can be found at the CSU ADT \nMajor & Transfer Search website.   \nTo earn the Associate in Science in Computer Science for \nTransfer (AS-T) Degree, students must meet the following \nrequirements:  \n• Completion of 60 semester units or 90 quarter units \nof degree-applicable courses,  \n• Minimum overall grade point average of 2.0,  \n• Minimum grade of \"C\" (or \"P\") for each course in the \nmajor, and  \n• Completion of the Cal-GETC GE Pattern. \n \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n1. Be academically prepared to transfer to a Computer \nScience program at a four-year university \n2. Demonstrate the ability to solve a variety of problems \nusing computational skills necessary for careers in \ncomputer science and other related fields \n \nRequired courses ............................................................... 32 \nCS 118*  Beginning Micro Assembly Language  .... 3 \nCS 131* Discrete Structures for  \n Computer Science ................................... 3 \nCS 136* Introduction to Data Structures .",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

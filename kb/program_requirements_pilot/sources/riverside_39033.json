@@ -1,0 +1,100 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Riverside City College",
+ "control_number": "39033",
+ "shape": "noncredit",
+ "title": "Food Service Career and Certification Preparation",
+ "award": "Noncredit program",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "curriqunet",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5981",
+  "title": "View - CurriQunet META",
+  "h1": "",
+  "text_from": "innerText"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "CUL824",
+  "CUL825",
+  "CUL826",
+  "CUL827",
+  "CUL828A",
+  "CUL828B",
+  "CUL842",
+  "CUL850"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000611276",
+   "code": "CUL 824",
+   "title": "The Art Of Garde Manger",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000612280",
+   "code": "CUL 825",
+   "title": "Menu Planning",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000608759",
+   "code": "CUL 826",
+   "title": "Food Cost Accounting",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000612281",
+   "code": "CUL 827",
+   "title": "Culinary Purchasing and Receiving",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000607378",
+   "code": "CUL 828A",
+   "title": "Culinary Food Preparation I",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000607337",
+   "code": "CUL 828B",
+   "title": "Culinary Food Preparation II",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000611277",
+   "code": "CUL 842",
+   "title": "International Cuisine",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000611278",
+   "code": "CUL 850",
+   "title": "ServSafe Food Safety",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "Riverside City College\n2026-2027 Catalog\nSearch\n Export Page as PDF\nCatalog Navigation\nIntroduction to Riverside City College\nFees\n2026-2027 Academic Calendar\nAcademic Information\nAdmissions & Records\nCounseling and Matriculation\nFinancial Services and Student Employment\nStudent Support Services\nGraduation and Transfer Requirements\nCredit for Prior Learning (Including AP, IB, and CLEP)\nDegrees and Certificates\nCourses\nPolicies and Procedures\nCollege Personnel\nDistinguished Faculty Lecturer\nDistrict Phone Directory\nDistrict Information\nGeneral Catalog Downloads\nAddendum\nShow the catalog navigation\nFood Service Career & Certification Preparation - Certificate of Competency - CC8025\n\nThis program is designed for those wishing to enter the foodservice industry as an entry-level cook or for those in the Riverside City College Cook & Pastry Apprenticeship Program. These courses teach the fundamentals of Safety & Sanitation, Menu planning, Food Cost Accounting, Purchasing & Receiving, and Food Preparation. \n\nProgram Learning Outcomes\nUpon successful completion of this program, students should be able to:\n\nDemonstrate the importance of food service sanitation and safety by identifying the vulnerable aspects within the food service environment in terms of their potential for physical, biological, and chemical contamination. \n\nDemonstrate a working knowledge of menu selection and development, working with emphasis on determining the use of food items on the menu that are most suitable for a particular establishment. \n\nPerform mathematical functions related to the food service operation that include costing recipes and menus. \n\nPerform current regulations for inspecting and grading various food products, proper techniques of receiving, storing, and rotating and requisition of those food products, and proper procedures to inventory those products. \n\nDisplay the ability to prepare a variety of high quality food dishes, using various cooking techniques, and the successful presentation of dishes. \n\nProgram Requirements\nRequired Courses (240 Hours)\nHours 246.00\nCOURSE\nTITLE\nHOURS\nCUL-850\nServSafe Food Safety\n36.00\nCUL-825\nMenu Planning\n30.00\nCUL-826\nFood Cost Accounting\n30.00\nCUL-827\nCulinary Purchasing and Receiving\n30.00\nCUL-828A\nCulinary Food Preparation I\n30.00\nCUL-828B\nCulinary Food Preparation II\n30.00\nCUL-824\nThe Art Of Garde Manger\n30.00\nCUL-842\nInternational Cuisine\n30.00\nTotal: 246.00",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

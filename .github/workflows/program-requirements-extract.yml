@@ -1,0 +1,55 @@
+name: Program requirements extraction
+
+# Phase 1 of the program requirements harvest
+# (docs/reference/lanes/program-requirements-harvest.md), the extraction pass.
+#
+# kb/_program_requirements_extract.py reads the catalog text the capture pass
+# filed under kb/program_requirements_pilot/sources/ (it never loads a
+# college's site), posts each program to the program-requirements-extract
+# Edge Function, and scores the record against the state's closed course list.
+# It WRITES NOTHING: records, scores and the cost of each call go to the job
+# log for a session to read through the GitHub MCP.
+#
+# Sam's call 6 on sheet 23 (2026-10-03): model calls go through a Supabase Edge
+# Function that holds the Anthropic key. The service key here only
+# authenticates the call (the cpl-news.yml pattern). Each run spends model
+# tokens, so it runs by hand or when this workflow or its script changes,
+# never on a schedule and never because a fixture changed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Only programs whose college or control number contains this (blank = all)"
+        required: false
+        default: ""
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/program-requirements-extract.yml'
+      - 'kb/_program_requirements_extract.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: program-requirements-extract-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Extract and score
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ONLY: ${{ github.event.inputs.only }}
+        run: python3 kb/_program_requirements_extract.py --only "$ONLY"

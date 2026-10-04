@@ -1,0 +1,57 @@
+{
+  "_what": "The program requirements harvest pilot (Phase 1): five colleges, four program shapes at each, the same 20 programs Sam checks by hand (sheet 25, 2026-10-03). Lane: docs/reference/lanes/program-requirements-harvest.md. Plan: https://claude.ai/code/artifact/77ae8cb2-443b-45e3-b287-594c9c9b8744, section 'The pilot'.",
+  "_picked": "S323 SkyHarvest, 2026-10-04. Each college's fixed use case fills one of its four slots. The other slots were picked from coci_college_programs and coci_program_courses (load 20260716-003071339fe73a7a): an ADT whose TMC lives in tmc_templates.js, with no two colleges on the same TMC; then, within each shape, the program whose listed courses carry the most CPL articulations in MAP at that college (map_college_cr_unit, matched on course code), so the units-saved question has something to answer. A certificate's slot prefers one whose listed units exceed the top of its award's unit range, which means a choose block must exist.",
+  "_closed_list": "Not stored here. The runner reads each program's listed courses from coci_program_courses at run time and prints them with the page it found, so a session takes them from the job log byte for byte rather than retyping them.",
+  "_shapes": {
+    "adt": "An ADT, to test the TMC template mapping",
+    "degree_list": "An A.S. or A.A. with a choose-from-a-list block",
+    "cert_electives": "A Certificate of Achievement with an electives block",
+    "noncredit": "A noncredit certificate"
+  },
+  "programs": [
+    {"college": "Cerritos College", "control_number": "45549", "title": "Public Health", "shape": "adt",
+     "why": "Public Health AS-T; 21 listed courses; HED 100 carries CPL in MAP."},
+    {"college": "Cerritos College", "control_number": "42158", "title": "Apprenticeship: Field Ironworkers", "shape": "degree_list", "fixed": true,
+     "why": "The plan's fixed use case: the hand-built Ironworker map (cpl_pathways_data.js) reads this A.S. as a Reinforcing or a Structural core."},
+    {"college": "Cerritos College", "control_number": "41982", "title": "Community Health Worker", "shape": "cert_electives",
+     "why": "Listed units (31.5) exceed the award's range (16 to fewer than 30), so a choose block exists; HED 100 carries CPL in MAP."},
+    {"college": "Cerritos College", "control_number": "36675", "title": "Energy Corps", "shape": "noncredit",
+     "why": "A workforce noncredit certificate, six listed courses."},
+
+    {"college": "Mt. San Antonio College", "control_number": "33876", "title": "Early Childhood Education", "shape": "adt",
+     "why": "Early Childhood Education AS-T; 12 listed courses, with lecture and lab pairs."},
+    {"college": "Mt. San Antonio College", "control_number": "08086", "title": "Nursing- Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option", "shape": "degree_list", "fixed": true,
+     "why": "The plan's fixed use case: 27 listed courses with honors pairs and alternatives."},
+    {"college": "Mt. San Antonio College", "control_number": "03086", "title": "Fire Technology", "shape": "cert_electives",
+     "why": "15 listed courses (40 units) for a core and its electives; FIRE 12 (Wildland Fire Control) carries CPL in MAP."},
+    {"college": "Mt. San Antonio College", "control_number": "42916", "title": "Vocational Nursing", "shape": "noncredit",
+     "why": "The noncredit Vocational Nursing program, the step before the LVN-to-RN A.S."},
+
+    {"college": "San Diego Miramar College", "control_number": "41496", "title": "Business Administration 2.0", "shape": "adt",
+     "why": "Business Administration 2.0 AS-T; 10 listed courses."},
+    {"college": "San Diego Miramar College", "control_number": "35030", "title": "Entrepreneurship", "shape": "degree_list",
+     "why": "39 listed courses (117 units) across several choose lists; six of them carry CPL in MAP (2,120 units transcribed)."},
+    {"college": "San Diego Miramar College", "control_number": "18207", "title": "Fire Technology", "shape": "cert_electives",
+     "why": "Five of its eight listed courses carry CPL in MAP (1,548 units transcribed); Fire is a feeder of Miramar's Public Safety Management B.S."},
+    {"college": "San Diego Miramar College", "control_number": "05100", "title": "Fire Technology", "shape": "noncredit_substitute", "fixed": true,
+     "why": "Miramar offers no noncredit programs (its district's noncredit college is San Diego College of Continuing Education), so this slot holds the program the pilot reads a Program Pathways Mapper sequence for, the plan's fixed use case at Miramar. The census found no PPM link on Miramar's pages; the reader looks again."},
+
+    {"college": "Riverside City College", "control_number": "31456", "title": "Administration of Justice", "shape": "adt",
+     "why": "Administration of Justice AS-T; ADJ 1 and ADJ 19 carry CPL in MAP."},
+    {"college": "Riverside City College", "control_number": "40061", "title": "Cyber Defense", "shape": "degree_list",
+     "why": "Four of its 11 listed courses carry CPL in MAP (42 units transcribed)."},
+    {"college": "Riverside City College", "control_number": "22804", "title": "Culinary Arts", "shape": "cert_electives", "fixed": true,
+     "why": "Sam's pick (sheet 25, 2026-10-03): the Culinary Arts Certificate of Achievement, where the college's ServSafe credit lands."},
+    {"college": "Riverside City College", "control_number": "39033", "title": "Food Service Career and Certification Preparation", "shape": "noncredit",
+     "why": "The noncredit culinary certificate beside Sam's pick; CUL 850 is ServSafe Food Safety."},
+
+    {"college": "West Los Angeles College", "control_number": "37050", "title": "Kinesiology", "shape": "adt",
+     "why": "Kinesiology AA-T; 24 listed courses, many one-unit activity courses in a choose list."},
+    {"college": "West Los Angeles College", "control_number": "17111", "title": "Computer Network & Security Management", "shape": "degree_list",
+     "why": "Eight of its 16 listed courses carry CPL in MAP."},
+    {"college": "West Los Angeles College", "control_number": "37839", "title": "Real Estate Salesperson", "shape": "cert_electives", "fixed": true,
+     "why": "The S322 pick for the PDF college: a Real Estate certificate with an electives block. Listed units (29) exceed the award's range (8 to fewer than 16)."},
+    {"college": "West Los Angeles College", "control_number": "39618", "title": "Real Estate Supervisory/Trainee Appraiser Licensing", "shape": "noncredit",
+     "why": "The noncredit appraiser program; 206 students hold Real Estate Appraiser Trainee credit at the college."}
+  ]
+}

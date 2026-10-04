@@ -1,7 +1,7 @@
 ---
 title: "Program requirements harvest — lane state"
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-10-04
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -150,15 +150,40 @@ pages at 15; a public curriculum-system view at 50.
 - San Diego College of Continuing Education stays on the district's catalogs
   page: no link on it names the college.
 
-**The pilot (Phase 1).** Five colleges, one fixed program each: Cerritos
-(Ironworker pathway, CourseLeaf), Mt. San Antonio (LVN-to-RN A.S., CourseLeaf),
-Miramar (a program with a PPM map, curriQunet), Riverside City (the Culinary
-Arts Certificate of Achievement, control number 22804, where the college's
-ServSafe credit lands; curriQunet) and West Los Angeles (a Real Estate certificate with an electives
-block, from its single 2026-27 PDF). The census picked West Los Angeles (S322):
-MAP shows 7,748 units of CPL transcribed there, the most of the 21 colleges
-whose catalog is a PDF (Pierce is next at 1,042), and 206 students hold Real
-Estate Appraiser Trainee credit.
+**The pilot (Phase 1): capture and extraction built (S323, PR #1844, draft).**
+The 20 programs Sam checks are five colleges by four shapes
+(`kb/program_requirements_pilot_sample.json`): an ADT, an A.S./A.A. with a
+choose block, a certificate with an electives block, a noncredit certificate.
+Each college's fixed use case fills one slot: Cerritos Ironworker A.S. (42158),
+Mt. San Antonio LVN-to-RN A.S. (08086), Riverside City Culinary Arts
+certificate (22804, Sam's pick), West Los Angeles Real Estate Salesperson
+certificate (37839), Miramar Fire Technology A.S. (05100, the PPM sequence
+program, in the noncredit slot because Miramar offers no noncredit programs).
+The other picks lead their shape on MAP CPL articulations at that college.
+- **Capture** (`kb/_program_requirements_pilot.py`,
+  `program-requirements-pilot.yml`): starts at the registry's catalog address
+  and accepts a page only when it names half the courses the Program Course File
+  lists for the program; follows links on the catalog's own host, clicks through
+  curriQunet's navigation, reads a PDF catalog whole. Writes nothing. Run 4
+  (37166814546) found **16 of 20**: Cerritos, Mt. San Antonio, Riverside City and
+  West Los Angeles 4 of 4 each, most with every listed course on the page. The 16
+  are filed byte for byte under `kb/program_requirements_pilot/sources/`.
+- **Miramar: 0 of 4.** Its curriQunet program views open (the URL ends
+  `.../20004/20338`) but name none of the listed courses in their page text.
+  Each view carries an "Export Page as PDF" link for its own outline
+  (`Catalog/Export?id=71&outlineId=20004`); reading that export is the next
+  route. The PPM host probes found no Miramar Program Mapper.
+- **Extraction** (`kb/_program_requirements_extract.py`,
+  `program-requirements-extract.yml`, the `program-requirements-extract` Edge
+  Function, deployed version 1, Claude Opus 5.5 at effort high, structured
+  output): reads only the fixtures, never a college site. Run 1 (37167619551):
+  **7 of 16 pass** coverage, no invented courses and unit arithmetic, at **$0.73
+  in all, $0.046 a program**, 6 to 20 s a call. The 9 failures are the record
+  shape, named in the model's own notes: noncredit totals in hours (4); a choice
+  between whole blocks (Ironworker Reinforcing or Structural; ECE and LVN-to-RN
+  sequences); block totals the catalog prints ("6-22 units") with no field; an
+  alternative missing from the closed list with no flag (SOC-48); one code
+  written without its subject ("67L").
 
 **Sam's calls on sheets 25 and 26 (2026-10-03, 22:57Z and 23:01Z, his own
 picks):** Riverside City's program is the Culinary Arts certificate; Sam
@@ -175,11 +200,11 @@ session's UPDATE to the shared registry (Rule 10), so he pastes
 `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql` in the SQL
 editor or lifts the guard for one run.
 
-**NEXT:** read Sam's replies on sheet 27 and run what he answers (the six
-addresses through `corrected_by`; the weekly apply keeps a corrected row as
-entered). Then build the pilot reader on a runner, with model calls through a
-Supabase Edge Function (call 6, the `cpl-news.yml` pattern): each program's
-required, list-choice and elective courses with units, scored on course
-coverage against the Program Course File, no invented courses, unit arithmetic
-and agreement with Sam, who checks the 20-program sample. If the yearless rows matter to the
-pilot, a model pass picks among the census's own candidate links.
+**NEXT:** read Sam's replies on sheet 27 and run what he answers. Then the
+record shape, version 2 (Edge Function, scorer, tests together): a `measure`
+(units or hours); per-block `stated` units; an `option_group` for blocks the
+student chooses one of; `units_max` for a printed range; alternatives as
+objects carrying `catalog_addition`; and a prompt line that writes every code
+with its subject. Redeploy, push the extract script to rerun all 16, then read
+Miramar through its per-program export PDF. When 20 records pass, hand Sam the
+20 for his check (the fourth bar) as a decision sheet.

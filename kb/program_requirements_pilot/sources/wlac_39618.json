@@ -1,0 +1,48 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "West Los Angeles College",
+ "control_number": "39618",
+ "shape": "noncredit",
+ "title": "Real Estate Supervisory/Trainee Appraiser Licensing",
+ "award": "Noncredit program",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "pdf",
+ "format": "single_pdf",
+ "method": "pdf_pages",
+ "source": {
+  "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+  "pages": [
+   246
+  ],
+  "extractor": "pypdf",
+  "pages_total": 358
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "VOCED197CE",
+  "VOCED198CE"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000611092",
+   "code": "VOC ED 197CE",
+   "title": "Supervisory/Trainee Real Estate Appraiser",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000611093",
+   "code": "VOC ED 198CE",
+   "title": "Fed & State Laws and Regs. for CA Appraisers",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "[page 246]\nNONCREDIT PROGRAMS & COURSES \nWest Los Angeles College 2026-2027 Catalog  245 \nProgram Learning Outcomes: Upon successful completion, \nstudents will be able to…. \n1. Employ basic medical vocabulary and abbreviations \nused in healthcare professions. \n2. Comply and demonstrate proper ethical behavior in \nany healthcare workplace setting.  \n3. Differentiate among healthcare career pathways in: \nIn-Home Health Support Service, Certified Nurse \nAssistant, Home Health Aide, Geriatric Care \nTechnician, Licensed Vocational Nurse, Nurse \nPractitioner, and Registered Nurse. \n4. Build knowledge capacity about California State \nlicensure, job outlook, personnel requirements and \nprogram curriculum. \n5. Demonstrate professional behavior and attire as a \nhealthcare professional. \nRequired Courses \nVOC ED 400CE Introduction to Medical \n Terminology ............................ 18 hours \nVOC ED 403CE Law & Ethics for Health Terminology \nProfessions ............................. 18 hours \nVOC ED 409CE Pre-Nursing Career \n Pathways ................................ 18 hours \nREAL ESTATE \nSUPERVISORY/TRAINEE APPRAISER \nLICENSING (CN) \nACADEMIC PROGRAM CODE: W039618E \n(9-18 hours) \n \nThe Real Estate Supervisory/Trainee Appraiser Licensing \ncertificate prepare students to complete the educational \nrequirements for various Real Estate Appraisal Licenses by \nproviding them with these two required courses for the \nCalifornia Bureau of Real Estate Appraisers’ (BREA) state \nlicensing. \n \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n1. Utilize a network of real estate professionals to \nconduct and complete the sale, purchase and \nmanagement of real estate processes and \ntransactions. \n2. Use current and emerging technologies and \napplications to conduct real estate transactions. \n3. Interpret property and real estate law to \ntroubleshoot legal aspects in selling, purchasing \nand management of real estate. \n4. Use of personal and business investment strategies \nand methods to advise clients and address \ncustomer needs. \n5. Market, manage and direct the daily activities of a \nsuccessful real estate agency. \n6. Model effective and appropriate interactions and \nrelationships that create good will and repeat \nbusiness. \n7. Model, adopt, and comply with ethical and moral \nbusiness practices that maintain and sustain trust \nand integrity in the workplace and with clients, \npursuant to DRE regulations and requirements. \n8. Communicate oral and written thoughts in a clear \nand organized manner to effectively inform and \nconvey ideas in the workplace and with clients. \n \nRequired Courses \nVOC ED 197CE Supervisory/Trainee  \n Appraiser  ................................ 4.5-9 hours \nVOC ED 198CE Federal & State Laws and \n Regulations for California  \n Appraisers ............................... 4.5-9 hours  \nROADMAP TO PEOPLE MANAGEMENT \n(CN)  \nACADEMIC PROGRAM CODE: W045856E \n(72-108 hours) \nThe Roadmap to People Management Certificate of \nCompletion provides students with the skills and knowledge \nfor an entry-level leadership position. Topics include \nleadership styles, employment laws, tools to hire and motivate \nemployees, gaining skills for effective communication, team \nbuilding, and project management.  \n \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n3. Differentiate between different leadership styles. \n4. Identify fundamental principles of workplace \ncommunication to build rapport, establish \nleadership, and address challenges. \n5. Identify strategies to effectively hire, manage, \nmotivate, and retail talent. \n6. Define non-discrimination laws in hiring, promotion, \nand termination. \n7. Describe the elements necessary to successfully \ncomplete a project. \n8. Demonstrate cultural awareness and respectful \ncommunication practices when engaging with \nSpanish-speaking individuals. \nRequired Courses \nVOC ED 440CE Introduction to People Management ....... 18 \nhours \nVOC ED 441CE People Management:  \n Emerging Leader..................................... 18 \nhours \nVOC ED 442CE People Management:  \n Workplace Compliance ........................... 18 \nhours  ",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

@@ -1,0 +1,243 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Riverside City College",
+ "control_number": "31456",
+ "shape": "adt",
+ "title": "Administration of Justice",
+ "award": "A.S. T Degree",
+ "status": "Approved",
+ "catalog_year": "2026-2027",
+ "platform": "curriqunet",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Admin_Justice_ADT",
+  "title": "View - CurriQunet META",
+  "h1": "",
+  "text_from": "innerText"
+ },
+ "coverage": 0.958,
+ "codes_found": [
+  "ADJ1",
+  "ADJ19",
+  "ADJ1H",
+  "ADJ2",
+  "ADJ20",
+  "ADJ24",
+  "ADJ27",
+  "ADJ28",
+  "ADJ3",
+  "ADJ31",
+  "ADJ3H",
+  "ADJ4",
+  "ADJ5",
+  "ADJ9",
+  "ADJ9H",
+  "PHO27",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "SOC1",
+  "SOC1H",
+  "SOC20",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000241418",
+   "code": "ADJ 1",
+   "title": "Introduction to the Administration of Justice",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000605379",
+   "code": "ADJ 19",
+   "title": "Introduction to Policing",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000642799",
+   "code": "ADJ 1H",
+   "title": "Honors Introduction to the Administration of Justice",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000294951",
+   "code": "ADJ 2",
+   "title": "Principles and Procedures of the Justice System",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000113337",
+   "code": "ADJ 20",
+   "title": "Introduction to Corrections",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000599470",
+   "code": "ADJ 24",
+   "title": "Interviewing & Interrogation",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000628145",
+   "code": "ADJ 27",
+   "title": "Forensic & Crime Scene Photography",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000642800",
+   "code": "ADJ 28",
+   "title": "Crime Scene Investigation",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000330195",
+   "code": "ADJ 3",
+   "title": "Concepts of Criminal Law",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000622063",
+   "code": "ADJ 31",
+   "title": "Cybercrime & Digital Forensics",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000642801",
+   "code": "ADJ 3H",
+   "title": "Honors Concepts of Criminal Law",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000257461",
+   "code": "ADJ 4",
+   "title": "Legal Aspects of Evidence",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000311517",
+   "code": "ADJ 5",
+   "title": "Community Relations",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000105963",
+   "code": "ADJ 9",
+   "title": "Law in American Society",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000610295",
+   "code": "ADJ 9H",
+   "title": "Honors Law in American Society",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000628149",
+   "code": "PHO 27",
+   "title": "Forensic & Crime Scene Photography",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000216824",
+   "code": "PSYC C1000",
+   "title": "Introduction to Psychology",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000570160",
+   "code": "PSYC C1000H",
+   "title": "Introduction to Psychology - Honors",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000579581",
+   "code": "PSYC48",
+   "title": "Statistics for the Behavioral Sciences",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000290222",
+   "code": "SOC 1",
+   "title": "Introduction to Sociology",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000546118",
+   "code": "SOC 1H",
+   "title": "Honors Introduction to Sociology",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000067054",
+   "code": "SOC 20",
+   "title": "Introduction to Criminology",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000550288",
+   "code": "STAT C1000",
+   "title": "Introduction to Statistics",
+   "units": 4.0,
+   "cid": "MATH 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000556288",
+   "code": "STAT C1000H",
+   "title": "Introduction to Statistics - Honors",
+   "units": 4.0,
+   "cid": "MATH 110",
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "Riverside City College\n2026-2027 Catalog\nSearch\n Export Page as PDF\nCatalog Navigation\nIntroduction to Riverside City College\nFees\n2026-2027 Academic Calendar\nAcademic Information\nAdmissions & Records\nCounseling and Matriculation\nFinancial Services and Student Employment\nStudent Support Services\nGraduation and Transfer Requirements\nCredit for Prior Learning (Including AP, IB, and CLEP)\nDegrees and Certificates\nCourses\nPolicies and Procedures\nCollege Personnel\nDistinguished Faculty Lecturer\nDistrict Phone Directory\nDistrict Information\nGeneral Catalog Downloads\nAddendum\nShow the catalog navigation\nAdministration of Justice - Associate in Science for Transfer (ADT) - AS643 (CalGETC)\n\nThis degree is designed to facilitate the student’s passage from Riverside City College to the California State University System with an Associate Degree in Administration of Justice. This degree will satisfy the lower division requirements for the eventual conferral of the Bachelor’s Degree in Criminal Justice at a CSU. With this degree the student will be prepared to enter the American Justice System as an entry level professional in numerous areas.\n\nProgram Learning Outcomes\nUpon successful completion of this program, students should be able to:\n\nDemonstrate an applicable knowledge of the many facets of the American Justice System and the interrelationship of functions among them.\n\nDemonstrate a working knowledge of the theory and practice of law enforcement, community policing, criminal law, judicial procedure, criminal investigation, and corrections within the American Justice System.\n\nDemonstrate the ability to interact with the public and members of the American Justice System in a manner to reflect professionalism in speaking, reading, writing, and the ability to compile, integrate, and disseminate diverse information.\n\nProgram Requirements\nRequired Courses\nUnits: 6.00\nCOURSE\nTITLE\nUNITS\nSelect one of the following:\n3.00\nADJ-1\nIntroduction to the Administration of Justice\n3.00\nADJ-1H\nHonors Introduction to the Administration of Justice\n3.00\nSelect one of the following:\n3.00\nADJ-3\nConcepts of Criminal Law\n3.00\nADJ-3H\nHonors Concepts of Criminal Law\n3.00\nElective Courses - List A\nUnits: 6.00\nCOURSE\nTITLE\nUNITS\nSelect 6 units from the following:\n6.00\nADJ-2\nPrinciples and Procedures of the Justice System\n3.00\nADJ-4\nLegal Aspects of Evidence\n3.00\nADJ-5\nCommunity Relations\n3.00\nADJ-12\nIntroduction to Criminalistics\n3.00\nADJ-13\nCriminal Investigation\n3.00\nADJ-20\nIntroduction to Corrections\n3.00\nElective Courses - List B\nUnits: 6.00-7.00\nCOURSE\nTITLE\nUNITS\nSelect a minimum of 6 units from the following:\n6.00-7.00\nAny course in List A not already used.\nADJ-9\nLaw In American Society\n3.00\nOR\nADJ-9H\nHonors Law in American Society\n3.00\nADJ-19\nIntroduction to Policing\n3.00\nADJ-24\nInterviewing & Interrogation\n3.00\nADJ-27\nForensic & Crime Scene Photography\n3.00\nOR\nPHO-27\nForensic & Crime Scene Photography\n3.00\nADJ-28\nCrime Scene Investigation\n3.00\nADJ-31\nCybercrime & Digital Forensics\n3.00\nPSYC-C1000\nIntroduction to Psychology\n3.00\nOR\nPSYC-C1000H\nIntroduction to Psychology - Honors\n3.00\nSOC-1\nIntroduction to Sociology\n3.00\nOR\nSOC-1H\nHonors Introduction to Sociology\n3.00\nSOC-20\nIntroduction To Criminology\n3.00\nSTAT-C1000\nIntroduction to Statistics\n4.00\nOR\nSTAT-C1000H\nIntroduction to Statistics - Honors\n4.00\nOR\nPSYC-48\nStatistics for the Behavioral Sciences\n4.00\nOR\nSOC-48\nStatistics for the Behavioral Sciences\n4.00\nTotal: 18.00-19.00\nAssociate in Science for Transfer Degree\nThe Associate in Science in Administration of Justice for Transfer degree will be awarded upon completion of 60 California State University (CSU) transferable units including the above major requirements and the California General Education Transfer Curriculum (Cal-GETC) requirements and with a minimum grade point average of 2.0. All courses in the major must be completed with a grade of 'C' or better (or a 'P' if taken as Pass/No Pass).",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

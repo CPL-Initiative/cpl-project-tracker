@@ -1,0 +1,270 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Mt. San Antonio College",
+ "control_number": "08086",
+ "shape": "degree_list",
+ "title": "Nursing- Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option",
+ "award": "A.S. Degree",
+ "status": "Approved",
+ "catalog_year": "2026-2027",
+ "platform": "courseleaf",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/",
+  "title": "Nursing - Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option (AS Degree S0957) < Mt. San Antonio College",
+  "h1": "Nursing - Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option (AS Degree S0957)",
+  "text_from": "innerText"
+ },
+ "coverage": 0.963,
+ "codes_found": [
+  "AMLA1A",
+  "ANAT10A",
+  "ANAT10B",
+  "ANAT35",
+  "ANAT36",
+  "CHLD10",
+  "CHLD10H",
+  "COMM2",
+  "COMM8",
+  "COMM8H",
+  "COMMC1000",
+  "COMMC1000H",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "MICR1",
+  "MICR22",
+  "NURS114",
+  "NURS115",
+  "NURS206",
+  "NURS207",
+  "NURS210",
+  "NURS211",
+  "PSYC14",
+  "PSYC14H",
+  "PSYCC1000",
+  "PSYCC1000H"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000611957",
+   "code": "AMLA 1A",
+   "title": "College Composition for Non-Native English Speakers",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000579448",
+   "code": "ANAT 10A",
+   "title": "Introductory Human Anatomy",
+   "units": 4.0,
+   "cid": "BIOL 110 B",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000581040",
+   "code": "ANAT 10B",
+   "title": "Introductory Human Physiology",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000406128",
+   "code": "ANAT 35",
+   "title": "Human Anatomy",
+   "units": 5.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000421346",
+   "code": "ANAT 36",
+   "title": "Human Physiology",
+   "units": 5.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000397345",
+   "code": "CHLD 10",
+   "title": "Human Growth and Lifespan Development",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000417415",
+   "code": "CHLD 10H",
+   "title": "Human Growth and Lifespan Development - Honors",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000520966",
+   "code": "COMM 2",
+   "title": "Survey of Communication Studies",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000520968",
+   "code": "COMM 8",
+   "title": "Professional and Organizational Speaking",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000520969",
+   "code": "COMM 8H",
+   "title": "Professional and Organizational Speaking - Honors",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000520964",
+   "code": "COMM C1000",
+   "title": "Introduction to Public Speaking",
+   "units": 4.0,
+   "cid": "COMM 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000520965",
+   "code": "COMM C1000H",
+   "title": "Introduction to Public Speaking - Honors",
+   "units": 4.0,
+   "cid": "COMM 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000415437",
+   "code": "ENGL C1000",
+   "title": "Academic Reading and Writing",
+   "units": 4.0,
+   "cid": "ENGL 100",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000414882",
+   "code": "ENGL C1000H",
+   "title": "Academic Reading and Writing - Honors",
+   "units": 4.0,
+   "cid": "ENGL 100",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000417548",
+   "code": "MICR 22",
+   "title": "Microbiology",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000656430",
+   "code": "MICR1",
+   "title": "Medical Microbiology",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000543769",
+   "code": "NURS 11",
+   "title": "Preceptorship in Nursing",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000409281",
+   "code": "NURS 114",
+   "title": "Maternal-Newborn Nursing",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000643592",
+   "code": "NURS 115",
+   "title": "Pediatric Nursing",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000643593",
+   "code": "NURS 206",
+   "title": "Medical-Surgical Nursing: Nutrition/Elimination/ Surgical Asepsis",
+   "units": 6.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000643591",
+   "code": "NURS 207",
+   "title": "Psychiatric Mental Health Nursing",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000643594",
+   "code": "NURS 210",
+   "title": "Medical-Surgical Nursing: Perfusion and Oxygenation",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000643588",
+   "code": "NURS 211",
+   "title": "Medical-Surgical Nursing: Integration/Regulation",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000424391",
+   "code": "PSYC 14",
+   "title": "Developmental Psychology",
+   "units": 3.0,
+   "cid": "PSY 180",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000579455",
+   "code": "PSYC 14H",
+   "title": "Developmental Psychology - Honors",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000412132",
+   "code": "PSYC C1000",
+   "title": "Introduction to Psychology",
+   "units": 3.0,
+   "cid": "PSY 110",
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000399048",
+   "code": "PSYC C1000H",
+   "title": "Introduction to Psychology - Honors",
+   "units": 3.0,
+   "cid": "PSY 110",
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "ch Courses\n2026-2027 Academic Catalog\nSchedule of Classes College Calendar Campus Map College Directory Catalog PDF\nHOME\n \nCATALOG A-​Z INDEX\n \nPROGRAMS \n \nREGISTRATION &​ POLICIES\n \nSTUDENT RESOURCES \n \nTHE COLLEGE\nMt Sac Catalog Hero Image\nApply Now\nExplore Your Future\nHome/\nCatalog A-Z Index/\nPrograms A-Z/\nNursing/\nNursing - Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option (AS Degree S0957)\nNursing - LVN to RN\nNursing -​ Licensed Psychiatric Technician (LPT) to Registered Nurse (RN) Option (AS Degree S0959)\nToggle Nursing -​ Licensed Psychiatric Technician (LPT) to Registered Nurse (RN) Option (AS Degree S0959)\nNursing -​ Licensed Vocational Nurse (LVN) 30-​Unit Option -​ Nondegree\nToggle Nursing -​ Licensed Vocational Nurse (LVN) 30-​Unit Option -​ Nondegree\nNursing -​ Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option (AS Degree S0957)\nToggle Nursing -​ Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option (AS Degree S0957)\nOverview\nAdmission\nAccreditation\nOutcomes\nNursing -​ Registered Nursing (RN) Generic Option (AS Degree S0958)\nToggle Nursing -​ Registered Nursing (RN) Generic Option (AS Degree S0958)\nNursing - Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option (AS Degree S0957)\n\nTechnology and Health Division\nNursing Department\nThe Mt. San Antonio College LVN to RN Nursing Program is approved by the California Board of Registered Nursing. The program is designed to prepare students to give direct nursing care to clients in various practice settings. The program consists of coursework in nursing, science, general education, and clinical nursing practice at local hospitals and health agencies. Graduates of the program receive an Associate in Science Degree in Nursing and are eligible to take the NCLEX-RN examination leading to licensure as a Registered Nurse.\n\nThe Licensed Vocational Nurse is provided career mobility in the Nursing Program. Enrollment in the Mt San Antonio College LVN to Registered Nursing Program is open to persons regardless of sex, age, marital status, disability, ethnic group, religion, or national origin. The Licensed Vocational Nurse may choose between earning an Associate in Science Degree in Nursing or completing the LVN 30-Unit Option track, which is a non-degree option.\n\nPrerequisite Courses\n\nThe following prerequisites must be completed prior to applying to the Nursing - LVN to RN Option. These courses cannot be in progress. \n\nCourse List\nCourse Prefix\tCourse Name\tUnits\nANAT 10A\tIntroductory Human Anatomy\t4-5\nor ANAT 35\tHuman Anatomy\nANAT 10B\tIntroductory Human Physiology\t4-5\nor ANAT 36\tHuman Physiology\nENGL C1000\tAcademic Reading and Writing\t4\nor ENGL C1000H\tAcademic Reading and Writing - Honors\nor AMLA 1A\tCollege Composition for Non-Native English Speakers\nMICR 1\tMedical Microbiology\t4-5\nor MICR 22\tMicrobiology\n\nRequest for Equivalency\n\nRequest for equivalency for core sciences: Courses must meet or exceed the 4.0 semester unit minimum with a laboratory component, as required by the California Community College Chancellor’s office. If you are uncertain whether a course taken inside or outside the California Community College system is equivalent to the Mt. SAC course, please contact the Counseling Department.\n\nADN General Education Requirements\n\nAll courses below must be completed with a grade of “C” or better. A “C- (minus)“ from other institutions for course majors is not accepted. Due to the intensity of the program, students are highly encouraged to complete general education prior to admission into the program.\n\nCourse List\nCourse Prefix\tCourse Name\tUnits\nCHLD 10\tHuman Growth and Lifespan Development 1\t3\nor CHLD 10H\tHuman Growth and Lifespan Development - Honors\nor PSYC 14\tDevelopmental Psychology\nor PSYC 14H\tDevelopmental Psychology - Honors\nCOMM C1000\tIntroduction to Public Speaking\t4\nor COMM C1000H\tIntroduction to Public Speaking - Honors\nor COMM 2\tSurvey of Communication Studies\nor COMM 8\tProfessional and Organizational Speaking\nor COMM 8H\tProfessional and Organizational Speaking - Honors\nPSYC C1000\tIntroduction to Psychology 2\t3\nor PSYC C1000H\tIntroduction to Psychology - Honors\n1\n\nMust be completed before NURS 115.\n\n2\n\nMust be completed before NURS 207.\n\nAdditional General Education and Graduation Requirements\n\nStudents will be required to complete additional areas of general educations to earn an associate’s degree including:\n\nMathematics and Quantitative Reasoning General Education Area\nArts and Humanities General Education Area\nSocial Political and Economic Institutions - History or Political Science General Education Area\nEthnics Studies General Education Area\nPhysical Well-Being graduation requirement\nReading Competency graduation requirement\nInternational Coursework\n\nCourse work completed in another country may be accepted to satisfy requirements for graduation. A recognized International evaluation service must evaluate international transcripts. All evaluated International Transcripts (regardless of whether the courses are accepted for Mt. SAC equivalency) must be included in the online Nursing Application. If you are selected as a candidate for the Nursing Program, please submit an official, sealed copy of the International Evaluation during your counseling appointment.\n\nHigh School Education or Equivalent\n\nNursing Applicants must provide proof of graduation from:\n\nAn accredited high school in the United States by transcripts or diploma or;\nDocumentation of a passing score on the General Education Development (GED) exam or;\nAssociate degree, or Baccalaureate degree from an accredited institution of higher education in the United States or;\nOfficial evaluation of international diploma/degree\nOther Program Requirements\nMeet the minimum physical and mental qualifications to perform essential nursing functions (see Essential Functions).\nCriminal background check and drug screening must be completed prior to any clinical placement or patient contact.\nA physical examination, including specific immunization is required of all candidates prior to the beginning of nursing classes.\nCurrent Health Care Provider CPR certification \nNon-course Requirements\nAn overall grade point average of 2.5 for the Human Anatomy, Human Physiology and Microbiology prerequisite courses with no grade less than a “C” for each course and no more than one repetition of any one of these courses. A “C- (minus)“ from other institutions for course majors is not accepted.\nScience courses (Human Anatomy, Human Physiology and Microbiology) cannot be older than 7 years at time of application.\nAll courses for the major must have no grade less than a “C” for each course to meet the graduation criteria. A “C- (minus)“ from other institutions for course majors is not accepted.\nCumulative grade point average (GPA) of 2.5 for all college coursework completed.\nEligibility for STAT C1000 or MATH 130.\nHigh school graduation or GED or academic degree from an accredited college/university in the United States.\nA physical examination, including specific immunizations is required of all candidates prior to the beginning of nursing classes.\nCurrent Healthcare Provider CPR certification.\nCriminal background check and drug screening must be completed prior to any clinical placement or patient contact.\nNursing 200: Role Transition must be completed with a credit grade prior to entrance into the program. (NURS 200: Role Transition – Due to the clinical component of NURS 200, applicants must submit their names to the Nursing Office for approval prior to enrollment in this course. Applicants must have completed all prerequisite courses prior to taking NURS 200. Applicants must provide proof of current Vocational Nurse License, physical, CPR card, Background Check, and drug testing prior to the start of class).\nRequired Courses\n\nStudents must develop an education plan with a counselor or educational advisor to complete college academic requirements for the AS degree. Contact the Counseling Department at (909) 274-4380 to schedule an appointment.\n\nCourse List\nCourse Prefix\tCourse Name\tUnits\nSelect one of the following sequences:\t8-10\n\nANAT 10A\n\tIntroductory Human Anatomy\t\n\nor ANAT 35\n\tHuman Anatomy\n\nANAT 10B\n\tIntroductory Human Physiology\t\n\nor ANAT 36\n\tHuman Physiology\nCHLD 10\tHuman Growth and Lifespan Development\t3\nor CHLD 10H\tHuman Growth and Lifespan Development - Honors\nor PSYC 14\tDevelopmental Psychology\nor PSYC 14H\tDevelopmental Psychology - Honors\nCOMM C1000\tIntroduction to Public Speaking\t4\nor COMM C1000H\tIntroduction to Public Speaking - Honors\nor COMM 2\tSurvey of Communication Studies\nor COMM 8\tProfessional and Organizational Speaking\nor COMM 8H\tProfessional and Organizational Speaking - Honors\nENGL C1000\tAcademic Reading and Writing\t4\nor ENGL C1000H\tAcademic Reading and Writing - Honors\nor AMLA 1A\tCollege Composition for Non-Native English Speakers\nMICR 1\tMedical Microbiology\t4-5\nor MICR 22\tMicrobiology\nNURS 114\tMaternal-Newborn Nursing\t3\nNURS 115\tPediatric Nursing\t3\nNURS 206\tMedical-Surgical Nursing: Nutrition/Elimination/ Surgical Asepsis\t6\nNURS 207\tPsychiatric Mental Health Nursing\t2.5\nNURS 210\tMedical-Surgical Nursing: Perfusion and Oxygenation\t4\nNURS 211\tMedical-Surgical Nursing: Integration/Regulation\t3\nNURS 212\tPreceptorship in Nursing\t2\nPSYC C1000\tIntroduction to Psychology\t3\nor PSYC C1000H\tIntroduction to Psychology - Honors\nTotal Units\t49.5-52.5\n\nNOTE: Applicants planning to continue their education and enter a baccalaureate program in Nursing will need to meet with a counselor or educational adviser to discuss transferability of courses.\n\nNursing Website (http://www.mtsac.edu/nursing/)\n\nPrint Options\nENROLL\nAdmissions\nAssessment\nCounseling\nFinancial Aid\nSchool of Continuing Education\nEXPLORE\nAcademic Catalog\nEmployment\nFinding Events\nLibrary\nSchedule of Classes\nWhy Mt. SAC\nVISIT\nAthletics\nBox Office\nCampus Map\nParking\nPlanetarium\nTours\nTRANSPARENCY\nAccreditation\nAccessibility\nBoard of Trustees Agenda\nConstruction\nCovid 19 Updates\nDoing Business with Mt. SAC\nEducational & Facilities Master Plan\nPrivacy\nHELP\nA-to-Z Site Index\nContact Mt. SAC\nDirectory\nPolice & Campus Safety\nWeb Feedback\nMt. San Antonio College\n\n1100 N. Grand Ave., Walnut, CA 91789\n\nPhone\n(909) 274-7500\n\nVideo Phone\n(909) 895-6634\n\nCampus Police\n(909) 274-4555\n\nText-A-Tip\n(909) 274-9560",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}
