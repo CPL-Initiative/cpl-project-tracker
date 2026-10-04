@@ -828,7 +828,7 @@ answer_must_match "\b(ANAT|MICR|PSYC|ENGL|COMM|CHLD|AMLA)[ -]?C?[0-9]" "7l ⭐ n
 # 29 card 4): its block is CATALOG REQUIREMENTS from Mt. SAC's 2026-2027 catalog,
 # and Sierra may say required and give the total the catalog prints. The
 # "never adds up the units" negative moved to 7q, a college with no record.
-answer_must_match -i "2026[-/ ](20)?27" "7l ⭐ names the 2026-2027 catalog its checked record was read from"
+answer_must_match -i "2026[-–/ ](20)?27" "7l ⭐ names the 2026-2027 catalog its checked record was read from"
 # The S319 A/B candidate wrote that honors versions "appear side by side rather
 # than as substitutes you'd choose between": a student reading it takes ENGL
 # C1000 and ENGL C1000H both. An honors pair is one choice.
