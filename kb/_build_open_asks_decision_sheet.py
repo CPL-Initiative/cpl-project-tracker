@@ -192,8 +192,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-33.html')
-SHEET_ID = '2026-10-04-open-asks-33'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-34.html')
+SHEET_ID = '2026-10-04-open-asks-34'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -682,6 +682,17 @@ def p_outcomes_in_pilot_pages():
                         'the record shape %s them' % (hits, n, 'does not carry' if still_open else 'now carries'))
 
 
+# S328: the premise sheet 34's card 2 rests on.
+def p_no_procedure_record():
+    """No per-college procedure record exists yet: the registry and the reader name none."""
+    text = (_read('kb/supabase_program_source_registry.sql')
+            + _read('kb/_program_requirements_pilot.py')
+            + _read('kb/_program_requirements_extract.py'))
+    still_open = not re.search(r'procedure', text, re.I)
+    return still_open, ('the registry and the reader carry no procedure record' if still_open
+                        else 'the registry or the reader now names a procedure record')
+
+
 # ── the coverage audit ───────────────────────────────────────────────────────
 def lanes_with_asks():
     out = {}
@@ -768,99 +779,57 @@ def items():
     # the CPL figure ("up to" plus the recommended path's, with CPL in three kinds per his note)
     # and where catalog-and-state-file differences go. The lane records both; no card remains.
 
-    # Sheet 33 (S327): CSU LA (Sam's opening note, "Keep CSU LA in the mix as they are our first CSU
-    # starting to use MAP. We'll figure out a procedure for them as well."), the outcomes element (his
-    # 18:03Z note) and the Ironworker proof of concept (his 18:23Z note).
+    # Sheet 33 (S327) was answered at 18:52-18:57Z on 2026-10-04, all five his own call: card 1 one
+    # concise statement of who CPL serves, card 2 CCC-only funding, card 3 CSU LA later, card 4 as
+    # proposed, card 5 exhaust the agent before any request. Each lane records its ruling (S328).
+
+    # Sheet 34 (S328): the statement card 1 asked for, and the advice card 5 asked for.
     I.append({
         'lane': 'college-district-identity',
-        'title': "CSU LA is counted: what do the counts call the 116?",
-        'ref': 'college-district-identity NEEDS SAM · live_metrics.json · excel_to_dashboard.py · '
+        'title': "Who CPL serves: confirm the statement",
+        'ref': 'college-district-identity NEEDS SAM · excel_to_dashboard.py · cpl-chat index.ts · '
                'cpl-knowledge-base budget-support letter blocks',
         'facts': (
-            "You ruled CSU LA stays in the mix. The 16:55Z scrape counts it among 116 MAP colleges (Inactive "
-            "today), and nothing in the pipeline errors on it. Three places now say something false: the KPI "
-            "card reads <code>of 116 system colleges</code>, Sierra reads <code>Active colleges: 103 of 116</code>, "
-            "and the public knowledge base's letter blocks read <code>across 103 of California's 116 community "
-            "colleges</code>. California has 116 community colleges, but MAP's 116 are 115 of them plus CSU LA "
-            "(Calbright is not on MAP)."),
-        'why': "A letter that calls a CSU campus a community college is the error a legislator's staff would catch.",
-        'rec': "<strong>Two counts, each named for what it counts:</strong> MAP participation says "
-               "<em>116 colleges and universities on MAP (115 community colleges and Cal State LA)</em>; a "
-               "sentence about the system keeps <em>community colleges</em> and takes the community-college "
-               "count from the same scrape. <em>It might be wrong if</em> you would rather say "
-               "<em>institutions</em> everywhere and drop the system sentence.",
-        'chips': chips(('As proposed', 'as-proposed'), ('Say institutions everywhere', 'institutions'), CH_LATER),
+            "You asked for one concise statement from your notes. The draft: <em>The CPL Initiative serves "
+            "California's 116 community colleges, two noncredit campuses, and partner programs such as LAUNCH "
+            "and Futuro Health. Cal State LA is the first CSU campus on MAP. Adult education, ROP and "
+            "not-for-credit programs such as UpSkill CA join next.</em> The 116 is the 115 credit colleges plus "
+            "Calbright, as your note counts them. MAP's scrape also counts 116: the 115 plus Cal State LA, "
+            "with Calbright not yet on MAP. The KPI card, Sierra's metrics line and the knowledge base's letter "
+            "blocks read true today because the two numbers match."),
+        'why': "The statement goes on the dashboard, into Sierra's answers and into letters to legislators.",
+        'rec': "<strong>As drafted:</strong> the dashboard, Sierra and the letter blocks take the statement, "
+               "and each counts Cal State LA as a MAP participant beside the community colleges. The letter "
+               "blocks change through the knowledge base's curation pipeline, as a draft pull request. The "
+               "draft leaves out the CSU systemwide talks because they are still under way. <em>It might be "
+               "wrong if</em> you want the talks named publicly now.",
+        'chips': chips(('As drafted', 'as-drafted'), ('Add the CSU systemwide line', 'add-csu'), CH_LATER),
         'evidence': [measured(p_csu_la_counted),
-                     live('2026-10-04', 'S327 survey of the count surfaces, file and line in the lane')],
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Does the CCC funding model leave CSU LA out by name?",
-        'ref': 'implementation-funding NEEDS SAM · funding/_build_funding_performance.py · S287 partner ruling',
-        'facts': (
-            "The model's roster is the 115 community colleges, so CSU LA receives no allocation. But a MAP "
-            "name the resolver cannot place goes to <code>unmatched</code>, which the code treats as a "
-            "community college it missed, and those students still count in the statewide totals. CSU LA "
-            "has no students on MAP today; its first ones would enter the model's statewide figures. The "
-            "partner rule (S287) already keeps non-CCC partners out: no count, no mention."),
-        'why': "The statewide figures feed every college's share; a CSU's students would move them.",
-        'rec': "<strong>Leave it out by name:</strong> CSU LA joins the partners outside the CCC funding "
-               "model, with a guard that fails if any non-CCC institution reaches the statewide totals. "
-               "<em>It might be wrong if</em> you want CSU LA's outcomes shown beside the model, unfunded.",
-        'chips': chips(('As proposed', 'as-proposed'), ('Show it beside the model', 'beside'), CH_LATER),
-        'evidence': [quoted('the S327 survey of funding/_build_funding_performance.py lines 232-233 and 905-918', '2026-10-04')],
+                     quoted('cpl_memory sam-sheet33-rulings-2026-10-04, his card 1 note', '2026-10-04')],
     })
     I.append({
         'lane': 'program-requirements-harvest',
-        'title': "CSU LA's harvest procedure: start it now or after the Ironworker proof?",
-        'ref': 'program-requirements-harvest NEEDS SAM · kb/supabase_program_source_registry.sql',
+        'title': "One procedure record per college: the agent's rules for reading it",
+        'ref': 'program-requirements-harvest NEEDS SAM · kb/supabase_program_source_registry.sql · '
+               'the 2026-10-03 ruling (an agent per college the college and the MAP team own and train)',
         'facts': (
-            "You said we would figure out a procedure for CSU LA. The registry seeds from the state's "
-            "community-college program file, which holds no CSU, so CSU LA has no row. Its catalog can be "
-            "read the same way, but the first check (every course the state's Program Course File lists is "
-            "placed) has no state file to check against at a CSU."),
-        'why': "Without a second closed list, a CSU record passes three of the four checks at most.",
-        'rec': "<strong>After the Ironworker proof:</strong> add CSU LA to the registry as a CSU row, read its "
-               "catalog, and use the catalog's own course inventory as its closed list, marked as such. "
-               "<em>It might be wrong if</em> CSU LA's first MAP articulations are close, in which case start now.",
-        'chips': chips(('After the Ironworker proof', 'after'), ('Start now', 'now'), CH_LATER),
-        'evidence': [measured(p_csu_la_no_registry_row)],
-    })
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Add outcomes to the harvest: program and course outcomes as printed",
-        'ref': 'program-requirements-harvest NEEDS SAM · kb/_program_requirements_extract.py · kb/_row_audit.py',
-        'facts': (
-            "You asked for an element that grabs published course and program outcomes, and a process that "
-            "compares credential skills with course outcomes. The pages the pilot already captured print "
-            "them: Cerritos, Riverside and West LA on all four pages each, Mt. SAC on one, Miramar on none. "
-            "COCI course outcomes are not in our data (the Master Course File load carries none), and the "
-            "credential skills file the watch agent is to fill is not started."),
-        'why': "Outcomes are the evidence a faculty member weighs before articulating a credential.",
-        'rec': "<strong>Record shape version 3:</strong> the extraction keeps program and course outcomes "
-               "exactly as printed, the scorer checks they are verbatim, and the skills comparison waits for "
-               "the skills file. <em>It might be wrong if</em> you want the comparison built first on the "
-               "IT/AI credentials, where issuers publish skills.",
-        'chips': chips(('As proposed', 'as-proposed'), ('Skills comparison first', 'skills-first'), CH_LATER),
-        'evidence': [measured(p_outcomes_in_pilot_pages)],
-    })
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Ironworker proof: who at Cerritos confirms what the web will not show us?",
-        'ref': 'program-requirements-harvest NEEDS SAM · cpl_pathways_data.js · coci_college_programs',
-        'facts': (
-            "The data holds the stack: Certificates 36002 (Reinforcing, 34 units) and 36003 (Structural, 38) "
-            "are each one complete A.S. major option, and the A.S. reads up to 31.5 units through CPL. Four "
-            "facts come only from pages the session cannot reach: the B.S. course list, its admission rule "
-            "and first cohort; the high school articulation list (Cerritos's EPP office); whether the 26 "
-            "noncredit AED 40-41 courses still run; and the apprenticeship's related-instruction hours "
-            "(480 or 700+)."),
-        'why': "The proof shows every rung; a rung read from a search snippet is a guess on a public page.",
-        'rec': "<strong>Ask the people you know at Cerritos</strong> (the apprenticeship coordinator and the "
-               "EPP articulation office); the session drafts the questions. <em>It might be wrong if</em> you "
-               "would rather a session read the pages from a runner first.",
-        'chips': chips(('I will ask, draft it', 'ask'), ('Read from a runner first', 'runner'), CH_LATER),
-        'evidence': [live('2026-10-04', 'coci_college_programs and coci_program_courses for Cerritos; two research agents, S327')],
+            "You ruled that a request to a college is drafted only after the agent has exhausted its "
+            "efforts, and asked for advice on configuring an agent per college. The registry holds each "
+            "college's hosts, catalog platform and access status, and sequence access for 25 colleges "
+            "(18 refused). Nothing holds a college's reading steps, the workarounds tried or its nuances, "
+            "and the reader loads no per-college rules."),
+        'why': "Your workaround ideas then stay with the college: the next run reads them.",
+        'rec': "<strong>One procedure record per college</strong>, kept with its history on the college's "
+               "registry row: hosts, platform, reading steps, refusals, workarounds tried, nuances. The "
+               "reader loads it before each run. The harvest tab's Procedures view shows it, and each "
+               "workaround you suggest lands as a change to it under your name and date. A request to a "
+               "college is drafted only when its record shows every step tried. Cerritos comes first, from "
+               "a runner read of the B.S. page, the EPP articulation list, the Pre-Apprenticeship catalog "
+               "page and the welding roadmap PDF. <em>It might be wrong if</em> you want the college and "
+               "the MAP team editing the records in the tab from the start.",
+        'chips': chips(('As proposed', 'as-proposed'), ('Tab editing from the start', 'tab-first'), CH_LATER),
+        'evidence': [measured(p_no_procedure_record),
+                     quoted('cpl_memory sam-sheet33-rulings-2026-10-04, his card 5 note', '2026-10-04')],
     })
     return I
 

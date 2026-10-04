@@ -206,6 +206,23 @@ def main():
     check("a credit college is untouched by the fold",
           "Bakersfield" in pl["colleges"], f"colleges={sorted(pl['colleges'].keys())}")
 
+    # ── 4. A CSU on MAP stays out of the CCC funding model (sheet 33 card 2) ──
+    # Sam, 2026-10-04: "funding is only provided to CCC colleges and campuses."
+    # Cal State LA stays counted as a MAP participant, so the builder leaves it
+    # out by name. Twelve students keep the count above the floor of 10, so a
+    # leak into the statewide total would show as 12 more eligible students.
+    csu = [row("California State University Los Angeles", f"c{i}", ecr=4) for i in range(12)]
+    csu.append(row("Bakersfield College", "b1", ecr=2, tcr=1))
+    pc = run_builder(csu)
+    check("CSU LA lands in no `unmatched` bucket",
+          sorted((pc.get("unmatched") or {}).keys()) == [],
+          f"unmatched={sorted((pc.get('unmatched') or {}).keys())}")
+    check("CSU LA's students reach no statewide total (one eligible student, Bakersfield's)",
+          pc["statewide"].get("pe") == 1, f"statewide pe={pc['statewide'].get('pe')}")
+    check("CSU LA takes no college row",
+          not any("California State" in k or "Los Angeles" == k for k in pc["colleges"]),
+          f"colleges={sorted(pc['colleges'].keys())}")
+
     print(f"\n{checks[0] - len(failures)}/{checks[0]} checks passed")
     return 1 if failures else 0
 
