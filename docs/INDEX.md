@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 516 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 517 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 82 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 52 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 297 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1033** | |
+| Session handoffs | 298 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1035** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-04 (S326 SkyAddendum): KB note `playbook-ship-a-table-before-its-privilege-close`; handoff 327; sheet 29 carried out (#1850): six catalog addresses entered, `program_source_addenda` live with the census writing it, sequence access recorded on 25 colleges' registry rows and the reader taught to skip a refused host; Sierra's catalog requirements for checked records (#1851, `program_requirement_records`, 20 checked); open-asks sheets 30 and 31.
 - 2026-10-04 (S325 SkyReader): KB note `methodology-probe-the-class-before-calling-a-refusal-local`; handoff 326; the sequence pass meets the Program Mapper's 403 at all 17 hosts it reached (#1847); the census records catalog addenda, 78 at 52 colleges, with a proposed addenda table (#1848); open-asks sheet 29; every sheet named in chat carries its link; the Program Requirements tab mock-up with an Ask Sierra link.
 - 2026-10-04 (S324 SkyGrader): KB note `methodology-a-not-applicable-score-must-be-confirmed-by-the-source`; handoff 325; the program requirements pilot's record shape version 2 (hours, option groups, block totals, unit ranges; Edge Function v2) and Miramar read through its curriQunet exports: 20 of 20 programs captured and 20 of 20 records pass the three automatic bars (#1845); the pilot records review sheet for Sam.
 - 2026-10-03 (S322 SkyPilot): KB note `methodology-a-failed-read-is-not-an-empty-result` gains the census case; handoff 323; the census reads a vendor catalog's own edition banner, puts the newer year first on one host, and keeps a known address after a failed read (#1841: 77 → 95 catalog years, 71 → 91 at 2026-27); open-asks sheet 25; West Los Angeles is the pilot's PDF college.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-03 (S320 SkyCensus): the program-source census and its registry (#1836, Phase 0 of the harvest): `program_source_registry` live with 118 rows, a history table and one write path, weekly apply; the vendor-link hop and four-slice read (#1838; first full read: 109 of 118 catalogs found); new lessons doc `program_requirements_harvest_lessons`; the revoke KB note gained a tables section (TRUNCATE); handoff 321.
 - 2026-10-03 (S319 SkyRudder): KB note `methodology-write-the-rule-as-the-sentence-you-want-said`; handoff 320; Sierra's program course lists deployed (#1832, smoke 7l), 7s's articulation set-aside (#1833), the timing log (#1834); new lane `program-requirements-harvest` with its plan doc; sheet 23.
 - 2026-10-02 (S317 SkyCompass, the Sierra narration): KB note `methodology-an-input-read-outside-the-repo-carries-its-text-and-its-gaps`; Scenario 2 narrated by Sierra in ElevenLabs ([#1823](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1823) and the follow-up), `_Draft_3` linked from the explainer; sheet 22 answered.
-- 2026-10-02 (S318 SkyKeel): KB note `methodology-a-load-id-should-be-the-content`; handoff 319; Sierra can read each program's own course list (#1826-#1829); sheet 22.
-- 2026-10-02 (S317 SkyCompass): KB note `methodology-a-gateway-error-is-not-an-answer`; handoff 318; the MAP Custom Report loader reads back after a 5xx and never re-sends a landed batch or the promotion ([#1824](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1824)); the grants re-check closed.

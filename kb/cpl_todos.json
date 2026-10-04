@@ -1,14 +1,20 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-04",
- "_session": "S324 SkyGrader",
- "_status": "The pilot record of each program's required courses, choose lists and open electives now passes all four checks for the 20 programs: the three automatic ones and your reading. You passed 18 as matching the catalog and ruled two fixes (a fire certificate listing one course twice, and an LVN-to-RN degree's anatomy sequences); both are carried out and pass. What is left of the pilot is Miramar's term-by-term sequence and the Tech Center's field definitions. Sheet 27's two cards still wait on you.",
+ "_session": "S326 SkyAddendum",
+ "_status": "You answered all five cards of sheet 29, and four are carried out. Six colleges' catalog addresses are in; catalog addenda now have their own table, which the weekly census fills; Miramar's Program Mapper refusal and the 24 other map sources are on each college's record, and the reader skips a refusing site and looks on the college's own pages. Sierra can now name a program's catalog requirements (required courses, choices and the printed total) for the 20 checked pilot programs; it goes live after its A/B test and a deploy. One card waits on you: four files to paste.",
  "items": [
   {
-   "id": "s322-sam-sheet27",
+   "id": "s326-sam-sheet31",
    "for": "Sam",
    "tab": "sierra",
-   "text": "Open-asks sheet 27 (two cards): paste the six catalog addresses file in the Supabase SQL editor (you said go; the repo's guard refuses a session's update to a shared table), or lift the guard for one run; and, when convenient, paste the two memory receipts there too."
+   "text": "Open-asks sheet 31 (https://claude.ai/artifact/89S8oEi5Yi1ZpDeUwBsfJu), one card: paste four files in the Supabase SQL editor, the two memory receipts you marked for later and the privilege closes for the two new tables (catalog addenda; program requirement records). Each ends with a read-back."
+  },
+  {
+   "id": "s326-sam-tab-notes",
+   "for": "Sam",
+   "tab": "sierra",
+   "text": "Give your next round of notes on the Program Requirements tab mock-up (https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f); the port into COBI follows."
   },
   {
    "id": "s310-sam-card11-measures",
@@ -47,10 +53,16 @@
    "text": "Read Sierra's timing log over a week of real questions (chat_interactions.timings, live since 3 October) and report where the wait goes: the first 23 test answers took a median 15 seconds, most of it the model writing."
   },
   {
-   "id": "s324-fable-phase1-last",
+   "id": "s326-fable-deploy-catalog-reqs",
    "for": "Fable",
    "tab": "sierra",
-   "text": "Finish the pilot's last pieces: Miramar's term-by-term course sequence (the Program Mapper sites tried answered 403 or did not resolve), then widen the harvest past the 20 programs."
+   "text": "Read pull request 1851's A/B preview, merge it, deploy Sierra, and confirm smoke modes 7l and 7q pass: Sierra then names a checked program's required courses and the total its catalog prints."
+  },
+  {
+   "id": "s326-fable-addenda-reader",
+   "for": "Fable",
+   "tab": "sierra",
+   "text": "Build the catalog addenda reading agent once the next census apply fills the table (Sunday 11 October, or a hand dispatch): it reads each listed addendum and files which programs it changes. Then read Miramar's Fire Technology sequence from its own pages and widen the harvest past the 20 programs."
   }
  ],
  "_deferred": [

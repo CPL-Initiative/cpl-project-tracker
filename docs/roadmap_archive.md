@@ -5816,3 +5816,8 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 <!-- moved from docs/INDEX.md Update history, 2026-10-04 (S324) -->
 - 2026-10-02 (S316 SkyTally): KB note `methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5` (+ `scripts/pg_jsonb_md5.py`); handoff 317; sheet 19 executed (the CER fold and Microsoft title; the summed statewide target, film `_v7`, [#1821](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1821)); "FTES reimbursement rate", never price.
+
+### INDEX update history, moved 2026-10-04 (S326)
+
+- 2026-10-02 (S318 SkyKeel): KB note `methodology-a-load-id-should-be-the-content`; handoff 319; Sierra can read each program's own course list (#1826-#1829); sheet 22.
+- 2026-10-02 (S317 SkyCompass): KB note `methodology-a-gateway-error-is-not-an-answer`; handoff 318; the MAP Custom Report loader reads back after a 5xx and never re-sends a landed batch or the promotion ([#1824](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1824)); the grants re-check closed.

@@ -346,3 +346,56 @@ know them; every sheet named in chat carries its link.
 **NEXT.** Sam's answers on [sheet 29](https://claude.ai/artifact/FhxQ5HXM1EBffhS5ce3Tj7)
 (sequence path, Sierra's "required", the addenda table); the tab mock-up's next
 round; the port into COBI.
+
+## S326 SkyAddendum, 2026-10-04: sheet 29 carried out, the addenda table, the record of a refusal, and Sierra's catalog requirements
+
+Sam answered all five cards of sheet 29 between 11:54 and 12:00Z. Cards 2, 3 and
+5 shipped in #1850; card 4 (Sierra's "required" for checked records) in #1851.
+
+39. **One privilege word stalls the whole migration.** The addenda file timed out
+    at 60 s on the Supabase connector's confirmation and wrote nothing, because it
+    carried its revokes. Split it: a create-only part applies at once, and the
+    close goes to a person as a receipt. Make the write function security invoker
+    so row-level security alone keeps the public roles out while the close waits;
+    a security definer function would be callable by PUBLIC until then.
+40. **A block that raises at its end tests a write function live and keeps
+    nothing.** Run the calls in an anonymous block through the migration path,
+    put the results in the exception text, and raise. The transaction rolls back
+    and no migration is recorded. It runs as the owner, so read grants separately.
+41. **A note that must survive the weekly read goes in a column the writer never
+    names.** `program_source_census_apply()` rewrites `sequence_source` and
+    `sequence_url` every Sunday; the refusal went into four new columns it never
+    touches, so Sam's "note this in the record for the college" outlives the next
+    census.
+42. **"Workaround" means another public source.** Sam asked the agent to keep
+    looking for solutions or workarounds rather than ask permission. The reader
+    still carries the census user agent that names the CPL Initiative (his own
+    call 5 on sheet 23), so it never asks a refusing host again under another
+    name; it looks on the college's own pages and probes each refused host's
+    front page once a run.
+43. **A change rule needs every direction that matters.** The probe flagged a
+    refused host that opened and missed Santa Monica, whose page had timed out in
+    the morning and answered in the afternoon. `changed()` now covers both.
+44. **A smoke negative tied to one program goes stale when that program gains
+    data.** 7l's "never adds up the units" asked about Mt. SAC's LVN-to-RN degree,
+    which became a checked record in this run. The negative moved to El Camino,
+    a college with no record (7q), and 7l now expects the catalog year.
+45. **A mutation script restores its file in a `finally`.** One loop stopped on its
+    own assertion and left `index.ts` mutated; the tightened test then reported a
+    "bug" that was the mutation. Compare with the backup before believing a red.
+46. **Verify a hand-carried load by hashing each row against its source.** The
+    records went through four 11 KB tool arguments. Postgres prints jsonb with keys
+    ordered by length then bytes and `", "` / `": "` separators; reproduce that in
+    Python, and the record, checks and column hashes matched on all 20 rows.
+47. **A public table holds what its reader renders.** The extraction's working
+    notes ("a reviewer should confirm") stay in the repo; the table stores
+    `{program, blocks}`.
+
+**Sam's rulings this run:** sheet 29, all five his own calls (card 1 later; card 2
+guard lifted; card 3 a note on the college's record, no ask for access; card 4 yes;
+card 5 go).
+
+**NEXT.** Deploy Sierra's catalog requirements once #1851's A/B is clean; Sam
+pastes the four receipts on sheet 31; the addenda reading agent once the next
+apply fills the table; a sequence read (`read: 1`) that looks for Miramar's map
+on its own pages.
