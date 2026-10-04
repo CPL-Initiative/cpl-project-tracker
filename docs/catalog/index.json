@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 516,
+   "count": 517,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9358,6 +9358,25 @@
      "updated": "2026-06-28"
     },
     {
+     "created": "2026-10-04",
+     "governs": [
+      "kb/supabase_program_source_addenda.sql",
+      "kb/receipts/program_source_addenda_close_2026-10-04_s326.sql",
+      "chatbox/supabase_program_requirement_records.sql",
+      "kb/receipts/program_requirement_records_close_2026-10-04_s326.sql"
+     ],
+     "path": "docs/kb-notes/playbook-ship-a-table-before-its-privilege-close.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "supabase",
+      "rule-10"
+     ],
+     "title": "Ship a new table before its privilege close, when the database tool holds the close",
+     "type": "playbook",
+     "updated": "2026-10-04"
+    },
+    {
      "created": "2026-06-29",
      "governs": [
       "kb/supabase_project_lifecycle.sql",
@@ -14741,8 +14760,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 297,
+   "count": 298,
    "docs": [
+    {
+     "created": "2026-10-04",
+     "governs": [],
+     "n": 327,
+     "path": "docs/session_327_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "addenda",
+      "sierra",
+      "decision-sheet"
+     ],
+     "title": "sheet 29 carried out; Sierra's catalog requirements await the A/B and a deploy; sheet 31 holds one paste card",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-04",
      "governs": [],
@@ -19796,5 +19832,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1033
+ "total": 1035
 }

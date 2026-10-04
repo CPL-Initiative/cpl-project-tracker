@@ -31,6 +31,10 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 31 (S326 checkpoint, 2026-10-04, SHEET_ID 2026-10-04-open-asks-31): sheet 30 carried no replies; its
+one card gains a fourth file, the privilege close for program_requirement_records (card 4's table).
+Published at https://claude.ai/artifact/89S8oEi5Yi1ZpDeUwBsfJu (capabilities db + comments).
+
 Sheet 30 (S326, 2026-10-04, SHEET_ID 2026-10-04-open-asks-30): Sam answered all five cards of sheet 29
 (https://claude.ai/artifact/FhxQ5HXM1EBffhS5ce3Tj7) between 11:54Z and 12:00Z, each his own call: card 1
 later, card 2 guard lifted (S326 ran the six addresses), card 3 a note on the college's record and no ask
@@ -188,8 +192,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-30.html')
-SHEET_ID = '2026-10-04-open-asks-30'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-31.html')
+SHEET_ID = '2026-10-04-open-asks-31'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -726,27 +730,28 @@ def items():
     # privilege close met the same confirmation and wrote nothing.
     I.append({
         'lane': 'program-requirements-harvest',
-        'title': "Paste three files in the SQL editor",
+        'title': "Paste four files in the SQL editor",
         'ref': 'program-requirements-harvest NEEDS SAM · kb/receipts/cpl_memory_2026-10-03_s320.sql · '
                'kb/receipts/cpl_memory_2026-10-03_s321.sql · '
-               'kb/receipts/program_source_addenda_close_2026-10-04_s326.sql',
+               'kb/receipts/program_source_addenda_close_2026-10-04_s326.sql · '
+               'kb/receipts/program_requirement_records_close_2026-10-04_s326.sql',
         'facts': (
             "Two are the memory receipts you marked for later on sheet 29: three rows, each naming one of "
             "the SQL words the Supabase connector holds for a confirmation that never reaches you (the call "
-            "times out at 60 seconds and writes nothing). The third is new. On your go (sheet 29, card 5) "
-            "the catalog addenda table is live, and its privilege close met the same confirmation. Until it "
-            "runs, the default privileges still hand the public roles every table privilege on the two new "
-            "tables. Row-level security refuses their inserts, updates and deletes, and the write function "
+            "times out at 60 seconds and writes nothing). The other two are new. On your go and your yes "
+            "(sheet 29, cards 5 and 4) the catalog addenda table and the program requirement records table "
+            "are live, and each privilege close met the same confirmation. Until they run, the default "
+            "privileges still hand the public roles every table privilege on the three new tables. Row-level security refuses their inserts, updates and deletes, and the write function "
             "runs with the caller's own rights, so nothing has been exposed to a write; the close removes "
             "the extras outright, as on the registry."),
         'why': "The memory rows complete a session's memory read; the close finishes the addenda table to "
                "the standard every shared table here meets (CLAUDE.md Rule 10 b2).",
-        'rec': "<strong>Paste all three:</strong> open the Supabase SQL editor and run each file whole. The "
+        'rec': "<strong>Paste all four:</strong> open the Supabase SQL editor and run each file whole. The "
                "memory files skip any row already written and end with a read-back where every row shows "
-               "<code>creates = 1</code>; the close ends with a read-back where every public-role row reads "
+               "<code>creates = 1</code>; each close ends with a read-back where every public-role row reads "
                "false. <em>It might be wrong if</em> the connector's prompt now reaches you; then reply here "
                "and a session runs them while you watch.",
-        'chips': chips(('Pasted all three', 'pasted'), CH_LATER),
+        'chips': chips(('Pasted all four', 'pasted'), CH_LATER),
         'evidence': [live('2026-10-04', "program_source_addenda privileges read through the Supabase "
                           "connector after Part A: RLS on, one SELECT policy, anon holds the default table "
                           "privileges, the write function is security invoker"),

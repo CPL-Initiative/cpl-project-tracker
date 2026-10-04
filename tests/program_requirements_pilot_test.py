@@ -763,8 +763,13 @@ check(targets.get("Cañada College") == "https://canada.programmapper.ws/academi
       "the census's own address is probed as it was")
 check(Q.access_now(403, "blocked") == "refused" and Q.access_now(None, "unreachable") == "unreached"
       and Q.access_now(200, "ok") == "answered", "a probe's result reads in the registry's words")
-check('out[-1]["changed"]' in ssrc and "OPENED" in ssrc,
-      "a refused host that answers is flagged for a session to file")
+check(Q.changed("refused", "answered") and Q.changed("unreached", "answered"),
+      "a refused host that answers, or an unreached page that loads, is flagged for a session to file")
+check(not Q.changed("refused", "refused") and not Q.changed("not_read", "answered")
+      and not Q.changed("open", "answered") and not Q.changed(None, "answered"),
+      "a refusal that persists, or a page already on record as answering, is no change")
+check('out[-1]["changed"] = changed(' in ssrc and "CHANGED: file it" in ssrc,
+      "the probe prints each change for a session to file")
 check("if host(url) in refused:" in ssrc and "refused_hosts(registry, entry[\"college\"])" in ssrc,
       "the program read skips every host the registry records as refused")
 check("SEQUENCE_READ: ${{ github.event.inputs.read }}" in sactive,

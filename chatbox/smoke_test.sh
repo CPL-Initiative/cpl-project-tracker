@@ -824,11 +824,35 @@ fi
 run "7l program course list (Mt. San Antonio, LVN to RN)" \
   "$(printf '{"query":"%s","session_id":"smoke-ci","history":[]}' "$PL_QUESTION")"
 answer_must_match "\b(ANAT|MICR|PSYC|ENGL|COMM|CHLD|AMLA)[ -]?C?[0-9]" "7l ⭐ names a course the LVN-to-RN program lists outside nursing, BY NUMBER (ANAT 35, MICR 22, PSYC 14 …; the TOP proxy reaches none of them)"
-answer_must_not_match -i "total(ing|s)? (of )?[0-9]+(\.[0-9]+)? units|[0-9]+(\.[0-9]+)? units (in )?total" "7l ⭐ never adds up the units — honors twins and alternatives are listed together"
+# Since S326 the LVN-to-RN option carries a CHECKED record (Sam, open-asks sheet
+# 29 card 4): its block is CATALOG REQUIREMENTS from Mt. SAC's 2026-2027 catalog,
+# and Sierra may say required and give the total the catalog prints. The
+# "never adds up the units" negative moved to 7q, a college with no record.
+answer_must_match -i "2026[-–/ ](20)?27" "7l ⭐ names the 2026-2027 catalog its checked record was read from"
 # The S319 A/B candidate wrote that honors versions "appear side by side rather
 # than as substitutes you'd choose between": a student reading it takes ENGL
 # C1000 and ENGL C1000H both. An honors pair is one choice.
 answer_must_not_match -i "rather than (as )?(substitutes|alternatives)|(are|as) not (substitutes|alternatives)|take both (the )?honors" "7l ⭐ never tells the visitor an honors pair is two courses to take"
+
+# ── MODE 7q: catalog requirements only where a record is checked (S326) ───────
+# Sam, open-asks sheet 29 card 4 (2026-10-04, "yes"): where a program's record
+# passed all four checks, Sierra may say required and give the total the
+# catalog prints; every other program keeps "lists". The public read shows
+# checked rows only (chatbox/supabase_program_requirement_records.sql), so the
+# retrieval assert is the anon key reading Mt. SAC's LVN-to-RN record, and the
+# answer assert is the old negative on a college that holds no record at all.
+echo "===================================================================="
+echo "MODE: 7q catalog requirements for a checked record; lists for every other program"
+qrow="$(curl -sS --max-time 30 "$REST_BASE/program_requirement_records?select=control_number,catalog_year,total_min,total_max&college=eq.Mt.%20San%20Antonio%20College&control_number=eq.08086" \
+  -H "apikey: $ANON" -H "Authorization: Bearer $ANON")"
+case "$qrow" in
+  *'"08086"'*'"2026-2027"'*) echo "  [assert ok] 7q ⭐ the anon key reads the checked LVN-to-RN record (2026-2027 catalog)" ;;
+  *) echo "::error::7q ⭐ the anon key read $(printf '%s' "$qrow" | head -c 200) for Mt. SAC 08086 — expected its checked record. Check that kb/receipts/program_requirement_records_load_2026-10-04.sql was applied."; fail=1 ;;
+esac
+run "7q program course list without a checked record (El Camino, Welding)" \
+  '{"query":"What courses are in the Welding program at El Camino College?","session_id":"smoke-ci","history":[]}'
+answer_must_match -i "\bWELD[ -]?[0-9]" "7q names a Welding course by number"
+answer_must_not_match -i "total(ing|s)? (of )?[0-9]+(\.[0-9]+)? units|[0-9]+(\.[0-9]+)? units (in )?total" "7q ⭐ never adds up the units for a program without a checked record — honors twins and alternatives are listed together"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).

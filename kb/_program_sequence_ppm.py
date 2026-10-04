@@ -36,7 +36,8 @@ reader never requests a host recorded as refused, and keeps its name: it never
 retries a refusal another way. It looks elsewhere on the college's own pages for
 the program's map or sequence (a page or PDF naming the program and a map,
 pathway, roadmap or sequence), and the probe asks each recorded host's front
-page once a run whether it has opened, printing any change for a session to file.
+page once a run whether it has opened, printing any change for a session to file
+(CHANGED: file it).
 
 It writes nothing. It prints a JSON object per program between markers, which a
 session reads from the job log through the GitHub MCP. The reads follow the
@@ -423,6 +424,15 @@ def probe_targets(rows: list[dict]) -> list[dict]:
     return out
 
 
+def changed(registry: str | None, now: str) -> bool:
+    """A probe result a session files on the registry: a refused host that now
+    answers, or an unreached page that now loads (Santa Monica's program maps,
+    run 37209313523). A refusal that persists, or a not_read college page that
+    still answers, changes nothing."""
+    return bool((registry == "refused" and now != "refused")
+                or (registry == "unreached" and now == "answered"))
+
+
 def access_now(status, access: str | None) -> str:
     """The registry's word for what a probe just saw."""
     if status == 403 or access == "blocked":
@@ -445,11 +455,11 @@ def probe_sources(reader, rows: list[dict]) -> list[dict]:
                     "error": got.get("error"),
                     "registry": r.get("sequence_access"),
                     "now": access_now(got.get("status"), got.get("access"))})
-        out[-1]["changed"] = bool(out[-1]["registry"] == "refused" and out[-1]["now"] != "refused")
+        out[-1]["changed"] = changed(out[-1]["registry"], out[-1]["now"])
         print("%-34s %-17s %-5s %-16s %-28s registry %-9s%s" % (
             r["college"][:34], r["sequence_source"], out[-1]["status"], out[-1]["access"],
             out[-1]["final_host"][:28], out[-1]["registry"] or "-",
-            "  OPENED: file it" if out[-1]["changed"] else ""), flush=True)
+            "  CHANGED: file it" if out[-1]["changed"] else ""), flush=True)
     return out
 
 

@@ -179,8 +179,8 @@ the link into the mapper, and accepts a page naming half the program's listed
 courses and at least two terms. **Run 1 (37197332656, 2026-10-04):** a web search
 found Miramar's own mapper page (`sdmiramar.edu/program-mapper`, with deep links
 `?pg=/academics/interest-clusters/<id>/programs/<id>`), and its "View Program
-Mapper" link leads to `san-diego-miramar.programmapper.com`, which answered all
-seven requests **403 Forbidden**. None of the 20 captured catalog pages prints a
+Mapper" link leads to `san-diego-miramar.programmapper.com`: seven requests, all
+**403 Forbidden**. None of the 20 captured catalog pages prints a
 term sequence.
 
 **A refusal is on the college's record (Sam, sheet 29 card 3, 2026-10-04 11:59Z):**
@@ -192,13 +192,13 @@ workarounds."* So no access request goes to Miramar or the mapper's operator.
 `sequence_note`, `sequence_checked_run`), filled S326 for 25 colleges from the two
 runs' evidence: **18 refused** (Miramar's mapper and the probe's 17), **5 not read**
 (Bakersfield, LA Harbor, Merced and West LA link to a mapper not yet read; Palo
-Verde's address is a homepage `#`), **1 open** (Irvine Valley's own maps page),
-**1 unreached** (Santa Monica timed out). Receipt:
-`kb/receipts/program_source_registry_sequence_access_2026-10-04_s326.sql`; the
-history trigger now names `sequence_checked_run`. The reader reads them: it never
+Verde's address is a homepage `#`), **2 open** (Irvine Valley's and Santa Monica's
+own maps pages; Santa Monica timed out in the morning probe and answered in run
+37209313523, filed by `..._2026-10-04b_s326.sql`). Receipt:
+`kb/receipts/program_source_registry_sequence_access_2026-10-04_s326.sql`. The reader reads them: it never
 requests a host on record as refused, follows the college's own links to the
 program's map, pathway, roadmap or sequence (a page or a PDF), and the probe asks
-each recorded host's front page once a run, flagging `OPENED: file it` when one
+each recorded host's front page once a run, flagging `CHANGED: file it` when a refused host or an unreached page now
 answers. ⚠️ **"Workaround" means another public source, never the same refused
 host under another name:** the reader keeps the census user agent that names the
 CPL Initiative (Sam's call 5 on sheet 23), so it never retries a refusal in
@@ -240,16 +240,12 @@ slot, and then dropped them. `addendum_links()` now records each addendum,
 supplement or errata link on the homepage, a catalog index or the catalog page,
 for the current or prior catalog year, in `census_evidence -> 'addenda'` (job log
 on a branch; the registry's evidence on the weekly apply, through the existing
-write function). `addendum_start_year()` dates a link from every year its words
-or file name carry: a pair (2026-27), a span (2023-2025 amends its last year), a
-two-digit path pair (/24-25/), a single year (a fall term or month starts the
-year, any other ends it); an upload folder's year never counts. Left out: older
-years, archives, class-schedule and important-dates addenda, calendars,
-"Supplemental Instruction", a sibling college's addendum, and reader-service
-copies. **Measured (run 37199538519, replayed offline with the final filter): 78
-addenda at 52 of 118 colleges** (2026-27: 19; 2025-26: 41; no year named: 18).
-The raw read found 136 at 58; every one of the 57 dropped was older, a schedule's,
-a calendar's or a proxy copy.
+write function). `addendum_start_year()` dates a link from the years its words or
+file name carry (the rules and their cases are in the module and its guard).
+Older years, archives, schedules' and calendars' addenda, a sibling's and
+reader-service copies stay out. **Measured: 79 addenda at 52 of 118 colleges**
+(2026-27: 19; 2025-26: 42; no year named: 18) in the dry run at #1848's head
+(37200460417); the offline replay had read 78 (41 for 2025-26).
 - **The table is live (Sam's "Go", sheet 29 card 5, 12:00Z; S326):**
   `program_source_addenda`, one row per (college, url), the catalog year it amends,
   a status (listed, read, applied, gone, not an addendum), `programs_changed` for
@@ -270,11 +266,9 @@ a calendar's or a proxy copy.
   apply:** today's Sunday 10:29 schedule did not fire (no scheduled run on the
   list), so the first rows land 2026-10-11, or on a hand dispatch with `mode:
   apply` on `main`.
-- **Agents aware (the plan):** the census lists addenda; a reading agent reads
-  each listed addendum, files which programs it changes, and marks it read; a
-  program record carries the addenda it was checked against, and a record whose
-  college has an unread addendum for its catalog year is flagged; Sierra cites
-  "the 2026-27 catalog as amended by the addendum of <date>".
+- **Next (the plan):** a reading agent files which programs each addendum changes;
+  a record names the addenda it was checked against, and Sierra cites "the
+  2026-27 catalog as amended by the addendum of <date>".
 
 **Sam's sheet 29 (2026-10-04, 11:54-12:00Z, all five his own calls):** (2) *Guard
 lifted: run it*: S326 ran the six catalog addresses through the migration path
@@ -282,17 +276,21 @@ lifted: run it*: S326 ran the six catalog addresses through the migration path
 with its prior row in the history table. (3) the record note above. (4) **yes**:
 Sierra may say "required", name each choose block and give the total for a program
 whose record passed all four checks, citing the catalog and its year; every other
-program keeps "lists". Built next behind the A/B preview and a smoke (it needs the
-records in a table Sierra reads; today they are repo files). (5) the addenda table
-above.
+program keeps "lists". Built S326: `program_requirement_records` (live; anon reads
+checked rows only) holds the 20 pilot records, all checked, loaded by
+`kb/_program_requirements_load.py` (record and checks hashes match the repo's files);
+Sierra's Program Course Lists block renders a checked program as CATALOG
+REQUIREMENTS (the catalog's block names, "or" alternatives, option groups, the
+printed total). Smoke 7q pins the anon read and keeps "never adds up" on El Camino
+(no record); 7l expects Mt. SAC's 2026-2027 catalog. (5) the addenda table.
 
-**NEEDS SAM (open-asks sheet 30):** paste three files in the SQL editor:
+**NEEDS SAM (open-asks sheet 31):** paste four files in the SQL editor:
 `kb/receipts/cpl_memory_2026-10-03_s320.sql` and `..._s321.sql` (his call on
-sheet 29: later; three rows name a word the connector stalls on) and
-`kb/receipts/program_source_addenda_close_2026-10-04_s326.sql` (the addenda
-table's privilege close).
+sheet 29: later; three rows name a word the connector stalls on), and the two
+privilege closes, `program_source_addenda_close_2026-10-04_s326.sql` and
+`program_requirement_records_close_2026-10-04_s326.sql`.
 
-**NEXT:** Sierra's "required" for checked records (sheet 29 card 4); Sam's
+**NEXT:** deploy Sierra's catalog requirements after the A/B; Sam's
 reaction to the tab mock-up, then the port into COBI (a static tab plus the
 Sierra surface); the addenda reading agent once the table has rows; a sequence
 read that looks for Miramar's map on its own pages (`read: 1`); the Butte College Tech
