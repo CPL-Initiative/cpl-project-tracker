@@ -268,6 +268,9 @@ FIXTURES = {
                                  "select college from coci_college_programs union select 'California State University Los Angeles';"),
     "p_outcomes_in_pilot_pages": ("required: {program, blocks}; block: {name, rule, courses}",
                                   "required: {program, blocks, outcomes}; outcomes: as printed"),
+    # S328: sheet 34 card 2 (no per-college procedure record in the registry or the reader yet).
+    "p_no_procedure_record": ("create table public.program_source_registry (college text, catalog_url text);",
+                              "alter table public.program_source_registry add column procedure jsonb;"),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():

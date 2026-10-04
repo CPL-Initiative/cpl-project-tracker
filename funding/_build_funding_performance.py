@@ -207,6 +207,16 @@ P2_MIN_UNITS = 6.0
 
 TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City College",
                  "CA MAP INITIATIVE COLLEGE", "RivTest", "MorTest", "Nortest"}
+# Institutions on MAP that sit outside the California Community Colleges.
+# Sam, open-asks sheet 33 card 2 (2026-10-04): "funding is only provided to CCC
+# colleges and campuses." Cal State LA, the first CSU on MAP, stays counted as
+# a MAP participant (his opening note: "Keep CSU LA in the mix"), so it is left
+# out here BY NAME, beside the partners: skipped at the row, it reaches no
+# college, no statewide total and no `unmatched` bucket. MAP's identity data
+# holds no row for it to classify, which is why the name lives here.
+NON_CCC_INSTITUTIONS = {"California State University Los Angeles",
+                        "California State University, Los Angeles",
+                        "Cal State LA", "CSU Los Angeles", "CSULA"}
 # MAP's own identity data names the agencies we host a CPL landing page for as
 # `entity_kind: "partner"` (kb/_build_college_identity_crosswalk.py).
 COLLEGE_IDENTITY_DIR = os.path.join(ROOT, "kb", "college_identity")
@@ -847,6 +857,8 @@ def main():
     state_type_seen = set()                     # per-(type,sid,metric) dedupe
     partner_stems = _partner_stems()
     partners_skipped = {}                       # partner name -> rows skipped (names only on emit)
+    non_ccc_stems = {_stem(n) for n in NON_CCC_INSTITUTIONS}
+    non_ccc_skipped = {}                        # institution name -> rows skipped (names only on emit)
     rowno = 0
     for row in ds["rows"]:
         rowno += 1
@@ -855,6 +867,9 @@ def main():
             continue
         if _stem(college) in partner_stems:
             partners_skipped[college] = partners_skipped.get(college, 0) + 1
+            continue
+        if _stem(college) in non_ccc_stems:
+            non_ccc_skipped[college] = non_ccc_skipped.get(college, 0) + 1
             continue
         if i_test is not None and (row[i_test] or "").strip().lower() == "yes":
             continue
@@ -1322,6 +1337,10 @@ def main():
     if partners_skipped:
         print("funding-performance: skipped MAP partner agencies (not CCCs, so outside the funding "
               "model): " + ", ".join(f"{n} ({k} rows)" for n, k in sorted(partners_skipped.items())))
+    if non_ccc_skipped:
+        print("funding-performance: skipped institutions outside the CCC system (funding goes only to "
+              "CCC colleges and campuses): "
+              + ", ".join(f"{n} ({k} rows)" for n, k in sorted(non_ccc_skipped.items())))
 
 
 if __name__ == "__main__":
