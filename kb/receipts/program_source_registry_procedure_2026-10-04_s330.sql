@@ -1,0 +1,187 @@
+-- S330 (SkyRoutine), 2026-10-04: Cerritos College's procedure record, version 2.
+-- The procedure record is one per college (Sam, sheet 34 card 2) and carries its history; S329 wrote v1 and
+-- Sam pasted it from sheet 35 (21:42Z). v2 adds reads 4 and 5 (#1859: runs 37241442265, 37241996688): the
+-- Schedule+ form steps, statewidepathways.org gone, the Credit by Exam route, the AED and IWAP sections, and
+-- the high school list's request drafted and held. Anyone with the public key reads the registry, so the
+-- record names hosts and offices, never staff.
+--
+-- Rule 10: a guarded UPDATE on one row. Fresh read at write time (2026-10-04 ~23:08Z): corrected_by null,
+-- census_run_id census-20261004T152831Z-s3of4, procedure_by 'college-page-read S329', md5(procedure::text)
+-- 7083fab589599bb1ec590a8edc24f06e. The guard writes only while the record is still that v1. The history trigger files the prior row
+-- under changed_by 'college-page-read S330'.
+-- Before-value: v1, verbatim in kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql.
+-- Rollback (Rule 10 a2):
+--   update public.program_source_registry r
+--      set procedure = h.old_row->'procedure',
+--          procedure_by = h.old_row->>'procedure_by',
+--          procedure_at = (h.old_row->>'procedure_at')::timestamptz
+--     from (select old_row from public.program_source_registry_history
+--            where college = 'Cerritos College' and changed_by = 'college-page-read S330'
+--            order by changed_at desc limit 1) h
+--    where r.college = 'Cerritos College';
+
+update public.program_source_registry
+   set procedure    = '{
+ "v": 2,
+ "college": "Cerritos College",
+ "reader": "kb/_college_page_read.py (robots.txt first, 4 s between loads, the census user agent; a plan''s page may submit a form)",
+ "hosts": [
+  {
+   "host": "www.cerritos.edu",
+   "access": "open",
+   "platform": "custom_html",
+   "note": "The college''s own pages. Each wraps a menu, a footer and a 240-language picker; the reader reads the main region. Older /epp/, /technology/ and /releases-2026/ addresses redirect under /academics/divisions/ and /newsroom/releases/. robots.txt disallows /uploads/. The board procedure address /board/_includes/docs/AP/Chapter-4/AP-4050.pdf answers 404 (2026-10-04)."
+  },
+  {
+   "host": "cerritos-public.courseleaf.com",
+   "access": "open",
+   "platform": "courseleaf",
+   "note": "The 2026-27 catalog. Program pages print course lists with units; course-description pages print each course''s contact hours. The department PDF under /departments/adult-education/ answers 404. The Educational Partnerships and Programs page states the high school route."
+  },
+  {
+   "host": "secure.cerritos.edu",
+   "access": "open",
+   "platform": "custom_cgi",
+   "note": "Schedule+ (Fall 2026 and Spring 2027). A department is chosen by form: POST /schedule/courses.cgi with Terms (1269 Fall 2026, 1273 Spring 2027), Depts (AED, IWAP) and Alldepts cleared, submitted with the ViewDepartments button; the form has no search button, and with no submitter it answers ''No classes matched your criteria.'' Start Months default to Fall''s (2026-08 to 2026-11): clear them for Spring. The status boxes checked by default are Closed, Open and Wait List, so a tentative or cancelled section does not show."
+  },
+  {
+   "host": "hsarticulation.cerritos.edu",
+   "access": "unreached",
+   "note": "No DNS record on 2026-10-04 (run 37232742985), though search results still list its About page."
+  },
+  {
+   "host": "www.statewidepathways.org",
+   "access": "gone",
+   "platform": "outside",
+   "note": "Statewide Career Pathways (the ASCCC''s SB 70 articulation database), where Cerritos''s Technology page says its agreements are public. On 2026-10-04 (run 37241442265) both the https and http addresses redirected to a domain-for-sale page."
+  },
+  {
+   "host": "regionalcte.org",
+   "access": "open",
+   "platform": "outside",
+   "note": "The Los Angeles regional program record for the B.S. (browse/ZyxAg). Its course table renders only in a browser."
+  },
+  {
+   "host": "web.dusd.net",
+   "access": "open",
+   "platform": "outside",
+   "note": "Downey Unified, the partner district whose welding pathway maps to Cerritos''s WELD courses."
+  },
+  {
+   "host": "www.cccco.edu",
+   "access": "open",
+   "platform": "outside",
+   "note": "The Chancellor''s Office''s Baccalaureate Degree Program page lists Field Ironworker Supervision (coming soon) among the approved programs; read from the session container on 2026-10-04."
+  }
+ ],
+ "steps": [
+  {
+   "date": "2026-10-04",
+   "run": "37232742985",
+   "plan": "kb/college_reads/cerritos_ironworker_ladder.json",
+   "loads": 20,
+   "reached": 18,
+   "found": "The regional record''s B.S. course list (23 courses, 60 units) and admission rule; Cerritos''s May 2026 statement that the B.S. is approved; the Pre-Apprenticeship certificate''s 188 hours and its registered-apprentice rule. The log window (5,000 lines) cut the first two pages."
+  },
+  {
+   "date": "2026-10-04",
+   "run": "37233721702",
+   "plan": "kb/college_reads/cerritos_ironworker_ladder_read2.json",
+   "loads": 14,
+   "reached": 12,
+   "found": "The Field Ironwork page: a four-year apprenticeship, the B.S. open to graduates from Spring 2027. The IWAP course descriptions: 878 contact hours on the Reinforcing track, 898 on the Structural. The Technology division: agreements published through Statewide Career Pathways. Downey Unified''s 2023 board presentation: the Columbus High welding pathway maps to WELD 60 and WELD 100."
+  },
+  {
+   "date": "2026-10-04",
+   "run": "37234256967",
+   "plan": "kb/college_reads/cerritos_ironworker_ladder_read3.json",
+   "loads": 4,
+   "reached": 4,
+   "found": "All 26 AED 40.01-41.10 noncredit ironworker courses are in the 2026-27 catalog; WELD 60 is now WELD 160; the Schedule+ form''s fields; the Technology page names Statewide Career Pathways without a link and states the Credit by Exam steps (a B or better)."
+  },
+  {
+   "date": "2026-10-04",
+   "run": "37241442265",
+   "plan": "kb/college_reads/cerritos_ironworker_ladder_read4.json",
+   "loads": 7,
+   "reached": 5,
+   "found": "statewidepathways.org redirects to a domain-for-sale page over https and http. The 2026-27 catalog''s EPP page: credit for an articulated high school, ROP or adult school course comes through Credit by Exam, residency waived; dual enrollment (CCAP) is the other route. The 2026 Welding roadmap lists eight certificates and no articulation. The Schedule+ submission went with no submitter and matched nothing."
+  },
+  {
+   "date": "2026-10-04",
+   "run": "37241996688",
+   "plan": "kb/college_reads/cerritos_ironworker_ladder_read5.json",
+   "loads": 6,
+   "reached": 5,
+   "found": "Schedule+ with ViewDepartments: Fall 2026 lists sections of 22 IWAP courses (IWAP 40.05 through 41.08) and of no AED 40.01-41.10 course, nor AED 36.02-36.04 or 80.01; AED 90.05 OSHA-10 runs. Spring 2027 lists no IWAP and no AED 40-41 section. The Credit by Examination petition: file with EPP within two years of the high school course, up to 30 units; it points to /epp/articulation_agreements.htm for the agreements. AP 4050 answers 404."
+  }
+ ],
+ "answers": [
+  {
+   "question": "The B.S. course list, admission rule and first cohort.",
+   "status": "partly answered",
+   "answer": "Proposed list and admission rule from the 2024 regional record; first entry Spring 2027 (Field Ironwork page); the Chancellor''s Office lists the degree as approved, coming soon. Open: whether the approved degree keeps the 2024 list; the 2026-27 catalog does not list it."
+  },
+  {
+   "question": "The high school articulation list.",
+   "status": "partly answered",
+   "answer": "The route: Credit by Exam for an articulated course (a B or better; the Cerritos application; the petition filed with EPP within two years; up to 30 units; residency waived), or a CCAP dual enrollment course. The list: no public source. Cerritos''s own pages print none, hsarticulation.cerritos.edu has no DNS record, and Statewide Career Pathways is a parked domain. Downey Unified maps the Columbus High welding pathway to WELD 160 and WELD 100."
+  },
+  {
+   "question": "Whether the 26 noncredit AED courses still run.",
+   "status": "answered",
+   "answer": "All 26 are in the 2026-27 catalog; Schedule+ on 2026-10-04 lists no section of any in Fall 2026 or Spring 2027 (Closed, Open and Wait List sections)."
+  },
+  {
+   "question": "The apprenticeship''s classroom hours.",
+   "status": "answered",
+   "answer": "878 contact hours on the Reinforcing track (622 lecture, 256 laboratory) and 898 on the Structural track (677 and 221), from the 2026-27 IWAP course descriptions; the apprenticeship runs four years. Fall 2026 lists sections of 22 IWAP courses."
+  }
+ ],
+ "nuances": [
+  "Articulation is faculty-driven: the Educational Partnerships & Programs office drafts each agreement on the Statewide Career Pathways template and keeps the signed original; the template''s public database is gone.",
+  "High school credit comes by Credit by Exam after an articulated course, or through CCAP dual enrollment taught at the high school.",
+  "Every IWAP course requires a registered state indentured apprentice; the noncredit Pre-Apprenticeship certificate requires acceptance by an apprenticeship program and registration with the State.",
+  "The ironworker flyer prints 27.5 certificate units over 8 semesters; the 2026-27 catalog prints 34 and 38. The catalog of the academic year wins (sheet 23).",
+  "Cerritos''s 2026 programs flyer and its 2026-27 catalog list Dental Hygiene as its only B.S.; the Field Ironworker Supervision B.S. appears on its Field Ironwork page, in its State of the College release and on the Chancellor''s Office''s list.",
+  "Schedule+ posts a term''s sections over time: on 2026-10-04 Spring 2027 listed AED sections but no IWAP section."
+ ],
+ "workarounds": [
+  {
+   "for": "Schedule+ chooses departments by form",
+   "tried": "A form step in the reader (read 4), then the ViewDepartments button named (read 5)",
+   "result": "worked"
+  },
+  {
+   "for": "The articulation list at Statewide Career Pathways",
+   "tried": "https and http addresses (read 4); the EPP pages (read 1); hsarticulation.cerritos.edu (read 1); web search for CATEMA and agreement lists",
+   "result": "no public source"
+  }
+ ],
+ "open": [
+  {
+   "question": "Cerritos''s list of articulated high school courses, and Columbus High''s route",
+   "next": "Every public source is tried. A request to Cerritos''s Educational Partnerships & Programs office is drafted and held for Sam (outward)."
+  },
+  {
+   "question": "Spring 2027 sections for IWAP and AED 40.01-41.10",
+   "next": "Re-read Schedule+ (read 5''s plan, Spring spec) once the Spring schedule posts; Fall 2026 is read."
+  },
+  {
+   "question": "Whether the approved B.S. keeps the 2024 course list",
+   "next": "Watch the catalog addenda and the 2027-28 catalog; the census''s addenda pass already reads Cerritos."
+  }
+ ],
+ "request_ready": true,
+ "requests": [
+  {
+   "question": "Cerritos''s list of articulated high school courses, and Columbus High''s route",
+   "to": "Educational Partnerships & Programs office",
+   "status": "drafted, held for Sam"
+  }
+ ]
+}'::jsonb,
+       procedure_by = 'college-page-read S330',
+       procedure_at = now()
+ where college = 'Cerritos College'
+   and md5(procedure::text) = '7083fab589599bb1ec590a8edc24f06e';

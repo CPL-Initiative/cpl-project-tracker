@@ -55,6 +55,7 @@ window.CPL_PATHWAYS = {
           points: [
             { t: "Columbus High School's welding pathway (Downey Unified) maps to Cerritos's WELD 160 Welding and Metal Fabrication Safety (formerly WELD 60, 1 unit) and WELD 100 Welding Fundamentals (2.5 units), per the district's June 2023 board presentation.", s: "data" },
             { t: "Cerritos grants credit for an articulated high school, ROP or adult school course through Credit by Exam, and waives residency for it; dual enrollment (CCAP) is the other route, a Cerritos course taken while in high school (2026–27 catalog).", s: "data" },
+            { t: "The student files the petition with the Educational Partnerships office within two years of finishing the high school course, and may earn up to 30 units this way (Cerritos's Credit by Examination petition).", s: "data" },
             { t: "Which route Columbus High's pathway uses, and which other high school courses Cerritos has articulated: Cerritos's pages point to Statewide Career Pathways, whose address is now a parked domain, and its own pages publish no list.", s: "confirm" },
             { t: "Norwalk-La Mirada Adult School and Southeast ROP teach welding.", s: "confirm" },
             { t: "MAP holds no high school, adult school or ROP credit for prior learning at Cerritos.", s: "data" },
@@ -69,7 +70,7 @@ window.CPL_PATHWAYS = {
             { t: "The certificate admits registered apprentices only: the 2026–27 catalog requires acceptance by an apprenticeship program and registration with the State.", s: "data" },
             { t: "AED 36.05 Basic Welding, and OSHA 10 in AED 90.05.", s: "data" },
             { t: "Twenty-six noncredit courses, AED 40.01 through 41.10, mirror the credit IWAP courses one for one; all 26 are in the 2026–27 catalog.", s: "data" },
-            { t: "Whether those 26 courses have sections this term.", s: "confirm" },
+            { t: "Schedule+ lists no section of the 26 for Fall 2026 or Spring 2027, nor of the certificate's AED 36.02–36.04 and 80.01; AED 90.05 OSHA-10 runs both terms (read 4 October 2026).", s: "data" },
           ],
           cpl_map: "No CPL yet",
           cpl: "None yet. A noncredit-to-credit articulation would let each AED course count toward its IWAP twin; Santa Ana College's noncredit exhibit in MAP is the model." },
@@ -79,6 +80,7 @@ window.CPL_PATHWAYS = {
           points: [
             { t: "The apprenticeship runs four years, joining related technical instruction to on-the-job training (Cerritos's Field Ironwork page).", s: "data" },
             { t: "Classroom hours at Cerritos: the Reinforcing track's 16 courses carry 878 contact hours (622 lecture, 256 laboratory) and the Structural track's 898 (677 and 221), per the 2026–27 course descriptions.", s: "data" },
+            { t: "Fall 2026: Schedule+ lists sections of 22 IWAP courses, IWAP 40.05 Welding III through IWAP 41.08 Post-Tension III; Spring 2027 lists none yet (read 4 October 2026).", s: "data" },
             { t: "Local 433's joint apprenticeship committee trains at La Palma, and Local 416 in Norwalk.", s: "confirm" },
           ],
           cpl_map: "Credit by exam",
@@ -121,7 +123,6 @@ window.CPL_PATHWAYS = {
       confirm: [
         "Whether the approved B.S. keeps the 2024 course list.",
         "Cerritos's list of articulated high school courses (its pages point to Statewide Career Pathways, now a parked domain) and which route Columbus High's welding pathway uses.",
-        "Whether the 26 noncredit AED courses have sections this term (Schedule+ lists the term's sections).",
       ],
       confirm_note: "The harvest agent reads these pages first, from a runner. A request goes to Cerritos only after Cerritos's procedure record shows every step tried.",
       sources: [
@@ -133,6 +134,8 @@ window.CPL_PATHWAYS = {
         { label: "Cerritos College catalog 2026–27, WELD and AED course descriptions", url: "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/weld/" },
         { label: "Downey Unified, CTE pathways board presentation (June 27, 2023)", url: "https://web.dusd.net/wp-content/uploads/2023/06/CTE_6-27-23_BoE.pdf" },
         { label: "Cerritos College, 2026 State of the College (May 19, 2026)", url: "https://www.cerritos.edu/newsroom/releases/2026/05/SOTC.htm" },
+        { label: "Cerritos College Schedule+, Fall 2026 and Spring 2027 sections for AED and IWAP (read 4 October 2026)", url: "https://secure.cerritos.edu/schedule/index.cgi" },
+        { label: "Cerritos College, Petition for Credit by Examination for Articulated High School Course", url: "https://www.cerritos.edu/admissions-and-records/_includes/docs/forms/HS_Credit_By_Exam_Form_ua.pdf" },
         { label: "Cerritos College catalog 2026–27, Educational Partnerships and Programs", url: "https://cerritos-public.courseleaf.com/cerritos-college/programs-and-services/educational-partnerships-and-programs/" },
         { label: "California Community Colleges Chancellor's Office, Baccalaureate Degree Program (read 4 October 2026)", url: "https://www.cccco.edu/About-Us/Chancellors-Office/Divisions/Educational-Services-and-Support/What-we-do/Curriculum-and-Instruction-Unit/Curriculum/Baccalaureate-Degree-Program" },
         { label: "Chancellor's Office COCI program and course files (load of 16 July 2026)" },

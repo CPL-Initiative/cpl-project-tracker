@@ -11,7 +11,7 @@ through the GitHub MCP. What the read reaches and what it is refused becomes
 the college's procedure record (sheet 34 card 2: one per college, kept with its
 history on the college's program_source_registry row). The reader loads that
 record before each run, prints it, and leaves alone a host the record marks
-refused or unreached unless the plan's page says retry.
+refused, unreached or gone unless the plan's page says retry.
 
 Polite by construction, as the census and the pilot capture are: the census's
 Reader reads robots.txt first for every host, waits CENSUS_DELAY_MS before every
@@ -234,11 +234,13 @@ def submit_form(reader, spec: dict) -> dict:
     return out
 
 
-SKIP_ACCESS = {"refused", "unreached"}
+# A host the record marks gone answers, but not as the site the college names
+# (read 4, 2026-10-04: statewidepathways.org redirects to a domain-for-sale page).
+SKIP_ACCESS = {"refused", "unreached", "gone"}
 
 
 def skipped_hosts(procedure: dict | None) -> dict:
-    """host -> the record's note, for every host it marks refused or unreached."""
+    """host -> the record's note, for every host it marks refused, unreached or gone."""
     out = {}
     for h in (procedure or {}).get("hosts") or []:
         if h.get("host") and h.get("access") in SKIP_ACCESS:

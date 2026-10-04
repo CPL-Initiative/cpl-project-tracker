@@ -31,6 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 36 (S330, 2026-10-04, SHEET_ID 2026-10-04-open-asks-36): sheet 35 is answered (21:43Z). Two cards
+from Cerritos reads 4 and 5 (#1859): paste the procedure record's second version (the connector timed out
+at 60 s and wrote nothing, read back), and whether to send the drafted request for Cerritos's high school
+articulation list, the one question every public source has now failed to answer.
+
 Sheet 35 (S329 checkpoint, 2026-10-04, SHEET_ID 2026-10-04-open-asks-35): sheet 34 is answered (19:18Z).
 One card: Cerritos's procedure record. Sam said "apply the procedure record" in session; the migration
 (three columns, the trigger) landed, and the row's guarded UPDATE timed out twice at the connector, which
@@ -206,8 +211,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-35.html')
-SHEET_ID = '2026-10-04-open-asks-35'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-36.html')
+SHEET_ID = '2026-10-04-open-asks-36'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -661,6 +666,25 @@ def check_premises(I):
 
 CH_LATER = ('Later', 'later')
 
+E = m.E
+
+# Sheet 36 card 1: the guarded UPDATE, read from the S330 receipt at build time so the card and the
+# receipt never differ. The paste text starts at the statement itself: the receipt's header and its
+# rollback comment are comment lines, which sheet 35's first build pasted by mistake.
+def _receipt_update(rel):
+    text = _read(rel)
+    i = text.find('\nupdate public.program_source_registry\n')
+    if i < 0:
+        raise SystemExit('REFUSING TO BUILD — no UPDATE statement in %s' % rel)
+    return text[i + 1:].rstrip()
+
+
+SQL_V2 = _receipt_update('kb/receipts/program_source_registry_procedure_2026-10-04_s330.sql')
+
+# Sheet 36 card 2: the request, held for Sam (outward). House voice: CLAUDE.md, Naming & terminology.
+REQUEST_DRAFT = "Subject: Cerritos College high school articulation agreements\n\nGood afternoon,\n\nThe CPL Initiative at the California Community Colleges Chancellor's Office is mapping one pathway at Cerritos College, from high school through the Field Ironworker Supervision bachelor's degree, so that a student can see which earlier learning counts toward each award. Cerritos's 2026-27 catalog and its Petition for Credit by Examination for Articulated High School Course explain how a student earns credit for an articulated course, and the pathway cites both.\n\nWe could not find the current list of articulated high school courses. The Technology division's page directs readers to Statewide Career Pathways, and that site is no longer online. Downey Unified's June 2023 board presentation maps the Columbus High School welding pathway to WELD 160 and WELD 100, but it does not say whether students earn that credit through articulation or through dual enrollment.\n\nThe agreements are Cerritos's to keep and to publish as it chooses. If your office can share the current list, or the welding agreement with Downey Unified, we will show it on the pathway with Cerritos named as the source.\n\nThank you for considering it.\n\n[Name]\nMAP team, CPL Initiative\nCalifornia Community Colleges Chancellor's Office"
+
+
 
 # S327: the premises sheet 33's cards rest on.
 def p_csu_la_counted():
@@ -804,6 +828,55 @@ def items():
     # Sheet 35 (S329) was answered at 21:43Z on 2026-10-04 (through 1, his own call): "pasted",
     # "success no rows returned". Read back: Cerritos's procedure record on its row at 21:42:37Z. The
     # harvest lane records it and drops its NEEDS SAM in the same change; no card remains.
+
+    # Sheet 36 (S330): Cerritos reads 4 and 5 (#1859, runs 37241442265 and 37241996688).
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Paste Cerritos's procedure record, version 2",
+        'ref': 'program-requirements-harvest NEEDS SAM · kb/receipts/program_source_registry_procedure_2026-10-04_s330.sql',
+        'facts': (
+            "Reads 4 and 5 added two runs to Cerritos's record: the Schedule+ form steps (the View Departments "
+            "button, Fall's default months), statewidepathways.org marked gone (a domain for sale), the Credit by "
+            "Exam route from the catalog and the petition, the term's AED and IWAP sections, and the high school "
+            "list's request drafted and held (card 2). The connector held the guarded UPDATE as it did on sheet 35: "
+            "60 seconds, nothing written, read back at 23:10Z. The guard writes only while the row still holds the "
+            "version you pasted at 21:42Z, and the history trigger keeps that version."
+            "<pre>" + E(SQL_V2) + "\n\nselect procedure_by, procedure->>'v' as v, jsonb_array_length(procedure->'steps') as steps\n"
+            "  from public.program_source_registry where college = 'Cerritos College';</pre>"),
+        'why': "The reader loads this record before every Cerritos run; version 2 tells it to skip the dead host "
+               "and how to work the schedule form.",
+        'rec': "<strong>Paste it:</strong> run the block whole in the Supabase SQL editor. The read-back shows "
+               "<code>college-page-read S330</code>, <code>2</code> and <code>5</code>. <em>It might be wrong if</em> "
+               "the read-back still shows S329: someone changed the record after 21:42Z, and a session re-reads "
+               "it before writing.",
+        'chips': chips(('Pasted', 'pasted'), CH_LATER),
+        'evidence': [live('2026-10-04', "Cerritos's registry row read through the Supabase connector at 23:08Z "
+                          "and again after the 60-second timeout: procedure v1, md5 7083fab5")],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Send Cerritos the request for its high school articulation list?",
+        'ref': 'program-requirements-harvest NEEDS SAM · cpl_pathways_data.js (the ladder\'s To confirm list) · '
+               'Cerritos procedure record v2, open item 1',
+        'facts': (
+            "Your rule (sheet 33 card 5): draft a request only after the agent has exhausted its own reading. "
+            "Five reads have now tried every public source for the list: Cerritos's Educational Partnerships "
+            "pages print none; hsarticulation.cerritos.edu has no DNS record; Statewide Career Pathways, where "
+            "the Technology page says the agreements are public, is a domain for sale; the Credit by Examination "
+            "petition links back to the same EPP page; and web search finds no list. What the reads did confirm "
+            "is now on the ladder: credit for an articulated course comes by Credit by Exam (a B or better, the "
+            "petition within two years, up to 30 units, residency waived). The draft, in the house voice:"
+            "<pre>" + E(REQUEST_DRAFT) + "</pre>"),
+        'why': "The ladder's first step cannot name its high school courses without the list, and Columbus High's "
+               "welding pathway could be articulation or dual enrollment.",
+        'rec': "<strong>Send as drafted:</strong> the MAP team sends it to Cerritos's Educational Partnerships "
+               "& Programs office from its own mailbox, and the reply lands on the procedure record. "
+               "<em>It might be wrong if</em> you would rather ask through a contact you already have at "
+               "Cerritos, or wait until the ladder is shown to the college.",
+        'chips': chips(('Send as drafted', 'send'), ('Edit first', 'edit'), CH_LATER),
+        'evidence': [live('2026-10-04', "college-page-read runs 37232742985, 37233721702, 37234256967, "
+                          "37241442265 and 37241996688 on Cerritos's pages; web searches the same day")],
+    })
 
     return I
 

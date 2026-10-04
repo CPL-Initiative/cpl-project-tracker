@@ -109,10 +109,11 @@ check(cpr.matching_links(links, None) == [], "no pattern, nothing shown")
 print("skipped_hosts")
 proc = {"hosts": [{"host": "hsarticulation.cerritos.edu", "access": "unreached", "note": "no DNS record"},
                   {"host": "www.cerritos.edu", "access": "open"},
-                  {"host": "Mapper.Example.edu", "access": "refused"}]}
+                  {"host": "Mapper.Example.edu", "access": "refused"},
+                  {"host": "www.statewidepathways.org", "access": "gone", "note": "a parked domain"}]}
 sk = cpr.skipped_hosts(proc)
-check(set(sk) == {"hsarticulation.cerritos.edu", "mapper.example.edu"},
-      "a host the record marks unreached or refused is left alone; an open one is read")
+check(set(sk) == {"hsarticulation.cerritos.edu", "mapper.example.edu", "www.statewidepathways.org"},
+      "a host the record marks unreached, refused or gone is left alone; an open one is read")
 check(sk["mapper.example.edu"] == "refused", "a host with no note carries its access word")
 check(cpr.skipped_hosts(None) == {} and cpr.skipped_hosts({}) == {}, "no record, nothing skipped")
 
