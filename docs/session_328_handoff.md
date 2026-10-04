@@ -13,15 +13,19 @@ checkpoint at about 140K tokens left, with PR #1854 open and its A/B preview run
 
 ## First, in this order
 
-1. **Ship #1854** (`claude/busy-gauss-n9pbad`). The A/B preview, run 37225759463, was dispatched
-   on the branch at 18:47Z. Read its grid. If it shows zero regressions and all modes OK, a
-   clean A/B is the standing authorization to deploy (cpl_memory
-   `s275-deployed-v70-under-standing-authorization-2026-09-18`). Then:
-   - merge once `test` is green on the head (squash);
-   - dispatch `cpl-chat-deploy.yml` on main with `confirm: DEPLOY`;
-   - dispatch `cpl-chat-smoke.yml` and confirm 7t. The anon key reads the Ironworker A.S.'s
-     `display` (up to 31.5), and Sierra's answer names IWAP courses and says 31.5.
-   Then delete the preview function (`cleanup: true`) or note it.
+1. **Ship #1854** (`claude/busy-gauss-n9pbad`, head `6feb18a`). **Subscribe to its activity first**
+   (and to samueltlee/CPLBrain#236, the vault notes); S327 handed both over at 19:00Z with the A/B
+   still running.
+   - A/B run 37225759463 (on `5badbe5`, the same `index.ts` bytes as the head) was in progress at
+     19:00Z. Read its grid. A clean A/B (zero regressions, all modes OK) is the standing authorization to
+     deploy (cpl_memory `s275-deployed-v70-under-standing-authorization-2026-09-18`).
+   - The push-triggered `smoke` is red on one assertion by design: 7t asks **production** Sierra for the
+     31.5 figure, which only this PR's function can give (explained on the PR). The other 90 assertions pass.
+   - Mark #1854 ready. Once `test` is green on the head, squash-merge, dispatch `cpl-chat-deploy.yml` on
+     main with `confirm: DEPLOY`, then `cpl-chat-smoke.yml`. 7t must pass: the anon read of `display`
+     (up to 31.5), plus IWAP and 31.5 in her answer.
+   - The new smoke mode is **7t**: `7r` is the offerings mode and the A/B's control. Delete the preview
+     function (`cleanup: true`) once shipped.
 2. **Read open-asks sheet 33's replies first**:
    [Open Asks Sheet 33](https://claude.ai/artifact/HLeo1NxQvsVkZNUnqw8YCQ) (current;
    `SHEET_ID` `2026-10-04-open-asks-33`, collection `replies`). Its five cards:
@@ -35,7 +39,8 @@ checkpoint at about 140K tokens left, with PR #1854 open and its A/B preview run
    `braindump-2026-10-04-1823-ironworker-proof-of-concept-full-pathway.md` and in cpl_memory
    `sam-ironworker-proof-of-concept-full-pathway-2026-10-04`). Build a First Light mock-up of the
    whole ladder first: show, don't describe. The research is in
-   `docs/program_requirements_harvest_lessons.md` (S327), VERIFIED vs LEAD. Then port the
+   `docs/program_requirements_harvest_lessons.md` (S327), VERIFIED vs LEAD. Sam, 19:00Z: the mock-up is this session's work ("if we should do it in the next session,
+   that's probably better"). Then port the
    Ironworker A.S. section of CPL Pathways to read `cpl_pathways_roep_data.js`; the hand-built map's
    "27-29 major units" is stale against the 34-38 the catalog prints.
 
