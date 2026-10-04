@@ -4,10 +4,10 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 585,
+  "file_datasets": 587,
   "external_services": 157,
-  "consumers": 408,
-  "workflows": 43,
+  "consumers": 409,
+  "workflows": 44,
   "data_js_files": 69,
   "tabs": 37
  },
@@ -7084,6 +7084,19 @@
    "consumers": [
     {
      "id": "workflow:cer-decision-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_college_page_read.py": {
+   "consumers": [
+    {
+     "id": "workflow:college-page-read.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -16189,6 +16202,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/college_page_read_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/context_budget_test.py": {
    "consumers": [
     {
@@ -21562,6 +21588,18 @@
    "chain": [],
    "urls": []
   },
+  "college-page-read.yml": {
+   "name": "College page read",
+   "crons": [],
+   "scripts": [
+    "kb/_college_page_read.py"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "cos-authority-sync.yml": {
    "name": "cos-authority-sync",
    "crons": [
@@ -21925,6 +21963,7 @@
     "tests/supabase_table_grants_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
+    "tests/college_page_read_test.py",
     "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
     "tests/program_courses_build_test.py",
