@@ -47,8 +47,8 @@ def check(cond, msg):
 
 
 # ── The browser is a runner-only dependency ──────────────────────────────────
-check("playwright" not in sys.modules and "pypdf" not in sys.modules,
-      "importing the pilot pulled in playwright or pypdf; the pure half must load without them")
+check(not {"playwright", "pypdf", "pdfminer"} & set(sys.modules),
+      "importing the pilot pulled in playwright, pypdf or pdfminer; the pure half must load without them")
 
 # ── Course codes: every spelling the state file and a catalog use ────────────
 MATCH = [

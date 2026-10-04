@@ -61,9 +61,9 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install Playwright + Chromium, pypdf
+      - name: Install Playwright + Chromium, pypdf, pdfminer
         run: |
-          pip install --quiet playwright pypdf
+          pip install --quiet playwright pypdf pdfminer.six
           python -m playwright install --with-deps chromium
 
       - name: Capture

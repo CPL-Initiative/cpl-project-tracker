@@ -465,11 +465,42 @@ def read_pdf(reader, url: str, cache: dict) -> dict:
             from pypdf import PdfReader
             data = resp.body()
             pdf = PdfReader(io.BytesIO(data))
-            out.update(access="ok", bytes=len(data),
+            out.update(access="ok", bytes=len(data), data=data, extractor="pypdf",
                        pages=[(p.extract_text() or "") for p in pdf.pages])
     except Exception as exc:
         out.update(access="unreachable", error=str(exc).splitlines()[0][:200], pages=[])
     cache[url] = out
+    return out
+
+
+def pdfminer_pages(pdf: dict) -> dict:
+    """The same bytes read again by pdfminer, which decodes some fonts pypdf
+    cannot. Built once per PDF, and only when pypdf's text names no listed
+    code: West Los Angeles's catalog gave pypdf 1.5 million characters in which
+    no listed subject appears (run 2 of the capture, S323)."""
+    if "alt" not in pdf:
+        try:
+            from pdfminer.high_level import extract_pages
+            from pdfminer.layout import LTTextContainer
+            pages = []
+            for layout in extract_pages(io.BytesIO(pdf.get("data") or b"")):
+                pages.append("".join(el.get_text() for el in layout
+                                     if isinstance(el, LTTextContainer)))
+            pdf["alt"] = {"extractor": "pdfminer", "pages": pages}
+        except Exception as exc:
+            pdf["alt"] = {"extractor": "pdfminer", "pages": [],
+                          "error": str(exc).splitlines()[0][:200]}
+    return pdf["alt"]
+
+
+def text_sample(pages: list[str], at=(0.3, 0.6), n: int = 240) -> list[str]:
+    """A few hundred characters from two pages well inside the PDF, so a session
+    can see whether the text layer reads as words."""
+    out = []
+    for frac in at:
+        if pages:
+            i = min(len(pages) - 1, int(len(pages) * frac))
+            out.append("p%d: %r" % (i + 1, (pages[i] or "")[:n]))
     return out
 
 
@@ -530,16 +561,27 @@ def capture(reader, entry: dict, cache: dict) -> dict:
         return rec
     if reg.get("catalog_format") in ("single_pdf",) or start.lower().endswith(".pdf"):
         pdf = read_pdf(reader, start, cache)
-        pages = pdf.get("pages") or []
+        pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
         run = pick_pdf_pages(pages, program, courses)
+        tried = [{"extractor": extractor, "chars_total": sum(len(p) for p in pages),
+                  "empty_pages": sum(1 for p in pages if len(p.strip()) < 40),
+                  "probe": [] if run else pdf_probe(pages, courses),
+                  "sample": [] if run else text_sample(pages)}]
+        if not run and pdf.get("data"):
+            alt = pdfminer_pages(pdf)
+            alt_run = pick_pdf_pages(alt["pages"], program, courses)
+            tried.append({"extractor": alt["extractor"], "error": alt.get("error"),
+                          "chars_total": sum(len(p) for p in alt["pages"]),
+                          "probe": [] if alt_run else pdf_probe(alt["pages"], courses),
+                          "sample": [] if alt_run else text_sample(alt["pages"])})
+            if alt_run:
+                pages, extractor, run = alt["pages"], alt["extractor"], alt_run
         text = "\n\n".join("[page %d]\n%s" % (i + 1, pages[i]) for i in run)
         found = find_codes(text, courses)
         rec.update(method="pdf_pages", source={"url": start, "access": pdf.get("access"),
                    "status": pdf.get("status"), "bytes": pdf.get("bytes"),
                    "pages_total": len(pages), "pages": [i + 1 for i in run],
-                   "chars_total": sum(len(p) for p in pages),
-                   "empty_pages": sum(1 for p in pages if len(p.strip()) < 40),
-                   "probe": [] if run else pdf_probe(pages, courses),
+                   "extractor": extractor, "tried": tried,
                    "error": pdf.get("error")},
                    coverage=round(coverage(found, courses), 3),
                    codes_found=sorted(found), text=text[:TEXT_CAP])
