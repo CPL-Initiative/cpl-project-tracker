@@ -180,8 +180,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-28.html')
-SHEET_ID = '2026-10-04-open-asks-28'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-29.html')
+SHEET_ID = '2026-10-04-open-asks-29'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -802,6 +802,29 @@ def items():
         'evidence': [quoted("docs/reference/lanes/sierra-retrieval-corpus.md, PROGRAM COURSE LISTS "
                             "(\"A program LISTS a course: never 'required', never a unit total\")", '2026-10-04'),
                      quoted("kb/program_requirements_pilot/review_2026-10-04.json (20 of 20 cards ruled)", '2026-10-04')],
+    })
+    # S325: Sam asked that catalog addenda be tracked in the schema, and the census now lists them.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Go on the catalog addenda table as described?",
+        'ref': 'program-requirements-harvest NEEDS SAM · kb/supabase_program_source_addenda.sql · PR #1848',
+        'facts': (
+            "You asked that addenda be tracked in the schema and that the agents know of them. The census "
+            "now records each addendum, supplement or errata link for the current or prior catalog year, "
+            "and the first read found <strong>78 addenda at 52 of 118 colleges</strong> (19 name 2026-27, "
+            "41 name 2025-26, 18 name no year). The proposed table keeps one row per addendum: the "
+            "college, its address, the catalog year it amends, a status (listed, read, applied, gone), and "
+            "the programs it changes once an agent reads it. A trigger keeps every prior row, the census "
+            "writes only through one function, and anyone may read it, as with the registry. Until you say "
+            "go, the census keeps the addenda in the registry's evidence."),
+        'why': "A program record read from the catalog alone can be wrong the day it is filed; the table "
+               "lets every record name the addenda it was checked against.",
+        'rec': "<strong>Go:</strong> a session applies the table, its history and its write function, adds "
+               "the census's write to them, and builds the reading agent next. <em>It might be wrong if</em> "
+               "you want the addenda to stay in the registry's evidence until the reading agent exists.",
+        'chips': chips(('Go', 'go'), ('Not yet', 'not_yet'), CH_LATER),
+        'evidence': [live('2026-10-04', "census dry run 37199538519 (four shards, job logs read through the "
+                          "GitHub connector), replayed offline with the final filter")],
     })
     return I
 

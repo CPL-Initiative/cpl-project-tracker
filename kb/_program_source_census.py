@@ -329,11 +329,62 @@ def score_catalog_link(text: str, href: str, current_start: int) -> int:
 # "Supplemental Instruction" never does.
 ADDENDUM_WORDS = re.compile(r"addend(?:um|a|ums)?\b|\berrata\b|\berratum\b", re.I)
 SUPPLEMENT_WORDS = re.compile(r"\bsupplement\b", re.I)
-NOT_ADDENDUM = re.compile(r"archiv|previous|past catalog|change ?log|login|sign in", re.I)
+NOT_ADDENDUM = re.compile(r"archiv|previous|past catalog|change ?log|login|sign in|calendar|timeline",
+                          re.I)
+# Words that make an "addendum" a class schedule's or a calendar's, read only in
+# the link text and the file name: Fullerton's class-schedule addenda, Palo
+# Verde's "Important Dates- Addendum 2" (run 37199538519).
+NOT_CATALOG_ADDENDUM = re.compile(r"schedul|important dates|resource guide", re.I)
+# Hosts that serve another site's file, never the college's own link: Lassen's
+# addenda each appear twice, once through a ReadSpeaker reader (run 37199538519).
+PROXY_HOSTS = re.compile(r"readspeaker|docreader", re.I)
+SEASON_FALL = re.compile(r"\b(fall|autumn|aug(ust)?|sep(t(ember)?)?|oct(ober)?|nov(ember)?|dec(ember)?)\b",
+                         re.I)
 
 
-def addendum_kind(blob: str) -> str | None:
+def addendum_start_year(text: str, href: str) -> int | None:
+    """The academic year an addendum amends, as its start year, from every
+    year its words or its file name carry. The run of 2026-10-04 (37199538519)
+    found 136 links at 58 colleges, many of them years old: "Academic Catalog
+    2021", "Fall 2022 Catalog Addendum", "2023-2025 Catalog Addendum",
+    /catalog/24-25/, "catalogaddendum20_21.pdf". A two-year span amends its
+    last year; a single year with a fall month or term starts that year, any
+    other single year ends it. Upload folders (/uploads/2022/05/) name when a
+    file was posted, so only the link text and the file name are read for
+    four-digit years. The latest year found wins."""
+    path = urllib.parse.unquote(urllib.parse.urlparse(href or "").path)
+    fname = path.rsplit("/", 1)[-1]
+    words = (text or "") + " " + fname
+    found = []
+    y = year_of_link(text or "", href or "")
+    if y is not None:
+        found.append(y)
+    for m in re.finditer(r"(?<!\d)(20\d{2})\s*[-–_]\s*(20\d{2}|\d{2})(?!\d)", words):
+        a, b = int(m.group(1)), int(m.group(2))
+        b = b + 2000 if b < 100 else b
+        if b - a == 1:
+            found.append(a)
+        elif 1 < b - a <= 3:
+            found.append(b - 1)
+    for m in re.finditer(r"(?<!\d)(\d{2})[-_](\d{2})(?!\d)", path):
+        a, b = int(m.group(1)), int(m.group(2))
+        if b == a + 1:
+            found.append(2000 + a)
+    spans = re.sub(r"(?<!\d)20\d{2}\s*[-–_]\s*(20\d{2}|\d{2})(?!\d)", " ", words)
+    for m in re.finditer(r"(?<!\d)(20\d{2})(?!\d)", spans):
+        yr = int(m.group(1))
+        near = spans[max(0, m.start() - 24):m.end() + 4]
+        found.append(yr if SEASON_FALL.search(near) else yr - 1)
+    return max(found) if found else None
+
+
+def addendum_kind(blob: str, text: str = "", href: str = "") -> str | None:
     if NOT_ADDENDUM.search(blob):
+        return None
+    fname = urllib.parse.unquote(urllib.parse.urlparse(href or "").path).rsplit("/", 1)[-1]
+    if NOT_CATALOG_ADDENDUM.search((text or "") + " " + fname):
+        return None
+    if PROXY_HOSTS.search(urllib.parse.urlparse(href or "").netloc):
         return None
     if re.search(r"errat", blob, re.I):
         return "errata"
@@ -355,16 +406,17 @@ def addendum_links(links: list[dict], current_start: int, college: str | None = 
     for a in links or []:
         text = " ".join((a.get("text") or "").split())
         href = (a.get("href") or "").split("#")[0]
-        if not href.startswith("http") or href in seen:
+        key = href.rstrip("/")   # Victor Valley links /addendum and /addendum/
+        if not href.startswith("http") or key in seen:
             continue
         blob = text + " " + urllib.parse.unquote(href)
-        kind = addendum_kind(blob)
+        kind = addendum_kind(blob, text, href)
         if kind is None or sibling_link(text, href, tokens, foreign):
             continue
-        y = year_of_link(text, href)
+        y = addendum_start_year(text, href)
         if y is not None and y < current_start - 1:
             continue
-        seen.add(href)
+        seen.add(key)
         out.append({"kind": kind, "title": text[:120], "url": href,
                     "year": "%d-%d" % (y, y + 1) if y is not None else None})
     return out

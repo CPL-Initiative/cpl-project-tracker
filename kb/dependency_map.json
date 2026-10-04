@@ -5941,7 +5941,7 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-28.html": {
+  "file:docs/visuals/<date>-open-asks-29.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
@@ -18196,7 +18196,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1027
+     "line": 1079
     }
    ],
    "main_committers": []
