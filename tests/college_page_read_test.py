@@ -97,6 +97,13 @@ check(cpr.fold("") == "", "an empty page folds to nothing")
 langs = "\n".join(["Abkhaz", "Acehnese", "Acholi"] * 80)
 check(cpr.fold(langs).count("\n") == 0, "a 240-entry language picker is one line, not 240")
 
+print("matching_links")
+ml = cpr.matching_links(links + [{"text": "Statewide Career Pathways", "href": "https://www.example.org/pathways#x"}],
+                        r"statewide|local 4")
+check([m["href"] for m in ml] == ["https://www.ironworkers433.org/", "https://www.example.org/pathways"],
+      "links on any host are shown when they match, fragment dropped, in page order")
+check(cpr.matching_links(links, None) == [], "no pattern, nothing shown")
+
 print("skipped_hosts")
 proc = {"hosts": [{"host": "hsarticulation.cerritos.edu", "access": "unreached", "note": "no DNS record"},
                   {"host": "www.cerritos.edu", "access": "open"},

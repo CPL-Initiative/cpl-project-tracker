@@ -1,0 +1,16 @@
+{
+  "_readme": "Third read for the Cerritos Ironworker ladder (S329). Read 2 (run 37233721702) answered the classroom hours (the 2026-27 IWAP course descriptions: 878 contact hours on the Reinforcing track, 898 on the Structural) and the B.S. start (Spring 2027, Cerritos's Field Ironwork page). It left two lines: the Technology division says Cerritos publishes its articulation agreements at Statewide Career Pathways, a link the reader did not follow off the college's domain; and Schedule+ chooses a department by form, so no link reached the term's AED or IWAP sections, while the AED catalog page's excerpts filled with high school courses before reaching AED 40-41. This read prints that link and the Schedule+ form, and reads the AED and WELD catalog pages with narrower keywords.",
+  "college": "Cerritos College",
+  "questions": {
+    "hs_articulation": "The high school articulation list.",
+    "noncredit_aed": "Whether the 26 noncredit AED courses still run."
+  },
+  "keywords": ["AED 4[01]\\.", "WELD 1?60\\b", "WELD 100\\b", "Statewide", "articulat"],
+  "pages": [
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/academics/divisions/technology/articulation-agreements.htm",
+     "links": "statewide|pathways|catema|agreement"},
+    {"answers": ["noncredit_aed"], "url": "https://secure.cerritos.edu/schedule/index.cgi", "forms": true},
+    {"answers": ["noncredit_aed"], "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aed/"},
+    {"answers": ["hs_articulation"], "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/weld/"}
+  ]
+}

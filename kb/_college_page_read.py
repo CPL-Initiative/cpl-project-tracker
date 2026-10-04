@@ -117,6 +117,37 @@ def fold(text: str, under: int = FOLD_UNDER) -> str:
     return "\n".join(out)
 
 
+def matching_links(links: list[dict], pattern: str | None, cap: int = 40) -> list[dict]:
+    """Links on any host whose words or address match: printed, never followed,
+    so a session learns where a page points (a statewide database, a vendor)
+    and names that host in the next plan with its reason."""
+    if not pattern:
+        return []
+    rx = re.compile(pattern, re.I)
+    out, seen = [], set()
+    for ln in links or []:
+        href = (ln.get("href") or "").split("#")[0]
+        if not href.startswith("http") or href in seen:
+            continue
+        if rx.search(ln.get("text") or "") or rx.search(href):
+            out.append({"text": (ln.get("text") or "")[:120], "href": href})
+            seen.add(href)
+        if len(out) >= cap:
+            break
+    return out
+
+
+# A page's forms, for a site that chooses by form rather than by link (Cerritos's
+# Schedule+ picks a department from a list): the action, the method, and each
+# field's name with its first options, so a later plan can name the query.
+FORMS_JS = """() => Array.from(document.forms).slice(0, 5).map(f => ({
+  action: f.action, method: f.method,
+  fields: Array.from(f.elements).slice(0, 60).map(e => ({
+    name: e.name || '', type: e.type || '', value: (e.value || '').slice(0, 60),
+    options: e.options ? Array.from(e.options).slice(0, 160)
+      .map(o => o.value + '=' + (o.text || '').trim().slice(0, 40)) : null}))}))"""
+
+
 SKIP_ACCESS = {"refused", "unreached"}
 
 
@@ -187,6 +218,7 @@ def read_one(reader, url: str, pattern: re.Pattern, cache: dict) -> dict:
                 reader.page.wait_for_timeout(1500)   # a script-built page fills in late
                 page = reader.page.evaluate(TEXT_JS)
                 out["text"], out["links"] = page.get("text") or "", page.get("links") or []
+                out["forms"] = reader.page.evaluate(FORMS_JS)
             except Exception as exc:
                 out["error"] = str(exc).splitlines()[0][:200]
             out["kind"] = "html"
@@ -222,6 +254,17 @@ def print_page(n: int, rec: dict, pattern: re.Pattern) -> None:
               "sha256", "bytes", "extractor", "title", "error"):
         if rec.get(k) not in (None, ""):
             print("%s: %s" % (k, rec[k]))
+    if rec.get("links_shown"):
+        print("--- links matching the plan's pattern (shown, not followed) ---")
+        for f in rec["links_shown"]:
+            print("- %s -> %s" % (f["text"], f["href"]))
+    for f in rec.get("forms_shown") or []:
+        print("--- form: %s %s ---" % ((f.get("method") or "").upper(), f.get("action")))
+        for e in f.get("fields") or []:
+            opts = e.get("options")
+            print("  %s [%s]%s%s" % (e.get("name"), e.get("type"),
+                  (" value=" + e["value"]) if e.get("value") and not opts else "",
+                  (" options: " + " | ".join(opts)) if opts else ""))
     if rec.get("followed"):
         print("--- links followed ---")
         for f in rec["followed"]:
@@ -284,6 +327,9 @@ def main(argv: list[str] | None = None) -> int:
                 records.append(rec)
                 n = len(records)
                 if not parent:
+                    rec["links_shown"] = matching_links(rec.get("links"), target.get("links"))
+                    if target.get("forms"):
+                        rec["forms_shown"] = rec.get("forms") or []
                     fol = follow_links(rec.get("links"), target.get("follow"),
                                        rec.get("final_url") or url, seen)
                     rec["followed"] = fol
