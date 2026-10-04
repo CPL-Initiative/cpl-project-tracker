@@ -33,6 +33,12 @@
 // the catalog prints), units_max (a range beside a course), and alternatives as
 // objects that carry their own units and catalog_addition. The scorer
 // (kb/_program_requirements_score.py) reads the same fields.
+// Version 3 (S324, 2026-10-04): two prompt lines from Sam's review of the 20
+// pilot records (kb/program_requirements_pilot/review_2026-10-04.json): list
+// each course once in a block (Mt. San Antonio Fire listed FIRE 86 twice), and
+// read "one of the following sequences" as whole sequences in one option_group
+// even when the catalog prints the courses as "or" rows (Mt. San Antonio
+// LVN-to-RN's anatomy courses).
 // Deploy with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
 //
@@ -169,7 +175,9 @@ Each block holds courses under one rule, in the catalog's order and with its nam
 - "choose_units": the student picks courses totaling N units; minimum is N.
 A course with an "or" option or an honors twin is one entry whose alternatives hold the other courses, each with its own units and catalog_addition. A nested choice ("one of the following") inside a required list is its own block.
 
-When the student completes one of several whole blocks ("Select one of the following options", "one of the following sequences"), record each option as its own block and give those blocks the same option_group; a block outside such a choice has option_group null.
+When the student completes one of several whole blocks ("Select one of the following options", "one of the following sequences"), record each option as its own block and give those blocks the same option_group; a block outside such a choice has option_group null. Under a heading that offers sequences, each sequence is its own block of required courses in that option_group, even when the catalog prints the courses as "or" rows that pair the sequences position by position: "BIOL 1A or BIOL 21" then "BIOL 1B or BIOL 22" under "Select one of the following sequences" is the sequence BIOL 1A and BIOL 1B, or the sequence BIOL 21 and BIOL 22.
+
+List each course once in a block. When a rule offers two paths that share a course ("two HIST courses, or HIST 50 and POLS 1 plus one more HIST course"), record the course once and describe the other path in notes.
 
 When the catalog prints a total for a block ("6-22 units", "Select a minimum of 6 units 6.00-7.00"), record it in that block's stated; else stated is null and null.
 
