@@ -27,6 +27,17 @@ Semester", "Year 2"). It also files what the application fetched as JSON from
 the mapper's host, so a later pass can read a sequence without a browser where
 the mapper serves one.
 
+A refusal is on the college's record. Every mapper host it reached answered
+403 (runs 37197332656, 37198225537). Sam, open-asks sheet 29 card 3
+(2026-10-04): "Rather than ask permission, we will make the agent aware of the
+limitation and to continue to look for solutions or workarounds." The record
+is program_source_registry.sequence_host / sequence_access / sequence_note. The
+reader never requests a host recorded as refused, and keeps its name: it never
+retries a refusal another way. It looks elsewhere on the college's own pages for
+the program's map or sequence (a page or PDF naming the program and a map,
+pathway, roadmap or sequence), and the probe asks each recorded host's front
+page once a run whether it has opened, printing any change for a session to file.
+
 It writes nothing. It prints a JSON object per program between markers, which a
 session reads from the job log through the GitHub MCP. The reads follow the
 census's rules (Sam's call 5 on sheet 23): robots.txt first for every host,
@@ -126,6 +137,40 @@ def program_link(text: str, href: str, program: dict) -> int:
     if PATHWAY_HREF.search(urllib.parse.urlparse(href).path) and (text or "").strip():
         return 1
     return -1 if s < 0 else 0
+
+
+# A link on a college's own page that may carry the program's sequence when
+# its mapper refuses the reader: the program's title words beside a map,
+# pathway, roadmap or sequence word, or a PDF whose name carries one.
+ALT_WORDS = re.compile(r"\b(?:program\s+maps?|maps?|pathways?|road\s?maps?|sequences?|"
+                       r"semester[- ]by[- ]semester|course\s+plan|education(?:al)?\s+plan)\b", re.I)
+
+
+def alt_link(text: str, href: str, program: dict, refused: set | frozenset = frozenset()) -> int:
+    """How strongly a link off the mapper leads to the program's sequence. A
+    host on record as refused scores -1 (never requested); the program's title
+    words with a map word score 4, a PDF named for a map 3, a map word alone 1."""
+    h = (href or "").split("#")[0]
+    if not h.startswith("http") or host(h) in refused:
+        return -1
+    if P.REFUSE_LINK.search(text or "") or P.REFUSE_LINK.search(h):
+        return -1
+    path = urllib.parse.unquote(urllib.parse.urlparse(h).path)
+    words = (text or "") + " " + path.replace("-", " ").replace("_", " ")
+    if not ALT_WORDS.search(words):
+        return 0
+    if P.score_link(text, h, program) > 2:
+        return 4
+    if path.lower().endswith(".pdf"):
+        return 3
+    return 1
+
+
+def refused_hosts(rows: list[dict], college: str) -> set:
+    """The hosts the registry records as refusing this reader at this college."""
+    return {r["sequence_host"] for r in rows or []
+            if r.get("college") == college and r.get("sequence_access") == "refused"
+            and r.get("sequence_host")}
 
 
 def term_markers(text: str, limit: int = 12) -> list[str]:
@@ -273,7 +318,8 @@ def open_map(reader, program: dict, courses: list[dict], trail: list, api: ApiLo
     return None
 
 
-def read_sequence(reader, college: str, cn: str, title: str) -> dict:
+def read_sequence(reader, college: str, cn: str, title: str,
+                  refused: set | frozenset = frozenset()) -> dict:
     prog = P.fetch_program(college, cn)
     rows = P.fetch_courses(college, cn)
     courses = P.closed_from_rows(rows)
@@ -281,7 +327,7 @@ def read_sequence(reader, college: str, cn: str, title: str) -> dict:
     rec = {"college": college, "control_number": cn, "title": program["title"],
            "award": program["award"], "closed_list": courses,
            "load_id": rows[0]["load_id"] if rows else None,
-           "starts": PPM_START.get(college, [])}
+           "starts": PPM_START.get(college, []), "refused_hosts": sorted(refused)}
     api, cache, trail, seen = ApiLog(reader.page), {}, [], set()
     queue = [(100 - i, u, "a college page about the mapper (web search, 2026-10-04)")
              for i, u in enumerate(PPM_START.get(college, []))]
@@ -292,6 +338,9 @@ def read_sequence(reader, college: str, cn: str, title: str) -> dict:
         if url in seen:
             continue
         seen.add(url)
+        if host(url) in refused:
+            trail.append({"url": url, "why": why, "skipped": "the registry records this host as refusing the reader"})
+            continue
         inside = on_mapper(url, known)
         api.active = inside
         got = read_page(reader, url, cache, api, spa=inside)
@@ -323,12 +372,16 @@ def read_sequence(reader, college: str, cn: str, title: str) -> dict:
             href = (ln.get("href") or "").split("#")[0]
             if not href.startswith("http") or href in seen:
                 continue
+            if host(href) in refused:
+                continue
             if inside and host(href) == host(final):
                 s = program_link(ln.get("text", ""), href, program)
             else:
                 s = mapper_link(ln.get("text", ""), href, final) * 10
                 if s >= 30 and host(href) != host(final):
                     known.add(host(href))
+                if not inside:
+                    s = max(s, alt_link(ln.get("text", ""), href, program, refused) * 10)
             if s > 0:
                 queue.append((s, href, "link '%s' on %s" % ((ln.get("text") or "")[:60], final)))
     best = best or {}
@@ -347,10 +400,36 @@ def read_sequence(reader, college: str, cn: str, title: str) -> dict:
 # Whether a mapper refuses this reader everywhere decides how the harvest reads
 # sequences at all, so the pass also asks each sequence source the census filed
 # (sequence_source ppm or program_map_page) for its front page, once, robots
-# first. Miramar's mapper is not re-read unless SEQUENCE_READ=1.
+# first. The program read runs only on SEQUENCE_READ=1, and never requests a
+# host the registry records as refused (Sam, open-asks sheet 29 card 3).
 def fetch_sequence_sources() -> list[dict]:
-    return P._get("program_source_registry?select=college,sequence_source,sequence_url"
-                  "&sequence_source=in.(ppm,program_map_page)&sequence_url=not.is.null&order=college")
+    return P._get("program_source_registry?select=college,sequence_source,sequence_url,"
+                  "sequence_host,sequence_access,sequence_checked_run"
+                  "&or=(sequence_source.in.(ppm,program_map_page),sequence_access.not.is.null)"
+                  "&order=college")
+
+
+def probe_targets(rows: list[dict]) -> list[dict]:
+    """One front page per source: the census's sequence address, or, where the
+    census filed none and the registry records a host (Miramar), that host's
+    root. A refused host is asked once a run whether it has opened."""
+    out = []
+    for r in rows or []:
+        url = r.get("sequence_url")
+        if not url and r.get("sequence_host"):
+            url = "https://%s/" % r["sequence_host"]
+        if url:
+            out.append(dict(r, sequence_url=url, sequence_source=r.get("sequence_source") or "registry"))
+    return out
+
+
+def access_now(status, access: str | None) -> str:
+    """The registry's word for what a probe just saw."""
+    if status == 403 or access == "blocked":
+        return "refused"
+    if status is None or access == "unreachable":
+        return "unreached"
+    return "answered"
 
 
 def probe_sources(reader, rows: list[dict]) -> list[dict]:
@@ -363,9 +442,14 @@ def probe_sources(reader, rows: list[dict]) -> list[dict]:
                     "mapper": on_mapper(got.get("final_url") or r["sequence_url"]),
                     "links_to_mapper": sorted({host(ln.get("href") or "") for ln in got.get("links") or []
                                                if MAPPER_HOST.search(host(ln.get("href") or ""))})[:3],
-                    "error": got.get("error")})
-        print("%-34s %-17s %-5s %-16s %s" % (r["college"][:34], r["sequence_source"], out[-1]["status"],
-                                             out[-1]["access"], out[-1]["final_host"]), flush=True)
+                    "error": got.get("error"),
+                    "registry": r.get("sequence_access"),
+                    "now": access_now(got.get("status"), got.get("access"))})
+        out[-1]["changed"] = bool(out[-1]["registry"] == "refused" and out[-1]["now"] != "refused")
+        print("%-34s %-17s %-5s %-16s %-28s registry %-9s%s" % (
+            r["college"][:34], r["sequence_source"], out[-1]["status"], out[-1]["access"],
+            out[-1]["final_host"][:28], out[-1]["registry"] or "-",
+            "  OPENED: file it" if out[-1]["changed"] else ""), flush=True)
     return out
 
 
@@ -373,7 +457,8 @@ def main() -> int:
     delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
     read = os.environ.get("SEQUENCE_READ") == "1"
     sample = [p for p in P.load_sample() if (p["college"], p["control_number"]) in PPM_PROGRAMS] if read else []
-    sources = fetch_sequence_sources()
+    registry = fetch_sequence_sources()
+    sources = probe_targets(registry)
     print("program requirements pilot, sequence pass: %d programs, %d sources probed, %.1f s between "
           "loads, writes nothing" % (len(sample), len(sources), delay / 1000), flush=True)
     pw, browser, reader = P.open_reader(delay)
@@ -383,7 +468,8 @@ def main() -> int:
         for entry in sample:
             t0 = time.time()
             try:
-                rec = read_sequence(reader, entry["college"], entry["control_number"], entry["title"])
+                rec = read_sequence(reader, entry["college"], entry["control_number"], entry["title"],
+                                    refused_hosts(registry, entry["college"]))
             except Exception as exc:
                 rec = {"college": entry["college"], "control_number": entry["control_number"],
                        "error": str(exc).splitlines()[0][:300]}

@@ -729,7 +729,44 @@ check("SUPABASE_SERVICE_KEY" not in ssrc, "the sequence pass never reads the ser
 # re-reads it only when a person asks; by default the pass probes the census's
 # sequence sources, one load each.
 check('os.environ.get("SEQUENCE_READ") == "1"' in ssrc,
-      "Miramar's mapper, which refused the reader, is read again only on request")
+      "the program read runs only on request; a push only probes")
+
+# Sam, open-asks sheet 29 card 3 (2026-10-04): the refusal goes on the
+# college's record, the reader knows it, and keeps looking elsewhere. The
+# record is program_source_registry.sequence_host / sequence_access.
+reg = [{"college": "San Diego Miramar College", "sequence_source": "none_found", "sequence_url": None,
+        "sequence_host": "san-diego-miramar.programmapper.com", "sequence_access": "refused"},
+       {"college": "Cañada College", "sequence_source": "ppm",
+        "sequence_url": "https://canada.programmapper.ws/academics",
+        "sequence_host": "canada.programmapper.ws", "sequence_access": "refused"},
+       {"college": "Irvine Valley College", "sequence_source": "program_map_page",
+        "sequence_url": "https://www.ivc.edu/node/3220", "sequence_host": "www.ivc.edu",
+        "sequence_access": "open"}]
+refused = Q.refused_hosts(reg, "San Diego Miramar College")
+check(refused == {"san-diego-miramar.programmapper.com"},
+      "the reader takes Miramar's refused host from the registry")
+check(Q.refused_hosts(reg, "Irvine Valley College") == set(),
+      "an open source is never treated as refused")
+mm = "https://san-diego-miramar.programmapper.com/academics"
+check(Q.alt_link("Program Mapper", mm, fire, refused) == -1,
+      "a host on record as refused is never requested, whatever the link says")
+check(Q.alt_link("Fire Technology Program Map", "https://sdmiramar.edu/docs/fire-tech-map.pdf", fire, refused) == 4,
+      "the program's own map on the college's site is followed first")
+check(Q.alt_link("Program Map", "https://sdmiramar.edu/docs/fipt-roadmap.pdf", fire, refused) == 3,
+      "a PDF named for a map is followed next")
+check(Q.alt_link("Apply Now", "https://sdmiramar.edu/apply", fire, refused) == 0,
+      "an unrelated college link is not followed")
+targets = {r["college"]: r["sequence_url"] for r in Q.probe_targets(reg)}
+check(targets.get("San Diego Miramar College") == "https://san-diego-miramar.programmapper.com/",
+      "where the census filed no address, the probe asks the recorded host's front page")
+check(targets.get("Cañada College") == "https://canada.programmapper.ws/academics",
+      "the census's own address is probed as it was")
+check(Q.access_now(403, "blocked") == "refused" and Q.access_now(None, "unreachable") == "unreached"
+      and Q.access_now(200, "ok") == "answered", "a probe's result reads in the registry's words")
+check('out[-1]["changed"]' in ssrc and "OPENED" in ssrc,
+      "a refused host that answers is flagged for a session to file")
+check("if host(url) in refused:" in ssrc and "refused_hosts(registry, entry[\"college\"])" in ssrc,
+      "the program read skips every host the registry records as refused")
 check("SEQUENCE_READ: ${{ github.event.inputs.read }}" in sactive,
       "the workflow passes the request through; a push never sets it")
 

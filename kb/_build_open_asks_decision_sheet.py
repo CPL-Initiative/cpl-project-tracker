@@ -31,6 +31,14 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 30 (S326, 2026-10-04, SHEET_ID 2026-10-04-open-asks-30): Sam answered all five cards of sheet 29
+(https://claude.ai/artifact/FhxQ5HXM1EBffhS5ce3Tj7) between 11:54Z and 12:00Z, each his own call: card 1
+later, card 2 guard lifted (S326 ran the six addresses), card 3 a note on the college's record and no ask
+for access (S326 filed it for 25 colleges and taught the reader), card 4 yes (Sierra's "required" for checked
+records, built next), card 5 go (the addenda table, Part A applied). One card remains: three receipts to
+paste, the two memory files carried from card 1 and the addenda table's privilege close. Published at
+https://claude.ai/artifact/SKczLvwB5BxQMXNfJRdyD3 (capabilities db + comments).
+
 Sheet 27 (S322, 2026-10-03, SHEET_ID 2026-10-03-open-asks-27): Sam answered all of sheet 26 at 23:01Z
 (his own calls): card 1 later, card 2 "go", card 3 he asks the Tech Center after the first records. The
 "go" met the repo's Supabase guard, which refuses a session's UPDATE to a shared table, so card 2 asks him
@@ -180,8 +188,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-29.html')
-SHEET_ID = '2026-10-04-open-asks-29'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-30.html')
+SHEET_ID = '2026-10-04-open-asks-30'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -711,130 +719,39 @@ def items():
     # Sheet 23 (S319), the program requirements harvest's eight calls, was answered at 15:05Z on
     # 2026-10-03: "As proposed" (his own pick). The lane records the rulings.
 
-    # S320/S321: five memory rows waited on the connector's confirmation, which nobody saw in time.
-    # Three ran in S321 once their text named no destructive keyword; three remain.
+    # Sheet 29 (S325) was answered at 11:54-12:00Z on 2026-10-04 (through 5, each his own call): card 2
+    # guard lifted, card 3 a note on the college's record, card 4 yes, card 5 go. Each lane records its
+    # ruling in the same change (S326). Card 1 "later" is carried into the one card below.
+    # S320/S321: three memory rows wait on the connector's confirmation; S326: the addenda table's
+    # privilege close met the same confirmation and wrote nothing.
     I.append({
         'lane': 'program-requirements-harvest',
-        'title': "Paste two memory receipts in the SQL editor",
+        'title': "Paste three files in the SQL editor",
         'ref': 'program-requirements-harvest NEEDS SAM · kb/receipts/cpl_memory_2026-10-03_s320.sql · '
-               'kb/receipts/cpl_memory_2026-10-03_s321.sql',
+               'kb/receipts/cpl_memory_2026-10-03_s321.sql · '
+               'kb/receipts/program_source_addenda_close_2026-10-04_s326.sql',
         'facts': (
-            "You marked this for later on sheet 26. You had chosen to have these run while you watched "
-            "(sheet 25, card 1); S322 ran the S320 file at "
-            "about 23:00Z, and the connector's confirmation never reached you: the call timed out at 60 "
-            "seconds and wrote nothing, as it did in S320 and S321. Three rows remain, two from S320 and one "
-            "from S321, and each names one of the SQL words the connector stops on. The SQL editor is the "
-            "one path left."),
-        'why': "Until they run, a session's memory read misses the registry's grant finding, the migration "
-               "finding and the connector finding itself.",
-        'rec': "<strong>Paste both:</strong> open the Supabase SQL editor and run each file whole. Both skip "
-               "any row already written, and each ends with a read-back where every row shows "
-               "<code>creates = 1</code>. <em>It might be wrong if</em> the connector's prompt now reaches "
-               "you; then reply here and a session runs them again while you watch.",
-        'chips': chips(('Pasted both', 'pasted'), CH_LATER),
-        'evidence': [live('2026-10-03', "cpl_memory read back through the Supabase connector after the "
-                          "timeout: S320 three of five rows, S321 four of five")],
-    })
-    # S321: the census reaches 112 of 118 catalogs. Six need an address a person enters.
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Run the six catalog addresses yourself, or lift the guard for one run",
-        'ref': 'program-requirements-harvest NEEDS SAM · '
-               'kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql · CLAUDE.md Rule 10',
-        'facts': (
-            "You said go on sheet 26 (23:01Z). S322 sent the file and the repo's Supabase guard refused it "
-            "before it reached the database: the statement is an UPDATE to a shared table, and Rule 10 asks a "
-            "person to run such a write or lift the guard for the run. Nothing was written. The file now names "
-            "you as <code>Sam (open-asks sheets 25 and 26)</code>, writes each prior row to the history table "
-            "through the registry's trigger, and ends with a read-back of six rows."),
-        'why': "Until they are entered, six colleges have no catalog address in the registry, and the "
-               "harvest cannot choose a method for them.",
-        'rec': "<strong>Paste it:</strong> run the file in the Supabase SQL editor. <em>It might be wrong "
-               "if</em> you would rather a session run it; lift the guard for one run and say so, and a "
-               "session runs it while you watch.",
-        'chips': chips(('Pasted it', 'pasted'), ('Guard lifted: run it', 'lifted'), CH_LATER),
-        'evidence': [live('2026-10-03', "the guard's refusal at about 23:05Z; program_source_registry read "
-                          "through the Supabase connector: no row with corrected_by set")],
-    })
-    # S322: Phase 1, the pilot. Sheet 25 (22:57Z) ruled Riverside City's program (the Culinary Arts
-    # certificate) and the sample checker (Sam); sheet 26 (23:01Z) ruled the Tech Center contact (Sam, after
-    # the pilot's first records). The lane records all three.
-    # S325: the sequence pass met the Program Pathways Mapper's refusal at every host it reached.
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Miramar's Program Mapper refuses the reader: how should the pilot read its sequence?",
-        'ref': 'program-requirements-harvest NEEDS SAM · kb/_program_sequence_ppm.py · runs 37197332656, 37198225537',
-        'facts': (
-            "Your call 4 on sheet 23 takes the pilot's sequence from Miramar's Program Mapper, for the Fire "
-            "Technology A.S. (05100). The reader found the mapper through Miramar's own pages "
-            "(<code>sdmiramar.edu/program-mapper</code>), and <code>san-diego-miramar.programmapper.com</code> "
-            "answered all seven requests 403 Forbidden. A second run asked each of the 24 sequence sources the "
-            "census filed for one page: <strong>all 17 mapper hosts it reached answered 403</strong> (Ca&ntilde;ada, "
-            "Canyons, Compton, Contra Costa, Cuesta, Cypress, Hartnell, Imperial, Las Positas, Madera, Moorpark, "
-            "Napa, Oxnard, Reedley, San Jose City, Ventura, West Valley). Five more are college pages that link "
-            "to a mapper host; Santa Monica timed out. Irvine Valley alone publishes its program maps on its own "
-            "site, and that page answered. None of the 20 captured catalog pages prints a term sequence. The "
-            "reader never works around a refusal."),
-        'why': "The refusal is the mapper service's, so it decides how the whole harvest reads sequences, "
-               "not only Miramar's.",
-        'rec': "<strong>A person saves the one map, and you ask for access:</strong> you or a MAP team member "
-               "open Miramar's Fire Technology map in a browser and save it as a PDF; a session files it and "
-               "drafts the sequence record, which proves the shape. For the other colleges, ask Miramar (or the "
-               "mapper's operator) to let the CPL Initiative's reader in, or for an export. <em>It might be wrong "
-               "if</em> you would rather start from Irvine Valley's own program maps, which answer today; then "
-               "the pilot reads one of those instead.",
-        'chips': chips(('Save it and ask', 'save_ask'), ('Irvine Valley instead', 'ivc'),
-                       ('Defer sequences', 'defer'), CH_LATER),
-        'evidence': [live('2026-10-04', "job logs of runs 37197332656 (Miramar, seven 403s) and "
-                          "37198225537 (24 sequence sources, one load each), read through the GitHub connector")],
-    })
-    # S325: Sam asked for Sierra in the tab. Her rule today says a program LISTS a course.
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "May Sierra say \"required\" and give a unit total for a checked program?",
-        'ref': 'program-requirements-harvest NEEDS SAM · sierra-retrieval-corpus lane (PROGRAM COURSE LISTS) · '
-               'mock-up https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f',
-        'facts': (
-            "Since 2026-10-03 Sierra answers a course question from the state's Program Course File, and her rule "
-            "says a program <em>lists</em> a course: never \"required\", never a unit total, because that file "
-            "holds no rule. The harvest's records hold the rule, read from the college's catalog: required "
-            "courses, \"choose 6 units\" blocks, option groups and the program total. All 20 pilot records "
-            "passed all four checks on 2026-10-04, your reading among them. The tab mock-up shows Sierra "
-            "answering from them, marked as examples."),
-        'why': "Her answer to \"what do I need for this program?\" changes from a list of courses to the "
-               "catalog's own requirements, with the year named.",
-        'rec': "<strong>Yes, for checked records only:</strong> where a program's record passed all four "
-               "checks, Sierra may say required, name each choose block and give the total, citing the catalog "
-               "and its year; every other program keeps today's \"lists\" wording. A session builds it behind "
-               "the A/B preview and a smoke test before it goes live. <em>It might be wrong if</em> you want "
-               "the harvest to widen past the pilot first.",
-        'chips': chips(('Yes, checked records only', 'yes'), ('Not yet', 'not_yet'), CH_LATER),
-        'evidence': [quoted("docs/reference/lanes/sierra-retrieval-corpus.md, PROGRAM COURSE LISTS "
-                            "(\"A program LISTS a course: never 'required', never a unit total\")", '2026-10-04'),
-                     quoted("kb/program_requirements_pilot/review_2026-10-04.json (20 of 20 cards ruled)", '2026-10-04')],
-    })
-    # S325: Sam asked that catalog addenda be tracked in the schema, and the census now lists them.
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Go on the catalog addenda table as described?",
-        'ref': 'program-requirements-harvest NEEDS SAM · kb/supabase_program_source_addenda.sql · PR #1848',
-        'facts': (
-            "You asked that addenda be tracked in the schema and that the agents know of them. The census "
-            "now records each addendum, supplement or errata link for the current or prior catalog year, "
-            "and the first read found <strong>78 addenda at 52 of 118 colleges</strong> (19 name 2026-27, "
-            "41 name 2025-26, 18 name no year). The proposed table keeps one row per addendum: the "
-            "college, its address, the catalog year it amends, a status (listed, read, applied, gone), and "
-            "the programs it changes once an agent reads it. A trigger keeps every prior row, the census "
-            "writes only through one function, and anyone may read it, as with the registry. Until you say "
-            "go, the census keeps the addenda in the registry's evidence."),
-        'why': "A program record read from the catalog alone can be wrong the day it is filed; the table "
-               "lets every record name the addenda it was checked against.",
-        'rec': "<strong>Go:</strong> a session applies the table, its history and its write function, adds "
-               "the census's write to them, and builds the reading agent next. <em>It might be wrong if</em> "
-               "you want the addenda to stay in the registry's evidence until the reading agent exists.",
-        'chips': chips(('Go', 'go'), ('Not yet', 'not_yet'), CH_LATER),
-        'evidence': [live('2026-10-04', "census dry run 37199538519 (four shards, job logs read through the "
-                          "GitHub connector), replayed offline with the final filter")],
+            "Two are the memory receipts you marked for later on sheet 29: three rows, each naming one of "
+            "the SQL words the Supabase connector holds for a confirmation that never reaches you (the call "
+            "times out at 60 seconds and writes nothing). The third is new. On your go (sheet 29, card 5) "
+            "the catalog addenda table is live, and its privilege close met the same confirmation. Until it "
+            "runs, the default privileges still hand the public roles every table privilege on the two new "
+            "tables. Row-level security refuses their inserts, updates and deletes, and the write function "
+            "runs with the caller's own rights, so nothing has been exposed to a write; the close removes "
+            "the extras outright, as on the registry."),
+        'why': "The memory rows complete a session's memory read; the close finishes the addenda table to "
+               "the standard every shared table here meets (CLAUDE.md Rule 10 b2).",
+        'rec': "<strong>Paste all three:</strong> open the Supabase SQL editor and run each file whole. The "
+               "memory files skip any row already written and end with a read-back where every row shows "
+               "<code>creates = 1</code>; the close ends with a read-back where every public-role row reads "
+               "false. <em>It might be wrong if</em> the connector's prompt now reaches you; then reply here "
+               "and a session runs them while you watch.",
+        'chips': chips(('Pasted all three', 'pasted'), CH_LATER),
+        'evidence': [live('2026-10-04', "program_source_addenda privileges read through the Supabase "
+                          "connector after Part A: RLS on, one SELECT policy, anon holds the default table "
+                          "privileges, the write function is security invoker"),
+                     live('2026-10-03', "cpl_memory read back after the S320 and S321 timeouts: three "
+                          "rows absent")],
     })
     return I
 

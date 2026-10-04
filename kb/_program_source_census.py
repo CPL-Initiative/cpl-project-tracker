@@ -1070,18 +1070,49 @@ def shard_of(spec: str) -> tuple[int, int]:
     return int(m.group(1)), int(m.group(2))
 
 
-def apply_rows(rows: list[dict], run_id: str) -> dict:
+def _rpc(fn: str, run_id: str, rows: list[dict]) -> dict:
     import urllib.request
 
     url = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
     key = os.environ["SUPABASE_SERVICE_KEY"]
     req = urllib.request.Request(
-        url.rstrip("/") + "/rest/v1/rpc/program_source_census_apply",
+        url.rstrip("/") + "/rest/v1/rpc/" + fn,
         data=json.dumps({"p_run_id": run_id, "p_rows": rows}).encode(),
         headers={"apikey": key, "Authorization": "Bearer " + key,
                  "Content-Type": "application/json"}, method="POST")
     with urllib.request.urlopen(req, timeout=120) as resp:
         return json.loads(resp.read().decode() or "{}")
+
+
+def apply_rows(rows: list[dict], run_id: str) -> dict:
+    return _rpc("program_source_census_apply", run_id, rows)
+
+
+def addenda_rows(rows: list[dict]) -> list[dict]:
+    """What program_source_addenda_apply() takes: each college's addenda, and
+    whether this read was COMPLETE. Complete means the homepage and the catalog
+    page both answered and the address is this read's own; only then may the
+    table mark an addendum it no longer sees as gone. A blocked catalog page
+    hides the links it carries, so a partial read adds what it saw and nothing
+    more (Sam's go on the addenda table, open-asks sheet 29 card 5)."""
+    out = []
+    for r in rows:
+        ev = r.get("census_evidence") or {}
+        complete = bool(r.get("catalog_url")
+                        and r.get("access_status") == "ok"
+                        and (ev.get("homepage") or {}).get("access") == "ok"
+                        and not ev.get("kept_from"))
+        addenda = [{"kind": a.get("kind"), "title": a.get("title"), "url": a.get("url"),
+                    "year": a.get("year")}
+                   for a in ev.get("addenda") or [] if a.get("url") and a.get("kind")]
+        if addenda or complete:
+            out.append({"college": r["college"], "catalog_year": r.get("catalog_year"),
+                        "complete": complete, "addenda": addenda})
+    return out
+
+
+def apply_addenda(rows: list[dict], run_id: str) -> dict:
+    return _rpc("program_source_addenda_apply", run_id, addenda_rows(rows))
 
 
 def summarize(rows: list[dict]) -> dict:
@@ -1163,6 +1194,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.apply:
         print("apply:", json.dumps(apply_rows(rows, run_id)))
+        print("addenda:", json.dumps(apply_addenda(rows, run_id)))
     return 0
 
 

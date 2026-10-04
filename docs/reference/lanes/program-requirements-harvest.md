@@ -48,31 +48,15 @@ The plan is a Claude Doc Sam edits and comments on:
   on either table.
 
 **The census** (`kb/_program_source_census.py`,
-`.github/workflows/program-source-census.yml`): Playwright Chromium on a
-runner reads each homepage, scores catalog links (a library catalog, an old
-year, an archive or an addendum lose), follows one hop to Academics or
-Programs pages when the homepage names no catalog, then probes
-`catalog.<domain>`, also when the homepage itself fails. From a college page
-that names a vendor only in its text, or names no year and no vendor, it
-follows the vendor or `catalog.*` link one hop, never a login, change log,
-archive or library link, and never onto an older year than the page it left.
-On a district page it takes the link naming this college's own words and
-refuses one naming a sibling's (every college's name reaches each slice). A
-page listing two or more year-named catalogs is an index; the choice drops
-addenda and siblings. Link text falls back to `textContent` for hidden
-menus. Two links on one host that name different years put the newer first.
-It fingerprints the platform from the page's URL, then its assets, then its
-text (a text-only hit is noted), and picks up Program Mapper, program-map and
-curriculum-system links. The year comes from the page's title, then its h1,
-then a vendor catalog's own edition banner, then the address, the link's
-words, and a curriQunet `/alias/` name (the only place two-digit years are
-read). The banner counts only on a page the address or assets place on
-CourseLeaf, curriQunet, eLumen, Coursedog or SmartCatalog, only beside
-"catalog" or "edition", never when its phrase names an archive or a previous
-catalog or "coming soon" follows, and it never lowers a year the address or
-the link named. A read that finds no catalog keeps the registry's address and
-says so in the notes. Each catalog page's evidence names where its year came
-from, the banner's words, and the year its opening words name.
+`.github/workflows/program-source-census.yml`): Playwright Chromium on a runner
+reads each homepage, scores catalog links (a library catalog, an old year, an
+archive or an addendum lose), follows one hop to an Academics page or a vendor or
+`catalog.*` link, probes `catalog.<domain>`, prefers this college's own link on a
+district page, fingerprints the platform (URL, then assets, then text) and dates
+the catalog (title, h1, a vendor's edition banner, address, link words). A read
+that finds no catalog keeps the registry's address. Each rule, with the run that
+earned it, is in the module and its guard; the evidence names where each year
+came from.
 robots.txt first for every host; 4 s between loads; at most 6 pages a college;
 the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
 - A branch push is a dry run (job log only). Apply runs only on `main`: weekly
@@ -97,8 +81,8 @@ Miramar, Riverside City and a census-picked PDF-catalog college; a named MAP tea
 sample, with articulation officers invited; sequencing in the pilot only from Miramar's PPM map; yes to reading
 college websites from GitHub runners on a slow schedule that names the CPL Initiative; model calls through a
 Supabase Edge Function; nothing public until a college's records pass all four checks, first public use through
-Governance; the Tech Center asked for ROE field definitions when convenient. Still to name when Phase 1 reaches
-them: Riverside City's program, the person who checks the sample, and who contacts the Tech Center.
+Governance; the Tech Center asked for ROE field definitions when convenient. Sheets 25 and 26 named the rest:
+Riverside City's Culinary Arts certificate, Sam checks the sample himself, and Sam asks the Tech Center.
 
 **Measured (2026-10-03):**
 - The Data Mart Program Course File (2026-07-16) has 11 columns. None marks a
@@ -110,27 +94,19 @@ them: Riverside City's program, the person who checks the sample, and who contac
   2,573 noncredit, 2,959 ADTs, 35 baccalaureates. ADT structure comes from the
   TMC templates (`tmc_templates.js`).
 - The session container reaches no college site (the egress proxy rejects
-  every one); runners do. CourseLeaf (Cerritos, Foothill) and curriQunet (San
-  Diego) blocked plain reads in July (`docs/cpl_pathways_lessons.md`).
-- `cpl-news.yml` is the worked pattern for an agentic harvest: a scheduled
-  workflow calls an Edge Function that holds the Anthropic key. The census uses
-  no model yet.
+  every one); runners do.
 
 **The registry after the S322 apply (2026-10-03, run 37157737048, four
-slices).** 112 of 118 colleges carry a catalog address and 95 a year, 91 of
-them 2026-27 (the first apply, run 37142060932, gave 112, 77 and 71). Three
-branch reads confirmed the reader before it ran (runs 37154900912,
-37156161286, 37157042439), each compared row by row with the last, and no
-college lost an address or a year, or moved to an older year. Platforms:
+slices)** carried 112 of 118 catalog addresses and 95 years, 91 of them 2026-27;
+Sam's six addresses (below) bring it to 118. Platforms:
 CourseLeaf 29, curriQunet 27, eLumen 19, PDF 16, custom HTML 15, SmartCatalog,
 Coursedog and Acalog 2 each. Formats: 81 HTML per program, 16 single PDFs, 5
 PDFs by section. Program Pathways Mapper links at 11 colleges, program-map
 pages at 15; a public curriculum-system view at 50.
-- Six colleges the census cannot reach (no address): the four Los Rios colleges
-  (American River, Cosumnes River, Folsom Lake, Sacramento City: the homepage
-  answers 404) and De Anza and City College of San Francisco (Cloudflare
-  challenges). No `catalog.<domain>` host resolves for them. A web search found
-  each address; they wait on a person's entry (below).
+- Six colleges the census cannot reach (the four Los Rios homepages answer 404;
+  De Anza and City College of San Francisco serve Cloudflare challenges) carry
+  addresses Sam approved, entered 2026-10-04 (S326, `best_method` person,
+  `corrected_by` set, so the census files its own reading beside them).
 - Cerro Coso's catalog PDF is disallowed by robots.txt; the address is recorded
   and the census never loads it.
 - 2025-26 years: Los Angeles City, Palo Verde, Santiago Canyon and Evergreen
@@ -138,15 +114,10 @@ pages at 15; a public curriculum-system view at 50.
   2026-27 catalog for them (October 2026); the weekly read moves them when they
   publish. About 23 rows with an address carry no year, most on custom college
   pages, an Acalog list or a PDF whose address names none.
-- A site that fails one read keeps its address. In the S322 apply three did:
-  Los Angeles Mission and Los Angeles Valley answered 403 at the homepage (the
-  branch reads reached both), and Santa Monica's homepage showed no catalog
-  link. Without the guard the registry would hold 109 addresses. Columbia had
-  timed out the same way in one branch read.
-- ⚠️ The Los Angeles district's sites refused the runner (403) during the
-  apply. West Los Angeles, the pilot's PDF college, is a district college: a
-  pilot read of its catalog PDF may meet the same refusal, and the census
-  never works around one.
+- A site that fails one read keeps its address (three did in the S322 apply:
+  Los Angeles Mission, Los Angeles Valley, Santa Monica).
+- The Los Angeles district's sites refused the runner (403) during that apply;
+  the pilot still read West Los Angeles's catalog PDF (below).
 - San Diego College of Continuing Education stays on the district's catalogs
   page: no link on it names the college.
 
@@ -201,12 +172,6 @@ college.
   fixture re-read with today's matcher, every filed record re-scored with today's
   scorer.
 
-**Sam's calls on sheets 25 and 26 (2026-10-03, 22:57Z and 23:01Z, his own
-picks):** Riverside City's program is the Culinary Arts certificate; Sam
-himself checks the 20-program sample; Sam asks the Butte College Tech Center
-for its ROE field definitions after the pilot's first records; the six catalog
-addresses go in as given ("go"); the memory receipts wait for later.
-
 **The sequence pass (S325, PR #1847):** `kb/_program_sequence_ppm.py` on its own
 workflow (`program-sequence-ppm.yml`, so a change never reruns the capture's 20
 reads) enters a college's Program Mapper from the college's own pages, follows
@@ -215,10 +180,29 @@ courses and at least two terms. **Run 1 (37197332656, 2026-10-04):** a web searc
 found Miramar's own mapper page (`sdmiramar.edu/program-mapper`, with deep links
 `?pg=/academics/interest-clusters/<id>/programs/<id>`), and its "View Program
 Mapper" link leads to `san-diego-miramar.programmapper.com`, which answered all
-seven requests **403 Forbidden**. The reader never works around a refusal. None of
-the 20 captured catalog pages prints a term sequence. By default the pass now
-probes each sequence source the census filed, one load each, and re-reads
-Miramar's mapper only on a person's request (dispatch input `read: 1`).
+seven requests **403 Forbidden**. None of the 20 captured catalog pages prints a
+term sequence.
+
+**A refusal is on the college's record (Sam, sheet 29 card 3, 2026-10-04 11:59Z):**
+*"Note this in the record for the college. Rather than ask permission, we will
+make the agent aware of the limitation and to continue to look for solutions or
+workarounds."* So no access request goes to Miramar or the mapper's operator.
+`program_source_registry` carries four columns the census never writes
+(`sequence_host`, `sequence_access` open/refused/unreached/not_read,
+`sequence_note`, `sequence_checked_run`), filled S326 for 25 colleges from the two
+runs' evidence: **18 refused** (Miramar's mapper and the probe's 17), **5 not read**
+(Bakersfield, LA Harbor, Merced and West LA link to a mapper not yet read; Palo
+Verde's address is a homepage `#`), **1 open** (Irvine Valley's own maps page),
+**1 unreached** (Santa Monica timed out). Receipt:
+`kb/receipts/program_source_registry_sequence_access_2026-10-04_s326.sql`; the
+history trigger now names `sequence_checked_run`. The reader reads them: it never
+requests a host on record as refused, follows the college's own links to the
+program's map, pathway, roadmap or sequence (a page or a PDF), and the probe asks
+each recorded host's front page once a run, flagging `OPENED: file it` when one
+answers. ⚠️ **"Workaround" means another public source, never the same refused
+host under another name:** the reader keeps the census user agent that names the
+CPL Initiative (Sam's call 5 on sheet 23), so it never retries a refusal in
+disguise. The program read still needs the dispatch input `read: 1`.
 
 **Sam's ruling (2026-10-04, 11:1xZ, in chat):** *"No need for governance at this
 point. Everything is public record and we can mark the tab and contents as beta
@@ -266,33 +250,51 @@ copies. **Measured (run 37199538519, replayed offline with the final filter): 78
 addenda at 52 of 118 colleges** (2026-27: 19; 2025-26: 41; no year named: 18).
 The raw read found 136 at 58; every one of the 57 dropped was older, a schedule's,
 a calendar's or a proxy copy.
-- **Proposed table** `kb/supabase_program_source_addenda.sql`, **not applied**: one
-  row per (college, url), the catalog year it amends, a status (listed, read,
-  applied, gone, not an addendum), `programs_changed` for the reading agent,
-  history by trigger, one service-role write function, public read.
+- **The table is live (Sam's "Go", sheet 29 card 5, 12:00Z; S326):**
+  `program_source_addenda`, one row per (college, url), the catalog year it amends,
+  a status (listed, read, applied, gone, not an addendum), `programs_changed` for
+  the reading agent, history by trigger, public read. Part A (create-only) is
+  applied as migrations `program_source_addenda_create_2026_10_04` and
+  `program_source_addenda_return_keeps_read_2026_10_04`; the full file timed out at
+  60 s on the connector's confirmation for its revokes and wrote nothing. The write
+  function `program_source_addenda_apply()` is **security invoker**, so row-level
+  security alone keeps anon and authenticated out of every write until **Part B**
+  (`kb/receipts/program_source_addenda_close_2026-10-04_s326.sql`, Sam pastes it)
+  removes their default privileges. Checked live in two self-rolling-back blocks:
+  new, seen again, a partial read marks nothing gone, a complete read does, and an
+  addendum that returns comes back `read` if an agent read it, else `listed`.
+- **The census writes it** (`apply_addenda()` after the registry, apply mode only):
+  each college's addenda with `complete` true only when the homepage and the
+  catalog page both answered and the address is this read's own; a partial read
+  adds what it saw and marks nothing gone. ⚠️ **The table is empty until the next
+  apply:** today's Sunday 10:29 schedule did not fire (no scheduled run on the
+  list), so the first rows land 2026-10-11, or on a hand dispatch with `mode:
+  apply` on `main`.
 - **Agents aware (the plan):** the census lists addenda; a reading agent reads
   each listed addendum, files which programs it changes, and marks it read; a
   program record carries the addenda it was checked against, and a record whose
   college has an unread addendum for its catalog year is flagged; Sierra cites
   "the 2026-27 catalog as amended by the addendum of <date>".
 
-**NEEDS SAM (open-asks sheet 29): (5)** "Go" on the addenda table as described
-(`kb/supabase_program_source_addenda.sql`).
+**Sam's sheet 29 (2026-10-04, 11:54-12:00Z, all five his own calls):** (2) *Guard
+lifted: run it*: S326 ran the six catalog addresses through the migration path
+(`program_source_registry_corrections_2026_10_03_s321`); six rows corrected, each
+with its prior row in the history table. (3) the record note above. (4) **yes**:
+Sierra may say "required", name each choose block and give the total for a program
+whose record passed all four checks, citing the catalog and its year; every other
+program keeps "lists". Built next behind the A/B preview and a smoke (it needs the
+records in a table Sierra reads; today they are repo files). (5) the addenda table
+above.
 
-**NEEDS SAM (open-asks sheet 28):** (3) how the pilot reads Miramar's sequence,
-given the mapper's refusal (proposed: a person saves the one map; Sam asks for
-access); (4) whether Sierra may say "required" and give a unit total for a
-program whose record passed all four checks (proposed: yes, those only).
-Carried from sheet 27: (1) paste the two memory receipts
-(`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`) in the SQL editor
-when convenient (his call: later): three rows name a stall word, and the
-connector's confirmation never reached him when S322 ran them; (2) the six
-catalog addresses: he said "go", and the repo's Supabase guard refused the
-session's UPDATE to the shared registry (Rule 10), so he pastes
-`kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql` in the SQL
-editor or lifts the guard for one run.
+**NEEDS SAM (open-asks sheet 30):** paste three files in the SQL editor:
+`kb/receipts/cpl_memory_2026-10-03_s320.sql` and `..._s321.sql` (his call on
+sheet 29: later; three rows name a word the connector stalls on) and
+`kb/receipts/program_source_addenda_close_2026-10-04_s326.sql` (the addenda
+table's privilege close).
 
-**NEXT:** Sam's reaction to the tab mock-up, then the port into COBI (a static
-tab plus the Sierra surface); the sequence per sheet 28; the Butte College Tech
+**NEXT:** Sierra's "required" for checked records (sheet 29 card 4); Sam's
+reaction to the tab mock-up, then the port into COBI (a static tab plus the
+Sierra surface); the addenda reading agent once the table has rows; a sequence
+read that looks for Miramar's map on its own pages (`read: 1`); the Butte College Tech
 Center's ROE field definitions (Sam asks them, the pilot's records being done);
 then the harvest widens past the pilot.
