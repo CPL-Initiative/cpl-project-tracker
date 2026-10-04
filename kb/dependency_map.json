@@ -895,7 +895,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1585,
+     "line": 1945,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1308,7 +1308,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1584,
+     "line": 1944,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2096,7 +2096,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1583,
+     "line": 1943,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4728,7 +4728,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1723,
+     "line": 2094,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4798,7 +4798,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1717,
+     "line": 2088,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5091,7 +5091,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 994,
+     "line": 1354,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5134,7 +5134,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1690,
+     "line": 2061,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5157,7 +5157,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1153,
+     "line": 1513,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5201,6 +5201,16 @@
   },
   "file:cpl_pathways_roep_data.js": {
    "consumers": [
+    {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2102,
+     "tabs": [
+      "cpl-pathways"
+     ]
+    },
     {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
@@ -5345,7 +5355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1704,
+     "line": 2075,
      "tabs": [
       "cpl-pathways"
      ]

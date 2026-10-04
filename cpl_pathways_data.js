@@ -29,6 +29,103 @@
 window.CPL_PATHWAYS = {
   _as_of: "2026-07-10",
   programs: [
+    // The proof of concept (Sam, 2026-10-04 18:23Z): one pathway shown whole, high
+    // school to career, and "leverage CPL on clear paths to increase access and
+    // completion leading to career improvement." Ported from mock-up 1
+    // (docs/visuals/2026-10-04-ironworker-ladder.html) at his word: "port it to CPL
+    // Pathways. Add a simple graphical map summarizing the steps leading to career
+    // at the beginning. Allow a click through to the sections of the steps."
+    // kind "ladder" renders a step map, then one section per step (cpl_pathways.js
+    // renderLadder). Steps marked `derive` read the display build
+    // (cpl_pathways_roep_data.js, record `roep_key`), the same facts Sierra reads;
+    // every point carries `s`: "data" (read from the catalog, COCI, MAP or the
+    // Centers of Excellence) or "confirm" (a public web page the harvest has not read).
+    {
+      id: "cerritos-ironworker-ladder",
+      kind: "ladder",
+      college: "Cerritos College",
+      program: "Field Ironworkers, high school to career",
+      title: "From high school to the job site",
+      roep_key: "cerritos_42158",
+      blurb: "One Field Ironworkers pathway at Cerritos College, step by step: where a learner can start, what each award requires, the credit for prior learning (CPL) Cerritos has already articulated, and the jobs at the end. A label on each line says whether it comes from our data or still needs confirming.",
+      steps: [
+        { id: "start", stage: "Start", map: "High school, adult school, ROP",
+          title: "High school, adult school and ROP",
+          what: "The earliest doors into the trade, before a learner enrolls at Cerritos.",
+          points: [
+            { t: "Columbus High School (Downey Unified) runs a welding pathway into WELD 100 at Cerritos through dual enrollment.", s: "confirm" },
+            { t: "Norwalk-La Mirada Adult School and Southeast ROP teach welding.", s: "confirm" },
+            { t: "MAP holds no high school, adult school or ROP credit for prior learning at Cerritos.", s: "data" },
+          ],
+          cpl_map: "No CPL yet",
+          cpl: "None articulated yet. The high school list comes from Cerritos's Educational Partnerships office." },
+        { id: "noncredit", stage: "Noncredit", map: "Pre-Apprenticeship",
+          title: "Pre-Apprenticeship and noncredit ironworker courses",
+          what: "Tuition-free noncredit courses at Cerritos that prepare a learner for the apprenticeship.",
+          points: [
+            { t: "Pre-Apprenticeship certificate (control number 24102): AED 36.02, 36.03, 36.04 and 80.01.", s: "data" },
+            { t: "The certificate admits apprentices only.", s: "confirm" },
+            { t: "AED 36.05 Basic Welding, and OSHA 10 in AED 90.05.", s: "data" },
+            { t: "Twenty-six noncredit courses, AED 40.01 through 41.10, mirror the credit IWAP courses one for one.", s: "data" },
+            { t: "Whether those 26 courses still run each term.", s: "confirm" },
+          ],
+          cpl_map: "No CPL yet",
+          cpl: "None yet. A noncredit-to-credit articulation would let each AED course count toward its IWAP twin; Santa Ana College's noncredit exhibit in MAP is the model." },
+        { id: "apprenticeship", stage: "Apprenticeship", map: "Locals 433 and 416",
+          title: "Ironworkers Locals 433 and 416",
+          what: "Paid on-the-job training with classroom instruction. This training is what Cerritos credits through CPL.",
+          points: [
+            { t: "Local 433's joint apprenticeship committee runs a 48-month program at its La Palma training center; Local 416 trains in Norwalk.", s: "confirm" },
+            { t: "Classroom hours: published figures disagree, 480 or more than 700.", s: "confirm" },
+          ],
+          cpl_map: "Credit by exam",
+          cpl: "The apprenticeship's coursework earns credit by exam toward the certificates and the A.S." },
+        { id: "certificates", stage: "Certificates", map: "Reinforcing, Structural", derive: "certificates",
+          title: "Reinforcing and Structural certificates",
+          what: "Each certificate is one complete A.S. major option: the core plus its option's courses.",
+          certificates: [
+            { name: "Reinforcing", control: "36002", blocks: [0, 1] },
+            { name: "Structural", control: "36003", blocks: [0, 2] },
+          ],
+          cpl: "The certificate figures follow from the A.S. record, since COCI lists the same courses." },
+        { id: "associate", stage: "Associate degree", map: "A.S., Field Ironworkers", derive: "associate",
+          title: "A.S., Apprenticeship: Field Ironworkers",
+          what: "Control number 42158. The major is the core plus one option." },
+        { id: "bachelor", stage: "Bachelor's degree", map: "B.S., Field Ironworker Supervisor",
+          title: "B.S., Field Ironworker Supervisor",
+          what: "A bachelor's degree for journeyworkers moving into supervision.",
+          points: [
+            { t: "The Chancellor's Office approved it in February 2026.", s: "confirm" },
+            { t: "Upper-division coursework online, with a general education requirement to enter.", s: "confirm" },
+            { t: "The course list, the admission rule and the first cohort, planned for fall 2027.", s: "confirm" },
+          ],
+          cpl_map: "A.S. credit carries",
+          cpl: "The A.S. credit carries into the lower division; exams such as CLEP can meet general education through the systemwide credit chart.",
+          open: { id: "cerritos-field-ironworker-bs", label: "Open the B.S. course map" } },
+        { id: "career", stage: "Career", map: "Ironworker to supervisor",
+          title: "The jobs at the end of the ladder",
+          what: "Centers of Excellence projections for 2024–2029, Los Angeles and Orange County regions.",
+          points: [
+            { t: "Structural iron and steel workers: median $35 an hour in Los Angeles and $37 in Orange County; about 130 and 80 openings a year.", s: "data" },
+            { t: "First-line supervisors of construction trades: median $43 an hour in Los Angeles and $48 in Orange County; 1,130 and 680 openings a year.", s: "data" },
+            { t: "Internships and employers recruiting from the program.", s: "confirm" },
+          ],
+          cpl_map: "1,810 supervisor openings a year" },
+      ],
+      confirm: [
+        "The B.S. course list, admission rule and first cohort.",
+        "The high school articulation list.",
+        "Whether the 26 noncredit AED courses still run.",
+        "The apprenticeship's classroom hours.",
+      ],
+      confirm_note: "The harvest agent reads these pages first, from a runner. A request goes to Cerritos only after Cerritos's procedure record shows every step tried.",
+      sources: [
+        { label: "Cerritos College catalog 2026–27, Apprenticeship: Field Ironworkers A.S.", url: "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/field-ironworkers-aa/" },
+        { label: "Chancellor's Office COCI program and course files (load of 16 July 2026)" },
+        { label: "MAP articulated-exhibit records (read 4 October 2026)" },
+        { label: "Centers of Excellence occupational demand 2024–2029" },
+      ],
+    },
     {
       id: "cerritos-field-ironworker-bs",
       college: "Cerritos College",
@@ -65,7 +162,7 @@ window.CPL_PATHWAYS = {
         {
           id: "as-major",
           title: "Ironworker apprenticeship major — articulated in MAP today",
-          note: "The Apprenticeship: Field Ironworkers A.S. requires 27–29 major units (Reinforcing or Structural core). Cerritos has 31.5 units of apprenticeship coursework articulated as Credit by Exam — a journeyworker clears the entire major without repeating a class.",
+          note: "The Apprenticeship: Field Ironworkers A.S. requires 34–38 major units in the 2026–27 catalog: the core plus the Reinforcing or Structural option. Cerritos has articulated up to 31.5 of the 34 Reinforcing units as Credit by Exam; Welding I (IWAP 40.10) and the Structural option carry none yet.",
           wide: true,
           courses: [
             { code: "IWAP 40.07", title: "FIW — Orientation", units: 4.0,

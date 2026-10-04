@@ -987,6 +987,366 @@
     root.appendChild(frag);
   }
 
+  // ── The pathway ladder ─────────────────────────────────────────────────────
+  // Sam, 2026-10-04, after mock-up 1: "port it to CPL Pathways. Add a simple
+  // graphical map summarizing the steps leading to career at the beginning.
+  // Allow a click through to the sections of the steps." A program with kind
+  // "ladder" (cpl_pathways_data.js) renders that step map, then one section per
+  // step. The associate degree's courses and figure, and the certificate
+  // figures, come from the display build (window.CPL_PATHWAYS_ROEP, written by
+  // kb/_build_roep_display.py), the same facts Sierra reads. Every other line is
+  // curated and labeled In our data or To confirm; a word carries the label,
+  // never color alone. The map's steps are buttons that scroll to their section:
+  // a #hash link would move this dashboard's tab router.
+  var LADDER_CSS_ID = "cplpw-ladder-css";
+  var LADDER_CSS = [
+    ".cplpw-ladder { display:grid; gap:18px; }",
+    ".cplpw-ladder .lhero h2 { margin:2px 0 6px; font-size:clamp(1.4rem, 1.2vw + 1rem, 2rem); color: var(--text-strong); }",
+    ".cplpw-ladder .lhero .college { font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--text-muted); }",
+    ".cplpw-ladder .lhero p { margin:0; color: var(--text-body); max-width: var(--cpl-measure, none); }",
+    ".cplpw-ladder .llegend { display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:10px; font-size:.85rem; color: var(--text-muted); }",
+    ".cplpw-lchip { display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:1px 7px; border-radius:999px; border:1px solid var(--border-strong); color: var(--text-muted); white-space:nowrap; }",
+    ".cplpw-lchip.confirm { color: var(--mustard-text); border-color: var(--mustard-text); }",
+    /* the step map */
+    ".cplpw-lmap { background: var(--surface-opaque); border:1px solid var(--border); border-radius:14px; padding:14px 14px 10px; }",
+    ".cplpw-lmap h3 { margin:0 0 10px; font-size:1rem; color: var(--text-strong); }",
+    ".cplpw-lmap ol { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(7, minmax(0, 1fr)); gap:8px; position:relative; }",
+    ".cplpw-lmap ol::before { content:''; position:absolute; left:7%; right:7%; top:13px; height:2px; background: var(--border-strong); }",
+    ".cplpw-lmap li { position:relative; min-width:0; }",
+    ".cplpw-lstep { display:flex; flex-direction:column; align-items:center; gap:4px; width:100%; padding:0 4px 6px; border:0; border-radius:10px; background:transparent; color: var(--text-body); font:inherit; text-align:center; cursor:pointer; }",
+    ".cplpw-lstep:hover .name { color: var(--cobalt); text-decoration:underline; text-underline-offset:2px; }",
+    ".cplpw-lstep:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-lstep .dot { width:16px; height:16px; margin-top:6px; border-radius:50%; border:3px solid var(--border-strong); background: var(--surface-opaque); position:relative; }",
+    ".cplpw-lstep.has-cpl .dot { border-color: var(--text-strong); background: var(--text-strong); }",
+    ".cplpw-lstep .txt { display:flex; flex-direction:column; align-items:center; gap:2px; min-width:0; }",
+    ".cplpw-lstep .name { font-weight:700; font-size:.82rem; color: var(--text-strong); line-height:1.2; }",
+    ".cplpw-lstep .sub { font-size:.74rem; color: var(--text-muted); line-height:1.25; overflow-wrap:anywhere; }",
+    ".cplpw-lstep .cplw { font-size:.72rem; font-weight:700; color: var(--text-body); line-height:1.25; }",
+    "@media (max-width: 760px) { .cplpw-lmap ol { grid-template-columns:repeat(2, minmax(0, 1fr)); } .cplpw-lmap ol::before { display:none; } .cplpw-lstep { flex-direction:row; align-items:flex-start; text-align:left; gap:8px; padding:6px; } .cplpw-lstep .dot { flex:0 0 auto; margin-top:2px; } .cplpw-lstep .txt { align-items:flex-start; } }",
+    "@media (max-width: 420px) { .cplpw-lmap ol { grid-template-columns:minmax(0, 1fr); } }",
+    /* the step sections */
+    ".cplpw-lsteps { list-style:none; margin:0; padding:0; display:grid; gap:14px; }",
+    ".cplpw-lsec { background: var(--surface-opaque); border:1px solid var(--border); border-radius:14px; padding:16px 18px; min-width:0; scroll-margin-top:16px; }",
+    ".cplpw-lsec.anchor { border-color: var(--border-strong); }",
+    ".cplpw-lsec .stage { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; font-size:.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--text-muted); }",
+    ".cplpw-lsec h3 { margin:4px 0 0; font-size:clamp(1.1rem, .8vw + .9rem, 1.35rem); color: var(--text-strong); }",
+    ".cplpw-lsec h3:focus { outline:none; }",
+    ".cplpw-lsec h3:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:3px; }",
+    ".cplpw-lsec .what { margin:6px 0 0; color: var(--text-body); }",
+    ".cplpw-lpoints { list-style:none; margin:10px 0 0; padding:0; display:grid; gap:6px; }",
+    ".cplpw-lpoints li { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:4px 12px; align-items:baseline; padding-top:6px; border-top:1px solid var(--border); }",
+    ".cplpw-lpoints li > span:first-child { min-width:0; }",
+    "@media (max-width: 560px) { .cplpw-lpoints li { grid-template-columns:minmax(0, 1fr); } .cplpw-lpoints .cplpw-lchip { justify-self:start; } }",
+    ".cplpw-lcpl { margin:12px 0 0; padding:9px 12px; border-radius:10px; background: var(--surface-subtle); color: var(--text-body); }",
+    ".cplpw-lcpl strong { color: var(--text-strong); }",
+    ".cplpw-lopen { margin-top:10px; padding:6px 12px; border-radius:8px; border:1px solid var(--cobalt); background:transparent; color: var(--cobalt); font:inherit; font-weight:600; cursor:pointer; }",
+    ".cplpw-lopen:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-lblocks { display:grid; grid-template-columns:minmax(0, 1fr); gap:14px; margin-top:12px; min-width:0; }",
+    ".cplpw-lblock { min-width:0; }",
+    ".cplpw-lblock .bh { display:flex; flex-wrap:wrap; justify-content:space-between; gap:2px 12px; align-items:baseline; }",
+    ".cplpw-lblock h4 { margin:0; font-size:.98rem; color: var(--text-strong); }",
+    ".cplpw-lblock .bsum { font-size:.85rem; color: var(--text-muted); font-variant-numeric:tabular-nums; }",
+    ".cplpw-ltable { overflow-x:auto; margin-top:6px; border:1px solid var(--border); border-radius:10px; }",
+    ".cplpw-ltable table { width:100%; border-collapse:collapse; table-layout:fixed; background: var(--surface-opaque); }",
+    ".cplpw-ltable col.c1 { width:48%; } .cplpw-ltable col.c2 { width:12%; } .cplpw-ltable col.c3 { width:40%; }",
+    ".cplpw-ltable th, .cplpw-ltable td { text-align:left; padding:7px 10px; vertical-align:top; border-top:1px solid var(--border); font-size:.88rem; }",
+    ".cplpw-ltable thead th { border-top:0; font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color: var(--text-muted); background: var(--surface-subtle); }",
+    ".cplpw-ltable tbody tr:nth-child(even) { background: var(--surface-subtle); }",
+    ".cplpw-ltable tbody th { font-weight:400; }",
+    ".cplpw-ltable .num { text-align:right; font-variant-numeric:tabular-nums; }",
+    ".cplpw-ltable .code { display:block; font-weight:700; color: var(--text-strong); }",
+    ".cplpw-ltable .ctitle, .cplpw-ltable .cred { display:block; color: var(--text-muted); overflow-wrap:anywhere; }",
+    ".cplpw-ltable .yes { display:block; font-weight:600; color: var(--text-strong); }",
+    ".cplpw-ltable .no { color: var(--text-muted); }",
+    "@media (max-width: 560px) { .cplpw-ltable table { min-width:440px; } }",
+    ".cplpw-lconfirm { background: var(--surface-opaque); border:1px solid var(--border); border-radius:14px; padding:14px 18px; }",
+    ".cplpw-lconfirm h3 { margin:0; font-size:1rem; color: var(--text-strong); }",
+    ".cplpw-lconfirm ol { margin:8px 0 0; padding-left:1.2em; display:grid; gap:4px; }",
+    ".cplpw-lconfirm p { margin:8px 0 0; font-size:.88rem; color: var(--text-muted); }",
+    "@media (prefers-reduced-motion: reduce) { .cplpw-lsec { scroll-margin-top:16px; } }",
+  ].join("\n");
+  function ensureLadderCss() {
+    if (document.getElementById(LADDER_CSS_ID)) return;
+    var s = document.createElement("style");
+    s.id = LADDER_CSS_ID;
+    s.textContent = LADDER_CSS;
+    document.head.appendChild(s);
+  }
+
+  function roepRecord(key) {
+    var d = window.CPL_PATHWAYS_ROEP;
+    var progs = (d && d.programs) || [];
+    for (var i = 0; i < progs.length; i++) if (progs[i] && progs[i].key === key) return progs[i];
+    return null;
+  }
+
+  // Each catalog block's units and its units with CPL articulated here, from the record.
+  function ladderBlocks(rec) {
+    var courses = (rec && rec.display && rec.display.courses) || {};
+    return (((rec && rec.record) || {}).blocks || []).map(function (b) {
+      var units = 0, cpl = 0;
+      var rows = (b.courses || []).map(function (c) {
+        var u = Number(c.units) || 0;
+        var info = courses[c.code] || {};
+        var here = info.here || null;
+        var creds = (here && here.credentials) || [];
+        units += u;
+        if (creds.length) cpl += u;
+        return { code: c.code, title: info.title || "", units: u, credentials: creds };
+      });
+      return { name: b.name || "", units: units, cpl: cpl, rows: rows };
+    });
+  }
+
+  // A certificate is the sum of the A.S. blocks it names (the core plus one option).
+  function certificateFigures(blocks, cert) {
+    var units = 0, cpl = 0;
+    (cert.blocks || []).forEach(function (i) {
+      var b = blocks[i];
+      if (b) { units += b.units; cpl += b.cpl; }
+    });
+    return { units: units, cpl: cpl };
+  }
+
+  function lchip(state) {
+    return state === "confirm" ? el("span", "cplpw-lchip confirm", "To confirm") : el("span", "cplpw-lchip", "In our data");
+  }
+
+  function blockLabel(name, i) {
+    if (i === 0) return "Core, every ironworker";
+    var m = /^Option\s+(\d+):\s*(.*?)(?:\s+Program)?$/i.exec(name || "");
+    return m ? "Option " + m[1] + ", " + m[2] : (name || "Option " + i);
+  }
+
+  function blockTable(b, i) {
+    var wrap = el("div", "cplpw-lblock");
+    var label = blockLabel(b.name, i);
+    var head = el("div", "bh");
+    head.appendChild(el("h4", null, label));
+    head.appendChild(el("span", "bsum", fmtU(b.cpl) + " of " + fmtU(b.units) + " units through CPL"));
+    wrap.appendChild(head);
+    var region = el("div", "cplpw-ltable");
+    region.setAttribute("role", "region");
+    region.setAttribute("aria-label", label + " courses");
+    region.setAttribute("tabindex", "0");
+    var table = document.createElement("table");
+    var cg = document.createElement("colgroup");
+    ["c1", "c2", "c3"].forEach(function (c) { var col = document.createElement("col"); col.className = c; cg.appendChild(col); });
+    table.appendChild(cg);
+    var thead = document.createElement("thead");
+    var hr = document.createElement("tr");
+    [["Course", ""], ["Units", "num"], ["CPL at " + "this college", ""]].forEach(function (h) {
+      var th = el("th", h[1] || null, h[0]);
+      th.setAttribute("scope", "col");
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr);
+    table.appendChild(thead);
+    var tb = document.createElement("tbody");
+    b.rows.forEach(function (r) {
+      var tr = document.createElement("tr");
+      var th = el("th", null, [el("span", "code", r.code), el("span", "ctitle", r.title)]);
+      th.setAttribute("scope", "row");
+      tr.appendChild(th);
+      tr.appendChild(el("td", "num", fmtU(r.units)));
+      var cell = el("td");
+      if (r.credentials.length) {
+        cell.appendChild(el("span", "yes", "Credit by exam"));
+        cell.appendChild(el("span", "cred", String(r.credentials[0]).replace(/^Ironworker Apprenticeship\s+—\s+/, "")));
+      } else {
+        cell.appendChild(el("span", "no", "None yet"));
+      }
+      tr.appendChild(cell);
+      tb.appendChild(tr);
+    });
+    table.appendChild(tb);
+    region.appendChild(table);
+    wrap.appendChild(region);
+    return wrap;
+  }
+
+  // The figures each derived step shows, and the map's short CPL line for it.
+  function ladderModel(prog) {
+    var rec = roepRecord(prog.roep_key);
+    var blocks = rec ? ladderBlocks(rec) : [];
+    var fig = rec && rec.display && rec.display.figure;
+    var total = fig && fig.total;
+    var range = total ? (total.min === total.max ? fmtU(total.min) : fmtU(total.min) + "–" + fmtU(total.max)) : "";
+    return {
+      rec: rec, blocks: blocks, figure: fig, range: range,
+      catalogYear: rec ? rec.catalog_year : null,
+      build: rec && rec.display ? rec.display.build : null,
+    };
+  }
+
+  function stepMapLine(step, model) {
+    if (step.derive === "associate") return model.figure ? "Up to " + fmtU(model.figure.up_to) + " of " + model.range + " units" : "Record unavailable";
+    if (step.derive === "certificates") {
+      if (!model.blocks.length) return "Record unavailable";
+      var best = 0;
+      (step.certificates || []).forEach(function (c) { best = Math.max(best, certificateFigures(model.blocks, c).cpl); });
+      return "Up to " + fmtU(best) + " units through CPL";
+    }
+    return step.cpl_map || "";
+  }
+
+  function stepHasCpl(step, model) {
+    if (step.derive) return !!(model.figure && model.figure.up_to > 0);
+    return /credit by exam|carries/i.test(step.cpl_map || "");
+  }
+
+  function renderLadder(root, prog, liveNote, openById) {
+    ensureLadderCss();
+    var model = ladderModel(prog);
+    var steps = prog.steps || [];
+    var frag = document.createDocumentFragment();
+    var wrap = el("div", "cplpw-ladder");
+
+    var hero = el("div", "lhero");
+    hero.appendChild(el("div", "college", prog.college || ""));
+    hero.appendChild(el("h2", null, prog.title || prog.program || ""));
+    if (prog.blurb) hero.appendChild(el("p", null, prog.blurb));
+    var legend = el("div", "llegend");
+    legend.appendChild(el("span", null, [lchip("data"), document.createTextNode(" read from the catalog, COCI, MAP or the Centers of Excellence")]));
+    legend.appendChild(el("span", null, [lchip("confirm"), document.createTextNode(" found on a public web page; the next harvest reads it first")]));
+    hero.appendChild(legend);
+    wrap.appendChild(hero);
+    if (liveNote) wrap.appendChild(el("div", "cplpw-note", liveNote));
+
+    // The step map: every step, in order, each a button to its section.
+    var map = el("nav", "cplpw-lmap");
+    map.setAttribute("aria-label", "Steps from high school to career");
+    map.appendChild(el("h3", null, "The steps to a career"));
+    var ol = document.createElement("ol");
+    var sections = {};
+    steps.forEach(function (st, i) {
+      var li = document.createElement("li");
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "cplpw-lstep" + (stepHasCpl(st, model) ? " has-cpl" : "");
+      b.setAttribute("data-step", st.id);
+      b.setAttribute("aria-label", "Step " + (i + 1) + " of " + steps.length + ": " + st.stage + ". " + st.map + ". " + stepMapLine(st, model) + ". Go to this step.");
+      b.appendChild(el("span", "dot"));
+      b.appendChild(el("span", "txt", [
+        el("span", "name", st.stage),
+        el("span", "sub", st.map || ""),
+        el("span", "cplw", stepMapLine(st, model)),
+      ]));
+      b.addEventListener("click", function () {
+        var sec = sections[st.id];
+        if (!sec) return;
+        var reduce = false;
+        try { reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) { reduce = false; }
+        if (typeof sec.scrollIntoView === "function") sec.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+        var h = sec.querySelector("h3");
+        if (h && typeof h.focus === "function") {
+          try { h.focus({ preventScroll: true }); } catch (e) { h.focus(); }
+        }
+      });
+      li.appendChild(b);
+      ol.appendChild(li);
+    });
+    map.appendChild(ol);
+    wrap.appendChild(map);
+
+    // The sections, one per step.
+    var list = el("ol", "cplpw-lsteps");
+    list.setAttribute("aria-label", "The pathway, step by step");
+    steps.forEach(function (st) {
+      var li = document.createElement("li");
+      var sec = el("section", "cplpw-lsec" + (st.derive === "associate" ? " anchor" : ""));
+      sec.id = "cplpw-step-" + st.id;
+      sections[st.id] = sec;
+      var stage = el("div", "stage", st.stage);
+      if (st.derive) stage.appendChild(lchip("data"));
+      sec.appendChild(stage);
+      var h = el("h3", null, st.title || st.stage);
+      h.setAttribute("tabindex", "-1");
+      sec.appendChild(h);
+      var what = st.what || "";
+      if (st.derive === "associate" && model.catalogYear) what += " From the " + model.catalogYear.replace("-", "–") + " catalog.";
+      if (what) sec.appendChild(el("p", "what", what));
+
+      if (st.points && st.points.length) {
+        var ul = el("ul", "cplpw-lpoints");
+        st.points.forEach(function (p) { ul.appendChild(el("li", null, [el("span", null, p.t), lchip(p.s)])); });
+        sec.appendChild(ul);
+      }
+
+      if (st.derive === "certificates") {
+        var cl = el("ul", "cplpw-lpoints");
+        (st.certificates || []).forEach(function (c) {
+          var f = certificateFigures(model.blocks, c);
+          var line = model.blocks.length
+            ? c.name + " (control number " + c.control + "), " + fmtU(f.units) + " units: up to " + fmtU(f.cpl) + " through CPL."
+            : c.name + " (control number " + c.control + "): the A.S. record did not load.";
+          cl.appendChild(el("li", null, [el("span", null, line), lchip("data")]));
+        });
+        sec.appendChild(cl);
+      }
+
+      if (st.derive === "associate") {
+        if (model.figure) {
+          sec.appendChild(el("p", "cplpw-lcpl", [
+            el("strong", null, "CPL at this step: up to " + fmtU(model.figure.up_to) + " of the " + model.range + " major units"),
+            document.createTextNode(", articulated at " + (prog.college || "this college") + " as credit by exam."),
+          ]));
+          var bl = el("div", "cplpw-lblocks");
+          model.blocks.forEach(function (b, i) { bl.appendChild(blockTable(b, i)); });
+          sec.appendChild(bl);
+        } else {
+          sec.appendChild(el("p", "cplpw-lcpl", "The A.S. record did not load, so its courses and CPL figure are not shown."));
+        }
+      } else if (st.cpl) {
+        sec.appendChild(el("p", "cplpw-lcpl", [el("strong", null, "CPL at this step: "), document.createTextNode(st.cpl)]));
+      }
+
+      if (st.open && typeof openById === "function") {
+        var ob = el("button", "cplpw-lopen", st.open.label || "Open");
+        ob.type = "button";
+        ob.addEventListener("click", function () { openById(st.open.id); });
+        sec.appendChild(ob);
+      }
+      li.appendChild(sec);
+      list.appendChild(li);
+    });
+    wrap.appendChild(list);
+
+    if (prog.confirm && prog.confirm.length) {
+      var cf = el("div", "cplpw-lconfirm");
+      cf.appendChild(el("h3", null, "Before this goes public"));
+      var col = document.createElement("ol");
+      prog.confirm.forEach(function (c) { col.appendChild(el("li", null, c)); });
+      cf.appendChild(col);
+      if (prog.confirm_note) cf.appendChild(el("p", null, prog.confirm_note));
+      wrap.appendChild(cf);
+    }
+
+    var foot = el("div", "cplpw-foot");
+    if (model.build) foot.appendChild(el("div", null, "CPL figures come from display build " + model.build + ", the same build Sierra reads."));
+    if (prog.sources && prog.sources.length) {
+      var srcRow = el("div", null, "Sources: ");
+      prog.sources.forEach(function (s, i) {
+        if (i) srcRow.appendChild(document.createTextNode(" · "));
+        if (s.url) {
+          var a = document.createElement("a");
+          a.href = s.url; a.target = "_blank"; a.rel = "noopener";
+          a.textContent = s.label || s.url;
+          srcRow.appendChild(a);
+        } else {
+          srcRow.appendChild(document.createTextNode(s.label || ""));
+        }
+      });
+      foot.appendChild(srcRow);
+    }
+    wrap.appendChild(foot);
+    frag.appendChild(wrap);
+
+    clearNode(root);
+    root.removeAttribute("style");
+    root.appendChild(frag);
+  }
+
   // ── Directory card renderer ───────────────────────────────────────────────
   // One auto-generated card per CCC baccalaureate: program metadata (from the
   // COCI export) + a LIVE CPL landscape (the college's own in-field CPL, the
@@ -1661,12 +2021,23 @@
     }
     var container = el("div", "cplpw");
     var body = el("div");
+    var selector = null;
+    function openById(id) {
+      for (var j = 0; j < items.length; j++) {
+        if (items[j].prog && items[j].prog.id === id) {
+          if (selector) selector.select.value = String(j);
+          show(j);
+          if (typeof container.scrollIntoView === "function") container.scrollIntoView({ block: "start" });
+          return;
+        }
+      }
+    }
     function show(i) {
       var it = items[i] || items[0];
       if (it.kind === "directory") renderDirectory(body, it.prog, dir, directory, dir ? null : liveNote);
+      else if (it.prog.kind === "ladder") renderLadder(body, it.prog, null, openById);
       else renderProgram(body, it.prog, live, liveNote);
     }
-    var selector = null;
     if (items.length > 1) {
       selector = buildSelector(items, directory, dir, function (i) { show(i); });
       container.appendChild(selector.row);
@@ -1722,7 +2093,15 @@
       if (window.CPL_BACCALAUREATES || !hasLoader()) { withCociKeys(next); return; }
       window.CPL_TABS.loadScript("cpl_baccalaureates_data.js", "CPL_BACCALAUREATES", function () { withCociKeys(next); });
     }
-    withDirectory(withCer);
+    // Ladder tier: a ladder's associate degree reads the display build
+    // (window.CPL_PATHWAYS_ROEP, ~0.3 MB). Loaded only when a ladder is listed;
+    // a failed load leaves the ladder's derived steps saying the record is missing.
+    function withRoep(next) {
+      var wants = (data.programs || []).some(function (p) { return p && p.kind === "ladder"; });
+      if (!wants || window.CPL_PATHWAYS_ROEP || !hasLoader()) { next(); return; }
+      window.CPL_TABS.loadScript("cpl_pathways_roep_data.js", "CPL_PATHWAYS_ROEP", function () { next(); });
+    }
+    withDirectory(function () { withRoep(withCer); });
   }
 
   window.CPL_PATHWAYS_TAB = {
@@ -1741,5 +2120,8 @@
     _renderMembership: renderMembership,
     _memCourseRow: memCourseRow,
     _memQualCard: memQualCard,
+    _renderLadder: renderLadder,
+    _ladderBlocks: ladderBlocks,
+    _certificateFigures: certificateFigures,
   };
 })();

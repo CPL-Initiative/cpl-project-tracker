@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-04",
   "_session": "S328 SkyLadder",
-  "_status": "Sierra now gives each checked program's CPL figures in production (deployed 4 October; the Ironworker A.S. reads up to 31.5 of 34-38 units). You confirmed the statement of who the CPL Initiative serves: the dashboard and Sierra take it now, and the knowledge base's letter tool has a draft for review. Mock-up 1 of the Cerritos Ironworker ladder is ready for your look.",
+  "_status": "Sierra gives each checked program's CPL figures in production (the Ironworker A.S. reads up to 31.5 of 34-38 units), and the statement of who the CPL Initiative serves is on its way to the dashboard and Sierra. The Ironworker ladder moves onto CPL Pathways with the step map you asked for. The film waits for the Cerritos runner read, so it narrates only confirmed facts.",
   "items": [
     {
       "id": "s328-sam-kb25-review",
@@ -11,16 +11,16 @@
       "text": "Review the knowledge base's letter tool change, cpl-knowledge-base pull request 25: the letters count California's 116 community colleges and leave Cal State LA out of the active count. After the merge, the generate-letter function needs a redeploy. https://github.com/CPL-Initiative/cpl-knowledge-base/pull/25"
     },
     {
-      "id": "s328-sam-ironworker-mockup",
+      "id": "s328-sam-ironworker-ladder",
       "for": "Sam",
       "tab": "cpl-pathways",
-      "text": "Look at mock-up 1 of the Cerritos Ironworker ladder, high school to the job site, and say what to change before it goes onto CPL Pathways: https://claude.ai/artifact/RCo3sBNAyv81n2rNsLKACs"
+      "text": "The Cerritos Ironworker ladder is the first view on CPL Pathways once its pull request merges: a step map from high school to career at the top, each step opening its section. Say what to change."
     },
     {
-      "id": "s328-fable-ironworker-port",
+      "id": "s328-fable-cerritos-runner-read",
       "for": "Fable",
       "tab": "cpl-pathways",
-      "text": "Port the Ironworker ladder to CPL Pathways once Sam has looked at mock-up 1 (https://claude.ai/artifact/RCo3sBNAyv81n2rNsLKACs): the A.S. section reads its checked record (up to 31.5 of 34-38 units; the hand-built map's 27-29 is stale), the two certificates follow from it, and the To confirm lines wait for the Cerritos runner read."
+      "text": "Run the Cerritos runner read for the Ironworker ladder's four To confirm lines (the B.S. page, the Educational Partnerships articulation list, the Pre-Apprenticeship catalog page and 2026_Welding_Roadmap_ua.pdf), and start Cerritos's procedure record from what it finds. Then the 100-second film Sam asked for, on the funding film's engine."
     },
     {
       "id": "s310-sam-card11-measures",

@@ -44,12 +44,16 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
   dom.window.eval(dsrc);
   const d = dom.window.CPL_PATHWAYS;
   check("cpl_pathways_data.js defines window.CPL_PATHWAYS", !!d && Array.isArray(d.programs));
-  check("first program is the Cerritos ironworker BS",
+  // The Ironworker ladder leads (Sam, 2026-10-04: "port it to CPL Pathways"); the
+  // B.S. course map it opens stays a featured program of its own.
+  check("first program is the Cerritos ironworker ladder",
     !!d && d.programs.length >= 1 && /Cerritos/.test(d.programs[0].college || "") &&
-    /Ironworker/i.test(d.programs[0].program || ""));
+    d.programs[0].kind === "ladder" && /Ironworker/i.test(d.programs[0].program || ""));
+  const bs = d && d.programs.find(p => p.id === "cerritos-field-ironworker-bs");
+  check("the Cerritos ironworker BS course map is still listed", !!bs && /Ironworker/i.test(bs.program || ""));
   check("program has sections with courses",
-    !!d && Array.isArray(d.programs[0].sections) && d.programs[0].sections.length >= 3 &&
-    d.programs[0].sections.every(s => Array.isArray(s.courses) && s.courses.length > 0));
+    !!bs && Array.isArray(bs.sections) && bs.sections.length >= 3 &&
+    bs.sections.every(s => Array.isArray(s.courses) && s.courses.length > 0));
 }
 
 // ── Part B — behavior, loaded into jsdom ──
