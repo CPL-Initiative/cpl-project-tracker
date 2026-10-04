@@ -1599,7 +1599,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 675
+     "line": 740
     }
    ],
    "main_committers": []
@@ -1702,7 +1702,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 677
+     "line": 742
     }
    ],
    "main_committers": []
@@ -1714,7 +1714,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 678
+     "line": 743
     }
    ],
    "main_committers": []
@@ -1818,7 +1818,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 676
+     "line": 741
     }
    ],
    "main_committers": []
@@ -18747,7 +18747,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 300
+     "line": 327
     }
    ],
    "main_committers": []
@@ -18759,7 +18759,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 306
+     "line": 333
     }
    ],
    "main_committers": []
@@ -20564,7 +20564,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 323
+     "line": 350
     },
     {
      "id": "script:kb/_program_source_census.py",

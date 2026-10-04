@@ -233,6 +233,115 @@ check(P.clickable_candidate("Program Requirements", biz)
       and not P.clickable_candidate("Graduation and Transfer Requirements", biz),
       "inside a program's view, its requirements item is clicked; the college's graduation rules are not")
 
+# ── Miramar (run 4, 0 of 4): the program's view hides its list; its export does not ──
+check(P.program_view("Business Administration 2.0 - Associate in Science for Transfer Degree: Miramar", biz)
+      and not P.program_view("Degree Curricula and Certificate Programs", biz)
+      and not P.program_view("Academic Requirements", biz)
+      and not P.program_view("Business Information Technology - Certificate of Achievement: Miramar", biz),
+      "the program's own item is its view; the hub, the requirements menu and a "
+      "program sharing one title word are not")
+VIEW_LINKS = [{"text": "Export Page as PDF",
+               "href": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20004"},
+              {"text": "Academic Requirements", "href": "javascript:void(0)"}]
+check(P.export_link(VIEW_LINKS) == "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20004"
+      and P.export_link([{"text": "Academic Requirements", "href": "javascript:void(0)"}]) is None,
+      "a view's PDF export is read from its own link")
+
+MIR = "https://sdccd.curriqunet.com/catalog/alias/miramar26-27/iq/"
+NAV = ["Academic Requirements", "Degree Curricula and Certificate Programs"]
+BIZ_ITEM = "Business Administration 2.0 - Associate in Science for Transfer Degree: Miramar"
+BIZ = [{"code": c} for c in ("ACCT 116A", "ACCT 116B", "BUSE 115", "ECON 120", "STATC1000")]
+MIR_VIEWS = {   # what each click shows: run 4's trail, cut down
+    None: (MIR + "20891", NAV, []),
+    NAV[1]: (MIR + "20879/20988", NAV + [BIZ_ITEM],
+             [{"text": "Export Page as PDF",
+               "href": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20879"}]),
+    BIZ_ITEM: (MIR + "20879/20988/20004/20338", NAV, VIEW_LINKS),
+    NAV[0]: (MIR + "20879/20990", NAV, []),
+}
+
+
+class _ClickPage:
+    """A curriQunet catalog: items that open a view when clicked; the view's
+    page text names no listed course (Miramar, run 4)."""
+    def __init__(self):
+        self.view, self.clicks = None, []
+
+    @property
+    def url(self):
+        return MIR_VIEWS[self.view][0]
+
+    def evaluate(self, js):
+        url, items, links = MIR_VIEWS[self.view]
+        if js == P.CLICKABLE_JS:
+            return items
+        return {"title": "View - CurriQunet META", "h1": "", "links": links,
+                "body": "Search Export Page as PDF Catalog Navigation " + " ".join(items),
+                "content": "", "courselists": [], "clickables": []}
+
+    def get_by_text(self, text, exact=True):
+        page = self
+
+        class _Hit:
+            class first:
+                @staticmethod
+                def click(timeout=None):
+                    page.clicks.append(text)
+                    page.view = text
+        return _Hit
+
+    def wait_for_load_state(self, *a, **k):
+        pass
+
+    def wait_for_timeout(self, ms):
+        pass
+
+
+EXPORT_TEXT = ("Business Administration 2.0 Associate in Science for Transfer Degree\n"
+               "Courses Required for the Major: ACCT 116A Financial 4 ACCT 116B Managerial 4 "
+               "ECON 120 Macro 3 STAT C1000 Statistics 4 BUSE 115 Law 3 Total 18")
+exports = []
+
+
+def _fake_pdf(reader, url, cache):
+    exports.append(url)
+    return {"url": url, "access": "ok", "status": 200, "bytes": 9000, "extractor": "pypdf",
+            "pages": [EXPORT_TEXT]}
+
+
+class _ClickReader:
+    def __init__(self):
+        self.page, self.loads, self.delay = _ClickPage(), 0, 0
+
+
+saved_pdf = P.read_pdf
+P.read_pdf = _fake_pdf
+try:
+    trail = []
+    cr = _ClickReader()
+    got = P.click_through(cr, biz, BIZ, trail, cache={})
+finally:
+    P.read_pdf = saved_pdf
+check(got and got["coverage"] == 1.0 and got["field"] == "export_pdf"
+      and got["url"].endswith("outlineId=20004") and got["view"].endswith("20004/20338"),
+      "Miramar: the program's view is reached and its export names every listed course: %s"
+      % ({k: got.get(k) for k in ("coverage", "field", "url", "view")} if got else None))
+check(exports == ["https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20004"],
+      "only the program's own export is read, never the hub's: %s" % exports)
+check(cr.page.clicks == [NAV[1], BIZ_ITEM],
+      "the reader stops clicking at the program's view (run 4 went on to "
+      "'Academic Requirements'): %s" % cr.page.clicks)
+
+exports.clear()
+P.read_pdf = lambda reader, url, cache: {"url": url, "access": "robots_disallow", "pages": []}
+try:
+    cr2 = _ClickReader()
+    got2 = P.click_through(cr2, biz, BIZ, [], cache={})
+finally:
+    P.read_pdf = saved_pdf
+check(got2["coverage"] == 0.0 and got2["field"] != "export_pdf" and cr2.page.clicks == [NAV[1], BIZ_ITEM],
+      "an export robots.txt refuses is never read, and the reader still stops at the view")
+
 # ── The filed fixtures: real catalog text the matcher must keep reading ──────
 fixtures = sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_pilot", "sources", "*.json")))
 check(len(fixtures) >= 16, "the capture pass's 16 programs are filed (run 4)")

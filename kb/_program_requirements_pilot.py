@@ -234,6 +234,33 @@ def click_score(text: str, program: dict) -> int:
     return s
 
 
+def program_view(text: str, program: dict) -> bool:
+    """Whether a clicked item is the program's own entry: every word of its
+    title is in the item ("Business Administration 2.0 - Associate in Science
+    for Transfer Degree: Miramar"). A hub ("Degree Curricula and Certificate
+    Programs") names none of them."""
+    tokens = title_tokens(program["title"])
+    low = (text or "").lower()
+    return bool(tokens) and all(re.search(r"\b" + re.escape(w) + r"\b", low) for w in tokens)
+
+
+# curriQunet prints an "Export Page as PDF" link on every catalog view, for that
+# view's own outline (Catalog/Export?id=71&outlineId=20004 on Miramar's Business
+# Administration 2.0 view). Miramar's views draw their course lists where the
+# page text never names them (run 4, S323), and the export does.
+EXPORT_TEXT = re.compile(r"export (?:page )?as pdf", re.I)
+EXPORT_HREF = re.compile(r"/catalog/export\?", re.I)
+
+
+def export_link(links: list[dict]) -> str | None:
+    """The view's own PDF export, from the links a page carries."""
+    for ln in links or []:
+        href = ln.get("href") or ""
+        if href.startswith("http") and (EXPORT_HREF.search(href) or EXPORT_TEXT.search(ln.get("text") or "")):
+            return href
+    return None
+
+
 def clickable_candidate(text: str, program: dict) -> bool:
     """A navigation item, not a sentence: Miramar's click-through went on to
     click the program's learning outcomes ("Describe common business functions
@@ -439,13 +466,19 @@ CLICKABLE_JS = """() => Array.from(document.querySelectorAll(
 
 
 def click_through(reader, program: dict, courses: list[dict], trail: list,
-                  max_clicks: int = MAX_LOADS) -> dict | None:
+                  max_clicks: int = MAX_LOADS, cache: dict | None = None) -> dict | None:
     """A JavaScript catalog (curriQunet) draws its navigation as items that
     open a section when clicked, without a link to follow. Click the item whose
     words best match the program, or a hub ("Degree Curricula and Certificate
     Programs") until a section names the program's courses. Each click waits
-    the census's delay, as a page load does."""
+    the census's delay, as a page load does.
+
+    When a click opens the program's own view and its text names too few of
+    the courses, read the view's PDF export (robots first, through read_pdf)
+    and stop clicking there: past the program's view the clicks wandered into
+    the catalog's "Academic Requirements" menu (Miramar, run 4)."""
     page, clicked, best = reader.page, set(), None
+    cache = {} if cache is None else cache
     for _ in range(max_clicks):
         try:
             texts = page.evaluate(CLICKABLE_JS)
@@ -497,7 +530,38 @@ def click_through(reader, program: dict, courses: list[dict], trail: list,
                     "field": field, "got": got}
         if cov >= ACCEPT_SHARE:
             break
+        if program_view(target, program):
+            exported = read_export(reader, export_link(got.get("links")), courses, cache)
+            exported["view"] = page.url
+            trail.append({k: v for k, v in exported.items() if k not in ("text", "found")})
+            if exported.get("coverage", 0.0) > best["coverage"]:
+                best = {"url": exported["url"], "coverage": exported["coverage"],
+                        "found": exported["found"], "text": exported["text"],
+                        "field": "export_pdf", "view": page.url, "got": got}
+            break
     return best
+
+
+def read_export(reader, url: str | None, courses: list[dict], cache: dict) -> dict:
+    """A curriQunet view's PDF export, read whole: pypdf first, pdfminer when
+    pypdf's text names none of the listed codes."""
+    if not url:
+        return {"export": None, "url": None, "coverage": 0.0,
+                "why": "the program's view carries no PDF export link"}
+    pdf = read_pdf(reader, url, cache)
+    pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
+    text = "\n\n".join("[page %d]\n%s" % (i + 1, t) for i, t in enumerate(pages))
+    found = find_codes(text, courses)
+    if not found and pdf.get("data"):
+        alt = pdfminer_pages(pdf)
+        alt_text = "\n\n".join("[page %d]\n%s" % (i + 1, t) for i, t in enumerate(alt["pages"]))
+        alt_found = find_codes(alt_text, courses)
+        if alt_found:
+            text, found, extractor = alt_text, alt_found, alt["extractor"]
+    return {"export": url, "url": url, "access": pdf.get("access"), "status": pdf.get("status"),
+            "bytes": pdf.get("bytes"), "pages_total": len(pages), "extractor": extractor,
+            "error": pdf.get("error"), "codes": len(found),
+            "coverage": round(coverage(found, courses), 2), "found": found, "text": text}
 
 
 def read_pdf(reader, url: str, cache: dict) -> dict:
@@ -651,14 +715,15 @@ def capture(reader, entry: dict, cache: dict) -> dict:
         # Start each program's clicks from the catalog's front page.
         reader.load(start)
         reader.page.wait_for_timeout(2500)
-        clicked = click_through(reader, program, courses, res["trail"])
+        clicked = click_through(reader, program, courses, res["trail"], cache=cache)
         if clicked and clicked["coverage"] > (res["best"] or {}).get("coverage", 0.0):
             res["best"] = clicked
     best = res["best"] or {}
     got = best.get("got") or {}
-    rec.update(method="html_page", trail=res["trail"],
+    rec.update(method="export_pdf" if best.get("field") == "export_pdf" else "html_page",
+               trail=res["trail"],
                source={"url": best.get("url"), "title": got.get("title"), "h1": got.get("h1"),
-                       "text_from": best.get("field")},
+                       "text_from": best.get("field"), "view": best.get("view")},
                coverage=round(best.get("coverage") or 0.0, 3),
                codes_found=sorted(best.get("found") or {}),
                text=text_window(best.get("text") or "", best.get("found") or {}),
