@@ -27,8 +27,13 @@ import urllib.parse
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-HTML_FULL_CAP = 20000    # an HTML page this short prints whole
+HTML_FULL_CAP = 40000    # an HTML page this short prints whole
 HEAD_CAP = 3000          # else its opening, then the excerpts
+FOLD_UNDER = 45          # consecutive lines shorter than this print as one line
+# The GitHub MCP returns at most 5,000 lines of a job log (measured S329: the
+# first read printed 5,826 and lost its first two pages, the Field Ironwork page
+# among them). A menu, a course table and a 240-language picker are each a run
+# of short lines, so folding them is what keeps a whole read inside the window.
 PDF_PAGE_CAP = 14        # PDF pages printed whole (those with a keyword hit)
 RADIUS = 350             # characters kept on each side of a keyword hit
 MAX_EXCERPTS = 24
@@ -89,6 +94,26 @@ def follow_links(links: list[dict], pattern: str | None, base: str,
     return out
 
 
+def fold(text: str, under: int = FOLD_UNDER) -> str:
+    """Runs of short lines become one line joined by ' · '; blank lines drop.
+    The words stay in order, so a course table still reads code, title, units."""
+    out, run = [], []
+    for line in (text or "").split("\n"):
+        t = line.strip()
+        if not t:
+            continue
+        if len(t) < under:
+            run.append(t)
+            continue
+        if run:
+            out.append(" · ".join(run))
+            run = []
+        out.append(t)
+    if run:
+        out.append(" · ".join(run))
+    return "\n".join(out)
+
+
 def pdf_pages_to_print(pages: list[str], pattern: re.Pattern,
                        cap: int = PDF_PAGE_CAP) -> list[int]:
     """Page indexes with a keyword hit, in order; the first page when none hit."""
@@ -96,10 +121,18 @@ def pdf_pages_to_print(pages: list[str], pattern: re.Pattern,
     return (hit or ([0] if pages else []))[:cap]
 
 
-TEXT_JS = """() => ({text: document.body ? document.body.innerText : '',
+# The page's main region when it marks one (a college site wraps every page in a
+# menu, a footer and a language picker); the whole body when it does not, or when
+# the main region is nearly empty.
+TEXT_JS = """() => {
+  const m = document.querySelector('main, [role=main], #main-content, #main, #content');
+  const body = document.body ? document.body.innerText : '';
+  const main = m ? m.innerText : '';
+  return {text: main.length >= 200 ? main : body,
   links: Array.from(document.querySelectorAll('a[href]')).slice(0, 2500)
     .map(a => ({text: (a.innerText || a.textContent || a.getAttribute('aria-label')
-                       || a.title || '').trim().slice(0, 160), href: a.href}))})"""
+                       || a.title || '').trim().slice(0, 160), href: a.href}))};
+}"""
 
 
 def read_one(reader, url: str, pattern: re.Pattern, cache: dict) -> dict:
@@ -161,16 +194,16 @@ def print_page(n: int, rec: dict, pattern: re.Pattern) -> None:
         print("--- %d of %d PDF pages (those naming a keyword) ---" % (len(idx), len(rec["pages"])))
         for i in idx:
             print("[pdf page %d]" % (i + 1))
-            print(rec["pages"][i].strip())
+            print(fold(rec["pages"][i]))
         return
     if not text:
         return
     if len(text) <= HTML_FULL_CAP:
         print("--- text (whole page) ---")
-        print(text.strip())
+        print(fold(text))
         return
     print("--- text (first %d characters of %d) ---" % (HEAD_CAP, len(text)))
-    print(text[:HEAD_CAP].strip())
+    print(fold(text[:HEAD_CAP]))
     print("--- excerpts around the keywords (%d) ---" % len(rec.get("excerpts") or []))
     for e in rec.get("excerpts") or []:
         print("… " + e + " …")

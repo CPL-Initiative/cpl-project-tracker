@@ -87,6 +87,16 @@ check(cpr.pdf_pages_to_print([], pat) == [], "an empty PDF prints nothing")
 check(cpr.is_pdf("https://x.edu/a/Roadmap_ua.PDF") and cpr.is_pdf("https://x.edu/view", "application/pdf; q=1")
       and not cpr.is_pdf("https://x.edu/page.htm", "text/html"), "a PDF by address or by type")
 
+print("fold")
+folded = cpr.fold("Home\nAbout\n\nIWAP 40.07\tFIW-Orientation\t4.0\n" + "A long sentence that runs well past the fold width of forty-five characters.\nZulu")
+check(folded.split("\n")[0] == "Home · About · IWAP 40.07\tFIW-Orientation\t4.0",
+      "a run of short lines folds into one, in order, blank lines dropped")
+check(folded.split("\n")[1].startswith("A long sentence") and folded.split("\n")[2] == "Zulu",
+      "a long line stays its own line; a trailing short run is kept")
+check(cpr.fold("") == "", "an empty page folds to nothing")
+langs = "\n".join(["Abkhaz", "Acehnese", "Acholi"] * 80)
+check(cpr.fold(langs).count("\n") == 0, "a 240-entry language picker is one line, not 240")
+
 print("committed plans")
 plans = sorted(glob.glob(os.path.join(ROOT, "kb", "college_reads", "*.json")))
 check(len(plans) >= 1, "at least one plan is committed")
@@ -94,6 +104,9 @@ OUTSIDE = {"regionalcte.org"}   # the regional program record, named on purpose
 for path in plans:
     plan = json.load(open(path))
     name = os.path.basename(path)
+    declared = plan.get("outside_hosts") or {}
+    check(all(isinstance(v, str) and len(v) > 20 for v in declared.values()),
+          "%s: every outside host the plan names carries its reason" % name)
     qs = set(plan.get("questions") or {})
     cpr.keyword_re(plan["keywords"])   # every keyword compiles
     hosts = set()
@@ -104,7 +117,7 @@ for path in plans:
         check(set(p.get("answers") or []) and set(p["answers"]) <= qs,
               "%s: %s names a question the plan defines" % (name, p["url"]))
     from _program_source_census import registrable
-    own = {registrable(h) for h in hosts} - OUTSIDE
+    own = {registrable(h) for h in hosts} - OUTSIDE - set(declared)
     check(len(own - {"courseleaf.com"}) == 1,
           "%s: one college domain, plus its catalog vendor and the named outside hosts (%s)" % (name, sorted(own)))
 

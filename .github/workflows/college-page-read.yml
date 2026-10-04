@@ -10,6 +10,9 @@ name: College page read
 # Sheet 33 card 5 (2026-10-04): the agent exhausts its own reading before any
 # request to a college. It WRITES NOTHING: a session reads the job log back
 # through the GitHub MCP. No schedule, no secrets.
+#
+# A dispatch reads the plan it names. A push reads only the plans its last
+# commit adds or changes, so a code-only push never re-reads a college's site.
 on:
   workflow_dispatch:
     inputs:
@@ -40,6 +43,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
 
       - uses: actions/setup-python@v7
         with:
@@ -53,9 +58,18 @@ jobs:
       - name: Read
         env:
           CENSUS_DELAY_MS: '4000'
-          PLAN: ${{ github.event.inputs.plan || 'cerritos_ironworker_ladder' }}
+          EVENT: ${{ github.event_name }}
+          PLAN: ${{ github.event.inputs.plan }}
         run: |
-          case "$PLAN" in
-            ''|*[!a-z0-9_]*) echo "::error::plan must be a file name of a-z, 0-9 and _"; exit 1 ;;
-          esac
-          python3 kb/_college_page_read.py "kb/college_reads/${PLAN}.json"
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            case "$PLAN" in
+              ''|*[!a-z0-9_]*) echo "::error::plan must be a file name of a-z, 0-9 and _"; exit 1 ;;
+            esac
+            plans="kb/college_reads/${PLAN}.json"
+          else
+            plans=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'kb/college_reads/*.json' 2>/dev/null || true)
+          fi
+          if [ -z "$plans" ]; then
+            echo "No plan added or changed in this commit: nothing to read."; exit 0
+          fi
+          for p in $plans; do python3 kb/_college_page_read.py "$p"; done

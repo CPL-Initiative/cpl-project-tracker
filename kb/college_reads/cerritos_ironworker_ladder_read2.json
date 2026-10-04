@@ -1,0 +1,33 @@
+{
+  "_readme": "Second read for the Cerritos Ironworker ladder (S329). Read 1 (run 37232742985, plan cerritos_ironworker_ladder.json) found the B.S. course list and admission rule in the regional record and the Pre-Apprenticeship admission rule in the catalog; it lost the Field Ironwork page to the log window, found no articulation list on the EPP pages, and hsarticulation.cerritos.edu does not resolve. This read takes the leads web search turned up on 2026-10-04: the Technology division's own articulation pages (welding sits there), the dual enrollment partner list, the ironworker apprenticeship flyer, the IWAP and AED course descriptions, Schedule+ for the term's AED and IWAP sections, the AED program review, and Downey Unified's own welding pathway page and board item.",
+  "college": "Cerritos College",
+  "outside_hosts": {
+    "dusd.net": "Downey Unified School District, the partner district whose welding pathway names its Cerritos articulation"
+  },
+  "questions": {
+    "hs_articulation": "The high school articulation list.",
+    "noncredit_aed": "Whether the 26 noncredit AED courses still run.",
+    "apprenticeship_hours": "The apprenticeship's classroom hours.",
+    "bs": "The B.S. course list, admission rule and first cohort."
+  },
+  "keywords": ["ironwork", "IWAP", "AED 4[01]\\.", "AED 36", "apprentice", "articulat", "weld", "high school", "Columbus", "Downey", "dual enroll", "CCAP", "related instruction", "supplemental", "JATC", "Local 4", "bachelor", "baccalaureate", "supervis", "cohort", "online"],
+  "pages": [
+    {"answers": ["apprenticeship_hours", "bs"], "url": "https://www.cerritos.edu/academics/aed/apprenticeship-programs/Field_Ironwork.htm",
+     "follow": "bachelor|baccalaureate|supervis|jatc|local 4|\\.pdf"},
+    {"answers": ["apprenticeship_hours"], "url": "https://www.cerritos.edu/apprenticeship-programs/_includes/docs/Ironworks_Apprenticeship_Flyer_ua.pdf"},
+    {"answers": ["apprenticeship_hours"], "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/iwap/"},
+    {"answers": ["noncredit_aed"], "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aed/"},
+    {"answers": ["noncredit_aed", "apprenticeship_hours"], "url": "https://secure.cerritos.edu/schedule/index.cgi",
+     "follow": "^AED\\b|^IWAP\\b|Adult Education|Field Ironworkers|dept=AED|dept=IWAP"},
+    {"answers": ["noncredit_aed"], "url": "https://www.cerritos.edu/program-review/_includes/docs/23-24/23-24_Reports/AED_23-24.pdf"},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/technology/articulation-agreements.htm",
+     "follow": "weld|agreement|articulat|\\.pdf|\\.xlsx"},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/technology/cte-transitions.htm",
+     "follow": "weld|articulat|\\.pdf"},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/epp/articulation_credit.htm"},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/academics/divisions/epp/dualenrollment/CCAP-partnership-programs.htm",
+     "follow": "downey|weld|\\.pdf"},
+    {"answers": ["hs_articulation"], "url": "https://web.dusd.net/downey/2023/02/28/welding-pathway/"},
+    {"answers": ["hs_articulation"], "url": "https://web.dusd.net/wp-content/uploads/2023/06/CTE_6-27-23_BoE.pdf"}
+  ]
+}
