@@ -2,19 +2,13 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-04",
   "_session": "S329 SkyRunner",
-  "_status": "Sierra now states who the CPL Initiative serves in production. Three readings of Cerritos's own pages settled most of the Ironworker ladder: 878 and 898 classroom contact hours on the two apprenticeship tracks, a four-year apprenticeship, the B.S. open from Spring 2027 with its proposed course list, and the noncredit and high school lines. Two lines remain To confirm. Cerritos's notes on reading its site wait for one paste, and your routine needs its repositories and model before its first run.",
+  "_status": "Sierra now states who the CPL Initiative serves in production. Three readings of Cerritos's own pages settled most of the Ironworker ladder: 878 and 898 classroom contact hours on the two apprenticeship tracks, a four-year apprenticeship, the B.S. open from Spring 2027 with its proposed course list, and the noncredit and high school lines. Two lines remain To confirm. Cerritos's notes on reading its site are on its registry row, and your routine runs at 8:07 each morning.",
   "items": [
-    {
-      "id": "s329-sam-procedure-record-paste",
-      "for": "Sam",
-      "tab": "program-requirements",
-      "text": "Paste Cerritos's procedure record into the Supabase SQL editor: it is the one card on open-asks sheet 35 (https://claude.ai/artifact/FVG2MYA9Xw5HqC8EkAftgq). It writes one row, the notes on how Cerritos's website should be read, and only while that row is empty."
-    },
     {
       "id": "s329-sam-routine-settings",
       "for": "Sam",
       "tab": "activities-projects",
-      "text": "Finish your routine 'CPL queue — scheduled session' at claude.ai/code/routines: the web form attached no repositories and set no model, and six a day needs a custom schedule. Until the repositories are there, a scheduled session stops at its first step."
+      "text": "Your routine 'CPL queue — scheduled session' runs once a day at 8:07 AM Pacific with the four repositories and Opus 5.5. For up to six a day, give it a custom schedule (every two hours, 8:07 AM to 6:07 PM); the web form offers daily or hourly, and the Claude Code command line's /schedule update takes a custom one."
     },
     {
       "id": "s329-fable-cerritos-read-4",

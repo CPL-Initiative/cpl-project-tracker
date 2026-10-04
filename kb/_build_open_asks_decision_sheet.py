@@ -801,38 +801,9 @@ def items():
     # drafted with two edits (no UpSkill line; "datasets", never "scrape"), card 2 the per-college
     # procedure record as proposed. Both lanes record the rulings; no card remains.
 
-    # Sheet 35 (S329): the one write Sam approved in session that the connector held for a person.
-    receipt = _read('kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql')
-    # The SQL after the receipt's "-- The record" block, never the first UPDATE in the file: the
-    # receipt's rollback comment names an UPDATE too, and sheet 35's first build handed Sam that
-    # commented line, which made his paste a syntax error (2026-10-04 ~21:45Z; nothing ran).
-    tail = receipt[receipt.index('-- The record'):]
-    upd = tail[tail.index('\nupdate public.program_source_registry') + 1:].strip()
-    assert upd.endswith(';') and not any(l.lstrip().startswith('--') for l in upd.splitlines()), \
-        'the paste text must be the one statement, with no comment lines'
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Paste Cerritos's procedure record into the SQL editor",
-        'ref': 'program-requirements-harvest NEEDS SAM · '
-               'kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql',
-        'facts': (
-            "You said <em>apply the procedure record</em>. The migration landed: the registry now has "
-            "<code>procedure</code>, <code>procedure_by</code> and <code>procedure_at</code>, and the history "
-            "trigger names who changed a record. Cerritos's row did not: its UPDATE timed out twice at the "
-            "connector, which holds a bare UPDATE for a person, with nothing written. The record holds what "
-            "three runner reads found: six hosts, three reading steps, four answers, five nuances and the "
-            "three next steps. It names hosts and offices, never staff. Paste this in the Supabase SQL "
-            "editor; it writes one row, and only while that row has no record:"
-            "<pre>" + m.E(upd) + "</pre>"),
-        'why': "The reader loads this record before each run, so the next Cerritos read skips the host that "
-               "does not resolve and starts from the three next steps.",
-        'rec': "<strong>Pasted</strong> when it is in. <em>It might be wrong if</em> you would rather the "
-               "next session retry through the connector while you watch for a confirmation.",
-        'chips': chips(('Pasted', 'pasted'), ('Retry with me watching', 'retry'), CH_LATER),
-        'evidence': [live('2026-10-04', "S329: two apply_migration runs timed out at 60 s; a read after each "
-                                        "showed procedure null on Cerritos's row and no running query"),
-                     quoted('Sam in session, "apply the procedure record"', '2026-10-04')],
-    })
+    # Sheet 35 (S329) was answered at 21:43Z on 2026-10-04 (through 1, his own call): "pasted",
+    # "success no rows returned". Read back: Cerritos's procedure record on its row at 21:42:37Z. The
+    # harvest lane records it and drops its NEEDS SAM in the same change; no card remains.
 
     return I
 

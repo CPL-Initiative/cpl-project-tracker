@@ -14,19 +14,14 @@ about 250K of context left. If Sam's routine started you, read
 
 ## First, in this order
 
-1. **Read open-asks sheet 35's replies** ([FVG2MYA9Xw5HqC8EkAftgq](https://claude.ai/artifact/FVG2MYA9Xw5HqC8EkAftgq),
-   `ArtifactData list`, collection `replies`). One card: paste Cerritos's procedure record. Then read the row:
-   `select procedure_by, procedure_at from program_source_registry where college='Cerritos College'`. If it
-   is written, record it in the harvest lane (drop its NEEDS SAM) and retire the card on a sheet 36 only if
-   another ask exists; if not, say so in one line.
+1. **Nothing waits on Sam's sheet.** Sheet 35 ([FVG2MYA9Xw5HqC8EkAftgq](https://claude.ai/artifact/FVG2MYA9Xw5HqC8EkAftgq))
+   was answered at 21:43Z: he pasted Cerritos's procedure record, and the row read back at 21:42:37Z.
+   Build sheet 36 when a lane next marks NEEDS SAM.
 2. **#1858** (the college page read, the ladder's confirmed lines, the procedure columns, scheduled sessions,
    this checkpoint): merge it on a green `test` if S329 did not. Sam's routine clones `main`.
-3. **Sam's routine** `CPL queue — scheduled session` (trig_01L8K64ZKYb5eALdT4HW6NAV, daily 8:07 Pacific,
-   made in the web form). An agent may edit only a routine it created, so its settings are Sam's. Three
-   things were open at S329's end, all his: the form attached no repositories (the credential-watch
-   routine's prompt attaches its own; the permission check refused S329's edit teaching scheduled sessions
-   to do that), no model is set, and six a day needs a custom schedule (the form offers daily or hourly).
-   Ask once, in one line, what he chose; never edit the routine.
+3. **Sam's routine** `CPL queue — scheduled session` (trig_01L8K64ZKYb5eALdT4HW6NAV): daily 8:07 Pacific,
+   Opus 5.5, the four repositories (Sam set both in the form, 21:40Z). An agent may edit only a routine it
+   created, so its settings are Sam's; six a day needs a custom schedule he sets. Never edit the routine.
 4. **Cerritos read 4** (the harvest lane's NEXT ②): Schedule+ for AED and IWAP sections (POST
    `/schedule/courses.cgi` with Terms 1269 and 1273, Depts AED and IWAP; `kb/_college_page_read.py` prints
    forms but cannot yet submit one: add a plan field for a form POST, robots first), and the Statewide
@@ -36,7 +31,7 @@ about 250K of context left. If Sam's routine started you, read
 
 ## Decisions Sam made this run (in cpl_memory, verified)
 
-- **"apply the procedure record"** (~21:20Z): the migration landed; the row waits on sheet 35.
+- **"apply the procedure record"** (~21:20Z): the migration landed; Sam pasted the row from sheet 35 (21:42Z).
 - **Scheduled sessions** (~21:05-21:20Z), his words: *"be more aggressive and go with your recommendations
   more often--I'm guessing that about 80% of the time I go with your recommendation--and very rarely would
   your recommendations have led to a grave error. 2. Go for up to 6 sessions... 3. Decide on the fly the
