@@ -19,6 +19,11 @@ name: Program requirements pilot, sequence
 
 on:
   workflow_dispatch:
+    inputs:
+      read:
+        description: "Also read Miramar's mapper again (1), or only probe the sequence sources (blank)"
+        required: false
+        default: ""
   push:
     branches: ['claude/**']
     paths:
@@ -52,4 +57,5 @@ jobs:
       - name: Read the sequence
         env:
           CENSUS_DELAY_MS: '4000'
+          SEQUENCE_READ: ${{ github.event.inputs.read }}
         run: python3 kb/_program_sequence_ppm.py

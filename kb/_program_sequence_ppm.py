@@ -342,14 +342,44 @@ def read_sequence(reader, college: str, cn: str, title: str) -> dict:
     return rec
 
 
+# Run 1 (37197332656, 2026-10-04) found Miramar's mapper at
+# san-diego-miramar.programmapper.com, and it answered all seven requests 403.
+# Whether a mapper refuses this reader everywhere decides how the harvest reads
+# sequences at all, so the pass also asks each sequence source the census filed
+# (sequence_source ppm or program_map_page) for its front page, once, robots
+# first. Miramar's mapper is not re-read unless SEQUENCE_READ=1.
+def fetch_sequence_sources() -> list[dict]:
+    return P._get("program_source_registry?select=college,sequence_source,sequence_url"
+                  "&sequence_source=in.(ppm,program_map_page)&sequence_url=not.is.null&order=college")
+
+
+def probe_sources(reader, rows: list[dict]) -> list[dict]:
+    out = []
+    for r in rows:
+        got = reader.load(r["sequence_url"])
+        out.append({"college": r["college"], "source": r["sequence_source"], "url": r["sequence_url"],
+                    "status": got.get("status"), "access": got.get("access"),
+                    "final_host": host(got.get("final_url") or ""), "title": (got.get("title") or "")[:100],
+                    "mapper": on_mapper(got.get("final_url") or r["sequence_url"]),
+                    "links_to_mapper": sorted({host(ln.get("href") or "") for ln in got.get("links") or []
+                                               if MAPPER_HOST.search(host(ln.get("href") or ""))})[:3],
+                    "error": got.get("error")})
+        print("%-34s %-17s %-5s %-16s %s" % (r["college"][:34], r["sequence_source"], out[-1]["status"],
+                                             out[-1]["access"], out[-1]["final_host"]), flush=True)
+    return out
+
+
 def main() -> int:
     delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
-    sample = [p for p in P.load_sample() if (p["college"], p["control_number"]) in PPM_PROGRAMS]
-    print("program requirements pilot, sequence pass: %d programs, %.1f s between loads, "
-          "writes nothing" % (len(sample), delay / 1000), flush=True)
+    read = os.environ.get("SEQUENCE_READ") == "1"
+    sample = [p for p in P.load_sample() if (p["college"], p["control_number"]) in PPM_PROGRAMS] if read else []
+    sources = fetch_sequence_sources()
+    print("program requirements pilot, sequence pass: %d programs, %d sources probed, %.1f s between "
+          "loads, writes nothing" % (len(sample), len(sources), delay / 1000), flush=True)
     pw, browser, reader = P.open_reader(delay)
-    recs = []
+    recs, probes = [], []
     try:
+        probes = probe_sources(reader, sources)
         for entry in sample:
             t0 = time.time()
             try:
@@ -366,6 +396,8 @@ def main() -> int:
     finally:
         browser.close()
         pw.stop()
+    print("=== SEQUENCE SOURCE PROBES JSON ===")
+    print(json.dumps(probes, ensure_ascii=False))
     print("=== PILOT SEQUENCES JSON BEGIN ===")
     for r in recs:
         print(json.dumps(r, ensure_ascii=False))

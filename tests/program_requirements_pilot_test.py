@@ -725,6 +725,13 @@ ssrc = open(os.path.join(ROOT, "kb", "_program_sequence_ppm.py")).read()
 check(not re.search(r"method=\"(?:POST|PATCH|PUT|DELETE)\"|/rpc/", ssrc),
       "the sequence pass sends no write to Supabase")
 check("SUPABASE_SERVICE_KEY" not in ssrc, "the sequence pass never reads the service key")
+# Run 1 (37197332656): Miramar's mapper answered all seven requests 403. A push
+# re-reads it only when a person asks; by default the pass probes the census's
+# sequence sources, one load each.
+check('os.environ.get("SEQUENCE_READ") == "1"' in ssrc,
+      "Miramar's mapper, which refused the reader, is read again only on request")
+check("SEQUENCE_READ: ${{ github.event.inputs.read }}" in sactive,
+      "the workflow passes the request through; a push never sets it")
 
 if failures:
     print("FAIL: %d" % len(failures))
