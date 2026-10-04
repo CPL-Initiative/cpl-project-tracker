@@ -307,3 +307,42 @@ whole, with neutral BIOL and HIST examples so the rerun tested the rule) and the
 rerun passed both. All 20 pilot records pass all four checks.
 
 **NEXT.** The Miramar PPM sequence and the Tech Center's ROE definitions.
+
+## S325 SkyReader, 2026-10-04: the mapper refuses everyone, the census keeps addenda, and the tab takes shape
+
+33. **Probe the class before calling a refusal local.** Miramar's Program
+    Mapper (`san-diego-miramar.programmapper.com`, reached through
+    `sdmiramar.edu/program-mapper`) answered all seven requests 403 (run
+    37197332656). One load at each of the 24 sequence sources the census filed
+    (run 37198225537) showed all 17 mapper hosts reached answer 403: the refusal is
+    the mapper service's, so the question for Sam is the whole harvest's sequence
+    path, not Miramar's. Irvine Valley's own program-maps page answered.
+34. **A web search finds what a guessed host cannot.** S324 guessed four mapper
+    hosts; a search found the college's own mapper page in one query, and the
+    reader followed its link to the real host.
+35. **Measure a filter against the live haul before trusting it.** The first
+    read with addenda found 136 links at 58 colleges; a third were years old or
+    not a catalog's (Palo Verde to 2014-15, Fullerton's class-schedule addenda,
+    Lassen's ReadSpeaker copies). Dating each link from its own words and file
+    name, never an upload folder (`/uploads/2022/05/`), left 78 at 52; the
+    replay ran offline against the run's own evidence before the next push.
+36. **A tally typed from a list is a guess.** The card first said 23 / 37 / 19
+    for the addenda's years; recomputed, it was 19 / 41 / 18. Count with code
+    before a number goes on a sheet.
+37. **The census was built to refuse addenda, which is why it never kept them.**
+    Every rule that scored an addendum down (so it could not win the catalog
+    slot) also dropped it. Keeping a thing out of one role is not discarding it;
+    `addendum_links()` records what the scorer refuses.
+38. **Identical titles hide sheets.** Every open-asks sheet was titled
+    "Everything outstanding for you", and Sam could not find sheet 28. Each sheet
+    now names its number, and every mention in chat carries its link.
+
+**Sam's rulings this run:** no Governance pass for the tab at this point (public
+record, marked Beta draft); Sierra joins the tab as one link, and what matters is
+her access to the catalog and pathway data and to the agents' procedures;
+SkyView is the harvest's eventual home; addenda go in the schema and the agents
+know them; every sheet named in chat carries its link.
+
+**NEXT.** Sam's answers on [sheet 29](https://claude.ai/artifact/FhxQ5HXM1EBffhS5ce3Tj7)
+(sequence path, Sierra's "required", the addenda table); the tab mock-up's next
+round; the port into COBI.

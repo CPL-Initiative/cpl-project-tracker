@@ -446,13 +446,9 @@ first day.** Do the remembering for them.
   Rebuild it at every checkpoint and hand over the link. A sheet whose cards
   changed is published under a fresh `SHEET_ID` and artifact, because its replies
   are keyed to card position ([`decision_sheets`](docs/reference/decision_sheets.md)).
-  **Link every sheet you name, every time (Sam, 2026-10-04).** *"Can't find
-  sheet 28, can you make it a rule to add the sheet link next to a presence to
-  it in chat? Often I lose track of where they are or which is most recent."*
-  Every mention of a sheet in chat carries its link beside it and says whether
-  it is the current one; a superseded sheet's mention links the sheet that
-  replaced it. Each sheet's page title names its number (*Open Asks Sheet 29*),
-  so the gallery tells them apart.
+  **Link every sheet you name (Sam, 2026-10-04):** in chat, each mention carries
+  its link and says whether it is current; a superseded one links its
+  replacement. Titles carry the number.
 - **Capture unplanned substance on the fly (Sam, 2026-08-30).** His important
   statements are never planned — *"just comes out of our interactions and I
   don't think to say specifically braindump."* When Sam or a team member says
@@ -680,7 +676,7 @@ https://cpl-initiative.github.io/cpl-project-tracker/
 
 ## Obsidian vault wiring
 
-**Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)** (2026-08-28 consolidation).
+**Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)**.
 
 Read it before: vault-sync or vault-path work, Obsidian exclusion, or the
 sparse-checkout fix. It holds the vault root, `scripts/sync-vault-clones.ps1`,
@@ -758,12 +754,9 @@ stays here.
 > ran that test and names the candidates; hand-grepping has been wrong every
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
-> **Anything waiting on Sam is also a card on a sheet.** The standing one,
-> `kb/_build_open_asks_decision_sheet.py` →
-> [FhxQ5HXM1EBffhS5ce3Tj7](https://claude.ai/artifact/FhxQ5HXM1EBffhS5ce3Tj7) (sheet 29),
-> **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
-> answers one, change that lane's marker in the same PR, or the sheet asks again
-> ([`decision_sheets`](docs/reference/decision_sheets.md)).
+> **Anything waiting on Sam is a card on the standing sheet**
+> ([FhxQ5HXM1EBffhS5ce3Tj7](https://claude.ai/artifact/FhxQ5HXM1EBffhS5ce3Tj7), sheet 29). Answering
+> one changes its lane's marker in the same PR ([`decision_sheets`](docs/reference/decision_sheets.md)).
 
 | Phase | What | Status |
 |---|---|---|

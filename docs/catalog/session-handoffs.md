@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-296 document(s).
+297 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 326 | [sheet 29 holds five calls; the Program Requirements tab mock-up waits on Sam; addenda are recorded](../session_326_handoff.md) | 2026-10-04 |
 | 325 | [Sam passed 18 of the 20 pilot records and ruled two fixes; file the rerun, then Phase 1's last pieces](../session_325_handoff.md) | 2026-10-04 |
 | 324 | [the pilot finds 16 of 20 pages and drafts its first records (7 of 16 pass); widen the record shape, then Miramar](../session_324_handoff.md) | 2026-10-04 |
 | 323 | [the census reads each catalog's own year (95 of 118); sheet 25 asks the pilot's three names; build the pilot reader](../session_323_handoff.md) | 2026-10-03 |

@@ -40,6 +40,17 @@ decision sheets; just the items."* A sheet opens on item 1: no framing sentence,
 no how-to box. `build_sheet()` draws that intro only when a builder passes `framing`, `curator`,
 `counts` or `howto`, so pass none. The open-asks builder follows it from sheet 4.
 
+## Link every sheet you name (Sam, 2026-10-04)
+
+*"Can't find sheet 28, can you make it a rule to add the sheet link next to a
+presence to it in chat? Often I lose track of where they are or which is most
+recent."* Every open-asks sheet was titled "Everything outstanding for you", so
+the gallery listed identical names. Now every mention of a sheet in chat carries
+its link and says whether it is current, a superseded sheet's mention links its
+replacement, and `sheet_title()` in the builder names each page *Open Asks Sheet
+<n>* (`tests/open_asks_sheet_coverage_test.py` fails the old shared title). Sheet
+28 was republished as *Open Asks Sheet 28 (superseded by 29)*.
+
 ## Reading the replies (added 2026-09-09)
 
 The session reads the verdicts FIRST, with the Artifact tool's `read_db` on
