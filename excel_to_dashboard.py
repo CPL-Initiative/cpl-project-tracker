@@ -3653,7 +3653,7 @@ def compute_headline_kpis(projects, budget, config_overrides=None, live_data=Non
         "active_colleges": {
             "value": colleges,
             "label": "Active Colleges",
-            "sub": "of 116 system colleges"
+            "sub": f"of {load_non_ccc()[0]} community colleges"
         },
         "estimated_savings": {
             "value": savings,
@@ -3719,7 +3719,8 @@ def log_daily_snapshot(live_data, exhibit_data):
         "transcribed_units":     int(raw.get("TranscribedUnits", 0)),
         "savings_m":             round(raw.get("Savings", 0) / 1_000_000, 1),
         "year_impact_b":         round(raw.get("YearImpact", 0) / 1_000_000_000, 2),
-        "active_colleges":       int((live_data or {}).get("active_college_count", 0)),
+        "active_colleges":       int((live_data or {}).get("active_college_count", 0))
+                           - sum(len(v) for t, v in non_ccc_by_tier(live_data).items() if t in ("leading", "advancing")),
         "leading_colleges":      int(tiers.get("leading", {}).get("count", 0)),
         "star_colleges":         int((live_data or {}).get("star_college_count", 0)),
         # Exhibit / CustomReport metrics
@@ -4311,6 +4312,58 @@ def read_live_metrics():
         return None
 
 
+# Institutions MAP's datasets list outside the California Community Colleges.
+# Sam, open-asks sheets 33-34 (2026-10-04): the CPL Initiative serves
+# "California's 116 community colleges" (the 115 credit colleges plus Calbright),
+# and Cal State LA, the first CSU campus on MAP, is named beside them. So the
+# Active Colleges card counts community colleges only and shows any other MAP
+# institution on its own row. kb/non_ccc_institutions.json is the one list
+# (the funding model and Sierra read it too).
+NON_CCC_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "kb", "non_ccc_institutions.json")
+
+
+def _norm_name(name):
+    return re.sub(r"[^a-z0-9]", "", str(name or "").lower())
+
+
+def load_non_ccc():
+    """(system college count, normalized non-CCC names). An unreadable file
+    says so and counts every MAP institution, the behavior before the list."""
+    try:
+        with open(NON_CCC_FILE, encoding="utf-8") as f:
+            d = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"WARNING: {NON_CCC_FILE} unreadable ({e}); Active Colleges counts every MAP institution this run")
+        return 116, set()
+    names = {_norm_name(n) for i in d.get("institutions", [])
+             for n in [i.get("name")] + list(i.get("variants") or []) if n}
+    return int(d.get("ccc_system_colleges", 116)), names
+
+
+def non_ccc_by_tier(live_data):
+    """{tier: [names]} for MAP institutions outside the CCC system, as MAP's
+    datasets tier them (leading / advancing / inactive)."""
+    _, names = load_non_ccc()
+    out = {}
+    for tier, block in ((live_data or {}).get("tiers") or {}).items():
+        if not isinstance(block, dict):
+            continue
+        for c in block.get("colleges") or []:
+            n = (c or {}).get("college")
+            if n and _norm_name(n) in names:
+                out.setdefault(tier, []).append(n)
+    return out
+
+
+def _minus(value, k):
+    """'1,234' minus k, formatted the way the value came in."""
+    try:
+        n = int(str(value).replace(",", "")) - k
+    except (TypeError, ValueError):
+        return value
+    return f"{n:,}" if "," in str(value) else str(n)
+
+
 def merge_live_metrics(kpis, live_data):
     """
     Merge live dashboard metrics into the headline KPIs,
@@ -4360,6 +4413,22 @@ def merge_live_metrics(kpis, live_data):
         # Preserve footnote (e.g. Active Colleges criteria list)
         if metric.get("footnote"):
             kpis[key]["footnote"] = metric["footnote"]
+
+    # The card counts community colleges; another MAP institution is named on
+    # its own row (Sam, sheets 33-34, 2026-10-04). Zero today for the active
+    # count: Cal State LA is Inactive, so only that tier and the new row move.
+    by_tier = non_ccc_by_tier(live_data)
+    ac = kpis.get("active_colleges")
+    if by_tier and ac and ac.get("live"):
+        ac["value"] = _minus(ac["value"], len(by_tier.get("leading", [])) + len(by_tier.get("advancing", [])))
+        for bd in ac.get("breakdowns", []):
+            tier = str(bd.get("label", "")).split(" ")[0].lower()
+            if by_tier.get(tier):
+                bd["value"] = _minus(bd["value"], len(by_tier[tier]))
+        others = sorted({n for v in by_tier.values() for n in v})
+        ac.setdefault("breakdowns", []).append({
+            "label": "Also on MAP", "value": str(len(others)),
+            "note": ", ".join(others) + ", outside the community college count"})
 
     # Update Veteran Sprint card from live scraped values
     if "veteran_sprint" in kpis:

@@ -2,25 +2,25 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-04",
   "_session": "S328 SkyLadder",
-  "_status": "Every checked pilot program now carries its display facts: CPL in three kinds per course (articulated here, could adopt, for consideration), the most of the program a learner could meet through CPL, the gaps and the map's status, built once for CPL Pathways and Sierra (the Ironworker A.S. reads up to 31.5 of 34-38 units). Sierra's wiring is in review (#1854), deploying after a clean A/B. You set the next proof: the Cerritos Ironworker pathway from high school to career. Sheet 33 asks five questions: CSU LA's counts, funding and harvest procedure, outcomes in the harvest, and who at Cerritos confirms the Ironworker facts the web will not show us.",
+  "_status": "Sierra now gives each checked program's CPL figures in production (deployed 4 October; the Ironworker A.S. reads up to 31.5 of 34-38 units). You confirmed the statement of who the CPL Initiative serves: the dashboard and Sierra take it now, and the knowledge base's letter tool has a draft for review. Mock-up 1 of the Cerritos Ironworker ladder is ready for your look.",
   "items": [
     {
-      "id": "s328-sam-sheet34",
+      "id": "s328-sam-kb25-review",
+      "for": "Sam",
+      "tab": "governance",
+      "text": "Review the knowledge base's letter tool change, cpl-knowledge-base pull request 25: the letters count California's 116 community colleges and leave Cal State LA out of the active count. After the merge, the generate-letter function needs a redeploy. https://github.com/CPL-Initiative/cpl-knowledge-base/pull/25"
+    },
+    {
+      "id": "s328-sam-ironworker-mockup",
       "for": "Sam",
       "tab": "cpl-pathways",
-      "text": "Answer open-asks sheet 34's two cards: confirm the statement of who the CPL Initiative serves (it then goes on the dashboard, Sierra and the letter blocks), and the per-college procedure record the harvest agent reads before each run. https://claude.ai/artifact/PE2mmQZBvoArb5MTnC2gCG"
+      "text": "Look at mock-up 1 of the Cerritos Ironworker ladder, high school to the job site, and say what to change before it goes onto CPL Pathways: https://claude.ai/artifact/RCo3sBNAyv81n2rNsLKACs"
     },
     {
-      "id": "s327-fable-ironworker-proof",
+      "id": "s328-fable-ironworker-port",
       "for": "Fable",
       "tab": "cpl-pathways",
-      "text": "Build the Ironworker proof of concept: a First Light mock-up of the whole ladder (high school and noncredit entry, the two certificates, the A.S., the B.S., jobs), with the Ironworker A.S. section reading its checked record (the hand-built map's 27-29 units is stale; the catalog prints 34-38)."
-    },
-    {
-      "id": "s327-fable-ship-1854",
-      "for": "Fable",
-      "tab": "sierra",
-      "text": "Ship #1854: read the A/B, merge on a green test check, deploy Sierra, and confirm smoke 7t (the Ironworker A.S. figure, up to 31.5 units)."
+      "text": "Port the Ironworker ladder to CPL Pathways once Sam has looked at mock-up 1 (https://claude.ai/artifact/RCo3sBNAyv81n2rNsLKACs): the A.S. section reads its checked record (up to 31.5 of 34-38 units; the hand-built map's 27-29 is stale), the two certificates follow from it, and the To confirm lines wait for the Cerritos runner read."
     },
     {
       "id": "s310-sam-card11-measures",
