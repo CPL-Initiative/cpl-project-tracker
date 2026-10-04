@@ -15,14 +15,12 @@ about 270K of context left. If Sam's routine started you, read
 ## First, in this order
 
 1. **Sheet 36 replies** ([Open Asks Sheet 36](https://claude.ai/artifact/CrFtAh1wMEiKnooFzKUsDx), current; read
-   `replies` and `replies/done` with ArtifactData before anything else). Three cards:
+   `replies` and `replies/done` with ArtifactData before anything else). Two cards:
    1. Paste Cerritos's procedure record v2 (receipt `kb/receipts/program_source_registry_procedure_2026-10-04_s330.sql`,
       guarded on v1's md5 `7083fab5…`). On "pasted", read back: `procedure_by` = `college-page-read S330`, `v` = 2,
       5 steps; then the lane's card-1 text leaves.
    2. Send the drafted request for Cerritos's high school articulation list (outward: the MAP team sends; a session
       never sends). On "send", the record's `requests[0].status` becomes sent with the date, by a later receipt.
-   3. The Ironworker film draft v1: keep, narrate with Sierra, or edit. On "narrate", follow
-      `prototype/funding_video/README.md`'s Sierra path (ElevenLabs, voice Bella `hpp4J3VqNfWAUOO0d1Us`).
    Each answer changes the harvest lane's NEEDS SAM text in the same PR (`decision_sheets`).
 2. **#1859** (the form step, Cerritos reads 4-5, sheet 36, the film, this checkpoint): merge it on a green `test`
    if S330 did not.
@@ -34,8 +32,11 @@ about 270K of context left. If Sam's routine started you, read
 
 ## Decisions Sam made this run
 
-None. Sam opened the session with the handoff line and did not write again. The run acted on the queue and on
-his standing scheduled-session terms (go with a clear, reversible recommendation; card it).
+- **The Ironworker film, draft v1** (sheet 36 card 3, answered in chat, 23:42Z): *"Video is excellent!"* Kept as is;
+  the card left the sheet. A narrated cut by Sierra only if he asks (follow `prototype/funding_video/README.md`'s
+  Sierra path). Recorded in cpl_memory (`sam-ironworker-film-excellent-2026-10-04`, verified).
+
+Nothing else: the run otherwise acted on the queue and on his standing scheduled-session terms.
 
 ## What shipped (S330, #1859)
 
@@ -51,7 +52,7 @@ his standing scheduled-session terms (go with a clear, reversible recommendation
   FACTS with sources, README), MP4 `20261004_Ironworker_Pathway_in_Motion_v1.mp4`, player
   [Ironworker Pathway in Motion](https://claude.ai/artifact/VdxzrRS7wVxw6o5m6fRTS9). Fable critiqued the storyboard;
   four of its lines were corrected against the ladder.
-- cpl_memory: five rows, each logged (receipts `kb/receipts/cpl_memory_2026-10-04_s330.sql` and `..._s330b.sql`).
+- cpl_memory: six rows, each logged (receipts `kb/receipts/cpl_memory_2026-10-04_s330.sql` and `..._s330b.sql`, `..._s330c.sql`).
 - KB note `methodology-an-advisor-asserts-what-its-fact-list-does-not-say`.
 
 ## Safety patterns

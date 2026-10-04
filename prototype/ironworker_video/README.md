@@ -1,6 +1,6 @@
 # Ironworker Pathway in Motion
 
-A 100-second film of one pathway at Cerritos College, high school to a bachelor's degree, with the credit for prior learning (CPL) at each step. It is the CPL Pathways proof of concept (Sam, 2026-10-04 18:23Z: Cerritos Ironworker, high school to career) told the way the funding introduction tells the funding model. Sam asked for it at ~19:55Z: *"Would love to have a 100-second video like the one we did for the funding model for this use case...but we can play with that at the stage you recommend."* The stage came when the Cerritos runner reads confirmed the ladder's lines (S329-S330). Draft v1, S330; it waits on Sam's review.
+A 100-second film of one pathway at Cerritos College, high school to a bachelor's degree, with the credit for prior learning (CPL) at each step. It is the CPL Pathways proof of concept (Sam, 2026-10-04 18:23Z: Cerritos Ironworker, high school to career) told the way the funding introduction tells the funding model. Sam asked for it at ~19:55Z: *"Would love to have a 100-second video like the one we did for the funding model for this use case...but we can play with that at the stage you recommend."* The stage came when the Cerritos runner reads confirmed the ladder's lines (S329-S330). Draft v1, S330. Sam's review, in chat (2026-10-04 23:42Z): *"Video is excellent!"*
 
 ## Files
 

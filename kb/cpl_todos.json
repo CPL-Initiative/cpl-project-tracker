@@ -2,13 +2,13 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-04",
   "_session": "S330 SkyRoutine",
-  "_status": "Two more readings of Cerritos's pages settled the ladder's schedule and high school lines: this fall Cerritos runs 22 ironworker apprenticeship courses and none of the free noncredit versions, and a high school student earns credit for an articulated course by exam. The statewide site where colleges published their high school agreements is now a domain for sale, so Cerritos's list has no public home. A 100-second draft film of the Ironworker pathway is ready for your review, built only from confirmed lines. Sheet 36 holds three asks: paste Cerritos's updated reading notes, decide whether to send Cerritos the drafted request for its list, and react to the film.",
+  "_status": "Two more readings of Cerritos's pages settled the ladder's schedule and high school lines: this fall Cerritos runs 22 ironworker apprenticeship courses and none of the free noncredit versions, and a high school student earns credit for an articulated course by exam. The statewide site where colleges published their high school agreements is now a domain for sale, so Cerritos's list has no public home. The 100-second Ironworker pathway film is kept as you saw it. Sheet 36 holds two asks: paste Cerritos's updated reading notes, and decide whether to send Cerritos the drafted request for its list.",
   "items": [
     {
       "id": "s330-sam-sheet-36",
       "for": "Sam",
       "tab": "cpl-pathways",
-      "text": "Open Asks Sheet 36 (https://claude.ai/artifact/CrFtAh1wMEiKnooFzKUsDx), three cards: paste Cerritos's updated reading notes in the SQL editor (the database tool held the write for you); decide whether the MAP team sends Cerritos the drafted request for its high school articulation list; and watch the Ironworker film draft (https://claude.ai/artifact/VdxzrRS7wVxw6o5m6fRTS9), then keep it, have Sierra narrate it, or ask for changes."
+      "text": "Open Asks Sheet 36 (https://claude.ai/artifact/CrFtAh1wMEiKnooFzKUsDx), two cards: paste Cerritos's updated reading notes in the SQL editor (the database tool held the write for you), and decide whether the MAP team sends Cerritos the drafted request for its high school articulation list."
     },
     {
       "id": "s329-sam-routine-settings",
