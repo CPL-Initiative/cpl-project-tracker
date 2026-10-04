@@ -1,0 +1,119 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37173160158 (2026-10-04, S324): the text is the program view's own PDF export, read whole and kept from its top. The extraction pass reads this file; it never reads the college's site again.",
+ "college": "San Diego Miramar College",
+ "control_number": "41496",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "curriqunet",
+ "format": "html_per_program",
+ "method": "export_pdf",
+ "source": {
+  "url": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20004",
+  "title": "View - CurriQunet META",
+  "h1": "",
+  "text_from": "export_pdf",
+  "view": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27/iq/20879/20988/20004/20338"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "ACCT116A",
+  "ACCT116B",
+  "BUSE115",
+  "BUSE119",
+  "BUSE140",
+  "ECON120",
+  "ECON121",
+  "MATH121",
+  "MATH150",
+  "STATC1000"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000369648",
+   "code": "ACCT 116A",
+   "title": "Financial Accounting",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000352887",
+   "code": "ACCT 116B",
+   "title": "Managerial Accounting",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000598019",
+   "code": "BUSE 115",
+   "title": "Statistics for Business",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000376716",
+   "code": "BUSE 119",
+   "title": "Business Communications",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000624999",
+   "code": "BUSE 140",
+   "title": "Business Law and the Legal Environment",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000370148",
+   "code": "ECON 120",
+   "title": "Principles of Macroeconomics",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000353695",
+   "code": "ECON 121",
+   "title": "Principles of Microeconomics",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000351786",
+   "code": "MATH 121",
+   "title": "Basic Techniques of Applied Calculus I",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000357873",
+   "code": "MATH 150",
+   "title": "Calculus with Analytic Geometry I",
+   "units": 5.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000348688",
+   "code": "STATC1000",
+   "title": "Introduction to Statistics",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "[page 1]\n \nBUSINESS ADMINISTRATION 2.0 - ASSOCIATE IN SCIENCE FOR \nTRANSFER DEGREE: MIRAMAR \n \n \nSummary \n \nRequirements \nThe Associate in Science in Business Administration 2.0 for Transfer is intended for students who plan to complete \na bachelor’s degree in Business Administration or a related major in the California State University (CSU) system. It \nis accepted by some but not all CSU campuses. Students who complete this degree and transfer to a participating \nCSU campus will be required to complete no more than 60 units after transfer to earn a bachelor’s degree. It may \nnot be appropriate preparation for students transferring to a CSU campus that does not accept the degree. \nStudents who plan to complete this degree should consult a counselor for additional information about \nparticipating CSU campuses as well as university admission, degree, and transfer requirements. \nNOTE: Students intending to transfer into this major at a CSU should consult with a counselor and visit ASSIST for \nguidance on appropriate transfer coursework. \nAward Notes: \nThe following is required for all AA-T or AS-T degrees: \n• Completion of 60 semester units that are eligible for transfer to the California State University \n• Completion of a minimum of 18 semester units in an “AA-T” or “AS-T” major. \n• Minimum grade point average (GPA) of at least 2.0 in all CSU-transferable coursework. While a minimum of \n2.0 is required for admission, some CSU campuses and majors may require a higher GPA. Please see a \ncounselor for more information. \n• Minimum grade of “C” or “P” or better for each course in the major. Students should review the Pass/No Pass \nacceptance policy of the transfer institution prior to requesting this grade option. \n• Certified completion of the California General Education Transfer Curriculum (Cal-GETC) pattern. \nLearning Outcome(s): Students who complete the Business Administration 2.0 Program will be able to: \n1. Evaluate and analyze business-related data using various mathematical techniques. \n2. Describe common business functions and practices. \n3. Analyze and solve financial, economic, technological, or other problems in business organizations. \n4. Utilize common business terminology. \n5. Develop business-related written materials such as letters, memoranda, case studies, reports, or other \ndocuments. \nCOURSES REQUIRED FOR THE MAJOR: Semester Units: 20.0 \nBUSE 119 Business Communications (Active) 3.0 \nBUSE 140 Business Law and the Legal Environment (Active) 3.0 \nACCT 116A Financial Accounting (Active) 4.0 \nACCT 116B Managerial Accounting (Active) 4.0 \nECON C2002 Principles of Macroeconomics (Active) 3.0 \nECON C2001 Principles of Microeconomics (Active) 3.0 \nSelect one of the following statistics courses: Semester Units: 3.0 \nBUSE 115 Statistics for Business (Active) 3.0 \nSTAT C1000 Introduction to Statistics (Active) 3.0 \nSelect one of the following calculus courses: Semester Units: 3.0-5.0 \nMATH 121 Basic Techniques of Applied Calculus I (Active) 3.0 \nMATH 150 Calculus with Analytic Geometry I (Active) 5.0 \n1\n\n[page 2]\n \nCourses Total Units: 26.0-28.0 \nBUSE 119 Business Communications \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nPrerequisite: ENGL C1000 with a Grade of \"C\" or better, or \nequivalent \nThis course applies the principles of effective and ethical \ncommunication to the creation of letters, memos, emails, \nand written and oral reports for a variety of business \nsituations. The course emphasizes the development, \nanalysis, organization, and composition of various types of \nprofessionally written messages, analytical reports, and \nbusiness presentations using word processing and \npresentation-graphics software. Other topics include \ninterpersonal communication, electronic media, and \ninternational/cross-cultural communication. This course is \nintended for students majoring in business and for others \nworking in a business environment. \nFT; AA/AS; CSU; C-ID: BUS 115. \nBUSE 140 Business Law and the Legal \nEnvironment \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nAdvisory: ENGL C1000 with a Grade of \"C\" or better, or \nequivalent or BUSE 92 with a Grade of \"C\" or better, or \nequivalent \nThis course introduces students to the legal system, the \nlaws that govern business in America, and the principles \nunderlying fundamental legal concepts. Topics include \njudicial and administrative systems; ethics; contracts; torts; \nbankruptcy; agency; business organizations and ownership \ntypes; government agencies and regulation; protection of \nintellectual property interest; and the international \nbusiness environment. This course is intended for students \nmajoring in business and for others interested in business \nlaw. \nFT; AA/AS; CSU; UC; C-ID: BUS 120, BUS 125. \nACCT 116A Financial Accounting \n64 - 72 hours lecture; 4 units \nGrading: Letter Grade Only \nAdvisory: ACCT 102 with a Grade of \"C\" or better, or \nequivalent \nThis introductory course is an overview of financial \naccounting, why it is important, and how it is used by \ninvestors and creditors to make decisions. It covers the \naccounting information system, the recording and \nreporting of business transactions with a focus on the \naccounting cycle, the applications of generally accepted \naccounting principles (GAAP), the classified financial \nstatements, and statement analysis. Other topics include \nissues related to asset, liability, and equity valuation; \nrevenue and expense recognition; cash flows; internal \ncontrols; and ethics. This course is intended for students \nmajoring in accounting or other fields related to business \nadministration. \nFT; AA/AS; CSU; UC; C-ID: ACCT 110. \nACCT 116B Managerial Accounting \n64 - 72 hours lecture; 4 units \nGrading: Letter Grade Only \nPrerequisite: ACCT 116A with a Grade of \"C\" or better, or \nequivalent \nThis course is a study of how managers use accounting \ninformation in decision-making, planning, directing \noperations, and controlling. The course focuses on cost \nterms and concepts, cost behavior, cost structure, and \ncost-volume-profit analysis. Other topics include profit \nplanning, standard costs, operations and capital budgeting, \ncost control, and accounting for costs in manufacturing \norganizations. This course is intended for students \nmajoring in accounting or other fields related to business \nadministration. \nFT; AA/AS; CSU; UC; C-ID: ACCT 120. \n2\n\n[page 3]\nECON C2002 Principles of Macroeconomics \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nPrerequisite: Placement as determined by the college’s \nmultiple measures assessment process or completion of a \ncourse taught at or above the level of elementary algebra. \nAdvisory: Successful completion of Intermediate Algebra \nwith a grade of C or better or appropriate placement based \non California Title 5 regulations. \nLimitation on Enrollment: This course is not open to \nstudents with previous credit for ECON 120 \nPart 1 (Identical and Required): An introductory course \nusing models of the domestic and international economy \nto understand national income, unemployment, inflation, \neconomic growth, inequality, the financial system, and \nmonetary, fiscal, and other economic policies. Part 2 \n(Optional Expanded Description, Local College Discretion): \nThis course is an introduction to aggregate (macro) \neconomic analysis. Topics include market systems, \naggregate measures of economic activity, macroeconomic \nequilibrium, money and financial institutions, monetary \nand fiscal policy, international economics, and economic \ngrowth. This course is intended for business majors and \nstudents interested in macroeconomics. \nFT; AA/AS; CSU; UC; C-ID: ECON 202. \nECON C2001 Principles of Microeconomics \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nPrerequisite: Placement as determined by the college’s \nmultiple measures assessment process or completion of a \ncourse taught at or above the level of elementary algebra. \nAdvisory: Successful completion of Intermediate Algebra \nwith a grade of C or better or appropriate placement based \non California Title 5 regulations. \nLimitation on Enrollment: This course is not open to \nstudents with previous credit for ECON 121 \nPart 1 (Identical and Required): An introductory course \nusing microeconomic models to understand individual \ndecisions by consumers and firms, market outcomes \nincluding market failure, elasticity, market structures, labor \nmarkets, inequality, and the impact of government policies. \nPart 2 (Optional Expanded Description, Local College \nDiscretion): This course is an introduction to economic \nanalysis of specific decision-making sectors in the \neconomy (micro analysis). These sectors include \nhouseholds, firms, and government. Topics covered include \nproductivity and costs for individual firms, industry types, \nthe labor market, anti-trust issues, income distribution, and \nenvironmental externalities. This course is intended for \nbusiness majors and all students interested in \nmicroeconomics. \nFT; AA/AS; CSU; UC; C-ID: ECON 201. \nBUSE 115 Statistics for Business \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade Only \nPrerequisite: Successful completion of Intermediate \nAlgebra with a \"C\" or better or appropriate placement \nbased on California title 5 regulations. \nAdvisory: CBTE 140 with a Grade of \"C\" or better, or \nequivalent or CBTE 143 with a Grade of \"C\" or better, or \nequivalent \nThis course is a study of statistical analysis. Topics include \ndescriptive statistics, probability, sampling and sampling \ndistributions, confidence intervals, hypothesis testing, \nanalysis of variance (ANOVA), and regression and \ncorrelation analyses as aids for business decision making. \nThis course is designed for students majoring in business, \neconomics, information technology, social science, or \nrelated fields. \nFT; AA/AS; CSU; UC; C-ID: MATH 110. \nSTAT C1000 Introduction to Statistics \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade or Pass/No Pass \nPrerequisite: Placement as determined by the college’s \nmultiple measures assessment process or completion of a \ncourse taught at or above the level of intermediate \nalgebra. Students with a Milestone M30 must enroll in STAT \nC1000 and Mathematics 15A. \nLimitation on Enrollment: This course is not open to \nstudents with previous credit for MATH 119 \nPart 1: This course is an introduction to statistical thinking \nand processes, including methods and concepts for \ndiscovery and decision-making using data. Topics include \ndescriptive statistics; probability and sampling \ndistributions; statistical inference; correlation and linear \nregression; analysis of variance, chi-squared, and t-tests; \nand application of technology for statistical analysis \nincluding the interpretation of the relevance of the \nstatistical findings. Students apply methods and processes \nto applications using data from a broad range of \ndisciplines. Part 2 (Local): This is a clarification of \ninformation listed in Part 1. This course covers descriptive \nand inferential statistics. The descriptive portion analyzes \ndata through graphs, measures of central tendency and \ndispersion. The inferential statistics portion covers \nstatistical rules to compute basic probability, including \nbinomial, normal, Chi-squares, and t-distributions. This \ncourse also covers estimation of population parameters, \nhypothesis testing, linear regression, correlation, and \nANOVA. Emphasis is placed on applications of technology, \nusing software packages, for statistical analysis and \ninterpretation of statistical values based on data from \ndisciplines including business, social sciences, psychology, \nlife science, health science, and education. This course is \nintended for transfer students interested in statistical \nanalysis. \nFT; AA/AS; CSU; UC; C-ID: MATH 110. \n3\n\n[page 4]\nMATH 121 Basic Techniques of Applied Calculus I \n48 - 54 hours lecture; 3 units \nGrading: Letter Grade or Pass/No Pass \nPrerequisite: Successful completion of Intermediate \nAlgebra with a grade of C or better or appropriate \nplacement Milestone M60 based on California Title 5 \nregulations. Students with a milestone M30 or M50 must \nenroll in MATH 121X (Mathematics 121 and Mathematics \n15F support course). \nThis course examines the study of calculus using numerical, \ngraphical, and analytical methods to analyze calculus \nproblems encountered in real-world applications in \nbusiness, natural/life sciences, and social sciences. Topics \ninclude limits, derivatives, and integrals of algebraic, \nexponential, and logarithmic functions, curve sketching, \noptimization, and areas under and between curves and \npartial derivatives and optimization of multivariable \nfunctions. This is the first course in a sequence of \nmathematics courses for students intending to major in \nbusiness, economics, or natural and social sciences. \nFT; AA/AS; CSU; UC. \nMATH 150 Calculus with Analytic Geometry I \n80 - 90 hours lecture; 5 units \nGrading: Letter Grade or Pass/No Pass \nPrerequisite: MATH 141 with a Grade of \"C\" or better, or \nequivalent or Milestone M60. Students with a milestone \nbelow M60 must enroll in Mathematics 150X (Mathematics \n150 and Mathematics 15E learning community). \nThis course is an introduction to university-level calculus \nrequiring a strong background in algebra and \ntrigonometry. The topics of study include analytic \ngeometry, limits, differentiation and integration of \nalgebraic and transcendental functions, and applications of \nderivatives and integrals. Emphasis is placed on calculus \napplications involving motion, optimization, graphing, and \napplications in the physical and life sciences. This course \nincorporates the use of technology. Analytical reading and \nproblem solving are strongly emphasized in this course. \nThis course is intended for students majoring in \nmathematics, computer science, physics, chemistry, \nengineering, or economics. \nFT; AA/AS; CSU; UC; C-ID: MATH 210. \n4",
+ "courseleaf_lists": [],
+ "captured_run": 37173160158
+}
