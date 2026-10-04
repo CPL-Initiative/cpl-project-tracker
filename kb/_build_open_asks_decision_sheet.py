@@ -34,7 +34,10 @@ lane's marker in the same pull request, or the sheet asks again.
 Sheet 35 (S329 checkpoint, 2026-10-04, SHEET_ID 2026-10-04-open-asks-35): sheet 34 is answered (19:18Z).
 One card: Cerritos's procedure record. Sam said "apply the procedure record" in session; the migration
 (three columns, the trigger) landed, and the row's guarded UPDATE timed out twice at the connector, which
-holds a bare UPDATE for a person. The card carries the UPDATE to paste.
+holds a bare UPDATE for a person. The card carries the UPDATE to paste. Its first build took the receipt's
+first UPDATE, which sits in the rollback comment, so Sam's paste failed as a syntax error with nothing
+written; rebuilt onto the same artifact (no reply existed) with the one statement and a guard against
+comment lines in paste text.
 
 Sheet 34 (S328, 2026-10-04, SHEET_ID 2026-10-04-open-asks-34): Sam answered all five cards of sheet 33
 (https://claude.ai/artifact/HLeo1NxQvsVkZNUnqw8YCQ) at 18:52-18:57Z, and the lanes record them. Two new
@@ -800,7 +803,13 @@ def items():
 
     # Sheet 35 (S329): the one write Sam approved in session that the connector held for a person.
     receipt = _read('kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql')
-    upd = receipt[receipt.index('update public.program_source_registry'):].strip()
+    # The SQL after the receipt's "-- The record" block, never the first UPDATE in the file: the
+    # receipt's rollback comment names an UPDATE too, and sheet 35's first build handed Sam that
+    # commented line, which made his paste a syntax error (2026-10-04 ~21:45Z; nothing ran).
+    tail = receipt[receipt.index('-- The record'):]
+    upd = tail[tail.index('\nupdate public.program_source_registry') + 1:].strip()
+    assert upd.endswith(';') and not any(l.lstrip().startswith('--') for l in upd.splitlines()), \
+        'the paste text must be the one statement, with no comment lines'
     I.append({
         'lane': 'program-requirements-harvest',
         'title': "Paste Cerritos's procedure record into the SQL editor",

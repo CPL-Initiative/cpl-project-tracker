@@ -172,53 +172,7 @@
 <h3>1 &middot; Paste Cerritos&#x27;s procedure record into the SQL editor</h3>
 <p class="ref">reference: program-requirements-harvest NEEDS SAM · kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql</p>
 <dl>
-<dt>What this is</dt><dd>You said <em>apply the procedure record</em>. The migration landed: the registry now has <code>procedure</code>, <code>procedure_by</code> and <code>procedure_at</code>, and the history trigger names who changed a record. Cerritos's row did not: its UPDATE timed out twice at the connector, which holds a bare UPDATE for a person, with nothing written. The record holds what three runner reads found: six hosts, three reading steps, four answers, five nuances and the three next steps. It names hosts and offices, never staff. Paste this in the Supabase SQL editor; it writes one row, and only while that row has no record:<pre>update public.program_source_registry set procedure = null, procedure_by = null, procedure_at = null
---   where college = &#x27;Cerritos College&#x27;;
--- and, to drop the columns, alter table ... drop column procedure, procedure_by, procedure_at, then
--- restore the trigger from kb/receipts/program_source_registry_sequence_access_2026-10-04_s326.sql.
-
--- Migration program_source_registry_procedure_2026_10_04 (also in kb/supabase_program_source_registry.sql)
-alter table public.program_source_registry
-  add column if not exists procedure    jsonb,
-  add column if not exists procedure_by text,
-  add column if not exists procedure_at timestamptz;
-
-create or replace function public.program_source_registry_keep_history()
-returns trigger
-language plpgsql
-set search_path = public
-as $$
-begin
-  insert into public.program_source_registry_history (college, changed_by, op, old_row)
-  values (
-    old.college,
-    case when tg_op = &#x27;UPDATE&#x27;
-         then coalesce(
-                case when new.corrected_at is distinct from old.corrected_at
-                     then new.corrected_by end,
-                case when new.procedure_at is distinct from old.procedure_at
-                     then new.procedure_by end,
-                case when new.sequence_checked_run is distinct from old.sequence_checked_run
-                     then new.sequence_checked_run end,
-                new.census_run_id)
-    end,
-    tg_op,
-    to_jsonb(old));
-  if tg_op = &#x27;UPDATE&#x27; then
-    new.updated_at := now();
-    return new;
-  end if;
-  return old;
-end
-$$;
-revoke all on function public.program_source_registry_keep_history() from public, anon, authenticated;
-
--- The record (guarded: one row, only while it carries no procedure).
--- STATUS 2026-10-04 ~21:25Z: the migration above is applied; this UPDATE is NOT. Two runs through the
--- Supabase connector&#x27;s apply_migration timed out at 60 s with nothing written (no lock, no running query),
--- and execute_sql&#x27;s guard routes data writes away from it. Sam runs it in the SQL editor, or confirms it
--- when the connector asks.
-update public.program_source_registry
+<dt>What this is</dt><dd>You said <em>apply the procedure record</em>. The migration landed: the registry now has <code>procedure</code>, <code>procedure_by</code> and <code>procedure_at</code>, and the history trigger names who changed a record. Cerritos's row did not: its UPDATE timed out twice at the connector, which holds a bare UPDATE for a person, with nothing written. The record holds what three runner reads found: six hosts, three reading steps, four answers, five nuances and the three next steps. It names hosts and offices, never staff. Paste this in the Supabase SQL editor; it writes one row, and only while that row has no record:<pre>update public.program_source_registry
    set procedure    = &#x27;{
  &quot;v&quot;: 1,
  &quot;college&quot;: &quot;Cerritos College&quot;,
