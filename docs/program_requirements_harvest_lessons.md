@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [1836, 1838, 1839, 1841]
+prs: [1836, 1838, 1839, 1841, 1844, 1845]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -247,3 +247,43 @@ the three automatic bars, $0.73 for the run.
 
 **NEXT.** Record shape version 2, rerun the 16, read Miramar's export PDFs,
 then the 20 to Sam.
+
+
+## S324 SkyGrader, 2026-10-04: record shape version 2, and Miramar through its exports
+
+**What shipped (PR #1845).** Record shape version 2 in the Edge Function
+(deployed, version 2), the scorer and the guard together; extraction run 2
+(37171952080) passed 16 of 16 at $0.053 a program, and its records are filed
+under `kb/program_requirements_pilot/records/`. The capture reads a curriQunet
+program view's own PDF export: Miramar went from 0 of 4 to 4 of 4 (capture
+run 6, 37172202580).
+
+27. **A third arithmetic outcome must be confirmed by the page, or it is a hole.**
+    Mt. San Antonio's Vocational Nursing prints no hours, no units and no total,
+    so nothing can be added and "equal" cannot be reached. "Unstated" passes only
+    when the record carries no figure, the closed list stores no units, and the
+    catalog text names no hours or units. Without the text check, run 1's
+    Riverside Food Service record (every hour dropped) would have passed; without
+    the closed-list check, any credit record stripped of its units would.
+
+28. **Passing the automatic bars is not being right.** Run 2's 16 passing records
+    still carry what only a reader catches: Mt. San Antonio's Fire record lists
+    FIRE 86 twice, its LVN-to-RN record pairs the ANAT courses as alternatives
+    where the catalog may mean two whole sequences, and West Los Angeles
+    Kinesiology's heading sits on the page before the excerpt. Each record's
+    notes name its own doubt; the person's check (the fourth bar) reads them.
+
+29. **When a catalog view's text names none of the courses, look for the view's
+    own export.** Miramar's curriQunet views open by click and print only the
+    site's navigation; each links "Export Page as PDF" for its own outline, and
+    the export names every listed course. Stop clicking at the program's view:
+    past it the reader wandered into the catalog's "Academic Requirements" menu.
+
+30. **A document that holds one program keeps its top.** The text window opens
+    2,500 characters before the first listed code, which suits a catalog page of
+    many programs. Miramar's Fire Technology exports name FIPT 101 in their
+    outcomes, and the window cut the heading that names the award.
+
+31. **Restore a mutated file from a copy, never with `git checkout --`.** The
+    checkout undoes every uncommitted edit in the file, the change under test
+    included. Copy the file aside before mutating, or commit first.

@@ -11,13 +11,13 @@
   },
   "summary": {
     "files": 1042,
-    "bytes": 10989738,
+    "bytes": 10992525,
     "over_budget": 6,
     "handoff_max": 324,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59988,
-    "superseded_files": 3,
-    "superseded_bytes": 18952,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 117,
-        "bytes": 3333806,
+        "bytes": 3333971,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 78,
-        "bytes": 2218089,
+        "bytes": 2220546,
         "over": 2
       },
       "kb_note": {
@@ -51,19 +51,18 @@
       },
       "handoff": {
         "files": 295,
-        "bytes": 2473308,
+        "bytes": 2473473,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 6,
-      "superseded_handoff": 3,
       "vault_heavy_path": 55
     },
     "vault": {
-      "files": 3491,
-      "bytes": 1720365112,
+      "files": 3507,
+      "bytes": 1720477275,
       "heavy_bytes": 778916901,
       "heavy_share": 0.453,
       "ignore_filters": [
@@ -431,39 +430,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 321,
-        "authoritative": 324,
-        "has_frontmatter": true
-      },
-      "message": "handoff 321 is below the authoritative 324 but is not stamped `superseded: true`",
-      "path": "docs/session_321_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 322,
-        "authoritative": 324,
-        "has_frontmatter": true
-      },
-      "message": "handoff 322 is below the authoritative 324 but is not stamped `superseded: true`",
-      "path": "docs/session_322_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 323,
-        "authoritative": 324,
-        "has_frontmatter": true
-      },
-      "message": "handoff 323 is below the authoritative 324 but is not stamped `superseded: true`",
-      "path": "docs/session_323_handoff.md"
     },
     {
       "rule": "house_voice",
