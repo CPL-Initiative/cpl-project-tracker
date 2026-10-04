@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-514 document(s).
+515 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -146,6 +146,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A negative result needs a positive control in the same run](../kb-notes/methodology-a-negative-result-needs-a-positive-control.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A new assertion must fail in the shape the grid counts — or the grid reads "0 failing" over a failed run](../kb-notes/methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A normalization and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |
+| [A not-applicable score must be confirmed by the source](../kb-notes/methodology-a-not-applicable-score-must-be-confirmed-by-the-source.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [A one-rule class must be checked against its own text](../kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A one-shot hand-off must not consume what it cannot deliver](../kb-notes/methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A pane painted only by its event is blank after every re-render](../kb-notes/methodology-a-pane-painted-only-by-its-event-is-blank-after-a-re-render.md) | methodology | published | 2026-09-10 | 2026-09-10 |

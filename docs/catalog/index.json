@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 514,
+   "count": 515,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2560,6 +2560,24 @@
      "title": "A normalization and the screens that judge it must see the same text",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-10-04",
+     "governs": [
+      "kb/_program_requirements_score.py",
+      "tests/program_requirements_pilot_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-not-applicable-score-must-be-confirmed-by-the-source.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "scoring",
+      "program-requirements",
+      "extraction"
+     ],
+     "title": "A not-applicable score must be confirmed by the source",
+     "type": "methodology",
+     "updated": "2026-10-04"
     },
     {
      "created": "2026-08-19",
@@ -14707,8 +14725,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 295,
+   "count": 296,
    "docs": [
+    {
+     "created": "2026-10-04",
+     "governs": [],
+     "n": 325,
+     "path": "docs/session_325_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "pilot",
+      "edge-function",
+      "extraction",
+      "decision-sheet"
+     ],
+     "title": "20 of 20 pilot records pass the automatic bars; read Sam's review sheet and carry out its fixes",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-04",
      "governs": [],
@@ -19727,5 +19763,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1029
+ "total": 1031
 }

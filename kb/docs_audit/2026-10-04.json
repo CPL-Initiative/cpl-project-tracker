@@ -10,48 +10,48 @@
     "other": 150000
   },
   "summary": {
-    "files": 1042,
-    "bytes": 10992525,
+    "files": 1044,
+    "bytes": 11004908,
     "over_budget": 6,
-    "handoff_max": 324,
+    "handoff_max": 325,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59988,
+    "always_loaded_bytes": 59998,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59988,
+        "bytes": 59998,
         "over": 0
       },
       "other": {
         "files": 117,
-        "bytes": 3333971,
+        "bytes": 3334895,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9593,
+        "bytes": 9662,
         "over": 0
       },
       "lessons": {
         "files": 78,
-        "bytes": 2220546,
+        "bytes": 2221455,
         "over": 2
       },
       "kb_note": {
-        "files": 516,
-        "bytes": 2603820,
+        "files": 517,
+        "bytes": 2607923,
         "over": 0
       },
       "roadmap_lane": {
         "files": 34,
-        "bytes": 291134,
+        "bytes": 292286,
         "over": 1
       },
       "handoff": {
-        "files": 295,
-        "bytes": 2473473,
+        "files": 296,
+        "bytes": 2478689,
         "over": 0
       }
     },
@@ -61,8 +61,8 @@
       "vault_heavy_path": 55
     },
     "vault": {
-      "files": 3507,
-      "bytes": 1720477275,
+      "files": 3519,
+      "bytes": 1720713540,
       "heavy_bytes": 778916901,
       "heavy_share": 0.453,
       "ignore_filters": [
@@ -410,13 +410,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 695460,
+        "bytes": 695882,
         "limit": 150000,
         "lane": "other",
-        "over_by": 545460,
+        "over_by": 545882,
         "ratio": 4.64
       },
-      "message": "695,460 B is 4.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "695,882 B is 4.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

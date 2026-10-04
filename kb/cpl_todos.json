@@ -1,9 +1,15 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-04",
- "_session": "S323 SkyHarvest",
- "_status": "The record of which courses each program requires, which it lets a student choose from a list, and which are open electives now has a working pilot. Of the 20 programs you check, the reader found 16 on their colleges' own catalog pages (Cerritos, Mt. San Antonio, Riverside City and West Los Angeles, four each), and a model drafted a record for each: 7 already pass the three automatic checks, at about five cents a program. The other nine show where the record needs more room (noncredit hours, a choice between two whole options, block totals the catalog prints). Miramar's catalog opens each program but hides its course list; its own PDF export is the next route. Sheet 27's two cards still wait on you.",
+ "_session": "S324 SkyGrader",
+ "_status": "The pilot record of each program's required courses, choose lists and open electives now covers all 20 programs you check. The reader found every one on its college's own catalog (Miramar's through each program's PDF export), and all 20 drafted records pass the three automatic checks, at about five cents a program. The fourth check is yours: a review sheet holds the 20, one card each, with the catalog link beside the record. Eighteen are proposed as matching the catalog; two need a fix (Mt. San Antonio Fire lists one course twice, and its LVN-to-RN degree reads two anatomy sequences course by course). Sheet 27's two cards still wait on you.",
  "items": [
+  {
+   "id": "s324-sam-pilot-records",
+   "for": "Sam",
+   "tab": "sierra",
+   "text": "Check the 20 pilot records on the review sheet (https://claude.ai/artifact/8vJNG2XYjJNyfGiECXPpZk): each card arrives with its proposal selected, so change only what you disagree with, add a note where a record needs a fix, and press Complete at the end."
+  },
   {
    "id": "s322-sam-sheet27",
    "for": "Sam",
@@ -47,10 +53,10 @@
    "text": "Read Sierra's timing log over a week of real questions (chat_interactions.timings, live since 3 October) and report where the wait goes: the first 23 test answers took a median 15 seconds, most of it the model writing."
   },
   {
-   "id": "s323-fable-record-v2",
+   "id": "s324-fable-pilot-fixes",
    "for": "Fable",
    "tab": "sierra",
-   "text": "Widen the pilot's record (noncredit hours, a choice between whole options, printed block totals, flagged alternatives), rerun the 16 drafted records, then read Miramar's four programs from each program's PDF export."
+   "text": "Read the pilot records review sheet's replies and carry out each fix through the record shape or the extraction prompt (never by editing a filed record), then rerun the extraction on the programs it touches."
   }
  ],
  "_deferred": [

@@ -287,3 +287,19 @@ run 6, 37172202580).
 31. **Restore a mutated file from a copy, never with `git checkout --`.** The
     checkout undoes every uncommitted edit in the file, the change under test
     included. Copy the file aside before mutating, or commit first.
+
+32. **Never let a set's order break a tie.** Miramar lists "Early Education
+    Entrepreneurship" beside "Entrepreneurship", and both name every word of the
+    title. The click order among equal scores came from a Python set, so run 6
+    read the right program and run 7 the other (coverage 0.44). The reader now
+    prefers the item that begins with the title, then the shorter item, and the
+    guard passes under five hash seeds.
+
+**State (S324).** Capture: 20 of 20 (Miramar 4 of 4 through its exports, capture
+run 8). Extraction: 20 of 20 pass the three automatic bars (runs 2 and 3,
+$1.13 for both), filed under `kb/program_requirements_pilot/records/`. Sam's
+review sheet holds the 20, two proposed as fixes:
+https://claude.ai/artifact/8vJNG2XYjJNyfGiECXPpZk.
+
+**NEXT.** Read the review sheet's replies; carry out each fix through the record
+shape or the prompt, then rerun the programs it touches.

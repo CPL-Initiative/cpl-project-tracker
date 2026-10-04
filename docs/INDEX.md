@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-03
+updated: 2026-10-04
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 514 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 515 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 82 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 52 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 295 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1029** | |
+| Session handoffs | 296 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1031** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-04 (S324 SkyGrader): KB note `methodology-a-not-applicable-score-must-be-confirmed-by-the-source`; handoff 325; the program requirements pilot's record shape version 2 (hours, option groups, block totals, unit ranges; Edge Function v2) and Miramar read through its curriQunet exports: 20 of 20 programs captured and 20 of 20 records pass the three automatic bars (#1845); the pilot records review sheet for Sam.
 - 2026-10-03 (S322 SkyPilot): KB note `methodology-a-failed-read-is-not-an-empty-result` gains the census case; handoff 323; the census reads a vendor catalog's own edition banner, puts the newer year first on one host, and keeps a known address after a failed read (#1841: 77 → 95 catalog years, 71 → 91 at 2026-27); open-asks sheet 25; West Los Angeles is the pilot's PDF college.
 - 2026-10-03 (S321 SkyCatalog): KB note `methodology-a-reader-fix-moves-rows-it-was-not-aimed-at`; handoff 322; the census's reader corrected over four full reads (#1839: 109 → 112 catalog addresses, 67 → 78 years, no college worse off); the registry's first apply on `main`; open-asks sheet 24 (two memory receipts, six catalog addresses).
 - 2026-10-03 (S320 SkyCensus): the program-source census and its registry (#1836, Phase 0 of the harvest): `program_source_registry` live with 118 rows, a history table and one write path, weekly apply; the vendor-link hop and four-slice read (#1838; first full read: 109 of 118 catalogs found); new lessons doc `program_requirements_harvest_lessons`; the revoke KB note gained a tables section (TRUNCATE); handoff 321.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-02 (S317 SkyCompass, the Sierra narration): KB note `methodology-an-input-read-outside-the-repo-carries-its-text-and-its-gaps`; Scenario 2 narrated by Sierra in ElevenLabs ([#1823](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1823) and the follow-up), `_Draft_3` linked from the explainer; sheet 22 answered.
 - 2026-10-02 (S318 SkyKeel): KB note `methodology-a-load-id-should-be-the-content`; handoff 319; Sierra can read each program's own course list (#1826-#1829); sheet 22.
 - 2026-10-02 (S317 SkyCompass): KB note `methodology-a-gateway-error-is-not-an-answer`; handoff 318; the MAP Custom Report loader reads back after a 5xx and never re-sends a landed batch or the promotion ([#1824](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1824)); the grants re-check closed.
-- 2026-10-02 (S316 SkyTally): KB note `methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5` (+ `scripts/pg_jsonb_md5.py`); handoff 317; sheet 19 executed (the CER fold and Microsoft title; the summed statewide target, film `_v7`, [#1821](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1821)); "FTES reimbursement rate", never price.
