@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-515 document(s).
+516 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -372,6 +372,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Paginate every PostgREST read that can outgrow 1,000 rows](../kb-notes/methodology-paginate-postgrest-reads.md) | methodology | published | 2026-07-08 |  |
 | [Parse PDF column grids positionally (x/y anchors), never from linearized text — the MQ Index mis-bins](../kb-notes/methodology-positional-pdf-column-grids.md) | methodology | published | 2026-07-11 |  |
 | [Populate-on-file-drop seam for grounded reference data](../kb-notes/methodology-populate-on-file-drop-seam-for-grounded-reference-data.md) | methodology | published | 2026-07-29 | 2026-07-29 |
+| [Probe the class before calling a refusal local](../kb-notes/methodology-probe-the-class-before-calling-a-refusal-local.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [Probing the MAP Custom Report API for a view's real columns (value-signature method)](../kb-notes/methodology-map-api-value-signature-probe.md) | methodology | published | 2026-06-30 |  |
 | [Promoted-record ghosts in candidate worklists](../kb-notes/methodology-promoted-record-ghosts-in-worklists.md) | methodology | published | 2026-06-15 | 2026-06-15 |
 | [Propose the decision and let people pull it back — it is easier to respond to a decision than to make one](../kb-notes/methodology-propose-the-decision-and-let-people-pull-it-back.md) | methodology | published | 2026-09-20 | 2026-09-20 |
