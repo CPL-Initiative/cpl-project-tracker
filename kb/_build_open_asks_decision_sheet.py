@@ -180,8 +180,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-03-open-asks-27.html')
-SHEET_ID = '2026-10-03-open-asks-27'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-28.html')
+SHEET_ID = '2026-10-04-open-asks-28'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -749,6 +749,60 @@ def items():
     # S322: Phase 1, the pilot. Sheet 25 (22:57Z) ruled Riverside City's program (the Culinary Arts
     # certificate) and the sample checker (Sam); sheet 26 (23:01Z) ruled the Tech Center contact (Sam, after
     # the pilot's first records). The lane records all three.
+    # S325: the sequence pass met the Program Pathways Mapper's refusal at every host it reached.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Miramar's Program Mapper refuses the reader: how should the pilot read its sequence?",
+        'ref': 'program-requirements-harvest NEEDS SAM · kb/_program_sequence_ppm.py · runs 37197332656, 37198225537',
+        'facts': (
+            "Your call 4 on sheet 23 takes the pilot's sequence from Miramar's Program Mapper, for the Fire "
+            "Technology A.S. (05100). The reader found the mapper through Miramar's own pages "
+            "(<code>sdmiramar.edu/program-mapper</code>), and <code>san-diego-miramar.programmapper.com</code> "
+            "answered all seven requests 403 Forbidden. A second run asked each of the 24 sequence sources the "
+            "census filed for one page: <strong>all 17 mapper hosts it reached answered 403</strong> (Ca&ntilde;ada, "
+            "Canyons, Compton, Contra Costa, Cuesta, Cypress, Hartnell, Imperial, Las Positas, Madera, Moorpark, "
+            "Napa, Oxnard, Reedley, San Jose City, Ventura, West Valley). Five more are college pages that link "
+            "to a mapper host; Santa Monica timed out. Irvine Valley alone publishes its program maps on its own "
+            "site, and that page answered. None of the 20 captured catalog pages prints a term sequence. The "
+            "reader never works around a refusal."),
+        'why': "The refusal is the mapper service's, so it decides how the whole harvest reads sequences, "
+               "not only Miramar's.",
+        'rec': "<strong>A person saves the one map, and you ask for access:</strong> you or a MAP team member "
+               "open Miramar's Fire Technology map in a browser and save it as a PDF; a session files it and "
+               "drafts the sequence record, which proves the shape. For the other colleges, ask Miramar (or the "
+               "mapper's operator) to let the CPL Initiative's reader in, or for an export. <em>It might be wrong "
+               "if</em> you would rather start from Irvine Valley's own program maps, which answer today; then "
+               "the pilot reads one of those instead.",
+        'chips': chips(('Save it and ask', 'save_ask'), ('Irvine Valley instead', 'ivc'),
+                       ('Defer sequences', 'defer'), CH_LATER),
+        'evidence': [live('2026-10-04', "job logs of runs 37197332656 (Miramar, seven 403s) and "
+                          "37198225537 (24 sequence sources, one load each), read through the GitHub connector")],
+    })
+    # S325: Sam asked for Sierra in the tab. Her rule today says a program LISTS a course.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "May Sierra say \"required\" and give a unit total for a checked program?",
+        'ref': 'program-requirements-harvest NEEDS SAM · sierra-retrieval-corpus lane (PROGRAM COURSE LISTS) · '
+               'mock-up https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f',
+        'facts': (
+            "Since 2026-10-03 Sierra answers a course question from the state's Program Course File, and her rule "
+            "says a program <em>lists</em> a course: never \"required\", never a unit total, because that file "
+            "holds no rule. The harvest's records hold the rule, read from the college's catalog: required "
+            "courses, \"choose 6 units\" blocks, option groups and the program total. All 20 pilot records "
+            "passed all four checks on 2026-10-04, your reading among them. The tab mock-up shows Sierra "
+            "answering from them, marked as examples."),
+        'why': "Her answer to \"what do I need for this program?\" changes from a list of courses to the "
+               "catalog's own requirements, with the year named.",
+        'rec': "<strong>Yes, for checked records only:</strong> where a program's record passed all four "
+               "checks, Sierra may say required, name each choose block and give the total, citing the catalog "
+               "and its year; every other program keeps today's \"lists\" wording. A session builds it behind "
+               "the A/B preview and a smoke test before it goes live. <em>It might be wrong if</em> you want "
+               "the harvest to widen past the pilot first.",
+        'chips': chips(('Yes, checked records only', 'yes'), ('Not yet', 'not_yet'), CH_LATER),
+        'evidence': [quoted("docs/reference/lanes/sierra-retrieval-corpus.md, PROGRAM COURSE LISTS "
+                            "(\"A program LISTS a course: never 'required', never a unit total\")", '2026-10-04'),
+                     quoted("kb/program_requirements_pilot/review_2026-10-04.json (20 of 20 cards ruled)", '2026-10-04')],
+    })
     return I
 
 

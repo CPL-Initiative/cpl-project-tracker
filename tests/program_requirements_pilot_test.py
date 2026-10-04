@@ -647,6 +647,92 @@ check(not re.search(r"method=\"(?:POST|PATCH|PUT|DELETE)\"|/rpc/", src),
       "the capture pass sends no write to Supabase")
 check("SUPABASE_SERVICE_KEY" not in src, "the capture pass never reads the service key")
 
+# ── The sequence pass: Miramar's Program Pathways Mapper (S325) ──────────────
+# S324's four guessed mapper hosts answered 403 or did not resolve. The pass
+# now enters from the college's own pages and follows the link that leads into
+# the mapper, and accepts a page only when it names the program's courses AND
+# at least two terms: a program's description names its courses and no term.
+import _program_sequence_ppm as Q  # noqa: E402
+
+check(Q.PPM_PROGRAMS == {("San Diego Miramar College", "05100")},
+      "Sam's call 4 (sheet 23): the pilot sequences Miramar's Fire Technology A.S. alone")
+check(all(any(p["college"] == c and p["control_number"] == cn for p in sample)
+          for c, cn in Q.PPM_PROGRAMS), "the sequenced program is in the pilot sample")
+check(all(u.startswith("https://") for us in Q.PPM_START.values() for u in us),
+      "every mapper entry page is https")
+
+check(Q.on_mapper("https://miramar.programmapper.ws/academics"), "a programmapper host is the mapper")
+check(Q.on_mapper("https://programmap.cuesta.edu/academics"), "a programmap host is the mapper")
+check(not Q.on_mapper("https://sdmiramar.edu/program-mapper"),
+      "the college's page ABOUT the mapper is a step, not the mapper")
+check(Q.on_mapper("https://pm.hartnell.edu/academics", {"pm.hartnell.edu"}),
+      "a host a mapper link led to is the mapper")
+
+here = "https://sdmiramar.edu/program-mapper"
+check(Q.mapper_link("Program Mapper", "https://miramar.programmapper.ws/academics", here) == 9,
+      "a link to a mapper host that names the mapper counts most")
+check(Q.mapper_link("Explore Program Mapper", "https://sdmiramar.edu/program-mapper",
+                    "https://sdmiramar.edu/programs/fire-protection-technology") == 3,
+      "the college's own mapper page counts as a step")
+check(Q.mapper_link("Apply Now", "https://sdmiramar.edu/apply", here) == 0,
+      "an unrelated college link does not lead into the mapper")
+check(Q.mapper_link("Program Mapper", here + "#top", here) == -1, "a page never links to itself")
+check(Q.mapper_link("Login", "https://miramar.programmapper.ws/login", here) == -1,
+      "a login link is refused, mapper host or not")
+
+fire = {"title": "Fire Technology", "award": "A.S. Degree"}
+ppm = "https://miramar.programmapper.ws/academics/interest-clusters/c1"
+check(Q.program_link("Fire Technology, A.S.", ppm + "/programs/p9", fire) > 2,
+      "inside the mapper, the program's own link scores by its title")
+check(Q.program_link("Public Safety", ppm, fire) == 1,
+      "a pathway page with none of the title's words is explored last")
+check(Q.program_link("Program Map", ppm + "/programs/p9/map", fire) == 5,
+      "the program's map link is followed")
+check(Q.program_link("About", "https://miramar.programmapper.ws/about", fire) == 0,
+      "a page outside the pathways is not followed")
+
+check(Q.term_markers("Semester 1 FIPT 101 Semester 2 FIPT 102 semester 1") == ["Semester 1", "Semester 2"],
+      "each term once, in page order")
+check(len(Q.term_markers("Fall Semester ... Spring Semester")) == 2, "a season's semester is a term")
+check(len(Q.term_markers("Year 1 ... Year 2")) == 2, "a numbered year is a term")
+check(Q.term_markers("complete the program in 4 semesters") == [],
+      "a count of semesters names no term")
+
+fx = json.load(open(os.path.join(ROOT, "kb", "program_requirements_pilot", "sources", "miramar_05100.json")))
+closed = fx["closed_list"]
+seq = "Semester 1\nFIPT 101 Intro\nFIPT 102 Behavior\nEMGM 105A EMT\nSemester 2\nFIPT 103\nFIPT 104"
+check(Q.accepts(P.find_codes(seq, closed), closed, seq),
+      "a page naming five of the eight listed courses under two terms is the sequence")
+flat = seq.replace("Semester 1\n", "").replace("Semester 2\n", "")
+check(not Q.accepts(P.find_codes(flat, closed), closed, flat),
+      "the same courses with no term is the program's description, not its sequence")
+thin = "Semester 1\nFIPT 101\nSemester 2\nENGL 101"
+check(not Q.accepts(P.find_codes(thin, closed), closed, thin),
+      "terms with one listed course are a mapper's help text, not the sequence")
+check(Q.map_items(["Overview", "Program Map", "Careers", "View Program Map", "map of campus"])
+      == ["Program Map", "View Program Map"], "the items that open a program's map, and no other")
+
+with open(os.path.join(ROOT, ".github", "workflows", "program-sequence-ppm.yml")) as fh:
+    swf = fh.read()
+sactive = "\n".join(l for l in swf.splitlines() if not l.lstrip().startswith("#"))
+check(not re.search(r"^\s*schedule:", sactive, re.M), "the sequence pass has no schedule")
+check("secrets." not in sactive, "the sequence pass needs no secret (anon reads only)")
+check(re.search(r"^permissions:\s*\n\s+contents: read\s*$", sactive, re.M),
+      "the sequence pass reads the repo and nothing more")
+check("_program_requirements_pilot.py" not in sactive and "_program_sequence_ppm.py" not in active,
+      "a change to one pass never reruns the other's college reads")
+ssrc = open(os.path.join(ROOT, "kb", "_program_sequence_ppm.py")).read()
+check(not re.search(r"method=\"(?:POST|PATCH|PUT|DELETE)\"|/rpc/", ssrc),
+      "the sequence pass sends no write to Supabase")
+check("SUPABASE_SERVICE_KEY" not in ssrc, "the sequence pass never reads the service key")
+# Run 1 (37197332656): Miramar's mapper answered all seven requests 403. A push
+# re-reads it only when a person asks; by default the pass probes the census's
+# sequence sources, one load each.
+check('os.environ.get("SEQUENCE_READ") == "1"' in ssrc,
+      "Miramar's mapper, which refused the reader, is read again only on request")
+check("SEQUENCE_READ: ${{ github.event.inputs.read }}" in sactive,
+      "the workflow passes the request through; a push never sets it")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
