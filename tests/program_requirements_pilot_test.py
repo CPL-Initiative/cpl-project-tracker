@@ -104,6 +104,12 @@ check(P.coverage(found, CUL) == 1.0, "every listed culinary course is on the pag
 win = P.text_window(page, found)
 check("CUL 36" in win and "Total 33.5" in win and len(win) < len(page) / 2,
       "the window keeps the requirements and drops the site's menus")
+export = ("FIRE TECHNOLOGY - CERTIFICATE OF ACHIEVEMENT: MIRAMAR Summary " + "Outcomes text. " * 300
+          + "Prerequisite: CUL 36 " + "More outcomes. " * 300 + "Required: CUL 36 8.5 CUL 37 8.5")
+ex_found = P.find_codes(export, CUL)
+check(P.text_window(export, ex_found, from_start=True).startswith("FIRE TECHNOLOGY - CERTIFICATE")
+      and not P.text_window(export, ex_found).startswith("FIRE TECHNOLOGY"),
+      "a one-program export keeps its heading; a catalog page's window starts near its first code")
 check(P.coverage(P.find_codes("Culinary Arts overview, no courses", CUL), CUL) == 0.0,
       "a title match with none of the courses is not the page")
 

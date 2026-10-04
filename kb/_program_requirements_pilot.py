@@ -130,14 +130,19 @@ def coverage(found: dict, courses: list[dict]) -> float:
     return len(listed & set(found)) / len(listed) if listed else 0.0
 
 
-def text_window(text: str, found: dict) -> str:
+def text_window(text: str, found: dict, from_start: bool = False) -> str:
     """The stretch of page text from a little before the first listed code to
-    a little after the last: the requirements, without the site's menus."""
+    a little after the last: the requirements, without the site's menus. A
+    document that holds one program (a curriQunet export) keeps its top, where
+    its heading names the award: Miramar's Fire Technology exports name a
+    course in their outcomes, and a window opened there lost the heading
+    (capture run 6)."""
     if not found:
         return (text or "")[:TEXT_CAP]
     first = min(p[0] for p in found.values())
     last = max(p[-1] for p in found.values())
-    a, b = max(0, first - WINDOW_BEFORE), min(len(text), last + WINDOW_AFTER)
+    a = 0 if from_start else max(0, first - WINDOW_BEFORE)
+    b = min(len(text), last + WINDOW_AFTER)
     return text[a:b][:TEXT_CAP]
 
 
@@ -726,7 +731,8 @@ def capture(reader, entry: dict, cache: dict) -> dict:
                        "text_from": best.get("field"), "view": best.get("view")},
                coverage=round(best.get("coverage") or 0.0, 3),
                codes_found=sorted(best.get("found") or {}),
-               text=text_window(best.get("text") or "", best.get("found") or {}),
+               text=text_window(best.get("text") or "", best.get("found") or {},
+                                from_start=best.get("field") == "export_pdf"),
                courseleaf_lists=courseleaf_lists(got, courses)
                if reg.get("catalog_platform") == "courseleaf" else [])
     return rec
