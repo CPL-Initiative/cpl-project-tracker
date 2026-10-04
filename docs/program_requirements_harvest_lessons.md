@@ -470,3 +470,25 @@ reader-service copies stay out. **Measured: 79 addenda at 52 of 118 colleges**
 **The S327 research behind the proof of concept** (two agents, read-only; the proxy blocked cerritos.edu, DIR, regionalcte.org and the union sites, so web facts are search snippets marked LEAD):
 - Upper rungs. VERIFIED (COCI load 20260716): 36002 and 36003 nest exactly in the A.S. LEAD (EdSource, 2026-02-20): the CO approved the B.S. in February 2026 under AB 927. Cerritos's 2026 State of the College calls it the college's second bachelor's degree. LEAD (regionalcte.org): upper-division topic areas only, a GE gate, online delivery. The admission rule (A.S. or GE only) and the fall 2027 start are unconfirmed. LEAD (DIR snippet): Local 433 JATC, 48 months, $19.50/hr start, La Palma training center; Local 416 JATC in Norwalk. VERIFIED: COE 2024-29 occupation demand, `kb/reference/coe_occupation_demand_2024_2029.json`.
 - Entry rungs. VERIFIED: Pre-Apprenticeship 24102 (AED 36.02-36.04, 80.01); AED 36.05 basic welding; 26 AED 40.01-41.10 noncredit copies of the IWAP courses; OSHA-10 in AED 90.05 and ELAP 90.22; HSE and GED preparation; no Cerritos high school, ROP or adult school CPL in MAP; MC3 articulated at Laney and Cabrillo. LEAD: Downey USD Columbus HS welding through CCAP (WELD 100, and WELD 60, likely now WELD 160); Norwalk-La Mirada Adult School welding; Southeast ROP welding; LAUSD Harbor and LBCC MC3. Next: a human browser pull of Cerritos's EPP articulation list, the Pre-Apprenticeship catalog page and `2026_Welding_Roadmap_ua.pdf`.
+
+## S328 SkyLadder, 2026-10-04: sheets 33-34 carried out, the statement applied, the ladder on CPL Pathways
+
+- **#1854 shipped.** A/B 37225759463 clean (preview all modes OK; 7l and the CPL-figure mode fixed), deploy 37227471803, production smoke 37227589712 ALL MODES OK including 7t.
+- **Sheets 33 and 34 answered in one evening** (#1855). The statement Sam confirmed, with two edits: *The CPL Initiative serves California's 116 community colleges, two noncredit campuses, and partner programs such as LAUNCH and Futuro Health. Cal State LA is the first CSU campus on MAP. Adult education, ROP and not-for-credit programs join later.* "Datasets", never "scrape", in reader-facing text.
+- **One list, four readers** (#1856): `kb/non_ccc_institutions.json` feeds the funding model, the Active Colleges card, Sierra (a copy held equal by test) and, by copy, the KB letter tool (CPL-Initiative/cpl-knowledge-base#25). MAP's 116 and the system's 116 are two sets that share a number; a count read straight from MAP's datasets would call a CSU campus a community college the day it turned active.
+- **The ladder port** (#1857): a step map of buttons, never `#hash` links, because the dashboard routes tabs on `location.hash`; derived steps read the display build, so the page and Sierra cannot disagree.
+- **A/B 37229352499: 7c regressed** (the quick-list table must start in the first 1,800 characters). It failed the same way on 2026-10-03 with no related change. The run's artifact cannot be downloaded from the sandbox (egress policy), so the prose could not be read; one re-run judges it. Deploy only on a grid with no regressions.
+- **Moved here from the lane (budget):**
+**The registry after the S322 apply (2026-10-03, run 37157737048)** carried 112 of
+118 catalog addresses and 95 years, 91 of them 2026-27; Sam's six addresses bring it
+to 118. Platforms: CourseLeaf 29, curriQunet 27, eLumen 19, PDF 16, custom HTML 15,
+SmartCatalog, Coursedog and Acalog 2 each. Formats: 81 HTML per program, 16 single
+PDFs, 5 PDFs by section. Mapper links at 11 colleges, program-map pages at 15.
+- Six colleges the census cannot reach (the four Los Rios homepages answer 404; De
+  Anza and City College of San Francisco serve Cloudflare challenges) carry
+  addresses Sam approved (S326, `best_method` person, `corrected_by` set).
+- Cerro Coso's catalog PDF is disallowed by robots.txt; the census never loads it.
+- Los Angeles City, Palo Verde, Santiago Canyon and Evergreen Valley still name
+  2025-26 (no 2026-27 catalog found, October 2026); about 23 rows carry no year.
+- A site that fails one read keeps its address. San Diego College of Continuing
+  Education stays on the district's catalogs page: no link there names it.

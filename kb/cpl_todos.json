@@ -17,6 +17,12 @@
       "text": "The Cerritos Ironworker ladder is the first view on CPL Pathways once its pull request merges: a step map from high school to career at the top, each step opening its section. Say what to change."
     },
     {
+      "id": "s328-fable-sierra-statement-deploy",
+      "for": "Fable",
+      "tab": "cpl-pathways",
+      "text": "Deploy Sierra's statement of who CPL serves once the A/B re-run (run 37230411476) shows no regressions; its first run flagged 7c, the quick-list table check that failed the same way on 3 October. Smoke 7u must pass after the deploy."
+    },
+    {
       "id": "s328-fable-cerritos-runner-read",
       "for": "Fable",
       "tab": "cpl-pathways",

@@ -251,6 +251,8 @@ Members payload: `kb/_build_ccr_cpl_universe_members.py` (0.99 MB, cron beside
 4d3b, `tests/ccr_cpl_universe_members_test.py`). Swept: `npm run sweep` §K + §R.
 [invariants](../skyview_invariants.md#the-outline-the-skills-and-the-cpl-universe)
 
+**Later: programs with ROEP in the constellation (Sam, 2026-10-04 ~20:02Z):** *"later we will want to wire these programs with ROEP to a SkyView view, the the constellation can show all the programs and their ROEP views on click all catorgorized as they are now in sectors or disciplines."* Inputs today: the display build for the 20 pilot programs (`cpl_pathways_roep_data.js`); the CPL Pathways ladder is the first ROEP view. Vault braindump 2026-10-04 20:02.
+
 **NEXT: refine in prod.** Sam's statewide ask (*"shown visibly on the sky so
 folks can easily see…"*, truncated) is met with the ring and the label word; a
 PERMANENT label for the 84 is the next call (1,987 cannot be labeled, 84 can).
