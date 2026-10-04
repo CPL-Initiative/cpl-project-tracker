@@ -447,6 +447,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_overmerge_apply.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_probe_lifecycle_checks.py` | workflows: `discover-map-datasets.yml` | — |
+| `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
 | `kb/_program_source_census.py` | workflows: `program-source-census.yml` | — |
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |
@@ -997,7 +998,8 @@ check these BY HAND before trusting an absence:
 
 - `chatbox/sync_program_courses.py`
 - `cpl_session.js`
+- `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 93 Supabase tables · 34 RPCs · 6 edge functions · 574 file
-datasets · 155 external services · 402 consumers · 41 workflows · 37 tabs.
+Coverage: 93 Supabase tables · 34 RPCs · 6 edge functions · 575 file
+datasets · 155 external services · 403 consumers · 42 workflows · 37 tabs.

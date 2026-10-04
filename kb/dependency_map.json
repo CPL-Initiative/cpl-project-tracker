@@ -4,10 +4,10 @@
   "supabase_tables": 93,
   "rpcs": 34,
   "edge_functions": 6,
-  "file_datasets": 574,
+  "file_datasets": 575,
   "external_services": 155,
-  "consumers": 402,
-  "workflows": 41,
+  "consumers": 403,
+  "workflows": 42,
   "data_js_files": 68,
   "tabs": 37
  },
@@ -7199,6 +7199,19 @@
    "consumers": [
     {
      "id": "workflow:discover-map-datasets.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_program_requirements_extract.py": {
+   "consumers": [
+    {
+     "id": "workflow:program-requirements-extract.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -21902,6 +21915,18 @@
    "chain": [],
    "urls": []
   },
+  "program-requirements-extract.yml": {
+   "name": "Program requirements extraction",
+   "crons": [],
+   "scripts": [
+    "kb/_program_requirements_extract.py"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "program-requirements-pilot.yml": {
    "name": "Program requirements pilot",
    "crons": [],
@@ -22341,6 +22366,7 @@
  "unresolved": [
   "chatbox/sync_program_courses.py",
   "cpl_session.js",
+  "kb/_program_requirements_extract.py",
   "reviewer_signin.js"
  ],
  "warnings": []
