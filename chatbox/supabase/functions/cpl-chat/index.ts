@@ -3295,18 +3295,76 @@ function courseKey(code: any): string {
 // own words ("List A (Select one course for 4-5 units)"), so they lead; the
 // rule after them says what the record holds. Titles come from the program's
 // list in the state's catalog data, joined by course number.
-function requirementLines(rec: any, titles: Map<string, string>): string {
+// THE ROEP DISPLAY FACTS (S327, 2026-10-04). Sam, of CPL Pathways and Sierra: "make
+// sure she's wired to understand all the included data and considerations".
+// kb/_build_roep_display.py writes each checked program's facts once, to
+// program_requirement_records.display (read here) and to cpl_pathways_roep_data.js
+// (the page), under one build stamp. Sierra quotes them and never computes her own:
+// a second computation is a second answer, and the page and she would disagree.
+// A course carries CPL in three kinds; only the first is credit a learner can
+// request at this college today.
+function cplNote(d: any): string {
+  if (!d) return "";
+  const parts: string[] = [];
+  if (d.here) {
+    const names: string[] = (d.here.credentials || []).slice(0, 3);
+    const more = (d.here.credentials_n || 0) - names.length;
+    parts.push(`CPL here: ${names.join("; ")}${more > 0 ? ` and ${more} more` : ""}`);
+  }
+  if (d.adopt) {
+    const leads = (d.adopt.credentials || []).slice(0, 2).map((a: any) => {
+      const at: string[] = (a.colleges || []).slice(0, 3);
+      const more = (a.colleges || []).length - at.length;
+      return `${a.credential} at ${at.join(", ")}${more > 0 ? ` and ${more} more` : ""}`;
+    });
+    if (leads.length) parts.push(`could adopt: ${leads.join("; ")}`);
+  }
+  for (const c of (d.consider || []).slice(0, 2)) {
+    parts.push(`for consideration: ${c.credential} (its statewide credit recommendation names C-ID ${c.cid})`);
+  }
+  return parts.length ? ` [${parts.join(" | ")}]` : "";
+}
+
+const MAP_STATUS_LINE: Record<string, string> = {
+  none: "no term-by-term program map found on the college's site",
+  refused: "the college's program map host refused the harvest's reader, so the map is not read",
+  not_read: "the college links a program map the harvest has not read yet",
+  open: "the college's map pages answer; the harvest has not read this program's map yet",
+};
+
+function displayLines(d: any, college: string, measure: string, total: string): string {
+  if (!d || !d.figure) return "";
+  const f = d.figure;
+  const upTo = fmtAmount(f.up_to, null, measure) || `0 ${measure}`;
+  let out = "";
+  if (!f.up_to) out += `  CPL figure: no course in this program carries CPL ${college} has articulated yet.\n`;
+  else if (total) out += `  CPL figure: up to ${upTo} of the ${total} the catalog prints can be met through CPL ${college} has articulated, taking the CPL course in every choice.\n`;
+  else out += `  CPL figure: ${upTo} of this program's courses carry CPL ${college} has articulated; the catalog prints no total to measure against.\n`;
+  out += `  Recommended-path figure: TBA. ${f.path_why || "No pathway map has been read for this program."}\n`;
+  const m = d.map || {};
+  if (MAP_STATUS_LINE[m.status]) out += `  Term-by-term map: ${MAP_STATUS_LINE[m.status]}${m.host ? ` (${m.host})` : ""}.\n`;
+  const differ = (d.gaps || []).filter((g: any) => g.owner === "college").slice(0, 4);
+  for (const g of differ) out += `  Catalog and state file differ (${college}'s to reconcile): ${g.text}\n`;
+  const checks = (d.gaps || []).filter((g: any) => /^(Check not met|Possible misread|No printed total)$/.test(g.kind));
+  for (const g of checks.slice(0, 2)) out += `  Reading check: ${g.text}\n`;
+  return out;
+}
+
+function requirementLines(rec: any, titles: Map<string, string>, college?: string): string {
   const r = (rec && rec.record) || {};
   const prog = r.program || {};
   const measure = rec.measure || prog.measure || "units";
+  const disp = (rec && rec.display) || null;
+  const facts = (code: string): any => (disp && disp.courses ? disp.courses[code] : null);
+  const titleOf = (code: string): string | undefined => titles.get(courseKey(code)) || (facts(code) || {}).title || undefined;
   const course = (c: any): string => {
-    const t = titles.get(courseKey(c.code));
+    const t = titleOf(c.code);
     const amt = fmtAmount(c.units, c.units_max, measure);
-    let line = `${c.code}${t ? ` — ${t}` : ""}${amt ? ` (${amt})` : ""}`;
+    let line = `${c.code}${t ? ` — ${t}` : ""}${amt ? ` (${amt})` : ""}${cplNote(facts(c.code))}`;
     for (const a of c.alternatives || []) {
-      const at = titles.get(courseKey(a.code));
+      const at = titleOf(a.code);
       const aa = fmtAmount(a.units, a.units_max, measure);
-      line += ` or ${a.code}${at ? ` — ${at}` : ""}${aa ? ` (${aa})` : ""}`;
+      line += ` or ${a.code}${at ? ` — ${at}` : ""}${aa ? ` (${aa})` : ""}${cplNote(facts(a.code))}`;
     }
     return line;
   };
@@ -3341,6 +3399,7 @@ function requirementLines(rec: any, titles: Map<string, string>): string {
     : `  The catalog prints no program total. Say so; never add one up.\n`;
   if (prog.open_elective_units) out += `  Open electives: ${fmtAmount(prog.open_elective_units, null, measure)}.\n`;
   if (prog.ge_pattern) out += `  General education: the ${prog.ge_pattern} pattern, beside the major.\n`;
+  out += displayLines(disp, college || "the college", measure, total);
   return out;
 }
 
@@ -3374,6 +3433,14 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
   if (shown.some(checked)) {
     ctx += `- A program marked CATALOG REQUIREMENTS carries the rules ${college}'s own catalog prints, read from that catalog and checked against it. For that program you may say a course is required, name each choice in the catalog's own words ("choose 1 course from List A"), and give the program total the catalog prints, naming the catalog and its year (for example "${college}'s 2026-2027 catalog"). Give only the totals printed there; never add units up yourself. Courses joined by "or" are one requirement, met by either.\n`;
     ctx += `- Every other program below only LISTS its courses: the data has no required/elective flag, so never call one of its courses required and never add up its units.\n`;
+    if (shown.some((g: any) => checked(g) && recs && (recs.get(String(g.control)) || {}).display)) {
+      ctx += `- A CATALOG REQUIREMENTS course marked "CPL here" is credit for prior learning ${college} has articulated to it: a learner who holds that credential or training can ask ${college} to award it. Name the credentials the line names, and no others; a course with no mark carries no articulated CPL that the data shows.\n`;
+      ctx += `- "Could adopt" names a credential another college has articulated to a course of the same identity, and "for consideration" a credential whose statewide credit recommendation names the course's C-ID. Both are leads for ${college}'s faculty to review. Say ${college} could review them; never say a learner will receive that credit at ${college}.\n`;
+      ctx += `- The CPL figure counts only CPL ${college} has articulated, taking the CPL course in every choice, so it is the most of the program a learner could meet through CPL. ${college} evaluates each award. Give the figure as the line states it; never compute another.\n`;
+      ctx += `- A program map orders courses by term and names the courses a college recommends inside a choice; the catalog keeps the rule. Where the map line says the map is not read, never describe a term-by-term order.\n`;
+      ctx += `- Where the catalog and the state's Program Course File differ, the catalog's version stands, and ${college} reconciles the two. Mention a difference when the visitor asks about a course it touches.\n`;
+      ctx += `- These requirement records and CPL marks are a beta draft read from public catalogs and MAP. Suggest the visitor confirm a plan with a ${college} counselor.\n`;
+    }
   } else {
     ctx += `- Say the program "lists" these courses. The data has no required/elective flag, so never call a course required and never add up the units.\n`;
   }
@@ -3387,7 +3454,7 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
       const titles = new Map<string, string>();
       for (const c of g.courses) if (c.course_code && c.course_title) titles.set(courseKey(c.course_code), c.course_title);
       ctx += `CATALOG REQUIREMENTS, from ${college}'s ${rec.catalog_year || "current"} catalog (checked against the catalog):\n`;
-      ctx += requirementLines(rec, titles);
+      ctx += requirementLines(rec, titles, college);
       continue;
     }
     if (!g.size) {
@@ -3434,7 +3501,7 @@ async function fetchCheckedRequirements(college: string, rows: any[], sb: any): 
   const controls = [...new Set((rows || []).map((r: any) => r.control_number).filter(Boolean).map(String))];
   if (!college || controls.length === 0) return null;
   const { data, error } = await sb.from("program_requirement_records")
-    .select("control_number,catalog_year,source_url,measure,total_min,total_max,record")
+    .select("control_number,catalog_year,source_url,measure,total_min,total_max,record,display")
     .eq("college", college).eq("checked", true).in("control_number", controls);
   if (error) {
     console.error("program_requirement_records unavailable:", error.message);

@@ -110,53 +110,7 @@ PDFs, 5 PDFs by section. Mapper links at 11 colleges, program-map pages at 15.
 - A site that fails one read keeps its address. San Diego College of Continuing
   Education stays on the district's catalogs page: no link there names it.
 
-**The pilot (Phase 1): all 20 records pass the three automatic bars (S324,
-PR #1845); the fourth bar, Sam's reading, is on his review sheet.** The 20
-programs are five colleges by four shapes (`kb/program_requirements_pilot_sample.json`):
-an ADT, an A.S./A.A. with a choose block, a certificate with an electives block,
-a noncredit certificate. Each college's fixed use case fills one slot: Cerritos
-Ironworker A.S. (42158), Mt. San Antonio LVN-to-RN A.S. (08086), Riverside City
-Culinary Arts certificate (22804, Sam's pick), West Los Angeles Real Estate
-Salesperson certificate (37839), Miramar Fire Technology A.S. (05100, the PPM
-sequence program, in the noncredit slot because Miramar offers no noncredit
-programs). The other picks lead their shape on MAP CPL articulations at that
-college.
-- **Capture** (`kb/_program_requirements_pilot.py`,
-  `program-requirements-pilot.yml`): starts at the registry's catalog address
-  and accepts a page only when it names half the courses the Program Course File
-  lists for the program; follows links on the catalog's own host, clicks through
-  curriQunet's navigation, reads a PDF catalog whole. On a curriQunet program view
-  whose text names too few courses it reads the view's own "Export Page as PDF"
-  (`Catalog/Export?id=71&outlineId=<view>`, robots first) and keeps the export
-  from its top; among items that tie on the title's words it clicks the one that
-  begins with the title. Writes nothing. **20 of 20 found**: run 4
-  (37166814546) for Cerritos, Mt. San Antonio, Riverside City and West Los
-  Angeles; run 8 (37173160158) for Miramar, all four at coverage 1.0. Filed byte
-  for byte under `kb/program_requirements_pilot/sources/`.
-- **Extraction** (`kb/_program_requirements_extract.py`,
-  `program-requirements-extract.yml`, the `program-requirements-extract` Edge
-  Function, **deployed version 2**, Claude Opus 5.5 at effort high, structured
-  output): reads only the fixtures, never a college site. **Record shape
-  version 2**: `program.measure` (units or hours), `block.option_group` (one of
-  several whole blocks), `block.stated` (a block total the catalog prints),
-  `units_max` (a range beside a course), alternatives as objects carrying their
-  own units and `catalog_addition`. Run 2 (37171952080) passed **16 of 16** at
-  $0.8535 ($0.053 a program); run 3 (37173589029, only Miramar) passed **4 of 4**
-  at $0.2762. The records are filed under `kb/program_requirements_pilot/records/`.
-- **The scorer** (`kb/_program_requirements_score.py`): coverage, no unflagged
-  invented course, unit arithmetic. Arithmetic is `equal`, `unequal`,
-  `incomplete` or `unstated`; `unstated` (Mt. San Antonio Vocational Nursing,
-  which prints no hours, units or total) passes only when the record carries no
-  figure, the closed list stores no units, and the catalog text names no hours or
-  units. 19 records are `equal`.
-- **Sam's check (the fourth bar), 2026-10-04 10:22Z:** 18 match the catalog; both
-  fixes went into the procedure, not the records (the scorer's `repeated` check;
-  prompt v3 reads "one of the following sequences" as one option group), and rerun
-  37195340082 passed both (receipt `kb/program_requirements_pilot/review_2026-10-04.json`).
-  **All 20 pilot records pass all four checks.**
-- **Guard:** `tests/program_requirements_pilot_test.py` (165 checks): every
-  fixture re-read with today's matcher, every filed record re-scored with today's
-  scorer.
+**The pilot (Phase 1): all 20 records pass all four checks.** Five colleges by four shapes (`kb/program_requirements_pilot_sample.json`): an ADT, an A.S./A.A. with a choose block, a certificate with an electives block, a noncredit certificate; each college's use case fills one slot (Cerritos Ironworker A.S. 42158, Mt. San Antonio LVN-to-RN A.S. 08086, Riverside City Culinary Arts 22804, West LA Real Estate Salesperson 37839, Miramar Fire Technology A.S. 05100). **Capture** (`kb/_program_requirements_pilot.py`): accepts a page naming half the courses the Program Course File lists; curriQunet program views fall back to their own PDF export; sources filed under `kb/program_requirements_pilot/sources/`. **Extraction** (the `program-requirements-extract` Edge Function, version 2, Claude Opus 5.5, structured output, record shape version 2: `measure`, `option_group`, `stated`, `units_max`, alternatives with their own units and `catalog_addition`); records under `.../records/`, about $0.05 a program. **Scorer** (`kb/_program_requirements_score.py`): coverage, no unflagged invented course, unit arithmetic (`equal`, `unequal`, `incomplete`, `unstated`). **Sam's reading (10:22Z):** 18 match; both fixes went into the procedure and rerun 37195340082 passed them. Guard `tests/program_requirements_pilot_test.py`. Run-level history: the lessons doc, S323-S324.
 
 **The sequence pass (S325, PR #1847):** `kb/_program_sequence_ppm.py` on its own
 workflow (`program-sequence-ppm.yml`, so a change never reruns the capture's 20
@@ -207,51 +161,9 @@ counts by course code). Porting it means
 `KNOWN_SURFACES` in `cpl-chat` (a deploy). Cerritos's Ironworker A.S. reads 0
 there: its credit is exhibit-to-course articulation in CER, not credit-rec rows.
 
-**The probe (run 37198225537, 2026-10-04):** all 17 mapper hosts reached answered
-403; five college pages only link to one; Irvine Valley's "All Program Maps" page (`ivc.edu/node/3220`) answered,
-and Santa Monica's answered on run 37209313523. The refusal is the mapper
-service's, not the colleges'.
+**Catalog addenda (Sam, 2026-10-04: *"We need to track this in our schema and have our agents aware."*).** The census records each addendum, supplement or errata link for the current or prior catalog year in `census_evidence -> 'addenda'` and writes `program_source_addenda` after the registry on apply (one row per college and url; status listed, read, applied, gone, not an addendum; `programs_changed` for the reading agent; public read, writes through a security-invoker function). Only a complete read (homepage and catalog page answered, own address) marks an addendum gone. ⚠️ **Empty until the next apply** (Sunday 10:29 schedule, next 2026-10-11, or a hand dispatch with `mode: apply` on `main`); the S325 dry run measured 79 addenda at 52 colleges. Next: the reading agent, then Sierra cites "the 2026-27 catalog as amended by the addendum of <date>". Detail: the lessons doc, S325-S327.
 
-**Catalog addenda (S325, PR #1848).** Sam, 2026-10-04: *"colleges are often
-publishing catalog addendum to correct errors and add late changes to the
-official catalog. We need to track this in our schema and have our agents
-aware."* The census scored addendum links down so none could win the catalog
-slot, and then dropped them. `addendum_links()` now records each addendum,
-supplement or errata link on the homepage, a catalog index or the catalog page,
-for the current or prior catalog year, in `census_evidence -> 'addenda'` (job log
-on a branch; the registry's evidence on the weekly apply, through the existing
-write function). `addendum_start_year()` dates a link from the years its words or
-file name carry (the rules and their cases are in the module and its guard).
-Older years, archives, schedules' and calendars' addenda, a sibling's and
-reader-service copies stay out. **Measured: 79 addenda at 52 of 118 colleges**
-(2026-27: 19; 2025-26: 42; no year named: 18) in the dry run at #1848's head
-(37200460417); the offline replay had read 78 (41 for 2025-26).
-- **The table is live (Sam's "Go", sheet 29 card 5; S326):** `program_source_addenda`,
-  one row per (college, url), the catalog year it amends, a status (listed, read,
-  applied, gone, not an addendum), `programs_changed` for the reading agent, history
-  by trigger, public read. The write function `program_source_addenda_apply()` is
-  security invoker, and the privilege close is pasted (sheet 31): public roles read
-  only. Checked live in two self-rolling-back blocks: a partial read marks nothing
-  gone, a complete read does, and an addendum that returns comes back `read` if an
-  agent read it, else `listed`.
-- **The census writes it** (`apply_addenda()` after the registry, apply mode only):
-  each college's addenda with `complete` true only when the homepage and the
-  catalog page both answered and the address is this read's own; a partial read
-  adds what it saw and marks nothing gone. ⚠️ **The table is empty until the next
-  apply:** today's Sunday 10:29 schedule did not fire (no scheduled run on the
-  list), so the first rows land 2026-10-11, or on a hand dispatch with `mode:
-  apply` on `main`.
-- **Next (the plan):** a reading agent files which programs each addendum changes;
-  a record names the addenda it was checked against, and Sierra cites "the
-  2026-27 catalog as amended by the addendum of <date>".
-
-**Sam's sheet 29 (2026-10-04, 11:54-12:00Z, all five his own calls):** (2) guard
-lifted: six catalog addresses corrected through the migration path, each prior row
-in the history table; (3) the record note above; (4) **yes**: Sierra may say
-"required", name each choose block and give the printed total for a program whose
-record passed all four checks, citing the catalog and its year; every other program
-keeps "lists". `program_requirement_records` holds the 20 pilot records; in Sierra since 15:33Z (deploy 37213391271), smokes 7l and
-7q green; (5) the addenda table.
+**Sam's sheet 29 (2026-10-04, all five his own calls):** (2) guard lifted for the six catalog addresses; (3) the record note above; (4) **yes**: Sierra says "required", names each choose block and gives the printed total for a checked program, citing the catalog and its year (live since 15:33Z, smokes 7l and 7q); (5) the addenda table.
 
 **CPL Pathways reads the ROEP record (Sam, 2026-10-04 ~17:20Z):** *"we use the
 new tab based on mockup to manage the ongoing process to harvest program ROE and
@@ -281,15 +193,12 @@ for consideration (a CER/EACR cert whose recommendation points at the course,
 not yet articulated); (2) catalog-and-state-file differences collect as drafts
 on the college's harvest-tab row and My College to-dos; the MAP team sends.
 
-**Sheet 31 done** (Sam pasted it, 2026-10-04 16:5xZ): the three memory rows S320 and S321 held are written, and both new tables are closed to public writes; his read-back matched.
+**The display build is live (S327).** `kb/_build_roep_display.py` writes each checked program's facts once, under one build stamp, to `program_requirement_records.display` (Sierra) and `cpl_pathways_roep_data.js` (the page): CPL in three kinds per course (here: MAP credit recommendations by course, a dated read in `kb/program_requirements_pilot/map_cr_by_course.json` with its query beside it, plus the articulated-exhibit feed; could adopt: another college articulated the credential to a course of the same live-membership identity, never across a `cross_disciplinary` one; for consideration: a statewide recommendation naming the course's C-ID, zero on the pilot), the mock-up's `plan()` figure, the gaps by owner and the registry's map status (`registry_read.json`). Build `bbbbfb611f15`: all 20 rows match the receipt (`--verify-sql`). A bare UPDATE is held by the connector, so the receipt uses the load's insert-on-conflict form. Figures: Ironworker A.S. up to 31.5 of 34-38 units; Riverside Administration of Justice 18 of 18-19; Miramar Fire Technology 22.5 of 25.5; Riverside Cyber Defense and West LA Network & Security 21 each. Guard `tests/roep_display_test.py`. Sierra reads the facts (her CATALOG REQUIREMENTS lines, smoke 7t). MAP data to raise with Miramar: its AUTO 156G (Engine and Related Systems) carries an EMT Certification and a Driver Operator 1B articulation.
 
-**NEXT:** one builder writes each program's display facts (CPL in three kinds,
-the figures, the gaps, the map status) to a `display` column Sierra reads and to
-`cpl_pathways_roep_data.js`; Sierra wired to them (Sam: *"make sure she's wired to
-understand all the included data and considerations"*); then the program view's By
-requirement / By term layouts, the Ironworker A.S. section reading its record, and
-a public page in the student view; read the two open maps (Irvine Valley, Santa
-Monica) and measure how often a slot inside a choice names a course; port the
-harvest tab with a Procedures view (each college's reading steps and their cost);
-the addenda reading agent; Miramar's map on its own pages (`read: 1`); Butte's ROE
-definitions; widen past the pilot.
+**Outcomes (Sam, 2026-10-04 18:03Z, vault braindump 18:03):** add an element that grabs published course and program outcomes (CMSs, newer COCI courses, catalog listings), and a process comparing harvested credential skills with course outcomes for alignment indicators. Measured: 13 of the 20 captured pilot pages print program or student learning outcomes (Cerritos, Riverside, West LA all four; Mt. SAC one; Miramar none). COCI course outcomes are not in our data; the skills file (`kb/reference/industry_credential_skills.json`) is not started. **NEEDS SAM** (sheet 33 card 4): record shape v3 with outcomes as printed.
+
+**CSU LA (Sam, opening note):** *"We'll figure out a procedure for them as well."* No registry row (the registry seeds from `coci_college_programs`). **NEEDS SAM** (sheet 33 card 3): now or after the Ironworker proof; a CSU has no state Program Course File, so its closed list is the catalog's own inventory.
+
+**The proof of concept: Cerritos Ironworker, high school to career (Sam, 18:23Z, vault braindump 18:23).** Rungs: HS dual enrollment and CTE articulation (Cx), noncredit, adult ed and ROP; Cerritos and stackable certificates; the A.S.; the B.S.; internships and employment. In our data: Certificates 36002 Reinforcing (34 units) and 36003 Structural (38) are each one complete A.S. major option; the A.S.'s 31.5 CPL units are all credit by exam on the core and the Reinforcing option (the Structural option and IWAP 40.10 carry none); the hand-built map's *27-29 major units* is stale against 34-38; noncredit Pre-Apprenticeship 24102 and 26 noncredit AED 40-41 copies of the IWAP courses have no CPL link; MAP holds no high school, ROP, adult school or noncredit CPL for Cerritos. The B.S. (approved February 2026), the high school pathway and the apprenticeship hours rest on search snippets. Full research, VERIFIED vs LEAD: the lessons doc, S327. **NEEDS SAM** (sheet 33 card 5): who at Cerritos confirms them.
+
+**NEXT:** ① Ship #1854: A/B, merge, deploy cpl-chat, smoke 7t. ② **The Ironworker proof** (Sam's 18:23Z note): a First Light mock-up of the whole ladder on CPL Pathways, the Ironworker A.S. section reading `cpl_pathways_roep_data.js` (fixes the stale 27-29), the two certificates as checked records, and a noncredit-to-credit CPL lead for AED 40-41 (Santa Ana's MAPCXN model). ③ Sheet 33's rulings (CSU LA, outcomes). ④ The program view's By requirement / By term layouts and the harvest tab port with a Procedures view (fix its Ironworker row first: it reads 0 MAP credit recs). ⑤ Read Irvine Valley's and Santa Monica's maps; the addenda reading agent; Miramar's map on its own pages (`read: 1`); Butte's ROE definitions; widen past the pilot. Refresh the builder's two dated reads (`map_cr_by_course.json`, `registry_read.json`) when the harvest adds a college; rebuild, apply the receipt as migrations, `--verify-sql`.

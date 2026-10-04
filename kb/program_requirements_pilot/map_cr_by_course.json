@@ -1,0 +1,4576 @@
+{
+ "_what": "MAP's credit recommendations per course at the five pilot colleges: how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
+ "_read_at": "2026-10-04",
+ "_read_by": "SkyAmend (S327) through the Supabase MCP",
+ "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
+ "colleges": {
+  "Cerritos College": {
+   "HED 100": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   },
+   "KIN 104": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   },
+   "PEX 122": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   },
+   "PEX 124": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   },
+   "PEX 126": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   }
+  },
+  "Mt. San Antonio College": {
+   "CUL 103": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRE 12": {
+    "recs": 1,
+    "exhibits": 22,
+    "exhibits_by_source": {
+     "ACE": 22
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aircrew Survival Equipment Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Airman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman 'A' School, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Boatswain's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronic Technician (Navigation)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician Class 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (Aegis) (FCA)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate 'A' School (Block 0)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate (GM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hull Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinery Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate, Non-Nuclear, Submarine Auxiliary",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Naval Nuclear Power School, Enlisted",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Nuclear Field 'A ' School (Electrician's Mates)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Nuclear Field 'A' School ( Machinist's Mates)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Prototype Training (Electronics Technicians)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recovery Operations (Wheeled)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Senior Maintenance Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sonar Technician (Surface) (STG)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Total Army Training System (TATS) Multiple Launch Rocket System (MLRS) Crewmember",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Riverside City College": {
+   "ADJ 1": {
+    "recs": 2,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "ACE": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist 'A' School (ME 'A')",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist Second Class",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADJ 13": {
+    "recs": 1,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "ACE": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADJ 19": {
+    "recs": 2,
+    "exhibits": 8,
+    "exhibits_by_source": {
+     "ACE": 8
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist MOS Training Course (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police, Advanced Leader (ALC) (TATS)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADJ 20": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADJ 6": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADM 63A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Public Affairs Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AIR 61A": {
+    "recs": 4,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Air Conditioning and Refrigeration, Class C",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Refrigeration and Air Conditioning Systems Technicians",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUT 7": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUT 8A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ASE CERTIFICATION (A8) A8 – ENGINE PERFORMANCE",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAT 3": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAT 62": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Administrative Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 25": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA A+ (CIS-25)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 26A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CISCO CERTIFIED NETWORK ASSOCIATE",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 26B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CISCO CERTIFIED NETWORK ASSOCIATE",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 26C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CISCO CERTIFIED NETWORK ASSOCIATE",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 27": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA Security+ (CIS-27)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 3": {
+    "recs": 4,
+    "exhibits": 42,
+    "exhibits_by_source": {
+     "ACE": 42
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Communications Intelligence Collection Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Interpretive) (CTI)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Interpretive",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Data Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electro-Optical Ordnance Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Explosive Ordnance Disposal Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Finance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Airframe Mechanic, F/A-18",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gas Turbine Systems Technician (Electrical) (GSE)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Legalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Tank Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mineman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Patriot Launching Station Enhanced Operator/Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "PATRIOT Launching Station Enhanced Operator/Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personnel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Quartermaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Radio Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sonar Technician, Surface",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Yeoman",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 1": {
+    "recs": 2,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 3": {
+    "recs": 3,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Rifleman",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 4": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Infantry Rifleman",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CUL 50": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ServSafe Food Protection Manager Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HES 1": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "unnamed": 2
+    },
+    "titles": null,
+    "untitled_exhibits": 2
+   },
+   "KIN 30": {
+    "recs": 1,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 4
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M3 Bradley/CFV Cavalry Scout",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KIN A81A": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "unnamed": 2
+    },
+    "titles": null,
+    "untitled_exhibits": 2
+   },
+   "KIN A81B": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "unnamed": 2
+    },
+    "titles": null,
+    "untitled_exhibits": 2
+   },
+   "KIN A81C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Expeditionary Skills Training for Religious Program Specialists (RPS)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MAG 200": {
+    "recs": 2,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "ACE": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Nutrition Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MAG 44": {
+    "recs": 16,
+    "exhibits": 52,
+    "exhibits_by_source": {
+     "ACE": 52
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Animal Care Specialist (10/16-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Distribution Management Specialist (11/16-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "M1A1 Tank Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Yeoman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Business Solutions for Mission Support",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "AEGIS Fire Control System (FSC) Ballistic Missile Defense (BMD) Pipeline",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircraft Intermediate Level Hydraulic/Pneumatic Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automotive Maintenance Warrant Officer Basic Course (WOBC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Communication Systems Technician (AVCOMM SYSTECHS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Battle Staff Noncommissioned",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryogenics Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate (Nuclear) EM (NUC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician (Navigation)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (FC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Airframe Mechanic, F/A-18",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Power Plants Mechanic, F-404",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gas Turbine Systems Technician (Electrical) (GSE)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate (GM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Airframe Mechanic UH/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Mechanic U/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Individual Material Readiness List Asset Manager",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader (IULC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Basic Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Joint Fire Support Sergeant Senior Leader (SLC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate (Nuclear)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate, Non-Nuclear, Submarine Auxiliary",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maintenance Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Religious Program Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Senior Maintenance Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Airframe Mechanic MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Mechanic MV-22",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MAG 51": {
+    "recs": 17,
+    "exhibits": 134,
+    "exhibits_by_source": {
+     "ACE": 134
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Fixed-Wing Aircraft Airframe Mechanic, F/A-18",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Yeoman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Animal Care Specialist (10/16-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Chemical Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Corporals",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Fire Support Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Individual Material Readiness List Asset Manager",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Infantryman Basic Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Quartermaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Anti-Tank Missleman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Assaultman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircraft Intermediate Level Hydraulic/Pneumatic Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibian Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automotive Maintenance Warrant Officer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Launching and Recovery Equipment",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Communication Systems Technician (AVCOMM SYSTECHS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT) (4/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Boatswain's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cannon Crewmember",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Chemical, Biological, Radiological, and Nuclear Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Communications Intelligence Collection Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryogenics Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Collection)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Interpretive) (CTI)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Data Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate (Nuclear) EM (NUC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician (Navigation)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineer Basic Officer Leader - Branch",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineer Equipment Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Field Artillery (FA) Cannon Section Chief Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Finance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Control Technician (Submarine)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (Aegis) (FCA)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (FC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Airframe Mechanic-Trainee",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Power Plants Mechanic, F-404",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Food Service Operations",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gas Turbine Systems Technician (Electrical) (GSE)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gas Turbine Systems Technician, Mechanical (GSM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "General Construction Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate (GM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Airframe Mechanic UH/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Mechanic (U/AH-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Mechanic U/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Food Service Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hull Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Squad Leader (East)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader (IULC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Interior Communications Electrician (IC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Jumpmaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Laundry and Bath Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Leadership and Management School (LAMS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Legal Services Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate, Non-Nuclear, Submarine Auxiliary",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master Training Specialist (MTS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Basic Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mineman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Motor Transport Maintenance Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Motor Transport Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Councelor)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Nutrition Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Patriot Launching Station Enhanced Operator/Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Radio Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Religious Affairs Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Resident Staff Noncommissioned Officer (NCO) Academy Advanced Regular",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sergeants DEP",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sergeants School Seminar Program (2/17-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sonar Technician (Surface) (STG)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Airframe Mechanic MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Mechanic MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Mechanic, MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrant Officer Candidate School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrant Officer Candidate School (RTI)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheel Vehicle Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Yeoman (Submarine) (YNS)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MAG 56": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MKT 20": {
+    "recs": 2,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Career Information Program Advisor",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RLE 80": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "First Tuesday Real Estate School",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RLE 81": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "First Tuesday Real Estate School",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RLE 82": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "First Tuesday Real Estate School",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "San Diego Miramar College": {
+   "ADJU 300A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 153G": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Introduction to Automotive Technology",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 156G": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Engine and Related Systems",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 161G": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Electrical System Fundamentals",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Electricity and Electrical Systems Fundamentals ASE A6",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 165G": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Engine Performance",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Engine Performance ASE A8",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 167G": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Advanced Engine Performance ASE L1",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 169G": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Climate Control Systems ASE A7",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 172G": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Manual Drive Train and Axles ASE A3",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 174G": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automatic Transmissions/Axles ASE A2",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 176G": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Brake Systems",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Automotive Brake Systems ASE A5",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 178G": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Suspension and Steering",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Suspension, Steering and Handling ASE A4",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 186": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "BAR Specified Diagnotics and Level 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIA 101": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA-issued Private Pilot Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIA 101L": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA-issued Private Pilot Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BIOL 131": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Introduction to Biotechnology",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BIOL 132": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Applied Biotechnology I",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUSE 100": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Introduction to Business",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUSE 119": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUSE 129": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Intro to Entrepreneurship",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CBTE 120": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Beginning Microsoft Word",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CBTE 122": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Intermediate Microsoft Word",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CBTE 127": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Beginning Microsoft PowerPoint",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CBTE 140": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Beginning Microsoft Excel",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CBTE 152": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Beginning Microsoft Access",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 160": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Observation and Assessment",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 161": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Observation and Issues in Child Development",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 291A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Child Development Center Practicum",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 291B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Child Development Center Practicum",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 291C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Child Development Center Practicum",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 291D": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Child Development Center Practicum",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMGM 105A": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Emergency Medical Technician (EMT)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMGM 106": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Current EMT Certification or Paramedic License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EXSC 140A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   },
+   "EXSC 140B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   },
+   "FIPT 101": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Fire Protection Organization 1 or 1A Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Protection Organization",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 102": {
+    "recs": 2,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Fire Prevention Technology Fire Inspector 1A Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 103": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Protection Equipment and Systems Fire Inspector 1C Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 105": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 111": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Apparatus Driver/Operator Pump Apparatus Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 321P": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Driver Operator 1B Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 323C": {
+    "recs": 2,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 324D": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 340": {
+    "recs": 3,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 341": {
+    "recs": 3,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 342": {
+    "recs": 3,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 343": {
+    "recs": 3,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 344": {
+    "recs": 3,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 345": {
+    "recs": 3,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 381F": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 381G": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIPT 381S": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "SFT State Fire Officer Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "LFGD 301": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "LFGD 330": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MATH 116": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Nuclear Field 'A' School (Electronics Technician)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PARA 100": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam Miramar",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Legal Procedures",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "West Los Angeles College": {
+   "ALD HTH 021": {
+    "recs": 2,
+    "exhibits": 8,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "MAP": 6
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Life Support (BLS) Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CA EMT Credit by Exam 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "California Emergency Medical Technician",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "California Emergency Medical Technician 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Dental Board of California (DBC) Certificates",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "M3 Bradley/CFV Cavalry Scout",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 033": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 043CO": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedicine Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 044CO": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedicine Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 045CO": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedicine Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 046CO": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedicine Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 047CO": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedicine Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 048CO": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedicine Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 049CO": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedicine Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 050CO": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedicine Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 052": {
+    "recs": 2,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "MAP": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA EMT Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CA EMT Credit by Exam 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "California Emergency Medical Technician",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "California Emergency Medical Technician 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 053": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Paramedic / Paramedicine",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedicine Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ALD HTH 900": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA EMT Credit by Exam 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "California Emergency Medical Technician 2",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 001": {
+    "recs": 1,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "MAP": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 002": {
+    "recs": 6,
+    "exhibits": 13,
+    "exhibits_by_source": {
+     "ACE": 9,
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Airman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircrew Survival Equipment Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Airman (4/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman 'A' School, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Nuclear Field 'A' School ( Machinist's Mates)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Total Army Training System (TATS) Fire Support Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 003": {
+    "recs": 1,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "MAP": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 004": {
+    "recs": 1,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "MAP": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 005": {
+    "recs": 3,
+    "exhibits": 7,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "MAP": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aviation Electrician's Mate Strand, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Special Electronic Devices Repairer",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 006": {
+    "recs": 3,
+    "exhibits": 9,
+    "exhibits_by_source": {
+     "ACE": 4,
+     "MAP": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Electronics Technician Combined 'A' School (Block 0)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "F/A-18 Wire Bundle and Connector Repair Organizational Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Integrated Family Test Equipment Operator/Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "V-22 Electrical Systems (Initial) Organizational Maintenance Course",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 007": {
+    "recs": 5,
+    "exhibits": 8,
+    "exhibits_by_source": {
+     "ACE": 3,
+     "MAP": 5
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Aviation Electrician's Mate Strand, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "F/A-18E/F Electrical/Instruments Systems (Initial) Organizational Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 008": {
+    "recs": 8,
+    "exhibits": 14,
+    "exhibits_by_source": {
+     "ACE": 9,
+     "MAP": 5
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "V-22 Electrical Systems (Initial) Organizational Maintenance Course",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "F/A-18 Electrical/Instrument Systems (Initial) Organizational Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Ground Radio Repair",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Transportable Multichannel Satellite Systems Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "V-22 Avionics Systems (Initial) Organizational Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "V-22 Cockpit Management Systems (Initial) Organizational Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "V-22 Flight Control Systems (Initial) Organizational Maintenance",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 009": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 010": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 011": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 012": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 013": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic (Hydraulics and Structures) Common Core, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 014": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic (Hydraulics and Structures) Organizational Level Strand, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "FAA 147 School Airframe Mechanic Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 015": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 016": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 017": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CH-53E Helicopter Mechanic Organizational Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 018": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 019": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 020": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Part 147 School Powerplant Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Federal Aviation Administration Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 021": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 022": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 023": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AVIATEK 024": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Powerplant License and Airframe",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BIOLOGY 408": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Registered Dental Hygiene (RDH) License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUS 032": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Enlisted Navy Recruiting Orientation/Recruiter Canvasser (ENRO)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 101": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 211": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 212": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA A+",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 213": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA A+",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 214": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA Network +",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 227": {
+    "recs": 3,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 229": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 230": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CS 101": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intro to Computer Science",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 001": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Adult School Dental Assisting",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Dental Assisting Orientation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 003": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 005": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 006": {
+    "recs": 3,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Dental Assistant Strand",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 007": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Adult School Dental Assisting",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Dental Board of California (DBC) Certificates",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 008": {
+    "recs": 3,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Dental Board of California (DBC) Certificates",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 009": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 010": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 012": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 013": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 015": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 015L": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN AST 912": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Registered Dental Assistant License (RDA) OR Registered Dental Assistant Extended Function License (RDAEF)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN HY 304": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Registered Dental Hygiene (RDH) License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN HY 305": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Registered Dental Hygiene (RDH) License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN HY 355": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Registered Dental Hygiene (RDH) License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DEN HY 421": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Registered Dental Hygiene (RDH) License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KIN 329": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "LACCD GE 7": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "unnamed": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 1
+   },
+   "MGMT 001": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 001": {
+    "recs": 1,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA Real Estate Broker",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CA Real Estate Salesperson",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Real Estate Principles",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 003": {
+    "recs": 1,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA Real Estate Broker",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CA Real Estate Salesperson",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 005": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA Real Estate Broker",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CA Real Estate Salesperson",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 007": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA Real Estate Broker",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 009": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA BREA Appraiser",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CA Real Estate Broker",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 010": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA BREA Appraiser",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 011": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA Real Estate Broker",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 014": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA Real Estate Broker",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 021": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA Real Estate Broker",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 039": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA BREA Appraiser",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 040": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CA BREA Appraiser",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 041": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Real Estate Appraiser Trainee",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 042": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Real Estate Appraiser Trainee",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "REAL ES 043": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Real Estate Appraiser Trainee",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  }
+ }
+}

@@ -55,3 +55,14 @@ create policy program_requirement_records_read on public.program_requirement_rec
 
 grant select on public.program_requirement_records to anon, authenticated;
 grant select, insert, update on public.program_requirement_records to service_role;
+
+-- DISPLAY (S327, 2026-10-04): the facts CPL Pathways shows and Sierra reads for a
+-- program, written by kb/_build_roep_display.py: CPL in three kinds per course
+-- (articulated here, could adopt, for consideration), the up-to figure, the gaps
+-- (catalog and state file differ; the reading procedure's checks) and the map's
+-- status. The page reads the same build from cpl_pathways_roep_data.js; both carry
+-- one build stamp, and tests/roep_display_test.py holds them equal. Written by the
+-- builder's receipt (kb/receipts/program_requirement_records_display_<date>.sql),
+-- applied by a session like the load above; an added column, so the table's grants
+-- and its one SELECT policy already cover it. Rollback: set display to null.
+alter table public.program_requirement_records add column if not exists display jsonb;

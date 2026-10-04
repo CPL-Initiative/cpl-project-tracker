@@ -226,6 +226,61 @@ block("9. smoke mode 7l asks what index.ts would build", () => {
   check("7l asserts a course outside nursing, by number", /7l ⭐ names a course the LVN-to-RN program lists outside nursing/.test(CODE));
 });
 
+// S327: the ROEP display facts (kb/_build_roep_display.py) ride the checked
+// record. Sierra quotes them and computes nothing; the page reads the same build
+// from cpl_pathways_roep_data.js, so these checks render the page's own file.
+global.window = global.window || {};
+require("../cpl_pathways_roep_data.js");
+const ROEP = global.window.CPL_PATHWAYS_ROEP;
+function withDisplay(key) {
+  const x = recOf(key);
+  const p = ROEP.programs.find((q) => q.key === key);
+  return Object.assign({}, x, { rec: Object.assign({}, x.rec, { display: p.display }), p });
+}
+
+block("14. the display facts render on a checked program, quoted, never recomputed", () => {
+  const { d, src, rec, p } = withDisplay("cerritos_42158");
+  const ctx = M.buildProgramCoursesContext("Cerritos College", rowsOf(src, d.control_number), ["ironworkers"],
+    new Map([[d.control_number, rec]]));
+  check("a course with CPL here names its credential on its own line",
+    /IWAP 40\.07 — [^\n]*\(4 units\) \[CPL here: FIW Orientation\]/.test(ctx), ctx);
+  check("the figure is the page's: up to 31.5 of the 34-38 units the catalog prints",
+    p.display.figure.up_to === 31.5
+    && ctx.includes("CPL figure: up to 31.5 units of the 34-38 units the catalog prints can be met through CPL Cerritos College has articulated"), ctx);
+  check("the recommended-path figure reads TBA while no map is read",
+    ctx.includes("Recommended-path figure: TBA. No pathway map has been read for this program."), ctx);
+  check("the map line says no map was found", /Term-by-term map: no term-by-term program map found/.test(ctx), ctx);
+  check("the rules name the three kinds and keep the leads leads",
+    /marked "CPL here" is credit for prior learning Cerritos College has articulated/.test(ctx)
+    && /never say a learner will receive that credit at Cerritos College/.test(ctx)
+    && /Give the figure as the line states it; never compute another/.test(ctx), ctx);
+  check("a reader's working note never reaches Sierra", !/Reader's note|URL slug reads/.test(ctx), ctx);
+
+  const rv = withDisplay("riverside_31456");
+  const rctx = M.buildProgramCoursesContext("Riverside City College", rowsOf(rv.src, rv.d.control_number), ["justice"],
+    new Map([[rv.d.control_number, rv.rec]]));
+  check("a could-adopt lead names the credential and the college that articulated it",
+    /ADJ-3 — [^\n]*could adopt: Criminal Law at Norco College/.test(rctx), rctx);
+
+  const mi = withDisplay("miramar_41496");
+  const mctx = M.buildProgramCoursesContext("San Diego Miramar College", rowsOf(mi.src, mi.d.control_number), ["business"],
+    new Map([[mi.d.control_number, mi.rec]]));
+  check("a catalog and state-file difference is the college's to reconcile",
+    mctx.includes("Catalog and state file differ (San Diego Miramar College's to reconcile): The state's Program Course File lists ECON 120"), mctx);
+});
+
+block("15. without display facts the block is unchanged, and the read asks for them", () => {
+  const { d, src, rec } = recOf("cerritos_42158");
+  const ctx = M.buildProgramCoursesContext("Cerritos College", rowsOf(src, d.control_number), ["ironworkers"],
+    new Map([[d.control_number, rec]]));
+  check("no figure, no CPL rule", !/CPL figure|could adopt|CPL here/.test(ctx), ctx);
+  check("fetchCheckedRequirements selects display",
+    /\.select\("control_number,catalog_year,source_url,measure,total_min,total_max,record,display"\)/.test(FN));
+  const SMOKE = fs.readFileSync("chatbox/smoke_test.sh", "utf8");
+  check("smoke 7t holds the answer to the page's figure",
+    /run "7t CPL on a checked program/.test(SMOKE) && /answer_must_match "31\\\.5"/.test(SMOKE));
+});
+
 const failed = results.filter((r) => !r[1]);
 for (const [name, ok, why] of results) console.log(`${ok ? "ok  " : "FAIL"} ${name}${ok || !why ? "" : " — " + String(why).slice(0, 400)}`);
 console.log(`\n${results.length - failed.length}/${results.length} passed`);

@@ -4,11 +4,11 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 578,
+  "file_datasets": 583,
   "external_services": 157,
-  "consumers": 407,
+  "consumers": 408,
   "workflows": 43,
-  "data_js_files": 68,
+  "data_js_files": 69,
   "tabs": 37
  },
  "datasets": {
@@ -295,7 +295,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6154
+     "line": 6221
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -961,7 +961,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4658
+     "line": 4725
     }
    ],
    "main_committers": []
@@ -1762,7 +1762,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5479
+     "line": 5546
     }
    ],
    "main_committers": []
@@ -5199,6 +5199,32 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:cpl_pathways_roep_data.js": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
+    },
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 79
+    }
+   ],
+   "producers": [
+    {
+     "by": "script:kb/_build_roep_display.py",
+     "how": "header"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:cpl_session.js": {
    "consumers": [
     {
@@ -5430,6 +5456,13 @@
      "direction": "read",
      "how": "literal",
      "line": 67
+    },
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -5953,7 +5986,7 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-32.html": {
+  "file:docs/visuals/<date>-open-asks-33.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
@@ -7828,6 +7861,13 @@
      "line": 74
     },
     {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
+    },
+    {
      "id": "script:kb/_ccr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -8490,6 +8530,13 @@
      "line": 129
     },
     {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
+    },
+    {
      "id": "script:kb/_ccr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -8913,6 +8960,13 @@
      "direction": "read",
      "how": "literal",
      "line": 73
+    },
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 76
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -11772,6 +11826,45 @@
     "workflow:program-course-fetch.yml"
    ]
   },
+  "file:kb/program_requirements_pilot/map_cr_by_course.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 73
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_pilot/registry_read.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_pilot/sources/*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 673
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/program_requirements_pilot_sample.json": {
    "consumers": [
     {
@@ -14234,6 +14327,13 @@
      "line": 135
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 654
+    },
+    {
      "id": "script:veteran-sprint-map/extract_military.py",
      "kind": "script",
      "direction": "read",
@@ -16664,6 +16764,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/roep_display_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/run.js": {
    "consumers": [
     {
@@ -17969,7 +18082,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 3418
+     "line": 3485
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -18087,7 +18200,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5288
+     "line": 5355
     }
    ],
    "main_committers": []
@@ -18179,7 +18292,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5785
+     "line": 5852
     }
    ],
    "main_committers": []
@@ -18245,7 +18358,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 3984
+     "line": 4051
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -18409,7 +18522,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1090
+     "line": 1111
     }
    ],
    "main_committers": []
@@ -18421,7 +18534,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5292
+     "line": 5359
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -18623,7 +18736,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 6403
+     "line": 6470
     },
     {
      "id": "module:sierra_training.js",
@@ -18645,7 +18758,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3670
+     "line": 3737
     },
     {
      "id": "script:kb/_course_title_cleanup_apply.py",
@@ -18817,7 +18930,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3997
+     "line": 4064
     }
    ],
    "main_committers": []
@@ -19938,7 +20051,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4304
+     "line": 4371
     },
     {
      "id": "module:college_briefing.js",
@@ -20358,7 +20471,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1067
+     "line": 1088
     },
     {
      "id": "script:kb/_identity_daily_check.py",
@@ -20646,7 +20759,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3436
+     "line": 3503
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -20850,7 +20963,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1113
+     "line": 1134
     }
    ],
    "main_committers": []
@@ -20862,7 +20975,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5550
+     "line": 5617
     },
     {
      "id": "module:sierra_training.js",
@@ -20894,7 +21007,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4979
+     "line": 5046
     },
     {
      "id": "module:sierra_training.js",
@@ -21769,6 +21882,7 @@
     "tests/supabase_table_grants_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
+    "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
     "tests/program_courses_build_test.py",
     "tests/mid_short_code_gate_test.py",
@@ -22349,6 +22463,10 @@
   "cpl_pathways_membership_data.js": {
    "global": "CPL_PATHWAY_MEMBERSHIP",
    "producer": "kb/_build_cpl_pathway_membership.py"
+  },
+  "cpl_pathways_roep_data.js": {
+   "global": "CPL_PATHWAYS_ROEP",
+   "producer": "kb/_build_roep_display.py"
   },
   "credential_reference_data.js": {
    "global": "CPL_CREDENTIAL_REFERENCE",

@@ -5821,3 +5821,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 - 2026-10-02 (S318 SkyKeel): KB note `methodology-a-load-id-should-be-the-content`; handoff 319; Sierra can read each program's own course list (#1826-#1829); sheet 22.
 - 2026-10-02 (S317 SkyCompass): KB note `methodology-a-gateway-error-is-not-an-answer`; handoff 318; the MAP Custom Report loader reads back after a 5xx and never re-sends a landed batch or the promotion ([#1824](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1824)); the grants re-check closed.
+
+### INDEX update history, moved 2026-10-04 (S327)
+
+- 2026-10-02 (S317 SkyCompass, the Sierra narration): KB note `methodology-an-input-read-outside-the-repo-carries-its-text-and-its-gaps`; Scenario 2 narrated by Sierra in ElevenLabs ([#1823](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1823) and the follow-up), `_Draft_3` linked from the explainer; sheet 22 answered.

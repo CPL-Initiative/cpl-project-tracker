@@ -414,3 +414,59 @@ went live at 15:33Z; smoke green on main.
 **NEXT.** The addenda reading agent once the next
 apply fills the table; a sequence read (`read: 1`) that looks for Miramar's map
 on its own pages.
+
+## S327 SkyAmend, 2026-10-04: one build for the page and Sierra, CSU LA counted, outcomes, and the Ironworker proof
+
+**What shipped.** `kb/_build_roep_display.py` writes each checked program's display facts once, under one build stamp, to `cpl_pathways_roep_data.js` and `program_requirement_records.display`; Sierra quotes them (PR CPL-Initiative/cpl-project-tracker#1854). All 20 rows live at build `bbbbfb611f15`, each row's md5 matching the receipt.
+
+**Lessons.**
+1. **One build, two readers, or two answers.** The page and Sierra read two outputs of one run, and the guard holds them byte-equal and recomputes the figure from the page's own data. A mutation of one figure fails three checks. A session that let Sierra compute "up to" herself would have shipped a second answer.
+2. **The connector holds a bare UPDATE and writes nothing** (two 60 s timeouts, one of them a single 3.5 KB row). The load's form passes: an `insert ... select` of the row being updated, `on conflict ... do update set display = excluded.display`. Selecting the row means the statement can never add a program. About 40 KB is the most one migration carried; 104 KB went in five parts and a restamp.
+3. **Prove the table holds the build with a fingerprint.** `--verify-sql` computes `md5(display::text)` in Python (jsonb prints keys shortest first, then bytewise, with `, ` and `: `), and one read-only query says match, differs or missing per row.
+4. **A course key has three spellings.** `IWAP 40.5` / `40.50` (lesson 23), Riverside's `ADJ-1` against MAP's `ADJ 1`, and West LA's `ANATOMY 001` against the state file's `ANATOMY 1`. Without the last, 16 West LA courses lost their title and identity. `ck()` reads a hyphen as a space and drops leading zeros, keeping a zero after the decimal point.
+5. **A cross-disciplinary identity makes false leads.** `WEXP M1001` (Work Experience Education, one outline under 717 subjects) offered "Police Work Experience" as a lead for Cerritos's community health worker work experience. The minted record's `cross_disciplinary` flag now stops could-adopt across it.
+6. **"For consideration" reads zero on the pilot, for two measured reasons.** None of the 384 CER titles without an articulation, and none of the 1,165 IT/AI catalog credentials, names a course identity. The 24 statewide C-ID recommendations share no C-ID with the pilot's 27, and Riverside's AJ courses carry no C-ID in our data at all. Sam's answer (18:03Z) widens the source: compare harvested credential skills with course outcomes.
+7. **The capture already holds outcomes.** 13 of 20 captured pilot pages print program or student learning outcomes (Cerritos, Riverside, West LA all four; Mt. SAC one; Miramar none).
+8. **MAP data shows through, as it should.** Miramar's AUTO 156G carries an EMT Certification and a Driver Operator 1B articulation in MAP's own feed. The display reports MAP. Raising it with the college is a CPL clean-up item.
+9. **Two different questions both start "who counts CSU LA".** Participation (MAP's 116) and the system (California's community colleges) need two counts named for what they count. Nothing in the pipeline errors on an unresolved name, so a wrong sentence is the only signal (sheet 33 cards 1-2).
+
+**Moved from the lane (S327 compaction), verbatim.**
+
+**Catalog addenda (S325, PR #1848).** Sam, 2026-10-04: *"colleges are often
+publishing catalog addendum to correct errors and add late changes to the
+official catalog. We need to track this in our schema and have our agents
+aware."* The census scored addendum links down so none could win the catalog
+slot, and then dropped them. `addendum_links()` now records each addendum,
+supplement or errata link on the homepage, a catalog index or the catalog page,
+for the current or prior catalog year, in `census_evidence -> 'addenda'` (job log
+on a branch; the registry's evidence on the weekly apply, through the existing
+write function). `addendum_start_year()` dates a link from the years its words or
+file name carry (the rules and their cases are in the module and its guard).
+Older years, archives, schedules' and calendars' addenda, a sibling's and
+reader-service copies stay out. **Measured: 79 addenda at 52 of 118 colleges**
+(2026-27: 19; 2025-26: 42; no year named: 18) in the dry run at #1848's head
+(37200460417); the offline replay had read 78 (41 for 2025-26).
+- **The table is live (Sam's "Go", sheet 29 card 5; S326):** `program_source_addenda`,
+  one row per (college, url), the catalog year it amends, a status (listed, read,
+  applied, gone, not an addendum), `programs_changed` for the reading agent, history
+  by trigger, public read. The write function `program_source_addenda_apply()` is
+  security invoker, and the privilege close is pasted (sheet 31): public roles read
+  only. Checked live in two self-rolling-back blocks: a partial read marks nothing
+  gone, a complete read does, and an addendum that returns comes back `read` if an
+  agent read it, else `listed`.
+- **The census writes it** (`apply_addenda()` after the registry, apply mode only):
+  each college's addenda with `complete` true only when the homepage and the
+  catalog page both answered and the address is this read's own; a partial read
+  adds what it saw and marks nothing gone. ⚠️ **The table is empty until the next
+  apply:** today's Sunday 10:29 schedule did not fire (no scheduled run on the
+  list), so the first rows land 2026-10-11, or on a hand dispatch with `mode:
+  apply` on `main`.
+- **Next (the plan):** a reading agent files which programs each addendum changes;
+  a record names the addenda it was checked against, and Sierra cites "the
+  2026-27 catalog as amended by the addendum of <date>".
+
+**The proof of concept: Cerritos Ironworker, high school to career (Sam, 18:23Z, vault braindump 18:23).** The rungs: HS dual enrollment and CTE articulation (Cx), noncredit, adult ed and ROP; Cerritos certificates and stackable ones; the A.S.; the B.S.; internships and employment. Researched S327 (VERIFIED in our data unless marked LEAD, a search snippet; the proxy blocks cerritos.edu, DIR and the union sites): Certificates 36002 Reinforcing (34 units) and 36003 Structural (38) are each one complete A.S. major option; the A.S.'s 31.5 CPL units are all credit by exam on the core and the Reinforcing option (the Structural option and IWAP 40.10 carry none); the hand-built map's *27-29 major units* is stale against the 2026-27 catalog's 34-38. Entry: noncredit Pre-Apprenticeship 24102 (AED 36.02-36.04, 80.01; LEAD: apprentices only), AED 36.05 basic welding, 26 noncredit AED 40.01-41.10 copies of the IWAP courses with no CPL link (Santa Ana's MAPCXN exhibit is the model), OSHA-10 (AED 90.05); LEAD: Downey USD's Columbus HS welding pathway into WELD 100 through CCAP; MC3 is articulated at Laney and Cabrillo only. MAP holds no high school, ROP, adult school or noncredit CPL for Cerritos. B.S.: LEAD, approved by the CO February 2026 (EdSource), not in COCI; course list, admission rule and first cohort unconfirmed. Apprenticeship: LEAD, Local 433 JATC (48 months) and Local 416; related-instruction hours conflict (480 vs 700+). Career (COE 2024-29): structural iron 47-2221 $35-37/hr median, LA 130 and OC 80 openings a year; first-line supervisors 47-1011 $43-48/hr, 1,810 openings a year across LA and OC. **NEEDS SAM** (sheet 33 card 5): who at Cerritos confirms the B.S., the high school list, the noncredit courses and the hours.
+
+**The S327 research behind the proof of concept** (two agents, read-only; the proxy blocked cerritos.edu, DIR, regionalcte.org and the union sites, so web facts are search snippets marked LEAD):
+- Upper rungs. VERIFIED (COCI load 20260716): 36002 and 36003 nest exactly in the A.S. LEAD (EdSource, 2026-02-20): the CO approved the B.S. in February 2026 under AB 927. Cerritos's 2026 State of the College calls it the college's second bachelor's degree. LEAD (regionalcte.org): upper-division topic areas only, a GE gate, online delivery. The admission rule (A.S. or GE only) and the fall 2027 start are unconfirmed. LEAD (DIR snippet): Local 433 JATC, 48 months, $19.50/hr start, La Palma training center; Local 416 JATC in Norwalk. VERIFIED: COE 2024-29 occupation demand, `kb/reference/coe_occupation_demand_2024_2029.json`.
+- Entry rungs. VERIFIED: Pre-Apprenticeship 24102 (AED 36.02-36.04, 80.01); AED 36.05 basic welding; 26 AED 40.01-41.10 noncredit copies of the IWAP courses; OSHA-10 in AED 90.05 and ELAP 90.22; HSE and GED preparation; no Cerritos high school, ROP or adult school CPL in MAP; MC3 articulated at Laney and Cabrillo. LEAD: Downey USD Columbus HS welding through CCAP (WELD 100, and WELD 60, likely now WELD 160); Norwalk-La Mirada Adult School welding; Southeast ROP welding; LAUSD Harbor and LBCC MC3. Next: a human browser pull of Cerritos's EPP articulation list, the Pre-Apprenticeship catalog page and `2026_Welding_Roadmap_ua.pdf`.
