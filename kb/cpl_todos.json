@@ -1,14 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-04",
-  "_session": "S327 SkyAmend",
+  "_session": "S328 SkyLadder",
   "_status": "Every checked pilot program now carries its display facts: CPL in three kinds per course (articulated here, could adopt, for consideration), the most of the program a learner could meet through CPL, the gaps and the map's status, built once for CPL Pathways and Sierra (the Ironworker A.S. reads up to 31.5 of 34-38 units). Sierra's wiring is in review (#1854), deploying after a clean A/B. You set the next proof: the Cerritos Ironworker pathway from high school to career. Sheet 33 asks five questions: CSU LA's counts, funding and harvest procedure, outcomes in the harvest, and who at Cerritos confirms the Ironworker facts the web will not show us.",
   "items": [
     {
-      "id": "s327-sam-sheet33",
+      "id": "s328-sam-sheet34",
       "for": "Sam",
-      "tab": "sierra",
-      "text": "Answer open-asks sheet 33's five cards: what the counts call MAP's 116 now that CSU LA is counted, leaving CSU LA out of the funding model by name, when CSU LA's catalog procedure starts, outcomes in the harvest, and who at Cerritos confirms the Ironworker B.S., high school list, noncredit courses and apprenticeship hours. https://claude.ai/artifact/HLeo1NxQvsVkZNUnqw8YCQ"
+      "tab": "cpl-pathways",
+      "text": "Answer open-asks sheet 34's two cards: confirm the statement of who the CPL Initiative serves (it then goes on the dashboard, Sierra and the letter blocks), and the per-college procedure record the harvest agent reads before each run. https://claude.ai/artifact/PE2mmQZBvoArb5MTnC2gCG"
     },
     {
       "id": "s327-fable-ironworker-proof",

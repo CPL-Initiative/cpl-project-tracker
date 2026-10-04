@@ -31,6 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 34 (S328, 2026-10-04, SHEET_ID 2026-10-04-open-asks-34): Sam answered all five cards of sheet 33
+(https://claude.ai/artifact/HLeo1NxQvsVkZNUnqw8YCQ) at 18:52-18:57Z, and the lanes record them. Two new
+cards: the statement of who CPL serves (his card 1 ask) and the per-college procedure record (his card 5
+"Advise"). Published at https://claude.ai/artifact/PE2mmQZBvoArb5MTnC2gCG (capabilities db + comments).
+Sam answered both at 19:18Z the same day (replies/done through 2, sent: true); the lanes record them.
+
 Sheet 31 (S326 checkpoint, 2026-10-04, SHEET_ID 2026-10-04-open-asks-31): sheet 30 carried no replies; its
 one card gains a fourth file, the privilege close for program_requirement_records (card 4's table).
 Published at https://claude.ai/artifact/89S8oEi5Yi1ZpDeUwBsfJu (capabilities db + comments).
@@ -783,54 +789,10 @@ def items():
     # concise statement of who CPL serves, card 2 CCC-only funding, card 3 CSU LA later, card 4 as
     # proposed, card 5 exhaust the agent before any request. Each lane records its ruling (S328).
 
-    # Sheet 34 (S328): the statement card 1 asked for, and the advice card 5 asked for.
-    I.append({
-        'lane': 'college-district-identity',
-        'title': "Who CPL serves: confirm the statement",
-        'ref': 'college-district-identity NEEDS SAM · excel_to_dashboard.py · cpl-chat index.ts · '
-               'cpl-knowledge-base budget-support letter blocks',
-        'facts': (
-            "You asked for one concise statement from your notes. The draft: <em>The CPL Initiative serves "
-            "California's 116 community colleges, two noncredit campuses, and partner programs such as LAUNCH "
-            "and Futuro Health. Cal State LA is the first CSU campus on MAP. Adult education, ROP and "
-            "not-for-credit programs such as UpSkill CA join next.</em> The 116 is the 115 credit colleges plus "
-            "Calbright, as your note counts them. MAP's scrape also counts 116: the 115 plus Cal State LA, "
-            "with Calbright not yet on MAP. The KPI card, Sierra's metrics line and the knowledge base's letter "
-            "blocks read true today because the two numbers match."),
-        'why': "The statement goes on the dashboard, into Sierra's answers and into letters to legislators.",
-        'rec': "<strong>As drafted:</strong> the dashboard, Sierra and the letter blocks take the statement, "
-               "and each counts Cal State LA as a MAP participant beside the community colleges. The letter "
-               "blocks change through the knowledge base's curation pipeline, as a draft pull request. The "
-               "draft leaves out the CSU systemwide talks because they are still under way. <em>It might be "
-               "wrong if</em> you want the talks named publicly now.",
-        'chips': chips(('As drafted', 'as-drafted'), ('Add the CSU systemwide line', 'add-csu'), CH_LATER),
-        'evidence': [measured(p_csu_la_counted),
-                     quoted('cpl_memory sam-sheet33-rulings-2026-10-04, his card 1 note', '2026-10-04')],
-    })
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "One procedure record per college: the agent's rules for reading it",
-        'ref': 'program-requirements-harvest NEEDS SAM · kb/supabase_program_source_registry.sql · '
-               'the 2026-10-03 ruling (an agent per college the college and the MAP team own and train)',
-        'facts': (
-            "You ruled that a request to a college is drafted only after the agent has exhausted its "
-            "efforts, and asked for advice on configuring an agent per college. The registry holds each "
-            "college's hosts, catalog platform and access status, and sequence access for 25 colleges "
-            "(18 refused). Nothing holds a college's reading steps, the workarounds tried or its nuances, "
-            "and the reader loads no per-college rules."),
-        'why': "Your workaround ideas then stay with the college: the next run reads them.",
-        'rec': "<strong>One procedure record per college</strong>, kept with its history on the college's "
-               "registry row: hosts, platform, reading steps, refusals, workarounds tried, nuances. The "
-               "reader loads it before each run. The harvest tab's Procedures view shows it, and each "
-               "workaround you suggest lands as a change to it under your name and date. A request to a "
-               "college is drafted only when its record shows every step tried. Cerritos comes first, from "
-               "a runner read of the B.S. page, the EPP articulation list, the Pre-Apprenticeship catalog "
-               "page and the welding roadmap PDF. <em>It might be wrong if</em> you want the college and "
-               "the MAP team editing the records in the tab from the start.",
-        'chips': chips(('As proposed', 'as-proposed'), ('Tab editing from the start', 'tab-first'), CH_LATER),
-        'evidence': [measured(p_no_procedure_record),
-                     quoted('cpl_memory sam-sheet33-rulings-2026-10-04, his card 5 note', '2026-10-04')],
-    })
+    # Sheet 34 (S328) was answered at 19:18Z on 2026-10-04, both his own call: card 1 the statement as
+    # drafted with two edits (no UpSkill line; "datasets", never "scrape"), card 2 the per-college
+    # procedure record as proposed. Both lanes record the rulings; no card remains.
+
     return I
 
 
