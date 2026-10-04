@@ -8,7 +8,10 @@ before anyone drafts a request to a college. This is that reading for a fixed
 question list: each page in kb/college_reads/<plan>.json names the line it
 answers, and the job log carries the page's text for a session to read back
 through the GitHub MCP. What the read reaches and what it is refused becomes
-the college's procedure record (sheet 34 card 2).
+the college's procedure record (sheet 34 card 2: one per college, kept with its
+history on the college's program_source_registry row). The reader loads that
+record before each run, prints it, and leaves alone a host the record marks
+refused or unreached unless the plan's page says retry.
 
 Polite by construction, as the census and the pilot capture are: the census's
 Reader reads robots.txt first for every host, waits CENSUS_DELAY_MS before every
@@ -112,6 +115,41 @@ def fold(text: str, under: int = FOLD_UNDER) -> str:
     if run:
         out.append(" · ".join(run))
     return "\n".join(out)
+
+
+SKIP_ACCESS = {"refused", "unreached"}
+
+
+def skipped_hosts(procedure: dict | None) -> dict:
+    """host -> the record's note, for every host it marks refused or unreached."""
+    out = {}
+    for h in (procedure or {}).get("hosts") or []:
+        if h.get("host") and h.get("access") in SKIP_ACCESS:
+            out[h["host"].lower()] = h.get("note") or h["access"]
+    return out
+
+
+def load_procedure(college: str) -> dict | None:
+    """The college's procedure record, read with the public key. A missing row,
+    a missing column or a failed read returns None and the read goes on."""
+    from _program_requirements_pilot import _get, q
+    try:
+        rows = _get("program_source_registry?select=procedure,procedure_by,procedure_at"
+                    "&college=eq.%s" % q(college))
+    except Exception as exc:
+        print("procedure record: not read (%s)" % str(exc).splitlines()[0][:160])
+        return None
+    row = rows[0] if rows else {}
+    if not row.get("procedure"):
+        print("procedure record: none on the registry row yet")
+        return None
+    proc = row["procedure"]
+    print("procedure record: %d hosts, %d steps, %d nuances; last changed %s by %s" % (
+        len(proc.get("hosts") or []), len(proc.get("steps") or []),
+        len(proc.get("nuances") or []), row.get("procedure_at"), row.get("procedure_by")))
+    for h in proc.get("hosts") or []:
+        print("  host %-34s %-10s %s" % (h.get("host"), h.get("access"), h.get("note") or ""))
+    return proc
 
 
 def pdf_pages_to_print(pages: list[str], pattern: re.Pattern,
@@ -219,6 +257,8 @@ def main(argv: list[str] | None = None) -> int:
     from _program_requirements_pilot import open_reader
     delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
     pw, browser, reader = open_reader(delay)
+    procedure = load_procedure(plan.get("college") or "")
+    skip = skipped_hosts(procedure)
     cache: dict = {}
     seen: set = set()
     records: list[dict] = []
@@ -232,7 +272,12 @@ def main(argv: list[str] | None = None) -> int:
                 if url in seen:
                     continue
                 seen.add(url)
-                rec = read_one(reader, url, pattern, cache)
+                host = (urllib.parse.urlparse(url).hostname or "").lower()
+                if host in skip and not target.get("retry"):
+                    rec = {"url": url, "access": "skipped_by_procedure",
+                           "error": "the procedure record marks %s: %s" % (host, skip[host])}
+                else:
+                    rec = read_one(reader, url, pattern, cache)
                 rec["answers"] = target.get("answers") or []
                 if parent:
                     rec["from"] = parent

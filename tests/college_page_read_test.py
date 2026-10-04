@@ -97,6 +97,16 @@ check(cpr.fold("") == "", "an empty page folds to nothing")
 langs = "\n".join(["Abkhaz", "Acehnese", "Acholi"] * 80)
 check(cpr.fold(langs).count("\n") == 0, "a 240-entry language picker is one line, not 240")
 
+print("skipped_hosts")
+proc = {"hosts": [{"host": "hsarticulation.cerritos.edu", "access": "unreached", "note": "no DNS record"},
+                  {"host": "www.cerritos.edu", "access": "open"},
+                  {"host": "Mapper.Example.edu", "access": "refused"}]}
+sk = cpr.skipped_hosts(proc)
+check(set(sk) == {"hsarticulation.cerritos.edu", "mapper.example.edu"},
+      "a host the record marks unreached or refused is left alone; an open one is read")
+check(sk["mapper.example.edu"] == "refused", "a host with no note carries its access word")
+check(cpr.skipped_hosts(None) == {} and cpr.skipped_hosts({}) == {}, "no record, nothing skipped")
+
 print("committed plans")
 plans = sorted(glob.glob(os.path.join(ROOT, "kb", "college_reads", "*.json")))
 check(len(plans) >= 1, "at least one plan is committed")

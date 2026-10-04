@@ -14,10 +14,10 @@
 // cohort fall 2027), built for the California Apprenticeship Council
 // presentation (2026-08-13). Sourcing (researched 2026-07-10):
 //  · regionalcte.org/browse/ZyxAg — the LAOCRC program record (TOP 095700;
-//    two-part structure; GE gate; the ten upper-division topic areas). NOTE:
-//    the record's section-4 COURSES table is JavaScript-rendered — invisible
-//    to crawlers/archives; grab the course-by-course list from a real browser
-//    when Cerritos publishes the final curriculum, and replace the topic rows.
+//    two-part structure; GE gate). Its course table renders only in a browser:
+//    the college page read (kb/_college_page_read.py, run 37232742985,
+//    2026-10-04) read it, and the upper-major rows below are that proposed
+//    list. Replace them when Cerritos publishes the approved curriculum.
 //  · CCCCO COCI course inventory (kb/reference/coci_course_list.xlsx,
 //    2026-07-09 snapshot) — all 24 Cerritos IWAP apprenticeship courses.
 //  · Cerritos catalog (courseleaf): Apprenticeship: Field Ironworkers A.S. —
@@ -63,8 +63,8 @@ window.CPL_PATHWAYS = {
           title: "Pre-Apprenticeship and noncredit ironworker courses",
           what: "Tuition-free noncredit courses at Cerritos that prepare a learner for the apprenticeship.",
           points: [
-            { t: "Pre-Apprenticeship certificate (control number 24102): AED 36.02, 36.03, 36.04 and 80.01.", s: "data" },
-            { t: "The certificate admits apprentices only.", s: "confirm" },
+            { t: "Pre-Apprenticeship certificate (control number 24102): AED 36.02, 36.03 and 36.04 (36 hours each) and AED 80.01 Intro to Electrical Trades (80 hours), 188 hours in all.", s: "data" },
+            { t: "The certificate admits registered apprentices only: the 2026–27 catalog requires acceptance by an apprenticeship program and registration with the State.", s: "data" },
             { t: "AED 36.05 Basic Welding, and OSHA 10 in AED 90.05.", s: "data" },
             { t: "Twenty-six noncredit courses, AED 40.01 through 41.10, mirror the credit IWAP courses one for one.", s: "data" },
             { t: "Whether those 26 courses still run each term.", s: "confirm" },
@@ -95,9 +95,10 @@ window.CPL_PATHWAYS = {
           title: "B.S., Field Ironworker Supervisor",
           what: "A bachelor's degree for journeyworkers moving into supervision.",
           points: [
-            { t: "The Chancellor's Office approved it in February 2026.", s: "confirm" },
-            { t: "Upper-division coursework online, with a general education requirement to enter.", s: "confirm" },
-            { t: "The course list, the admission rule and the first cohort, planned for fall 2027.", s: "confirm" },
+            { t: "Cerritos lists it as approved, its second bachelor's degree beside Dental Hygiene (State of the College, May 2026).", s: "data" },
+            { t: "Admission follows two years of prerequisite courses and a completed general education pattern: Cerritos GE, IGETC or CSU GE Breadth.", s: "data" },
+            { t: "The proposed upper division: 23 courses and 60 units over years 3 and 4, IWAP 301–310 and 401–410 with intercultural communication and two statistics courses (regional program record, recommended June 2024).", s: "data" },
+            { t: "Whether the approved degree keeps that course list and runs online, and its first cohort: the 2024 record projected August 2026, and the 2026–27 catalog does not list the degree yet.", s: "confirm" },
           ],
           cpl_map: "A.S. credit carries",
           cpl: "The A.S. credit carries into the lower division; exams such as CLEP can meet general education through the systemwide credit chart.",
@@ -113,7 +114,7 @@ window.CPL_PATHWAYS = {
           cpl_map: "1,810 supervisor openings a year" },
       ],
       confirm: [
-        "The B.S. course list, admission rule and first cohort.",
+        "Whether the approved B.S. keeps the 2024 course list, and when its first cohort starts.",
         "The high school articulation list.",
         "Whether the 26 noncredit AED courses still run.",
         "The apprenticeship's classroom hours.",
@@ -121,6 +122,9 @@ window.CPL_PATHWAYS = {
       confirm_note: "The harvest agent reads these pages first, from a runner. A request goes to Cerritos only after Cerritos's procedure record shows every step tried.",
       sources: [
         { label: "Cerritos College catalog 2026–27, Apprenticeship: Field Ironworkers A.S.", url: "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/field-ironworkers-aa/" },
+        { label: "Cerritos College catalog 2026–27, Pre-Apprenticeship (Non Credit)", url: "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/pre-apprenticeship-certificate-completion/" },
+        { label: "Field Ironworker Supervisor, Los Angeles regional program record (recommended June 2024)", url: "https://regionalcte.org/browse/ZyxAg" },
+        { label: "Cerritos College, 2026 State of the College (May 19, 2026)", url: "https://www.cerritos.edu/newsroom/releases/2026/05/SOTC.htm" },
         { label: "Chancellor's Office COCI program and course files (load of 16 July 2026)" },
         { label: "MAP articulated-exhibit records (read 4 October 2026)" },
         { label: "Centers of Excellence occupational demand 2024–2029" },
@@ -253,19 +257,32 @@ window.CPL_PATHWAYS = {
         {
           id: "upper-major",
           title: "Upper-division major — years 3–4 (online, while working)",
-          note: "The baccalaureate coursework: 60 upper-division units of supervision and management curriculum plus upper-division GE. Topic areas below are from the approved program record; the course-by-course catalog publishes ahead of the fall 2027 cohort.",
+          note: "The proposed course list in the Los Angeles regional program record (recommended June 2024): 23 courses, 60 units over years 3 and 4, in the order the record schedules them. The approved curriculum may differ; the 2026–27 catalog does not list the degree yet.",
           wide: true,
           courses: [
-            { title: "Industrial Trades Leadership" },
-            { title: "Human Resources for Skilled Trades" },
-            { title: "Labor Law" },
-            { title: "Operations" },
-            { title: "IT for Enterprise Management for Skilled Trades" },
-            { title: "Cost Estimating and Control" },
-            { title: "Negotiations" },
-            { title: "Accounting" },
-            { title: "Multicultural Communication" },
-            { title: "Advanced CAD" },
+            { code: "IWAP 301", title: "IW Advanced Rigging / Rigging II", units: 2 },
+            { code: "IWAP 302", title: "IW Cranes II", units: 3 },
+            { code: "IWAP 303", title: "IW Reinforcing III", units: 3 },
+            { code: "IWAP 304", title: "IW Detailing II (Reinforcing)", units: 3 },
+            { code: "IWAP 305", title: "IW Detailing IV (Structural)", units: 3 },
+            { code: "COMM 320", title: "Intercultural Communication: Contexts and Dialogue", units: 3 },
+            { code: "PSYC 210", title: "Elementary Statistics", units: 4 },
+            { code: "IWAP 306", title: "IW Welding IV / Seismic for Structural Steel Welding", units: 3 },
+            { code: "IWAP 307", title: "IW Welding V / LA City Stick and Wire Preparation", units: 3 },
+            { code: "IWAP 308", title: "IW Welding VI / TIG Welding", units: 3 },
+            { code: "IWAP 309", title: "IW Certified Rigger", units: 2 },
+            { code: "IWAP 310", title: "Layout Instruments for Ironworkers II", units: 3 },
+            { code: "IWAP 401", title: "Advanced Layout and Total Station for Ironworkers IV", units: 2 },
+            { code: "IWAP 402", title: "Ironworker Union Politics", units: 1 },
+            { code: "IWAP 403", title: "Ironworker Collective Bargaining Agreement (CBA) Law", units: 1 },
+            { code: "IWAP 404", title: "IW Superintendent Training", units: 2 },
+            { code: "IWAP 405", title: "IW Advanced Blueprint Reading", units: 3 },
+            { code: "IWAP 406", title: "Bonded Post-Tensioned Concrete II", units: 2 },
+            { code: "IWAP 407", title: "Ironworker Fundamentals: Cost Estimation and Bidding", units: 2 },
+            { code: "IWAP 408", title: "IW Metal Building Assembly / Certified Installer", units: 3 },
+            { code: "IWAP 409", title: "IW Bolting Up / Structural III", units: 3 },
+            { code: "IWAP 410", title: "IW Ornamental II", units: 2 },
+            { code: "PSYCH 410", title: "Advanced Statistics", units: 4 },
           ],
         },
       ],
