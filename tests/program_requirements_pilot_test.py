@@ -355,6 +355,23 @@ for path in fixtures:
     check(fx["coverage"] >= 0.5 and fx.get("captured_run"),
           "%s: only a page that named half the listed codes is filed, with its run" % os.path.basename(path))
 
+# ── The filed records: today's scorer must agree with the run that filed them ─
+records = sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_pilot", "records", "*.json")))
+check(len(records) >= 16, "extraction run 2's 16 records are filed (37171952080)")
+for path in records:
+    with open(path) as fh:
+        fr = json.load(fh)
+    with open(os.path.join(ROOT, fr["source_file"])) as fh:
+        fx = json.load(fh)
+    again = S.score(fr["record"], fx["closed_list"], fx["text"])
+    check(again["pass"] == fr["score"]["pass"]
+          and again["arithmetic"]["status"] == fr["score"]["arithmetic"]["status"]
+          and again["coverage"]["missing"] == fr["score"]["coverage"]["missing"]
+          and again["invented"]["codes"] == fr["score"]["invented"]["codes"],
+          "%s: today's scorer reads the filed record as the run did (%s %s now, %s %s then)"
+          % (os.path.basename(path), again["pass"], again["arithmetic"]["status"],
+             fr["score"]["pass"], fr["score"]["arithmetic"]["status"]))
+
 # ── The extraction pass reads fixtures only and calls only the function ──────
 import _program_requirements_extract as X  # noqa: E402
 check(X.cost("claude-opus-5-5", {"input_tokens": 1_000_000, "output_tokens": 100_000}) == 6.0,
