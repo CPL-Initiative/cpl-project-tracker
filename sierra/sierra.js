@@ -712,6 +712,25 @@
     }
   }
 
+  // ── ?ask= prefill (S327) ──
+  // A page that links here with a question (CPL Pathways' "Ask Sierra": "What
+  // does the <program> at <college> require, and which of its courses can a
+  // learner clear through credit for prior learning?") puts it in the box. It
+  // never sends: the visitor picks an audience first and presses Send. Plain
+  // text, control characters dropped, capped at ASK_MAX characters.
+  var ASK_MAX = 500;
+  function askFromUrl() {
+    try {
+      var q = new URLSearchParams(location.search).get('ask');
+      if (!q) return '';
+      return q.replace(/[\u0000-\u001f\u007f]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, ASK_MAX);
+    } catch (e) { return ''; }
+  }
+  function prefillAsk() {
+    var q = askFromUrl();
+    if (q && inputEl && !inputEl.value) inputEl.value = q;
+  }
+
   function wire() {
     if (wired) return; // idempotent (guards a double DOMContentLoaded)
     wired = true;
@@ -727,6 +746,7 @@
     loadAudience();
     renderAudience();
     wireAbout();
+    prefillAsk();
 
     // Fill starter chips
     if (suggestEl) {

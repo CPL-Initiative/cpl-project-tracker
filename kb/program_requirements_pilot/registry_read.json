@@ -1,0 +1,69 @@
+{
+ "_what": "The harvest registry's catalog and map columns for the pilot's five colleges, as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
+ "_source": "public.program_source_registry (census columns written by the weekly census; the four sequence_* columns written by S326's receipts)",
+ "_read_at": "2026-10-04",
+ "_read_by": "SkyAmend (S327) through the Supabase MCP",
+ "_refresh": "Reread when the census applies or a sequence receipt lands: select the columns below for the harvest's colleges and file them here.",
+ "colleges": {
+  "Cerritos College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://cerritos-public.courseleaf.com/",
+   "census_run_id": "census-20261004T152831Z-s3of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Mt. San Antonio College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.mtsac.edu/",
+   "census_run_id": "census-20261004T152834Z-s2of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Riverside City College": {
+   "catalog_platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
+   "census_run_id": "census-20261004T152832Z-s4of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "San Diego Miramar College": {
+   "catalog_platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27/iq/20891",
+   "census_run_id": "census-20261004T152831Z-s3of4",
+   "sequence_source": "none_found",
+   "sequence_access": "refused",
+   "sequence_host": "san-diego-miramar.programmapper.com",
+   "sequence_url": null,
+   "sequence_note": "Miramar's Program Pathways Mapper, linked from sdmiramar.edu/program-mapper, answered all seven of the reader's requests 403 Forbidden on 2026-10-04 (sequence run 37197332656), and the 17 other mapper hosts probed that day did the same: the refusal is the mapper service's. The pilot's sequence for Fire Technology A.S. (05100) is not yet read. The reader keeps its name and never retries a refusal another way. It looks for the sequence on the college's own pages and in its catalog, and asks this host's front page once a run whether it has opened (Sam, open-asks sheet 29 card 3, 2026-10-04).",
+   "sequence_checked_run": "program-sequence-ppm run 37197332656"
+  },
+  "West Los Angeles College": {
+   "catalog_platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+   "census_run_id": "census-20261004T152831Z-s3of4",
+   "sequence_source": "ppm",
+   "sequence_access": "not_read",
+   "sequence_host": "programmap.wlac.edu",
+   "sequence_url": "https://www.wlac.edu/academics/pathways/program-mapper",
+   "sequence_note": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader.",
+   "sequence_checked_run": "program-sequence-ppm run 37198225537"
+  }
+ }
+}
