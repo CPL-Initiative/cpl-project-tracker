@@ -34,9 +34,12 @@ on:
 permissions:
   contents: read
 
+# A newer run waits behind a running one, as the census's does: a cancelled
+# capture throws away reads already made of the colleges' sites (S323: a push
+# cancelled run 37165851231 three colleges into it).
 concurrency:
   group: program-requirements-pilot-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   capture:
