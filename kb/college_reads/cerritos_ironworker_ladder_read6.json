@@ -1,0 +1,23 @@
+{
+  "_readme": "Sixth read for the Cerritos Ironworker ladder (S330). Sam, sheet 36 card 2 (2026-10-04 23:51Z, edit and follow up): \"lets work together to see if we ca find these another way and close the gap\", so the drafted request to Cerritos stays held. Two routes first: the Internet Archive's copies of the two dead sources (hsarticulation.cerritos.edu has no DNS record; statewidepathways.org is a domain for sale), through the Wayback Machine's capture index and its nearest captures, and Cerritos's own College and Career Access Pathways (CCAP) pages, whose agreements list courses by high school. The session container cannot reach web.archive.org; a runner can.",
+  "college": "Cerritos College",
+  "outside_hosts": {
+    "archive.org": "the Internet Archive's Wayback Machine, which keeps captures of Cerritos's retired articulation site and of the Statewide Career Pathways database from when both were live"
+  },
+  "questions": {
+    "hs_articulation": "Cerritos's list of articulated high school courses, and which route Columbus High's welding pathway uses."
+  },
+  "keywords": ["Cerritos", "articulat", "agreement", "[Ww]eld", "Columbus", "Downey", "CCAP", "high school", "WELD"],
+  "pages": [
+    {"answers": ["hs_articulation"], "url": "https://web.archive.org/cdx/search/cdx?url=hsarticulation.cerritos.edu&matchType=host&output=txt&fl=timestamp,original,statuscode&collapse=urlkey&limit=400"},
+    {"answers": ["hs_articulation"], "url": "https://web.archive.org/web/2024/https://hsarticulation.cerritos.edu/",
+     "links": "agreement|course|search|school|district|weld|articulat|teacher|faculty", "follow": "agreement|course|search|school|district|weld|articulat", "forms": true},
+    {"answers": ["hs_articulation"], "url": "https://web.archive.org/cdx/search/cdx?url=statewidepathways.org&matchType=domain&output=txt&fl=timestamp,original,statuscode&collapse=urlkey&limit=400"},
+    {"answers": ["hs_articulation"], "url": "https://web.archive.org/web/2016/http://www.statewidepathways.org/",
+     "links": "agreement|college|search|weld|cerritos|template", "follow": "agreement|college|search", "forms": true},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/academics/divisions/epp/dualenrollment/CCAP-partnership-programs.htm",
+     "links": "ccap|agreement|\\.pdf|downey|norwalk|bellflower|abc|whittier|paramount|lynwood|artesia", "follow": "\\.pdf|agreement|downey|weld"},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/academics/divisions/epp/dualenrollment/default.htm",
+     "links": "ccap|agreement|partner|\\.pdf|high school", "follow": "ccap|agreement|partner"}
+  ]
+}
