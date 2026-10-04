@@ -854,7 +854,7 @@ run "7q program course list without a checked record (El Camino, Welding)" \
 answer_must_match -i "\bWELD[ -]?[0-9]" "7q names a Welding course by number"
 answer_must_not_match -i "total(ing|s)? (of )?[0-9]+(\.[0-9]+)? units|[0-9]+(\.[0-9]+)? units (in )?total" "7q ⭐ never adds up the units for a program without a checked record — honors twins and alternatives are listed together"
 
-# ── MODE 7r: CPL on a checked program, from the ROEP display build (S327) ─────
+# ── MODE 7t: CPL on a checked program, from the ROEP display build (S327) ─────
 # Sam, 2026-10-04: CPL Pathways shows each program's CPL in three kinds and an
 # "up to" figure, and Sierra is "wired to understand all the included data and
 # considerations". kb/_build_roep_display.py writes the facts once, to
@@ -863,17 +863,17 @@ answer_must_not_match -i "total(ing|s)? (of )?[0-9]+(\.[0-9]+)? units|[0-9]+(\.[
 # answer assert holds Sierra to it. The Ironworker A.S. reads up to 31.5 of the
 # 34-38 units its catalog prints (15 courses with CPL Cerritos has articulated).
 echo "===================================================================="
-echo "MODE: 7r CPL figure on a checked program (Cerritos, Field Ironworkers A.S.)"
+echo "MODE: 7t CPL figure on a checked program (Cerritos, Field Ironworkers A.S.)"
 rrow="$(curl -sS --max-time 30 "$REST_BASE/program_requirement_records?select=control_number,up_to:display->figure->>up_to,build:display->>build&college=eq.Cerritos%20College&control_number=eq.42158" \
   -H "apikey: $ANON" -H "Authorization: Bearer $ANON")"
 case "$rrow" in
-  *'"up_to":"31.5"'*) echo "  [assert ok] 7r ⭐ the anon key reads the Ironworker A.S. display facts (up to 31.5 units; $(printf '%s' "$rrow" | grep -o '"build":"[^"]*"'))" ;;
-  *) echo "::error::7r ⭐ the anon key read $(printf '%s' "$rrow" | head -c 200) for Cerritos 42158 — expected display.figure.up_to 31.5. Check that kb/receipts/program_requirement_records_display_2026-10-04.sql was applied (python3 kb/_build_roep_display.py --verify-sql)."; fail=1 ;;
+  *'"up_to":"31.5"'*) echo "  [assert ok] 7t ⭐ the anon key reads the Ironworker A.S. display facts (up to 31.5 units; $(printf '%s' "$rrow" | grep -o '"build":"[^"]*"'))" ;;
+  *) echo "::error::7t ⭐ the anon key read $(printf '%s' "$rrow" | head -c 200) for Cerritos 42158 — expected display.figure.up_to 31.5. Check that kb/receipts/program_requirement_records_display_2026-10-04.sql was applied (python3 kb/_build_roep_display.py --verify-sql)."; fail=1 ;;
 esac
-run "7r CPL on a checked program (Cerritos, Field Ironworkers A.S.)" \
+run "7t CPL on a checked program (Cerritos, Field Ironworkers A.S.)" \
   '{"query":"Which courses in the Field Ironworkers A.S. degree at Cerritos College can a learner clear through credit for prior learning?","session_id":"smoke-ci","history":[]}'
-answer_must_match "\bIWAP[ -]?4[01]\.[0-9]" "7r names an Ironworker course by number"
-answer_must_match "31\.5" "7r ⭐ gives the CPL figure the display build states (up to 31.5 of the 34-38 units the catalog prints)"
+answer_must_match "\bIWAP[ -]?4[01]\.[0-9]" "7t names an Ironworker course by number"
+answer_must_match "31\.5" "7t ⭐ gives the CPL figure the display build states (up to 31.5 of the 34-38 units the catalog prints)"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).

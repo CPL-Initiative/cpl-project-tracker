@@ -19,7 +19,7 @@ checkpoint at about 140K tokens left, with PR #1854 open and its A/B preview run
    `s275-deployed-v70-under-standing-authorization-2026-09-18`). Then:
    - merge once `test` is green on the head (squash);
    - dispatch `cpl-chat-deploy.yml` on main with `confirm: DEPLOY`;
-   - dispatch `cpl-chat-smoke.yml` and confirm 7r. The anon key reads the Ironworker A.S.'s
+   - dispatch `cpl-chat-smoke.yml` and confirm 7t. The anon key reads the Ironworker A.S.'s
      `display` (up to 31.5), and Sierra's answer names IWAP courses and says 31.5.
    Then delete the preview function (`cleanup: true`) or note it.
 2. **Read open-asks sheet 33's replies first**:
@@ -64,7 +64,7 @@ checkpoint at about 140K tokens left, with PR #1854 open and its A/B preview run
   The `display` column is live and filled. Build `bbbbfb611f15`: all 20 rows match the receipt
   (`--verify-sql`).
 - Sierra (in #1854): CATALOG REQUIREMENTS lines carry the facts, the rules keep the leads as leads,
-  and smoke 7r holds her to the page. `sierra.js` fills the box from `?ask=` and never sends.
+  and smoke 7t holds her to the page. `sierra.js` fills the box from `?ask=` and never sends.
 - Guards:
   - `tests/roep_display_test.py` (in CI);
   - `sierra_program_courses` blocks 14-15;

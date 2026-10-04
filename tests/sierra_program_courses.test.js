@@ -277,8 +277,8 @@ block("15. without display facts the block is unchanged, and the read asks for t
   check("fetchCheckedRequirements selects display",
     /\.select\("control_number,catalog_year,source_url,measure,total_min,total_max,record,display"\)/.test(FN));
   const SMOKE = fs.readFileSync("chatbox/smoke_test.sh", "utf8");
-  check("smoke 7r holds the answer to the page's figure",
-    /run "7r CPL on a checked program/.test(SMOKE) && /answer_must_match "31\\\.5"/.test(SMOKE));
+  check("smoke 7t holds the answer to the page's figure",
+    /run "7t CPL on a checked program/.test(SMOKE) && /answer_must_match "31\\\.5"/.test(SMOKE));
 });
 
 const failed = results.filter((r) => !r[1]);
