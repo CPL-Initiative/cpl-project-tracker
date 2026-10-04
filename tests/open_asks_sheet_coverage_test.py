@@ -20,6 +20,7 @@ Run from repo root:  python3 tests/open_asks_sheet_coverage_test.py
 """
 import importlib.util
 import os
+import re
 import sys
 import tempfile
 
@@ -305,6 +306,21 @@ check("⭐ every dismissal carries a reason",
 check("no lane is both covered and dismissed",
       not ({it["lane"] for it in items} & set(mod.NO_OPEN_ASK)),
       "a lane answered in two places drifts")
+
+# Sam, 2026-10-04: "Can't find sheet 28... Often I lose track of where they are
+# or which is most recent." Every sheet had one title; each now names its number.
+_src = open(BUILDER, encoding="utf-8").read()
+check("each sheet's page title names its number",
+      "sheet_title()" in _src and "Everything outstanding for you\", I" not in _src
+      and re.search(r"'Open Asks Sheet %s' % n.group\(1\)", _src) is not None,
+      "the builder titles every sheet alike again")
+_html = open(os.path.join(ROOT, "docs", "visuals",
+                          re.search(r"SHEET_ID = '([^']+)'", _src).group(1) + ".html"),
+             encoding="utf-8").read() if re.search(r"SHEET_ID = '([^']+)'", _src) else ""
+_num = re.search(r"SHEET_ID = '[^']*-(\d+)'", _src)
+check("the committed sheet's <title> carries its number",
+      bool(_num) and ("<title>Open Asks Sheet %s</title>" % _num.group(1)) in _html,
+      "rebuild the sheet after changing its title")
 
 passed = 0
 for name, ok, why in results:

@@ -248,6 +248,37 @@ homepage); Santa Monica timed out; **Irvine Valley's "All Program Maps" page
 (`ivc.edu/node/3220`) answered**. The refusal is the mapper service's, not
 Miramar's.
 
+**Catalog addenda (S325, PR #1848).** Sam, 2026-10-04: *"colleges are often
+publishing catalog addendum to correct errors and add late changes to the
+official catalog. We need to track this in our schema and have our agents
+aware."* The census scored addendum links down so none could win the catalog
+slot, and then dropped them. `addendum_links()` now records each addendum,
+supplement or errata link on the homepage, a catalog index or the catalog page,
+for the current or prior catalog year, in `census_evidence -> 'addenda'` (job log
+on a branch; the registry's evidence on the weekly apply, through the existing
+write function). `addendum_start_year()` dates a link from every year its words
+or file name carry: a pair (2026-27), a span (2023-2025 amends its last year), a
+two-digit path pair (/24-25/), a single year (a fall term or month starts the
+year, any other ends it); an upload folder's year never counts. Left out: older
+years, archives, class-schedule and important-dates addenda, calendars,
+"Supplemental Instruction", a sibling college's addendum, and reader-service
+copies. **Measured (run 37199538519, replayed offline with the final filter): 78
+addenda at 52 of 118 colleges** (2026-27: 19; 2025-26: 41; no year named: 18).
+The raw read found 136 at 58; every one of the 57 dropped was older, a schedule's,
+a calendar's or a proxy copy.
+- **Proposed table** `kb/supabase_program_source_addenda.sql`, **not applied**: one
+  row per (college, url), the catalog year it amends, a status (listed, read,
+  applied, gone, not an addendum), `programs_changed` for the reading agent,
+  history by trigger, one service-role write function, public read.
+- **Agents aware (the plan):** the census lists addenda; a reading agent reads
+  each listed addendum, files which programs it changes, and marks it read; a
+  program record carries the addenda it was checked against, and a record whose
+  college has an unread addendum for its catalog year is flagged; Sierra cites
+  "the 2026-27 catalog as amended by the addendum of <date>".
+
+**NEEDS SAM (open-asks sheet 29): (5)** "Go" on the addenda table as described
+(`kb/supabase_program_source_addenda.sql`).
+
 **NEEDS SAM (open-asks sheet 28):** (3) how the pilot reads Miramar's sequence,
 given the mapper's refusal (proposed: a person saves the one map; Sam asks for
 access); (4) whether Sierra may say "required" and give a unit total for a

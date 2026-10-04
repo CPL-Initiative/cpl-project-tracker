@@ -446,6 +446,13 @@ first day.** Do the remembering for them.
   Rebuild it at every checkpoint and hand over the link. A sheet whose cards
   changed is published under a fresh `SHEET_ID` and artifact, because its replies
   are keyed to card position ([`decision_sheets`](docs/reference/decision_sheets.md)).
+  **Link every sheet you name, every time (Sam, 2026-10-04).** *"Can't find
+  sheet 28, can you make it a rule to add the sheet link next to a presence to
+  it in chat? Often I lose track of where they are or which is most recent."*
+  Every mention of a sheet in chat carries its link beside it and says whether
+  it is the current one; a superseded sheet's mention links the sheet that
+  replaced it. Each sheet's page title names its number (*Open Asks Sheet 29*),
+  so the gallery tells them apart.
 - **Capture unplanned substance on the fly (Sam, 2026-08-30).** His important
   statements are never planned — *"just comes out of our interactions and I
   don't think to say specifically braindump."* When Sam or a team member says
@@ -753,7 +760,7 @@ stays here.
 
 > **Anything waiting on Sam is also a card on a sheet.** The standing one,
 > `kb/_build_open_asks_decision_sheet.py` →
-> [8opUAZ9y9QKMbzPd2Vvz7Y](https://claude.ai/artifact/8opUAZ9y9QKMbzPd2Vvz7Y) (sheet 28),
+> [FhxQ5HXM1EBffhS5ce3Tj7](https://claude.ai/artifact/FhxQ5HXM1EBffhS5ce3Tj7) (sheet 29),
 > **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
 > answers one, change that lane's marker in the same PR, or the sheet asks again
 > ([`decision_sheets`](docs/reference/decision_sheets.md)).
