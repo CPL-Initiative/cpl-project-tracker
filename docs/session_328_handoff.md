@@ -120,3 +120,15 @@ checkpoint at about 140K tokens left, with PR #1854 open and its A/B preview run
 - Read Irvine Valley's and Santa Monica's maps.
 - The addenda reading agent once the 2026-10-11 apply fills the table.
 - Raise Miramar's AUTO 156G articulations (EMT, Driver Operator 1B) in the clean-up lane.
+
+## Emergency close (S327, 19:0xZ)
+
+The full Rule 9 checkpoint ran at `7ff8d57`. After it, two things changed: the smoke rename (7r to 7t) and
+sheet 33's answers (item 2 above; memory row written). The session then closed at the context emergency
+line. **Not refreshed after those changes:**
+- the three lanes still carry the five sheet-33 NEEDS SAM markers (item 2 says what to write);
+- `kb/cpl_todos.json` still asks Sam to answer sheet 33 (delete that item);
+- the vault session note and the lessons doc do not mention the rulings;
+- the cpl_memory row `roep-display-build-live-2026-10-04` still says "smoke 7r" (the repo guard blocks
+  an UPDATE there; supersede it with a corrected row if it matters).
+INDEX, the pipeline tab and the READMEs needed nothing new.
