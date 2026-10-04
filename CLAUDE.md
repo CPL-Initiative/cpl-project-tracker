@@ -512,8 +512,8 @@ first day.** Do the remembering for them.
   quiet) — close with this line, filled in, on its own:
   > *Greetings, you are Sky**Next** (Session N+1), see Sky**You**'s handoff —
   > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.*
-  Sam removed the guard-check sentence that used to close it (2026-09-28): it was
-  added to abate the approval storm. You **assign** the next moniker (one name, not a
+  Sam's routine can start the session instead (2026-10-04):
+  [`scheduled_sessions`](docs/reference/scheduled_sessions.md). You **assign** the next moniker (one name, not a
   menu) and it must be the one the handoff names. *"I just copy and paste the whole thing in the new session. If I
   need to change direction, I just add the new direction to the opening note"* —
   so the line must stand alone, and nothing may follow it but the sign-off. The
@@ -755,7 +755,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> ([PE2mmQZBvoArb5MTnC2gCG](https://claude.ai/artifact/PE2mmQZBvoArb5MTnC2gCG), sheet 34). Answering
+> ([FVG2MYA9Xw5HqC8EkAftgq](https://claude.ai/artifact/FVG2MYA9Xw5HqC8EkAftgq), sheet 35). Answering
 > one changes its lane's marker in the same PR ([`decision_sheets`](docs/reference/decision_sheets.md)).
 
 | Phase | What | Status |

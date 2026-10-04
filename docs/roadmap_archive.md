@@ -5825,3 +5825,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### INDEX update history, moved 2026-10-04 (S327)
 
 - 2026-10-02 (S317 SkyCompass, the Sierra narration): KB note `methodology-an-input-read-outside-the-repo-carries-its-text-and-its-gaps`; Scenario 2 narrated by Sierra in ElevenLabs ([#1823](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1823) and the follow-up), `_Draft_3` linked from the explainer; sheet 22 answered.
+
+## INDEX update history (moved from docs/INDEX.md)
+- 2026-10-03 (S320 SkyCensus): the program-source census and its registry (#1836, Phase 0 of the harvest): `program_source_registry` live with 118 rows, a history table and one write path, weekly apply; the vendor-link hop and four-slice read (#1838; first full read: 109 of 118 catalogs found); new lessons doc `program_requirements_harvest_lessons`; the revoke KB note gained a tables section (TRUNCATE); handoff 321.
+- 2026-10-03 (S319 SkyRudder): KB note `methodology-write-the-rule-as-the-sentence-you-want-said`; handoff 320; Sierra's program course lists deployed (#1832, smoke 7l), 7s's articulation set-aside (#1833), the timing log (#1834); new lane `program-requirements-harvest` with its plan doc; sheet 23.

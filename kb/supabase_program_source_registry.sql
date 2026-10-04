@@ -390,3 +390,58 @@ alter table public.program_source_registry
     check (sequence_access in ('open', 'refused', 'unreached', 'not_read')),
   add column if not exists sequence_note        text,
   add column if not exists sequence_checked_run text;
+
+-- ── The college's procedure record (S329, 2026-10-04) ───────────────────────
+-- Sam, open-asks sheet 34 card 2 (2026-10-04 19:18Z, as proposed): one procedure
+-- record per college, kept with its history on the college's registry row:
+-- hosts, platform, reading steps, refusals, workarounds tried, nuances. The
+-- reader loads it before each run (kb/_college_page_read.py load_procedure); the
+-- harvest tab's Procedures view shows it; each workaround Sam suggests lands as a
+-- change to it under his name and date; a request to a college is drafted only
+-- when its record shows every step tried (sheet 33 card 5).
+--   procedure     jsonb: {v, hosts[], steps[], nuances[], workarounds[], open[]}
+--   procedure_by  who changed it last: a person, or the session and run
+--   procedure_at  when
+-- program_source_census_apply() names its columns, so the weekly census never
+-- writes these. Anyone with the public key reads the registry, so a record names
+-- offices and hosts, never staff; the only person it names is a curator who
+-- suggests a workaround. Applied as migration
+-- program_source_registry_procedure_2026_10_04 on Sam's go in session (S329,
+-- 2026-10-04: "apply the procedure record"). Cerritos's first record is in
+-- kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql; its guarded
+-- UPDATE timed out twice through the connector, which holds a data write for a
+-- person's confirmation, so it waits for Sam to run it. The history trigger
+-- names procedure_by when procedure_at changes.
+alter table public.program_source_registry
+  add column if not exists procedure    jsonb,
+  add column if not exists procedure_by text,
+  add column if not exists procedure_at timestamptz;
+
+create or replace function public.program_source_registry_keep_history()
+returns trigger
+language plpgsql
+set search_path = public
+as $$
+begin
+  insert into public.program_source_registry_history (college, changed_by, op, old_row)
+  values (
+    old.college,
+    case when tg_op = 'UPDATE'
+         then coalesce(
+                case when new.corrected_at is distinct from old.corrected_at
+                     then new.corrected_by end,
+                case when new.procedure_at is distinct from old.procedure_at
+                     then new.procedure_by end,
+                case when new.sequence_checked_run is distinct from old.sequence_checked_run
+                     then new.sequence_checked_run end,
+                new.census_run_id)
+    end,
+    tg_op,
+    to_jsonb(old));
+  if tg_op = 'UPDATE' then
+    new.updated_at := now();
+    return new;
+  end if;
+  return old;
+end
+$$;

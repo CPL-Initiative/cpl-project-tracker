@@ -9,7 +9,7 @@
 // classroom seat time) and CLEP exam options for GE requirements (◆, per the
 // CCCCO systemwide exam-credit charts, ESLEI 24-35). Built for the California
 // Apprenticeship Council presentation (2026-08-13): the first pathway is
-// Cerritos College's Field Ironworker Supervisor baccalaureate (fall 2027),
+// Cerritos College's Field Ironworker Supervisor baccalaureate (spring 2027),
 // where journeyworker ironworkers arrive with 30+ units of CPL on day one.
 // The pathway DEFINITIONS live in cpl_pathways_data.js (curated, static); the
 // ✓ marks are DERIVED at render time from the live CER dataset
@@ -1207,7 +1207,7 @@
     hero.appendChild(el("h2", null, prog.title || prog.program || ""));
     if (prog.blurb) hero.appendChild(el("p", null, prog.blurb));
     var legend = el("div", "llegend");
-    legend.appendChild(el("span", null, [lchip("data"), document.createTextNode(" read from the catalog, COCI, MAP or the Centers of Excellence")]));
+    legend.appendChild(el("span", null, [lchip("data"), document.createTextNode(" read from Cerritos's catalog and pages, the regional program record, a partner district's pages, COCI, MAP or the Centers of Excellence")]));
     legend.appendChild(el("span", null, [lchip("confirm"), document.createTextNode(" found on a public web page; the next harvest reads it first")]));
     hero.appendChild(legend);
     wrap.appendChild(hero);

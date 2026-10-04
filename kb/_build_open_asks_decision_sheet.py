@@ -31,6 +31,14 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 35 (S329 checkpoint, 2026-10-04, SHEET_ID 2026-10-04-open-asks-35): sheet 34 is answered (19:18Z).
+One card: Cerritos's procedure record. Sam said "apply the procedure record" in session; the migration
+(three columns, the trigger) landed, and the row's guarded UPDATE timed out twice at the connector, which
+holds a bare UPDATE for a person. The card carries the UPDATE to paste. Its first build took the receipt's
+first UPDATE, which sits in the rollback comment, so Sam's paste failed as a syntax error with nothing
+written; rebuilt onto the same artifact (no reply existed) with the one statement and a guard against
+comment lines in paste text.
+
 Sheet 34 (S328, 2026-10-04, SHEET_ID 2026-10-04-open-asks-34): Sam answered all five cards of sheet 33
 (https://claude.ai/artifact/HLeo1NxQvsVkZNUnqw8YCQ) at 18:52-18:57Z, and the lanes record them. Two new
 cards: the statement of who CPL serves (his card 1 ask) and the per-college procedure record (his card 5
@@ -198,8 +206,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-34.html')
-SHEET_ID = '2026-10-04-open-asks-34'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-35.html')
+SHEET_ID = '2026-10-04-open-asks-35'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -792,6 +800,10 @@ def items():
     # Sheet 34 (S328) was answered at 19:18Z on 2026-10-04, both his own call: card 1 the statement as
     # drafted with two edits (no UpSkill line; "datasets", never "scrape"), card 2 the per-college
     # procedure record as proposed. Both lanes record the rulings; no card remains.
+
+    # Sheet 35 (S329) was answered at 21:43Z on 2026-10-04 (through 1, his own call): "pasted",
+    # "success no rows returned". Read back: Cerritos's procedure record on its row at 21:42:37Z. The
+    # harvest lane records it and drops its NEEDS SAM in the same change; no card remains.
 
     return I
 

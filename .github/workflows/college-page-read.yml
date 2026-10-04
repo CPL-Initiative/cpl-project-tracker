@@ -1,0 +1,75 @@
+name: College page read
+# Reads a named list of one college's pages (kb/college_reads/<plan>.json) and
+# prints what they say, for curated lines marked To confirm. First use: the
+# Cerritos Ironworker ladder on CPL Pathways (S329). The session container
+# cannot reach college sites; the runner can.
+#
+# Sam's call 5 on sheet 23 (2026-10-03) approves reading college websites from
+# runners on a slow schedule that names the CPL Initiative; this read uses the
+# census's Reader (robots.txt first, 4 s between loads, the census user agent).
+# Sheet 33 card 5 (2026-10-04): the agent exhausts its own reading before any
+# request to a college. It WRITES NOTHING: a session reads the job log back
+# through the GitHub MCP. No schedule, no secrets.
+#
+# A dispatch reads the plan it names. A push reads only the plans its last
+# commit adds or changes, so a code-only push never re-reads a college's site.
+on:
+  workflow_dispatch:
+    inputs:
+      plan:
+        description: "Plan file under kb/college_reads/ (without .json)"
+        required: true
+        default: "cerritos_ironworker_ladder"
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/college-page-read.yml'
+      - 'kb/_college_page_read.py'
+      - 'kb/college_reads/*.json'
+
+permissions:
+  contents: read
+
+# A newer run waits behind a running one: a cancelled read throws away loads
+# already made of the college's site.
+concurrency:
+  group: college-page-read-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  read:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium, pypdf, pdfminer
+        run: |
+          pip install --quiet playwright pypdf pdfminer.six
+          python -m playwright install --with-deps chromium
+
+      - name: Read
+        env:
+          CENSUS_DELAY_MS: '4000'
+          EVENT: ${{ github.event_name }}
+          PLAN: ${{ github.event.inputs.plan }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            case "$PLAN" in
+              ''|*[!a-z0-9_]*) echo "::error::plan must be a file name of a-z, 0-9 and _"; exit 1 ;;
+            esac
+            plans="kb/college_reads/${PLAN}.json"
+          else
+            plans=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'kb/college_reads/*.json' 2>/dev/null || true)
+          fi
+          if [ -z "$plans" ]; then
+            echo "No plan added or changed in this commit: nothing to read."; exit 0
+          fi
+          for p in $plans; do python3 kb/_college_page_read.py "$p"; done

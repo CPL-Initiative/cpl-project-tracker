@@ -1,0 +1,34 @@
+{
+  "_readme": "Pages a runner reads for the Cerritos Ironworker ladder's four To confirm lines (cpl_pathways_data.js, the ladder's confirm list). kb/_college_page_read.py reads them through the census's Reader: robots.txt first, CENSUS_DELAY_MS between loads, the CPL Initiative user agent. Addresses found by web search on 2026-10-04 (S329); the session container cannot reach cerritos.edu or the CourseLeaf catalog, a runner can. Each page names the line it answers; follow is a pattern for links on that page to read one level deeper, on the same registrable domain.",
+  "college": "Cerritos College",
+  "questions": {
+    "bs": "The B.S. course list, admission rule and first cohort.",
+    "hs_articulation": "The high school articulation list.",
+    "noncredit_aed": "Whether the 26 noncredit AED courses still run.",
+    "apprenticeship_hours": "The apprenticeship's classroom hours."
+  },
+  "keywords": ["ironwork", "iron worker", "IWAP", "reinforc", "structural", "bachelor", "baccalaureate", "B\\.S\\.", "supervis", "admission", "cohort", "2027", "weld", "articulat", "high school", "Downey", "Columbus", "CCAP", "dual enroll", "AED 4", "AED 36", "AED 80", "pre-apprentice", "noncredit", "related instruction", "classroom", "hours", "JATC", "Local 433", "Local 416", "credit by exam", "prior learning"],
+  "pages": [
+    {"answers": ["bs", "apprenticeship_hours"], "url": "https://www.cerritos.edu/academics/aed/apprenticeship-programs/Field_Ironwork.htm",
+     "follow": "bachelor|baccalaureate|supervis|ironwork|jatc|local 4|\\.pdf"},
+    {"answers": ["bs"], "url": "https://www.cerritos.edu/",
+     "follow": "bachelor|baccalaureate"},
+    {"answers": ["bs"], "url": "https://www.cerritos.edu/releases-2026/05/SOTC.htm"},
+    {"answers": ["bs"], "url": "https://www.cerritos.edu/school-relations/_includes/docs/Cerritos-College-2026-Degree-and-Certificate-Programs_ua.pdf"},
+    {"answers": ["bs"], "url": "https://regionalcte.org/browse/ZyxAg"},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/academics/divisions/epp/articulation_cerritos_college.htm",
+     "follow": "weld|agreement|articulat|list|\\.pdf|\\.xlsx"},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/academics/divisions/epp/articulation_agreements.htm",
+     "follow": "weld|agreement|list|\\.pdf|\\.xlsx"},
+    {"answers": ["hs_articulation"], "url": "https://hsarticulation.cerritos.edu/",
+     "follow": "agreement|course|search|weld|school|district"},
+    {"answers": ["hs_articulation"], "url": "https://hsarticulation.cerritos.edu/About"},
+    {"answers": ["hs_articulation", "noncredit_aed"], "url": "https://www.cerritos.edu/welding/_includes/docs/2026_Welding_Roadmap_ua.pdf"},
+    {"answers": ["noncredit_aed"], "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/pre-apprenticeship-certificate-completion/"},
+    {"answers": ["noncredit_aed"], "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/departments/adult-education/adult-education.pdf"},
+    {"answers": ["noncredit_aed", "apprenticeship_hours"], "url": "https://www.cerritos.edu/academics/aed/",
+     "follow": "schedule|class|noncredit|apprentice"},
+    {"answers": ["apprenticeship_hours", "noncredit_aed"], "url": "https://www.cerritos.edu/academics/aed/apprenticeship-programs/_includes/docs/Apprenticeship_Flyer_ua.pdf"},
+    {"answers": ["apprenticeship_hours"], "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/field-ironworkers-aa/"}
+  ]
+}

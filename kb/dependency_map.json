@@ -4,10 +4,10 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 585,
+  "file_datasets": 587,
   "external_services": 157,
-  "consumers": 408,
-  "workflows": 43,
+  "consumers": 409,
+  "workflows": 44,
   "data_js_files": 69,
   "tabs": 37
  },
@@ -598,7 +598,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 35
+     "line": 43
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -3332,7 +3332,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 314
+     "line": 322
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4504,7 +4504,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 303
+     "line": 311
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4865,7 +4865,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 293
+     "line": 301
     }
    ],
    "served": true,
@@ -5027,7 +5027,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 590
+     "line": 598
     }
    ],
    "producers": [
@@ -5996,21 +5996,21 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-34.html": {
+  "file:docs/visuals/<date>-open-asks-35.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 201
+     "line": 209
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 201
+     "line": 209
     }
    ],
    "served": false,
@@ -6486,7 +6486,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 380
+     "line": 388
     }
    ],
    "served": true,
@@ -6565,7 +6565,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 303
+     "line": 311
     }
    ],
    "served": true,
@@ -7084,6 +7084,19 @@
    "consumers": [
     {
      "id": "workflow:cer-decision-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_college_page_read.py": {
+   "consumers": [
+    {
+     "id": "workflow:college-page-read.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -9296,7 +9309,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 356
+     "line": 364
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -10015,7 +10028,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 465
+     "line": 473
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -10596,7 +10609,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 437
+     "line": 445
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -11889,7 +11902,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 679
+     "line": 687
     }
    ],
    "served": false,
@@ -13727,7 +13740,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 426
+     "line": 434
     }
    ],
    "served": false,
@@ -14361,7 +14374,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 660
+     "line": 668
     },
     {
      "id": "script:veteran-sprint-map/extract_military.py",
@@ -14497,7 +14510,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 303
+     "line": 311
     }
    ],
    "served": true,
@@ -14917,7 +14930,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 323
+     "line": 331
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15092,7 +15105,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 501
+     "line": 509
     }
    ],
    "served": true,
@@ -15118,7 +15131,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 551
+     "line": 559
     }
    ],
    "served": true,
@@ -15619,7 +15632,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 450
+     "line": 458
     }
    ],
    "served": true,
@@ -16178,6 +16191,19 @@
      "how": "yaml",
      "line": 0
     },
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/college_page_read_test.py": {
+   "consumers": [
     {
      "id": "workflow:js-tests.yml",
      "kind": "workflow",
@@ -17363,7 +17389,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 337
+     "line": 345
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -21562,6 +21588,18 @@
    "chain": [],
    "urls": []
   },
+  "college-page-read.yml": {
+   "name": "College page read",
+   "crons": [],
+   "scripts": [
+    "kb/_college_page_read.py"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "cos-authority-sync.yml": {
    "name": "cos-authority-sync",
    "crons": [
@@ -21925,6 +21963,7 @@
     "tests/supabase_table_grants_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
+    "tests/college_page_read_test.py",
     "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
     "tests/program_courses_build_test.py",

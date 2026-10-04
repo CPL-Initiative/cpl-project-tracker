@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-300 document(s).
+301 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 330 | [the Cerritos read 4, the procedure record paste, Sam's routine](../session_330_handoff.md) | 2026-10-04 |
 | 329 | [Sierra's statement deploy, the ladder PR, the Cerritos runner read](../session_329_handoff.md) | 2026-10-04 |
 | 328 | [the ROEP display build; Sierra wired to it; CSU LA, outcomes and the Ironworker proof](../session_328_handoff.md) | 2026-10-04 |
 | 327 | [sheet 29 carried out; Sierra's catalog requirements live; sheet 31 pasted](../session_327_handoff.md) | 2026-10-04 |

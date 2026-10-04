@@ -14058,7 +14058,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 52,
+   "count": 53,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14714,6 +14714,21 @@
      "updated": ""
     },
     {
+     "created": "2026-10-04",
+     "governs": [],
+     "path": "docs/reference/scheduled_sessions.md",
+     "status": null,
+     "tags": [
+      "reference",
+      "scheduled-sessions",
+      "checkpoint",
+      "governance-team-enablement"
+     ],
+     "title": "Scheduled sessions \u2014 what a session started by Sam's routine does",
+     "type": null,
+     "updated": "2026-10-04"
+    },
+    {
      "created": "2026-09-09",
      "governs": [],
      "path": "docs/reference/skyview_invariants.md",
@@ -14781,8 +14796,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 300,
+   "count": 301,
    "docs": [
+    {
+     "created": "2026-10-04",
+     "governs": [],
+     "n": 330,
+     "path": "docs/session_330_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-pathways",
+      "scheduled-sessions",
+      "decision-sheet"
+     ],
+     "title": "the Cerritos read 4, the procedure record paste, Sam's routine",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-04",
      "governs": [],
@@ -19889,5 +19921,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1038
+ "total": 1040
 }
