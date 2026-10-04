@@ -185,6 +185,16 @@ SHEET_ID = '2026-10-04-open-asks-29'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
+
+def sheet_title(sheet_id=None):
+    """The page's name, carrying its number. Every sheet used to be titled
+    "Everything outstanding for you", so the gallery listed a column of
+    identical names and Sam could not find sheet 28 or tell which was newest
+    (2026-10-04)."""
+    n = re.search(r'(\d+)$', sheet_id or SHEET_ID)
+    return 'Open Asks Sheet %s' % n.group(1) if n else 'Open Asks Sheet'
+
+
 # A lane whose marker is NOT an open ask. The reason is the point: a bare
 # exclusion list would let a real ask be silenced by adding one line.
 NO_OPEN_ASK = {
@@ -902,7 +912,7 @@ def build(check_only=False):
     # JUST THE ITEMS (Sam, 2026-09-29): "Per our rules, no need for instruction
     # section on decision sheets; just the items." No framing, no count line,
     # no how-to box: build_sheet() draws its intro only when one is passed.
-    out = m.build_sheet("Everything outstanding for you", I, sheet_id=SHEET_ID)
+    out = m.build_sheet(sheet_title(), I, sheet_id=SHEET_ID)
     open(OUT, 'w', encoding='utf-8').write(out)
     print(f"{len(I)} items · {len(lanes)} lanes · {len(out):,} bytes "
           f"→ {os.path.relpath(OUT, ROOT)}")
