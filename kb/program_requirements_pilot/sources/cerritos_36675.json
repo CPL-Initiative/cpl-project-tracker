@@ -1,0 +1,82 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Cerritos College",
+ "control_number": "36675",
+ "shape": "noncredit",
+ "title": "Energy Corps",
+ "award": "Noncredit program",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "courseleaf",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/energy-corps-certificate-completion/",
+  "title": "Cerritos College Academic Catalog",
+  "h1": "Academic Catalog",
+  "text_from": "innerText"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "AED9001",
+  "AED9002",
+  "AED9003",
+  "AED9005",
+  "AED9008",
+  "AED9009"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000593060",
+   "code": "AED 90.01",
+   "title": "Introduction to Energy Surveying",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000593061",
+   "code": "AED 90.02",
+   "title": "Basic Electricity and Wiring Fundamentals",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000593062",
+   "code": "AED 90.03",
+   "title": "Introduction to Lighting Retrofits",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000606395",
+   "code": "AED 90.05",
+   "title": "OSHA-10 Training",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000611243",
+   "code": "AED 90.08",
+   "title": "Solar Energy",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000622726",
+   "code": "AED 90.09",
+   "title": "Solar Panel Installation",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "Skip to Content AZ Index Catalog Home\nSearch catalog\nSubmit search\nAcademic Catalog\nHOME\nCATALOG CONTENTS\nA-Z INDEX\n2026-2027 EDITION\nQuick Links\nAddendum\nAbout Cerritos\nDegrees, Courses &​ Pathways\nAcademic Departments\nCerritosOnline\nCourses &​ Descriptions\nDegrees &​ Certificates\nGraduation &​ Transfer Requirements\nLearning &​ Career Pathways\nNoncredit Programs &​ Courses\nAdvanced English as a Second Language (Non Credit)\nAutomotive Tools and Equipment (Non Credit)\nCollege Readiness (Non Credit)\nCourses in English as a Second Language (Non Credit)\nCourses in High School Equivalency (Non Credit)\nCourses in GED Test Preparation in Spanish (Non Credit)\nEnergy Corps (Non Credit)\nEntrepreneurship-​Small Business Growth (Non Credit)\nGED Test Preparation in English (Non Credit)\nIntroduction to Basic Entrepreneurship (Non Credit)\nPre GED (Non Credit)\nPre GED Spanish (Non Credit)\nPre-​Apprenticeship (Non Credit)\nRenewable Energy (Non Credit)\nVocational English as a Second Language (Non Credit)\nWorkforce Preparedness (Non Credit)\nAdult Education Course Descriptions (AED)\nSearch Courses\nAdmissions &​ Enrollment\nInformación en Español\nPrograms &​ Services\nPolicies &​ Resources\n PRINT OPTIONS\nHome›\nDegrees, Courses & Pathways›\nNoncredit Programs & Courses›\nEnergy Corps (Non Credit)\nEnergy Corps (Non Credit)\n\nDepartment website: https://www.cerritos.edu/aed/\n\nCERTIFICATE OF COMPLETION\n\nThe Adult Education Energy Corps Certificate of Completion prepares students to work for businesses in residential and commercial energy auditing; electrical wiring and commercial lighting retrofit trade industries. Construction is one of the largest industries, offering excellent opportunities for high earnings, career advancement, and business ownership. These workforce skills are necessary to maintain well-paying and sustainable jobs. The certificate takes the student through several levels of expertise.\n\nTo obtain a Certificate of Completion, students are required to complete the four (4) courses outlined below. AED 90.01 Introduction to Energy Surveying must be completed prior to enrolling in AED 90.02 Basic Electricity and Wiring Fundamentals.\n\nProgram Student Learning Outcomes\nExplain basic electrical theory\nIdentify electrical practices and codes\nDemonstrate correct wiring and installation techniques\nFollow proper procedures and observe OSHA safety protocols\nDemonstrate knowledge of OSHA safety standards\nDemonstrate the correct and safe use of various diagnostic tools and equipment\nIdentify the evaluation procedure, steps and protocols required for accurate energy data collection\nAccurately answer questions on retrofit procedure, steps, analysis, components, and safety protocols required in the lighting retrofit trade;\nStandard grading will be used\nAccurately demonstrate correct and safe use of various lighting diagnostic tools/equipment\nDiscuss the interrelationship of craft skills, construction industry, and green workers to the construction process for alternative energy\nDescribe the basic elements of green construction and green energy buildings\nProgram Requirements\nCourse List\nCode Number\tCourse Title\tUnits\nRequired Courses\t\nAED 90.01\tIntroduction to Energy Surveying (40 Hours)\t0.0\nAED 90.02\tBasic Electricity and Wiring Fundamentals (40 Hours)\t0.0\nAED 90.03\tIntro to Lighting Retrofits (40 Hours)\t0.0\nAED 90.05\tOSHA-10 Training (16 Hours)\t0.0\nTotal Hours of Completion (136 Hours)\t\nOptional Elective\nCourse List\nCode Number\tCourse Title\tUnits\nAED 90.08\tSolar Energy (80 Hours)\t0.0\nAED 90.09\tSolar Panel Installation (90 hours)\t0.0\n\nThis Certificate of Completion prepares students for job placement and career advancement in the fields of Energy Surveying, Basic Electricity, Wiring Fundamentals and Lighting Retrofits. In today’s workforce, having an industry certificate is highly desirable for employment in these positions. In addition, these workforce skills are necessary to enter well paying and sustainable jobs.\n\n© 2026-2027 Cerritos College\n\nBack to top",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

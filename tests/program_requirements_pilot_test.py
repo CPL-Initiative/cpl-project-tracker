@@ -26,6 +26,7 @@ be trusted, and the ways each goes wrong are known in advance:
 Each is pinned below against the modules' OWN functions, with no browser and
 no network. Run from repo root: python3 tests/program_requirements_pilot_test.py
 """
+import glob
 import json
 import os
 import re
@@ -221,6 +222,45 @@ res = P.locate_html(_Reader(pages2), {"title": "Culinary Arts", "award": "Certif
                     P.closed_from_rows(rows), HOME, {}, False)
 check(OFFSITE not in [t["url"] for t in res["trail"]],
       "a better-worded link off the catalog's host is never loaded: %s" % [t["url"] for t in res["trail"]])
+
+# ── Run 4's lessons (37166814546): CourseLeaf's tables, curriQunet's views ───
+table = ('<table class="sc_courselist"><tr><td><a class="bubblelink code">CUL&nbsp;36</a></td>'
+         '<td>Introduction</td><td>8.5</td></tr></table>')
+kept = P.courseleaf_lists({"courselists": [{"heading": "Requirements", "html": table}]},
+                          P.closed_from_rows(rows))
+check(len(kept) == 1, "a CourseLeaf table writing CUL&nbsp;36 is kept (run 4 kept none)")
+check(P.clickable_candidate("Program Requirements", biz)
+      and not P.clickable_candidate("Graduation and Transfer Requirements", biz),
+      "inside a program's view, its requirements item is clicked; the college's graduation rules are not")
+
+# ── The filed fixtures: real catalog text the matcher must keep reading ──────
+fixtures = sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_pilot", "sources", "*.json")))
+check(len(fixtures) >= 16, "the capture pass's 16 programs are filed (run 4)")
+for path in fixtures:
+    with open(path) as fh:
+        fx = json.load(fh)
+    again = sorted(P.find_codes(fx["text"], fx["closed_list"]))
+    check(again == sorted(fx["codes_found"]),
+          "%s: the matcher still finds on the filed text what it found on the runner "
+          "(%d now, %d then)" % (os.path.basename(path), len(again), len(fx["codes_found"])))
+    check(fx["coverage"] >= 0.5 and fx.get("captured_run"),
+          "%s: only a page that named half the listed codes is filed, with its run" % os.path.basename(path))
+
+# ── The extraction pass reads fixtures only and calls only the function ──────
+import _program_requirements_extract as X  # noqa: E402
+check(X.cost("claude-opus-5-5", {"input_tokens": 1_000_000, "output_tokens": 100_000}) == 6.0,
+      "a call is priced from its usage at Opus 5.5's rates ($4 in, $20 out per million)")
+check(X.cost("some-fallback-model", {"input_tokens": 10}) is None,
+      "a model the table does not price reads None, never a wrong number")
+check(len(X.load_sources()) == len(fixtures), "the extraction pass reads every filed fixture")
+xsrc = open(os.path.join(ROOT, "kb", "_program_requirements_extract.py")).read()
+check("/functions/v1/" in xsrc and "/rest/v1/" not in xsrc and "/rpc/" not in xsrc,
+      "the extraction pass calls the Edge Function and touches no table")
+with open(os.path.join(ROOT, ".github", "workflows", "program-requirements-extract.yml")) as fh:
+    xwf = "\n".join(l for l in fh.read().splitlines() if not l.lstrip().startswith("#"))
+check(not re.search(r"^\s*schedule:", xwf, re.M) and "sources" not in xwf,
+      "the extraction pass runs by hand or when its own code changes, never on a schedule "
+      "or because a fixture changed")
 
 # ── The scorer: the plan's three automatic bars ──────────────────────────────
 rec = {"program": {"total_units": 33.5, "open_elective_units": 0},

@@ -1,0 +1,139 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "West Los Angeles College",
+ "control_number": "37839",
+ "shape": "cert_electives",
+ "title": "Real Estate Salesperson",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "pdf",
+ "format": "single_pdf",
+ "method": "pdf_pages",
+ "source": {
+  "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+  "pages": [
+   151,
+   152
+  ],
+  "extractor": "pypdf",
+  "pages_total": 358
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "ACCTG1",
+  "BUS5",
+  "REALES1",
+  "REALES10",
+  "REALES11",
+  "REALES14",
+  "REALES21",
+  "REALES3",
+  "REALES4",
+  "REALES5",
+  "REALES7",
+  "REALES9"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000007814",
+   "code": "ACCTG 1",
+   "title": "INTRODUCTORY ACCOUNTING I",
+   "units": 5.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000147544",
+   "code": "BUS005",
+   "title": "BUSINESS LAW I",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000110179",
+   "code": "REAL ES 1",
+   "title": "REAL ESTATE PRINCIPLES",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000254499",
+   "code": "REAL ES 11",
+   "title": "ESCROW PRINCIPLES",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000190358",
+   "code": "REAL ES 14",
+   "title": "PROPERTY MANAGEMENT",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000270402",
+   "code": "REAL ES 21",
+   "title": "REAL ESTATE ECONOMICS",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000294389",
+   "code": "REAL ES 3",
+   "title": "REAL ESTATE PRACTICES",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000044937",
+   "code": "REAL ES 4",
+   "title": "REAL ESTATE OFFICE ADMINISTRATION",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000202751",
+   "code": "REAL ES 5",
+   "title": "LEGAL ASPECTS OF REAL ESTATE I",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000231263",
+   "code": "REAL ES 9",
+   "title": "REAL ESTATE APPRAISAL I",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000322840",
+   "code": "REALES007",
+   "title": "REAL ESTATE FINANCE I",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000097667",
+   "code": "REALES010",
+   "title": "REAL ESTATE APPRAISAL II",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "[page 151]\nCREDIT PROGRAMS: DEGREES & CERTIFICATES \nWest Los Angeles College 2026-2027 Catalog  150 \n1. Utilize the three professionally accepted approaches \nto value, and demonstrate the ability to obtain and \nutilize the market information needed in each of the \napproaches to determine their estimate of fair market \nvalue.  \n2. Demonstrate an understanding of appraisal theory and \nmethodology and demonstrate the ability to reconcile \nthe important factors affecting the marketability and \nvalue of subject property to decide its value estimate. \n3. Generate accurate property measurements and \ndescriptions, prepare scale diagrams of residential \nstructures, and compute the land area that is required \nto calculate a valuation. \n \nRequired core courses ...................................................... 12 \nREAL ES 041  Real Estate Appraisal:  .......................... 2.5 \n Real Estate Foundations \nREAL ES 042  Real Estate Appraisal:  ............................ 2 \n Assessment Practice \nREAL ES 043  Real Estate Appraisal:  .......................... 2.5 \n Residential Cost Approach \nREAL ES 044*  Real Estate Appraisal:  .......................... 2.5 \n Sales Comparison Approach \nREAL ES 045*  Real Estate Appraisal:  .......................... 2.5 \n Income Approach \nTotal Units  ............................................................... 12 \n*This course has a prerequisite or corequisite course. Please \nsee the course description for further details.  \nREAL ESTATE BROKER (CA) \nMAJOR CODE:  0511.00  \nACADEMIC PROGRAM CODE: W037859D \n \nThe Real Estate Broker Certificate of Achievement is designed \nto provide students with the required competencies for a \ncareer in residential and commercial real estate. This \ncertificate meets the legislatively-mandated education \nrequirements for the California Department of Real Estate \n(DRE) Real Estate Broker license exam. \nProgram Learning Outcomes: Upon completion of this \nprogram, the student will be able to:  \n1. Meet the educational requirements to qualify for the \nDRE Real Estate Broker license exam. \n2. Have the requisite knowledge to pass and exceed the \nstate average on DRE Real Estate Broker license \nexam. \n3. Demonstrate mastery of the fiduciary responsibilities \nnecessary to become a California Real Estate Broker. \n4. Demonstrate knowledge of laws and principles of \nCalifornia real estate brokerage. \n5. Know the day-to-day operations of a real estate \nbrokerage office including managing sales agents, \nwriting and reviewing real estate contracts, performing \nproperty evaluations, prospecting, selling, financing, \nand other brokerage operations. \nRequired core courses ................................................. 15-17 \nREAL ES 003 Real Estate Practice................................ 3 \nREAL ES 005 Legal Aspects of Real Estate I ................ 3 \nREAL ES 007 Real Estate Finance I .............................. 3 \nREAL ES 009 Real Estate Appraisal I ........................... 3 \nREAL ES 021 Real Estate Economics  .......................... 3 \n OR \nACCTG 001 Introductory Accounting I ........................ 5 \nMajor Elective units (choose 3 courses from the \nfollowing)  ................................................................. 9 \nBUS 005 Business Law I ........................................ 3 \nREAL ES 001 Real Estate Principles  ............................ 3 \nREAL ES 004 Real Estate Office Administration ........... 3 \nREAL ES 010 Real Estate Appraisal II .......................... 3 \nREAL ES 011 Escrow Principles .................................... 3 \nREAL ES 014 Property Management ............................ 3 \nTotal Units  .......................................................... 24-26 \nREAL ESTATE SALESPERSON (CA) \nMAJOR CODE:  0511.00 \nACADEMIC PROGRAM CODE: W037839D  \n \nThe Real Estate Salesperson Certificate of Achievement is \ndesigned to provide students with the required competencies \nfor a career in residential and commercial real estate. This \ncertificate meets the legislatively-mandated education \nrequirements for the California Department of Real Estate \n(DRE) Real Estate Salesperson license exam.  \nProgram Learning Outcomes: Upon completion of this \nprogram, the student will be able to:  \n1. Meet the educational requirements to qualify for the \nDRE Real Estate Salesperson license exam. \n2.  Have the requisite knowledge to pass and exceed \nthe state average on DRE Real Estate Salesperson \nlicense exam.  \n3. Demonstrate mastery of the skills necessary to \nbecome a California Real Estate Salesperson.  \n4. Learn the day-to-day operations of a real estate \noffice including listings, valuations, prospecting, \nselling, financing, and real estate operations.  \n5. Know the legal requirements necessary to assist \nhomebuyers with buying and selling real estate \nproperties.  \nRequired core courses ........................................................ 6 \n\n[page 152]\nCREDIT PROGRAMS: DEGREES & CERTIFICATES \nWest Los Angeles College 2026-2027 Catalog  151 \nREAL ES 001 Real Estate Principles .............................. 3 \nREAL ES 003 Real Estate Practices .............................. 3 \nMajor Elective units (choose 1 course) from the  \nfollowing  .............................................................. 3-5 \nACCTG 001 Introductory Accounting I ......................... 5 \nBUS 005  Business Law I ......................................... 3 \nREAL ES 004  Real Estate Office Administration ............ 3  \nREAL ES 005  Legal Aspects of Real Estate I ................. 3  \nREAL ES 007  Real Estate Finance I .............................. 3  \nREAL ES 009 Real Estate Appraisal I ............................ 3 \nREAL ES 011  Escrow Principles .................................... 3 \nREAL ES 014  Property Management ............................. 3  \nREAL ES 021  Real Estate Economics ............................ 3  \nTotal Units  ............................................................ 9-11 \n \nSOCIAL JUSTICE STUDIES  \nLANGUAGE ARTS DIVISION & HUMAN \nDEVELOPMENT AND FAMILY STUDIES \nDIVISION \nSOCIAL JUSTICE: CHICANO STUDIES \n(AA-T) \nMAJOR CODE:  2201.60 \nACADEMIC PROGRAM CODE: W039485G \n \nThe Associate of Arts in Social Justice Studies: Chicana/o \nStudies for Transfer (AA-T) degree is a degree that pr ovide a \nsolid lower-division preparation for students who intend to \ntransfer to a California State University (CSU) for a bachelor’s \ndegree Chicana/Chicano studies or related major. This degree \nis designed to provide a clear pathway to a CSU and \nguarantee admissions to a CSU. Although students are \nguaranteed admission, it is not to any particular campus or \nprogram in the CSU system. This coursework may satisfy the \nlower division requirements at some CSU campuses. Students \nare encouraged to visit the Transfer Center for complete \ninformation regarding transfer requirements for the institution \nof their choice. Students interested in transfer are also \nencouraged to consult the Counseling Office for individualized \neducational planning in order to facilitate a seamless \ntransition. \nInformation on which CSU campuses accept this degree can \nbe found at the CSU ADT Major & Transfer Search website. \nThis degree complies with The Student Transfer Achievement \nReform Act (Senate Bill 1440). \n  \nTo earn the Associate in Arts in Social Justice Studies: \nChicano Studies for Transfer (AA-T) degree, students must \nmeet the following requirements:  \n• Completion of 60 semester units or 90 quarter units \nof degree-applicable courses,  \n• Minimum overall grade point average of 2.0,  \n• Minimum grade of \"C\" (or \"P\") for each course in the \nmajor, and  \n• Completion of the Cal-GETC GE Pattern. \n \nProgram Learning Outcomes: Upon successful completion \nof this program, students will be able to… \n \n1. Critically analyze how intersections of class, race, \ngender, sexuality and able-ness permeate racial and \nethnic identity formations \n2. Evaluate artistic and cultural productions and \nrepresentations centered on race, gender, and \nethnicity \n3. Compare and contrast the struggles for social \njustice of diverse ethnic, racial, and gendered \ngroups in the United States \n4. Evaluate interdisciplinary methods of inquiry used to \nexplore race, gender, ethnicity, and sexuality \nRequired core course .......................................................... 9 \nSOC 011  Race and Ethnic Relations ...................... 3  \nCHICANO 047  Mexican-American Woman \n In Society ................................................ 3 \nCHICANO 002  The Mexican-American Woman \n In Contemporary Society ........................ 3 \nMajor electives, List A: Select 3 courses from at least two \nof the following areas .......................................................... 9 \nArea 1: History or Government \nHISTORY 043  Mexican- American in the History \n of the United States I............................... 3 \nArea 2: Arts and Humanities \nART 117  Mesoamerican Art: Aztec \n & Olmec .................................................. 3 \nENGLISH 219* Literature of American \n Ethnic Groups ......................................... 3 \nSPANISH 012 Survey of Mexican Literature .................. 3 \n \nArea 3: Social Science \nSPANISH 010 Latin-American Civilization ...................... 3 \n \nArea 4: Quantitative Reasoning and Research Methods \nSTAT C1000 Introduction to Statistics .......................... 4 \n \nArea 5: Major Preparation \nCHICANO 037 Chicano Literature ................................... 3 \nTotal Major Units  .......................................................... 18-19 \n \nCal-GETC GE Units (less double-counted) ................. 19-22 \nCSU-transferable Elective Units .................................. 19-23 \n ",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

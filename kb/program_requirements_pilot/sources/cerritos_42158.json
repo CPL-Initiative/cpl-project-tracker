@@ -1,0 +1,244 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Cerritos College",
+ "control_number": "42158",
+ "shape": "degree_list",
+ "title": "Apprenticeship: Field Ironworkers",
+ "award": "A.S. Degree",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "courseleaf",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/field-ironworkers-aa/",
+  "title": "Cerritos College Academic Catalog",
+  "h1": "Academic Catalog",
+  "text_from": "innerText"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "IWAP4005",
+  "IWAP4007",
+  "IWAP4009",
+  "IWAP401",
+  "IWAP4011",
+  "IWAP4012",
+  "IWAP4015",
+  "IWAP4021",
+  "IWAP4022",
+  "IWAP4026",
+  "IWAP405",
+  "IWAP4053",
+  "IWAP4055",
+  "IWAP4056",
+  "IWAP406",
+  "IWAP4061",
+  "IWAP4063",
+  "IWAP4103",
+  "IWAP4104",
+  "IWAP4105",
+  "IWAP4106",
+  "IWAP4107",
+  "IWAP4108",
+  "IWAP4109"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000644362",
+   "code": "IWAP 40.05",
+   "title": "IW- Welding lll",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644363",
+   "code": "IWAP 40.07",
+   "title": "FIW - Orientation",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000584440",
+   "code": "IWAP 40.09",
+   "title": "IW - GEN Rigging",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644364",
+   "code": "IWAP 40.1",
+   "title": "Welding l - Reinforcing",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644365",
+   "code": "IWAP 40.11",
+   "title": "Welding ll- Reinforcing",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587327",
+   "code": "IWAP 40.12",
+   "title": "IW - Reinforcing Iron l",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587326",
+   "code": "IWAP 40.15",
+   "title": "IW - Post Tension l",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644366",
+   "code": "IWAP 40.21",
+   "title": "Structural Steel l",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587320",
+   "code": "IWAP 40.22",
+   "title": "IW - Cranes",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644367",
+   "code": "IWAP 40.26",
+   "title": "Metal Building Erection /Foreman Training",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000584530",
+   "code": "IWAP 40.5",
+   "title": "IW - Mixed Base - Reinforcing",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587321",
+   "code": "IWAP 40.53",
+   "title": "IW - Detailing/Reinforcing Iron",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587335",
+   "code": "IWAP 40.55",
+   "title": "IWS - Reinforcing Foreman Training",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587334",
+   "code": "IWAP 40.56",
+   "title": "IW - Trade Science/Ironworker History",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644368",
+   "code": "IWAP 40.6",
+   "title": "Structural Arch Orn l",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587331",
+   "code": "IWAP 40.61",
+   "title": "IW - Structural Precast Concrete/Qualified Rigger",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644369",
+   "code": "IWAP 40.63",
+   "title": "IW - Structural Lead Hazard",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587328",
+   "code": "IWAP 41.03",
+   "title": "IW - Reinforcing ll",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644370",
+   "code": "IWAP 41.04",
+   "title": "IW - Architectural lll",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644371",
+   "code": "IWAP 41.05",
+   "title": "IW - Architectural ll",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644372",
+   "code": "IWAP 41.06",
+   "title": "IW - Structural Steel ll",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644373",
+   "code": "IWAP 41.07",
+   "title": "Post - Tension ll",
+   "units": 2.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000587325",
+   "code": "IWAP 41.08",
+   "title": "IW - Post - Tension lll",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000644374",
+   "code": "IWAP 41.09",
+   "title": "OSHA 30/Extension Review",
+   "units": 1.5,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "hnologies: Cabinetmaking (CERT)\nWoodworking Manufacturing Technologies: CNC Woodworking (CERT)\nWoodworking Manufacturing Technologies: Furniture Design\nWoodworking Manufacturing Technologies: Furniture Design\nWoodworking Manufacturing Technologies: Furniture Making (A.S.)\nWoodworking Manufacturing Technologies: Furniture Making (CERT)\nZoology (A.A.)\nGraduation &​ Transfer Requirements\nLearning &​ Career Pathways\nNoncredit Programs &​ Courses\nSearch Courses\nAdmissions &​ Enrollment\nInformación en Español\nPrograms &​ Services\nPolicies &​ Resources\n PRINT OPTIONS\nHome›\nDegrees, Courses & Pathways›\nDegrees & Certificates›\nApprenticeship: Field Ironworkers (A.S.)\nApprenticeship: Field Ironworkers (A.S.)\nASSOCIATE OF SCIENCE\n\nThe Field Ironworkers A.S. degree prepares students for employment in the construction industry, primarily in ironwork. Through courses focusing on Reinforcing or Structural, students will learn the fundamental principles in basic and supervisory level functions in the construction ironwork industry for continuing academic achievement and professional success. Students can either choose the Reinforcing or Structural core units to complete the Field Ironworkers A.S. degree. Core topics include steel and cable reinforcing in concrete construction (rebar work), erections of steel skeleton of buildings, unbonded and bonded reinforcing post tensioning, rigging of heavy machinery, foreman training, and techniques for greater safety in reinforcing iron. Graduates are employed as journeyperson in the field of ironworks, or are self-employed. Spatial intelligence, cognitive ability, and eye-hand coordination are recommended for those entering the program.\n\nProgram Student Learning Outcomes\nDemonstrate knowledge of safety guidelines for ironworkers and apprenticeship journeymen in the construction industry.\nConduct basic and supervisory tasks functions within the construction trades.\nExplain job function differences between structural and reinforcing.\nRecognized resources offered by Cerritos Community College to ironworker's apprentice program.\nIdentify industry leaders, government groups, and apprenticeship originations to analyze career goals.\nDemonstrate knowledge of welding, cranes, detailing, reinforcing, structural steel, and rigging in order to perform and supervise ironworker’s job functions.\nProgram Requirements\nCourse List\nCode Number\tCourse Title\tUnits\nCore Requirements\t\nFIELD IRONWORKERS ESSENTIAL CLASSES FOR REINFORCING AND STRUCTURAL \t\nIWAP 40.07\tFIW-Orientation\t4.0\nIWAP 40.50\tIW-Mixed Base-Reinforcing\t2.0\nIWAP 40.56\tIW-Ironworker History Reinforcing\t2.0\nIWAP 40.63\tIW-Structural Lead Hazard\t2.0\nIWAP 40.09\tIW-Gen Rigging\t2.0\nIWAP 40.22\tIW-Cranes\t2.0\nIWAP 40.10\tWelding I-Reinforcing\t2.5\nIWAP 40.11\tWelding II-Reinforcing\t2.5\nSubtotal\t19\nSelect one of the following options:\t15.0-19.0\nOption 1: Reinforcing Program\t\n\nIWAP 40.12\n\tIW-Reinforcing Iron I (2)\t\n\nIWAP 41.03\n\tIW-Reinforcing II (1)\t\n\nIWAP 40.15\n\tIW-Post Tension I (2)\t\n\nIWAP 41.07\n\tPost-Tension II (2.5)\t\n\nIWAP 40.53\n\tIW-Detailing/Reinforcing Iron (2)\t\n\nIWAP 40.55\n\tIWS-Reinforcing Foreman Training (2)\t\n\nIWAP 41.08\n\tIW-Post Tension III (2)\t\n\nIWAP 41.09\n\tOSHA 30/Extension Review (1.5)\t\nOption 2: Structural Program\t\n\nIWAP 40.21\n\tStructural Steel I (2.5)\t\n\nIWAP 41.06\n\tIW-Structural Steel II (2)\t\n\nIWAP 40.05\n\tIW-Welding III (2.5)\t\n\nIWAP 40.60\n\tStructural Arch Orn I (2.5)\t\n\nIWAP 41.05\n\tIW-Architectural II (2.5)\t\n\nIWAP 40.61\n\tIW-Structural Precast Concrete (2)\t\n\nIWAP 41.04\n\tIW-Architectural III (2.5)\t\n\nIWAP 40.26\n\tMetal Building Erection I/Foreman Training (2.5)\t\nTotal Units\t34-38\nASSOCIATE OF SCIENCE DEGREE REQUIREMENTS\n\nCompletion of a minimum of 60 semester units to include (1) total major requirements, (2) the general education requirements, and (3) a grade of \"C\" or better in all courses required by major. \n\n© 2026-2027 Cerritos College\n\nBack to top",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

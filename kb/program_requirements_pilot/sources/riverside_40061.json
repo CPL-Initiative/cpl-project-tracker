@@ -1,0 +1,127 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Riverside City College",
+ "control_number": "40061",
+ "shape": "degree_list",
+ "title": "Cyber Defense",
+ "award": "A.S. Degree",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "curriqunet",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5943",
+  "title": "View - CurriQunet META",
+  "h1": "",
+  "text_from": "innerText"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "CIS21A",
+  "CIS21B",
+  "CIS25",
+  "CIS26A",
+  "CIS26B",
+  "CIS26F",
+  "CIS27",
+  "CIS27A",
+  "CIS27C",
+  "CIS30A",
+  "CIS87A"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000570321",
+   "code": "CIS 21A",
+   "title": "Linux Operating System Administration",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000595695",
+   "code": "CIS 21B",
+   "title": "Linux Operating System Administration II",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000601231",
+   "code": "CIS 25",
+   "title": "Information and Communication Technology Essentials",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000620958",
+   "code": "CIS 26A",
+   "title": "Cisco Networking Academy 1A",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000620959",
+   "code": "CIS 26B",
+   "title": "Cisco Networking Academy 1B",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000521481",
+   "code": "CIS 26F",
+   "title": "CISCO Networking Security",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000441220",
+   "code": "CIS 27",
+   "title": "Information & Network Security",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000570159",
+   "code": "CIS 27A",
+   "title": "Computer Forensics Fundamentals",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000621856",
+   "code": "CIS 27C",
+   "title": "Palo Alto Networks Firewall Essentials",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000610312",
+   "code": "CIS 30A",
+   "title": "Introduction to Python Programming",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635564",
+   "code": "CIS 87A",
+   "title": "Introduction to IT Project Management",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "Riverside City College\n2026-2027 Catalog\nSearch\n Export Page as PDF\nCatalog Navigation\nIntroduction to Riverside City College\nFees\n2026-2027 Academic Calendar\nAcademic Information\nAdmissions & Records\nCounseling and Matriculation\nFinancial Services and Student Employment\nStudent Support Services\nGraduation and Transfer Requirements\nCredit for Prior Learning (Including AP, IB, and CLEP)\nDegrees and Certificates\nCourses\nPolicies and Procedures\nCollege Personnel\nDistinguished Faculty Lecturer\nDistrict Phone Directory\nDistrict Information\nGeneral Catalog Downloads\nAddendum\nShow the catalog navigation\nCyber Defense - Associate of Science Degree - AS969/AS969C\n\nThis program will provide students with a strong foundation needed in the field of information security and cyber defense.  The program will focus on established methodologies in cyber defense  and will provide students with applicable skills in Windows and Linux operating systems security and administration, secure network design and implementation, web security, ethical hacking, digital forensics, risk assessment, management and mitigation techniques, and security policy/standards used to appropriately defend the various domains of information security to control access and reduce organizational risk.\n\nProgram Learning Outcomes\nUpon successful completion of this program, students should be able to:\n\nApply Information security to the various security domains using defense through administrative, technical and physical controls.\n\nDesign secure networks and apply a defense in depth strategy.\n\nApply operating system security and administration on Linux and Windows.\n\nDiscuss risk management strategies and assessment approaches.\n\nAnalyze security policy writing and evaluate appropriate application of policies at the organizational level.\n\nProgram Requirements\nRequired Courses\nUnits: 27.00\nCOURSE\nTITLE\nUNITS\nCIS-21A\nLinux Operating System Administration\n3.00\nCIS-25\nInformation and Communication Technology Essentials\n4.00\nCIS-26A\nCisco Networking Academy 1A\n4.00\nCIS-26B\nCisco Networking Academy 1B\n4.00\nCIS-27\nInformation and Network Security\n3.00\nCIS-30A\nIntroduction to Python Programming\n3.00\nCIS-27A\nComputer Forensics Fundamentals\n3.00\nCIS-27B\nIntroduction to Cybersecurity: Ethical Hacking\n3.00\nElective Courses\nUnits: 3.00-4.00\nCOURSE\nTITLE\nUNITS\nSelect one of the following:\n3.00-4.00\nCIS-5\nProgramming Concepts and Methodology I:C++\n4.00\nCIS-26F\nCisco Networking Security\n4.00\nCIS-21B\nLinux Operating System Administration II\n3.00\nCIS-27C\nPalo Alto Networks Firewall Essentials\n3.00\nCIS-87A\nIntroduction to IT Project Management\n3.00\nTotal: 30.00-31.00\nAssociate of Science Degree\nThe Associate of Science Degree in Cyber Defense will be awarded upon completion of the degree requirements, including general education and other graduation requirements as described in the college catalog.",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

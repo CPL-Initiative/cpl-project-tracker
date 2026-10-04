@@ -1,0 +1,127 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Mt. San Antonio College",
+ "control_number": "42916",
+ "shape": "noncredit",
+ "title": "Vocational Nursing",
+ "award": "Noncredit program",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "courseleaf",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/vocational-nursing/",
+  "title": "Vocational Nursing < Mt. San Antonio College",
+  "h1": "Vocational Nursing",
+  "text_from": "innerText"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "VOCHEP",
+  "VOCNCLXP",
+  "VOCVN100",
+  "VOCVN101",
+  "VOCVN102",
+  "VOCVN120",
+  "VOCVN122",
+  "VOCVN124",
+  "VOCVN130",
+  "VOCVN132",
+  "VOCVN134"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000606306",
+   "code": "VOC HEP",
+   "title": "Healthcare Exam Preparation",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000646953",
+   "code": "VOC NCLXP",
+   "title": "NCLEX-PN Preparation",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000654609",
+   "code": "VOC VN100",
+   "title": "Vocational Nursing Anatomy and Physiology",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000654610",
+   "code": "VOC VN101",
+   "title": "Fundamentals of Vocational Nursing Practice",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000654611",
+   "code": "VOC VN102",
+   "title": "Vocational Nursing Pharmacology",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000654612",
+   "code": "VOC VN120",
+   "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 1",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000654613",
+   "code": "VOC VN122",
+   "title": "Life Span Development for Vocational Nurses",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000654614",
+   "code": "VOC VN124",
+   "title": "Psychology and Behavioral Health Vocational Nursing",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000654615",
+   "code": "VOC VN130",
+   "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 2",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000654616",
+   "code": "VOC VN132",
+   "title": "Leadership and Supervision in Vocational Nursing",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000654617",
+   "code": "VOC VN134",
+   "title": "Vocational Nursing Care of the Family",
+   "units": 0.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "Skip to Content AZ Index Catalog Home Institution Home\nPrint Options\nSearch Catalog\nSearch Courses\n2026-2027 Academic Catalog\nSchedule of Classes College Calendar Campus Map College Directory Catalog PDF\nHOME\n \nCATALOG A-​Z INDEX\n \nPROGRAMS \n \nREGISTRATION &​ POLICIES\n \nSTUDENT RESOURCES \n \nTHE COLLEGE\nMt Sac Catalog Hero Image\nApply Now\nExplore Your Future\nHome/\nCatalog A-Z Index/\nAdult and Continuing Education Programs Overview/\nShort-Term Vocational /\nHealth Careers/\nVocational Nursing\nHealth Careers\nCare Coordinator -​ Level 1\nCare Coordinator -​ Level 2\nCertified Nursing Assistant (CNA)\nCollege Readiness for Healthcare Program\nContact Tracer\nMedical Assistant\nOccupational Therapy Aide\nPersonal Care Aide\nPharmacy Technician\nPhlebotomy Technician\nPhysical Therapy Aide\nSports Medicine\nSurgical Technician\nVocational Nursing\nServices\nVocational Nursing\n\nCertificate of Completion\n#42916\n\nThe Vocational Nursing program is regulated by the Board of Vocational Nurse & Psychiatric Technicians commonly referred to as BVNPT (Board of Vocational Nursing and Psychiatric Technicians). Students will gain the knowledge of nursing science in a supportive learning environment that values a diverse group of students in acquiring the necessary skills to become eligible for the NCLEX-PN and next generation of the examination of the National Council of State Board of Nursing in the State of California. Students successfully completing the Vocational Nursing Program will be able to meet the requirements for the vocational nurse licensure as specified in the Vocational Nurse Practice Act. This program is specifically for noncredit adult students who are seeking training in the health field for immediate employment and future health career ladders. Once licensed, the LVN (Licensed Vocational Nurse) may find employment in hospitals, clinics, private physicians’ offices, and skilled nursing facilities. Students must pass all nine core courses to earn the Vocational Nursing certificate.\n\nRequired Courses\nCourse List\nCourse Prefix\tCourse Name\tUnits\n\nVOC VN100\n\tVocational Nursing Anatomy and Physiology\t\n\nVOC VN101\n\tFundamentals of Vocational Nursing Practice\t\n\nVOC VN102\n\tVocational Nursing Pharmacology\t\n\nVOC VN120\n\tVocational Nursing Care of the Adult with Medical-Surgical Diagnosis 1\t\n\nVOC VN122\n\tLife Span Development for Vocational Nurses\t\n\nVOC VN124\n\tPsychology and Behavioral Health Vocational Nursing\t\n\nVOC VN130\n\tVocational Nursing Care of the Adult with Medical-Surgical Diagnosis 2\t\n\nVOC VN132\n\tLeadership and Supervision in Vocational Nursing\t\n\nVOC VN134\n\tVocational Nursing Care of the Family\t\n \nRecommended Elective\nCourse List\nCourse Prefix\tCourse Name\tUnits\n\nVOC HEP\n\tHealthcare Exam Preparation\t\n\nVOC NCLXP\n\tNCLEX-PN Preparation\t\nSelection Process\n\nStudents applying for admission to the vocational nursing program are required to attend an informational session detailing the application process, selection criteria, material cost, and student support services. \n\nRequired Items for Entry: \nMust be at least 17 years of age upon application to the program.\nMust have an active unrestricted Nursing Assistant Certification (CNA) through the California Department of Public Health. \nApplicant must provide proof of graduation from (one of the following):\nAn accredited high school in the United States by official transcripts or diploma.\nDocumentation of a passing score on the California High School Equivalency Exam (GED/HiSet)\nOfficial evaluation of international diploma/degree.\nApplicant must complete Test of Essential Academic Skills (TEAS) exam.\nItems required after acceptance to finalize enrollment: \nA physical examination, including specific immunization.\nMeeting the minimum physical and mental qualifications to perform essential nursing functions.\nCurrent American Heart Association (AHA) Basic Life Support (BLS) Certification.\nCriminal background check and drug screening must be clear/negative of any issues.\n\nDetailed information to the required items above and additional criteria used to determine entrance into the program will be provided in the following link: www.mtsac.edu/sce/stv/health/vn\n\nProgram Learning Outcomes\nPrint Options\nENROLL\nAdmissions\nAssessment\nCounseling\n",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

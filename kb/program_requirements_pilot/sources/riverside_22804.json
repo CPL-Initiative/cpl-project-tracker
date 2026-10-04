@@ -1,0 +1,82 @@
+{
+ "_what": "A pilot program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py). Filed byte for byte from the job log of run 37166814546 (2026-10-04, S323). The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Riverside City College",
+ "control_number": "22804",
+ "shape": "cert_electives",
+ "title": "Culinary Arts",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "curriqunet",
+ "format": "html_per_program",
+ "method": "html_page",
+ "source": {
+  "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5941",
+  "title": "View - CurriQunet META",
+  "h1": "",
+  "text_from": "innerText"
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "CUL20",
+  "CUL36",
+  "CUL37",
+  "CUL38",
+  "KIN4",
+  "MAG56"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000115018",
+   "code": "CUL 20",
+   "title": "Fundamentals of Baking I",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635227",
+   "code": "CUL 36",
+   "title": "Introduction to Culinary Arts",
+   "units": 8.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635228",
+   "code": "CUL 37",
+   "title": "Intermediate Culinary Arts",
+   "units": 8.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635504",
+   "code": "CUL 38",
+   "title": "Advanced Culinary Arts",
+   "units": 8.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000620985",
+   "code": "KIN4",
+   "title": "Nutrition",
+   "units": null,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000046967",
+   "code": "MAG 56",
+   "title": "HRM: Human Resources Management",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "Riverside City College\n2026-2027 Catalog\nSearch\n Export Page as PDF\nCatalog Navigation\nIntroduction to Riverside City College\nFees\n2026-2027 Academic Calendar\nAcademic Information\nAdmissions & Records\nCounseling and Matriculation\nFinancial Services and Student Employment\nStudent Support Services\nGraduation and Transfer Requirements\nCredit for Prior Learning (Including AP, IB, and CLEP)\nDegrees and Certificates\nCourses\nPolicies and Procedures\nCollege Personnel\nDistinguished Faculty Lecturer\nDistrict Phone Directory\nDistrict Information\nGeneral Catalog Downloads\nAddendum\nShow the catalog navigation\nCulinary Arts - Associate of Science Degree and Certificate of Achievement - AS2000/AS2000C/CE2000\n\nThis program prepares individuals to provide professional chefs and related hospitality services in restaurants and other commercial food establishments. This includes instruction in recipe and menu planning, preparing and cooking foods, supervising and training kitchen assistance, the management of food supplies and kitchen resources, including cost and inventory controls, aesthetics of food preparation and presentation, as well as training in a wide variety of cuisines and culinary techniques. \n\nProgram Learning Outcomes\nUpon successful completion of this program, students should be able to:\n\nDemonstrate learned customer service, wait staffing and point of sale system knowledge in a working dining room setting. \n\nEmploy proper safety and sanitation principles to the receiving, storage, preparation, and service of food. \n\nFormulate menus utilizing menu design techniques, conversion of written recipes, and calculations of food costing and menu pricing. \n\nDemonstrate practical and theoretical knowledge of classical and contemporary cooking methods for both hot food and baking/pastry arts. \n\nDemonstrate practical knowledge of classical knife cuts. Apply learned cooking methods to international cuisines. \n\nDemonstrate proficiency in piping skills, mold usage, plate presentation, and other artistic techniques used in the garde manger kitchen as well as hot food, cold food, and pastry presentation. \n\nProgram Requirements\nRequired Courses (33.5 Units)\nUnits: 33.50\nCOURSE\nTITLE\nUNITS\nCUL-20\nFundamentals of Baking I\n2.00\nCUL-36\nIntroduction to Culinary Arts\n8.50\nCUL-37\nIntermediate Culinary Arts\n8.50\nCUL-38\nAdvanced Culinary Arts\n8.50\nKIN-4\nNutrition\n3.00\nMAG-56\nHRM: Human Resources Management\n3.00\nTotal: 33.50\nAssociate of Science Degree\nThe Associate of Science Degree in Culinary Arts will be awarded upon completion of the degree requirements, including general education and other graduation requirements as described in the college catalog.",
+ "courseleaf_lists": [],
+ "captured_run": 37166814546
+}

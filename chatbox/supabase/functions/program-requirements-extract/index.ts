@@ -1,9 +1,10 @@
 // program-requirements-extract — the program requirements harvest's model call.
 //
 // Phase 1 of the harvest (docs/reference/lanes/program-requirements-harvest.md).
-// The pilot runner (kb/_program_requirements_pilot.py) finds a program's own
-// catalog page and posts its text here with the closed list: the courses the
-// state's Program Course File lists for the program (coci_program_courses).
+// The capture pass (kb/_program_requirements_pilot.py) files each program's
+// catalog text; the extraction pass (kb/_program_requirements_extract.py)
+// posts that text here with the closed list: the courses the state's Program
+// Course File lists for the program (coci_program_courses).
 // This function asks Claude to sort those courses into the catalog's rules
 // (required, choose N courses, choose N units) and to read the program's
 // stated total, and returns the record with the call's token usage, so the
@@ -24,7 +25,8 @@
 // key never spends the model budget.
 //
 // Source of record is the LIVE function; this file is the in-repo capture.
-// NOT YET DEPLOYED (S323): it goes live once the pilot's page text is in hand.
+// Deployed S323 (2026-10-04) with verify_jwt off, as cpl-news-harvest is: the
+// caller check below authenticates, whatever format the service key takes.
 // Deploy with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
 //

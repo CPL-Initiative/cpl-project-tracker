@@ -38,6 +38,7 @@ without a browser or a network.
 from __future__ import annotations
 
 import argparse
+import html
 import io
 import json
 import os
@@ -221,6 +222,18 @@ def same_site(href: str, start: str) -> bool:
     return urllib.parse.urlparse(href).netloc.lower() == urllib.parse.urlparse(start).netloc.lower()
 
 
+# Inside a program's view, the requirements may sit behind one more item.
+REQ_WORDS = re.compile(r"program requirements|required courses|requirements|course requirements", re.I)
+NOT_REQ = re.compile(r"graduation|transfer|admission|general education|prerequisite", re.I)
+
+
+def click_score(text: str, program: dict) -> int:
+    s = score_link(text, "", program)
+    if s <= 0 and REQ_WORDS.search(text or "") and not NOT_REQ.search(text or ""):
+        s = 1
+    return s
+
+
 def clickable_candidate(text: str, program: dict) -> bool:
     """A navigation item, not a sentence: Miramar's click-through went on to
     click the program's learning outcomes ("Describe common business functions
@@ -228,7 +241,7 @@ def clickable_candidate(text: str, program: dict) -> bool:
     t = (text or "").strip()
     if not t or t.endswith(".") or len(t.split()) > 16:
         return False
-    return score_link(t, "", program) > 0
+    return click_score(t, program) > 0
 
 
 # ── PDF pages ───────────────────────────────────────────────────────────────
@@ -439,7 +452,7 @@ def click_through(reader, program: dict, courses: list[dict], trail: list,
         except Exception:
             break
         ranked = sorted({t for t in texts if t not in clicked and clickable_candidate(t, program)},
-                        key=lambda t: -score_link(t, "", program))
+                        key=lambda t: -click_score(t, program))
         if not ranked:
             break
         target = ranked[0]
@@ -459,10 +472,23 @@ def click_through(reader, program: dict, courses: list[dict], trail: list,
             continue
         fb = find_codes(got.get("body") or "", courses)
         fc = find_codes(got.get("content") or "", courses)
+        if not fb and not fc:
+            # A curriQunet program view can fill its requirements after the
+            # first wait: Miramar's views named no listed course at 2.5 s (run 4).
+            page.wait_for_timeout(5000)
+            try:
+                got = page.evaluate(PAGE_JS)
+            except Exception:
+                pass
+            fb = find_codes(got.get("body") or "", courses)
+            fc = find_codes(got.get("content") or "", courses)
         text, found, field = best_text(got, fb, fc)
         cov = coverage(found, courses)
+        body = got.get("body") or ""
+        at = max(0, body.find(target[:30]))
         trail.append({"click": target, "url": page.url, "title": (got.get("title") or "")[:120],
                       "codes": len(found), "coverage": round(cov, 2),
+                      "body_sample": body[at:at + 700] if cov < ACCEPT_SHARE else None,
                       "link_sample": [[(ln.get("text") or "")[:60], ln.get("href")]
                                       for ln in (got.get("links") or [])[:40]]
                       if cov < ACCEPT_SHARE else None})
@@ -563,7 +589,9 @@ def courseleaf_lists(got: dict, courses: list[dict]) -> list[dict]:
     and the next pass reads it without a model."""
     keep, size = [], 0
     for cl in got.get("courselists") or []:
-        if not find_codes(re.sub(r"<[^>]+>", " ", cl.get("html") or ""), courses):
+        # The tables write codes as NURS&nbsp;114: decode before matching (run 4
+        # kept no table at either CourseLeaf college for want of it).
+        if not find_codes(html.unescape(re.sub(r"<[^>]+>", " ", cl.get("html") or "")), courses):
             continue
         if size + len(cl["html"]) > HTML_CAP:
             break
