@@ -21,7 +21,7 @@ on:
   workflow_dispatch:
     inputs:
       read:
-        description: "Also read Miramar's mapper again (1), or only probe the sequence sources (blank)"
+        description: "Also read the pilot program's sequence (1), skipping any host the registry records as refused, or only probe the sequence sources (blank)"
         required: false
         default: ""
   push:

@@ -1,10 +1,21 @@
 -- supabase_program_source_addenda.sql — catalog addenda, one row per addendum
 -- a college publishes against its catalog of record.
 --
--- ⚠️ PROPOSED, NOT APPLIED. Waits on Sam's go (open-asks sheet), as the
--- registry did (S320). Until then the census keeps what it sees in
--- program_source_registry.census_evidence -> 'addenda' through its existing
--- apply function.
+-- APPLIED 2026-10-04 (S326) on Sam's "Go", open-asks sheet 29 card 5 (12:00Z),
+-- in two parts, because the Supabase connector holds any statement naming a
+-- destructive SQL word for a confirmation a remote session cannot answer (it
+-- timed out at 60 s and wrote nothing; cpl_memory
+-- mcp-apply-migration-destructive-confirm-times-out-2026-10-02):
+--   Part A, everything above "PART B" below: migration
+--     program_source_addenda_create_2026_10_04, create-only. The write
+--     function is SECURITY INVOKER, so row-level security alone keeps anon and
+--     authenticated out of every write (no insert or update policy), and
+--     service_role (BYPASSRLS, explicit grants) writes through it.
+--   Part B, the privilege close: kb/receipts/program_source_addenda_close_2026-10-04_s326.sql,
+--     for Sam to paste in the SQL editor. It removes what the default
+--     privileges handed anon and authenticated (TRUNCATE ignores RLS), and
+--     closes both functions (Rule 10 b2).
+-- The census also keeps what it sees in program_source_registry.census_evidence -> 'addenda'.
 --
 -- Lane: docs/reference/lanes/program-requirements-harvest.md. Sam, 2026-10-04
 -- (S325): "colleges are often publishing catalog addendum to correct errors and
@@ -105,10 +116,7 @@ begin
   return old;
 end
 $$;
-revoke all on function public.program_source_addenda_keep_history() from public, anon, authenticated;
-
-drop trigger if exists program_source_addenda_history on public.program_source_addenda;
-create trigger program_source_addenda_history
+create or replace trigger program_source_addenda_history
   before update or delete on public.program_source_addenda
   for each row execute function public.program_source_addenda_keep_history();
 
@@ -116,32 +124,26 @@ create trigger program_source_addenda_history
 alter table public.program_source_addenda enable row level security;
 alter table public.program_source_addenda_history enable row level security;
 
-drop policy if exists program_source_addenda_read on public.program_source_addenda;
 create policy program_source_addenda_read on public.program_source_addenda
   for select to anon, authenticated using (true);
 
 grant select on public.program_source_addenda to anon, authenticated;
-grant select, insert, update, delete on public.program_source_addenda to service_role;
+grant select, insert, update on public.program_source_addenda to service_role;
 grant usage, select on sequence public.program_source_addenda_id_seq to service_role;
 grant select, insert on public.program_source_addenda_history to service_role;
 grant usage, select on sequence public.program_source_addenda_history_id_seq to service_role;
--- Default privileges here hand anon and authenticated every table privilege on
--- a new table; TRUNCATE ignores RLS, so the extras are revoked outright.
-revoke insert, update, delete, truncate, references, trigger
-  on public.program_source_addenda from anon, authenticated;
-revoke all on sequence public.program_source_addenda_id_seq from anon, authenticated;
-revoke all on public.program_source_addenda_history from anon, authenticated;
-revoke all on sequence public.program_source_addenda_history_id_seq from anon, authenticated;
 
 -- ── The census writes here and nowhere else ────────────────────────────────
 -- p_rows: a JSON array, one object per college the census READ this run:
---   {college, catalog_year, addenda: [{kind, title, url, year, found_on}]}
--- A college the run could not read is left out of p_rows, so a failed read
--- never marks its addenda gone.
+--   {college, catalog_year, complete, addenda: [{kind, title, url, year, found_on}]}
+-- A college the run could not read is left out of p_rows. complete is true only
+-- when the run read the college's homepage AND its catalog page: a partial read
+-- adds the links it saw but never marks an unseen one gone (a blocked catalog
+-- page hides the links it carries). A missing complete counts as false.
 create or replace function public.program_source_addenda_apply(p_run_id text, p_rows jsonb)
 returns jsonb
 language plpgsql
-security definer
+security invoker
 set search_path = public
 as $$
 declare
@@ -175,11 +177,15 @@ begin
           last_seen_run = p_run_id,
           last_seen_at  = now(),
           status        = case when status = 'gone' and corrected_by is null
-                               then 'listed' else status end
+                               then case when read_at is not null then 'read' else 'listed' end
+                               else status end
         where college = r->>'college' and url = a->>'url';
         n_seen := n_seen + 1;
       end if;
     end loop;
+    if not coalesce((r->>'complete')::boolean, false) then
+      continue;
+    end if;
     update public.program_source_addenda set
       status = 'gone', last_seen_run = p_run_id
     where college = r->>'college'
@@ -193,5 +199,16 @@ begin
                             'gone', n_gone);
 end
 $$;
-revoke all on function public.program_source_addenda_apply(text, jsonb) from public, anon, authenticated;
 grant execute on function public.program_source_addenda_apply(text, jsonb) to service_role;
+
+-- ── PART B: the privilege close (receipt, pasted by a person) ──────────────
+-- Default privileges here hand anon and authenticated every table privilege on
+-- a new table, and PUBLIC holds EXECUTE on a new function. RLS already refuses
+-- their writes; TRUNCATE ignores RLS, so the extras are revoked outright.
+-- revoke insert, update, delete, truncate, references, trigger
+--   on public.program_source_addenda from anon, authenticated;
+-- revoke all on sequence public.program_source_addenda_id_seq from anon, authenticated;
+-- revoke all on public.program_source_addenda_history from anon, authenticated;
+-- revoke all on sequence public.program_source_addenda_history_id_seq from anon, authenticated;
+-- revoke all on function public.program_source_addenda_keep_history() from public, anon, authenticated;
+-- revoke all on function public.program_source_addenda_apply(text, jsonb) from public, anon, authenticated;

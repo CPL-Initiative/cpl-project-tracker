@@ -787,6 +787,45 @@ src = open(os.path.join(ROOT, "kb", "_program_source_census.py")).read()
 check('"addenda": addenda' in src and '"addenda": ev.get("addenda")' in src,
       "the addenda ride in the census evidence and in the job log")
 
+# ── The addenda table: only a complete read may mark an addendum gone ────────
+# program_source_addenda_apply() marks every listed addendum the payload omits
+# as gone, for a college whose row says complete. A blocked catalog page, a
+# homepage that failed, or an address kept from an earlier run hides links, so
+# each must arrive as incomplete (S326, open-asks sheet 29 card 5).
+add_one = {"kind": "addendum", "title": "2026-2027 Addendum",
+           "url": "https://x.edu/addendum-2026-27.pdf", "year": "2026-2027"}
+def arow(**kw):
+    r = {"college": "X College", "catalog_url": "https://catalog.x.edu/",
+         "catalog_year": "2026-2027", "access_status": "ok",
+         "census_evidence": {"homepage": {"access": "ok"}, "addenda": [add_one]}}
+    ev = kw.pop("ev", {})
+    r.update(kw)
+    r["census_evidence"] = dict(r["census_evidence"], **ev)
+    return r
+def complete_of(r):
+    got = X.addenda_rows([r])
+    return got[0]["complete"] if got else None
+check(complete_of(arow()) is True, "homepage and catalog both read: complete")
+check(complete_of(arow(access_status="blocked")) is False,
+      "a blocked catalog page is never a complete read")
+check(complete_of(arow(ev={"homepage": {"access": "unreachable"}})) is False,
+      "a failed homepage is never a complete read")
+check(complete_of(arow(ev={"kept_from": "census-20261003T221526Z-s1of4"})) is False,
+      "an address kept from an earlier run is never a complete read")
+check(complete_of(arow(catalog_url=None)) is False,
+      "no catalog found is never a complete read")
+check(X.addenda_rows([arow(access_status="blocked", ev={"addenda": []})]) == [],
+      "an incomplete read with no addenda sends nothing")
+check(X.addenda_rows([arow(ev={"addenda": []})])[0]["addenda"] == [],
+      "a complete read with no addenda still goes, so the table can mark one gone")
+check(X.addenda_rows([arow()])[0]["addenda"][0]["url"] == add_one["url"],
+      "each addendum rides with its url, kind and year")
+check('apply_addenda(rows, run_id)' in src,
+      "apply mode writes the addenda table after the registry")
+sql = open(os.path.join(ROOT, "kb", "supabase_program_source_addenda.sql")).read()
+check("coalesce((r->>'complete')::boolean, false)" in sql,
+      "the table's write function treats a missing complete as a partial read")
+
 if failures:
     print("FAIL: program source census (%d)" % len(failures))
     for f in failures:

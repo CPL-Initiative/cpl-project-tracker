@@ -173,6 +173,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `match_document_sections` | `edgefn:cpl-chat` | — |
 | `nc_artifact_revise` | tabs: `nc-learning-partners` | — |
 | `nc_partner_note_revise` | tabs: `nc-learning-partners` | — |
+| `program_source_addenda_apply` | scripts: `kb/_program_source_census.py` | — |
 | `program_source_census_apply` | scripts: `kb/_program_source_census.py` | — |
 | `program_typical_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `search_college_credentials` | `edgefn:cpl-chat` | — |
@@ -377,7 +378,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks-29.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
+| `docs/visuals/<date>-open-asks-30.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docs/visuals/<date>-pilot-records-review.html` | scripts: `kb/_build_pilot_records_review_sheet.py` | scripts: `kb/_build_pilot_records_review_sheet.py` |
 | `docs/visuals/<date>-sierra-credit-source.html` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
@@ -824,6 +825,7 @@ collapse to one `<date>` family so writer and reader edges join.
 
 | Service | Called by |
 |---|---|
+| `%s` | scripts: `kb/_program_sequence_ppm.py` |
 | `127.0.0.1` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` |
 | `127.0.0.1:9333` | scripts: `prototype/funding_video/render.mjs` |
@@ -1004,5 +1006,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 93 Supabase tables · 34 RPCs · 6 edge functions · 577 file
-datasets · 156 external services · 406 consumers · 43 workflows · 37 tabs.
+Coverage: 93 Supabase tables · 35 RPCs · 6 edge functions · 577 file
+datasets · 157 external services · 406 consumers · 43 workflows · 37 tabs.

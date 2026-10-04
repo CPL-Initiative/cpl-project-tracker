@@ -20,7 +20,10 @@ name: Program source census
 # Apply writes program_source_registry (kb/supabase_program_source_registry.sql,
 # Sam's go 2026-10-03) through program_source_census_apply(), which never
 # overwrites a row a person corrected and files every prior row in
-# program_source_registry_history. Governance: dismissed in
+# program_source_registry_history, then program_source_addenda
+# (kb/supabase_program_source_addenda.sql, Sam's go 2026-10-04) through
+# program_source_addenda_apply(), which marks an addendum gone only after a
+# complete read. Governance: dismissed in
 # kb/governance_surface_map.json until Phase 1 names the person who owns the
 # outcome.
 

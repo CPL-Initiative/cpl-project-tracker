@@ -114,6 +114,8 @@ begin
          then coalesce(
                 case when new.corrected_at is distinct from old.corrected_at
                      then new.corrected_by end,
+                case when new.sequence_checked_run is distinct from old.sequence_checked_run
+                     then new.sequence_checked_run end,
                 new.census_run_id)
     end,
     tg_op,
@@ -369,3 +371,22 @@ insert into public.program_source_registry (college, college_id, mis_college_cod
 select college, college_id, mis_college_code, homepage_url
 from s where homepage_url is not null
 on conflict (college) do nothing;
+
+-- ── Where a college's course sequence can be read (S326, 2026-10-04) ───────
+-- Sam, open-asks sheet 29 card 3, on Miramar's Program Pathways Mapper
+-- refusing the reader: "Note this in the record for the college. Rather than
+-- ask permission, we will make the agent aware of the limitation and to
+-- continue to look for solutions or workarounds." Four columns the census never
+-- writes (program_source_census_apply() names its own), filled by a session from
+-- the sequence pass's probe (kb/_program_sequence_ppm.py), which reads them and
+-- never requests a host recorded as refused. Applied as migration
+-- program_source_registry_sequence_access_2026_10_04 with its first 25 rows:
+-- kb/receipts/program_source_registry_sequence_access_2026-10-04_s326.sql. The
+-- history trigger above names sequence_checked_run when it changes (that
+-- migration replaced it; this file's copy of the trigger is updated to match).
+alter table public.program_source_registry
+  add column if not exists sequence_host        text,
+  add column if not exists sequence_access      text
+    check (sequence_access in ('open', 'refused', 'unreached', 'not_read')),
+  add column if not exists sequence_note        text,
+  add column if not exists sequence_checked_run text;
