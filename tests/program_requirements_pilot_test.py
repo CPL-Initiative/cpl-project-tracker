@@ -314,6 +314,108 @@ r = S.score({"program": {}, "blocks": adj["blocks"]}, ADJ)
 check(not r["arithmetic"]["pass"] and "names no total" in " ".join(r["arithmetic"]["why"]),
       "a record that names no total cannot pass the arithmetic")
 
+# ── Record shape v2: what extraction run 1 (37167619551) could not hold ──────
+# Each case is one of run 1's nine failures, cut to its smallest shape.
+# Noncredit hours (Cerritos Energy Corps, "136 Hours"): course units hold hours,
+# and the closed list's 0 units are never read in their place.
+AED = [{"code": c, "units": 0} for c in ("AED 90.01", "AED 90.02", "AED 90.03", "AED 90.05")]
+aed = {"program": {"measure": "hours", "total_units": {"min": 136, "max": 136}},
+       "blocks": [{"name": "Required Courses", "rule": "all",
+                   "courses": [{"code": c, "units": h} for c, h in
+                               zip(("AED 90.01", "AED 90.02", "AED 90.03", "AED 90.05"), (40, 40, 40, 16))]}]}
+r = S.score(aed, AED)
+check(r["pass"] and r["measure"] == "hours" and r["arithmetic"]["computed"] == [136.0, 136.0],
+      "a noncredit program's course hours add to its stated hours: %s" % json.dumps(r["arithmetic"]))
+aed_blank = json.loads(json.dumps(aed))
+for c in aed_blank["blocks"][0]["courses"]:
+    c["units"] = None
+r = S.score(aed_blank, AED)
+check(not r["arithmetic"]["pass"] and r["arithmetic"]["status"] == "incomplete",
+      "in hours, a course with no printed hours never borrows the state file's 0 units")
+
+# One of several whole blocks (Cerritos Ironworker: Reinforcing 15 or Structural 19).
+IW = [{"code": c, "units": u} for c, u in
+      [("IWAP 40.07", 4), ("IWAP 40.12", 2), ("IWAP 41.03", 1), ("IWAP 40.21", 2.5), ("IWAP 41.06", 2)]]
+iw = {"program": {"total_units": {"min": 7, "max": 8.5}},
+      "blocks": [{"name": "Core", "rule": "all", "courses": [{"code": "IWAP 40.07"}]},
+                 {"name": "Option 1", "rule": "all", "option_group": "Option",
+                  "courses": [{"code": "IWAP 40.12"}, {"code": "IWAP 41.03"}]},
+                 {"name": "Option 2", "rule": "all", "option_group": "Option",
+                  "courses": [{"code": "IWAP 40.21"}, {"code": "IWAP 41.06"}]}]}
+r = S.score(iw, IW)
+check(r["pass"] and r["arithmetic"]["computed"] == [7.0, 8.5],
+      "an option group runs from its smallest block to its largest: %s" % json.dumps(r["arithmetic"]))
+iw_flat = json.loads(json.dumps(iw))
+for b in iw_flat["blocks"]:
+    b.pop("option_group", None)
+check(not S.score(iw_flat, IW)["arithmetic"]["pass"],
+      "two options read as two required blocks overstate the total, and the arithmetic catches it")
+
+# A block total the catalog prints (Mt. San Antonio Fire "6-22 units"; Riverside List B "6-7").
+FIRE = [{"code": "FIRE 1", "units": 3}, {"code": "FIRE 6", "units": 3}, {"code": "FIRE86", "units": None}]
+fire = {"program": {"total_units": {"min": 9, "max": 25}},
+        "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "FIRE 1"}]},
+                   {"name": "Electives", "rule": "choose_courses", "minimum": 2,
+                    "stated": {"min": 6, "max": 22},
+                    "courses": [{"code": "FIRE 6"}, {"code": "FIRE 86"}]}]}
+r = S.score(fire, FIRE)
+check(r["pass"] and r["arithmetic"]["computed"] == [9.0, 25.0],
+      "a choose block whose courses lack units counts its printed total: %s" % json.dumps(r["arithmetic"]))
+adj_b = json.loads(json.dumps(adj))
+adj_b["blocks"][1]["stated"] = {"min": 6, "max": 7}
+check(S.score({**adj_b, "program": {"total_units": {"min": 12, "max": 13}}}, ADJ)["arithmetic"]["pass"],
+      "a choose-units block counts the range the catalog prints for it")
+
+# A range printed beside a course (Mt. San Antonio MICR 1 "4-5").
+MICR = [{"code": "MICR1", "units": None}, {"code": "NURS 114", "units": 3}]
+micr = {"program": {"total_units": {"min": 7, "max": 8}},
+        "blocks": [{"name": "Required", "rule": "all",
+                    "courses": [{"code": "MICR 1", "units": 4, "units_max": 5}, {"code": "NURS 114"}]}]}
+check(S.score(micr, MICR)["arithmetic"]["computed"] == [7.0, 8.0],
+      "a course printed '4-5' runs from units to units_max")
+
+# Alternatives as objects carry their own flag (Riverside SOC-48 beside STAT C1000).
+STAT = [{"code": "STAT C1000", "units": 4}]
+stat = {"program": {"total_units": 4},
+        "blocks": [{"name": "Statistics", "rule": "all",
+                    "courses": [{"code": "STAT C1000", "catalog_addition": False,
+                                 "alternatives": [{"code": "SOC-48", "units": 4,
+                                                   "catalog_addition": True}]}]}]}
+r = S.score(stat, STAT)
+check(r["pass"] and r["invented"]["flagged"] == ["SOC48"],
+      "an alternative flagged as a catalog addition passes: %s" % json.dumps(r["invented"]))
+stat["blocks"][0]["courses"][0]["alternatives"][0]["catalog_addition"] = False
+check(not S.score(stat, STAT)["invented"]["pass"],
+      "an unflagged alternative the state list lacks fails as invented (run 1 let SOC-48 through)")
+check(S.score({**adj, "blocks": [{**adj["blocks"][0]}, adj["blocks"][1]]}, ADJ)["pass"],
+      "version 1's bare-code alternatives still score")
+
+# A catalog that prints no figure at all (Mt. San Antonio Vocational Nursing).
+VN = [{"code": c, "units": 0} for c in ("VOC VN100", "VOC VN101")]
+vn = {"program": {"measure": "hours", "total_units": {"min": None, "max": None}},
+      "blocks": [{"name": "Required Courses", "rule": "all",
+                  "courses": [{"code": "VOC VN100", "units": None}, {"code": "VOC VN101", "units": None}]}]}
+r = S.score(vn, VN, "Required Courses Course Prefix Course Name Units VOC VN100 VOC VN101")
+check(r["pass"] and r["arithmetic"]["status"] == "unstated",
+      "a page that prints no hours, units or total leaves nothing to add: %s" % json.dumps(r["arithmetic"]))
+r = S.score(vn, VN, "VOC VN100 Anatomy (40 Hours) VOC VN101 Fundamentals (60 Hours)")
+check(not r["pass"] and "40 Hours" in " ".join(r["arithmetic"]["why"]),
+      "a record that drops hours the page prints fails, naming them")
+check(not S.score(vn, VN)["pass"], "without the catalog text, a record that states no figure cannot pass")
+r = S.score({"program": {}, "blocks": [{"name": "Core", "rule": "all",
+                                         "courses": [{"code": "CUL 36"}]}]}, CUL, "CUL 36")
+check(not r["arithmetic"]["pass"] and r["arithmetic"]["status"] == "incomplete",
+      "a credit record with no total is never 'unstated': the state file holds its units")
+
+# The function writes what the scorer reads.
+fn = open(os.path.join(ROOT, "chatbox", "supabase", "functions", "program-requirements-extract",
+                       "index.ts")).read()
+for field in ('"measure"', '"option_group"', '"stated"', '"units_max"'):
+    check(re.search(r"required: \[[^\]]*%s" % field, fn),
+          "the function's schema requires %s, the field the scorer reads" % field)
+check("Write every code with its subject" in fn,
+      "the prompt tells the model 'CHLD 67 & 67L' is CHLD 67 and CHLD 67L (run 1 wrote '67L')")
+
 # ── The sample: five colleges, four shapes each, the fixed use cases in ──────
 with open(P.SAMPLE_FILE) as fh:
     sample = json.load(fh)["programs"]

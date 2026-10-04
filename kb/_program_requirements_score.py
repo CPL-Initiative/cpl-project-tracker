@@ -16,26 +16,55 @@ course the program lists:
 
 The fourth, agreement with a person, is Sam's reading of the same 20 programs.
 
-THE RECORD (one per program per catalog year; the extractor writes it):
+THE RECORD, version 2 (one per program per catalog year; the extractor writes it):
 
-    {"program": {"total_units": 30.5 | {"min": 27, "max": 29} | null,
+    {"program": {"measure": "units" | "hours",
+                 "total_units": 30.5 | {"min": 27, "max": 29} | null,
                  "open_elective_units": 0, ...},
      "blocks": [{"name": "Required Courses",
                  "rule": "all" | "choose_courses" | "choose_units",
                  "minimum": null | number,       # N courses or N units
-                 "courses": [{"code": "CUL 36", "units": 8.5,
-                              "alternatives": ["CUL 36H"],   # count as one
+                 "option_group": null | "Option",  # blocks sharing one are alternatives
+                 "stated": {"min": 6, "max": 22},  # the block total the catalog prints
+                 "courses": [{"code": "CUL 36", "units": 8.5, "units_max": null,
+                              "alternatives": [{"code": "CUL 36H", "units": 8.5,
+                                                "catalog_addition": false}],
                               "catalog_addition": false}]}]}
 
 A course with alternatives (an honors pair, "MATH 1 or MATH 1H") counts as one
-choice whose units run from its smallest option to its largest. Units come
+choice whose units run from its smallest option to its largest; a course
+printed with a range ("MICR 1 4-5") runs from units to units_max. Units come
 from the record first (the catalog's own number) and the closed list second.
+Version 1 wrote alternatives as bare codes; the scorer still reads them, and a
+bare code takes its parent's catalog_addition.
+
+Extraction run 1 (37167619551, 7 of 16 passed) named what version 1 could not
+hold, and version 2 adds one field for each:
+  measure        a noncredit program states hours, not units (Cerritos Energy
+                 Corps, Riverside Food Service). With hours, course "units"
+                 hold hours and the closed list's 0 units are never used.
+  option_group   the student completes one of several whole blocks (Cerritos
+                 Ironworker: Reinforcing or Structural). The group runs from
+                 its smallest block to its largest.
+  stated         the block total the catalog prints ("6-22 units", List B
+                 "6-7"). It stands for the block when a course's units are
+                 missing or the rule picks units.
+  units_max      the top of a range printed beside a course.
+
+When the catalog prints no figure at all (Mt. San Antonio's Vocational Nursing
+names no hours, no units and no total), there is nothing to add. Arithmetic is
+then "unstated", and it passes only when all three hold: the record carries no
+figure, the closed list stores no units (a noncredit program's 0s), and the
+catalog text names no hours or units. A reader that drops printed hours still
+fails, and so does a credit record with no total, because the state file holds
+its units.
 
 Pure: no network, no model. Tested by tests/program_requirements_pilot_test.py.
 """
 from __future__ import annotations
 
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -61,44 +90,77 @@ def _span(total) -> tuple[float, float] | None:
     return None if v is None else (v, v)
 
 
-def placed_codes(record: dict) -> list[tuple[str, dict, dict]]:
-    """(normalized code, course, block) for every code the record places,
-    alternatives included."""
+# A figure of hours or units printed in catalog text ("136 Hours", "4.5-9 hours",
+# "6 units"). Used only to confirm that a page states no figure at all.
+FIGURE = re.compile(r"\b\d+(?:\.\d+)?(?:\s*[-\u2013]\s*\d+(?:\.\d+)?)?\s*(?:hours?|hrs?|units?)\b", re.I)
+
+
+def alternatives(course: dict) -> list[dict]:
+    """A course's alternatives as objects. Version 1 wrote bare codes; a bare
+    code carries no units and takes its parent's catalog_addition."""
     out = []
-    for b in record.get("blocks") or []:
-        for c in b.get("courses") or []:
-            for code in [c.get("code")] + list(c.get("alternatives") or []):
-                if code:
-                    out.append((norm_code(code), c, b))
+    for a in course.get("alternatives") or []:
+        if isinstance(a, dict):
+            if a.get("code"):
+                out.append(a)
+        elif a:
+            out.append({"code": a, "units": None,
+                        "catalog_addition": bool(course.get("catalog_addition"))})
     return out
 
 
-def choice_units(course: dict, listed: dict) -> tuple[float, float] | None:
-    """The units one choice carries: the record's own number, else the closed
-    list's; an alternatives group runs from its smallest option to its largest."""
+def placed_codes(record: dict) -> list[tuple[str, dict, dict]]:
+    """(normalized code, the entry naming it, block) for every code the record
+    places, alternatives included. The entry carries that code's own
+    catalog_addition."""
+    out = []
+    for b in record.get("blocks") or []:
+        for c in b.get("courses") or []:
+            for entry in [c] + alternatives(c):
+                if entry.get("code"):
+                    out.append((norm_code(entry["code"]), entry, b))
+    return out
+
+
+def measure(record: dict) -> str:
+    return (record.get("program") or {}).get("measure") or "units"
+
+
+def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float, float] | None:
+    """The units one choice carries: the record's own number (and the top of a
+    printed range), else the closed list's; an alternatives group runs from its
+    smallest option to its largest. In hours, the closed list is never read."""
     vals = []
-    own = _num(course.get("units"))
-    if own is not None:
-        vals.append(own)
-    for code in [course.get("code")] + list(course.get("alternatives") or []):
-        u = listed.get(norm_code(code))
-        if u is not None and (own is None or code != course.get("code")):
-            vals.append(u)
+    for entry in [course] + alternatives(course):
+        own = [v for v in (_num(entry.get("units")), _num(entry.get("units_max"))) if v is not None]
+        if own:
+            vals += own
+        elif not hours:
+            u = listed.get(norm_code(entry.get("code")))
+            if u is not None:
+                vals.append(u)
     if not vals:
         return None
     return (min(vals), max(vals))
 
 
-def block_units(block: dict, listed: dict) -> tuple[tuple[float, float] | None, list[str]]:
+def block_units(block: dict, listed: dict, hours: bool = False
+                ) -> tuple[tuple[float, float] | None, list[str]]:
     """The units a block contributes to the program, and why it could not be
-    computed when it cannot."""
+    computed when it cannot. The block total the catalog prints stands in when
+    a course's units are missing or the rule picks units."""
     rule, minimum = block.get("rule"), _num(block.get("minimum"))
-    spans = [choice_units(c, listed) for c in block.get("courses") or []]
+    stated = _span(block.get("stated"))
+    spans = [choice_units(c, listed, hours) for c in block.get("courses") or []]
     if rule == "all":
         if any(s is None for s in spans):
+            if stated:
+                return stated, []
             return None, ["a required course in '%s' has no units" % block.get("name")]
         return (sum(s[0] for s in spans), sum(s[1] for s in spans)), []
     if rule == "choose_units":
+        if stated:
+            return stated, []
         if minimum is None:
             return None, ["'%s' chooses units but names no minimum" % block.get("name")]
         return (minimum, minimum), []
@@ -107,6 +169,8 @@ def block_units(block: dict, listed: dict) -> tuple[tuple[float, float] | None, 
             return None, ["'%s' chooses courses but names no minimum" % block.get("name")]
         known = [s for s in spans if s is not None]
         n = int(minimum)
+        if len(known) < len(spans) and stated:
+            return stated, []
         if len(known) < n:
             return None, ["'%s' chooses %d courses but %d carry units"
                           % (block.get("name"), n, len(known))]
@@ -116,7 +180,49 @@ def block_units(block: dict, listed: dict) -> tuple[tuple[float, float] | None, 
     return None, ["'%s' has no rule the scorer knows (%r)" % (block.get("name"), rule)]
 
 
-def score(record: dict, closed: list[dict]) -> dict:
+def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list[str]]:
+    """Every block's units summed; the blocks of one option_group count once,
+    from the group's smallest block to its largest."""
+    hours = measure(record) == "hours"
+    lo = hi = 0.0
+    reasons: list[str] = []
+    groups: dict[str, list[tuple[float, float]]] = {}
+    for b in record.get("blocks") or []:
+        span, why = block_units(b, listed, hours)
+        if span is None:
+            reasons += why
+            continue
+        g = b.get("option_group")
+        if g:
+            groups.setdefault(g, []).append(span)
+        else:
+            lo += span[0]
+            hi += span[1]
+    for spans in groups.values():
+        lo += min(s[0] for s in spans)
+        hi += max(s[1] for s in spans)
+    return (lo, hi), reasons
+
+
+def has_figure(record: dict) -> bool:
+    """Whether the record carries any number to add: a total, a block total,
+    or a course's units."""
+    prog = record.get("program") or {}
+    if _span(prog.get("total_units")) or _num(prog.get("open_elective_units")):
+        return True
+    for b in record.get("blocks") or []:
+        if _span(b.get("stated")) or (b.get("rule") == "choose_units" and _num(b.get("minimum"))):
+            return True
+        for c in b.get("courses") or []:
+            for entry in [c] + alternatives(c):
+                if _num(entry.get("units")) or _num(entry.get("units_max")):
+                    return True
+    return False
+
+
+def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
+    """The three automatic bars. text is the catalog text the record was read
+    from; without it a record that states no figure cannot pass."""
     listed = {}
     for c in closed:
         k = norm_code(c.get("code"))
@@ -135,32 +241,34 @@ def score(record: dict, closed: list[dict]) -> dict:
                       if k not in listed and c.get("catalog_addition")})
     unflagged = [k for k in invented if k not in flagged]
 
-    lo = hi = 0.0
-    reasons: list[str] = []
-    for b in record.get("blocks") or []:
-        span, why = block_units(b, listed)
-        if span is None:
-            reasons += why
-            continue
-        lo += span[0]
-        hi += span[1]
+    (lo, hi), reasons = program_units(record, listed)
     oe = _num((record.get("program") or {}).get("open_elective_units")) or 0.0
     lo, hi = lo + oe, hi + oe
     stated = _span((record.get("program") or {}).get("total_units"))
-    if stated is None:
-        arith = {"pass": False, "computed": [lo, hi], "stated": None,
+    if stated is None and not has_figure(record) and not any(listed.values()):
+        figures = [m.group(0) for m in FIGURE.finditer(text or "")]
+        ok = text is not None and not figures
+        arith = {"pass": ok, "status": "unstated", "computed": None, "stated": None,
+                 "why": ["the catalog prints no total, no hours and no units"] if ok else
+                        ["the record states no figure, but the catalog text names %s"
+                         % ", ".join(figures[:4])] if figures else
+                        ["the record states no figure, and no catalog text came to check it against"]}
+    elif stated is None:
+        arith = {"pass": False, "status": "incomplete", "computed": [lo, hi], "stated": None,
                  "why": reasons + ["the record names no total"]}
     elif reasons:
-        arith = {"pass": False, "computed": [lo, hi], "stated": list(stated), "why": reasons}
+        arith = {"pass": False, "status": "incomplete", "computed": [lo, hi],
+                 "stated": list(stated), "why": reasons}
     else:
         ok = abs(lo - stated[0]) <= TOL and abs(hi - stated[1]) <= TOL
-        arith = {"pass": ok, "computed": [round(lo, 2), round(hi, 2)],
-                 "stated": list(stated),
+        arith = {"pass": ok, "status": "equal" if ok else "unequal",
+                 "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated),
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
 
     n = len(listed)
     return {
+        "measure": measure(record),
         "coverage": {"placed": n - len(missing), "listed": n,
                      "share": round((n - len(missing)) / n, 3) if n else None,
                      "missing": missing, "unexplained": unexplained,

@@ -11,7 +11,9 @@ program-requirements-extract Edge Function (Sam's call 6 on sheet 23: model
 calls go through an Edge Function that holds the Anthropic key), then scores
 the record it gets back against the closed list
 (kb/_program_requirements_score.py): coverage, no invented courses, unit
-arithmetic. The fourth check is Sam's reading of the same 20 programs.
+arithmetic. The scorer also reads the catalog text, so a record that states no
+figure passes only when the page prints none. The fourth check is Sam's
+reading of the same 20 programs.
 
 It writes nothing. It prints a line per program and one JSON object per
 program between markers, which a session reads from the job log and files.
@@ -101,7 +103,7 @@ def main(argv: list[str] | None = None) -> int:
         t0 = time.time()
         got = call(src, key)
         rec = got.get("record")
-        sc = score(rec, src["closed_list"]) if isinstance(rec, dict) else None
+        sc = score(rec, src["closed_list"], src["text"]) if isinstance(rec, dict) else None
         row = {"college": src["college"], "control_number": src["control_number"],
                "shape": src["shape"], "title": src["title"], "source_file": src["_file"],
                "model": got.get("model"), "stop_reason": got.get("stop_reason"),
@@ -109,11 +111,11 @@ def main(argv: list[str] | None = None) -> int:
                "ms": got.get("ms"), "seconds": round(time.time() - t0, 1),
                "error": got.get("error"), "score": sc, "record": rec}
         rows.append(row)
-        print("%-26s %-6s %-20s %s cov %-5s inv %-2s arith %-5s $%s  %s" % (
+        print("%-26s %-6s %-20s %s cov %-5s inv %-2s arith %-10s $%s  %s" % (
             src["college"][:26], src["control_number"], src["shape"],
             "PASS" if sc and sc["pass"] else "fail",
             sc and sc["coverage"]["share"], sc and sc["invented"]["count"],
-            sc and sc["arithmetic"]["pass"], row["cost_usd"], row["error"] or ""), flush=True)
+            sc and sc["arithmetic"]["status"], row["cost_usd"], row["error"] or ""), flush=True)
     total = sum(r["cost_usd"] or 0 for r in rows)
     print("\npassed %d of %d; model cost $%.4f ($%.4f a program)" % (
         sum(1 for r in rows if r["score"] and r["score"]["pass"]), len(rows), total,

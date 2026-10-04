@@ -27,6 +27,12 @@
 // Source of record is the LIVE function; this file is the in-repo capture.
 // Deployed S323 (2026-10-04) with verify_jwt off, as cpl-news-harvest is: the
 // caller check below authenticates, whatever format the service key takes.
+// Version 2 (S324, 2026-10-04): the record shape grew what extraction run 1
+// (37167619551, 7 of 16 passed) could not hold: program.measure (hours),
+// block.option_group (one of several whole blocks), block.stated (a block total
+// the catalog prints), units_max (a range beside a course), and alternatives as
+// objects that carry their own units and catalog_addition. The scorer
+// (kb/_program_requirements_score.py) reads the same fields.
 // Deploy with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
 //
@@ -51,11 +57,16 @@ const RECORD_SCHEMA = {
     program: {
       type: "object",
       additionalProperties: false,
-      required: ["section_heading", "total_units", "open_elective_units", "ge_pattern"],
+      required: ["section_heading", "measure", "total_units", "open_elective_units", "ge_pattern"],
       properties: {
         section_heading: {
           type: "string",
           description: "The heading of the catalog section this record reads, as printed.",
+        },
+        measure: {
+          type: "string",
+          enum: ["units", "hours"],
+          description: "What the catalog counts this award in. A noncredit program usually states hours; then every units field holds hours.",
         },
         total_units: {
           type: "object",
@@ -79,7 +90,7 @@ const RECORD_SCHEMA = {
       items: {
         type: "object",
         additionalProperties: false,
-        required: ["name", "rule", "minimum", "courses"],
+        required: ["name", "rule", "minimum", "option_group", "stated", "courses"],
         properties: {
           name: { type: "string", description: "The block's name as the catalog prints it." },
           rule: { type: "string", enum: ["all", "choose_courses", "choose_units"] },
@@ -87,19 +98,40 @@ const RECORD_SCHEMA = {
             ...NUM_OR_NULL,
             description: "N for 'choose N courses' or 'choose N units'; null for 'all'.",
           },
+          option_group: {
+            anyOf: [{ type: "string" }, { type: "null" }],
+            description: "When the student completes one of several whole blocks (Option 1 or Option 2, one of two sequences), the same short name on each of those blocks; else null.",
+          },
+          stated: {
+            type: "object",
+            additionalProperties: false,
+            required: ["min", "max"],
+            description: "The total the catalog prints for this block ('6-22 units', 'List B 6-7'). Equal min and max for a single number; null and null when it prints none.",
+            properties: { min: NUM_OR_NULL, max: NUM_OR_NULL },
+          },
           courses: {
             type: "array",
             items: {
               type: "object",
               additionalProperties: false,
-              required: ["code", "units", "alternatives", "catalog_addition"],
+              required: ["code", "units", "units_max", "alternatives", "catalog_addition"],
               properties: {
-                code: { type: "string", description: "The course code as the catalog prints it." },
-                units: { ...NUM_OR_NULL, description: "The units the catalog prints beside it." },
+                code: { type: "string", description: "The course code as the catalog prints it, with its subject." },
+                units: { ...NUM_OR_NULL, description: "The units (or hours) the catalog prints beside it; the low end of a printed range." },
+                units_max: { ...NUM_OR_NULL, description: "The high end of a range printed beside it ('4-5'); else null." },
                 alternatives: {
                   type: "array",
-                  items: { type: "string" },
-                  description: "Codes that count as this same choice (an honors twin, 'or' options).",
+                  items: {
+                    type: "object",
+                    additionalProperties: false,
+                    required: ["code", "units", "catalog_addition"],
+                    properties: {
+                      code: { type: "string" },
+                      units: NUM_OR_NULL,
+                      catalog_addition: { type: "boolean" },
+                    },
+                  },
+                  description: "Courses that count as this same choice (an honors twin, 'or' options), each with its own units and catalog_addition.",
                 },
                 catalog_addition: {
                   type: "boolean",
@@ -135,9 +167,15 @@ Each block holds courses under one rule, in the catalog's order and with its nam
 - "all": every course is required.
 - "choose_courses": the student picks N courses from the list; minimum is N.
 - "choose_units": the student picks courses totaling N units; minimum is N.
-A course with an "or" option or an honors twin is one entry whose alternatives hold the other codes. A nested choice ("one of the following") inside a required list is its own block.
+A course with an "or" option or an honors twin is one entry whose alternatives hold the other courses, each with its own units and catalog_addition. A nested choice ("one of the following") inside a required list is its own block.
 
-Write each code as the catalog prints it, with the units printed beside it. When a code in the section is missing from the closed list, record it with catalog_addition true. List every closed-list course you do not place in missing_explained, with the reason in a few words (for example, "named only in the A.S. section", "listed as a recommended course", "not in the text").
+When the student completes one of several whole blocks ("Select one of the following options", "one of the following sequences"), record each option as its own block and give those blocks the same option_group; a block outside such a choice has option_group null.
+
+When the catalog prints a total for a block ("6-22 units", "Select a minimum of 6 units 6.00-7.00"), record it in that block's stated; else stated is null and null.
+
+Write each code as the catalog prints it, with the units printed beside it. Write every code with its subject: "CHLD 67 & 67L" is CHLD 67 and CHLD 67L. When the catalog prints a range beside a course ("MICR 1 4-5"), units is 4 and units_max 5; else units_max is null. When a code in the section is missing from the closed list, record it with catalog_addition true, on the course or on the alternative that names it.
+
+program.measure is "units" unless the catalog counts the award in hours, as noncredit programs usually do ("Total Hours of Completion (136 Hours)", "Intro to Lighting Retrofits (40 Hours)"). With "hours", every units field holds hours: the hours printed beside each course and the total hours in total_units. The closed list's 0 units for a noncredit course are not its hours. List every closed-list course you do not place in missing_explained, with the reason in a few words (for example, "named only in the A.S. section", "listed as a recommended course", "not in the text").
 
 program.total_units is the total the catalog states for this award's requirements: the major or the certificate, without general education. A range ("27-29 units") is min 27 and max 29. When the text states no total, both are null; never compute one yourself. open_elective_units is set only when the catalog names open electives as part of that total. General education courses never go in a block.
 
