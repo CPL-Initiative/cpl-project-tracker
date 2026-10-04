@@ -1,0 +1,15 @@
+{
+  "_about": "Institutions MAP's datasets list that sit outside the California Community Colleges, and the system's own college count. One list for every reader: funding/_build_funding_performance.py (skips them; funding goes only to CCC colleges and campuses), excel_to_dashboard.py (the Active Colleges card counts community colleges only), and Sierra (chatbox/supabase/functions/cpl-chat/index.ts carries a copy that tests/sierra_who_cpl_serves.test.js holds equal to this file).",
+  "_source": "Sam, open-asks sheets 33 and 34, 2026-10-04 (cpl_memory sam-sheet33-rulings-2026-10-04, sam-sheet34-rulings-2026-10-04).",
+  "ccc_system_colleges": 116,
+  "ccc_system_note": "The 115 credit colleges plus Calbright (Sam, sheet 33 card 1: \"it would not be wrong to state 116 colleges\"). MAP's datasets list 116 institutions too, the 115 plus Cal State LA, so the two numbers match today for different reasons.",
+  "statement": "The CPL Initiative serves California's 116 community colleges, two noncredit campuses, and partner programs such as LAUNCH and Futuro Health. Cal State LA is the first CSU campus on MAP. Adult education, ROP and not-for-credit programs join later.",
+  "institutions": [
+    {
+      "name": "California State University Los Angeles",
+      "variants": ["California State University, Los Angeles", "Cal State LA", "CSU Los Angeles", "CSULA"],
+      "kind": "csu",
+      "note": "The first CSU campus on MAP. Counted as a MAP participant beside the community colleges (Sam: \"Keep CSU LA in the mix\")."
+    }
+  ]
+}

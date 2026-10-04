@@ -875,6 +875,14 @@ run "7t CPL on a checked program (Cerritos, Field Ironworkers A.S.)" \
 answer_must_match "\bIWAP[ -]?4[01]\.[0-9]" "7t names an Ironworker course by number"
 answer_must_match "31\.5" "7t ⭐ gives the CPL figure the display build states (up to 31.5 of the 34-38 units the catalog prints)"
 
+# Who the CPL Initiative serves (Sam, open-asks sheets 33-34, 2026-10-04): his
+# statement counts California's 116 community colleges and names Cal State LA
+# as the first CSU campus on MAP, beside them.
+run "7u who the CPL Initiative serves (Sam's statement)" \
+  '{"query":"Who does the CPL Initiative serve, and how many colleges is that?","session_id":"smoke-ci","history":[]}'
+answer_must_match "116" "7u counts California's 116 community colleges"
+answer_must_match -i "Cal State LA|California State University,? Los Angeles" "7u ⭐ names Cal State LA, the first CSU campus on MAP"
+
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
 run "8 offerings broad (who teaches construction)" \

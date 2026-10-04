@@ -5444,7 +5444,7 @@ function buildSystemPrompt(
       metricsContext += `Transcribed units: ${raw.TranscribedUnits ? Math.round(raw.TranscribedUnits).toLocaleString() : "N/A"}\n`;
       metricsContext += `Estimated savings: $${raw.Savings ? Math.round(raw.Savings / 1e6) + "M" : "N/A"}\n`;
       metricsContext += `20-year economic impact: $${raw.YearImpact ? (raw.YearImpact / 1e9).toFixed(2) + "B" : "N/A"}\n`;
-      metricsContext += `Active colleges: ${m.active_college_count || "N/A"} of ${m.college_count || 115}\n`;
+      metricsContext += collegeCountLines(m);
 
       for (const metric of metrics) {
         if (metric.breakdowns && metric.breakdowns.length > 0) {
@@ -5539,6 +5539,47 @@ ${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${
 
   return { stable, volatile: volatilePart };
 }
+
+// ── Who the CPL Initiative serves (Sam, open-asks sheets 33-34, 2026-10-04) ──
+// The statement is his, confirmed on sheet 34 card 1. The system's 116 is the
+// 115 credit colleges plus Calbright. MAP's datasets list 116 institutions, the
+// 115 plus Cal State LA, so the active count leaves Cal State LA out by name and
+// names it beside the community colleges. kb/non_ccc_institutions.json holds the
+// same statement, count and names; tests/sierra_who_cpl_serves.test.js fails if
+// this copy drifts from it.
+const CPL_SERVES_STATEMENT = "The CPL Initiative serves California's 116 community colleges, two noncredit campuses, and partner programs such as LAUNCH and Futuro Health. Cal State LA is the first CSU campus on MAP. Adult education, ROP and not-for-credit programs join later.";
+const CCC_SYSTEM_COLLEGES = 116;
+const NON_CCC_INSTITUTIONS = ["California State University Los Angeles", "California State University, Los Angeles", "Cal State LA", "CSU Los Angeles", "CSULA"];
+
+function collegeCountLines(m: any): string {
+  const norm = (s: any) => String(s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const outside = new Set(NON_CCC_INSTITUTIONS.map(norm));
+  const tiers = (m && m.tiers) || {};
+  let active = 0;
+  let activeOutside = 0;
+  const listedOutside: string[] = [];
+  for (const tier of ["leading", "advancing", "inactive"]) {
+    for (const c of ((tiers[tier] && tiers[tier].colleges) || [])) {
+      const name = c && c.college;
+      if (!name) continue;
+      const isOutside = outside.has(norm(name));
+      if (isOutside) listedOutside.push(name);
+      if (tier !== "inactive") {
+        active++;
+        if (isOutside) activeOutside++;
+      }
+    }
+  }
+  const fallback = Number(m && m.active_college_count);
+  const activeCcc = active ? active - activeOutside : (fallback > 0 ? fallback : null);
+  let out = `Who the CPL Initiative serves (use these words when asked who CPL serves or how many colleges): ${CPL_SERVES_STATEMENT}\n`;
+  out += `Active community colleges in MAP's datasets: ${activeCcc ?? "N/A"} of California's ${CCC_SYSTEM_COLLEGES} community colleges\n`;
+  if (listedOutside.length) {
+    out += `MAP's datasets also list ${listedOutside.join(", ")}, outside the community college count\n`;
+  }
+  return out;
+}
+// ── end who the CPL Initiative serves ──
 
 async function fetchLiveMetrics(): Promise<any> {
   try {

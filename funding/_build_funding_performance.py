@@ -213,10 +213,18 @@ TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City C
 # a MAP participant (his opening note: "Keep CSU LA in the mix"), so it is left
 # out here BY NAME, beside the partners: skipped at the row, it reaches no
 # college, no statewide total and no `unmatched` bucket. MAP's identity data
-# holds no row for it to classify, which is why the name lives here.
-NON_CCC_INSTITUTIONS = {"California State University Los Angeles",
-                        "California State University, Los Angeles",
-                        "Cal State LA", "CSU Los Angeles", "CSULA"}
+# holds no row for it to classify, so the names live in one shared list,
+# kb/non_ccc_institutions.json, which the dashboard and Sierra read too.
+NON_CCC_FILE = os.path.join(ROOT, "kb", "non_ccc_institutions.json")
+
+
+def _non_ccc_names():
+    with open(NON_CCC_FILE, encoding="utf-8") as f:
+        data = json.load(f)
+    return {n for i in data["institutions"] for n in [i["name"]] + list(i.get("variants") or [])}
+
+
+NON_CCC_INSTITUTIONS = _non_ccc_names()
 # MAP's own identity data names the agencies we host a CPL landing page for as
 # `entity_kind: "partner"` (kb/_build_college_identity_crosswalk.py).
 COLLEGE_IDENTITY_DIR = os.path.join(ROOT, "kb", "college_identity")

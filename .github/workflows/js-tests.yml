@@ -507,6 +507,14 @@ jobs:
       # must pass the same checks. Pure-stdlib python; same non-required check.
       - name: Career-attainment import lint (funding/_build_funding_performance.py)
         run: python3 tests/funding_career_import_test.py
+      # Who CPL serves (Sam, sheets 33-34, 2026-10-04): the Active Colleges
+      # card counts community colleges only and names Cal State LA beside them,
+      # from kb/non_ccc_institutions.json. Imports the generator, so it installs
+      # openpyxl. Same non-required check.
+      - name: Active Colleges counts community colleges (excel_to_dashboard.py)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/active_colleges_ccc_test.py
       # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
       # repo already decided about the files I am about to touch?", replacing
       # recall across 299 KB notes. It shipped with two silent-omission bugs

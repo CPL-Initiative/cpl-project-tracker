@@ -557,6 +557,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/merge_candidates/2026-09-05/queue.json` | none found | scripts: `kb/_merge_candidate_queue.py` |
 | `kb/morph_variant_out/2026-06-24/dryrun.json` | none found | scripts: `kb/_morphological_variant_dryrun.py` |
 | `kb/nc_learning_partners.json` | tabs: `nc-learning-partners` | — |
+| `kb/non_ccc_institutions.json` | scripts: `excel_to_dashboard.py`, `funding/_build_funding_performance.py` | — |
 | `kb/noncredit_cip_categories.json` | scripts: `kb/_build_noncredit_cip_categories.py`, `kb/_classify_noncredit_programs.py` | scripts: `kb/_build_noncredit_cip_categories.py` |
 | `kb/occupation_credential_map.json` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_partner_crosswalk.py` | — |
 | `kb/openclassrooms_map_ace_recs.json` | scripts: `kb/_build_openclassrooms_crosswalk.py` | — |
@@ -732,6 +733,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `team_phrase.js` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `team_phrase_header.js` | pages: `CPL_Dashboard.html` | — |
 | `team_phrases.js` | pages: `CPL_Dashboard.html` | — |
+| `tests/active_colleges_ccc_test.py` | workflows: `js-tests.yml` | — |
 | `tests/admin_live_banner_control.test.js` | workflows: `js-tests.yml` | — |
 | `tests/alias_chain_single_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
@@ -1013,5 +1015,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 94 Supabase tables · 35 RPCs · 6 edge functions · 583 file
+Coverage: 94 Supabase tables · 35 RPCs · 6 edge functions · 585 file
 datasets · 157 external services · 408 consumers · 43 workflows · 37 tabs.
