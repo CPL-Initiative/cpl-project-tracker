@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-517 document(s).
+518 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -449,6 +449,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Warm a tinny voiceover with measured EQ — diagnose before you boost](../kb-notes/methodology-warm-a-tinny-voiceover-measured-eq.md) | methodology | published | 2026-07-23 | 2026-07-23 |
 | [What might qualify is a different question from who already grants it — answer it from the target program's course list](../kb-notes/methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [When a corpus does not fit, its order is the selection](../kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md) | methodology | published | 2026-08-26 | 2026-08-26 |
+| [When a page and an assistant show the same facts, build them once](../kb-notes/methodology-one-build-two-readers.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [When an authoritative identity key exists, use it before you score strings](../kb-notes/methodology-use-the-identity-key-before-you-score-strings.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [When the workaround is the keyboard, suspect the event model](../kb-notes/methodology-when-the-workaround-is-the-keyboard-suspect-the-event-model.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [When two implementations agree on your live data, your test is not distinguishing them](../kb-notes/methodology-when-two-implementations-agree-on-live-data-your-test-proves-nothing.md) | methodology | published | 2026-08-28 | 2026-08-28 |
