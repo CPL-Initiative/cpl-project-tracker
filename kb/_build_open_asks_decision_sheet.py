@@ -31,6 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 35 (S329 checkpoint, 2026-10-04, SHEET_ID 2026-10-04-open-asks-35): sheet 34 is answered (19:18Z).
+One card: Cerritos's procedure record. Sam said "apply the procedure record" in session; the migration
+(three columns, the trigger) landed, and the row's guarded UPDATE timed out twice at the connector, which
+holds a bare UPDATE for a person. The card carries the UPDATE to paste.
+
 Sheet 34 (S328, 2026-10-04, SHEET_ID 2026-10-04-open-asks-34): Sam answered all five cards of sheet 33
 (https://claude.ai/artifact/HLeo1NxQvsVkZNUnqw8YCQ) at 18:52-18:57Z, and the lanes record them. Two new
 cards: the statement of who CPL serves (his card 1 ask) and the per-college procedure record (his card 5
@@ -198,8 +203,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-34.html')
-SHEET_ID = '2026-10-04-open-asks-34'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-35.html')
+SHEET_ID = '2026-10-04-open-asks-35'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -792,6 +797,33 @@ def items():
     # Sheet 34 (S328) was answered at 19:18Z on 2026-10-04, both his own call: card 1 the statement as
     # drafted with two edits (no UpSkill line; "datasets", never "scrape"), card 2 the per-college
     # procedure record as proposed. Both lanes record the rulings; no card remains.
+
+    # Sheet 35 (S329): the one write Sam approved in session that the connector held for a person.
+    receipt = _read('kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql')
+    upd = receipt[receipt.index('update public.program_source_registry'):].strip()
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Paste Cerritos's procedure record into the SQL editor",
+        'ref': 'program-requirements-harvest NEEDS SAM · '
+               'kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql',
+        'facts': (
+            "You said <em>apply the procedure record</em>. The migration landed: the registry now has "
+            "<code>procedure</code>, <code>procedure_by</code> and <code>procedure_at</code>, and the history "
+            "trigger names who changed a record. Cerritos's row did not: its UPDATE timed out twice at the "
+            "connector, which holds a bare UPDATE for a person, with nothing written. The record holds what "
+            "three runner reads found: six hosts, three reading steps, four answers, five nuances and the "
+            "three next steps. It names hosts and offices, never staff. Paste this in the Supabase SQL "
+            "editor; it writes one row, and only while that row has no record:"
+            "<pre>" + m.E(upd) + "</pre>"),
+        'why': "The reader loads this record before each run, so the next Cerritos read skips the host that "
+               "does not resolve and starts from the three next steps.",
+        'rec': "<strong>Pasted</strong> when it is in. <em>It might be wrong if</em> you would rather the "
+               "next session retry through the connector while you watch for a confirmation.",
+        'chips': chips(('Pasted', 'pasted'), ('Retry with me watching', 'retry'), CH_LATER),
+        'evidence': [live('2026-10-04', "S329: two apply_migration runs timed out at 60 s; a read after each "
+                                        "showed procedure null on Cerritos's row and no running query"),
+                     quoted('Sam in session, "apply the procedure record"', '2026-10-04')],
+    })
 
     return I
 

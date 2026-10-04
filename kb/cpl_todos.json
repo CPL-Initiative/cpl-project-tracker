@@ -1,32 +1,38 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-04",
-  "_session": "S328 SkyLadder",
-  "_status": "Sierra gives each checked program's CPL figures in production (the Ironworker A.S. reads up to 31.5 of 34-38 units), and the statement of who the CPL Initiative serves is on its way to the dashboard and Sierra. The Ironworker ladder moves onto CPL Pathways with the step map you asked for. The film waits for the Cerritos runner read, so it narrates only confirmed facts.",
+  "_session": "S329 SkyRunner",
+  "_status": "Sierra now states who the CPL Initiative serves in production. Three readings of Cerritos's own pages settled most of the Ironworker ladder: 878 and 898 classroom contact hours on the two apprenticeship tracks, a four-year apprenticeship, the B.S. open from Spring 2027 with its proposed course list, and the noncredit and high school lines. Two lines remain To confirm. Cerritos's notes on reading its site wait for one paste, and your routine needs its repositories and model before its first run.",
   "items": [
+    {
+      "id": "s329-sam-procedure-record-paste",
+      "for": "Sam",
+      "tab": "program-requirements",
+      "text": "Paste Cerritos's procedure record into the Supabase SQL editor: it is the one card on open-asks sheet 35 (https://claude.ai/artifact/FVG2MYA9Xw5HqC8EkAftgq). It writes one row, the notes on how Cerritos's website should be read, and only while that row is empty."
+    },
+    {
+      "id": "s329-sam-routine-settings",
+      "for": "Sam",
+      "tab": "activities-projects",
+      "text": "Finish your routine 'CPL queue — scheduled session' at claude.ai/code/routines: the web form attached no repositories and set no model, and six a day needs a custom schedule. Until the repositories are there, a scheduled session stops at its first step."
+    },
+    {
+      "id": "s329-fable-cerritos-read-4",
+      "for": "Fable",
+      "tab": "cpl-pathways",
+      "text": "Cerritos read 4: teach the college page read to submit a form, then read Schedule+ for this term's AED and IWAP sections and the Statewide Career Pathways agreements, and settle the ladder's last two To confirm lines (noncredit sections; how high school credit is granted)."
+    },
+    {
+      "id": "s329-fable-ironworker-film",
+      "for": "Fable",
+      "tab": "cpl-pathways",
+      "text": "Make the 100-second Ironworker film Sam asked for, like CPL Funding in Motion, narrating only lines marked In our data: the classroom hours, the B.S. start and its proposed course list are now confirmed."
+    },
     {
       "id": "s328-sam-kb25-review",
       "for": "Sam",
       "tab": "governance",
       "text": "Review the knowledge base's letter tool change, cpl-knowledge-base pull request 25: the letters count California's 116 community colleges and leave Cal State LA out of the active count. After the merge, the generate-letter function needs a redeploy. https://github.com/CPL-Initiative/cpl-knowledge-base/pull/25"
-    },
-    {
-      "id": "s328-sam-ironworker-ladder",
-      "for": "Sam",
-      "tab": "cpl-pathways",
-      "text": "The Cerritos Ironworker ladder is the first view on CPL Pathways once its pull request merges: a step map from high school to career at the top, each step opening its section. Say what to change."
-    },
-    {
-      "id": "s328-fable-sierra-statement-deploy",
-      "for": "Fable",
-      "tab": "cpl-pathways",
-      "text": "Deploy Sierra's statement of who CPL serves once the A/B re-run (run 37230411476) shows no regressions; its first run flagged 7c, the quick-list table check that failed the same way on 3 October. Smoke 7u must pass after the deploy."
-    },
-    {
-      "id": "s328-fable-cerritos-runner-read",
-      "for": "Fable",
-      "tab": "cpl-pathways",
-      "text": "Run the Cerritos runner read for the Ironworker ladder's four To confirm lines (the B.S. page, the Educational Partnerships articulation list, the Pre-Apprenticeship catalog page and 2026_Welding_Roadmap_ua.pdf), and start Cerritos's procedure record from what it finds. Then the 100-second film Sam asked for, on the funding film's engine."
     },
     {
       "id": "s310-sam-card11-measures",

@@ -14796,8 +14796,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 300,
+   "count": 301,
    "docs": [
+    {
+     "created": "2026-10-04",
+     "governs": [],
+     "n": 330,
+     "path": "docs/session_330_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-pathways",
+      "scheduled-sessions",
+      "decision-sheet"
+     ],
+     "title": "the Cerritos read 4, the procedure record paste, Sam's routine",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-04",
      "governs": [],
@@ -19904,5 +19921,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1039
+ "total": 1040
 }
