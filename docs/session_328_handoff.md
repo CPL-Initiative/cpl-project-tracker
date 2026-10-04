@@ -26,15 +26,36 @@ checkpoint at about 140K tokens left, with PR #1854 open and its A/B preview run
      (up to 31.5), plus IWAP and 31.5 in her answer.
    - The new smoke mode is **7t**: `7r` is the offerings mode and the A/B's control. Delete the preview
      function (`cleanup: true`) once shipped.
-2. **Read open-asks sheet 33's replies first**:
-   [Open Asks Sheet 33](https://claude.ai/artifact/HLeo1NxQvsVkZNUnqw8YCQ) (current;
-   `SHEET_ID` `2026-10-04-open-asks-33`, collection `replies`). Its five cards:
-   1. what the counts call MAP's 116 now that CSU LA is counted;
-   2. CSU LA out of the funding model by name;
-   3. CSU LA's harvest procedure, now or after the Ironworker proof;
-   4. outcomes in record shape v3;
-   5. who at Cerritos confirms the Ironworker facts.
-   Carry each ruling into its lane in the same PR (`decision_sheets`).
+2. **Sheet 33 is answered** (Sam, 18:52-18:57Z, all five his own calls; cpl_memory
+   `sam-sheet33-rulings-2026-10-04` holds his notes verbatim). In your first PR, carry each ruling into
+   its lane and remove the NEEDS SAM markers (college-district-identity, implementation-funding,
+   program-requirements-harvest x3). Then retire the five cards from `kb/_build_open_asks_decision_sheet.py`
+   with a one-line comment, the way sheet 32's were.
+   - **1. Who CPL serves.** He asked for one concise statement. S327's draft, for him to confirm:
+     *"The CPL Initiative serves California's 116 community colleges, two noncredit campuses, and partner
+     programs such as LAUNCH and Futuro Health. Cal State LA is the first CSU campus on MAP. Adult
+     education, ROP and not-for-credit programs such as UpSkill CA join next."* The 116 is the 115 credit
+     colleges plus Calbright. MAP's own scrape count (115 community colleges and Cal State LA) says what
+     it counts.
+     - Apply the statement to the KPI card, Sierra's line and the public KB letter blocks. The KB
+       blocks go through its curation pipeline, as a draft PR.
+     - The CSU systemwide talks are context, not a public line.
+   - **2. Funding.** It goes only to CCC colleges and campuses. Leave CSU LA out by name, with the guard.
+     Partner project funding needs no focus and no hiding.
+   - **3. CSU LA's harvest:** later. *"I want to get our CCC process nailed down before getting into
+     partners."*
+   - **4. Outcomes:** as proposed. Record shape v3 keeps program and course outcomes as printed.
+   - **5. Exhaust the agent before any request.** *"You draft the request only after we have exhausted all
+     our efforts at having the agent harvest needed data... we will need to have agents configured for
+     each college."* He asked for advice; S327's, for you to put to him:
+     - One procedure record per college: hosts, platform, reading steps, refusals, workarounds tried,
+       nuances. The reader loads it.
+     - The harvest tab's Procedures view shows it, and each workaround he suggests lands as a change to
+       it (the S320 ruling: an agent per college that the college and the MAP team own and train).
+     - A request is drafted only when the record shows the steps exhausted.
+     - First, for Cerritos: a runner read, since runners reach the sites this container cannot. Read the
+       B.S. page, the EPP articulation list, the Pre-Apprenticeship catalog page and
+       `2026_Welding_Roadmap_ua.pdf`.
 3. **The Ironworker proof of concept** (Sam's 18:23Z note, verbatim in the vault braindump
    `braindump-2026-10-04-1823-ironworker-proof-of-concept-full-pathway.md` and in cpl_memory
    `sam-ironworker-proof-of-concept-full-pathway-2026-10-04`). Build a First Light mock-up of the
