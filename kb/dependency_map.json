@@ -4,9 +4,9 @@
   "supabase_tables": 93,
   "rpcs": 34,
   "edge_functions": 6,
-  "file_datasets": 575,
+  "file_datasets": 576,
   "external_services": 155,
-  "consumers": 403,
+  "consumers": 404,
   "workflows": 42,
   "data_js_files": 68,
   "tabs": 37
@@ -5944,6 +5944,26 @@
      "direction": "write",
      "how": "literal",
      "line": 183
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-pilot-records-review.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_pilot_records_review_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    },
+    {
+     "id": "script:kb/_build_pilot_records_review_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 34
     }
    ],
    "served": false,
