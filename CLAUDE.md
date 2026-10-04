@@ -512,8 +512,8 @@ first day.** Do the remembering for them.
   quiet) — close with this line, filled in, on its own:
   > *Greetings, you are Sky**Next** (Session N+1), see Sky**You**'s handoff —
   > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.*
-  Sam removed the guard-check sentence that used to close it (2026-09-28): it was
-  added to abate the approval storm. You **assign** the next moniker (one name, not a
+  Sam's routine can start the session instead (2026-10-04):
+  [`scheduled_sessions`](docs/reference/scheduled_sessions.md). You **assign** the next moniker (one name, not a
   menu) and it must be the one the handoff names. *"I just copy and paste the whole thing in the new session. If I
   need to change direction, I just add the new direction to the opening note"* —
   so the line must stand alone, and nothing may follow it but the sign-off. The

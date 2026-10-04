@@ -14058,7 +14058,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 52,
+   "count": 53,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14712,6 +14712,21 @@
      "title": "Pipeline Reference \u2014 architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-10-04",
+     "governs": [],
+     "path": "docs/reference/scheduled_sessions.md",
+     "status": null,
+     "tags": [
+      "reference",
+      "scheduled-sessions",
+      "checkpoint",
+      "governance-team-enablement"
+     ],
+     "title": "Scheduled sessions \u2014 what a session started by Sam's routine does",
+     "type": null,
+     "updated": "2026-10-04"
     },
     {
      "created": "2026-09-09",
@@ -19889,5 +19904,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1038
+ "total": 1039
 }
