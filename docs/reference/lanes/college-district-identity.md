@@ -80,6 +80,8 @@ committed baseline's two tables (`chatbox_college_profiles` + `map_college_conta
 adding `map_college_users` is a deliberate re-baseline, not a freebie.
 
 **Still open:** nothing in `cpl-chat` stops an equivalent sandbox row arriving tomorrow.
+**California State University Los Angeles is on MAP (Sam, 2026-10-04: *"Keep CSU LA in the mix as they are our first CSU starting to use MAP. We'll figure out a procedure for them as well."*).** The 16:55Z scrape counts it among 116 MAP colleges (Inactive); it has no row in `map_colleges`, `map_college_users`, `chatbox_college_profiles` or `coci_college_programs`, and every name lookup falls through silently (`college_short_names.js` returns the name; the crosswalk builder would file a new id as unresolved and exit 0). **NEEDS SAM** (open-asks sheet 33 card 1): what the counts call the 116. False today: the KPI card's *of 116 system colleges* (`excel_to_dashboard.py` 3656), Sierra's *Active colleges: 103 of 116* (`index.ts` 5380, with a 115 fallback), and the public KB letter blocks' *across 103 of California's 116 community colleges* (`cpl-knowledge-base` budget-support `0005_seed_letter_blocks.sql` 10, 34, 54, 66).
+
 **NEXT:** MAP supplies the two `awaiting_map_id` ids (`Calbright College Credit`,
 `Launch Apprenticeship Non-Credit`) — the only thing here nobody on our side can do;
 district columns (done) vs its own `districts` table. Story:

@@ -192,8 +192,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-32.html')
-SHEET_ID = '2026-10-04-open-asks-32'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-33.html')
+SHEET_ID = '2026-10-04-open-asks-33'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -648,6 +648,40 @@ def check_premises(I):
 CH_LATER = ('Later', 'later')
 
 
+# S327: the premises sheet 33's cards rest on.
+def p_csu_la_counted():
+    """CSU LA still sits in the scrape's tiers, so the count wording is still open."""
+    lm = json.loads(_read('live_metrics.json'))
+    names = json.dumps(lm.get('tiers') or {})
+    on = 'California State University Los Angeles' in names
+    return on, ('live_metrics.json (scraped %s) lists CSU LA among %s colleges'
+                % (lm.get('scraped_at'), lm.get('college_count')) if on
+                else 'live_metrics.json no longer lists CSU LA')
+
+
+def p_csu_la_no_registry_row():
+    """The harvest registry seeds from coci_college_programs, which holds no CSU."""
+    sql = _read('kb/supabase_program_source_registry.sql')
+    seeded = 'coci_college_programs' in sql and 'California State University' not in sql
+    return seeded, ('the registry seeds from coci_college_programs and names no CSU' if seeded
+                    else 'the registry SQL now names a CSU campus')
+
+
+def p_outcomes_in_pilot_pages():
+    """How many captured pilot pages print outcomes; the card holds while the record shape lacks them."""
+    hits, n = 0, 0
+    for path in sorted(glob.glob(os.path.join(ROOT, 'kb/program_requirements_pilot/sources/*.json'))):
+        n += 1
+        t = (json.load(open(path)).get('text') or '')
+        if re.search(r'(program|student) learning outcomes?', t, re.I):
+            hits += 1
+    shape = (_read('kb/_program_requirements_extract.py')
+             + _read('chatbox/supabase/functions/program-requirements-extract/index.ts'))
+    still_open = 'outcomes' not in shape
+    return still_open, ('%d of %d captured pilot pages print program or student learning outcomes; '
+                        'the record shape %s them' % (hits, n, 'does not carry' if still_open else 'now carries'))
+
+
 # ── the coverage audit ───────────────────────────────────────────────────────
 def lanes_with_asks():
     out = {}
@@ -733,6 +767,101 @@ def items():
     # Sheet 32 (S326) was answered at 17:33Z on 2026-10-04, both cards his own call, as proposed:
     # the CPL figure ("up to" plus the recommended path's, with CPL in three kinds per his note)
     # and where catalog-and-state-file differences go. The lane records both; no card remains.
+
+    # Sheet 33 (S327): CSU LA (Sam's opening note, "Keep CSU LA in the mix as they are our first CSU
+    # starting to use MAP. We'll figure out a procedure for them as well."), the outcomes element (his
+    # 18:03Z note) and the Ironworker proof of concept (his 18:23Z note).
+    I.append({
+        'lane': 'college-district-identity',
+        'title': "CSU LA is counted: what do the counts call the 116?",
+        'ref': 'college-district-identity NEEDS SAM · live_metrics.json · excel_to_dashboard.py · '
+               'cpl-knowledge-base budget-support letter blocks',
+        'facts': (
+            "You ruled CSU LA stays in the mix. The 16:55Z scrape counts it among 116 MAP colleges (Inactive "
+            "today), and nothing in the pipeline errors on it. Three places now say something false: the KPI "
+            "card reads <code>of 116 system colleges</code>, Sierra reads <code>Active colleges: 103 of 116</code>, "
+            "and the public knowledge base's letter blocks read <code>across 103 of California's 116 community "
+            "colleges</code>. California has 116 community colleges, but MAP's 116 are 115 of them plus CSU LA "
+            "(Calbright is not on MAP)."),
+        'why': "A letter that calls a CSU campus a community college is the error a legislator's staff would catch.",
+        'rec': "<strong>Two counts, each named for what it counts:</strong> MAP participation says "
+               "<em>116 colleges and universities on MAP (115 community colleges and Cal State LA)</em>; a "
+               "sentence about the system keeps <em>community colleges</em> and takes the community-college "
+               "count from the same scrape. <em>It might be wrong if</em> you would rather say "
+               "<em>institutions</em> everywhere and drop the system sentence.",
+        'chips': chips(('As proposed', 'as-proposed'), ('Say institutions everywhere', 'institutions'), CH_LATER),
+        'evidence': [measured(p_csu_la_counted),
+                     live('2026-10-04', 'S327 survey of the count surfaces, file and line in the lane')],
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Does the CCC funding model leave CSU LA out by name?",
+        'ref': 'implementation-funding NEEDS SAM · funding/_build_funding_performance.py · S287 partner ruling',
+        'facts': (
+            "The model's roster is the 115 community colleges, so CSU LA receives no allocation. But a MAP "
+            "name the resolver cannot place goes to <code>unmatched</code>, which the code treats as a "
+            "community college it missed, and those students still count in the statewide totals. CSU LA "
+            "has no students on MAP today; its first ones would enter the model's statewide figures. The "
+            "partner rule (S287) already keeps non-CCC partners out: no count, no mention."),
+        'why': "The statewide figures feed every college's share; a CSU's students would move them.",
+        'rec': "<strong>Leave it out by name:</strong> CSU LA joins the partners outside the CCC funding "
+               "model, with a guard that fails if any non-CCC institution reaches the statewide totals. "
+               "<em>It might be wrong if</em> you want CSU LA's outcomes shown beside the model, unfunded.",
+        'chips': chips(('As proposed', 'as-proposed'), ('Show it beside the model', 'beside'), CH_LATER),
+        'evidence': [quoted('the S327 survey of funding/_build_funding_performance.py lines 232-233 and 905-918', '2026-10-04')],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "CSU LA's harvest procedure: start it now or after the Ironworker proof?",
+        'ref': 'program-requirements-harvest NEEDS SAM · kb/supabase_program_source_registry.sql',
+        'facts': (
+            "You said we would figure out a procedure for CSU LA. The registry seeds from the state's "
+            "community-college program file, which holds no CSU, so CSU LA has no row. Its catalog can be "
+            "read the same way, but the first check (every course the state's Program Course File lists is "
+            "placed) has no state file to check against at a CSU."),
+        'why': "Without a second closed list, a CSU record passes three of the four checks at most.",
+        'rec': "<strong>After the Ironworker proof:</strong> add CSU LA to the registry as a CSU row, read its "
+               "catalog, and use the catalog's own course inventory as its closed list, marked as such. "
+               "<em>It might be wrong if</em> CSU LA's first MAP articulations are close, in which case start now.",
+        'chips': chips(('After the Ironworker proof', 'after'), ('Start now', 'now'), CH_LATER),
+        'evidence': [measured(p_csu_la_no_registry_row)],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Add outcomes to the harvest: program and course outcomes as printed",
+        'ref': 'program-requirements-harvest NEEDS SAM · kb/_program_requirements_extract.py · kb/_row_audit.py',
+        'facts': (
+            "You asked for an element that grabs published course and program outcomes, and a process that "
+            "compares credential skills with course outcomes. The pages the pilot already captured print "
+            "them: Cerritos, Riverside and West LA on all four pages each, Mt. SAC on one, Miramar on none. "
+            "COCI course outcomes are not in our data (the Master Course File load carries none), and the "
+            "credential skills file the watch agent is to fill is not started."),
+        'why': "Outcomes are the evidence a faculty member weighs before articulating a credential.",
+        'rec': "<strong>Record shape version 3:</strong> the extraction keeps program and course outcomes "
+               "exactly as printed, the scorer checks they are verbatim, and the skills comparison waits for "
+               "the skills file. <em>It might be wrong if</em> you want the comparison built first on the "
+               "IT/AI credentials, where issuers publish skills.",
+        'chips': chips(('As proposed', 'as-proposed'), ('Skills comparison first', 'skills-first'), CH_LATER),
+        'evidence': [measured(p_outcomes_in_pilot_pages)],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Ironworker proof: who at Cerritos confirms what the web will not show us?",
+        'ref': 'program-requirements-harvest NEEDS SAM · cpl_pathways_data.js · coci_college_programs',
+        'facts': (
+            "The data holds the stack: Certificates 36002 (Reinforcing, 34 units) and 36003 (Structural, 38) "
+            "are each one complete A.S. major option, and the A.S. reads up to 31.5 units through CPL. Four "
+            "facts come only from pages the session cannot reach: the B.S. course list, its admission rule "
+            "and first cohort; the high school articulation list (Cerritos's EPP office); whether the 26 "
+            "noncredit AED 40-41 courses still run; and the apprenticeship's related-instruction hours "
+            "(480 or 700+)."),
+        'why': "The proof shows every rung; a rung read from a search snippet is a guess on a public page.",
+        'rec': "<strong>Ask the people you know at Cerritos</strong> (the apprenticeship coordinator and the "
+               "EPP articulation office); the session drafts the questions. <em>It might be wrong if</em> you "
+               "would rather a session read the pages from a runner first.",
+        'chips': chips(('I will ask, draft it', 'ask'), ('Read from a runner first', 'runner'), CH_LATER),
+        'evidence': [live('2026-10-04', 'coci_college_programs and coci_program_courses for Cerritos; two research agents, S327')],
+    })
     return I
 
 

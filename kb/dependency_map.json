@@ -4,7 +4,7 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 582,
+  "file_datasets": 583,
   "external_services": 157,
   "consumers": 408,
   "workflows": 43,
@@ -5986,7 +5986,7 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-32.html": {
+  "file:docs/visuals/<date>-open-asks-33.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
@@ -11852,6 +11852,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/program_requirements_pilot/sources/*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 673
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/program_requirements_pilot_sample.json": {
    "consumers": [
     {
@@ -14312,6 +14325,13 @@
      "direction": "read",
      "how": "literal",
      "line": 135
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 654
     },
     {
      "id": "script:veteran-sprint-map/extract_military.py",

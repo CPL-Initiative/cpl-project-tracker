@@ -380,7 +380,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks-32.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
+| `docs/visuals/<date>-open-asks-33.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docs/visuals/<date>-pilot-records-review.html` | scripts: `kb/_build_pilot_records_review_sheet.py` | scripts: `kb/_build_pilot_records_review_sheet.py` |
 | `docs/visuals/<date>-sierra-credit-source.html` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
@@ -577,6 +577,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
 | `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py` | — |
 | `kb/program_requirements_pilot/registry_read.json` | scripts: `kb/_build_roep_display.py` | — |
+| `kb/program_requirements_pilot/sources/*.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
@@ -661,7 +662,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kpi_cards.js` | pages: `CPL_Dashboard.html` | — |
 | `kpi_history.json` | scripts: `excel_to_dashboard.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |
-| `live_metrics.json` | tabs: `college-briefing` · pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
+| `live_metrics.json` | tabs: `college-briefing` · pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py`, `kb/_build_open_asks_decision_sheet.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
 | `live_metrics_new.json` | workflows: `daily-dashboard.yml` | — |
 | `map/probe_users_schema.py` | workflows: `map-users-schema-probe.yml` | — |
 | `map/sync_map_users.py` | workflows: `map-users-sync.yml` | — |
@@ -1012,5 +1013,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 94 Supabase tables · 35 RPCs · 6 edge functions · 582 file
+Coverage: 94 Supabase tables · 35 RPCs · 6 edge functions · 583 file
 datasets · 157 external services · 408 consumers · 43 workflows · 37 tabs.

@@ -261,6 +261,13 @@ FIXTURES = {
     # S315: sheet 19's statewide Access target (the maximum award trims capped targets).
     "p_cap_trims_targets":   ("  function prioEntitlement(c, p) {\n    return (c ? sizePct(c) * capScale(c) * laneFrac : 1) * net;\n  }",
                               "  function prioEntitlement(c, p) {\n    return (c ? sizePct(c) * laneFrac : 1) * net;\n  }"),
+    # S327: sheet 33 (CSU LA counted; no registry row; outcomes not yet in the record shape).
+    "p_csu_la_counted":      ('{"scraped_at": "x", "college_count": 116, "tiers": {"Inactive": [{"college": "California State University Los Angeles"}]}}',
+                              '{"scraped_at": "x", "college_count": 115, "tiers": {"Inactive": [{"college": "Orange Coast College"}]}}'),
+    "p_csu_la_no_registry_row": ("insert into public.program_source_registry (college) select college from coci_college_programs;",
+                                 "select college from coci_college_programs union select 'California State University Los Angeles';"),
+    "p_outcomes_in_pilot_pages": ("required: {program, blocks}; block: {name, rule, courses}",
+                                  "required: {program, blocks, outcomes}; outcomes: as printed"),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():
