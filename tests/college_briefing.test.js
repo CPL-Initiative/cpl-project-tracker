@@ -995,7 +995,14 @@ const tierCounts = {};
     if (t.mismatch) mismatches++;
   });
 });
-check("(O) every college in live_metrics resolves to a tier", tiered === 115);
+// Every college the file LISTS, never a remembered total: the 2026-10-04 scrape
+// added California State University Los Angeles (Inactive), 115 -> 116, and a
+// literal 115 turned main red with no code change (the warning below, again).
+const listed = ["leading", "advancing", "inactive"].reduce(function (n, k) {
+  return n + (LIVE.tiers[k].colleges || []).length;
+}, 0);
+check("(O) every college in live_metrics resolves to a tier",
+  listed > 100 && tiered === listed, `${tiered} of ${listed} listed colleges resolve`);
 check("(O) our per-criterion list reconciles with the worker's count for ALL of them",
   mismatches === 0, "a list that does not sum to the printed figure is worse than no list");
 // ⚠️ Do NOT pin the three tier counts as literals. They are LIVE SCRAPED values:

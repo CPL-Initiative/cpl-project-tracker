@@ -390,12 +390,27 @@ Sam answered all five cards of sheet 29 between 11:54 and 12:00Z. Cards 2, 3 and
 47. **A public table holds what its reader renders.** The extraction's working
     notes ("a reviewer should confirm") stay in the repo; the table stores
     `{program, blocks}`.
+48. **A paste card carries the text to paste.** Sheet 31 named four file paths, and
+    the SQL editor answered a pasted path with a syntax error. Put the SQL itself on
+    the card (a block with a copy control), already cut to what is still missing:
+    seven of the ten memory rows were written, so one paste of three rows and both
+    closes replaced four files.
+49. **Postgres 17's MAINTAIN rides the default grants.** After the closes, `anon`
+    still reads `rm` on both tables, as on 97 of 104 public tables. PostgREST issues
+    no maintenance commands, so the API cannot use it; name `maintain` in the next
+    close's list.
+50. **A gate check that counts an error as sealed proves nothing.** Smoke 15d's
+    anon reads of two student tables ended in a statement timeout and passed as
+    gated. Row-level security does hold there (one reviewer-only policy each); the
+    check should call a timeout inconclusive.
 
 **Sam's rulings this run:** sheet 29, all five his own calls (card 1 later; card 2
 guard lifted; card 3 a note on the college's record, no ask for access; card 4 yes;
 card 5 go).
 
-**NEXT.** Deploy Sierra's catalog requirements once #1851's A/B is clean; Sam
-pastes the four receipts on sheet 31; the addenda reading agent once the next
+Sheet 31 (one card, pasted as proposed at 16:56Z). Sierra's catalog requirements
+went live at 15:33Z; smoke green on main.
+
+**NEXT.** The addenda reading agent once the next
 apply fills the table; a sequence read (`read: 1`) that looks for Miramar's map
 on its own pages.
