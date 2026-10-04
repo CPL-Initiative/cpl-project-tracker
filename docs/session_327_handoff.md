@@ -31,6 +31,18 @@ its A/B preview running.
    still waits on Sam's next round. Its Cerritos Ironworker row reads 0 MAP credit
    recs (its credit lives in the CPL Pathways map); fix before the port.
 
+## Addendum (S326, 15:00Z, EMERGENCY line reached after the full checkpoint)
+
+The full Rule 9 checkpoint ran at 019fdcb; nothing in its list is stale except
+this finding. #1851's push-triggered `smoke` (run 37210552092, against
+PRODUCTION) failed four asserts: 7l's new catalog-year line (expected until the
+deploy) and three 7s asserts (San Gabriel Valley LVN), which passed on main's
+last full smoke (37131616028, 2026-10-03) on the same production code, so they
+are production's answer varying, not this diff. 7q passed in full. Comment
+posted on #1851. **Decide the merge on the A/B run 37210570623:** 7s must not
+fail on the candidate while passing on production. A send_later check-in was
+armed for 15:15Z to do this; if this session is gone, you do it.
+
 ## What shipped (S326)
 
 - **#1850, merged (8884523).** Sheet 29 cards 2, 3, 5:
