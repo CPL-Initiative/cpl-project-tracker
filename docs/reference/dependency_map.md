@@ -55,7 +55,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 
 | Dataset | Read by | Written by |
 |---|---|---|
-| `allowed_reviewers` | `edgefn:cpl-news-harvest` | — |
+| `allowed_reviewers` | `edgefn:cpl-news-harvest`, `edgefn:program-requirements-extract` | — |
 | `budget_funding` | tabs: `budget`, `college-briefing`, `implementation-funding` · scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | tabs: `budget` |
 | `chat_interactions` | tabs: `sierra-training` | `edgefn:cpl-chat` |
 | `chatbox_college_courses` | scripts: `kb/_course_title_cleanup_apply.py` · `edgefn:cpl-chat` | scripts: `kb/_sync_college_courses.py` |
@@ -197,6 +197,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl-news-harvest` | none found | produced by: `chatbox/supabase/functions/cpl-news-harvest/index.ts` |
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `letter-curator` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
+| `program-requirements-extract` | none found | produced by: `chatbox/supabase/functions/program-requirements-extract/index.ts` |
 
 ## Storage buckets
 
@@ -998,5 +999,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 93 Supabase tables · 34 RPCs · 5 edge functions · 574 file
-datasets · 155 external services · 401 consumers · 41 workflows · 37 tabs.
+Coverage: 93 Supabase tables · 34 RPCs · 6 edge functions · 574 file
+datasets · 155 external services · 402 consumers · 41 workflows · 37 tabs.

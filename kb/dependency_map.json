@@ -3,10 +3,10 @@
  "stats": {
   "supabase_tables": 93,
   "rpcs": 34,
-  "edge_functions": 5,
+  "edge_functions": 6,
   "file_datasets": 574,
   "external_services": 155,
-  "consumers": 401,
+  "consumers": 402,
   "workflows": 41,
   "data_js_files": 68,
   "tabs": 37
@@ -147,6 +147,16 @@
       "budget-support/web/curator.html",
       "budget-support/web/new-letter.html"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "edgefn:program-requirements-extract": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "file:chatbox/supabase/functions/program-requirements-extract/index.ts",
+     "how": "source"
     }
    ],
    "main_committers": []
@@ -1589,7 +1599,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 483
+     "line": 574
     }
    ],
    "main_committers": []
@@ -1692,7 +1702,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 485
+     "line": 576
     }
    ],
    "main_committers": []
@@ -1704,7 +1714,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 486
+     "line": 577
     }
    ],
    "main_committers": []
@@ -1808,7 +1818,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 484
+     "line": 575
     }
    ],
    "main_committers": []
@@ -18433,6 +18443,13 @@
      "direction": "read",
      "how": "literal",
      "line": 385
+    },
+    {
+     "id": "edgefn:program-requirements-extract",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "literal",
+     "line": 147
     }
    ],
    "main_committers": []
