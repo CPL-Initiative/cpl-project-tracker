@@ -86,7 +86,7 @@
       "label": "Program source census",
       "detail": "Scheduled: 29 10 * * 0",
       "where": ".github/workflows/program-source-census.yml",
-      "why": "The program-source census (Phase 0 of the program requirements harvest), weekly. It reads public college websites from a runner under Sam's sheet-23 call 5 (2026-10-03) and writes only program_source_registry, through program_source_census_apply(), which never overwrites a row a person corrected and files every prior row in program_source_registry_history. It feeds no public surface and carries no staff or student detail. It earns a cadence row when Phase 1 names the person who checks the pilot sample (the lane's open item); a college-facing correction surface goes through Governance before it ships."
+      "why": "The program-source census (Phase 0 of the program requirements harvest), weekly. It reads public college websites from a runner under Sam's sheet-23 call 5 (2026-10-03) and writes only program_source_registry, through program_source_census_apply(), which never overwrites a row a person corrected and files every prior row in program_source_registry_history, and (since S326, Sam's go on open-asks sheet 29 card 5) program_source_addenda, through program_source_addenda_apply(), which lists the catalog addenda it sees, marks one gone only after a complete read, never touches a row a person corrected, and files every prior row in program_source_addenda_history. It feeds no public surface and carries no staff or student detail. It earns a cadence row when Phase 1 names the person who checks the pilot sample (the lane's open item); a college-facing correction surface goes through Governance before it ships."
     },
     {
       "key": "table:cpl_reflections",

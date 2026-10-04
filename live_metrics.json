@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-04T12:27:34.897Z",
+  "scraped_at": "2026-10-04T14:50:47.799Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -429,16 +429,16 @@
         {
           "college": "Santa Ana College",
           "students": 585,
-          "units": 2076.2,
-          "avgUnits": 3.5490598290598285,
+          "units": 2079.2,
+          "avgUnits": 3.554188034188034,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
           "militaryStudents": 381,
           "nonMilitaryStudents": 204,
           "apprenticeStudents": 10,
-          "savings": 3234618.5,
-          "yearImpact": 12143901.6,
+          "savings": 3237513.5,
+          "yearImpact": 12158103.6,
           "transcribedUnits": 0
         },
         {
@@ -1878,14 +1878,14 @@
   ],
   "raw": {
     "Students": 52384,
-    "Units": 226347.90000000002,
+    "Units": 226350.90000000002,
     "TranscribedUnits": 74764.2,
-    "Savings": 339750654,
-    "YearImpact": 1343266426.3999999,
+    "Savings": 339753549,
+    "YearImpact": 1343280628.3999999,
     "MilitaryStudents": 28619,
     "NonMilitaryStudents": 23856,
     "AprenticeStudents": 853,
-    "AverageUnits": 4.320935781918143,
+    "AverageUnits": 4.320993051313379,
     "TranscribedAverage": 1.4272335064141721
   }
 }
