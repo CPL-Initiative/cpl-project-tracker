@@ -35,6 +35,14 @@ its A/B preview running.
    approved ("mock up looks good"). Its Cerritos Ironworker row reads 0 MAP credit
    recs (its credit lives in the CPL Pathways map); fix before the port.
 
+## One open question for Sam (asked in chat, not yet answered)
+
+The 2026-10-04 16:55Z scrape added **California State University Los Angeles** to the MAP tiers
+(Inactive), so `live_metrics.json` lists 116 colleges and the dashboard counts a CSU campus among
+them. S326 fixed only the test that pinned 115 (#1852, `college_briefing.test.js` check (O)).
+Whether the dashboard counts it or filters it is Sam's call: if he has not answered, put it on
+open-asks sheet 33 with the scrape as evidence.
+
 ## The ROEP build (your first job), measured by S326
 
 Sam approved the [CPL Pathways ROEP mock-up](https://claude.ai/artifact/8hkej9jHsmLRX6cZYxrXbM) (v3; its
