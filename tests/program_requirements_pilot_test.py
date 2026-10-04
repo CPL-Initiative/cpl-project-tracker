@@ -130,6 +130,98 @@ check(P.pick_pdf_pages(pages, {"title": "Real Estate Salesperson"}, RE) == [2, 3
       "the PDF reader takes the program's page and the next page its list runs onto, "
       "not the table of contents: %s" % P.pick_pdf_pages(pages, {"title": "Real Estate Salesperson"}, RE))
 
+# ── Run 2's lessons (37166104191): the wiring, the hubs, the host, the clicks ─
+check(P.score_link("Degrees, Courses & Pathways", "https://c/degrees-certificates-courses/", prog) > 0
+      and P.score_link("Programs & Services", "https://c/programs-and-services/", prog) <= 0,
+      "Cerritos: 'Degrees, Courses & Pathways' is the program index; 'Programs & Services' "
+      "is student services")
+check(P.score_link("Degree Curricula and Certificate Programs", "", prog) > 0
+      and P.score_link("Student Services", "", prog) <= 0,
+      "Miramar's program hub counts and its Student Services does not")
+check(P.same_site("https://rccd.curriqunet.com/catalog/x", "https://rccd.curriqunet.com/catalog/alias/rcc")
+      and not P.same_site("https://www.rcc.edu/programs/culinary-arts.html",
+                          "https://rccd.curriqunet.com/catalog/alias/rcc"),
+      "the reader stays on the catalog's host")
+biz = {"title": "Business Administration 2.0", "award": "A.S. T Degree"}
+check(P.clickable_candidate("Business Administration 2.0 - Associate in Science for Transfer Degree: Miramar", biz)
+      and not P.clickable_candidate("Describe common business functions and practices.", biz),
+      "a program's navigation item is clicked; its learning outcome is not")
+
+
+class _Page:
+    def __init__(self, pages):
+        self.pages, self.url = pages, ""
+
+    def evaluate(self, js):
+        return self.pages[self.url]
+
+    def wait_for_timeout(self, ms):
+        pass
+
+
+class _Reader:
+    """The census Reader's surface, with pages from a dict and no network."""
+    def __init__(self, pages):
+        self.page, self.loads, self.delay = _Page(pages), 0, 0
+
+    def load(self, url):
+        self.loads += 1
+        self.page.url = url
+        return {"url": url, "status": 200, "access": "ok", "final_url": url,
+                "content_type": "text/html"}
+
+
+HOME = "https://catalog.example.edu/"
+CUL_PAGE = HOME + "programs/culinary-arts/"
+pages = {
+    HOME: {"title": "Catalog", "h1": "", "body": "Catalog home", "content": "",
+           "links": [{"text": "Student Services", "href": HOME + "services/"},
+                     {"text": "Culinary Arts, Certificate of Achievement", "href": CUL_PAGE},
+                     {"text": "Culinary Arts at the college's own site",
+                      "href": "https://www.example.edu/culinary/"}],
+           "courselists": [], "clickables": []},
+    CUL_PAGE: {"title": "Culinary Arts", "h1": "Culinary Arts", "links": [], "content": "",
+               "body": "Required: CUL-36 8.5 CUL-37 8.5 CUL-38 8.5 CUL-20 2 MAG-56 3 KIN-4 3",
+               "courselists": [], "clickables": []},
+}
+rows = [{"course_control_number": "CCC%d" % i, "course_code": c, "course_title": c, "units": u,
+         "cid": None, "course_college": None, "load_id": "L1"}
+        for i, (c, u) in enumerate([("CUL 20", 2), ("CUL 36", 8.5), ("CUL 37", 8.5),
+                                    ("CUL 38", 8.5), ("KIN4", None), ("MAG 56", 3)])]
+saved = (P.fetch_program, P.fetch_courses, P.fetch_registry)
+P.fetch_program = lambda college, cn: {"program_title": "Culinary Arts",
+                                       "award": "Certificate of Achievement requiring 30S/45Q",
+                                       "status": "Active"}
+P.fetch_courses = lambda college, cn: rows      # the PostgREST shape: course_code, not code
+P.fetch_registry = lambda college: {"catalog_url": HOME, "catalog_platform": "courseleaf",
+                                    "catalog_format": "html_per_program"}
+try:
+    rec = P.capture(_Reader(pages), {"college": "Riverside City College", "control_number": "22804",
+                                     "shape": "cert_electives", "title": "Culinary Arts"}, {})
+finally:
+    P.fetch_program, P.fetch_courses, P.fetch_registry = saved
+check(rec.get("coverage") == 1.0 and (rec.get("source") or {}).get("url") == CUL_PAGE,
+      "capture() reads the closed list as Supabase returns it and finds the program's page "
+      "(run 2 read every program at 0%%): %s %s" % (rec.get("coverage"), (rec.get("source") or {}).get("url")))
+check([t["url"] for t in rec.get("trail") or []] == [HOME, CUL_PAGE],
+      "capture() follows the program's link on the catalog's host, not Student Services "
+      "or the college's own site: %s" % [t["url"] for t in rec.get("trail") or []])
+check(rec.get("closed_list") and rec["closed_list"][0].get("code") == "CUL 20",
+      "the record carries the closed list in the scorer's shape")
+
+OFFSITE = "https://www.example.edu/programs/culinary-arts-certificate.html"
+pages2 = {
+    HOME: {**pages[HOME], "links": [
+        {"text": "Culinary Arts, Certificate of Achievement", "href": OFFSITE},  # scores highest
+        {"text": "Culinary Arts", "href": CUL_PAGE}]},
+    CUL_PAGE: pages[CUL_PAGE],
+    OFFSITE: pages[CUL_PAGE],
+}
+res = P.locate_html(_Reader(pages2), {"title": "Culinary Arts", "award": "Certificate of Achievement"},
+                    P.closed_from_rows(rows), HOME, {}, False)
+check(OFFSITE not in [t["url"] for t in res["trail"]],
+      "a better-worded link off the catalog's host is never loaded: %s" % [t["url"] for t in res["trail"]])
+
 # ── The scorer: the plan's three automatic bars ──────────────────────────────
 rec = {"program": {"total_units": 33.5, "open_elective_units": 0},
        "blocks": [{"name": "Required", "rule": "all",

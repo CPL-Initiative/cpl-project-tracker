@@ -176,9 +176,15 @@ AWARD_WORDS = {
     "bs": [r"bachelor", r"\bb\.\s?s\."],
 }
 HUB_WORDS = re.compile(
-    r"programs? of study|degrees? (?:and|&) certificates|areas? of study|"
-    r"\bprograms?\b|\bmajors?\b|a-z|academic programs|career (?:and|&) technical|"
-    r"noncredit|certificates", re.I)
+    r"programs? of study|degrees?,? (?:and|&|courses)|areas? of study|degree curricula|"
+    r"programs? a-z|academic programs|career (?:and|&) technical|\bmajors?\b|"
+    r"noncredit programs?|certificates? (?:and|&|programs?)", re.I)
+# Words that name a college's services or policies, never its program index:
+# Cerritos's catalog links "Programs & Services" (student services) beside
+# "Degrees, Courses & Pathways" (run 2, S323).
+NOT_HUB = re.compile(
+    r"services|student|admission|enrollment|polic|calendar|fees|counsel|financial|"
+    r"personnel|directory|faculty|staff|map of|addend|outcomes?", re.I)
 REFUSE_LINK = re.compile(
     r"archiv|previous catalog|past catalog|login|sign in|course descriptions?$|"
     r"mailto:|tel:|javascript:|\.(?:jpg|png|gif|zip|docx?)$", re.I)
@@ -203,9 +209,26 @@ def score_link(text: str, href: str, program: dict) -> int:
     kind = award_kind(program.get("award"))
     if hit and any(re.search(p, low) for p in AWARD_WORDS.get(kind, [])):
         score += 3
-    if not hit and HUB_WORDS.search(t) and len(t) < 60:
+    if not hit and HUB_WORDS.search(t) and not NOT_HUB.search(t) and len(t) < 60:
         score += 2
     return score
+
+
+def same_site(href: str, start: str) -> bool:
+    """The catalog's own host. A program's requirements live in the catalog;
+    Riverside's reader followed rcc.edu's marketing pages and a Microsoft form
+    off the curriQunet front page (run 2, S323)."""
+    return urllib.parse.urlparse(href).netloc.lower() == urllib.parse.urlparse(start).netloc.lower()
+
+
+def clickable_candidate(text: str, program: dict) -> bool:
+    """A navigation item, not a sentence: Miramar's click-through went on to
+    click the program's learning outcomes ("Describe common business functions
+    and practices.") because they share the title's words (run 2, S323)."""
+    t = (text or "").strip()
+    if not t or t.endswith(".") or len(t.split()) > 16:
+        return False
+    return score_link(t, "", program) > 0
 
 
 # ── PDF pages ───────────────────────────────────────────────────────────────
@@ -271,6 +294,16 @@ def fetch_courses(college: str, cn: str) -> list[dict]:
                 "course_title,units,cid,course_college,load_id"
                 "&college=eq.%s&program_control_number=eq.%s&order=course_code"
                 % (q(college), q(cn)))
+
+
+def closed_from_rows(rows: list[dict]) -> list[dict]:
+    """coci_program_courses rows in the shape every other function here reads.
+    Run 2 of the capture (37166104191) passed the raw rows, keyed course_code,
+    to a matcher that reads code: no listed code could match any page, the
+    PDF probe came back empty, and every program read 0% (S323)."""
+    return [{"ccn": r.get("course_control_number"), "code": r.get("course_code"),
+             "title": r.get("course_title"), "units": r.get("units"), "cid": r.get("cid"),
+             "course_college": r.get("course_college")} for r in rows]
 
 
 def fetch_registry(college: str) -> dict:
@@ -377,7 +410,7 @@ def locate_html(reader, program: dict, courses: list[dict], start: str, cache: d
             break
         for ln in got.get("links") or []:
             href = (ln.get("href") or "").split("#")[0]
-            if not href.startswith("http") or href in seen:
+            if not href.startswith("http") or href in seen or not same_site(href, start):
                 continue
             s = score_link(ln.get("text", ""), href, program)
             if s > 0:
@@ -405,9 +438,8 @@ def click_through(reader, program: dict, courses: list[dict], trail: list,
             texts = page.evaluate(CLICKABLE_JS)
         except Exception:
             break
-        ranked = sorted({t for t in texts if t not in clicked},
+        ranked = sorted({t for t in texts if t not in clicked and clickable_candidate(t, program)},
                         key=lambda t: -score_link(t, "", program))
-        ranked = [t for t in ranked if score_link(t, "", program) > 0]
         if not ranked:
             break
         target = ranked[0]
@@ -543,7 +575,8 @@ def courseleaf_lists(got: dict, courses: list[dict]) -> list[dict]:
 def capture(reader, entry: dict, cache: dict) -> dict:
     college, cn = entry["college"], entry["control_number"]
     prog = fetch_program(college, cn)
-    courses = fetch_courses(college, cn)
+    rows = fetch_courses(college, cn)
+    courses = closed_from_rows(rows)
     reg = fetch_registry(college)
     program = {"title": prog.get("program_title") or entry["title"], "award": prog.get("award")}
     rec = {"college": college, "control_number": cn, "shape": entry["shape"],
@@ -551,10 +584,8 @@ def capture(reader, entry: dict, cache: dict) -> dict:
            "title_in_sample_matches": (prog.get("program_title") or "") == entry["title"],
            "catalog_url": reg.get("catalog_url"), "catalog_year": reg.get("catalog_year"),
            "platform": reg.get("catalog_platform"), "format": reg.get("catalog_format"),
-           "closed_list": [{"ccn": c["course_control_number"], "code": c["course_code"],
-                            "title": c["course_title"], "units": c["units"], "cid": c["cid"],
-                            "course_college": c["course_college"]} for c in courses],
-           "load_id": courses[0]["load_id"] if courses else None}
+           "closed_list": courses,
+           "load_id": rows[0]["load_id"] if rows else None}
     start = reg.get("catalog_url")
     if not start:
         rec.update(found=None, note="the registry holds no catalog address")
