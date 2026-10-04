@@ -270,15 +270,16 @@ MIR_VIEWS = {   # what each click shows: run 4's trail, cut down
 class _ClickPage:
     """A curriQunet catalog: items that open a view when clicked; the view's
     page text names no listed course (Miramar, run 4)."""
-    def __init__(self):
+    def __init__(self, views=None):
+        self.views = views or MIR_VIEWS
         self.view, self.clicks = None, []
 
     @property
     def url(self):
-        return MIR_VIEWS[self.view][0]
+        return self.views[self.view][0]
 
     def evaluate(self, js):
-        url, items, links = MIR_VIEWS[self.view]
+        url, items, links = self.views[self.view]
         if js == P.CLICKABLE_JS:
             return items
         return {"title": "View - CurriQunet META", "h1": "", "links": links,
@@ -316,8 +317,8 @@ def _fake_pdf(reader, url, cache):
 
 
 class _ClickReader:
-    def __init__(self):
-        self.page, self.loads, self.delay = _ClickPage(), 0, 0
+    def __init__(self, views=None):
+        self.page, self.loads, self.delay = _ClickPage(views), 0, 0
 
 
 saved_pdf = P.read_pdf
@@ -347,6 +348,46 @@ finally:
     P.read_pdf = saved_pdf
 check(got2["coverage"] == 0.0 and got2["field"] != "export_pdf" and cr2.page.clicks == [NAV[1], BIZ_ITEM],
       "an export robots.txt refuses is never read, and the reader still stops at the view")
+
+# Run 7: two items name every title word ("Early Education Entrepreneurship"
+# beside "Entrepreneurship"); a set's order picked the wrong one.
+ent = {"title": "Entrepreneurship", "award": "A.S. Degree"}
+EARLY = "Early Education Entrepreneurship - Associate of Science Degree: Miramar"
+ENT = "Entrepreneurship - Associate of Science Degree: Miramar"
+check(sorted([EARLY, ENT], key=lambda t: P.click_rank(t, ent))[0] == ENT
+      and sorted([ENT, EARLY], key=lambda t: P.click_rank(t, ent))[0] == ENT,
+      "among items naming every title word, the one that begins with the title is clicked first")
+
+
+def _export(oid):
+    return [{"text": "Export Page as PDF",
+             "href": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=%s" % oid}]
+
+
+fire = {"title": "Fire Technology", "award": "A.S. Degree"}
+FIRE_AS = "Fire Technology - Associate of Science Degree: Miramar"
+FIRE_COA = "Fire Technology - Certificate of Achievement: Miramar"
+FIRE_VIEWS = {
+    None: (MIR + "20891", NAV, []),
+    NAV[1]: (MIR + "20879/20988", NAV + [FIRE_COA, FIRE_AS], []),
+    FIRE_AS: (MIR + "20879/20988/20043/20377", NAV + [FIRE_COA, FIRE_AS], _export(20043)),
+    FIRE_COA: (MIR + "20879/20988/20044/20378", NAV + [FIRE_COA, FIRE_AS], _export(20044)),
+    NAV[0]: (MIR + "20879/20990", NAV, []),
+}
+FIRE_LIST = [{"code": c} for c in ("FIPT 101", "FIPT 102", "FIPT 103", "EMGM 106")]
+FIRE_PAGES = {"20043": "FIRE TECHNOLOGY - A.S. Summary only FIPT 101",
+              "20044": "FIRE TECHNOLOGY - CERTIFICATE FIPT 101 3 FIPT 102 3 FIPT 103 3 EMGM 106 0.5"}
+P.read_pdf = lambda reader, url, cache: {"url": url, "access": "ok", "status": 200,
+                                         "pages": [FIRE_PAGES[url.rsplit("=", 1)[1]]]}
+try:
+    cr3 = _ClickReader(FIRE_VIEWS)
+    got3 = P.click_through(cr3, fire, FIRE_LIST, [], cache={})
+finally:
+    P.read_pdf = saved_pdf
+check(cr3.page.clicks == [NAV[1], FIRE_AS, FIRE_COA] and got3["url"].endswith("outlineId=20044")
+      and got3["coverage"] == 1.0,
+      "an export that names too few courses leaves only other program items to click, "
+      "never 'Academic Requirements': %s" % cr3.page.clicks)
 
 # ── The filed fixtures: real catalog text the matcher must keep reading ──────
 fixtures = sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_pilot", "sources", "*.json")))

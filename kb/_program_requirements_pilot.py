@@ -266,6 +266,17 @@ def export_link(links: list[dict]) -> str | None:
     return None
 
 
+def click_rank(text: str, program: dict) -> tuple:
+    """The order the reader clicks in: the stronger match first; among equals,
+    the item that begins with the program's title, then the shorter item, then
+    the words themselves, so no run depends on a set's order. Miramar lists
+    "Early Education Entrepreneurship" beside "Entrepreneurship", and both name
+    every word of the title: run 6 clicked the right one and run 7 the other."""
+    t = re.sub(r"\s+", " ", (text or "").strip().lower())
+    title = re.sub(r"\s+", " ", (program.get("title") or "").strip().lower())
+    return (-click_score(text, program), not (title and t.startswith(title)), len(t), t)
+
+
 def clickable_candidate(text: str, program: dict) -> bool:
     """A navigation item, not a sentence: Miramar's click-through went on to
     click the program's learning outcomes ("Describe common business functions
@@ -479,18 +490,21 @@ def click_through(reader, program: dict, courses: list[dict], trail: list,
     the census's delay, as a page load does.
 
     When a click opens the program's own view and its text names too few of
-    the courses, read the view's PDF export (robots first, through read_pdf)
-    and stop clicking there: past the program's view the clicks wandered into
-    the catalog's "Academic Requirements" menu (Miramar, run 4)."""
-    page, clicked, best = reader.page, set(), None
+    the courses, read the view's PDF export (robots first, through read_pdf).
+    An export that names the courses ends the search. One that does not leaves
+    only other program items to click: past a program's view the clicks
+    wandered into the catalog's "Academic Requirements" menu (Miramar, run 4)."""
+    page, clicked, best, viewed = reader.page, set(), None, False
     cache = {} if cache is None else cache
     for _ in range(max_clicks):
         try:
             texts = page.evaluate(CLICKABLE_JS)
         except Exception:
             break
-        ranked = sorted({t for t in texts if t not in clicked and clickable_candidate(t, program)},
-                        key=lambda t: -click_score(t, program))
+        pool = {t for t in texts if t not in clicked and clickable_candidate(t, program)}
+        if viewed:
+            pool = {t for t in pool if program_view(t, program)}
+        ranked = sorted(pool, key=lambda t: click_rank(t, program))
         if not ranked:
             break
         target = ranked[0]
@@ -543,7 +557,9 @@ def click_through(reader, program: dict, courses: list[dict], trail: list,
                 best = {"url": exported["url"], "coverage": exported["coverage"],
                         "found": exported["found"], "text": exported["text"],
                         "field": "export_pdf", "view": page.url, "got": got}
-            break
+            if best["coverage"] >= ACCEPT_SHARE:
+                break
+            viewed = True
     return best
 
 
