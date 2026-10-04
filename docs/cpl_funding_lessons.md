@@ -1240,3 +1240,9 @@ Sam asked for "a script for the scenario 2 video for an ElevenLabs narrator... v
 - **The background bed, measured on the mix:** her voice about 16.5 dB over the score; -17.4 LUFS integrated.
 - **Two fixed checks rested on the old draft.** Check 5b expected the old `?scenario=Scenario%202` address "until it is re-voiced", and a2 matched a one-line label. Each was updated with the change it described.
 - **Sam's rulings:** "Narration sounds good to start with"; the explainer's Scenario 2 view links the cut (`_Draft_3`, 2:37). `cpl_memory` `sam-sierra-narration-approved-2026-10-02`.
+
+## Moved from the lane (S328, 2026-10-04)
+
+The lane passed its 20 KB budget; this closed ruling moved here verbatim.
+
+✅ **Kept (Sam, sheet 11 cards 2-4, 2026-09-30):** the Timeline at the prose size; the priority cards keep their boxes; the sign-in form shows to every reader of a college's *Reported expenditures*.

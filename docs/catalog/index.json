@@ -14781,8 +14781,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 299,
+   "count": 300,
    "docs": [
+    {
+     "created": "2026-10-04",
+     "governs": [],
+     "n": 329,
+     "path": "docs/session_329_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-pathways",
+      "sierra",
+      "college-identity",
+      "decision-sheet"
+     ],
+     "title": "Sierra's statement deploy, the ladder PR, the Cerritos runner read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-04",
      "governs": [],
@@ -19871,5 +19889,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1037
+ "total": 1038
 }
