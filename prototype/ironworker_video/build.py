@@ -24,6 +24,9 @@ ASSETS = HERE.parent / 'funding_video' / 'assets'
 LOGO = HERE.parent.parent / 'sierra' / 'cpl-initiative-logo-navy.png'
 # The CPL Pathways tab on COBI, which opens on the ladder (cpl_pathways.js lists it first).
 LINK = 'https://cpl-initiative.github.io/cpl-project-tracker/#cpl-pathways'
+# The MP4 on GitHub, so the Download button works wherever the page opens (a Claude artifact grants a
+# page no download permission, and Pages prunes prototype/ media).
+RAW = 'https://github.com/CPL-Initiative/cpl-project-tracker/raw/main/prototype/ironworker_video/'
 
 FACTS = {
     # Downey Unified, CTE pathways board presentation (June 27, 2023); WELD 60 is now WELD 160 (2026-27
@@ -132,7 +135,7 @@ def uri(p):
 cfg = CONFIG
 page = (src.replace('__PAGETITLE__', cfg['pageTitle']).replace('__EYEBROW__', cfg['eyebrow'])
         .replace('__DEK__', cfg['dek']).replace('__LINK__', cfg['link']).replace('__LINKLABEL__', cfg['linkLabel'])
-        .replace('__MP4__', cfg['mp4'])
+        .replace('__MP4URL__', RAW + cfg['mp4'])
         .replace('__CFG__', json.dumps(cfg, ensure_ascii=False))
         .replace('__LOGO__', uri(LOGO)).replace('__MAP__', uri(ASSETS / 'map_wordmark.png')).replace('__ARROW__', uri(ASSETS / 'map_arrow.png')))
 (HERE / 'ironworker_in_motion.html').write_text(page, encoding='utf8')

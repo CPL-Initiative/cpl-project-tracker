@@ -34,7 +34,8 @@ lane's marker in the same pull request, or the sheet asks again.
 Sheet 36 (S330, 2026-10-04, SHEET_ID 2026-10-04-open-asks-36): sheet 35 is answered (21:43Z). Two cards
 from Cerritos reads 4 and 5 (#1859): paste the procedure record's second version (the connector timed out
 at 60 s and wrote nothing, read back), and whether to send the drafted request for Cerritos's high school
-articulation list, the one question every public source has now failed to answer.
+articulation list, the one question every public source has now failed to answer. A third card, the
+Ironworker film's draft v1, joined before any reply existed and was republished onto the same artifact.
 
 Sheet 35 (S329 checkpoint, 2026-10-04, SHEET_ID 2026-10-04-open-asks-35): sheet 34 is answered (19:18Z).
 One card: Cerritos's procedure record. Sam said "apply the procedure record" in session; the migration
@@ -876,6 +877,31 @@ def items():
         'chips': chips(('Send as drafted', 'send'), ('Edit first', 'edit'), CH_LATER),
         'evidence': [live('2026-10-04', "college-page-read runs 37232742985, 37233721702, 37234256967, "
                           "37241442265 and 37241996688 on Cerritos's pages; web searches the same day")],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "The Ironworker film, draft v1: keep it as the introduction?",
+        'ref': 'program-requirements-harvest NEEDS SAM · prototype/ironworker_video/ (README, build.py FACTS) · '
+               'the funding film\'s engine',
+        'facts': (
+            "Your ask (2026-10-04 ~19:55Z): a 100-second film of the Ironworker use case, like the funding one, at "
+            "the stage the session recommends. The Cerritos reads confirmed the ladder's lines, so S330 built it: "
+            "<a href=\"https://claude.ai/artifact/VdxzrRS7wVxw6o5m6fRTS9\">Ironworker Pathway in Motion</a> "
+            "(the MP4 is in the repository beside its source). Nine scenes, only lines the ladder marks In our data: "
+            "high school (3.5 units mapped), the apprenticeship (878 and 898 classroom hours, 22 IWAP courses this "
+            "fall), two certificates, the A.S. as the turn (up to 31.5 of the major's 34-38 units through CPL "
+            "Cerritos has articulated), the B.S., the career, a recap, a close linked to CPL Pathways. Left out: "
+            "the noncredit step (registered apprentices only, no sections this year), the B.S.'s proposed 2024 "
+            "course list, and every To confirm line. Fable critiqued the storyboard; four of its lines were "
+            "corrected against the ladder (the README names them)."),
+        'why': "It is the first time the proof of concept is told whole, and a figure in it travels further than "
+               "the page it comes from.",
+        'rec': "<strong>Keep v1 as the introduction:</strong> it stays a draft in the repository until you say "
+               "where it goes, and a narrated cut by Sierra follows if you want one. <em>It might be wrong if</em> "
+               "a scene reads as a claim to you, or the noncredit step belongs in the story despite its empty "
+               "schedule; say which and v2 changes it.",
+        'chips': chips(('Keep v1', 'keep'), ('Narrate it with Sierra', 'narrate'), ('Edit first', 'edit'), CH_LATER),
+        'evidence': [policy()],
     })
 
     return I
