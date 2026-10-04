@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [1836, 1838, 1839, 1841, 1844, 1845]
+prs: [1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
