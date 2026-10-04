@@ -1,6 +1,6 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
- "extracted_run": 37171952080,
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 3) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37195340082 (2026-10-04, S324, dispatched with only=086), the rerun that carries out Sam's review (kb/program_requirements_pilot/review_2026-10-04.json). Nothing public reads a record until a college's records pass all four checks.",
+ "extracted_run": 37195340082,
  "college": "Mt. San Antonio College",
  "control_number": "03086",
  "shape": "cert_electives",
@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5072,
+  "input_tokens": 5285,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5072,
-    "output_tokens": 2324,
+    "input_tokens": 5285,
+    "output_tokens": 1436,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2324,
+  "output_tokens": 1436,
   "output_tokens_details": {
-   "thinking_tokens": 1112
+   "thinking_tokens": 357
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06677,
- "ms": 21524,
- "seconds": 21.9,
+ "cost_usd": 0.04986,
+ "ms": 12131,
+ "seconds": 13.8,
  "error": null,
  "score": {
   "measure": "units",
@@ -69,6 +69,10 @@
     40.0
    ],
    "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
   },
   "pass": true
  },
@@ -139,7 +143,7 @@
     ]
    },
    {
-    "name": "Choose two FIRE courses or FIRE 86 and KINF 53 plus one other FIRE Course:",
+    "name": "Choose two FIRE courses or FIRE 86 and KINF 53 plus one other FIRE Course",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -205,13 +209,6 @@
       "catalog_addition": false
      },
      {
-      "code": "FIRE 86",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "KINF 53",
       "units": null,
       "units_max": null,
@@ -223,11 +220,10 @@
   ],
   "missing_explained": [],
   "notes": [
-   "The elective block's rule is compound: either two FIRE courses (from FIRE 6-12), or FIRE 86 and KINF 53 together plus one other FIRE course. It is recorded as one choose_courses block with minimum 2; the FIRE 86 + KINF 53 + one FIRE course path (three courses) cannot be expressed exactly. A reviewer may prefer to split it into option blocks.",
-   "FIRE 86 was mistakenly entered twice in the elective block; the catalog lists it once, so the second FIRE 86 entry should be disregarded.",
-   "The catalog prints no units beside the elective courses, only the block total of 6-22, so their units are null.",
-   "The closed list writes FIRE2 and FIRE86 without a space and stores no units for them. They are treated as the catalog's FIRE 2 and FIRE 86, not as catalog additions.",
-   "The page describes the program as 'The Fire Science Certificate' while the heading says Fire Technology (Certificate N0486)."
+   "The elective block offers two paths: (a) any two FIRE courses from the list, or (b) FIRE 86 and KINF 53 plus one other FIRE course from the list. Recorded as choose_courses minimum 2; the second path (three courses including FIRE 86 and KINF 53) is described here only.",
+   "The catalog prints no units beside the courses in the elective block, only the block total 6-22; course units left null.",
+   "The closed list writes FIRE2 and FIRE86 without a space; matched to the catalog's FIRE 2 and FIRE 86 and treated as not catalog additions.",
+   "The page description calls this the 'Fire Science Certificate' while the heading reads Fire Technology (Certificate N0486)."
   ]
  }
 }

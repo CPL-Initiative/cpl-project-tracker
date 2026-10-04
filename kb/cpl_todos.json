@@ -2,14 +2,8 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-04",
  "_session": "S324 SkyGrader",
- "_status": "The pilot record of each program's required courses, choose lists and open electives now covers all 20 programs you check. The reader found every one on its college's own catalog (Miramar's through each program's PDF export), and all 20 drafted records pass the three automatic checks, at about five cents a program. The fourth check is yours: a review sheet holds the 20, one card each, with the catalog link beside the record. Eighteen are proposed as matching the catalog; two need a fix (Mt. San Antonio Fire lists one course twice, and its LVN-to-RN degree reads two anatomy sequences course by course). Sheet 27's two cards still wait on you.",
+ "_status": "The pilot record of each program's required courses, choose lists and open electives now passes all four checks for the 20 programs: the three automatic ones and your reading. You passed 18 as matching the catalog and ruled two fixes (a fire certificate listing one course twice, and an LVN-to-RN degree's anatomy sequences); both are carried out and pass. What is left of the pilot is Miramar's term-by-term sequence and the Tech Center's field definitions. Sheet 27's two cards still wait on you.",
  "items": [
-  {
-   "id": "s324-sam-pilot-records",
-   "for": "Sam",
-   "tab": "sierra",
-   "text": "Check the 20 pilot records on the review sheet (https://claude.ai/artifact/8vJNG2XYjJNyfGiECXPpZk): each card arrives with its proposal selected, so change only what you disagree with, add a note where a record needs a fix, and press Complete at the end."
-  },
   {
    "id": "s322-sam-sheet27",
    "for": "Sam",
@@ -53,10 +47,10 @@
    "text": "Read Sierra's timing log over a week of real questions (chat_interactions.timings, live since 3 October) and report where the wait goes: the first 23 test answers took a median 15 seconds, most of it the model writing."
   },
   {
-   "id": "s324-fable-pilot-fixes",
+   "id": "s324-fable-phase1-last",
    "for": "Fable",
    "tab": "sierra",
-   "text": "Read the pilot records review sheet's replies and carry out each fix through the record shape or the extraction prompt (never by editing a filed record), then rerun the extraction on the programs it touches."
+   "text": "Finish the pilot's last pieces: Miramar's term-by-term course sequence (the Program Mapper sites tried answered 403 or did not resolve), then widen the harvest past the 20 programs."
   }
  ],
  "_deferred": [

@@ -14,16 +14,12 @@ bars**, on **PR #1845** (branch `claude/skygrader-session-324-m9qqbv`). Nothing 
 
 ## First, in this order
 
-1. **Sam answered the review sheet** (2026-10-04 10:22Z, all 20 cards his own call, through 20):
-   **18 match the catalog; cards 5 and 6 are fixes**, as proposed. Receipt:
-   `kb/program_requirements_pilot/review_2026-10-04.json`. S324 carried out both on branch
-   `claude/skygrader-session-324-m9qqbv` (restarted from `main` after #1845 merged): the scorer's
-   `repeated` check (a course twice in one block fails) and prompt v3 (sequences read whole;
-   **Edge Function deployed version 3**). The rerun is extraction run 37195340082 (`only=086`:
-   Mt. San Antonio 03086 and 08086). If its two records are not yet filed under
-   `kb/program_requirements_pilot/records/` with `extracted_run` 37195340082, file them (the guard
-   fails on the old Fire record until you do), open the PR, merge on a green `test`, and reply on
-   Sam's Complete thread on the sheet, then resolve it.
+1. **Sam answered the review sheet** (2026-10-04 10:22Z, all 20 cards his own call): 18 match the
+   catalog and two fixes, receipt `kb/program_requirements_pilot/review_2026-10-04.json`. **Both
+   are done** (S324): the scorer's `repeated` check, prompt v3 (Edge Function **version 3**), and
+   rerun 37195340082 passed both records, now filed. All 20 pilot records pass all four checks.
+   If the PR from branch `claude/skygrader-session-324-m9qqbv` has not merged, merge it on a green
+   `test`.
 2. **Open-asks sheet 27** ([Vhc8F8kDntLczhDeVdsdxu](https://claude.ai/artifact/Vhc8F8kDntLczhDeVdsdxu)):
    its two cards (the memory receipts; the six catalog addresses the Supabase guard refused) carried
    no reply. Never route a guarded write around the guard.
