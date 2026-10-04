@@ -321,6 +321,65 @@ def score_catalog_link(text: str, href: str, current_start: int) -> int:
     return s
 
 
+# A college corrects its catalog mid-year with an addendum (or "supplement",
+# "errata"): errors fixed and late changes made to the catalog of record. Sam,
+# 2026-10-04: "We need to track this in our schema and have our agents aware."
+# The scorer above keeps an addendum from winning the catalog slot; this keeps
+# it from being lost. A bare "supplement" counts only beside "catalog", so
+# "Supplemental Instruction" never does.
+ADDENDUM_WORDS = re.compile(r"addend(?:um|a|ums)?\b|\berrata\b|\berratum\b", re.I)
+SUPPLEMENT_WORDS = re.compile(r"\bsupplement\b", re.I)
+NOT_ADDENDUM = re.compile(r"archiv|previous|past catalog|change ?log|login|sign in", re.I)
+
+
+def addendum_kind(blob: str) -> str | None:
+    if NOT_ADDENDUM.search(blob):
+        return None
+    if re.search(r"errat", blob, re.I):
+        return "errata"
+    if ADDENDUM_WORDS.search(blob):
+        return "addendum"
+    if SUPPLEMENT_WORDS.search(blob) and re.search(r"catalog", blob, re.I):
+        return "supplement"
+    return None
+
+
+def addendum_links(links: list[dict], current_start: int, college: str | None = None,
+                   foreign=frozenset()) -> list[dict]:
+    """Every link on a page that names a catalog addendum for the current or the
+    prior catalog year (a college still on last year's catalog amends that one),
+    each once, in page order. A link naming an older year, an archive or a
+    sibling college's catalog is left out."""
+    tokens = college_tokens(college)
+    out, seen = [], set()
+    for a in links or []:
+        text = " ".join((a.get("text") or "").split())
+        href = (a.get("href") or "").split("#")[0]
+        if not href.startswith("http") or href in seen:
+            continue
+        blob = text + " " + urllib.parse.unquote(href)
+        kind = addendum_kind(blob)
+        if kind is None or sibling_link(text, href, tokens, foreign):
+            continue
+        y = year_of_link(text, href)
+        if y is not None and y < current_start - 1:
+            continue
+        seen.add(href)
+        out.append({"kind": kind, "title": text[:120], "url": href,
+                    "year": "%d-%d" % (y, y + 1) if y is not None else None})
+    return out
+
+
+def merge_addenda(*lists) -> list[dict]:
+    seen, out = set(), []
+    for lst in lists:
+        for a in lst or []:
+            if a["url"] not in seen:
+                seen.add(a["url"])
+                out.append(a)
+    return out
+
+
 def pick_catalog_candidates(links: list[dict], current_start: int,
                             limit: int = 5) -> list[dict]:
     """The best-scoring distinct catalog links, highest first."""
@@ -792,6 +851,8 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
             older = year and inner.get("year") and inner["year"] < year
             if inner.get("access") == "ok" and not older:
                 inner["index_url"] = url
+                inner["addenda"] = merge_addenda(
+                    inner.get("addenda"), addendum_links(links, current_start, college, foreign))
                 return inner
     # An index of catalogs: no year of its own, several year-named catalog links.
     if (not is_pdf and platform == "custom_html" and year is None
@@ -814,6 +875,9 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
             inner = read_catalog(reader, newest, current_start, depth + 1, college,
                                  foreign)
             inner["index_url"] = url
+            # Yuba's index lists its 2026-27 catalog beside the catalog's addendum.
+            inner["addenda"] = merge_addenda(
+                inner.get("addenda"), addendum_links(links, current_start, college, foreign))
             return inner
     body_year, body_words = year_in_body(page.get("body", ""))
     banner_words = banner_match(page.get("body", ""))[1] if year_from == "banner" else None
@@ -883,6 +947,8 @@ def census_one(reader: Reader, college: str, homepage_url: str,
         links.extend(catalog.get("links") or [])
     seq = sequence_signal(links)
     cms = cms_signal(links)
+    addenda = merge_addenda(addendum_links(links, current_start, college, foreign),
+                            (catalog or {}).get("addenda"))
     # When no link scored, the links that still mention a catalog show a
     # person why: the first full read left three open homepages unexplained.
     catalog_like = [] if catalog else [
@@ -897,6 +963,7 @@ def census_one(reader: Reader, college: str, homepage_url: str,
         "catalog_like_links": catalog_like,
         "hubs_read": hubs_read,
         "catalog_pages": tried,
+        "addenda": addenda,
         "pages_loaded": reader.loads,
         "seconds": round(time.time() - t0, 1),
     }
@@ -980,7 +1047,11 @@ def summarize(rows: list[dict]) -> dict:
             "catalog_format": count("catalog_format"),
             "sequence_source": count("sequence_source"),
             "best_method": count("best_method"),
-            "with_cms_view": sum(1 for r in rows if r.get("cms_public_view"))}
+            "with_cms_view": sum(1 for r in rows if r.get("cms_public_view")),
+            "with_addenda": sum(1 for r in rows
+                                if ((r.get("census_evidence") or {}).get("addenda"))),
+            "addenda": sum(len((r.get("census_evidence") or {}).get("addenda") or [])
+                           for r in rows)}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -1032,6 +1103,7 @@ def main(argv: list[str] | None = None) -> int:
                             "hubs_read": ev.get("hubs_read"),
                             "catalog_like_links": ev.get("catalog_like_links"),
                             "catalog_pages": ev.get("catalog_pages"),
+                            "addenda": ev.get("addenda"),
                             "pages": ev.get("pages_loaded"),
                             "seconds": ev.get("seconds")}
         print(json.dumps(slim, ensure_ascii=False))

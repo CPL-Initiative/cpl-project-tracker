@@ -698,6 +698,58 @@ for r in (row,):
                 "access_status"):
         check(r[col] is None or isinstance(r[col], str), "%s is text" % col)
 
+
+# ── Catalog addenda: recorded, never chosen as the catalog (S325) ───────────
+# Sam, 2026-10-04: "colleges are often publishing catalog addendum to correct
+# errors and add late changes to the official catalog. We need to track this in
+# our schema and have our agents aware." The scorer keeps an addendum from
+# winning the catalog slot; addendum_links() keeps it from being lost.
+X = C
+cur = 2026
+links = [
+    {"text": "2026-2027 Catalog", "href": "https://yc.yccd.edu/uploads/Yuba-College-Catalog-26.pdf"},
+    {"text": "2026-2027 Catalog Addendum", "href": "https://yc.yccd.edu/uploads/Yuba-Catalog-Addendum-2026-27.pdf"},
+    {"text": "Catalog Supplement (Spring 2027)", "href": "https://www.example.edu/catalog/supplement-spring-2027.pdf"},
+    {"text": "Supplemental Instruction", "href": "https://www.example.edu/tutoring/si"},
+    {"text": "Catalog Errata", "href": "https://catalog.example.edu/errata/"},
+    {"text": "2023-2024 Catalog Addendum", "href": "https://www.example.edu/addendum-2023-24.pdf"},
+    {"text": "Archived Catalog Addenda", "href": "https://www.example.edu/archive/addenda"},
+    {"text": "2025-2026 Catalog Addendum", "href": "https://www.mccd.edu/uploads/Catalog-PDF-2025-26-Addendum.pdf"},
+    {"text": "2026-2027 Catalog Addendum", "href": "https://yc.yccd.edu/uploads/Yuba-Catalog-Addendum-2026-27.pdf"},
+]
+got = X.addendum_links(links, cur)
+urls = [a["url"] for a in got]
+check("https://yc.yccd.edu/uploads/Yuba-Catalog-Addendum-2026-27.pdf" in urls,
+      "a 2026-27 addendum beside the catalog is recorded (Yuba)")
+check(urls.count("https://yc.yccd.edu/uploads/Yuba-Catalog-Addendum-2026-27.pdf") == 1,
+      "a link listed twice is recorded once")
+check(not any("Yuba-College-Catalog-26" in u for u in urls), "the catalog itself is no addendum")
+check(any(a["kind"] == "supplement" for a in got), "a catalog supplement is recorded")
+check(not any("tutoring" in u for u in urls), "Supplemental Instruction is no catalog supplement")
+check(any(a["kind"] == "errata" for a in got), "catalog errata are recorded")
+check(not any("2023-24" in u for u in urls), "an addendum to an older catalog is left out")
+check(not any("archive" in u for u in urls), "an archive of addenda is left out")
+check(any(a["year"] == "2025-2026" for a in got),
+      "last year's addendum is kept: a college still on last year's catalog amends that one")
+check([a["year"] for a in got if "Yuba-Catalog-Addendum" in a["url"]] == ["2026-2027"],
+      "an addendum carries the catalog year its own words name")
+sib = X.addendum_links([{"text": "San Diego City College 2026-2027 Catalog Addendum",
+                         "href": "https://www.sdccd.edu/docs/city-addendum-2026-27.pdf"}],
+                       cur, "San Diego Miramar College",
+                       X.foreign_tokens("San Diego Miramar College",
+                                        ["San Diego Miramar College", "San Diego City College"]))
+check(sib == [], "a sibling college's addendum on a district page is left out")
+check(X.score_catalog_link("2026-2027 Catalog Addendum",
+                           "https://yc.yccd.edu/uploads/Yuba-Catalog-Addendum-2026-27.pdf", cur)
+      < X.score_catalog_link("2026-2027 Catalog",
+                             "https://yc.yccd.edu/uploads/Yuba-College-Catalog-26.pdf", cur),
+      "an addendum still never outscores its catalog")
+merged = X.merge_addenda(got[:1], got)
+check(len(merged) == len(got), "merging the index's addenda with the page's keeps each once")
+src = open(os.path.join(ROOT, "kb", "_program_source_census.py")).read()
+check('"addenda": addenda' in src and '"addenda": ev.get("addenda")' in src,
+      "the addenda ride in the census evidence and in the job log")
+
 if failures:
     print("FAIL: program source census (%d)" % len(failures))
     for f in failures:
