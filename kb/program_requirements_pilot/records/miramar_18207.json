@@ -1,0 +1,163 @@
+{
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37173589029 (2026-10-04, S324, dispatched with only=Miramar). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "extracted_run": 37173589029,
+ "college": "San Diego Miramar College",
+ "control_number": "18207",
+ "shape": "cert_electives",
+ "title": "Fire Technology",
+ "source_file": "kb/program_requirements_pilot/sources/miramar_18207.json",
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8015,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8015,
+    "output_tokens": 898,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 898,
+  "output_tokens_details": {
+   "thinking_tokens": 105
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05002,
+ "ms": 8783,
+ "seconds": 9.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.5,
+    25.5
+   ],
+   "stated": [
+    25.5,
+    25.5
+   ],
+   "why": []
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "FIRE TECHNOLOGY - CERTIFICATE OF ACHIEVEMENT: MIRAMAR",
+   "measure": "units",
+   "total_units": {
+    "min": 25.5,
+    "max": 25.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25.5,
+     "max": 25.5
+    },
+    "courses": [
+     {
+      "code": "FIPT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIPT 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIPT 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIPT 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIPT 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIPT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMGM 105A",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMGM 106",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "missing_explained": [],
+  "notes": [
+   "The summary text describes the 'Fire Technology Associate Degree program' and an award note about 60 degree-applicable units, though the section heading names the Certificate of Achievement; the narrative appears shared with the degree. The 60-unit degree total was not used.",
+   "Fire academy cohort courses (FIPT 150W, 150A, 150B, 150C, 150T, 322A, 322C, 322F, 323B, 324A, 381G, 322D) and academy prerequisites (FACD 100D, EMT course) are mentioned only in the descriptive narrative, not as certificate requirements, so they were not placed in a block.",
+   "The requirement list header reads 'COURSES REQUIRED FOR THE MAJOR' even though this is a certificate; the printed total of 25.5 units matches the sum of the listed courses."
+  ]
+ }
+}
