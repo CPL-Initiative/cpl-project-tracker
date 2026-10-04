@@ -2,13 +2,13 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-04",
  "_session": "S326 SkyAddendum",
- "_status": "You answered all five cards of sheet 29 and pasted sheet 31, so nothing waits on a sheet. Sierra now names a program's catalog requirements (required courses, choices and the printed total) for the 20 checked pilot programs, live since 15:33Z with the smoke test green. Catalog addenda have their own table, which the weekly census fills, and Miramar's Program Mapper refusal and the 24 other map sources are on each college's record.",
+ "_status": "Sierra names the catalog requirements of the 20 checked pilot programs, live since 15:33Z. You approved the harvest tab and CPL Pathways mock-ups and answered sheet 32: each program shows the most CPL a learner could apply, with CPL in three kinds (articulated here, could adopt, for consideration), and catalog differences go to colleges as drafts the MAP team sends. Nothing waits on a sheet.",
  "items": [
   {
-   "id": "s326-sam-tab-notes",
-   "for": "Sam",
-   "tab": "sierra",
-   "text": "Give your next round of notes on the Program Requirements tab mock-up (https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f); the port into COBI follows."
+   "id": "s326-fable-roep-pathways",
+   "for": "Fable",
+   "tab": "cpl-pathways",
+   "text": "Build each program's display facts in one builder (CPL in three kinds per course: articulated here, could adopt, for consideration; the up-to and recommended-path figures; the gaps; the map status) into a column Sierra reads and a file CPL Pathways reads; wire Sierra to them; then the By requirement and By term layouts and a public page in the student view."
   },
   {
    "id": "s310-sam-card11-measures",

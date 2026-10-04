@@ -192,8 +192,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-31.html')
-SHEET_ID = '2026-10-04-open-asks-31'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-32.html')
+SHEET_ID = '2026-10-04-open-asks-32'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -728,7 +728,11 @@ def items():
     # ruling in the same change (S326). Card 1 "later" is carried into the one card below.
     # Sheet 31 (S326) was answered at 16:56Z on 2026-10-04: card 1 pasted (as proposed). S326
     # handed the SQL in one paste, cut to the three memory rows still missing and both
-    # privilege closes; the live read-back matched. No lane carries a NEEDS-SAM marker now.
+    # privilege closes; the live read-back matched. Its card is retired.
+
+    # Sheet 32 (S326) was answered at 17:33Z on 2026-10-04, both cards his own call, as proposed:
+    # the CPL figure ("up to" plus the recommended path's, with CPL in three kinds per his note)
+    # and where catalog-and-state-file differences go. The lane records both; no card remains.
     return I
 
 

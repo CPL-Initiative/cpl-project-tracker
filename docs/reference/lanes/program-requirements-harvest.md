@@ -96,30 +96,19 @@ Riverside City's Culinary Arts certificate, Sam checks the sample himself, and S
 - The session container reaches no college site (the egress proxy rejects
   every one); runners do.
 
-**The registry after the S322 apply (2026-10-03, run 37157737048, four
-slices)** carried 112 of 118 catalog addresses and 95 years, 91 of them 2026-27;
-Sam's six addresses (below) bring it to 118. Platforms:
-CourseLeaf 29, curriQunet 27, eLumen 19, PDF 16, custom HTML 15, SmartCatalog,
-Coursedog and Acalog 2 each. Formats: 81 HTML per program, 16 single PDFs, 5
-PDFs by section. Program Pathways Mapper links at 11 colleges, program-map
-pages at 15; a public curriculum-system view at 50.
-- Six colleges the census cannot reach (the four Los Rios homepages answer 404;
-  De Anza and City College of San Francisco serve Cloudflare challenges) carry
-  addresses Sam approved, entered 2026-10-04 (S326, `best_method` person,
-  `corrected_by` set, so the census files its own reading beside them).
-- Cerro Coso's catalog PDF is disallowed by robots.txt; the address is recorded
-  and the census never loads it.
-- 2025-26 years: Los Angeles City, Palo Verde, Santiago Canyon and Evergreen
-  Valley name 2025-26 on their own catalog pages, and a web search found no
-  2026-27 catalog for them (October 2026); the weekly read moves them when they
-  publish. About 23 rows with an address carry no year, most on custom college
-  pages, an Acalog list or a PDF whose address names none.
-- A site that fails one read keeps its address (three did in the S322 apply:
-  Los Angeles Mission, Los Angeles Valley, Santa Monica).
-- The Los Angeles district's sites refused the runner (403) during that apply;
-  the pilot still read West Los Angeles's catalog PDF (below).
-- San Diego College of Continuing Education stays on the district's catalogs
-  page: no link on it names the college.
+**The registry after the S322 apply (2026-10-03, run 37157737048)** carried 112 of
+118 catalog addresses and 95 years, 91 of them 2026-27; Sam's six addresses bring it
+to 118. Platforms: CourseLeaf 29, curriQunet 27, eLumen 19, PDF 16, custom HTML 15,
+SmartCatalog, Coursedog and Acalog 2 each. Formats: 81 HTML per program, 16 single
+PDFs, 5 PDFs by section. Mapper links at 11 colleges, program-map pages at 15.
+- Six colleges the census cannot reach (the four Los Rios homepages answer 404; De
+  Anza and City College of San Francisco serve Cloudflare challenges) carry
+  addresses Sam approved (S326, `best_method` person, `corrected_by` set).
+- Cerro Coso's catalog PDF is disallowed by robots.txt; the census never loads it.
+- Los Angeles City, Palo Verde, Santiago Canyon and Evergreen Valley still name
+  2025-26 (no 2026-27 catalog found, October 2026); about 23 rows carry no year.
+- A site that fails one read keeps its address. San Diego College of Continuing
+  Education stays on the district's catalogs page: no link there names it.
 
 **The pilot (Phase 1): all 20 records pass the three automatic bars (S324,
 PR #1845); the fourth bar, Sam's reading, is on his review sheet.** The 20
@@ -160,14 +149,11 @@ college.
   which prints no hours, units or total) passes only when the record carries no
   figure, the closed list stores no units, and the catalog text names no hours or
   units. 19 records are `equal`.
-- **Sam's check (the fourth bar), 2026-10-04 10:22Z:** all 20 cards his own call:
-  18 match the catalog, and two fixes (receipt
-  `kb/program_requirements_pilot/review_2026-10-04.json`). Both are carried out:
-  the scorer's `repeated` check refuses a course twice in one block (Mt. San
-  Antonio Fire listed FIRE 86 twice), and prompt v3 (Edge Function version 3)
-  reads "one of the following sequences" as whole sequences in one option group
-  (Mt. San Antonio LVN-to-RN). The rerun (37195340082, $0.1377) passed both, and
-  the two records are filed. **All 20 pilot records now pass all four checks.**
+- **Sam's check (the fourth bar), 2026-10-04 10:22Z:** 18 match the catalog; both
+  fixes went into the procedure, not the records (the scorer's `repeated` check;
+  prompt v3 reads "one of the following sequences" as one option group), and rerun
+  37195340082 passed both (receipt `kb/program_requirements_pilot/review_2026-10-04.json`).
+  **All 20 pilot records pass all four checks.**
 - **Guard:** `tests/program_requirements_pilot_test.py` (165 checks): every
   fixture re-read with today's matcher, every filed record re-scored with today's
   scorer.
@@ -213,24 +199,18 @@ draft."* The harvest's tab shows its records without a Governance pass, marked
 
 **The tab (mock-up, First Light):**
 [Program Requirements Harvest](https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f)
-v2. Three views (Catalogs, Pilot records, Sequences) and Sierra docked beside
-them, scoped to a program by "Ask Sierra about this program". Each course shows
-how many MAP credit recommendations its college has articulated to it (counts of
-`map_college_cr_unit.credit_rec` by course code, never a student figure); 14 of 20
-programs hold one. Porting it means `CPL_CHAT.mountInto(host,
-"program-requirements")` with `setScope` / `setSuggestions`, and the surface added
-to `KNOWN_SURFACES` in `cpl-chat` (a deploy). ⚠️ Cerritos's Field Ironworker A.S.
-reads 0: its apprenticeship credit lives in the hand-built CPL Pathways map, not in
-MAP's credit recommendations.
+v3, approved (Sam, 2026-10-04: *"mock up looks good"*). Three views (Catalogs,
+Pilot records, Sequences), Sierra docked beside them. Each course shows the MAP
+credit recommendations its college articulated to it (`map_college_cr_unit`
+counts by course code). Porting it means
+`CPL_CHAT.mountInto(host, "program-requirements")` and the surface added to
+`KNOWN_SURFACES` in `cpl-chat` (a deploy). Cerritos's Ironworker A.S. reads 0
+there: its credit is exhibit-to-course articulation in CER, not credit-rec rows.
 
-**The probe (run 37198225537, 2026-10-04):** of the 24 sequence sources the census
-filed, **all 17 mapper hosts reached answered 403** (`*.programmapper.ws|.com|.org`,
-`programmap.<domain>`, `pm.hartnell.edu`, `mypath.contracosta.edu`,
-`jaguarspot.sjcc.edu`); five college pages only link to a mapper host
-(Bakersfield, LA Harbor, Merced, West Los Angeles; Palo Verde's address is its
-homepage); Santa Monica timed out; **Irvine Valley's "All Program Maps" page
-(`ivc.edu/node/3220`) answered**. The refusal is the mapper service's, not
-Miramar's.
+**The probe (run 37198225537, 2026-10-04):** all 17 mapper hosts reached answered
+403; five college pages only link to one; Irvine Valley's "All Program Maps" page (`ivc.edu/node/3220`) answered,
+and Santa Monica's answered on run 37209313523. The refusal is the mapper
+service's, not the colleges'.
 
 **Catalog addenda (S325, PR #1848).** Sam, 2026-10-04: *"colleges are often
 publishing catalog addendum to correct errors and add late changes to the
@@ -246,19 +226,14 @@ Older years, archives, schedules' and calendars' addenda, a sibling's and
 reader-service copies stay out. **Measured: 79 addenda at 52 of 118 colleges**
 (2026-27: 19; 2025-26: 42; no year named: 18) in the dry run at #1848's head
 (37200460417); the offline replay had read 78 (41 for 2025-26).
-- **The table is live (Sam's "Go", sheet 29 card 5, 12:00Z; S326):**
-  `program_source_addenda`, one row per (college, url), the catalog year it amends,
-  a status (listed, read, applied, gone, not an addendum), `programs_changed` for
-  the reading agent, history by trigger, public read. Part A (create-only) is
-  applied as migrations `program_source_addenda_create_2026_10_04` and
-  `program_source_addenda_return_keeps_read_2026_10_04`; the full file timed out at
-  60 s on the connector's confirmation for its revokes and wrote nothing. The write
-  function `program_source_addenda_apply()` is **security invoker**, so row-level
-  security alone keeps anon and authenticated out of every write until **Part B**
-  (`kb/receipts/program_source_addenda_close_2026-10-04_s326.sql`, Sam pastes it)
-  removes their default privileges. Checked live in two self-rolling-back blocks:
-  new, seen again, a partial read marks nothing gone, a complete read does, and an
-  addendum that returns comes back `read` if an agent read it, else `listed`.
+- **The table is live (Sam's "Go", sheet 29 card 5; S326):** `program_source_addenda`,
+  one row per (college, url), the catalog year it amends, a status (listed, read,
+  applied, gone, not an addendum), `programs_changed` for the reading agent, history
+  by trigger, public read. The write function `program_source_addenda_apply()` is
+  security invoker, and the privilege close is pasted (sheet 31): public roles read
+  only. Checked live in two self-rolling-back blocks: a partial read marks nothing
+  gone, a complete read does, and an addendum that returns comes back `read` if an
+  agent read it, else `listed`.
 - **The census writes it** (`apply_addenda()` after the registry, apply mode only):
   each college's addenda with `complete` true only when the homepage and the
   catalog page both answered and the address is this read's own; a partial read
@@ -270,25 +245,51 @@ reader-service copies stay out. **Measured: 79 addenda at 52 of 118 colleges**
   a record names the addenda it was checked against, and Sierra cites "the
   2026-27 catalog as amended by the addendum of <date>".
 
-**Sam's sheet 29 (2026-10-04, 11:54-12:00Z, all five his own calls):** (2) *Guard
-lifted: run it*: S326 ran the six catalog addresses through the migration path
-(`program_source_registry_corrections_2026_10_03_s321`); six rows corrected, each
-with its prior row in the history table. (3) the record note above. (4) **yes**:
-Sierra may say "required", name each choose block and give the total for a program
-whose record passed all four checks, citing the catalog and its year; every other
-program keeps "lists". Built S326: `program_requirement_records` (live; anon reads
-checked rows only) holds the 20 pilot records, all checked, loaded by
-`kb/_program_requirements_load.py` (record and checks hashes match the repo's files);
-Sierra's Program Course Lists block renders a checked program as CATALOG
-REQUIREMENTS (the catalog's block names, "or" alternatives, option groups, the
-printed total). Smoke 7q pins the anon read and keeps "never adds up" on El Camino
-(no record); 7l expects Mt. SAC's 2026-2027 catalog. Live 15:33Z (deploy 37213391271); smoke green. (5) the addenda table.
+**Sam's sheet 29 (2026-10-04, 11:54-12:00Z, all five his own calls):** (2) guard
+lifted: six catalog addresses corrected through the migration path, each prior row
+in the history table; (3) the record note above; (4) **yes**: Sierra may say
+"required", name each choose block and give the printed total for a program whose
+record passed all four checks, citing the catalog and its year; every other program
+keeps "lists". `program_requirement_records` holds the 20 pilot records; in Sierra since 15:33Z (deploy 37213391271), smokes 7l and
+7q green; (5) the addenda table.
+
+**CPL Pathways reads the ROEP record (Sam, 2026-10-04 ~17:20Z):** *"we use the
+new tab based on mockup to manage the ongoing process to harvest program ROE and
+Pathway data and CPL Pathways to show it graphically to the colleges and public...
+My goal is to not need to curate or manually adjust and instead to adjust
+college-based procedures to arrive at accurate catalog ROEP dataset"* (vault
+braindump, 2026-10-04 17:20). The
+harvest tab runs the reading; CPL Pathways shows every record, checked or not, each
+marked (Sierra's "required" stays on the checked gate). No record is edited by
+hand: a misread is filed against the college's reading procedure; a place where the
+catalog and the state's Program Course File disagree goes to the college (10 of 20
+pilot records; Miramar prints ECON C2001/C2002 where the file lists ECON 120/121).
+**The map names the pick inside a choice**; the catalog keeps the rule. Mock-up:
+[CPL Pathways ROEP](https://claude.ai/artifact/8hkej9jHsmLRX6cZYxrXbM) (the
+Ironworker A.S. reads 31.5 of 34-38 units through CPL, the hand-built map's figure).
+CPL Pathways today: three hand-built maps, no sequence data.
+
+**Sam's sheet 32 (2026-10-04 17:33Z, both his own calls, as proposed):** (1) a
+program shows "up to" (the CPL course taken in every choice, the option with more
+CPL) plus the recommended path's figure where a map is read, and *"continue to
+include any CPL that the college might adopt for the courses on the pathway. And
+think about how we can include any certs we know of that haven't yet been
+articulated in the system for consideration. This is the reason we're adding all
+those potential certs to the CER and ECRA"*: each course carries CPL in three
+kinds, articulated here, could adopt (the same course articulated elsewhere), and
+for consideration (a CER/EACR cert whose recommendation points at the course,
+not yet articulated); (2) catalog-and-state-file differences collect as drafts
+on the college's harvest-tab row and My College to-dos; the MAP team sends.
 
 **Sheet 31 done** (Sam pasted it, 2026-10-04 16:5xZ): the three memory rows S320 and S321 held are written, and both new tables are closed to public writes; his read-back matched.
 
-**NEXT:** Sam's
-reaction to the tab mock-up, then the port into COBI (a static tab plus the
-Sierra surface); the addenda reading agent once the table has rows; a sequence
-read that looks for Miramar's map on its own pages (`read: 1`); the Butte College Tech
-Center's ROE field definitions (Sam asks them, the pilot's records being done);
-then the harvest widens past the pilot.
+**NEXT:** one builder writes each program's display facts (CPL in three kinds,
+the figures, the gaps, the map status) to a `display` column Sierra reads and to
+`cpl_pathways_roep_data.js`; Sierra wired to them (Sam: *"make sure she's wired to
+understand all the included data and considerations"*); then the program view's By
+requirement / By term layouts, the Ironworker A.S. section reading its record, and
+a public page in the student view; read the two open maps (Irvine Valley, Santa
+Monica) and measure how often a slot inside a choice names a course; port the
+harvest tab with a Procedures view (each college's reading steps and their cost);
+the addenda reading agent; Miramar's map on its own pages (`read: 1`); Butte's ROE
+definitions; widen past the pilot.

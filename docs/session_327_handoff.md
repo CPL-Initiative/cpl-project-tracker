@@ -22,9 +22,55 @@ its A/B preview running.
    at 16:56Z, read back live: the three memory rows written, both tables closed to
    public writes. No lane carries NEEDS SAM, so the builder writes no sheet. A paste
    card now carries its SQL (the builder refuses one that does not).
-3. **The tab mock-up** ([Program Requirements Harvest](https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f), v3):
-   still waits on Sam's next round. Its Cerritos Ironworker row reads 0 MAP credit
+3. **CPL Pathways reads the ROEP record** (Sam, 17:20Z, after approving the harvest tab mock-up:
+   the harvest tab runs the reading, CPL Pathways shows it to colleges and the public, and a
+   misread changes the college's procedure, never the record). Mock-up
+   [CPL Pathways ROEP](https://claude.ai/artifact/8hkej9jHsmLRX6cZYxrXbM);
+   [open-asks sheet 32](https://claude.ai/artifact/AUF7W1nEqZ1L4xKHVRpRXB) is answered (both as
+   proposed, 17:33Z). The lane's NEXT is your first build: one builder writes each program's display
+   facts (CPL in three kinds: articulated here, could adopt, for consideration) to a `display`
+   column on `program_requirement_records` and to `cpl_pathways_roep_data.js`, and Sierra reads it
+   (Sam: "make sure she's wired to understand all the included data and considerations").
+4. **The harvest tab mock-up** ([Program Requirements Harvest](https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f), v3):
+   approved ("mock up looks good"). Its Cerritos Ironworker row reads 0 MAP credit
    recs (its credit lives in the CPL Pathways map); fix before the port.
+
+## One open question for Sam (asked in chat, not yet answered)
+
+The 2026-10-04 16:55Z scrape added **California State University Los Angeles** to the MAP tiers
+(Inactive), so `live_metrics.json` lists 116 colleges and the dashboard counts a CSU campus among
+them. S326 fixed only the test that pinned 115 (#1852, `college_briefing.test.js` check (O)).
+Whether the dashboard counts it or filters it is Sam's call: if he has not answered, put it on
+open-asks sheet 33 with the scrape as evidence.
+
+## The ROEP build (your first job), measured by S326
+
+Sam approved the [CPL Pathways ROEP mock-up](https://claude.ai/artifact/8hkej9jHsmLRX6cZYxrXbM) (v3; its
+source is `docs/visuals/2026-10-04-cpl-pathways-roep-mockup.html`: `plan()` computes the "up to"
+figure, `gapsFor()` splits gaps by owner) and asked for Sierra "wired to understand all the included
+data and considerations". One builder, two readers:
+
+- **The builder** writes each program's display facts: per course, CPL in three kinds (articulated at
+  this college; could adopt: the same course identity articulated at another college; for
+  consideration: a CER/EACR cert whose credit recommendation names the course's C-ID, CCN or M-ID,
+  articulated nowhere yet), the up-to figure and the recommended path's where a map is read, the gaps
+  (catalog-versus-state-file differences: the repo records' `missing_explained` and
+  `catalog_addition`; the reader's notes), and the map status (registry `sequence_*` columns).
+  Outputs: a `display` jsonb column on `program_requirement_records` (an added column, no new
+  privilege close) and `cpl_pathways_roep_data.js`.
+- **Sources, measured 2026-10-04:** the mock-up's "articulated here" marks are counts of
+  `map_college_cr_unit.credit_rec` by course code (reviewer-gated; publish counts and credential
+  titles only, never a student column) plus CER industry-credential lines (the Ironworker 15).
+  `chatbox_peer_articulations` (public) marks 14 of the Ironworker's 24 courses and none of
+  Riverside's, so Sierra must read the builder's facts, never compute her own, or she contradicts
+  the page. `program_requirement_records.checks` holds only booleans; the difference lists are in
+  the repo records.
+- **Sierra:** `fetchCheckedRequirements()` selects `display`; the CATALOG REQUIREMENTS block adds the
+  CPL lines, the figure with its definition, the gaps and the map status; the rules add the
+  considerations (beta draft; a misread is fixed in the procedure, never by hand; the map recommends
+  picks, the catalog keeps the rule; "for consideration" is no articulation). `sierra.js` prefills
+  `?ask=` (the mock-up's Ask Sierra link already sends it). Surface `cpl-pathways` joins
+  `KNOWN_SURFACES` when the tab is ported. Then an A/B preview, merge, deploy, smoke.
 
 ## What shipped (S326)
 

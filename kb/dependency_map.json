@@ -5953,7 +5953,7 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-31.html": {
+  "file:docs/visuals/<date>-open-asks-32.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
