@@ -405,10 +405,10 @@ alter table public.program_source_registry
 -- program_source_census_apply() names its columns, so the weekly census never
 -- writes these. Anyone with the public key reads the registry, so a record names
 -- offices and hosts, never staff; the only person it names is a curator who
--- suggests a workaround. Applied as migration
--- program_source_registry_procedure_2026_10_04 with Cerritos's first record:
--- kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql. The history
--- trigger names procedure_by when procedure_at changes.
+-- suggests a workaround. NOT YET APPLIED (S329, 2026-10-04): the session's
+-- permission check held the write for Sam's go in session; until it lands, the
+-- reader's load_procedure() reports "not read" and goes on. The history trigger
+-- names procedure_by when procedure_at changes.
 alter table public.program_source_registry
   add column if not exists procedure    jsonb,
   add column if not exists procedure_by text,
