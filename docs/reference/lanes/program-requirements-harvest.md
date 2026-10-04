@@ -239,7 +239,20 @@ to `KNOWN_SURFACES` in `cpl-chat` (a deploy). ⚠️ Cerritos's Field Ironworker
 reads 0: its apprenticeship credit lives in the hand-built CPL Pathways map, not in
 MAP's credit recommendations.
 
-**NEEDS SAM (open-asks sheet 27):** (1) paste the two memory receipts
+**The probe (run 37198225537, 2026-10-04):** of the 24 sequence sources the census
+filed, **all 17 mapper hosts reached answered 403** (`*.programmapper.ws|.com|.org`,
+`programmap.<domain>`, `pm.hartnell.edu`, `mypath.contracosta.edu`,
+`jaguarspot.sjcc.edu`); five college pages only link to a mapper host
+(Bakersfield, LA Harbor, Merced, West Los Angeles; Palo Verde's address is its
+homepage); Santa Monica timed out; **Irvine Valley's "All Program Maps" page
+(`ivc.edu/node/3220`) answered**. The refusal is the mapper service's, not
+Miramar's.
+
+**NEEDS SAM (open-asks sheet 28):** (3) how the pilot reads Miramar's sequence,
+given the mapper's refusal (proposed: a person saves the one map; Sam asks for
+access); (4) whether Sierra may say "required" and give a unit total for a
+program whose record passed all four checks (proposed: yes, those only).
+Carried from sheet 27: (1) paste the two memory receipts
 (`kb/receipts/cpl_memory_2026-10-03_s320.sql`, `..._s321.sql`) in the SQL editor
 when convenient (his call: later): three rows name a stall word, and the
 connector's confirmation never reached him when S322 ran them; (2) the six
@@ -248,6 +261,7 @@ session's UPDATE to the shared registry (Rule 10), so he pastes
 `kb/receipts/program_source_registry_corrections_2026-10-03_s321.sql` in the SQL
 editor or lifts the guard for one run.
 
-**NEXT:** Phase 1's last pieces: the Miramar PPM sequence (the Program Mapper
-hosts answered 403 or did not resolve) and the Butte College Tech Center's ROE
-field definitions (Sam asks them); then the harvest widens past the pilot.
+**NEXT:** Sam's reaction to the tab mock-up, then the port into COBI (a static
+tab plus the Sierra surface); the sequence per sheet 28; the Butte College Tech
+Center's ROE field definitions (Sam asks them, the pilot's records being done);
+then the harvest widens past the pilot.
