@@ -8,7 +8,7 @@
    "id": "s335-sam-sheet42",
    "for": "Sam",
    "tab": "program-requirements",
-   "text": "Open Asks Sheet 42 (https://claude.ai/artifact/HqVTZRKnuSqfUEpmm3VdSX): card 1, go or later on writing the program outcomes into the 20 live records; card 2, go or later on Sierra's one-line deploy and then the display build that adds Miramar's two drafts; card 3, whether drafts show on My College once the MAP team has sent them, or now."
+   "text": "Open Asks Sheet 44 (https://claude.ai/artifact/6mgoWoJ4oZYGPqJeVRvryu): card 1, give the industry credential watch routine its repositories and the issuers' sites (its first run, 2026-10-05, could not read the vault, push, or reach the issuer pages). Sheet 42's three cards are answered (1 go, 2 go, 3 show them now)."
   },
   {
    "id": "s332-sam-setup-script",
@@ -56,7 +56,7 @@
    "id": "s335-fable-sheet42-apply",
    "for": "Fable",
    "tab": "program-requirements",
-   "text": "On Sam's go on sheet 42: card 1, re-run the outcomes verify query, apply kb/receipts/program_requirement_records_outcomes_2026-10-05.sql, read every row back as after. Card 2, deploy cpl-chat through its workflow and run the smoke, then apply kb/receipts/program_requirement_records_display_2026-10-05_1cb75672ba6c_delta.sql and read all 20 rows back with --verify-sql. Then drop the lane's NEEDS SAM and the cards in one PR."
+   "text": "Sam said go on sheet 42 card 2 (2026-10-05 20:58Z): once cpl-chat deploy run 37374184173 lands, run the smoke, then apply kb/receipts/program_requirement_records_display_2026-10-05_1cb75672ba6c_delta.sql after a fresh md5 read and read all 20 rows back with python3 kb/_build_roep_display.py --verify-sql. Card 1's outcomes are on all 20 rows (S335, read back after)."
   },
   {
    "id": "s319-fable-read-timings",
