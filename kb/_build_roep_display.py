@@ -34,13 +34,21 @@ THE THREE KINDS OF CPL ON A COURSE (DEFINITIONS below say them in full):
             articulation; none of them names a course yet (measured 2026-10-04), so
             the statewide C-ID lines are the only source today.
 
-IDENTITY never compares a stored id. A course's identity is the Common Course
-Reference id its live membership gives it (kb/coci_minted_memberships.json, by
-control number where the state's file names one, else by college and code), and an
-articulation's identity is the membership of the course it names at the college
-that articulated it. That is the pattern kb/_build_cpl_pathway_membership.py uses,
-so no alias chain applies (CLAUDE.md Rule 7): nothing here reads an M-ID out of a
-stored file and looks it up in the live set.
+IDENTITY never compares a stored id. A course's identity is what the Common Course
+Reference shows for it today: unified_courses_members.js (rebuilt every morning) by
+control number where the state's file names one, else by college and code, with the
+kind and title from unified_courses_index.js. An articulation's identity is the
+membership of the course it names at the college that articulated it, so no alias
+chain applies (CLAUDE.md Rule 7): nothing here reads an id out of a stored file and
+looks it up in the live set. Until S332 this read kb/coci_minted_memberships.json,
+which holds only identities with two or more members: every stand-alone course and
+every C-ID or Common Course Numbering identity read as none. Build bbbbfb611f15 named
+an identity for 149 of the pilot's 289 course entries and 81691460ba18 for 285; could
+adopt rose from 53 entries to 133 (Cerritos's IWAP 40.63 and 41.07 gained American
+River's Iron Workers apprenticeship articulations) and for consideration from 0 to 15.
+A course can sit under several ids (1,066 control numbers carry a C-ID and its CCN
+id): it shows the strongest (CCN, then C-ID, then the CCR id) and could-adopt reads
+across all of them.
 
 THE FIGURE is the mock-up's plan() ported line for line
 (docs/visuals/2026-10-04-cpl-pathways-roep-mockup.html): inside every choice take
@@ -73,8 +81,10 @@ PILOT = os.path.join(HERE, "program_requirements_pilot")
 MAP_READ = os.path.join(PILOT, "map_cr_by_course.json")
 REGISTRY_READ = os.path.join(PILOT, "registry_read.json")
 ARTICS = os.path.join(HERE, "coci_articulations.json")
-MEMBERSHIPS = os.path.join(HERE, "coci_minted_memberships.json")
+LIVE_MEMBERS = os.path.join(ROOT, "unified_courses_members.js")
+LIVE_INDEX = os.path.join(ROOT, "unified_courses_index.js")
 MINTED = os.path.join(HERE, "coci_minted_courses.json")
+UNIFIED = os.path.join(HERE, "unified_titles.json")
 CER = os.path.join(ROOT, "credential_reference_data.js")
 OUT_JS = os.path.join(ROOT, "cpl_pathways_roep_data.js")
 RECEIPTS = os.path.join(HERE, "receipts")
@@ -139,39 +149,65 @@ def load_js_object(path: str, var: str) -> dict:
 
 
 class Identity:
-    """A course's Common Course Reference id from its live membership, with the
-    minted record's C-ID and CCN beside it."""
+    """A course's ids in the Common Course Reference as it stands today (the live
+    members and index files), with the minted record's C-ID and CCN beside a CCR id.
+    Pass `members` and `index` (the two payloads) to build one from a fixture."""
 
-    def __init__(self):
-        mem = json.load(open(MEMBERSHIPS))
-        self.generated_at = mem.get("_generated_at")
-        minted = json.load(open(MINTED))["courses"]
-        self.by_control: dict[str, str] = {}
-        self.by_code: dict[tuple, str] = {}
-        for mid, members in mem["memberships"].items():
-            for m in members:
-                if m.get("control_number"):
-                    self.by_control[str(m["control_number"])] = mid
-                self.by_code[(norm_college(m["college"]), ck("%s %s" % (m["subject"], m["course_number"])))] = mid
-        self.minted = minted
+    KIND_ORDER = {"CCN-ID": 0, "C-ID": 1, "Course": 2, "Stand-Alone": 3}
+
+    def __init__(self, members: dict | None = None, index: list | None = None, minted: dict | None = None):
+        mem = members if members is not None else load_js_object(LIVE_MEMBERS, "CPL_UC_MEMBERS")
+        idx = index if index is not None else load_js_object(LIVE_INDEX, "CPL_UC_INDEX")
+        self.generated_at = mem.get("generated_at")
+        self.live = {r[0]: {"title": r[1], "kind": r[3]} for r in idx}
+        self.minted = minted if minted is not None else json.load(open(MINTED))["courses"]
+        self.by_control: dict[str, set] = defaultdict(set)
+        self.by_code: dict[tuple, set] = defaultdict(set)
+        cols = mem["colleges"]
+        for mid, members_ in mem["members"].items():
+            for m in members_:
+                if m.get("cn"):
+                    self.by_control[str(m["cn"])].add(mid)
+                self.by_code[(norm_college(cols[m["c"]]), ck(m["n"]))].add(mid)
+
+    def _order(self, ids) -> list[str]:
+        return sorted(ids, key=lambda i: (self.KIND_ORDER.get((self.live.get(i) or {}).get("kind"), 9), i))
+
+    def ids(self, college: str, code: str, control: str | None = None) -> list[str]:
+        """Every id the course holds, strongest first."""
+        if control and control in self.by_control:
+            return self._order(self.by_control[control])
+        return self._order(self.by_code.get((norm_college(college), ck(code))) or ())
 
     def mid(self, college: str, code: str, control: str | None = None) -> str | None:
-        if control and control in self.by_control:
-            return self.by_control[control]
-        return self.by_code.get((norm_college(college), ck(code)))
+        ids = self.ids(college, code, control)
+        return ids[0] if ids else None
 
     def cross_disciplinary(self, mid: str | None) -> bool:
         return bool((self.minted.get(mid) or {}).get("cross_disciplinary")) if mid else False
 
-    def ref(self, mid: str | None) -> dict | None:
-        rec = self.minted.get(mid) if mid else None
-        if not rec:
+    def ref(self, mid: str | None, also=()) -> dict | None:
+        """The shown identity. `also` is every id the course holds, so a CCN id
+        carries the C-ID beside it."""
+        if not mid:
             return None
-        ccn, cid, title = _clean(rec.get("ccn_id")), _clean(rec.get("c_id")), _clean(rec.get("common_title"))
+        live = self.live.get(mid) or {}
+        kind = live.get("kind")
+        cid_also = next((i for i in also if (self.live.get(i) or {}).get("kind") == "C-ID"), None)
+        if kind == "CCN-ID":
+            return {"kind": "CCN", "id": mid, "title": live.get("title"), "ccr": mid, "cid": cid_also}
+        if kind == "C-ID":
+            return {"kind": "C-ID", "id": mid, "title": live.get("title"), "ccr": mid, "cid": mid}
+        rec = self.minted.get(mid) or {}
+        ccn, cid = _clean(rec.get("ccn_id")), _clean(rec.get("c_id"))
+        title = _clean(rec.get("common_title")) or live.get("title")
+        cid = cid or cid_also
         if ccn:
             return {"kind": "CCN", "id": ccn, "title": title, "ccr": mid, "cid": cid or None}
         if cid:
             return {"kind": "C-ID", "id": cid, "title": title, "ccr": mid, "cid": cid}
+        if not rec and not live:
+            return None
         return {"kind": "CCR", "id": mid, "title": title, "ccr": mid, "cid": None}
 
 
@@ -196,8 +232,7 @@ def articulation_index(ident: Identity):
             code = "%s %s" % (subj, num)
             for col in cols:
                 here[(norm_college(col), ck(code))].setdefault(label, True)
-                mid = ident.mid(col, code)
-                if mid:
+                for mid in ident.ids(col, code):
                     by_identity[mid][label].add(col)
     stamp = feed.get("_authority_recode_applied_at") or feed.get("_generated_by")
     return here, by_identity, stamp
@@ -361,6 +396,12 @@ def build() -> dict:
     map_read = json.load(open(MAP_READ))
     registry = json.load(open(REGISTRY_READ))
     ident = Identity()
+    # MAP's credit recommendations carry the title a college typed; the feed and the
+    # statewide lines carry the CER's unified title. "Already here" compares both, or
+    # Riverside's "CompTIA Security+ (CIS-27)" left CompTIA Security+ "for consideration"
+    # on the course that holds it (S332).
+    unified = {k: v.get("unified_title") for k, v in json.load(open(UNIFIED)).items()
+               if isinstance(v, dict) and v.get("unified_title")}
     feed_here, by_identity, feed_stamp = articulation_index(ident)
     statewide = statewide_cid_index()
     adopters, cer_at = cer_adopters()
@@ -390,8 +431,9 @@ def build() -> dict:
                     if x["code"] in courses:
                         continue
                     lc = listed.get(k) or {}
-                    mid = ident.mid(college, x["code"], lc.get("ccn"))
-                    ref = ident.ref(mid)
+                    ids = ident.ids(college, x["code"], lc.get("ccn"))
+                    mid = ids[0] if ids else None
+                    ref = ident.ref(mid, ids)
                     entry = OrderedDict()
                     entry["title"] = lc.get("title")
                     if x.get("units") is None and lc.get("units") is not None:
@@ -404,14 +446,19 @@ def build() -> dict:
                         labels.setdefault(t["title"], True)
                     for t in feed_here.get((norm_college(college), k), {}):
                         labels.setdefault(t, True)
-                    here_set = {t.lower() for t in labels}
+                    here_set = {t.lower() for t in labels} | {unified[t].lower() for t in labels if t in unified}
                     if mr.get("recs") or labels:
                         entry["here"] = {"recs": mr.get("recs") or 0, "credentials_n": len(labels),
                                          "credentials": list(labels)[:4]}
                     # could adopt
-                    if mid and not ident.cross_disciplinary(mid):
+                    pooled = defaultdict(set)
+                    for i in ids:
+                        if not ident.cross_disciplinary(i):
+                            for label, cols in by_identity.get(i, {}).items():
+                                pooled[label] |= cols
+                    if pooled:
                         adopt = []
-                        for label, cols in sorted(by_identity.get(mid, {}).items()):
+                        for label, cols in sorted(pooled.items()):
                             others = sorted(c for c in cols if norm_college(c) != norm_college(college))
                             if others and label.lower() not in here_set:
                                 adopt.append({"credential": label, "colleges": others})
@@ -508,7 +555,7 @@ def q(v) -> str:
     return loader.q(v)
 
 
-def sql_text(b: dict) -> str:
+def sql_text(b: dict, prior: str | None = None) -> str:
     """One statement per program, in the form the load used (S326): an insert that
     conflicts on the key and sets only `display`. A bare UPDATE is held by the
     Supabase connector for a confirmation a remote session cannot answer, and times
@@ -516,10 +563,12 @@ def sql_text(b: dict) -> str:
     updates, so it never adds a program the load did not."""
     lines = ["-- Generated by kb/_build_roep_display.py (build %s, built %s). Do not edit; rerun the builder."
              % (b["build"], b["built"]),
-             "-- Writes program_requirement_records.display for %d programs. The column was added empty, so the"
-             % len(b["programs"]),
-             "-- before-value of every row is null, and setting display back to null for these keys rolls this back.",
-             "-- The page reads the same facts from cpl_pathways_roep_data.js (same build stamp)."]
+             "-- Writes program_requirement_records.display for %d programs." % len(b["programs"])]
+    if prior:
+        lines.append("-- It replaces the build in %s: re-applying that receipt rolls this one back." % prior)
+    else:
+        lines.append("-- The column was added empty, so setting display back to null for these keys rolls this back.")
+    lines.append("-- The page reads the same facts from cpl_pathways_roep_data.js (same build stamp).")
     for p in b["programs"]:
         lines.append(
             "insert into public.program_requirement_records (college, control_number, program_title, measure, record, checks, display) "
@@ -556,7 +605,13 @@ def verify_sql(b: dict) -> str:
 
 
 def receipt_path(b: dict) -> str:
-    return os.path.join(RECEIPTS, "program_requirement_records_display_%s.sql" % b["built"])
+    """Dated, and named by build from S332: two builds on one read date each keep their
+    receipt, so the earlier one stays the later one's rollback."""
+    stamped = os.path.join(RECEIPTS, "program_requirement_records_display_%s_%s.sql" % (b["built"], b["build"]))
+    first = os.path.join(RECEIPTS, "program_requirement_records_display_%s.sql" % b["built"])
+    if not os.path.exists(stamped) and os.path.exists(first) and ("build %s," % b["build"]) in open(first).readline():
+        return first
+    return stamped
 
 
 def main(argv=None) -> int:
@@ -579,7 +634,12 @@ def main(argv=None) -> int:
     print("build %s, built %s" % (b["build"], b["built"]))
     if args.print:
         return 0
-    sql = sql_text(b)
+    prior = None
+    if os.path.exists(OUT_JS):
+        was = load_js_object(OUT_JS, "CPL_PATHWAYS_ROEP")
+        if was.get("build") != b["build"] and os.path.exists(receipt_path(was)):
+            prior = os.path.relpath(receipt_path(was), ROOT)
+    sql = sql_text(b, prior)
     hit = STALL.search(sql)
     if hit:
         print("REFUSING: the display SQL names %r, which stalls the Supabase connector." % hit.group(0))

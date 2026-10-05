@@ -5247,14 +5247,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 79
+     "line": 89
     },
     {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 79
+     "line": 89
     }
    ],
    "producers": [
@@ -5503,7 +5503,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 78
+     "line": 88
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -7919,7 +7919,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 83
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -8588,7 +8588,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 77
+     "line": 86
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -9014,13 +9014,6 @@
      "direction": "read",
      "how": "literal",
      "line": 73
-    },
-    {
-     "id": "script:kb/_build_roep_display.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 76
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -11914,7 +11907,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 73
+     "line": 81
     }
    ],
    "served": true,
@@ -11927,7 +11920,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 74
+     "line": 82
     }
    ],
    "served": true,
@@ -14059,6 +14052,13 @@
      "direction": "read",
      "how": "literal",
      "line": 732
+    },
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 87
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -17623,6 +17623,13 @@
      "line": 56
     },
     {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 85
+    },
+    {
      "id": "script:kb/_esl_package_actionable.py",
      "kind": "script",
      "direction": "read",
@@ -17761,6 +17768,13 @@
      "direction": "read",
      "how": "literal",
      "line": 712
+    },
+    {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 84
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",

@@ -1,14 +1,14 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "bbbbfb611f15",
+ "build": "81691460ba18",
  "built": "2026-10-04",
  "inputs": {
   "records": 20,
   "map_read_at": "2026-10-04",
   "registry_read_at": "2026-10-04",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-05-22",
+  "memberships": "2026-10-04 16:56",
   "cer": "2026-10-04T16:56:26+00:00"
  },
  "definitions": {
@@ -128,7 +128,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "AED 90.05": {
       "title": "OSHA-10 Training",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ELEC M90AC",
+       "title": "OSHA-10 Training"
+      }
      }
     },
     "gaps": [
@@ -186,7 +190,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -305,46 +309,162 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 9,
      "here": 1,
-     "adopt": 0,
+     "adopt": 4,
      "consider": 0
     },
     "courses": {
      "HED 100": {
       "title": "Contemporary Health Problems",
-      "identity": null,
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 100",
+       "title": "Personal Health and Wellness"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "Basic Military Training"
        ]
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Personal Health and Wellness",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Personal Health and Wellness (Military)",
+         "colleges": [
+          "Moorpark College"
+         ]
+        }
+       ]
       }
      },
      "HED 102": {
       "title": "Introduction to Public Health",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 101",
+       "title": "Introduction to Public Health"
+      }
      },
      "HO 102": {
       "title": "Introduction to Public Health",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 101",
+       "title": "Introduction to Public Health"
+      }
      },
      "HED 110": {
       "title": "Community First Aid and CPR",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "KIN 101",
+       "title": "First Aid, CPR and AED"
+      },
+      "adopt": {
+       "credentials_n": 10,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "EMT Certification",
+         "colleges": [
+          "Cabrillo College",
+          "City College of San Francisco",
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Glendale Community College",
+          "San Bernardino Valley College"
+         ]
+        },
+        {
+         "credential": "Basic Life Support (BLS) Certification",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Dental Board of California Certificates",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        }
+       ]
+      }
      },
      "KIN 110": {
       "title": "Community First Aid and CPR",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "KIN 101",
+       "title": "First Aid, CPR and AED"
+      },
+      "adopt": {
+       "credentials_n": 10,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "EMT Certification",
+         "colleges": [
+          "Cabrillo College",
+          "City College of San Francisco",
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Glendale Community College",
+          "San Bernardino Valley College"
+         ]
+        },
+        {
+         "credential": "Basic Life Support (BLS) Certification",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Dental Board of California Certificates",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        }
+       ]
+      }
      },
      "HED 201": {
       "title": null,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "HLTH M1203",
+       "title": "Principles of the Community Health Worker"
+      }
      },
      "HED 202": {
       "title": "Health Systems and Perspectives",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 110",
+       "title": "Navigating the U.S. Health Care System, Health Insurance, Public Assistance, and Benefits Programs"
+      }
      },
      "HED 204": {
       "title": "Work Experience in Community Health Worker",
@@ -356,7 +476,47 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "STAT C1000": {
       "title": "Introduction to Statistics",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "STAT C1000",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
      }
     },
     "gaps": [
@@ -420,7 +580,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -684,7 +844,7 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 24,
      "here": 15,
-     "adopt": 0,
+     "adopt": 3,
      "consider": 0
     },
     "courses": {
@@ -720,7 +880,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 40.56": {
       "title": "IW - Trade Science/Ironworker History",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "MANU M10IH",
+       "title": "IW - Trade Science/Ironworker History"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -731,18 +895,38 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 40.63": {
       "title": "IW - Structural Lead Hazard",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1149",
+       "title": "IW - Structural Lead Hazard"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Lead Hazard"
        ]
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Iron Workers Apprenticeship — H07/H47/H75/H77",
+         "colleges": [
+          "American River College"
+         ]
+        }
+       ]
       }
      },
      "IWAP 40.09": {
       "title": "IW - GEN Rigging",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "MANU M10HZ",
+       "title": "IW - GEN Rigging"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -753,7 +937,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 40.22": {
       "title": "IW - Cranes",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M10OD",
+       "title": "IW - Cranes"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -772,7 +960,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 40.11": {
       "title": "Welding ll- Reinforcing",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1152",
+       "title": "IW - Structural Steel Ll"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -783,7 +975,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 40.12": {
       "title": "IW - Reinforcing Iron l",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "WELD M1111",
+       "title": "Welding L - Reinforcing"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -794,7 +990,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 41.03": {
       "title": "IW - Reinforcing ll",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1152",
+       "title": "IW - Structural Steel Ll"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -805,7 +1005,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 40.15": {
       "title": "IW - Post Tension l",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1153",
+       "title": "IW - Post - Tension Lll"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -816,18 +1020,38 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 41.07": {
       "title": "Post - Tension ll",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1150",
+       "title": "Reinforcing II/Post Tension"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Post Tensioning 2"
        ]
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Iron Workers Apprenticeship — H36",
+         "colleges": [
+          "American River College"
+         ]
+        }
+       ]
       }
      },
      "IWAP 40.53": {
       "title": "IW - Detailing/Reinforcing Iron",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "WELD M1111",
+       "title": "Welding L - Reinforcing"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -838,7 +1062,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 40.55": {
       "title": "IWS - Reinforcing Foreman Training",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M10TW",
+       "title": "IWS - Reinforcing Foreman Training"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -849,7 +1077,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 41.08": {
       "title": "IW - Post - Tension lll",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1153",
+       "title": "IW - Post - Tension Lll"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -860,7 +1092,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 41.09": {
       "title": "OSHA 30/Extension Review",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "WELD M10CA",
+       "title": "OSHA 30/Extension Review"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -871,15 +1107,39 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 40.21": {
       "title": "Structural Steel l",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "WELD M1120",
+       "title": "Structural Steel/Welding"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Welding Certification",
+         "colleges": [
+          "Cuesta College"
+         ]
+        }
+       ]
+      }
      },
      "IWAP 41.06": {
       "title": "IW - Structural Steel ll",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1152",
+       "title": "IW - Structural Steel Ll"
+      }
      },
      "IWAP 40.05": {
       "title": "IW- Welding lll",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1153",
+       "title": "IW - Post - Tension Lll"
+      }
      },
      "IWAP 40.60": {
       "title": "Structural Arch Orn l",
@@ -891,19 +1151,35 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "IWAP 41.05": {
       "title": "IW - Architectural ll",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1152",
+       "title": "IW - Structural Steel Ll"
+      }
      },
      "IWAP 40.61": {
       "title": "IW - Structural Precast Concrete/Qualified Rigger",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "MANU M10FT",
+       "title": "IW - Structural Precast Concrete/Qualified Rigger"
+      }
      },
      "IWAP 41.04": {
       "title": "IW - Architectural lll",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "INDT M1153",
+       "title": "IW - Post - Tension Lll"
+      }
      },
      "IWAP 40.26": {
       "title": "Metal Building Erection /Foreman Training",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "MANU M10ED",
+       "title": "Metal Building Erection /Foreman Training"
+      }
      }
     },
     "gaps": [
@@ -955,7 +1231,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -1187,108 +1463,413 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 21,
      "here": 1,
-     "adopt": 0,
+     "adopt": 9,
      "consider": 0
     },
     "courses": {
      "HED 100": {
       "title": "Contemporary Health Problems",
-      "identity": null,
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 100",
+       "title": "Personal Health and Wellness"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "Basic Military Training"
        ]
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Personal Health and Wellness",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Personal Health and Wellness (Military)",
+         "colleges": [
+          "Moorpark College"
+         ]
+        }
+       ]
       }
      },
      "HED 102": {
       "title": "Introduction to Public Health",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 101",
+       "title": "Introduction to Public Health"
+      }
      },
      "HO 102": {
       "title": "Introduction to Public Health",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 101",
+       "title": "Introduction to Public Health"
+      }
      },
      "STAT C1000": {
       "title": "Introduction to Statistics",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "STAT C1000",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
      },
      "STAT C1000E": {
       "title": "Introduction to Statistics",
       "units_from_state_file": 4.5,
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "STAT C1000E",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
      },
      "PSYC 210": {
       "title": "Elementary Statistics",
       "units_from_state_file": 4.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "MATH 110",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
      },
      "BIOL 120": {
       "title": "Introduction To Biological Science",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "BIOL M1054",
+       "title": "Introduction to the Biological Sciences 1"
+      }
      },
      "A&P 150": {
       "title": "Introduction to Human Anatomy",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "BIOL 110 B",
+       "title": "Human Anatomy with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Human Anatomy",
+         "colleges": [
+          "Cabrillo College",
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "A&P 151": {
       "title": "Introduction to Human Physiology",
       "units_from_state_file": 4.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "BIOL 120 B",
+       "title": "Human Physiology with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Human Physiology with Lab",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "CHEM 110": {
       "title": "Elementary Chemistry",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "CHEM 101",
+       "title": "Introduction to Chemistry"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 9,
+       "credentials": [
+        {
+         "credential": "AP Chemistry",
+         "colleges": [
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Mission College",
+          "Los Angeles Pierce College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Saddleback College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "CLEP Chemistry",
+         "colleges": [
+          "Coastline Community College"
+         ]
+        },
+        {
+         "credential": "IB Chemistry HL",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Introduction to Chemistry",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "CHEM 111": {
       "title": "General Chemistry",
       "units_from_state_file": 5.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "CHEM 110",
+       "title": "General Chemistry for Science Majors I, with Lab"
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 5,
+       "credentials": [
+        {
+         "credential": "AP Chemistry",
+         "colleges": [
+          "Chaffey College",
+          "Norco College",
+          "Riverside City College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "IB Chemistry HL",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        }
+       ]
+      }
      },
      "MICR 200": {
       "title": "Principles and Applications of Microbiology",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "BIOL M1256",
+       "title": "Principles of Microbiology"
+      }
      },
      "HED 104": {
       "title": "Introduction to Health and Society",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 102",
+       "title": "Health and Social Justice"
+      }
      },
      "HO 103": {
       "title": "Health and Social Justice",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PHS 102",
+       "title": "Health and Social Justice (Archived - for reference only)"
+      }
      },
      "HED 106": {
       "title": "Cultural Competence in Health and Social Services",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 104",
+       "title": "Cultural Competence in Health and Social Services"
+      }
      },
      "HED 103": {
       "title": "Women, Their Bodies and Health",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 116",
+       "title": "Women’s Health"
+      }
      },
      "WGS 103": {
       "title": "Women, their Bodies and Health",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 116",
+       "title": "Women’s Health"
+      }
      },
      "HED 108": {
       "title": "Explorations of Health Professions",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 105",
+       "title": "Introduction to Health and Healthcare Careers"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Exploration of Health Professions",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "HED 202": {
       "title": "Health Systems and Perspectives",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 110",
+       "title": "Navigating the U.S. Health Care System, Health Insurance, Public Assistance, and Benefits Programs"
+      }
      },
      "HO 245": {
       "title": "Drugs and Behavior",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 103",
+       "title": "Drugs, Health, and Society"
+      }
      },
      "PSYC 245": {
       "title": "Drugs and Behavior",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PH 103",
+       "title": "Drugs, Health, and Society"
+      }
      }
     },
     "gaps": [
@@ -1340,7 +1921,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -1460,16 +2041,16 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 8,
      "here": 7,
-     "adopt": 5,
-     "consider": 0
+     "adopt": 6,
+     "consider": 2
     },
     "courses": {
      "FIPT 101": {
       "title": "Fire Protection Organization",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1347",
-       "title": "Fire Protection Organization"
+       "kind": "C-ID",
+       "id": "FIRE 100 X",
+       "title": "Principles of Emergency Services"
       },
       "here": {
        "recs": 2,
@@ -1482,21 +2063,22 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 7,
-       "colleges_n": 4,
+       "credentials_n": 11,
+       "colleges_n": 7,
        "credentials": [
+        {
+         "credential": "Fire Fighter Paramedic Journeyperson Certificate",
+         "colleges": [
+          "Bakersfield College",
+          "Glendale Community College",
+          "Lake Tahoe Community College"
+         ]
+        },
         {
          "credential": "Fire Academy Experience",
          "colleges": [
           "Lake Tahoe Community College",
           "Moreno Valley College"
-         ]
-        },
-        {
-         "credential": "Fire Fighter Paramedic Journeyperson Certificate",
-         "colleges": [
-          "Bakersfield College",
-          "Lake Tahoe Community College"
          ]
         },
         {
@@ -1514,14 +2096,22 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "Fire Fighter Paramedic Journeyperson Certificate",
+        "credit": "3 hours in Fire Protection Organization",
+        "cid": "FIRE 100 X",
+        "colleges_n": 4
+       }
+      ]
      },
      "FIPT 102": {
       "title": "Fire Prevention Technology",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1349",
-       "title": "Fire Prevention Technology"
+       "kind": "C-ID",
+       "id": "FIRE 110 X",
+       "title": "Fire Prevention"
       },
       "here": {
        "recs": 2,
@@ -1532,20 +2122,38 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 3,
+       "credentials_n": 5,
+       "colleges_n": 10,
        "credentials": [
         {
          "credential": "Fire Inspector 1",
          "colleges": [
+          "Bakersfield College",
           "Cabrillo College",
+          "Chabot College",
+          "Chaffey College",
+          "Santa Ana College",
           "Sierra College"
+         ]
+        },
+        {
+         "credential": "Fire Prevention",
+         "colleges": [
+          "Chaffey College",
+          "Copper Mountain College",
+          "Modesto Junior College"
          ]
         },
         {
          "credential": "Fire Prevention Technology",
          "colleges": [
           "Merced College"
+         ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert"
          ]
         }
        ]
@@ -1554,9 +2162,9 @@ window.CPL_PATHWAYS_ROEP = {
      "FIPT 103": {
       "title": "Fire Protection Equipment and Systems",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1315",
-       "title": "Fire Protection Equipment and Systems"
+       "kind": "C-ID",
+       "id": "FIRE 120 X",
+       "title": "Fire Protection Systems"
       },
       "here": {
        "recs": 1,
@@ -1567,14 +2175,19 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 5,
-       "colleges_n": 5,
+       "credentials_n": 10,
+       "colleges_n": 12,
        "credentials": [
         {
          "credential": "Fire Inspector 1",
          "colleges": [
           "Bakersfield College",
+          "Chabot College",
+          "Chaffey College",
           "City College of San Francisco",
+          "College of the Desert",
+          "College of the Sequoias",
+          "Santa Ana College",
           "Sierra College"
          ]
         },
@@ -1582,23 +2195,42 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Firefighter 1",
          "colleges": [
           "Cabrillo College",
+          "Chabot College",
           "Sierra College"
-         ]
-        },
-        {
-         "credential": "Building Construction for Fire Protection",
-         "colleges": [
-          "Mendocino College"
          ]
         },
         {
          "credential": "Firefighter 1A",
          "colleges": [
-          "Cabrillo College"
+          "Cabrillo College",
+          "Chabot College",
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "SFT Fire Inspector 1C",
+         "colleges": [
+          "Chaffey College",
+          "Santa Ana College",
+          "Sierra College"
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "SFT Fire Inspector 1C",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 4
+       },
+       {
+        "credential": "Fire Inspector 1",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 9
+       }
+      ]
      },
      "FIPT 104": {
       "title": "Building Construction for Fire Protection",
@@ -1619,7 +2251,7 @@ window.CPL_PATHWAYS_ROEP = {
       },
       "adopt": {
        "credentials_n": 5,
-       "colleges_n": 6,
+       "colleges_n": 3,
        "credentials": [
         {
          "credential": "Fire Fighter Paramedic Journeyperson Certificate",
@@ -1630,13 +2262,6 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Fire Academy Experience",
-         "colleges": [
-          "Lake Tahoe Community College",
-          "Moreno Valley College"
-         ]
-        },
-        {
          "credential": "Firefighter I",
          "colleges": [
           "Bakersfield College",
@@ -1644,9 +2269,14 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
+         "credential": "Fire Academy Experience",
+         "colleges": [
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
          "credential": "Professional Fire Service Experience",
          "colleges": [
-          "College of the Desert",
           "Lake Tahoe Community College"
          ]
         }
@@ -1671,8 +2301,8 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 5,
-       "colleges_n": 10,
+       "credentials_n": 3,
+       "colleges_n": 5,
        "credentials": [
         {
          "credential": "Fire Behavior and Combustion",
@@ -1680,31 +2310,21 @@ window.CPL_PATHWAYS_ROEP = {
           "Cabrillo College",
           "Chaffey College",
           "Lake Tahoe Community College",
-          "Merced College",
-          "Modesto Junior College"
-         ]
-        },
-        {
-         "credential": "California State Fire Officer Certification",
-         "colleges": [
-          "College of the Sequoias",
-          "Mendocino College",
-          "Santa Ana College"
+          "Merced College"
          ]
         },
         {
          "credential": "Fire Academy Experience",
          "colleges": [
           "Cabrillo College",
-          "Lake Tahoe Community College",
-          "Moreno Valley College"
+          "Lake Tahoe Community College"
          ]
         },
         {
-         "credential": "Fire Officer Journeyperson Certificate",
+         "credential": "Firefighter I",
          "colleges": [
-          "Mendocino College",
-          "Santa Ana College"
+          "Bakersfield College",
+          "Lake Tahoe Community College"
          ]
         }
        ]
@@ -1714,13 +2334,29 @@ window.CPL_PATHWAYS_ROEP = {
       "title": "Firefighter Safety and Survival",
       "identity": {
        "kind": "CCR",
-       "id": "FIRE M1356",
-       "title": "Firefighter Safety and Survival"
+       "id": "FIRE M1358",
+       "title": "Firefighter Survival"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Fire Fighter Survival",
+         "colleges": [
+          "Palo Verde College"
+         ]
+        }
+       ]
       }
      },
      "EMGM 105A": {
       "title": "Emergency Medical Technician - National Registry",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "EMST M10LH",
+       "title": "Emergency Medical Technician - National Registry"
+      },
       "here": {
        "recs": 2,
        "credentials_n": 4,
@@ -1734,7 +2370,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "EMGM 106": {
       "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "EMST M10EJ",
+       "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 2,
@@ -1776,7 +2416,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -1896,16 +2536,16 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 8,
      "here": 7,
-     "adopt": 5,
-     "consider": 0
+     "adopt": 6,
+     "consider": 2
     },
     "courses": {
      "FIPT 101": {
       "title": "Fire Protection Organization",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1347",
-       "title": "Fire Protection Organization"
+       "kind": "C-ID",
+       "id": "FIRE 100 X",
+       "title": "Principles of Emergency Services"
       },
       "here": {
        "recs": 2,
@@ -1918,21 +2558,22 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 7,
-       "colleges_n": 4,
+       "credentials_n": 11,
+       "colleges_n": 7,
        "credentials": [
+        {
+         "credential": "Fire Fighter Paramedic Journeyperson Certificate",
+         "colleges": [
+          "Bakersfield College",
+          "Glendale Community College",
+          "Lake Tahoe Community College"
+         ]
+        },
         {
          "credential": "Fire Academy Experience",
          "colleges": [
           "Lake Tahoe Community College",
           "Moreno Valley College"
-         ]
-        },
-        {
-         "credential": "Fire Fighter Paramedic Journeyperson Certificate",
-         "colleges": [
-          "Bakersfield College",
-          "Lake Tahoe Community College"
          ]
         },
         {
@@ -1950,14 +2591,22 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "Fire Fighter Paramedic Journeyperson Certificate",
+        "credit": "3 hours in Fire Protection Organization",
+        "cid": "FIRE 100 X",
+        "colleges_n": 4
+       }
+      ]
      },
      "FIPT 102": {
       "title": "Fire Prevention Technology",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1349",
-       "title": "Fire Prevention Technology"
+       "kind": "C-ID",
+       "id": "FIRE 110 X",
+       "title": "Fire Prevention"
       },
       "here": {
        "recs": 2,
@@ -1968,20 +2617,38 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 3,
+       "credentials_n": 5,
+       "colleges_n": 10,
        "credentials": [
         {
          "credential": "Fire Inspector 1",
          "colleges": [
+          "Bakersfield College",
           "Cabrillo College",
+          "Chabot College",
+          "Chaffey College",
+          "Santa Ana College",
           "Sierra College"
+         ]
+        },
+        {
+         "credential": "Fire Prevention",
+         "colleges": [
+          "Chaffey College",
+          "Copper Mountain College",
+          "Modesto Junior College"
          ]
         },
         {
          "credential": "Fire Prevention Technology",
          "colleges": [
           "Merced College"
+         ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert"
          ]
         }
        ]
@@ -1990,9 +2657,9 @@ window.CPL_PATHWAYS_ROEP = {
      "FIPT 103": {
       "title": "Fire Protection Equipment and Systems",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1315",
-       "title": "Fire Protection Equipment and Systems"
+       "kind": "C-ID",
+       "id": "FIRE 120 X",
+       "title": "Fire Protection Systems"
       },
       "here": {
        "recs": 1,
@@ -2003,14 +2670,19 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 5,
-       "colleges_n": 5,
+       "credentials_n": 10,
+       "colleges_n": 12,
        "credentials": [
         {
          "credential": "Fire Inspector 1",
          "colleges": [
           "Bakersfield College",
+          "Chabot College",
+          "Chaffey College",
           "City College of San Francisco",
+          "College of the Desert",
+          "College of the Sequoias",
+          "Santa Ana College",
           "Sierra College"
          ]
         },
@@ -2018,23 +2690,42 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Firefighter 1",
          "colleges": [
           "Cabrillo College",
+          "Chabot College",
           "Sierra College"
-         ]
-        },
-        {
-         "credential": "Building Construction for Fire Protection",
-         "colleges": [
-          "Mendocino College"
          ]
         },
         {
          "credential": "Firefighter 1A",
          "colleges": [
-          "Cabrillo College"
+          "Cabrillo College",
+          "Chabot College",
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "SFT Fire Inspector 1C",
+         "colleges": [
+          "Chaffey College",
+          "Santa Ana College",
+          "Sierra College"
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "SFT Fire Inspector 1C",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 4
+       },
+       {
+        "credential": "Fire Inspector 1",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 9
+       }
+      ]
      },
      "FIPT 104": {
       "title": "Building Construction for Fire Protection",
@@ -2055,7 +2746,7 @@ window.CPL_PATHWAYS_ROEP = {
       },
       "adopt": {
        "credentials_n": 5,
-       "colleges_n": 6,
+       "colleges_n": 3,
        "credentials": [
         {
          "credential": "Fire Fighter Paramedic Journeyperson Certificate",
@@ -2066,13 +2757,6 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Fire Academy Experience",
-         "colleges": [
-          "Lake Tahoe Community College",
-          "Moreno Valley College"
-         ]
-        },
-        {
          "credential": "Firefighter I",
          "colleges": [
           "Bakersfield College",
@@ -2080,9 +2764,14 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
+         "credential": "Fire Academy Experience",
+         "colleges": [
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
          "credential": "Professional Fire Service Experience",
          "colleges": [
-          "College of the Desert",
           "Lake Tahoe Community College"
          ]
         }
@@ -2107,8 +2796,8 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 5,
-       "colleges_n": 10,
+       "credentials_n": 3,
+       "colleges_n": 5,
        "credentials": [
         {
          "credential": "Fire Behavior and Combustion",
@@ -2116,31 +2805,21 @@ window.CPL_PATHWAYS_ROEP = {
           "Cabrillo College",
           "Chaffey College",
           "Lake Tahoe Community College",
-          "Merced College",
-          "Modesto Junior College"
-         ]
-        },
-        {
-         "credential": "California State Fire Officer Certification",
-         "colleges": [
-          "College of the Sequoias",
-          "Mendocino College",
-          "Santa Ana College"
+          "Merced College"
          ]
         },
         {
          "credential": "Fire Academy Experience",
          "colleges": [
           "Cabrillo College",
-          "Lake Tahoe Community College",
-          "Moreno Valley College"
+          "Lake Tahoe Community College"
          ]
         },
         {
-         "credential": "Fire Officer Journeyperson Certificate",
+         "credential": "Firefighter I",
          "colleges": [
-          "Mendocino College",
-          "Santa Ana College"
+          "Bakersfield College",
+          "Lake Tahoe Community College"
          ]
         }
        ]
@@ -2150,13 +2829,29 @@ window.CPL_PATHWAYS_ROEP = {
       "title": "Firefighter Safety and Survival",
       "identity": {
        "kind": "CCR",
-       "id": "FIRE M1356",
-       "title": "Firefighter Safety and Survival"
+       "id": "FIRE M1358",
+       "title": "Firefighter Survival"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Fire Fighter Survival",
+         "colleges": [
+          "Palo Verde College"
+         ]
+        }
+       ]
       }
      },
      "EMGM 105A": {
       "title": "Emergency Medical Technician - National Registry",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "EMST M10LH",
+       "title": "Emergency Medical Technician - National Registry"
+      },
       "here": {
        "recs": 2,
        "credentials_n": 4,
@@ -2170,7 +2865,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "EMGM 106": {
       "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "EMST M10EJ",
+       "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 2,
@@ -2218,7 +2917,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -2630,15 +3329,15 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 39,
      "here": 7,
-     "adopt": 6,
-     "consider": 0
+     "adopt": 13,
+     "consider": 1
     },
     "courses": {
      "BUSE 100": {
       "title": "Introduction to Business",
       "identity": {
-       "kind": "CCR",
-       "id": "BUSI M1191",
+       "kind": "C-ID",
+       "id": "BUS 110",
        "title": "Introduction to Business"
       },
       "here": {
@@ -2647,6 +3346,36 @@ window.CPL_PATHWAYS_ROEP = {
        "credentials": [
         "Credit By Exam Miramar",
         "Introduction to Business"
+       ]
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Business Management and Entrepreneurship",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Business and Finance",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Business and Finance Pathway",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Fundamentals of Business",
+         "colleges": [
+          "Santa Ana College"
+         ]
+        }
        ]
       }
      },
@@ -2689,15 +3418,34 @@ window.CPL_PATHWAYS_ROEP = {
      "BUSE 119": {
       "title": "Business Communications",
       "identity": {
-       "kind": "CCR",
-       "id": "BUSI M1150",
-       "title": "Business Communications"
+       "kind": "C-ID",
+       "id": "BUS 115",
+       "title": "Business Communication"
       },
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "Machinist's Mate"
+       ]
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Business Communications",
+         "colleges": [
+          "Modesto Junior College",
+          "Moorpark College"
+         ]
+        },
+        {
+         "credential": "Business Communication",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
        ]
       }
      },
@@ -2752,12 +3500,12 @@ window.CPL_PATHWAYS_ROEP = {
       "title": "Principles of Marketing",
       "identity": {
        "kind": "CCR",
-       "id": "MRKT M1011",
-       "title": "Principles of Marketing"
+       "id": "BUSI M1420",
+       "title": "Marketing Principles"
       },
       "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 3,
+       "credentials_n": 3,
+       "colleges_n": 5,
        "credentials": [
         {
          "credential": "CLEP Principles of Marketing",
@@ -2774,6 +3522,13 @@ window.CPL_PATHWAYS_ROEP = {
           "Norco College",
           "Riverside City College"
          ]
+        },
+        {
+         "credential": "Marketing Principles",
+         "colleges": [
+          "Cabrillo College",
+          "Chaffey College"
+         ]
         }
        ]
       }
@@ -2781,34 +3536,74 @@ window.CPL_PATHWAYS_ROEP = {
      "BUSE 140": {
       "title": "Business Law and the Legal Environment",
       "identity": {
-       "kind": "CCR",
-       "id": "BUSI M1169",
-       "title": "Business Law and the Legal Environment"
+       "kind": "C-ID",
+       "id": "BUS 120",
+       "title": "Legal Environment of Business"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Credit by exam",
+         "colleges": [
+          "Saddleback College"
+         ]
+        }
+       ]
       }
      },
      "BUSE 201": {
       "title": "Business Organization and Management",
       "identity": {
        "kind": "CCR",
-       "id": "BUSI M1196",
-       "title": "Business Organization and Management"
+       "id": "BUSI M1401",
+       "title": "Organization and Management"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Introduction to Management",
+         "colleges": [
+          "Los Angeles Harbor College"
+         ]
+        }
+       ]
       }
      },
      "BUSE 229A": {
       "title": "Gazelle Path Business Incubator I",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ENTR M10AU",
+       "title": "Gazelle Path Business Incubator 1"
+      }
      },
      "BUSE 229B": {
       "title": "Gazelle Path Business Incubator II",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ENTR M10AV",
+       "title": "Gazelle Path Business Incubator 2"
+      }
      },
      "BUSE 229C": {
       "title": "Gazelle Path Business Incubator III",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ENTR M10AW",
+       "title": "Gazelle Path Business Incubator 3"
+      }
      },
      "BUSE 229D": {
       "title": "Gazelle Path Business Incubator IV",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ENTR M10AX",
+       "title": "Gazelle Path Business Incubator 4"
+      }
      },
      "ACCT 102": {
       "title": "Basic Accounting",
@@ -2829,10 +3624,49 @@ window.CPL_PATHWAYS_ROEP = {
      "CISC 181": {
       "title": "Principles of Information Systems",
       "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1394",
-       "title": "Principles of Information Systems"
-      }
+       "kind": "C-ID",
+       "id": "BUS 140",
+       "title": "Business Information Systems, Computer Information Systems"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 5,
+       "credentials": [
+        {
+         "credential": "Introduction to Computer Information Systems",
+         "colleges": [
+          "Chaffey College",
+          "San Jose City College"
+         ]
+        },
+        {
+         "credential": "CompTIA Network+",
+         "colleges": [
+          "College of Marin"
+         ]
+        },
+        {
+         "credential": "CompTIA Tech+",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        },
+        {
+         "credential": "Heavy/Medium Duty Truck Technology Apprenticeship",
+         "colleges": [
+          "San Bernardino Valley College"
+         ]
+        }
+       ]
+      },
+      "consider": [
+       {
+        "credential": "CompTIA Tech+",
+        "credit": "3 hours in Computer Information Systems",
+        "cid": "BUS 140",
+        "colleges_n": 6
+       }
+      ]
      },
      "BUSE 120": {
       "title": "Personal Financial Management",
@@ -2856,7 +3690,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "AUTO 151T": {
       "title": "Honda/Toyota Quick Service Lube, Pre-Delivery Inspection Technician",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "AUTO M11EV",
+       "title": "Honda/Toyota Quick Service Lube, Pre-Delivery Inspection Technician"
+      }
      },
      "AUTO 153G": {
       "title": "Introduction to Automotive Technology",
@@ -2874,16 +3712,9 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 4,
-       "colleges_n": 4,
+       "credentials_n": 2,
+       "colleges_n": 2,
        "credentials": [
-        {
-         "credential": "ASE G1 — Auto Maintenance and Light Repair",
-         "colleges": [
-          "Long Beach City College",
-          "Mendocino College"
-         ]
-        },
         {
          "credential": "ASE A1 — Engine Repair",
          "colleges": [
@@ -2891,15 +3722,9 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair",
+         "credential": "ASE G1 — Auto Maintenance and Light Repair",
          "colleges": [
-          "College of the Desert"
-         ]
-        },
-        {
-         "credential": "Original Equipment Manufacturer (OEM) Certification",
-         "colleges": [
-          "College of the Desert"
+          "Mendocino College"
          ]
         }
        ]
@@ -2907,7 +3732,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "AUTO 156G": {
       "title": "Engine and Related Systems",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "AUTO M1241",
+       "title": "Honda/Toyota Advanced Engine Performance"
+      },
       "here": {
        "recs": 2,
        "credentials_n": 5,
@@ -2921,11 +3750,19 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "AUTO 156T": {
       "title": "Honda/Toyota Engine and Related Systems",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "AUTO M1241",
+       "title": "Honda/Toyota Advanced Engine Performance"
+      }
      },
      "AVIA 101": {
       "title": "Private Pilot Grounded School",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "AVIA M10PH",
+       "title": "Private Pilot Grounded School"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -2938,11 +3775,19 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "AVIA 105": {
       "title": "Introduction to Aviation and Aerospace",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "AVIA M1060",
+       "title": "Introduction to Aviation and Aerospace"
+      }
      },
      "AVIM 101G": {
       "title": "General Aviation Technology Theory I",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "AVIA M10KW",
+       "title": "General Aviation Technology Theory 1"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 1,
@@ -2953,7 +3798,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "CBTE 165": {
       "title": "Webpage Creation with Dreamweaver",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "BSOT M10LB",
+       "title": "Webpage Creation with Dreamweaver"
+      }
      },
      "CBTE 180": {
       "title": "Microsoft Office",
@@ -2974,9 +3823,34 @@ window.CPL_PATHWAYS_ROEP = {
      "CHIL 101": {
       "title": "Human Growth and Development",
       "identity": {
-       "kind": "CCR",
-       "id": "PSYC M1064",
-       "title": "Human Growth and Development"
+       "kind": "C-ID",
+       "id": "CDEV 100",
+       "title": "Child Growth and Development"
+      },
+      "adopt": {
+       "credentials_n": 3,
+       "colleges_n": 4,
+       "credentials": [
+        {
+         "credential": "Child Development",
+         "colleges": [
+          "Lemoore College",
+          "Merced College"
+         ]
+        },
+        {
+         "credential": "Child Development Associate (CDA) Credential",
+         "colleges": [
+          "Saddleback College"
+         ]
+        },
+        {
+         "credential": "Child Development Intermediate",
+         "colleges": [
+          "Santa Ana College"
+         ]
+        }
+       ]
       }
      },
      "DIES 100": {
@@ -2989,7 +3863,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "DIES 105": {
       "title": "Measuring Tools and Applied Mathematics",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "AUTD M10AX",
+       "title": "Measuring Tools and Applied Mathematics"
+      }
      },
      "EXSC 292A": {
       "title": "Yoga Teacher Training Essentials",
@@ -3005,23 +3883,41 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "KINE M1402",
        "title": "Care and Prevention of Injuries"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Care and Prevention of Athletic Injuries",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
       }
      },
      "MUSI 190": {
       "title": "Introduction to Music Technology",
       "identity": {
-       "kind": "CCR",
-       "id": "MUSI M1485",
+       "kind": "C-ID",
+       "id": "CMUS 100 X",
        "title": "Introduction to Music Technology"
       },
       "adopt": {
-       "credentials_n": 1,
+       "credentials_n": 2,
        "colleges_n": 2,
        "credentials": [
         {
          "credential": "Introduction to Music Technology",
          "colleges": [
           "Las Positas College",
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Introduction to Recording Arts",
+         "colleges": [
           "Los Angeles Pierce College"
          ]
         }
@@ -3151,7 +4047,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -3303,16 +4199,16 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 10,
      "here": 1,
-     "adopt": 0,
+     "adopt": 7,
      "consider": 0
     },
     "courses": {
      "BUSE 119": {
       "title": "Business Communications",
       "identity": {
-       "kind": "CCR",
-       "id": "BUSI M1150",
-       "title": "Business Communications"
+       "kind": "C-ID",
+       "id": "BUS 115",
+       "title": "Business Communication"
       },
       "here": {
        "recs": 1,
@@ -3320,30 +4216,88 @@ window.CPL_PATHWAYS_ROEP = {
        "credentials": [
         "Machinist's Mate"
        ]
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Business Communications",
+         "colleges": [
+          "Modesto Junior College",
+          "Moorpark College"
+         ]
+        },
+        {
+         "credential": "Business Communication",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
       }
      },
      "BUSE 140": {
       "title": "Business Law and the Legal Environment",
       "identity": {
-       "kind": "CCR",
-       "id": "BUSI M1169",
-       "title": "Business Law and the Legal Environment"
+       "kind": "C-ID",
+       "id": "BUS 120",
+       "title": "Legal Environment of Business"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Credit by exam",
+         "colleges": [
+          "Saddleback College"
+         ]
+        }
+       ]
       }
      },
      "ACCT 116A": {
       "title": "Financial Accounting",
       "identity": {
-       "kind": "CCR",
-       "id": "BUSI M1046",
+       "kind": "C-ID",
+       "id": "ACCT 110",
        "title": "Financial Accounting"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "Financial Accounting",
+         "colleges": [
+          "Copper Mountain College",
+          "De Anza College",
+          "Ventura College"
+         ]
+        }
+       ]
       }
      },
      "ACCT 116B": {
       "title": "Managerial Accounting",
       "identity": {
-       "kind": "CCR",
-       "id": "BUSI M1079",
+       "kind": "C-ID",
+       "id": "ACCT 120",
        "title": "Managerial Accounting"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Managerial Accounting",
+         "colleges": [
+          "Copper Mountain College",
+          "Ventura College"
+         ]
+        }
+       ]
       }
      },
      "ECON C2002": {
@@ -3357,9 +4311,45 @@ window.CPL_PATHWAYS_ROEP = {
      "BUSE 115": {
       "title": "Statistics for Business",
       "identity": {
-       "kind": "CCR",
-       "id": "BUSI M1213",
-       "title": "Business Statistics"
+       "kind": "C-ID",
+       "id": "MATH 110",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
       }
      },
      "STAT C1000": {
@@ -3369,17 +4359,89 @@ window.CPL_PATHWAYS_ROEP = {
      "MATH 121": {
       "title": "Basic Techniques of Applied Calculus I",
       "identity": {
-       "kind": "CCR",
-       "id": "MATH M1110",
-       "title": "Basic Techniques of Applied Calculus 1"
+       "kind": "C-ID",
+       "id": "MATH 140",
+       "title": "Business Calculus"
+      },
+      "adopt": {
+       "credentials_n": 3,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "AP Calculus AB",
+         "colleges": [
+          "Los Angeles Mission College",
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "AP Calculus BC",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Business Calculus",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
       }
      },
      "MATH 150": {
       "title": "Calculus with Analytic Geometry I",
       "identity": {
-       "kind": "CCR",
-       "id": "MATH M1099",
-       "title": "Calculus with Analytic Geometry 1"
+       "kind": "C-ID",
+       "id": "MATH 210",
+       "title": "Single Variable Calculus I Early Transcendentals"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 11,
+       "credentials": [
+        {
+         "credential": "AP Calculus AB",
+         "colleges": [
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Mission College",
+          "Napa Valley College",
+          "Riverside City College",
+          "Saddleback College",
+          "San Jose City College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "AP Calculus BC",
+         "colleges": [
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Mission College",
+          "Madera College",
+          "Riverside City College",
+          "Saddleback College",
+          "San Jose City College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "CLEP Calculus",
+         "colleges": [
+          "Coastline Community College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "Single Variable Calculus 1 Early Transcendentals",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
       }
      }
     },
@@ -3438,7 +4500,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -3614,39 +4676,34 @@ window.CPL_PATHWAYS_ROEP = {
      "courses": 15,
      "here": 1,
      "adopt": 11,
-     "consider": 0
+     "consider": 3
     },
     "courses": {
      "FIRE 1": {
       "title": "Fire Protection Organization",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1347",
-       "title": "Fire Protection Organization"
+       "kind": "C-ID",
+       "id": "FIRE 100 X",
+       "title": "Principles of Emergency Services"
       },
       "adopt": {
-       "credentials_n": 12,
-       "colleges_n": 9,
+       "credentials_n": 16,
+       "colleges_n": 16,
        "credentials": [
         {
          "credential": "Firefighter 1",
          "colleges": [
           "Bakersfield College",
           "Cabrillo College",
+          "City College of San Francisco",
+          "College of the Desert",
+          "Columbia College",
+          "Glendale Community College",
           "Lake Tahoe Community College",
           "Mendocino College",
           "San Diego Miramar College",
-          "Santa Ana College"
-         ]
-        },
-        {
-         "credential": "Fire Protection Organization",
-         "colleges": [
-          "Lake Tahoe Community College",
-          "Long Beach City College",
-          "Merced College",
-          "San Diego Miramar College",
-          "Santa Ana College"
+          "Santa Ana College",
+          "Sierra College"
          ]
         },
         {
@@ -3654,8 +4711,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Bakersfield College",
           "Cabrillo College",
+          "City College of San Francisco",
+          "Columbia College",
+          "Glendale Community College",
           "Lake Tahoe Community College",
-          "San Diego Miramar College"
+          "San Diego Miramar College",
+          "Sierra College"
          ]
         },
         {
@@ -3663,29 +4724,81 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Bakersfield College",
           "Cabrillo College",
+          "City College of San Francisco",
+          "Glendale Community College",
           "Lake Tahoe Community College",
-          "San Diego Miramar College"
+          "San Diego Miramar College",
+          "Sierra College"
+         ]
+        },
+        {
+         "credential": "Fire Protection Organization",
+         "colleges": [
+          "Copper Mountain College",
+          "Lake Tahoe Community College",
+          "Long Beach City College",
+          "Merced College",
+          "San Diego Miramar College",
+          "Santa Ana College"
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "Firefighter 1A",
+        "credit": "3 hours in Fire Protection Organization",
+        "cid": "FIRE 100 X",
+        "colleges_n": 11
+       },
+       {
+        "credential": "Firefighter 1",
+        "credit": "3 hours in Fire Protection Organization",
+        "cid": "FIRE 100 X",
+        "colleges_n": 15
+       },
+       {
+        "credential": "Firefighter EMT Certificate",
+        "credit": "3 hours in Fire Protection Organization",
+        "cid": "FIRE 100 X",
+        "colleges_n": 10
+       },
+       {
+        "credential": "Fire Fighter Paramedic Journeyperson Certificate",
+        "credit": "3 hours in Fire Protection Organization",
+        "cid": "FIRE 100 X",
+        "colleges_n": 4
+       }
+      ]
      },
      "FIRE 2": {
       "title": "Fire Prevention Technology",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1349",
-       "title": "Fire Prevention Technology"
+       "kind": "C-ID",
+       "id": "FIRE 110 X",
+       "title": "Fire Prevention"
       },
       "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 4,
+       "credentials_n": 6,
+       "colleges_n": 11,
        "credentials": [
         {
          "credential": "Fire Inspector 1",
          "colleges": [
+          "Bakersfield College",
           "Cabrillo College",
+          "Chabot College",
+          "Chaffey College",
+          "Santa Ana College",
           "Sierra College"
+         ]
+        },
+        {
+         "credential": "Fire Prevention",
+         "colleges": [
+          "Chaffey College",
+          "Copper Mountain College",
+          "Modesto Junior College"
          ]
         },
         {
@@ -3706,19 +4819,24 @@ window.CPL_PATHWAYS_ROEP = {
      "FIRE 3": {
       "title": "Fire Protection Equipment and Systems",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1315",
-       "title": "Fire Protection Equipment and Systems"
+       "kind": "C-ID",
+       "id": "FIRE 120 X",
+       "title": "Fire Protection Systems"
       },
       "adopt": {
-       "credentials_n": 6,
-       "colleges_n": 6,
+       "credentials_n": 11,
+       "colleges_n": 13,
        "credentials": [
         {
          "credential": "Fire Inspector 1",
          "colleges": [
           "Bakersfield College",
+          "Chabot College",
+          "Chaffey College",
           "City College of San Francisco",
+          "College of the Desert",
+          "College of the Sequoias",
+          "Santa Ana College",
           "Sierra College"
          ]
         },
@@ -3726,84 +4844,118 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Firefighter 1",
          "colleges": [
           "Cabrillo College",
-          "Sierra College"
-         ]
-        },
-        {
-         "credential": "Building Construction for Fire Protection",
-         "colleges": [
-          "Mendocino College"
-         ]
-        },
-        {
-         "credential": "Fire Inspector 1C",
-         "colleges": [
-          "San Diego Miramar College"
-         ]
-        }
-       ]
-      }
-     },
-     "FIRE 4": {
-      "title": "Building Construction for Fire Protection",
-      "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1274",
-       "title": "Building Construction for Fire Protection"
-      },
-      "adopt": {
-       "credentials_n": 10,
-       "colleges_n": 11,
-       "credentials": [
-        {
-         "credential": "Firefighter 1",
-         "colleges": [
-          "Bakersfield College",
           "Chabot College",
-          "Chaffey College",
-          "City College of San Francisco",
-          "College of the Desert",
-          "Lake Tahoe Community College",
-          "San Diego Miramar College",
           "Sierra College"
          ]
         },
         {
          "credential": "Firefighter 1A",
          "colleges": [
-          "Bakersfield College",
+          "Cabrillo College",
           "Chabot College",
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "SFT Fire Inspector 1C",
+         "colleges": [
           "Chaffey College",
-          "City College of San Francisco",
-          "Lake Tahoe Community College",
-          "San Diego Miramar College",
+          "Santa Ana College",
+          "Sierra College"
+         ]
+        }
+       ]
+      },
+      "consider": [
+       {
+        "credential": "SFT Fire Inspector 1C",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 4
+       },
+       {
+        "credential": "Fire Inspector 1",
+        "credit": "3 hours in Fire Protection Systems",
+        "cid": "FIRE 120 X",
+        "colleges_n": 9
+       }
+      ]
+     },
+     "FIRE 4": {
+      "title": "Building Construction for Fire Protection",
+      "identity": {
+       "kind": "C-ID",
+       "id": "FIRE 130 X",
+       "title": "Building Construction for Fire Protection"
+      },
+      "adopt": {
+       "credentials_n": 9,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "Firefighter 1",
+         "colleges": [
+          "Chabot College",
+          "College of the Desert",
+          "Columbia College",
+          "Glendale Community College",
+          "Santa Ana College",
+          "Sierra College"
+         ]
+        },
+        {
+         "credential": "Firefighter 1A",
+         "colleges": [
+          "Chabot College",
+          "Columbia College",
+          "Glendale Community College",
           "Sierra College"
          ]
         },
         {
          "credential": "Building Construction for Fire Protection",
          "colleges": [
-          "Chaffey College",
           "College of the Desert",
-          "Lake Tahoe Community College",
-          "Merced College",
-          "Modesto Junior College",
-          "San Diego Miramar College"
+          "Copper Mountain College",
+          "Modesto Junior College"
          ]
         },
         {
          "credential": "Firefighter EMT Certificate",
          "colleges": [
-          "Bakersfield College",
-          "Chaffey College",
-          "City College of San Francisco",
-          "Lake Tahoe Community College",
-          "San Diego Miramar College",
+          "Cabrillo College",
+          "Glendale Community College",
           "Sierra College"
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "Firefighter 1A",
+        "credit": "3 hours in Building Construction for Fire Protection",
+        "cid": "FIRE 130 X",
+        "colleges_n": 11
+       },
+       {
+        "credential": "Firefighter 1",
+        "credit": "3 hours in Building Construction for Fire Protection",
+        "cid": "FIRE 130 X",
+        "colleges_n": 15
+       },
+       {
+        "credential": "Firefighter EMT Certificate",
+        "credit": "3 hours in Building Construction for Fire Protection",
+        "cid": "FIRE 130 X",
+        "colleges_n": 10
+       },
+       {
+        "credential": "Fire Fighter Paramedic Journeyperson Certificate",
+        "credit": "3 hours in Building Construction for Fire Protection",
+        "cid": "FIRE 130 X",
+        "colleges_n": 4
+       }
+      ]
      },
      "FIRE 5": {
       "title": "Fire Behavior and Combustion",
@@ -3813,22 +4965,18 @@ window.CPL_PATHWAYS_ROEP = {
        "title": "Fire Behavior and Combustion"
       },
       "adopt": {
-       "credentials_n": 9,
-       "colleges_n": 14,
+       "credentials_n": 7,
+       "colleges_n": 7,
        "credentials": [
         {
          "credential": "Firefighter 1",
          "colleges": [
           "Bakersfield College",
           "Cabrillo College",
-          "Chabot College",
           "Chaffey College",
           "City College of San Francisco",
-          "College of the Sequoias",
           "Lake Tahoe Community College",
-          "San Diego Miramar College",
-          "Santa Ana College",
-          "Sierra College"
+          "San Diego Miramar College"
          ]
         },
         {
@@ -3836,13 +4984,10 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Bakersfield College",
           "Cabrillo College",
-          "Chabot College",
           "Chaffey College",
           "City College of San Francisco",
-          "College of the Sequoias",
           "Lake Tahoe Community College",
-          "San Diego Miramar College",
-          "Sierra College"
+          "San Diego Miramar College"
          ]
         },
         {
@@ -3852,10 +4997,8 @@ window.CPL_PATHWAYS_ROEP = {
           "Cabrillo College",
           "Chaffey College",
           "City College of San Francisco",
-          "College of the Sequoias",
           "Lake Tahoe Community College",
-          "San Diego Miramar College",
-          "Sierra College"
+          "San Diego Miramar College"
          ]
         },
         {
@@ -3864,8 +5007,7 @@ window.CPL_PATHWAYS_ROEP = {
           "Cabrillo College",
           "Chaffey College",
           "Lake Tahoe Community College",
-          "Merced College",
-          "Modesto Junior College"
+          "Merced College"
          ]
         }
        ]
@@ -3874,31 +5016,19 @@ window.CPL_PATHWAYS_ROEP = {
      "FIRE 13": {
       "title": "Principles of Fire and Emergency Services Safety and Survival",
       "identity": {
-       "kind": "CCR",
-       "id": "FIRE M1308",
+       "kind": "C-ID",
+       "id": "FIRE 150 X",
        "title": "Principles of Fire and Emergency Services Safety and Survival"
       },
       "adopt": {
-       "credentials_n": 4,
-       "colleges_n": 4,
+       "credentials_n": 2,
+       "colleges_n": 3,
        "credentials": [
         {
          "credential": "Principles of Fire and Emergency Services Safety and Survival",
          "colleges": [
-          "Chaffey College",
+          "Copper Mountain College",
           "Modesto Junior College"
-         ]
-        },
-        {
-         "credential": "Firefighter II",
-         "colleges": [
-          "Bakersfield College"
-         ]
-        },
-        {
-         "credential": "Firefighting Technology",
-         "colleges": [
-          "Chaffey College"
          ]
         },
         {
@@ -3940,13 +5070,25 @@ window.CPL_PATHWAYS_ROEP = {
        "title": "Fire Fighting Tactics and Strategy"
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
+       "credentials_n": 3,
+       "colleges_n": 2,
        "credentials": [
         {
          "credential": "Fire Company Officer 2D & 2E",
          "colleges": [
           "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Fire Science Tactics & Strategy",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "SFT Company Officer 2A",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -3970,13 +5112,25 @@ window.CPL_PATHWAYS_ROEP = {
        "title": "Fire Hydraulics"
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
+       "credentials_n": 3,
+       "colleges_n": 3,
        "credentials": [
         {
          "credential": "Fire Apparatus Driver/Operator 1A",
          "colleges": [
           "Sierra College"
+         ]
+        },
+        {
+         "credential": "Fire Apparatus Driver/Operator 1B",
+         "colleges": [
+          "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Fire Hydraulics and Water Supply",
+         "colleges": [
+          "Copper Mountain College"
          ]
         }
        ]
@@ -3985,7 +5139,11 @@ window.CPL_PATHWAYS_ROEP = {
      "FIRE 10": {
       "title": "Arson and Fire Investigation",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "FIRE M1443",
+       "title": "Nat Fire Acad Arson Detection"
+      }
      },
      "FIRE 11": {
       "title": "Fire Apparatus and Equipment",
@@ -4085,7 +5243,11 @@ window.CPL_PATHWAYS_ROEP = {
      "KINF 53": {
       "title": "Physical Training for the Basic Fire Academy",
       "units_from_state_file": 2.5,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M10HS",
+       "title": "Physical Training for the Basic Fire Academy"
+      }
      }
     },
     "gaps": [
@@ -4137,7 +5299,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -4389,105 +5551,418 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 27,
      "here": 0,
-     "adopt": 1,
+     "adopt": 17,
      "consider": 0
     },
     "courses": {
      "ANAT 10A": {
       "title": "Introductory Human Anatomy",
       "units_from_state_file": 4.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "BIOL 110 B",
+       "title": "Human Anatomy with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Human Anatomy",
+         "colleges": [
+          "Cabrillo College",
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "ANAT 10B": {
       "title": "Introductory Human Physiology",
       "units_from_state_file": 4.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "BIOL 120 B",
+       "title": "Human Physiology with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Human Physiology with Lab",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "ANAT 35": {
       "title": "Human Anatomy",
       "units_from_state_file": 5.0,
       "identity": {
-       "kind": "CCR",
-       "id": "BIOL M1023",
-       "title": "Human Anatomy"
+       "kind": "C-ID",
+       "id": "BIOL 110 B",
+       "title": "Human Anatomy with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Human Anatomy",
+         "colleges": [
+          "Cabrillo College",
+          "Modesto Junior College"
+         ]
+        }
+       ]
       }
      },
      "ANAT 36": {
       "title": "Human Physiology",
       "units_from_state_file": 5.0,
       "identity": {
-       "kind": "CCR",
-       "id": "BIOL M1229",
-       "title": "Human Physiology"
+       "kind": "C-ID",
+       "id": "BIOL 120 B",
+       "title": "Human Physiology with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Human Physiology with Lab",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
       }
      },
      "CHLD 10": {
       "title": "Human Growth and Lifespan Development",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "CDEV M1280",
+       "title": "Human Development Through the Lifespan"
+      }
      },
      "CHLD 10H": {
       "title": "Human Growth and Lifespan Development - Honors",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "CDEV M11GJ",
+       "title": "Human Growth and Lifespan Development - Honors"
+      }
      },
      "PSYC 14": {
       "title": "Developmental Psychology",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "PSY 180",
+       "title": "Introduction to Lifespan Psychology"
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "CLEP Human Growth and Development",
+         "colleges": [
+          "Coastline Community College"
+         ]
+        },
+        {
+         "credential": "Developmental Psychology",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        }
+       ]
+      }
      },
      "PSYC 14H": {
       "title": "Developmental Psychology - Honors",
       "units_from_state_file": 3.0,
       "identity": {
-       "kind": "CCR",
-       "id": "PSYC M1069",
-       "title": "Developmental Psychology - Honors"
+       "kind": "C-ID",
+       "id": "PSY 180",
+       "title": "Introduction to Lifespan Psychology"
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "CLEP Human Growth and Development",
+         "colleges": [
+          "Coastline Community College"
+         ]
+        },
+        {
+         "credential": "Developmental Psychology",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        }
+       ]
       }
      },
      "COMM C1000": {
       "title": "Introduction to Public Speaking",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "COMM C1000",
+       "title": "Introduction to Public Speaking"
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Fundamentals of Public Speaking",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Fundamentals of Public Speaking (JST Military Credit)",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "COMM C1000H": {
       "title": "Introduction to Public Speaking - Honors",
       "units_from_state_file": 4.0,
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "COMM C1000H",
+       "title": "Introduction to Public Speaking - Honors"
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Fundamentals of Public Speaking",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Fundamentals of Public Speaking (JST Military Credit)",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "COMM 2": {
       "title": "Survey of Communication Studies",
       "units_from_state_file": 4.0,
       "identity": {
-       "kind": "CCR",
-       "id": "COMM M1061",
-       "title": "Survey of Communication Studies"
+       "kind": "C-ID",
+       "id": "COMM 115",
+       "title": "Survey of Human Communication"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Introduction to Human Communication (JST Military Credit)",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
       }
      },
      "COMM 8": {
       "title": "Professional and Organizational Speaking",
       "units_from_state_file": 4.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "COMM M10IB",
+       "title": "Professional and Organizational Speaking"
+      }
      },
      "COMM 8H": {
       "title": "Professional and Organizational Speaking - Honors",
       "units_from_state_file": 4.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "COMM M1112",
+       "title": "Professional and Organizational Speaking Honors"
+      }
      },
      "ENGL C1000": {
       "title": "Academic Reading and Writing",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "ENGL C1000",
+       "title": "Academic Writing and Reading"
+      },
+      "adopt": {
+       "credentials_n": 6,
+       "colleges_n": 11,
+       "credentials": [
+        {
+         "credential": "AP English Language and Composition",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Moreno Valley College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Riverside City College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "AP English Literature and Composition",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Moreno Valley College",
+          "Napa Valley College",
+          "Riverside City College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "CLEP College Composition",
+         "colleges": [
+          "Moreno Valley College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "English Composition and Reading",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "ENGL C1000H": {
       "title": "Academic Reading and Writing - Honors",
       "units_from_state_file": 4.0,
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "ENGL C1000H",
+       "title": "Academic Reading and Writing - Honors"
+      },
+      "adopt": {
+       "credentials_n": 6,
+       "colleges_n": 11,
+       "credentials": [
+        {
+         "credential": "AP English Language and Composition",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Moreno Valley College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Riverside City College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "AP English Literature and Composition",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Moreno Valley College",
+          "Napa Valley College",
+          "Riverside City College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "CLEP College Composition",
+         "colleges": [
+          "Moreno Valley College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "English Composition and Reading",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "AMLA 1A": {
       "title": "College Composition for Non-Native English Speakers",
       "units_from_state_file": 4.0,
       "identity": {
-       "kind": "CCR",
-       "id": "ENGL M1142",
-       "title": "College Composition for Non-Native English Speakers"
+       "kind": "C-ID",
+       "id": "ENGL 100",
+       "title": "College Composition"
+      },
+      "adopt": {
+       "credentials_n": 6,
+       "colleges_n": 11,
+       "credentials": [
+        {
+         "credential": "AP English Language and Composition",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Moreno Valley College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Riverside City College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "AP English Literature and Composition",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Moreno Valley College",
+          "Napa Valley College",
+          "Riverside City College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "CLEP College Composition",
+         "colleges": [
+          "Moreno Valley College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "English Composition and Reading",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
       }
      },
      "MICR 1": {
@@ -4523,8 +5998,38 @@ window.CPL_PATHWAYS_ROEP = {
       "title": "Maternal-Newborn Nursing",
       "identity": {
        "kind": "CCR",
-       "id": "NRSR M1169",
-       "title": "Maternity Nursing"
+       "id": "NRSR M1081",
+       "title": "Maternal Newborn Health Concepts"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "Licensed Vocational Nurse (LVN) License",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Maternal and Newborn Health Care",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Maternal-Newborn Nursing",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Maternal/Newborn Nursing Care",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        }
+       ]
       }
      },
      "NURS 115": {
@@ -4537,19 +6042,39 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "NURS 206": {
       "title": "Medical-Surgical Nursing: Nutrition/Elimination/ Surgical Asepsis",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "HTEC M1015",
+       "title": "Medical Asepsis and Surgical Procedures"
+      }
      },
      "NURS 207": {
       "title": "Psychiatric Mental Health Nursing",
       "identity": {
        "kind": "CCR",
-       "id": "NRSR M1186",
-       "title": "Psychiatric Nursing"
+       "id": "NRSR M1115",
+       "title": "Mental Health/Psychiatric Nursing"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Nursing Apprenticeship Program",
+         "colleges": [
+          "San Bernardino Valley College"
+         ]
+        }
+       ]
       }
      },
      "NURS 210": {
       "title": "Medical-Surgical Nursing: Perfusion and Oxygenation",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "NRSR M10VB",
+       "title": "Medical-Surgical Nursing: Circulation and Oxygenation"
+      }
      },
      "NURS 211": {
       "title": "Medical-Surgical Nursing: Integration/Regulation",
@@ -4569,12 +6094,100 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "PSYC C1000": {
       "title": "Introduction to Psychology",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "PSYC C1000",
+       "title": "Introduction to Psychology"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 11,
+       "credentials": [
+        {
+         "credential": "AP Psychology",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Cuesta College",
+          "Evergreen Valley College",
+          "Glendale Community College",
+          "Modesto Junior College",
+          "Mt. San Jacinto College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "General Psychology",
+         "colleges": [
+          "Lemoore College",
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Introduction to Psychology",
+         "colleges": [
+          "Chaffey College",
+          "Copper Mountain College"
+         ]
+        },
+        {
+         "credential": "CLEP Introductory Psychology",
+         "colleges": [
+          "Coastline Community College"
+         ]
+        }
+       ]
+      }
      },
      "PSYC C1000H": {
       "title": "Introduction to Psychology - Honors",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "PSYC C1000H",
+       "title": "Introduction to Psychology - Honors"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 11,
+       "credentials": [
+        {
+         "credential": "AP Psychology",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Cuesta College",
+          "Evergreen Valley College",
+          "Glendale Community College",
+          "Modesto Junior College",
+          "Mt. San Jacinto College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "General Psychology",
+         "colleges": [
+          "Lemoore College",
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Introduction to Psychology",
+         "colleges": [
+          "Chaffey College",
+          "Copper Mountain College"
+         ]
+        },
+        {
+         "credential": "CLEP Introductory Psychology",
+         "colleges": [
+          "Coastline Community College"
+         ]
+        }
+       ]
+      }
      }
     },
     "gaps": [
@@ -4662,7 +6275,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -4826,72 +6439,183 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 12,
      "here": 0,
-     "adopt": 0,
+     "adopt": 4,
      "consider": 0
     },
     "courses": {
      "CHLD 1": {
       "title": "Child, Family, School and Community",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "CDEV 110",
+       "title": "Child Family and Community"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Child Development Associate (CDA) Credential",
+         "colleges": [
+          "Saddleback College"
+         ]
+        }
+       ]
+      }
      },
      "CHLD 5": {
       "title": "Principles and Practices in Child Development Programs",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "ECE 120",
+       "title": "Principles & Practices of Teaching Young Children"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Child Development Associate (CDA) Credential",
+         "colleges": [
+          "Saddleback College"
+         ]
+        }
+       ]
+      }
      },
      "CHLD 6": {
       "title": "Introduction to Child Development Curriculum",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "ECE 130",
+       "title": "Introduction to Curriculum"
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Child Development Associate (CDA) Credential",
+         "colleges": [
+          "Saddleback College"
+         ]
+        },
+        {
+         "credential": "Introduction to Curriculum Early Childhood Education",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "CHLD 11": {
       "title": "Child and Adolescent Development",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "CDEV 100",
+       "title": "Child Growth and Development"
+      },
+      "adopt": {
+       "credentials_n": 3,
+       "colleges_n": 4,
+       "credentials": [
+        {
+         "credential": "Child Development",
+         "colleges": [
+          "Lemoore College",
+          "Merced College"
+         ]
+        },
+        {
+         "credential": "Child Development Associate (CDA) Credential",
+         "colleges": [
+          "Saddleback College"
+         ]
+        },
+        {
+         "credential": "Child Development Intermediate",
+         "colleges": [
+          "Santa Ana College"
+         ]
+        }
+       ]
+      }
      },
      "CHLD 50": {
       "title": "Teaching in a Diverse Society",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "ECE 230",
+       "title": "Teaching in a Diverse Society"
+      }
      },
      "CHLD 64": {
       "title": "Health, Safety and Nutrition of Children",
       "units_from_state_file": 3.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "ECE 220",
+       "title": "Health, Safety and Nutrition"
+      }
      },
      "CHLD 66": {
       "title": "Early Childhood Development Observation and Assessment",
       "units_from_state_file": 2.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "ECE 200",
+       "title": "Observation and Assessment"
+      }
      },
      "CHLD 66L": {
       "title": "Early Childhood Development Observation and Assessment Laboratory",
       "units_from_state_file": 1.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "CDEV M10LH",
+       "title": "Early Childhood Development Observation and Assessment Laboratory"
+      }
      },
      "CHLD 67": {
       "title": "Early Childhood Education Practicum",
       "units_from_state_file": 2.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "ECE 210",
+       "title": "Practicum in Early Childhood Education"
+      }
      },
      "CHLD 67L": {
       "title": "Early Childhood Education Practicum Laboratory",
       "units_from_state_file": 1.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "ECE 210",
+       "title": "Practicum in Early Childhood Education"
+      }
      },
      "CHLD 86": {
       "title": "Infant Toddler Practicum Seminar",
       "units_from_state_file": 2.0,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "ECE 210",
+       "title": "Practicum in Early Childhood Education"
+      }
      },
      "CHLD 87": {
       "title": "Infant Toddler Practicum Field Work Experience",
       "units_from_state_file": 1.0,
       "identity": {
-       "kind": "CCR",
-       "id": "WEXP M1001",
-       "title": "Work Experience Education"
+       "kind": "C-ID",
+       "id": "ECE 210",
+       "title": "Practicum in Early Childhood Education"
       }
      }
     },
@@ -4938,7 +6662,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -5064,7 +6788,11 @@ window.CPL_PATHWAYS_ROEP = {
      "VOC VN100": {
       "title": "Vocational Nursing Anatomy and Physiology",
       "units_from_state_file": 0.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90EI",
+       "title": "Vocational Nursing Anatomy and Physiology"
+      }
      },
      "VOC VN101": {
       "title": "Fundamentals of Vocational Nursing Practice",
@@ -5078,37 +6806,65 @@ window.CPL_PATHWAYS_ROEP = {
      "VOC VN102": {
       "title": "Vocational Nursing Pharmacology",
       "units_from_state_file": 0.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90QY",
+       "title": "Vocational Nursing Pharmacology"
+      }
      },
      "VOC VN120": {
       "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 1",
       "units_from_state_file": 0.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90AA",
+       "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 1"
+      }
      },
      "VOC VN122": {
       "title": "Life Span Development for Vocational Nurses",
       "units_from_state_file": 0.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90MO",
+       "title": "Life Span Development for Vocational Nurses"
+      }
      },
      "VOC VN124": {
       "title": "Psychology and Behavioral Health Vocational Nursing",
       "units_from_state_file": 0.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90HC",
+       "title": "Psychology and Behavioral Health Vocational Nursing"
+      }
      },
      "VOC VN130": {
       "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 2",
       "units_from_state_file": 0.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90BC",
+       "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 2"
+      }
      },
      "VOC VN132": {
       "title": "Leadership and Supervision in Vocational Nursing",
       "units_from_state_file": 0.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90QN",
+       "title": "Leadership and Supervision in Vocational Nursing"
+      }
      },
      "VOC VN134": {
       "title": "Vocational Nursing Care of the Family",
       "units_from_state_file": 0.0,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90JA",
+       "title": "Vocational Nursing Care of the Family"
+      }
      }
     },
     "gaps": [
@@ -5172,7 +6928,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -5272,13 +7028,35 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 6,
      "here": 1,
-     "adopt": 1,
+     "adopt": 2,
      "consider": 0
     },
     "courses": {
      "CUL-20": {
       "title": "Fundamentals of Baking I",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "CULN M1039",
+       "title": "Baking Fundamentals 1"
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Credit by exam",
+         "colleges": [
+          "Saddleback College"
+         ]
+        },
+        {
+         "credential": "Introduction to Baking & Pastry",
+         "colleges": [
+          "Santa Ana College"
+         ]
+        }
+       ]
+      }
      },
      "CUL-36": {
       "title": "Introduction to Culinary Arts",
@@ -5302,7 +7080,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "CUL-37": {
       "title": "Intermediate Culinary Arts",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "CULN M10EG",
+       "title": "Intermediate Culinary Arts"
+      }
      },
      "CUL-38": {
       "title": "Advanced Culinary Arts",
@@ -5315,9 +7097,9 @@ window.CPL_PATHWAYS_ROEP = {
      "KIN-4": {
       "title": "Nutrition",
       "identity": {
-       "kind": "CCR",
-       "id": "NUTR M1034",
-       "title": "Nutrition"
+       "kind": "C-ID",
+       "id": "NUTR 110",
+       "title": "Introduction to Nutrition Science"
       }
      },
      "MAG-56": {
@@ -5376,7 +7158,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -5641,16 +7423,16 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 27,
      "here": 10,
-     "adopt": 9,
-     "consider": 0
+     "adopt": 19,
+     "consider": 4
     },
     "courses": {
      "ADJ-1": {
       "title": "Introduction to the Administration of Justice",
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1043",
-       "title": "Introduction to Administration of Justice"
+       "kind": "C-ID",
+       "id": "AJ 110",
+       "title": "Introduction to Criminal Justice"
       },
       "here": {
        "recs": 2,
@@ -5663,33 +7445,145 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 3,
+       "credentials_n": 7,
+       "colleges_n": 26,
        "credentials": [
         {
          "credential": "POST Basic Academy",
          "colleges": [
+          "Bakersfield College",
+          "Barstow Community College",
+          "Butte College",
+          "Cabrillo College",
           "Cerro Coso Community College",
           "Chabot College",
-          "San Bernardino Valley College"
+          "Chaffey College",
+          "College of San Mateo",
+          "College of the Desert",
+          "Copper Mountain College",
+          "Fullerton College",
+          "Glendale Community College",
+          "Grossmont College",
+          "Lake Tahoe Community College",
+          "Las Positas College",
+          "Lemoore College",
+          "Los Medanos College",
+          "Moreno Valley College",
+          "Reedley College",
+          "San Bernardino Valley College",
+          "Shasta College",
+          "Skyline College",
+          "Solano Community College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "Introduction to Administration of Justice",
+         "colleges": [
+          "East Los Angeles College",
+          "Los Medanos College",
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Administration of Justice",
+         "colleges": [
+          "Lemoore College"
+         ]
+        },
+        {
+         "credential": "Basic Correctional Officer Academy",
+         "colleges": [
+          "Chaffey College"
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "POST Basic Academy",
+        "credit": "3 hours in Intro to Administration of Justice",
+        "cid": "AJ 110",
+        "colleges_n": 32
+       }
+      ]
      },
      "ADJ-1H": {
       "title": "Honors Introduction to the Administration of Justice",
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1042",
-       "title": "Honors Introduction to the Administration of Justice"
-      }
+       "kind": "C-ID",
+       "id": "AJ 110",
+       "title": "Introduction to Criminal Justice"
+      },
+      "adopt": {
+       "credentials_n": 7,
+       "colleges_n": 26,
+       "credentials": [
+        {
+         "credential": "POST Basic Academy",
+         "colleges": [
+          "Bakersfield College",
+          "Barstow Community College",
+          "Butte College",
+          "Cabrillo College",
+          "Cerro Coso Community College",
+          "Chabot College",
+          "Chaffey College",
+          "College of San Mateo",
+          "College of the Desert",
+          "Copper Mountain College",
+          "Fullerton College",
+          "Glendale Community College",
+          "Grossmont College",
+          "Lake Tahoe Community College",
+          "Las Positas College",
+          "Lemoore College",
+          "Los Medanos College",
+          "Moreno Valley College",
+          "Reedley College",
+          "San Bernardino Valley College",
+          "Shasta College",
+          "Skyline College",
+          "Solano Community College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "Introduction to Administration of Justice",
+         "colleges": [
+          "East Los Angeles College",
+          "Los Medanos College",
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Administration of Justice",
+         "colleges": [
+          "Lemoore College"
+         ]
+        },
+        {
+         "credential": "Basic Correctional Officer Academy",
+         "colleges": [
+          "Chaffey College"
+         ]
+        }
+       ]
+      },
+      "consider": [
+       {
+        "credential": "POST Basic Academy",
+        "credit": "3 hours in Intro to Administration of Justice",
+        "cid": "AJ 110",
+        "colleges_n": 32
+       }
+      ]
      },
      "ADJ-3": {
       "title": "Concepts of Criminal Law",
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1123",
+       "kind": "C-ID",
+       "id": "AJ 120",
        "title": "Concepts of Criminal Law"
       },
       "here": {
@@ -5700,13 +7594,45 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
+       "credentials_n": 5,
+       "colleges_n": 9,
        "credentials": [
         {
-         "credential": "Criminal Law",
+         "credential": "Basic Correctional Officer Academy",
          "colleges": [
-          "Norco College"
+          "Bakersfield College",
+          "Cabrillo College",
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Department of Veterans Affairs Police Officer (VA POST)",
+         "colleges": [
+          "Bakersfield College",
+          "Cabrillo College",
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Federal Law Enforcement Training (DoD)",
+         "colleges": [
+          "Bakersfield College",
+          "Cabrillo College",
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Concepts of Criminal Law",
+         "colleges": [
+          "Chaffey College",
+          "East Los Angeles College",
+          "Modesto Junior College"
          ]
         }
        ]
@@ -5715,17 +7641,92 @@ window.CPL_PATHWAYS_ROEP = {
      "ADJ-3H": {
       "title": "Honors Concepts of Criminal Law",
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1122",
-       "title": "Honors Concepts of Criminal Law"
-      }
+       "kind": "C-ID",
+       "id": "AJ 120",
+       "title": "Concepts of Criminal Law"
+      },
+      "adopt": {
+       "credentials_n": 6,
+       "colleges_n": 28,
+       "credentials": [
+        {
+         "credential": "POST Basic Academy",
+         "colleges": [
+          "Bakersfield College",
+          "Barstow Community College",
+          "Cabrillo College",
+          "Cerro Coso Community College",
+          "Chabot College",
+          "Chaffey College",
+          "City College of San Francisco",
+          "College of San Mateo",
+          "College of the Desert",
+          "Copper Mountain College",
+          "Fullerton College",
+          "Glendale Community College",
+          "Grossmont College",
+          "Lake Tahoe Community College",
+          "Las Positas College",
+          "Lemoore College",
+          "Los Medanos College",
+          "Mendocino College",
+          "Moreno Valley College",
+          "Napa Valley College",
+          "Norco College",
+          "Reedley College",
+          "Shasta College",
+          "Skyline College",
+          "Solano Community College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "Basic Correctional Officer Academy",
+         "colleges": [
+          "Bakersfield College",
+          "Cabrillo College",
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Department of Veterans Affairs Police Officer (VA POST)",
+         "colleges": [
+          "Bakersfield College",
+          "Cabrillo College",
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Federal Law Enforcement Training (DoD)",
+         "colleges": [
+          "Bakersfield College",
+          "Cabrillo College",
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        }
+       ]
+      },
+      "consider": [
+       {
+        "credential": "POST Basic Academy",
+        "credit": "3 hours in Criminal Law",
+        "cid": "AJ 120",
+        "colleges_n": 32
+       }
+      ]
      },
      "ADJ-2": {
       "title": "Principles and Procedures of the Justice System",
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1281",
-       "title": "Principles and Procedures of the Justice System"
+       "kind": "C-ID",
+       "id": "AJ 122",
+       "title": "Criminal Court Process"
       },
       "here": {
        "recs": 0,
@@ -5735,13 +7736,31 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
+       "credentials_n": 6,
+       "colleges_n": 5,
        "credentials": [
         {
-         "credential": "Principles and Procedures of the Criminal Justice System",
+         "credential": "Basic Correctional Officer Academy",
          "colleges": [
-          "Norco College"
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Department of Veterans Affairs Police Officer (VA POST)",
+         "colleges": [
+          "Bakersfield College"
+         ]
+        },
+        {
+         "credential": "Federal Law Enforcement Training (DoD)",
+         "colleges": [
+          "Bakersfield College"
+         ]
+        },
+        {
+         "credential": "Principles & Procedures of the Justice System (Administration of Justice 4)",
+         "colleges": [
+          "East Los Angeles College"
          ]
         }
        ]
@@ -5750,8 +7769,8 @@ window.CPL_PATHWAYS_ROEP = {
      "ADJ-4": {
       "title": "Legal Aspects of Evidence",
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1077",
+       "kind": "C-ID",
+       "id": "AJ 124",
        "title": "Legal Aspects of Evidence"
       },
       "here": {
@@ -5762,13 +7781,33 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
+       "credentials_n": 4,
+       "colleges_n": 5,
        "credentials": [
+        {
+         "credential": "Legal Aspects of Evidence",
+         "colleges": [
+          "East Los Angeles College",
+          "Lemoore College",
+          "Modesto Junior College"
+         ]
+        },
         {
          "credential": "Criminal Evidence",
          "colleges": [
           "Norco College"
+         ]
+        },
+        {
+         "credential": "Department of Veterans Affairs Police Officer (VA POST)",
+         "colleges": [
+          "Bakersfield College"
+         ]
+        },
+        {
+         "credential": "Federal Law Enforcement Training (DoD)",
+         "colleges": [
+          "Bakersfield College"
          ]
         }
        ]
@@ -5777,9 +7816,9 @@ window.CPL_PATHWAYS_ROEP = {
      "ADJ-5": {
       "title": "Community Relations",
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1120",
-       "title": "Community Relations"
+       "kind": "C-ID",
+       "id": "AJ 160",
+       "title": "Community and the Justice System"
       },
       "here": {
        "recs": 0,
@@ -5789,13 +7828,40 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
+       "credentials_n": 4,
+       "colleges_n": 8,
        "credentials": [
+        {
+         "credential": "Community and the Justice System",
+         "colleges": [
+          "Copper Mountain College",
+          "Cypress College",
+          "East Los Angeles College",
+          "Los Medanos College",
+          "Modesto Junior College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Administration of Justice",
+         "colleges": [
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        },
         {
          "credential": "Community Relations",
          "colleges": [
-          "Norco College"
+          "Copper Mountain College",
+          "Norco College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Community and Human Relations",
+         "colleges": [
+          "Merced College"
          ]
         }
        ]
@@ -5804,16 +7870,47 @@ window.CPL_PATHWAYS_ROEP = {
      "ADJ-12": {
       "title": null,
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1186",
-       "title": "Introduction to Criminalistics"
+       "kind": "C-ID",
+       "id": "AJ 150",
+       "title": "Introduction to Forensics"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "POST Basic Academy",
+         "colleges": [
+          "Cabrillo College",
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Basic Correctional Officer Academy",
+         "colleges": [
+          "Bakersfield College"
+         ]
+        },
+        {
+         "credential": "Cyber Forensics",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Federal Law Enforcement Training (DoD)",
+         "colleges": [
+          "Bakersfield College"
+         ]
+        }
+       ]
       }
      },
      "ADJ-13": {
       "title": null,
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1177",
+       "kind": "C-ID",
+       "id": "AJ 140",
        "title": "Criminal Investigation"
       },
       "here": {
@@ -5827,13 +7924,44 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
+       "credentials_n": 5,
+       "colleges_n": 7,
        "credentials": [
         {
          "credential": "Criminal Investigation",
          "colleges": [
-          "Norco College"
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Modesto Junior College",
+          "Norco College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Basic Correctional Officer Academy",
+         "colleges": [
+          "Bakersfield College",
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Community and the Justice System",
+         "colleges": [
+          "Copper Mountain College",
+          "East Los Angeles College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Department of Veterans Affairs Police Officer (VA POST)",
+         "colleges": [
+          "Bakersfield College",
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
          ]
         }
        ]
@@ -5842,8 +7970,8 @@ window.CPL_PATHWAYS_ROEP = {
      "ADJ-20": {
       "title": "Introduction to Corrections",
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1149",
+       "kind": "C-ID",
+       "id": "AJ 200",
        "title": "Introduction to Corrections"
       },
       "here": {
@@ -5857,25 +7985,68 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 4,
+       "credentials_n": 4,
+       "colleges_n": 19,
        "credentials": [
         {
          "credential": "POST Basic Academy",
          "colleges": [
+          "Bakersfield College",
           "Barstow Community College",
+          "Cabrillo College",
           "Cerro Coso Community College",
-          "Lake Tahoe Community College"
+          "Chaffey College",
+          "College of San Mateo",
+          "College of the Desert",
+          "Copper Mountain College",
+          "Grossmont College",
+          "Lake Tahoe Community College",
+          "Las Positas College",
+          "Lemoore College",
+          "Los Angeles Harbor College",
+          "Los Medanos College",
+          "Reedley College"
          ]
         },
         {
          "credential": "Introduction to Corrections",
          "colleges": [
+          "Chaffey College",
+          "Copper Mountain College",
+          "East Los Angeles College",
+          "Los Angeles Harbor College",
+          "Los Medanos College",
+          "Merced College",
+          "Modesto Junior College",
           "Norco College"
+         ]
+        },
+        {
+         "credential": "Advanced Law Enforcement",
+         "colleges": [
+          "Chaffey College",
+          "Copper Mountain College",
+          "Los Medanos College"
+         ]
+        },
+        {
+         "credential": "PC 832 Arrest and Firearms Training",
+         "colleges": [
+          "Chaffey College",
+          "Copper Mountain College",
+          "Reedley College"
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "POST Basic Academy",
+        "credit": "3 hours in Introduction to Corrections",
+        "cid": "AJ 200",
+        "colleges_n": 32
+       }
+      ]
      },
      "ADJ-9": {
       "title": "Law in American Society",
@@ -5958,9 +8129,40 @@ window.CPL_PATHWAYS_ROEP = {
      "ADJ-28": {
       "title": "Crime Scene Investigation",
       "identity": {
-       "kind": "CCR",
-       "id": "CRIM M1161",
-       "title": "Crime Scene Investigation"
+       "kind": "C-ID",
+       "id": "AJ 150",
+       "title": "Introduction to Forensics"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "POST Basic Academy",
+         "colleges": [
+          "Cabrillo College",
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Basic Correctional Officer Academy",
+         "colleges": [
+          "Bakersfield College"
+         ]
+        },
+        {
+         "credential": "Cyber Forensics",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Federal Law Enforcement Training (DoD)",
+         "colleges": [
+          "Bakersfield College"
+         ]
+        }
+       ]
       }
      },
      "ADJ-31": {
@@ -5973,17 +8175,65 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "PSYC-C1000": {
       "title": "Introduction to Psychology",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "PSYC C1000",
+       "title": "Introduction to Psychology"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 11,
+       "credentials": [
+        {
+         "credential": "AP Psychology",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Cuesta College",
+          "Evergreen Valley College",
+          "Glendale Community College",
+          "Modesto Junior College",
+          "Mt. San Jacinto College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "General Psychology",
+         "colleges": [
+          "Lemoore College",
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Introduction to Psychology",
+         "colleges": [
+          "Chaffey College",
+          "Copper Mountain College"
+         ]
+        },
+        {
+         "credential": "CLEP Introductory Psychology",
+         "colleges": [
+          "Coastline Community College"
+         ]
+        }
+       ]
+      }
      },
      "PSYC-C1000H": {
       "title": "Introduction to Psychology - Honors",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "PSYC C1000H",
+       "title": "Introduction to Psychology - Honors"
+      }
      },
      "SOC-1": {
       "title": "Introduction to Sociology",
       "identity": {
-       "kind": "CCR",
-       "id": "SOCI M1072",
+       "kind": "C-ID",
+       "id": "SOCI 110",
        "title": "Introduction to Sociology"
       },
       "here": {
@@ -5992,13 +8242,43 @@ window.CPL_PATHWAYS_ROEP = {
        "credentials": [
         "CLEP Introductory Sociology"
        ]
+      }
+     },
+     "SOC-1H": {
+      "title": "Honors Introduction to Sociology",
+      "identity": {
+       "kind": "C-ID",
+       "id": "SOCI 110",
+       "title": "Introduction to Sociology"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "CLEP Introductory Sociology",
+         "colleges": [
+          "Coastline Community College",
+          "Moreno Valley College",
+          "Norco College"
+         ]
+        }
+       ]
+      }
+     },
+     "SOC-20": {
+      "title": "Introduction to Criminology",
+      "identity": {
+       "kind": "C-ID",
+       "id": "SOCI 160",
+       "title": "Introduction to Crime"
       },
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
        "credentials": [
         {
-         "credential": "Introduction to Sociology",
+         "credential": "Introduction to Crime and Criminology",
          "colleges": [
           "Modesto Junior College"
          ]
@@ -6006,37 +8286,181 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       }
      },
-     "SOC-1H": {
-      "title": "Honors Introduction to Sociology",
-      "identity": {
-       "kind": "CCR",
-       "id": "SOCI M1058",
-       "title": "Honors Introduction to Sociology"
-      }
-     },
-     "SOC-20": {
-      "title": "Introduction to Criminology",
-      "identity": {
-       "kind": "CCR",
-       "id": "SOCI M1023",
-       "title": "Introduction to Criminology"
-      }
-     },
      "STAT-C1000": {
       "title": "Introduction to Statistics",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "STAT C1000",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
      },
      "STAT-C1000H": {
       "title": "Introduction to Statistics - Honors",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "STAT C1000H",
+       "title": "Introduction to Statistics - Honors"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
      },
      "PSYC-48": {
       "title": "Statistics for the Behavioral Sciences",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "MATH 110",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
      },
      "SOC-48": {
       "title": null,
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "MATH 110",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
      }
     },
     "gaps": [
@@ -6094,7 +8518,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -6206,7 +8630,7 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 8,
      "here": 0,
-     "adopt": 0,
+     "adopt": 2,
      "consider": 0
     },
     "courses": {
@@ -6224,30 +8648,70 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CULN M1147",
        "title": "Menu Planning"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Menu Planning, Purchasing, and Inventory",
+         "colleges": [
+          "Los Angeles Trade Technical College"
+         ]
+        }
+       ]
       }
      },
      "CUL-826": {
       "title": "Food Cost Accounting",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "CULN M90AE",
+       "title": "Food Cost Accounting"
+      }
      },
      "CUL-827": {
       "title": "Culinary Purchasing and Receiving",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "CULN M90CI",
+       "title": "Culinary Purchasing and Receiving"
+      }
      },
      "CUL-828A": {
       "title": "Culinary Food Preparation I",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "CULN M90CD",
+       "title": "Culinary Food Preparation 1"
+      }
      },
      "CUL-828B": {
       "title": "Culinary Food Preparation II",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "CULN M90CE",
+       "title": "Culinary Food Preparation 2"
+      }
      },
      "CUL-824": {
       "title": "The Art Of Garde Manger",
       "identity": {
        "kind": "CCR",
-       "id": "CULN M1021",
-       "title": "The Art of Garde Manger"
+       "id": "CULN M1135",
+       "title": "Garde Manger"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Garde Manger — Intermediate Professional Culinary Cookery",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        }
+       ]
       }
      },
      "CUL-842": {
@@ -6296,7 +8760,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -6462,13 +8926,17 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 13,
      "here": 6,
-     "adopt": 4,
-     "consider": 0
+     "adopt": 7,
+     "consider": 1
     },
     "courses": {
      "CIS-21A": {
       "title": "Linux Operating System Administration",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M10IX",
+       "title": "Linux Operating System Administration"
+      },
       "here": {
        "recs": 0,
        "credentials_n": 2,
@@ -6481,9 +8949,9 @@ window.CPL_PATHWAYS_ROEP = {
      "CIS-25": {
       "title": "Information and Communication Technology Essentials",
       "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1208",
-       "title": "Information and Communication Technology Essentials"
+       "kind": "C-ID",
+       "id": "ITIS 110",
+       "title": "Information & Communication Technology Essentials"
       },
       "here": {
        "recs": 1,
@@ -6492,11 +8960,27 @@ window.CPL_PATHWAYS_ROEP = {
         "CompTIA A+ (CIS-25)",
         "CompTIA A+"
        ]
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Cisco IT Essentials",
+         "colleges": [
+          "Moorpark College"
+         ]
+        }
+       ]
       }
      },
      "CIS-26A": {
       "title": "Cisco Networking Academy 1A",
-      "identity": null,
+      "identity": {
+       "kind": "C-ID",
+       "id": "ITIS 150",
+       "title": "Computer Network Fundamentals"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 2,
@@ -6504,11 +8988,65 @@ window.CPL_PATHWAYS_ROEP = {
         "CISCO CERTIFIED NETWORK ASSOCIATE",
         "Cisco Certified Network Associate (CCNA)"
        ]
-      }
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 14,
+       "credentials": [
+        {
+         "credential": "CompTIA Network+",
+         "colleges": [
+          "Chaffey College",
+          "City College of San Francisco",
+          "Clovis Community College",
+          "College of the Desert",
+          "Glendale Community College",
+          "Las Positas College",
+          "Long Beach City College",
+          "Los Angeles Mission College",
+          "Moreno Valley College",
+          "Reedley College",
+          "San Diego City College",
+          "Sierra College",
+          "West Los Angeles College"
+         ]
+        },
+        {
+         "credential": "Computer Network Fundamentals",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Credit by exam",
+         "colleges": [
+          "San Diego City College"
+         ]
+        },
+        {
+         "credential": "Introduction to Computer Networks",
+         "colleges": [
+          "Chaffey College"
+         ]
+        }
+       ]
+      },
+      "consider": [
+       {
+        "credential": "CompTIA Network+",
+        "credit": "3 hours in Networking Fundamentals",
+        "cid": "ITIS 150",
+        "colleges_n": 21
+       }
+      ]
      },
      "CIS-26B": {
       "title": "Cisco Networking Academy 1B",
-      "identity": null,
+      "identity": {
+       "kind": "C-ID",
+       "id": "ITIS 151",
+       "title": "Switching, Routing and Wireless Essentials"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 2,
@@ -6520,25 +9058,41 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "CIS-27": {
       "title": "Information & Network Security",
-      "identity": null,
+      "identity": {
+       "kind": "C-ID",
+       "id": "ITIS 160",
+       "title": "Introduction to Information Systems Security"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "CompTIA Security+ (CIS-27)"
        ]
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Introduction to Network Security",
+         "colleges": [
+          "Moorpark College"
+         ]
+        }
+       ]
       }
      },
      "CIS-30A": {
       "title": "Introduction to Python Programming",
       "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1429",
-       "title": "Introduction to Python Programming"
+       "kind": "C-ID",
+       "id": "ITIS 130",
+       "title": "Introduction to Programming Concepts and Methodologies"
       },
       "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 3,
+       "credentials_n": 4,
+       "colleges_n": 4,
        "credentials": [
         {
          "credential": "Introduction to Python Programming",
@@ -6549,9 +9103,21 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
+         "credential": "AP Computer Science A",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
          "credential": "Credit by exam",
          "colleges": [
           "San Diego Mesa College"
+         ]
+        },
+        {
+         "credential": "Introduction to Programming Concepts and Methodologies",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -6560,14 +9126,20 @@ window.CPL_PATHWAYS_ROEP = {
      "CIS-27A": {
       "title": "Computer Forensics Fundamentals",
       "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1230",
-       "title": "Computer Forensics Fundamentals"
+       "kind": "C-ID",
+       "id": "ITIS 165",
+       "title": "Digital Forensics Fundamentals"
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
+       "credentials_n": 2,
+       "colleges_n": 2,
        "credentials": [
+        {
+         "credential": "Digital Forensics Fundamentals",
+         "colleges": [
+          "Las Positas College"
+         ]
+        },
         {
          "credential": "GIAC Certification",
          "colleges": [
@@ -6580,8 +9152,8 @@ window.CPL_PATHWAYS_ROEP = {
      "CIS-27B": {
       "title": null,
       "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1286",
+       "kind": "C-ID",
+       "id": "ITIS 164",
        "title": "Introduction to Cybersecurity: Ethical Hacking"
       },
       "here": {
@@ -6593,12 +9165,17 @@ window.CPL_PATHWAYS_ROEP = {
       },
       "adopt": {
        "credentials_n": 1,
-       "colleges_n": 1,
+       "colleges_n": 6,
        "credentials": [
         {
          "credential": "CompTIA PenTest+",
          "colleges": [
-          "Clovis Community College"
+          "Clovis Community College",
+          "College of the Desert",
+          "De Anza College",
+          "Long Beach City College",
+          "Reedley College",
+          "Santa Ana College"
          ]
         }
        ]
@@ -6607,14 +9184,31 @@ window.CPL_PATHWAYS_ROEP = {
      "CIS-5": {
       "title": null,
       "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1161",
-       "title": "Programming Concepts and Methodology 1: C++"
+       "kind": "C-ID",
+       "id": "COMP 122",
+       "title": "Programming Concepts and Methodology I"
       },
       "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 1,
+       "credentials_n": 10,
+       "colleges_n": 9,
        "credentials": [
+        {
+         "credential": "AP Computer Science A",
+         "colleges": [
+          "Chaffey College",
+          "Foothill College",
+          "Modesto Junior College",
+          "San Jose City College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "AP Computer Science AB",
+         "colleges": [
+          "San Jose City College",
+          "Santa Ana College"
+         ]
+        },
         {
          "credential": "C Programming Language Certified Associate (CLA)",
          "colleges": [
@@ -6626,27 +9220,33 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Norco College"
          ]
-        },
-        {
-         "credential": "CLP — C Certified Professional Programmer",
-         "colleges": [
-          "Norco College"
-         ]
         }
        ]
       }
      },
      "CIS-26F": {
       "title": "CISCO Networking Security",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M11FJ",
+       "title": "CISCO Networking Security"
+      }
      },
      "CIS-21B": {
       "title": "Linux Operating System Administration II",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M10IP",
+       "title": "Linux Operating System Administration 2"
+      }
      },
      "CIS-27C": {
       "title": "Palo Alto Networks Firewall Essentials",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1523",
+       "title": "Palo Alto Networks Firewall Configuration, Management, and Threat Prevention"
+      }
      },
      "CIS-87A": {
       "title": "Introduction to IT Project Management",
@@ -6706,7 +9306,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -6893,16 +9493,16 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 16,
      "here": 7,
-     "adopt": 3,
-     "consider": 0
+     "adopt": 6,
+     "consider": 2
     },
     "courses": {
      "CIS 211": {
       "title": "Security+ Certification Preparation",
       "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1188",
-       "title": "Security+ Certification Preparation"
+       "kind": "C-ID",
+       "id": "ITIS 160",
+       "title": "Introduction to Information Systems Security"
       },
       "here": {
        "recs": 1,
@@ -6912,17 +9512,37 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
+       "credentials_n": 2,
+       "colleges_n": 8,
        "credentials": [
         {
          "credential": "CompTIA Security+",
          "colleges": [
-          "Los Angeles Mission College"
+          "Cabrillo College",
+          "Clovis Community College",
+          "College of the Desert",
+          "Contra Costa College",
+          "Las Positas College",
+          "Los Angeles Mission College",
+          "Reedley College"
+         ]
+        },
+        {
+         "credential": "Introduction to Network Security",
+         "colleges": [
+          "Moorpark College"
          ]
         }
        ]
-      }
+      },
+      "consider": [
+       {
+        "credential": "CompTIA Security+",
+        "credit": "3 hours in Introduction Information Systems Security",
+        "cid": "ITIS 160",
+        "colleges_n": 17
+       }
+      ]
      },
      "CIS 213": {
       "title": "A+ Certification Preparation-Software",
@@ -6942,9 +9562,9 @@ window.CPL_PATHWAYS_ROEP = {
      "CIS 214": {
       "title": "Introduction to Network+",
       "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1419",
-       "title": "Introduction to Network+"
+       "kind": "C-ID",
+       "id": "ITIS 150",
+       "title": "Computer Network Fundamentals"
       },
       "here": {
        "recs": 2,
@@ -6954,7 +9574,50 @@ window.CPL_PATHWAYS_ROEP = {
         "Signal Support Systems Specialist",
         "CompTIA Network+"
        ]
-      }
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 8,
+       "credentials": [
+        {
+         "credential": "Cisco Certified Network Associate (CCNA)",
+         "colleges": [
+          "Clovis Community College",
+          "Las Positas College",
+          "Merced College",
+          "Reedley College",
+          "Riverside City College",
+          "San Diego City College"
+         ]
+        },
+        {
+         "credential": "Computer Network Fundamentals",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Credit by exam",
+         "colleges": [
+          "San Diego City College"
+         ]
+        },
+        {
+         "credential": "Introduction to Computer Networks",
+         "colleges": [
+          "Chaffey College"
+         ]
+        }
+       ]
+      },
+      "consider": [
+       {
+        "credential": "Cisco Certified Network Associate (CCNA)",
+        "credit": "3 hours in Computer Network Fundamentals",
+        "cid": "ITIS 150",
+        "colleges_n": 14
+       }
+      ]
      },
      "CIS 215": {
       "title": "Network Security Fundamentals",
@@ -6993,7 +9656,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "CIS 229": {
       "title": "Introduction to Cisco Network Fundamentals",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M11EZ",
+       "title": "Introduction to Cisco Network Fundamentals"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 1,
@@ -7012,7 +9679,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "CIS 230": {
       "title": "Introduction to Cisco Routers",
-      "identity": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1571",
+       "title": "Introduction to Cisco Routers"
+      },
       "here": {
        "recs": 1,
        "credentials_n": 1,
@@ -7025,21 +9696,45 @@ window.CPL_PATHWAYS_ROEP = {
       "title": null,
       "identity": {
        "kind": "CCR",
-       "id": "ITIS M1112",
-       "title": "Microcomputer Application Software"
+       "id": "ITIS M1486",
+       "title": "Spreadsheet: Software"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Spreadsheet Software",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
       }
      },
      "CIS 106": {
       "title": null,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M10NU",
+       "title": "Introduction to the Foundations of AI"
+      }
      },
      "CIS 107": {
       "title": null,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1344",
+       "title": "Introduction to Prompt Engineering"
+      }
      },
      "CIS 110": {
       "title": "Apple Administration",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1509",
+       "title": "Apple Macos System Administration"
+      }
      },
      "CIS 112": {
       "title": "OPERATING SYSTEMS - BEGINNING LINUX",
@@ -7103,11 +9798,27 @@ window.CPL_PATHWAYS_ROEP = {
        "credentials": [
         "CompTIA A+"
        ]
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "CompTIA Certification (unspecified)",
+         "colleges": [
+          "San Jose City College"
+         ]
+        }
+       ]
       }
      },
      "CS 125": {
       "title": null,
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "COMP M10GF",
+       "title": "Artificial Intelligence and Machine Learning"
+      }
      }
     },
     "gaps": [
@@ -7177,7 +9888,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -7396,21 +10107,76 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 20,
      "here": 1,
-     "adopt": 4,
+     "adopt": 11,
      "consider": 0
     },
     "courses": {
      "ANATOMY 001": {
       "title": "Introduction To Human Anatomy",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "BIOL 110 B",
+       "title": "Human Anatomy with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Human Anatomy",
+         "colleges": [
+          "Cabrillo College",
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "KIN MAJ 100": {
       "title": "INTRODUCTION TO KINESIOLOGY",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "KIN 100",
+       "title": "Introduction to Kinesiology"
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Moorpark College"
+         ]
+        },
+        {
+         "credential": "Introduction to Kinesiology",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        }
+       ]
+      }
      },
      "PHYSIOL 001": {
       "title": "INTRODUCTION TO HUMAN PHYSIOLOGY",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "BIOL 120 B",
+       "title": "Human Physiology with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Human Physiology with Lab",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
      },
      "DANCETQ 111": {
       "title": "BALLET TECHNIQUES I",
@@ -7440,16 +10206,49 @@ window.CPL_PATHWAYS_ROEP = {
       "title": null,
       "identity": {
        "kind": "CCR",
-       "id": "KINE M1855",
-       "title": "Weight Training Skills"
+       "id": "KINE M1013",
+       "title": "Weight Training 1"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 8,
+       "credentials": [
+        {
+         "credential": "Certified Strength and Conditioning Specialist (CSCS)",
+         "colleges": [
+          "San Diego City College",
+          "San Diego Mesa College",
+          "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Military Recruit Training (Basic Training)",
+         "colleges": [
+          "Cuesta College",
+          "Glendale Community College"
+         ]
+        },
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Cerro Coso Community College"
+         ]
+        },
+        {
+         "credential": "Military Basic Training (Kinesiology credit)",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        }
+       ]
       }
      },
      "KIN 329": {
       "title": "BODY CONDITIONING",
       "identity": {
        "kind": "CCR",
-       "id": "KINE M1349",
-       "title": "Body Conditioning"
+       "id": "KINE M1454",
+       "title": "Individual Conditioning 1"
       },
       "here": {
        "recs": 1,
@@ -7464,8 +10263,8 @@ window.CPL_PATHWAYS_ROEP = {
       "title": "Fitness Walking I",
       "identity": {
        "kind": "CCR",
-       "id": "KINE M1606",
-       "title": "Walking for Fitness"
+       "id": "KINE M1683",
+       "title": "Walking 1"
       },
       "adopt": {
        "credentials_n": 3,
@@ -7500,9 +10299,24 @@ window.CPL_PATHWAYS_ROEP = {
        "title": "Weight Training 1"
       },
       "adopt": {
-       "credentials_n": 4,
-       "colleges_n": 4,
+       "credentials_n": 5,
+       "colleges_n": 8,
        "credentials": [
+        {
+         "credential": "Certified Strength and Conditioning Specialist (CSCS)",
+         "colleges": [
+          "San Diego City College",
+          "San Diego Mesa College",
+          "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Military Recruit Training (Basic Training)",
+         "colleges": [
+          "Cuesta College",
+          "Glendale Community College"
+         ]
+        },
         {
          "credential": "Basic Military Training",
          "colleges": [
@@ -7513,18 +10327,6 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Military Basic Training (Kinesiology credit)",
          "colleges": [
           "Napa Valley College"
-         ]
-        },
-        {
-         "credential": "Military Recruit Training (Basic Training)",
-         "colleges": [
-          "Cuesta College"
-         ]
-        },
-        {
-         "credential": "Personal Training Certification",
-         "colleges": [
-          "Madera College"
          ]
         }
        ]
@@ -7564,11 +10366,90 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "STAT C1000": {
       "title": "Introduction to Statistics",
-      "identity": null
+      "identity": {
+       "kind": "CCN",
+       "id": "STAT C1000",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
      },
      "HEALTH 012": {
       "title": "Safety Education And First Aid",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "KIN 101",
+       "title": "First Aid, CPR and AED"
+      },
+      "adopt": {
+       "credentials_n": 10,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "EMT Certification",
+         "colleges": [
+          "Cabrillo College",
+          "City College of San Francisco",
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Glendale Community College",
+          "San Bernardino Valley College"
+         ]
+        },
+        {
+         "credential": "Basic Life Support (BLS) Certification",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Dental Board of California Certificates",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        }
+       ]
+      }
      },
      "PHYSICS 006": {
       "title": "General Physics I",
@@ -7576,43 +10457,36 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "PHYS M1045",
        "title": "General Physics 1"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "AP Physics 1: Algebra-Based",
-         "colleges": [
-          "Los Angeles Pierce College"
-         ]
-        }
-       ]
       }
      },
      "CHEM 051": {
       "title": "Fundamentals Of Chemistry I",
       "identity": {
-       "kind": "CCR",
-       "id": "CHEM M1049",
-       "title": "Fundamentals of Chemistry 1"
-      }
-     },
-     "CHEM 060": {
-      "title": "Introduction To General Chemistry",
-      "identity": {
-       "kind": "CCR",
-       "id": "CHEM M1060",
-       "title": "Introduction to General Chemistry"
+       "kind": "C-ID",
+       "id": "CHEM 101",
+       "title": "Introduction to Chemistry"
       },
       "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 1,
+       "credentials_n": 4,
+       "colleges_n": 9,
        "credentials": [
         {
          "credential": "AP Chemistry",
          "colleges": [
-          "Los Angeles Pierce College"
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Mission College",
+          "Los Angeles Pierce College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Saddleback College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "CLEP Chemistry",
+         "colleges": [
+          "Coastline Community College"
          ]
         },
         {
@@ -7620,13 +10494,82 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Los Angeles Pierce College"
          ]
+        },
+        {
+         "credential": "Introduction to Chemistry",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "CHEM 060": {
+      "title": "Introduction To General Chemistry",
+      "identity": {
+       "kind": "C-ID",
+       "id": "CHEM 101",
+       "title": "Introduction to Chemistry"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 9,
+       "credentials": [
+        {
+         "credential": "AP Chemistry",
+         "colleges": [
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Mission College",
+          "Los Angeles Pierce College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Saddleback College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "CLEP Chemistry",
+         "colleges": [
+          "Coastline Community College"
+         ]
+        },
+        {
+         "credential": "IB Chemistry HL",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Introduction to Chemistry",
+         "colleges": [
+          "Modesto Junior College"
+         ]
         }
        ]
       }
      },
      "CHEM 101": {
       "title": "General Chemistry I",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "CHEM 120 S",
+       "title": "General Chemistry for Science Majors Sequence A"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "AP Chemistry",
+         "colleges": [
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        }
+       ]
+      }
      }
     },
     "gaps": [
@@ -7720,7 +10663,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -7869,7 +10812,7 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 11,
      "here": 8,
-     "adopt": 4,
+     "adopt": 6,
      "consider": 0
     },
     "courses": {
@@ -7891,8 +10834,8 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 5,
+       "credentials_n": 2,
+       "colleges_n": 4,
        "credentials": [
         {
          "credential": "First Tuesday Real Estate Courses",
@@ -7910,12 +10853,6 @@ window.CPL_PATHWAYS_ROEP = {
           "Moreno Valley College",
           "Norco College",
           "Riverside City College"
-         ]
-        },
-        {
-         "credential": "California Real Estate Broker License",
-         "colleges": [
-          "Santa Barbara City College"
          ]
         }
        ]
@@ -7962,14 +10899,44 @@ window.CPL_PATHWAYS_ROEP = {
      "ACCTG 001": {
       "title": "INTRODUCTORY ACCOUNTING I",
       "identity": {
-       "kind": "CCR",
-       "id": "BUSI M1066",
-       "title": "Introductory Accounting 1"
+       "kind": "C-ID",
+       "id": "ACCT 110",
+       "title": "Financial Accounting"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "Financial Accounting",
+         "colleges": [
+          "Copper Mountain College",
+          "De Anza College",
+          "Ventura College"
+         ]
+        }
+       ]
       }
      },
      "BUS 005": {
       "title": "BUSINESS LAW I",
-      "identity": null
+      "identity": {
+       "kind": "C-ID",
+       "id": "BUS 125",
+       "title": "Business Law"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Business Law",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        }
+       ]
+      }
      },
      "REAL ES 004": {
       "title": "REAL ESTATE OFFICE ADMINISTRATION",
@@ -8157,7 +11124,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   },
@@ -8233,11 +11200,19 @@ window.CPL_PATHWAYS_ROEP = {
     "courses": {
      "VOC ED 197CE": {
       "title": "Supervisory/Trainee Real Estate Appraiser",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90EO",
+       "title": "Supervisory/Trainee Real Estate Appraiser"
+      }
      },
      "VOC ED 198CE": {
       "title": "Fed & State Laws and Regs. for CA Appraisers",
-      "identity": null
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90EP",
+       "title": "Fed & State Laws and Regs. for CA Appraisers"
+      }
      }
     },
     "gaps": [
@@ -8271,7 +11246,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "bbbbfb611f15",
+    "build": "81691460ba18",
     "built": "2026-10-04"
    }
   }
