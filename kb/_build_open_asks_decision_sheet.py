@@ -31,6 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 39 (S333, 2026-10-05, SHEET_ID 2026-10-05-open-asks-39): sheet 38 is answered and its rename ran on
+main (15:18Z). Two cards: apply the display build that carries the new name (799bfb9a7dbf), and one name for
+OSHA as issuer in the CER, after Sam's rule in chat that a college teaching OSHA 30 is not the issuer.
+Published at https://claude.ai/artifact/UcBESBRpoLZJKgZZG5NtXr (capabilities db + comments).
+
 Sheet 37 (S331 checkpoint, 2026-10-05, SHEET_ID 2026-10-05-open-asks-37): sheet 36 is answered. One card:
 whether to send the request for Cerritos's high school list, now that reads 7-12 (S331) tried every public route
 (CATEMA, CTE Course Connect, the CCAP page, BoardDocs, DualEnroll, the archive) and the draft carries what they found.
@@ -218,8 +223,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-38.html')
-SHEET_ID = '2026-10-05-open-asks-38'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-39.html')
+SHEET_ID = '2026-10-05-open-asks-39'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -742,6 +747,27 @@ def p_fire_inspector_split():
     return still_open, ('the CER holds %s' % ('both Fire Inspector 1C titles' if still_open else 'one Fire Inspector 1C title'))
 
 
+# S333: the premise of sheet 39's issuer card.
+OSHA_NAMES = re.compile(r'Occupational Safety and Health Administration|^U\.S\. Department of Labor$')
+
+
+def p_osha_issuer_names():
+    """The CER still names OSHA more than one way as issuer, or a trainer as the OSHA 10 entry's issuer."""
+    c = json.loads(_read('kb/credentials.json') or '{}')
+    names = {}
+    for recs in c.values():
+        for r in (recs if isinstance(recs, list) else [recs]):
+            ia = (r or {}).get('issuing_agency') or ''
+            if OSHA_NAMES.search(ia):
+                names[ia] = names.get(ia, 0) + 1
+    ctcnc = [r.get('issuing_agency') for r in c.get('OSHA 10-hour Construction Training Course') or []]
+    trainer_issues = any('CTCNC' in (ia or '') for ia in ctcnc)
+    still_open = len(names) > 1 or trainer_issues
+    return still_open, ('the CER names OSHA %d way(s) as issuer (%s); the OSHA 10-hour Construction entry names %s'
+                        % (len(names), '; '.join('%s on %d' % kv for kv in sorted(names.items(), key=lambda x: -x[1])),
+                           ', '.join(map(str, ctcnc)) or 'no issuer'))
+
+
 # S327: the premises sheet 33's cards rest on.
 def p_csu_la_counted():
     """CSU LA still sits in the scrape's tiers, so the count wording is still open."""
@@ -904,6 +930,56 @@ def items():
     # imbedded in their class"; card 3 name it (kb/cer_decisions_out/2026-10-05); card 4 keep both, "I
     # think these are different though they sound the same"; card 5 go (Sierra docked in the tab). The
     # harvest lane records each ruling and drops its NEEDS SAM in the same change; no card remains.
+
+    # Sheet 39 (S333): the display build after the rename, and OSHA's name as issuer.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Apply the display build that carries the Ext & Review rename?",
+        'ref': 'program-requirements-harvest NEEDS SAM · '
+               'kb/receipts/program_requirement_records_display_2026-10-04_799bfb9a7dbf.sql · '
+               'kb/cred_rename_out/2026-10-05',
+        'facts': (
+            "<p>The rename you chose on sheet 38 ran on main at 15:18Z. The CER now names Cerritos's exhibit "
+            "<em>Ironworker Apprenticeship — OSHA 30/Extension Review</em>; your issuer, California Community "
+            "Colleges, moved with it, and <em>Ext &amp; Review</em> stays as its alias.</p>"
+            "<p>Build 799bfb9a7dbf of the display facts carries the new name on IWAP 41.09 in Apprenticeship: Field "
+            "Ironworkers. Nothing else in the 20 programs changes: the same up-to figures, could adopt and for "
+            "consideration counts. The page and Sierra read the same build, so its pull request waits on this card. "
+            "Re-applying the receipt of build 81691460ba18, which all 20 live rows hold today, restores every row."
+            "</p>"),
+        'why': "Rule 10: a new write to a shared table waits on your go and carries a receipt that rolls it back.",
+        'rec': "<strong>Go:</strong> a session applies the receipt through <code>apply_migration</code>, proves every "
+               "row against the receipt's md5s, and merges the pull request. <em>It might be wrong if</em> you would "
+               "hold the new label until Cerritos says what IWAP 41.09 teaches (sheet 38 card 2, later).",
+        'chips': chips(('Go', 'go'), CH_LATER),
+        'evidence': [live('2026-10-05', "program_requirement_records.display build on all 20 rows (81691460ba18, "
+                          "20 of 20); git diff of cpl_pathways_roep_data.js between the two builds (build stamps, "
+                          "the two read stamps, and the one IWAP 41.09 label)")],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Give OSHA one name as issuer in the CER?",
+        'ref': 'program-requirements-harvest NEEDS SAM · kb/credentials.json · kb_curation issuing_agency_override · '
+               'cpl_memory sam-osha-issues-the-card-not-the-teaching-college-2026-10-05',
+        'facts': (
+            "<p>Your rule today: a college that teaches OSHA 30 inside its course is not the issuer; OSHA is. The CER "
+            "names OSHA three ways across 13 entries. <em>U.S. Occupational Safety and Health Administration (OSHA)</em> "
+            "sits on 9, from the batch classify. <em>Occupational Safety and Health Administration (OSHA)</em> sits on "
+            "the 2 you set on July 8, Agriculture Occupational Safety and Agriculture, Environment and Society. "
+            "<em>U.S. Department of Labor</em> sits on the OSHA 10 Card and OSHA 30 Card, which you reviewed on July 7. "
+            "The CER's issuer filter matches names exactly, so OSHA appears there as three issuers.</p>"
+            "<p>One entry runs against your rule. <em>OSHA 10-hour Construction Training Course</em> names the "
+            "Carpenters Training Committee for Northern California, which delivers the training, as its issuer.</p>"),
+        'why': "One issuer under three names splits its credentials across three entries in the CER's issuer filter.",
+        'rec': "<strong>One name:</strong> <em>U.S. Occupational Safety and Health Administration (OSHA)</em>, the name "
+               "on 9 of the 13, on the four entries that carry another; and on the OSHA 10-hour Construction entry, "
+               "OSHA as issuer with the Carpenters Training Committee as trainer. A session widens "
+               "<code>cer-decision-apply.yml</code> to the two agency fields and writes the six rows with a receipt; "
+               "your two July rows change by a guarded update whose receipt keeps your values. <em>It might be wrong "
+               "if</em> you chose U.S. Department of Labor on purpose; then the other eleven take that name.",
+        'chips': chips(('One name', 'name'), ('Edit', 'edit'), CH_LATER),
+        'evidence': [measured(p_osha_issuer_names)],
+    })
 
     return I
 
