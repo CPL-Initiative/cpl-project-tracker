@@ -3656,7 +3656,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 177
+     "line": 216
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -20070,7 +20070,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 60
+     "line": 78
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",

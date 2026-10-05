@@ -66,6 +66,13 @@ class FakeRest:
             out.append(dict(r))
         return out
 
+    def replace(self, course_id, field, old_value, old_email, body):
+        hit = [x for x in self.rows if x["course_id"] == course_id and x["field"] == field
+               and x["value"] == old_value and x.get("reviewer_email") == old_email]
+        for x in hit:
+            x.update(body)
+        return [dict(x) for x in hit]
+
     def delete(self, row, cohort):
         hit = [x for x in self.rows if x["course_id"] == row["course_id"] and x["field"] == row["field"]
                and x["value"] == row["value"] and x.get("reviewer_email") == cohort]
@@ -156,6 +163,79 @@ check("a curator's row added between the read and the INSERT wins, and the read-
       and any("read-back differs" in l for l in lines), lines)
 shutil.rmtree(d)
 
+# ── S333: a guarded REPLACE of a curator's row, only where the plan names it ──
+U = "_UNCLASSIFIED::"
+OSHA = "U.S. Occupational Safety and Health Administration (OSHA)"
+RPLAN = {"ruling": "sheet 39 card 2", "cohort": "program-requirements-harvest-s0@bot", "rows": [
+    {"course_id": U + "OSHA 30 Raw", "field": "issuing_agency_assignment", "value": OSHA,
+     "replaces": {"value": "U.S. Department of Labor", "reviewer_email": "curator@rccd.edu"}},
+    {"course_id": P + "OSHA 10-hour X", "field": "training_agency_override", "value": "CTCNC"},
+]}
+CURATOR_ROW = {"course_id": U + "OSHA 30 Raw", "field": "issuing_agency_assignment",
+               "value": "U.S. Department of Labor", "reviewer_email": "curator@rccd.edu",
+               "reviewed_at": "2026-07-07T19:37:38Z"}
+d = plan_dir(RPLAN)
+r = FakeRest([CURATOR_ROW], plan_dir=d)
+code, lines = run(d, "dry-run", r)
+check("a dry run reports 1 to write and 1 to replace, and writes nothing",
+      code == 0 and r.inserts == 0 and any("1 to write, 1 to replace" in l for l in lines)
+      and r.rows[0]["value"] == "U.S. Department of Labor", lines)
+code, lines = run(d, "commit", r)
+rec = json.load(open(glob.glob(os.path.join(d, "applied_*.json"))[0]))
+swapped = [x for x in r.rows if x["course_id"] == U + "OSHA 30 Raw"][0]
+check("commit replaces the named row under the cohort and inserts the new one",
+      code == 0 and swapped["value"] == OSHA and swapped["reviewer_email"] == RPLAN["cohort"]
+      and len(r.rows) == 2, lines)
+check("the receipt keeps the curator's before-value, reviewer and date",
+      rec["replaced"] and rec["replaced"][0]["before"] == {"value": "U.S. Department of Labor",
+                                                           "reviewer_email": "curator@rccd.edu",
+                                                           "reviewed_at": "2026-07-07T19:37:38Z"}
+      and rec["result"] == "written", rec)
+code, lines = run(d, "rollback", r)
+back = [x for x in r.rows if x["course_id"] == U + "OSHA 30 Raw"]
+check("rollback restores the curator's value, reviewer and date, and removes the insert",
+      code == 0 and len(r.rows) == 1 and back[0]["value"] == "U.S. Department of Labor"
+      and back[0]["reviewer_email"] == "curator@rccd.edu"
+      and back[0]["reviewed_at"] == "2026-07-07T19:37:38Z", lines)
+shutil.rmtree(d)
+
+d = plan_dir(RPLAN)
+r = FakeRest([dict(CURATOR_ROW, value="Something newer")], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("a replace holds when the curator's row changed since the plan; nothing written",
+      code == 1 and r.inserts == 0 and r.rows[0]["value"] == "Something newer", lines)
+shutil.rmtree(d)
+
+d = plan_dir(RPLAN)
+r = FakeRest([dict(CURATOR_ROW, reviewer_email="someone-else@rccd.edu")], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("a replace holds when another reviewer holds the row", code == 1 and r.inserts == 0, lines)
+shutil.rmtree(d)
+
+d = plan_dir(RPLAN)
+r = FakeRest([], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("a replace holds when the row it names is gone", code == 1 and r.inserts == 0, lines)
+shutil.rmtree(d)
+
+for label, mutate in [
+    ("an _UNCLASSIFIED:: title assignment", lambda p: p["rows"][0].update(field="unified_title_assignment")),
+    ("replaces without a reviewer_email", lambda p: p["rows"][0]["replaces"].pop("reviewer_email")),
+    ("replaces naming the new value itself", lambda p: p["rows"][0]["replaces"].update(value=OSHA)),
+    ("an agency field outside the CER and unclassified namespaces",
+     lambda p: p["rows"][1].update(course_id="ESOL M9267")),
+]:
+    bad = copy.deepcopy(RPLAN)
+    mutate(bad)
+    d = plan_dir(bad)
+    try:
+        app.load_plan(d)
+        refused = False
+    except SystemExit:
+        refused = True
+    check("the plan refuses " + label, refused)
+    shutil.rmtree(d)
+
 # ── the plan is validated before anything is read ────────────────────────────
 for label, mutate in [
     ("a cohort that is not <lane>-s<N>@bot", lambda p: p.update(cohort="curator@rccd.edu")),
@@ -186,7 +266,7 @@ for p in plans:
         ok = bool(pl["ruling"]) and pl["cohort"].endswith("@bot")
     except SystemExit as e:
         ok, pl = False, str(e)
-    check("%s loads: ruling, a bot cohort, CER rows only" % name, ok, pl)
+    check("%s loads: ruling, a bot cohort, CER and unclassified rows only" % name, ok, pl)
 
 passed = 0
 for name, ok, why in results:
