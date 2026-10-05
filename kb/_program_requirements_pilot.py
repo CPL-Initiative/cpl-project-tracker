@@ -146,6 +146,21 @@ def text_window(text: str, found: dict, from_start: bool = False) -> str:
     return text[a:b][:TEXT_CAP]
 
 
+def with_outcome_tabs(text: str, tabs: list[dict]) -> str:
+    """The captured text with each outcomes tab the page hides appended, under
+    a line naming where it came from. A tab whose text the capture already holds
+    (Cerritos prints its outcomes in the page) is not added twice, so a page
+    without a hidden tab is filed exactly as before."""
+    flat = re.sub(r"\s+", " ", text or "")
+    out = text or ""
+    for t in tabs or []:
+        body = (t.get("text") or "").strip()
+        if not body or re.sub(r"\s+", " ", body)[:200] in flat:
+            continue
+        out += "\n\n[the page's outcomes tab, #%s]\n%s" % (t.get("id") or "", body)
+    return out
+
+
 # ── Program titles and awards ───────────────────────────────────────────────
 STOP = {"and", "of", "the", "in", "for", "a", "an", "to", "with", "option", "program",
         "programs", "degree", "certificate", "achievement", "level", "&", "-"}
@@ -385,10 +400,18 @@ PAGE_JS = """() => {
       'a:not([href]), [role=link], [role=treeitem], [onclick], [data-href], [ng-click]'))
     .map(e => (e.innerText || e.textContent || '').trim().slice(0, 100))
     .filter(t => t).slice(0, 80);
+  // An outcomes panel a catalog keeps in a tab the reader never opens (Mt.
+  // San Antonio's CourseLeaf pages, S334): any element whose id names
+  // outcomes, outermost only, outside the site's menus.
+  const outs = Array.from(document.querySelectorAll('[id*="outcome" i]'))
+    .filter(e => !e.closest('nav, header, footer') && (e.textContent || '').trim().length > 40);
+  const outcomeTabs = outs.filter(e => !outs.some(o => o !== e && o.contains(e)))
+    .map(e => ({id: e.id, text: (e.innerText && e.innerText.trim() ? e.innerText : e.textContent)
+                                  .replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim().slice(0, 6000)}));
   return {title: document.title || '', h1: h1 ? h1.innerText : '', links,
           body: document.body ? document.body.innerText : '',
           content: document.body ? document.body.textContent : '',
-          courselists: lists, clickables};
+          courselists: lists, clickables, outcomeTabs};
 }"""
 
 
@@ -747,8 +770,9 @@ def capture(reader, entry: dict, cache: dict) -> dict:
                        "text_from": best.get("field"), "view": best.get("view")},
                coverage=round(best.get("coverage") or 0.0, 3),
                codes_found=sorted(best.get("found") or {}),
-               text=text_window(best.get("text") or "", best.get("found") or {},
-                                from_start=best.get("field") == "export_pdf"),
+               text=with_outcome_tabs(text_window(best.get("text") or "", best.get("found") or {},
+                                                  from_start=best.get("field") == "export_pdf"),
+                                      got.get("outcomeTabs")),
                courseleaf_lists=courseleaf_lists(got, courses)
                if reg.get("catalog_platform") == "courseleaf" else [])
     return rec

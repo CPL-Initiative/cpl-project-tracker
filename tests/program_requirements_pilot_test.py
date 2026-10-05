@@ -723,6 +723,22 @@ check(all(S.outcomes_check(r["record"], json.load(open(os.path.join(ROOT, r["sou
 check(sum(1 for r in shape3 if r["record"]["program"].get("outcomes")) == 16,
       "16 of 20 pilot records carry outcomes; Mt. San Antonio's sit behind a tab the capture does not open")
 
+# The capture appends an outcomes tab the page hides, once (S334).
+shown = "Program Learning Outcomes\nApply safety practices in the clinical setting.\nProgram Requirements"
+check(P.with_outcome_tabs(shown, [{"id": "outcomestextcontainer",
+                                   "text": "Apply safety practices in the clinical setting."}]) == shown,
+      "an outcomes tab the page already shows is not added twice")
+hidden = "Program Learning Outcomes\nPrint Options"
+got_tab = P.with_outcome_tabs(hidden, [{"id": "outcomestextcontainer",
+                                        "text": "Upon completion, students will be able to:\nAdminister medications safely."}])
+check(got_tab.startswith(hidden) and "[the page's outcomes tab, #outcomestextcontainer]" in got_tab
+      and "Administer medications safely." in got_tab,
+      "a hidden outcomes tab is appended under a line naming where it came from")
+check(P.with_outcome_tabs(hidden, None) == hidden and P.with_outcome_tabs(hidden, [{"id": "x", "text": " "}]) == hidden,
+      "a page with no outcomes tab is filed exactly as before")
+check("outcomeTabs" in P.PAGE_JS and '[id*="outcome" i]' in P.PAGE_JS,
+      "the page reader collects any element whose id names outcomes")
+
 # ── The sample: five colleges, four shapes each, the fixed use cases in ──────
 with open(P.SAMPLE_FILE) as fh:
     sample = json.load(fh)["programs"]
