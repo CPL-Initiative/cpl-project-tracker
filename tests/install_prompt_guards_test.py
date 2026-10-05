@@ -36,6 +36,10 @@ SQL_TOOL = "mcp__Supabase__execute_sql"
 NEVER_ALLOW_PREFIXES = ("create_", "merge_", "update_", "delete_", "push_",
                         "apply_", "deploy_", "add_", "run_", "fork_", "pause_",
                         "restore_", "reset_", "rebase_")
+# A mutating tool joins the allow list only by Sam's word, named here with it.
+# apply_migration: "Add apply migrations to allow list" (2026-10-05, S332); a
+# session's write waits on his go on a decision sheet and a committed receipt.
+RULED_EXCEPTIONS = {"mcp__Supabase__apply_migration"}
 
 
 def load_installer():
@@ -57,9 +61,14 @@ def main():
          "Bash" in hooked),
         ("every guard script named in GUARDS exists in this repo",
          all(os.path.exists(os.path.join(ROOT, rel)) for _, rel in ipg.GUARDS)),
-        ("no mutating or outward-facing tool is on the allow list",
-         not any(t.split("__")[-1].startswith(NEVER_ALLOW_PREFIXES) for t in ipg.ALLOW_TOOLS)
+        ("no mutating or outward-facing tool is on the allow list, apart from Sam's named exceptions",
+         not any(t.split("__")[-1].startswith(NEVER_ALLOW_PREFIXES) for t in ipg.ALLOW_TOOLS
+                 if t not in RULED_EXCEPTIONS)
          and "mcp__github__actions_run_trigger" not in ipg.ALLOW_TOOLS),
+        ("apply_migration is on the allow list (Sam, 2026-10-05: \"Add apply migrations to allow list\")",
+         "mcp__Supabase__apply_migration" in ipg.ALLOW_TOOLS),
+        ("every ruled exception names its ruling beside the rule in the installer",
+         all(("SAM'S RULING" in open(INSTALLER, encoding="utf-8").read()) for _ in RULED_EXCEPTIONS)),
         ("the allow list has no duplicates",
          len(ipg.ALLOW_TOOLS) == len(set(ipg.ALLOW_TOOLS))),
     ]
