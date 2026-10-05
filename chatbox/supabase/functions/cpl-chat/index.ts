@@ -3344,7 +3344,9 @@ function displayLines(d: any, college: string, measure: string, total: string): 
   const m = d.map || {};
   if (MAP_STATUS_LINE[m.status]) out += `  Term-by-term map: ${MAP_STATUS_LINE[m.status]}${m.host ? ` (${m.host})` : ""}.\n`;
   const differ = (d.gaps || []).filter((g: any) => g.owner === "college").slice(0, 4);
-  for (const g of differ) out += `  Catalog and state file differ (${college}'s to reconcile): ${g.text}\n`;
+  // Each college-owned gap names its own kind (S335): a MAP articulation that names a second
+  // course is the college's to reconcile too, and is no catalog difference.
+  for (const g of differ) out += `  ${g.kind || "Catalog and state file differ"} (${college}'s to reconcile): ${g.text}\n`;
   const checks = (d.gaps || []).filter((g: any) => /^(Check not met|Possible misread|No printed total)$/.test(g.kind));
   for (const g of checks.slice(0, 2)) out += `  Reading check: ${g.text}\n`;
   return out;

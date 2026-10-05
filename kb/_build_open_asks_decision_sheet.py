@@ -982,7 +982,9 @@ def items():
                           "loader computes")],
     })
 
-    # Sheet 42 (S335): the drafts for the college, sheet 32 card 2's harvest-tab half, built.
+    # Sheet 42 (S335): the drafts for the college, sheet 32 card 2's harvest-tab half, built. Card 2's
+    # proposal gained the cpl-chat deploy before any reply existed (displayLines labeled every
+    # college-owned gap a catalog difference), republished onto the same artifact.
     I.append({
         'lane': 'program-requirements-harvest',
         'title': "Write the display build that adds Miramar's two drafts?",
@@ -1003,9 +1005,11 @@ def items():
             "Entrepreneurship degree. Each statement changes a row only while it holds today's build, and a read-only "
             "query returned the expected result on all 20.</p>"),
         'why': "Rule 10: a write to a shared table waits on your go and carries a receipt that rolls it back.",
-        'rec': "<strong>Go:</strong> a session applies the receipt through <code>apply_migration</code> and reads all "
-               "20 rows back against the build. <em>It might be wrong if</em> Miramar's 0.3-hour versions are a "
-               "catalog year MAP keeps on purpose; then the draft asks the college, which is its purpose.",
+        'rec': "<strong>Go:</strong> a session first deploys Sierra's one-line change (cpl-chat, through its deploy "
+               "workflow, then the smoke), so she names each draft by its kind; before it she would call Miramar's two "
+               "a catalog difference. Then it applies the receipt through <code>apply_migration</code> and reads all 20 "
+               "rows back against the build. <em>It might be wrong if</em> Miramar's 0.3-hour versions are a catalog "
+               "year MAP keeps on purpose; then the draft asks the college, which is its purpose.",
         'chips': chips(('Go', 'go'), CH_LATER),
         'evidence': [live('2026-10-05', "md5(display::text) on all 20 rows against build 799bfb9a7dbf (20 of 20 "
                           "match), a read-only jsonb_set run returning build 1cb75672ba6c's md5 on all 20, and "
