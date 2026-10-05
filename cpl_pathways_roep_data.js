@@ -4588,7 +4588,16 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "open_elective_units": null,
      "ge_pattern": null,
-     "outcomes": []
+     "outcomes": [
+      "Define fire department organization, culture, and methods of communication of entry level fire department personnel.",
+      "Analyze and assess firefighter hazards, and demonstrate safe practices by using minimum standard safety procedures.",
+      "Demonstrate knowledge of fire prevention efforts and a resulting reduction of life and property loss.",
+      "Demonstrate knowledge of strategy and tactics required for the proper selection and safe use of firefighting methods, techniques, tools, and equipment.",
+      "Identify fire chemistry and behavior for the purpose of predicting fire dynamics and flame spread characteristics.",
+      "Identify components of built-in and portable fire protections systems and alarm and notification devises.",
+      "Demonstrate knowledge of the 5 basic types of construction. Identify the components and hazards related to each type.",
+      "Demonstrate knowledge of Leadership and Management concepts as they relate to emergency and non-emergency situations."
+     ]
     },
     "blocks": [
      {
@@ -5388,7 +5397,9 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "open_elective_units": null,
      "ge_pattern": "Mt. SAC local associate degree GE areas",
-     "outcomes": []
+     "outcomes": [
+      "Successfully complete the Role Transition course to be accepted into the Nursing Program in the second semester."
+     ]
     },
     "blocks": [
      {
@@ -6753,7 +6764,12 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "open_elective_units": null,
      "ge_pattern": null,
-     "outcomes": []
+     "outcomes": [
+      "Be prepared to pass the NCLEX-PN examination of the National Council of State Board of Nursing in the State of California to gain vocational nursing licensure.",
+      "Possess and demonstrate vocational nursing skills and job readiness.",
+      "Gain employment as a Licensed Vocational Nurse (LVN) in the nursing sector and heath field.",
+      "Be able to progress through the health careers ladder by enrolling in our Mt. SAC’s credit-bearing health careers and licensure programs."
+     ]
     },
     "blocks": [
      {

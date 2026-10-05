@@ -716,12 +716,14 @@ g, _ = FL.graft(some, moved_row, 1)
 check(g is not None and g["record"]["blocks"] == some["record"]["blocks"],
       "a run whose blocks differ never replaces the blocks a person read")
 shape3 = [json.load(open(p)) for p in records]
-check(all(r.get("record_shape") == 3 and r.get("outcomes_run") == 37345734457 for r in shape3),
-      "every filed record carries record shape 3 and the run its outcomes came from")
+check(all(r.get("record_shape") == 3 and r.get("outcomes_run") in (37345734457, 37350789203) for r in shape3),
+      "every filed record carries record shape 3 and the run its outcomes came from "
+      "(Mt. San Antonio's four from 37350789203, after the capture read their outcomes tab)")
 check(all(S.outcomes_check(r["record"], json.load(open(os.path.join(ROOT, r["source_file"]))) ["text"])["pass"]
           for r in shape3), "every filed outcome is in its catalog text word for word")
-check(sum(1 for r in shape3 if r["record"]["program"].get("outcomes")) == 16,
-      "16 of 20 pilot records carry outcomes; Mt. San Antonio's sit behind a tab the capture does not open")
+check(sum(1 for r in shape3 if r["record"]["program"].get("outcomes")) == 19,
+      "19 of 20 pilot records carry outcomes; Mt. San Antonio's Early Childhood Education ADT's tab "
+      "only links to an SLO page")
 
 # The capture appends an outcomes tab the page hides, once (S334).
 shown = "Program Learning Outcomes\nApply safety practices in the clinical setting.\nProgram Requirements"

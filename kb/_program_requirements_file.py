@@ -99,7 +99,8 @@ def graft(filed: dict, row: dict, run: int) -> tuple[dict | None, str]:
     new["score"] = sc
     new["record_shape"] = 3
     new["outcomes_run"] = run
-    new["_what"] = (filed["_what"].rstrip()
+    # A later run's outcomes replace an earlier run's note rather than stack on it.
+    new["_what"] = (re.sub(r"\s*Record shape 3 \(S334\):.*$", "", filed["_what"].rstrip(), flags=re.S)
                     + " Record shape 3 (S334): the program and course outcomes, as printed, come from "
                       "extraction run %d and were checked word for word against the same catalog text; "
                       "the requirements, notes and reasons are the ones read, unchanged "
