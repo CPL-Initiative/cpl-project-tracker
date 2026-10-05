@@ -1,0 +1,22 @@
+{
+ "_readme": "Tenth read for the Cerritos Ironworker ladder (S331, SkyForge). Read 9 (run 37248015019) loaded the archive's 2016-03-14 capture of Statewide Career Pathways' full agreement list (419,364 characters, every college's agreements in one table); its 24 excerpts show Cerritos agreements with Downey High and Warren High (accounting, culinary), Artesia High (Principles of Engineering), John Muir High, and the Los Angeles County, North Orange County, Southeast and Tri Cities ROPs. cerritos.dualenroll.com is a sign-in page (CourseMaven), so it is not read. This read prints every row of that list naming Cerritos College through the reader's new rows step, with each row's agreement link, so the 2016 list can be recorded whole and dated 2016.",
+ "college": "Cerritos College",
+ "outside_hosts": {
+  "archive.org": "the Internet Archive's Wayback Machine, which keeps a 2016 capture of the Statewide Career Pathways database's full agreement list"
+ },
+ "questions": {
+  "hs_articulation": "Cerritos's list of articulated high school courses, and which route Columbus High's welding pathway uses."
+ },
+ "keywords": [
+  "Columbus",
+  "[Ww]eld",
+  "WELD"
+ ],
+ "pages": [
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/web/20160314075122/http://statewidepathways.org/showagreements.php?careerpathid=0&go=show+agreements",
+   "rows": "Cerritos College"
+  }
+ ]
+}

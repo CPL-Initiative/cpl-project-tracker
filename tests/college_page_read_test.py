@@ -131,6 +131,10 @@ check("startsWith('#')" in cpr.EXPAND_JS and "b.tagName !== 'A'" in cpr.EXPAND_J
 check("getClientRects().length === 0" in cpr.HIDDEN_JS,
       "a panel still not shown after its click is read by textContent")
 
+print("rows")
+check("tr.querySelector('tr')" in cpr.ROWS_JS and "%d" not in cpr.ROWS_JS,
+      "rows skips a layout row that wraps a whole table, and carries its cap")
+
 print("committed plans")
 plans = sorted(glob.glob(os.path.join(ROOT, "kb", "college_reads", "*.json")))
 check(len(plans) >= 1, "at least one plan is committed")
@@ -160,13 +164,18 @@ for path in plans:
                   "%s: the form posts to the page's own site (%s)" % (name, target))
             if spec.get("button"):
                 re.compile(spec["button"])
+        if p.get("rows") is not None:
+            check(isinstance(p["rows"], str) and p["rows"] and re.compile(p["rows"]),
+                  "%s: %s names its rows pattern as a regex" % (name, p["url"]))
         check(isinstance(p.get("expand", False), bool),
               "%s: %s names expand as true or false" % (name, p["url"]))
         check(set(p.get("answers") or []) and set(p["answers"]) <= qs,
               "%s: %s names a question the plan defines" % (name, p["url"]))
     from _program_source_census import registrable
     own = {registrable(h) for h in hosts} - OUTSIDE - set(declared)
-    check(len(own - {"courseleaf.com"}) == 1,
+    # A plan reads one college's own domain, or only named outside hosts on that
+    # college's behalf (read 10: the archive's copy of a statewide list).
+    check(len(own - {"courseleaf.com"}) == 1 or (not own and declared),
           "%s: one college domain, plus its catalog vendor and the named outside hosts (%s)" % (name, sorted(own)))
 
 if FAILS:
