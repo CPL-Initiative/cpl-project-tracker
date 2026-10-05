@@ -4,6 +4,8 @@ date: 2026-10-05
 session: 332 (SkyBridge)
 tags: [handoff, program-requirements-harvest, roep-display, cpl-pathways, sierra, decision-sheet, permissions]
 status: current
+superseded: true
+superseded_by: session_334_handoff.md
 ---
 
 # You are Session 333
