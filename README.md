@@ -103,7 +103,7 @@ The whole ecosystem, end-to-end:
    carries both layers separately so it doubles as the correction list to work
    through in MAP — nothing here writes to MAP, which has no write API, and
    these proposals are deliberately invisible to Sierra, who answers only from
-   what MAP holds), a **🤝 Noncredit & Learning Partners** tab (the noncredit / not-for-credit / adult-school / ROP / high-school-Cx / apprenticeship register — the six modes of Learning Partner CPL, a self-refreshing dormant-statewide-exhibit worklist, and an in-place ✎ Add insight affordance), a **🎓 CPL Pathways** tab (audience-facing
+   what MAP holds), a **🤝 Noncredit & Learning Partners** tab (the noncredit / not-for-credit / adult-school / ROP / high-school-Cx / apprenticeship register — the six modes of Learning Partner CPL, a self-refreshing dormant-statewide-exhibit worklist, and an in-place ✎ Add insight affordance), a **🎓 CPL Pathways** tab (audience-facing; it also lists each harvested catalog record, Beta draft, laid out by requirement or by term
    apprenticeship-to-baccalaureate course maps with CPL check-offs derived
    live from the MAP articulation data — Cerritos's Field Ironworker
    Supervisor BS (31.5 units of journeyworker CPL) plus Foothill's Dental
