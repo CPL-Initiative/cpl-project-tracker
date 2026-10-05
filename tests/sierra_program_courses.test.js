@@ -269,6 +269,14 @@ block("14. the display facts render on a checked program, quoted, never recomput
     new Map([[mi.d.control_number, mi.rec]]));
   check("a catalog and state-file difference is the college's to reconcile",
     mctx.includes("Catalog and state file differ (San Diego Miramar College's to reconcile): The state's Program Course File lists ECON 120"), mctx);
+
+  // S335: a MAP articulation that names a second course is the college's too, under its own name.
+  const en = withDisplay("miramar_35030");
+  const ectx = M.buildProgramCoursesContext("San Diego Miramar College", rowsOf(en.src, en.d.control_number), ["entrepreneurship"],
+    new Map([[en.d.control_number, en.rec]]));
+  check("a second course MAP names is labeled as that, never as a catalog difference",
+    ectx.includes("MAP names a second course (San Diego Miramar College's to reconcile): MAP lists AUTO 156G")
+    && !/Catalog and state file differ[^\n]*MAP lists AUTO 156G/.test(ectx), ectx);
 });
 
 block("15. without display facts the block is unchanged, and the read asks for them", () => {

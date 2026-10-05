@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 522,
+   "count": 523,
    "docs": [
     {
      "created": "2026-08-14",
@@ -8317,6 +8317,25 @@
      "updated": "2026-09-25"
     },
     {
+     "created": "2026-10-05",
+     "governs": [
+      "kb/_build_roep_display.py",
+      "kb/_seed_coci_articulations.py"
+     ],
+     "path": "docs/kb-notes/methodology-trace-a-finding-to-what-students-received.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "cleanup",
+      "map-data",
+      "college-facing",
+      "measure-first"
+     ],
+     "title": "Trace a data finding to what students received before raising it with a college",
+     "type": "methodology",
+     "updated": "2026-10-05"
+    },
+    {
      "created": "2026-08-24",
      "governs": [
       "excel_to_dashboard.py",
@@ -14879,8 +14898,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 306,
+   "count": 307,
    "docs": [
+    {
+     "created": "2026-10-05",
+     "governs": [],
+     "n": 336,
+     "path": "docs/session_336_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "decision-sheet",
+      "sierra",
+      "cleanup"
+     ],
+     "title": "drafts for the college, Miramar's AUTO 156G traced to its source, sheet 42",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-05",
      "governs": [],
@@ -20094,5 +20130,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1049
+ "total": 1051
 }

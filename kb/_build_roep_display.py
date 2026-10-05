@@ -238,6 +238,63 @@ def articulation_index(ident: Identity):
     return here, by_identity, stamp
 
 
+# Words a recommendation and a course title share by field, never by form.
+SHARED_STOP = set("with from into introduction intro basic advanced fundamentals principles applied general "
+                  "level course courses training lower upper division baccalaureate vocational certificate "
+                  "certification technology technician systems system skills elective electives credit hours "
+                  "hour semester quarter units unit studies study program programs related other theory "
+                  "practice practices part".split())
+
+
+def _stems(text) -> set:
+    t = re.sub(r"^\s*[0-9.\-–]+\s+(semester\s+|quarter\s+)?(hours?|units?|credits?)\s+(in|of)\s+", "",
+               str(text or "").lower())
+    return {w[:5] for w in re.findall(r"[a-z]+", t) if len(w) >= 4 and w not in SHARED_STOP}
+
+
+def second_courses() -> dict:
+    """(college, ck) -> the articulations MAP's feed places on a course the recommendation
+    does not name, beside the course it does name at the same college (S335).
+
+    Miramar's EMT Certification recommendation reads "0.3 hours in Perilaryngeal Airway
+    Adjuncts/Defibrillation Training"; MAP lists it on EMGM 106, which carries that title,
+    and on AUTO 156G Engine and Related Systems. The feed shows it through, as it should;
+    this names it for the college. Four conditions, each measured against the whole feed:
+    the record is the college's alone (a merged record carries other colleges' codes), the
+    course title shares no word with any recommendation on it, another course at the same
+    college for the same exhibit does, and that course sits in another subject (inside one
+    subject, welding's blueprint reading for printreading, the words differ and the course
+    is right)."""
+    feed = json.load(open(ARTICS))
+    by_exhibit = defaultdict(list)
+    for a in feed["articulations"]:
+        cols = [c for c in (a.get("earned_by_colleges") or []) if _clean(c)]
+        if len(cols) != 1:
+            continue
+        label = _clean(a.get("unified_title")) or _clean(a.get("exhibit_title"))
+        recs = [r for r in (a.get("credit_recommendations") or []) if _clean(r)]
+        for lc in a.get("local_courses") or []:
+            subj, num = str(lc.get("subject", "")).strip(), str(lc.get("number", "")).strip()
+            if subj and num and _clean(lc.get("title")):
+                by_exhibit[(norm_college(cols[0]), a.get("exhibit_id"))].append(
+                    {"code": "%s %s" % (subj, num), "subject": subj.upper(), "title": _clean(lc["title"]),
+                     "recs": recs, "label": label})
+    out = defaultdict(list)
+    for (college, exhibit), rows in sorted(by_exhibit.items()):
+        for r in rows:
+            rs = set().union(*[_stems(x) for x in r["recs"]]) if r["recs"] else set()
+            if not rs or rs & _stems(r["title"]):
+                continue
+            beside = sorted({p["code"] for p in rows
+                             if ck(p["code"]) != ck(r["code"]) and _stems(p["title"]) & rs})
+            subjects = {p["subject"] for p in rows if p["code"] in beside}
+            if beside and r["subject"] not in subjects:
+                out[(college, ck(r["code"]))].append(
+                    {"exhibit": exhibit, "credential": r["label"], "code": r["code"], "title": r["title"],
+                     "recommendation": sorted(r["recs"])[0], "beside": beside})
+    return out
+
+
 def statewide_cid_index():
     """C-ID -> the statewide credentials whose recommendation names it, from the
     Fact Sheet's own parse (kb/_build_credential_recs.py, imported, never re-parsed)."""
@@ -335,11 +392,17 @@ def plan(blocks: list, has, units_of=None) -> dict:
 
 # ── gaps: the mock-up's gapsFor(), ported ───────────────────────────────────────
 def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict, verdict: str | None,
-             total: dict) -> list:
+             total: dict, seconds: list | None = None) -> list:
     rec, score = filed["record"], filed.get("score") or {}
     proc = "%s's %s reading procedure" % (college, PLATFORM.get(platform, platform or "catalog"))
     state = "%s's program record in the state's curriculum inventory" % college
     g = []
+    for s in seconds or []:
+        g.append({"kind": "MAP names a second course", "owner": "college",
+                  "where": "%s's articulations in MAP" % college,
+                  "text": "MAP lists %s %s on the %s articulation (%s) beside %s, the %s the recommendation names."
+                          % (s["code"], s["title"], s["credential"], s["recommendation"],
+                             " and ".join(s["beside"]), "course" if len(s["beside"]) == 1 else "courses")})
     for m in rec.get("missing_explained") or []:
         g.append({"kind": "Catalog and state file differ", "owner": "college", "where": state,
                   "text": "The state's Program Course File lists %s; the reader found it %s." % (m["code"], m["why"])})
@@ -403,6 +466,7 @@ def build() -> dict:
     unified = {k: v.get("unified_title") for k, v in json.load(open(UNIFIED)).items()
                if isinstance(v, dict) and v.get("unified_title")}
     feed_here, by_identity, feed_stamp = articulation_index(ident)
+    second = second_courses()
     statewide = statewide_cid_index()
     adopters, cer_at = cer_adopters()
     review = json.load(open(loader.REVIEW))
@@ -510,8 +574,9 @@ def build() -> dict:
                              "adopt": sum(1 for e in courses.values() if e.get("adopt")),
                              "consider": sum(1 for e in courses.values() if e.get("consider"))}
         display["courses"] = courses
+        seconds = [s for code in courses for s in second.get((norm_college(college), ck(code)), [])]
         display["gaps"] = gaps_for(college, reg.get("catalog_platform") or src.get("platform"), row.get("award") or "",
-                                   measure, filed, verdict, total)
+                                   measure, filed, verdict, total, seconds)
         display["map"] = map_status(college, reg)
         display["checks"] = {"checked": row["checked"], "coverage": {"placed": cov.get("placed"), "listed": cov.get("listed")},
                              "additions": adds, "arithmetic": (score.get("arithmetic") or {}).get("status"),
