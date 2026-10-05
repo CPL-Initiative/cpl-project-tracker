@@ -4,24 +4,24 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-10-04",
+ "as_of": "2026-10-05",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 44257,
-  "pa": 40267,
-  "ppa": 105,
+  "pe": 44258,
+  "pa": 40268,
+  "ppa": 108,
   "p2": 3179,
   "p3": 14755,
   "pp": 6,
-  "ppe": 115,
+  "ppe": 118,
   "pac": 3032,
   "ptc": 2627,
-  "pe_u": 1435852.7,
-  "pa_u": 225693.4,
-  "ppa_u": 660.5,
-  "ppe_u": 6667.5,
-  "pac_u": 26221.7,
+  "pe_u": 1435872.7,
+  "pa_u": 225701.4,
+  "ppa_u": 683.5,
+  "ppe_u": 6758.5,
+  "pac_u": 26223.95,
   "ptc_u": 22452.0,
   "p3_u": 74700.7,
   "pp_u": 63.5
@@ -114,7 +114,7 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 8809.0,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 66.0,
+   "ppa_u": 72.0,
    "p2": 57,
    "p3": 58,
    "p3_u": 1109.5,
@@ -122,7 +122,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 180.0,
+   "ppe_u": 208.0,
    "pac": 194,
    "pac_u": 2750.5,
    "ptc": 58,
@@ -193,7 +193,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 225,
    "pe_u": 9009.0,
    "pa": 218,
-   "pa_u": 1313.0,
+   "pa_u": 1318.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 17,
@@ -204,7 +204,7 @@ window.CPL_FUNDING_PERF = {
    "ppe": 0,
    "ppe_u": 0.0,
    "pac": 62,
-   "pac_u": 352.5,
+   "pac_u": 354.75,
    "ptc": 44,
    "ptc_u": 255.5
   },
@@ -618,10 +618,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "East LA": {
-   "pe": 234,
-   "pe_u": 9197.0,
-   "pa": 233,
-   "pa_u": 699.0,
+   "pe": 235,
+   "pe_u": 9217.0,
+   "pa": 234,
+   "pa_u": 702.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 3.0,
@@ -1069,7 +1069,7 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 5647.5,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 42.0,
+   "ppa_u": 48.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1077,7 +1077,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 332.0,
+   "ppe_u": 368.0,
    "pac": 0,
    "pac_u": 0.0,
    "ptc": 0,
@@ -1724,16 +1724,18 @@ window.CPL_FUNDING_PERF = {
    "pe_u": 81298.5,
    "pa": 1794,
    "pa_u": 13452.5,
-   "ppa": 0,
-   "ppa_u": 0.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 11.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": 16,
    "p3_u": 104.0,
    "pp": 0,
    "pp_u": 0.0,
-   "ppe": 0,
-   "ppe_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 27.0,
    "pac": 52,
    "pac_u": 471.5,
    "ptc": 16,
@@ -2592,8 +2594,8 @@ window.CPL_FUNDING_PERF = {
   },
   "East LA": {
    "Military": {
-    "pe": 234,
-    "pa": 233,
+    "pe": 235,
+    "pa": 234,
     "p3": 26
    }
   },
@@ -3941,8 +3943,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28049,
-   "pa": 25846,
+   "pe": 28050,
+   "pa": 25847,
    "p3": 2571
   },
   "Military | Other": {
@@ -3998,18 +4000,18 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1435852.7,
-   "pa_u": 225693.4,
+   "pe_u": 1435872.7,
+   "pa_u": 225701.4,
    "p3_u": 74700.7
   },
   "map": {
-   "pe_u": 1442520.2,
-   "pa_u": 226353.9,
+   "pe_u": 1442631.2,
+   "pa_u": 226384.9,
    "p3_u": 74764.2
   },
   "ratio": {
-   "pe_u": 1.0046,
-   "pa_u": 1.0029,
+   "pe_u": 1.0047,
+   "pa_u": 1.003,
    "p3_u": 1.0009
   }
  },
@@ -4130,7 +4132,7 @@ window.CPL_FUNDING_PERF = {
   "Cosumnes River": false,
   "Folsom Lake": false
  },
- "vet_star_as_of": "2026-10-04",
+ "vet_star_as_of": "2026-10-05",
  "vet_star_threshold": 0.75,
  "vet_star_n": 58,
  "vet_jst": {
@@ -4141,13 +4143,13 @@ window.CPL_FUNDING_PERF = {
   },
   "Chaffey": {
    "vets": 182,
-   "jst": 347,
-   "pct": 1.9066
+   "jst": 348,
+   "pct": 1.9121
   },
   "San Francisco": {
    "vets": 1197,
-   "jst": 1778,
-   "pct": 1.4854
+   "jst": 1779,
+   "pct": 1.4862
   },
   "San Diego Mesa": {
    "vets": 1070,
@@ -4171,8 +4173,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Bakersfield": {
    "vets": 416,
-   "jst": 579,
-   "pct": 1.3918
+   "jst": 580,
+   "pct": 1.3942
   },
   "Merced": {
    "vets": 142,
@@ -4191,8 +4193,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Long Beach": {
    "vets": 307,
-   "jst": 817,
-   "pct": 2.6612
+   "jst": 818,
+   "pct": 2.6645
   },
   "De Anza": {
    "vets": 903,
@@ -4376,8 +4378,8 @@ window.CPL_FUNDING_PERF = {
   },
   "East LA": {
    "vets": 637,
-   "jst": 235,
-   "pct": 0.3689
+   "jst": 236,
+   "pct": 0.3705
   },
   "Evergreen Valley": {
    "vets": 87,
@@ -4426,8 +4428,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Napa": {
    "vets": 38,
-   "jst": 52,
-   "pct": 1.3684
+   "jst": 53,
+   "pct": 1.3947
   },
   "LA Harbor": {
    "vets": 109,

@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-04T16:55:19.580821+00:00",
+  "scraped_at": "2026-10-05T14:49:53.482598+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28619,
+    "jst": 28625,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -17,12 +17,12 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 347,
+      "jst": 348,
       "star": true
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1778,
+      "jst": 1779,
       "star": true
     },
     "San Diego Mesa College": {
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 579,
+      "jst": 580,
       "star": true
     },
     "Merced College": {
@@ -67,7 +67,7 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 817,
+      "jst": 818,
       "star": true
     },
     "De Anza College": {
@@ -252,7 +252,7 @@
     },
     "East Los Angeles College": {
       "vets": 637,
-      "jst": 235,
+      "jst": 236,
       "star": false
     },
     "Evergreen Valley College": {
@@ -302,7 +302,7 @@
     },
     "Napa Valley College": {
       "vets": 38,
-      "jst": 52,
+      "jst": 53,
       "star": true
     },
     "Los Angeles Harbor College": {
