@@ -45,7 +45,7 @@
      * Common Course Reference it is a view OF. Listing it here is the only thing
      * that keeps the two together. */
     { id: 'reference', label: 'Reference & Curation', tabs: ['unified-courses', 'skyview', 'canonical-subj4', 'coci-lookup', 'program-requirements', 'cip-crosswalk', 'credential-reference', 'map-data-quality', 'exhibit-adoption', 'tmc-builder', 'pipeline', 'our-process'] },
-    { id: 'sierra', label: 'Sierra & Team Tools', tabs: ['chatbot', 'sierra-training', 'map-users', 'governance', 'team-phrases', 'knowledge-base', 'letters'] },
+    { id: 'sierra', label: 'Sierra & Team Tools', tabs: ['chatbot', 'sierra-training', 'map-users', 'governance', 'team-phrases', 'knowledge-base', 'library', 'letters'] },
     /* Share — the external launchers, and a REAL group since 2026-08-15.
      *
      * It used to be synthesised down in build() from whatever carried

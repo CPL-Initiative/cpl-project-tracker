@@ -4,8 +4,8 @@
   "_counts": {
     "candidates": 10,
     "already_mapped": 42,
-    "dismissed": 7,
-    "scanned": 59
+    "dismissed": 8,
+    "scanned": 60
   },
   "candidates": [
     {
@@ -87,6 +87,14 @@
       "detail": "Scheduled: 29 10 * * 0",
       "where": ".github/workflows/program-source-census.yml",
       "why": "The program-source census (Phase 0 of the program requirements harvest), weekly. It reads public college websites from a runner under Sam's sheet-23 call 5 (2026-10-03) and writes only program_source_registry, through program_source_census_apply(), which never overwrites a row a person corrected and files every prior row in program_source_registry_history, and (since S326, Sam's go on open-asks sheet 29 card 5) program_source_addenda, through program_source_addenda_apply(), which lists the catalog addenda it sees, marks one gone only after a complete read, never touches a row a person corrected, and files every prior row in program_source_addenda_history. It feeds no public surface and carries no staff or student detail. It earns a cadence row when Phase 1 names the person who checks the pilot sample (the lane's open item); a college-facing correction surface goes through Governance before it ships."
+    },
+    {
+      "key": "table:cpl_library",
+      "kind": "decision_right",
+      "label": "cpl_library",
+      "detail": "Written from library",
+      "where": "library.js",
+      "why": "The Library tab's register of decks, films and documents (Sam, 2026-10-05: build it; files live in the team Drive). Each row is a link and its metadata, never the file. Read and written only under the team phrase or a reviewer sign-in (team_pass_ok() or is_allowed_reviewer()), the same audience as the tab; no anon read, no delete policy, delete and truncate revoked. Every edit files the prior row in cpl_library_history through a trigger, so a write is reversible from the database (Rule 10 a2). It carries no student or staff detail beyond the name a teammate types as added_by or updated_by. Who decides a piece's audience is Sam: a public file with no audience set shows under Needs attention until he rules, so the decision right already has its owner and needs no register row."
     },
     {
       "key": "table:cpl_reflections",
