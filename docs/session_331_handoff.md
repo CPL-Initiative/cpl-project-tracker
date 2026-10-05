@@ -14,29 +14,37 @@ about 270K of context left. If Sam's routine started you, read
 
 ## First, in this order
 
-1. **Sheet 36 replies** ([Open Asks Sheet 36](https://claude.ai/artifact/CrFtAh1wMEiKnooFzKUsDx), current; read
-   `replies` and `replies/done` with ArtifactData before anything else). Two cards:
-   1. Paste Cerritos's procedure record v2 (receipt `kb/receipts/program_source_registry_procedure_2026-10-04_s330.sql`,
-      guarded on v1's md5 `7083fab5…`). On "pasted", read back: `procedure_by` = `college-page-read S330`, `v` = 2,
-      5 steps; then the lane's card-1 text leaves.
-   2. Send the drafted request for Cerritos's high school articulation list (outward: the MAP team sends; a session
-      never sends). On "send", the record's `requests[0].status` becomes sent with the date, by a later receipt.
-   Each answer changes the harvest lane's NEEDS SAM text in the same PR (`decision_sheets`).
+1. **Sheet 36 is answered** ([Open Asks Sheet 36](https://claude.ai/artifact/CrFtAh1wMEiKnooFzKUsDx), done; no lane marks
+   NEEDS SAM, so no sheet is outstanding). Build sheet 37 when a lane next marks one.
 2. **#1859** (the form step, Cerritos reads 4-5, sheet 36, the film, this checkpoint): merge it on a green `test`
    if S330 did not.
-3. **The harvest tab port with its Procedures view** (the lane's NEXT ①): port the approved mock-up
+3. **Cerritos read 7: the high school list, other routes** (Sam, sheet 36 card 2: *"lets work together to see if we
+   ca find these another way and close the gap"*; the drafted request stays held). **First, CATEMA** (Sam, 2026-10-05
+   ~00:15Z: *"there's a system called catema that the college's have been using for years to document their cte
+   articulated hs courses in case we can scrub some data from there"*): find whether Cerritos's region publishes a
+   public CATEMA articulation lookup (catema.net and its regional sites), read it from a runner under the census
+   rules (robots first, public pages only, never a login), and record the host on the procedure record. Then the
+   archive: the Internet Archive's 2016 capture
+   of statewidepathways.org links `showagreements.php` (View existing agreements); read its captures through
+   `https://web.archive.org/web/2016/http://www.statewidepathways.org/showagreements.php` and follow to Cerritos's
+   agreements (the archive's index is in read 6's log, run 37245467142; captures after 2021 are a gambling site).
+   Then the CCAP page's participating-schools section and the partner districts' board agendas. Record each step
+   with `select public.program_source_procedure_set('Cerritos College', '<record>'::jsonb, '<by>', '<md5 as read>')`
+   (Cerritos is at v3, md5 `dcf96a508207ee55e604437d9ef71802`).
+4. **The harvest tab port with its Procedures view** (the lane's NEXT ①): port the approved mock-up
    ([Program Requirements Harvest](https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f), v3) into COBI, with a
    Procedures view that reads `program_source_registry.procedure` (anon holds SELECT). Sierra docks beside it via
    `CPL_CHAT.mountInto(host, "program-requirements")`, which needs the surface in `cpl-chat`'s `KNOWN_SURFACES`
    (a deploy: hold for Sam unless a standing authorization covers it). Beta draft label (Sam's ruling).
 
-## Decisions Sam made this run
+## Decisions Sam made this run (all in cpl_memory, verified)
 
-- **The Ironworker film, draft v1** (sheet 36 card 3, answered in chat, 23:42Z): *"Video is excellent!"* Kept as is;
-  the card left the sheet. A narrated cut by Sierra only if he asks (follow `prototype/funding_video/README.md`'s
-  Sierra path). Recorded in cpl_memory (`sam-ironworker-film-excellent-2026-10-04`, verified).
-
-Nothing else: the run otherwise acted on the queue and on his standing scheduled-session terms.
+- **The film** (23:42Z, in chat): *"Video is excellent!"* Draft v1 kept as is.
+- **Sheet 36** (23:50-23:51Z): card 1 pasted (*"it gave the correct read back"*); card 2 edit and follow up:
+  *"lets work together to see if we ca find these another way and close the gap"*.
+- **The write function** (~00:00Z): *"go ahead on writing the function"*; on governance, *"we can revise governance
+  if needed"*. His connector tools are all Always allow (he checked), so an UPDATE's 60-second hold comes from
+  Supabase's server; `program_source_procedure_set()` writes a procedure record with a SELECT and no paste.
 
 ## What shipped (S330, #1859)
 
@@ -52,13 +60,15 @@ Nothing else: the run otherwise acted on the queue and on his standing scheduled
   FACTS with sources, README), MP4 `20261004_Ironworker_Pathway_in_Motion_v1.mp4`, player
   [Ironworker Pathway in Motion](https://claude.ai/artifact/VdxzrRS7wVxw6o5m6fRTS9). Fable critiqued the storyboard;
   four of its lines were corrected against the ladder.
-- cpl_memory: six rows, each logged (receipts `kb/receipts/cpl_memory_2026-10-04_s330.sql` and `..._s330b.sql`, `..._s330c.sql`).
+- cpl_memory: eight rows, each logged (receipts `kb/receipts/cpl_memory_2026-10-04_s330.sql` and `..._s330b.sql`, `..._s330c.sql`, `..._s330d.sql`).
 - KB note `methodology-an-advisor-asserts-what-its-fact-list-does-not-say`.
+- `program_source_procedure_set()` (migration `program_source_procedure_set_2026_10_04`, receipt
+  `kb/receipts/program_source_procedure_set_2026-10-04_s330.sql`); Cerritos's record v3 through it (read 6).
 
 ## Safety patterns
 
-- **The Supabase connector holds a guarded UPDATE for a person** (apply_migration times out at 60 s, nothing written;
-  read back to be sure). A paste card with the statement in `<pre>` is the path; the builder reads it from the receipt.
+- **A bare UPDATE still holds** (apply_migration waits 60 s, writes nothing; the repo guard refuses it in execute_sql).
+  A procedure record goes through its function; any other one-off UPDATE is a paste card (the builder reads its receipt).
 - **A form step needs its submit button named.** The first read of a form prints its buttons; the next plan names one.
 - **`pkill -f <pattern>` matches its own shell** when the pattern is in the command line, and ends the command.
 - **`check_generated.sh | grep` does not stop a commit.** Chain the commit with `&&` on a clean check, or read the

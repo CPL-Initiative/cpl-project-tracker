@@ -129,6 +129,56 @@ end
 $$;
 revoke all on function public.program_source_registry_keep_history() from public, anon, authenticated;
 
+-- ── The procedure record's one write path (S330, 2026-10-04) ──────────────────
+-- Sam, in session (2026-10-04 ~00:00Z): "go ahead on writing the function". A bare
+-- UPDATE of a record never ran from a session: the repo's Supabase guard refuses it
+-- through execute_sql, and apply_migration waited 60 s and wrote nothing (Sam's
+-- connector tools are all Always allow, so the hold sits with Supabase's server).
+-- A session calls this with a SELECT instead. It refuses an empty author, a record
+-- without v and a hosts array, a college with no row, and a record that changed
+-- since it was read: p_expect_md5 is md5(procedure::text) as read, or 'none' when the
+-- row holds no record yet. The history trigger files the prior row under p_by, so
+-- every write rolls back from program_source_registry_history. Closed to every role
+-- but service_role (Rule 10 b2); the MCP connector calls it as the owner.
+-- Receipt: kb/receipts/program_source_procedure_set_2026-10-04_s330.sql.
+create or replace function public.program_source_procedure_set(
+  p_college text, p_procedure jsonb, p_by text, p_expect_md5 text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  cur     public.program_source_registry%rowtype;
+  now_md5 text;
+begin
+  if coalesce(trim(p_by), '') = '' then
+    raise exception 'program_source_procedure_set: procedure_by is required (a person, or the session and run)';
+  end if;
+  if p_procedure is null or jsonb_typeof(p_procedure) <> 'object'
+     or (p_procedure->>'v') is null
+     or jsonb_typeof(p_procedure->'hosts') is distinct from 'array' then
+    raise exception 'program_source_procedure_set: a record is an object with v and a hosts array';
+  end if;
+  select * into cur from public.program_source_registry where college = p_college for update;
+  if not found then
+    raise exception 'program_source_procedure_set: no registry row for %', p_college;
+  end if;
+  now_md5 := coalesce(md5(cur.procedure::text), 'none');
+  if p_expect_md5 is distinct from now_md5 then
+    raise exception 'program_source_procedure_set: the record changed since it was read (expected %, found %); re-read it before writing',
+      p_expect_md5, now_md5;
+  end if;
+  update public.program_source_registry
+     set procedure = p_procedure, procedure_by = p_by, procedure_at = now()
+   where college = p_college;
+  return jsonb_build_object('college', p_college, 'procedure_by', p_by, 'v', p_procedure->>'v',
+                            'was_md5', now_md5, 'md5', md5(p_procedure::text));
+end
+$$;
+revoke all on function public.program_source_procedure_set(text, jsonb, text, text) from public, anon, authenticated;
+grant execute on function public.program_source_procedure_set(text, jsonb, text, text) to service_role;
+
 drop trigger if exists program_source_registry_history on public.program_source_registry;
 create trigger program_source_registry_history
   before update or delete on public.program_source_registry
@@ -408,10 +458,9 @@ alter table public.program_source_registry
 -- suggests a workaround. Applied as migration
 -- program_source_registry_procedure_2026_10_04 on Sam's go in session (S329,
 -- 2026-10-04: "apply the procedure record"). Cerritos's first record is in
--- kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql; its guarded
--- UPDATE timed out twice through the connector, which holds a data write for a
--- person's confirmation, so it waits for Sam to run it. The history trigger
--- names procedure_by when procedure_at changes.
+-- kb/receipts/program_source_registry_procedure_2026-10-04_s329.sql (Sam pasted
+-- it, 21:42Z). A record is written through program_source_procedure_set() below
+-- (S330). The history trigger names procedure_by when procedure_at changes.
 alter table public.program_source_registry
   add column if not exists procedure    jsonb,
   add column if not exists procedure_by text,

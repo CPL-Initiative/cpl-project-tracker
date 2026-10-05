@@ -831,54 +831,11 @@ def items():
     # "success no rows returned". Read back: Cerritos's procedure record on its row at 21:42:37Z. The
     # harvest lane records it and drops its NEEDS SAM in the same change; no card remains.
 
-    # Sheet 36 (S330): Cerritos reads 4 and 5 (#1859, runs 37241442265 and 37241996688).
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Paste Cerritos's procedure record, version 2",
-        'ref': 'program-requirements-harvest NEEDS SAM · kb/receipts/program_source_registry_procedure_2026-10-04_s330.sql',
-        'facts': (
-            "Reads 4 and 5 added two runs to Cerritos's record: the Schedule+ form steps (the View Departments "
-            "button, Fall's default months), statewidepathways.org marked gone (a domain for sale), the Credit by "
-            "Exam route from the catalog and the petition, the term's AED and IWAP sections, and the high school "
-            "list's request drafted and held (card 2). The connector held the guarded UPDATE as it did on sheet 35: "
-            "60 seconds, nothing written, read back at 23:10Z. The guard writes only while the row still holds the "
-            "version you pasted at 21:42Z, and the history trigger keeps that version."
-            "<pre>" + E(SQL_V2) + "\n\nselect procedure_by, procedure->>'v' as v, jsonb_array_length(procedure->'steps') as steps\n"
-            "  from public.program_source_registry where college = 'Cerritos College';</pre>"),
-        'why': "The reader loads this record before every Cerritos run; version 2 tells it to skip the dead host "
-               "and how to work the schedule form.",
-        'rec': "<strong>Paste it:</strong> run the block whole in the Supabase SQL editor. The read-back shows "
-               "<code>college-page-read S330</code>, <code>2</code> and <code>5</code>. <em>It might be wrong if</em> "
-               "the read-back still shows S329: someone changed the record after 21:42Z, and a session re-reads "
-               "it before writing.",
-        'chips': chips(('Pasted', 'pasted'), CH_LATER),
-        'evidence': [live('2026-10-04', "Cerritos's registry row read through the Supabase connector at 23:08Z "
-                          "and again after the 60-second timeout: procedure v1, md5 7083fab5")],
-    })
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Send Cerritos the request for its high school articulation list?",
-        'ref': 'program-requirements-harvest NEEDS SAM · cpl_pathways_data.js (the ladder\'s To confirm list) · '
-               'Cerritos procedure record v2, open item 1',
-        'facts': (
-            "Your rule (sheet 33 card 5): draft a request only after the agent has exhausted its own reading. "
-            "Five reads have now tried every public source for the list: Cerritos's Educational Partnerships "
-            "pages print none; hsarticulation.cerritos.edu has no DNS record; Statewide Career Pathways, where "
-            "the Technology page says the agreements are public, is a domain for sale; the Credit by Examination "
-            "petition links back to the same EPP page; and web search finds no list. What the reads did confirm "
-            "is now on the ladder: credit for an articulated course comes by Credit by Exam (a B or better, the "
-            "petition within two years, up to 30 units, residency waived). The draft, in the house voice:"
-            "<pre>" + E(REQUEST_DRAFT) + "</pre>"),
-        'why': "The ladder's first step cannot name its high school courses without the list, and Columbus High's "
-               "welding pathway could be articulation or dual enrollment.",
-        'rec': "<strong>Send as drafted:</strong> the MAP team sends it to Cerritos's Educational Partnerships "
-               "& Programs office from its own mailbox, and the reply lands on the procedure record. "
-               "<em>It might be wrong if</em> you would rather ask through a contact you already have at "
-               "Cerritos, or wait until the ladder is shown to the college.",
-        'chips': chips(('Send as drafted', 'send'), ('Edit first', 'edit'), CH_LATER),
-        'evidence': [live('2026-10-04', "college-page-read runs 37232742985, 37233721702, 37234256967, "
-                          "37241442265 and 37241996688 on Cerritos's pages; web searches the same day")],
-    })
+    # Sheet 36 (S330) was answered at 23:50-23:51Z on 2026-10-04 (through 2, both his own call): card 1
+    # "pasted" ("it gave the correct read back"); card 2 edit and follow up ("lets work together to see if we
+    # ca find these another way and close the gap"): the request stays held while sessions try other routes.
+    # Then "go ahead on writing the function": program_source_procedure_set() writes a procedure record from a
+    # session with no paste (v3, 00:1xZ). The harvest lane records both; no card remains.
     # Sheet 36's card 3 (the Ironworker film, draft v1) left with Sam's ruling in chat (2026-10-04 23:42Z):
     # "Video is excellent!" The film README and the harvest lane record it.
 

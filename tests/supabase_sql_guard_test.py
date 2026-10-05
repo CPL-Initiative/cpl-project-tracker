@@ -60,6 +60,17 @@ CASES = [
     ("quoted identifier",
      'select "drop" from weird_table;', "allow"),
 
+    # ── A reviewed write function called with SELECT reads as a read ────────
+    # program_source_procedure_set() is the procedure record's one write path
+    # (Sam's go in session, 2026-10-04: "go ahead on writing the function"). Its
+    # guards live in the function (author, shape, the md5 of the record as read),
+    # so this guard passing it is the design; if a later change makes a SELECT
+    # that calls a function ask or deny, this case says why it must be decided,
+    # not discovered.
+    ("the procedure record's write function, called with SELECT",
+     "select public.program_source_procedure_set('Cerritos College', "
+     "'{\"v\": 3, \"hosts\": []}'::jsonb, 'college-page-read S330', 'abc');", "allow"),
+
     # ── ⚠️ THE ONE CARVE-OUT: Rule 8's own memory writes ─────────────────────
     # This case read "deny" until 2026-09-19, and that was the guard blocking
     # the doctrine it serves: Rule 9 requires EVERY checkpoint to write

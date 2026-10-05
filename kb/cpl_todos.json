@@ -2,14 +2,8 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-04",
   "_session": "S330 SkyRoutine",
-  "_status": "Two more readings of Cerritos's pages settled the ladder's schedule and high school lines: this fall Cerritos runs 22 ironworker apprenticeship courses and none of the free noncredit versions, and a high school student earns credit for an articulated course by exam. The statewide site where colleges published their high school agreements is now a domain for sale, so Cerritos's list has no public home. The 100-second Ironworker pathway film is kept as you saw it. Sheet 36 holds two asks: paste Cerritos's updated reading notes, and decide whether to send Cerritos the drafted request for its list.",
+  "_status": "Cerritos's schedule and high school lines are settled except one: its list of articulated high school courses, which no public site holds since the statewide database went offline. The Internet Archive kept that database, and the next session reads it. Cerritos's reading notes now save straight from a session through a new database function, with no paste, and the Ironworker film is kept as you saw it.",
   "items": [
-    {
-      "id": "s330-sam-sheet-36",
-      "for": "Sam",
-      "tab": "cpl-pathways",
-      "text": "Open Asks Sheet 36 (https://claude.ai/artifact/CrFtAh1wMEiKnooFzKUsDx), two cards: paste Cerritos's updated reading notes in the SQL editor (the database tool held the write for you), and decide whether the MAP team sends Cerritos the drafted request for its high school articulation list."
-    },
     {
       "id": "s329-sam-routine-settings",
       "for": "Sam",
@@ -75,6 +69,12 @@
       "for": "Fable",
       "tab": "cpl-pathways",
       "text": "Re-read Cerritos's Spring 2027 schedule for the ironworker apprenticeship and noncredit sections once they post (the Spring schedule listed none on 4 October)."
+    },
+    {
+      "id": "s330-fable-cerritos-read-7",
+      "for": "Fable",
+      "tab": "cpl-pathways",
+      "text": "Find Cerritos's list of articulated high school courses another way, with Sam (his sheet 36 answer): CATEMA first, the system colleges use to document articulated CTE high school courses (his suggestion), then the Internet Archive's copy of the old statewide agreements database, Cerritos's dual enrollment partner schools and the partner districts' board agendas."
     }
   ],
   "_deferred": [
