@@ -1,0 +1,340 @@
+{
+ "_what": "A program's term-by-term map as the college publishes it, read by kb/_program_map_parse.py from the text a college page read printed. The catalog keeps the rule; the map names the pick.",
+ "record_shape": "sequence 1",
+ "college": "Santa Monica College",
+ "control_number": "43767",
+ "title": "Barbering",
+ "award": "A.S. Degree",
+ "source": {
+  "url": "https://www.smc.edu/academics/classes/program.php?id=219",
+  "final_url": "https://www.smc.edu/academics/classes/program.php?id=219",
+  "run": "college-page-read run 37372136739",
+  "read_on": "2026-10-05",
+  "sha256": "f1cb453093e020bb",
+  "reader": "kb/_college_page_read.py (plan kb/college_reads/<college>_program_maps.json)"
+ },
+ "map_title": "Barbering",
+ "pattern": "Associate in Science (AS) / Certificate of Achievement",
+ "terms": [
+  {
+   "label": "Semester 1 (First 8 weeks)",
+   "units": "9",
+   "items": [
+    {
+     "text": "COSM 10A · Related Science 1A · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 10A"
+     ]
+    },
+    {
+     "text": "COSM 10B · Related Science 1B · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 10B"
+     ]
+    },
+    {
+     "text": "COSM 11A · Hair Cutting 1 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 11A"
+     ]
+    },
+    {
+     "text": "COSM 11B · Hair Styling 1 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 11B"
+     ]
+    },
+    {
+     "text": "COSM 11C · Hair Coloring 1 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 11C"
+     ]
+    },
+    {
+     "text": "COSM 11D · Permanent Waving · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 11D"
+     ]
+    },
+    {
+     "text": "COUNS 20 · Student Success Seminar · 3 units",
+     "units": "3",
+     "kind": "course",
+     "codes": [
+      "COUNS 20"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Semester 1 (Second 8 weeks)",
+   "units": "6",
+   "items": [
+    {
+     "text": "COSM 20 · Related Science 2 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 20"
+     ]
+    },
+    {
+     "text": "COSM 21A · Hair Cutting 2 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 21A"
+     ]
+    },
+    {
+     "text": "COSM 21B · Hair Styling 2 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 21B"
+     ]
+    },
+    {
+     "text": "COSM 21C · Hair Coloring 2 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 21C"
+     ]
+    },
+    {
+     "text": "COSM 21E · Curly Hair Techniques 2 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 21E"
+     ]
+    },
+    {
+     "text": "COSM 42 · Short Hair Cutting · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 42"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Semester 2 (First 8 weeks)",
+   "units": "9",
+   "items": [
+    {
+     "text": "COSM 30 · Related Science 3 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 30"
+     ]
+    },
+    {
+     "text": "COSM 31A · Hair Cutting 3 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 31A"
+     ]
+    },
+    {
+     "text": "COSM 31C · Hair Coloring 3 · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 31C"
+     ]
+    },
+    {
+     "text": "COSM 31E · Multi Texture Styling · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 31E"
+     ]
+    },
+    {
+     "text": "COSM 77 · Barbering · 2 units",
+     "units": "2",
+     "kind": "course",
+     "codes": [
+      "COSM 77"
+     ]
+    },
+    {
+     "text": "ENGL C1000 · Academic Reading and Writing (formerly ENGL 1) · 3 units",
+     "units": "3",
+     "kind": "course",
+     "codes": [
+      "ENGL C1000"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Semester 2 (Second 8 weeks)",
+   "units": "6-9",
+   "items": [
+    {
+     "text": "COSM 64 · Salon Management · 2 units",
+     "units": "2",
+     "kind": "course",
+     "codes": [
+      "COSM 64"
+     ]
+    },
+    {
+     "text": "COSM 78 · Barbering 2 · 2 units",
+     "units": "2",
+     "kind": "course",
+     "codes": [
+      "COSM 78"
+     ]
+    },
+    {
+     "text": "COSM 50R · Written Preparation for Barbering State Board Exam · 1 unit",
+     "units": "1",
+     "kind": "course",
+     "codes": [
+      "COSM 50R"
+     ]
+    },
+    {
+     "text": "Salon Experience · 1-4 units",
+     "units": "1-4",
+     "kind": "choice",
+     "codes": [
+      "COSM 95A",
+      "COSM 95B",
+      "COSM 95C",
+      "COSM 95D"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Semester 3",
+   "units": "15",
+   "items": [
+    {
+     "text": "SMC GE Area 3 Course · 3 units",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "SMC GE Area 2 Course · 3 units",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "SMC GE Area 4 Course · 3 units",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "Elective Course(s) · 3 units",
+     "units": "3",
+     "kind": "elective",
+     "codes": []
+    },
+    {
+     "text": "Elective Course(s) · 3 units",
+     "units": "3",
+     "kind": "elective",
+     "codes": []
+    }
+   ]
+  },
+  {
+   "label": "Semester 4",
+   "units": "15",
+   "items": [
+    {
+     "text": "SMC GE Area 5 Course · 3 units",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "SMC GE Area 1B Course · 3 units",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "SMC GE Area 6 Course · 3 units",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "Elective Course(s) · 3 units",
+     "units": "3",
+     "kind": "elective",
+     "codes": []
+    },
+    {
+     "text": "Elective Course(s) · 3 units",
+     "units": "3",
+     "kind": "elective",
+     "codes": []
+    }
+   ]
+  }
+ ],
+ "notes": [],
+ "coverage": {
+  "closed_list": 25,
+  "named": [
+   "COSM 10A",
+   "COSM 10B",
+   "COSM 11A",
+   "COSM 11B",
+   "COSM 11C",
+   "COSM 11D",
+   "COSM 20",
+   "COSM 21A",
+   "COSM 21B",
+   "COSM 21C",
+   "COSM 21E",
+   "COSM 42",
+   "COSM 30",
+   "COSM 31A",
+   "COSM 31C",
+   "COSM 31E",
+   "COSM 77",
+   "COSM 64",
+   "COSM 78",
+   "COSM 50R",
+   "COSM 95A",
+   "COSM 95B",
+   "COSM 95C",
+   "COSM 95D"
+  ],
+  "share": 0.96,
+  "not_on_map": [
+   "COSM 49R"
+  ],
+  "off_list": [],
+  "list_slots": 0
+ },
+ "accepted": true
+}

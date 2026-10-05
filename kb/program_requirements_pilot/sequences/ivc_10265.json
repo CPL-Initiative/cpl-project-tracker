@@ -1,0 +1,215 @@
+{
+ "_what": "A program's term-by-term map as the college publishes it, read by kb/_program_map_parse.py from the text a college page read printed. The catalog keeps the rule; the map names the pick.",
+ "record_shape": "sequence 1",
+ "college": "Irvine Valley College",
+ "control_number": "10265",
+ "title": "Art",
+ "award": "A.A. Degree",
+ "source": {
+  "url": "https://www.ivc.edu/node/3220",
+  "final_url": "https://www.ivc.edu/academics/all-program-maps",
+  "run": "college-page-read run 37372136739",
+  "read_on": "2026-10-05",
+  "sha256": "231fed791c906866",
+  "reader": "kb/_college_page_read.py (plan kb/college_reads/<college>_program_maps.json)"
+ },
+ "map_title": "Art, AA",
+ "pattern": "AA-GE · 2 Years Full-Time · 60-64 Units",
+ "terms": [
+  {
+   "label": "Semester 1",
+   "units": "15-18",
+   "items": [
+    {
+     "text": "ENGL C1000 (WR 1) | Academic Reading and Writing | 1A | 4",
+     "units": "4",
+     "kind": "course",
+     "codes": [
+      "ENGL C1000"
+     ]
+    },
+    {
+     "text": "MATH | Math GE Course | 2 | 3-5",
+     "units": "3-5",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "ART 40 | 2-D Design and Color | 7 & Major | 3",
+     "units": "3",
+     "kind": "course",
+     "codes": [
+      "ART 40"
+     ]
+    },
+    {
+     "text": "ART 80 | Drawing Fundamentals | Major | 3",
+     "units": "3",
+     "kind": "course",
+     "codes": [
+      "ART 80"
+     ]
+    },
+    {
+     "text": "Lifelong Health1 | Lifelong Health and Personal Development GE Course | 9 A/B/C | 2-3",
+     "units": "2-3",
+     "kind": "ge",
+     "codes": []
+    }
+   ]
+  },
+  {
+   "label": "Semester 2",
+   "units": "15-16",
+   "items": [
+    {
+     "text": "Critical Thinking | Critical Thinking | 1C | 3-4",
+     "units": "3-4",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "COMM C1000 (COMM 1) | Introduction to Public Speaking | 1B | 3",
+     "units": "3",
+     "kind": "course",
+     "codes": [
+      "COMM C1000"
+     ]
+    },
+    {
+     "text": "ART 41 | 3D Design | Major | 3",
+     "units": "3",
+     "kind": "course",
+     "codes": [
+      "ART 41"
+     ]
+    },
+    {
+     "text": "ART 50 | Beginning Oil Painting | Major | 3",
+     "units": "3",
+     "kind": "course",
+     "codes": [
+      "ART 50"
+     ]
+    },
+    {
+     "text": "American Institutions | American Institutions GE Course | 8 | 3",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    }
+   ]
+  },
+  {
+   "label": "Semester 3",
+   "units": "15",
+   "items": [
+    {
+     "text": "ART 85 | Life Drawing I | Major | 3",
+     "units": "3",
+     "kind": "course",
+     "codes": [
+      "ART 85"
+     ]
+    },
+    {
+     "text": "ART | Art Major Course from List A | Major | 3",
+     "units": "3",
+     "kind": "list",
+     "codes": []
+    },
+    {
+     "text": "ART | Art Major Course from List A | Major | 3",
+     "units": "3",
+     "kind": "list",
+     "codes": []
+    },
+    {
+     "text": "Social Sciences | Social Sciences GE Course | 4 | 3",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "Lifelong Health1 | Lifelong Health and Personal Development GE Course | 9 A/B/C | 3",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    }
+   ]
+  },
+  {
+   "label": "Semester 4",
+   "units": "15",
+   "items": [
+    {
+     "text": "ART | Art Major Course from List A or B | Major | 3",
+     "units": "3",
+     "kind": "list",
+     "codes": []
+    },
+    {
+     "text": "ART | Art Major Course from List A or B | Major | 3",
+     "units": "3",
+     "kind": "list",
+     "codes": []
+    },
+    {
+     "text": "Natural Sciences | Natural Sciences GE Course | 3 | 3",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "Cultural Diversity | Cultural Diversity GE Course | 5 | 3",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "Humanities | Humanities GE Course | 6 | 3",
+     "units": "3",
+     "kind": "ge",
+     "codes": []
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Take one course from two different categories among GE areas 9A, 9B, and 9C. Please refer to the AA GE pattern for details."
+ ],
+ "coverage": {
+  "closed_list": 23,
+  "named": [
+   "ART 40",
+   "ART 80",
+   "ART 41",
+   "ART 50",
+   "ART 85"
+  ],
+  "share": 0.217,
+  "not_on_map": [
+   "ART 186",
+   "ART 195",
+   "ART 51",
+   "ART 52",
+   "ART 53",
+   "ART 81",
+   "ART 82",
+   "ART 86",
+   "ART 91",
+   "ARTH 22",
+   "ARTH 23",
+   "ARTH 24",
+   "ARTH 27",
+   "ARTH 29",
+   "ARTH 30",
+   "ARTH 31",
+   "ARTH C1100",
+   "ARTH C1200"
+  ],
+  "off_list": [],
+  "list_slots": 4
+ },
+ "accepted": true
+}

@@ -1,0 +1,172 @@
+{
+ "_what": "Santa Monica College's Barbering pathway page (program.php?id=219), the text exactly as the college page read printed it, with the state's Program Course File list for the Barbering A.S.",
+ "url": "https://www.smc.edu/academics/classes/program.php?id=219",
+ "final_url": "https://www.smc.edu/academics/classes/program.php?id=219",
+ "sha256": "f1cb453093e020bb",
+ "run": "college-page-read run 37372136739",
+ "read_on": "2026-10-05",
+ "reader": "kb/_college_page_read.py (plan kb/college_reads/<college>_program_maps.json)",
+ "load_id": "20260716-003071339fe73a7a",
+ "programs": {
+  "43767": {
+   "title": "Barbering",
+   "award": "A.S. Degree",
+   "status": "Active"
+  }
+ },
+ "closed_lists": {
+  "43767": [
+   {
+    "code": "COSM 10A",
+    "title": "Related Science 1A",
+    "units": 1,
+    "ccn": "CCC000553334"
+   },
+   {
+    "code": "COSM 10B",
+    "title": "Related Science 1B",
+    "units": 1,
+    "ccn": "CCC000553333"
+   },
+   {
+    "code": "COSM 11A",
+    "title": "Hair Cutting 1",
+    "units": 1,
+    "ccn": "CCC000635721"
+   },
+   {
+    "code": "COSM 11B",
+    "title": "Hair Styling 1",
+    "units": 1,
+    "ccn": "CCC000635722"
+   },
+   {
+    "code": "COSM 11C",
+    "title": "Hair Coloring 1",
+    "units": 1,
+    "ccn": "CCC000635723"
+   },
+   {
+    "code": "COSM 11D",
+    "title": "Permanent Waving",
+    "units": 1,
+    "ccn": "CCC000635724"
+   },
+   {
+    "code": "COSM 20",
+    "title": "Related Science 2",
+    "units": 1,
+    "ccn": "CCC000400737"
+   },
+   {
+    "code": "COSM 21A",
+    "title": "Hair Cutting 2",
+    "units": 1,
+    "ccn": "CCC000635727"
+   },
+   {
+    "code": "COSM 21B",
+    "title": "Hair Styling 2",
+    "units": 1,
+    "ccn": "CCC000635728"
+   },
+   {
+    "code": "COSM 21C",
+    "title": "Hair Coloring 2",
+    "units": 1,
+    "ccn": "CCC000635729"
+   },
+   {
+    "code": "COSM 21E",
+    "title": "Curly Hair Techniques 2",
+    "units": 1,
+    "ccn": "CCC000635730"
+   },
+   {
+    "code": "COSM 30",
+    "title": "Related Science 3",
+    "units": 1,
+    "ccn": "CCC000403375"
+   },
+   {
+    "code": "COSM 31A",
+    "title": "Hair Cutting 3",
+    "units": 1,
+    "ccn": "CCC000635734"
+   },
+   {
+    "code": "COSM 31C",
+    "title": "Hair Coloring 3",
+    "units": 1,
+    "ccn": "CCC000635736"
+   },
+   {
+    "code": "COSM 31E",
+    "title": "Multi Texture Styling",
+    "units": 1,
+    "ccn": "CCC000635737"
+   },
+   {
+    "code": "COSM 42",
+    "title": "Short Hair Cutting",
+    "units": 1,
+    "ccn": "CCC000635743"
+   },
+   {
+    "code": "COSM 49R",
+    "title": "Tactical Planning for the California Barbering State Board Exam",
+    "units": 2,
+    "ccn": "CCC000653640"
+   },
+   {
+    "code": "COSM 50R",
+    "title": "Written Preparation for Barbering State Board Exam",
+    "units": 1.5,
+    "ccn": "CCC000653645"
+   },
+   {
+    "code": "COSM 64",
+    "title": "Salon Management",
+    "units": 2,
+    "ccn": "CCC000423260"
+   },
+   {
+    "code": "COSM 77",
+    "title": "Barbering",
+    "units": 2,
+    "ccn": "CCC000616135"
+   },
+   {
+    "code": "COSM 78",
+    "title": "Barbering 2",
+    "units": 2,
+    "ccn": "CCC000640339"
+   },
+   {
+    "code": "COSM 95A",
+    "title": "Salon Experience",
+    "units": 1,
+    "ccn": "CCC000438229"
+   },
+   {
+    "code": "COSM 95B",
+    "title": "Salon Experience",
+    "units": 2,
+    "ccn": "CCC000388823"
+   },
+   {
+    "code": "COSM 95C",
+    "title": "Salon Experience",
+    "units": 3,
+    "ccn": "CCC000551923"
+   },
+   {
+    "code": "COSM 95D",
+    "title": "Salon Experience",
+    "units": 4,
+    "ccn": "CCC000393988"
+   }
+  ]
+ },
+ "text": "COLLEGE CATALOG · Barbering\nAssociate in Science (AS) / Certificate of Achievement\nscroll to content · (opens in new window) · EXPANDCOLLAPSE · About This Pathway · Program Description · Program Learning Outcomes · Icon Key · Gateway Course · Program Requirement · General Education · Appropriate for Intersession · Available Online · Global Citizenship · Show Major Requirements Only · Semester 1 (First 8 weeks) · 9 Units · EXPANDCOLLAPSE · COSM 10A · Related Science 1A · 1 unit · COSM 10B · Related Science 1B · 1 unit · COSM 11A · Hair Cutting 1 · 1 unit · COSM 11B · Hair Styling 1 · 1 unit · COSM 11C · Hair Coloring 1 · 1 unit · COSM 11D · Permanent Waving · 1 unit · COUNS 20 · Student Success Seminar · 3 units · Semester 1 (Second 8 weeks) · 6 Units · EXPANDCOLLAPSE · COSM 20 · Related Science 2 · 1 unit · COSM 21A · Hair Cutting 2 · 1 unit · COSM 21B · Hair Styling 2 · 1 unit · COSM 21C · Hair Coloring 2 · 1 unit · COSM 21E · Curly Hair Techniques 2 · 1 unit · COSM 42 · Short Hair Cutting · 1 unit · Semester 2 (First 8 weeks) · 9 Units · EXPANDCOLLAPSE · COSM 30 · Related Science 3 · 1 unit · COSM 31A · Hair Cutting 3 · 1 unit · COSM 31C · Hair Coloring 3 · 1 unit · COSM 31E · Multi Texture Styling · 1 unit · COSM 77 · Barbering · 2 units · ENGL C1000\nAcademic Reading and Writing (formerly ENGL 1)\n3 units · Semester 2 (Second 8 weeks) · 6-9 Units · EXPANDCOLLAPSE · COSM 64 · Salon Management · 2 units · COSM 78 · Barbering 2 · 2 units · COSM 50R\nWritten Preparation for Barbering State Board Exam\n1 unit · Salon Experience · 1-4 units · Semester 3 · 15 Units · EXPANDCOLLAPSE · SMC GE Area 3 Course · 3 units · SMC GE Area 2 Course · (opens in new window) · 3 units · SMC GE Area 4 Course · (opens in new window) · 3 units · Elective Course(s) · 3 units · Elective Course(s) · 3 units · Semester 4 · 15 Units · EXPANDCOLLAPSE · SMC GE Area 5 Course · (opens in new window) · 3 units · SMC GE Area 1B Course · 3 units · SMC GE Area 6 Course · (opens in new window) · 3 units · Elective Course(s) · 3 units · Elective Course(s) · 3 units"
+}

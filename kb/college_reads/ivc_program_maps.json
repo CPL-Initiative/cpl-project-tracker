@@ -1,0 +1,31 @@
+{
+ "_readme": "First read of Irvine Valley College's program maps (S336, SkyCourier). The registry records IVC's sequence source as open: its own All Program Maps page (www.ivc.edu/node/3220, probe run 37198225537). No pilot college publishes a readable term sequence (Miramar's mapper refuses the reader), so this read learns how IVC publishes a map (a page or a PDF per program, how terms are named) and which programs have one, before a program is picked for the first term-by-term record. IVC's only articulated local course in MAP is ART 85 Life Drawing I (165 students), listed in the Art A.A. (10265) and the Studio Arts AA-T (32812, 45862); the follow pattern reads those maps if the index links them.",
+ "college": "Irvine Valley College",
+ "questions": {
+  "map_index": "How IVC publishes its program maps: one page or PDF per program, grouped how, and which programs have one.",
+  "map_shape": "How one IVC map names its terms (Semester 1, Fall, Year 1) and lists its courses, read on an Art or Studio Arts map."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Ff]all",
+  "[Ss]pring",
+  "[Yy]ear [1-4]",
+  "[Tt]erm",
+  "[Ss]tudio",
+  "\\bArt\\b",
+  "ART 85",
+  "[Mm]ap"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_index",
+    "map_shape"
+   ],
+   "url": "https://www.ivc.edu/node/3220",
+   "expand": true,
+   "links": "map|\\.pdf|art|studio",
+   "follow": "studio|\\bart\\b"
+  }
+ ]
+}

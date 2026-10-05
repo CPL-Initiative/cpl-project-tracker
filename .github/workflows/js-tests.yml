@@ -186,6 +186,11 @@ jobs:
       # on the college's own domain and prints the part that answers.
       - name: College page read (own-site follow, excerpts, plans)
         run: python3 tests/college_page_read_test.py
+      # A college's own program map read into terms (S336): Irvine Valley's
+      # all-maps page and Santa Monica's pathway pages, parsed from the text a
+      # college page read printed. Pure-stdlib python; same non-required check.
+      - name: Program map parse (terms, choices, list slots, acceptance)
+        run: python3 tests/program_map_parse_test.py
       # The ROEP display build (S327): CPL Pathways and Sierra read two outputs
       # of one build, so the guard holds them equal and recomputes the up-to
       # figure from the page's own data. Needs node (the JS data file).

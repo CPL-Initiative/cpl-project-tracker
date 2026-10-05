@@ -1,0 +1,32 @@
+{
+ "_readme": "First read of Santa Monica College's program maps (S336, SkyCourier). The registry records SMC's sequence source as open: its own Program Maps page (www.smc.edu/academics/classes/program-maps.php), which answered in probe run 37209313523 after timing out earlier on 2026-10-04. No pilot college publishes a readable term sequence (Miramar's mapper refuses the reader), so this read learns how SMC publishes a map and which programs have one, before a program is picked for the first term-by-term record. SMC's articulated CPL in MAP sits in Barbering (A.S. 43767: 23 of 25 listed courses carry CPL), Cosmetology (A.S. 03302: 17 of 27), Esthetician and Nail Care; the follow pattern reads those maps if the index links them.",
+ "college": "Santa Monica College",
+ "questions": {
+  "map_index": "How SMC publishes its program maps: one page or PDF per program, grouped how, and which programs have one.",
+  "map_shape": "How one SMC map names its terms and lists its courses, read on the Barbering or Cosmetology map."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Ff]all",
+  "[Ss]pring",
+  "[Yy]ear [1-4]",
+  "[Tt]erm",
+  "[Bb]arber",
+  "[Cc]osmetolog",
+  "[Ee]sthetic",
+  "[Nn]ail",
+  "[Mm]ap"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_index",
+    "map_shape"
+   ],
+   "url": "https://www.smc.edu/academics/classes/program-maps.php",
+   "expand": true,
+   "links": "map|\\.pdf|barber|cosmet|esthetic|nail",
+   "follow": "barber|cosmetolog|esthetic|nail"
+  }
+ ]
+}

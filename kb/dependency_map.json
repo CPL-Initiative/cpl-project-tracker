@@ -4,9 +4,9 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 597,
+  "file_datasets": 600,
   "external_services": 157,
-  "consumers": 415,
+  "consumers": 416,
   "workflows": 44,
   "data_js_files": 69,
   "tabs": 38
@@ -11960,6 +11960,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/program_requirements_pilot/sequences/sources/ivc_all_program_maps_p1.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_map_parse.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 260
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_pilot/sequences/sources/smc_program_219.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_map_parse.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 258
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_pilot/sources/*.json": {
    "consumers": [
     {
@@ -17008,6 +17034,19 @@
    "main_committers": []
   },
   "file:tests/program_courses_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/program_map_parse_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -22284,6 +22323,7 @@
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
     "tests/college_page_read_test.py",
+    "tests/program_map_parse_test.py",
     "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
     "tests/program_courses_build_test.py",
