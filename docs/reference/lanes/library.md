@@ -71,22 +71,35 @@ outputs (`reports/*.docx`) and source documents under `docs/reference/` are
 inputs, not deliverables. Claude artifacts (decision sheets, mockups) stay on
 claude.ai.
 
+## Filed in Drive so far
+
+- **The five Title 5 tracked-changes documents** (CPLLibrary, 2026-10-05): uploaded by the session
+  through the Drive connector, each at its exact byte size; the record links v5 and lists all five
+  (receipt `kb/receipts/cpl_library_drive_t5_2026-10-05.sql`, guarded; the history trigger holds the
+  before-row). Files keep their own date codes (the vault convention). Sam asked for titles that
+  start with *"our date code 20261005"*; if he means the filing date for every file, a Drive rename
+  keeps each link.
+- **What a session can upload:** a file up to roughly 50 KB. The file travels as base64 inside the
+  tool call, and Drive reports no checksum, so size is the check. The decks (43 and 200 KB), the CAC
+  run sheet (155 KB) and the films (8 to 16 MB) go by hand: Sam drops them in, the session files the
+  link.
+
 ## Next
 
-- **Sharing (Sam's call, not a session's):** CPLLibrary is shared with its owner
-  alone, so a teammate who opens a Library link to it is refused until Sam shares
-  the folder.
-- **PR 2, the move (call 5):** the tracker's deliverable binaries go to Sam for
-  Drive, then their rows point at Drive and the files leave main, with a guard test
-  so a deliverable binary cannot be committed again. Tracker first: the BOG and CBO
-  decks, the CAC run sheet, the five Title 5 tracked-changes documents, the two
-  Noncredit Summit cuts. Then the vault's binaries (29 on 2026-10-05).
-- **Start a piece (Sam's wish, 2026-10-05):** *"would be nice to use the tab to
-  start the dev process for new artifacts too--ppts, spreadsheets, explainer
-  vids..."* — a brief form that saves a Requested record (kind incl. spreadsheet,
-  needed-by, audience, what it must say, sources), a Copy the brief button that
-  gives the whole paste for a new session, and the daily routine picking up
-  Requested briefs. Mock it first; it needs `spreadsheet` as a kind, `requested`
-  as a status, and `brief` / `needed_by` columns.
-- The two Noncredit Summit pieces carry *Refresh figures* until the week of the
-  summit; the deck itself is not filed anywhere a session can reach.
+- **Start a piece (Sam, 2026-10-05: *"Mockup looks great. Let's go with it."*).** Build it as
+  mockup version 2 shows: a brief form (kind including spreadsheet, working title, occasion, needed
+  by, for, what it must say, sources, length or template) that saves a Requested record; *Copy the
+  brief* (the whole paste for a new session, ending in what a good result looks like); an *In
+  development* section above the register with the four steps Requested, Draft, Approved, Presented.
+  Schema: add `spreadsheet` to the kind check, `requested` to the status check, and brief columns
+  (or one `brief` jsonb), with explicit grants. The daily routine picks up Requested briefs through a
+  step in `docs/reference/scheduled_sessions.md`; never edit the trigger itself. Drafts go to
+  CPLLibrary/Drafts.
+- **PR 2, the move (call 5):** when Sam has dropped in the BOG and CBO decks, the CAC run sheet, the
+  Ironworker film and the two Noncredit Summit cuts, point their records at Drive (guarded update,
+  receipt), remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
+  `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's
+  two player pages off the site, and add a guard test so a deliverable binary cannot be committed
+  again. Then the vault's binaries (29 on 2026-10-05).
+- **Open with Sam:** whether the Ironworker player page stays public; sharing CPLLibrary with the
+  team (owner-only today).
