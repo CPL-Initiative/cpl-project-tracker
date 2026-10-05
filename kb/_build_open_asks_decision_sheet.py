@@ -31,6 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 43 (S336, 2026-10-05, SHEET_ID 2026-10-05-open-asks-43): sheet 42 carried no replies. Cards 1-3 are its
+three, unchanged. Card 4: the industry credential watch routine's first run (12:51Z) could not do its job (no
+repository attached, issuer hosts still blocked), so the skills file the outcomes comparison needs was never started.
+Sam asked for the sheet in chat ("Can you give me the sheet?"). Sheet 42 is republished titled
+"Open Asks Sheet 42 (superseded by 43)".
+
 Sheet 42 (S335, 2026-10-05, SHEET_ID 2026-10-05-open-asks-42): sheet 41 carried no replies. Card 1 is its one
 card, unchanged (all 20 records still read as before, 2026-10-05). Card 2: the display build 1cb75672ba6c, which adds
 the two drafts for Miramar (MAP names AUTO 156G beside EMGM 106 and FIPT 321P) and nothing else. Card 3: the
@@ -241,8 +247,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-42.html')
-SHEET_ID = '2026-10-05-open-asks-42'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-43.html')
+SHEET_ID = '2026-10-05-open-asks-43'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -821,6 +827,21 @@ def p_outcomes_in_pilot_pages():
 
 
 # S328: the premise sheet 34's card 2 rests on.
+# The issuer hosts docs/reference/credential_watch_agent.md lists under "The network" (Sam asked for the
+# list on 2026-09-30), printed on sheet 43 card 4 for him to paste into Allowed domains.
+WATCH_HOSTS = """credentialengineregistry.org  credentialfinder.org  credentialengine.org
+apps.credentialengine.org     www.careeronestop.org api.careeronestop.org
+aws.amazon.com  docs.aws.amazon.com  d1.awsstatic.com
+learn.microsoft.com  www.microsoft.com
+grow.google  www.cloudskillsboost.google  www.coursera.org  coursera.org  www.credly.com
+www.comptia.org  partners.comptia.org  www.nvidia.com
+www.cisco.com  learningnetwork.cisco.com  www.netacad.com
+www.isc2.org  www.isaca.org  www.giac.org  www.sans.org  www.eccouncil.org
+education.oracle.com  mylearn.oracle.com  www.ibm.com  skillsbuild.org
+trailhead.salesforce.com  www.databricks.com  www.snowflake.com  iapp.org
+www.acenet.edu  credits.acenet.edu"""
+
+
 def p_no_procedure_record():
     """No per-college procedure record exists yet: the registry and the reader name none."""
     text = (_read('kb/supabase_program_source_registry.sql')
@@ -1032,6 +1053,37 @@ def items():
                "items first; then My College shows them now, marked for review.",
         'chips': chips(('Once sent', 'once-sent'), ('Show them now', 'now'), CH_LATER),
         'evidence': [policy()],
+    })
+
+    # Sheet 43 (S336): the credential watch routine's first run, read from its transcript.
+    I.append({
+        'lane': 'partner-crosswalks',
+        'title': "Give the credential watch routine its repositories and the issuers' sites?",
+        'ref': 'partner-crosswalks NEEDS SAM · docs/reference/credential_watch_agent.md · '
+               'routine trig_019tTcardPfntFz6ctWU9Jg1',
+        'facts': (
+            "<p>You armed the industry credential watch for Mondays on September 30. Its first run started today at "
+            "5:51 Pacific and stopped two and a half minutes later with nothing to commit. The session it ran in had no "
+            "repository attached and no way to attach one. It read the tracker over public access, could not open the "
+            "CPLBrain vault to read your watchlist, and could not push. Microsoft's, AWS's and CompTIA's own pages still "
+            "answered with a block from the environment's network policy, so it searched instead and found nothing new.</p>"
+            "<p>It harvested no skills. The skills file it keeps, the issuers' exam domains and weights for each "
+            "credential, does not exist yet, and comparing those skills with the 19 pilot programs' printed outcomes "
+            "(your request of October 4) waits on it. The next run is Monday, October 12.</p>"
+            "<p>Two settings fix it, and both are yours to change. In your Routines list, edit Industry credential watch "
+            "to select the cpl-project-tracker repository and the CPLBrain repository. In the cloud environment's "
+            "settings, under Network access, choose Custom and add these hosts under Allowed domains, keeping the "
+            "package managers:</p>"
+            "<pre>" + E(WATCH_HOSTS) + "</pre>"),
+        'why': "A routine's repositories and the environment's network list are account settings; a session cannot change "
+               "either.",
+        'rec': "<strong>Fix both:</strong> you change the two settings before Monday, and the next session reads that "
+               "run's PR. <em>It might be wrong if</em> you would rather not widen the shared environment's network; then "
+               "a runner reads the issuers' pages, as it reads the colleges', and a session writes the skills from its log. "
+               "The routine still needs its repositories either way.",
+        'chips': chips(('Fixed', 'fixed'), ('Use a runner', 'runner'), CH_LATER),
+        'evidence': [live('2026-10-05', "the routine's last_run (fired 12:51:16Z, finished 12:53:55Z) and its session "
+                          "transcript cse_015d71sBqhSk5uwgQQoemZxt; kb/reference/ holds no industry_credential_skills.json")],
     })
 
     return I
