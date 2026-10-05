@@ -39,6 +39,11 @@
 // read "one of the following sequences" as whole sequences in one option_group
 // even when the catalog prints the courses as "or" rows (Mt. San Antonio
 // LVN-to-RN's anatomy courses).
+// Version 4 (S334, 2026-10-05): record shape version 3, Sam's sheet 33 card 4
+// (2026-10-04, as proposed): the record keeps program and course outcomes
+// exactly as printed (program.outcomes, course_outcomes), and the scorer checks
+// each one appears in the catalog text word for word. The comparison with
+// credential skills waits for the skills file.
 // Deploy with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
 //
@@ -58,12 +63,12 @@ const NUM_OR_NULL = { anyOf: [{ type: "number" }, { type: "null" }] };
 const RECORD_SCHEMA = {
   type: "object",
   additionalProperties: false,
-  required: ["program", "blocks", "missing_explained", "notes"],
+  required: ["program", "blocks", "course_outcomes", "missing_explained", "notes"],
   properties: {
     program: {
       type: "object",
       additionalProperties: false,
-      required: ["section_heading", "measure", "total_units", "open_elective_units", "ge_pattern"],
+      required: ["section_heading", "measure", "total_units", "open_elective_units", "ge_pattern", "outcomes"],
       properties: {
         section_heading: {
           type: "string",
@@ -88,6 +93,11 @@ const RECORD_SCHEMA = {
         ge_pattern: {
           anyOf: [{ type: "string" }, { type: "null" }],
           description: "The general education pattern a degree names (CSU GE, IGETC, Cal-GETC, local GE), else null. GE courses never go in a block.",
+        },
+        outcomes: {
+          type: "array",
+          items: { type: "string" },
+          description: "Each program or student learning outcome the catalog prints for this award, word for word, one entry per outcome, without its list number, bullet or lead-in. Empty when the text prints none.",
         },
       },
     },
@@ -149,6 +159,19 @@ const RECORD_SCHEMA = {
         },
       },
     },
+    course_outcomes: {
+      type: "array",
+      description: "Outcomes the text prints under a single course, word for word, by the course's code as printed. Empty when the text prints none.",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["code", "outcomes"],
+        properties: {
+          code: { type: "string" },
+          outcomes: { type: "array", items: { type: "string" } },
+        },
+      },
+    },
     missing_explained: {
       type: "array",
       description: "Every closed-list course this record does not place, with the reason.",
@@ -186,6 +209,8 @@ Write each code as the catalog prints it, with the units printed beside it. Writ
 program.measure is "units" unless the catalog counts the award in hours, as noncredit programs usually do ("Total Hours of Completion (136 Hours)", "Intro to Lighting Retrofits (40 Hours)"). With "hours", every units field holds hours: the hours printed beside each course and the total hours in total_units. The closed list's 0 units for a noncredit course are not its hours. List every closed-list course you do not place in missing_explained, with the reason in a few words (for example, "named only in the A.S. section", "listed as a recommended course", "not in the text").
 
 program.total_units is the total the catalog states for this award's requirements: the major or the certificate, without general education. A range ("27-29 units") is min 27 and max 29. When the text states no total, both are null; never compute one yourself. open_elective_units is set only when the catalog names open electives as part of that total. General education courses never go in a block.
+
+Outcomes. Copy each program learning outcome (or program student learning outcome) the text prints for this award into program.outcomes exactly as printed: the same words, spelling, capitals and punctuation. One entry per outcome. Leave out its list number or bullet and the lead-in sentence ("Upon successful completion of this program, students should be able to:"). Read a line break inside an outcome as a space. Never reword, shorten, merge, split or complete an outcome, and never write one the text does not print. When the page prints one outcomes list for the program as a whole, and the award shares it, record it and say so in notes. Outcomes printed under a single course go in course_outcomes under that course's code, the same way. When the text prints a heading for outcomes but no outcomes under it, both stay empty; say so in notes.
 
 Record only what the text states. Use notes for anything a reviewer should check: a table cut off at a page break, a rule you read as ambiguous, a section that seems to belong to another catalog year.`;
 

@@ -1,0 +1,107 @@
+{
+ "_what": "The requirements each of Sam's 20 verdicts covers (review_2026-10-04.json), fingerprinted by kb/_program_requirements_score.py requirements_md5(): the program's figures and every block, leaving out the outcomes the scorer checks word for word. Taken S334 (2026-10-05) from the records filed at the time: the ones he read, and for his two fixes the rerun FIXED_BY names. The loader counts his verdict only while a record's requirements still carry this fingerprint, so a rerun that adds outcomes keeps it and one that changes a block loses it until a person reads it again. Never recompute these from newer records; a new reading adds a new file.",
+ "review": "kb/program_requirements_pilot/review_2026-10-04.json",
+ "taken": "2026-10-05",
+ "readings": {
+  "cerritos_36675": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "18b3bfc4727e0729e45f0d4b25f8129f"
+  },
+  "cerritos_41982": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "778792e088f7e2ff0233ce4315f58853"
+  },
+  "cerritos_42158": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "9a899581865cadc01b1aa9748cf33f58"
+  },
+  "cerritos_45549": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "c40a8d61d4edddc64e3c90f4bfe97ae0"
+  },
+  "miramar_05100": {
+   "verdict": "ok",
+   "extracted_run": 37173589029,
+   "requirements_md5": "e82a1cb0f564487d91b7cc4675d90c71"
+  },
+  "miramar_18207": {
+   "verdict": "ok",
+   "extracted_run": 37173589029,
+   "requirements_md5": "4e8b814fcb83e782dd67d5588d8232a6"
+  },
+  "miramar_35030": {
+   "verdict": "ok",
+   "extracted_run": 37173589029,
+   "requirements_md5": "e6279719134aecaddfaac160c11032cf"
+  },
+  "miramar_41496": {
+   "verdict": "ok",
+   "extracted_run": 37173589029,
+   "requirements_md5": "f451635ef770ae062bb177ffb3bac8e2"
+  },
+  "mtsac_03086": {
+   "verdict": "fix",
+   "extracted_run": 37195340082,
+   "requirements_md5": "4d9237c7f881c842fc270a1c7de28773"
+  },
+  "mtsac_08086": {
+   "verdict": "fix",
+   "extracted_run": 37195340082,
+   "requirements_md5": "eb0b208a757d3ec0e7f1e768d339be85"
+  },
+  "mtsac_33876": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "65de90731d41a078ea33b9e8e391e8c9"
+  },
+  "mtsac_42916": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "fefc20ed7b9edca274db56ac57fee61e"
+  },
+  "riverside_22804": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "89fd7da4657b3ceb0f4ca4768a24fdea"
+  },
+  "riverside_31456": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "d3e071ee80240805d5d7c69ff96d654c"
+  },
+  "riverside_39033": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "b1f8af0f17375796db47473f6a359837"
+  },
+  "riverside_40061": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "4cf5e12d62d3b3e6353fb9a41c8f7748"
+  },
+  "wlac_17111": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "aa276a955828d349d5d636977ff06dea"
+  },
+  "wlac_37050": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "55c9bff552c9dffb346751142c430a3e"
+  },
+  "wlac_37839": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "5a11c22e5b9f2a6ae0729ec0230767ae"
+  },
+  "wlac_39618": {
+   "verdict": "ok",
+   "extracted_run": 37171952080,
+   "requirements_md5": "d674f34fdb0ced2a9ea1e150c793618d"
+  }
+ }
+}

@@ -617,6 +617,85 @@ for field in ('"measure"', '"option_group"', '"stated"', '"units_max"'):
 check("Write every code with its subject" in fn,
       "the prompt tells the model 'CHLD 67 & 67L' is CHLD 67 and CHLD 67L (run 1 wrote '67L')")
 
+# ── Record shape v3: outcomes as printed (Sam, sheet 33 card 4) ─────────────
+# The record keeps program and course outcomes exactly as printed, and the
+# scorer checks each one appears in the catalog text word for word. A reworded
+# outcome is the failure this guards: it reads well and is not the college's.
+for field in ('"outcomes"', '"course_outcomes"'):
+    check(re.search(r"required: \[[^\]]*%s" % field, fn),
+          "the function's schema requires %s (record shape 3)" % field)
+check("exactly as printed" in fn and "Never reword" in fn,
+      "the prompt tells the model to copy each outcome as printed and never reword one")
+import _program_requirements_extract as X3  # noqa: E402
+check(X3.RECORD_SHAPE == 3, "the extraction pass stamps record shape 3 on what it files")
+
+PLO_TEXT = ("Program Learning Outcomes\nUpon completion of this program, the student will be able to:\n"
+            "1. Meet the educational requirements to qualify for the \nDRE Real Estate Broker license exam. \n"
+            "2. Demonstrate knowledge of welding, cranes, and rigging in order to perform ironworker\u2019s "
+            "job functions.\n3. Work as a self-\nemployed broker.\nRequired core courses 15-17")
+plo = {**rec, "program": {**rec["program"], "outcomes": [
+    "Meet the educational requirements to qualify for the DRE Real Estate Broker license exam.",
+    "Demonstrate knowledge of welding, cranes, and rigging in order to perform ironworker's job functions.",
+    "Work as a self-employed broker."]}}
+o = S.outcomes_check(plo, PLO_TEXT)
+check(o["pass"] and o["program"] == 3,
+      "outcomes copied across a PDF line break, a line-end hyphen and a curly apostrophe are verbatim: %s"
+      % o["why"])
+reworded = {**plo, "program": {**plo["program"], "outcomes": [
+    "Meet the education requirements for the DRE Real Estate Broker license exam."]}}
+check(not S.outcomes_check(reworded, PLO_TEXT)["pass"],
+      "a reworded outcome fails: the record must carry the college's words")
+check(not S.score(reworded, CUL, PLO_TEXT)["pass"],
+      "a reworded outcome fails the record, as an unflagged invented course does")
+check(not S.outcomes_check({**plo, "program": {**plo["program"], "outcomes": [""]}}, PLO_TEXT)["pass"],
+      "an empty outcome fails (an empty string is in every text)")
+check(not S.outcomes_check({**plo, "program": {**plo["program"], "outcomes": [
+    "meet the educational requirements to qualify for the DRE Real Estate Broker license exam."]}},
+    PLO_TEXT)["pass"], "capitals are part of the outcome as printed")
+check(not S.outcomes_check(plo, None)["pass"],
+      "without the catalog text, outcomes cannot be checked and the record cannot pass")
+co = {**rec, "course_outcomes": [{"code": "REAL ES 3", "outcomes": ["Work as a self-employed broker."]},
+                                 {"code": "REAL ES 5", "outcomes": ["Sell houses."]}]}
+o = S.outcomes_check(co, PLO_TEXT)
+check(o["courses"] == 2 and not o["pass"] and len(o["not_verbatim"]) == 1,
+      "course outcomes are checked the same way, each under its code")
+head = S.outcomes_check(rec, "Program Learning Outcomes\nPrint Options\nENROLL")
+check(head["pass"] and head["heading_without_outcomes"],
+      "a heading with no outcomes under it (Mt. San Antonio's tab) is reported, never failed")
+check(S.outcomes_check(rec, "Program Student Learning Outcomes")["heading_printed"]
+      and S.outcomes_check(rec, "Student Learning Outcomes")["heading_printed"]
+      and not S.outcomes_check(rec, "Outcome-based education")["heading_printed"],
+      "the outcomes heading in each form the pilot pages print")
+check(S.score(rec, CUL)["outcomes"]["pass"] and S.score(rec, CUL)["outcomes"]["count"] == 0,
+      "a version 2 record carries no outcomes and its outcomes check passes with nothing to read")
+
+# A person's verdict follows the requirements read, not the file name.
+check(S.requirements_md5(plo) == S.requirements_md5(rec),
+      "adding outcomes leaves the requirements fingerprint as it was")
+check(S.requirements_md5(co) == S.requirements_md5(rec),
+      "adding course outcomes leaves it as it was")
+moved = {**rec, "blocks": [{**rec["blocks"][0], "courses": rec["blocks"][0]["courses"][:-1]}]}
+check(S.requirements_md5(moved) != S.requirements_md5(rec), "a changed block changes it")
+import _program_requirements_load as L  # noqa: E402
+read_md5 = S.requirements_md5(rec)
+check(L.verdict_holds("ok", 1, read_md5, plo), "Sam's ok holds on a rerun that only adds outcomes")
+check(not L.verdict_holds("ok", 1, read_md5, moved),
+      "Sam's ok does not carry to a rerun whose blocks differ from the ones he read")
+check(not L.verdict_holds("ok", 1, None, rec), "a record with no reading on file is not read")
+check(not L.verdict_holds("fix", L.FIXED_BY - 1, read_md5, rec)
+      and L.verdict_holds("fix", L.FIXED_BY, read_md5, rec),
+      "a fix holds only on the rerun that carried it out")
+readings = json.load(open(L.READINGS))["readings"]
+check(set(readings) == filed, "every filed record has the reading its verdict covers")
+check(all(readings[k]["verdict"] == review["verdicts"][k]["v"] for k in readings),
+      "the readings file names each verdict as Sam ruled it")
+lr = L.rows()
+check(sum(1 for r in lr if r["checked"]) == 20,
+      "all 20 filed records are still the ones Sam's verdicts cover (%d checked)"
+      % sum(1 for r in lr if r["checked"]))
+check(all("missing_explained" not in r["record"] and "notes" not in r["record"] for r in lr),
+      "the public read carries no working notes")
+
 # ── The sample: five colleges, four shapes each, the fixed use cases in ──────
 with open(P.SAMPLE_FILE) as fh:
     sample = json.load(fh)["programs"]

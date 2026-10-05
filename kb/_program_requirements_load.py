@@ -13,7 +13,11 @@ CHECKED means all four checks passed, read from the files, never assumed:
   4.   Sam's reading (kb/program_requirements_pilot/review_2026-10-04.json): a
        card ruled "ok", or ruled "fix" and re-extracted after his reading (the
        fix is carried out through the shape, the prompt or the scorer, then a
-       rerun, never a hand edit; FIXED_BY names the rerun).
+       rerun, never a hand edit; FIXED_BY names the rerun), and only while the
+       record's requirements are the ones that verdict covers
+       (kb/program_requirements_pilot/reviewed_readings.json, S334): a rerun
+       that adds outcomes (record shape 3) keeps the verdict, and one that
+       changes a block loses it until a person reads it again.
 A record failing any of them loads with checked false, and the public read
 never shows it.
 
@@ -34,8 +38,11 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "kb"))
+from _program_requirements_score import requirements_md5  # noqa: E402
 PILOT = os.path.join(ROOT, "kb", "program_requirements_pilot")
 REVIEW = os.path.join(PILOT, "review_2026-10-04.json")
+READINGS = os.path.join(PILOT, "reviewed_readings.json")
 OUT = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_load_2026-10-04.sql")
 
 # The rerun that carried out Sam's two fixes (S324, PR #1846): a "fix" card is
@@ -63,9 +70,26 @@ def qjson(v) -> str:
     return q(json.dumps(v, ensure_ascii=False, sort_keys=True, separators=(",", ":"))) + "::jsonb"
 
 
+def verdict_holds(verdict: str | None, run: int | None, read_md5: str | None, record: dict) -> bool:
+    """Whether a person's verdict still covers this record: "ok", or "fix" on a
+    rerun at or after FIXED_BY, and the requirements are the ones read."""
+    ruled = verdict == "ok" or (verdict == "fix" and (run or 0) >= FIXED_BY)
+    return bool(ruled and read_md5 and read_md5 == requirements_md5(record))
+
+
+def record_read(record: dict) -> dict:
+    """What a reader renders: the program (its outcomes included, as printed),
+    the blocks, and course outcomes where the record carries any (shape 3)."""
+    out = {"program": record["program"], "blocks": record.get("blocks") or []}
+    if record.get("course_outcomes"):
+        out["course_outcomes"] = record["course_outcomes"]
+    return out
+
+
 def rows() -> list[dict]:
     review = json.load(open(REVIEW))
     verdicts = review.get("verdicts") or {}
+    readings = json.load(open(READINGS))["readings"]
     out = []
     for path in sorted(glob.glob(os.path.join(PILOT, "records", "*.json"))):
         key = os.path.splitext(os.path.basename(path))[0]
@@ -74,7 +98,8 @@ def rows() -> list[dict]:
         score = rec.get("score") or {}
         verdict = (verdicts.get(key) or {}).get("v")
         run = rec.get("extracted_run")
-        human = verdict == "ok" or (verdict == "fix" and (run or 0) >= FIXED_BY)
+        human = verdict_holds(verdict, run, (readings.get(key) or {}).get("requirements_md5"),
+                              rec["record"])
         program = rec["record"]["program"]
         total = program.get("total_units") or {}
         out.append({
@@ -89,7 +114,7 @@ def rows() -> list[dict]:
             "total_max": total.get("max"),
             # Only what a reader renders: the extraction's working notes and its
             # missing_explained list stay in the repo's file, out of the public read.
-            "record": {"program": program, "blocks": rec["record"].get("blocks") or []},
+            "record": record_read(rec["record"]),
             "checks": {"coverage": (score.get("coverage") or {}).get("pass"),
                        "invented": (score.get("invented") or {}).get("pass"),
                        "arithmetic": (score.get("arithmetic") or {}).get("status"),

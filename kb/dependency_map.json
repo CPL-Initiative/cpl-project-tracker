@@ -4,7 +4,7 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 590,
+  "file_datasets": 591,
   "external_services": 157,
   "consumers": 411,
   "workflows": 44,
@@ -11919,6 +11919,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/program_requirements_pilot/reviewed_readings.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_load.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_pilot/sources/*.json": {
    "consumers": [
     {
@@ -15530,7 +15543,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 38
+     "line": 44
     }
    ],
    "served": false,
@@ -18835,7 +18848,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 195
+     "line": 220
     }
    ],
    "main_committers": []
