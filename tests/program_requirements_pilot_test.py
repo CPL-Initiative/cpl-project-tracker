@@ -738,6 +738,20 @@ check(P.with_outcome_tabs(hidden, None) == hidden and P.with_outcome_tabs(hidden
       "a page with no outcomes tab is filed exactly as before")
 check("outcomeTabs" in P.PAGE_JS and '[id*="outcome" i]' in P.PAGE_JS,
       "the page reader collects any element whose id names outcomes")
+# Capture run 9 (S334): a "\\n" written into PAGE_JS's Python source became a
+# real newline inside a JavaScript regex, the page script threw on every page,
+# and the run fell back to the reader's plain text. The script must parse.
+check(not re.search(r"[\x00-\x09\x0b-\x1f]", P.PAGE_JS),
+      "PAGE_JS carries no tab or control character a Python escape turned real")
+import shutil, subprocess, tempfile  # noqa: E401,E402
+if shutil.which("node"):
+    with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as fh:
+        fh.write("const pageJs = (" + P.PAGE_JS + ");\n")
+    rc = subprocess.run(["node", "--check", fh.name], capture_output=True, text=True)
+    os.unlink(fh.name)
+    check(rc.returncode == 0, "PAGE_JS parses as JavaScript: %s" % (rc.stderr.strip().splitlines() or [""])[-1])
+check("aria-controls" in P.PAGE_JS and "outcomeProbe" in P.PAGE_JS and "outcome_probe=" in open(P.__file__).read(),
+      "and the panel a tab labeled Outcomes points at, logging what it found (Mt. San Antonio's id names neither)")
 
 # ── The sample: five colleges, four shapes each, the fixed use cases in ──────
 with open(P.SAMPLE_FILE) as fh:
