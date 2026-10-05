@@ -1,0 +1,31 @@
+{
+ "_readme": "Thirteenth read for the Cerritos Ironworker ladder (S332, SkyBridge). The state's course file (COCI) gives IWAP 41.09 OSHA 30/Extension Review (1.5 units) the description of AED 41.09 Welding III - Reinforcing, word for word (welding and burning shop safety, the Los Angeles City written welding exam), so the Common Course Reference filed it alone under WELD M10CA rather than with the eight OSHA 30 Construction courses in CNST M1001. This read takes Cerritos's own catalog entries for IWAP 41.09 and AED 41.09, to learn which description Cerritos prints for the OSHA 30 course before anyone proposes moving it.",
+ "college": "Cerritos College",
+ "questions": {
+  "iwap_4109": "What Cerritos's catalog says IWAP 41.09 OSHA 30/Extension Review covers, beside AED 41.09."
+ },
+ "keywords": [
+  "41\\.09",
+  "OSHA",
+  "Extension",
+  "[Ww]elding III",
+  "30[- ][Hh]our",
+  "outreach"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "iwap_4109"
+   ],
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/iwap/",
+   "expand": true
+  },
+  {
+   "answers": [
+    "iwap_4109"
+   ],
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aed/",
+   "expand": true
+  }
+ ]
+}

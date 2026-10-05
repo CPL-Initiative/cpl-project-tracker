@@ -218,8 +218,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-37.html')
-SHEET_ID = '2026-10-05-open-asks-37'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-38.html')
+SHEET_ID = '2026-10-05-open-asks-38'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -707,6 +707,41 @@ REQUEST_DRAFT = ("Subject: Cerritos College high school articulation agreements\
 
 
 
+# S332: the premises sheet 38's cards rest on.
+def _uc_members():
+    s = _read('unified_courses_members.js')
+    k = 'window.CPL_UC_MEMBERS = '
+    if k not in s:
+        return {}, []
+    d = json.loads(s[s.index(k) + len(k):s.rindex('}') + 1])
+    return d.get('members') or {}, d.get('colleges') or []
+
+
+def p_iwap_4109_alone():
+    """Cerritos IWAP 41.09 still stands alone in the CCR, outside the OSHA 30 Construction identity."""
+    mem, cols = _uc_members()
+    homes = sorted(mid for mid, ms in mem.items() for m in ms
+                   if cols and cols[m['c']] == 'Cerritos College' and m['n'] == 'IWAP 41.09')
+    still_open = bool(homes) and 'CNST M1001' not in homes
+    return still_open, ('Cerritos IWAP 41.09 sits under %s; CNST M1001 holds %d OSHA 30 Construction courses'
+                        % (', '.join(homes) or 'no identity', len(mem.get('CNST M1001') or [])))
+
+
+def p_ext_review_unclassified():
+    """The CER still carries MAPCXA-E&R-1-001 under its raw title, Ext & Review."""
+    u = json.loads(_read('kb/unified_titles.json') or '{}').get('Ext & Review') or {}
+    still_open = u.get('unified_title') == 'Ext & Review'
+    return still_open, ('the CER titles exhibit MAPCXA-E&R-1-001 "%s" (confidence %s)'
+                        % (u.get('unified_title'), u.get('confidence_title')))
+
+
+def p_fire_inspector_split():
+    """The CER still holds both Fire Inspector 1C titles."""
+    c = json.loads(_read('kb/credentials.json') or '{}')
+    still_open = 'Fire Inspector 1C' in c and 'SFT Fire Inspector 1C' in c
+    return still_open, ('the CER holds %s' % ('both Fire Inspector 1C titles' if still_open else 'one Fire Inspector 1C title'))
+
+
 # S327: the premises sheet 33's cards rest on.
 def p_csu_la_counted():
     """CSU LA still sits in the scrape's tiers, so the count wording is still open."""
@@ -858,41 +893,112 @@ def items():
     # Sheet 36's card 3 (the Ironworker film, draft v1) left with Sam's ruling in chat (2026-10-04 23:42Z):
     # "Video is excellent!" The film README and the harvest lane record it.
 
-    # Sheet 37 (S331): the one open ask. Sam's sheet 36 card 2 held the request while sessions tried other
-    # routes ("lets work together to see if we ca find these another way and close the gap"); reads 7-12
-    # tried them, and the procedure record (v4) names each.
+    # Sheet 37 (S331) was answered at 06:00Z on 2026-10-05 (through 1, his own call): card 1 hold, "Don't
+    # worry about this for now until I investigate later." The request stays held and Sam investigates;
+    # REQUEST_DRAFT stays above for the day he asks for it. The harvest lane records the ruling and drops
+    # its NEEDS SAM in the same change (S332); no card remains.
+
+    # Sheet 38 (S332): the writes the guard held, and what the OSHA 30 question and the display rebuild found.
     I.append({
         'lane': 'program-requirements-harvest',
-        'title': "Send the request for Cerritos's high school list?",
-        'ref': 'program-requirements-harvest NEEDS SAM · Cerritos procedure record v4 · '
-               'kb/program_requirements_pilot/cerritos_hs_agreements_2016.json',
+        'title': "Apply the two writes the database guard held?",
+        'ref': 'program-requirements-harvest NEEDS SAM · PR #1861 · '
+               'kb/receipts/program_requirement_records_display_2026-10-04_81691460ba18.sql · '
+               'kb/receipts/cpl_memory_2026-10-05_s332.sql',
         'facts': (
-            "<p>You asked us to find Cerritos's list of articulated high school courses another way before "
-            "asking the college. Six more runner reads (12 in all) tried every public route we could find. "
-            "Cerritos is not a CATEMA college. Its agreement search moved twice and is gone both times: "
-            "<code>hsarticulation.cerritos.edu</code> and <code>cerritos.ctecourseconnect.com</code> no longer "
-            "resolve, and the archive holds no copy. Its board agendas sit on BoardDocs, which bars readers; "
-            "its CCAP enrollment runs on DualEnroll, a sign-in page.</p>"
-            "<p>What the reads did find is now on the ladder. The archive kept the old statewide database's "
-            "full list from March 2016: 57 Cerritos agreements with 27 high schools and ROPs, none for "
-            "welding. Columbus High is one of Downey Unified's three CCAP partner schools. Its welding pathway "
-            "now runs Welding and Materials Joining I and a Capstone, with OSHA 10 and OSHA 30 certifications, "
-            "and names Cerritos as its partner college; Downey's 2023 post calls it equivalent to WELD 100. "
-            "Downey teachers teach it, so the credit most likely comes by articulation and Credit by Exam. "
-            "No page says so.</p>"
-            "<p>The draft, revised for what the reads found (the MAP team sends it):</p>"
-            "<pre>" + m.E(REQUEST_DRAFT) + "</pre>"),
-        'why': "Your rule (sheet 33 card 5): the agent exhausts its own reading before anyone drafts a request. "
-               "The procedure record now names every route and what each answered, so the ladder's last "
-               "To confirm line about high school credit waits on Cerritos itself.",
-        'rec': "<strong>Send it:</strong> the MAP team sends the draft to Cerritos's Educational Partnerships "
-               "&amp; Programs office, and the answer goes on the procedure record and the ladder with Cerritos "
-               "named as the source. <em>It might be wrong if</em> you know someone at Cerritos or Downey "
-               "Unified who answers faster; then name them and the draft goes to that person.",
-        'chips': chips(('Send it', 'send'), ('Hold it', 'hold'), CH_LATER),
-        'evidence': [live('2026-10-05', "Cerritos's procedure record v4 on program_source_registry "
-                          "(md5 290ad739ec4acbe46b39793ac5642046), runner reads 7-12, runs 37247286802 "
-                          "through 37250119275")],
+            "<p>Two writes from this session wait on your go. The repo's guard stops a session's write through the "
+            "SQL tool, and the auto-mode check then stopped the route S327 used, <code>apply_migration</code>, as a way "
+            "around the guard.</p>"
+            "<p>The first sets the display facts Sierra reads for the 20 pilot programs to build 81691460ba18 "
+            "(<a href=\"https://github.com/CPL-Initiative/cpl-project-tracker/pull/1861\">#1861</a>). The page and "
+            "Sierra change together, so the pull request waits on this card. The build now takes each course's "
+            "identity from the live Common Course Reference: 285 of 289 course entries carry one (149 before), could "
+            "adopt rises from 53 entries to 133, and for consideration from 0 to 15, among them POST Basic Academy "
+            "for Riverside's criminal justice courses and Security+ for West LA's security course. No up-to figure "
+            "changes. The receipt of the build it replaces restores every row exactly; all 20 live rows match it "
+            "today.</p>"
+            "<p>The second files five memory rows for this session, your sheet 37 hold among them, and retires "
+            "S327's row that read zero for consideration, a count the identity gap produced.</p>"),
+        'why': "Rule 10: a write to a shared table carries a receipt that rolls it back. Both receipts are committed.",
+        'rec': "<strong>Go:</strong> a session applies both through <code>apply_migration</code> on your go here, "
+               "reads every row back against its receipt, and merges #1861. <em>It might be wrong if</em> you would "
+               "rather run them yourself in the SQL editor; then choose that and the session hands you the files "
+               "in order.",
+        'chips': chips(('Go', 'go'), ('I will run them', 'self'), CH_LATER),
+        'evidence': [live('2026-10-05', "md5 of all 20 program_requirement_records.display rows against the "
+                          "2026-10-04 receipt (20 match); the guard's and the auto-mode check's denials this session")],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Ask Cerritos whether IWAP 41.09 teaches OSHA 30 or welding safety?",
+        'ref': 'program-requirements-harvest NEEDS SAM · college-page-read run 37271979880 (read 13) · '
+               'CCR WELD M10CA and CNST M1001',
+        'facts': (
+            "<p>Cerritos credits IWAP 41.09 OSHA 30/Extension Review (1.5 units, in the Ironworker A.S.) by its own "
+            "exam. The title names the 30-hour OSHA card. Cerritos's catalog (read 13) and the state's course file "
+            "give the course the outline of AED 41.09 Welding III - Reinforcing word for word: shop safety in welding "
+            "and burning, ending with the Los Angeles City written welding exam. The Common Course Reference follows "
+            "the outline and files the course alone.</p>"
+            "<p>Eight OSHA 30 Construction courses at six colleges share one identity, and Las Positas and San "
+            "Bernardino Valley credit the OSHA 30 card itself. Columbus High's welding capstone awards that card. If "
+            "IWAP 41.09 teaches OSHA 30, it joins those courses and a Columbus graduate's card has peers to point to. "
+            "If it teaches welding safety, its title needs Cerritos's attention. Cerritos can say which.</p>"),
+        'why': "Your rule (sheet 33 card 5): the agent reads everything public first. Read 13 was the last public "
+               "source, and the catalog and the state file agree with each other against the title.",
+        'rec': "<strong>Add it to the held request:</strong> one more question in the draft to Cerritos, sent when you "
+               "release it; the course stays where its outline files it until Cerritos answers. <em>It might be wrong "
+               "if</em> you know which the course teaches; then say so in the note and the session files it.",
+        'chips': chips(('Add it', 'add'), ('Leave it', 'leave'), CH_LATER),
+        'evidence': [measured(p_iwap_4109_alone)],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Name Cerritos's Ext & Review exhibit in the CER?",
+        'ref': 'program-requirements-harvest NEEDS SAM · MAP exhibit MAPCXA-E&R-1-001 · kb/unified_titles.json',
+        'facts': (
+            "<p>The CER carries Cerritos's credit-by-exam exhibit MAPCXA-E&amp;R-1-001 under its raw title, "
+            "<em>Ext &amp; Review</em>, unclassified. Its credit recommendation reads 1.5 hours in OSHA 30/Extension "
+            "Review, and its course is IWAP 41.09. Cerritos's other ironworker exhibits carry titles such as "
+            "<em>Ironworker Apprenticeship — Post Tensioning 2</em>, issued by the Iron Workers international.</p>"),
+        'why': "A raw abbreviation in the CER reads as a credential no one can name, on the ladder and in Sierra.",
+        'rec': "<strong>Name it</strong> <em>Ironworker Apprenticeship — OSHA 30/Extension Review</em>, beside its "
+               "family. <em>It might be wrong if</em> Cerritos's answer to card 2 says the course teaches welding "
+               "safety; then the name follows that answer.",
+        'chips': chips(('Name it', 'name'), ('Edit', 'edit'), CH_LATER),
+        'evidence': [measured(p_ext_review_unclassified)],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Fold SFT Fire Inspector 1C into Fire Inspector 1C?",
+        'ref': 'program-requirements-harvest NEEDS SAM · kb/credentials.json · kb/coci_articulations.json',
+        'facts': (
+            "<p>The CER holds two titles for one State Fire Training credential: <em>Fire Inspector 1C</em> (7 "
+            "colleges, 4 exhibits) and <em>SFT Fire Inspector 1C</em> (4 colleges, 2 exhibits). Both name California "
+            "State Fire Training as issuer, and Chaffey and Miramar carry both. The rebuilt display found the split: "
+            "Miramar's FIPT 103 holds Fire Inspector 1C and still lists SFT Fire Inspector 1C for consideration, "
+            "because the statewide recommendation uses the second title.</p>"),
+        'why': "One credential under two titles splits its adopters and offers a college what it already holds.",
+        'rec': "<strong>Fold:</strong> SFT Fire Inspector 1C into Fire Inspector 1C, the title more colleges carry, "
+               "through the rename pipeline, which keeps the old title as an alias. <em>It might be wrong if</em> the "
+               "two name different editions of the course.",
+        'chips': chips(('Fold', 'fold'), ('Keep both', 'keep'), CH_LATER),
+        'evidence': [measured(p_fire_inspector_split)],
+    })
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Dock Sierra in the Program Requirements tab?",
+        'ref': 'program-requirements-harvest NEEDS SAM · program_requirements.js · cpl-chat',
+        'facts': (
+            "<p>The handoff queued it: <code>CPL_CHAT.mountInto(host, \"program-requirements\")</code> docks Sierra "
+            "beside the tab's views with no deploy, since the CPL Assistant reads an unknown surface as unscoped. The "
+            "auto-mode check stopped this session when it opened the tab's code, naming shared resources, so the "
+            "change waits on your word.</p>"),
+        'why': "The tab is in COBI for the MAP team; a change to it reaches every reader of the Beta draft.",
+        'rec': "<strong>Go:</strong> a session docks her in the tab with its jsdom test and merges on a green test; "
+               "her guidance stays unscoped until a later deploy names the surface. <em>It might be wrong if</em> you "
+               "want the Beta draft to keep its single link to the CPL Assistant for now.",
+        'chips': chips(('Go', 'go'), CH_LATER),
+        'evidence': [policy()],
     })
 
     return I

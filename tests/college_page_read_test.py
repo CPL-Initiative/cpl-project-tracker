@@ -174,8 +174,12 @@ for path in plans:
     from _program_source_census import registrable
     own = {registrable(h) for h in hosts} - OUTSIDE - set(declared)
     # A plan reads one college's own domain, or only named outside hosts on that
-    # college's behalf (read 10: the archive's copy of a statewide list).
-    check(len(own - {"courseleaf.com"}) == 1 or (not own and declared),
+    # college's behalf (read 10: the archive's copy of a statewide list), or only
+    # that college's catalog on its vendor's host (read 13: two course-description
+    # pages on cerritos-public.courseleaf.com, one subdomain).
+    catalog_only = own == {"courseleaf.com"} and len(
+        {h.split(".")[0] for h in hosts if registrable(h) == "courseleaf.com"}) == 1
+    check(len(own - {"courseleaf.com"}) == 1 or (not own and declared) or catalog_only,
           "%s: one college domain, plus its catalog vendor and the named outside hosts (%s)" % (name, sorted(own)))
 
 if FAILS:
