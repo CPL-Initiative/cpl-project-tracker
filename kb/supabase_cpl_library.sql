@@ -137,6 +137,17 @@ drop policy if exists cpl_library_history_read on public.cpl_library_history;
 create policy cpl_library_history_read on public.cpl_library_history for select
   using (public.team_pass_ok() or public.is_allowed_reviewer());
 
+-- Data API grants, stated here rather than inherited: from 2026-10-30 Supabase
+-- stops granting anon, authenticated and service_role on new public tables
+-- (tests/supabase_table_grants_test.py). Each command a policy allows is granted
+-- to the roles that policy names (no TO clause: anon and authenticated); RLS
+-- still decides which rows. service_role publishes and rolls back receipts.
+grant select, insert, update on public.cpl_library to anon, authenticated;
+grant select, insert, update, delete on public.cpl_library to service_role;
+grant select on public.cpl_library_history to anon, authenticated;
+grant select, insert on public.cpl_library_history to service_role;
+grant usage, select on sequence public.cpl_library_history_id_seq to service_role;
+
 -- No DELETE policy on either table, and no client write on history at all.
 revoke delete on public.cpl_library from anon, authenticated;
 revoke insert, update, delete on public.cpl_library_history from anon, authenticated;
@@ -147,5 +158,5 @@ revoke truncate, references, trigger on public.cpl_library from anon, authentica
 revoke truncate, references, trigger on public.cpl_library_history from anon, authenticated;
 
 -- Applied 2026-10-05 as migrations cpl_library_register_tables,
--- cpl_library_register_policies, cpl_library_register_triggers and
--- cpl_library_register_revoke_truncate.
+-- cpl_library_register_policies, cpl_library_register_triggers,
+-- cpl_library_register_revoke_truncate and cpl_library_register_explicit_grants.
