@@ -403,15 +403,39 @@ PAGE_JS = """() => {
   // An outcomes panel a catalog keeps in a tab the reader never opens (Mt.
   // San Antonio's CourseLeaf pages, S334): any element whose id names
   // outcomes, outermost only, outside the site's menus.
-  const outs = Array.from(document.querySelectorAll('[id*="outcome" i]'))
+  // Two ways in: an element whose id names outcomes, and the panel a tab
+  // labeled Outcomes, SLO or PLO points at (its href="#id" or aria-controls),
+  // since Mt. San Antonio's panel id names neither (capture run 9).
+  const byId = Array.from(document.querySelectorAll('[id*="outcome" i]'));
+  const tabProbe = Array.from(document.querySelectorAll('a[href^="#"], [role=tab], [aria-controls]'))
+    .filter(a => /outcome|\\bSLOs?\\b|\\bPLOs?\\b/i.test((a.innerText || a.textContent || '').trim()))
+    .slice(0, 12).map(a => {
+      const id = (a.getAttribute('aria-controls') || (a.getAttribute('href') || '').slice(1) || '').trim();
+      const el = id ? document.getElementById(id) : null;
+      return {label: (a.innerText || a.textContent || '').trim().slice(0, 60), target: id,
+              chars: el ? (el.textContent || '').trim().length : -1, el};
+    });
+  const outs = byId.concat(tabProbe.map(t => t.el).filter(e => e))
+    .filter((e, i, all) => all.indexOf(e) === i)
     .filter(e => !e.closest('nav, header, footer') && (e.textContent || '').trim().length > 40);
+  // A hidden panel has no innerText, and its textContent runs the heading into
+  // the first outcome; read its list items, paragraphs and headings one a line.
+  const BLOCK = 'li, p, h1, h2, h3, h4, h5, h6, td, dt, dd';
+  const textOf = e => {
+    // innerText of an element that is not rendered is its raw textContent.
+    if (e.getClientRects().length && e.innerText && e.innerText.trim()) return e.innerText;
+    const leaves = Array.from(e.querySelectorAll(BLOCK)).filter(x => !x.querySelector(BLOCK));
+    return leaves.length ? leaves.map(x => (x.textContent || '').trim()).filter(t => t).join('\\n') : (e.textContent || '');
+  };
   const outcomeTabs = outs.filter(e => !outs.some(o => o !== e && o.contains(e)))
-    .map(e => ({id: e.id, text: (e.innerText && e.innerText.trim() ? e.innerText : e.textContent)
-                                  .replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim().slice(0, 6000)}));
+    .map(e => ({id: e.id, text: textOf(e)
+                                  .replace(/[ \\t]+\\n/g, '\\n').replace(/\\n{3,}/g, '\\n\\n').trim().slice(0, 6000)}));
+  const outcomeProbe = tabProbe.map(t => ({label: t.label, target: t.target, chars: t.chars}))
+    .concat(byId.slice(0, 12).map(e => ({label: '(id)', target: e.id, chars: (e.textContent || '').trim().length})));
   return {title: document.title || '', h1: h1 ? h1.innerText : '', links,
           body: document.body ? document.body.innerText : '',
           content: document.body ? document.body.textContent : '',
-          courselists: lists, clickables, outcomeTabs};
+          courselists: lists, clickables, outcomeTabs, outcomeProbe};
 }"""
 
 
@@ -774,7 +798,8 @@ def capture(reader, entry: dict, cache: dict) -> dict:
                                                   from_start=best.get("field") == "export_pdf"),
                                       got.get("outcomeTabs")),
                courseleaf_lists=courseleaf_lists(got, courses)
-               if reg.get("catalog_platform") == "courseleaf" else [])
+               if reg.get("catalog_platform") == "courseleaf" else [],
+               outcome_probe=got.get("outcomeProbe") or [])
     return rec
 
 
