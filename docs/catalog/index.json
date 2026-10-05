@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 521,
+   "count": 522,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4157,6 +4157,27 @@
      "title": "A value can exist in the repo and never reach the payload \u2014 two minting paths, one inference pipeline",
      "type": "methodology",
      "updated": "2026-09-08"
+    },
+    {
+     "created": "2026-10-05",
+     "governs": [
+      "kb/_program_requirements_score.py",
+      "kb/_program_requirements_load.py",
+      "kb/_program_requirements_file.py",
+      "kb/program_requirements_pilot/reviewed_readings.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-verdict-covers-the-reading-it-saw.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements-harvest",
+      "extraction",
+      "human-review",
+      "provenance"
+     ],
+     "title": "A verdict covers the reading it saw",
+     "type": "methodology",
+     "updated": "2026-10-05"
     },
     {
      "created": "2026-10-02",
@@ -14858,8 +14879,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 305,
+   "count": 306,
    "docs": [
+    {
+     "created": "2026-10-05",
+     "governs": [],
+     "n": 335,
+     "path": "docs/session_335_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "outcomes",
+      "cpl-pathways",
+      "decision-sheet"
+     ],
+     "title": "record shape 3 (outcomes as printed), the catalog record on CPL Pathways, sheet 41",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-05",
      "governs": [],
@@ -20056,5 +20094,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1047
+ "total": 1049
 }

@@ -3,7 +3,7 @@ title: Session 334 handoff — the Ext & Review rename landed, the display follo
 date: 2026-10-05
 session: 333 (SkyHarbor)
 tags: [handoff, program-requirements-harvest, roep-display, cer, issuing-agency, decision-sheet]
-status: current
+status: superseded
 ---
 
 # You are Session 334
