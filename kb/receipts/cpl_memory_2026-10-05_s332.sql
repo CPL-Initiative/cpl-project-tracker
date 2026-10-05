@@ -64,3 +64,18 @@ from public.cpl_memory m where m.slug = 'for-consideration-zero-on-pilot-2026-10
  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'supersede');
 select m.slug, m.status, (select count(*) from public.cpl_memory_log l where l.memory_id=m.id) log_rows
 from public.cpl_memory m where m.author = 'SkyBridge-s332' or m.slug = 'for-consideration-zero-on-pilot-2026-10-04' order by m.slug;
+-- Appended in session (written through execute_sql under the cpl_memory carve-out, no prompt):
+insert into public.cpl_memory (slug, title, kind, summary, detail, plain, tags, affects, source, author, event_date, status)
+values ('sam-sierra-at-top-program-requirements-2026-10-05',
+ 'Sam: Sierra sits at the top of the Program Requirements tab, as on My College',
+ 'decision',
+ 'Sam, 2026-10-05 (S332), choosing among top, closed below the views, or the plain link: "Sierra at the top". The tab mounts the one CPL Assistant in a collapsible Sierra AI section under the title, open until the reader closes it, with no second Ask Sierra control in the header.',
+ 'He had noted that My College already carries Sierra at the top and a second collapsible would be redundant there; the dock lives in Program Requirements only. program_requirements.js and tests/program_requirements.test.js (4) and (4b) pin the placement. PR #1863.',
+ 'Sierra appears at the top of the Program Requirements tab, the same way she does on My College.',
+ array['program-requirements','sierra','cobi','ui'], array['program_requirements.js','tests/program_requirements.test.js'],
+ 'Sam, in session S332 (2026-10-05)', 'SkyBridge-s332', '2026-10-05', 'verified')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyBridge-s332', 'create', 'Sam''s ruling: Sierra at the top', to_jsonb(m)
+from public.cpl_memory m where m.slug = 'sam-sierra-at-top-program-requirements-2026-10-05'
+ and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');

@@ -21,14 +21,14 @@
  *                requests). Sam's sheet 34 card 2: one per college, kept with its
  *                history; a misread changes the procedure, never the record.
  *
- * Sierra docks in the tab (Sam, open-asks sheet 38 card 5, 2026-10-05: go): a
- * collapsible "Sierra AI" section below the views, closed until the reader opens
- * it, mounts the one CPL Assistant widget with CPL_CHAT.mountInto(host,
+ * Sierra docks at the top of the tab (Sam, open-asks sheet 38 card 5, 2026-10-05:
+ * go; then "Sierra at the top", as on My College): a collapsible "Sierra AI"
+ * section under the title, open until the reader closes it (the choice is
+ * remembered), mounts the one CPL Assistant widget with CPL_CHAT.mountInto(host,
  * "program-requirements"), the pattern My College uses. The thread follows the
  * reader between the panes. cpl-chat reads an unknown surface as unscoped, so her
- * guidance stays unscoped until a deploy names this surface. The header's "Ask
- * Sierra" opens the section; without the chat module the section keeps the link
- * to the CPL Assistant tab, the mock-up's v3 design.
+ * guidance stays unscoped until a deploy names this surface. Without the chat
+ * module the section keeps the link to the CPL Assistant tab.
  *
  * A FAILED READ SAYS SO; it never renders as zero colleges or zero records.
  * Read-only: this tab writes nothing. Tests: tests/program_requirements.test.js
@@ -186,11 +186,9 @@
       ".prh h4 { margin:0 0 6px; color:var(--text-strong); font-size:.95rem; display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }",
       ".prh-draft { font-size:.75rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; background:var(--mustard-fill); color:var(--on-mustard, var(--text-strong)); border-radius:10px; padding:3px 10px; }",
       ".prh-meta { margin:0; font-size:.875rem; color:var(--text-muted); max-width:var(--cpl-measure,none); }",
-      ".prh-tools { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }",
       ".prh-ask { display:inline-flex; align-items:center; font-weight:700; color:var(--seal-blue-text); text-decoration:none; border:1px solid var(--border-strong); border-radius:8px; padding:6px 12px; min-height:40px; background:var(--surface-opaque); }",
       ".prh-ask:hover { border-color:var(--seal-blue-text); }",
-      "button.prh-ask { font:inherit; cursor:pointer; }",
-      ".prh-sierra { margin-top:24px; border:1px solid var(--border-strong); border-radius:11px; background:var(--surface); padding:4px 16px; }",
+      ".prh-sierra { margin:16px 0 20px; border:1px solid var(--border-strong); border-radius:11px; background:var(--surface); padding:4px 16px; }",
       ".prh-sierra > summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:700; color:var(--text-strong); font-size:1.05rem; }",
       ".prh-sierra[open] > summary { border-bottom:1px solid var(--border); margin-bottom:10px; }",
       ".prh-sierra-lede { margin:0 0 10px; font-size:.875rem; color:var(--text-muted); max-width:var(--cpl-measure,none); }",
@@ -564,14 +562,10 @@
     root.removeAttribute("style");
     root.textContent = "";
     var wrap = el("div", { cls: "prh" });
-    var ask = el("button", { cls: "prh-ask", type: "button", "aria-controls": "prh-sierra",
-      title: "Ask Sierra about program requirements; she reads the catalogs, the program records and the rules the harvest runs by",
-      text: "Ask Sierra" });
     var meta = el("p", { cls: "prh-meta" });
     wrap.appendChild(el("header", { cls: "prh-mast" }, [
       el("div", { cls: "prh-titlerow" }, [
-        el("h2", {}, ["Program Requirements", el("span", { cls: "prh-draft", text: "Beta draft" })]),
-        el("div", { cls: "prh-tools" }, [ask])]),
+        el("h2", {}, ["Program Requirements", el("span", { cls: "prh-draft", text: "Beta draft" })])]),
       el("p", { cls: "prh-meta", text: "How each program's courses count toward its award, read from the college's own catalog, and the reading procedure each college's agent runs by. With these records, CPL Pathways shows which courses a learner can clear through CPL and how many units that saves." }),
       meta]));
     if (state.error) {
@@ -615,23 +609,16 @@
     panel.appendChild(state.view === "records" ? viewRecords()
       : state.view === "sequences" ? viewSequences()
       : state.view === "procedures" ? viewProcedures() : viewCatalogs());
-    wrap.appendChild(sw);
-    wrap.appendChild(panel);
     var sierra = el("details", { cls: "prh-sierra", id: "prh-sierra" }, [
       el("summary", { text: "Sierra AI" }),
       el("p", { cls: "prh-sierra-lede", text: "Ask Sierra about a program's requirements, its record, or how a college's catalog is read." }),
       el("div", { cls: "prh-sierra-mount", id: "prh-sierra-mount" }, [
         el("a", { cls: "prh-ask", href: "#chatbot", text: "Open the CPL Assistant" })])]);
-    if (safeGet(SIERRA_KEY) === "1") sierra.setAttribute("open", "");
+    if (safeGet(SIERRA_KEY) !== "0") sierra.setAttribute("open", "");
     sierra.addEventListener("toggle", function () { safeSet(SIERRA_KEY, sierra.open ? "1" : "0"); });
-    ask.addEventListener("click", function () {
-      sierra.open = true;
-      safeSet(SIERRA_KEY, "1");
-      var box = sierra.querySelector(".cplchat-input") || sierra.querySelector("summary");
-      if (box && box.scrollIntoView) box.scrollIntoView({ block: "center" });
-      if (box && box.focus) box.focus();
-    });
     wrap.appendChild(sierra);
+    wrap.appendChild(sw);
+    wrap.appendChild(panel);
     wrap.appendChild(el("footer", { cls: "prh-foot" }, [
       el("p", {}, [el("strong", { text: "Beta draft. " }),
         "Every figure here comes from public catalogs, the state's Program Course File and the public MAP platform. The registry, the records and the procedures change as the census and the reads run again."]),
