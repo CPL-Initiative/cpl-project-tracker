@@ -1,0 +1,42 @@
+{
+ "_readme": "Ninth read for the Cerritos Ironworker ladder (S331, SkyForge). Read 8 (run 37247716971) opened Cerritos's CCAP page: Downey Unified's Downey, Warren and Columbus high schools are CCAP partners, and students enroll through cerritos.dualenroll.com. BoardDocs bars readers in robots.txt, so Cerritos's board agendas are not read. The archive's index of showagreements.php holds one full list: careerpathid=0 (Show All Agreements), captured 2016-03-14 with status 200; its one Cerritos-by-school capture is from 2023, after the domain died, and answers 404. This read takes that 2016 list (Cerritos's agreements as the statewide database held them that year, dated as such) with up to five of its Cerritos agreement links, and the DualEnroll platform's public page.",
+ "college": "Cerritos College",
+ "outside_hosts": {
+  "archive.org": "the Internet Archive's Wayback Machine, which keeps a 2016 capture of the Statewide Career Pathways database's full agreement list",
+  "dualenroll.com": "DualEnroll, the platform Cerritos's CCAP page names for students requesting enrollment in their CCAP and partnership courses (cerritos.dualenroll.com)"
+ },
+ "questions": {
+  "hs_articulation": "Cerritos's list of articulated high school courses, and which route Columbus High's welding pathway uses."
+ },
+ "keywords": [
+  "Cerritos",
+  "Columbus",
+  "Downey",
+  "Warren",
+  "[Ww]eld",
+  "WELD",
+  "CCAP",
+  "[Mm]anufactur",
+  "[Cc]onstruction"
+ ],
+ "pages": [
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/web/20160314075122/http://statewidepathways.org/showagreements.php?careerpathid=0&go=show+agreements",
+   "links": "cerritos|weld|columbus|downey",
+   "follow": "cerritos.*(weld|manufactur|construct|metal)|(weld|metal).*cerritos"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://cerritos.dualenroll.com/",
+   "links": "course|school|downey|columbus|catalog|search|offering|weld",
+   "forms": true
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://www.cerritos.edu/academics/divisions/epp/dualenrollment/CCAP-partnership-programs.htm",
+   "expand": true,
+   "links": "dualenroll|ccap|course|\\.pdf"
+  }
+ ]
+}
