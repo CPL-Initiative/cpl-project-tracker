@@ -5844,3 +5844,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 <!-- moved from docs/INDEX.md Update history at the S335 checkpoint -->
 - 2026-10-04 (S327 SkyAmend): KB note `methodology-one-build-two-readers`; handoff 328; the ROEP display build (`kb/_build_roep_display.py`): CPL in three kinds per course, the up-to figure, gaps and map status, written once to `cpl_pathways_roep_data.js` and `program_requirement_records.display` (20 rows live); Sierra wired to it with smoke 7r (#1854); open-asks sheet 33 (CSU LA, outcomes, the Ironworker proof).
+
+<!-- moved from docs/INDEX.md Update history at the S336 checkpoint -->
+- 2026-10-04 (S328 SkyLadder): #1854 deployed; sheets 33-34 answered and in their lanes (#1855); the statement of who CPL serves and `kb/non_ccc_institutions.json` (#1856); the Cerritos Ironworker ladder on CPL Pathways (#1857); handoff 329.

@@ -1,14 +1,14 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-05",
- "_session": "S335 SkyKeel",
- "_status": "Each college's own differences now collect as drafts on the Program Requirements tab, under the college's name in Program records, with the text the MAP team copies when it decides to send. Miramar's AUTO 156G item was traced to its source: MAP lists the course beside the right ones on two recommendations, and no student received credit through it, so the draft says exactly that. Three cards wait on Sam on Open Asks Sheet 42.",
+ "_session": "S336 SkyCourier",
+ "_status": "Sam answered Open Asks Sheet 42 and all three cards are carried out: the program outcomes are on the 20 live records, Sierra was redeployed and the display build added Miramar's two drafts, and My College now lists each college's drafts for review. Irvine Valley's and Santa Monica's own program maps were read for the first time; Santa Monica's Barbering degree shows a licensed barber's whole first year as credit already held. One card waits on Sam on Open Asks Sheet 44: the credential watch routine needs its repositories and the issuers' sites.",
  "items": [
   {
-   "id": "s335-sam-sheet42",
+   "id": "s336-sam-sheet44",
    "for": "Sam",
    "tab": "program-requirements",
-   "text": "Open Asks Sheet 44 (https://claude.ai/artifact/6mgoWoJ4oZYGPqJeVRvryu): card 1, give the industry credential watch routine its repositories and the issuers' sites (its first run, 2026-10-05, could not read the vault, push, or reach the issuer pages). Sheet 42's three cards are answered (1 go, 2 go, 3 show them now)."
+   "text": "Open Asks Sheet 44 (https://claude.ai/artifact/6mgoWoJ4oZYGPqJeVRvryu): give the industry credential watch routine its repositories (the tracker and CPLBrain, in your Routines list) and the issuers' sites (Allowed domains in the cloud environment's Network access; the card carries the host list). Its first run, 2026-10-05, could not read the vault, push, or reach the issuer pages. Next run: Monday 12 October."
   },
   {
    "id": "s332-sam-setup-script",
@@ -53,10 +53,10 @@
    "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
   },
   {
-   "id": "s335-fable-sheet42-apply",
+   "id": "s336-fable-by-term",
    "for": "Fable",
    "tab": "program-requirements",
-   "text": "Sam said go on sheet 42 card 2 (2026-10-05 20:58Z): once cpl-chat deploy run 37374184173 lands, run the smoke, then apply kb/receipts/program_requirement_records_display_2026-10-05_1cb75672ba6c_delta.sql after a fresh md5 read and read all 20 rows back with python3 kb/_build_roep_display.py --verify-sql. Card 1's outcomes are on all 20 rows (S335, read back after)."
+   "text": "Show a read map By term: capture and extract Santa Monica's Barbering A.S. (43767) and Irvine Valley's Art A.A. (10265) as harvest records beyond the checked 20, carry their sequence records' terms (kb/program_requirements_pilot/sequences/) into the display build, and place each course in its term on CPL Pathways. The live write waits on Sam's go."
   },
   {
    "id": "s319-fable-read-timings",
