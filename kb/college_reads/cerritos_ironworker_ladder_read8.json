@@ -1,0 +1,59 @@
+{
+ "_readme": "Eighth read for the Cerritos Ironworker ladder (S331, SkyForge): the high school list by other routes (Sam, sheet 36 card 2). Read 7 (run 37247286802) closed three: cerritos.ctecourseconnect.com, where web search places Cerritos's public agreement search, has no DNS record and no archive capture; Cerritos is not among CATEMA's 30 California sites; Cerritos's How To Receive Articulation Credit page names no list. Its 2016 capture of Statewide Career Pathways' showagreements.php lists agreements by career path (careerpathid 3 Building Trades and Construction, 11 Manufacturing and Product Development) through a GET form. This read takes the archive's index of those query addresses and the two career paths' captures; Cerritos's CCAP page with its collapsed Participating High Schools section opened (the reader's new expand step); and Cerritos's board agenda on BoardDocs, where web search finds the CCAP agreement with Downey Unified (Downey, Warren and Columbus high schools).",
+ "college": "Cerritos College",
+ "outside_hosts": {
+  "boarddocs.com": "BoardDocs, where Cerritos College's Board of Trustees publishes its agendas and their attachments, including the CCAP partnership agreements with its high school districts",
+  "archive.org": "the Internet Archive's Wayback Machine, which keeps captures of the Statewide Career Pathways database from when it was live"
+ },
+ "questions": {
+  "hs_articulation": "Cerritos's list of articulated high school courses, and which route Columbus High's welding pathway uses."
+ },
+ "keywords": [
+  "Columbus",
+  "Downey",
+  "Warren",
+  "[Ww]eld",
+  "WELD",
+  "CCAP",
+  "[Aa]rticulat",
+  "[Aa]greement",
+  "Cerritos",
+  "Building Trades",
+  "[Mm]anufactur"
+ ],
+ "pages": [
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://www.cerritos.edu/academics/divisions/epp/dualenrollment/CCAP-partnership-programs.htm",
+   "expand": true,
+   "links": "ccap|agreement|\\.pdf|downey|columbus|warren|course|school",
+   "follow": "\\.pdf|agreement|downey|columbus"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://www.boarddocs.com/ca/cerritos/Board.nsf/PRINT-AgendaDetailed?open=&id=BWES3V6388EE",
+   "links": "ccap|downey|articulat|agreement|\\.pdf|files",
+   "follow": "files/.*(ccap|downey|agreement)|ccap|downey"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/cdx/search/cdx?url=statewidepathways.org/showagreements.php&matchType=prefix&output=txt&fl=timestamp,original,statuscode&collapse=urlkey&limit=300"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/cdx/search/cdx?url=statewidepathways.org/associated_agreements.html&matchType=prefix&output=txt&fl=timestamp,original,statuscode&collapse=urlkey&limit=300"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/web/2016/http://statewidepathways.org/showagreements.php?careerpathid=3",
+   "links": "cerritos|weld|agreement|\\.pdf|view",
+   "follow": "cerritos"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/web/2016/http://statewidepathways.org/showagreements.php?careerpathid=11",
+   "links": "cerritos|weld|agreement|\\.pdf|view",
+   "follow": "cerritos"
+  }
+ ]
+}
