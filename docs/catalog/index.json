@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 523,
+   "count": 524,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4629,6 +4629,24 @@
      "title": "An error that arrives inside a successful response is invisible to every status check",
      "type": "methodology",
      "updated": "2026-09-11"
+    },
+    {
+     "created": "2026-10-05",
+     "governs": [
+      "docs/reference/scheduled_sessions.md"
+     ],
+     "path": "docs/kb-notes/methodology-an-idle-session-still-holds-wakes.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sessions",
+      "scheduled-sessions",
+      "coordination",
+      "governance-team-enablement"
+     ],
+     "title": "An idle session still holds wakes, so a signed-off session lets go of them",
+     "type": "methodology",
+     "updated": "2026-10-05"
     },
     {
      "created": "2026-08-06",
@@ -14435,7 +14453,7 @@
      ],
      "title": "My College (college action page) / MAP-team queue \u2014 lane state",
      "type": null,
-     "updated": "2026-09-30"
+     "updated": "2026-10-05"
     },
     {
      "created": "2026-08-28",
@@ -14487,7 +14505,7 @@
      ],
      "title": "Partner crosswalks \u2014 lane state",
      "type": null,
-     "updated": "2026-09-30"
+     "updated": "2026-10-05"
     },
     {
      "created": "2026-10-03",
@@ -14898,8 +14916,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 307,
+   "count": 308,
    "docs": [
+    {
+     "created": "2026-10-05",
+     "governs": [],
+     "n": 337,
+     "path": "docs/session_337_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "my-college",
+      "decision-sheet",
+      "scheduled-sessions",
+      "credential-watch"
+     ],
+     "title": "sheet 42 carried out, the first two program maps read, a signed-off session lets go",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-05",
      "governs": [],
@@ -20130,5 +20166,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1051
+ "total": 1053
 }
