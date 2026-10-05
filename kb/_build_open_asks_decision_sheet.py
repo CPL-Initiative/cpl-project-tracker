@@ -858,42 +858,10 @@ def items():
     # Sheet 36's card 3 (the Ironworker film, draft v1) left with Sam's ruling in chat (2026-10-04 23:42Z):
     # "Video is excellent!" The film README and the harvest lane record it.
 
-    # Sheet 37 (S331): the one open ask. Sam's sheet 36 card 2 held the request while sessions tried other
-    # routes ("lets work together to see if we ca find these another way and close the gap"); reads 7-12
-    # tried them, and the procedure record (v4) names each.
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Send the request for Cerritos's high school list?",
-        'ref': 'program-requirements-harvest NEEDS SAM · Cerritos procedure record v4 · '
-               'kb/program_requirements_pilot/cerritos_hs_agreements_2016.json',
-        'facts': (
-            "<p>You asked us to find Cerritos's list of articulated high school courses another way before "
-            "asking the college. Six more runner reads (12 in all) tried every public route we could find. "
-            "Cerritos is not a CATEMA college. Its agreement search moved twice and is gone both times: "
-            "<code>hsarticulation.cerritos.edu</code> and <code>cerritos.ctecourseconnect.com</code> no longer "
-            "resolve, and the archive holds no copy. Its board agendas sit on BoardDocs, which bars readers; "
-            "its CCAP enrollment runs on DualEnroll, a sign-in page.</p>"
-            "<p>What the reads did find is now on the ladder. The archive kept the old statewide database's "
-            "full list from March 2016: 57 Cerritos agreements with 27 high schools and ROPs, none for "
-            "welding. Columbus High is one of Downey Unified's three CCAP partner schools. Its welding pathway "
-            "now runs Welding and Materials Joining I and a Capstone, with OSHA 10 and OSHA 30 certifications, "
-            "and names Cerritos as its partner college; Downey's 2023 post calls it equivalent to WELD 100. "
-            "Downey teachers teach it, so the credit most likely comes by articulation and Credit by Exam. "
-            "No page says so.</p>"
-            "<p>The draft, revised for what the reads found (the MAP team sends it):</p>"
-            "<pre>" + m.E(REQUEST_DRAFT) + "</pre>"),
-        'why': "Your rule (sheet 33 card 5): the agent exhausts its own reading before anyone drafts a request. "
-               "The procedure record now names every route and what each answered, so the ladder's last "
-               "To confirm line about high school credit waits on Cerritos itself.",
-        'rec': "<strong>Send it:</strong> the MAP team sends the draft to Cerritos's Educational Partnerships "
-               "&amp; Programs office, and the answer goes on the procedure record and the ladder with Cerritos "
-               "named as the source. <em>It might be wrong if</em> you know someone at Cerritos or Downey "
-               "Unified who answers faster; then name them and the draft goes to that person.",
-        'chips': chips(('Send it', 'send'), ('Hold it', 'hold'), CH_LATER),
-        'evidence': [live('2026-10-05', "Cerritos's procedure record v4 on program_source_registry "
-                          "(md5 290ad739ec4acbe46b39793ac5642046), runner reads 7-12, runs 37247286802 "
-                          "through 37250119275")],
-    })
+    # Sheet 37 (S331) was answered at 06:00Z on 2026-10-05 (through 1, his own call): card 1 hold, "Don't
+    # worry about this for now until I investigate later." The request stays held and Sam investigates;
+    # REQUEST_DRAFT stays above for the day he asks for it. The harvest lane records the ruling and drops
+    # its NEEDS SAM in the same change (S332); no card remains.
 
     return I
 
