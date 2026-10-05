@@ -16,7 +16,9 @@ refused, unreached or gone unless the plan's page says retry.
 Polite by construction, as the census and the pilot capture are: the census's
 Reader reads robots.txt first for every host, waits CENSUS_DELAY_MS before every
 load and names the CPL Initiative in its user agent (Sam's sheet-23 call 5).
-It WRITES NOTHING and runs on no schedule. A page may also submit one of its
+It WRITES NOTHING and runs on no schedule. A page may open its collapsed
+sections first ("expand"), print a long table's matching rows ("rows"), and
+may also submit one of its
 forms (a public search such as a class schedule, never a sign-in): robots.txt
 for the form's action first, the same delay, and the fields it sent printed.
 
@@ -292,7 +294,52 @@ TEXT_JS = """() => {
 }"""
 
 
-def read_one(reader, url: str, pattern: re.Pattern, cache: dict) -> dict:
+# A page may keep its answer in a collapsed section (read 6, 2026-10-04: Cerritos's
+# CCAP page closes "Participating High Schools" in an accordion, and innerText
+# skips what is not shown). A plan's page with "expand": true opens every
+# <details> and clicks every collapsed toggle that stays on the page (a button,
+# or a link to a fragment), then reads. A panel still not shown after its click
+# is read by textContent. Never a link to another address: that would be a load.
+EXPAND_JS = """() => {
+  const root = document.querySelector('main, [role=main], #main-content, #main, #content') || document.body;
+  let opened = 0;
+  root.querySelectorAll('details:not([open])').forEach(d => { d.open = true; opened++; });
+  const toggles = Array.from(root.querySelectorAll(
+    'button[aria-expanded="false"], [role=button][aria-expanded="false"], a[aria-expanded="false"], [data-toggle=collapse], [data-bs-toggle=collapse]'))
+    .filter(b => b.tagName !== 'A' || (b.getAttribute('href') || '#').startsWith('#')).slice(0, 40);
+  toggles.forEach(b => { try { b.click(); opened++; } catch (e) {} });
+  return {opened: opened, ids: toggles.map(b => b.getAttribute('aria-controls') ||
+    ((b.getAttribute('href') || '').startsWith('#') ? b.getAttribute('href').slice(1) : '') ||
+    (b.getAttribute('data-target') || b.getAttribute('data-bs-target') || '').replace(/^#/, '')).filter(Boolean)};
+}"""
+
+HIDDEN_JS = """(ids) => ids.map(id => document.getElementById(id)).filter(e => e && e.getClientRects().length === 0)
+  .map(e => (e.textContent || '').replace(/\\s+/g, ' ').trim()).filter(t => t.length > 0).join('\\n')"""
+
+
+# A page may hold its answer as rows of one long table (read 9, 2026-10-05: the
+# archived Statewide Career Pathways list runs 419,364 characters, every college's
+# agreements in one table, and the log keeps 24 excerpts). A plan's page with
+# "rows": "<regex>" prints every table row whose text matches, one line per row,
+# its cells and the links in it, up to ROWS_CAP.
+ROWS_CAP = 600
+ROWS_JS = """(src) => {
+  const rx = new RegExp(src);
+  const out = [];
+  for (const tr of document.querySelectorAll('tr')) {
+    if (tr.querySelector('tr')) continue;   // a layout row wrapping a whole table
+    const text = (tr.innerText || tr.textContent || '');
+    if (!rx.test(text)) continue;
+    out.push({cells: Array.from(tr.children).map(c => (c.innerText || c.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 300)),
+              links: Array.from(tr.querySelectorAll('a[href]')).map(a => ({text: (a.innerText || '').trim().slice(0, 120), href: a.href}))});
+    if (out.length >= %d) break;
+  }
+  return out;
+}""" % ROWS_CAP
+
+
+def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = False,
+             rows: str | None = None) -> dict:
     """One page through the census's Reader (or the pilot's PDF reader), with
     its text, its links and the excerpts around the plan's keywords."""
     from _program_requirements_pilot import read_pdf, pdfminer_pages
@@ -304,8 +351,20 @@ def read_one(reader, url: str, pattern: re.Pattern, cache: dict) -> dict:
         if got.get("access") == "ok" and not is_pdf(url, got.get("content_type")):
             try:
                 reader.page.wait_for_timeout(1500)   # a script-built page fills in late
+                opened = None
+                if expand:
+                    opened = reader.page.evaluate(EXPAND_JS)
+                    out["expanded"] = opened.get("opened", 0)
+                    reader.page.wait_for_timeout(1200)
                 page = reader.page.evaluate(TEXT_JS)
                 out["text"], out["links"] = page.get("text") or "", page.get("links") or []
+                if rows:
+                    out["rows"] = reader.page.evaluate(ROWS_JS, rows)
+                    out["rows_pattern"] = rows
+                if opened and opened.get("ids"):
+                    hidden = reader.page.evaluate(HIDDEN_JS, opened["ids"])
+                    if hidden:
+                        out["text"] += "\n[collapsed sections, read by textContent]\n" + hidden
                 out["forms"] = reader.page.evaluate(FORMS_JS)
             except Exception as exc:
                 out["error"] = str(exc).splitlines()[0][:200]
@@ -340,7 +399,7 @@ def print_page(n: int, rec: dict, pattern: re.Pattern) -> None:
     print("\n##### PAGE %d · answers: %s%s" % (n, ", ".join(rec.get("answers") or []),
           (" · %s page %d" % (how, rec["from"])) if rec.get("from") else ""))
     for k in ("url", "final_url", "status", "access", "kind", "content_type", "chars",
-              "sha256", "bytes", "extractor", "title", "error"):
+              "sha256", "bytes", "extractor", "title", "expanded", "error"):
         if rec.get(k) not in (None, ""):
             print("%s: %s" % (k, rec[k]))
     if rec.get("links_shown"):
@@ -360,6 +419,13 @@ def print_page(n: int, rec: dict, pattern: re.Pattern) -> None:
         print("sent: " + " & ".join(sub.get("sent") or []))
         print("button: %s · buttons on the form: %s" % (sub.get("button") or "none (no submitter)",
               " | ".join(sub.get("buttons") or []) or "none"))
+    if rec.get("rows_pattern"):
+        got = rec.get("rows") or []
+        print("--- table rows matching %s (%d%s) ---" % (rec["rows_pattern"], len(got),
+              ", the cap" if len(got) >= ROWS_CAP else ""))
+        for r in got:
+            links = "; ".join("%s -> %s" % (l["text"], l["href"]) for l in r.get("links") or [])
+            print(" | ".join(c for c in r.get("cells") or [] if c) + ((" [" + links + "]") if links else ""))
     if rec.get("followed"):
         print("--- links followed ---")
         for f in rec["followed"]:
@@ -415,7 +481,9 @@ def main(argv: list[str] | None = None) -> int:
                     rec = {"url": url, "access": "skipped_by_procedure",
                            "error": "the procedure record marks %s: %s" % (host, skip[host])}
                 else:
-                    rec = read_one(reader, url, pattern, cache)
+                    rec = read_one(reader, url, pattern, cache,
+                                   expand=bool(target.get("expand")) and not parent,
+                                   rows=None if parent else target.get("rows"))
                 rec["answers"] = target.get("answers") or []
                 if parent:
                     rec["from"] = parent

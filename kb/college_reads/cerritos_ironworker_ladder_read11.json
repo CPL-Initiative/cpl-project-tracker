@@ -1,0 +1,36 @@
+{
+ "_readme": "Eleventh read for the Cerritos Ironworker ladder (S331, SkyForge). Read 10 (run 37248993313) printed the 2016 statewide list's 57 Cerritos agreements with 27 schools and ROPs, none for welding and none with Columbus High (kb/program_requirements_pilot/cerritos_hs_agreements_2016.json). Web search on 2026-10-05 then found a Cerritos page no read had opened: Articulation Agreements, /academics/divisions/epp/Articulation_List.htm, which search describes as listing agreements by district, Downey Unified's among them. This read takes it, with its tables printed whole (rows step) and its collapsed sections opened, and Downey Unified's Welding Pathway page.",
+ "college": "Cerritos College",
+ "outside_hosts": {
+  "dusd.net": "Downey Unified School District, the partner district whose Columbus High welding pathway maps to Cerritos's WELD 160 and WELD 100"
+ },
+ "questions": {
+  "hs_articulation": "Cerritos's list of articulated high school courses, and which route Columbus High's welding pathway uses."
+ },
+ "keywords": [
+  "Columbus",
+  "Downey",
+  "Warren",
+  "[Ww]eld",
+  "WELD",
+  "[Aa]rticulat",
+  "[Aa]greement",
+  "Credit by Exam",
+  "CCAP"
+ ],
+ "pages": [
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://www.cerritos.edu/academics/divisions/epp/Articulation_List.htm",
+   "expand": true,
+   "rows": ".",
+   "links": "\\.pdf|agreement|downey|columbus|weld|district|school|rop",
+   "follow": "\\.pdf.*(downey|weld|columbus)|(downey|weld|columbus).*\\.pdf|downey"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.dusd.net/downey/2023/02/28/welding-pathway/",
+   "links": "cerritos|articulat|weld|\\.pdf|ccap|dual"
+  }
+ ]
+}

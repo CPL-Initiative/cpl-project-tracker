@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1055,
-    "bytes": 11105155,
-    "over_budget": 7,
-    "handoff_max": 331,
+    "files": 1057,
+    "bytes": 11119497,
+    "over_budget": 6,
+    "handoff_max": 332,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59997,
     "superseded_files": 0,
@@ -26,45 +26,45 @@
       },
       "other": {
         "files": 118,
-        "bytes": 3346484,
+        "bytes": 3347327,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10082,
+        "bytes": 10112,
         "over": 0
       },
       "lessons": {
         "files": 78,
-        "bytes": 2248641,
+        "bytes": 2252342,
         "over": 2
       },
       "kb_note": {
-        "files": 521,
-        "bytes": 2621519,
+        "files": 522,
+        "bytes": 2625236,
         "over": 0
       },
       "roadmap_lane": {
         "files": 34,
-        "bytes": 301625,
-        "over": 2
+        "bytes": 301545,
+        "over": 1
       },
       "handoff": {
-        "files": 302,
-        "bytes": 2516807,
+        "files": 303,
+        "bytes": 2522938,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
-      "oversized_doc": 7,
-      "vault_heavy_path": 57
+      "oversized_doc": 6,
+      "vault_heavy_path": 56
     },
     "vault": {
-      "files": 4153,
-      "bytes": 1746824316,
-      "heavy_bytes": 789973895,
-      "heavy_share": 0.452,
+      "files": 3615,
+      "bytes": 1737949320,
+      "heavy_bytes": 787050610,
+      "heavy_share": 0.453,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",
@@ -112,7 +112,6 @@
         "cpl-project-tracker/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/regional_cpl_opportunity_la.js",
         "cpl-project-tracker/credential_reference_data.js",
-        "cpl-project-tracker/prototype/ironworker_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
         "cpl-project-tracker/coci_lookup_desc_B.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
         "cpl-project-tracker/coci_lookup_desc_D.js",
@@ -397,19 +396,6 @@
       "path": "docs/reference/lanes/common-cr-reference.md"
     },
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20016,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 16,
-        "ratio": 1.0
-      },
-      "message": "20,016 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -425,13 +411,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 697913,
+        "bytes": 698300,
         "limit": 150000,
         "lane": "other",
-        "over_by": 547913,
-        "ratio": 4.65
+        "over_by": 548300,
+        "ratio": 4.66
       },
-      "message": "697,913 B is 4.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "698,300 B is 4.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -953,16 +939,6 @@
         "kind": "file"
       },
       "message": "3,007,281 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype/ironworker_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
-      "detail": {
-        "bytes": 2923285,
-        "kind": "file"
-      },
-      "message": "2,923,285 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

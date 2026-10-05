@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-302 document(s).
+303 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 332 | [the harvest tab in COBI, Cerritos's high school list by every public route, sheet 37](../session_332_handoff.md) | 2026-10-05 |
 | 331 | [sheet 36, the harvest tab's Procedures view, the film's review](../session_331_handoff.md) | 2026-10-04 |
 | 330 | [the Cerritos read 4, the procedure record paste, Sam's routine](../session_330_handoff.md) | 2026-10-04 |
 | 329 | [Sierra's statement deploy, the ladder PR, the Cerritos runner read](../session_329_handoff.md) | 2026-10-04 |

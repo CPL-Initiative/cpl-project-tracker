@@ -44,7 +44,7 @@
      * internal curation tool; and it put the map a whole group away from the
      * Common Course Reference it is a view OF. Listing it here is the only thing
      * that keeps the two together. */
-    { id: 'reference', label: 'Reference & Curation', tabs: ['unified-courses', 'skyview', 'canonical-subj4', 'coci-lookup', 'cip-crosswalk', 'credential-reference', 'map-data-quality', 'exhibit-adoption', 'tmc-builder', 'pipeline', 'our-process'] },
+    { id: 'reference', label: 'Reference & Curation', tabs: ['unified-courses', 'skyview', 'canonical-subj4', 'coci-lookup', 'program-requirements', 'cip-crosswalk', 'credential-reference', 'map-data-quality', 'exhibit-adoption', 'tmc-builder', 'pipeline', 'our-process'] },
     { id: 'sierra', label: 'Sierra & Team Tools', tabs: ['chatbot', 'sierra-training', 'map-users', 'governance', 'team-phrases', 'knowledge-base', 'letters'] },
     /* Share — the external launchers, and a REAL group since 2026-08-15.
      *

@@ -4,6 +4,8 @@ date: 2026-10-04
 session: 328 (SkyLadder)
 tags: [handoff, program-requirements-harvest, cpl-pathways, sierra, college-identity, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_332_handoff.md
 ---
 
 # You are Session 329

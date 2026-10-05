@@ -31,6 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 37 (S331 checkpoint, 2026-10-05, SHEET_ID 2026-10-05-open-asks-37): sheet 36 is answered. One card:
+whether to send the request for Cerritos's high school list, now that reads 7-12 (S331) tried every public route
+(CATEMA, CTE Course Connect, the CCAP page, BoardDocs, DualEnroll, the archive) and the draft carries what they found.
+Published at https://claude.ai/artifact/HNF6zXcqeCS5LRLYLB3x2F (capabilities db + comments).
+
 Sheet 36 (S330, 2026-10-04, SHEET_ID 2026-10-04-open-asks-36): sheet 35 is answered (21:43Z). Two cards
 from Cerritos reads 4 and 5 (#1859): paste the procedure record's second version (the connector timed out
 at 60 s and wrote nothing, read back), and whether to send the drafted request for Cerritos's high school
@@ -213,8 +218,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-36.html')
-SHEET_ID = '2026-10-04-open-asks-36'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-37.html')
+SHEET_ID = '2026-10-05-open-asks-37'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -683,8 +688,22 @@ def _receipt_update(rel):
 
 SQL_V2 = _receipt_update('kb/receipts/program_source_registry_procedure_2026-10-04_s330.sql')
 
-# Sheet 36 card 2: the request, held for Sam (outward). House voice: CLAUDE.md, Naming & terminology.
-REQUEST_DRAFT = "Subject: Cerritos College high school articulation agreements\n\nGood afternoon,\n\nThe CPL Initiative at the California Community Colleges Chancellor's Office is mapping one pathway at Cerritos College, from high school through the Field Ironworker Supervision bachelor's degree, so that a student can see which earlier learning counts toward each award. Cerritos's 2026-27 catalog and its Petition for Credit by Examination for Articulated High School Course explain how a student earns credit for an articulated course, and the pathway cites both.\n\nWe could not find the current list of articulated high school courses. The Technology division's page directs readers to Statewide Career Pathways, and that site is no longer online. Downey Unified's June 2023 board presentation maps the Columbus High School welding pathway to WELD 160 and WELD 100, but it does not say whether students earn that credit through articulation or through dual enrollment.\n\nThe agreements are Cerritos's to keep and to publish as it chooses. If your office can share the current list, or the welding agreement with Downey Unified, we will show it on the pathway with Cerritos named as the source.\n\nThank you for considering it.\n\n[Name]\nMAP team, CPL Initiative\nCalifornia Community Colleges Chancellor's Office"
+# Sheet 37's card: the request, held for Sam (outward). House voice: CLAUDE.md, Naming & terminology.
+# Revised S331 for reads 7-12: the 2016 list, Columbus High's two courses, the CCAP partnership.
+REQUEST_DRAFT = ("Subject: Cerritos College high school articulation agreements\n\nGood afternoon,\n\n"
+    "The CPL Initiative at the California Community Colleges Chancellor's Office is mapping one pathway at Cerritos "
+    "College, from high school through the Field Ironworker Supervision bachelor's degree, so that a student can see "
+    "which earlier learning counts toward each award. Cerritos's 2026-27 catalog and its Petition for Credit by "
+    "Examination for Articulated High School Course explain how a student earns credit for an articulated course, "
+    "and the pathway cites both.\n\n"
+    "The most recent list of Cerritos's high school agreements we could find is the Statewide Career Pathways list "
+    "of March 2016, which holds 57 agreements. Columbus High School now offers Welding and Materials Joining I and "
+    "a capstone course, and Downey Unified describes the pathway as equivalent to WELD 100 Welding Fundamentals. "
+    "Columbus High is also one of Cerritos's CCAP partner schools.\n\n"
+    "The agreements are Cerritos's to keep and to publish as it chooses. If your office can share the current list, "
+    "or tell us whether Columbus High's welding students earn Cerritos credit through an articulation agreement or "
+    "through CCAP, we will show it on the pathway with Cerritos named as the source.\n\n"
+    "Thank you for considering it.\n\n[Name]\nMAP team, CPL Initiative\nCalifornia Community Colleges Chancellor's Office")
 
 
 
@@ -838,6 +857,43 @@ def items():
     # session with no paste (v3, 00:1xZ). The harvest lane records both; no card remains.
     # Sheet 36's card 3 (the Ironworker film, draft v1) left with Sam's ruling in chat (2026-10-04 23:42Z):
     # "Video is excellent!" The film README and the harvest lane record it.
+
+    # Sheet 37 (S331): the one open ask. Sam's sheet 36 card 2 held the request while sessions tried other
+    # routes ("lets work together to see if we ca find these another way and close the gap"); reads 7-12
+    # tried them, and the procedure record (v4) names each.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Send the request for Cerritos's high school list?",
+        'ref': 'program-requirements-harvest NEEDS SAM · Cerritos procedure record v4 · '
+               'kb/program_requirements_pilot/cerritos_hs_agreements_2016.json',
+        'facts': (
+            "<p>You asked us to find Cerritos's list of articulated high school courses another way before "
+            "asking the college. Six more runner reads (12 in all) tried every public route we could find. "
+            "Cerritos is not a CATEMA college. Its agreement search moved twice and is gone both times: "
+            "<code>hsarticulation.cerritos.edu</code> and <code>cerritos.ctecourseconnect.com</code> no longer "
+            "resolve, and the archive holds no copy. Its board agendas sit on BoardDocs, which bars readers; "
+            "its CCAP enrollment runs on DualEnroll, a sign-in page.</p>"
+            "<p>What the reads did find is now on the ladder. The archive kept the old statewide database's "
+            "full list from March 2016: 57 Cerritos agreements with 27 high schools and ROPs, none for "
+            "welding. Columbus High is one of Downey Unified's three CCAP partner schools. Its welding pathway "
+            "now runs Welding and Materials Joining I and a Capstone, with OSHA 10 and OSHA 30 certifications, "
+            "and names Cerritos as its partner college; Downey's 2023 post calls it equivalent to WELD 100. "
+            "Downey teachers teach it, so the credit most likely comes by articulation and Credit by Exam. "
+            "No page says so.</p>"
+            "<p>The draft, revised for what the reads found (the MAP team sends it):</p>"
+            "<pre>" + m.E(REQUEST_DRAFT) + "</pre>"),
+        'why': "Your rule (sheet 33 card 5): the agent exhausts its own reading before anyone drafts a request. "
+               "The procedure record now names every route and what each answered, so the ladder's last "
+               "To confirm line about high school credit waits on Cerritos itself.",
+        'rec': "<strong>Send it:</strong> the MAP team sends the draft to Cerritos's Educational Partnerships "
+               "&amp; Programs office, and the answer goes on the procedure record and the ladder with Cerritos "
+               "named as the source. <em>It might be wrong if</em> you know someone at Cerritos or Downey "
+               "Unified who answers faster; then name them and the draft goes to that person.",
+        'chips': chips(('Send it', 'send'), ('Hold it', 'hold'), CH_LATER),
+        'evidence': [live('2026-10-05', "Cerritos's procedure record v4 on program_source_registry "
+                          "(md5 290ad739ec4acbe46b39793ac5642046), runner reads 7-12, runs 37247286802 "
+                          "through 37250119275")],
+    })
 
     return I
 

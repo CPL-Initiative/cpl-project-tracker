@@ -4,6 +4,8 @@ date: 2026-10-04
 session: 323 (SkyHarvest)
 tags: [handoff, program-requirements-harvest, pilot, edge-function, extraction]
 status: current
+superseded: true
+superseded_by: session_332_handoff.md
 ---
 
 # You are Session 324

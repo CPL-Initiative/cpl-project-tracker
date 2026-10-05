@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 519,
+   "count": 520,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3253,6 +3253,26 @@
      "title": "A screen and its export must share a scope, not a shape",
      "type": "methodology",
      "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-10-05",
+     "governs": [
+      "kb/_college_page_read.py",
+      "kb/college_reads/cerritos_ironworker_ladder_read7.json",
+      "kb/college_reads/cerritos_ironworker_ladder_read11.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-search-result-is-a-lead-not-a-source.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "college-page-read",
+      "program-requirements",
+      "web-search",
+      "provenance"
+     ],
+     "title": "A search result is a lead, not a source",
+     "type": "methodology",
+     "updated": "2026-10-05"
     },
     {
      "created": "2026-08-22",
@@ -14816,8 +14836,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 302,
+   "count": 303,
    "docs": [
+    {
+     "created": "2026-10-05",
+     "governs": [],
+     "n": 332,
+     "path": "docs/session_332_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-pathways",
+      "college-page-read",
+      "harvest-tab",
+      "decision-sheet"
+     ],
+     "title": "the harvest tab in COBI, Cerritos's high school list by every public route, sheet 37",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-04",
      "governs": [],
@@ -19959,5 +19997,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1042
+ "total": 1044
 }

@@ -4,6 +4,8 @@ date: 2026-10-04
 session: 330 (SkyRoutine)
 tags: [handoff, program-requirements-harvest, cpl-pathways, college-page-read, ironworker-film, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_332_handoff.md
 ---
 
 # You are Session 331

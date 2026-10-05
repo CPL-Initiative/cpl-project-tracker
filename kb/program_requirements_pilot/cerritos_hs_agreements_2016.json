@@ -1,0 +1,474 @@
+{
+ "_readme": "Cerritos College's high school and ROP articulation agreements as the Statewide Career Pathways database listed them on 2016-03-14, the last public list (the database's domain is now for sale; Cerritos's later agreement search on CTE Course Connect no longer resolves). Read by the college page reader's rows step from the Internet Archive's capture (read 10, S331). A dated record: it shows what Cerritos had articulated by 2016, not today's list. No row is a welding agreement or names Columbus High.",
+ "college": "Cerritos College",
+ "as_of": "2016-03-14",
+ "source": "https://web.archive.org/web/20160314075122/http://statewidepathways.org/showagreements.php?careerpathid=0&go=show+agreements",
+ "read": {
+  "run": "37248993313",
+  "plan": "kb/college_reads/cerritos_ironworker_ladder_read10.json",
+  "date": "2026-10-05"
+ },
+ "counts": {
+  "agreements": 57,
+  "schools": 27,
+  "welding": 0
+ },
+ "agreements": [
+  {
+   "school": "Downey High (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "09-Sep-2015",
+   "template": "Aerospace Engineering (PLTW)",
+   "cerritos_course": "ENGT 104: Principles of Aerospace Design Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3003.pdf"
+  },
+  {
+   "school": "John Muir High (Pasadena)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "03-Nov-2015",
+   "template": "Aerospace Engineering (PLTW)",
+   "cerritos_course": "ENGT 104: Principles of Aerospace Design Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3068.pdf"
+  },
+  {
+   "school": "Downey High (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "27-Jul-2015",
+   "template": "Civil Engineering and Architecture (PLTW)",
+   "cerritos_course": "ARCH 101: Introduction to Civil Engineering and Architecture",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3004.pdf"
+  },
+  {
+   "school": "John H. Glenn High (Norwalk)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-Jan-2016",
+   "template": "Civil Engineering and Architecture (PLTW)",
+   "cerritos_course": "ARCH 101: Introduction to Civil Engineering and Architecture",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3075.pdf"
+  },
+  {
+   "school": "Norwalk High (Norwalk)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "08-Jan-2016",
+   "template": "Civil Engineering and Architecture (PLTW)",
+   "cerritos_course": "ARCH 101: Introduction to Civil Engineering and Architecture",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3080.pdf"
+  },
+  {
+   "school": "Lynwood High (Lynwood)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "19-Oct-2015",
+   "template": "Computer Aided Manufacturing (CAM) / Machining",
+   "cerritos_course": "MTT 180: Robotics for CNC Machines",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3035.pdf"
+  },
+  {
+   "school": "Marco Antonio Firebaugh High (Lynwood)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "27-Oct-2015",
+   "template": "Computer Aided Manufacturing (CAM) / Machining",
+   "cerritos_course": "MTT 180: Robotics for CNC Machines",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3052.pdf"
+  },
+  {
+   "school": "Paramount High Senior Campus (Paramount)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-Oct-2015",
+   "template": "Computer Aided Manufacturing (CAM) / Machining",
+   "cerritos_course": "MTT 180: Robotics for CNC Machines",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3040.pdf"
+  },
+  {
+   "school": "El Rancho High (Pico Rivera)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "22-Nov-2011",
+   "template": "Culinary Arts / Intro to Culinary Arts / Basic Food Production / Intro to Foodservice & Hospitality",
+   "cerritos_course": "CA 101: Introduction to Fool Service, Safety and Sanitation",
+   "agreement": "http://statewidepathways.org/agreements/agreement_1932.pdf"
+  },
+  {
+   "school": "Tri Cities ROP (Whittier)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "22-Nov-2011",
+   "template": "Culinary Arts / Intro to Culinary Arts / Basic Food Production / Intro to Foodservice & Hospitality",
+   "cerritos_course": "CA 101: Introduction to Food Services, Safety and Sanitation",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2758.pdf"
+  },
+  {
+   "school": "Warren High (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "13-Dec-2010",
+   "template": "Culinary Arts / Intro to Culinary Arts / Basic Food Production / Intro to Foodservice & Hospitality",
+   "cerritos_course": "CA 101: Introduction to Food Service, Safety and Sanitation, and CA 152: Introduction to Commercial Food",
+   "agreement": "http://statewidepathways.org/agreements/agreement_876.pdf"
+  },
+  {
+   "school": "North Orange County ROP (Anaheim)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "11-Sep-2012",
+   "template": "Engineering Fundamentals",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2755.pdf"
+  },
+  {
+   "school": "Downey High (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "06-Aug-2015",
+   "template": "Introduction to Accounting (Bookkeeping)",
+   "cerritos_course": "FIN 125: Personal Finance",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3002.pdf"
+  },
+  {
+   "school": "Warren High (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "04-Apr-2011",
+   "template": "Introduction to Accounting (Bookkeeping)",
+   "cerritos_course": "Accounting 100: Introduction to Accounting",
+   "agreement": "http://statewidepathways.org/agreements/agreement_1814.pdf"
+  },
+  {
+   "school": "Centennial High (Corona)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "17-Aug-2010",
+   "template": "Introduction to Automotive Technology",
+   "cerritos_course": "AUTO 100: Automotive Maintenance and Operation",
+   "agreement": "http://statewidepathways.org/agreements/agreement_1404.pdf"
+  },
+  {
+   "school": "Dominguez High (Compton)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "01-Jul-2010",
+   "template": "Introduction to Automotive Technology",
+   "cerritos_course": "AUTO 100: Automotive Maintenance and Operation",
+   "agreement": "http://statewidepathways.org/agreements/agreement_1426.pdf"
+  },
+  {
+   "school": "North Orange County ROP (Anaheim)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "27-Sep-2011",
+   "template": "Introduction to Automotive Technology",
+   "cerritos_course": "Auto 100: Automotive Maintenance and Operation",
+   "agreement": "http://statewidepathways.org/agreements/agreement_1930.pdf"
+  },
+  {
+   "school": "Southeast Academy High/ROP (Norwalk)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "03-Mar-2011",
+   "template": "Introduction to Automotive Technology",
+   "cerritos_course": "AUTO 100: Automotive Maintenance and Operation",
+   "agreement": "http://statewidepathways.org/agreements/agreement_1523.pdf"
+  },
+  {
+   "school": "Southeast Academy High/ROP (Norwalk)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "03-Mar-2011",
+   "template": "Introduction to Automotive Technology",
+   "cerritos_course": "Auto 100: Automotive Maintenance and Operation",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2756.pdf"
+  },
+  {
+   "school": "Tri Cities ROP (Whittier)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "08-Feb-2012",
+   "template": "Introduction to Automotive Technology",
+   "cerritos_course": "AUTO 100: Automotive Maintenance and Operation",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2085.pdf"
+  },
+  {
+   "school": "John Muir High (Pasadena)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "14-May-2015",
+   "template": "Introduction to Electricity and Electronics",
+   "cerritos_course": "ET 102: Electronics for Engineering Technologiests",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2959.pdf"
+  },
+  {
+   "school": "Artesia High (Lakewood)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "22-Jun-2015",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3010.pdf"
+  },
+  {
+   "school": "Cerritos High (Cerritos)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "29-May-2015",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2965.pdf"
+  },
+  {
+   "school": "Diamond Bar High (Diamond Bar)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "17-Mar-2014",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2796.pdf"
+  },
+  {
+   "school": "Downey High (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "09-Sep-2015",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3005.pdf"
+  },
+  {
+   "school": "John H. Glenn High (Norwalk)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-Jan-2016",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3076.pdf"
+  },
+  {
+   "school": "John Muir High (Pasadena)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-May-2015",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2960.pdf"
+  },
+  {
+   "school": "La Mirada High (La Mirada)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "08-Jan-2016",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3078.pdf"
+  },
+  {
+   "school": "Lynwood High (Lynwood)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "14-Oct-2015",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3023.pdf"
+  },
+  {
+   "school": "Marco Antonio Firebaugh High (Lynwood)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-Oct-2015",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3025.pdf"
+  },
+  {
+   "school": "Norwalk High (Norwalk)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "08-Jan-2016",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3081.pdf"
+  },
+  {
+   "school": "Paramount High Senior Campus (Paramount)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-Oct-2015",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3042.pdf"
+  },
+  {
+   "school": "Paramount High West Campus (Paramount)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-Oct-2015",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3041.pdf"
+  },
+  {
+   "school": "Richard Gahr High (Cerritos)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "24-Feb-2016",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3110.pdf"
+  },
+  {
+   "school": "St. John Bosco High (Bellflower)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "14-Jan-2016",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3084.pdf"
+  },
+  {
+   "school": "Warren High (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "04-Sep-2015",
+   "template": "Introduction to Engineering Design (PLTW)",
+   "cerritos_course": "ENGT 103: Introduction to Engineering Design Using Inventor",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3006.pdf"
+  },
+  {
+   "school": "Southeast Academy High/ROP (Norwalk)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "19-Mar-2013",
+   "template": "Medical Terminology",
+   "cerritos_course": "PHAR 50: Pharmaceutics and PHAR 60: Pharmcy Intrtouction",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2757.pdf"
+  },
+  {
+   "school": "Artesia High (Lakewood)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "29-Oct-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3109.pdf"
+  },
+  {
+   "school": "Cerritos High (Cerritos)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "29-May-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2966.pdf"
+  },
+  {
+   "school": "Downey High (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "04-Sep-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2760.pdf"
+  },
+  {
+   "school": "John H. Glenn High (Norwalk)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-Jan-2016",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3077.pdf"
+  },
+  {
+   "school": "John Muir High (Pasadena)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "23-Jun-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2983.pdf"
+  },
+  {
+   "school": "La Mirada High (La Mirada)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "08-Jan-2016",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3079.pdf"
+  },
+  {
+   "school": "Lynwood High (Lynwood)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "14-Oct-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3024.pdf"
+  },
+  {
+   "school": "Marco Antonio Firebaugh High (Lynwood)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "13-Oct-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3036.pdf"
+  },
+  {
+   "school": "Norwalk High (Norwalk)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "08-Jan-2016",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3082.pdf"
+  },
+  {
+   "school": "Paramount High Senior Campus (Paramount)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-Oct-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3044.pdf"
+  },
+  {
+   "school": "Paramount High West Campus (Paramount)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "07-Oct-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3043.pdf"
+  },
+  {
+   "school": "Richard Gahr High (Cerritos)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "23-Oct-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3111.pdf"
+  },
+  {
+   "school": "St. John Bosco High (Bellflower)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "12-Jan-2016",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_3085.pdf"
+  },
+  {
+   "school": "Warren High (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "04-Sep-2015",
+   "template": "Principles of Engineering (PLTW)",
+   "cerritos_course": "ET 101: Principles of Engineering Technology",
+   "agreement": "http://statewidepathways.org/agreements/agreement_1562.pdf"
+  },
+  {
+   "school": "Los Angeles County ROP (Downey)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "18-Oct-2011",
+   "template": "Video Field Production",
+   "cerritos_course": "Film 101",
+   "agreement": "http://statewidepathways.org/agreements/agreement_1929.pdf"
+  },
+  {
+   "school": "Centennial High (Bakersfield)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "11-Aug-2014",
+   "template": "Woodworking Tools and Machinery",
+   "cerritos_course": "WMT 101: Introduction to Woodworking",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2842.pdf"
+  },
+  {
+   "school": "Corona High (Corona)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "11-Aug-2014",
+   "template": "Woodworking Tools and Machinery",
+   "cerritos_course": "WMT 101: Introduction to Woodworking",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2843.pdf"
+  },
+  {
+   "school": "Fontana High (Fontana)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "15-Mar-2010",
+   "template": "Woodworking Tools and Machinery",
+   "cerritos_course": "WMT 148: Furniture Making and Manufacturing",
+   "agreement": "http://statewidepathways.org/agreements/agreement_935.pdf"
+  },
+  {
+   "school": "Norco High (Norco)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "11-Aug-2014",
+   "template": "Woodworking Tools and Machinery",
+   "cerritos_course": "WMT 101: Introduction to Woodworking",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2844.pdf"
+  },
+  {
+   "school": "Ontario High (Ontario)",
+   "college": "Cerritos College (Norwalk)",
+   "approved": "16-Jul-2013",
+   "template": "Woodworking Tools and Machinery",
+   "cerritos_course": "WMt 148: Furniture Making and Manufacturing",
+   "agreement": "http://statewidepathways.org/agreements/agreement_2759.pdf"
+  }
+ ]
+}
