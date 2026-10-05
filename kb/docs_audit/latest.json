@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1058,
-    "bytes": 11128913,
+    "bytes": 11130210,
     "over_budget": 6,
     "handoff_max": 333,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 118,
-        "bytes": 3347668,
+        "bytes": 3348896,
         "over": 3
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 34,
-        "bytes": 301565,
+        "bytes": 301579,
         "over": 1
       },
       "handoff": {
         "files": 304,
-        "bytes": 2528012,
+        "bytes": 2528067,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 56
     },
     "vault": {
-      "files": 3621,
-      "bytes": 1738273279,
-      "heavy_bytes": 787050610,
-      "heavy_share": 0.453,
+      "files": 3631,
+      "bytes": 1745756838,
+      "heavy_bytes": 787340376,
+      "heavy_share": 0.451,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",
@@ -515,10 +515,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 25632785,
+        "bytes": 25922183,
         "kind": "dir"
       },
-      "message": "directory totals 25,632,785 B inside the vault"
+      "message": "directory totals 25,922,183 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -675,10 +675,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12356645,
+        "bytes": 12356972,
         "kind": "file"
       },
-      "message": "12,356,645 B single file inside the vault"
+      "message": "12,356,972 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -775,10 +775,10 @@
       "fixable": false,
       "path": "kb/coci_articulations.json",
       "detail": {
-        "bytes": 7521094,
+        "bytes": 7521136,
         "kind": "file"
       },
-      "message": "7,521,094 B single file inside the vault"
+      "message": "7,521,136 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -815,10 +815,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715709,
+        "bytes": 6715708,
         "kind": "file"
       },
-      "message": "6,715,709 B single file inside the vault"
+      "message": "6,715,708 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

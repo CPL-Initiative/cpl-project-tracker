@@ -248,6 +248,13 @@ FIXTURES = {
                                   '{"Ext & Review": {"unified_title": "Ironworker Apprenticeship \u2014 OSHA 30/Extension Review"}}'),
     "p_fire_inspector_split": ('{"Fire Inspector 1C": [], "SFT Fire Inspector 1C": []}',
                                '{"Fire Inspector 1C": []}'),
+    # S333 (sheet 39): OSHA named more than one way as issuer, or a trainer as the OSHA 10 entry's issuer.
+    "p_osha_issuer_names":   ('{"OSHA 30 Card": [{"issuing_agency": "U.S. Department of Labor"}], '
+                              '"OSHA 10 \u2014 Outreach (10-hour)": [{"issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)"}], '
+                              '"OSHA 10-hour Construction Training Course": [{"issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)"}]}',
+                              '{"OSHA 30 Card": [{"issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)"}], '
+                              '"OSHA 10-hour Construction Training Course": [{"issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)", '
+                              '"training_agency": "Carpenters Training Committee for Northern California (CTCNC)"}]}'),
     "p_crr_zero_hours":      ('{"groups": [{"canonical": "Oral Radiology (0\u20132 units)"}]}',
                               '{"groups": [{"canonical": "Oral Radiology (2 units)"}]}'),
     "p_video_sample_unnarrated": ('{"scenes": [{"scene": "Targets", "text": "Each priority has a target."}]}',
