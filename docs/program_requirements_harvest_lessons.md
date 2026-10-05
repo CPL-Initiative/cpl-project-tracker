@@ -613,6 +613,27 @@ name.
 6a. **Then the reader opened the tab: 19 of 20.** The capture (#1871) now appends any panel whose id names outcomes, or that a tab labeled Outcomes, SLO or PLO opens, read one line per item when hidden. Mt. San Antonio's panel is `#outcomestextcontainer`; Vocational Nursing's came through a toggle (`#tgl0`). Its first run filed nothing: an escape written into the Python source of the in-page script became a real newline inside a JavaScript regex, the script threw on every page, and the run fell back to plain text that differed from the filed fixtures. The pilot guard now fails a tab or control character in the script and runs `node --check` on it; a mock CourseLeaf page in Chromium proved the fix before the next read. Each fixture took the new text only where everything before the appended tab matched the filed text byte for byte.
 6. **Prove a write in Postgres before anyone approves it.** The outcomes write is one guarded insert ... select per row (md5 of the record before). A read-only `select md5(jsonb_set(...)::text)` on one row returned the after md5 the loader computed, so the receipt's after state is shown before Sam's go.
 
+## S335 SkyKeel, 2026-10-05: drafts for the college, and Miramar's AUTO 156G traced to its source
+
+**What shipped.** Sam's sheet 32 card 2 (as proposed) collected the college's own differences as drafts on its harvest-tab row; the harvest-tab half is built. Program records gathers each college's college-owned gaps under its heading as *Drafts for the college*, with a composed draft to copy; Catalogs counts them and filters to colleges that have some; a record's own notes list only what the procedure owns (`tests/program_requirements.test.js` block 6c). The display builder gained `second_courses()`, a college-owned gap for a MAP articulation that names a course its recommendation does not; build `1cb75672ba6c` adds Miramar's two and nothing else (receipt `..._2026-10-05_1cb75672ba6c_delta.sql`, waiting on sheet 42 card 2). Sheet 42 card 3 asks when drafts show on My College, the college's own page.
+
+**Lessons.**
+1. **Trace a data finding to the row before raising it with a college.** Eight handoffs carried "raise Miramar's AUTO 156G articulations (EMT, Driver Operator 1B)". MAP's student-grain table (`map_college_cr_unit`) puts both exhibits on EMGM-106 and FIPT-321P at 0.25 hours, the versions students received. The AUTO 156G link sits in MAP's articulated-exhibit view on the 0.3-hour versions only, each listing AUTO 156G beside the right course; `_seed_coci_articulations.py` reads one course per view row, so the link is MAP's, and no credit flowed through it. The draft says exactly that, which a college can check in a minute; "AUTO 156G carries EMT credit" would have sent them looking for awards that do not exist.
+2. **A word-overlap test needs a subject test beside it.** Over the whole feed, "the recommendation shares no word with the course title, and another course at the college does" found 18 rows at 7 colleges, mostly right: NCCER's *Printreading and Welding Symbols* on Blueprint Reading, FAA airframe courses carrying each other's titles. Requiring the stray course to sit in another subject than the matching one left Miramar's two and one San Bernardino Valley row. Records shared by several colleges are skipped: a merged record carries other colleges' course codes (the 2026-09-29 memory row), which is where `chatbox_peer_articulations` reads noisy too.
+3. **Isolate a builder change by building without it.** With `second_courses` stubbed to empty, the build reproduced the live stamp `799bfb9a7dbf` exactly, so the new stamp's only cause is the new gaps; a path diff of the two builds confirmed two paths (`build` on 20 rows, `gaps` on one).
+4. **A college-facing surface and a team decision can pull apart inside one ruling.** Sheet 32 card 2 put drafts on My College *and* said nothing goes to a college on its own. My College is the college's page, so the two halves conflict there; the harvest tab half was built and the other went back to Sam as a card instead of being guessed.
+
+**Moved from the lane (S335 compaction), verbatim.**
+
+**Sam's calls, ruled (sheet 23, 2026-10-03 15:05Z, "As proposed", his own pick):** the catalog of the
+academic year wins on disagreement (CMS and COCI values kept and shown); pilot at Cerritos, Mt. San Antonio,
+Miramar, Riverside City and a census-picked PDF-catalog college; a named MAP team member checks the 20-program
+sample, with articulation officers invited; sequencing in the pilot only from Miramar's PPM map; yes to reading
+college websites from GitHub runners on a slow schedule that names the CPL Initiative; model calls through a
+Supabase Edge Function; nothing public until a college's records pass all four checks, first public use through
+Governance; the Tech Center asked for ROE field definitions when convenient. Sheets 25 and 26 named the rest:
+Riverside City's Culinary Arts certificate, Sam checks the sample himself, and Sam asks the Tech Center.
+
 **Moved from the lane (S334 compaction), verbatim.**
 
 **The census** (`kb/_program_source_census.py`,

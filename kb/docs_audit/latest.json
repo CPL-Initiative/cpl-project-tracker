@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1062,
-    "bytes": 11159214,
+    "bytes": 11163307,
     "over_budget": 6,
     "handoff_max": 335,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 78,
-        "bytes": 2264696,
+        "bytes": 2268554,
         "over": 2
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 34,
-        "bytes": 301063,
+        "bytes": 301298,
         "over": 1
       },
       "handoff": {
@@ -61,9 +61,9 @@
       "vault_heavy_path": 56
     },
     "vault": {
-      "files": 3647,
-      "bytes": 1746228695,
-      "heavy_bytes": 787341032,
+      "files": 3650,
+      "bytes": 1746471778,
+      "heavy_bytes": 787341033,
       "heavy_share": 0.451,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -815,10 +815,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715708,
+        "bytes": 6715709,
         "kind": "file"
       },
-      "message": "6,715,708 B single file inside the vault"
+      "message": "6,715,709 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

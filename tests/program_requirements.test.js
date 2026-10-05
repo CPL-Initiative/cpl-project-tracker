@@ -269,6 +269,51 @@ block("(6b)", function () {
   });
 });
 
+// ── (6c) Drafts for the college (Sam, open-asks sheet 32 card 2, as proposed) ──
+// A gap the college owns collects under the college as a draft the MAP team copies; a
+// gap the reading procedure owns stays with the record. The tab composes, never sends.
+block("(6c)", function () {
+  const { M, root, w } = ready();
+  const MIRA = JSON.parse(JSON.stringify(IRONWORKER));
+  MIRA.college = "San Diego Miramar College"; MIRA.control_number = "35030"; MIRA.program_title = "Entrepreneurship";
+  MIRA.display.gaps = [
+    { kind: "MAP names a second course", owner: "college", where: "San Diego Miramar College's articulations in MAP",
+      text: "MAP lists AUTO 156G Engine and Related Systems on the EMT Certification articulation (0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training) beside EMGM 106, the course the recommendation names." },
+    { kind: "Catalog and state file differ", owner: "college", where: "state", text: "The catalog prints ECON C2002 for this program; the state's Program Course File does not list it." },
+    { kind: "Reader's note", owner: "procedure", where: "proc", text: "A note for the procedure only." }];
+  const records = [IRONWORKER, MIRA];
+  const d = M.collegeDrafts(records);
+  check("(6c) only college-owned gaps become drafts", Object.keys(d).length === 1 && d["San Diego Miramar College"].length === 2,
+    JSON.stringify(Object.keys(d)));
+  const t = M.draftText("San Diego Miramar College", d["San Diego Miramar College"]);
+  check("(6c) the draft names the college, the catalog year, the program and each item",
+    /San Diego Miramar College's 2026-27 catalog/.test(t) && /Entrepreneurship \(A\.S\. Degree, control number 35030\)/.test(t) &&
+    /AUTO 156G/.test(t) && /ECON C2002/.test(t) && /2 items for your review/.test(t), t);
+  check("(6c) the draft ends on a small ask, no bullets or bold", /\?$/.test(t) && !/^\s*[-*•]/m.test(t) && !/\*\*/.test(t), t);
+
+  M._state.registry = REGISTRY.concat([{ college: "San Diego Miramar College", catalog_url: "https://sdccd.curriqunet.com/",
+    catalog_year: "2026-2027", catalog_platform: "curriqunet", access_status: "ok", procedure: null }]);
+  M._state.records = records;
+  M._state.view = "records"; M._render();
+  const box = root.querySelector("details.prh-drafts");
+  check("(6c) Program records shows the drafts under the college", !!box && /Drafts for the college \(2\)/.test(box.textContent));
+  check("(6c) the drafts say the MAP team decides when to send", !!box && /The MAP team decides when to send/.test(box.textContent));
+  const ta = box && box.querySelector("textarea");
+  check("(6c) the draft is labeled and read-only", !!ta && ta.hasAttribute("readonly") &&
+    !!root.querySelector('label[for="' + ta.id + '"]') && /AUTO 156G/.test(ta.value));
+  const notes = Array.prototype.filter.call(root.querySelectorAll("details.prh-notes:not(.prh-drafts)"),
+    function (n) { return /AUTO 156G|ECON C2002/.test(n.textContent); });
+  check("(6c) a college's draft is not listed among the procedure's notes", notes.length === 0);
+  const copy = box && Array.prototype.filter.call(box.querySelectorAll("button"), function (b) { return /Copy the draft/.test(b.textContent); })[0];
+  check("(6c) a Copy the draft control is offered", !!copy);
+  if (copy) { copy.click(); check("(6c) copying says what happened", /Copied|Selected/.test(box.textContent)); }
+
+  M._state.view = "catalogs"; M._state.show = "drafts"; M._render();
+  check("(6c) Catalogs filters to colleges with drafts and counts them",
+    /Showing 1 of 5/.test(root.textContent) && /2 drafts for the college/.test(root.textContent), root.textContent.slice(0, 600));
+  M._state.show = "all";
+});
+
 // ── (7) Read-only, tokens, words ──────────────────────────────────────────
 block("(7)", function () {
   check("(7) the tab writes nothing", !/method\s*:\s*["'](POST|PATCH|PUT|DELETE)/i.test(SRC) && !/\/rpc\//.test(SRC));

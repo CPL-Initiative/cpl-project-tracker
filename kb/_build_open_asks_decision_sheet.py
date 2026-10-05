@@ -31,11 +31,19 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 42 (S335, 2026-10-05, SHEET_ID 2026-10-05-open-asks-42): sheet 41 carried no replies. Card 1 is its one
+card, unchanged (all 20 records still read as before, 2026-10-05). Card 2: the display build 1cb75672ba6c, which adds
+the two drafts for Miramar (MAP names AUTO 156G beside EMGM 106 and FIPT 321P) and nothing else. Card 3: the
+My College half of sheet 32 card 2, since My College is the college's own page and a draft there reaches the college
+before the MAP team sends it.
+Published at https://claude.ai/artifact/HqVTZRKnuSqfUEpmm3VdSX (capabilities db + comments).
+
 Sheet 41 (S334, 2026-10-05, SHEET_ID 2026-10-05-open-asks-41): sheet 40's one card, restated after the capture
 read Mt. San Antonio's hidden Outcomes tab (#1871): the same guarded write, now carrying outcomes on 19 of the 20
 records (all 20 still read as before, 2026-10-05). Sheet 40 carried no replies and is superseded by 41.
 Published at https://claude.ai/artifact/RhDo9xjscquPDDMHsYGz1V (capabilities db + comments); sheet 40's artifact
-was republished titled "Open Asks Sheet 40 (superseded by 41)".
+was republished titled "Open Asks Sheet 40 (superseded by 41)". Sheet 41 carried no replies; S335 republished it titled
+"Open Asks Sheet 41 (superseded by 42)" (https://claude.ai/artifact/HqVTZRKnuSqfUEpmm3VdSX).
 
 Sheet 40 (S334, 2026-10-05, SHEET_ID 2026-10-05-open-asks-40): sheet 39 is answered and carried out. One card:
 the guarded write that puts record shape 3's outcomes on the 20 live program records (all 20 read as before).
@@ -233,8 +241,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-41.html')
-SHEET_ID = '2026-10-05-open-asks-41'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-42.html')
+SHEET_ID = '2026-10-05-open-asks-42'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -972,6 +980,54 @@ def items():
                           "state before outcomes (20 of 20 read before, re-read after Mt. San Antonio's outcomes were "
                           "filed), and a read-only jsonb_set dry run on Cerritos 42158 returning the after md5 the "
                           "loader computes")],
+    })
+
+    # Sheet 42 (S335): the drafts for the college, sheet 32 card 2's harvest-tab half, built.
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "Write the display build that adds Miramar's two drafts?",
+        'ref': 'program-requirements-harvest NEEDS SAM · '
+               'kb/receipts/program_requirement_records_display_2026-10-05_1cb75672ba6c_delta.sql · '
+               'kb/_build_roep_display.py second_courses',
+        'facts': (
+            "<p>Your sheet 32 card 2 sent the college's own differences to its row in the harvest tab as drafts, for "
+            "the MAP team to send. The Program records view now gathers them under each college with the text to copy, "
+            "and Catalogs can show only the colleges that have some. All five pilot colleges hold some, 26 today, each a "
+            "place where the catalog and the state's Program Course File list different courses.</p>"
+            "<p>The build adds two for Miramar. MAP's articulated-exhibit view lists AUTO 156G Engine and Related Systems "
+            "on the EMT Certification articulation (0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training) "
+            "beside EMGM 106, and on Driver Operator 1B (0.3 hours in Driver Operator - Pumping) beside FIPT 321P. "
+            "Students received both credits on EMGM 106 and FIPT 321P at 0.25 hours, so none came through AUTO 156G. "
+            "Across the whole feed the same test finds one other row, at San Bernardino Valley, outside the pilot.</p>"
+            "<p>The two builds differ in two places only: the build stamp on all 20 rows and the gaps on Miramar's "
+            "Entrepreneurship degree. Each statement changes a row only while it holds today's build, and a read-only "
+            "query returned the expected result on all 20.</p>"),
+        'why': "Rule 10: a write to a shared table waits on your go and carries a receipt that rolls it back.",
+        'rec': "<strong>Go:</strong> a session applies the receipt through <code>apply_migration</code> and reads all "
+               "20 rows back against the build. <em>It might be wrong if</em> Miramar's 0.3-hour versions are a "
+               "catalog year MAP keeps on purpose; then the draft asks the college, which is its purpose.",
+        'chips': chips(('Go', 'go'), CH_LATER),
+        'evidence': [live('2026-10-05', "md5(display::text) on all 20 rows against build 799bfb9a7dbf (20 of 20 "
+                          "match), a read-only jsonb_set run returning build 1cb75672ba6c's md5 on all 20, and "
+                          "map_college_cr_unit for Miramar's two exhibits (students on EMGM-106 and FIPT-321P only)")],
+    })
+
+    I.append({
+        'lane': 'program-requirements-harvest',
+        'title': "When do the drafts show on My College?",
+        'ref': 'program-requirements-harvest NEEDS SAM · my-college-action-page · college_briefing.js',
+        'facts': (
+            "<p>Your sheet 32 card 2 put the drafts in two places: the college's row in the harvest tab, and its "
+            "My College to-dos, with the MAP team deciding when to send. The harvest tab half is built.</p>"
+            "<p>My College is the college's own page. A college that opens it would read a draft there before the MAP "
+            "team sends anything. The same card says <em>nothing goes to a college on its own</em>.</p>"),
+        'why': "The two halves of your answer pull against each other on the college's own page.",
+        'rec': "<strong>Once sent:</strong> My College lists an item after the MAP team has sent it, so the college "
+               "reads there what it already heard from the team. That needs a record of what was sent, which a later "
+               "session proposes on its own card. <em>It might be wrong if</em> you want colleges to see the open "
+               "items first; then My College shows them now, marked for review.",
+        'chips': chips(('Once sent', 'once-sent'), ('Show them now', 'now'), CH_LATER),
+        'evidence': [policy()],
     })
 
     return I
