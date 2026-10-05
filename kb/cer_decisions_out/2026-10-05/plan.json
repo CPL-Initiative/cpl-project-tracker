@@ -1,0 +1,16 @@
+{
+ "about": "Sam's verdict on open-asks sheet 38, card 3 ('Name Cerritos's Ext & Review exhibit in the CER?'): 'Name it'. Cerritos's credit-by-exam exhibit MAPCXA-E&R-1-001 (1.5 hours in OSHA 30/Extension Review, course IWAP 41.09) sits in the CER under its raw title, Ext & Review, unclassified (confidence 0.2). The new title follows the family Cerritos's other ironworker exhibits carry (Ironworker Apprenticeship — Post Tensioning 2, and the rest). One row: a unified_title_override, with no merge confirm because the new title matches no existing key. The issuer stays as Sam set it (his issuing_agency_override row, California Community Colleges). After the commit, cred-rename-apply.yml applies the rename and keeps Ext & Review as an alias.",
+ "ruling": "Sam Lee, open-asks sheet 38 (2026-10-05-open-asks-38) card 3: 'name' (replies store, 2026-10-05T06:43:52Z)",
+ "cohort": "program-requirements-harvest-s332@bot",
+ "read_by_session": {
+  "at": "2026-10-05T07:00Z",
+  "how": "read-only selects through the Supabase MCP tool, S332: kb_curation holds one row for _CREDENTIAL_REVIEW::Ext & Review (issuing_agency_override, California Community Colleges, map@rccd.edu) and no unified_title_override; no unified_title_merge_confirm names Ext & Review or an Ironworker Apprenticeship title; credentials.json holds 'Ext & Review' and no key 'Ironworker Apprenticeship — OSHA 30/Extension Review'"
+ },
+ "rows": [
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Ext & Review",
+   "field": "unified_title_override",
+   "value": "Ironworker Apprenticeship — OSHA 30/Extension Review"
+  }
+ ]
+}

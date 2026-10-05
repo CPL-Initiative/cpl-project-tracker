@@ -1,7 +1,7 @@
 ---
 title: A liveness set must be able to contain what it judges — or it condemns by construction
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-10-05
 tags: [methodology, data-quality, identity, mid-lifecycle, measurement, pitfall]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -91,3 +91,14 @@ decided about them — before there is a diff to trigger on.
 And per Sam's ruling 5 (2026-09-05): **the dead are a worklist, never a silent
 drop.** Writing the removed set out with what was on it is what turned "175 dead"
 into "172 of these are C-IDs and should never have been here."
+
+## A second instance: identity read from a subset (2026-10-05, S332)
+
+The ROEP display took every course's identity from `kb/coci_minted_memberships.json`, a file that holds only
+identities with two or more members. A stand-alone course or a C-ID identity cannot appear there, so 140 of
+289 pilot course entries read as having no identity, and every lead keyed on identity (could adopt, for
+consideration) read as absent. Same rule as above, one level down: before reading "none" from a lookup, ask
+whether the source could hold the thing at all. The authority for "what identity does this course have
+today" is the set COBI renders from (`unified_courses_members.js`, rebuilt daily), not a file one stage
+upstream of it.
+

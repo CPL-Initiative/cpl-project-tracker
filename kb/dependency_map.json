@@ -1254,7 +1254,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 523,
+     "line": 536,
      "tabs": [
       "program-requirements"
      ]
@@ -1268,13 +1268,6 @@
      "tabs": [
       "unified-courses"
      ]
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 913
     },
     {
      "id": "script:prototype/ironworker_video/build.py",
@@ -20951,7 +20944,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 100,
+     "line": 109,
      "tabs": [
       "program-requirements"
      ]
@@ -20973,7 +20966,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 99,
+     "line": 108,
      "tabs": [
       "program-requirements"
      ]

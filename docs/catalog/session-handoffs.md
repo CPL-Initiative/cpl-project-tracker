@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-303 document(s).
+304 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 333 | [the display's identity from the live CCR, OSHA 30 on IWAP 41.09, sheets 37-38, apply_migration allow-listed](../session_333_handoff.md) | 2026-10-05 |
 | 332 | [the harvest tab in COBI, Cerritos's high school list by every public route, sheet 37](../session_332_handoff.md) | 2026-10-05 |
 | 331 | [sheet 36, the harvest tab's Procedures view, the film's review](../session_331_handoff.md) | 2026-10-04 |
 | 330 | [the Cerritos read 4, the procedure record paste, Sam's routine](../session_330_handoff.md) | 2026-10-04 |

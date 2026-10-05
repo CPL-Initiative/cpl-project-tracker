@@ -2254,7 +2254,7 @@
      ],
      "title": "A liveness set must be able to contain what it judges \u2014 or it condemns by construction",
      "type": "methodology",
-     "updated": "2026-09-05"
+     "updated": "2026-10-05"
     },
     {
      "created": "2026-10-02",
@@ -14836,8 +14836,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 303,
+   "count": 304,
    "docs": [
+    {
+     "created": "2026-10-05",
+     "governs": [],
+     "n": 333,
+     "path": "docs/session_333_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "roep-display",
+      "cpl-pathways",
+      "sierra",
+      "decision-sheet",
+      "permissions"
+     ],
+     "title": "the display's identity from the live CCR, OSHA 30 on IWAP 41.09, sheets 37-38, apply_migration allow-listed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-05",
      "governs": [],
@@ -19997,5 +20016,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1044
+ "total": 1045
 }

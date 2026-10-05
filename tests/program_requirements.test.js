@@ -157,6 +157,41 @@ block("(3)", function () {
   check("(3) a held request is counted", n.held === 1 && n.open === 1 && n.hosts === 2, JSON.stringify(n));
 });
 
+// ── (4b) Sierra docks at the top of the tab (Sam, sheet 38 card 5; "Sierra at the top") ──
+// The failure this guards: a second copy of the assistant, a mount that drops the
+// tab's surface, or a reader's choice to close her that does not hold.
+block("(4b)", function () {
+  const a = ready();
+  a.M._state.view = "catalogs"; a.M._render();
+  const sec = a.root.querySelector("details#prh-sierra");
+  check("(4b) Sierra's section is open until the reader closes it, as on My College", !!sec && sec.open === true);
+  check("(4b) without the chat module the section links to the CPL Assistant",
+    !!a.root.querySelector('#prh-sierra-mount a[href="#chatbot"]'));
+
+  const b = ready();
+  const calls = [];
+  b.w.CPL_CHAT = { mountInto: function (h, surface) {
+    calls.push([h.id, surface]);
+    h.innerHTML = '<textarea class="cplchat-input"></textarea>';
+  } };
+  b.M._state.view = "catalogs"; b.M._render();
+  check("(4b) the tab mounts the one assistant with its own surface",
+    calls.length === 1 && calls[0][0] === "prh-sierra-mount" && calls[0][1] === "program-requirements", JSON.stringify(calls));
+  check("(4b) her box is in the open section", !!b.root.querySelector("details#prh-sierra[open] .cplchat-input"));
+  const sec2 = b.root.querySelector("details#prh-sierra");
+  sec2.open = false;
+  sec2.dispatchEvent(new b.w.Event("toggle"));
+  check("(4b) closing her is remembered",
+    b.w.localStorage.getItem("cplProgramRequirements.sierra.v1") === "0");
+  b.M._render();
+  check("(4b) a re-render keeps her closed and mounts her again",
+    b.root.querySelector("details#prh-sierra").open === false && calls.length === 2);
+
+  const c = ready({ noStorage: true });
+  c.M._state.view = "catalogs"; c.M._render();
+  check("(4b) a private window still renders her section", !!c.root.querySelector("details#prh-sierra"));
+});
+
 // ── (4) Render: the four views ────────────────────────────────────────────
 block("(4)", function () {
   const { M, root, w } = ready();
@@ -165,7 +200,11 @@ block("(4)", function () {
   check("(4) Catalogs counts the registry", /Showing 4 of 4/.test(txt), txt.slice(0, 400));
   check("(4) a person's correction is shown on the row", /Corrected by Sam/.test(txt));
   check("(4) the Beta draft label is on the tab", /Beta draft/.test(txt));
-  check("(4) Sierra is one link to the CPL Assistant", !!root.querySelector('a[href="#chatbot"]'));
+  const sierraSec = root.querySelector("details#prh-sierra"), switcher = root.querySelector(".prh-switch");
+  check("(4) Sierra sits at the top of the tab, above the views (Sam: \"Sierra at the top\")",
+    !!sierraSec && !!switcher && !!(sierraSec.compareDocumentPosition(switcher) & 4));
+  check("(4) one way to reach her: no second Ask Sierra control in the header",
+    !root.querySelector("header button, header .prh-ask"));
 
   M._state.view = "records"; M._render();
   txt = root.textContent;
