@@ -62,6 +62,31 @@ check(b.ck("REAL ES 001") != b.ck("REAL ES 010"), "ck: REAL ES 001 and 010 stay 
 check(b.ck("ANATOMY 001") == b.ck("ANATOMY 1"), "ck: West LA's ANATOMY 001 is the state file's ANATOMY 1")
 check(b.ck("IWAP 40.07") != b.ck("IWAP 40.7"), "ck: a leading zero after the decimal point is kept")
 
+# 1b. identity: what the Common Course Reference shows today, every kind (S332). The build read
+# kb/coci_minted_memberships.json, which holds only identities with two or more members, so a
+# stand-alone course and every C-ID or CCN identity read as none: 140 of 289 course entries.
+check(not hasattr(b, "MEMBERSHIPS") and b.LIVE_MEMBERS.endswith("unified_courses_members.js"),
+      "identity reads the live members file, not the multi-member memberships file")
+fx_members = {"generated_at": "fixture", "colleges": ["Cerritos College", "American River College"], "members": {
+    "WELD M10CA": [{"c": 0, "n": "IWAP 41.09", "cn": "CCC1"}],
+    "STAT C1000": [{"c": 0, "n": "STAT C1000", "cn": "CCC2"}],
+    "MATH 110": [{"c": 0, "n": "STAT C1000", "cn": "CCC2"}, {"c": 1, "n": "STAT 300", "cn": "CCC5"}],
+    "INDT M1149": [{"c": 0, "n": "IWAP 40.63", "cn": "CCC3"}, {"c": 1, "n": "IW 104", "cn": "CCC4"}]}}
+fx_index = [["WELD M10CA", "OSHA 30/Extension Review", "IWAP", "Stand-Alone", 1.5],
+            ["STAT C1000", "Introduction to Statistics", "STAT", "CCN-ID", None],
+            ["MATH 110", "Introduction to Statistics", "STAT", "C-ID", 4],
+            ["INDT M1149", "IW - Structural Lead Hazard", "IWAP;IW", "Course", 2]]
+fx = b.Identity(fx_members, fx_index, minted={})
+check(fx.mid("Cerritos College", "IWAP 41.09", "CCC1") == "WELD M10CA", "identity: a stand-alone course has one")
+check(fx.mid("Cerritos College", "IWAP 40.63") == "INDT M1149", "identity: by college and code where no control number is given")
+check(fx.ids("Cerritos College", "STAT C1000", "CCC2") == ["STAT C1000", "MATH 110"],
+      "identity: a course under a CCN id and a C-ID holds both, CCN first")
+r = fx.ref("STAT C1000", fx.ids("Cerritos College", "STAT C1000", "CCC2"))
+check(r and r["kind"] == "CCN" and r["cid"] == "MATH 110", "identity: a CCN id carries the C-ID beside it (got %s)" % r)
+r = fx.ref("MATH 110")
+check(r and r["kind"] == "C-ID" and r["cid"] == "MATH 110", "identity: a C-ID identity shows its C-ID (got %s)" % r)
+check(fx.ref("NONE M0000") is None, "identity: an id the live set does not hold shows none")
+
 # 2. plan(): the mock-up's rules
 has = lambda c: c["code"].startswith("C")
 blocks = [
@@ -104,6 +129,16 @@ for p in progs:
 # 4. the figure the approved mock-up shows for the hand-built map
 iw = [p for p in progs if p["key"] == "cerritos_42158"]
 check(bool(iw) and iw[0]["display"]["figure"]["up_to"] == 31.5, "Cerritos Ironworker A.S. reads up to 31.5 units (the mock-up's figure)")
+
+# 4b. "already here" compares the CER's unified title too (S332): Riverside's CIS-27 holds
+# "CompTIA Security+ (CIS-27)", so CompTIA Security+ is not "for consideration" there.
+cy = [p for p in progs if p["key"] == "riverside_40061"]
+cis27 = cy[0]["display"]["courses"].get("CIS-27", {}) if cy else {}
+check(bool(cy) and "CompTIA Security+" not in [c["credential"] for c in cis27.get("consider") or []],
+      "Riverside CIS-27 does not list a credential it already holds as for consideration")
+iw63 = (iw[0]["display"]["courses"].get("IWAP 40.63") or {}) if iw else {}
+check(bool(iw63.get("identity")) and bool(iw63.get("adopt")),
+      "Cerritos IWAP 40.63 has its identity and American River's could-adopt lead")
 
 # 5. no student column anywhere in the read or the outputs
 read = json.load(open(b.MAP_READ))
