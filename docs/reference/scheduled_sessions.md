@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-10-04
+updated: 2026-10-05
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -31,10 +31,15 @@ is his standing preference there too.
 
 ## At the start
 
-1. **One session at a time.** `list_sessions` (claude-code-remote, `mine: true`).
-   If another session is still working (its `status_bucket` reads `working`), end
-   your turn in one line: a later write silently wins (CLAUDE.md, Flag
-   cross-impact). The next firing tries again.
+1. **One writer per queue.** `list_sessions` (claude-code-remote, `mine: true`),
+   and read the newest few. An older session on this queue that is still working
+   (`status_bucket` `working`) **or idle but still holding wakes** (a PR
+   subscription, a check-in, an artifact watch) gets one `send_message` before you
+   write anything, and the two agree on one writer. Idle is not inert: on
+   2026-10-05 an idle S335 woke on CI and on Sam's sheet replies and acted on the
+   same sheet as the S336 Sam had just opened (section *A signed-off session lets
+   go*). A scheduled session that finds another one working ends its turn in one
+   line instead: the next firing tries again.
 2. **Paused?** If the latest handoff carries a line `Scheduled run: paused —
    <reason>`, and nothing on the standing sheet has been answered since, end in
    one line. Sam lifts a pause by answering the sheet or by saying so.
@@ -74,6 +79,33 @@ and decide. Fable advises; a call that is Sam's stays Sam's.
 Run `/checkpoint` as always: the handoff names the next moniker, and the next
 firing claims it. Sign off with the opening line as CLAUDE.md asks, so Sam can
 also paste it by hand.
+
+## A signed-off session lets go (Sam, 2026-10-05)
+
+*"Looks like we have 2 sessions working on same thing—sorry—thought I closed one
+and started next. Please coordinate—probably due to my new routine that started
+this morning. I need to stay out of the way of the automation"* (Sam, about 21:17Z,
+in S335; vault braindump `braindump-2026-10-05-2117-two-sessions-one-queue.md`).
+
+What happened: S335 gave its sign-off line at 20:23Z and went idle on CI with a PR
+subscription, a check-in and two decision-sheet watches. Sam opened S336 from his
+phone at 20:25Z (the routine did not start it). When he pressed Complete on sheet
+42 at 20:59Z, the watch woke S335 and the comment reached S336 too; both acted on
+the same three cards until a message between them settled one writer at 21:12Z.
+The guarded receipts kept the duplicate write a no-op.
+
+So Sam never closes a session for the queue to stay safe. The session lets go:
+
+- **In the turn that gives the sign-off line,** unsubscribe every PR
+  (`unsubscribe_pr_activity`), delete every pending check-in (`delete_trigger` on
+  each `send_later`), and stop every artifact watch (`ArtifactComments`, `watch`
+  with `on: false`). The handoff names each item it let go: the open PRs with their
+  state, the sheet and its link, any deploy or run still in flight.
+- **After the line, no queue work.** A wake that still reaches the session (a
+  comment sent to Claude, a late event) goes to the newer session by
+  `send_message`, if one is running, and to Sam in one line otherwise.
+- **The next session picks the wakes up:** it subscribes to the PRs the handoff
+  names and watches the current sheet, so nothing waits unwatched between them.
 
 ## Pause rules
 

@@ -489,11 +489,10 @@ first day.** Do the remembering for them.
   (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it).
 - **RUN the checkpoint; do not ask for it (Sam, 2026-09-09).** *"you don't need
   permission to checkpoint. Just run it when needed and we can refresh it if we
-  stay in the session for more work."* Fire on Rule 9's commits-since-handoff
-  count, never on a feeling that the session is winding down — then just run it.
-  ⚠️ **Asking first is the failure.** One taken too early costs a re-run; one
-  deferred for an answer that never comes costs the session's reasoning. If work
-  continues after, checkpoint again.
+  stay in the session for more work."* Fire on Rule 9's commit count, never
+  on a feeling that the session is ending. ⚠️ **Asking first is the failure:** an
+  early one costs a re-run, a deferred one the session's reasoning. If work
+  continues, checkpoint again.
 - **Don't lock in (Sam, 2026-09-11).** *"I really don't like how you can get
   locked in a long process (30-60 mins or more) without a way to interrupt and
   get you a note--escape doesn't work when you're locked in on something."*
@@ -512,13 +511,16 @@ first day.** Do the remembering for them.
   quiet) — close with this line, filled in, on its own:
   > *Greetings, you are Sky**Next** (Session N+1), see Sky**You**'s handoff —
   > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.*
-  Sam's routine can start the session instead (2026-10-04):
-  [`scheduled_sessions`](docs/reference/scheduled_sessions.md). You **assign** the next moniker (one name, not a
+  You **assign** the next moniker (one name, not a
   menu) and it must be the one the handoff names. *"I just copy and paste the whole thing in the new session. If I
   need to change direction, I just add the new direction to the opening note"* —
-  so the line must stand alone, and nothing may follow it but the sign-off. The
-  path is what the new session reads; writing the number means looking at the
-  file, which catches the stale-number failure Rule 9 warns about.
+  so the line must stand alone, and nothing may follow it but the sign-off. Writing
+  the path means looking at the file, which catches Rule 9's stale number.
+  **Let go in the same turn (Sam, 2026-10-05: *"I need to stay out of the way of
+  the automation"*):** drop every PR subscription, check-in and artifact watch,
+  naming each in the handoff. **At start,** `list_sessions`; agree one writer with
+  an older session still working or holding wakes. Same for Sam's routine:
+  [`scheduled_sessions`](docs/reference/scheduled_sessions.md).
 
 ## Branch policy
 
@@ -694,8 +696,7 @@ the public `cpl-knowledge-base`. That repo is a separate, audience-facing store
 reached **only** through its curation pipeline (`CPLBrain/audit/curation-manifest.tsv`
 → `cpl-knowledge-base/tools/curation_assistant.py` → a human-reviewed **draft
 PR** per its `CURATION.md` — its "Promoting a checkpoint or vault note" section
-is the explicit path). Promoting a checkpoint learning into the public KB is a
-deliberate, human-gated step — never a checkpoint side effect.
+is the explicit path).
 
 ---
 
