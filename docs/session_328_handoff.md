@@ -4,6 +4,8 @@ date: 2026-10-04
 session: 327 (SkyAmend)
 tags: [handoff, program-requirements-harvest, roep, sierra, cpl-pathways, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_332_handoff.md
 ---
 
 # You are Session 328

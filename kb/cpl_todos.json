@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-10-04",
-  "_session": "S330 SkyRoutine",
-  "_status": "Cerritos's schedule and high school lines are settled except one: its list of articulated high school courses, which no public site holds since the statewide database went offline. The Internet Archive kept that database, and the next session reads it. Cerritos's reading notes now save straight from a session through a new database function, with no paste, and the Ironworker film is kept as you saw it.",
+  "_as_of": "2026-10-05",
+  "_session": "S331 SkyForge",
+  "_status": "The Program Requirements tab is in COBI as a Beta draft: where each college's catalog is, the program records we have read and checked, the program maps, and each college's reading notes. For Cerritos's high school course list, twelve reads tried every public place it might be. The last public list dates from 2016 (57 agreements, none for welding), Columbus High is one of Cerritos's dual enrollment partner schools, and no page says how its welding students earn Cerritos credit. Sheet 37 asks whether to send the drafted request to the college.",
   "items": [
+    {
+      "id": "s331-sam-sheet37",
+      "for": "Sam",
+      "tab": "activities-projects",
+      "text": "Answer open-asks sheet 37: whether to send the request for Cerritos's list of articulated high school courses, now that twelve reads tried every public route. The draft is on the card. https://claude.ai/artifact/HNF6zXcqeCS5LRLYLB3x2F"
+    },
     {
       "id": "s329-sam-routine-settings",
       "for": "Sam",
@@ -41,12 +47,6 @@
       "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
     },
     {
-      "id": "s304-sam-report-when-where",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
-    },
-    {
       "id": "s319-fable-read-timings",
       "for": "Fable",
       "tab": "sierra",
@@ -59,25 +59,31 @@
       "text": "Build the catalog addenda reading agent once the next census apply fills the table (Sunday 11 October, or a hand dispatch): it reads each listed addendum and files which programs it changes. Then read Miramar's Fire Technology sequence from its own pages and widen the harvest past the 20 programs."
     },
     {
-      "id": "s330-fable-harvest-tab-procedures",
-      "for": "Fable",
-      "tab": "cpl-pathways",
-      "text": "Port the approved Program Requirements Harvest mock-up into COBI as a Beta draft tab, with a Procedures view that shows each college's reading notes from the registry, and Sierra docked beside it (her new surface needs a deploy)."
-    },
-    {
       "id": "s330-fable-spring-schedule",
       "for": "Fable",
       "tab": "cpl-pathways",
       "text": "Re-read Cerritos's Spring 2027 schedule for the ironworker apprenticeship and noncredit sections once they post (the Spring schedule listed none on 4 October)."
     },
     {
-      "id": "s330-fable-cerritos-read-7",
+      "id": "s331-fable-osha30-iwap",
       "for": "Fable",
       "tab": "cpl-pathways",
-      "text": "Find Cerritos's list of articulated high school courses another way, with Sam (his sheet 36 answer): CATEMA first, the system colleges use to document articulated CTE high school courses (his suggestion), then the Internet Archive's copy of the old statewide agreements database, Cerritos's dual enrollment partner schools and the partner districts' board agendas."
+      "text": "Check whether an OSHA 30 Construction certification, which Columbus High's welding capstone awards, carries credit for prior learning toward IWAP 41.09 OSHA 30/Extension Review in the Ironworker A.S. (the 'for consideration' kind of CPL)."
+    },
+    {
+      "id": "s331-fable-dock-sierra",
+      "for": "Fable",
+      "tab": "program-requirements",
+      "text": "Dock Sierra in the Program Requirements tab beside its views; it works without a deploy, and adding the surface to the chat function's known list later scopes her guidance to the harvest."
     }
   ],
   "_deferred": [
+    {
+      "id": "s304-sam-report-when-where",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Scenario 2's Career Attainment and Innovation Projects cards read When: TBA and carry no Where. Type the reporting dates and place on the cards when you set them; the Reporting box they would point to is card 2, still ahead."
+    },
     {
       "id": "s296-sam-gr-rows-on-tab",
       "for": "Sam",

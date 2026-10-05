@@ -4,7 +4,7 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 590,
+  "file_datasets": 591,
   "external_services": 157,
   "consumers": 411,
   "workflows": 44,
@@ -598,7 +598,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 50
+     "line": 37
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -3356,7 +3356,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 329
+     "line": 334
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4528,7 +4528,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 318
+     "line": 323
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4889,7 +4889,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 308
+     "line": 313
     }
    ],
    "served": true,
@@ -5051,7 +5051,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 605
+     "line": 610
     }
    ],
    "producers": [
@@ -6020,21 +6020,21 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-36.html": {
+  "file:docs/visuals/<date>-open-asks-37.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 216
+     "line": 221
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 216
+     "line": 221
     }
    ],
    "served": false,
@@ -6510,7 +6510,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 395
+     "line": 400
     }
    ],
    "served": true,
@@ -6589,7 +6589,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 318
+     "line": 323
     }
    ],
    "served": true,
@@ -9333,7 +9333,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 371
+     "line": 376
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -10052,7 +10052,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 480
+     "line": 485
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -10633,7 +10633,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 452
+     "line": 457
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -11893,6 +11893,19 @@
     "workflow:program-course-fetch.yml"
    ]
   },
+  "file:kb/program_requirements_pilot/cerritos_hs_agreements_2016.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 868
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_pilot/map_cr_by_course.json": {
    "consumers": [
     {
@@ -11926,7 +11939,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 713
+     "line": 732
     }
    ],
    "served": false,
@@ -13764,7 +13777,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 441
+     "line": 446
     }
    ],
    "served": false,
@@ -14398,7 +14411,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 694
+     "line": 713
     },
     {
      "id": "script:veteran-sprint-map/extract_military.py",
@@ -14534,7 +14547,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 318
+     "line": 323
     }
    ],
    "served": true,
@@ -14967,7 +14980,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 343
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15142,7 +15155,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 516
+     "line": 521
     }
    ],
    "served": true,
@@ -15168,7 +15181,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 566
+     "line": 571
     }
    ],
    "served": true,
@@ -15702,7 +15715,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 465
+     "line": 470
     }
    ],
    "served": true,
@@ -17459,7 +17472,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 352
+     "line": 357
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",

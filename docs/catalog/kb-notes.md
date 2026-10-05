@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-519 document(s).
+520 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -182,6 +182,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A scoped question may need a different instrument, not a filter](../kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A score measured in one population is not a score in another](../kb-notes/methodology-a-score-measured-in-one-population-is-not-a-score-in-another.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A screen and its export must share a scope, not a shape](../kb-notes/methodology-screen-and-export-share-a-scope-not-a-shape.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [A search result is a lead, not a source](../kb-notes/methodology-a-search-result-is-a-lead-not-a-source.md) | methodology | published | 2026-10-05 | 2026-10-05 |
 | [A second bound breaks a pin-as-you-go solver — one-sided is monotone, two-sided is not](../kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A second copy of a fact is a stale copy waiting](../kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A second look shown the verdict rubber-stamps it — ask the negative instead](../kb-notes/methodology-a-second-look-shown-the-verdict-rubber-stamps-it.md) | methodology | published | 2026-09-21 | 2026-09-21 |

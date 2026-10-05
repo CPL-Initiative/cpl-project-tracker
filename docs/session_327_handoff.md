@@ -4,6 +4,8 @@ date: 2026-10-04
 session: 326 (SkyAddendum)
 tags: [handoff, program-requirements-harvest, addenda, sierra, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_332_handoff.md
 ---
 
 # You are Session 327
