@@ -4,9 +4,9 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 594,
+  "file_datasets": 600,
   "external_services": 157,
-  "consumers": 413,
+  "consumers": 416,
   "workflows": 44,
   "data_js_files": 69,
   "tabs": 38
@@ -295,7 +295,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6262
+     "line": 6264
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -598,7 +598,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 37
+     "line": 39
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -774,6 +774,13 @@
      "direction": "read",
      "how": "url",
      "line": 361
+    },
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 26
     },
     {
      "id": "worker:cloudflare-worker-proxy.js",
@@ -968,7 +975,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4725
+     "line": 4727
     }
    ],
    "main_committers": []
@@ -1254,7 +1261,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 536,
+     "line": 616,
      "tabs": [
       "program-requirements"
      ]
@@ -1271,6 +1278,13 @@
     },
     {
      "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 29
+    },
+    {
+     "id": "script:prototype/noncredit_video/build.py",
      "kind": "script",
      "direction": "read",
      "how": "url",
@@ -1321,6 +1335,13 @@
      "direction": "read",
      "how": "url",
      "line": 41
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 99
     }
    ],
    "main_committers": []
@@ -1786,7 +1807,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5587
+     "line": 5589
     }
    ],
    "main_committers": []
@@ -3356,7 +3377,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 349
+     "line": 357
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4528,7 +4549,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 346
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4889,7 +4910,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 328
+     "line": 336
     }
    ],
    "served": true,
@@ -5051,7 +5072,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 625
+     "line": 633
     }
    ],
    "producers": [
@@ -6020,21 +6041,21 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-41.html": {
+  "file:docs/visuals/<date>-open-asks-42.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 236
+     "line": 244
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 236
+     "line": 244
     }
    ],
    "served": false,
@@ -6510,7 +6531,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 415
+     "line": 423
     }
    ],
    "served": true,
@@ -6589,7 +6610,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 346
     }
    ],
    "served": true,
@@ -9326,7 +9347,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 391
+     "line": 399
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -10045,7 +10066,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 500
+     "line": 508
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -10251,7 +10272,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 755
+     "line": 763
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -10633,7 +10654,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 472
+     "line": 480
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -11972,7 +11993,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 803
+     "line": 811
     }
    ],
    "served": false,
@@ -13810,7 +13831,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 461
+     "line": 469
     }
    ],
    "served": false,
@@ -14090,7 +14111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 747
+     "line": 755
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -14458,7 +14479,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 784
+     "line": 792
     },
     {
      "id": "script:veteran-sprint-map/extract_military.py",
@@ -14594,7 +14615,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 346
     }
    ],
    "served": true,
@@ -15027,7 +15048,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 358
+     "line": 366
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15202,7 +15223,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 536
+     "line": 544
     }
    ],
    "served": true,
@@ -15228,7 +15249,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 586
+     "line": 594
     }
    ],
    "served": true,
@@ -15305,6 +15326,133 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/narration.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 54
+    },
+    {
+     "id": "script:prototype/noncredit_video/narrate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 32
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/narration_layout.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 186
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 55
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 55
+    },
+    {
+     "id": "script:prototype/noncredit_video/narrate.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 180
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/narration_words.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 56
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/noncredit_in_motion.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 180
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/noncredit_in_motion.src.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 194
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 71
+    },
+    {
+     "id": "script:prototype/noncredit_video/narrate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/noncredit_in_motion_narrated.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 141
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:prototype/skyview.html": {
@@ -15762,7 +15910,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 485
+     "line": 493
     }
    ],
    "served": true,
@@ -17532,7 +17680,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 372
+     "line": 380
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -17819,7 +17967,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 727
+     "line": 735
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -18319,7 +18467,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 3485
+     "line": 3487
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -18437,7 +18585,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5355
+     "line": 5357
     }
    ],
    "main_committers": []
@@ -18529,7 +18677,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5893
+     "line": 5895
     }
    ],
    "main_committers": []
@@ -18595,7 +18743,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 4051
+     "line": 4053
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -18771,7 +18919,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5359
+     "line": 5361
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -18973,7 +19121,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 6511
+     "line": 6513
     },
     {
      "id": "module:sierra_training.js",
@@ -18995,7 +19143,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3737
+     "line": 3739
     },
     {
      "id": "script:kb/_course_title_cleanup_apply.py",
@@ -19167,7 +19315,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4064
+     "line": 4066
     }
    ],
    "main_committers": []
@@ -20288,7 +20436,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4371
+     "line": 4373
     },
     {
      "id": "module:college_briefing.js",
@@ -20996,14 +21144,14 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3503
+     "line": 3505
     },
     {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 109,
+     "line": 115,
      "tabs": [
       "program-requirements"
      ]
@@ -21025,7 +21173,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 108,
+     "line": 114,
      "tabs": [
       "program-requirements"
      ]
@@ -21232,7 +21380,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5658
+     "line": 5660
     },
     {
      "id": "module:sierra_training.js",
@@ -21264,7 +21412,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5046
+     "line": 5048
     },
     {
      "id": "module:sierra_training.js",

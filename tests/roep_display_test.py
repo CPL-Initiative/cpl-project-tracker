@@ -140,6 +140,50 @@ iw63 = (iw[0]["display"]["courses"].get("IWAP 40.63") or {}) if iw else {}
 check(bool(iw63.get("identity")) and bool(iw63.get("adopt")),
       "Cerritos IWAP 40.63 has its identity and American River's could-adopt lead")
 
+# 4c. a MAP articulation that names a second course goes to the college (S335). Miramar's EMT
+# Certification and Driver Operator 1B recommendations sit on EMGM 106 and FIPT 321P, which carry
+# their titles, and also on AUTO 156G Engine and Related Systems. A record shared by colleges, a
+# course in the same subject with other words, and a course with no partner stay quiet.
+import tempfile  # noqa: E402
+
+feed = {"articulations": [
+    {"exhibit_id": "X1", "unified_title": "EMT Certification", "earned_by_colleges": ["A College"],
+     "credit_recommendations": ["0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"],
+     "local_courses": [{"subject": "EMGM", "number": "106", "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training"}]},
+    {"exhibit_id": "X1", "unified_title": "EMT Certification", "earned_by_colleges": ["A College"],
+     "credit_recommendations": ["0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"],
+     "local_courses": [{"subject": "AUTO", "number": "156G", "title": "Engine and Related Systems"}]},
+    {"exhibit_id": "X2", "unified_title": "NCCER Welding Level 2", "earned_by_colleges": ["A College"],
+     "credit_recommendations": ["3 hours in Printreading and Welding Symbols Interpretation"],
+     "local_courses": [{"subject": "WELD", "number": "56", "title": "Blueprint Reading (Metal Trades)"},
+                       {"subject": "WELD", "number": "52", "title": "Welding Symbols"}]},
+    {"exhibit_id": "X3", "unified_title": "POST Basic Academy", "earned_by_colleges": ["A College", "B College"],
+     "credit_recommendations": ["3 hours in Community Relations"],
+     "local_courses": [{"subject": "AJ", "number": "2", "title": "Administration of Justice"},
+                       {"subject": "SOC", "number": "1", "title": "Community Relations"}]},
+    {"exhibit_id": "X4", "unified_title": "Lone", "earned_by_colleges": ["A College"],
+     "credit_recommendations": ["3 hours in Marine Biology"],
+     "local_courses": [{"subject": "AUTO", "number": "1", "title": "Brakes"}]}]}
+with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as fh:
+    json.dump(feed, fh)
+was_artics, b.ARTICS = b.ARTICS, fh.name
+try:
+    sc = b.second_courses()
+finally:
+    b.ARTICS = was_artics
+    os.unlink(fh.name)
+hit = sc.get((b.norm_college("A College"), b.ck("AUTO 156G"))) or []
+check(len(hit) == 1 and hit[0]["beside"] == ["EMGM 106"] and hit[0]["credential"] == "EMT Certification",
+      "second course: AUTO 156G is named beside EMGM 106 (got %s)" % hit)
+check(len(sc) == 1, "second course: the same-subject, shared and partnerless records stay quiet (got %s)" % sorted(sc))
+mira = [p for p in progs if p["key"] == "miramar_35030"]
+seconds = [g for g in (mira[0]["display"]["gaps"] if mira else []) if g["kind"] == "MAP names a second course"]
+check(len(seconds) == 2 and all(g["owner"] == "college" and "AUTO 156G" in g["text"] for g in seconds),
+      "Miramar Entrepreneurship carries the two AUTO 156G drafts for the college (got %d)" % len(seconds))
+others = [p["key"] for p in progs if p["key"] != "miramar_35030"
+          and any(g["kind"] == "MAP names a second course" for g in p["display"]["gaps"])]
+check(not others, "no other pilot program carries a second-course draft (got %s)" % others)
+
 # 5. no student column anywhere in the read or the outputs
 read = json.load(open(b.MAP_READ))
 allowed = {"recs", "exhibits", "exhibits_by_source", "titles", "untitled_exhibits"}

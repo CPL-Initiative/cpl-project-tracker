@@ -1,14 +1,14 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-05",
- "_session": "S334 SkyAnchor",
- "_status": "The program records now keep each program's learning outcomes exactly as its catalog prints them: 19 of the 20 pilot programs print them, and every one was checked word for word against the page. Sam's 20 readings still hold. CPL Pathways shows each catalog record laid out by requirement or by term. One card waits on Sam: the go to write the outcomes into the live records.",
+ "_session": "S335 SkyKeel",
+ "_status": "Each college's own differences now collect as drafts on the Program Requirements tab, under the college's name in Program records, with the text the MAP team copies when it decides to send. Miramar's AUTO 156G item was traced to its source: MAP lists the course beside the right ones on two recommendations, and no student received credit through it, so the draft says exactly that. Three cards wait on Sam on Open Asks Sheet 42.",
  "items": [
   {
-   "id": "s334-sam-sheet41-outcomes",
+   "id": "s335-sam-sheet42",
    "for": "Sam",
    "tab": "program-requirements",
-   "text": "Open Asks Sheet 41, card 1: say go (or later) on writing the program outcomes into the 20 live program records. The write changes a row only while it still holds the record you read, and one query shows each row before or after."
+   "text": "Open Asks Sheet 42 (https://claude.ai/artifact/HqVTZRKnuSqfUEpmm3VdSX): card 1, go or later on writing the program outcomes into the 20 live records; card 2, go or later on Sierra's one-line deploy and then the display build that adds Miramar's two drafts; card 3, whether drafts show on My College once the MAP team has sent them, or now."
   },
   {
    "id": "s332-sam-setup-script",
@@ -53,6 +53,12 @@
    "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
   },
   {
+   "id": "s335-fable-sheet42-apply",
+   "for": "Fable",
+   "tab": "program-requirements",
+   "text": "On Sam's go on sheet 42: card 1, re-run the outcomes verify query, apply kb/receipts/program_requirement_records_outcomes_2026-10-05.sql, read every row back as after. Card 2, deploy cpl-chat through its workflow and run the smoke, then apply kb/receipts/program_requirement_records_display_2026-10-05_1cb75672ba6c_delta.sql and read all 20 rows back with --verify-sql. Then drop the lane's NEEDS SAM and the cards in one PR."
+  },
+  {
    "id": "s319-fable-read-timings",
    "for": "Fable",
    "tab": "sierra",
@@ -69,12 +75,6 @@
    "for": "Fable",
    "tab": "cpl-pathways",
    "text": "Re-read Cerritos's Spring 2027 schedule for the ironworker apprenticeship and noncredit sections once they post (the Spring schedule listed none on 4 October)."
-  },
-  {
-   "id": "s334-fable-sheet41-apply",
-   "for": "Fable",
-   "tab": "program-requirements",
-   "text": "On Sam's go on sheet 41: re-run the outcomes verify query, apply kb/receipts/program_requirement_records_outcomes_2026-10-05.sql, read every row back as after, and drop the lane's NEEDS SAM in the same PR."
   }
  ],
  "_deferred": [

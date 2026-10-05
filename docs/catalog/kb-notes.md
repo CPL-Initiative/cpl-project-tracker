@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-522 document(s).
+523 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -437,6 +437,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The unit of curation work is the component, not the suggestion](../kb-notes/methodology-the-unit-of-curation-work-is-the-component-not-the-suggestion.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Title-similarity merge candidates — the guard suite and the licensure-spec lesson](../kb-notes/methodology-title-similarity-merge-guards.md) | methodology | published | 2026-06-12 | 2026-06-12 |
 | [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-09-25 |
+| [Trace a data finding to what students received before raising it with a college](../kb-notes/methodology-trace-a-finding-to-what-students-received.md) | methodology | published | 2026-10-05 | 2026-10-05 |
 | [Transitive closure is right for decisions and wrong for similarity](../kb-notes/methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Two expressions of one predicate will drift apart, and the drift is silent](../kb-notes/methodology-two-expressions-of-one-predicate-will-drift-apart.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Two sessions fixing one guard may both be right — measure before you pick](../kb-notes/methodology-two-fixes-to-one-guard-may-both-be-right.md) | methodology | published | 2026-09-10 | 2026-09-10 |

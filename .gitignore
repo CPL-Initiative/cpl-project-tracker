@@ -144,3 +144,13 @@ prototype/ironworker_video/.frames/
 prototype/ironworker_video/.music.wav
 prototype/ironworker_video/render.html
 prototype/ironworker_video/.dur
+
+# Noncredit Summit film render byproducts
+prototype/noncredit_video/.fonts/
+prototype/noncredit_video/.frames/
+prototype/noncredit_video/.music.wav
+prototype/noncredit_video/render*.html
+prototype/noncredit_video/.narration/
+prototype/noncredit_video/.dur
+prototype/noncredit_video/.captions*.srt
+prototype/noncredit_video/.stills/

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-306 document(s).
+307 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 336 | [drafts for the college, Miramar's AUTO 156G traced to its source, sheet 42](../session_336_handoff.md) | 2026-10-05 |
 | 335 | [record shape 3 (outcomes as printed), the catalog record on CPL Pathways, sheet 41](../session_335_handoff.md) | 2026-10-05 |
 | 334 | [the Ext & Review rename landed, the display follows it, OSHA has one name as issuer](../session_334_handoff.md) | 2026-10-05 |
 | 333 | [the display's identity from the live CCR, OSHA 30 on IWAP 41.09, sheets 37-38, apply_migration allow-listed](../session_333_handoff.md) | 2026-10-05 |

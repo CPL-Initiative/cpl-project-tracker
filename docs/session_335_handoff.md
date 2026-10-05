@@ -69,3 +69,15 @@ None. Sam's only note: another session of his is working on the Noncredit Summit
 - The addenda reading agent after the 2026-10-11 census apply; widen the harvest past the pilot with a procedure
   record per college; Irvine Valley's and Santa Monica's maps.
 - Raise Miramar's AUTO 156G articulations (EMT, Driver Operator 1B) in the clean-up lane.
+
+## Landed beside this handoff (SkyMotion, a side session, 2026-10-05)
+
+- **The Noncredit Summit film** merged as #1873: `prototype/noncredit_video/`, a music cut (1:41) and a narrated
+  cut (3:08) of the summit deck, read by Sierra in ElevenLabs' ladypatty1. Sam ruled in session: *"Let's go with
+  Ladypatty"* and *"Keep the name Sierra"* (Sierra names every CPL narrator, whatever voice reads). The README
+  carries the build, the score's levels and the narration pipeline; the vault note is CPLBrain
+  `04-projects/cpl-initiative/20261005_Noncredit_Summit_Film_1.md` (#249).
+- **Waiting on Sam: his review of both cuts.** SkyMotion left Open Asks Sheet 41 to this queue rather than write
+  it from a second session; carry the review onto the next sheet as a card (keep, or edit) unless he has answered
+  in chat. Before the summit, refresh the students served and the funding figures in `build.py` `FACTS` and
+  re-render, as the deck needs.

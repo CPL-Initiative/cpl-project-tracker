@@ -30,6 +30,12 @@
  * guidance stays unscoped until a deploy names this surface. Without the chat
  * module the section keeps the link to the CPL Assistant tab.
  *
+ * Drafts for the college (Sam, open-asks sheet 32 card 2, 2026-10-04, as proposed): a
+ * gap the college owns, where the catalog and the state's Program Course File list
+ * different courses or MAP names a second course on an articulation, collects under
+ * the college as a draft. The MAP team decides when to send; nothing goes to a
+ * college on its own, and the tab only composes the text for a person to copy.
+ *
  * A FAILED READ SAYS SO; it never renders as zero colleges or zero records.
  * Read-only: this tab writes nothing. Tests: tests/program_requirements.test.js
  */
@@ -128,7 +134,7 @@
   }
   function needsPerson(r) { return !r.catalog_url || (r.access_status && r.access_status !== "ok"); }
   function hasMap(r) { return r.sequence_source === "ppm" || r.sequence_source === "program_map_page"; }
-  function filterRegistry(rows, q, show, plat) {
+  function filterRegistry(rows, q, show, plat, drafts) {
     q = (q || "").trim().toLowerCase();
     return rows.filter(function (r) {
       if (q && String(r.college || "").toLowerCase().indexOf(q) < 0) return false;
@@ -139,9 +145,74 @@
       if (show === "pdf") return r.catalog_platform === "pdf";
       if (show === "seq") return hasMap(r);
       if (show === "procedure") return !!r.procedure;
+      if (show === "drafts") return !!(drafts && drafts[r.college] && drafts[r.college].length);
       return true;
     });
   }
+  /* The gaps a college owns, gathered from its program records' display facts. */
+  function collegeDrafts(records) {
+    var out = {};
+    (records || []).forEach(function (p) {
+      ((p.display && p.display.gaps) || []).forEach(function (g) {
+        if (g.owner !== "college") return;
+        (out[p.college] = out[p.college] || []).push({ program: p.program_title, award: award(p.award),
+          control_number: p.control_number, catalog_year: p.catalog_year, kind: g.kind, text: g.text });
+      });
+    });
+    return out;
+  }
+  /* The draft a person copies. House voice: no bullets, the ask last and small. The MAP
+     team edits it before anyone sends it. */
+  function draftText(college, items) {
+    items = items || [];
+    var years = [], programs = [], by = {};
+    items.forEach(function (i) {
+      var y = yr(i.catalog_year);
+      if (y && years.indexOf(y) < 0) years.push(y);
+      var k = i.program + "|" + i.control_number;
+      if (!by[k]) { by[k] = []; programs.push(i); }
+      by[k].push(i.text);
+    });
+    var n = items.length;
+    var out = ["The MAP team read " + college + "'s " + (years.length ? years.join(" and ") + " " : "") +
+      "catalog for the CPL Initiative and compared each program's requirements with the state's Program Course File and with MAP. " +
+      "The reading found " + (n === 1 ? "one item" : n + " items") + " for your review.", ""];
+    programs.forEach(function (i) {
+      out.push(i.program + " (" + (i.award ? i.award + ", " : "") + "control number " + i.control_number + ")");
+      by[i.program + "|" + i.control_number].forEach(function (t) { out.push(t); });
+      out.push("");
+    });
+    out.push("Your curriculum office and articulation officer keep these records, and the catalog may already be the current source for each. " +
+      "Would you tell us which record is current, so that CPL Pathways shows your programs as you publish them?");
+    return out.join("\n");
+  }
+  function draftsBox(college, items) {
+    var id = "prh-draft-" + String(college).replace(/[^A-Za-z0-9]+/g, "-");
+    var text = el("textarea", { id: id, cls: "prh-draft-text", readonly: "readonly", rows: "8" });
+    text.value = draftText(college, items);
+    var said = el("span", { cls: "prh-small prh-quiet", "aria-live": "polite" });
+    var copy = el("button", { cls: "prh-toggle", type: "button", text: "Copy the draft" });
+    copy.addEventListener("click", function () {
+      function done() { said.textContent = "Copied. Paste it into a message to the college."; }
+      text.focus(); text.select();
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text.value).then(done, function () { said.textContent = "Selected. Copy it with your keyboard."; });
+          return;
+        }
+        if (document.execCommand && document.execCommand("copy")) { done(); return; }
+      } catch (e) { /* fall through */ }
+      said.textContent = "Selected. Copy it with your keyboard.";
+    });
+    return el("details", { cls: "prh-notes prh-drafts" }, [
+      el("summary", { text: "Drafts for the college (" + items.length + ")" }),
+      el("p", { cls: "prh-small" , text: "Places where the college's own records disagree: the catalog and the state's Program Course File, or MAP. The MAP team decides when to send; nothing goes to a college on its own." }),
+      el("ul", {}, items.map(function (i) { return el("li", { text: i.program + " (" + i.control_number + "): " + i.text }); })),
+      el("label", { "for": id, cls: "prh-small", text: "The draft, to edit before sending" }),
+      text,
+      el("div", { cls: "prh-draft-actions" }, [copy, said])]);
+  }
+
   /* A record passes when all four checks hold: every course the state file lists is placed
      (or its absence explained), nothing the catalog does not print is added, the units add
      up to the printed total (or the catalog prints none), and a person read it. */
@@ -238,6 +309,11 @@
       ".prh-rule { font-size:.8125rem; font-weight:600; color:var(--seal-blue-text); background:var(--surface-muted); border-radius:10px; padding:2px 8px; }",
       ".prh-notes summary { cursor:pointer; font-weight:600; color:var(--cobalt); min-height:32px; }",
       ".prh-notes ul, .prh-card ul { margin:6px 0 0; padding-left:20px; }",
+      ".prh-drafts { border:1px solid var(--border); border-radius:8px; background:var(--surface-subtle); padding:8px 14px; margin-bottom:10px; display:grid; gap:8px; }",
+      ".prh-drafts[open] { padding-bottom:14px; }",
+      ".prh-drafts p, .prh-drafts ul { margin:0; }",
+      ".prh-draft-text { width:100%; box-sizing:border-box; font:inherit; font-size:.875rem; line-height:1.5; color:var(--text-body); background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:6px; padding:8px 10px; resize:vertical; }",
+      ".prh-draft-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; }",
       ".prh-dl { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:8px 16px; margin:0; }",
       ".prh-dl dt { font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); }",
       ".prh-dl dd { margin:0; font-variant-numeric:tabular-nums; }",
@@ -281,6 +357,7 @@
   /* ── views ── */
   function viewCatalogs() {
     var R = state.registry;
+    var drafts = collegeDrafts(state.records);
     var box = el("div");
     var withUrl = R.filter(function (r) { return r.catalog_url; }).length;
     var current = R.filter(function (r) { return r.catalog_year === CURRENT_YEAR; }).length;
@@ -303,7 +380,7 @@
     var showSel = el("select", { id: "prh-show" }, [
       ["all", "All colleges"], ["person", "Needs a person"], ["last", "Last year's catalog"],
       ["noyear", "No year named"], ["pdf", "PDF catalogs"], ["seq", "Has a program map"],
-      ["procedure", "Has a reading procedure"]
+      ["procedure", "Has a reading procedure"], ["drafts", "Has drafts for the college"]
     ].map(function (o) { return el("option", { value: o[0], text: o[1] }); }));
     showSel.value = state.show;
     var q = el("input", { id: "prh-q", type: "search", placeholder: "College name", autocomplete: "off" });
@@ -312,7 +389,7 @@
     var host = el("div");
     function draw() {
       state.q = q.value; state.show = showSel.value; state.platform = platSel.value;
-      var rows = filterRegistry(R, state.q, state.show, state.platform);
+      var rows = filterRegistry(R, state.q, state.show, state.platform, drafts);
       host.textContent = "";
       host.appendChild(table([
         { label: "College", w: "23%" }, { label: "Catalog", w: "20%" }, { label: "Year", w: "11%" },
@@ -323,8 +400,9 @@
           ? (r.catalog_year === CURRENT_YEAR ? yr(r.catalog_year)
             : el("span", {}, [yr(r.catalog_year) + " ", el("span", { cls: "prh-caution prh-small", text: "last year's" })]))
           : el("span", { cls: "prh-quiet", text: r.catalog_url ? "Not named" : "" });
+        var nd = (drafts[r.college] || []).length;
         return [
-          r.college,
+          nd ? [r.college, el("span", { cls: "prh-alts", text: nd + (nd === 1 ? " draft" : " drafts") + " for the college, under Program records" })] : r.college,
           r.catalog_url ? link(r.catalog_url, (PLATFORM[r.catalog_platform] || "Catalog") + " catalog")
             : el("span", { cls: "prh-quiet", text: "No address yet" }),
           year,
@@ -370,6 +448,7 @@
       fact(equal, "totals agree with the catalog's"),
       fact(withCpl + " of " + P.length, "programs hold a course with CPL at the college")
     ]));
+    var drafts = collegeDrafts(P);
     var last = null;
     P.forEach(function (p) {
       if (p.college !== last) {
@@ -377,6 +456,7 @@
         var reg = R.filter(function (r) { return r.college === p.college; })[0] || {};
         box.appendChild(el("div", { cls: "prh-college" }, [el("h3", { text: p.college }),
           el("span", { cls: "prh-quiet prh-small", text: ((PLATFORM[reg.catalog_platform] || "") + " catalog, " + yr(p.catalog_year)).trim() })]));
+        if (drafts[p.college]) box.appendChild(draftsBox(p.college, drafts[p.college]));
       }
       box.appendChild(recordCard(p));
     });
@@ -442,7 +522,7 @@
       "Read from ", p.source_url ? link(p.source_url, "the catalog page") : "the catalog",
       " (" + yr(p.catalog_year) + ")" + (p.checked_by ? "; read against the catalog by " + p.checked_by : "") + ".",
       disp.build ? " Display build " + disp.build + (disp.built ? ", " + disp.built : "") + "." : ""]));
-    var gaps = disp.gaps || [];
+    var gaps = (disp.gaps || []).filter(function (g) { return g.owner !== "college"; });
     if (gaps.length) body.appendChild(el("details", { cls: "prh-notes" }, [
       el("summary", { text: "Notes for the reading procedure (" + gaps.length + ")" }),
       el("ul", {}, gaps.map(function (g) { return el("li", { text: (g.kind ? g.kind + ": " : "") + g.text }); }))]));
@@ -657,6 +737,7 @@
     activate: activate,
     _state: state, _load: load, _render: render, mountSierra: mountSierra, SIERRA_SURFACE: SIERRA_SURFACE,
     catalogStatus: catalogStatus, filterRegistry: filterRegistry, recordChecks: recordChecks,
-    ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span
+    ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span,
+    collegeDrafts: collegeDrafts, draftText: draftText
   };
 })();
