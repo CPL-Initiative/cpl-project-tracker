@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-307 document(s).
+308 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 337 | [sheet 42 carried out, the first two program maps read, a signed-off session lets go](../session_337_handoff.md) | 2026-10-05 |
 | 336 | [drafts for the college, Miramar's AUTO 156G traced to its source, sheet 42](../session_336_handoff.md) | 2026-10-05 |
 | 335 | [record shape 3 (outcomes as printed), the catalog record on CPL Pathways, sheet 41](../session_335_handoff.md) | 2026-10-05 |
 | 334 | [the Ext & Review rename landed, the display follows it, OSHA has one name as issuer](../session_334_handoff.md) | 2026-10-05 |

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-523 document(s).
+524 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -253,6 +253,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An auto-triggered smoke test validates the version it is replacing](../kb-notes/methodology-order-the-post-deploy-check-after-the-deploy.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [An empty read is only evidence if the set cannot legitimately be empty](../kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [An error that arrives inside a successful response is invisible to every status check](../kb-notes/methodology-an-error-inside-a-success-is-invisible-to-every-status-check.md) | methodology | published | 2026-09-11 | 2026-09-11 |
+| [An idle session still holds wakes, so a signed-off session lets go of them](../kb-notes/methodology-an-idle-session-still-holds-wakes.md) | methodology | published | 2026-10-05 | 2026-10-05 |
 | [An incentive teaches where the finish line is](../kb-notes/methodology-an-incentive-teaches-where-the-finish-line-is.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [An index is a write-path cost until a measurement says otherwise](../kb-notes/methodology-an-index-is-a-write-path-cost-until-measured.md) | methodology | published | 2026-09-17 | 2026-10-02 |
 | [An inline placeholder style outranks the CSS your module injects](../kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md) | methodology | published | 2026-08-21 | 2026-08-21 |

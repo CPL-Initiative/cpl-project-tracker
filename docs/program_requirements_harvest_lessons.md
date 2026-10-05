@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868]
+prs: [1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -634,6 +634,18 @@ name.
 3. **A map that names the core and leaves list slots is a correct map.** Irvine Valley's Art A.A. names 5 of its 23 listed courses (the required core) and leaves four slots "from List A or B". The pilot's half-the-list rule would refuse it. Acceptance is two terms or more and no course in the program's own subjects off the state's list; coverage is reported beside it and never gates.
 4. **An open slot can resolve by title.** Santa Monica's "Salon Experience · 1-4 units" names no code; its title matches the four Salon Experience courses (COSM 95A-95D, 1 to 4 units) on the state's list, so it reads as that choice.
 5. **The catalog's units and the state file's can differ inside a map.** Santa Monica's map prints COSM 50R at 1 unit; the state's Program Course File lists 1.5. The map record keeps what the college prints.
+
+**Sheet 42, carried out (2026-10-05).** Sam answered at 20:58Z, each card his own call: card 1 go, card 2 go, card 3 *Show them now*. S335 applied card 1's outcomes receipt (20 of 20 read after) and dispatched the cpl-chat deploy; S336 ran the rest. The deploy waited 10 minutes in GitHub's queue and landed byte-verified at 21:21Z; the smoke dispatched on `main` passed (run 37376149996); a fresh guard read showed all 20 rows on build 799bfb9a7dbf; migration `program_requirement_records_display_1cb75672ba6c_s336` applied the delta receipt and `--verify-sql` read 20 of 20 match. My College lists each college's drafts now (#1878). Sheet 44 carries the one open ask.
+
+6. **Two sessions acted on one sheet, and the guard made the second write a no-op.** S335 signed off at 20:23Z still watching sheet 42; Sam opened S336 at 20:25Z. His Complete woke both. Each card's receipt is guarded on the row's md5, so a duplicate apply would have changed nothing, and the two sessions settled one writer by message within four minutes. The rule that keeps it from recurring is in `docs/reference/scheduled_sessions.md` (*A signed-off session lets go*, #1879).
+7. **A smoke assertion about the model's wording is a sample of one.** The same `cpl-chat` version passed 7c (the Chaffey NURVN 414 CNA-to-LVN precedent) on `main` at 21:29Z and missed it on a PR's push three minutes later, saying no college had done it. That variance belongs to the Sierra lane; the display write rested on the `main` run, the one card 2 named.
+8. **Read the deploy and the smoke before a write that a model's answer depends on.** Card 2 ordered deploy, smoke, then the display write, because Sierra reads `display.gaps` by kind. The order held even with GitHub's queue stretching each step to ten minutes.
+
+**Moved from the lane (S336 compaction), verbatim.**
+
+✅ **[Sheet 38](https://claude.ai/artifact/K51Fac1Tm2NvmF9gZaw9yS) (Sam):** writes go; IWAP 41.09 later (*"I assume Cerritos teaches osha 30 imbedded in their class"*); *Ext & Review* renamed (applied S333, old title kept as alias); Fire Inspector 1C titles kept (*"I think these are different though they sound the same"*). ✅ **[Sheet 39](https://claude.ai/artifact/UcBESBRpoLZJKgZZG5NtXr) (Sam):** display go; OSHA has one name as issuer, *U.S. Occupational Safety and Health Administration (OSHA)*, CTCNC is trainer on OSHA 10-hour Construction (`kb/cer_decisions_out/2026-10-05-2`). ✅ **The outcomes are on the 20 live rows (Sam, sheet 42 card 1, go, 2026-10-05 20:58Z).** S335 applied `kb/receipts/program_requirement_records_outcomes_2026-10-05.sql` (migration `program_requirement_records_outcomes_2026_10_05_s335`, about 21:10Z) after a fresh read of 20 before; the verify query reads 20 of 20 after (S335, and S336 at 21:15Z).
+
+**CSU LA (Sam, opening note):** *"We'll figure out a procedure for them as well."* No registry row (the registry seeds from `coci_college_programs`). ✅ **Later (Sam, sheet 33 card 3, 2026-10-04):** *"I want to get our CCC process nailed down before getting into partners"*. No CSU registry row until the CCC procedure is settled; when it starts, a CSU has no state Program Course File, so its closed list is the catalog's own inventory.
 
 **Moved from the lane (S335 compaction), verbatim.**
 
