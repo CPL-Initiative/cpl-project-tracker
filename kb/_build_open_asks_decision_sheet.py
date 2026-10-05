@@ -931,55 +931,10 @@ def items():
     # think these are different though they sound the same"; card 5 go (Sierra docked in the tab). The
     # harvest lane records each ruling and drops its NEEDS SAM in the same change; no card remains.
 
-    # Sheet 39 (S333): the display build after the rename, and OSHA's name as issuer.
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Apply the display build that carries the Ext & Review rename?",
-        'ref': 'program-requirements-harvest NEEDS SAM · '
-               'kb/receipts/program_requirement_records_display_2026-10-04_799bfb9a7dbf.sql · '
-               'kb/cred_rename_out/2026-10-05',
-        'facts': (
-            "<p>The rename you chose on sheet 38 ran on main at 15:18Z. The CER now names Cerritos's exhibit "
-            "<em>Ironworker Apprenticeship — OSHA 30/Extension Review</em>; your issuer, California Community "
-            "Colleges, moved with it, and <em>Ext &amp; Review</em> stays as its alias.</p>"
-            "<p>Build 799bfb9a7dbf of the display facts carries the new name on IWAP 41.09 in Apprenticeship: Field "
-            "Ironworkers. Nothing else in the 20 programs changes: the same up-to figures, could adopt and for "
-            "consideration counts. The page and Sierra read the same build, so its pull request waits on this card. "
-            "Re-applying the receipt of build 81691460ba18, which all 20 live rows hold today, restores every row."
-            "</p>"),
-        'why': "Rule 10: a new write to a shared table waits on your go and carries a receipt that rolls it back.",
-        'rec': "<strong>Go:</strong> a session applies the receipt through <code>apply_migration</code>, proves every "
-               "row against the receipt's md5s, and merges the pull request. <em>It might be wrong if</em> you would "
-               "hold the new label until Cerritos says what IWAP 41.09 teaches (sheet 38 card 2, later).",
-        'chips': chips(('Go', 'go'), CH_LATER),
-        'evidence': [live('2026-10-05', "program_requirement_records.display build on all 20 rows (81691460ba18, "
-                          "20 of 20); git diff of cpl_pathways_roep_data.js between the two builds (build stamps, "
-                          "the two read stamps, and the one IWAP 41.09 label)")],
-    })
-    I.append({
-        'lane': 'program-requirements-harvest',
-        'title': "Give OSHA one name as issuer in the CER?",
-        'ref': 'program-requirements-harvest NEEDS SAM · kb/credentials.json · kb_curation issuing_agency_override · '
-               'cpl_memory sam-osha-issues-the-card-not-the-teaching-college-2026-10-05',
-        'facts': (
-            "<p>Your rule today: a college that teaches OSHA 30 inside its course is not the issuer; OSHA is. The CER "
-            "names OSHA three ways across 13 entries. <em>U.S. Occupational Safety and Health Administration (OSHA)</em> "
-            "sits on 9, from the batch classify. <em>Occupational Safety and Health Administration (OSHA)</em> sits on "
-            "the 2 you set on July 8, Agriculture Occupational Safety and Agriculture, Environment and Society. "
-            "<em>U.S. Department of Labor</em> sits on the OSHA 10 Card and OSHA 30 Card, which you reviewed on July 7. "
-            "The CER's issuer filter matches names exactly, so OSHA appears there as three issuers.</p>"
-            "<p>One entry runs against your rule. <em>OSHA 10-hour Construction Training Course</em> names the "
-            "Carpenters Training Committee for Northern California, which delivers the training, as its issuer.</p>"),
-        'why': "One issuer under three names splits its credentials across three entries in the CER's issuer filter.",
-        'rec': "<strong>One name:</strong> <em>U.S. Occupational Safety and Health Administration (OSHA)</em>, the name "
-               "on 9 of the 13, on the four entries that carry another; and on the OSHA 10-hour Construction entry, "
-               "OSHA as issuer with the Carpenters Training Committee as trainer. A session widens "
-               "<code>cer-decision-apply.yml</code> to the two agency fields and writes the six rows with a receipt; "
-               "your two July rows change by a guarded update whose receipt keeps your values. <em>It might be wrong "
-               "if</em> you chose U.S. Department of Labor on purpose; then the other eleven take that name.",
-        'chips': chips(('One name', 'name'), ('Edit', 'edit'), CH_LATER),
-        'evidence': [measured(p_osha_issuer_names)],
-    })
+    # Sheet 39 (S333) was answered at 15:52Z on 2026-10-05 (through 2, both his own call): card 1 go (display
+    # build 799bfb9a7dbf applied as a two-path guarded update, all 20 rows matching its md5s; #1866); card 2
+    # name (OSHA's one name as issuer: kb/credentials.json edited, five curator rows replaced through
+    # kb/cer_decisions_out/2026-10-05-2). The harvest lane records both and drops its NEEDS SAM; no card remains.
 
     return I
 

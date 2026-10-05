@@ -18,7 +18,8 @@ funding-config-edit-apply.yml carry theirs. Governance: workflow:cer-decision-ap
 DR-07 (unified credential titles), kb/governance_surface_map.json.
 
 Rule 10, enforced here rather than by recall:
-  - only `_CREDENTIAL_REVIEW::` rows, only the title fields, only under a `<lane>-s<N>@bot` cohort;
+  - only `_CREDENTIAL_REVIEW::` rows (title and agency fields) and `_UNCLASSIFIED::` rows (the
+    issuer assignment), only under a `<lane>-s<N>@bot` cohort;
   - a fresh read at write time of every (course_id, field) the plan touches. A row already there
     with another value is a curator's newer word: it is HELD, and nothing is written;
   - a pending unified_title_merge_confirm that names a plan row's source title as its target
@@ -28,6 +29,17 @@ Rule 10, enforced here rather than by recall:
   - the receipt is written BEFORE the INSERT; --rollback deletes only rows still carrying this
     cohort's reviewer_email and the value it wrote. Once cred-rename-apply has consumed an
     override, the rename's own alias map is the record (kb/cred_rename_out/<date>/).
+  - a REPLACE is a guarded UPDATE, and only where the plan says so (Rule 10a): a row carrying
+    `replaces: {value, reviewer_email}` names the live row it supersedes, and the ruling that lets
+    it. It changes only while that row still holds exactly that value from that reviewer; anything
+    else holds the plan. The receipt keeps the before-value, reviewer and date, and --rollback
+    puts them back on rows that still carry this cohort and the value it wrote (Rule 10a2).
+
+S333 (Sam, open-asks sheet 39 card 2, "name"): the agency fields and the replace path, so OSHA's
+one name as issuer can land on rows a curator wrote earlier. kb/_apply_credential_review.py and
+kb/_fold_unclassified.py only ever ADD an issuer to kb/credentials.json, so a changed issuer also
+needs the file itself edited in the same pull request; the rows keep the sync from adding the old
+name back.
 
 Env: SUPABASE_URL (default the project URL), SUPABASE_SERVICE_KEY (the workflow holds it).
 """
@@ -47,7 +59,13 @@ import urllib.request
 
 TABLE = "kb_curation"
 PREFIX = "_CREDENTIAL_REVIEW::"
-FIELDS = {"unified_title_override", "unified_title_merge_confirm"}
+UNCLASSIFIED = "_UNCLASSIFIED::"
+FIELDS_BY_PREFIX = {
+    PREFIX: {"unified_title_override", "unified_title_merge_confirm",
+             "issuing_agency_override", "training_agency_override"},
+    UNCLASSIFIED: {"issuing_agency_assignment"},
+}
+TITLE_FIELDS = {"unified_title_override", "unified_title_merge_confirm"}
 COHORT_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*-s\d+@bot$")
 ATTEMPTS = 5
 TRANSIENT_HTTP = {429, 500, 502, 503, 504}
@@ -101,6 +119,12 @@ class Rest:
         return self._call("POST", {"on_conflict": "course_id,field"}, rows,
                           prefer="resolution=ignore-duplicates,return=representation")
 
+    def replace(self, course_id, field, old_value, old_email, body):
+        """Guarded UPDATE: changes the row only while it still holds old_value from old_email."""
+        return self._call("PATCH", {"course_id": "eq." + course_id, "field": "eq." + field,
+                                    "value": "eq." + old_value, "reviewer_email": "eq." + old_email},
+                          body, prefer="return=representation")
+
     def delete(self, row, cohort):
         return self._call("DELETE", {"course_id": "eq." + row["course_id"], "field": "eq." + row["field"],
                                      "value": "eq." + row["value"], "reviewer_email": "eq." + cohort},
@@ -118,10 +142,18 @@ def load_plan(plan_dir):
     seen = set()
     for r in rows:
         cid, field, value = r.get("course_id"), r.get("field"), r.get("value")
-        if not (isinstance(cid, str) and cid.startswith(PREFIX) and len(cid) > len(PREFIX)):
-            raise SystemExit("every course_id is a _CREDENTIAL_REVIEW:: key: %r" % cid)
-        if field not in FIELDS:
-            raise SystemExit("field must be one of %s: %r" % (sorted(FIELDS), field))
+        pre = next((x for x in FIELDS_BY_PREFIX if isinstance(cid, str) and cid.startswith(x)
+                    and len(cid) > len(x)), None)
+        if pre is None:
+            raise SystemExit("every course_id is a %s key: %r" % (" or ".join(FIELDS_BY_PREFIX), cid))
+        if field not in FIELDS_BY_PREFIX[pre]:
+            raise SystemExit("a %s field must be one of %s: %r" % (pre, sorted(FIELDS_BY_PREFIX[pre]), field))
+        rp = r.get("replaces")
+        if rp is not None and not (isinstance(rp, dict) and isinstance(rp.get("value"), str)
+                                   and rp["value"].strip() and isinstance(rp.get("reviewer_email"), str)
+                                   and rp["reviewer_email"].strip() and rp["value"] != value):
+            raise SystemExit("replaces names the live row's value and reviewer_email, and differs "
+                             "from the new value: %r" % r)
         if not (isinstance(value, str) and value.strip()):
             raise SystemExit("every row carries a non-empty value: %r" % r)
         if (cid, field) in seen:
@@ -144,9 +176,16 @@ def check(plan, rest):
     out = []
     for r in plan["rows"]:
         now = live.get((r["course_id"], r["field"]))
+        rp = r.get("replaces")
         source = r["course_id"][len(PREFIX):]
-        fights = [c for c in confirms if c.get("value") == source and c.get("course_id") != r["course_id"]]
-        if now is None:
+        fights = [c for c in confirms if c.get("value") == source and c.get("course_id") != r["course_id"]] \
+            if r["field"] in TITLE_FIELDS else []
+        if rp and now is not None and now.get("value") == rp["value"] \
+                and now.get("reviewer_email") == rp["reviewer_email"]:
+            state, why = "replace", "replaces %r (by %s), as the ruling says" % (rp["value"], rp["reviewer_email"])
+        elif rp and now is None:
+            state, why = "held", "the row it replaces (%r by %s) is gone" % (rp["value"], rp["reviewer_email"])
+        elif now is None:
             state, why = ("held", "a pending merge confirm on %s names this source" % fights[0]["course_id"]) \
                 if fights else ("write", "")
         elif now.get("value") == r["value"]:
@@ -175,24 +214,33 @@ def run(plan_dir, mode, rest, out=print):
     plan = load_plan(plan_dir)
     if mode == "rollback":
         receipts = sorted(glob.glob(os.path.join(plan_dir, "applied_*.json")))
-        written = []
+        written, replaced = [], []
         for p in receipts:
             with open(p, encoding="utf-8") as fh:
                 rec = json.load(fh)
             written.extend(rec.get("inserted") or [])
-        if not written:
-            out("nothing to roll back: no receipt records an insert")
+            replaced.extend(rec.get("replaced") or [])
+        if not written and not replaced:
+            out("nothing to roll back: no receipt records an insert or a replace")
             return 0
         ts = stamp()
-        removed, gone = [], []
+        removed, gone, restored, moved = [], [], [], []
         for r in written:
             got = rest.delete(r, plan["cohort"])
             (removed if got else gone).append({k: r[k] for k in ("course_id", "field", "value")})
+        for r in replaced:
+            b = r["before"]
+            got = rest.replace(r["course_id"], r["field"], r["value"], plan["cohort"],
+                               {"value": b["value"], "reviewer_email": b["reviewer_email"],
+                                "reviewed_at": b.get("reviewed_at")})
+            (restored if got else moved).append({k: r[k] for k in ("course_id", "field", "value")})
         write_receipt(plan_dir, "rolled_back_%s.json" % ts,
                       {"table": TABLE, "mode": "rollback", "at": ts, "cohort": plan["cohort"],
-                       "removed": removed, "already_gone": gone})
-        out("rollback: %d removed, %d already gone (consumed by the rename, or changed by a curator)"
-            % (len(removed), len(gone)))
+                       "removed": removed, "already_gone": gone,
+                       "restored": restored, "changed_since": moved})
+        out("rollback: %d removed, %d already gone (consumed by the rename, or changed by a curator); "
+            "%d restored to the curator's value, %d changed since"
+            % (len(removed), len(gone), len(restored), len(moved)))
         return 0
 
     states = check(plan, rest)
@@ -201,9 +249,10 @@ def run(plan_dir, mode, rest, out=print):
                                         (" -- " + s["why"]) if s["why"] else ""))
     held = [s for s in states if s["state"] == "held"]
     todo = [s for s in states if s["state"] == "write"]
+    swaps = [s for s in states if s["state"] == "replace"]
     if mode == "dry-run":
-        out("dry run: %d to write, %d already written, %d held; nothing written"
-            % (len(todo), sum(s["state"] == "written" for s in states), len(held)))
+        out("dry run: %d to write, %d to replace, %d already written, %d held; nothing written"
+            % (len(todo), len(swaps), sum(s["state"] == "written" for s in states), len(held)))
         return 1 if held else 0
 
     if mode != "commit":
@@ -211,27 +260,38 @@ def run(plan_dir, mode, rest, out=print):
     if held:
         out("REFUSED: %d row(s) held; nothing written" % len(held))
         return 1
-    if not todo:
+    if not todo and not swaps:
         out("nothing to write: every row already holds its value")
         return 0
     ts = stamp()
     name = "applied_%s.json" % ts
     rows = [{"course_id": s["course_id"], "field": s["field"], "value": s["value"],
              "reviewer_email": plan["cohort"]} for s in todo]
+    planned_swaps = [{"course_id": s["course_id"], "field": s["field"], "value": s["value"],
+                      "reviewer_email": plan["cohort"], "before": s["live"]} for s in swaps]
     receipt = {"table": TABLE, "mode": "commit", "at": ts, "ruling": plan["ruling"],
-               "cohort": plan["cohort"], "read": states, "rows": rows, "result": "pending"}
+               "cohort": plan["cohort"], "read": states, "rows": rows, "replaces": planned_swaps,
+               "result": "pending"}
     write_receipt(plan_dir, name, receipt)
-    got = rest.insert(rows) or []
+    got = (rest.insert(rows) or []) if rows else []
     keys = {(g.get("course_id"), g.get("field")) for g in got}
     receipt["inserted"] = [r for r in rows if (r["course_id"], r["field"]) in keys]
     receipt["skipped_as_duplicate"] = [r for r in rows if (r["course_id"], r["field"]) not in keys]
+    now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    receipt["replaced"], receipt["replace_missed"] = [], []
+    for sw in planned_swaps:
+        b = sw["before"]
+        got = rest.replace(sw["course_id"], sw["field"], b["value"], b["reviewer_email"],
+                           {"value": sw["value"], "reviewer_email": plan["cohort"], "reviewed_at": now_iso})
+        (receipt["replaced"] if got else receipt["replace_missed"]).append(sw)
     after = check(plan, rest)
     ok = all(s["state"] == "written" for s in after)
     receipt["read_back"] = after
     receipt["result"] = "written" if ok else "written, but the read-back differs"
     write_receipt(plan_dir, name, receipt)
-    out("%s: %d inserted, %d skipped as duplicate; receipt %s"
-        % (receipt["result"], len(receipt["inserted"]), len(receipt["skipped_as_duplicate"]), name))
+    out("%s: %d inserted, %d skipped as duplicate, %d replaced, %d replace missed; receipt %s"
+        % (receipt["result"], len(receipt["inserted"]), len(receipt["skipped_as_duplicate"]),
+           len(receipt["replaced"]), len(receipt["replace_missed"]), name))
     return 0 if ok else 1
 
 

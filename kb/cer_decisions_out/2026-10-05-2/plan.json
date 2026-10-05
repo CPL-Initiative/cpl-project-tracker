@@ -1,0 +1,56 @@
+{
+ "about": "Sam's verdict on open-asks sheet 39, card 2 ('Give OSHA one name as issuer in the CER?'): 'name'. The CER named OSHA three ways across 13 entries; the name on 9 of them becomes the one name. Five curator rows carry another spelling and change by guarded update (replaces names each live value and reviewer): the two Agriculture issuing_agency_override rows (2026-07-08) and the three unclassified triage issuing_agency_assignment rows that set U.S. Department of Labor on the OSHA 10 Card and OSHA 30 Card (2026-07-07). kb/_apply_credential_review.py and kb/_fold_unclassified.py only ever add an issuer, so the same pull request edits kb/credentials.json (the four entries' first record, and on the OSHA 10-hour Construction Training Course, OSHA as issuer with CTCNC as trainer, per Sam's rule that the trainer is not the issuer) and kb/unclassified_assignments.json to match; these rows keep the nightly sync from adding the old name back.",
+ "ruling": "Sam Lee, open-asks sheet 39 (2026-10-05-open-asks-39) card 2: 'name' (replies store, 2026-10-05T15:52:51Z); his rule in chat (cpl_memory sam-osha-issues-the-card-not-the-teaching-college-2026-10-05)",
+ "cohort": "program-requirements-harvest-s333@bot",
+ "read_by_session": {
+  "at": "2026-10-05T16:05Z",
+  "how": "read-only selects through the Supabase MCP tool, S333: the five rows below hold the replaced values, each by map@rccd.edu; no other kb_curation row names U.S. Department of Labor or Occupational Safety and Health Administration as an issuer"
+ },
+ "rows": [
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Agriculture Occupational Safety",
+   "field": "issuing_agency_override",
+   "value": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "replaces": {
+    "value": "Occupational Safety and Health Administration (OSHA)",
+    "reviewer_email": "map@rccd.edu"
+   }
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Agriculture, Environment and Society",
+   "field": "issuing_agency_override",
+   "value": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "replaces": {
+    "value": "Occupational Safety and Health Administration (OSHA)",
+    "reviewer_email": "map@rccd.edu"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::OSHA 10 and 1 yr Experience",
+   "field": "issuing_agency_assignment",
+   "value": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "replaces": {
+    "value": "U.S. Department of Labor",
+    "reviewer_email": "map@rccd.edu"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::OSHA 30 and 6 months Experience",
+   "field": "issuing_agency_assignment",
+   "value": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "replaces": {
+    "value": "U.S. Department of Labor",
+    "reviewer_email": "map@rccd.edu"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::OSHA Safety Training 30-Hour Card",
+   "field": "issuing_agency_assignment",
+   "value": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "replaces": {
+    "value": "U.S. Department of Labor",
+    "reviewer_email": "map@rccd.edu"
+   }
+  }
+ ]
+}
