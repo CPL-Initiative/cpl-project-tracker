@@ -17,11 +17,12 @@ its context left. If Sam's routine started you, read
 1. **#1860** (the tab, reads 7-12, this checkpoint): merge it on a green `test` if S331 did not
    ([CPL-Initiative/cpl-project-tracker#1860](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1860)).
    Mark it ready for review first; it opened as a draft.
-2. **Sheet 37** ([Open Asks Sheet 37](https://claude.ai/artifact/HNF6zXcqeCS5LRLYLB3x2F), current; it replaces
-   sheet 36, which is answered). One card: send the request for Cerritos's high school list? Read its `replies`
-   store with `ArtifactData` before acting. On "send": the MAP team sends the draft (sessions never send mail);
-   record it on Cerritos's procedure record (`requests[0].status`) through `program_source_procedure_set` (v4,
-   md5 `290ad739ec4acbe46b39793ac5642046`) and drop the lane's NEEDS SAM in the same change.
+2. **Sheet 37 is answered** ([Open Asks Sheet 37](https://claude.ai/artifact/HNF6zXcqeCS5LRLYLB3x2F), done; no lane
+   marks NEEDS SAM, so no sheet is outstanding). Sam, card 1, 06:00Z: **hold**, *"Don't worry about this for now
+   until I investigate later"*. The request stays held; his findings go onto the procedure record and the ladder.
+   Two writes are still to make: a `cpl_memory` decision row (verified_by Sam) with his words, and the procedure
+   record's `requests[0].status` naming sheet 37 (v4, md5 `290ad739ec4acbe46b39793ac5642046`). S331's attempt at
+   the record write was declined at the permission prompt, so ask Sam before retrying it.
 3. **The OSHA 30 question** (new, from read 12): Columbus High's welding capstone awards OSHA 30 Construction;
    the Ironworker A.S. lists IWAP 41.09 OSHA 30/Extension Review (1.5 units). Check CER/EACR for an OSHA 30
    credential pointing at IWAP 41.09 (the "for consideration" kind of CPL in `kb/_build_roep_display.py`).
@@ -31,8 +32,8 @@ its context left. If Sam's routine started you, read
 
 ## Decisions Sam made this run
 
-None. Sam's only message was the opening line. His standing rulings still hold: find the list another way first
-(sheet 36 card 2), the request stays held, and the decision now sits on sheet 37.
+Sheet 37 card 1 (2026-10-05 06:00Z, his own call): **hold**, *"Don't worry about this for now until I investigate
+later"*. His only chat message was the opening line.
 
 ## What shipped (S331, #1860)
 

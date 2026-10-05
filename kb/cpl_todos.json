@@ -2,14 +2,8 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-05",
   "_session": "S331 SkyForge",
-  "_status": "The Program Requirements tab is in COBI as a Beta draft: where each college's catalog is, the program records we have read and checked, the program maps, and each college's reading notes. For Cerritos's high school course list, twelve reads tried every public place it might be. The last public list dates from 2016 (57 agreements, none for welding), Columbus High is one of Cerritos's dual enrollment partner schools, and no page says how its welding students earn Cerritos credit. Sheet 37 asks whether to send the drafted request to the college.",
+  "_status": "The Program Requirements tab is in COBI as a Beta draft: where each college's catalog is, the program records we have read and checked, the program maps, and each college's reading notes. For Cerritos's high school course list, twelve reads tried every public place it might be. The last public list dates from 2016 (57 agreements, none for welding), Columbus High is one of Cerritos's dual enrollment partner schools, and no page says how its welding students earn Cerritos credit. You chose to hold the request to the college while you look into it yourself (sheet 37).",
   "items": [
-    {
-      "id": "s331-sam-sheet37",
-      "for": "Sam",
-      "tab": "activities-projects",
-      "text": "Answer open-asks sheet 37: whether to send the request for Cerritos's list of articulated high school courses, now that twelve reads tried every public route. The draft is on the card. https://claude.ai/artifact/HNF6zXcqeCS5LRLYLB3x2F"
-    },
     {
       "id": "s329-sam-routine-settings",
       "for": "Sam",
