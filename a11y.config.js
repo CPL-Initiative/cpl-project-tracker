@@ -30,6 +30,28 @@
                      so deleting it turns the exemption back into a failure.
      seed / keyboard   functions; run in Playwright, not in the page.
    =========================================================================== */
+// Opens one harvested catalog record in CPL Pathways through its selector.
+async function seedRoepRecord(page, theme, lay) {
+  // The motion pass loads the page without a route, so open the tab here too.
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => {
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
+    return s && s.querySelector('optgroup[label="Catalog records, Beta draft"] option');
+  }, null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
+    const o = Array.from(s.querySelectorAll('optgroup[label="Catalog records, Beta draft"] option'))
+      .find((x) => /Apprenticeship: Field Ironworkers/.test(x.textContent));
+    if (o) { s.value = o.value; s.dispatchEvent(new Event("change", { bubbles: true })); }
+  });
+  if (lay === "term") await page.evaluate(() => {
+    const b = document.querySelector('.cplpw-rseg button[data-value="term"]');
+    if (b) b.click();
+  });
+  await page.waitForTimeout(200);
+}
+
 // Seeds My College's Reported expenditures section for the two targets below.
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
@@ -464,6 +486,27 @@ module.exports = {
     routes: [{ hash: "college-briefing", name: "reports-table" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedMyCollegeReports(page, false),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── CPL Pathways: a harvested catalog record (S334) ──────────────────────
+     The ROEP program view opens from the pathway selector, so the cobi sweep,
+     which lands on the tab's first pathway, never paints it. One target per
+     theme, seeded through the selector the reader uses, on the record with the
+     most on screen (Cerritos Ironworker: an option fork, every CPL kind). */
+  "cpl-pathways-roep": {
+    file: "index.html",
+    title: "CPL Pathways: a catalog record, By requirement",
+    routes: [{ hash: "cpl-pathways", name: "roep-record" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedRoepRecord(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cpl-pathways-roep-dark": {
+    file: "index.html",
+    title: "CPL Pathways: a catalog record, By term, dark",
+    routes: [{ hash: "cpl-pathways", name: "roep-record-term" }],
+    widths: [390, 1440],
+    seed: (page) => seedRoepRecord(page, "dark", "term"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "my-college-reports-signin": {
