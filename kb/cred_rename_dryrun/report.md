@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-10-05
 
-Generated: `2026-10-05T15:18:28Z`
+Generated: `2026-10-05T16:40:31Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -12,7 +12,7 @@ Generated: `2026-10-05T15:18:28Z`
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
 | — | Queued collisions (non-blocking — wait for a curator decision) | 0 |
-| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
+| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **NO** |
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
 
@@ -20,9 +20,7 @@ _None._ A queued collision becomes a confirmed merge when the curator clicks **�
 
 ## Clean renames (would land on apply)
 
-| Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
-|---|---|---|---:|---:|---|
-| `Ext & Review` | → | `Ironworker Apprenticeship — OSHA 30/Extension Review` | 1 | 1 | ✓ |
+_None today._ Infrastructure populates the moment a curator enters a rename.
 
 ## Collisions (queued, non-blocking — curator decision required)
 

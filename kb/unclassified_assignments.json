@@ -1,7 +1,7 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-07-13T09:50:42Z",
+  "_synced_at": "2026-10-05T16:38:21Z",
   "count": 769,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
@@ -3859,20 +3859,20 @@
     },
     "OSHA 10 and 1 yr Experience": {
       "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T19:37:38.604109+00:00",
+      "reviewed_by": "program-requirements-harvest-s333@bot",
+      "reviewed_at": "2026-10-05T16:28:24.858509+00:00",
       "unified_title": "OSHA 10 Card"
     },
     "OSHA 30 and 6 months Experience": {
       "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T19:37:38.673291+00:00",
+      "reviewed_by": "program-requirements-harvest-s333@bot",
+      "reviewed_at": "2026-10-05T16:28:24.858509+00:00",
       "unified_title": "OSHA 30 Card"
     },
     "OSHA Safety Training 30-Hour Card": {
       "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T19:37:39.388594+00:00",
+      "reviewed_by": "program-requirements-harvest-s333@bot",
+      "reviewed_at": "2026-10-05T16:28:24.858509+00:00",
       "unified_title": "OSHA 30 Card"
     },
     "Oxyacetylene Welding": {

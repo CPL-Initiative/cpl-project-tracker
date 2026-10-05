@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-05T14:49:53.482598+00:00",
+  "scraped_at": "2026-10-05T16:38:07.251918+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28625,
+    "jst": 28626,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 580,
+      "jst": 581,
       "star": true
     },
     "Merced College": {

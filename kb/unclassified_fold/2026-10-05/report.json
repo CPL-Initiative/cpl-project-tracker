@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-10-05T14:50:05Z",
+  "_generated_at": "2026-10-05T16:38:21Z",
   "mode": "apply",
   "gates": {
     "V1_apply_safe": false,
@@ -4534,25 +4534,25 @@
     {
       "raw": "OSHA 10 and 1 yr Experience",
       "assigned": "OSHA 10 Card",
-      "issuer": "U.S. Department of Labor",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T19:37:38.604109+00:00",
+      "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
+      "reviewed_by": "program-requirements-harvest-s333@bot",
+      "reviewed_at": "2026-10-05T16:28:24.858509+00:00",
       "why": "already classified to the same target"
     },
     {
       "raw": "OSHA 30 and 6 months Experience",
       "assigned": "OSHA 30 Card",
-      "issuer": "U.S. Department of Labor",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T19:37:38.673291+00:00",
+      "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
+      "reviewed_by": "program-requirements-harvest-s333@bot",
+      "reviewed_at": "2026-10-05T16:28:24.858509+00:00",
       "why": "already classified to the same target"
     },
     {
       "raw": "OSHA Safety Training 30-Hour Card",
       "assigned": "OSHA 30 Card",
-      "issuer": "U.S. Department of Labor",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T19:37:39.388594+00:00",
+      "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
+      "reviewed_by": "program-requirements-harvest-s333@bot",
+      "reviewed_at": "2026-10-05T16:28:24.858509+00:00",
       "why": "already classified to the same target"
     },
     {
