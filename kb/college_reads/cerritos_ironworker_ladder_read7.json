@@ -1,0 +1,72 @@
+{
+ "_readme": "Seventh read for the Cerritos Ironworker ladder (S331, SkyForge): the high school list by other routes (Sam, sheet 36 card 2, 2026-10-04 23:51Z: \"lets work together to see if we ca find these another way and close the gap\"). Sam's lead (2026-10-05 ~00:15Z) was CATEMA, where colleges have long documented articulated CTE high school courses. Web search 2026-10-05 found where Cerritos's list went: hsarticulation.cerritos.edu (no DNS record, read 1) is replaced by cerritos.ctecourseconnect.com, 'Cerritos College CTE Course Articulation', whose index text says anyone can search current agreements by high school/ROP and industry sector or search all agreements, and whose agreements open at /View/<id> (Hospitality Management is indexed). This read takes Cerritos's own How To Receive Articulation Credit page (does the college name the host), the platform's index (its forms printed, agreement links followed), one indexed agreement for its shape, the Internet Archive's index and copy of the platform in case the live host fails to resolve (the session's fetcher got ENOTFOUND), CATEMA's home and the archive's CATEMA captures naming Cerritos, and the 2016 capture of Statewide Career Pathways' View existing agreements page.",
+ "college": "Cerritos College",
+ "outside_hosts": {
+  "ctecourseconnect.com": "CTE Course Connect, the articulation platform that hosts Cerritos College CTE Course Articulation (cerritos.ctecourseconnect.com), where Cerritos now publishes its high school agreements",
+  "catema.com": "CATEMA, the articulation management system many California colleges use to document articulated CTE high school courses (Sam's lead, 2026-10-05)",
+  "archive.org": "the Internet Archive's Wayback Machine, which keeps captures of the articulation platform and of the Statewide Career Pathways database from when it was live"
+ },
+ "questions": {
+  "hs_articulation": "Cerritos's list of articulated high school courses, and which route Columbus High's welding pathway uses."
+ },
+ "keywords": [
+  "Columbus",
+  "Downey",
+  "[Ww]eld",
+  "WELD",
+  "[Ii]ron",
+  "[Mm]anufactur",
+  "[Cc]onstruction",
+  "Building",
+  "[Ss]ector",
+  "[Aa]rticulat",
+  "[Aa]greement",
+  "ctecourseconnect",
+  "CATEMA|[Cc]atema"
+ ],
+ "pages": [
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://www.cerritos.edu/academics/divisions/epp/articulation_credit.htm",
+   "links": "ctecourseconnect|catema|agreement|articulat|search|course connect"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://cerritos.ctecourseconnect.com/",
+   "links": "View|agreement|search|school|sector|all|weld|manufactur|construct|building",
+   "follow": "/View/|search|all agreements|weld|manufactur|construct|building",
+   "forms": true
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://cerritos.ctecourseconnect.com/View/b6394642-4226-4069-9455-1a70a10e8e5a"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/cdx/search/cdx?url=cerritos.ctecourseconnect.com&matchType=host&output=txt&fl=timestamp,original,statuscode&collapse=urlkey&limit=600"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/web/2026/https://cerritos.ctecourseconnect.com/",
+   "links": "View|agreement|search|school|sector|all|weld|manufactur|construct",
+   "follow": "/View/|search|all agreements|weld|manufactur|construct",
+   "forms": true
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://www.catema.com/",
+   "links": "cerritos|downey|long beach|rio hondo|norwalk|abc|search|articulat|college|district"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/cdx/search/cdx?url=catema.com&matchType=domain&filter=original:.*[Cc]erritos.*&output=txt&fl=timestamp,original,statuscode&collapse=urlkey&limit=200"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.archive.org/web/2016/http://www.statewidepathways.org/showagreements.php",
+   "links": "agreement|cerritos|weld|view|college|search",
+   "follow": "cerritos|weld|agreement",
+   "forms": true
+  }
+ ]
+}
