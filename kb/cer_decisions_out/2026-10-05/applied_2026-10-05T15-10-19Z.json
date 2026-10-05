@@ -1,0 +1,49 @@
+{
+  "table": "kb_curation",
+  "mode": "commit",
+  "at": "2026-10-05T15-10-19Z",
+  "ruling": "Sam Lee, open-asks sheet 38 (2026-10-05-open-asks-38) card 3: 'name' (replies store, 2026-10-05T06:43:52Z)",
+  "cohort": "program-requirements-harvest-s332@bot",
+  "read": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Ext & Review",
+      "field": "unified_title_override",
+      "value": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "state": "write",
+      "why": "",
+      "live": null
+    }
+  ],
+  "rows": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Ext & Review",
+      "field": "unified_title_override",
+      "value": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "reviewer_email": "program-requirements-harvest-s332@bot"
+    }
+  ],
+  "result": "written",
+  "inserted": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Ext & Review",
+      "field": "unified_title_override",
+      "value": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "reviewer_email": "program-requirements-harvest-s332@bot"
+    }
+  ],
+  "skipped_as_duplicate": [],
+  "read_back": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Ext & Review",
+      "field": "unified_title_override",
+      "value": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "state": "written",
+      "why": "already holds this value (by program-requirements-harvest-s332@bot)",
+      "live": {
+        "value": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+        "reviewer_email": "program-requirements-harvest-s332@bot",
+        "reviewed_at": "2026-10-05T15:10:19.874005+00:00"
+      }
+    }
+  ]
+}
