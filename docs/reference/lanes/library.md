@@ -53,16 +53,17 @@ ppt and video. Advise"*. Then, by number:
 ## How a file reaches Drive
 
 - **A session on Sam's machine (Cowork):** save into the Drive-synced folder.
-- **A cloud session:** it cannot. The proxy rejects Google's upload host and
-  `*.supabase.co` (measured 2026-10-05), and the Drive connector takes content
-  inline, which is impractical past a few KB of base64. The session sends Sam the
-  file (SendUserFile), he drops it in CPLLibrary or Drafts, and the session finds
-  it with the Drive connector (`search_files` by title and `parentId`) and files
-  the link with **File it** or a guarded update.
-- **Automatic upload (call 6, deferred):** a workflow that builds from source and
-  uploads with a stored Google sign-in for the camapinitiative account. A Google
-  service account likely cannot own files in a personal Gmail Drive, so it would
-  need the account's own OAuth refresh token as a secret. Not built.
+- **A cloud session, through the Drive connector:** a file up to roughly 50 KB (it travels as
+  base64 inside the tool call). Anything larger: Sam drops it in, and the session finds it with the
+  connector (`search_files` by title and `parentId`) and files the link with **File it**.
+- **A cloud session, directly (measured 2026-10-05):** the proxy lets the shell reach
+  `www.googleapis.com/upload` and `oauth2.googleapis.com` (they answer 405 and 404), and rejects
+  `script.google.com` and `*.supabase.co`. So with a stored Google sign-in for the camapinitiative
+  account (an OAuth refresh token as an environment secret) a script can upload a file of any size,
+  films included, with Drive's resumable upload.
+- **Automatic upload (call 6, deferred; Sam raised auto-filing again 2026-10-05):** the direct
+  route above, run by the session when it makes a piece. A Google service account likely cannot own
+  files in a personal Gmail Drive, so it needs the account's own refresh token. Not built.
 
 **What stays in a repo:** build scripts, specs, narration text and voice clips (a
 library voice can be withdrawn), the vault's companion notes, and a film a public
