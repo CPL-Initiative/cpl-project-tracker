@@ -132,8 +132,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_integration_backlog` | tabs: `nc-learning-partners` | — |
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
-| `program_requirement_records` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
-| `program_source_registry` | scripts: `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py` | — |
+| `program_requirement_records` | tabs: `program-requirements` · scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
+| `program_source_registry` | tabs: `program-requirements` · scripts: `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py` | — |
 | `project_lifecycle` | tabs: `raci` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
 | `projects` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
 | `sierra_feedback` | tabs: `governance`, `map-queue`, `sierra-training` · scripts: `chatbox/smoke_test.sh` | — |
@@ -683,6 +683,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `package.json` | scripts: `kb/doctrine.py` | — |
 | `picks kb/<slug-with-underscores>_domain_map.json` | scripts: `kb/_build_domain_cpl_crosswalk.py` | — |
 | `pipeline.js` | pages: `CPL_Dashboard.html` | — |
+| `program_requirements.js` | pages: `CPL_Dashboard.html` | — |
 | `project_add.js` | pages: `CPL_Dashboard.html` | — |
 | `project_lifecycle.js` | pages: `CPL_Dashboard.html` | — |
 | `projects_editor.js` | pages: `CPL_Dashboard.html` | — |
@@ -881,7 +882,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |
 | `github.com` | pages: `kb-portal/index.html` |
 | `github.com/CPL-Initiative/cpl-knowledge-base` | pages: `kb-portal/index.html` |
-| `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `governance`, `unified-courses` · scripts: `prototype/ironworker_video/build.py` |
+| `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `governance`, `program-requirements`, `unified-courses` · scripts: `prototype/ironworker_video/build.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
 | `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
 | `huggingface.co` | scripts: `prototype/funding_video/cues.py`, `prototype/funding_video/narrate.py` |
@@ -1019,5 +1020,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 94 Supabase tables · 35 RPCs · 6 edge functions · 589 file
-datasets · 157 external services · 410 consumers · 44 workflows · 37 tabs.
+Coverage: 94 Supabase tables · 35 RPCs · 6 edge functions · 590 file
+datasets · 157 external services · 411 consumers · 44 workflows · 38 tabs.

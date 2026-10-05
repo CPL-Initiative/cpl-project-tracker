@@ -351,6 +351,18 @@ window.COBI_ADMIN_SURFACE = {
       "rpcs": [],
       "measured": true
     },
+    "program-requirements": {
+      "modules": [
+        "program_requirements.js"
+      ],
+      "reads": [
+        "program_requirement_records",
+        "program_source_registry"
+      ],
+      "writes": [],
+      "rpcs": [],
+      "measured": true
+    },
     "gr-priorities": {
       "modules": [
         "gr_priorities.js"

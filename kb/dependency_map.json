@@ -4,12 +4,12 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 589,
+  "file_datasets": 590,
   "external_services": 157,
-  "consumers": 410,
+  "consumers": 411,
   "workflows": 44,
   "data_js_files": 69,
-  "tabs": 37
+  "tabs": 38
  },
  "datasets": {
   "edgefn:cpl-chat": {
@@ -1247,6 +1247,16 @@
      "line": 622,
      "tabs": [
       "governance"
+     ]
+    },
+    {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 523,
+     "tabs": [
+      "program-requirements"
      ]
     },
     {
@@ -14663,6 +14673,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:program_requirements.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "inline",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:project_add.js": {
    "consumers": [
     {
@@ -20878,6 +20901,16 @@
      "line": 3503
     },
     {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 100,
+     "tabs": [
+      "program-requirements"
+     ]
+    },
+    {
      "id": "script:chatbox/smoke_test.sh",
      "kind": "script",
      "direction": "read",
@@ -20889,6 +20922,16 @@
   },
   "supabase:program_source_registry": {
    "consumers": [
+    {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 99,
+     "tabs": [
+      "program-requirements"
+     ]
+    },
     {
      "id": "script:kb/_program_requirements_pilot.py",
      "kind": "script",
@@ -21554,6 +21597,9 @@
   ],
   "pipeline.js": [
    "pipeline"
+  ],
+  "program_requirements.js": [
+   "program-requirements"
   ],
   "raci.js": [
    "raci"
