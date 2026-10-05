@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-05T16:38:06.709Z",
+  "scraped_at": "2026-10-05T18:31:11.169Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -123,17 +123,17 @@
         },
         {
           "college": "Chaffey College",
-          "students": 3681,
-          "units": 19467.5,
-          "avgUnits": 5.288644390111383,
+          "students": 3706,
+          "units": 19611.5,
+          "avgUnits": 5.2918240690771725,
           "transcriptionRate": 1.7,
-          "avgTranscribed": 0.0923662048356425,
+          "avgTranscribed": 0.09174311926605505,
           "criteriaMetCount": 3,
-          "militaryStudents": 348,
+          "militaryStudents": 373,
           "nonMilitaryStudents": 3335,
           "apprenticeStudents": 12,
-          "savings": 20634770,
-          "yearImpact": 95917597.5,
+          "savings": 20883890,
+          "yearImpact": 96791245.5,
           "transcribedUnits": 340
         },
         {
@@ -198,17 +198,17 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 629,
-          "units": 8886,
-          "avgUnits": 14.127186009538951,
-          "transcriptionRate": 12.5,
-          "avgTranscribed": 1.7639109697933226,
+          "students": 630,
+          "units": 8925.5,
+          "avgUnits": 14.167460317460318,
+          "transcriptionRate": 12.4,
+          "avgTranscribed": 1.761111111111111,
           "criteriaMetCount": 3,
           "militaryStudents": 581,
-          "nonMilitaryStudents": 63,
+          "nonMilitaryStudents": 64,
           "apprenticeStudents": 0,
-          "savings": 15891047.5,
-          "yearImpact": 57009184.5,
+          "savings": 15929165,
+          "yearImpact": 57196177.5,
           "transcribedUnits": 1109.5
         },
         {
@@ -593,17 +593,17 @@
         },
         {
           "college": "Clovis Community College",
-          "students": 193,
-          "units": 1153,
-          "avgUnits": 5.974093264248705,
+          "students": 194,
+          "units": 1159,
+          "avgUnits": 5.974226804123711,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 193,
+          "militaryStudents": 194,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1973930,
-          "yearImpact": 6922447,
+          "savings": 1984310,
+          "yearImpact": 6958849,
           "transcribedUnits": 0
         },
         {
@@ -683,17 +683,17 @@
         },
         {
           "college": "Mission College",
-          "students": 167,
-          "units": 1002,
+          "students": 168,
+          "units": 1008,
           "avgUnits": 6,
           "transcriptionRate": 0.6,
-          "avgTranscribed": 0.03592814371257485,
+          "avgTranscribed": 0.03571428571428571,
           "criteriaMetCount": 1,
-          "militaryStudents": 167,
+          "militaryStudents": 168,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1733460,
-          "yearImpact": 6079134,
+          "savings": 1743840,
+          "yearImpact": 6115536,
           "transcribedUnits": 6
         },
         {
@@ -743,17 +743,17 @@
         },
         {
           "college": "Evergreen Valley College",
-          "students": 116,
-          "units": 669.5,
-          "avgUnits": 5.771551724137931,
+          "students": 117,
+          "units": 675.5,
+          "avgUnits": 5.773504273504273,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 112,
+          "militaryStudents": 113,
           "nonMilitaryStudents": 4,
           "apprenticeStudents": 0,
-          "savings": 1147855,
-          "yearImpact": 4025454.5,
+          "savings": 1158235,
+          "yearImpact": 4061856.5,
           "transcribedUnits": 0
         },
         {
@@ -1013,14 +1013,14 @@
         },
         {
           "college": "Los Medanos College",
-          "students": 237,
+          "students": 238,
           "units": 105,
-          "avgUnits": 0.4430379746835443,
+          "avgUnits": 0.4411764705882353,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 229,
-          "nonMilitaryStudents": 8,
+          "nonMilitaryStudents": 9,
           "apprenticeStudents": 2,
           "savings": 181650,
           "yearImpact": 637035,
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "52,394",
+      "value": "52,424",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,626"
+          "value": "28,654"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,859"
+          "value": "23,861"
         },
         {
           "label": "Apprentice",
@@ -1790,7 +1790,7 @@
     },
     {
       "title": "ELIGIBLE UNITS",
-      "value": "226k",
+      "value": "227k",
       "avg": "4.3 avg",
       "breakdowns": [
         {
@@ -1850,7 +1850,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$793M"
+          "value": "$794M"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 52394,
-    "Units": 226389.90000000002,
+    "Students": 52424,
+    "Units": 226591.40000000002,
     "TranscribedUnits": 74841.2,
-    "Savings": 339804519,
-    "YearImpact": 1343470175.3999999,
-    "MilitaryStudents": 28626,
-    "NonMilitaryStudents": 23859,
+    "Savings": 340122896.5,
+    "YearImpact": 1344640022.3999999,
+    "MilitaryStudents": 28654,
+    "NonMilitaryStudents": 23861,
     "AprenticeStudents": 853,
-    "AverageUnits": 4.320912699927473,
-    "TranscribedAverage": 1.4284307363438562
+    "AverageUnits": 4.32228368686098,
+    "TranscribedAverage": 1.427613306882344
   }
 }

@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-05T16:38:07.251918+00:00",
+  "scraped_at": "2026-10-05T18:31:11.612902+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28626,
+    "jst": 28654,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 348,
+      "jst": 373,
       "star": true
     },
     "City College of San Francisco": {
@@ -182,7 +182,7 @@
     },
     "Clovis Community College": {
       "vets": 117,
-      "jst": 193,
+      "jst": 194,
       "star": true
     },
     "Antelope Valley College": {
@@ -212,7 +212,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 167,
+      "jst": 168,
       "star": true
     },
     "Cerro Coso Community College": {
@@ -257,7 +257,7 @@
     },
     "Evergreen Valley College": {
       "vets": 87,
-      "jst": 112,
+      "jst": 113,
       "star": true
     },
     "Oxnard College": {
