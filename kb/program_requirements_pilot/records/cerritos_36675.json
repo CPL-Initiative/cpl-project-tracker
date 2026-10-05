@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "Cerritos College",
  "control_number": "36675",
@@ -73,6 +73,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -84,7 +98,20 @@
     "max": 136
    },
    "open_elective_units": null,
-   "ge_pattern": null
+   "ge_pattern": null,
+   "outcomes": [
+    "Explain basic electrical theory",
+    "Identify electrical practices and codes",
+    "Demonstrate correct wiring and installation techniques",
+    "Follow proper procedures and observe OSHA safety protocols",
+    "Demonstrate knowledge of OSHA safety standards",
+    "Demonstrate the correct and safe use of various diagnostic tools and equipment",
+    "Identify the evaluation procedure, steps and protocols required for accurate energy data collection",
+    "Accurately answer questions on retrofit procedure, steps, analysis, components, and safety protocols required in the lighting retrofit trade;",
+    "Accurately demonstrate correct and safe use of various lighting diagnostic tools/equipment",
+    "Discuss the interrelationship of craft skills, construction industry, and green workers to the construction process for alternative energy",
+    "Describe the basic elements of green construction and green energy buildings"
+   ]
   },
   "blocks": [
    {
@@ -143,6 +170,9 @@
    "The 'Total Hours of Completion (136 Hours)' line covers the four required courses only. The text says students complete 'the four (4) courses outlined below'.",
    "AED 90.08 (80 Hours) and AED 90.09 (90 hours) appear under 'Optional Elective' and are not part of the required total, so they are not placed in a block. A reviewer may decide whether to record them as an optional block.",
    "The text states that AED 90.01 must be completed before enrolling in AED 90.02."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

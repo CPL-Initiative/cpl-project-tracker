@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "West Los Angeles College",
  "control_number": "37839",
@@ -72,6 +72,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -83,7 +97,14 @@
     "max": 11
    },
    "open_elective_units": null,
-   "ge_pattern": null
+   "ge_pattern": null,
+   "outcomes": [
+    "Meet the educational requirements to qualify for the DRE Real Estate Salesperson license exam.",
+    "Have the requisite knowledge to pass and exceed the state average on DRE Real Estate Salesperson license exam.",
+    "Demonstrate mastery of the skills necessary to become a California Real Estate Salesperson.",
+    "Learn the day-to-day operations of a real estate office including listings, valuations, prospecting, selling, financing, and real estate operations.",
+    "Know the legal requirements necessary to assist homebuyers with buying and selling real estate properties."
+   ]
   },
   "blocks": [
    {
@@ -197,6 +218,9 @@
   "notes": [
    "The Salesperson section spans a page break (pages 151-152); the core course list continues on page 152 under the 'Required core courses ... 6' heading from page 151.",
    "Catalog codes with leading zeros (e.g., REAL ES 001, BUS 005, REAL ES 007) were matched to closed-list codes REAL ES 1, BUS005, REALES007."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

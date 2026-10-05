@@ -1347,6 +1347,468 @@
     root.appendChild(frag);
   }
 
+  // ── A harvested catalog record (ROEP), one program at a time ──────────────
+  // Sam, 2026-10-04 ~17:20Z: "we use the new tab based on mockup to manage the
+  // ongoing process to harvest program ROE and Pathway data and CPL Pathways to
+  // show it graphically to the colleges and public." This ports the approved
+  // mock-up (docs/visuals/2026-10-04-cpl-pathways-roep-mockup.html, Sam: "mock
+  // up looks good"): every record the harvest holds, checked or not, each
+  // marked, laid out By requirement (the catalog's blocks as tiles, an option
+  // fork for one-of-several blocks) or By term (where the college's map
+  // stands; no term-by-term map has been read yet, so every course waits in the
+  // tray). Every figure, mark and gap is the display build's
+  // (window.CPL_PATHWAYS_ROEP, kb/_build_roep_display.py), the facts Sierra
+  // quotes; nothing here recomputes one. The gaps are read-only: a misread is
+  // filed against the college's reading procedure in the harvest tab, never
+  // from this page. Outcomes (record shape 3) show as the catalog prints them.
+  var ROEP_CSS_ID = "cplpw-roep-css";
+  var ROEP_CSS = [
+    ".cplpw-roep { display:grid; gap:16px; min-width:0; }",
+    ".cplpw-roep .rlede { margin:0; color: var(--text-body); max-width: var(--cpl-measure, none); }",
+    ".cplpw-roep .rdraft { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:2px 9px; border-radius:999px; border:1px solid var(--mustard-text); color: var(--mustard-text); }",
+    ".cplpw-rcontrols { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:end; }",
+    ".cplpw-rseglabel { display:grid; gap:4px; font-size:.8rem; font-weight:600; color: var(--text-muted); }",
+    ".cplpw-rseg { display:inline-flex; flex-wrap:wrap; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; }",
+    ".cplpw-rseg button { font:inherit; font-weight:600; color: var(--text-body); background: var(--surface-opaque); border:0; border-right:1px solid var(--border-strong); padding:8px 14px; min-height:44px; cursor:pointer; }",
+    ".cplpw-rseg button:last-child { border-right:0; }",
+    ".cplpw-rseg button[aria-pressed='true'] { background: var(--text-strong); color: var(--surface-opaque); }",
+    ".cplpw-rseg button:focus-visible, .cplpw-rask:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-rask { display:inline-flex; align-items:center; font-weight:700; color: var(--seal-blue-text); text-decoration:none; border:1px solid var(--border-strong); border-radius:8px; padding:8px 14px; min-height:44px; background: var(--surface-opaque); }",
+    /* the program card */
+    ".cplpw-rprog { background: var(--surface-opaque); border:1px solid var(--border); border-radius:12px; padding:16px 18px; display:grid; gap:12px; min-width:0; }",
+    ".cplpw-rprog .top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 20px; align-items:baseline; }",
+    ".cplpw-rprog h2 { margin:0; font-size:clamp(1.2rem, 1vw + 1rem, 1.6rem); color: var(--text-strong); }",
+    ".cplpw-rprog .award { color: var(--text-muted); font-size:.94rem; }",
+    ".cplpw-rstatus { font-size:.78rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; border-radius:999px; padding:2px 10px; background: var(--surface-muted); color: var(--seal-blue-text); white-space:nowrap; }",
+    ".cplpw-rstatus.open { background:transparent; border:1px solid var(--mustard-text); color: var(--mustard-text); }",
+    ".cplpw-rprog .procline { margin:0; font-size:.88rem; color: var(--text-muted); }",
+    ".cplpw-rprog .procline a { color: var(--cobalt); }",
+    ".cplpw-rprog .procline a:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-rmeter { display:grid; gap:6px; }",
+    ".cplpw-rmeter .mlabel { font-size:.94rem; color: var(--text-body); }",
+    ".cplpw-rmeter .mlabel b { font-size:1.3rem; color: var(--text-strong); font-variant-numeric:tabular-nums; }",
+    ".cplpw-rbar { display:flex; height:16px; border-radius:4px; overflow:hidden; background: var(--surface-muted); border:1px solid var(--border-strong); }",
+    ".cplpw-rbar span { display:block; height:100%; background: var(--cobalt); }",
+    ".cplpw-rlegend { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:.8rem; color: var(--text-muted); }",
+    ".cplpw-rkey { display:inline-block; width:12px; height:12px; border-radius:2px; vertical-align:-1px; margin-right:6px; border:1px solid var(--border-strong); background: var(--surface-muted); }",
+    ".cplpw-rkey.cpl { background: var(--cobalt); border-color: var(--cobalt); }",
+    ".cplpw-rchecks { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:8px 16px; margin:0; }",
+    ".cplpw-rchecks div { min-width:0; font-size:.88rem; }",
+    ".cplpw-rchecks dt { font-size:.72rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); }",
+    ".cplpw-rchecks dd { margin:0; color: var(--text-body); }",
+    ".cplpw-rchecks dd.miss { color: var(--mustard-text); font-weight:600; }",
+    ".cplpw-routcomes summary { cursor:pointer; font-weight:600; color: var(--text-strong); }",
+    ".cplpw-routcomes summary:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-routcomes ol { margin:8px 0 0; padding-left:1.3em; display:grid; gap:4px; color: var(--text-body); }",
+    ".cplpw-routcomes p { margin:6px 0 0; font-size:.85rem; color: var(--text-muted); }",
+    /* the map beside the gaps */
+    ".cplpw-rgrid { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 320px); gap:18px; align-items:start; }",
+    ".cplpw-rgrid.public { grid-template-columns:minmax(0, 1fr); }",
+    "@media (max-width: 960px) { .cplpw-rgrid { grid-template-columns:minmax(0, 1fr); } }",
+    ".cplpw-rmap { min-width:0; }",
+    ".cplpw-rmap > h3, .cplpw-rgaps > h3 { margin:0 0 10px; font-size:1.1rem; color: var(--text-strong); }",
+    ".cplpw-rband { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; margin-bottom:12px; min-width:0; }",
+    ".cplpw-rband > header { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; padding:10px 14px; border-bottom:1px solid var(--border); }",
+    ".cplpw-rband h4, .cplpw-rfork > header h4 { margin:0; font-size:1rem; color: var(--text-strong); min-width:0; flex:1 1 240px; }",
+    ".cplpw-rroe { font-size:.72rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color: var(--seal-blue-text); background: var(--surface-muted); border-radius:999px; padding:2px 9px; white-space:nowrap; }",
+    ".cplpw-rrule { font-size:.88rem; color: var(--text-muted); }",
+    ".cplpw-rbu { font-size:.88rem; font-weight:600; color: var(--text-strong); font-variant-numeric:tabular-nums; white-space:nowrap; }",
+    ".cplpw-rtiles { list-style:none; margin:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr)); gap:8px; padding:12px; }",
+    ".cplpw-rtile { border:1px solid var(--border); border-radius:8px; padding:9px 10px; background: var(--surface-subtle); display:grid; gap:3px; min-width:0; align-content:start; }",
+    ".cplpw-rtile.here { border-color: var(--cobalt); box-shadow: inset 4px 0 0 var(--cobalt); background: var(--surface-opaque); }",
+    ".cplpw-rtile .code { font-weight:700; color: var(--text-strong); font-variant-numeric:tabular-nums; }",
+    ".cplpw-rtile .ttl { font-size:.88rem; color: var(--text-body); overflow-wrap:anywhere; }",
+    ".cplpw-rtile .u { font-size:.8rem; color: var(--text-muted); font-variant-numeric:tabular-nums; }",
+    ".cplpw-rmark { font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
+    ".cplpw-rmark b { font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--seal-blue-text); margin-right:4px; }",
+    ".cplpw-rmark.lead b { color: var(--text-muted); }",
+    ".cplpw-ralt { font-size:.8rem; color: var(--text-muted); border-top:1px dashed var(--border-strong); padding-top:4px; margin-top:2px; overflow-wrap:anywhere; }",
+    ".cplpw-ralt b { color: var(--text-strong); }",
+    ".cplpw-rfork { background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:10px; margin-bottom:12px; min-width:0; }",
+    ".cplpw-rfork > header { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; padding:10px 14px; border-bottom:1px solid var(--border); }",
+    ".cplpw-rlanes { display:grid; grid-template-columns:minmax(0, 1fr) auto minmax(0, 1fr); }",
+    ".cplpw-rlanes.many { grid-template-columns:minmax(0, 1fr); }",
+    ".cplpw-rlanes .cplpw-rband { border:0; border-radius:0; margin:0; }",
+    ".cplpw-ror { display:grid; place-items:center; padding:8px; font-weight:700; color: var(--text-muted); border-inline:1px dashed var(--border-strong); }",
+    "@media (max-width: 700px) { .cplpw-rlanes { grid-template-columns:minmax(0, 1fr); } .cplpw-ror { border-inline:0; border-block:1px dashed var(--border-strong); } }",
+    /* by term */
+    ".cplpw-rseq { background: var(--surface-opaque); border:1px solid var(--border); border-left:4px solid var(--mustard-text); border-radius:10px; padding:12px 14px; margin-bottom:12px; display:grid; gap:6px; }",
+    ".cplpw-rseq p { margin:0; max-width: var(--cpl-measure, none); }",
+    ".cplpw-rterms { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:8px; }",
+    "@media (max-width: 700px) { .cplpw-rterms { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
+    ".cplpw-rterm { border:1px dashed var(--border-strong); border-radius:8px; min-height:96px; padding:10px; display:grid; align-content:start; gap:6px; }",
+    ".cplpw-rterm h4 { margin:0; font-size:.88rem; color: var(--text-muted); }",
+    ".cplpw-rterm p { margin:0; font-size:.8rem; color: var(--text-muted); }",
+    ".cplpw-rtray { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; padding:12px; margin-top:12px; }",
+    ".cplpw-rtray h4 { margin:0 0 8px; font-size:.94rem; color: var(--text-strong); }",
+    ".cplpw-rmini { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; }",
+    ".cplpw-rmini li { font-size:.8rem; font-weight:600; border:1px solid var(--border); border-radius:4px; padding:2px 8px; background: var(--surface-subtle); color: var(--text-body); font-variant-numeric:tabular-nums; }",
+    ".cplpw-rmini li.here { border-color: var(--cobalt); background: var(--surface-opaque); }",
+    /* the gaps */
+    ".cplpw-rgaps { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; padding:14px; display:grid; gap:10px; min-width:0; }",
+    ".cplpw-rgaps > p { margin:0; font-size:.88rem; color: var(--text-muted); }",
+    ".cplpw-rgaps ul { list-style:none; margin:0; padding:0; display:grid; gap:10px; }",
+    ".cplpw-rgap { border-top:1px solid var(--border); padding-top:10px; display:grid; gap:4px; }",
+    ".cplpw-rgap .kind { font-size:.72rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color: var(--mustard-text); }",
+    ".cplpw-rgap .kind.note { color: var(--text-muted); }",
+    ".cplpw-rgap p { margin:0; font-size:.88rem; color: var(--text-body); overflow-wrap:anywhere; }",
+    ".cplpw-rgap .trace { font-size:.8rem; color: var(--text-muted); }",
+    ".cplpw-rfoot { margin:0; font-size:.82rem; color: var(--text-muted); }",
+    ".cplpw-roep .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }",
+  ].join("\n");
+  function ensureRoepCss() {
+    if (document.getElementById(ROEP_CSS_ID)) return;
+    var s = document.createElement("style");
+    s.id = ROEP_CSS_ID;
+    s.textContent = ROEP_CSS;
+    document.head.appendChild(s);
+  }
+
+  var ROEP_PLATFORM = { courseleaf: "CourseLeaf", curriqunet: "CurriQunet META", elumen: "eLumen", acalog: "Acalog",
+    pdf: "PDF catalog", custom_html: "college's own catalog pages", smartcatalog: "SmartCatalog", coursedog: "Coursedog" };
+  // One view state for the tab: the layout and the viewer stay as the reader
+  // leaves them when another program opens.
+  var roepView = { lay: "req", who: "college" };
+
+  function roepPrograms() {
+    var d = window.CPL_PATHWAYS_ROEP;
+    return ((d && d.programs) || []).filter(function (p) { return p && p.key && p.record && p.display; });
+  }
+  function roepAward(rec) { return String(rec.award || "").replace(/ requiring.*$/i, ""); }
+  function roepMeasure(rec) { return rec.measure === "hours" ? "hours" : "units"; }
+  function roepAmt(min, max, unit) {
+    if (min == null || isNaN(min)) return "";
+    var range = max != null && max !== min;
+    var one = !range && Number(min) === 1;
+    return fmtU(min) + (range ? "–" + fmtU(max) : "") + " " + (one ? unit.replace(/s$/, "") : unit);
+  }
+
+  // The catalog's rule for a block, in words.
+  function roepRoe(b, m) {
+    var n = b.minimum;
+    if (b.rule === "all") return { label: "Required", rule: "All of these" };
+    var choose = b.rule === "choose_units" ? "Choose " + roepAmt(n, null, m || "units") : "Choose " + (n || 1) + " course" + ((n || 1) === 1 ? "" : "s");
+    if (/elective/i.test(b.name || "")) return { label: "Elective", rule: choose };
+    return { label: "Choose from a list", rule: choose };
+  }
+
+  // The display build's CPL for one course, in its three kinds.
+  function roepMarks(info) {
+    var out = [];
+    var here = info && info.here;
+    if (here) {
+      var creds = here.credentials || [];
+      var text = creds.length
+        ? creds[0] + (creds.length > 1 ? " and " + (creds.length - 1) + " more" : "")
+        : (here.recs || 0) + " MAP credit recommendation" + (here.recs === 1 ? "" : "s");
+      out.push({ kind: "here", label: "CPL here", text: text });
+    }
+    var adopt = info && info.adopt;
+    if (adopt && (adopt.credentials || []).length) {
+      var a = adopt.credentials[0];
+      out.push({ kind: "adopt", label: "Could adopt", text: a.credential + " (articulated at " + (a.colleges || []).slice(0, 2).join(", ")
+        + ((a.colleges || []).length > 2 ? " and " + ((a.colleges || []).length - 2) + " more" : "") + ")"
+        + (adopt.credentials.length > 1 ? "; " + (adopt.credentials.length - 1) + " more credential" + (adopt.credentials.length === 2 ? "" : "s") : "") });
+    }
+    var consider = info && info.consider;
+    if (consider && consider.length) {
+      var c = consider[0];
+      out.push({ kind: "consider", label: "For consideration", text: c.credential + (c.cid ? " (statewide recommendation for " + c.cid + ")" : "")
+        + (consider.length > 1 ? "; " + (consider.length - 1) + " more" : "") });
+    }
+    return out;
+  }
+
+  function roepTile(rec, c) {
+    var courses = rec.display.courses || {};
+    var m = roepMeasure(rec);
+    var info = courses[c.code] || {};
+    var marks = roepMarks(info);
+    var li = el("li", "cplpw-rtile" + (info.here ? " here" : ""));
+    li.setAttribute("data-code", c.code);
+    li.appendChild(el("span", "code", c.code));
+    if (info.title) li.appendChild(el("span", "ttl", info.title));
+    var u = c.units != null ? roepAmt(c.units, c.units_max, m) : (info.units_from_state_file != null ? roepAmt(info.units_from_state_file, null, m) + " (state file)" : "");
+    if (u) li.appendChild(el("span", "u", u));
+    marks.forEach(function (k) {
+      li.appendChild(el("span", "cplpw-rmark" + (k.kind === "here" ? "" : " lead"), [el("b", null, k.label), k.text]));
+    });
+    (c.alternatives || []).forEach(function (a) {
+      var ai = courses[a.code] || {};
+      var bits = ["or ", el("b", null, a.code)];
+      if (ai.title) bits.push(" " + ai.title);
+      if (a.units != null) bits.push(" · " + roepAmt(a.units, null, m));
+      if (ai.here) bits.push(" · CPL here");
+      li.appendChild(el("span", "cplpw-ralt", bits));
+    });
+    return li;
+  }
+
+  function roepBand(rec, b) {
+    var r = roepRoe(b, roepMeasure(rec));
+    var sec = el("section", "cplpw-rband");
+    sec.setAttribute("aria-label", (b.name || r.label) + ": " + r.rule);
+    var head = el("header");
+    head.appendChild(el("span", "cplpw-rroe", r.label));
+    head.appendChild(el("h4", null, b.name || r.label));
+    head.appendChild(el("span", "cplpw-rrule", r.rule));
+    if (b.stated && b.stated.min != null) head.appendChild(el("span", "cplpw-rbu", roepAmt(b.stated.min, b.stated.max, roepMeasure(rec))));
+    sec.appendChild(head);
+    var ul = el("ul", "cplpw-rtiles");
+    (b.courses || []).forEach(function (c) { ul.appendChild(roepTile(rec, c)); });
+    sec.appendChild(ul);
+    return sec;
+  }
+
+  function roepRequirementMap(rec) {
+    var box = el("section", "cplpw-rmap");
+    box.setAttribute("aria-label", "Program requirements");
+    box.appendChild(el("h3", null, "Requirements, as the catalog prints them"));
+    var blocks = rec.record.blocks || [];
+    var done = {};
+    blocks.forEach(function (b) {
+      if (!b.option_group) { box.appendChild(roepBand(rec, b)); return; }
+      if (done[b.option_group]) return;
+      done[b.option_group] = true;
+      var lanes = blocks.filter(function (x) { return x.option_group === b.option_group; });
+      var fork = el("section", "cplpw-rfork");
+      var head = el("header");
+      head.appendChild(el("span", "cplpw-rroe", "Required: one option"));
+      head.appendChild(el("h4", null, "Complete one of these " + lanes.length + " options"));
+      head.appendChild(el("span", "cplpw-rrule", b.option_group));
+      fork.appendChild(head);
+      var wrap = el("div", "cplpw-rlanes" + (lanes.length === 2 ? "" : " many"));
+      lanes.forEach(function (l, i) {
+        if (i > 0 && lanes.length === 2) {
+          var or = el("div", "cplpw-ror", "or");
+          or.setAttribute("aria-hidden", "true");
+          wrap.appendChild(or);
+        }
+        wrap.appendChild(roepBand(rec, l));
+      });
+      fork.appendChild(wrap);
+      box.appendChild(fork);
+    });
+    if (!blocks.length) box.appendChild(el("p", null, "The record holds no requirement blocks."));
+    return box;
+  }
+
+  function roepTermMap(rec) {
+    var box = el("section", "cplpw-rmap");
+    box.setAttribute("aria-label", "Pathway, term by term");
+    box.appendChild(el("h3", null, "Pathway, term by term"));
+    var map = rec.display.map || {};
+    var note = el("div", "cplpw-rseq");
+    note.appendChild(el("b", null, map.status === "refused" ? "The college's map host refused the reader"
+      : map.status === "open" ? "A map is on record and has not been read yet"
+      : map.status === "not_read" ? "A map is linked and has not been read yet" : "No published map found yet"));
+    note.appendChild(el("p", null, map.text || "No term-by-term map source is on record for this college."));
+    note.appendChild(el("p", null, "When a map is read, each course below moves into its term, and the courses the college recommends inside each choice carry On the college's map. The catalog keeps the rule itself."));
+    box.appendChild(note);
+    var terms = el("ol", "cplpw-rterms");
+    terms.setAttribute("aria-label", "Terms");
+    [1, 2, 3, 4].forEach(function (t) {
+      var li = el("li", "cplpw-rterm");
+      li.appendChild(el("h4", null, "Term " + t));
+      li.appendChild(el("p", null, "No courses placed"));
+      terms.appendChild(li);
+    });
+    box.appendChild(terms);
+    var courses = rec.display.courses || {};
+    var all = [], seen = {};
+    (rec.record.blocks || []).forEach(function (b) {
+      (b.courses || []).forEach(function (c) { if (!seen[c.code]) { seen[c.code] = true; all.push(c.code); } });
+    });
+    var tray = el("div", "cplpw-rtray");
+    tray.appendChild(el("h4", null, "Not yet placed in a term: " + all.length + " course" + (all.length === 1 ? "" : "s")));
+    var mini = el("ul", "cplpw-rmini");
+    all.forEach(function (code) {
+      var here = !!(courses[code] && courses[code].here);
+      var li = el("li", here ? "here" : null, code);
+      if (here) li.appendChild(el("span", "sr", " (CPL here)"));
+      mini.appendChild(li);
+    });
+    tray.appendChild(mini);
+    box.appendChild(tray);
+    return box;
+  }
+
+  function roepGaps(rec) {
+    var gaps = rec.display.gaps || [];
+    var box = el("aside", "cplpw-rgaps");
+    box.setAttribute("aria-label", "Gaps and misreads");
+    box.appendChild(el("h3", null, "Gaps and misreads"));
+    box.appendChild(el("p", null, "A misread traces to the college's reading procedure, and the MAP team files it there, never against this record. A place where the catalog and the state's file disagree goes to the college."));
+    if (!gaps.length) { box.appendChild(el("p", null, "Nothing flagged for this program.")); return box; }
+    var ul = el("ul");
+    gaps.forEach(function (g) {
+      var li = el("li", "cplpw-rgap");
+      li.appendChild(el("span", "kind" + (/note/i.test(g.kind || "") ? " note" : ""), g.kind || ""));
+      li.appendChild(el("p", null, g.text || ""));
+      if (g.where) li.appendChild(el("span", "trace", "Traces to: " + g.where));
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    return box;
+  }
+
+  function roepOutcomes(rec) {
+    var prog = rec.record.program || {};
+    var outs = prog.outcomes || [];
+    var byCourse = (rec.record.course_outcomes || []).filter(function (c) { return (c.outcomes || []).length; });
+    if (!outs.length && !byCourse.length) return null;
+    var d = el("details", "cplpw-routcomes");
+    d.appendChild(el("summary", null, "Program learning outcomes, as the catalog prints them (" + outs.length + ")"));
+    if (outs.length) {
+      var ol = el("ol");
+      outs.forEach(function (o) { ol.appendChild(el("li", null, o)); });
+      d.appendChild(ol);
+    }
+    byCourse.forEach(function (c) {
+      d.appendChild(el("p", null, c.code + ": " + c.outcomes.join(" ")));
+    });
+    d.appendChild(el("p", null, "Copied word for word from the " + (rec.catalog_year || "") + " catalog; the harvest checks each one against the page it read."));
+    return d;
+  }
+
+  function roepProgramCard(rec) {
+    var disp = rec.display, fig = disp.figure || {}, checks = disp.checks || {};
+    var m = roepMeasure(rec), tot = fig.total || {}, hasTot = tot.min != null;
+    var card = el("section", "cplpw-rprog");
+    card.setAttribute("aria-label", rec.title + ", " + roepAward(rec));
+    var top = el("div", "top");
+    top.appendChild(el("div", null, [el("h2", null, rec.title || ""), el("div", "award", roepAward(rec) + " · " + rec.college)]));
+    top.appendChild(el("span", "cplpw-rstatus" + (checks.checked ? "" : " open"), checks.checked ? "Checked record" : "Not yet checked"));
+    card.appendChild(top);
+    var proc = el("p", "procline");
+    proc.appendChild(document.createTextNode("Read from the "));
+    var catName = (rec.catalog_year ? rec.catalog_year + " " : "") + "catalog";
+    if (/^https:\/\//.test(rec.source_url || "")) {
+      // Never a bare "#": this dashboard routes its tabs on location.hash.
+      var a = el("a", null, catName);
+      a.href = rec.source_url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      proc.appendChild(a);
+    } else {
+      proc.appendChild(document.createTextNode(catName));
+    }
+    proc.appendChild(document.createTextNode(roepView.who === "college"
+      ? " by " + rec.college + "'s " + (ROEP_PLATFORM[rec.platform] || rec.platform || "catalog") + " reading procedure. Control number " + rec.control_number + "."
+      : ". Beta draft: confirm your plan with a counselor."));
+    card.appendChild(proc);
+
+    var meter = el("div", "cplpw-rmeter");
+    var label = el("div", "mlabel");
+    var upTo = Number(fig.up_to) || 0;
+    if (!upTo) {
+      label.appendChild(document.createTextNode("No course in this program carries CPL at this college yet" + (hasTot ? "; the catalog prints " + roepAmt(tot.min, tot.max, m) : "") + "."));
+    } else if (hasTot) {
+      label.appendChild(document.createTextNode("Up to "));
+      label.appendChild(el("b", null, roepAmt(upTo, null, m)));
+      label.appendChild(document.createTextNode(" of the " + roepAmt(tot.min, tot.max, m) + " the catalog prints can be met through CPL."));
+    } else {
+      label.appendChild(document.createTextNode("The catalog prints no program total; "));
+      label.appendChild(el("b", null, roepAmt(upTo, null, m)));
+      label.appendChild(document.createTextNode(" of the listed courses carry CPL."));
+    }
+    meter.appendChild(label);
+    if (hasTot) {
+      var maxT = tot.max || tot.min;
+      var pct = maxT ? Math.min(100, (upTo / maxT) * 100) : 0;
+      var bar = el("div", "cplpw-rbar");
+      bar.setAttribute("role", "img");
+      bar.setAttribute("aria-label", roepAmt(upTo, null, m) + " of " + roepAmt(tot.min, tot.max, m) + " met through CPL");
+      var fill = el("span");
+      fill.style.width = pct.toFixed(1) + "%";
+      bar.appendChild(fill);
+      meter.appendChild(bar);
+      meter.appendChild(el("div", "cplpw-rlegend", [
+        el("span", null, [el("i", "cplpw-rkey cpl"), "Met through CPL, taking the CPL course wherever the catalog offers a choice"]),
+        el("span", null, [el("i", "cplpw-rkey"), "Taken in class"]),
+      ]));
+    }
+    card.appendChild(meter);
+
+    if (roepView.who === "college") {
+      var cov = checks.coverage || {};
+      var dl = el("dl", "cplpw-rchecks");
+      function row(dt, dd, miss) { dl.appendChild(el("div", null, [el("dt", null, dt), el("dd", miss ? "miss" : null, dd)])); }
+      row("Courses the state lists", (cov.placed != null ? cov.placed + " of " + cov.listed + " placed" : "Not measured")
+        + (cov.placed < cov.listed ? "; " + (cov.listed - cov.placed) + " the catalog does not require, each explained" : ""));
+      row("Catalog additions", checks.additions ? checks.additions + " printed in the catalog, not in the state's file" : "None");
+      row("Units", checks.arithmetic === "equal" ? "Add up to the printed total"
+        : checks.arithmetic === "unstated" ? "The catalog prints no figure to check"
+        : hasTot ? "Do not add up to the printed total" : "No printed total to check", checks.arithmetic !== "equal" && checks.arithmetic !== "unstated");
+      row("A person's reading", checks.reviewer === "ok" ? "Matches the catalog" : checks.reviewer === "fix" ? "Fixed by a procedure rerun" : "Not yet read");
+      card.appendChild(dl);
+    }
+    var outs = roepOutcomes(rec);
+    if (outs) card.appendChild(outs);
+    return card;
+  }
+
+  function roepSeg(labelText, id, options, current, onPick) {
+    var lab = el("div", "cplpw-rseglabel");
+    var lid = "cplpw-rseg-" + id;
+    var name = el("span", null, labelText);
+    name.id = lid;
+    lab.appendChild(name);
+    var seg = el("div", "cplpw-rseg");
+    seg.setAttribute("role", "group");
+    seg.setAttribute("aria-labelledby", lid);
+    options.forEach(function (o) {
+      var b = el("button", null, o[1]);
+      b.type = "button";
+      b.setAttribute("data-value", o[0]);
+      b.setAttribute("aria-pressed", String(o[0] === current));
+      b.addEventListener("click", function () { onPick(o[0]); });
+      seg.appendChild(b);
+    });
+    lab.appendChild(seg);
+    return lab;
+  }
+
+  function renderRoepProgram(root, rec) {
+    ensureRoepCss();
+    var wrap = el("div", "cplpw-roep");
+    if (!rec || !rec.display || !rec.record) {
+      wrap.appendChild(el("div", "cplpw-note", "This program's catalog record is unavailable; the display build did not load."));
+      clearNode(root);
+      root.appendChild(wrap);
+      return;
+    }
+    var lede = el("p", "rlede");
+    lede.appendChild(el("span", "rdraft", "Beta draft"));
+    lede.appendChild(document.createTextNode(" The program's requirements read from the college's own catalog (the ROEP record), with the courses a learner can clear through credit for prior learning."));
+    wrap.appendChild(lede);
+
+    var controls = el("div", "cplpw-rcontrols");
+    controls.appendChild(roepSeg("Lay out", "lay", [["req", "By requirement"], ["term", "By term"]], roepView.lay,
+      function (v) { roepView.lay = v; renderRoepProgram(root, rec); }));
+    controls.appendChild(roepSeg("Viewer", "who", [["college", "College"], ["public", "Student or public"]], roepView.who,
+      function (v) { roepView.who = v; renderRoepProgram(root, rec); }));
+    var ask = el("a", "cplpw-rask", "Ask Sierra");
+    ask.href = "sierra/?ask=" + encodeURIComponent("What does the " + rec.title + " (" + roepAward(rec) + ") at " + rec.college
+      + " require, and which of its courses can a learner clear through credit for prior learning?");
+    ask.target = "_blank";
+    ask.rel = "noopener";
+    controls.appendChild(ask);
+    wrap.appendChild(controls);
+
+    wrap.appendChild(roepProgramCard(rec));
+    var grid = el("div", "cplpw-rgrid" + (roepView.who === "college" ? "" : " public"));
+    grid.appendChild(roepView.lay === "term" ? roepTermMap(rec) : roepRequirementMap(rec));
+    if (roepView.who === "college") grid.appendChild(roepGaps(rec));
+    wrap.appendChild(grid);
+    var d = window.CPL_PATHWAYS_ROEP || {};
+    wrap.appendChild(el("p", "cplpw-rfoot", "Display build " + (rec.display.build || d.build || "") + ", read " + (rec.display.built || d.built || "")
+      + ". Every figure comes from the college's public catalog and the public MAP platform, the same facts Sierra quotes."));
+    clearNode(root);
+    root.removeAttribute("style");
+    root.appendChild(wrap);
+  }
+
   // ── Directory card renderer ───────────────────────────────────────────────
   // One auto-generated card per CCC baccalaureate: program metadata (from the
   // COCI export) + a LIVE CPL landscape (the college's own in-field CPL, the
@@ -1995,14 +2457,24 @@
       });
       if (og.children.length) sel.appendChild(og);
     });
+    // Catalog records, by college (the harvest's ROEP records, Beta draft)
+    var rg = document.createElement("optgroup");
+    rg.label = "Catalog records, Beta draft";
+    items.forEach(function (it, i) {
+      if (it.kind === "roep") rg.appendChild(option(i, it.prog.college + " — " + it.prog.title + " · " + roepAward(it.prog)
+        + (it.prog.display && it.prog.display.checks && it.prog.display.checks.checked ? "" : " (not yet checked)")));
+    });
+    if (rg.children.length) sel.appendChild(rg);
     sel.addEventListener("change", function () {
       var i = parseInt(sel.value, 10);
       onChange(isNaN(i) ? 0 : i);
     });
     row.appendChild(el("label", "cplpw-sellabel", "Choose a pathway:"));
     row.appendChild(sel);
-    var nDir = directory.length, nFeat = items.length - nDir;
-    var caption = nDir + " CCC baccalaureate degree" + (nDir === 1 ? "" : "s") + " + " + nFeat + " featured course map" + (nFeat === 1 ? "" : "s");
+    var nDir = directory.length, nRoep = items.filter(function (it) { return it.kind === "roep"; }).length;
+    var nFeat = items.length - nDir - nRoep;
+    var caption = nDir + " CCC baccalaureate degree" + (nDir === 1 ? "" : "s") + " + " + nFeat + " featured course map" + (nFeat === 1 ? "" : "s")
+      + (nRoep ? " + " + nRoep + " catalog record" + (nRoep === 1 ? "" : "s") : "");
     if (dir) caption += " · courses = CPL articulated now / potential with adoption";
     row.appendChild(el("span", "cplpw-selcount", caption));
     return { row: row, select: sel };
@@ -2014,6 +2486,7 @@
     var items = [];
     featured.forEach(function (p) { items.push({ kind: "featured", prog: p }); });
     directory.forEach(function (p) { items.push({ kind: "directory", prog: p }); });
+    roepPrograms().forEach(function (p) { items.push({ kind: "roep", prog: p }); });
     if (!items.length) {
       clearNode(root);
       root.appendChild(el("div", "cplpw-empty", "No pathway definitions found (cpl_pathways_data.js)."));
@@ -2035,6 +2508,7 @@
     function show(i) {
       var it = items[i] || items[0];
       if (it.kind === "directory") renderDirectory(body, it.prog, dir, directory, dir ? null : liveNote);
+      else if (it.kind === "roep") renderRoepProgram(body, it.prog);
       else if (it.prog.kind === "ladder") renderLadder(body, it.prog, null, openById);
       else renderProgram(body, it.prog, live, liveNote);
     }
@@ -2093,12 +2567,12 @@
       if (window.CPL_BACCALAUREATES || !hasLoader()) { withCociKeys(next); return; }
       window.CPL_TABS.loadScript("cpl_baccalaureates_data.js", "CPL_BACCALAUREATES", function () { withCociKeys(next); });
     }
-    // Ladder tier: a ladder's associate degree reads the display build
-    // (window.CPL_PATHWAYS_ROEP, ~0.3 MB). Loaded only when a ladder is listed;
-    // a failed load leaves the ladder's derived steps saying the record is missing.
+    // ROEP tier: the display build (window.CPL_PATHWAYS_ROEP, ~0.3 MB) feeds a
+    // ladder's associate degree and the catalog-record group in the selector.
+    // A failed load leaves the ladder's derived steps saying the record is
+    // missing and the selector without its catalog records.
     function withRoep(next) {
-      var wants = (data.programs || []).some(function (p) { return p && p.kind === "ladder"; });
-      if (!wants || window.CPL_PATHWAYS_ROEP || !hasLoader()) { next(); return; }
+      if (window.CPL_PATHWAYS_ROEP || !hasLoader()) { next(); return; }
       window.CPL_TABS.loadScript("cpl_pathways_roep_data.js", "CPL_PATHWAYS_ROEP", function () { next(); });
     }
     withDirectory(function () { withRoep(withCer); });
@@ -2121,6 +2595,9 @@
     _memCourseRow: memCourseRow,
     _memQualCard: memQualCard,
     _renderLadder: renderLadder,
+    _renderRoepProgram: renderRoepProgram,
+    _roepPrograms: roepPrograms,
+    _roepView: roepView,
     _ladderBlocks: ladderBlocks,
     _certificateFigures: certificateFigures,
   };

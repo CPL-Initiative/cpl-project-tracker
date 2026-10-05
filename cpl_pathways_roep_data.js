@@ -8,8 +8,8 @@ window.CPL_PATHWAYS_ROEP = {
   "map_read_at": "2026-10-04",
   "registry_read_at": "2026-10-04",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-10-05 14:50",
-  "cer": "2026-10-05T14:51:05+00:00"
+  "memberships": "2026-10-05 16:38",
+  "cer": "2026-10-05T16:39:26+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -37,7 +37,20 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 136
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Explain basic electrical theory",
+      "Identify electrical practices and codes",
+      "Demonstrate correct wiring and installation techniques",
+      "Follow proper procedures and observe OSHA safety protocols",
+      "Demonstrate knowledge of OSHA safety standards",
+      "Demonstrate the correct and safe use of various diagnostic tools and equipment",
+      "Identify the evaluation procedure, steps and protocols required for accurate energy data collection",
+      "Accurately answer questions on retrofit procedure, steps, analysis, components, and safety protocols required in the lighting retrofit trade;",
+      "Accurately demonstrate correct and safe use of various lighting diagnostic tools/equipment",
+      "Discuss the interrelationship of craft skills, construction industry, and green workers to the construction process for alternative energy",
+      "Describe the basic elements of green construction and green energy buildings"
+     ]
     },
     "blocks": [
      {
@@ -213,7 +226,13 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 20
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Describe the concepts of healthy living, lifelong wellness, and stress reduction techniques",
+      "Distinguish the components of the U.S. health systems as it relate to their options in healthcare",
+      "Explain the importance of interpersonal relationships and health",
+      "Identify the behavior concepts that enhance their quality of life"
+     ]
     },
     "blocks": [
      {
@@ -603,7 +622,15 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 38
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Demonstrate knowledge of safety guidelines for ironworkers and apprenticeship journeymen in the construction industry.",
+      "Conduct basic and supervisory tasks functions within the construction trades.",
+      "Explain job function differences between structural and reinforcing.",
+      "Recognized resources offered by Cerritos Community College to ironworker's apprentice program.",
+      "Identify industry leaders, government groups, and apprenticeship originations to analyze career goals.",
+      "Demonstrate knowledge of welding, cranes, detailing, reinforcing, structural steel, and rigging in order to perform and supervise ironworker’s job functions."
+     ]
     },
     "blocks": [
      {
@@ -1254,7 +1281,14 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 25.5
      },
      "open_elective_units": null,
-     "ge_pattern": "Cal-GETC"
+     "ge_pattern": "Cal-GETC",
+     "outcomes": [
+      "Describe the relationships between the prevention, transmission, intervention, and treatment of chronic and infectious diseases",
+      "Explain methods for tracing chronic and infectious disease outbreaks",
+      "Identify the primary social determinants of health that influence health outcomes in communities",
+      "Identify the impact of economic factors on population demographics and disease outbreaks",
+      "Evaluate the influence of the environment on a community’s health and the role of public policy"
+     ]
     },
     "blocks": [
      {
@@ -1944,7 +1978,16 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 25.5
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Identify minimum qualifications and entry level skills for firefighter hiring. The student will be able to describe the following elements: application process; written exam process; physical agility exam, oral interview, chief’s interview; background investigation; and fire fighter probationary process. Students will identify fire service history, culture and diversity.",
+      "Demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and fire fighter safety including: Size-up, report on conditions, Incident Command System; RECEO; 10 Standard Firefighting Orders; 18 Situations that Shout “Watch Out “; and common factors associated with injuries and line of duty deaths.",
+      "Identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances, and firefighter health and safety.",
+      "Analyze the causes of fire, determine extinguishing agents and methods, differentiate the stages of the fire and fire development, and compare methods of heat transfer.",
+      "Calculate flow requirements for fire apparatus, diagram a pump and plumbing schematic for fire apparatus, and apply mathematic formulae to hydraulics problems.",
+      "Identify and describe the apparatus used in the fire service, and the equipment and maintenance of fire apparatus and equipment.",
+      "Identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety. Differentiate between fire detection and fire suppression systems. Student will design and diagram a wet and dry fire protection system, and identify alarm system components and their operations."
+     ]
     },
     "blocks": [
      {
@@ -2439,7 +2482,16 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 25.5
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Identify minimum qualifications and entry level skills for firefighter hiring. The student will be able to describe the following elements: application process; written exam process; physical agility exam, oral interview, chief’s interview; background investigation; and fire fighter probationary process. Students will identify fire service history, culture and diversity.",
+      "Demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and fire fighter safety including: Size-up, report on conditions, Incident Command System; RECEO; 10 Standard Firefighting Orders; 18 Situations that Shout “Watch Out “; and common factors associated with injuries and line of duty deaths.",
+      "Identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances, and firefighter health and safety.",
+      "Analyze the causes of fire, determine extinguishing agents and methods, differentiate the stages of the fire and fire development, and compare methods of heat transfer.",
+      "Calculate flow requirements for fire apparatus, diagram a pump and plumbing schematic for fire apparatus, and apply mathematic formulae to hydraulics problems.",
+      "Identify and describe the apparatus used in the fire service, and the equipment and maintenance of fire apparatus and equipment.",
+      "Identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety. Differentiate between fire detection and fire suppression systems. Student will design and diagram a wet and dry fire protection system, and identify alarm system components and their operations."
+     ]
     },
     "blocks": [
      {
@@ -2940,7 +2992,12 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 31
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Identify opportunities using ideation and trend-spotting techniques.",
+      "Describe the process and multiple ways to become an entrepreneur.",
+      "Evaluate and critique opportunities by assessing the impact and feasibility of ideas by examining critical components of a business model."
+     ]
     },
     "blocks": [
      {
@@ -4070,7 +4127,14 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 28
      },
      "open_elective_units": null,
-     "ge_pattern": "Cal-GETC"
+     "ge_pattern": "Cal-GETC",
+     "outcomes": [
+      "Evaluate and analyze business-related data using various mathematical techniques.",
+      "Describe common business functions and practices.",
+      "Analyze and solve financial, economic, technological, or other problems in business organizations.",
+      "Utilize common business terminology.",
+      "Develop business-related written materials such as letters, memoranda, case studies, reports, or other documents."
+     ]
     },
     "blocks": [
      {
@@ -4523,7 +4587,8 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 40
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": []
     },
     "blocks": [
      {
@@ -5322,7 +5387,8 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 52.5
      },
      "open_elective_units": null,
-     "ge_pattern": "Mt. SAC local associate degree GE areas"
+     "ge_pattern": "Mt. SAC local associate degree GE areas",
+     "outcomes": []
     },
     "blocks": [
      {
@@ -6298,7 +6364,8 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 24
      },
      "open_elective_units": null,
-     "ge_pattern": "Cal-GETC"
+     "ge_pattern": "Cal-GETC",
+     "outcomes": []
     },
     "blocks": [
      {
@@ -6685,7 +6752,8 @@ window.CPL_PATHWAYS_ROEP = {
       "max": null
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": []
     },
     "blocks": [
      {
@@ -6951,7 +7019,15 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 33.5
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Demonstrate learned customer service, wait staffing and point of sale system knowledge in a working dining room setting.",
+      "Employ proper safety and sanitation principles to the receiving, storage, preparation, and service of food.",
+      "Formulate menus utilizing menu design techniques, conversion of written recipes, and calculations of food costing and menu pricing.",
+      "Demonstrate practical and theoretical knowledge of classical and contemporary cooking methods for both hot food and baking/pastry arts.",
+      "Demonstrate practical knowledge of classical knife cuts. Apply learned cooking methods to international cuisines.",
+      "Demonstrate proficiency in piping skills, mold usage, plate presentation, and other artistic techniques used in the garde manger kitchen as well as hot food, cold food, and pastry presentation."
+     ]
     },
     "blocks": [
      {
@@ -7181,7 +7257,12 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 19
      },
      "open_elective_units": null,
-     "ge_pattern": "Cal-GETC"
+     "ge_pattern": "Cal-GETC",
+     "outcomes": [
+      "Demonstrate an applicable knowledge of the many facets of the American Justice System and the interrelationship of functions among them.",
+      "Demonstrate a working knowledge of the theory and practice of law enforcement, community policing, criminal law, judicial procedure, criminal investigation, and corrections within the American Justice System.",
+      "Demonstrate the ability to interact with the public and members of the American Justice System in a manner to reflect professionalism in speaking, reading, writing, and the ability to compile, integrate, and disseminate diverse information."
+     ]
     },
     "blocks": [
      {
@@ -8541,7 +8622,14 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 246
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Demonstrate the importance of food service sanitation and safety by identifying the vulnerable aspects within the food service environment in terms of their potential for physical, biological, and chemical contamination.",
+      "Demonstrate a working knowledge of menu selection and development, working with emphasis on determining the use of food items on the menu that are most suitable for a particular establishment.",
+      "Perform mathematical functions related to the food service operation that include costing recipes and menus.",
+      "Perform current regulations for inspecting and grading various food products, proper techniques of receiving, storing, and rotating and requisition of those food products, and proper procedures to inventory those products.",
+      "Display the ability to prepare a variety of high quality food dishes, using various cooking techniques, and the successful presentation of dishes."
+     ]
     },
     "blocks": [
      {
@@ -8783,7 +8871,14 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 31
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Apply Information security to the various security domains using defense through administrative, technical and physical controls.",
+      "Design secure networks and apply a defense in depth strategy.",
+      "Apply operating system security and administration on Linux and Windows.",
+      "Discuss risk management strategies and assessment approaches.",
+      "Analyze security policy writing and evaluate appropriate application of policies at the organizational level."
+     ]
     },
     "blocks": [
      {
@@ -9329,7 +9424,14 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 30
      },
      "open_elective_units": null,
-     "ge_pattern": "LACCD GE Plan"
+     "ge_pattern": "LACCD GE Plan",
+     "outcomes": [
+      "Install, configure and manage industry standard computer operating system with security emphasis.",
+      "Install, configure, manage and troubleshoot industry leading network systems.",
+      "Install and configure routers and switches internetwork operating systems.",
+      "Understand a full range of security concepts & techniques.",
+      "Learn cloud technology and virtualization technologies."
+     ]
     },
     "blocks": [
      {
@@ -9911,7 +10013,15 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 23
      },
      "open_elective_units": null,
-     "ge_pattern": "Cal-GETC"
+     "ge_pattern": "Cal-GETC",
+     "outcomes": [
+      "Understand, recognize, and appreciate the maximum benefits provided by physical movement for developing individual health and wellness.",
+      "Understand the five components of fitness: cardiovascular endurance, muscle strength, muscle endurance, flexibility and body composition.",
+      "Assess the risk factors of specific training activity and practice safety precautions.",
+      "List activities that are beneficial for modifying body composition.",
+      "List activities that benefit the cardiovascular system.",
+      "Apply and practice the concepts of teamwork, cooperation, communication and respect for each other."
+     ]
     },
     "blocks": [
      {
@@ -10686,7 +10796,14 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 11
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Meet the educational requirements to qualify for the DRE Real Estate Salesperson license exam.",
+      "Have the requisite knowledge to pass and exceed the state average on DRE Real Estate Salesperson license exam.",
+      "Demonstrate mastery of the skills necessary to become a California Real Estate Salesperson.",
+      "Learn the day-to-day operations of a real estate office including listings, valuations, prospecting, selling, financing, and real estate operations.",
+      "Know the legal requirements necessary to assist homebuyers with buying and selling real estate properties."
+     ]
     },
     "blocks": [
      {
@@ -11147,7 +11264,17 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 18
      },
      "open_elective_units": null,
-     "ge_pattern": null
+     "ge_pattern": null,
+     "outcomes": [
+      "Utilize a network of real estate professionals to conduct and complete the sale, purchase and management of real estate processes and transactions.",
+      "Use current and emerging technologies and applications to conduct real estate transactions.",
+      "Interpret property and real estate law to troubleshoot legal aspects in selling, purchasing and management of real estate.",
+      "Use of personal and business investment strategies and methods to advise clients and address customer needs.",
+      "Market, manage and direct the daily activities of a successful real estate agency.",
+      "Model effective and appropriate interactions and relationships that create good will and repeat business.",
+      "Model, adopt, and comply with ethical and moral business practices that maintain and sustain trust and integrity in the workplace and with clients, pursuant to DRE regulations and requirements.",
+      "Communicate oral and written thoughts in a clear and organized manner to effectively inform and convey ideas in the workplace and with clients."
+     ]
     },
     "blocks": [
      {

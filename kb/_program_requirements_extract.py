@@ -42,6 +42,10 @@ SOURCES = os.path.join(HERE, "program_requirements_pilot", "sources")
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 FUNCTION = "program-requirements-extract"
 MIN_COVERAGE = 0.5      # a fixture whose page named fewer listed codes was not the program's page
+# The record shape the function writes (its header names each version). Shape 3
+# (S334, Sam's sheet 33 card 4): program and course outcomes as printed, which
+# the scorer checks word for word against the catalog text.
+RECORD_SHAPE = 3
 
 # Dollars per million tokens, Claude Opus 5.5 (claude-api skill, cached 2026-09-25).
 PRICE = {"claude-opus-5-5": {"input": 4.00, "output": 20.00, "cache_read": 0.20, "cache_write": 5.00}}
@@ -106,16 +110,19 @@ def main(argv: list[str] | None = None) -> int:
         sc = score(rec, src["closed_list"], src["text"]) if isinstance(rec, dict) else None
         row = {"college": src["college"], "control_number": src["control_number"],
                "shape": src["shape"], "title": src["title"], "source_file": src["_file"],
+               "record_shape": RECORD_SHAPE,
                "model": got.get("model"), "stop_reason": got.get("stop_reason"),
                "usage": got.get("usage"), "cost_usd": cost(got.get("model"), got.get("usage")),
                "ms": got.get("ms"), "seconds": round(time.time() - t0, 1),
                "error": got.get("error"), "score": sc, "record": rec}
         rows.append(row)
-        print("%-26s %-6s %-20s %s cov %-5s inv %-2s arith %-10s $%s  %s" % (
+        print("%-26s %-6s %-20s %s cov %-5s inv %-2s arith %-10s out %-7s $%s  %s" % (
             src["college"][:26], src["control_number"], src["shape"],
             "PASS" if sc and sc["pass"] else "fail",
             sc and sc["coverage"]["share"], sc and sc["invented"]["count"],
-            sc and sc["arithmetic"]["status"], row["cost_usd"], row["error"] or ""), flush=True)
+            sc and sc["arithmetic"]["status"],
+            sc and "%d%s" % (sc["outcomes"]["count"], "" if sc["outcomes"]["pass"] else " BAD"),
+            row["cost_usd"], row["error"] or ""), flush=True)
     total = sum(r["cost_usd"] or 0 for r in rows)
     print("\npassed %d of %d; model cost $%.4f ($%.4f a program)" % (
         sum(1 for r in rows if r["score"] and r["score"]["pass"]), len(rows), total,

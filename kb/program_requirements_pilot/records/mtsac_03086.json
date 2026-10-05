@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 3) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37195340082 (2026-10-04, S324, dispatched with only=086), the rerun that carries out Sam's review (kb/program_requirements_pilot/review_2026-10-04.json). Nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 3) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37195340082 (2026-10-04, S324, dispatched with only=086), the rerun that carries out Sam's review (kb/program_requirements_pilot/review_2026-10-04.json). Nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37195340082,
  "college": "Mt. San Antonio College",
  "control_number": "03086",
@@ -74,6 +74,16 @@
    "codes": [],
    "pass": true
   },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -85,7 +95,8 @@
     "max": 40
    },
    "open_elective_units": null,
-   "ge_pattern": null
+   "ge_pattern": null,
+   "outcomes": []
   },
   "blocks": [
    {
@@ -224,6 +235,9 @@
    "The catalog prints no units beside the courses in the elective block, only the block total 6-22; course units left null.",
    "The closed list writes FIRE2 and FIRE86 without a space; matched to the catalog's FIRE 2 and FIRE 86 and treated as not catalog additions.",
    "The page description calls this the 'Fire Science Certificate' while the heading reads Fire Technology (Certificate N0486)."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

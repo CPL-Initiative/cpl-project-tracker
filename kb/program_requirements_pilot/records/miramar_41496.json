@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37173589029 (2026-10-04, S324, dispatched with only=Miramar). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37173589029 (2026-10-04, S324, dispatched with only=Miramar). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37173589029,
  "college": "San Diego Miramar College",
  "control_number": "41496",
@@ -79,6 +79,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -90,7 +104,14 @@
     "max": 28
    },
    "open_elective_units": null,
-   "ge_pattern": "Cal-GETC"
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Evaluate and analyze business-related data using various mathematical techniques.",
+    "Describe common business functions and practices.",
+    "Analyze and solve financial, economic, technological, or other problems in business organizations.",
+    "Utilize common business terminology.",
+    "Develop business-related written materials such as letters, memoranda, case studies, reports, or other documents."
+   ]
   },
   "blocks": [
    {
@@ -214,6 +235,9 @@
    "ECON C2002 and ECON C2001 (common course numbering) replace closed-list ECON 120 and ECON 121; their descriptions state they are not open to students with previous credit for ECON 120/121. Recorded as catalog additions.",
    "Closed list prints STATC1000 without a space; treated as the same course as catalog's STAT C1000 (not a catalog addition).",
    "The 'COURSES REQUIRED FOR THE MAJOR' heading prints 20.0 units, which matches only the six required courses; the two selection lists are recorded as separate choose-one blocks. Program total 26.0-28.0 is the 'Courses Total Units' line."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

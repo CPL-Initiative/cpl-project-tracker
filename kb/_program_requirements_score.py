@@ -19,6 +19,16 @@ course the program lists, and Sam's review added a structural one:
                  repeat inflates a choose block's options and double-counts an
                  all-required block, so the scorer now refuses it.
 
+  outcomes       every program and course outcome the record carries appears
+                 in the catalog text word for word. Bar: none reworded. Sam's
+                 sheet 33 card 4 (2026-10-04, as proposed): record shape
+                 version 3 keeps outcomes exactly as printed, and the scorer
+                 checks they are verbatim. A page that prints an outcomes
+                 heading while the record carries none is reported
+                 (heading_without_outcomes) but does not fail: Mt. San Antonio
+                 prints the heading over a tab the capture never opens, so the
+                 gap is the reading procedure's, not the record's.
+
 The plan's fourth, agreement with a person, is Sam's reading of the same 20
 programs: on 2026-10-04 he passed 18 as matching the catalog and ruled two fixes
 (kb/program_requirements_pilot/review_2026-10-04.json).
@@ -58,6 +68,16 @@ hold, and version 2 adds one field for each:
                  missing or the rule picks units.
   units_max      the top of a range printed beside a course.
 
+Version 3 (S334) adds the outcomes, which no check above reads:
+  program.outcomes   each program or student learning outcome the catalog
+                     prints for the award, as printed, one string each.
+  course_outcomes    [{"code": "CUL 36", "outcomes": [...]}] for outcomes the
+                     text prints under a single course.
+Versions 1 and 2 carry neither, and their outcomes check passes with nothing
+to read. requirements_md5() fingerprints everything but the outcomes, so a
+person's reading follows the requirements it read
+(kb/program_requirements_pilot/reviewed_readings.json).
+
 When the catalog prints no figure at all (Mt. San Antonio's Vocational Nursing
 names no hours, no units and no total), there is nothing to add. Arithmetic is
 then "unstated", and it passes only when all three hold: the record carries no
@@ -70,6 +90,8 @@ Pure: no network, no model. Tested by tests/program_requirements_pilot_test.py.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 import os
 import re
 import sys
@@ -243,6 +265,79 @@ def repeated(record: dict) -> list[str]:
     return out
 
 
+# ── Outcomes (record shape v3) ───────────────────────────────────────────────
+# A catalog's outcomes heading: "Program Learning Outcomes", "Program Student
+# Learning Outcomes", "Student Learning Outcomes", "Program Outcomes", and
+# Miramar's "Learning Outcome(s):" (the form S327's count of 13 of 20 missed).
+OUTCOMES_HEADING = re.compile(
+    r"\b(?:program\s+(?:student\s+)?learning|student\s+learning|program|learning)\s+outcome(?:s\b|\(s\)|\b)",
+    re.I)
+
+# Glyph forms a reader cannot see as a different word: curly and straight
+# quotes, dashes, a soft hyphen. Folded on both sides before comparing; the
+# words, spelling, capitals and punctuation marks themselves must match.
+_FOLD = str.maketrans({"‘": "'", "’": "'", "“": '"', "”": '"',
+                       "–": "-", "—": "-", " ": " ", "­": None})
+
+
+def _flat(s: str) -> str:
+    return re.sub(r"\s+", " ", (s or "").translate(_FOLD)).strip()
+
+
+def _readings(text: str) -> list[str]:
+    """The catalog text flattened, plus the two ways a PDF's line-end hyphen
+    reads ("self-\\nemployed" as "self-employed" and as "selfemployed"), so an
+    outcome copied across a line break still matches."""
+    flat = _flat(text)
+    return [flat, re.sub(r"(\w)- (\w)", r"\1-\2", flat), re.sub(r"(\w)- (\w)", r"\1\2", flat)]
+
+
+def outcome_entries(record: dict) -> list[tuple[str | None, str]]:
+    """(course code or None for the program, outcome) for every outcome the
+    record carries. Versions 1 and 2 carry none."""
+    out = [(None, o) for o in ((record.get("program") or {}).get("outcomes") or [])]
+    for c in record.get("course_outcomes") or []:
+        out += [(c.get("code"), o) for o in (c.get("outcomes") or [])]
+    return out
+
+
+def outcomes_check(record: dict, text: str | None) -> dict:
+    entries = outcome_entries(record)
+    heading = bool(OUTCOMES_HEADING.search(text or ""))
+    if text is None:
+        bad = [o for _, o in entries]
+        why = ["no catalog text came to check the outcomes against"] if bad else []
+    else:
+        readings = _readings(text)
+        bad, why = [], []
+        for code, o in entries:
+            f = _flat(o if isinstance(o, str) else "")
+            if not f:
+                bad.append(o)
+                why.append("an empty outcome%s" % (" under %s" % code if code else ""))
+            elif not any(f in r for r in readings):
+                bad.append(o)
+                why.append("not in the catalog text as printed%s: %s"
+                           % (" (%s)" % code if code else "", f[:80]))
+    program_n = len((record.get("program") or {}).get("outcomes") or [])
+    return {"program": program_n,
+            "courses": len([c for c in record.get("course_outcomes") or [] if c.get("outcomes")]),
+            "count": len(entries), "not_verbatim": bad, "why": why,
+            "heading_printed": heading, "heading_without_outcomes": heading and not program_n,
+            "pass": not bad}
+
+
+def requirements_md5(record: dict) -> str:
+    """A fingerprint of the requirements a person reads (the program's figures
+    and every block), leaving out the outcomes, which the scorer checks word
+    for word. A rerun that changes the requirements changes it; one that only
+    adds outcomes does not."""
+    program = {k: v for k, v in (record.get("program") or {}).items() if k != "outcomes"}
+    body = {"program": program, "blocks": record.get("blocks") or []}
+    return hashlib.md5(json.dumps(body, sort_keys=True, ensure_ascii=False,
+                                  separators=(",", ":")).encode()).hexdigest()
+
+
 def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
     """The automatic bars. text is the catalog text the record was read
     from; without it a record that states no figure cannot pass."""
@@ -290,6 +385,7 @@ def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
 
     rep_codes = repeated(record)
+    outs = outcomes_check(record, text)
     n = len(listed)
     return {
         "measure": measure(record),
@@ -301,5 +397,7 @@ def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
                      "pass": not unflagged},
         "arithmetic": arith,
         "repeated": {"codes": rep_codes, "pass": not rep_codes},
-        "pass": not unexplained and not unflagged and arith["pass"] and not rep_codes,
+        "outcomes": outs,
+        "pass": (not unexplained and not unflagged and arith["pass"] and not rep_codes
+                 and outs["pass"]),
     }

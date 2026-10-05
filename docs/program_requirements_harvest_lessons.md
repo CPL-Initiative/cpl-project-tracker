@@ -598,3 +598,49 @@ reviewer and date; `--rollback` restores them. `tests/cer_decision_apply_test.py
 `node tests/<file>.test.js`. `pkill -f` on a pattern that appears in your own shell's command line kills the
 shell. A stash pushed with a pathspec carried the staged display files onto another branch; restore them by
 name.
+
+
+## S334 SkyAnchor, 2026-10-05: record shape 3 (outcomes as printed), the catalog record on CPL Pathways
+
+**What shipped.** The extraction function's version 4 keeps program and course outcomes as printed (record shape 3, Sam's sheet 33 card 4); the scorer's `outcomes` check fails a reworded or empty one. Run 37345734457 re-read the 20 pilot programs (20 of 20 passed, $1.31, $0.065 a program). `kb/_program_requirements_file.py` filed the outcomes onto the records Sam read. CPL Pathways lists every catalog record and opens each By requirement or By term (PR CPL-Initiative/cpl-project-tracker#1870). The live rows wait on sheet 40 card 1.
+
+**Lessons.**
+1. **A rerun relabels what it does not change.** Fourteen of 20 records came back with the requirements Sam read, byte for byte; six differed only in words the model chooses afresh each run: a section heading, a block name's trailing colon, an option group's name (`anatomy_physiology_sequence` against `Anatomy/Physiology sequence`), and on one record the alternatives' units filled in. Any of them would end a person's verdict under a fingerprint, and none changes what a student must take.
+2. **So a person's verdict is held to the requirements it read, and a rerun adds rather than replaces.** `reviewed_readings.json` fingerprints each read record (`requirements_md5`, outcomes left out); the loader counts a verdict only while the fingerprint matches. The filer keeps a read record's blocks, notes and reasons and takes only the new fields a machine check proves (outcomes, word for word against the same page). The display build stayed at 799bfb9a7dbf, so Sierra's facts did not move.
+3. **A count by heading undercounts.** S327 measured 13 of 20 pages printing outcomes with `(program|student) learning outcomes`. Miramar prints *Learning Outcome(s):*, so the true count is 16 (Miramar's four); the heading pattern takes the form now. Mt. San Antonio prints an Outcomes tab label and the capture reads none of the four programs' outcomes: the gap is the reading procedure's.
+4. **A verbatim check needs folding, and only of glyphs.** PDF text breaks lines mid-outcome and hyphenates at line ends, and catalogs mix curly and straight apostrophes. The scorer folds whitespace, a line-end hyphen and quote and dash glyphs on both sides; words and capitals must match. A blank outcome fails, since an empty string is in every text.
+5. **An unchanged build must keep its receipt.** `_build_roep_display.py` rewrote the 799bfb9a7dbf receipt when only the records' outcomes changed, and the rewrite dropped the line naming its rollback (the prior build's receipt). It now leaves an unchanged build's receipt as written.
+6. **Prove a write in Postgres before anyone approves it.** The outcomes write is one guarded insert ... select per row (md5 of the record before). A read-only `select md5(jsonb_set(...)::text)` on one row returned the after md5 the loader computed, so the receipt's after state is shown before Sam's go.
+
+**Moved from the lane (S334 compaction), verbatim.**
+
+**The census** (`kb/_program_source_census.py`,
+`.github/workflows/program-source-census.yml`): Playwright Chromium on a runner
+reads each homepage, scores catalog links (a library catalog, an old year, an
+archive or an addendum lose), follows one hop to an Academics page or a vendor or
+`catalog.*` link, probes `catalog.<domain>`, prefers this college's own link on a
+district page, fingerprints the platform (URL, then assets, then text) and dates
+the catalog (title, h1, a vendor's edition banner, address, link words). A read
+that finds no catalog keeps the registry's address. Each rule, with the run that
+earned it, is in the module and its guard; the evidence names where each year
+came from.
+robots.txt first for every host; 4 s between loads; at most 6 pages a college;
+the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
+- A branch push is a dry run (job log only). Apply runs only on `main`: weekly
+  (Sundays 10:29 UTC) or a hand dispatch with mode apply. A newer run queues
+  behind a running pass.
+- Governance: the cadence is dismissed in `kb/governance_surface_map.json`
+  with its reason until Phase 1 names the person who owns the outcome.
+- Guard: `tests/program_source_census_test.py` (pure half, no browser).
+
+**Measured (2026-10-03):**
+- The Data Mart Program Course File (2026-07-16) has 11 columns. None marks a
+  course required, places it in a block, orders it by term, or gives a unit
+  total. It names every course a program lists (313,710 rows, 20,451 of 22,335
+  programs), which gives every harvest a closed list to check against.
+- 115 colleges award active credit programs (118 with noncredit-only).
+- Active programs: 8,343 Certificates of Achievement, 3,730 A.S., 2,448 A.A.,
+  2,573 noncredit, 2,959 ADTs, 35 baccalaureates. ADT structure comes from the
+  TMC templates (`tmc_templates.js`).
+- The session container reaches no college site (the egress proxy rejects
+  every one); runners do.
