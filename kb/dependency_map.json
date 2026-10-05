@@ -4,7 +4,7 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 591,
+  "file_datasets": 590,
   "external_services": 157,
   "consumers": 411,
   "workflows": 44,
@@ -1268,6 +1268,13 @@
      "tabs": [
       "unified-courses"
      ]
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 913
     },
     {
      "id": "script:prototype/ironworker_video/build.py",
@@ -6020,7 +6027,7 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-37.html": {
+  "file:docs/visuals/<date>-open-asks-38.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
@@ -10254,6 +10261,13 @@
      "line": 183
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 740
+    },
+    {
      "id": "script:kb/_cred_rename_apply.py",
      "kind": "script",
      "direction": "read",
@@ -11893,19 +11907,6 @@
     "workflow:program-course-fetch.yml"
    ]
   },
-  "file:kb/program_requirements_pilot/cerritos_hs_agreements_2016.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 868
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/program_requirements_pilot/map_cr_by_course.json": {
    "consumers": [
     {
@@ -11939,7 +11940,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 732
+     "line": 767
     }
    ],
    "served": false,
@@ -14053,6 +14054,13 @@
      "line": 182
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 732
+    },
+    {
      "id": "script:kb/_cred_rename_apply.py",
      "kind": "script",
      "direction": "read",
@@ -14411,7 +14419,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 713
+     "line": 748
     },
     {
      "id": "script:veteran-sprint-map/extract_military.py",
@@ -17748,6 +17756,13 @@
      "line": 55
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 712
+    },
+    {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -17776,6 +17791,10 @@
     },
     {
      "by": "script:excel_to_dashboard.py",
+     "how": "writes-global"
+    },
+    {
+     "by": "script:kb/_build_open_asks_decision_sheet.py",
      "how": "writes-global"
     }
    ],
