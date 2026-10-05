@@ -259,8 +259,10 @@ block("14. the display facts render on a checked program, quoted, never recomput
   const rv = withDisplay("riverside_31456");
   const rctx = M.buildProgramCoursesContext("Riverside City College", rowsOf(rv.src, rv.d.control_number), ["justice"],
     new Map([[rv.d.control_number, rv.rec]]));
+  // S332: ADJ-3's identity is now C-ID AJ 120 (the live CCR), so its leads span every college
+  // on that C-ID; Norco's Criminal Law (the S327 pin) is fifth of five, past the four shown.
   check("a could-adopt lead names the credential and the college that articulated it",
-    /ADJ-3 — [^\n]*could adopt: Criminal Law at Norco College/.test(rctx), rctx);
+    /ADJ-3 — [^\n]*could adopt: Basic Correctional Officer Academy at Bakersfield College, /.test(rctx), rctx);
 
   const mi = withDisplay("miramar_41496");
   const mctx = M.buildProgramCoursesContext("San Diego Miramar College", rowsOf(mi.src, mi.d.control_number), ["business"],
