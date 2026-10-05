@@ -1,0 +1,32 @@
+{
+  "_applied_at": "2026-10-05T15:18:30Z",
+  "alias_map_snapshot": "/home/runner/work/cpl-project-tracker/cpl-project-tracker/kb/cred_rename_out/2026-10-05/alias_map.json",
+  "renames_processed": 1,
+  "merges_processed": 0,
+  "ok": 2,
+  "fail": 0,
+  "no_op": 0,
+  "log": [
+    {
+      "old_ut": "Ext & Review",
+      "new_ut": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "kind": "rename",
+      "old_course_id": "_CREDENTIAL_REVIEW::Ext & Review",
+      "new_course_id": "_CREDENTIAL_REVIEW::Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "field": "issuing_agency_override",
+      "op": "patch",
+      "status": "ok",
+      "rows_affected": 1
+    },
+    {
+      "old_ut": "Ext & Review",
+      "new_ut": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "kind": "rename",
+      "course_id": "_CREDENTIAL_REVIEW::Ext & Review",
+      "field": "unified_title_override",
+      "op": "delete",
+      "status": "ok",
+      "rows_affected": 1
+    }
+  ]
+}
