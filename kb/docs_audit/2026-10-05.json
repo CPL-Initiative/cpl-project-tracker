@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1062,
-    "bytes": 11159138,
+    "bytes": 11159214,
     "over_budget": 6,
     "handoff_max": 335,
     "always_loaded_files": 1,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 118,
-        "bytes": 3350743,
+        "bytes": 3351272,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10246,
+        "bytes": 9790,
         "over": 0
       },
       "lessons": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 306,
-        "bytes": 2537622,
+        "bytes": 2537625,
         "over": 0
       }
     },
@@ -61,8 +61,8 @@
       "vault_heavy_path": 56
     },
     "vault": {
-      "files": 3646,
-      "bytes": 1746224616,
+      "files": 3647,
+      "bytes": 1746228695,
       "heavy_bytes": 787341032,
       "heavy_share": 0.451,
       "ignore_filters": [
@@ -411,13 +411,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 699306,
+        "bytes": 699835,
         "limit": 150000,
         "lane": "other",
-        "over_by": 549306,
-        "ratio": 4.66
+        "over_by": 549835,
+        "ratio": 4.67
       },
-      "message": "699,306 B is 4.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "699,835 B is 4.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
