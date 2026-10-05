@@ -85,6 +85,25 @@ claude.ai.
   run sheet (155 KB) and the films (8 to 16 MB) go by hand: Sam drops them in, the session files the
   link.
 
+## Sam's calls 7-9 (2026-10-05, "7, 8,9 Y")
+
+7. **Build the automatic filer.** A session files each piece to Drive the moment it makes it,
+   films included, and writes the Library record in the same step. Setup is Sam's once: a Google
+   Cloud project with the Drive API on, an OAuth client, one consent as camapinitiative, and three
+   environment secrets (`GOOGLE_DRIVE_CLIENT_ID`, `GOOGLE_DRIVE_CLIENT_SECRET`,
+   `GOOGLE_DRIVE_REFRESH_TOKEN`; read `read_documentation` topic `environment.secrets` and walk him
+   through it). Check first whether the `drive.file` scope may write into CPLLibrary, a folder the
+   app did not create; if not, use the full Drive scope. Then `scripts/library_file.py <path>`:
+   resumable upload to CPLLibrary or Drafts, the Drive link back, the Library row written.
+8. **Versions are separate files.** Each edit uploads `<date code>_<name>_vN`, keeping the original
+   date code; the record's version list gains a row with the time filed. Never rely on Drive's own
+   revision history, which drops versions after 30 days unless pinned.
+9. **Decision sheets** stay Claude pages (the reply buttons need the artifact store). Each gets a
+   Library record (kind document, occasion "Open asks") linking its artifact, with no Drive copy.
+   Their sources (47 open-asks sheets in `docs/visuals/`) leave the public tracker repo for the
+   private vault repo; `kb/_build_open_asks_decision_sheet.py` and `docs/reference/decision_sheets.md`
+   move with them.
+
 ## Next
 
 - **Start a piece (Sam, 2026-10-05: *"Mockup looks great. Let's go with it."*).** Build it as

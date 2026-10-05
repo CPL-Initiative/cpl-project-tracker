@@ -1,3 +1,4 @@
 -- Library side session, 2026-10-05: Start a piece approved (verified, Sam) and the Drive-upload measurement.
 -- Applied as migration cpl_memory_2026_10_05_library_rulings_3. Rollback: supersede each row by slug.
 -- slugs: sam-library-start-a-piece-go-2026-10-05 (verified), library-cloud-upload-small-files-only-2026-10-05 (proposed)
+-- slug sam-library-auto-filer-versions-sheets-2026-10-05 (verified, Sam); migration cpl_memory_2026_10_05_library_rulings_4.
