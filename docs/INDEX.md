@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 82 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 53 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 303 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1044** | |
+| Session handoffs | 304 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1045** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-05 (S332 SkyBridge): the ROEP display reads identity from the live CCR (#1861); OSHA 30 on IWAP 41.09 and read 13 (#1862); sheets 37-38 ruled, Sierra at the top of Program Requirements (#1863); `apply_migration` allow-listed (#1864); handoff 333.
 - **2026-10-05 (S331 SkyForge):** KB note `methodology-a-search-result-is-a-lead-not-a-source`; handoff 332; the Program Requirements tab in COBI with its Procedures view (#1860); the college page read opens collapsed sections and prints a table's matching rows; Cerritos reads 7-12: CATEMA, CTE Course Connect, the CCAP partner schools, the archive's 2016 list of 57 agreements; procedure record v4; open-asks sheet 37.
 - 2026-10-04 (S330 SkyRoutine): KB note `methodology-an-advisor-asserts-what-its-fact-list-does-not-say`; handoff 331; the college page read submits a form and skips a gone host; Cerritos reads 4 and 5 (#1859): Schedule+ sections, the Credit by Exam route, Statewide Career Pathways gone, the B.S. on the Chancellor's Office list; the Ironworker pathway film draft v1 (`prototype/ironworker_video/`); open-asks sheet 36.
 - 2026-10-04 (S329 SkyRunner): Sierra's statement deployed; the college page read and three Cerritos reads (#1858): classroom hours, the B.S. start and proposed course list, the noncredit and high school lines; the registry's procedure columns; `docs/reference/scheduled_sessions.md` for Sam's routine; open-asks sheet 35; handoff 330.

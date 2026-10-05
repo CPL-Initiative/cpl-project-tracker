@@ -1,14 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-05",
-  "_session": "S331 SkyForge",
-  "_status": "The Program Requirements tab is in COBI as a Beta draft: where each college's catalog is, the program records we have read and checked, the program maps, and each college's reading notes. For Cerritos's high school course list, twelve reads tried every public place it might be. The last public list dates from 2016 (57 agreements, none for welding), Columbus High is one of Cerritos's dual enrollment partner schools, and no page says how its welding students earn Cerritos credit. Sheet 37 asks whether to send the drafted request to the college.",
+  "_session": "S332 SkyBridge",
+  "_status": "The Program Requirements tab (Reference & Curation) holds the harvest, and Sierra now sits at the top of it, as on My College. CPL Pathways and Sierra read the same program facts, and those facts now find the shared course identity for 285 of 289 pilot courses (149 before), so they suggest credit other colleges already give in 133 places and credit a state recommendation names in 15. Cerritos credits its OSHA 30 course by its own exam; the course is described as welding safety, and Sam expects the OSHA 30 training is built into it. Database updates Sam approves on a decision sheet no longer ask him a second time.",
   "items": [
     {
-      "id": "s331-sam-sheet37",
+      "id": "s332-sam-setup-script",
       "for": "Sam",
-      "tab": "activities-projects",
-      "text": "Answer open-asks sheet 37: whether to send the request for Cerritos's list of articulated high school courses, now that twelve reads tried every public route. The draft is on the card. https://claude.ai/artifact/HNF6zXcqeCS5LRLYLB3x2F"
+      "tab": "admin",
+      "text": "Add a dated comment line (for example # 2026-10-05 apply_migration allow-listed) to the cloud environment's Setup script (environment menu in the session's title bar, then Edit), so new sessions start with database updates you approved running without a second prompt."
     },
     {
       "id": "s329-sam-routine-settings",
@@ -47,6 +47,12 @@
       "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
     },
     {
+      "id": "s332-fable-ext-review-rename",
+      "for": "Fable",
+      "tab": "credential-reference",
+      "text": "Once #1863 is merged, run cer-decision-apply.yml on main (dry run, then commit) for kb/cer_decisions_out/2026-10-05, then cred-rename-apply.yml, so Cerritos's Ext & Review reads Ironworker Apprenticeship — OSHA 30/Extension Review."
+    },
+    {
       "id": "s319-fable-read-timings",
       "for": "Fable",
       "tab": "sierra",
@@ -63,18 +69,6 @@
       "for": "Fable",
       "tab": "cpl-pathways",
       "text": "Re-read Cerritos's Spring 2027 schedule for the ironworker apprenticeship and noncredit sections once they post (the Spring schedule listed none on 4 October)."
-    },
-    {
-      "id": "s331-fable-osha30-iwap",
-      "for": "Fable",
-      "tab": "cpl-pathways",
-      "text": "Check whether an OSHA 30 Construction certification, which Columbus High's welding capstone awards, carries credit for prior learning toward IWAP 41.09 OSHA 30/Extension Review in the Ironworker A.S. (the 'for consideration' kind of CPL)."
-    },
-    {
-      "id": "s331-fable-dock-sierra",
-      "for": "Fable",
-      "tab": "program-requirements",
-      "text": "Dock Sierra in the Program Requirements tab beside its views; it works without a deploy, and adding the surface to the chat function's known list later scopes her guidance to the harvest."
     }
   ],
   "_deferred": [
