@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-521 document(s).
+522 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -229,6 +229,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A typed answer is not a boolean, and reading it as one fails silently](../kb-notes/methodology-a-typed-answer-is-not-a-boolean.md) | methodology | published | 2026-09-20 | 2026-09-20 |
 | [A value can exist in the repo and never reach the payload — two minting paths, one inference pipeline](../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [A verdict covers the reading it saw](../kb-notes/methodology-a-verdict-covers-the-reading-it-saw.md) | methodology | published | 2026-10-05 | 2026-10-05 |
 | [A verdict that reports an action is checked in the store before the next step](../kb-notes/methodology-a-verdict-that-reports-an-action-is-checked-in-the-store.md) | methodology | published | 2026-10-02 | 2026-10-02 |
 | [A view must not fly where it cannot draw](../kb-notes/methodology-a-view-must-not-fly-where-it-cannot-draw.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A view swap that does not move the hash strands the user](../kb-notes/methodology-a-view-swap-that-does-not-move-the-hash-strands-the-user.md) | methodology | published | 2026-09-06 | 2026-09-06 |

@@ -31,6 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 41 (S334, 2026-10-05, SHEET_ID 2026-10-05-open-asks-41): sheet 40's one card, restated after the capture
+read Mt. San Antonio's hidden Outcomes tab (#1871): the same guarded write, now carrying outcomes on 19 of the 20
+records (all 20 still read as before, 2026-10-05). Sheet 40 carried no replies and is superseded by 41.
+Published at https://claude.ai/artifact/RhDo9xjscquPDDMHsYGz1V (capabilities db + comments); sheet 40's artifact
+was republished titled "Open Asks Sheet 40 (superseded by 41)".
+
 Sheet 40 (S334, 2026-10-05, SHEET_ID 2026-10-05-open-asks-40): sheet 39 is answered and carried out. One card:
 the guarded write that puts record shape 3's outcomes on the 20 live program records (all 20 read as before).
 Published at https://claude.ai/artifact/9gwhdiKTKYNkyb9u7cqyxf (capabilities db + comments).
@@ -227,8 +233,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-40.html')
-SHEET_ID = '2026-10-05-open-asks-40'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-05-open-asks-41.html')
+SHEET_ID = '2026-10-05-open-asks-41'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -947,10 +953,10 @@ def items():
                'kb/receipts/program_requirement_records_outcomes_2026-10-05.sql · '
                'kb/_program_requirements_file.py',
         'facts': (
-            "<p>Record shape 3, your sheet 33 card 4, now runs. Sixteen of the 20 pilot programs print learning "
-            "outcomes, and their records hold them word for word, 3 to 11 each. The scorer checked every one against "
-            "the catalog page it came from. Mt. San Antonio's four print theirs behind an Outcomes tab the reader "
-            "does not open yet.</p>"
+            "<p>Record shape 3, your sheet 33 card 4, now runs. Nineteen of the 20 pilot programs print learning "
+            "outcomes, and their records hold them word for word, 1 to 11 each. The scorer checked every one against "
+            "the catalog page it came from. Mt. San Antonio keeps its outcomes in a hidden Outcomes tab, which the "
+            "reader now opens; its Early Childhood Education transfer degree links to an outcomes page instead.</p>"
             "<p>Each record keeps the requirements you read. Six came back from the rerun with a heading or a block "
             "name worded differently, so those keep your reading as filed and take only the outcomes. Your 20 verdicts "
             "hold, and the up-to figures, the CPL marks and Sierra's display facts stay as they are.</p>"
@@ -963,8 +969,9 @@ def items():
                "read the outcomes before Sierra can quote them.",
         'chips': chips(('Go', 'go'), CH_LATER),
         'evidence': [live('2026-10-05', "md5(record::text) on all 20 program_requirement_records rows against the "
-                          "state before outcomes (20 of 20 match), and a read-only jsonb_set dry run on Cerritos "
-                          "42158 returning the after md5 the loader computes")],
+                          "state before outcomes (20 of 20 read before, re-read after Mt. San Antonio's outcomes were "
+                          "filed), and a read-only jsonb_set dry run on Cerritos 42158 returning the after md5 the "
+                          "loader computes")],
     })
 
     return I

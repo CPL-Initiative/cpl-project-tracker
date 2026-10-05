@@ -716,12 +716,44 @@ g, _ = FL.graft(some, moved_row, 1)
 check(g is not None and g["record"]["blocks"] == some["record"]["blocks"],
       "a run whose blocks differ never replaces the blocks a person read")
 shape3 = [json.load(open(p)) for p in records]
-check(all(r.get("record_shape") == 3 and r.get("outcomes_run") == 37345734457 for r in shape3),
-      "every filed record carries record shape 3 and the run its outcomes came from")
+check(all(r.get("record_shape") == 3 and r.get("outcomes_run") in (37345734457, 37350789203) for r in shape3),
+      "every filed record carries record shape 3 and the run its outcomes came from "
+      "(Mt. San Antonio's four from 37350789203, after the capture read their outcomes tab)")
 check(all(S.outcomes_check(r["record"], json.load(open(os.path.join(ROOT, r["source_file"]))) ["text"])["pass"]
           for r in shape3), "every filed outcome is in its catalog text word for word")
-check(sum(1 for r in shape3 if r["record"]["program"].get("outcomes")) == 16,
-      "16 of 20 pilot records carry outcomes; Mt. San Antonio's sit behind a tab the capture does not open")
+check(sum(1 for r in shape3 if r["record"]["program"].get("outcomes")) == 19,
+      "19 of 20 pilot records carry outcomes; Mt. San Antonio's Early Childhood Education ADT's tab "
+      "only links to an SLO page")
+
+# The capture appends an outcomes tab the page hides, once (S334).
+shown = "Program Learning Outcomes\nApply safety practices in the clinical setting.\nProgram Requirements"
+check(P.with_outcome_tabs(shown, [{"id": "outcomestextcontainer",
+                                   "text": "Apply safety practices in the clinical setting."}]) == shown,
+      "an outcomes tab the page already shows is not added twice")
+hidden = "Program Learning Outcomes\nPrint Options"
+got_tab = P.with_outcome_tabs(hidden, [{"id": "outcomestextcontainer",
+                                        "text": "Upon completion, students will be able to:\nAdminister medications safely."}])
+check(got_tab.startswith(hidden) and "[the page's outcomes tab, #outcomestextcontainer]" in got_tab
+      and "Administer medications safely." in got_tab,
+      "a hidden outcomes tab is appended under a line naming where it came from")
+check(P.with_outcome_tabs(hidden, None) == hidden and P.with_outcome_tabs(hidden, [{"id": "x", "text": " "}]) == hidden,
+      "a page with no outcomes tab is filed exactly as before")
+check("outcomeTabs" in P.PAGE_JS and '[id*="outcome" i]' in P.PAGE_JS,
+      "the page reader collects any element whose id names outcomes")
+# Capture run 9 (S334): a "\\n" written into PAGE_JS's Python source became a
+# real newline inside a JavaScript regex, the page script threw on every page,
+# and the run fell back to the reader's plain text. The script must parse.
+check(not re.search(r"[\x00-\x09\x0b-\x1f]", P.PAGE_JS),
+      "PAGE_JS carries no tab or control character a Python escape turned real")
+import shutil, subprocess, tempfile  # noqa: E401,E402
+if shutil.which("node"):
+    with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as fh:
+        fh.write("const pageJs = (" + P.PAGE_JS + ");\n")
+    rc = subprocess.run(["node", "--check", fh.name], capture_output=True, text=True)
+    os.unlink(fh.name)
+    check(rc.returncode == 0, "PAGE_JS parses as JavaScript: %s" % (rc.stderr.strip().splitlines() or [""])[-1])
+check("aria-controls" in P.PAGE_JS and "outcomeProbe" in P.PAGE_JS and "outcome_probe=" in open(P.__file__).read(),
+      "and the panel a tab labeled Outcomes points at, logging what it found (Mt. San Antonio's id names neither)")
 
 # ── The sample: five colleges, four shapes each, the fixed use cases in ──────
 with open(P.SAMPLE_FILE) as fh:

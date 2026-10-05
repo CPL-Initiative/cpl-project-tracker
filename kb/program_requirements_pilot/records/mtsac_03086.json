@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 3) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37195340082 (2026-10-04, S324, dispatched with only=086), the rerun that carries out Sam's review (kb/program_requirements_pilot/review_2026-10-04.json). Nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 3) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37195340082 (2026-10-04, S324, dispatched with only=086), the rerun that carries out Sam's review (kb/program_requirements_pilot/review_2026-10-04.json). Nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37350789203 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37195340082,
  "college": "Mt. San Antonio College",
  "control_number": "03086",
@@ -75,12 +75,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -96,7 +96,16 @@
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": []
+   "outcomes": [
+    "Define fire department organization, culture, and methods of communication of entry level fire department personnel.",
+    "Analyze and assess firefighter hazards, and demonstrate safe practices by using minimum standard safety procedures.",
+    "Demonstrate knowledge of fire prevention efforts and a resulting reduction of life and property loss.",
+    "Demonstrate knowledge of strategy and tactics required for the proper selection and safe use of firefighting methods, techniques, tools, and equipment.",
+    "Identify fire chemistry and behavior for the purpose of predicting fire dynamics and flame spread characteristics.",
+    "Identify components of built-in and portable fire protections systems and alarm and notification devises.",
+    "Demonstrate knowledge of the 5 basic types of construction. Identify the components and hazards related to each type.",
+    "Demonstrate knowledge of Leadership and Management concepts as they relate to emergency and non-emergency situations."
+   ]
   },
   "blocks": [
    {
@@ -239,5 +248,5 @@
   "course_outcomes": []
  },
  "record_shape": 3,
- "outcomes_run": 37345734457
+ "outcomes_run": 37350789203
 }
