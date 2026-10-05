@@ -239,6 +239,15 @@ FIXTURES = {
     "p_video_timing_trails": ('{"scenes": [{"scene": "Timing", "cues": [{"word": "The full two-year amount", "skip": "late"}]}]}',
                               '{"scenes": [{"scene": "Timing", "cues": [{"word": "The full two-year amount", "at": 0.1}]}]}'),
     # S303: sheet 4's measured call on the CR Reference's zero figures.
+    # S332 (sheet 38).
+    "p_iwap_4109_alone":     ('window.CPL_UC_MEMBERS = {"colleges": ["Cerritos College"], "members": '
+                              '{"WELD M10CA": [{"c": 0, "n": "IWAP 41.09"}], "CNST M1001": [{"c": 0, "n": "X 1"}]}};',
+                              'window.CPL_UC_MEMBERS = {"colleges": ["Cerritos College"], "members": '
+                              '{"CNST M1001": [{"c": 0, "n": "IWAP 41.09"}]}};'),
+    "p_ext_review_unclassified": ('{"Ext & Review": {"unified_title": "Ext & Review", "confidence_title": 0.2}}',
+                                  '{"Ext & Review": {"unified_title": "Ironworker Apprenticeship \u2014 OSHA 30/Extension Review"}}'),
+    "p_fire_inspector_split": ('{"Fire Inspector 1C": [], "SFT Fire Inspector 1C": []}',
+                               '{"Fire Inspector 1C": []}'),
     "p_crr_zero_hours":      ('{"groups": [{"canonical": "Oral Radiology (0\u20132 units)"}]}',
                               '{"groups": [{"canonical": "Oral Radiology (2 units)"}]}'),
     "p_video_sample_unnarrated": ('{"scenes": [{"scene": "Targets", "text": "Each priority has a target."}]}',
