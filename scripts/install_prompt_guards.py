@@ -133,9 +133,9 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # ⚠️ Nothing outward-facing or mutating belongs on this list, and none of it is
 # here: create_pull_request, merge_pull_request, update_pull_request,
 # add_issue_comment, push_files, create_or_update_file, delete_file,
-# actions_run_trigger, apply_migration, deploy_edge_function. Those publish,
-# spend CI, or change a shared table — a comment posted to a colleague's PR by
-# accident cannot be recalled.
+# actions_run_trigger, deploy_edge_function. Those publish, spend CI, or change
+# a shared table — a comment posted to a colleague's PR by accident cannot be
+# recalled. The one exception is apply_migration, by Sam's ruling (below).
 ALLOW_TOOLS = [
     "mcp__github__get_me",
     "mcp__github__get_commit",
@@ -177,6 +177,18 @@ ALLOW_TOOLS = [
     # to stop the prompt, while a rule does. Never ship this line without the
     # hook — tests/install_prompt_guards_test.py pins the pairing.
     "mcp__Supabase__execute_sql",
+    # ⚠️ SAM'S RULING, 2026-10-05 (S332): "Add apply migrations to allow list".
+    # A session's database write already waits on his go on a decision sheet
+    # (Rule 10: a committed receipt that rolls it back), and the prompt asked
+    # him a second time for the same decision: six prompts for one approved
+    # write that day. With this rule, auto mode resolves every apply_migration
+    # call at step 1 of its decision order, so neither the prompt nor the
+    # auto-mode check stands between a session and a write any longer. THE
+    # SHEET AND THE RECEIPT ARE THE WHOLE GATE: no apply_migration without a
+    # sheet card Sam answered "go" (or his word in chat) and a committed
+    # receipt whose before-values roll it back. Memory rows still go through
+    # execute_sql, under the guard's cpl_memory carve-out.
+    "mcp__Supabase__apply_migration",
 ]
 
 # ── the two hooks a rule cannot replace ────────────────────────────────────

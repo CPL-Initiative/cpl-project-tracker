@@ -2,7 +2,7 @@
 title: "Approval-prompt guards — why the allowlist never worked, and where the hooks must live"
 date: 2026-09-19
 session: 278 (SkyWarden)
-updated: 2026-10-03
+updated: 2026-10-05
 tags: [reference, hooks, permissions, settings, tooling]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -13,6 +13,28 @@ related:
 ---
 
 # The approval-prompt storm
+
+## ⭐ 2026-10-05 (S332, SkyBridge): `apply_migration` joins the allow list
+
+Sam, after six prompts for one write he had already approved on open-asks sheet
+38: *"Add apply migrations to allow list"*. `scripts/install_prompt_guards.py`
+carries the rule with his ruling beside it, and
+`tests/install_prompt_guards_test.py` names it as the one ruled exception to
+"no mutating tool on the allow list".
+
+What changes. Auto mode resolves an allow-listed call at step 1 of its decision
+order, so neither a prompt nor the auto-mode check stands between a session and
+an `apply_migration` write. **The decision sheet and the receipt are the whole
+gate:** no `apply_migration` without a card Sam answered "go" (or his word in
+chat) and a committed receipt whose before-values roll the write back (Rule 10).
+Memory rows still go through `execute_sql` under the guard's `cpl_memory`
+carve-out, which never prompted; S332 used `apply_migration` for them and cost
+two prompts.
+
+A new session starts from the environment snapshot, so the rule reaches it only
+after the setup script at claude.ai/code is edited (a dated comment line) and
+the snapshot rebuilds. Until then, `python3 scripts/install_prompt_guards.py
+--apply` once per session.
 
 ## ⭐ 2026-09-28 (S297, SkyLantern): the source was the account's connector setting
 
