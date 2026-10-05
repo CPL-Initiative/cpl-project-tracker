@@ -14178,7 +14178,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 53,
+   "count": 54,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14376,6 +14376,22 @@
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
      "updated": "2026-10-01"
+    },
+    {
+     "created": "2026-10-05",
+     "governs": [],
+     "path": "docs/reference/lanes/library.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "library",
+      "drive",
+      "deliverables"
+     ],
+     "title": "Library / where decks, films and documents live \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-05"
     },
     {
      "created": "2026-08-28",
@@ -20166,5 +20182,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1053
+ "total": 1054
 }

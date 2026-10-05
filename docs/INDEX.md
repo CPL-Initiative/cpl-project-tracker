@@ -69,9 +69,9 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | KB notes | 524 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 82 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 53 | [`catalog/reference.md`](catalog/reference.md) |
+| Reference (pull-side) | 54 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 308 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1053** | |
+| **total** | **1054** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:

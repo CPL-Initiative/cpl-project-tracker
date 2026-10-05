@@ -526,6 +526,17 @@ window.COBI_ADMIN_SURFACE = {
       "writes": [],
       "rpcs": [],
       "measured": false
+    },
+    "library": {
+      "modules": [
+        "library.js"
+      ],
+      "reads": [],
+      "writes": [
+        "cpl_library"
+      ],
+      "rpcs": [],
+      "measured": true
     }
   }
 };
