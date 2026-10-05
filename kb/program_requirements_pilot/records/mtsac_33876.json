@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "Mt. San Antonio College",
  "control_number": "33876",
@@ -70,6 +70,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -81,7 +95,8 @@
     "max": 24
    },
    "open_elective_units": null,
-   "ge_pattern": "Cal-GETC"
+   "ge_pattern": "Cal-GETC",
+   "outcomes": []
   },
   "blocks": [
    {
@@ -211,6 +226,9 @@
    "'Core Courses 24' is printed as the heading total; it equals the 'Total Units for Major 24' and appears to include the practicum sequence choice (18 + 3 for CHLD 66/66L + 3 for the sequence = 24 using closed-list units). It is recorded on the Core Courses block as printed; a reviewer may prefer to treat it as the major total only.",
    "The page heading reads 'AS-T Degree'; General Education (Cal-GETC) 34 units and degree total 60 units are not recorded as the award total.",
    "Footnote 3 states courses may be double-counted for the major and Cal-GETC."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

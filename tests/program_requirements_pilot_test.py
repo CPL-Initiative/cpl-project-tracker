@@ -664,6 +664,7 @@ check(head["pass"] and head["heading_without_outcomes"],
       "a heading with no outcomes under it (Mt. San Antonio's tab) is reported, never failed")
 check(S.outcomes_check(rec, "Program Student Learning Outcomes")["heading_printed"]
       and S.outcomes_check(rec, "Student Learning Outcomes")["heading_printed"]
+      and S.outcomes_check(rec, "Learning Outcome(s): Students who complete")["heading_printed"]
       and not S.outcomes_check(rec, "Outcome-based education")["heading_printed"],
       "the outcomes heading in each form the pilot pages print")
 check(S.score(rec, CUL)["outcomes"]["pass"] and S.score(rec, CUL)["outcomes"]["count"] == 0,
@@ -695,6 +696,32 @@ check(sum(1 for r in lr if r["checked"]) == 20,
       % sum(1 for r in lr if r["checked"]))
 check(all("missing_explained" not in r["record"] and "notes" not in r["record"] for r in lr),
       "the public read carries no working notes")
+
+# The filer keeps what a person read and takes only the outcomes (S334).
+import _program_requirements_file as FL  # noqa: E402
+log = ("2026-10-05T17:10:59Z === PILOT RECORDS JSON BEGIN ===\n"
+       '2026-10-05T17:10:59Z {"college": "X", "control_number": "1"}\n'
+       "2026-10-05T17:10:59Z === PILOT RECORDS JSON END ===\n")
+check(FL.rows_from_log(log) == [{"college": "X", "control_number": "1"}],
+      "the filer reads the records between the job log's markers, timestamps stripped")
+some = json.load(open(records[0]))
+src0 = json.load(open(os.path.join(ROOT, some["source_file"])))
+reworded_row = {"record": {**some["record"], "program": {**some["record"]["program"],
+                                                         "outcomes": ["Not a sentence this catalog prints."]}}}
+check(FL.graft(some, reworded_row, 1)[0] is None,
+      "the filer refuses outcomes the catalog text does not print")
+moved_row = {"record": {**some["record"], "blocks": some["record"]["blocks"][:-1],
+                        "program": {**some["record"]["program"], "outcomes": []}}}
+g, _ = FL.graft(some, moved_row, 1)
+check(g is not None and g["record"]["blocks"] == some["record"]["blocks"],
+      "a run whose blocks differ never replaces the blocks a person read")
+shape3 = [json.load(open(p)) for p in records]
+check(all(r.get("record_shape") == 3 and r.get("outcomes_run") == 37345734457 for r in shape3),
+      "every filed record carries record shape 3 and the run its outcomes came from")
+check(all(S.outcomes_check(r["record"], json.load(open(os.path.join(ROOT, r["source_file"]))) ["text"])["pass"]
+          for r in shape3), "every filed outcome is in its catalog text word for word")
+check(sum(1 for r in shape3 if r["record"]["program"].get("outcomes")) == 16,
+      "16 of 20 pilot records carry outcomes; Mt. San Antonio's sit behind a tab the capture does not open")
 
 # ── The sample: five colleges, four shapes each, the fixed use cases in ──────
 with open(P.SAMPLE_FILE) as fh:

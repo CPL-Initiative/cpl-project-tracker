@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "West Los Angeles College",
  "control_number": "37050",
@@ -80,6 +80,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -91,7 +105,15 @@
     "max": 23
    },
    "open_elective_units": null,
-   "ge_pattern": "Cal-GETC"
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Understand, recognize, and appreciate the maximum benefits provided by physical movement for developing individual health and wellness.",
+    "Understand the five components of fitness: cardiovascular endurance, muscle strength, muscle endurance, flexibility and body composition.",
+    "Assess the risk factors of specific training activity and practice safety precautions.",
+    "List activities that are beneficial for modifying body composition.",
+    "List activities that benefit the cardiovascular system.",
+    "Apply and practice the concepts of teamwork, cooperation, communication and respect for each other."
+   ]
   },
   "blocks": [
    {
@@ -297,6 +319,9 @@
    "CHEM 101 carries an asterisk (CHEM 101*) whose footnote is not in the excerpt.",
    "KIN 250 Weight Training Skills is not in the closed list; recorded as catalog addition.",
    "The KIN AA section that follows (major code 0835.00) lists KIN MAJ 126, KIN 247, KIN 291 and was not recorded as it belongs to a different award."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

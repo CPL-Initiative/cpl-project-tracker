@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "Cerritos College",
  "control_number": "45549",
@@ -70,6 +70,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -81,7 +95,14 @@
     "max": 25.5
    },
    "open_elective_units": null,
-   "ge_pattern": "Cal-GETC"
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Describe the relationships between the prevention, transmission, intervention, and treatment of chronic and infectious diseases",
+    "Explain methods for tracing chronic and infectious disease outbreaks",
+    "Identify the primary social determinants of health that influence health outcomes in communities",
+    "Identify the impact of economic factors on population demographics and disease outbreaks",
+    "Evaluate the influence of the environment on a community’s health and the role of public policy"
+   ]
   },
   "blocks": [
    {
@@ -278,6 +299,9 @@
    "CHEM 110 is printed with '(4-5)', apparently covering the CHEM 110 (4) / CHEM 111 (5) pair; recorded as units 4, units_max 5.",
    "The degree requires Cal-GETC; the text notes CSU GE or IGETC may be used in some cases.",
    "Program was formerly known as Public Health Science (AS-T)."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

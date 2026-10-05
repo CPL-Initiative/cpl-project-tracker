@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "Riverside City College",
  "control_number": "31456",
@@ -78,6 +78,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -89,7 +103,12 @@
     "max": 19
    },
    "open_elective_units": null,
-   "ge_pattern": "Cal-GETC"
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Demonstrate an applicable knowledge of the many facets of the American Justice System and the interrelationship of functions among them.",
+    "Demonstrate a working knowledge of the theory and practice of law enforcement, community policing, criminal law, judicial procedure, criminal investigation, and corrections within the American Justice System.",
+    "Demonstrate the ability to interact with the public and members of the American Justice System in a manner to reflect professionalism in speaking, reading, writing, and the ability to compile, integrate, and disseminate diverse information."
+   ]
   },
   "blocks": [
    {
@@ -314,6 +333,9 @@
    "SOC-48 appears as a statistics alternative in List B but is not in the closed list; marked as a catalog addition.",
    "The closed list stores 'PSYC48' without a space and with no units; matched to catalog PSYC-48 (4 units).",
    "Required Courses block consists of two 'Select one of the following' choices, each an honors pair; recorded as one required block with honors twins as alternatives."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

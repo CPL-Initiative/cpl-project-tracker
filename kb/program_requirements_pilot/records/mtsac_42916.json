@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "Mt. San Antonio College",
  "control_number": "42916",
@@ -69,6 +69,20 @@
     "the catalog prints no total, no hours and no units"
    ]
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -80,7 +94,8 @@
     "max": null
    },
    "open_elective_units": null,
-   "ge_pattern": null
+   "ge_pattern": null,
+   "outcomes": []
   },
   "blocks": [
    {
@@ -173,6 +188,9 @@
    "Noncredit Certificate of Completion (#42916); the catalog prints no hours or units beside any course and no program total, so measure is left as 'units' with all values null. A reviewer may want to confirm hours from another source.",
    "Text states 'Students must pass all nine core courses to earn the Vocational Nursing certificate', matching the nine required courses recorded.",
    "VOC HEP and VOC NCLXP appear under 'Recommended Elective' and were not placed as requirements."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

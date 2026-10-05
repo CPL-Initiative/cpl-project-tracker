@@ -6,7 +6,7 @@
   "edge_functions": 6,
   "file_datasets": 591,
   "external_services": 157,
-  "consumers": 411,
+  "consumers": 412,
   "workflows": 44,
   "data_js_files": 69,
   "tabs": 38
@@ -902,7 +902,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1945,
+     "line": 2407,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1332,7 +1332,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1944,
+     "line": 2406,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2120,7 +2120,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1943,
+     "line": 2405,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4752,7 +4752,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2094,
+     "line": 2568,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4822,7 +4822,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2088,
+     "line": 2562,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5115,7 +5115,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1354,
+     "line": 1816,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5158,7 +5158,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2061,
+     "line": 2535,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5181,7 +5181,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1513,
+     "line": 1975,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5230,7 +5230,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2102,
+     "line": 2576,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5379,7 +5379,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2075,
+     "line": 2549,
      "tabs": [
       "cpl-pathways"
      ]
@@ -11921,6 +11921,13 @@
   },
   "file:kb/program_requirements_pilot/reviewed_readings.json": {
    "consumers": [
+    {
+     "id": "script:kb/_program_requirements_file.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
+    },
     {
      "id": "script:kb/_program_requirements_load.py",
      "kind": "script",

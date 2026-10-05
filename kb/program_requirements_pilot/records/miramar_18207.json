@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37173589029 (2026-10-04, S324, dispatched with only=Miramar). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37173589029 (2026-10-04, S324, dispatched with only=Miramar). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37173589029,
  "college": "San Diego Miramar College",
  "control_number": "18207",
@@ -70,6 +70,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -81,7 +95,16 @@
     "max": 25.5
    },
    "open_elective_units": null,
-   "ge_pattern": null
+   "ge_pattern": null,
+   "outcomes": [
+    "Identify minimum qualifications and entry level skills for firefighter hiring. The student will be able to describe the following elements: application process; written exam process; physical agility exam, oral interview, chief’s interview; background investigation; and fire fighter probationary process. Students will identify fire service history, culture and diversity.",
+    "Demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and fire fighter safety including: Size-up, report on conditions, Incident Command System; RECEO; 10 Standard Firefighting Orders; 18 Situations that Shout “Watch Out “; and common factors associated with injuries and line of duty deaths.",
+    "Identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances, and firefighter health and safety.",
+    "Analyze the causes of fire, determine extinguishing agents and methods, differentiate the stages of the fire and fire development, and compare methods of heat transfer.",
+    "Calculate flow requirements for fire apparatus, diagram a pump and plumbing schematic for fire apparatus, and apply mathematic formulae to hydraulics problems.",
+    "Identify and describe the apparatus used in the fire service, and the equipment and maintenance of fire apparatus and equipment.",
+    "Identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety. Differentiate between fire detection and fire suppression systems. Student will design and diagram a wet and dry fire protection system, and identify alarm system components and their operations."
+   ]
   },
   "blocks": [
    {
@@ -158,6 +181,9 @@
    "The summary text describes the 'Fire Technology Associate Degree program' and an award note about 60 degree-applicable units, though the section heading names the Certificate of Achievement; the narrative appears shared with the degree. The 60-unit degree total was not used.",
    "Fire academy cohort courses (FIPT 150W, 150A, 150B, 150C, 150T, 322A, 322C, 322F, 323B, 324A, 381G, 322D) and academy prerequisites (FACD 100D, EMT course) are mentioned only in the descriptive narrative, not as certificate requirements, so they were not placed in a block.",
    "The requirement list header reads 'COURSES REQUIRED FOR THE MAJOR' even though this is a certificate; the printed total of 25.5 units matches the sum of the listed courses."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

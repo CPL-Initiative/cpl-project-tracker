@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "Cerritos College",
  "control_number": "41982",
@@ -77,6 +77,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -88,7 +102,13 @@
     "max": 20
    },
    "open_elective_units": null,
-   "ge_pattern": null
+   "ge_pattern": null,
+   "outcomes": [
+    "Describe the concepts of healthy living, lifelong wellness, and stress reduction techniques",
+    "Distinguish the components of the U.S. health systems as it relate to their options in healthcare",
+    "Explain the importance of interpersonal relationships and health",
+    "Identify the behavior concepts that enhance their quality of life"
+   ]
   },
   "blocks": [
    {
@@ -180,6 +200,9 @@
    "Units for the alternatives HO 102 and KIN 110 are not printed beside them in the catalog, so they are left null.",
    "A 'Recommended Courses' list (HED 101, HED 103 or WGS 103, HED 104, HED 200, MA 161) follows the requirements; these are recommendations, not requirements, and were not recorded as a block.",
    "The printed 'Total Units 20' matches the sum of the required courses (3+3+3+3+3+1+4)."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

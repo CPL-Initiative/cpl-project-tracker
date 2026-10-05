@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "Riverside City College",
  "control_number": "39033",
@@ -70,6 +70,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -81,7 +95,14 @@
     "max": 246
    },
    "open_elective_units": null,
-   "ge_pattern": null
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate the importance of food service sanitation and safety by identifying the vulnerable aspects within the food service environment in terms of their potential for physical, biological, and chemical contamination.",
+    "Demonstrate a working knowledge of menu selection and development, working with emphasis on determining the use of food items on the menu that are most suitable for a particular establishment.",
+    "Perform mathematical functions related to the food service operation that include costing recipes and menus.",
+    "Perform current regulations for inspecting and grading various food products, proper techniques of receiving, storing, and rotating and requisition of those food products, and proper procedures to inventory those products.",
+    "Display the ability to prepare a variety of high quality food dishes, using various cooking techniques, and the successful presentation of dishes."
+   ]
   },
   "blocks": [
    {
@@ -158,6 +179,9 @@
    "The block heading reads 'Required Courses (240 Hours)', but the catalog also prints 'Hours 246.00' and 'Total: 246.00'. The course hours sum to 246 (36 + 7 x 30). I recorded 246 for the block and for the program total; a reviewer should check the 240 figure in the heading.",
    "The award is a noncredit Certificate of Competency counted in hours. The closed list's 0 units are not used.",
    "The catalog prints codes with hyphens (CUL-850). These match the closed-list codes (CUL 850)."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

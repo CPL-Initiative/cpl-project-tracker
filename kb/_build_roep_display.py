@@ -635,8 +635,10 @@ def main(argv=None) -> int:
     if args.print:
         return 0
     prior = None
+    same_build = False
     if os.path.exists(OUT_JS):
         was = load_js_object(OUT_JS, "CPL_PATHWAYS_ROEP")
+        same_build = was.get("build") == b["build"] and os.path.exists(receipt_path(b))
         if was.get("build") != b["build"] and os.path.exists(receipt_path(was)):
             prior = os.path.relpath(receipt_path(was), ROOT)
     sql = sql_text(b, prior)
@@ -645,6 +647,12 @@ def main(argv=None) -> int:
         print("REFUSING: the display SQL names %r, which stalls the Supabase connector." % hit.group(0))
         return 2
     open(OUT_JS, "w").write(js_text(b))
+    if same_build:
+        # The display is unchanged (a record gained outcomes, say): its receipt
+        # already holds this build and names its rollback, so it stays as written.
+        print("wrote %s; build %s unchanged, its receipt %s kept" % (
+            os.path.relpath(OUT_JS, ROOT), b["build"], os.path.relpath(receipt_path(b), ROOT)))
+        return 0
     open(receipt_path(b), "w").write(sql)
     print("wrote %s and %s" % (os.path.relpath(OUT_JS, ROOT), os.path.relpath(receipt_path(b), ROOT)))
     return 0

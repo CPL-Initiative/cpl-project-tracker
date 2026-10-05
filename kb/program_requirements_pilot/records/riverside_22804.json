@@ -1,5 +1,5 @@
 {
- "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks.",
+ "_what": "A pilot program's requirements record, drafted by the program-requirements-extract Edge Function (version 2) from the fixture named in source_file and scored by kb/_program_requirements_score.py. Filed from the job log of extraction run 37171952080 (2026-10-04, S324). Nothing reads it but the guard and the review sheet; nothing public reads a record until a college's records pass all four checks. Record shape 3 (S334): the program and course outcomes, as printed, come from extraction run 37345734457 and were checked word for word against the same catalog text; the requirements, notes and reasons are the ones read, unchanged (kb/_program_requirements_file.py).",
  "extracted_run": 37171952080,
  "college": "Riverside City College",
  "control_number": "22804",
@@ -70,6 +70,20 @@
    ],
    "why": []
   },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
   "pass": true
  },
  "record": {
@@ -81,7 +95,15 @@
     "max": 33.5
    },
    "open_elective_units": null,
-   "ge_pattern": null
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate learned customer service, wait staffing and point of sale system knowledge in a working dining room setting.",
+    "Employ proper safety and sanitation principles to the receiving, storage, preparation, and service of food.",
+    "Formulate menus utilizing menu design techniques, conversion of written recipes, and calculations of food costing and menu pricing.",
+    "Demonstrate practical and theoretical knowledge of classical and contemporary cooking methods for both hot food and baking/pastry arts.",
+    "Demonstrate practical knowledge of classical knife cuts. Apply learned cooking methods to international cuisines.",
+    "Demonstrate proficiency in piping skills, mold usage, plate presentation, and other artistic techniques used in the garde manger kitchen as well as hot food, cold food, and pastry presentation."
+   ]
   },
   "blocks": [
    {
@@ -144,6 +166,9 @@
    "The section covers both the A.S. degree and the Certificate of Achievement under one shared requirements list; the certificate requirements are read from that shared list.",
    "KIN-4 in the catalog matches closed-list entry 'KIN4' (no units stored); it is treated as the same course, and the catalog prints 3.00 units.",
    "The A.S. degree adds general education, but no GE pattern is named, and GE does not apply to the certificate, so ge_pattern is null."
-  ]
- }
+  ],
+  "course_outcomes": []
+ },
+ "record_shape": 3,
+ "outcomes_run": 37345734457
 }

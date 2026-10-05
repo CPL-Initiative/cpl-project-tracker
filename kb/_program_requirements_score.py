@@ -267,9 +267,11 @@ def repeated(record: dict) -> list[str]:
 
 # ── Outcomes (record shape v3) ───────────────────────────────────────────────
 # A catalog's outcomes heading: "Program Learning Outcomes", "Program Student
-# Learning Outcomes", "Student Learning Outcomes", "Program Outcomes".
+# Learning Outcomes", "Student Learning Outcomes", "Program Outcomes", and
+# Miramar's "Learning Outcome(s):" (the form S327's count of 13 of 20 missed).
 OUTCOMES_HEADING = re.compile(
-    r"\b(?:program\s+(?:student\s+)?learning|student\s+learning|program)\s+outcomes?\b", re.I)
+    r"\b(?:program\s+(?:student\s+)?learning|student\s+learning|program|learning)\s+outcome(?:s\b|\(s\)|\b)",
+    re.I)
 
 # Glyph forms a reader cannot see as a different word: curly and straight
 # quotes, dashes, a soft hyphen. Folded on both sides before comparing; the
