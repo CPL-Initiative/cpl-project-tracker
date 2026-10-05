@@ -21,7 +21,14 @@
  *                requests). Sam's sheet 34 card 2: one per college, kept with its
  *                history; a misread changes the procedure, never the record.
  *
- * Sierra is one link (the mock-up's v3 design): it opens the CPL Assistant tab.
+ * Sierra docks in the tab (Sam, open-asks sheet 38 card 5, 2026-10-05: go): a
+ * collapsible "Sierra AI" section below the views, closed until the reader opens
+ * it, mounts the one CPL Assistant widget with CPL_CHAT.mountInto(host,
+ * "program-requirements"), the pattern My College uses. The thread follows the
+ * reader between the panes. cpl-chat reads an unknown surface as unscoped, so her
+ * guidance stays unscoped until a deploy names this surface. The header's "Ask
+ * Sierra" opens the section; without the chat module the section keeps the link
+ * to the CPL Assistant tab, the mock-up's v3 design.
  *
  * A FAILED READ SAYS SO; it never renders as zero colleges or zero records.
  * Read-only: this tab writes nothing. Tests: tests/program_requirements.test.js
@@ -33,6 +40,8 @@
   var REST = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/rest/v1";
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var VIEW_KEY = "cplProgramRequirements.view.v1";
+  var SIERRA_KEY = "cplProgramRequirements.sierra.v1";
+  var SIERRA_SURFACE = "program-requirements";
   var CURRENT_YEAR = "2026-2027";
 
   var REGISTRY_SELECT = "college,catalog_url,catalog_year,catalog_platform,catalog_format," +
@@ -180,6 +189,12 @@
       ".prh-tools { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }",
       ".prh-ask { display:inline-flex; align-items:center; font-weight:700; color:var(--seal-blue-text); text-decoration:none; border:1px solid var(--border-strong); border-radius:8px; padding:6px 12px; min-height:40px; background:var(--surface-opaque); }",
       ".prh-ask:hover { border-color:var(--seal-blue-text); }",
+      "button.prh-ask { font:inherit; cursor:pointer; }",
+      ".prh-sierra { margin-top:24px; border:1px solid var(--border-strong); border-radius:11px; background:var(--surface); padding:4px 16px; }",
+      ".prh-sierra > summary { cursor:pointer; min-height:44px; display:flex; align-items:center; font-weight:700; color:var(--text-strong); font-size:1.05rem; }",
+      ".prh-sierra[open] > summary { border-bottom:1px solid var(--border); margin-bottom:10px; }",
+      ".prh-sierra-lede { margin:0 0 10px; font-size:.875rem; color:var(--text-muted); max-width:var(--cpl-measure,none); }",
+      ".prh-sierra-mount { padding-bottom:12px; }",
       ".prh-switch { display:flex; flex-wrap:wrap; gap:6px; padding-block:14px; }",
       ".prh-switch button { font:inherit; font-weight:600; color:var(--text-body); background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:8px 14px; min-height:44px; cursor:pointer; }",
       ".prh-switch button[aria-selected=\"true\"] { background:var(--text-strong); color:var(--paper); border-color:var(--text-strong); }",
@@ -549,7 +564,7 @@
     root.removeAttribute("style");
     root.textContent = "";
     var wrap = el("div", { cls: "prh" });
-    var ask = el("a", { cls: "prh-ask", href: "#chatbot",
+    var ask = el("button", { cls: "prh-ask", type: "button", "aria-controls": "prh-sierra",
       title: "Ask Sierra about program requirements; she reads the catalogs, the program records and the rules the harvest runs by",
       text: "Ask Sierra" });
     var meta = el("p", { cls: "prh-meta" });
@@ -602,12 +617,36 @@
       : state.view === "procedures" ? viewProcedures() : viewCatalogs());
     wrap.appendChild(sw);
     wrap.appendChild(panel);
+    var sierra = el("details", { cls: "prh-sierra", id: "prh-sierra" }, [
+      el("summary", { text: "Sierra AI" }),
+      el("p", { cls: "prh-sierra-lede", text: "Ask Sierra about a program's requirements, its record, or how a college's catalog is read." }),
+      el("div", { cls: "prh-sierra-mount", id: "prh-sierra-mount" }, [
+        el("a", { cls: "prh-ask", href: "#chatbot", text: "Open the CPL Assistant" })])]);
+    if (safeGet(SIERRA_KEY) === "1") sierra.setAttribute("open", "");
+    sierra.addEventListener("toggle", function () { safeSet(SIERRA_KEY, sierra.open ? "1" : "0"); });
+    ask.addEventListener("click", function () {
+      sierra.open = true;
+      safeSet(SIERRA_KEY, "1");
+      var box = sierra.querySelector(".cplchat-input") || sierra.querySelector("summary");
+      if (box && box.scrollIntoView) box.scrollIntoView({ block: "center" });
+      if (box && box.focus) box.focus();
+    });
+    wrap.appendChild(sierra);
     wrap.appendChild(el("footer", { cls: "prh-foot" }, [
       el("p", {}, [el("strong", { text: "Beta draft. " }),
         "Every figure here comes from public catalogs, the state's Program Course File and the public MAP platform. The registry, the records and the procedures change as the census and the reads run again."]),
       el("p", { text: "Sources: program_source_registry (the weekly census, a person's corrections, each college's reading procedure) and program_requirement_records (each program's record and its display facts)." })
     ]));
     root.appendChild(wrap);
+    mountSierra(root);
+  }
+
+  /* The one CPL Assistant widget, mounted into this tab's section. Returns false
+   * (and the section keeps its link) when the chat module has not loaded. */
+  function mountSierra(root) {
+    var C = window.CPL_CHAT, host = root && root.querySelector("#prh-sierra-mount");
+    if (!host || !C || typeof C.mountInto !== "function") return false;
+    try { C.mountInto(host, SIERRA_SURFACE); return true; } catch (e) { return false; }
   }
 
   function choose(id, focus) {
@@ -629,7 +668,7 @@
 
   window.CPL_PROGRAM_REQUIREMENTS = {
     activate: activate,
-    _state: state, _load: load, _render: render,
+    _state: state, _load: load, _render: render, mountSierra: mountSierra, SIERRA_SURFACE: SIERRA_SURFACE,
     catalogStatus: catalogStatus, filterRegistry: filterRegistry, recordChecks: recordChecks,
     ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span
   };

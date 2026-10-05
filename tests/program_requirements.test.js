@@ -157,6 +157,42 @@ block("(3)", function () {
   check("(3) a held request is counted", n.held === 1 && n.open === 1 && n.hosts === 2, JSON.stringify(n));
 });
 
+// ── (4b) Sierra docks in the tab (Sam, open-asks sheet 38 card 5) ─────────
+// The failure this guards: a second copy of the assistant, or a mount that drops
+// the tab's surface, or a section that hides her behind a dead control.
+block("(4b)", function () {
+  const a = ready();
+  a.M._state.view = "catalogs"; a.M._render();
+  const sec = a.root.querySelector("details#prh-sierra");
+  check("(4b) Sierra's section is in the tab, closed until the reader opens it", !!sec && !sec.open);
+  check("(4b) without the chat module the section links to the CPL Assistant",
+    !!a.root.querySelector('#prh-sierra-mount a[href="#chatbot"]'));
+
+  const b = ready();
+  const calls = [];
+  b.w.CPL_CHAT = { mountInto: function (h, surface) {
+    calls.push([h.id, surface]);
+    h.innerHTML = '<textarea class="cplchat-input"></textarea>';
+  } };
+  b.M._state.view = "catalogs"; b.M._render();
+  check("(4b) the tab mounts the one assistant with its own surface",
+    calls.length === 1 && calls[0][0] === "prh-sierra-mount" && calls[0][1] === "program-requirements", JSON.stringify(calls));
+  b.root.querySelector("header button.prh-ask").click();
+  const sec2 = b.root.querySelector("details#prh-sierra");
+  check("(4b) Ask Sierra opens the section", sec2.open === true);
+  const act = b.w.document.activeElement;
+  check("(4b) and puts the cursor in her box", !!act && act.classList.contains("cplchat-input"));
+  check("(4b) the open section is remembered",
+    b.w.localStorage.getItem("cplProgramRequirements.sierra.v1") === "1");
+  b.M._render();
+  check("(4b) a re-render keeps the section open and mounts her again",
+    b.root.querySelector("details#prh-sierra").open === true && calls.length === 2);
+
+  const c = ready({ noStorage: true });
+  c.M._state.view = "catalogs"; c.M._render();
+  check("(4b) a private window still renders her section", !!c.root.querySelector("details#prh-sierra"));
+});
+
 // ── (4) Render: the four views ────────────────────────────────────────────
 block("(4)", function () {
   const { M, root, w } = ready();
@@ -165,7 +201,8 @@ block("(4)", function () {
   check("(4) Catalogs counts the registry", /Showing 4 of 4/.test(txt), txt.slice(0, 400));
   check("(4) a person's correction is shown on the row", /Corrected by Sam/.test(txt));
   check("(4) the Beta draft label is on the tab", /Beta draft/.test(txt));
-  check("(4) Sierra is one link to the CPL Assistant", !!root.querySelector('a[href="#chatbot"]'));
+  check("(4) the header asks Sierra with a button that opens her section",
+    !!root.querySelector('header button.prh-ask[aria-controls="prh-sierra"]'));
 
   M._state.view = "records"; M._render();
   txt = root.textContent;
