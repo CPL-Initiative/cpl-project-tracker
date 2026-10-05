@@ -53,16 +53,17 @@ ppt and video. Advise"*. Then, by number:
 ## How a file reaches Drive
 
 - **A session on Sam's machine (Cowork):** save into the Drive-synced folder.
-- **A cloud session:** it cannot. The proxy rejects Google's upload host and
-  `*.supabase.co` (measured 2026-10-05), and the Drive connector takes content
-  inline, which is impractical past a few KB of base64. The session sends Sam the
-  file (SendUserFile), he drops it in CPLLibrary or Drafts, and the session finds
-  it with the Drive connector (`search_files` by title and `parentId`) and files
-  the link with **File it** or a guarded update.
-- **Automatic upload (call 6, deferred):** a workflow that builds from source and
-  uploads with a stored Google sign-in for the camapinitiative account. A Google
-  service account likely cannot own files in a personal Gmail Drive, so it would
-  need the account's own OAuth refresh token as a secret. Not built.
+- **A cloud session, through the Drive connector:** a file up to roughly 50 KB (it travels as
+  base64 inside the tool call). Anything larger: Sam drops it in, and the session finds it with the
+  connector (`search_files` by title and `parentId`) and files the link with **File it**.
+- **A cloud session, directly (measured 2026-10-05):** the proxy lets the shell reach
+  `www.googleapis.com/upload` and `oauth2.googleapis.com` (they answer 405 and 404), and rejects
+  `script.google.com` and `*.supabase.co`. So with a stored Google sign-in for the camapinitiative
+  account (an OAuth refresh token as an environment secret) a script can upload a file of any size,
+  films included, with Drive's resumable upload.
+- **Automatic upload (call 6, deferred; Sam raised auto-filing again 2026-10-05):** the direct
+  route above, run by the session when it makes a piece. A Google service account likely cannot own
+  files in a personal Gmail Drive, so it needs the account's own refresh token. Not built.
 
 **What stays in a repo:** build scripts, specs, narration text and voice clips (a
 library voice can be withdrawn), the vault's companion notes, and a film a public
@@ -71,22 +72,54 @@ outputs (`reports/*.docx`) and source documents under `docs/reference/` are
 inputs, not deliverables. Claude artifacts (decision sheets, mockups) stay on
 claude.ai.
 
+## Filed in Drive so far
+
+- **The five Title 5 tracked-changes documents** (CPLLibrary, 2026-10-05): uploaded by the session
+  through the Drive connector, each at its exact byte size; the record links v5 and lists all five
+  (receipt `kb/receipts/cpl_library_drive_t5_2026-10-05.sql`, guarded; the history trigger holds the
+  before-row). Files keep their own date codes (the vault convention). Sam asked for titles that
+  start with *"our date code 20261005"*; if he means the filing date for every file, a Drive rename
+  keeps each link.
+- **What a session can upload:** a file up to roughly 50 KB. The file travels as base64 inside the
+  tool call, and Drive reports no checksum, so size is the check. The decks (43 and 200 KB), the CAC
+  run sheet (155 KB) and the films (8 to 16 MB) go by hand: Sam drops them in, the session files the
+  link.
+
+## Sam's calls 7-9 (2026-10-05, "7, 8,9 Y")
+
+7. **Build the automatic filer.** A session files each piece to Drive the moment it makes it,
+   films included, and writes the Library record in the same step. Setup is Sam's once: a Google
+   Cloud project with the Drive API on, an OAuth client, one consent as camapinitiative, and three
+   environment secrets (`GOOGLE_DRIVE_CLIENT_ID`, `GOOGLE_DRIVE_CLIENT_SECRET`,
+   `GOOGLE_DRIVE_REFRESH_TOKEN`; read `read_documentation` topic `environment.secrets` and walk him
+   through it). Check first whether the `drive.file` scope may write into CPLLibrary, a folder the
+   app did not create; if not, use the full Drive scope. Then `scripts/library_file.py <path>`:
+   resumable upload to CPLLibrary or Drafts, the Drive link back, the Library row written.
+8. **Versions are separate files.** Each edit uploads `<date code>_<name>_vN`, keeping the original
+   date code; the record's version list gains a row with the time filed. Never rely on Drive's own
+   revision history, which drops versions after 30 days unless pinned.
+9. **Decision sheets** stay Claude pages (the reply buttons need the artifact store). Each gets a
+   Library record (kind document, occasion "Open asks") linking its artifact, with no Drive copy.
+   Their sources (47 open-asks sheets in `docs/visuals/`) leave the public tracker repo for the
+   private vault repo; `kb/_build_open_asks_decision_sheet.py` and `docs/reference/decision_sheets.md`
+   move with them.
+
 ## Next
 
-- **Sharing (Sam's call, not a session's):** CPLLibrary is shared with its owner
-  alone, so a teammate who opens a Library link to it is refused until Sam shares
-  the folder.
-- **PR 2, the move (call 5):** the tracker's deliverable binaries go to Sam for
-  Drive, then their rows point at Drive and the files leave main, with a guard test
-  so a deliverable binary cannot be committed again. Tracker first: the BOG and CBO
-  decks, the CAC run sheet, the five Title 5 tracked-changes documents, the two
-  Noncredit Summit cuts. Then the vault's binaries (29 on 2026-10-05).
-- **Start a piece (Sam's wish, 2026-10-05):** *"would be nice to use the tab to
-  start the dev process for new artifacts too--ppts, spreadsheets, explainer
-  vids..."* — a brief form that saves a Requested record (kind incl. spreadsheet,
-  needed-by, audience, what it must say, sources), a Copy the brief button that
-  gives the whole paste for a new session, and the daily routine picking up
-  Requested briefs. Mock it first; it needs `spreadsheet` as a kind, `requested`
-  as a status, and `brief` / `needed_by` columns.
-- The two Noncredit Summit pieces carry *Refresh figures* until the week of the
-  summit; the deck itself is not filed anywhere a session can reach.
+- **Start a piece (Sam, 2026-10-05: *"Mockup looks great. Let's go with it."*).** Build it as
+  mockup version 2 shows: a brief form (kind including spreadsheet, working title, occasion, needed
+  by, for, what it must say, sources, length or template) that saves a Requested record; *Copy the
+  brief* (the whole paste for a new session, ending in what a good result looks like); an *In
+  development* section above the register with the four steps Requested, Draft, Approved, Presented.
+  Schema: add `spreadsheet` to the kind check, `requested` to the status check, and brief columns
+  (or one `brief` jsonb), with explicit grants. The daily routine picks up Requested briefs through a
+  step in `docs/reference/scheduled_sessions.md`; never edit the trigger itself. Drafts go to
+  CPLLibrary/Drafts.
+- **PR 2, the move (call 5):** when Sam has dropped in the BOG and CBO decks, the CAC run sheet, the
+  Ironworker film and the two Noncredit Summit cuts, point their records at Drive (guarded update,
+  receipt), remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
+  `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's
+  two player pages off the site, and add a guard test so a deliverable binary cannot be committed
+  again. Then the vault's binaries (29 on 2026-10-05).
+- **Open with Sam:** whether the Ironworker player page stays public; sharing CPLLibrary with the
+  team (owner-only today).
