@@ -899,7 +899,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2304,
+     "line": 2372,
      "tabs": [
       "college-briefing"
      ]
@@ -1488,7 +1488,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2296,
+     "line": 2364,
      "tabs": [
       "college-briefing"
      ]
@@ -1990,7 +1990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2322,
+     "line": 2390,
      "tabs": [
       "college-briefing"
      ]
@@ -3125,7 +3125,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2324,
+     "line": 2392,
      "tabs": [
       "college-briefing"
      ]
@@ -4886,7 +4886,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3909,
+     "line": 3981,
      "tabs": [
       "college-briefing"
      ]
@@ -4923,7 +4923,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3754,
+     "line": 3826,
      "tabs": [
       "college-briefing"
      ]
@@ -5001,7 +5001,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2680,
+     "line": 2748,
      "tabs": [
       "college-briefing"
      ]
@@ -6118,7 +6118,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3457,
+     "line": 3529,
      "tabs": [
       "college-briefing"
      ]
@@ -14426,7 +14426,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3795,
+     "line": 3867,
      "tabs": [
       "college-briefing"
      ]
@@ -16105,7 +16105,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3766,
+     "line": 3838,
      "tabs": [
       "college-briefing"
      ]
@@ -18447,7 +18447,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 4239,
+     "line": 4311,
      "tabs": [
       "college-briefing"
      ]
@@ -19168,7 +19168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1757,
+     "line": 1765,
      "tabs": [
       "college-briefing"
      ]
@@ -19465,7 +19465,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4395,
+     "line": 4467,
      "tabs": [
       "college-briefing"
      ]
@@ -20775,7 +20775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4416,
+     "line": 4488,
      "tabs": [
       "college-briefing"
      ]
@@ -20899,7 +20899,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1754,
+     "line": 1762,
      "tabs": [
       "college-briefing"
      ]
@@ -21108,6 +21108,16 @@
      "line": 3505
     },
     {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1784,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
@@ -21129,6 +21139,16 @@
   },
   "supabase:program_source_registry": {
    "consumers": [
+    {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1781,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
     {
      "id": "module:program_requirements.js",
      "kind": "module",

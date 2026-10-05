@@ -132,8 +132,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_integration_backlog` | tabs: `nc-learning-partners` | — |
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
-| `program_requirement_records` | tabs: `program-requirements` · scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
-| `program_source_registry` | tabs: `program-requirements` · scripts: `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py` | — |
+| `program_requirement_records` | tabs: `college-briefing`, `program-requirements` · scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
+| `program_source_registry` | tabs: `college-briefing`, `program-requirements` · scripts: `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py` | — |
 | `project_lifecycle` | tabs: `raci` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
 | `projects` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
 | `sierra_feedback` | tabs: `governance`, `map-queue`, `sierra-training` · scripts: `chatbox/smoke_test.sh` | — |

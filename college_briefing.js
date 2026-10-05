@@ -962,6 +962,14 @@
        * color and its border, and it carries the word "Statewide" besides. */
       ".cb-tag.sw{border-color:var(--brand,var(--cobalt));color:var(--brand,var(--cobalt));}",
       ".cb-tag.on{border-color:var(--cpl-green,var(--green-progress));color:var(--cpl-green,var(--green-progress));}",
+      /* Drafts for the college (sheet 42 card 3). The badge is a word on the
+       * plain subtle ground with the body color, the same pair the base .cb-tag
+       * already uses, so it adds no new color pair to measure. */
+      ".cb-tag.cb-tag-rev{margin-left:0;margin-right:6px;}",
+      ".cb-dr-h{margin:14px 0 4px;font-size:.92rem;color:var(--text-strong);}",
+      ".cb-dr-m{font-weight:400;color:var(--text-muted);}",
+      ".cb-dr{margin:0 0 6px 18px;padding:0;font-size:.86rem;color:var(--text-body);}",
+      ".cb-dr li{margin:0 0 4px;line-height:1.45;overflow-wrap:anywhere;}",
       /* The CIP Sector control. `flex-shrink` on the select lets a long family
        * name truncate rather than push the search box off the row. */
       ".cb-opp-cip{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;color:var(--text-muted);}",
@@ -1765,15 +1773,75 @@
       // (kb/supabase_map_college_credit_summary.sql line 33) so the breakdown
       // sums to the headline exactly — a list that did not reconcile with the
       // number above it would be worse than no list.
-      jget(REST + "/" + SRC.waiting + "?college_id=eq." + id + SRC.waitingQuery, { headers: h })
+      jget(REST + "/" + SRC.waiting + "?college_id=eq." + id + SRC.waitingQuery, { headers: h }),
+      // Drafts for the college (Sam, sheet 42 card 3). The harvest keys its
+      // program records by the catalog-data name, so the registry turns this
+      // college_id into that name first. A college the harvest has not read
+      // has no registry match or no records: an empty list, never an error.
+      jget(REST + "/program_source_registry?college_id=eq." + id + "&select=college").then(function (rows) {
+        if (!rows) return null;
+        if (!rows.length) return [];
+        return jget(REST + "/program_requirement_records?college=eq." + encodeURIComponent(rows[0].college)
+          + "&select=program_title,control_number,award,catalog_year,display&order=control_number");
+      })
     ]).then(function (r) {
       state.detail = { rollup: r[0] || [], adopted: r[1] || [], potential: r[2] || [],
-                       goal2: r[3] || [], waiting: r[4] || [] };
+                       goal2: r[3] || [], waiting: r[4] || [],
+                       // null is a failed read, and the section stays off the page.
+                       drafts: r[5] ? collegeDrafts(r[5]) : null };
       state.detailLoading = false;
     }).catch(function (e) {
       state.detail = null; state.detailLoading = false;
       state.detailError = e.message || String(e);
     }).then(function () { if (root) render(root); });
+  }
+
+  /* ── Drafts for the college, for review ────────────────────────────────
+   * The program requirements harvest compares each program's catalog with the
+   * state's Program Course File and with MAP, and a place where the college's
+   * own records list different courses becomes a draft for the college (Sam,
+   * sheet 32 card 2: the harvest tab and My College). On sheet 42 card 3
+   * (2026-10-05 20:58Z) he chose "Show them now": a college reads its drafts
+   * here, marked for review, while the MAP team decides when to send each one.
+   * The facts are the display build's, word for word; this page adds no
+   * judgment of its own. PURE. */
+  function collegeDrafts(records) {
+    var out = [];
+    (records || []).forEach(function (p) {
+      var items = ((p && p.display && p.display.gaps) || []).filter(function (g) {
+        return g && g.owner === "college" && g.text;
+      });
+      if (!items.length) return;
+      out.push({ program: p.program_title || "", award: p.award || "", control_number: p.control_number || "",
+                 catalog_year: p.catalog_year || "",
+                 items: items.map(function (g) { return { kind: g.kind || "", text: g.text }; }) });
+    });
+    return out;
+  }
+  /* PURE. The section's summary and body, or null when there is nothing to
+   * review (or the read failed). */
+  function draftsSection(drafts) {
+    if (!drafts || !drafts.length) return null;
+    var n = 0;
+    drafts.forEach(function (d) { n += d.items.length; });
+    var body = '<p class="cb-d"><span class="cb-tag cb-tag-rev">For review</span> '
+      + "The MAP team read your catalog for the CPL Initiative and compared each program's requirements with "
+      + "the state's Program Course File and with MAP. Each item below is a place where those records list "
+      + "different courses. Your curriculum office and articulation officer keep these records, and the MAP "
+      + "team will follow up with you on each one.</p>";
+    drafts.forEach(function (d) {
+      var meta = [d.award, d.control_number ? "control number " + d.control_number : "",
+                  d.catalog_year ? d.catalog_year + " catalog" : ""].filter(Boolean).join(", ");
+      body += '<h4 class="cb-dr-h">' + esc(d.program) + (meta ? ' <span class="cb-dr-m">(' + esc(meta) + ")</span>" : "") + "</h4>"
+        + '<ul class="cb-dr">' + d.items.map(function (i) {
+          return "<li>" + (i.kind ? esc(i.kind) + ": " : "") + esc(i.text) + "</li>";
+        }).join("") + "</ul>";
+    });
+    body += '<p class="cb-note">Beta draft. When you know which record is current, tell the MAP team, and '
+      + "CPL Pathways will show your programs as you publish them.</p>";
+    var summary = n + (n === 1 ? " item" : " items") + " in " + drafts.length
+      + (drafts.length === 1 ? " program" : " programs") + ", for review";
+    return { summary: summary, body: body, items: n };
   }
 
   /* PURE. Roll the per-college reads up per CPL type. Counts are FLOORS: only
@@ -2918,6 +2986,10 @@
       // still the answer to "what should I do?".
       h += sec("start", "Start here", esc(b.leads[0].item.measure.headline), leadBody);
     }
+
+    // ── Drafts for the college, for review (Sam, sheet 42 card 3) ──────────
+    var dr = draftsSection(state.detail && state.detail.drafts);
+    if (dr) h += sec("drafts", "Your program records, for review", esc(dr.summary), dr.body);
 
     // ── What this college could already give credit for ───────────────────
     // High on the page on purpose: this is the section a college meeting is
@@ -4554,6 +4626,9 @@
     // no k-anonymity of its own, so breaking out a withheld college's credit
     // would hand back what suppression removed.
     _waitingBreakdown: waitingBreakdown,
+    // Pure. The drafts for the college, for review (Sam, sheet 42 card 3).
+    _collegeDrafts: collegeDrafts,
+    _draftsSection: draftsSection,
     // Pure. Exposed because the three-way split (filled / blank / held back) is
     // the difference between telling a college its VP is missing and telling it
     // we did not ask.
