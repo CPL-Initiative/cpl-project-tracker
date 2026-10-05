@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864]
+prs: [1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -557,3 +557,44 @@ renamed *Ironworker Apprenticeship — OSHA 30/Extension Review* (plan `kb/cer_d
 on `main` after #1863); both Fire Inspector 1C titles kept (*"I think these are different though they sound
 the same"*); Sierra docked, then *"Sierra at the top"* (#1863).
 
+## S333 SkyHarbor, 2026-10-05: the rename lands, the display follows it, OSHA has one name as issuer
+
+**The rename ran on main.** `cer-decision-apply.yml` dry-run (1 to write, 0 held, as S332 read it), commit at
+15:10Z, then `cred-rename-apply.yml` at 15:18Z: `credentials.json` carries *Ironworker Apprenticeship — OSHA
+30/Extension Review*, Sam's issuer row (California Community Colleges) re-keyed with it, the fulfilled title
+override deleted, *Ext & Review* in the alias map, and the three derived files rebuilt (the 2026-10-01 gap is
+closed in the workflow).
+
+**The display build after it changed two paths.** `799bfb9a7dbf` against `81691460ba18`: a JSON diff of the
+two receipts found `build` on all 20 rows and the one IWAP 41.09 label on Cerritos 42158, nothing else. So the
+write (sheet 39 card 1, Sam: go) was two guarded `jsonb_set` updates through `apply_migration`, conditioned
+on the before-values, in place of the 159 KB upsert; before, all 20 rows matched the old build's md5s (built
+from its receipt with the builder's `jsonb_text`); after, all 20 matched `--verify-sql`. Receipt
+`kb/receipts/program_requirement_records_display_2026-10-05_799bfb9a7dbf_delta.sql`; rollback is the old
+build's receipt. A verify query typed from a truncated listing produced four false "differs"; build the query
+from the file, never retype md5s.
+
+**Sam on OSHA as issuer (chat):** *"If so, they would not be the issuing agency, osha would."* Card 2 of
+sheet 38 had asked what IWAP 41.09 teaches (its CCR filing), not who issues it; the exhibit is Cerritos's
+credit by exam, so his July issuer for it stands. His rule went onto sheet 39 card 2: the CER named OSHA three
+ways across 13 entries and named a trainer (CTCNC) as the OSHA 10-hour Construction entry's issuer.
+
+**The card named a mechanism that could not work.** `kb/_apply_credential_review.py` and
+`kb/_fold_unclassified.py` only ever add an issuer to `credentials.json` (fill when empty, append when absent
+under any spelling, never overwrite). Override rows alone would have appended OSHA beside Department of Labor
+on both OSHA cards and beside CTCNC on the construction entry, and done nothing on the Agriculture pair (the
+new spelling contains the old). The fix, sent to Sam in the sheet's thread before any write: edit the file's
+first records directly (#1868) and change the five curator rows the sync reads, by guarded update
+(`kb/cer_decisions_out/2026-10-05-2`, 16:28Z, all five read back). Three of the five were triage assignments
+(`_UNCLASSIFIED::`), the true source of *U.S. Department of Labor*; the card had named only two of his rows.
+Detail: [`methodology-an-additive-sync-cannot-carry-a-correction`](kb-notes/methodology-an-additive-sync-cannot-carry-a-correction.md).
+
+**The applier's replace path.** `kb/_cer_decision_apply.py` takes the agency fields and `_UNCLASSIFIED::`
+issuer assignments, and a row carrying `replaces: {value, reviewer_email}` is a guarded update that changes only
+while the live row still holds exactly that; anything else holds the plan. The receipt keeps the before-value,
+reviewer and date; `--rollback` restores them. `tests/cer_decision_apply_test.py` 29/29.
+
+**Small things.** `tests/run.js` ignores file arguments and runs the whole suite; run one jsdom file with
+`node tests/<file>.test.js`. `pkill -f` on a pattern that appears in your own shell's command line kills the
+shell. A stash pushed with a pathspec carried the staged display files onto another branch; restore them by
+name.

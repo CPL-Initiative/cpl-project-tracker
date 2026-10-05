@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 520 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 521 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 82 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 53 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 304 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1045** | |
+| Session handoffs | 305 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1047** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-05 (S333 SkyHarbor): KB note `methodology-an-additive-sync-cannot-carry-a-correction`; handoff 334; the *Ext & Review* rename ran on main; display build 799bfb9a7dbf applied as a two-path guarded update (#1866); sheet 39 ruled: OSHA has one name as issuer, CTCNC its trainer, five curator rows replaced and the CER applier's guarded replace (#1868); Sam's issuer rule and sheet 39 in memory (#1865).
 - 2026-10-05 (S332 SkyBridge): the ROEP display reads identity from the live CCR (#1861); OSHA 30 on IWAP 41.09 and read 13 (#1862); sheets 37-38 ruled, Sierra at the top of Program Requirements (#1863); `apply_migration` allow-listed (#1864); handoff 333.
 - **2026-10-05 (S331 SkyForge):** KB note `methodology-a-search-result-is-a-lead-not-a-source`; handoff 332; the Program Requirements tab in COBI with its Procedures view (#1860); the college page read opens collapsed sections and prints a table's matching rows; Cerritos reads 7-12: CATEMA, CTE Course Connect, the CCAP partner schools, the archive's 2016 list of 57 agreements; procedure record v4; open-asks sheet 37.
 - 2026-10-04 (S330 SkyRoutine): KB note `methodology-an-advisor-asserts-what-its-fact-list-does-not-say`; handoff 331; the college page read submits a form and skips a gone host; Cerritos reads 4 and 5 (#1859): Schedule+ sections, the Credit by Exam route, Statewide Career Pathways gone, the B.S. on the Chancellor's Office list; the Ironworker pathway film draft v1 (`prototype/ironworker_video/`); open-asks sheet 36.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-04 (S328 SkyLadder): #1854 deployed; sheets 33-34 answered and in their lanes (#1855); the statement of who CPL serves and `kb/non_ccc_institutions.json` (#1856); the Cerritos Ironworker ladder on CPL Pathways (#1857); handoff 329.
 - 2026-10-04 (S327 SkyAmend): KB note `methodology-one-build-two-readers`; handoff 328; the ROEP display build (`kb/_build_roep_display.py`): CPL in three kinds per course, the up-to figure, gaps and map status, written once to `cpl_pathways_roep_data.js` and `program_requirement_records.display` (20 rows live); Sierra wired to it with smoke 7r (#1854); open-asks sheet 33 (CSU LA, outcomes, the Ironworker proof).
 - 2026-10-04 (S326 SkyAddendum): KB note `playbook-ship-a-table-before-its-privilege-close`; handoff 327; sheet 29 carried out (#1850): six catalog addresses entered, `program_source_addenda` live with the census writing it, sequence access recorded on 25 colleges' registry rows and the reader taught to skip a refused host; Sierra's catalog requirements for checked records (#1851, `program_requirement_records`, 20 checked); open-asks sheets 30 and 31.
-- 2026-10-04 (S325 SkyReader): KB note `methodology-probe-the-class-before-calling-a-refusal-local`; handoff 326; the sequence pass meets the Program Mapper's 403 at all 17 hosts it reached (#1847); the census records catalog addenda, 78 at 52 colleges, with a proposed addenda table (#1848); open-asks sheet 29; every sheet named in chat carries its link; the Program Requirements tab mock-up with an Ask Sierra link.
-- 2026-10-04 (S324 SkyGrader): KB note `methodology-a-not-applicable-score-must-be-confirmed-by-the-source`; handoff 325; the program requirements pilot's record shape version 2 (hours, option groups, block totals, unit ranges; Edge Function v2) and Miramar read through its curriQunet exports: 20 of 20 programs captured and 20 of 20 records pass the three automatic bars (#1845); the pilot records review sheet for Sam.

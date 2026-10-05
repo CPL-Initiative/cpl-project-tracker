@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 520,
+   "count": 521,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4448,6 +4448,28 @@
      "title": "An accessibility sweep does not measure alignment; probe the edges",
      "type": "methodology",
      "updated": "2026-09-30"
+    },
+    {
+     "created": "2026-10-05",
+     "governs": [
+      "kb/_apply_credential_review.py",
+      "kb/_fold_unclassified.py",
+      "kb/_cer_decision_apply.py",
+      "kb/cer_decisions_out/2026-10-05-2/plan.json"
+     ],
+     "path": "docs/kb-notes/methodology-an-additive-sync-cannot-carry-a-correction.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sync",
+      "cer",
+      "issuing-agency",
+      "kb-curation",
+      "supabase"
+     ],
+     "title": "An additive sync cannot carry a correction",
+     "type": "methodology",
+     "updated": "2026-10-05"
     },
     {
      "created": "2026-10-04",
@@ -14836,8 +14858,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 304,
+   "count": 305,
    "docs": [
+    {
+     "created": "2026-10-05",
+     "governs": [],
+     "n": 334,
+     "path": "docs/session_334_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "roep-display",
+      "cer",
+      "issuing-agency",
+      "decision-sheet"
+     ],
+     "title": "the Ext & Review rename landed, the display follows it, OSHA has one name as issuer",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-05",
      "governs": [],
@@ -20016,5 +20056,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1045
+ "total": 1047
 }

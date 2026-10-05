@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-05",
-  "_session": "S332 SkyBridge",
-  "_status": "The Program Requirements tab (Reference & Curation) holds the harvest, and Sierra now sits at the top of it, as on My College. CPL Pathways and Sierra read the same program facts, and those facts now find the shared course identity for 285 of 289 pilot courses (149 before), so they suggest credit other colleges already give in 133 places and credit a state recommendation names in 15. Cerritos credits its OSHA 30 course by its own exam; the course is described as welding safety, and Sam expects the OSHA 30 training is built into it. Database updates Sam approves on a decision sheet no longer ask him a second time.",
+  "_session": "S333 SkyHarbor",
+  "_status": "Cerritos's credit-by-exam exhibit now carries a name, Ironworker Apprenticeship — OSHA 30/Extension Review, and the program pages and Sierra show it on the ironworker course. Sam ruled that a college or trainer that teaches OSHA 30 is not the issuer; OSHA is. The Credential Reference now names OSHA one way across its 14 OSHA entries and lists the Carpenters Training Committee as the trainer, not the issuer, of the OSHA 10-hour construction course. Nothing waits on a decision sheet.",
   "items": [
     {
       "id": "s332-sam-setup-script",
@@ -47,10 +47,10 @@
       "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
     },
     {
-      "id": "s332-fable-ext-review-rename",
+      "id": "s333-fable-osha-one-name-holds",
       "for": "Fable",
       "tab": "credential-reference",
-      "text": "Once #1863 is merged, run cer-decision-apply.yml on main (dry run, then commit) for kb/cer_decisions_out/2026-10-05, then cred-rename-apply.yml, so Cerritos's Ext & Review reads Ironworker Apprenticeship — OSHA 30/Extension Review."
+      "text": "After the next daily build, confirm the Credential Reference still names OSHA one way: the OSHA 10 Card and OSHA 30 Card show one issuer each (no second Department of Labor line), and the issuer filter lists OSHA once. The nightly update only adds issuers, so a stray source row would bring the old name back."
     },
     {
       "id": "s319-fable-read-timings",
