@@ -15,12 +15,7 @@ read [`docs/reference/scheduled_sessions.md`](reference/scheduled_sessions.md) f
 ## First, in this order
 
 1. **Merge the checkpoint PR** (`claude/s333-checkpoint`, the Rule 9 commit) on a green `test` if S333 did not.
-2. **Confirm OSHA's one name held through a daily build.** S333 dispatched `daily-dashboard.yml` at about
-   16:32Z on 2026-10-05. On `main`, `kb/credentials.json` must show one record each on *OSHA 10 Card* and
-   *OSHA 30 Card*, both *U.S. Occupational Safety and Health Administration (OSHA)*. *OSHA 10-hour Construction
-   Training Course* must show OSHA as issuer with CTCNC as trainer. A second *U.S. Department of Labor* record
-   means a source row the five replaces missed; find it (search every `kb_curation` namespace the syncs read)
-   before writing anything. To-Do item `s333-fable-osha-one-name-holds`.
+2. **OSHA's one name held through a daily build** (confirmed by S333 after run 37341422154, 16:42Z): `kb/credentials.json` on `main` names OSHA one way, *U.S. Occupational Safety and Health Administration (OSHA)*, on all its OSHA entries; *OSHA 10-hour Construction Training Course* carries CTCNC as trainer; `credential_reference_data.js` holds no *U.S. Department of Labor*. If a later build shows a second issuer line, a source row was missed: search every `kb_curation` namespace the syncs read before writing.
 3. **No decision sheet is open.** Sheet 39 (https://claude.ai/artifact/UcBESBRpoLZJKgZZG5NtXr) is answered
    and its thread resolved; no lane carries a NEEDS SAM. Build sheet 40 only when a lane gains one.
 

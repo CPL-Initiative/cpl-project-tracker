@@ -47,12 +47,6 @@
       "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
     },
     {
-      "id": "s333-fable-osha-one-name-holds",
-      "for": "Fable",
-      "tab": "credential-reference",
-      "text": "After the next daily build, confirm the Credential Reference still names OSHA one way: the OSHA 10 Card and OSHA 30 Card show one issuer each (no second Department of Labor line), and the issuer filter lists OSHA once. The nightly update only adds issuers, so a stray source row would bring the old name back."
-    },
-    {
       "id": "s319-fable-read-timings",
       "for": "Fable",
       "tab": "sierra",
