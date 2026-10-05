@@ -3255,14 +3255,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 251
+     "line": 263
     },
     {
      "id": "script:scripts/install_prompt_guards.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 251
+     "line": 263
     }
    ],
    "served": true,

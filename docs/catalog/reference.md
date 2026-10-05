@@ -54,7 +54,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [SkyView / the CCR curation interface — lane state](../reference/lanes/skyview-ccr-interface.md) | lanes | `skyview-ccr-interface.md` | 2026-08-28 | 2026-09-29 |
 | [Title 5 §55050 → Ed. Code Article 9 — lane state](../reference/lanes/t5-55050-article-9.md) | lanes | `t5-55050-article-9.md` | 2026-08-28 | 2026-08-30 |
 | [Primary-source statutory and regulatory text](../reference/statute/README.md) | statute | `README.md` |  |  |
-| [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-10-03 |
+| [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-10-05 |
 | [Branch policy — the full record (CLAUDE.md offload)](../reference/branch_policy.md) | — | `branch_policy.md` | 2026-08-28 | 2026-08-28 |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data-write rollback — undoing a bulk write to a shared Supabase table](../reference/data_write_rollback.md) | — | `data_write_rollback.md` | 2026-08-30 |  |
