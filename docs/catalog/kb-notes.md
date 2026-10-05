@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-518 document(s).
+519 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -243,6 +243,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Alias maps are permutations, not graphs: resolution semantics for stacked re-keys](../kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 |  |
 | [An absence in the data is a statement about the data — say what the catalog shows, never that the county has none](../kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md) | methodology | published | 2026-09-18 | 2026-09-30 |
 | [An accessibility sweep does not measure alignment; probe the edges](../kb-notes/methodology-an-a11y-sweep-does-not-measure-alignment.md) | methodology | published | 2026-09-30 | 2026-09-30 |
+| [An advisor working from a vetted fact list still asserts what the list does not say](../kb-notes/methodology-an-advisor-asserts-what-its-fact-list-does-not-say.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [An affordance gated on a problem is invisible when there isn't one](../kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [An articulation's college list belongs to the group, not to each course in it](../kb-notes/methodology-an-articulation-college-list-belongs-to-the-group-not-the-course.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [An assertion pinned to a mutable value stops being a guard](../kb-notes/methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md) | methodology | published | 2026-08-15 | 2026-08-15 |

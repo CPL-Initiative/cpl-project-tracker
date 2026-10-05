@@ -1,0 +1,28 @@
+{
+  "_readme": "Fourth read for the Cerritos Ironworker ladder (S330). Read 3 (run 37234256967) printed the Schedule+ form (POST /schedule/courses.cgi; Terms 1269 Fall 2026 and 1273 Spring 2027; Depts AED and IWAP among the department boxes) and the Technology division's articulation page, which states the process (a B or better, the Cerritos application, a Credit by Exam form with a college representative) and says the agreements are public at Statewide Career Pathways without linking it. This read submits the Schedule+ form for AED and IWAP in both terms, reads the Statewide Career Pathways site (the ASCCC's SB 70 project, statewidepathways.org, found by web search 2026-10-04; it has served over http only), the Technology Pathways roadmaps page the procedure record names as an open item, and the catalog's Educational Partnerships & Programs page.",
+  "college": "Cerritos College",
+  "outside_hosts": {
+    "statewidepathways.org": "Statewide Career Pathways, the ASCCC's SB 70 school-to-college articulation database where Cerritos says its agreements are published"
+  },
+  "http_hosts": {
+    "www.statewidepathways.org": "web search returns only http addresses for this site (2026-10-04); the https page is read first"
+  },
+  "questions": {
+    "noncredit_aed": "Whether the 26 noncredit AED courses run this year (sections in Fall 2026 or Spring 2027).",
+    "apprenticeship_hours": "The IWAP sections this year, beside the classroom hours already confirmed.",
+    "hs_articulation": "How high school credit is granted, and the welding agreements Cerritos publishes."
+  },
+  "keywords": ["AED 4[01]\\.", "IWAP", "Ironwork", "WELD 1?60\\b", "WELD 100\\b", "Cerritos", "Weld", "Credit by Exam", "articulat"],
+  "pages": [
+    {"answers": ["noncredit_aed", "apprenticeship_hours"], "url": "https://secure.cerritos.edu/schedule/index.cgi",
+     "submit": {"action": "courses.cgi", "set": {"Terms": ["1269", "1273"], "Alldepts": [], "Depts": ["AED", "IWAP"]},
+                "button": "course|class|search|submit|go\\b"}},
+    {"answers": ["hs_articulation"], "url": "https://www.statewidepathways.org/index.html",
+     "links": "agreement|college|search|weld|cerritos|template", "follow": "agreement|search|college", "forms": true},
+    {"answers": ["hs_articulation"], "url": "http://www.statewidepathways.org/index.html",
+     "links": "agreement|college|search|weld|cerritos|template", "follow": "agreement|search|college", "forms": true},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/academics/divisions/technology/technology-roadmaps.htm",
+     "links": "weld|iron|roadmap|\\.pdf", "follow": "weld|iron"},
+    {"answers": ["hs_articulation"], "url": "https://cerritos-public.courseleaf.com/cerritos-college/programs-and-services/educational-partnerships-and-programs/"}
+  ]
+}

@@ -4,9 +4,9 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 587,
+  "file_datasets": 589,
   "external_services": 157,
-  "consumers": 409,
+  "consumers": 410,
   "workflows": 44,
   "data_js_files": 69,
   "tabs": 37
@@ -598,7 +598,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 43
+     "line": 50
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -760,6 +760,13 @@
      "direction": "read",
      "how": "url",
      "line": 24
+    },
+    {
+     "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 26
     },
     {
      "id": "script:prototype/mockup_harness/assemble_model_words.py",
@@ -1251,6 +1258,13 @@
      "tabs": [
       "unified-courses"
      ]
+    },
+    {
+     "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 29
     }
    ],
    "main_committers": []
@@ -3332,7 +3346,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 322
+     "line": 329
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4504,7 +4518,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 311
+     "line": 318
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4865,7 +4879,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 301
+     "line": 308
     }
    ],
    "served": true,
@@ -5027,7 +5041,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 598
+     "line": 605
     }
    ],
    "producers": [
@@ -5996,21 +6010,21 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-35.html": {
+  "file:docs/visuals/<date>-open-asks-36.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 209
+     "line": 216
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 209
+     "line": 216
     }
    ],
    "served": false,
@@ -6486,7 +6500,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 388
+     "line": 395
     }
    ],
    "served": true,
@@ -6565,7 +6579,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 311
+     "line": 318
     }
    ],
    "served": true,
@@ -9309,7 +9323,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 364
+     "line": 371
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -10028,7 +10042,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 473
+     "line": 480
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -10609,7 +10623,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 445
+     "line": 452
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -11902,7 +11916,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 687
+     "line": 713
     }
    ],
    "served": false,
@@ -13740,7 +13754,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 434
+     "line": 441
     }
    ],
    "served": false,
@@ -14374,7 +14388,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 668
+     "line": 694
     },
     {
      "id": "script:veteran-sprint-map/extract_military.py",
@@ -14510,7 +14524,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 311
+     "line": 318
     }
    ],
    "served": true,
@@ -14930,7 +14944,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 331
+     "line": 338
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15105,7 +15119,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 509
+     "line": 516
     }
    ],
    "served": true,
@@ -15131,7 +15145,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 559
+     "line": 566
     }
    ],
    "served": true,
@@ -15145,6 +15159,39 @@
      "direction": "read",
      "how": "literal",
      "line": 226
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/ironworker_video/ironworker_in_motion.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 155
+    },
+    {
+     "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 141
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/ironworker_video/ironworker_in_motion.src.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/ironworker_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 128
     }
    ],
    "served": true,
@@ -15632,7 +15679,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 458
+     "line": 465
     }
    ],
    "served": true,
@@ -17389,7 +17436,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 345
+     "line": 352
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",

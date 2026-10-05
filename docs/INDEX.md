@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 518 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 519 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 82 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 53 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 301 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1040** | |
+| Session handoffs | 302 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1042** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,11 +122,11 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- **2026-10-04 (S329 SkyRunner):** Sierra's statement deployed; the college page read and three Cerritos reads (#1858): classroom hours, the B.S. start and proposed course list, the noncredit and high school lines; the registry's procedure columns; `docs/reference/scheduled_sessions.md` for Sam's routine; open-asks sheet 35; handoff 330.
+- **2026-10-04 (S330 SkyRoutine):** KB note `methodology-an-advisor-asserts-what-its-fact-list-does-not-say`; handoff 331; the college page read submits a form and skips a gone host; Cerritos reads 4 and 5 (#1859): Schedule+ sections, the Credit by Exam route, Statewide Career Pathways gone, the B.S. on the Chancellor's Office list; the Ironworker pathway film draft v1 (`prototype/ironworker_video/`); open-asks sheet 36.
+- 2026-10-04 (S329 SkyRunner): Sierra's statement deployed; the college page read and three Cerritos reads (#1858): classroom hours, the B.S. start and proposed course list, the noncredit and high school lines; the registry's procedure columns; `docs/reference/scheduled_sessions.md` for Sam's routine; open-asks sheet 35; handoff 330.
 - 2026-10-04 (S328 SkyLadder): #1854 deployed; sheets 33-34 answered and in their lanes (#1855); the statement of who CPL serves and `kb/non_ccc_institutions.json` (#1856); the Cerritos Ironworker ladder on CPL Pathways (#1857); handoff 329.
 - 2026-10-04 (S327 SkyAmend): KB note `methodology-one-build-two-readers`; handoff 328; the ROEP display build (`kb/_build_roep_display.py`): CPL in three kinds per course, the up-to figure, gaps and map status, written once to `cpl_pathways_roep_data.js` and `program_requirement_records.display` (20 rows live); Sierra wired to it with smoke 7r (#1854); open-asks sheet 33 (CSU LA, outcomes, the Ironworker proof).
 - 2026-10-04 (S326 SkyAddendum): KB note `playbook-ship-a-table-before-its-privilege-close`; handoff 327; sheet 29 carried out (#1850): six catalog addresses entered, `program_source_addenda` live with the census writing it, sequence access recorded on 25 colleges' registry rows and the reader taught to skip a refused host; Sierra's catalog requirements for checked records (#1851, `program_requirement_records`, 20 checked); open-asks sheets 30 and 31.
 - 2026-10-04 (S325 SkyReader): KB note `methodology-probe-the-class-before-calling-a-refusal-local`; handoff 326; the sequence pass meets the Program Mapper's 403 at all 17 hosts it reached (#1847); the census records catalog addenda, 78 at 52 colleges, with a proposed addenda table (#1848); open-asks sheet 29; every sheet named in chat carries its link; the Program Requirements tab mock-up with an Ask Sierra link.
 - 2026-10-04 (S324 SkyGrader): KB note `methodology-a-not-applicable-score-must-be-confirmed-by-the-source`; handoff 325; the program requirements pilot's record shape version 2 (hours, option groups, block totals, unit ranges; Edge Function v2) and Miramar read through its curriQunet exports: 20 of 20 programs captured and 20 of 20 records pass the three automatic bars (#1845); the pilot records review sheet for Sam.
 - 2026-10-03 (S322 SkyPilot): KB note `methodology-a-failed-read-is-not-an-empty-result` gains the census case; handoff 323; the census reads a vendor catalog's own edition banner, puts the newer year first on one host, and keeps a known address after a failed read (#1841: 77 → 95 catalog years, 71 → 91 at 2026-27); open-asks sheet 25; West Los Angeles is the pilot's PDF college.
-- 2026-10-03 (S321 SkyCatalog): KB note `methodology-a-reader-fix-moves-rows-it-was-not-aimed-at`; handoff 322; the census's reader corrected over four full reads (#1839: 109 → 112 catalog addresses, 67 → 78 years, no college worse off); the registry's first apply on `main`; open-asks sheet 24 (two memory receipts, six catalog addresses).

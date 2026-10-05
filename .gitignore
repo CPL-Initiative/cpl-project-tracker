@@ -137,3 +137,10 @@ prototype/funding_video/render*.html
 prototype/funding_video/.narration/
 prototype/funding_video/.dur
 prototype/funding_video/.captions*.srt
+
+# Ironworker film render byproducts
+prototype/ironworker_video/.fonts/
+prototype/ironworker_video/.frames/
+prototype/ironworker_video/.music.wav
+prototype/ironworker_video/render.html
+prototype/ironworker_video/.dur

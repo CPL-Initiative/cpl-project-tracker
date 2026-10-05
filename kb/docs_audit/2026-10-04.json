@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1053,
-    "bytes": 11089187,
+    "files": 1055,
+    "bytes": 11102967,
     "over_budget": 6,
-    "handoff_max": 330,
+    "handoff_max": 331,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59997,
     "superseded_files": 0,
@@ -26,45 +26,45 @@
       },
       "other": {
         "files": 118,
-        "bytes": 3345324,
+        "bytes": 3346369,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10006,
+        "bytes": 10082,
         "over": 0
       },
       "lessons": {
         "files": 78,
-        "bytes": 2244335,
+        "bytes": 2247917,
         "over": 2
       },
       "kb_note": {
-        "files": 520,
-        "bytes": 2617648,
+        "files": 521,
+        "bytes": 2621519,
         "over": 0
       },
       "roadmap_lane": {
         "files": 34,
-        "bytes": 301502,
+        "bytes": 301521,
         "over": 1
       },
       "handoff": {
-        "files": 301,
-        "bytes": 2510375,
+        "files": 302,
+        "bytes": 2515562,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 6,
-      "vault_heavy_path": 55
+      "vault_heavy_path": 57
     },
     "vault": {
-      "files": 3581,
-      "bytes": 1729566823,
-      "heavy_bytes": 779206078,
-      "heavy_share": 0.451,
+      "files": 4148,
+      "bytes": 1746805607,
+      "heavy_bytes": 789973895,
+      "heavy_share": 0.452,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",
@@ -94,6 +94,7 @@
         "cpl-project-tracker/kb/cid_articulation_joins.json",
         "cpl-project-tracker/coci_lookup_desc_A.js",
         "cpl-project-tracker/tmc_college_courses.js",
+        "cpl-project-tracker/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
         "cpl-project-tracker/kb/coci_articulations.json",
         "cpl-project-tracker/prototype/ccr_universe.json",
         "cpl-project-tracker/coci_lookup_desc_C.js",
@@ -111,6 +112,7 @@
         "cpl-project-tracker/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/regional_cpl_opportunity_la.js",
         "cpl-project-tracker/credential_reference_data.js",
+        "cpl-project-tracker/prototype/ironworker_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
         "cpl-project-tracker/coci_lookup_desc_B.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
         "cpl-project-tracker/coci_lookup_desc_D.js",
@@ -410,13 +412,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 697568,
+        "bytes": 697913,
         "limit": 150000,
         "lane": "other",
-        "over_by": 547568,
+        "over_by": 547913,
         "ratio": 4.65
       },
-      "message": "697,568 B is 4.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "697,913 B is 4.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -762,6 +764,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
+      "detail": {
+        "bytes": 7844532,
+        "kind": "file"
+      },
+      "message": "7,844,532 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/coci_articulations.json",
       "detail": {
         "bytes": 7521094,
@@ -928,6 +940,16 @@
         "kind": "file"
       },
       "message": "3,007,281 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ironworker_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
+      "detail": {
+        "bytes": 2923285,
+        "kind": "file"
+      },
+      "message": "2,923,285 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

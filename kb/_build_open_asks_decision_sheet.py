@@ -31,6 +31,13 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Sheet 36 (S330, 2026-10-04, SHEET_ID 2026-10-04-open-asks-36): sheet 35 is answered (21:43Z). Two cards
+from Cerritos reads 4 and 5 (#1859): paste the procedure record's second version (the connector timed out
+at 60 s and wrote nothing, read back), and whether to send the drafted request for Cerritos's high school
+articulation list, the one question every public source has now failed to answer. A third card, the
+Ironworker film's draft v1, joined before any reply existed and was republished onto the same artifact;
+Sam answered it in chat (23:42Z, "Video is excellent!") and it left, again before any reply existed.
+
 Sheet 35 (S329 checkpoint, 2026-10-04, SHEET_ID 2026-10-04-open-asks-35): sheet 34 is answered (19:18Z).
 One card: Cerritos's procedure record. Sam said "apply the procedure record" in session; the migration
 (three columns, the trigger) landed, and the row's guarded UPDATE timed out twice at the connector, which
@@ -206,8 +213,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-35.html')
-SHEET_ID = '2026-10-04-open-asks-35'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-10-04-open-asks-36.html')
+SHEET_ID = '2026-10-04-open-asks-36'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -661,6 +668,25 @@ def check_premises(I):
 
 CH_LATER = ('Later', 'later')
 
+E = m.E
+
+# Sheet 36 card 1: the guarded UPDATE, read from the S330 receipt at build time so the card and the
+# receipt never differ. The paste text starts at the statement itself: the receipt's header and its
+# rollback comment are comment lines, which sheet 35's first build pasted by mistake.
+def _receipt_update(rel):
+    text = _read(rel)
+    i = text.find('\nupdate public.program_source_registry\n')
+    if i < 0:
+        raise SystemExit('REFUSING TO BUILD — no UPDATE statement in %s' % rel)
+    return text[i + 1:].rstrip()
+
+
+SQL_V2 = _receipt_update('kb/receipts/program_source_registry_procedure_2026-10-04_s330.sql')
+
+# Sheet 36 card 2: the request, held for Sam (outward). House voice: CLAUDE.md, Naming & terminology.
+REQUEST_DRAFT = "Subject: Cerritos College high school articulation agreements\n\nGood afternoon,\n\nThe CPL Initiative at the California Community Colleges Chancellor's Office is mapping one pathway at Cerritos College, from high school through the Field Ironworker Supervision bachelor's degree, so that a student can see which earlier learning counts toward each award. Cerritos's 2026-27 catalog and its Petition for Credit by Examination for Articulated High School Course explain how a student earns credit for an articulated course, and the pathway cites both.\n\nWe could not find the current list of articulated high school courses. The Technology division's page directs readers to Statewide Career Pathways, and that site is no longer online. Downey Unified's June 2023 board presentation maps the Columbus High School welding pathway to WELD 160 and WELD 100, but it does not say whether students earn that credit through articulation or through dual enrollment.\n\nThe agreements are Cerritos's to keep and to publish as it chooses. If your office can share the current list, or the welding agreement with Downey Unified, we will show it on the pathway with Cerritos named as the source.\n\nThank you for considering it.\n\n[Name]\nMAP team, CPL Initiative\nCalifornia Community Colleges Chancellor's Office"
+
+
 
 # S327: the premises sheet 33's cards rest on.
 def p_csu_la_counted():
@@ -804,6 +830,14 @@ def items():
     # Sheet 35 (S329) was answered at 21:43Z on 2026-10-04 (through 1, his own call): "pasted",
     # "success no rows returned". Read back: Cerritos's procedure record on its row at 21:42:37Z. The
     # harvest lane records it and drops its NEEDS SAM in the same change; no card remains.
+
+    # Sheet 36 (S330) was answered at 23:50-23:51Z on 2026-10-04 (through 2, both his own call): card 1
+    # "pasted" ("it gave the correct read back"); card 2 edit and follow up ("lets work together to see if we
+    # ca find these another way and close the gap"): the request stays held while sessions try other routes.
+    # Then "go ahead on writing the function": program_source_procedure_set() writes a procedure record from a
+    # session with no paste (v3, 00:1xZ). The harvest lane records both; no card remains.
+    # Sheet 36's card 3 (the Ironworker film, draft v1) left with Sam's ruling in chat (2026-10-04 23:42Z):
+    # "Video is excellent!" The film README and the harvest lane record it.
 
     return I
 

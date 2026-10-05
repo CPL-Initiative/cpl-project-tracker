@@ -1,0 +1,19 @@
+{
+  "_readme": "Fifth read for the Cerritos Ironworker ladder (S330). Read 4 (run 37241442265) submitted the Schedule+ form for AED and IWAP and got 'No classes matched your criteria.' Its log shows why it may have: the form's only submit buttons are ViewDepartments (twice) and ViewDivisions, the plan's button pattern matched none, and the form went with no submitter; the Start Months boxes checked by default are August to November, Fall's. This read submits once per term with the ViewDepartments button named: Fall 2026 with the page's months, Spring 2027 with the months cleared. Read 4 also found statewidepathways.org parked for sale and the catalog's EPP page stating the route (Credit by Exam, residency waived); this read takes Cerritos's HS Credit By Exam form and AP 4050 (articulation), both found by web search 2026-10-04.",
+  "college": "Cerritos College",
+  "questions": {
+    "noncredit_aed": "Whether the 26 noncredit AED courses run this year (sections in Fall 2026 or Spring 2027).",
+    "apprenticeship_hours": "The IWAP sections this year, beside the classroom hours already confirmed.",
+    "hs_articulation": "How high school credit is granted, and where Cerritos keeps its list of articulated courses."
+  },
+  "keywords": ["AED 4[01]\\.", "IWAP", "Ironwork", "No classes matched", "articulat", "Credit by Exam", "high school", "Educational Partnerships"],
+  "pages": [
+    {"answers": ["noncredit_aed", "apprenticeship_hours"], "url": "https://secure.cerritos.edu/schedule/index.cgi",
+     "submit": [
+       {"action": "courses.cgi", "set": {"Terms": ["1269"], "Alldepts": [], "Depts": ["AED", "IWAP"]}, "button": "^ViewDepartments$"},
+       {"action": "courses.cgi", "set": {"Terms": ["1273"], "Months": [], "Alldepts": [], "Depts": ["AED", "IWAP"]}, "button": "^ViewDepartments$"}
+     ]},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/admissions-and-records/_includes/docs/forms/HS_Credit_By_Exam_Form_ua.pdf"},
+    {"answers": ["hs_articulation"], "url": "https://www.cerritos.edu/board/_includes/docs/AP/Chapter-4/AP-4050.pdf"}
+  ]
+}

@@ -11,12 +11,14 @@ through the GitHub MCP. What the read reaches and what it is refused becomes
 the college's procedure record (sheet 34 card 2: one per college, kept with its
 history on the college's program_source_registry row). The reader loads that
 record before each run, prints it, and leaves alone a host the record marks
-refused or unreached unless the plan's page says retry.
+refused, unreached or gone unless the plan's page says retry.
 
 Polite by construction, as the census and the pilot capture are: the census's
 Reader reads robots.txt first for every host, waits CENSUS_DELAY_MS before every
 load and names the CPL Initiative in its user agent (Sam's sheet-23 call 5).
-It WRITES NOTHING and runs on no schedule.
+It WRITES NOTHING and runs on no schedule. A page may also submit one of its
+forms (a public search such as a class schedule, never a sign-in): robots.txt
+for the form's action first, the same delay, and the fields it sent printed.
 
 Usage (runner): python3 kb/_college_page_read.py kb/college_reads/cerritos_ironworker_ladder.json
 """
@@ -25,6 +27,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -148,11 +151,96 @@ FORMS_JS = """() => Array.from(document.forms).slice(0, 5).map(f => ({
       .map(o => o.value + '=' + (o.text || '').trim().slice(0, 40)) : null}))}))"""
 
 
-SKIP_ACCESS = {"refused", "unreached"}
+# A plan's page may submit one of its forms (read 4: Schedule+ lists a term's
+# sections for the departments ticked on its form). The spec names the form by
+# the end of its action, the fields to set (each name maps to the values that
+# end up checked or selected; every other box of that name is cleared), and
+# optionally a pattern for the submit button's name or words. Fields it does not
+# name keep the page's defaults. The reader prints what it sent.
+SUBMIT_PREP_JS = """(spec) => {
+  const f = Array.from(document.forms).find(x => !spec.action ||
+    (x.getAttribute('action') || '').endsWith(spec.action) || x.action.endsWith(spec.action));
+  if (!f) return {error: 'no form whose action ends with ' + spec.action};
+  const set = spec.set || {};
+  for (const e of Array.from(f.elements)) {
+    if (!e.name || !(e.name in set)) continue;
+    const want = set[e.name].map(String);
+    if (e.type === 'checkbox' || e.type === 'radio') e.checked = want.includes(e.value);
+    else if (e.tagName === 'SELECT') Array.from(e.options).forEach(o => { o.selected = want.includes(o.value); });
+    else if (e.type !== 'submit' && e.type !== 'button' && want.length) e.value = want[0];
+  }
+  const buttons = Array.from(f.querySelectorAll('input[type=submit], button[type=submit], button:not([type])'));
+  const rx = spec.button ? new RegExp(spec.button, 'i') : null;
+  const btn = rx ? buttons.find(b => rx.test(b.name || '') || rx.test(b.value || b.textContent || '')) : null;
+  document.querySelectorAll('[data-cpl-read]').forEach(x => x.removeAttribute('data-cpl-read'));
+  f.setAttribute('data-cpl-read', 'form');
+  if (btn) btn.setAttribute('data-cpl-read', 'button');
+  return {action: f.action, method: (f.method || 'get').toUpperCase(),
+          sent: Array.from(new FormData(f)).slice(0, 120).map(([k, v]) => k + '=' + String(v).slice(0, 60)),
+          button: btn ? ((btn.name || '') + '=' + (btn.value || btn.textContent || '').trim().slice(0, 60)) : null,
+          buttons: buttons.slice(0, 12).map(b => (b.name || '') + '=' + (b.value || b.textContent || '').trim().slice(0, 60))};
+}"""
+
+SUBMIT_GO_JS = """() => {
+  const f = document.querySelector('form[data-cpl-read=form]');
+  const b = document.querySelector('[data-cpl-read=button]');
+  if (b && f.requestSubmit) f.requestSubmit(b); else HTMLFormElement.prototype.submit.call(f);
+}"""
+
+
+def submit_specs(target: dict) -> list[dict]:
+    """A page's submit field as a list: one spec, several, or none."""
+    s = target.get("submit")
+    if not s:
+        return []
+    return [s] if isinstance(s, dict) else list(s)
+
+
+def submit_form(reader, spec: dict) -> dict:
+    """Fill and submit a form on the page the reader is on, under the same rules
+    as a load: robots.txt for the form's action first, then the delay. Returns a
+    record shaped like read_one's, with what was sent."""
+    from _program_source_census import NAV_TIMEOUT_MS, classify_access, robots_allows
+    prep = reader.page.evaluate(SUBMIT_PREP_JS, spec)
+    out = {"url": prep.get("action") or spec.get("action") or "", "kind": "html", "submitted": prep}
+    if prep.get("error"):
+        out.update(access="no_form", error=prep["error"])
+        return out
+    action = prep["action"]
+    if not robots_allows(reader._robots_for(action), action):
+        out.update(access="robots_disallow", status=None)
+        return out
+    time.sleep(reader.delay)
+    reader.loads += 1
+    try:
+        with reader.page.expect_navigation(wait_until="domcontentloaded",
+                                           timeout=NAV_TIMEOUT_MS) as nav:
+            reader.page.evaluate(SUBMIT_GO_JS)
+        resp = nav.value
+        try:
+            reader.page.wait_for_load_state("networkidle", timeout=8000)
+        except Exception:
+            pass
+        status = resp.status if resp else None
+        out.update(status=status, final_url=reader.page.url,
+                   content_type=(resp.headers.get("content-type", "") if resp else ""),
+                   title=reader.page.title() or "")
+        out["access"] = classify_access(status, out["title"])
+        reader.page.wait_for_timeout(1500)
+        page = reader.page.evaluate(TEXT_JS)
+        out["text"], out["links"] = page.get("text") or "", page.get("links") or []
+    except Exception as exc:
+        out.update(status=None, access="unreachable", error=str(exc).splitlines()[0][:200])
+    return out
+
+
+# A host the record marks gone answers, but not as the site the college names
+# (read 4, 2026-10-04: statewidepathways.org redirects to a domain-for-sale page).
+SKIP_ACCESS = {"refused", "unreached", "gone"}
 
 
 def skipped_hosts(procedure: dict | None) -> dict:
-    """host -> the record's note, for every host it marks refused or unreached."""
+    """host -> the record's note, for every host it marks refused, unreached or gone."""
     out = {}
     for h in (procedure or {}).get("hosts") or []:
         if h.get("host") and h.get("access") in SKIP_ACCESS:
@@ -248,8 +336,9 @@ def finish(out: dict, pattern: re.Pattern) -> dict:
 
 
 def print_page(n: int, rec: dict, pattern: re.Pattern) -> None:
+    how = "submitted from" if rec.get("submitted") else "followed from"
     print("\n##### PAGE %d · answers: %s%s" % (n, ", ".join(rec.get("answers") or []),
-          (" · followed from page %d" % rec["from"]) if rec.get("from") else ""))
+          (" · %s page %d" % (how, rec["from"])) if rec.get("from") else ""))
     for k in ("url", "final_url", "status", "access", "kind", "content_type", "chars",
               "sha256", "bytes", "extractor", "title", "error"):
         if rec.get(k) not in (None, ""):
@@ -265,6 +354,12 @@ def print_page(n: int, rec: dict, pattern: re.Pattern) -> None:
             print("  %s [%s]%s%s" % (e.get("name"), e.get("type"),
                   (" value=" + e["value"]) if e.get("value") and not opts else "",
                   (" options: " + " | ".join(opts)) if opts else ""))
+    sub = rec.get("submitted")
+    if sub and sub.get("action"):
+        print("--- form submitted: %s %s ---" % (sub.get("method"), sub.get("action")))
+        print("sent: " + " & ".join(sub.get("sent") or []))
+        print("button: %s · buttons on the form: %s" % (sub.get("button") or "none (no submitter)",
+              " | ".join(sub.get("buttons") or []) or "none"))
     if rec.get("followed"):
         print("--- links followed ---")
         for f in rec["followed"]:
@@ -335,6 +430,17 @@ def main(argv: list[str] | None = None) -> int:
                     rec["followed"] = fol
                     queue.extend((f["href"], n) for f in fol)
                 print_page(n, rec, pattern)
+                if parent or rec.get("access") != "ok" or rec.get("kind") != "html":
+                    continue
+                # Submit while the browser is still on the form's page; a second
+                # spec reloads the page first (a load like any other).
+                for i, spec in enumerate(submit_specs(target)):
+                    if i and reader.load(url).get("access") != "ok":
+                        break
+                    sub = finish(submit_form(reader, spec), pattern)
+                    sub["answers"], sub["from"] = rec["answers"], n
+                    records.append(sub)
+                    print_page(len(records), sub, pattern)
     finally:
         browser.close()
         pw.stop()

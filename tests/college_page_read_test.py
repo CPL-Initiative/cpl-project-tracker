@@ -15,13 +15,15 @@ pure pieces decide whether the read is worth reading:
     keywords prints once; a PDF prints the pages naming a keyword, and its
     first page when none does.
 
-Also pinned: every page in each committed plan is an https address on a host
-the plan's college owns or a named outside host, and names a question the plan
-defines. Run from repo root: python3 tests/college_page_read_test.py
+Also pinned: every page in each committed plan is an https address (or http on
+a host the plan names with its reason) on a host the plan's college owns or a
+named outside host, and names a question the plan defines; a form a plan
+submits posts to the page's own site. Run from repo root: python3 tests/college_page_read_test.py
 """
 import glob
 import json
 import os
+import re
 import sys
 import urllib.parse
 
@@ -107,12 +109,19 @@ check(cpr.matching_links(links, None) == [], "no pattern, nothing shown")
 print("skipped_hosts")
 proc = {"hosts": [{"host": "hsarticulation.cerritos.edu", "access": "unreached", "note": "no DNS record"},
                   {"host": "www.cerritos.edu", "access": "open"},
-                  {"host": "Mapper.Example.edu", "access": "refused"}]}
+                  {"host": "Mapper.Example.edu", "access": "refused"},
+                  {"host": "www.statewidepathways.org", "access": "gone", "note": "a parked domain"}]}
 sk = cpr.skipped_hosts(proc)
-check(set(sk) == {"hsarticulation.cerritos.edu", "mapper.example.edu"},
-      "a host the record marks unreached or refused is left alone; an open one is read")
+check(set(sk) == {"hsarticulation.cerritos.edu", "mapper.example.edu", "www.statewidepathways.org"},
+      "a host the record marks unreached, refused or gone is left alone; an open one is read")
 check(sk["mapper.example.edu"] == "refused", "a host with no note carries its access word")
 check(cpr.skipped_hosts(None) == {} and cpr.skipped_hosts({}) == {}, "no record, nothing skipped")
+
+print("submit_specs")
+check(cpr.submit_specs({}) == [] and cpr.submit_specs({"submit": None}) == [], "no submit, no form step")
+one = {"action": "courses.cgi", "set": {"Depts": ["AED"]}}
+check(cpr.submit_specs({"submit": one}) == [one], "one spec becomes a list of one")
+check(cpr.submit_specs({"submit": [one, one]}) == [one, one], "several specs keep their order")
 
 print("committed plans")
 plans = sorted(glob.glob(os.path.join(ROOT, "kb", "college_reads", "*.json")))
@@ -130,7 +139,19 @@ for path in plans:
     for p in plan["pages"]:
         u = urllib.parse.urlparse(p["url"])
         hosts.add(u.hostname)
-        check(u.scheme == "https", "%s: %s is https" % (name, p["url"]))
+        http_ok = (plan.get("http_hosts") or {}).get(u.hostname)
+        check(u.scheme == "https" or (u.scheme == "http" and isinstance(http_ok, str) and len(http_ok) > 20),
+              "%s: %s is https, or http on a host the plan names with its reason" % (name, p["url"]))
+        for spec in cpr.submit_specs(p):
+            sets = spec.get("set") or {}
+            check(isinstance(spec.get("action"), str) and spec["action"] and sets and
+                  all(isinstance(v, list) and all(isinstance(x, str) for x in v) for v in sets.values()),
+                  "%s: %s submits a named form with each field's values as a list" % (name, p["url"]))
+            target = urllib.parse.urljoin(p["url"], spec["action"])
+            check(cpr.same_site(target, p["url"]),
+                  "%s: the form posts to the page's own site (%s)" % (name, target))
+            if spec.get("button"):
+                re.compile(spec["button"])
         check(set(p.get("answers") or []) and set(p["answers"]) <= qs,
               "%s: %s names a question the plan defines" % (name, p["url"]))
     from _program_source_census import registrable
