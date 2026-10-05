@@ -1,0 +1,37 @@
+{
+ "_readme": "Twelfth read for the Cerritos Ironworker ladder (S331, SkyForge). Read 11 (run 37249565514): the EPP Articulation Agreements address web search returned (/academics/divisions/epp/Articulation_List.htm) answers 404; Downey High's 2023 Welding Pathway post says the Downey Unified welding pathway 'will be equivalent to the Cerritos College course: WELD 100 Welding Fundamentals (2.5 units)', the wording of an articulation, and links Columbus High's own Welding Pathway page and Downey High's Dual Enrollment page. This read takes both, to learn whether the pathway's college credit comes by articulation (Credit by Exam) or by CCAP dual enrollment.",
+ "college": "Cerritos College",
+ "outside_hosts": {
+  "dusd.net": "Downey Unified School District, the partner district whose Columbus High welding pathway maps to Cerritos's WELD 160 and WELD 100"
+ },
+ "questions": {
+  "hs_articulation": "Cerritos's list of articulated high school courses, and which route Columbus High's welding pathway uses."
+ },
+ "keywords": [
+  "Cerritos",
+  "[Ww]eld",
+  "WELD",
+  "[Aa]rticulat",
+  "[Cc]redit by [Ee]xam",
+  "CCAP",
+  "[Dd]ual [Ee]nrollment",
+  "college credit",
+  "units"
+ ],
+ "pages": [
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.dusd.net/columbus/welding-pathway/",
+   "expand": true,
+   "links": "cerritos|articulat|weld|\\.pdf|ccap|dual|credit",
+   "follow": "\\.pdf|articulat|cerritos"
+  },
+  {
+   "answers": ["hs_articulation"],
+   "url": "https://web.dusd.net/downey/dual-enrollment/",
+   "expand": true,
+   "links": "cerritos|weld|ccap|\\.pdf|course|schedule",
+   "follow": "\\.pdf.*(ccap|cerritos|course|dual)|(ccap|cerritos|course|dual).*\\.pdf"
+  }
+ ]
+}
