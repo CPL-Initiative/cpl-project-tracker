@@ -4,9 +4,9 @@
   "supabase_tables": 94,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 591,
+  "file_datasets": 597,
   "external_services": 157,
-  "consumers": 412,
+  "consumers": 415,
   "workflows": 44,
   "data_js_files": 69,
   "tabs": 38
@@ -776,6 +776,13 @@
      "line": 361
     },
     {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 26
+    },
+    {
      "id": "worker:cloudflare-worker-proxy.js",
      "kind": "worker",
      "direction": "read",
@@ -1275,6 +1282,13 @@
      "direction": "read",
      "how": "url",
      "line": 29
+    },
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 29
     }
    ],
    "main_committers": []
@@ -1321,6 +1335,13 @@
      "direction": "read",
      "how": "url",
      "line": 41
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 99
     }
    ],
    "main_committers": []
@@ -15279,6 +15300,133 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/narration.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 54
+    },
+    {
+     "id": "script:prototype/noncredit_video/narrate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 32
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/narration_layout.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 186
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 55
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 55
+    },
+    {
+     "id": "script:prototype/noncredit_video/narrate.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 180
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/narration_words.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 56
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/noncredit_in_motion.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 180
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/noncredit_in_motion.src.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 194
+    },
+    {
+     "id": "script:prototype/noncredit_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 71
+    },
+    {
+     "id": "script:prototype/noncredit_video/narrate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/noncredit_video/noncredit_in_motion_narrated.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/noncredit_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 141
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:prototype/skyview.html": {
