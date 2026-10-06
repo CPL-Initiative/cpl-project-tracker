@@ -59,6 +59,7 @@ SAMPLES = {"pilot": [SAMPLE_FILE], "maps": [MAPS_FILE], "all": [SAMPLE_FILE, MAP
 MAX_LOADS = 8            # page loads per program, shared pages excluded
 ACCEPT_SHARE = 0.5       # a page naming this share of the listed codes is the page
 TEXT_CAP = 16000         # characters of page text kept per program
+CATALOG_PDF_WAIT_S = 600 # seconds a procedure's whole-catalog PDF may take to arrive
 HTML_CAP = 60000         # characters of CourseLeaf course-list HTML kept
 WINDOW_BEFORE = 2500     # text kept before the first listed code on the page
 WINDOW_AFTER = 1500      # and after the last
@@ -405,7 +406,12 @@ def procedure_catalog(procedure) -> dict | None:
     if not (isinstance(start, str) and start.startswith("http") and isinstance(follow, str)
             and follow.strip() and fmt in ("pdf", "html")):
         return None
-    return {"start": start, "follow": follow.strip(), "format": fmt}
+    # A whole catalog is one large file: Santa Monica's took longer than the
+    # reader's usual 180 s and timed out (run 37543985175), so a catalog step
+    # waits 600 s unless its record says otherwise (30 s to 1,500 s).
+    wait = step.get("timeout_s")
+    wait = wait if isinstance(wait, int) and 30 <= wait <= 1500 else CATALOG_PDF_WAIT_S
+    return {"start": start, "follow": follow.strip(), "format": fmt, "timeout_s": wait}
 
 
 def follow_link(links: list[dict], follow: str) -> str | None:
@@ -677,7 +683,7 @@ def read_export(reader, url: str | None, courses: list[dict], cache: dict) -> di
             "coverage": round(coverage(found, courses), 2), "found": found, "text": text}
 
 
-def read_pdf(reader, url: str, cache: dict) -> dict:
+def read_pdf(reader, url: str, cache: dict, timeout_ms: int = 180000) -> dict:
     """The whole PDF, once per college: robots first, the census's delay, then
     pypdf's text for every page."""
     if url in cache:
@@ -691,7 +697,7 @@ def read_pdf(reader, url: str, cache: dict) -> dict:
     time.sleep(reader.delay)
     reader.loads += 1
     try:
-        resp = reader.request.get(url, timeout=180000)
+        resp = reader.request.get(url, timeout=timeout_ms)
         out.update(status=resp.status, content_type=resp.headers.get("content-type", ""))
         if not resp.ok:
             out.update(access="blocked" if resp.status in (401, 403, 429) else "unreachable",
@@ -804,13 +810,22 @@ def capture(reader, entry: dict, cache: dict) -> dict:
             "status": got.get("status"), "access": got.get("access"), "href": href,
             "link_sample": None if href else [[(ln.get("text") or "")[:60], ln.get("href")]
                                               for ln in (got.get("links") or [])[:40]]}
+        if href and step["format"] == "pdf" and getattr(reader, "request", None) is not None:
+            # The file's size and type before the long read, so a timeout says what it was fetching.
+            try:
+                head = reader.request.head(href, timeout=60000)
+                rec["procedure_step"].update(head_status=head.status,
+                                             content_length=head.headers.get("content-length"),
+                                             content_type=head.headers.get("content-type"))
+            except Exception as exc:
+                rec["procedure_step"]["head_error"] = str(exc).splitlines()[0][:200]
         if href:
             start, as_pdf = href, step["format"] == "pdf"
     if not start:
         rec.update(found=None, note="the registry holds no catalog address")
         return rec
     if as_pdf or reg.get("catalog_format") in ("single_pdf",) or start.lower().endswith(".pdf"):
-        pdf = read_pdf(reader, start, cache)
+        pdf = read_pdf(reader, start, cache, **({"timeout_ms": step["timeout_s"] * 1000} if as_pdf else {}))
         pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
         run = pick_pdf_pages(pages, program, courses)
         tried = [{"extractor": extractor, "chars_total": sum(len(p) for p in pages),

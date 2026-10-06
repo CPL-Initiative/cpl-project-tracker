@@ -223,12 +223,16 @@ check(rec.get("closed_list") and rec["closed_list"][0].get("code") == "CUL 20",
 SMC_HOME = "https://catalog.example.edu/current/index.php"
 SMC_PDF = "https://catalog.example.edu/mime/media/full-catalog.pdf"
 STEP = {"catalog": {"start": SMC_HOME, "follow": "Download the Full Catalog", "format": "pdf"}}
-check(P.procedure_catalog(STEP) == {"start": SMC_HOME, "follow": "Download the Full Catalog", "format": "pdf"}
+check(P.procedure_catalog(STEP) == {"start": SMC_HOME, "follow": "Download the Full Catalog", "format": "pdf",
+                                    "timeout_s": 600}
+      and P.procedure_catalog({"catalog": dict(STEP["catalog"], timeout_s=900)})["timeout_s"] == 900
+      and P.procedure_catalog({"catalog": dict(STEP["catalog"], timeout_s=5)})["timeout_s"] == 600
       and P.procedure_catalog(None) is None and P.procedure_catalog({"v": 1, "hosts": []}) is None
       and P.procedure_catalog({"catalog": {"start": "catalog.smc.edu", "follow": "x"}}) is None
       and P.procedure_catalog({"catalog": {"start": SMC_HOME, "follow": " "}}) is None
       and P.procedure_catalog({"catalog": {"start": SMC_HOME, "follow": "x", "format": "docx"}}) is None,
-      "a procedure's catalog step is read only when it names an http start page, link text and pdf or html")
+      "a procedure's catalog step is read only when it names an http start page, link text and pdf or html, "
+      "and waits 600 s for a whole-catalog PDF unless the record names 30-1,500 s (run 37543985175 timed out at 180)")
 LINKS = [{"text": "Download the Full Catalog (PDF archive 2019)", "href": SMC_HOME + "?old"},
          {"text": "  Download   the full catalog ", "href": SMC_PDF},
          {"text": "Catalog Home", "href": SMC_HOME}]
@@ -248,8 +252,8 @@ pdf_pages = ["Front matter", "Index of programs", "Barbering, Associate in Scien
 read = []
 
 
-def _smc_pdf(reader, url, cache):
-    read.append(url)
+def _smc_pdf(reader, url, cache, timeout_ms=180000):
+    read.append((url, timeout_ms))
     return {"url": url, "access": "ok", "status": 200, "bytes": 1000, "pages": pdf_pages, "extractor": "pypdf"}
 
 
@@ -269,14 +273,14 @@ try:
 finally:
     P.fetch_program, P.fetch_courses, P.fetch_registry, P.read_pdf = saved
 check(rec_smc.get("method") == "pdf_pages" and (rec_smc.get("source") or {}).get("url") == SMC_PDF
-      and read == [SMC_PDF] and rec_smc.get("coverage") == 1.0
+      and read == [(SMC_PDF, 600000)] and rec_smc.get("coverage") == 1.0
       and (rec_smc.get("source") or {}).get("pages") == [3]
       and (rec_smc.get("procedure_step") or {}).get("href") == SMC_PDF,
-      "the capture opens the procedure's start page, follows its link and reads that PDF: %s %s"
+      "the capture opens the procedure's start page, follows its link and reads that PDF with the catalog wait: %s %s"
       % (rec_smc.get("method"), (rec_smc.get("source") or {}).get("url")))
 check(rec_miss.get("method") == "html_page" and (rec_miss.get("procedure_step") or {}).get("href") is None
       and (rec_miss.get("procedure_step") or {}).get("link_sample")
-      and read == [SMC_PDF],
+      and read == [(SMC_PDF, 600000)],
       "a link the start page does not carry is reported with the page's links, and the capture "
       "reads the registry's address instead of guessing")
 
