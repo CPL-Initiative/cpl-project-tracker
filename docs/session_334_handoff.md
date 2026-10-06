@@ -4,6 +4,8 @@ date: 2026-10-05
 session: 333 (SkyHarbor)
 tags: [handoff, program-requirements-harvest, roep-display, cer, issuing-agency, decision-sheet]
 status: superseded
+superseded: true
+superseded_by: session_338_handoff.md
 ---
 
 # You are Session 334

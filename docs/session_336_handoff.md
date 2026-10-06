@@ -4,6 +4,8 @@ date: 2026-10-05
 session: 335 (SkyKeel)
 tags: [handoff, program-requirements-harvest, decision-sheet, sierra, cleanup]
 status: current
+superseded: true
+superseded_by: session_338_handoff.md
 ---
 
 # You are Session 336
