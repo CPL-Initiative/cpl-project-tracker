@@ -96,14 +96,17 @@ FACTS = {
         # MAP credential reference (2026-10-06): CompTIA A+, Network+ and Security+ statewide exhibits adopted at 21, 21
         # and 17 colleges, all three at 12; Saddleback awards 9 units for the three (CIMN 110, CIMN 120, CIMS 130). No
         # North Orange district college has adopted them (Sam, 2026-10-06: drop the NOCE claim; bundle the CompTIA options).
-        {'name': 'Nadia', 'kind': 'Noncredit certificate', 'college': 'North Orange Continuing Education', 'img': 'nadia.jpg',
+        # Industry certificate (Sam, 2026-10-06): "credit colleges are not giving credit for the noncredit instruction but
+        # rather for the cert that students earn as a result of their NC studies. Some students will not pass the CompTIA
+        # exam and will not get credit."
+        {'name': 'Nadia', 'kind': 'Industry certificate', 'college': 'North Orange Continuing Education', 'img': 'nadia.jpg',
          'alt': 'Illustrative photo: an adult learner holds a memory module beside an open computer in an IT classroom.',
          'steps': [['Noncredit IT support certificate', 's'],
                    ['CompTIA A+, Network+ and Security+ certifications', 's'],
                    ['9 units of CPL for all three, as at Saddleback College', 'cpl'],
                    ['Credit certificate and associate degree in information technology', 's']],
          'note': 'Twelve colleges award credit for all three.',
-         'text': 'Nadia, a noncredit certificate at North Orange Continuing Education: a noncredit IT support certificate and the CompTIA A+, Network+ and Security+ certifications, which carry 9 units of CPL for all three, as at Saddleback College. Twelve colleges award credit for all three, toward a credit certificate and an associate degree in information technology.'},
+         'text': 'Nadia, an industry certificate at North Orange Continuing Education: a noncredit IT support certificate and the CompTIA A+, Network+ and Security+ certifications, which carry 9 units of CPL for all three, as at Saddleback College. Twelve colleges award credit for all three, toward a credit certificate and an associate degree in information technology.'},
     ],
     # Slide 3. MAP credential reference (credential_reference_data.js, 2026-10-05) and Supabase map_college_cr_unit:
     # EMT Certification 1,219.6 of 1,557.6 eligible units transcribed (78.3%) at 28 colleges against a 47.9% system
