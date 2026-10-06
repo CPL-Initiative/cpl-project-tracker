@@ -11,6 +11,12 @@
    "text": "Open Asks Sheet 45 (https://claude.ai/artifact/ENsjpLsspv4jJAubKAcUAL), card 1: give the industry credential watch routine its repositories (the tracker and CPLBrain, in your Routines list) and the issuers' sites (Allowed domains in the cloud environment's Network access; the card carries the host list). Its first run, 2026-10-05, could not read the vault, push, or reach the issuer pages. Next run: Monday 12 October."
   },
   {
+   "id": "s337-sam-ivc-live",
+   "for": "Sam",
+   "tab": "program-requirements",
+   "text": "Go or hold: put Irvine Valley's Art A.A. record (unchecked, Beta draft) in the live program records so CPL Pathways and Sierra can show it. The automatic permission check held the session from rewriting the load receipt, so the record waits in kb/program_requirements_pilot/records_maps/. A go lets the next session move it into records/, rerun the loader and apply."
+  },
+  {
    "id": "s332-sam-setup-script",
    "for": "Sam",
    "tab": "admin",

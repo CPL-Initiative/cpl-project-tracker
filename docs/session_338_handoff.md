@@ -36,7 +36,9 @@ None. Sam was away the whole run; it was a scheduled session.
   dispatch with `sample: pilot`.
 - **Irvine Valley Art A.A. 10265 now has a record.** Capture run 37487454632 reached the curriQunet export and found
   21 of 23 listed codes. Extraction run 37488863819 passed at 27 units, equal, for $0.07. It is filed as
-  `records/ivc_10265.json` (unchecked, no verdict). **A gap for the college:** the 2026-27 catalog prints ARTH 25 and
+  `records_maps/ivc_10265.json` (unchecked, no verdict), outside `records/`, because the loader and display build read
+  `records/` and the permission check held regenerating the load receipt (a shared-resource write). Moving it into
+  `records/` and rerunning `kb/_program_requirements_load.py` is the step that needs Sam's go. **A gap for the college:** the 2026-27 catalog prints ARTH 25 and
   26, while the state file lists the common-numbered ARTH C1100 and C1200.
 - **Santa Monica 43767 still has no record.** The capture now treats *Academic and Career Paths* as a hub and reaches
   *SMC Degrees and Certificates*. The trail's new `title_links` field showed that no page on that path links the
