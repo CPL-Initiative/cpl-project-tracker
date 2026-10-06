@@ -24,9 +24,13 @@ HERE = pathlib.Path(__file__).resolve().parent
 ASSETS = HERE.parent / 'funding_video' / 'assets'
 LOGO = HERE.parent.parent / 'sierra' / 'cpl-initiative-logo-navy.png'
 PAGES = 'https://cpl-initiative.github.io/cpl-project-tracker/prototype/noncredit_video/'
-# The MP4s on GitHub, so the Download button works wherever the page opens (a Claude artifact grants a
-# page no download permission, and Pages prunes prototype/ media).
+# The v1 MP4s on GitHub, so the Download button worked wherever the page opened (a Claude artifact grants a
+# page no download permission, and Pages prunes prototype/ media). From v2 the MP4s are deliverables and live
+# in the team Drive (Sam, 2026-10-05: "all artifacts like this created on this account should go to the Drive
+# instead of the repos"; the Library record noncredit-summit-in-motion links them), so the pages carry no
+# Download button: render.sh still writes the file `mp4` names, and it is filed to Drive, never committed.
 RAW = 'https://github.com/CPL-Initiative/cpl-project-tracker/raw/main/prototype/noncredit_video/'
+DL = '    <a class="btn" id="dl" href="__MP4URL__" target="_blank" rel="noopener">Download MP4</a>\n'
 
 
 def jpg(name):
@@ -47,17 +51,18 @@ FACTS = {
         'line': 'Within reach by 2030: CPL for about <b>7,500 noncredit learners a year</b>, one in four noncredit award earners.',
         'text': 'Last October Chancellor Christian said noncredit and not-for-credit learners will be key to meeting the goal of 250,000 Californians served through CPL by 2030. Colleges have served 52,452 so far. Within reach by 2030: CPL for about 7,500 noncredit learners a year, one in four noncredit award earners.',
     },
-    # Slide 1. COMIS as shown in the 2025 keynote. The 34% is the keynote's slide 11 chart (median quarterly wage
+    # Slide 1. COMIS. Award earners: 30,795 in 2024-25, the Chancellor's 2026 keynote chart "Students earning noncredit
+    # awards" (updated Oct. 5, 2026), which revised the 2025 keynote's 29,649 (Sam, 2026-10-06: follow her chart). The 34% is the keynote's slide 11 chart (median quarterly wage
     # $7,833 in the quarter before entry, $10,479 a year after exit or award, 33.8%), worded as the deck's .md says
     # to say it: students working before they enrolled, a year after finishing or leaving their program.
     'scale': {
         'kick': 'Noncredit in the California Community Colleges',
         'head': 'Your programs already hold the learners',
         'stats': [['1 in 4', None, 'community college students enroll in at least one noncredit course each year'],
-                  ['29,649', 29649, 'students earned a noncredit award in 2024–25, nearly five times the 6,291 of 2012–13'],
+                  ['30,795', 30795, 'students earned a noncredit award in 2024–25, nearly five times the 6,291 of 2012–13'],
                   ['+34%', 34, 'median quarterly wages, $7,833 to $10,479, for students working before they enrolled, a year after finishing or leaving', 'pct']],
-        'source': 'Sources: COMIS noncredit enrollment, awards and wages, 2012–13 to 2024–25. Wages: first-time noncredit students who entered 2017–18 to 2020–21, the quarter before entry and the fifth quarter after exit (N = 14,144), nominal dollars.',
-        'text': 'About one in four community college students enrolls in a noncredit course each year. 29,649 students earned a noncredit award in 2024–25, nearly five times the 6,291 of 2012–13. Noncredit students who were working before they enrolled saw their median quarterly wages rise 34%, from $7,833 to $10,479, a year after finishing or leaving their program.',
+        'source': 'Sources: COMIS noncredit enrollment, awards and wages, 2012–13 to 2024–25 (awards updated Oct. 5, 2026). Wages: first-time noncredit students who entered 2017–18 to 2020–21, the quarter before entry and the fifth quarter after exit (N = 14,144), nominal dollars.',
+        'text': 'About one in four community college students enrolls in a noncredit course each year. 30,795 students earned a noncredit award in 2024–25, nearly five times the 6,291 of 2012–13. Noncredit students who were working before they enrolled saw their median quarterly wages rise 34%, from $7,833 to $10,479, a year after finishing or leaving their program.',
     },
     'illus': 'Illustrative learner and photo. Each step follows courses, programs and CPL on record in COCI and MAP.',
     'wip': 'Planned in MAP',
@@ -125,16 +130,17 @@ FACTS = {
     # Slide 4. The 2026-27 state budget: $35 million one-time and $7 million ongoing (the year's $2 million increment
     # brings ongoing CPL operations to $7 million; Sam, 2026-10-06: "should be $7M"; cpl_memory m3). The published
     # allocation (Scenario 2, final Sept. 30, 2026), read from the model (config md5 764fd264): $25,240,308 to 118
-    # institutions sized on credit + noncredit FTES; $1,812,403 noncredit, restricted to noncredit outcomes. Last year's $50,000 grants to the three noncredit programs: Sam, 2026-10-05.
+    # institutions sized on credit + noncredit FTES; $1,812,403 noncredit, restricted to noncredit outcomes. Last year's $50,000 grants to four noncredit programs: Sam's revised funding slide (2026-10-06) adds Calbright to the
+    # three he named on 2026-10-05, and he ruled the film follows it ("2,3,4 y").
     # Funding vocabulary (CLAUDE.md): funding, allocated, max award, reserved; never earn, money or pool.
     'funding': {
         'kick': 'CPL funding · the 2026–27 state budget',
         'big': 35,
         'side': 'one-time, and <b>$7 million ongoing</b>, for credit for prior learning',
-        'cards': [['Last year', '$50,000 grants', 'to the noncredit programs at North Orange Continuing Education, Mt. San Antonio College and San Diego College of Continuing Education'],
+        'cards': [['Last year', '$50,000 grants', 'to four noncredit programs: North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright'],
                   ['This year', '$1.8 million', 'in noncredit funding for every community college noncredit program, reserved for noncredit outcomes']],
         'line': 'Noncredit counts from the start: credit and noncredit FTES together size every max award.',
-        'text': 'The 2026–27 state budget provides $35 million one-time and $7 million ongoing for CPL. Last year, $50,000 grants went to the noncredit programs at North Orange Continuing Education, Mt. San Antonio College and San Diego College of Continuing Education. This year, $1.8 million in noncredit funding reaches every community college noncredit program, reserved for noncredit outcomes. Credit and noncredit FTES together size every max award.',
+        'text': 'The 2026–27 state budget provides $35 million one-time and $7 million ongoing for CPL. Last year, $50,000 grants went to four noncredit programs: North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright. This year, $1.8 million in noncredit funding reaches every community college noncredit program, reserved for noncredit outcomes. Credit and noncredit FTES together size every max award.',
     },
 }
 for p in FACTS['people']:
@@ -151,7 +157,7 @@ CONFIG = {
     'title': 'Noncredit learning, college credit',
     'sub': 'Four learners, the credit already waiting for them, and the funding that counts noncredit from the start.',
     'titleText': 'Noncredit learning, college credit: four learners, the credit already waiting for them, and the funding that counts noncredit from the start. Vision 2030 Noncredit Summit, 2026.',
-    'mp4': '20261005_Noncredit_Summit_in_Motion_v1.mp4',
+    'mp4': '20261005_Noncredit_Summit_in_Motion_v2.mp4',
     'facts': FACTS,
     # [the moment the bolt lands, x, y, caption]: each at the top of the scene whose fact brings it down. The
     # handoff's five (2026-10-05); "Noncredit as afterthought" is Sam's own framing of how the field feels.
@@ -182,13 +188,14 @@ VARIANTS = {
     'narrated': dict(
         CONFIG,
         pageTitle='Noncredit Summit in Motion: Narrated',
-        dek='The Noncredit Summit film, narrated by Sierra, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
+        dek='The Noncredit Summit film, narrated, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
         link=PAGES + 'noncredit_in_motion.html',
         linkLabel='Watch the music-only version',
-        mp4='20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4',
-        narrator='Narrated by Sierra',
+        mp4='20261005_Noncredit_Summit_in_Motion_Narrated_v2.mp4',
+        # The narrator goes unnamed (Sam, 2026-10-06: "Let's take out naming the narrator Sierra and make her
+        # anonymous"): no name line on the title, and the close still says the voice is synthetic.
         audio='narration.mp3',
-        credit='Sierra is a synthetic voice made with ElevenLabs.',
+        credit='The narrator is a synthetic voice made with ElevenLabs.',
         narr=narration('narration_layout.json'),
     ),
 }
@@ -198,6 +205,8 @@ variant = args[0] if args else ''
 cfg = VARIANTS[variant]
 suffix = '_' + variant if variant else ''
 src = (HERE / 'noncredit_in_motion.src.html').read_text(encoding='utf8')
+assert src.count(DL) == 1, 'the Download button moved; update DL'
+src = src.replace(DL, '')
 
 
 def uri(p):
