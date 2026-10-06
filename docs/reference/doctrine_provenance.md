@@ -158,7 +158,7 @@ rule's name, verbatim, dated. The rule itself stays in `CLAUDE.md`.
 > to remember is not one**: the asks had scattered into eleven lane files'
 > NEEDS-SAM blocks and only ONE reached §11, so
 
-The same history is told at length in [`decision_sheets`](decision_sheets.md), *Why it audits itself*.
+The same history is told at length in `CPLBrain/decision-sheets/decision_sheets.md`, *Why it audits itself*.
 
 ## Presentation rules — the guard
 

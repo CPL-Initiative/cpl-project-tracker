@@ -7,7 +7,7 @@ kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
-  - "[[docs/reference/decision_sheets]]"
+  - "[[decision_sheets]]"
   - "[[docs/reference/lanes/common-cr-reference]]"
   - "[[docs/kb-notes/reference-system-one-model-fit-by-lane]]"
 artifacts:

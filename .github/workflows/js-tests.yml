@@ -248,14 +248,12 @@ jobs:
           pip install --quiet openpyxl
           python3 tests/statewide_recs_test.py
 
-      # The standing open-asks sheet must cover every lane that carries an open
-      # ask. Sam's "always" (2026-09-22) cannot depend on a session remembering:
-      # when he asked, the asks sat in eleven lane files and one reached §11.
-      # Pure-stdlib python; same non-required check.
-      - name: Open-asks sheet covers every lane with an open ask
-        run: |
-          python3 kb/_build_open_asks_decision_sheet.py --check
-          python3 tests/open_asks_sheet_coverage_test.py
+      # The open-asks sheet's coverage check (every lane that marks an ask for Sam
+      # has a card) moved to the private vault with its builder on 2026-10-06
+      # (Sam's call 9: decision-sheet sources leave this public repo). This job
+      # cannot read the vault. It runs in every session's scripts/check_generated.sh,
+      # which finds the vault beside the tracker, and in the vault's own CI
+      # (CPLBrain .github/workflows/decision-sheets.yml).
       # The reviewed CER write (sheet 19 card 1, 2026-10-02): a curator's row always wins.
       - name: CER decision applier holds a curator's row
         run: python3 tests/cer_decision_apply_test.py

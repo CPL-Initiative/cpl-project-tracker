@@ -6,7 +6,7 @@ kb-status: published
 tags: [methodology, decision-sheets, artifacts, notification, claude-code]
 artifacts:
   - kb/_decision_sheet_replies.py
-  - docs/reference/decision_sheets.md
+  - CPLBrain/decision-sheets/decision_sheets.md
 related:
   - "[[decision_sheets]]"
 ---

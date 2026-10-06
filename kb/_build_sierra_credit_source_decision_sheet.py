@@ -10,7 +10,7 @@ ADR allows, and two defects the measurement turned up on the way.
 
 ⚠️ ITS OWN SHEET, WITH ITS OWN STORE. The standing open-asks sheet belongs to the
 funding queue SkyLatch (S305) is running, and its replies are keyed to its own cards
-(docs/reference/decision_sheets.md). Nothing here adds a NEEDS-SAM marker to a lane.
+(CPLBrain/decision-sheets/decision_sheets.md). Nothing here adds a NEEDS-SAM marker to a lane.
 
 Figures measured 2026-09-30 against the live database (the 2026-09-29 18:56 UTC
 promotion, map_data_loads id 46) and cpl_funding_performance.js (as of 2026-09-30).

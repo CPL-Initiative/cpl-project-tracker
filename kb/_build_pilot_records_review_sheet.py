@@ -16,7 +16,7 @@ record against its filed catalog text and found a fault; then it names the fix.
 Every number on a card is read from the filed record and fixture at build time.
 
 ⚠️ ITS OWN SHEET, WITH ITS OWN STORE: the standing open-asks sheet's store is
-keyed to its own cards (docs/reference/decision_sheets.md). A sheet whose cards
+keyed to its own cards (CPLBrain/decision-sheets/decision_sheets.md). A sheet whose cards
 change is published under a fresh SHEET_ID and artifact.
 
 Run: python3 kb/_build_pilot_records_review_sheet.py

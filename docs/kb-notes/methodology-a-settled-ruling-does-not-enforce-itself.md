@@ -8,7 +8,7 @@ obsidian-folder: cpl-project-tracker
 related:
   - "[[docs/sierra_credit_recs_lessons]]"
   - "[[docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint]]"
-  - "[[docs/reference/decision_sheets]]"
+  - "[[decision_sheets]]"
 ---
 
 # A settled ruling does not enforce itself — the consumer has to change
@@ -114,7 +114,7 @@ until a doctrine linter exists (`doctrine-is-indexed-to-files-but-was-unqueryabl
 
 ## A consumer that asks: the standing decision sheet (2026-09-27, Session 295)
 
-The open-asks builder (`kb/_build_open_asks_decision_sheet.py`) is a consumer of
+The open-asks builder (`CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py`) is a consumer of
 rulings too. It reads every lane file for a NEEDS-SAM marker and refuses to build
 without a card for each one, so a ruling recorded anywhere but the marker leaves the
 question open to the machinery that asks.

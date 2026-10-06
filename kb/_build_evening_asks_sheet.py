@@ -14,7 +14,7 @@
 
 ⚠️ ITS OWN SHEET, WITH ITS OWN STORE, for the reason the grants sheet gives: the
 standing open-asks sheet's store is keyed to the 21 cards Sam answered
-(docs/reference/decision_sheets.md).
+(CPLBrain/decision-sheets/decision_sheets.md).
 
 Figures read from the live config saved 2026-09-23 19:44:46 UTC and measured
 through the model the same evening. Re-measure at execution.

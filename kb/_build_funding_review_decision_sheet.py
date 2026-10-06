@@ -22,7 +22,7 @@ added Priority 4, so items 1-2 were rewritten around it. Renumbering is safe
 only because nothing was stored against the old positions.
 
 ⚠️ WHY THIS IS ITS OWN SHEET AND NOT CARDS ON THE STANDING ONE. The standing
-open-asks sheet (kb/_build_open_asks_decision_sheet.py) is published as its
+open-asks sheet (CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py) is published as its
 21-item version, and its live `replies` store is keyed to those 21 positions.
 Its builder has since dropped to 15 cards, so a rebuild republished today would
 put Sam's saved replies on the wrong cards. That sheet's own coverage audit

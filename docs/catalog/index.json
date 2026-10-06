@@ -4183,8 +4183,8 @@
      "created": "2026-10-02",
      "governs": [
       "credential_reference.js",
-      "kb/_build_open_asks_decision_sheet.py",
-      "docs/reference/decision_sheets.md"
+      "CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py",
+      "CPLBrain/decision-sheets/decision_sheets.md"
      ],
      "path": "docs/kb-notes/methodology-a-verdict-that-reports-an-action-is-checked-in-the-store.md",
      "status": "published",
@@ -5983,7 +5983,7 @@
       "prototype/ccr_universe.js",
       "tests/ccr_universe_orbits_test.py",
       "kb/_decision_sheet_replies.py",
-      "kb/_build_open_asks_decision_sheet.py"
+      "CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py"
      ],
      "path": "docs/kb-notes/methodology-key-a-side-table-by-the-write-key-not-by-position.md",
      "status": "published",
@@ -8187,7 +8187,7 @@
      "created": "2026-09-21",
      "governs": [
       "kb/_decision_sheet_replies.py",
-      "docs/reference/decision_sheets.md"
+      "CPLBrain/decision-sheets/decision_sheets.md"
      ],
      "path": "docs/kb-notes/methodology-the-record-is-the-mechanism-the-notification-is-a-bonus.md",
      "status": "published",
@@ -14178,7 +14178,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 55,
+   "count": 54,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14721,19 +14721,6 @@
      "title": "Data-write rollback \u2014 undoing a bulk write to a shared Supabase table",
      "type": null,
      "updated": ""
-    },
-    {
-     "created": "2026-09-09",
-     "governs": [],
-     "path": "docs/reference/decision_sheets.md",
-     "status": "internal",
-     "tags": [
-      "reference",
-      "governance"
-     ],
-     "title": "Decision sheets \u2014 how to build one, and how to read the replies",
-     "type": null,
-     "updated": "2026-09-30"
     },
     {
      "created": "2026-08-30",
@@ -20198,5 +20185,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1055
+ "total": 1054
 }
