@@ -690,3 +690,11 @@ the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
   TMC templates (`tmc_templates.js`).
 - The session container reaches no college site (the egress proxy rejects
   every one); runners do.
+
+## S337 SkyCompass, 2026-10-06: a second capture list, Irvine Valley's Art record, Santa Monica's hub
+
+- **A second list keeps Sam's 20 pinned.** `kb/program_requirements_maps_sample.json` and `--sample pilot|maps|all`. A push reads only the maps list, because rereading the checked 20 spends college reads for nothing. The guard's verdict checks now cover the 20 alone; an extra record carries no verdict and CPL Pathways marks it unchecked.
+- **Irvine Valley Art A.A. 10265:** the curriQunet click-through reached the program view and its PDF export (21 of 23 listed codes). Extraction PASSES at 27 units. The catalog still prints ARTH 25 and 26, and the state file lists the common-numbered ARTH C1100 and C1200. That is a gap for the college, never a misread.
+- **Santa Monica 43767:** the catalog's front page names its program index *Academic and Career Paths*, now a hub word. Run 37488858548 printed every link naming the program on any host (`title_links`), and none of the five catalog pages named it. Link-following has nothing left to follow there. The next attempt is a per-college procedure record naming the full catalog PDF.
+- **Filing from the job log:** the proxy refuses the log's blob host, so the source was transcribed from the MCP's copy and checked by recomputing coverage locally (21 codes, as the runner printed). The record was checked the same way: the local scorer gives PASS, equal and 0.913.
+
