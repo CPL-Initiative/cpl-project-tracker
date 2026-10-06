@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy: the CPL Library filer</title>
+<meta name="description" content="How the CPL Initiative's Library filer uses Google Drive.">
+<!-- The privacy page Google's consent screen links for the CPL Library filer
+     (scripts/library_file.py), which signs in to Google Drive as the CPL
+     Initiative's own account. Sam, 2026-10-06, setting up the filer's Google
+     sign-in: Publish stays off until the Branding page carries a privacy link.
+     First Light tokens, light identity (docs/kb-notes/reference-ui-design-system.md). -->
+<style>
+:root {
+  --paper: #F4F2ED;
+  --text-strong: #1C1C1A;
+  --text-body: #3A3A36;
+  --text-muted: #5C5C55;
+  --surface-opaque: #FFFFFF;
+  --border: rgba(28,28,26,.14);
+  --cobalt: #0047AB;
+  --accent-link: var(--cobalt);
+  --focus-ring: var(--cobalt);
+  --radius: 14px;
+  --cpl-measure: none;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text-body);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  line-height: 1.6;
+}
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: .5rem .75rem;
+  background: var(--surface-opaque);
+  color: var(--accent-link);
+  border-radius: 8px;
+}
+.skip-link:focus { top: 1rem; }
+main {
+  margin: clamp(1rem, 4vw, 3rem) auto;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  width: min(100% - 2rem, 60rem);
+  background: var(--surface-opaque);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+h1 {
+  margin: 0 0 .25rem;
+  color: var(--text-strong);
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  line-height: 1.25;
+}
+.dek { margin: 0 0 1.5rem; color: var(--text-muted); }
+p { margin: 0 0 1rem; max-width: var(--cpl-measure, none); }
+a { color: var(--accent-link); }
+a:focus-visible, .skip-link:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to the policy</a>
+<main id="content">
+  <h1>Privacy: the CPL Library filer</h1>
+  <p class="dek">CPL Initiative, California Community Colleges Chancellor's Office. October 6, 2026.</p>
+
+  <p>The CPL Library filer is a tool the CPL Initiative uses to file its own decks, films and documents into its own Google Drive. It signs in only as the CPL Initiative's account, works only in that account's CPLLibrary folders, and collects no information about anyone.</p>
+
+  <p>When the team files a piece, the filer uploads the file, checks that Google Drive holds the same bytes, and records the file's name and Drive link in the CPL Initiative's catalog of its own work. It reads only the names of the files already in those folders, so that a new version takes the next number. It changes and deletes nothing, and no one outside the CPL Initiative signs in to it.</p>
+
+  <p>The filer's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <p>Questions go to the CPL Initiative team at <a href="mailto:map@rccd.edu">map@rccd.edu</a>.</p>
+</main>
+</body>
+</html>

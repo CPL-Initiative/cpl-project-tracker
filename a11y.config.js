@@ -397,6 +397,14 @@ module.exports = {
     mayHideBelow: [],
   },
 
+  /* The privacy page Google's consent screen links for the Library filer
+     (scripts/library_file.py); public, one column of prose (2026-10-06). */
+  privacy: {
+    file: "privacy.html",
+    title: "Privacy: the CPL Library filer (public)",
+    mayHideBelow: [],
+  },
+
   /* ── The public funding explainer ────────────────────────────────────────
      funding-model/index.html hosts the Implementation Funding tab's own
      college section in embed mode and paints the rest from the engine. It is
