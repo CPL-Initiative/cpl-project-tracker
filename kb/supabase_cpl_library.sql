@@ -35,7 +35,7 @@ create table if not exists public.cpl_library (
   id            uuid primary key default gen_random_uuid(),
   slug          text        not null unique,
   title         text        not null,
-  kind          text        not null,             -- deck | film | document
+  kind          text        not null,             -- deck | film | document | spreadsheet
   occasion      text,                             -- groups the list: "Vision 2030 Noncredit Summit"
   made_on       date,
   version       text,                             -- "v1", "3", "4 cuts"
@@ -54,7 +54,8 @@ create table if not exists public.cpl_library (
   refresh_note  text,                             -- set = figures to refresh; listed under Needs attention
   rebuild_from  text,                             -- the source that rebuilds it
   note          text,
-  versions      jsonb       not null default '[]'::jsonb,  -- [{label, date, size, status, url}]
+  versions      jsonb       not null default '[]'::jsonb,  -- [{label, date, size, status, url, filed_at, file_name, file_id, md5}]
+  brief         jsonb,                            -- Start a piece: {say, sources, shape, due, requested_by, requested_on}
   added_by      text,
   updated_by    text,
   created_at    timestamptz not null default now(),
@@ -62,13 +63,14 @@ create table if not exists public.cpl_library (
   retired_at    timestamptz,
   constraint cpl_library_slug_ck     check (slug ~ '^[a-z0-9][a-z0-9-]{1,80}$'),
   constraint cpl_library_title_ck    check (char_length(title) between 1 and 300),
-  constraint cpl_library_kind_ck     check (kind in ('deck', 'film', 'document')),
-  constraint cpl_library_status_ck   check (status is null or status in ('draft', 'approved', 'presented')),
+  constraint cpl_library_kind_ck     check (kind in ('deck', 'film', 'document', 'spreadsheet')),
+  constraint cpl_library_status_ck   check (status is null or status in ('requested', 'draft', 'approved', 'presented')),
   constraint cpl_library_seen_ck     check (seen_by is null or seen_by in ('team', 'colleges', 'public')),
   constraint cpl_library_home_ck     check (home in ('drive', 'public_repo', 'vault', 'web', 'not_filed')),
   constraint cpl_library_filed_ck    check ((home = 'not_filed') = (url is null)),
   constraint cpl_library_url_ck      check (url is null or (url ~ '^https://' and char_length(url) <= 2000)),
   constraint cpl_library_versions_ck check (jsonb_typeof(versions) = 'array'),
+  constraint cpl_library_brief_ck    check (brief is null or (jsonb_typeof(brief) = 'object' and octet_length(brief::text) <= 6000)),
   constraint cpl_library_text_ck     check (
     coalesce(char_length(occasion), 0) <= 300 and coalesce(char_length(summary), 0) <= 600
     and coalesce(char_length(ruling), 0) <= 2000 and coalesce(char_length(figures), 0) <= 2000
@@ -157,6 +159,24 @@ revoke usage, select on sequence public.cpl_library_history_id_seq from anon, au
 revoke truncate, references, trigger on public.cpl_library from anon, authenticated;
 revoke truncate, references, trigger on public.cpl_library_history from anon, authenticated;
 
+-- ── Start a piece (Sam, 2026-10-05: "Mockup looks great. Let's go with it.") ──
+-- A brief saved from the tab is a record with status 'requested', no file yet
+-- (home not_filed), and the brief in one jsonb column. The routine and a pasted
+-- session read it; scripts/library_file.py files each draft and moves it along.
+-- `create table if not exists` above does not alter a live table, so the change
+-- ships as its own statements. The new column rides the table-level grants above.
+alter table public.cpl_library add column if not exists brief jsonb;
+alter table public.cpl_library drop constraint if exists cpl_library_kind_ck;
+alter table public.cpl_library add constraint cpl_library_kind_ck
+  check (kind in ('deck', 'film', 'document', 'spreadsheet'));
+alter table public.cpl_library drop constraint if exists cpl_library_status_ck;
+alter table public.cpl_library add constraint cpl_library_status_ck
+  check (status is null or status in ('requested', 'draft', 'approved', 'presented'));
+alter table public.cpl_library drop constraint if exists cpl_library_brief_ck;
+alter table public.cpl_library add constraint cpl_library_brief_ck
+  check (brief is null or (jsonb_typeof(brief) = 'object' and octet_length(brief::text) <= 6000));
+
 -- Applied 2026-10-05 as migrations cpl_library_register_tables,
 -- cpl_library_register_policies, cpl_library_register_triggers,
--- cpl_library_register_revoke_truncate and cpl_library_register_explicit_grants.
+-- cpl_library_register_revoke_truncate and cpl_library_register_explicit_grants;
+-- the Start a piece block on 2026-10-06 as cpl_library_start_a_piece.

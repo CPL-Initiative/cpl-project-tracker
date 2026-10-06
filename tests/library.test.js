@@ -12,7 +12,10 @@
 //     Retire asks first, then sets retired_at;
 //   - a record holds a link, never bytes (no Storage call);
 //   - tokens (no raw hex), words (no glyphs), American spelling;
-//   - a private window (localStorage throws) still renders.
+//   - a private window (localStorage throws) still renders;
+//   - Start a piece saves a Requested record with its brief, In development shows
+//     it at its step and keeps it out of the register and out of Not filed, and
+//     Copy the brief hands over the whole paste, filer command included.
 //
 // Run from repo root: `npm test` (or `node tests/library.test.js`).
 const fs = require("fs");
@@ -255,6 +258,87 @@ block("(8)", function () {
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     check("(8) with storage blocked the tab renders its locked state", /team phrase/.test(m.root.textContent) && m.calls.length === 0, m.root.textContent);
   });
+});
+
+// ── (9) Start a piece: a brief saves a Requested record, In development tracks it ──
+// Sam, 2026-10-05, on mockup version 2: "Mockup looks great. Let's go with it."
+const DEV_ROWS = ROWS.concat([
+  { id: "b1", slug: "summit-table-sheet-x1", title: "Noncredit CPL by college, for the summit table", kind: "spreadsheet",
+    occasion: "Vision 2030 Noncredit Summit", status: "requested", seen_by: "colleges", home: "not_filed", url: null,
+    added_by: "Sam", created_at: "2026-10-06T01:00:00Z", versions: [],
+    brief: { say: "Each college's noncredit CPL awards", due: "The week of the summit", requested_by: "Sam", requested_on: "2026-10-06" } },
+  { id: "b2", slug: "funding-deck-x2", title: "What colleges can expect from the funding", kind: "deck",
+    status: "draft", seen_by: "team", home: "drive", url: "https://drive.google.com/file/d/draft/view",
+    added_by: "Ashley", created_at: "2026-10-05T01:00:00Z",
+    versions: [{ label: "v1", date: "2026-10-05", filed_at: "2026-10-05T18:42:10Z", size: "200 KB", status: "Draft", url: "https://drive.google.com/file/d/draft/view" }],
+    brief: { say: "Three points", requested_by: "Ashley", requested_on: "2026-10-05" } }
+]);
+block("(9)", function () {
+  const writes = [];
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method) { writes.push({ url: url, init: init, body: JSON.parse(init.body) }); return response(201, [{ id: "new1" }]); }
+    return response(200, DEV_ROWS);
+  } });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    const t = m.root.textContent;
+    const dev = m.root.querySelector(".lib-dev");
+    check("(9) In development lists the briefs that are not yet approved", dev && dev.querySelectorAll(".lib-devitem").length === 2, dev && dev.textContent);
+    check("(9) the register leaves them out", /5 pieces across 3 occasions/.test(t) && !m.root.querySelector("#lib-register #lib-t-b1"), t.slice(0, 600));
+    check("(9) a Requested piece is not counted as Not filed", /1\s*not filed/.test(t));
+    const steps = function (id) { return m.root.querySelector("#lib-t-" + id).closest("article").querySelectorAll("ol.lib-steps li"); };
+    const s1 = steps("b1"), s2 = steps("b2");
+    check("(9) the four steps read Requested, Draft, Approved, Presented", Array.prototype.map.call(s1, function (l) { return l.textContent; }).join(",") === "Requested,Draft,Approved,Presented");
+    check("(9) a Requested piece stands at step 1", s1[0].getAttribute("aria-current") === "step" && s1[0].className === "now");
+    check("(9) a draft stands at step 2 with step 1 done", s2[0].className === "done" && s2[1].getAttribute("aria-current") === "step");
+    const b2 = m.root.querySelector("#lib-t-b2").closest("article");
+    check("(9) a filed draft opens from its card", !!b2.querySelector('a[href="https://drive.google.com/file/d/draft/view"]'));
+    check("(9) the kind filter offers Spreadsheets", !!m.root.querySelector('[data-kind="spreadsheet"]'));
+    click(m.w, m.root.querySelector('[data-brief="b1"]'));
+    const ta = m.w.document.getElementById("lib-b-b1");
+    const bt = ta ? ta.value : "";
+    check("(9) Copy the brief shows the whole paste", !!ta && ta.hasAttribute("readonly"));
+    check("(9) the brief names its record and what it must say", /record summit-table-sheet-x1/.test(bt) && /Kind: Spreadsheet/.test(bt) && /It must say: Each college's noncredit CPL awards/.test(bt) && /For: Colleges/.test(bt), bt);
+    check("(9) the brief carries the filer command for this record", /python3 scripts\/library_file\.py <file> --slug summit-table-sheet-x1/.test(bt), bt);
+    check("(9) the brief ends with what a good result looks like", /A good result: [^\n]+$/.test(bt), bt);
+    check("(9) an unset source asks for live data first", /fetch live data first/.test(bt));
+    m.M._state.rows.filter(function (r) { return r.id === "a2"; })[0].versions = [{ label: "v2", date: "2026-10-05", filed_at: "2026-10-05T18:42:10Z", size: "16 MB", status: "Draft" }];
+    m.M.render();
+    click(m.w, m.root.querySelector('[data-toggle="a2"]'));
+    const vt = (m.w.document.getElementById("lib-d-a2") || {}).textContent || "";
+    check("(9) a filed version shows the time it was filed (Sam's call 8)", /5 October 2026, 18:42 UTC/.test(vt), vt.slice(0, 400));
+    click(m.w, m.root.querySelector("#lib-start"));
+    const doc = m.w.document;
+    check("(9) Start a piece opens its form", !!doc.getElementById("lib-startform"));
+    doc.getElementById("ls-kind").value = "spreadsheet";
+    doc.getElementById("ls-title").value = "Summit table";
+    doc.getElementById("lib-startform").dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
+    check("(9) a brief without what it must say writes nothing", writes.length === 0 && /Say what the piece must say/.test(m.root.textContent));
+    check("(9) the typed title survives that repaint", doc.getElementById("ls-title").value === "Summit table");
+    doc.getElementById("ls-say").value = "Awards by college";
+    doc.getElementById("ls-due").value = "Friday";
+    doc.getElementById("lib-startform").dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
+    return settle();
+  }).then(function () {
+    const w0 = writes[0] || { body: {}, init: { headers: {} } };
+    const b = w0.body.brief || {};
+    check("(9) Save the brief POSTs one Requested record", w0.init.method === "POST" && /\/rest\/v1\/cpl_library$/.test(w0.url) && w0.body.status === "requested", JSON.stringify(w0.body));
+    check("(9) it has no file yet", w0.body.home === "not_filed" && w0.body.url === null);
+    check("(9) the brief keeps what it must say, the date needed, and who asked", b.say === "Awards by college" && b.due === "Friday" && b.requested_by === "Sam" && /^\d{4}-\d{2}-\d{2}$/.test(b.requested_on || ""), JSON.stringify(b));
+    check("(9) a spreadsheet is a kind", w0.body.kind === "spreadsheet");
+    check("(9) For defaults to the team", w0.body.seen_by === "team");
+    check("(9) the write carries the team phrase", w0.init.headers["x-team-pass"] === "p");
+    check("(9) the saved brief opens for copying", m.M._state.briefShown.new1 === true && /Saved as Requested/.test(m.root.textContent));
+  });
+});
+
+// ── (10) The schema takes the new kind, the new status and the brief ─────
+block("(10)", function () {
+  check("(10) kind accepts spreadsheet", /add constraint cpl_library_kind_ck\s+check \(kind in \('deck', 'film', 'document', 'spreadsheet'\)\)/.test(SQL));
+  check("(10) status accepts requested", /add constraint cpl_library_status_ck\s+check \(status is null or status in \('requested', 'draft', 'approved', 'presented'\)\)/.test(SQL));
+  check("(10) the brief is one bounded jsonb object", /add column if not exists brief jsonb/.test(SQL) && /jsonb_typeof\(brief\) = 'object'/.test(SQL));
+  const M = loadModule({}).M;
+  check("(10) a Requested record is in development, an approved one is not",
+    M._isDev({ status: "requested" }) && M._isDev({ status: "draft", brief: {} }) && !M._isDev({ status: "approved", brief: {} }) && !M._isDev({ status: "draft" }));
 });
 
 Promise.all(pending).then(function () {
