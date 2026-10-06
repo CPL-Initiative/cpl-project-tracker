@@ -46,6 +46,8 @@ function boot(file, reduced) {
   });
   return dom.window;
 }
+// a local render leaves the MP4 beside the page (.gitignore keeps it out), so ask git, never the disk
+const tracked = (p) => require("child_process").spawnSync("git", ["ls-files", "--error-unmatch", p], { stdio: "ignore" }).status === 0;
 const cfgOf = (raw) => JSON.parse(/CFG=(\{[\s\S]*?\});\n/.exec(raw)[1]);
 // each scene's film span, as narrate_spans.py reads them
 const spans = Array.from(src.matchAll(/(?:=scene|person)\((\d+(?:\.\d+)?),(\d+(?:\.\d+)?),/g)).map((m) => [Number(m[1]), Number(m[2])]);
@@ -64,7 +66,7 @@ CUTS.forEach(({ tag, file, other }) => {
   // From v2 the MP4s are deliverables filed to the team Drive, never committed (Sam, 2026-10-05), so the page
   // offers no Download button that would point at a file the repo does not hold.
   check(tag + "b3 no Download button, and this cut's MP4 is not committed", !d.getElementById("dl") && !raw.includes("Download MP4")
-    && /_v\d+\.mp4$/.test(cfg.mp4) && !fs.existsSync(path.join(DIR, cfg.mp4)));
+    && /_v\d+\.mp4$/.test(cfg.mp4) && !tracked(path.join(DIR, cfg.mp4)));
   const oc = d.getElementById("other-cut");
   check(tag + "b4 the page links the other cut, which is built", !!oc && oc.getAttribute("href").endsWith("/" + other) && fs.existsSync(path.join(DIR, other)));
   check(tag + "b5 ten chapters", d.querySelectorAll(".chap").length === 10);
