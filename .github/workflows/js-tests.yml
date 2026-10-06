@@ -168,6 +168,11 @@ jobs:
       # grants. Pure-stdlib python; same non-required check.
       - name: Supabase table-grant lint (new and recreated tables carry grants)
         run: python3 tests/supabase_table_grants_test.py
+      # The Library filer (scripts/library_file.py): version names, resumable
+      # upload, the two-folder fence, receipts guarded on the Drive file id, and
+      # no delete anywhere. Pure-stdlib python with a fake Drive; same non-required check.
+      - name: Library filer
+        run: python3 tests/library_file_test.py
       # The program-source census (S320) reads 118 college sites from a runner
       # and files where each one's catalog lives. Its pure half is pinned
       # without a browser: a library catalog never wins, an old year never

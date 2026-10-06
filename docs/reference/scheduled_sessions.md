@@ -60,7 +60,8 @@ is his standing preference there too.
    whose `brief.due` falls within the week goes first. The brief's words are the
    ask (the tab's *Copy the brief* gives the same paste). File the draft with
    `scripts/library_file.py <file> --slug <slug>` and apply the receipt it
-   writes: the record moves to Draft with its Drive link. A draft is never
+   writes: the record moves to Draft with its Drive link
+   ([`docs/reference/library_filer.md`](library_filer.md)). A draft is never
    outward, so it needs no hold; approving it is Sam's.
 
 ## While working: go with the recommendation

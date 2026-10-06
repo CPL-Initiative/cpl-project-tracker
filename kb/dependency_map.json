@@ -4,9 +4,9 @@
   "supabase_tables": 95,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 601,
-  "external_services": 158,
-  "consumers": 417,
+  "file_datasets": 603,
+  "external_services": 160,
+  "consumers": 418,
   "workflows": 44,
   "data_js_files": 69,
   "tabs": 39
@@ -1045,6 +1045,13 @@
      "tabs": [
       "library"
      ]
+    },
+    {
+     "id": "script:scripts/library_file.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 300
     }
    ],
    "main_committers": []
@@ -1731,6 +1738,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:oauth2.googleapis.com": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_file.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 80
     }
    ],
    "main_committers": []
@@ -2446,6 +2465,18 @@
      "tabs": [
       "credential-reference"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:www.googleapis.com": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_file.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 81
     }
    ],
    "main_committers": []
@@ -5720,6 +5751,19 @@
      "direction": "read",
      "how": "literal",
      "line": 655
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/reference/library_filer.md": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_file.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 94
     }
    ],
    "served": false,
@@ -16911,6 +16955,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/library_file_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/map_custom_report_sync_test.py": {
    "consumers": [
     {
@@ -22376,6 +22433,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/supabase_table_grants_test.py",
+    "tests/library_file_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
     "tests/college_page_read_test.py",
