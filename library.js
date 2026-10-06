@@ -22,6 +22,14 @@
 //                    who it is for (seen_by is null);
 //   refresh        — refresh_note is set (figures to bring up to date).
 //
+// Start a piece (Sam, 2026-10-05: "Mockup looks great. Let's go with it."): a brief
+// saves a record with status 'requested' and the brief in its `brief` column. Such a
+// record lives under In development (Requested, Draft, Approved, Presented) until it
+// is approved, and never counts as Not filed: there is nothing to file yet. Copy the
+// brief gives the whole paste for a new session; Sam's routine reads Requested
+// records too (docs/reference/scheduled_sessions.md). scripts/library_file.py files
+// each draft to CPLLibrary/Drafts and writes the receipt that moves it to Draft.
+//
 // STATIC module, lazy-loaded on first #library open (both HTMLs, Rule 4). It
 // injects its own CSS (the ensureCerScopeCss pattern). Tests: tests/library.test.js
 (function () {
@@ -38,8 +46,9 @@
   var DRIVE_FOLDER = "https://drive.google.com/drive/folders/13WnIL1j-Qo3CJ5znVFZhs5wmAjJqOxxN";
   var DRAFTS_FOLDER = "https://drive.google.com/drive/folders/15eXeJb9OIl1nOFE4Tykr1y7rBGKBUvih";
 
-  var KIND = { deck: "Deck", film: "Film", document: "Document" };
-  var STATUS = { draft: "Draft", approved: "Approved", presented: "Presented" };
+  var KIND = { deck: "Deck", film: "Film", document: "Document", spreadsheet: "Spreadsheet" };
+  var STATUS = { requested: "Requested", draft: "Draft", approved: "Approved", presented: "Presented" };
+  var STEPS = ["requested", "draft", "approved", "presented"];
   var SEEN = { team: "Team", colleges: "Colleges", "public": "Public" };
   var HOME = {
     drive: { label: "Team Drive", reach: "People the Drive file is shared with." },
@@ -59,7 +68,7 @@
     rows: null, loading: false, error: null,
     q: "", kind: "all", seen: "all", status: "all", flag: null,
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
-    retireAsk: null
+    retireAsk: null, start: null, briefShown: {}
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -106,8 +115,11 @@
     var base = String(title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "piece";
     return (/^[a-z0-9]/.test(base) ? base : "p-" + base) + "-" + Date.now().toString(36);
   }
+  // A piece started from a brief stays In development until it is approved.
+  function isDev(r) { return r.status === "requested" || (!!r.brief && r.status === "draft"); }
   function flagsOf(r) {
     var f = [];
+    if (r.status === "requested") return f;
     if (r.home === "not_filed") f.push("not_filed");
     if (r.home === "public_repo" && !r.seen_by) f.push("public_unset");
     if (r.refresh_note) f.push("refresh");
@@ -199,6 +211,17 @@
       R + " .lib-how{margin-top:36px;padding-top:16px;border-top:1px solid var(--border);display:grid;gap:8px;}",
       R + " .lib-how p{margin:0;max-width:var(--cpl-measure,none);}",
       R + " .lib-how a," + R + " .lib-form a{color:var(--cobalt);}",
+      R + " .lib-dev{margin:18px 0 6px;display:grid;gap:10px;}",
+      R + " .lib-devitem{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 18px;padding:14px;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:8px;}",
+      R + " .lib-devitem p{margin:2px 0 0;}",
+      R + " ol.lib-steps{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px;counter-reset:lib-step;}",
+      R + " ol.lib-steps li{counter-increment:lib-step;font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:10px;border:1px solid var(--border);color:var(--text-muted);}",
+      R + " ol.lib-steps li::before{content:counter(lib-step) \". \";}",
+      R + " ol.lib-steps li.done{color:var(--text-body);}",
+      R + " ol.lib-steps li.now{border-color:var(--cobalt);color:var(--cobalt);background:var(--surface-subtle);}",
+      R + " textarea.lib-brief{width:100%;min-height:170px;margin-top:10px;font:inherit;font-size:.88rem;color:var(--text-body);background:var(--surface-subtle);border:1px solid var(--border-strong);border-radius:6px;padding:8px 10px;}",
+      R + " .lib-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}",
+      "@media (max-width:560px){" + R + " .lib-devitem{grid-template-columns:minmax(0,1fr);}" + R + " .lib-devitem .lib-acts{flex-direction:row;flex-wrap:wrap;}}",
       R + " :focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:2px;border-radius:4px;}",
       "@media (max-width:760px){" + R + " .lib-item{grid-template-columns:132px minmax(0,1fr);}" + R + " .lib-thumb{width:132px;}" + R + " .lib-acts{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;}}",
       "@media (max-width:560px){" + R + " .lib-item{grid-template-columns:minmax(0,1fr);}" + R + " .lib-thumb{width:100%;max-width:320px;}" + R + " .lib-details dl{grid-template-columns:minmax(0,1fr);gap:2px 0;}" + R + " .lib-details dd{margin-bottom:8px;}" + R + " .lib-seg{width:100%;}" + R + " .lib-seg button{flex:1 1 auto;}}",
@@ -320,13 +343,19 @@
         vs.map(function (v) {
           var label = v.url && /^https:\/\//.test(v.url)
             ? '<a href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(v.label) + "</a>" : esc(v.label);
-          return '<tr><th scope="row">' + label + "</th><td>" + esc(v.date || "") + "</td><td>" + esc(v.size || "") + "</td><td>" + esc(v.status || "") + "</td></tr>";
+          return '<tr><th scope="row">' + label + "</th><td>" + esc(filedWhen(v)) + "</td><td>" + esc(v.size || "") + "</td><td>" + esc(v.status || "") + "</td></tr>";
         }).join("") + "</tbody></table></div></dd>";
     }
     html += "</dl>";
     html += '<div class="lib-actions-row"><button type="button" class="lib-btn" data-edit="' + esc(r.id) + '">Edit record</button></div>';
     if (state.edit === r.id) html += editForm(r);
     return html;
+  }
+
+  // The filer stamps filed_at (ISO, UTC) on each version it files (Sam's call 8).
+  function filedWhen(v) {
+    var m = /^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})/.exec(v.filed_at || "");
+    return m ? fmtDate(m[1]) + ", " + m[2] + " UTC" : (v.date || "");
   }
 
   function opt(v, label, cur) { return '<option value="' + esc(v) + '"' + (v === cur ? " selected" : "") + ">" + esc(label) + "</option>"; }
@@ -337,7 +366,7 @@
       "<p>Each edit keeps the record as it was in the history, so it can be undone.</p>" +
       '<div class="lib-grid">' +
       '<div class="lib-field"><label for="le-status">Status</label><select id="le-status">' +
-      opt("", "Not set", r.status || "") + opt("draft", "Draft", r.status) + opt("approved", "Approved", r.status) + opt("presented", "Presented", r.status) + "</select></div>" +
+      opt("", "Not set", r.status || "") + opt("requested", "Requested", r.status) + opt("draft", "Draft", r.status) + opt("approved", "Approved", r.status) + opt("presented", "Presented", r.status) + "</select></div>" +
       '<div class="lib-field"><label for="le-seen">Seen by</label><select id="le-seen">' +
       opt("", "Not set", r.seen_by || "") + opt("team", "Team", r.seen_by) + opt("colleges", "Colleges", r.seen_by) + opt("public", "Public", r.seen_by) + "</select></div>" +
       '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://drive.google.com/file/d/..."></div>' +
@@ -389,7 +418,7 @@
       '<div class="lib-field wide"><label for="la-url">Link to the file</label><input id="la-url" type="url" required placeholder="https://drive.google.com/file/d/..." value="' + esc(f.url || "") + '"></div>' +
       (filing ? "" :
         '<div class="lib-field wide"><label for="la-title">Title</label><input id="la-title" type="text" required value="' + esc(f.title || "") + '"></div>' +
-        '<div class="lib-field"><label for="la-kind">Kind</label><select id="la-kind">' + opt("deck", "Deck", f.kind) + opt("film", "Film", f.kind) + opt("document", "Document", f.kind) + "</select></div>" +
+        '<div class="lib-field"><label for="la-kind">Kind</label><select id="la-kind">' + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) + opt("film", "Film", f.kind) + opt("document", "Document", f.kind) + "</select></div>" +
         '<div class="lib-field"><label for="la-occasion">Occasion</label><input id="la-occasion" type="text" placeholder="Vision 2030 Noncredit Summit" value="' + esc(f.occasion || "") + '"></div>' +
         '<div class="lib-field"><label for="la-seen">Seen by</label><select id="la-seen">' + opt("", "Not set", f.seen_by || "") + opt("team", "Team", f.seen_by) + opt("colleges", "Colleges", f.seen_by) + opt("public", "Public", f.seen_by) + "</select></div>" +
         '<div class="lib-field"><label for="la-status">Status</label><select id="la-status">' + opt("draft", "Draft", f.status || "draft") + opt("approved", "Approved", f.status) + opt("presented", "Presented", f.status) + "</select></div>") +
@@ -399,13 +428,88 @@
       '<button type="button" class="lib-btn" data-formcancel="1">Cancel</button></div></form>';
   }
 
-  function countLine(rows) {
+  // ── Start a piece ───────────────────────────────────────────────────────────
+  // The whole paste for a new session (Sam, 2026-09-20: "Hand over the whole
+  // paste"): the ask, the command that files the draft, then what a good result is.
+  function briefText(r) {
+    var b = r.brief || {};
+    return "Start a new piece for the CPL Library: record " + r.slug + ".\n" +
+      "Kind: " + (KIND[r.kind] || r.kind) + ". Working title: " + r.title + ".\n" +
+      "Occasion: " + (r.occasion || "none") + ". Needed by: " + (b.due || "not set") + ". For: " + seenWord(r) + ".\n" +
+      "It must say: " + (b.say || "") + "\n" +
+      "Data and sources: " + (b.sources || "your call; fetch live data first for any CPL figure") + "\n" +
+      "Length, template or style: " + (b.shape || "your call") + "\n" +
+      "Requested by " + (b.requested_by || r.added_by || "the team") + (b.requested_on ? " on " + fmtDate(b.requested_on) : "") + ".\n\n" +
+      "Build it from source in the tracker repo and name the file with today's date code (YYYYMMDD_Title). " +
+      "File the draft with: python3 scripts/library_file.py <file> --slug " + r.slug + "\n" +
+      "It uploads the file to CPLLibrary/Drafts in the team Drive and writes a receipt that moves this record to Draft with its link. " +
+      "Apply the receipt, then send me the file.\n" +
+      "A good result: the draft opens from the Library, under In development, at step 2, Draft.";
+  }
+
+  function startForm() {
+    var f = state.start || {};
+    return '<form class="lib-form" id="lib-startform"><h2 class="lib-h">Start a piece</h2>' +
+      "<p>Say what the piece is for and what it must say. The Library keeps the brief as a Requested record. " +
+      "Claude starts the draft from it, in a new session you paste the brief into or in the next scheduled run, and files each draft in the " +
+      '<a href="' + DRAFTS_FOLDER + '" target="_blank" rel="noopener">Drafts folder</a>.</p>' +
+      '<div class="lib-grid">' +
+      '<div class="lib-field"><label for="ls-kind">Kind</label><select id="ls-kind">' + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) +
+      opt("film", "Film", f.kind) + opt("document", "Document", f.kind) + "</select></div>" +
+      '<div class="lib-field wide"><label for="ls-title">Working title</label><input id="ls-title" type="text" required placeholder="What colleges can expect from the 2026-27 funding"></div>' +
+      '<div class="lib-field"><label for="ls-occasion">Occasion</label><input id="ls-occasion" type="text" placeholder="Vision 2030 Noncredit Summit"></div>' +
+      '<div class="lib-field"><label for="ls-due">Needed by</label><input id="ls-due" type="text" placeholder="The week of the summit"></div>' +
+      '<div class="lib-field"><label for="ls-seen">For</label><select id="ls-seen">' + opt("team", "Team", f.seen_by) + opt("colleges", "Colleges", f.seen_by) + opt("public", "Public", f.seen_by) + "</select></div>" +
+      '<div class="lib-field wide"><label for="ls-say">What it must say</label><input id="ls-say" type="text" required placeholder="Three points, in the order the audience needs them"></div>' +
+      '<div class="lib-field wide"><label for="ls-sources">Data and sources</label><input id="ls-sources" type="text" placeholder="live_metrics.json, the funding model, last year\'s deck"></div>' +
+      '<div class="lib-field wide"><label for="ls-shape">Length, template or style</label><input id="ls-shape" type="text" placeholder="Five slides on the CO template; or 100 seconds with music and Sierra\'s voice"></div>' +
+      '<div class="lib-field"><label for="ls-by">Your name</label><input id="ls-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
+      "</div>" +
+      '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Save the brief</button>" +
+      '<button type="button" class="lib-btn" data-startcancel="1">Cancel</button></div></form>';
+  }
+
+  function devItem(r) {
+    var b = r.brief || {};
+    var at = STEPS.indexOf(r.status);
+    var steps = STEPS.map(function (k, i) {
+      return '<li class="' + (i < at ? "done" : i === at ? "now" : "") + '"' + (i === at ? ' aria-current="step"' : "") + ">" + STATUS[k] + "</li>";
+    }).join("");
+    var kicker = [KIND[r.kind] || r.kind, "for " + seenWord(r)];
+    if (b.due) kicker.push("needed " + b.due.charAt(0).toLowerCase() + b.due.slice(1));
+    var shown = !!state.briefShown[r.id];
+    var acts = '<button type="button" class="lib-btn primary" data-brief="' + esc(r.id) + '">' + (shown ? "Copy again" : "Copy the brief") + "</button>";
+    if (r.url) acts += '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open the draft</a>';
+    acts += '<button type="button" class="lib-btn" data-edit="' + esc(r.id) + '">Edit record</button>';
+    return '<article class="lib-devitem" aria-labelledby="lib-t-' + esc(r.id) + '"><div>' +
+      '<p class="lib-kicker">' + esc(kicker.join(" · ")) + "</p>" +
+      '<h3 class="lib-title" id="lib-t-' + esc(r.id) + '">' + esc(r.title) + "</h3>" +
+      (b.say ? "<p>" + esc(b.say) + "</p>" : "") +
+      (r.occasion ? '<p class="lib-line">' + esc(r.occasion) + "</p>" : "") +
+      '<ol class="lib-steps" aria-label="Where this piece stands">' + steps + "</ol>" +
+      (shown ? '<label class="lib-vh" for="lib-b-' + esc(r.id) + '">The brief to paste into a new session</label><textarea class="lib-brief" id="lib-b-' + esc(r.id) + '" readonly>' + esc(briefText(r)) + "</textarea>" : "") +
+      '</div><div class="lib-acts">' + acts + "</div>" +
+      (state.edit === r.id ? '<div class="lib-details">' + editForm(r) + "</div>" : "") + "</article>";
+  }
+
+  function devHtml(rows) {
+    var dev = rows.filter(isDev);
+    if (!dev.length) return "";
+    dev.sort(function (a, b) { return String(b.created_at || "").localeCompare(String(a.created_at || "")); });
+    return '<section class="lib-dev" aria-labelledby="lib-dev-h"><div class="lib-ghead"><h2 class="lib-h" id="lib-dev-h">In development</h2><span class="count">' +
+      dev.length + (dev.length === 1 ? " piece" : " pieces") + "</span></div>" + dev.map(devItem).join("") + "</section>";
+  }
+
+  function registerRows(rows) { return rows.filter(function (r) { return !isDev(r); }); }
+  function countLine(all) {
+    var rows = registerRows(all);
     var shown = rows.filter(matches), gs = groups(shown);
     return shown.length === rows.length
       ? rows.length + (rows.length === 1 ? " piece" : " pieces") + " across " + gs.length + (gs.length === 1 ? " occasion" : " occasions")
       : "Showing " + shown.length + " of " + rows.length + " pieces";
   }
-  function listHtml(rows) {
+  function listHtml(all) {
+    var rows = registerRows(all);
     var shown = rows.filter(matches), gs = groups(shown);
     if (!rows.length) return '<p class="lib-empty">The Library is empty. Add the first piece with Add to the Library.</p>';
     if (!shown.length) return '<p class="lib-empty">Nothing matches these filters. Clear the search or choose All.</p>';
@@ -442,7 +546,7 @@
     if (state.error) { root.innerHTML = head + '<p class="lib-msg err" role="alert">' + esc(state.error) + "</p>"; return; }
     if (!state.rows) { root.innerHTML = head + '<p class="lib-line">Loading the Library&hellip;</p>'; return; }
 
-    var rows = state.rows;
+    var rows = registerRows(state.rows);
     var counts = {};
     FLAG_ORDER.forEach(function (k) { counts[k] = rows.filter(function (r) { return flagsOf(r).indexOf(k) >= 0; }).length; });
     var flagBtns = FLAG_ORDER.filter(function (k) { return counts[k] > 0; }).map(function (k) {
@@ -456,23 +560,25 @@
     var controls = '<section aria-label="Find in the Library"><div class="lib-controls">' +
       '<div class="lib-field grow"><label for="lib-q">Search</label><input id="lib-q" type="search" autocomplete="off" placeholder="Title, occasion or file name" value="' + esc(state.q) + '"></div>' +
       '<div class="lib-field"><span class="lib-seglabel" id="lib-kind-l">Kind</span><div class="lib-seg" role="group" aria-labelledby="lib-kind-l">' +
-      segBtn("all", "All") + segBtn("deck", "Decks") + segBtn("film", "Films") + segBtn("document", "Documents") + "</div></div>" +
+      segBtn("all", "All") + segBtn("deck", "Decks") + segBtn("spreadsheet", "Spreadsheets") + segBtn("film", "Films") + segBtn("document", "Documents") + "</div></div>" +
       '<div class="lib-field"><label for="lib-seen">Seen by</label><select id="lib-seen">' + opt("all", "Anyone", state.seen) + opt("team", "Team", state.seen) +
       opt("colleges", "Colleges", state.seen) + opt("public", "Public", state.seen) + opt("unset", "Not set", state.seen) + "</select></div>" +
       '<div class="lib-field"><label for="lib-status">Status</label><select id="lib-status">' + opt("all", "Any", state.status) + opt("draft", "Draft", state.status) +
       opt("approved", "Approved", state.status) + opt("presented", "Presented", state.status) + opt("unset", "Not set", state.status) + "</select></div>" +
-      '<button type="button" class="lib-btn primary" id="lib-add" aria-expanded="' + (state.form ? "true" : "false") + '">Add to the Library</button>' +
-      "</div>" + (state.form ? addForm() : "") +
+      '<button type="button" class="lib-btn primary" id="lib-start" aria-expanded="' + (state.start ? "true" : "false") + '">Start a piece</button>' +
+      '<button type="button" class="lib-btn" id="lib-add" aria-expanded="' + (state.form ? "true" : "false") + '">Add to the Library</button>' +
+      "</div>" + (state.start ? startForm() : "") + (state.form ? addForm() : "") +
       (state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "");
 
-    controls += '<p class="lib-line" role="status" id="lib-count">' + countLine(rows) + "</p></section>";
-    var list = listHtml(rows);
+    controls += '<p class="lib-line" role="status" id="lib-count">' + countLine(state.rows) + "</p></section>";
+    var list = devHtml(state.rows) + '<div id="lib-register">' + listHtml(state.rows) + "</div>";
 
 
     var how = '<footer class="lib-how" aria-labelledby="lib-how-h"><h2 class="lib-h" id="lib-how-h">How the Library works</h2>' +
       "<p>The Library keeps one record per piece, and the file lives in the team Drive: approved pieces in the " +
       '<a href="' + DRIVE_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, drafts in its ' +
       '<a href="' + DRAFTS_FOLDER + '" target="_blank" rel="noopener">Drafts folder</a>. The repos keep only the source that rebuilds each piece.</p>' +
+      "<p>Start a piece saves a brief as a Requested record. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, files each draft in the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
       "<p>Claude files each new piece the day it makes it. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
       "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p></footer>";
 
@@ -480,13 +586,13 @@
     // typed into an open form. Restore only into the SAME form: the edit ids are
     // shared by every record, so a value typed for one must not land in another.
     var typed = {};
-    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-']"), function (n) { typed[n.id] = n.value; });
+    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],input[id^='ls-'],select[id^='ls-']"), function (n) { typed[n.id] = n.value; });
     var sameAdd = painted.formFor === state.formFor && painted.form === !!state.form;
     var sameEdit = painted.edit === state.edit;
     var focusId = document.activeElement && document.activeElement.id;
-    root.innerHTML = head + attention + controls + '<div id="lib-register">' + list + "</div>" + how;
+    root.innerHTML = head + attention + controls + list + how;
     Object.keys(typed).forEach(function (id) {
-      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit)) return;
+      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start)) return;
       var n = document.getElementById(id); if (n) n.value = typed[id];
     });
     painted = { form: !!state.form, formFor: state.formFor, edit: state.edit };
@@ -523,6 +629,46 @@
       state.form = null; state.formFor = null;
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+
+  function submitStart() {
+    var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
+    var f = { kind: g("ls-kind"), title: g("ls-title"), occasion: g("ls-occasion"), due: g("ls-due"), seen_by: g("ls-seen"),
+      say: g("ls-say"), sources: g("ls-sources"), shape: g("ls-shape"), by: g("ls-by") };
+    if (!f.title) { say("Add a working title.", true); render(); return; }
+    if (!f.say) { say("Say what the piece must say.", true); render(); return; }
+    if (!f.by) { say("Add your name, so the brief says who asked for it.", true); render(); return; }
+    rememberAuthor(f.by);
+    var brief = { say: f.say, requested_by: f.by, requested_on: today() };
+    if (f.sources) brief.sources = f.sources;
+    if (f.shape) brief.shape = f.shape;
+    if (f.due) brief.due = f.due;
+    write(TABLE_URL, { method: "POST", body: {
+      slug: slugFor(f.title), title: f.title, kind: f.kind || "deck", occasion: f.occasion || null,
+      status: "requested", seen_by: f.seen_by || "team", home: "not_filed", url: null, added_by: f.by, brief: brief
+    } }).then(function (saved) {
+      var row = Array.isArray(saved) ? saved[0] : saved;
+      if (row && row.id) state.briefShown[row.id] = true;
+      say("Saved as Requested. Copy the brief into a new session, or the next scheduled run picks it up.");
+      state.start = null;
+      return load();
+    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+
+  function copyBrief(id) {
+    var r = byId(id);
+    if (!r) return;
+    state.briefShown[id] = true;
+    var text = briefText(r);
+    var fallback = function () {
+      say("Select the brief and copy it."); render();
+      var t = document.getElementById("lib-b-" + id); if (t) { t.focus(); t.select(); }
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { say("Copied. Paste it into a new session."); render(); }, fallback);
+      } else fallback();
+    } catch (e) { fallback(); }
   }
 
   function submitEdit(id) {
@@ -583,6 +729,7 @@
     root.addEventListener("submit", function (e) {
       e.preventDefault();
       if (e.target.id === "lib-addform") submitAdd();
+      else if (e.target.id === "lib-startform") submitStart();
       else if (e.target.getAttribute("data-editform")) submitEdit(e.target.getAttribute("data-editform"));
     });
     root.addEventListener("click", function (e) {
@@ -591,7 +738,15 @@
       var v;
       if ((v = b.getAttribute("data-kind"))) { state.kind = v; render(); }
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
+      else if (b.id === "lib-start") {
+        state.start = state.start ? null : {}; state.form = null; state.formFor = null;
+        say(""); render();
+        var st = document.getElementById("ls-title"); if (st) st.focus();
+      }
+      else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-start"); if (sb) sb.focus(); }
+      else if ((v = b.getAttribute("data-brief"))) copyBrief(v);
       else if (b.id === "lib-add") {
+        state.start = null;
         if (state.form && !state.formFor) { state.form = null; } else { state.form = {}; state.formFor = null; }
         say(""); render();
         var u = document.getElementById("la-url"); if (u) u.focus();
@@ -631,6 +786,8 @@
     load: load,
     _state: state,
     _flagsOf: flagsOf,
+    _isDev: isDev,
+    _briefText: briefText,
     _homeForUrl: homeForUrl,
     _slugFor: slugFor
   };

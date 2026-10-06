@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-10-05
+updated: 2026-10-06
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -48,6 +48,20 @@ is his standing preference there too.
 4. **Tag yourself** `cpl-scheduled` (`set_session_tags`), so Sam can find the run.
 5. Then the ordinary start: the handoff, Rule 8's memory read, and the standing
    decision sheet's replies (Sam may have answered between sessions).
+6. **Requested briefs from the Library.** Anyone on the team can start a piece
+   from the Library tab (*Start a piece*, built 2026-10-06). Read them:
+
+   ```sql
+   select slug, title, kind, occasion, seen_by, brief, created_at from cpl_library
+   where status = 'requested' and retired_at is null order by created_at;
+   ```
+
+   Each row is a queue item. Work it after the item the handoff names first; one
+   whose `brief.due` falls within the week goes first. The brief's words are the
+   ask (the tab's *Copy the brief* gives the same paste). File the draft with
+   `scripts/library_file.py <file> --slug <slug>` and apply the receipt it
+   writes: the record moves to Draft with its Drive link. A draft is never
+   outward, so it needs no hold; approving it is Sam's.
 
 ## While working: go with the recommendation
 
