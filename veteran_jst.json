@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-06T13:31:49.237846+00:00",
+  "scraped_at": "2026-10-06T16:08:23.151394+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28675,
+    "jst": 28677,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 581,
+      "jst": 582,
       "star": true
     },
     "Merced College": {
@@ -127,7 +127,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 381,
+      "jst": 382,
       "star": true
     },
     "Barstow Community College": {
@@ -182,7 +182,7 @@
     },
     "Clovis Community College": {
       "vets": 117,
-      "jst": 194,
+      "jst": 196,
       "star": true
     },
     "Antelope Valley College": {
@@ -205,6 +205,11 @@
       "jst": 561,
       "star": true
     },
+    "Cerro Coso Community College": {
+      "vets": 115,
+      "jst": 185,
+      "star": true
+    },
     "Victor Valley College": {
       "vets": 97,
       "jst": 339,
@@ -213,11 +218,6 @@
     "Mission College": {
       "vets": 158,
       "jst": 168,
-      "star": true
-    },
-    "Cerro Coso Community College": {
-      "vets": 115,
-      "jst": 182,
       "star": true
     },
     "Ventura College": {
@@ -247,12 +247,12 @@
     },
     "Lemoore College": {
       "vets": 61,
-      "jst": 27,
+      "jst": 23,
       "star": false
     },
     "East Los Angeles College": {
       "vets": 637,
-      "jst": 236,
+      "jst": 235,
       "star": false
     },
     "Evergreen Valley College": {
