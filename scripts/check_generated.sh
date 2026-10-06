@@ -51,7 +51,18 @@ run "SkyView built page"      "python3 tests/skyview_built_from_source_test.py >
 # byte-equality one: the cards are hand-written, so what has to stay true is
 # that every lane carrying a NEEDS-SAM marker is asked about or dismissed by
 # name. A lane that gains an ask fails here until somebody puts it on the sheet.
-run "open-asks sheet coverage" "python3 kb/_build_open_asks_decision_sheet.py --check >/dev/null"
+# The builder lives in the private vault since 2026-10-06 (Sam's call 9): find the
+# vault beside the tracker (CPLBrain in the cloud, COG-second-brain on Sam's machine).
+SHEETS=""
+for v in "${CPL_VAULT_ROOT:-}" ../CPLBrain ../COG-second-brain; do
+  if [ -n "$v" ] && [ -f "$v/decision-sheets/_build_open_asks_decision_sheet.py" ]; then SHEETS="$v/decision-sheets"; break; fi
+done
+if [ -n "$SHEETS" ]; then
+  run "open-asks sheet coverage" "CPL_TRACKER_ROOT=\"$PWD\" python3 \"$SHEETS/_build_open_asks_decision_sheet.py\" --check >/dev/null"
+else
+  printf '%-46s %s\n' "open-asks sheet coverage" "NOT RUN: the vault is not beside the tracker (attach CPLBrain, or set CPL_VAULT_ROOT)"
+  fail=1
+fi
 echo
 if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"

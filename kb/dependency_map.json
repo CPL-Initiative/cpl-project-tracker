@@ -4,9 +4,9 @@
   "supabase_tables": 95,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 603,
+  "file_datasets": 595,
   "external_services": 160,
-  "consumers": 418,
+  "consumers": 417,
   "workflows": 44,
   "data_js_files": 69,
   "tabs": 39
@@ -592,13 +592,6 @@
      "direction": "read",
      "how": "url",
      "line": 32
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 50
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -3419,13 +3412,6 @@
      "line": 134
     },
     {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 368
-    },
-    {
      "id": "script:kb/_glyph_sweep.py",
      "kind": "script",
      "direction": "read",
@@ -4591,13 +4577,6 @@
      "line": 0
     },
     {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 357
-    },
-    {
      "id": "script:scripts/stamp_asset_versions.py",
      "kind": "script",
      "direction": "read",
@@ -4950,13 +4929,6 @@
      "direction": "read",
      "how": "markup",
      "line": 1357
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 347
     }
    ],
    "served": true,
@@ -5112,13 +5084,6 @@
      "direction": "read",
      "how": "literal",
      "line": 195
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 644
     }
    ],
    "producers": [
@@ -6100,26 +6065,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-44.html": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 255
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "write",
-     "how": "literal",
-     "line": 255
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
   "file:docs/visuals/<date>-pilot-records-review.html": {
    "consumers": [
     {
@@ -6583,19 +6528,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:funding-model/index.html": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 434
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:funding/_build_funding_ess.py": {
    "consumers": [
     {
@@ -6663,13 +6595,6 @@
      "direction": "read",
      "how": "inline",
      "line": 0
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 357
     }
    ],
    "served": true,
@@ -7082,19 +7007,6 @@
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/_build_open_asks_decision_sheet.py": {
-   "consumers": [
-    {
-     "id": "workflow:js-tests.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -9402,13 +9314,6 @@
      "line": 236
     },
     {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 410
-    },
-    {
      "id": "script:kb/_ccr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -10121,13 +10026,6 @@
      "line": 84
     },
     {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 519
-    },
-    {
      "id": "script:kb/_jev_adjudicate.py",
      "kind": "script",
      "direction": "read",
@@ -10325,13 +10223,6 @@
      "direction": "read",
      "how": "literal",
      "line": 183
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 774
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -10707,13 +10598,6 @@
      "direction": "read",
      "how": "literal",
      "line": 85
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 491
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -12043,19 +11927,6 @@
     }
    ],
    "served": true,
-   "main_committers": []
-  },
-  "file:kb/program_requirements_pilot/sources/*.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 822
-    }
-   ],
-   "served": false,
    "main_committers": []
   },
   "file:kb/program_requirements_pilot_sample.json": {
@@ -13883,19 +13754,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:kb/trail_crew_out/*/findings.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 480
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
   "file:kb/trail_crew_out/2026-07-10/staged_fixes.json": {
    "consumers": [
     {
@@ -14164,13 +14022,6 @@
      "direction": "read",
      "how": "literal",
      "line": 182
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 766
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -14547,13 +14398,6 @@
      "line": 135
     },
     {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 803
-    },
-    {
      "id": "script:veteran-sprint-map/extract_military.py",
      "kind": "script",
      "direction": "read",
@@ -14681,13 +14525,6 @@
      "direction": "read",
      "how": "inline",
      "line": 0
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 357
     }
    ],
    "served": true,
@@ -15116,13 +14953,6 @@
   "file:prototype/ccr_universe.js": {
    "consumers": [
     {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 377
-    },
-    {
      "id": "script:kb/_glyph_sweep.py",
      "kind": "script",
      "direction": "read",
@@ -15288,19 +15118,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:prototype/funding_video/narration_s1.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 555
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:prototype/funding_video/narration_s1_layout.json": {
    "consumers": [
     {
@@ -15309,19 +15126,6 @@
      "direction": "read",
      "how": "literal",
      "line": 202
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:prototype/funding_video/narration_s2.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 605
     }
    ],
    "served": true,
@@ -15976,13 +15780,6 @@
      "direction": "read",
      "how": "inline",
      "line": 0
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 504
     }
    ],
    "served": true,
@@ -17053,19 +16850,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:tests/open_asks_sheet_coverage_test.py": {
-   "consumers": [
-    {
-     "id": "workflow:js-tests.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:tests/orphan_parent_worklist_test.py": {
    "consumers": [
     {
@@ -17761,13 +17545,6 @@
      "line": 44
     },
     {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 391
-    },
-    {
      "id": "script:kb/_build_orphan_parent_worklist.py",
      "kind": "script",
      "direction": "read",
@@ -18048,13 +17825,6 @@
      "line": 55
     },
     {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 746
-    },
-    {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
      "direction": "read",
@@ -18090,10 +17860,6 @@
     },
     {
      "by": "script:excel_to_dashboard.py",
-     "how": "writes-global"
-    },
-    {
-     "by": "script:kb/_build_open_asks_decision_sheet.py",
      "how": "writes-global"
     }
    ],
@@ -22445,8 +22211,6 @@
     "tests/orphan_parent_worklist_test.py",
     "tests/csr_trail_rules_test.py",
     "tests/statewide_recs_test.py",
-    "kb/_build_open_asks_decision_sheet.py",
-    "tests/open_asks_sheet_coverage_test.py",
     "tests/cer_decision_apply_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",

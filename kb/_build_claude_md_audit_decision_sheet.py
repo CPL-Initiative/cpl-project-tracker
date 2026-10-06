@@ -11,7 +11,7 @@ vault's framework updater. The card numbers match the report's findings as noted
 
 Published: https://claude.ai/artifact/Kd6K7yrAfGQKCtVyd4bhX5 (capabilities db + comments; its
 `replies` store is keyed to these eight positions, so a changed card list goes out under a fresh
-SHEET_ID and artifact, per docs/reference/decision_sheets.md).
+SHEET_ID and artifact, per CPLBrain/decision-sheets/decision_sheets.md).
 
 Run: python3 kb/_build_claude_md_audit_decision_sheet.py
 """

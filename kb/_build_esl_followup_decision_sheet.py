@@ -17,7 +17,7 @@ remain that no verdict answers:
      grounds.
 
 New asks ride their own sheet: the merging sheet's `replies` store is keyed to its nine
-positions (docs/reference/decision_sheets.md), so it is never republished with more cards.
+positions (CPLBrain/decision-sheets/decision_sheets.md), so it is never republished with more cards.
 
 Published: https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr (capabilities db + comments; its `replies`
 store is keyed to these two positions). Answered 2026-09-27 00:02 UTC, both Sam's own calls: 1 keep,

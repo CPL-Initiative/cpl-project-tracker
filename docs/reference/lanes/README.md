@@ -19,9 +19,10 @@ Sam, 2026-09-22: *"Always give me a decision sheet for any outstanding items for
 me..."* — so an ask is not delivered by sitting in a lane file. When he said it,
 the open asks sat in **eleven** lane files and exactly **one** had reached §11.
 
-`kb/_build_open_asks_decision_sheet.py` gathers them into
-[the standing sheet](https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe) (source `docs/visuals/2026-09-27-open-asks.html`)
-and **refuses to build** while a lane carries a NEEDS-SAM marker that no item
+The open-asks builder, in the private vault since 2026-10-06
+(`CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py`, Sam's call 9), gathers
+them into the standing sheet (sources in `CPLBrain/decision-sheets/open-asks/`; the
+current link is in `CLAUDE.md` §11) and **refuses to build** while a lane carries a NEEDS-SAM marker that no item
 covers and no `NO_OPEN_ASK` reason dismisses. So:
 
 - **Writing NEEDS SAM in a lane breaks the build** until the ask gets a card —
@@ -31,7 +32,7 @@ covers and no `NO_OPEN_ASK` reason dismisses. So:
   sheet stops asking.
 - The card needs what a scan cannot produce: the ask in plain words, the measured
   context, a proposal, and how the proposal could be wrong. Mechanics:
-  [`decision_sheets`](../decision_sheets.md).
+  `CPLBrain/decision-sheets/decision_sheets.md`.
 
 ## Why hand-grepping the roadmap for retirable lanes is banned
 

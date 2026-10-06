@@ -22,7 +22,7 @@ that only he can make:
 ⚠️ ITS OWN SHEET, WITH ITS OWN STORE. The standing open-asks sheet's `replies`
 store is keyed to the 21 cards Sam answered and its builder now emits 15, so
 cards added there would inherit his saved replies at the wrong positions
-(docs/reference/decision_sheets.md). A fresh SHEET_ID starts an empty store.
+(CPLBrain/decision-sheets/decision_sheets.md). A fresh SHEET_ID starts an empty store.
 
 Every figure below was measured on the live Scenario 3 dials with the tab's own
 engine (scripts/funding_effective.js's boot path), 2026-09-23. Re-measure at

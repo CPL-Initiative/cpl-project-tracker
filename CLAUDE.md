@@ -434,18 +434,18 @@ first day.** Do the remembering for them.
   Claude artifact link. ⚠️ **Read the replies BEFORE executing** — they are
   the artifact's own store, not chat. Mechanics (the reply-chip injector,
   `capabilities: {db: {}}`, the `replies` collection, where the file lives,
-  the worked example) are PULL:
-  [`decision_sheets`](docs/reference/decision_sheets.md).
+  the worked example) are PULL, in the vault:
+  `CPLBrain/decision-sheets/decision_sheets.md`.
   **And it is "always", not "when they accumulate" (Sam, 2026-09-22).**
   *"Always give me a decision sheet for any outstanding items for me..."* —
   so the sheet is the standing form of the backlog, built whenever anything is
   waiting on him, never held back for a quorum.
-  `kb/_build_open_asks_decision_sheet.py` **refuses to build** when a lane
+  The builder in `CPLBrain/decision-sheets/` **refuses to build** when a lane
   carries a NEEDS-SAM marker that no item covers and no `NO_OPEN_ASK` reason
   dismisses. Add the ask to a lane and the sheet breaks until it is asked.
   Rebuild it at every checkpoint and hand over the link. A sheet whose cards
   changed is published under a fresh `SHEET_ID` and artifact, because its replies
-  are keyed to card position ([`decision_sheets`](docs/reference/decision_sheets.md)).
+  are keyed to card position (same doc).
   **Link every sheet you name (Sam, 2026-10-04):** in chat, each mention carries
   its link and says whether it is current; a superseded one links its
   replacement. Titles carry the number.
@@ -757,7 +757,7 @@ stays here.
 
 > **Anything waiting on Sam is a card on the standing sheet**
 > ([6mgoWoJ4oZYGPqJeVRvryu](https://claude.ai/artifact/6mgoWoJ4oZYGPqJeVRvryu), sheet 44). Answering
-> one changes its lane's marker in the same PR ([`decision_sheets`](docs/reference/decision_sheets.md)).
+> one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
 |---|---|---|

@@ -115,9 +115,16 @@ claude.ai.
    revision history, which drops versions after 30 days unless pinned.
 9. **Decision sheets** stay Claude pages (the reply buttons need the artifact store). Each gets a
    Library record (kind document, occasion "Open asks") linking its artifact, with no Drive copy.
-   Their sources (47 open-asks sheets in `docs/visuals/`) leave the public tracker repo for the
-   private vault repo; `kb/_build_open_asks_decision_sheet.py` and `docs/reference/decision_sheets.md`
-   move with them.
+   Their sources leave the public tracker repo for the private vault repo. **Done for the
+   open-asks sheets (2026-10-06):** the 47 sheets, their builder, its guard and the mechanics doc
+   live in `CPLBrain/decision-sheets/` (samueltlee/CPLBrain#255). The builder reads the lanes and
+   the reply-chip module from the tracker clone beside the vault, and rebuilt sheet 44
+   byte-identical from there. Its coverage check runs in `scripts/check_generated.sh`, which finds
+   the vault beside the tracker, and in the vault's own CI; the tracker's CI cannot read the
+   vault. The vault's chatbox indexer skips `decision-sheets/`. Git history keeps the old copies
+   (no rewrite, Rule 5). **Still open:** the other decision sheets in `docs/visuals/` (36 carry
+   reply chips, and some of the 11 others are early sheets), with their builders in `kb/`
+   and the template tests that read them; and a Library record per sheet linking its artifact.
 
 ## Next
 

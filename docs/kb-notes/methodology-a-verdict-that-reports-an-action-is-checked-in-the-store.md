@@ -11,8 +11,8 @@ related:
   - "[[docs/kb-notes/playbook-decision-sheet-replies]]"
 artifacts:
   - credential_reference.js
-  - kb/_build_open_asks_decision_sheet.py
-  - docs/reference/decision_sheets.md
+  - CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py
+  - CPLBrain/decision-sheets/decision_sheets.md
 ---
 
 # A verdict that reports an action is checked in the store before the next step
@@ -53,4 +53,4 @@ It applies to any card whose verdict reports an action on a surface with a store
 ## See also
 
 - `[[docs/kb-notes/playbook-decision-sheet-replies]]` — how replies are stored and read
-- `docs/reference/decision_sheets.md` — the high-water rule and the store
+- `CPLBrain/decision-sheets/decision_sheets.md` — the high-water rule and the store

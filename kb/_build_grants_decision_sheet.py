@@ -11,7 +11,7 @@
 
 ⚠️ ITS OWN SHEET, WITH ITS OWN STORE, for the reason the Scenario 3 sheet gives:
 the standing open-asks sheet's store is keyed to the 21 cards Sam answered
-(docs/reference/decision_sheets.md).
+(CPLBrain/decision-sheets/decision_sheets.md).
 
 Figures measured 2026-09-23 against the live database and the published
 artifacts. Re-measure at execution.

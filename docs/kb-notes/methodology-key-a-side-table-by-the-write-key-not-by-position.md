@@ -14,7 +14,7 @@ artifacts:
   - prototype/ccr_universe.js
   - tests/ccr_universe_orbits_test.py
   - kb/_decision_sheet_replies.py
-  - kb/_build_open_asks_decision_sheet.py
+  - CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py
 ---
 
 # Key a side table by the write key, never by list position
@@ -91,7 +91,7 @@ stayed where it was, which is this note's claim exactly.
 What differs is that the write key here is chosen by the page, so the fix is a
 choice made before the first publish: a new `SHEET_ID` and artifact when the card
 set changes, or a store keyed by something the card carries (its `ref` or title).
-Recorded in [`decision_sheets`](../reference/decision_sheets.md).
+Recorded in `CPLBrain/decision-sheets/decision_sheets.md`.
 
 ## Related
 
