@@ -403,6 +403,7 @@ data refresh are captured atomically.
 ├── index.html                         ← served by GitHub Pages
 ├── fact-sheet/                        ← public standalone CPL Fact Sheet (live KPIs + print-to-PDF; sits alone)
 ├── funding-model/                     ← public "How this funding model works" — LIVE off cpl_funding.js + the Supabase config (no snapshot to rebuild)
+├── privacy.html                       ← public privacy page for the Library filer (its Google consent screen links it)
 ├── CPL_Data.js / statewide_data.js    ← client-side data for filters/search
 ├── statewide_prescriptive.js          ← EACR prescriptive layer (who could adopt → likely local course)
 ├── unified_courses*.js                ← Unified Courses tab data + lazy files
