@@ -511,6 +511,12 @@ def locate_html(reader, program: dict, courses: list[dict], start: str, cache: d
                                       for ln in (got.get("links") or [])[:40]]
                       if cov < ACCEPT_SHARE else None,
                       "clickables": (got.get("clickables") or [])[:40]
+                      if cov < ACCEPT_SHARE else None,
+                      # Links naming the program on any host, followed or not: Santa
+                      # Monica's catalog reached its degree list and named no course (S337).
+                      "title_links": [[(ln.get("text") or "")[:80], ln.get("href")]
+                                      for ln in (got.get("links") or [])
+                                      if score_link(ln.get("text", ""), ln.get("href") or "", program) >= 4][:12]
                       if cov < ACCEPT_SHARE else None})
         if best is None or cov > best["coverage"]:
             best = {"url": got.get("final_url") or url, "coverage": cov, "found": found,
