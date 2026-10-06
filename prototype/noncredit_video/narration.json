@@ -1,15 +1,15 @@
 {
- "_about": "The narration of the Noncredit Summit film's narrated cut, draft 1 (S335 SkyMotion, 2026-10-05). Sam, 2026-10-05: \"do one version with just music and another with voice over from our ElevenLabs narrator. See if we have access to a female voice with a slight hispanic accent.\" One to three plain sentences a scene, written from the deck's slide scripts (CPLBrain 20261005_Noncredit_Summit_CPL_Slides_1.md), every figure the film's: 52,394 served (said as more than fifty-two thousand), 7,500 a year by 2030, one in four, 29,649 (said as nearly thirty thousand), the 34% worded as the deck's .md gives it, 8 and 8.5 and 22 units, 21 colleges, 78% at 28 colleges, 49 at 253 sites, $35 million and $2 million, $50,000 grants, $1.8 million. Funding vocabulary: funding, max award; never earn for an institution, money or pool. The voice says the figures in words and writes MAP as map, so the captions and the aligner read what she says; the captions write MAP back.",
- "voice": "Sierra",
+ "_about": "The narration of the Noncredit Summit film's narrated cut, draft 1 (S335 SkyMotion, 2026-10-05). Sam, 2026-10-05: \"do one version with just music and another with voice over from our ElevenLabs narrator. See if we have access to a female voice with a slight hispanic accent.\" One to three plain sentences a scene, written from the deck's slide scripts (CPLBrain 20261005_Noncredit_Summit_CPL_Slides_1.md), every figure the film's: 52,394 served (said as more than fifty-two thousand), 7,500 a year by 2030, one in four, 29,649 (said as nearly thirty thousand), the 34% worded as the deck's .md gives it, 8 and 8.5 and 22 units, 21 colleges, 78% at 28 colleges, 49 at 253 sites, $35 million and $2 million, $50,000 grants, $1.8 million. Funding vocabulary: funding, max award; never earn for an institution, money or pool. The voice says the figures in words and writes MAP as map, so the captions and the aligner read what she says; the captions write MAP back. Draft 2 (S339 SkyReel, 2026-10-06): the voice is Sarah Explains, the narrator goes unnamed, the title opens on Sam's greeting, the funding opens on a short celebratory line, the ongoing funding is $7 million, and the learners follow deck draft 2 (Nadia's three CompTIA certifications at 9 units as at Saddleback College; Mt. San Antonio College plans to document its ladder).",
+ "voice": "unnamed narrator",
  "engine": {
   "name": "elevenlabs",
-  "voice": "ladypatty1-warm and latin",
-  "voice_id": "k6aNMn2EN3T8vpJSBhQw",
+  "voice": "Sarah Explains",
+  "voice_id": "Nhs7eitvQWFTQBsf0yiT",
   "model": "eleven_multilingual_v2",
-  "flow": "https://elevenlabs.io/app/flows/PaWlo4KTHhjnts1wmCMD",
+  "flow": "https://elevenlabs.io/app/flows/sTzxenbdys7vMV1iEOU2",
   "clips": "voice",
   "speech_rms_dbfs": -20.0,
-  "_why": "ladypatty1 is an ElevenLabs library voice: \"a deep, warm millennial female voice with a soft, soothing tone and a subtle Mexican accent\". Sam picked her by ear from three candidates on 2026-10-05 (S335: \"Let's go with Ladypatty\"), over Carli and Lilith. A library voice's owner can withdraw it, so the clips are committed here and a re-read needs the voice still listed (creative_list_voices). Sierra is the name the CPL Initiative's films give their narrator (Sam, 2026-10-02, on the funding film). One generation per scene through the ElevenLabs connector; Nadia was read twice, because the first read swallowed the A in CompTIA A plus (whisper gave it probability 0.00) and said 'at' as 'and', and the second names the certification first. narrate.py brings every clip to -20 dBFS speech RMS, as the funding film's Sierra."
+  "_why": "Sarah Explains is an ElevenLabs library voice: \"approachable, conversational, and informative. Great for explainer videos, narration, e-learning\". Sam picked her by ear on 2026-10-06 (S339 SkyReel: \"Let's go with 3 voice\") from four auditions of the title and funding lines (Vivie 2, Cassandra, Sarah Explains, and the premade Sarah), after asking for \"another female voice in standard English. A little upbeat in tone--not over the top.\" She replaces ladypatty1 (S335). The same day he asked that the narrator go unnamed: \"Let's take out naming the narrator Sierra and make her anonymous.\" A library voice's owner can withdraw it, so the clips are committed here and a re-read needs the voice still listed (creative_list_voices). One generation per scene through the ElevenLabs connector. narrate.py brings every clip to -20 dBFS speech RMS."
  },
  "layout": {
   "lead_s": 1.0,
@@ -21,35 +21,30 @@
  "scenes": [
   {
    "scene": "Title",
-   "text": "Hi, I'm Sierra. Here's how noncredit learning becomes college credit.",
+   "text": "Greetings, Noncredit CPL Heroes! It's a great day for our system as we continue to build out our shared CPL tools to serve noncredit learners. Special thanks to our legislative partners, who supported the Board of Governors' and Chancellor Christian's request for an additional thirty-five million dollars in CPL funding. Here's how noncredit learning becomes college credit.",
    "read": {
     "clip": "01.mp3",
-    "generation": "cki9FZ4AfVz7qRyDm1JP",
-    "read_on": "2026-10-05",
-    "text_sha1": "01865c450f9cc1fcd4d5413f3b6513213d4aaaf0"
+    "generation": "4ve0glacK4S21HGCGxsL",
+    "read_on": "2026-10-06",
+    "text_sha1": "9c37c23090a908881d41a90b8af676e1b0f29935"
    },
    "cues": [
     {
-     "at": 0.3,
-     "word": "I'm Sierra",
-     "why": "the name beneath the lockup, Narrated by Sierra"
-    },
-    {
      "at": 1.3,
-     "word": "noncredit learning becomes",
-     "why": "the title, Noncredit learning, college credit, letter by letter"
+     "word": "Noncredit CPL Heroes",
+     "why": "the title, Noncredit learning, college credit, letter by letter, as the greeting names the room"
     }
    ],
    "air_s": 3.4,
-   "air_why": "The title's picture runs 5.7 s past its first letter (the letters, the subtitle, the seam), and the voice names the title 2.4 s into the scene; without the air the clip fills the scene and the name and title would lead their words by 1.7 and 2.3 s."
+   "air_why": "The title's picture runs 5.7 s past its first letter (the letters, the subtitle, the seam); the air lets the subtitle and the seam land after the greeting's last line. Sam, 2026-10-06, wrote the greeting: \"Start with Greetings Noncredit CPL Heroes. It's a great day for our system as we continue to build out our shared CPL tools to serve noncredit learners. Special thanks to our legislative partners who supported the Board of Governor's and Chancellor Christians request for an additional $35 million CPL funding...\""
   },
   {
    "scene": "The promise",
    "text": "Last year, Chancellor Christian said that noncredit and not-for-credit learners would be key to our CPL goal. Our colleges have served more than fifty-two thousand students through CPL so far. By twenty thirty, CPL for about seventy-five hundred noncredit learners a year is within reach.",
    "read": {
     "clip": "02.mp3",
-    "generation": "UvBVzPMMxUgWWLMfjka9",
-    "read_on": "2026-10-05",
+    "generation": "APpLbR2fxnAeut1i0qRS",
+    "read_on": "2026-10-06",
     "text_sha1": "d980485873f4c036bee46f6a243c1249633871d2"
    },
    "cues": [
@@ -66,7 +61,7 @@
     {
      "at": 5.4,
      "word": "more than fifty-two thousand",
-     "why": "the count landing on 52,394"
+     "why": "the count landing on 52,452"
     },
     {
      "at": 7.2,
@@ -77,12 +72,12 @@
   },
   {
    "scene": "The scale",
-   "text": "About one in four of our students takes a noncredit course each year. Nearly thirty thousand students earned a noncredit award in twenty twenty-four to twenty-five. And noncredit students who were working before they enrolled saw their median quarterly wages rise thirty-four percent a year after finishing or leaving their program.",
+   "text": "About one in four of our students takes a noncredit course each year. More than thirty thousand students earned a noncredit award in twenty twenty-four to twenty-five. And noncredit students who were working before they enrolled saw their median quarterly wages rise thirty-four percent a year after finishing or leaving their program.",
    "read": {
     "clip": "03.mp3",
-    "generation": "SNDCX9ajgARw133ZOY8v",
-    "read_on": "2026-10-05",
-    "text_sha1": "bac9f9c5bcf332464c1ec07bdc9e75d540a9dc49"
+    "generation": "XnHYE04DwCiiUelLJXRx",
+    "read_on": "2026-10-06",
+    "text_sha1": "38448496f395749f7f4df004adc934b16be21238"
    },
    "cues": [
     {
@@ -92,8 +87,8 @@
     },
     {
      "at": 4.8,
-     "word": "Nearly thirty thousand",
-     "why": "the count landing on 29,649"
+     "word": "More than thirty thousand",
+     "why": "the count landing on 30,795"
     },
     {
      "at": 6.2,
@@ -107,8 +102,8 @@
    "text": "Mira's free noncredit community health worker courses at Cabrillo College mirror credit courses. She earned eight units of credit and a Certificate of Achievement without retaking a class.",
    "read": {
     "clip": "04.mp3",
-    "generation": "1IPN56xDFcUK4TV9ZyPN",
-    "read_on": "2026-10-05",
+    "generation": "Aw1AEtapN1hwjR4kHo1U",
+    "read_on": "2026-10-06",
     "text_sha1": "1d4c589b3d7274e3c0f9959e9e569e31a22b0984"
    },
    "cues": [
@@ -136,8 +131,8 @@
    "text": "Emilio earned his EMT certification through Moreno Valley College's noncredit program. The college awards eight and a half units for it, toward a paramedic or fire technology degree and on to a bachelor's in emergency management.",
    "read": {
     "clip": "05.mp3",
-    "generation": "PS9UKn0x9pDiS2YcBlIF",
-    "read_on": "2026-10-05",
+    "generation": "UHLgCxva8IfPer2qJ4WX",
+    "read_on": "2026-10-06",
     "text_sha1": "130b357929439a52494f4a9ca33a99c68ca4bf4c"
    },
    "cues": [
@@ -167,12 +162,12 @@
   },
   {
    "scene": "Carla",
-   "text": "Carla climbed Mount San Antonio College's noncredit health ladder to the LVN license. College of the Desert awards twenty-two units for that license toward an associate degree in nursing, and Mount San Antonio College is documenting its own ladder now.",
+   "text": "Carla climbed Mount San Antonio College's noncredit health ladder to the LVN license. College of the Desert awards twenty-two units for that license toward an associate degree in nursing, and Mount San Antonio College plans to document its own ladder.",
    "read": {
     "clip": "06.mp3",
-    "generation": "2QLAvmsHbIelbGSf0O7V",
-    "read_on": "2026-10-05",
-    "text_sha1": "3eef527018f09918d96aa59230ee47dcfb91be7b"
+    "generation": "nuTbacqItz23JGgnACQ7",
+    "read_on": "2026-10-06",
+    "text_sha1": "04e7e9690d184366ee0e06f811a4cdf3de0f5550"
    },
    "cues": [
     {
@@ -188,7 +183,7 @@
     {
      "at": 4.35,
      "word": "twenty-two units",
-     "why": "the dashed step, 22 units of CPL for the LVN license"
+     "why": "the dashed step, 22 units of CPL for the LVN license, which Mt. San Antonio College plans to document"
     },
     {
      "at": 5.85,
@@ -199,12 +194,12 @@
   },
   {
    "scene": "Nadia",
-   "text": "Nadia is finishing a noncredit IT support certificate at North Orange Continuing Education. Her A plus certification from CompTIA already carries credit at twenty-one colleges, and North Orange is building her path to an associate degree.",
+   "text": "Nadia is finishing a noncredit IT support certificate at North Orange Continuing Education. She holds three CompTIA certifications, A plus, Network plus and Security plus. Twelve colleges award credit for all three, and at Saddleback College they carry nine units toward an associate degree in information technology.",
    "read": {
     "clip": "07.mp3",
-    "generation": "7TbtIV88K5iIxoSrRSeP",
-    "read_on": "2026-10-05",
-    "text_sha1": "2970f153b4f114e29558b797a0b7e2f33424a004"
+    "generation": "NtpMOS3tdQbgkqscl9Gk",
+    "read_on": "2026-10-06",
+    "text_sha1": "1e6bedd327ed176ac122e9381ba163e3f980bbae"
    },
    "cues": [
     {
@@ -214,8 +209,13 @@
     },
     {
      "at": 2.395,
-     "word": "Her A plus certification",
-     "why": "the second step, Google IT Support and CompTIA A+"
+     "word": "three CompTIA certifications",
+     "why": "the second step, CompTIA A+, Network+ and Security+"
+    },
+    {
+     "at": 3.441,
+     "word": "nine units",
+     "why": "the CPL step, 9 units for all three, as at Saddleback College"
     },
     {
      "at": 4.486,
@@ -224,15 +224,15 @@
     }
    ],
    "air_s": 2.3,
-   "air_why": "The note under the portrait (CompTIA A+ at 21 colleges) and the footnote follow the last step, and the voice ends as it names the step; without the air the last step leads its words by 1.4 s."
+   "air_why": "The note under the portrait (twelve colleges award credit for all three) and the footnote follow the last step, and the voice ends as it names the step; the air lets them land."
   },
   {
    "scene": "Ready and waiting",
    "text": "Faculty have already said yes. At twenty-eight colleges, seventy-eight percent of eligible EMT units reach a transcript, and forty-nine statewide credit determinations sit ready at two hundred fifty-three college sites. Most of the opportunity is still ahead.",
    "read": {
     "clip": "08.mp3",
-    "generation": "5ur451KCIPQQ7USajhZV",
-    "read_on": "2026-10-05",
+    "generation": "W3PC9tYpN8yvR1IqOxiA",
+    "read_on": "2026-10-06",
     "text_sha1": "084beb8dc3bd2ae530db29f0c4cf3088a3c7873b"
    },
    "cues": [
@@ -260,12 +260,12 @@
   },
   {
    "scene": "Funding",
-   "text": "The state budget provides thirty-five million dollars one-time and two million ongoing for CPL. Last year, fifty-thousand-dollar grants went to three noncredit programs. This year, one point eight million dollars in noncredit funding reaches every community college noncredit program. Credit and noncredit FTES together size every max award.",
+   "text": "Now, something to celebrate! The state budget provides thirty-five million dollars one-time and seven million ongoing for CPL. Last year, fifty-thousand-dollar grants went to four noncredit programs. This year, one point eight million dollars in noncredit funding reaches every community college noncredit program. Credit and noncredit FTES together size every max award.",
    "read": {
     "clip": "09.mp3",
-    "generation": "L04iGNVdTnsfxhGRP3dL",
-    "read_on": "2026-10-05",
-    "text_sha1": "be8abff22713b7b049d47b155c522aaf81138866"
+    "generation": "Q4aoqjSy5ENdIwI10bBF",
+    "read_on": "2026-10-06",
+    "text_sha1": "b1c70913838715b31a8ec231be5d431bb29a9b04"
    },
    "cues": [
     {
@@ -275,8 +275,8 @@
     },
     {
      "at": 2.6,
-     "word": "two million ongoing",
-     "why": "the line one-time, and $2 million ongoing"
+     "word": "seven million ongoing",
+     "why": "the line one-time, and $7 million ongoing"
     },
     {
      "at": 4.4,
@@ -293,15 +293,16 @@
      "word": "Credit and noncredit FTES",
      "why": "the closing line, noncredit counts from the start"
     }
-   ]
+   ],
+   "open_why": "Sam, 2026-10-06: \"Add a short celebratory phrase before announcing the funding.\" Four grants: his revised funding slide names North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright (\"2,3,4 y\", 2026-10-06)."
   },
   {
    "scene": "Three invitations",
    "text": "Three invitations to the field. Mirror a course. Post your certificates in map. Invite your completers back. The CPL Initiative team will help you with each one. Our time is now!",
    "read": {
     "clip": "10.mp3",
-    "generation": "T0BJijl6eru9VmGJK9JG",
-    "read_on": "2026-10-05",
+    "generation": "oH4YtOIpEZrKlbXsGCKR",
+    "read_on": "2026-10-06",
     "text_sha1": "3a12634740cc1aa98c588b6427d1c4bc8c7a12cc"
    },
    "cues": [

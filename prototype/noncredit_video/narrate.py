@@ -44,7 +44,7 @@ except ImportError:
 
 
 def read_elevenlabs():
-    """Sierra's read, made in ElevenLabs and committed: (clips, rate, caption weight of a text).
+    """The narrator's read, made in ElevenLabs and committed: (clips, rate, caption weight of a text).
 
     Each clip is cut to its voice (40 dB under its peak, with 50 ms before the first
     sound and 100 ms after the last, so the layout's lead-in and air set the spacing)

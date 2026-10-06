@@ -15,8 +15,8 @@ the Cerritos film's, prototype/ironworker_video/ironworker_in_motion.src.html,
 itself the funding film's; the narrated cut follows prototype/funding_video/'s n2.
 
 EVERY FIGURE BELOW IS THE DECK'S: CPLBrain 04-projects/cpl-initiative/
-20261005_Noncredit_Summit_CPL_Slides_1.md (its slides, notes and the checks Sam asked
-for), read 2026-10-05. When the deck's figures are refreshed the week of the summit
+20261005_Noncredit_Summit_CPL_Slides_2.md (its slides, notes and the checks Sam asked
+for), read 2026-10-06. When the deck's figures are refreshed the week of the summit
 (the students served, the funding figures), change them here and re-render.
 """
 import base64, json, pathlib, re, sys
@@ -24,9 +24,13 @@ HERE = pathlib.Path(__file__).resolve().parent
 ASSETS = HERE.parent / 'funding_video' / 'assets'
 LOGO = HERE.parent.parent / 'sierra' / 'cpl-initiative-logo-navy.png'
 PAGES = 'https://cpl-initiative.github.io/cpl-project-tracker/prototype/noncredit_video/'
-# The MP4s on GitHub, so the Download button works wherever the page opens (a Claude artifact grants a
-# page no download permission, and Pages prunes prototype/ media).
+# The v1 MP4s on GitHub, so the Download button worked wherever the page opened (a Claude artifact grants a
+# page no download permission, and Pages prunes prototype/ media). From v2 the MP4s are deliverables and live
+# in the team Drive (Sam, 2026-10-05: "all artifacts like this created on this account should go to the Drive
+# instead of the repos"; the Library record noncredit-summit-in-motion links them), so the pages carry no
+# Download button: render.sh still writes the file `mp4` names, and it is filed to Drive, never committed.
 RAW = 'https://github.com/CPL-Initiative/cpl-project-tracker/raw/main/prototype/noncredit_video/'
+DL = '    <a class="btn" id="dl" href="__MP4URL__" target="_blank" rel="noopener">Download MP4</a>\n'
 
 
 def jpg(name):
@@ -35,34 +39,35 @@ def jpg(name):
 
 FACTS = {
     # Slide 1. Her words: the Chancellor's 2025 Noncredit Summit keynote (Oct. 2025). Students served: the MAP
-    # CPL dashboard via live_metrics.json, raw.Students = 52,394, scraped 2026-10-05T16:38Z (refresh the week of
-    # the summit). The 2030 line is the deck's (an aspiration the CPL Initiative sets, never a model projection):
+    # CPL dashboard via live_metrics.json, raw.Students = 52,452, scraped 2026-10-06T16:08:22Z (deck draft 2; refresh the
+    # week of the summit). The 2030 line is the deck's (an aspiration the CPL Initiative sets, never a model projection):
     # one in four of about 30,000 noncredit award earners a year, or about one in ten of 69,488 noncredit CTE students.
     'promise': {
         'kick': 'Chancellor Sonya Christian · Noncredit Summit, October 2025',
         'quote': '“Noncredit and not-for-credit learners will be key to meeting this goal.”',
         'label': 'Students served through credit for prior learning (CPL)',
-        'served': 52394, 'servedLab': 'served so far',
+        'served': 52452, 'servedLab': 'served so far',
         'goal': 250000, 'goalLab': 'Vision 2030 goal',
         'line': 'Within reach by 2030: CPL for about <b>7,500 noncredit learners a year</b>, one in four noncredit award earners.',
-        'text': 'Last October Chancellor Christian said noncredit and not-for-credit learners will be key to meeting the goal of 250,000 Californians served through CPL by 2030. Colleges have served 52,394 so far. Within reach by 2030: CPL for about 7,500 noncredit learners a year, one in four noncredit award earners.',
+        'text': 'Last October Chancellor Christian said noncredit and not-for-credit learners will be key to meeting the goal of 250,000 Californians served through CPL by 2030. Colleges have served 52,452 so far. Within reach by 2030: CPL for about 7,500 noncredit learners a year, one in four noncredit award earners.',
     },
-    # Slide 1. COMIS as shown in the 2025 keynote. The 34% is the keynote's slide 11 chart (median quarterly wage
+    # Slide 1. COMIS. Award earners: 30,795 in 2024-25, the Chancellor's 2026 keynote chart "Students earning noncredit
+    # awards" (updated Oct. 5, 2026), which revised the 2025 keynote's 29,649 (Sam, 2026-10-06: follow her chart). The 34% is the keynote's slide 11 chart (median quarterly wage
     # $7,833 in the quarter before entry, $10,479 a year after exit or award, 33.8%), worded as the deck's .md says
     # to say it: students working before they enrolled, a year after finishing or leaving their program.
     'scale': {
         'kick': 'Noncredit in the California Community Colleges',
         'head': 'Your programs already hold the learners',
         'stats': [['1 in 4', None, 'community college students enroll in at least one noncredit course each year'],
-                  ['29,649', 29649, 'students earned a noncredit award in 2024–25, nearly five times the 6,291 of 2012–13'],
+                  ['30,795', 30795, 'students earned a noncredit award in 2024–25, nearly five times the 6,291 of 2012–13'],
                   ['+34%', 34, 'median quarterly wages, $7,833 to $10,479, for students working before they enrolled, a year after finishing or leaving', 'pct']],
-        'source': 'Sources: COMIS noncredit enrollment, awards and wages, 2012–13 to 2024–25. Wages: first-time noncredit students who entered 2017–18 to 2020–21, the quarter before entry and the fifth quarter after exit (N = 14,144), nominal dollars.',
-        'text': 'About one in four community college students enrolls in a noncredit course each year. 29,649 students earned a noncredit award in 2024–25, nearly five times the 6,291 of 2012–13. Noncredit students who were working before they enrolled saw their median quarterly wages rise 34%, from $7,833 to $10,479, a year after finishing or leaving their program.',
+        'source': 'Sources: COMIS noncredit enrollment, awards and wages, 2012–13 to 2024–25 (awards updated Oct. 5, 2026). Wages: first-time noncredit students who entered 2017–18 to 2020–21, the quarter before entry and the fifth quarter after exit (N = 14,144), nominal dollars.',
+        'text': 'About one in four community college students enrolls in a noncredit course each year. 30,795 students earned a noncredit award in 2024–25, nearly five times the 6,291 of 2012–13. Noncredit students who were working before they enrolled saw their median quarterly wages rise 34%, from $7,833 to $10,479, a year after finishing or leaving their program.',
     },
     'illus': 'Illustrative learner and photo. Each step follows courses, programs and CPL on record in COCI and MAP.',
-    'wip': 'Being documented now',
-    # Slide 2. Composites; every step is on record in COCI or MAP except the two dashed ones (Sam, 2026-10-05:
-    # Mt. SAC "is recently working on getting these documented in MAP"; NOCE's path is in development).
+    'wip': 'Planned in MAP',
+    # Slide 2. Composites; every step is on record in COCI or MAP except Carla's dashed one, which Mt. San Antonio
+    # College plans to document in MAP (Sam, 2026-10-06: soften to "plans to"; NOCE: drop the claim).
     'people': [
         # MAP: HS 130 + HS 131 (4 units each) transcribed at Cabrillo; the noncredit courses mirror credit.
         {'name': 'Mira', 'kind': 'Mirrored course', 'college': 'Cabrillo College', 'img': 'mira.jpg',
@@ -92,16 +97,21 @@ FACTS = {
                    ['22 units of CPL for the LVN license', 'wip'],
                    ['Associate degree in nursing (ADN)', 's']],
          'note': 'College of the Desert awards 22 units for the LVN license; Los Angeles Pierce College awards a similar 22.',
-         'text': 'Carla, a career ladder at Mt. San Antonio College: noncredit CNA, medical assistant or surgical technician, then vocational nursing and the LVN license. College of the Desert awards 22 units of CPL for the license, and Los Angeles Pierce College a similar 22; Mt. San Antonio College is documenting its own. Next, an associate degree in nursing.'},
-        # MAP: CompTIA A+ statewide exhibit at 21 colleges, Google IT Support at 2; NOCE's landing work in development.
-        {'name': 'Nadia', 'kind': 'Noncredit certificate', 'college': 'North Orange Continuing Education', 'img': 'nadia.jpg',
+         'text': 'Carla, a career ladder at Mt. San Antonio College: noncredit CNA, medical assistant or surgical technician, then vocational nursing and the LVN license. College of the Desert awards 22 units of CPL for the license, and Los Angeles Pierce College a similar 22; Mt. San Antonio College plans to document its own. Next, an associate degree in nursing.'},
+        # MAP credential reference (2026-10-06): CompTIA A+, Network+ and Security+ statewide exhibits adopted at 21, 21
+        # and 17 colleges, all three at 12; Saddleback awards 9 units for the three (CIMN 110, CIMN 120, CIMS 130). No
+        # North Orange district college has adopted them (Sam, 2026-10-06: drop the NOCE claim; bundle the CompTIA options).
+        # Industry certificate (Sam, 2026-10-06): "credit colleges are not giving credit for the noncredit instruction but
+        # rather for the cert that students earn as a result of their NC studies. Some students will not pass the CompTIA
+        # exam and will not get credit."
+        {'name': 'Nadia', 'kind': 'Industry certificate', 'college': 'North Orange Continuing Education', 'img': 'nadia.jpg',
          'alt': 'Illustrative photo: an adult learner holds a memory module beside an open computer in an IT classroom.',
          'steps': [['Noncredit IT support certificate', 's'],
-                   ['Google IT Support and CompTIA A+ certifications', 's'],
-                   ['3 or more units of CPL', 'wip'],
+                   ['CompTIA A+, Network+ and Security+ certifications', 's'],
+                   ['9 units of CPL for all three, as at Saddleback College', 'cpl'],
                    ['Credit certificate and associate degree in information technology', 's']],
-         'note': 'CompTIA A+ already carries credit at 21 colleges.',
-         'text': 'Nadia, a noncredit certificate at North Orange Continuing Education: a noncredit IT support certificate and the Google IT Support and CompTIA A+ certifications. CompTIA A+ already carries credit at 21 colleges, and her path to a credit certificate and an associate degree in information technology is in development.'},
+         'note': 'Twelve colleges award credit for all three.',
+         'text': 'Nadia, an industry certificate at North Orange Continuing Education: a noncredit IT support certificate and the CompTIA A+, Network+ and Security+ certifications, which carry 9 units of CPL for all three, as at Saddleback College. Twelve colleges award credit for all three, toward a credit certificate and an associate degree in information technology.'},
     ],
     # Slide 3. MAP credential reference (credential_reference_data.js, 2026-10-05) and Supabase map_college_cr_unit:
     # EMT Certification 1,219.6 of 1,557.6 eligible units transcribed (78.3%) at 28 colleges against a 47.9% system
@@ -117,18 +127,20 @@ FACTS = {
         'line': 'Most of the opportunity is still ahead.',
         'text': 'Faculty have already said yes. At 28 colleges, 78% of eligible EMT units reach a transcript, against 48% across all CPL. Forty-nine statewide credit determinations are ready at 253 college sites for their first student. Credentials noncredit programs teach carry 3,269 transcribed units, about 4% of all CPL. Most of the opportunity is still ahead.',
     },
-    # Slide 4. The 2026-27 state budget ($35 million one-time, $2 million ongoing). The published allocation (Scenario 2,
-    # final Sept. 30, 2026): $25,240,308 to 118 institutions sized on credit + noncredit FTES; $1,783,399 noncredit,
-    # restricted to noncredit outcomes. Last year's $50,000 grants to the three noncredit programs: Sam, 2026-10-05.
+    # Slide 4. The 2026-27 state budget: $35 million one-time and $7 million ongoing (the year's $2 million increment
+    # brings ongoing CPL operations to $7 million; Sam, 2026-10-06: "should be $7M"; cpl_memory m3). The published
+    # allocation (Scenario 2, final Sept. 30, 2026), read from the model (config md5 764fd264): $25,240,308 to 118
+    # institutions sized on credit + noncredit FTES; $1,812,403 noncredit, restricted to noncredit outcomes. Last year's $50,000 grants to four noncredit programs: Sam's revised funding slide (2026-10-06) adds Calbright to the
+    # three he named on 2026-10-05, and he ruled the film follows it ("2,3,4 y").
     # Funding vocabulary (CLAUDE.md): funding, allocated, max award, reserved; never earn, money or pool.
     'funding': {
         'kick': 'CPL funding · the 2026–27 state budget',
         'big': 35,
-        'side': 'one-time, and <b>$2 million ongoing</b>, for credit for prior learning',
-        'cards': [['Last year', '$50,000 grants', 'to the noncredit programs at North Orange Continuing Education, Mt. San Antonio College and San Diego College of Continuing Education'],
+        'side': 'one-time, and <b>$7 million ongoing</b>, for credit for prior learning',
+        'cards': [['Last year', '$50,000 grants', 'to four noncredit programs: North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright'],
                   ['This year', '$1.8 million', 'in noncredit funding for every community college noncredit program, reserved for noncredit outcomes']],
         'line': 'Noncredit counts from the start: credit and noncredit FTES together size every max award.',
-        'text': 'The 2026–27 state budget provides $35 million one-time and $2 million ongoing for CPL. Last year, $50,000 grants went to the noncredit programs at North Orange Continuing Education, Mt. San Antonio College and San Diego College of Continuing Education. This year, $1.8 million in noncredit funding reaches every community college noncredit program, reserved for noncredit outcomes. Credit and noncredit FTES together size every max award.',
+        'text': 'The 2026–27 state budget provides $35 million one-time and $7 million ongoing for CPL. Last year, $50,000 grants went to four noncredit programs: North Orange Continuing Education, Mt. San Antonio College, San Diego College of Continuing Education and Calbright. This year, $1.8 million in noncredit funding reaches every community college noncredit program, reserved for noncredit outcomes. Credit and noncredit FTES together size every max award.',
     },
 }
 for p in FACTS['people']:
@@ -145,7 +157,7 @@ CONFIG = {
     'title': 'Noncredit learning, college credit',
     'sub': 'Four learners, the credit already waiting for them, and the funding that counts noncredit from the start.',
     'titleText': 'Noncredit learning, college credit: four learners, the credit already waiting for them, and the funding that counts noncredit from the start. Vision 2030 Noncredit Summit, 2026.',
-    'mp4': '20261005_Noncredit_Summit_in_Motion_v1.mp4',
+    'mp4': '20261005_Noncredit_Summit_in_Motion_v2.mp4',
     'facts': FACTS,
     # [the moment the bolt lands, x, y, caption]: each at the top of the scene whose fact brings it down. The
     # handoff's five (2026-10-05); "Noncredit as afterthought" is Sam's own framing of how the field feels.
@@ -176,13 +188,14 @@ VARIANTS = {
     'narrated': dict(
         CONFIG,
         pageTitle='Noncredit Summit in Motion: Narrated',
-        dek='The Noncredit Summit film, narrated by Sierra, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
+        dek='The Noncredit Summit film, narrated, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
         link=PAGES + 'noncredit_in_motion.html',
         linkLabel='Watch the music-only version',
-        mp4='20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4',
-        narrator='Narrated by Sierra',
+        mp4='20261005_Noncredit_Summit_in_Motion_Narrated_v2.mp4',
+        # The narrator goes unnamed (Sam, 2026-10-06: "Let's take out naming the narrator Sierra and make her
+        # anonymous"): no name line on the title, and the close still says the voice is synthetic.
         audio='narration.mp3',
-        credit='Sierra is a synthetic voice made with ElevenLabs.',
+        credit='The narrator is a synthetic voice made with ElevenLabs.',
         narr=narration('narration_layout.json'),
     ),
 }
@@ -192,6 +205,8 @@ variant = args[0] if args else ''
 cfg = VARIANTS[variant]
 suffix = '_' + variant if variant else ''
 src = (HERE / 'noncredit_in_motion.src.html').read_text(encoding='utf8')
+assert src.count(DL) == 1, 'the Download button moved; update DL'
+src = src.replace(DL, '')
 
 
 def uri(p):
