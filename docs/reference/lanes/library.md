@@ -153,5 +153,8 @@ claude.ai.
   `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's
   two player pages off the site, and add a guard test so a deliverable binary cannot be committed
   again. Then the vault's binaries (29 on 2026-10-05).
-- **Open with Sam:** whether the Ironworker player page stays public; sharing CPLLibrary with the
-  team (owner-only today).
+- **NEEDS SAM — five calls, cards 2 to 6 of Open Asks Sheet 45** (2026-10-06): whether the
+  Ironworker film's web player stays public (it decides whether the film leaves in PR 2); sharing
+  CPLLibrary with the team (owner-only, checked live 2026-10-06); moving the other decision sheets
+  to the vault as well; one Library record for the open-asks series or one per sheet; and whether a
+  file name carries the date the piece was made (the filer's rule today) or the date it was filed.
