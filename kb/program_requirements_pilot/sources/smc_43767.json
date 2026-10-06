@@ -1,0 +1,281 @@
+{
+ "_what": "A program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py, --sample maps). Filed from the job log of run 37545459181 (job 112548269296, 2026-10-06, S340), transcribed from the GitHub MCP's copy of the log and checked by recomputing coverage (1.0, 25 codes, as the runner printed). The capture reached the page through Santa Monica's procedure record v1 (procedure.catalog: the full-catalog PDF, pages 121-122 of 472), recorded in procedure_step. A program on the maps list (kb/program_requirements_maps_sample.json), beyond Sam's checked 20. The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Santa Monica College",
+ "control_number": "43767",
+ "shape": "degree_list",
+ "title": "Barbering",
+ "award": "A.S. Degree",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "custom_html",
+ "format": "unknown",
+ "method": "pdf_pages",
+ "procedure_step": {
+  "start": "https://catalog.smc.edu/current/index.php",
+  "follow": "Download the Full Catalog",
+  "format": "pdf",
+  "status": 200,
+  "access": "ok",
+  "href": "https://catalog.smc.edu/current/catalog.pdf",
+  "link_sample": null,
+  "head_status": 200,
+  "content_length": "14509754",
+  "content_type": "application/pdf"
+ },
+ "source": {
+  "url": "https://catalog.smc.edu/current/catalog.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 14509754,
+  "pages_total": 472,
+  "pages": [
+   121,
+   122
+  ],
+  "extractor": "pypdf",
+  "tried": [
+   {
+    "extractor": "pypdf",
+    "chars_total": 2569539,
+    "empty_pages": 2,
+    "probe": [],
+    "sample": []
+   }
+  ],
+  "error": null
+ },
+ "coverage": 1.0,
+ "codes_found": [
+  "COSM10A",
+  "COSM10B",
+  "COSM11A",
+  "COSM11B",
+  "COSM11C",
+  "COSM11D",
+  "COSM20",
+  "COSM21A",
+  "COSM21B",
+  "COSM21C",
+  "COSM21E",
+  "COSM30",
+  "COSM31A",
+  "COSM31C",
+  "COSM31E",
+  "COSM42",
+  "COSM49R",
+  "COSM50R",
+  "COSM64",
+  "COSM77",
+  "COSM78",
+  "COSM95A",
+  "COSM95B",
+  "COSM95C",
+  "COSM95D"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000553334",
+   "code": "COSM 10A",
+   "title": "Related Science 1A",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000553333",
+   "code": "COSM 10B",
+   "title": "Related Science 1B",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635721",
+   "code": "COSM 11A",
+   "title": "Hair Cutting 1",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635722",
+   "code": "COSM 11B",
+   "title": "Hair Styling 1",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635723",
+   "code": "COSM 11C",
+   "title": "Hair Coloring 1",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635724",
+   "code": "COSM 11D",
+   "title": "Permanent Waving",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000400737",
+   "code": "COSM 20",
+   "title": "Related Science 2",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635727",
+   "code": "COSM 21A",
+   "title": "Hair Cutting 2",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635728",
+   "code": "COSM 21B",
+   "title": "Hair Styling 2",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635729",
+   "code": "COSM 21C",
+   "title": "Hair Coloring 2",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635730",
+   "code": "COSM 21E",
+   "title": "Curly Hair Techniques 2",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000403375",
+   "code": "COSM 30",
+   "title": "Related Science 3",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635734",
+   "code": "COSM 31A",
+   "title": "Hair Cutting 3",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635736",
+   "code": "COSM 31C",
+   "title": "Hair Coloring 3",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635737",
+   "code": "COSM 31E",
+   "title": "Multi Texture Styling",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000635743",
+   "code": "COSM 42",
+   "title": "Short Hair Cutting",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000653640",
+   "code": "COSM 49R",
+   "title": "Tactical Planning for the California Barbering State Board Exam",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000653645",
+   "code": "COSM 50R",
+   "title": "Written Preparation for Barbering State Board Exam",
+   "units": 1.5,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000423260",
+   "code": "COSM 64",
+   "title": "Salon Management",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000616135",
+   "code": "COSM 77",
+   "title": "Barbering",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000640339",
+   "code": "COSM 78",
+   "title": "Barbering 2",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000438229",
+   "code": "COSM 95A",
+   "title": "Salon Experience",
+   "units": 1.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000388823",
+   "code": "COSM 95B",
+   "title": "Salon Experience",
+   "units": 2.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000551923",
+   "code": "COSM 95C",
+   "title": "Salon Experience",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000393988",
+   "code": "COSM 95D",
+   "title": "Salon Experience",
+   "units": 4.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "[page 121]\n120 SMC CATALOG 2026–2027\nAfter successful completion of the program and passing the state\nboard exam, a career in barbering offers multiple employment and\nentrepreneurial opportunities, such as: platform artist, educator,\nbarber, colorist, salon owner, sales representative, cruise ships,\ntelevision and film industries. \nInformation regarding the barbering program is available at the\nCosmetology Department, (310) 434-4294, and through the SMC\nwebsite (smc.edu).\nProgram Learning Outcomes: Upon completion of the program,\nstudents will be able to demonstrate entry level skills in hair cutting,\nhair coloring, hair styling, shaving with a razor, men’s styling and\nchemical texture. Students will be eligible to take the State Board of\nBarbering and Cosmetology licensure exam. Students will be able to\nrecognize and demonstrate the importance of and practice of ethical\nbehavior in a professional work setting. Apply theories, principles, and\nconcepts of skills learned that apply to Barbering and follow the State\nBoard of Barbering and Cosmetology Rules and Regulations.\nArea of Emphasis: (26.5 units)\nRequired Hours:\n(1,000 hours minimum including the courses specified below)\nRequired Level 1 Courses: \nCOSM 10A, Related Science 1A (1)\nCOSM 10B, Related Science 1B (1)\nCOSM 11A, Hair Cutting 1 (1)\nCOSM 11B, Hair Styling 1 (1)\nCOSM 11C, Hair Coloring 1 (1)\nCOSM 11D, Permanent Waving (1)\nRequired Level 2 Courses: \nCOSM 20, Related Science 2 (1)\nCOSM 21A, Hair Cutting 2 (1)\nCOSM 21B, Hair Styling 2 (1)\nCOSM 21C, Hair Coloring 2 (1)\nCOSM 21E, Curly Hair Techniques 2 (1)\nCOSM 42, Short Hair Cutting (1)\nRequired Level 3 Courses: \nCOSM 30, Related Science 3 (1)\nCOSM 31A, Hair Cutting 3 (1)\nCOSM 31C, Hair Coloring 3 (1)\nCOSM 31E, Multi Texture Styling (1)\nCOSM 77, Barbering (2)\nRequired Level 4 Courses: \nCOSM 11C, Salon Management (2)\nCOSM 78, Barbering 2 (2)\nRequired State Board Courses:\nCOSM 49R , Tactical Planning for the California Barbering State Board\nExam (2)\nCOSM 50R , Written Preparation for Barbering State Board Exam (1.5)\nSalon Experience Courses:\nBefore enrolling in Salon classes, you must have completed ALL Level 1\nclasses. Any combination of Salon classes is acceptable.\nCOSM 95A, Salon Experience (1)\nCOSM 95B, Salon Experience (2)\nCOSM 95C, Salon Experience (3)\nCosmetology, Associate Degree or\nCertificate of Achievement\nProgram Learning Outcomes: Upon completion of the program,\nstudents will be able to demonstrate professional level skill in her\ncutting, hair coloring, hair styling, nail care, and skin care. Additionally,\nthe student will be proficient in health and safety procedures in\ncommon use in salons. Upon completion, the student will be eligible to\ntake the California State Board of Cosmetology and Barbering licensure\nexam.\nArea of Emphasis: (26.5 units)\nRequired Hours:\n(1,000 hours minimum including the courses specified below)\nRequired Related Science Courses: \nCOSM 10A, Related Science 1A (1)\nCOSM 10B, Related Science 1B (1)\nCOSM 20, Related Science 2 (1)\nCOSM 30, Related Science 3 (1)\nCOSM 49C, Tactical Planning for the California Cosmetology State\nBoard Exam (formerly COSM 50A) (2)\nCOSM 50C, Written Preparation for Cosmetology State Board\nExam (1.5)\nRequired Hair Cutting Courses: \nCOSM 11A, Hair Cutting 1 (1)\nCOSM 21A, Hair Cutting 2 (1)\nCOSM 42, Short Hair Cutting (1)\nRequired Hair Styling Courses: \nCOSM 11B, Hair Styling 1 (1)\nCOSM 21B, Hair Styling 2 (1)\nRequired Hair Coloring Courses: \nCOSM 11C, Hair Coloring 1 (1)\nCOSM 21C, Hair Coloring 2 (1)\nRequired Permanent Wave Course:\nCOSM 11D, Permanent Waving (1)\nRequired Curly Hair Technique Course:\nCOSM 21E, Curly Hair Techniques 2 (1)\nRequired Nail Care Courses:\nCOSM 16, Nail Care 1 (1)\nCOSM 26, Nail Care 2 (1)\nCOSM 36, Nail Care 3 (1)\nRequired Esthetician Courses:\nCOSM 18, Skin Care 1 (1)\nCOSM 28A, Skin Care 2A (1)\nCOSM 28B, Skin Care 2B (1)\nCOSM 48B, Make-up (1)\nRequired Salon Management Course:\nCOSM 64, Salon Management (2)\nSalon Experience Courses:\nTheory and Practical Activity: In order to fulfill any outstanding required\nhours, students must enroll in one or more of the following Salon courses\n(2 units minimum). NOTE: Students may NOT enroll in any of the courses\nbelow until they have completed at least 300 hours of practical activity AND\nhave completed all of the following COSM courses above: 10A, 10B, 11A,\n11B, 11C, 11D, 11E, 16, and 18.\nCOSM 95A, Salon Experience (1)\nCOSM 95B, Salon Experience (2)\nCOSM 95C, Salon Experience (3)\nEsthetician, Certificate of Achievement\nThe esthetician program provides students with professional-level\nskill in client consultation, skin analysis, and manual, chemical, and\nelectrical facials, as well as eyebrow shaping, waxing, the application\nof strip and individual eyelashes, and makeup application. Additionally,\nstudents will become proficient in health and safety procedures in\ncommon use in salons and spas. Upon completion, the student will\nbe eligible to take the State Board of Cosmetology and Barbering/NIC\nEsthetician licensure exam.\nProgram Learning Outcomes: Upon completion of the program,\nstudents will demonstrate entry-level proficiencies needed in a\nprofessional spa environment, including skin analysis, product\napplication, massage, and waxing techniques required for specific\n\n[page 122]\nSMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 121\nskin types and skin conditions. Students will be able to demonstrate\nknowledge of electrical modalities and chemical peels at a level\napplicable to enter the esthetic workplace, as well as pass their\nCalifornia Board of Barbering and Cosmetology Esthetic licensure\nexamination.\nArea of Emphasis: (18.5 units)\nRequired Hours: \n600 hours minimum including the courses specified below\nRequired Related Science Courses:\nCOSM 10A, Related Science 1A (1)\nCOSM 10B, Related Science 1B (1)\nCOSM 20, Related Science 2 (1)\nCOSM 30, Related Science 3 (1)\nCOSM 49E, Tactical Planning for the California Esthetics State Board\nExam (2)\nCOSM 50E, Written Preparation for Extehetician State Board\nExam (1.5)\nRequired Esthetician Courses:\nCOSM 18, Skin Care 1 (1)\nCOSM 28A, Skin Care 2A (1)\nCOSM 28B, Skin Care 2B (1)\nCOSM 38, Skin Care 3 (1)\nCOSM 38B, Mechanical Exfoliation (1)\nCOSM 38C, Chemical Exfoliation (1)\nCOSM 48, Skin Care 4 (1)\nCOSM 48B, Make-Up (1)\nRequired Salon Management Courses:\nCOSM 64, Salon Management Theory (2)\nSalon Experiences Courses:\nTheory and Practical Activity: In order to fulfill any outstanding required\nhours, students must enroll in one or more of the following Salon courses (1\nunit minimum). NOTE: Students may NOT enroll in any of the courses below\nuntil they have completed at least 90 hours of practical activity AND have\ncompleted all of the following COSM courses above: 10A, 10B, and 18.\nCOSM 95A, Salon Experience (1)\nCOSM 95B, Salon Experience (2)\nCOSM 95C, Salon Experience (3)\nCOSM 95D, Salon Experience (4)\nNail Care, Certificate of Achievement\nThe Nail Care program provides students with professional level skill\nin manicures, pedicures, nail tips, acrylics, gel nails, and 3-D nail\nart. Additionally, students will become proficient in health and safety\nprocedures in common use in salons and spas. Upon completion, the\nstudent will be eligible to take the State Board of Cosmetology and\nBarbering/NIC Manicure licensure exam.\nProgram Learning Outcomes: Upon completion of the program,\nstudents will demonstrate professional skill level in manicures,\npedicures, nail tips, acrylics, gel nails, and 3-D nail art. Additionally,\nstudents will be proficient in health and safety procedures in common\nuse in salons and spas. Students will be eligible to take the California\nBoard of Barbering and Cosmetology Manicuring licensure exam upon\ncompletion of the required hours and operations\nArea of Emphasis: (11.5 units)\nRequired Courses: \n400 hours minimum including the courses specified below\nRequired Related Science Courses:\nCOSM 10A, Related Science 1A (1)\nCOSM 10B, Related Science 1B (1)\nCOSM 20, Related Science 2 (1)\nCOSM 50N, Written Preparation for Nail Care State Board Exam (1.5)\nRequired Nail Care Courses:\nCOSM 16, Nail Care 1 (1)\nCOSM 26, Nail Care 2 (1)\nCOSM 36, Nail Care 3 (1)\nCOSM 46, Nail Care 4 (1)\nRequired Salon Management Course:\nCOSM 64, Salon Management (2)\nSalon Experience Courses:\nTheory and Practical Activity: In order to fulfill any outstanding required\nhours, students must enroll in one or more of the following Salon courses (1\nunit minimum). NOTE: Students may NOT enroll in any of the courses below\nuntil they have completed at least 80 hours of practical activity AND have\ncompleted all of the following COSM courses above: 10A, 10B, and 16.\nCOSM 95A, Salon Experience (1)\nCOSM 95B, Salon Experience (2)\nCOSM 95C, Salon Experience (3)\nCOSM 95D, Salon Experience (4)\nSalon Business, Certificate of Achievement\n*Students must complete the area of emphasis (major) requirements\nin effect at the time enrollment begins or the requirements in\neffect at graduation as long as continuous enrollment is maintained.\n*Continuous enrollment is defined as enrollment in each Fall and\nSpring semester until graduation. At least 50% of the units required\nfor Certificates of Achievement must be completed at Santa Monica\nCollege. Students must receive a grade of C or higher in each course\nto successfully complete the Certificate of Achievement. A Certificate\nof Achievement in Salon Business will aid cosmetologists, estheticians\nand manicurists in establishing and running their own business/salon.\nProgram Learning Outcomes: Upon completion of the program,\nstudents will demonstrate an understanding of the key points for\noperating and supervising a salon/spa business. Students will be able\nto apply business principles to the salon and spa business.\nArea of Emphasis: (14 units)\nRequired Courses: (11 units)\nACCTG 21, Business Bookkeeping (3)\nBUS 34A, Introduction to Digital Marketing (3)\nCIS 4, Business Information Systems with Applications (3)\nCOSM 64, Salon Management (2)\nSelect one course from the following:\nBUS 1, Introduction to Business (3)\nBUS 20, Principles of Marketing (3)\nBUS 65, Management Principles (3)\nTeacher Training (In Cosmetology)\nThis program is temporarily suspended. Many of the required classes\nare not being offered at this time. Students interested in this\ncertificate program should contact the Cosmetology department at\n310-434-4292.\nCOUNSELING – NONCREDIT\nThis noncredit program is designed to assist students in transitioning\nfrom noncredit to credit courses, with the goal of improving literacy\nand preparing for a career and general skills for the workforce. These\ntwo courses will focus on college readiness, educational planning, the\ncareer exploration process and how to navigate the workforce and\nbecome gainfully employed. The Certificate of Completion is granted after\nsuccessful completion of COUNS 901 and COUNS 902.",
+ "courseleaf_lists": [],
+ "captured_run": 37545459181
+}
