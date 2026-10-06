@@ -69,8 +69,14 @@ itself created, and Sam made CPLLibrary by hand.
 2. APIs & Services, Library, *Google Drive API*, **Enable**.
 3. Google Auth Platform, **Get started**: app name *CPL Library filer*, support email
    camapinitiative, Audience **External**, contact email, agree, Create.
-4. Audience, **Publish app**, Confirm. In *Testing*, Google ends the sign-in after
-   7 days.
+4. Branding: fill **Application home page**
+   (`https://cpl-initiative.github.io/cpl-project-tracker/`) and **Application privacy
+   policy link** (`https://cpl-initiative.github.io/cpl-project-tracker/privacy.html`),
+   add `cpl-initiative.github.io` under **Authorized domains**, Save. Terms of service
+   stays blank. Until both links are saved, Audience greys out **Publish app** with
+   *"complete your configuration on the Branding page"* (measured 2026-10-06).
+   Then Audience, **Publish app**, Confirm; the status reads **In production**. No test
+   users. In *Testing*, Google ends the sign-in after 7 days, so publish before step 8.
 5. Clients, **Create client**: type **Web application**, name *CPL Library filer*.
    Under *Authorized redirect URIs* add `https://developers.google.com/oauthplayground`,
    then Create. Copy the Client ID and the Client secret at once. Google shows the
@@ -80,19 +86,29 @@ itself created, and Sam made CPLLibrary by hand.
 
 6. The gear icon, top right: tick **Use your own OAuth credentials**, then paste the
    Client ID and secret.
-7. In *Input your own scopes*, enter `https://www.googleapis.com/auth/drive`, then
-   **Authorize APIs** and choose camapinitiative. At *Google hasn't verified this app*
-   choose Advanced, then *Go to CPL Library filer (unsafe)*, then Continue. The warning
-   is normal for an app only its owner uses.
-8. Step 2, **Exchange authorization code for tokens**. Copy the **Refresh token**
-   (it starts with `1//`).
+7. In *Input your own scopes* (the box beside **Authorize APIs**; replace the
+   `cloud-platform` scope it may hold), enter `https://www.googleapis.com/auth/drive`,
+   then **Authorize APIs** and choose camapinitiative. Google may text a sign-in code;
+   that is the account's own two-step check. The unverified-app warning comes in one of
+   two forms: a full page *Google hasn't verified this app* (choose **Advanced**, then
+   *Go to CPL Library filer (unsafe)*), or a yellow box on the consent screen itself
+   (choose **Continue**). Either is normal for an app only its owner uses.
+8. Step 2, **Exchange authorization code for tokens**, once. A successful exchange
+   jumps the Playground to Step 3: reopen **Step 2** and copy the **Refresh token**
+   (it starts with `1//`). A second press on the same code returns `invalid_grant`, as
+   does a code issued before step 6's own credentials were set; authorize again.
 
 **C. The Claude environment** (the cloud environment menu in a session's title bar,
 then Edit)
 
-9. Add `GOOGLE_DRIVE_CLIENT_ID`, `GOOGLE_DRIVE_CLIENT_SECRET` and
-   `GOOGLE_DRIVE_REFRESH_TOKEN`, under *API credentials* if offered, otherwise as
-   environment variables. Never paste a value into a chat.
+9. In the **Environment variables** box, one line each, the value right after the `=`
+   with no quotes or spaces: `GOOGLE_DRIVE_CLIENT_ID=` (ends
+   `.apps.googleusercontent.com`), `GOOGLE_DRIVE_CLIENT_SECRET=` (starts `GOCSPX-`) and
+   `GOOGLE_DRIVE_REFRESH_TOKEN=` (starts `1//`). **Not the *Add credential* form**: it
+   attaches a header to web requests, and the filer reads these three values and
+   exchanges the refresh token itself. Never paste a value into a chat. On 2026-10-06 a
+   first save held the template's own placeholder words; a session can check the shape
+   without printing a value (lengths, and the three endings above).
 10. Open a new session and run `python3 scripts/library_file.py --check`. It names the
     account, confirms the full scope, and says whether each folder can take files.
 
@@ -103,6 +119,8 @@ Security, Third-party connections, *CPL Library filer*, Remove access.
 
 ## When it fails
 
+- **`invalid_client`**: the client ID or secret is wrong, often a placeholder or a
+  stray space (step 9). Check the shape without printing the value.
 - **`invalid_grant`**: the sign-in expired or was revoked. Check step 4 (published,
   not Testing), then repeat steps 6 to 9.
 - **A folder `CANNOT add files`, or the scope is not the full one**: the refresh token
