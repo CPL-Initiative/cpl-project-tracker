@@ -15,8 +15,8 @@ the Cerritos film's, prototype/ironworker_video/ironworker_in_motion.src.html,
 itself the funding film's; the narrated cut follows prototype/funding_video/'s n2.
 
 EVERY FIGURE BELOW IS THE DECK'S: CPLBrain 04-projects/cpl-initiative/
-20261005_Noncredit_Summit_CPL_Slides_1.md (its slides, notes and the checks Sam asked
-for), read 2026-10-05. When the deck's figures are refreshed the week of the summit
+20261005_Noncredit_Summit_CPL_Slides_2.md (its slides, notes and the checks Sam asked
+for), read 2026-10-06. When the deck's figures are refreshed the week of the summit
 (the students served, the funding figures), change them here and re-render.
 """
 import base64, json, pathlib, re, sys
@@ -35,17 +35,17 @@ def jpg(name):
 
 FACTS = {
     # Slide 1. Her words: the Chancellor's 2025 Noncredit Summit keynote (Oct. 2025). Students served: the MAP
-    # CPL dashboard via live_metrics.json, raw.Students = 52,394, scraped 2026-10-05T16:38Z (refresh the week of
-    # the summit). The 2030 line is the deck's (an aspiration the CPL Initiative sets, never a model projection):
+    # CPL dashboard via live_metrics.json, raw.Students = 52,452, scraped 2026-10-06T16:08:22Z (deck draft 2; refresh the
+    # week of the summit). The 2030 line is the deck's (an aspiration the CPL Initiative sets, never a model projection):
     # one in four of about 30,000 noncredit award earners a year, or about one in ten of 69,488 noncredit CTE students.
     'promise': {
         'kick': 'Chancellor Sonya Christian · Noncredit Summit, October 2025',
         'quote': '“Noncredit and not-for-credit learners will be key to meeting this goal.”',
         'label': 'Students served through credit for prior learning (CPL)',
-        'served': 52394, 'servedLab': 'served so far',
+        'served': 52452, 'servedLab': 'served so far',
         'goal': 250000, 'goalLab': 'Vision 2030 goal',
         'line': 'Within reach by 2030: CPL for about <b>7,500 noncredit learners a year</b>, one in four noncredit award earners.',
-        'text': 'Last October Chancellor Christian said noncredit and not-for-credit learners will be key to meeting the goal of 250,000 Californians served through CPL by 2030. Colleges have served 52,394 so far. Within reach by 2030: CPL for about 7,500 noncredit learners a year, one in four noncredit award earners.',
+        'text': 'Last October Chancellor Christian said noncredit and not-for-credit learners will be key to meeting the goal of 250,000 Californians served through CPL by 2030. Colleges have served 52,452 so far. Within reach by 2030: CPL for about 7,500 noncredit learners a year, one in four noncredit award earners.',
     },
     # Slide 1. COMIS as shown in the 2025 keynote. The 34% is the keynote's slide 11 chart (median quarterly wage
     # $7,833 in the quarter before entry, $10,479 a year after exit or award, 33.8%), worded as the deck's .md says
@@ -60,9 +60,9 @@ FACTS = {
         'text': 'About one in four community college students enrolls in a noncredit course each year. 29,649 students earned a noncredit award in 2024–25, nearly five times the 6,291 of 2012–13. Noncredit students who were working before they enrolled saw their median quarterly wages rise 34%, from $7,833 to $10,479, a year after finishing or leaving their program.',
     },
     'illus': 'Illustrative learner and photo. Each step follows courses, programs and CPL on record in COCI and MAP.',
-    'wip': 'Being documented now',
-    # Slide 2. Composites; every step is on record in COCI or MAP except the two dashed ones (Sam, 2026-10-05:
-    # Mt. SAC "is recently working on getting these documented in MAP"; NOCE's path is in development).
+    'wip': 'Planned in MAP',
+    # Slide 2. Composites; every step is on record in COCI or MAP except Carla's dashed one, which Mt. San Antonio
+    # College plans to document in MAP (Sam, 2026-10-06: soften to "plans to"; NOCE: drop the claim).
     'people': [
         # MAP: HS 130 + HS 131 (4 units each) transcribed at Cabrillo; the noncredit courses mirror credit.
         {'name': 'Mira', 'kind': 'Mirrored course', 'college': 'Cabrillo College', 'img': 'mira.jpg',
@@ -92,16 +92,18 @@ FACTS = {
                    ['22 units of CPL for the LVN license', 'wip'],
                    ['Associate degree in nursing (ADN)', 's']],
          'note': 'College of the Desert awards 22 units for the LVN license; Los Angeles Pierce College awards a similar 22.',
-         'text': 'Carla, a career ladder at Mt. San Antonio College: noncredit CNA, medical assistant or surgical technician, then vocational nursing and the LVN license. College of the Desert awards 22 units of CPL for the license, and Los Angeles Pierce College a similar 22; Mt. San Antonio College is documenting its own. Next, an associate degree in nursing.'},
-        # MAP: CompTIA A+ statewide exhibit at 21 colleges, Google IT Support at 2; NOCE's landing work in development.
+         'text': 'Carla, a career ladder at Mt. San Antonio College: noncredit CNA, medical assistant or surgical technician, then vocational nursing and the LVN license. College of the Desert awards 22 units of CPL for the license, and Los Angeles Pierce College a similar 22; Mt. San Antonio College plans to document its own. Next, an associate degree in nursing.'},
+        # MAP credential reference (2026-10-06): CompTIA A+, Network+ and Security+ statewide exhibits adopted at 21, 21
+        # and 17 colleges, all three at 12; Saddleback awards 9 units for the three (CIMN 110, CIMN 120, CIMS 130). No
+        # North Orange district college has adopted them (Sam, 2026-10-06: drop the NOCE claim; bundle the CompTIA options).
         {'name': 'Nadia', 'kind': 'Noncredit certificate', 'college': 'North Orange Continuing Education', 'img': 'nadia.jpg',
          'alt': 'Illustrative photo: an adult learner holds a memory module beside an open computer in an IT classroom.',
          'steps': [['Noncredit IT support certificate', 's'],
-                   ['Google IT Support and CompTIA A+ certifications', 's'],
-                   ['3 or more units of CPL', 'wip'],
+                   ['CompTIA A+, Network+ and Security+ certifications', 's'],
+                   ['9 units of CPL for all three, as at Saddleback College', 'cpl'],
                    ['Credit certificate and associate degree in information technology', 's']],
-         'note': 'CompTIA A+ already carries credit at 21 colleges.',
-         'text': 'Nadia, a noncredit certificate at North Orange Continuing Education: a noncredit IT support certificate and the Google IT Support and CompTIA A+ certifications. CompTIA A+ already carries credit at 21 colleges, and her path to a credit certificate and an associate degree in information technology is in development.'},
+         'note': 'Twelve colleges award credit for all three.',
+         'text': 'Nadia, a noncredit certificate at North Orange Continuing Education: a noncredit IT support certificate and the CompTIA A+, Network+ and Security+ certifications, which carry 9 units of CPL for all three, as at Saddleback College. Twelve colleges award credit for all three, toward a credit certificate and an associate degree in information technology.'},
     ],
     # Slide 3. MAP credential reference (credential_reference_data.js, 2026-10-05) and Supabase map_college_cr_unit:
     # EMT Certification 1,219.6 of 1,557.6 eligible units transcribed (78.3%) at 28 colleges against a 47.9% system
@@ -117,18 +119,19 @@ FACTS = {
         'line': 'Most of the opportunity is still ahead.',
         'text': 'Faculty have already said yes. At 28 colleges, 78% of eligible EMT units reach a transcript, against 48% across all CPL. Forty-nine statewide credit determinations are ready at 253 college sites for their first student. Credentials noncredit programs teach carry 3,269 transcribed units, about 4% of all CPL. Most of the opportunity is still ahead.',
     },
-    # Slide 4. The 2026-27 state budget ($35 million one-time, $2 million ongoing). The published allocation (Scenario 2,
-    # final Sept. 30, 2026): $25,240,308 to 118 institutions sized on credit + noncredit FTES; $1,783,399 noncredit,
-    # restricted to noncredit outcomes. Last year's $50,000 grants to the three noncredit programs: Sam, 2026-10-05.
+    # Slide 4. The 2026-27 state budget: $35 million one-time and $7 million ongoing (the year's $2 million increment
+    # brings ongoing CPL operations to $7 million; Sam, 2026-10-06: "should be $7M"; cpl_memory m3). The published
+    # allocation (Scenario 2, final Sept. 30, 2026), read from the model (config md5 764fd264): $25,240,308 to 118
+    # institutions sized on credit + noncredit FTES; $1,812,403 noncredit, restricted to noncredit outcomes. Last year's $50,000 grants to the three noncredit programs: Sam, 2026-10-05.
     # Funding vocabulary (CLAUDE.md): funding, allocated, max award, reserved; never earn, money or pool.
     'funding': {
         'kick': 'CPL funding · the 2026–27 state budget',
         'big': 35,
-        'side': 'one-time, and <b>$2 million ongoing</b>, for credit for prior learning',
+        'side': 'one-time, and <b>$7 million ongoing</b>, for credit for prior learning',
         'cards': [['Last year', '$50,000 grants', 'to the noncredit programs at North Orange Continuing Education, Mt. San Antonio College and San Diego College of Continuing Education'],
                   ['This year', '$1.8 million', 'in noncredit funding for every community college noncredit program, reserved for noncredit outcomes']],
         'line': 'Noncredit counts from the start: credit and noncredit FTES together size every max award.',
-        'text': 'The 2026–27 state budget provides $35 million one-time and $2 million ongoing for CPL. Last year, $50,000 grants went to the noncredit programs at North Orange Continuing Education, Mt. San Antonio College and San Diego College of Continuing Education. This year, $1.8 million in noncredit funding reaches every community college noncredit program, reserved for noncredit outcomes. Credit and noncredit FTES together size every max award.',
+        'text': 'The 2026–27 state budget provides $35 million one-time and $7 million ongoing for CPL. Last year, $50,000 grants went to the noncredit programs at North Orange Continuing Education, Mt. San Antonio College and San Diego College of Continuing Education. This year, $1.8 million in noncredit funding reaches every community college noncredit program, reserved for noncredit outcomes. Credit and noncredit FTES together size every max award.',
     },
 }
 for p in FACTS['people']:

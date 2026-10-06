@@ -8,11 +8,12 @@
 //   1. The built pages match the source: no unfilled placeholder, ten scenes,
 //      100 seconds in the music cut.
 //   2. Every figure on screen is the summit deck's (CPLBrain
-//      20261005_Noncredit_Summit_CPL_Slides_1.md), and the 34% says who it
+//      20261005_Noncredit_Summit_CPL_Slides_2.md), and the 34% says who it
 //      measures, as the deck's .md says to say it.
-//   3. A step a college is documenting now says so in words, beside its dashed
-//      outline (color is never the only signal), and each learner carries the
-//      words "Illustrative learner and photo".
+//   3. A step a college plans to document says so in words, beside its dashed
+//      outline (color is never the only signal), each learner carries the words
+//      "Illustrative learner and photo", and no path says a college is building
+//      it (Sam, 2026-10-06: soften Mt. SAC to "plans to"; drop the NOCE claim).
 //   4. The funding scene keeps the funding vocabulary (CLAUDE.md): never money,
 //      pool, earn or draw for an institution.
 //   5. Five barriers, four words or fewer, each at the top of the scene that
@@ -77,14 +78,14 @@ CUTS.forEach(({ tag, file, other }) => {
   check("c0 the music cut runs 100 s", w.__film.dur === 100 && w.__film.narrated === false);
   const shown = (t) => { w.__film.seek(t); return Array.from(d.querySelectorAll(".sc")).filter((s) => s.style.visibility === "visible").map((s) => s.textContent.replace(/\s+/g, " ")).join(" | "); };
   const FIG = [
-    [18.5, ["52,394", "250,000", "Noncredit and not-for-credit learners will be key to meeting this goal.", "7,500 noncredit learners a year"]],
+    [18.5, ["52,452", "250,000", "Noncredit and not-for-credit learners will be key to meeting this goal.", "7,500 noncredit learners a year"]],
     [28.5, ["1 in 4", "29,649", "+34%", "$7,833 to $10,479", "for students working before they enrolled, a year after finishing or leaving", "6,291 of 2012–13"]],
     [38.5, ["Cabrillo College", "8 units of CPL"]],
     [48.5, ["Moreno Valley College", "8.5 units of CPL", "emergency management"]],
     [58.5, ["Mt. San Antonio College", "22 units of CPL for the LVN license", "College of the Desert awards 22 units", "Los Angeles Pierce College awards a similar 22", "Associate degree in nursing (ADN)"]],
-    [66.5, ["North Orange Continuing Education", "CompTIA A+ already carries credit at 21 colleges"]],
+    [66.5, ["North Orange Continuing Education", "CompTIA A+, Network+ and Security+ certifications", "9 units of CPL for all three, as at Saddleback College", "Twelve colleges award credit for all three"]],
     [76.5, ["78%", "28 colleges", "48% across all CPL", "49", "253 college sites", "3,269", "about 4% of all CPL"]],
-    [87.5, ["$35 million", "$2 million ongoing", "$50,000 grants", "North Orange Continuing Education, Mt. San Antonio College and San Diego College of Continuing Education", "$1.8 million", "credit and noncredit FTES together size every max award"]],
+    [87.5, ["$35 million", "$7 million ongoing", "$50,000 grants", "North Orange Continuing Education, Mt. San Antonio College and San Diego College of Continuing Education", "$1.8 million", "credit and noncredit FTES together size every max award"]],
     [99.5, ["Mirror a course", "Post your certificates in MAP", "Invite your completers back", "Our Time is Now!"]],
   ];
   FIG.forEach(([t, want]) => {
@@ -99,8 +100,10 @@ CUTS.forEach(({ tag, file, other }) => {
   const wip = people.flatMap((p) => p.steps.filter((s) => s[1] === "wip"));
   w.__film.seek(58.5);
   const dashed = Array.from(d.querySelectorAll(".sc div")).filter((e) => /dashed/.test(e.style.border || ""));
-  check("c3 a step being documented carries the words, not only the dashed outline",
-    wip.length === 2 && dashed.length >= 1 && dashed.every((e) => e.textContent.startsWith(cfg.facts.wip)) && /documented now/i.test(cfg.facts.wip));
+  check("c3 the step a college plans to document carries the words, not only the dashed outline",
+    wip.length === 1 && dashed.length === 1 && dashed.every((e) => e.textContent.startsWith(cfg.facts.wip)) && /planned/i.test(cfg.facts.wip));
+  check("c3b no path says a college is building it or documenting it now",
+    !/in development|is building|documenting\b|documented now/i.test(JSON.stringify(people) + cfg.facts.wip));
   check("c4 exactly one gold CPL step per learner, where the path is on record",
     people.every((p) => p.steps.filter((s) => s[1] === "cpl" || s[1] === "wip").length === 1));
   // 4. the funding scene's vocabulary
