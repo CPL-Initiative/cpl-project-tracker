@@ -4,7 +4,7 @@
   "supabase_tables": 95,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 595,
+  "file_datasets": 596,
   "external_services": 160,
   "consumers": 417,
   "workflows": 44,
@@ -1671,7 +1671,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 811
+     "line": 815
     }
    ],
    "main_committers": []
@@ -1786,7 +1786,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 813
+     "line": 817
     }
    ],
    "main_committers": []
@@ -1798,7 +1798,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 814
+     "line": 818
     }
    ],
    "main_committers": []
@@ -1914,7 +1914,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 812
+     "line": 816
     }
    ],
    "main_committers": []
@@ -11857,6 +11857,19 @@
     "workflow:program-course-fetch.yml"
    ]
   },
+  "file:kb/program_requirements_maps_sample.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_pilot.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_pilot/map_cr_by_course.json": {
    "consumers": [
     {
@@ -19178,7 +19191,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 358
+     "line": 362
     }
    ],
    "main_committers": []
@@ -19190,7 +19203,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 364
+     "line": 368
     }
    ],
    "main_committers": []
@@ -21079,7 +21092,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 381
+     "line": 385
     },
     {
      "id": "script:kb/_program_source_census.py",

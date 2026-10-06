@@ -772,6 +772,21 @@ check(any(p["college"] == "Riverside City College" and p["control_number"] == "2
       "Sam's pick (sheet 25): Riverside City's Culinary Arts certificate, 22804")
 check(all(p.get("why") for p in sample), "every pick says why it is in")
 
+# ── The second list: programs whose map is already read (S337) ───────────────
+with open(P.MAPS_FILE) as fh:
+    maps = json.load(fh)["programs"]
+check(maps and not ({(p["college"], p["control_number"]) for p in maps}
+                    & {(p["college"], p["control_number"]) for p in sample}),
+      "the maps list never repeats one of Sam's checked 20")
+check(all(p.get("why") and os.path.exists(os.path.join(ROOT, p["sequence"])) for p in maps),
+      "every program on the maps list names its read map, and the file is there")
+check(set(P.SAMPLES) == {"pilot", "maps", "all"} and P.SAMPLES["pilot"] == [P.SAMPLE_FILE],
+      "--sample pilot reads Sam's 20 alone")
+import _program_requirements_file as F  # noqa: E402
+slugs = F.college_slugs()
+check(all(p["college"] in slugs for p in maps),
+      "the filer has a file-name slug for every college on the maps list")
+
 # ── The capture pass writes nothing and runs on no schedule ──────────────────
 with open(os.path.join(ROOT, ".github", "workflows", "program-requirements-pilot.yml")) as fh:
     wf = fh.read()
