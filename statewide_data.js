@@ -369864,6 +369864,83 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICI-WFRT1-1-001",
+      "exhibit_ids": [
+        "MAPICI-WFRT1-1-001"
+      ],
+      "title": "Wildland Fire Refresher Training - Certification: NWCG RT-130",
+      "unified_title": "Wildland Fire Refresher Training - Certification: NWCG RT-130",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Wildland Fire Refresher Training - Certification: NWCG RT-130"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cerro Coso Community College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "FFT C060",
+          "credit": "0.25 hours in  (CB02)\tWildland Fire Safety Training Annual Refresher (WFSTAR)"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-WFRT1-1-001",
+          "title": "Wildland Fire Refresher Training - Certification: NWCG RT-130",
+          "units": 0.25,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cerro Coso Community College": 0.25
+      },
+      "adopter_lines": {
+        "Cerro Coso Community College": 1
+      },
+      "adopter_rec_idx": {
+        "Cerro Coso Community College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.25,
+      "peer_units_max": 0.25,
+      "rec_units_total": 0.25
+    },
+    {
       "exhibit_id": "MAPCBEN-ACI-1-001",
       "exhibit_ids": [
         "MAPCBEN-ACI-1-001"
@@ -431822,11 +431899,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Cerro Coso Community College",
-        "credit_recs": 22,
-        "exhibits": 11,
+        "credit_recs": 23,
+        "exhibits": 12,
         "disciplines": 3,
         "ccc_collaborative": 13,
-        "industry_certs": 19,
+        "industry_certs": 20,
         "pct": 0.2
       },
       {
@@ -431932,9 +432009,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1519,
-        "exhibits": 567,
-        "courses": 656,
+        "credit_recs": 1520,
+        "exhibits": 568,
+        "courses": 657,
         "colleges": 52,
         "ccc_collaborative": 535,
         "pct": 10.8
@@ -432130,8 +432207,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3829,
-        "exhibits": 1191,
+        "credit_recs": 3830,
+        "exhibits": 1192,
         "colleges": 79,
         "pct": 27.3
       },
@@ -432174,8 +432251,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2862,
-        "exhibits": 1133,
+        "credit_recs": 2863,
+        "exhibits": 1134,
         "colleges": 76,
         "pct": 20.4
       },
@@ -432239,8 +432316,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12405,
-        "exhibits": 5796,
+        "credit_recs": 12406,
+        "exhibits": 5797,
         "colleges": 97,
         "disciplines": 23,
         "pct": 88.5
@@ -432665,8 +432742,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-06T16:07:37",
-  "total_credit_recs": 14023,
+  "generated_at": "2026-10-06T18:29:27",
+  "total_credit_recs": 14024,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

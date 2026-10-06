@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-06T16:08:23.151394+00:00",
+  "scraped_at": "2026-10-06T18:30:10.035914+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28677,
+    "jst": 28682,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -205,14 +205,14 @@
       "jst": 561,
       "star": true
     },
+    "Victor Valley College": {
+      "vets": 97,
+      "jst": 345,
+      "star": true
+    },
     "Cerro Coso Community College": {
       "vets": 115,
       "jst": 185,
-      "star": true
-    },
-    "Victor Valley College": {
-      "vets": 97,
-      "jst": 339,
       "star": true
     },
     "Mission College": {
@@ -247,7 +247,7 @@
     },
     "Lemoore College": {
       "vets": 61,
-      "jst": 23,
+      "jst": 20,
       "star": false
     },
     "East Los Angeles College": {
@@ -257,7 +257,7 @@
     },
     "Evergreen Valley College": {
       "vets": 87,
-      "jst": 113,
+      "jst": 114,
       "star": true
     },
     "Oxnard College": {
@@ -320,14 +320,14 @@
       "jst": 135,
       "star": false
     },
-    "Saddleback College": {
-      "vets": 873,
+    "Laney College": {
+      "vets": 96,
       "jst": 59,
       "star": false
     },
-    "Laney College": {
-      "vets": 96,
-      "jst": 58,
+    "Saddleback College": {
+      "vets": 873,
+      "jst": 59,
       "star": false
     },
     "West Valley College": {

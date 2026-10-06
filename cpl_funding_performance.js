@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 44318,
-  "pa": 40328,
+  "pe": 44324,
+  "pa": 40334,
   "ppa": 118,
-  "p2": 3184,
-  "p3": 14771,
+  "p2": 3186,
+  "p3": 14773,
   "pp": 6,
   "ppe": 128,
   "pac": 3033,
-  "ptc": 2643,
-  "pe_u": 1437768.7,
-  "pa_u": 226118.4,
+  "ptc": 2645,
+  "pe_u": 1437930.7,
+  "pa_u": 226145.4,
   "ppa_u": 713.5,
   "ppe_u": 6788.5,
-  "pac_u": 26235.45,
-  "ptc_u": 22576.0,
-  "p3_u": 74824.7,
+  "pac_u": 26232.45,
+  "ptc_u": 22625.0,
+  "p3_u": 74873.7,
   "pp_u": 63.5
  },
  "colleges": {
@@ -662,10 +662,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Evergreen Valley": {
-   "pe": 112,
-   "pe_u": 5211.5,
-   "pa": 111,
-   "pa_u": 669.5,
+   "pe": 113,
+   "pe_u": 5223.5,
+   "pa": 112,
+   "pa_u": 681.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -1004,10 +1004,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 945.0
   },
   "Laney": {
-   "pe": 57,
-   "pe_u": 2437.0,
-   "pa": 57,
-   "pa_u": 342.0,
+   "pe": 58,
+   "pe_u": 2468.0,
+   "pa": 58,
+   "pa_u": 348.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1641,7 +1641,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 316,
    "pe_u": 9530.0,
    "pa": 311,
-   "pa_u": 2647.0,
+   "pa_u": 2644.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 59,
@@ -1652,7 +1652,7 @@ window.CPL_FUNDING_PERF = {
    "ppe": 0,
    "ppe_u": 0.0,
    "pac": 107,
-   "pac_u": 876.0,
+   "pac_u": 873.0,
    "ptc": 87,
    "ptc_u": 748.0
   },
@@ -1813,7 +1813,7 @@ window.CPL_FUNDING_PERF = {
    "p2_suppressed": true,
    "p3": null,
    "p3_suppressed": true,
-   "p3_u": 47.0,
+   "p3_u": 96.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": 12,
@@ -1822,7 +1822,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 374.2,
    "ptc": null,
    "ptc_suppressed": true,
-   "ptc_u": 47.0
+   "ptc_u": 96.0
   },
   "Santa Barbara": {
    "pe": 86,
@@ -2070,10 +2070,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Victor Valley": {
-   "pe": 336,
-   "pe_u": 13366.0,
-   "pa": 336,
-   "pa_u": 1008.0,
+   "pe": 342,
+   "pe_u": 13605.0,
+   "pa": 342,
+   "pa_u": 1026.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -2110,10 +2110,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 320.0
   },
   "West Hills Lemoore": {
-   "pe": 304,
-   "pe_u": 2148.0,
-   "pa": 297,
-   "pa_u": 1023.0,
+   "pe": 302,
+   "pe_u": 2028.0,
+   "pa": 295,
+   "pa_u": 1017.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 21.0,
@@ -2609,8 +2609,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Evergreen Valley": {
    "Military": {
-    "pe": 112,
-    "pa": 111,
+    "pe": 113,
+    "pa": 112,
     "p3": 0
    }
   },
@@ -2764,8 +2764,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "Military": {
-    "pe": 57,
-    "pa": 57,
+    "pe": 58,
+    "pa": 58,
     "p3": 0
    }
   },
@@ -3733,8 +3733,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Victor Valley": {
    "Military": {
-    "pe": 336,
-    "pa": 336,
+    "pe": 342,
+    "pa": 342,
     "p3": 0
    }
   },
@@ -3775,8 +3775,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 21,
-    "pa": 20,
+    "pe": 19,
+    "pa": 18,
     "p3": 0
    }
   },
@@ -3901,7 +3901,7 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1311,
    "pa": 1287,
-   "p3": 1164
+   "p3": 1166
   },
   "Industry Certification | Military": {
    "pe": 54,
@@ -3946,8 +3946,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28101,
-   "pa": 25898,
+   "pe": 28107,
+   "pa": 25904,
    "p3": 2580
   },
   "Military | Other": {
@@ -4003,14 +4003,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1437768.7,
-   "pa_u": 226118.4,
-   "p3_u": 74824.7
+   "pe_u": 1437930.7,
+   "pa_u": 226145.4,
+   "p3_u": 74873.7
   },
   "map": {
-   "pe_u": 1444557.2,
-   "pa_u": 226831.9,
-   "p3_u": 74888.2
+   "pe_u": 1444719.2,
+   "pa_u": 226858.9,
+   "p3_u": 74937.2
   },
   "ratio": {
    "pe_u": 1.0047,
@@ -4058,8 +4058,8 @@ window.CPL_FUNDING_PERF = {
   "Shasta": false,
   "LA Pierce": false,
   "Fullerton": true,
-  "Cerro Coso": true,
   "Victor Valley": true,
+  "Cerro Coso": true,
   "Mission": true,
   "Ventura": false,
   "LA Mission": true,
@@ -4081,8 +4081,8 @@ window.CPL_FUNDING_PERF = {
   "LA Harbor": true,
   "Lassen": true,
   "Irvine": false,
-  "Saddleback": false,
   "Laney": false,
+  "Saddleback": false,
   "West Valley": true,
   "Skyline": false,
   "Copper Mountain": true,
@@ -4334,15 +4334,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 561,
    "pct": 1.9278
   },
+  "Victor Valley": {
+   "vets": 97,
+   "jst": 345,
+   "pct": 3.5567
+  },
   "Cerro Coso": {
    "vets": 115,
    "jst": 185,
    "pct": 1.6087
-  },
-  "Victor Valley": {
-   "vets": 97,
-   "jst": 339,
-   "pct": 3.4948
   },
   "Mission": {
    "vets": 158,
@@ -4376,8 +4376,8 @@ window.CPL_FUNDING_PERF = {
   },
   "West Hills Lemoore": {
    "vets": 61,
-   "jst": 23,
-   "pct": 0.377
+   "jst": 20,
+   "pct": 0.3279
   },
   "East LA": {
    "vets": 637,
@@ -4386,8 +4386,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Evergreen Valley": {
    "vets": 87,
-   "jst": 113,
-   "pct": 1.2989
+   "jst": 114,
+   "pct": 1.3103
   },
   "Oxnard": {
    "vets": 118,
@@ -4449,15 +4449,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 135,
    "pct": 0.6221
   },
+  "Laney": {
+   "vets": 96,
+   "jst": 59,
+   "pct": 0.6146
+  },
   "Saddleback": {
    "vets": 873,
    "jst": 59,
    "pct": 0.0676
-  },
-  "Laney": {
-   "vets": 96,
-   "jst": 58,
-   "pct": 0.6042
   },
   "West Valley": {
    "vets": 48,

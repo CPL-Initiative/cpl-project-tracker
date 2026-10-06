@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-06T16:08:22.629Z",
+  "scraped_at": "2026-10-06T18:30:09.869Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -338,15 +338,15 @@
         },
         {
           "college": "San Bernardino Valley College",
-          "students": 373,
-          "units": 2647,
-          "avgUnits": 7.096514745308311,
+          "students": 374,
+          "units": 2644,
+          "avgUnits": 7.06951871657754,
           "transcriptionRate": 28.3,
-          "avgTranscribed": 2.005361930294906,
+          "avgTranscribed": 2,
           "criteriaMetCount": 2,
           "militaryStudents": 207,
-          "nonMilitaryStudents": 171,
-          "apprenticeStudents": 68,
+          "nonMilitaryStudents": 172,
+          "apprenticeStudents": 69,
           "savings": 4240730,
           "yearImpact": 16046302,
           "transcribedUnits": 748
@@ -428,18 +428,18 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 587,
+          "students": 592,
           "units": 2145.7,
-          "avgUnits": 3.655366269165247,
-          "transcriptionRate": 2.2,
-          "avgTranscribed": 0.08006814310051108,
+          "avgUnits": 3.624493243243243,
+          "transcriptionRate": 2.5,
+          "avgTranscribed": 0.08952702702702703,
           "criteriaMetCount": 1,
           "militaryStudents": 382,
-          "nonMilitaryStudents": 205,
+          "nonMilitaryStudents": 210,
           "apprenticeStudents": 10,
           "savings": 3275796,
           "yearImpact": 12336226.6,
-          "transcribedUnits": 47
+          "transcribedUnits": 53
         },
         {
           "college": "Fullerton College",
@@ -743,17 +743,17 @@
         },
         {
           "college": "Evergreen Valley College",
-          "students": 117,
-          "units": 675.5,
-          "avgUnits": 5.773504273504273,
+          "students": 118,
+          "units": 687.5,
+          "avgUnits": 5.826271186440678,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 113,
+          "militaryStudents": 114,
           "nonMilitaryStudents": 4,
           "apprenticeStudents": 0,
-          "savings": 1158235,
-          "yearImpact": 4061856.5,
+          "savings": 1178995,
+          "yearImpact": 4134660.5,
           "transcribedUnits": 0
         },
         {
@@ -788,17 +788,17 @@
         },
         {
           "college": "Laney College",
-          "students": 59,
-          "units": 342,
-          "avgUnits": 5.796610169491525,
+          "students": 60,
+          "units": 348,
+          "avgUnits": 5.8,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 58,
+          "militaryStudents": 59,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
-          "savings": 591660,
-          "yearImpact": 2074914,
+          "savings": 602040,
+          "yearImpact": 2111316,
           "transcribedUnits": 0
         },
         {
@@ -953,32 +953,32 @@
         },
         {
           "college": "Victor Valley College",
-          "students": 339,
-          "units": 1014,
-          "avgUnits": 2.9911504424778763,
+          "students": 345,
+          "units": 1032,
+          "avgUnits": 2.991304347826087,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 339,
+          "militaryStudents": 345,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1743840,
-          "yearImpact": 6115536,
+          "savings": 1774980,
+          "yearImpact": 6224742,
           "transcribedUnits": 0
         },
         {
           "college": "Lemoore College",
-          "students": 316,
-          "units": 1047,
-          "avgUnits": 3.3132911392405062,
-          "transcriptionRate": 18.1,
-          "avgTranscribed": 0.5981012658227848,
+          "students": 313,
+          "units": 1038,
+          "avgUnits": 3.31629392971246,
+          "transcriptionRate": 18.2,
+          "avgTranscribed": 0.6038338658146964,
           "criteriaMetCount": 0,
-          "militaryStudents": 23,
+          "militaryStudents": 20,
           "nonMilitaryStudents": 294,
           "apprenticeStudents": 1,
-          "savings": 1040580,
-          "yearImpact": 4945062,
+          "savings": 1025010,
+          "yearImpact": 4890459,
           "transcribedUnits": 189
         },
         {
@@ -1772,19 +1772,19 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "52,452",
+      "value": "52,463",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,677"
+          "value": "28,682"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,866"
+          "value": "23,872"
         },
         {
           "label": "Apprentice",
-          "value": "855"
+          "value": "856"
         }
       ]
     },
@@ -1828,7 +1828,7 @@
     },
     {
       "title": "SAVINGS",
-      "value": "$340M",
+      "value": "$341M",
       "breakdowns": [
         {
           "label": "Military",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 52452,
-    "Units": 226834.90000000002,
-    "TranscribedUnits": 74888.2,
-    "Savings": 340473224,
-    "YearImpact": 1346002904.3999999,
-    "MilitaryStudents": 28677,
-    "NonMilitaryStudents": 23866,
-    "AprenticeStudents": 855,
-    "AverageUnits": 4.324618699000991,
-    "TranscribedAverage": 1.427747273697857
+    "Students": 52463,
+    "Units": 226858.90000000002,
+    "TranscribedUnits": 74894.2,
+    "Savings": 340519934,
+    "YearImpact": 1346166713.3999999,
+    "MilitaryStudents": 28682,
+    "NonMilitaryStudents": 23872,
+    "AprenticeStudents": 856,
+    "AverageUnits": 4.324169414635077,
+    "TranscribedAverage": 1.4275622819892113
   }
 }
