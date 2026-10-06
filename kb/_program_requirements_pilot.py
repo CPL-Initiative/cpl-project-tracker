@@ -385,9 +385,42 @@ def closed_from_rows(rows: list[dict]) -> list[dict]:
 
 def fetch_registry(college: str) -> dict:
     rows = _get("program_source_registry?select=college,catalog_url,catalog_year,"
-                "catalog_platform,catalog_format,sequence_source,sequence_url"
+                "catalog_platform,catalog_format,sequence_source,sequence_url,procedure"
                 "&college=eq.%s" % q(college))
     return rows[0] if rows else {}
+
+
+def procedure_catalog(procedure) -> dict | None:
+    """The catalog step a college's procedure record names, when it names one:
+    {"start": <page>, "follow": <link text>, "format": "pdf" | "html"}. Santa
+    Monica's online catalog links no page for its Barbering A.S. on any host
+    (run 37488858548, S337), and its front page offers the whole catalog as one
+    PDF, so its procedure says: open the front page, follow "Download the Full
+    Catalog", read the PDF (S339). Anything malformed is ignored, never guessed at."""
+    step = (procedure or {}).get("catalog") if isinstance(procedure, dict) else None
+    if not isinstance(step, dict):
+        return None
+    start, follow = step.get("start"), step.get("follow")
+    fmt = step.get("format") or "pdf"
+    if not (isinstance(start, str) and start.startswith("http") and isinstance(follow, str)
+            and follow.strip() and fmt in ("pdf", "html")):
+        return None
+    return {"start": start, "follow": follow.strip(), "format": fmt}
+
+
+def follow_link(links: list[dict], follow: str) -> str | None:
+    """The address of the link a procedure names by its text: an exact match
+    (case and spacing aside) first, then the first link whose text contains it."""
+    want = " ".join(follow.split()).lower()
+    seen = [(" ".join((ln.get("text") or "").split()).lower(), ln.get("href") or "")
+            for ln in links]
+    for text, href in seen:
+        if text == want and href.startswith("http"):
+            return href
+    for text, href in seen:
+        if want in text and href.startswith("http"):
+            return href
+    return None
 
 
 # ── The browser half (runner only) ──────────────────────────────────────────
@@ -759,10 +792,24 @@ def capture(reader, entry: dict, cache: dict) -> dict:
            "closed_list": courses,
            "load_id": rows[0]["load_id"] if rows else None}
     start = reg.get("catalog_url")
+    as_pdf = False
+    step = procedure_catalog(reg.get("procedure"))
+    if step:
+        # The college's procedure names where its catalog starts and which link
+        # to follow; when the link is missing, say so and read the registry's address.
+        got = load(reader, step["start"], cache, False)
+        href = follow_link(got.get("links") or [], step["follow"])
+        rec["procedure_step"] = {
+            "start": step["start"], "follow": step["follow"], "format": step["format"],
+            "status": got.get("status"), "access": got.get("access"), "href": href,
+            "link_sample": None if href else [[(ln.get("text") or "")[:60], ln.get("href")]
+                                              for ln in (got.get("links") or [])[:40]]}
+        if href:
+            start, as_pdf = href, step["format"] == "pdf"
     if not start:
         rec.update(found=None, note="the registry holds no catalog address")
         return rec
-    if reg.get("catalog_format") in ("single_pdf",) or start.lower().endswith(".pdf"):
+    if as_pdf or reg.get("catalog_format") in ("single_pdf",) or start.lower().endswith(".pdf"):
         pdf = read_pdf(reader, start, cache)
         pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
         run = pick_pdf_pages(pages, program, courses)

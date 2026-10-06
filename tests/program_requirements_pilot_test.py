@@ -216,6 +216,70 @@ check([t["url"] for t in rec.get("trail") or []] == [HOME, CUL_PAGE],
 check(rec.get("closed_list") and rec["closed_list"][0].get("code") == "CUL 20",
       "the record carries the closed list in the scorer's shape")
 
+# ── A procedure record names the catalog's start page and the link to follow ─
+# Santa Monica's online catalog links no page for its Barbering A.S. (run
+# 37488858548); its procedure record (S339) says: open the front page, follow
+# "Download the Full Catalog", read the PDF.
+SMC_HOME = "https://catalog.example.edu/current/index.php"
+SMC_PDF = "https://catalog.example.edu/mime/media/full-catalog.pdf"
+STEP = {"catalog": {"start": SMC_HOME, "follow": "Download the Full Catalog", "format": "pdf"}}
+check(P.procedure_catalog(STEP) == {"start": SMC_HOME, "follow": "Download the Full Catalog", "format": "pdf"}
+      and P.procedure_catalog(None) is None and P.procedure_catalog({"v": 1, "hosts": []}) is None
+      and P.procedure_catalog({"catalog": {"start": "catalog.smc.edu", "follow": "x"}}) is None
+      and P.procedure_catalog({"catalog": {"start": SMC_HOME, "follow": " "}}) is None
+      and P.procedure_catalog({"catalog": {"start": SMC_HOME, "follow": "x", "format": "docx"}}) is None,
+      "a procedure's catalog step is read only when it names an http start page, link text and pdf or html")
+LINKS = [{"text": "Download the Full Catalog (PDF archive 2019)", "href": SMC_HOME + "?old"},
+         {"text": "  Download   the full catalog ", "href": SMC_PDF},
+         {"text": "Catalog Home", "href": SMC_HOME}]
+check(P.follow_link(LINKS, "Download the Full Catalog") == SMC_PDF
+      and P.follow_link(LINKS[:1], "Download the Full Catalog") == SMC_HOME + "?old"
+      and P.follow_link(LINKS, "Course Descriptions") is None
+      and P.follow_link([{"text": "Download the Full Catalog", "href": "javascript:void(0)"}],
+                        "Download the Full Catalog") is None,
+      "the link is matched by its text, an exact match before a containing one, and only to an http address")
+BARB = [{"course_control_number": "CCC%d" % i, "course_code": c, "course_title": c, "units": 3,
+         "cid": None, "course_college": None, "load_id": "L2"}
+        for i, c in enumerate(["COSM 10A", "COSM 10B", "COSM 11A", "COSM 11B"])]
+smc_pages = {SMC_HOME: {"title": "Catalog", "h1": "", "body": "Santa Monica College catalog", "content": "",
+                        "links": LINKS, "courselists": [], "clickables": []}}
+pdf_pages = ["Front matter", "Index of programs", "Barbering, Associate in Science\nCOSM 10A 3\nCOSM 10B 3\n"
+             "COSM 11A 3\nCOSM 11B 3\nTotal 12", "Biology"]
+read = []
+
+
+def _smc_pdf(reader, url, cache):
+    read.append(url)
+    return {"url": url, "access": "ok", "status": 200, "bytes": 1000, "pages": pdf_pages, "extractor": "pypdf"}
+
+
+saved = (P.fetch_program, P.fetch_courses, P.fetch_registry, P.read_pdf)
+P.fetch_program = lambda college, cn: {"program_title": "Barbering", "award": "A.S. Degree", "status": "Active"}
+P.fetch_courses = lambda college, cn: BARB
+P.read_pdf = _smc_pdf
+ENTRY = {"college": "Santa Monica College", "control_number": "43767", "shape": "map", "title": "Barbering"}
+try:
+    P.fetch_registry = lambda college: {"catalog_url": SMC_HOME, "catalog_platform": "custom_html",
+                                        "catalog_format": "unknown", "procedure": STEP}
+    rec_smc = P.capture(_Reader(smc_pages), ENTRY, {})
+    P.fetch_registry = lambda college: {"catalog_url": SMC_HOME, "catalog_platform": "custom_html",
+                                        "catalog_format": "unknown",
+                                        "procedure": {"catalog": {"start": SMC_HOME, "follow": "Full Catalog 2027"}}}
+    rec_miss = P.capture(_Reader(smc_pages), ENTRY, {})
+finally:
+    P.fetch_program, P.fetch_courses, P.fetch_registry, P.read_pdf = saved
+check(rec_smc.get("method") == "pdf_pages" and (rec_smc.get("source") or {}).get("url") == SMC_PDF
+      and read == [SMC_PDF] and rec_smc.get("coverage") == 1.0
+      and (rec_smc.get("source") or {}).get("pages") == [3]
+      and (rec_smc.get("procedure_step") or {}).get("href") == SMC_PDF,
+      "the capture opens the procedure's start page, follows its link and reads that PDF: %s %s"
+      % (rec_smc.get("method"), (rec_smc.get("source") or {}).get("url")))
+check(rec_miss.get("method") == "html_page" and (rec_miss.get("procedure_step") or {}).get("href") is None
+      and (rec_miss.get("procedure_step") or {}).get("link_sample")
+      and read == [SMC_PDF],
+      "a link the start page does not carry is reported with the page's links, and the capture "
+      "reads the registry's address instead of guessing")
+
 OFFSITE = "https://www.example.edu/programs/culinary-arts-certificate.html"
 pages2 = {
     HOME: {**pages[HOME], "links": [
