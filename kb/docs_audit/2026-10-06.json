@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1068,
-    "bytes": 11191450,
+    "files": 1070,
+    "bytes": 11205835,
     "over_budget": 6,
-    "handoff_max": 338,
+    "handoff_max": 339,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59932,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 118,
-        "bytes": 3333175,
+        "bytes": 3336007,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10165,
+        "bytes": 9821,
         "over": 0
       },
       "lessons": {
-        "files": 78,
-        "bytes": 2279069,
+        "files": 79,
+        "bytes": 2284115,
         "over": 2
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 35,
-        "bytes": 312248,
+        "bytes": 313548,
         "over": 1
       },
       "handoff": {
-        "files": 309,
-        "bytes": 2555132,
+        "files": 310,
+        "bytes": 2560683,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 59
     },
     "vault": {
-      "files": 3671,
-      "bytes": 1785570645,
-      "heavy_bytes": 816349546,
+      "files": 3675,
+      "bytes": 1785602579,
+      "heavy_bytes": 816351810,
       "heavy_share": 0.457,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -414,13 +414,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 700640,
+        "bytes": 701456,
         "limit": 150000,
         "lane": "other",
-        "over_by": 550640,
-        "ratio": 4.67
+        "over_by": 551456,
+        "ratio": 4.68
       },
-      "message": "700,640 B is 4.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "701,456 B is 4.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -688,10 +688,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12407177,
+        "bytes": 12409436,
         "kind": "file"
       },
-      "message": "12,407,177 B single file inside the vault"
+      "message": "12,409,436 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -738,10 +738,10 @@
       "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
-        "bytes": 10095889,
+        "bytes": 10095891,
         "kind": "file"
       },
-      "message": "10,095,889 B single file inside the vault"
+      "message": "10,095,891 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -838,10 +838,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715709,
+        "bytes": 6715711,
         "kind": "file"
       },
-      "message": "6,715,709 B single file inside the vault"
+      "message": "6,715,711 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -958,10 +958,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007519,
+        "bytes": 3007520,
         "kind": "file"
       },
-      "message": "3,007,519 B single file inside the vault"
+      "message": "3,007,520 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

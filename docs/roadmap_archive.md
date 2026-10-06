@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-06)
+
+- 2026-10-04 (S330 SkyRoutine): KB note `methodology-an-advisor-asserts-what-its-fact-list-does-not-say`; handoff 331; the college page read submits a form and skips a gone host; Cerritos reads 4 and 5 (#1859): Schedule+ sections, the Credit by Exam route, Statewide Career Pathways gone, the B.S. on the Chancellor's Office list; the Ironworker pathway film draft v1 (`prototype/ironworker_video/`); open-asks sheet 36.
+- 2026-10-04 (S329 SkyRunner): Sierra's statement deployed; the college page read and three Cerritos reads (#1858): classroom hours, the B.S. start and proposed course list, the noncredit and high school lines; the registry's procedure columns; `docs/reference/scheduled_sessions.md` for Sam's routine; open-asks sheet 35; handoff 330.
+
 ## INDEX update-history entries rotated out (2026-10-02)
 
 - **2026-09-30 (S304 SkyHinge checkpoint)** — the side menu on one line per item ([#1767](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1767)); 0 hours reads as noncredit ([#1768](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1768)); the My College register in all nine regions, keyed by MAP's names ([#1769](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1769)); card 9's re-mint to ATHL ([#1770](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1770)); card 7's reported cards and the writer's declared create ([#1771](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1771)). Handoff 305.

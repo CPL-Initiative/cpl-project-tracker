@@ -10535,7 +10535,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 82,
+   "count": 83,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12374,6 +12374,27 @@
      "title": "Test suite speed \u2014 lessons",
      "type": null,
      "updated": "2026-08-29"
+    },
+    {
+     "created": "2026-10-06",
+     "governs": [
+      "scripts/library_file.py",
+      "docs/reference/library_filer.md",
+      "privacy.html",
+      "kb/receipts/library_filed/"
+     ],
+     "path": "docs/library_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "library",
+      "drive",
+      "filer",
+      "oauth"
+     ],
+     "title": "The Library and its filer \u2014 lessons",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-08-26",
@@ -14935,8 +14956,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 309,
+   "count": 310,
    "docs": [
+    {
+     "created": "2026-10-06",
+     "governs": [],
+     "n": 339,
+     "path": "docs/session_339_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "noncredit-summit",
+      "film",
+      "program-requirements-harvest"
+     ],
+     "title": "the Summit film re-cut, the Library filer's first run, and 338's carried queue",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-06",
      "governs": [],
@@ -20200,5 +20238,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1055
+ "total": 1057
 }
