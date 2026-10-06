@@ -58842,6 +58842,167 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPCXH-CBE-2-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-2-1-001"
+      ],
+      "title": "Credit by Exam - Long Beach Unified School District - Introduction to Forensics",
+      "unified_title": "Credit by Exam - Long Beach Unified School District - Introduction to Forensics",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Long Beach Unified School District - Introduction to Forensics"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "ADJUS 255",
+          "credit": "3 hours in Introduction to Forensics"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-2-1-001",
+          "title": "Credit by Exam - Long Beach Unified School District - Introduction to Forensics",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 3.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPICI-SCFF-1-001",
       "exhibit_ids": [
         "MAPICI-SCFF-1-001"
@@ -159779,6 +159940,136 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 9.0
     },
     {
+      "exhibit_id": "MAPCBEH-EARS-1-001",
+      "exhibit_ids": [
+        "MAPCBEH-EARS-1-001"
+      ],
+      "title": "ASE A1 — Engine Repair",
+      "unified_title": "ASE A1 — Engine Repair",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.93,
+      "confidence_issuer": 0.95,
+      "quality_flag": "",
+      "raw_titles": [
+        "Engine and Related Systems ASE A1"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "San Diego Miramar College"
+      ],
+      "potential": 68,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 69,
+      "credit_recs": [
+        {
+          "course": "AUTO 156G",
+          "credit": "2 hours in Engine and Related Systems"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCBEH-EARS-1-001",
+          "title": "Engine and Related Systems ASE A1",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "San Diego Miramar College": 2.0
+      },
+      "adopter_lines": {
+        "San Diego Miramar College": 1
+      },
+      "adopter_rec_idx": {
+        "San Diego Miramar College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
       "exhibit_id": "MAPICI-AMTT-1-001",
       "exhibit_ids": [
         "MAPICI-AMTT-1-001"
@@ -178524,162 +178815,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 166.0
     },
     {
-      "exhibit_id": "MAPCBEH-EARS-1-001|MAPCXS-CBEA-1-001",
-      "exhibit_ids": [
-        "MAPCBEH-EARS-1-001",
-        "MAPCXS-CBEA-1-001"
-      ],
-      "title": "ASE A1 — Engine Repair",
-      "unified_title": "ASE A1 — Engine Repair",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.93,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam AUTO A1 Engine Repair",
-        "Engine and Related Systems ASE A1"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 3,
-      "adopter_names": [
-        "Barstow Community College",
-        "Las Positas College",
-        "San Diego Miramar College"
-      ],
-      "potential": 66,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 69,
-      "credit_recs": [
-        {
-          "course": "AUTO 156G",
-          "credit": "2 hours in Engine and Related Systems"
-        },
-        {
-          "course": "AUTO A1",
-          "credit": "4 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 53",
-          "credit": "4 hours in Engine Repair"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCBEH-EARS-1-001",
-          "title": "Engine and Related Systems ASE A1",
-          "units": 2.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-CBEA-1-001",
-          "title": "Credit by Exam AUTO A1 Engine Repair",
-          "units": 8.0,
-          "lines": 2
-        }
-      ],
-      "adopter_units": {
-        "Barstow Community College": 4.0,
-        "Las Positas College": 4.0,
-        "San Diego Miramar College": 2.0
-      },
-      "adopter_lines": {
-        "Barstow Community College": 1,
-        "Las Positas College": 1,
-        "San Diego Miramar College": 1
-      },
-      "adopter_rec_idx": {
-        "Barstow Community College": [
-          2
-        ],
-        "Las Positas College": [
-          1
-        ],
-        "San Diego Miramar College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 10.0
-    },
-    {
       "exhibit_id": "MAPCBEN-EP-1-001|MAPCXS-CBEA7-1-001|MAPCxS-EPIA-1-001|MAPCxS-EPIA1-1-001",
       "exhibit_ids": [
         "MAPCBEN-EP-1-001",
@@ -189488,6 +189623,198 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 9.0
     },
     {
+      "exhibit_id": "MAPICA-CO2C1-1-001",
+      "exhibit_ids": [
+        "MAPICA-CO2C1-1-001"
+      ],
+      "title": "Fire Officer — Company Officer 2A–2E (Full Series)",
+      "unified_title": "Fire Officer — Company Officer 2A–2E (Full Series)",
+      "is_classified": true,
+      "issuing_agency": "California State Fire Training (SFT)",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Company Officer 2A-2E Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130",
+        "131"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Diego Miramar College"
+      ],
+      "potential": 61,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "FIPT 323C",
+          "credit": "0.5 hours in Hazardous Materials Incident Commander"
+        },
+        {
+          "course": "FIPT 324D",
+          "credit": "0.5 hours in Intermediate Wildland Fire Behavior S-290"
+        },
+        {
+          "course": "FIPT 340",
+          "credit": "0.5 hours in Company Officer 2A: Human Resource Management for Company Officers"
+        },
+        {
+          "course": "FIPT 341",
+          "credit": "0.5 hours in Company Officer 2B: General Administration Functions for Company Officers"
+        },
+        {
+          "course": "FIPT 342",
+          "credit": "0.5 hours in Company Officer 2C: Fire Investigation and Inspection for Company Officers"
+        },
+        {
+          "course": "FIPT 343",
+          "credit": "0.5 hours in Company Officer 2D: All Risk Command Operations for Company Officers"
+        },
+        {
+          "course": "FIPT 344",
+          "credit": "0.5 hours in Company Officer 2E: Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "FIPT 345",
+          "credit": "0.5 hours in Instructor I: Instructional Methodology"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "0.5 hours in Hazardous Materials Incident Commander",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Intermediate Wildland Fire Behavior S-290",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2A: Human Resource Management for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2B: General Administration Functions for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2C: Fire Investigation and Inspection for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2D: All Risk Command Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Company Officer 2E: Wildland Incident Operations for Company Officers",
+          "cid": ""
+        },
+        {
+          "credit": "0.5 hours in Instructor I: Instructional Methodology",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-CO2C1-1-001",
+          "title": "Company Officer 2A-2E Certification",
+          "units": 4.0,
+          "lines": 8
+        }
+      ],
+      "adopter_units": {
+        "San Diego Miramar College": 4.0
+      },
+      "adopter_lines": {
+        "San Diego Miramar College": 8
+      },
+      "adopter_rec_idx": {
+        "San Diego Miramar College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
       "exhibit_id": "MAPCBES-W0C-1-001",
       "exhibit_ids": [
         "MAPCBES-W0C-1-001"
@@ -199612,197 +199939,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 12.0
     },
     {
-      "exhibit_id": "MAPICA-CO2C1-1-001",
-      "exhibit_ids": [
-        "MAPICA-CO2C1-1-001"
-      ],
-      "title": "Fire Officer — Company Officer 2A–2E (Full Series)",
-      "unified_title": "Fire Officer — Company Officer 2A–2E (Full Series)",
-      "is_classified": true,
-      "issuing_agency": "California State Fire Training (SFT)",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Company Officer 2A-2E Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130",
-        "131"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "San Diego Miramar College"
-      ],
-      "potential": 60,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 61,
-      "credit_recs": [
-        {
-          "course": "FIPT 323C",
-          "credit": "0.5 hours in Hazardous Materials Incident Commander"
-        },
-        {
-          "course": "FIPT 324D",
-          "credit": "0.5 hours in Intermediate Wildland Fire Behavior S-290"
-        },
-        {
-          "course": "FIPT 340",
-          "credit": "0.5 hours in Company Officer 2A: Human Resource Management for Company Officers"
-        },
-        {
-          "course": "FIPT 341",
-          "credit": "0.5 hours in Company Officer 2B: General Administration Functions for Company Officers"
-        },
-        {
-          "course": "FIPT 342",
-          "credit": "0.5 hours in Company Officer 2C: Fire Investigation and Inspection for Company Officers"
-        },
-        {
-          "course": "FIPT 343",
-          "credit": "0.5 hours in Company Officer 2D: All Risk Command Operations for Company Officers"
-        },
-        {
-          "course": "FIPT 344",
-          "credit": "0.5 hours in Company Officer 2E: Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "FIPT 345",
-          "credit": "0.5 hours in Instructor I: Instructional Methodology"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "0.5 hours in Hazardous Materials Incident Commander",
-          "cid": ""
-        },
-        {
-          "credit": "0.5 hours in Intermediate Wildland Fire Behavior S-290",
-          "cid": ""
-        },
-        {
-          "credit": "0.5 hours in Company Officer 2A: Human Resource Management for Company Officers",
-          "cid": ""
-        },
-        {
-          "credit": "0.5 hours in Company Officer 2B: General Administration Functions for Company Officers",
-          "cid": ""
-        },
-        {
-          "credit": "0.5 hours in Company Officer 2C: Fire Investigation and Inspection for Company Officers",
-          "cid": ""
-        },
-        {
-          "credit": "0.5 hours in Company Officer 2D: All Risk Command Operations for Company Officers",
-          "cid": ""
-        },
-        {
-          "credit": "0.5 hours in Company Officer 2E: Wildland Incident Operations for Company Officers",
-          "cid": ""
-        },
-        {
-          "credit": "0.5 hours in Instructor I: Instructional Methodology",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICA-CO2C1-1-001",
-          "title": "Company Officer 2A-2E Certification",
-          "units": 4.0,
-          "lines": 8
-        }
-      ],
-      "adopter_units": {
-        "San Diego Miramar College": 4.0
-      },
-      "adopter_lines": {
-        "San Diego Miramar College": 8
-      },
-      "adopter_rec_idx": {
-        "San Diego Miramar College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
       "exhibit_id": "MAPCxS-FPEA-1-001",
       "exhibit_ids": [
         "MAPCxS-FPEA-1-001"
@@ -200332,6 +200468,153 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 6.0,
       "peer_units_max": 6.0,
+      "rec_units_total": 9.0
+    },
+    {
+      "exhibit_id": "MAPICI-I7SS-1-001",
+      "exhibit_ids": [
+        "MAPICI-I7SS-1-001"
+      ],
+      "title": "NWCG Wildland Fire Certifications (S-190 / S-290 / ICS-100 / ICS-700 bundle)",
+      "unified_title": "NWCG Wildland Fire Certifications (S-190 / S-290 / ICS-100 / ICS-700 bundle)",
+      "is_classified": true,
+      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "S-190, S-290, ICS 100, ICS 700 Wildland Fire Certifications"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130",
+        "131"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 3,
+      "adopter_names": [
+        "Chaffey College",
+        "City College of San Francisco",
+        "Lake Tahoe Community College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "FIRETEC 10",
+          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)"
+        },
+        {
+          "course": "F SC 55",
+          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)"
+        },
+        {
+          "course": "FIR 167",
+          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-I7SS-1-001",
+          "title": "S-190, S-290, ICS 100, ICS 700 Wildland Fire Certifications",
+          "units": 9.0,
+          "lines": 3
+        }
+      ],
+      "adopter_units": {
+        "Chaffey College": 3.0,
+        "City College of San Francisco": 3.0,
+        "Lake Tahoe Community College": 3.0
+      },
+      "adopter_lines": {
+        "Chaffey College": 1,
+        "City College of San Francisco": 1,
+        "Lake Tahoe Community College": 1
+      },
+      "adopter_rec_idx": {
+        "Chaffey College": [
+          0
+        ],
+        "City College of San Francisco": [
+          1
+        ],
+        "Lake Tahoe Community College": [
+          2
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
       "rec_units_total": 9.0
     },
     {
@@ -218476,6 +218759,127 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPCXH-CBE--1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE--1-001"
+      ],
+      "title": "Credit by Exam - CalAPS - Fire Protection Organization",
+      "unified_title": "Credit by Exam - CalAPS - Fire Protection Organization",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - CalAPS - Fire Protection Organization"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FIRE 1",
+          "credit": "3 hours in Fire Protection Organization"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE--1-001",
+          "title": "Credit by Exam - CalAPS - Fire Protection Organization",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 3.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPPRI-RABC-1-001",
       "exhibit_ids": [
         "MAPPRI-RABC-1-001"
@@ -222094,152 +222498,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 6.0,
       "peer_units_max": 9.0,
       "rec_units_total": 24.0
-    },
-    {
-      "exhibit_id": "MAPICI-I7SS-1-001",
-      "exhibit_ids": [
-        "MAPICI-I7SS-1-001"
-      ],
-      "title": "NWCG Wildland Fire Certifications (S-190 / S-290 / ICS-100 / ICS-700 bundle)",
-      "unified_title": "NWCG Wildland Fire Certifications (S-190 / S-290 / ICS-100 / ICS-700 bundle)",
-      "is_classified": true,
-      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "S-190, S-290, ICS 100, ICS 700 Wildland Fire Certifications"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130",
-        "131"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 3,
-      "adopter_names": [
-        "Chaffey College",
-        "City College of San Francisco",
-        "Lake Tahoe Community College"
-      ],
-      "potential": 58,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 61,
-      "credit_recs": [
-        {
-          "course": "FIRETEC 10",
-          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)"
-        },
-        {
-          "course": "F SC 55",
-          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)"
-        },
-        {
-          "course": "FIR 167",
-          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Wildland 101 (Wildland Fire Behavior)",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-I7SS-1-001",
-          "title": "S-190, S-290, ICS 100, ICS 700 Wildland Fire Certifications",
-          "units": 9.0,
-          "lines": 3
-        }
-      ],
-      "adopter_units": {
-        "Chaffey College": 3.0,
-        "City College of San Francisco": 3.0,
-        "Lake Tahoe Community College": 3.0
-      },
-      "adopter_lines": {
-        "Chaffey College": 1,
-        "City College of San Francisco": 1,
-        "Lake Tahoe Community College": 1
-      },
-      "adopter_rec_idx": {
-        "Chaffey College": [
-          0
-        ],
-        "City College of San Francisco": [
-          1
-        ],
-        "Lake Tahoe Community College": [
-          2
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 9.0
     },
     {
       "exhibit_id": "MAPSAS-D:IT-1-001|MAPSAS-DITB-1-001|MAPSAS-DITB1-1-001",
@@ -231720,6 +231978,154 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 12.0
     },
     {
+      "exhibit_id": "MAPICI-C0-1-001|MAPICI-SASG-1-001",
+      "exhibit_ids": [
+        "MAPICI-C0-1-001",
+        "MAPICI-SASG-1-001"
+      ],
+      "title": "Sanitation and Safety",
+      "unified_title": "Sanitation and Safety",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.45,
+      "confidence_issuer": 1.0,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "CUL 003 Industry Certification",
+        "Sanitation and Safety Graduate of NVC Cooking School"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Family and Consumer Sciences",
+      "sector": "Retail, Hospitality & Tourism",
+      "cip_sector": "19",
+      "top_codes": [
+        "109",
+        "273",
+        "274"
+      ],
+      "collaborative_type": "Industry|Apprenticeship",
+      "adopters": 3,
+      "adopter_names": [
+        "College of Marin",
+        "Lemoore College",
+        "Napa Valley College"
+      ],
+      "potential": 56,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Desert",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "CUL 003",
+          "credit": "2 hours in Sanitation and Safety"
+        },
+        {
+          "course": "HOSP 110",
+          "credit": "2 hours in Sanitation and Safety"
+        },
+        {
+          "course": "HCTM 100",
+          "credit": "2 hours in Sanitation and Safety"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-C0-1-001",
+          "title": "CUL 003 Industry Certification",
+          "units": 4.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-SASG-1-001",
+          "title": "Sanitation and Safety Graduate of NVC Cooking School",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "College of Marin": 2.0,
+        "Lemoore College": 2.0,
+        "Napa Valley College": 2.0
+      },
+      "adopter_lines": {
+        "College of Marin": 1,
+        "Lemoore College": 1,
+        "Napa Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "College of Marin": [
+          1
+        ],
+        "Lemoore College": [
+          0
+        ],
+        "Napa Valley College": [
+          2
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 6.0
+    },
+    {
       "exhibit_id": "MAPICI-CCE-1-001|MAPICI-CCE1-1-001|MAPICI-CCE2-1-001",
       "exhibit_ids": [
         "MAPICI-CCE-1-001",
@@ -232912,153 +233318,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 4.0,
       "peer_units_max": 4.0,
       "rec_units_total": 4.0
-    },
-    {
-      "exhibit_id": "MAPICI-C0-1-001|MAPICI-SASG-1-001",
-      "exhibit_ids": [
-        "MAPICI-C0-1-001",
-        "MAPICI-SASG-1-001"
-      ],
-      "title": "Sanitation and Safety",
-      "unified_title": "Sanitation and Safety",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.45,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "CUL 003 Industry Certification",
-        "Sanitation and Safety Graduate of NVC Cooking School"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Family and Consumer Sciences",
-      "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "19",
-      "top_codes": [
-        "109",
-        "273",
-        "274"
-      ],
-      "collaborative_type": "Industry|Apprenticeship",
-      "adopters": 3,
-      "adopter_names": [
-        "College of Marin",
-        "Lemoore College",
-        "Napa Valley College"
-      ],
-      "potential": 55,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Desert",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 58,
-      "credit_recs": [
-        {
-          "course": "CUL 003",
-          "credit": "2 hours in Sanitation and Safety"
-        },
-        {
-          "course": "HOSP 110",
-          "credit": "2 hours in Sanitation and Safety"
-        },
-        {
-          "course": "HCTM 100",
-          "credit": "2 hours in Sanitation and Safety"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-C0-1-001",
-          "title": "CUL 003 Industry Certification",
-          "units": 4.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-SASG-1-001",
-          "title": "Sanitation and Safety Graduate of NVC Cooking School",
-          "units": 2.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "College of Marin": 2.0,
-        "Lemoore College": 2.0,
-        "Napa Valley College": 2.0
-      },
-      "adopter_lines": {
-        "College of Marin": 1,
-        "Lemoore College": 1,
-        "Napa Valley College": 1
-      },
-      "adopter_rec_idx": {
-        "College of Marin": [
-          1
-        ],
-        "Lemoore College": [
-          0
-        ],
-        "Napa Valley College": [
-          2
-        ]
-      },
-      "peer_units_median": 2.0,
-      "peer_units_max": 2.0,
-      "rec_units_total": 6.0
     },
     {
       "exhibit_id": "MAPCXH-GDI-1-001|MAPCXS-HSA-2-1-001|MAPCXS-HSA-4-1-001",
@@ -236884,238 +237143,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPPRA-A11(-1-001",
-      "exhibit_ids": [
-        "MAPPRA-A11(-1-001"
-      ],
-      "title": "Introduction to Painting",
-      "unified_title": "Introduction to Painting",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "ART 148\tPainting 1 (in Oil) - Portfolio Review"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Fine and Applied Arts",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "50",
-      "top_codes": [
-        "70"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Modesto Junior College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerro Coso Community College",
-        "Chaffey College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "Columbia College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Laney College",
-        "Lemoore College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Merced College",
-        "MiraCosta College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Solano Community College",
-        "Ventura College",
-        "West Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 55,
-      "credit_recs": [
-        {
-          "course": "ART 148",
-          "credit": "3 hours in Painting 1 (in Oil)"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPPRA-A11(-1-001",
-          "title": "ART 148\tPainting 1 (in Oil) - Portfolio Review",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Modesto Junior College": 3.0
-      },
-      "adopter_lines": {
-        "Modesto Junior College": 1
-      },
-      "adopter_rec_idx": {
-        "Modesto Junior College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPPRS-RM-1-001",
-      "exhibit_ids": [
-        "MAPPRS-RM-1-001"
-      ],
-      "title": "Restaurant Management",
-      "unified_title": "Restaurant Management",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Restaurant Management (HRC 125 C)"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Family and Consumer Sciences",
-      "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "19",
-      "top_codes": [
-        "108"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Cypress College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "American River College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Trade Technical College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Skyline College",
-        "Southwestern College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 55,
-      "credit_recs": [
-        {
-          "course": "HRC 125 C",
-          "credit": "3 hours in Restaurant Management"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPPRS-RM-1-001",
-          "title": "Restaurant Management (HRC 125 C)",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Cypress College": 3.0
-      },
-      "adopter_lines": {
-        "Cypress College": 1
-      },
-      "adopter_rec_idx": {
-        "Cypress College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
       "exhibit_id": "MAPICA-CJFO-1-001",
       "exhibit_ids": [
         "MAPICA-CJFO-1-001"
@@ -237152,13 +237179,14 @@ window.CPL_STATEWIDE = {
         "Santa Ana College",
         "Sierra College"
       ],
-      "potential": 53,
+      "potential": 54,
       "potential_names": [
         "Allan Hancock College",
         "American River College",
         "Antelope Valley College",
         "Bakersfield College",
         "Butte College",
+        "Cerro Coso Community College",
         "Chabot College",
         "Chaffey College",
         "College of San Mateo",
@@ -237208,7 +237236,7 @@ window.CPL_STATEWIDE = {
         "West Los Angeles College",
         "Yuba College"
       ],
-      "total_addressable": 61,
+      "total_addressable": 62,
       "credit_recs": [
         {
           "course": "FOT 150B",
@@ -237547,13 +237575,14 @@ window.CPL_STATEWIDE = {
         "Santa Ana College",
         "Sierra College"
       ],
-      "potential": 53,
+      "potential": 54,
       "potential_names": [
         "Allan Hancock College",
         "American River College",
         "Antelope Valley College",
         "Bakersfield College",
         "Butte College",
+        "Cerro Coso Community College",
         "Chabot College",
         "Chaffey College",
         "College of San Mateo",
@@ -237603,7 +237632,7 @@ window.CPL_STATEWIDE = {
         "West Los Angeles College",
         "Yuba College"
       ],
-      "total_addressable": 61,
+      "total_addressable": 62,
       "credit_recs": [
         {
           "course": "FSC 112",
@@ -238027,6 +238056,238 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 12.25,
       "peer_units_max": 58.0,
       "rec_units_total": 129.5
+    },
+    {
+      "exhibit_id": "MAPPRA-A11(-1-001",
+      "exhibit_ids": [
+        "MAPPRA-A11(-1-001"
+      ],
+      "title": "Introduction to Painting",
+      "unified_title": "Introduction to Painting",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ART 148\tPainting 1 (in Oil) - Portfolio Review"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "70"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Modesto Junior College"
+      ],
+      "potential": 54,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Columbia College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Merced College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Solano Community College",
+        "Ventura College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 55,
+      "credit_recs": [
+        {
+          "course": "ART 148",
+          "credit": "3 hours in Painting 1 (in Oil)"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-A11(-1-001",
+          "title": "ART 148\tPainting 1 (in Oil) - Portfolio Review",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Modesto Junior College": 3.0
+      },
+      "adopter_lines": {
+        "Modesto Junior College": 1
+      },
+      "adopter_rec_idx": {
+        "Modesto Junior College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPPRS-RM-1-001",
+      "exhibit_ids": [
+        "MAPPRS-RM-1-001"
+      ],
+      "title": "Restaurant Management",
+      "unified_title": "Restaurant Management",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.85,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Restaurant Management (HRC 125 C)"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Family and Consumer Sciences",
+      "sector": "Retail, Hospitality & Tourism",
+      "cip_sector": "19",
+      "top_codes": [
+        "108"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Cypress College"
+      ],
+      "potential": 54,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Skyline College",
+        "Southwestern College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 55,
+      "credit_recs": [
+        {
+          "course": "HRC 125 C",
+          "credit": "3 hours in Restaurant Management"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRS-RM-1-001",
+          "title": "Restaurant Management (HRC 125 C)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cypress College": 3.0
+      },
+      "adopter_lines": {
+        "Cypress College": 1
+      },
+      "adopter_rec_idx": {
+        "Cypress College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "MAPICI-CSFM2-1-001|MAPICI-FI1C-1-001|MAPICI-FPEA-1-001",
@@ -239144,6 +239405,222 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 2.0,
       "peer_units_max": 2.0,
       "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICA-CO2C5-1-001",
+      "exhibit_ids": [
+        "MAPICA-CO2C5-1-001"
+      ],
+      "title": "Fire Officer — Company Officer 2E",
+      "unified_title": "Fire Officer — Company Officer 2E",
+      "is_classified": true,
+      "issuing_agency": "California State Fire Training (SFT)",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "Company Officer 2E Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "130",
+        "131",
+        "132"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 10,
+      "adopter_names": [
+        "Bakersfield College",
+        "Cabrillo College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Lake Tahoe Community College",
+        "Mendocino College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Sierra College"
+      ],
+      "potential": 52,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "FIRE B52E",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "FOT 150E",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "FOT 155",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "CSFM 083E",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "FIPT 344",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "F SC 75E",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "FIRE 0178",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "FT 134",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "FIR 181E",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "FSC 70E",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        },
+        {
+          "course": "FIRE 234",
+          "credit": "2 hours in Wildland Incident Operations for Company Officers"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "2 hours in Wildland Incident Operations for Company Officers",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-CO2C5-1-001",
+          "title": "Company Officer 2E Certification",
+          "units": 22.0,
+          "lines": 11
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 2.0,
+        "Cabrillo College": 2.0,
+        "City College of San Francisco": 2.0,
+        "College of the Desert": 2.0,
+        "College of the Sequoias": 2.0,
+        "Lake Tahoe Community College": 2.0,
+        "Mendocino College": 2.0,
+        "San Diego Miramar College": 2.0,
+        "Santa Ana College": 4.0,
+        "Sierra College": 2.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1,
+        "Cabrillo College": 1,
+        "City College of San Francisco": 1,
+        "College of the Desert": 1,
+        "College of the Sequoias": 1,
+        "Lake Tahoe Community College": 1,
+        "Mendocino College": 1,
+        "San Diego Miramar College": 1,
+        "Santa Ana College": 2,
+        "Sierra College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ],
+        "Cabrillo College": [
+          7
+        ],
+        "City College of San Francisco": [
+          5
+        ],
+        "College of the Desert": [
+          3
+        ],
+        "College of the Sequoias": [
+          10
+        ],
+        "Lake Tahoe Community College": [
+          8
+        ],
+        "Mendocino College": [
+          9
+        ],
+        "San Diego Miramar College": [
+          4
+        ],
+        "Santa Ana College": [
+          1,
+          2
+        ],
+        "Sierra College": [
+          6
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 22.0
     },
     {
       "exhibit_id": "MAPICA-IFI1-1-001|MAPICA-NFIC-1-001|MAPICA-SFI13-1-001|MAPICI-CFIC1-1-001|MAPICI-CFIC2-1-001|MAPICI-NFIC-1-001|MAPICI-SFI1-1-001|MAPICI-SFI11-1-001",
@@ -244321,221 +244798,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 62.5
     },
     {
-      "exhibit_id": "MAPICA-CO2C5-1-001",
-      "exhibit_ids": [
-        "MAPICA-CO2C5-1-001"
-      ],
-      "title": "Fire Officer — Company Officer 2E",
-      "unified_title": "Fire Officer — Company Officer 2E",
-      "is_classified": true,
-      "issuing_agency": "California State Fire Training (SFT)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Company Officer 2E Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "130",
-        "131",
-        "132"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 10,
-      "adopter_names": [
-        "Bakersfield College",
-        "Cabrillo College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "College of the Sequoias",
-        "Lake Tahoe Community College",
-        "Mendocino College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Sierra College"
-      ],
-      "potential": 51,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Chabot College",
-        "Chaffey College",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 61,
-      "credit_recs": [
-        {
-          "course": "FIRE B52E",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "FOT 150E",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "FOT 155",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "CSFM 083E",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "FIPT 344",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "F SC 75E",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "FIRE 0178",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "FT 134",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "FIR 181E",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "FSC 70E",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        },
-        {
-          "course": "FIRE 234",
-          "credit": "2 hours in Wildland Incident Operations for Company Officers"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "2 hours in Wildland Incident Operations for Company Officers",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICA-CO2C5-1-001",
-          "title": "Company Officer 2E Certification",
-          "units": 22.0,
-          "lines": 11
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 2.0,
-        "Cabrillo College": 2.0,
-        "City College of San Francisco": 2.0,
-        "College of the Desert": 2.0,
-        "College of the Sequoias": 2.0,
-        "Lake Tahoe Community College": 2.0,
-        "Mendocino College": 2.0,
-        "San Diego Miramar College": 2.0,
-        "Santa Ana College": 4.0,
-        "Sierra College": 2.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 1,
-        "Cabrillo College": 1,
-        "City College of San Francisco": 1,
-        "College of the Desert": 1,
-        "College of the Sequoias": 1,
-        "Lake Tahoe Community College": 1,
-        "Mendocino College": 1,
-        "San Diego Miramar College": 1,
-        "Santa Ana College": 2,
-        "Sierra College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          0
-        ],
-        "Cabrillo College": [
-          7
-        ],
-        "City College of San Francisco": [
-          5
-        ],
-        "College of the Desert": [
-          3
-        ],
-        "College of the Sequoias": [
-          10
-        ],
-        "Lake Tahoe Community College": [
-          8
-        ],
-        "Mendocino College": [
-          9
-        ],
-        "San Diego Miramar College": [
-          4
-        ],
-        "Santa Ana College": [
-          1,
-          2
-        ],
-        "Sierra College": [
-          6
-        ]
-      },
-      "peer_units_median": 2.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 22.0
-    },
-    {
       "exhibit_id": "MAPICA-SFI1-1-001|MAPICI-CSFM-1-001|MAPICI-FI1D1-1-001|MAPICI-FI1D2-1-001|MAPICI-FPTF-1-001",
       "exhibit_ids": [
         "MAPICA-SFI1-1-001",
@@ -249151,6 +249413,126 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
+      "exhibit_id": "MAPCXA-H0-1-001|MAPCxS-ITHM-1-001",
+      "exhibit_ids": [
+        "MAPCXA-H0-1-001",
+        "MAPCxS-ITHM-1-001"
+      ],
+      "title": "Introduction to Hospitality Management",
+      "unified_title": "Introduction to Hospitality Management",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.3,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HRCM 001",
+        "Introduction to Hospitality Management HOSP 001 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "52",
+      "top_codes": [
+        "274"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "Copper Mountain College"
+      ],
+      "potential": 50,
+      "potential_names": [
+        "Bakersfield College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "Columbia College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 51,
+      "credit_recs": [
+        {
+          "course": "HOSP 001",
+          "credit": "3 hours in Introduction to Hospitality Management"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXA-H0-1-001",
+          "title": "HRCM 001",
+          "units": 0,
+          "lines": 0
+        },
+        {
+          "id": "MAPCxS-ITHM-1-001",
+          "title": "Introduction to Hospitality Management HOSP 001 Cx",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Copper Mountain College": 3.0
+      },
+      "adopter_lines": {
+        "Copper Mountain College": 1
+      },
+      "adopter_rec_idx": {
+        "Copper Mountain College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPCXS-P0-I-1-001",
       "exhibit_ids": [
         "MAPCXS-P0-I-1-001"
@@ -249479,6 +249861,230 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Copper Mountain College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXI-ITH-1-001",
+      "exhibit_ids": [
+        "MAPCXI-ITH-1-001"
+      ],
+      "title": "Introduction to Hospitality",
+      "unified_title": "Introduction to Hospitality",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Introduction to Hospitality"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "52",
+      "top_codes": [
+        "274"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Moorpark College"
+      ],
+      "potential": 50,
+      "potential_names": [
+        "Bakersfield College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 51,
+      "credit_recs": [
+        {
+          "course": "HOSP M100",
+          "credit": "3 hours in Introduction to Hospitality"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXI-ITH-1-001",
+          "title": "Introduction to Hospitality",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Moorpark College": 3.0
+      },
+      "adopter_lines": {
+        "Moorpark College": 1
+      },
+      "adopter_rec_idx": {
+        "Moorpark College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-HCC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-HCC1-1-001"
+      ],
+      "title": "Hospitality Cost Control",
+      "unified_title": "Hospitality Cost Control",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.85,
+      "confidence_issuer": 1.0,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "Hospitality Cost Controls"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "52",
+      "top_codes": [
+        "274"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Moorpark College"
+      ],
+      "potential": 50,
+      "potential_names": [
+        "Bakersfield College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 51,
+      "credit_recs": [
+        {
+          "course": "HOSP M120",
+          "credit": "3 hours in Hospitality Cost Control"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-HCC1-1-001",
+          "title": "Hospitality Cost Controls",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Moorpark College": 3.0
+      },
+      "adopter_lines": {
+        "Moorpark College": 1
+      },
+      "adopter_rec_idx": {
+        "Moorpark College": [
           0
         ]
       },
@@ -251228,6 +251834,135 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 12.0
     },
     {
+      "exhibit_id": "MAPCXI-HCC-1-001|MAPCxS-HCCH-1-001",
+      "exhibit_ids": [
+        "MAPCXI-HCC-1-001",
+        "MAPCxS-HCCH-1-001"
+      ],
+      "title": "Hospitality Cost Control",
+      "unified_title": "Hospitality Cost Control",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.85,
+      "confidence_issuer": 1.0,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "Hospitality Cost Control HOSP 002 Cx",
+        "Hospitality Cost Controls"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "52",
+      "top_codes": [
+        "274"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Copper Mountain College",
+        "Moorpark College"
+      ],
+      "potential": 49,
+      "potential_names": [
+        "Bakersfield College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "Columbia College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 51,
+      "credit_recs": [
+        {
+          "course": "HOSP 002",
+          "credit": "3 hours in Hospitality Cost Control"
+        },
+        {
+          "course": "HOSP M120",
+          "credit": "3 hours in Hospitality Cost Control"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXI-HCC-1-001",
+          "title": "Hospitality Cost Controls",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCxS-HCCH-1-001",
+          "title": "Hospitality Cost Control HOSP 002 Cx",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Copper Mountain College": 3.0,
+        "Moorpark College": 3.0
+      },
+      "adopter_lines": {
+        "Copper Mountain College": 1,
+        "Moorpark College": 1
+      },
+      "adopter_rec_idx": {
+        "Copper Mountain College": [
+          0
+        ],
+        "Moorpark College": [
+          1
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 6.0
+    },
+    {
       "exhibit_id": "MAPCBES-CA0-1-001",
       "exhibit_ids": [
         "MAPCBES-CA0-1-001"
@@ -252795,125 +253530,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 11.0
     },
     {
-      "exhibit_id": "MAPCXA-H0-1-001|MAPCxS-ITHM-1-001",
-      "exhibit_ids": [
-        "MAPCXA-H0-1-001",
-        "MAPCxS-ITHM-1-001"
-      ],
-      "title": "Introduction to Hospitality Management",
-      "unified_title": "Introduction to Hospitality Management",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.3,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "HRCM 001",
-        "Introduction to Hospitality Management HOSP 001 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "52",
-      "top_codes": [
-        "274"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 49,
-      "potential_names": [
-        "Bakersfield College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "Columbia College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lemoore College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 50,
-      "credit_recs": [
-        {
-          "course": "HOSP 001",
-          "credit": "3 hours in Introduction to Hospitality Management"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXA-H0-1-001",
-          "title": "HRCM 001",
-          "units": 0,
-          "lines": 0
-        },
-        {
-          "id": "MAPCxS-ITHM-1-001",
-          "title": "Introduction to Hospitality Management HOSP 001 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 3.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1
-      },
-      "adopter_rec_idx": {
-        "Copper Mountain College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
       "exhibit_id": "MAPICI-CFHC-1-001",
       "exhibit_ids": [
         "MAPICI-CFHC-1-001"
@@ -254024,20 +254640,20 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
-      "exhibit_id": "MAPCXI-ITH-1-001",
+      "exhibit_id": "MAPCXI-HS&G-1-001",
       "exhibit_ids": [
-        "MAPCXI-ITH-1-001"
+        "MAPCXI-HS&G-1-001"
       ],
-      "title": "Introduction to Hospitality",
-      "unified_title": "Introduction to Hospitality",
+      "title": "Hospitality Supervision and Guest Relations",
+      "unified_title": "Hospitality Supervision and Guest Relations",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.9,
+      "confidence_title": 0.8,
       "confidence_issuer": 1.0,
-      "quality_flag": "",
+      "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
-        "Introduction to Hospitality"
+        "Hospitality Supervision & Guest Relations"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Not Mapped",
@@ -254054,7 +254670,7 @@ window.CPL_STATEWIDE = {
       "potential": 49,
       "potential_names": [
         "Bakersfield College",
-        "Cerritos College",
+        "Cerro Coso Community College",
         "Chaffey College",
         "City College of San Francisco",
         "Clovis Community College",
@@ -254106,15 +254722,15 @@ window.CPL_STATEWIDE = {
       "total_addressable": 50,
       "credit_recs": [
         {
-          "course": "HOSP M100",
-          "credit": "3 hours in Introduction to Hospitality"
+          "course": "HOSP M170",
+          "credit": "3 hours in Hospitality Supervision and Guest Relations"
         }
       ],
       "authoritative_recs": [],
       "exhibit_records": [
         {
-          "id": "MAPCXI-ITH-1-001",
-          "title": "Introduction to Hospitality",
+          "id": "MAPCXI-HS&G-1-001",
+          "title": "Hospitality Supervision & Guest Relations",
           "units": 3.0,
           "lines": 1
         }
@@ -254135,22 +254751,22 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-HCC1-1-001",
+      "exhibit_id": "MAPCXI-EM-1-001",
       "exhibit_ids": [
-        "MAPICI-HCC1-1-001"
+        "MAPCXI-EM-1-001"
       ],
-      "title": "Hospitality Cost Control",
-      "unified_title": "Hospitality Cost Control",
+      "title": "Event Management",
+      "unified_title": "Event Management",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.85,
+      "confidence_title": 0.75,
       "confidence_issuer": 1.0,
       "quality_flag": "suspect_course_as_exhibit",
       "raw_titles": [
-        "Hospitality Cost Controls"
+        "Event Management"
       ],
-      "cpl_type": "Industry Certification",
+      "cpl_type": "Credit By Exam",
       "discipline": "Not Mapped",
       "sector": "",
       "cip_sector": "52",
@@ -254165,7 +254781,7 @@ window.CPL_STATEWIDE = {
       "potential": 49,
       "potential_names": [
         "Bakersfield College",
-        "Cerritos College",
+        "Cerro Coso Community College",
         "Chaffey College",
         "City College of San Francisco",
         "Clovis Community College",
@@ -254217,15 +254833,237 @@ window.CPL_STATEWIDE = {
       "total_addressable": 50,
       "credit_recs": [
         {
-          "course": "HOSP M120",
-          "credit": "3 hours in Hospitality Cost Control"
+          "course": "HOSP M200",
+          "credit": "3 hours in Introduction to Event Management"
         }
       ],
       "authoritative_recs": [],
       "exhibit_records": [
         {
-          "id": "MAPICI-HCC1-1-001",
-          "title": "Hospitality Cost Controls",
+          "id": "MAPCXI-EM-1-001",
+          "title": "Event Management",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Moorpark College": 3.0
+      },
+      "adopter_lines": {
+        "Moorpark College": 1
+      },
+      "adopter_rec_idx": {
+        "Moorpark College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-HS&G-1-001",
+      "exhibit_ids": [
+        "MAPICI-HS&G-1-001"
+      ],
+      "title": "Hospitality Supervision and Guest Relations",
+      "unified_title": "Hospitality Supervision and Guest Relations",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "Hospitality Supervision & Guest Relations"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "52",
+      "top_codes": [
+        "274"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Moorpark College"
+      ],
+      "potential": 49,
+      "potential_names": [
+        "Bakersfield College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 50,
+      "credit_recs": [
+        {
+          "course": "HOSP M170",
+          "credit": "3 hours in Hospitality Supervision and Guest Relations"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-HS&G-1-001",
+          "title": "Hospitality Supervision & Guest Relations",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Moorpark College": 3.0
+      },
+      "adopter_lines": {
+        "Moorpark College": 1
+      },
+      "adopter_rec_idx": {
+        "Moorpark College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-EM1-1-001",
+      "exhibit_ids": [
+        "MAPICI-EM1-1-001"
+      ],
+      "title": "Event Management",
+      "unified_title": "Event Management",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 1.0,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "Event Management"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "52",
+      "top_codes": [
+        "274"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Moorpark College"
+      ],
+      "potential": 49,
+      "potential_names": [
+        "Bakersfield College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 50,
+      "credit_recs": [
+        {
+          "course": "HOSP M200",
+          "credit": "3 hours in Introduction to Event Management"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-EM1-1-001",
+          "title": "Event Management",
           "units": 3.0,
           "lines": 1
         }
@@ -254559,6 +255397,117 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPCXS-H0CH-1-001",
           "title": "HIST 032: Cultural History of the Chicano",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Lemoore College": 3.0
+      },
+      "adopter_lines": {
+        "Lemoore College": 1
+      },
+      "adopter_rec_idx": {
+        "Lemoore College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXS-H0IT-1-001",
+      "exhibit_ids": [
+        "MAPCXS-H0IT-1-001"
+      ],
+      "title": "HRCM 001: Introduction to Hospitality Management",
+      "unified_title": "HRCM 001: Introduction to Hospitality Management",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "HRCM 001: Introduction to Hospitality Management"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "52",
+      "top_codes": [
+        "274"
+      ],
+      "collaborative_type": "Other",
+      "adopters": 1,
+      "adopter_names": [
+        "Lemoore College"
+      ],
+      "potential": 49,
+      "potential_names": [
+        "Bakersfield College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 50,
+      "credit_recs": [
+        {
+          "course": "HRCM 001",
+          "credit": "3 hours in Introduction to Hospitality Management"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-H0IT-1-001",
+          "title": "HRCM 001: Introduction to Hospitality Management",
           "units": 3.0,
           "lines": 1
         }
@@ -255646,134 +256595,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 16.0
     },
     {
-      "exhibit_id": "MAPCXI-HCC-1-001|MAPCxS-HCCH-1-001",
-      "exhibit_ids": [
-        "MAPCXI-HCC-1-001",
-        "MAPCxS-HCCH-1-001"
-      ],
-      "title": "Hospitality Cost Control",
-      "unified_title": "Hospitality Cost Control",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Hospitality Cost Control HOSP 002 Cx",
-        "Hospitality Cost Controls"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "52",
-      "top_codes": [
-        "274"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Copper Mountain College",
-        "Moorpark College"
-      ],
-      "potential": 48,
-      "potential_names": [
-        "Bakersfield College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "Columbia College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lemoore College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 50,
-      "credit_recs": [
-        {
-          "course": "HOSP 002",
-          "credit": "3 hours in Hospitality Cost Control"
-        },
-        {
-          "course": "HOSP M120",
-          "credit": "3 hours in Hospitality Cost Control"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXI-HCC-1-001",
-          "title": "Hospitality Cost Controls",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCxS-HCCH-1-001",
-          "title": "Hospitality Cost Control HOSP 002 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 3.0,
-        "Moorpark College": 3.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1,
-        "Moorpark College": 1
-      },
-      "adopter_rec_idx": {
-        "Copper Mountain College": [
-          0
-        ],
-        "Moorpark College": [
-          1
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 6.0
-    },
-    {
       "exhibit_id": "MAPMM-SACF-1-001",
       "exhibit_ids": [
         "MAPMM-SACF-1-001"
@@ -256212,556 +257033,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 1.0,
       "peer_units_max": 1.0,
       "rec_units_total": 1.0
-    },
-    {
-      "exhibit_id": "MAPCXI-HS&G-1-001",
-      "exhibit_ids": [
-        "MAPCXI-HS&G-1-001"
-      ],
-      "title": "Hospitality Supervision and Guest Relations",
-      "unified_title": "Hospitality Supervision and Guest Relations",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Hospitality Supervision & Guest Relations"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "52",
-      "top_codes": [
-        "274"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Moorpark College"
-      ],
-      "potential": 48,
-      "potential_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lemoore College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 49,
-      "credit_recs": [
-        {
-          "course": "HOSP M170",
-          "credit": "3 hours in Hospitality Supervision and Guest Relations"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXI-HS&G-1-001",
-          "title": "Hospitality Supervision & Guest Relations",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Moorpark College": 3.0
-      },
-      "adopter_lines": {
-        "Moorpark College": 1
-      },
-      "adopter_rec_idx": {
-        "Moorpark College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPCXI-EM-1-001",
-      "exhibit_ids": [
-        "MAPCXI-EM-1-001"
-      ],
-      "title": "Event Management",
-      "unified_title": "Event Management",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Event Management"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "52",
-      "top_codes": [
-        "274"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Moorpark College"
-      ],
-      "potential": 48,
-      "potential_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lemoore College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 49,
-      "credit_recs": [
-        {
-          "course": "HOSP M200",
-          "credit": "3 hours in Introduction to Event Management"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXI-EM-1-001",
-          "title": "Event Management",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Moorpark College": 3.0
-      },
-      "adopter_lines": {
-        "Moorpark College": 1
-      },
-      "adopter_rec_idx": {
-        "Moorpark College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPICI-HS&G-1-001",
-      "exhibit_ids": [
-        "MAPICI-HS&G-1-001"
-      ],
-      "title": "Hospitality Supervision and Guest Relations",
-      "unified_title": "Hospitality Supervision and Guest Relations",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Hospitality Supervision & Guest Relations"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "52",
-      "top_codes": [
-        "274"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Moorpark College"
-      ],
-      "potential": 48,
-      "potential_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lemoore College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 49,
-      "credit_recs": [
-        {
-          "course": "HOSP M170",
-          "credit": "3 hours in Hospitality Supervision and Guest Relations"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-HS&G-1-001",
-          "title": "Hospitality Supervision & Guest Relations",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Moorpark College": 3.0
-      },
-      "adopter_lines": {
-        "Moorpark College": 1
-      },
-      "adopter_rec_idx": {
-        "Moorpark College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPICI-EM1-1-001",
-      "exhibit_ids": [
-        "MAPICI-EM1-1-001"
-      ],
-      "title": "Event Management",
-      "unified_title": "Event Management",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Event Management"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "52",
-      "top_codes": [
-        "274"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Moorpark College"
-      ],
-      "potential": 48,
-      "potential_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lemoore College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 49,
-      "credit_recs": [
-        {
-          "course": "HOSP M200",
-          "credit": "3 hours in Introduction to Event Management"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-EM1-1-001",
-          "title": "Event Management",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Moorpark College": 3.0
-      },
-      "adopter_lines": {
-        "Moorpark College": 1
-      },
-      "adopter_rec_idx": {
-        "Moorpark College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPCXS-H0IT-1-001",
-      "exhibit_ids": [
-        "MAPCXS-H0IT-1-001"
-      ],
-      "title": "HRCM 001: Introduction to Hospitality Management",
-      "unified_title": "HRCM 001: Introduction to Hospitality Management",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "HRCM 001: Introduction to Hospitality Management"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "52",
-      "top_codes": [
-        "274"
-      ],
-      "collaborative_type": "Other",
-      "adopters": 1,
-      "adopter_names": [
-        "Lemoore College"
-      ],
-      "potential": 48,
-      "potential_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 49,
-      "credit_recs": [
-        {
-          "course": "HRCM 001",
-          "credit": "3 hours in Introduction to Hospitality Management"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-H0IT-1-001",
-          "title": "HRCM 001: Introduction to Hospitality Management",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Lemoore College": 3.0
-      },
-      "adopter_lines": {
-        "Lemoore College": 1
-      },
-      "adopter_rec_idx": {
-        "Lemoore College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "MAPICI-CPT(1-1-001",
@@ -325912,11 +326183,10 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPCXH-IPC(-1-001|MAPCXH-IPC(1-1-001|MAPCXH-IPC(2-1-001|MAPCXH-IPC(3-1-001|MAPCXH-IPC(4-1-001|MAPCXH-IPC(5-1-001|MAPCXH-IPC(6-1-001",
+      "exhibit_id": "MAPCXH-IPC(-1-001|MAPCXH-IPC(1-1-001|MAPCXH-IPC(3-1-001|MAPCXH-IPC(4-1-001|MAPCXH-IPC(5-1-001|MAPCXH-IPC(6-1-001",
       "exhibit_ids": [
         "MAPCXH-IPC(-1-001",
         "MAPCXH-IPC(1-1-001",
-        "MAPCXH-IPC(2-1-001",
         "MAPCXH-IPC(3-1-001",
         "MAPCXH-IPC(4-1-001",
         "MAPCXH-IPC(5-1-001",
@@ -325998,12 +326268,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "id": "MAPCXH-IPC(1-1-001",
-          "title": "Intermediate Patient Care (Formerly Medical Core) - Godinez High School",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXH-IPC(2-1-001",
           "title": "Intermediate Patient Care (Formerly Medical Core) - Godinez High School",
           "units": 3.0,
           "lines": 1
@@ -335020,6 +335284,270 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPCXH-CBE-1-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-1-1-001"
+      ],
+      "title": "Credit by Exam - Centinela Valley Unified School District - App Food Service Sanitation in Hotel/Restaurant Management",
+      "unified_title": "Credit by Exam - Centinela Valley Unified School District - App Food Service Sanitation in Hotel/Restaurant Management",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Centinela Valley Unified School District - App Food Service Sanitation in Hotel/Restaurant Management"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Family and Consumer Sciences",
+      "sector": "Retail, Hospitality & Tourism",
+      "cip_sector": "19",
+      "top_codes": [
+        "109"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cypress College",
+        "Fresno City College",
+        "Grossmont College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "San Bernardino Valley College",
+        "Santa Rosa Junior College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 27,
+      "credit_recs": [
+        {
+          "course": "CULAR 20",
+          "credit": "2 hours in App. Food Serv Sanit in Hotel/Rstr Mgmt"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-1-1-001",
+          "title": "Credit by Exam - Centinela Valley Unified School District - App Food Service Sanitation in Hotel/Restaurant Management",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 2.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPCXH-CBE-4-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-4-1-001"
+      ],
+      "title": "Credit by Exam - Long Beach Unified School District - Intro to Hospitality",
+      "unified_title": "Credit by Exam - Long Beach Unified School District - Intro to Hospitality",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Long Beach Unified School District - Intro to Hospitality"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Family and Consumer Sciences",
+      "sector": "Retail, Hospitality & Tourism",
+      "cip_sector": "19",
+      "top_codes": [
+        "109"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cypress College",
+        "Fresno City College",
+        "Grossmont College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "San Bernardino Valley College",
+        "Santa Rosa Junior College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 27,
+      "credit_recs": [
+        {
+          "course": "CULAR 10",
+          "credit": "3 hours in Intro to Hospitality"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-4-1-001",
+          "title": "Credit by Exam - Long Beach Unified School District - Intro to Hospitality",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 3.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXH-CBE-5-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-5-1-001"
+      ],
+      "title": "Credit by Exam - Long Beach Unified School District - App Food Service Sanitation in Hotel/Restaurant Management",
+      "unified_title": "Credit by Exam - Long Beach Unified School District - App Food Service Sanitation in Hotel/Restaurant Management",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Long Beach Unified School District - App Food Service Sanitation in Hotel/Restaurant Management"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Family and Consumer Sciences",
+      "sector": "Retail, Hospitality & Tourism",
+      "cip_sector": "19",
+      "top_codes": [
+        "109"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 26,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cypress College",
+        "Fresno City College",
+        "Grossmont College",
+        "Laney College",
+        "Lemoore College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "San Bernardino Valley College",
+        "Santa Rosa Junior College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 27,
+      "credit_recs": [
+        {
+          "course": "CULAR 20",
+          "credit": "2 hours in App. Food Serv Sanit in Hotel/Rstr Mgmt"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-5-1-001",
+          "title": "Credit by Exam - Long Beach Unified School District - App Food Service Sanitation in Hotel/Restaurant Management",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 2.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
       "exhibit_id": "MAPICI-CSC2-1-001",
       "exhibit_ids": [
         "MAPICI-CSC2-1-001"
@@ -343826,6 +344354,92 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPCXH-CBE-9-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-9-1-001"
+      ],
+      "title": "Credit by Exam - Long Beach Unified School District - Intro to International Business",
+      "unified_title": "Credit by Exam - Long Beach Unified School District - Intro to International Business",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Long Beach Unified School District - Intro to International Business"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "52",
+      "top_codes": [
+        "12"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Cerritos College",
+        "Chaffey College",
+        "Coastline Community College",
+        "College of San Mateo",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Southwestern College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "IBUS 1",
+          "credit": "3 hours in Introduction to International Business"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-9-1-001",
+          "title": "Credit by Exam - Long Beach Unified School District - Intro to International Business",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 3.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPCBEN-ITVC-1-001",
       "exhibit_ids": [
         "MAPCBEN-ITVC-1-001"
@@ -349200,6 +349814,176 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 1.0,
       "peer_units_max": 1.0,
       "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPCXH-CBE-7-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-7-1-001"
+      ],
+      "title": "Credit by Exam - Long Beach Unified School District - Principles of Engineering Technology",
+      "unified_title": "Credit by Exam - Long Beach Unified School District - Principles of Engineering Technology",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Long Beach Unified School District - Principles of Engineering Technology"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "46"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "Compton College",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Merced College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "ETEC 30",
+          "credit": "3 hours in Principles of Engineering Technology"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-7-1-001",
+          "title": "Credit by Exam - Long Beach Unified School District - Principles of Engineering Technology",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 3.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXH-CBE-8-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-8-1-001"
+      ],
+      "title": "Credit by Exam - Long Beach Unified School District - Electronics for Engineering Technology",
+      "unified_title": "Credit by Exam - Long Beach Unified School District - Electronics for Engineering Technology",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Long Beach Unified School District - Electronics for Engineering Technology"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "46"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 23,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "Compton College",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Merced College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College"
+      ],
+      "total_addressable": 24,
+      "credit_recs": [
+        {
+          "course": "ETEC 40",
+          "credit": "3 hours in Electronics for Engineering Technology"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-8-1-001",
+          "title": "Credit by Exam - Long Beach Unified School District - Electronics for Engineering Technology",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 3.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "MAPCXH-CHAT-1-001|MAPCXH-CHAT1-1-001",
@@ -363914,6 +364698,84 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICI-FT1-1-001",
+      "exhibit_ids": [
+        "MAPICI-FT1-1-001"
+      ],
+      "title": "Fire Technology",
+      "unified_title": "Fire Technology",
+      "is_classified": true,
+      "issuing_agency": "California State Fire Training (SFT)",
+      "training_agency": "",
+      "confidence_title": 0.55,
+      "confidence_issuer": 1.0,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "Fire Technology"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "College of Marin"
+      ],
+      "potential": 16,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 17,
+      "credit_recs": [
+        {
+          "course": "FIRE 255",
+          "credit": "1.5 hours in Wildland Fire Fighting"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-FT1-1-001",
+          "title": "Fire Technology",
+          "units": 1.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "College of Marin": 1.5
+      },
+      "adopter_lines": {
+        "College of Marin": 1
+      },
+      "adopter_rec_idx": {
+        "College of Marin": [
+          0
+        ]
+      },
+      "peer_units_median": 1.5,
+      "peer_units_max": 1.5,
+      "rec_units_total": 1.5
+    },
+    {
       "exhibit_id": "MAPPRI-I0-C-1-001",
       "exhibit_ids": [
         "MAPPRI-I0-C-1-001"
@@ -364304,6 +365166,84 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
+      "exhibit_id": "MAPICI-CFSI-1-001",
+      "exhibit_ids": [
+        "MAPICI-CFSI-1-001"
+      ],
+      "title": "S-290 — Intermediate Wildland Fire Behavior",
+      "unified_title": "S-290 — Intermediate Wildland Fire Behavior",
+      "is_classified": true,
+      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
+      "training_agency": "California Department of Forestry and Fire Protection (CAL FIRE)",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Cal Fire S-290: Intermediate Wildland Fire Behavior"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 16,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 17,
+      "credit_recs": [
+        {
+          "course": "FST 272",
+          "credit": "1.75 hours in S-290: Intermediate Wildland Fire Behavior"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CFSI-1-001",
+          "title": "Cal Fire S-290: Intermediate Wildland Fire Behavior",
+          "units": 1.75,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Palo Verde College": 1.75
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "adopter_rec_idx": {
+        "Palo Verde College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.75,
+      "peer_units_max": 1.75,
+      "rec_units_total": 1.75
+    },
+    {
       "exhibit_id": "MAPPRI-I0-C1-1-001",
       "exhibit_ids": [
         "MAPPRI-I0-C1-1-001"
@@ -364374,6 +365314,84 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "San Bernardino Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXS-WFC-1-001",
+      "exhibit_ids": [
+        "MAPCXS-WFC-1-001"
+      ],
+      "title": "Wildland Fire Control",
+      "unified_title": "Wildland Fire Control",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Wildland Fire Control"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Chaffey College"
+      ],
+      "potential": 16,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 17,
+      "credit_recs": [
+        {
+          "course": "FIRETEC 10",
+          "credit": "3 hours in Wildland Fire Control"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-WFC-1-001",
+          "title": "Wildland Fire Control",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Chaffey College": 3.0
+      },
+      "adopter_lines": {
+        "Chaffey College": 1
+      },
+      "adopter_rec_idx": {
+        "Chaffey College": [
           0
         ]
       },
@@ -364746,6 +365764,318 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 6.0
     },
     {
+      "exhibit_id": "MAPICI-NWCG-1-001",
+      "exhibit_ids": [
+        "MAPICI-NWCG-1-001"
+      ],
+      "title": "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
+      "unified_title": "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 16,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 17,
+      "credit_recs": [
+        {
+          "course": "FST 148",
+          "credit": "0.25 hours in S-190: Introduction to Wildland Fire Behavior"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-NWCG-1-001",
+          "title": "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
+          "units": 0.25,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Palo Verde College": 0.25
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "adopter_rec_idx": {
+        "Palo Verde College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.25,
+      "peer_units_max": 0.25,
+      "rec_units_total": 0.25
+    },
+    {
+      "exhibit_id": "MAPICI-SDSA-1-001",
+      "exhibit_ids": [
+        "MAPICI-SDSA-1-001"
+      ],
+      "title": "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
+      "unified_title": "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santa Ana College"
+      ],
+      "potential": 16,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 17,
+      "credit_recs": [
+        {
+          "course": "FAC 079A",
+          "credit": "1 hour in S-339 Division/Group Supervisor- ALL RISK"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-SDSA-1-001",
+          "title": "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Santa Ana College": 1.0
+      },
+      "adopter_lines": {
+        "Santa Ana College": 1
+      },
+      "adopter_rec_idx": {
+        "Santa Ana College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPICI-NIAI-1-001",
+      "exhibit_ids": [
+        "MAPICI-NIAI-1-001"
+      ],
+      "title": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+      "unified_title": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "NIMS ICS All-Hazards Incident Commander (ICT3)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santa Ana College"
+      ],
+      "potential": 16,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 17,
+      "credit_recs": [
+        {
+          "course": "FOT 150E",
+          "credit": "1.5 hours in Company Officer 2E: Wildland Incident Operations for Company"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-NIAI-1-001",
+          "title": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+          "units": 1.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Santa Ana College": 1.5
+      },
+      "adopter_lines": {
+        "Santa Ana College": 1
+      },
+      "adopter_rec_idx": {
+        "Santa Ana College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.5,
+      "peer_units_max": 1.5,
+      "rec_units_total": 1.5
+    },
+    {
+      "exhibit_id": "MAPICI-IWFB-1-001",
+      "exhibit_ids": [
+        "MAPICI-IWFB-1-001"
+      ],
+      "title": "Intermediate Wildland Fire Behavior",
+      "unified_title": "Intermediate Wildland Fire Behavior",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Intermediate Wildland Fire Behavior"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fresno City College"
+      ],
+      "potential": 16,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 17,
+      "credit_recs": [
+        {
+          "course": "FIRET 29",
+          "credit": "1.5 hours in Intermediate Wildland Fire Behavior"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-IWFB-1-001",
+          "title": "Intermediate Wildland Fire Behavior",
+          "units": 1.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Fresno City College": 1.5
+      },
+      "adopter_lines": {
+        "Fresno City College": 1
+      },
+      "adopter_rec_idx": {
+        "Fresno City College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.5,
+      "peer_units_max": 1.5,
+      "rec_units_total": 1.5
+    },
+    {
       "exhibit_id": "MAPCXS-H1MT-1-001",
       "exhibit_ids": [
         "MAPCXS-H1MT-1-001"
@@ -364822,6 +366152,84 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-FC6W-1-001",
+      "exhibit_ids": [
+        "MAPICI-FC6W-1-001"
+      ],
+      "title": "Fire Ctrl 6 Wildland Fire",
+      "unified_title": "Fire Ctrl 6 Wildland Fire",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Ctrl 6 Wildland Fire"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 16,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 17,
+      "credit_recs": [
+        {
+          "course": "FST 119",
+          "credit": "0.75 hours in Fire Control 6 Wildland Firefighting Essentials"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-FC6W-1-001",
+          "title": "Fire Ctrl 6 Wildland Fire",
+          "units": 0.75,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Palo Verde College": 0.75
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "adopter_rec_idx": {
+        "Palo Verde College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.75,
+      "peer_units_max": 0.75,
+      "rec_units_total": 0.75
     },
     {
       "exhibit_id": "MAPICI-F1SA-1-001|MAPICI-FAAA-1-001|MAPICI-FCM--1-001|MAPICI-FMCW-1-001",
@@ -365865,6 +367273,237 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 2.0
     },
     {
+      "exhibit_id": "MAPICI-BWF-1-001",
+      "exhibit_ids": [
+        "MAPICI-BWF-1-001"
+      ],
+      "title": "Basic Wildland Firefighter (S-130/S-190)",
+      "unified_title": "Basic Wildland Firefighter (S-130/S-190)",
+      "is_classified": true,
+      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
+      "training_agency": "",
+      "confidence_title": 0.75,
+      "confidence_issuer": 0.7,
+      "quality_flag": "",
+      "raw_titles": [
+        "Basic Wildland Firefighter"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Columbia College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "FIRE 190",
+          "credit": "6 hours in Basic Wildland Firefighter"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-BWF-1-001",
+          "title": "Basic Wildland Firefighter",
+          "units": 6.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Columbia College": 6.0
+      },
+      "adopter_lines": {
+        "Columbia College": 1
+      },
+      "adopter_rec_idx": {
+        "Columbia College": [
+          0
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPPRI-WFC-1-001",
+      "exhibit_ids": [
+        "MAPPRI-WFC-1-001"
+      ],
+      "title": "Wildland Fire Control",
+      "unified_title": "Wildland Fire Control",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Wildland Fire Control"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Columbia College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "FIRE 7",
+          "credit": "3 hours in Wildland Fire Control"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRI-WFC-1-001",
+          "title": "Wildland Fire Control",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Columbia College": 3.0
+      },
+      "adopter_lines": {
+        "Columbia College": 1
+      },
+      "adopter_rec_idx": {
+        "Columbia College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-WFC-1-001",
+      "exhibit_ids": [
+        "MAPICI-WFC-1-001"
+      ],
+      "title": "Wildland Fire Chainsaws (S-212)",
+      "unified_title": "Wildland Fire Chainsaws (S-212)",
+      "is_classified": true,
+      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 0.75,
+      "quality_flag": "",
+      "raw_titles": [
+        "Wildland Fire Chainsaws"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Columbia College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "FIRE 112",
+          "credit": "0.5 hours in Wildland Fire Chainsaws"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-WFC-1-001",
+          "title": "Wildland Fire Chainsaws",
+          "units": 0.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Columbia College": 0.5
+      },
+      "adopter_lines": {
+        "Columbia College": 1
+      },
+      "adopter_rec_idx": {
+        "Columbia College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.5,
+      "peer_units_max": 0.5,
+      "rec_units_total": 0.5
+    },
+    {
       "exhibit_id": "MAPPRS-DV-1-001",
       "exhibit_ids": [
         "MAPPRS-DV-1-001"
@@ -366188,174 +367827,20 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 14.0
     },
     {
-      "exhibit_id": "MAPICI-FT1-1-001",
+      "exhibit_id": "MAPCxS-WFBF-1-001",
       "exhibit_ids": [
-        "MAPICI-FT1-1-001"
+        "MAPCxS-WFBF-1-001"
       ],
-      "title": "Fire Technology",
-      "unified_title": "Fire Technology",
-      "is_classified": true,
-      "issuing_agency": "California State Fire Training (SFT)",
-      "training_agency": "",
-      "confidence_title": 0.55,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "Fire Technology"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "College of Marin"
-      ],
-      "potential": 15,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 16,
-      "credit_recs": [
-        {
-          "course": "FIRE 255",
-          "credit": "1.5 hours in Wildland Fire Fighting"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-FT1-1-001",
-          "title": "Fire Technology",
-          "units": 1.5,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "College of Marin": 1.5
-      },
-      "adopter_lines": {
-        "College of Marin": 1
-      },
-      "adopter_rec_idx": {
-        "College of Marin": [
-          0
-        ]
-      },
-      "peer_units_median": 1.5,
-      "peer_units_max": 1.5,
-      "rec_units_total": 1.5
-    },
-    {
-      "exhibit_id": "MAPICI-CFSI-1-001",
-      "exhibit_ids": [
-        "MAPICI-CFSI-1-001"
-      ],
-      "title": "S-290 — Intermediate Wildland Fire Behavior",
-      "unified_title": "S-290 — Intermediate Wildland Fire Behavior",
+      "title": "Wildland Fire Behavior (S-190)",
+      "unified_title": "Wildland Fire Behavior (S-190)",
       "is_classified": true,
       "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
-      "training_agency": "California Department of Forestry and Fire Protection (CAL FIRE)",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Cal Fire S-290: Intermediate Wildland Fire Behavior"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Palo Verde College"
-      ],
-      "potential": 15,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 16,
-      "credit_recs": [
-        {
-          "course": "FST 272",
-          "credit": "1.75 hours in S-290: Intermediate Wildland Fire Behavior"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-CFSI-1-001",
-          "title": "Cal Fire S-290: Intermediate Wildland Fire Behavior",
-          "units": 1.75,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Palo Verde College": 1.75
-      },
-      "adopter_lines": {
-        "Palo Verde College": 1
-      },
-      "adopter_rec_idx": {
-        "Palo Verde College": [
-          0
-        ]
-      },
-      "peer_units_median": 1.75,
-      "peer_units_max": 1.75,
-      "rec_units_total": 1.75
-    },
-    {
-      "exhibit_id": "MAPCXS-WFC-1-001",
-      "exhibit_ids": [
-        "MAPCXS-WFC-1-001"
-      ],
-      "title": "Wildland Fire Control",
-      "unified_title": "Wildland Fire Control",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
+      "confidence_title": 0.8,
+      "confidence_issuer": 0.7,
       "quality_flag": "",
       "raw_titles": [
-        "Wildland Fire Control"
+        "Wildland Fire Behavior FIRE WFT 101 Cx"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
@@ -366367,7 +367852,7 @@ window.CPL_STATEWIDE = {
       "collaborative_type": "Local",
       "adopters": 1,
       "adopter_names": [
-        "Chaffey College"
+        "Copper Mountain College"
       ],
       "potential": 15,
       "potential_names": [
@@ -366375,9 +367860,9 @@ window.CPL_STATEWIDE = {
         "Antelope Valley College",
         "Bakersfield College",
         "Cabrillo College",
+        "Cerro Coso Community College",
         "College of the Siskiyous",
         "Columbia College",
-        "Copper Mountain College",
         "Cosumnes River College",
         "Lassen College",
         "Mt. San Antonio College",
@@ -366390,27 +367875,335 @@ window.CPL_STATEWIDE = {
       "total_addressable": 16,
       "credit_recs": [
         {
-          "course": "FIRETEC 10",
-          "credit": "3 hours in Wildland Fire Control"
+          "course": "FIRE  WFT 101",
+          "credit": "3 hours in Wildland Fire Behavior"
         }
       ],
       "authoritative_recs": [],
       "exhibit_records": [
         {
-          "id": "MAPCXS-WFC-1-001",
-          "title": "Wildland Fire Control",
+          "id": "MAPCxS-WFBF-1-001",
+          "title": "Wildland Fire Behavior FIRE WFT 101 Cx",
           "units": 3.0,
           "lines": 1
         }
       ],
       "adopter_units": {
-        "Chaffey College": 3.0
+        "Copper Mountain College": 3.0
       },
       "adopter_lines": {
-        "Chaffey College": 1
+        "Copper Mountain College": 1
       },
       "adopter_rec_idx": {
-        "Chaffey College": [
+        "Copper Mountain College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCxS-WFS&-1-001",
+      "exhibit_ids": [
+        "MAPCxS-WFS&-1-001"
+      ],
+      "title": "Wildland Firefighter Safety and Survival",
+      "unified_title": "Wildland Firefighter Safety and Survival",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Wildland Firefighter Safety & Survival FIRE WFT 102 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Copper Mountain College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "FIRE  WFT 102",
+          "credit": "3 hours in Wildland Firefighter Safety & Survival"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCxS-WFS&-1-001",
+          "title": "Wildland Firefighter Safety & Survival FIRE WFT 102 Cx",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Copper Mountain College": 3.0
+      },
+      "adopter_lines": {
+        "Copper Mountain College": 1
+      },
+      "adopter_rec_idx": {
+        "Copper Mountain College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCxS-WFOF-1-001",
+      "exhibit_ids": [
+        "MAPCxS-WFOF-1-001"
+      ],
+      "title": "Wildland Fire Operations",
+      "unified_title": "Wildland Fire Operations",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Wildland Fire Operations FIRE WFT 103 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Copper Mountain College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "FIRE  WFT 103",
+          "credit": "3 hours in Wildland Fire Operations"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCxS-WFOF-1-001",
+          "title": "Wildland Fire Operations FIRE WFT 103 Cx",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Copper Mountain College": 3.0
+      },
+      "adopter_lines": {
+        "Copper Mountain College": 1
+      },
+      "adopter_rec_idx": {
+        "Copper Mountain College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCxS-WFIP-1-001",
+      "exhibit_ids": [
+        "MAPCxS-WFIP-1-001"
+      ],
+      "title": "Wildland Fire Investigation, Prevention, and Public Information",
+      "unified_title": "Wildland Fire Investigation, Prevention, and Public Information",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Wildland Fire Investigation, Prevention, and Public Information FIRE WFT 104 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Copper Mountain College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "FIRE  WFT 104",
+          "credit": "3 hours in Wildland Fire Investigation, Prevention, and Public Information"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCxS-WFIP-1-001",
+          "title": "Wildland Fire Investigation, Prevention, and Public Information FIRE WFT 104 Cx",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Copper Mountain College": 3.0
+      },
+      "adopter_lines": {
+        "Copper Mountain College": 1
+      },
+      "adopter_rec_idx": {
+        "Copper Mountain College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCxS-WFLF-1-001",
+      "exhibit_ids": [
+        "MAPCxS-WFLF-1-001"
+      ],
+      "title": "Wildland Fire Logistics, Finance, and Planning",
+      "unified_title": "Wildland Fire Logistics, Finance, and Planning",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Wildland Fire Logistics, Finance, and Planning FIRE WFT 105 Cx"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "131"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Copper Mountain College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "FIRE  WFT 105",
+          "credit": "3 hours in Wildland Fire Logistics, Finance, and Planning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCxS-WFLF-1-001",
+          "title": "Wildland Fire Logistics, Finance, and Planning FIRE WFT 105 Cx",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Copper Mountain College": 3.0
+      },
+      "adopter_lines": {
+        "Copper Mountain College": 1
+      },
+      "adopter_rec_idx": {
+        "Copper Mountain College": [
           0
         ]
       },
@@ -366601,314 +368394,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 2.0,
       "peer_units_max": 2.0,
       "rec_units_total": 2.0
-    },
-    {
-      "exhibit_id": "MAPICI-NWCG-1-001",
-      "exhibit_ids": [
-        "MAPICI-NWCG-1-001"
-      ],
-      "title": "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
-      "unified_title": "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Palo Verde College"
-      ],
-      "potential": 15,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 16,
-      "credit_recs": [
-        {
-          "course": "FST 148",
-          "credit": "0.25 hours in S-190: Introduction to Wildland Fire Behavior"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-NWCG-1-001",
-          "title": "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
-          "units": 0.25,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Palo Verde College": 0.25
-      },
-      "adopter_lines": {
-        "Palo Verde College": 1
-      },
-      "adopter_rec_idx": {
-        "Palo Verde College": [
-          0
-        ]
-      },
-      "peer_units_median": 0.25,
-      "peer_units_max": 0.25,
-      "rec_units_total": 0.25
-    },
-    {
-      "exhibit_id": "MAPICI-SDSA-1-001",
-      "exhibit_ids": [
-        "MAPICI-SDSA-1-001"
-      ],
-      "title": "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
-      "unified_title": "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santa Ana College"
-      ],
-      "potential": 15,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 16,
-      "credit_recs": [
-        {
-          "course": "FAC 079A",
-          "credit": "1 hour in S-339 Division/Group Supervisor- ALL RISK"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-SDSA-1-001",
-          "title": "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
-          "units": 1.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Santa Ana College": 1.0
-      },
-      "adopter_lines": {
-        "Santa Ana College": 1
-      },
-      "adopter_rec_idx": {
-        "Santa Ana College": [
-          0
-        ]
-      },
-      "peer_units_median": 1.0,
-      "peer_units_max": 1.0,
-      "rec_units_total": 1.0
-    },
-    {
-      "exhibit_id": "MAPICI-NIAI-1-001",
-      "exhibit_ids": [
-        "MAPICI-NIAI-1-001"
-      ],
-      "title": "NIMS ICS All-Hazards Incident Commander (ICT3)",
-      "unified_title": "NIMS ICS All-Hazards Incident Commander (ICT3)",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "NIMS ICS All-Hazards Incident Commander (ICT3)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Santa Ana College"
-      ],
-      "potential": 15,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 16,
-      "credit_recs": [
-        {
-          "course": "FOT 150E",
-          "credit": "1.5 hours in Company Officer 2E: Wildland Incident Operations for Company"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-NIAI-1-001",
-          "title": "NIMS ICS All-Hazards Incident Commander (ICT3)",
-          "units": 1.5,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Santa Ana College": 1.5
-      },
-      "adopter_lines": {
-        "Santa Ana College": 1
-      },
-      "adopter_rec_idx": {
-        "Santa Ana College": [
-          0
-        ]
-      },
-      "peer_units_median": 1.5,
-      "peer_units_max": 1.5,
-      "rec_units_total": 1.5
-    },
-    {
-      "exhibit_id": "MAPICI-IWFB-1-001",
-      "exhibit_ids": [
-        "MAPICI-IWFB-1-001"
-      ],
-      "title": "Intermediate Wildland Fire Behavior",
-      "unified_title": "Intermediate Wildland Fire Behavior",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Intermediate Wildland Fire Behavior"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Fresno City College"
-      ],
-      "potential": 15,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 16,
-      "credit_recs": [
-        {
-          "course": "FIRET 29",
-          "credit": "1.5 hours in Intermediate Wildland Fire Behavior"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IWFB-1-001",
-          "title": "Intermediate Wildland Fire Behavior",
-          "units": 1.5,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Fresno City College": 1.5
-      },
-      "adopter_lines": {
-        "Fresno City College": 1
-      },
-      "adopter_rec_idx": {
-        "Fresno City College": [
-          0
-        ]
-      },
-      "peer_units_median": 1.5,
-      "peer_units_max": 1.5,
-      "rec_units_total": 1.5
     },
     {
       "exhibit_id": "MAPPRS-WI-1-001",
@@ -367299,83 +368784,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPICI-FC6W-1-001",
-      "exhibit_ids": [
-        "MAPICI-FC6W-1-001"
-      ],
-      "title": "Fire Ctrl 6 Wildland Fire",
-      "unified_title": "Fire Ctrl 6 Wildland Fire",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Fire Ctrl 6 Wildland Fire"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Palo Verde College"
-      ],
-      "potential": 15,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 16,
-      "credit_recs": [
-        {
-          "course": "FST 119",
-          "credit": "0.75 hours in Fire Control 6 Wildland Firefighting Essentials"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-FC6W-1-001",
-          "title": "Fire Ctrl 6 Wildland Fire",
-          "units": 0.75,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Palo Verde College": 0.75
-      },
-      "adopter_lines": {
-        "Palo Verde College": 1
-      },
-      "adopter_rec_idx": {
-        "Palo Verde College": [
-          0
-        ]
-      },
-      "peer_units_median": 0.75,
-      "peer_units_max": 0.75,
-      "rec_units_total": 0.75
     },
     {
       "exhibit_id": "MAPSAS-ASA–2-1-001",
@@ -368148,6 +369556,314 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0.5
     },
     {
+      "exhibit_id": "MAPPRA-PA2-1-001",
+      "exhibit_ids": [
+        "MAPPRA-PA2-1-001"
+      ],
+      "title": "Portfolio ARTS 2A",
+      "unified_title": "Portfolio ARTS 2A",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Portfolio ARTS 2A"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "71"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Berkeley City College",
+        "Cerritos College",
+        "Citrus College",
+        "Diablo Valley College",
+        "Grossmont College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Mendocino College",
+        "Merritt College",
+        "Monterey Peninsula College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "Santa Barbara City College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "ARTS 2A",
+          "credit": "3 units in ARTS 2A Introduction to Drawing"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-PA2-1-001",
+          "title": "Portfolio ARTS 2A",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPPRA-PA3-1-001",
+      "exhibit_ids": [
+        "MAPPRA-PA3-1-001"
+      ],
+      "title": "Portfolio ARTS 3A",
+      "unified_title": "Portfolio ARTS 3A",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Portfolio ARTS 3A"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "71"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Berkeley City College",
+        "Cerritos College",
+        "Citrus College",
+        "Diablo Valley College",
+        "Grossmont College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Mendocino College",
+        "Merritt College",
+        "Monterey Peninsula College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "Santa Barbara City College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "ARTS 3A",
+          "credit": "3 units in ARTS 3A Figure and Composition I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-PA3-1-001",
+          "title": "Portfolio ARTS 3A",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPPRA-PA1-1-001",
+      "exhibit_ids": [
+        "MAPPRA-PA1-1-001"
+      ],
+      "title": "Portfolio ARTS 12A",
+      "unified_title": "Portfolio ARTS 12A",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Portfolio ARTS 12A"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "71"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Berkeley City College",
+        "Cerritos College",
+        "Citrus College",
+        "Diablo Valley College",
+        "Grossmont College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Mendocino College",
+        "Merritt College",
+        "Monterey Peninsula College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "Santa Barbara City College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "ARTS 12A",
+          "credit": "3 units in ARTS 12A Oil/Acrylic Painting: Beginning I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-PA1-1-001",
+          "title": "Portfolio ARTS 12A",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPPRA-PA7-1-001",
+      "exhibit_ids": [
+        "MAPPRA-PA7-1-001"
+      ],
+      "title": "Portfolio ARTS 7A",
+      "unified_title": "Portfolio ARTS 7A",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Portfolio ARTS 7A"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "71"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Berkeley City College",
+        "Cerritos College",
+        "Citrus College",
+        "Diablo Valley College",
+        "Grossmont College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Mendocino College",
+        "Merritt College",
+        "Monterey Peninsula College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "Santa Barbara City College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "ARTS 7A",
+          "credit": "3 units in ARTS 7A Introduction to Watercolor Painting"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-PA7-1-001",
+          "title": "Portfolio ARTS 7A",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPCBEN-ACI-1-001",
       "exhibit_ids": [
         "MAPCBEN-ACI-1-001"
@@ -368756,234 +370472,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-BWF-1-001",
-      "exhibit_ids": [
-        "MAPICI-BWF-1-001"
-      ],
-      "title": "Basic Wildland Firefighter (S-130/S-190)",
-      "unified_title": "Basic Wildland Firefighter (S-130/S-190)",
-      "is_classified": true,
-      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
-      "training_agency": "",
-      "confidence_title": 0.75,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Basic Wildland Firefighter"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Columbia College"
-      ],
-      "potential": 14,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 15,
-      "credit_recs": [
-        {
-          "course": "FIRE 190",
-          "credit": "6 hours in Basic Wildland Firefighter"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-BWF-1-001",
-          "title": "Basic Wildland Firefighter",
-          "units": 6.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Columbia College": 6.0
-      },
-      "adopter_lines": {
-        "Columbia College": 1
-      },
-      "adopter_rec_idx": {
-        "Columbia College": [
-          0
-        ]
-      },
-      "peer_units_median": 6.0,
-      "peer_units_max": 6.0,
-      "rec_units_total": 6.0
-    },
-    {
-      "exhibit_id": "MAPPRI-WFC-1-001",
-      "exhibit_ids": [
-        "MAPPRI-WFC-1-001"
-      ],
-      "title": "Wildland Fire Control",
-      "unified_title": "Wildland Fire Control",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Wildland Fire Control"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Columbia College"
-      ],
-      "potential": 14,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 15,
-      "credit_recs": [
-        {
-          "course": "FIRE 7",
-          "credit": "3 hours in Wildland Fire Control"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPPRI-WFC-1-001",
-          "title": "Wildland Fire Control",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Columbia College": 3.0
-      },
-      "adopter_lines": {
-        "Columbia College": 1
-      },
-      "adopter_rec_idx": {
-        "Columbia College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPICI-WFC-1-001",
-      "exhibit_ids": [
-        "MAPICI-WFC-1-001"
-      ],
-      "title": "Wildland Fire Chainsaws (S-212)",
-      "unified_title": "Wildland Fire Chainsaws (S-212)",
-      "is_classified": true,
-      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 0.75,
-      "quality_flag": "",
-      "raw_titles": [
-        "Wildland Fire Chainsaws"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Columbia College"
-      ],
-      "potential": 14,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 15,
-      "credit_recs": [
-        {
-          "course": "FIRE 112",
-          "credit": "0.5 hours in Wildland Fire Chainsaws"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-WFC-1-001",
-          "title": "Wildland Fire Chainsaws",
-          "units": 0.5,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Columbia College": 0.5
-      },
-      "adopter_lines": {
-        "Columbia College": 1
-      },
-      "adopter_rec_idx": {
-        "Columbia College": [
-          0
-        ]
-      },
-      "peer_units_median": 0.5,
-      "peer_units_max": 0.5,
-      "rec_units_total": 0.5
-    },
-    {
       "exhibit_id": "MAPCXS-HSA-7-1-001",
       "exhibit_ids": [
         "MAPCXS-HSA-7-1-001"
@@ -369134,386 +370622,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 2.0,
       "peer_units_max": 2.0,
       "rec_units_total": 2.0
-    },
-    {
-      "exhibit_id": "MAPCxS-WFBF-1-001",
-      "exhibit_ids": [
-        "MAPCxS-WFBF-1-001"
-      ],
-      "title": "Wildland Fire Behavior (S-190)",
-      "unified_title": "Wildland Fire Behavior (S-190)",
-      "is_classified": true,
-      "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 0.7,
-      "quality_flag": "",
-      "raw_titles": [
-        "Wildland Fire Behavior FIRE WFT 101 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 14,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 15,
-      "credit_recs": [
-        {
-          "course": "FIRE  WFT 101",
-          "credit": "3 hours in Wildland Fire Behavior"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCxS-WFBF-1-001",
-          "title": "Wildland Fire Behavior FIRE WFT 101 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 3.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1
-      },
-      "adopter_rec_idx": {
-        "Copper Mountain College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPCxS-WFS&-1-001",
-      "exhibit_ids": [
-        "MAPCxS-WFS&-1-001"
-      ],
-      "title": "Wildland Firefighter Safety and Survival",
-      "unified_title": "Wildland Firefighter Safety and Survival",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Wildland Firefighter Safety & Survival FIRE WFT 102 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 14,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 15,
-      "credit_recs": [
-        {
-          "course": "FIRE  WFT 102",
-          "credit": "3 hours in Wildland Firefighter Safety & Survival"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCxS-WFS&-1-001",
-          "title": "Wildland Firefighter Safety & Survival FIRE WFT 102 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 3.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1
-      },
-      "adopter_rec_idx": {
-        "Copper Mountain College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPCxS-WFOF-1-001",
-      "exhibit_ids": [
-        "MAPCxS-WFOF-1-001"
-      ],
-      "title": "Wildland Fire Operations",
-      "unified_title": "Wildland Fire Operations",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Wildland Fire Operations FIRE WFT 103 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 14,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 15,
-      "credit_recs": [
-        {
-          "course": "FIRE  WFT 103",
-          "credit": "3 hours in Wildland Fire Operations"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCxS-WFOF-1-001",
-          "title": "Wildland Fire Operations FIRE WFT 103 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 3.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1
-      },
-      "adopter_rec_idx": {
-        "Copper Mountain College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPCxS-WFIP-1-001",
-      "exhibit_ids": [
-        "MAPCxS-WFIP-1-001"
-      ],
-      "title": "Wildland Fire Investigation, Prevention, and Public Information",
-      "unified_title": "Wildland Fire Investigation, Prevention, and Public Information",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Wildland Fire Investigation, Prevention, and Public Information FIRE WFT 104 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 14,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 15,
-      "credit_recs": [
-        {
-          "course": "FIRE  WFT 104",
-          "credit": "3 hours in Wildland Fire Investigation, Prevention, and Public Information"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCxS-WFIP-1-001",
-          "title": "Wildland Fire Investigation, Prevention, and Public Information FIRE WFT 104 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 3.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1
-      },
-      "adopter_rec_idx": {
-        "Copper Mountain College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPCxS-WFLF-1-001",
-      "exhibit_ids": [
-        "MAPCxS-WFLF-1-001"
-      ],
-      "title": "Wildland Fire Logistics, Finance, and Planning",
-      "unified_title": "Wildland Fire Logistics, Finance, and Planning",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Wildland Fire Logistics, Finance, and Planning FIRE WFT 105 Cx"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "131"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 14,
-      "potential_names": [
-        "Allan Hancock College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Cosumnes River College",
-        "Lassen College",
-        "Mt. San Antonio College",
-        "Oxnard College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Shasta College"
-      ],
-      "total_addressable": 15,
-      "credit_recs": [
-        {
-          "course": "FIRE  WFT 105",
-          "credit": "3 hours in Wildland Fire Logistics, Finance, and Planning"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCxS-WFLF-1-001",
-          "title": "Wildland Fire Logistics, Finance, and Planning FIRE WFT 105 Cx",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 3.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1
-      },
-      "adopter_rec_idx": {
-        "Copper Mountain College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "MAPCXH-AH-1-001",
@@ -377668,6 +378776,79 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Lemoore College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXH-CBE-3-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-3-1-001"
+      ],
+      "title": "Credit by Exam - Long Beach Unified School District - Medical Terminology",
+      "unified_title": "Credit by Exam - Long Beach Unified School District - Medical Terminology",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Long Beach Unified School District - Medical Terminology"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "51",
+      "top_codes": [
+        "95"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 11,
+      "potential_names": [
+        "Bakersfield College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Cosumnes River College",
+        "Cypress College",
+        "East Los Angeles College",
+        "Fresno City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "Santa Barbara City College",
+        "Shasta College"
+      ],
+      "total_addressable": 12,
+      "credit_recs": [
+        {
+          "course": "AH 60",
+          "credit": "3 hours in Medical Terminology"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-3-1-001",
+          "title": "Credit by Exam - Long Beach Unified School District - Medical Terminology",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 3.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
           0
         ]
       },
@@ -386518,6 +387699,429 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 5.0
     },
     {
+      "exhibit_id": "MAPICA-IPLA-1-001",
+      "exhibit_ids": [
+        "MAPICA-IPLA-1-001"
+      ],
+      "title": "IBEW- Power Lineman Apprenticeship Year 1",
+      "unified_title": "IBEW- Power Lineman Apprenticeship Year 1",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IBEW- Power Lineman Apprenticeship Year 1"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "51"
+      ],
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 10,
+      "potential_names": [
+        "Chaffey College",
+        "Fresno City College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Modesto Junior College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College"
+      ],
+      "total_addressable": 11,
+      "credit_recs": [
+        {
+          "course": "APL 020",
+          "credit": "3 hours in Orientation"
+        },
+        {
+          "course": "APL 021",
+          "credit": "3 hours in Power Lineman Apprentice 1"
+        },
+        {
+          "course": "APL 022",
+          "credit": "3 hours in Power Lineman Apprentice 2"
+        },
+        {
+          "course": "APL 041",
+          "credit": "1 hour in Work Methods Training"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IPLA-1-001",
+          "title": "IBEW- Power Lineman Apprenticeship Year 1",
+          "units": 10.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Santiago Canyon College": 10.0
+      },
+      "adopter_lines": {
+        "Santiago Canyon College": 4
+      },
+      "adopter_rec_idx": {
+        "Santiago Canyon College": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "peer_units_median": 10.0,
+      "peer_units_max": 10.0,
+      "rec_units_total": 10.0
+    },
+    {
+      "exhibit_id": "MAPICA-IPLA1-1-001",
+      "exhibit_ids": [
+        "MAPICA-IPLA1-1-001"
+      ],
+      "title": "IBEW- Power Lineman Apprenticeship Year 2",
+      "unified_title": "IBEW- Power Lineman Apprenticeship Year 2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IBEW- Power Lineman Apprenticeship Year 2"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "51"
+      ],
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 10,
+      "potential_names": [
+        "Chaffey College",
+        "Fresno City College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Modesto Junior College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College"
+      ],
+      "total_addressable": 11,
+      "credit_recs": [
+        {
+          "course": "APL 020",
+          "credit": "3 hours in Orientation"
+        },
+        {
+          "course": "APL 021",
+          "credit": "3 hours in Power Lineman Apprentice 1"
+        },
+        {
+          "course": "APL 022",
+          "credit": "3 hours in Power Lineman Apprentice 2"
+        },
+        {
+          "course": "APL 023",
+          "credit": "3 hours in Power Lineman Apprentice 3"
+        },
+        {
+          "course": "APL 024",
+          "credit": "3 hours in Power Lineman Apprentice 4"
+        },
+        {
+          "course": "APL 041",
+          "credit": "1 hour in Work Methods Training"
+        },
+        {
+          "course": "APL 042",
+          "credit": "1 hour in Rubber Gloves Training"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IPLA1-1-001",
+          "title": "IBEW- Power Lineman Apprenticeship Year 2",
+          "units": 17.0,
+          "lines": 7
+        }
+      ],
+      "adopter_units": {
+        "Santiago Canyon College": 17.0
+      },
+      "adopter_lines": {
+        "Santiago Canyon College": 7
+      },
+      "adopter_rec_idx": {
+        "Santiago Canyon College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "peer_units_median": 17.0,
+      "peer_units_max": 17.0,
+      "rec_units_total": 17.0
+    },
+    {
+      "exhibit_id": "MAPICA-IPLA2-1-001",
+      "exhibit_ids": [
+        "MAPICA-IPLA2-1-001"
+      ],
+      "title": "IBEW- Power Lineman Apprenticeship Year 3",
+      "unified_title": "IBEW- Power Lineman Apprenticeship Year 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IBEW- Power Lineman Apprenticeship Year 3"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "51"
+      ],
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 10,
+      "potential_names": [
+        "Chaffey College",
+        "Fresno City College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Modesto Junior College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College"
+      ],
+      "total_addressable": 11,
+      "credit_recs": [
+        {
+          "course": "APL 020",
+          "credit": "3 hours in Orientation"
+        },
+        {
+          "course": "APL 021",
+          "credit": "3 hours in Power Lineman Apprentice 1"
+        },
+        {
+          "course": "APL 022",
+          "credit": "3 hours in Power Lineman Apprentice 2"
+        },
+        {
+          "course": "APL 023",
+          "credit": "3 hours in Power Lineman Apprentice 3"
+        },
+        {
+          "course": "APL 024",
+          "credit": "3 hours in Power Lineman Apprentice 4"
+        },
+        {
+          "course": "APL 025",
+          "credit": "3 hours in Power Lineman Apprentice 5"
+        },
+        {
+          "course": "APL 026",
+          "credit": "3 hours in Power Lineman Apprentice 6"
+        },
+        {
+          "course": "APL 041",
+          "credit": "1 hour in Work Methods Training"
+        },
+        {
+          "course": "APL 042",
+          "credit": "1 hour in Rubber Gloves Training"
+        },
+        {
+          "course": "APL 043",
+          "credit": "1 hour in Hot Sticks Training"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IPLA2-1-001",
+          "title": "IBEW- Power Lineman Apprenticeship Year 3",
+          "units": 24.0,
+          "lines": 10
+        }
+      ],
+      "adopter_units": {
+        "Santiago Canyon College": 24.0
+      },
+      "adopter_lines": {
+        "Santiago Canyon College": 10
+      },
+      "adopter_rec_idx": {
+        "Santiago Canyon College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "peer_units_median": 24.0,
+      "peer_units_max": 24.0,
+      "rec_units_total": 24.0
+    },
+    {
+      "exhibit_id": "MAPICA-IPLA3-1-001",
+      "exhibit_ids": [
+        "MAPICA-IPLA3-1-001"
+      ],
+      "title": "IBEW- Power Lineman Apprenticeship-Journeyperson",
+      "unified_title": "IBEW- Power Lineman Apprenticeship-Journeyperson",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IBEW- Power Lineman Apprenticeship-Journeyperson"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "51"
+      ],
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 10,
+      "potential_names": [
+        "Chaffey College",
+        "Fresno City College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Modesto Junior College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College"
+      ],
+      "total_addressable": 11,
+      "credit_recs": [
+        {
+          "course": "APL 020",
+          "credit": "3 hours in Orientation"
+        },
+        {
+          "course": "APL 021",
+          "credit": "3 hours in Power Lineman Apprentice 1"
+        },
+        {
+          "course": "APL 022",
+          "credit": "3 hours in Power Lineman Apprentice 2"
+        },
+        {
+          "course": "APL 023",
+          "credit": "3 hours in Power Lineman Apprentice 3"
+        },
+        {
+          "course": "APL 024",
+          "credit": "3 hours in Power Lineman Apprentice 4"
+        },
+        {
+          "course": "APL 025",
+          "credit": "3 hours in Power Lineman Apprentice 5"
+        },
+        {
+          "course": "APL 026",
+          "credit": "3 hours in Power Lineman Apprentice 6"
+        },
+        {
+          "course": "APL 041",
+          "credit": "1 hour in Work Methods Training"
+        },
+        {
+          "course": "APL 042",
+          "credit": "1 hour in Rubber Gloves Training"
+        },
+        {
+          "course": "APL 043",
+          "credit": "1 hour in Hot Sticks Training"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IPLA3-1-001",
+          "title": "IBEW- Power Lineman Apprenticeship-Journeyperson",
+          "units": 24.0,
+          "lines": 10
+        }
+      ],
+      "adopter_units": {
+        "Santiago Canyon College": 24.0
+      },
+      "adopter_lines": {
+        "Santiago Canyon College": 10
+      },
+      "adopter_rec_idx": {
+        "Santiago Canyon College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "peer_units_median": 24.0,
+      "peer_units_max": 24.0,
+      "rec_units_total": 24.0
+    },
+    {
       "exhibit_id": "MAPSAS-D:IT2-1-001|MAPSAS-DITW-1-001|MAPSAS-DITW1-1-001|MAPSAS-DITW2-1-001",
       "exhibit_ids": [
         "MAPSAS-D:IT2-1-001",
@@ -389301,6 +390905,77 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "El Camino College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXH-CBE-6-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-6-1-001"
+      ],
+      "title": "Credit by Exam - Long Beach Unified School District - Introduction to Engineering and Design",
+      "unified_title": "Credit by Exam - Long Beach Unified School District - Introduction to Engineering and Design",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Long Beach Unified School District - Introduction to Engineering and Design"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "15",
+      "top_codes": [
+        "69"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 9,
+      "potential_names": [
+        "Coastline Community College",
+        "College of the Canyons",
+        "Folsom Lake College",
+        "Golden West College",
+        "Mt. San Jacinto College",
+        "Pasadena City College",
+        "San Diego City College",
+        "Santa Monica College",
+        "Shasta College"
+      ],
+      "total_addressable": 10,
+      "credit_recs": [
+        {
+          "course": "ETEC 20",
+          "credit": "3 hours in Introduction to Engineering and Design"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-6-1-001",
+          "title": "Credit by Exam - Long Beach Unified School District - Introduction to Engineering and Design",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 3.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
           0
         ]
       },
@@ -392928,6 +394603,73 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Lemoore College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPCXH-CBE-10-1-001",
+      "exhibit_ids": [
+        "MAPCXH-CBE-10-1-001"
+      ],
+      "title": "Credit by Exam - Long Beach Unified School District - Computer Integrated Manufacturing",
+      "unified_title": "Credit by Exam - Long Beach Unified School District - Computer Integrated Manufacturing",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam - Long Beach Unified School District - Computer Integrated Manufacturing"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "384"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Long Beach City College"
+      ],
+      "potential": 5,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Chabot College",
+        "Foothill College",
+        "Palomar College"
+      ],
+      "total_addressable": 6,
+      "credit_recs": [
+        {
+          "course": "MTFAB 90",
+          "credit": "3 hours in Computer Integrated Manufacturing"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXH-CBE-10-1-001",
+          "title": "Credit by Exam - Long Beach Unified School District - Computer Integrated Manufacturing",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Long Beach City College": 3.0
+      },
+      "adopter_lines": {
+        "Long Beach City College": 1
+      },
+      "adopter_rec_idx": {
+        "Long Beach City College": [
           0
         ]
       },
@@ -429288,17 +431030,17 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Santiago Canyon College",
-        "credit_recs": 478,
-        "exhibits": 23,
+        "credit_recs": 509,
+        "exhibits": 27,
         "disciplines": 3,
         "ccc_collaborative": 1,
-        "industry_certs": 478,
-        "pct": 3.4
+        "industry_certs": 509,
+        "pct": 3.6
       },
       {
         "college": "Santa Ana College",
-        "credit_recs": 474,
-        "exhibits": 333,
+        "credit_recs": 473,
+        "exhibits": 332,
         "disciplines": 20,
         "ccc_collaborative": 150,
         "industry_certs": 212,
@@ -429405,8 +431147,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Barstow Community College",
-        "credit_recs": 251,
-        "exhibits": 181,
+        "credit_recs": 250,
+        "exhibits": 180,
         "disciplines": 13,
         "ccc_collaborative": 110,
         "industry_certs": 107,
@@ -429464,7 +431206,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 12,
         "ccc_collaborative": 3,
         "industry_certs": 6,
-        "pct": 1.2
+        "pct": 1.1
       },
       {
         "college": "Los Angeles Valley College",
@@ -429494,6 +431236,15 @@ window.CPL_STATEWIDE = {
         "pct": 1.1
       },
       {
+        "college": "Las Positas College",
+        "credit_recs": 149,
+        "exhibits": 94,
+        "disciplines": 9,
+        "ccc_collaborative": 15,
+        "industry_certs": 69,
+        "pct": 1.1
+      },
+      {
         "college": "Napa Valley College",
         "credit_recs": 149,
         "exhibits": 130,
@@ -429518,15 +431269,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 12,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 1.1
-      },
-      {
-        "college": "Las Positas College",
-        "credit_recs": 146,
-        "exhibits": 91,
-        "disciplines": 9,
-        "ccc_collaborative": 15,
-        "industry_certs": 69,
         "pct": 1.0
       },
       {
@@ -429626,7 +431368,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 14,
         "ccc_collaborative": 1,
         "industry_certs": 12,
-        "pct": 0.9
+        "pct": 0.8
       },
       {
         "college": "Reedley College",
@@ -429728,6 +431470,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.7
       },
       {
+        "college": "Long Beach City College",
+        "credit_recs": 97,
+        "exhibits": 86,
+        "disciplines": 6,
+        "ccc_collaborative": 6,
+        "industry_certs": 33,
+        "pct": 0.7
+      },
+      {
         "college": "Cypress College",
         "credit_recs": 95,
         "exhibits": 88,
@@ -429770,15 +431521,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 9,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.7
-      },
-      {
-        "college": "Long Beach City College",
-        "credit_recs": 86,
-        "exhibits": 75,
-        "disciplines": 5,
-        "ccc_collaborative": 6,
-        "industry_certs": 33,
         "pct": 0.6
       },
       {
@@ -430058,7 +431800,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 10,
         "ccc_collaborative": 0,
         "industry_certs": 21,
-        "pct": 0.4
+        "pct": 0.3
       },
       {
         "college": "Rio Hondo College",
@@ -430139,7 +431881,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 1,
         "ccc_collaborative": 0,
         "industry_certs": 7,
-        "pct": 0.1
+        "pct": 0.0
       },
       {
         "college": "Orange Coast College",
@@ -430172,30 +431914,30 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6011,
-        "exhibits": 2177,
-        "courses": 334,
+        "credit_recs": 6014,
+        "exhibits": 2180,
+        "courses": 337,
         "colleges": 87,
         "ccc_collaborative": 25,
-        "pct": 43.0
+        "pct": 42.9
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2305,
-        "exhibits": 1017,
-        "courses": 1172,
+        "credit_recs": 2337,
+        "exhibits": 1023,
+        "courses": 1185,
         "colleges": 55,
         "ccc_collaborative": 512,
-        "pct": 16.5
+        "pct": 16.7
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1517,
-        "exhibits": 565,
-        "courses": 655,
+        "credit_recs": 1519,
+        "exhibits": 567,
+        "courses": 656,
         "colleges": 52,
         "ccc_collaborative": 535,
-        "pct": 10.9
+        "pct": 10.8
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -430217,8 +431959,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 478,
-        "exhibits": 237,
+        "credit_recs": 477,
+        "exhibits": 236,
         "courses": 321,
         "colleges": 47,
         "ccc_collaborative": 36,
@@ -430253,19 +431995,19 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Fine and Applied Arts",
-        "credit_recs": 272,
-        "exhibits": 228,
-        "courses": 211,
+        "credit_recs": 276,
+        "exhibits": 232,
+        "courses": 215,
         "colleges": 38,
         "ccc_collaborative": 0,
-        "pct": 1.9
+        "pct": 2.0
       },
       {
         "discipline": "Family and Consumer Sciences",
-        "credit_recs": 221,
-        "exhibits": 125,
-        "courses": 119,
-        "colleges": 26,
+        "credit_recs": 224,
+        "exhibits": 128,
+        "courses": 121,
+        "colleges": 27,
         "ccc_collaborative": 18,
         "pct": 1.6
       },
@@ -430384,26 +432126,26 @@ window.CPL_STATEWIDE = {
         "credit_recs": 7356,
         "exhibits": 2668,
         "colleges": 83,
-        "pct": 52.6
+        "pct": 52.5
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3798,
-        "exhibits": 1187,
+        "credit_recs": 3829,
+        "exhibits": 1191,
         "colleges": 79,
-        "pct": 27.2
+        "pct": 27.3
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2177,
-        "exhibits": 1711,
+        "credit_recs": 2185,
+        "exhibits": 1720,
         "colleges": 60,
         "pct": 15.6
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 406,
-        "exhibits": 328,
+        "credit_recs": 410,
+        "exhibits": 332,
         "colleges": 29,
         "pct": 2.9
       },
@@ -430425,29 +432167,29 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 8751,
-        "exhibits": 3743,
+        "credit_recs": 8749,
+        "exhibits": 3742,
         "colleges": 90,
-        "pct": 62.6
+        "pct": 62.4
       },
       {
         "mode": "Industry training (I)",
         "credit_recs": 2862,
         "exhibits": 1133,
         "colleges": 76,
-        "pct": 20.5
+        "pct": 20.4
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1379,
-        "exhibits": 388,
+        "credit_recs": 1414,
+        "exhibits": 396,
         "colleges": 42,
-        "pct": 9.9
+        "pct": 10.1
       },
       {
         "mode": "High school coursework (H)",
-        "credit_recs": 401,
-        "exhibits": 354,
+        "credit_recs": 411,
+        "exhibits": 364,
         "colleges": 20,
         "pct": 2.9
       },
@@ -430497,11 +432239,11 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12393,
-        "exhibits": 5783,
+        "credit_recs": 12405,
+        "exhibits": 5796,
         "colleges": 97,
         "disciplines": 23,
-        "pct": 88.6
+        "pct": 88.5
       },
       {
         "category": "CCC Collaborative",
@@ -430509,15 +432251,15 @@ window.CPL_STATEWIDE = {
         "exhibits": 169,
         "colleges": 65,
         "disciplines": 11,
-        "pct": 9.8
+        "pct": 9.7
       },
       {
         "category": "Industry/Other",
-        "credit_recs": 220,
-        "exhibits": 46,
-        "colleges": 22,
+        "credit_recs": 251,
+        "exhibits": 50,
+        "colleges": 23,
         "disciplines": 11,
-        "pct": 1.6
+        "pct": 1.8
       }
     ],
     "top_exhibits": [
@@ -430923,8 +432665,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-05T18:30:27",
-  "total_credit_recs": 13980,
+  "generated_at": "2026-10-06T13:31:07",
+  "total_credit_recs": 14023,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

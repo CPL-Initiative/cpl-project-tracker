@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-05T18:31:11.612902+00:00",
+  "scraped_at": "2026-10-06T13:31:49.237846+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28654,
+    "jst": 28675,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -100,14 +100,14 @@
       "jst": 723,
       "star": true
     },
+    "Fresno City College": {
+      "vets": 724,
+      "jst": 753,
+      "star": true
+    },
     "San Bernardino Valley College": {
       "vets": 207,
       "jst": 207,
-      "star": true
-    },
-    "Fresno City College": {
-      "vets": 724,
-      "jst": 731,
       "star": true
     },
     "College of the Desert": {
@@ -162,7 +162,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 519,
+      "jst": 521,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -247,7 +247,7 @@
     },
     "Lemoore College": {
       "vets": 61,
-      "jst": 30,
+      "jst": 27,
       "star": false
     },
     "East Los Angeles College": {
