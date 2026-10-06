@@ -101,6 +101,10 @@ claude.ai.
   Supabase SQL editor**. That is the fallback when the migration path stalls; read the row back after.
 - **Both Summit film cuts, v1** (2026-10-06, by Sam by hand): the narrated cut in **CPLLibrary**, the music
   cut in **CPLLibrary/Drafts**. Their record still links the GitHub copies.
+- **Both Summit film cuts, v2** (S339, 2026-10-06): sent to Sam in chat for **Drafts**
+  (`20261005_Noncredit_Summit_in_Motion_v2.mp4`, 10,048,927 bytes; `..._Narrated_v2.mp4`, 17,230,551 bytes). They are
+  never committed: `.gitignore` keeps v2+ film MP4s out and the page test asks git (#1891). The record
+  `noncredit-summit-in-motion` still needs its v2 rows once Sam confirms the files are in Drafts.
 - **The five Title 5 tracked-changes documents** (CPLLibrary, 2026-10-05): uploaded by the session
   through the Drive connector, each at its exact byte size; the record links v5 and lists all five
   (receipt `kb/receipts/cpl_library_drive_t5_2026-10-05.sql`, guarded; the history trigger holds the
@@ -139,7 +143,11 @@ claude.ai.
 
 ## Next
 
-- **First, in a new session, the end-to-end test** (the sign-in is set; this is its first run): `python3 scripts/library_file.py --check`;
+- ⚠️ **The sign-in is NOT set yet (S339, 2026-10-06):** `--check` answers `invalid_client`, and the three saved
+  values measure 43 / 19 / 14 characters (shape checks pass: `.apps.googleusercontent.com`, `GOCSPX-`, `1//`), where
+  real ones run about 72 / 35 / 100+. They look truncated; Sam re-saves the full values, and a new session runs
+  `--check` again. Never print a value or ask for one in chat.
+- **First, in a new session, the end-to-end test** (once the sign-in is set): `python3 scripts/library_file.py --check`;
   file a small test document with `--new --title "Filer test" --kind document` to Drafts; apply the
   receipt under the migration name it prints; see it in the Library; retire the test record (Retire,
   never delete).
