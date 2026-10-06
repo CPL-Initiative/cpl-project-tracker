@@ -51,6 +51,10 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 SAMPLE_FILE = os.path.join(HERE, "program_requirements_pilot_sample.json")
+# Programs read beyond Sam's checked 20 because their college's map is already
+# read (S337). A second list, so the pilot's 20, which the tests pin, never grow.
+MAPS_FILE = os.path.join(HERE, "program_requirements_maps_sample.json")
+SAMPLES = {"pilot": [SAMPLE_FILE], "maps": [MAPS_FILE], "all": [SAMPLE_FILE, MAPS_FILE]}
 
 MAX_LOADS = 8            # page loads per program, shared pages excluded
 ACCEPT_SHARE = 0.5       # a page naming this share of the listed codes is the page
@@ -831,8 +835,10 @@ def probe_ppm(reader, college: str, cache: dict) -> list[dict]:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--only", default="", help="colleges whose name contains this")
+    ap.add_argument("--sample", default="pilot", choices=sorted(SAMPLES),
+                    help="pilot (Sam's checked 20), maps (programs with a read map) or all")
     args = ap.parse_args(argv)
-    sample = [p for p in load_sample()
+    sample = [p for path in SAMPLES[args.sample] for p in load_sample(path)
               if not args.only or args.only.lower() in p["college"].lower()]
     delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
     print("program requirements pilot, capture: %d programs, %.1f s between loads, "

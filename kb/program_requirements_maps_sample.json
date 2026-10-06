@@ -1,0 +1,12 @@
+{
+  "_what": "The second capture list for the program requirements harvest: programs read beyond the pilot's 20 because their college publishes a term-by-term map that kb/_program_map_parse.py has already read (kb/program_requirements_pilot/sequences/). Their records give CPL Pathways' By term view a catalog rule to lay the map against. Sam's checked 20 stay in kb/program_requirements_pilot_sample.json, which the tests pin; these records are unchecked, and CPL Pathways marks them so (Sam, S334). Lane: docs/reference/lanes/program-requirements-harvest.md.",
+  "_picked": "S337 SkyCompass, 2026-10-06, from the S336 handoff: the two programs whose maps were read first (college-page-read run 37372136739).",
+  "programs": [
+    {"college": "Santa Monica College", "control_number": "43767", "title": "Barbering", "shape": "degree_list",
+     "sequence": "kb/program_requirements_pilot/sequences/smc_43767.json",
+     "why": "The map names 24 of 25 listed courses; every COSM course in year one carries CPL through the Barbering License exhibit."},
+    {"college": "Irvine Valley College", "control_number": "10265", "title": "Art", "shape": "degree_list",
+     "sequence": "kb/program_requirements_pilot/sequences/ivc_10265.json",
+     "why": "The map names the core and four list slots; the catalog's choose blocks say what fills each slot."}
+  ]
+}

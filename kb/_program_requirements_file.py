@@ -43,6 +43,7 @@ from _program_requirements_score import requirements_md5, score  # noqa: E402
 PILOT = os.path.join(ROOT, "kb", "program_requirements_pilot")
 RECORDS = os.path.join(PILOT, "records")
 READINGS = os.path.join(PILOT, "reviewed_readings.json")
+SEQUENCES = os.path.join(PILOT, "sequences")
 
 
 def rows_from_log(text: str) -> list[dict]:
@@ -72,6 +73,11 @@ def college_slugs() -> dict:
         if name.endswith(".json"):
             rec = json.load(open(os.path.join(RECORDS, name)))
             out[rec["college"]] = name.rsplit("_", 1)[0]
+    # A college new to the harvest takes the slug its read map is filed under (S337).
+    for name in os.listdir(SEQUENCES) if os.path.isdir(SEQUENCES) else []:
+        if name.endswith(".json"):
+            seq = json.load(open(os.path.join(SEQUENCES, name)))
+            out.setdefault(seq["college"], name.rsplit("_", 1)[0])
     return out
 
 
