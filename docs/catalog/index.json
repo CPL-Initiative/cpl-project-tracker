@@ -14178,7 +14178,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 54,
+   "count": 55,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14892,6 +14892,22 @@
      "title": "The industry-credential watch agent",
      "type": null,
      "updated": "2026-09-30"
+    },
+    {
+     "created": "2026-10-06",
+     "governs": [],
+     "path": "docs/reference/library_filer.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "library",
+      "drive",
+      "deliverables",
+      "filer"
+     ],
+     "title": "The Library filer \u2014 every piece files itself to Drive",
+     "type": null,
+     "updated": "2026-10-06"
     },
     {
      "created": "2026-09-10",
@@ -20182,5 +20198,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1054
+ "total": 1055
 }

@@ -362,6 +362,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
 | `docs/catalog/index.json` | tabs: `governance` · scripts: `kb/_build_docs_index.py` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
+| `docs/reference/library_filer.md` | scripts: `scripts/library_file.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/README.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/t5_55050_55051_final_reg_text_<date>.txt` | scripts: `kb/_derive_55050_clean.py` | — |
@@ -798,6 +799,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/kpi_history_no_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
+| `tests/library_file_test.py` | workflows: `js-tests.yml` | — |
 | `tests/map_custom_report_sync_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/memory_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_candidate_queue_test.py` | workflows: `js-tests.yml` | — |
@@ -885,7 +887,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `datamart.cccco.edu` | scripts: `kb/_fetch_program_course_files.py` |
 | `datastudio.google.com` | tabs: `cip-crosswalk` |
 | `docs.google.com` | tabs: `nc-learning-partners` |
-| `drive.google.com` | tabs: `library` |
+| `drive.google.com` | tabs: `library` · scripts: `scripts/library_file.py` |
 | `esm.sh` | pages: `kb-portal/index.html` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -916,6 +918,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `nces.ed.gov` | tabs: `cip-crosswalk` |
 | `news.google.com` | `edgefn:cpl-news-harvest` |
 | `noce.edu` | tabs: `map-queue`, `map-users` |
+| `oauth2.googleapis.com` | scripts: `scripts/library_file.py` |
 | `orangecoastcollege.edu` | tabs: `map-queue`, `map-users` |
 | `pasadena.edu` | tabs: `map-queue`, `map-users` |
 | `programmap.sdmiramar.edu` | scripts: `kb/_program_requirements_pilot.py` |
@@ -962,6 +965,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.gavilan.edu` | tabs: `map-queue`, `map-users` |
 | `www.goldenwestcollege.edu` | tabs: `map-queue`, `map-users` |
 | `www.google.com` | tabs: `credential-reference` |
+| `www.googleapis.com` | scripts: `scripts/library_file.py` |
 | `www.grossmont.edu` | tabs: `map-queue`, `map-users` |
 | `www.hancockcollege.edu` | tabs: `map-queue`, `map-users` |
 | `www.hartnell.edu` | tabs: `map-queue`, `map-users` |
@@ -1033,5 +1037,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 95 Supabase tables · 35 RPCs · 6 edge functions · 601 file
-datasets · 158 external services · 417 consumers · 44 workflows · 39 tabs.
+Coverage: 95 Supabase tables · 35 RPCs · 6 edge functions · 603 file
+datasets · 160 external services · 418 consumers · 44 workflows · 39 tabs.

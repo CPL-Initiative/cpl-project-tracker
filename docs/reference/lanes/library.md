@@ -69,14 +69,17 @@ ppt and video. Advise"*. Then, by number:
 - **A cloud session, through the Drive connector:** a file up to roughly 50 KB (it travels as
   base64 inside the tool call). Anything larger: Sam drops it in, and the session finds it with the
   connector (`search_files` by title and `parentId`) and files the link with **File it**.
-- **A cloud session, directly (measured 2026-10-05):** the proxy lets the shell reach
-  `www.googleapis.com/upload` and `oauth2.googleapis.com` (they answer 405 and 404), and rejects
-  `script.google.com` and `*.supabase.co`. So with a stored Google sign-in for the camapinitiative
-  account (an OAuth refresh token as an environment secret) a script can upload a file of any size,
-  films included, with Drive's resumable upload.
-- **Automatic upload (call 6, deferred; Sam raised auto-filing again 2026-10-05):** the direct
-  route above, run by the session when it makes a piece. A Google service account likely cannot own
-  files in a personal Gmail Drive, so it needs the account's own refresh token. Not built.
+- **The filer, `scripts/library_file.py` (call 7, built 2026-10-06):** any session, any file size,
+  films included. It does a resumable upload to CPLLibrary or Drafts, checks size and md5, and writes
+  a receipt guarded on the Drive file id, applied as a named migration. It never deletes or
+  overwrites. Each edit is its own `<date code>_<name>_vN` file (call 8). Usage, setup and failure
+  modes: [`library_filer`](../library_filer.md). **It waits on Sam's one-time Google sign-in**, three
+  environment secrets that only a new session reads. The proxy lets the shell reach
+  `oauth2.googleapis.com`, `www.googleapis.com/drive/v3` and `/upload` (measured 2026-10-05 and
+  2026-10-06), and rejects `*.supabase.co`, which is why the receipt goes through the MCP.
+- **Scope (checked 2026-10-06):** Google's narrow `drive.file` scope may write only into folders
+  the app itself created, and Sam made CPLLibrary by hand, so the sign-in uses the full Drive scope.
+  The filer fences itself to the two folders.
 
 **What stays in a repo:** build scripts, specs, narration text and voice clips (a
 library voice can be withdrawn), the vault's companion notes, and a film a public
@@ -93,14 +96,13 @@ claude.ai.
   before-row). Files keep their own date codes (the vault convention). Sam asked for titles that
   start with *"our date code 20261005"*; if he means the filing date for every file, a Drive rename
   keeps each link.
-- **What a session can upload:** a file up to roughly 50 KB. The file travels as base64 inside the
-  tool call, and Drive reports no checksum, so size is the check. The decks (43 and 200 KB), the CAC
-  run sheet (155 KB) and the films (8 to 16 MB) go by hand: Sam drops them in, the session files the
-  link.
+- **What a session can upload:** through the Drive connector, a file up to roughly 50 KB (it travels as
+  base64 inside the tool call, and Drive reports no checksum there). The filer has no size limit and
+  checks md5, once Sam's sign-in is set.
 
 ## Sam's calls 7-9 (2026-10-05, "7, 8,9 Y")
 
-7. **Build the automatic filer.** A session files each piece to Drive the moment it makes it,
+7. **Build the automatic filer** (✅ built 2026-10-06; waits on the sign-in). A session files each piece to Drive the moment it makes it,
    films included, and writes the Library record in the same step. Setup is Sam's once: a Google
    Cloud project with the Drive API on, an OAuth client, one consent as camapinitiative, and three
    environment secrets (`GOOGLE_DRIVE_CLIENT_ID`, `GOOGLE_DRIVE_CLIENT_SECRET`,
@@ -119,9 +121,28 @@ claude.ai.
 
 ## Next
 
-- **PR 2, the move (call 5):** when Sam has dropped in the BOG and CBO decks, the CAC run sheet, the
-  Ironworker film and the two Noncredit Summit cuts, point their records at Drive (guarded update,
-  receipt), remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
+- **Sam, once: the Google sign-in** (about ten minutes, asked and walked through in chat 2026-10-06): steps A to C of
+  [`library_filer`](../library_filer.md), ending in three environment secrets. Only a new session
+  reads them.
+- **Then, in that new session, the end-to-end test:** `python3 scripts/library_file.py --check`;
+  file a small test document with `--new --title "Filer test" --kind document` to Drafts; apply the
+  receipt under the migration name it prints; see it in the Library; retire the test record (Retire,
+  never delete).
+- **Then the six files, each with `--move` (their names and records stay as they are):**
+
+  ```
+  python3 scripts/library_file.py presentations/20260716_CPL_Initiative_BOG_Update.pptx --slug update-to-the-board-of-governors-2026-07 --move --to library
+  python3 scripts/library_file.py presentations/20260720_CPL_CBO_Implementation_Funding.pptx --slug standing-up-cpl-at-every-college --move --to library
+  python3 scripts/library_file.py presentations/cac_2026-08/20260810_CAC_Crystal_Run_Sheet.pdf --slug cac-run-sheet-for-crystal --move --to library
+  python3 scripts/library_file.py prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4 --slug ironworker-pathway-in-motion --move --to library
+  python3 scripts/library_file.py prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4 --slug noncredit-summit-in-motion --move --to drafts
+  python3 scripts/library_file.py prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4 --slug noncredit-summit-in-motion --move --to drafts
+  ```
+
+  Rehearsed 2026-10-06 against a copy of the live rows: each receipt `UPDATE 1`, then `UPDATE 0`.
+  A copy Sam already dropped in by hand with the same bytes is reused rather than uploaded twice.
+- **PR 2, the move (call 5):** once the six are filed, their records point at Drive through the
+  receipts above. Then remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
   `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's
   two player pages off the site, and add a guard test so a deliverable binary cannot be committed
   again. Then the vault's binaries (29 on 2026-10-05).
