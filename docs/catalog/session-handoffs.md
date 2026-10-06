@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-309 document(s).
+310 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 339 | [the Summit film re-cut, the Library filer's first run, and 338's carried queue](../session_339_handoff.md) | 2026-10-06 |
 | 338 | [a second capture list, Irvine Valley's Art record, Santa Monica's catalog hub](../session_338_handoff.md) | 2026-10-06 |
 | 337 | [sheet 42 carried out, the first two program maps read, a signed-off session lets go](../session_337_handoff.md) | 2026-10-05 |
 | 336 | [drafts for the college, Miramar's AUTO 156G traced to its source, sheet 42](../session_336_handoff.md) | 2026-10-05 |

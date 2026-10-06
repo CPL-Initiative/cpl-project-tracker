@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-06",
- "_session": "S336 SkyCourier",
- "_status": "A scheduled session gave Irvine Valley's Art degree a catalog record (27 units, every check passed), the first program read beyond the 20 Sam checked. Its catalog still prints two old art history numbers where the state file lists the new common course numbers, a difference for the college. Santa Monica's Barbering degree has no record yet: its online catalog never links the program, so the next try reads the full catalog PDF. Open Asks Sheet 45 waits on Sam: the credential watch routine's settings and five Library calls.",
+ "_session": "S338 SkyLantern",
+ "_status": "The Chancellor's Noncredit Summit slides are final at draft 2: 52,452 students served, the funding figures read from the funding procedure itself (the noncredit total is $1.81 million), and Sam's calls on Mt. San Antonio College and NOCE. The deck is in the team Drive and its Library record links it. Sam set up the Library filer's Google sign-in, so from the next session a deck or film files itself to Drive. The Summit film is next: a new narrator voice, Sam's edit, and the deck's new figures. Open Asks Sheet 45 still waits on Sam: the credential watch routine's settings and five Library calls.",
  "items": [
   {
    "id": "s336-sam-sheet44",
@@ -41,22 +41,16 @@
    "text": "Type the two measure descriptions on the Implementation Funding tab, in both scenarios (mockup card 11): Access 'Applied CPL units (FTES) in MAP' and Completion 'Transcribed CPL units (FTES) for students with the Counselor step checked in MAP'. Neither was on the tab when checked on 1 October."
   },
   {
-   "id": "s310-sam-pedro-note",
-   "for": "Sam",
-   "tab": "map-custom-reports",
-   "text": "Edit and send Pedro the note about MAP's two views (your answer on sheet 11). The draft is in the session 310 handoff: the catalog-year view reports exactly twice the student view's units for 253 exhibit and recommendation combinations at 24 colleges."
+   "id": "s338-fable-summit-film",
+   "for": "Fable",
+   "tab": "library",
+   "text": "Re-cut the Noncredit Summit film: the narrator voice and the small edit Sam names, plus the deck's draft 2 changes (52,452 served; Nadia's CompTIA A+, Network+ and Security+, 9 units as at Saddleback; Mt. San Antonio College plans to document its ladder; no NOCE claim). The list is in the vault's film handoff. File both cuts to Drafts with the Library filer."
   },
   {
-   "id": "s308-sam-style-guide-kb-review",
-   "for": "Sam",
-   "tab": "governance",
-   "text": "Review the curated copy of the CO style guide in the public knowledge base, cpl-knowledge-base pull request 24, and merge it if it reads right (sheet 8: curate). A session never merges that repository."
-  },
-  {
-   "id": "s303-sam-card7-type",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
+   "id": "s338-fable-filer-first-run",
+   "for": "Fable",
+   "tab": "library",
+   "text": "Run the Library filer for the first time now that Sam's Google sign-in is set: python3 scripts/library_file.py --check, then file a small test document, then point the six files already in Drive or the repos at their Library records (the lane lists the commands; the Summit narrated cut is in CPLLibrary, not Drafts)."
   },
   {
    "id": "s336-fable-by-term",
@@ -84,6 +78,24 @@
   }
  ],
  "_deferred": [
+  {
+   "id": "s310-sam-pedro-note",
+   "for": "Sam",
+   "tab": "map-custom-reports",
+   "text": "Edit and send Pedro the note about MAP's two views (your answer on sheet 11). The draft is in the session 310 handoff: the catalog-year view reports exactly twice the student view's units for 253 exhibit and recommendation combinations at 24 colleges."
+  },
+  {
+   "id": "s308-sam-style-guide-kb-review",
+   "for": "Sam",
+   "tab": "governance",
+   "text": "Review the curated copy of the CO style guide in the public knowledge base, cpl-knowledge-base pull request 24, and merge it if it reads right (sheet 8: curate). A session never merges that repository."
+  },
+  {
+   "id": "s303-sam-card7-type",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Card 7's two lines still read the old words in both scenarios (checked 1 October): the timeline's August 2027 entry and the Minimum Conditions introduction. Type them on the Implementation Funding tab, or tell a session to write them and the config-edit workflow does it with a receipt, as it did for Scenario 2's phrases."
+  },
   {
    "id": "s304-sam-report-when-where",
    "for": "Sam",

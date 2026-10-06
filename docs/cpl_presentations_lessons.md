@@ -147,3 +147,37 @@ concurrency breaks. `superseded_handoff: 1` is now a known standing finding rath
 stamp. Sam had flagged the concurrent session at the start; the collision still landed in six files
 (`CLAUDE.md`, `roadmap_archive`, `INDEX`, `cpl_todos.json`, the handoff, the audit artifacts) —
 worth knowing that "it shouldn't collide" and "it didn't collide" are different claims.
+
+## 2026-10-06 — S338 (SkyLantern's slot): the Noncredit Summit deck, draft 2
+
+Sam's "Before it ships" pass on the Chancellor's five Noncredit Summit slides (source in the vault,
+`CPLBrain/04-projects/cpl-initiative/20261005_Noncredit_Summit_CPL_Slides_2*`, samueltlee/CPLBrain#247;
+the deck in CPLLibrary/Drafts).
+
+**Read a funding figure from the model, never from a sheet that once quoted it.** Draft 1 carried
+$1,783,399 noncredit from an earlier Scenario 3 decision sheet. The model over the live configuration
+(rebuilt from `tests/fixtures/cpl_funding_config_e21658f9.json` plus the two 2026-10-02 edit plans,
+md5 764fd264 equal to live) gives **$1,812,403** ($1,326,601 in college awards' noncredit subtotals,
+$485,802 to the noncredit-only three). Every other figure held: $25,240,308 to 118 institutions, 85,444
+noncredit FTES (the Statewide row; the per-row sum is 85,448 by rounding), $35M one-time + $2M ongoing.
+The on-slide *$1.8 million* survived; the notes would not have. `_csv()` and `_effective()` are the
+two calls that answer it.
+
+**`potential_colleges` lists the colleges that have NOT adopted a credential.** Adopters sit in
+`articulations[].local[].colleges` (`kb/_sync_credential_catalog.adopters_of`). Read as adopters, CompTIA
+A+ showed 24 colleges with none of the deck's 21; read correctly, 21, and A+ / Network+ / Security+ meet
+at 12. A bundle claim needs the intersection, and the units per college come from the local courses
+(Saddleback 9, Santa Ana 12; Chaffey and Las Positas carry courses with no units).
+
+**Ask before a claim about a college's own work.** MAP showed no Mt. SAC health-ladder exhibit and no NOCE
+IT exhibit, so the two dashed steps went to Sam with the evidence: Mt. SAC *plans to* document its
+ladder; the NOCE claim came out. A dashed step that loses its claim becomes either solid (credit on record
+elsewhere) or nothing.
+
+**The deck lives in Drive; the repo keeps the build.** Draft 1's pptx came out of the PR before the squash,
+so `main` never carried a binary. The build takes any earlier version of the deck as its template (it drops
+every slide and keeps the CO masters), which is what made that safe: the 2025 keynote .pptx is not in
+Drive, only its PDF.
+
+**Render check.** `soffice.py --convert-to pdf` then `pdftoppm` rendered all five slides; Nadia's longer
+step fit its 0.66" box at 15pt bold. `validate.py --original <draft 1>` passed.

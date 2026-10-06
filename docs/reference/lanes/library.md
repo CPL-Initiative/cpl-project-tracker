@@ -73,8 +73,11 @@ ppt and video. Advise"*. Then, by number:
   films included. It does a resumable upload to CPLLibrary or Drafts, checks size and md5, and writes
   a receipt guarded on the Drive file id, applied as a named migration. It never deletes or
   overwrites. Each edit is its own `<date code>_<name>_vN` file (call 8). Usage, setup and failure
-  modes: [`library_filer`](../library_filer.md). **It waits on Sam's one-time Google sign-in**, three
-  environment secrets that only a new session reads. The proxy lets the shell reach
+  modes: [`library_filer`](../library_filer.md). **Sam's Google sign-in is set (2026-10-06):** the
+  OAuth app *CPL Library filer* is **In production** (publishing needed a home page, the privacy page
+  `privacy.html` (#1887) and the authorized domain `cpl-initiative.github.io`), and the three
+  environment variables hold real values. Only a session started after ~18:45Z reads them; the
+  first `--check` has not run yet. The proxy lets the shell reach
   `oauth2.googleapis.com`, `www.googleapis.com/drive/v3` and `/upload` (measured 2026-10-05 and
   2026-10-06), and rejects `*.supabase.co`, which is why the receipt goes through the MCP.
 - **Scope (checked 2026-10-06):** Google's narrow `drive.file` scope may write only into folders
@@ -90,6 +93,14 @@ claude.ai.
 
 ## Filed in Drive so far
 
+- **The Noncredit Summit CPL slides, draft 2** (CPLLibrary/Drafts, 2026-10-06): Sam dropped the file in
+  by hand (2,039,321 bytes, matching the build), and the record links it as v2 with the CPLBrain build
+  script as its source (receipt `kb/receipts/library_filed/2026-10-06_noncredit-summit-cpl-slides__…sql`,
+  #1889). ⚠️ **`apply_migration` timed out four times from that session without writing** (no row, no
+  migration recorded), and the `execute_sql` guard refuses `UPDATE`, so **Sam ran the receipt in the
+  Supabase SQL editor**. That is the fallback when the migration path stalls; read the row back after.
+- **Both Summit film cuts, v1** (2026-10-06, by Sam by hand): the narrated cut in **CPLLibrary**, the music
+  cut in **CPLLibrary/Drafts**. Their record still links the GitHub copies.
 - **The five Title 5 tracked-changes documents** (CPLLibrary, 2026-10-05): uploaded by the session
   through the Drive connector, each at its exact byte size; the record links v5 and lists all five
   (receipt `kb/receipts/cpl_library_drive_t5_2026-10-05.sql`, guarded; the history trigger holds the
@@ -128,10 +139,7 @@ claude.ai.
 
 ## Next
 
-- **Sam, once: the Google sign-in** (about ten minutes, asked and walked through in chat 2026-10-06): steps A to C of
-  [`library_filer`](../library_filer.md), ending in three environment secrets. Only a new session
-  reads them.
-- **Then, in that new session, the end-to-end test:** `python3 scripts/library_file.py --check`;
+- **First, in a new session, the end-to-end test** (the sign-in is set; this is its first run): `python3 scripts/library_file.py --check`;
   file a small test document with `--new --title "Filer test" --kind document` to Drafts; apply the
   receipt under the migration name it prints; see it in the Library; retire the test record (Retire,
   never delete).
@@ -143,8 +151,13 @@ claude.ai.
   python3 scripts/library_file.py presentations/cac_2026-08/20260810_CAC_Crystal_Run_Sheet.pdf --slug cac-run-sheet-for-crystal --move --to library
   python3 scripts/library_file.py prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4 --slug ironworker-pathway-in-motion --move --to library
   python3 scripts/library_file.py prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4 --slug noncredit-summit-in-motion --move --to drafts
-  python3 scripts/library_file.py prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4 --slug noncredit-summit-in-motion --move --to drafts
+  python3 scripts/library_file.py prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4 --slug noncredit-summit-in-motion --move --to library
   ```
+
+  The narrated cut is already in **CPLLibrary**, not Drafts (Sam, 2026-10-06): `--move` reuses a same-named,
+  same-bytes file only in the folder it is pointed at, so pointing it at Drafts would upload a second copy.
+  The film is about to be re-cut (new voice, Sam's edit, deck draft 2's figures), so the new cuts may simply
+  file as v2 with the plain command and these two `--move` lines become history.
 
   Rehearsed 2026-10-06 against a copy of the live rows: each receipt `UPDATE 1`, then `UPDATE 0`.
   A copy Sam already dropped in by hand with the same bytes is reused rather than uploaded twice.
