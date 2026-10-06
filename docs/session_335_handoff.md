@@ -4,6 +4,8 @@ date: 2026-10-05
 session: 334 (SkyAnchor)
 tags: [handoff, program-requirements-harvest, outcomes, cpl-pathways, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_338_handoff.md
 ---
 
 # You are Session 335

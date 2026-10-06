@@ -4,6 +4,8 @@ date: 2026-10-05
 session: 336 (SkyCourier)
 tags: [handoff, program-requirements-harvest, my-college, decision-sheet, scheduled-sessions, credential-watch]
 status: current
+superseded: true
+superseded_by: session_338_handoff.md
 ---
 
 # You are Session 337

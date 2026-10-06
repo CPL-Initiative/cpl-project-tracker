@@ -14534,7 +14534,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-05"
+     "updated": "2026-10-06"
     },
     {
      "created": "2026-08-28",
@@ -14935,8 +14935,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 308,
+   "count": 309,
    "docs": [
+    {
+     "created": "2026-10-06",
+     "governs": [],
+     "n": 338,
+     "path": "docs/session_338_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "scheduled-sessions"
+     ],
+     "title": "a second capture list, Irvine Valley's Art record, Santa Monica's catalog hub",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-05",
      "governs": [],
@@ -20185,5 +20200,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1054
+ "total": 1055
 }

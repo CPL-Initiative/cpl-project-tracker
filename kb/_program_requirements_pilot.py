@@ -51,6 +51,10 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 SAMPLE_FILE = os.path.join(HERE, "program_requirements_pilot_sample.json")
+# Programs read beyond Sam's checked 20 because their college's map is already
+# read (S337). A second list, so the pilot's 20, which the tests pin, never grow.
+MAPS_FILE = os.path.join(HERE, "program_requirements_maps_sample.json")
+SAMPLES = {"pilot": [SAMPLE_FILE], "maps": [MAPS_FILE], "all": [SAMPLE_FILE, MAPS_FILE]}
 
 MAX_LOADS = 8            # page loads per program, shared pages excluded
 ACCEPT_SHARE = 0.5       # a page naming this share of the listed codes is the page
@@ -199,7 +203,9 @@ AWARD_WORDS = {
 HUB_WORDS = re.compile(
     r"programs? of study|degrees?,? (?:and|&|courses)|areas? of study|degree curricula|"
     r"programs? a-z|academic programs|career (?:and|&) technical|\bmajors?\b|"
-    r"noncredit programs?|certificates? (?:and|&|programs?)", re.I)
+    r"noncredit programs?|certificates? (?:and|&|programs?)|"
+    # Santa Monica's catalog front page names its program index so (S337).
+    r"academic (?:and|&) career paths?", re.I)
 # Words that name a college's services or policies, never its program index:
 # Cerritos's catalog links "Programs & Services" (student services) beside
 # "Degrees, Courses & Pathways" (run 2, S323).
@@ -505,6 +511,12 @@ def locate_html(reader, program: dict, courses: list[dict], start: str, cache: d
                                       for ln in (got.get("links") or [])[:40]]
                       if cov < ACCEPT_SHARE else None,
                       "clickables": (got.get("clickables") or [])[:40]
+                      if cov < ACCEPT_SHARE else None,
+                      # Links naming the program on any host, followed or not: Santa
+                      # Monica's catalog reached its degree list and named no course (S337).
+                      "title_links": [[(ln.get("text") or "")[:80], ln.get("href")]
+                                      for ln in (got.get("links") or [])
+                                      if score_link(ln.get("text", ""), ln.get("href") or "", program) >= 4][:12]
                       if cov < ACCEPT_SHARE else None})
         if best is None or cov > best["coverage"]:
             best = {"url": got.get("final_url") or url, "coverage": cov, "found": found,
@@ -831,8 +843,10 @@ def probe_ppm(reader, college: str, cache: dict) -> list[dict]:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--only", default="", help="colleges whose name contains this")
+    ap.add_argument("--sample", default="pilot", choices=sorted(SAMPLES),
+                    help="pilot (Sam's checked 20), maps (programs with a read map) or all")
     args = ap.parse_args(argv)
-    sample = [p for p in load_sample()
+    sample = [p for path in SAMPLES[args.sample] for p in load_sample(path)
               if not args.only or args.only.lower() in p["college"].lower()]
     delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
     print("program requirements pilot, capture: %d programs, %.1f s between loads, "

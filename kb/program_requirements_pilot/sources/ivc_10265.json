@@ -1,0 +1,234 @@
+{
+ "_what": "A program's catalog text and its closed course list, as the capture pass read them (kb/_program_requirements_pilot.py, --sample maps). Filed from the job log of run 37487454632 (2026-10-06, S337), transcribed from the GitHub MCP's copy of the log and checked by recomputing coverage (0.91, 21 codes, as the runner printed). A program on the maps list (kb/program_requirements_maps_sample.json), beyond Sam's checked 20. The extraction pass reads this file; it never reads the college's site again.",
+ "college": "Irvine Valley College",
+ "control_number": "10265",
+ "shape": "degree_list",
+ "title": "Art",
+ "award": "A.A. Degree",
+ "status": "Active",
+ "catalog_year": "2026-2027",
+ "platform": "curriqunet",
+ "format": "html_per_program",
+ "method": "export_pdf",
+ "source": {
+  "url": "https://irvine.curriqunet.com/Catalog/Export?id=4690&outlineId=51485",
+  "title": "View - CurriQunet META",
+  "h1": "",
+  "text_from": "export_pdf",
+  "view": "https://irvine.curriqunet.com/Catalog/iq/48959/49229/51485/49348"
+ },
+ "coverage": 0.91,
+ "codes_found": [
+  "ART186",
+  "ART195",
+  "ART40",
+  "ART41",
+  "ART50",
+  "ART51",
+  "ART52",
+  "ART53",
+  "ART80",
+  "ART81",
+  "ART82",
+  "ART85",
+  "ART86",
+  "ART91",
+  "ARTH22",
+  "ARTH23",
+  "ARTH24",
+  "ARTH27",
+  "ARTH29",
+  "ARTH30",
+  "ARTH31"
+ ],
+ "closed_list": [
+  {
+   "ccn": "CCC000516571",
+   "code": "ART 186",
+   "title": "DRAWING THE HEAD AND HANDS",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000516572",
+   "code": "ART 195",
+   "title": "ILLUSTRATION",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000387735",
+   "code": "ART 40",
+   "title": "2-D DESIGN AND COLOR",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000385752",
+   "code": "ART 41",
+   "title": "3D DESIGN",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000418907",
+   "code": "ART 50",
+   "title": "BEGINNING OIL PAINTING",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000421881",
+   "code": "ART 51",
+   "title": "INTERMEDIATE PAINTING",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000425688",
+   "code": "ART 52",
+   "title": "ADVANCED PAINTING",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000516573",
+   "code": "ART 53",
+   "title": "BEGINNING LIFE PAINTING",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000423994",
+   "code": "ART 80",
+   "title": "DRAWING FUNDAMENTALS",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000383440",
+   "code": "ART 81",
+   "title": "REPRESENTATIONAL DRAWING",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000387437",
+   "code": "ART 82",
+   "title": "ADVANCED DRAWING",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000422098",
+   "code": "ART 85",
+   "title": "LIFE DRAWING I",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000424644",
+   "code": "ART 86",
+   "title": "ADVANCED LIFE DRAWING",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000522430",
+   "code": "ART 91",
+   "title": "PORTFOLIO DEVELOPMENT",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000530773",
+   "code": "ARTH 22",
+   "title": "SURVEY OF ASIAN ART",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000530774",
+   "code": "ARTH 23",
+   "title": "AFRICAN, OCEANIC, AND INDIGENOUS NORTH AMERICAN ART",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000530775",
+   "code": "ARTH 24",
+   "title": "ANCIENT ART",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000530778",
+   "code": "ARTH 27",
+   "title": "ART HISTORY SURVEY III - NON-WESTERN",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000530780",
+   "code": "ARTH 29",
+   "title": "19TH AND EARLY 20TH CENTURY ART",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000530781",
+   "code": "ARTH 30",
+   "title": "RENAISSANCE AND BAROQUE ART",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000530782",
+   "code": "ARTH 31",
+   "title": "MEDIEVAL ART",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000530776",
+   "code": "ARTH C1100",
+   "title": "Survey of Art from Prehistory to the Medieval Era",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  },
+  {
+   "ccn": "CCC000530777",
+   "code": "ARTH C1200",
+   "title": "Survey of Art from the Renaissance to Contemporary",
+   "units": 3.0,
+   "cid": null,
+   "course_college": null
+  }
+ ],
+ "load_id": "20260716-003071339fe73a7a",
+ "text": "[page 1]\n \nArt - A.A. Degree \n \n \n \nSummary \nStudents majoring in art at the lower-division level concentrate on learning the basic theoretical concepts, \ntechniques, skills, and materials of drawing, painting, or watercolor. By learning these basics in a step-by-step \nprocess, students develop a better understanding of their powers of observation and self-expression. In addition, \nstudents will learn to appreciate historical works of art and architecture through required surveys in order to \nbetter articulate their own ideas and aesthetic concepts as a part of a longstanding visual tradition. Students may \nprepare to transfer into upper-careers in graphic arts, drawing, painting, photography, and advertising will find the \nmajor especially helpful. The Visual Arts faculty recommends that the art major not choose an art course to fulfill \nthe general education requirement in Fine Arts and Languages, but explore one of the other arts, such as music, \nwriting, theatre arts, or photography. \nRequirements \nProgram Requirements \nComplete the following courses Units: 15.0 \nART 40 2-D Design and Color 3.0 \nART 41 3D Design 3.0 \nART 50 Beginning Oil Painting 3.0 \nART 80 Drawing Fundamentals 3.0 \nART 85 Life Drawing I 3.0 \nComplete a total of 6 units from the following courses Units: 6.0 \nARTH 4 Introduction to Art Theory 3.0 \nARTH 25 Art History Survey I: Western 3.0 \nARTH 26 Art History Survey II: Western 3.0 \nARTH 27 Art History Survey III: Non-Western 3.0 \nComplete an additional 6 units from the following course areas. Units: 6.0 \nARTH 4 Introduction to Art Theory 3.0 \nARTH 22 Survey of Asian Art 3.0 \nARTH 23 African and Oceanic Art 3.0 \nARTH 24 Ancient Art 3.0 \nARTH 25 Art History Survey I: Western 3.0 \nARTH 26 Art History Survey II: Western 3.0 \nARTH 27 Art History Survey III: Non-Western 3.0 \nARTH 28 Contemporary Art History 3.0 \nARTH 29 19th and Early 20th Century Art 3.0 \nARTH 30 Renaissance and Baroque Art 3.0 \nARTH 31 Medieval Art 3.0 \nART 81 Representational Drawing 3.0 \nART 82 Advanced Drawing 3.0 \nART 85 Life Drawing I 3.0 \nART 86 Advanced Life Drawing 3.0 \nART 186 Drawing the Head and Hands 3.0 \nART 195 (same \nas DMA 195) \nIllustration 3.0 \nART 51 Intermediate Painting 3.0 \nART 52 Advanced Painting 3.0 \n1\n\n[page 2]\nART 53 Beginning Life Painting 3.0 \nART 91 (same \nas DMA 91) \nPortfolio Development 3.0 \nRecommended electives Units: 0.0 \nMUS 20 Music Appreciation 3.0 \nTA 20 Theatre Appreciation-Classical Overview 3.0 \nTA 21 Theatre Appreciation-Contemporary 3.0 \nTA 26 Great Plays: Renaissance to Contemporary 3.0 \nTA 27 Intro to Fine Arts and Musical Theater 3.0 \nany course in photography  \nTotal Units Required: 27.0 \n2",
+ "courseleaf_lists": [],
+ "captured_run": 37487454632
+}

@@ -603,6 +603,12 @@ check(S.score(both, TWICE)["repeated"]["pass"], "the same course in two blocks i
 with open(os.path.join(ROOT, "kb", "program_requirements_pilot", "review_2026-10-04.json")) as fh:
     review = json.load(fh)
 filed = {os.path.splitext(os.path.basename(p))[0] for p in records}
+# Records past Sam's checked 20 (the maps list, S337) carry no verdict: CPL
+# Pathways marks them unchecked. These checks cover the 20 he read.
+_pilot_keys = {(p["college"], p["control_number"]) for p in json.load(open(P.SAMPLE_FILE))["programs"]}
+pilot_records = [p for p in records
+                 if (lambda r: (r["college"], r["control_number"]) in _pilot_keys)(json.load(open(p)))]
+filed = {os.path.splitext(os.path.basename(p))[0] for p in pilot_records}
 check(set(review["verdicts"]) == filed and review["ruled"] == 20 and review["by"] == "Sam",
       "Sam's review covers exactly the 20 filed records: %s" % sorted(set(review["verdicts"]) ^ filed))
 check(sorted(k for k, v in review["verdicts"].items() if v["v"] == "fix") == sorted(review["fixes"]),
@@ -715,7 +721,7 @@ moved_row = {"record": {**some["record"], "blocks": some["record"]["blocks"][:-1
 g, _ = FL.graft(some, moved_row, 1)
 check(g is not None and g["record"]["blocks"] == some["record"]["blocks"],
       "a run whose blocks differ never replaces the blocks a person read")
-shape3 = [json.load(open(p)) for p in records]
+shape3 = [json.load(open(p)) for p in pilot_records]
 check(all(r.get("record_shape") == 3 and r.get("outcomes_run") in (37345734457, 37350789203) for r in shape3),
       "every filed record carries record shape 3 and the run its outcomes came from "
       "(Mt. San Antonio's four from 37350789203, after the capture read their outcomes tab)")
@@ -771,6 +777,24 @@ check(any(p["college"] == "Riverside City College" and p["control_number"] == "2
           and p.get("fixed") for p in sample),
       "Sam's pick (sheet 25): Riverside City's Culinary Arts certificate, 22804")
 check(all(p.get("why") for p in sample), "every pick says why it is in")
+
+# ── The second list: programs whose map is already read (S337) ───────────────
+with open(P.MAPS_FILE) as fh:
+    maps = json.load(fh)["programs"]
+check(maps and not ({(p["college"], p["control_number"]) for p in maps}
+                    & {(p["college"], p["control_number"]) for p in sample}),
+      "the maps list never repeats one of Sam's checked 20")
+check(all(p.get("why") and os.path.exists(os.path.join(ROOT, p["sequence"])) for p in maps),
+      "every program on the maps list names its read map, and the file is there")
+check(set(P.SAMPLES) == {"pilot", "maps", "all"} and P.SAMPLES["pilot"] == [P.SAMPLE_FILE],
+      "--sample pilot reads Sam's 20 alone")
+check(P.score_link("Academic and Career Paths", "https://catalog.smc.edu/current/x.php",
+                  {"title": "Barbering", "award": "A.S. Degree"}) > 0,
+      "Santa Monica's catalog hub, Academic and Career Paths, is followed (S337 capture run 37487454632)")
+import _program_requirements_file as F  # noqa: E402
+slugs = F.college_slugs()
+check(all(p["college"] in slugs for p in maps),
+      "the filer has a file-name slug for every college on the maps list")
 
 # ── The capture pass writes nothing and runs on no schedule ──────────────────
 with open(os.path.join(ROOT, ".github", "workflows", "program-requirements-pilot.yml")) as fh:
