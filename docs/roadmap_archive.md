@@ -5852,3 +5852,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 <!-- moved from docs/INDEX.md Update history at the S336 checkpoint -->
 - 2026-10-04 (S328 SkyLadder): #1854 deployed; sheets 33-34 answered and in their lanes (#1855); the statement of who CPL serves and `kb/non_ccc_institutions.json` (#1856); the Cerritos Ironworker ladder on CPL Pathways (#1857); handoff 329.
+
+<!-- moved from docs/INDEX.md Update history, S339 -->
+- **2026-10-05 (S331 SkyForge):** KB note `methodology-a-search-result-is-a-lead-not-a-source`; handoff 332; the Program Requirements tab in COBI with its Procedures view (#1860); the college page read opens collapsed sections and prints a table's matching rows; Cerritos reads 7-12: CATEMA, CTE Course Connect, the CCAP partner schools, the archive's 2016 list of 57 agreements; procedure record v4; open-asks sheet 37.

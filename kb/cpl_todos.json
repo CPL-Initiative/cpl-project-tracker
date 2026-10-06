@@ -1,9 +1,21 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-06",
- "_session": "S338 SkyLantern",
- "_status": "The Chancellor's Noncredit Summit slides are final at draft 2: 52,452 students served, the funding figures read from the funding procedure itself (the noncredit total is $1.81 million), and Sam's calls on Mt. San Antonio College and NOCE. The deck is in the team Drive and its Library record links it. Sam set up the Library filer's Google sign-in, so from the next session a deck or film files itself to Drive. The Summit film is next: a new narrator voice, Sam's edit, and the deck's new figures. Open Asks Sheet 45 still waits on Sam: the credential watch routine's settings and five Library calls.",
+ "_session": "S339 SkyReel",
+ "_status": "The Noncredit Summit film is re-cut (v2): a new standard-English narrator, unnamed, opening on Sam's greeting; $7 million ongoing; four $50,000 grants with Calbright; 30,795 award earners; Nadia an industry certificate; brighter portraits. Both cuts went to Sam for the Drafts folder; the Library filer still cannot sign in. The program requirements harvest can now follow a college's own reading procedure to its catalog: Santa Monica's full catalog PDF gave its Barbering A.S. all 25 listed courses, and its record is the next step.",
  "items": [
+  {
+   "id": "s339-sam-summit-v2",
+   "for": "Sam",
+   "tab": "library",
+   "text": "Drop the Noncredit Summit film's two v2 cuts (sent in chat on 6 October: the music cut, 1:41, and the narrated cut, 3:32) into the Drafts folder in Drive, replacing any earlier v2, and say whether to keep them or edit. Their Library record then takes its v2 rows."
+  },
+  {
+   "id": "s339-fable-smc-record",
+   "for": "Fable",
+   "tab": "program-requirements",
+   "text": "Turn Santa Monica's Barbering A.S. (43767) capture into a record: file the source from capture run 37545459181 (25 of 25 courses, pages 121-122 of the full catalog), run extraction, file it unchecked beside Irvine Valley's, and draft the two college gaps its catalog shows (Salon Management printed as COSM 11C; COSM 95D missing). Then a Proceeded card for its procedure record on the next sheet."
+  },
   {
    "id": "s336-sam-sheet44",
    "for": "Sam",
@@ -41,22 +53,16 @@
    "text": "Type the two measure descriptions on the Implementation Funding tab, in both scenarios (mockup card 11): Access 'Applied CPL units (FTES) in MAP' and Completion 'Transcribed CPL units (FTES) for students with the Counselor step checked in MAP'. Neither was on the tab when checked on 1 October."
   },
   {
-   "id": "s338-fable-summit-film",
-   "for": "Fable",
+   "id": "s339-sam-filer-signin",
+   "for": "Sam",
    "tab": "library",
-   "text": "Re-cut the Noncredit Summit film: the narrator voice and the small edit Sam names, plus the deck's draft 2 changes (52,452 served; Nadia's CompTIA A+, Network+ and Security+, 9 units as at Saddleback; Mt. San Antonio College plans to document its ladder; no NOCE claim). The list is in the vault's film handoff. File both cuts to Drafts with the Library filer."
-  },
-  {
-   "id": "s338-fable-filer-first-run",
-   "for": "Fable",
-   "tab": "library",
-   "text": "Run the Library filer for the first time now that Sam's Google sign-in is set: python3 scripts/library_file.py --check, then file a small test document, then point the six files already in Drive or the repos at their Library records (the lane lists the commands; the Summit narrated cut is in CPLLibrary, not Drafts)."
+   "text": "Re-save the Library filer's three Google values (client ID, client secret, refresh token) at full length in the cloud environment's settings, under the same names. The saved ones are cut short (43, 19 and 14 characters), so the filer cannot sign in; a new session then files the six pieces and the Summit film's v2 cuts."
   },
   {
    "id": "s336-fable-by-term",
    "for": "Fable",
    "tab": "program-requirements",
-   "text": "Show a read map By term: Irvine Valley's Art A.A. (10265) now has its record (unchecked); Santa Monica's Barbering A.S. (43767) needs a procedure record that names its full catalog PDF, then a capture. Then rebuild the display with the unchecked records and place each course in its term on CPL Pathways. The live write waits on Sam's go."
+   "text": "Show a read map By term: Irvine Valley's Art A.A. (10265) has its record (unchecked), and Santa Monica's Barbering A.S. (43767) is now captured from the full catalog PDF. Rebuild the display with the unchecked records and place each course in its term on CPL Pathways. The live write waits on Sam's go."
   },
   {
    "id": "s319-fable-read-timings",
@@ -69,15 +75,15 @@
    "for": "Fable",
    "tab": "sierra",
    "text": "Build the catalog addenda reading agent once the next census apply fills the table (Sunday 11 October, or a hand dispatch): it reads each listed addendum and files which programs it changes. Then read Miramar's Fire Technology sequence from its own pages and widen the harvest past the 20 programs."
-  },
+  }
+ ],
+ "_deferred": [
   {
    "id": "s330-fable-spring-schedule",
    "for": "Fable",
    "tab": "cpl-pathways",
    "text": "Re-read Cerritos's Spring 2027 schedule for the ironworker apprenticeship and noncredit sections once they post (the Spring schedule listed none on 4 October)."
-  }
- ],
- "_deferred": [
+  },
   {
    "id": "s310-sam-pedro-note",
    "for": "Sam",

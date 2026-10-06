@@ -41,3 +41,12 @@ confirmed the size (2,039,321) matched the build. Two traps: Sam's "moved it to 
 out four times without writing** while the `execute_sql` guard refused the `UPDATE`. The guard is right to;
 the fallback was Sam running the receipt in the Supabase SQL editor, then a read-back. Keep the receipt out
 of the repo until it is applied, so a committed receipt always means a write that happened.
+
+## S339 SkyReel, 2026-10-06
+
+- **The filer's sign-in values were saved truncated.** `--check` answers `invalid_client`; the three values measure
+  43 / 19 / 14 characters where real ones run about 72 / 35 / 100+, though each passes its shape check (suffix,
+  `GOCSPX-`, `1//`). A shape check is not a length check: measure both, print neither.
+- **Both Summit v2 cuts went to Sam in chat for Drafts** (10,048,927 and 17,230,551 bytes), the documented fallback
+  while the filer cannot sign in. Their Library record waits on Sam confirming the files are in Drafts.
+
