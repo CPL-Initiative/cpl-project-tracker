@@ -698,3 +698,23 @@ the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
 - **Santa Monica 43767:** the catalog's front page names its program index *Academic and Career Paths*, now a hub word. Run 37488858548 printed every link naming the program on any host (`title_links`), and none of the five catalog pages named it. Link-following has nothing left to follow there. The next attempt is a per-college procedure record naming the full catalog PDF.
 - **Filing from the job log:** the proxy refuses the log's blob host, so the source was transcribed from the MCP's copy and checked by recomputing coverage locally (21 codes, as the runner printed). The record was checked the same way: the local scorer gives PASS, equal and 0.913.
 - **A new record reaches the live load's receipt.** `tests/sierra_program_courses.test.js` fails when `records/` and the committed load receipt disagree. In CI the shard runner exited mid-stream and hid the line; a local `node tests/run.js --shard 4/4` named it. The permission check held regenerating the receipt (a shared-resource write), so an unchecked record waits in `records_maps/` until Sam's go.
+
+## S339 SkyReel, 2026-10-06: a procedure record names where the catalog starts
+
+- **The procedure record can carry a catalog step.** `procedure.catalog = {start, follow, format, timeout_s}`: the
+  capture opens the start page, follows the link by its text (an exact match first, then a containing one; http
+  only) and reads the PDF through the existing page picker. A link the page does not carry is reported with the
+  page's first 40 links, and the capture reads the registry's address instead (`procedure_catalog`, `follow_link`
+  in `kb/_program_requirements_pilot.py`; three checks in the pilot test, 259 in all).
+- **Santa Monica's first procedure record** (v1, through `program_source_procedure_set`, guarded `none`, md5
+  060d7b66; receipt `kb/receipts/program_source_procedure_smc_2026-10-06_s339.sql`, rollback from the history row).
+- **A whole catalog is slow.** Run 37543985175 found `catalog.smc.edu/current/catalog.pdf` and timed out at the
+  reader's 180 s. The catalog step now waits 600 s by default and sends a HEAD first, so the log shows size and type
+  (14,509,754 bytes, `application/pdf`). Run 37545459181 read it in 99 s: 472 pages, Barbering A.S. on 121-122,
+  coverage 1.0.
+- **The catalog text carries two college gaps** (drafts for the college once the record files): Level 4 prints
+  *COSM 11C, Salon Management (2)* (COSM 11C is Hair Coloring 1; Salon Management is COSM 64), and the Salon
+  Experience list stops at 95C where the Program Course File lists 95D.
+- **A push of the capture script is the maps dispatch.** The workflow reads `--sample maps` on a push, so the
+  pushed fix ran the read itself; no separate dispatch was needed.
+

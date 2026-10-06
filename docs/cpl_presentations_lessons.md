@@ -181,3 +181,22 @@ Drive, only its PDF.
 
 **Render check.** `soffice.py --convert-to pdf` then `pdftoppm` rendered all five slides; Nadia's longer
 step fit its 0.66" box at 15pt bold. `validate.py --original <draft 1>` passed.
+
+## S339 SkyReel, 2026-10-06: the Noncredit Summit film, v2 (#1891)
+
+- **Audition by ear, in the line that matters.** Four standard-English voices read the title line plus the
+  funding line with the corrected figure, one take each; Sam picked *Sarah Explains* in one reply. The audition
+  carried the fix being made, so the pick and the check happened together.
+- **Read a keynote deck for consistency, never for content.** Sam's full deck (in Drafts) was background only, and
+  it still surfaced three figures the film had to match (four $50,000 grants with Calbright; 30,795 award earners
+  in her updated chart; her MIS 191,403 beside the MAP 52,452, which Sam kept). The deck notes went to Sam as a
+  list; he fixed his slides himself.
+- **An either/or question answered "y" is ambiguous.** Sam's *"2,3,4 y"* answered an either/or as yes; the session
+  read it as the default it had offered and said so, so he could correct it.
+- **Brighten portraits by gamma, not by mean.** A lift to a target mean flattened the photos to gray; a per-photo
+  gamma (1.15 to 1.55) with contrast 1.08 and color 1.06 brightened the dark faces most and kept the contrast.
+- **A deliverable MP4 stays out of the repo.** The page drops its Download button, `.gitignore` keeps v2+ film
+  MP4s out, and the page test asks `git ls-files`, because a local render always leaves the file on disk.
+- **The narrated clock absorbs a longer script.** Sam's 57-word greeting moved the title scene from 7 s to 30 s of
+  narrated time without a picture change; `narrate.py` and `cues.py` re-pinned all 38 cues, none trailing.
+

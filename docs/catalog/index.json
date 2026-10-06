@@ -14956,8 +14956,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 310,
+   "count": 311,
    "docs": [
+    {
+     "created": "2026-10-06",
+     "governs": [],
+     "n": 340,
+     "path": "docs/session_340_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "noncredit-summit",
+      "film",
+      "program-requirements-harvest",
+      "library"
+     ],
+     "title": "the Summit film v2 shipped; Santa Monica's catalog read through its procedure record",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-06",
      "governs": [],
@@ -20238,5 +20255,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1057
+ "total": 1058
 }
