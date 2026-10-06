@@ -82,8 +82,9 @@ jobs:
           CENSUS_DELAY_MS: '4000'
           ONLY: ${{ github.event.inputs.only }}
           COLLEGE: ${{ matrix.college }}
-          # A push reads both lists; a dispatch reads the one it names.
-          SAMPLE: ${{ github.event.inputs.sample || 'all' }}
+          # A push reads the maps list alone: Sam's 20 are filed and checked, so
+          # rereading them is a deliberate dispatch with sample: pilot (S337).
+          SAMPLE: ${{ github.event.inputs.sample || 'maps' }}
         run: |
           if [ -n "$ONLY" ] && ! echo "$COLLEGE" | grep -qi -- "$ONLY"; then
             echo "skipped: $COLLEGE does not match '$ONLY'"; exit 0

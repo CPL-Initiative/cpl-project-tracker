@@ -782,6 +782,9 @@ check(all(p.get("why") and os.path.exists(os.path.join(ROOT, p["sequence"])) for
       "every program on the maps list names its read map, and the file is there")
 check(set(P.SAMPLES) == {"pilot", "maps", "all"} and P.SAMPLES["pilot"] == [P.SAMPLE_FILE],
       "--sample pilot reads Sam's 20 alone")
+check(P.score_link("Academic and Career Paths", "https://catalog.smc.edu/current/x.php",
+                  {"title": "Barbering", "award": "A.S. Degree"}) > 0,
+      "Santa Monica's catalog hub, Academic and Career Paths, is followed (S337 capture run 37487454632)")
 import _program_requirements_file as F  # noqa: E402
 slugs = F.college_slugs()
 check(all(p["college"] in slugs for p in maps),

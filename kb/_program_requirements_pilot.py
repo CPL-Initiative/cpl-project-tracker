@@ -203,7 +203,9 @@ AWARD_WORDS = {
 HUB_WORDS = re.compile(
     r"programs? of study|degrees?,? (?:and|&|courses)|areas? of study|degree curricula|"
     r"programs? a-z|academic programs|career (?:and|&) technical|\bmajors?\b|"
-    r"noncredit programs?|certificates? (?:and|&|programs?)", re.I)
+    r"noncredit programs?|certificates? (?:and|&|programs?)|"
+    # Santa Monica's catalog front page names its program index so (S337).
+    r"academic (?:and|&) career paths?", re.I)
 # Words that name a college's services or policies, never its program index:
 # Cerritos's catalog links "Programs & Services" (student services) beside
 # "Degrees, Courses & Pathways" (run 2, S323).
