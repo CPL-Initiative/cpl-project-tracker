@@ -198,9 +198,11 @@ block("13. the read is of checked records only, end to end", () => {
   let out = "";
   try { out = execFileSync("python3", ["kb/_program_requirements_load.py", "--check"], { encoding: "utf8" }); }
   catch (e) { out = String(e.stdout || e.message); }
-  check("the committed load matches the record files", /current \(20 records\)/.test(out), out);
+  // Sam loaded Irvine Valley 10265 and Santa Monica 43767 on open-asks sheet 47 card 8 (2026-10-07):
+  // 22 records, the pilot's 20 checked and the two unchecked until he reads them.
+  check("the committed load matches the record files", /current \(22 records\)/.test(out), out);
   const LOAD = fs.readFileSync("kb/receipts/program_requirement_records_load_2026-10-04.sql", "utf8");
-  check("all 20 pilot records load checked", /\(20 records, 20 checked\)/.test(LOAD));
+  check("the 20 pilot records load checked, the two map programs unchecked", /\(22 records, 20 checked\)/.test(LOAD));
 });
 
 block("9. smoke mode 7l asks what index.ts would build", () => {
@@ -250,15 +252,17 @@ block("14. the display facts render on a checked program, quoted, never recomput
   check("the recommended-path figure reads TBA while no map is read",
     ctx.includes("Recommended-path figure: TBA. No pathway map has been read for this program."), ctx);
   check("the map line says no map was found", /Term-by-term map: no term-by-term program map found/.test(ctx), ctx);
-  // S340: a read map (Santa Monica's Barbering, filed in records_maps/) has its own line.
+  // S340: a read map (Santa Monica's Barbering) has its own line.
   const smc = ROEP.programs.find((q) => q.key === "smc_43767");
   const readRec = Object.assign({}, rec, { display: Object.assign({}, p.display, { map: smc.display.map, figure: smc.display.figure }) });
   const rctx0 = M.buildProgramCoursesContext("Cerritos College", rowsOf(src, d.control_number), ["ironworkers"],
     new Map([[d.control_number, readRec]]));
   check("a read map says the harvest read it, with its host",
     rctx0.includes("Term-by-term map: the harvest has read the college's term-by-term map for this program (www.smc.edu)."), rctx0);
-  check("and the path figure stays TBA, saying why",
-    rctx0.includes("Recommended-path figure: TBA. The college's term-by-term map is read; the figure along its path is not computed yet."), rctx0);
+  // Sheet 47 card 9: a read map gives the figure along it, quoted from the build, never TBA.
+  check("a read map gives the figure along it, never TBA",
+    rctx0.includes("Figure along the college's map: 22.5 units of the 34-38 units the catalog prints can be met through CPL Cerritos College has articulated, taking the course the map names inside a choice")
+    && !/Recommended-path figure: TBA/.test(rctx0), rctx0);
   check("the rules name the three kinds and keep the leads leads",
     /marked "CPL here" is credit for prior learning Cerritos College has articulated/.test(ctx)
     && /never say a learner will receive that credit at Cerritos College/.test(ctx)
@@ -301,9 +305,9 @@ block("15. without display facts the block is unchanged, and the read asks for t
 });
 
 // S341: a read map places each course in a term; Sierra names the term as the map prints it.
-// Santa Monica's Barbering A.S. is filed in records_maps/ until its live load (sheet 46 card 8).
+// Santa Monica's Barbering A.S. joined the live records on Sam's go (sheet 47 card 8).
 block("16. a read map names each course's term, and only a placed course gets one", () => {
-  const d = JSON.parse(fs.readFileSync("kb/program_requirements_pilot/records_maps/smc_43767.json", "utf8"));
+  const d = JSON.parse(fs.readFileSync(RECDIR + "smc_43767.json", "utf8"));
   const src = JSON.parse(fs.readFileSync(d.source_file, "utf8"));
   const prog = d.record.program;
   const p = ROEP.programs.find((q) => q.key === "smc_43767");
@@ -316,6 +320,9 @@ block("16. a read map names each course's term, and only a placed course gets on
     /COSM 77 — [^\n]*\{the college's map: Semester 2 \(First 8 weeks\)\}/.test(ctx), ctx);
   check("a course inside the map's Salon Experience choice names that choice's term",
     /COSM 95A — [^\n]*\{the college's map: Semester 2 \(Second 8 weeks\)\}/.test(ctx), ctx);
+  check("Santa Monica's figures: up to 22.5 and 22.5 along its map, Salon Experience at the map's least (sheet 47 card 9)",
+    ctx.includes("CPL figure: up to 22.5 units of the 26.5 units the catalog prints")
+    && ctx.includes("Figure along the college's map: 22.5 units of the 26.5 units the catalog prints"), ctx);
   check("a course the map never names gets no term (COSM 49R)",
     /COSM 49R[^\n]*\n/.test(ctx) && !/COSM 49R[^\n]*the college's map/.test(ctx), ctx);
   check("the rule says to quote the map's term and never give one to an unplaced course",

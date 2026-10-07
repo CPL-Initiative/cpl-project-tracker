@@ -1,9 +1,27 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-07",
- "_session": "S341 SkyTerrace",
- "_status": "The program requirements harvest has two programs beyond the pilot's twenty: Irvine Valley's Art A.A. and Santa Monica's Barbering A.S., each laid out term by term on CPL Pathways from the map its college publishes. Sierra will name a course's term on such a map once the two records are loaded (Sam's card 8), and CPL Pathways marks a course a map recommends inside a choice, though neither map names one yet. The figure along a map waits on Sam's card 9: Santa Monica's Salon Experience courses all carry CPL, but its catalog prints no minimum, so the figure counts none of them today. The Library filer still cannot sign in to Google.",
+ "_session": "S341 SkyTerrace (after sheet 47)",
+ "_status": "Sam answered all nine cards of Open Asks Sheet 47. Irvine Valley's Art A.A. and Santa Monica's Barbering A.S. are now in the live program records, unchecked. A choice whose catalog prints no minimum now counts at the least the college's map prints, so Santa Monica reads up to 22.5 of 26.5 units, and CPL Pathways gives the figure along each read map. Sierra's deploy and the display update come next. The open-asks series has one Library record. Sheet 48 asks two things.",
  "items": [
+  {
+   "id": "s341-sam-sheet48",
+   "for": "Sam",
+   "tab": "library",
+   "text": "Open Asks Sheet 48 (https://claude.ai/artifact/FWGJ2uNEGB1RrhMPrFsaCJ) holds what still waits on you: card 1, whether the Ironworker film's web player stays public; card 2, the team's addresses for CPLLibrary (Drive still shows it shared with camapinitiative alone)."
+  },
+  {
+   "id": "s341-fable-display-apply",
+   "for": "Fable",
+   "tab": "program-requirements",
+   "text": "After PR #1896 merges, deploy cpl-chat (after its A/B), then apply display build 8292780f6cd5 in parts under 35 KB and confirm every row with --verify-sql. Handoff 342 has the steps."
+  },
+  {
+   "id": "s341-fable-sheets-to-vault",
+   "for": "Fable",
+   "tab": "library",
+   "text": "Move the other decision sheets and their 13 builders from the public tracker to the vault (Sam, sheet 47 card 4), giving the two template tests synthetic fixtures first; then give each moved sheet a Library record."
+  },
   {
    "id": "s339-sam-summit-v2",
    "for": "Sam",
@@ -11,28 +29,10 @@
    "text": "Drop the Noncredit Summit film's two v2 cuts (sent in chat on 6 October: the music cut, 1:41, and the narrated cut, 3:32) into the Drafts folder in Drive, replacing any earlier v2, and say whether to keep them or edit. Their Library record then takes its v2 rows."
   },
   {
-   "id": "s336-sam-sheet44",
-   "for": "Sam",
-   "tab": "program-requirements",
-   "text": "Open Asks Sheet 47 (https://claude.ai/artifact/2pCpQ3gHg2huw8oUdePE51) holds everything waiting on you: card 1, give the industry credential watch routine its repositories and the issuers' sites; cards 2-6, the Library's five calls; card 7, Santa Monica's catalog reading procedure (already in, yours to keep or undo); card 8, the live load of the two new program records; card 9, how a choice the college's map leaves open counts toward the CPL figures. Sheet 46 is superseded by it."
-  },
-  {
-   "id": "s340-sam-load-two",
-   "for": "Sam",
-   "tab": "program-requirements",
-   "text": "Go or hold, card 8 of Open Asks Sheet 47 (https://claude.ai/artifact/2pCpQ3gHg2huw8oUdePE51): put Irvine Valley's Art A.A. and Santa Monica's Barbering A.S. records (both unchecked) in the live program records, so Sierra and the Program Requirements tab show them and Santa Monica's two catalog gaps reach Drafts for the college. CPL Pathways already shows both, each course in the term its college's map gives it."
-  },
-  {
    "id": "s332-sam-setup-script",
    "for": "Sam",
    "tab": "admin",
    "text": "Add a dated comment line (for example # 2026-10-05 apply_migration allow-listed) to the cloud environment's Setup script (environment menu in the session's title bar, then Edit), so new sessions start with database updates you approved running without a second prompt."
-  },
-  {
-   "id": "s329-sam-routine-settings",
-   "for": "Sam",
-   "tab": "activities-projects",
-   "text": "Your routine 'CPL queue — scheduled session' runs once a day at 8:07 AM Pacific with the four repositories and Opus 5.5. For up to six a day, give it a custom schedule (every two hours, 8:07 AM to 6:07 PM); the web form offers daily or hourly, and the Claude Code command line's /schedule update takes a custom one."
   },
   {
    "id": "s328-sam-kb25-review",
@@ -51,18 +51,6 @@
    "for": "Sam",
    "tab": "library",
    "text": "Re-save the Library filer's three Google values (client ID, client secret, refresh token) at full length in the cloud environment's settings, under the same names. The saved ones are cut short (43, 19 and 14 characters), so the filer cannot sign in; a new session then files the six pieces and the Summit film's v2 cuts."
-  },
-  {
-   "id": "s341-sam-open-choice",
-   "for": "Sam",
-   "tab": "program-requirements",
-   "text": "Card 9 of Open Asks Sheet 47 (https://claude.ai/artifact/2pCpQ3gHg2huw8oUdePE51): when a catalog prints no minimum for a choice and the college's map prints one, may the CPL figures count the map's? Santa Monica's Barbering A.S. would read up to 22.5 of 26.5 units instead of 21.5, and the figure along its map would read the same. Irvine Valley's Art A.A. reads 3 either way."
-  },
-  {
-   "id": "s341-fable-path-figure",
-   "for": "Fable",
-   "tab": "program-requirements",
-   "text": "On Sam's card 9, give a program with a read map its figure along the map (TBA today): change plan() in the display builder so a choice the map leaves open counts as Sam rules, and a course the map names inside a choice counts in place of the CPL course; rebuild, then apply with the next display receipt."
   },
   {
    "id": "s319-fable-read-timings",
