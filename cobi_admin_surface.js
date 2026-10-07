@@ -358,7 +358,9 @@ window.COBI_ADMIN_SURFACE = {
         "program_requirements.js"
       ],
       "reads": [
+        "coci_college_programs",
         "program_requirement_records",
+        "program_source_addenda",
         "program_source_registry"
       ],
       "writes": [],

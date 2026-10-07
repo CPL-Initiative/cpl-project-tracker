@@ -52,6 +52,44 @@ async function seedRoepRecord(page, theme, lay) {
   await page.waitForTimeout(200);
 }
 
+// Seeds the Program Requirements tab's Progress view with the live shape of
+// 2026-10-07 (S343). The sweep aborts every request off the origin, so the
+// tab's Supabase reads fail; the status file (kb/queue_status.json) is served
+// and read for real. Each count matches what the tables held that day.
+async function seedProgress(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "program-requirements") location.hash = "program-requirements"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => {
+    const M = window.CPL_PROGRAM_REQUIREMENTS;
+    return M && !M._state.loading && M._state.progress;
+  }, null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const M = window.CPL_PROGRAM_REQUIREMENTS, S = M._state;
+    const reg = [];
+    for (let i = 0; i < 118; i++) {
+      const maps = i < 26, open = i < 2, refused = i >= 2 && i < 19;
+      reg.push({ college: open ? ["Irvine Valley College", "Santa Monica College"][i] : i === 2 ? "Cerritos College" : "College " + i,
+        catalog_url: "https://catalog.example/" + i, catalog_year: i < 94 ? "2026-2027" : "2025-2026",
+        sequence_source: maps ? (i % 2 ? "ppm" : "program_map_page") : "none_found",
+        sequence_host: maps ? "maps.example" : null, sequence_access: open ? "open" : refused ? "refused" : maps ? "not_read" : null,
+        census_checked_at: "2026-10-04T15:38:14Z",
+        procedure: i === 1 ? { v: 1 } : i === 2 ? { v: 4 } : null });
+    }
+    const recs = [];
+    for (let i = 0; i < 20; i++) recs.push({ college: ["Cerritos College", "San Diego Miramar College", "Mt. San Antonio College",
+      "Riverside City College", "West Los Angeles College"][i % 5], control_number: String(40000 + i), program_title: "Program " + i,
+      checked: true, checked_at: "2026-10-04T10:22:45Z", display: { build: "8292780f6cd5", built: "2026-10-06" } });
+    const addenda = [];
+    for (let i = 0; i < 79; i++) addenda.push({ college: "College " + (i % 52), status: "listed" });
+    S.registry = reg; S.records = recs; S.error = null;
+    S.progress = { addenda: addenda, active: 20282, queue: S.progress.queue, errors: S.progress.errors || {},
+      readAt: new Date() };
+    S.view = "progress";
+    M._render();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds My College's Reported expenditures section for the two targets below.
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
@@ -515,6 +553,27 @@ module.exports = {
     routes: [{ hash: "cpl-pathways", name: "roep-record-term" }],
     widths: [390, 1440],
     seed: (page) => seedRoepRecord(page, "dark", "term"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Program Requirements: the Progress view (S343) ─────────────────────
+     The cobi sweep opens the tab with its Supabase reads aborted, so it
+     paints the read-failed state. These two seed the view with the tables'
+     2026-10-07 shape (the status file is served and read for real), one per
+     theme: Sam asked that it be AA, mobile friendly and good in dark mode. */
+  "program-requirements-progress": {
+    file: "index.html",
+    title: "Program Requirements: Progress",
+    routes: [{ hash: "program-requirements", name: "progress" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedProgress(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "program-requirements-progress-dark": {
+    file: "index.html",
+    title: "Program Requirements: Progress, dark",
+    routes: [{ hash: "program-requirements", name: "progress-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedProgress(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "my-college-reports-signin": {

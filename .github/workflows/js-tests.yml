@@ -196,6 +196,12 @@ jobs:
       # college page read printed. Pure-stdlib python; same non-required check.
       - name: Program map parse (terms, choices, list slots, acceptance)
         run: python3 tests/program_map_parse_test.py
+      # The Progress view's status file (S343): what no anon read can know (the
+      # records waiting on a check, the run, the calls), written at every
+      # checkpoint. A malformed file would leave the view saying it could not
+      # read it. Pure-stdlib python; same non-required check.
+      - name: Queue status file (shape, parts, the stamp)
+        run: python3 tests/queue_status_test.py
       # The ROEP display build (S327): CPL Pathways and Sierra read two outputs
       # of one build, so the guard holds them equal and recomputes the up-to
       # figure from the page's own data. Needs node (the JS data file).
