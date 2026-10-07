@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-07T20:15:50Z",
-  "session": 342,
-  "moniker": "SkyBeacon",
+  "written_at": "2026-10-07T22:25:19Z",
+  "session": 343,
+  "moniker": "SkyGantry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_343_handoff.md",
+  "handoff": "docs/session_344_handoff.md",
   "next_run": {
     "name": "CPL Queue",
     "at": "2026-10-08T15:07:00Z",
@@ -40,15 +40,32 @@
   ],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply.",
-    "sierra": "Deployed Oct 7 at 12:23 PT; Sierra names each course's term on a read map."
+    "sierra": "Deployed Oct 7 at 3:24 PM PT; NOCE's second spelling folds into NOCE, and Sierra names a certification only where a title does."
   },
   "changes": [
-    { "at": "2026-10-07T14:20:00Z", "text": "Sam answered all nine cards on sheet 47" },
-    { "at": "2026-10-07T14:37:44Z", "text": "Irvine Valley and Santa Monica loaded, unchecked" },
-    { "at": "2026-10-07T18:40:00Z", "text": "The figure along a map merged" },
-    { "at": "2026-10-07T18:58:00Z", "text": "Sierra finds NOCE's catalog (merged)" },
-    { "at": "2026-10-07T19:23:00Z", "text": "Sierra deployed with map terms" },
-    { "at": "2026-10-07T19:28:00Z", "text": "CPL figures applied to 22 programs" },
-    { "at": "2026-10-07T19:42:44Z", "text": "The Progress view mock-up published" }
+    {
+      "at": "2026-10-07T19:23:00Z",
+      "text": "Sierra deployed with map terms"
+    },
+    {
+      "at": "2026-10-07T19:28:00Z",
+      "text": "CPL figures applied to 22 programs"
+    },
+    {
+      "at": "2026-10-07T19:42:44Z",
+      "text": "The Progress view mock-up published"
+    },
+    {
+      "at": "2026-10-07T21:08:00Z",
+      "text": "Sam approved the mock-up for building"
+    },
+    {
+      "at": "2026-10-07T21:55:36Z",
+      "text": "The Progress view merged, every section collapsible"
+    },
+    {
+      "at": "2026-10-07T22:24:20Z",
+      "text": "Sierra deployed: NOCE counted once, certifications only by title"
+    }
   ]
 }

@@ -18826,7 +18826,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1165
+     "line": 1167
     }
    ],
    "main_committers": []
@@ -20810,7 +20810,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1142
+     "line": 1144
     },
     {
      "id": "script:kb/_identity_daily_check.py",
@@ -21357,7 +21357,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1188
+     "line": 1190
     }
    ],
    "main_committers": []

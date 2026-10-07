@@ -14975,8 +14975,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 314,
+   "count": 315,
    "docs": [
+    {
+     "created": "2026-10-07",
+     "governs": [],
+     "n": 344,
+     "path": "docs/session_344_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "roep",
+      "sierra",
+      "scheduled-sessions"
+     ],
+     "title": "procedures for the pilot colleges; the Progress view is live",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-07",
      "governs": [],
@@ -20324,5 +20341,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1062
+ "total": 1063
 }
