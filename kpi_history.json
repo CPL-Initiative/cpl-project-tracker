@@ -3448,5 +3448,26 @@
     "ccc_exhibits": 139,
     "ccc_collaborative": 64,
     "articulating_colleges": 100
+  },
+  {
+    "date": "2026-10-07",
+    "students": 52663,
+    "students_military": 28788,
+    "students_workforce": 23968,
+    "students_apprentice": 948,
+    "eligible_units": 228235,
+    "transcribed_units": 74942,
+    "savings_m": 343.2,
+    "year_impact_b": 1.36,
+    "active_colleges": 103,
+    "leading_colleges": 17,
+    "star_colleges": 58,
+    "credit_recs": 14033,
+    "common_titles": 2948,
+    "ccc_common_titles": 139,
+    "map_exhibits": 3273,
+    "ccc_exhibits": 139,
+    "ccc_collaborative": 64,
+    "articulating_colleges": 100
   }
 ]

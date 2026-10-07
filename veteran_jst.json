@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-06T18:30:10.035914+00:00",
+  "scraped_at": "2026-10-07T13:31:26.139329+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28682,
+    "jst": 28788,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -50,6 +50,11 @@
       "jst": 582,
       "star": true
     },
+    "Norco College": {
+      "vets": 831,
+      "jst": 564,
+      "star": false
+    },
     "Merced College": {
       "vets": 142,
       "jst": 276,
@@ -59,11 +64,6 @@
       "vets": 122,
       "jst": 158,
       "star": true
-    },
-    "Norco College": {
-      "vets": 831,
-      "jst": 564,
-      "star": false
     },
     "Long Beach City College": {
       "vets": 307,
@@ -162,7 +162,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 521,
+      "jst": 523,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -485,6 +485,11 @@
       "jst": 132,
       "star": true
     },
+    "Butte College": {
+      "vets": 290,
+      "jst": 114,
+      "star": false
+    },
     "Sacramento City College": {
       "vets": 203,
       "jst": 113,
@@ -519,11 +524,6 @@
       "vets": 13,
       "jst": 11,
       "star": true
-    },
-    "Butte College": {
-      "vets": 290,
-      "jst": 10,
-      "star": false
     },
     "Imperial Valley College": {
       "vets": 489,
