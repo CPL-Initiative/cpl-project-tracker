@@ -68,7 +68,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cobi_live_session` | tabs: `admin` · pages: `CPL_Dashboard.html` | — |
 | `cobi_nav` | pages: `CPL_Dashboard.html` | tabs: `admin` |
 | `coci_college_offerings` | `edgefn:cpl-chat` | — |
-| `coci_college_programs` | scripts: `kb/_program_requirements_pilot.py` | — |
+| `coci_college_programs` | tabs: `program-requirements` · scripts: `kb/_program_requirements_pilot.py` | — |
 | `coci_program_courses` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `college` | scripts: `kb/_identity_daily_check.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
@@ -134,6 +134,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
 | `program_requirement_records` | tabs: `college-briefing`, `program-requirements` · scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
+| `program_source_addenda` | tabs: `program-requirements` | — |
 | `program_source_registry` | tabs: `college-briefing`, `program-requirements` · scripts: `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py` | — |
 | `project_lifecycle` | tabs: `raci` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
 | `projects` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
@@ -589,6 +590,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/projects_snapshot.json` | scripts: `kb/_load_projects.py`, `nudges/build_nudges.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_validation.md` | none found | scripts: `kb/_validate_projects.py` · committed by: `projects-seed-apply.yml` |
 | `kb/promotions.json` | scripts: `excel_to_dashboard.py`, `kb/_analyze_official_fold_evidence.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_remint_blast_radius.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_esl_package_dryrun.py`, `kb/_rekey_promotions.py`, `kb/_remint_apply.py`, `kb/_seed_authority_codes.py`, `kb/_title_consolidation_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py` | scripts: `kb/_rekey_promotions.py` |
+| `kb/queue_status.json` | tabs: `program-requirements` · scripts: `scripts/queue_status.py` | — |
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
 | `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
 | `kb/reference/CIPCode2020.csv` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_it_ai_credential_catalog.py` | — |
@@ -685,7 +687,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `package.json` | scripts: `kb/doctrine.py` | — |
 | `picks kb/<slug-with-underscores>_domain_map.json` | scripts: `kb/_build_domain_cpl_crosswalk.py` | — |
 | `pipeline.js` | pages: `CPL_Dashboard.html` | — |
-| `program_requirements.js` | pages: `CPL_Dashboard.html` | — |
+| `program_requirements.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/queue_status.py` | — |
 | `project_add.js` | pages: `CPL_Dashboard.html` | — |
 | `project_lifecycle.js` | pages: `CPL_Dashboard.html` | — |
 | `projects_editor.js` | pages: `CPL_Dashboard.html` | — |
@@ -808,6 +810,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_map_parse_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
+| `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_crnc_mirrors_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/remint_blast_radius_test.py` | workflows: `js-tests.yml` | — |
@@ -865,6 +868,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `calmatters.org` | `edgefn:cpl-news-harvest` |
 | `calnevjatc.org` | scripts: `kb/fire_electrical_external_credentials.py` |
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
+| `catalog.example` | modules: `a11y.config.js` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
 | `claude.ai` | tabs: `admin` · scripts: `kb/_build_claude_md_audit_decision_sheet.py`, `kb/_build_esl_followup_decision_sheet.py`, `kb/_build_esl_merging_decision_sheet.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_sheet_apply_build.py`, `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
@@ -1030,5 +1034,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 95 Supabase tables · 35 RPCs · 6 edge functions · 596 file
-datasets · 160 external services · 417 consumers · 44 workflows · 39 tabs.
+Coverage: 96 Supabase tables · 35 RPCs · 6 edge functions · 598 file
+datasets · 161 external services · 418 consumers · 44 workflows · 39 tabs.

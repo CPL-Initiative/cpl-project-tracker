@@ -698,6 +698,23 @@
       '.cplchat-audience.need { outline:2px solid var(--crimson, #920000); }',
       // Waiting on a tap is not an error, so it is cobalt, not crimson.
       '.cplchat-audience.confirm { outline:2px solid var(--cobalt, #0047AB); }',
+      // Dark, on the cpl_theme.js contract (the OS rule, then the explicit choice). The
+      // widget's base rules in both HTMLs carry the light palette as raw values, so a
+      // dark reader got a light log with dark-theme muted text on it (2.19:1, measured
+      // S343 on the Program Requirements tab) and dark ink on a dark bubble. Tokens
+      // only: the dark :root already holds every role these need. Light is untouched.
+      darkRules([
+        ['.cplchat-log', 'background:var(--surface-subtle); border-color:var(--border);'],
+        ['.cplchat-bot .cplchat-bubble', 'color:var(--text-body); border-color:var(--border);'],
+        ['.cplchat-bot .cplchat-bubble a', 'color:var(--cobalt);'],
+        ['.cplchat-chip', 'border-color:var(--border-strong);'],
+        ['.cplchat-chip:hover', 'background:var(--surface-muted); border-color:var(--cobalt);'],
+        ['.cplchat-input', 'background:var(--surface-opaque); color:var(--text-body); border-color:var(--border-strong);'],
+        ['.cplchat-input:focus', 'border-color:var(--cobalt); box-shadow:0 0 0 3px color-mix(in srgb, var(--cobalt) 25%, transparent);'],
+        ['.cplchat-typing', 'color:var(--text-muted);'],
+        ['.cplchat-status.cplchat-error', 'color:var(--crimson);'],
+        ['.cplchat-send:disabled', 'background:var(--surface-muted); color:var(--text-muted);']
+      ]),
       // .cplchat-status.cplchat-error lives in both HTML <style> blocks; this
       // sibling is injected instead, so the confirm prompt needs no Rule-4
       // mirror. Cobalt on the subtle surface, not the crimson of an error.
@@ -785,6 +802,15 @@
     st.id = 'cplchat-aud-css';
     st.textContent = css;
     document.head.appendChild(st);
+  }
+
+  // A themed rule on cpl_theme.js's contract: dark when the OS is dark and the reader
+  // has not chosen light, and dark when the reader chose dark. Selectors gain
+  // :root, so these outrank the widget's base rules in the HTML.
+  function darkRules(pairs) {
+    var os = pairs.map(function (p) { return ':root:not([data-theme="light"]) ' + p[0] + ' { ' + p[1] + ' }'; }).join(' ');
+    var chosen = pairs.map(function (p) { return ':root[data-theme="dark"] ' + p[0] + ' { ' + p[1] + ' }'; }).join('\n');
+    return '@media (prefers-color-scheme: dark) { ' + os + ' }\n' + chosen;
   }
 
   // ── Keep the newest line in view ───────────────────────────────────────────

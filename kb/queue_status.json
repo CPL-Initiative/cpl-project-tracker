@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "written_at": "2026-10-07T20:15:50Z",
+  "session": 342,
+  "moniker": "SkyBeacon",
+  "run": "Sam's session",
+  "decider": "Sam",
+  "handoff": "docs/session_343_handoff.md",
+  "next_run": {
+    "name": "CPL Queue",
+    "at": "2026-10-08T15:07:00Z",
+    "every_hours": 24
+  },
+  "unchecked": [
+    {
+      "college": "Irvine Valley College",
+      "program": "Art",
+      "award": "A.A.",
+      "control_number": "10265",
+      "loaded": "2026-10-07"
+    },
+    {
+      "college": "Santa Monica College",
+      "program": "Barbering",
+      "award": "A.S.",
+      "control_number": "43767",
+      "loaded": "2026-10-07"
+    }
+  ],
+  "next_step": {
+    "title": "A procedure for each pilot college",
+    "text": "Five pilot colleges have no reading procedure yet: Irvine Valley, San Diego Miramar, Mt. San Antonio, Riverside City and West Los Angeles. Then the addenda, after Sunday's census apply."
+  },
+  "calls": [
+    {
+      "title": "Check two new records?",
+      "text": "Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767. Sierra quotes neither program's requirements until Sam checks it.",
+      "if_no_reply": "both stay unchecked, and the queue moves on to procedures."
+    }
+  ],
+  "notes": {
+    "addenda": "The reading agent starts after the Oct 11 census apply.",
+    "sierra": "Deployed Oct 7 at 12:23 PT; Sierra names each course's term on a read map."
+  },
+  "changes": [
+    { "at": "2026-10-07T14:20:00Z", "text": "Sam answered all nine cards on sheet 47" },
+    { "at": "2026-10-07T14:37:44Z", "text": "Irvine Valley and Santa Monica loaded, unchecked" },
+    { "at": "2026-10-07T18:40:00Z", "text": "The figure along a map merged" },
+    { "at": "2026-10-07T18:58:00Z", "text": "Sierra finds NOCE's catalog (merged)" },
+    { "at": "2026-10-07T19:23:00Z", "text": "Sierra deployed with map terms" },
+    { "at": "2026-10-07T19:28:00Z", "text": "CPL figures applied to 22 programs" },
+    { "at": "2026-10-07T19:42:44Z", "text": "The Progress view mock-up published" }
+  ]
+}
