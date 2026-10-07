@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-07T13:31:26.139329+00:00",
+  "scraped_at": "2026-10-07T16:31:13.643340+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28788,
+    "jst": 28798,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -315,14 +315,14 @@
       "jst": 140,
       "star": true
     },
+    "Laney College": {
+      "vets": 96,
+      "jst": 69,
+      "star": false
+    },
     "Irvine Valley College": {
       "vets": 217,
       "jst": 135,
-      "star": false
-    },
-    "Laney College": {
-      "vets": 96,
-      "jst": 59,
       "star": false
     },
     "Saddleback College": {
