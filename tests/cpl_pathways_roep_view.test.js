@@ -22,7 +22,9 @@
 //   (g) outcomes (record shape 3) show as printed, and a record without them
 //       shows no empty section;
 //   (h) a read map places each course in the term the display build gave it,
-//       and the tray keeps only the courses the map never names.
+//       and the tray keeps only the courses the map never names;
+//   (i) By requirement marks the map's pick inside a choice, On the college's
+//       map with its term, and never a required course or a choice left open.
 
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -206,6 +208,58 @@ function click(w, root, value) {
     check("(h) the note gives the map's source", root.querySelector(".cplpw-rseq").textContent.includes(m.text));
     T._roepView.lay = "req";
   }
+}
+
+// ── (i) the map's pick inside a choice, on By requirement (S341) ──
+// Neither read map names a pick today: Irvine Valley's leaves its Art lists as open slots
+// and requires ART 85 (which its electives list again), and Santa Monica's prints Salon
+// Experience as a choice of all four courses. A fixture map that names one stands in.
+{
+  const w = freshWindow();
+  const T = w.CPL_PATHWAYS_TAB;
+  const root = w.document.getElementById("cpl-pathways-root");
+  T._roepView.lay = "req"; T._roepView.who = "college";
+  const tileOf = (code, blockName) => [...root.querySelectorAll(".cplpw-rband")]
+    .filter((sec) => !blockName || sec.querySelector("h4").textContent === blockName)
+    .flatMap((sec) => [...sec.querySelectorAll(".cplpw-rtile")]).filter((t) => t.getAttribute("data-code") === code);
+  const marked = () => [...root.querySelectorAll(".cplpw-rmark")].filter((n) => /On the college's map/.test(n.textContent));
+
+  const real = w.CPL_PATHWAYS_ROEP.programs.filter((p) => p.display.map && p.display.map.status === "read");
+  check("(i) the build holds two read maps", real.length === 2, real.map((p) => p.key).join(","));
+  real.forEach((p) => {
+    T._renderRoepProgram(root, p);
+    check("(i) " + p.key + " marks no pick, since its map names none inside a choice", marked().length === 0
+      && !/On the college's map/.test([...root.querySelectorAll(".cplpw-ralt")].map((n) => n.textContent).join("")));
+  });
+
+  const smc = JSON.parse(JSON.stringify(real.find((p) => p.key === "smc_43767")));
+  const term = smc.display.map.terms.find((t) => t.items.some((it) => it.kind === "choice"));
+  term.items = term.items.map((it) => it.kind === "choice"
+    ? { kind: "course", codes: ["COSM 95B"], units: "2", text: "COSM 95B · Salon Experience · 2 units" } : it);
+  T._renderRoepProgram(root, smc);
+  const pick = tileOf("COSM 95B")[0];
+  check("(i) a course the map names inside a choice says so in words, with its term",
+    pick && /On the college's map/.test(pick.textContent) && pick.textContent.includes(term.label), pick && pick.textContent);
+  check("(i) the other courses of that choice carry no mark",
+    ["COSM 95A", "COSM 95C"].every((k) => !/On the college's map/.test((tileOf(k)[0] || {}).textContent || "x")));
+  check("(i) a required course the map places carries no pick mark",
+    !/On the college's map/.test((tileOf("COSM 77")[0] || {}).textContent || "x"));
+
+  const ivc = JSON.parse(JSON.stringify(real.find((p) => p.key === "ivc_10265")));
+  const req = ivc.record.blocks.find((b) => b.rule === "all");
+  const c40 = req.courses.find((c) => c.code === "ART 40");
+  c40.alternatives = [{ code: "ART 99", units: 3 }];
+  ivc.display.map.terms[0].items = ivc.display.map.terms[0].items.map((it) => it.codes[0] === "ART 40"
+    ? { kind: "course", codes: ["ART 99"], units: "3", text: "ART 99 | Fixture | Major | 3" } : it);
+  T._renderRoepProgram(root, ivc);
+  const alt = tileOf("ART 40")[0] && tileOf("ART 40")[0].querySelector(".cplpw-ralt");
+  check("(i) the map's pick between two courses joined by or is marked on that course",
+    alt && /ART 99[^]*On the college's map, Semester 1/.test(alt.textContent), alt && alt.textContent);
+  check("(i) and the course the map passes over carries no mark",
+    !/On the college's map/.test([...tileOf("ART 40")[0].querySelectorAll(".cplpw-rmark")].map((n) => n.textContent).join("")));
+  const art85 = tileOf("ART 85", ivc.record.blocks.find((b) => /additional 6 units/.test(b.name)).name)[0];
+  check("(i) a course a required block holds is no pick where an elective list repeats it",
+    art85 && !/On the college's map/.test(art85.textContent), art85 && art85.textContent);
 }
 
 let failed = 0;

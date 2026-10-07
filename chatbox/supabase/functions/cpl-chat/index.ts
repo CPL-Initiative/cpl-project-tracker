@@ -3362,14 +3362,22 @@ function requirementLines(rec: any, titles: Map<string, string>, college?: strin
   const disp = (rec && rec.display) || null;
   const facts = (code: string): any => (disp && disp.courses ? disp.courses[code] : null);
   const titleOf = (code: string): string | undefined => titles.get(courseKey(code)) || (facts(code) || {}).title || undefined;
+  // S341: a read map places each course in a term (display.map.placed, an index into
+  // display.map.terms). The display build placed it; Sierra names the term as printed.
+  const map = disp && disp.map && disp.map.status === "read" ? disp.map : null;
+  const termOf = (code: string): string => {
+    const i = map && map.placed ? map.placed[code] : undefined;
+    const t = i == null ? null : (map.terms || [])[i];
+    return t && t.label ? ` {the college's map: ${t.label}}` : "";
+  };
   const course = (c: any): string => {
     const t = titleOf(c.code);
     const amt = fmtAmount(c.units, c.units_max, measure);
-    let line = `${c.code}${t ? ` — ${t}` : ""}${amt ? ` (${amt})` : ""}${cplNote(facts(c.code))}`;
+    let line = `${c.code}${t ? ` — ${t}` : ""}${amt ? ` (${amt})` : ""}${cplNote(facts(c.code))}${termOf(c.code)}`;
     for (const a of c.alternatives || []) {
       const at = titleOf(a.code);
       const aa = fmtAmount(a.units, a.units_max, measure);
-      line += ` or ${a.code}${at ? ` — ${at}` : ""}${aa ? ` (${aa})` : ""}${cplNote(facts(a.code))}`;
+      line += ` or ${a.code}${at ? ` — ${at}` : ""}${aa ? ` (${aa})` : ""}${cplNote(facts(a.code))}${termOf(a.code)}`;
     }
     return line;
   };
@@ -3443,6 +3451,9 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
       ctx += `- "Could adopt" names a credential another college has articulated to a course of the same identity, and "for consideration" a credential whose statewide credit recommendation names the course's C-ID. Both are leads for ${college}'s faculty to review. Say ${college} could review them; never say a learner will receive that credit at ${college}.\n`;
       ctx += `- The CPL figure counts only CPL ${college} has articulated, taking the CPL course in every choice, so it is the most of the program a learner could meet through CPL. ${college} evaluates each award. Give the figure as the line states it; never compute another.\n`;
       ctx += `- A program map orders courses by term and names the courses a college recommends inside a choice; the catalog keeps the rule. Where the map line says the map is not read, never describe a term-by-term order.\n`;
+      if (shown.some((g: any) => checked(g) && recs && (((recs.get(String(g.control)) || {}).display || {}).map || {}).status === "read")) {
+        ctx += `- Where the map is read, a course's line names the term the college's map gives it, in braces ({the college's map: Semester 1}). Give that term as the map prints it and say it comes from the college's map. A course whose line names no term is not on the map; never give it one.\n`;
+      }
       ctx += `- Where the catalog and the state's Program Course File differ, the catalog's version stands, and ${college} reconciles the two. Mention a difference when the visitor asks about a course it touches.\n`;
       ctx += `- These requirement records and CPL marks are a beta draft read from public catalogs and MAP. Suggest the visitor confirm a plan with a ${college} counselor.\n`;
     }

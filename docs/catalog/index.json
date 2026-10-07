@@ -14556,7 +14556,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-06"
+     "updated": "2026-10-07"
     },
     {
      "created": "2026-08-28",
@@ -14957,8 +14957,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 312,
+   "count": 313,
    "docs": [
+    {
+     "created": "2026-10-07",
+     "governs": [],
+     "n": 342,
+     "path": "docs/session_342_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-pathways",
+      "decision-sheets"
+     ],
+     "title": "a read map names each course's term; the open-choice rule waits on sheet 47",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-07",
      "governs": [],
@@ -20272,5 +20288,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1059
+ "total": 1060
 }

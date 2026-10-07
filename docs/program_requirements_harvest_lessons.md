@@ -748,6 +748,26 @@ the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
   display receipt reaches the table, or she says nothing about a read map.
 - **`pkill -f` killed its own shell again** (exit 144) when the pattern sat in the same command line. Kill by PID.
 
+## S341 SkyTerrace, 2026-10-07: what a read map says next, and the choice it leaves open
+
+- **Measure the rule before asking for it.** Handoff 341 held the figure along a map until Sam sets a rule for a
+  choice the map leaves open. Measured over the two read maps, the rule moves one number. Irvine Valley's map leaves
+  its Art lists as open places (*Art Major Course from List A*), and no list course carries CPL here, so every rule
+  reads 3. Santa Monica's map prints Salon Experience as a choice of COSM 95A-95D, *1-4 units*, and MAP's Barbering
+  license articulation covers all three courses the catalog lists there.
+- **A choice with no printed minimum counts nothing, even when every course in it carries CPL.** `plan()` takes a
+  choose-units block's `minimum`, or its stated minimum, and Santa Monica prints neither (*Any combination of Salon
+  classes is acceptable*), so the up-to figure reads 21.5 of 26.5 and leaves Salon Experience out. Two signals put the
+  least at 1 unit: the catalog's total less the other blocks (26.5 - 25.5), and the map's *1-4 units*. Whether a figure
+  may take the map's least is a definition, so it went to Sam (sheet 47 card 9) and nothing was rebuilt.
+- **A read map names a pick only on its own line.** The map's pick inside a choice is a course it prints as a single
+  item where the catalog offers a choice (a choose block, one option of several, an *or*). A course a required block
+  holds is no pick where an elective list repeats it (Irvine Valley's ART 85), and a choice the map prints whole is
+  none (Salon Experience). Neither read map names a pick, so the By requirement mark renders nothing today; the guard
+  proves it on fixture maps.
+- **Sierra's term rides the same deploy as the read-map line.** Each course line on a read map carries
+  `{the college's map: <term>}`. It is inert until a read-map program reaches the live table (sheet 47 card 8).
+
 ### Moved from the lane (S340 compaction)
 
 **OSHA 30 (S332):** Cerritos credits IWAP 41.09 OSHA 30/Extension Review (1.5 units) by its own exam (MAP exhibit `MAPCXA-E&R-1-001`, *Ext & Review* in the CER). Its catalog (read 13, run 37271979880) and COCI print AED 41.09 Welding III's outline for it, so the CCR files it alone (`WELD M10CA`), apart from the eight OSHA 30 Construction courses in `CNST M1001`. ✅ **Issuer (Sam, chat, S333):** *"they would not be the issuing agency, osha would."* The exhibit is credit by exam, so his issuer for it (California Community Colleges) stands.

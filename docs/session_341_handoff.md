@@ -4,6 +4,8 @@ date: 2026-10-07
 session: 340 (SkyLedger)
 tags: [handoff, program-requirements-harvest, cpl-pathways, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_342_handoff.md
 ---
 
 # You are Session 341
