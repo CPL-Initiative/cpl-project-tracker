@@ -300,6 +300,33 @@ block("15. without display facts the block is unchanged, and the read asks for t
     /run "7t CPL on a checked program/.test(SMOKE) && /answer_must_match "31\\\.5"/.test(SMOKE));
 });
 
+// S341: a read map places each course in a term; Sierra names the term as the map prints it.
+// Santa Monica's Barbering A.S. is filed in records_maps/ until its live load (sheet 46 card 8).
+block("16. a read map names each course's term, and only a placed course gets one", () => {
+  const d = JSON.parse(fs.readFileSync("kb/program_requirements_pilot/records_maps/smc_43767.json", "utf8"));
+  const src = JSON.parse(fs.readFileSync(d.source_file, "utf8"));
+  const prog = d.record.program;
+  const p = ROEP.programs.find((q) => q.key === "smc_43767");
+  check("the page's build reads Santa Monica's map", p && p.display.map.status === "read");
+  const rec = { control_number: d.control_number, catalog_year: src.catalog_year, measure: prog.measure,
+    total_min: (prog.total_units || {}).min, total_max: (prog.total_units || {}).max, record: d.record, display: p.display };
+  const ctx = M.buildProgramCoursesContext("Santa Monica College", rowsOf(src, d.control_number), ["barbering"],
+    new Map([[d.control_number, rec]]));
+  check("a required course names the term its map gives it",
+    /COSM 77 — [^\n]*\{the college's map: Semester 2 \(First 8 weeks\)\}/.test(ctx), ctx);
+  check("a course inside the map's Salon Experience choice names that choice's term",
+    /COSM 95A — [^\n]*\{the college's map: Semester 2 \(Second 8 weeks\)\}/.test(ctx), ctx);
+  check("a course the map never names gets no term (COSM 49R)",
+    /COSM 49R[^\n]*\n/.test(ctx) && !/COSM 49R[^\n]*the college's map/.test(ctx), ctx);
+  check("the rule says to quote the map's term and never give one to an unplaced course",
+    /a course's line names the term the college's map gives it/.test(ctx) && /never give it one/.test(ctx), ctx);
+  const cer = withDisplay("cerritos_42158");
+  const cctx = M.buildProgramCoursesContext("Cerritos College", rowsOf(cer.src, cer.d.control_number), ["ironworkers"],
+    new Map([[cer.d.control_number, cer.rec]]));
+  check("a program with no read map carries no term and no term rule",
+    !/the college's map:/.test(cctx) && !/a course's line names the term/.test(cctx), cctx);
+});
+
 const failed = results.filter((r) => !r[1]);
 for (const [name, ok, why] of results) console.log(`${ok ? "ok  " : "FAIL"} ${name}${ok || !why ? "" : " — " + String(why).slice(0, 400)}`);
 console.log(`\n${results.length - failed.length}/${results.length} passed`);

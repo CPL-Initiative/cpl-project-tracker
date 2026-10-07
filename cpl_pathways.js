@@ -1525,11 +1525,40 @@
     return out;
   }
 
-  function roepTile(rec, c) {
+  // The map's pick inside a choice (S341; the note the term view promised). A read
+  // map that names a course on its own line, where the catalog offers a choice (a
+  // choose block, one option of several, or an "or"), recommends that course; the
+  // catalog keeps the rule. A course a required block holds on its own is no pick,
+  // and a course the map names only as one option of its own choice is none either.
+  function roepMapTerm(rec, code) {
+    var map = rec.display.map || {};
+    if (map.status !== "read") return null;
+    var terms = map.terms || [];
+    for (var i = 0; i < terms.length; i++) {
+      if ((terms[i].items || []).some(function (it) { return it.kind === "course" && (it.codes || []).length === 1 && it.codes[0] === code; })) return terms[i].label;
+    }
+    return null;
+  }
+  function roepRequiredAlone(rec, code) {
+    return (rec.record.blocks || []).some(function (x) {
+      return x.rule === "all" && !x.option_group && (x.courses || []).some(function (c) {
+        return c.code === code && !(c.alternatives || []).length;
+      });
+    });
+  }
+  function roepMapPick(rec, b, c, code) {
+    var choice = b.rule !== "all" || !!b.option_group || code !== c.code || (c.alternatives || []).length > 0;
+    if (!choice || roepRequiredAlone(rec, code)) return null;
+    return roepMapTerm(rec, code);
+  }
+
+  function roepTile(rec, c, b) {
     var courses = rec.display.courses || {};
     var m = roepMeasure(rec);
     var info = courses[c.code] || {};
     var marks = roepMarks(info);
+    var pick = b ? roepMapPick(rec, b, c, c.code) : null;
+    if (pick) marks.push({ kind: "map", label: "On the college's map", text: pick });
     var li = el("li", "cplpw-rtile" + (info.here ? " here" : ""));
     li.setAttribute("data-code", c.code);
     li.appendChild(el("span", "code", c.code));
@@ -1545,6 +1574,8 @@
       if (ai.title) bits.push(" " + ai.title);
       if (a.units != null) bits.push(" · " + roepAmt(a.units, null, m));
       if (ai.here) bits.push(" · CPL here");
+      var apick = b ? roepMapPick(rec, b, c, a.code) : null;
+      if (apick) bits.push(" · On the college's map, " + apick);
       li.appendChild(el("span", "cplpw-ralt", bits));
     });
     return li;
@@ -1561,7 +1592,7 @@
     if (b.stated && b.stated.min != null) head.appendChild(el("span", "cplpw-rbu", roepAmt(b.stated.min, b.stated.max, roepMeasure(rec))));
     sec.appendChild(head);
     var ul = el("ul", "cplpw-rtiles");
-    (b.courses || []).forEach(function (c) { ul.appendChild(roepTile(rec, c)); });
+    (b.courses || []).forEach(function (c) { ul.appendChild(roepTile(rec, c, b)); });
     sec.appendChild(ul);
     return sec;
   }
