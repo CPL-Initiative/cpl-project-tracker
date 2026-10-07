@@ -1,0 +1,169 @@
+<title>ROEP Harvest Progress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: a status header, a five-step milestone line, then the parts grid beside a narrow column of what needs a person. */
+:root {
+  --paper: #F4F2ED; --ink: #1C1C1A; --body: #3A3A36; --muted: #5C5C55; --faint: #87877F;
+  --card: #FFFFFF; --card-subtle: #F7F5F1; --rule: rgba(28,28,26,.14); --rule-strong: rgba(28,28,26,.30);
+  --here: #0047AB; --here-soft: rgba(0,71,171,.10); --call: #920000; --call-soft: rgba(146,0,0,.07);
+  --display: 'Playfair Display', Georgia, serif; --text: 'Source Sans 3', Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #151514; --ink: #ECE9E2; --body: #D6D6D0; --muted: #ABABA3; --faint: #7A7A74;
+  --card: #1E1E1C; --card-subtle: #262624; --rule: rgba(255,255,255,.14); --rule-strong: rgba(255,255,255,.32);
+  --here: #7DA1D4; --here-soft: rgba(125,161,212,.14); --call: #CF8F8F; --call-soft: rgba(207,143,143,.10); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #151514; --ink: #ECE9E2; --body: #D6D6D0; --muted: #ABABA3; --faint: #7A7A74;
+  --card: #1E1E1C; --card-subtle: #262624; --rule: rgba(255,255,255,.14); --rule-strong: rgba(255,255,255,.32);
+  --here: #7DA1D4; --here-soft: rgba(125,161,212,.14); --call: #CF8F8F; --call-soft: rgba(207,143,143,.10); color-scheme: dark }
+
+body { background: var(--paper); color: var(--body); font-family: var(--text); font-size: 15px; line-height: 1.5; }
+.page { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 48px; display: grid; gap: 28px; }
+h1, h2, h3 { font-family: var(--display); color: var(--ink); margin: 0; text-wrap: balance; }
+.num { font-variant-numeric: tabular-nums; }
+.label { font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+a { color: var(--here); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--here); outline-offset: 2px; }
+
+/* header */
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 22px; }
+.head h1 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); }
+.head .sub { color: var(--muted); font-size: 1.02rem; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--body); font-size: .95rem; margin: 0; padding: 0; list-style: none; }
+.meta b { color: var(--ink); }
+.meta .waiting { color: var(--call); font-weight: 600; }
+.draft { font-size: .82rem; color: var(--muted); margin: 0; }
+
+/* milestone line */
+.road { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 26px 22px 22px; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; }
+.step { position: relative; display: grid; justify-items: center; text-align: center; gap: 6px; padding-top: 34px; }
+.step::before { content: ""; position: absolute; top: 15px; left: -50%; width: 100%; border-top: 3px solid var(--ink); }
+.step:first-child::before { display: none; }
+.step.next::before, .step.later::before { border-top: 3px dashed var(--rule-strong); }
+.step.here::before { border-top-color: var(--here); }
+.node { position: absolute; top: 4px; width: 24px; height: 24px; border-radius: 50%; box-sizing: border-box; background: var(--card); border: 3px solid var(--rule-strong); }
+.done .node { background: var(--ink); border-color: var(--ink); }
+.here .node { border-color: var(--here); box-shadow: 0 0 0 6px var(--here-soft); background: radial-gradient(circle, var(--here) 0 5px, var(--card) 6px); }
+.step h3 { font-size: 1.05rem; }
+.step .state { font-size: .88rem; color: var(--muted); }
+.here .state { color: var(--here); font-weight: 600; }
+.step .fact { font-size: .86rem; color: var(--body); }
+.youare { position: absolute; top: -24px; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--here); }
+.left { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.left .big { font-family: var(--display); font-size: 1.7rem; color: var(--ink); line-height: 1; }
+.chip { font-size: .86rem; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--rule-strong); color: var(--body); background: var(--card-subtle); }
+
+/* body grid */
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 22px; align-items: start; }
+.parts { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 18px; display: grid; gap: 14px; }
+.parts-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.part { background: var(--card-subtle); border: 1px solid var(--rule); border-radius: 10px; padding: 14px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 8px; min-height: 168px; min-width: 0; }
+.part h3 { font-family: var(--text); font-size: 1rem; font-weight: 700; }
+.status { justify-self: start; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.part.going { border-color: var(--here); }
+.part.going .status { color: var(--here); }
+.part.call { border-color: var(--call); background: var(--call-soft); }
+.part.call .status { color: var(--call); }
+.part .what { font-size: .9rem; color: var(--body); margin: 0; }
+.part .foot { font-size: .82rem; color: var(--muted); margin: 0; }
+.meter { height: 6px; border-radius: 3px; background: var(--rule); overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--here); }
+
+/* side column */
+.side { display: grid; gap: 14px; }
+.box { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 16px 18px; display: grid; gap: 8px; }
+.box h2 { font-size: 1.15rem; }
+.box p { margin: 0; font-size: .92rem; }
+.box.call { border-color: var(--call); background: var(--call-soft); }
+.box.call .label { color: var(--call); }
+.log { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.log li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; font-size: .9rem; }
+.log time { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 960px) { .main { grid-template-columns: minmax(0, 1fr); } .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .steps { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .step { justify-items: start; text-align: left; padding: 0 0 0 40px; gap: 2px; }
+  .step::before { top: -18px; left: 11px; width: 0; height: 18px; border-top: 0; border-left: 3px solid var(--ink); }
+  .step.next::before, .step.later::before { border-top: 0; border-left: 3px dashed var(--rule-strong); }
+  .step.here::before { border-left-color: var(--here); }
+  .node { top: 0; left: 0; }
+  .youare { position: static; order: -1; }
+  .part { min-height: 0; }
+}
+@media (prefers-reduced-motion: no-preference) { .meter i { transition: width .6s ease; } }
+</style>
+
+<div class="page">
+  <header class="head">
+    <h1>Catalog ROEP harvest</h1>
+    <span class="sub">Progress</span>
+    <ul class="meta" aria-label="Run status">
+      <li>Updated <b class="num">12:40 PT</b> · Oct 7</li>
+      <li>Last run <b>S342 SkyBeacon</b> (Sam's session)</li>
+      <li>Next CPL Queue run <b class="num">Oct 8, 8:07 PT</b></li>
+      <li class="waiting">1 waiting on you</li>
+    </ul>
+  </header>
+  <p class="draft">Mock-up for the Program Requirements tab. Every figure was read live from the harvest tables on Oct 7 at 12:40 PT; the built view reads them on each visit.</p>
+
+  <section class="road" aria-label="Milestones">
+    <ol class="steps">
+      <li class="step done"><span class="node" aria-hidden="true"></span><h3>Find every catalog</h3><span class="state">Done · Oct 4 census</span><span class="fact num">118 of 118 colleges</span></li>
+      <li class="step done"><span class="node" aria-hidden="true"></span><h3>Read the pilot</h3><span class="state">Done · Oct 4</span><span class="fact num">20 programs checked</span></li>
+      <li class="step here" aria-current="step"><span class="youare">You are here</span><span class="node" aria-hidden="true"></span><h3>Read program maps</h3><span class="state">In progress</span><span class="fact num">2 of 26 published maps</span></li>
+      <li class="step next"><span class="node" aria-hidden="true"></span><h3>A procedure per college</h3><span class="state">Next milestone</span><span class="fact num">2 of 118 written</span></li>
+      <li class="step later"><span class="node" aria-hidden="true"></span><h3>Every program</h3><span class="state">Later</span><span class="fact num">20,282 active programs</span></li>
+    </ol>
+    <p class="left"><span class="big num">3</span><span class="label">left before the next milestone</span>
+      <span class="chip">24 published maps to read</span><span class="chip">2 new records to check</span><span class="chip">Catalog addenda to read</span></p>
+  </section>
+
+  <div class="main">
+    <section class="parts" aria-labelledby="parts-h">
+      <div class="parts-head"><p class="label" id="parts-h">Parts of the harvest</p><p class="label num">4 of 8 done</p></div>
+      <div class="grid">
+        <article class="part"><h3>Catalog census</h3><span class="status">Done</span>
+          <p class="what num">118 colleges have a catalog address; 94 name 2026-2027.</p><p class="foot">Weekly; next apply Oct 11</p></article>
+        <article class="part"><h3>Catalog reading</h3><span class="status">Done for the pilot</span>
+          <p class="what num">22 programs read at 7 colleges.</p><p class="foot">Irvine Valley and Santa Monica added Oct 7</p></article>
+        <article class="part call"><h3>The four checks</h3><span class="status">Waiting on you</span>
+          <p class="what num">20 of 22 programs checked.</p>
+          <div class="meter" role="img" aria-label="20 of 22 checked"><i style="width:90.9%"></i></div><p class="foot">2 wait on your reading</p></article>
+        <article class="part going"><h3>Program maps</h3><span class="status">In progress</span>
+          <p class="what num">2 of the 26 published maps read.</p>
+          <div class="meter" role="img" aria-label="2 of 26 read"><i style="width:7.7%"></i></div><p class="foot">Irvine Valley Art, Santa Monica Barbering</p></article>
+        <article class="part"><h3>Reading procedures</h3><span class="status">Next</span>
+          <p class="what num">2 of 118 colleges have one.</p>
+          <div class="meter" role="img" aria-label="2 of 118 written"><i style="width:1.7%"></i></div><p class="foot">Cerritos v4, Santa Monica v1</p></article>
+        <article class="part"><h3>Catalog addenda</h3><span class="status">Not started</span>
+          <p class="what num">79 found at 52 colleges; none read.</p><p class="foot">The reading agent starts after Oct 11</p></article>
+        <article class="part"><h3>CPL figures</h3><span class="status">Done</span>
+          <p class="what num">Build 8292780f6cd5 on all 22 programs.</p><p class="foot">Applied Oct 7, 12:28 PT</p></article>
+        <article class="part"><h3>Sierra and CPL Pathways</h3><span class="status">Done</span>
+          <p class="what">Sierra names each course's term and the figure along a map.</p><p class="foot">Deployed Oct 7, 12:23 PT</p></article>
+      </div>
+    </section>
+
+    <aside class="side" aria-label="What happens next">
+      <section class="box"><p class="label">Next step</p><h2>A procedure for each pilot college</h2>
+        <p class="num">Five pilot colleges have none yet: Irvine Valley, San Diego Miramar, Mt. San Antonio, Riverside City and West Los Angeles. Then the addenda after Sunday's apply.</p></section>
+      <section class="box call"><p class="label">Needs your call</p><h2>Check two new records?</h2>
+        <p>Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767. Sierra quotes neither program's requirements until you check it.</p>
+        <p class="foot">No reply: both stay unchecked, and the queue moves on to procedures.</p></section>
+      <section class="box"><p class="label">Changed today</p>
+        <ol class="log">
+          <li><span>You answered all nine cards on sheet 47</span><time>7:20</time></li>
+          <li><span>Irvine Valley and Santa Monica loaded, unchecked</span><time>7:37</time></li>
+          <li><span>The figure along a map merged</span><time>11:40</time></li>
+          <li><span>Sierra finds NOCE's catalog (merged)</span><time>11:58</time></li>
+          <li><span>Sierra deployed with map terms</span><time>12:23</time></li>
+          <li><span>CPL figures applied to 22 programs</span><time>12:28</time></li>
+        </ol></section>
+    </aside>
+  </div>
+</div>
