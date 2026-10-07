@@ -917,6 +917,13 @@ run "7v NOCE by its initials (IT certifications)" \
   "$(printf '{"query":"%s","session_id":"smoke-ci","history":[]}' "$NOCE_QUESTION")"
 answer_must_match "\bCIST[ -]?1[0-2][05]\b" "7v ⭐ names a CIST course of NOCE's Google IT Support program, BY NUMBER"
 answer_must_match -i "Google IT Support" "7v names the Google IT Support program"
+# S343, two flaws in the S342 answers (chat_interactions 19:12Z and 19:29Z): the
+# Google program called "a direct lead-in to" and "aimed squarely at" CompTIA A+ and
+# Network+, which no title names (NOCE's own ELEC 101 A+ Certification Preparation
+# may still be named; these trigger words are the claim shapes, not "prepares"); and
+# the course list's duplicate spelling read as a second college "about 1 mile away".
+answer_must_not_match -i "(lead-in|aimed)[^.]{0,120}(CompTIA|Network\+)" "7v ⭐ never ties a program to a certification its titles do not name"
+answer_must_not_match -i "Continuing Education Credit|about 1 mile" "7v ⭐ NOCE's second spelling in the course list is not a second college"
 run "7v follow-up after a wrong 'no data' reply (COCI is not College of the Canyons)" \
   "$(printf '{"query":"You have the noncredit courses in COCI and the MIS program and course dataset. Check again and let me know.","session_id":"smoke-ci","history":[{"role":"user","content":"%s"},{"role":"assistant","content":"I do not have North Orange Continuing Education noncredit course catalog data in front of me, so I cannot confirm specific IT certification prep courses."}]}' "$NOCE_QUESTION")"
 answer_must_match "\bCIST[ -]?1[0-2][05]\b" "7v ⭐ the follow-up folds the NOCE question back in and names a CIST course"
