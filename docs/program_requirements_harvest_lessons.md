@@ -849,3 +849,9 @@ two negatives key on the claim shapes the model produced (`lead-in`, `aimed`), p
 correct ELEC 101 sentence. A/B 37693477855: preview all modes OK, production 1 failing, no regression. The PR's
 push-triggered smoke (production) failed 7c twice, on different assertions, the second with a statement timeout on 7p's
 control: production wording and the database, not the undeployed change.
+
+**A negative assertion needs word boundaries.** The post-deploy smoke (37696012819) failed 7v's certification negative on
+a correct answer: `aimed` matched inside "unclaimed" ("CompTIA Linux+ is also unclaimed by NOCE"). Proving the pattern
+against both bad answers and one good sentence missed it because the good sentence had no word containing either trigger.
+Bound the trigger words (`\b(lead-in|aimed)\b`), and prove a negative against the real answers the change produces.
+

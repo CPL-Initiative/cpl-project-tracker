@@ -54,8 +54,12 @@ with the routine's `next_run_at` from `get_trigger`. The Progress view's header 
   `program-requirements-progress` and `-dark` pass at 390 to 1440.
 - **#1901, deployed 22:24Z** (run 37695847449, byte-verified): Sierra folds NOCE's and SDCCE's "... Credit" spelling into
   the college (one row per TOP program, larger count kept), and names a certification only where a program or course
-  title names it. A/B 37693477855: preview all modes OK, production 1 failing, no regression. Production smoke dispatched
-  after the deploy; read its result first (below).
+  title names it. A/B 37693477855: preview all modes OK, production 1 failing, no regression. The post-deploy smoke
+  (37696012819) failed two: 7c's Orange County wording (the known variance; it failed the same way before the deploy)
+  and 7v's new certification negative, **a false match in the smoke itself**: "aimed" sits inside "unclaimed", and the
+  deployed answer was right (*"named for the Google IT Support certification specifically — that's the one industry
+  credential the course titles point to directly"*). The pattern is word-bounded now (#1902). Re-dispatch the smoke on
+  `main` first; only 7c may stay red.
 
 ## Decisions Sam made this run
 
