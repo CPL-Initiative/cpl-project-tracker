@@ -809,3 +809,43 @@ milestones (every catalog 118/118 · the pilot 20 checked · program maps 2 of 2
 call (check Irvine Valley 10265 and Santa Monica 43767), and the day's changes. First Light, statuses as words, crimson only
 on the call. The tab's other views already read the tables live, so the view adds no data source; the run header needs one
 file the checkpoint writes, since the browser cannot read the Routine's run history.
+
+## S343 SkyGantry (2026-10-07): the Progress view built; Sierra's NOCE answer fixed
+
+**The view, as built (#1900).** Sam: *"The mockup looks good to go:)"*, then mid-build *"Make sure it's AA and mobile
+friendly and dark mode looks good when used"* and *"make sure every section is collapsible and the tab has a
+collapse/expand all button."* Progress is the first of five views. `MILESTONES` and `PARTS` at the top of the view are
+definitions: a milestone's words, its measure, and what is left before it (`[count, one, many]` items). *You are here* is
+the first milestone with anything left; a left item whose count is null (its read failed) keeps the milestone open and is
+named "(could not be read)", never zero. The reads: the registry and the checked records (the tab's core read), plus
+`program_source_addenda`, COCI's active count (`Content-Range` with `Prefer: count=exact`) and `kb/queue_status.json`,
+each failing on its own. "You" in the mock-up became "Sam" (name the actor; the team reads the tab too). The view uses
+`--cobalt` for where the harvest is and `--crimson` only on what waits on Sam; tints are `color-mix()` of those tokens.
+Measured by two seeded a11y targets (`program-requirements-progress`, `-dark`) at 390 to 1440, and screenshots read by eye.
+
+**The status file is option (b) of handoff 343.** anon reads checked records only and has no grant on
+`program_source_registry_history`, so the unchecked records, the run, the routine's next firing, the next step, the calls
+and the changes come from the file the checkpoint writes (`.claude/commands/checkpoint.md` step 12). `--stamp` owns the
+clock; the session writes the prose. The browser rolls the routine's `next_run.at` forward by `every_hours` when the file
+is older than the firing. Guard `tests/queue_status_test.py` (16; reads the part ids out of the view so the two cannot drift).
+
+**Every section collapses.** My College's pattern: each section is a `<details data-sec>` whose summary carries the
+heading and a line that reads shut; Expand all and Collapse all in the header act on every section, Sierra included; the
+choice is one map in `localStorage` keyed `<view>:<section>`, with `*` holding the last all-control so it carries to views
+not on screen. The disclosure marker is drawn in CSS (no glyph).
+
+**Two bugs found by building the view.** (1) The Sequences view counted `sequence_access = 'ok'`, which the column's check
+never allows (`open | refused | unreached | not_read`), so it read 0 maps read; it counts `open` now (2). (2) Sierra's
+widget had no dark rules at all: the base CSS in both HTMLs carries raw light values, so dark mode showed a light log with
+dark-theme muted text on it (2.19:1). `cpl_chat.js` now injects token-only dark rules on `cpl_theme.js`'s contract; light
+is untouched.
+
+**Sierra's NOCE answer (#1901, deployed).** The course list spells NOCE and SDCCE twice (`... Credit`), and in
+`coci_college_offerings` the Credit rows repeat the college's own courses (111 for NOCE, 85 for SDCCE; BMGR 455, BUSN 218,
+OTEC 100 under both names). `foldCreditSpelling()` folds them into the college, one row per TOP program, the larger count
+kept (a sum would double it); Calbright College Credit, its only name, stays. The program block now names a certification
+only where a program or course title does (NOCE's own ELEC 101 *A+ Certification Preparation* still may be named). Smoke 7v's
+two negatives key on the claim shapes the model produced (`lead-in`, `aimed`), proved against both flawed answers and a
+correct ELEC 101 sentence. A/B 37693477855: preview all modes OK, production 1 failing, no regression. The PR's
+push-triggered smoke (production) failed 7c twice, on different assertions, the second with a statement timeout on 7p's
+control: production wording and the database, not the undeployed change.

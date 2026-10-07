@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 83 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 54 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 314 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1062** | |
+| Session handoffs | 315 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1063** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,7 +122,8 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- **2026-10-07 (S342 SkyBeacon):** Sierra finds a college asked by its initials and matches aliases as whole words (#1897; NOCE's Google IT Support pre-apprenticeship, smoke 7v; new note `methodology-match-a-short-name-as-a-whole-word`); display build 8292780f6cd5 live on all 22 records as a delta (#1898); the harvest's Progress view mocked up for the CPL Queue run (`prototype/roep_progress_mockup.html`); handoff 343.
+- **2026-10-07 (S343 SkyGantry):** the harvest Progress view is the Program Requirements tab's first view, every section collapsible with Expand all and Collapse all, Sierra's widget dark-mode safe (#1900; `kb/queue_status.json` written at every checkpoint, step 12); Sierra counts NOCE once and names a certification only by title (#1901, deployed). Handoff 344.
+- 2026-10-07 (S342 SkyBeacon): Sierra finds a college asked by its initials and matches aliases as whole words (#1897; NOCE's Google IT Support pre-apprenticeship, smoke 7v; new note `methodology-match-a-short-name-as-a-whole-word`); display build 8292780f6cd5 live on all 22 records as a delta (#1898); the harvest's Progress view mocked up for the CPL Queue run (`prototype/roep_progress_mockup.html`); handoff 343.
 - 2026-10-07 (S341 SkyTerrace): Sierra names each course's term on a read map and By requirement marks a map's pick inside a choice (#1895, neither shown until a map names one or the load lands); Santa Monica's Salon Experience prints no minimum, so the up-to figure counts none of its CPL; Open Asks Sheet 47 card 9 asks how a choice the map leaves open counts; lessons S341; handoff 342.
 - 2026-10-07 (S340 SkyLedger): Santa Monica Barbering A.S. 43767's record (extraction 37548804006) in `records_maps/`; CPL Pathways places each course in its read map's term (display build 9f60f746ea49); `plan()` counts a course once; both dated reads cover seven colleges; open-asks sheet 46 (#1894; vault #264); KB note `methodology-a-postgres-md5-proves-a-transcribed-jsonb-copy` gains the per-row refresh
 - 2026-10-06 (S339 SkyReel): the Noncredit Summit film v2 (#1891: Sarah Explains, unnamed; Sam's greeting; $7 million ongoing; four grants with Calbright; 30,795; Nadia an industry certificate; brighter portraits; MP4s to Drive, never the repo; vault #262); the harvest capture follows a procedure's catalog step, and Santa Monica's first procedure record reads Barbering A.S. from its full-catalog PDF (#1892); handoff 340 (SkyLedger).
