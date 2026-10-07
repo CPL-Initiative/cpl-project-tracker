@@ -381,6 +381,12 @@ const COLLEGE_ALIASES: Record<string, string> = {
   "sdmc": "San Diego Mesa College",
   "sdmr": "San Diego Miramar College",
   "miramar": "San Diego Miramar College",
+  // The two continuing-education colleges go by their initials, and no word of
+  // an initialism appears in the college's name, so the name match below finds
+  // nothing ("Does NOCE teach…", Sam, 2026-10-07). SDCE is SDCCE's name before
+  // 2024. The profile with the catalog data is the "College of" spelling.
+  "sdcce": "San Diego College of Continuing Education",
+  "sdce": "San Diego College of Continuing Education",
   "palomar": "Palomar College",
   "miracosta": "MiraCosta College",
   "grossmont": "Grossmont College",
@@ -471,6 +477,7 @@ const COLLEGE_ALIASES: Record<string, string> = {
   "santa ana": "Santa Ana College",
   "fullerton": "Fullerton College",
   "cypress": "Cypress College",
+  "noce": "North Orange Continuing Education",
   "riverside city": "Riverside City College",
   "riverside": "Riverside City College",
   "palo verde": "Palo Verde College",
@@ -663,9 +670,21 @@ async function detectAndFetchCollegeProfile(
     }
   }
 
-  // 1. Check alias map first
+  /* 1. Check alias map first — as whole words, the way resolveDistrict reads.
+   *
+   * ⚠ A SUBSTRING TEST HERE NAMED THE WRONG COLLEGE. It was `q.includes(alias)`,
+   * and a short alias sits inside ordinary words: Sam's 2026-10-07 follow-up
+   * "You have the noncredit courses in COCI…" resolved to College of the Canyons
+   * ("coc"), and Sierra read Canyons' program lists for a NOCE question.
+   * Measured over 7,504 logged questions: 13 hit an alias only inside a longer
+   * word, and all 13 resolved wrong — "coding" to College of the Desert ("cod"),
+   * "search" and "research" to American River ("arc"), "NOCCD" to Orange Coast
+   * ("occ"), and an Allan Hancock question to Canyons ("hancock" holds "coc",
+   * and "coc" comes first in the map). A question that names an alias as a word
+   * matches exactly as before. */
+  const qWords = " " + q.replace(/[^a-z0-9]+/g, " ").trim() + " ";
   for (const [alias, fullName] of Object.entries(COLLEGE_ALIASES)) {
-    if (q.includes(alias)) {
+    if (qWords.includes(" " + alias.replace(/[^a-z0-9]+/g, " ").trim() + " ")) {
       const { data } = await sb
         .from("chatbox_college_profiles")
         .select("*")
@@ -944,6 +963,20 @@ const TOPIC_STOP_WORDS = new Set([
   "requested", "match", "matches", "matching", "course", "courses", "program",
   "programs", "yet", "don", "didn", "doesn", "isn", "aren", "wasn", "weren",
   "won", "wouldn", "couldn", "shouldn", "haven", "hasn", "hadn",
+  // MORE ASK-SHAPE WORDS, AND THE TEAM'S OWN DATA WORDS (2026-10-07). Sam asked
+  // "Does NOCE teach any noncredit courses designed to help students get IT
+  // certs like CompTIA, Google, Microsoft or others?" With NOCE resolved, its
+  // program search ranked three ECE "Teacher" programs ("teach") ahead of the
+  // Google IT Support Professional Pre-Apprenticeship, and the course block
+  // shows three lists, so the one program that answered him lost its courses.
+  // Without these words the search returns that program alone, all five CIST
+  // courses. "teach" sits in 365 logged questions. His follow-up, "You have the
+  // noncredit courses in COCI and the MIS program and course dataset. Check
+  // again and let me know", read as a new topic on coci, mis, dataset, let and
+  // know, so it never folded the NOCE question back in. "help" stays a topic
+  // word: help desk is an IT job.
+  "teach", "teaches", "taught", "designed", "students", "others", "like",
+  "coci", "mis", "dataset", "datasets", "let", "know",
 ]);
 
 function extractTopicKeywords(query: string): string[] {
