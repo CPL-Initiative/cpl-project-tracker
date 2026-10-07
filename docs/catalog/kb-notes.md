@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-524 document(s).
+525 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -325,6 +325,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Land a re-mint by rehearsal and a fresh read, then read the numbers it moves](../kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md) | methodology | published | 2026-09-03 | 2026-09-04 |
 | [Lazy-load heavy per-tab data behind tab activation](../kb-notes/methodology-lazy-load-heavy-tab-data.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Lead with the steps, not the rationale](../kb-notes/methodology-lead-with-the-steps-not-the-rationale.md) | methodology | published | 2026-08-10 | 2026-08-10 |
+| [Match a short name as a whole word](../kb-notes/methodology-match-a-short-name-as-a-whole-word.md) | methodology | published | 2026-10-07 | 2026-10-07 |
 | [Measure a permission guard by the wait it removes, never by the decision it prints](../kb-notes/methodology-measure-a-guard-by-the-wait-it-removes.md) | methodology | published | 2026-09-20 | 2026-09-20 |
 | [Measure the distribution before you pick a parallel strategy](../kb-notes/methodology-measure-the-distribution-before-you-pick-a-parallel-strategy.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Measure your mechanism's ceiling before working the queue](../kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue.md) | methodology | published | 2026-08-24 | 2026-08-24 |

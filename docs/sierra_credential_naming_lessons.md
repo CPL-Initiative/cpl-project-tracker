@@ -1,7 +1,7 @@
 ---
 title: Sierra credential naming & the route map — lessons
 created: 2026-08-10
-updated: 2026-08-10
+updated: 2026-10-07
 tags: [lessons, sierra, retrieval, credentials, naming, routing, privacy]
 artifacts:
   - kb/supabase_chatbox_credentials.sql
@@ -424,3 +424,23 @@ and the total 2,500 → 9,000, and `GUIDANCE_MAX_RULES` stayed at 10 — so the
 char budget would carry ~17 at today's average length. ⚠️ **And eviction is
 oldest-first and silent**, so the rule most at risk is the standing **naming
 rule** (2026-07-03), not the reactive one written this afternoon.
+
+## S342 SkyBeacon, 2026-10-07: an initialism, an alias inside a word, and ask-shape words
+
+Sam asked *"Does NOCE teach any noncredit courses designed to help students get IT certs like CompTIA, Google, Microsoft
+or others?"* and Sierra said she had no NOCE catalog data; the catalog held 1,060 NOCE courses and the Google IT Support
+Professional Pre-Apprenticeship (control 43318, CIST 100-120). `chat_interactions` timings showed the shape: turn 1 ran
+13 per-word profile reads and no `college_program_courses`; turn 2 ran one profile read, the alias path.
+
+- **An initialism matches no word of the name.** The name match reads words of four letters or more inside college names;
+  "NOCE" is in none. Aliases `noce`, `sdcce`, `sdce` (#1897).
+- **A substring alias test names the wrong college.** `q.includes("coc")` read "COCI" as College of the Canyons. Over
+  7,504 logged questions, 13 hit an alias only inside a word and all 13 resolved wrong ("coding" → Desert, "search" →
+  American River, "NOCCD" → Orange Coast, "Tell me about Allan Hancock College" → Canyons, because "coc" precedes "allan
+  hancock" in the map). Whole-word match, the way `resolveDistrict` already read.
+- **Ask-shape words are not topics.** "teach" (365 logged questions) ranked ECE *Teacher* programs ahead of the Google
+  program, and the course block lists three programs, so the answer lost its courses; coci, mis, dataset, let and know
+  made the follow-up a new topic, so it never folded the NOCE question back in. Stopped; "help" stays (help desk).
+
+Guards: `tests/sierra_alias_word_match.test.js` (18 of 23 fail on the old code; block 4 ties smoke 7v's terms to
+`index.ts`), smoke 7v (both turns). Live 19:23Z. Open: the answer's CompTIA lead-in claim is the model's, not the data's.

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 524,
+   "count": 525,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6083,6 +6083,24 @@
      "title": "Lead with the steps, not the rationale",
      "type": "methodology",
      "updated": "2026-08-10"
+    },
+    {
+     "created": "2026-10-07",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "tests/sierra_alias_word_match.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-match-a-short-name-as-a-whole-word.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "retrieval",
+      "college-identity"
+     ],
+     "title": "Match a short name as a whole word",
+     "type": "methodology",
+     "updated": "2026-10-07"
     },
     {
      "created": "2026-09-20",
@@ -12142,7 +12160,7 @@
      ],
      "title": "Sierra credential naming & the route map \u2014 lessons",
      "type": null,
-     "updated": "2026-08-10"
+     "updated": "2026-10-07"
     },
     {
      "created": "2026-08-13",
@@ -14957,8 +14975,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 313,
+   "count": 314,
    "docs": [
+    {
+     "created": "2026-10-07",
+     "governs": [],
+     "n": 343,
+     "path": "docs/session_343_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "roep",
+      "sierra",
+      "scheduled-sessions"
+     ],
+     "title": "build the harvest's Progress view; Sierra finds NOCE",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-07",
      "governs": [],
@@ -20289,5 +20324,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1060
+ "total": 1062
 }

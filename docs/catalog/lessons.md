@@ -84,7 +84,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Session credentials — what "signed in" means across 26 modules](../session_credentials_lessons.md) | `session_credentials_lessons.md` | 2026-08-15 |  |
 | [Sidebar / Tab Router — Workstream Lessons](../sidebar_lessons.md) | `sidebar_lessons.md` | 2026-05-27 |  |
 | [Sierra across three surfaces — alignment lessons](../sierra_surface_alignment_lessons.md) | `sierra_surface_alignment_lessons.md` | 2026-08-17 | 2026-08-17 |
-| [Sierra credential naming & the route map — lessons](../sierra_credential_naming_lessons.md) | `sierra_credential_naming_lessons.md` | 2026-08-10 | 2026-08-10 |
+| [Sierra credential naming & the route map — lessons](../sierra_credential_naming_lessons.md) | `sierra_credential_naming_lessons.md` | 2026-08-10 | 2026-10-07 |
 | [Sierra credit recommendations & false absences — workstream lessons](../sierra_credit_recs_lessons.md) | `sierra_credit_recs_lessons.md` | 2026-08-13 | 2026-08-13 |
 | [Sierra rules as data — lessons](../sierra_rules_lessons.md) | `sierra_rules_lessons.md` | 2026-08-14 |  |
 | [SkyView / CCR Atlas lessons — archive](../ccr_atlas_lessons_archive.md) | `ccr_atlas_lessons_archive.md` | 2026-09-05 | 2026-09-07 |

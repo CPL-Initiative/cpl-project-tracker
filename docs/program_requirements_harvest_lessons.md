@@ -777,3 +777,35 @@ the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
 ### Moved from the lane (S340 compaction)
 
 **OSHA 30 (S332):** Cerritos credits IWAP 41.09 OSHA 30/Extension Review (1.5 units) by its own exam (MAP exhibit `MAPCXA-E&R-1-001`, *Ext & Review* in the CER). Its catalog (read 13, run 37271979880) and COCI print AED 41.09 Welding III's outline for it, so the CCR files it alone (`WELD M10CA`), apart from the eight OSHA 30 Construction courses in `CNST M1001`. ✅ **Issuer (Sam, chat, S333):** *"they would not be the issuing agency, osha would."* The exhibit is credit by exam, so his issuer for it (California Community Colleges) stands.
+
+## S342 SkyBeacon, 2026-10-07: the display applied as a delta, and a Progress view for the harvest
+
+**Card 8 finished.** #1896 (S341: the two-row load, card 9's rule, display build 8292780f6cd5) and #1897 (Sierra's NOCE
+fix) merged; one preview A/B on `main` (run 37670895667) covered both: candidate all modes OK, production 5 failing, no
+regression. #1896's own A/B had failed 7c's quick-list table; its change touches only `displayLines`, which no live row
+reaches while every `figure.path` is null, so the miss was the model's wording. cpl-chat deployed 19:23Z (run 37673955257);
+the production smoke (37674213394) passed.
+
+**Card 9's rule, kept here from the lane.** A choice whose catalog prints no minimum takes the least the college's map
+prints for it, through a CPL course (`map_hints`); along the map, a course the map names inside a choice counts in place of
+the CPL course, and a choice it leaves open counts as up-to does (`figure.path`). Santa Monica reads up to 22.5 of 26.5 and
+22.5 along its map; Irvine Valley 3 and 3; no pilot figure moved.
+
+**A 185 KB receipt applied as 33 KB.** The 20 live rows on build 1cb75672ba6c differed from 8292780f6cd5 in three
+top-level keys only (`figure`, `build`, `built`; 4.7 KB in all), measured by parsing both receipts. Each took
+`display = display || '{...}'` guarded on `display->>'build' = '1cb75672ba6c'`; the two rows with no display took the
+receipt's own statements. Migrations `program_requirement_records_display_8292780f6cd5_s342_part1`/`_part2`; receipt
+`kb/receipts/program_requirement_records_display_2026-10-07_8292780f6cd5_s342_delta.sql`; the builder's `--verify-sql`
+read 22 of 22 `match`, which is the proof a top-level merge cannot fake (it hashes the whole jsonb). **Measure the diff
+between the live build and the new one before splitting a receipt into parts.**
+
+**The Progress view.** Sam, after #1897: *"Once this lands I want to pivot over to the Catalog ROEP work and the new COBI
+tab needed to monitor the work. I'm thinking it would be good to add a workflow dashboard to monitor the progress like the
+attached."* (a screenshot of a project map: milestones with "you are here", a parts grid, next step, needs your call,
+changed overnight). Then: *"Note that I set up a Routine for this work called CPL Queue"* and *"Yes start mock"*. The
+mock-up (artifact 6Pco7R1NVB5S45evjjfJsr, `prototype/roep_progress_mockup.html`) maps it onto this harvest: five
+milestones (every catalog 118/118 · the pilot 20 checked · program maps 2 of 26 published, here · a procedure per college
+2/118 · every program, 20,282 active), eight parts, the next step (procedures for the five pilot colleges with none), one
+call (check Irvine Valley 10265 and Santa Monica 43767), and the day's changes. First Light, statuses as words, crimson only
+on the call. The tab's other views already read the tables live, so the view adds no data source; the run header needs one
+file the checkpoint writes, since the browser cannot read the Routine's run history.

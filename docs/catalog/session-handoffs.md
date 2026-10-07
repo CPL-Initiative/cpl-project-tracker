@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-313 document(s).
+314 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 343 | [build the harvest's Progress view; Sierra finds NOCE](../session_343_handoff.md) | 2026-10-07 |
 | 342 | [sheet 47 carried out; the display apply and the sheet move remain](../session_342_handoff.md) | 2026-10-07 |
 | 341 | [Santa Monica's record filed; read maps placed by term; the live load waits on sheet 46](../session_341_handoff.md) | 2026-10-07 |
 | 340 | [the Summit film v2 shipped; Santa Monica's catalog read through its procedure record](../session_340_handoff.md) | 2026-10-06 |
