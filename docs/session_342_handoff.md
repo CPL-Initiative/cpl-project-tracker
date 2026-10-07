@@ -12,6 +12,11 @@ Your moniker is **SkyBeacon**. SkyTerrace (S341, `session_01NDadSdMVbcvDjjek3iaN
 answered Open Asks Sheet 47 by its Complete button (2026-10-07 14:20Z) and sent it to this session, which carried
 it out until its context ran low (checkpointed at ~109,000 tokens left).
 
+> **EMERGENCY CHECKPOINT (S341, 2026-10-07 ~15:00Z, ~47,000 tokens left).** Refreshed: this handoff, the three
+> lanes it moved (harvest, library, partner-crosswalks), `cpl_memory`, the To-Do feed, lessons S341. NOT refreshed after
+> sheet 48 card 1: the To-Do feed's sheet 48 item (card 1 is done), docs INDEX history, the vault session note. PR #1896
+> and vault #266 were left open: merge #1896 on a green `test`, then re-run #266's `coverage` once and merge it.
+
 ## First, in this order
 
 1. **One writer.** `list_sessions` (`mine: true`); S341 may still hold a wake (see the end of this file).
