@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1073,
-    "bytes": 11235478,
+    "bytes": 11238126,
     "over_budget": 6,
     "handoff_max": 342,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 118,
-        "bytes": 3337614,
+        "bytes": 3337604,
         "over": 3
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 35,
-        "bytes": 314653,
+        "bytes": 316073,
         "over": 1
       },
       "handoff": {
         "files": 313,
-        "bytes": 2576215,
+        "bytes": 2577453,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 59
     },
     "vault": {
-      "files": 3692,
-      "bytes": 1794626971,
-      "heavy_bytes": 816983944,
+      "files": 3694,
+      "bytes": 1794646852,
+      "heavy_bytes": 816984045,
       "heavy_share": 0.455,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -738,10 +738,10 @@
       "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
-        "bytes": 10095891,
+        "bytes": 10095894,
         "kind": "file"
       },
-      "message": "10,095,891 B single file inside the vault"
+      "message": "10,095,894 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -838,10 +838,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715708,
+        "bytes": 6715711,
         "kind": "file"
       },
-      "message": "6,715,708 B single file inside the vault"
+      "message": "6,715,711 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -958,10 +958,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007522,
+        "bytes": 3007617,
         "kind": "file"
       },
-      "message": "3,007,522 B single file inside the vault"
+      "message": "3,007,617 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

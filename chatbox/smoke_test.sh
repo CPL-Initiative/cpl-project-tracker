@@ -883,6 +883,45 @@ run "7u who the CPL Initiative serves (Sam's statement)" \
 answer_must_match "116" "7u counts California's 116 community colleges"
 answer_must_match -i "Cal State LA|California State University,? Los Angeles" "7u ⭐ names Cal State LA, the first CSU campus on MAP"
 
+# ── MODE 7v: a college asked by its initials reaches its catalog data (S342) ──
+# Sam, 2026-10-07: "Does NOCE teach any noncredit courses designed to help
+# students get IT certs like CompTIA, Google, Microsoft or others?" Sierra said
+# she had no NOCE catalog data: "NOCE" had no alias, and his follow-up ("...in
+# COCI...") hit the alias "coc" inside "coci" and read College of the Canyons.
+# NOCE's Google IT Support Professional Pre-Apprenticeship (control 43318) lists
+# CIST 100, 105, 110, 115 and 120. NOCE_TERMS is what index.ts builds from the
+# question; tests/sierra_alias_word_match.test.js re-derives it and fails the
+# moment they part.
+NOCE_COLLEGE='North Orange Continuing Education'
+NOCE_QUESTION='Does NOCE teach any noncredit courses designed to help students get IT certs like CompTIA, Google, Microsoft or others?'
+NOCE_TERMS='["noce","noncredit","help","comptia","google","microsoft"]'
+echo "===================================================================="
+echo "MODE: 7v a college asked by its initials (NOCE, IT certifications)"
+nrows="$(curl -sS --max-time 45 -X POST "$REST_BASE/rpc/college_program_courses" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -d "$(printf '{"p_college":"%s","search_terms":%s,"program_limit":8,"course_limit":40}' "$NOCE_COLLEGE" "$NOCE_TERMS")")"
+nfirst=$(printf '%s' "$nrows" | python3 -c '
+import json, sys
+try:
+    rows = json.loads(sys.stdin.read())
+    rows = rows if isinstance(rows, list) else []
+except Exception:
+    rows = []
+print(rows[0].get("program_title") or "-" if rows else "-")
+')
+case "$nfirst" in
+  "Google IT Support"*) echo "  [assert ok] 7v ⭐ the NOCE read returns the Google IT Support program first" ;;
+  *) echo "::error::7v ⭐ the NOCE read returned '${nfirst}' first — expected the Google IT Support Professional Pre-Apprenticeship (control 43318). Check coci_program_courses for North Orange Continuing Education."; fail=1 ;;
+esac
+run "7v NOCE by its initials (IT certifications)" \
+  "$(printf '{"query":"%s","session_id":"smoke-ci","history":[]}' "$NOCE_QUESTION")"
+answer_must_match "\bCIST[ -]?1[0-2][05]\b" "7v ⭐ names a CIST course of NOCE's Google IT Support program, BY NUMBER"
+answer_must_match -i "Google IT Support" "7v names the Google IT Support program"
+run "7v follow-up after a wrong 'no data' reply (COCI is not College of the Canyons)" \
+  "$(printf '{"query":"You have the noncredit courses in COCI and the MIS program and course dataset. Check again and let me know.","session_id":"smoke-ci","history":[{"role":"user","content":"%s"},{"role":"assistant","content":"I do not have North Orange Continuing Education noncredit course catalog data in front of me, so I cannot confirm specific IT certification prep courses."}]}' "$NOCE_QUESTION")"
+answer_must_match "\bCIST[ -]?1[0-2][05]\b" "7v ⭐ the follow-up folds the NOCE question back in and names a CIST course"
+answer_must_not_match -i "College of the Canyons" "7v ⭐ the follow-up never reads College of the Canyons"
+
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
 run "8 offerings broad (who teaches construction)" \
