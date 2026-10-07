@@ -768,6 +768,12 @@ the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
 - **Sierra's term rides the same deploy as the read-map line.** Each course line on a read map carries
   `{the college's map: <term>}`. It is inert until a read-map program reaches the live table (sheet 47 card 8).
 
+- **Sam's sheet 47 (S341, 2026-10-07):** card 8 *Load both* and card 9 *As proposed*. The load went in as a two-row
+  delta of the 67 KB load receipt (one migration carries about 40 KB), proven by md5 of each jsonb against the
+  receipt's own literal: a record file and the receipt's record differ in shape, so hash the receipt, never the file.
+  `map_hints()` reads a read map's picks and the least it prints for a choice; Santa Monica reads 22.5 and 22.5.
+  The display receipt is 185 KB and goes in parts after the cpl-chat deploy (handoff 342).
+
 ### Moved from the lane (S340 compaction)
 
 **OSHA 30 (S332):** Cerritos credits IWAP 41.09 OSHA 30/Extension Review (1.5 units) by its own exam (MAP exhibit `MAPCXA-E&R-1-001`, *Ext & Review* in the CER). Its catalog (read 13, run 37271979880) and COCI print AED 41.09 Welding III's outline for it, so the CCR files it alone (`WELD M10CA`), apart from the eight OSHA 30 Construction courses in `CNST M1001`. ✅ **Issuer (Sam, chat, S333):** *"they would not be the issuing agency, osha would."* The exhibit is credit by exam, so his issuer for it (California Community Colleges) stands.

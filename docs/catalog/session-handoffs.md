@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 342 | [a read map names each course's term; the open-choice rule waits on sheet 47](../session_342_handoff.md) | 2026-10-07 |
+| 342 | [sheet 47 carried out; the display apply and the sheet move remain](../session_342_handoff.md) | 2026-10-07 |
 | 341 | [Santa Monica's record filed; read maps placed by term; the live load waits on sheet 46](../session_341_handoff.md) | 2026-10-07 |
 | 340 | [the Summit film v2 shipped; Santa Monica's catalog read through its procedure record](../session_340_handoff.md) | 2026-10-06 |
 | 339 | [the Summit film re-cut, the Library filer's first run, and 338's carried queue](../session_339_handoff.md) | 2026-10-06 |
