@@ -250,6 +250,15 @@ block("14. the display facts render on a checked program, quoted, never recomput
   check("the recommended-path figure reads TBA while no map is read",
     ctx.includes("Recommended-path figure: TBA. No pathway map has been read for this program."), ctx);
   check("the map line says no map was found", /Term-by-term map: no term-by-term program map found/.test(ctx), ctx);
+  // S340: a read map (Santa Monica's Barbering, filed in records_maps/) has its own line.
+  const smc = ROEP.programs.find((q) => q.key === "smc_43767");
+  const readRec = Object.assign({}, rec, { display: Object.assign({}, p.display, { map: smc.display.map, figure: smc.display.figure }) });
+  const rctx0 = M.buildProgramCoursesContext("Cerritos College", rowsOf(src, d.control_number), ["ironworkers"],
+    new Map([[d.control_number, readRec]]));
+  check("a read map says the harvest read it, with its host",
+    rctx0.includes("Term-by-term map: the harvest has read the college's term-by-term map for this program (www.smc.edu)."), rctx0);
+  check("and the path figure stays TBA, saying why",
+    rctx0.includes("Recommended-path figure: TBA. The college's term-by-term map is read; the figure along its path is not computed yet."), rctx0);
   check("the rules name the three kinds and keep the leads leads",
     /marked "CPL here" is credit for prior learning Cerritos College has articulated/.test(ctx)
     && /never say a learner will receive that credit at Cerritos College/.test(ctx)

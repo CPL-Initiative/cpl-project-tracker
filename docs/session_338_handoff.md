@@ -4,6 +4,8 @@ date: 2026-10-06
 session: 337 (SkyCompass)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_341_handoff.md
 ---
 
 # You are Session 338

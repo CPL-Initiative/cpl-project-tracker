@@ -80,6 +80,11 @@ import _program_requirements_load as loader  # noqa: E402  (checked logic, one p
 PILOT = os.path.join(HERE, "program_requirements_pilot")
 MAP_READ = os.path.join(PILOT, "map_cr_by_course.json")
 REGISTRY_READ = os.path.join(PILOT, "registry_read.json")
+SEQUENCES = os.path.join(PILOT, "sequences")
+# records/ holds the records the table holds; records_maps/ holds records filed
+# unchecked whose live write waits on Sam's go (S338). The page shows both, and
+# the receipt's insert-select skips a key the table does not hold yet.
+RECORD_FOLDERS = ("records", "records_maps")
 ARTICS = os.path.join(HERE, "coci_articulations.json")
 LIVE_MEMBERS = os.path.join(ROOT, "unified_courses_members.js")
 LIVE_INDEX = os.path.join(ROOT, "unified_courses_index.js")
@@ -337,22 +342,33 @@ def plan(blocks: list, has, units_of=None) -> dict:
         except (TypeError, ValueError):
             return 0.0
 
+    # A course counts once (S340). A program can name one course in two blocks:
+    # Irvine Valley's Art A.A. requires ART 85 and lists it again among its electives,
+    # and Santa Monica's Barbering A.S. prints COSM 11C in Level 1 and Level 4. A course
+    # already counted adds nothing where it appears again, and a choice never picks it
+    # a second time; before this the figure counted ART 85's 3 units twice.
+    taken = set()
+
+    def fresh(p):
+        return has(p) and ck(p["code"]) not in taken
+
     def best(c):
         opts = [c] + list(c.get("alternatives") or [])
-        with_cpl = [o for o in opts if has(o)]
+        with_cpl = [o for o in opts if fresh(o)]
         return with_cpl[0] if with_cpl else c
 
     def block_plan(b):
-        picks, cpl, req = [], 0.0, 0.0
+        picks, cpl, req, counted = [], 0.0, 0.0, []
         if b.get("rule") == "all":
             for c in courses_of(b):
                 p = best(c)
                 picks.append(p)
                 req += units(p)
-                if has(p):
+                if fresh(p) and ck(p["code"]) not in {ck(x["code"]) for x in counted}:
                     cpl += units(p)
+                    counted.append(p)
         else:
-            ranked = sorted((best(c) for c in courses_of(b)),
+            ranked = sorted((best(c) for c in courses_of(b) if ck(best(c)["code"]) not in taken),
                             key=lambda p: (-(1 if has(p) else 0), -units(p)))
             if b.get("rule") == "choose_courses":
                 for p in ranked[: (b.get("minimum") or 1)]:
@@ -360,6 +376,7 @@ def plan(blocks: list, has, units_of=None) -> dict:
                     req += units(p)
                     if has(p):
                         cpl += units(p)
+                        counted.append(p)
             else:
                 need = float(b.get("minimum") or 0) or float(((b.get("stated") or {}).get("min")) or 0)
                 got = 0.0
@@ -370,8 +387,9 @@ def plan(blocks: list, has, units_of=None) -> dict:
                     got += units(p)
                     if has(p):
                         cpl += min(units(p), need - (got - units(p)))
+                        counted.append(p)
                 req += need or got
-        return {"picks": picks, "cpl": cpl, "req": req}
+        return {"picks": picks, "cpl": cpl, "req": req, "counted": counted}
 
     total, seen, pick_codes = 0.0, set(), []
     for b in blocks:
@@ -386,7 +404,8 @@ def plan(blocks: list, has, units_of=None) -> dict:
         else:
             chosen = block_plan(b)
         total += chosen["cpl"]
-        pick_codes.extend(p["code"] for p in chosen["picks"] if has(p))
+        pick_codes.extend(p["code"] for p in chosen["counted"])
+        taken |= {ck(p["code"]) for p in chosen["picks"]}
     return {"cpl": round(total, 2), "picks": pick_codes}
 
 
@@ -441,6 +460,40 @@ def amount(lo, hi, unit) -> str:
 
 
 # ── the map's status: the registry's sequence columns ───────────────────────────
+def term_map(key: str, college: str, codes: list) -> dict | None:
+    """The college's term-by-term map for this program, where one is read and accepted
+    (kb/_program_map_parse.py, kb/program_requirements_pilot/sequences/<key>.json).
+    Carries the terms as the map prints them, and the term each of the record's courses
+    sits in: a course the map names, alone or inside a choice, is placed there; a course
+    it never names stays unplaced. The catalog keeps the rule; the map names the pick."""
+    path = os.path.join(SEQUENCES, key + ".json")
+    if not os.path.exists(path):
+        return None
+    seq = json.load(open(path))
+    if not seq.get("accepted"):
+        return None
+    src = seq.get("source") or {}
+    host = re.sub(r"^https?://([^/]+).*$", r"\1", src.get("final_url") or src.get("url") or "") or None
+    terms = [{"label": t["label"], "units": t.get("units"),
+              "items": [{"kind": i["kind"], "codes": list(i.get("codes") or []), "units": i.get("units"),
+                         "text": i["text"]} for i in t.get("items") or []]}
+             for t in seq.get("terms") or []]
+    on = {}
+    for n, t in enumerate(terms):
+        for i in t["items"]:
+            for c in i["codes"]:
+                on.setdefault(ck(c), n)
+    placed = OrderedDict((c, on[ck(c)]) for c in codes if ck(c) in on)
+    named = "%s (%s)" % (seq.get("map_title") or seq.get("title"), seq["pattern"]) if seq.get("pattern") \
+        else (seq.get("map_title") or seq.get("title") or "this program")
+    return {"status": "read", "host": host, "url": src.get("final_url") or src.get("url"),
+            "checked_run": src.get("run"), "read_on": src.get("read_on"),
+            "text": "%s publishes a term-by-term map for %s, read %s (%s)."
+                    % (college, named, src.get("read_on"), src.get("run")),
+            "terms": terms, "notes": list(seq.get("notes") or []), "placed": placed,
+            "not_placed": [c for c in codes if c not in placed]}
+
+
 def map_status(college: str, reg: dict) -> dict:
     access, src = reg.get("sequence_access"), reg.get("sequence_source")
     base = {"host": reg.get("sequence_host"), "url": reg.get("sequence_url"),
@@ -471,10 +524,10 @@ def build() -> dict:
     adopters, cer_at = cer_adopters()
     review = json.load(open(loader.REVIEW))
     verdicts = review.get("verdicts") or {}
-    loaded = {(r["college"], r["control_number"]): r for r in loader.rows()}
+    loaded = {(r["college"], r["control_number"]): r for f in RECORD_FOLDERS for r in loader.rows(f)}
 
     programs = []
-    for path in sorted(glob.glob(os.path.join(PILOT, "records", "*.json"))):
+    for path in sorted(p for f in RECORD_FOLDERS for p in glob.glob(os.path.join(PILOT, f, "*.json"))):
         key = os.path.splitext(os.path.basename(path))[0]
         filed = json.load(open(path))
         src = json.load(open(os.path.join(ROOT, filed["source_file"])))
@@ -566,9 +619,12 @@ def build() -> dict:
                    if x.get("catalog_addition"))
         display = OrderedDict()
         display["v"] = SHAPE_VERSION
+        seq = term_map(key, college, list(courses))
         display["figure"] = {"up_to": pl["cpl"], "measure": measure, "total": total, "picks": pl["picks"],
                              "path": None,
-                             "path_why": "No pathway map has been read for this program."}
+                             "path_why": "The college's term-by-term map is read; the figure along its path is "
+                                         "not computed yet." if seq else
+                                         "No pathway map has been read for this program."}
         display["counts"] = {"courses": len(courses),
                              "here": sum(1 for e in courses.values() if e.get("here")),
                              "adopt": sum(1 for e in courses.values() if e.get("adopt")),
@@ -577,12 +633,13 @@ def build() -> dict:
         seconds = [s for code in courses for s in second.get((norm_college(college), ck(code)), [])]
         display["gaps"] = gaps_for(college, reg.get("catalog_platform") or src.get("platform"), row.get("award") or "",
                                    measure, filed, verdict, total, seconds)
-        display["map"] = map_status(college, reg)
+        display["map"] = seq or map_status(college, reg)
         display["checks"] = {"checked": row["checked"], "coverage": {"placed": cov.get("placed"), "listed": cov.get("listed")},
                              "additions": adds, "arithmetic": (score.get("arithmetic") or {}).get("status"),
                              "reviewer": verdict}
         programs.append(OrderedDict([
-            ("key", key), ("college", college), ("control_number", control),
+            ("key", key), ("filed", os.path.basename(os.path.dirname(path))),
+            ("college", college), ("control_number", control),
             ("title", row["program_title"]), ("award", row["award"]), ("catalog_year", row["catalog_year"]),
             ("source_url", row["source_url"]), ("platform", reg.get("catalog_platform") or src.get("platform")),
             ("measure", measure), ("record", row["record"]), ("display", display)]))
@@ -634,6 +691,11 @@ def sql_text(b: dict, prior: str | None = None) -> str:
     else:
         lines.append("-- The column was added empty, so setting display back to null for these keys rolls this back.")
     lines.append("-- The page reads the same facts from cpl_pathways_roep_data.js (same build stamp).")
+    waiting = [p["key"] for p in b["programs"] if p.get("filed") != "records"]
+    if waiting:
+        lines.append("-- %d of them (%s) are filed in records_maps/ and are not in the table: their statements "
+                     "select no row and change nothing until the load adds them on Sam's go."
+                     % (len(waiting), ", ".join(waiting)))
     for p in b["programs"]:
         lines.append(
             "insert into public.program_requirement_records (college, control_number, program_title, measure, record, checks, display) "

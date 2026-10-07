@@ -20,7 +20,9 @@
 //   (f) no link is a bare "#" (the dashboard routes tabs on location.hash), and
 //       the toggles are labeled groups of aria-pressed buttons;
 //   (g) outcomes (record shape 3) show as printed, and a record without them
-//       shows no empty section.
+//       shows no empty section;
+//   (h) a read map places each course in the term the display build gave it,
+//       and the tray keeps only the courses the map never names.
 
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -167,6 +169,43 @@ function click(w, root, value) {
   const broken = { key: "x", college: "X", title: "Y" };
   T._renderRoepProgram(root, broken);
   check("(b) a record the build lacks says so", /unavailable/.test(root.textContent));
+}
+
+// ── (h) a read map places each course in its term (S340) ──
+// Santa Monica's Barbering map is read: every course the map names sits in the term the
+// display build placed it in (display.map.placed, never matched on the page), a course
+// it never names waits in the tray, and CPL here is said in words.
+{
+  const w = freshWindow();
+  const T = w.CPL_PATHWAYS_TAB;
+  const root = w.document.getElementById("cpl-pathways-root");
+  const rec = w.CPL_PATHWAYS_ROEP.programs.find((p) => p.key === "smc_43767");
+  check("(h) the build holds Santa Monica's read map", rec && rec.display.map.status === "read");
+  if (rec) {
+    T._roepView.lay = "term"; T._roepView.who = "college";
+    T._renderRoepProgram(root, rec);
+    const m = rec.display.map;
+    const terms = [...root.querySelectorAll(".cplpw-rterm")];
+    check("(h) one box per term the map prints, labeled as printed",
+      terms.length === m.terms.length && terms.every((t, i) => t.querySelector("h4").textContent.startsWith(m.terms[i].label)),
+      terms.length + " vs " + m.terms.length);
+    const bad = Object.keys(m.placed).filter((code) => {
+      const t = terms[m.placed[code]];
+      return !t || ![...t.querySelectorAll("li")].some((li) =>
+        li.getAttribute("data-code") === code || (li.getAttribute("data-codes") || "").split(",").includes(code));
+    });
+    check("(h) every placed course is in the term the build placed it in", !bad.length, bad.join(","));
+    const tray = [...root.querySelectorAll(".cplpw-rtray li")].map((li) => li.firstChild.textContent);
+    check("(h) the tray holds only the courses the map never names", JSON.stringify(tray) === JSON.stringify(m.not_placed), tray.join(","));
+    const here = [...root.querySelectorAll(".cplpw-rterm li.here")];
+    check("(h) a term's CPL mark is said in words", here.length > 0 && here.every((li) => /\(CPL here/.test(li.textContent)));
+    check("(h) the map's GE and elective slots show as printed, never as a course",
+      [...root.querySelectorAll(".cplpw-rterm li.slot")].some((li) => /SMC GE Area/.test(li.textContent)));
+    const link = root.querySelector(".cplpw-rseq a");
+    check("(h) the note links the college's map", link && link.getAttribute("href") === m.url);
+    check("(h) the note gives the map's source", root.querySelector(".cplpw-rseq").textContent.includes(m.text));
+    T._roepView.lay = "req";
+  }
 }
 
 let failed = 0;
