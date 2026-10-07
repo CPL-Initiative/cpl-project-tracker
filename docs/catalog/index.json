@@ -2780,11 +2780,12 @@
       "methodology",
       "supabase",
       "verification",
-      "implementation-funding"
+      "implementation-funding",
+      "program-requirements"
      ],
      "title": "A Postgres md5 proves a transcribed jsonb copy",
      "type": "methodology",
-     "updated": "2026-10-01"
+     "updated": "2026-10-07"
     },
     {
      "created": "2026-09-17",
@@ -14956,8 +14957,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 311,
+   "count": 312,
    "docs": [
+    {
+     "created": "2026-10-07",
+     "governs": [],
+     "n": 341,
+     "path": "docs/session_341_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-pathways",
+      "decision-sheets"
+     ],
+     "title": "Santa Monica's record filed; read maps placed by term; the live load waits on sheet 46",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-06",
      "governs": [],
@@ -20255,5 +20272,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1058
+ "total": 1059
 }

@@ -4,6 +4,8 @@ date: 2026-10-06
 session: 338 (SkyLantern)
 tags: [handoff, library, noncredit-summit, film, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_341_handoff.md
 ---
 
 # You are Session 339

@@ -10,6 +10,10 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-07)
+
+- 2026-10-05 (S332 SkyBridge): the ROEP display reads identity from the live CCR (#1861); OSHA 30 on IWAP 41.09 and read 13 (#1862); sheets 37-38 ruled, Sierra at the top of Program Requirements (#1863); `apply_migration` allow-listed (#1864); handoff 333.
+
 ## INDEX update-history entries rotated out (2026-10-06)
 
 - 2026-10-04 (S330 SkyRoutine): KB note `methodology-an-advisor-asserts-what-its-fact-list-does-not-say`; handoff 331; the college page read submits a form and skips a gone host; Cerritos reads 4 and 5 (#1859): Schedule+ sections, the Credit by Exam route, Statewide Career Pathways gone, the B.S. on the Chancellor's Office list; the Ironworker pathway film draft v1 (`prototype/ironworker_video/`); open-asks sheet 36.

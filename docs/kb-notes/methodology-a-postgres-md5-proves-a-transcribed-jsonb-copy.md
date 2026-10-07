@@ -1,13 +1,14 @@
 ---
 title: A Postgres md5 proves a transcribed jsonb copy
 created: 2026-10-01
-updated: 2026-10-01
-tags: [methodology, supabase, verification, implementation-funding]
+updated: 2026-10-07
+tags: [methodology, supabase, verification, implementation-funding, program-requirements]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
   - "[[cpl_funding_lessons]]"
+  - "[[program_requirements_harvest_lessons]]"
 artifacts:
   - tests/fixtures/cpl_funding_config_e21658f9.json
 ---
@@ -45,6 +46,23 @@ S313 transcribed the 23,594-character config and matched `e21658f9` on the first
 ## When this applies (and when it doesn't)
 
 It applies to any jsonb column read as text. It does not cover a `json` (not `jsonb`) column, which keeps the input's spacing and key order, or a float whose stored form Python prints differently (`1e-05` against `0.00001`): check the length first, which is cheap and catches both.
+
+## Refreshing a dated read: a fingerprint per row, then re-read only what differs (S340)
+
+A dated copy of a query's rows (the ROEP builder's `map_cr_by_course.json`, 178 course rows) has to be refreshed
+when the harvest adds a college. Re-reading it whole means transcribing every row again. Hash instead:
+
+1. Build one string per row from the fields the copy keeps, in a fixed order (`code:recs:exhibits:untitled:` and
+   each title as `title/source/recs`, in the read's own order), and take its md5 both in SQL (`string_agg ... order by
+   code collate "C"`) and in Python over the stored file (`sorted()` is bytewise for ASCII codes, the same as `"C"`).
+2. Compare one hash per college first. Equal hashes prove that college unchanged with no rows transcribed.
+3. Where a college differs, ask for a short hash per row, then per title within a differing row. The difference
+   narrows to the exact values to read.
+
+S340: the five pilot colleges came back with three matching and two differing. Of 116 rows in those two, four
+differed, each by one exhibit title. Only those four titles and the two new colleges were read in full, and every
+college's hash then matched the live read. A row order has to match too: the per-title hashes gave the live order,
+and the first rebuild, which kept the stored order, missed until it followed them.
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878]
+prs: [1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -718,3 +718,36 @@ the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
 - **A push of the capture script is the maps dispatch.** The workflow reads `--sample maps` on a push, so the
   pushed fix ran the read itself; no separate dispatch was needed.
 
+## S340 SkyLedger, 2026-10-07: Santa Monica's record, a read map placed by term, a course counts once
+
+- **Santa Monica Barbering A.S. 43767 has a record** in `records_maps/`, unchecked. Source: capture run 37545459181
+  (job 112548269296), transcribed from the MCP's copy of the log; the pilot test recomputes the 25 codes. Extraction
+  run 37548804006: 23 of 25 placed (COSM 64 and 95D in `missing_explained`), 4 program outcomes verbatim, invented 0,
+  arithmetic `incomplete` (25.5 against 26.5 printed: *Salon Experience Courses* prints "any combination" and no
+  minimum), $0.09989. A local `score()` of the filed record equals the run's score key for key, which proves the
+  transcription.
+- **The display builder reads both folders; the load reads one.** `loader.rows(folder)` (default `records`) feeds the
+  load receipt, so it stays at 20 records; `RECORD_FOLDERS` feeds the page and the display receipt. Each program names
+  its folder (`filed`), and the receipt says which of its statements select no row until the load adds them.
+- **A read map rides the display.** `term_map()` copies an accepted sequence record's terms into `display.map`
+  (`status: "read"`, `placed` = code to term index, `not_placed`), and `roepReadMap` in `cpl_pathways.js` draws one
+  box per term from it: the record's courses by code (CPL here in words), the map's other courses and its GE and
+  elective slots as printed, a choice as one line. Santa Monica: 24 of 25 placed, COSM 49R alone off the map.
+  Irvine Valley: 5 placed, the rest in the tray beside the map's four list slots. The page matches nothing itself.
+- **`plan()` counted a course twice when a program names it in two blocks.** Irvine Valley's Art A.A. requires
+  ART 85 and lists it again among the electives, so the figure read 6 units from one 3-unit course; Santa Monica's
+  COSM 11C (Level 1, and the Level 4 misprint) did the same. A course now counts once, and a choice never picks a
+  course already taken. None of the 20 pilot figures moved; Irvine Valley reads 3, Santa Monica 21.5 of 26.5.
+- **A dated read can be refreshed without re-copying it.** The MCP's output has to be transcribed by hand, so a
+  per-course md5 computed in SQL and again locally over the stored file proved the pilot's five colleges unchanged
+  except four courses (Riverside MAG 51; West LA AVIATEK 002, 005, 017: one exhibit title each, and one credit
+  recommendation fewer on AVIATEK 002). Only those four, and the two new colleges, were read in full; every college's
+  fingerprint then matched the live read. Santa Monica holds a *Barbering license* MAP articulation on 22 of the
+  program's courses.
+- **Sierra skips a map status she does not know.** `MAP_STATUS_LINE` gains `read`; deploy cpl-chat before the
+  display receipt reaches the table, or she says nothing about a read map.
+- **`pkill -f` killed its own shell again** (exit 144) when the pattern sat in the same command line. Kill by PID.
+
+### Moved from the lane (S340 compaction)
+
+**OSHA 30 (S332):** Cerritos credits IWAP 41.09 OSHA 30/Extension Review (1.5 units) by its own exam (MAP exhibit `MAPCXA-E&R-1-001`, *Ext & Review* in the CER). Its catalog (read 13, run 37271979880) and COCI print AED 41.09 Welding III's outline for it, so the CCR files it alone (`WELD M10CA`), apart from the eight OSHA 30 Construction courses in `CNST M1001`. ✅ **Issuer (Sam, chat, S333):** *"they would not be the issuing agency, osha would."* The exhibit is credit by exam, so his issuer for it (California Community Colleges) stands.
