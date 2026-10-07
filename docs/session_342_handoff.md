@@ -46,6 +46,9 @@ it out until its context ran low (checkpointed at ~109,000 tokens left).
 - **Card 1:** the routine was updated 14:06Z; next run Monday 2026-10-12 12:51Z. Read that run's PR.
 - **Sheet 48 (Sam, 14:52Z):** card 1 *Keep it public*: the Ironworker film's Library audience is Public (receipt
   `kb/receipts/cpl_library_ironworker_public_2026-10-07_s341.sql`). Card 2 (addresses) is unanswered: no note.
+- **Sheet 48 card 2 (15:3xZ):** Sam sent 19 addresses in chat (not committed: the tracker is public). The Drive
+  connector's `share_file` refused every one tried (10 of 19: *invalid argument* or *caller does not have permission*);
+  CPLLibrary still lists the owner alone. Sam shares it in Drive, or pastes the list into a session that can.
 - **Card 3:** not done in Drive. CPLLibrary and Drafts still list the owner alone (read 14:4xZ); sheet 48 card 2 asks
   for addresses. Never guess one.
 
