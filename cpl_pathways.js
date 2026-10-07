@@ -1820,6 +1820,17 @@
       label.appendChild(document.createTextNode(" of the listed courses carry CPL."));
     }
     meter.appendChild(label);
+    // The figure along a read map (Sam, open-asks sheet 47 card 9, as proposed): the display
+    // build follows the map's picks; the page states it and computes nothing.
+    var map = rec.display.map || {};
+    if (upTo && fig.path != null && map.status === "read") {
+      var along = el("div", "mlabel");
+      along.appendChild(document.createTextNode("Along the college's map: "));
+      along.appendChild(el("b", null, roepAmt(Number(fig.path) || 0, null, m)));
+      along.appendChild(document.createTextNode((hasTot ? " of the " + roepAmt(tot.min, tot.max, m) : "")
+        + ", taking the course the map names inside a choice and the CPL course where it leaves one open."));
+      meter.appendChild(along);
+    }
     if (hasTot) {
       var maxT = tot.max || tot.min;
       var pct = maxT ? Math.min(100, (upTo / maxT) * 100) : 0;

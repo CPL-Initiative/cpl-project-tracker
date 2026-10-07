@@ -206,6 +206,14 @@ function click(w, root, value) {
     const link = root.querySelector(".cplpw-rseq a");
     check("(h) the note links the college's map", link && link.getAttribute("href") === m.url);
     check("(h) the note gives the map's source", root.querySelector(".cplpw-rseq").textContent.includes(m.text));
+    // Sheet 47 card 9: the figure along a read map, stated from the build beside the up-to figure.
+    const lines = [...root.querySelectorAll(".cplpw-rmeter .mlabel")].map((n) => n.textContent);
+    check("(h) the meter states the figure along the college's map, from the build",
+      lines.length === 2 && lines[1].startsWith("Along the college's map: " + rec.display.figure.path + " units of the 26.5 units"), lines.join(" | "));
+    const cer = w.CPL_PATHWAYS_ROEP.programs.find((p) => p.key === "cerritos_42158");
+    T._renderRoepProgram(root, cer);
+    check("(h) a program with no read map states no figure along one",
+      root.querySelectorAll(".cplpw-rmeter .mlabel").length === 1 && !/Along the college's map/.test(root.textContent));
     T._roepView.lay = "req";
   }
 }

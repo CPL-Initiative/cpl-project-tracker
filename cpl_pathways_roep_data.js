@@ -1,21 +1,22 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "9f60f746ea49",
+ "build": "8292780f6cd5",
  "built": "2026-10-06",
  "inputs": {
   "records": 22,
   "map_read_at": "2026-10-06",
   "registry_read_at": "2026-10-06",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-10-06 18:30",
-  "cer": "2026-10-06T18:31:23+00:00"
+  "memberships": "2026-10-07 13:32",
+  "cer": "2026-10-07T13:32:38+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
   "adopt": "Could adopt: another college has articulated this credential to a course of the same identity (its C-ID, Common Course Numbering id or Common Course Reference id), and this college has not. The college decides; the listing is a lead for its faculty.",
   "consider": "For consideration: a credential whose statewide credit recommendation names this course's C-ID, which this college has not articulated. No articulation exists until the college's faculty approve one.",
-  "up_to": "Up to: the most units (hours, for a noncredit program) of the program a learner could meet through CPL this college has articulated, taking the CPL course in every choice and the option with more CPL. It counts only the first kind. Where a college's pathway map is read, the map's recommended path gives a second figure."
+  "up_to": "Up to: the most units (hours, for a noncredit program) of the program a learner could meet through CPL this college has articulated, taking the CPL course in every choice and the option with more CPL. It counts only the first kind. Where the catalog prints no minimum for a choice and the college's map prints one, the choice counts at the map's least, through a CPL course where it holds one.",
+  "path": "Along the college's map: the same count, following the college's term-by-term map. A course the map names inside a choice counts in place of the CPL course, and a choice the map leaves open counts as the up-to figure counts it. Shown only where the map is read."
  },
  "programs": [
   {
@@ -107,6 +108,7 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "picks": [],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -204,7 +206,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -325,6 +327,7 @@ window.CPL_PATHWAYS_ROEP = {
       "HED 100"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -601,7 +604,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -869,6 +872,7 @@ window.CPL_PATHWAYS_ROEP = {
       "IWAP 41.09"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -1261,7 +1265,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -1496,6 +1500,7 @@ window.CPL_PATHWAYS_ROEP = {
       "HED 100"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -1959,7 +1964,886 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
+    "built": "2026-10-06"
+   }
+  },
+  {
+   "key": "ivc_10265",
+   "filed": "records",
+   "college": "Irvine Valley College",
+   "control_number": "10265",
+   "title": "Art",
+   "award": "A.A. Degree",
+   "catalog_year": "2026-2027",
+   "source_url": "https://irvine.curriqunet.com/Catalog/Export?id=4690&outlineId=51485",
+   "platform": "curriqunet",
+   "measure": "units",
+   "record": {
+    "program": {
+     "section_heading": "Art - A.A. Degree",
+     "measure": "units",
+     "total_units": {
+      "min": 27,
+      "max": 27
+     },
+     "open_elective_units": null,
+     "ge_pattern": null,
+     "outcomes": []
+    },
+    "blocks": [
+     {
+      "name": "Complete the following courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": 15,
+       "max": 15
+      },
+      "courses": [
+       {
+        "code": "ART 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 80",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 85",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Complete a total of 6 units from the following courses",
+      "rule": "choose_units",
+      "minimum": 6,
+      "option_group": null,
+      "stated": {
+       "min": 6,
+       "max": 6
+      },
+      "courses": [
+       {
+        "code": "ARTH 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 27",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Complete an additional 6 units from the following course areas.",
+      "rule": "choose_units",
+      "minimum": 6,
+      "option_group": null,
+      "stated": {
+       "min": 6,
+       "max": 6
+      },
+      "courses": [
+       {
+        "code": "ARTH 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 23",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 24",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 27",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 28",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 29",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 81",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 82",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 85",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 86",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 186",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 195",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 91",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     }
+    ]
+   },
+   "display": {
+    "v": 1,
+    "figure": {
+     "up_to": 3.0,
+     "measure": "units",
+     "total": {
+      "min": 27,
+      "max": 27
+     },
+     "picks": [
+      "ART 85"
+     ],
+     "path": 3.0,
+     "path_picks": [
+      "ART 85"
+     ],
+     "path_why": null
+    },
+    "counts": {
+     "courses": 25,
+     "here": 1,
+     "adopt": 5,
+     "consider": 0
+    },
+    "courses": {
+     "ART 40": {
+      "title": "2-D DESIGN AND COLOR",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 100",
+       "title": "2-D Foundations"
+      },
+      "adopt": {
+       "credentials_n": 3,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP 2-D Art and Design",
+         "colleges": [
+          "Coastline Community College",
+          "Los Angeles Harbor College",
+          "Los Angeles Pierce College",
+          "Moreno Valley College",
+          "Mt. San Jacinto College",
+          "Norco College",
+          "Riverside City College",
+          "San Jose City College",
+          "Santa Ana College",
+          "Yuba College"
+         ]
+        },
+        {
+         "credential": "AP 3-D Art and Design",
+         "colleges": [
+          "Moreno Valley College"
+         ]
+        },
+        {
+         "credential": "Two-Dimensional Design Beginning",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        }
+       ]
+      }
+     },
+     "ART 41": {
+      "title": "3D DESIGN",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 101",
+       "title": "3-D Foundations"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 7,
+       "credentials": [
+        {
+         "credential": "AP 3-D Art and Design",
+         "colleges": [
+          "Chaffey College",
+          "Los Angeles Pierce College",
+          "Mt. San Jacinto College",
+          "Norco College",
+          "Riverside City College",
+          "San Jose City College",
+          "Santa Ana College"
+         ]
+        }
+       ]
+      }
+     },
+     "ART 50": {
+      "title": "BEGINNING OIL PAINTING",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 210",
+       "title": "Introduction to Painting"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Introduction to Painting",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "ART 80": {
+      "title": "DRAWING FUNDAMENTALS",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 110",
+       "title": "Fundamentals of Drawing"
+      },
+      "adopt": {
+       "credentials_n": 3,
+       "colleges_n": 11,
+       "credentials": [
+        {
+         "credential": "AP Drawing",
+         "colleges": [
+          "Chaffey College",
+          "Los Angeles Pierce College",
+          "Moreno Valley College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Norco College",
+          "Riverside City College",
+          "San Jose City College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "Drawing",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Fundamentals of Drawing",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "ART 85": {
+      "title": "LIFE DRAWING I",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 200",
+       "title": "Figure Drawing"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 0,
+       "credentials": []
+      }
+     },
+     "ARTH 4": {
+      "title": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M10DD",
+       "title": "Introduction to Art Theory"
+      }
+     },
+     "ARTH 25": {
+      "title": null,
+      "identity": null
+     },
+     "ARTH 26": {
+      "title": null,
+      "identity": null
+     },
+     "ARTH 27": {
+      "title": "ART HISTORY SURVEY III - NON-WESTERN",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M10CW",
+       "title": "Art History Survey 3 - Non-Western"
+      }
+     },
+     "ARTH 22": {
+      "title": "SURVEY OF ASIAN ART",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTH 130",
+       "title": "Survey of Asian Art"
+      }
+     },
+     "ARTH 23": {
+      "title": "AFRICAN, OCEANIC, AND INDIGENOUS NORTH AMERICAN ART",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTH 140",
+       "title": "Arts of Africa, Oceania, and Indigenous North America"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Arts of Africa, Oceania, and Indigenous North America",
+         "colleges": [
+          "Chaffey College"
+         ]
+        }
+       ]
+      }
+     },
+     "ARTH 24": {
+      "title": "ANCIENT ART",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M1011",
+       "title": "Ancient Art"
+      }
+     },
+     "ARTH 28": {
+      "title": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M1114",
+       "title": "History of Contemporary Art"
+      }
+     },
+     "ARTH 29": {
+      "title": "19TH AND EARLY 20TH CENTURY ART",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1011",
+       "title": "Art of the 20TH Century"
+      }
+     },
+     "ARTH 30": {
+      "title": "RENAISSANCE AND BAROQUE ART",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1104",
+       "title": "Renaissance & Baroque Art"
+      }
+     },
+     "ARTH 31": {
+      "title": "MEDIEVAL ART",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M1027",
+       "title": "Medieval Art"
+      }
+     },
+     "ART 81": {
+      "title": "REPRESENTATIONAL DRAWING",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 205",
+       "title": "Intermediate Drawing"
+      }
+     },
+     "ART 82": {
+      "title": "ADVANCED DRAWING",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1044",
+       "title": "Advanced Drawing"
+      }
+     },
+     "ART 86": {
+      "title": "ADVANCED LIFE DRAWING",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 200",
+       "title": "Figure Drawing"
+      }
+     },
+     "ART 186": {
+      "title": "DRAWING THE HEAD AND HANDS",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTD M1635",
+       "title": "Drawing the Head and Hands"
+      }
+     },
+     "ART 195": {
+      "title": "ILLUSTRATION",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1446",
+       "title": "Illustration"
+      }
+     },
+     "ART 51": {
+      "title": "INTERMEDIATE PAINTING",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1024",
+       "title": "Acrylic Painting 2"
+      }
+     },
+     "ART 52": {
+      "title": "ADVANCED PAINTING",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1057",
+       "title": "Advanced Painting"
+      }
+     },
+     "ART 53": {
+      "title": "BEGINNING LIFE PAINTING",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M11BQ",
+       "title": "Beginning Life Painting"
+      }
+     },
+     "ART 91": {
+      "title": "PORTFOLIO DEVELOPMENT",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1338",
+       "title": "Portfolio Development"
+      }
+     }
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Irvine Valley College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists ARTH C1100; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Irvine Valley College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists ARTH C1200; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Irvine Valley College's program record in the state's curriculum inventory",
+      "text": "The catalog prints ARTH 4, ARTH 25, ARTH 26, ARTH 4, ARTH 25, ARTH 26, ARTH 28 for this program; the state's Program Course File does not list them."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "No program learning outcomes are printed in the text; outcomes left empty."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "The catalog text names no general education pattern; ge_pattern left null."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "ART 195 is printed 'ART 195 (same as DMA 195)' and ART 91 'ART 91 (same as DMA 91)'; the DMA cross-listings were not recorded as separate alternatives."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "ARTH 4, ARTH 25, ARTH 26 and ARTH 28 are not on the closed list (catalog additions). The closed list instead has ARTH C1100 and ARTH C1200 (C-ID common course numbers), which may be the renumbered equivalents of ARTH 25 and ARTH 26; reviewer should check whether the catalog text is out of date for 2026-2027."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "ART 85 appears in both the required list and the additional 6-unit list; ARTH 4, 25, 26, 27 appear in both elective lists. Recorded as printed."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "'Recommended electives Units: 0.0' (MUS 20, TA 20, TA 21, TA 26, TA 27, any course in photography) are recommended only and do not count toward the 27 units; not recorded as a block."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "ARTH 23 is printed as 'African and Oceanic Art' while the closed list title is 'African, Oceanic, and Indigenous North American Art'."
+     }
+    ],
+    "map": {
+     "status": "read",
+     "host": "www.ivc.edu",
+     "url": "https://www.ivc.edu/academics/all-program-maps",
+     "checked_run": "college-page-read run 37372136739",
+     "read_on": "2026-10-05",
+     "text": "Irvine Valley College publishes a term-by-term map for Art, AA (AA-GE · 2 Years Full-Time · 60-64 Units), read 2026-10-05 (college-page-read run 37372136739).",
+     "terms": [
+      {
+       "label": "Semester 1",
+       "units": "15-18",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "ENGL C1000"
+         ],
+         "units": "4",
+         "text": "ENGL C1000 (WR 1) | Academic Reading and Writing | 1A | 4"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3-5",
+         "text": "MATH | Math GE Course | 2 | 3-5"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ART 40"
+         ],
+         "units": "3",
+         "text": "ART 40 | 2-D Design and Color | 7 & Major | 3"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ART 80"
+         ],
+         "units": "3",
+         "text": "ART 80 | Drawing Fundamentals | Major | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "2-3",
+         "text": "Lifelong Health1 | Lifelong Health and Personal Development GE Course | 9 A/B/C | 2-3"
+        }
+       ]
+      },
+      {
+       "label": "Semester 2",
+       "units": "15-16",
+       "items": [
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3-4",
+         "text": "Critical Thinking | Critical Thinking | 1C | 3-4"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COMM C1000"
+         ],
+         "units": "3",
+         "text": "COMM C1000 (COMM 1) | Introduction to Public Speaking | 1B | 3"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ART 41"
+         ],
+         "units": "3",
+         "text": "ART 41 | 3D Design | Major | 3"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ART 50"
+         ],
+         "units": "3",
+         "text": "ART 50 | Beginning Oil Painting | Major | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "American Institutions | American Institutions GE Course | 8 | 3"
+        }
+       ]
+      },
+      {
+       "label": "Semester 3",
+       "units": "15",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "ART 85"
+         ],
+         "units": "3",
+         "text": "ART 85 | Life Drawing I | Major | 3"
+        },
+        {
+         "kind": "list",
+         "codes": [],
+         "units": "3",
+         "text": "ART | Art Major Course from List A | Major | 3"
+        },
+        {
+         "kind": "list",
+         "codes": [],
+         "units": "3",
+         "text": "ART | Art Major Course from List A | Major | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Social Sciences | Social Sciences GE Course | 4 | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Lifelong Health1 | Lifelong Health and Personal Development GE Course | 9 A/B/C | 3"
+        }
+       ]
+      },
+      {
+       "label": "Semester 4",
+       "units": "15",
+       "items": [
+        {
+         "kind": "list",
+         "codes": [],
+         "units": "3",
+         "text": "ART | Art Major Course from List A or B | Major | 3"
+        },
+        {
+         "kind": "list",
+         "codes": [],
+         "units": "3",
+         "text": "ART | Art Major Course from List A or B | Major | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Natural Sciences | Natural Sciences GE Course | 3 | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Cultural Diversity | Cultural Diversity GE Course | 5 | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Humanities | Humanities GE Course | 6 | 3"
+        }
+       ]
+      }
+     ],
+     "notes": [
+      "Take one course from two different categories among GE areas 9A, 9B, and 9C. Please refer to the AA GE pattern for details."
+     ],
+     "placed": {
+      "ART 40": 0,
+      "ART 41": 1,
+      "ART 50": 1,
+      "ART 80": 0,
+      "ART 85": 2
+     },
+     "not_placed": [
+      "ARTH 4",
+      "ARTH 25",
+      "ARTH 26",
+      "ARTH 27",
+      "ARTH 22",
+      "ARTH 23",
+      "ARTH 24",
+      "ARTH 28",
+      "ARTH 29",
+      "ARTH 30",
+      "ARTH 31",
+      "ART 81",
+      "ART 82",
+      "ART 86",
+      "ART 186",
+      "ART 195",
+      "ART 51",
+      "ART 52",
+      "ART 53",
+      "ART 91"
+     ]
+    },
+    "checks": {
+     "checked": false,
+     "coverage": {
+      "placed": 21,
+      "listed": 23
+     },
+     "additions": 7,
+     "arithmetic": "equal",
+     "reviewer": null
+    },
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -2084,6 +2968,7 @@ window.CPL_PATHWAYS_ROEP = {
       "EMGM 106"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -2464,7 +3349,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -2589,6 +3474,7 @@ window.CPL_PATHWAYS_ROEP = {
       "EMGM 106"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -2975,7 +3861,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -3388,6 +4274,7 @@ window.CPL_PATHWAYS_ROEP = {
       "AVIM 101G"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -4123,7 +5010,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -4278,6 +5165,7 @@ window.CPL_PATHWAYS_ROEP = {
       "BUSE 119"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -4584,7 +5472,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -4765,6 +5653,7 @@ window.CPL_PATHWAYS_ROEP = {
       "FIRE 12"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -5394,7 +6283,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -5645,6 +6534,7 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "picks": [],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -6374,7 +7264,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -6535,6 +7425,7 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "picks": [],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -6763,7 +7654,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -6884,6 +7775,7 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "picks": [],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -7036,7 +7928,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -7140,6 +8032,7 @@ window.CPL_PATHWAYS_ROEP = {
       "MAG-56"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -7275,7 +8168,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -7541,6 +8434,7 @@ window.CPL_PATHWAYS_ROEP = {
       "ADJ-24"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -8641,7 +9535,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -8756,6 +9650,7 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "picks": [],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -8891,7 +9786,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
@@ -9060,6 +9955,7 @@ window.CPL_PATHWAYS_ROEP = {
       "CIS-27B"
      ],
      "path": null,
+     "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
     "counts": {
@@ -9445,2865 +10341,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "9f60f746ea49",
-    "built": "2026-10-06"
-   }
-  },
-  {
-   "key": "wlac_17111",
-   "filed": "records",
-   "college": "West Los Angeles College",
-   "control_number": "17111",
-   "title": "Computer Network & Security Management",
-   "award": "A.S. Degree",
-   "catalog_year": "2026-2027",
-   "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
-   "platform": "pdf",
-   "measure": "units",
-   "record": {
-    "program": {
-     "section_heading": "COMPUTER NETWORK AND SECURITY MANAGEMENT (AS)",
-     "measure": "units",
-     "total_units": {
-      "min": 30,
-      "max": 30
-     },
-     "open_elective_units": null,
-     "ge_pattern": "LACCD GE Plan",
-     "outcomes": [
-      "Install, configure and manage industry standard computer operating system with security emphasis.",
-      "Install, configure, manage and troubleshoot industry leading network systems.",
-      "Install and configure routers and switches internetwork operating systems.",
-      "Understand a full range of security concepts & techniques.",
-      "Learn cloud technology and virtualization technologies."
-     ]
-    },
-    "blocks": [
-     {
-      "name": "Required courses",
-      "rule": "all",
-      "minimum": null,
-      "option_group": null,
-      "stated": {
-       "min": 21,
-       "max": 21
-      },
-      "courses": [
-       {
-        "code": "CIS 211",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CIS 213",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CIS 214",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CIS 215",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CIS 227",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CIS 229",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CIS 225",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [
-         {
-          "code": "CIS 230",
-          "units": 3,
-          "catalog_addition": false
-         }
-        ],
-        "catalog_addition": false
-       }
-      ]
-     },
-     {
-      "name": "Major elective units (choose three from the following)",
-      "rule": "choose_courses",
-      "minimum": 3,
-      "option_group": null,
-      "stated": {
-       "min": 9,
-       "max": 9
-      },
-      "courses": [
-       {
-        "code": "CIS 104",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "CIS 106",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "CIS 107",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "CIS 110",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CIS 112",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CIS 192",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CIS 212",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CS 125",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       }
-      ]
-     }
-    ]
-   },
-   "display": {
-    "v": 1,
-    "figure": {
-     "up_to": 21.0,
-     "measure": "units",
-     "total": {
-      "min": 30,
-      "max": 30
-     },
-     "picks": [
-      "CIS 211",
-      "CIS 213",
-      "CIS 214",
-      "CIS 227",
-      "CIS 229",
-      "CIS 230",
-      "CIS 212"
-     ],
-     "path": null,
-     "path_why": "No pathway map has been read for this program."
-    },
-    "counts": {
-     "courses": 16,
-     "here": 7,
-     "adopt": 6,
-     "consider": 2
-    },
-    "courses": {
-     "CIS 211": {
-      "title": "Security+ Certification Preparation",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ITIS 160",
-       "title": "Introduction to Information Systems Security"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 1,
-       "credentials": [
-        "TATS Signal Support Systems Specialist"
-       ]
-      },
-      "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 8,
-       "credentials": [
-        {
-         "credential": "CompTIA Security+",
-         "colleges": [
-          "Cabrillo College",
-          "Clovis Community College",
-          "College of the Desert",
-          "Contra Costa College",
-          "Las Positas College",
-          "Los Angeles Mission College",
-          "Reedley College"
-         ]
-        },
-        {
-         "credential": "Introduction to Network Security",
-         "colleges": [
-          "Moorpark College"
-         ]
-        }
-       ]
-      },
-      "consider": [
-       {
-        "credential": "CompTIA Security+",
-        "credit": "3 hours in Introduction Information Systems Security",
-        "cid": "ITIS 160",
-        "colleges_n": 17
-       }
-      ]
-     },
-     "CIS 213": {
-      "title": "A+ Certification Preparation-Software",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1190",
-       "title": "A+ Certification Preparation-Software"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 1,
-       "credentials": [
-        "CompTIA A+"
-       ]
-      }
-     },
-     "CIS 214": {
-      "title": "Introduction to Network+",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ITIS 150",
-       "title": "Computer Network Fundamentals"
-      },
-      "here": {
-       "recs": 2,
-       "credentials_n": 3,
-       "credentials": [
-        "CompTIA Network +",
-        "Signal Support Systems Specialist",
-        "CompTIA Network+"
-       ]
-      },
-      "adopt": {
-       "credentials_n": 5,
-       "colleges_n": 8,
-       "credentials": [
-        {
-         "credential": "Cisco Certified Network Associate (CCNA)",
-         "colleges": [
-          "Clovis Community College",
-          "Las Positas College",
-          "Merced College",
-          "Reedley College",
-          "Riverside City College",
-          "San Diego City College"
-         ]
-        },
-        {
-         "credential": "Computer Network Fundamentals",
-         "colleges": [
-          "Modesto Junior College"
-         ]
-        },
-        {
-         "credential": "Credit by exam",
-         "colleges": [
-          "San Diego City College"
-         ]
-        },
-        {
-         "credential": "Introduction to Computer Networks",
-         "colleges": [
-          "Chaffey College"
-         ]
-        }
-       ]
-      },
-      "consider": [
-       {
-        "credential": "Cisco Certified Network Associate (CCNA)",
-        "credit": "3 hours in Computer Network Fundamentals",
-        "cid": "ITIS 150",
-        "colleges_n": 14
-       }
-      ]
-     },
-     "CIS 215": {
-      "title": "Network Security Fundamentals",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1368",
-       "title": "Network Security Fundamentals"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "CompTIA Security+",
-         "colleges": [
-          "Long Beach City College"
-         ]
-        }
-       ]
-      }
-     },
-     "CIS 227": {
-      "title": "Server Administration and Network Security",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1052",
-       "title": "Server Administration and Network Security"
-      },
-      "here": {
-       "recs": 3,
-       "credentials_n": 1,
-       "credentials": [
-        "Signal Support Systems Specialist"
-       ]
-      }
-     },
-     "CIS 229": {
-      "title": "Introduction to Cisco Network Fundamentals",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M11EZ",
-       "title": "Introduction to Cisco Network Fundamentals"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 1,
-       "credentials": [
-        "Signal Support Systems Specialist"
-       ]
-      }
-     },
-     "CIS 225": {
-      "title": "Enterprise Networking, Security, & Automation",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1139",
-       "title": "Enterprise Networking, Security, & Automation"
-      }
-     },
-     "CIS 230": {
-      "title": "Introduction to Cisco Routers",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1571",
-       "title": "Introduction to Cisco Routers"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 1,
-       "credentials": [
-        "Signal Support Systems Specialist"
-       ]
-      }
-     },
-     "CIS 104": {
-      "title": null,
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1486",
-       "title": "Spreadsheet: Software"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "Spreadsheet Software",
-         "colleges": [
-          "Modesto Junior College"
-         ]
-        }
-       ]
-      }
-     },
-     "CIS 106": {
-      "title": null,
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M10NU",
-       "title": "Introduction to the Foundations of AI"
-      }
-     },
-     "CIS 107": {
-      "title": null,
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1344",
-       "title": "Introduction to Prompt Engineering"
-      }
-     },
-     "CIS 110": {
-      "title": "Apple Administration",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1509",
-       "title": "Apple Macos System Administration"
-      }
-     },
-     "CIS 112": {
-      "title": "OPERATING SYSTEMS - BEGINNING LINUX",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1152",
-       "title": "Operating Systems - Beginning Linux"
-      }
-     },
-     "CIS 192": {
-      "title": "Introduction to Cloud Computing",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1197",
-       "title": "Introduction to Cloud Computing"
-      },
-      "adopt": {
-       "credentials_n": 5,
-       "colleges_n": 3,
-       "credentials": [
-        {
-         "credential": "AWS Certified Cloud Practitioner",
-         "colleges": [
-          "City College of San Francisco",
-          "Los Angeles Mission College",
-          "Santa Ana College"
-         ]
-        },
-        {
-         "credential": "CompTIA Cloud+",
-         "colleges": [
-          "City College of San Francisco",
-          "Santa Ana College"
-         ]
-        },
-        {
-         "credential": "AWS Certified Solutions Architect — Associate",
-         "colleges": [
-          "Los Angeles Mission College"
-         ]
-        },
-        {
-         "credential": "AWS CloudOps Engineer - Associate",
-         "colleges": [
-          "Santa Ana College"
-         ]
-        }
-       ]
-      }
-     },
-     "CIS 212": {
-      "title": "A+ Certification Preparation-Hardware",
-      "identity": {
-       "kind": "CCR",
-       "id": "ITIS M1184",
-       "title": "A+ Certification Preparation-Hardware"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 1,
-       "credentials": [
-        "CompTIA A+"
-       ]
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "CompTIA Certification (unspecified)",
-         "colleges": [
-          "San Jose City College"
-         ]
-        }
-       ]
-      }
-     },
-     "CS 125": {
-      "title": null,
-      "identity": {
-       "kind": "CCR",
-       "id": "COMP M10GF",
-       "title": "Artificial Intelligence and Machine Learning"
-      }
-     }
-    },
-    "gaps": [
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists CIS 101; the reader found it named only in the preceding Paralegal program section."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists CIS 113; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists CIS 236; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists CIS 237; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The catalog prints CIS 104, CIS 106, CIS 107, CS 125 for this program; the state's Program Course File does not list them."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "The 6 'Additional Degree-applicable Elective Units' belong to the 60-unit degree total, not the 30-unit major total, so open_elective_units is null."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "CIS 225 OR CIS 230 recorded as one required entry with CIS 230 as alternative."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "The Certificate of Achievement (CA) section that follows has identical course lists; only the AS section was read."
-     }
-    ],
-    "map": {
-     "host": "programmap.wlac.edu",
-     "url": "https://www.wlac.edu/academics/pathways/program-mapper",
-     "checked_run": "program-sequence-ppm run 37198225537",
-     "status": "not_read",
-     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
-    },
-    "checks": {
-     "checked": true,
-     "coverage": {
-      "placed": 12,
-      "listed": 16
-     },
-     "additions": 4,
-     "arithmetic": "equal",
-     "reviewer": "ok"
-    },
-    "build": "9f60f746ea49",
-    "built": "2026-10-06"
-   }
-  },
-  {
-   "key": "wlac_37050",
-   "filed": "records",
-   "college": "West Los Angeles College",
-   "control_number": "37050",
-   "title": "Kinesiology",
-   "award": "A.A- T Degree",
-   "catalog_year": "2026-2027",
-   "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
-   "platform": "pdf",
-   "measure": "units",
-   "record": {
-    "program": {
-     "section_heading": "(heading not in excerpt; Kinesiology AA-T section preceding 'KINESIOLOGY (AA)')",
-     "measure": "units",
-     "total_units": {
-      "min": 21,
-      "max": 23
-     },
-     "open_elective_units": null,
-     "ge_pattern": "Cal-GETC",
-     "outcomes": [
-      "Understand, recognize, and appreciate the maximum benefits provided by physical movement for developing individual health and wellness.",
-      "Understand the five components of fitness: cardiovascular endurance, muscle strength, muscle endurance, flexibility and body composition.",
-      "Assess the risk factors of specific training activity and practice safety precautions.",
-      "List activities that are beneficial for modifying body composition.",
-      "List activities that benefit the cardiovascular system.",
-      "Apply and practice the concepts of teamwork, cooperation, communication and respect for each other."
-     ]
-    },
-    "blocks": [
-     {
-      "name": "Required core courses",
-      "rule": "all",
-      "minimum": null,
-      "option_group": null,
-      "stated": {
-       "min": 11,
-       "max": 11
-      },
-      "courses": [
-       {
-        "code": "ANATOMY 001",
-        "units": 4,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "KIN MAJ 100",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "PHYSIOL 001",
-        "units": 4,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       }
-      ]
-     },
-     {
-      "name": "Movement-based electives (choose one course from three of the following areas)",
-      "rule": "choose_courses",
-      "minimum": 3,
-      "option_group": null,
-      "stated": {
-       "min": 3,
-       "max": 3
-      },
-      "courses": [
-       {
-        "code": "DANCETQ 111",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "DANCETQ 121",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "KIN 229",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "KIN 250",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "KIN 329",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "KIN 334-1",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "KIN 350",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "KIN 251",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "KIN 251-1",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "KIN 287",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "KIN 387",
-        "units": 1,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       }
-      ]
-     },
-     {
-      "name": "List A (Select two courses)",
-      "rule": "choose_courses",
-      "minimum": 2,
-      "option_group": null,
-      "stated": {
-       "min": 7,
-       "max": 9
-      },
-      "courses": [
-       {
-        "code": "STAT C1000",
-        "units": 4,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "HEALTH 012",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "PHYSICS 006",
-        "units": 4,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "CHEM 051",
-        "units": 5,
-        "units_max": null,
-        "alternatives": [
-         {
-          "code": "CHEM 060",
-          "units": 5,
-          "catalog_addition": false
-         },
-         {
-          "code": "CHEM 101",
-          "units": 5,
-          "catalog_addition": false
-         }
-        ],
-        "catalog_addition": false
-       }
-      ]
-     }
-    ]
-   },
-   "display": {
-    "v": 1,
-    "figure": {
-     "up_to": 1.0,
-     "measure": "units",
-     "total": {
-      "min": 21,
-      "max": 23
-     },
-     "picks": [
-      "KIN 329"
-     ],
-     "path": null,
-     "path_why": "No pathway map has been read for this program."
-    },
-    "counts": {
-     "courses": 20,
-     "here": 1,
-     "adopt": 11,
-     "consider": 0
-    },
-    "courses": {
-     "ANATOMY 001": {
-      "title": "Introduction To Human Anatomy",
-      "identity": {
-       "kind": "C-ID",
-       "id": "BIOL 110 B",
-       "title": "Human Anatomy with Lab"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 2,
-       "credentials": [
-        {
-         "credential": "Human Anatomy",
-         "colleges": [
-          "Cabrillo College",
-          "Modesto Junior College"
-         ]
-        }
-       ]
-      }
-     },
-     "KIN MAJ 100": {
-      "title": "INTRODUCTION TO KINESIOLOGY",
-      "identity": {
-       "kind": "C-ID",
-       "id": "KIN 100",
-       "title": "Introduction to Kinesiology"
-      },
-      "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 2,
-       "credentials": [
-        {
-         "credential": "Basic Military Training",
-         "colleges": [
-          "Moorpark College"
-         ]
-        },
-        {
-         "credential": "Introduction to Kinesiology",
-         "colleges": [
-          "Copper Mountain College"
-         ]
-        }
-       ]
-      }
-     },
-     "PHYSIOL 001": {
-      "title": "INTRODUCTION TO HUMAN PHYSIOLOGY",
-      "identity": {
-       "kind": "C-ID",
-       "id": "BIOL 120 B",
-       "title": "Human Physiology with Lab"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "Human Physiology with Lab",
-         "colleges": [
-          "Modesto Junior College"
-         ]
-        }
-       ]
-      }
-     },
-     "DANCETQ 111": {
-      "title": "BALLET TECHNIQUES I",
-      "identity": {
-       "kind": "CCR",
-       "id": "DANC M1073",
-       "title": "Ballet Techniques 1"
-      }
-     },
-     "DANCETQ 121": {
-      "title": "JAZZ DANCE TECHNIQUES I",
-      "identity": {
-       "kind": "CCR",
-       "id": "DANC M1215",
-       "title": "Jazz Dance Techniques 1"
-      }
-     },
-     "KIN 229": {
-      "title": "BODY CONDITIONING SKILLS",
-      "identity": {
-       "kind": "CCR",
-       "id": "KINE M1357",
-       "title": "Body Conditioning Skills"
-      }
-     },
-     "KIN 250": {
-      "title": null,
-      "identity": {
-       "kind": "CCR",
-       "id": "KINE M1013",
-       "title": "Weight Training 1"
-      },
-      "adopt": {
-       "credentials_n": 5,
-       "colleges_n": 8,
-       "credentials": [
-        {
-         "credential": "Certified Strength and Conditioning Specialist (CSCS)",
-         "colleges": [
-          "San Diego City College",
-          "San Diego Mesa College",
-          "San Diego Miramar College"
-         ]
-        },
-        {
-         "credential": "Military Recruit Training (Basic Training)",
-         "colleges": [
-          "Cuesta College",
-          "Glendale Community College"
-         ]
-        },
-        {
-         "credential": "Basic Military Training",
-         "colleges": [
-          "Cerro Coso Community College"
-         ]
-        },
-        {
-         "credential": "Military Basic Training (Kinesiology credit)",
-         "colleges": [
-          "Napa Valley College"
-         ]
-        }
-       ]
-      }
-     },
-     "KIN 329": {
-      "title": "BODY CONDITIONING",
-      "identity": {
-       "kind": "CCR",
-       "id": "KINE M1454",
-       "title": "Individual Conditioning 1"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 2,
-       "credentials": [
-        "Basic Military Training",
-        "Recruit Basic Military Training (BMT)"
-       ]
-      }
-     },
-     "KIN 334-1": {
-      "title": "Fitness Walking I",
-      "identity": {
-       "kind": "CCR",
-       "id": "KINE M1683",
-       "title": "Walking 1"
-      },
-      "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 2,
-       "credentials": [
-        {
-         "credential": "Basic Military Training",
-         "colleges": [
-          "Madera College"
-         ]
-        },
-        {
-         "credential": "Generic Military Service Credit — Madera College",
-         "colleges": [
-          "Madera College"
-         ]
-        },
-        {
-         "credential": "Military Basic Training (Kinesiology credit)",
-         "colleges": [
-          "Napa Valley College"
-         ]
-        }
-       ]
-      }
-     },
-     "KIN 350": {
-      "title": "WEIGHT TRAINING",
-      "identity": {
-       "kind": "CCR",
-       "id": "KINE M1013",
-       "title": "Weight Training 1"
-      },
-      "adopt": {
-       "credentials_n": 5,
-       "colleges_n": 8,
-       "credentials": [
-        {
-         "credential": "Certified Strength and Conditioning Specialist (CSCS)",
-         "colleges": [
-          "San Diego City College",
-          "San Diego Mesa College",
-          "San Diego Miramar College"
-         ]
-        },
-        {
-         "credential": "Military Recruit Training (Basic Training)",
-         "colleges": [
-          "Cuesta College",
-          "Glendale Community College"
-         ]
-        },
-        {
-         "credential": "Basic Military Training",
-         "colleges": [
-          "Cerro Coso Community College"
-         ]
-        },
-        {
-         "credential": "Military Basic Training (Kinesiology credit)",
-         "colleges": [
-          "Napa Valley College"
-         ]
-        }
-       ]
-      }
-     },
-     "KIN 251": {
-      "title": "YOGA SKILLS",
-      "identity": {
-       "kind": "CCR",
-       "id": "KINE M1674",
-       "title": "Yoga Skills 1"
-      }
-     },
-     "KIN 251-1": {
-      "title": "YOGA SKILLS- I",
-      "identity": {
-       "kind": "CCR",
-       "id": "KINE M1674",
-       "title": "Yoga Skills 1"
-      }
-     },
-     "KIN 287": {
-      "title": "BASKETBALL SKILLS",
-      "identity": {
-       "kind": "CCR",
-       "id": "KINE M1255",
-       "title": "Basketball Skills 1"
-      }
-     },
-     "KIN 387": {
-      "title": "BASKETBALL",
-      "identity": {
-       "kind": "CCR",
-       "id": "KINE M1244",
-       "title": "Basketball"
-      }
-     },
-     "STAT C1000": {
-      "title": "Introduction to Statistics",
-      "identity": {
-       "kind": "CCN",
-       "id": "STAT C1000",
-       "title": "Introduction to Statistics"
-      },
-      "adopt": {
-       "credentials_n": 5,
-       "colleges_n": 10,
-       "credentials": [
-        {
-         "credential": "AP Statistics",
-         "colleges": [
-          "Chaffey College",
-          "Coastline Community College",
-          "Glendale Community College",
-          "Los Angeles Pierce College",
-          "Madera College",
-          "Mt. San Jacinto College",
-          "Santa Ana College"
-         ]
-        },
-        {
-         "credential": "Business Statistics",
-         "colleges": [
-          "Modesto Junior College"
-         ]
-        },
-        {
-         "credential": "Elementary Statistics",
-         "colleges": [
-          "Modesto Junior College"
-         ]
-        },
-        {
-         "credential": "Elementary Statistics with Applications for Health Care Professionals",
-         "colleges": [
-          "Ventura College"
-         ]
-        }
-       ]
-      }
-     },
-     "HEALTH 012": {
-      "title": "Safety Education And First Aid",
-      "identity": {
-       "kind": "C-ID",
-       "id": "KIN 101",
-       "title": "First Aid, CPR and AED"
-      },
-      "adopt": {
-       "credentials_n": 10,
-       "colleges_n": 10,
-       "credentials": [
-        {
-         "credential": "EMT Certification",
-         "colleges": [
-          "Cabrillo College",
-          "City College of San Francisco",
-          "Moreno Valley College",
-          "Norco College",
-          "Riverside City College"
-         ]
-        },
-        {
-         "credential": "Basic Military Training",
-         "colleges": [
-          "Glendale Community College",
-          "San Bernardino Valley College"
-         ]
-        },
-        {
-         "credential": "Basic Life Support (BLS) Certification",
-         "colleges": [
-          "Cabrillo College"
-         ]
-        },
-        {
-         "credential": "Dental Board of California Certificates",
-         "colleges": [
-          "Cabrillo College"
-         ]
-        }
-       ]
-      }
-     },
-     "PHYSICS 006": {
-      "title": "General Physics I",
-      "identity": {
-       "kind": "CCR",
-       "id": "PHYS M1045",
-       "title": "General Physics 1"
-      }
-     },
-     "CHEM 051": {
-      "title": "Fundamentals Of Chemistry I",
-      "identity": {
-       "kind": "C-ID",
-       "id": "CHEM 101",
-       "title": "Introduction to Chemistry"
-      },
-      "adopt": {
-       "credentials_n": 4,
-       "colleges_n": 9,
-       "credentials": [
-        {
-         "credential": "AP Chemistry",
-         "colleges": [
-          "Coastline Community College",
-          "Glendale Community College",
-          "Los Angeles Mission College",
-          "Los Angeles Pierce College",
-          "Mt. San Jacinto College",
-          "Napa Valley College",
-          "Saddleback College",
-          "Woodland Community College"
-         ]
-        },
-        {
-         "credential": "CLEP Chemistry",
-         "colleges": [
-          "Coastline Community College"
-         ]
-        },
-        {
-         "credential": "IB Chemistry HL",
-         "colleges": [
-          "Los Angeles Pierce College"
-         ]
-        },
-        {
-         "credential": "Introduction to Chemistry",
-         "colleges": [
-          "Modesto Junior College"
-         ]
-        }
-       ]
-      }
-     },
-     "CHEM 060": {
-      "title": "Introduction To General Chemistry",
-      "identity": {
-       "kind": "C-ID",
-       "id": "CHEM 101",
-       "title": "Introduction to Chemistry"
-      },
-      "adopt": {
-       "credentials_n": 4,
-       "colleges_n": 9,
-       "credentials": [
-        {
-         "credential": "AP Chemistry",
-         "colleges": [
-          "Coastline Community College",
-          "Glendale Community College",
-          "Los Angeles Mission College",
-          "Los Angeles Pierce College",
-          "Mt. San Jacinto College",
-          "Napa Valley College",
-          "Saddleback College",
-          "Woodland Community College"
-         ]
-        },
-        {
-         "credential": "CLEP Chemistry",
-         "colleges": [
-          "Coastline Community College"
-         ]
-        },
-        {
-         "credential": "IB Chemistry HL",
-         "colleges": [
-          "Los Angeles Pierce College"
-         ]
-        },
-        {
-         "credential": "Introduction to Chemistry",
-         "colleges": [
-          "Modesto Junior College"
-         ]
-        }
-       ]
-      }
-     },
-     "CHEM 101": {
-      "title": "General Chemistry I",
-      "identity": {
-       "kind": "C-ID",
-       "id": "CHEM 120 S",
-       "title": "General Chemistry for Science Majors Sequence A"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 3,
-       "credentials": [
-        {
-         "credential": "AP Chemistry",
-         "colleges": [
-          "Moreno Valley College",
-          "Norco College",
-          "Riverside City College"
-         ]
-        }
-       ]
-      }
-     }
-    },
-    "gaps": [
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists BIOLOGY 3; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists KIN 232; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists KIN 288; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists KIN 303; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists KIN 345; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The catalog prints KIN 250 for this program; the state's Program Course File does not list it."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "The AA-T section's heading, description, and start of its learning outcomes fall on the previous page, which is not in the excerpt; this section was identified as the AA-T by its Cal-GETC GE line and its position before 'KINESIOLOGY (AA)'. A reviewer should confirm the heading."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "Movement-based electives require one course from each of three different areas (Areas 3-6 printed: Dance, Fitness, Individual Sports, Team Sports); recorded as one choose-3-courses block. Areas 1 and 2 are not printed, so the area list may be incomplete or simply numbered from 3."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "Catalog prints codes with leading zeros (ANATOMY 001, PHYSIOL 001, HEALTH 012, PHYSICS 006, CHEM 051/060); matched to closed-list ANATOMY 1, PHYSIOL 1, HEALTH 12, PHYSICS 6, CHEM 51/60."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "CHEM 101 carries an asterisk (CHEM 101*) whose footnote is not in the excerpt."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "KIN 250 Weight Training Skills is not in the closed list; recorded as catalog addition."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "The KIN AA section that follows (major code 0835.00) lists KIN MAJ 126, KIN 247, KIN 291 and was not recorded as it belongs to a different award."
-     }
-    ],
-    "map": {
-     "host": "programmap.wlac.edu",
-     "url": "https://www.wlac.edu/academics/pathways/program-mapper",
-     "checked_run": "program-sequence-ppm run 37198225537",
-     "status": "not_read",
-     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
-    },
-    "checks": {
-     "checked": true,
-     "coverage": {
-      "placed": 19,
-      "listed": 24
-     },
-     "additions": 1,
-     "arithmetic": "equal",
-     "reviewer": "ok"
-    },
-    "build": "9f60f746ea49",
-    "built": "2026-10-06"
-   }
-  },
-  {
-   "key": "wlac_37839",
-   "filed": "records",
-   "college": "West Los Angeles College",
-   "control_number": "37839",
-   "title": "Real Estate Salesperson",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "catalog_year": "2026-2027",
-   "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
-   "platform": "pdf",
-   "measure": "units",
-   "record": {
-    "program": {
-     "section_heading": "REAL ESTATE SALESPERSON (CA)",
-     "measure": "units",
-     "total_units": {
-      "min": 9,
-      "max": 11
-     },
-     "open_elective_units": null,
-     "ge_pattern": null,
-     "outcomes": [
-      "Meet the educational requirements to qualify for the DRE Real Estate Salesperson license exam.",
-      "Have the requisite knowledge to pass and exceed the state average on DRE Real Estate Salesperson license exam.",
-      "Demonstrate mastery of the skills necessary to become a California Real Estate Salesperson.",
-      "Learn the day-to-day operations of a real estate office including listings, valuations, prospecting, selling, financing, and real estate operations.",
-      "Know the legal requirements necessary to assist homebuyers with buying and selling real estate properties."
-     ]
-    },
-    "blocks": [
-     {
-      "name": "Required core courses",
-      "rule": "all",
-      "minimum": null,
-      "option_group": null,
-      "stated": {
-       "min": 6,
-       "max": 6
-      },
-      "courses": [
-       {
-        "code": "REAL ES 001",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "REAL ES 003",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       }
-      ]
-     },
-     {
-      "name": "Major Elective units (choose 1 course) from the following",
-      "rule": "choose_courses",
-      "minimum": 1,
-      "option_group": null,
-      "stated": {
-       "min": 3,
-       "max": 5
-      },
-      "courses": [
-       {
-        "code": "ACCTG 001",
-        "units": 5,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "BUS 005",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "REAL ES 004",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "REAL ES 005",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "REAL ES 007",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "REAL ES 009",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "REAL ES 011",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "REAL ES 014",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "REAL ES 021",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       }
-      ]
-     }
-    ]
-   },
-   "display": {
-    "v": 1,
-    "figure": {
-     "up_to": 9.0,
-     "measure": "units",
-     "total": {
-      "min": 9,
-      "max": 11
-     },
-     "picks": [
-      "REAL ES 001",
-      "REAL ES 003",
-      "REAL ES 005"
-     ],
-     "path": null,
-     "path_why": "No pathway map has been read for this program."
-    },
-    "counts": {
-     "courses": 11,
-     "here": 8,
-     "adopt": 6,
-     "consider": 0
-    },
-    "courses": {
-     "REAL ES 001": {
-      "title": "REAL ESTATE PRINCIPLES",
-      "identity": {
-       "kind": "CCR",
-       "id": "REAL M1040",
-       "title": "Real Estate Principles"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 4,
-       "credentials": [
-        "CA Real Estate Broker",
-        "CA Real Estate Salesperson",
-        "Real Estate Principles",
-        "California Real Estate Salesperson License"
-       ]
-      },
-      "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 4,
-       "credentials": [
-        {
-         "credential": "First Tuesday Real Estate Courses",
-         "colleges": [
-          "City College of San Francisco",
-          "Moreno Valley College",
-          "Norco College",
-          "Riverside City College"
-         ]
-        },
-        {
-         "credential": "Real Estate Principles and Practices",
-         "colleges": [
-          "City College of San Francisco",
-          "Moreno Valley College",
-          "Norco College",
-          "Riverside City College"
-         ]
-        }
-       ]
-      }
-     },
-     "REAL ES 003": {
-      "title": "REAL ESTATE PRACTICES",
-      "identity": {
-       "kind": "CCR",
-       "id": "REAL M1039",
-       "title": "Real Estate Practices"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 4,
-       "credentials": [
-        "CA Real Estate Broker",
-        "CA Real Estate Salesperson",
-        "California Real Estate Broker License",
-        "California Real Estate Salesperson License"
-       ]
-      },
-      "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 2,
-       "credentials": [
-        {
-         "credential": "First Tuesday Real Estate Courses",
-         "colleges": [
-          "Moreno Valley College",
-          "Norco College"
-         ]
-        },
-        {
-         "credential": "Real Estate Principles and Practices",
-         "colleges": [
-          "Moreno Valley College",
-          "Norco College"
-         ]
-        }
-       ]
-      }
-     },
-     "ACCTG 001": {
-      "title": "INTRODUCTORY ACCOUNTING I",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ACCT 110",
-       "title": "Financial Accounting"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 3,
-       "credentials": [
-        {
-         "credential": "Financial Accounting",
-         "colleges": [
-          "Copper Mountain College",
-          "De Anza College",
-          "Ventura College"
-         ]
-        }
-       ]
-      }
-     },
-     "BUS 005": {
-      "title": "BUSINESS LAW I",
-      "identity": {
-       "kind": "C-ID",
-       "id": "BUS 125",
-       "title": "Business Law"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "Business Law",
-         "colleges": [
-          "Copper Mountain College"
-         ]
-        }
-       ]
-      }
-     },
-     "REAL ES 004": {
-      "title": "REAL ESTATE OFFICE ADMINISTRATION",
-      "identity": {
-       "kind": "CCR",
-       "id": "REAL M1005",
-       "title": "Real Estate Office Administration"
-      }
-     },
-     "REAL ES 005": {
-      "title": "LEGAL ASPECTS OF REAL ESTATE I",
-      "identity": {
-       "kind": "CCR",
-       "id": "REAL M1014",
-       "title": "Legal Aspects of Real Estate"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 7,
-       "credentials": [
-        "CA Real Estate Broker",
-        "CA Real Estate Salesperson",
-        "California State Bar Membership",
-        "California Real Estate Broker License"
-       ]
-      }
-     },
-     "REAL ES 007": {
-      "title": "REAL ESTATE FINANCE I",
-      "identity": {
-       "kind": "CCR",
-       "id": "REAL M1032",
-       "title": "Real Estate Finance"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 5,
-       "credentials": [
-        "CA Real Estate Broker",
-        "California State Bar Membership",
-        "California Real Estate Broker License",
-        "California Real Estate Salesperson License"
-       ]
-      }
-     },
-     "REAL ES 009": {
-      "title": "REAL ESTATE APPRAISAL I",
-      "identity": {
-       "kind": "CCR",
-       "id": "REAL M1012",
-       "title": "Real Estate Appraisal"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 5,
-       "credentials": [
-        "CA BREA Appraiser",
-        "CA Real Estate Broker",
-        "California Real Estate Appraiser License",
-        "California State Bar Membership"
-       ]
-      },
-      "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 5,
-       "credentials": [
-        {
-         "credential": "Real Estate Appraisal",
-         "colleges": [
-          "Moreno Valley College",
-          "Norco College",
-          "Riverside City College"
-         ]
-        },
-        {
-         "credential": "California Real Estate Salesperson License",
-         "colleges": [
-          "City College of San Francisco"
-         ]
-        },
-        {
-         "credential": "Real Estate Appraiser Trainee License",
-         "colleges": [
-          "San Bernardino Valley College"
-         ]
-        }
-       ]
-      }
-     },
-     "REAL ES 011": {
-      "title": "ESCROW PRINCIPLES",
-      "identity": {
-       "kind": "CCR",
-       "id": "REAL M1027",
-       "title": "Escrow Principles"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 1,
-       "credentials": [
-        "CA Real Estate Broker"
-       ]
-      }
-     },
-     "REAL ES 014": {
-      "title": "PROPERTY MANAGEMENT",
-      "identity": {
-       "kind": "CCR",
-       "id": "REAL M1043",
-       "title": "Property Management"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 1,
-       "credentials": [
-        "CA Real Estate Broker"
-       ]
-      }
-     },
-     "REAL ES 021": {
-      "title": "REAL ESTATE ECONOMICS",
-      "identity": {
-       "kind": "CCR",
-       "id": "REAL M1022",
-       "title": "Real Estate Economics"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 1,
-       "credentials": [
-        "CA Real Estate Broker"
-       ]
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 4,
-       "credentials": [
-        {
-         "credential": "Real Estate Economics",
-         "colleges": [
-          "Copper Mountain College",
-          "Moreno Valley College",
-          "Norco College",
-          "Riverside City College"
-         ]
-        }
-       ]
-      }
-     }
-    },
-    "gaps": [
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists REALES010; the reader found it named only in the Real Estate Broker section."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "The Salesperson section spans a page break (pages 151-152); the core course list continues on page 152 under the 'Required core courses ... 6' heading from page 151."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "Catalog codes with leading zeros (e.g., REAL ES 001, BUS 005, REAL ES 007) were matched to closed-list codes REAL ES 1, BUS005, REALES007."
-     }
-    ],
-    "map": {
-     "host": "programmap.wlac.edu",
-     "url": "https://www.wlac.edu/academics/pathways/program-mapper",
-     "checked_run": "program-sequence-ppm run 37198225537",
-     "status": "not_read",
-     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
-    },
-    "checks": {
-     "checked": true,
-     "coverage": {
-      "placed": 11,
-      "listed": 12
-     },
-     "additions": 0,
-     "arithmetic": "equal",
-     "reviewer": "ok"
-    },
-    "build": "9f60f746ea49",
-    "built": "2026-10-06"
-   }
-  },
-  {
-   "key": "wlac_39618",
-   "filed": "records",
-   "college": "West Los Angeles College",
-   "control_number": "39618",
-   "title": "Real Estate Supervisory/Trainee Appraiser Licensing",
-   "award": "Noncredit program",
-   "catalog_year": "2026-2027",
-   "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
-   "platform": "pdf",
-   "measure": "hours",
-   "record": {
-    "program": {
-     "section_heading": "REAL ESTATE SUPERVISORY/TRAINEE APPRAISER LICENSING (CN)",
-     "measure": "hours",
-     "total_units": {
-      "min": 9,
-      "max": 18
-     },
-     "open_elective_units": null,
-     "ge_pattern": null,
-     "outcomes": [
-      "Utilize a network of real estate professionals to conduct and complete the sale, purchase and management of real estate processes and transactions.",
-      "Use current and emerging technologies and applications to conduct real estate transactions.",
-      "Interpret property and real estate law to troubleshoot legal aspects in selling, purchasing and management of real estate.",
-      "Use of personal and business investment strategies and methods to advise clients and address customer needs.",
-      "Market, manage and direct the daily activities of a successful real estate agency.",
-      "Model effective and appropriate interactions and relationships that create good will and repeat business.",
-      "Model, adopt, and comply with ethical and moral business practices that maintain and sustain trust and integrity in the workplace and with clients, pursuant to DRE regulations and requirements.",
-      "Communicate oral and written thoughts in a clear and organized manner to effectively inform and convey ideas in the workplace and with clients."
-     ]
-    },
-    "blocks": [
-     {
-      "name": "Required Courses",
-      "rule": "all",
-      "minimum": null,
-      "option_group": null,
-      "stated": {
-       "min": null,
-       "max": null
-      },
-      "courses": [
-       {
-        "code": "VOC ED 197CE",
-        "units": 4.5,
-        "units_max": 9,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "VOC ED 198CE",
-        "units": 4.5,
-        "units_max": 9,
-        "alternatives": [],
-        "catalog_addition": false
-       }
-      ]
-     }
-    ]
-   },
-   "display": {
-    "v": 1,
-    "figure": {
-     "up_to": 0.0,
-     "measure": "hours",
-     "total": {
-      "min": 9,
-      "max": 18
-     },
-     "picks": [],
-     "path": null,
-     "path_why": "No pathway map has been read for this program."
-    },
-    "counts": {
-     "courses": 2,
-     "here": 0,
-     "adopt": 0,
-     "consider": 0
-    },
-    "courses": {
-     "VOC ED 197CE": {
-      "title": "Supervisory/Trainee Real Estate Appraiser",
-      "identity": {
-       "kind": "CCR",
-       "id": "VOCE M90EO",
-       "title": "Supervisory/Trainee Real Estate Appraiser"
-      }
-     },
-     "VOC ED 198CE": {
-      "title": "Fed & State Laws and Regs. for CA Appraisers",
-      "identity": {
-       "kind": "CCR",
-       "id": "VOCE M90EP",
-       "title": "Fed & State Laws and Regs. for CA Appraisers"
-      }
-     }
-    },
-    "gaps": [
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "Program is noncredit; hours recorded from catalog (each course 4.5-9 hours, program total 9-18 hours)."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "West Los Angeles College's PDF catalog reading procedure",
-      "text": "Program learning outcomes describe general real estate sales/management rather than appraisal licensing; possibly copied from another program, but this does not affect the course requirements."
-     }
-    ],
-    "map": {
-     "host": "programmap.wlac.edu",
-     "url": "https://www.wlac.edu/academics/pathways/program-mapper",
-     "checked_run": "program-sequence-ppm run 37198225537",
-     "status": "not_read",
-     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
-    },
-    "checks": {
-     "checked": true,
-     "coverage": {
-      "placed": 2,
-      "listed": 2
-     },
-     "additions": 0,
-     "arithmetic": "equal",
-     "reviewer": "ok"
-    },
-    "build": "9f60f746ea49",
-    "built": "2026-10-06"
-   }
-  },
-  {
-   "key": "ivc_10265",
-   "filed": "records_maps",
-   "college": "Irvine Valley College",
-   "control_number": "10265",
-   "title": "Art",
-   "award": "A.A. Degree",
-   "catalog_year": "2026-2027",
-   "source_url": "https://irvine.curriqunet.com/Catalog/Export?id=4690&outlineId=51485",
-   "platform": "curriqunet",
-   "measure": "units",
-   "record": {
-    "program": {
-     "section_heading": "Art - A.A. Degree",
-     "measure": "units",
-     "total_units": {
-      "min": 27,
-      "max": 27
-     },
-     "open_elective_units": null,
-     "ge_pattern": null,
-     "outcomes": []
-    },
-    "blocks": [
-     {
-      "name": "Complete the following courses",
-      "rule": "all",
-      "minimum": null,
-      "option_group": null,
-      "stated": {
-       "min": 15,
-       "max": 15
-      },
-      "courses": [
-       {
-        "code": "ART 40",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 41",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 50",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 80",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 85",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       }
-      ]
-     },
-     {
-      "name": "Complete a total of 6 units from the following courses",
-      "rule": "choose_units",
-      "minimum": 6,
-      "option_group": null,
-      "stated": {
-       "min": 6,
-       "max": 6
-      },
-      "courses": [
-       {
-        "code": "ARTH 4",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "ARTH 25",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "ARTH 26",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "ARTH 27",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       }
-      ]
-     },
-     {
-      "name": "Complete an additional 6 units from the following course areas.",
-      "rule": "choose_units",
-      "minimum": 6,
-      "option_group": null,
-      "stated": {
-       "min": 6,
-       "max": 6
-      },
-      "courses": [
-       {
-        "code": "ARTH 4",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "ARTH 22",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ARTH 23",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ARTH 24",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ARTH 25",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "ARTH 26",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "ARTH 27",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ARTH 28",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": true
-       },
-       {
-        "code": "ARTH 29",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ARTH 30",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ARTH 31",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 81",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 82",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 85",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 86",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 186",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 195",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 51",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 52",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 53",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       },
-       {
-        "code": "ART 91",
-        "units": 3,
-        "units_max": null,
-        "alternatives": [],
-        "catalog_addition": false
-       }
-      ]
-     }
-    ]
-   },
-   "display": {
-    "v": 1,
-    "figure": {
-     "up_to": 3.0,
-     "measure": "units",
-     "total": {
-      "min": 27,
-      "max": 27
-     },
-     "picks": [
-      "ART 85"
-     ],
-     "path": null,
-     "path_why": "The college's term-by-term map is read; the figure along its path is not computed yet."
-    },
-    "counts": {
-     "courses": 25,
-     "here": 1,
-     "adopt": 5,
-     "consider": 0
-    },
-    "courses": {
-     "ART 40": {
-      "title": "2-D DESIGN AND COLOR",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ARTS 100",
-       "title": "2-D Foundations"
-      },
-      "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 10,
-       "credentials": [
-        {
-         "credential": "AP 2-D Art and Design",
-         "colleges": [
-          "Coastline Community College",
-          "Los Angeles Harbor College",
-          "Los Angeles Pierce College",
-          "Moreno Valley College",
-          "Mt. San Jacinto College",
-          "Norco College",
-          "Riverside City College",
-          "San Jose City College",
-          "Santa Ana College",
-          "Yuba College"
-         ]
-        },
-        {
-         "credential": "AP 3-D Art and Design",
-         "colleges": [
-          "Moreno Valley College"
-         ]
-        },
-        {
-         "credential": "Two-Dimensional Design Beginning",
-         "colleges": [
-          "Los Angeles Pierce College"
-         ]
-        }
-       ]
-      }
-     },
-     "ART 41": {
-      "title": "3D DESIGN",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ARTS 101",
-       "title": "3-D Foundations"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 7,
-       "credentials": [
-        {
-         "credential": "AP 3-D Art and Design",
-         "colleges": [
-          "Chaffey College",
-          "Los Angeles Pierce College",
-          "Mt. San Jacinto College",
-          "Norco College",
-          "Riverside City College",
-          "San Jose City College",
-          "Santa Ana College"
-         ]
-        }
-       ]
-      }
-     },
-     "ART 50": {
-      "title": "BEGINNING OIL PAINTING",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ARTS 210",
-       "title": "Introduction to Painting"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "Introduction to Painting",
-         "colleges": [
-          "Modesto Junior College"
-         ]
-        }
-       ]
-      }
-     },
-     "ART 80": {
-      "title": "DRAWING FUNDAMENTALS",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ARTS 110",
-       "title": "Fundamentals of Drawing"
-      },
-      "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 11,
-       "credentials": [
-        {
-         "credential": "AP Drawing",
-         "colleges": [
-          "Chaffey College",
-          "Los Angeles Pierce College",
-          "Moreno Valley College",
-          "Mt. San Jacinto College",
-          "Napa Valley College",
-          "Norco College",
-          "Riverside City College",
-          "San Jose City College",
-          "Santa Ana College",
-          "Woodland Community College"
-         ]
-        },
-        {
-         "credential": "Drawing",
-         "colleges": [
-          "Los Angeles Pierce College"
-         ]
-        },
-        {
-         "credential": "Fundamentals of Drawing",
-         "colleges": [
-          "Modesto Junior College"
-         ]
-        }
-       ]
-      }
-     },
-     "ART 85": {
-      "title": "LIFE DRAWING I",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ARTS 200",
-       "title": "Figure Drawing"
-      },
-      "here": {
-       "recs": 1,
-       "credentials_n": 0,
-       "credentials": []
-      }
-     },
-     "ARTH 4": {
-      "title": null,
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTH M10DD",
-       "title": "Introduction to Art Theory"
-      }
-     },
-     "ARTH 25": {
-      "title": null,
-      "identity": null
-     },
-     "ARTH 26": {
-      "title": null,
-      "identity": null
-     },
-     "ARTH 27": {
-      "title": "ART HISTORY SURVEY III - NON-WESTERN",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTH M10CW",
-       "title": "Art History Survey 3 - Non-Western"
-      }
-     },
-     "ARTH 22": {
-      "title": "SURVEY OF ASIAN ART",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ARTH 130",
-       "title": "Survey of Asian Art"
-      }
-     },
-     "ARTH 23": {
-      "title": "AFRICAN, OCEANIC, AND INDIGENOUS NORTH AMERICAN ART",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ARTH 140",
-       "title": "Arts of Africa, Oceania, and Indigenous North America"
-      },
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "Arts of Africa, Oceania, and Indigenous North America",
-         "colleges": [
-          "Chaffey College"
-         ]
-        }
-       ]
-      }
-     },
-     "ARTH 24": {
-      "title": "ANCIENT ART",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTH M1011",
-       "title": "Ancient Art"
-      }
-     },
-     "ARTH 28": {
-      "title": null,
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTH M1114",
-       "title": "History of Contemporary Art"
-      }
-     },
-     "ARTH 29": {
-      "title": "19TH AND EARLY 20TH CENTURY ART",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTS M1011",
-       "title": "Art of the 20TH Century"
-      }
-     },
-     "ARTH 30": {
-      "title": "RENAISSANCE AND BAROQUE ART",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTS M1104",
-       "title": "Renaissance & Baroque Art"
-      }
-     },
-     "ARTH 31": {
-      "title": "MEDIEVAL ART",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTH M1027",
-       "title": "Medieval Art"
-      }
-     },
-     "ART 81": {
-      "title": "REPRESENTATIONAL DRAWING",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ARTS 205",
-       "title": "Intermediate Drawing"
-      }
-     },
-     "ART 82": {
-      "title": "ADVANCED DRAWING",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTS M1044",
-       "title": "Advanced Drawing"
-      }
-     },
-     "ART 86": {
-      "title": "ADVANCED LIFE DRAWING",
-      "identity": {
-       "kind": "C-ID",
-       "id": "ARTS 200",
-       "title": "Figure Drawing"
-      }
-     },
-     "ART 186": {
-      "title": "DRAWING THE HEAD AND HANDS",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTD M1635",
-       "title": "Drawing the Head and Hands"
-      }
-     },
-     "ART 195": {
-      "title": "ILLUSTRATION",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTS M1446",
-       "title": "Illustration"
-      }
-     },
-     "ART 51": {
-      "title": "INTERMEDIATE PAINTING",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTS M1024",
-       "title": "Acrylic Painting 2"
-      }
-     },
-     "ART 52": {
-      "title": "ADVANCED PAINTING",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTS M1057",
-       "title": "Advanced Painting"
-      }
-     },
-     "ART 53": {
-      "title": "BEGINNING LIFE PAINTING",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTS M11BQ",
-       "title": "Beginning Life Painting"
-      }
-     },
-     "ART 91": {
-      "title": "PORTFOLIO DEVELOPMENT",
-      "identity": {
-       "kind": "CCR",
-       "id": "ARTS M1338",
-       "title": "Portfolio Development"
-      }
-     }
-    },
-    "gaps": [
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "Irvine Valley College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists ARTH C1100; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "Irvine Valley College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists ARTH C1200; the reader found it not in the text."
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "Irvine Valley College's program record in the state's curriculum inventory",
-      "text": "The catalog prints ARTH 4, ARTH 25, ARTH 26, ARTH 4, ARTH 25, ARTH 26, ARTH 28 for this program; the state's Program Course File does not list them."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "Irvine Valley College's CurriQunet META reading procedure",
-      "text": "No program learning outcomes are printed in the text; outcomes left empty."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "Irvine Valley College's CurriQunet META reading procedure",
-      "text": "The catalog text names no general education pattern; ge_pattern left null."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "Irvine Valley College's CurriQunet META reading procedure",
-      "text": "ART 195 is printed 'ART 195 (same as DMA 195)' and ART 91 'ART 91 (same as DMA 91)'; the DMA cross-listings were not recorded as separate alternatives."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "Irvine Valley College's CurriQunet META reading procedure",
-      "text": "ARTH 4, ARTH 25, ARTH 26 and ARTH 28 are not on the closed list (catalog additions). The closed list instead has ARTH C1100 and ARTH C1200 (C-ID common course numbers), which may be the renumbered equivalents of ARTH 25 and ARTH 26; reviewer should check whether the catalog text is out of date for 2026-2027."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "Irvine Valley College's CurriQunet META reading procedure",
-      "text": "ART 85 appears in both the required list and the additional 6-unit list; ARTH 4, 25, 26, 27 appear in both elective lists. Recorded as printed."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "Irvine Valley College's CurriQunet META reading procedure",
-      "text": "'Recommended electives Units: 0.0' (MUS 20, TA 20, TA 21, TA 26, TA 27, any course in photography) are recommended only and do not count toward the 27 units; not recorded as a block."
-     },
-     {
-      "kind": "Reader's note",
-      "owner": "procedure",
-      "where": "Irvine Valley College's CurriQunet META reading procedure",
-      "text": "ARTH 23 is printed as 'African and Oceanic Art' while the closed list title is 'African, Oceanic, and Indigenous North American Art'."
-     }
-    ],
-    "map": {
-     "status": "read",
-     "host": "www.ivc.edu",
-     "url": "https://www.ivc.edu/academics/all-program-maps",
-     "checked_run": "college-page-read run 37372136739",
-     "read_on": "2026-10-05",
-     "text": "Irvine Valley College publishes a term-by-term map for Art, AA (AA-GE · 2 Years Full-Time · 60-64 Units), read 2026-10-05 (college-page-read run 37372136739).",
-     "terms": [
-      {
-       "label": "Semester 1",
-       "units": "15-18",
-       "items": [
-        {
-         "kind": "course",
-         "codes": [
-          "ENGL C1000"
-         ],
-         "units": "4",
-         "text": "ENGL C1000 (WR 1) | Academic Reading and Writing | 1A | 4"
-        },
-        {
-         "kind": "ge",
-         "codes": [],
-         "units": "3-5",
-         "text": "MATH | Math GE Course | 2 | 3-5"
-        },
-        {
-         "kind": "course",
-         "codes": [
-          "ART 40"
-         ],
-         "units": "3",
-         "text": "ART 40 | 2-D Design and Color | 7 & Major | 3"
-        },
-        {
-         "kind": "course",
-         "codes": [
-          "ART 80"
-         ],
-         "units": "3",
-         "text": "ART 80 | Drawing Fundamentals | Major | 3"
-        },
-        {
-         "kind": "ge",
-         "codes": [],
-         "units": "2-3",
-         "text": "Lifelong Health1 | Lifelong Health and Personal Development GE Course | 9 A/B/C | 2-3"
-        }
-       ]
-      },
-      {
-       "label": "Semester 2",
-       "units": "15-16",
-       "items": [
-        {
-         "kind": "ge",
-         "codes": [],
-         "units": "3-4",
-         "text": "Critical Thinking | Critical Thinking | 1C | 3-4"
-        },
-        {
-         "kind": "course",
-         "codes": [
-          "COMM C1000"
-         ],
-         "units": "3",
-         "text": "COMM C1000 (COMM 1) | Introduction to Public Speaking | 1B | 3"
-        },
-        {
-         "kind": "course",
-         "codes": [
-          "ART 41"
-         ],
-         "units": "3",
-         "text": "ART 41 | 3D Design | Major | 3"
-        },
-        {
-         "kind": "course",
-         "codes": [
-          "ART 50"
-         ],
-         "units": "3",
-         "text": "ART 50 | Beginning Oil Painting | Major | 3"
-        },
-        {
-         "kind": "ge",
-         "codes": [],
-         "units": "3",
-         "text": "American Institutions | American Institutions GE Course | 8 | 3"
-        }
-       ]
-      },
-      {
-       "label": "Semester 3",
-       "units": "15",
-       "items": [
-        {
-         "kind": "course",
-         "codes": [
-          "ART 85"
-         ],
-         "units": "3",
-         "text": "ART 85 | Life Drawing I | Major | 3"
-        },
-        {
-         "kind": "list",
-         "codes": [],
-         "units": "3",
-         "text": "ART | Art Major Course from List A | Major | 3"
-        },
-        {
-         "kind": "list",
-         "codes": [],
-         "units": "3",
-         "text": "ART | Art Major Course from List A | Major | 3"
-        },
-        {
-         "kind": "ge",
-         "codes": [],
-         "units": "3",
-         "text": "Social Sciences | Social Sciences GE Course | 4 | 3"
-        },
-        {
-         "kind": "ge",
-         "codes": [],
-         "units": "3",
-         "text": "Lifelong Health1 | Lifelong Health and Personal Development GE Course | 9 A/B/C | 3"
-        }
-       ]
-      },
-      {
-       "label": "Semester 4",
-       "units": "15",
-       "items": [
-        {
-         "kind": "list",
-         "codes": [],
-         "units": "3",
-         "text": "ART | Art Major Course from List A or B | Major | 3"
-        },
-        {
-         "kind": "list",
-         "codes": [],
-         "units": "3",
-         "text": "ART | Art Major Course from List A or B | Major | 3"
-        },
-        {
-         "kind": "ge",
-         "codes": [],
-         "units": "3",
-         "text": "Natural Sciences | Natural Sciences GE Course | 3 | 3"
-        },
-        {
-         "kind": "ge",
-         "codes": [],
-         "units": "3",
-         "text": "Cultural Diversity | Cultural Diversity GE Course | 5 | 3"
-        },
-        {
-         "kind": "ge",
-         "codes": [],
-         "units": "3",
-         "text": "Humanities | Humanities GE Course | 6 | 3"
-        }
-       ]
-      }
-     ],
-     "notes": [
-      "Take one course from two different categories among GE areas 9A, 9B, and 9C. Please refer to the AA GE pattern for details."
-     ],
-     "placed": {
-      "ART 40": 0,
-      "ART 41": 1,
-      "ART 50": 1,
-      "ART 80": 0,
-      "ART 85": 2
-     },
-     "not_placed": [
-      "ARTH 4",
-      "ARTH 25",
-      "ARTH 26",
-      "ARTH 27",
-      "ARTH 22",
-      "ARTH 23",
-      "ARTH 24",
-      "ARTH 28",
-      "ARTH 29",
-      "ARTH 30",
-      "ARTH 31",
-      "ART 81",
-      "ART 82",
-      "ART 86",
-      "ART 186",
-      "ART 195",
-      "ART 51",
-      "ART 52",
-      "ART 53",
-      "ART 91"
-     ]
-    },
-    "checks": {
-     "checked": false,
-     "coverage": {
-      "placed": 21,
-      "listed": 23
-     },
-     "additions": 7,
-     "arithmetic": "equal",
-     "reviewer": null
-    },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   },
   {
    "key": "smc_43767",
-   "filed": "records_maps",
+   "filed": "records",
    "college": "Santa Monica College",
    "control_number": "43767",
    "title": "Barbering",
@@ -12575,7 +10619,7 @@ window.CPL_PATHWAYS_ROEP = {
    "display": {
     "v": 1,
     "figure": {
-     "up_to": 21.5,
+     "up_to": 22.5,
      "measure": "units",
      "total": {
       "min": 26.5,
@@ -12600,10 +10644,33 @@ window.CPL_PATHWAYS_ROEP = {
       "COSM 31E",
       "COSM 77",
       "COSM 78",
-      "COSM 50R"
+      "COSM 50R",
+      "COSM 95C"
      ],
-     "path": null,
-     "path_why": "The college's term-by-term map is read; the figure along its path is not computed yet."
+     "path": 22.5,
+     "path_picks": [
+      "COSM 10A",
+      "COSM 10B",
+      "COSM 11A",
+      "COSM 11B",
+      "COSM 11C",
+      "COSM 11D",
+      "COSM 20",
+      "COSM 21A",
+      "COSM 21B",
+      "COSM 21C",
+      "COSM 21E",
+      "COSM 42",
+      "COSM 30",
+      "COSM 31A",
+      "COSM 31C",
+      "COSM 31E",
+      "COSM 77",
+      "COSM 78",
+      "COSM 50R",
+      "COSM 95C"
+     ],
+     "path_why": null
     },
     "counts": {
      "courses": 23,
@@ -13377,7 +11444,1987 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "9f60f746ea49",
+    "build": "8292780f6cd5",
+    "built": "2026-10-06"
+   }
+  },
+  {
+   "key": "wlac_17111",
+   "filed": "records",
+   "college": "West Los Angeles College",
+   "control_number": "17111",
+   "title": "Computer Network & Security Management",
+   "award": "A.S. Degree",
+   "catalog_year": "2026-2027",
+   "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+   "platform": "pdf",
+   "measure": "units",
+   "record": {
+    "program": {
+     "section_heading": "COMPUTER NETWORK AND SECURITY MANAGEMENT (AS)",
+     "measure": "units",
+     "total_units": {
+      "min": 30,
+      "max": 30
+     },
+     "open_elective_units": null,
+     "ge_pattern": "LACCD GE Plan",
+     "outcomes": [
+      "Install, configure and manage industry standard computer operating system with security emphasis.",
+      "Install, configure, manage and troubleshoot industry leading network systems.",
+      "Install and configure routers and switches internetwork operating systems.",
+      "Understand a full range of security concepts & techniques.",
+      "Learn cloud technology and virtualization technologies."
+     ]
+    },
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": 21,
+       "max": 21
+      },
+      "courses": [
+       {
+        "code": "CIS 211",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 213",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 214",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 215",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 227",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 229",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 225",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CIS 230",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Major elective units (choose three from the following)",
+      "rule": "choose_courses",
+      "minimum": 3,
+      "option_group": null,
+      "stated": {
+       "min": 9,
+       "max": 9
+      },
+      "courses": [
+       {
+        "code": "CIS 104",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CIS 106",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CIS 107",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CIS 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 112",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 192",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 212",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 125",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ]
+     }
+    ]
+   },
+   "display": {
+    "v": 1,
+    "figure": {
+     "up_to": 21.0,
+     "measure": "units",
+     "total": {
+      "min": 30,
+      "max": 30
+     },
+     "picks": [
+      "CIS 211",
+      "CIS 213",
+      "CIS 214",
+      "CIS 227",
+      "CIS 229",
+      "CIS 230",
+      "CIS 212"
+     ],
+     "path": null,
+     "path_picks": [],
+     "path_why": "No pathway map has been read for this program."
+    },
+    "counts": {
+     "courses": 16,
+     "here": 7,
+     "adopt": 6,
+     "consider": 2
+    },
+    "courses": {
+     "CIS 211": {
+      "title": "Security+ Certification Preparation",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ITIS 160",
+       "title": "Introduction to Information Systems Security"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 1,
+       "credentials": [
+        "TATS Signal Support Systems Specialist"
+       ]
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 8,
+       "credentials": [
+        {
+         "credential": "CompTIA Security+",
+         "colleges": [
+          "Cabrillo College",
+          "Clovis Community College",
+          "College of the Desert",
+          "Contra Costa College",
+          "Las Positas College",
+          "Los Angeles Mission College",
+          "Reedley College"
+         ]
+        },
+        {
+         "credential": "Introduction to Network Security",
+         "colleges": [
+          "Moorpark College"
+         ]
+        }
+       ]
+      },
+      "consider": [
+       {
+        "credential": "CompTIA Security+",
+        "credit": "3 hours in Introduction Information Systems Security",
+        "cid": "ITIS 160",
+        "colleges_n": 17
+       }
+      ]
+     },
+     "CIS 213": {
+      "title": "A+ Certification Preparation-Software",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1190",
+       "title": "A+ Certification Preparation-Software"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 1,
+       "credentials": [
+        "CompTIA A+"
+       ]
+      }
+     },
+     "CIS 214": {
+      "title": "Introduction to Network+",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ITIS 150",
+       "title": "Computer Network Fundamentals"
+      },
+      "here": {
+       "recs": 2,
+       "credentials_n": 3,
+       "credentials": [
+        "CompTIA Network +",
+        "Signal Support Systems Specialist",
+        "CompTIA Network+"
+       ]
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 8,
+       "credentials": [
+        {
+         "credential": "Cisco Certified Network Associate (CCNA)",
+         "colleges": [
+          "Clovis Community College",
+          "Las Positas College",
+          "Merced College",
+          "Reedley College",
+          "Riverside City College",
+          "San Diego City College"
+         ]
+        },
+        {
+         "credential": "Computer Network Fundamentals",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Credit by exam",
+         "colleges": [
+          "San Diego City College"
+         ]
+        },
+        {
+         "credential": "Introduction to Computer Networks",
+         "colleges": [
+          "Chaffey College"
+         ]
+        }
+       ]
+      },
+      "consider": [
+       {
+        "credential": "Cisco Certified Network Associate (CCNA)",
+        "credit": "3 hours in Computer Network Fundamentals",
+        "cid": "ITIS 150",
+        "colleges_n": 14
+       }
+      ]
+     },
+     "CIS 215": {
+      "title": "Network Security Fundamentals",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1368",
+       "title": "Network Security Fundamentals"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "CompTIA Security+",
+         "colleges": [
+          "Long Beach City College"
+         ]
+        }
+       ]
+      }
+     },
+     "CIS 227": {
+      "title": "Server Administration and Network Security",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1052",
+       "title": "Server Administration and Network Security"
+      },
+      "here": {
+       "recs": 3,
+       "credentials_n": 1,
+       "credentials": [
+        "Signal Support Systems Specialist"
+       ]
+      }
+     },
+     "CIS 229": {
+      "title": "Introduction to Cisco Network Fundamentals",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M11EZ",
+       "title": "Introduction to Cisco Network Fundamentals"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 1,
+       "credentials": [
+        "Signal Support Systems Specialist"
+       ]
+      }
+     },
+     "CIS 225": {
+      "title": "Enterprise Networking, Security, & Automation",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1139",
+       "title": "Enterprise Networking, Security, & Automation"
+      }
+     },
+     "CIS 230": {
+      "title": "Introduction to Cisco Routers",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1571",
+       "title": "Introduction to Cisco Routers"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 1,
+       "credentials": [
+        "Signal Support Systems Specialist"
+       ]
+      }
+     },
+     "CIS 104": {
+      "title": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1486",
+       "title": "Spreadsheet: Software"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Spreadsheet Software",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "CIS 106": {
+      "title": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M10NU",
+       "title": "Introduction to the Foundations of AI"
+      }
+     },
+     "CIS 107": {
+      "title": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1344",
+       "title": "Introduction to Prompt Engineering"
+      }
+     },
+     "CIS 110": {
+      "title": "Apple Administration",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1509",
+       "title": "Apple Macos System Administration"
+      }
+     },
+     "CIS 112": {
+      "title": "OPERATING SYSTEMS - BEGINNING LINUX",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1152",
+       "title": "Operating Systems - Beginning Linux"
+      }
+     },
+     "CIS 192": {
+      "title": "Introduction to Cloud Computing",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1197",
+       "title": "Introduction to Cloud Computing"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "AWS Certified Cloud Practitioner",
+         "colleges": [
+          "City College of San Francisco",
+          "Los Angeles Mission College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "CompTIA Cloud+",
+         "colleges": [
+          "City College of San Francisco",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "AWS Certified Solutions Architect — Associate",
+         "colleges": [
+          "Los Angeles Mission College"
+         ]
+        },
+        {
+         "credential": "AWS CloudOps Engineer - Associate",
+         "colleges": [
+          "Santa Ana College"
+         ]
+        }
+       ]
+      }
+     },
+     "CIS 212": {
+      "title": "A+ Certification Preparation-Hardware",
+      "identity": {
+       "kind": "CCR",
+       "id": "ITIS M1184",
+       "title": "A+ Certification Preparation-Hardware"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 1,
+       "credentials": [
+        "CompTIA A+"
+       ]
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "CompTIA Certification (unspecified)",
+         "colleges": [
+          "San Jose City College"
+         ]
+        }
+       ]
+      }
+     },
+     "CS 125": {
+      "title": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "COMP M10GF",
+       "title": "Artificial Intelligence and Machine Learning"
+      }
+     }
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists CIS 101; the reader found it named only in the preceding Paralegal program section."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists CIS 113; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists CIS 236; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists CIS 237; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The catalog prints CIS 104, CIS 106, CIS 107, CS 125 for this program; the state's Program Course File does not list them."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "The 6 'Additional Degree-applicable Elective Units' belong to the 60-unit degree total, not the 30-unit major total, so open_elective_units is null."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "CIS 225 OR CIS 230 recorded as one required entry with CIS 230 as alternative."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "The Certificate of Achievement (CA) section that follows has identical course lists; only the AS section was read."
+     }
+    ],
+    "map": {
+     "host": "programmap.wlac.edu",
+     "url": "https://www.wlac.edu/academics/pathways/program-mapper",
+     "checked_run": "program-sequence-ppm run 37198225537",
+     "status": "not_read",
+     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
+    },
+    "checks": {
+     "checked": true,
+     "coverage": {
+      "placed": 12,
+      "listed": 16
+     },
+     "additions": 4,
+     "arithmetic": "equal",
+     "reviewer": "ok"
+    },
+    "build": "8292780f6cd5",
+    "built": "2026-10-06"
+   }
+  },
+  {
+   "key": "wlac_37050",
+   "filed": "records",
+   "college": "West Los Angeles College",
+   "control_number": "37050",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "catalog_year": "2026-2027",
+   "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+   "platform": "pdf",
+   "measure": "units",
+   "record": {
+    "program": {
+     "section_heading": "(heading not in excerpt; Kinesiology AA-T section preceding 'KINESIOLOGY (AA)')",
+     "measure": "units",
+     "total_units": {
+      "min": 21,
+      "max": 23
+     },
+     "open_elective_units": null,
+     "ge_pattern": "Cal-GETC",
+     "outcomes": [
+      "Understand, recognize, and appreciate the maximum benefits provided by physical movement for developing individual health and wellness.",
+      "Understand the five components of fitness: cardiovascular endurance, muscle strength, muscle endurance, flexibility and body composition.",
+      "Assess the risk factors of specific training activity and practice safety precautions.",
+      "List activities that are beneficial for modifying body composition.",
+      "List activities that benefit the cardiovascular system.",
+      "Apply and practice the concepts of teamwork, cooperation, communication and respect for each other."
+     ]
+    },
+    "blocks": [
+     {
+      "name": "Required core courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": 11,
+       "max": 11
+      },
+      "courses": [
+       {
+        "code": "ANATOMY 001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN MAJ 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYSIOL 001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Movement-based electives (choose one course from three of the following areas)",
+      "rule": "choose_courses",
+      "minimum": 3,
+      "option_group": null,
+      "stated": {
+       "min": 3,
+       "max": 3
+      },
+      "courses": [
+       {
+        "code": "DANCETQ 111",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCETQ 121",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 229",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 250",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "KIN 329",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 334-1",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 350",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 251",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 251-1",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 287",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 387",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "List A (Select two courses)",
+      "rule": "choose_courses",
+      "minimum": 2,
+      "option_group": null,
+      "stated": {
+       "min": 7,
+       "max": 9
+      },
+      "courses": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HEALTH 012",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYSICS 006",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 051",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CHEM 060",
+          "units": 5,
+          "catalog_addition": false
+         },
+         {
+          "code": "CHEM 101",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ]
+     }
+    ]
+   },
+   "display": {
+    "v": 1,
+    "figure": {
+     "up_to": 1.0,
+     "measure": "units",
+     "total": {
+      "min": 21,
+      "max": 23
+     },
+     "picks": [
+      "KIN 329"
+     ],
+     "path": null,
+     "path_picks": [],
+     "path_why": "No pathway map has been read for this program."
+    },
+    "counts": {
+     "courses": 20,
+     "here": 1,
+     "adopt": 11,
+     "consider": 0
+    },
+    "courses": {
+     "ANATOMY 001": {
+      "title": "Introduction To Human Anatomy",
+      "identity": {
+       "kind": "C-ID",
+       "id": "BIOL 110 B",
+       "title": "Human Anatomy with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Human Anatomy",
+         "colleges": [
+          "Cabrillo College",
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "KIN MAJ 100": {
+      "title": "INTRODUCTION TO KINESIOLOGY",
+      "identity": {
+       "kind": "C-ID",
+       "id": "KIN 100",
+       "title": "Introduction to Kinesiology"
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Moorpark College"
+         ]
+        },
+        {
+         "credential": "Introduction to Kinesiology",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        }
+       ]
+      }
+     },
+     "PHYSIOL 001": {
+      "title": "INTRODUCTION TO HUMAN PHYSIOLOGY",
+      "identity": {
+       "kind": "C-ID",
+       "id": "BIOL 120 B",
+       "title": "Human Physiology with Lab"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Human Physiology with Lab",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "DANCETQ 111": {
+      "title": "BALLET TECHNIQUES I",
+      "identity": {
+       "kind": "CCR",
+       "id": "DANC M1073",
+       "title": "Ballet Techniques 1"
+      }
+     },
+     "DANCETQ 121": {
+      "title": "JAZZ DANCE TECHNIQUES I",
+      "identity": {
+       "kind": "CCR",
+       "id": "DANC M1215",
+       "title": "Jazz Dance Techniques 1"
+      }
+     },
+     "KIN 229": {
+      "title": "BODY CONDITIONING SKILLS",
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M1357",
+       "title": "Body Conditioning Skills"
+      }
+     },
+     "KIN 250": {
+      "title": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M1013",
+       "title": "Weight Training 1"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 8,
+       "credentials": [
+        {
+         "credential": "Certified Strength and Conditioning Specialist (CSCS)",
+         "colleges": [
+          "San Diego City College",
+          "San Diego Mesa College",
+          "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Military Recruit Training (Basic Training)",
+         "colleges": [
+          "Cuesta College",
+          "Glendale Community College"
+         ]
+        },
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Cerro Coso Community College"
+         ]
+        },
+        {
+         "credential": "Military Basic Training (Kinesiology credit)",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        }
+       ]
+      }
+     },
+     "KIN 329": {
+      "title": "BODY CONDITIONING",
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M1454",
+       "title": "Individual Conditioning 1"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 2,
+       "credentials": [
+        "Basic Military Training",
+        "Recruit Basic Military Training (BMT)"
+       ]
+      }
+     },
+     "KIN 334-1": {
+      "title": "Fitness Walking I",
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M1683",
+       "title": "Walking 1"
+      },
+      "adopt": {
+       "credentials_n": 3,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Madera College"
+         ]
+        },
+        {
+         "credential": "Generic Military Service Credit — Madera College",
+         "colleges": [
+          "Madera College"
+         ]
+        },
+        {
+         "credential": "Military Basic Training (Kinesiology credit)",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        }
+       ]
+      }
+     },
+     "KIN 350": {
+      "title": "WEIGHT TRAINING",
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M1013",
+       "title": "Weight Training 1"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 8,
+       "credentials": [
+        {
+         "credential": "Certified Strength and Conditioning Specialist (CSCS)",
+         "colleges": [
+          "San Diego City College",
+          "San Diego Mesa College",
+          "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Military Recruit Training (Basic Training)",
+         "colleges": [
+          "Cuesta College",
+          "Glendale Community College"
+         ]
+        },
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Cerro Coso Community College"
+         ]
+        },
+        {
+         "credential": "Military Basic Training (Kinesiology credit)",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        }
+       ]
+      }
+     },
+     "KIN 251": {
+      "title": "YOGA SKILLS",
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M1674",
+       "title": "Yoga Skills 1"
+      }
+     },
+     "KIN 251-1": {
+      "title": "YOGA SKILLS- I",
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M1674",
+       "title": "Yoga Skills 1"
+      }
+     },
+     "KIN 287": {
+      "title": "BASKETBALL SKILLS",
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M1255",
+       "title": "Basketball Skills 1"
+      }
+     },
+     "KIN 387": {
+      "title": "BASKETBALL",
+      "identity": {
+       "kind": "CCR",
+       "id": "KINE M1244",
+       "title": "Basketball"
+      }
+     },
+     "STAT C1000": {
+      "title": "Introduction to Statistics",
+      "identity": {
+       "kind": "CCN",
+       "id": "STAT C1000",
+       "title": "Introduction to Statistics"
+      },
+      "adopt": {
+       "credentials_n": 5,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP Statistics",
+         "colleges": [
+          "Chaffey College",
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Pierce College",
+          "Madera College",
+          "Mt. San Jacinto College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Business Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Elementary Statistics with Applications for Health Care Professionals",
+         "colleges": [
+          "Ventura College"
+         ]
+        }
+       ]
+      }
+     },
+     "HEALTH 012": {
+      "title": "Safety Education And First Aid",
+      "identity": {
+       "kind": "C-ID",
+       "id": "KIN 101",
+       "title": "First Aid, CPR and AED"
+      },
+      "adopt": {
+       "credentials_n": 10,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "EMT Certification",
+         "colleges": [
+          "Cabrillo College",
+          "City College of San Francisco",
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "Basic Military Training",
+         "colleges": [
+          "Glendale Community College",
+          "San Bernardino Valley College"
+         ]
+        },
+        {
+         "credential": "Basic Life Support (BLS) Certification",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Dental Board of California Certificates",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        }
+       ]
+      }
+     },
+     "PHYSICS 006": {
+      "title": "General Physics I",
+      "identity": {
+       "kind": "CCR",
+       "id": "PHYS M1045",
+       "title": "General Physics 1"
+      }
+     },
+     "CHEM 051": {
+      "title": "Fundamentals Of Chemistry I",
+      "identity": {
+       "kind": "C-ID",
+       "id": "CHEM 101",
+       "title": "Introduction to Chemistry"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 9,
+       "credentials": [
+        {
+         "credential": "AP Chemistry",
+         "colleges": [
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Mission College",
+          "Los Angeles Pierce College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Saddleback College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "CLEP Chemistry",
+         "colleges": [
+          "Coastline Community College"
+         ]
+        },
+        {
+         "credential": "IB Chemistry HL",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Introduction to Chemistry",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "CHEM 060": {
+      "title": "Introduction To General Chemistry",
+      "identity": {
+       "kind": "C-ID",
+       "id": "CHEM 101",
+       "title": "Introduction to Chemistry"
+      },
+      "adopt": {
+       "credentials_n": 4,
+       "colleges_n": 9,
+       "credentials": [
+        {
+         "credential": "AP Chemistry",
+         "colleges": [
+          "Coastline Community College",
+          "Glendale Community College",
+          "Los Angeles Mission College",
+          "Los Angeles Pierce College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Saddleback College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "CLEP Chemistry",
+         "colleges": [
+          "Coastline Community College"
+         ]
+        },
+        {
+         "credential": "IB Chemistry HL",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Introduction to Chemistry",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "CHEM 101": {
+      "title": "General Chemistry I",
+      "identity": {
+       "kind": "C-ID",
+       "id": "CHEM 120 S",
+       "title": "General Chemistry for Science Majors Sequence A"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "AP Chemistry",
+         "colleges": [
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        }
+       ]
+      }
+     }
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists BIOLOGY 3; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists KIN 232; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists KIN 288; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists KIN 303; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists KIN 345; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The catalog prints KIN 250 for this program; the state's Program Course File does not list it."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "The AA-T section's heading, description, and start of its learning outcomes fall on the previous page, which is not in the excerpt; this section was identified as the AA-T by its Cal-GETC GE line and its position before 'KINESIOLOGY (AA)'. A reviewer should confirm the heading."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "Movement-based electives require one course from each of three different areas (Areas 3-6 printed: Dance, Fitness, Individual Sports, Team Sports); recorded as one choose-3-courses block. Areas 1 and 2 are not printed, so the area list may be incomplete or simply numbered from 3."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "Catalog prints codes with leading zeros (ANATOMY 001, PHYSIOL 001, HEALTH 012, PHYSICS 006, CHEM 051/060); matched to closed-list ANATOMY 1, PHYSIOL 1, HEALTH 12, PHYSICS 6, CHEM 51/60."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "CHEM 101 carries an asterisk (CHEM 101*) whose footnote is not in the excerpt."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "KIN 250 Weight Training Skills is not in the closed list; recorded as catalog addition."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "The KIN AA section that follows (major code 0835.00) lists KIN MAJ 126, KIN 247, KIN 291 and was not recorded as it belongs to a different award."
+     }
+    ],
+    "map": {
+     "host": "programmap.wlac.edu",
+     "url": "https://www.wlac.edu/academics/pathways/program-mapper",
+     "checked_run": "program-sequence-ppm run 37198225537",
+     "status": "not_read",
+     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
+    },
+    "checks": {
+     "checked": true,
+     "coverage": {
+      "placed": 19,
+      "listed": 24
+     },
+     "additions": 1,
+     "arithmetic": "equal",
+     "reviewer": "ok"
+    },
+    "build": "8292780f6cd5",
+    "built": "2026-10-06"
+   }
+  },
+  {
+   "key": "wlac_37839",
+   "filed": "records",
+   "college": "West Los Angeles College",
+   "control_number": "37839",
+   "title": "Real Estate Salesperson",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "catalog_year": "2026-2027",
+   "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+   "platform": "pdf",
+   "measure": "units",
+   "record": {
+    "program": {
+     "section_heading": "REAL ESTATE SALESPERSON (CA)",
+     "measure": "units",
+     "total_units": {
+      "min": 9,
+      "max": 11
+     },
+     "open_elective_units": null,
+     "ge_pattern": null,
+     "outcomes": [
+      "Meet the educational requirements to qualify for the DRE Real Estate Salesperson license exam.",
+      "Have the requisite knowledge to pass and exceed the state average on DRE Real Estate Salesperson license exam.",
+      "Demonstrate mastery of the skills necessary to become a California Real Estate Salesperson.",
+      "Learn the day-to-day operations of a real estate office including listings, valuations, prospecting, selling, financing, and real estate operations.",
+      "Know the legal requirements necessary to assist homebuyers with buying and selling real estate properties."
+     ]
+    },
+    "blocks": [
+     {
+      "name": "Required core courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": 6,
+       "max": 6
+      },
+      "courses": [
+       {
+        "code": "REAL ES 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REAL ES 003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Major Elective units (choose 1 course) from the following",
+      "rule": "choose_courses",
+      "minimum": 1,
+      "option_group": null,
+      "stated": {
+       "min": 3,
+       "max": 5
+      },
+      "courses": [
+       {
+        "code": "ACCTG 001",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 005",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REAL ES 004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REAL ES 005",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REAL ES 007",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REAL ES 009",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REAL ES 011",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REAL ES 014",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "REAL ES 021",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     }
+    ]
+   },
+   "display": {
+    "v": 1,
+    "figure": {
+     "up_to": 9.0,
+     "measure": "units",
+     "total": {
+      "min": 9,
+      "max": 11
+     },
+     "picks": [
+      "REAL ES 001",
+      "REAL ES 003",
+      "REAL ES 005"
+     ],
+     "path": null,
+     "path_picks": [],
+     "path_why": "No pathway map has been read for this program."
+    },
+    "counts": {
+     "courses": 11,
+     "here": 8,
+     "adopt": 6,
+     "consider": 0
+    },
+    "courses": {
+     "REAL ES 001": {
+      "title": "REAL ESTATE PRINCIPLES",
+      "identity": {
+       "kind": "CCR",
+       "id": "REAL M1040",
+       "title": "Real Estate Principles"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 4,
+       "credentials": [
+        "CA Real Estate Broker",
+        "CA Real Estate Salesperson",
+        "Real Estate Principles",
+        "California Real Estate Salesperson License"
+       ]
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 4,
+       "credentials": [
+        {
+         "credential": "First Tuesday Real Estate Courses",
+         "colleges": [
+          "City College of San Francisco",
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "Real Estate Principles and Practices",
+         "colleges": [
+          "City College of San Francisco",
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        }
+       ]
+      }
+     },
+     "REAL ES 003": {
+      "title": "REAL ESTATE PRACTICES",
+      "identity": {
+       "kind": "CCR",
+       "id": "REAL M1039",
+       "title": "Real Estate Practices"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 4,
+       "credentials": [
+        "CA Real Estate Broker",
+        "CA Real Estate Salesperson",
+        "California Real Estate Broker License",
+        "California Real Estate Salesperson License"
+       ]
+      },
+      "adopt": {
+       "credentials_n": 2,
+       "colleges_n": 2,
+       "credentials": [
+        {
+         "credential": "First Tuesday Real Estate Courses",
+         "colleges": [
+          "Moreno Valley College",
+          "Norco College"
+         ]
+        },
+        {
+         "credential": "Real Estate Principles and Practices",
+         "colleges": [
+          "Moreno Valley College",
+          "Norco College"
+         ]
+        }
+       ]
+      }
+     },
+     "ACCTG 001": {
+      "title": "INTRODUCTORY ACCOUNTING I",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ACCT 110",
+       "title": "Financial Accounting"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 3,
+       "credentials": [
+        {
+         "credential": "Financial Accounting",
+         "colleges": [
+          "Copper Mountain College",
+          "De Anza College",
+          "Ventura College"
+         ]
+        }
+       ]
+      }
+     },
+     "BUS 005": {
+      "title": "BUSINESS LAW I",
+      "identity": {
+       "kind": "C-ID",
+       "id": "BUS 125",
+       "title": "Business Law"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Business Law",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        }
+       ]
+      }
+     },
+     "REAL ES 004": {
+      "title": "REAL ESTATE OFFICE ADMINISTRATION",
+      "identity": {
+       "kind": "CCR",
+       "id": "REAL M1005",
+       "title": "Real Estate Office Administration"
+      }
+     },
+     "REAL ES 005": {
+      "title": "LEGAL ASPECTS OF REAL ESTATE I",
+      "identity": {
+       "kind": "CCR",
+       "id": "REAL M1014",
+       "title": "Legal Aspects of Real Estate"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 7,
+       "credentials": [
+        "CA Real Estate Broker",
+        "CA Real Estate Salesperson",
+        "California State Bar Membership",
+        "California Real Estate Broker License"
+       ]
+      }
+     },
+     "REAL ES 007": {
+      "title": "REAL ESTATE FINANCE I",
+      "identity": {
+       "kind": "CCR",
+       "id": "REAL M1032",
+       "title": "Real Estate Finance"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 5,
+       "credentials": [
+        "CA Real Estate Broker",
+        "California State Bar Membership",
+        "California Real Estate Broker License",
+        "California Real Estate Salesperson License"
+       ]
+      }
+     },
+     "REAL ES 009": {
+      "title": "REAL ESTATE APPRAISAL I",
+      "identity": {
+       "kind": "CCR",
+       "id": "REAL M1012",
+       "title": "Real Estate Appraisal"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 5,
+       "credentials": [
+        "CA BREA Appraiser",
+        "CA Real Estate Broker",
+        "California Real Estate Appraiser License",
+        "California State Bar Membership"
+       ]
+      },
+      "adopt": {
+       "credentials_n": 3,
+       "colleges_n": 5,
+       "credentials": [
+        {
+         "credential": "Real Estate Appraisal",
+         "colleges": [
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        },
+        {
+         "credential": "California Real Estate Salesperson License",
+         "colleges": [
+          "City College of San Francisco"
+         ]
+        },
+        {
+         "credential": "Real Estate Appraiser Trainee License",
+         "colleges": [
+          "San Bernardino Valley College"
+         ]
+        }
+       ]
+      }
+     },
+     "REAL ES 011": {
+      "title": "ESCROW PRINCIPLES",
+      "identity": {
+       "kind": "CCR",
+       "id": "REAL M1027",
+       "title": "Escrow Principles"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 1,
+       "credentials": [
+        "CA Real Estate Broker"
+       ]
+      }
+     },
+     "REAL ES 014": {
+      "title": "PROPERTY MANAGEMENT",
+      "identity": {
+       "kind": "CCR",
+       "id": "REAL M1043",
+       "title": "Property Management"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 1,
+       "credentials": [
+        "CA Real Estate Broker"
+       ]
+      }
+     },
+     "REAL ES 021": {
+      "title": "REAL ESTATE ECONOMICS",
+      "identity": {
+       "kind": "CCR",
+       "id": "REAL M1022",
+       "title": "Real Estate Economics"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 1,
+       "credentials": [
+        "CA Real Estate Broker"
+       ]
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 4,
+       "credentials": [
+        {
+         "credential": "Real Estate Economics",
+         "colleges": [
+          "Copper Mountain College",
+          "Moreno Valley College",
+          "Norco College",
+          "Riverside City College"
+         ]
+        }
+       ]
+      }
+     }
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "West Los Angeles College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists REALES010; the reader found it named only in the Real Estate Broker section."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "The Salesperson section spans a page break (pages 151-152); the core course list continues on page 152 under the 'Required core courses ... 6' heading from page 151."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "Catalog codes with leading zeros (e.g., REAL ES 001, BUS 005, REAL ES 007) were matched to closed-list codes REAL ES 1, BUS005, REALES007."
+     }
+    ],
+    "map": {
+     "host": "programmap.wlac.edu",
+     "url": "https://www.wlac.edu/academics/pathways/program-mapper",
+     "checked_run": "program-sequence-ppm run 37198225537",
+     "status": "not_read",
+     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
+    },
+    "checks": {
+     "checked": true,
+     "coverage": {
+      "placed": 11,
+      "listed": 12
+     },
+     "additions": 0,
+     "arithmetic": "equal",
+     "reviewer": "ok"
+    },
+    "build": "8292780f6cd5",
+    "built": "2026-10-06"
+   }
+  },
+  {
+   "key": "wlac_39618",
+   "filed": "records",
+   "college": "West Los Angeles College",
+   "control_number": "39618",
+   "title": "Real Estate Supervisory/Trainee Appraiser Licensing",
+   "award": "Noncredit program",
+   "catalog_year": "2026-2027",
+   "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+   "platform": "pdf",
+   "measure": "hours",
+   "record": {
+    "program": {
+     "section_heading": "REAL ESTATE SUPERVISORY/TRAINEE APPRAISER LICENSING (CN)",
+     "measure": "hours",
+     "total_units": {
+      "min": 9,
+      "max": 18
+     },
+     "open_elective_units": null,
+     "ge_pattern": null,
+     "outcomes": [
+      "Utilize a network of real estate professionals to conduct and complete the sale, purchase and management of real estate processes and transactions.",
+      "Use current and emerging technologies and applications to conduct real estate transactions.",
+      "Interpret property and real estate law to troubleshoot legal aspects in selling, purchasing and management of real estate.",
+      "Use of personal and business investment strategies and methods to advise clients and address customer needs.",
+      "Market, manage and direct the daily activities of a successful real estate agency.",
+      "Model effective and appropriate interactions and relationships that create good will and repeat business.",
+      "Model, adopt, and comply with ethical and moral business practices that maintain and sustain trust and integrity in the workplace and with clients, pursuant to DRE regulations and requirements.",
+      "Communicate oral and written thoughts in a clear and organized manner to effectively inform and convey ideas in the workplace and with clients."
+     ]
+    },
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      },
+      "courses": [
+       {
+        "code": "VOC ED 197CE",
+        "units": 4.5,
+        "units_max": 9,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOC ED 198CE",
+        "units": 4.5,
+        "units_max": 9,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     }
+    ]
+   },
+   "display": {
+    "v": 1,
+    "figure": {
+     "up_to": 0.0,
+     "measure": "hours",
+     "total": {
+      "min": 9,
+      "max": 18
+     },
+     "picks": [],
+     "path": null,
+     "path_picks": [],
+     "path_why": "No pathway map has been read for this program."
+    },
+    "counts": {
+     "courses": 2,
+     "here": 0,
+     "adopt": 0,
+     "consider": 0
+    },
+    "courses": {
+     "VOC ED 197CE": {
+      "title": "Supervisory/Trainee Real Estate Appraiser",
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90EO",
+       "title": "Supervisory/Trainee Real Estate Appraiser"
+      }
+     },
+     "VOC ED 198CE": {
+      "title": "Fed & State Laws and Regs. for CA Appraisers",
+      "identity": {
+       "kind": "CCR",
+       "id": "VOCE M90EP",
+       "title": "Fed & State Laws and Regs. for CA Appraisers"
+      }
+     }
+    },
+    "gaps": [
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "Program is noncredit; hours recorded from catalog (each course 4.5-9 hours, program total 9-18 hours)."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "Program learning outcomes describe general real estate sales/management rather than appraisal licensing; possibly copied from another program, but this does not affect the course requirements."
+     }
+    ],
+    "map": {
+     "host": "programmap.wlac.edu",
+     "url": "https://www.wlac.edu/academics/pathways/program-mapper",
+     "checked_run": "program-sequence-ppm run 37198225537",
+     "status": "not_read",
+     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
+    },
+    "checks": {
+     "checked": true,
+     "coverage": {
+      "placed": 2,
+      "listed": 2
+     },
+     "additions": 0,
+     "arithmetic": "equal",
+     "reviewer": "ok"
+    },
+    "build": "8292780f6cd5",
     "built": "2026-10-06"
    }
   }
