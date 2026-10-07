@@ -39,13 +39,17 @@ it out until its context ran low (checkpointed at ~109,000 tokens left).
 - **Card 5:** Library record `open-asks-sheets` (21 linked versions, sheets 28-48; migration
   `cpl_library_open_asks_series_s341`, cohort `library-s341@bot`). Add each new sheet as a version.
 - **Card 1:** the routine was updated 14:06Z; next run Monday 2026-10-12 12:51Z. Read that run's PR.
+- **Sheet 48 (Sam, 14:52Z):** card 1 *Keep it public*: the Ironworker film's Library audience is Public (receipt
+  `kb/receipts/cpl_library_ironworker_public_2026-10-07_s341.sql`). Card 2 (addresses) is unanswered: no note.
 - **Card 3:** not done in Drive. CPLLibrary and Drafts still list the owner alone (read 14:4xZ); sheet 48 card 2 asks
   for addresses. Never guess one.
 
 ## Priority 1: finish card 8 (Sam's go is given)
 
-1. After #1896 merges: dispatch `cpl-chat-deploy.yml` on `main` with `confirm: DEPLOY`, after reading the A/B's
-   compare (no regression). It ships the read-map status, each course's term and the figure along the map.
+1. ⚠️ **The preview A/B FAILED** (run 37638064917, job `ab`, on #1896's first commit). Do not deploy until you have
+   read its compare step and the downloaded answers, found the regression, and fixed it or shown it is not this
+   change's; then re-run the A/B on `main` and dispatch `cpl-chat-deploy.yml` with `confirm: DEPLOY`. The deploy ships
+   the read-map status, each course's term and the figure along the map.
 2. Apply `kb/receipts/program_requirement_records_display_2026-10-06_8292780f6cd5.sql` (185 KB): too big for one
    migration (~40 KB carried). Split it by statement (one per program) into parts under ~35 KB and apply each as a
    named migration (`..._display_8292780f6cd5_s342_partN`). A fresh read first: all 22 rows; 20 on 1cb75672ba6c.
