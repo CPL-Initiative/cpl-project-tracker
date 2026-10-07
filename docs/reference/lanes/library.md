@@ -174,8 +174,5 @@ claude.ai.
   `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's
   two player pages off the site, and add a guard test so a deliverable binary cannot be committed
   again. Then the vault's binaries (29 on 2026-10-05).
-- **NEEDS SAM — five calls, cards 2 to 6 of [Open Asks Sheet 47](https://claude.ai/artifact/2pCpQ3gHg2huw8oUdePE51)** (2026-10-06; first asked on sheet 45): whether the
-  Ironworker film's web player stays public (it decides whether the film leaves in PR 2); sharing
-  CPLLibrary with the team (owner-only, checked live 2026-10-06); moving the other decision sheets
-  to the vault as well; one Library record for the open-asks series or one per sheet; and whether a
-  file name carries the date the piece was made (the filer's rule today) or the date it was filed.
+- **Sam's sheet 47 calls (2026-10-07 14:17-14:20Z):** card 3 *Shared* (CPLLibrary shared as Viewer with the team); card 4 *Move them* (every decision-sheet builder writes to the vault, and the public repo holds no sheet); card 5 *One per series*, as proposed (the open-asks series is one Library record, each other sheet one record under its own occasion); card 6 *Date made* (nothing changes: a file keeps the date code of its first version). Card 4 is open work: 13 builders in `kb/`, their sheets and 18 hand-made ones in `docs/visuals/` (31 carry reply chips), and the template tests that read two real sheets, which need fixtures first.
+- **NEEDS SAM — two calls ([Open Asks Sheet 48](https://claude.ai/artifact/FWGJ2uNEGB1RrhMPrFsaCJ)):** whether the Ironworker film's web player stays public (card 2 on sheet 47, *Later*; it decides whether the film leaves in PR 2); and the team's addresses for CPLLibrary, since Drive still shows it and Drafts shared with camapinitiative alone (read live 2026-10-07 14:4xZ) and a session shares only with addresses Sam names.
