@@ -199676,6 +199676,430 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPCXA-SW&H-1-001",
+      "exhibit_ids": [
+        "MAPCXA-SW&H-1-001"
+      ],
+      "title": "Social Work & Human Services Work Expierence",
+      "unified_title": "Social Work & Human Services Work Expierence",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Social Work & Human Services Work Expierence"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "44",
+      "top_codes": [
+        "127"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 61,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Napa Valley College",
+        "Oxnard College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "CNSL 161",
+          "credit": "1 hour in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "1.25 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "1.5 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "1.75 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "2 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "2.25 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "2.75 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "3 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "3.25 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "3.5 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "3.75 hours in Social Work and Human Services Work Experience Education (WEE)"
+        },
+        {
+          "course": "CNSL 161",
+          "credit": "4 hours in Social Work and Human Services Work Experience Education (WEE)"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXA-SW&H-1-001",
+          "title": "Social Work & Human Services Work Expierence",
+          "units": 30.0,
+          "lines": 12
+        }
+      ],
+      "adopter_units": {
+        "Santiago Canyon College": 30.0
+      },
+      "adopter_lines": {
+        "Santiago Canyon College": 12
+      },
+      "adopter_rec_idx": {
+        "Santiago Canyon College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "peer_units_median": 30.0,
+      "peer_units_max": 30.0,
+      "rec_units_total": 30.0
+    },
+    {
+      "exhibit_id": "MAPCXA-SW&H1-1-001",
+      "exhibit_ids": [
+        "MAPCXA-SW&H1-1-001"
+      ],
+      "title": "Social Work & Human Services: Fieldwork and Workplace Preparation",
+      "unified_title": "Social Work & Human Services: Fieldwork and Workplace Preparation",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Social Work & Human Services: Fieldwork and Workplace Preparation"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "44",
+      "top_codes": [
+        "127"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 61,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Napa Valley College",
+        "Oxnard College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "CNSL 160A",
+          "credit": "1 hour in The Helping Professions Seminar"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXA-SW&H1-1-001",
+          "title": "Social Work & Human Services: Fieldwork and Workplace Preparation",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Santiago Canyon College": 1.0
+      },
+      "adopter_lines": {
+        "Santiago Canyon College": 1
+      },
+      "adopter_rec_idx": {
+        "Santiago Canyon College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPCXA-SW&H2-1-001",
+      "exhibit_ids": [
+        "MAPCXA-SW&H2-1-001"
+      ],
+      "title": "Social Work & Human Services- Fieldwork Experience for the Helping Professions",
+      "unified_title": "Social Work & Human Services- Fieldwork Experience for the Helping Professions",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Social Work & Human Services- Fieldwork Experience for the Helping Professions"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "44",
+      "top_codes": [
+        "127"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Santiago Canyon College"
+      ],
+      "potential": 61,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Golden West College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Napa Valley College",
+        "Oxnard College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "CNSL 160B",
+          "credit": "2 hours in Fieldwork Experience for the Helping Professions"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXA-SW&H2-1-001",
+          "title": "Social Work & Human Services- Fieldwork Experience for the Helping Professions",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Santiago Canyon College": 2.0
+      },
+      "adopter_lines": {
+        "Santiago Canyon College": 1
+      },
+      "adopter_rec_idx": {
+        "Santiago Canyon College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
       "exhibit_id": "CPLICI-ASEL-1-001|MAPICI-AEPA-1-001|MAPICI-ASE(2-1-001|MAPICI-ASE(24-1-001|MAPICI-ASEL1-1-001",
       "exhibit_ids": [
         "CPLICI-ASEL-1-001",
@@ -342820,7 +343244,7 @@ window.CPL_STATEWIDE = {
       "raw_titles": [
         "Sound and Communication Systems Installer Apprenticeship"
       ],
-      "cpl_type": "Portfolio Review",
+      "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
       "cip_sector": "46",
@@ -433022,12 +433446,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Santiago Canyon College",
-        "credit_recs": 509,
-        "exhibits": 27,
-        "disciplines": 3,
+        "credit_recs": 523,
+        "exhibits": 30,
+        "disciplines": 4,
         "ccc_collaborative": 1,
         "industry_certs": 509,
-        "pct": 3.6
+        "pct": 3.7
       },
       {
         "college": "Santa Ana College",
@@ -433062,7 +433486,7 @@ window.CPL_STATEWIDE = {
         "exhibits": 317,
         "disciplines": 17,
         "ccc_collaborative": 23,
-        "industry_certs": 74,
+        "industry_certs": 81,
         "pct": 2.8
       },
       {
@@ -433924,12 +434348,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1520,
-        "exhibits": 569,
-        "courses": 657,
-        "colleges": 52,
+        "credit_recs": 1534,
+        "exhibits": 572,
+        "courses": 660,
+        "colleges": 53,
         "ccc_collaborative": 535,
-        "pct": 10.8
+        "pct": 10.9
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -434122,22 +434546,22 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3830,
-        "exhibits": 1193,
+        "credit_recs": 3837,
+        "exhibits": 1194,
         "colleges": 79,
         "pct": 27.3
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2193,
-        "exhibits": 1728,
-        "colleges": 60,
-        "pct": 15.6
+        "credit_recs": 2207,
+        "exhibits": 1731,
+        "colleges": 61,
+        "pct": 15.7
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 411,
-        "exhibits": 332,
+        "credit_recs": 404,
+        "exhibits": 331,
         "colleges": 30,
         "pct": 2.9
       },
@@ -434162,7 +434586,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 8740,
         "exhibits": 3733,
         "colleges": 91,
-        "pct": 62.3
+        "pct": 62.2
       },
       {
         "mode": "Industry training (I)",
@@ -434173,10 +434597,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1414,
-        "exhibits": 396,
+        "credit_recs": 1428,
+        "exhibits": 399,
         "colleges": 42,
-        "pct": 10.1
+        "pct": 10.2
       },
       {
         "mode": "High school coursework (H)",
@@ -434231,8 +434655,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12415,
-        "exhibits": 5806,
+        "credit_recs": 12429,
+        "exhibits": 5809,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.5
@@ -434657,8 +435081,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-07T16:30:33",
-  "total_credit_recs": 14033,
+  "generated_at": "2026-10-07T19:14:23",
+  "total_credit_recs": 14047,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

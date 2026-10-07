@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-10-07T16:31:13.643340+00:00",
+  "scraped_at": "2026-10-07T19:15:05.137312+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28798,
-    "star_colleges": 58
+    "jst": 28868,
+    "star_colleges": 59
   },
-  "computed_star_colleges": 58,
+  "computed_star_colleges": 59,
   "colleges": {
     "Santiago Canyon College": {
       "vets": 288,
@@ -27,17 +27,17 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1626,
+      "jst": 1633,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1519,
+      "jst": 1528,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1659,
+      "jst": 1664,
       "star": true
     },
     "Moreno Valley College": {
@@ -72,7 +72,7 @@
     },
     "De Anza College": {
       "vets": 903,
-      "jst": 991,
+      "jst": 999,
       "star": true
     },
     "Riverside City College": {
@@ -112,7 +112,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 406,
+      "jst": 408,
       "star": true
     },
     "Modesto Junior College": {
@@ -317,7 +317,7 @@
     },
     "Laney College": {
       "vets": 96,
-      "jst": 69,
+      "jst": 70,
       "star": false
     },
     "Irvine Valley College": {
@@ -339,6 +339,11 @@
       "vets": 167,
       "jst": 105,
       "star": false
+    },
+    "Berkeley City College": {
+      "vets": 42,
+      "jst": 52,
+      "star": true
     },
     "Copper Mountain College": {
       "vets": 72,
@@ -410,11 +415,6 @@
       "jst": 33,
       "star": false
     },
-    "Berkeley City College": {
-      "vets": 42,
-      "jst": 17,
-      "star": false
-    },
     "Cañada College": {
       "vets": 47,
       "jst": 30,
@@ -432,7 +432,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 180,
+      "jst": 181,
       "star": true
     },
     "Columbia College": {
@@ -442,7 +442,7 @@
     },
     "Santa Monica College": {
       "vets": 676,
-      "jst": 3,
+      "jst": 4,
       "star": false
     },
     "Mendocino College": {
@@ -485,14 +485,14 @@
       "jst": 132,
       "star": true
     },
-    "Butte College": {
-      "vets": 290,
+    "Sacramento City College": {
+      "vets": 203,
       "jst": 114,
       "star": false
     },
-    "Sacramento City College": {
-      "vets": 203,
-      "jst": 113,
+    "Butte College": {
+      "vets": 290,
+      "jst": 114,
       "star": false
     },
     "Cuyamaca College": {
