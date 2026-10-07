@@ -15,6 +15,7 @@ committed against itself.
 
     python3 tests/roep_display_test.py
 """
+import glob
 import json
 import os
 import re
@@ -99,11 +100,24 @@ blocks = [
 ]
 pl = b.plan(blocks, has)
 check(pl["cpl"] == 3 + 4 + 2 + 4 + 1, "plan: alternative with CPL, CPL pick in a choice, partial units, the option with more CPL (got %s)" % pl["cpl"])
+# A course counts once (S340): Irvine Valley's Art A.A. requires ART 85 and lists it again among
+# its electives; the elective takes another course, and a required course printed twice counts once.
+rep = [{"rule": "all", "courses": [{"code": "C1", "units": 3}, {"code": "N1", "units": 3}]},
+       {"rule": "choose_units", "minimum": 3, "courses": [{"code": "C1", "units": 3}, {"code": "C2", "units": 3}]},
+       {"rule": "all", "courses": [{"code": "C1", "units": 2}]}]
+pr = b.plan(rep, has)
+check(pr["cpl"] == 6 and pr["picks"] == ["C1", "C2"],
+      "plan: a course in two blocks counts once, and a choice never picks it again (got %s %s)" % (pr["cpl"], pr["picks"]))
 
 # 3. the committed outputs agree with each other
 data = load_js()
 progs = data["programs"]
-check(len(progs) == 20, "20 programs in cpl_pathways_roep_data.js (got %d)" % len(progs))
+filed = sorted(os.path.splitext(os.path.basename(f))[0] for d in b.RECORD_FOLDERS
+               for f in glob.glob(os.path.join(b.PILOT, d, "*.json")))
+check(sorted(p["key"] for p in progs) == filed and len(progs) >= 22,
+      "every filed record, records/ and records_maps/, is in cpl_pathways_roep_data.js (got %d of %d)" % (len(progs), len(filed)))
+check(all(p["filed"] == ("records" if os.path.exists(os.path.join(b.PILOT, "records", p["key"] + ".json")) else "records_maps")
+          for p in progs), "each program names the folder it is filed in")
 for k in ("here", "adopt", "consider", "up_to"):
     check(bool(data["definitions"].get(k)), "definition of %s is stated once, for the page and Sierra" % k)
 receipt = b.receipt_path(data)
@@ -125,6 +139,33 @@ for p in progs:
     check(again["cpl"] == d["figure"]["up_to"], "%s: up-to figure recomputes from the page's data (%s)" % (p["key"], again["cpl"]))
     codes = {x["code"] for bl in p["record"]["blocks"] for c in bl["courses"] for x in [c] + (c.get("alternatives") or [])}
     check(codes == set(d["courses"]), "%s: one course entry per course the record names" % p["key"])
+
+# 3b. a read map (S340): the terms as the college prints them, each of the record's courses in
+# the term the map names it in, and the rest unplaced; never a course the record does not hold.
+reads = [p for p in progs if p["display"]["map"]["status"] == "read"]
+check({p["key"] for p in reads} == {"smc_43767", "ivc_10265"},
+      "the two programs with a read map show it (got %s)" % sorted(p["key"] for p in reads))
+for p in reads:
+    m = p["display"]["map"]
+    seq = json.load(open(os.path.join(b.SEQUENCES, p["key"] + ".json")))
+    check(len(m["terms"]) == len(seq["terms"]) and [t["label"] for t in m["terms"]] == [t["label"] for t in seq["terms"]],
+          "%s: the terms are the map's, in its order" % p["key"])
+    check(set(m["placed"]) | set(m["not_placed"]) == set(p["display"]["courses"])
+          and not set(m["placed"]) & set(m["not_placed"]),
+          "%s: every course of the record is placed or unplaced, once" % p["key"])
+    check(all(b.ck(c) in {b.ck(x) for it in m["terms"][n]["items"] for x in it["codes"]} for c, n in m["placed"].items()),
+          "%s: a placed course is named in the term it is placed in" % p["key"])
+    check("not computed yet" in p["display"]["figure"]["path_why"],
+          "%s: the path figure says the map is read and the figure is not computed yet" % p["key"])
+sm = [p for p in progs if p["key"] == "smc_43767"]
+check(bool(sm) and sm[0]["display"]["map"]["not_placed"] == ["COSM 49R"] and sm[0]["display"]["map"]["placed"]["COSM 95A"] == 3,
+      "Santa Monica: COSM 49R alone is off the map, and the Salon Experience choice sits in its fourth term")
+check(bool(sm) and sm[0]["display"]["figure"]["up_to"] == 21.5,
+      "Santa Monica Barbering reads up to 21.5 units: COSM 11C, printed in Level 1 and Level 4, counts once")
+iv = [p for p in progs if p["key"] == "ivc_10265"]
+check(bool(iv) and iv[0]["display"]["figure"]["up_to"] == 3.0, "Irvine Valley Art reads up to 3 units: ART 85 counts once")
+check("are filed in records_maps/" in open(receipt).read() if os.path.exists(receipt) else False,
+      "the receipt says which of its programs the table does not hold yet")
 
 # 4. the figure the approved mock-up shows for the hand-built map
 iw = [p for p in progs if p["key"] == "cerritos_42158"]

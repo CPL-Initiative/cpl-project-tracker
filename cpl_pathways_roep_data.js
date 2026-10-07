@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "1cb75672ba6c",
- "built": "2026-10-04",
+ "build": "9f60f746ea49",
+ "built": "2026-10-06",
  "inputs": {
-  "records": 20,
-  "map_read_at": "2026-10-04",
-  "registry_read_at": "2026-10-04",
+  "records": 22,
+  "map_read_at": "2026-10-06",
+  "registry_read_at": "2026-10-06",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-10-05 18:32",
-  "cer": "2026-10-05T18:32:30+00:00"
+  "memberships": "2026-10-06 18:30",
+  "cer": "2026-10-06T18:31:23+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -20,6 +20,7 @@ window.CPL_PATHWAYS_ROEP = {
  "programs": [
   {
    "key": "cerritos_36675",
+   "filed": "records",
    "college": "Cerritos College",
    "control_number": "36675",
    "title": "Energy Corps",
@@ -203,12 +204,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "cerritos_41982",
+   "filed": "records",
    "college": "Cerritos College",
    "control_number": "41982",
    "title": "Community Health Worker",
@@ -599,12 +601,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "cerritos_42158",
+   "filed": "records",
    "college": "Cerritos College",
    "control_number": "42158",
    "title": "Apprenticeship: Field Ironworkers",
@@ -1258,12 +1261,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "cerritos_45549",
+   "filed": "records",
    "college": "Cerritos College",
    "control_number": "45549",
    "title": "Public Health",
@@ -1955,12 +1959,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "miramar_05100",
+   "filed": "records",
    "college": "San Diego Miramar College",
    "control_number": "05100",
    "title": "Fire Technology",
@@ -2459,12 +2464,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "miramar_18207",
+   "filed": "records",
    "college": "San Diego Miramar College",
    "control_number": "18207",
    "title": "Fire Technology",
@@ -2969,12 +2975,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "miramar_35030",
+   "filed": "records",
    "college": "San Diego Miramar College",
    "control_number": "35030",
    "title": "Entrepreneurship",
@@ -4116,12 +4123,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "miramar_41496",
+   "filed": "records",
    "college": "San Diego Miramar College",
    "control_number": "41496",
    "title": "Business Administration 2.0",
@@ -4576,12 +4584,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "mtsac_03086",
+   "filed": "records",
    "college": "Mt. San Antonio College",
    "control_number": "03086",
    "title": "Fire Technology",
@@ -5385,12 +5394,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "mtsac_08086",
+   "filed": "records",
    "college": "Mt. San Antonio College",
    "control_number": "08086",
    "title": "Nursing- Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option",
@@ -6364,12 +6374,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "mtsac_33876",
+   "filed": "records",
    "college": "Mt. San Antonio College",
    "control_number": "33876",
    "title": "Early Childhood Education",
@@ -6752,12 +6763,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "mtsac_42916",
+   "filed": "records",
    "college": "Mt. San Antonio College",
    "control_number": "42916",
    "title": "Vocational Nursing",
@@ -7024,12 +7036,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "riverside_22804",
+   "filed": "records",
    "college": "Riverside City College",
    "control_number": "22804",
    "title": "Culinary Arts",
@@ -7262,12 +7275,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "riverside_31456",
+   "filed": "records",
    "college": "Riverside City College",
    "control_number": "31456",
    "title": "Administration of Justice",
@@ -8627,12 +8641,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "riverside_39033",
+   "filed": "records",
    "college": "Riverside City College",
    "control_number": "39033",
    "title": "Food Service Career and Certification Preparation",
@@ -8876,12 +8891,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "riverside_40061",
+   "filed": "records",
    "college": "Riverside City College",
    "control_number": "40061",
    "title": "Cyber Defense",
@@ -9429,12 +9445,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "wlac_17111",
+   "filed": "records",
    "college": "West Los Angeles College",
    "control_number": "17111",
    "title": "Computer Network & Security Management",
@@ -10018,12 +10035,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "wlac_37050",
+   "filed": "records",
    "college": "West Los Angeles College",
    "control_number": "37050",
    "title": "Kinesiology",
@@ -10801,12 +10819,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "wlac_37839",
+   "filed": "records",
    "college": "West Los Angeles College",
    "control_number": "37839",
    "title": "Real Estate Salesperson",
@@ -11269,12 +11288,13 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   },
   {
    "key": "wlac_39618",
+   "filed": "records",
    "college": "West Los Angeles College",
    "control_number": "39618",
    "title": "Real Estate Supervisory/Trainee Appraiser Licensing",
@@ -11401,8 +11421,1964 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "1cb75672ba6c",
-    "built": "2026-10-04"
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
+   }
+  },
+  {
+   "key": "ivc_10265",
+   "filed": "records_maps",
+   "college": "Irvine Valley College",
+   "control_number": "10265",
+   "title": "Art",
+   "award": "A.A. Degree",
+   "catalog_year": "2026-2027",
+   "source_url": "https://irvine.curriqunet.com/Catalog/Export?id=4690&outlineId=51485",
+   "platform": "curriqunet",
+   "measure": "units",
+   "record": {
+    "program": {
+     "section_heading": "Art - A.A. Degree",
+     "measure": "units",
+     "total_units": {
+      "min": 27,
+      "max": 27
+     },
+     "open_elective_units": null,
+     "ge_pattern": null,
+     "outcomes": []
+    },
+    "blocks": [
+     {
+      "name": "Complete the following courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": 15,
+       "max": 15
+      },
+      "courses": [
+       {
+        "code": "ART 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 80",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 85",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Complete a total of 6 units from the following courses",
+      "rule": "choose_units",
+      "minimum": 6,
+      "option_group": null,
+      "stated": {
+       "min": 6,
+       "max": 6
+      },
+      "courses": [
+       {
+        "code": "ARTH 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 27",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Complete an additional 6 units from the following course areas.",
+      "rule": "choose_units",
+      "minimum": 6,
+      "option_group": null,
+      "stated": {
+       "min": 6,
+       "max": 6
+      },
+      "courses": [
+       {
+        "code": "ARTH 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 23",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 24",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 27",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 28",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 29",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 81",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 82",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 85",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 86",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 186",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 195",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 91",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     }
+    ]
+   },
+   "display": {
+    "v": 1,
+    "figure": {
+     "up_to": 3.0,
+     "measure": "units",
+     "total": {
+      "min": 27,
+      "max": 27
+     },
+     "picks": [
+      "ART 85"
+     ],
+     "path": null,
+     "path_why": "The college's term-by-term map is read; the figure along its path is not computed yet."
+    },
+    "counts": {
+     "courses": 25,
+     "here": 1,
+     "adopt": 5,
+     "consider": 0
+    },
+    "courses": {
+     "ART 40": {
+      "title": "2-D DESIGN AND COLOR",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 100",
+       "title": "2-D Foundations"
+      },
+      "adopt": {
+       "credentials_n": 3,
+       "colleges_n": 10,
+       "credentials": [
+        {
+         "credential": "AP 2-D Art and Design",
+         "colleges": [
+          "Coastline Community College",
+          "Los Angeles Harbor College",
+          "Los Angeles Pierce College",
+          "Moreno Valley College",
+          "Mt. San Jacinto College",
+          "Norco College",
+          "Riverside City College",
+          "San Jose City College",
+          "Santa Ana College",
+          "Yuba College"
+         ]
+        },
+        {
+         "credential": "AP 3-D Art and Design",
+         "colleges": [
+          "Moreno Valley College"
+         ]
+        },
+        {
+         "credential": "Two-Dimensional Design Beginning",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        }
+       ]
+      }
+     },
+     "ART 41": {
+      "title": "3D DESIGN",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 101",
+       "title": "3-D Foundations"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 7,
+       "credentials": [
+        {
+         "credential": "AP 3-D Art and Design",
+         "colleges": [
+          "Chaffey College",
+          "Los Angeles Pierce College",
+          "Mt. San Jacinto College",
+          "Norco College",
+          "Riverside City College",
+          "San Jose City College",
+          "Santa Ana College"
+         ]
+        }
+       ]
+      }
+     },
+     "ART 50": {
+      "title": "BEGINNING OIL PAINTING",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 210",
+       "title": "Introduction to Painting"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Introduction to Painting",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "ART 80": {
+      "title": "DRAWING FUNDAMENTALS",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 110",
+       "title": "Fundamentals of Drawing"
+      },
+      "adopt": {
+       "credentials_n": 3,
+       "colleges_n": 11,
+       "credentials": [
+        {
+         "credential": "AP Drawing",
+         "colleges": [
+          "Chaffey College",
+          "Los Angeles Pierce College",
+          "Moreno Valley College",
+          "Mt. San Jacinto College",
+          "Napa Valley College",
+          "Norco College",
+          "Riverside City College",
+          "San Jose City College",
+          "Santa Ana College",
+          "Woodland Community College"
+         ]
+        },
+        {
+         "credential": "Drawing",
+         "colleges": [
+          "Los Angeles Pierce College"
+         ]
+        },
+        {
+         "credential": "Fundamentals of Drawing",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        }
+       ]
+      }
+     },
+     "ART 85": {
+      "title": "LIFE DRAWING I",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 200",
+       "title": "Figure Drawing"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 0,
+       "credentials": []
+      }
+     },
+     "ARTH 4": {
+      "title": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M10DD",
+       "title": "Introduction to Art Theory"
+      }
+     },
+     "ARTH 25": {
+      "title": null,
+      "identity": null
+     },
+     "ARTH 26": {
+      "title": null,
+      "identity": null
+     },
+     "ARTH 27": {
+      "title": "ART HISTORY SURVEY III - NON-WESTERN",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M10CW",
+       "title": "Art History Survey 3 - Non-Western"
+      }
+     },
+     "ARTH 22": {
+      "title": "SURVEY OF ASIAN ART",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTH 130",
+       "title": "Survey of Asian Art"
+      }
+     },
+     "ARTH 23": {
+      "title": "AFRICAN, OCEANIC, AND INDIGENOUS NORTH AMERICAN ART",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTH 140",
+       "title": "Arts of Africa, Oceania, and Indigenous North America"
+      },
+      "adopt": {
+       "credentials_n": 1,
+       "colleges_n": 1,
+       "credentials": [
+        {
+         "credential": "Arts of Africa, Oceania, and Indigenous North America",
+         "colleges": [
+          "Chaffey College"
+         ]
+        }
+       ]
+      }
+     },
+     "ARTH 24": {
+      "title": "ANCIENT ART",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M1011",
+       "title": "Ancient Art"
+      }
+     },
+     "ARTH 28": {
+      "title": null,
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M1114",
+       "title": "History of Contemporary Art"
+      }
+     },
+     "ARTH 29": {
+      "title": "19TH AND EARLY 20TH CENTURY ART",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1011",
+       "title": "Art of the 20TH Century"
+      }
+     },
+     "ARTH 30": {
+      "title": "RENAISSANCE AND BAROQUE ART",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1104",
+       "title": "Renaissance & Baroque Art"
+      }
+     },
+     "ARTH 31": {
+      "title": "MEDIEVAL ART",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTH M1027",
+       "title": "Medieval Art"
+      }
+     },
+     "ART 81": {
+      "title": "REPRESENTATIONAL DRAWING",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 205",
+       "title": "Intermediate Drawing"
+      }
+     },
+     "ART 82": {
+      "title": "ADVANCED DRAWING",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1044",
+       "title": "Advanced Drawing"
+      }
+     },
+     "ART 86": {
+      "title": "ADVANCED LIFE DRAWING",
+      "identity": {
+       "kind": "C-ID",
+       "id": "ARTS 200",
+       "title": "Figure Drawing"
+      }
+     },
+     "ART 186": {
+      "title": "DRAWING THE HEAD AND HANDS",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTD M1635",
+       "title": "Drawing the Head and Hands"
+      }
+     },
+     "ART 195": {
+      "title": "ILLUSTRATION",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1446",
+       "title": "Illustration"
+      }
+     },
+     "ART 51": {
+      "title": "INTERMEDIATE PAINTING",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1024",
+       "title": "Acrylic Painting 2"
+      }
+     },
+     "ART 52": {
+      "title": "ADVANCED PAINTING",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1057",
+       "title": "Advanced Painting"
+      }
+     },
+     "ART 53": {
+      "title": "BEGINNING LIFE PAINTING",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M11BQ",
+       "title": "Beginning Life Painting"
+      }
+     },
+     "ART 91": {
+      "title": "PORTFOLIO DEVELOPMENT",
+      "identity": {
+       "kind": "CCR",
+       "id": "ARTS M1338",
+       "title": "Portfolio Development"
+      }
+     }
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Irvine Valley College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists ARTH C1100; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Irvine Valley College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists ARTH C1200; the reader found it not in the text."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Irvine Valley College's program record in the state's curriculum inventory",
+      "text": "The catalog prints ARTH 4, ARTH 25, ARTH 26, ARTH 4, ARTH 25, ARTH 26, ARTH 28 for this program; the state's Program Course File does not list them."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "No program learning outcomes are printed in the text; outcomes left empty."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "The catalog text names no general education pattern; ge_pattern left null."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "ART 195 is printed 'ART 195 (same as DMA 195)' and ART 91 'ART 91 (same as DMA 91)'; the DMA cross-listings were not recorded as separate alternatives."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "ARTH 4, ARTH 25, ARTH 26 and ARTH 28 are not on the closed list (catalog additions). The closed list instead has ARTH C1100 and ARTH C1200 (C-ID common course numbers), which may be the renumbered equivalents of ARTH 25 and ARTH 26; reviewer should check whether the catalog text is out of date for 2026-2027."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "ART 85 appears in both the required list and the additional 6-unit list; ARTH 4, 25, 26, 27 appear in both elective lists. Recorded as printed."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "'Recommended electives Units: 0.0' (MUS 20, TA 20, TA 21, TA 26, TA 27, any course in photography) are recommended only and do not count toward the 27 units; not recorded as a block."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "ARTH 23 is printed as 'African and Oceanic Art' while the closed list title is 'African, Oceanic, and Indigenous North American Art'."
+     }
+    ],
+    "map": {
+     "status": "read",
+     "host": "www.ivc.edu",
+     "url": "https://www.ivc.edu/academics/all-program-maps",
+     "checked_run": "college-page-read run 37372136739",
+     "read_on": "2026-10-05",
+     "text": "Irvine Valley College publishes a term-by-term map for Art, AA (AA-GE · 2 Years Full-Time · 60-64 Units), read 2026-10-05 (college-page-read run 37372136739).",
+     "terms": [
+      {
+       "label": "Semester 1",
+       "units": "15-18",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "ENGL C1000"
+         ],
+         "units": "4",
+         "text": "ENGL C1000 (WR 1) | Academic Reading and Writing | 1A | 4"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3-5",
+         "text": "MATH | Math GE Course | 2 | 3-5"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ART 40"
+         ],
+         "units": "3",
+         "text": "ART 40 | 2-D Design and Color | 7 & Major | 3"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ART 80"
+         ],
+         "units": "3",
+         "text": "ART 80 | Drawing Fundamentals | Major | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "2-3",
+         "text": "Lifelong Health1 | Lifelong Health and Personal Development GE Course | 9 A/B/C | 2-3"
+        }
+       ]
+      },
+      {
+       "label": "Semester 2",
+       "units": "15-16",
+       "items": [
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3-4",
+         "text": "Critical Thinking | Critical Thinking | 1C | 3-4"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COMM C1000"
+         ],
+         "units": "3",
+         "text": "COMM C1000 (COMM 1) | Introduction to Public Speaking | 1B | 3"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ART 41"
+         ],
+         "units": "3",
+         "text": "ART 41 | 3D Design | Major | 3"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ART 50"
+         ],
+         "units": "3",
+         "text": "ART 50 | Beginning Oil Painting | Major | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "American Institutions | American Institutions GE Course | 8 | 3"
+        }
+       ]
+      },
+      {
+       "label": "Semester 3",
+       "units": "15",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "ART 85"
+         ],
+         "units": "3",
+         "text": "ART 85 | Life Drawing I | Major | 3"
+        },
+        {
+         "kind": "list",
+         "codes": [],
+         "units": "3",
+         "text": "ART | Art Major Course from List A | Major | 3"
+        },
+        {
+         "kind": "list",
+         "codes": [],
+         "units": "3",
+         "text": "ART | Art Major Course from List A | Major | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Social Sciences | Social Sciences GE Course | 4 | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Lifelong Health1 | Lifelong Health and Personal Development GE Course | 9 A/B/C | 3"
+        }
+       ]
+      },
+      {
+       "label": "Semester 4",
+       "units": "15",
+       "items": [
+        {
+         "kind": "list",
+         "codes": [],
+         "units": "3",
+         "text": "ART | Art Major Course from List A or B | Major | 3"
+        },
+        {
+         "kind": "list",
+         "codes": [],
+         "units": "3",
+         "text": "ART | Art Major Course from List A or B | Major | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Natural Sciences | Natural Sciences GE Course | 3 | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Cultural Diversity | Cultural Diversity GE Course | 5 | 3"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "Humanities | Humanities GE Course | 6 | 3"
+        }
+       ]
+      }
+     ],
+     "notes": [
+      "Take one course from two different categories among GE areas 9A, 9B, and 9C. Please refer to the AA GE pattern for details."
+     ],
+     "placed": {
+      "ART 40": 0,
+      "ART 41": 1,
+      "ART 50": 1,
+      "ART 80": 0,
+      "ART 85": 2
+     },
+     "not_placed": [
+      "ARTH 4",
+      "ARTH 25",
+      "ARTH 26",
+      "ARTH 27",
+      "ARTH 22",
+      "ARTH 23",
+      "ARTH 24",
+      "ARTH 28",
+      "ARTH 29",
+      "ARTH 30",
+      "ARTH 31",
+      "ART 81",
+      "ART 82",
+      "ART 86",
+      "ART 186",
+      "ART 195",
+      "ART 51",
+      "ART 52",
+      "ART 53",
+      "ART 91"
+     ]
+    },
+    "checks": {
+     "checked": false,
+     "coverage": {
+      "placed": 21,
+      "listed": 23
+     },
+     "additions": 7,
+     "arithmetic": "equal",
+     "reviewer": null
+    },
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
+   }
+  },
+  {
+   "key": "smc_43767",
+   "filed": "records_maps",
+   "college": "Santa Monica College",
+   "control_number": "43767",
+   "title": "Barbering",
+   "award": "A.S. Degree",
+   "catalog_year": "2026-2027",
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf",
+   "platform": "custom_html",
+   "measure": "units",
+   "record": {
+    "program": {
+     "section_heading": "Barbering (section heading not in the supplied text; the section begins before page 121 and ends at 'Cosmetology, Associate Degree or Certificate of Achievement')",
+     "measure": "units",
+     "total_units": {
+      "min": 26.5,
+      "max": 26.5
+     },
+     "open_elective_units": null,
+     "ge_pattern": null,
+     "outcomes": [
+      "Upon completion of the program, students will be able to demonstrate entry level skills in hair cutting, hair coloring, hair styling, shaving with a razor, men’s styling and chemical texture.",
+      "Students will be eligible to take the State Board of Barbering and Cosmetology licensure exam.",
+      "Students will be able to recognize and demonstrate the importance of and practice of ethical behavior in a professional work setting.",
+      "Apply theories, principles, and concepts of skills learned that apply to Barbering and follow the State Board of Barbering and Cosmetology Rules and Regulations."
+     ]
+    },
+    "blocks": [
+     {
+      "name": "Required Level 1 Courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      },
+      "courses": [
+       {
+        "code": "COSM 10A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 10B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 11A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 11B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 11C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 11D",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Required Level 2 Courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      },
+      "courses": [
+       {
+        "code": "COSM 20",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 21A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 21B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 21C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 21E",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 42",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Required Level 3 Courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      },
+      "courses": [
+       {
+        "code": "COSM 30",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 31A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 31C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 31E",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 77",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Required Level 4 Courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      },
+      "courses": [
+       {
+        "code": "COSM 11C",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 78",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Required State Board Courses",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      },
+      "courses": [
+       {
+        "code": "COSM 49R",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 50R",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     },
+     {
+      "name": "Salon Experience Courses",
+      "rule": "choose_units",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      },
+      "courses": [
+       {
+        "code": "COSM 95A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 95B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 95C",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ]
+     }
+    ]
+   },
+   "display": {
+    "v": 1,
+    "figure": {
+     "up_to": 21.5,
+     "measure": "units",
+     "total": {
+      "min": 26.5,
+      "max": 26.5
+     },
+     "picks": [
+      "COSM 10A",
+      "COSM 10B",
+      "COSM 11A",
+      "COSM 11B",
+      "COSM 11C",
+      "COSM 11D",
+      "COSM 20",
+      "COSM 21A",
+      "COSM 21B",
+      "COSM 21C",
+      "COSM 21E",
+      "COSM 42",
+      "COSM 30",
+      "COSM 31A",
+      "COSM 31C",
+      "COSM 31E",
+      "COSM 77",
+      "COSM 78",
+      "COSM 50R"
+     ],
+     "path": null,
+     "path_why": "The college's term-by-term map is read; the figure along its path is not computed yet."
+    },
+    "counts": {
+     "courses": 23,
+     "here": 22,
+     "adopt": 0,
+     "consider": 0
+    },
+    "courses": {
+     "COSM 10A": {
+      "title": "Related Science 1A",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M10AT",
+       "title": "Related Science 1A"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 10B": {
+      "title": "Related Science 1B",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M10AU",
+       "title": "Related Science 1B"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 11A": {
+      "title": "Hair Cutting 1",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1105",
+       "title": "Hair Cutting and Product Knowledge"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 11B": {
+      "title": "Hair Styling 1",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1072",
+       "title": "Hair Styling Services 1"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 11C": {
+      "title": "Hair Coloring 1",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1102",
+       "title": "Introduction to Hair Coloring"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 11D": {
+      "title": "Permanent Waving",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1075",
+       "title": "Permanent Waving 2"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 20": {
+      "title": "Related Science 2",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M10BI",
+       "title": "Related Science 2"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 21A": {
+      "title": "Hair Cutting 2",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M10BD",
+       "title": "Hair Cutting 2"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 21B": {
+      "title": "Hair Styling 2",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1101",
+       "title": "Intermediate Hair Coloring and Styling"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 21C": {
+      "title": "Hair Coloring 2",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1101",
+       "title": "Intermediate Hair Coloring and Styling"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 21E": {
+      "title": "Curly Hair Techniques 2",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M10BC",
+       "title": "Curly Hair Techniques 2"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 42": {
+      "title": "Short Hair Cutting",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1086",
+       "title": "Advanced Short Hair Cutting Techniques"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 30": {
+      "title": "Related Science 3",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M10BR",
+       "title": "Related Science 3"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 31A": {
+      "title": "Hair Cutting 3",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1086",
+       "title": "Advanced Short Hair Cutting Techniques"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 2,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)"
+       ]
+      }
+     },
+     "COSM 31C": {
+      "title": "Hair Coloring 3",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1085",
+       "title": "Advanced Hair Coloring and Styling"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 2,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)"
+       ]
+      }
+     },
+     "COSM 31E": {
+      "title": "Multi Texture Styling",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1069",
+       "title": "Multi-Texture Design (Level 1-2)"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 2,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)"
+       ]
+      }
+     },
+     "COSM 77": {
+      "title": "Barbering",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1023",
+       "title": "Barbering"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 2,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)"
+       ]
+      }
+     },
+     "COSM 78": {
+      "title": "Barbering 2",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1004",
+       "title": "Barbering: Level 2"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 2,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)"
+       ]
+      }
+     },
+     "COSM 49R": {
+      "title": "Tactical Planning for the California Barbering State Board Exam",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1095",
+       "title": "Tactical Planning for the California Hair Styling State Board Exam"
+      }
+     },
+     "COSM 50R": {
+      "title": "Written Preparation for Barbering State Board Exam",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1096",
+       "title": "Written Preparation for Cosmetology State Board Exam"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 95A": {
+      "title": "Salon Experience",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1059",
+       "title": "Salon Experience"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 95B": {
+      "title": "Salon Experience",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1059",
+       "title": "Salon Experience"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     },
+     "COSM 95C": {
+      "title": "Salon Experience",
+      "identity": {
+       "kind": "CCR",
+       "id": "COSM M1059",
+       "title": "Salon Experience"
+      },
+      "here": {
+       "recs": 1,
+       "credentials_n": 3,
+       "credentials": [
+        "Barbering license",
+        "Barbering License (California)",
+        "Cosmetology License"
+       ]
+      }
+     }
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Santa Monica College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists COSM 64; the reader found it not printed in the Barbering section; Level 4 lists 'COSM 11C, Salon Management (2)', likely a misprint for COSM 64."
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Santa Monica College's program record in the state's curriculum inventory",
+      "text": "The state's Program Course File lists COSM 95D; the reader found it named only in the Esthetician and Nail Care sections, not in the Barbering list."
+     },
+     {
+      "kind": "Check not met",
+      "owner": "procedure",
+      "where": "Santa Monica College's college's own catalog pages reading procedure",
+      "text": "The blocks add to 25.5 units; the catalog prints 26.5 units."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Santa Monica College's college's own catalog pages reading procedure",
+      "text": "The Barbering section heading falls before the supplied text (page 121 begins mid-section), so the heading could not be read; the text does not show whether it names an A.S. degree, a certificate, or both. Verify that this section is the A.S. Degree requirements."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Santa Monica College's college's own catalog pages reading procedure",
+      "text": "Required Level 4 Courses prints 'COSM 11C, Salon Management (2)'. COSM 11C is Hair Coloring 1 (1 unit), already required in Level 1, and Salon Management is COSM 64 (2 units). This is recorded as printed and is likely a misprint for COSM 64."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Santa Monica College's college's own catalog pages reading procedure",
+      "text": "Salon Experience Courses says only 'Any combination of Salon classes is acceptable'. No minimum units are printed, so minimum is null. The requirement seems tied to completing the 1,000 required hours; students must finish all Level 1 classes before enrolling."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Santa Monica College's college's own catalog pages reading procedure",
+      "text": "The award also requires 1,000 hours minimum including the specified courses. The Area of Emphasis total is 26.5 units."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Santa Monica College's college's own catalog pages reading procedure",
+      "text": "The text names no general education pattern for the degree."
+     },
+     {
+      "kind": "Reader's note",
+      "owner": "procedure",
+      "where": "Santa Monica College's college's own catalog pages reading procedure",
+      "text": "The Program Learning Outcomes print as one paragraph; each sentence is recorded as one outcome. The first sentence keeps its 'Upon completion of the program, students will be able to' wording because it is part of the sentence, not a separate lead-in."
+     }
+    ],
+    "map": {
+     "status": "read",
+     "host": "www.smc.edu",
+     "url": "https://www.smc.edu/academics/classes/program.php?id=219",
+     "checked_run": "college-page-read run 37372136739",
+     "read_on": "2026-10-05",
+     "text": "Santa Monica College publishes a term-by-term map for Barbering (Associate in Science (AS) / Certificate of Achievement), read 2026-10-05 (college-page-read run 37372136739).",
+     "terms": [
+      {
+       "label": "Semester 1 (First 8 weeks)",
+       "units": "9",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 10A"
+         ],
+         "units": "1",
+         "text": "COSM 10A · Related Science 1A · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 10B"
+         ],
+         "units": "1",
+         "text": "COSM 10B · Related Science 1B · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 11A"
+         ],
+         "units": "1",
+         "text": "COSM 11A · Hair Cutting 1 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 11B"
+         ],
+         "units": "1",
+         "text": "COSM 11B · Hair Styling 1 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 11C"
+         ],
+         "units": "1",
+         "text": "COSM 11C · Hair Coloring 1 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 11D"
+         ],
+         "units": "1",
+         "text": "COSM 11D · Permanent Waving · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COUNS 20"
+         ],
+         "units": "3",
+         "text": "COUNS 20 · Student Success Seminar · 3 units"
+        }
+       ]
+      },
+      {
+       "label": "Semester 1 (Second 8 weeks)",
+       "units": "6",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 20"
+         ],
+         "units": "1",
+         "text": "COSM 20 · Related Science 2 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 21A"
+         ],
+         "units": "1",
+         "text": "COSM 21A · Hair Cutting 2 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 21B"
+         ],
+         "units": "1",
+         "text": "COSM 21B · Hair Styling 2 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 21C"
+         ],
+         "units": "1",
+         "text": "COSM 21C · Hair Coloring 2 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 21E"
+         ],
+         "units": "1",
+         "text": "COSM 21E · Curly Hair Techniques 2 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 42"
+         ],
+         "units": "1",
+         "text": "COSM 42 · Short Hair Cutting · 1 unit"
+        }
+       ]
+      },
+      {
+       "label": "Semester 2 (First 8 weeks)",
+       "units": "9",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 30"
+         ],
+         "units": "1",
+         "text": "COSM 30 · Related Science 3 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 31A"
+         ],
+         "units": "1",
+         "text": "COSM 31A · Hair Cutting 3 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 31C"
+         ],
+         "units": "1",
+         "text": "COSM 31C · Hair Coloring 3 · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 31E"
+         ],
+         "units": "1",
+         "text": "COSM 31E · Multi Texture Styling · 1 unit"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 77"
+         ],
+         "units": "2",
+         "text": "COSM 77 · Barbering · 2 units"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ENGL C1000"
+         ],
+         "units": "3",
+         "text": "ENGL C1000 · Academic Reading and Writing (formerly ENGL 1) · 3 units"
+        }
+       ]
+      },
+      {
+       "label": "Semester 2 (Second 8 weeks)",
+       "units": "6-9",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 64"
+         ],
+         "units": "2",
+         "text": "COSM 64 · Salon Management · 2 units"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 78"
+         ],
+         "units": "2",
+         "text": "COSM 78 · Barbering 2 · 2 units"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "COSM 50R"
+         ],
+         "units": "1",
+         "text": "COSM 50R · Written Preparation for Barbering State Board Exam · 1 unit"
+        },
+        {
+         "kind": "choice",
+         "codes": [
+          "COSM 95A",
+          "COSM 95B",
+          "COSM 95C",
+          "COSM 95D"
+         ],
+         "units": "1-4",
+         "text": "Salon Experience · 1-4 units"
+        }
+       ]
+      },
+      {
+       "label": "Semester 3",
+       "units": "15",
+       "items": [
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "SMC GE Area 3 Course · 3 units"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "SMC GE Area 2 Course · 3 units"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "SMC GE Area 4 Course · 3 units"
+        },
+        {
+         "kind": "elective",
+         "codes": [],
+         "units": "3",
+         "text": "Elective Course(s) · 3 units"
+        },
+        {
+         "kind": "elective",
+         "codes": [],
+         "units": "3",
+         "text": "Elective Course(s) · 3 units"
+        }
+       ]
+      },
+      {
+       "label": "Semester 4",
+       "units": "15",
+       "items": [
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "SMC GE Area 5 Course · 3 units"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "SMC GE Area 1B Course · 3 units"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3",
+         "text": "SMC GE Area 6 Course · 3 units"
+        },
+        {
+         "kind": "elective",
+         "codes": [],
+         "units": "3",
+         "text": "Elective Course(s) · 3 units"
+        },
+        {
+         "kind": "elective",
+         "codes": [],
+         "units": "3",
+         "text": "Elective Course(s) · 3 units"
+        }
+       ]
+      }
+     ],
+     "notes": [],
+     "placed": {
+      "COSM 10A": 0,
+      "COSM 10B": 0,
+      "COSM 11A": 0,
+      "COSM 11B": 0,
+      "COSM 11C": 0,
+      "COSM 11D": 0,
+      "COSM 20": 1,
+      "COSM 21A": 1,
+      "COSM 21B": 1,
+      "COSM 21C": 1,
+      "COSM 21E": 1,
+      "COSM 42": 1,
+      "COSM 30": 2,
+      "COSM 31A": 2,
+      "COSM 31C": 2,
+      "COSM 31E": 2,
+      "COSM 77": 2,
+      "COSM 78": 3,
+      "COSM 50R": 3,
+      "COSM 95A": 3,
+      "COSM 95B": 3,
+      "COSM 95C": 3
+     },
+     "not_placed": [
+      "COSM 49R"
+     ]
+    },
+    "checks": {
+     "checked": false,
+     "coverage": {
+      "placed": 23,
+      "listed": 25
+     },
+     "additions": 0,
+     "arithmetic": "incomplete",
+     "reviewer": null
+    },
+    "build": "9f60f746ea49",
+    "built": "2026-10-06"
    }
   }
  ]

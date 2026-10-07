@@ -1444,6 +1444,12 @@
     ".cplpw-rmini { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; }",
     ".cplpw-rmini li { font-size:.8rem; font-weight:600; border:1px solid var(--border); border-radius:4px; padding:2px 8px; background: var(--surface-subtle); color: var(--text-body); font-variant-numeric:tabular-nums; }",
     ".cplpw-rmini li.here { border-color: var(--cobalt); background: var(--surface-opaque); }",
+    ".cplpw-rterm.placed { border-style:solid; }",
+    ".cplpw-rterm .cplpw-rmini { flex-direction:column; flex-wrap:nowrap; }",
+    ".cplpw-rmini li.slot { font-weight:400; border-style:dashed; color: var(--text-muted); }",
+    ".cplpw-rmini li.other { font-weight:400; }",
+    ".cplpw-rseq a { color: var(--cobalt); }",
+    ".cplpw-rseq a:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
     /* the gaps */
     ".cplpw-rgaps { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; padding:14px; display:grid; gap:10px; min-width:0; }",
     ".cplpw-rgaps > p { margin:0; font-size:.88rem; color: var(--text-muted); }",
@@ -1593,11 +1599,81 @@
     return box;
   }
 
+  // A read map (S340): the terms as the college prints them, each of the record's
+  // courses in the term the map gives it, and the courses it never names in the tray.
+  // The placement is the display build's (display.map.placed), never matched here.
+  function roepMapItem(rec, it) {
+    var courses = rec.display.courses || {};
+    var plain = String(it.text || "").split(/\s+[|·]\s+/).join(" · ");
+    if (it.kind === "course" && it.codes.length === 1 && courses[it.codes[0]]) {
+      var code = it.codes[0], c = courses[code];
+      var li = el("li", c.here ? "here" : null, code + (c.title ? " " + c.title : "") + (it.units ? " · " + it.units + " " + rec.measure : ""));
+      li.setAttribute("data-code", code);
+      if (c.here) li.appendChild(el("span", "sr", " (CPL here)"));
+      return li;
+    }
+    if (it.codes.length > 1) {
+      var mine = it.codes.filter(function (k) { return courses[k]; });
+      var here = mine.filter(function (k) { return courses[k].here; });
+      var ch = el("li", here.length ? "here" : null, plain + ": one or more of " + it.codes.join(", "));
+      ch.setAttribute("data-codes", it.codes.join(","));
+      if (here.length) ch.appendChild(el("span", "sr", " (CPL here on " + here.join(", ") + ")"));
+      return ch;
+    }
+    return el("li", it.codes.length ? "other" : "slot", plain);
+  }
+
+  function roepReadMap(rec, box) {
+    var map = rec.display.map;
+    var note = el("div", "cplpw-rseq");
+    note.appendChild(el("b", null, "The college's map, term by term"));
+    var p = el("p", null, map.text + " ");
+    if (map.url) {
+      var a = el("a", null, "Open the college's map");
+      a.href = map.url; a.target = "_blank"; a.rel = "noopener";
+      p.appendChild(a);
+    }
+    note.appendChild(p);
+    note.appendChild(el("p", null, "The catalog keeps the rule and the map names the pick: each course of the record sits in the term the map gives it."));
+    (map.notes || []).forEach(function (n) { note.appendChild(el("p", null, n)); });
+    box.appendChild(note);
+    var terms = el("ol", "cplpw-rterms");
+    terms.setAttribute("aria-label", "Terms");
+    (map.terms || []).forEach(function (t) {
+      var li = el("li", "cplpw-rterm placed");
+      li.appendChild(el("h4", null, t.label + (t.units ? " · " + t.units + " " + rec.measure : "")));
+      var ul = el("ul", "cplpw-rmini");
+      t.items.forEach(function (it) { ul.appendChild(roepMapItem(rec, it)); });
+      li.appendChild(ul);
+      terms.appendChild(li);
+    });
+    box.appendChild(terms);
+    var courses = rec.display.courses || {};
+    var left = map.not_placed || [];
+    var tray = el("div", "cplpw-rtray");
+    tray.appendChild(el("h4", null, left.length
+      ? "Not on the college's map: " + left.length + " course" + (left.length === 1 ? "" : "s")
+      : "Every course in the record sits in a term."));
+    if (left.length) {
+      var mini = el("ul", "cplpw-rmini");
+      left.forEach(function (code) {
+        var here = !!(courses[code] && courses[code].here);
+        var li = el("li", here ? "here" : null, code);
+        if (here) li.appendChild(el("span", "sr", " (CPL here)"));
+        mini.appendChild(li);
+      });
+      tray.appendChild(mini);
+    }
+    box.appendChild(tray);
+    return box;
+  }
+
   function roepTermMap(rec) {
     var box = el("section", "cplpw-rmap");
     box.setAttribute("aria-label", "Pathway, term by term");
     box.appendChild(el("h3", null, "Pathway, term by term"));
     var map = rec.display.map || {};
+    if (map.status === "read") return roepReadMap(rec, box);
     var note = el("div", "cplpw-rseq");
     note.appendChild(el("b", null, map.status === "refused" ? "The college's map host refused the reader"
       : map.status === "open" ? "A map is on record and has not been read yet"

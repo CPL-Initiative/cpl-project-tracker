@@ -86,12 +86,15 @@ def record_read(record: dict) -> dict:
     return out
 
 
-def rows() -> list[dict]:
+def rows(folder: str = "records") -> list[dict]:
+    """The load's rows from records/. The ROEP display builder also reads
+    records_maps/ through this (S340): the records filed there wait on Sam's go
+    to enter the table, so the load itself never reads that folder."""
     review = json.load(open(REVIEW))
     verdicts = review.get("verdicts") or {}
     readings = json.load(open(READINGS))["readings"]
     out = []
-    for path in sorted(glob.glob(os.path.join(PILOT, "records", "*.json"))):
+    for path in sorted(glob.glob(os.path.join(PILOT, folder, "*.json"))):
         key = os.path.splitext(os.path.basename(path))[0]
         rec = json.load(open(path))
         src = json.load(open(os.path.join(ROOT, rec["source_file"])))

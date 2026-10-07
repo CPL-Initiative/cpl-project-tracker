@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the five pilot colleges: how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's seven colleges (the pilot's five, Santa Monica and Irvine Valley): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
- "_read_at": "2026-10-04",
- "_read_by": "SkyAmend (S327) through the Supabase MCP",
+ "_read_at": "2026-10-06",
+ "_read_by": "SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Cerritos College": {
@@ -43,6 +43,17 @@
     "untitled_exhibits": 1
    },
    "PEX 126": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   }
+  },
+  "Irvine Valley College": {
+   "ART 85": {
     "recs": 1,
     "exhibits": 1,
     "exhibits_by_source": {
@@ -1641,7 +1652,7 @@
      },
      {
       "recs": 1,
-      "title": "Structured Self Development (SSD-1)",
+      "title": "Structured Self Development (SSD) I",
       "source": "ACE"
      },
      {
@@ -2738,6 +2749,383 @@
     "untitled_exhibits": 0
    }
   },
+  "Santa Monica College": {
+   "ACCTG 15": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ACCTG 15, Individual Income Taxes",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ACCTG 19A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ACCTG 19A, IRS Volunteer Income Assistant (VITA) Program - Tax Preparer",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 10A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 10B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 11A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 11B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 11C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 11D": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 20": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 21A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 21B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 21C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 21E": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 30": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 31A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 31C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 31E": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 42": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 50R": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 64": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 77": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 78": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 95A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 95B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSM 95C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Barbering license",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
   "West Los Angeles College": {
    "ALD HTH 021": {
     "recs": 2,
@@ -3081,7 +3469,7 @@
     "untitled_exhibits": 0
    },
    "AVIATEK 002": {
-    "recs": 6,
+    "recs": 5,
     "exhibits": 13,
     "exhibits_by_source": {
      "ACE": 9,
@@ -3089,7 +3477,7 @@
     },
     "titles": [
      {
-      "recs": 4,
+      "recs": 3,
       "title": "Airman",
       "source": "ACE"
      },
@@ -3231,6 +3619,11 @@
      },
      {
       "recs": 1,
+      "title": "Computer Detection Systems Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
       "title": "FAA 147 School Airframe Mechanic Training",
       "source": "MAP"
      },
@@ -3253,11 +3646,6 @@
       "recs": 1,
       "title": "Federal Aviation Administration Powerplant",
       "source": "MAP"
-     },
-     {
-      "recs": 1,
-      "title": "Special Electronic Devices Repairer",
-      "source": "ACE"
      }
     ],
     "untitled_exhibits": 0
@@ -3672,7 +4060,7 @@
     "titles": [
      {
       "recs": 1,
-      "title": "CH-53E Helicopter Mechanic Organizational Maintenance",
+      "title": "CH-52E Helicopter Mechanic Organizational Maintenance",
       "source": "ACE"
      },
      {

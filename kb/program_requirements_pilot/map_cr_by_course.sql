@@ -1,13 +1,13 @@
 -- The read behind kb/program_requirements_pilot/map_cr_by_course.json: MAP's credit
 -- recommendations per course code at the harvest's colleges. Counts and exhibit titles
 -- only; no student column is selected. Run through the Supabase MCP (the table is
--- reviewer-gated) and file the rows with kb/_build_roep_display.py --map-read <file>.
+-- reviewer-gated) and file the rows in map_cr_by_course.json by hand.
 -- A college_course string naming several courses counts toward each course it names.
 with u as (
   select c.college_name college, u.source_code, u.exhibit_id, u.credit_rec,
          (regexp_matches(u.college_course, '(?:^|,\s*)([A-Z][A-Z0-9&/ ]*?)-([0-9A-Z][0-9A-Z.]*)', 'g')) m
   from map_colleges c join map_college_cr_unit u on u.college_id = c.college_id
-  where c.college_name in ('Cerritos College','Mt. San Antonio College','Riverside City College','San Diego Miramar College','West Los Angeles College')
+  where c.college_name in ('Cerritos College','Irvine Valley College','Mt. San Antonio College','Riverside City College','San Diego Miramar College','Santa Monica College','West Los Angeles College')
     and coalesce(u.college_course,'') <> ''
 ), p as (
   select college, m[1] || ' ' || m[2] code, source_code, exhibit_id, credit_rec from u

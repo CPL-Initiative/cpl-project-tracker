@@ -3330,6 +3330,9 @@ const MAP_STATUS_LINE: Record<string, string> = {
   refused: "the college's program map host refused the harvest's reader, so the map is not read",
   not_read: "the college links a program map the harvest has not read yet",
   open: "the college's map pages answer; the harvest has not read this program's map yet",
+  // S340: the display build carries a read map's terms (display.map.terms); the page
+  // places each course in its term. Deploy before a display build with a read map lands.
+  read: "the harvest has read the college's term-by-term map for this program",
 };
 
 function displayLines(d: any, college: string, measure: string, total: string): string {
