@@ -113,8 +113,12 @@ DEFINITIONS = OrderedDict([
                  "the college's faculty approve one."),
     ("up_to", "Up to: the most units (hours, for a noncredit program) of the program a learner could "
               "meet through CPL this college has articulated, taking the CPL course in every choice and "
-              "the option with more CPL. It counts only the first kind. Where a college's pathway map is "
-              "read, the map's recommended path gives a second figure."),
+              "the option with more CPL. It counts only the first kind. Where the catalog prints no minimum "
+              "for a choice and the college's map prints one, the choice counts at the map's least, through "
+              "a CPL course where it holds one."),
+    ("path", "Along the college's map: the same count, following the college's term-by-term map. A "
+             "course the map names inside a choice counts in place of the CPL course, and a choice the map "
+             "leaves open counts as the up-to figure counts it. Shown only where the map is read."),
 ])
 
 GENERIC_TITLES = {"credit by exam"}
@@ -333,7 +337,39 @@ def courses_of(block):
     return block.get("courses") or []
 
 
-def plan(blocks: list, has, units_of=None) -> dict:
+def least(units) -> float | None:
+    """The least a map prints for an item: "1-4" is 1, "3" is 3, nothing is None."""
+    m = re.match(r"\s*(\d+(?:\.\d+)?)", str(units or ""))
+    return float(m.group(1)) if m else None
+
+
+def map_hints(m) -> dict:
+    """What a read map adds to plan() (Sam, open-asks sheet 47 card 9, 2026-10-07, as proposed:
+    "Count the least the map prints"). `named`: the courses it prints on their own line, its
+    picks. `choices`: each choice it prints whole (two or more courses on one line) and the
+    least units it prints for it, such as Santa Monica's Salon Experience, COSM 95A-95D, 1-4 units."""
+    named, choices = set(), []
+    if not m or m.get("status") != "read":
+        return {"named": named, "choices": choices}
+    for t in m.get("terms") or []:
+        for it in t.get("items") or []:
+            codes = [ck(c) for c in it.get("codes") or []]
+            if it.get("kind") == "course" and len(codes) == 1:
+                named.add(codes[0])
+            elif len(codes) > 1 and least(it.get("units")):
+                choices.append({"codes": set(codes), "least": least(it.get("units"))})
+    return {"named": named, "choices": choices}
+
+
+def plan(blocks: list, has, units_of=None, hints=None, path=False) -> dict:
+    """The CPL figure over a record's blocks. `hints` (map_hints) carry a read map: where the
+    catalog prints no minimum for a choice and the map prints a least for it, the choice takes
+    the map's least, through a CPL course where the choice holds one. With `path`, the figure
+    follows the map: a course the map names inside a choice counts in place of the CPL course,
+    and a choice the map leaves open counts as the up-to figure counts it."""
+    hints = hints or {"named": set(), "choices": []}
+    named = hints["named"] if path else set()
+
     def units(c):
         if units_of:
             return units_of(c)
@@ -354,8 +390,15 @@ def plan(blocks: list, has, units_of=None) -> dict:
 
     def best(c):
         opts = [c] + list(c.get("alternatives") or [])
+        picked = [o for o in opts if ck(o["code"]) in named and ck(o["code"]) not in taken] if len(opts) > 1 else []
+        if picked:
+            return picked[0]
         with_cpl = [o for o in opts if fresh(o)]
         return with_cpl[0] if with_cpl else c
+
+    def map_least(b):
+        codes = {ck(x["code"]) for c in courses_of(b) for x in [c] + list(c.get("alternatives") or [])}
+        return sum(ch["least"] for ch in hints["choices"] if ch["codes"] & codes)
 
     def block_plan(b):
         picks, cpl, req, counted = [], 0.0, 0.0, []
@@ -369,7 +412,7 @@ def plan(blocks: list, has, units_of=None) -> dict:
                     counted.append(p)
         else:
             ranked = sorted((best(c) for c in courses_of(b) if ck(best(c)["code"]) not in taken),
-                            key=lambda p: (-(1 if has(p) else 0), -units(p)))
+                            key=lambda p: (-(1 if ck(p["code"]) in named else 0), -(1 if has(p) else 0), -units(p)))
             if b.get("rule") == "choose_courses":
                 for p in ranked[: (b.get("minimum") or 1)]:
                     picks.append(p)
@@ -378,7 +421,8 @@ def plan(blocks: list, has, units_of=None) -> dict:
                         cpl += units(p)
                         counted.append(p)
             else:
-                need = float(b.get("minimum") or 0) or float(((b.get("stated") or {}).get("min")) or 0)
+                need = float(b.get("minimum") or 0) or float(((b.get("stated") or {}).get("min")) or 0) \
+                    or float(map_least(b) or 0)
                 got = 0.0
                 for p in ranked:
                     if got >= need:
@@ -399,7 +443,7 @@ def plan(blocks: list, has, units_of=None) -> dict:
                 continue
             seen.add(g)
             lanes = [block_plan(x) for x in blocks if x.get("option_group") == g]
-            lanes.sort(key=lambda lp: -lp["cpl"])
+            lanes.sort(key=lambda lp: (-sum(1 for p in lp["picks"] if ck(p["code"]) in named), -lp["cpl"]))
             chosen = lanes[0]
         else:
             chosen = block_plan(b)
@@ -609,7 +653,10 @@ def build() -> dict:
                 return float(c["units"])
             return float(((listed.get(ck(c["code"])) or {}).get("units")) or 0)
 
-        pl = plan(blocks, has, units_of)
+        seq = term_map(key, college, list(courses))
+        hints = map_hints(seq)
+        pl = plan(blocks, has, units_of, hints)
+        along = plan(blocks, has, units_of, hints, path=True) if seq else None
         total = {"min": program.get("total_units", {}).get("min") if program.get("total_units") else None,
                  "max": program.get("total_units", {}).get("max") if program.get("total_units") else None}
         verdict = (verdicts.get(key) or {}).get("v")
@@ -619,12 +666,10 @@ def build() -> dict:
                    if x.get("catalog_addition"))
         display = OrderedDict()
         display["v"] = SHAPE_VERSION
-        seq = term_map(key, college, list(courses))
         display["figure"] = {"up_to": pl["cpl"], "measure": measure, "total": total, "picks": pl["picks"],
-                             "path": None,
-                             "path_why": "The college's term-by-term map is read; the figure along its path is "
-                                         "not computed yet." if seq else
-                                         "No pathway map has been read for this program."}
+                             "path": along["cpl"] if along else None,
+                             "path_picks": along["picks"] if along else [],
+                             "path_why": None if along else "No pathway map has been read for this program."}
         display["counts"] = {"courses": len(courses),
                              "here": sum(1 for e in courses.values() if e.get("here")),
                              "adopt": sum(1 for e in courses.values() if e.get("adopt")),

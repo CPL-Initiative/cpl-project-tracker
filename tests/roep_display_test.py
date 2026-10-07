@@ -108,6 +108,31 @@ rep = [{"rule": "all", "courses": [{"code": "C1", "units": 3}, {"code": "N1", "u
 pr = b.plan(rep, has)
 check(pr["cpl"] == 6 and pr["picks"] == ["C1", "C2"],
       "plan: a course in two blocks counts once, and a choice never picks it again (got %s %s)" % (pr["cpl"], pr["picks"]))
+# A read map (Sam, open-asks sheet 47 card 9, 2026-10-07, as proposed): a choice with no printed
+# minimum takes the least the map prints for it, through a CPL course; along the map, a course the map
+# names inside a choice counts in place of the CPL course, and a choice it leaves open counts as up-to.
+salon = [{"rule": "all", "courses": [{"code": "C1", "units": 2}]},
+         {"rule": "choose_units", "minimum": None, "stated": {"min": None},
+          "courses": [{"code": "C7", "units": 1}, {"code": "C8", "units": 3}]}]
+m = {"status": "read", "terms": [{"label": "T1", "items": [
+    {"kind": "course", "codes": ["C1"], "units": "2"},
+    {"kind": "choice", "codes": ["C7", "C8", "C9"], "units": "1-4"}]}]}
+check(b.plan(salon, has)["cpl"] == 2, "plan: a choice with no printed minimum and no map counts nothing")
+h = b.map_hints(m)
+check(h["named"] == {b.ck("C1")} and h["choices"][0]["least"] == 1.0,
+      "map_hints: a course on its own line is a pick, and a choice printed whole carries its least (got %s)" % h)
+check(b.plan(salon, has, None, h)["cpl"] == 3, "plan: the choice takes the map's least, 1 unit, through a CPL course")
+check(b.plan(salon, has, None, h, path=True)["cpl"] == 3, "plan: along the map, an open choice counts as up-to does")
+check(b.map_hints({"status": "refused"}) == {"named": set(), "choices": []}, "map_hints: an unread map adds nothing")
+pick = [{"rule": "choose_courses", "minimum": 1, "courses": [{"code": "C2", "units": 3}, {"code": "N4", "units": 3}]},
+        {"rule": "all", "courses": [{"code": "N5", "units": 3, "alternatives": [{"code": "C3", "units": 3}]}]}]
+mp = {"status": "read", "terms": [{"label": "T1", "items": [{"kind": "course", "codes": ["N4"]},
+                                                           {"kind": "course", "codes": ["N5"]}]}]}
+hp = b.map_hints(mp)
+check(b.plan(pick, has, None, hp)["cpl"] == 6, "plan: up-to still takes the CPL course in every choice")
+pp = b.plan(pick, has, None, hp, path=True)
+check(pp["cpl"] == 0 and pp["picks"] == [],
+      "plan: along the map, the map's picks (N4 in a choice, N5 over its or) count in place of the CPL course (got %s)" % pp)
 
 # 3. the committed outputs agree with each other
 data = load_js()
@@ -135,8 +160,17 @@ for p in progs:
             return float(c["units"])
         return float((d["courses"].get(c["code"]) or {}).get("units_from_state_file") or 0)
 
-    again = b.plan(p["record"]["blocks"], lambda c, d=d: bool((d["courses"].get(c["code"]) or {}).get("here")), units_of)
+    here = lambda c, d=d: bool((d["courses"].get(c["code"]) or {}).get("here"))
+    hints = b.map_hints(d["map"])
+    again = b.plan(p["record"]["blocks"], here, units_of, hints)
     check(again["cpl"] == d["figure"]["up_to"], "%s: up-to figure recomputes from the page's data (%s)" % (p["key"], again["cpl"]))
+    if d["map"]["status"] == "read":
+        along = b.plan(p["record"]["blocks"], here, units_of, hints, path=True)
+        check(along["cpl"] == d["figure"]["path"] and d["figure"]["path"] <= d["figure"]["up_to"],
+              "%s: the figure along the map recomputes from the page's data, never above up-to (%s)" % (p["key"], along["cpl"]))
+    else:
+        check(d["figure"]["path"] is None and "No pathway map" in d["figure"]["path_why"],
+              "%s: no read map, so no figure along one" % p["key"])
     codes = {x["code"] for bl in p["record"]["blocks"] for c in bl["courses"] for x in [c] + (c.get("alternatives") or [])}
     check(codes == set(d["courses"]), "%s: one course entry per course the record names" % p["key"])
 
@@ -155,17 +189,22 @@ for p in reads:
           "%s: every course of the record is placed or unplaced, once" % p["key"])
     check(all(b.ck(c) in {b.ck(x) for it in m["terms"][n]["items"] for x in it["codes"]} for c, n in m["placed"].items()),
           "%s: a placed course is named in the term it is placed in" % p["key"])
-    check("not computed yet" in p["display"]["figure"]["path_why"],
-          "%s: the path figure says the map is read and the figure is not computed yet" % p["key"])
+    check(p["display"]["figure"]["path"] is not None and p["display"]["figure"]["path_why"] is None,
+          "%s: a read map carries the figure along it" % p["key"])
 sm = [p for p in progs if p["key"] == "smc_43767"]
 check(bool(sm) and sm[0]["display"]["map"]["not_placed"] == ["COSM 49R"] and sm[0]["display"]["map"]["placed"]["COSM 95A"] == 3,
       "Santa Monica: COSM 49R alone is off the map, and the Salon Experience choice sits in its fourth term")
-check(bool(sm) and sm[0]["display"]["figure"]["up_to"] == 21.5,
-      "Santa Monica Barbering reads up to 21.5 units: COSM 11C, printed in Level 1 and Level 4, counts once")
+check(bool(sm) and sm[0]["display"]["figure"]["up_to"] == 22.5 and sm[0]["display"]["figure"]["path"] == 22.5,
+      "Santa Monica Barbering reads up to 22.5 units and 22.5 along its map: COSM 11C counts once, and Salon "
+      "Experience counts at the 1 unit the map prints (sheet 47 card 9)")
 iv = [p for p in progs if p["key"] == "ivc_10265"]
-check(bool(iv) and iv[0]["display"]["figure"]["up_to"] == 3.0, "Irvine Valley Art reads up to 3 units: ART 85 counts once")
-check("are filed in records_maps/" in open(receipt).read() if os.path.exists(receipt) else False,
-      "the receipt says which of its programs the table does not hold yet")
+check(bool(iv) and iv[0]["display"]["figure"]["up_to"] == 3.0 and iv[0]["display"]["figure"]["path"] == 3.0,
+      "Irvine Valley Art reads up to 3 units and 3 along its map: ART 85 counts once")
+# Sam loaded both on open-asks sheet 47 card 8 (2026-10-07): every record is filed in records/,
+# so the receipt names none waiting.
+check(all(p["filed"] == "records" for p in progs) and "are filed in records_maps/" not in
+      (open(receipt).read() if os.path.exists(receipt) else ""),
+      "every record is filed in records/ and the receipt names none waiting")
 
 # 4. the figure the approved mock-up shows for the hand-built map
 iw = [p for p in progs if p["key"] == "cerritos_42158"]

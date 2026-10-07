@@ -3376,7 +3376,12 @@ function displayLines(d: any, college: string, measure: string, total: string): 
   if (!f.up_to) out += `  CPL figure: no course in this program carries CPL ${college} has articulated yet.\n`;
   else if (total) out += `  CPL figure: up to ${upTo} of the ${total} the catalog prints can be met through CPL ${college} has articulated, taking the CPL course in every choice.\n`;
   else out += `  CPL figure: ${upTo} of this program's courses carry CPL ${college} has articulated; the catalog prints no total to measure against.\n`;
-  out += `  Recommended-path figure: TBA. ${f.path_why || "No pathway map has been read for this program."}\n`;
+  // The figure along a read map (Sam, open-asks sheet 47 card 9): the build follows the map's
+  // picks. Until a map is read, the figure stays TBA.
+  if (f.path != null) {
+    const along = fmtAmount(f.path, null, measure) || `0 ${measure}`;
+    out += `  Figure along the college's map: ${along}${total ? ` of the ${total} the catalog prints` : ""} can be met through CPL ${college} has articulated, taking the course the map names inside a choice and the CPL course where the map leaves a choice open.\n`;
+  } else out += `  Recommended-path figure: TBA. ${f.path_why || "No pathway map has been read for this program."}\n`;
   const m = d.map || {};
   if (MAP_STATUS_LINE[m.status]) out += `  Term-by-term map: ${MAP_STATUS_LINE[m.status]}${m.host ? ` (${m.host})` : ""}.\n`;
   const differ = (d.gaps || []).filter((g: any) => g.owner === "college").slice(0, 4);

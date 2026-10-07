@@ -295,7 +295,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6311
+     "line": 6316
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -902,7 +902,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2514,
+     "line": 2525,
      "tabs": [
       "cpl-pathways"
      ]
@@ -968,7 +968,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4774
+     "line": 4779
     }
    ],
    "main_committers": []
@@ -1368,7 +1368,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2513,
+     "line": 2524,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1834,7 +1834,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5636
+     "line": 5641
     }
    ],
    "main_committers": []
@@ -2168,7 +2168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2512,
+     "line": 2523,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4798,7 +4798,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2675,
+     "line": 2686,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4868,7 +4868,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2669,
+     "line": 2680,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5147,7 +5147,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1923,
+     "line": 1934,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5190,7 +5190,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2642,
+     "line": 2653,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5213,7 +5213,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2082,
+     "line": 2093,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5262,7 +5262,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2683,
+     "line": 2694,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5411,7 +5411,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2656,
+     "line": 2667,
      "tabs": [
       "cpl-pathways"
      ]
@@ -18331,7 +18331,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 3534
+     "line": 3539
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -18449,7 +18449,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5404
+     "line": 5409
     }
    ],
    "main_committers": []
@@ -18541,7 +18541,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5942
+     "line": 5947
     }
    ],
    "main_committers": []
@@ -18607,7 +18607,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 4100
+     "line": 4105
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -18783,7 +18783,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5408
+     "line": 5413
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -18985,7 +18985,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 6560
+     "line": 6565
     },
     {
      "id": "module:sierra_training.js",
@@ -19007,7 +19007,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3786
+     "line": 3791
     },
     {
      "id": "script:kb/_course_title_cleanup_apply.py",
@@ -19179,7 +19179,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4113
+     "line": 4118
     }
    ],
    "main_committers": []
@@ -20325,7 +20325,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4420
+     "line": 4425
     },
     {
      "id": "module:college_briefing.js",
@@ -21033,7 +21033,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3552
+     "line": 3557
     },
     {
      "id": "module:college_briefing.js",
@@ -21289,7 +21289,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5707
+     "line": 5712
     },
     {
      "id": "module:sierra_training.js",
@@ -21321,7 +21321,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5095
+     "line": 5100
     },
     {
      "id": "module:sierra_training.js",
