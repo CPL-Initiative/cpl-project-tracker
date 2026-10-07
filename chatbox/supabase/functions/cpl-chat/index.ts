@@ -3030,6 +3030,37 @@ function geoLabel(geo: any | null, distance: string = ""): string {
   return parts.length ? ` (${parts.join(", ")})` : "";
 }
 
+// ── One college under the course list's two spellings (S343) ────────────────────
+// The course list spells two continuing-education colleges twice: "North Orange
+// Continuing Education" and "North Orange Continuing Education Credit", and San
+// Diego College of Continuing Education the same (chatbox/build_program_courses.py,
+// same_college). The Credit rows repeat the college's own courses (NOCE's BMGR 455,
+// BUSN 218 and OTEC 100 sit under both names), so a "<college> Credit" row folds
+// into its college, one row per TOP program, the larger count kept. Unfolded, the
+// S342 A/B answer read the duplicate as a second college "about 1 mile away". A
+// Credit name whose base is no college in the rows or in college_geo (Calbright
+// College Credit, its only name) stays as it is. Pure.
+const CREDIT_SPELLING = " Credit";
+function foldCreditSpelling(rows: any[] | null, geoMap: Map<string, any> | null = null): any[] {
+  if (!rows || rows.length === 0) return rows || [];
+  const names = new Set(rows.map((o: any) => o && o.college));
+  const home = (c: string) => {
+    if (!c || !c.endsWith(CREDIT_SPELLING)) return c;
+    const base = c.slice(0, -CREDIT_SPELLING.length);
+    return names.has(base) || (geoMap && geoMap.has(base)) ? base : c;
+  };
+  const byKey = new Map<string, any>();
+  for (const o of rows) {
+    if (!o) continue;
+    const college = home(o.college);
+    const row = college === o.college ? o : { ...o, college };
+    const key = college + "|" + (o.top_code || o.top_title || "");
+    const prev = byKey.get(key);
+    if (!prev || (row.course_count || 0) > (prev.course_count || 0)) byKey.set(key, row);
+  }
+  return [...byKey.values()];
+}
+
 // ── Build offerings context (what colleges TEACH — the adoption basis) ──────────
 function buildOfferingsContext(
   offerings: any[],
@@ -3039,6 +3070,7 @@ function buildOfferingsContext(
   geoMap: Map<string, any> | null = null,
 ): string {
   if (!offerings || offerings.length === 0) return "";
+  offerings = foldCreditSpelling(offerings, geoMap);
 
   // A row is a CORE-discipline match when a query keyword appears in its TOP-program
   // title (the clean discipline label), vs a tangential titles-blob-only match — so
@@ -3498,6 +3530,9 @@ function buildProgramCoursesContext(college: string, rows: any[], terms: string[
   } else {
     ctx += `- Say the program "lists" these courses. The data has no required/elective flag, so never call a course required and never add up the units.\n`;
   }
+  // S342's A/B: Sierra called NOCE's Google IT Support program "a direct lead-in to
+  // industry certs like CompTIA A+, Network+". The catalog names Google only.
+  ctx += `- Name an industry certification (CompTIA A+, Network+, a Microsoft certification) only where a program title or a course title in this section names it, and tie it to that program or course. A course list shows what a program teaches; never say a program leads to, prepares for or covers a certification its titles do not name.\n`;
   ctx += `- The list holds more courses than one student takes. An honors version sits beside its standard course, and a student takes one course of each honors pair. Where other courses look like alternatives, say the catalog or a counselor confirms which ones count.\n`;
   ctx += `- Point the visitor to ${college}'s catalog or a counselor for the order to take courses in, and, for a program that only lists its courses, for which ones are required.\n`;
   ctx += `- If the program asked about is not below, say the catalog data shows no matching program at ${college} by that name; never say the college does not offer it.\n`;
@@ -3750,6 +3785,7 @@ function pickProspectivePairs(
   geoMap: Map<string, any> | null,
 ): Array<any> {
   if (!offerings || offerings.length === 0) return [];
+  offerings = foldCreditSpelling(offerings, geoMap);
   const isCore = (o: any) => {
     const t = (o.top_title || "").toLowerCase();
     return coreKeywords.some((k) => k.length >= 4 && t.includes(k));
