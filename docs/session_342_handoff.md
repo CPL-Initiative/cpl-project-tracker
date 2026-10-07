@@ -4,6 +4,8 @@ date: 2026-10-07
 session: 341 (SkyTerrace)
 tags: [handoff, program-requirements-harvest, cpl-pathways, decision-sheets, library]
 status: current
+superseded: true
+superseded_by: session_343_handoff.md
 ---
 
 # You are Session 342

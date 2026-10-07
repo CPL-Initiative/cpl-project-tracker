@@ -1,26 +1,38 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-10-07",
- "_session": "S341 SkyTerrace (after sheet 47)",
- "_status": "Sam answered all nine cards of Open Asks Sheet 47. Irvine Valley's Art A.A. and Santa Monica's Barbering A.S. are now in the live program records, unchecked. A choice whose catalog prints no minimum now counts at the least the college's map prints, so Santa Monica reads up to 22.5 of 26.5 units, and CPL Pathways gives the figure along each read map. Sierra's deploy and the display update come next. The open-asks series has one Library record. Sheet 48 asks two things.",
+ "_session": "S342 SkyBeacon",
+ "_status": "Sierra now finds a college asked by its initials: asked whether NOCE teaches IT certification courses, she names the Google IT Support Professional Pre-Apprenticeship and its five CIST courses (live since 7 October, 12:23 PT). The program records hold 22 programs, 20 checked, each with its CPL figure. Next is a Progress view for the catalog harvest on the Program Requirements tab, from the mock-up Sam approved; the CPL Queue run builds it.",
  "items": [
   {
-   "id": "s341-sam-sheet48",
+   "id": "s342-sam-check-two-records",
    "for": "Sam",
-   "tab": "library",
-   "text": "Open Asks Sheet 48 (https://claude.ai/artifact/FWGJ2uNEGB1RrhMPrFsaCJ) holds what still waits on you: card 1, whether the Ironworker film's web player stays public; card 2, the team's addresses for CPLLibrary (Drive still shows it shared with camapinitiative alone)."
+   "tab": "program-requirements",
+   "text": "Read Irvine Valley's Art A.A. (10265) and Santa Monica's Barbering A.S. (43767) on the Program Requirements tab. Sierra quotes neither program's requirements until you check it."
   },
   {
-   "id": "s341-fable-display-apply",
-   "for": "Fable",
-   "tab": "program-requirements",
-   "text": "After PR #1896 merges, deploy cpl-chat (after its A/B), then apply display build 8292780f6cd5 in parts under 35 KB and confirm every row with --verify-sql. Handoff 342 has the steps."
+   "id": "s342-sam-cpllibrary-share",
+   "for": "Sam",
+   "tab": "library",
+   "text": "Share the CPLLibrary folder in Drive with the 19 addresses you gave on Open Asks Sheet 48, card 2. The Drive connector refused the share from a session."
   },
   {
    "id": "s341-fable-sheets-to-vault",
    "for": "Fable",
    "tab": "library",
    "text": "Move the other decision sheets and their 13 builders from the public tracker to the vault (Sam, sheet 47 card 4), giving the two template tests synthetic fixtures first; then give each moved sheet a Library record."
+  },
+  {
+   "id": "s342-fable-progress-view",
+   "for": "Fable",
+   "tab": "program-requirements",
+   "text": "Build the Progress view on the Program Requirements tab from the approved mock-up (https://claude.ai/artifact/6Pco7R1NVB5S45evjjfJsr; source prototype/roep_progress_mockup.html): milestones, the parts of the harvest, the next step and what waits on Sam, read live. Handoff 343 has the plan."
+  },
+  {
+   "id": "s342-fable-noce-answer",
+   "for": "Fable",
+   "tab": "cpl-assistant",
+   "text": "Two flaws in Sierra's NOCE answer: she calls the Google IT Support program a lead-in to CompTIA A+ and Network+, which the data does not say, and she reads the course list's duplicate 'North Orange Continuing Education Credit' as a sibling site a mile away."
   },
   {
    "id": "s339-sam-summit-v2",

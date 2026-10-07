@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 524 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 525 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 83 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 54 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 313 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1060** | |
+| Session handoffs | 314 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1062** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,11 +122,11 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- **2026-10-07 (S341 SkyTerrace):** Sierra names each course's term on a read map and By requirement marks a map's pick inside a choice (#1895, neither shown until a map names one or the load lands); Santa Monica's Salon Experience prints no minimum, so the up-to figure counts none of its CPL; Open Asks Sheet 47 card 9 asks how a choice the map leaves open counts; lessons S341; handoff 342.
+- **2026-10-07 (S342 SkyBeacon):** Sierra finds a college asked by its initials and matches aliases as whole words (#1897; NOCE's Google IT Support pre-apprenticeship, smoke 7v; new note `methodology-match-a-short-name-as-a-whole-word`); display build 8292780f6cd5 live on all 22 records as a delta (#1898); the harvest's Progress view mocked up for the CPL Queue run (`prototype/roep_progress_mockup.html`); handoff 343.
+- 2026-10-07 (S341 SkyTerrace): Sierra names each course's term on a read map and By requirement marks a map's pick inside a choice (#1895, neither shown until a map names one or the load lands); Santa Monica's Salon Experience prints no minimum, so the up-to figure counts none of its CPL; Open Asks Sheet 47 card 9 asks how a choice the map leaves open counts; lessons S341; handoff 342.
 - 2026-10-07 (S340 SkyLedger): Santa Monica Barbering A.S. 43767's record (extraction 37548804006) in `records_maps/`; CPL Pathways places each course in its read map's term (display build 9f60f746ea49); `plan()` counts a course once; both dated reads cover seven colleges; open-asks sheet 46 (#1894; vault #264); KB note `methodology-a-postgres-md5-proves-a-transcribed-jsonb-copy` gains the per-row refresh
 - 2026-10-06 (S339 SkyReel): the Noncredit Summit film v2 (#1891: Sarah Explains, unnamed; Sam's greeting; $7 million ongoing; four grants with Calbright; 30,795; Nadia an industry certificate; brighter portraits; MP4s to Drive, never the repo; vault #262); the harvest capture follows a procedure's catalog step, and Santa Monica's first procedure record reads Barbering A.S. from its full-catalog PDF (#1892); handoff 340 (SkyLedger).
 - 2026-10-06 (S338 SkyLantern): the Noncredit Summit deck's draft 2 (vault #247: live count, funding read from the model, Sam's Mt. SAC / NOCE / Calbright calls, Nadia's CompTIA bundle) filed in CPLLibrary/Drafts with its Library record (#1889); the Library filer's Google sign-in set with Sam (#1887 privacy page, #1888 guide); new lessons doc `library_lessons.md`; handoff 339 (SkyReel: the film re-cut first).
 - 2026-10-06 (S337 SkyCompass, scheduled): a second capture list beyond Sam's 20 (`--sample maps`); Irvine Valley Art A.A. 10265's record (extraction 37488863819, PASS); Santa Monica's catalog never links its Barbering program, so a procedure record is next; handoff 338 (#1886).
 - 2026-10-05 (S336 SkyCourier): sheet 42 carried out (outcomes on the 20 live rows, Sierra redeployed, display build 1cb75672ba6c with Miramar's two drafts, drafts on My College now: #1878); open-asks sheet 44; Irvine Valley's and Santa Monica's program maps read into terms (#1876); a signed-off session lets go of its wakes (#1879); KB note `methodology-an-idle-session-still-holds-wakes`; handoff 337.
 - 2026-10-05 (S335 SkyKeel): drafts for the college on the Program Requirements tab (sheet 32 card 2, the harvest-tab half); Miramar's AUTO 156G traced to MAP's 0.3-hour rows, with no credit through it; Sierra names a college gap by its kind; KB note `methodology-trace-a-finding-to-what-students-received`; open-asks sheet 42; handoff 336 (#1874).
-- 2026-10-05 (S334 SkyAnchor): record shape 3 keeps program outcomes as printed (19 of 20 pilot records); a person's verdict is held to the requirements read; CPL Pathways shows each catalog record by requirement or by term; KB note `methodology-a-verdict-covers-the-reading-it-saw`; open-asks sheet 41.
