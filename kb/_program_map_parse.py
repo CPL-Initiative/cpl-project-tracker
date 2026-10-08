@@ -37,13 +37,19 @@ Each item keeps the text as printed and gains a kind:
 The catalog keeps the rule; the map names the pick where it names one (Sam,
 2026-10-04 ~17:35Z, pathway-map-names-the-pick-inside-a-choice).
 
-ACCEPTANCE, stated so a run can fail it. A map is accepted for a program when
-it has at least two terms and every course it names in one of the program's
-own subjects is on the state's Program Course File list for that program. The
-coverage figure (the closed list's courses the map names, directly or inside a
-choice) is reported beside it and never gates: a map that leaves the major's
-choices as list slots names the required core and nothing else, which is a
-correct map (Irvine Valley's Art A.A. names 5 of 23).
+ACCEPTANCE, stated so a run can fail it (Sam, open-asks sheet 50 card 4,
+2026-10-08, as proposed). A map is accepted for a program when it has at least
+two terms and the listed courses it names outnumber the courses it names off
+the list: a course in one of the program's own subjects that the state's
+Program Course File does not list for the program. Each off-list course stays
+on the map, marked (an item's "off_list"), and shows as recommended by the
+college outside the program; Mt. San Antonio's Fire Technology page names 8
+listed courses and three KINF courses the certificate does not list. A map
+that names more off-list courses than listed ones belongs to another program
+and is refused. The coverage figure (the closed list's courses the map names,
+directly or inside a choice) is reported beside it and never gates: a map that
+leaves the major's choices as list slots names the required core and nothing
+else, which is a correct map (Irvine Valley's Art A.A. names 5 of 23).
 
 It reads and writes nothing on the network. `build()` writes the sequence
 records under kb/program_requirements_pilot/sequences/ from the sources filed
@@ -221,10 +227,13 @@ def parse_mtsac(text: str, closed_list: list[dict]) -> dict:
     COURSE, TITLE, UNITS, closed by "Total: <units>". A row whose title opens
     "(or)" is the alternative to the row above it. A line inside a term that is
     no row (Winter: "EMT course see notes section") is a note on that term; the
-    page's echoes of the program's name and its petition line are dropped. The
-    page ends its map at "Program Notes"."""
+    page's echoes of the program's own name (a line ending in its own local code)
+    and its petition line are dropped. A line naming another award's code is kept:
+    the Early Childhood Education page marks where each Child Development
+    certificate falls due ("Certificate: Child Development, L1 M0663"). The page
+    ends its map at "Program Notes"."""
     closed = closed_index(closed_list)
-    title, terms, notes, term = "", [], [], None
+    title, own, terms, notes, term = "", "", [], [], None
     for t in tokens(text):
         if t == "Program Notes":
             break
@@ -234,7 +243,7 @@ def parse_mtsac(text: str, closed_list: list[dict]) -> dict:
             continue
         if term is None:
             if not title and MTSAC_TITLE.match(t) and "\t" not in t:
-                title = t
+                title, own = t, t.split()[-1]
             continue
         if MTSAC_HEAD.match(t):
             continue
@@ -255,7 +264,7 @@ def parse_mtsac(text: str, closed_list: list[dict]) -> dict:
             item = {"text": t.replace("\t", " | "), "units": (cells[2] if len(cells) > 2 else "") or None}
             item.update(classify(code_cell, ttl, closed))
             term["items"].append(item)
-        elif not MTSAC_TITLE.match(t) and not t.startswith("Submit petition"):
+        elif not (own and t.endswith(own)) and not t.startswith("Submit petition"):
             notes.append("%s: %s" % (term["label"], t) if not term["items"] else t)
     return {"map_title": title, "pattern": "Guided Pathways for Success (GPS) suggested sequence",
             "terms": terms, "notes": notes}
@@ -285,7 +294,23 @@ def coverage(parsed: dict, closed_list: list[dict]) -> dict:
 
 
 def accepts(parsed: dict, cov: dict) -> bool:
-    return len(parsed["terms"]) >= 2 and not cov["off_list"]
+    """Two terms or more, and more listed courses named than off-list ones."""
+    return len(parsed["terms"]) >= 2 and len(cov["named"]) > len(cov["off_list"])
+
+
+def marked(parsed: dict, closed_list: list[dict]) -> list[dict]:
+    """The terms, each item naming an off-list course carrying those codes in
+    "off_list". An item with none carries no key, so a map with nothing off the
+    list reads exactly as before the mark existed."""
+    closed, subj = closed_index(closed_list), subjects(closed_list)
+    out = []
+    for term in parsed["terms"]:
+        items = []
+        for it in term["items"]:
+            off = [c for c in it.get("codes") or [] if norm(c) not in closed and c.split()[0] in subj]
+            items.append(dict(it, off_list=off) if off else it)
+        out.append(dict(term, items=items))
+    return out
 
 
 def record(college: str, cn: str, program: dict, parsed: dict, closed_list: list[dict], source: dict) -> dict:
@@ -298,7 +323,7 @@ def record(college: str, cn: str, program: dict, parsed: dict, closed_list: list
         "title": program.get("title"), "award": program.get("award"),
         "source": source,
         "map_title": parsed["map_title"], "pattern": parsed["pattern"],
-        "terms": parsed["terms"], "notes": parsed["notes"],
+        "terms": marked(parsed, closed_list), "notes": parsed["notes"],
         "coverage": cov, "accepted": accepts(parsed, cov),
     }
 
@@ -314,6 +339,10 @@ PROGRAMS = [
     # code the catalog prints in the program's title (Certificate N0486).
     {"college": "Mt. San Antonio College", "control_number": "03086", "slug": "mtsac_03086",
      "source": "mtsac_gps_n0486.json", "map": None, "shape": "mtsac"},
+    # Run 37812133411 (S345, filed S346): the Early Childhood Education AS-T, local
+    # code S0401. Seven terms place all 12 listed CHLD courses, nothing off the list.
+    {"college": "Mt. San Antonio College", "control_number": "33876", "slug": "mtsac_33876",
+     "source": "mtsac_gps_s0401.json", "map": None, "shape": "mtsac"},
 ]
 
 

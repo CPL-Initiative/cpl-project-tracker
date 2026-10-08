@@ -52,6 +52,21 @@ async function seedRoepRecord(page, theme, lay) {
   await page.waitForTimeout(200);
 }
 
+// Narrows CPL Pathways to one college through its College select (Sam, 2026-10-08).
+async function seedCollegeSelect(page) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
+  await page.waitForFunction(() => {
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
+    return s && Array.from(s.options).some((o) => o.value === "Mt. San Antonio College");
+  }, null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-colsel");
+    s.value = "Mt. San Antonio College";
+    s.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+  await page.waitForTimeout(200);
+}
+
 // Seeds the Program Requirements tab's Progress view with the live shape of
 // 2026-10-07 (S343). The sweep aborts every request off the origin, so the
 // tab's Supabase reads fail; the status file (kb/queue_status.json) is served
@@ -553,6 +568,14 @@ module.exports = {
     routes: [{ hash: "cpl-pathways", name: "roep-record-term" }],
     widths: [390, 1440],
     seed: (page) => seedRoepRecord(page, "dark", "term"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cpl-pathways-college": {
+    file: "index.html",
+    title: "CPL Pathways: narrowed to one college",
+    routes: [{ hash: "cpl-pathways", name: "college-select" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedCollegeSelect(page),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the Progress view (S343) ─────────────────────

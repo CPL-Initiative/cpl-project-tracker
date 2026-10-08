@@ -42,6 +42,9 @@
      "kind": "course",
      "codes": [
       "KINF 51A"
+     ],
+     "off_list": [
+      "KINF 51A"
      ]
     }
    ]
@@ -85,6 +88,9 @@
      "kind": "course",
      "codes": [
       "KINF 51B"
+     ],
+     "off_list": [
+      "KINF 51B"
      ]
     }
    ]
@@ -106,6 +112,9 @@
      "units": "1.0",
      "kind": "course",
      "codes": [
+      "KINF 52A"
+     ],
+     "off_list": [
       "KINF 52A"
      ]
     }
@@ -168,5 +177,5 @@
   ],
   "list_slots": 0
  },
- "accepted": false
+ "accepted": true
 }

@@ -1,0 +1,260 @@
+{
+ "_what": "A program's term-by-term map as the college publishes it, read by kb/_program_map_parse.py from the text a college page read printed. The catalog keeps the rule; the map names the pick.",
+ "record_shape": "sequence 1",
+ "college": "Mt. San Antonio College",
+ "control_number": "33876",
+ "title": "Early Childhood Education",
+ "award": "A.S. T Degree",
+ "source": {
+  "url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=S0401&desc=Early+Childhood+Education%2C+AS-T+%28Cal-GETC%29+S0401",
+  "final_url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=S0401&desc=Early+Childhood+Education%2C+AS-T+%28Cal-GETC%29+S0401",
+  "run": "college-page-read run 37812133411",
+  "read_on": "2026-10-08",
+  "sha256": "88eca17656436a25",
+  "reader": "kb/_college_page_read.py (plan kb/college_reads/mtsac_program_maps.json, read 4)"
+ },
+ "map_title": "Early Childhood Education, AS-T (Cal-GETC) S0401",
+ "pattern": "Guided Pathways for Success (GPS) suggested sequence",
+ "terms": [
+  {
+   "label": "Fall Semester (Year 1)",
+   "units": "13.0",
+   "items": [
+    {
+     "text": "CHLD 5 | Prin & Prac - CD Programs  | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 5"
+     ]
+    },
+    {
+     "text": "CHLD 11 | Child & Adolescent Development  | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 11"
+     ]
+    },
+    {
+     "text": "ENGL C1000 | Academic Reading and Writing | 4.0",
+     "units": "4.0",
+     "kind": "course",
+     "codes": [
+      "ENGL C1000"
+     ]
+    },
+    {
+     "text": "CGTC ARTS | Arts | 3.0",
+     "units": "3.0",
+     "kind": "ge",
+     "codes": []
+    }
+   ]
+  },
+  {
+   "label": "Winter Semester (Year 1)",
+   "units": "3.0",
+   "items": [
+    {
+     "text": "CHLD 6 | Intro to Child Curriculum | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 6"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Spring Semester (Year 1)",
+   "units": "12.0",
+   "items": [
+    {
+     "text": "CHLD 1 | Child, Family, Community  | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 1"
+     ]
+    },
+    {
+     "text": "CHLD 64 | Health, Safety & Nutrition  | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 64"
+     ]
+    },
+    {
+     "text": "CGTC MATH | Math | 3.0",
+     "units": "3.0",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "CGTC SCNC1 | Physical Science | 3.0",
+     "units": "3.0",
+     "kind": "ge",
+     "codes": []
+    }
+   ]
+  },
+  {
+   "label": "Summer Semester (Year 1)",
+   "units": "4.0",
+   "items": [
+    {
+     "text": "COMM C1000 | Public Speaking | 4.0",
+     "units": "4.0",
+     "kind": "course",
+     "codes": [
+      "COMM C1000"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Fall Semester (Year 2)",
+   "units": "13.0",
+   "items": [
+    {
+     "text": "CHLD 50 | Teaching in a Diverse Society  | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 50"
+     ]
+    },
+    {
+     "text": "CGTC CRTH | Critical Thinking | 4.0",
+     "units": "4.0",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "CHLD 66 | Early Child Observe & Assess | 2.0",
+     "units": "2.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 66"
+     ]
+    },
+    {
+     "text": "CHLD 66L | Early Child Obser & Assess Lab | 1.0",
+     "units": "1.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 66L"
+     ]
+    },
+    {
+     "text": "CGTC ETHS | Ethnic Studies | 3.0",
+     "units": "3.0",
+     "kind": "ge",
+     "codes": []
+    }
+   ]
+  },
+  {
+   "label": "Winter Semester (Year 2)",
+   "units": "3.0",
+   "items": [
+    {
+     "text": "CGTC HUM | Humanities | 3.0",
+     "units": "3.0",
+     "kind": "ge",
+     "codes": []
+    }
+   ]
+  },
+  {
+   "label": "Spring Semester (Year 2)",
+   "units": "16.0",
+   "items": [
+    {
+     "text": "CGTC BEHAV | Social & Behavioral Sci | 3.0",
+     "units": "3.0",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "CGTC SCNC2 | Biological Science | 3.0",
+     "units": "3.0",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "CGTC LAB | LAB | 1.0",
+     "units": "1.0",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "ELEC TRAN | Transfer Course | 3.0",
+     "units": "3.0",
+     "kind": "ge",
+     "codes": []
+    },
+    {
+     "text": "CHLD 67 | Early Chld Education Prac | 2.0",
+     "units": "2.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 67"
+     ]
+    },
+    {
+     "text": "CHLD 67L | ECE Practicum Laboratory | 1.0 · CHLD 86 | (or) Infant Toddler Practicum | 2.0",
+     "units": "1.0",
+     "kind": "choice",
+     "codes": [
+      "CHLD 67L",
+      "CHLD 86"
+     ]
+    },
+    {
+     "text": "CHLD 87 | Infant Toddler Field Work Exp | 1.0",
+     "units": "1.0",
+     "kind": "course",
+     "codes": [
+      "CHLD 87"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Certificate: Child Development, L1 M0663",
+  "Submit certificate petition to A&R via portal #45",
+  "Apply to transfer to CSU Aug 1-Nov 30",
+  "Certificate: Child Development, LII - N0656",
+  "Certificate: Child Development, LIII - N0655",
+  "Immunizations Req'd: CHLD 66, 67, 69, 91, 86, 87",
+  "visit: https://www.mtsac.edu/cdc/immunization/",
+  "Consider CSU American Inst. if transferring to CSU",
+  "CHLD 86, 87, 79 corequisites, CHLD 86 reqs CHLD 73"
+ ],
+ "coverage": {
+  "closed_list": 12,
+  "named": [
+   "CHLD 5",
+   "CHLD 11",
+   "CHLD 6",
+   "CHLD 1",
+   "CHLD 64",
+   "CHLD 50",
+   "CHLD 66",
+   "CHLD 66L",
+   "CHLD 67",
+   "CHLD 67L",
+   "CHLD 86",
+   "CHLD 87"
+  ],
+  "share": 1.0,
+  "not_on_map": [],
+  "off_list": [],
+  "list_slots": 0
+ },
+ "accepted": true
+}
