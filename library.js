@@ -5,6 +5,10 @@
 // like this ppt and video. Advise". He approved the mockup
 // (https://claude.ai/artifact/VPpbDp7DD4acvHErVFkCqH) and ruled: build it; approved
 // files live in the team Drive folder; drafts stay out of the public tracker repo.
+// Sam, 2026-10-07/08: most of the team has no Google account, so the files moved to
+// a CPLLibrary folder on the MAP team's SharePoint site (Open Asks Sheet 49: he made
+// it; guests allowed; "For now by hand and sync but later automatically so we avoid
+// creating different artifact storage solutions.").
 //
 // A RECORD HOLDS A LINK, NEVER THE BYTES. A session cannot reach Supabase Storage
 // (the proxy rejects *.supabase.co, measured again 2026-10-05), so an upload would
@@ -41,21 +45,23 @@
   var TEAM_KEY = "cpl_team_pass";
   var AUTHOR_KEY = "cpl_library_author";
   var ROOT_ID = "library-root";
-  // Sam's CPLLibrary folder (made 2026-10-05) inside the Drive folder he named for
-  // approved files; Drafts sits inside it (his call 4: drafts go to Drive too).
-  var DRIVE_FOLDER = "https://drive.google.com/drive/folders/13WnIL1j-Qo3CJ5znVFZhs5wmAjJqOxxN";
-  var DRAFTS_FOLDER = "https://drive.google.com/drive/folders/15eXeJb9OIl1nOFE4Tykr1y7rBGKBUvih";
+  // Sam's CPLLibrary folder on the MAP team's SharePoint site (2026-10-08), the one
+  // place the whole team can open; drafts go in a Drafts folder inside it.
+  var LIBRARY_FOLDER = "https://studentrcc.sharepoint.com/:f:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/AI/CPLLibrary";
 
   var KIND = { deck: "Deck", film: "Film", document: "Document", spreadsheet: "Spreadsheet" };
   var STATUS = { requested: "Requested", draft: "Draft", approved: "Approved", presented: "Presented" };
   var STEPS = ["requested", "draft", "approved", "presented"];
   var SEEN = { team: "Team", colleges: "Colleges", "public": "Public" };
   var HOME = {
-    drive: { label: "Team Drive", reach: "People the Drive file is shared with." },
+    // `drive` is the stored value for the team's file home (cpl_library_home_ck);
+    // the home itself moved to SharePoint on 2026-10-08, so the words follow the link.
+    drive: { label: "Team SharePoint", reach: "The MAP team, on its SharePoint site." },
+    google_drive: { label: "Google Drive", reach: "The Library's Google account alone. Copy the file to the SharePoint folder and file that link." },
     public_repo: { label: "Public tracker repo", reach: "Anyone with the link. The tracker repo is public, so the file downloads from github.com without a sign-in." },
     vault: { label: "Vault (private repo)", reach: "People with access to the private CPLBrain repo." },
     web: { label: "Web link", reach: "Whoever the linked site allows." },
-    not_filed: { label: "Not filed", reach: "No one can find it from here. It is not in the tracker, the vault or the team Drive." }
+    not_filed: { label: "Not filed", reach: "No one can find it from here. It is not in the tracker, the vault or the team SharePoint folder." }
   };
   var FLAGS = {
     not_filed: { word: "Not filed", count: "not filed" },
@@ -106,10 +112,16 @@
     return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
   }
   function homeForUrl(url) {
+    if (/^https:\/\/[a-z0-9-]+\.sharepoint\.com\//i.test(url)) return "drive";
     if (/^https:\/\/(drive|docs)\.google\.com\//i.test(url)) return "drive";
     if (/^https:\/\/(github\.com|raw\.githubusercontent\.com)\/CPL-Initiative\/cpl-project-tracker\//i.test(url)) return "public_repo";
     if (/^https:\/\/github\.com\/samueltlee\/CPLBrain\//i.test(url)) return "vault";
     return "web";
+  }
+  // A team-home record that still links Google Drive reads as Google Drive.
+  function homeOf(r) {
+    if (r.home === "drive" && /^https:\/\/(drive|docs)\.google\.com\//i.test(r.url || "")) return HOME.google_drive;
+    return HOME[r.home] || HOME.web;
   }
   function slugFor(title) {
     var base = String(title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "piece";
@@ -317,7 +329,7 @@
   function chip(text, unset) { return '<li class="lib-chip' + (unset ? " unset" : "") + '">' + esc(text) + "</li>"; }
 
   function details(r) {
-    var home = HOME[r.home] || HOME.web;
+    var home = homeOf(r);
     var where = r.url
       ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(home.label) + "</a>"
       : esc(home.label);
@@ -369,7 +381,7 @@
       opt("", "Not set", r.status || "") + opt("requested", "Requested", r.status) + opt("draft", "Draft", r.status) + opt("approved", "Approved", r.status) + opt("presented", "Presented", r.status) + "</select></div>" +
       '<div class="lib-field"><label for="le-seen">Seen by</label><select id="le-seen">' +
       opt("", "Not set", r.seen_by || "") + opt("team", "Team", r.seen_by) + opt("colleges", "Colleges", r.seen_by) + opt("public", "Public", r.seen_by) + "</select></div>" +
-      '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://drive.google.com/file/d/..."></div>' +
+      '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://studentrcc.sharepoint.com/..."></div>' +
       '<div class="lib-field wide"><label for="le-refresh">Figures to refresh</label><input id="le-refresh" type="text" value="' + esc(r.refresh_note || "") + '" placeholder="Leave empty when the figures are current"></div>' +
       '<div class="lib-field"><label for="le-by">Your name</label><input id="le-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
       "</div>" +
@@ -393,7 +405,7 @@
     acts += '<button type="button" class="lib-btn" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) +
       chip("Seen by: " + seenWord(r), !r.seen_by) +
-      (r.home === "not_filed" ? "" : chip((HOME[r.home] || HOME.web).label));
+      (r.home === "not_filed" ? "" : chip(homeOf(r).label));
     return '<article class="lib-item" aria-labelledby="lib-t-' + esc(r.id) + '">' + thumb(r) +
       '<div class="lib-body"><p class="lib-kicker">' + esc(kicker.filter(Boolean).join(" · ")) + "</p>" +
       '<h3 class="lib-title" id="lib-t-' + esc(r.id) + '">' + esc(r.title) + "</h3>" +
@@ -411,11 +423,11 @@
     var filing = !!state.formFor;
     return '<form class="lib-form" id="lib-addform"><h2 class="lib-h">' + (filing ? "File this piece" : "Add to the Library") + "</h2>" +
       "<p>" + (filing ? "" : "The Library keeps the record and links to the file. ") +
-      "Put the file in Drive first: an approved piece in the " +
-      '<a href="' + DRIVE_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, a draft in its ' +
-      '<a href="' + DRAFTS_FOLDER + '" target="_blank" rel="noopener">Drafts folder</a>. Then paste its link here.</p>' +
+      "Put the file in the team's SharePoint folder first: an approved piece in the " +
+      '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, a draft in its Drafts folder. ' +
+      "Then paste its link here.</p>" +
       '<div class="lib-grid">' +
-      '<div class="lib-field wide"><label for="la-url">Link to the file</label><input id="la-url" type="url" required placeholder="https://drive.google.com/file/d/..." value="' + esc(f.url || "") + '"></div>' +
+      '<div class="lib-field wide"><label for="la-url">Link to the file</label><input id="la-url" type="url" required placeholder="https://studentrcc.sharepoint.com/..." value="' + esc(f.url || "") + '"></div>' +
       (filing ? "" :
         '<div class="lib-field wide"><label for="la-title">Title</label><input id="la-title" type="text" required value="' + esc(f.title || "") + '"></div>' +
         '<div class="lib-field"><label for="la-kind">Kind</label><select id="la-kind">' + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) + opt("film", "Film", f.kind) + opt("document", "Document", f.kind) + "</select></div>" +
@@ -441,9 +453,8 @@
       "Length, template or style: " + (b.shape || "your call") + "\n" +
       "Requested by " + (b.requested_by || r.added_by || "the team") + (b.requested_on ? " on " + fmtDate(b.requested_on) : "") + ".\n\n" +
       "Build it from source in the tracker repo and name the file with today's date code (YYYYMMDD_Title). " +
-      "File the draft with: python3 scripts/library_file.py <file> --slug " + r.slug + "\n" +
-      "It uploads the file to CPLLibrary/Drafts in the team Drive and writes a receipt that moves this record to Draft with its link. " +
-      "Apply the receipt, then send me the file.\n" +
+      "Send me the file. I put it in the Drafts folder of the Library's SharePoint folder (CPLLibrary) " +
+      "and paste its link with File it on record " + r.slug + ", which moves the record to Draft.\n" +
       "A good result: the draft opens from the Library, under In development, at step 2, Draft.";
   }
 
@@ -451,8 +462,8 @@
     var f = state.start || {};
     return '<form class="lib-form" id="lib-startform"><h2 class="lib-h">Start a piece</h2>' +
       "<p>Say what the piece is for and what it must say. The Library keeps the brief as a Requested record. " +
-      "Claude starts the draft from it, in a new session you paste the brief into or in the next scheduled run, and files each draft in the " +
-      '<a href="' + DRAFTS_FOLDER + '" target="_blank" rel="noopener">Drafts folder</a>.</p>' +
+      "Claude starts the draft from it, in a new session you paste the brief into or in the next scheduled run, and hands each draft over for the " +
+      '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>\'s Drafts folder.</p>' +
       '<div class="lib-grid">' +
       '<div class="lib-field"><label for="ls-kind">Kind</label><select id="ls-kind">' + opt("deck", "Deck", f.kind) + opt("spreadsheet", "Spreadsheet", f.kind) +
       opt("film", "Film", f.kind) + opt("document", "Document", f.kind) + "</select></div>" +
@@ -575,11 +586,11 @@
 
 
     var how = '<footer class="lib-how" aria-labelledby="lib-how-h"><h2 class="lib-h" id="lib-how-h">How the Library works</h2>' +
-      "<p>The Library keeps one record per piece, and the file lives in the team Drive: approved pieces in the " +
-      '<a href="' + DRIVE_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, drafts in its ' +
-      '<a href="' + DRAFTS_FOLDER + '" target="_blank" rel="noopener">Drafts folder</a>. The repos keep only the source that rebuilds each piece.</p>' +
-      "<p>Start a piece saves a brief as a Requested record. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, files each draft in the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
-      "<p>Claude files each new piece the day it makes it. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
+      "<p>The Library keeps one record per piece, and the file lives on the MAP team's SharePoint site: approved pieces in the " +
+      '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, drafts in its Drafts folder. ' +
+      "The repos keep only the source that rebuilds each piece.</p>" +
+      "<p>Start a piece saves a brief as a Requested record. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
+      "<p>Claude hands each new piece over the day it makes it, and a session on Sam's computer saves it straight into the synced folder. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
       "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p></footer>";
 
     // A full repaint (a filter click, Retire's question) must not wipe what was
@@ -789,6 +800,7 @@
     _isDev: isDev,
     _briefText: briefText,
     _homeForUrl: homeForUrl,
+    _homeOf: homeOf,
     _slugFor: slugFor
   };
 })();

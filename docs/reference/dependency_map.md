@@ -884,7 +884,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `datamart.cccco.edu` | scripts: `kb/_fetch_program_course_files.py` |
 | `datastudio.google.com` | tabs: `cip-crosswalk` |
 | `docs.google.com` | tabs: `nc-learning-partners` |
-| `drive.google.com` | tabs: `library` · scripts: `scripts/library_file.py` |
+| `drive.google.com` | scripts: `scripts/library_file.py` |
 | `esm.sh` | pages: `kb-portal/index.html` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -932,7 +932,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `skylinecollege.edu` | tabs: `map-queue`, `map-users` |
 | `solano.edu` | tabs: `map-queue`, `map-users` |
 | `ss.marin.edu` | tabs: `map-queue`, `map-users` |
-| `studentrcc.sharepoint.com` | pages: `CPL_Dashboard.html` |
+| `studentrcc.sharepoint.com` | tabs: `library` · pages: `CPL_Dashboard.html` |
 | `westhillscollege.com` | tabs: `map-queue`, `map-users` |
 | `www.apprenticeship4you.com` | modules: `unified_courses_details.js` |
 | `www.asccc.org` | tabs: `college-briefing`, `map-queue`, `map-users` |
