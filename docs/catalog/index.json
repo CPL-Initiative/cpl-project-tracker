@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 525,
+   "count": 526,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3254,6 +3254,22 @@
      "title": "A screen and its export must share a scope, not a shape",
      "type": "methodology",
      "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-10-08",
+     "governs": [
+      "kb/receipts/program_source_procedure_maps_routes_2026-10-08_s346.sql"
+     ],
+     "path": "docs/kb-notes/methodology-a-site-search-needs-the-domain-filter.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements-harvest",
+      "agents"
+     ],
+     "title": "A search of one site needs the search tool's domain filter",
+     "type": "methodology",
+     "updated": "2026-10-08"
     },
     {
      "created": "2026-10-05",
@@ -14975,8 +14991,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 317,
+   "count": 318,
    "docs": [
+    {
+     "created": "2026-10-08",
+     "governs": [],
+     "n": 347,
+     "path": "docs/session_347_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-pathways",
+      "decision-sheets"
+     ],
+     "title": "Sam's headline for the Chancellor, Sheet 51's two calls, then Palo Verde",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-08",
      "governs": [],
@@ -20375,5 +20407,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1065
+ "total": 1067
 }
