@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-06
+updated: 2026-10-07
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -174,6 +174,17 @@ claude.ai.
   `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's
   two player pages off the site, and add a guard test so a deliverable binary cannot be committed
   again. Then the vault's binaries (29 on 2026-10-05).
-- **Sam's sheet 47 calls (2026-10-07 14:17-14:20Z):** card 3 *Shared* (CPLLibrary shared as Viewer with the team); card 4 *Move them* (every decision-sheet builder writes to the vault, and the public repo holds no sheet); card 5 *One per series*, as proposed (the open-asks series is one Library record, each other sheet one record under its own occasion); card 6 *Date made* (nothing changes: a file keeps the date code of its first version). Card 4 is open work: 13 builders in `kb/`, their sheets and 18 hand-made ones in `docs/visuals/` (31 carry reply chips), and the template tests that read two real sheets, which need fixtures first.
+- **Sam's sheet 47 calls (2026-10-07 14:17-14:20Z):** card 3 *Shared*, which he withdrew the same day (below); card 4 *Move them* (every decision-sheet builder writes to the vault, and the public repo holds no sheet); card 5 *One per series*, as proposed (the open-asks series is one Library record, each other sheet one record under its own occasion); card 6 *Date made* (nothing changes: a file keeps the date code of its first version). Card 4 is open work: 13 builders in `kb/`, their sheets and 18 hand-made ones in `docs/visuals/` (31 carry reply chips), and the template tests that read two real sheets, which need fixtures first.
 - **Sam's sheet 48 card 1 (2026-10-07 14:52Z): *Keep it public*.** The Library records the Ironworker film's audience as Public (receipt `kb/receipts/cpl_library_ironworker_public_2026-10-07_s341.sql`); the page and the film stay.
-- **NEEDS SAM — the team's addresses for CPLLibrary ([Open Asks Sheet 48](https://claude.ai/artifact/FWGJ2uNEGB1RrhMPrFsaCJ) card 2, unanswered: below Sam's high-water mark, no note).** Drive still shows CPLLibrary and Drafts shared with camapinitiative alone (read 2026-10-07); a session shares only with addresses Sam names.
+- **Sam, 2026-10-07 (in chat): CPLLibrary is not shared.** *"Let's give up on sharing the Drive because so many on
+  team do not have google accounts. May need to switch to sharepoint, where they all have access."* This closes sheet 48
+  card 2 and withdraws sheet 47 card 3. The Drive connector's `share_file` refused every try (S341, 10 of his 19
+  addresses; a side session the same evening, one more with his explicit go): *invalid argument*, or *the caller does
+  not have permission* for three. The connector has no way to send the invitation, which an address without a Google
+  account needs (the likely cause, unconfirmed). Drive stays where sessions file pieces, the Library's links open for the
+  owner alone, and Sam hands a teammate a file himself.
+- **Parked until Sam takes it up: does the Library move to SharePoint?** His word was *may*. What a session found
+  (2026-10-07): the Microsoft 365 connector is in the registry, not connected, and its tools search and read SharePoint,
+  OneDrive, Outlook and Teams without uploading, so a session would still hand each file to Sam. The filer
+  (`scripts/library_file.py`) writes to Drive only; a session uploading to SharePoint would need a Microsoft Graph app in
+  RCCD's tenant, which RCCD IT controls. A Library record's link is a plain URL, so a SharePoint link files the same way.
