@@ -1,0 +1,31 @@
+{
+ "_readme": "First read of Los Angeles Mission College's program maps (S345, SkyLantern). The registry records a ppm sequence source at www.lamc.edu/academics/pathways/program-mapper and no access reading. A web search (2026-10-08) found the college's page at lamission.edu/academics/pathways/program-mapper, describing an interactive map of required and elective classes. This read loads the college's page and prints the mapper host it links; that host is read in a later plan once named, one load, since every Program Mapper host read so far answered 403 (lesson 33).",
+ "college": "Los Angeles Mission College",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map: its own pages, a PDF, or only its Program Mapper.",
+  "mapper_open": "Whether the college's Program Mapper host answers the reader (one load), and how it lists programs and terms if it does."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Mm]apper",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Pp]rint",
+  "Forbidden",
+  "403"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source",
+    "mapper_open"
+   ],
+   "url": "https://www.lamission.edu/academics/pathways/program-mapper",
+   "expand": true,
+   "links": "programmap|mapper|map|pathway|roadmap|sequence|\\.pdf"
+  }
+ ]
+}
