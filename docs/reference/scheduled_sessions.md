@@ -58,10 +58,10 @@ is his standing preference there too.
 
    Each row is a queue item. Work it after the item the handoff names first; one
    whose `brief.due` falls within the week goes first. The brief's words are the
-   ask (the tab's *Copy the brief* gives the same paste). File the draft with
-   `scripts/library_file.py <file> --slug <slug>` and apply the receipt it
-   writes: the record moves to Draft with its Drive link
-   ([`docs/reference/library_filer.md`](library_filer.md)). A draft is never
+   ask (the tab's *Copy the brief* gives the same paste). Hand the draft to Sam
+   for the Drafts folder of the Library's SharePoint folder (by hand for now, Sam,
+   Open Asks Sheet 49, 2026-10-08), then file its link with **File it**: the record
+   moves to Draft ([`lanes/library.md`](lanes/library.md)). A draft is never
    outward, so it needs no hold; approving it is Sam's.
 
 ## While working: go with the recommendation

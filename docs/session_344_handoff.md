@@ -16,9 +16,8 @@ you make for Sam.
 ## First, in this order
 
 1. **One writer.** `list_sessions` (`mine: true`). S343 let go of everything at sign-off (end of this file).
-2. **The standing sheet:** Open Asks Sheet 49 ([6uMT8LrZgMZBit3Gs8wHBL](https://claude.ai/artifact/6uMT8LrZgMZBit3Gs8wHBL), current, three
-   SharePoint calls, built after S343 signed off). Read `replies` and `done` with `ArtifactData` before acting. Sheet 48
-   ([FWGJ2uNEGB1RrhMPrFsaCJ](https://claude.ai/artifact/FWGJ2uNEGB1RrhMPrFsaCJ)) is fully answered.
+2. **The standing sheet:** Open Asks Sheet 49 ([6uMT8LrZgMZBit3Gs8wHBL](https://claude.ai/artifact/6uMT8LrZgMZBit3Gs8wHBL),
+   current) is fully answered (2026-10-08 15:25Z); no lane carries a NEEDS SAM, so no sheet is open.
 3. **Rule 8:** `cpl_memory` with tags `program-requirements-harvest`, `roep`, `sierra`. Read
    `progress-view-built-2026-10-07` and `sierra-credit-spelling-fold-2026-10-07`.
 4. **The view itself:** COBI, Program Requirements, Progress (the first view). It reads the tables live and
@@ -70,8 +69,8 @@ with the routine's `next_run_at` from `get_trigger`. The Progress view's header 
 ## Waiting on Sam
 
 - Read Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767 (the Progress view's one call).
-- Drop the Summit v2 MP4s into Drafts. Re-save the Library
-  filer's three Google values.
+- Connect the Microsoft 365 connector at claude.ai/customize/connectors (RCCD account). Drop the Summit v2 MP4s into
+  the SharePoint Drafts folder.
 
 ## After S343 signed off
 
@@ -79,7 +78,12 @@ Sam dropped sharing CPLLibrary (2026-10-07, in chat): *"so many on team do not h
 to sharepoint."* The Drive connector refused the share again with his go. Sheet 48 card 2 is closed, the library lane
 carries no ask, and the open-asks builder has no card left (`cpl_memory` `sam-drop-cpllibrary-sharing-2026-10-07`).
 He then asked for the switch laid out and its calls on a sheet: Open Asks Sheet 49, three cards (who creates
-the site, guests from outside RCCD, how files reach it), the library lane's NEEDS SAM.
+the site, guests from outside RCCD, how files reach it), the library lane's NEEDS SAM. Sam answered all three at 15:23-15:25Z: he made the CPLLibrary folder on the
+MAP team's SharePoint site, guests are allowed, and files go by hand and sync now, automatically later *"so we avoid
+creating different artifact storage solutions."* The Library tab now points at that folder (a SharePoint link files
+under the stored home `drive` and reads Team SharePoint), and the Drive filer is parked. A session reaches the folder
+only through the Microsoft 365 connector, which Sam connects; the session after that confirms his 16 copies and
+relinks the three Drive-linked records.
 Still to apply: `kb/receipts/cpl_library_open_asks_sheet49_2026-10-08.sql` (sheet 49 as the open-asks series'
 current version). `apply_migration` timed out twice on 2026-10-08 and wrote nothing (read back: version 48). The
 update is guarded on version 48, so a later run is safe; read the row back after.
