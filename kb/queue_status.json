@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-08T20:47:09Z",
+  "written_at": "2026-10-08T21:50:56Z",
   "session": 347,
   "moniker": "SkyTrellis",
   "run": "Sam's session",
@@ -23,41 +23,17 @@
     }
   ],
   "next_step": {
-    "title": "Palo Verde's map columns, then Sheet 52",
-    "text": "Palo Verde's map is read and its procedure updated; the registry's map columns wait on one paste or a mode switch, and then 32 of 32 published maps are settled."
+    "title": "Port the Sierra redesign into the live page",
+    "text": "The design is locked on Sam's word; the port keeps every behavior the Sierra tests pin, then the accessibility sweep runs in both themes."
   },
   "calls": [
     {
-      "title": "Save your reading from the tab",
-      "text": "Whether the Program records view may save Confirm or Needs a fix on a record, as the mock-up shows.",
-      "if_no_reply": "Your readings keep arriving on sheets and the two records stay unchecked.",
-      "link": "https://claude.ai/artifact/1S8zkqqF9QdzqwLJSaGB1A",
-      "link_text": "Open Asks Sheet 52, card 1",
-      "view": {
-        "href": "https://claude.ai/artifact/2JofNdHZvVTtz9bKQTsa4g",
-        "text": "The mock-up"
-      }
-    },
-    {
-      "title": "Show two new program maps to Sierra",
-      "text": "The go to apply display build 2360b83e8100, which places Mt. San Antonio's Fire Technology and Early Childhood Education courses by term.",
-      "if_no_reply": "CPL Pathways shows the maps; Sierra keeps the earlier build.",
-      "link": "https://claude.ai/artifact/1S8zkqqF9QdzqwLJSaGB1A",
-      "link_text": "Open Asks Sheet 52, card 2",
-      "view": {
-        "href": "#cpl-pathways",
-        "text": "CPL Pathways"
-      }
-    },
-    {
-      "title": "Write Palo Verde's map columns",
-      "text": "One statement in the SQL editor, or a switch to Accept edits so the guard change you asked for can land and a session runs it.",
-      "if_no_reply": "The maps milestone reads 31 of 32 settled.",
-      "link": "https://claude.ai/artifact/1S8zkqqF9QdzqwLJSaGB1A",
-      "link_text": "Open Asks Sheet 52, card 3",
+      "title": "Read two records from the tab",
+      "text": "Irvine Valley's Art A.A. and Santa Monica's Barbering A.S. wait on your reading. Sign in on the Records view, open each record, and choose Confirm or Needs a fix.",
+      "if_no_reply": "Both records stay unchecked, and Sierra does not quote them.",
       "view": {
         "href": "#program-requirements",
-        "text": "Sequences"
+        "text": "Open the Program Requirements tab"
       }
     }
   ],
@@ -65,20 +41,24 @@
     "addenda": "The reading agent starts after the Oct 11 census apply.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The full smoke test passed on Oct 8.",
-    "maps": "A refused map counts as settled once the college's procedure names the other routes tried (Sam, sheet 50 card 5); Palo Verde is the one left."
+    "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening."
   },
   "changes": [
     {
+      "at": "2026-10-08T21:33:02Z",
+      "text": "A reviewer can now confirm a record or note a fix from the Records view, and each record shows its flags."
+    },
+    {
+      "at": "2026-10-08T21:21:18Z",
+      "text": "Palo Verde's map columns written; all 32 published maps are settled."
+    },
+    {
+      "at": "2026-10-08T21:20:33Z",
+      "text": "Display build 2360b83e8100 reached all 22 live records; Sierra reads Fire Technology's and Early Childhood Education's maps."
+    },
+    {
       "at": "2026-10-08T20:13:44Z",
       "text": "The headline for the Chancellor went live on this view: 20 of 20,282 active programs read and checked."
-    },
-    {
-      "at": "2026-10-08T19:59:46Z",
-      "text": "Palo Verde's program maps read at its LibGuides address; two two-year maps found."
-    },
-    {
-      "at": "2026-10-08T20:10:00Z",
-      "text": "Palo Verde's reading procedure written, version 2."
     },
     {
       "at": "2026-10-08T20:25:05Z",

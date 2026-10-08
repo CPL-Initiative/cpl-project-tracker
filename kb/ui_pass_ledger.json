@@ -15,8 +15,8 @@
    "name": "Veteran map",
    "page": "veteran-sprint-map/ca_cpl_map_selfcontained.html",
    "audience": "public",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-08",
+   "outcome": "AA, the 24px targets and the keyboard pass at nine widths; not First Light (its own palette, 30 raw hex outside :root, the system font stack, no dark mode). No fix shipped: a public page's look changes through a mock-up first, so the port is the Sierra redesign lane's next public page."
   },
   {
    "id": "skyview",
