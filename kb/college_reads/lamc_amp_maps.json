@@ -1,0 +1,32 @@
+{
+ "_readme": "Second own-site map read at Los Angeles Mission College (S346, SkyCairn). Its mapper (la-mission.programmapper.ws) answered 403 on 2026-10-08 (S345). A domain-restricted search (2026-10-08) found the Arts, Media and Performance pathway page, which links a 'Painting AA Program Map' and a 'Studio Arts AAT Program Map'. This read loads that page, prints the map links, and follows them where they stay off the mapper host (the reader skips a host the procedure marks refused).",
+ "college": "Los Angeles Mission College",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map off its refused mapper host, and in what form.",
+  "map_shape": "How one map names its terms and lists its courses."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Ff]all",
+  "[Ss]pring"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source",
+    "map_shape"
+   ],
+   "url": "https://www.lamission.edu/academics/pathways/amp",
+   "expand": true,
+   "links": "[Pp]rogram [Mm]ap|map|\\.pdf",
+   "follow": "[Pp]rogram [Mm]ap"
+  }
+ ]
+}

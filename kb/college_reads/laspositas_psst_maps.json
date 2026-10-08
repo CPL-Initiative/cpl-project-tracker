@@ -1,0 +1,36 @@
+{
+ "_readme": "Second own-site map read at Las Positas College (S346, SkyCairn). Read 1 (run 37811253611) found the Program Map Updates pages, which describe the faculty's map PDFs and link none; they link the Pathway Student Success Team pages, not yet read. A web search (2026-10-08) found the Automotive department's guided-pathway PDFs on the college's own host (auto/assets/docs/guided-pathway/), each a Fall and Spring sequence. This read loads one PSST page and prints its map or PDF links, and loads the Automotive A.S. guided pathway PDF.",
+ "college": "Las Positas College",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map, and in what form (a page, a PDF, an interactive tool).",
+  "map_shape": "How one map names its terms and lists its courses."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Ff]all",
+  "[Ss]pring"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://www.laspositascollege.edu/gpas/psst/health-pathway.php",
+   "expand": true,
+   "links": "map|\\.pdf|pathway|sequence"
+  },
+  {
+   "answers": [
+    "map_shape"
+   ],
+   "url": "https://www.laspositascollege.edu/auto/assets/docs/guided-pathway/2020/AS%20MASTER%20Guided%20Path.pdf"
+  }
+ ]
+}

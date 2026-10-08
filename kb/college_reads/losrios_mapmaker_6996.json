@@ -1,0 +1,29 @@
+{
+ "_readme": "First read of a Los Rios map PDF on mapmaker.losrios.edu (S346, SkyCairn). S345's reads of the four Los Rios colleges' program maps pages answered 404 to the reader, and each procedure marks its host unreached. A domain search (2026-10-08) lists map PDFs at mapmaker.losrios.edu/Maps/<id>/PublishedPdf, the district's host, which no read has tried. This read loads one of them, the Administration of Justice A.S. (Cal-GETC) map, id 6996; the PDF names the college that publishes it, and the procedure step goes on that college's record.",
+ "college": "Los Rios Community College District",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map, and in what form (a page, a PDF, an interactive tool).",
+  "map_shape": "How one map names its terms and lists its courses."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Ff]all",
+  "[Ss]pring"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source",
+    "map_shape"
+   ],
+   "url": "https://mapmaker.losrios.edu/Maps/6996/PublishedPdf"
+  }
+ ]
+}

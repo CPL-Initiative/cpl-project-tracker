@@ -1,0 +1,32 @@
+{
+ "_readme": "Second own-site map read at West Los Angeles College (S346, SkyCairn). Its mapper (programmap.wlac.edu) answered 403 on 2026-10-08 (S344). A domain search (2026-10-08) found the Computer Science division's FAQ page, which links 'roadmaps' for three computer science and information technology tracks; the pilot's Computer Network & Security Management (17111) may be one. This read loads the FAQ page, prints its roadmap links, and follows them where they stay off the mapper host.",
+ "college": "West Los Angeles College",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map, and in what form (a page, a PDF, an interactive tool).",
+  "map_shape": "How one map names its terms and lists its courses."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Ff]all",
+  "[Ss]pring"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source",
+    "map_shape"
+   ],
+   "url": "https://www.wlac.edu/academics/pathways/csat/csa-div/faq",
+   "expand": true,
+   "links": "[Rr]oadmap|map|\\.pdf",
+   "follow": "[Rr]oadmap"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "_readme": "Second own-site map read at San Diego Miramar College (S346, SkyCairn). Its Program Pathways Mapper answered 403 to all seven of the reader's requests (run 37197332656, S325), and Sam's sheet 29 card 3 put the refusal on the college's record. A domain-restricted search (2026-10-08) found 'Recommended Course Sequence' PDFs on sdmiramar.edu itself, among them the Mathematics Studies AA (2020-21, Fall, Spring and Summer columns), and the Fire Protection Technology pages, which give the order to start the pilot's Fire Technology program in (EMT, FIPT 101 and FIPT 100D first). This read loads the entry-level firefighter degree page and the Mathematics Studies sequence, to learn whether the college posts sequences off the mapper and in what shape.",
+ "college": "San Diego Miramar College",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map off its refused mapper host, and in what form.",
+  "map_shape": "How one map names its terms and lists its courses."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Ff]all",
+  "[Ss]pring"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://sdmiramar.edu/programs/fire-protection-technology/firefighter",
+   "expand": true,
+   "links": "[Ss]equence|[Rr]oadmap|map|\\.pdf"
+  },
+  {
+   "answers": [
+    "map_shape"
+   ],
+   "url": "https://sdmiramar.edu/sites/default/files/2021-05/MATHEMATICS%20STUDIES%20AA_4-29-21.pdf"
+  }
+ ]
+}

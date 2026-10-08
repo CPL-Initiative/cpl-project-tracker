@@ -1,0 +1,31 @@
+{
+ "_readme": "First own-site map read at Ventura College (S346, SkyCairn). Its mapper (programmap.venturacollege.edu) answered 403 on 2026-10-04 (probe run 37198225537). A domain search (2026-10-08) found the Automotive Technology baccalaureate's page, which describes a prescribed schedule of courses for its two-year cohort. This read loads that page and prints any term-by-term schedule or schedule PDF it links.",
+ "college": "Ventura College",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map, and in what form (a page, a PDF, an interactive tool).",
+  "map_shape": "How one map names its terms and lists its courses."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Ff]all",
+  "[Ss]pring"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source",
+    "map_shape"
+   ],
+   "url": "https://www.venturacollege.edu/departments/academic/career-education/vcbdp",
+   "expand": true,
+   "links": "schedule|map|\\.pdf|semester"
+  }
+ ]
+}
