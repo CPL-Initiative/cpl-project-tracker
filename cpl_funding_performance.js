@@ -8,20 +8,20 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 46563,
-  "pa": 42475,
+  "pe": 46565,
+  "pa": 42477,
   "ppa": 119,
   "p2": 3531,
   "p3": 16572,
   "pp": 6,
   "ppe": 129,
-  "pac": 5088,
+  "pac": 5089,
   "ptc": 4444,
-  "pe_u": 1456180.7,
-  "pa_u": 237026.4,
+  "pe_u": 1456273.7,
+  "pa_u": 237047.9,
   "ppa_u": 721.5,
   "ppe_u": 6825.5,
-  "pac_u": 36650.95,
+  "pac_u": 36667.45,
   "ptc_u": 30343.5,
   "p3_u": 82592.2,
   "pp_u": 63.5
@@ -1494,10 +1494,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Porterville": {
-   "pe": 27,
-   "pe_u": 675.0,
-   "pa": 27,
-   "pa_u": 135.0,
+   "pe": 28,
+   "pe_u": 722.0,
+   "pa": 28,
+   "pa_u": 140.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 5.0,
@@ -1887,10 +1887,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Santiago Canyon": {
-   "pe": 683,
-   "pe_u": 29088.5,
-   "pa": 681,
-   "pa_u": 15982.0,
+   "pe": 684,
+   "pe_u": 29134.5,
+   "pa": 682,
+   "pa_u": 15998.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 7.0,
@@ -1902,8 +1902,8 @@ window.CPL_FUNDING_PERF = {
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 31.0,
-   "pac": 266,
-   "pac_u": 3440.5,
+   "pac": 267,
+   "pac_u": 3457.0,
    "ptc": 262,
    "ptc_u": 3378.5
   },
@@ -3321,8 +3321,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Porterville": {
    "Military": {
-    "pe": 27,
-    "pa": 27,
+    "pe": 28,
+    "pa": 28,
     "p3": 0
    }
   },
@@ -3692,8 +3692,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santiago Canyon": {
    "Industry Certification": {
-    "pe": 265,
-    "pa": 264,
+    "pe": 266,
+    "pa": 265,
     "p3": null,
     "p3_suppressed": true
    },
@@ -3950,8 +3950,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 19
   },
   "Industry Certification": {
-   "pe": 1405,
-   "pa": 1381,
+   "pe": 1406,
+   "pa": 1382,
    "p3": 1169
   },
   "Industry Certification | Military": {
@@ -3997,8 +3997,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28296,
-   "pa": 25991,
+   "pe": 28297,
+   "pa": 25992,
    "p3": 2579
   },
   "Military | Other": {
@@ -4054,13 +4054,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1456180.7,
-   "pa_u": 237026.4,
+   "pe_u": 1456273.7,
+   "pa_u": 237047.9,
    "p3_u": 82592.2
   },
   "map": {
-   "pe_u": 1463006.2,
-   "pa_u": 237747.9,
+   "pe_u": 1463099.2,
+   "pa_u": 237769.4,
    "p3_u": 82655.7
   },
   "ratio": {
@@ -4143,8 +4143,8 @@ window.CPL_FUNDING_PERF = {
   "West Hills Coalinga": false,
   "Palo Verde": false,
   "Hartnell": false,
-  "Crafton Hills": false,
   "Porterville": false,
+  "Crafton Hills": false,
   "American River": false,
   "Madera": true,
   "Las Positas": false,
@@ -4555,15 +4555,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 63,
    "pct": 0.5943
   },
+  "Porterville": {
+   "vets": 52,
+   "jst": 29,
+   "pct": 0.5577
+  },
   "Crafton Hills": {
    "vets": 577,
    "jst": 20,
    "pct": 0.0347
-  },
-  "Porterville": {
-   "vets": 52,
-   "jst": 28,
-   "pct": 0.5385
   },
   "American River": {
    "vets": 312,

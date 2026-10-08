@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-08T16:45:27.676Z",
+  "scraped_at": "2026-10-08T18:56:01.230Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -93,17 +93,17 @@
         },
         {
           "college": "Santiago Canyon College",
-          "students": 685,
-          "units": 15989,
-          "avgUnits": 23.341605839416058,
+          "students": 686,
+          "units": 16005.5,
+          "avgUnits": 23.331632653061224,
           "transcriptionRate": 21.1,
-          "avgTranscribed": 4.932116788321168,
+          "avgTranscribed": 4.924927113702624,
           "criteriaMetCount": 4,
           "militaryStudents": 110,
-          "nonMilitaryStudents": 575,
-          "apprenticeStudents": 575,
-          "savings": 31573705,
-          "yearImpact": 153044755,
+          "nonMilitaryStudents": 576,
+          "apprenticeStudents": 576,
+          "savings": 31662485,
+          "yearImpact": 153480283,
           "transcribedUnits": 3378.5
         },
         {
@@ -833,17 +833,17 @@
         },
         {
           "college": "Porterville College",
-          "students": 28,
-          "units": 140,
+          "students": 29,
+          "units": 145,
           "avgUnits": 5,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 28,
+          "militaryStudents": 29,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 233550,
-          "yearImpact": 819045,
+          "savings": 242200,
+          "yearImpact": 849380,
           "transcribedUnits": 0
         },
         {
@@ -1772,19 +1772,19 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "54,712",
+      "value": "54,714",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,883"
+          "value": "28,884"
         },
         {
           "label": "Workforce/Other",
-          "value": "25,923"
+          "value": "25,924"
         },
         {
           "label": "Apprentice",
-          "value": "948"
+          "value": "949"
         }
       ]
     },
@@ -1832,7 +1832,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$199M"
+          "value": "$200M"
         },
         {
           "label": "Workforce/Other",
@@ -1846,11 +1846,11 @@
     },
     {
       "title": "20-YEAR IMPACT",
-      "value": "$1.4B",
+      "value": "$1.41B",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$794M"
+          "value": "$795M"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 54712,
-    "Units": 237747.90000000002,
+    "Students": 54714,
+    "Units": 237769.40000000002,
     "TranscribedUnits": 82655.7,
-    "Savings": 352660444,
-    "YearImpact": 1404636679.8999999,
-    "MilitaryStudents": 28883,
-    "NonMilitaryStudents": 25923,
-    "AprenticeStudents": 948,
-    "AverageUnits": 4.345443412779646,
-    "TranscribedAverage": 1.5107417020032168
+    "Savings": 352757874,
+    "YearImpact": 1405102542.8999999,
+    "MilitaryStudents": 28884,
+    "NonMilitaryStudents": 25924,
+    "AprenticeStudents": 949,
+    "AverageUnits": 4.345677523120226,
+    "TranscribedAverage": 1.510686478780568
   }
 }

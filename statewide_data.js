@@ -348497,6 +348497,107 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 22.0
     },
     {
+      "exhibit_id": "MAPICI-EPA(-1-001",
+      "exhibit_ids": [
+        "MAPICI-EPA(-1-001"
+      ],
+      "title": "Environmental Protection Agency (EPA) Section 608 Type IV Certification",
+      "unified_title": "Environmental Protection Agency (EPA) Section 608 Type IV Certification",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Environmental Protection Agency (EPA) Section 608 Type IV Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "46",
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "Compton College",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Long Beach City College",
+        "Merced College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 001",
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "TECALC 087",
+          "credit": "1-3 hours in Technical Mathematics"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Technical Mathematics",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-EPA(-1-001",
+          "title": "Environmental Protection Agency (EPA) Section 608 Type IV Certification",
+          "units": 4.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 4.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 2
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
       "exhibit_id": "MAPCBEN-ITVC-1-001",
       "exhibit_ids": [
         "MAPCBEN-ITVC-1-001"
@@ -432274,6 +432375,429 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICI-AWSB-1-001",
+      "exhibit_ids": [
+        "MAPICI-AWSB-1-001"
+      ],
+      "title": "American Welding Society B2.2/B2.2M Certification",
+      "unified_title": "American Welding Society B2.2/B2.2M Certification",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "American Welding Society B2.2/B2.2M Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "15",
+      "top_codes": [
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 007",
+          "credit": "3 hours in Brazing/Soldering for Air Conditioning and Refrigeration (Lecture/Lab)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Brazing/Soldering for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-AWSB-1-001",
+          "title": "American Welding Society B2.2/B2.2M Certification",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 3.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICA-CEDJ-1-001",
+      "exhibit_ids": [
+        "MAPICA-CEDJ-1-001"
+      ],
+      "title": "Commercial Electrical DAS Journeyman",
+      "unified_title": "Commercial Electrical DAS Journeyman",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Commercial Electrical DAS Journeyman"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "15",
+      "top_codes": [
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 004",
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 005",
+          "credit": "3-4 hours in Commercial Electrical for Air Conditioning (Lecture/Lab)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Commercial Electrical for Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-CEDJ-1-001",
+          "title": "Commercial Electrical DAS Journeyman",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 6.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 2
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPICI-EMSC-1-001",
+      "exhibit_ids": [
+        "MAPICI-EMSC-1-001"
+      ],
+      "title": "ESCO Master Specialist Certification, Gas Heat",
+      "unified_title": "ESCO Master Specialist Certification, Gas Heat",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ESCO Master Specialist Certification, Gas Heat"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "15",
+      "top_codes": [
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 098",
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-EMSC-1-001",
+          "title": "ESCO Master Specialist Certification, Gas Heat",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 4.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPICI-EMSC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-EMSC1-1-001"
+      ],
+      "title": "ESCO Master Specialist Certification, Heat Pump Installer and Heat Pump Service",
+      "unified_title": "ESCO Master Specialist Certification, Heat Pump Installer and Heat Pump Service",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ESCO Master Specialist Certification, Heat Pump Installer and Heat Pump Service"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "15",
+      "top_codes": [
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 098",
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-EMSC1-1-001",
+          "title": "ESCO Master Specialist Certification, Heat Pump Installer and Heat Pump Service",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 4.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPICI-EMSC2-1-001",
+      "exhibit_ids": [
+        "MAPICI-EMSC2-1-001"
+      ],
+      "title": "ESCO Master Specialist Certification, Light Commercial Air Conditioning",
+      "unified_title": "ESCO Master Specialist Certification, Light Commercial Air Conditioning",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ESCO Master Specialist Certification, Light Commercial Air Conditioning"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "15",
+      "top_codes": [
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 001",
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 098",
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-EMSC2-1-001",
+          "title": "ESCO Master Specialist Certification, Light Commercial Air Conditioning",
+          "units": 7.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 7.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 2
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 7.0,
+      "peer_units_max": 7.0,
+      "rec_units_total": 7.0
+    },
+    {
+      "exhibit_id": "MAPICI-EMSC3-1-001",
+      "exhibit_ids": [
+        "MAPICI-EMSC3-1-001"
+      ],
+      "title": "ESCO Master Specialist Certification, Light Commercial Refrigeration",
+      "unified_title": "ESCO Master Specialist Certification, Light Commercial Refrigeration",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ESCO Master Specialist Certification, Light Commercial Refrigeration"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "15",
+      "top_codes": [
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 001",
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 098",
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-EMSC3-1-001",
+          "title": "ESCO Master Specialist Certification, Light Commercial Refrigeration",
+          "units": 7.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 7.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 2
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 7.0,
+      "peer_units_max": 7.0,
+      "rec_units_total": 7.0
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -435376,6 +435900,138 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 0.0,
       "peer_units_max": 0.0,
       "rec_units_total": 0
+    },
+    {
+      "exhibit_id": "MAPICI-CBHW-1-001",
+      "exhibit_ids": [
+        "MAPICI-CBHW-1-001"
+      ],
+      "title": "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor",
+      "unified_title": "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "",
+      "top_codes": [],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CBHW-1-001",
+          "title": "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor",
+          "units": 0,
+          "lines": 0
+        }
+      ],
+      "adopter_units": {},
+      "adopter_lines": {},
+      "adopter_rec_idx": {},
+      "peer_units_median": 0.0,
+      "peer_units_max": 0.0,
+      "rec_units_total": 0
+    },
+    {
+      "exhibit_id": "MAPICI-CBO(-1-001",
+      "exhibit_ids": [
+        "MAPICI-CBO(-1-001"
+      ],
+      "title": "Certified Building Official (BC)",
+      "unified_title": "Certified Building Official (BC)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Certified Building Official (BC)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "",
+      "top_codes": [],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CBO(-1-001",
+          "title": "Certified Building Official (BC)",
+          "units": 0,
+          "lines": 0
+        }
+      ],
+      "adopter_units": {},
+      "adopter_lines": {},
+      "adopter_rec_idx": {},
+      "peer_units_median": 0.0,
+      "peer_units_max": 0.0,
+      "rec_units_total": 0
+    },
+    {
+      "exhibit_id": "MAPICI-CMI-1-001",
+      "exhibit_ids": [
+        "MAPICI-CMI-1-001"
+      ],
+      "title": "Commercial Mechanical Inspector",
+      "unified_title": "Commercial Mechanical Inspector",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Commercial Mechanical Inspector"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "",
+      "top_codes": [],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CMI-1-001",
+          "title": "Commercial Mechanical Inspector",
+          "units": 0,
+          "lines": 0
+        }
+      ],
+      "adopter_units": {},
+      "adopter_lines": {},
+      "adopter_rec_idx": {},
+      "peer_units_median": 0.0,
+      "peer_units_max": 0.0,
+      "rec_units_total": 0
     }
   ],
   "analysis": {
@@ -435444,21 +436100,21 @@ window.CPL_STATEWIDE = {
         "pct": 2.8
       },
       {
+        "college": "San Bernardino Valley College",
+        "credit_recs": 363,
+        "exhibits": 239,
+        "disciplines": 18,
+        "ccc_collaborative": 38,
+        "industry_certs": 110,
+        "pct": 2.6
+      },
+      {
         "college": "San Diego Miramar College",
         "credit_recs": 353,
         "exhibits": 139,
         "disciplines": 15,
         "ccc_collaborative": 87,
         "industry_certs": 202,
-        "pct": 2.5
-      },
-      {
-        "college": "San Bernardino Valley College",
-        "credit_recs": 352,
-        "exhibits": 232,
-        "disciplines": 18,
-        "ccc_collaborative": 27,
-        "industry_certs": 99,
         "pct": 2.5
       },
       {
@@ -435783,7 +436439,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 11,
         "ccc_collaborative": 1,
         "industry_certs": 15,
-        "pct": 0.8
+        "pct": 0.7
       },
       {
         "college": "Woodland Community College",
@@ -436284,21 +436940,21 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6016,
-        "exhibits": 2182,
+        "credit_recs": 6019,
+        "exhibits": 2185,
         "courses": 337,
         "colleges": 87,
-        "ccc_collaborative": 28,
+        "ccc_collaborative": 31,
         "pct": 42.6
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2415,
-        "exhibits": 1042,
-        "courses": 1212,
+        "credit_recs": 2426,
+        "exhibits": 1049,
+        "courses": 1213,
         "colleges": 56,
-        "ccc_collaborative": 563,
-        "pct": 17.1
+        "ccc_collaborative": 574,
+        "pct": 17.2
       },
       {
         "discipline": "Public and Protective Services",
@@ -436343,7 +436999,7 @@ window.CPL_STATEWIDE = {
         "courses": 299,
         "colleges": 50,
         "ccc_collaborative": 122,
-        "pct": 3.3
+        "pct": 3.2
       },
       {
         "discipline": "Foreign Languages",
@@ -436496,12 +437152,12 @@ window.CPL_STATEWIDE = {
         "credit_recs": 7356,
         "exhibits": 2668,
         "colleges": 83,
-        "pct": 52.1
+        "pct": 52.0
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3907,
-        "exhibits": 1210,
+        "credit_recs": 3921,
+        "exhibits": 1220,
         "colleges": 80,
         "pct": 27.7
       },
@@ -436510,7 +437166,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 2212,
         "exhibits": 1731,
         "colleges": 61,
-        "pct": 15.7
+        "pct": 15.6
       },
       {
         "cpl_type": "Portfolio Review",
@@ -436544,15 +437200,15 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2933,
-        "exhibits": 1151,
+        "credit_recs": 2945,
+        "exhibits": 1160,
         "colleges": 77,
         "pct": 20.8
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1428,
-        "exhibits": 399,
+        "credit_recs": 1430,
+        "exhibits": 400,
         "colleges": 42,
         "pct": 10.1
       },
@@ -436613,15 +437269,15 @@ window.CPL_STATEWIDE = {
         "exhibits": 5820,
         "colleges": 98,
         "disciplines": 23,
-        "pct": 88.2
+        "pct": 88.1
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1421,
-        "exhibits": 174,
+        "credit_recs": 1435,
+        "exhibits": 184,
         "colleges": 65,
         "disciplines": 11,
-        "pct": 10.1
+        "pct": 10.2
       },
       {
         "category": "Industry/Other",
@@ -437035,8 +437691,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-08T16:45:05",
-  "total_credit_recs": 14122,
+  "generated_at": "2026-10-08T18:55:37",
+  "total_credit_recs": 14136,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

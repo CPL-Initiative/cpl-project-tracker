@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-08T16:45:28.044834+00:00",
+  "scraped_at": "2026-10-08T18:56:01.781834+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28883,
+    "jst": 28884,
     "star_colleges": 60
   },
   "computed_star_colleges": 60,
@@ -375,14 +375,14 @@
       "jst": 63,
       "star": false
     },
+    "Porterville College": {
+      "vets": 52,
+      "jst": 29,
+      "star": false
+    },
     "Crafton Hills College": {
       "vets": 577,
       "jst": 20,
-      "star": false
-    },
-    "Porterville College": {
-      "vets": 52,
-      "jst": 28,
       "star": false
     },
     "American River College": {
