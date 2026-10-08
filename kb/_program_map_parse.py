@@ -209,6 +209,58 @@ def parse_smc(text: str, closed_list: list[dict]) -> dict:
     return {"map_title": title.replace("COLLEGE CATALOG · ", ""), "pattern": award, "terms": terms, "notes": []}
 
 
+# ── Mt. San Antonio: a Guided Pathways page per program ──────────────────────
+MTSAC_TERM = re.compile(r"^(?:Fall|Winter|Spring|Summer) Semester \(Year \d\)$")
+MTSAC_HEAD = re.compile(r"^Course Prefix\tTitle\tUnits$")
+MTSAC_TOTAL = re.compile(r"^Total:\t\s*\t(\d+(?:\.\d+)?)$")
+MTSAC_TITLE = re.compile(r"^.+ [A-Z]\d{4}$")
+
+
+def parse_mtsac(text: str, closed_list: list[dict]) -> dict:
+    """Each term ("Fall Semester (Year 1)") heads a table of tab-separated rows,
+    COURSE, TITLE, UNITS, closed by "Total: <units>". A row whose title opens
+    "(or)" is the alternative to the row above it. A line inside a term that is
+    no row (Winter: "EMT course see notes section") is a note on that term; the
+    page's echoes of the program's name and its petition line are dropped. The
+    page ends its map at "Program Notes"."""
+    closed = closed_index(closed_list)
+    title, terms, notes, term = "", [], [], None
+    for t in tokens(text):
+        if t == "Program Notes":
+            break
+        if MTSAC_TERM.match(t):
+            term = {"label": t, "units": None, "items": []}
+            terms.append(term)
+            continue
+        if term is None:
+            if not title and MTSAC_TITLE.match(t) and "\t" not in t:
+                title = t
+            continue
+        if MTSAC_HEAD.match(t):
+            continue
+        m = MTSAC_TOTAL.match(t)
+        if m:
+            term["units"] = m.group(1)
+            continue
+        if "\t" in t:
+            cells = [c.strip() for c in t.split("\t")]
+            code_cell, ttl = cells[0], (cells[1] if len(cells) > 1 else "")
+            alt = ttl.startswith("(or)")
+            if alt and term["items"] and codes_in(code_cell):
+                prev = term["items"][-1]
+                prev["text"] += " · " + t.replace("\t", " | ")
+                prev["codes"] = prev["codes"] + [resolve(c, closed) for c in codes_in(code_cell)]
+                prev["kind"] = "choice"
+                continue
+            item = {"text": t.replace("\t", " | "), "units": (cells[2] if len(cells) > 2 else "") or None}
+            item.update(classify(code_cell, ttl, closed))
+            term["items"].append(item)
+        elif not MTSAC_TITLE.match(t) and not t.startswith("Submit petition"):
+            notes.append("%s: %s" % (term["label"], t) if not term["items"] else t)
+    return {"map_title": title, "pattern": "Guided Pathways for Success (GPS) suggested sequence",
+            "terms": terms, "notes": notes}
+
+
 # ── the record ───────────────────────────────────────────────────────────────
 def subjects(closed_list: list[dict]) -> set:
     return {c["code"].split()[0] for c in closed_list if c.get("code")}
@@ -252,12 +304,16 @@ def record(college: str, cn: str, program: dict, parsed: dict, closed_list: list
 
 
 # The programs read so far, each with the source its text came from. A source
-# file holds the page text exactly as run 37372136739 printed it.
+# file holds the page text exactly as its run printed it.
 PROGRAMS = [
     {"college": "Santa Monica College", "control_number": "43767", "slug": "smc_43767",
      "source": "smc_program_219.json", "map": None},
     {"college": "Irvine Valley College", "control_number": "10265", "slug": "ivc_10265",
      "source": "ivc_all_program_maps_p1.json", "map": "Art, AA"},
+    # Run 37810862182 (S345): Mt. San Antonio's Guided Pathways page for the local
+    # code the catalog prints in the program's title (Certificate N0486).
+    {"college": "Mt. San Antonio College", "control_number": "03086", "slug": "mtsac_03086",
+     "source": "mtsac_gps_n0486.json", "map": None, "shape": "mtsac"},
 ]
 
 
@@ -270,6 +326,8 @@ def build(write: bool = True) -> list[dict]:
         if p["map"]:
             maps = ivc_maps(src["text"])
             parsed = parse_ivc(p["map"], maps[p["map"]], closed_list)
+        elif p.get("shape") == "mtsac":
+            parsed = parse_mtsac(src["text"], closed_list)
         else:
             parsed = parse_smc(src["text"], closed_list)
         source = {k: src[k] for k in ("url", "final_url", "run", "read_on", "sha256", "reader") if k in src}
