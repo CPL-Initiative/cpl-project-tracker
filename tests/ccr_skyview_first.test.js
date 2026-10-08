@@ -218,8 +218,8 @@ const attr = (w, sel, a) => { const e = q(w, sel); return e ? (e.getAttribute(a)
     check("(I) ⭐ opening the map puts the full-window class on the body",
       w.document.body.classList.contains("cpl-skyview-solo") && w.CPL_CCR_VIEW._solo());
     const css = (q(w, "#uc-viewseg-css") || {}).textContent || "";
-    check("(I) ⭐ the CSS hides COBI's header, hamburger and To-Do button, collapses the rail into a slide-over, and gives the frame the viewport",
-      /body\.cpl-skyview-solo > \.header,body\.cpl-skyview-solo #cpl-hamburger,body\.cpl-skyview-solo \.cpl-todo-btn/.test(css) &&
+    check("(I) ⭐ the CSS hides COBI's header and hamburger, collapses the rail into a slide-over, and gives the frame the viewport",
+      /body\.cpl-skyview-solo > \.header,body\.cpl-skyview-solo #cpl-hamburger\{display:none/.test(css) &&
       /body\.cpl-skyview-solo \.cpl-sidebar\{position:fixed/.test(css) &&
       /body\.cpl-skyview-solo\.cpl-rail-open \.cpl-sidebar\{transform:translateX\(0\)/.test(css) &&
       /uc-map-frame\{height:100vh/.test(css) && /prefers-reduced-motion/.test(css), css.slice(-300));

@@ -136,6 +136,25 @@ Update [`docs/reference/lanes/cobi-dark-mode.md`](../../docs/reference/lanes/cob
 with the new numbers and what remains. A remainder that is measured and named is
 finished work; one that is implied is a hole.
 
+### 7. The checkpoint's UI pass: one view, two more checks
+
+Sam, 2026-10-08: *"pick one COBI surface to prioritize an UI audit and fix to
+ensure it's wired to all dependent surfaces, maintains AA, is mobile friendly, and
+is First Light formatted."* Checkpoint step 9 runs this loop on the one view
+`python3 scripts/ui_pass.py --next` names, and adds two checks to steps 1-5:
+
+- **Wiring.** `python3 scripts/ui_pass.py --wiring <id>` lists each dataset the
+  view reads (from `kb/dependency_map.json`) and every other view reading it. Open
+  them side by side and confirm the shared figures agree on screen; a count that
+  differs between two views of one dataset is a finding, whichever view is right.
+- **First Light.** Tokens only (no raw hex in the view's CSS or its injected
+  CSS), the theme's type, and the same view in dark. A missing role is a token in
+  both HTMLs (Rule 4), never a hand-picked color.
+
+Measure at 390 px as well as desktop. Then
+`python3 scripts/ui_pass.py --record <id> "<what it found and fixed>"`. A fix too
+large for a small PR becomes a lane item or a sheet card, and the outcome says so.
+
 ---
 
 ## Definition of done, per surface

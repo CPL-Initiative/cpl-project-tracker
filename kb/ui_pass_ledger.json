@@ -1,0 +1,374 @@
+{
+ "_readme": "The checkpoint's UI pass (Sam, 2026-10-08; .claude/commands/checkpoint.md step 9). Every view a person reads: each COBI tab in index.html's nav and each standalone page a11y.config.js measures. last is the day of the view's last pass, outcome what it found and fixed in a sentence, hold the reason a view is skipped. scripts/ui_pass.py --next picks the view; --record stamps it; --check (CI) fails when a view is missing or unknown.",
+ "surfaces": [
+  {
+   "id": "sierra",
+   "name": "Sierra",
+   "page": "sierra/index.html",
+   "audience": "public",
+   "last": null,
+   "outcome": null,
+   "hold": "Redesign under way (Sam, 2026-10-08: \"maximally clean and simple, removing all distractions possible\"); the pass audits the new design once it ships."
+  },
+  {
+   "id": "veteran-sprint-map",
+   "name": "Veteran map",
+   "page": "veteran-sprint-map/ca_cpl_map_selfcontained.html",
+   "audience": "public",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "skyview",
+   "name": "SkyView",
+   "page": "prototype/skyview.html",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "fact-sheet",
+   "name": "Fact Sheet",
+   "page": "fact-sheet/index.html",
+   "audience": "public",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "privacy",
+   "name": "Privacy",
+   "page": "privacy.html",
+   "audience": "public",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "funding-model",
+   "name": "Funding model",
+   "page": "funding-model/index.html",
+   "audience": "public",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:dashboard",
+   "name": "Dashboard",
+   "page": "index.html#dashboard",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:activities-projects",
+   "name": "Activities",
+   "page": "index.html#activities-projects",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:raci",
+   "name": "Team & RACI",
+   "page": "index.html#raci",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:map-users",
+   "name": "MAP Users",
+   "page": "index.html#map-users",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:workplan-goals",
+   "name": "Annual Workplan Goals",
+   "page": "index.html#workplan-goals",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:budget",
+   "name": "Budget",
+   "page": "index.html#budget",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:implementation-funding",
+   "name": "Implementation Funding",
+   "page": "index.html#implementation-funding",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:contracts",
+   "name": "Contracts",
+   "page": "index.html#contracts",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:vision-2030",
+   "name": "Vision 2030",
+   "page": "index.html#vision-2030",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:military-partnerships",
+   "name": "Military Partnerships",
+   "page": "index.html#military-partnerships",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:cpl-pathways",
+   "name": "CPL Pathways",
+   "page": "index.html#cpl-pathways",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:nc-learning-partners",
+   "name": "Noncredit & Learning Partners",
+   "page": "index.html#nc-learning-partners",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:governance",
+   "name": "Governance",
+   "page": "index.html#governance",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:team-phrases",
+   "name": "Team Phrases",
+   "page": "index.html#team-phrases",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:admin",
+   "name": "Admin",
+   "page": "index.html#admin",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:map-queue",
+   "name": "MAP Team Queue",
+   "page": "index.html#map-queue",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:college-briefing",
+   "name": "My College",
+   "page": "index.html#college-briefing",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:college-identity",
+   "name": "College Identity",
+   "page": "index.html#college-identity",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:annual-report",
+   "name": "Annual Report",
+   "page": "index.html#annual-report",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:unified-courses",
+   "name": "Common Course Reference",
+   "page": "index.html#unified-courses",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:canonical-subj4",
+   "name": "Common Subjects Reference",
+   "page": "index.html#canonical-subj4",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:cr-reference",
+   "name": "Common CR Reference",
+   "page": "index.html#cr-reference",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:coci-lookup",
+   "name": "COCI Lookup",
+   "page": "index.html#coci-lookup",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:cip-crosswalk",
+   "name": "CIP Codes",
+   "page": "index.html#cip-crosswalk",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:program-requirements",
+   "name": "Program Requirements",
+   "page": "index.html#program-requirements",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:gr-priorities",
+   "name": "GR Priorities",
+   "page": "index.html#gr-priorities",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:memory",
+   "name": "Memory",
+   "page": "index.html#memory",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:map-data-quality",
+   "name": "MAP Data Quality",
+   "page": "index.html#map-data-quality",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:credential-reference",
+   "name": "Common Exhibit Reference",
+   "page": "index.html#credential-reference",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:map-export",
+   "name": "MAP Export",
+   "page": "index.html#map-export",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:exhibit-adoption",
+   "name": "Exhibit Adoption",
+   "page": "index.html#exhibit-adoption",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:tmc-builder",
+   "name": "TMC Builder",
+   "page": "index.html#tmc-builder",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:pipeline",
+   "name": "Pipeline",
+   "page": "index.html#pipeline",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:our-process",
+   "name": "Our Process",
+   "page": "index.html#our-process",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:letters",
+   "name": "Letters",
+   "page": "index.html#letters",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:cpl-news",
+   "name": "CPL News",
+   "page": "index.html#cpl-news",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:chatbot",
+   "name": "CPL Assistant",
+   "page": "index.html#chatbot",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:sierra-training",
+   "name": "Sierra Training",
+   "page": "index.html#sierra-training",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:knowledge-base",
+   "name": "Knowledge Base",
+   "page": "index.html#knowledge-base",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  },
+  {
+   "id": "cobi:library",
+   "name": "Library",
+   "page": "index.html#library",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
+  }
+ ]
+}

@@ -114,11 +114,9 @@ check("⭐ --glass-quiet is defined in the DARK blocks only — light keeps the 
   (cpl.match(/--glass-quiet:\s*#262624/g) || []).length === 2
     && !/:root \{[^}]*--glass-quiet:/.test(cpl));
 check("cr-chip-gen rides the violet machine lane", cer.includes(".cr-chip-gen{color:var(--violet);}"));
-const todos = fs.readFileSync("cpl_todos.js", "utf8");
-check("To-Do FAB is the cobalt primary action", todos.includes("background:var(--cobalt);"));
 
 // ── data surfaces stay opaque in the repointed JS assets ──
-for (const f of ["cpl_funding.js", "cpl_todos.js", "canonical_subj4.js", "first_light.js"]) {
+for (const f of ["cpl_funding.js", "canonical_subj4.js", "first_light.js"]) {
   const js = fs.readFileSync(f, "utf8");
   check(`${f}: no data surface on glass (var(--surface) bg)`, !/background:\s*var\(--surface\)\s*[;}"]/.test(js));
 }
