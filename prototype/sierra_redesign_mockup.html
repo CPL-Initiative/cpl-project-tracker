@@ -51,11 +51,13 @@ button { font: inherit; color: inherit; }
 
 .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 1180px; width: 100%; margin: 0 auto; padding-block: 18px 0; }
 .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.brand img { height: 30px; width: auto; }
+.brand img { height: 30px; width: auto; display: block; }
+.brand .home { display: inline-flex; align-items: center; min-height: 44px; border-radius: 6px; }
+.brand .home:hover { opacity: .85; }
 .brand .logo-dark { display: none; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brand .logo-light { display: none; } :root:not([data-theme="light"]) .brand .logo-dark { display: inline; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brand .logo-light { display: none; } :root:not([data-theme="light"]) .brand .logo-dark { display: block; } }
 :root[data-theme="dark"] .brand .logo-light { display: none; }
-:root[data-theme="dark"] .brand .logo-dark { display: inline; }
+:root[data-theme="dark"] .brand .logo-dark { display: block; }
 .brand .who { font-family: var(--display); font-size: 1.25rem; font-weight: 600; color: var(--text-strong); padding-left: 12px; border-left: 1px solid var(--border-strong); }
 .word { background: none; border: 0; padding: 8px 4px; min-height: 44px; cursor: pointer; color: var(--cobalt); font-weight: 600; }
 .word:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -155,8 +157,11 @@ button { font: inherit; color: inherit; }
   <div class="page">
     <header class="top">
       <div class="brand">
-        <img class="logo-light" src="art/cpl-initiative-logo-navy.png" alt="CPL Initiative, California Community Colleges" width="160" height="30">
-        <img class="logo-dark" src="art/cpl-initiative-logo.png" alt="CPL Initiative, California Community Colleges" width="160" height="30">
+        <a class="home" href="https://map.rccd.edu" target="_blank" rel="noopener">
+          <img class="logo-light" src="art/cpl-initiative-logo-navy.png" alt="CPL Initiative, California Community Colleges: the MAP platform" width="160" height="30">
+          <img class="logo-dark" src="art/cpl-initiative-logo.png" alt="CPL Initiative, California Community Colleges: the MAP platform" width="160" height="30">
+          <span class="sr">(opens map.rccd.edu in a new tab)</span>
+        </a>
         <span class="who asking-only">Sierra</span>
       </div>
       <button class="word" id="about-btn" type="button" aria-expanded="false" aria-controls="about">About Sierra</button>
