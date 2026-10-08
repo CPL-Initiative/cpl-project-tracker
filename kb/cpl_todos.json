@@ -1,32 +1,32 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-08",
-  "_session": "345 (SkyLantern)",
-  "_status": "The catalog harvest read the program map sources nobody had read, at sixteen colleges, on 8 October. Every Program Mapper site refused the reader, as all of them have, so 24 of the 32 published maps sit behind that service; Mt. San Antonio turned out to publish a suggested sequence for every program on its own Guided Pathways pages, and three maps are now read. Nineteen of 118 colleges hold a written reading procedure. Sam answered Open Asks Sheet 50 the same afternoon: the next step is a mock-up that flags where a record and its sources disagree and lets him confirm a record from the tab, and CPL Pathways gets a college-first selector.",
+  "_session": "346 (SkyCairn)",
+  "_status": "On 8 October the harvest settled 31 of the 32 published program maps: most colleges keep their semester plans inside a vendor tool that blocks our reader, and each college's record now says what else was tried. 34 of 118 colleges have a reading procedure. A suggested semester plan now counts when it also recommends a few courses outside the program, and CPL Pathways lets you pick a college first. Two calls wait on Sam: Sheet 51, and a two-number headline for the Chancellor, 20,282 active programs beside the 20 read and checked.",
   "items": [
     {
-      "id": "s345-fable-records-flags-mockup",
-      "for": "Fable",
+      "id": "s346-sam-headline",
+      "for": "Sam",
       "tab": "program-requirements",
-      "text": "Mock up flags on the Program records view where a record and its sources disagree (Irvine Valley's ARTH numbering, Santa Monica's COSM 11C misprint and missing 95D), with Confirm and Needs a fix on each record, and bring it to Sam on a decision sheet before building (his sheet 50 follow-up)."
+      "text": "Say yes, or change it: a two-number headline on the harvest's Progress view, every active program in the state (20,282) beside the ones read from a catalog and checked (20), for the Chancellor. The mock-up is ready."
     },
     {
-      "id": "s345-fable-college-selector",
-      "for": "Fable",
-      "tab": "cpl-pathways",
-      "text": "Add a college selector ahead of the pathway selector on CPL Pathways, so a person can choose a college first and see the pathways it offers (Sam, 8 October)."
+      "id": "s346-sam-sheet51",
+      "for": "Sam",
+      "tab": "program-requirements",
+      "text": "Answer Open Asks Sheet 51: whether the Program records view may save your reading of a record, and the go to show two newly read program maps to Sierra."
     },
     {
-      "id": "s345-fable-mtsac-ece",
+      "id": "s346-fable-headline",
       "for": "Fable",
       "tab": "program-requirements",
-      "text": "File Mt. San Antonio's Early Childhood Education map (read 2026-10-08: seven terms, all 12 listed courses) as a sequence record, then ask Sam for the display apply on the next sheet, since it changes a checked program."
+      "text": "Build the two-number headline on the Progress view once Sam says yes, and record the pair at each checkpoint so the count shows a trend."
     },
     {
-      "id": "s345-fable-refused-own-pages",
+      "id": "s346-fable-palo-verde",
       "for": "Fable",
       "tab": "program-requirements",
-      "text": "For each college whose map service refused the reader (24 of 32), search its own pages and catalog for a sequence outside the mapper, as Mt. San Antonio's Guided Pathways pages turned out to be; read one Los Rios map PDF on mapmaker.losrios.edu."
+      "text": "Settle Palo Verde, the last of the 32 published program maps: record the site search that found none on its reading procedure."
     },
     {
       "id": "s344-sam-m365-connector",

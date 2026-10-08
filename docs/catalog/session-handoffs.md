@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-317 document(s).
+318 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 347 | [Sam's headline for the Chancellor, Sheet 51's two calls, then Palo Verde](../session_347_handoff.md) | 2026-10-08 |
 | 346 | [Sam's three asks from the harvest tab, then card 4 and the maps](../session_346_handoff.md) | 2026-10-08 |
 | 345 | [every pilot college has a procedure; map searches at three colleges](../session_345_handoff.md) | 2026-10-08 |
 | 344 | [procedures for the pilot colleges; the Progress view is live](../session_344_handoff.md) | 2026-10-07 |

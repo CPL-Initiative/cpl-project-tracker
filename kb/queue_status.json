@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-08T17:24:37Z",
-  "session": 345,
-  "moniker": "SkyLantern",
+  "written_at": "2026-10-08T19:03:09Z",
+  "session": 346,
+  "moniker": "SkyCairn",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_346_handoff.md",
+  "handoff": "docs/session_347_handoff.md",
   "unchecked": [
     {
       "college": "Irvine Valley College",
@@ -23,37 +23,47 @@
     }
   ],
   "next_step": {
-    "title": "Flags and a confirm on the Program records view",
-    "text": "Sam asked for a flag on each place a record and its sources disagree and a way to confirm a record from the tab; a mock-up comes to him first. Then card 4's map rule with Mt. San Antonio's two maps, and a college selector on CPL Pathways."
+    "title": "A two-number headline for the Chancellor",
+    "text": "Sam asked for the count of active programs in the state beside the count read from a catalog and checked; the mock-up waits on his yes, then the band goes at the top of this view."
   },
-  "calls": [],
+  "calls": [
+    {
+      "title": "Save your reading from the tab",
+      "text": "Whether the Program records view may save Confirm or Needs a fix on a record, as the mock-up shows.",
+      "if_no_reply": "Your readings keep arriving on sheets and the two records stay unchecked.",
+      "link": "https://claude.ai/artifact/AYuPisSF5Tc4rmftgCYvb2",
+      "link_text": "Open Asks Sheet 51, card 1",
+      "view": {
+        "href": "https://claude.ai/artifact/2JofNdHZvVTtz9bKQTsa4g",
+        "text": "The mock-up"
+      }
+    },
+    {
+      "title": "Show two new program maps to Sierra",
+      "text": "The go to apply display build 2360b83e8100, which places Mt. San Antonio's Fire Technology and Early Childhood Education courses by term.",
+      "if_no_reply": "CPL Pathways shows the maps; Sierra keeps the earlier build.",
+      "link": "https://claude.ai/artifact/AYuPisSF5Tc4rmftgCYvb2",
+      "link_text": "Open Asks Sheet 51, card 2",
+      "view": {
+        "href": "#cpl-pathways",
+        "text": "CPL Pathways"
+      }
+    },
+    {
+      "title": "The headline for the Chancellor",
+      "text": "Every active program in the state (20,282) beside the ones read from a catalog and checked (20), with outcomes and maps on a line beneath.",
+      "if_no_reply": "It goes on the next sheet as a card.",
+      "link": "https://claude.ai/artifact/ME23x5taJpTKpx4RBwQ2Tr",
+      "link_text": "The headline mock-up"
+    }
+  ],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply.",
-    "procedures": "Nineteen colleges have one since Oct 8: the seven pilot colleges and twelve whose maps were read that day.",
+    "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The full smoke test passed on Oct 8.",
-    "maps": "A refused map counts as settled once the college's procedure names the other routes tried (Sam, sheet 50 card 5)."
+    "maps": "A refused map counts as settled once the college's procedure names the other routes tried (Sam, sheet 50 card 5); Palo Verde is the one left."
   },
   "changes": [
-    {
-      "at": "2026-10-08T15:13:12Z",
-      "text": "Reading procedures written for the five pilot colleges"
-    },
-    {
-      "at": "2026-10-08T15:22:53Z",
-      "text": "Sierra's smoke test passed in full"
-    },
-    {
-      "at": "2026-10-08T15:28:00Z",
-      "text": "Map searches recorded for West Los Angeles, Riverside City and Mt. San Antonio"
-    },
-    {
-      "at": "2026-10-08T16:55:08Z",
-      "text": "Map reads at sixteen colleges: every Program Mapper host refused; Mt. San Antonio's own pages publish a sequence for each program"
-    },
-    {
-      "at": "2026-10-08T17:00:03Z",
-      "text": "The registry's map columns filled for twelve colleges"
-    },
     {
       "at": "2026-10-08T17:03:10Z",
       "text": "Reading procedures written for twelve more colleges"
@@ -69,6 +79,27 @@
     {
       "at": "2026-10-08T17:24:00Z",
       "text": "The Progress view links each call to its sheet card"
+    },
+    {
+      "at": "2026-10-08T18:41:43Z",
+      "text": "A map that names a few courses outside its program now counts; Mt. San Antonio's two maps filed"
+    },
+    {
+      "at": "2026-10-08T18:41:43Z",
+      "text": "CPL Pathways lets you choose a college first"
+    },
+    {
+      "at": "2026-10-08T18:53:00Z",
+      "text": "Reading procedures for 28 colleges: 31 of 32 published maps settled"
+    },
+    {
+      "at": "2026-10-08T18:55:00Z",
+      "text": "Open Asks Sheet 51 published with two calls"
     }
-  ]
+  ],
+  "next_run": {
+    "name": "CPL Queue",
+    "every_hours": 24,
+    "at": "2026-10-09T15:07:00Z"
+  }
 }
