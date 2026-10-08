@@ -87,8 +87,14 @@ function mount(opts) {
 // Statewide converts units at the semester default — 30 units to one CPL FTES;
 // the two quarter colleges are ~2% of enrolment and do not move the statewide
 // figure at display precision (the consumer says so at `toActual`).
+//
+// Formatted the way the card formats it (`fmtNum1`: en-US, one decimal), so a
+// figure past 1,000 carries its comma. The 2026-10-08 refresh moved statewide
+// `pac_u` to 36,650.95, the card read "1,221.7 CPL FTES", and a bare
+// toFixed(1) expected "1221.7": `main` went red on data alone.
 function statewideFtes(window, key) {
-  return (window.CPL_FUNDING_PERF.statewide[key] / 30).toFixed(1);
+  return (window.CPL_FUNDING_PERF.statewide[key] / 30)
+    .toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 }
 const rx = (s) => new RegExp(s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
 const sels = (doc) => Array.from(doc.querySelectorAll("[data-priosrc]"));
