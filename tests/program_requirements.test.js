@@ -391,7 +391,7 @@ block("(8)", function () {
     /Next milestone/.test(steps[3].textContent) && /Later/.test(steps[4].textContent));
   check("(8) the facts count from the reads", /4 of 4 colleges/.test(steps[0].textContent) &&
     /1 of 3 published maps settled/.test(here.textContent) && /2 of 4 written/.test(steps[3].textContent) &&
-    /20,282 active programs/.test(steps[4].textContent), Array.prototype.map.call(steps, function (s) { return s.textContent; }).join(" | "));
+    /20 of 20,282/.test(steps[4].textContent), Array.prototype.map.call(steps, function (s) { return s.textContent; }).join(" | "));
   const left = root.querySelector(".prh-pg-left");
   check("(8) what is left before the next milestone: maps, the unchecked records, the addenda",
     !!left && /^3/.test(left.textContent) && /2 published maps to read or settle/.test(left.textContent) &&
@@ -503,7 +503,9 @@ block("(8c)", function () {
     const q = asked.filter(function (a) { return /queue_status/.test(a[0]); })[0];
     check("(8c) the status file is read fresh", !!q && q[1].cache === "no-store");
     const txt = root.textContent;
-    check("(8c) the count lands", /20,282 active programs/.test(txt), txt.slice(0, 500));
+    const big = root.querySelector(".prh-pg-hl .prh-pg-n b");
+    check("(8c) the count lands, in the headline and the Every program milestone",
+      !!big && big.textContent === "20,282" && /of 20,282/.test(txt), txt.slice(0, 500));
     check("(8c) a failed addenda read fails only its part", /You are here/.test(txt) &&
       /The addenda table could not be read \(program_source_addenda answered 503\)/.test(txt) && !/could not be read \(program_source_registry/.test(txt));
   });
@@ -582,6 +584,65 @@ block("(8e)", function () {
 });
 
 // ── (9) Every section collapses, and one control opens or shuts them all ────
+// ── (10) The headline (Sam, 2026-10-08, for the Chancellor; yes to the mock-up, S347) ──
+// "the total count of college active program control numbers from COCI and the ones with
+// complete harvested ROEP data". The failures this guards: an unchecked record counted as
+// complete; a failed COCI read drawn as a zero; the band folded away by Collapse all; a
+// trend line that claims growth the history does not show.
+block("(10)", function () {
+  const p = progressReady(20);
+  p.f.recs.forEach(function (r, i) {
+    r.record = JSON.parse(JSON.stringify(r.record));
+    r.record.program.outcomes = i === 7 ? [] : ["Outcome " + i];
+    r.display = Object.assign({}, r.display, { map: { status: i < 2 ? "read" : "none" } });
+  });
+  const unchecked = JSON.parse(JSON.stringify(IRONWORKER));
+  unchecked.checked = false; unchecked.control_number = "10265"; unchecked.college = "Irvine Valley College";
+  p.M._state.records = p.f.recs.concat([unchecked]);
+  p.M._render();
+  const head = p.root.querySelector(".prh-pg-head");
+  const band = head && head.querySelector('section.prh-pg-hl[aria-label]');
+  check("(10) the band sits in the view's head", !!band);
+  const nums = band ? band.querySelectorAll(".prh-pg-n b") : [];
+  check("(10) the first number is COCI's active programs, at the registry's colleges",
+    nums.length === 2 && nums[0].textContent === "20,282" && /active programs at 4 colleges/.test(band.textContent) &&
+    /The state's program inventory \(COCI\), one control number each/.test(band.textContent), band && band.textContent);
+  check("(10) the second counts the checked records only, at their own colleges",
+    nums[1] && nums[1].textContent === "20" && /read from the college's catalog and checked/.test(band.textContent) &&
+    /Requirements, choices and totals, at 2 colleges/.test(band.textContent), band && band.textContent);
+  const bar = band && band.querySelector('.prh-pg-bar[role="img"]');
+  check("(10) the bar says its numbers in words", !!bar && bar.getAttribute("aria-label") === "20 of 20,282 programs read and checked" &&
+    /width:0\.1%/.test(bar.querySelector("i").getAttribute("style")), bar && bar.outerHTML);
+  const within = band && band.querySelector(".prh-pg-within");
+  check("(10) beneath: how many carry outcomes and how many show a map",
+    !!within && /Of the 20: 19 also carry their published outcomes/.test(within.textContent) &&
+    /2 show the college's term-by-term map/.test(within.textContent) && !/Up from/.test(within.textContent), within && within.textContent);
+  check("(10) the facts are exported for the checkpoint's own read",
+    JSON.stringify(Object.assign({}, p.M.headlineFacts(p.M.progressContext(new Date())), { since: null })) ===
+    JSON.stringify({ active: 20282, colleges: 4, complete: 20, completeColleges: 2, outcomes: 19, maps: 2, since: null }));
+  p.root.querySelector("header .prh-allctl button[data-all=close]").click();
+  check("(10) Collapse all leaves the headline on screen", !!p.root.querySelector(".prh-pg-head .prh-pg-hl") &&
+    !p.root.querySelector(".prh-pg-hl").closest("details"));
+
+  // The history: the band names the first recorded count once the checked count passes it.
+  p.M._state.progress.queue = Object.assign({}, p.f.queue, { headline: [
+    { day: "2026-10-08", active: 20282, checked: 18, colleges: 5 }, { day: "2026-10-09", active: 20282, checked: 19, colleges: 5 }] });
+  p.M._render();
+  check("(10) up from the first recorded count, by day", /Up from 18 on Oct 8/.test(p.root.querySelector(".prh-pg-within").textContent),
+    p.root.querySelector(".prh-pg-within").textContent);
+  p.M._state.progress.queue.headline = [{ day: "2026-10-08", active: 20282, checked: 20, colleges: 5 }];
+  p.M._render();
+  check("(10) no growth claimed while the count stands where it was recorded", !/Up from/.test(p.root.querySelector(".prh-pg-hl").textContent));
+
+  // A failed COCI read says so; it never draws a zero or a bar.
+  const bad = progressReady(20, { active: "coci_college_programs gave no count" });
+  const hl = bad.root.querySelector(".prh-pg-hl");
+  check("(10) a failed COCI read names itself in the band, with no bar and no zero",
+    !!hl && /Could not be read/.test(hl.querySelector(".prh-pg-n b").textContent) &&
+    /COCI's count of active programs could not be read \(coci_college_programs gave no count\)/.test(hl.textContent) &&
+    !hl.querySelector(".prh-pg-bar") && hl.querySelectorAll(".prh-pg-n b")[1].textContent === "20", hl && hl.textContent);
+});
+
 // Sam, 2026-10-07: "make sure every section is collapsible and the tab has a
 // collapse/expand all button." The failures this guards: a view with a section
 // that cannot close, a Collapse all that skips Sierra or the views not on screen,

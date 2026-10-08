@@ -12,6 +12,10 @@ things no browser read can know come from this file instead, written at every ch
     routine's next firing, the next step, the calls waiting on Sam, and what changed
     (program_source_registry_history has no anon grant).
 
+It also keeps the headline's history (Sam, 2026-10-08: COCI's active programs beside the
+checked ones, "so she can get the BIG vision and progress"): one entry per day in
+`headline`, so the pair has a trend. The view reads the pair live; the list is the record.
+
 Never widen a policy to fill the view; this file is the chosen alternative (S343, the
 handoff's option b).
 
@@ -19,8 +23,11 @@ Usage, from the repo root:
   python3 scripts/queue_status.py --check
       validate the committed file; exit 1 and name each fault
   python3 scripts/queue_status.py --stamp [--next-run 2026-10-08T15:07:00Z]
+                                          [--headline ACTIVE CHECKED COLLEGES]
       set written_at to now (UTC) and, if given, the routine's next firing (read it with
-      get_trigger on the CPL Queue routine), then validate
+      get_trigger on the CPL Queue routine) and today's headline entry (read the three
+      counts with the SQL in .claude/commands/checkpoint.md step 12; a second stamp the
+      same day replaces that day's entry), then validate
 
 The session writes the prose fields; the script owns the clock. Guard:
 tests/queue_status_test.py.
@@ -131,6 +138,24 @@ def faults(q, root=ROOT, parts=None):
     for k, v in (notes.items() if isinstance(notes, dict) else []):
         need(k in known, "notes." + k + " names no part (the view's parts: " + ", ".join(known) + ")")
         text(v, "notes." + k)
+    hl = q.get("headline")
+    need(isinstance(hl, list), "headline must be a list of the pair recorded at each checkpoint")
+    prev = ""
+    for i, e in enumerate(hl if isinstance(hl, list) else []):
+        w = "headline[%d]" % i
+        if not isinstance(e, dict):
+            out.append(w + " must be an object")
+            continue
+        d = e.get("day")
+        need(isinstance(d, str) and DAY.match(d or ""), w + ".day must be a date, YYYY-MM-DD")
+        for k in ("active", "checked", "colleges"):
+            need(isinstance(e.get(k), int) and not isinstance(e.get(k), bool) and e.get(k) >= 0,
+                 w + "." + k + " must be a whole number")
+        if isinstance(e.get("active"), int) and isinstance(e.get("checked"), int):
+            need(e["checked"] <= e["active"], w + ".checked cannot exceed active")
+        if isinstance(d, str):
+            need(d > prev, w + ".day must come after the entry before it (one entry per day, oldest first)")
+            prev = d
     ch = q.get("changes")
     need(isinstance(ch, list), "changes must be a list")
     for i, c in enumerate(ch if isinstance(ch, list) else []):
@@ -143,6 +168,13 @@ def faults(q, root=ROOT, parts=None):
     return out
 
 
+def add_headline(hist, day, active, checked, colleges):
+    """hist with day's entry set to the pair: replaced when the day is already there."""
+    hist = [e for e in (hist if isinstance(hist, list) else []) if not (isinstance(e, dict) and e.get("day") == day)]
+    hist.append({"day": day, "active": active, "checked": checked, "colleges": colleges})
+    return sorted(hist, key=lambda e: str(e.get("day", "")))
+
+
 def now_iso():
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -152,6 +184,8 @@ def main(argv=None):
     ap.add_argument("--check", action="store_true", help="validate the committed file")
     ap.add_argument("--stamp", action="store_true", help="set written_at to now, then validate")
     ap.add_argument("--next-run", help="the CPL Queue routine's next firing, ISO UTC (get_trigger's next_run_at)")
+    ap.add_argument("--headline", nargs=3, type=int, metavar=("ACTIVE", "CHECKED", "COLLEGES"),
+                    help="today's pair: COCI's active programs, the checked records, their colleges")
     ap.add_argument("--path", default=PATH)
     a = ap.parse_args(argv)
     with open(a.path, encoding="utf-8") as f:
@@ -162,6 +196,8 @@ def main(argv=None):
             nr = q.get("next_run") or {"name": "CPL Queue", "every_hours": 24}
             nr["at"] = re.sub(r"\.\d+Z$", "Z", a.next_run.replace("+00:00", "Z"))
             q["next_run"] = nr
+        if a.headline:
+            q["headline"] = add_headline(q.get("headline"), q["written_at"][:10], *a.headline)
         with open(a.path, "w", encoding="utf-8") as f:
             json.dump(q, f, indent=2, ensure_ascii=False)
             f.write("\n")

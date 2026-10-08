@@ -10,7 +10,9 @@
  *
  * Five views, each read LIVE from tables anon may SELECT (no snapshot to go stale):
  *   Progress     the harvest as a workflow (Sam, 2026-10-07: "a workflow dashboard to
- *                monitor the progress like the attached"): five milestones with You are
+ *                monitor the progress like the attached"): a headline pairing COCI's
+ *                active programs with the checked ones (Sam, 2026-10-08, for the
+ *                Chancellor; headlineBand below), five milestones with You are
  *                here, the eight parts, and, from kb/queue_status.json (the last
  *                checkpoint's word), the next step, the calls waiting on Sam and what
  *                changed. Definitions in MILESTONES and PARTS below.
@@ -467,6 +469,19 @@
       ".prh-pg-meta a { color:var(--cobalt); font-weight:700; }",
       ".prh-pg-waiting { color:var(--crimson); font-weight:700; }",
       ".prh-pg-lede { margin:0; }",
+      ".prh-pg-hl { width:100%; box-sizing:border-box; margin-top:6px; background:var(--surface-opaque); border:1px solid var(--border); border-radius:12px; padding:20px 20px 16px; display:grid; gap:14px; }",
+      ".prh-pg-pair { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:16px 28px; align-items:end; }",
+      ".prh-pg-n { display:grid; gap:4px; min-width:0; }",
+      ".prh-pg-n b { font-family:'Playfair Display', Georgia, serif; font-size:clamp(2.2rem, 6vw, 3.4rem); line-height:1; color:var(--text-strong); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }",
+      ".prh-pg-n.prh-pg-mine b { color:var(--cobalt); }",
+      ".prh-pg-n b.prh-pg-unread { font-family:inherit; font-size:1.15rem; line-height:1.3; color:var(--mustard-text); }",
+      ".prh-pg-n span { font-size:1rem; color:var(--text-body); }",
+      ".prh-pg-n small { font-size:.875rem; color:var(--text-muted); }",
+      ".prh-pg-bar { height:10px; border-radius:5px; background:var(--surface-muted); overflow:hidden; }",
+      ".prh-pg-bar i { display:block; height:100%; min-width:4px; background:var(--cobalt); }",
+      ".prh-pg-within { margin:0; display:flex; flex-wrap:wrap; gap:6px 22px; font-size:.9375rem; border-top:1px solid var(--border); padding-top:12px; }",
+      ".prh-pg-within b { color:var(--text-strong); font-variant-numeric:tabular-nums; }",
+      ".prh-pg-within .prh-quiet { color:var(--text-muted); }",
       ".prh-pg-label { font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); margin:0; }",
       ".prh-pg .prh-sec { margin:0; }",
       ".prh-pg-road > .prh-sec-b { padding:30px 16px 16px; }",
@@ -520,7 +535,7 @@
         " .prh-pg-step.prh-pg-into-here::after { border-left-color:var(--cobalt); }" +
         " .prh-pg-step.prh-pg-into-next::after, .prh-pg-step.prh-pg-into-later::after { border-left:3px dashed var(--border-strong); }" +
         " .prh-pg-node { top:0; left:0; } .prh-pg-youare { position:static; order:-1; } .prh-pg-road > .prh-sec-b { padding-top:8px; } }",
-      "@media (max-width: 560px) { .prh-pg-grid { grid-template-columns:minmax(0, 1fr); } .prh-pg-log li { grid-template-columns:minmax(0, 1fr); gap:0; } }",
+      "@media (max-width: 560px) { .prh-pg-pair { grid-template-columns:minmax(0, 1fr); } .prh-pg-grid { grid-template-columns:minmax(0, 1fr); } .prh-pg-log li { grid-template-columns:minmax(0, 1fr); gap:0; } }",
       "@media (prefers-reduced-motion: reduce) { .prh * { transition:none !important; animation:none !important; } }"
     ].join("\n");
     document.head.appendChild(el("style", { id: "prh-css", text: css }));
@@ -870,8 +885,9 @@
     { id: "procedures", title: "A procedure per college",
       fact: function (x) { return x.procedures + " of " + x.R.length + " written"; },
       left: function (x) { return [[x.R.length - x.procedures, "college without a reading procedure", "colleges without a reading procedure"]]; } },
+    /* Reads as the headline's pair (Sam, 2026-10-08): the checked records of COCI's active programs. */
     { id: "every", title: "Every program", needs: ["active"],
-      fact: function (x) { return fmt(x.active) + " active programs"; },
+      fact: function (x) { return fmt(x.checked) + " of " + fmt(x.active); },
       left: function (x) { return [[x.active == null ? null : x.active - x.readTotal, "active program to read", "active programs to read"]]; } }
   ];
   /* status(x) answers one of the STATUS keys; meter(x) answers [have, of, verb]; a note in
@@ -1036,6 +1052,63 @@
       foot: note != null ? note : p.foot(x), meter: p.meter ? p.meter(x) : null };
   }
 
+  /* ── the headline: every program in the state beside the ones the harvest holds ──
+   * Sam, 2026-10-08, in chat: "add to our ROEP dashboard the total count of college active
+   * program control numbers from COCI and the ones with complete harvested ROEP data... I
+   * want to be able to show this to the Chancellor so she can get the BIG vision and
+   * progress"; SkyView becomes the hub later. Yes to the mock-up (S347):
+   * https://claude.ai/artifact/ME23x5taJpTKpx4RBwQ2Tr (prototype/roep_headline_mockup.html).
+   * Complete means checked: the four checks passed. COCI holds one Active row per control
+   * number (20,282 rows and numbers at 118 colleges, read 2026-10-08), so its exact count
+   * is the first number. The band sits in the view's head, beside the run status, so
+   * Collapse all leaves it on screen. Each checkpoint records the pair in the status file's
+   * headline list (scripts/queue_status.py --headline), and the band names the first
+   * recorded count once the checked count passes it. */
+  function headlineFacts(x) {
+    var P = x.P || [], cols = {};
+    P.forEach(function (p) { cols[p.college] = 1; });
+    var hist = x.Q && Array.isArray(x.Q.headline) ? x.Q.headline.filter(function (h) {
+      return h && /^\d{4}-\d{2}-\d{2}$/.test(h.day || "") && typeof h.checked === "number";
+    }) : [];
+    var first = hist[0] || null;
+    return {
+      active: x.active, colleges: x.R.length,
+      complete: P.length, completeColleges: Object.keys(cols).length,
+      outcomes: P.filter(function (p) {
+        var o = p.record && p.record.program && p.record.program.outcomes;
+        return Array.isArray(o) && o.length > 0;
+      }).length,
+      maps: P.filter(function (p) { return !!(p.display && p.display.map && p.display.map.status === "read"); }).length,
+      since: first && first.checked < P.length ? { day: dayOf(first.day), checked: first.checked } : null
+    };
+  }
+  function headlineBand(x) {
+    var h = headlineFacts(x), read = h.active != null;
+    var all = read
+      ? el("div", { cls: "prh-pg-n" }, [el("b", { text: fmt(h.active) }),
+          el("span", { text: "active programs at " + h.colleges + " colleges" }),
+          el("small", { text: "The state's program inventory (COCI), one control number each" })])
+      : el("div", { cls: "prh-pg-n" }, [el("b", { cls: "prh-pg-unread", text: "Could not be read" }),
+          el("span", { text: "active programs at " + h.colleges + " colleges" }),
+          el("small", { text: missingText(["active"], x) })]);
+    var mine = el("div", { cls: "prh-pg-n prh-pg-mine" }, [el("b", { text: fmt(h.complete) }),
+      el("span", { text: "read from the college's catalog and checked" }),
+      el("small", { text: "Requirements, choices and totals, at " + h.completeColleges + (h.completeColleges === 1 ? " college" : " colleges") })]);
+    var kids = [el("div", { cls: "prh-pg-pair" }, [all, mine])];
+    if (read && h.active > 0) {
+      var pct = Math.max(0, Math.min(100, h.complete / h.active * 100));
+      kids.push(el("div", { cls: "prh-pg-bar", role: "img", "aria-label": fmt(h.complete) + " of " + fmt(h.active) + " programs read and checked" }, [
+        el("i", { style: "width:" + (Math.round(pct * 100) / 100) + "%" })]));
+    }
+    if (h.complete > 0 || h.since) {
+      kids.push(el("p", { cls: "prh-pg-within" }, [
+        h.complete > 0 ? el("span", {}, ["Of the " + fmt(h.complete) + ": ", el("b", { text: fmt(h.outcomes) }), " also carry their published outcomes"]) : null,
+        h.complete > 0 ? el("span", {}, [el("b", { text: fmt(h.maps) }), " show the college's term-by-term map"]) : null,
+        h.since ? el("span", { cls: "prh-quiet", text: "Up from " + fmt(h.since.checked) + " on " + h.since.day }) : null]));
+    }
+    return el("section", { cls: "prh-pg-hl", "aria-label": "Every program in the state, and how many the harvest holds" }, kids);
+  }
+
   function viewProgress() {
     var now = new Date();
     var x = progressContext(now);
@@ -1062,7 +1135,7 @@
       meta.appendChild(el("li", { cls: "prh-caution", text: missingText(["Q"], x) }));
     }
     box.appendChild(el("header", { cls: "prh-pg-head" }, [
-      el("h3", { text: "Catalog ROEP harvest" }), el("span", { cls: "prh-pg-sub", text: "Progress" }), meta]));
+      el("h3", { text: "Catalog ROEP harvest" }), el("span", { cls: "prh-pg-sub", text: "Progress" }), meta, headlineBand(x)]));
     box.appendChild(el("p", { cls: "prh-lede prh-pg-lede", text: "Where the harvest stands. The milestones and parts are read live from the harvest's tables on each visit; the next step, the calls and what changed come from the last session's checkpoint." }));
 
     /* the milestone line */
@@ -1261,6 +1334,6 @@
     catalogStatus: catalogStatus, filterRegistry: filterRegistry, recordChecks: recordChecks,
     ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span,
     collegeDrafts: collegeDrafts, draftText: draftText,
-    MILESTONES: MILESTONES, PARTS: PARTS, progressContext: progressContext, nextRun: nextRun, nextWeekly: nextWeekly
+    MILESTONES: MILESTONES, PARTS: PARTS, progressContext: progressContext, headlineFacts: headlineFacts, nextRun: nextRun, nextWeekly: nextWeekly
   };
 })();

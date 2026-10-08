@@ -101,5 +101,13 @@
     "name": "CPL Queue",
     "every_hours": 24,
     "at": "2026-10-09T15:07:00Z"
-  }
+  },
+  "headline": [
+    {
+      "day": "2026-10-08",
+      "active": 20282,
+      "checked": 20,
+      "colleges": 5
+    }
+  ]
 }

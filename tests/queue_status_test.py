@@ -33,6 +33,8 @@ bad = M.faults(Q)
 check("the committed status file is sound", not bad, "; ".join(bad))
 check("it names the handoff of the session that wrote it",
       Q.get("handoff") and os.path.exists(os.path.join(ROOT, Q["handoff"])))
+check("the headline's history starts with Sam's ask: 20 of 20,282 on 2026-10-08",
+      (Q.get("headline") or [{}])[0] == {"day": "2026-10-08", "active": 20282, "checked": 20, "colleges": 5}, Q.get("headline"))
 
 # ── 2. the parts it may annotate are the view's own ────────────────────────
 ids = M.part_ids()
@@ -60,6 +62,12 @@ cases = [
     ("a link that is not https", lambda q: q["calls"].append({"title": "t", "text": "x", "link": "http://example.org"}), "link"),
     ("a view that is neither https nor a bare tab hash", lambda q: q["calls"].append({"title": "t", "text": "x", "view": {"href": "#tab=x&y", "text": "See it"}}), "view.href"),
     ("a view with no words", lambda q: q["calls"].append({"title": "t", "text": "x", "view": {"href": "#cpl-pathways"}}), "view.text"),
+    # The headline's history (Sam, 2026-10-08): the pair needs a trend, so a checkpoint
+    # that drops the list, repeats a day or writes a count as text fails here.
+    ("the headline history left out", lambda q: q.pop("headline"), "headline must be a list"),
+    ("a headline count written as text", lambda q: q["headline"].append({"day": "2099-01-01", "active": "20282", "checked": 20, "colleges": 5}), "active must be a whole number"),
+    ("more checked than active", lambda q: q["headline"].append({"day": "2099-01-01", "active": 10, "checked": 20, "colleges": 5}), "cannot exceed"),
+    ("a day recorded twice", lambda q: q["headline"].append(dict(q["headline"][-1])), "must come after"),
 ]
 q = copy.deepcopy(Q)
 q["calls"].append({"title": "t", "text": "x", "link": "https://claude.ai/artifact/x", "link_text": "Answer on Open Asks Sheet 50, card 1",
@@ -82,6 +90,17 @@ with tempfile.TemporaryDirectory() as d:
     check("--stamp exits clean on a sound file", rc == 0, rc)
     check("--stamp sets written_at to now", s["written_at"] > "2026-01-01" and s["written_at"].endswith("Z"), s["written_at"])
     check("--stamp writes the routine's next firing in UTC", s["next_run"]["at"] == "2026-10-09T15:07:00Z", s["next_run"])
+    before = len(s["headline"])
+    M.main(["--stamp", "--headline", "20282", "21", "5", "--path", p])
+    rc = M.main(["--stamp", "--headline", "20282", "22", "6", "--path", p])
+    with open(p, encoding="utf-8") as f:
+        s = json.load(f)
+    today = [e for e in s["headline"] if e["day"] == s["written_at"][:10]]
+    check("--headline records today's pair once; a second stamp the same day replaces it",
+          rc == 0 and len(today) == 1 and today[0] == {"day": s["written_at"][:10], "active": 20282, "checked": 22, "colleges": 6}
+          and len(s["headline"]) in (before, before + 1), s["headline"])
+    check("--headline keeps the earlier days, oldest first",
+          s["headline"][0]["day"] == "2026-10-08" and [e["day"] for e in s["headline"]] == sorted(e["day"] for e in s["headline"]), s["headline"])
 
 pass_n = sum(1 for r in results if r[1])
 for name, ok, why in results:
