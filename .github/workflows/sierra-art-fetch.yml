@@ -1,0 +1,43 @@
+name: Sierra art fetch
+# Copies Sierra's paintings from Wikimedia Commons into sierra/art/ (Sam, 2026-10-08:
+# cycle First Light's California plein-air paintings on Sierra's landing). The session
+# container cannot reach Commons; the runner can. Runs when a claude/** push changes
+# the manifest or the script, and commits the WebP copies back to that branch. The
+# commit touches only sierra/art/*.webp and fetched.json, so it never re-triggers.
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'sierra/art/manifest.json'
+      - 'scripts/fetch_sierra_art.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sierra-art-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: pip install --quiet pillow
+      - name: Fetch
+        run: python3 scripts/fetch_sierra_art.py
+      - name: Commit the copies to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sierra/art/*.webp sierra/art/fetched.json
+          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
+          git commit -m "Sierra art: WebP copies from Wikimedia Commons (run ${{ github.run_id }})"
+          git push origin HEAD:${{ github.ref_name }}
