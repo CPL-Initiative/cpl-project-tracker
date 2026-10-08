@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-315 document(s).
+316 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 345 | [every pilot college has a procedure; map searches at three colleges](../session_345_handoff.md) | 2026-10-08 |
 | 344 | [procedures for the pilot colleges; the Progress view is live](../session_344_handoff.md) | 2026-10-07 |
 | 343 | [build the harvest's Progress view; Sierra finds NOCE](../session_343_handoff.md) | 2026-10-07 |
 | 342 | [sheet 47 carried out; the display apply and the sheet move remain](../session_342_handoff.md) | 2026-10-07 |

@@ -4,6 +4,8 @@ date: 2026-10-07
 session: 343 (SkyGantry)
 tags: [handoff, program-requirements-harvest, roep, sierra, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_345_handoff.md
 ---
 
 # You are Session 344

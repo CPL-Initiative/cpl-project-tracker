@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-10-07",
-  "_session": "343 (SkyGantry)",
-  "_status": "The Program Requirements tab opens on a Progress view of the catalog harvest: five milestones with You are here (now Read program maps, 2 of the 26 published maps read), the eight parts, the next step and what waits on Sam, read live each visit. Every section on the tab collapses, with Expand all and Collapse all. Sierra no longer counts NOCE's second spelling in the course list as a second college, and names a certification only where a course or program title names it. Next: a reading procedure for each pilot college.",
+  "_as_of": "2026-10-08",
+  "_session": "344 (SkyWaypoint)",
+  "_status": "Every college the catalog harvest has read now has a written reading procedure: 7 of 118 (Cerritos, Santa Monica, and since 8 October Irvine Valley, San Diego Miramar, Mt. San Antonio, Riverside City and West Los Angeles). Each records where the college prints its requirements, which pages refuse the reader, and what is still open. The harvest's current milestone is reading program maps: 2 of the 26 published maps are read; West Los Angeles's map service refused the reader like every other, and Riverside City and Mt. San Antonio publish no map page the reader could find. Sierra's smoke test passed in full on 8 October.",
   "items": [
+    {
+      "id": "s344-sam-sheet49-receipt",
+      "for": "Sam",
+      "tab": "library",
+      "text": "Run one saved database update in the Supabase SQL editor: kb/receipts/cpl_library_open_asks_sheet49_2026-10-08.sql. It makes Open Asks Sheet 49 the current version on the Library tab. The sessions' tool timed out three times trying it and wrote nothing."
+    },
     {
       "id": "s344-sam-sheet49-sharepoint",
       "for": "Sam",
@@ -17,10 +23,10 @@
       "text": "Read Irvine Valley's Art A.A. (10265) and Santa Monica's Barbering A.S. (43767) on the Program Requirements tab. Sierra quotes neither program's requirements until you check it."
     },
     {
-      "id": "s343-fable-pilot-procedures",
+      "id": "s344-fable-unread-maps",
       "for": "Fable",
       "tab": "program-requirements",
-      "text": "Write a reading procedure record for each of the five pilot colleges that have none (Irvine Valley, San Diego Miramar, Mt. San Antonio, Riverside City and West Los Angeles), through program_source_procedure_set, so the Progress view's next milestone starts moving (2 of 118 today)."
+      "text": "Read the program maps the harvest has never loaded: Merced's and Palo Verde's map pages, then one load each at Bakersfield, Los Angeles Harbor, Mission and Valley (their map service is expected to refuse). Give each college a reading procedure from what the read proves."
     },
     {
       "id": "s341-fable-sheets-to-vault",

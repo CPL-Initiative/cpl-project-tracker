@@ -855,3 +855,32 @@ a correct answer: `aimed` matched inside "unclaimed" ("CompTIA Linux+ is also un
 against both bad answers and one good sentence missed it because the good sentence had no word containing either trigger.
 Bound the trigger words (`\b(lead-in|aimed)\b`), and prove a negative against the real answers the change produces.
 
+
+
+## S344 SkyWaypoint, 2026-10-08: a procedure for every pilot college, and three map searches
+
+**What shipped (#1906; a scheduled run of the CPL Queue routine).** Irvine Valley, San Diego Miramar, Mt. San Antonio,
+Riverside City and West Los Angeles each got a first procedure record, written from what the pilot's reads had settled:
+the lessons above (S323-S342), the filed sources and records, and `registry_read.json`. Seven of 118 colleges hold one.
+None names a catalog step, so `procedure_catalog()` returns nothing for them and capture reads each college as before.
+Then the records' open map questions got two college page reads (runs 37799874023, 37800558615), and three records went
+to v2. Receipts: `program_source_procedure_pilot5_…`, `_wlac_v2_…`, `_rcc_mtsac_v2_2026-10-08_s344.sql`.
+
+1. **A procedure first written from memory must carry only what a read proved.** Every host note, step and nuance in the
+   five v1 records cites a run or a lessons item. One draft line ("the catalog PDF prints no sequence") had no read behind
+   it and came out before the write. The record's job is to keep the next read from re-learning; a guess there sends the
+   next read the wrong way.
+2. **West Los Angeles's mapper answers 403**, like every Program Mapper host so far (lesson 33). Its own mapper page says
+   each degree shows "a planned sequence of required and elective classes", so the sequence exists and only the mapper
+   service holds it. The registry's `sequence_access` for the college still reads `not_read`: the procedure is ahead of
+   the census row until the census or a person's correction catches up.
+3. **"See Program Maps" can lead to pages with no map.** Riverside City's links go to the Program Finder, whose program
+   pages print major units and a typical time to completion. Its Academic Senate packet (2026-05-04) says RCC joined
+   Program Mapper in fall 2025 and is launching 2.0 maps. Mt. San Antonio's Schedule of Classes says the Catalog shows
+   "the suggested order of classes to take", and neither the program pages nor the Degrees and Certificates page (24
+   sections opened) prints one. Both records keep the question open with the next read named.
+4. **Web search first, then a plan.** Both colleges' map pages were found by search (lesson 34 again); guessing paths
+   would have spent loads on 404s.
+
+**Sierra.** The smoke dispatched on `main` (run 37799026127) passed every mode, 7c and 7v included. The post-#1902 push
+smoke (37699162911) had failed only mode 5, on a search timeout in production; 7c and 7v passed there too.
