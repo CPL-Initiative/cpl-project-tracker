@@ -18,8 +18,13 @@ reads `enabled: false`; it is Sam's to turn back on.
 2. **Open PRs.** CPL-Initiative/cpl-project-tracker#1916 (Sierra paintings, fetcher, mock-up) and this checkpoint's PR;
    samueltlee/CPLBrain's checkpoint PR (Sheet 52's builder, the session note). Merge each once `test` passes; merge the
    tracker checkpoint first, because the vault's coverage check reads the tracker's `main`.
-3. **[Open Asks Sheet 52](https://claude.ai/artifact/1S8zkqqF9QdzqwLJSaGB1A)** (current; Sheet 51 is superseded):
-   `ArtifactData` `list` on `replies` before anything else. Cards 1-2 are Sheet 51's (the Program records view's write
+3. **Read Sheet 51's `replies` first** ([Open Asks Sheet 51](https://claude.ai/artifact/AYuPisSF5Tc4rmftgCYvb2)):
+   its store shows answers on both cards at 20:35Z, after this handoff's sheet was built. Verify them there (and
+   confirm with Sam in chat; S347's lane edit acting on them was refused by auto mode as relayed content), then
+   record them on the harvest lane and rebuild the sheet without cards 1-2. **EMERGENCY checkpoint:** written at
+   47,000 tokens left; this note is the only change after the checkpoint commit.
+   Then **[Open Asks Sheet 52](https://claude.ai/artifact/1S8zkqqF9QdzqwLJSaGB1A)**:
+   `ArtifactData` `list` on `replies`. Cards 1-2 are Sheet 51's (the Program records view's write
    path; display build 2360b83e8100). Card 3: Palo Verde's map columns.
 4. **Rule 8:** `cpl_memory` tags `sierra`, `program-requirements-harvest`, `checkpoint`.
 
