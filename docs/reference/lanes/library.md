@@ -145,11 +145,9 @@ claude.ai.
 
 ## Next
 
-- **NEEDS SAM — paste one update on [Open Asks Sheet 50](https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr), card 3.** The open-asks series record still
-  points at sheet 48: `apply_migration` timed out four times on `cpl_library` and wrote nothing (the library side
-  session twice, S344, S345 at 17:2xZ), while a registry migration applied first try minutes before. The receipt
-  `kb/receipts/cpl_library_open_asks_sheet50_2026-10-08.sql` makes sheet 50 current with sheet 49 before it, guarded
-  on version 48; it replaces the sheet 49 receipt, which never applied.
+- **Sheet 50 card 3, pasted (Sam, 17:17Z 2026-10-08, "Success. No rows returned").** The open-asks series record reads
+  version 50 at sheet 50's link, with sheets 49 and 48 before it (23 versions; read back by S345). `apply_migration` had
+  timed out on `cpl_library` four times and on no other table, so this table's writes go to Sam as a paste.
 - **PR 2, the move (call 5):** once a session with the Microsoft 365 connector has read the SharePoint copies,
   each record points at its SharePoint link (a guarded update per record). Then remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
   `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's

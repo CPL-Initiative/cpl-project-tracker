@@ -884,3 +884,69 @@ to v2. Receipts: `program_source_procedure_pilot5_…`, `_wlac_v2_…`, `_rcc_mt
 
 **Sierra.** The smoke dispatched on `main` (run 37799026127) passed every mode, 7c and 7v included. The post-#1902 push
 smoke (37699162911) had failed only mode 5, on a search timeout in production; 7c and 7v passed there too.
+
+## S345 SkyLantern, 2026-10-08: sixteen colleges' map sources read, and Sam's calls given a sheet and links
+
+**What shipped (#1908; vault #273; a Sam-driven session).** Handoff 345's first priority, read the maps nobody had read, in
+four college page read runs (37810652946, 37810862182, 37811253611, 37812133411), each plan found by web search first:
+Bakersfield, Los Angeles Harbor, Merced, Los Angeles Mission and Los Angeles Valley (mappers, 403 each); Mt. San Antonio
+(its own Guided Pathways pages publish a sequence per program); the four Los Rios colleges (404); Palo Verde (its one lead
+does not resolve); College of the Canyons and Las Positas (workarounds tried). The registry's map columns for twelve
+colleges went in as one guarded migration (17:00:03Z, first try) and twelve v1 procedures through
+`program_source_procedure_set` (17:03:10Z): **19 of 118** colleges hold a procedure. `kb/_program_map_parse.py` reads
+Mt. San Antonio's page shape. Sam, on the Progress view at 17:0xZ: *"want to check the 2 items pending for me (screenshot)
+but don't see how to view them and respond..."*; then *"If you can embed the links on the tab, it would be fantastic."*
+[Open Asks Sheet 50](https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr) carries five cards, and each call on the view now
+links its sheet card and the tab where the item is seen.
+
+1. **Every Program Mapper host read today refused, so the count is the whole product, not a college.** Five more mapper
+   hosts answered 403 to one load each (programmapper.com, .ws and the colleges' own `programmap.` names alike): 24 of the
+   32 published map sources sit behind it. Lesson 33's call holds: the refusal is the mapper service's, and it goes on each
+   college's record (Sam, sheet 29 card 3). The milestone that counts only maps read cannot finish while that holds, which
+   is sheet 50 card 5.
+2. **A college's own pages can publish what its mapper hides.** Mt. San Antonio's Guided Pathways list
+   (`www.mtsac.edu/guided-pathways/filter_listings_mtsac_all.php`, 455 programs) links a "Guided Pathways for Success"
+   suggested sequence per program, keyed by the local program code (`pathway-results.html?pthwyvar=<code>`). The census
+   never scored these pages (its sequence source reads none found), and the Schedule of Classes' "suggested order of
+   classes" line in read 1 pointed at them only through a web search. The view now counts a map a read found
+   (`sequence_host`) as published.
+3. **Match a published sequence to a program by the code the catalog prints, never by the title.** The catalog's
+   program titles carry the local code: Fire Technology (Certificate N0486) is the state's 03086, Early Childhood
+   Education (AS-T Degree S0401) is 33876, and the LVN-to-RN (AS Degree S0957) is 08086. The Guided Pathways list offers
+   "Licensed Vocational Nurse to RN, AS S1201", whose sequence names NURS 4 to 11, ENGL 1A and SPCH 1A where the 2026-27
+   catalog lists NURS 114 to 212, ENGL C1000 and COMM C1000: an older program under a similar title. Matched by title it
+   would have placed eleven wrong courses on a checked program.
+4. **A map can recommend courses the program does not list.** The Fire Technology certificate's sequence names KINF 51A,
+   51B (agility test preparation) and 52A (fitness and conditioning) beside the eight listed courses it places. S336's
+   acceptance refuses a map naming a course in the program's own subjects off its list, so the record is filed and not
+   accepted, and the display build is unchanged (sheet 50 card 4). Read 4's Early Childhood Education AS-T page places all
+   12 of the degree's listed CHLD courses across seven terms with nothing off the list; it is not yet filed, because
+   filing an accepted map changes a checked program's display.
+5. **A page search engines index can answer the reader 404.** The four Los Rios colleges' program maps pages (found by
+   search, with maps as PDFs on `mapmaker.losrios.edu`) answered the reader 404, as their homepages answer the census
+   (lesson 13). The procedures mark each host `unreached`, which the reader skips. The next try is one mapmaker PDF
+   address, a different host.
+6. **"Recommended course sequence documents" can be links into the refused mapper.** College of the Canyons' department
+   pages promise them; every link points into `canyons.programmapper.ws`. Las Positas's "Program Map website" is the
+   faculty's revision process, with no map linked on six pages. Read the link targets before counting a workaround.
+7. **A call shown on a view needs a place to answer it.** S344 listed two calls on the Progress view and published no
+   sheet, because no lane carried a NEEDS SAM. Sam could see the calls and could not open the records or reply. A call in
+   `kb/queue_status.json` now carries `link` (the sheet card), `link_text` and `view` (a COBI tab's bare hash or an https
+   page); `scripts/queue_status.py` checks both. The rule that follows: a call on the view is a card on a sheet, and the
+   lane carries the NEEDS SAM that makes the builder ask it.
+8. **`apply_migration` timed out on `cpl_library` a fourth time and on nothing else.** The registry migration minutes
+   earlier applied first try; the library update (one guarded UPDATE) timed out at 60 s and wrote nothing. The cause is
+   the table's, not the tool's. The update goes to Sam as a paste (sheet 50 card 3), now carrying sheet 50 as current.
+9. **`bash scripts/check_generated.sh | tail` hides the exit status.** A pipe reports tail's status, so a stale dependency
+   map reached one push. Run the check without a pipe, or with `set -o pipefail`.
+
+**Decisions Sam made this run (2026-10-08, in chat):** the tab should link each call (*"If you can embed the links on the
+tab, it would be fantastic"*); he floated keeping decision sheets in the repo so the tab can link them, then agreed to
+keep the sources in the vault and link the published sheet (*"No, your plan sounds good to me"*).
+
+**Sheet 50 answered (17:15-17:18Z, all his own call).** Cards 1-2 follow up: *"Would it be more clear to add a note or
+flag to the items where there is a question or mismatch and a way to confirm or curate from the tab?"* (a mock-up of the
+Program records view first; both records stay unchecked). Card 3 pasted; the Library record reads version 50. Card 4 as
+proposed (to build). Card 5 as proposed, built in the checkpoint: the maps milestone counts a map read, or refused or
+unreached with routes tried in the college's procedure. Then, in chat: CPL Pathways needs a college-first selector
+(*"we'll want to first select a college and then the pathways they offer"*).

@@ -857,10 +857,13 @@
       fact: function (x) { return x.checked + " programs checked"; },
       when: function (x) { return x.checkedDay; },
       left: function (x) { return [[PILOT_PROGRAMS - x.checked, "pilot program to check", "pilot programs to check"]]; } },
+    /* Sam, Open Asks Sheet 50 card 5 (2026-10-08, as proposed): a published map counts toward this
+       milestone when it is read, or when the college's procedure records its host refused or unreached
+       and names the other routes tried (procedure.workarounds). The refused count stays on the part. */
     { id: "maps", title: "Read program maps",
-      fact: function (x) { return x.mapsRead + " of " + x.mapsPublished + " published maps"; },
+      fact: function (x) { return x.mapsSettled + " of " + x.mapsPublished + " published maps settled"; },
       left: function (x) {
-        return [[x.mapsPublished - x.mapsRead, "published map to read", "published maps to read"],
+        return [[x.mapsPublished - x.mapsSettled, "published map to read or settle", "published maps to read or settle"],
           [x.unchecked, "new record to check", "new records to check"],
           [x.addendaUnread, "catalog addendum to read", "catalog addenda to read"]];
       } },
@@ -966,6 +969,12 @@
     var unl = Q && Array.isArray(Q.unchecked) ? Q.unchecked : null;
     var published = R.filter(hasMap);
     var mapsRead = published.filter(function (r) { return r.sequence_access === "open"; });
+    var mapsSettled = published.filter(function (r) {
+      if (r.sequence_access === "open") return true;
+      var p = r.procedure;
+      return (r.sequence_access === "refused" || r.sequence_access === "unreached") && !!p &&
+        Array.isArray(p.workarounds) && p.workarounds.length > 0;
+    });
     var procs = R.filter(function (r) { return r.procedure; });
     var liveA = A ? A.filter(function (a) { return ["listed", "read", "applied"].indexOf(a.status) >= 0; }) : null;
     var colleges = {};
@@ -987,7 +996,7 @@
       checkedDay: dayOf(latest(P1.map(function (p) { return p.checked_at; }))),
       recordColleges: Object.keys(colleges).length,
       newest: newCols.length ? joinAnd(newCols) + " added " + dayOf(latest(unl.map(function (u) { return u.loaded; }))) : "",
-      mapsPublished: published.length, mapsRead: mapsRead.length,
+      mapsPublished: published.length, mapsRead: mapsRead.length, mapsSettled: mapsSettled.length,
       mapsReadAt: mapsRead.map(function (r) { return short(r.college); }),
       mapsRefused: published.filter(function (r) { return r.sequence_access === "refused"; }).length,
       procedures: procs.length,

@@ -4,6 +4,8 @@ date: 2026-10-08
 session: 344 (SkyWaypoint)
 tags: [handoff, program-requirements-harvest, roep, library, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_346_handoff.md
 ---
 
 # You are Session 345

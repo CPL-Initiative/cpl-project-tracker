@@ -14975,8 +14975,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 316,
+   "count": 317,
    "docs": [
+    {
+     "created": "2026-10-08",
+     "governs": [],
+     "n": 346,
+     "path": "docs/session_346_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cpl-pathways",
+      "roep",
+      "decision-sheets"
+     ],
+     "title": "Sam's three asks from the harvest tab, then card 4 and the maps",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-08",
      "governs": [],
@@ -20358,5 +20375,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1064
+ "total": 1065
 }

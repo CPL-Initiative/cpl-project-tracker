@@ -1,32 +1,38 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-10-08",
-  "_session": "344 (SkyWaypoint)",
-  "_status": "Every college the catalog harvest has read now has a written reading procedure: 7 of 118 (Cerritos, Santa Monica, and since 8 October Irvine Valley, San Diego Miramar, Mt. San Antonio, Riverside City and West Los Angeles). Each records where the college prints its requirements, which pages refuse the reader, and what is still open. The harvest's current milestone is reading program maps: 2 of the 26 published maps are read; West Los Angeles's map service refused the reader like every other, and Riverside City and Mt. San Antonio publish no map page the reader could find. Sierra's smoke test passed in full on 8 October.",
+  "_session": "345 (SkyLantern)",
+  "_status": "The catalog harvest read the program map sources nobody had read, at sixteen colleges, on 8 October. Every Program Mapper site refused the reader, as all of them have, so 24 of the 32 published maps sit behind that service; Mt. San Antonio turned out to publish a suggested sequence for every program on its own Guided Pathways pages, and three maps are now read. Nineteen of 118 colleges hold a written reading procedure. Sam answered Open Asks Sheet 50 the same afternoon: the next step is a mock-up that flags where a record and its sources disagree and lets him confirm a record from the tab, and CPL Pathways gets a college-first selector.",
   "items": [
     {
-      "id": "s344-sam-sheet49-receipt",
-      "for": "Sam",
-      "tab": "library",
-      "text": "Run one saved database update in the Supabase SQL editor: kb/receipts/cpl_library_open_asks_sheet49_2026-10-08.sql. It makes Open Asks Sheet 49 the current version on the Library tab. The sessions' tool timed out three times trying it and wrote nothing."
+      "id": "s345-fable-records-flags-mockup",
+      "for": "Fable",
+      "tab": "program-requirements",
+      "text": "Mock up flags on the Program records view where a record and its sources disagree (Irvine Valley's ARTH numbering, Santa Monica's COSM 11C misprint and missing 95D), with Confirm and Needs a fix on each record, and bring it to Sam on a decision sheet before building (his sheet 50 follow-up)."
+    },
+    {
+      "id": "s345-fable-college-selector",
+      "for": "Fable",
+      "tab": "cpl-pathways",
+      "text": "Add a college selector ahead of the pathway selector on CPL Pathways, so a person can choose a college first and see the pathways it offers (Sam, 8 October)."
+    },
+    {
+      "id": "s345-fable-mtsac-ece",
+      "for": "Fable",
+      "tab": "program-requirements",
+      "text": "File Mt. San Antonio's Early Childhood Education map (read 2026-10-08: seven terms, all 12 listed courses) as a sequence record, then ask Sam for the display apply on the next sheet, since it changes a checked program."
+    },
+    {
+      "id": "s345-fable-refused-own-pages",
+      "for": "Fable",
+      "tab": "program-requirements",
+      "text": "For each college whose map service refused the reader (24 of 32), search its own pages and catalog for a sequence outside the mapper, as Mt. San Antonio's Guided Pathways pages turned out to be; read one Los Rios map PDF on mapmaker.losrios.edu."
     },
     {
       "id": "s344-sam-m365-connector",
       "for": "Sam",
       "tab": "library",
       "text": "Connect the Microsoft 365 connector at claude.ai/customize/connectors with your RCCD account, so the next session can read the Library's SharePoint folder, confirm the 16 files you copied in, and point the Library's records at their SharePoint links."
-    },
-    {
-      "id": "s342-sam-check-two-records",
-      "for": "Sam",
-      "tab": "program-requirements",
-      "text": "Read Irvine Valley's Art A.A. (10265) and Santa Monica's Barbering A.S. (43767) on the Program Requirements tab. Sierra quotes neither program's requirements until you check it."
-    },
-    {
-      "id": "s344-fable-unread-maps",
-      "for": "Fable",
-      "tab": "program-requirements",
-      "text": "Read the program maps the harvest has never loaded: Merced's and Palo Verde's map pages, then one load each at Bakersfield, Los Angeles Harbor, Mission and Valley (their map service is expected to refuse). Give each college a reading procedure from what the read proves."
     },
     {
       "id": "s341-fable-sheets-to-vault",
@@ -69,15 +75,15 @@
       "for": "Fable",
       "tab": "sierra",
       "text": "Build the catalog addenda reading agent once the next census apply fills the table (Sunday 11 October, or a hand dispatch): it reads each listed addendum and files which programs it changes. Then read Miramar's Fire Technology sequence from its own pages and widen the harvest past the 20 programs."
-    },
+    }
+  ],
+  "_deferred": [
     {
       "id": "s330-fable-spring-schedule",
       "for": "Fable",
       "tab": "cpl-pathways",
       "text": "Re-read Cerritos's Spring 2027 schedule for the ironworker apprenticeship and noncredit sections once they post (the Spring schedule listed none on 4 October)."
-    }
-  ],
-  "_deferred": [
+    },
     {
       "id": "s310-sam-pedro-note",
       "for": "Sam",

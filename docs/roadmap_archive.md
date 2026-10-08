@@ -5864,3 +5864,9 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### INDEX update history moved 2026-10-07 (S342)
 
 - 2026-10-05 (S334 SkyAnchor): record shape 3 keeps program outcomes as printed (19 of 20 pilot records); a person's verdict is held to the requirements read; CPL Pathways shows each catalog record by requirement or by term; KB note `methodology-a-verdict-covers-the-reading-it-saw`; open-asks sheet 41.
+
+## INDEX update history, moved 2026-10-08 (S345)
+
+- 2026-10-06 (S337 SkyCompass, scheduled): a second capture list beyond Sam's 20 (`--sample maps`); Irvine Valley Art A.A. 10265's record (extraction 37488863819, PASS); Santa Monica's catalog never links its Barbering program, so a procedure record is next; handoff 338 (#1886).
+- 2026-10-05 (S336 SkyCourier): sheet 42 carried out (outcomes on the 20 live rows, Sierra redeployed, display build 1cb75672ba6c with Miramar's two drafts, drafts on My College now: #1878); open-asks sheet 44; Irvine Valley's and Santa Monica's program maps read into terms (#1876); a signed-off session lets go of its wakes (#1879); KB note `methodology-an-idle-session-still-holds-wakes`; handoff 337.
+- 2026-10-05 (S335 SkyKeel): drafts for the college on the Program Requirements tab (sheet 32 card 2, the harvest-tab half); Miramar's AUTO 156G traced to MAP's 0.3-hour rows, with no credit through it; Sierra names a college gap by its kind; KB note `methodology-trace-a-finding-to-what-students-received`; open-asks sheet 42; handoff 336 (#1874).
