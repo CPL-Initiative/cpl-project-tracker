@@ -1,0 +1,33 @@
+{
+ "_readme": "First search for Mt. San Antonio College's term-by-term maps (S344, SkyWaypoint). The census found no sequence source (none_found), and the procedure record (v1, 2026-10-08) asks for the college's own map page before calling it absent. Web search (2026-10-08) found the Schedule of Classes saying a student can view the suggested order of classes to take through the Catalog, so this read takes the schedule page's links and one pilot program page (LVN-to-RN A.S. 08086) with its sections opened, looking for a map, roadmap or suggested sequence tab.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "map_source": "Where Mt. San Antonio publishes a program's suggested term-by-term order, if anywhere."
+ },
+ "keywords": [
+  "[Ss]uggested",
+  "[Ss]equence",
+  "[Rr]oad ?[Mm]ap",
+  "[Pp]rogram [Mm]ap",
+  "[Ss]emester",
+  "[Yy]ear [1-4]",
+  "[Ff]irst [Tt]erm"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://www.mtsac.edu/schedule/",
+   "links": "catalog|map|sequence|suggest|pathway|program"
+  },
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/",
+   "expand": true,
+   "links": "map|sequence|suggest|roadmap|pathway|semester"
+  }
+ ]
+}
