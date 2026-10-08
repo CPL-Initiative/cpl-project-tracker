@@ -1,0 +1,58 @@
+---
+title: "Sierra's page redesign — lessons"
+date: 2026-10-08
+tags: [lessons, sierra, first-light, accessibility, logotype]
+artifacts:
+  - sierra/index.html
+  - sierra/sierra.css
+  - sierra/sierra.js
+  - tests/sierra_redesign.test.js
+  - a11y.config.js
+related:
+  - "[[sierra-page-redesign]]"
+  - "[[sierra_surface_alignment_lessons]]"
+---
+
+# Sierra's page redesign — lessons
+
+## 2026-10-08 (S348 SkyMeadow): the port, and the logo in five rounds
+
+**A port keeps the tests' promises, not their selectors.** Seven Sierra test files pinned the old page's
+structure (the navy band, the suggestion pills, the Whitney wordmark). Each changed check was rewritten to guard
+its new equivalent (the starter question in the placeholder, the landing folding away, the logo link's new-tab
+cue), never dropped. A check that passed vacuously after the port (*starter chips removed*: there were no chips
+left to remove) is the sign to rewrite it, not to keep it.
+
+**Measure the painted page at 320px before trusting a flex layout.** The question bar pushed the page 15px
+sideways at 320px: an implicit `auto` grid track takes the input's intrinsic width (its size attribute) as a
+floor. `grid-template-columns: minmax(0, 1fr)` fixed it; only `npm run a11y` saw it.
+
+**A contrast checker reads a transparent gradient stop as black.** "New question" measured 2.49:1 over the
+dock's `linear-gradient(transparent, paper)`. The words already sat on solid paper; giving their row its own
+paper background made the measurement match what the eye sees.
+
+**A one-line input truncates a hint; a growing textarea does not.** The phone cut every *Try:* starter
+mid-word, and the CPL Pathways `?ask=` question showed a fraction of itself. A one-row textarea sized to the
+tallest hint keeps one bar height through the cycle (no jump every 9 s) and shows the whole question.
+
+**A logotype is placed by measuring the glyphs, not by eye.** Sam's logo rounds: a thin ridge behind ink
+letters; a ghosted dark-blue name with a stem-weight ridge (Playfair SemiBold's lowercase stem measures
+0.126em); the logo as drawn, mostly above the word; out of the S (its ink ends at 18.9% of the word); the dot
+of the i lowered (the font's dot runs 0.627-0.772em over the baseline, the stem stops at 0.528em). Each
+placement came from a canvas measurement of the font file the page ships, so each held at every size.
+
+**Same color and weight means the line and the letters merge.** A halo in the page color on each letter
+(16 `text-shadow` offsets at 0.05em) cuts the line where it passes behind and keeps the word readable.
+
+**A glyph's dot cannot be moved; the word can be set without it.** The font carries a dotless i (U+0131, in
+Fontsource's latin subset). The page draws its own dot from an empty inline-block anchor (its bottom sits on
+the baseline, so offsets read from the baseline) and gives a screen reader a clipped plain *Sierra*.
+
+**Show placements side by side.** Four variants rendered on one page settled a question three single
+screenshots had not.
+
+**Class names collide in a single stylesheet.** `.s-word` already styled the Previous/Pause/Next buttons, so
+the logotype's word took their font and size; the rename to `.s-nameword` fixed it. Grep a class before adding it.
+
+**`apply_migration` times out on `cpl_library`.** Three tries for the sheet 53/54 series record, as four for
+sheet 49: nothing written each time. Hand the receipt to Sam as a paste rather than retrying.

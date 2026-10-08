@@ -10604,7 +10604,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 83,
+   "count": 84,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12254,6 +12254,28 @@
       "lessons"
      ],
      "title": "Sierra rules as data \u2014 lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-08",
+     "governs": [
+      "sierra/index.html",
+      "sierra/sierra.css",
+      "sierra/sierra.js",
+      "tests/sierra_redesign.test.js",
+      "a11y.config.js"
+     ],
+     "path": "docs/sierra_page_redesign_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "sierra",
+      "first-light",
+      "accessibility",
+      "logotype"
+     ],
+     "title": "Sierra's page redesign \u2014 lessons",
      "type": null,
      "updated": ""
     },
@@ -15040,8 +15062,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 319,
+   "count": 320,
    "docs": [
+    {
+     "created": "2026-10-08",
+     "governs": [],
+     "n": 349,
+     "path": "docs/session_349_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "sierra-page-redesign",
+      "decision-sheets",
+      "checkpoint"
+     ],
+     "title": "Sierra's dock goes full screen when she answers",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-08",
      "governs": [],
@@ -20473,5 +20512,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1071
+ "total": 1073
 }

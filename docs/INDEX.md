@@ -67,11 +67,11 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 528 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
-| Lessons docs | 83 | [`catalog/lessons.md`](catalog/lessons.md) |
+| Lessons docs | 84 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 319 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1071** | |
+| Session handoffs | 320 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1073** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-08 (S348 SkyMeadow): Sierra's public page ported to the approved mock-up, her logo set in five rounds with Sam; new lessons doc `sierra_page_redesign_lessons.md`; handoff 349.
 - 2026-10-08 (S347 SkyTrellis, re-checkpoint): Sheet 51 carried out (display build 2360b83e8100 live, #1918; flags and Confirm / Needs a fix on the Records view, #1919), all 32 maps settled; KB note methodology-a-persons-write-must-survive-the-next-reload.
 - 2026-10-08 (S347 SkyTrellis): the Chancellor headline, Palo Verde read, the To-Do retired for a UI pass, the Sierra redesign lane; KB note methodology-a-lapsed-name-is-not-a-refusal.
 - 2026-10-08 (S346 SkyCairn): KB note `methodology-a-site-search-needs-the-domain-filter`; harvest lane compacted below its limit (two paragraphs to the lessons doc); lessons S346; handoff 347.
