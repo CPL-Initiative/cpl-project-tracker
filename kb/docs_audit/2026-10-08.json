@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1083,
-    "bytes": 11319351,
+    "bytes": 11320960,
     "over_budget": 7,
     "handoff_max": 348,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 118,
-        "bytes": 3342320,
+        "bytes": 3342658,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 79,
-        "bytes": 2321679,
+        "bytes": 2322767,
         "over": 2
       },
       "kb_note": {
@@ -46,24 +46,23 @@
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 318932,
+        "bytes": 318633,
         "over": 1
       },
       "handoff": {
         "files": 319,
-        "bytes": 2616637,
+        "bytes": 2617119,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 7,
       "house_voice": 23,
-      "american_spelling": 1,
       "vault_heavy_path": 59
     },
     "vault": {
-      "files": 3757,
-      "bytes": 1802854724,
+      "files": 3777,
+      "bytes": 1805697668,
       "heavy_bytes": 817363067,
       "heavy_share": 0.453,
       "ignore_filters": [
@@ -448,21 +447,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 1,
-        "forms": {
-          "cancelled": {
-            "n": 1,
-            "prefer": "canceled"
-          }
-        }
-      },
-      "message": "1 British form — cancelled→canceled",
-      "path": "docs/session_348_handoff.md"
     },
     {
       "rule": "house_voice",

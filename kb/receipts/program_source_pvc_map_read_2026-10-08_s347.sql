@@ -17,6 +17,9 @@
 -- Statement 1: the repo's Supabase guard refuses UPDATE through execute_sql, and apply_migration timed out four times
 --   (60 s each, 20:0x-20:2xZ) with nothing written (read back each time; no lock on the table or schema_migrations).
 --   Handed to Sam to paste in the SQL editor, as S345 handed the cpl_library update (lesson 8).
+--   Applied after the checkpoint (Sam chose the receipt option, Sheet 52 card 3): apply_migration took it on the
+--   first retry, ~21:25Z, migration program_source_registry_pvc_map_read_s347; read back sequence_host
+--   paloverde.libguides.com, sequence_access open, sequence_checked_run college-page-read run 37835928900.
 -- Rollback (Rule 10 a2): statement 1, set sequence_host = null, sequence_access = 'not_read', sequence_note = the
 --   prior note (below), sequence_checked_run = 'college-page-read run 37810862182'; statement 2, restore the prior
 --   row the history trigger files under this procedure_by (old_row->'procedure', procedure_by, procedure_at).

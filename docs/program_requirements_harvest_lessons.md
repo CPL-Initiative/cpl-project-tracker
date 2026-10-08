@@ -982,3 +982,13 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, which had 
 3. **`apply_migration` can time out on a table it served an hour earlier.** Five 60-second timeouts on one registry UPDATE (S345 applied one there first try), each read back with nothing written and no lock on the table or `schema_migrations`. The procedure function through `execute_sql` worked at once. The write went to Sam (Sheet 52 card 3); his ruling to let UPDATE through the guard was refused by auto mode's classifier, so it waits on a mode switch.
 4. **The guard strips dollar-quoted bodies before it looks for verbs.** Rewording "Last Updated" out of a JSON payload was unnecessary; `$a$...$a$` is replaced as a literal (`_lex`).
 5. **A full local `npm test` outruns a 15-minute timeout.** Run the changed tests and the guards that read the changed files, then let CI's four shards gate the merge.
+6. **After the checkpoint, Sam answered Sheet 51 in chat** (*"Sheet 51: 1 Build it, 2 Go."*), matching the sheet's store
+   (20:35Z). Card 2 went live the same hour: the 22 rows on 8292780f6cd5 differed from 2360b83e8100 in `build` alone,
+   except Irvine Valley 10265 (`gaps`) and Mt. San Antonio 03086 and 33876 (`figure`, `map`), measured by parsing both
+   receipts. The 22-statement delta (14 KB) timed out in `apply_migration` with nothing written; one statement for the 19
+   stamp-only rows and one per content row landed at once, and `--verify-sql` read 22 of 22 match. Receipt
+   `kb/receipts/program_requirement_records_display_2026-10-08_2360b83e8100_s347_delta.sql`.
+7. **The same tool then took Palo Verde's statement 1 on the first try**, the UPDATE that had timed out five times
+   earlier in the day (migration `program_source_registry_pvc_map_read_s347`; read back open, `paloverde.libguides.com`,
+   run 37835928900). The timeouts are intermittent and not explained by size alone; when one lands nothing, split the
+   migration and retry before handing the SQL to Sam.
