@@ -113,7 +113,7 @@
    * group wrappers, so build() can run again against a changed overlay.
    *
    * Moves the EXISTING elements rather than recreating them — every other module
-   * (tabs.js, cobi_orgs.js, cpl_todos.js) holds references to these buttons and
+   * (tabs.js, cobi_orgs.js) holds references to these buttons and
    * has listeners bound to them, so replacing them would silently break the nav
    * in ways that only show up on click. */
   function ungroup(nav) {

@@ -4,7 +4,7 @@
   "supabase_tables": 96,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 603,
+  "file_datasets": 608,
   "external_services": 161,
   "consumers": 420,
   "workflows": 45,
@@ -1302,7 +1302,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4416,
+     "line": 4415,
      "tabs": [
       "unified-courses"
      ]
@@ -1343,7 +1343,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3606,
+     "line": 3605,
      "tabs": [
       "unified-courses"
      ]
@@ -3702,6 +3702,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:a11y.config.js": {
+   "consumers": [
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:admin.js": {
    "consumers": [
     {
@@ -5364,19 +5377,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:cpl_todos.js": {
-   "consumers": [
-    {
-     "id": "page:CPL_Dashboard.html",
-     "kind": "page",
-     "direction": "read",
-     "how": "markup",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:cr_reference.js": {
    "consumers": [
     {
@@ -6401,6 +6401,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:fact-sheet/index.html": {
+   "consumers": [
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:fact-sheet/statewide_recs.js": {
    "consumers": [
     {
@@ -6554,6 +6567,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:funding-model/index.html": {
+   "consumers": [
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:funding/_build_funding_ess.py": {
    "consumers": [
     {
@@ -6675,6 +6701,13 @@
      "direction": "read",
      "how": "literal",
      "line": 26
+    },
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
     }
    ],
    "producers": [
@@ -10009,22 +10042,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:kb/cpl_todos.json": {
-   "consumers": [
-    {
-     "id": "module:cpl_todos.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 26,
-     "pages": [
-      "CPL_Dashboard.html"
-     ]
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/cr_reference_worklist.json": {
    "consumers": [
     {
@@ -10463,6 +10480,13 @@
      "tabs": [
       "admin"
      ]
+    },
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
     }
    ],
    "served": true,
@@ -10578,7 +10602,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3280,
+     "line": 3279,
      "tabs": [
       "unified-courses"
      ]
@@ -10831,7 +10855,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 568,
+     "line": 567,
      "tabs": [
       "unified-courses"
      ]
@@ -13485,7 +13509,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 919,
+     "line": 918,
      "tabs": [
       "unified-courses"
      ]
@@ -13950,6 +13974,19 @@
      "direction": "read",
      "how": "literal",
      "line": 68
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/ui_pass_ledger.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 33
     }
    ],
    "served": true,
@@ -14751,6 +14788,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:privacy.html": {
+   "consumers": [
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:program_requirements.js": {
    "consumers": [
     {
@@ -15441,6 +15491,13 @@
      "direction": "write",
      "how": "literal",
      "line": 17
+    },
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 72
     }
    ],
    "producers": [
@@ -15849,6 +15906,19 @@
     {
      "by": "workflow:sierra-art-fetch.yml",
      "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:sierra/index.html": {
+   "consumers": [
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
     }
    ],
    "served": true,
@@ -17274,6 +17344,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/ui_pass_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/umbrella_codes_are_declared_test.py": {
    "consumers": [
     {
@@ -17599,7 +17682,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 881,
+     "line": 880,
      "tabs": [
       "unified-courses"
      ]
@@ -17641,7 +17724,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 352,
+     "line": 351,
      "tabs": [
       "unified-courses"
      ]
@@ -17764,7 +17847,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 849,
+     "line": 848,
      "tabs": [
       "unified-courses"
      ]
@@ -17809,7 +17892,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 829,
+     "line": 828,
      "tabs": [
       "unified-courses"
      ]
@@ -17879,7 +17962,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1042,
+     "line": 1041,
      "tabs": [
       "unified-courses"
      ]
@@ -17935,7 +18018,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 865,
+     "line": 864,
      "tabs": [
       "unified-courses"
      ]
@@ -18026,7 +18109,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1165,
+     "line": 1164,
      "tabs": [
       "unified-courses"
      ]
@@ -18114,7 +18197,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 897,
+     "line": 896,
      "tabs": [
       "unified-courses"
      ]
@@ -18178,6 +18261,13 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "script:scripts/ui_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
@@ -20259,7 +20349,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 448,
+     "line": 447,
      "tabs": [
       "unified-courses"
      ]
@@ -20269,7 +20359,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 490,
+     "line": 489,
      "tabs": [
       "unified-courses"
      ]
@@ -21083,7 +21173,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 574,
+     "line": 573,
      "tabs": [
       "unified-courses"
      ]
@@ -22381,6 +22471,7 @@
     "tests/college_page_read_test.py",
     "tests/program_map_parse_test.py",
     "tests/queue_status_test.py",
+    "tests/ui_pass_test.py",
     "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
     "tests/program_courses_build_test.py",

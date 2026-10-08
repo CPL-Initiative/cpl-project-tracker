@@ -149,7 +149,6 @@ jobs:
             "_site/fact-sheet/index.html"
             "_site/kb-portal/index.html"
             "_site/sierra/index.html"
-            "_site/kb/cpl_todos.json"
             "_site/kb/liftoff_plan.json"
             "_site/kb/project_lifecycle.json"
             "_site/kb/coci_articulations.json"
