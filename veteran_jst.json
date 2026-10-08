@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-08T13:36:34.057596+00:00",
+  "scraped_at": "2026-10-08T16:45:28.044834+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28871,
+    "jst": 28883,
     "star_colleges": 60
   },
   "computed_star_colleges": 60,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 373,
+      "jst": 374,
       "star": true
     },
     "City College of San Francisco": {
@@ -52,7 +52,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 564,
+      "jst": 568,
       "star": false
     },
     "Cabrillo College": {
@@ -222,7 +222,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 186,
+      "jst": 187,
       "star": false
     },
     "Los Angeles Mission College": {
@@ -297,12 +297,12 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 130,
+      "jst": 131,
       "star": true
     },
     "Laney College": {
       "vets": 96,
-      "jst": 72,
+      "jst": 76,
       "star": true
     },
     "Napa Valley College": {
@@ -535,9 +535,9 @@
       "jst": 1,
       "star": false
     },
-    "Grossmont College": {
-      "vets": 415,
-      "jst": 1,
+    "College of the Siskiyous": {
+      "vets": 77,
+      "jst": 2,
       "star": false
     },
     "College of Marin": {
@@ -545,8 +545,8 @@
       "jst": 1,
       "star": false
     },
-    "College of the Siskiyous": {
-      "vets": 77,
+    "Grossmont College": {
+      "vets": 415,
       "jst": 1,
       "star": false
     },
@@ -562,11 +562,6 @@
     },
     "California State University Los Angeles": {
       "vets": 0,
-      "jst": 0,
-      "star": false
-    },
-    "Palomar College": {
-      "vets": 1019,
       "jst": 0,
       "star": false
     },
@@ -587,6 +582,11 @@
     },
     "Folsom Lake College": {
       "vets": 65,
+      "jst": 0,
+      "star": false
+    },
+    "Palomar College": {
+      "vets": 1019,
       "jst": 0,
       "star": false
     }
