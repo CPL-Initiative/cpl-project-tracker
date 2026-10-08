@@ -171,14 +171,15 @@ button { font: inherit; color: inherit; }
    page's own color, which cuts the line where it passes behind the letter:
    the line reads as running behind the name, and the name stays a word. */
 .s-peak { text-shadow: 0.050em 0.000em 0 var(--sierra-paper), 0.046em 0.019em 0 var(--sierra-paper), 0.035em 0.035em 0 var(--sierra-paper), 0.019em 0.046em 0 var(--sierra-paper), 0.000em 0.050em 0 var(--sierra-paper), -0.019em 0.046em 0 var(--sierra-paper), -0.035em 0.035em 0 var(--sierra-paper), -0.046em 0.019em 0 var(--sierra-paper), -0.050em 0.000em 0 var(--sierra-paper), -0.046em -0.019em 0 var(--sierra-paper), -0.035em -0.035em 0 var(--sierra-paper), -0.019em -0.046em 0 var(--sierra-paper), -0.000em -0.050em 0 var(--sierra-paper), 0.019em -0.046em 0 var(--sierra-paper), 0.035em -0.035em 0 var(--sierra-paper), 0.046em -0.019em 0 var(--sierra-paper); }
-/* The logo itself (whitney-mark.svg), expanded to the word's width and set
-   mostly above it (Sam: "Keep the ridgeline mostly above Sierra. Can you just
-   use the current logo expanded?"). Its stroke scales with it, so the line's
-   weight is the logo's own. Its foot meets the tops of the letters, and the
-   letters' halo keeps them clear there. */
+/* The logo itself (whitney-mark.svg), expanded and set mostly above the word
+   (Sam: "Keep the ridgeline mostly above Sierra. Can you just use the current
+   logo expanded?"), and out of the S ("Keep the ridgeline out of the S"): the
+   S's ink ends at 18.9% of the word, so the logo runs from 22% to the word's
+   end. Its stroke scales with it, so the line's weight is the logo's own. Its
+   foot meets the tops of the letters, and the letters' halo keeps them clear. */
 .s-ridge {
   position: absolute; z-index: -1; pointer-events: none;
-  left: 5%; width: 95%; height: auto; bottom: .62em;
+  left: 22%; width: 78%; height: auto; bottom: .62em;
   color: inherit;
 }
 /* Room above the greeting for the mountain. */

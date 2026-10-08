@@ -285,8 +285,14 @@ function ask(w, text) {
       /stroke-width="3\.8"/.test(inline) && !/vector-effect/.test(inline));
     check("(2b) ⭐ it sits mostly above the name: its foot at the letters' tops, room above the greeting",
       /\.s-ridge\s*\{[^}]*bottom:\s*\.6\d*em/.test(CSS) && /\.s-hello h1\s*\{\s*padding-top:/.test(CSS));
-    check("(2b) it spans the word, and the letters' halo in the page color keeps them clear where it meets them",
-      /\.s-ridge\s*\{[^}]*width:\s*9\d%/.test(CSS) &&
+    // Sam, 2026-10-08: "Keep the ridgeline out of the S." The S's ink ends at
+    // 18.9% of the word in Playfair SemiBold (measured), so the logo starts past
+    // it and ends with the word.
+    const lw = (CSS.match(/\.s-ridge\s*\{[^}]*left:\s*(\d+)%;\s*width:\s*(\d+)%/) || []).slice(1).map(Number);
+    check("(2b) ⭐ the logo stays out of the S: it starts past the S and ends with the word",
+      lw.length === 2 && lw[0] >= 21 && lw[0] + lw[1] === 100);
+    check("(2b) the letters' halo in the page color keeps them clear where the logo meets them",
+      /\.s-ridge\s*\{[^}]*bottom:/.test(CSS) &&
       /\.s-peak\s*\{\s*text-shadow:[^}]*var\(--sierra-paper\)/.test(CSS));
     const { w, d } = loadDom();
     check("(2b) the greeting still reads as words to a screen reader",
