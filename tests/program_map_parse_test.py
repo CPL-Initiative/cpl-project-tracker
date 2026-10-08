@@ -4,8 +4,8 @@
 The sources are the text college page read run 37372136739 printed for
 Irvine Valley's All Program Maps page and Santa Monica's Barbering pathway
 (S336), and run 37810862182 for Mt. San Antonio's Guided Pathways page for its
-Fire Technology certificate (S345). A parser change that moves a course out of its term, loses a choice, or
-lets a map name a course off the program's list fails here, and the committed
+Fire Technology certificate (S345). A parser change that moves a course out of its term, loses a choice,
+accepts a map whose off-list courses match or outnumber its listed ones, or drops an off-list mark fails here, and the committed
 sequence records must equal a fresh build.
 
 Run from repo root: python3 tests/program_map_parse_test.py
@@ -99,13 +99,39 @@ check("a line inside a term that is no row is a note on that term",
 check("the page's echo of the program's name is dropped from the notes",
       not [n for n in fire["notes"] if n.endswith("N0486")], fire["notes"])
 cov = M.coverage(fire, mt["closed_lists"]["03086"])
-check("the map names three KINF courses the certificate does not list, so it is not accepted",
-      cov["off_list"] == ["KINF 51A", "KINF 51B", "KINF 52A"] and not M.accepts(fire, cov), cov["off_list"])
+check("the map names three KINF courses the certificate does not list",
+      cov["off_list"] == ["KINF 51A", "KINF 51B", "KINF 52A"], cov["off_list"])
+check("eight listed courses outnumber the three off the list, so the map is accepted (sheet 50 card 4)",
+      len(cov["named"]) == 8 and M.accepts(fire, cov), cov["named"])
+fire_terms = M.marked(fire, mt["closed_lists"]["03086"])
+marks = [(t["label"], c) for t in fire_terms for i in t["items"] for c in i.get("off_list") or []]
+check("each off-list course is marked in its term",
+      marks == [("Fall Semester (Year 1)", "KINF 51A"), ("Spring Semester (Year 1)", "KINF 51B"),
+                ("Summer Semester (Year 1)", "KINF 52A")], marks)
+check("a listed course carries no mark",
+      not [i for t in fire_terms for i in t["items"] if "FIRE 1" in i["codes"] and "off_list" in i])
 alt = M.parse_mtsac("Fall Semester (Year 2) · Course Prefix\tTitle\tUnits · CHLD 10\tLifespan Development \t3.0 · "
                     "PSYC 14\t(or) Developmental Psychology · Total:\t \t3.0 · Spring Semester (Year 2)", [])
 first = alt["terms"][0]["items"]
 check("a row titled \"(or) ...\" is the alternative to the row above it",
       len(first) == 1 and first[0]["kind"] == "choice" and first[0]["codes"] == ["CHLD 10", "PSYC 14"], first)
+
+ece_src = json.load(open(os.path.join(SRC, "mtsac_gps_s0401.json"), encoding="utf-8"))
+ece = M.parse_mtsac(ece_src["text"], ece_src["closed_lists"]["33876"])
+check("the Early Childhood Education AS-T page has seven terms, the two winters kept",
+      [t["label"] for t in ece["terms"]] == ["Fall Semester (Year 1)", "Winter Semester (Year 1)", "Spring Semester (Year 1)",
+                                             "Summer Semester (Year 1)", "Fall Semester (Year 2)", "Winter Semester (Year 2)",
+                                             "Spring Semester (Year 2)"], [t["label"] for t in ece["terms"]])
+ece_cov = M.coverage(ece, ece_src["closed_lists"]["33876"])
+check("it names all 12 listed CHLD courses and nothing off the list",
+      len(ece_cov["named"]) == 12 and not ece_cov["off_list"] and M.accepts(ece, ece_cov), ece_cov)
+check("both practicum sequences sit in Spring of Year 2",
+      {"CHLD 67", "CHLD 67L", "CHLD 86", "CHLD 87"} <= {c for i in ece["terms"][6]["items"] for c in i["codes"]})
+check("a certificate milestone the page marks stays as a note; the echo of the program's own code goes",
+      "Certificate: Child Development, L1 M0663" in ece["notes"]
+      and "Early Childhood Education, AS-T, S0401" not in ece["notes"], ece["notes"])
+check("Cal-GETC slots read as GE, never as courses",
+      [i["kind"] for i in ece["terms"][0]["items"]] == ["course", "course", "course", "ge"])
 
 # ── 4. acceptance fails where it should ──────────────────────────────────────
 bad = {"terms": [{"label": "Semester 1", "items": [{"kind": "course", "codes": ["COSM 99"]}]},
@@ -113,6 +139,13 @@ bad = {"terms": [{"label": "Semester 1", "items": [{"kind": "course", "codes": [
 bad_cov = M.coverage(bad, smc["closed_lists"]["43767"])
 check("a map naming a COSM course the program does not list is refused",
       bad_cov["off_list"] == ["COSM 99"] and not M.accepts(bad, bad_cov))
+tie = {"terms": [{"label": "Semester 1", "items": [{"kind": "course", "codes": ["COSM 99"]},
+                                                    {"kind": "course", "codes": ["COSM 10A"]}]},
+                 {"label": "Semester 2", "items": []}]}
+check("a map naming as many off-list courses as listed ones is refused",
+      not M.accepts(tie, M.coverage(tie, smc["closed_lists"]["43767"])))
+check("a map with nothing off the list carries no mark, so its record reads as before",
+      not [i for t in M.marked(barb, smc["closed_lists"]["43767"]) for i in t["items"] if "off_list" in i])
 one = {"terms": [{"label": "Semester 1", "items": []}]}
 check("a single term is not a sequence", not M.accepts(one, M.coverage(one, [])))
 

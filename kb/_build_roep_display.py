@@ -469,8 +469,10 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     for m in rec.get("missing_explained") or []:
         g.append({"kind": "Catalog and state file differ", "owner": "college", "where": state,
                   "text": "The state's Program Course File lists %s; the reader found it %s." % (m["code"], m["why"])})
-    adds = [x["code"] for b in rec["blocks"] for c in courses_of(b)
-            for x in [c] + list(c.get("alternatives") or []) if x.get("catalog_addition")]
+    # A course printed in two blocks is one course off the list (Irvine Valley's Art
+    # A.A. prints ARTH 4, 25 and 26 in both elective lists): name each once.
+    adds = list(OrderedDict.fromkeys(x["code"] for b in rec["blocks"] for c in courses_of(b)
+                                     for x in [c] + list(c.get("alternatives") or []) if x.get("catalog_addition")))
     if adds:
         g.append({"kind": "Catalog and state file differ", "owner": "college", "where": state,
                   "text": "The catalog prints %s for this program; the state's Program Course File does not list %s."
@@ -519,8 +521,12 @@ def term_map(key: str, college: str, codes: list) -> dict | None:
     src = seq.get("source") or {}
     host = re.sub(r"^https?://([^/]+).*$", r"\1", src.get("final_url") or src.get("url") or "") or None
     terms = [{"label": t["label"], "units": t.get("units"),
-              "items": [{"kind": i["kind"], "codes": list(i.get("codes") or []), "units": i.get("units"),
-                         "text": i["text"]} for i in t.get("items") or []]}
+              "items": [dict({"kind": i["kind"], "codes": list(i.get("codes") or []), "units": i.get("units"),
+                              "text": i["text"]},
+                             # sheet 50 card 4: a course the program does not list, named by the
+                             # map, shows as the college's recommendation outside the program
+                             **({"off_list": list(i["off_list"])} if i.get("off_list") else {}))
+                        for i in t.get("items") or []]}
              for t in seq.get("terms") or []]
     on = {}
     for n, t in enumerate(terms):

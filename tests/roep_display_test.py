@@ -177,8 +177,15 @@ for p in progs:
 # 3b. a read map (S340): the terms as the college prints them, each of the record's courses in
 # the term the map names it in, and the rest unplaced; never a course the record does not hold.
 reads = [p for p in progs if p["display"]["map"]["status"] == "read"]
-check({p["key"] for p in reads} == {"smc_43767", "ivc_10265"},
-      "the two programs with a read map show it (got %s)" % sorted(p["key"] for p in reads))
+check({p["key"] for p in reads} == {"smc_43767", "ivc_10265", "mtsac_03086", "mtsac_33876"},
+      "the four programs with a read map show it (got %s)" % sorted(p["key"] for p in reads))
+# Sheet 50 card 4 (S346): an off-list course the map names rides its item, marked, and
+# never enters the record's courses or the placed set.
+fire = [p for p in reads if p["key"] == "mtsac_03086"]
+offs = [c for p in fire for t in p["display"]["map"]["terms"] for it in t["items"] for c in it.get("off_list") or []]
+check(offs == ["KINF 51A", "KINF 51B", "KINF 52A"], "mtsac_03086: the map's three off-list KINF courses are marked (got %s)" % offs)
+check(not [c for p in fire for c in offs if c in p["display"]["map"]["placed"] or c in p["display"]["courses"]],
+      "mtsac_03086: an off-list course is never one of the record's courses")
 for p in reads:
     m = p["display"]["map"]
     seq = json.load(open(os.path.join(b.SEQUENCES, p["key"] + ".json")))
