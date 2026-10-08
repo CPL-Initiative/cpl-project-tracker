@@ -1,0 +1,33 @@
+{
+ "_readme": "First read of West Los Angeles College's program mapper (S344, SkyWaypoint). The procedure record (v1, 2026-10-08) carries one open question: whether programmap.wlac.edu opens to the reader. The census's probe (run 37198225537) loaded the college's page about the mapper and never the mapper itself; every mapper host probed that day refused the reader. One load of each; a refusal is the mapper service's and is not retried another way.",
+ "college": "West Los Angeles College",
+ "questions": {
+  "mapper_open": "Whether programmap.wlac.edu answers the reader, and how it lists programs and terms if it does."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Mm]ap",
+  "[Pp]athway",
+  "Forbidden",
+  "403"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "mapper_open"
+   ],
+   "url": "https://www.wlac.edu/academics/pathways/program-mapper",
+   "links": "programmap|mapper|map|\\.pdf"
+  },
+  {
+   "answers": [
+    "mapper_open"
+   ],
+   "url": "https://programmap.wlac.edu/",
+   "retry": true,
+   "links": "program|map|academic|pathway"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "_readme": "Second read of Mt. San Antonio College's maps (S344, SkyWaypoint). Read 1 (run 37799874023): the Schedule of Classes says the catalog shows 'the suggested order of classes to take', and the LVN-to-RN page printed no sequence and opened no section. This read takes the catalog's Degrees and Certificates page (linked as English and Math Course Sequences) and the Fire Technology certificate page with its sections opened, looking for a roadmap or suggested-sequence tab.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "map_source": "Where Mt. San Antonio publishes a program's suggested term-by-term order, if anywhere."
+ },
+ "keywords": [
+  "[Ss]uggested",
+  "[Ss]equence",
+  "[Rr]oad ?[Mm]ap",
+  "[Pp]rogram [Mm]ap",
+  "[Ss]emester",
+  "[Yy]ear [1-4]",
+  "[Ff]irst [Tt]erm"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/degrees-certificates/",
+   "expand": true,
+   "links": "map|sequence|suggest|roadmap|pathway|semester"
+  },
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/fire-technology-certificate/",
+   "expand": true,
+   "links": "map|sequence|suggest|roadmap|pathway|semester|tab"
+  }
+ ]
+}

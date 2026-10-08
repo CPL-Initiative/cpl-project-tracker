@@ -4,6 +4,8 @@ date: 2026-10-07
 session: 342 (SkyBeacon)
 tags: [handoff, program-requirements-harvest, roep, sierra, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_345_handoff.md
 ---
 
 # You are Session 343

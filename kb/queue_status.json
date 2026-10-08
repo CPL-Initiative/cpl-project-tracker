@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "written_at": "2026-10-07T22:25:19Z",
-  "session": 343,
-  "moniker": "SkyGantry",
-  "run": "Sam's session",
+  "written_at": "2026-10-08T15:29:50Z",
+  "session": 344,
+  "moniker": "SkyWaypoint",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_344_handoff.md",
+  "handoff": "docs/session_345_handoff.md",
   "next_run": {
     "name": "CPL Queue",
-    "at": "2026-10-08T15:07:00Z",
+    "at": "2026-10-09T15:07:00Z",
     "every_hours": 24
   },
   "unchecked": [
@@ -28,37 +28,27 @@
     }
   ],
   "next_step": {
-    "title": "A procedure for each pilot college",
-    "text": "Five pilot colleges have no reading procedure yet: Irvine Valley, San Diego Miramar, Mt. San Antonio, Riverside City and West Los Angeles. Then the addenda, after Sunday's census apply."
+    "title": "Read the maps nobody has read",
+    "text": "Merced's and Palo Verde's map pages, then one load each at Bakersfield, Los Angeles Harbor, Mission and Valley, each college getting a reading procedure from what its read proves. The addenda follow Sunday's census apply."
   },
   "calls": [
     {
       "title": "Check two new records?",
       "text": "Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767. Sierra quotes neither program's requirements until Sam checks it.",
-      "if_no_reply": "both stay unchecked, and the queue moves on to procedures."
+      "if_no_reply": "both stay unchecked, and the queue moves on to the maps."
+    },
+    {
+      "title": "Run one library update by hand?",
+      "text": "The saved update that makes Open Asks Sheet 49 current on the Library tab timed out three times through the sessions' tool. It runs in the Supabase SQL editor.",
+      "if_no_reply": "the Library tab keeps listing sheet 48 as current."
     }
   ],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply.",
-    "sierra": "Deployed Oct 7 at 3:24 PM PT; NOCE's second spelling folds into NOCE, and Sierra names a certification only where a title does."
+    "procedures": "Every pilot college has one since Oct 8; West Los Angeles's map service refused the reader, and Riverside City and Mt. San Antonio show no map page yet.",
+    "sierra": "The full smoke test passed on Oct 8."
   },
   "changes": [
-    {
-      "at": "2026-10-07T19:23:00Z",
-      "text": "Sierra deployed with map terms"
-    },
-    {
-      "at": "2026-10-07T19:28:00Z",
-      "text": "CPL figures applied to 22 programs"
-    },
-    {
-      "at": "2026-10-07T19:42:44Z",
-      "text": "The Progress view mock-up published"
-    },
-    {
-      "at": "2026-10-07T21:08:00Z",
-      "text": "Sam approved the mock-up for building"
-    },
     {
       "at": "2026-10-07T21:55:36Z",
       "text": "The Progress view merged, every section collapsible"
@@ -66,6 +56,18 @@
     {
       "at": "2026-10-07T22:24:20Z",
       "text": "Sierra deployed: NOCE counted once, certifications only by title"
+    },
+    {
+      "at": "2026-10-08T15:13:12Z",
+      "text": "Reading procedures written for the five pilot colleges"
+    },
+    {
+      "at": "2026-10-08T15:22:53Z",
+      "text": "Sierra's smoke test passed in full"
+    },
+    {
+      "at": "2026-10-08T15:28:00Z",
+      "text": "Map searches recorded for West Los Angeles, Riverside City and Mt. San Antonio"
     }
   ]
 }
