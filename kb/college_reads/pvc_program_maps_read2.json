@@ -1,0 +1,40 @@
+{
+ "_readme": "Second read of Palo Verde College's program maps (S347, SkyTrellis). Read 1 (run 37810862182) found guides.paloverde.edu does not resolve; it still does not (2026-10-08). A search restricted to libguides.com finds the same guide, \"PVC Pirates Pathways - LibGuides at Palo Verde College\", at the college's own LibGuides address, paloverde.libguides.com/pathways. A search restricted to paloverde.edu indexes two of its pages with a semester layout: Computer Information Systems (\"your 2-year printable pathway\", four semesters and a summer) and Building Construction Technology (four semesters). The guide is not refused; its custom name lapsed. This read opens the guide's home, its tabs and those two pages, and prints any map, pathway or PDF link.",
+ "college": "Palo Verde College",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map, and in what form (a page, a PDF, an interactive tool).",
+  "map_shape": "How one map names its terms and lists its courses, read on one map the index links."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Ss]ummer",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Pp]rintable",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf"
+ ],
+ "pages": [
+  {
+   "answers": ["map_source"],
+   "url": "https://paloverde.libguides.com/pathways",
+   "expand": true,
+   "links": "map|pathway|semester|sequence|plan|printable|\\.pdf|c\\.php\\?g=1137535",
+   "follow": "semester|sequence|printable|\\.pdf"
+  },
+  {
+   "answers": ["map_shape"],
+   "url": "https://paloverde.libguides.com/c.php?g=1137535&p=8300773",
+   "expand": true,
+   "links": "\\.pdf|printable|semester"
+  },
+  {
+   "answers": ["map_shape"],
+   "url": "https://paloverde.libguides.com/c.php?g=1137535&p=8300772",
+   "expand": true,
+   "links": "\\.pdf|printable|semester"
+  }
+ ]
+}
