@@ -1,0 +1,29 @@
+{
+ "_readme": "Second own-site map read at College of the Canyons (S346, SkyCairn). Its mapper (canyons.programmapper.ws) answered 403 on 2026-10-04, and S345 found that its department pages' 'recommended course sequence documents' link into the mapper. A domain-restricted search (2026-10-08) found department PDFs on www.canyons.edu itself: the Digital Media Studies GE-track program map (2025-26, nine terms with units), an Interior Design roadmap and a Kinesiology pathway template, with no central index. This read loads the Digital Media Studies map, to learn the shape of a department-posted map.",
+ "college": "College of the Canyons",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map off its refused mapper host, and in what form.",
+  "map_shape": "How one map names its terms and lists its courses."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Ff]all",
+  "[Ss]pring"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source",
+    "map_shape"
+   ],
+   "url": "https://www.canyons.edu/_documents/academics/dms/DMS-GE-Track-Program-Map2025.pdf"
+  }
+ ]
+}
