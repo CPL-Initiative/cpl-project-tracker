@@ -135,7 +135,7 @@ async function sierraAskingChecks(page) {
     return {
       name: "the page keeps its h1 while reading (clipped, never display:none)",
       ok: !!h1 && getComputedStyle(h1.parentNode).display !== "none" && getComputedStyle(h1).display !== "none",
-      detail: h1 ? '"' + h1.textContent + '"' : "no h1",
+      detail: h1 ? '"' + (h1.innerText || h1.textContent) + '"' : "no h1",
     };
   }));
   return out;

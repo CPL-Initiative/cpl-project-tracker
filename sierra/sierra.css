@@ -173,14 +173,34 @@ button { font: inherit; color: inherit; }
 .s-peak { text-shadow: 0.050em 0.000em 0 var(--sierra-paper), 0.046em 0.019em 0 var(--sierra-paper), 0.035em 0.035em 0 var(--sierra-paper), 0.019em 0.046em 0 var(--sierra-paper), 0.000em 0.050em 0 var(--sierra-paper), -0.019em 0.046em 0 var(--sierra-paper), -0.035em 0.035em 0 var(--sierra-paper), -0.046em 0.019em 0 var(--sierra-paper), -0.050em 0.000em 0 var(--sierra-paper), -0.046em -0.019em 0 var(--sierra-paper), -0.035em -0.035em 0 var(--sierra-paper), -0.019em -0.046em 0 var(--sierra-paper), -0.000em -0.050em 0 var(--sierra-paper), 0.019em -0.046em 0 var(--sierra-paper), 0.035em -0.035em 0 var(--sierra-paper), 0.046em -0.019em 0 var(--sierra-paper); }
 /* The logo itself (whitney-mark.svg), expanded and set mostly above the word
    (Sam: "Keep the ridgeline mostly above Sierra. Can you just use the current
-   logo expanded?"), and out of the S ("Keep the ridgeline out of the S"): the
-   S's ink ends at 18.9% of the word, so the logo runs from 22% to the word's
-   end. Its stroke scales with it, so the line's weight is the logo's own. Its
-   foot meets the tops of the letters, and the letters' halo keeps them clear. */
+   logo expanded?"). Its stroke scales with it, so the line's weight is the
+   logo's own. "Keep the ridgeline out of the S": the S's ink ends at 18.9% of
+   the word, so the drawing is trimmed before it reaches the S and rises from
+   just right of the S's top. */
 .s-ridge {
   position: absolute; z-index: -1; pointer-events: none;
-  left: 22%; width: 78%; height: auto; bottom: .62em;
+  left: 5%; width: 95%; height: auto; bottom: .62em;
   color: inherit;
+  /* The trim runs square to the line where it ends (that segment climbs at
+     about 42 degrees), so the end reads as drawn rather than chopped: through
+     16.5% of the width at the line's height there, along the perpendicular. */
+  clip-path: polygon(3.2% 0, 100% 0, 100% 100%, 28.3% 100%);
+}
+/* The dot of the i, lowered (Sam, 2026-10-08: "If you move the dot over the i
+   down lower it won't interfere with the ridgeline"). The word carries a
+   dotless i and this dot instead. Playfair SemiBold's own dot (measured) is
+   0.164em wide and 0.145em tall, centered 0.1495em into the i's 0.308em
+   advance, from 0.627em to 0.772em over the baseline; the stem stops at
+   0.528em. This one sits 0.05em lower, still clear of the stem. The anchor is
+   an empty inline-block, whose bottom sits on the baseline, so the offsets
+   read from the baseline itself. */
+.s-nameword { white-space: nowrap; }
+.s-tittle { display: inline-block; position: relative; width: 0; height: 0; vertical-align: baseline; }
+.s-tittle::after {
+  content: ""; position: absolute;
+  left: calc(.1495em - .308em - .082em); bottom: .577em; width: .164em; height: .145em;
+  border-radius: 50%; background: currentColor;
+  box-shadow: 0 0 0 .05em var(--sierra-paper);
 }
 /* Room above the greeting for the mountain. */
 .s-hello h1 { padding-top: .5em; }

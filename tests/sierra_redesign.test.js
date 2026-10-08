@@ -261,9 +261,9 @@ function ask(w, text) {
   });
 
   await block("(2b) the mountain line is kept", async () => {
-    const ridges = (HTML.match(/<span class="s-peak">Sierra<svg class="s-ridge"[^>]*aria-hidden="true"[\s\S]*?<\/svg><\/span>/g) || []);
+    const ridges = (HTML.match(/<span class="s-peak">(?:<span class="s-sr">Sierra<\/span>)?<span class="s-nameword"[^>]*>S&#305;<span class="s-tittle"><\/span>erra<\/span><svg class="s-ridge"[^>]*aria-hidden="true"[\s\S]*?<\/svg><\/span>/g) || []);
     check("(2b) ⭐ the logo stands over her name in the greeting and in the reading header",
-      ridges.length === 2 && /<h1>Hello, I'm <span class="s-peak">Sierra<svg class="s-ridge"/.test(HTML),
+      ridges.length === 2 && /<h1>Hello, I'm <span class="s-peak"><span class="s-sr">Sierra<\/span><span class="s-nameword" aria-hidden="true">/.test(HTML),
       "Sam, 2026-10-08: \"I like the mountain line\"");
     // Sam, 2026-10-08: "a dark blue ghosted font with a much thicker same color
     // mountain line... Match the font width and mountain line."
@@ -286,17 +286,29 @@ function ask(w, text) {
     check("(2b) ⭐ it sits mostly above the name: its foot at the letters' tops, room above the greeting",
       /\.s-ridge\s*\{[^}]*bottom:\s*\.6\d*em/.test(CSS) && /\.s-hello h1\s*\{\s*padding-top:/.test(CSS));
     // Sam, 2026-10-08: "Keep the ridgeline out of the S." The S's ink ends at
-    // 18.9% of the word in Playfair SemiBold (measured), so the logo starts past
-    // it and ends with the word.
-    const lw = (CSS.match(/\.s-ridge\s*\{[^}]*left:\s*(\d+)%;\s*width:\s*(\d+)%/) || []).slice(1).map(Number);
-    check("(2b) ⭐ the logo stays out of the S: it starts past the S and ends with the word",
-      lw.length === 2 && lw[0] >= 21 && lw[0] + lw[1] === 100);
+    // 18.9% of the word in Playfair SemiBold (measured); the drawing is trimmed
+    // before it, square to the line, so the logo rises from just right of the S.
+    check("(2b) ⭐ the logo stays out of the S: trimmed square to the line before the S",
+      /\.s-ridge\s*\{[^}]*clip-path:\s*polygon\(3\.2% 0, 100% 0, 100% 100%, 28\.3% 100%\)/.test(CSS));
+    // Then: "If you move the dot over the i down lower it won't interfere with
+    // the ridgeline." The word carries a dotless i and its own dot, lower than
+    // the font's (0.627em) and still clear of the stem (0.528em).
+    const tittleBottom = parseFloat((CSS.match(/\.s-tittle::after\s*\{[^}]*bottom:\s*([.\d]+)em/) || [])[1]);
+    check("(2b) ⭐ the dot over the i sits lower than the font's, still clear of the stem",
+      tittleBottom > 0.528 + 0.03 && tittleBottom < 0.627 &&
+      (HTML.match(/S&#305;<span class="s-tittle"><\/span>erra/g) || []).length === 2);
     check("(2b) the letters' halo in the page color keeps them clear where the logo meets them",
       /\.s-ridge\s*\{[^}]*bottom:/.test(CSS) &&
       /\.s-peak\s*\{\s*text-shadow:[^}]*var\(--sierra-paper\)/.test(CSS));
     const { w, d } = loadDom();
-    check("(2b) the greeting still reads as words to a screen reader",
-      d.querySelector("h1").textContent === "Hello, I'm Sierra");
+    // A screen reader hears the plain word: the dotless spelling is hidden from
+    // it, and a clipped "Sierra" stands in.
+    const spoken = (el) => Array.prototype.map.call(el.childNodes, (n) =>
+      n.nodeType === 3 ? n.textContent
+        : (n.getAttribute && n.getAttribute("aria-hidden") === "true") ? "" : spoken(n)).join("");
+    check("(2b) ⭐ the greeting still reads as plain words to a screen reader",
+      spoken(d.querySelector("h1")) === "Hello, I'm Sierra" &&
+      !!d.querySelector("h1 .s-sr") && d.querySelector("h1 .s-nameword").getAttribute("aria-hidden") === "true");
     w.close();
   });
 
