@@ -4,7 +4,7 @@
   "supabase_tables": 96,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 599,
+  "file_datasets": 600,
   "external_services": 161,
   "consumers": 418,
   "workflows": 44,
@@ -540,7 +540,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 72
+     "line": 87
     }
    ],
    "main_committers": []
@@ -914,7 +914,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2525,
+     "line": 2557,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1370,7 +1370,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2524,
+     "line": 2556,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2180,7 +2180,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2523,
+     "line": 2555,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4810,7 +4810,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2686,
+     "line": 2771,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4880,7 +4880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2680,
+     "line": 2765,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4916,7 +4916,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 97
+     "line": 112
     },
     {
      "id": "module:college_briefing.js",
@@ -5159,7 +5159,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1934,
+     "line": 1966,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5202,7 +5202,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2653,
+     "line": 2738,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5225,7 +5225,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2093,
+     "line": 2125,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5274,7 +5274,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2694,
+     "line": 2779,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5423,7 +5423,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2667,
+     "line": 2752,
      "tabs": [
       "cpl-pathways"
      ]
@@ -11935,7 +11935,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 312
+     "line": 337
     }
    ],
    "served": true,
@@ -11948,7 +11948,20 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 316
+     "line": 341
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_pilot/sequences/sources/mtsac_gps_s0401.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_map_parse.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 345
     }
    ],
    "served": true,
@@ -11961,7 +11974,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 310
+     "line": 335
     }
    ],
    "served": true,

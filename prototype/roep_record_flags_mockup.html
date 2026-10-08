@@ -1,0 +1,465 @@
+<title>Program Records Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: the Program records view of COBI's Program Requirements tab, one college section per record,
+   each flag set on the block it concerns, and the reader's verdict at the foot of the record. */
+:root {
+  --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36; --text-muted: #5C5C55;
+  --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1; --surface-muted: #ECE9E2;
+  --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30);
+  --cobalt: #0047AB; --seal-blue-text: #002F6D; --crimson: #920000;
+  --mustard-fill: #E3B341; --mustard-text: #8B6800; --on-mustard: #1C1C1A; --hunter: #2C601A;
+  --college-flag: #FBF6E8; --reading-flag: #EEF3FA;
+  --display: 'Playfair Display', Georgia, serif; --text: 'Source Sans 3', Arial, sans-serif;
+  --cpl-measure: none;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+  --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+  --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+  --cobalt: #7DA1D4; --seal-blue-text: #7DA1D4; --crimson: #CF8F8F; --mustard-text: #E3B341; --hunter: #89A67F;
+  --college-flag: #2A2618; --reading-flag: #1C2430; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+  --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+  --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+  --cobalt: #7DA1D4; --seal-blue-text: #7DA1D4; --crimson: #CF8F8F; --mustard-text: #E3B341; --hunter: #89A67F;
+  --college-flag: #2A2618; --reading-flag: #1C2430; color-scheme: dark }
+
+body { background: var(--paper); color: var(--text-body); font-family: var(--text); font-size: 15px; line-height: 1.5; }
+.page { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 56px; display: grid; gap: 18px; }
+h1, h2, h3, h4 { color: var(--text-strong); margin: 0; text-wrap: balance; }
+p { margin: 0; max-width: var(--cpl-measure, none); }
+a { color: var(--cobalt); }
+a:focus-visible, button:focus-visible, summary:focus-visible, textarea:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 2px; }
+.small { font-size: .8125rem; }
+.quiet { color: var(--text-muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* tab mast */
+.mast { display: grid; gap: 6px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.mast h1 { font-family: var(--display); font-size: clamp(1.45rem, 2.8vw, 1.9rem); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.chip-draft { font-family: var(--text); font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--mustard-fill); color: var(--on-mustard); border-radius: 10px; padding: 3px 10px; }
+.views { display: flex; flex-wrap: wrap; gap: 6px; padding-block: 8px 2px; margin: 0; list-style: none; padding-inline: 0; }
+.views li { font-weight: 600; border: 1px solid var(--border-strong); border-radius: 8px; padding: 7px 14px; background: var(--surface-opaque); color: var(--text-muted); }
+.views li.on { background: var(--text-strong); color: var(--paper); border-color: var(--text-strong); }
+.mock { border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); padding: 10px 14px; font-size: .9rem; }
+
+/* summary */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.fact { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; min-width: 0; }
+.fact b { display: block; font-size: 1.5rem; color: var(--text-strong); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.fact span { font-size: .875rem; color: var(--text-muted); }
+.fact.wait { border-color: var(--crimson); }
+.fact.wait span { color: var(--text-body); }
+
+/* college section */
+.college { border: 1px solid var(--border); border-radius: 10px; background: var(--surface-opaque); min-width: 0; }
+.college > summary { list-style: none; cursor: pointer; position: relative; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 11px 14px 11px 36px; min-height: 44px; box-sizing: border-box; }
+.college > summary::-webkit-details-marker { display: none; }
+.college > summary::before { content: ""; position: absolute; left: 15px; top: 19px; width: 7px; height: 7px; border-right: 2px solid var(--text-muted); border-bottom: 2px solid var(--text-muted); transform: rotate(-45deg); }
+.college[open] > summary::before { transform: rotate(45deg); top: 16px; }
+.college > summary h2 { font-size: 1.05rem; }
+.college-b { padding: 2px 14px 14px; display: grid; gap: 10px; min-width: 0; }
+
+/* record */
+.rec { border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface-opaque); min-width: 0; }
+.rhead { padding: 12px 14px; display: grid; gap: 10px 18px; grid-template-columns: minmax(0, 1.3fr) minmax(0, 2.4fr); align-items: start; border-bottom: 1px solid var(--border); }
+.rtitle { display: grid; gap: 2px; justify-items: start; min-width: 0; }
+.rtitle strong { color: var(--text-strong); font-size: 1.05rem; }
+.state-line { margin-top: 6px; font-size: .875rem; font-weight: 700; color: var(--crimson); }
+.checks { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px 12px; margin: 0; min-width: 0; }
+.checks div { min-width: 0; font-size: .875rem; }
+.checks dt { font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }
+.checks dd { margin: 0; }
+.checks .flagged dd { font-weight: 700; color: var(--text-strong); }
+.rbody { padding: 14px; display: grid; gap: 18px; min-width: 0; }
+.block { display: grid; gap: 8px; min-width: 0; }
+.block h4 { font-size: .95rem; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+.rule { font-size: .8125rem; font-weight: 600; color: var(--seal-blue-text); background: var(--surface-muted); border-radius: 10px; padding: 2px 8px; }
+
+/* a flag: its owner named in words first, the color a second signal */
+.flag { border: 1px solid var(--border-strong); border-radius: 8px; padding: 10px 12px; display: grid; gap: 6px; min-width: 0; }
+.flag.college-owned { background: var(--college-flag); }
+.flag.reading-owned { background: var(--reading-flag); }
+.flag-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.flag-n { font-weight: 700; color: var(--text-strong); }
+.flag-kind { font-weight: 700; color: var(--text-strong); }
+.flag-owner { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.college-owned .flag-owner { color: var(--mustard-text); }
+.reading-owned .flag-owner { color: var(--seal-blue-text); }
+.flag-state { margin-left: auto; font-size: .8125rem; color: var(--text-muted); }
+.flag .ev { font-size: .875rem; color: var(--text-body); }
+.flag .ev b { color: var(--text-strong); }
+.flag details { border-top: 1px solid var(--border); padding-top: 6px; }
+.flag summary { cursor: pointer; font-weight: 600; color: var(--cobalt); min-height: 32px; display: flex; align-items: center; }
+.draft-box { display: grid; gap: 8px; padding-top: 4px; }
+textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: .875rem; line-height: 1.5; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 10px; resize: vertical; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.btn { font: inherit; font-size: .9rem; font-weight: 600; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 6px 14px; min-height: 40px; cursor: pointer; }
+.btn:hover { border-color: var(--cobalt); }
+.btn.primary { background: var(--text-strong); color: var(--paper); border-color: var(--text-strong); }
+.said { font-size: .875rem; color: var(--text-muted); }
+
+/* course table */
+.tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+thead th { background: var(--surface-muted); color: var(--text-strong); text-align: left; font-size: .8125rem; font-weight: 700; padding: 9px 12px; }
+tbody th, tbody td { padding: 8px 12px; border-top: 1px solid var(--border); vertical-align: top; text-align: left; overflow-wrap: anywhere; font-size: .9rem; }
+tbody th { font-weight: 600; color: var(--text-strong); }
+tbody tr:nth-child(even) { background: var(--surface-subtle); }
+.n { text-align: right; font-variant-numeric: tabular-nums; }
+.mark { display: block; font-size: .8125rem; color: var(--text-muted); }
+.mark b { color: var(--text-strong); font-weight: 700; }
+tr.flagged-row th, tr.flagged-row td { background: var(--college-flag); }
+
+/* reader notes and verdict */
+.notes summary { cursor: pointer; font-weight: 600; color: var(--cobalt); min-height: 32px; }
+.notes ul { margin: 6px 0 0; padding-left: 20px; display: grid; gap: 4px; font-size: .9rem; }
+.verdict { border-top: 1px solid var(--border-strong); padding: 14px; display: grid; gap: 10px; background: var(--surface-subtle); border-radius: 0 0 8px 8px; }
+.verdict h3 { font-size: 1rem; }
+.verdict p { font-size: .9rem; }
+.verdict .fix { display: grid; gap: 8px; }
+.verdict .done { font-weight: 700; color: var(--text-strong); }
+.howto { border: 1px solid var(--border); border-radius: 10px; background: var(--surface-opaque); padding: 4px 14px; }
+.howto summary { cursor: pointer; font-weight: 700; color: var(--text-strong); min-height: 44px; display: flex; align-items: center; }
+.howto ol { margin: 0 0 12px; padding-left: 20px; display: grid; gap: 6px; font-size: .9rem; }
+code { font-size: .85em; background: var(--surface-muted); border-radius: 4px; padding: 1px 4px; }
+
+@media (max-width: 900px) { .rhead { grid-template-columns: minmax(0, 1fr); } .checks { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+  .checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flag-state { margin-left: 0; width: 100%; }
+  table.stack thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  table.stack, table.stack tbody, table.stack tr { display: block; width: 100%; }
+  table.stack tr { border-top: 1px solid var(--border); padding-block: 6px; }
+  table.stack tbody th, table.stack tbody td { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 8px; border: 0; padding: 3px 12px; text-align: left; }
+  table.stack tbody th::before, table.stack tbody td::before { content: attr(data-label); font-weight: 600; color: var(--text-muted); font-size: .8125rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="page">
+  <header class="mast">
+    <h1>Program Requirements <span class="chip-draft">Beta draft</span></h1>
+    <ul class="views" aria-label="Views of the tab (this mock-up shows Program records)">
+      <li>Progress</li><li>Catalogs</li><li class="on" aria-current="page">Program records</li><li>Sequences</li><li>Procedures</li>
+    </ul>
+  </header>
+
+  <p class="mock">Mock-up for Open Asks Sheet 51. These are the two records you have not read yet, as the harvest holds them on October 8. Each question or mismatch is a flag on the block it concerns, naming who fixes it. Confirm and Needs a fix save nothing on this page; the sheet card asks whether the tab may write them.</p>
+
+  <section class="facts" aria-label="At a glance">
+    <div class="fact"><b>22 at 7</b><span>programs read, at that many colleges</span></div>
+    <div class="fact"><b>20 of 22</b><span>records pass all four checks</span></div>
+    <div class="fact wait"><b>2</b><span>records wait on your reading</span></div>
+    <div class="fact"><b>7 flags</b><span>5 for the colleges, 2 for our reading</span></div>
+  </section>
+
+  <!-- ───────────── Irvine Valley ───────────── -->
+  <details class="college" open>
+    <summary><h2>Irvine Valley College</h2><span class="small quiet num">CurriQunet catalog, 2026-27 · 1 program · 3 drafts for the college</span></summary>
+    <div class="college-b">
+      <article class="rec" aria-label="Art, Irvine Valley College">
+        <div class="rhead">
+          <div class="rtitle">
+            <strong>Art</strong>
+            <span class="small quiet">A.A. Degree · 10265</span>
+            <span class="state-line">Waiting on your reading</span>
+          </div>
+          <dl class="checks">
+            <div><dt>Courses</dt><dd class="num">21 of 23 placed</dd></div>
+            <div><dt>Off the state list</dt><dd>4, printed in the catalog</dd></div>
+            <div><dt>Units</dt><dd class="num">Equal, 27 units</dd></div>
+            <div><dt>Person's reading</dt><dd>Not read</dd></div>
+            <div class="flagged"><dt>Flags</dt><dd>3, all for the college</dd></div>
+          </dl>
+        </div>
+        <div class="rbody">
+          <section class="block" aria-label="Complete the following courses">
+            <h4>Complete the following courses <span class="rule">All required</span><span class="small quiet">Catalog prints 15 units</span></h4>
+            <div class="tablewrap"><table class="stack" aria-label="Art: required courses">
+              <colgroup><col style="width:17%"><col style="width:55%"><col style="width:12%"><col style="width:16%"></colgroup>
+              <thead><tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col" class="n">Units</th><th scope="col" class="n">CPL here</th></tr></thead>
+              <tbody>
+                <tr><th scope="row" data-label="Course">ART 40</th><td data-label="Title">2-D Design and Color</td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">ART 41</th><td data-label="Title">3D Design</td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">ART 50</th><td data-label="Title">Beginning Oil Painting</td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">ART 80</th><td data-label="Title">Drawing Fundamentals</td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">ART 85</th><td data-label="Title">Life Drawing I</td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here"><b>1</b></td></tr>
+              </tbody></table></div>
+          </section>
+
+          <section class="block" aria-label="Complete a total of 6 units from the following courses">
+            <h4>Complete a total of 6 units from the following courses <span class="rule">Choose 6 units</span><span class="small quiet">Catalog prints 6 units</span></h4>
+            <div class="flag college-owned" id="ivc-f1">
+              <div class="flag-top"><span class="flag-n">Flag 1</span><span class="flag-kind">The catalog and the state's file name different courses</span><span class="flag-owner">For the college</span><span class="flag-state">Open with Irvine Valley</span></div>
+              <p>The catalog prints <b>ARTH 25</b> Art History Survey I: Western and <b>ARTH 26</b> Art History Survey II: Western, here and in the next block. The state's Program Course File lists <b>ARTH C1100</b> Survey of Art from Prehistory to the Medieval Era and <b>ARTH C1200</b> Survey of Art from the Renaissance to Contemporary, and neither prints in the catalog.</p>
+              <p class="ev"><b>What we found:</b> the state's file numbers the two common courses 530776 and 530777, the control numbers between ARTH 24 (530775) and ARTH 27 (530778). They read as ARTH 25 and 26 under their new common course numbers, with the catalog page not yet updated.</p>
+              <details><summary>Draft for the college</summary>
+                <div class="draft-box">
+                  <label class="small quiet" for="ivc-d1">Edit before you copy. The MAP team decides when it goes.</label>
+                  <textarea id="ivc-d1" rows="5">Irvine Valley College's 2026-27 catalog lists ARTH 25 and ARTH 26 in the Art A.A. (control number 10265). The state's Program Course File lists ARTH C1100 and ARTH C1200 for the program, under the course control numbers that ARTH 25 and ARTH 26 hold in sequence. Could you confirm that ARTH 25 and 26 are now ARTH C1100 and C1200, and let us know when the catalog page will show the new numbers?</textarea>
+                  <div class="row"><button class="btn copy" type="button" data-for="ivc-d1">Copy the draft</button><span class="said" aria-live="polite"></span></div>
+                </div></details>
+            </div>
+            <div class="tablewrap"><table class="stack" aria-label="Art: choose 6 units">
+              <colgroup><col style="width:17%"><col style="width:55%"><col style="width:12%"><col style="width:16%"></colgroup>
+              <thead><tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col" class="n">Units</th><th scope="col" class="n">CPL here</th></tr></thead>
+              <tbody>
+                <tr class="flagged-row"><th scope="row" data-label="Course">ARTH 4</th><td data-label="Title">Introduction to Art Theory<span class="mark">Printed in the catalog; not on the state's list. <b>Flag 2</b></span></td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr class="flagged-row"><th scope="row" data-label="Course">ARTH 25</th><td data-label="Title">Art History Survey I: Western<span class="mark">Printed in the catalog; not on the state's list. <b>Flag 1</b></span></td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr class="flagged-row"><th scope="row" data-label="Course">ARTH 26</th><td data-label="Title">Art History Survey II: Western<span class="mark">Printed in the catalog; not on the state's list. <b>Flag 1</b></span></td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">ARTH 27</th><td data-label="Title">Art History Survey III: Non-Western</td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+              </tbody></table></div>
+          </section>
+
+          <section class="block" aria-label="Complete an additional 6 units from the following course areas">
+            <h4>Complete an additional 6 units from the following course areas <span class="rule">Choose 6 units</span><span class="small quiet">Catalog prints 6 units</span></h4>
+            <div class="flag college-owned" id="ivc-f2">
+              <div class="flag-top"><span class="flag-n">Flag 2</span><span class="flag-kind">Printed in the catalog, absent from the state's file</span><span class="flag-owner">For the college</span><span class="flag-state">Open with Irvine Valley</span></div>
+              <p>The catalog prints <b>ARTH 4</b> Introduction to Art Theory (in both lists) and <b>ARTH 28</b> Contemporary Art History. The state's Program Course File does not list either for this program.</p>
+              <details><summary>Draft for the college</summary>
+                <div class="draft-box">
+                  <label class="small quiet" for="ivc-d2">Edit before you copy. The MAP team decides when it goes.</label>
+                  <textarea id="ivc-d2" rows="4">The same catalog lists ARTH 4 and ARTH 28 among the Art A.A. electives; the state's Program Course File does not list them for the program. Should the program's record in the state's inventory add them?</textarea>
+                  <div class="row"><button class="btn copy" type="button" data-for="ivc-d2">Copy the draft</button><span class="said" aria-live="polite"></span></div>
+                </div></details>
+            </div>
+            <div class="flag college-owned" id="ivc-f3">
+              <div class="flag-top"><span class="flag-n">Flag 3</span><span class="flag-kind">A course title differs</span><span class="flag-owner">For the college</span><span class="flag-state">Open with Irvine Valley</span></div>
+              <p>The catalog prints <b>ARTH 23</b> as African and Oceanic Art. The state's file titles it African, Oceanic, and Indigenous North American Art.</p>
+              <details><summary>Draft for the college</summary>
+                <div class="draft-box">
+                  <label class="small quiet" for="ivc-d3">Edit before you copy. The MAP team decides when it goes.</label>
+                  <textarea id="ivc-d3" rows="3">The catalog titles ARTH 23 African and Oceanic Art; the state's inventory titles it African, Oceanic, and Indigenous North American Art. Which title is current?</textarea>
+                  <div class="row"><button class="btn copy" type="button" data-for="ivc-d3">Copy the draft</button><span class="said" aria-live="polite"></span></div>
+                </div></details>
+            </div>
+            <div class="tablewrap"><table class="stack" aria-label="Art: choose an additional 6 units">
+              <colgroup><col style="width:17%"><col style="width:55%"><col style="width:12%"><col style="width:16%"></colgroup>
+              <thead><tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col" class="n">Units</th><th scope="col" class="n">CPL here</th></tr></thead>
+              <tbody>
+                <tr class="flagged-row"><th scope="row" data-label="Course">ARTH 4</th><td data-label="Title">Introduction to Art Theory<span class="mark">Printed in the catalog; not on the state's list. <b>Flag 2</b></span></td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">ARTH 22</th><td data-label="Title">Survey of Asian Art</td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr class="flagged-row"><th scope="row" data-label="Course">ARTH 23</th><td data-label="Title">African, Oceanic, and Indigenous North American Art<span class="mark">The catalog's title differs. <b>Flag 3</b></span></td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">ARTH 24</th><td data-label="Title">Ancient Art</td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr class="flagged-row"><th scope="row" data-label="Course">ARTH 25</th><td data-label="Title">Art History Survey I: Western<span class="mark">Printed in the catalog; not on the state's list. <b>Flag 1</b></span></td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr class="flagged-row"><th scope="row" data-label="Course">ARTH 26</th><td data-label="Title">Art History Survey II: Western<span class="mark">Printed in the catalog; not on the state's list. <b>Flag 1</b></span></td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr class="flagged-row"><th scope="row" data-label="Course">ARTH 28</th><td data-label="Title">Contemporary Art History<span class="mark">Printed in the catalog; not on the state's list. <b>Flag 2</b></span></td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">ARTH 29 to 31</th><td data-label="Title">19th and Early 20th Century Art; Renaissance and Baroque Art; Medieval Art</td><td class="n" data-label="Units">3 each</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">Ten ART courses</th><td data-label="Title">ART 51, 52, 53, 81, 82, 85, 86, 91, 186 and 195 (ART 85 is also required above)</td><td class="n" data-label="Units">3 each</td><td class="n" data-label="CPL here">1</td></tr>
+              </tbody></table></div>
+          </section>
+
+          <p class="small">Program total: 27 units. Read from the catalog page (2026-27). Display build 8292780f6cd5.</p>
+          <details class="notes"><summary>Notes from the reading (5)</summary>
+            <ul>
+              <li>No program learning outcomes print in the text.</li>
+              <li>The catalog text names no general education pattern.</li>
+              <li>ART 195 and ART 91 print as the same as DMA 195 and DMA 91; the DMA listings are not recorded as alternatives.</li>
+              <li>ART 85 appears in the required list and the additional 6-unit list; ARTH 4, 25, 26 and 27 appear in both elective lists. The CPL figure counts each course once.</li>
+              <li>Recommended electives (MUS 20, TA 20, TA 21, TA 26, TA 27, any photography course) carry 0 units toward the 27 and are not a block.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="verdict" data-record="ivc">
+          <h3>Your reading</h3>
+          <p>Confirm says the record reads the catalog as printed. The record passes the three machine checks, so confirming marks it checked and Sierra may quote it. The three flags stay open with Irvine Valley; they concern the catalog itself and do not hold the record back.</p>
+          <div class="row">
+            <button class="btn primary act-confirm" type="button">Confirm</button>
+            <button class="btn act-fix" type="button" aria-expanded="false" aria-controls="ivc-fix">Needs a fix</button>
+          </div>
+          <div class="fix" id="ivc-fix" hidden>
+            <label class="small" for="ivc-fix-note"><b>What should change.</b> The note goes to Irvine Valley's reading procedure; the next run carries it out.</label>
+            <textarea id="ivc-fix-note" rows="3" placeholder="For example: read the elective lists from the 2026-27 addendum once it posts."></textarea>
+            <div class="row"><button class="btn primary act-save" type="button">Save the note</button></div>
+          </div>
+          <p class="said" aria-live="polite"></p>
+        </div>
+      </article>
+    </div>
+  </details>
+
+  <!-- ───────────── Santa Monica ───────────── -->
+  <details class="college" open>
+    <summary><h2>Santa Monica College</h2><span class="small quiet num">PDF catalog, 2026-27 · 1 program · 2 drafts for the college</span></summary>
+    <div class="college-b">
+      <article class="rec" aria-label="Barbering, Santa Monica College">
+        <div class="rhead">
+          <div class="rtitle">
+            <strong>Barbering</strong>
+            <span class="small quiet">A.S. Degree · 43767</span>
+            <span class="state-line">Waiting on your reading</span>
+          </div>
+          <dl class="checks">
+            <div><dt>Courses</dt><dd class="num">23 of 25 placed</dd></div>
+            <div><dt>Off the state list</dt><dd>None</dd></div>
+            <div class="flagged"><dt>Units</dt><dd class="num">25.5 of 26.5; incomplete</dd></div>
+            <div><dt>Person's reading</dt><dd>Not read</dd></div>
+            <div class="flagged"><dt>Flags</dt><dd>4: 2 for the college, 2 for our reading</dd></div>
+          </dl>
+        </div>
+        <div class="rbody">
+          <div class="flag reading-owned" id="smc-f4">
+            <div class="flag-top"><span class="flag-n">Flag 4</span><span class="flag-kind">On the whole record: which award these requirements serve</span><span class="flag-owner">For our reading</span><span class="flag-state">Open in Santa Monica's procedure</span></div>
+            <p>Page 121 opens partway into the Barbering section, so the reading could not see the heading and could not say whether these requirements belong to the A.S., the certificate, or both.</p>
+            <p class="ev"><b>What we found:</b> the college's own program page names both, Associate in Science (AS) and Certificate of Achievement, over the same courses.</p>
+            <p class="ev"><b>Proposed fix to the reading procedure:</b> Santa Monica's procedure reads from page 120, where the section begins.</p>
+          </div>
+
+          <section class="block" aria-label="Required Level 1 to 3 courses">
+            <h4>Required Level 1, Level 2 and Level 3 Courses <span class="rule">All required</span><span class="small quiet">The catalog prints no block totals</span></h4>
+            <div class="tablewrap"><table class="stack" aria-label="Barbering: Levels 1 to 3">
+              <colgroup><col style="width:17%"><col style="width:55%"><col style="width:12%"><col style="width:16%"></colgroup>
+              <thead><tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col" class="n">Units</th><th scope="col" class="n">CPL here</th></tr></thead>
+              <tbody>
+                <tr><th scope="row" data-label="Course">Level 1</th><td data-label="Title">COSM 10A, 10B, 11A, 11B, 11C (Hair Coloring 1), 11D</td><td class="n" data-label="Units">6</td><td class="n" data-label="CPL here"><b>4 each</b></td></tr>
+                <tr><th scope="row" data-label="Course">Level 2</th><td data-label="Title">COSM 20, 21A, 21B, 21C, 21E, 42</td><td class="n" data-label="Units">6</td><td class="n" data-label="CPL here"><b>4 each</b></td></tr>
+                <tr><th scope="row" data-label="Course">Level 3</th><td data-label="Title">COSM 30, 31A, 31C, 31E, 77 Barbering</td><td class="n" data-label="Units">6</td><td class="n" data-label="CPL here"><b>3 or 4</b></td></tr>
+              </tbody></table></div>
+          </section>
+
+          <section class="block" aria-label="Required Level 4 Courses">
+            <h4>Required Level 4 Courses <span class="rule">All required</span></h4>
+            <div class="flag college-owned" id="smc-f1">
+              <div class="flag-top"><span class="flag-n">Flag 1</span><span class="flag-kind">The catalog prints the wrong course number</span><span class="flag-owner">For the college</span><span class="flag-state">Open with Santa Monica</span></div>
+              <p>Level 4 prints <b>COSM 11C, Salon Management (2)</b>. COSM 11C is Hair Coloring 1, a 1-unit course Level 1 already requires. Salon Management is <b>COSM 64</b> (2 units), which the state's Program Course File lists for this program.</p>
+              <p class="ev"><b>What we found:</b> the college's own program map for Barbering places COSM 64 Salon Management in the second eight weeks of Semester 2, and the catalog's Cosmetology section prints COSM 64, Salon Management (2).</p>
+              <details><summary>Draft for the college</summary>
+                <div class="draft-box">
+                  <label class="small quiet" for="smc-d1">Edit before you copy. The MAP team decides when it goes.</label>
+                  <textarea id="smc-d1" rows="5">Santa Monica College's 2026-27 catalog (page 121) lists "COSM 11C, Salon Management (2)" among the Barbering A.S. Level 4 courses (control number 43767). COSM 11C is Hair Coloring 1, and the college's program map and the state's Program Course File both name COSM 64 Salon Management. Could the catalog's next edition or addendum print COSM 64 there?</textarea>
+                  <div class="row"><button class="btn copy" type="button" data-for="smc-d1">Copy the draft</button><span class="said" aria-live="polite"></span></div>
+                </div></details>
+            </div>
+            <div class="tablewrap"><table class="stack" aria-label="Barbering: Level 4">
+              <colgroup><col style="width:17%"><col style="width:55%"><col style="width:12%"><col style="width:16%"></colgroup>
+              <thead><tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col" class="n">Units</th><th scope="col" class="n">CPL here</th></tr></thead>
+              <tbody>
+                <tr class="flagged-row"><th scope="row" data-label="Course">COSM 11C</th><td data-label="Title">Salon Management, as printed<span class="mark">The course is COSM 64. <b>Flag 1</b></span></td><td class="n" data-label="Units">2</td><td class="n" data-label="CPL here"><b>4</b></td></tr>
+                <tr><th scope="row" data-label="Course">COSM 78</th><td data-label="Title">Barbering 2</td><td class="n" data-label="Units">2</td><td class="n" data-label="CPL here"><b>3</b></td></tr>
+              </tbody></table></div>
+          </section>
+
+          <section class="block" aria-label="Required State Board Courses">
+            <h4>Required State Board Courses <span class="rule">All required</span></h4>
+            <div class="tablewrap"><table class="stack" aria-label="Barbering: State Board">
+              <colgroup><col style="width:17%"><col style="width:55%"><col style="width:12%"><col style="width:16%"></colgroup>
+              <thead><tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col" class="n">Units</th><th scope="col" class="n">CPL here</th></tr></thead>
+              <tbody>
+                <tr><th scope="row" data-label="Course">COSM 49R</th><td data-label="Title">Tactical Planning for the California Barbering State Board Exam</td><td class="n" data-label="Units">2</td><td class="n" data-label="CPL here">0</td></tr>
+                <tr><th scope="row" data-label="Course">COSM 50R</th><td data-label="Title">Written Preparation for Barbering State Board Exam</td><td class="n" data-label="Units">1.5</td><td class="n" data-label="CPL here"><b>4</b></td></tr>
+              </tbody></table></div>
+          </section>
+
+          <section class="block" aria-label="Salon Experience Courses">
+            <h4>Salon Experience Courses <span class="rule">Any combination</span><span class="small quiet">The catalog prints no minimum</span></h4>
+            <div class="flag college-owned" id="smc-f2">
+              <div class="flag-top"><span class="flag-n">Flag 2</span><span class="flag-kind">A course on the state's file is missing from the catalog</span><span class="flag-owner">For the college</span><span class="flag-state">Open with Santa Monica</span></div>
+              <p>The state's Program Course File lists <b>COSM 95D</b> Salon Experience (4 units). The catalog's Barbering list stops at COSM 95C; 95D prints only under Esthetician and Nail Care.</p>
+              <p class="ev"><b>What we found:</b> the college's program map lists COSM 95A through 95D under Salon Experience, 1 to 4 units.</p>
+              <details><summary>Draft for the college</summary>
+                <div class="draft-box">
+                  <label class="small quiet" for="smc-d2">Edit before you copy. The MAP team decides when it goes.</label>
+                  <textarea id="smc-d2" rows="4">The same Barbering list names COSM 95A, 95B and 95C under Salon Experience, while the program map and the state's Program Course File also name COSM 95D. Does COSM 95D count for Barbering, and how many Salon Experience units does the A.S. require?</textarea>
+                  <div class="row"><button class="btn copy" type="button" data-for="smc-d2">Copy the draft</button><span class="said" aria-live="polite"></span></div>
+                </div></details>
+            </div>
+            <div class="flag reading-owned" id="smc-f3">
+              <div class="flag-top"><span class="flag-n">Flag 3</span><span class="flag-kind">The units check is not met</span><span class="flag-owner">For our reading</span><span class="flag-state">Open in Santa Monica's procedure</span></div>
+              <p>The blocks add to <b>25.5 units</b>; the catalog prints <b>26.5</b>. This block says "Any combination of Salon classes is acceptable" and names no minimum, so the reading left it open.</p>
+              <p class="ev"><b>Proposed fix to the reading procedure:</b> where one choice block names no minimum and the catalog prints the program's total, read the block's minimum as the total less the other blocks, marked as derived. Here that is 1 unit, which COSM 95A alone meets, and the units check reads equal on the next run.</p>
+            </div>
+            <div class="tablewrap"><table class="stack" aria-label="Barbering: Salon Experience">
+              <colgroup><col style="width:17%"><col style="width:55%"><col style="width:12%"><col style="width:16%"></colgroup>
+              <thead><tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col" class="n">Units</th><th scope="col" class="n">CPL here</th></tr></thead>
+              <tbody>
+                <tr><th scope="row" data-label="Course">COSM 95A</th><td data-label="Title">Salon Experience</td><td class="n" data-label="Units">1</td><td class="n" data-label="CPL here"><b>4</b></td></tr>
+                <tr><th scope="row" data-label="Course">COSM 95B</th><td data-label="Title">Salon Experience</td><td class="n" data-label="Units">2</td><td class="n" data-label="CPL here"><b>4</b></td></tr>
+                <tr><th scope="row" data-label="Course">COSM 95C</th><td data-label="Title">Salon Experience</td><td class="n" data-label="Units">3</td><td class="n" data-label="CPL here"><b>4</b></td></tr>
+              </tbody></table></div>
+          </section>
+
+          <p class="small">Program total: 26.5 units and 1,000 hours. Read from the catalog PDF, pages 121 and 122 (2026-27). Display build 8292780f6cd5.</p>
+          <details class="notes"><summary>Notes from the reading (3)</summary>
+            <ul>
+              <li>The award also requires 1,000 hours, the specified courses included.</li>
+              <li>The text names no general education pattern for the degree.</li>
+              <li>The program outcomes print as one paragraph; each sentence is recorded as one outcome.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="verdict" data-record="smc">
+          <h3>Your reading</h3>
+          <p>Confirm says the record reads the catalog as printed. The units check is not met, so the record stays unchecked after you confirm, until Santa Monica's procedure takes Flag 3's fix and a rerun passes. Needs a fix sends your note to that procedure instead.</p>
+          <div class="row">
+            <button class="btn primary act-confirm" type="button">Confirm</button>
+            <button class="btn act-fix" type="button" aria-expanded="false" aria-controls="smc-fix">Needs a fix</button>
+          </div>
+          <div class="fix" id="smc-fix" hidden>
+            <label class="small" for="smc-fix-note"><b>What should change.</b> The note goes to Santa Monica's reading procedure; the next run carries it out.</label>
+            <textarea id="smc-fix-note" rows="3" placeholder="For example: take Flag 3's fix and read from page 120."></textarea>
+            <div class="row"><button class="btn primary act-save" type="button">Save the note</button></div>
+          </div>
+          <p class="said" aria-live="polite"></p>
+        </div>
+      </article>
+    </div>
+  </details>
+
+  <details class="howto" open>
+    <summary>What Confirm and Needs a fix would write</summary>
+    <ol>
+      <li>Only a reviewer signed in with the magic link sees the two buttons. Everyone else sees the flags and the drafts.</li>
+      <li>Either button calls one database function, <code>program_record_verdict_add</code>, which adds a row to a new log, <code>program_record_verdicts</code>: the record, Confirm or Needs a fix, the note, who, when, and the fingerprint of the requirements the page showed.</li>
+      <li>Confirm marks the record checked only when that fingerprint still matches the record and its three machine checks pass. A rerun that changes a block clears the mark until someone reads the record again, as it does today.</li>
+      <li>Needs a fix leaves the record unchecked and adds the note to the college's reading procedure as an open question, so the next run carries it out. No one edits a record by hand.</li>
+      <li>The log keeps every verdict. Undoing one adds a new row, and the record's checked mark always follows the latest verdict.</li>
+    </ol>
+  </details>
+</div>
+
+<script>
+(function () {
+  function say(node, text) { if (node) node.textContent = text; }
+  document.querySelectorAll(".copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var ta = document.getElementById(b.getAttribute("data-for"));
+      var said = b.parentNode.querySelector(".said");
+      function done() { say(said, "Copied. Paste it into a message to the college."); }
+      function fallback() { ta.focus(); ta.select(); say(said, "Selected. Copy it with your keyboard."); }
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(ta.value).then(done, fallback);
+        else fallback();
+      } catch (e) { fallback(); }
+    });
+  });
+  document.querySelectorAll(".verdict").forEach(function (v) {
+    var said = v.querySelector(":scope > .said");
+    var fix = v.querySelector(".fix");
+    var fixBtn = v.querySelector(".act-fix");
+    var state = v.closest(".rec").querySelector(".state-line");
+    v.querySelector(".act-confirm").addEventListener("click", function () {
+      fix.hidden = true; fixBtn.setAttribute("aria-expanded", "false");
+      say(state, "Confirmed by you, Oct 8");
+      say(said, "Confirmed. In the built tab this adds your verdict to the log; this mock-up saves nothing.");
+    });
+    fixBtn.addEventListener("click", function () {
+      fix.hidden = !fix.hidden;
+      fixBtn.setAttribute("aria-expanded", fix.hidden ? "false" : "true");
+      if (!fix.hidden) fix.querySelector("textarea").focus();
+    });
+    v.querySelector(".act-save").addEventListener("click", function () {
+      var note = fix.querySelector("textarea").value.trim();
+      if (!note) { say(said, "Write what should change, then save."); return; }
+      fix.hidden = true; fixBtn.setAttribute("aria-expanded", "false");
+      say(state, "Needs a fix, noted by you, Oct 8");
+      say(said, "Saved your note for the reading procedure. In the built tab it joins the college's open questions; this mock-up saves nothing.");
+    });
+  });
+})();
+</script>

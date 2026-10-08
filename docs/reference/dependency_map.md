@@ -583,6 +583,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot/reviewed_readings.json` | scripts: `kb/_program_requirements_file.py`, `kb/_program_requirements_load.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/ivc_all_program_maps_p1.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_n0486.json` | scripts: `kb/_program_map_parse.py` | — |
+| `kb/program_requirements_pilot/sequences/sources/mtsac_gps_s0401.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/smc_program_219.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
@@ -1035,5 +1036,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 96 Supabase tables · 35 RPCs · 6 edge functions · 599 file
+Coverage: 96 Supabase tables · 35 RPCs · 6 edge functions · 600 file
 datasets · 161 external services · 418 consumers · 44 workflows · 39 tabs.
