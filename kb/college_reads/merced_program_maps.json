@@ -1,0 +1,47 @@
+{
+ "_readme": "First read of Merced College's program maps (S345, SkyLantern). The registry (probe run 37198225537) records the college's mapper page and its link to merced.programmapper.com, not read. A web search (2026-10-08) found the college's own Program Pathways Mapper page at /getstarted/program-pathway.html, which says each pathway's maps show 'a semester-by-semester path from program entry to completion'. Every Program Mapper host read so far answered 403 (lesson 33), so the mapper gets one load; a refusal is the mapper service's and is not retried another way. The college's own pages are read for any map they publish themselves.",
+ "college": "Merced College",
+ "outside_hosts": {
+  "programmapper.com": "The college's own mapper page links merced.programmapper.com as its Program Mapper; one load on the college's behalf, and a refusal is not retried another way."
+ },
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map: its own pages, a PDF, or only its Program Mapper.",
+  "mapper_open": "Whether the college's Program Mapper host answers the reader (one load), and how it lists programs and terms if it does."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Mm]apper",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Pp]rint",
+  "Forbidden",
+  "403"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://www.mccd.edu/getstarted/program-pathway.html",
+   "expand": true,
+   "links": "programmap|mapper|map|pathway|roadmap|sequence|\\.pdf"
+  },
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://www.mccd.edu/schools-programs/discover-your-path/program-pathways-mapper/",
+   "links": "programmap|mapper|map|pathway|roadmap|sequence|\\.pdf"
+  },
+  {
+   "answers": [
+    "mapper_open"
+   ],
+   "url": "https://merced.programmapper.com/",
+   "links": "program|map|academic|pathway"
+  }
+ ]
+}

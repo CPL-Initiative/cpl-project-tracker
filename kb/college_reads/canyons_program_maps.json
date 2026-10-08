@@ -1,0 +1,37 @@
+{
+ "_readme": "First own-site map read at College of the Canyons (S345, SkyLantern). Its mapper (canyons.programmapper.ws) answered 403 on 2026-10-04 (run 37198225537), so the registry records it refused, and Sam's ruling (sheet 29 card 3) sends the reader to look for the sequence on the college's own pages. A web search (2026-10-08) found department program pages that say 'Check out the Program Mapper and the recommended course sequence documents below' (Business; Administration of Justice has the same page shape). This read loads two of them and follows the sequence documents they link.",
+ "college": "College of the Canyons",
+ "questions": {
+  "map_source": "Whether the college's own department pages publish a recommended course sequence per program, and in what form.",
+  "map_shape": "How one sequence document names its terms and lists its courses."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Ss]equence",
+  "[Ff]all",
+  "[Ss]pring",
+  "\\.pdf"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source",
+    "map_shape"
+   ],
+   "url": "https://www.canyons.edu/academics/justice/programs/",
+   "expand": true,
+   "links": "sequence|map|semester|\\.pdf",
+   "follow": "sequence|\\.pdf"
+  },
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://www.canyons.edu/academics/business/programs/",
+   "expand": true,
+   "links": "sequence|map|semester|\\.pdf"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "_readme": "First read of American River College's program maps (S345, SkyLantern). The census reads Los Rios homepages as 404 (lesson 13) while their deeper pages answer. A web search (2026-10-08) found program maps pages on the Los Rios colleges' own sites: each map gives a 'semester-to-semester course recommendation', with Cal-GETC and Local GE versions of many degrees, as PDFs on mapmaker.losrios.edu (the district's domain). The search found no ARC program maps page; ARC's Academics page lists Program Roadmaps and a Degree Planner. This read loads the Academics page and follows the roadmap link.",
+ "college": "American River College",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map, and in what form (a page, a PDF, an interactive tool).",
+  "map_shape": "How one map names its terms and lists its courses, read on one map the index links."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://arc.losrios.edu/academics",
+   "expand": true,
+   "links": "roadmap|map|planner|pathway|\\.pdf",
+   "follow": "roadmap|program-maps|program maps"
+  }
+ ]
+}

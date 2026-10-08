@@ -78,6 +78,7 @@
   var FORMAT = { html_per_program: "A page per program", single_pdf: "One PDF",
     pdf_by_section: "PDF by section", unknown: "Not yet known" };
   var SEQ = { ppm: "Program Mapper", program_map_page: "Program map page", none_found: "None found", unknown: "Not read" };
+  var SEQ_LINKED = { ppm: 1, program_map_page: 1 };
   /* The column's check allows open, refused, unreached and not_read; "open" is a host the
      reader reached and read (Irvine Valley's and Santa Monica's map pages, S326). */
   var SEQ_ACCESS = { refused: "Refused the reader", not_read: "Not read yet", open: "Read", unreached: "Unreached", gone: "Gone" };
@@ -115,6 +116,21 @@
   function yr(y) { return y ? String(y).slice(0, 5) + String(y).slice(7) : ""; }
   function day(ts) { return ts ? String(ts).slice(0, 10) : ""; }
   function link(href, text) { return el("a", { href: href, target: "_blank", rel: "noopener", text: text }); }
+  /* A call's links (Sam, 2026-10-08, on this view: "want to check the 2 items pending for me but don't see how
+     to view them and respond", then "If you can embed the links on the tab, it would be fantastic"). `link` is
+     where he answers (the decision sheet, named by `link_text`, e.g. "Answer on Open Asks Sheet 50, cards 1 and
+     2"); `view` is where he sees the item, another COBI tab by its bare hash ("#cpl-pathways"), which opens in
+     place, or an https page, which opens in a new tab. */
+  function callLinks(c) {
+    var out = [];
+    if (c.link && /^https:\/\//.test(c.link)) out.push(link(c.link, c.link_text || "Open the decision sheet"));
+    var v = c.view;
+    if (v && v.href && v.text) {
+      if (/^#[A-Za-z0-9_.~-]+$/.test(v.href)) out.push(el("a", { href: v.href, text: v.text }));
+      else if (/^https:\/\//.test(v.href)) out.push(link(v.href, v.text));
+    }
+    return out.length ? el("p", { cls: "prh-pg-links" }, out) : null;
+  }
   function safeGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function safeSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* private window */ } }
 
@@ -220,7 +236,11 @@
     return { t: "Read", c: "prh-quiet", why: "" };
   }
   function needsPerson(r) { return !r.catalog_url || (r.access_status && r.access_status !== "ok"); }
-  function hasMap(r) { return r.sequence_source === "ppm" || r.sequence_source === "program_map_page"; }
+  /* A published map: the census found one (sequence_source), or a session's read recorded
+     its host (sequence_host, which the census never writes). S345: Mt. San Antonio's
+     Guided Pathways sequences sit on pages the census does not score, so its row reads
+     none_found and still holds an open map. */
+  function hasMap(r) { return r.sequence_source === "ppm" || r.sequence_source === "program_map_page" || !!r.sequence_host; }
   function filterRegistry(rows, q, show, plat, drafts) {
     q = (q || "").trim().toLowerCase();
     return rows.filter(function (r) {
@@ -476,6 +496,7 @@
       ".prh-pg-part.prh-pg-going { border-color:var(--cobalt); }",
       ".prh-pg-part.prh-pg-going .prh-pg-status { color:var(--cobalt); }",
       ".prh-pg-call { border-color:var(--crimson); background:color-mix(in srgb, var(--crimson) 7%, var(--surface-opaque)); }",
+      ".prh-pg-links { display:flex; flex-wrap:wrap; gap:.4rem 1rem; margin:.5rem 0 0; }",
       ".prh-pg-part.prh-pg-call .prh-pg-status, .prh-pg-box.prh-pg-call .prh-sec-label { color:var(--crimson); }",
       ".prh-pg-part.prh-pg-unread .prh-pg-status { color:var(--mustard-text); }",
       ".prh-pg-what { margin:0; font-size:.9rem; font-variant-numeric:tabular-nums; }",
@@ -581,7 +602,8 @@
             : el("span", { cls: "prh-quiet", text: "No address yet" }),
           year,
           r.catalog_format ? (FORMAT[r.catalog_format] || r.catalog_format) : "",
-          r.sequence_url && hasMap(r) ? link(r.sequence_url, SEQ[r.sequence_source])
+          r.sequence_url && SEQ_LINKED[r.sequence_source] ? link(r.sequence_url, SEQ[r.sequence_source])
+            : r.sequence_host ? el("span", { text: "Found by a read on " + r.sequence_host })
             : el("span", { cls: "prh-quiet", text: SEQ[r.sequence_source] || "" }),
           [el("span", { cls: st.c, text: st.t }),
             st.why ? el("span", { cls: "prh-alts", text: st.why }) : null,
@@ -1094,7 +1116,7 @@
         side.appendChild(section("progress:call:" + i, c.title || "", null, [
           c.text ? el("p", { text: c.text }) : null,
           c.if_no_reply ? el("p", { cls: "prh-pg-foot", text: "No reply: " + c.if_no_reply }) : null,
-          c.link && /^https:\/\//.test(c.link) ? el("p", {}, [link(c.link, "Open the decision sheet")]) : null],
+          callLinks(c)],
           { cls: "prh-pg-box prh-pg-call", h: "h4", label: "Needs " + x.decider + "'s call" }));
       });
       var ch = Array.isArray(Q.changes) ? Q.changes : [];

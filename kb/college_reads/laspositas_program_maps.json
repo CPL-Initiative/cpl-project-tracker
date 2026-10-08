@@ -1,0 +1,29 @@
+{
+ "_readme": "First own-site map read at Las Positas College (S345, SkyLantern). Its mapper (las-positas.programmapper.ws) answered 403 on 2026-10-04 (run 37198225537), so the registry records it refused, and Sam's ruling (sheet 29 card 3) sends the reader to look for the sequence on the college's own pages. A web search (2026-10-08) found the college's Program Map Updates pages, which say discipline and counseling faculty revise 'the program map pdfs, located on the Program Map website'. This read loads the updates page and follows the links to that website or its PDFs.",
+ "college": "Las Positas College",
+ "questions": {
+  "map_source": "Where the college's own program map PDFs live, and how they are listed.",
+  "map_shape": "How one program map PDF names its terms and lists its courses."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Ff]all",
+  "[Ss]pring",
+  "\\.pdf"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source",
+    "map_shape"
+   ],
+   "url": "https://laspositascollege.edu/programmapupdates/revised.php",
+   "expand": true,
+   "links": "map|\\.pdf|pathway",
+   "follow": "program ?map|programmap(?!updates)|\\.pdf"
+  }
+ ]
+}

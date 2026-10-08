@@ -1,0 +1,172 @@
+{
+ "_what": "A program's term-by-term map as the college publishes it, read by kb/_program_map_parse.py from the text a college page read printed. The catalog keeps the rule; the map names the pick.",
+ "record_shape": "sequence 1",
+ "college": "Mt. San Antonio College",
+ "control_number": "03086",
+ "title": "Fire Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source": {
+  "url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=N0486&desc=Fire+Technology%2C+Certificate+N0486",
+  "final_url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=N0486&desc=Fire+Technology%2C+Certificate+N0486",
+  "run": "college-page-read run 37810862182",
+  "read_on": "2026-10-08",
+  "sha256": "381b05adc1f715e8",
+  "reader": "kb/_college_page_read.py (plan kb/college_reads/mtsac_program_maps.json, read 3)"
+ },
+ "map_title": "Fire Technology, Certificate N0486",
+ "pattern": "Guided Pathways for Success (GPS) suggested sequence",
+ "terms": [
+  {
+   "label": "Fall Semester (Year 1)",
+   "units": "7.0",
+   "items": [
+    {
+     "text": "FIRE 1 | Fire Protection Organization | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "FIRE 1"
+     ]
+    },
+    {
+     "text": "FIRE 2 | Fire Prevention Technology | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "FIRE 2"
+     ]
+    },
+    {
+     "text": "KINF 51A | Agility Test Prep-Law & F | 1.0",
+     "units": "1.0",
+     "kind": "course",
+     "codes": [
+      "KINF 51A"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Winter Semester (Year 1)",
+   "units": null,
+   "items": []
+  },
+  {
+   "label": "Spring Semester (Year 1)",
+   "units": "10.0",
+   "items": [
+    {
+     "text": "FIRE 3 | Fire Protection Equip & System | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "FIRE 3"
+     ]
+    },
+    {
+     "text": "FIRE 4 | Bldg Const for Fire Protection | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "FIRE 4"
+     ]
+    },
+    {
+     "text": "FIRE 5 | Fire Behavior and Combustion  | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "FIRE 5"
+     ]
+    },
+    {
+     "text": "KINF 51B | Agility Test Prep-Law & Fire B | 1.0",
+     "units": "1.0",
+     "kind": "course",
+     "codes": [
+      "KINF 51B"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Summer Semester (Year 1)",
+   "units": "4.0",
+   "items": [
+    {
+     "text": "FIRE 13 | Firefighter Safety & Survival | 3.0",
+     "units": "3.0",
+     "kind": "course",
+     "codes": [
+      "FIRE 13"
+     ]
+    },
+    {
+     "text": "KINF 52A | Fitness & Cond - Law & Fire A | 1.0",
+     "units": "1.0",
+     "kind": "course",
+     "codes": [
+      "KINF 52A"
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Fall Semester (Year 2)",
+   "units": "17.5",
+   "items": [
+    {
+     "text": "FIRE 86 | Basic Fire Academy | 15.0",
+     "units": "15.0",
+     "kind": "course",
+     "codes": [
+      "FIRE 86"
+     ]
+    },
+    {
+     "text": "KINF 53 | Physical Training-Fire Academy | 2.5",
+     "units": "2.5",
+     "kind": "course",
+     "codes": [
+      "KINF 53"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Winter Semester (Year 1): EMT course see notes section",
+  "Alt. FIRE courses if FIRE 86-Academy is not goal",
+  "FIRE 6, 7, 8, 9, 10, 11, or 12"
+ ],
+ "coverage": {
+  "closed_list": 15,
+  "named": [
+   "FIRE 1",
+   "FIRE2",
+   "FIRE 3",
+   "FIRE 4",
+   "FIRE 5",
+   "FIRE 13",
+   "FIRE86",
+   "KINF 53"
+  ],
+  "share": 0.533,
+  "not_on_map": [
+   "FIRE 10",
+   "FIRE 11",
+   "FIRE 12",
+   "FIRE 6",
+   "FIRE 7",
+   "FIRE 8",
+   "FIRE 9"
+  ],
+  "off_list": [
+   "KINF 51A",
+   "KINF 51B",
+   "KINF 52A"
+  ],
+  "list_slots": 0
+ },
+ "accepted": false
+}

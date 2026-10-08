@@ -1,0 +1,28 @@
+{
+ "_readme": "Second read of Los Angeles Harbor College's maps (S345, SkyLantern). Read 1 (run 37810652946): the college's Program Mapper page answers and says each program shows 'a term-by-term sample map'; la-harbor.programmapper.com answered 403 (the mapper service's refusal, not retried). The page also links the college's own Program Mapper Programs page (www.lahc.edu/academics/programs). This read loads that page and prints any map, sequence or PDF it links.",
+ "college": "Los Angeles Harbor College",
+ "questions": {
+  "map_source": "Whether the college's own pages publish a program's term-by-term map anywhere outside the refused mapper."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Mm]apper",
+  "[Ss]equence",
+  "\\.pdf",
+  "Forbidden",
+  "403"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source"
+   ],
+   "url": "https://www.lahc.edu/academics/programs",
+   "expand": true,
+   "links": "map|sequence|semester|\\.pdf"
+  }
+ ]
+}

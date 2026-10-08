@@ -1,0 +1,114 @@
+{
+ "_what": "Mt. San Antonio College's Guided Pathways for Success page for the Fire Technology certificate (local code N0486, the state's 03086), the text exactly as the college page read printed it, with the state's Program Course File list for the certificate.",
+ "url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=N0486&desc=Fire+Technology%2C+Certificate+N0486",
+ "final_url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=N0486&desc=Fire+Technology%2C+Certificate+N0486",
+ "sha256": "381b05adc1f715e8",
+ "run": "college-page-read run 37810862182",
+ "read_on": "2026-10-08",
+ "reader": "kb/_college_page_read.py (plan kb/college_reads/mtsac_program_maps.json, read 3)",
+ "load_id": "20260716-003071339fe73a7a",
+ "programs": {
+  "03086": {
+   "title": "Fire Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "status": "Active",
+   "local_code": "N0486",
+   "catalog_h1": "Fire Technology (Certificate N0486)"
+  }
+ },
+ "closed_lists": {
+  "03086": [
+   {
+    "code": "FIRE 1",
+    "title": "Fire Protection Organization",
+    "units": 3.0,
+    "ccn": "CCC000635318"
+   },
+   {
+    "code": "FIRE 10",
+    "title": "Arson and Fire Investigation",
+    "units": 3.0,
+    "ccn": "CCC000403555"
+   },
+   {
+    "code": "FIRE 11",
+    "title": "Fire Apparatus and Equipment",
+    "units": 3.0,
+    "ccn": "CCC000419076"
+   },
+   {
+    "code": "FIRE 12",
+    "title": "Wildland Fire Control",
+    "units": 4.5,
+    "ccn": "CCC000520882"
+   },
+   {
+    "code": "FIRE 13",
+    "title": "Principles of Fire and Emergency Services Safety and Survival",
+    "units": 3.0,
+    "ccn": "CCC000616278"
+   },
+   {
+    "code": "FIRE 3",
+    "title": "Fire Protection Equipment and Systems",
+    "units": 3.0,
+    "ccn": "CCC000399754"
+   },
+   {
+    "code": "FIRE 4",
+    "title": "Building Construction for Fire Protection",
+    "units": 3.0,
+    "ccn": "CCC000414758"
+   },
+   {
+    "code": "FIRE 5",
+    "title": "Fire Behavior and Combustion",
+    "units": 3.0,
+    "ccn": "CCC000387627"
+   },
+   {
+    "code": "FIRE 6",
+    "title": "Hazardous Materials/ICS",
+    "units": 3.0,
+    "ccn": "CCC000542207"
+   },
+   {
+    "code": "FIRE 7",
+    "title": "Fire Fighting Tactics and Strategy",
+    "units": 3.0,
+    "ccn": "CCC000419004"
+   },
+   {
+    "code": "FIRE 8",
+    "title": "Fire Company Organization and Management",
+    "units": 3.0,
+    "ccn": "CCC000536205"
+   },
+   {
+    "code": "FIRE 9",
+    "title": "Fire Hydraulics",
+    "units": 3.0,
+    "ccn": "CCC000407104"
+   },
+   {
+    "code": "FIRE2",
+    "title": "Fire Prevention Technology",
+    "units": null,
+    "ccn": "CCC000627777"
+   },
+   {
+    "code": "FIRE86",
+    "title": "Basic Fire Academy",
+    "units": null,
+    "ccn": "CCC000660004"
+   },
+   {
+    "code": "KINF 53",
+    "title": "Physical Training for the Basic Fire Academy",
+    "units": 2.5,
+    "ccn": "CCC000524359"
+   }
+  ]
+ },
+ "text": "Guided Pathways\nAviation, Electronics and Manufacturing Programs at Mt. SAC\nFire Technology, Certificate N0486 · Program: N0486 · Looking for guidance? A counselor can help.\nThis Guided Pathways for Success (GPS) is a suggested sequence of coursework needed for program completion. It is not an official educational plan. Schedule an appointment with a counselor or advisor as soon as possible to create an individualized Mountie Academic Plan (MAP) specific to your goals and needs.\nPrint Out a MAP of this Program · Email This Link to A Friend · Suggested Sequence of Coursework · Indicates Courses Offered Online · Fall Semester (Year 1) · Course Prefix\tTitle\tUnits · FIRE 1\tFire Protection Organization\t3.0 · FIRE 2\tFire Prevention Technology\t3.0 · KINF 51A\tAgility Test Prep-Law & F\t1.0 · Total:\t \t7.0 · Winter Semester (Year 1) · EMT course see notes section · Spring Semester (Year 1) · Course Prefix\tTitle\tUnits · FIRE 3\tFire Protection Equip & System\t3.0 · FIRE 4\tBldg Const for Fire Protection\t3.0 · FIRE 5\tFire Behavior and Combustion \t3.0 · KINF 51B\tAgility Test Prep-Law & Fire B\t1.0 · Total:\t \t10.0 · Summer Semester (Year 1) · Course Prefix\tTitle\tUnits · FIRE 13\tFirefighter Safety & Survival\t3.0 · KINF 52A\tFitness & Cond - Law & Fire A\t1.0 · Total:\t \t4.0 · Fall Semester (Year 2) · Course Prefix\tTitle\tUnits · FIRE 86\tBasic Fire Academy\t15.0 · KINF 53\tPhysical Training-Fire Academy\t2.5 · Total:\t \t17.5\nAlt. FIRE courses if FIRE 86-Academy is not goal\nCertificate: Fire Technology N0486 · FIRE 6, 7, 8, 9, 10, 11, or 12 · Submit petition to Admissions & Records · Program Notes\nEmergency Medical Technician (EMT) offered through School of Continuing Education.\nFor information: · Short-Term Vocational Program · 1100 N. Grand Avenue, Walnut, CA 91789 · Building 40, Room 101 · Phone: (909) 274-4220 · Email: stv@mtsac.edu · Website: https://www.mtsac.edu.vocational/ · View Career Information For This Program · 38.5 · Total number of Units · Just · $46 · Per Unit\n70% of students pay close to nothing with financial aid. Compare costs.\nReturn to Guided Pathways Homepage · Take the Next Step · Apply and Enroll · Meet With a Counselor · How-To Student Guides · Search For Classes · View Academic Catalog · Apply for Financial Aid · Shop for Textbooks"
+}

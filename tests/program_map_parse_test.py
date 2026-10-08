@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Guard for kb/_program_map_parse.py: a college's own program map, read into terms.
 
-The two sources are the text college page read run 37372136739 printed for
+The sources are the text college page read run 37372136739 printed for
 Irvine Valley's All Program Maps page and Santa Monica's Barbering pathway
-(S336). A parser change that moves a course out of its term, loses a choice, or
+(S336), and run 37810862182 for Mt. San Antonio's Guided Pathways page for its
+Fire Technology certificate (S345). A parser change that moves a course out of its term, loses a choice, or
 lets a map name a course off the program's list fails here, and the committed
 sequence records must equal a fresh build.
 
@@ -82,6 +83,29 @@ cov = M.coverage(barb, smc["closed_lists"]["43767"])
 check("the Barbering map names 24 of the 25 listed courses; COSM 49R is the one it leaves out",
       len(cov["named"]) == 24 and cov["not_on_map"] == ["COSM 49R"], cov["not_on_map"])
 check("COUNS 20 and ENGL C1000 are another subject's courses, never an off-list COSM course", not cov["off_list"])
+
+# ── 3b. Mt. San Antonio: a Guided Pathways page per program ─────────────────
+mt = json.load(open(os.path.join(SRC, "mtsac_gps_n0486.json"), encoding="utf-8"))
+fire = M.parse_mtsac(mt["text"], mt["closed_lists"]["03086"])
+check("the Fire Technology certificate's page has five terms, Winter kept though it lists no course",
+      [t["label"] for t in fire["terms"]] == ["Fall Semester (Year 1)", "Winter Semester (Year 1)",
+                                              "Spring Semester (Year 1)", "Summer Semester (Year 1)",
+                                              "Fall Semester (Year 2)"], [t["label"] for t in fire["terms"]])
+check("each term keeps its printed total", [t["units"] for t in fire["terms"]] == ["7.0", None, "10.0", "4.0", "17.5"])
+check("FIRE 86, the academy, sits in Fall of Year 2",
+      [c for i in fire["terms"][4]["items"] for c in i["codes"]] == ["FIRE 86", "KINF 53"])
+check("a line inside a term that is no row is a note on that term",
+      "Winter Semester (Year 1): EMT course see notes section" in fire["notes"], fire["notes"])
+check("the page's echo of the program's name is dropped from the notes",
+      not [n for n in fire["notes"] if n.endswith("N0486")], fire["notes"])
+cov = M.coverage(fire, mt["closed_lists"]["03086"])
+check("the map names three KINF courses the certificate does not list, so it is not accepted",
+      cov["off_list"] == ["KINF 51A", "KINF 51B", "KINF 52A"] and not M.accepts(fire, cov), cov["off_list"])
+alt = M.parse_mtsac("Fall Semester (Year 2) · Course Prefix\tTitle\tUnits · CHLD 10\tLifespan Development \t3.0 · "
+                    "PSYC 14\t(or) Developmental Psychology · Total:\t \t3.0 · Spring Semester (Year 2)", [])
+first = alt["terms"][0]["items"]
+check("a row titled \"(or) ...\" is the alternative to the row above it",
+      len(first) == 1 and first[0]["kind"] == "choice" and first[0]["codes"] == ["CHLD 10", "PSYC 14"], first)
 
 # ── 4. acceptance fails where it should ──────────────────────────────────────
 bad = {"terms": [{"label": "Semester 1", "items": [{"kind": "course", "codes": ["COSM 99"]}]},

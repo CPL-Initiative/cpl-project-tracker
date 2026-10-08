@@ -1,0 +1,27 @@
+{
+ "_readme": "Second read of Los Angeles Valley College's maps (S345, SkyLantern). Read 1 (run 37810652946): the college's Program Pathways Mapper page answers, says the mapper gives 'a semester-by-semester guide for each degree and certificate', and links programmap.lavc.edu with one link per pathway. Every Program Mapper host read so far answered 403 (lesson 33; three more in run 37810652946), so the mapper gets one load; a refusal is the mapper service's and is not retried another way.",
+ "college": "Los Angeles Valley College",
+ "questions": {
+  "mapper_open": "Whether the college's Program Mapper host answers the reader (one load), and how it lists programs and terms if it does."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Mm]apper",
+  "[Ss]equence",
+  "\\.pdf",
+  "Forbidden",
+  "403"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "mapper_open"
+   ],
+   "url": "https://programmap.lavc.edu/academics",
+   "links": "program|map|academic|pathway"
+  }
+ ]
+}
