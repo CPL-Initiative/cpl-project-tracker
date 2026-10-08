@@ -992,3 +992,14 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, which had 
    earlier in the day (migration `program_source_registry_pvc_map_read_s347`; read back open, `paloverde.libguides.com`,
    run 37835928900). The timeouts are intermittent and not explained by size alone; when one lands nothing, split the
    migration and retry before handing the SQL to Sam.
+8. **The connector took a privilege removal today.** The records table's SQL says the connector holds any statement
+   naming one for a confirmation a remote session cannot answer. A probe re-ran an existing close
+   (`program_source_procedure_set_reclose_probe_s347`, no change) and it landed, so the verdict surface's revokes went
+   in its own migrations. Probe once before routing a revoke to a paste.
+9. **A self-test that rolls itself back proves a write path without leaving a row.** The guard denies `do` through
+   `execute_sql`, so the test ran as a migration whose last statement raises with its results: ten cases (refusals,
+   confirm, a reload, a changed block, Needs a fix, a failing record), then a read-back showed nothing kept and no
+   migration recorded.
+10. **A write surface reaches past its table.** Confirm sets `checked`, and the loader's upsert sets `checked` from the
+   repo's files, so a reload would have undone a person's reading. A trigger now applies the latest verdict while its
+   fingerprint matches the row. Ask what else writes the column before shipping a person's write to it.

@@ -9,7 +9,8 @@
 //   - a record "passes" only when all four checks hold, not when any one does;
 //   - the Procedures view shows what the record holds (open questions, a host marked
 //     gone, a held request), because that is where a misread gets fixed;
-//   - the tab writes nothing, uses tokens (no raw hex) and words (no glyphs);
+//   - the tab's one write is a reviewer's verdict (Sheet 51 card 1); it uses tokens (no raw hex)
+//     and words (no glyphs);
 //   - a private window (localStorage throws) still renders;
 //   - the Progress view (S343) places You are here by what is left, counts from each read,
 //     and says which read failed instead of drawing a zero.
@@ -693,11 +694,172 @@ block("(9)", function () {
 
 // ── (7) Read-only, tokens, words ──────────────────────────────────────────
 block("(7)", function () {
-  check("(7) the tab writes nothing", !/method\s*:\s*["'](POST|PATCH|PUT|DELETE)/i.test(SRC) && !/\/rpc\//.test(SRC));
+  /* Sheet 51 card 1 (2026-10-08): the tab's one write is a reviewer's verdict, through one RPC. */
+  const writes = SRC.match(/method\s*:\s*["'](POST|PATCH|PUT|DELETE)["']/gi) || [];
+  const rpcs = SRC.match(/\/rpc\/[A-Za-z_]+/g) || [];
+  check("(7) the tab's one write is the verdict RPC, a POST", writes.length === 1 && /POST/.test(writes[0]) &&
+    rpcs.length === 1 && rpcs[0] === "/rpc/program_record_verdict_add", writes.join(",") + " | " + rpcs.join(","));
   const css = (SRC.match(/function ensureCss\(\)[\s\S]*?\n  }\n/) || [""])[0];
   check("(7) the injected CSS uses tokens, never a raw hex", css.length > 500 && !/#[0-9a-fA-F]{3,8}\b/.test(css));
   check("(7) plain words, no emoji", !/[\u{1F300}-\u{1FAFF}✅✔✓❌⚠]/u.test(SRC));
   check("(7) American spelling in rendered text", !/\b(colour|behaviour|organisation|catalogue|centre)\b/i.test(SRC));
+});
+
+// ── (11) Flags: each question sits on the block it concerns and names who fixes it ──
+// Sam, Open Asks Sheet 51 card 1 ("build", 2026-10-08), on the mock-up Program Records
+// Review. The failures this guards: a flag that floats free of the block whose courses it
+// names, a row that prints a flagged course without its number, a reader's note promoted
+// to a flag, and an owner shown by tint alone.
+const ART = {
+  college: "Irvine Valley College", control_number: "10265", program_title: "Art", award: "A.A. Degree",
+  catalog_year: "2026-2027", source_url: "https://example.org/art", measure: "units", total_min: 27, total_max: 27,
+  checked: false, checked_by: null, checked_at: null,
+  checks: { coverage: true, invented: true, arithmetic: "equal", reviewer: { by: "Sam", verdict: null } },
+  record: { program: { measure: "units" }, blocks: [
+    { name: "Required", rule: "all", courses: [{ code: "ART 40", units: 3, alternatives: [] }] },
+    { name: "Choose 6 units", rule: "choose_units", minimum: 6, courses: [
+      { code: "ARTH 4", units: 3, alternatives: [], catalog_addition: true },
+      { code: "ARTH 25", units: 3, alternatives: [], catalog_addition: true },
+      { code: "ARTH 27", units: 3, alternatives: [] }] },
+    { name: "Choose an additional 6 units", rule: "choose_units", minimum: 6, courses: [
+      { code: "ARTH 4", units: 3, alternatives: [], catalog_addition: true },
+      { code: "ARTH 22", units: 3, alternatives: [] }] }] },
+  display: { build: "2360b83e8100", built: "2026-10-06", checks: { coverage: { listed: 23, placed: 21 }, additions: 4, arithmetic: "equal" },
+    counts: { here: 0, courses: 6 }, figure: {}, courses: {},
+    gaps: [
+      { kind: "Catalog and state file differ", owner: "college", text: "The state's Program Course File lists ARTH C1100; the reader found it not in the text." },
+      { kind: "Catalog and state file differ", owner: "college", text: "The catalog prints ARTH 4, ARTH 25 for this program; the state's Program Course File does not list them." },
+      { kind: "Check not met", owner: "procedure", text: "The blocks add to 25.5 units; the catalog prints 26.5 units." },
+      { kind: "Reader's note", owner: "procedure", text: "No program learning outcomes are printed in the text." }] }
+};
+block("(11)", function () {
+  const { M, root } = ready();
+  const F = M.flagsFor(ART);
+  check("(11) every gap but a reader's note is a flag", F.flags.length === 3 && F.notes.length === 1 && F.notes[0].kind === "Reader's note");
+  check("(11) a flag naming no printed course sits on the whole record, numbered first",
+    F.flags[0].block == null && F.flags[1].block == null && F.flags[2].block === 1 && F.flags[2].n === 3);
+  check("(11) a flag's number rides each course its text names", JSON.stringify(F.byCode["ARTH 4"]) === "[3]" &&
+    JSON.stringify(F.byCode["ARTH 25"]) === "[3]" && !F.byCode["ARTH 27"]);
+  check("(11) the count names who fixes them", M.flagSummary(F.flags) === "3: 2 for the college, 1 for the reading procedure" &&
+    M.flagSummary(F.flags.slice(0, 1)) === "1, all for the college" && M.flagSummary([]) === "None");
+  M._state.records = [IRONWORKER, ART]; M._state.view = "records"; M._render();
+  const card = root.querySelector('article[aria-label="Art, Irvine Valley College"]');
+  check("(11) the record's head counts its flags", card && /Flags3: 2 for the college, 1 for the reading procedure/.test(card.querySelector(".prh-checks").textContent),
+    card && card.querySelector(".prh-checks").textContent);
+  const whole = card.querySelector(".prh-flags");
+  check("(11) whole-record flags sit before the blocks under their own heading",
+    whole && /On the whole record/.test(whole.textContent) && whole.querySelectorAll(".prh-flag").length === 2);
+  const own = Array.prototype.map.call(card.querySelectorAll(".prh-flag"), function (f) { return f.querySelector(".prh-flag-owner").textContent; });
+  check("(11) each flag names its owner in words", own.join("|") === "For the college|For the reading procedure|For the college", own.join("|"));
+  const marks = Array.prototype.filter.call(card.querySelectorAll("tbody tr"), function (tr) { return /Flag 3/.test(tr.textContent); });
+  check("(11) every row printing a flagged course carries the flag's number, in each block it appears", marks.length === 3,
+    marks.length + " rows");
+  check("(11) a catalog addition keeps its words beside the flag", marks.every(function (tr) { return /Printed in the catalog; not on the state's list\. Flag 3/.test(tr.textContent); }));
+  const notes = Array.prototype.filter.call(card.querySelectorAll("details.prh-notes summary"), function (s) { return /Notes for the reading procedure/.test(s.textContent); });
+  check("(11) the reader's notes stay notes", notes.length === 1 && /\(1\)/.test(notes[0].textContent));
+  check("(11) signed out: no verdict box, and a way to sign in", !root.querySelector(".prh-verdict") &&
+    /Reviewers: sign in to confirm a record or note a fix/.test(root.querySelector(".prh-signin summary").textContent));
+});
+
+// ── (12) A person's reading: Confirm and Needs a fix, the tab's one write ──
+// The failures this guards: a write that sends no fingerprint (so a reviewer could confirm
+// requirements the page never showed), a write under the anon key, an empty Needs a fix,
+// a refusal that reads as a success, and an unread record a signed-in reviewer cannot see.
+function reviewerReady(answer) {
+  const posts = [], asked = [];
+  const ART_FP = Object.assign(JSON.parse(JSON.stringify(ART)), { requirements_fp: "fp-art" });
+  const IW_FP = Object.assign(JSON.parse(JSON.stringify(IRONWORKER)), { requirements_fp: "fp-iw" });
+  function res(status, body) {
+    return Promise.resolve({ ok: status < 300, status: status, json: function () { return Promise.resolve(body); },
+      text: function () { return Promise.resolve(body == null ? "" : JSON.stringify(body)); } });
+  }
+  const m = loadModule({ fetch: function (url, opts) {
+    asked.push({ url: url, opts: opts || {} });
+    if (/\/rpc\/program_record_verdict_add/.test(url)) {
+      const body = JSON.parse(opts.body); posts.push({ body: body, opts: opts });
+      return answer ? answer(body) : res(200, { id: 7, verdict: body.p_verdict, checked: body.p_verdict === "confirm", by: "reviewer@example.org", at: "2026-10-08T22:00:00Z", requirements_fp: body.p_requirements_fp, filed: true });
+    }
+    if (/program_requirement_records\?select=.*requirements_fp/.test(url)) return res(200, [IW_FP, ART_FP]);
+    if (/program_record_verdicts\?select=/.test(url)) return res(200, []);
+    if (/program_requirement_records\?select=/.test(url)) return res(200, [IRONWORKER]);
+    if (/program_source_registry\?select=/.test(url)) return res(200, REGISTRY);
+    return res(200, []);
+  } });
+  const sess = { email: "Reviewer@Example.org", access_token: "tok" };
+  m.w.CPL_SESSION = { get: function () { return sess; }, isFresh: function () { return true; },
+    ensureFresh: function () { return Promise.resolve(sess); },
+    authHeaders: function (extra) { return Object.assign({ apikey: "anon", Authorization: "Bearer tok" }, extra || {}); } };
+  return Object.assign(m, { posts: posts, asked: asked });
+}
+function tick() { return new Promise(function (r) { setTimeout(r, 0); }); }
+block("(12)", function () {
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    const rev = r.asked.filter(function (a) { return /requirements_fp|program_record_verdicts/.test(a.url); });
+    check("(12) signed in: the records and the verdict log are read under the reviewer's token", rev.length === 2 &&
+      rev.every(function (a) { return a.opts.headers && a.opts.headers.Authorization === "Bearer tok"; }));
+    r.M._state.view = "records"; r.M._render();
+    const card = r.root.querySelector('article[aria-label="Art, Irvine Valley College"]');
+    check("(12) the unchecked record a reviewer may read shows on the Records view", !!card);
+    check("(12) it is waiting on a person, said in words", card && card.querySelector(".prh-state.prh-state-waiting").textContent === "Waiting on your reading");
+    const iw = r.root.querySelector('article[aria-label="Apprenticeship: Field Ironworkers, Cerritos College"]');
+    check("(12) a checked record names who read it", iw && /^Checked by Sam/.test(iw.querySelector(".prh-state").textContent));
+    const box = card.querySelector(".prh-verdict");
+    check("(12) each record ends with Your reading, Confirm and Needs a fix", box && /Your reading/.test(box.textContent) &&
+      box.querySelectorAll("button")[0].textContent === "Confirm" && box.querySelectorAll("button")[1].textContent === "Needs a fix");
+    check("(12) a record passing its machine checks says confirming checks it, and its flags stay with the college",
+      /confirming marks it checked and Sierra may quote it\. The 2 flags for the college stay open with Irvine Valley/.test(box.textContent));
+    box.querySelectorAll("button")[0].click();
+    return tick().then(tick).then(function () {
+      const post = r.posts[0];
+      check("(12) Confirm posts the record, the verdict and the fingerprint the page read, under the reviewer's token",
+        post && post.body.p_college === "Irvine Valley College" && post.body.p_control_number === "10265" &&
+        post.body.p_verdict === "confirm" && post.body.p_note === null && post.body.p_requirements_fp === "fp-art" &&
+        post.opts.method === "POST" && post.opts.headers.Authorization === "Bearer tok", post && JSON.stringify(post.body));
+      check("(12) the result is said, and the state line follows it",
+        box.querySelector(".prh-said").textContent === "Confirmed. The record is checked, and Sierra may quote it." &&
+        /^Confirmed by you, Oct 8/.test(card.querySelector(".prh-state").textContent), card.querySelector(".prh-state").textContent);
+      const fixBtn = box.querySelectorAll("button")[1];
+      fixBtn.click();
+      check("(12) Needs a fix opens the note", fixBtn.getAttribute("aria-expanded") === "true" && !box.querySelector(".prh-fix").hidden);
+      box.querySelector(".prh-fix button").click();
+      check("(12) an empty note is not sent", r.posts.length === 1 && box.querySelector(".prh-said").textContent === "Write what should change, then save.");
+      box.querySelector("textarea").value = "Read the electives from the addendum.";
+      box.querySelector(".prh-fix button").click();
+      return tick().then(tick).then(function () {
+        const p2 = r.posts[1];
+        check("(12) Needs a fix posts the note", p2 && p2.body.p_verdict === "needs_fix" && p2.body.p_note === "Read the electives from the addendum.");
+        check("(12) and says where it went", /joins Irvine Valley's open questions on its reading procedure/.test(box.querySelector(".prh-said").textContent) &&
+          /^Needs a fix, noted by you/.test(card.querySelector(".prh-state").textContent));
+      });
+    });
+  });
+});
+block("(12b)", function () {
+  function res(status, body) {
+    return Promise.resolve({ ok: false, status: status, text: function () { return Promise.resolve(JSON.stringify(body)); } });
+  }
+  const refused = reviewerReady(function () { return res(400, { code: "42501", message: "program_record_verdict_add: not an allowed reviewer" }); });
+  const stale = reviewerReady(function () { return res(400, { code: "40001", message: "program_record_verdict_add: the record changed" }); });
+  return Promise.all([refused, stale].map(function (r) {
+    return r.M._load().then(function () {
+      r.M._state.view = "records"; r.M._render();
+      const card = r.root.querySelector('article[aria-label="Art, Irvine Valley College"]');
+      card.querySelector(".prh-verdict button").click();
+      return tick().then(tick).then(function () { return [card.querySelector(".prh-said").textContent, card.querySelector(".prh-state").textContent]; });
+    });
+  })).then(function (got) {
+    check("(12b) a refusal says so and leaves the record waiting", /^Not saved\. Your account is not on the reviewer list/.test(got[0][0]) && got[0][1] === "Waiting on your reading", got[0].join(" | "));
+    check("(12b) a stale fingerprint asks for a reload", /^Not saved\. The record changed since this page read it/.test(got[1][0]), got[1][0]);
+  });
+});
+block("(12c)", function () {
+  const { M } = loadModule();
+  const smc = JSON.parse(JSON.stringify(ART)); smc.checks.arithmetic = "incomplete";
+  check("(12c) the machine checks are read as the server reads them", M.machineFails(ART).length === 0 &&
+    M.machineFails(smc).join() === "units" && M.machineFails({ checks: { arithmetic: "unstated", coverage: true, invented: true } }).length === 0);
+  check("(12c) a server message reads as a sentence", M.verdictError({ code: "22023", message: "program_record_verdict_add: Needs a fix takes a note saying what should change" }) ===
+    "Not saved: needs a fix takes a note saying what should change.");
 });
 
 Promise.all(pending).then(function () {

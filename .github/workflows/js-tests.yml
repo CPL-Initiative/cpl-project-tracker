@@ -168,6 +168,11 @@ jobs:
       # grants. Pure-stdlib python; same non-required check.
       - name: Supabase table-grant lint (new and recreated tables carry grants)
         run: python3 tests/supabase_table_grants_test.py
+      # The Program records view's one write (Sheet 51 card 1, S347): the session's
+      # email, the reviewer gate first, the fingerprint refused when stale, an
+      # append-only log, and the same machine checks in SQL and in the tab.
+      - name: Program record verdicts (the tab's one write)
+        run: python3 tests/program_record_verdicts_sql_test.py
       # The Library filer (scripts/library_file.py): version names, resumable
       # upload, the two-folder fence, receipts guarded on the Drive file id, and
       # no delete anywhere. Pure-stdlib python with a fake Drive; same non-required check.

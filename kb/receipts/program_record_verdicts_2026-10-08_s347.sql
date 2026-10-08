@@ -1,0 +1,42 @@
+-- S347 SkyTrellis, 2026-10-08: the Program records view's write path (Sam, Open Asks Sheet 51 card 1, "build",
+-- 20:35Z; confirmed in chat: "Sheet 51: 1 Build it, 2 Go."). The source is chatbox/supabase_program_record_verdicts.sql;
+-- this receipt records how it went live and how it rolls back.
+--
+-- Applied through apply_migration in two parts (each landed at once):
+--   program_record_verdicts_s347_part1  sections 1-2: program_record_fp, program_record_machine_pass, the computed
+--                                       field requirements_fp, the log program_record_verdicts with its RLS, the
+--                                       reviewer read policies on the log and on program_requirement_records, grants.
+--   program_record_verdicts_s347_part2  sections 3-4: the trigger program_requirement_records_follow_verdict and the
+--                                       write program_record_verdict_add, then notify pgrst.
+-- A probe first re-ran an existing close (program_source_procedure_set_reclose_probe_s347, no change) to learn
+-- whether the connector still holds a privilege removal for a confirmation; it did not.
+--
+-- Read back after applying:
+--   has_function_privilege  program_record_verdict_add: anon false, authenticated true, service_role true;
+--                           requirements_fp: anon false, authenticated true; the trigger function: anon false.
+--   has_table_privilege     program_record_verdicts: anon select false, anon truncate false, authenticated insert
+--                           false, authenticated truncate false, authenticated select true.
+--   policies                program_record_verdicts_reviewer_read, program_requirement_records_read,
+--                           program_requirement_records_reviewer_read.
+--   trigger                 program_requirement_records_follow_verdict.
+--   rows                    20 of 22 records checked (unchanged), 0 verdicts.
+--
+-- Self-test (migration program_record_verdicts_selftest_rolls_back_s347, which ends in RAISE so nothing is kept;
+-- read back after: 0 verdicts, Irvine Valley unchecked with 2 open questions, no such migration recorded):
+--   1 no session: refused 42501 · 2 stale fingerprint: refused 40001 · 3 confirm Irvine Valley 10265: checked, by
+--   the session's email · 4 a reload resetting checked: the trigger keeps it · 5 a reload changing a block: unchecked
+--   · 5b the block restored: checked again · 6 Needs a fix with a blank note: refused 22023 · 7 Needs a fix with a
+--   note: unchecked, the note filed (open questions 2 to 3) · 8 confirm Santa Monica 43767: logged, stays unchecked
+--   (units incomplete) · 9 three verdicts logged · 10 a display write on Cerritos 36675 (no verdict): untouched.
+--
+-- Rollback (Rule 10 a2). A verdict is undone by the opposite verdict, a new row. To retire the surface, in order:
+--   drop trigger program_requirement_records_follow_verdict on public.program_requirement_records;
+--   drop function public.program_record_verdict_add(text, text, text, text, text);
+--   drop function public.program_requirement_records_follow_verdict();
+--   drop policy program_requirement_records_reviewer_read on public.program_requirement_records;
+--   drop table public.program_record_verdicts;
+--   drop function public.requirements_fp(public.program_requirement_records);
+--   drop function public.program_record_machine_pass(jsonb);
+--   drop function public.program_record_fp(jsonb);
+-- then reload the records from the repo's files (kb/_program_requirements_load.py), which sets checked from the
+-- files again. A Needs a fix note on a reading procedure rolls back from program_source_registry_history.

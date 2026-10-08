@@ -21,7 +21,12 @@
 -- program_requirement_records_load_2026_10_04). The repo's files are the source
 -- of truth; a row rolls back by loading the files of an earlier commit. No person
 -- edits a row here: a fix goes through the record shape, the prompt or the
--- scorer, then a reload.
+-- scorer, then a reload. One exception, ruled by Sam (Open Asks Sheet 51 card 1,
+-- 2026-10-08): a reviewer's Confirm or Needs a fix in the Program records view
+-- sets `checked` through program_record_verdict_add, and a trigger keeps that
+-- reading across reloads while the requirements it read are unchanged
+-- (chatbox/supabase_program_record_verdicts.sql). Reviewers also read the
+-- unchecked rows (policy program_requirement_records_reviewer_read).
 --
 -- PRIVILEGES: row-level security with one SELECT policy (checked rows), so the
 -- public roles write nothing. The default-privilege close rides the next paste
