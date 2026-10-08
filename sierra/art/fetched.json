@@ -1,0 +1,193 @@
+{
+ "paintings": [
+  {
+   "slug": "redmond-poppy-field",
+   "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Granville_Redmond_-_California_poppy_field.jpg/1920px-Granville_Redmond_-_California_poppy_field.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+   "source_px": [
+    1920,
+    1279
+   ],
+   "fetched": "2026-10-08",
+   "files": {
+    "redmond-poppy-field-1600.webp": {
+     "px": [
+      1600,
+      1066
+     ],
+     "bytes": 250496,
+     "sha256": "22e2af0ec2fdd044"
+    },
+    "redmond-poppy-field-800.webp": {
+     "px": [
+      800,
+      533
+     ],
+     "bytes": 54248,
+     "sha256": "721699538fcc8211"
+    }
+   }
+  },
+  {
+   "slug": "payne-mountain-lake",
+   "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Mountain_Lake_by_Edgar_Alwin_Payne%2C_Phoenix_Art_Museum.JPG/1920px-Mountain_Lake_by_Edgar_Alwin_Payne%2C_Phoenix_Art_Museum.JPG?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+   "source_px": [
+    1920,
+    1574
+   ],
+   "fetched": "2026-10-08",
+   "files": {
+    "payne-mountain-lake-1600.webp": {
+     "px": [
+      1600,
+      1312
+     ],
+     "bytes": 202986,
+     "sha256": "e44eb21a412ffd09"
+    },
+    "payne-mountain-lake-800.webp": {
+     "px": [
+      800,
+      656
+     ],
+     "bytes": 53938,
+     "sha256": "11bb55aa1be256c0"
+    }
+   }
+  },
+  {
+   "slug": "rose-carmel-dunes",
+   "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Guy_Rose_-_Carmel_Dunes_%28c._1918-20%29.jpg/1920px-Guy_Rose_-_Carmel_Dunes_%28c._1918-20%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+   "source_px": [
+    1920,
+    1591
+   ],
+   "fetched": "2026-10-08",
+   "files": {
+    "rose-carmel-dunes-1600.webp": {
+     "px": [
+      1600,
+      1326
+     ],
+     "bytes": 596060,
+     "sha256": "dcbfd4a4ea12d34e"
+    },
+    "rose-carmel-dunes-800.webp": {
+     "px": [
+      800,
+      663
+     ],
+     "bytes": 111226,
+     "sha256": "f01bb63a11dcb80b"
+    }
+   }
+  },
+  {
+   "slug": "hill-emerald-bay",
+   "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Thomas_Hill_-_Emerald_Bay%2C_Lake_Tahoe_%281864%29.jpg/1920px-Thomas_Hill_-_Emerald_Bay%2C_Lake_Tahoe_%281864%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+   "source_px": [
+    1920,
+    1229
+   ],
+   "fetched": "2026-10-08",
+   "files": {
+    "hill-emerald-bay-1600.webp": {
+     "px": [
+      1600,
+      1024
+     ],
+     "bytes": 221664,
+     "sha256": "4ed0baf43c7c0bd4"
+    },
+    "hill-emerald-bay-800.webp": {
+     "px": [
+      800,
+      512
+     ],
+     "bytes": 49868,
+     "sha256": "e69a74ef75c22665"
+    }
+   }
+  },
+  {
+   "slug": "payne-laguna-beach",
+   "from": "https://upload.wikimedia.org/wikipedia/commons/0/04/Laguna_Beach%2C_by_Edgar_Alwin_Payne.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+   "source_px": [
+    1798,
+    1543
+   ],
+   "fetched": "2026-10-08",
+   "files": {
+    "payne-laguna-beach-1600.webp": {
+     "px": [
+      1600,
+      1373
+     ],
+     "bytes": 635456,
+     "sha256": "6c178a21195d4dea"
+    },
+    "payne-laguna-beach-800.webp": {
+     "px": [
+      800,
+      687
+     ],
+     "bytes": 161810,
+     "sha256": "e46d3dd766ae79ac"
+    }
+   }
+  },
+  {
+   "slug": "redmond-coastal-wildflowers",
+   "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Granville_Redmond_-_Coastal_wildflowers.jpg/1920px-Granville_Redmond_-_Coastal_wildflowers.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+   "source_px": [
+    1920,
+    1225
+   ],
+   "fetched": "2026-10-08",
+   "files": {
+    "redmond-coastal-wildflowers-1600.webp": {
+     "px": [
+      1600,
+      1021
+     ],
+     "bytes": 252800,
+     "sha256": "003ab6d42b96dd40"
+    },
+    "redmond-coastal-wildflowers-800.webp": {
+     "px": [
+      800,
+      510
+     ],
+     "bytes": 69964,
+     "sha256": "bff8b0316bc17bc1"
+    }
+   }
+  },
+  {
+   "slug": "bierstadt-sierra-nevada-morning",
+   "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Sierra_Nevada_Morning_oil_1870_Albert_Bierstadt.jpg/1920px-Sierra_Nevada_Morning_oil_1870_Albert_Bierstadt.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+   "source_px": [
+    1920,
+    1232
+   ],
+   "fetched": "2026-10-08",
+   "files": {
+    "bierstadt-sierra-nevada-morning-1600.webp": {
+     "px": [
+      1600,
+      1027
+     ],
+     "bytes": 98740,
+     "sha256": "8b30479efa917a77"
+    },
+    "bierstadt-sierra-nevada-morning-800.webp": {
+     "px": [
+      800,
+      513
+     ],
+     "bytes": 29288,
+     "sha256": "1d8ea33dae59b866"
+    }
+   }
+  }
+ ]
+}
