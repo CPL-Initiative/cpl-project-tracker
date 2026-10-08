@@ -162,29 +162,27 @@ button { font: inherit; color: inherit; }
   padding: 0 16px 8px;
 }
 
-/* Sierra's name and her mountain line, one ghosted dark blue (Sam, 2026-10-08:
-   "a dark blue ghosted font with a much thicker same color mountain line...
-   Match the font width and mountain line"). Decorative to a screen reader. */
+/* Sierra's name and her logo, one ghosted dark blue (Sam, 2026-10-08: "a dark
+   blue ghosted font with a much thicker same color mountain line"). The logo is
+   decorative to a screen reader; the name is text. */
 .s-peak { position: relative; display: inline-block; isolation: isolate; color: var(--sierra-ghost); }
 /* Same color, same weight, so where the line crosses a letter the two would
    merge and the word stops reading. Each letter carries a thin halo in the
    page's own color, which cuts the line where it passes behind the letter:
    the line reads as running behind the name, and the name stays a word. */
 .s-peak { text-shadow: 0.050em 0.000em 0 var(--sierra-paper), 0.046em 0.019em 0 var(--sierra-paper), 0.035em 0.035em 0 var(--sierra-paper), 0.019em 0.046em 0 var(--sierra-paper), 0.000em 0.050em 0 var(--sierra-paper), -0.019em 0.046em 0 var(--sierra-paper), -0.035em 0.035em 0 var(--sierra-paper), -0.046em 0.019em 0 var(--sierra-paper), -0.050em 0.000em 0 var(--sierra-paper), -0.046em -0.019em 0 var(--sierra-paper), -0.035em -0.035em 0 var(--sierra-paper), -0.019em -0.046em 0 var(--sierra-paper), -0.000em -0.050em 0 var(--sierra-paper), 0.019em -0.046em 0 var(--sierra-paper), 0.035em -0.035em 0 var(--sierra-paper), 0.046em -0.019em 0 var(--sierra-paper); }
-/* The line spans the word's own width and rises from the lowercase letters'
-   x-height, so Mt. Whitney's ridge stands over the name as a skyline; the
-   letters' halo cuts it where it passes behind them. */
+/* The logo itself (whitney-mark.svg), expanded to the word's width and set
+   mostly above it (Sam: "Keep the ridgeline mostly above Sierra. Can you just
+   use the current logo expanded?"). Its stroke scales with it, so the line's
+   weight is the logo's own. Its foot meets the tops of the letters, and the
+   letters' halo keeps them clear there. */
 .s-ridge {
   position: absolute; z-index: -1; pointer-events: none;
-  left: 3%; width: 94%; height: auto; bottom: .5em;
+  left: 5%; width: 95%; height: auto; bottom: .62em;
   color: inherit;
 }
-/* Sam, 2026-10-08: "a dark blue ghosted font with a much thicker same color
-   mountain line... Match the font width and mountain line." The line carries the
-   weight of the letters' stems: Playfair Display SemiBold's lowercase stem (i, r)
-   measures 0.126em, and the path's vector-effect: non-scaling-stroke makes this
-   em the word's own size, so the two stay matched at any size. */
-.s-ridge path { stroke-width: .126em; }
+/* Room above the greeting for the mountain. */
+.s-hello h1 { padding-top: .5em; }
 
 /* Arriving: the greeting */
 .s-hello { text-align: center; display: grid; gap: 10px; padding-top: clamp(14px, 3vw, 30px); }

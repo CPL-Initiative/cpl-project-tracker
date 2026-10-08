@@ -262,7 +262,7 @@ function ask(w, text) {
 
   await block("(2b) the mountain line is kept", async () => {
     const ridges = (HTML.match(/<span class="s-peak">Sierra<svg class="s-ridge"[^>]*aria-hidden="true"[\s\S]*?<\/svg><\/span>/g) || []);
-    check("(2b) ⭐ the ridgeline is ghosted behind her name in the greeting and in the reading header",
+    check("(2b) ⭐ the logo stands over her name in the greeting and in the reading header",
       ridges.length === 2 && /<h1>Hello, I'm <span class="s-peak">Sierra<svg class="s-ridge"/.test(HTML),
       "Sam, 2026-10-08: \"I like the mountain line\"");
     // Sam, 2026-10-08: "a dark blue ghosted font with a much thicker same color
@@ -272,10 +272,20 @@ function ask(w, text) {
       /\.s-peak\s*\{[^}]*color:\s*var\(--sierra-ghost\)/.test(CSS) &&
       /\.s-ridge\s*\{[^}]*color:\s*inherit/.test(CSS) &&
       (CSS.match(/--sierra-ghost:\s*#[0-9A-Fa-f]{6}/g) || []).length === 3);
-    check("(2b) ⭐ the line carries the letters' stem weight at any size (0.126em, a non-scaling stroke)",
-      /\.s-ridge path\s*\{\s*stroke-width:\s*\.126em/.test(CSS) &&
-      (HTML.match(/vector-effect="non-scaling-stroke"/g) || []).length === 2);
-    check("(2b) the line spans the word, and the letters' halo in the page color cuts it where it passes behind",
+    // Then: "Keep the ridgeline mostly above Sierra. Can you just use the current
+    // logo expanded?" The inline drawing IS whitney-mark.svg, path for path, at
+    // its own proportions (its stroke scales with it), so the two cannot drift.
+    const logo = fs.readFileSync("sierra/whitney-mark.svg", "utf8");
+    const norm = (t) => t.replace(/\s+/g, " ").trim();
+    const logoPaths = (logo.match(/<path d="([^"]+)"/g) || []).map((m) => norm(m.slice(9, -1)));
+    const inline = (HTML.match(/<svg class="s-ridge"[\s\S]*?<\/svg>/) || [""])[0];
+    const inlinePaths = (inline.match(/<path d="([^"]+)"/g) || []).map((m) => norm(m.slice(9, -1)));
+    check("(2b) ⭐ the logo is whitney-mark.svg as drawn: its ridge and its snow, path for path",
+      logoPaths.length === 2 && JSON.stringify(inlinePaths) === JSON.stringify(logoPaths) &&
+      /stroke-width="3\.8"/.test(inline) && !/vector-effect/.test(inline));
+    check("(2b) ⭐ it sits mostly above the name: its foot at the letters' tops, room above the greeting",
+      /\.s-ridge\s*\{[^}]*bottom:\s*\.6\d*em/.test(CSS) && /\.s-hello h1\s*\{\s*padding-top:/.test(CSS));
+    check("(2b) it spans the word, and the letters' halo in the page color keeps them clear where it meets them",
       /\.s-ridge\s*\{[^}]*width:\s*9\d%/.test(CSS) &&
       /\.s-peak\s*\{\s*text-shadow:[^}]*var\(--sierra-paper\)/.test(CSS));
     const { w, d } = loadDom();
