@@ -7,8 +7,7 @@
    "page": "sierra/index.html",
    "audience": "public",
    "last": null,
-   "outcome": null,
-   "hold": "Redesign under way (Sam, 2026-10-08: \"maximally clean and simple, removing all distractions possible\"); the pass audits the new design once it ships."
+   "outcome": null
   },
   {
    "id": "veteran-sprint-map",

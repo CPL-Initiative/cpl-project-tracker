@@ -30,15 +30,45 @@
   var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM';
   var CHAT_URL = SUPABASE_URL + '/functions/v1/cpl-chat';
 
-  // Starter prompts — a mix that shows off the offerings/adoption reasoning
+  // Starter questions — a mix that shows off the offerings/adoption reasoning
   // (construction/NCCER, "near me") plus the classic statewide/metrics asks.
+  // Since the redesign (Sam, 2026-10-08) they ride the question box's
+  // placeholder, one per painting ("Try: …"), in place of the row of pills.
   var SUGGESTED = [
     'What is Credit for Prior Learning?',
     'Where can students get college credit for NCCER or OSHA certifications?',
     'Which colleges near Long Beach teach construction or welding?',
     'How can I get credit for a real estate license?',
     'How much has CPL saved California students?',
+    'Which colleges give credit for an EMT certification?',
+    'How does my Joint Services Transcript count?',
   ];
+
+  // ── The paintings the landing cycles through ──
+  // Sam, 2026-10-08: "Maybe we cycle through our First Light plein air artwork
+  // like America.gov cycles through pics of americana." Seven California works
+  // from First Light's set, public domain, copied by a runner into ./art
+  // (scripts/fetch_sierra_art.py), so the page loads nothing from a third party.
+  // This list mirrors art/manifest.json; tests/sierra_redesign.test.js fails
+  // when the two drift. focal is the object-position that keeps the subject in a
+  // phone's crop.
+  var ART = [
+    { slug: 'redmond-poppy-field', title: 'California Poppy Field', artist: 'Granville Redmond', year: '1915', focal: '50% 60%',
+      alt: 'A sunlit field of orange poppies stretching toward low green hills under a soft blue sky.' },
+    { slug: 'payne-mountain-lake', title: 'Mountain Lake', artist: 'Edgar Payne', year: 'c. 1920s', focal: '50% 45%',
+      alt: 'A glassy alpine lake mirroring granite peaks beneath a cloud-streaked sky.' },
+    { slug: 'rose-carmel-dunes', title: 'Carmel Dunes', artist: 'Guy Rose', year: 'c. 1918-20', focal: '50% 55%',
+      alt: 'Rolling sand dunes spotted with scrub under a glowing sky, with a hint of sea beyond.' },
+    { slug: 'hill-emerald-bay', title: 'Emerald Bay, Lake Tahoe', artist: 'Thomas Hill', year: '1864', focal: '50% 55%',
+      alt: 'A calm green mountain bay ringed by pine-covered slopes and distant snow peaks.' },
+    { slug: 'payne-laguna-beach', title: 'Laguna Beach', artist: 'Edgar Payne', year: 'c. 1920s', focal: '50% 50%',
+      alt: 'Rocky coastal bluffs above a blue cove, with surf breaking against the rocks.' },
+    { slug: 'redmond-coastal-wildflowers', title: 'Coastal Wildflowers', artist: 'Granville Redmond', year: 'c. 1912', focal: '50% 60%',
+      alt: 'A coastal hillside carpeted in orange and purple wildflowers sloping toward the ocean.' },
+    { slug: 'bierstadt-sierra-nevada-morning', title: 'Sierra Nevada Morning', artist: 'Albert Bierstadt', year: 'c. 1870', focal: '50% 50%',
+      alt: 'A misty Sierra valley at dawn, light breaking over a waterfall and a lake.' },
+  ];
+  var CYCLE_MS = 9000;
 
   var convo = [];          // prior {role,content} turns → sent as history (multi-turn)
   var CONVO_MAX = 8;
@@ -52,7 +82,7 @@
   try {
     if (new URLSearchParams(location.search).get('ctx') === 'external') ctxVariant = 'external';
   } catch (e) { /* no URLSearchParams → no ctx (fail-open) */ }
-  var logEl, inputEl, sendBtn, statusEl, formEl, suggestEl, audEl, wired = false;
+  var logEl, inputEl, sendBtn, statusEl, formEl, audEl, audToggle, wired = false;
 
   // ── Audience (primary population) ──
   // Required before the first question (Sam, 2026-07-01): the visitor picks who
@@ -90,12 +120,25 @@
     try { localStorage.setItem(AUD_KEY, k); } catch (e) { /* in-memory only */ }
     renderAudience();
   }
+  // The row reads "Answering for" and its words, on the question bar (the
+  // redesign). On a phone and while reading it folds behind one control,
+  // "Answering for: <pick>", which opens it; a pick closes it again and hands
+  // focus back to that control, so focus never lands on a button that vanished.
+  function audienceLabel() {
+    for (var i = 0; i < AUDIENCES.length; i++) if (AUDIENCES[i].k === audience) return AUDIENCES[i].label;
+    return 'choose one';
+  }
+  function setAudienceOpen(open) {
+    if (!audEl) return;
+    audEl.classList.toggle('open', !!open);
+    if (audToggle) audToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
   function renderAudience() {
     if (!audEl) return;
     audEl.textContent = '';
     var lab = document.createElement('span');
     lab.className = 's-aud-label';
-    lab.textContent = "I'm a…";
+    lab.textContent = 'Answering for';
     audEl.appendChild(lab);
     AUDIENCES.forEach(function (a) {
       var b = document.createElement('button');
@@ -103,9 +146,17 @@
       b.className = 's-aud-chip' + (audience === a.k ? ' on' : '');
       b.setAttribute('aria-pressed', audience === a.k ? 'true' : 'false');
       b.textContent = a.label;
-      b.addEventListener('click', function () { setAudience(a.k); setStatus(''); });
+      b.addEventListener('click', function () {
+        var wasOpen = audEl.classList.contains('open');
+        setAudience(a.k); setStatus('');
+        if (wasOpen) {
+          setAudienceOpen(false);
+          try { if (audToggle) audToggle.focus(); } catch (e) { /* focus is best effort */ }
+        }
+      });
       audEl.appendChild(b);
     });
+    if (audToggle) audToggle.textContent = 'Answering for: ' + audienceLabel();
   }
   // ── About Sierra (the header panel) ──
   // The introduction and the beta note lived above the conversation and took
@@ -144,9 +195,11 @@
   }
 
   // Flash the selector when a send is attempted without a pick.
+  // The row opens if it was folded, so the words the message names are on screen.
   function needAudience() {
-    setStatus('First, tap who you are above — it helps Sierra tailor the answer for you.', 'error');
+    setStatus('First, choose who you are under the question box, so Sierra can fit the answer to you.', 'error');
     if (!audEl) return;
+    setAudienceOpen(true);
     audEl.classList.add('s-need');
     setTimeout(function () { audEl.classList.remove('s-need'); }, 1700);
   }
@@ -386,7 +439,6 @@
     } else {
       logEl.appendChild(bar);
     }
-    scrollDown();
   }
 
   function sessionId() {
@@ -514,11 +566,13 @@
     bubble.textContent = text;
     row.appendChild(bubble);
     logEl.appendChild(row);
-    scrollDown();
+    showQuestion(row);
   }
   // The Sierra mark — Mt Whitney's east-face ridge (sierra/whitney-mark.svg)
-  // in a navy roundel. A STATIC, trusted string (never user input) inlined so
-  // the avatar needs no relative-path asset and renders at any mount depth.
+  // in a navy roundel. A STATIC, trusted string (never user input). The COBI
+  // tab and the Fact Sheet drawer draw it beside each answer; since the redesign
+  // this page names her in words instead ("Sierra", as the approved mock-up
+  // shows), and keeps the constant so the three surfaces still share one mark.
   var SIERRA_MARK =
     '<svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">' +
     '<circle cx="20" cy="20" r="19" style="fill:var(--sierra-navy,#0b3d61)"/>' +
@@ -531,17 +585,25 @@
   function addAssistantMsg() {
     var row = document.createElement('div');
     row.className = 's-msg s-bot';
-    var avatar = document.createElement('div');
-    avatar.className = 's-avatar'; avatar.setAttribute('aria-hidden', 'true'); avatar.innerHTML = SIERRA_MARK;
+    var who = document.createElement('div');
+    who.className = 's-who';
+    who.textContent = 'Sierra';
     var bubble = document.createElement('div');
     bubble.className = 's-bubble';
-    row.appendChild(avatar); row.appendChild(bubble);
+    row.appendChild(who); row.appendChild(bubble);
     logEl.appendChild(row);
-    scrollDown();
     return { row: row, bubble: bubble };
   }
-  function scrollDown() {
-    if (logEl) requestAnimationFrame(function () { logEl.scrollTop = logEl.scrollHeight; });
+  // The page scrolls, not the log (the redesign's centered column with a docked
+  // bar). A new question is brought to the top of the screen and the answer
+  // grows beneath it, so a reader starts at the first line of the answer and
+  // the page never chases the stream past what they are reading.
+  function showQuestion(row) {
+    if (!row || typeof row.scrollIntoView !== 'function') return;
+    requestAnimationFrame(function () {
+      try { row.scrollIntoView({ block: 'start', behavior: motionOk() ? 'smooth' : 'auto' }); }
+      catch (e) { /* scrolling is a courtesy */ }
+    });
   }
   function setStatus(text, kind) {
     if (!statusEl) return;
@@ -617,7 +679,6 @@
                 if (firstToken) { bubble.innerHTML = ''; firstToken = false; }
                 full += d.text;
                 bubble.innerHTML = renderMarkdown(full);
-                scrollDown();
               }
             } catch (e) { /* skip malformed delta */ }
           }
@@ -644,10 +705,11 @@
     if (!audience) { needAudience(); return; }
     busy = true;
     sendBtn.disabled = true; inputEl.disabled = true;
+    setView('asking');          // the painting folds away at the first question
     addUserMsg(q);
     inputEl.value = '';
+    fitInput();
     setStatus('Sierra is thinking…', 'pending');
-    if (suggestEl) suggestEl.remove(); // hide starter chips after first question
     try {
       await ask(q);
       setStatus('');
@@ -664,14 +726,13 @@
    *
    * A container that scrolls can be dragged with a mouse and swiped with a
    * finger, but is UNREACHABLE by keyboard unless it is focusable (WCAG 2.1.1).
-   * Two here, and the conversation log is the one that matters:
+   * Two here:
    *
-   *   · #s-log holds every answer Sierra has given. It became reachable only by
-   *     accident — the starter chips inside it are focusable — and `submit()`
-   *     REMOVES those chips after the first question. So the log was reachable
-   *     while it was empty and had nothing to scroll, and stopped being
-   *     reachable the moment it filled up. A keyboard user could not read past
-   *     the fold of a long answer, which on a phone is most of one.
+   *   · #s-log holds every answer Sierra has given. Since the 2026-10-08
+   *     redesign the page scrolls and the log does not, so this branch is a
+   *     guard: an embed or a future layout that gives the log a height of its
+   *     own must not leave a keyboard user unable to read past its fold, which
+   *     is what happened once the starter pills inside it were removed.
    *
    *   · a markdown table inside an answer (.s-bubble table is display:block +
    *     overflow-x:auto, so a wide one scrolls sideways rather than pushing the
@@ -731,6 +792,143 @@
     if (q && inputEl && !inputEl.value) inputEl.value = q;
   }
 
+  // ── The question box grows with what it holds ──
+  // A one-row textarea. Empty, it sizes to the tallest hint it will show, so a
+  // "Try: …" starter wraps whole on a phone and the bar keeps one height while
+  // the starters cycle; holding text, it sizes to the text, up to a cap past
+  // which it scrolls (a scrolling textarea is itself keyboard reachable).
+  var INPUT_MAX_PX = 210;
+  function fitInput() {
+    if (!inputEl || inputEl.tagName !== 'TEXTAREA') return;
+    var v = inputEl.value, h = 0;
+    inputEl.style.height = 'auto';
+    if (v) h = inputEl.scrollHeight;
+    else {
+      var hints = view === 'arriving'
+        ? SUGGESTED.map(function (q) { return 'Try: ' + q; }) : [inputEl.placeholder];
+      hints.forEach(function (t) { inputEl.value = t; h = Math.max(h, inputEl.scrollHeight); });
+      inputEl.value = '';
+    }
+    // No layout (a test DOM, a hidden frame) reads 0: leave the stylesheet's size.
+    inputEl.style.height = h ? Math.min(h, INPUT_MAX_PX) + 'px' : '';
+    inputEl.style.overflowY = h > INPUT_MAX_PX ? 'auto' : 'hidden';
+  }
+
+  // ── Motion ──
+  // The paintings cycle only when the reader's browser can say motion is
+  // welcome. No matchMedia means the preference cannot be read, so the page
+  // holds still: a failure here should fail toward calm, never toward movement.
+  function motionOk() {
+    try {
+      return !!(window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    } catch (e) { return false; }
+  }
+
+  // ── The paintings (arriving view) ──
+  // One <img> per painting, made on demand: the one shown and, while the cycle
+  // runs, the next one, so a phone fetches two paintings on arrival and never
+  // all seven. Previous, Pause and Next are words (WCAG 2.2.2: anything that
+  // moves on its own for more than five seconds can be paused). The cycle stops
+  // for good once the reader types or comes back to the question box, and when
+  // the conversation starts.
+  var artIdx = 0, artTimer = null, artPaused = true, artsEl, capEl, pauseBtn;
+  function artImg(k) {
+    if (!artsEl) return null;
+    var existing = artsEl.querySelector('img[data-k="' + k + '"]');
+    if (existing) return existing;
+    var a = ART[k];
+    var img = document.createElement('img');
+    img.className = 's-art';
+    img.setAttribute('data-k', String(k));
+    img.src = './art/' + a.slug + '-1600.webp';
+    img.srcset = './art/' + a.slug + '-800.webp 800w, ./art/' + a.slug + '-1600.webp 1600w';
+    img.sizes = '(max-width: 560px) 100vw, 980px';
+    img.alt = '';
+    img.decoding = 'async';
+    img.style.objectPosition = a.focal;
+    artsEl.appendChild(img);
+    return img;
+  }
+  function showPainting(k) {
+    artIdx = ((k % ART.length) + ART.length) % ART.length;
+    var cur = artImg(artIdx);
+    if (artsEl) {
+      Array.prototype.forEach.call(artsEl.querySelectorAll('img'), function (im) {
+        var on = im === cur;
+        im.classList.toggle('on', on);
+        im.alt = on ? ART[artIdx].alt : '';
+      });
+    }
+    if (!artPaused) artImg((artIdx + 1) % ART.length);   // ready before its turn
+    var a = ART[artIdx];
+    if (capEl) {
+      capEl.textContent = '';
+      capEl.appendChild(document.createTextNode(a.artist + ', '));
+      var t = document.createElement('i');
+      t.textContent = a.title;
+      capEl.appendChild(t);
+      capEl.appendChild(document.createTextNode(', ' + a.year));
+    }
+    if (inputEl) inputEl.placeholder = 'Try: ' + SUGGESTED[artIdx % SUGGESTED.length];
+  }
+  function runCycle() {
+    if (artTimer) { clearInterval(artTimer); artTimer = null; }
+    if (!artPaused) artTimer = setInterval(function () { showPainting(artIdx + 1); }, CYCLE_MS);
+  }
+  function setArtPaused(p) {
+    artPaused = !!p;
+    if (pauseBtn) pauseBtn.textContent = artPaused ? 'Play' : 'Pause';
+    if (!artPaused) artImg((artIdx + 1) % ART.length);
+    runCycle();
+  }
+  function wireArt() {
+    artsEl = document.getElementById('s-arts');
+    capEl = document.getElementById('s-cap');
+    pauseBtn = document.getElementById('s-pause');
+    var prev = document.getElementById('s-prev'), next = document.getElementById('s-next');
+    if (prev) prev.addEventListener('click', function () { showPainting(artIdx - 1); runCycle(); });
+    if (next) next.addEventListener('click', function () { showPainting(artIdx + 1); runCycle(); });
+    if (pauseBtn) pauseBtn.addEventListener('click', function () { setArtPaused(!artPaused); });
+    artPaused = !motionOk();
+    showPainting(0);
+    setArtPaused(artPaused);
+  }
+
+  // ── The two views ──
+  // arriving: the greeting and the painting, the question bar on its top edge.
+  // asking:   the conversation in a centered column, the question bar docked.
+  // The view lives on <body data-view>, and the one form moves between the
+  // frame and the dock, so its ids (s-form, s-input, s-send, s-audience) stay
+  // single for every caller: the tests, the a11y sweep and the vendor embed.
+  var view = 'arriving';
+  function setView(v) {
+    v = v === 'asking' ? 'asking' : 'arriving';
+    var frame = document.getElementById('s-frame'), dock = document.getElementById('s-dock');
+    if (formEl && frame && dock) {
+      var home = v === 'asking' ? dock : frame;
+      if (formEl.parentNode !== home) home.insertBefore(formEl, home.firstChild);
+    }
+    if (document.body) document.body.setAttribute('data-view', v);
+    if (inputEl) inputEl.placeholder = v === 'asking'
+      ? 'Ask a follow-up'
+      : 'Try: ' + SUGGESTED[artIdx % SUGGESTED.length];
+    if (v === 'asking') setArtPaused(true);
+    setAudienceOpen(false);
+    view = v;
+    fitInput();
+  }
+  // New question starts over: the landing comes back, the conversation and the
+  // history Sierra reads are cleared, and the cursor waits in the question box.
+  function newQuestion() {
+    if (busy) return;
+    convo = [];
+    if (logEl) logEl.textContent = '';
+    setStatus('');
+    setView('arriving');
+    if (inputEl) { inputEl.value = ''; fitInput(); try { inputEl.focus(); } catch (e) { /* best effort */ } }
+    try { (document.scrollingElement || document.documentElement).scrollTop = 0; } catch (e) { /* best effort */ }
+  }
+
   function wire() {
     if (wired) return; // idempotent (guards a double DOMContentLoaded)
     wired = true;
@@ -739,25 +937,30 @@
     sendBtn = document.getElementById('s-send');
     statusEl = document.getElementById('s-status');
     formEl = document.getElementById('s-form');
-    suggestEl = document.getElementById('s-suggest');
     audEl = document.getElementById('s-audience');
+    audToggle = document.getElementById('s-aud-toggle');
     if (!logEl || !inputEl || !sendBtn || !formEl) return;
 
     loadAudience();
     renderAudience();
     wireAbout();
+    wireArt();
     prefillAsk();
 
-    // Fill starter chips
-    if (suggestEl) {
-      SUGGESTED.forEach(function (s) {
-        var b = document.createElement('button');
-        b.type = 'button'; b.className = 's-chip'; b.textContent = s;
-        b.addEventListener('click', function () { inputEl.value = s; submit(); });
-        suggestEl.appendChild(b);
-      });
-    }
+    if (audToggle) audToggle.addEventListener('click', function () {
+      setAudienceOpen(!audEl.classList.contains('open'));
+    });
+    var newBtn = document.getElementById('s-new');
+    if (newBtn) newBtn.addEventListener('click', newQuestion);
     formEl.addEventListener('submit', function (e) { e.preventDefault(); submit(); });
+    // Enter sends, as it did when this was a one-line input; Shift+Enter is a
+    // new line; a composing IME's Enter belongs to the IME.
+    inputEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); submit(); }
+    });
+    inputEl.addEventListener('input', fitInput);
+    window.addEventListener('resize', fitInput);
+    fitInput();
 
     /* Content arrives from streaming tokens, not from a single render call, so
        a one-shot sync would be wrong for every answer after the first. Watching
@@ -771,6 +974,10 @@
     syncScrollRegions();
 
     inputEl.focus();
+    // Attached after the arrival focus above, so the cycle runs until the reader
+    // acts: typing, or coming back to the question box, stops it for good.
+    inputEl.addEventListener('focus', function () { setArtPaused(true); });
+    inputEl.addEventListener('input', function () { setArtPaused(true); });
   }
 
   if (document.readyState === 'loading') {
@@ -787,5 +994,9 @@
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
     SIERRA_MARK: SIERRA_MARK, ctxVariant: ctxVariant, buildPayload: buildPayload,
     syncScrollRegions: syncScrollRegions,
+    ART: ART, CYCLE_MS: CYCLE_MS, setView: setView, showPainting: showPainting,
+    getView: function () { return view; },
+    paintingIndex: function () { return artIdx; },
+    cycling: function () { return !!artTimer; },
   };
 })();

@@ -2,7 +2,9 @@
 //
 // Guards:
 //  (a) the page loads sierra.js + has the chat-first structure (log, form, input, send);
-//  (b) wiring fills the suggested-question chips and exposes the pure helpers;
+//  (b) wiring puts a starter question in the question box's placeholder, one
+//      per painting (the 2026-10-08 redesign moved them there from a row of
+//      pills), and exposes the pure helpers;
 //  (c) submit POSTs to the shared cpl-chat function with {query, session_id, history}
 //      + the anon apikey/Authorization, shows the user turn, and streams the SSE
 //      answer into a bot bubble with markdown;
@@ -95,13 +97,20 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
 }
 
 (async function () {
-  // ── (b) chips filled ──
+  // ── (b) starter questions ride the placeholder ──
+  // The redesign (Sam, 2026-10-08: "fewer boxes") retired the row of pills; the
+  // box offers one starter at a time, "Try: …", and Next brings the next one.
   {
-    const { w } = loadDom();
-    const chips = w.document.querySelectorAll("#s-suggest .s-chip");
-    check("wiring fills the starter chips", chips.length >= 3);
-    check("a chip references the new offerings capability (NCCER/OSHA/construction)",
-      Array.from(chips).some((c) => /NCCER|OSHA|construction|welding/i.test(c.textContent)));
+    const { w, API } = loadDom();
+    const input = w.document.getElementById("s-input");
+    check("wiring puts a starter question in the box's placeholder",
+      API.SUGGESTED.length >= 3 && input.placeholder === "Try: " + API.SUGGESTED[0]);
+    check("a starter references the offerings capability (NCCER/OSHA/construction)",
+      API.SUGGESTED.some((q) => /NCCER|OSHA|construction|welding/i.test(q)));
+    w.document.getElementById("s-next").click();
+    check("Next brings the next starter question with the next painting",
+      input.placeholder === "Try: " + API.SUGGESTED[1]);
+    w.close();
   }
 
   // ── (c) submit → POST + streamed answer ──
@@ -120,7 +129,9 @@ check("standalone — no COBI tab nav present", !/data-tab=/.test(HTML) && !/cpl
     check("the user message is shown", /How many students has CPL served\?/.test(w.document.getElementById("s-log").textContent));
     const bub = lastBotBubble(w);
     check("streamed answer renders into a bot bubble with markdown", bub && /Hello/.test(bub.textContent) && !!bub.querySelector("strong"));
-    check("starter chips removed after first question", !w.document.getElementById("s-suggest"));
+    check("the landing folds away at the first question: asking view, the bar docked",
+      w.document.body.getAttribute("data-view") === "asking" &&
+      w.document.getElementById("s-form").parentNode.id === "s-dock");
   }
 
   // ── (d) multi-turn — prior turn rides in history ──

@@ -200,8 +200,10 @@ block("replacement words", function () {
 // accessibility tree, which would delete the warning rather than relocate it.
 block("new-tab cue", function () {
   check("the back link no longer renders an arrow", PAGE_HTML.indexOf("map.rccd.edu \u2197") === -1);
+  // Since the 2026-10-08 redesign the logo is the link to map.rccd.edu, and the
+  // cue names the destination too, since the link's visible face is an image.
   check("⭐ the 'opens in a new tab' cue replaced it",
-    /map\.rccd\.edu<span class="s-sr">\(opens in a new tab\)<\/span>/.test(PAGE_HTML));
+    /<a class="s-home" href="https:\/\/map\.rccd\.edu" target="_blank"[\s\S]*?<span class="s-sr">map\.rccd\.edu \(opens in a new tab\)<\/span>/.test(PAGE_HTML));
   check(".s-sr is defined", /\.s-sr\s*\{/.test(PAGE_CSS));
   const rule = (PAGE_CSS.match(/\.s-sr\s*\{[^}]*\}/) || [""])[0];
   check(".s-sr clips rather than removing from the a11y tree",
@@ -271,7 +273,7 @@ block("rendered page", function () {
   // The cue is invisible but present — assert it is in the DOM, since a
   // textContent scan would happily pass if the arrow had simply been deleted.
   check("the new-tab cue is in the rendered DOM",
-    (w.document.querySelector(".s-back .s-sr") || {}).textContent === "(opens in a new tab)");
+    (w.document.querySelector(".s-home .s-sr") || {}).textContent === "map.rccd.edu (opens in a new tab)");
   w.close();
 });
 

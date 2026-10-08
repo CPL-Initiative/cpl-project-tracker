@@ -120,7 +120,10 @@ val("sierra: the log keeps its accessible name in the markup", () => {
 // (e) external link cues, skip link, focus ring
 val("sierra: every target=_blank link warns that it opens a new tab", () => {
   const links = [...sd.querySelectorAll('a[target="_blank"]')];
-  return links.length >= 2 && links.every((a) => /opens in a new tab/i.test(a.textContent));
+  // One since the 2026-10-08 redesign: the logo is the link to map.rccd.edu
+  // (the pill and the footer's MAP link it replaced are gone). At least one, so
+  // an empty list cannot pass.
+  return links.length >= 1 && links.every((a) => /opens in a new tab/i.test(a.textContent));
 });
 val("sierra: a skip link exists and is the first focusable element", () => {
   const first = sd.querySelector('a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])');

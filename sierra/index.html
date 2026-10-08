@@ -9,82 +9,108 @@
 <meta property="og:description" content="Ask the California Community Colleges CPL assistant where to get college credit for your certifications, licenses, and training.">
 <meta property="og:type" content="website">
 <link rel="icon" href="../cccco_seal.png">
+<!-- The theme a reader chose in COBI's one control (cpl_theme.js, key
+     cpl_theme, same origin) holds here too; with no choice the page follows the
+     OS, as COBI's System setting does. Set before the stylesheet paints, so a
+     dark reader never sees a white flash. -->
+<script>try{var t=localStorage.getItem("cpl_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="preload" href="./fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./sierra.css">
 </head>
-<body>
+<body data-view="arriving">
 
-<!-- First tab stop. Sierra has few controls above the conversation, but a
-     keyboard user still lands on the header link and the audience chips before
-     reaching the thing they came for. Off-screen until focused (.s-skip). -->
+<!-- First tab stop. Off-screen until focused (.s-skip). -->
 <a class="s-skip" href="#s-main">Skip to the conversation</a>
 
+<!-- The redesign after america.gov (Sam, 2026-10-08: "fewer boxes... maximally
+     clean and simple"; the mock-up prototype/sierra_redesign_mockup.html, which he
+     approved). Two views on one page, set on <body data-view>: arriving (a
+     greeting, then a First Light painting with the question bar on its top edge)
+     and asking (the painting folds away and the conversation takes a centered
+     column on paper, the question bar docked beneath it). sierra.js moves the one
+     form between the two places, so every id the tests and the vendor embed rely
+     on stays single. -->
 <header class="s-head">
-  <div class="s-brand">
-    <img class="s-brand-logo" src="./cpl-initiative-logo.png" alt="CPL Initiative"
-         width="1115" height="209">
-    <div class="s-brand-name">
-      <span class="s-name-peak">
-        <img class="s-whitney-ghost" src="./whitney-mark.svg" alt="" aria-hidden="true">
-        <h1>Sierra</h1>
-      </span>
-      <p class="s-role">Your CPL Sherpa</p>
-    </div>
-  </div>
-  <!-- The trailing ↗ is gone (Sam's no-glyphs rule), but the "this leaves the
-       page" cue is NOT: this link opens a new tab, and dropping the arrow
-       outright would remove the only warning a keyboard or screen-reader user
-       gets before focus moves somewhere they did not ask for. It becomes a
-       visually-hidden phrase — the accessible form the arrow was only
-       gesturing at. Same treatment as the My College resource links (#1231). -->
-  <!-- "About Sierra" holds the introduction and the beta note that used to sit
-       above the conversation and took most of a phone's first screen (Sam,
-       2026-09-11: "consolidate all this text to hover overs in the header").
-       Hover alone would fail 1.4.13 and every touch and keyboard user, so it is
-       a real control: opens on hover for a mouse, on tap or Enter for everyone,
-       stays open until dismissed, closes on Escape and on a click outside. -->
+  <!-- The logo is the link to the MAP platform (Sam: "Make the CPL Initiative
+       logo a link"). It opens a new tab so the conversation survives, and says so
+       in words a screen reader hears: the ↗ the old pill carried is gone, and the
+       cue it gestured at stays. -->
+  <a class="s-home" href="https://map.rccd.edu" target="_blank" rel="noopener">
+    <img class="s-logo s-logo-light" src="./cpl-initiative-logo-navy.png" alt="CPL Initiative" width="1115" height="209">
+    <img class="s-logo s-logo-dark" src="./cpl-initiative-logo.png" alt="CPL Initiative" width="1115" height="209">
+    <span class="s-sr">map.rccd.edu (opens in a new tab)</span>
+  </a>
+  <span class="s-who-head" aria-hidden="true">Sierra</span>
+  <!-- "About Sierra" holds the introduction and the beta note (Sam, 2026-09-11:
+       "consolidate all this text to hover overs in the header"). Hover alone
+       would fail 1.4.13 and every touch and keyboard user, so it is a real
+       control: opens on hover for a mouse, on tap or Enter for everyone, stays
+       open until dismissed, closes on Escape and on a click outside. -->
   <button class="s-about" id="s-about-btn" type="button" aria-expanded="false" aria-controls="s-about">About Sierra</button>
-  <a class="s-back" href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu<span class="s-sr">(opens in a new tab)</span></a>
 </header>
 <div class="s-about-panel" id="s-about" hidden>
   <div class="s-about-inner">
-    <p>Hi, I'm <strong>Sierra</strong>. Ask me about <strong>Credit for Prior Learning</strong> —
-      where students can turn a license, certification, apprenticeship, or military training into
-      <strong>college credit</strong>, which California community colleges teach or already award credit
-      for a subject, and how the process works.</p>
-    <p class="s-beta">Beta — I'm still learning, so please double-check anything important with the
-      college's CPL coordinator (I point you to the right one). Don't enter personal information;
-      questions are logged anonymously to help me improve.</p>
+    <p>Sierra answers questions about credit for prior learning at California's community colleges:
+      which colleges award credit for a license, certification, apprenticeship or military training,
+      which colleges teach a subject, and how the process works.</p>
+    <p class="s-beta">Beta — Sierra is still learning. Your college's CPL coordinator makes the final
+      call on credit, and Sierra names the coordinator to ask. Please don't enter personal information;
+      questions are logged anonymously to improve the answers.</p>
   </div>
 </div>
 
 <main class="s-main" id="s-main" tabindex="-1">
-  <!-- role="group", NOT "radiogroup". sierra.js builds these as <button
-       aria-pressed>, and a radiogroup promises children with role="radio",
-       single-selection semantics and arrow-key roving focus — none of which are
-       here. A screen reader announced "radio group" and then found toggle
-       buttons, and the arrow keys a radiogroup teaches its user to press did
-       nothing. "group" is what this actually is. -->
-  <div id="s-audience" class="s-audience" role="group"
-       aria-label="Tell Sierra who you are so answers fit your needs"></div>
+  <section class="s-hello">
+    <h1>Hello, I'm Sierra</h1>
+    <p>Ask how your work, training and service can count as college credit.</p>
+  </section>
 
-  <div id="s-log" class="s-log" aria-live="polite" aria-label="Conversation with Sierra">
-    <div id="s-suggest" class="s-suggest" aria-label="Suggested questions"></div>
+  <section class="s-frame" id="s-frame" aria-label="Ask Sierra">
+    <div class="s-arts" id="s-arts"></div>
+    <form id="s-form" class="s-form" autocomplete="off">
+      <div class="s-ask">
+        <!-- A one-row textarea that grows, so a long question (a "Try:" starter
+             on a phone, or the program question CPL Pathways sends in ?ask=)
+             wraps whole instead of running past the edge. Enter sends;
+             Shift+Enter starts a new line. -->
+        <textarea id="s-input" class="s-input" rows="1" maxlength="1000" enterkeyhint="send"
+                  placeholder="Ask Sierra about CPL" aria-label="Ask Sierra a question about CPL"></textarea>
+        <button id="s-send" class="s-send" type="submit">Ask</button>
+      </div>
+      <div class="s-aud-line">
+        <button class="s-aud-toggle" id="s-aud-toggle" type="button" aria-expanded="false" aria-controls="s-audience">Answering for: choose one</button>
+        <!-- role="group", NOT "radiogroup". sierra.js builds these as <button
+             aria-pressed>, and a radiogroup promises children with role="radio",
+             single-selection semantics and arrow-key roving focus, none of which
+             are here. -->
+        <div id="s-audience" class="s-audience" role="group"
+             aria-label="Tell Sierra who you are so answers fit your needs"></div>
+      </div>
+      <div id="s-status" class="s-status" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+  <div class="s-under">
+    <p class="s-cap" id="s-cap"></p>
+    <div class="s-ctl" role="group" aria-label="Paintings">
+      <button class="s-word" type="button" id="s-prev">Previous</button>
+      <button class="s-word" type="button" id="s-pause">Pause</button>
+      <button class="s-word" type="button" id="s-next">Next</button>
+    </div>
   </div>
 
-  <div id="s-status" class="s-status" role="status" aria-live="polite"></div>
-
-  <form id="s-form" class="s-form" autocomplete="off">
-    <input id="s-input" class="s-input" type="text" maxlength="1000"
-           placeholder="Ask Sierra about CPL…" aria-label="Ask Sierra a question about CPL">
-    <button id="s-send" class="s-send" type="submit">Send</button>
-  </form>
+  <div id="s-log" class="s-log" aria-live="polite" aria-label="Conversation with Sierra"></div>
+  <div class="s-dock" id="s-dock">
+    <div class="s-dock-row">
+      <button class="s-word" type="button" id="s-new">New question</button>
+    </div>
+  </div>
 </main>
 
 <footer class="s-foot">
-  Sierra is in beta and offers guidance, not a guarantee of credit — your college's CPL coordinator makes the final call.
-  Please don't enter personal information; questions are logged anonymously.
-  Questions? <a href="mailto:MAP@rccd.edu">MAP@rccd.edu</a> ·
-  <a href="https://map.rccd.edu" target="_blank" rel="noopener">MAP CPL platform<span class="s-sr">(opens in a new tab)</span></a>
+  <p>Sierra is in beta, and your college's CPL coordinator decides credit.
+    Please don't enter personal information; questions are logged anonymously.
+    Questions for the team? <a href="mailto:MAP@rccd.edu">MAP@rccd.edu</a></p>
 </footer>
 
 <script src="./sierra.js"></script>
