@@ -1,5 +1,5 @@
 {
- "_readme": "First search for Mt. San Antonio College's term-by-term maps (S344, SkyWaypoint). The census found no sequence source (none_found), and the procedure record (v1, 2026-10-08) asks for the college's own map page before calling it absent. Web search (2026-10-08) found the Schedule of Classes saying a student can view the suggested order of classes to take through the Catalog, so this read takes the schedule page's links and one pilot program page (LVN-to-RN A.S. 08086) with its sections opened, looking for a map, roadmap or suggested sequence tab.",
+ "_readme": "Second read of Mt. San Antonio College's maps (S344, SkyWaypoint). Read 1 (run 37799874023): the Schedule of Classes says the catalog shows 'the suggested order of classes to take', and the LVN-to-RN page printed no sequence and opened no section. This read takes the catalog's Degrees and Certificates page (linked as English and Math Course Sequences) and the Fire Technology certificate page with its sections opened, looking for a roadmap or suggested-sequence tab.",
  "college": "Mt. San Antonio College",
  "questions": {
   "map_source": "Where Mt. San Antonio publishes a program's suggested term-by-term order, if anywhere."
@@ -18,16 +18,17 @@
    "answers": [
     "map_source"
    ],
-   "url": "https://www.mtsac.edu/schedule/",
-   "links": "catalog|map|sequence|suggest|pathway|program"
+   "url": "https://catalog.mtsac.edu/programs/degrees-certificates/",
+   "expand": true,
+   "links": "map|sequence|suggest|roadmap|pathway|semester"
   },
   {
    "answers": [
     "map_source"
    ],
-   "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/fire-technology-certificate/",
    "expand": true,
-   "links": "map|sequence|suggest|roadmap|pathway|semester"
+   "links": "map|sequence|suggest|roadmap|pathway|semester|tab"
   }
  ]
 }

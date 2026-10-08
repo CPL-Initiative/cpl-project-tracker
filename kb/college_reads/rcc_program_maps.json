@@ -1,5 +1,5 @@
 {
- "_readme": "First search for Riverside City College's term-by-term maps (S344, SkyWaypoint). The census found no sequence source (none_found), and the procedure record (v1, 2026-10-08) asks for the college's own map page before calling it absent. Web search (2026-10-08) found Educational Programs (/pathways/) and Instructional Pathways, and an Academic Senate packet (2026-05-04) saying RCC became a Pathways Program Mapper college in fall 2025 with its 2.0 maps being launched publicly. This read takes both pages' links to any map or mapper host.",
+ "_readme": "Second read of Riverside City College's maps (S344, SkyWaypoint). Read 1 (run 37799874023): both pathways pages answer, and each SEE PROGRAM MAPS link leads to Browse All Programs (/programs/index.html). This read takes that page's links to map, mapper or PDF addresses and follows ones naming the pilot programs (Culinary Arts, Cyber Defense, Administration of Justice).",
  "college": "Riverside City College",
  "questions": {
   "map_source": "Where Riverside City publishes a program's term-by-term map, and whether it is a Program Mapper host."
@@ -17,17 +17,10 @@
    "answers": [
     "map_source"
    ],
-   "url": "https://www.rcc.edu/pathways/index.html",
+   "url": "https://www.rcc.edu/programs/index.html",
    "expand": true,
-   "links": "map|mapper|pathway|program|\\.pdf"
-  },
-  {
-   "answers": [
-    "map_source"
-   ],
-   "url": "https://www.rcc.edu/academics/instructional-pathways.html",
-   "expand": true,
-   "links": "map|mapper|programmapper|\\.pdf"
+   "links": "map|mapper|programmapper|\\.pdf|culinary|cyber|justice",
+   "follow": "culinary|cyber"
   }
  ]
 }
