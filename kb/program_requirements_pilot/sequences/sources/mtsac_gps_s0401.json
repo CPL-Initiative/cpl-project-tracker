@@ -1,0 +1,96 @@
+{
+ "_what": "Mt. San Antonio College's Guided Pathways for Success page for the Early Childhood Education AS-T (local code S0401, the state's 33876), the text exactly as the college page read printed it, with the state's Program Course File list for the degree.",
+ "url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=S0401&desc=Early+Childhood+Education%2C+AS-T+%28Cal-GETC%29+S0401",
+ "final_url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=S0401&desc=Early+Childhood+Education%2C+AS-T+%28Cal-GETC%29+S0401",
+ "sha256": "88eca17656436a25",
+ "run": "college-page-read run 37812133411",
+ "read_on": "2026-10-08",
+ "reader": "kb/_college_page_read.py (plan kb/college_reads/mtsac_program_maps.json, read 4)",
+ "load_id": "20260716-003071339fe73a7a",
+ "programs": {
+  "33876": {
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "status": "Active",
+   "local_code": "S0401",
+   "catalog_h1": "Early Childhood Education (AS-T Degree S0401)"
+  }
+ },
+ "closed_lists": {
+  "33876": [
+   {
+    "code": "CHLD 1",
+    "title": "Child, Family, School and Community",
+    "units": 3.0,
+    "ccn": "CCC000421582"
+   },
+   {
+    "code": "CHLD 11",
+    "title": "Child and Adolescent Development",
+    "units": 3.0,
+    "ccn": "CCC000530202"
+   },
+   {
+    "code": "CHLD 5",
+    "title": "Principles and Practices in Child Development Programs",
+    "units": 3.0,
+    "ccn": "CCC000579452"
+   },
+   {
+    "code": "CHLD 50",
+    "title": "Teaching in a Diverse Society",
+    "units": 3.0,
+    "ccn": "CCC000420521"
+   },
+   {
+    "code": "CHLD 6",
+    "title": "Introduction to Child Development Curriculum",
+    "units": 3.0,
+    "ccn": "CCC000413000"
+   },
+   {
+    "code": "CHLD 64",
+    "title": "Health, Safety and Nutrition of Children",
+    "units": 3.0,
+    "ccn": "CCC000424145"
+   },
+   {
+    "code": "CHLD 66",
+    "title": "Early Childhood Development Observation and Assessment",
+    "units": 2.0,
+    "ccn": "CCC000581043"
+   },
+   {
+    "code": "CHLD 66L",
+    "title": "Early Childhood Development Observation and Assessment Laboratory",
+    "units": 1.0,
+    "ccn": "CCC000581652"
+   },
+   {
+    "code": "CHLD 67",
+    "title": "Early Childhood Education Practicum",
+    "units": 2.0,
+    "ccn": "CCC000384898"
+   },
+   {
+    "code": "CHLD 67L",
+    "title": "Early Childhood Education Practicum Laboratory",
+    "units": 1.0,
+    "ccn": "CCC000421972"
+   },
+   {
+    "code": "CHLD 86",
+    "title": "Infant Toddler Practicum Seminar",
+    "units": 2.0,
+    "ccn": "CCC000601117"
+   },
+   {
+    "code": "CHLD 87",
+    "title": "Infant Toddler Practicum Field Work Experience",
+    "units": 1.0,
+    "ccn": "CCC000601118"
+   }
+  ]
+ },
+ "text": "Guided Pathways\nAviation, Electronics and Manufacturing Programs at Mt. SAC\nEarly Childhood Education, AS-T (Cal-GETC) S0401\nProgram: S0401 · Looking for guidance? A counselor can help.\nThis Guided Pathways for Success (GPS) is a suggested sequence of coursework needed for program completion. It is not an official educational plan. Schedule an appointment with a counselor or advisor as soon as possible to create an individualized Mountie Academic Plan (MAP) specific to your goals and needs.\nPrint Out a MAP of this Program · Email This Link to A Friend · Suggested Sequence of Coursework · Indicates Courses Offered Online · Fall Semester (Year 1) · Course Prefix\tTitle\tUnits · CHLD 5\tPrin & Prac - CD Programs \t3.0 · CHLD 11\tChild & Adolescent Development \t3.0 · ENGL C1000\tAcademic Reading and Writing\t4.0 · CGTC ARTS\tArts\t3.0 · Total:\t \t13.0 · Winter Semester (Year 1) · Course Prefix\tTitle\tUnits · CHLD 6\tIntro to Child Curriculum\t3.0 · Total:\t \t3.0 · Spring Semester (Year 1) · Course Prefix\tTitle\tUnits · CHLD 1\tChild, Family, Community \t3.0 · CHLD 64\tHealth, Safety & Nutrition \t3.0 · CGTC MATH\tMath\t3.0 · CGTC SCNC1\tPhysical Science\t3.0 · Total:\t \t12.0 · Certificate: Child Development, L1 M0663\nSubmit certificate petition to A&R via portal #45\nSummer Semester (Year 1) · Course Prefix\tTitle\tUnits · COMM C1000\tPublic Speaking\t4.0 · Total:\t \t4.0 · Fall Semester (Year 2) · Course Prefix\tTitle\tUnits · CHLD 50\tTeaching in a Diverse Society \t3.0 · CGTC CRTH\tCritical Thinking\t4.0 · CHLD 66\tEarly Child Observe & Assess\t2.0 · CHLD 66L\tEarly Child Obser & Assess Lab\t1.0 · CGTC ETHS\tEthnic Studies\t3.0 · Total:\t \t13.0 · Apply to transfer to CSU Aug 1-Nov 30 · Certificate: Child Development, LII - N0656 · Certificate: Child Development, LIII - N0655\nImmunizations Req'd: CHLD 66, 67, 69, 91, 86, 87\nSubmit petition to Admissions & Records\nvisit: https://www.mtsac.edu/cdc/immunization/\nWinter Semester (Year 2) · Course Prefix\tTitle\tUnits · CGTC HUM\tHumanities\t3.0 · Total:\t \t3.0\nConsider CSU American Inst. if transferring to CSU\nSpring Semester (Year 2) · Course Prefix\tTitle\tUnits · CGTC BEHAV\tSocial & Behavioral Sci\t3.0 · CGTC SCNC2\tBiological Science\t3.0 · CGTC LAB\tLAB\t1.0 · ELEC TRAN\tTransfer Course\t3.0 · CHLD 67\tEarly Chld Education Prac\t2.0 · CHLD 67L\tECE Practicum Laboratory\t1.0 · CHLD 86\t(or) Infant Toddler Practicum\t2.0 · CHLD 87\tInfant Toddler Field Work Exp\t1.0 · Total:\t \t16.0\nCHLD 86, 87, 79 corequisites, CHLD 86 reqs CHLD 73\nEarly Childhood Education, AS-T, S0401\nSubmit petition: inside.mtsac.edu, student tab #45\nProgram Notes · AS-T Early Childhood Studies-CSU Pomona\nEarly Childhood Studies (Teaching & Non-Teaching) accepted\nAS-T Early Childhood Studies-CSUs\nUse link to search for CSUs that accept AS-T Early Childhood Studies\nhttps://www2.calstate.edu/apply/transfer/Pages/associate-degree-for-transfer-major-and-campus-search.aspx\nView Career Information For This Program · 64 · Total number of Units · Just · $46 · Per Unit\n70% of students pay close to nothing with financial aid. Compare costs.\nReturn to Guided Pathways Homepage · Take the Next Step · Apply and Enroll · Meet With a Counselor · How-To Student Guides · Search For Classes · View Academic Catalog · Apply for Financial Aid · Shop for Textbooks"
+}

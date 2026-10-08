@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "8292780f6cd5",
+ "build": "2360b83e8100",
  "built": "2026-10-06",
  "inputs": {
   "records": 22,
   "map_read_at": "2026-10-06",
   "registry_read_at": "2026-10-06",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-10-07 13:32",
-  "cer": "2026-10-07T13:32:38+00:00"
+  "memberships": "2026-10-08 16:46",
+  "cer": "2026-10-08T16:46:25+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -206,7 +206,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -604,7 +604,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -1265,7 +1265,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -1964,7 +1964,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -2588,7 +2588,7 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Irvine Valley College's program record in the state's curriculum inventory",
-      "text": "The catalog prints ARTH 4, ARTH 25, ARTH 26, ARTH 4, ARTH 25, ARTH 26, ARTH 28 for this program; the state's Program Course File does not list them."
+      "text": "The catalog prints ARTH 4, ARTH 25, ARTH 26, ARTH 28 for this program; the state's Program Course File does not list them."
      },
      {
       "kind": "Reader's note",
@@ -2843,7 +2843,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -3349,7 +3349,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -3861,7 +3861,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -5010,7 +5010,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -5472,7 +5472,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -5652,9 +5652,9 @@ window.CPL_PATHWAYS_ROEP = {
      "picks": [
       "FIRE 12"
      ],
-     "path": null,
+     "path": 0.0,
      "path_picks": [],
-     "path_why": "No pathway map has been read for this program."
+     "path_why": null
     },
     "counts": {
      "courses": 15,
@@ -6267,11 +6267,164 @@ window.CPL_PATHWAYS_ROEP = {
      }
     ],
     "map": {
-     "host": null,
-     "url": null,
-     "checked_run": "census-20261004T152834Z-s2of4",
-     "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4)."
+     "status": "read",
+     "host": "www.mtsac.edu",
+     "url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=N0486&desc=Fire+Technology%2C+Certificate+N0486",
+     "checked_run": "college-page-read run 37810862182",
+     "read_on": "2026-10-08",
+     "text": "Mt. San Antonio College publishes a term-by-term map for Fire Technology, Certificate N0486 (Guided Pathways for Success (GPS) suggested sequence), read 2026-10-08 (college-page-read run 37810862182).",
+     "terms": [
+      {
+       "label": "Fall Semester (Year 1)",
+       "units": "7.0",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "FIRE 1"
+         ],
+         "units": "3.0",
+         "text": "FIRE 1 | Fire Protection Organization | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "FIRE 2"
+         ],
+         "units": "3.0",
+         "text": "FIRE 2 | Fire Prevention Technology | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "KINF 51A"
+         ],
+         "units": "1.0",
+         "text": "KINF 51A | Agility Test Prep-Law & F | 1.0",
+         "off_list": [
+          "KINF 51A"
+         ]
+        }
+       ]
+      },
+      {
+       "label": "Winter Semester (Year 1)",
+       "units": null,
+       "items": []
+      },
+      {
+       "label": "Spring Semester (Year 1)",
+       "units": "10.0",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "FIRE 3"
+         ],
+         "units": "3.0",
+         "text": "FIRE 3 | Fire Protection Equip & System | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "FIRE 4"
+         ],
+         "units": "3.0",
+         "text": "FIRE 4 | Bldg Const for Fire Protection | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "FIRE 5"
+         ],
+         "units": "3.0",
+         "text": "FIRE 5 | Fire Behavior and Combustion  | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "KINF 51B"
+         ],
+         "units": "1.0",
+         "text": "KINF 51B | Agility Test Prep-Law & Fire B | 1.0",
+         "off_list": [
+          "KINF 51B"
+         ]
+        }
+       ]
+      },
+      {
+       "label": "Summer Semester (Year 1)",
+       "units": "4.0",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "FIRE 13"
+         ],
+         "units": "3.0",
+         "text": "FIRE 13 | Firefighter Safety & Survival | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "KINF 52A"
+         ],
+         "units": "1.0",
+         "text": "KINF 52A | Fitness & Cond - Law & Fire A | 1.0",
+         "off_list": [
+          "KINF 52A"
+         ]
+        }
+       ]
+      },
+      {
+       "label": "Fall Semester (Year 2)",
+       "units": "17.5",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "FIRE 86"
+         ],
+         "units": "15.0",
+         "text": "FIRE 86 | Basic Fire Academy | 15.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "KINF 53"
+         ],
+         "units": "2.5",
+         "text": "KINF 53 | Physical Training-Fire Academy | 2.5"
+        }
+       ]
+      }
+     ],
+     "notes": [
+      "Winter Semester (Year 1): EMT course see notes section",
+      "Alt. FIRE courses if FIRE 86-Academy is not goal",
+      "FIRE 6, 7, 8, 9, 10, 11, or 12"
+     ],
+     "placed": {
+      "FIRE 1": 0,
+      "FIRE 2": 0,
+      "FIRE 3": 2,
+      "FIRE 4": 2,
+      "FIRE 5": 2,
+      "FIRE 13": 3,
+      "FIRE 86": 4,
+      "KINF 53": 4
+     },
+     "not_placed": [
+      "FIRE 6",
+      "FIRE 7",
+      "FIRE 8",
+      "FIRE 9",
+      "FIRE 10",
+      "FIRE 11",
+      "FIRE 12"
+     ]
     },
     "checks": {
      "checked": true,
@@ -6283,7 +6436,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -7264,7 +7417,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -7424,9 +7577,9 @@ window.CPL_PATHWAYS_ROEP = {
       "max": 24
      },
      "picks": [],
-     "path": null,
+     "path": 0.0,
      "path_picks": [],
-     "path_why": "No pathway map has been read for this program."
+     "path_why": null
     },
     "counts": {
      "courses": 12,
@@ -7638,11 +7791,247 @@ window.CPL_PATHWAYS_ROEP = {
      }
     ],
     "map": {
-     "host": null,
-     "url": null,
-     "checked_run": "census-20261004T152834Z-s2of4",
-     "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4)."
+     "status": "read",
+     "host": "www.mtsac.edu",
+     "url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=S0401&desc=Early+Childhood+Education%2C+AS-T+%28Cal-GETC%29+S0401",
+     "checked_run": "college-page-read run 37812133411",
+     "read_on": "2026-10-08",
+     "text": "Mt. San Antonio College publishes a term-by-term map for Early Childhood Education, AS-T (Cal-GETC) S0401 (Guided Pathways for Success (GPS) suggested sequence), read 2026-10-08 (college-page-read run 37812133411).",
+     "terms": [
+      {
+       "label": "Fall Semester (Year 1)",
+       "units": "13.0",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 5"
+         ],
+         "units": "3.0",
+         "text": "CHLD 5 | Prin & Prac - CD Programs  | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 11"
+         ],
+         "units": "3.0",
+         "text": "CHLD 11 | Child & Adolescent Development  | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "ENGL C1000"
+         ],
+         "units": "4.0",
+         "text": "ENGL C1000 | Academic Reading and Writing | 4.0"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3.0",
+         "text": "CGTC ARTS | Arts | 3.0"
+        }
+       ]
+      },
+      {
+       "label": "Winter Semester (Year 1)",
+       "units": "3.0",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 6"
+         ],
+         "units": "3.0",
+         "text": "CHLD 6 | Intro to Child Curriculum | 3.0"
+        }
+       ]
+      },
+      {
+       "label": "Spring Semester (Year 1)",
+       "units": "12.0",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 1"
+         ],
+         "units": "3.0",
+         "text": "CHLD 1 | Child, Family, Community  | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 64"
+         ],
+         "units": "3.0",
+         "text": "CHLD 64 | Health, Safety & Nutrition  | 3.0"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3.0",
+         "text": "CGTC MATH | Math | 3.0"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3.0",
+         "text": "CGTC SCNC1 | Physical Science | 3.0"
+        }
+       ]
+      },
+      {
+       "label": "Summer Semester (Year 1)",
+       "units": "4.0",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "COMM C1000"
+         ],
+         "units": "4.0",
+         "text": "COMM C1000 | Public Speaking | 4.0"
+        }
+       ]
+      },
+      {
+       "label": "Fall Semester (Year 2)",
+       "units": "13.0",
+       "items": [
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 50"
+         ],
+         "units": "3.0",
+         "text": "CHLD 50 | Teaching in a Diverse Society  | 3.0"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "4.0",
+         "text": "CGTC CRTH | Critical Thinking | 4.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 66"
+         ],
+         "units": "2.0",
+         "text": "CHLD 66 | Early Child Observe & Assess | 2.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 66L"
+         ],
+         "units": "1.0",
+         "text": "CHLD 66L | Early Child Obser & Assess Lab | 1.0"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3.0",
+         "text": "CGTC ETHS | Ethnic Studies | 3.0"
+        }
+       ]
+      },
+      {
+       "label": "Winter Semester (Year 2)",
+       "units": "3.0",
+       "items": [
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3.0",
+         "text": "CGTC HUM | Humanities | 3.0"
+        }
+       ]
+      },
+      {
+       "label": "Spring Semester (Year 2)",
+       "units": "16.0",
+       "items": [
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3.0",
+         "text": "CGTC BEHAV | Social & Behavioral Sci | 3.0"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3.0",
+         "text": "CGTC SCNC2 | Biological Science | 3.0"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "1.0",
+         "text": "CGTC LAB | LAB | 1.0"
+        },
+        {
+         "kind": "ge",
+         "codes": [],
+         "units": "3.0",
+         "text": "ELEC TRAN | Transfer Course | 3.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 67"
+         ],
+         "units": "2.0",
+         "text": "CHLD 67 | Early Chld Education Prac | 2.0"
+        },
+        {
+         "kind": "choice",
+         "codes": [
+          "CHLD 67L",
+          "CHLD 86"
+         ],
+         "units": "1.0",
+         "text": "CHLD 67L | ECE Practicum Laboratory | 1.0 · CHLD 86 | (or) Infant Toddler Practicum | 2.0"
+        },
+        {
+         "kind": "course",
+         "codes": [
+          "CHLD 87"
+         ],
+         "units": "1.0",
+         "text": "CHLD 87 | Infant Toddler Field Work Exp | 1.0"
+        }
+       ]
+      }
+     ],
+     "notes": [
+      "Certificate: Child Development, L1 M0663",
+      "Submit certificate petition to A&R via portal #45",
+      "Apply to transfer to CSU Aug 1-Nov 30",
+      "Certificate: Child Development, LII - N0656",
+      "Certificate: Child Development, LIII - N0655",
+      "Immunizations Req'd: CHLD 66, 67, 69, 91, 86, 87",
+      "visit: https://www.mtsac.edu/cdc/immunization/",
+      "Consider CSU American Inst. if transferring to CSU",
+      "CHLD 86, 87, 79 corequisites, CHLD 86 reqs CHLD 73"
+     ],
+     "placed": {
+      "CHLD 1": 2,
+      "CHLD 5": 0,
+      "CHLD 6": 1,
+      "CHLD 11": 0,
+      "CHLD 50": 4,
+      "CHLD 64": 2,
+      "CHLD 66": 4,
+      "CHLD 66L": 4,
+      "CHLD 67": 6,
+      "CHLD 67L": 6,
+      "CHLD 86": 6,
+      "CHLD 87": 6
+     },
+     "not_placed": []
     },
     "checks": {
      "checked": true,
@@ -7654,7 +8043,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -7928,7 +8317,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -8168,7 +8557,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -9535,7 +9924,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -9786,7 +10175,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -10341,7 +10730,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -11444,7 +11833,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -12035,7 +12424,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -12820,7 +13209,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -13290,7 +13679,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   },
@@ -13424,7 +13813,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8292780f6cd5",
+    "build": "2360b83e8100",
     "built": "2026-10-06"
    }
   }

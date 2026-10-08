@@ -1448,6 +1448,7 @@
     ".cplpw-rterm .cplpw-rmini { flex-direction:column; flex-wrap:nowrap; }",
     ".cplpw-rmini li.slot { font-weight:400; border-style:dashed; color: var(--text-muted); }",
     ".cplpw-rmini li.other { font-weight:400; }",
+    ".cplpw-routside { display:block; font-size:.75rem; font-weight:600; color: var(--text-muted); }",
     ".cplpw-rseq a { color: var(--cobalt); }",
     ".cplpw-rseq a:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
     /* the gaps */
@@ -1546,9 +1547,20 @@
       });
     });
   }
+  // A map that names courses from two options of one choice (Mt. San Antonio's Early
+  // Childhood Education page prints both practicum sequences) recommends neither.
+  function roepGroupSplit(rec, g) {
+    var placed = (rec.display.map || {}).placed || {};
+    return (rec.record.blocks || []).filter(function (x) {
+      return x.option_group === g && (x.courses || []).some(function (c) {
+        return [c].concat(c.alternatives || []).some(function (o) { return placed[o.code] != null; });
+      });
+    }).length > 1;
+  }
   function roepMapPick(rec, b, c, code) {
     var choice = b.rule !== "all" || !!b.option_group || code !== c.code || (c.alternatives || []).length > 0;
     if (!choice || roepRequiredAlone(rec, code)) return null;
+    if (b.option_group && roepGroupSplit(rec, b.option_group)) return null;
     return roepMapTerm(rec, code);
   }
 
@@ -1651,6 +1663,13 @@
       if (here.length) ch.appendChild(el("span", "sr", " (CPL here on " + here.join(", ") + ")"));
       return ch;
     }
+    if (it.off_list && it.off_list.length) {
+      /* sheet 50 card 4: a course the program does not list, named by the map */
+      var out = el("li", "other outside", plain);
+      out.setAttribute("data-codes", it.off_list.join(","));
+      out.appendChild(el("span", "cplpw-routside", "Recommended by the college outside the program"));
+      return out;
+    }
     return el("li", it.codes.length ? "other" : "slot", plain);
   }
 
@@ -1666,6 +1685,13 @@
     }
     note.appendChild(p);
     note.appendChild(el("p", null, "The catalog keeps the rule and the map names the pick: each course of the record sits in the term the map gives it."));
+    var outside = [];
+    (map.terms || []).forEach(function (t) {
+      (t.items || []).forEach(function (it) { (it.off_list || []).forEach(function (c) { if (outside.indexOf(c) < 0) outside.push(c); }); });
+    });
+    if (outside.length) note.appendChild(el("p", null, "The map also names " + outside.length + " course" + (outside.length === 1 ? "" : "s") +
+      " the program does not list (" + outside.join(", ") + "); the college recommends " + (outside.length === 1 ? "it" : "them") +
+      " beside the program's own courses."));
     (map.notes || []).forEach(function (n) { note.appendChild(el("p", null, n)); });
     box.appendChild(note);
     var terms = el("ol", "cplpw-rterms");

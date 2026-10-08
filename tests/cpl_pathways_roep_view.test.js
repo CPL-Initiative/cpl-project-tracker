@@ -24,7 +24,10 @@
 //   (h) a read map places each course in the term the display build gave it,
 //       and the tray keeps only the courses the map never names;
 //   (i) By requirement marks the map's pick inside a choice, On the college's
-//       map with its term, and never a required course or a choice left open.
+//       map with its term, and never a required course, a choice left open, or
+//       a choice whose options the map names more than one of;
+//   (j) a map's course off the program's list shows in its term as recommended
+//       by the college outside the program (sheet 50 card 4).
 
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -233,8 +236,25 @@ function click(w, root, value) {
   const marked = () => [...root.querySelectorAll(".cplpw-rmark")].filter((n) => /On the college's map/.test(n.textContent));
 
   const real = w.CPL_PATHWAYS_ROEP.programs.filter((p) => p.display.map && p.display.map.status === "read");
-  check("(i) the build holds two read maps", real.length === 2, real.map((p) => p.key).join(","));
-  real.forEach((p) => {
+  check("(i) the build holds four read maps", real.length === 4, real.map((p) => p.key).join(","));
+  // Mt. San Antonio's Fire Technology map names the academy route inside the choose
+  // block (FIRE 86 and KINF 53, Fall of Year 2): the first real pick on a read map.
+  const fireRec = real.find((p) => p.key === "mtsac_03086");
+  if (fireRec) {
+    T._renderRoepProgram(root, fireRec);
+    check("(i) Fire Technology's map marks FIRE 86 and KINF 53 as its pick, with their term",
+      JSON.stringify(marked().map((n) => n.closest(".cplpw-rtile").getAttribute("data-code"))) === JSON.stringify(["FIRE 86", "KINF 53"])
+      && marked().every((n) => /Fall Semester \(Year 2\)/.test(n.textContent)), marked().map((n) => n.textContent).join(" | "));
+  }
+  // Its Early Childhood Education map prints both practicum sequences in one term, so
+  // it recommends neither (roepGroupSplit).
+  const eceRec = real.find((p) => p.key === "mtsac_33876");
+  if (eceRec) {
+    T._renderRoepProgram(root, eceRec);
+    check("(i) a map naming both options of one choice marks no pick in either", marked().length === 0,
+      marked().map((n) => n.closest(".cplpw-rtile").getAttribute("data-code")).join(","));
+  }
+  real.filter((p) => p.key !== "mtsac_03086" && p.key !== "mtsac_33876").forEach((p) => {
     T._renderRoepProgram(root, p);
     check("(i) " + p.key + " marks no pick, since its map names none inside a choice", marked().length === 0
       && !/On the college's map/.test([...root.querySelectorAll(".cplpw-ralt")].map((n) => n.textContent).join("")));
@@ -268,6 +288,36 @@ function click(w, root, value) {
   const art85 = tileOf("ART 85", ivc.record.blocks.find((b) => /additional 6 units/.test(b.name)).name)[0];
   check("(i) a course a required block holds is no pick where an elective list repeats it",
     art85 && !/On the college's map/.test(art85.textContent), art85 && art85.textContent);
+}
+
+// ── (j) a map's courses off the program's list (sheet 50 card 4, S346) ──
+// A map is accepted when the listed courses it names outnumber its off-list ones; each
+// off-list course stays in its term and says, in words, that the college recommends it
+// outside the program. Mt. San Antonio's Fire Technology map names KINF 51A, 51B, 52A.
+{
+  const w = freshWindow();
+  const T = w.CPL_PATHWAYS_TAB;
+  const root = w.document.getElementById("cpl-pathways-root");
+  const rec = w.CPL_PATHWAYS_ROEP.programs.find((p) => p.key === "mtsac_03086");
+  check("(j) the build holds Fire Technology's read map", rec && rec.display.map.status === "read");
+  if (rec) {
+    T._roepView.lay = "term"; T._roepView.who = "college";
+    T._renderRoepProgram(root, rec);
+    const outs = [...root.querySelectorAll(".cplpw-rterm li.outside")];
+    check("(j) each off-list course shows in its term", JSON.stringify(outs.map((li) => li.getAttribute("data-codes")))
+      === JSON.stringify(["KINF 51A", "KINF 51B", "KINF 52A"]), outs.map((li) => li.getAttribute("data-codes")).join(","));
+    check("(j) each says in words that the college recommends it outside the program",
+      outs.every((li) => /Recommended by the college outside the program/.test(li.textContent)));
+    check("(j) the note names the off-list courses once",
+      /names 3 courses the program does not list \(KINF 51A, KINF 51B, KINF 52A\)/.test(root.querySelector(".cplpw-rseq").textContent));
+    check("(j) a listed course carries no outside mark",
+      ![...root.querySelectorAll(".cplpw-rterm li.outside")].some((li) => /FIRE/.test(li.getAttribute("data-codes") || "")));
+    const smc = w.CPL_PATHWAYS_ROEP.programs.find((p) => p.key === "smc_43767");
+    T._renderRoepProgram(root, smc);
+    check("(j) a map with nothing off the list shows no outside mark and no such note",
+      !root.querySelector("li.outside") && !/does not list/.test(root.querySelector(".cplpw-rseq").textContent));
+    T._roepView.lay = "req";
+  }
 }
 
 let failed = 0;
