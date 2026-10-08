@@ -1,0 +1,30 @@
+{
+ "_readme": "First read of Palo Verde College's program maps (S345, SkyLantern). The census's sequence address for Palo Verde is a '#' link on the homepage (registry, not_read). A web search (2026-10-08) found no map and one lead: the college's Guided Pathways guide (guides.paloverde.edu/pathways/home), which lists twelve transfer degrees and four career tracks under tabs. This read opens its tabs and prints any map, pathway or PDF link.",
+ "college": "Palo Verde College",
+ "questions": {
+  "map_source": "Where the college publishes a program's term-by-term map, and in what form (a page, a PDF, an interactive tool).",
+  "map_shape": "How one map names its terms and lists its courses, read on one map the index links."
+ },
+ "keywords": [
+  "[Ss]emester",
+  "[Tt]erm",
+  "[Yy]ear [1-4]",
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "map_source",
+    "map_shape"
+   ],
+   "url": "https://guides.paloverde.edu/pathways/home",
+   "expand": true,
+   "links": "map|pathway|semester|sequence|plan|\\.pdf",
+   "follow": "map|semester|sequence|\\.pdf"
+  }
+ ]
+}

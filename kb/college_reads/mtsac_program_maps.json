@@ -1,34 +1,40 @@
 {
- "_readme": "Second read of Mt. San Antonio College's maps (S344, SkyWaypoint). Read 1 (run 37799874023): the Schedule of Classes says the catalog shows 'the suggested order of classes to take', and the LVN-to-RN page printed no sequence and opened no section. This read takes the catalog's Degrees and Certificates page (linked as English and Math Course Sequences) and the Fire Technology certificate page with its sections opened, looking for a roadmap or suggested-sequence tab.",
+ "_readme": "Third read of Mt. San Antonio College's maps (S345, SkyLantern). Reads 1 and 2 (runs 37799874023, 37800558615) found no suggested order on the catalog's program pages or its Degrees and Certificates page, though the Schedule of Classes says the Catalog shows one. A web search (2026-10-08) found the college's Guided Pathways program list (www.mtsac.edu/guided-pathways/), where each program opens a pathway through a 'View Course Sequence' button and some carry a '1st Semester Plan'. This read loads that list and follows the pilot programs' entries (Fire Technology, Nursing, Early Childhood Education).",
  "college": "Mt. San Antonio College",
  "questions": {
-  "map_source": "Where Mt. San Antonio publishes a program's suggested term-by-term order, if anywhere."
+  "map_source": "Where the college publishes a program's term-by-term map, and in what form (a page, a PDF, an interactive tool).",
+  "map_shape": "How one map names its terms and lists its courses, read on one map the index links."
  },
  "keywords": [
-  "[Ss]uggested",
-  "[Ss]equence",
-  "[Rr]oad ?[Mm]ap",
-  "[Pp]rogram [Mm]ap",
   "[Ss]emester",
+  "[Tt]erm",
   "[Yy]ear [1-4]",
-  "[Ff]irst [Tt]erm"
+  "[Pp]rogram [Mm]ap",
+  "[Rr]oad ?[Mm]ap",
+  "[Ss]equence",
+  "[Pp]athway",
+  "\\.pdf",
+  "[Ff]irst [Ss]emester",
+  "1st [Ss]emester",
+  "[Vv]iew [Cc]ourse"
  ],
  "pages": [
   {
    "answers": [
-    "map_source"
+    "map_source",
+    "map_shape"
    ],
-   "url": "https://catalog.mtsac.edu/programs/degrees-certificates/",
+   "url": "https://www.mtsac.edu/guided-pathways/filter_listings_mtsac_all.php",
    "expand": true,
-   "links": "map|sequence|suggest|roadmap|pathway|semester"
+   "links": "sequence|pathway|semester|fire|nurs|child",
+   "follow": "fire|nurs|early child|child dev"
   },
   {
    "answers": [
     "map_source"
    ],
-   "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/fire-technology-certificate/",
-   "expand": true,
-   "links": "map|sequence|suggest|roadmap|pathway|semester|tab"
+   "url": "https://www.mtsac.edu/guided-pathways/pathway-results.html",
+   "links": "sequence|pathway|semester|\\.pdf"
   }
  ]
 }
