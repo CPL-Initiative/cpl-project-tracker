@@ -93,7 +93,8 @@ async function seedProgress(page, theme) {
     const recs = [];
     for (let i = 0; i < 20; i++) recs.push({ college: ["Cerritos College", "San Diego Miramar College", "Mt. San Antonio College",
       "Riverside City College", "West Los Angeles College"][i % 5], control_number: String(40000 + i), program_title: "Program " + i,
-      checked: true, checked_at: "2026-10-04T10:22:45Z", display: { build: "8292780f6cd5", built: "2026-10-06" } });
+      checked: true, checked_at: "2026-10-04T10:22:45Z", display: { build: "8292780f6cd5", built: "2026-10-06" },
+      record: { program: { outcomes: i === 7 ? [] : ["Outcome " + i] } } });
     const addenda = [];
     for (let i = 0; i < 79; i++) addenda.push({ college: "College " + (i % 52), status: "listed" });
     S.registry = reg; S.records = recs; S.error = null;
