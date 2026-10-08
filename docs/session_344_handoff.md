@@ -69,8 +69,15 @@ with the routine's `next_run_at` from `get_trigger`. The Progress view's header 
 ## Waiting on Sam
 
 - Read Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767 (the Progress view's one call).
-- Share CPLLibrary in Drive (sheet 48 card 2's addresses). Drop the Summit v2 MP4s into Drafts. Re-save the Library
+- Drop the Summit v2 MP4s into Drafts. Re-save the Library
   filer's three Google values.
+
+## After S343 signed off
+
+Sam dropped sharing CPLLibrary (2026-10-07, in chat): *"so many on team do not have google accounts. May need to switch
+to sharepoint."* The Drive connector refused the share again with his go. Sheet 48 card 2 is closed, the library lane
+carries no ask, and the open-asks builder has no card left (`cpl_memory` `sam-drop-cpllibrary-sharing-2026-10-07`).
+SharePoint is parked until he takes it up.
 
 ## Patterns that worked
 
