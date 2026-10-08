@@ -16,8 +16,9 @@ you make for Sam.
 ## First, in this order
 
 1. **One writer.** `list_sessions` (`mine: true`). S343 let go of everything at sign-off (end of this file).
-2. **The standing sheet:** Open Asks Sheet 48 ([FWGJ2uNEGB1RrhMPrFsaCJ](https://claude.ai/artifact/FWGJ2uNEGB1RrhMPrFsaCJ),
-   current, both cards answered). Nothing new went to it this run.
+2. **The standing sheet:** Open Asks Sheet 49 ([6uMT8LrZgMZBit3Gs8wHBL](https://claude.ai/artifact/6uMT8LrZgMZBit3Gs8wHBL), current, three
+   SharePoint calls, built after S343 signed off). Read `replies` and `done` with `ArtifactData` before acting. Sheet 48
+   ([FWGJ2uNEGB1RrhMPrFsaCJ](https://claude.ai/artifact/FWGJ2uNEGB1RrhMPrFsaCJ)) is fully answered.
 3. **Rule 8:** `cpl_memory` with tags `program-requirements-harvest`, `roep`, `sierra`. Read
    `progress-view-built-2026-10-07` and `sierra-credit-spelling-fold-2026-10-07`.
 4. **The view itself:** COBI, Program Requirements, Progress (the first view). It reads the tables live and
@@ -77,7 +78,11 @@ with the routine's `next_run_at` from `get_trigger`. The Progress view's header 
 Sam dropped sharing CPLLibrary (2026-10-07, in chat): *"so many on team do not have google accounts. May need to switch
 to sharepoint."* The Drive connector refused the share again with his go. Sheet 48 card 2 is closed, the library lane
 carries no ask, and the open-asks builder has no card left (`cpl_memory` `sam-drop-cpllibrary-sharing-2026-10-07`).
-SharePoint is parked until he takes it up.
+He then asked for the switch laid out and its calls on a sheet: Open Asks Sheet 49, three cards (who creates
+the site, guests from outside RCCD, how files reach it), the library lane's NEEDS SAM.
+Still to apply: `kb/receipts/cpl_library_open_asks_sheet49_2026-10-08.sql` (sheet 49 as the open-asks series'
+current version). `apply_migration` timed out twice on 2026-10-08 and wrote nothing (read back: version 48). The
+update is guarded on version 48, so a later run is safe; read the row back after.
 
 ## Patterns that worked
 
