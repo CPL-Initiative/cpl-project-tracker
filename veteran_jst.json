@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-10-07T19:15:05.137312+00:00",
+  "scraped_at": "2026-10-08T13:36:34.057596+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28868,
-    "star_colleges": 59
+    "jst": 28871,
+    "star_colleges": 60
   },
-  "computed_star_colleges": 59,
+  "computed_star_colleges": 60,
   "colleges": {
     "Santiago Canyon College": {
       "vets": 288,
@@ -54,6 +54,11 @@
       "vets": 831,
       "jst": 564,
       "star": false
+    },
+    "Cabrillo College": {
+      "vets": 102,
+      "jst": 184,
+      "star": true
     },
     "Merced College": {
       "vets": 142,
@@ -143,11 +148,6 @@
     "Santa Rosa Junior College": {
       "vets": 523,
       "jst": 443,
-      "star": true
-    },
-    "Cabrillo College": {
-      "vets": 102,
-      "jst": 184,
       "star": true
     },
     "Sierra College": {
@@ -300,6 +300,11 @@
       "jst": 130,
       "star": true
     },
+    "Laney College": {
+      "vets": 96,
+      "jst": 72,
+      "star": true
+    },
     "Napa Valley College": {
       "vets": 38,
       "jst": 53,
@@ -314,11 +319,6 @@
       "vets": 129,
       "jst": 140,
       "star": true
-    },
-    "Laney College": {
-      "vets": 96,
-      "jst": 70,
-      "star": false
     },
     "Irvine Valley College": {
       "vets": 217,
@@ -545,6 +545,11 @@
       "jst": 1,
       "star": false
     },
+    "College of the Siskiyous": {
+      "vets": 77,
+      "jst": 1,
+      "star": false
+    },
     "Yuba College": {
       "vets": 64,
       "jst": 0,
@@ -557,11 +562,6 @@
     },
     "California State University Los Angeles": {
       "vets": 0,
-      "jst": 0,
-      "star": false
-    },
-    "College of the Siskiyous": {
-      "vets": 77,
       "jst": 0,
       "star": false
     },
