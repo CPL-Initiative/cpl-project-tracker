@@ -390,11 +390,11 @@ block("(8)", function () {
   check("(8) the one after it is the next milestone, the rest later",
     /Next milestone/.test(steps[3].textContent) && /Later/.test(steps[4].textContent));
   check("(8) the facts count from the reads", /4 of 4 colleges/.test(steps[0].textContent) &&
-    /1 of 3 published maps/.test(here.textContent) && /2 of 4 written/.test(steps[3].textContent) &&
+    /1 of 3 published maps settled/.test(here.textContent) && /2 of 4 written/.test(steps[3].textContent) &&
     /20,282 active programs/.test(steps[4].textContent), Array.prototype.map.call(steps, function (s) { return s.textContent; }).join(" | "));
   const left = root.querySelector(".prh-pg-left");
   check("(8) what is left before the next milestone: maps, the unchecked records, the addenda",
-    !!left && /^3/.test(left.textContent) && /2 published maps to read/.test(left.textContent) &&
+    !!left && /^3/.test(left.textContent) && /2 published maps to read or settle/.test(left.textContent) &&
     /2 new records to check/.test(left.textContent) && /1 catalog addendum to read/.test(left.textContent), left && left.textContent);
 
   const parts = root.querySelectorAll(".prh-pg-grid > li");
@@ -517,6 +517,22 @@ block("(8d)", function () {
   check("(8d) Sequences counts an open map host as read", /1maps read/.test(facts.replace(/\s+/g, "")) || /1\s*maps read/.test(facts), facts);
 });
 
+block("(8g)", function () {
+  // Sam, Open Asks Sheet 50 card 5 (2026-10-08, as proposed): a refused or unreached map counts as
+  // settled once the college's procedure names the other routes tried; a bare refusal does not.
+  const f = progressFixture(20);
+  f.reg[1].procedure = { v: 5, open: [], workarounds: [{ for: "the map", tried: "the college's own pages", result: "none" }] };
+  const m = loadModule();
+  m.M._state.registry = f.reg; m.M._state.records = f.recs; m.M._state.error = null; m.M._state.loading = false;
+  m.M._state.progress = { addenda: f.addenda, active: 20282, queue: f.queue, errors: {}, readAt: new Date("2026-10-07T21:40:00Z") };
+  m.M._state.view = "progress"; m.M._render();
+  const here = m.root.querySelector('.prh-pg-steps > li[aria-current="step"]');
+  check("(8g) a refused map whose procedure names the routes tried counts as settled; a bare refusal does not",
+    !!here && /2 of 3 published maps settled/.test(here.textContent) &&
+    /1 published map to read or settle/.test(m.root.querySelector(".prh-pg-left").textContent),
+    here && here.textContent);
+});
+
 block("(8f)", function () {
   // Sam, 2026-10-08, on this view: he saw two calls and "don't see how to view them and respond", then
   // "If you can embed the links on the tab, it would be fantastic". A call carries the sheet that answers it
@@ -557,7 +573,7 @@ block("(8e)", function () {
   m.M._state.view = "progress"; m.M._render();
   const here = m.root.querySelector('.prh-pg-steps > li[aria-current="step"]');
   check("(8e) a read-recorded host counts as a published map, and as read when open",
-    !!here && /2 of 4 published maps/.test(here.textContent), here && here.textContent);
+    !!here && /2 of 4 published maps settled/.test(here.textContent), here && here.textContent);
   m.M._state.view = "catalogs"; m.M._state.show = "seq"; m.M._render();
   const txt = m.root.textContent;
   check("(8e) Catalogs lists it under Has a program map and names the host it was read on",

@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-08T17:10:55Z",
+  "written_at": "2026-10-08T17:24:37Z",
   "session": 345,
   "moniker": "SkyLantern",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_345_handoff.md",
+  "handoff": "docs/session_346_handoff.md",
   "unchecked": [
     {
       "college": "Irvine Valley College",
@@ -23,55 +23,15 @@
     }
   ],
   "next_step": {
-    "title": "Mt. San Antonio's maps, then the refused colleges' own pages",
-    "text": "Read Mt. San Antonio's Early Childhood Education map and file its sequence record, then look on each refused college's own pages and catalog for a map outside the mapper. The addenda follow Sunday's census apply."
+    "title": "Flags and a confirm on the Program records view",
+    "text": "Sam asked for a flag on each place a record and its sources disagree and a way to confirm a record from the tab; a mock-up comes to him first. Then card 4's map rule with Mt. San Antonio's two maps, and a college selector on CPL Pathways."
   },
-  "calls": [
-    {
-      "title": "Check two new records?",
-      "text": "Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767, each laid out on its card. Sierra quotes neither program's requirements until Sam checks it.",
-      "if_no_reply": "both stay unchecked, and the queue moves on to the maps.",
-      "link": "https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr",
-      "link_text": "Answer on Open Asks Sheet 50, cards 1 and 2",
-      "view": {
-        "href": "#cpl-pathways",
-        "text": "See both records on CPL Pathways"
-      }
-    },
-    {
-      "title": "Paste one library update?",
-      "text": "The update that makes the latest open-asks sheet current on the Library tab timed out four times through the sessions' tool. The SQL is on the card, for the Supabase SQL editor.",
-      "if_no_reply": "the Library tab keeps listing sheet 48 as current.",
-      "link": "https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr",
-      "link_text": "Answer on Open Asks Sheet 50, card 3",
-      "view": {
-        "href": "#library",
-        "text": "See the Library tab"
-      }
-    },
-    {
-      "title": "Accept Mt. San Antonio's Fire Technology map?",
-      "text": "It places the certificate's courses in five terms and recommends three KINF preparation courses the certificate does not list, so the parser holds it.",
-      "if_no_reply": "the map stays filed and places no course.",
-      "link": "https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr",
-      "link_text": "Answer on Open Asks Sheet 50, card 4",
-      "view": {
-        "href": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=N0486",
-        "text": "See the college's sequence"
-      }
-    },
-    {
-      "title": "Count a refused map as settled?",
-      "text": "24 of 32 published maps sit on Program Mapper hosts that refuse the reader, so the Read program maps milestone cannot finish while it counts only maps read.",
-      "if_no_reply": "the milestone stays open.",
-      "link": "https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr",
-      "link_text": "Answer on Open Asks Sheet 50, card 5"
-    }
-  ],
+  "calls": [],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply.",
     "procedures": "Nineteen colleges have one since Oct 8: the seven pilot colleges and twelve whose maps were read that day.",
-    "sierra": "The full smoke test passed on Oct 8."
+    "sierra": "The full smoke test passed on Oct 8.",
+    "maps": "A refused map counts as settled once the college's procedure names the other routes tried (Sam, sheet 50 card 5)."
   },
   "changes": [
     {
@@ -101,6 +61,14 @@
     {
       "at": "2026-10-08T17:09:03Z",
       "text": "Open Asks Sheet 50 published with five calls"
+    },
+    {
+      "at": "2026-10-08T17:18:24Z",
+      "text": "Sam answered Open Asks Sheet 50; the Library record shows sheet 50"
+    },
+    {
+      "at": "2026-10-08T17:24:00Z",
+      "text": "The Progress view links each call to its sheet card"
     }
   ]
 }
