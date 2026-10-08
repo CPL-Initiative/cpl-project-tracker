@@ -13,8 +13,8 @@ related:
 
 **What this lane is:** one COBI tab that lists every deck, film, spreadsheet and
 document the CPL Initiative makes, with a link to where the file lives, who it is
-for, and the source that rebuilds it. And the rule behind it: **the files live in
-the team Drive; the repos keep only the source.**
+for, and the source that rebuilds it. And the rule behind it: **the files live in a
+CPLLibrary folder on the MAP team's SharePoint site; the repos keep only the source.**
 
 ## Status
 
@@ -63,26 +63,27 @@ ppt and video. Advise"*. Then, by number:
    then the vault.
 6. **The manual hand-off now**; an automatic upload only if it grates.
 
-## How a file reaches Drive
+## How a file reaches the SharePoint folder (Sam, Open Asks Sheet 49, 2026-10-08)
 
-- **A session on Sam's machine (Cowork):** save into the Drive-synced folder.
-- **A cloud session, through the Drive connector:** a file up to roughly 50 KB (it travels as
-  base64 inside the tool call). Anything larger: Sam drops it in, and the session finds it with the
-  connector (`search_files` by title and `parentId`) and files the link with **File it**.
-- **The filer, `scripts/library_file.py` (call 7, built 2026-10-06):** any session, any file size,
-  films included. It does a resumable upload to CPLLibrary or Drafts, checks size and md5, and writes
-  a receipt guarded on the Drive file id, applied as a named migration. It never deletes or
-  overwrites. Each edit is its own `<date code>_<name>_vN` file (call 8). Usage, setup and failure
-  modes: [`library_filer`](../library_filer.md). **Sam's Google sign-in is set (2026-10-06):** the
-  OAuth app *CPL Library filer* is **In production** (publishing needed a home page, the privacy page
-  `privacy.html` (#1887) and the authorized domain `cpl-initiative.github.io`), and the three
-  environment variables hold real values. Only a session started after ~18:45Z reads them; the
-  first `--check` has not run yet. The proxy lets the shell reach
-  `oauth2.googleapis.com`, `www.googleapis.com/drive/v3` and `/upload` (measured 2026-10-05 and
-  2026-10-06), and rejects `*.supabase.co`, which is why the receipt goes through the MCP.
-- **Scope (checked 2026-10-06):** Google's narrow `drive.file` scope may write only into folders
-  the app itself created, and Sam made CPLLibrary by hand, so the sign-in uses the full Drive scope.
-  The filer fences itself to the two folders.
+The folder is **CPLLibrary** on the MAP team's SharePoint site (`studentrcc.sharepoint.com`, site
+*MilitaryArticulationPlatform*, Shared Documents/CCCCO/AI/CPLLibrary), drafts in a Drafts folder inside it;
+`LIBRARY_FOLDER` in `library.js` carries the link. Sam made it, the whole team can open it, and guests from
+outside RCCD are allowed (cards 1 and 2).
+
+- **By hand, now (card 3):** a cloud session sends Sam the file, he drops it in, and the link is filed with
+  **File it**. The brief's paste says so.
+- **Through his OneDrive sync, now:** a Cowork session on Sam's computer saves into the synced folder.
+- **Automatic, later:** *"For now by hand and sync but later automatically so we avoid creating different artifact
+  storage solutions."* The later upload goes to this same folder: a Microsoft app RCCD IT approves for the one
+  site, three saved values, `graph.microsoft.com` added to the environment's allowed domains (refused today,
+  CONNECT 403, measured 2026-10-08), and a filer for Microsoft Graph. The Drive filer (`scripts/library_file.py`,
+  [`library_filer`](../library_filer.md)) is parked; its Google sign-in was never completed.
+- **Reading the folder:** a session reaches it only through the Microsoft 365 connector (claude.ai connectors,
+  connected by Sam with his RCCD account; read and search, no upload). This environment's network refuses
+  `studentrcc.sharepoint.com` too.
+- **The tab:** a SharePoint link files under the stored home `drive` (the `cpl_library_home_ck` value for the
+  team's file home, so no schema change) and reads *Team SharePoint*; a record still linking Google Drive reads
+  *Google Drive* (`homeOf`). Guarded by `tests/library.test.js` (7).
 
 **What stays in a repo:** build scripts, specs, narration text and voice clips (a
 library voice can be withdrawn), the vault's companion notes, and a film a public
@@ -117,7 +118,8 @@ claude.ai.
 
 ## Sam's calls 7-9 (2026-10-05, "7, 8,9 Y")
 
-7. **Build the automatic filer** (✅ built 2026-10-06; waits on the sign-in). A session files each piece to Drive the moment it makes it,
+7. **Build the automatic filer** (built 2026-10-06 for Drive; **parked 2026-10-08**, when the Library moved to
+   SharePoint and Sam set the automatic upload for later, into the same folder). A session files each piece to Drive the moment it makes it,
    films included, and writes the Library record in the same step. Setup is Sam's once: a Google
    Cloud project with the Drive API on, an OAuth client, one consent as camapinitiative, and three
    environment secrets (`GOOGLE_DRIVE_CLIENT_ID`, `GOOGLE_DRIVE_CLIENT_SECRET`,
@@ -143,34 +145,8 @@ claude.ai.
 
 ## Next
 
-- ⚠️ **The sign-in is NOT set yet (S339, 2026-10-06):** `--check` answers `invalid_client`, and the three saved
-  values measure 43 / 19 / 14 characters (shape checks pass: `.apps.googleusercontent.com`, `GOCSPX-`, `1//`), where
-  real ones run about 72 / 35 / 100+. They look truncated; Sam re-saves the full values, and a new session runs
-  `--check` again. Never print a value or ask for one in chat.
-- **First, in a new session, the end-to-end test** (once the sign-in is set): `python3 scripts/library_file.py --check`;
-  file a small test document with `--new --title "Filer test" --kind document` to Drafts; apply the
-  receipt under the migration name it prints; see it in the Library; retire the test record (Retire,
-  never delete).
-- **Then the six files, each with `--move` (their names and records stay as they are):**
-
-  ```
-  python3 scripts/library_file.py presentations/20260716_CPL_Initiative_BOG_Update.pptx --slug update-to-the-board-of-governors-2026-07 --move --to library
-  python3 scripts/library_file.py presentations/20260720_CPL_CBO_Implementation_Funding.pptx --slug standing-up-cpl-at-every-college --move --to library
-  python3 scripts/library_file.py presentations/cac_2026-08/20260810_CAC_Crystal_Run_Sheet.pdf --slug cac-run-sheet-for-crystal --move --to library
-  python3 scripts/library_file.py prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4 --slug ironworker-pathway-in-motion --move --to library
-  python3 scripts/library_file.py prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4 --slug noncredit-summit-in-motion --move --to drafts
-  python3 scripts/library_file.py prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4 --slug noncredit-summit-in-motion --move --to library
-  ```
-
-  The narrated cut is already in **CPLLibrary**, not Drafts (Sam, 2026-10-06): `--move` reuses a same-named,
-  same-bytes file only in the folder it is pointed at, so pointing it at Drafts would upload a second copy.
-  The film is about to be re-cut (new voice, Sam's edit, deck draft 2's figures), so the new cuts may simply
-  file as v2 with the plain command and these two `--move` lines become history.
-
-  Rehearsed 2026-10-06 against a copy of the live rows: each receipt `UPDATE 1`, then `UPDATE 0`.
-  A copy Sam already dropped in by hand with the same bytes is reused rather than uploaded twice.
-- **PR 2, the move (call 5):** once the six are filed, their records point at Drive through the
-  receipts above. Then remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
+- **PR 2, the move (call 5):** once a session with the Microsoft 365 connector has read the SharePoint copies,
+  each record points at its SharePoint link (a guarded update per record). Then remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
   `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's
   two player pages off the site, and add a guard test so a deliverable binary cannot be committed
   again. Then the vault's binaries (29 on 2026-10-05).
@@ -181,15 +157,12 @@ claude.ai.
   card 2 and withdraws sheet 47 card 3. The Drive connector's `share_file` refused every try (S341, 10 of his 19
   addresses; a side session the same evening, one more with his explicit go): *invalid argument*, or *the caller does
   not have permission* for three. The connector has no way to send the invitation, which an address without a Google
-  account needs (the likely cause, unconfirmed). Drive stays where sessions file pieces, the Library's links open for the
-  owner alone, and Sam hands a teammate a file himself.
-- **NEEDS SAM — the SharePoint switch, three calls on [Open Asks Sheet 49](https://claude.ai/artifact/6uMT8LrZgMZBit3Gs8wHBL)** (Sam, 2026-10-07: *"Lay out what a
-  SharePoint switch would take"*, then *"Put the SharePoint calls on a decision sheet"*): 1, who creates the site
-  (proposed: he creates a Teams team, CPL Library, with folders Library and Drafts); 2, whether people outside RCCD
-  can be guests (five of the 22 he named: three at cccco.edu, two at Infotech Partners; proposed: a session drafts
-  the ask to RCCD IT); 3, how files reach it (proposed: by hand plus his OneDrive sync, per his call 6). Measured
-  2026-10-08: this environment's network refuses `graph.microsoft.com` (CONNECT 403) and passes
-  `login.microsoftonline.com`; the Microsoft 365 connector (registry, not connected) searches and reads SharePoint
-  and cannot upload; Drive holds 16 files, 56,401,700 bytes (13 in CPLLibrary, 3 in Drafts); three `cpl_library`
-  records link to Drive; `library.js` (`DRIVE_FOLDER`, `homeForUrl`) and the `cpl_library_home_ck` check know Drive
-  as the only file home, so a SharePoint link files today as `web`.
+  account needs (the likely cause, unconfirmed).
+- **Sam's Open Asks Sheet 49 (2026-10-08 15:23-15:25Z, all three his own call):** 1 *I create it*: the
+  CPLLibrary folder on the MAP team's SharePoint site (link in `cpl_memory`
+  `sam-cpllibrary-sharepoint-folder-2026-10-08`); 2 *Guests allowed*; 3 *Hand and sync*, with his note *"For now by
+  hand and sync but later automatically so we avoid creating different artifact storage solutions."* He copied the
+  16 Drive files into the folder himself (2026-10-08); no session has read them yet.
+- **Next for this lane:** Sam connects the Microsoft 365 connector; the next session after that reads the folder,
+  confirms the 16 copies, and moves the three Drive-linked records (and the six repo pieces) to their SharePoint
+  links. The Summit film's v2 cuts go into the SharePoint Drafts folder.

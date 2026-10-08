@@ -11,10 +11,10 @@
       "text": "Run one saved database update in the Supabase SQL editor: kb/receipts/cpl_library_open_asks_sheet49_2026-10-08.sql. It makes Open Asks Sheet 49 the current version on the Library tab. The sessions' tool timed out three times trying it and wrote nothing."
     },
     {
-      "id": "s344-sam-sheet49-sharepoint",
+      "id": "s344-sam-m365-connector",
       "for": "Sam",
       "tab": "library",
-      "text": "Answer Open Asks Sheet 49 (https://claude.ai/artifact/6uMT8LrZgMZBit3Gs8wHBL): three calls on moving the Library to SharePoint (who creates the site, whether people outside RCCD can be guests, and how files reach it)."
+      "text": "Connect the Microsoft 365 connector at claude.ai/customize/connectors with your RCCD account, so the next session can read the Library's SharePoint folder, confirm the 16 files you copied in, and point the Library's records at their SharePoint links."
     },
     {
       "id": "s342-sam-check-two-records",
@@ -38,7 +38,7 @@
       "id": "s339-sam-summit-v2",
       "for": "Sam",
       "tab": "library",
-      "text": "Drop the Noncredit Summit film's two v2 cuts (sent in chat on 6 October: the music cut, 1:41, and the narrated cut, 3:32) into the Drafts folder in Drive, replacing any earlier v2, and say whether to keep them or edit. Their Library record then takes its v2 rows."
+      "text": "Drop the Noncredit Summit film's two v2 cuts (sent in chat on 6 October: the music cut, 1:41, and the narrated cut, 3:32) into the Drafts folder of the Library's SharePoint folder (CPLLibrary), replacing any earlier v2, and say whether to keep them or edit. Their Library record then takes its v2 rows."
     },
     {
       "id": "s332-sam-setup-script",
@@ -57,12 +57,6 @@
       "for": "Sam",
       "tab": "implementation-funding",
       "text": "Type the two measure descriptions on the Implementation Funding tab, in both scenarios (mockup card 11): Access 'Applied CPL units (FTES) in MAP' and Completion 'Transcribed CPL units (FTES) for students with the Counselor step checked in MAP'. Neither was on the tab when checked on 1 October."
-    },
-    {
-      "id": "s339-sam-filer-signin",
-      "for": "Sam",
-      "tab": "library",
-      "text": "Re-save the Library filer's three Google values (client ID, client secret, refresh token) at full length in the cloud environment's settings, under the same names. The saved ones are cut short (43, 19 and 14 characters), so the filer cannot sign in; a new session then files the six pieces and the Summit film's v2 cuts."
     },
     {
       "id": "s319-fable-read-timings",

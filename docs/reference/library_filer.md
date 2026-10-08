@@ -1,7 +1,7 @@
 ---
 title: "The Library filer — every piece files itself to Drive"
 created: 2026-10-06
-updated: 2026-10-06
+updated: 2026-10-08
 tags: [reference, library, drive, deliverables, filer]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -10,6 +10,12 @@ related:
 ---
 
 # The Library filer
+
+> **Parked (Sam, Open Asks Sheet 49, 2026-10-08).** The Library's files moved to a CPLLibrary folder on
+> the MAP team's SharePoint site, which the whole team can open. Files reach it by hand and through Sam's
+> OneDrive sync for now; the automatic upload comes later, into that same folder, *"so we avoid creating
+> different artifact storage solutions."* This Drive filer is kept for that rewrite and is not run.
+> [`lanes/library.md`](lanes/library.md) holds the current path.
 
 `scripts/library_file.py` puts a deck, film, spreadsheet or document into the team
 Drive and writes the receipt that records it in the Library (`cpl_library`). Sam's

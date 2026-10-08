@@ -242,6 +242,15 @@ block("(6)", function () {
 block("(7)", function () {
   const M = loadModule({}).M;
   check("(7) a Drive link reads as drive", M._homeForUrl("https://drive.google.com/file/d/x/view") === "drive");
+  // Sam, 2026-10-08 (Open Asks Sheet 49): the team's files live on its SharePoint site,
+  // stored under the same `drive` home value (cpl_library_home_ck has no other).
+  check("(7) a SharePoint link files under the team home", M._homeForUrl("https://studentrcc.sharepoint.com/:p:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/AI/CPLLibrary/deck.pptx") === "drive");
+  check("(7) a team-home record names where its link goes",
+    M._homeOf({ home: "drive", url: "https://studentrcc.sharepoint.com/:b:/r/sites/x/a.pdf" }).label === "Team SharePoint" &&
+    M._homeOf({ home: "drive", url: "https://drive.google.com/file/d/x/view" }).label === "Google Drive");
+  check("(7) the tab links the SharePoint CPLLibrary folder and no Drive folder",
+    /studentrcc\.sharepoint\.com\/:f:\/r\/sites\/MilitaryArticulationPlatform\/Shared%20Documents\/CCCCO\/AI\/CPLLibrary"/.test(SRC) &&
+    !/drive\.google\.com\/drive\/folders/.test(SRC));
   check("(7) a tracker link reads as the public repo", M._homeForUrl("https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/a.pptx") === "public_repo");
   check("(7) a vault link reads as the vault", M._homeForUrl("https://github.com/samueltlee/CPLBrain/blob/main/a.pptx") === "vault");
   check("(7) the tab never touches Storage", !/storage\/v1/.test(SRC));
@@ -298,7 +307,9 @@ block("(9)", function () {
     const bt = ta ? ta.value : "";
     check("(9) Copy the brief shows the whole paste", !!ta && ta.hasAttribute("readonly"));
     check("(9) the brief names its record and what it must say", /record summit-table-sheet-x1/.test(bt) && /Kind: Spreadsheet/.test(bt) && /It must say: Each college's noncredit CPL awards/.test(bt) && /For: Colleges/.test(bt), bt);
-    check("(9) the brief carries the filer command for this record", /python3 scripts\/library_file\.py <file> --slug summit-table-sheet-x1/.test(bt), bt);
+    check("(9) the brief hands the file over for the SharePoint folder and files it on this record",
+      /Send me the file/.test(bt) && /SharePoint folder \(CPLLibrary\)/.test(bt) && /File it on record summit-table-sheet-x1/.test(bt) &&
+      !/library_file\.py/.test(bt), bt);
     check("(9) the brief ends with what a good result looks like", /A good result: [^\n]+$/.test(bt), bt);
     check("(9) an unset source asks for live data first", /fetch live data first/.test(bt));
     m.M._state.rows.filter(function (r) { return r.id === "a2"; })[0].versions = [{ label: "v2", date: "2026-10-05", filed_at: "2026-10-05T18:42:10Z", size: "16 MB", status: "Draft" }];

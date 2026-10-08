@@ -70,6 +70,6 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-10-06 |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
 | [The industry-credential watch agent](../reference/credential_watch_agent.md) | — | `credential_watch_agent.md` | 2026-09-30 | 2026-09-30 |
-| [The Library filer — every piece files itself to Drive](../reference/library_filer.md) | — | `library_filer.md` | 2026-10-06 | 2026-10-06 |
+| [The Library filer — every piece files itself to Drive](../reference/library_filer.md) | — | `library_filer.md` | 2026-10-06 | 2026-10-08 |
 | [The live-session banner — how a session announces itself, and the two things it cannot know](../reference/live_session_banner.md) | — | `live_session_banner.md` | 2026-09-10 | 2026-09-10 |
 | [Troubleshooting — dashboard, Pages, scrape, and the stop-hook false positives](../reference/troubleshooting.md) | — | `troubleshooting.md` | 2026-08-19 | 2026-08-19 |

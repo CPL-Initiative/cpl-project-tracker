@@ -18,11 +18,11 @@ you make for Sam.
 1. **One writer.** S344 could not list sessions: `list_sessions` was not among its tools, and `ListAgents` showed no
    peer. It found a second session working the same day by its PRs: the library side session
    (`session_01WA43Ch5ZxzUCaozXbH4YeN`) merged #1904 and #1905 at 15:15Z. Check the PR list for new work before writing.
-2. **The standing sheet:** Open Asks Sheet 49 ([6uMT8LrZgMZBit3Gs8wHBL](https://claude.ai/artifact/6uMT8LrZgMZBit3Gs8wHBL),
-   current, three SharePoint calls, no replies at 15:30Z). Read `replies` and `done` with `ArtifactData` first. Sheet 48
-   ([FWGJ2uNEGB1RrhMPrFsaCJ](https://claude.ai/artifact/FWGJ2uNEGB1RrhMPrFsaCJ)) is answered in full and superseded by 49.
+2. **The standing sheet:** Open Asks Sheet 49 ([6uMT8LrZgMZBit3Gs8wHBL](https://claude.ai/artifact/6uMT8LrZgMZBit3Gs8wHBL))
+   is answered in full (Sam, 15:23-15:25Z: SharePoint, #1907). No lane carries a NEEDS SAM, so no sheet is open.
 3. **Rule 8:** `cpl_memory` with tags `program-requirements-harvest`, `procedures`, `library`. Read
-   `pilot-procedures-written-2026-10-08` and `apply-migration-timeout-cpl-library-2026-10-08`.
+   `pilot-procedures-written-2026-10-08`, `apply-migration-timeout-cpl-library-2026-10-08` and
+   `sam-sheet49-sharepoint-rulings-2026-10-08`.
 4. **Library briefs:** `cpl_library` rows with status `requested` (none on 2026-10-08).
 
 ## Priority 1: read the program maps nobody has read (the Progress view's current milestone)
@@ -62,9 +62,10 @@ None: a scheduled run with no live input.
   makes sheet 49 the open-asks record's current version. `apply_migration` timed out three times (twice in the library
   side session, once in S344) and wrote nothing. The row read version 48 at 15:27Z, and no lock was waiting.
   `execute_sql` refuses an update by the repo's guard.
-- Sheet 49's three SharePoint calls.
+- Connect the Microsoft 365 connector (claude.ai/customize/connectors, RCCD account), so a session can confirm his 16
+  SharePoint copies and relink the three Drive-linked Library records (library lane, #1907).
 - Read Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767 (the Progress view's call).
-- Drop the Summit v2 MP4s into Drafts. Re-save the Library filer's three Google values.
+- Drop the Summit v2 MP4s into the SharePoint Drafts folder.
 
 ## Patterns that worked
 
