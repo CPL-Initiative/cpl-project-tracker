@@ -106,6 +106,48 @@ async function seedProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Seeds the Records view as a signed-in reviewer sees it (S347, Sheet 51 card 1): a record
+// with flags on the whole record and on a block, its blocks open, and the verdict box with
+// its Needs a fix note open, so every surface the flags and the verdict paint is measured.
+async function seedRecords(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "program-requirements") location.hash = "program-requirements"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => {
+    const M = window.CPL_PROGRAM_REQUIREMENTS;
+    return M && !M._state.loading && M._state.progress;
+  }, null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const M = window.CPL_PROGRAM_REQUIREMENTS, S = M._state;
+    const art = {
+      college: "Irvine Valley College", control_number: "10265", program_title: "Art", award: "A.A. Degree",
+      catalog_year: "2026-2027", source_url: "https://example.org/art", measure: "units", total_min: 27, total_max: 27,
+      checked: false, requirements_fp: "fp-art",
+      checks: { coverage: true, invented: true, arithmetic: "equal", reviewer: { by: "Sam", verdict: null } },
+      record: { program: { measure: "units" }, blocks: [
+        { name: "Choose 6 units", rule: "choose_units", minimum: 6, courses: [
+          { code: "ARTH 4", units: 3, alternatives: [], catalog_addition: true },
+          { code: "ARTH 27", units: 3, alternatives: [] }] }] },
+      display: { build: "2360b83e8100", built: "2026-10-06", checks: { coverage: { listed: 23, placed: 21 }, additions: 4, arithmetic: "equal" },
+        counts: { here: 0, courses: 2 }, figure: {}, courses: {},
+        gaps: [
+          { kind: "Catalog and state file differ", owner: "college", text: "The state's Program Course File lists ARTH C1100; the reader found it not in the text." },
+          { kind: "Check not met", owner: "procedure", text: "The blocks add to 25.5 units; the catalog prints 26.5 units." },
+          { kind: "Catalog and state file differ", owner: "college", text: "The catalog prints ARTH 4 for this program; the state's Program Course File does not list it." },
+          { kind: "Reader's note", owner: "procedure", text: "No program learning outcomes are printed in the text." }] }
+    };
+    S.registry = [{ college: "Irvine Valley College", catalog_platform: "curriqunet", catalog_year: "2026-2027" }];
+    S.records = [];
+    S.review = { email: "reviewer@example.org", records: [art], verdicts: [], error: null };
+    S.error = null;
+    S.open = { "Irvine Valley College|10265": true };
+    S.view = "records";
+    M._render();
+    const fix = document.querySelector("#program-requirements-root .prh-verdict button[aria-expanded]");
+    if (fix) fix.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds My College's Reported expenditures section for the two targets below.
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
@@ -598,6 +640,25 @@ module.exports = {
     routes: [{ hash: "program-requirements", name: "progress-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedProgress(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Program Requirements: the Records view, signed in (S347) ──────────
+     Flags on the whole record and on a block, and the verdict box with its
+     note open: the surfaces Sheet 51 card 1 added, one per theme. */
+  "program-requirements-records": {
+    file: "index.html",
+    title: "Program Requirements: Records, signed in",
+    routes: [{ hash: "program-requirements", name: "records" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedRecords(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "program-requirements-records-dark": {
+    file: "index.html",
+    title: "Program Requirements: Records, signed in, dark",
+    routes: [{ hash: "program-requirements", name: "records-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedRecords(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "my-college-reports-signin": {

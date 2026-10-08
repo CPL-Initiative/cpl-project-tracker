@@ -43,8 +43,18 @@
  * the college as a draft. The MAP team decides when to send; nothing goes to a
  * college on its own, and the tab only composes the text for a person to copy.
  *
+ * Flags and a person's reading (Sam, Open Asks Sheet 51 card 1, "build", 2026-10-08, on
+ * the mock-up prototype/roep_record_flags_mockup.html): each question the reading raised
+ * sits on the block it concerns as a numbered flag that names who fixes it (the college
+ * or the reading procedure), and each record ends with Confirm and Needs a fix for a
+ * reviewer signed in with the magic link. That is this tab's one write:
+ * rpc/program_record_verdict_add (chatbox/supabase_program_record_verdicts.sql), gated to
+ * an allowed reviewer on the server, holding the fingerprint of the requirements the page
+ * showed. A signed-in reviewer also reads the unchecked records, which the public read
+ * never shows.
+ *
  * A FAILED READ SAYS SO; it never renders as zero colleges or zero records.
- * Read-only: this tab writes nothing. Tests: tests/program_requirements.test.js
+ * Tests: tests/program_requirements.test.js
  */
 (function () {
   "use strict";
@@ -93,8 +103,16 @@
     { id: "procedures", label: "Procedures" }
   ];
 
+  /* The one write (Sheet 51 card 1). A reviewer's verdict on a record, held to the
+     fingerprint of the requirements the page showed (requirements_fp, a computed field). */
+  var VERDICT_RPC = "/rpc/program_record_verdict_add";
+  var VERDICT_SELECT = "id,college,control_number,verdict,note,requirements_fp,checked_after,by_email,at";
+  /* Gap kinds that stay notes for the reading procedure; every other gap is a flag. */
+  var NOTE_KINDS = { "Reader's note": 1, "Fixed by a rerun": 1 };
+
   var state = { registry: null, records: null, error: null, loading: false, progress: null,
-    view: "progress", q: "", show: "all", platform: "all", open: {}, secs: null };
+    view: "progress", q: "", show: "all", platform: "all", open: {}, secs: null,
+    review: null, sessionWired: false };
 
   /* ── small helpers ── */
   function el(tag, attrs, kids) {
@@ -197,9 +215,55 @@
     }).catch(function (e) {
       state.error = (e && e.message) || "the read failed";
     });
-    return Promise.all([core, loadProgress()]).then(function () {
+    return Promise.all([core, loadProgress(), loadReview()]).then(function () {
       state.loading = false;
       render();
+    });
+  }
+
+  /* ── a reviewer's session (cpl_session.js keeps it; the server decides who may write) ── */
+  function session() {
+    var S = window.CPL_SESSION;
+    if (!S || typeof S.get !== "function") return null;
+    var s = S.get();
+    return s && s.email && S.isFresh(s) ? s : null;
+  }
+  function sessionHeaders(extra) {
+    var S = window.CPL_SESSION;
+    return S && typeof S.authHeaders === "function" ? S.authHeaders(extra) : headers();
+  }
+  function fresh() {
+    var S = window.CPL_SESSION;
+    return S && typeof S.ensureFresh === "function" ? Promise.resolve(S.ensureFresh()) : Promise.resolve(session());
+  }
+  /* Signed in: every record the reviewer may read (the unchecked ones too) with its
+     fingerprint, and the verdict log. A failed read says so on the Records view and the
+     cards fall back to the public read; it never blocks the tab. */
+  function loadReview() {
+    if (!session()) { state.review = null; return Promise.resolve(); }
+    return fresh().then(function (s) {
+      if (!s || !s.email) { state.review = null; return; }
+      function get(url) {
+        return fetch(url, { headers: sessionHeaders() }).then(function (r) {
+          if (!r.ok) throw new Error(url.split("?")[0].split("/").pop() + " answered " + r.status);
+          return r.json();
+        });
+      }
+      return Promise.all([
+        get(REST + "/program_requirement_records?select=" + RECORD_SELECT + ",requirements_fp&order=college,control_number"),
+        get(REST + "/program_record_verdicts?select=" + VERDICT_SELECT + "&order=id.desc")
+      ]).then(function (got) {
+        state.review = { email: String(s.email).toLowerCase(), records: got[0] || [], verdicts: got[1] || [], error: null };
+      }, function (e) {
+        state.review = { email: String(s.email).toLowerCase(), records: null, verdicts: [], error: (e && e.message) || "the read failed" };
+      });
+    });
+  }
+  function wireSession() {
+    if (state.sessionWired) return;
+    state.sessionWired = true;
+    window.addEventListener("cpl-session-changed", function () {
+      loadReview().then(function () { if (document.getElementById(ROOT_ID)) render(); });
     });
   }
   /* The Progress view's own reads. Each fails on its own and says so in the part it
@@ -432,6 +496,31 @@
       ".prh-empty { border:1px dashed var(--border-strong); border-radius:8px; background:var(--surface-subtle); color:var(--text-muted); padding:24px; text-align:center; }",
       ".prh-foot { margin-top:28px; padding-top:14px; border-top:1px solid var(--border); font-size:.875rem; color:var(--text-muted); display:grid; gap:6px; }",
       ".prh-foot p { margin:0; max-width:var(--cpl-measure,none); }",
+      /* flags and a person's reading (Sheet 51 card 1; the mock-up's look on COBI's tokens). Crimson
+         marks only a record waiting on a person; the flag's owner is a word, its tint a second signal */
+      ".prh-state { font-size:.875rem; font-weight:700; color:var(--text-muted); }",
+      ".prh-check-wide { grid-column:1 / -1; }",
+      ".prh-state-waiting { color:var(--crimson); }",
+      ".prh-flags { display:grid; gap:8px; }",
+      ".prh-flag { border:1px solid var(--border-strong); border-radius:8px; padding:10px 12px; display:grid; gap:6px; min-width:0; margin-bottom:8px; }",
+      ".prh-flag p { margin:0; max-width:var(--cpl-measure,none); }",
+      ".prh-flag-college { background:var(--college-flag, var(--surface-subtle)); }",
+      ".prh-flag-reading { background:var(--reading-flag, var(--surface-subtle)); }",
+      ".prh-flag-top { display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 10px; }",
+      ".prh-flag-n, .prh-flag-kind { font-weight:700; color:var(--text-strong); }",
+      ".prh-flag-owner { font-size:.75rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--text-muted); }",
+      ".prh-mark { color:var(--text-strong); }",
+      ".prh-verdict { border-top:1px solid var(--border-strong); padding:14px; display:grid; gap:10px; background:var(--surface-subtle); border-radius:0 0 8px 8px; }",
+      ".prh-verdict h4 { margin:0; }",
+      ".prh-verdict p { margin:0; font-size:.9rem; max-width:var(--cpl-measure,none); }",
+      ".prh-fix { display:grid; gap:8px; }",
+      ".prh-fix[hidden] { display:none; }",
+      ".prh-said { font-size:.875rem; color:var(--text-muted); }",
+      ".prh-btn { font:inherit; font-size:.9rem; font-weight:600; color:var(--text-body); background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:6px 14px; min-height:44px; cursor:pointer; }",
+      ".prh-btn:hover { border-color:var(--cobalt); }",
+      ".prh-btn.prh-primary { background:var(--text-strong); color:var(--paper); border-color:var(--text-strong); }",
+      ".prh-btn[disabled] { cursor:wait; }",
+      ".prh-review-note p { margin:0; }",
       "@media (max-width: 860px) { .prh-rhead { grid-template-columns:minmax(0,1fr); } .prh-checks { grid-template-columns:repeat(2, minmax(0,1fr)); } }",
       "@media (max-width: 560px) { .prh-count { margin-left:0; width:100%; }" +
         " .prh table.prh-stack thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }" +
@@ -639,10 +728,236 @@
     return box;
   }
 
+  /* ── flags (the mock-up's numbered questions) ──
+     Each gap the display build carries, other than a reader's note, is a flag. It sits on
+     the first block that prints a course its text names, and every row printing one of
+     those courses carries its number; a flag naming no printed course sits on the whole
+     record. The owner is the gap's: the college, or the reading procedure. */
+  function escRe(s) { return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  function flagsFor(p) {
+    var blocks = (p.record && p.record.blocks) || [];
+    var gaps = (p.display && p.display.gaps) || [];
+    var codes = [];
+    blocks.forEach(function (b) {
+      (b.courses || []).forEach(function (c) {
+        if (c.code && codes.indexOf(c.code) < 0) codes.push(c.code);
+        (c.alternatives || []).forEach(function (a) { a = a && (a.code || a); if (a && codes.indexOf(a) < 0) codes.push(a); });
+      });
+    });
+    var flags = [], notes = [], byCode = {};
+    gaps.forEach(function (g) {
+      if (NOTE_KINDS[g.kind]) { notes.push(g); return; }
+      var named = codes.filter(function (c) {
+        return new RegExp("(^|[^A-Za-z0-9])" + escRe(c) + "(?![A-Za-z0-9])").test(g.text || "");
+      });
+      var at = null;
+      for (var i = 0; i < blocks.length && at == null; i++) {
+        if ((blocks[i].courses || []).some(function (c) {
+          var all = [c.code].concat((c.alternatives || []).map(function (a) { return a && (a.code || a); }));
+          return all.some(function (x) { return named.indexOf(x) >= 0; });
+        })) at = i;
+      }
+      flags.push({ kind: g.kind, owner: g.owner === "college" ? "college" : "procedure", text: g.text, codes: named, block: at });
+    });
+    /* Numbered in the order a reader meets them: the whole record first, then block by block. */
+    flags.sort(function (a, b) { return (a.block == null ? -1 : a.block) - (b.block == null ? -1 : b.block); });
+    flags.forEach(function (f, i) {
+      f.n = i + 1;
+      f.codes.forEach(function (c) { (byCode[c] = byCode[c] || []).push(f.n); });
+    });
+    return { flags: flags, notes: notes, byCode: byCode };
+  }
+  function flagSummary(flags) {
+    var col = flags.filter(function (f) { return f.owner === "college"; }).length, pro = flags.length - col;
+    if (!flags.length) return "None";
+    if (!pro) return col + ", all for the college";
+    if (!col) return pro + ", for the reading procedure";
+    return flags.length + ": " + col + " for the college, " + pro + " for the reading procedure";
+  }
+  function flagBox(f) {
+    var college = f.owner === "college";
+    return el("div", { cls: "prh-flag " + (college ? "prh-flag-college" : "prh-flag-reading"), "data-flag": String(f.n) }, [
+      el("div", { cls: "prh-flag-top" }, [
+        el("span", { cls: "prh-flag-n", text: "Flag " + f.n }),
+        el("span", { cls: "prh-flag-kind", text: f.kind || "A question" }),
+        el("span", { cls: "prh-flag-owner", text: college ? "For the college" : "For the reading procedure" })]),
+      el("p", { text: f.text }),
+      college ? el("p", { cls: "prh-small prh-quiet", text: "The college's draft carries it, under Drafts for the college above." }) : null]);
+  }
+  function rowMark(c, byCode) {
+    var ns = [];
+    [c.code].concat((c.alternatives || []).map(function (a) { return a && (a.code || a); })).forEach(function (x) {
+      (byCode[x] || []).forEach(function (n) { if (ns.indexOf(n) < 0) ns.push(n); });
+    });
+    ns.sort(function (a, b) { return a - b; });
+    if (!c.catalog_addition && !ns.length) return null;
+    var label = ns.length ? (ns.length === 1 ? "Flag " + ns[0] : "Flags " + ns.slice(0, -1).join(", ") + " and " + ns[ns.length - 1]) : null;
+    return el("span", { cls: "prh-alts" }, [
+      c.catalog_addition ? "Printed in the catalog; not on the state's list" + (label ? ". " : "") : null,
+      label ? el("b", { cls: "prh-mark", text: label }) : null]);
+  }
+
+  /* ── a person's reading: the state line, the verdict box, the one write ── */
+  /* The three machine checks, read from the record's checks as the server reads them
+     (program_record_machine_pass): coverage, nothing invented, and the units equal the
+     printed total or the catalog prints none. */
+  function machineFails(p) {
+    var c = p.checks || {}, out = [];
+    if (c.coverage !== true) out.push("courses");
+    if (c.invented !== true) out.push("off-list");
+    if (c.arithmetic !== "equal" && c.arithmetic !== "unstated") out.push("units");
+    return out;
+  }
+  function shortCollege(c) { return String(c || "").replace(/\s+College$/, ""); }
+  function monthDay(ts) {
+    var d = ts ? new Date(ts) : null;
+    if (!d || isNaN(d.getTime())) return "";
+    try { return d.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" }); }
+    catch (e) { return day(ts); }
+  }
+  function latestVerdict(p) {
+    var R = state.review;
+    if (!R || !R.verdicts) return null;
+    for (var i = 0; i < R.verdicts.length; i++) {
+      var v = R.verdicts[i];
+      if (v.college === p.college && v.control_number === p.control_number) return v;
+    }
+    return null;
+  }
+  function stateLine(p) {
+    var me = state.review && state.review.email;
+    var v = latestVerdict(p);
+    if (v && (!p.requirements_fp || v.requirements_fp === p.requirements_fp)) {
+      var who = String(v.by_email || "").toLowerCase() === me ? "you" : v.by_email;
+      if (v.verdict === "needs_fix") return { text: "Needs a fix, noted by " + who + ", " + monthDay(v.at), waiting: false };
+      return { text: "Confirmed by " + who + ", " + monthDay(v.at) + (v.checked_after ? "" : "; stays unchecked until its checks pass"), waiting: false };
+    }
+    if (p.checked) return { text: "Checked" + (p.checked_by ? " by " + p.checked_by : "") + (p.checked_at ? ", " + monthDay(p.checked_at) : ""), waiting: false };
+    return { text: v ? "Waiting on your reading; the requirements changed after the last one" : "Waiting on your reading", waiting: true };
+  }
+  function verdictError(e) {
+    var code = e && e.code, st = e && e.status;
+    if (st === 401 || st === 403 || code === "42501")
+      return "Not saved. Your account is not on the reviewer list, or the session expired; sign in again.";
+    if (code === "40001") return "Not saved. The record changed since this page read it; reload the tab and read it again.";
+    var m = String((e && e.message) || "the save failed").replace(/^program_record_verdict_add:\s*/, "");
+    return "Not saved: " + m.charAt(0).toLowerCase() + m.slice(1) + (/[.;]$/.test(m) ? "" : ".");
+  }
+  function postVerdict(p, verdict, note) {
+    return fresh().then(function () {
+      return fetch(REST + VERDICT_RPC, {
+        method: "POST",
+        headers: sessionHeaders({ "Content-Type": "application/json" }),
+        body: JSON.stringify({ p_college: p.college, p_control_number: p.control_number, p_verdict: verdict,
+          p_note: note || null, p_requirements_fp: p.requirements_fp || null })
+      });
+    }).then(function (r) {
+      return r.text().then(function (t) {
+        var j = null;
+        try { j = t ? JSON.parse(t) : null; } catch (e) { j = null; }
+        if (!r.ok) {
+          var err = new Error((j && j.message) || "the save answered " + r.status);
+          err.status = r.status; err.code = j && j.code;
+          throw err;
+        }
+        return j || {};
+      });
+    });
+  }
+  function verdictBox(p, flags, line) {
+    var key = p.college + "|" + p.control_number;
+    var id = "prh-v-" + String(key).replace(/[^A-Za-z0-9]+/g, "-");
+    var fails = machineFails(p);
+    var forCollege = flags.filter(function (f) { return f.owner === "college"; }).length;
+    var lede = "Confirm says the record reads the catalog as printed. " + (fails.length
+      ? "The " + fails.join(" and ") + (fails.length === 1 ? " check is" : " checks are") +
+        " not met, so the record stays unchecked after you confirm, until its reading procedure takes the fix and a rerun passes. Needs a fix sends your note to that procedure instead."
+      : "The record passes the three machine checks, so confirming marks it checked and Sierra may quote it." +
+        (forCollege ? " The " + (forCollege === 1 ? "flag" : forCollege + " flags") + " for the college stay open with " +
+          shortCollege(p.college) + "; they concern the catalog itself and do not hold the record back." : ""));
+    var said = el("p", { cls: "prh-said", "aria-live": "polite" });
+    var confirm = el("button", { cls: "prh-btn prh-primary", type: "button", text: "Confirm" });
+    var fixBtn = el("button", { cls: "prh-btn", type: "button", "aria-expanded": "false", "aria-controls": id + "-fix", text: "Needs a fix" });
+    var note = el("textarea", { id: id + "-note", rows: "3", maxlength: "2000", cls: "prh-draft-text",
+      placeholder: "For example: read the elective lists from the catalog's addendum once it posts." });
+    var save = el("button", { cls: "prh-btn prh-primary", type: "button", text: "Save the note" });
+    var fix = el("div", { cls: "prh-fix", id: id + "-fix" }, [
+      el("label", { "for": id + "-note", cls: "prh-small" }, [el("b", { text: "What should change." }),
+        " The note goes to " + shortCollege(p.college) + "'s reading procedure; the next run carries it out."]),
+      note, el("div", { cls: "prh-draft-actions" }, [save])]);
+    fix.hidden = true;
+    function busy(on) { confirm.disabled = on; fixBtn.disabled = on; save.disabled = on; }
+    function done(res, verdict, text) {
+      var v = { id: res.id, college: p.college, control_number: p.control_number, verdict: verdict,
+        note: text || null, requirements_fp: res.requirements_fp || p.requirements_fp,
+        checked_after: !!res.checked, by_email: res.by || (state.review && state.review.email), at: res.at || new Date().toISOString() };
+      if (state.review) state.review.verdicts = [v].concat(state.review.verdicts || []);
+      p.checked = !!res.checked;
+      p.checked_by = res.checked ? v.by_email : null;
+      p.checked_at = res.checked ? v.at : null;
+      var sl = stateLine(p);
+      line.textContent = sl.text;
+      line.className = "prh-state" + (sl.waiting ? " prh-state-waiting" : "");
+    }
+    confirm.addEventListener("click", function () {
+      fix.hidden = true; fixBtn.setAttribute("aria-expanded", "false");
+      busy(true); said.textContent = "Saving your reading…";
+      postVerdict(p, "confirm", null).then(function (res) {
+        done(res, "confirm", null);
+        said.textContent = res.checked ? "Confirmed. The record is checked, and Sierra may quote it."
+          : "Confirmed and logged. The record stays unchecked until its checks pass.";
+      }, function (e) { said.textContent = verdictError(e); }).then(function () { busy(false); });
+    });
+    fixBtn.addEventListener("click", function () {
+      fix.hidden = !fix.hidden;
+      fixBtn.setAttribute("aria-expanded", fix.hidden ? "false" : "true");
+      if (!fix.hidden) note.focus();
+    });
+    save.addEventListener("click", function () {
+      var text = note.value.trim();
+      if (!text) { said.textContent = "Write what should change, then save."; note.focus(); return; }
+      busy(true); said.textContent = "Saving your note…";
+      postVerdict(p, "needs_fix", text).then(function (res) {
+        done(res, "needs_fix", text);
+        fix.hidden = true; fixBtn.setAttribute("aria-expanded", "false"); note.value = "";
+        said.textContent = res.filed === false ? "Saved your note in the verdict log. The record stays unchecked."
+          : "Saved your note. It joins " + shortCollege(p.college) + "'s open questions on its reading procedure, and the record stays unchecked.";
+      }, function (e) { said.textContent = verdictError(e); }).then(function () { busy(false); });
+    });
+    return el("div", { cls: "prh-verdict", "aria-label": "Your reading of " + p.program_title }, [
+      el("h4", { text: "Your reading" }), el("p", { text: lede }),
+      el("div", { cls: "prh-draft-actions" }, [confirm, fixBtn]), fix, said]);
+  }
+  function signInBox() {
+    var mount = el("div", { cls: "prh-signin-mount" });
+    var d = el("details", { cls: "prh-notes prh-signin" }, [
+      el("summary", { text: "Reviewers: sign in to confirm a record or note a fix" }), mount]);
+    d.addEventListener("toggle", function () {
+      if (!d.open || mount.childNodes.length) return;
+      var SI = window.CPL_REVIEWER_SIGNIN;
+      if (SI && typeof SI.mountInto === "function") {
+        SI.mountInto(mount, { title: "Sign in to read records",
+          blurb: "A reviewer signed in with the magic link sees Confirm and Needs a fix at the foot of each record. Everyone else sees the flags and the drafts.",
+          returnTab: "program-requirements" });
+      } else {
+        mount.appendChild(el("p", { cls: "prh-small", text: "The sign-in box did not load here; sign in from the Admin tab, then come back." }));
+      }
+    });
+    return d;
+  }
+
   function viewRecords() {
-    var P = state.records, R = state.registry;
+    var Rv = state.review;
+    var P = Rv && Rv.records ? Rv.records : state.records, R = state.registry;
     var box = el("div");
     box.appendChild(el("p", { cls: "prh-lede", text: "Each program read from its college's catalog: the required courses, the courses chosen from a list, and the electives. A record passes four checks: it places the courses the state's Program Course File lists, it adds no course the catalog does not print, its units add up to the catalog's total, and a person read it against the catalog. A misread changes the college's reading procedure, never the record." }));
+    /* Who is reading: a lede beside the first one, so the view keeps only sections below it. */
+    box.appendChild(el("div", { cls: "prh-lede prh-review-note" }, [
+      Rv && Rv.error ? el("p", { cls: "prh-small prh-caution", role: "status",
+        text: "Your sign-in could not read the records (" + Rv.error + "), so these are the checked records the public sees, without Confirm and Needs a fix. Reload the tab to try again." })
+      : Rv ? el("p", { cls: "prh-small prh-quiet",
+        text: "Signed in as " + Rv.email + ". Each record ends with Confirm and Needs a fix, and the records waiting on a person's reading show here too." })
+      : signInBox()]));
     if (!P.length) {
       box.appendChild(el("div", { cls: "prh-empty", text: "No program record has been loaded yet." }));
       return box;
@@ -687,6 +1002,7 @@
     var figure = disp.figure || {};
     var courses = disp.courses || {};
     function dd(label, value) { return el("div", { cls: "prh-check" }, [el("dt", { text: label }), el("dd", { text: value })]); }
+    function wide(d) { d.className += " prh-check-wide"; return d; }
     var placed = ck.listed != null ? ck.placed + " of " + ck.listed + " placed" : "Not measured";
     var arith = ck.arithmetic === "equal" ? "Equal, " + span(p.total_min, p.total_max) + " " + unit
       : ck.arithmetic === "unstated" ? "Catalog prints no total" : (ck.arithmetic || "Not measured");
@@ -696,26 +1012,35 @@
           " of " + (counts.courses || "?") + " carry CPL at this college" +
           (figure.up_to != null ? "; up to " + fmt(figure.up_to) + " of " + span(p.total_min, p.total_max) + " " + unit + " through CPL" : "")])
       : el("div", { cls: "prh-cpl prh-quiet", text: "No course here carries CPL at this college yet" });
+    var F = flagsFor(p);
+    var reviewing = !!(state.review && state.review.records && p.requirements_fp);
+    var sl = reviewing ? stateLine(p) : null;
+    var line = sl ? el("span", { cls: "prh-state" + (sl.waiting ? " prh-state-waiting" : ""), text: sl.text }) : null;
     var bodyId = "prh-body-" + String(key).replace(/[^A-Za-z0-9]+/g, "-");
     var isOpen = !!state.open[key];
     var btn = el("button", { cls: "prh-toggle", type: "button", "aria-expanded": isOpen ? "true" : "false",
       "aria-controls": bodyId, text: isOpen ? "Hide the blocks" : "Show the blocks" });
     var head = el("div", { cls: "prh-rhead" }, [
       el("div", { cls: "prh-rtitle" }, [el("strong", { text: p.program_title }),
-        el("span", { cls: "prh-small prh-quiet", text: award(p.award) + " · " + p.control_number }), btn]),
+        el("span", { cls: "prh-small prh-quiet", text: award(p.award) + " · " + p.control_number }), line, btn]),
       el("dl", { cls: "prh-checks" }, [dd("Courses", placed),
         dd("Off the state list", ck.additions ? ck.additions + ", printed in the catalog" : "None"),
-        dd("Units", arith), dd("Person's reading", reader)]),
+        dd("Units", arith), dd("Person's reading", reader),
+        F.flags.length ? wide(dd("Flags", flagSummary(F.flags))) : null]),
       cpl]);
     var body = el("div", { cls: "prh-body", id: bodyId });
     body.hidden = !isOpen;
     var blocks = (p.record && p.record.blocks) || [];
     var groups = {};
     blocks.forEach(function (b) { if (b.option_group) groups[b.option_group] = (groups[b.option_group] || 0) + 1; });
-    blocks.forEach(function (b) {
+    var whole = F.flags.filter(function (f) { return f.block == null; });
+    if (whole.length) body.appendChild(el("div", { cls: "prh-flags" }, [
+      el("h4", { text: "On the whole record" })].concat(whole.map(flagBox))));
+    blocks.forEach(function (b, bi) {
       var h = el("h4", {}, [b.name || "Courses", el("span", { cls: "prh-rule", text: ruleText(b, p.measure, groups) })]);
       if (b.stated && b.stated.min != null) h.appendChild(el("span", { cls: "prh-quiet prh-small", text: "Catalog prints " + span(b.stated.min, b.stated.max) + " " + unit }));
-      body.appendChild(el("div", {}, [h, table([
+      var atBlock = F.flags.filter(function (f) { return f.block === bi; });
+      body.appendChild(el("div", {}, [h].concat(atBlock.map(flagBox)).concat([table([
         { label: "Course", w: "17%" }, { label: "Title", w: "53%" },
         { label: unit.charAt(0).toUpperCase() + unit.slice(1), w: "12%", num: true },
         { label: "CPL here", w: "18%", num: true }
@@ -726,22 +1051,23 @@
         var alts = (c.alternatives || []).map(function (a) { return a.code || a; });
         return [
           [c.code, alts.length ? el("span", { cls: "prh-alts", text: "or " + alts.join(", ") }) : null],
-          [info.title || "", c.catalog_addition ? el("span", { cls: "prh-alts", text: "Printed in the catalog; not on the state's list" }) : null],
+          [info.title || "", rowMark(c, F.byCode)],
           span(c.units, c.units_max),
           n ? el("strong", { text: String(n) }) : el("span", { cls: "prh-quiet", text: "0" })
         ];
-      }), p.program_title + ": " + (b.name || "courses"), true)]));
+      }), p.program_title + ": " + (b.name || "courses"), true)])));
     });
     if (p.total_min != null) body.appendChild(el("p", { cls: "prh-small", style: "margin:0", text: "Program total: " + span(p.total_min, p.total_max) + " " + unit + "." }));
     body.appendChild(el("p", { cls: "prh-small prh-quiet", style: "margin:0" }, [
       "Read from ", p.source_url ? link(p.source_url, "the catalog page") : "the catalog",
       " (" + yr(p.catalog_year) + ")" + (p.checked_by ? "; read against the catalog by " + p.checked_by : "") + ".",
       disp.build ? " Display build " + disp.build + (disp.built ? ", " + disp.built : "") + "." : ""]));
-    var gaps = (disp.gaps || []).filter(function (g) { return g.owner !== "college"; });
+    var gaps = F.notes;
     if (gaps.length) body.appendChild(el("details", { cls: "prh-notes" }, [
       el("summary", { text: "Notes for the reading procedure (" + gaps.length + ")" }),
       el("ul", {}, gaps.map(function (g) { return el("li", { text: (g.kind ? g.kind + ": " : "") + g.text }); }))]));
-    var art = el("article", { cls: "prh-rec" + (isOpen ? " prh-open" : ""), "aria-label": p.program_title + ", " + p.college }, [head, body]);
+    var art = el("article", { cls: "prh-rec" + (isOpen ? " prh-open" : ""), "aria-label": p.program_title + ", " + p.college },
+      [head, body, reviewing ? verdictBox(p, F.flags, line) : null]);
     btn.addEventListener("click", function () {
       var open = body.hidden;
       body.hidden = !open;
@@ -1324,6 +1650,7 @@
   function activate() {
     var saved = safeGet(VIEW_KEY);
     if (saved && VIEWS.some(function (v) { return v.id === saved; })) state.view = saved;
+    wireSession();
     render();
     if (!state.registry && !state.loading) load();
   }
@@ -1333,7 +1660,8 @@
     _state: state, _load: load, _render: render, mountSierra: mountSierra, SIERRA_SURFACE: SIERRA_SURFACE,
     catalogStatus: catalogStatus, filterRegistry: filterRegistry, recordChecks: recordChecks,
     ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span,
-    collegeDrafts: collegeDrafts, draftText: draftText,
+    collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary,
+    machineFails: machineFails, verdictError: verdictError, VERDICT_RPC: VERDICT_RPC,
     MILESTONES: MILESTONES, PARTS: PARTS, progressContext: progressContext, headlineFacts: headlineFacts, nextRun: nextRun, nextWeekly: nextWeekly
   };
 })();

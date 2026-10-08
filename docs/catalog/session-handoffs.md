@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 348 | [Sierra's port, Sheet 52, Palo Verde's last write](../session_348_handoff.md) | 2026-10-08 |
+| 348 | [Sierra's port, Sam's two readings, the guard change](../session_348_handoff.md) | 2026-10-08 |
 | 347 | [Sam's headline for the Chancellor, Sheet 51's two calls, then Palo Verde](../session_347_handoff.md) | 2026-10-08 |
 | 346 | [Sam's three asks from the harvest tab, then card 4 and the maps](../session_346_handoff.md) | 2026-10-08 |
 | 345 | [every pilot college has a procedure; map searches at three colleges](../session_345_handoff.md) | 2026-10-08 |

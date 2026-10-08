@@ -359,6 +359,7 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [
         "coci_college_programs",
+        "program_record_verdicts",
         "program_requirement_records",
         "program_source_addenda",
         "program_source_registry"

@@ -133,6 +133,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_integration_backlog` | tabs: `nc-learning-partners` | — |
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
+| `program_record_verdicts` | tabs: `program-requirements` | — |
 | `program_requirement_records` | tabs: `college-briefing`, `program-requirements` · scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `program_source_addenda` | tabs: `program-requirements` | — |
 | `program_source_registry` | tabs: `college-briefing`, `program-requirements` · scripts: `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py` | — |
@@ -817,6 +818,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_courses_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_map_parse_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_record_verdicts_sql_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
@@ -896,6 +898,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs.google.com` | tabs: `nc-learning-partners` |
 | `drive.google.com` | scripts: `scripts/library_file.py` |
 | `esm.sh` | pages: `kb-portal/index.html` |
+| `example.org` | modules: `a11y.config.js` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py` |
@@ -1044,5 +1047,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 96 Supabase tables · 35 RPCs · 6 edge functions · 608 file
-datasets · 161 external services · 420 consumers · 45 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 35 RPCs · 6 edge functions · 609 file
+datasets · 162 external services · 420 consumers · 45 workflows · 39 tabs.

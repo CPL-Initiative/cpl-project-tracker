@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-527 document(s).
+528 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -153,6 +153,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A pane painted only by its event is blank after every re-render](../kb-notes/methodology-a-pane-painted-only-by-its-event-is-blank-after-a-re-render.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A partial ARIA pattern is worse than none — take the native control instead](../kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md) | methodology | published | 2026-08-16 | 2026-08-16 |
 | [A percentage must never round up into a claim it cannot support](../kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [A person's write must survive the next reload](../kb-notes/methodology-a-persons-write-must-survive-the-next-reload.md) | methodology | published | 2026-10-08 | 2026-10-08 |
 | [A phrase sweep misses what a line break splits](../kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits.md) | methodology | published | 2026-08-31 | 2026-08-31 |
 | [A pipe discards a command's verdict](../kb-notes/methodology-a-pipe-discards-a-commands-verdict.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A piped test run reports the pipe's exit, not the suite's](../kb-notes/methodology-a-piped-test-run-reports-the-pipes-exit.md) | methodology | published | 2026-08-30 |  |
