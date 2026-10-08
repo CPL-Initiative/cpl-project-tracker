@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-08T19:03:09Z",
-  "session": 346,
-  "moniker": "SkyCairn",
+  "written_at": "2026-10-08T20:47:09Z",
+  "session": 347,
+  "moniker": "SkyTrellis",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_347_handoff.md",
+  "handoff": "docs/session_348_handoff.md",
   "unchecked": [
     {
       "college": "Irvine Valley College",
@@ -23,16 +23,16 @@
     }
   ],
   "next_step": {
-    "title": "A two-number headline for the Chancellor",
-    "text": "Sam asked for the count of active programs in the state beside the count read from a catalog and checked; the mock-up waits on his yes, then the band goes at the top of this view."
+    "title": "Palo Verde's map columns, then Sheet 52",
+    "text": "Palo Verde's map is read and its procedure updated; the registry's map columns wait on one paste or a mode switch, and then 32 of 32 published maps are settled."
   },
   "calls": [
     {
       "title": "Save your reading from the tab",
       "text": "Whether the Program records view may save Confirm or Needs a fix on a record, as the mock-up shows.",
       "if_no_reply": "Your readings keep arriving on sheets and the two records stay unchecked.",
-      "link": "https://claude.ai/artifact/AYuPisSF5Tc4rmftgCYvb2",
-      "link_text": "Open Asks Sheet 51, card 1",
+      "link": "https://claude.ai/artifact/1S8zkqqF9QdzqwLJSaGB1A",
+      "link_text": "Open Asks Sheet 52, card 1",
       "view": {
         "href": "https://claude.ai/artifact/2JofNdHZvVTtz9bKQTsa4g",
         "text": "The mock-up"
@@ -42,19 +42,23 @@
       "title": "Show two new program maps to Sierra",
       "text": "The go to apply display build 2360b83e8100, which places Mt. San Antonio's Fire Technology and Early Childhood Education courses by term.",
       "if_no_reply": "CPL Pathways shows the maps; Sierra keeps the earlier build.",
-      "link": "https://claude.ai/artifact/AYuPisSF5Tc4rmftgCYvb2",
-      "link_text": "Open Asks Sheet 51, card 2",
+      "link": "https://claude.ai/artifact/1S8zkqqF9QdzqwLJSaGB1A",
+      "link_text": "Open Asks Sheet 52, card 2",
       "view": {
         "href": "#cpl-pathways",
         "text": "CPL Pathways"
       }
     },
     {
-      "title": "The headline for the Chancellor",
-      "text": "Every active program in the state (20,282) beside the ones read from a catalog and checked (20), with outcomes and maps on a line beneath.",
-      "if_no_reply": "It goes on the next sheet as a card.",
-      "link": "https://claude.ai/artifact/ME23x5taJpTKpx4RBwQ2Tr",
-      "link_text": "The headline mock-up"
+      "title": "Write Palo Verde's map columns",
+      "text": "One statement in the SQL editor, or a switch to Accept edits so the guard change you asked for can land and a session runs it.",
+      "if_no_reply": "The maps milestone reads 31 of 32 settled.",
+      "link": "https://claude.ai/artifact/1S8zkqqF9QdzqwLJSaGB1A",
+      "link_text": "Open Asks Sheet 52, card 3",
+      "view": {
+        "href": "#program-requirements",
+        "text": "Sequences"
+      }
     }
   ],
   "notes": {
@@ -65,36 +69,20 @@
   },
   "changes": [
     {
-      "at": "2026-10-08T17:03:10Z",
-      "text": "Reading procedures written for twelve more colleges"
+      "at": "2026-10-08T20:13:44Z",
+      "text": "The headline for the Chancellor went live on this view: 20 of 20,282 active programs read and checked."
     },
     {
-      "at": "2026-10-08T17:09:03Z",
-      "text": "Open Asks Sheet 50 published with five calls"
+      "at": "2026-10-08T19:59:46Z",
+      "text": "Palo Verde's program maps read at its LibGuides address; two two-year maps found."
     },
     {
-      "at": "2026-10-08T17:18:24Z",
-      "text": "Sam answered Open Asks Sheet 50; the Library record shows sheet 50"
+      "at": "2026-10-08T20:10:00Z",
+      "text": "Palo Verde's reading procedure written, version 2."
     },
     {
-      "at": "2026-10-08T17:24:00Z",
-      "text": "The Progress view links each call to its sheet card"
-    },
-    {
-      "at": "2026-10-08T18:41:43Z",
-      "text": "A map that names a few courses outside its program now counts; Mt. San Antonio's two maps filed"
-    },
-    {
-      "at": "2026-10-08T18:41:43Z",
-      "text": "CPL Pathways lets you choose a college first"
-    },
-    {
-      "at": "2026-10-08T18:53:00Z",
-      "text": "Reading procedures for 28 colleges: 31 of 32 published maps settled"
-    },
-    {
-      "at": "2026-10-08T18:55:00Z",
-      "text": "Open Asks Sheet 51 published with two calls"
+      "at": "2026-10-08T20:25:05Z",
+      "text": "The To-Do button retired; each checkpoint now audits one view."
     }
   ],
   "next_run": {

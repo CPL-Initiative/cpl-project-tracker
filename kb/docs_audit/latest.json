@@ -10,60 +10,61 @@
     "other": 150000
   },
   "summary": {
-    "files": 1080,
-    "bytes": 11304592,
-    "over_budget": 6,
-    "handoff_max": 347,
+    "files": 1083,
+    "bytes": 11319351,
+    "over_budget": 7,
+    "handoff_max": 348,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59932,
+    "always_loaded_bytes": 60240,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59932,
-        "over": 0
+        "bytes": 60240,
+        "over": 1
       },
       "other": {
         "files": 118,
-        "bytes": 3341073,
+        "bytes": 3342320,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10252,
+        "bytes": 10024,
         "over": 0
       },
       "lessons": {
         "files": 79,
-        "bytes": 2319612,
+        "bytes": 2321679,
         "over": 2
       },
       "kb_note": {
-        "files": 528,
-        "bytes": 2647993,
+        "files": 529,
+        "bytes": 2649519,
         "over": 0
       },
       "roadmap_lane": {
-        "files": 35,
-        "bytes": 314549,
+        "files": 36,
+        "bytes": 318932,
         "over": 1
       },
       "handoff": {
-        "files": 318,
-        "bytes": 2611181,
+        "files": 319,
+        "bytes": 2616637,
         "over": 0
       }
     },
     "by_rule": {
+      "oversized_doc": 7,
       "house_voice": 23,
-      "oversized_doc": 6,
+      "american_spelling": 1,
       "vault_heavy_path": 59
     },
     "vault": {
-      "files": 3744,
-      "bytes": 1802758564,
-      "heavy_bytes": 817343960,
+      "files": 3757,
+      "bytes": 1802854724,
+      "heavy_bytes": 817363067,
       "heavy_share": 0.453,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -129,6 +130,19 @@
     }
   },
   "findings": [
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 60240,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 240,
+        "ratio": 1.0
+      },
+      "message": "60,240 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -414,13 +428,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 704099,
+        "bytes": 704567,
         "limit": 150000,
         "lane": "other",
-        "over_by": 554099,
-        "ratio": 4.69
+        "over_by": 554567,
+        "ratio": 4.7
       },
-      "message": "704,099 B is 4.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "704,567 B is 4.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -434,6 +448,21 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "cancelled": {
+            "n": 1,
+            "prefer": "canceled"
+          }
+        }
+      },
+      "message": "1 British form — cancelled→canceled",
+      "path": "docs/session_348_handoff.md"
     },
     {
       "rule": "house_voice",
@@ -688,10 +717,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12534265,
+        "bytes": 12553371,
         "kind": "file"
       },
-      "message": "12,534,265 B single file inside the vault"
+      "message": "12,553,371 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -838,10 +867,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715709,
+        "bytes": 6715710,
         "kind": "file"
       },
-      "message": "6,715,709 B single file inside the vault"
+      "message": "6,715,710 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

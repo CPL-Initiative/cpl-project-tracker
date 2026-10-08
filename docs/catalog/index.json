@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 526,
+   "count": 527,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2135,6 +2135,21 @@
      "title": "A lane file is a summary of a measurement, not the measurement",
      "type": "methodology",
      "updated": "2026-09-13"
+    },
+    {
+     "created": "2026-10-08",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-lapsed-name-is-not-a-refusal.md",
+     "status": "published",
+     "tags": [
+      "kb-note",
+      "methodology",
+      "program-requirements-harvest",
+      "college-reads"
+     ],
+     "title": "A lapsed custom name is not a refusal",
+     "type": "methodology",
+     "updated": "2026-10-08"
     },
     {
      "created": "2026-09-04",
@@ -14234,7 +14249,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 54,
+   "count": 55,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14659,6 +14674,21 @@
      "updated": "2026-10-03"
     },
     {
+     "created": "2026-10-08",
+     "governs": [],
+     "path": "docs/reference/lanes/sierra-page-redesign.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "sierra",
+      "first-light"
+     ],
+     "title": "Sierra's page redesign (after america.gov) \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-08"
+    },
+    {
      "created": "2026-08-28",
      "governs": [],
      "path": "docs/reference/lanes/sierra-false-absences.md",
@@ -14991,8 +15021,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 318,
+   "count": 319,
    "docs": [
+    {
+     "created": "2026-10-08",
+     "governs": [],
+     "n": 348,
+     "path": "docs/session_348_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "program-requirements-harvest",
+      "decision-sheets",
+      "checkpoint"
+     ],
+     "title": "Sierra's port, Sheet 52, Palo Verde's last write",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-08",
      "governs": [],
@@ -20407,5 +20454,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1067
+ "total": 1070
 }
