@@ -49,6 +49,10 @@
   --sierra-bar-shadow: 0 6px 22px rgba(28, 28, 26, .14);
   --sierra-art-dim: 1;
   --sierra-navy: #002F6D;         /* seal blue: the Whitney roundel beside each answer */
+  /* Sierra's name and its mountain line, a ghosted dark blue (Sam, 2026-10-08):
+     seal blue #002F6D at 70% over paper. 5.03:1 on paper, so it holds AA even
+     where the name is small (the reading header). */
+  --sierra-ghost: #4A6A93;
   --sierra-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --sierra-font: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
 }
@@ -61,6 +65,7 @@
     --sierra-cobalt: #7DA1D4; --sierra-on-cobalt: #151514; --sierra-crimson: #CF8F8F;
     --sierra-shadow: 0 18px 50px rgba(0, 0, 0, .5); --sierra-bar-shadow: 0 6px 22px rgba(0, 0, 0, .45);
     --sierra-art-dim: .82;
+    --sierra-ghost: #6885AE;      /* the light-on-dark blue #7DA1D4 at 80% over dark paper: 4.84:1 */
     color-scheme: dark;
   }
 }
@@ -72,6 +77,7 @@
   --sierra-cobalt: #7DA1D4; --sierra-on-cobalt: #151514; --sierra-crimson: #CF8F8F;
   --sierra-shadow: 0 18px 50px rgba(0, 0, 0, .5); --sierra-bar-shadow: 0 6px 22px rgba(0, 0, 0, .45);
   --sierra-art-dim: .82;
+  --sierra-ghost: #6885AE;        /* the light-on-dark blue #7DA1D4 at 80% over dark paper: 4.84:1 */
   color-scheme: dark;
 }
 
@@ -156,20 +162,29 @@ button { font: inherit; color: inherit; }
   padding: 0 16px 8px;
 }
 
-/* Sierra's mountain line, ghosted behind her name: the ridge's flat base sits on
-   the baseline and its peak rises just past the capitals. Muted CO blue, the
-   quietest thing in the line (the glyph rule), and decorative to a screen reader. */
-.s-peak { position: relative; display: inline-block; isolation: isolate; }
+/* Sierra's name and her mountain line, one ghosted dark blue (Sam, 2026-10-08:
+   "a dark blue ghosted font with a much thicker same color mountain line...
+   Match the font width and mountain line"). Decorative to a screen reader. */
+.s-peak { position: relative; display: inline-block; isolation: isolate; color: var(--sierra-ghost); }
+/* Same color, same weight, so where the line crosses a letter the two would
+   merge and the word stops reading. Each letter carries a thin halo in the
+   page's own color, which cuts the line where it passes behind the letter:
+   the line reads as running behind the name, and the name stays a word. */
+.s-peak { text-shadow: 0.050em 0.000em 0 var(--sierra-paper), 0.046em 0.019em 0 var(--sierra-paper), 0.035em 0.035em 0 var(--sierra-paper), 0.019em 0.046em 0 var(--sierra-paper), 0.000em 0.050em 0 var(--sierra-paper), -0.019em 0.046em 0 var(--sierra-paper), -0.035em 0.035em 0 var(--sierra-paper), -0.046em 0.019em 0 var(--sierra-paper), -0.050em 0.000em 0 var(--sierra-paper), -0.046em -0.019em 0 var(--sierra-paper), -0.035em -0.035em 0 var(--sierra-paper), -0.019em -0.046em 0 var(--sierra-paper), -0.000em -0.050em 0 var(--sierra-paper), 0.019em -0.046em 0 var(--sierra-paper), 0.035em -0.035em 0 var(--sierra-paper), 0.046em -0.019em 0 var(--sierra-paper); }
+/* The line spans the word's own width and rises from the lowercase letters'
+   x-height, so Mt. Whitney's ridge stands over the name as a skyline; the
+   letters' halo cuts it where it passes behind them. */
 .s-ridge {
   position: absolute; z-index: -1; pointer-events: none;
-  left: -6%; width: 112%; height: auto; bottom: .04em;
-  color: var(--sierra-cobalt); opacity: .4;
+  left: 3%; width: 94%; height: auto; bottom: .5em;
+  color: inherit;
 }
-/* A fine line at any size: the stroke does not scale with the word (the
-   path carries vector-effect: non-scaling-stroke), so the greeting's ridge
-   stays a drawn line instead of an 8px band through the letters. */
-.s-ridge path { stroke-width: 2.5px; }
-.s-who-head .s-ridge path { stroke-width: 1.5px; }
+/* Sam, 2026-10-08: "a dark blue ghosted font with a much thicker same color
+   mountain line... Match the font width and mountain line." The line carries the
+   weight of the letters' stems: Playfair Display SemiBold's lowercase stem (i, r)
+   measures 0.126em, and the path's vector-effect: non-scaling-stroke makes this
+   em the word's own size, so the two stay matched at any size. */
+.s-ridge path { stroke-width: .126em; }
 
 /* Arriving: the greeting */
 .s-hello { text-align: center; display: grid; gap: 10px; padding-top: clamp(14px, 3vw, 30px); }

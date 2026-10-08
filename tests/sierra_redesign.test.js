@@ -265,11 +265,19 @@ function ask(w, text) {
     check("(2b) ⭐ the ridgeline is ghosted behind her name in the greeting and in the reading header",
       ridges.length === 2 && /<h1>Hello, I'm <span class="s-peak">Sierra<svg class="s-ridge"/.test(HTML),
       "Sam, 2026-10-08: \"I like the mountain line\"");
-    check("(2b) the ridge takes the page's color (currentColor), so it reads in light and dark",
+    // Sam, 2026-10-08: "a dark blue ghosted font with a much thicker same color
+    // mountain line... Match the font width and mountain line."
+    check("(2b) ⭐ the name and its line share one ghosted dark blue, by token in light and dark",
       /class="s-ridge"[\s\S]*?stroke="currentColor"/.test(HTML) &&
-      /\.s-ridge\s*\{[^}]*color:\s*var\(--sierra-cobalt\)/.test(CSS));
-    check("(2b) and it is ghosted, the quietest thing in the line (the glyph rule)",
-      /\.s-ridge\s*\{[^}]*opacity:\s*\.[1-4]/.test(CSS));
+      /\.s-peak\s*\{[^}]*color:\s*var\(--sierra-ghost\)/.test(CSS) &&
+      /\.s-ridge\s*\{[^}]*color:\s*inherit/.test(CSS) &&
+      (CSS.match(/--sierra-ghost:\s*#[0-9A-Fa-f]{6}/g) || []).length === 3);
+    check("(2b) ⭐ the line carries the letters' stem weight at any size (0.126em, a non-scaling stroke)",
+      /\.s-ridge path\s*\{\s*stroke-width:\s*\.126em/.test(CSS) &&
+      (HTML.match(/vector-effect="non-scaling-stroke"/g) || []).length === 2);
+    check("(2b) the line spans the word, and the letters' halo in the page color cuts it where it passes behind",
+      /\.s-ridge\s*\{[^}]*width:\s*9\d%/.test(CSS) &&
+      /\.s-peak\s*\{\s*text-shadow:[^}]*var\(--sierra-paper\)/.test(CSS));
     const { w, d } = loadDom();
     check("(2b) the greeting still reads as words to a screen reader",
       d.querySelector("h1").textContent === "Hello, I'm Sierra");
