@@ -58,7 +58,13 @@ cases = [
     ("markdown in the next step", lambda q: q["next_step"].__setitem__("text", "**Bold** words"), "markdown"),
     ("a change with no time", lambda q: q["changes"].append({"text": "x"}), "changes"),
     ("a link that is not https", lambda q: q["calls"].append({"title": "t", "text": "x", "link": "http://example.org"}), "link"),
+    ("a view that is neither https nor a bare tab hash", lambda q: q["calls"].append({"title": "t", "text": "x", "view": {"href": "#tab=x&y", "text": "See it"}}), "view.href"),
+    ("a view with no words", lambda q: q["calls"].append({"title": "t", "text": "x", "view": {"href": "#cpl-pathways"}}), "view.text"),
 ]
+q = copy.deepcopy(Q)
+q["calls"].append({"title": "t", "text": "x", "link": "https://claude.ai/artifact/x", "link_text": "Answer on Open Asks Sheet 50, card 1",
+                   "view": {"href": "#cpl-pathways", "text": "See it on CPL Pathways"}})
+check("accepts a call with its sheet link, its words, and a tab to view the item", not M.faults(q), M.faults(q))
 for name, mut, frag in cases:
     hit, out = faulted(mut, frag)
     check("refuses " + name, hit, out)

@@ -118,6 +118,13 @@ def faults(q, root=ROOT, parts=None):
         text(c.get("if_no_reply"), w + ".if_no_reply", required=False)
         need(c.get("link") is None or (isinstance(c.get("link"), str) and c["link"].startswith("https://")),
              w + ".link must be an https address")
+        text(c.get("link_text"), w + ".link_text", required=False)
+        v = c.get("view")
+        if v is not None:
+            need(isinstance(v, dict) and isinstance(v.get("href"), str)
+                 and (v["href"].startswith("https://") or re.match(r"^#[A-Za-z0-9_.~-]+$", v["href"])),
+                 w + ".view.href must be an https address or a COBI tab's bare hash (#cpl-pathways)")
+            text((v or {}).get("text") if isinstance(v, dict) else None, w + ".view.text")
     notes = q.get("notes", {})
     need(isinstance(notes, dict), "notes must map a part id to its foot line")
     known = parts if parts is not None else part_ids()

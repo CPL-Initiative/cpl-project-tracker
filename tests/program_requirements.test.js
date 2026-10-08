@@ -517,6 +517,54 @@ block("(8d)", function () {
   check("(8d) Sequences counts an open map host as read", /1maps read/.test(facts.replace(/\s+/g, "")) || /1\s*maps read/.test(facts), facts);
 });
 
+block("(8f)", function () {
+  // Sam, 2026-10-08, on this view: he saw two calls and "don't see how to view them and respond", then
+  // "If you can embed the links on the tab, it would be fantastic". A call carries the sheet that answers it
+  // (link, link_text) and where to see the item (view): a COBI tab's bare hash opens in place.
+  const f = progressFixture(20);
+  f.queue.calls[0].link = "https://claude.ai/artifact/sheet50";
+  f.queue.calls[0].link_text = "Answer on Open Asks Sheet 50, cards 1 and 2";
+  f.queue.calls[0].view = { href: "#cpl-pathways", text: "See both records on CPL Pathways" };
+  const m = loadModule();
+  m.M._state.registry = f.reg; m.M._state.records = f.recs; m.M._state.error = null; m.M._state.loading = false;
+  m.M._state.progress = { addenda: f.addenda, active: 20282, queue: f.queue, errors: {}, readAt: new Date("2026-10-07T21:40:00Z") };
+  m.M._state.view = "progress"; m.M._render();
+  const call = m.root.querySelector(".prh-pg-box.prh-pg-call");
+  const a = call ? call.querySelectorAll(".prh-pg-links a") : [];
+  check("(8f) a call links the sheet card that answers it, in a new tab",
+    a.length === 2 && a[0].getAttribute("href") === "https://claude.ai/artifact/sheet50" &&
+    a[0].textContent === "Answer on Open Asks Sheet 50, cards 1 and 2" && a[0].getAttribute("target") === "_blank",
+    call && call.innerHTML.slice(0, 500));
+  check("(8f) and the tab where the item can be seen, opened in place",
+    a.length === 2 && a[1].getAttribute("href") === "#cpl-pathways" && !a[1].getAttribute("target"));
+  f.queue.calls[0].view = { href: "javascript:alert(1)", text: "x" };
+  m.M._render();
+  const bad = m.root.querySelector(".prh-pg-box.prh-pg-call .prh-pg-links").querySelectorAll("a");
+  check("(8f) a view address that is neither https nor a bare hash is dropped", bad.length === 1);
+});
+
+block("(8e)", function () {
+  // S345: a map a session's read found on a page the census does not score (Mt. San
+  // Antonio's Guided Pathways sequences) leaves sequence_source none_found and sets
+  // sequence_host, which the census never writes. Progress counts it as published and
+  // read; Catalogs names its host instead of "None found".
+  const f = progressFixture(20);
+  const coc = f.reg[3];
+  coc.sequence_host = "www.coc.example"; coc.sequence_access = "open";
+  const m = loadModule();
+  m.M._state.registry = f.reg; m.M._state.records = f.recs; m.M._state.error = null; m.M._state.loading = false;
+  m.M._state.progress = { addenda: f.addenda, active: 20282, queue: f.queue, errors: {}, readAt: new Date("2026-10-07T21:40:00Z") };
+  m.M._state.view = "progress"; m.M._render();
+  const here = m.root.querySelector('.prh-pg-steps > li[aria-current="step"]');
+  check("(8e) a read-recorded host counts as a published map, and as read when open",
+    !!here && /2 of 4 published maps/.test(here.textContent), here && here.textContent);
+  m.M._state.view = "catalogs"; m.M._state.show = "seq"; m.M._render();
+  const txt = m.root.textContent;
+  check("(8e) Catalogs lists it under Has a program map and names the host it was read on",
+    /Found by a read on www\.coc\.example/.test(txt) && /College of the Canyons/.test(txt), txt.slice(0, 400));
+  m.M._state.show = "all";
+});
+
 // ── (9) Every section collapses, and one control opens or shuts them all ────
 // Sam, 2026-10-07: "make sure every section is collapsible and the tab has a
 // collapse/expand all button." The failures this guards: a view with a section
