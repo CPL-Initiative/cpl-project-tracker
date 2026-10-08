@@ -193,12 +193,11 @@
       /* FULL WINDOW (Sam, 2026-09-05: "I want the Full Window (without the COBI
          header) to open on the side menu CCR click"; and "add a hamburger menu
          glyph in upper left that can open the COBI side bar — should be default
-         collapsed on open"). While the map is the tab, COBI's own header, rail,
-         hamburger and To-Do button are not painted and the frame is the whole
+         collapsed on open"). While the map is the tab, COBI's own header, rail
+         and hamburger are not painted and the frame is the whole
          viewport. The rail becomes the same slide-over it already is below
          900px, opened from the map's own menu control through postMessage. */
-      "body.cpl-skyview-solo > .header,body.cpl-skyview-solo #cpl-hamburger,body.cpl-skyview-solo .cpl-todo-btn," +
-      "body.cpl-skyview-solo .cpl-todo-panel{display:none !important;}" +
+      "body.cpl-skyview-solo > .header,body.cpl-skyview-solo #cpl-hamburger{display:none !important;}" +
       "body.cpl-skyview-solo .cpl-layout{grid-template-columns:1fr;}" +
       "body.cpl-skyview-solo .cpl-sidebar{position:fixed;top:0;bottom:0;left:0;width:240px;max-height:100vh;" +
       "transform:translateX(-100%);transition:transform .2s ease;z-index:200;box-shadow:2px 0 12px rgba(0,0,0,.15);}" +

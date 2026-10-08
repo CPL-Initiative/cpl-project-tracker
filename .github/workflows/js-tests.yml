@@ -202,6 +202,12 @@ jobs:
       # read it. Pure-stdlib python; same non-required check.
       - name: Queue status file (shape, parts, the stamp)
         run: python3 tests/queue_status_test.py
+      # The checkpoint's UI pass ledger (S347): every view a person reads, each
+      # COBI nav tab and each page a11y.config.js measures. A tab added to the nav
+      # and missing here would never be audited. Pure-stdlib python; same
+      # non-required check.
+      - name: UI pass ledger (every view listed, the order --next takes)
+        run: python3 tests/ui_pass_test.py
       # The ROEP display build (S327): CPL Pathways and Sierra read two outputs
       # of one build, so the guard holds them equal and recomputes the up-to
       # figure from the page's own data. Needs node (the JS data file).

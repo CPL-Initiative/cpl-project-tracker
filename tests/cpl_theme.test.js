@@ -239,7 +239,7 @@ check("⭐ --gold-accent is NOT redefined dark either — the pair only works if
 // corpus omits the defect reads exactly like a clean result. Add a file here
 // when it starts painting an accent fill.
 const surfaces = ["CPL_Dashboard.html", "index.html", "excel_to_dashboard.py",
-                  "cpl_todos.js", "admin.js", "raci.js", "tmc_builder.js",
+                  "admin.js", "raci.js", "tmc_builder.js",
                   "workplan_goals.js", "unified_courses.js", "credential_reference.js",
                   "cr_reference.js", "contracts.js", "nc_learning_partners.js",
                   "sierra_training.js", "mission_control.js", "cpl_pathways.js",

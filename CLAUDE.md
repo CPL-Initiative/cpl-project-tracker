@@ -636,8 +636,8 @@ file.
     That rule says a state already worth showing must not be shown by color
     alone; this one says most states are not worth showing. Satisfy the first
     with a **word** wherever you can, and a mark only when the word will not fit.
-  - **No exceptions for 📋 To-Do, 🧭 guidance or ⚖️ Governance** (Sam,
-    2026-09-09): each has its word beside it. **Do not restore a mark there.**
+  - **No exceptions for 🧭 guidance or ⚖️ Governance** (Sam, 2026-09-09):
+    each has its word beside it. **Do not restore a mark there.**
     Sweep: [`/a11y-pass`](.claude/commands/a11y-pass.md).
   - ✅ **THE SWEEP IS CLOSED AT 26 (Sam, 2026-09-09: *"Keep all 26 glyphs as is
     for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
@@ -689,7 +689,7 @@ which, the per-lane contract, and the KB-notes lane's author-at-final-quality
 rule: [`docs/INDEX.md`](docs/INDEX.md).
 
 **Checkpoint scope — vault, never the public KB.** Rule 9 / `/checkpoint`
-refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the To-Do feed),
+refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the UI pass ledger),
 which auto-sync into Sam's Obsidian vault + the `CPLBrain` repo with no review
 gate — correct for internal working memory. Checkpoint must **never** write to
 the public `cpl-knowledge-base`. That repo is a separate, audience-facing store
