@@ -1,5 +1,5 @@
 {
- "_readme": "Third read of Mt. San Antonio College's maps (S345, SkyLantern). Reads 1 and 2 (runs 37799874023, 37800558615) found no suggested order on the catalog's program pages or its Degrees and Certificates page, though the Schedule of Classes says the Catalog shows one. A web search (2026-10-08) found the college's Guided Pathways program list (www.mtsac.edu/guided-pathways/), where each program opens a pathway through a 'View Course Sequence' button and some carry a '1st Semester Plan'. This read loads that list and follows the pilot programs' entries (Fire Technology, Nursing, Early Childhood Education).",
+ "_readme": "Fourth read of Mt. San Antonio College's maps (S345, SkyLantern). Read 3 (run 37810862182) found the source: the Guided Pathways list (www.mtsac.edu/guided-pathways/filter_listings_mtsac_all.php, 455 programs) links each program's 'Guided Pathways for Success' suggested sequence, a page per program keyed by the college's local program code (pathway-results.html?pthwyvar=<code>). The pilot's programs match by the code the catalog prints in each program's title: Fire Technology certificate 03086 is N0486 (read in run 37810862182), Early Childhood Education AS-T 33876 is S0401, and the LVN-to-RN A.S. 08086 is S0957, which the list does not carry (it lists an older S1201). This read loads S0401's page.",
  "college": "Mt. San Antonio College",
  "questions": {
   "map_source": "Where the college publishes a program's term-by-term map, and in what form (a page, a PDF, an interactive tool).",
@@ -24,17 +24,8 @@
     "map_source",
     "map_shape"
    ],
-   "url": "https://www.mtsac.edu/guided-pathways/filter_listings_mtsac_all.php",
-   "expand": true,
-   "links": "sequence|pathway|semester|fire|nurs|child",
-   "follow": "fire|nurs|early child|child dev"
-  },
-  {
-   "answers": [
-    "map_source"
-   ],
-   "url": "https://www.mtsac.edu/guided-pathways/pathway-results.html",
-   "links": "sequence|pathway|semester|\\.pdf"
+   "url": "https://www.mtsac.edu/guided-pathways/pathway-results.html?pthwyvar=S0401&desc=Early+Childhood+Education%2C+AS-T+%28Cal-GETC%29+S0401",
+   "links": "\\.pdf|print|map"
   }
  ]
 }
