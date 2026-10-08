@@ -202,7 +202,8 @@ button { font: inherit; color: inherit; }
   border-radius: 50%; background: currentColor;
   box-shadow: 0 0 0 .05em var(--sierra-paper);
 }
-/* Room above the greeting for the mountain. */
+/* Room above the greeting for the mountain; the whole greeting in the name's
+   ghosted blue (Sam, 2026-10-08: "Font should all be same blue, Hello, I'm Sierra."). */
 .s-hello h1 { padding-top: .5em; }
 
 /* Arriving: the greeting */
@@ -210,7 +211,7 @@ button { font: inherit; color: inherit; }
 .s-hello h1 {
   margin: 0; font-family: var(--sierra-display); font-weight: 600;
   font-size: clamp(2.4rem, 6.4vw, 5.2rem); line-height: 1.04; letter-spacing: -.015em;
-  color: var(--sierra-ink); text-wrap: balance;
+  color: var(--sierra-ghost); text-wrap: balance;
 }
 .s-hello p { margin: 0; font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--sierra-muted); text-wrap: balance; }
 
