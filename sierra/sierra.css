@@ -179,7 +179,7 @@ button { font: inherit; color: inherit; }
    just right of the S's top. */
 .s-ridge {
   position: absolute; z-index: -1; pointer-events: none;
-  left: 5%; width: 95%; height: auto; bottom: .62em;
+  left: 5%; width: 95%; height: auto; bottom: .65em;
   color: inherit;
   /* The trim runs square to the line where it ends (that segment climbs at
      about 42 degrees), so the end reads as drawn rather than chopped: through
