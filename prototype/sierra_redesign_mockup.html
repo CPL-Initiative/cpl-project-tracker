@@ -1,0 +1,333 @@
+<title>Sierra Redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one page, two states. Arriving: a large greeting, then a framed painting with the
+   question bar on its top edge (America.gov's shape), caption and Previous, Pause, Next beneath.
+   Asking: the painting folds away and the conversation takes a centered column on paper.
+   First Light tokens (prototype/first_light_theme_v1.html); paintings served from art/. */
+:root {
+  --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36; --text-muted: #5C5C55;
+  --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1; --surface-muted: #ECE9E2;
+  --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30);
+  --cobalt: #0047AB; --on-cobalt: #FFFFFF; --mustard-fill: #E3B341; --on-mustard: #1C1C1A;
+  --shadow: 0 18px 50px rgba(28,28,26,.16); --bar-shadow: 0 6px 22px rgba(28,28,26,.14);
+  --art-dim: 1;
+  --display: 'Playfair Display', Georgia, serif; --text: 'Source Sans 3', Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+  --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+  --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+  --cobalt: #7DA1D4; --on-cobalt: #151514; --shadow: 0 18px 50px rgba(0,0,0,.5); --bar-shadow: 0 6px 22px rgba(0,0,0,.45);
+  --art-dim: .82; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+  --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+  --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+  --cobalt: #7DA1D4; --on-cobalt: #151514; --shadow: 0 18px 50px rgba(0,0,0,.5); --bar-shadow: 0 6px 22px rgba(0,0,0,.45);
+  --art-dim: .82; color-scheme: dark }
+
+body { background: var(--paper); color: var(--text-body); font-family: var(--text); font-size: 16px; line-height: 1.5; margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ── the mock-up's own strip: not part of the design ── */
+.mock { border-bottom: 1px dashed var(--border-strong); background: var(--surface-subtle); padding-inline: 16px; padding-block: 12px; font-size: .875rem; color: var(--text-muted); }
+.mock-in { max-width: 1180px; margin: 0 auto; display: grid; gap: 8px; }
+.mock-in p { margin: 0; max-width: 78ch; }
+.mock-in b { color: var(--text-strong); }
+.mock-row { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; }
+.seg { display: inline-flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.seg > span { font-weight: 600; color: var(--text-strong); margin-right: 4px; }
+.seg button { border: 1px solid var(--border-strong); background: var(--surface-opaque); border-radius: 8px; padding: 4px 10px; min-height: 32px; cursor: pointer; font-size: .8125rem; }
+.seg button[aria-pressed="true"] { background: var(--text-strong); color: var(--paper); border-color: var(--text-strong); }
+
+/* ── the page ── */
+.stage { container-type: inline-size; position: relative; min-height: 86vh; background: var(--paper); }
+.stage.phone { max-width: 390px; margin: 20px auto; min-height: 780px; border: 1px solid var(--border-strong); border-radius: 28px; overflow: hidden; }
+.page { position: relative; z-index: 1; padding-inline: 16px; padding-block: 0 28px; display: grid; gap: 22px; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 1180px; width: 100%; margin: 0 auto; padding-block: 18px 0; }
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand img { height: 30px; width: auto; }
+.brand .logo-dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brand .logo-light { display: none; } :root:not([data-theme="light"]) .brand .logo-dark { display: inline; } }
+:root[data-theme="dark"] .brand .logo-light { display: none; }
+:root[data-theme="dark"] .brand .logo-dark { display: inline; }
+.brand .who { font-family: var(--display); font-size: 1.25rem; font-weight: 600; color: var(--text-strong); padding-left: 12px; border-left: 1px solid var(--border-strong); }
+.word { background: none; border: 0; padding: 8px 4px; min-height: 44px; cursor: pointer; color: var(--cobalt); font-weight: 600; }
+.word:hover { text-decoration: underline; text-underline-offset: 3px; }
+.about { max-width: 640px; margin: 0 auto; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 14px; padding: 14px 18px; font-size: .9375rem; display: grid; gap: 8px; }
+.about p { margin: 0; }
+.about[hidden] { display: none; }
+
+/* Arriving */
+.hello { text-align: center; display: grid; gap: 10px; padding-block: 18px 6px; }
+.hello h1 { margin: 0; font-family: var(--display); font-weight: 600; font-size: clamp(2.6rem, 8cqi, 5.4rem); line-height: 1.02; letter-spacing: -.015em; color: var(--text-strong); text-wrap: balance; }
+.hello p { margin: 0; font-size: clamp(1.05rem, 2.2cqi, 1.35rem); color: var(--text-muted); text-wrap: balance; }
+
+.frame { position: relative; width: 100%; max-width: 980px; margin: 0 auto; border-radius: 30px; overflow: hidden; background: var(--surface-muted); box-shadow: var(--shadow); aspect-ratio: 16 / 10; max-height: 70vh; }
+.frame .art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s ease; filter: brightness(var(--art-dim)); }
+.frame .art.on { opacity: 1; }
+.frame .fade { position: absolute; inset: 0 0 auto 0; height: 120px; background: linear-gradient(var(--paper), transparent); opacity: .35; pointer-events: none; }
+
+.bar { background: var(--surface-opaque); border-radius: 24px; box-shadow: var(--bar-shadow); padding: 8px 8px 8px 22px; display: grid; gap: 4px; }
+.frame .bar { position: absolute; z-index: 2; left: 16px; right: 16px; top: 16px; }
+.ask { display: flex; gap: 8px; align-items: center; }
+.ask label { flex: 1; min-width: 0; }
+.ask input { width: 100%; box-sizing: border-box; border: 0; background: transparent; color: var(--text-strong); font: inherit; font-size: 1.125rem; min-height: 50px; outline: none; }
+.ask input::placeholder { color: var(--text-muted); }
+.go { background: var(--cobalt); color: var(--on-cobalt); border: 0; border-radius: 999px; min-height: 46px; padding: 0 24px; font-weight: 700; cursor: pointer; }
+.aud { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 14px; border-top: 1px solid var(--border); padding: 4px 8px 4px 0; font-size: .9375rem; }
+.aud .lab { color: var(--text-muted); }
+.aud button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 6px 0 4px; min-height: 36px; cursor: pointer; color: var(--text-body); }
+.aud button[aria-pressed="true"] { color: var(--text-strong); font-weight: 700; border-bottom-color: var(--cobalt); }
+.aud-toggle { display: none; }
+
+.under { width: 100%; max-width: 980px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 18px; font-size: .9375rem; color: var(--text-muted); }
+.under cite { font-style: normal; }
+.under cite i { font-style: italic; color: var(--text-body); }
+.ctl { display: flex; gap: 14px; }
+.ctl .word { min-height: 40px; padding-inline: 2px; }
+
+.foot { max-width: 980px; margin: 0 auto; text-align: center; font-size: .875rem; color: var(--text-muted); }
+.foot p { margin: 0; }
+
+/* Asking */
+.convo { width: 100%; max-width: 46rem; margin: 0 auto; display: grid; gap: 26px; padding-block: 12px 8px; }
+.q { justify-self: end; max-width: 85%; background: var(--surface-muted); color: var(--text-strong); border-radius: 18px 18px 6px 18px; padding: 10px 16px; font-size: 1.0625rem; }
+.a { display: grid; gap: 12px; color: var(--text-body); font-size: 1.0625rem; line-height: 1.65; }
+.a p { margin: 0; }
+.a .who { font-family: var(--display); font-weight: 600; color: var(--text-strong); font-size: 1.05rem; }
+.a .src { font-size: .875rem; color: var(--text-muted); }
+.a .eg { font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; color: var(--on-mustard); background: var(--mustard-fill); border-radius: 8px; padding: 2px 8px; justify-self: start; }
+.dock { position: sticky; bottom: 0; z-index: 2; width: 100%; max-width: 46rem; margin: 0 auto; padding-block: 14px 18px; background: linear-gradient(transparent, var(--paper) 28%); }
+.dock .row2 { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: .875rem; color: var(--text-muted); padding: 6px 4px 0; }
+
+.stage[data-state="arriving"] .asking-only, .stage[data-state="asking"] .arriving-only { display: none; }
+
+/* Asking, with the painting kept in the margins: wide screens only, the column stays on paper */
+.margin-art { display: none; }
+@container (min-width: 1000px) {
+  .stage.margins[data-state="asking"] .margin-art { display: block; position: absolute; inset: 0; z-index: 0; }
+  .margin-art img { width: 100%; height: 100%; object-fit: cover; filter: brightness(var(--art-dim)); }
+  .stage.margins[data-state="asking"] .convo-wrap { background: var(--paper); border-radius: 28px; box-shadow: var(--shadow); padding: 8px 28px 0; max-width: 52rem; margin: 0 auto; width: 100%; box-sizing: border-box; }
+  .stage.margins[data-state="asking"] .top { background: var(--paper); border-radius: 18px; padding: 10px 18px; box-shadow: var(--bar-shadow); max-width: 52rem; box-sizing: border-box; }
+}
+
+/* Phone */
+@container (max-width: 560px) {
+  .brand img { height: 24px; }
+  .brand .who { font-size: 1.1rem; }
+  .frame { aspect-ratio: 4 / 5; border-radius: 24px; }
+  .frame .bar { left: 10px; right: 10px; top: 10px; padding-left: 16px; }
+  .go { padding: 0 16px; }
+  .aud { display: none; }
+  .aud.open { display: flex; }
+  .aud-toggle { display: inline-flex; }
+  .under { justify-content: center; text-align: center; }
+  .q { max-width: 92%; }
+}
+@media (prefers-reduced-motion: reduce) { .frame .art { transition: none; } }
+</style>
+
+<div class="mock" role="region" aria-label="About this mock-up">
+  <div class="mock-in">
+    <p><b>Mock-up, for Sam:</b> Sierra with fewer boxes, after america.gov. The landing's thirteen boxes become three: the painting, the question bar and its Ask button. The audience chips stay as words on the bar. Suggested questions move into the bar's placeholder, which changes with each painting. Everything else sits behind About Sierra or in one line at the foot. The paintings are seven California works from First Light, served from Sierra's own folder.</p>
+    <div class="mock-row">
+      <div class="seg" role="group" aria-label="State"><span>Show</span>
+        <button type="button" data-state="arriving" aria-pressed="true">Arriving</button>
+        <button type="button" data-state="asking" aria-pressed="false">Asking</button></div>
+      <div class="seg" role="group" aria-label="While reading"><span>While reading</span>
+        <button type="button" data-margins="0" aria-pressed="true">The painting folds away</button>
+        <button type="button" data-margins="1" aria-pressed="false">The painting stays in the margins</button></div>
+      <div class="seg" role="group" aria-label="Width"><span>Width</span>
+        <button type="button" data-phone="0" aria-pressed="true">Desktop</button>
+        <button type="button" data-phone="1" aria-pressed="false">Phone</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="stage" id="stage" data-state="arriving">
+  <div class="margin-art" aria-hidden="true"><img id="margin-img" alt=""></div>
+  <div class="page">
+    <header class="top">
+      <div class="brand">
+        <img class="logo-light" src="art/cpl-initiative-logo-navy.png" alt="CPL Initiative, California Community Colleges" width="160" height="30">
+        <img class="logo-dark" src="art/cpl-initiative-logo.png" alt="CPL Initiative, California Community Colleges" width="160" height="30">
+        <span class="who asking-only">Sierra</span>
+      </div>
+      <button class="word" id="about-btn" type="button" aria-expanded="false" aria-controls="about">About Sierra</button>
+    </header>
+    <div class="about" id="about" hidden>
+      <p>Sierra answers questions about credit for prior learning at California's community colleges: which colleges award credit for a license, certification, apprenticeship or military training, and how the process works.</p>
+      <p>Sierra is in beta. Your college's CPL coordinator makes the final call on credit, and Sierra names the coordinator to ask. Questions are logged without names to improve the answers; please leave personal information out.</p>
+    </div>
+
+    <!-- Arriving -->
+    <section class="hello arriving-only">
+      <h1>Hello, I'm Sierra</h1>
+      <p>Ask how your work, training and service can count as college credit.</p>
+    </section>
+    <section class="frame arriving-only" aria-label="Ask Sierra">
+      <div id="arts"></div>
+      <div class="fade" aria-hidden="true"></div>
+      <form class="bar" id="bar" autocomplete="off">
+        <div class="ask">
+          <label><span class="sr">Your question for Sierra</span><input id="q" type="text" maxlength="1000"></label>
+          <button class="go" type="submit">Ask</button>
+        </div>
+        <button class="word aud-toggle" type="button" aria-expanded="false" aria-controls="aud">Answering for: Student</button>
+        <div class="aud" id="aud" role="group" aria-label="Who Sierra answers for">
+          <span class="lab">Answering for</span>
+        </div>
+      </form>
+    </section>
+    <div class="under arriving-only">
+      <cite id="cap"></cite>
+      <div class="ctl" role="group" aria-label="Paintings">
+        <button class="word" type="button" id="prev">Previous</button>
+        <button class="word" type="button" id="pause" aria-pressed="false">Pause</button>
+        <button class="word" type="button" id="next">Next</button>
+      </div>
+    </div>
+
+    <!-- Asking -->
+    <div class="convo-wrap asking-only">
+      <div class="convo" aria-label="Conversation with Sierra">
+        <p class="q">What is credit for prior learning?</p>
+        <div class="a">
+          <span class="eg">Example answer</span>
+          <span class="who">Sierra</span>
+          <p>Credit for prior learning is college credit for what you already know: skills from military service, work, industry certifications, apprenticeships and other training. California's community colleges grant it under Title 5, section 55050.</p>
+          <p>A college assesses that learning in one of several ways: an exam its faculty set, a review of your industry credential or military transcript, or a portfolio of your work. Faculty in the subject decide which course your learning matches.</p>
+          <p>To start, ask the CPL coordinator at the college you attend or plan to attend, and bring what documents your learning, such as a Joint Services Transcript or a license.</p>
+          <p class="src">From the CPL Initiative's knowledge base and Title 5, section 55050.</p>
+        </div>
+      </div>
+      <form class="dock" autocomplete="off">
+        <div class="bar">
+          <div class="ask">
+            <label><span class="sr">Your next question for Sierra</span><input id="q2" type="text" maxlength="1000" placeholder="Ask a follow-up"></label>
+            <button class="go" type="submit">Ask</button>
+          </div>
+        </div>
+        <div class="row2"><button class="word" type="button" id="aud2">Answering for: Student</button><button class="word" type="button" id="new">New question</button></div>
+      </form>
+    </div>
+
+    <footer class="foot">
+      <p>Sierra is in beta. Your college's CPL coordinator decides credit. Questions? MAP@rccd.edu</p>
+    </footer>
+  </div>
+</div>
+
+<script>
+(function () {
+  var ART = [
+    { slug: "redmond-poppy-field", title: "California Poppy Field", artist: "Granville Redmond", year: "1915", focal: "50% 60%", alt: "A sunlit field of orange poppies stretching toward low green hills under a soft blue sky." },
+    { slug: "payne-mountain-lake", title: "Mountain Lake", artist: "Edgar Payne", year: "c. 1920s", focal: "50% 45%", alt: "A glassy alpine lake mirroring granite peaks beneath a cloud-streaked sky." },
+    { slug: "rose-carmel-dunes", title: "Carmel Dunes", artist: "Guy Rose", year: "c. 1918-20", focal: "50% 55%", alt: "Rolling sand dunes spotted with scrub under a glowing sky, with a hint of sea beyond." },
+    { slug: "hill-emerald-bay", title: "Emerald Bay, Lake Tahoe", artist: "Thomas Hill", year: "1864", focal: "50% 55%", alt: "A calm green mountain bay ringed by pine-covered slopes and distant snow peaks." },
+    { slug: "payne-laguna-beach", title: "Laguna Beach", artist: "Edgar Payne", year: "c. 1920s", focal: "50% 50%", alt: "Rocky coastal bluffs above a blue cove, with surf breaking against the rocks." },
+    { slug: "redmond-coastal-wildflowers", title: "Coastal Wildflowers", artist: "Granville Redmond", year: "c. 1912", focal: "50% 60%", alt: "A coastal hillside carpeted in orange and purple wildflowers sloping toward the ocean." },
+    { slug: "bierstadt-sierra-nevada-morning", title: "Sierra Nevada Morning", artist: "Albert Bierstadt", year: "c. 1870", focal: "50% 50%", alt: "A misty Sierra valley at dawn, light breaking over a waterfall and a lake." }
+  ];
+  /* The placeholder carries a question to try, one per painting (Sierra's five starters and two more). */
+  var TRY = [
+    "Try: How can I get credit for a real estate license?",
+    "Try: Which colleges give credit for an EMT certification?",
+    "Try: What is credit for prior learning?",
+    "Try: Where can I get credit for NCCER or OSHA certifications?",
+    "Try: How does my Joint Services Transcript count?",
+    "Try: Which colleges near Long Beach teach welding?",
+    "Try: How much has CPL saved California students?"
+  ];
+  var AUD = ["Student", "Faculty", "College administrator", "Employer", "Civic leader"];
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stage = document.getElementById("stage"), arts = document.getElementById("arts");
+  var cap = document.getElementById("cap"), q = document.getElementById("q"), pauseBtn = document.getElementById("pause");
+  var i = 0, timer = null, paused = reduce;
+
+  ART.forEach(function (a, k) {
+    var img = document.createElement("img");
+    img.className = "art" + (k === 0 ? " on" : "");
+    img.src = "art/" + a.slug + "-1600.webp";
+    img.srcset = "art/" + a.slug + "-800.webp 800w, art/" + a.slug + "-1600.webp 1600w";
+    img.sizes = "(max-width: 560px) 100vw, 980px";
+    img.alt = k === 0 ? a.alt : "";
+    img.style.objectPosition = a.focal;
+    if (k > 0) img.loading = "lazy";
+    arts.appendChild(img);
+  });
+  function show(k) {
+    var imgs = arts.querySelectorAll("img");
+    i = (k + ART.length) % ART.length;
+    imgs.forEach(function (im, n) { im.classList.toggle("on", n === i); im.alt = n === i ? ART[n].alt : ""; });
+    var a = ART[i];
+    cap.innerHTML = "";
+    cap.appendChild(document.createTextNode(a.artist + ", "));
+    var t = document.createElement("i"); t.textContent = a.title; cap.appendChild(t);
+    cap.appendChild(document.createTextNode(", " + a.year));
+    q.placeholder = TRY[i % TRY.length];
+    document.getElementById("margin-img").src = "art/" + a.slug + "-1600.webp";
+  }
+  function run() { clearInterval(timer); timer = paused ? null : setInterval(function () { show(i + 1); }, 9000); }
+  function setPaused(p) { paused = p; pauseBtn.textContent = p ? "Play" : "Pause"; pauseBtn.setAttribute("aria-pressed", p ? "true" : "false"); run(); }
+  document.getElementById("prev").addEventListener("click", function () { show(i - 1); run(); });
+  document.getElementById("next").addEventListener("click", function () { show(i + 1); run(); });
+  pauseBtn.addEventListener("click", function () { setPaused(!paused); });
+  q.addEventListener("focus", function () { setPaused(true); });
+
+  var aud = document.getElementById("aud"), audToggle = document.querySelector(".aud-toggle"), audPick = "Student";
+  AUD.forEach(function (name) {
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = name; b.setAttribute("aria-pressed", name === audPick ? "true" : "false");
+    b.addEventListener("click", function () {
+      audPick = name;
+      aud.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x.textContent === name ? "true" : "false"); });
+      audToggle.textContent = "Answering for: " + name;
+      document.getElementById("aud2").textContent = "Answering for: " + name;
+    });
+    aud.appendChild(b);
+  });
+  audToggle.addEventListener("click", function () {
+    var open = aud.classList.toggle("open");
+    audToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  function setState(s) {
+    stage.setAttribute("data-state", s);
+    document.querySelectorAll("[data-state]").forEach(function (b) { if (b.tagName === "BUTTON") b.setAttribute("aria-pressed", b.getAttribute("data-state") === s ? "true" : "false"); });
+    if (s === "asking") setPaused(true);
+  }
+  document.querySelectorAll("button[data-state]").forEach(function (b) { b.addEventListener("click", function () { setState(b.getAttribute("data-state")); }); });
+  document.querySelectorAll("button[data-margins]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      stage.classList.toggle("margins", b.getAttribute("data-margins") === "1");
+      document.querySelectorAll("button[data-margins]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    });
+  });
+  document.querySelectorAll("button[data-phone]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      stage.classList.toggle("phone", b.getAttribute("data-phone") === "1");
+      document.querySelectorAll("button[data-phone]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    });
+  });
+  document.getElementById("bar").addEventListener("submit", function (e) { e.preventDefault(); setState("asking"); });
+  document.querySelector(".dock").addEventListener("submit", function (e) { e.preventDefault(); });
+  document.getElementById("new").addEventListener("click", function () { setState("arriving"); q.focus(); });
+  document.getElementById("aud2").addEventListener("click", function () { setState("arriving"); audToggle.click(); });
+  var aboutBtn = document.getElementById("about-btn"), about = document.getElementById("about");
+  aboutBtn.addEventListener("click", function () {
+    about.hidden = !about.hidden;
+    aboutBtn.setAttribute("aria-expanded", about.hidden ? "false" : "true");
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !about.hidden) { about.hidden = true; aboutBtn.setAttribute("aria-expanded", "false"); aboutBtn.focus(); } });
+
+  show(0);
+  setPaused(reduce);
+})();
+</script>

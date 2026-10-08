@@ -15836,14 +15836,22 @@
    "main_committers": []
   },
   "file:sierra/art/fetched.json": {
-   "consumers": [],
+   "consumers": [
+    {
+     "id": "script:scripts/fetch_sierra_art.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 85
+    }
+   ],
    "producers": [
     {
      "by": "workflow:sierra-art-fetch.yml",
      "how": "commit"
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": []
   },
   "file:sierra/sierra.js": {

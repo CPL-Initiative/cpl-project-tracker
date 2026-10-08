@@ -741,7 +741,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/tab_review_sheet/fs/capture.json` | none found | modules: `scripts/tab_review_sheet/capture.js` |
 | `scripts/tab_review_sheet/fs/snapshot.json` | modules: `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` | — |
 | `sierra/art/*.webp` | none found | committed by: `sierra-art-fetch.yml` |
-| `sierra/art/fetched.json` | none found | committed by: `sierra-art-fetch.yml` |
+| `sierra/art/fetched.json` | none found | scripts: `scripts/fetch_sierra_art.py` · committed by: `sierra-art-fetch.yml` |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
 | `sierra_training.js` | pages: `CPL_Dashboard.html` | — |
 | `statewide/_probe_exhibit_authority.py` | workflows: `statewide-probe-authority.yml` | — |
