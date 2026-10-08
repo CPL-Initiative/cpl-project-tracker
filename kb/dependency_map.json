@@ -4,10 +4,10 @@
   "supabase_tables": 96,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 605,
+  "file_datasets": 608,
   "external_services": 161,
-  "consumers": 418,
-  "workflows": 44,
+  "consumers": 420,
+  "workflows": 45,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -675,6 +675,13 @@
      ]
     },
     {
+     "id": "script:scripts/fetch_sierra_art.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 36
+    },
+    {
      "id": "script:tools/source_first_light_art.mjs",
      "kind": "script",
      "direction": "read",
@@ -786,6 +793,13 @@
      "direction": "read",
      "how": "url",
      "line": 26
+    },
+    {
+     "id": "script:scripts/fetch_sierra_art.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 30
     },
     {
      "id": "worker:cloudflare-worker-proxy.js",
@@ -15771,6 +15785,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:scripts/fetch_sierra_art.py": {
+   "consumers": [
+    {
+     "id": "workflow:sierra-art-fetch.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:scripts/funding_effective.js": {
    "consumers": [
     {
@@ -15852,6 +15879,36 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:sierra/art/*.webp": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:sierra-art-fetch.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:sierra/art/fetched.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/fetch_sierra_art.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 85
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:sierra-art-fetch.yml",
+     "how": "commit"
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:sierra/index.html": {
@@ -22734,6 +22791,21 @@
    "scripts": [],
    "adds": [],
    "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "sierra-art-fetch.yml": {
+   "name": "Sierra art fetch",
+   "crons": [],
+   "scripts": [
+    "scripts/fetch_sierra_art.py"
+   ],
+   "adds": [
+    "sierra/art/*.webp",
+    "sierra/art/fetched.json"
+   ],
+   "push": "triggering branch",
    "deploys": [],
    "chain": [],
    "urls": []
