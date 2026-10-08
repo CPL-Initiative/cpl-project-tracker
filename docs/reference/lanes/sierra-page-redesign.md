@@ -31,6 +31,10 @@ related:
 - **New question starts over**: the landing returns and the conversation and its history clear.
 - **The audience pick is still required** before the first send (Sam, 2026-07-01), so no word starts selected; a send without one opens the folded row and says where it is.
 
+NEEDS SAM (Sheet 53 card 1): the audience words. The mock-up shows *Student* and *Employer*; the port kept the labels shared with the COBI CPL Assistant (*Student / future student*, *Employer / industry*). Keep them, or shorten both surfaces together?
+
+NEEDS SAM (Sheet 53 card 2): the logo's link. Sam wrote *"a link to map@rccd.edu"*; the port links the MAP site, `https://map.rccd.edu`, and the footer keeps the email. Site or email?
+
 **NEXT.** ③ The docked Sierra on Program Requirements and My College stays compact and gains *Open full screen*, carrying the thread to the standalone page. ④ The checkpoint's UI pass audits the new page (its hold in `kb/ui_pass_ledger.json` is lifted).
 
 **The next public page: the veteran map (UI pass, S347).** `veteran-sprint-map/ca_cpl_map_selfcontained.html` passes AA, the 24px targets (its pins through the two directories) and the keyboard at nine widths, and is not First Light: its own palette (navy, CO blue, crimson, gold), 30 raw hex values outside `:root`, the system font stack, no dark mode. Its builder is `veteran-sprint-map/build_selfcontained.py`. After Sierra's port lands, the same order: a mock-up with real assets for Sam, then the port in the builder.
