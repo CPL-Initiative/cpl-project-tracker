@@ -5,6 +5,12 @@
   "_status": "The Program Requirements tab opens on a Progress view of the catalog harvest: five milestones with You are here (now Read program maps, 2 of the 26 published maps read), the eight parts, the next step and what waits on Sam, read live each visit. Every section on the tab collapses, with Expand all and Collapse all. Sierra no longer counts NOCE's second spelling in the course list as a second college, and names a certification only where a course or program title names it. Next: a reading procedure for each pilot college.",
   "items": [
     {
+      "id": "s344-sam-sheet49-sharepoint",
+      "for": "Sam",
+      "tab": "library",
+      "text": "Answer Open Asks Sheet 49 (https://claude.ai/artifact/6uMT8LrZgMZBit3Gs8wHBL): three calls on moving the Library to SharePoint (who creates the site, whether people outside RCCD can be guests, and how files reach it)."
+    },
+    {
       "id": "s342-sam-check-two-records",
       "for": "Sam",
       "tab": "program-requirements",

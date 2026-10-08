@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-07
+updated: 2026-10-08
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -183,8 +183,13 @@ claude.ai.
   not have permission* for three. The connector has no way to send the invitation, which an address without a Google
   account needs (the likely cause, unconfirmed). Drive stays where sessions file pieces, the Library's links open for the
   owner alone, and Sam hands a teammate a file himself.
-- **Parked until Sam takes it up: does the Library move to SharePoint?** His word was *may*. What a session found
-  (2026-10-07): the Microsoft 365 connector is in the registry, not connected, and its tools search and read SharePoint,
-  OneDrive, Outlook and Teams without uploading, so a session would still hand each file to Sam. The filer
-  (`scripts/library_file.py`) writes to Drive only; a session uploading to SharePoint would need a Microsoft Graph app in
-  RCCD's tenant, which RCCD IT controls. A Library record's link is a plain URL, so a SharePoint link files the same way.
+- **NEEDS SAM — the SharePoint switch, three calls on [Open Asks Sheet 49](https://claude.ai/artifact/6uMT8LrZgMZBit3Gs8wHBL)** (Sam, 2026-10-07: *"Lay out what a
+  SharePoint switch would take"*, then *"Put the SharePoint calls on a decision sheet"*): 1, who creates the site
+  (proposed: he creates a Teams team, CPL Library, with folders Library and Drafts); 2, whether people outside RCCD
+  can be guests (five of the 22 he named: three at cccco.edu, two at Infotech Partners; proposed: a session drafts
+  the ask to RCCD IT); 3, how files reach it (proposed: by hand plus his OneDrive sync, per his call 6). Measured
+  2026-10-08: this environment's network refuses `graph.microsoft.com` (CONNECT 403) and passes
+  `login.microsoftonline.com`; the Microsoft 365 connector (registry, not connected) searches and reads SharePoint
+  and cannot upload; Drive holds 16 files, 56,401,700 bytes (13 in CPLLibrary, 3 in Drafts); three `cpl_library`
+  records link to Drive; `library.js` (`DRIVE_FOLDER`, `homeForUrl`) and the `cpl_library_home_ck` check know Drive
+  as the only file home, so a SharePoint link files today as `web`.
