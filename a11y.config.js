@@ -64,7 +64,8 @@ async function seedSierraConversation(page, theme) {
       log.appendChild(you);
       const her = document.createElement("div");
       her.className = "s-msg s-bot";
-      her.innerHTML = '<div class="s-who">Sierra</div>' +
+      her.innerHTML = '<div class="s-who"><span class="s-mark" aria-hidden="true">' +
+        ((api && api.SIERRA_MARK) || '') + '</span>Sierra</div>' +
         '<div class="s-bubble"><p>Seeded answer ' + (i + 1) + ' for layout measurement, long ' +
         'enough to wrap on a narrow viewport and push the page past its own height. ' +
         'Ask the <a href="#s-main">CPL coordinator</a> at the college you plan to attend.</p>' +

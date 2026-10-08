@@ -126,8 +126,12 @@ function ask(w, text) {
     check("(2) the question and the answer are in the log, the answer named Sierra in words",
       /welding/.test(d.getElementById("s-log").textContent) &&
       (d.querySelector("#s-log .s-msg.s-bot .s-who") || {}).textContent === "Sierra");
-    check("(2) no glyph avatar beside the answer (the mock-up names her in words)",
-      !d.querySelector("#s-log .s-avatar"));
+    // Sam, 2026-10-08, on the port: "If you can preserve sierras logo, keep it
+    // in. I like the mountain line". Her mark sits beside her name, as on the
+    // COBI tab and the Fact Sheet drawer, and is silent to a screen reader.
+    const mark = d.querySelector("#s-log .s-msg.s-bot .s-who .s-mark");
+    check("(2) ⭐ her Whitney mark sits beside her name, hidden from a screen reader",
+      mark && mark.getAttribute("aria-hidden") === "true" && !!mark.querySelector("svg circle"));
     d.getElementById("s-new").click();
     check("(2) ⭐ New question brings the landing back with the bar on the painting",
       d.body.getAttribute("data-view") === "arriving" && form.parentNode.id === "s-frame");
@@ -254,6 +258,22 @@ function ask(w, text) {
     check("(6) …and light", run("light") === "light");
     check("(6) no choice, or System, follows the OS (no attribute)", run(null) === null && run("system") === null);
     check("(6) a stored value that is no theme changes nothing", run("constructor") === null);
+  });
+
+  await block("(2b) the mountain line is kept", async () => {
+    const ridges = (HTML.match(/<span class="s-peak">Sierra<svg class="s-ridge"[^>]*aria-hidden="true"[\s\S]*?<\/svg><\/span>/g) || []);
+    check("(2b) ⭐ the ridgeline is ghosted behind her name in the greeting and in the reading header",
+      ridges.length === 2 && /<h1>Hello, I'm <span class="s-peak">Sierra<svg class="s-ridge"/.test(HTML),
+      "Sam, 2026-10-08: \"I like the mountain line\"");
+    check("(2b) the ridge takes the page's color (currentColor), so it reads in light and dark",
+      /class="s-ridge"[\s\S]*?stroke="currentColor"/.test(HTML) &&
+      /\.s-ridge\s*\{[^}]*color:\s*var\(--sierra-cobalt\)/.test(CSS));
+    check("(2b) and it is ghosted, the quietest thing in the line (the glyph rule)",
+      /\.s-ridge\s*\{[^}]*opacity:\s*\.[1-4]/.test(CSS));
+    const { w, d } = loadDom();
+    check("(2b) the greeting still reads as words to a screen reader",
+      d.querySelector("h1").textContent === "Hello, I'm Sierra");
+    w.close();
   });
 
   await block("(7) First Light, self-contained", async () => {

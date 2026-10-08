@@ -569,10 +569,9 @@
     showQuestion(row);
   }
   // The Sierra mark — Mt Whitney's east-face ridge (sierra/whitney-mark.svg)
-  // in a navy roundel. A STATIC, trusted string (never user input). The COBI
-  // tab and the Fact Sheet drawer draw it beside each answer; since the redesign
-  // this page names her in words instead ("Sierra", as the approved mock-up
-  // shows), and keeps the constant so the three surfaces still share one mark.
+  // in a navy roundel. A STATIC, trusted string (never user input) inlined so
+  // the mark needs no relative-path asset. All three surfaces draw it beside
+  // each answer; this page sets it beside her name in words.
   var SIERRA_MARK =
     '<svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">' +
     '<circle cx="20" cy="20" r="19" style="fill:var(--sierra-navy,#0b3d61)"/>' +
@@ -585,9 +584,13 @@
   function addAssistantMsg() {
     var row = document.createElement('div');
     row.className = 's-msg s-bot';
+    // Her name in words, beside her mark (Sam, 2026-10-08: "I like the mountain line").
     var who = document.createElement('div');
     who.className = 's-who';
-    who.textContent = 'Sierra';
+    var mark = document.createElement('span');
+    mark.className = 's-mark'; mark.setAttribute('aria-hidden', 'true'); mark.innerHTML = SIERRA_MARK;
+    who.appendChild(mark);
+    who.appendChild(document.createTextNode('Sierra'));
     var bubble = document.createElement('div');
     bubble.className = 's-bubble';
     row.appendChild(who); row.appendChild(bubble);
