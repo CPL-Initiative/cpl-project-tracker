@@ -3710,7 +3710,9 @@
       FIG_TOKENS.map(function (t) {
         return "<li><code>{" + esc(t[0]) + "}</code> " + esc(t[2]) + "</li>";
       }).join("") + "</ul></details>";
-    return '<details class="cplfund-sec" data-sec="explainer_text"' + (sectionOpen("explainer_text") ? " open" : "") + ">" +
+    // data-curator-only: never a public section, so it carries no Rename or
+    // Hide (cpl_funding_section_titles excludes it by this mark alone).
+    return '<details class="cplfund-sec" data-sec="explainer_text" data-curator-only="1"' + (sectionOpen("explainer_text") ? " open" : "") + ">" +
       '<summary class="cplfund-sec-sum"><h3>The explainer&rsquo;s text</h3>' +
       '<span class="cplfund-sec-flag">Curator only</span>' +
       '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
