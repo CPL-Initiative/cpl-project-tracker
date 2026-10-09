@@ -19,13 +19,16 @@
 //     the panel, and the footer — always visible — carries the privacy line, so
 //     the person typing sees it without opening anything.
 //
-//   * THE PEAK IS NOT CLIPPED. `.s-name-peak` clipped both axes and cut the
-//     ridgeline off at the top of the wordmark. `overflow: clip visible` keeps
-//     the sideways containment (a narrow phone must not scroll) and frees the top.
+//   * THE LOGO IS THE WAY TO MAP (the 2026-10-08 redesign, after america.gov).
+//     The navy band, the ghosted Whitney wordmark and the map.rccd.edu pill are
+//     gone; Sam: "Make the CPL Initiative logo a link". The link says where it
+//     goes and that it opens a new tab, and the logo swaps to its light-on-dark
+//     version by the cpl_theme.js contract (the OS, or the reader's choice).
 //
-//   * ONE HEADER ROW ON A PHONE. Below 560px the map.rccd.edu pill yields to
-//     the footer link with the same destination and cue; a11y.config.js says so,
-//     or the sweep reports a control that vanished.
+//   * ONE HEADER ROW ON A PHONE. Below 560px the header does not wrap, and the
+//     audience row folds behind its one "Answering for: …" control; a11y.config.js
+//     says so, or the sweep reports a control that vanished. Below 400px the
+//     header shrinks and nothing yields.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_header_about.test.js`).
 const fs = require("fs");
@@ -62,7 +65,7 @@ block("(1) the control and the panel exist, and the text moved", () => {
   check("(1) ⭐ the panel it controls exists and starts hidden",
     /<div class="s-about-panel" id="s-about" hidden>/.test(HTML));
   check("(1) the panel holds the introduction and the beta note",
-    /id="s-about"[\s\S]*?Hi, I'm <strong>Sierra<\/strong>[\s\S]*?class="s-beta">Beta[\s\S]*?personal information[\s\S]*?logged anonymously/.test(HTML));
+    /id="s-about"[\s\S]*?Sierra answers questions about credit for prior learning[\s\S]*?class="s-beta">Beta[\s\S]*?CPL coordinator[\s\S]*?personal information[\s\S]*?logged anonymously/.test(HTML));
   check("(1) ⭐ nothing sits between the header and the audience picker any more",
     !/class="s-intro"/.test(HTML),
     "the introduction above the conversation is what took 287px of a phone");
@@ -95,32 +98,37 @@ block("(2) it opens and closes without a mouse", () => {
   check("(2) the page exposes setAbout for harnesses", typeof w.CPL_SIERRA_PAGE.setAbout === "function");
 });
 
-block("(3) the styles: the peak, the phone row, the hidden companion", () => {
-  check("(3) ⭐ the wordmark clips sideways only, so the ridgeline's peak shows",
-    /\.s-name-peak\s*\{[^}]*overflow:\s*clip visible/.test(CSS),
-    "overflow: clip on both axes cut the peak off at the top of the line box");
+block("(3) the styles: the logo link, the phone row, the hidden companion", () => {
+  check("(3) ⭐ the logo is the link to map.rccd.edu, and says where it goes and that it opens a new tab",
+    /<a class="s-home" href="https:\/\/map\.rccd\.edu" target="_blank" rel="noopener">[\s\S]*?<img class="s-logo s-logo-light"[\s\S]*?<span class="s-sr">map\.rccd\.edu \(opens in a new tab\)<\/span>\s*<\/a>/.test(HTML),
+    "an image link's visible face names no destination, so the hidden words must");
+  check("(3) the light-on-dark logo shows in dark, by the OS and by the reader's explicit choice",
+    /prefers-color-scheme: dark\)\s*\{[^@]*:root:not\(\[data-theme="light"\]\) \.s-logo-dark\s*\{\s*display:\s*block/.test(CSS) &&
+    /:root\[data-theme="dark"\] \.s-logo-dark\s*\{\s*display:\s*block/.test(CSS));
   const narrow = (CSS.match(/@media \(max-width: 560px\)\s*\{([\s\S]*?)\n\}/) || [])[1] || "";
-  check("(3) ⭐ below 560px the header does not wrap and the map.rccd.edu pill yields",
-    /\.s-head\s*\{[^}]*flex-wrap:\s*nowrap/.test(narrow) && /\.s-back\s*\{\s*display:\s*none/.test(narrow),
+  check("(3) ⭐ below 560px the header does not wrap and the audience row folds behind its control",
+    /\.s-head\s*\{[^}]*flex-wrap:\s*nowrap/.test(narrow) &&
+    /\.s-audience:not\(\.open\)\s*\{\s*display:\s*none/.test(narrow) &&
+    /\.s-aud-toggle\s*\{\s*display:\s*inline-flex/.test(narrow),
     "two header rows were 104px of a 844px phone");
   check("(3) …and About Sierra stays (it is the only way to the text)", !/\.s-about\s*\{[^}]*display:\s*none/.test(narrow));
   check("(3) the panel has the [hidden] companion rule",
     /\.s-about-panel\[hidden\]\s*\{\s*display:\s*none/.test(CSS),
     "an author display rule beats the UA's [hidden] — the 2026-08-14 .s-fb-note lesson");
   check("(3) the About control is a styled <button> (font and color spelled out)",
-    /\.s-about\s*\{[^}]*font:[^}]*var\(--sierra-font\)/.test(CSS) && /\.s-about\s*\{[^}]*color:\s*#fff/.test(CSS));
+    /\.s-about\s*\{[^}]*font:[^}]*var\(--sierra-font\)/.test(CSS) && /\.s-about\s*\{[^}]*color:\s*var\(--sierra-cobalt\)/.test(CSS));
   check("(3) the beta note keeps its AA token", /\.s-beta\s*\{[^}]*color:\s*var\(--sierra-faint\)/.test(CSS));
 });
 
 block("(4) the sweep is told what may vanish, and only that", () => {
   const sierraCfg = (CFG.match(/sierra:\s*\{[\s\S]*?mayHideBelow:\s*\[([^\]]*)\]/) || [])[1] || "";
-  check("(4) ⭐ a11y.config.js allows .s-back to yield below 560 for the Sierra target",
-    /"\.s-back"/.test(sierraCfg), "otherwise the sweep reports a control that disappeared on a phone");
-  check("(4) …and below 400 the tagline, whose words the name and title carry", /"\.s-role"/.test(sierraCfg));
-  check("(4) …and nothing else", sierraCfg.replace(/"\.s-back"|"\.s-role"|[\s,]/g, "") === "");
+  check("(4) ⭐ a11y.config.js allows the audience row to fold below 560 for the Sierra target",
+    /"\.s-audience"/.test(sierraCfg), "otherwise the sweep reports a control that disappeared on a phone");
+  check("(4) …and never the control that opens it", !/"\.s-aud-toggle"/.test(sierraCfg));
+  check("(4) …and nothing else", sierraCfg.replace(/"\.s-audience"|[\s,]/g, "") === "");
   const narrow400 = (CSS.match(/@media \(max-width: 400px\)\s*\{([\s\S]*?)\n\}/) || [])[1] || "";
-  check("(4) the 400px rule hides only the tagline, never the name or the control",
-    /\.s-role\s*\{\s*display:\s*none/.test(narrow400) && !/h1|\.s-about\s*\{[^}]*display/.test(narrow400));
+  check("(4) the 400px rule shrinks the header and hides nothing",
+    narrow400.length > 0 && /\.s-logo\s*\{\s*height:/.test(narrow400) && !/display:\s*none/.test(narrow400));
 });
 
 let pass = 0;

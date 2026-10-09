@@ -1,112 +1,99 @@
-/* Sierra — standalone chat-first page. Self-contained (no COBI/fact-sheet tokens). */
+/* Sierra — the standalone public page, after america.gov (Sam, 2026-10-08; the
+   approved mock-up is prototype/sierra_redesign_mockup.html).
+
+   Two views on one page, keyed on <body data-view>:
+     arriving — a greeting, then a First Light painting in a framed card with the
+                question bar on its top edge; caption and Previous, Pause, Next
+                beneath.
+     asking   — the painting folds away; the conversation takes a centered column
+                on paper and the question bar docks beneath it.
+
+   Self-contained: the page loads no COBI file. Its tokens carry First Light's
+   values (prototype/first_light_theme_v1.html) under Sierra's own names, every
+   hex lives in a :root block, and the fonts are self-hosted in ./fonts (OFL), so
+   the public page sends nothing to a third party.
+
+   Theme: the cpl_theme.js contract. No data-theme follows the OS; data-theme
+   "light" or "dark" (set in <head> from the reader's COBI choice) wins. Each dark
+   value is written twice, under the media query and under the explicit
+   attribute, so an explicit choice beats the OS in both directions. */
+
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('./fonts/playfair-display-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('./fonts/source-sans-3-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('./fonts/source-sans-3-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url('./fonts/source-sans-3-latin-700-normal.woff2') format('woff2'); }
+
 :root {
-  --sierra-navy: #0b3d61;      /* CCC seal blue */
-  --sierra-navy-2: #135080;
-  --sierra-cobalt: #0047ab;
-  --sierra-ink: #1c2733;
-  --sierra-muted: #5b6b7a;
-  /* Was #8394a3 until 2026-08-20. It painted the beta disclaimer at 2.80:1 and
-     the footer at 3.12:1 — both below the AA 4.5:1 floor, and the beta box is
-     the sentence telling a student to confirm anything important with their
-     coordinator, i.e. the most consequential text on the page and the least
-     legible. At 12–13px there is no "large text" exemption (that needs 24px, or
-     18.66px bold), so a genuinely faint third grey cannot exist here: this value
-     is close to --sierra-muted on purpose. Every use of this token is TEXT
-     (.s-beta, .s-foot, .s-fb, .s-fb-sending), so nothing decorative regressed.
-     Verified 4.69:1 on --sierra-subtle and 5.23:1 on white by
-     scripts/check_public_page_layout.js, which computes the painted pair. */
-  --sierra-faint: #5f6e7d;
-  --sierra-surface: #ffffff;
-  --sierra-subtle: #eef3f8;
-  --sierra-bg: #f5f7fa;
-  --sierra-border: #dbe3ec;
-  --sierra-border-strong: #c3cfdb;
-  --sierra-crimson: #a4262c;
-  --sierra-font: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --sierra-paper: #F4F2ED;
+  --sierra-ink: #1C1C1A;          /* First Light text-strong, 15.26:1 on paper */
+  --sierra-body: #3A3A36;         /* text-body, 10.21:1 */
+  --sierra-muted: #5C5C55;        /* text-muted, 6.02:1 */
+  /* The beta note and the footer: the sentences telling a reader to confirm with
+     the coordinator and to leave personal information out. At 13-15px there is
+     no large-text exemption, so this is First Light's muted text, never its
+     decorative faint (#87877F, 3.5:1). The old #8394a3 painted them at 2.80:1. */
+  --sierra-faint: #5C5C55;
+  --sierra-surface: #FFFFFF;
+  --sierra-subtle: #F7F5F1;
+  --sierra-tint: #ECE9E2;         /* surface-muted: the question line, table heads */
+  --sierra-border: rgba(28, 28, 26, .14);
+  --sierra-border-strong: rgba(28, 28, 26, .30);
+  --sierra-cobalt: #0047AB;       /* interactive, links, focus: 7.54:1 */
+  --sierra-on-cobalt: #FFFFFF;
+  --sierra-crimson: #920000;      /* the one state a reader must act on */
+  --sierra-shadow: 0 18px 50px rgba(28, 28, 26, .16);
+  --sierra-bar-shadow: 0 6px 22px rgba(28, 28, 26, .14);
+  --sierra-art-dim: 1;
+  --sierra-navy: #002F6D;         /* seal blue: the Whitney roundel beside each answer */
+  /* Sierra's name and its mountain line, a ghosted dark blue (Sam, 2026-10-08):
+     seal blue #002F6D at 70% over paper. 5.03:1 on paper, so it holds AA even
+     where the name is small (the reading header). */
+  --sierra-ghost: #4A6A93;
+  --sierra-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sierra-font: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sierra-paper: #151514; --sierra-ink: #ECE9E2; --sierra-body: #D6D6D0;
+    --sierra-muted: #ABABA3; --sierra-faint: #ABABA3;
+    --sierra-surface: #1E1E1C; --sierra-subtle: #262624; --sierra-tint: #30302E;
+    --sierra-border: rgba(255, 255, 255, .14); --sierra-border-strong: rgba(255, 255, 255, .32);
+    --sierra-cobalt: #7DA1D4; --sierra-on-cobalt: #151514; --sierra-crimson: #CF8F8F;
+    --sierra-shadow: 0 18px 50px rgba(0, 0, 0, .5); --sierra-bar-shadow: 0 6px 22px rgba(0, 0, 0, .45);
+    --sierra-art-dim: .82;
+    --sierra-ghost: #6885AE;      /* the light-on-dark blue #7DA1D4 at 80% over dark paper: 4.84:1 */
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --sierra-paper: #151514; --sierra-ink: #ECE9E2; --sierra-body: #D6D6D0;
+  --sierra-muted: #ABABA3; --sierra-faint: #ABABA3;
+  --sierra-surface: #1E1E1C; --sierra-subtle: #262624; --sierra-tint: #30302E;
+  --sierra-border: rgba(255, 255, 255, .14); --sierra-border-strong: rgba(255, 255, 255, .32);
+  --sierra-cobalt: #7DA1D4; --sierra-on-cobalt: #151514; --sierra-crimson: #CF8F8F;
+  --sierra-shadow: 0 18px 50px rgba(0, 0, 0, .5); --sierra-bar-shadow: 0 6px 22px rgba(0, 0, 0, .45);
+  --sierra-art-dim: .82;
+  --sierra-ghost: #6885AE;        /* the light-on-dark blue #7DA1D4 at 80% over dark paper: 4.84:1 */
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
+/* The docked bar sits over the bottom of the page while reading; this keeps a
+   control that takes focus (Copy, a rating, a link in an answer) clear of it
+   (WCAG 2.4.11, focus not obscured). */
+html { scroll-padding-bottom: 12.5rem; }
 body {
-  font-family: var(--sierra-font);
-  color: var(--sierra-ink);
-  background: var(--sierra-bg);
+  margin: 0; min-height: 100dvh;
   display: flex; flex-direction: column;
-  min-height: 100dvh;
+  font-family: var(--sierra-font); font-size: 16px; line-height: 1.5;
+  color: var(--sierra-body); background: var(--sierra-paper);
 }
-
-/* ── Header ── */
-.s-head {
-  display: flex; align-items: center; gap: 14px;
-  padding: 14px clamp(14px, 4vw, 40px);
-  color: #fff;
-  background: linear-gradient(135deg, var(--sierra-navy), var(--sierra-navy-2));
-  box-shadow: 0 2px 10px rgba(11, 61, 97, .18);
-}
-.s-brand { display: flex; align-items: center; gap: 16px; margin-right: auto; min-width: 0; }
-.s-head .s-brand-logo {
-  height: 48px; width: auto; display: block; flex: 0 0 auto;
-}
-.s-brand-name {
-  padding-left: 16px; border-left: 1px solid rgba(255, 255, 255, .35); min-width: 0;
-}
-/* Mt Whitney ridgeline ghosted behind the "Sierra" wordmark */
-/* `clip` (not `hidden`) contains the decorative ridgeline: it stops the ghost
-   from pushing the document sideways on a narrow phone WITHOUT creating a
-   scroll container, which `overflow:hidden` would — and a scroll container here
-   would silently swallow the focus ring of anything that ever lands inside it.
-   Padding leaves the ghost room to overhang the wordmark, which is the effect. */
-.s-name-peak {
-  position: relative; display: inline-block;
-  padding: 0 .35em; margin: 0 -.35em;
-  /* Clip sideways only. `overflow: clip` on both axes cut the ridgeline off at
-     the top of the wordmark's line box — the peak was missing (Sam, 2026-09-11:
-     "fix the ghosted mountain logo so the peak fits"). `clip visible` keeps the
-     horizontal containment the comment above is about and lets the peak rise
-     into the header's own padding, where there is room for it. */
-  overflow: clip visible;
-}
-.s-name-peak > h1 { position: relative; z-index: 1; }
-.s-whitney-ghost {
-  position: absolute; z-index: 0; pointer-events: none;
-  height: 1.95em; width: auto;
-  left: 50%; bottom: .02em;           /* flat base sits level with the text baseline */
-  transform: translateX(-32%);        /* nudged right so the right slope clears the final "a" */
-  opacity: .34;
-}
-.s-head h1 { margin: 0; font-size: 1.35rem; letter-spacing: .01em; }
-.s-head .s-role { margin: 2px 0 0; font-size: .82rem; opacity: .85; }
-.s-back {
-  color: #fff; text-decoration: none; font-size: .82rem; font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, .5); border-radius: 999px; padding: 6px 13px;
-  white-space: nowrap;
-}
-.s-back:hover { background: rgba(255, 255, 255, .14); }
-/* The About control shares the pill; it is a <button>, so font and color are
-   spelled out (a button inherits neither). */
-.s-about {
-  color: #fff; background: transparent; cursor: pointer;
-  font: 600 .82rem var(--sierra-font);
-  border: 1px solid rgba(255, 255, 255, .5); border-radius: 999px; padding: 6px 13px;
-  white-space: nowrap; margin-right: 10px;
-}
-.s-about:hover, .s-about[aria-expanded="true"] { background: rgba(255, 255, 255, .14); }
-/* The panel drops below the header and spans it; the text inside is the same
-   introduction and beta note that stood above the conversation until
-   2026-09-11. The [hidden] companion rule is deliberate: an author `display`
-   would otherwise beat the UA's [hidden] (the 2026-08-14 lesson on .s-fb-note). */
-.s-about-panel {
-  background: var(--sierra-subtle); border-bottom: 1px solid var(--sierra-border);
-  box-shadow: 0 2px 8px rgba(11, 61, 97, .08);
-}
-.s-about-panel[hidden] { display: none; }
-.s-about-inner {
-  width: min(820px, 100%); margin: 0 auto; padding: 12px clamp(10px, 3vw, 20px) 14px;
-  color: var(--sierra-muted); font-size: .92rem; line-height: 1.5;
-}
-.s-about-inner p { margin: 0; }
-.s-about-inner p + p { margin-top: 8px; }
-.s-about-inner strong { color: var(--sierra-ink); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--sierra-cobalt); outline-offset: 2px; }
 
 /* Visually hidden, still announced. Carries the "(opens in a new tab)" cue that
    replaced the ↗ — clipped rather than display:none, because display:none and
@@ -118,204 +105,6 @@ body {
   white-space: nowrap; border: 0;
 }
 
-/* ── Main chat column ── */
-.s-main {
-  flex: 1; width: min(820px, 100%); margin: 0 auto; min-height: 0;
-  display: flex; flex-direction: column;
-  padding: 0 clamp(10px, 3vw, 20px);
-}
-.s-beta {
-  margin-top: 6px; font-size: .8rem; color: var(--sierra-faint);
-  background: var(--sierra-subtle); border: 1px solid var(--sierra-border);
-  border-radius: 8px; padding: 7px 11px;
-}
-
-.s-log {
-  flex: 1; min-height: 0; overflow-y: auto;
-  display: flex; flex-direction: column; gap: 12px;
-  padding: 12px 2px;
-}
-.s-msg { display: flex; gap: 10px; max-width: 100%; }
-.s-user { justify-content: flex-end; }
-.s-avatar { flex: 0 0 auto; width: 30px; height: 30px; margin-top: 2px; }
-.s-avatar svg { width: 100%; height: 100%; display: block; }
-.s-bubble {
-  padding: 10px 14px; border-radius: 14px; font-size: .95rem; line-height: 1.55;
-  max-width: 88%; overflow-wrap: anywhere;
-  background: var(--sierra-surface); color: var(--sierra-ink);
-  border: 1px solid var(--sierra-border); box-shadow: 0 1px 2px rgba(11, 61, 97, .05);
-}
-.s-bubble p { margin: 0 0 9px; } .s-bubble p:last-child { margin-bottom: 0; }
-.s-bubble ul, .s-bubble ol { margin: 5px 0 9px; padding-left: 21px; } .s-bubble li { margin: 2px 0; }
-.s-bubble a { color: var(--sierra-cobalt); }
-.s-bubble code { background: var(--sierra-subtle); padding: 1px 5px; border-radius: 5px; font-size: .9em; }
-/* Markdown upgrades (2026-07-02): headings, rules, and tables in answers */
-.s-bubble h3, .s-bubble h4, .s-bubble h5 { margin: 13px 0 5px; line-height: 1.3; color: var(--sierra-navy); }
-.s-bubble h3 { font-size: 1.04rem; } .s-bubble h4 { font-size: .96rem; } .s-bubble h5 { font-size: .9rem; }
-.s-bubble h3:first-child, .s-bubble h4:first-child, .s-bubble h5:first-child { margin-top: 2px; }
-.s-bubble hr { border: none; border-top: 1px solid var(--sierra-border); margin: 11px 0; }
-.s-bubble table { border-collapse: collapse; margin: 8px 0 10px; font-size: .92em; display: block; max-width: 100%; overflow-x: auto; }
-.s-bubble th, .s-bubble td { border: 1px solid var(--sierra-border); padding: 4px 10px; text-align: left; vertical-align: top; }
-.s-bubble th { background: var(--sierra-subtle); color: var(--sierra-navy); font-weight: 700; }
-.s-bubble tbody tr:nth-child(even) { background: var(--sierra-bg); }
-.s-user .s-bubble { background: var(--sierra-navy); color: #fff; border-color: var(--sierra-navy); }
-.s-user .s-bubble a { color: #cfe3ff; }
-.s-typing { letter-spacing: 3px; color: var(--sierra-muted); animation: s-pulse 1.1s infinite; }
-@keyframes s-pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
-
-/* ── Audience (primary population) selector ── */
-.s-audience {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
-  margin: 6px 2px 2px; padding: 8px 11px;
-  background: var(--sierra-subtle); border: 1px solid var(--sierra-border);
-  border-radius: 10px;
-}
-.s-aud-label { font-size: .82rem; font-weight: 600; color: var(--sierra-muted); margin-right: 2px; }
-.s-aud-chip {
-  border: 1px solid var(--sierra-border-strong); background: var(--sierra-surface);
-  color: var(--sierra-ink); border-radius: 999px; padding: 6px 12px;
-  font: 600 .82rem var(--sierra-font); cursor: pointer;
-}
-.s-aud-chip:hover { border-color: var(--sierra-cobalt); }
-.s-aud-chip.on { background: var(--sierra-navy); border-color: var(--sierra-navy); color: #fff; }
-.s-audience.s-need { outline: 2px solid var(--sierra-crimson); animation: s-need-pulse .42s 2; }
-@keyframes s-need-pulse { 50% { outline-color: transparent; } }
-
-/* ── Per-answer feedback (👍/👎 + note) ── */
-.s-fb {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
-  margin: -6px 0 0 40px; font-size: .78rem; color: var(--sierra-faint);
-}
-/* The rating buttons carry WORDS now (Helpful / Not helpful), not thumbs. A
-   <button> does not inherit font-family or color from the page — that is why
-   .s-fb-copy below spells both out — and a glyph did not care, but a word does:
-   without these the two rating pills would render in the UA's default button
-   font and colour immediately beside a Copy pill that does not. nowrap keeps
-   "Not helpful" on one line inside its pill; the row itself still wraps, since
-   .s-fb is flex-wrap. */
-.s-fb-btn {
-  border: 1px solid var(--sierra-border); background: var(--sierra-surface);
-  border-radius: 999px; padding: 2px 9px; cursor: pointer;
-  font-size: .78rem; line-height: 1.4; opacity: .75; color: inherit;
-  font-family: inherit; white-space: nowrap;
-}
-.s-fb-btn:hover { opacity: 1; border-color: var(--sierra-cobalt); }
-.s-fb-btn.on { opacity: 1; background: var(--sierra-subtle); border-color: var(--sierra-cobalt); }
-/* Copy shares the pill shape but NOT the .s-fb-btn class — that class means
-   "a rating button" to the code (btns.up/btns.down) and to the tests, which
-   assert exactly two of them. */
-.s-fb-copy {
-  border: 1px solid var(--sierra-border); background: var(--sierra-surface);
-  border-radius: 999px; padding: 2px 9px; cursor: pointer;
-  font-size: .78rem; line-height: 1.4; opacity: .75; color: inherit;
-  font-family: inherit; white-space: nowrap;
-}
-.s-fb-copy:hover { opacity: 1; border-color: var(--sierra-cobalt); }
-.s-fb-copy.on { opacity: 1; background: var(--sierra-subtle); border-color: var(--sierra-cobalt); }
-/* THE ROOT DEFECT (fixed 2026-08-14). An author `display` rule beats the UA
-   stylesheet's `[hidden] { display:none }`, so `noteWrap.hidden = true` was
-   INERT: the composer never closed on success, and it sat on screen from the
-   start instead of appearing after a rating — which let a click land on the
-   `!rating` guard and do nothing at all. Any element toggled with `hidden`
-   needs this companion rule alongside its `display`. */
-.s-fb-note { display: flex; flex: 1 1 100%; gap: 6px; margin-top: 4px; }
-.s-fb-note[hidden] { display: none; }
-.s-fb-note input {
-  flex: 1; border: 1px solid var(--sierra-border-strong); border-radius: 8px;
-  padding: 6px 10px; font: .82rem var(--sierra-font);
-  background: var(--sierra-surface); color: var(--sierra-ink);
-}
-.s-fb-note button {
-  border: none; border-radius: 8px; padding: 6px 12px; cursor: pointer;
-  background: var(--sierra-cobalt); color: #fff; font: 600 .8rem var(--sierra-font);
-}
-.s-fb-note button:disabled { opacity: .6; cursor: default; }
-.s-fb-done { color: var(--sierra-muted); font-weight: 600; }
-.s-fb-sending { color: var(--sierra-faint); font-weight: 600; }
-.s-fb-fail { color: var(--sierra-crimson); font-weight: 600; }
-
-/* ── Suggestion chips ── */
-.s-suggest { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 4px; }
-.s-chip {
-  border: 1px solid var(--sierra-border-strong); background: var(--sierra-surface);
-  color: var(--sierra-cobalt); cursor: pointer; border-radius: 999px;
-  padding: 8px 14px; font: 600 .86rem var(--sierra-font); text-align: left;
-}
-.s-chip:hover { background: rgba(0, 71, 171, .07); border-color: var(--sierra-cobalt); }
-
-/* ── Status + input ── */
-.s-status { min-height: 16px; padding: 2px 4px; font-size: .82rem; color: var(--sierra-muted); }
-.s-status.s-error { color: var(--sierra-crimson); }
-.s-form { display: flex; gap: 9px; padding: 8px 0 14px; }
-.s-input {
-  /* min-width:0 is load-bearing, not tidiness. A flex ITEM defaults to
-     min-width:auto, so this input refused to shrink below its intrinsic size
-     (roughly 215px: the UA's default 20-character width plus padding), which
-     pushed Send past the right edge and made the whole page scroll sideways by
-     19px at 320px — the narrowest phone still in wide use. */
-  flex: 1; min-width: 0;
-  border: 1px solid var(--sierra-border-strong); border-radius: 999px;
-  padding: 12px 18px; font-size: .96rem; font-family: var(--sierra-font);
-  background: var(--sierra-surface); color: var(--sierra-ink);
-}
-.s-input:focus { outline: 2px solid var(--sierra-cobalt); outline-offset: 1px; border-color: var(--sierra-cobalt); }
-.s-send {
-  border: none; border-radius: 999px; padding: 0 22px; cursor: pointer;
-  font: 600 .95rem var(--sierra-font); color: #fff; background: var(--sierra-cobalt);
-}
-.s-send:hover { background: var(--sierra-navy); }
-.s-send:disabled { opacity: .6; cursor: default; }
-
-/* ── Footer ── */
-.s-foot {
-  padding: 12px clamp(14px, 4vw, 40px); text-align: center;
-  font-size: .78rem; color: var(--sierra-faint);
-  border-top: 1px solid var(--sierra-border); background: var(--sierra-surface);
-}
-.s-foot a { color: var(--sierra-cobalt); }
-
-/* Sierra declared two animations and honoured no motion preference: the typing
-   indicator pulses INFINITELY while an answer streams, and the audience selector
-   flashes its outline when someone sends without picking. Both are exactly what
-   WCAG 2.3.3 / vestibular-disorder guidance asks you to stand down.
-   Neither cue is deleted — the typing dots still say "thinking" by being there,
-   and the selector still calls attention to itself with a solid outline. Only
-   the movement stops. */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .001ms !important;
-    scroll-behavior: auto !important;
-  }
-  .s-typing { animation: none; opacity: .8; }
-  .s-audience.s-need { animation: none; outline: 3px solid var(--sierra-crimson); }
-}
-
-/* One consistent focus ring, rather than four different UA defaults on top of
-   four different backgrounds — the Send button is cobalt, so the browser's own
-   ring sits on it at poor contrast. :focus-visible so a mouse click on a chip
-   does not leave a ring behind. */
-.s-back:focus-visible, .s-aud-chip:focus-visible, .s-chip:focus-visible,
-.s-send:focus-visible, .s-fb-btn:focus-visible, .s-fb-copy:focus-visible,
-.s-fb-note button:focus-visible, .s-foot a:focus-visible,
-.s-bubble a:focus-visible, .s-log:focus-visible, .s-scrollx:focus-visible {
-  outline: 3px solid var(--sierra-cobalt);
-  outline-offset: 2px;
-  border-radius: 6px;
-}
-/* On the navy header the cobalt ring has almost no contrast against its own
-   background, so the header's own control gets a white one. */
-.s-back:focus-visible { outline-color: #fff; }
-
-/* A scroll container is reachable by keyboard ONLY if it is focusable (WCAG
-   2.1.1). Both of these are made focusable by sierra.js exactly while they
-   overflow — never a dead tab stop. The dotted rule is the only visual sign a
-   region continues past its edge. */
-.s-log[tabindex] { outline-offset: -2px; }
-.s-scrollx { overflow-x: auto; }
-.s-scrollx[tabindex] { border-left: 2px dotted var(--sierra-border-strong); }
-
 /* Skip link — off-screen until focused. */
 .s-skip {
   position: absolute; left: 8px; top: -60px; z-index: 20;
@@ -326,42 +115,355 @@ body {
 }
 .s-skip:focus { top: 8px; }
 
+/* ── Header: the logo (the link to MAP), Sierra's name while reading, About ── */
+.s-head {
+  display: flex; flex-wrap: nowrap; align-items: center; gap: 12px;
+  width: 100%; max-width: 1180px; margin: 0 auto; padding: 14px 16px 0;
+}
+.s-home { display: inline-flex; align-items: center; min-height: 44px; border-radius: 6px; flex: 0 0 auto; }
+.s-home:hover { opacity: .85; }
+.s-logo { height: 40px; width: auto; display: block; }
+.s-logo-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .s-logo-light { display: none; }
+  :root:not([data-theme="light"]) .s-logo-dark { display: block; }
+}
+:root[data-theme="dark"] .s-logo-light { display: none; }
+:root[data-theme="dark"] .s-logo-dark { display: block; }
+.s-who-head {
+  display: none; font-family: var(--sierra-display); font-size: 1.25rem; font-weight: 600;
+  color: var(--sierra-ink); padding-left: 12px; border-left: 1px solid var(--sierra-border-strong);
+  white-space: nowrap;
+}
+/* The About control is a word, like every control on the page. A <button>
+   inherits neither font nor color, so both are spelled out. */
+.s-about {
+  margin-left: auto; background: none; border: 0; padding: 8px 4px; min-height: 44px;
+  cursor: pointer; white-space: nowrap;
+  font: 600 1rem var(--sierra-font); color: var(--sierra-cobalt);
+}
+.s-about:hover, .s-about[aria-expanded="true"] { text-decoration: underline; text-underline-offset: 3px; }
+/* The [hidden] companion is deliberate: an author `display` would otherwise
+   beat the UA's [hidden] (the 2026-08-14 lesson on .s-fb-note). */
+.s-about-panel { padding: 8px 16px 0; }
+.s-about-panel[hidden] { display: none; }
+.s-about-inner {
+  max-width: 640px; margin: 0 auto; display: grid; gap: 8px;
+  background: var(--sierra-surface); border: 1px solid var(--sierra-border); border-radius: 14px;
+  padding: 14px 18px; font-size: .9375rem; color: var(--sierra-body);
+}
+.s-about-inner p { margin: 0; }
+.s-beta { color: var(--sierra-faint); }
+
+/* ── The page ── */
+.s-main {
+  flex: 1; width: 100%; min-height: 0;
+  display: flex; flex-direction: column; gap: 22px;
+  padding: 0 16px 8px;
+}
+
+/* Sierra's name and her logo, one ghosted dark blue (Sam, 2026-10-08: "a dark
+   blue ghosted font with a much thicker same color mountain line"). The logo is
+   decorative to a screen reader; the name is text. */
+.s-peak { position: relative; display: inline-block; isolation: isolate; color: var(--sierra-ghost); }
+/* Same color, same weight, so where the line crosses a letter the two would
+   merge and the word stops reading. Each letter carries a thin halo in the
+   page's own color, which cuts the line where it passes behind the letter:
+   the line reads as running behind the name, and the name stays a word. */
+.s-peak { text-shadow: 0.050em 0.000em 0 var(--sierra-paper), 0.046em 0.019em 0 var(--sierra-paper), 0.035em 0.035em 0 var(--sierra-paper), 0.019em 0.046em 0 var(--sierra-paper), 0.000em 0.050em 0 var(--sierra-paper), -0.019em 0.046em 0 var(--sierra-paper), -0.035em 0.035em 0 var(--sierra-paper), -0.046em 0.019em 0 var(--sierra-paper), -0.050em 0.000em 0 var(--sierra-paper), -0.046em -0.019em 0 var(--sierra-paper), -0.035em -0.035em 0 var(--sierra-paper), -0.019em -0.046em 0 var(--sierra-paper), -0.000em -0.050em 0 var(--sierra-paper), 0.019em -0.046em 0 var(--sierra-paper), 0.035em -0.035em 0 var(--sierra-paper), 0.046em -0.019em 0 var(--sierra-paper); }
+/* The logo itself (whitney-mark.svg), expanded and set mostly above the word
+   (Sam: "Keep the ridgeline mostly above Sierra. Can you just use the current
+   logo expanded?"). Its stroke scales with it, so the line's weight is the
+   logo's own. "Keep the ridgeline out of the S": the S's ink ends at 18.9% of
+   the word, so the drawing is trimmed before it reaches the S and rises from
+   just right of the S's top. */
+.s-ridge {
+  position: absolute; z-index: -1; pointer-events: none;
+  left: 5%; width: 95%; height: auto; bottom: .65em;
+  color: inherit;
+  /* The trim runs square to the line where it ends (that segment climbs at
+     about 42 degrees), so the end reads as drawn rather than chopped: through
+     16.5% of the width at the line's height there, along the perpendicular. */
+  clip-path: polygon(3.2% 0, 100% 0, 100% 100%, 28.3% 100%);
+}
+/* The dot of the i, lowered (Sam, 2026-10-08: "If you move the dot over the i
+   down lower it won't interfere with the ridgeline"). The word carries a
+   dotless i and this dot instead. Playfair SemiBold's own dot (measured) is
+   0.164em wide and 0.145em tall, centered 0.1495em into the i's 0.308em
+   advance, from 0.627em to 0.772em over the baseline; the stem stops at
+   0.528em. This one sits 0.05em lower, still clear of the stem. The anchor is
+   an empty inline-block, whose bottom sits on the baseline, so the offsets
+   read from the baseline itself. */
+.s-nameword { white-space: nowrap; }
+.s-tittle { display: inline-block; position: relative; width: 0; height: 0; vertical-align: baseline; }
+.s-tittle::after {
+  content: ""; position: absolute;
+  left: calc(.1495em - .308em - .082em); bottom: .577em; width: .164em; height: .145em;
+  border-radius: 50%; background: currentColor;
+  box-shadow: 0 0 0 .05em var(--sierra-paper);
+}
+/* Room above the greeting for the mountain; the whole greeting in the name's
+   ghosted blue (Sam, 2026-10-08: "Font should all be same blue, Hello, I'm Sierra."). */
+.s-hello h1 { padding-top: .5em; }
+
+/* Arriving: the greeting */
+.s-hello { text-align: center; display: grid; gap: 10px; padding-top: clamp(14px, 3vw, 30px); }
+.s-hello h1 {
+  margin: 0; font-family: var(--sierra-display); font-weight: 600;
+  font-size: clamp(2.4rem, 6.4vw, 5.2rem); line-height: 1.04; letter-spacing: -.015em;
+  color: var(--sierra-ghost); text-wrap: balance;
+}
+.s-hello p { margin: 0; font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--sierra-muted); text-wrap: balance; }
+
+/* Arriving: the painting, with the question bar on its top edge. The frame
+   itself does not clip: .s-arts clips the paintings, so the frame keeps its
+   content-based minimum height and a bar grown by the audience row and a status
+   line pushes the frame taller instead of being cut off on a short screen. */
+.s-frame {
+  position: relative; width: 100%; max-width: 980px; margin: 0 auto;
+  display: flex; flex-direction: column; padding: 16px;
+  aspect-ratio: 16 / 10; max-height: 70vh; border-radius: 30px;
+  box-shadow: var(--sierra-shadow);
+}
+.s-arts {
+  position: absolute; inset: 0; border-radius: inherit; overflow: hidden;
+  background: var(--sierra-tint);
+}
+.s-arts::after {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 120px; pointer-events: none;
+  background: linear-gradient(var(--sierra-paper), transparent); opacity: .35;
+}
+.s-art {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1.4s ease; filter: brightness(var(--sierra-art-dim));
+}
+.s-art.on { opacity: 1; }
+
+/* The question bar: arriving it rides the painting, asking it docks. One form. */
+/* minmax(0, 1fr), not the implicit auto track: an auto track takes the input's
+   intrinsic width (its size attribute, ~200px at this font) as a floor, and at
+   320px that floor pushed the bar 15px past the edge. */
+.s-form {
+  position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px;
+  background: var(--sierra-surface); border-radius: 24px; box-shadow: var(--sierra-bar-shadow);
+  padding: 8px 8px 8px 22px;
+}
+.s-ask { display: flex; gap: 8px; align-items: flex-start; }
+.s-input {
+  /* min-width:0 is load-bearing. A flex item defaults to min-width:auto, so the
+     input refused to shrink below its intrinsic width and pushed the button past
+     the edge: the page scrolled sideways by 19px at 320px. */
+  flex: 1; min-width: 0; min-height: 50px; padding: 12px 4px; display: block;
+  border: 0; border-radius: 8px; background: transparent; color: var(--sierra-ink);
+  font: inherit; font-size: 1.125rem; line-height: 1.45;
+  resize: none; overflow-y: hidden;
+}
+.s-input::placeholder { color: var(--sierra-muted); opacity: 1; }
+.s-input:focus-visible { outline: 2px solid var(--sierra-cobalt); outline-offset: 2px; }
+.s-send {
+  flex: 0 0 auto; min-height: 46px; margin-top: 2px; padding: 0 24px; border: 0; border-radius: 999px; cursor: pointer;
+  font: 700 1rem var(--sierra-font); color: var(--sierra-on-cobalt); background: var(--sierra-cobalt);
+}
+.s-send:hover { text-decoration: underline; text-underline-offset: 3px; }
+.s-send:disabled { opacity: .6; cursor: default; text-decoration: none; }
+
+/* Who Sierra answers for: words on the bar, the pick bold and underlined (a
+   weight and a rule, never color alone). Collapsed behind one control on a
+   phone and while reading. */
+.s-aud-line {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0 14px;
+  border-top: 1px solid var(--sierra-border); padding: 2px 8px 2px 0;
+}
+.s-audience { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 14px; font-size: .9375rem; }
+.s-aud-label { color: var(--sierra-muted); }
+.s-aud-chip {
+  background: none; border: 0; border-bottom: 2px solid transparent; border-radius: 0;
+  padding: 6px 0 4px; min-height: 36px; cursor: pointer;
+  font: 400 .9375rem var(--sierra-font); color: var(--sierra-body);
+}
+.s-aud-chip:hover { color: var(--sierra-ink); border-bottom-color: var(--sierra-border-strong); }
+.s-aud-chip.on { color: var(--sierra-ink); font-weight: 700; border-bottom-color: var(--sierra-cobalt); }
+.s-audience.s-need { outline: 2px solid var(--sierra-crimson); outline-offset: 3px; border-radius: 6px; animation: s-need-pulse .42s 2; }
+@keyframes s-need-pulse { 50% { outline-color: transparent; } }
+.s-aud-toggle {
+  display: none; background: none; border: 0; padding: 6px 2px; min-height: 36px; cursor: pointer;
+  font: 600 .9375rem var(--sierra-font); color: var(--sierra-cobalt); text-align: left;
+}
+.s-aud-toggle:hover { text-decoration: underline; text-underline-offset: 3px; }
+body[data-view="asking"] .s-aud-toggle { display: inline-flex; }
+body[data-view="asking"] .s-audience:not(.open) { display: none; }
+body[data-view="asking"] .s-aud-label { display: none; }
+
+.s-status { padding: 0 8px 4px 0; font-size: .875rem; color: var(--sierra-muted); }
+.s-status:empty { padding: 0; }
+.s-status.s-error { color: var(--sierra-crimson); font-weight: 600; }
+
+/* Arriving: the caption and the painting controls */
+.s-under {
+  width: 100%; max-width: 980px; margin: -8px auto 0;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 18px;
+  font-size: .9375rem; color: var(--sierra-muted);
+}
+.s-cap { margin: 0; }
+.s-cap i { color: var(--sierra-body); }
+.s-ctl { display: flex; gap: 14px; }
+.s-word {
+  background: none; border: 0; padding: 8px 4px; min-height: 40px; cursor: pointer;
+  font: 600 1rem var(--sierra-font); color: var(--sierra-cobalt);
+}
+.s-word:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* The views. The greeting stays in the accessibility tree while reading, so the
+   page keeps its h1; it is clipped the way .s-sr is, never display:none. */
+body[data-view="asking"] .s-frame, body[data-view="asking"] .s-under { display: none; }
+body[data-view="asking"] .s-who-head { display: block; }
+body[data-view="asking"] .s-hello {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+body[data-view="arriving"] .s-log, body[data-view="arriving"] .s-dock { display: none; }
+
+/* ── Asking: the conversation, a centered column on paper ── */
+.s-log {
+  width: 100%; max-width: 46rem; margin: 0 auto; padding-top: 12px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.s-msg { display: flex; flex-direction: column; gap: 6px; max-width: 100%; }
+.s-user { align-items: flex-end; }
+.s-who {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--sierra-display); font-weight: 600; font-size: 1.05rem; color: var(--sierra-ink);
+}
+/* The Whitney roundel the COBI tab and the Fact Sheet drawer draw beside each
+   answer (SIERRA_MARK), sized to the name it sits beside. */
+.s-mark { flex: 0 0 auto; width: 24px; height: 24px; }
+.s-mark svg { width: 100%; height: 100%; display: block; }
+.s-bubble { font-size: 1.0625rem; line-height: 1.65; color: var(--sierra-body); overflow-wrap: anywhere; max-width: 100%; }
+.s-user .s-bubble {
+  max-width: 85%; padding: 10px 16px; border-radius: 18px 18px 6px 18px;
+  background: var(--sierra-tint); color: var(--sierra-ink); line-height: 1.5;
+}
+.s-bubble p { margin: 0 0 12px; } .s-bubble p:last-child { margin-bottom: 0; }
+.s-bubble ul, .s-bubble ol { margin: 4px 0 12px; padding-left: 22px; } .s-bubble li { margin: 3px 0; }
+.s-bubble a { color: var(--sierra-cobalt); }
+.s-bubble code { background: var(--sierra-tint); padding: 1px 5px; border-radius: 5px; font-size: .9em; }
+.s-bubble h3, .s-bubble h4, .s-bubble h5 { margin: 16px 0 6px; line-height: 1.3; color: var(--sierra-ink); }
+.s-bubble h3 { font-size: 1.12rem; } .s-bubble h4 { font-size: 1.02rem; } .s-bubble h5 { font-size: .95rem; }
+.s-bubble h3:first-child, .s-bubble h4:first-child, .s-bubble h5:first-child { margin-top: 2px; }
+.s-bubble hr { border: none; border-top: 1px solid var(--sierra-border); margin: 14px 0; }
+.s-bubble table { border-collapse: collapse; margin: 8px 0 12px; font-size: .92em; display: block; max-width: 100%; overflow-x: auto; }
+.s-bubble th, .s-bubble td { border: 1px solid var(--sierra-border-strong); padding: 4px 10px; text-align: left; vertical-align: top; }
+.s-bubble th { background: var(--sierra-tint); color: var(--sierra-ink); font-weight: 700; }
+.s-bubble tbody tr:nth-child(even) { background: var(--sierra-subtle); }
+.s-typing { letter-spacing: 3px; color: var(--sierra-muted); animation: s-pulse 1.1s infinite; }
+@keyframes s-pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+
+/* A scroll container is reachable by keyboard ONLY if it is focusable (WCAG
+   2.1.1). sierra.js makes the log and a wide answer table focusable exactly
+   while they overflow. The dotted rule is the only visual sign a table continues
+   past its edge. */
+.s-log[tabindex] { outline-offset: -2px; }
+.s-scrollx { overflow-x: auto; }
+.s-scrollx[tabindex] { border-left: 2px dotted var(--sierra-border-strong); }
+
+/* ── Per-answer feedback (Helpful / Not helpful + note) and Copy ── */
+.s-fb {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  margin-top: -12px; font-size: .8125rem; color: var(--sierra-faint);
+}
+/* The rating buttons carry WORDS. A <button> does not inherit font-family or
+   color from the page, so both are spelled out; nowrap keeps "Not helpful" on
+   one line inside its pill while the row itself wraps. */
+.s-fb-btn {
+  border: 1px solid var(--sierra-border-strong); background: var(--sierra-surface);
+  border-radius: 999px; padding: 3px 11px; min-height: 28px; cursor: pointer;
+  font-size: .8125rem; line-height: 1.4; color: inherit;
+  font-family: inherit; white-space: nowrap;
+}
+.s-fb-btn:hover { border-color: var(--sierra-cobalt); color: var(--sierra-ink); }
+.s-fb-btn.on { background: var(--sierra-tint); border-color: var(--sierra-cobalt); color: var(--sierra-ink); }
+/* Copy shares the pill shape but NOT the .s-fb-btn class: that class means "a
+   rating button" to the code (btns.up/btns.down) and to the tests, which assert
+   exactly two of them. */
+.s-fb-copy {
+  border: 1px solid var(--sierra-border-strong); background: var(--sierra-surface);
+  border-radius: 999px; padding: 3px 11px; min-height: 28px; cursor: pointer;
+  font-size: .8125rem; line-height: 1.4; color: inherit;
+  font-family: inherit; white-space: nowrap;
+}
+.s-fb-copy:hover { border-color: var(--sierra-cobalt); color: var(--sierra-ink); }
+.s-fb-copy.on { background: var(--sierra-tint); border-color: var(--sierra-cobalt); color: var(--sierra-ink); }
+/* An author `display` rule beats the UA stylesheet's [hidden], so the note
+   composer needs this companion (the 2026-08-14 root defect). */
+.s-fb-note { display: flex; flex: 1 1 100%; gap: 6px; margin-top: 4px; }
+.s-fb-note[hidden] { display: none; }
+.s-fb-note input {
+  flex: 1; min-width: 0; min-height: 36px;
+  border: 1px solid var(--sierra-border-strong); border-radius: 8px;
+  padding: 6px 10px; font: .875rem var(--sierra-font);
+  background: var(--sierra-surface); color: var(--sierra-ink);
+}
+.s-fb-note button {
+  border: none; border-radius: 8px; padding: 6px 12px; min-height: 36px; cursor: pointer;
+  background: var(--sierra-cobalt); color: var(--sierra-on-cobalt); font: 600 .875rem var(--sierra-font);
+}
+.s-fb-note button:disabled { opacity: .6; cursor: default; }
+.s-fb-done { color: var(--sierra-muted); font-weight: 600; }
+.s-fb-sending { color: var(--sierra-faint); font-weight: 600; }
+.s-fb-fail { color: var(--sierra-crimson); font-weight: 600; }
+
+/* The docked bar: sticky at the foot of the column while reading. */
+.s-dock {
+  position: sticky; bottom: 0; z-index: 2;
+  width: 100%; max-width: 46rem; margin: 0 auto; padding: 14px 0 10px;
+  background: linear-gradient(transparent, var(--sierra-paper) 26%);
+}
+/* The row sits where the gradient is already solid paper; its own paper
+   background makes that true for anything that reads the color under the words. */
+.s-dock-row { display: flex; justify-content: flex-end; padding: 2px 4px 0; background: var(--sierra-paper); }
+
+/* ── Footer: one line ── */
+.s-foot { padding: 14px 16px 18px; text-align: center; font-size: .875rem; color: var(--sierra-faint); }
+.s-foot p { margin: 0 auto; max-width: 980px; }
+.s-foot a { color: var(--sierra-cobalt); }
+
+/* ── Phone ── */
 @media (max-width: 560px) {
-  /* One header row on a phone. Measured before this (2026-09-11, 390px wide,
-     844 tall): the header wrapped to 104px, the introduction and beta note took
-     287px, the audience picker 119px, and the conversation began 540px down —
-     64% of the screen. The text now lives behind About Sierra, the map.rccd.edu
-     pill yields to the footer link that says the same thing, and the chips
-     tighten. The 24px target floor holds: chips and the About pill are 25px. */
-  .s-head { flex-wrap: nowrap; gap: 8px; padding: 10px 12px; }
-  .s-head .s-brand-logo { height: 28px; }
-  .s-brand { gap: 10px; }
-  .s-brand-name { padding-left: 10px; }
-  .s-head h1 { font-size: 1.05rem; }
-  .s-head .s-role { font-size: .7rem; }
-  .s-back { display: none; }
-  .s-about { padding: 5px 10px; font-size: .78rem; margin-right: 0; }
-  .s-audience { margin: 8px 2px 2px; padding: 6px 9px; gap: 6px; }
-  .s-aud-chip { padding: 5px 10px; font-size: .78rem; }
-  .s-bubble { max-width: 92%; }
+  .s-head { flex-wrap: nowrap; gap: 10px; padding-top: 10px; }
+  .s-logo { height: 28px; }
+  .s-who-head { font-size: 1.1rem; padding-left: 10px; }
+  .s-main { gap: 18px; }
+  .s-frame { aspect-ratio: 4 / 5; border-radius: 24px; padding: 10px; }
+  .s-form { padding-left: 16px; }
+  .s-send { padding: 0 16px; }
+  /* One "Answering for: …" control opens the row, as while reading. */
+  .s-aud-toggle { display: inline-flex; }
+  .s-audience:not(.open) { display: none; }
+  .s-aud-label { display: none; }
+  .s-under { justify-content: center; text-align: center; margin-top: -4px; }
+  .s-user .s-bubble { max-width: 92%; }
 }
-/* Narrower still: measured at 360 and 320 the tagline wrapped to three lines
-   and at 320 the About pill overlapped it. Below 400 the tagline yields (the
-   name and the page title still carry it) and the logo steps down, so the
-   header stays one row of about 50px on any phone. */
+/* Narrower still: the header holds one row by shrinking, and nothing yields. */
 @media (max-width: 400px) {
-  .s-head .s-role { display: none; }
-  .s-head .s-brand-logo { height: 26px; }
-  /* The name block must not shrink below its word: with min-width:0 the
-     wordmark overflowed its box into the gap and touched the pill at 320px. */
-  .s-brand-name { flex: 0 0 auto; }
-  .s-about { padding: 4px 9px; }
+  .s-head { gap: 8px; }
+  .s-logo { height: 20px; }
+  .s-who-head { font-size: 1rem; padding-left: 8px; }
+  .s-about { font-size: .9375rem; }
 }
-@media (max-width: 340px) {
-  .s-head .s-brand-logo { height: 20px; }
-  .s-head { gap: 6px; }
-  .s-brand { gap: 8px; }
-  .s-brand-name { padding-left: 8px; }
-  .s-head h1 { font-size: 1rem; }
-  .s-about { padding: 4px 7px; font-size: .74rem; }
+
+/* Sierra animates three things: the paintings' cross-fade, the typing
+   indicator (infinite while an answer streams) and the audience row's flash on
+   a send without a pick. Under reduced motion all three stand down and none of
+   the cues is lost: the paintings stop cycling (sierra.js), the dots still say
+   "thinking" by being there, and the row keeps a solid outline. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .s-art { transition: none; }
+  .s-typing { animation: none; opacity: .8; }
+  .s-audience.s-need { animation: none; outline: 3px solid var(--sierra-crimson); }
 }

@@ -31,6 +31,115 @@
      seed / keyboard   functions; run in Playwright, not in the page.
    =========================================================================== */
 // Opens one harvested catalog record in CPL Pathways through its selector.
+/* Sierra's conversation view grows from empty, so an unseeded page hides most
+   of what we came to measure. The seed switches to the asking view and writes
+   ENOUGH turns, in the markup sierra.js writes, to make the page scroll past
+   its height: a conversation that does not overflow cannot be tested for
+   whether a keyboard reaches its end. One answer carries a table wider than a
+   phone, and one a feedback row (Copy, the two ratings), so their targets,
+   contrast and rings are measured too. */
+async function seedSierraConversation(page, theme) {
+  await page.evaluate((th) => {
+    if (th === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    const api = window.CPL_SIERRA_PAGE;
+    if (api && api.setView) api.setView("asking");
+    const log = document.getElementById("s-log");
+    if (!log) return;
+    const table = '<table><thead><tr><th>Credential</th><th>Course</th>' +
+      '<th>Units</th><th>College</th><th>C-ID</th></tr></thead><tbody>' +
+      '<tr><td>FIW Orientation</td><td>WELD 100 Introduction to Welding Technology</td>' +
+      '<td>3.0</td><td>Cerritos College</td><td>&mdash;</td></tr>' +
+      '<tr><td>Post Tensioning 3</td><td>WELD 244 D1.1 Code Clinic</td>' +
+      '<td>2.0</td><td>Santa Ana College</td><td>&mdash;</td></tr></tbody></table>';
+    const fb = '<div class="s-fb"><button type="button" class="s-fb-copy" aria-label="Copy this answer to the clipboard">Copy</button>' +
+      '<span>Rate this answer:</span>' +
+      '<button type="button" class="s-fb-btn" aria-label="This answer was helpful">Helpful</button>' +
+      '<button type="button" class="s-fb-btn" aria-label="This answer was not helpful">Not helpful</button>' +
+      '<div class="s-fb-note" hidden></div></div>';
+    for (let i = 0; i < 6; i++) {
+      const you = document.createElement("div");
+      you.className = "s-msg s-user";
+      you.innerHTML = '<div class="s-bubble">Seeded question ' + (i + 1) +
+        ': I have a journey worker license as an Iron and Steel worker. What CPL can I get here?</div>';
+      log.appendChild(you);
+      const her = document.createElement("div");
+      her.className = "s-msg s-bot";
+      her.innerHTML = '<div class="s-who"><span class="s-mark" aria-hidden="true">' +
+        ((api && api.SIERRA_MARK) || '') + '</span>Sierra</div>' +
+        '<div class="s-bubble"><p>Seeded answer ' + (i + 1) + ' for layout measurement, long ' +
+        'enough to wrap on a narrow viewport and push the page past its own height. ' +
+        'Ask the <a href="#s-main">CPL coordinator</a> at the college you plan to attend.</p>' +
+        (i === 0 ? table : "") + '</div>';
+      log.appendChild(her);
+      if (i === 0) log.insertAdjacentHTML("beforeend", fb);
+    }
+    if (api && api.syncScrollRegions) api.syncScrollRegions();
+  }, theme);
+}
+async function sierraArrivingChecks(page) {
+  return [await page.evaluate(() => {
+    const aud = document.getElementById("s-audience");
+    return {
+      name: "the audience picker is a group, not a false radiogroup",
+      ok: aud.getAttribute("role") === "group",
+      detail: 'role="' + aud.getAttribute("role") + '"',
+    };
+  }), await page.evaluate(() => {
+    const form = document.getElementById("s-form");
+    return {
+      name: "arriving, the question bar rides the painting",
+      ok: document.body.getAttribute("data-view") === "arriving" && !!form.closest("#s-frame"),
+      detail: "view=" + document.body.getAttribute("data-view") + ", bar in " + (form.parentNode.id || "?"),
+    };
+  })];
+}
+async function sierraAskingChecks(page) {
+  const out = [];
+  /* The page scrolls, not the log (the redesign's centered column). If a
+     future change makes the log a scroller of its own again, it must be
+     focusable while it overflows (WCAG 2.1.1) — the guard the earlier
+     "filled log is focusable" check carried. */
+  out.push(await page.evaluate(() => {
+    const log = document.getElementById("s-log");
+    const logScrolls = log.scrollHeight > log.clientHeight + 1 &&
+      /auto|scroll/.test(getComputedStyle(log).overflowY);
+    const docScrolls = document.scrollingElement.scrollHeight > window.innerHeight + 1;
+    return {
+      name: "a filled conversation scrolls with the page (or, if the log scrolls itself, it is focusable)",
+      ok: logScrolls ? log.getAttribute("tabindex") === "0" : docScrolls,
+      detail: "log scrolls=" + logScrolls + ", page scrolls=" + docScrolls,
+    };
+  }));
+  await page.evaluate(() => {
+    if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+    window.scrollTo(0, 0);
+  });
+  await page.keyboard.press("End");
+  await page.waitForTimeout(300);
+  out.push(await page.evaluate(() => ({
+    name: "End reaches the latest answer",
+    ok: window.scrollY > 0,
+    detail: "scrollY after End = " + Math.round(window.scrollY),
+  })));
+  out.push(await page.evaluate(() => {
+    window.scrollTo(0, 0);
+    const b = document.getElementById("s-dock").getBoundingClientRect();
+    return {
+      name: "the docked bar stays on screen while reading",
+      ok: b.top >= 0 && b.bottom <= window.innerHeight + 1,
+      detail: "dock top=" + Math.round(b.top) + ", bottom=" + Math.round(b.bottom) + ", viewport=" + window.innerHeight,
+    };
+  }));
+  out.push(await page.evaluate(() => {
+    const h1 = document.querySelector("h1");
+    return {
+      name: "the page keeps its h1 while reading (clipped, never display:none)",
+      ok: !!h1 && getComputedStyle(h1.parentNode).display !== "none" && getComputedStyle(h1).display !== "none",
+      detail: h1 ? '"' + (h1.innerText || h1.textContent) + '"' : "no h1",
+    };
+  }));
+  return out;
+}
 async function seedRoepRecord(page, theme, lay) {
   // The motion pass loads the page without a route, so open the tab here too.
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
@@ -196,109 +305,39 @@ module.exports = {
 
   targets: {
 
+  /* ── Sierra, the public page (the 2026-10-08 redesign, after america.gov) ──
+     Two views on one page: arriving (a greeting, a First Light painting with the
+     question bar on its top edge) and asking (the conversation in a centered
+     column on paper, the bar docked). Each is measured in light and in dark,
+     because a token swap is not a proof (see "COBI, dark" below).
+     Below 560px the audience row folds behind its one control, "Answering
+     for: …", which shows in its place; nothing else may vanish. */
   sierra: {
     file: "sierra/index.html",
-    title: "Sierra (public CPL assistant)",
-    /* .s-back (the map.rccd.edu pill) yields to the footer link that carries the
-       same destination and the same "(opens in a new tab)" cue, and below 400
-       the tagline (.s-role, "Your CPL Sherpa") yields too — the name and the
-       page title carry it — so a phone's header holds one row (2026-09-11).
-       Nothing else may vanish. */
-    mayHideBelow: [".s-back", ".s-role"],
-    /* The log is made focusable by sierra.js only while it overflows. Proving
-       that means growing it and asking, not reading the markup. */
-    keyboard: async (page) => {
-      const out = [];
-      out.push(await page.evaluate(() => {
-        const log = document.getElementById("s-log");
-        return {
-          name: "a filled conversation log is focusable",
-          ok: log.scrollHeight > log.clientHeight + 1 && log.getAttribute("tabindex") === "0",
-          detail: "overflows=" + (log.scrollHeight > log.clientHeight + 1) +
-                  ", tabindex=" + log.getAttribute("tabindex"),
-        };
-      }));
-      /* ⚠️ REGRESSION GUARD, NOT PROOF OF THE FIX — and the reason is worth
-         knowing before you trust any Chromium a11y harness.
-
-         Chromium 127+ ships "keyboard-focusable scrollers": a div that ACTUALLY
-         OVERFLOWS is focusable with no tabindex at all (measured here on 141 —
-         an overflowing div focuses, an identical non-overflowing one does not).
-         So this check passes against the pre-fix page, and so did an earlier
-         `document.activeElement === log` version. THE MEASURING BROWSER HIDES
-         THE DEFECT. Not every engine does this, and Chromium's implicit
-         focusability gives the region no role and no accessible name either, so
-         the explicit tabindex is still the correct fix — it is just not
-         something Chrome can be asked to demonstrate.
-
-         The fix proof is the check above (tabindex is present exactly while the
-         log overflows) and the per-viewport scroller check, which read the
-         markup. This one guards against the scrolling itself breaking. */
-      await page.evaluate(() => {
-        const log = document.getElementById("s-log");
-        log.scrollTop = 0;
-        log.focus();
-      });
-      await page.keyboard.press("End");
-      await page.waitForTimeout(200);
-      out.push(await page.evaluate(() => {
-        const log = document.getElementById("s-log");
-        return {
-          name: "a keypress scrolls the log [regression guard — Chromium auto-focuses scrollers]",
-          ok: log.scrollTop > 0,
-          detail: "scrollTop after End = " + Math.round(log.scrollTop) +
-                  "px of " + Math.round(log.scrollHeight - log.clientHeight) + "px",
-        };
-      }));
-      out.push(await page.evaluate(() => {
-        const aud = document.getElementById("s-audience");
-        return {
-          name: "the audience picker is a group, not a false radiogroup",
-          ok: aud.getAttribute("role") === "group",
-          detail: 'role="' + aud.getAttribute("role") + '"',
-        };
-      }));
-      return out;
-    },
-    // The chat log grows from empty, so an unseeded page hides most of what we
-    // came to measure. Seed ENOUGH turns to make .s-log actually overflow — a
-    // scroll container that does not scroll cannot be tested for whether it is
-    // keyboard reachable, and one seeded message never overflowed.
-    seed: async (page) => {
-      await page.evaluate(() => {
-        const log = document.getElementById("s-log");
-        if (!log) return;
-        const table = '<table><thead><tr><th>Credential</th><th>Course</th>' +
-          '<th>Units</th><th>College</th><th>C-ID</th></tr></thead><tbody>' +
-          '<tr><td>FIW Orientation</td><td>WELD 100 Introduction to Welding Technology</td>' +
-          '<td>3.0</td><td>Cerritos College</td><td>&mdash;</td></tr>' +
-          '<tr><td>Post Tensioning 3</td><td>WELD 244 D1.1 Code Clinic</td>' +
-          '<td>2.0</td><td>Santa Ana College</td><td>&mdash;</td></tr></tbody></table>';
-        for (let i = 0; i < 6; i++) {
-          const you = document.createElement("div");
-          you.className = "s-msg s-user";
-          you.innerHTML = '<div class="s-bubble"><p>Seeded question ' + (i + 1) +
-            ': I have a journey worker license as an Iron and Steel worker. ' +
-            'What CPL can I get here?</p></div>';
-          log.appendChild(you);
-          const her = document.createElement("div");
-          her.className = "s-msg";
-          her.innerHTML = '<div class="s-avatar" aria-hidden="true"></div>' +
-            '<div class="s-bubble"><p>Seeded answer ' + (i + 1) + ' for layout ' +
-            'measurement, long enough to wrap on a narrow viewport and push the ' +
-            'log past its own height.</p>' + (i === 0 ? table : "") + '</div>';
-          log.appendChild(her);
-        }
-        // sierra.js REMOVES the starter chips after the first question
-        // (`suggestEl.remove()`), so the steady state of this page is a log with
-        // no focusable child. Measuring the pristine page hides that: the chips
-        // made the log look keyboard-reachable at exactly the moment it had
-        // nothing to scroll, and the reachability vanished the moment it did.
-        const sug = document.getElementById("s-suggest");
-        if (sug) sug.remove();
-        log.scrollTop = log.scrollHeight;
-      });
-    },
+    title: "Sierra (public CPL assistant), arriving",
+    mayHideBelow: [".s-audience"],
+    keyboard: async (page) => sierraArrivingChecks(page),
+  },
+  "sierra-dark": {
+    file: "sierra/index.html",
+    title: "Sierra, arriving, dark",
+    mayHideBelow: [".s-audience"],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),
+    keyboard: async (page) => sierraArrivingChecks(page),
+  },
+  "sierra-asking": {
+    file: "sierra/index.html",
+    title: "Sierra, a conversation",
+    mayHideBelow: [".s-audience"],
+    seed: (page) => seedSierraConversation(page, "light"),
+    keyboard: async (page) => sierraAskingChecks(page),
+  },
+  "sierra-asking-dark": {
+    file: "sierra/index.html",
+    title: "Sierra, a conversation, dark",
+    mayHideBelow: [".s-audience"],
+    seed: (page) => seedSierraConversation(page, "dark"),
+    keyboard: async (page) => sierraAskingChecks(page),
   },
   "veteran-map": {
     file: "veteran-sprint-map/ca_cpl_map_selfcontained.html",

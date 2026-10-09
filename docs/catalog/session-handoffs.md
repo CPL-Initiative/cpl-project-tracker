@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-319 document(s).
+320 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 349 | [Sierra's dock goes full screen when she answers](../session_349_handoff.md) | 2026-10-08 |
 | 348 | [Sierra's port, Sam's two readings, the guard change](../session_348_handoff.md) | 2026-10-08 |
 | 347 | [Sam's headline for the Chancellor, Sheet 51's two calls, then Palo Verde](../session_347_handoff.md) | 2026-10-08 |
 | 346 | [Sam's three asks from the harvest tab, then card 4 and the maps](../session_346_handoff.md) | 2026-10-08 |
