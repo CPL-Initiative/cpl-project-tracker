@@ -1476,7 +1476,9 @@
      "governs": [
       "CPL_Dashboard.html",
       "tests/cpl_theme.test.js",
-      "docs/reference/lanes/cobi-dark-mode.md"
+      "docs/reference/lanes/cobi-dark-mode.md",
+      "prototype/ccr_atlas_v1.html",
+      "tests/ccr_skyview_first_light.test.js"
      ],
      "path": "docs/kb-notes/methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either.md",
      "status": "published",
@@ -1489,7 +1491,7 @@
      ],
      "title": "A fill that does not flip needs ink that does not flip either",
      "type": "methodology",
-     "updated": "2026-09-09"
+     "updated": "2026-10-09"
     },
     {
      "created": "2026-09-11",
@@ -10644,7 +10646,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 84,
+   "count": 85,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12506,6 +12508,34 @@
      "title": "Test suite speed \u2014 lessons",
      "type": null,
      "updated": "2026-08-29"
+    },
+    {
+     "created": "2026-10-09",
+     "governs": [
+      "scripts/ui_pass.py",
+      "kb/ui_pass_ledger.json",
+      "a11y.config.js",
+      "privacy.html",
+      "cpl_funding.js",
+      "prototype/ccr_atlas_v1.html",
+      "tests/public_pages_a11y.test.js",
+      "tests/cpl_funding_colmenu_edge.test.js",
+      "tests/ccr_skyview_first_light.test.js",
+      "tests/ui_pass_test.py"
+     ],
+     "path": "docs/ui_pass_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "ui-pass",
+      "accessibility",
+      "first-light",
+      "dark-mode",
+      "a11y"
+     ],
+     "title": "The checkpoint's UI pass \u2014 lessons",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-10-06",
@@ -15103,8 +15133,28 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 322,
+   "count": 323,
    "docs": [
+    {
+     "created": "2026-10-09",
+     "governs": [],
+     "n": 352,
+     "path": "docs/session_352_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ui-pass",
+      "privacy",
+      "funding-model",
+      "skyview",
+      "first-light",
+      "dark-mode",
+      "checkpoint"
+     ],
+     "title": "three UI passes and the picker",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-09",
      "governs": [],
@@ -20590,5 +20640,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1077
+ "total": 1079
 }

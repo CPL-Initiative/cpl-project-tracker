@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-322 document(s).
+323 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 352 | [three UI passes and the picker](../session_352_handoff.md) | 2026-10-09 |
 | 351 | [Sheet 56 and the privacy page's UI pass](../session_351_handoff.md) | 2026-10-09 |
 | 350 | [the veteran map waits on Sheet 55](../session_350_handoff.md) | 2026-10-09 |
 | 349 | [Sierra's dock goes full screen when she answers](../session_349_handoff.md) | 2026-10-08 |
