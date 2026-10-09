@@ -1929,15 +1929,18 @@ def _compute_dual_progress(metric, goals_by_suffix, stretches_by_suffix, suffix=
 
 def _dual_progress_html(prog):
     """Render the blue (Goal) + gold (Stretch) computed-progress bars."""
-    def _bar(label, pct, fill_color):
+    def _bar(label, pct, fill_color, text_color=None):
+        # The words take the text grade (--mustard-text for the gold Stretch
+        # bar): --gold-accent is a fill, 1.95:1 as ink on white (S354 UI pass).
         if pct is None:
             return ""
         met = pct >= 100
-        label_color = "var(--green-progress)" if met else fill_color
+        text_color = text_color or fill_color
+        label_color = "var(--green-progress)" if met else text_color
         width = max(0, min(100, pct))
         return (
             f'                    <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">\n'
-            f'                        <span style="color:{fill_color};font-weight:600;">{label}{" ✓" if met else ""}</span>\n'
+            f'                        <span style="color:{text_color};font-weight:600;">{label}{" ✓" if met else ""}</span>\n'
             f'                        <span style="font-weight:700;color:{label_color};">{pct}%</span>\n'
             f'                    </div>\n'
             f'                    <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">\n'
@@ -1946,10 +1949,10 @@ def _dual_progress_html(prog):
         )
     return (
         f'                <div class="akpi-progress" style="margin-top:0.5rem;">\n'
-        f'                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" '
+        f'                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" '
         f'title="Cumulative actual ÷ the {prog["fy_label"]} cumulative target">Progress vs {prog["fy_label"]} target</div>\n'
         + _bar("Goal", prog.get("goal_pct"), "var(--cobalt)")
-        + _bar("Stretch", prog.get("stretch_pct"), "var(--gold-accent)")
+        + _bar("Stretch", prog.get("stretch_pct"), "var(--gold-accent)", "var(--mustard-text)")
         + f'                </div>\n'
     )
 
@@ -2005,7 +2008,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         elif avg_pct >= 25:
             bar_color = label_color = "var(--cobalt)"  # blue
         else:
-            bar_color = label_color = "#888"     # gray
+            bar_color, label_color = "#888", "var(--text-muted)"  # gray bar, readable label (#888 ink is 3.54:1)
 
         # Build 2025-26 annual goals summary for this activity
         ag_items = ag_by_activity.get(act_num, [])
@@ -2032,19 +2035,19 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
         html += f'            <div class="activity-group">\n'
         html += (f'            <div class="activity-group-header">\n'
-                 f'                <h3><span style="color:#888;font-weight:600;">{act_id}:</span> {html_escape(act_name)}</h3>\n'
+                 f'                <h3><span style="color:var(--text-muted);font-weight:600;">{act_id}:</span> {html_escape(act_name)}</h3>\n'
                  f'                <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">\n'
                  f'                <a href="#raci" class="act-raci-link" data-raci-key="activity:{act_num}" title="Who\'s Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">RACI</a>\n'
+                 f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">RACI</a>\n'
                  f'                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Update</a>\n'
+                 f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Update</a>\n'
                  f'                <a href="#raci" class="act-nudge-link" title="Nudge this Activity\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Nudge</a>\n'
+                 f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Nudge</a>\n'
                  f'                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>\n'
+                 f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>\n'
                  f'                </span>\n'
                  f'            </div>\n')
         # Activity Lead — driven LIVE from the RACI Responsible by card_raci.js
@@ -2204,7 +2207,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                         html += f'                    <td style="{td_style}color:var(--mustard-text);">{v}</td>\n'
                     html += '                  </tr>\n'
                     html += '                </table>\n'
-                    html += ('                <div style="font-size:0.55rem;color:#999;'
+                    html += ('                <div style="font-size:0.55rem;color:var(--text-muted);'
                              'font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>\n')
 
                 # Progress — computed from the actual vs the current fiscal-year
@@ -2229,7 +2232,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 elif pct >= 25:
                     pbar_color = plabel_color = "var(--cobalt)"
                 else:
-                    pbar_color = plabel_color = "#888"
+                    pbar_color, plabel_color = "#888", "var(--text-muted)"  # gray bar, readable label
                 if continue_manual_bar:
                     html += (f'                <div class="akpi-progress" style="margin-top:0.5rem;">\n'
                          f'                    <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:0.15rem;">\n'
@@ -2273,7 +2276,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     if len(kpi_notes_list) > 1:
                         toggle_part = (
                             f'                        <label style="display:inline-flex;align-items:center;gap:0.3rem;'
-                            f'font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;">'
+                            f'font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;">'
                             f'<input type="checkbox" class="notes-history-toggle" data-pid="{kpi_pid}" '
                             f'style="accent-color:var(--accent-link);cursor:pointer;"> '
                             f'Show all ({len(kpi_notes_list)})</label>\n'
@@ -2281,7 +2284,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
                     html += (f'                <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">\n'
                              f'                    <div style="display:flex;align-items:center;margin-bottom:0.3rem;">\n'
-                             f'                        <span style="font-size:0.7rem;color:#888;">Last updated: '
+                             f'                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: '
                              f'<strong style="color:var(--navy-primary);">{kpi_date}</strong></span>\n'
                              f'{toggle_part}'
                              f'                    </div>\n')
@@ -2801,7 +2804,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
         if len(all_notes) > 1:
             toggle_html = (
                 f'                <label style="display:inline-flex;align-items:center;gap:0.3rem;'
-                f'font-size:0.72rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;">'
+                f'font-size:0.72rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;">'
                 f'<input type="checkbox" class="notes-history-toggle" data-pid="{pid}" '
                 f'style="accent-color:var(--accent-link);cursor:pointer;"> '
                 f'Show all ({len(all_notes)})</label>\n'

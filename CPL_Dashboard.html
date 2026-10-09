@@ -574,6 +574,8 @@
             background-color: rgba(28,28,26,0.04);
         }
 
+        #elementMapBtn:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+
         .kpi-section-header .kpi-section-title {
             font-size: 0.78rem;
             font-weight: 700;
@@ -1258,7 +1260,7 @@
         }
 
         .status-on-track {
-            background-color: rgba(227, 179, 65, 0.22);
+            background-color: rgba(227, 179, 65, 0.15);
             color: var(--mustard-text);
         }
 
@@ -1268,7 +1270,7 @@
         }
 
         .status-in-progress {
-            background-color: rgba(227, 179, 65, 0.22);
+            background-color: rgba(227, 179, 65, 0.15);
             color: var(--mustard-text);
         }
 
@@ -5496,7 +5498,7 @@
             </div>
         </div>
         <div id="filterButtons" class="filter-buttons" style="display:flex;align-items:center;gap:0.5rem;margin-left:1rem;">
-            <a href="Dashboard_Element_Map.html" target="_blank" id="elementMapBtn" style="display:inline-flex;align-items:center;gap:0.35rem;background:var(--seal-blue);color:var(--gold-accent);border:1px solid var(--gold-accent);padding:7px 16px;font-weight:700;cursor:pointer;border-radius:4px;font-size:0.82rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;transition:all 0.2s;text-decoration:none;" onmouseover="this.style.background='var(--gold-accent)';this.style.color='var(--seal-blue)';this.style.borderColor='var(--seal-blue)'" onmouseout="this.style.background='var(--seal-blue)';this.style.color='var(--gold-accent)';this.style.borderColor='var(--gold-accent)'">Element Map</a>
+            <a href="Dashboard_Element_Map.html" target="_blank" id="elementMapBtn" style="display:inline-flex;align-items:center;min-height:24px;font-weight:600;font-size:0.82rem;font-family:'Source Sans 3',Arial,sans-serif;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;">Element Map</a>
         </div>
     </div>
 
@@ -5504,7 +5506,7 @@
 <!-- ═══ Workplan Activities & Projects Section ═══ -->
     <div class="kpi-section-wrapper" id="workplanProjectsWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('workplanProjectsWrapper');w.classList.toggle('collapsed');})()">
-            <span style="display:inline-flex;align-items:center;gap:0.9rem;flex-wrap:wrap;"><span class="kpi-section-title">Activities</span><a href="https://map.rccd.edu/wp-content/uploads/2025/07/credit-for-prior-learning-workplan.pdf" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Open the CPL Workplan (PDF) on the MAP website" style="font-size:0.74rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">CPL Workplan &#8599;</a></span>
+            <span style="display:inline-flex;align-items:center;gap:0.9rem;flex-wrap:wrap;"><h2 class="kpi-section-title" style="margin:0;font-family:inherit;">Activities</h2><a href="https://map.rccd.edu/wp-content/uploads/2025/07/credit-for-prior-learning-workplan.pdf" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="Open the CPL Workplan (PDF) on the MAP website" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.74rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">CPL Workplan &#8599;</a></span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
         <div class="workplan-projects-body">
@@ -5514,12 +5516,12 @@
             <div class="activity-kpi-section" id="activityKpiSection">
             <div class="activity-group">
             <div class="activity-group-header">
-                <h3><span style="color:#888;font-weight:600;">Activity 1:</span> Build AI-Enhanced CPL Infrastructure</h3>
+                <h3><span style="color:var(--text-muted);font-weight:600;">Activity 1:</span> Build AI-Enhanced CPL Infrastructure</h3>
                 <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">
-                <a href="#raci" class="act-raci-link" data-raci-key="activity:1" title="Who's Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" onclick="try{sessionStorage.setItem('cpl_raci_focus','activity:1')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">RACI</a>
-                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" onclick="try{sessionStorage.setItem('cpl_update_focus','activity:1')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Update</a>
-                <a href="#raci" class="act-nudge-link" title="Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" onclick="try{sessionStorage.setItem('cpl_nudge_focus','activity:1')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Nudge</a>
-                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>
+                <a href="#raci" class="act-raci-link" data-raci-key="activity:1" title="Who's Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" onclick="try{sessionStorage.setItem('cpl_raci_focus','activity:1')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">RACI</a>
+                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" onclick="try{sessionStorage.setItem('cpl_update_focus','activity:1')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Update</a>
+                <a href="#raci" class="act-nudge-link" title="Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" onclick="try{sessionStorage.setItem('cpl_nudge_focus','activity:1')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Nudge</a>
+                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>
                 </span>
             </div>
             <div class="cpl-raci-lead-row" style="display:none;padding:0 0.5rem 0.4rem 0.5rem;font-size:0.74rem;color:var(--text-muted);"><strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="activity:1" title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>
@@ -5574,9 +5576,9 @@
                     <td style="padding:2px 4px;color:var(--mustard-text);">50</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">89%</span>
@@ -5585,8 +5587,8 @@
                         <div style="height:100%;width:89%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">44%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">44%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:44%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -5595,8 +5597,8 @@
                 <div class="cpl-live-update" data-update-key="project:1.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="1.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="1.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Continued MAP development across Student Portal, JST processing, credential/evidence matching, dashboards, notifications, articulation workflows, landing pages, and accessibility/security. Major progress included Student Portal intake/review improvements, JST parsing and matching logic, CPL dashboard and landing page accessibility fixes, Quick Adopt/MCCR improvements, email notification fixes, exhibit/articulation workflow refinements, and 2FA/password reset work.
 
@@ -5636,7 +5638,7 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:1.1.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>The CPL/AI project advanced significantly, with the industry certifications identified and catalogued, a working course-to-certification mapping algorithm developed in partnership with EQS, and mapping logic reviewed through Academic Senate channels to support faculty trust and statewide adoption. Current work is focused on refining the model, preserving the validated academic logic, strengthening the certification and course data infrastructure, and planning for long-term sustainability and future integration with MAP’s broader CPL ecosystem.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>AI cert-to-course matching Phase 1 complete covering 117 industry certifications in priority sectors. Phase 2 beta expanding certification pool. Production release planned June 2026.</div>
@@ -5666,7 +5668,7 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:1.1.2" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>The N2N apprenticeship project made meaningful progress toward scalable apprenticeship CPL infrastructure. Work advanced on data-sharing pathways, Santiago Canyon-to-N2N-to-MAP integration, API-based MAP intake, and structured cohort data collection for large apprenticeship populations. The project is also testing skill- and competency-based alignment between apprenticeship training and college coursework, with faculty validation remaining central to the model. This work supports future apprenticeship CPL mapping, student outreach, and statewide reporting.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>AI apprenticeship CPL tools Phase 1 in progress with construction and electrician trades at Santiago Canyon College and Norco College. Proof-of-concept pilot funded ($54,764). Phase 2 will scale statewide.</div>
@@ -5697,7 +5699,7 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:1.1.3" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>MAP's collaboration with WestEd has completed Phase 1, which included a multi-state landscape scan, job posting analysis, stakeholder engagement, and a report addressing trusted credential data, evaluation burden, practice consistency, and equity-centered access. The next phase is shifting toward Credential Registry planning, Career Passport alignment, workforce and training data integration, and exploration of AI-assisted competency-to-course alignment, with coordination across WestEd, Career Passport, CDE, and other statewide partners to support shared infrastructure for credential transparency and CPL.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>WestEd CPL Scope of Work: 6 workstreams active (Credential ID, Course Alignment, NFN Use Case, Student Experience, System Design, Strategic Planning). Skills taxonomy/CTDL work progressing.</div>
@@ -5743,9 +5745,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">10</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">50%</span>
@@ -5754,8 +5756,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:50%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">25%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">25%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:25%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -5764,8 +5766,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:1.2" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="1.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="1.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>MAP continued advancing statewide interoperability and infrastructure work to support CPL, pathways, credential transparency, and student mobility across connected systems. Credential Engine integration has been established, with competency-level CTDL alignment and Credential Registry planning underway. Phase 1 Program Pathways Mapper integration is complete, CVC integration is underway, and Career Passport integration is planned as part of broader alignment with student-facing credential and achievement records. MAP also began or continued strategic conversations with LWDA, eTranscript, CCCApply, and the Common Cloud Data Platform to ensure CPL data can be tracked, processed, reported, and shared more seamlessly across the statewide technology ecosystem.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>Credential Engine integration established supporting competency-level alignment with CTDL. Interoperability with eTranscript, Career Passport, and CCCApply is in planning/development phases.</div>
@@ -5817,9 +5819,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">40,000</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">0%</span>
@@ -5828,8 +5830,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:0%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">0%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">0%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:0%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -5838,8 +5840,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:1.3" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="1.3" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="1.3" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>MAP made major progress on the Student Portal, creating a more centralized and student-friendly pathway for CPL discovery and review. The portal helps students understand what CPL is, build a single CPL profile, upload documents once, see personalized CPL opportunities across colleges, and initiate review through MAP-connected intake workflows. This represents a major expansion of MAP’s student-facing capacity and supports a more seamless experience from awareness to action.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>Full AI-enabled Student Portal scheduled for May 2026 production release. Phase 2 (Dec 2026) will integrate Program Pathways Mapper, CVC course search, and resume builder.</div>
@@ -5889,9 +5891,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">1,000</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">0%</span>
@@ -5900,8 +5902,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:0%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">0%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">0%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:0%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -5910,8 +5912,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:1.4" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="1.4" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="1.4" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>MAP participated in a multi-stakeholder planning session with the Chancellor's Office, LWDA, WestEd, Cradle to Career, and Career Passport to align on the California Credential Registry vision and approach. The group clarified that the Credential Registry will serve as statewide infrastructure for comprehensive credential information, while Career Passport will function as the learner- and employer-facing application, with LWDA leading initial development in coordination with MAP. Next steps include developing shared technical requirements, aligning registry features across related tools, and establishing a governance structure.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>No credentials published in registry this period. Full launch not targeted until 2026-27. Standardized credential data schema incorporating TOP and CIP codes is in preparation for the registry pipeline.</div>
@@ -5927,12 +5929,12 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
             </div>
             <div class="activity-group">
             <div class="activity-group-header">
-                <h3><span style="color:#888;font-weight:600;">Activity 2:</span> Faculty Workgroups &amp; Credit Recommendations</h3>
+                <h3><span style="color:var(--text-muted);font-weight:600;">Activity 2:</span> Faculty Workgroups &amp; Credit Recommendations</h3>
                 <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">
-                <a href="#raci" class="act-raci-link" data-raci-key="activity:2" title="Who's Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" onclick="try{sessionStorage.setItem('cpl_raci_focus','activity:2')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">RACI</a>
-                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" onclick="try{sessionStorage.setItem('cpl_update_focus','activity:2')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Update</a>
-                <a href="#raci" class="act-nudge-link" title="Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" onclick="try{sessionStorage.setItem('cpl_nudge_focus','activity:2')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Nudge</a>
-                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>
+                <a href="#raci" class="act-raci-link" data-raci-key="activity:2" title="Who's Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" onclick="try{sessionStorage.setItem('cpl_raci_focus','activity:2')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">RACI</a>
+                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" onclick="try{sessionStorage.setItem('cpl_update_focus','activity:2')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Update</a>
+                <a href="#raci" class="act-nudge-link" title="Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" onclick="try{sessionStorage.setItem('cpl_nudge_focus','activity:2')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Nudge</a>
+                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>
                 </span>
             </div>
             <div class="cpl-raci-lead-row" style="display:none;padding:0 0.5rem 0.4rem 0.5rem;font-size:0.74rem;color:var(--text-muted);"><strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="activity:2" title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>
@@ -5987,9 +5989,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">2,800</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal ✓</span>
                         <span style="font-weight:700;color:var(--green-progress);">3542%</span>
@@ -5998,7 +6000,7 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:100%;background:var(--green-progress);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch ✓</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch ✓</span>
                         <span style="font-weight:700;color:var(--green-progress);">1417%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
@@ -6008,8 +6010,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:2.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-30</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="2.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-30</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="2.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>As of June 30, 2026, we have exceeded the goal of 200 CRs from our faculty workgroups. Due to the nature of certain academic disciplines, some groups will have a very high number of CRs on exhibits while others may have single CRs to an IC or ACE CR. With that said, with a total of 288 CRs currently, we can safety state that we are well on our way to achieve the 2026/27 goal of 400 CRs within the next 12 months.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>288 cumulative statewide credit recommendations with 281 adopted this academic year. 230 currently in progress through college review and adoption workflows. Spanning military, apprenticeship, industry certification, and professional licensure fields.</div>
@@ -6060,9 +6062,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">40</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">73%</span>
@@ -6071,8 +6073,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:73%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">50%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">50%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:50%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6081,8 +6083,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:2.2" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-30</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="2.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-30</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="2.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>As of June 30, 2026, 11 faculty workgroups have completed their work which is ahead of target pace. If one splits out EMT and Wildland, as those two academic disciplines do have distinct TOPS codes from Fire Technology, we would total 13 faculty workgroups. In July 2026, we will begin meeting with HVAC faculty yet the ASCCC holds a contract to begin convening faculty workgroups to produce CPL recommendations. We are well on our way to meet the goal of 15 by June 2027.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>11 of 25 target statewide faculty workgroups convened, recommending CPL for credentials and military training across high-demand disciplines. 40 disciplines planned by 2030.</div>
@@ -6132,9 +6134,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">400</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">0%</span>
@@ -6143,8 +6145,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:0%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">0%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">0%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:0%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6153,8 +6155,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:2.3" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="2.3" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="2.3" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>The Common Course Crosswalks effort has been renamed Common Course Reference (CCR) to better reflect its function as an alignment tool for CPL adoption. Work is underway to merge currently aligned courses into new common course reference names and numbers using a phased, AI-supported approach with HUMANS principles. Draft 1 of the complete CCR is currently in testing with production anticipated for Fall 2026.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>No validated crosswalks completed yet. Development underway via three parallel approaches (Electrical, Carpentry Apprenticeship, and AI-assisted). Dependent on MAP Exhibit module releasing April 2026.</div>
@@ -6206,9 +6208,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">500</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">0%</span>
@@ -6217,8 +6219,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:0%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">0%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">0%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:0%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6227,8 +6229,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:2.4" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="2.4" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="2.4" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>The new MAP exhibit module with Credential Engine competency search and tagging is built and pending release, with WestEd scanning credentials and skills statewide and conversations underway with CBEN, ACE, and others to identify skill frameworks. MAP is participating in the CPL/AI project to generate proposed CPL alignments and extract skills, with the plan that CTDL competencies pulled in during course-to-credential alignment will be designated as faculty-validated skills upon CPL approval.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>Functionality enabling creation of common course crosswalks is a component of the MAP Exhibit module scheduled for April 2026. Development underway but dependent on that release.</div>
@@ -6244,12 +6246,12 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
             </div>
             <div class="activity-group">
             <div class="activity-group-header">
-                <h3><span style="color:#888;font-weight:600;">Activity 3:</span> Build CPL Data Infrastructure</h3>
+                <h3><span style="color:var(--text-muted);font-weight:600;">Activity 3:</span> Build CPL Data Infrastructure</h3>
                 <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">
-                <a href="#raci" class="act-raci-link" data-raci-key="activity:3" title="Who's Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" onclick="try{sessionStorage.setItem('cpl_raci_focus','activity:3')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">RACI</a>
-                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" onclick="try{sessionStorage.setItem('cpl_update_focus','activity:3')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Update</a>
-                <a href="#raci" class="act-nudge-link" title="Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" onclick="try{sessionStorage.setItem('cpl_nudge_focus','activity:3')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Nudge</a>
-                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>
+                <a href="#raci" class="act-raci-link" data-raci-key="activity:3" title="Who's Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" onclick="try{sessionStorage.setItem('cpl_raci_focus','activity:3')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">RACI</a>
+                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" onclick="try{sessionStorage.setItem('cpl_update_focus','activity:3')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Update</a>
+                <a href="#raci" class="act-nudge-link" title="Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" onclick="try{sessionStorage.setItem('cpl_nudge_focus','activity:3')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Nudge</a>
+                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>
                 </span>
             </div>
             <div class="cpl-raci-lead-row" style="display:none;padding:0 0.5rem 0.4rem 0.5rem;font-size:0.74rem;color:var(--text-muted);"><strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="activity:3" title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>
@@ -6304,9 +6306,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">380,000</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">61%</span>
@@ -6315,8 +6317,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:61%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">34%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">34%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:34%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6325,8 +6327,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:3.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="3.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="3.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>As of June 30, 2026 we have met our annual goal and have significant plans with CX, SE and App CPL to meet the next annual benchmark for transcribed CPL in MAP. Most college lack MIS reporting for SY codes and we are incorporating this into our technical assistance and professional development with a goal of having MAP Platform data and MIS submissions begin to parallel each other.  We are now offering more technical assistance in the form of a monthly webinar in which the August iteration will focus on data collection of transcribed CPL.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>43630 cumulative students offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Exceeds the 2025-26 annual target of 40,000.</div>
@@ -6379,9 +6381,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">360,000</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">55%</span>
@@ -6390,8 +6392,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:55%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">26%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">26%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:26%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6400,8 +6402,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:3.1.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="3.1.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (2)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="3.1.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (2)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Building on existing infrastructure, 1,088 apprenticeship CPL articulation records are now in place across 34 colleges and 648 unique courses, representing 6,000+ eligible apprenticeship CPL units with an estimated $9M in student savings and $37M 20-year economic impact (Beacon Economics). Fire Technology leads with 293 records, 753 apprenticeship students are recognized in MAP, and 30,000+ DAS historical records are targeted for import in year 1 of the Apprenticeship Sprint. In July 2026, apprenticeship student numbers will increase to over 5000 students with the upload from our top Apprenticeship Colleges, American River College, Santiago Canyon College, and Cerritos College.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>22149 cumulative working adults and others offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Exceeds the 2025-26 annual target of 95,000.</div>
@@ -6451,9 +6453,9 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                     <td style="padding:2px 4px;color:var(--mustard-text);">100,000</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">72%</span>
@@ -6462,8 +6464,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                         <div style="height:100%;width:72%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">53%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">53%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:53%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6472,8 +6474,8 @@ DevOps export shows 500+ items created during the period, with 300+ verified and
                 <div class="cpl-live-update" data-update-key="project:3.1.2" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-01</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="3.1.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (2)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-01</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="3.1.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (2)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Goal 1: Using 2024–2025 MIS enrollment data (34,063 enrolled service members), the MAP team will close the remaining JST upload gap by providing individualized support to colleges still in progress, expanding bulk-order training through the JST Portal, and implementing a CCCCO bulk-order process through CCCApply OPT-IN. In partnership with the Department of War, the CCCCO is close to finalizing a statewide solution that will allow JSTs to be ordered on students' behalf for all 115 California Community Colleges, reducing the administrative burden on colleges and making JST collection a centralized, system-wide service. To date (01JULY2026), there are 24,937 JSTs uploaded into the MAP platform from 107 CCCs. 
 Goal 2: Support the remaining colleges in replacing waive, clear, or satisfy designations with actual Health and Kinesiology course credit for basic military training. Provide the Statewide CPL Basic Military Training Exhibit and work with Health and Kinesiology faculty to approve and implement course credit. To date (01JULY2026), there are 20+ CCCs offering course credit and documented publically in MAP CPL Landing Pages. Many colleges via course catalogs offer this credit in forms of waive, clear, or satisfy currently only - shifting to course credit is a massive lift but will be focusing on this in Summer/Fall semester. 
@@ -6525,9 +6527,9 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                     <td style="padding:2px 4px;color:var(--mustard-text);">40,000</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">38%</span>
@@ -6536,8 +6538,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                         <div style="height:100%;width:38%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">19%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">19%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:19%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6546,7 +6548,7 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:3.1.3" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>The first year of implementation (2026-2027) prioritizes significantly expanding the number of apprenticeship students available for Credit for Prior Learning (CPL) evaluation by establishing standardized statewide data-sharing processes and scalable upload mechanisms. During FY 2026–27, the initiative is expected to upload approximately 10,000 apprenticeship student records into the MAP platform through multiple coordinated data sources. This includes the completion of the LAUNCH pilot, which will contribute approximately 2,000 apprenticeship records, direct uploads from participating colleges using Division of Apprenticeship Standards (DAS) data totaling approximately 3,000 additional student records, and the integration of apprenticeship data from strategic workforce partners, including Futuro Health and Cal-JAC, contributing an estimated 5,000 apprenticeship records. Supporting these efforts, the implementation of Bulk Student Upload and Bulk Exhibit functionality will allow colleges to efficiently process large cohorts of apprentices while minimizing manual review and data entry. Concurrently, the initiative will finalize the statewide DAS data-sharing agreement, creating the infrastructure necessary to create a dashboard showing apprenticeship students at all colleges with their trade and industry. Most importantly, our local colleges are participating in uploading apprenticeship students into the MAP platform and in the first quarter of 2026-2027 our largest Apprenticeship College will be inputting over 8000 apprenticeship students.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>700 cumulative apprentices and journey workers offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Exceeds the 2025-26 annual target of 500.</div>
@@ -6567,7 +6569,7 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="akpi-progress" style="margin-top:0.5rem;">
                     <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:0.15rem;">
                         <span style="color:var(--text-muted);">Progress</span>
-                        <span style="font-weight:700;color:#888;">0%</span>
+                        <span style="font-weight:700;color:var(--text-muted);">0%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">
                         <div style="height:100%;width:0%;background:#888;border-radius:3px;"></div>
@@ -6615,9 +6617,9 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                     <td style="padding:2px 4px;color:var(--mustard-text);">1,500,000</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">43%</span>
@@ -6626,8 +6628,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                         <div style="height:100%;width:43%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">21%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">21%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:21%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6636,8 +6638,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:3.2" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-30</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="3.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-30</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="3.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>More than 100,000 CPL units have been transcripted statewide, exceeding the 2025–26 cumulative target. Growth is driven by expanded institutional participation, improved transcription practices, statewide technical assistance, faculty and counselor training, and implementation support through the MAP Initiative. Progress continues toward the 2030 goal of 750,000 transcripted CPL units.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>96,449 transcripted CPL units recorded. Exceeds the 2025-26 annual target of 85,000. Includes military (12,000), non-military (82,000), and apprentice (6,000) units.</div>
@@ -6690,9 +6692,9 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                     <td style="padding:2px 4px;color:var(--mustard-text);">140</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal ✓</span>
                         <span style="font-weight:700;color:var(--green-progress);">172%</span>
@@ -6701,8 +6703,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                         <div style="height:100%;width:100%;background:var(--green-progress);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">89%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">89%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:89%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6711,8 +6713,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:3.3" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="3.3" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="3.3" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>All but one community college has accepted 2025/26 funding and the established funding priorities. We anticipate exceeding expectations with over 110 community colleges participating in the CPL Initiative by June 2027.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>84 colleges meet the active threshold (10+ students and 5+ articulations). 114 of 115 credit colleges and 4 noncredit campuses received $50,000 CPL implementation funding. 53 at implementation stage, 13 showing growth.</div>
@@ -6764,11 +6766,11 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                     <td style="padding:2px 4px;color:var(--mustard-text);">0.9</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
                     <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:0.15rem;">
                         <span style="color:var(--text-muted);">Progress</span>
-                        <span style="font-weight:700;color:#888;">5%</span>
+                        <span style="font-weight:700;color:var(--text-muted);">5%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">
                         <div style="height:100%;width:5%;background:#888;border-radius:3px;"></div>
@@ -6777,8 +6779,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:3.4" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="3.4" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="3.4" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Work continued on student impact measurement and student storytelling. The Student Impact Rate Survey has not yet launched, but the required infrastructure is being completed through the Student Portal, which will create a more reliable way to identify students, capture CPL activity, and support future survey distribution and response tracking. In parallel, student story collection has begun through coordination with college contacts in the field and the launch of a new MAP student stories webpage. These efforts will help MAP document both quantitative outcomes and student-centered narratives that demonstrate the value of CPL.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>Survey tool is not yet deployed. Data collection infrastructure is still under development. The CPL Student Portal launching April 2026 will include the embedded student impact survey for first-ever systematic collection.</div>
@@ -6829,9 +6831,9 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                     <td style="padding:2px 4px;color:var(--mustard-text);">250</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">53%</span>
@@ -6840,8 +6842,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                         <div style="height:100%;width:53%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">21%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">21%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:21%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6850,8 +6852,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:3.5" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="3.5" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="3.5" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (5)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Work continued on student impact measurement and student storytelling. The Student Impact Rate Survey has not yet launched, but the required infrastructure is being completed through the Student Portal, which will create a more reliable way to identify students, capture CPL activity, and support future survey distribution and response tracking. In parallel, student story collection has begun through coordination with college contacts in the field and the launch of a new MAP student stories webpage. These efforts will help MAP document both quantitative outcomes and student-centered narratives that demonstrate the value of CPL.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>32 student stories published on the My CPL Story section of the MAP website. AI-assisted student story capture tool is in development for June 2026 production release.</div>
@@ -6904,9 +6906,9 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                     <td style="padding:2px 4px;color:var(--mustard-text);">24</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">60%</span>
@@ -6915,8 +6917,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                         <div style="height:100%;width:60%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">30%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">30%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:30%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -6925,8 +6927,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:3.6" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="3.6" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="3.6" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Colleges with >75% JST documentation for reported veterans receive gold star recognition on the MAP Dashboard, which has increased participation and acceptance of this procedure. Icons will be integrated on the dashboard to recognize platform use levels and keep local staff informed of their progress.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>3 institutions recognized as MAP College of the Year: 2023 Moreno Valley College, 2024 San Bernardino Valley College, 2025 Miramar College. CPL Dashboard provides public tracking and recognition data.</div>
@@ -6962,7 +6964,7 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:3.7" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>The RP Group CPL Field Survey will employ a mixed-methods research study combining quantitative analysis of student outcomes with qualitative data from institutional interviews, focus groups, and/or student surveys to examine how Credit for Prior Learning influences student success and institutional effectiveness across participating California Community Colleges. The study will analyze CPL's impact on certificate and degree completion, compare outcomes between CPL recipients and non-CPL students with attention to historically underserved populations, and assess institutional implementation practices to provide evidence-based recommendations for strengthening statewide CPL implementation and promoting equitable student success.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>Systemwide CPL implementation survey completed 2025. Results informing implementation strategy and targeted assistance.</div>
@@ -6992,7 +6994,7 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:3.8" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-06-29</strong></span>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Initial work began on MIS data reconciliation to better compare college-reported CPL activity with MAP-tracked outcomes, identify gaps or inconsistencies, and improve statewide CPL reporting accuracy over time.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>MIS and MAP reconciliation procedures and tools to support data integrity and interoperability, scheduled for release at end of 2026. MIS Data Element Dictionary SY domain was revised this academic year.</div>
@@ -7003,12 +7005,12 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
             </div>
             <div class="activity-group">
             <div class="activity-group-header">
-                <h3><span style="color:#888;font-weight:600;">Activity 4:</span> Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships</h3>
+                <h3><span style="color:var(--text-muted);font-weight:600;">Activity 4:</span> Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships</h3>
                 <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">
-                <a href="#raci" class="act-raci-link" data-raci-key="activity:4" title="Who's Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" onclick="try{sessionStorage.setItem('cpl_raci_focus','activity:4')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">RACI</a>
-                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" onclick="try{sessionStorage.setItem('cpl_update_focus','activity:4')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Update</a>
-                <a href="#raci" class="act-nudge-link" title="Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" onclick="try{sessionStorage.setItem('cpl_nudge_focus','activity:4')}catch(e){}" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Nudge</a>
-                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>
+                <a href="#raci" class="act-raci-link" data-raci-key="activity:4" title="Who's Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" onclick="try{sessionStorage.setItem('cpl_raci_focus','activity:4')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">RACI</a>
+                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" onclick="try{sessionStorage.setItem('cpl_update_focus','activity:4')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Update</a>
+                <a href="#raci" class="act-nudge-link" title="Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" onclick="try{sessionStorage.setItem('cpl_nudge_focus','activity:4')}catch(e){}" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Nudge</a>
+                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>
                 </span>
             </div>
             <div class="cpl-raci-lead-row" style="display:none;padding:0 0.5rem 0.4rem 0.5rem;font-size:0.74rem;color:var(--text-muted);"><strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="activity:4" title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>
@@ -7063,9 +7065,9 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                     <td style="padding:2px 4px;color:var(--mustard-text);">10</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal ✓</span>
                         <span style="font-weight:700;color:var(--green-progress);">3000%</span>
@@ -7074,7 +7076,7 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                         <div style="height:100%;width:100%;background:var(--green-progress);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch ✓</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch ✓</span>
                         <span style="font-weight:700;color:var(--green-progress);">1500%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
@@ -7084,8 +7086,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:4.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="4.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (2)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="4.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (2)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>All four Sprints or Demo Projects are well underway. Much work and effort must be placed in the Veterans Sprint and STAT efforts yet the Apprenticeship and 29 Palms MCB Sprints are exceeding expectations.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>Veteran Sprint: 20,991 JSTs uploaded (62% of ~34,000 target). 75 colleges awarding basic training credit (up from ~15% baseline). 679 unique ACE credit recommendations covered. $163M estimated savings.</div>
@@ -7134,9 +7136,9 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                     <td style="padding:2px 4px;color:var(--mustard-text);"></td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">0%</span>
@@ -7145,8 +7147,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                         <div style="height:100%;width:0%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">0%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">0%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:0%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -7155,8 +7157,8 @@ Goal 3: Expand Military ACE Credit Recommendation (CR) articulations from 40+ co
                 <div class="cpl-live-update" data-update-key="project:4.1.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-09-15</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="4.1.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (2)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-09-15</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="4.1.1" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (2)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>•	The CCC CPL Initiative Team (MAP Team) provided a comprehensive in-person professional development to Copper Mountain College on June 3–4, 2026, engaging staff, faculty, administrators, key stakeholders, and all CPL Strike Team members. The training focused on strengthening institutional understanding and implementation of Credit for Prior Learning (CPL) practices with a focus on Military CPL Pathways. 
 •	Copper Mountain College has made significant progress toward all three Veteran Sprint goals: Goal 1, uploaded 80 enrolled veterans Joint Services Transcripts (JSTs) into the MAP Platform; Goal 2, submitting the Credit for Basic Military Service recommendation, which is currently awaiting discipline faculty review; and Goal 3, actively offering 22 courses aligned with ACE Credit Recommendations. Collectively, these efforts demonstrate Copper Mountain College’s commitment to expanding Credit for Prior Learning (CPL) opportunities and ensuring military-connected students receive meaningful academic credit for their military education and training.
@@ -7227,9 +7229,9 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                     <td style="padding:2px 4px;color:var(--mustard-text);">10</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">50%</span>
@@ -7238,8 +7240,8 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                         <div style="height:100%;width:50%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">25%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">25%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:25%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -7248,8 +7250,8 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                 <div class="cpl-live-update" data-update-key="project:4.2" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="4.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="4.2" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>The Apprenticeship Sprint is building CPL infrastructure to convert registered apprenticeship training into college credit at scale across construction, fire science, and corrections disciplines, building on existing articulation records across 34 colleges and active partnerships with Futuro Health, DSP/DDS, Cal-JAC, Iron Workers, IBEW, and Western Carpenters. Year 1 (FY 2026–27) targets include 10,000 apprenticeship students uploaded into MAP, 200 CPL exhibits developed across 35 colleges articulating 1,000 course sections, and completion of a statewide outreach plan.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>Apprenticeship Sprint: 678 apprentice students documented with 6,000 CPL units. DAS partnership active. Cal-JAC early partner for 14,000 first responder trainees. ~1,000 LAUNCH Network records expected Spring 2026.</div>
@@ -7300,9 +7302,9 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                     <td style="padding:2px 4px;color:var(--mustard-text);">8</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal ✓</span>
                         <span style="font-weight:700;color:var(--green-progress);">286%</span>
@@ -7311,7 +7313,7 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                         <div style="height:100%;width:100%;background:var(--green-progress);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch ✓</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch ✓</span>
                         <span style="font-weight:700;color:var(--green-progress);">167%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
@@ -7321,8 +7323,8 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                 <div class="cpl-live-update" data-update-key="project:4.3" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="4.3" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="4.3" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Strategic Partnerships continues with active engagement across 20+ partner organizations, including Department of Apprenticeship Services, Department of War MCTO, Credential Engine, WestEd, Cal-JAC, ASCCC and many more. We have far exceeded goals in this activity.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>20+ partners actively working with the CPL Initiative including DAS, CDE, ASCCC, Credential Engine, WestEd, Cal-JAC, CCCF, Futuro Health, Public Works Alliance EMS Corps, and Iron Workers union.</div>
@@ -7373,9 +7375,9 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                     <td style="padding:2px 4px;color:var(--mustard-text);">120</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal ✓</span>
                         <span style="font-weight:700;color:var(--green-progress);">109%</span>
@@ -7384,8 +7386,8 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                         <div style="height:100%;width:100%;background:var(--green-progress);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">96%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">96%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:96%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -7394,8 +7396,8 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                 <div class="cpl-live-update" data-update-key="project:4.4" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-04-07</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="4.4" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-04-07</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="4.4" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>25 trainings delivered incl. 6th Annual CPL Summit and 4 Regional Trainings; 1,000+ staff/faculty/admins trained</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>25 trainings delivered including the 6th Annual CPL Summit and 4 CPL Regional Training Workshops. Over 1,000 staff, faculty, and administrators trained. Individual technical assistance and office hours ongoing.</div>
@@ -7430,7 +7432,7 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                 <div class="cpl-live-update" data-update-key="project:4.4.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>Continued coordination with CCCF/Success Center on the CPL VRC module revision project, with two core modules (CPL 101/Introductory Module and CPL Leads/Coordinators) finalized and handed off to the Vision Resource Center. Several audience-specific modules (faculty, counseling, articulation, classified professionals, curriculum, apprenticeship, veterans, administrators, and MAP platform training) are progressing through review, with current work focused on incorporating reviewer feedback, coordinating subject matter expert input, and advancing remaining modules through group and secondary review toward finalization.</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>VRC CPL Module revision: Review and gap analysis complete. Content development phase underway. Final packaging targeted May-June 2026.</div>
@@ -7476,9 +7478,9 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                     <td style="padding:2px 4px;color:var(--mustard-text);">20</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal</span>
                         <span style="font-weight:700;color:var(--cobalt);">80%</span>
@@ -7487,8 +7489,8 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                         <div style="height:100%;width:80%;background:var(--cobalt);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">40%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">40%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:40%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -7497,8 +7499,8 @@ o	Implemented disciplines equating to 11 military pathways and more underway. 18
                 <div class="cpl-live-update" data-update-key="project:4.5" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
-                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;"><input type="checkbox" class="notes-history-toggle" data-pid="4.5" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-02</strong></span>
+                        <label style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.68rem;color:var(--navy-secondary);cursor:pointer;margin-left:auto;min-height:24px;"><input type="checkbox" class="notes-history-toggle" data-pid="4.5" style="accent-color:var(--accent-link);cursor:pointer;"> Show all (3)</label>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>AB 123 chaptered ($5M ongoing + $15M one-time); Title 5 updates advanced; $2M + $35M proposed in Governor's 2026 budget
 AB 111 codifies new CPL funding and regulations. In 2025/26 Title 5 was updated for both CPL guidance and for the definition of a comprehensive SEP to include CPL.</div>
@@ -7534,7 +7536,7 @@ AB 111 codifies new CPL funding and regulations. In 2025/26 Title 5 was updated 
                 <div class="cpl-live-update" data-update-key="project:4.5.1" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-23</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-23</strong></span>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>SB 135 and AB 135 were enacted, providing $7 million in ongoing funding for CPL Initiative operations, technical assistance, faculty workgroups, technology development, partnerships, and intersegmental collaboration, plus $35 million to support college awards based on CPL outcomes, projects, and innovations. The Chancellor's Office has drafted a two-year college funding model, with finalization expected in August 2026, field deployment in October 2026, and first disbursements planned for November or December 2026.
 
@@ -7582,9 +7584,9 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
                     <td style="padding:2px 4px;color:var(--mustard-text);">12</td>
                   </tr>
                 </table>
-                <div style="font-size:0.55rem;color:#999;font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
+                <div style="font-size:0.55rem;color:var(--text-muted);font-style:italic;margin-top:0.15rem;">Note: All values are cumulative</div>
                 <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="font-size:0.6rem;color:#999;margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
+                    <div style="font-size:0.6rem;color:var(--text-muted);margin-bottom:0.25rem;" title="Cumulative actual ÷ the 2026-27 cumulative target">Progress vs 2026-27 target</div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
                         <span style="color:var(--cobalt);font-weight:600;">Goal ✓</span>
                         <span style="font-weight:700;color:var(--green-progress);">100%</span>
@@ -7593,8 +7595,8 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
                         <div style="height:100%;width:100%;background:var(--green-progress);border-radius:3px;"></div>
                     </div>
                     <div style="display:flex;justify-content:space-between;font-size:0.66rem;margin-bottom:0.1rem;">
-                        <span style="color:var(--gold-accent);font-weight:600;">Stretch</span>
-                        <span style="font-weight:700;color:var(--gold-accent);">50%</span>
+                        <span style="color:var(--mustard-text);font-weight:600;">Stretch</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">50%</span>
                     </div>
                     <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">
                         <div style="height:100%;width:50%;background:var(--gold-accent);border-radius:3px;"></div>
@@ -7603,7 +7605,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
                 <div class="cpl-live-update" data-update-key="project:4.6" style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>
                 <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">
                     <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-23</strong></span>
+                        <span style="font-size:0.7rem;color:var(--text-muted);">Last updated: <strong style="color:var(--navy-primary);">2026-07-23</strong></span>
                     </div>
                     <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>SB 135 and AB 135 were enacted, providing $7 million in ongoing funding for CPL Initiative operations, technical assistance, faculty workgroups, technology development, partnerships, and intersegmental collaboration, plus $35 million to support college awards based on CPL outcomes, projects, and innovations. The Chancellor's Office has drafted a two-year college funding model, with finalization expected in August 2026, field deployment in October 2026, and first disbursements planned for November or December 2026. Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
                     <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>$50,000 distributed to 114 of 115 credit colleges and 4 noncredit campuses for CPL implementation. $6M one-time fully allocated. 2026 advocacy active for $2M ongoing + $35M one-time appropriation.</div>

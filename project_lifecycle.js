@@ -399,7 +399,7 @@
         var btn = el("button", { "class": "plc-table-btn", "type": "button",
           "data-pid": card.getAttribute("data-pid"),
           "title": "Table or archive this project — moves it out of active priorities (reversible)" },
-          ["🗄 Table / Archive"]);
+          ["Table / Archive"]);
         row.appendChild(btn);
         card.appendChild(row);
       });
@@ -574,9 +574,10 @@
       // #faf3e0 hover fill all assumed a white card. Measured dark 2026-09-10:
       // the ink read 3.73:1 and the hover painted near-white behind
       // --text-strong, which is #ECE9E2 there.
-      ".plc-table-btn{font-size:0.7rem;background:transparent;border:1px solid var(--border-strong);border-radius:4px;padding:0.2rem 0.55rem;" +
-        "cursor:pointer;color:var(--text-muted);transition:background .15s,color .15s;}" +
-      ".plc-table-btn:hover{background:var(--surface-muted);border-color:var(--gold-accent,#E3B341);color:var(--text-strong);}" +
+      ".plc-table-btn{font-size:0.7rem;font-weight:600;background:none;border:0;padding:2px 0;min-height:24px;" +
+        "cursor:pointer;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}" +
+      ".plc-table-btn:hover{text-decoration-thickness:2px;}" +
+      ".plc-table-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}" +
       ".plc-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9000;display:flex;align-items:center;justify-content:center;padding:1rem;}" +
       ".plc-modal{background:var(--surface-opaque);border-radius:12px;padding:1.2rem 1.4rem;max-width:460px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,0.3);}" +
       ".plc-modal h3{margin:0 0 0.4rem 0;font-size:1.05rem;color:var(--navy-primary,#16324f);}" +
