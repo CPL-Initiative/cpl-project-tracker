@@ -5,6 +5,8 @@
 -- First paste failed (Sam, 2026-10-09 ~15:27Z): cpl_library_text_ck caps made_by at 300 characters, and the
 -- per-session list had reached 281, so one more name broke it. made_by is now a range that does not grow;
 -- the versions list keeps each sheet.
+-- APPLIED 2026-10-09 ~15:31Z: Sam pasted this version ("success"). Read back by S352: version 57, 30 versions,
+-- Sheet 57 first and Current, Sheet 56 Earlier, made_by 138 characters.
 -- Before-values (read live 2026-10-09 ~14:50Z): version 56, url https://claude.ai/artifact/By4Q1M7KVPzaMkRaJkb48m,
 -- file_name 2026-10-09-open-asks-56.html, extent '1 card (sheet 56)', made_by 'S341 SkyTerrace (sheets 46-48); the
 -- library side session (sheet 49); S345 SkyLantern (sheet 50); S346 SkyCairn (sheet 51); S347 SkyTrellis (sheet 52);

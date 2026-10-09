@@ -11,7 +11,7 @@ status: current
 Your moniker is **SkyHearth**. SkyMeridian (S352, `session_01EkGB3YfNKZsYBqBLFYoSYh`) carried out Sheet 56 and the
 handoff's Priority 2. Sam ruled *Mock it up*; the mock-up was built from the Fact Sheet's own code; Sam said in chat
 *"Fact Sheet looks great!"* and the port shipped. The Dashboard tab had its first UI pass and is clean in light and dark.
-Nothing waits on Sam on a sheet.
+Nothing waits on Sam on a sheet. The Library record reads Sheet 57 (Sam's paste, read back).
 
 ## First, in this order
 
@@ -33,9 +33,6 @@ that no longer exists, and inline `outline:none` ([`ui_pass_lessons`](ui_pass_le
 
 ## Carried, waiting on Sam
 
-- **The Library paste for Sheet 57**: `kb/receipts/cpl_library_open_asks_sheet57_2026-10-09_s352.sql`, one guarded
-  update, handed over in chat. The repo's Supabase guard blocks an `update` through `execute_sql`. After his paste, read
-  back version 57, 30 versions, Sheet 57 first and Current, and note it in the receipt and the Library lane.
 - **Two program records** (S347): Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767, Confirm or Needs a
   fix from the Records view. `program_record_verdicts` was empty at S352's checkpoint.
 - **The guard change** (S347, *"Turn the guard off on updates"*): lands only in a session Sam runs in Accept edits.

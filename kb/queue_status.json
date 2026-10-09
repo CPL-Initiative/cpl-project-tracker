@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T15:14:06Z",
+  "written_at": "2026-10-09T15:30:32Z",
   "session": 352,
   "moniker": "SkyMeridian",
   "run": "Sam's session",
@@ -35,11 +35,6 @@
         "href": "#program-requirements",
         "text": "Open the Program Requirements tab"
       }
-    },
-    {
-      "title": "Paste the Library update for Sheet 57",
-      "text": "The open-asks record in the Library tab should point at Sheet 57. The update is one guarded statement, in the chat and in kb/receipts/cpl_library_open_asks_sheet57_2026-10-09_s352.sql; paste it in the Supabase SQL editor.",
-      "if_no_reply": "The Library record keeps pointing at Sheet 56."
     }
   ],
   "notes": {
@@ -49,6 +44,10 @@
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening."
   },
   "changes": [
+    {
+      "at": "2026-10-09T15:31:00Z",
+      "text": "The Library tab's open-asks record points at Sheet 57, after your paste."
+    },
     {
       "at": "2026-10-09T15:09:00Z",
       "text": "The Dashboard tab passed its first accessibility pass in light and dark: its calculation notes, College Activity colors, focus rings and small buttons."
