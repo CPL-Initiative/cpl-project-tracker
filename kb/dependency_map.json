@@ -4,9 +4,9 @@
   "supabase_tables": 97,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 609,
+  "file_datasets": 610,
   "external_services": 162,
-  "consumers": 420,
+  "consumers": 421,
   "workflows": 45,
   "data_js_files": 69,
   "tabs": 39
@@ -3156,6 +3156,13 @@
      "tabs": [
       "gr-priorities"
      ]
+    },
+    {
+     "id": "script:prototype/veteran_map_mockup.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 243
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
@@ -14535,6 +14542,13 @@
      "line": 135
     },
     {
+     "id": "script:prototype/veteran_map_mockup.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 40
+    },
+    {
      "id": "script:veteran-sprint-map/extract_military.py",
      "kind": "script",
      "direction": "read",
@@ -15522,6 +15536,26 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:prototype/veteran_map_mockup.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/veteran_map_mockup.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 524
+    },
+    {
+     "id": "script:prototype/veteran_map_mockup.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 524
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:quickstart.js": {
    "consumers": [
@@ -18299,14 +18333,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 738
+     "line": 741
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 738
+     "line": 741
     }
    ],
    "served": true,
@@ -18387,14 +18421,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 74
     },
     {
      "id": "script:veteran-sprint-map/extract_military.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 67
+     "line": 74
     }
    ],
    "served": true,

@@ -673,7 +673,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kpi_history.json` | scripts: `excel_to_dashboard.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |
 | `library.js` | pages: `CPL_Dashboard.html` | — |
-| `live_metrics.json` | tabs: `college-briefing` · pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
+| `live_metrics.json` | tabs: `college-briefing` · pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py`, `prototype/veteran_map_mockup.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
 | `live_metrics_new.json` | workflows: `daily-dashboard.yml` | — |
 | `map/probe_users_schema.py` | workflows: `map-users-schema-probe.yml` | — |
 | `map/sync_map_users.py` | workflows: `map-users-sync.yml` | — |
@@ -728,6 +728,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/noncredit_video/noncredit_in_motion.src.html` | scripts: `prototype/noncredit_video/build.py`, `prototype/noncredit_video/cues.py`, `prototype/noncredit_video/narrate.py` | — |
 | `prototype/noncredit_video/noncredit_in_motion_narrated.html` | scripts: `prototype/noncredit_video/build.py` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py`, `scripts/ui_pass.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
+| `prototype/veteran_map_mockup.html` | scripts: `prototype/veteran_map_mockup.py` | scripts: `prototype/veteran_map_mockup.py` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
 | `reflections/build_reflections_summary.py` | workflows: `weekly-reflections-summary.yml` | — |
@@ -1015,7 +1016,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.swccd.edu` | tabs: `map-queue`, `map-users` |
 | `www.taftcollege.edu` | tabs: `map-queue`, `map-users` |
 | `www.venturacollege.edu` | tabs: `map-queue`, `map-users` |
-| `www.w3.org` | tabs: `cip-crosswalk`, `gr-priorities` · pages: `fact-sheet/index.html` · scripts: `veteran-sprint-map/build_selfcontained.py` |
+| `www.w3.org` | tabs: `cip-crosswalk`, `gr-priorities` · pages: `fact-sheet/index.html` · scripts: `prototype/veteran_map_mockup.py`, `veteran-sprint-map/build_selfcontained.py` |
 | `www.westhillscollege.com` | scripts: `kb/_program_source_census.py` |
 | `www.westvalley.edu` | tabs: `map-queue`, `map-users` |
 | `www.wiche.edu` | tabs: `college-briefing` |
@@ -1047,5 +1048,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 35 RPCs · 6 edge functions · 609 file
-datasets · 162 external services · 420 consumers · 45 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 35 RPCs · 6 edge functions · 610 file
+datasets · 162 external services · 421 consumers · 45 workflows · 39 tabs.

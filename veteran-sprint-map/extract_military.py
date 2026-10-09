@@ -32,11 +32,9 @@ def find_live():
             return p
     return None
 
-def main():
-    path = find_live()
-    if not path:
-        print("live_metrics.json not found in", [c for c in CANDIDATES if c], file=sys.stderr)
-        sys.exit(1)
+def snapshot(path):
+    """The payload main() writes, from the live_metrics.json at `path`. Importable,
+    so a mock-up or a build can read today's counts without rewriting the file."""
     d = json.load(open(path, encoding="utf-8"))
     # build a whitespace-insensitive lookup of name -> militaryStudents
     live = {}
@@ -64,6 +62,15 @@ def main():
                  "Refresh by re-running extract_military.py against a newer live_metrics.json.",
         "colleges": out,
     }
+    return payload, missing
+
+def main():
+    path = find_live()
+    if not path:
+        print("live_metrics.json not found in", [c for c in CANDIDATES if c], file=sys.stderr)
+        sys.exit(1)
+    payload, missing = snapshot(path)
+    out, total = payload["colleges"], payload["_statewide_military_total"]
     dest = os.path.join(HERE, "military_by_college.json")
     json.dump(payload, open(dest, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print("saved", dest)
