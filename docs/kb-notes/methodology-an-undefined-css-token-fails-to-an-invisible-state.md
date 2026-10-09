@@ -1,7 +1,7 @@
 ---
 title: An undefined CSS custom property fails to an invisible state, and no jsdom test can see it
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-10-09
 tags: [methodology, ui, accessibility, testing, first-light]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -93,3 +93,15 @@ page at rest**, and a component test that asserts the attribute is not evidence
 that the state can be seen. When a style depends on a token, a theme, or a host
 you do not control, check the *resolution* statically — that is the part a
 headless DOM can actually answer.
+
+## A page that hosts a shared script (2026-10-09, S352)
+
+The same failure crosses a page boundary. `fact-sheet/factsheet_sierra.js`, the Ask Sierra drawer, is loaded by the
+public Fact Sheet and by the funding explainer, and writes `color:var(--on-accent)` on its cobalt fills. The explainer
+defines `--on-accent`; the Fact Sheet never did. The label inherited the body's ink, #3A3A36 on #0047AB, **1.35:1**,
+on Ask Sierra's hover and on the drawer's Send. No route the a11y sweep loads paints either state, so the page passed.
+
+The guard that fits is a text check from the host's side: every bare `var(--x)` read by the page's CSS, its HTML, and
+the CSS its scripts inject must be defined in the page's stylesheet (`tests/factsheet_a11y.test.js` (g), #1934). It
+names the host and the token (`factsheet_sierra.js -> --on-accent`), which a rendering check cannot.
+

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-323 document(s).
+324 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 353 | [the Fact Sheet on First Light, and the Dashboard's first pass](../session_353_handoff.md) | 2026-10-09 |
 | 352 | [three UI passes and the picker](../session_352_handoff.md) | 2026-10-09 |
 | 351 | [Sheet 56 and the privacy page's UI pass](../session_351_handoff.md) | 2026-10-09 |
 | 350 | [the veteran map waits on Sheet 55](../session_350_handoff.md) | 2026-10-09 |

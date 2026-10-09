@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T06:34:12Z",
-  "session": 351,
-  "moniker": "SkyLark",
+  "written_at": "2026-10-09T15:34:47Z",
+  "session": 352,
+  "moniker": "SkyMeridian",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_352_handoff.md",
+  "handoff": "docs/session_353_handoff.md",
   "unchecked": [
     {
       "college": "Irvine Valley College",
@@ -23,8 +23,8 @@
     }
   ],
   "next_step": {
-    "title": "Carry out Sheet 56, then the first COBI tab's UI pass",
-    "text": "Sheet 56 asks whether to mock up the Fact Sheet on First Light's type with a dark mode. The next view the UI pass names is COBI's Dashboard tab."
+    "title": "Back to the Catalog program harvest",
+    "text": "Your direction at the close: the next session starts on the Catalog ROEP harvest, then turns the Supabase guard off for updates if it runs outside Auto mode."
   },
   "calls": [
     {
@@ -35,24 +35,31 @@
         "href": "#program-requirements",
         "text": "Open the Program Requirements tab"
       }
-    },
-    {
-      "title": "Answer Open Asks Sheet 56",
-      "text": "One card: mock up the Fact Sheet on First Light's type, light and dark, with the Word and PDF downloads unchanged?",
-      "if_no_reply": "The Fact Sheet keeps its document type and stays light.",
-      "view": {
-        "href": "https://claude.ai/artifact/By4Q1M7KVPzaMkRaJkb48m",
-        "text": "Open Sheet 56"
-      }
     }
   ],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
-    "sierra": "The docked Sierra expands to full screen when she answers, since Oct 9. The veteran map is on First Light since Oct 9. The Fact Sheet, the privacy page, the funding explainer and SkyView passed their accessibility passes the same day.",
+    "sierra": "The Fact Sheet is on First Light since Oct 9, in light and dark, and follows the theme you choose in COBI; print and the Word download keep their document type. The veteran map moved the same day, and the docked Sierra expands to full screen when she answers.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening."
   },
   "changes": [
+    {
+      "at": "2026-10-09T15:31:00Z",
+      "text": "The Library tab's open-asks record points at Sheet 57, after your paste."
+    },
+    {
+      "at": "2026-10-09T15:09:00Z",
+      "text": "The Dashboard tab passed its first accessibility pass in light and dark: its calculation notes, College Activity colors, focus rings and small buttons."
+    },
+    {
+      "at": "2026-10-09T15:00:00Z",
+      "text": "The Fact Sheet moved to First Light's type with a dark mode, after you said it looks great."
+    },
+    {
+      "at": "2026-10-09T14:47:00Z",
+      "text": "On the Fact Sheet, Ask Sierra and the Send button read clearly when you point at them."
+    },
     {
       "at": "2026-10-09T06:33:56Z",
       "text": "SkyView's chip colors follow the house palette by day and at night, and three of its controls read clearly at night."
