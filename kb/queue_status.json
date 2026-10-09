@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T18:31:36Z",
+  "written_at": "2026-10-09T20:27:37Z",
   "session": 354,
   "moniker": "SkyFurrow",
   "run": "Sam's session",
@@ -1919,21 +1919,85 @@
   "calls": [
     {
       "title": "Read ten Cerritos records from the tab",
-      "text": "Six pass the three machine checks: 02201 Architectural Technology A.A., 02213 Secretary/Administrative Assistant A.A., 02226 Engineering Design Technology, 20520 Culinary Arts: Professional Cooking, 24026 GED Test Preparation in Spanish, 31608 Art History A.A.-T. Four fail one: 32563 Music A.A.-T, 44153 Dental Hygiene B.S., 15512 Woodworking A.S., 02235 Photography A.A. Sign in on the Records view and choose Confirm or Needs a fix on each.",
+      "text": "Six pass the three machine checks and four fail one. Open each below to read its catalog page, then choose Confirm or Needs a fix right here; your answers go to the verdict log the next session reads.",
       "if_no_reply": "The Cerritos records stay unchecked, and Sierra does not quote them.",
       "view": {
         "href": "#program-requirements",
         "text": "Open the Program Requirements tab"
-      }
+      },
+      "records": [
+        {
+          "college": "Cerritos College",
+          "control_number": "02201",
+          "label": "Architectural Technology A.A."
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "02213",
+          "label": "Secretary/Administrative Assistant A.A."
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "02226",
+          "label": "Engineering Design Technology"
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "20520",
+          "label": "Culinary Arts: Professional Cooking"
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "24026",
+          "label": "GED Test Preparation in Spanish"
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "31608",
+          "label": "Art History A.A.-T"
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "32563",
+          "label": "Music A.A.-T"
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "44153",
+          "label": "Dental Hygiene B.S."
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "15512",
+          "label": "Woodworking A.S."
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "02235",
+          "label": "Photography A.A."
+        }
+      ]
     },
     {
       "title": "Read two records from the tab",
-      "text": "Irvine Valley's Art A.A. and Santa Monica's Barbering A.S. wait on your reading. Sign in on the Records view, open each record, and choose Confirm or Needs a fix.",
+      "text": "Irvine Valley's Art A.A. and Santa Monica's Barbering A.S. wait on your reading. Open each below and choose Confirm or Needs a fix.",
       "if_no_reply": "Both records stay unchecked, and Sierra does not quote them.",
       "view": {
         "href": "#program-requirements",
         "text": "Open the Program Requirements tab"
-      }
+      },
+      "records": [
+        {
+          "college": "Irvine Valley College",
+          "control_number": "10265",
+          "label": "Art A.A."
+        },
+        {
+          "college": "Santa Monica College",
+          "control_number": "43767",
+          "label": "Barbering A.S."
+        }
+      ]
     }
   ],
   "notes": {

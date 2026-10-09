@@ -151,6 +151,37 @@
     }
     return out.length ? el("p", { cls: "prh-pg-links" }, out) : null;
   }
+  /* A call that names records lists them on its card, each with Confirm and Needs a fix
+     (Sam, 2026-10-09, on his phone at this card: "can we add a way to respond on the sheet
+     that you could read?"). The answer is the verdict the Records view writes, through the
+     same one RPC, so a session reads it from program_record_verdicts. Each record opens to
+     its catalog page, its verdict box and a word that opens it on Program records. */
+  function callRecords(c) {
+    var refs = (Array.isArray(c.records) ? c.records : []).filter(function (r) { return r && r.college && r.control_number; });
+    if (!refs.length) return null;
+    var Rv = state.review;
+    var mine = Rv && Rv.records ? Rv.records : null;
+    var items = refs.map(function (ref) {
+      var p = mine ? mine.filter(function (r) { return r.college === ref.college && r.control_number === ref.control_number; })[0] : null;
+      var name = ref.label || (p ? p.program_title + " " + award(p.award) : shortCollege(ref.college));
+      var sl = p && p.requirements_fp ? stateLine(p) : null;
+      var line = el("span", { cls: "prh-state" + (sl && sl.waiting ? " prh-state-waiting" : ""), text: sl ? sl.text : "" });
+      var read = el("button", { cls: "prh-word", type: "button", text: "Open it on Program records" });
+      read.addEventListener("click", function () {
+        state.rq = ref.control_number; state.rshow = "all"; state.rcollege = ref.college;
+        choose("records", true);
+      });
+      var body = [el("p", { cls: "prh-pg-links" }, [p && p.source_url ? link(p.source_url, "The catalog page") : null, read])];
+      if (p && p.requirements_fp) body.push(verdictBox(p, flagsFor(p).flags, line));
+      return el("details", { cls: "prh-callrec" }, [
+        el("summary", {}, [el("span", { cls: "prh-callrec-t" }, [el("b", { text: ref.control_number }), " " + name]), line]),
+        el("div", { cls: "prh-callrec-b" }, body)]);
+    });
+    var head = mine ? el("p", { cls: "prh-small prh-quiet", text: "Open a record to read its catalog page and answer here." })
+      : Rv && Rv.error ? el("p", { cls: "prh-small prh-caution", role: "status", text: "Your sign-in could not read the records (" + Rv.error + "). Reload the tab to answer here." })
+      : signInBox();
+    return el("div", { cls: "prh-callrecs" }, [head].concat(items));
+  }
   function safeGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function safeSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* private window */ } }
 
@@ -603,6 +634,14 @@
       ".prh-pg-part.prh-pg-going .prh-pg-status { color:var(--cobalt); }",
       ".prh-pg-call { border-color:var(--crimson); background:color-mix(in srgb, var(--crimson) 7%, var(--surface-opaque)); }",
       ".prh-pg-links { display:flex; flex-wrap:wrap; gap:.4rem 1rem; margin:.5rem 0 0; }",
+      ".prh-word { font:inherit; font-size:.9rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".prh-word:hover { text-decoration-thickness:2px; }",
+      ".prh-word:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
+      ".prh-callrecs { margin:.6rem 0 0; display:grid; gap:0; }",
+      ".prh-callrec { border-top:1px solid var(--border); }",
+      ".prh-callrec > summary { display:flex; flex-wrap:wrap; align-items:center; gap:.2rem .75rem; min-height:44px; padding:.35rem 0; cursor:pointer; }",
+      ".prh-callrec-t { flex:1 1 12rem; min-width:0; }",
+      ".prh-callrec-b { padding:0 0 .75rem; }",
       ".prh-pg-part.prh-pg-call .prh-pg-status, .prh-pg-box.prh-pg-call .prh-sec-label { color:var(--crimson); }",
       ".prh-pg-part.prh-pg-unread .prh-pg-status { color:var(--mustard-text); }",
       ".prh-pg-what { margin:0; font-size:.9rem; font-variant-numeric:tabular-nums; }",
@@ -1584,6 +1623,7 @@
         side.appendChild(section("progress:call:" + i, c.title || "", null, [
           c.text ? el("p", { text: c.text }) : null,
           c.if_no_reply ? el("p", { cls: "prh-pg-foot", text: "No reply: " + c.if_no_reply }) : null,
+          callRecords(c),
           callLinks(c)],
           { cls: "prh-pg-box prh-pg-call", h: "h4", label: "Needs " + x.decider + "'s call" }));
       });

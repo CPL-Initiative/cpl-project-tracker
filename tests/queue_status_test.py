@@ -62,6 +62,10 @@ cases = [
     ("a link that is not https", lambda q: q["calls"].append({"title": "t", "text": "x", "link": "http://example.org"}), "link"),
     ("a view that is neither https nor a bare tab hash", lambda q: q["calls"].append({"title": "t", "text": "x", "view": {"href": "#tab=x&y", "text": "See it"}}), "view.href"),
     ("a view with no words", lambda q: q["calls"].append({"title": "t", "text": "x", "view": {"href": "#cpl-pathways"}}), "view.text"),
+    # A call that names records (S354): the card answers each through the verdict RPC,
+    # which takes the college and the control number, so a record missing either fails.
+    ("a call's record with no control number", lambda q: q["calls"].append({"title": "t", "text": "x", "records": [{"college": "Cerritos College"}]}), "records[0].control_number"),
+    ("a call naming an empty list of records", lambda q: q["calls"].append({"title": "t", "text": "x", "records": []}), "non-empty"),
     # The headline's history (Sam, 2026-10-08): the pair needs a trend, so a checkpoint
     # that drops the list, repeats a day or writes a count as text fails here.
     ("the headline history left out", lambda q: q.pop("headline"), "headline must be a list"),
@@ -73,6 +77,9 @@ q = copy.deepcopy(Q)
 q["calls"].append({"title": "t", "text": "x", "link": "https://claude.ai/artifact/x", "link_text": "Answer on Open Asks Sheet 50, card 1",
                    "view": {"href": "#cpl-pathways", "text": "See it on CPL Pathways"}})
 check("accepts a call with its sheet link, its words, and a tab to view the item", not M.faults(q), M.faults(q))
+q = copy.deepcopy(Q)
+q["calls"].append({"title": "t", "text": "x", "records": [{"college": "Cerritos College", "control_number": "02201", "label": "Architectural Technology A.A."}]})
+check("accepts a call naming the records it asks about", not M.faults(q), M.faults(q))
 for name, mut, frag in cases:
     hit, out = faulted(mut, frag)
     check("refuses " + name, hit, out)
