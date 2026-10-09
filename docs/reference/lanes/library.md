@@ -145,9 +145,9 @@ claude.ai.
 
 ## Next
 
-- **The open-asks series record reads version 55 (Sam pasted it, 01:46Z 2026-10-09, "success").** It sits at sheet
-  55's link with sheets 54 to 50 before it, 28 versions, Sheet 55 first and Current (read back by S350; receipt
-  `kb/receipts/cpl_library_open_asks_sheet55_2026-10-09_s349.sql`). `apply_migration` times out on `cpl_library` and on
+- **The open-asks series record reads version 56 (Sam pasted it, 03:18Z 2026-10-09, "success").** It sits at sheet
+  56's link with sheets 55 to 50 before it, 29 versions, Sheet 56 first and Current (read back by S350; receipt
+  `kb/receipts/cpl_library_open_asks_sheet56_2026-10-09_s350.sql`). `apply_migration` times out on `cpl_library` and on
   no other table (five times through S349), so this table's writes go to Sam as a paste, one receipt that reaches the
   new version from any earlier state the record could be in.
 - **PR 2, the move (call 5):** once a session with the Microsoft 365 connector has read the SharePoint copies,
