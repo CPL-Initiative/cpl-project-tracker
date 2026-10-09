@@ -3721,7 +3721,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 56
+     "line": 59
     }
    ],
    "served": true,
@@ -6420,7 +6420,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 37
+     "line": 40
     }
    ],
    "served": true,
@@ -6586,7 +6586,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 38
+     "line": 41
     }
    ],
    "served": true,
@@ -6719,7 +6719,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
+     "line": 46
     }
    ],
    "producers": [
@@ -10498,7 +10498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 34
+     "line": 37
     }
    ],
    "served": true,
@@ -13998,7 +13998,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 33
+     "line": 36
     }
    ],
    "served": true,
@@ -14807,7 +14807,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 38
+     "line": 41
     }
    ],
    "served": true,
@@ -15509,7 +15509,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 72
+     "line": 75
     }
    ],
    "producers": [
@@ -15930,7 +15930,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 37
+     "line": 40
     }
    ],
    "served": true,
@@ -18298,7 +18298,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 37
+     "line": 40
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
