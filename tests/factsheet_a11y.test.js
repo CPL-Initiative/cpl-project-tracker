@@ -153,6 +153,8 @@ const PAIRS = [
   ["crimson on card", T("crimson"), T("surface"), 4.5],
   ["white on the navy table head", "#FFFFFF", T("seal-blue"), 4.5],
   ["white on the primary button", "#FFFFFF", T("seal-blue"), 4.5],
+  ["--on-accent on the cobalt Send and Ask Sierra hover", T("on-accent"), T("cobalt"), 4.5],
+  ["--on-accent on the editor's crimson buttons", T("on-accent"), T("crimson"), 4.5],
   ["skip link text on its own surface", T("cobalt"), T("surface"), 4.5],
   // non-text UI, 3:1
   ["focus ring on paper", T("cobalt"), T("paper"), 3.0], ["focus ring on card", T("cobalt"), T("surface"), 3.0],
@@ -161,8 +163,9 @@ const PAIRS = [
   ["savings KPI rule on card", T("hunter"), T("surface"), 3.0],
 ];
 PAIRS.forEach(([label, fg, bg, target]) => {
-  const r = ratio(h2rgb(fg), h2rgb(bg));
-  check(`contrast ${target}:1 — ${label} (${r.toFixed(2)}:1)`, r >= target);
+  // A token factsheet.css does not define reads as a failed pair, not a throw.
+  const r = fg && bg ? ratio(h2rgb(fg), h2rgb(bg)) : 0;
+  check(`contrast ${target}:1 — ${label} (${fg && bg ? r.toFixed(2) + ":1" : "undefined token"})`, r >= target);
 });
 // --mustard-fill as a DECORATIVE rule (masthead underline, .note edge, .strategy
 // top) is 1.95:1 on white. That is the same documented class as --border-strong
@@ -201,6 +204,29 @@ check("the toolbar's controls are words (the Curate pencil is one of the 26 Sam 
   [...d.querySelectorAll(".actionbar button")].filter((b) => b.id !== "btn-curate")
     .every((b) => !GLYPH.test(b.textContent)) &&
   /btn\.textContent = anyOpen \? 'Expand all' : 'Collapse all';/.test(JS));
+
+// ── (g) no phantom tokens (S352) ──
+// An undefined custom property with no fallback drops its declaration at
+// computed-value time, and nothing errors: the Fact Sheet never defined
+// --on-accent, so the drawer's Send button and Ask Sierra on hover painted the
+// body's ink on cobalt (1.35:1) behind a clean a11y sweep (one is hover-only,
+// the other sits in a shut drawer). Every bare var() the page's own CSS and
+// the CSS its scripts inject read must be one factsheet.css defines.
+{
+  const defined = new Set((CSS.match(/--[\w-]+(?=\s*:)/g) || []));
+  const strip = (s) => s.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
+  const srcs = { "factsheet.css": CSS, "index.html": HTML };
+  fs.readdirSync("fact-sheet").filter((f) => f.endsWith(".js"))
+    .forEach((f) => { srcs[f] = fs.readFileSync("fact-sheet/" + f, "utf8"); });
+  const bare = [];
+  for (const [f, src] of Object.entries(srcs)) {
+    for (const m of strip(src).matchAll(/var\(\s*(--[\w-]+)\s*\)/g)) {
+      if (!defined.has(m[1])) bare.push(f + " -> " + m[1]);
+    }
+  }
+  check("every bare var() the page and its scripts read is defined in factsheet.css" +
+    (bare.length ? " (" + [...new Set(bare)].join(", ") + ")" : ""), bare.length === 0);
+}
 
 // ── report ──
 let failed = 0;

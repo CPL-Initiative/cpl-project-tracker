@@ -19,6 +19,11 @@
   --seal-blue:    #002F6D;   /* CCCCO seal navy — the masthead/heading hue */
   --seal-blue-hover:#013A86; /* the primary button's hover fill */
   --on-seal:      #FFFFFF;   /* text on a seal-blue, cobalt or other dark fill */
+  /* The name factsheet_sierra.js and factsheet_edit.js write on their cobalt and
+     crimson fills (Ask Sierra on hover, the drawer's Send, the editor's buttons).
+     The funding explainer and COBI define it; this page never did, so each of
+     those labels inherited the body's ink: 1.35:1 on cobalt (S352). */
+  --on-accent:    #FFFFFF;
   --cobalt:       #0047AB;   /* links / interactive */
   --hunter:       #2C601A;   /* positive · savings · live */
   --crimson:      #920000;   /* alerts */
