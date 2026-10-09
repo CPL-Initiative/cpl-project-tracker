@@ -485,6 +485,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/authority_recode_out/2026-09-03/seed_edits.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_zband_retire_dryrun.py` | — |
 | `kb/authority_recode_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/budget_snapshot.json` | scripts: `kb/_load_budget.py` | scripts: `kb/_load_budget.py` · committed by: `daily-dashboard.yml` |
+| `kb/catalog_framing.json` | tabs: `program-requirements` | — |
 | `kb/ccr_cpl_funnel.json` | scripts: `kb/_build_ccr_cpl.py` | — |
 | `kb/cid_articulation_joins.json` | scripts: `excel_to_dashboard.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_join_cid_articulations.py`, `kb/_title_consolidation_dryrun.py` | scripts: `kb/_join_cid_articulations.py` |
 | `kb/coci_articulations.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_convergence_singletons.py`, `kb/_apply_crossdisc_remint.py`, `kb/_apply_drama_theater_convergence.py`, `kb/_apply_fl_subj4_remint.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_apply_kine_flsp_twin_merge.py`, `kb/_apply_twin_merge_statewide.py`, `kb/_authority_recode_dryrun.py`, `kb/_build_ccr_cpl.py`, `kb/_build_ccr_universe.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_cpl_pathway_membership.py`, `kb/_build_peer_articulations.py`, `kb/_build_remint_blast_radius.py`, `kb/_build_roep_display.py`, `kb/_ccr_trail.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_crossdisc_dryrun.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eths_remint.py`, `kb/_fold_unclassified.py`, `kb/_identities_rekey_dryrun.py`, `kb/_kin_pe_pass2.py`, `kb/_merge_candidate_queue.py`, `kb/_merge_credentials.py`, `kb/_overmerge_apply.py`, `kb/_overmerge_dryrun.py`, `kb/_pols_remint.py`, `kb/_remint_apply_articulations.py`, `kb/_seed_coci_articulations.py`, `kb/_subj4_apply.py`, `kb/_subj4_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py`, `kb/_verify_prescriptive_join.py`, `kb/_verify_students_served.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_apply_fl_subj4_remint.py`, `kb/_fold_unclassified.py`, `kb/_pols_remint.py`, `kb/_remint_apply_articulations.py`, `kb/_seed_coci_articulations.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml`, `overmerge-apply.yml`, `phase-1e-apply.yml` |
@@ -1059,5 +1060,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 6 edge functions · 618 file
+Coverage: 97 Supabase tables · 36 RPCs · 6 edge functions · 619 file
 datasets · 164 external services · 425 consumers · 47 workflows · 39 tabs.

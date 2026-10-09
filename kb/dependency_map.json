@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 6,
-  "file_datasets": 618,
+  "file_datasets": 619,
   "external_services": 164,
   "consumers": 425,
   "workflows": 47,
@@ -1323,7 +1323,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1256,
+     "line": 1311,
      "tabs": [
       "program-requirements"
      ]
@@ -4986,7 +4986,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 377
+     "line": 392
     },
     {
      "id": "module:college_briefing.js",
@@ -7845,6 +7845,22 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:kb/catalog_framing.json": {
+   "consumers": [
+    {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 90,
+     "tabs": [
+      "program-requirements"
+     ]
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:kb/ccr_cpl_funnel.json": {
    "consumers": [
@@ -19593,7 +19609,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 309,
+     "line": 321,
      "tabs": [
       "program-requirements"
      ]
@@ -21445,7 +21461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 285,
+     "line": 297,
      "tabs": [
       "program-requirements"
      ]
@@ -21477,7 +21493,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 242,
+     "line": 254,
      "tabs": [
       "program-requirements"
      ]
@@ -21506,7 +21522,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 308,
+     "line": 320,
      "tabs": [
       "program-requirements"
      ]
@@ -21531,7 +21547,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 241,
+     "line": 253,
      "tabs": [
       "program-requirements"
      ]

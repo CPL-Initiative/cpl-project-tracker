@@ -265,12 +265,12 @@ block("(6b)", function () {
     return Promise.resolve({ ok: true, json: function () { return Promise.resolve(REGISTRY); } });
   } });
   return M._load().then(function () {
-    check("(6b) both tables are read, and the Progress view's three reads beside them", asked.length === 5 &&
+    check("(6b) both tables are read, the Progress view's three reads and the framing file beside them", asked.length === 6 &&
       asked.some(function (u) { return /\/rest\/v1\/program_source_registry\?select=/.test(u); }) &&
       asked.some(function (u) { return /\/rest\/v1\/program_requirement_records\?select=/.test(u); }) &&
       asked.some(function (u) { return /\/rest\/v1\/program_source_addenda\?select=/.test(u); }) &&
       asked.some(function (u) { return /\/rest\/v1\/coci_college_programs\?.*status=eq\.Active/.test(u); }) &&
-      asked.indexOf("kb/queue_status.json") >= 0, asked.join(" "));
+      asked.indexOf("kb/queue_status.json") >= 0 && asked.indexOf("kb/catalog_framing.json") >= 0, asked.join(" "));
     check("(6b) one failed table fails the read, naming it", /program_requirement_records answered 503/.test(root.textContent),
       root.textContent.slice(0, 300));
   });
@@ -928,6 +928,10 @@ block("(13)", function () {
   });
 });
 
+function wordButton(scope, text) {
+  return Array.prototype.filter.call(scope.querySelectorAll("button.prh-word"), function (b) { return b.textContent === text; })[0] || null;
+}
+
 // ── (14) A call answers its records on its card (Sam, 2026-10-09, on his phone) ──
 // "I see this but can't respond there I don't think... can we add a way to respond on the
 // sheet that you could read?" The failures this guards: a call that lists records with no
@@ -959,7 +963,7 @@ block("(14)", function () {
       !!art.querySelector('a[href="https://example.org/art"]') && !!art.querySelector(".prh-verdict") &&
       art.querySelectorAll(".prh-verdict button")[0].textContent === "Confirm");
     check("(14) the open control is an underlined word, 24px tall", /\.prh-word \{[^}]*text-decoration:underline[^}]*\}/.test(SRC) &&
-      /\.prh-word \{[^}]*min-height:24px/.test(SRC) && art.querySelector("button.prh-word").textContent === "Open it on Program records");
+      /\.prh-word \{[^}]*min-height:24px/.test(SRC) && !!wordButton(art, "Open it on Program records"));
     art.querySelector(".prh-verdict button").click();
     return tick().then(tick).then(function () {
       check("(14) Confirm on the card writes the verdict through the one RPC, with the record's fingerprint",
@@ -967,12 +971,117 @@ block("(14)", function () {
         r.posts[0].body.p_verdict === "confirm" && r.posts[0].body.p_requirements_fp === "fp-art", JSON.stringify(r.posts.map(function (p) { return p.body; })));
       check("(14) the summary says the answer without a reload", /^Confirmed by you/.test(art.querySelector("summary .prh-state").textContent),
         art.querySelector("summary .prh-state").textContent);
-      art.querySelector("button.prh-word").click();
+      wordButton(art, "Open it on Program records").click();
       const q = r.root.querySelector("#prh-rq");
       check("(14) Open it lands on Program records, searched to the record", r.M._state.view === "records" && !!q && q.value === "10265" &&
         r.root.querySelectorAll("article.prh-rec").length === 1);
     });
   });
+});
+
+// ── (15) Sam's to-dos, Show the blocks, and side by side (Sam, 2026-10-09) ──
+// "Put a button to my todo items on the front of Program Requirements so I can go right to
+// them." "Note the Show Blocks doesn't seem to do anything." "It would be nice if you could
+// show a split view like this on the Prog Rev tab so I don't have to do it manually." The
+// failures this guards: a to-do word that counts what is already answered or lands anywhere
+// but the open calls (a collapsed section included); a blocks toggle that changes only its
+// label (a class display beats [hidden]); a split whose frame can navigate the tab away,
+// whose page behind still takes focus, or whose verdict leaves the card behind stale; and a
+// host that refuses framing drawn as an empty frame instead of its own window.
+const CALL2 = { title: "Read two records", text: "Open each below.",
+  records: [{ college: "Irvine Valley College", control_number: "10265", label: "Art A.A." },
+            { college: "Cerritos College", control_number: "42158", label: "Field Ironworkers A.S." }] };
+block("(15a)", function () {
+  check("(15a) Show the blocks: the body's display yields to [hidden]", /\.prh-body\[hidden\] \{ display:none; \}/.test(SRC));
+  const m = loadModule();
+  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER]; m.M._state.view = "records"; m.M._render();
+  const art = m.root.querySelector("article.prh-rec"), body = art.querySelector(".prh-body"), btn = art.querySelector(".prh-toggle");
+  const before = body.hidden;
+  btn.click();
+  const mid = body.hidden;
+  btn.click();
+  check("(15a) Show the blocks hides and shows the blocks, not only its own label",
+    before === true && mid === false && body.hidden === true && btn.textContent === "Show the blocks", [before, mid, body.hidden].join());
+});
+block("(15b)", function () {
+  const out = progressReady(20);
+  out.M._state.progress.queue.calls = [CALL2];
+  out.M._state.view = "records"; out.M._render();
+  const go = out.root.querySelector(".prh-mast #prh-todo-go");
+  check("(15b) the to-do word sits under the tab's title on every view, a button that counts each record a call names",
+    !!go && go.tagName === "BUTTON" && go.textContent === "Sam's to-dos (2)" && /prh-todo-go \{[^}]*text-decoration:underline/.test(SRC),
+    go && go.textContent);
+  out.M._state.secs = { "*": false };
+  go.click();
+  const card = out.root.querySelector('details[data-sec="progress:call:0"]');
+  check("(15b) it goes to the Progress view and opens the call, even after Collapse all",
+    out.M._state.view === "progress" && !!card && card.hasAttribute("open"));
+  check("(15b) focus lands on the call, so a phone reader is there", out.w.document.activeElement === card.querySelector("summary"));
+  out.M._state.progress.queue.calls = []; out.M._render();
+  check("(15b) nothing waiting draws no to-do word", !out.root.querySelector("#prh-todo-go"));
+});
+block("(15c)", function () {
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    const f = progressFixture(20);
+    r.M._state.progress = { addenda: f.addenda, active: 20282, queue: Object.assign({}, f.queue, { calls: [CALL2] }), errors: {},
+      readAt: new Date("2026-10-07T21:40:00Z") };
+    r.M._state.view = "progress"; r.M._render();
+    const go = r.root.querySelector("#prh-todo-go");
+    check("(15c) signed in, an answered record leaves the count (the checked Ironworkers)", go.textContent === "Sam's to-dos (1)", go.textContent);
+    r.root.querySelector('details[data-sec="progress:call:0"] .prh-callrec .prh-verdict button').click();
+    return tick().then(tick).then(function () {
+      check("(15c) a verdict on the card updates the count without a reload",
+        go.textContent === "Sam's to-dos: all answered" && /prh-todo-clear/.test(go.className), go.textContent);
+    });
+  });
+});
+block("(15d)", function () {
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    r.M._state.view = "records"; r.M._render();
+    const card = Array.prototype.filter.call(r.root.querySelectorAll("article.prh-rec"), function (a) { return /^Art/.test(a.getAttribute("aria-label")); })[0];
+    const sbs = wordButton(card, "Side by side");
+    check("(15d) each record with a catalog page offers Side by side, an underlined word", !!sbs);
+    sbs.click();
+    const d = r.w.document.querySelector('.prh-split[role="dialog"][aria-modal="true"]');
+    const fr = d && d.querySelector("iframe");
+    check("(15d) the split frames the record's catalog page beside it", !!fr && fr.getAttribute("src") === "https://example.org/art" &&
+      /The catalog page for Art/.test(fr.getAttribute("title")));
+    check("(15d) the frame may not navigate the tab (sandboxed, no top navigation)",
+      !!fr && /allow-scripts/.test(fr.getAttribute("sandbox")) && !/allow-top-navigation/.test(fr.getAttribute("sandbox")));
+    const rec = d.querySelector(".prh-split-rec .prh-rec");
+    check("(15d) the record shows its blocks open, with Your reading, and no second Side by side",
+      !!rec && rec.querySelector(".prh-body").hidden === false && !!rec.querySelector(".prh-verdict") && !wordButton(rec, "Side by side"));
+    check("(15d) the page behind is inert while the split is open", r.root.closest("[inert]") === r.root);
+    check("(15d) stacked on a phone, each pane its own scroller", /@media \(max-width: 900px\) \{ \.prh-split-panes \{ grid-template-columns:minmax\(0, 1fr\); grid-template-rows:minmax\(0, 1fr\) minmax\(0, 1fr\)/.test(SRC) &&
+      /\.prh-split-rec \{[^}]*overflow:auto/.test(SRC));
+    rec.querySelector(".prh-verdict button").click();
+    return tick().then(tick).then(function () {
+      d.dispatchEvent(new r.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+      const back = Array.prototype.filter.call(r.root.querySelectorAll("article.prh-rec"), function (a) { return /^Art/.test(a.getAttribute("aria-label")); })[0];
+      check("(15d) Escape closes it and frees the page", !r.w.document.querySelector(".prh-split") && !r.root.hasAttribute("inert"));
+      check("(15d) a verdict saved in the split shows on the card behind", /^Confirmed by you/.test(back.querySelector(".prh-state").textContent),
+        back.querySelector(".prh-state").textContent);
+      check("(15d) focus returns to that record's Side by side", r.w.document.activeElement === wordButton(back, "Side by side"));
+    });
+  });
+});
+block("(15e)", function () {
+  const m = loadModule();
+  const opened = [];
+  m.w.open = function (u, n, f) { opened.push([u, n, f]); return null; };
+  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER]; m.M._state.view = "records";
+  m.M._state.framing = { "cerritos-public.courseleaf.com": { frames: false, xfo: "SAMEORIGIN" } };
+  m.M._render();
+  check("(15e) the framing file decides per host", m.M.framingOf(IRONWORKER.source_url) === false && m.M.framingOf("https://other.example/x") === null);
+  wordButton(m.root.querySelector("article.prh-rec"), "Side by side").click();
+  const d = m.w.document.querySelector(".prh-split");
+  check("(15e) a host that refuses framing opens in its own window on the left half, named, without the opener",
+    opened.length === 1 && opened[0][0] === IRONWORKER.source_url && opened[0][1] === "prh-catalog" &&
+    /left=0/.test(opened[0][2]) && /noopener/.test(opened[0][2]), JSON.stringify(opened));
+  check("(15e) and the split says why, with no empty frame", !!d && !d.querySelector("iframe") && /does not let another site show its pages/.test(d.textContent));
+  m.M.closeSplit();
 });
 
 Promise.all(pending).then(function () {
