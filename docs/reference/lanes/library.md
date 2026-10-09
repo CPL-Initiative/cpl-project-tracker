@@ -77,7 +77,9 @@ outside RCCD are allowed (cards 1 and 2).
   storage solutions."* The later upload goes to this same folder: a Microsoft app RCCD IT approves for the one
   site, three saved values, `graph.microsoft.com` added to the environment's allowed domains (refused today,
   CONNECT 403, measured 2026-10-08), and a filer for Microsoft Graph. The Drive filer (`scripts/library_file.py`,
-  [`library_filer`](../library_filer.md)) is parked; its Google sign-in was never completed.
+  [`library_filer`](../library_filer.md)) is parked; its Google sign-in was never completed. Its privacy page
+  (`privacy.html`, the link on Google's consent screen) stays while that screen links it; S351's UI pass put it on
+  First Light's type and dark palette (`npm run a11y -- privacy privacy-dark`, clean).
 - **Reading the folder:** a session reaches it only through the Microsoft 365 connector (claude.ai connectors,
   connected by Sam with his RCCD account; read and search, no upload). This environment's network refuses
   `studentrcc.sharepoint.com` too.

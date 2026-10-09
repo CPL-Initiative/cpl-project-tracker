@@ -38,8 +38,8 @@
    "name": "Privacy",
    "page": "privacy.html",
    "audience": "public",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-09",
+   "outcome": "First pass (S351): AA, the 24px targets and no sideways scroll held at nine widths; First Light's colors were in place but not its type (system-ui) and it had no dark mode. Now Playfair Display and Source Sans 3, self-hosted from sierra/fonts/, and COBI's dark palette on the cpl_theme contract; light and dark measure clean (privacy-dark is a new a11y target). Wiring: no dataset; Google's consent screen is its one link. Its words still describe the Drive filer, parked 2026-10-08, and stay while that screen links the page."
   },
   {
    "id": "funding-model",

@@ -9,8 +9,23 @@
      (scripts/library_file.py), which signs in to Google Drive as the CPL
      Initiative's own account. Sam, 2026-10-06, setting up the filer's Google
      sign-in: Publish stays off until the Branding page carries a privacy link.
-     First Light tokens, light identity (docs/kb-notes/reference-ui-design-system.md). -->
+     First Light (docs/kb-notes/reference-ui-design-system.md): its tokens under
+     COBI's names, every hex in a :root block; its type, Playfair Display and
+     Source Sans 3, self-hosted from Sierra's fonts so the page sends nothing to a
+     third party; and its one dark palette on the cpl_theme.js contract (S351, the
+     page's first UI pass). -->
+<!-- The theme a reader chose in COBI's one control (cpl_theme.js, key cpl_theme,
+     same origin) holds here too; with no choice the page follows the OS, as
+     COBI's System setting does. Set before the stylesheet paints, so a dark
+     reader never sees a white flash. -->
+<script>try{var t=localStorage.getItem("cpl_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="preload" href="sierra/fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="sierra/fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('sierra/fonts/playfair-display-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('sierra/fonts/source-sans-3-latin-400-normal.woff2') format('woff2'); }
 :root {
   --paper: #F4F2ED;
   --text-strong: #1C1C1A;
@@ -23,13 +38,30 @@
   --focus-ring: var(--cobalt);
   --radius: 14px;
   --cpl-measure: none;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+/* COBI's dark values (index.html, :root[data-theme="dark"]), written twice so an
+   explicit choice beats the OS in both directions. On #1E1E1C: ink 13.9:1, body
+   11.0, muted 6.9, the link 6.5. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+    --surface-opaque: #1E1E1C; --border: rgba(255,255,255,.14); --cobalt: #7DA1D4;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+  --surface-opaque: #1E1E1C; --border: rgba(255,255,255,.14); --cobalt: #7DA1D4;
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body {
   margin: 0;
   background: var(--paper);
   color: var(--text-body);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
   line-height: 1.6;
 }
@@ -54,6 +86,8 @@ main {
 h1 {
   margin: 0 0 .25rem;
   color: var(--text-strong);
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
   line-height: 1.25;
 }
