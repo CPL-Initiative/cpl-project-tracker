@@ -62,8 +62,8 @@
    "name": "Activities",
    "page": "index.html#activities-projects",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-09",
+   "outcome": "S354: npm run a11y light and dark was 71 targets under 24px in 7 kinds, 4 light contrast pairs (#888 3.54, #999 2.85, gold ink 1.95, On Track badge 4.47), an h1 to h3 skip, Element Map without a ring; now clean in both themes at 1440 and 390. Controls are underlined words (activity links, CPL Workplan, Element Map, Table / Archive, its glyph removed); gray labels read --text-muted; Stretch words --mustard-text; badge tint 0.15; Activities is the h2. Wiring: the view reads no mapped dataset. Left: raw #888 ink elsewhere in the generator (other tabs), and report_generator.js's Custom Report button is still boxed."
   },
   {
    "id": "cobi:raci",
