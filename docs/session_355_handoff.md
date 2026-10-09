@@ -81,3 +81,25 @@ light and dark, with the wiring and First Light checks; controls become underlin
 
 PR subscriptions end with their merges (#1941, #1943 to #1947, CPLBrain#288); the checkpoint PR and the vault
 note PR are merged in the same turn. No check-in, routine or artifact watch was created.
+
+## Added after sign-off (EMERGENCY checkpoint, S354, 2026-10-09 ~21:05Z, 43k context left)
+
+**Merge #1949 (this addendum) on a green `test` first.** Sam came back with a verdict and two asks. Rule 9 artifacts NOT refreshed for this addendum: the lessons doc,
+KB notes, INDEX rebuild, pipeline tab, kb/README, README, queue status, vault note, the UI pass. Only this
+handoff, the harvest lane line and one `cpl_memory` row were written.
+
+- **Sam confirmed 02201** (Architectural Technology A.A.) on the call card, "all correct", after reading it beside
+  its catalog page. Read it in `program_record_verdicts` with the rest.
+- **Bug: "Show the blocks doesn't seem to do anything."** Cause: `program_requirements.js` ensureCss sets
+  `.prh-body { padding:14px; display:grid; gap:16px; }`, and a class `display` beats the `hidden` attribute, so the
+  blocks never hide and the toggle only changes its own label. Fix: add `.prh-body[hidden] { display:none; }`
+  beside the existing `.prh-fix[hidden]` rule, and a jsdom check that the toggle hides the body (jsdom does not
+  apply CSS, so assert the rule exists in SRC and that `hidden` toggles). Ship it first; it is one line.
+- **Ask: a split view.** Sam, verbatim: "It would be nice if you could show a split view like this on the Prog Rev
+  tab so I don't have to do it manually." His screenshot: the Cerritos catalog page on the left, the record's
+  blocks and Your reading on the right. Before building, test whether `cerritos-public.courseleaf.com` allows
+  framing: the sandbox's curl got 403 (bot block, so no header read). If it frames, a "Side by side" control opens
+  the record beside an iframe of `source_url` on wide screens (single column below ~900px, where the catalog link
+  stays). If it refuses framing (X-Frame-Options or frame-ancestors), open the catalog in a window placed on the
+  left half (`window.open(url, "prh-catalog", "left=0,top=0,width=" + half + ",height=" + h)`) and say so. Mock it
+  up for Sam first (Show, don't describe).
