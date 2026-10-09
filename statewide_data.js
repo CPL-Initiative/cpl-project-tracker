@@ -269706,6 +269706,111 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPCXS-DE-I1-1-001",
+      "exhibit_ids": [
+        "MAPCXS-DE-I1-1-001"
+      ],
+      "title": "Discipline Exam - IND TEK 104",
+      "unified_title": "Discipline Exam - IND TEK 104",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Discipline Exam - IND TEK 104"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "62"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Mission College"
+      ],
+      "potential": 43,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Chaffey College",
+        "Citrus College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "Copper Mountain College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Golden West College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "MiraCosta College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 44,
+      "credit_recs": [
+        {
+          "course": "IND TEK 104",
+          "credit": "2 hours in Print Reading with GD&T"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-DE-I1-1-001",
+          "title": "Discipline Exam - IND TEK 104",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Mission College": 2.0
+      },
+      "adopter_lines": {
+        "Los Angeles Mission College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Mission College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
       "exhibit_id": "MAPCBEN-SMS-1-001",
       "exhibit_ids": [
         "MAPCBEN-SMS-1-001"
@@ -437868,12 +437973,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Los Angeles Mission College",
-        "credit_recs": 120,
-        "exhibits": 103,
+        "credit_recs": 121,
+        "exhibits": 104,
         "disciplines": 11,
         "ccc_collaborative": 4,
         "industry_certs": 32,
-        "pct": 0.8
+        "pct": 0.9
       },
       {
         "college": "Solano Community College",
@@ -438446,9 +438551,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2454,
-        "exhibits": 1062,
-        "courses": 1212,
+        "credit_recs": 2455,
+        "exhibits": 1063,
+        "courses": 1213,
         "colleges": 56,
         "ccc_collaborative": 593,
         "pct": 17.3
@@ -438660,8 +438765,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2210,
-        "exhibits": 1731,
+        "credit_recs": 2211,
+        "exhibits": 1732,
         "colleges": 61,
         "pct": 15.6
       },
@@ -438690,8 +438795,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 8743,
-        "exhibits": 3733,
+        "credit_recs": 8744,
+        "exhibits": 3734,
         "colleges": 91,
         "pct": 61.7
       },
@@ -438762,8 +438867,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12459,
-        "exhibits": 5826,
+        "credit_recs": 12460,
+        "exhibits": 5827,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.0
@@ -439188,8 +439293,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-09T16:14:38",
-  "total_credit_recs": 14165,
+  "generated_at": "2026-10-09T18:25:25",
+  "total_credit_recs": 14166,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

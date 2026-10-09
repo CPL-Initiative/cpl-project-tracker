@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-09T16:15:21.611051+00:00",
+  "scraped_at": "2026-10-09T18:26:05.803480+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28909,
+    "jst": 28920,
     "star_colleges": 60
   },
   "computed_star_colleges": 60,
@@ -22,7 +22,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1780,
+      "jst": 1787,
       "star": true
     },
     "San Diego Mesa College": {
@@ -302,7 +302,7 @@
     },
     "Laney College": {
       "vets": 96,
-      "jst": 76,
+      "jst": 80,
       "star": true
     },
     "Napa Valley College": {

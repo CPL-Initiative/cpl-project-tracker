@@ -8,8 +8,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 46592,
-  "pa": 42504,
+  "pe": 46603,
+  "pa": 42515,
   "ppa": 119,
   "p2": 3539,
   "p3": 16583,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 129,
   "pac": 5101,
   "ptc": 4454,
-  "pe_u": 1457749.2,
-  "pa_u": 237125.9,
+  "pe_u": 1457984.7,
+  "pa_u": 237176.4,
   "ppa_u": 721.5,
   "ppe_u": 6825.5,
   "pac_u": 36805.95,
@@ -111,7 +111,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 618,
    "pe_u": 26798.0,
    "pa": 610,
-   "pa_u": 8891.0,
+   "pa_u": 8897.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 72.0,
@@ -1003,10 +1003,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 945.0
   },
   "Laney": {
-   "pe": 75,
-   "pe_u": 3134.0,
-   "pa": 75,
-   "pa_u": 450.0,
+   "pe": 79,
+   "pe_u": 3233.0,
+   "pa": 79,
+   "pa_u": 474.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1719,10 +1719,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "San Francisco": {
-   "pe": 1799,
-   "pe_u": 81325.5,
-   "pa": 1798,
-   "pa_u": 13479.5,
+   "pe": 1806,
+   "pe_u": 81462.0,
+   "pa": 1805,
+   "pa_u": 13500.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 11.0,
@@ -2808,8 +2808,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "Military": {
-    "pe": 75,
-    "pa": 75,
+    "pe": 79,
+    "pa": 79,
     "p3": 0
    }
   },
@@ -3585,8 +3585,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1776,
-    "pa": 1775,
+    "pe": 1783,
+    "pa": 1782,
     "p3": 13
    },
    "Military | Standardized Assessment": {
@@ -3996,8 +3996,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28322,
-   "pa": 26017,
+   "pe": 28333,
+   "pa": 26028,
    "p3": 2587
   },
   "Military | Other": {
@@ -4053,13 +4053,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1457749.2,
-   "pa_u": 237125.9,
+   "pe_u": 1457984.7,
+   "pa_u": 237176.4,
    "p3_u": 82697.2
   },
   "map": {
-   "pe_u": 1464574.7,
-   "pa_u": 237847.4,
+   "pe_u": 1464810.2,
+   "pa_u": 237897.9,
    "p3_u": 82760.7
   },
   "ratio": {
@@ -4201,8 +4201,8 @@ window.CPL_FUNDING_PERF = {
   },
   "San Francisco": {
    "vets": 1197,
-   "jst": 1780,
-   "pct": 1.4871
+   "jst": 1787,
+   "pct": 1.4929
   },
   "San Diego Mesa": {
    "vets": 1070,
@@ -4481,8 +4481,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "vets": 96,
-   "jst": 76,
-   "pct": 0.7917
+   "jst": 80,
+   "pct": 0.8333
   },
   "Napa": {
    "vets": 38,
