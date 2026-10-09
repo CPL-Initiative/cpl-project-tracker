@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1090,
-    "bytes": 11370506,
+    "bytes": 11375124,
     "over_budget": 6,
     "handoff_max": 351,
     "always_loaded_files": 1,
@@ -31,12 +31,12 @@
       },
       "index": {
         "files": 1,
-        "bytes": 9036,
+        "bytes": 9147,
         "over": 0
       },
       "lessons": {
         "files": 80,
-        "bytes": 2333217,
+        "bytes": 2335512,
         "over": 2
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 328385,
+        "bytes": 329856,
         "over": 1
       },
       "handoff": {
         "files": 322,
-        "bytes": 2632772,
+        "bytes": 2633513,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 59
     },
     "vault": {
-      "files": 3797,
-      "bytes": 1806060610,
+      "files": 3800,
+      "bytes": 1806369696,
       "heavy_bytes": 817363067,
-      "heavy_share": 0.453,
+      "heavy_share": 0.452,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",

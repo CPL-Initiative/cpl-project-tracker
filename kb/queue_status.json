@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T01:56:03Z",
+  "written_at": "2026-10-09T02:34:22Z",
   "session": 350,
   "moniker": "SkyTide",
   "run": "Sam's session",
@@ -23,8 +23,8 @@
     }
   ],
   "next_step": {
-    "title": "The UI pass on the Fact Sheet",
-    "text": "The public Fact Sheet has never had a pass: accessibility, phone layout, First Light and the figures it shares with other views. Small fixes ship; a change to its look goes to Sam as a mock-up first."
+    "title": "Carry out Sheet 56, then the privacy page's UI pass",
+    "text": "Sheet 56 asks whether to mock up the Fact Sheet on First Light's type with a dark mode. The next view the UI pass names is the privacy page."
   },
   "calls": [
     {
@@ -35,15 +35,33 @@
         "href": "#program-requirements",
         "text": "Open the Program Requirements tab"
       }
+    },
+    {
+      "title": "Answer Open Asks Sheet 56",
+      "text": "One card: mock up the Fact Sheet on First Light's type, light and dark, with the Word and PDF downloads unchanged?",
+      "if_no_reply": "The Fact Sheet keeps its document type and stays light.",
+      "view": {
+        "href": "https://claude.ai/artifact/By4Q1M7KVPzaMkRaJkb48m",
+        "text": "Open Sheet 56"
+      }
+    },
+    {
+      "title": "Paste the Library record for Sheet 56",
+      "text": "One receipt moves the open-asks record from Sheet 55 to Sheet 56; the connector times out on this table, so it goes in by paste.",
+      "if_no_reply": "The Library's open-asks record keeps pointing at Sheet 55."
     }
   ],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
-    "sierra": "The docked Sierra expands to full screen when she answers, since Oct 9. The veteran map is on First Light since Oct 9.",
+    "sierra": "The docked Sierra expands to full screen when she answers, since Oct 9. The veteran map is on First Light since Oct 9, and the Fact Sheet passed its first accessibility pass the same day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening."
   },
   "changes": [
+    {
+      "at": "2026-10-09T02:32:56Z",
+      "text": "The Fact Sheet's links and buttons reach the 24px size, its toolbar uses words, and on a phone the toolbar scrolls away."
+    },
     {
       "at": "2026-10-09T01:46:45Z",
       "text": "The Library's record of the decision sheets points at Sheet 55."
@@ -63,10 +81,6 @@
     {
       "at": "2026-10-08T21:33:02Z",
       "text": "A reviewer can now confirm a record or note a fix from the Records view, and each record shows its flags."
-    },
-    {
-      "at": "2026-10-08T21:21:18Z",
-      "text": "Palo Verde's map columns written; all 32 published maps are settled."
     }
   ],
   "next_run": {
