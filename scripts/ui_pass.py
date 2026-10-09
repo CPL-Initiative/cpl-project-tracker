@@ -18,9 +18,12 @@ Usage, from the repo root:
   python3 scripts/ui_pass.py --record ID "..."  stamp today's pass and its outcome
   python3 scripts/ui_pass.py --sync             add views the nav or the config gained
 
-The order --next takes: a public page before a COBI tab, never audited before audited,
+The order --next takes: never audited before audited, a public page before a COBI tab,
 then the oldest pass, then the ledger's own order (the nav's). A view on hold is
-skipped. Guard: tests/ui_pass_test.py.
+skipped. Never audited comes first so every view is reached: with public first, the
+six public pages, once passed, came round again ahead of 41 COBI tabs no pass had
+reached (S351; the first re-pass offered was Sierra, passed that morning). Guard:
+tests/ui_pass_test.py.
 """
 import argparse
 import datetime as dt
@@ -122,7 +125,7 @@ def rank(rows):
     """The ledger's rows in the order --next takes them, holds left out."""
     idx = {r["id"]: i for i, r in enumerate(rows)}
     live = [r for r in rows if not r.get("hold")]
-    return sorted(live, key=lambda r: (r.get("audience") != "public", r.get("last") is not None,
+    return sorted(live, key=lambda r: (r.get("last") is not None, r.get("audience") != "public",
                                        r.get("last") or "", idx[r["id"]]))
 
 
