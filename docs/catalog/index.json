@@ -15148,8 +15148,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 325,
+   "count": 326,
    "docs": [
+    {
+     "created": "2026-10-09",
+     "governs": [],
+     "n": 355,
+     "path": "docs/session_355_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "records",
+      "ui-pass",
+      "checkpoint"
+     ],
+     "title": "Cerritos loaded; Sam reads the sample from his phone",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-09",
      "governs": [],
@@ -20693,5 +20712,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1082
+ "total": 1083
 }

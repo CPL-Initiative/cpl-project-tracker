@@ -10,62 +10,61 @@
     "other": 150000
   },
   "summary": {
-    "files": 1095,
-    "bytes": 11414116,
+    "files": 1096,
+    "bytes": 11426490,
     "over_budget": 6,
-    "handoff_max": 354,
+    "handoff_max": 355,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59972,
+    "always_loaded_bytes": 59989,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59972,
+        "bytes": 59989,
         "over": 0
       },
       "other": {
         "files": 118,
-        "bytes": 3347521,
+        "bytes": 3348519,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9314,
+        "bytes": 9696,
         "over": 0
       },
       "lessons": {
         "files": 81,
-        "bytes": 2349155,
+        "bytes": 2351101,
         "over": 2
       },
       "kb_note": {
         "files": 533,
-        "bytes": 2664688,
+        "bytes": 2667667,
         "over": 0
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 330494,
+        "bytes": 331161,
         "over": 1
       },
       "handoff": {
-        "files": 325,
-        "bytes": 2652972,
+        "files": 326,
+        "bytes": 2658357,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 6,
-      "unindexed_kb_note": 1,
       "vault_heavy_path": 59
     },
     "vault": {
-      "files": 3816,
-      "bytes": 1813979347,
-      "heavy_bytes": 817696958,
-      "heavy_share": 0.451,
+      "files": 4101,
+      "bytes": 1816027348,
+      "heavy_bytes": 817699931,
+      "heavy_share": 0.45,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",
@@ -301,15 +300,6 @@
       },
       "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/kb-notes/methodology-an-unadopted-item-is-a-shelf-not-an-absence.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-anchor-a-marker-a-workflow-reads"
-      },
-      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-anchor-a-marker-a-workflow-reads.md"
     },
     {
       "rule": "house_voice",
@@ -698,10 +688,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12597691,
+        "bytes": 12600663,
         "kind": "file"
       },
-      "message": "12,597,691 B single file inside the vault"
+      "message": "12,600,663 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -848,10 +838,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715709,
+        "bytes": 6715710,
         "kind": "file"
       },
-      "message": "6,715,709 B single file inside the vault"
+      "message": "6,715,710 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

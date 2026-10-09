@@ -19,3 +19,6 @@ values
  array['program-requirements-harvest','phase-2','workflow'], array['.github/workflows/program-requirements-college.yml'],
  'S354, PR #1941', 's354-2026-10-09', '2026-10-09', 'proposed')
 on conflict (slug) do nothing;
+
+-- Added at the checkpoint (live, same session): sam-records-find-a-record-2026-10-09 and
+-- sam-answer-calls-on-the-card-2026-10-09 (verified, Sam's words), activities-ui-pass-2026-10-09 (proposed).

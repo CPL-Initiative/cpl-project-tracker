@@ -38,3 +38,13 @@ dispatch input stays the plain way to ask.
 
 - `tests/program_requirements_college_test.py` — the pin.
 - `.github/workflows/program-requirements-college.yml` — the gate.
+
+## A free step can still cost someone else (S354, 2026-10-09)
+
+The capture spent no model calls, so S353 let every push run it. Each run still read about 360 pages
+of Cerritos's catalog over 29 minutes, on a host the census promises to read slowly. S354 put the read
+behind its own anchored marker (`[read]`, or `[extract]`), so editing the script reads nothing. The test
+is who bears the cost, not whose budget: a step that loads someone else's server needs a marker as much
+as one that spends ours. A push by `github-actions[bot]` triggers no workflow, so the commits a run files
+never re-run it, and a PR whose head is such a commit has no `test` until a session pushes.
+
