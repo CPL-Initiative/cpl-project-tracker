@@ -10,7 +10,11 @@
  * the data blobs, preventing layout regressions.
  */
     (function() {
-      const GOLD = '#8B6800', GREEN = '#2C601A', AMBER = '#FF9800', BLUE = '#0047AB', RED = '#920000';
+      // First Light tokens, so each ink follows COBI's theme (S352 UI pass). The literals they replace held their
+      // light values in dark (#2C601A on the night ground, 2.22:1), and the amber (#FF9800) and the grays (#8A867E,
+      // #D5D2CB) failed AA in light too. Amber takes the caution grade, --mustard-text.
+      const GOLD = 'var(--mustard-text)', GREEN = 'var(--hunter)', AMBER = 'var(--mustard-text)', BLUE = 'var(--cobalt)', RED = 'var(--crimson)';
+      const MUTED = 'var(--text-muted)';
 
       // Data embedded from Python
       const allData = window.COLLEGE_ACTIVITY_DATA || [];
@@ -57,8 +61,8 @@
         if (n >= 1000) return Math.round(n / 1000) + 'k';
         return n.toLocaleString();
       }
-      function tierColor(t) { return t === 'Leading' ? GOLD : (t === 'Advancing' ? BLUE : '#5C5C55'); }
-      function bc(r) { return r >= 50 ? GREEN : (r >= 25 ? AMBER : '#8A867E'); }
+      function tierColor(t) { return t === 'Leading' ? GOLD : (t === 'Advancing' ? BLUE : MUTED); }
+      function bc(r) { return r >= 50 ? GREEN : (r >= 25 ? AMBER : MUTED); }
       // "Vets / JST" cell — veterans reported to MIS / JSTs uploaded, ⭐-eligible
       // when JST >= 75% of Vets. Star colleges render the ratio in gold. The
       // visible (N%) = JST as a % of Vets — the star-threshold denominator, so
@@ -66,7 +70,7 @@
       // only when Vets>0 or JST>0 (— otherwise).
       function vetsJstCell(row) {
         const vets = row.vets || 0, jst = row.jst || 0;
-        if (!vets && !jst) return '<span style="color:#8A867E;">—</span>';
+        if (!vets && !jst) return '<span style="color:' + MUTED + ';">—</span>';
         const col = row.vstar ? GOLD : 'var(--text-body)';
         const wt = row.vstar ? '700' : '400';
         const pct = vets ? ' (' + (row.jst_rate || 0) + '%)' : '';
@@ -114,7 +118,7 @@
           ? filteredData.filter(r => { const cd = collegeDisciplineDetail[r.college]; return cd && cd[disciplineFilter.value]; }).length
           : allDiscs.size;
 
-        const s = 'font-size:0.67rem;font-weight:700;padding:0.3rem 0.3rem;text-align:right;color:#1C1C1A;';
+        const s = 'font-size:0.67rem;font-weight:700;padding:0.3rem 0.3rem;text-align:right;color:var(--text-strong);';
         const totPct = sums.vets ? ' (' + Math.round(sums.jst / sums.vets * 100) + '%)' : '';
         const vetsJstTotal = hasJst
           ? `<td style="${s}" title="${sums.vstars} Veteran Star colleges · ${fmtN(sums.jst)} JSTs / ${fmtN(sums.vets)} reported veterans statewide">${fmtN(sums.vets)} / ${fmtN(sums.jst)}${totPct}</td>`
@@ -124,7 +128,7 @@
             <span style="font-size:0.63rem;color:${GOLD};font-weight:700;">${filteredData.length}</span>
           </td>
           <td style="${s}text-align:left;color:${GOLD};">Totals</td>
-          <td style="${s}text-align:left;font-size:0.6rem;color:#5C5C55;">${filteredData.length} colleges</td>
+          <td style="${s}text-align:left;font-size:0.6rem;color:${MUTED};">${filteredData.length} colleges</td>
           <td style="${s}">${fmtN(sums.students)}</td>
           ${vetsJstTotal}
           <td style="${s}">${fmtN(sums.working_adults)}</td>
@@ -145,7 +149,7 @@
         tableBody.innerHTML = '';
         filteredData.forEach(row => {
           const tr = document.createElement('tr');
-          tr.style.borderBottom = '1px solid rgba(28,28,26,0.08)';
+          tr.style.borderBottom = '1px solid var(--border)';
           const tc = tierColor(row.tier);
           const nc = row.tier === 'Leading' ? 'var(--text-strong)' : 'var(--text-body)';
           const brc = bc(row.trans_rate);
@@ -158,11 +162,11 @@
             ? `<td style="padding:0.2rem 0.3rem;font-size:0.67rem;text-align:right;white-space:nowrap;">${vetsJstCell(row)}</td>`
             : '';
           const dots = Array(5).fill(0).map((_,i) =>
-            '<span style="color:' + (i < row.criteria_met ? GOLD : '#D5D2CB') + ';font-size:0.7rem;">' + (i < row.criteria_met ? '●' : '○') + '</span>'
+            '<span style="color:' + (i < row.criteria_met ? GOLD : MUTED) + ';font-size:0.7rem;">' + (i < row.criteria_met ? '●' : '○') + '</span>'
           ).join('');
 
           let laHtml = '—';
-          let laColor = '#8A867E';
+          let laColor = MUTED;
           if (row.last_activity_days !== null) {
             const d = row.last_activity_days;
             laColor = d <= 30 ? GREEN : (d <= 90 ? AMBER : RED);
@@ -176,7 +180,7 @@
             </td>
             <td style="padding:0.2rem 0.2rem;text-align:center;font-size:0.7rem;">${star}</td>
             <td style="padding:0.2rem 0.3rem;font-size:0.68rem;color:${nc};white-space:nowrap;">${row.college}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.6rem;color:#5C5C55;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${row.district}">${row.district}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.6rem;color:${MUTED};max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${row.district}">${row.district}</td>
             <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtN(row.students)}</td>
             ${vetsJstTd}
             <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtN(row.working_adults)}</td>
@@ -190,10 +194,10 @@
             <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtD(row.year_impact)}</td>
             <td style="padding:0.2rem 0.3rem;text-align:center;">
               <div style="display:flex;align-items:center;gap:3px;justify-content:center;">
-                <div style="width:40px;height:5px;background:#E6E3DC;border-radius:3px;overflow:hidden;">
+                <div style="width:40px;height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">
                   <div style="width:${Math.min(row.trans_rate/100,1)*40}px;height:100%;background:${brc};border-radius:3px;"></div>
                 </div>
-                <span style="font-size:0.6rem;color:#5C5C55;">${row.trans_rate.toFixed(0)}%</span>
+                <span style="font-size:0.6rem;color:${MUTED};">${row.trans_rate.toFixed(0)}%</span>
               </div>
             </td>
             <td style="padding:0.2rem 0.3rem;text-align:center;">${dots}</td>
@@ -268,7 +272,7 @@
           toast.id = 'ca-export-toast';
           Object.assign(toast.style, {
             position:'fixed', bottom:'2rem', right:'2rem', padding:'0.75rem 1.25rem',
-            background:'rgba(46,204,113,0.95)', color:'#fff', borderRadius:'8px',
+            background:'var(--hunter)', color:'var(--on-accent)', borderRadius:'8px',
             fontSize:'0.85rem', fontWeight:'600', zIndex:'99999',
             boxShadow:'0 6px 20px rgba(20,20,30,0.2)', opacity:'0',
             transition:'opacity 0.3s ease', pointerEvents:'none'

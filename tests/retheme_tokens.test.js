@@ -83,7 +83,10 @@ check("prefers-contrast honored", cpl.includes("prefers-contrast: more"));
 check("masthead is glass (header bg = --surface)", /\.header\s*\{[^}]*background:\s*var\(--surface\)/.test(cpl));
 check("KPI hero cards are glass", /\.kpi-card\s*\{[^}]*background:\s*var\(--surface\)/.test(cpl));
 check("filter bar is glass", /\.filter-bar\s*\{[^}]*background:\s*var\(--surface\)/.test(cpl));
-check("algo light variant scoped to .kpi-card", cpl.includes(".kpi-card .algo-details summary"));
+// The algo panel's base rules read theme tokens; the white-alpha "dark card"
+// base and its .kpi-card light override are gone (S352: no dark card remained,
+// and the base painted white on white on the trend and exhibit cards).
+check("algo panel reads theme tokens", /\.algo-details summary \{[^}]*color: var\(--text-muted\)/.test(cpl));
 const fl = fs.readFileSync("first_light.js", "utf8");
 check("first_light injects the ghost layer", fl.includes("ensureBgArt") && fl.includes(".cplfl-bg{position:fixed"));
 check("ghost layer honors reduced transparency", fl.includes("prefers-reduced-transparency: reduce){.cplfl-bg{display:none}"));
