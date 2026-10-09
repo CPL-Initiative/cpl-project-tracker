@@ -234,11 +234,11 @@ a{color:var(--cobalt)}
 /* ── chips ── */
 .chip{border-radius:10px;font-size:.7rem;font-weight:600;padding:2px 8px;
       display:inline-flex;gap:4px;align-items:center;white-space:nowrap;border:1px solid transparent}
-.chip.flag{background:#FCEDED;color:var(--crimson);border-color:#E7BDBD}
-.chip.gen{background:#F1EAFC;color:var(--violet);border-color:#D5C4F2}
-.chip.ok{background:#EAF1E6;color:var(--hunter);border-color:#C2D6B9}
+.chip.flag{background:var(--chip-flag);color:var(--crimson);border-color:var(--chip-flag-edge)}
+.chip.gen{background:var(--chip-gen);color:var(--violet);border-color:var(--chip-gen-edge)}
+.chip.ok{background:var(--chip-ok);color:var(--hunter);border-color:var(--chip-ok-edge)}
 .chip.mut{background:var(--surface-muted);color:var(--text-muted);border-color:var(--border)}
-.chip.cid{background:#E7EEF9;color:var(--cobalt);border-color:#BBD0EC}
+.chip.cid{background:var(--chip-cid);color:var(--cobalt);border-color:var(--chip-cid-edge)}
 
 /* ── graph ── */
 .stage{display:grid;gap:14px;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:start}
@@ -293,7 +293,7 @@ a{color:var(--cobalt)}
 .mlist .mv{margin-left:auto;font:inherit;font-size:.72rem;font-weight:600;
            background:none;border:1px solid var(--border-strong);border-radius:5px;
            padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
-.mlist .mv:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.mlist .mv:hover{background:var(--cobalt);color:var(--on-accent);border-color:var(--cobalt)}
 .mlist li.moved{border-color:var(--hunter);background:var(--row-moved)}
 /* A course STAGED TO MOVE AWAY from this identity (v4 item 7, Sam: "change this
    outline to show it was staged to move"). Listed at its origin until the move
@@ -305,7 +305,7 @@ a{color:var(--cobalt)}
 .chip.staged{background:none;color:var(--text-muted);border:1px dashed var(--sky-gone)}
 .mlist .putback{margin-left:auto;font:inherit;font-size:.72rem;font-weight:600;background:none;
            border:1px solid var(--border-strong);border-radius:5px;padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
-.mlist .putback:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.mlist .putback:hover{background:var(--cobalt);color:var(--on-accent);border-color:var(--cobalt)}
 /* A card being dragged onto. Outline + tint, never tint alone: the cards
    already carry state colors and one more wash of color reads as noise. */
 #ids > li.drop-to{outline:2px solid var(--brand,#6D28D9);outline-offset:2px;
@@ -667,6 +667,10 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
   --row-moved:#EAF1E6;
   --row-drop:#F4F0FC; --mark-hit:#FBEFC9; --mark-hit-ink:#1C1C1A;
   --chip-warn:#FBF1D8; --chip-warn-ink:#6B4E00; --chip-warn-edge:#8B6800;
+  /* The status chips' grounds and edges (S351, the UI pass: they were raw hex in
+     the chip rules, and dark repainted them with four component rules). */
+  --chip-flag:#FCEDED; --chip-flag-edge:#E7BDBD; --chip-gen:#F1EAFC; --chip-gen-edge:#D5C4F2;
+  --chip-ok:#EAF1E6; --chip-ok-edge:#C2D6B9; --chip-cid:#E7EEF9; --chip-cid-edge:#BBD0EC;
   --btn-primary-hover:#003a8c;
   /* the map's palette — the canvas reads these at draw time (ccr_universe.js readPal) */
   --sky-ground:#FFFFFF; --sky-island:#F7F5F1; --sky-island-hover:#F3F1EC; --sky-island-sel:#EDE7F8;
@@ -726,12 +730,11 @@ body.u-dark{
   --row-moved:#1F2B1D;
   --row-drop:#2A2340; --mark-hit:#4A3A10; --mark-hit-ink:#ECE9E2;
   --chip-warn:#3A2E10; --chip-warn-ink:#E3B341; --chip-warn-edge:#6A5410;
+  --chip-flag:#3A1A1A; --chip-flag-edge:#6A3030; --chip-gen:#2B2140; --chip-gen-edge:#4C3A72;
+  --chip-ok:#1F3320; --chip-ok-edge:#3A5A38; --chip-cid:#1C2A44; --chip-cid-edge:#3A527A;
   --btn-primary-hover:#A8C2E4;
   color-scheme:dark;
 }
-body.u-dark .chip.cid{background:#1C2A44;border-color:#3A527A}
-body.u-dark .chip.gen{background:#2B2140;border-color:#4C3A72}
-body.u-dark .chip.ok{background:#1F3320;border-color:#3A5A38}
 /* ── THE DAY SKY (Sam's ruling 3, 2026-09-07) ─────────────────────────────
    The light state of the Sky and the Globe: a tint of the CO blue with faint
    clouds, as the prototype drew it. Measured against this ground the silver
@@ -753,9 +756,8 @@ body.u-day .u-sw.lone{box-shadow:inset 0 0 0 1px var(--sky-dot-rim)}
    Map's Dark canvas row (ruling 3). */
 .u-nd{display:flex;gap:0}
 .u-nd .u-more-t{flex:1 1 50%;justify-content:center}
-.u-nd .u-more-t[aria-pressed="true"]{background:var(--seal-blue,#002F6D);color:#fff}
-body.u-dark .chip.flag{background:#3A1A1A;border-color:#6A3030}
-body.u-dark table.uc-like th{background:#30302E;color:var(--mustard-text)}
+.u-nd .u-more-t[aria-pressed="true"]{background:var(--seal-blue);color:var(--on-accent)}
+body.u-dark table.uc-like th{background:var(--surface-muted);color:var(--mustard-text)}
 body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0 12px 30px rgba(0,0,0,.5)}
 /* one chip vocabulary: the same height, size and corner on every control in the row */
 .u-top .btn,.u-top .u-bar .btn,.u-top .u-views>summary,.u-top .u-show>summary,.u-top .u-win,
