@@ -670,7 +670,11 @@ module.exports = {
   "fact-sheet": {
     file: "fact-sheet/index.html",
     title: "CPL Fact Sheet (public)",
-    mayHideBelow: [],
+    /* The statewide grid's label strip (Program area, Exhibits, Credit recs,
+       Adoptions, Could adopt) is hidden below 561px on purpose: each figure then
+       carries its own label through ::before (factsheet.css, the 560px block).
+       Measured S350 at 390px: 56 figures, none without its label. */
+    mayHideBelow: [".sw-head"],
   },
 
   /* The privacy page Google's consent screen links for the Library filer

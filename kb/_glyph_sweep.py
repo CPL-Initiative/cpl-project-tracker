@@ -30,8 +30,8 @@ apart.
   * decoration — everything else, including marks that may be load-bearing in a
                table or legend. REPORTED.
 
-Reads : CPL_Dashboard.html, index.html, root-level *.js, fact-sheet/*.js,
-        sierra/*.js, prototype/ccr_universe.js
+Reads : CPL_Dashboard.html, index.html, root-level *.js, fact-sheet/index.html
+        and *.js, sierra/index.html and *.js, prototype/ccr_universe.js
 Writes: kb/glyph_sweep/<date>.md and .json  (READ-ONLY unless --apply)
 
 Run:
@@ -55,9 +55,12 @@ OUTDIR = os.path.join(ROOT, "kb", "glyph_sweep")
 
 # Pictographs, dingbats, arrows and the technical block, plus the variation
 # selector and keycap combiner that ride with them. Deliberately NOT \w symbols
-# like × or · which are typography, not glyphs.
+# like × or · which are typography, not glyphs. From the math operators block
+# only the four squared ones (⊞ ⊟ ⊠ ⊡), which pages use as icons: the Fact
+# Sheet's "⊟ Collapse all" went unseen until S350. The rest of that block
+# (≤ ≥ − ∑) is typography.
 EMOJI = re.compile(
-    "(?:[\U0001F300-\U0001FAFF←-⇿⌀-⏿☀-➿⬀-⯿]"
+    "(?:[\U0001F300-\U0001FAFF←-⇿⌀-⏿☀-➿⬀-⯿⊞-⊡]"
     "[️⃣]?)"
 )
 # The generator writes some as HTML entities; both forms are the same glyph to a
@@ -134,6 +137,10 @@ def targets():
     out += [os.path.basename(f) for f in sorted(glob.glob(os.path.join(ROOT, "*.js")))
             if not f.endswith(".min.js")]
     for sub in ("fact-sheet", "sierra"):
+        # The standalone pages' own markup too: their toolbars are written in the
+        # HTML, and reading only the .js beside it missed three labeled glyphs
+        # on the Fact Sheet (S350).
+        out.append(os.path.join(sub, "index.html"))
         out += [os.path.join(sub, os.path.basename(f))
                 for f in sorted(glob.glob(os.path.join(ROOT, sub, "*.js")))]
     out.append(os.path.join("prototype", "ccr_universe.js"))

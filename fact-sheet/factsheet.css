@@ -17,6 +17,8 @@
   --border:       rgba(28,28,26,.14);
   --border-strong:rgba(28,28,26,.30);
   --seal-blue:    #002F6D;   /* CCCCO seal navy — the masthead/heading hue */
+  --seal-blue-hover:#013A86; /* the primary button's hover fill */
+  --on-seal:      #FFFFFF;   /* text on a seal-blue, cobalt or other dark fill */
   --cobalt:       #0047AB;   /* links / interactive */
   --hunter:       #2C601A;   /* positive · savings · live */
   --crimson:      #920000;   /* alerts */
@@ -65,6 +67,10 @@ a:hover { text-decoration: underline; }
   min-height: 54px; padding-top: 8px; padding-bottom: 8px;
 }
 .actionbar .ab-title { font-weight: 700; color: var(--seal-blue); font-size: 1rem; margin-right:auto; }
+/* On a phone the bar wraps to three rows, 200px of an 844px screen (measured
+   S350 at 390px), and a sticky bar that size hides a quarter of every screen
+   the reader scrolls. Below 561px it sits at the top and scrolls away. */
+@media (max-width: 560px) { .actionbar { position: static; } }
 .live-chip {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: .82rem; font-weight: 600; color: var(--hunter);
@@ -132,8 +138,8 @@ main:focus { outline: none; }
    paint anyway. Declared here rather than in the JS-injected block so the
    public never sees a flash of it before factsheet_edit.js boots. */
 .btn[hidden] { display: none !important; }
-.btn-primary { background: var(--seal-blue); border-color: var(--seal-blue); color: #fff; }
-.btn-primary:hover { background: #013a86; }
+.btn-primary { background: var(--seal-blue); border-color: var(--seal-blue); color: var(--on-seal); }
+.btn-primary:hover { background: var(--seal-blue-hover); }
 /* Visible keyboard focus on all interactive controls (WCAG 2.4.7 AA). The
    action-bar buttons + the statewide <summary> rows + the TOC links previously
    relied on the (often-suppressed) UA ring. */
@@ -224,7 +230,7 @@ strong { color: var(--ink); }
 .tbl-wrap { overflow-x: auto; }
 table.data { width: 100%; border-collapse: collapse; background: var(--surface); font-size: .92rem; }
 table.data th, table.data td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
-table.data thead th { background: var(--seal-blue); color: #fff; font-size: .82rem; letter-spacing: .02em; }
+table.data thead th { background: var(--seal-blue); color: var(--on-seal); font-size: .82rem; letter-spacing: .02em; }
 table.data tbody tr:nth-child(even) { background: var(--surface-subtle); }
 table.data td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 /* Row-header cells (<th scope="row">) read like the body, not like a column head. */
@@ -301,7 +307,7 @@ table.data tr.total td, table.data tr.total th { font-weight: 800; background: v
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
   padding: 12px 14px; box-shadow: var(--shadow);
 }
-.res a.res-title { font-weight: 700; color: var(--seal-blue); }
+.res a.res-title { font-weight: 700; color: var(--seal-blue); display: inline-block; min-height: 24px; padding: 3px 0 0; }
 .res .res-desc { font-size: .86rem; color: var(--muted); margin-top: 3px; }
 
 /* ── Image figures (preserved screenshots) ─────────────────────────────── */
@@ -328,6 +334,13 @@ figure figcaption { font-size: .85rem; color: var(--muted); padding: 8px 14px; b
 .person .pn { font-weight: 700; color: var(--ink); }
 .person .pr { font-size: .86rem; color: var(--muted); }
 .person .pe { font-size: .82rem; }
+.person .pe a { display: inline-flex; align-items: center; min-height: 24px; }
+
+/* ── Links inside running text (WCAG 2.5.8) ─────────────────────────────
+   A link in a line of text is held to the line's height (15-18px here), under
+   the 24px floor. Vertical padding on an inline box enlarges what a press can
+   land on without moving the line: the padding does not enter the line box. */
+.mh-text .sub a, .note a, figure figcaption a, h3.h-sub a { padding-block: 5px; }
 
 /* ── TOC ───────────────────────────────────────────────────────────────── */
 .toc { columns: 2; column-gap: 28px; font-size: .94rem; }
@@ -345,7 +358,7 @@ footer.foot strong { color: var(--ink); }
 @media print {
   @page { size: letter; margin: 0.4in; }
   :root { --shadow: none; }
-  body { background: #fff; font-size: 10.5pt; line-height: 1.4; }
+  body { background: var(--surface); font-size: 10.5pt; line-height: 1.4; }
   .actionbar, .no-print, .skip-link { display: none !important; }
   .wrap { max-width: none; padding: 0; }
   a { color: var(--seal-blue); text-decoration: none; }

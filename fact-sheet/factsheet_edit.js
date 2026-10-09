@@ -784,7 +784,7 @@
       grids.forEach(function (cont) {
         if (cont.querySelector('.fs-add')) return;
         var btn = document.createElement('button');
-        btn.type = 'button'; btn.className = 'fs-add no-print'; btn.textContent = '＋ Add box';
+        btn.type = 'button'; btn.className = 'fs-add no-print'; btn.textContent = 'Add box';
         btn.addEventListener('click', function (e) { e.preventDefault(); addBox(sid, cont); });
         cont.appendChild(btn);
       });
@@ -1257,7 +1257,7 @@
   function injectCss() {
     if (document.getElementById('fs-edit-css')) return;
     var css =
-      '#btn-curate.on{background:var(--seal-blue);color:#fff;border-color:var(--seal-blue);}' +
+      '#btn-curate.on{background:var(--seal-blue);color:var(--on-seal);border-color:var(--seal-blue);}' +
       // Base curate affordance — every reviewer-managed box (editable, KPI, table).
       'body.fs-curating [data-fsk].fs-curatable{position:relative;border-radius:6px;' +
         'outline:1px dashed var(--border-strong);outline-offset:3px;transition:outline-color .12s,background .12s;}' +
@@ -1272,7 +1272,7 @@
       // Move-only (KPI) boxes: a move/remove hint instead of "edit".
       'body.fs-curating [data-fsk].fs-curatable.fs-movable:not(.fs-editable):hover{outline:2px solid var(--mustard-text);background:rgba(139,104,0,.05);}' +
       'body.fs-curating [data-fsk].fs-curatable.fs-movable:not(.fs-editable)::after{content:"\\21C5 move \\00b7 \\2715 remove";position:absolute;top:-9px;right:6px;' +
-        'font:600 11px var(--font-data);background:var(--mustard-text);color:#fff;padding:1px 6px;border-radius:6px;' +
+        'font:600 11px var(--font-data);background:var(--mustard-text);color:var(--on-seal);padding:1px 6px;border-radius:6px;' +
         'opacity:0;transition:opacity .12s;pointer-events:none;z-index:2;}' +
       'body.fs-curating [data-fsk].fs-curatable.fs-movable:not(.fs-editable):hover::after{opacity:1;}' +
       // Table block: a hide hint; allow its ✕ to escape the scroll frame.
@@ -1301,14 +1301,14 @@
         'border:1px solid var(--border-strong);background:var(--surface);color:var(--ink);cursor:pointer;}' +
       '.fs-btn:hover{background:var(--surface-muted);}' +
       '.fs-btn[disabled]{opacity:.5;cursor:default;}' +
-      '.fs-primary{background:var(--cobalt);border-color:var(--cobalt);color:#fff;}' +
+      '.fs-primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-seal);}' +
       '.fs-primary:hover{background:var(--seal-blue);}' +
       '.fs-reset{color:var(--crimson);}' +
       '.fs-dock-msg{color:var(--muted);font-size:.85rem;}' +
       '.fs-dock-hint{margin-top:6px;color:var(--faint);font-size:.8rem;}' +
       '.fs-del{position:absolute;top:-10px;right:-9px;width:21px;height:21px;line-height:19px;' +
         'text-align:center;padding:0;border-radius:50%;border:1px solid var(--crimson);' +
-        'background:var(--surface,#fff);color:var(--crimson);font:700 12px var(--font-data);' +
+        'background:var(--surface);color:var(--crimson);font:700 12px var(--font-data);' +
         'cursor:pointer;z-index:3;display:none;}' +
       'body.fs-curating [data-fsk].fs-curatable:hover>.fs-del,body.fs-curating .fs-del:hover{display:block;}' +
       '.fs-del:hover{background:var(--crimson);color:var(--on-accent);}' +
@@ -1317,19 +1317,19 @@
         'background:rgba(0,71,171,.06);color:var(--cobalt);font:600 13px var(--font-data);cursor:pointer;}' +
       '.fs-add:hover{background:var(--cobalt);color:var(--on-accent);}' +
       '.fs-add-img{display:inline-flex;align-items:center;gap:6px;margin:10px 8px 0 0;padding:7px 14px;' +
-        'border:1px dashed var(--seal-blue,#0a2240);border-radius:var(--radius-sm);background:rgba(10,34,64,.05);' +
-        'color:var(--seal-blue,#0a2240);font:600 13px var(--font-data);cursor:pointer;}' +
-      '.fs-add-img:hover{background:var(--seal-blue,#0a2240);color:#fff;}' +
+        'border:1px dashed var(--seal-blue);border-radius:var(--radius-sm);background:rgba(10,34,64,.05);' +
+        'color:var(--seal-blue);font:600 13px var(--font-data);cursor:pointer;}' +
+      '.fs-add-img:hover{background:var(--seal-blue);color:var(--on-seal);}' +
       'body.fs-curating [data-fsk].fs-imgblock{position:relative;display:inline-block;}' +
       '.fs-imgbar{position:absolute;top:6px;right:6px;display:none;gap:4px;align-items:center;' +
         'background:rgba(28,28,26,.82);border-radius:7px;padding:3px 5px;z-index:3;}' +
       'body.fs-curating [data-fsk].fs-imgblock:hover>.fs-imgbar,.fs-imgbar:hover{display:inline-flex;}' +
-      '.fs-imgbar button{font:600 11px var(--font-data);color:#fff;background:transparent;border:1px solid rgba(255,255,255,.35);' +
+      '.fs-imgbar button{font:600 11px var(--font-data);color:var(--on-seal);background:transparent;border:1px solid rgba(255,255,255,.35);' +
         'border-radius:5px;padding:2px 7px;cursor:pointer;line-height:1.3;}' +
       '.fs-imgbar button:hover{background:rgba(255,255,255,.18);}' +
       '.fs-imgbar .fs-del{position:static;width:auto;height:auto;border-radius:5px;border:1px solid rgba(255,255,255,.35);' +
-        'background:transparent;color:#fff;font:700 12px var(--font-data);padding:2px 7px;}' +
-      '.fs-imgbar .fs-del:hover{background:var(--crimson,#b3261e);}' +
+        'background:transparent;color:var(--on-seal);font:700 12px var(--font-data);padding:2px 7px;}' +
+      '.fs-imgbar .fs-del:hover{background:var(--crimson);}' +
       'body.fs-curating [data-fsk].fs-dragging{opacity:.4;outline:2px dashed var(--cobalt) !important;}' +
       // Whole-section drag handle (curate mode). Floats above the section's top-left
       // corner; the section's own 38px top margin gives it room (no overlap above).
@@ -1348,7 +1348,7 @@
         '-webkit-user-select:none;user-select:none;}' +
       '.fs-sec-hide:hover{background:var(--crimson);color:var(--on-accent);}' +
       '.fs-sec-hide.is-hidden{border-color:var(--seal-blue);color:var(--seal-blue);}' +
-      '.fs-sec-hide.is-hidden:hover{background:var(--seal-blue);color:#fff;}' +
+      '.fs-sec-hide.is-hidden:hover{background:var(--seal-blue);color:var(--on-seal);}' +
       // Keep the handle + hide toggle visible even when its section is collapsed (the
       // collapse rule hides every non-h2 child) so a collapsed page is easiest to curate.
       'body.fs-curating main>section.collapsed>.fs-sec-handle,' +

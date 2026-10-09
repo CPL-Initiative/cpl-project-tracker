@@ -420,7 +420,7 @@
       '.fs-sra-bubble table{border-collapse:collapse;margin:8px 0;font-size:.92em;display:block;max-width:100%;overflow-x:auto;}' +
       '.fs-sra-bubble th,.fs-sra-bubble td{border:1px solid var(--border);padding:3px 9px;text-align:left;vertical-align:top;}' +
       '.fs-sra-bubble th{background:var(--surface-muted);color:var(--seal-blue);font-weight:700;}' +
-      '.fs-sra-user .fs-sra-bubble{background:var(--seal-blue);color:#fff;border-color:var(--seal-blue);}' +
+      '.fs-sra-user .fs-sra-bubble{background:var(--seal-blue);color:var(--on-seal);border-color:var(--seal-blue);}' +
       '.fs-sra-beta{color:var(--faint);font-size:.8rem;}' +
       '.fs-sra-typing{letter-spacing:2px;color:var(--muted);animation:fs-sra-pulse 1.1s infinite;}' +
       '@keyframes fs-sra-pulse{0%,100%{opacity:.35;}50%{opacity:1;}}' +
