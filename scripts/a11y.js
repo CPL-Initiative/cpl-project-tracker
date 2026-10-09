@@ -733,6 +733,11 @@ function MOTION(known) {
                  to OPEN the section, because the reader can reveal it. Here
                  there is nothing to reveal. */
               if (el.disabled || el.getAttribute("aria-disabled") === "true") return;
+              /* An INERT subtree cannot take focus either: the page behind a
+                 modal dialog (the full-screen Sierra dock, S349) is inert by
+                 design, and every control in it read as "no ring". The same
+                 controls are measured on the routes where they are live. */
+              if (el.closest("[inert]")) return;
               el.focus();
               const cs = getComputedStyle(el);
               const ring = (cs.outlineStyle !== "none" && parseFloat(cs.outlineWidth) > 0) ||
