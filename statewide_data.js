@@ -176372,6 +176372,671 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 9.0
     },
     {
+      "exhibit_id": "MAPICI-ASEL2-1-001",
+      "exhibit_ids": [
+        "MAPICI-ASEL2-1-001"
+      ],
+      "title": "Automotive Service Excellence L1 - Advanced Engine Performance Specialist",
+      "unified_title": "Automotive Service Excellence L1 - Advanced Engine Performance Specialist",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Automotive Service Excellence L1 - Advanced Engine Performance Specialist"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Golden West College"
+      ],
+      "potential": 68,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 69,
+      "credit_recs": [
+        {
+          "course": "AUTO G131",
+          "credit": "4.5 hours in Engine Performance: Advanced"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-ASEL2-1-001",
+          "title": "Automotive Service Excellence L1 - Advanced Engine Performance Specialist",
+          "units": 4.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Golden West College": 4.5
+      },
+      "adopter_lines": {
+        "Golden West College": 1
+      },
+      "adopter_rec_idx": {
+        "Golden West College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.5,
+      "peer_units_max": 4.5,
+      "rec_units_total": 4.5
+    },
+    {
+      "exhibit_id": "MAPICI-ASEM1-1-001",
+      "exhibit_ids": [
+        "MAPICI-ASEM1-1-001"
+      ],
+      "title": "Automotive Service Excellence MIL3 - Drive Train",
+      "unified_title": "Automotive Service Excellence MIL3 - Drive Train",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Automotive Service Excellence MIL3 - Drive Train"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Golden West College"
+      ],
+      "potential": 68,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 69,
+      "credit_recs": [
+        {
+          "course": "AUTO G140",
+          "credit": "5 hours in Automotive Chassis: Brakes"
+        },
+        {
+          "course": "AUTO G141",
+          "credit": "4.5 hours in Automotive Chassis: Steering & Suspension"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-ASEM1-1-001",
+          "title": "Automotive Service Excellence MIL3 - Drive Train",
+          "units": 9.5,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Golden West College": 9.5
+      },
+      "adopter_lines": {
+        "Golden West College": 2
+      },
+      "adopter_rec_idx": {
+        "Golden West College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 9.5,
+      "peer_units_max": 9.5,
+      "rec_units_total": 9.5
+    },
+    {
+      "exhibit_id": "MAPICI-ASEM2-1-001",
+      "exhibit_ids": [
+        "MAPICI-ASEM2-1-001"
+      ],
+      "title": "Automotive Service Excellence MIL4 - Chassis",
+      "unified_title": "Automotive Service Excellence MIL4 - Chassis",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Automotive Service Excellence MIL4 - Chassis"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Golden West College"
+      ],
+      "potential": 68,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 69,
+      "credit_recs": [
+        {
+          "course": "AUTO G140",
+          "credit": "5 hours in Automotive Chassis: Brakes"
+        },
+        {
+          "course": "AUTO G141",
+          "credit": "4.5 hours in Automotive Chassis: Steering & Suspension"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-ASEM2-1-001",
+          "title": "Automotive Service Excellence MIL4 - Chassis",
+          "units": 9.5,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Golden West College": 9.5
+      },
+      "adopter_lines": {
+        "Golden West College": 2
+      },
+      "adopter_rec_idx": {
+        "Golden West College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 9.5,
+      "peer_units_max": 9.5,
+      "rec_units_total": 9.5
+    },
+    {
+      "exhibit_id": "MAPICI-ASEM3-1-001",
+      "exhibit_ids": [
+        "MAPICI-ASEM3-1-001"
+      ],
+      "title": "Automotive Service Excellence MIL6 - Electrical/Electronic Systems",
+      "unified_title": "Automotive Service Excellence MIL6 - Electrical/Electronic Systems",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Automotive Service Excellence MIL6 - Electrical/Electronic Systems"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Golden West College"
+      ],
+      "potential": 68,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 69,
+      "credit_recs": [
+        {
+          "course": "AUTO G120",
+          "credit": "5 hours in Electrical/Electronic Systems: Introductory"
+        },
+        {
+          "course": "AUTO G121",
+          "credit": "5 hours in Electrical/Electronic Systems: Advanced"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-ASEM3-1-001",
+          "title": "Automotive Service Excellence MIL6 - Electrical/Electronic Systems",
+          "units": 10.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Golden West College": 10.0
+      },
+      "adopter_lines": {
+        "Golden West College": 2
+      },
+      "adopter_rec_idx": {
+        "Golden West College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 10.0,
+      "peer_units_max": 10.0,
+      "rec_units_total": 10.0
+    },
+    {
+      "exhibit_id": "MAPICI-ASEM4-1-001",
+      "exhibit_ids": [
+        "MAPICI-ASEM4-1-001"
+      ],
+      "title": "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning",
+      "unified_title": "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Golden West College"
+      ],
+      "potential": 68,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 69,
+      "credit_recs": [
+        {
+          "course": "AUTO G160",
+          "credit": "4 hours in Heating And Air Conditioning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-ASEM4-1-001",
+          "title": "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Golden West College": 4.0
+      },
+      "adopter_lines": {
+        "Golden West College": 1
+      },
+      "adopter_rec_idx": {
+        "Golden West College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
       "exhibit_id": "MAPSAS-C:AG-1-001|MAPSAS-CAG(-1-001|MAPSAS-CAG-1-001|MAPSAS-CAG1-1-001|MAPSAS-CAG10-1-001|MAPSAS-CAG11-1-001|MAPSAS-CAG12-1-001|MAPSAS-CAG13-1-001|MAPSAS-CAG14-1-001|MAPSAS-CAG15-1-001|MAPSAS-CAG16-1-001|MAPSAS-CAG17-1-001|MAPSAS-CAG18-1-001|MAPSAS-CAG19-1-001|MAPSAS-CAG2-1-001|MAPSAS-CAG20-1-001|MAPSAS-CAG21-1-001|MAPSAS-CAG22-1-001|MAPSAS-CAG23-1-001|MAPSAS-CAG24-1-001|MAPSAS-CAG25-1-001|MAPSAS-CAG26-1-001|MAPSAS-CAG27-1-001|MAPSAS-CAG28-1-001|MAPSAS-CAG29-1-001|MAPSAS-CAG3-1-001|MAPSAS-CAG30-1-001|MAPSAS-CAG31-1-001|MAPSAS-CAG32-1-001|MAPSAS-CAG33-1-001|MAPSAS-CAG34-1-001|MAPSAS-CAG35-1-001|MAPSAS-CAG36-1-001|MAPSAS-CAG37-1-001|MAPSAS-CAG38-1-001|MAPSAS-CAG39-1-001|MAPSAS-CAG4-1-001|MAPSAS-CAG40-1-001|MAPSAS-CAG41-1-001|MAPSAS-CAG42-1-001|MAPSAS-CAG5-1-001|MAPSAS-CAG6-1-001|MAPSAS-CAG7-1-001|MAPSAS-CAG8-1-001|MAPSAS-CAG9-1-001|MAPSAS-CEAG-1-001|MAPSAS-CEAG1-1-001",
       "exhibit_ids": [
         "MAPSAS-C:AG-1-001",
@@ -201980,6 +202645,621 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 24.0
     },
     {
+      "exhibit_id": "MAPICI-AWS(6-1-001|MAPICI-DGQW1-1-001",
+      "exhibit_ids": [
+        "MAPICI-AWS(6-1-001",
+        "MAPICI-DGQW1-1-001"
+      ],
+      "title": "AWS D17.1 GTAW Qualified Welder",
+      "unified_title": "AWS D17.1 GTAW Qualified Welder",
+      "is_classified": true,
+      "issuing_agency": "American Welding Society (AWS)",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "American Welding Society  D17.1 GTAW Certification",
+        "D17.1 GTAW Qualified Welder"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "66"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Barstow Community College",
+        "Santa Ana College"
+      ],
+      "potential": 60,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Coalinga College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Madera College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "WELD 55A",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 55B",
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 232",
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 132",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-AWS(6-1-001",
+          "title": "American Welding Society  D17.1 GTAW Certification",
+          "units": 12.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPICI-DGQW1-1-001",
+          "title": "D17.1 GTAW Qualified Welder",
+          "units": 12.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Barstow Community College": 6.0,
+        "Santa Ana College": 6.0
+      },
+      "adopter_lines": {
+        "Barstow Community College": 2,
+        "Santa Ana College": 2
+      },
+      "adopter_rec_idx": {
+        "Barstow Community College": [
+          0,
+          1
+        ],
+        "Santa Ana College": [
+          2,
+          3
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 12.0
+    },
+    {
+      "exhibit_id": "MAPICI-ABSG1-1-001|MAPICI-ABSG2-1-001",
+      "exhibit_ids": [
+        "MAPICI-ABSG1-1-001",
+        "MAPICI-ABSG2-1-001"
+      ],
+      "title": "ASME BPVC Section IX — GTAW Welder Qualification",
+      "unified_title": "ASME BPVC Section IX — GTAW Welder Qualification",
+      "is_classified": true,
+      "issuing_agency": "American Society of Mechanical Engineers (ASME)",
+      "training_agency": "",
+      "confidence_title": 0.95,
+      "confidence_issuer": 0.97,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASME BPVC SectionIX, GTAW Certification",
+        "ASME BPVC SectionIX, GTAW Qualification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "66"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Barstow Community College",
+        "Santa Ana College"
+      ],
+      "potential": 60,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Coalinga College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Madera College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "WELD 55A",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 55B",
+          "credit": "3-4 hours in Advanced to Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 132",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 55B",
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 232",
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-ABSG1-1-001",
+          "title": "ASME BPVC SectionIX, GTAW Qualification",
+          "units": 9.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPICI-ABSG2-1-001",
+          "title": "ASME BPVC SectionIX, GTAW Certification",
+          "units": 12.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Barstow Community College": 9.0,
+        "Santa Ana College": 6.0
+      },
+      "adopter_lines": {
+        "Barstow Community College": 3,
+        "Santa Ana College": 2
+      },
+      "adopter_rec_idx": {
+        "Barstow Community College": [
+          0,
+          1,
+          3
+        ],
+        "Santa Ana College": [
+          2,
+          4
+        ]
+      },
+      "peer_units_median": 7.5,
+      "peer_units_max": 9.0,
+      "rec_units_total": 15.0
+    },
+    {
+      "exhibit_id": "MAPCXS-IGTA-1-001",
+      "exhibit_ids": [
+        "MAPCXS-IGTA-1-001"
+      ],
+      "title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
+      "unified_title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
+      "is_classified": true,
+      "issuing_agency": "American Welding Society (AWS)",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Introduction Gas Tungsten Arc Welding (GTAW) - Credit by Exam"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "66"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Barstow Community College",
+        "Santa Ana College"
+      ],
+      "potential": 60,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Coalinga College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Madera College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "WELD 55A",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 132",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-IGTA-1-001",
+          "title": "Introduction Gas Tungsten Arc Welding (GTAW) - Credit by Exam",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Barstow Community College": 3.0,
+        "Santa Ana College": 3.0
+      },
+      "adopter_lines": {
+        "Barstow Community College": 1,
+        "Santa Ana College": 1
+      },
+      "adopter_rec_idx": {
+        "Barstow Community College": [
+          0
+        ],
+        "Santa Ana College": [
+          1
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPCXS-AGTA-1-001",
+      "exhibit_ids": [
+        "MAPCXS-AGTA-1-001"
+      ],
+      "title": "Gas Tungsten Arc Welding (GTAW) Advanced",
+      "unified_title": "Gas Tungsten Arc Welding (GTAW) Advanced",
+      "is_classified": true,
+      "issuing_agency": "American Welding Society",
+      "training_agency": "",
+      "confidence_title": 0.85,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Advanced Gas Tungsten Arc Welding (GTAW) - Credit by Exam"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "66"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Barstow Community College",
+        "Santa Ana College"
+      ],
+      "potential": 60,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Coalinga College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Madera College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 62,
+      "credit_recs": [
+        {
+          "course": "WELD 55A",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 55B",
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 232",
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 132",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-AGTA-1-001",
+          "title": "Advanced Gas Tungsten Arc Welding (GTAW) - Credit by Exam",
+          "units": 12.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Barstow Community College": 6.0,
+        "Santa Ana College": 6.0
+      },
+      "adopter_lines": {
+        "Barstow Community College": 2,
+        "Santa Ana College": 2
+      },
+      "adopter_rec_idx": {
+        "Barstow Community College": [
+          0,
+          1
+        ],
+        "Santa Ana College": [
+          2,
+          3
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 12.0
+    },
+    {
       "exhibit_id": "MAPCxS-FPEA-1-001",
       "exhibit_ids": [
         "MAPCxS-FPEA-1-001"
@@ -202765,6 +204045,14 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
         },
         {
+          "course": "WELD B54B",
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
+        },
+        {
+          "course": "WELD B55B",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 50A",
           "credit": "3-4 hours in Introduction to Welding"
         },
@@ -202809,20 +204097,12 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
-          "course": "WELD B54B",
-          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
           "course": "WELD B55A",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B55B",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74B",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         },
         {
           "course": "WELD 125",
@@ -202849,10 +204129,6 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
-        },
-        {
           "course": "WELD 132",
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         }
@@ -202871,6 +204147,14 @@ window.CPL_STATEWIDE = {
           "cid": ""
         },
         {
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "cid": ""
+        },
+        {
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)",
           "cid": ""
         },
@@ -202885,31 +204169,23 @@ window.CPL_STATEWIDE = {
         {
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
           "cid": ""
-        },
-        {
-          "credit": "3 hours in Printreading and Welding Symbols Interpretation",
-          "cid": ""
-        },
-        {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
-          "cid": ""
         }
       ],
       "exhibit_records": [
         {
           "id": "MAPICI-NWL2-1-001",
           "title": "NCCER Welding Level 2",
-          "units": 77.0,
-          "lines": 26
+          "units": 74.0,
+          "lines": 25
         }
       ],
       "adopter_units": {
-        "Bakersfield College": 35.0,
+        "Bakersfield College": 32.0,
         "Barstow Community College": 21.0,
         "Santa Ana College": 21.0
       },
       "adopter_lines": {
-        "Bakersfield College": 12,
+        "Bakersfield College": 11,
         "Barstow Community College": 7,
         "Santa Ana College": 7
       },
@@ -202918,24 +204194,23 @@ window.CPL_STATEWIDE = {
           0,
           1,
           2,
-          10,
-          11,
+          3,
+          4,
           12,
           13,
           14,
           15,
           16,
-          17,
-          24
+          17
         ],
         "Barstow Community College": [
-          3,
-          4,
           5,
           6,
           7,
           8,
-          9
+          9,
+          10,
+          11
         ],
         "Santa Ana College": [
           18,
@@ -202944,12 +204219,12 @@ window.CPL_STATEWIDE = {
           21,
           22,
           23,
-          25
+          24
         ]
       },
       "peer_units_median": 21.0,
-      "peer_units_max": 35.0,
-      "rec_units_total": 77.0
+      "peer_units_max": 32.0,
+      "rec_units_total": 74.0
     },
     {
       "exhibit_id": "MAPICI-AWSD5-1-001|MAPICI-DGQW-1-001",
@@ -203052,16 +204327,16 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
+        },
+        {
           "course": "WELD 125",
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
           "course": "WELD 225",
           "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
           "course": "WELD 225",
@@ -203108,14 +204383,14 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          3
+          1
         ],
         "Barstow Community College": [
           0
         ],
         "Santa Ana College": [
-          1,
           2,
+          3,
           4
         ]
       },
@@ -203220,6 +204495,10 @@ window.CPL_STATEWIDE = {
       "total_addressable": 62,
       "credit_recs": [
         {
+          "course": "WELD B55B",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 54B",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
@@ -203229,10 +204508,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD B74A",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B55B",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
@@ -203246,11 +204521,11 @@ window.CPL_STATEWIDE = {
       ],
       "authoritative_recs": [
         {
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
           "cid": ""
         }
       ],
@@ -203280,12 +204555,12 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          1,
+          0,
           2,
           3
         ],
         "Barstow Community College": [
-          0
+          1
         ],
         "Santa Ana College": [
           4,
@@ -203295,174 +204570,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 6.0,
       "peer_units_max": 9.0,
       "rec_units_total": 18.0
-    },
-    {
-      "exhibit_id": "MAPICI-AWS(6-1-001|MAPICI-DGQW1-1-001",
-      "exhibit_ids": [
-        "MAPICI-AWS(6-1-001",
-        "MAPICI-DGQW1-1-001"
-      ],
-      "title": "AWS D17.1 GTAW Qualified Welder",
-      "unified_title": "AWS D17.1 GTAW Qualified Welder",
-      "is_classified": true,
-      "issuing_agency": "American Welding Society (AWS)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "American Welding Society  D17.1 GTAW Certification",
-        "D17.1 GTAW Qualified Welder"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
-      "top_codes": [
-        "66"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 3,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Santa Ana College"
-      ],
-      "potential": 59,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Madera College",
-        "Merced College",
-        "Modesto Junior College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 62,
-      "credit_recs": [
-        {
-          "course": "WELD 55A",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 55B",
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD B74B",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 232",
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 132",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        },
-        {
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-AWS(6-1-001",
-          "title": "American Welding Society  D17.1 GTAW Certification",
-          "units": 15.0,
-          "lines": 5
-        },
-        {
-          "id": "MAPICI-DGQW1-1-001",
-          "title": "D17.1 GTAW Qualified Welder",
-          "units": 15.0,
-          "lines": 5
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 3.0,
-        "Barstow Community College": 6.0,
-        "Santa Ana College": 6.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 1,
-        "Barstow Community College": 2,
-        "Santa Ana College": 2
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          2
-        ],
-        "Barstow Community College": [
-          0,
-          1
-        ],
-        "Santa Ana College": [
-          3,
-          4
-        ]
-      },
-      "peer_units_median": 6.0,
-      "peer_units_max": 6.0,
-      "rec_units_total": 15.0
     },
     {
       "exhibit_id": "MAPICI-AWSD4-1-001|MAPICI-DGQW2-1-001",
@@ -203565,11 +204672,11 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
-          "course": "WELD 125",
+          "course": "WELD B74A",
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
-          "course": "WELD B74A",
+          "course": "WELD 125",
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         }
       ],
@@ -203605,13 +204712,13 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          2
+          1
         ],
         "Barstow Community College": [
           0
         ],
         "Santa Ana College": [
-          1
+          2
         ]
       },
       "peer_units_median": 3.0,
@@ -203715,6 +204822,10 @@ window.CPL_STATEWIDE = {
       "total_addressable": 62,
       "credit_recs": [
         {
+          "course": "WELD B55B",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 54B",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
@@ -203724,10 +204835,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD B74A",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B55B",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
@@ -203741,11 +204848,11 @@ window.CPL_STATEWIDE = {
       ],
       "authoritative_recs": [
         {
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
           "cid": ""
         }
       ],
@@ -203775,12 +204882,12 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          1,
+          0,
           2,
           3
         ],
         "Barstow Community College": [
-          0
+          1
         ],
         "Santa Ana College": [
           4,
@@ -203892,16 +204999,16 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
+        },
+        {
           "course": "WELD 125",
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
           "course": "WELD 225",
           "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         }
       ],
       "authoritative_recs": [
@@ -203940,196 +205047,19 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          3
+          1
         ],
         "Barstow Community College": [
           0
         ],
         "Santa Ana College": [
-          1,
-          2
+          2,
+          3
         ]
       },
       "peer_units_median": 3.0,
       "peer_units_max": 6.0,
       "rec_units_total": 12.0
-    },
-    {
-      "exhibit_id": "MAPICI-ABSG1-1-001|MAPICI-ABSG2-1-001",
-      "exhibit_ids": [
-        "MAPICI-ABSG1-1-001",
-        "MAPICI-ABSG2-1-001"
-      ],
-      "title": "ASME BPVC Section IX — GTAW Welder Qualification",
-      "unified_title": "ASME BPVC Section IX — GTAW Welder Qualification",
-      "is_classified": true,
-      "issuing_agency": "American Society of Mechanical Engineers (ASME)",
-      "training_agency": "",
-      "confidence_title": 0.95,
-      "confidence_issuer": 0.97,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASME BPVC SectionIX, GTAW Certification",
-        "ASME BPVC SectionIX, GTAW Qualification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
-      "top_codes": [
-        "66"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 3,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Santa Ana College"
-      ],
-      "potential": 59,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Madera College",
-        "Merced College",
-        "Modesto Junior College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 62,
-      "credit_recs": [
-        {
-          "course": "WELD 55A",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 55B",
-          "credit": "3-4 hours in Advanced to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD B74B",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 132",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 55B",
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 232",
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        },
-        {
-          "credit": "3-4 hours in Advanced to Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        },
-        {
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-ABSG1-1-001",
-          "title": "ASME BPVC SectionIX, GTAW Qualification",
-          "units": 12.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPICI-ABSG2-1-001",
-          "title": "ASME BPVC SectionIX, GTAW Certification",
-          "units": 15.0,
-          "lines": 5
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 3.0,
-        "Barstow Community College": 9.0,
-        "Santa Ana College": 6.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 1,
-        "Barstow Community College": 3,
-        "Santa Ana College": 2
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          2
-        ],
-        "Barstow Community College": [
-          0,
-          1,
-          4
-        ],
-        "Santa Ana College": [
-          3,
-          5
-        ]
-      },
-      "peer_units_median": 6.0,
-      "peer_units_max": 9.0,
-      "rec_units_total": 18.0
     },
     {
       "exhibit_id": "MAPICI-ABSI2-1-001|MAPICI-ABSS-1-001",
@@ -204421,6 +205351,14 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
         },
         {
+          "course": "WELD B54B",
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
+        },
+        {
+          "course": "WELD B55B",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 50A",
           "credit": "3-4 hours in Introduction to Welding"
         },
@@ -204474,6 +205412,10 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
+        },
+        {
+          "course": "WELD B74A",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
@@ -204481,20 +205423,8 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
-          "course": "WELD B54B",
-          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
-        },
-        {
           "course": "WELD B55A",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B55B",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74B",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         },
         {
           "course": "WELD 125",
@@ -204529,10 +205459,6 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
-        },
-        {
           "course": "WELD 132",
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         }
@@ -204548,6 +205474,14 @@ window.CPL_STATEWIDE = {
         },
         {
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
           "cid": ""
         },
         {
@@ -204571,10 +205505,6 @@ window.CPL_STATEWIDE = {
           "cid": ""
         },
         {
-          "credit": "3 hours in Printreading and Welding Symbols Interpretation",
-          "cid": ""
-        },
-        {
           "credit": "3 hours in Basic Pipe Shielded Metal Arc Welding (SMAW)",
           "cid": ""
         },
@@ -204587,10 +205517,6 @@ window.CPL_STATEWIDE = {
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
-          "cid": ""
-        },
-        {
           "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
           "cid": ""
         }
@@ -204599,17 +205525,17 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPICI-NWL3-1-001",
           "title": "NCCER Welding Level 3",
-          "units": 95.0,
-          "lines": 32
+          "units": 92.0,
+          "lines": 31
         }
       ],
       "adopter_units": {
-        "Bakersfield College": 35.0,
+        "Bakersfield College": 32.0,
         "Barstow Community College": 33.0,
         "Santa Ana College": 27.0
       },
       "adopter_lines": {
-        "Bakersfield College": 12,
+        "Bakersfield College": 11,
         "Barstow Community College": 11,
         "Santa Ana College": 9
       },
@@ -204618,19 +205544,16 @@ window.CPL_STATEWIDE = {
           0,
           1,
           2,
-          14,
-          15,
+          3,
+          4,
           16,
           17,
           18,
           19,
           20,
-          21,
-          30
+          21
         ],
         "Barstow Community College": [
-          3,
-          4,
           5,
           6,
           7,
@@ -204639,7 +205562,9 @@ window.CPL_STATEWIDE = {
           10,
           11,
           12,
-          13
+          13,
+          14,
+          15
         ],
         "Santa Ana College": [
           22,
@@ -204650,12 +205575,12 @@ window.CPL_STATEWIDE = {
           27,
           28,
           29,
-          31
+          30
         ]
       },
-      "peer_units_median": 33.0,
-      "peer_units_max": 35.0,
-      "rec_units_total": 95.0
+      "peer_units_median": 32.0,
+      "peer_units_max": 33.0,
+      "rec_units_total": 92.0
     },
     {
       "exhibit_id": "MAPICI-NWL4-1-001",
@@ -204764,6 +205689,14 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)"
         },
         {
+          "course": "WELD B54B",
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
+        },
+        {
+          "course": "WELD B55B",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 50A",
           "credit": "3-4 hours in Introduction to Welding"
         },
@@ -204817,6 +205750,10 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
+        },
+        {
+          "course": "WELD B74A",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
@@ -204824,20 +205761,8 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
-          "course": "WELD B54B",
-          "credit": "3 hours in Printreading and Welding Symbols Interpretation"
-        },
-        {
           "course": "WELD B55A",
           "credit": "3-4 hours in Advanced Shield Metal Arc Welding (SMAW)"
-        },
-        {
-          "course": "WELD B55B",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B74B",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         },
         {
           "course": "WELD 125",
@@ -204872,10 +205797,6 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
-        },
-        {
           "course": "WELD 132",
           "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
         }
@@ -204891,6 +205812,14 @@ window.CPL_STATEWIDE = {
         },
         {
           "credit": "3-4 hours in Introduction to Shield Metal Arc Welding (SMAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Printreading and Welding Symbols Interpretation",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
           "cid": ""
         },
         {
@@ -204914,10 +205843,6 @@ window.CPL_STATEWIDE = {
           "cid": ""
         },
         {
-          "credit": "3 hours in Printreading and Welding Symbols Interpretation",
-          "cid": ""
-        },
-        {
           "credit": "3 hours in Basic Pipe Shielded Metal Arc Welding (SMAW)",
           "cid": ""
         },
@@ -204930,10 +205855,6 @@ window.CPL_STATEWIDE = {
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
-          "cid": ""
-        },
-        {
           "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)",
           "cid": ""
         }
@@ -204942,17 +205863,17 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPICI-NWL4-1-001",
           "title": "NCCER Welding Level 4",
-          "units": 95.0,
-          "lines": 32
+          "units": 92.0,
+          "lines": 31
         }
       ],
       "adopter_units": {
-        "Bakersfield College": 35.0,
+        "Bakersfield College": 32.0,
         "Barstow Community College": 33.0,
         "Santa Ana College": 27.0
       },
       "adopter_lines": {
-        "Bakersfield College": 12,
+        "Bakersfield College": 11,
         "Barstow Community College": 11,
         "Santa Ana College": 9
       },
@@ -204961,19 +205882,16 @@ window.CPL_STATEWIDE = {
           0,
           1,
           2,
-          14,
-          15,
+          3,
+          4,
           16,
           17,
           18,
           19,
           20,
-          21,
-          30
+          21
         ],
         "Barstow Community College": [
-          3,
-          4,
           5,
           6,
           7,
@@ -204982,7 +205900,9 @@ window.CPL_STATEWIDE = {
           10,
           11,
           12,
-          13
+          13,
+          14,
+          15
         ],
         "Santa Ana College": [
           22,
@@ -204993,12 +205913,12 @@ window.CPL_STATEWIDE = {
           27,
           28,
           29,
-          31
+          30
         ]
       },
-      "peer_units_median": 33.0,
-      "peer_units_max": 35.0,
-      "rec_units_total": 95.0
+      "peer_units_median": 32.0,
+      "peer_units_max": 33.0,
+      "rec_units_total": 92.0
     },
     {
       "exhibit_id": "MAPICI-LCCW1-1-001",
@@ -205095,6 +206015,10 @@ window.CPL_STATEWIDE = {
       "total_addressable": 62,
       "credit_recs": [
         {
+          "course": "WELD B55B",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 54B",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
@@ -205104,10 +206028,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD B74A",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B55B",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
@@ -205121,11 +206041,11 @@ window.CPL_STATEWIDE = {
       ],
       "authoritative_recs": [
         {
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
           "cid": ""
         }
       ],
@@ -205149,12 +206069,12 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          1,
+          0,
           2,
           3
         ],
         "Barstow Community College": [
-          0
+          1
         ],
         "Santa Ana College": [
           4,
@@ -205260,6 +206180,10 @@ window.CPL_STATEWIDE = {
       "total_addressable": 62,
       "credit_recs": [
         {
+          "course": "WELD B55B",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 54B",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
@@ -205269,10 +206193,6 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "WELD B74A",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
-          "course": "WELD B55B",
           "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
         },
         {
@@ -205286,11 +206206,11 @@ window.CPL_STATEWIDE = {
       ],
       "authoritative_recs": [
         {
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
           "cid": ""
         }
       ],
@@ -205314,12 +206234,12 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          1,
+          0,
           2,
           3
         ],
         "Barstow Community College": [
-          0
+          1
         ],
         "Santa Ana College": [
           4,
@@ -205329,152 +206249,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 6.0,
       "peer_units_max": 9.0,
       "rec_units_total": 18.0
-    },
-    {
-      "exhibit_id": "MAPCXS-IGTA-1-001",
-      "exhibit_ids": [
-        "MAPCXS-IGTA-1-001"
-      ],
-      "title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
-      "unified_title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
-      "is_classified": true,
-      "issuing_agency": "American Welding Society (AWS)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Introduction Gas Tungsten Arc Welding (GTAW) - Credit by Exam"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
-      "top_codes": [
-        "66"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 3,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Santa Ana College"
-      ],
-      "potential": 59,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Madera College",
-        "Merced College",
-        "Modesto Junior College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 62,
-      "credit_recs": [
-        {
-          "course": "WELD 55A",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD B74B",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 132",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-IGTA-1-001",
-          "title": "Introduction Gas Tungsten Arc Welding (GTAW) - Credit by Exam",
-          "units": 9.0,
-          "lines": 3
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 3.0,
-        "Barstow Community College": 3.0,
-        "Santa Ana College": 3.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 1,
-        "Barstow Community College": 1,
-        "Santa Ana College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          1
-        ],
-        "Barstow Community College": [
-          0
-        ],
-        "Santa Ana College": [
-          2
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 9.0
     },
     {
       "exhibit_id": "MAPCXS-GMAW-1-001",
@@ -205575,16 +206349,16 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
+          "course": "WELD B74A",
+          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
+        },
+        {
           "course": "WELD 125",
           "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         },
         {
           "course": "WELD 225",
           "credit": "3-4 hours in Advanced Gas Metal Arc Welding (GMAW)"
-        },
-        {
-          "course": "WELD B74A",
-          "credit": "3-4 hours in Introduction to Gas Metal Arc Welding (GMAW)"
         }
       ],
       "authoritative_recs": [
@@ -205617,179 +206391,19 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          3
+          1
         ],
         "Barstow Community College": [
           0
         ],
         "Santa Ana College": [
-          1,
-          2
+          2,
+          3
         ]
       },
       "peer_units_median": 3.0,
       "peer_units_max": 6.0,
       "rec_units_total": 12.0
-    },
-    {
-      "exhibit_id": "MAPCXS-AGTA-1-001",
-      "exhibit_ids": [
-        "MAPCXS-AGTA-1-001"
-      ],
-      "title": "Gas Tungsten Arc Welding (GTAW) Advanced",
-      "unified_title": "Gas Tungsten Arc Welding (GTAW) Advanced",
-      "is_classified": true,
-      "issuing_agency": "American Welding Society",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Advanced Gas Tungsten Arc Welding (GTAW) - Credit by Exam"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
-      "top_codes": [
-        "66"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 3,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Santa Ana College"
-      ],
-      "potential": 59,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Madera College",
-        "Merced College",
-        "Modesto Junior College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 62,
-      "credit_recs": [
-        {
-          "course": "WELD 55A",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 55B",
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD B74B",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 232",
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 132",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        },
-        {
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-AGTA-1-001",
-          "title": "Advanced Gas Tungsten Arc Welding (GTAW) - Credit by Exam",
-          "units": 15.0,
-          "lines": 5
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 3.0,
-        "Barstow Community College": 6.0,
-        "Santa Ana College": 6.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 1,
-        "Barstow Community College": 2,
-        "Santa Ana College": 2
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          2
-        ],
-        "Barstow Community College": [
-          0,
-          1
-        ],
-        "Santa Ana College": [
-          3,
-          4
-        ]
-      },
-      "peer_units_median": 6.0,
-      "peer_units_max": 6.0,
-      "rec_units_total": 15.0
     },
     {
       "exhibit_id": "MAPCXS-FCAW-1-001",
@@ -205886,6 +206500,10 @@ window.CPL_STATEWIDE = {
       "total_addressable": 62,
       "credit_recs": [
         {
+          "course": "WELD B55B",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
+        },
+        {
           "course": "WELD 54B",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
@@ -205898,10 +206516,6 @@ window.CPL_STATEWIDE = {
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
         {
-          "course": "WELD B55B",
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)"
-        },
-        {
           "course": "WELD 240",
           "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"
         },
@@ -205912,11 +206526,11 @@ window.CPL_STATEWIDE = {
       ],
       "authoritative_recs": [
         {
-          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
           "cid": ""
         },
         {
-          "credit": "3-4 hours in Advanced Flux Cored Arc Welding (FCAW)",
+          "credit": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)",
           "cid": ""
         }
       ],
@@ -205940,12 +206554,12 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Bakersfield College": [
-          1,
+          0,
           2,
           3
         ],
         "Barstow Community College": [
-          0
+          1
         ],
         "Santa Ana College": [
           4,
@@ -348598,6 +349212,527 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
+      "exhibit_id": "MAPICI-NHL3-1-001",
+      "exhibit_ids": [
+        "MAPICI-NHL3-1-001"
+      ],
+      "title": "NCCER HVACR Level 3",
+      "unified_title": "NCCER HVACR Level 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "NCCER HVACR Level 3"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "46",
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "Compton College",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Long Beach City College",
+        "Merced College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 001",
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 002",
+          "credit": "3-4 hours in Intermediate Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 004",
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 006",
+          "credit": "3-4 hours in Air Properties and Measurement (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 007",
+          "credit": "3 hours in Brazing/Soldering for Air Conditioning and Refrigeration (Lecture/Lab)"
+        },
+        {
+          "course": "TECALC 087",
+          "credit": "1-3 hours in Technical Mathematics"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Intermediate Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Air Properties and Measurement (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Brazing/Soldering for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Technical Mathematics",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-NHL3-1-001",
+          "title": "NCCER HVACR Level 3",
+          "units": 16.0,
+          "lines": 6
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 16.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 6
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "peer_units_median": 16.0,
+      "peer_units_max": 16.0,
+      "rec_units_total": 16.0
+    },
+    {
+      "exhibit_id": "MAPICI-NHL2-1-001",
+      "exhibit_ids": [
+        "MAPICI-NHL2-1-001"
+      ],
+      "title": "NCCER HVACR Level 2",
+      "unified_title": "NCCER HVACR Level 2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "NCCER HVACR Level 2"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "46",
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "Compton College",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Long Beach City College",
+        "Merced College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 001",
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 004",
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 006",
+          "credit": "3-4 hours in Air Properties and Measurement (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 007",
+          "credit": "3 hours Brazing/Soldering for Air Conditioning and Refrigeration (Lecture/Lab)"
+        },
+        {
+          "course": "TECALC 087",
+          "credit": "1-3 hours in Technical Mathematics"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Air Properties and Measurement (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours Brazing/Soldering for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Technical Mathematics",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-NHL2-1-001",
+          "title": "NCCER HVACR Level 2",
+          "units": 13.0,
+          "lines": 5
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 13.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 5
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "peer_units_median": 13.0,
+      "peer_units_max": 13.0,
+      "rec_units_total": 13.0
+    },
+    {
+      "exhibit_id": "MAPICI-NPHP-1-001",
+      "exhibit_ids": [
+        "MAPICI-NPHP-1-001"
+      ],
+      "title": "NATE Professional HVAC Performance Verifier Certification",
+      "unified_title": "NATE Professional HVAC Performance Verifier Certification",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "NATE Professional HVAC Performance Verifier Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "46",
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "Compton College",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Long Beach City College",
+        "Merced College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 001",
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 006",
+          "credit": "3-4 hours in Air Properties and Measurement (Lecture/Lab)"
+        },
+        {
+          "course": "TECALC 087",
+          "credit": "1-3 hours in Technical Mathematics"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Air Properties and Measurement (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Technical Mathematics",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-NPHP-1-001",
+          "title": "NATE Professional HVAC Performance Verifier Certification",
+          "units": 7.0,
+          "lines": 3
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 7.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 3
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1,
+          2
+        ]
+      },
+      "peer_units_median": 7.0,
+      "peer_units_max": 7.0,
+      "rec_units_total": 7.0
+    },
+    {
+      "exhibit_id": "MAPICI-CCRC-1-001",
+      "exhibit_ids": [
+        "MAPICI-CCRC-1-001"
+      ],
+      "title": "Class C-38 Refrigeration Contractor",
+      "unified_title": "Class C-38 Refrigeration Contractor",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Class C-38 Refrigeration Contractor"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "46",
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "Compton College",
+        "East Los Angeles College",
+        "Fullerton College",
+        "Long Beach City College",
+        "Merced College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 001",
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 002",
+          "credit": "3-4 hours in Intermediate Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 004",
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 005",
+          "credit": "3-4 hours in Commercial Electrical for Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 007",
+          "credit": "3 hours in Brazing/Soldering for Air Conditioning and Refrigeration (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 098",
+          "credit": "1 hour in Elective/Work Experience in HVACR (Lecture/Lab)"
+        },
+        {
+          "course": "TECALC 087",
+          "credit": "1-3 hours in Technical Mathematics"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Intermediate Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Commercial Electrical for Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Brazing/Soldering for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "1 hour in Elective/Work Experience in HVACR (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "1-3 hours in Technical Mathematics",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CCRC-1-001",
+          "title": "Class C-38 Refrigeration Contractor",
+          "units": 17.0,
+          "lines": 7
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 17.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 7
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "peer_units_median": 17.0,
+      "peer_units_max": 17.0,
+      "rec_units_total": 17.0
+    },
+    {
       "exhibit_id": "MAPCBEN-ITVC-1-001",
       "exhibit_ids": [
         "MAPCBEN-ITVC-1-001"
@@ -357214,6 +358349,90 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 5.0,
       "peer_units_max": 5.0,
       "rec_units_total": 5.0
+    },
+    {
+      "exhibit_id": "MAPICI-ASEL3-1-001",
+      "exhibit_ids": [
+        "MAPICI-ASEL3-1-001"
+      ],
+      "title": "Automotive Service Excellence L3 - Light Duty Hybrid/Electric Vehicle Specialist",
+      "unified_title": "Automotive Service Excellence L3 - Light Duty Hybrid/Electric Vehicle Specialist",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Automotive Service Excellence L3 - Light Duty Hybrid/Electric Vehicle Specialist"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "165"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Golden West College"
+      ],
+      "potential": 22,
+      "potential_names": [
+        "American River College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Copper Mountain College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "Mission College",
+        "Modesto Junior College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 23,
+      "credit_recs": [
+        {
+          "course": "AUTO G170",
+          "credit": "3 hours in Hybrid and Electric Vehicle Introduction"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-ASEL3-1-001",
+          "title": "Automotive Service Excellence L3 - Light Duty Hybrid/Electric Vehicle Specialist",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Golden West College": 3.0
+      },
+      "adopter_lines": {
+        "Golden West College": 1
+      },
+      "adopter_rec_idx": {
+        "Golden West College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "MAPSAS-AJL&-1-001|MAPSAS-AJL&1-1-001|MAPSAS-AJL&2-1-001",
@@ -432798,6 +434017,240 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 7.0
     },
     {
+      "exhibit_id": "MAPICI-EMSC4-1-001",
+      "exhibit_ids": [
+        "MAPICI-EMSC4-1-001"
+      ],
+      "title": "ESCO Master Specialist Certification, Principles of Electrical & Refrigeration Theory",
+      "unified_title": "ESCO Master Specialist Certification, Principles of Electrical & Refrigeration Theory",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ESCO Master Specialist Certification, Principles of Electrical & Refrigeration Theory"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "15",
+      "top_codes": [
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 001",
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 004",
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 098",
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "4 hours in Elective/Work Experience in HVACR (Lecture/Lab)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-EMSC4-1-001",
+          "title": "ESCO Master Specialist Certification, Principles of Electrical & Refrigeration Theory",
+          "units": 10.0,
+          "lines": 3
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 10.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 3
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1,
+          2
+        ]
+      },
+      "peer_units_median": 10.0,
+      "peer_units_max": 10.0,
+      "rec_units_total": 10.0
+    },
+    {
+      "exhibit_id": "MAPICI-NCC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-NCC1-1-001"
+      ],
+      "title": "NATE CHP-5 Certification",
+      "unified_title": "NATE CHP-5 Certification",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "NATE CHP-5 Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "15",
+      "top_codes": [
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 001",
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 004",
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)"
+        },
+        {
+          "course": "HVAC/R 098",
+          "credit": "1 hour in Refrigeration Work Experience"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Fundamentals Refrigeration and Air Conditioning (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        },
+        {
+          "credit": "1 hour in Refrigeration Work Experience",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-NCC1-1-001",
+          "title": "NATE CHP-5 Certification",
+          "units": 7.0,
+          "lines": 3
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 7.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 3
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0,
+          1,
+          2
+        ]
+      },
+      "peer_units_median": 7.0,
+      "peer_units_max": 7.0,
+      "rec_units_total": 7.0
+    },
+    {
+      "exhibit_id": "MAPICA-REDJ-1-001",
+      "exhibit_ids": [
+        "MAPICA-REDJ-1-001"
+      ],
+      "title": "Residential Electrical DAS Journeyman",
+      "unified_title": "Residential Electrical DAS Journeyman",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Residential Electrical DAS Journeyman"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "15",
+      "top_codes": [
+        "56"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 1,
+      "adopter_names": [
+        "San Bernardino Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "HVAC/R 004",
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Electrical Fundamentals for Air Conditioning and Refrigeration (Lecture/Lab)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-REDJ-1-001",
+          "title": "Residential Electrical DAS Journeyman",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "San Bernardino Valley College": 3.0
+      },
+      "adopter_lines": {
+        "San Bernardino Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "San Bernardino Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -436032,6 +437485,50 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 0.0,
       "peer_units_max": 0.0,
       "rec_units_total": 0
+    },
+    {
+      "exhibit_id": "MAPICI-MSBA-1-001",
+      "exhibit_ids": [
+        "MAPICI-MSBA-1-001"
+      ],
+      "title": "Manufacturer/Vendor Specific Building Automation System (BAS) Certification",
+      "unified_title": "Manufacturer/Vendor Specific Building Automation System (BAS) Certification",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Manufacturer/Vendor Specific Building Automation System (BAS) Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "",
+      "top_codes": [],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MSBA-1-001",
+          "title": "Manufacturer/Vendor Specific Building Automation System (BAS) Certification",
+          "units": 0,
+          "lines": 0
+        }
+      ],
+      "adopter_units": {},
+      "adopter_lines": {},
+      "adopter_rec_idx": {},
+      "peer_units_median": 0.0,
+      "peer_units_max": 0.0,
+      "rec_units_total": 0
     }
   ],
   "analysis": {
@@ -436091,22 +437588,22 @@ window.CPL_STATEWIDE = {
         "pct": 3.0
       },
       {
+        "college": "San Bernardino Valley College",
+        "credit_recs": 391,
+        "exhibits": 246,
+        "disciplines": 18,
+        "ccc_collaborative": 66,
+        "industry_certs": 138,
+        "pct": 2.8
+      },
+      {
         "college": "Norco College",
         "credit_recs": 389,
         "exhibits": 317,
         "disciplines": 17,
         "ccc_collaborative": 23,
         "industry_certs": 81,
-        "pct": 2.8
-      },
-      {
-        "college": "San Bernardino Valley College",
-        "credit_recs": 363,
-        "exhibits": 239,
-        "disciplines": 18,
-        "ccc_collaborative": 38,
-        "industry_certs": 110,
-        "pct": 2.6
+        "pct": 2.7
       },
       {
         "college": "San Diego Miramar College",
@@ -436137,12 +437634,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Bakersfield College",
-        "credit_recs": 305,
-        "exhibits": 158,
+        "credit_recs": 296,
+        "exhibits": 152,
         "disciplines": 10,
-        "ccc_collaborative": 136,
-        "industry_certs": 198,
-        "pct": 2.2
+        "ccc_collaborative": 127,
+        "industry_certs": 191,
+        "pct": 2.1
       },
       {
         "college": "Merced College",
@@ -436469,6 +437966,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.7
       },
       {
+        "college": "Golden West College",
+        "credit_recs": 104,
+        "exhibits": 90,
+        "disciplines": 3,
+        "ccc_collaborative": 0,
+        "industry_certs": 22,
+        "pct": 0.7
+      },
+      {
         "college": "Chabot College",
         "credit_recs": 102,
         "exhibits": 65,
@@ -436520,15 +438026,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 10,
         "ccc_collaborative": 0,
         "industry_certs": 10,
-        "pct": 0.7
-      },
-      {
-        "college": "Golden West College",
-        "credit_recs": 95,
-        "exhibits": 84,
-        "disciplines": 3,
-        "ccc_collaborative": 0,
-        "industry_certs": 13,
         "pct": 0.7
       },
       {
@@ -436940,21 +438437,21 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6019,
-        "exhibits": 2185,
+        "credit_recs": 6020,
+        "exhibits": 2186,
         "courses": 337,
         "colleges": 87,
-        "ccc_collaborative": 31,
-        "pct": 42.6
+        "ccc_collaborative": 32,
+        "pct": 42.5
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2426,
-        "exhibits": 1049,
-        "courses": 1213,
+        "credit_recs": 2454,
+        "exhibits": 1062,
+        "courses": 1212,
         "colleges": 56,
-        "ccc_collaborative": 574,
-        "pct": 17.2
+        "ccc_collaborative": 593,
+        "pct": 17.3
       },
       {
         "discipline": "Public and Protective Services",
@@ -436963,7 +438460,7 @@ window.CPL_STATEWIDE = {
         "courses": 660,
         "colleges": 53,
         "ccc_collaborative": 535,
-        "pct": 10.9
+        "pct": 10.8
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -437152,18 +438649,18 @@ window.CPL_STATEWIDE = {
         "credit_recs": 7356,
         "exhibits": 2668,
         "colleges": 83,
-        "pct": 52.0
+        "pct": 51.9
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3921,
-        "exhibits": 1220,
+        "credit_recs": 3952,
+        "exhibits": 1234,
         "colleges": 80,
-        "pct": 27.7
+        "pct": 27.9
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2212,
+        "credit_recs": 2210,
         "exhibits": 1731,
         "colleges": 61,
         "pct": 15.6
@@ -437193,22 +438690,22 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 8745,
+        "credit_recs": 8743,
         "exhibits": 3733,
         "colleges": 91,
-        "pct": 61.9
+        "pct": 61.7
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2945,
-        "exhibits": 1160,
+        "credit_recs": 2975,
+        "exhibits": 1173,
         "colleges": 77,
-        "pct": 20.8
+        "pct": 21.0
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1430,
-        "exhibits": 400,
+        "credit_recs": 1431,
+        "exhibits": 401,
         "colleges": 42,
         "pct": 10.1
       },
@@ -437265,19 +438762,19 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12450,
-        "exhibits": 5820,
+        "credit_recs": 12459,
+        "exhibits": 5826,
         "colleges": 98,
         "disciplines": 23,
-        "pct": 88.1
+        "pct": 88.0
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1435,
-        "exhibits": 184,
+        "credit_recs": 1455,
+        "exhibits": 192,
         "colleges": 65,
         "disciplines": 11,
-        "pct": 10.2
+        "pct": 10.3
       },
       {
         "category": "Industry/Other",
@@ -437691,8 +439188,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-08T18:55:37",
-  "total_credit_recs": 14136,
+  "generated_at": "2026-10-09T13:23:20",
+  "total_credit_recs": 14165,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",
