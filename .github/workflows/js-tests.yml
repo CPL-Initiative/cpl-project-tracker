@@ -191,6 +191,12 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
         run: python3 tests/program_requirements_pilot_test.py
+      # Phase 2 (S353): every program at one college. The catalog's program
+      # pages listed once from its sitemap, each program given the page naming
+      # its listed courses (the award breaks a tie), the state's file read past
+      # a thousand rows. Pure-stdlib python; same non-required check.
+      - name: Program requirements, one college (sitemap, matching, shards)
+        run: python3 tests/program_requirements_college_test.py
       # The college page read (S329) reads a named list of one college's
       # pages from a runner for lines marked To confirm: it follows links only
       # on the college's own domain and prints the part that answers.

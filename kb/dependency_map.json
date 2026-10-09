@@ -4,10 +4,10 @@
   "supabase_tables": 97,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 612,
+  "file_datasets": 616,
   "external_services": 163,
-  "consumers": 421,
-  "workflows": 45,
+  "consumers": 423,
+  "workflows": 46,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -7407,6 +7407,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_program_requirements_college.py": {
+   "consumers": [
+    {
+     "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_program_requirements_extract.py": {
    "consumers": [
     {
@@ -11931,6 +11944,17 @@
     "workflow:program-course-fetch.yml"
    ]
   },
+  "file:kb/program_requirements_college": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:program-requirements-college.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/program_requirements_maps_sample.json": {
    "consumers": [
     {
@@ -14747,6 +14771,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:news/sources.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 469
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:nudges/team_directory.json": {
    "consumers": [
     {
@@ -17187,6 +17224,19 @@
    "main_committers": []
   },
   "file:tests/program_record_verdicts_sql_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_college_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -22553,6 +22603,7 @@
     "tests/library_file_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
+    "tests/program_requirements_college_test.py",
     "tests/college_page_read_test.py",
     "tests/program_map_parse_test.py",
     "tests/queue_status_test.py",
@@ -22801,6 +22852,20 @@
     "kb/program_course_graph.json"
    ],
    "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "program-requirements-college.yml": {
+   "name": "Program requirements, one college",
+   "crons": [],
+   "scripts": [
+    "kb/_program_requirements_college.py"
+   ],
+   "adds": [
+    "kb/program_requirements_college"
+   ],
+   "push": null,
    "deploys": [],
    "chain": [],
    "urls": []
