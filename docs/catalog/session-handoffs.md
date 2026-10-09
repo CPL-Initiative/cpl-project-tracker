@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 351 | [the UI pass on the Fact Sheet](../session_351_handoff.md) | 2026-10-09 |
+| 351 | [Sheet 56 and the privacy page's UI pass](../session_351_handoff.md) | 2026-10-09 |
 | 350 | [the veteran map waits on Sheet 55](../session_350_handoff.md) | 2026-10-09 |
 | 349 | [Sierra's dock goes full screen when she answers](../session_349_handoff.md) | 2026-10-08 |
 | 348 | [Sierra's port, Sam's two readings, the guard change](../session_348_handoff.md) | 2026-10-08 |

@@ -128,3 +128,32 @@ rejects; Sam's Cowork sessions run there.
 
 **The Library paste landed.** Sam pasted the Sheet 55 receipt (01:46Z): the record reads version 55, 28 entries,
 Sheet 55 first. It went in as a paste after `apply_migration` on `cpl_library` timed out once more in S349.
+
+## 2026-10-09 (S350 SkyTide, continued): the Fact Sheet's first UI pass
+
+**The instrument had never read the page.** The glyph sweep scanned `fact-sheet/*.js` and `sierra/*.js` but neither
+page's `index.html`, where the toolbars are written, and its glyph set skipped the squared operators (⊞ ⊟), which pages
+use as icons. Three labeled glyphs on the Fact Sheet's toolbar sat outside every report since the sweep was written.
+The fix is narrow on purpose: the two standalone pages' markup, and only U+229E to U+22A1 from the math block, since
+− ≤ ≥ are typography. The same shape as `methodology-a-sweep-sees-only-the-states-its-seed-reaches`, one level up: a
+sweep sees only the files its target list names.
+
+**A token the page never defines falls through to its fallback, silently.** The statewide-recs toggle asked for
+`var(--accent,#1c5d99)`. The Fact Sheet defines no `--accent`, so every toggle painted the fallback, a blue outside First
+Light, and nothing flagged it: the hex sat inside a `var()`. The injected CSS's other fallbacks were harmless (their
+tokens exist), so dropping every fallback also removes the place the next undefined token would hide.
+
+**A link in running text reaches the 24px floor with vertical padding on the inline box.** The padding enlarges what a
+press lands on and does not enter the line box, so the text does not move. Standalone links and buttons take
+`min-height: 24px` instead.
+
+**A sticky bar's cost is its height at the narrowest width.** The Fact Sheet's action bar is sticky at every width; on a
+390px phone it wraps to three rows, 200px of an 844px screen. Below 561px it now scrolls away with the page. Desktop
+keeps it sticky (two rows, 117px, as before).
+
+**A hidden header row is a finding until each value carries its label.** The harness reported the statewide grid's
+label strip dropped below 561px. The CSS had moved the labels onto each figure through `::before` (S175); measured at
+390px, 56 of 56 figures were labeled, so the target declares the strip in `mayHideBelow` with that reason.
+
+**The look stays Sam's call.** The colors are First Light's; the type (Cambria and Calibri) matches the Word download,
+and there is no dark mode. Open Asks Sheet 56 asks whether to mock the screen up on First Light, downloads unchanged.
