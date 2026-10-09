@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Machine Tool Technology: Coordinate Metrology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/machine-tool-technology-numerical-control-tool-programmer-option-certificate-achievement/",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/coordinate-metrology-certificate-achievement/",
  "record_shape": 3,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5991,
+  "input_tokens": 5521,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5991,
-    "output_tokens": 902,
+    "input_tokens": 5521,
+    "output_tokens": 555,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,24 @@
     "model": null
    }
   ],
-  "output_tokens": 902,
+  "output_tokens": 555,
   "output_tokens_details": {
-   "thinking_tokens": 277
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.042,
- "ms": 8208,
- "seconds": 8.6,
+ "cost_usd": 0.03318,
+ "ms": 5078,
+ "seconds": 5.4,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 7,
    "listed": 7,
-   "share": 0.0,
-   "missing": [
-    "MTT100",
-    "MTT130",
-    "MTT131",
-    "MTT132",
-    "MTT133",
-    "MTT140",
-    "MTT180"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "pass": true
   },
@@ -66,82 +58,118 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    17.0,
+    17.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "(not found: the text prints only 'Machine Tool Technology: Computer Numerical Control Programmer (CERT)')",
+   "section_heading": "Machine Tool Technology: Coordinate Metrology (CERT)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 17,
+    "max": 17
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": []
+   "outcomes": [
+    "Interpret blueprint information and translate it into actionable items.",
+    "Identify and select appropriate measurement instruments and equipment to meet blueprint accuracy requirements.",
+    "Utilize an AS9102 inspection report for a finished part."
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MTT 100",
-    "why": "Coordinate Metrology section not in text; named only in the CNC Programmer certificate section"
-   },
-   {
-    "code": "MTT 130",
-    "why": "Coordinate Metrology section not in text; named only in the CNC Programmer certificate section"
-   },
-   {
-    "code": "MTT 131",
-    "why": "Coordinate Metrology section not in text; named only in the CNC Programmer certificate section"
-   },
-   {
-    "code": "MTT 132",
-    "why": "not in the text"
-   },
-   {
-    "code": "MTT 133",
-    "why": "not in the text"
-   },
-   {
-    "code": "MTT 140",
-    "why": "Coordinate Metrology section not in text; named only in the CNC Programmer certificate section"
-   },
-   {
-    "code": "MTT 180",
-    "why": "Coordinate Metrology section not in text; named only in the CNC Programmer certificate section"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MTT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 140",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text, and its source URL, belong to a different program: 'Machine Tool Technology: Computer Numerical Control Programmer (CERT)' (36-38.5 units). It does not include the 'Machine Tool Technology: Coordinate Metrology' Certificate of Achievement section.",
-   "No blocks, total or outcomes are recorded because the CNC Programmer requirements and its Program Student Learning Outcomes do not apply to the Coordinate Metrology award.",
-   "A reviewer should retrieve the Coordinate Metrology certificate page for the 2026-2027 catalog. That award likely includes MTT 132 and MTT 133, which do not appear on this page."
+   "The page begins with a site navigation list of other programs, which is not part of this award's section."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "37966828676"
 }

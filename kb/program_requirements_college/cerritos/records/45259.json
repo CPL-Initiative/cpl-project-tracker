@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Welding Technology: Process Pipe Welding",
  "award": "A.S. Degree",
- "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/process-pipe-welding-a.html",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/arc-welding-as/",
  "record_shape": 3,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5565,
+  "input_tokens": 5970,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5565,
-    "output_tokens": 1328,
+    "input_tokens": 5970,
+    "output_tokens": 1289,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,24 +30,34 @@
     "model": null
    }
   ],
-  "output_tokens": 1328,
+  "output_tokens": 1289,
   "output_tokens_details": {
-   "thinking_tokens": 310
+   "thinking_tokens": 775
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.04882,
- "ms": 10907,
- "seconds": 11.4,
+ "cost_usd": 0.04966,
+ "ms": 12500,
+ "seconds": 12.8,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 0,
    "listed": 9,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.0,
+   "missing": [
+    "WELD149",
+    "WELD153",
+    "WELD155",
+    "WELD159",
+    "WELD200",
+    "WELD210L",
+    "WELD222",
+    "WELD252L",
+    "WELD254L"
+   ],
    "unexplained": [],
    "pass": true
   },
@@ -58,147 +68,86 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    23.0,
-    23.0
+    0.0,
+    0.0
    ],
-   "stated": [
-    23.0,
-    23.0
-   ],
-   "why": []
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Welding Technology: Process Pipe Welding (A.S.)",
+   "section_heading": "Welding Technology: Arc Welding (A.S.)",
    "measure": "units",
    "total_units": {
-    "min": 23,
-    "max": 23
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [
-    "Students will be proficient in the identification of industrial pipe including: Sizes, specifications, schedules, grades, tensile strengths, and alloys.",
-    "Students will be proficient in the identification of industrial pipe fabrication components including: Pipe flanges, pipe fittings, and various valve types.",
-    "Students will use manual Oxyacetylene Flame Cutting Equipment to fabricate the correct pipe welding joint geometry before welding with an acceptable appearance."
-   ]
+   "outcomes": []
   },
-  "blocks": [
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
    {
-    "name": "Core Requirements",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "WELD 149",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WELD 159",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
+    "code": "WELD 149",
+    "why": "Text has no Process Pipe Welding section; appears only in the Arc Welding A.S. required courses"
    },
    {
-    "name": "Required Courses",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "WELD 153",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WELD 155",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WELD 200",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WELD 210L",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WELD 222",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WELD 252L",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WELD 254L",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
+    "code": "WELD 153",
+    "why": "Not in the text"
+   },
+   {
+    "code": "WELD 155",
+    "why": "Text has no Process Pipe Welding section; appears only as a recommended course for Arc Welding A.S."
+   },
+   {
+    "code": "WELD 159",
+    "why": "Text has no Process Pipe Welding section; appears only in the Arc Welding A.S. required courses"
+   },
+   {
+    "code": "WELD 200",
+    "why": "Text has no Process Pipe Welding section; appears only in the Arc Welding A.S. required courses"
+   },
+   {
+    "code": "WELD 210L",
+    "why": "Text has no Process Pipe Welding section; appears only in the Arc Welding A.S. required courses"
+   },
+   {
+    "code": "WELD 252L",
+    "why": "Not in the text"
+   },
+   {
+    "code": "WELD 254L",
+    "why": "Text has no Process Pipe Welding section; appears only as a recommended course for Arc Welding A.S."
+   },
+   {
+    "code": "WELD222",
+    "why": "Text has no Process Pipe Welding section; WELD 222 appears only as a recommended course for Arc Welding A.S."
    }
   ],
-  "course_outcomes": [],
-  "missing_explained": [],
-  "notes": [
-   "WELD 222 is printed in the catalog with a space; the closed list stores it as 'WELD222' with no units. Treated as the same course (catalog_addition false).",
-   "Title mismatches between catalog and state file: WELD 149 is titled 'Welding Industry Project Planning and Estimation' in the catalog but 'Welding Shop Math' in the state file; WELD 155 is titled 'Industrial Pipe Fitting Fundamentals' in the catalog but 'Welding Industry Project Planning and Estimation' in the state file. Reviewer should verify the codes.",
-   "The degree text refers to 'the General Education requirements' without naming a specific pattern, so ge_pattern is left null.",
-   "Program total of 23 units is as printed; the degree requires a minimum of 60 units including GE and electives as needed (electives not counted in the major total)."
-  ]
+  "notes": []
  },
- "extracted_run": "37961137169"
+ "extracted_run": "37966828676"
 }

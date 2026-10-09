@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Welding Technology: Combination Welder",
  "award": "A.S. Degree",
- "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/combination-welder-certificate/",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/combination-welder/",
  "record_shape": 3,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5407,
+  "input_tokens": 5490,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5407,
-    "output_tokens": 1330,
+    "input_tokens": 5490,
+    "output_tokens": 1432,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,24 @@
     "model": null
    }
   ],
-  "output_tokens": 1330,
+  "output_tokens": 1432,
   "output_tokens_details": {
-   "thinking_tokens": 524
+   "thinking_tokens": 383
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.04823,
- "ms": 11577,
- "seconds": 12.0,
+ "cost_usd": 0.0506,
+ "ms": 11973,
+ "seconds": 12.3,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 7,
    "listed": 7,
-   "share": 0.0,
-   "missing": [
-    "WELD120",
-    "WELD130",
-    "WELD149",
-    "WELD155",
-    "WELD159",
-    "WELD200",
-    "WELD222"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "pass": true
   },
@@ -66,84 +58,134 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    25.0,
+    25.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Welding Technology: Combination Welder (CERT)",
+   "section_heading": "Welding Technology: Combination Welder (A.S.)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 25
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": []
+   "outcomes": [
+    "Students will correctly setup and perform welding operations with the three most commonly used welding processes, which include: Shielded Metal Arc Welding, Flux Cored Arc Welding, and Gas Metal Arc Welding.",
+    "Students will correctly setup Oxyacetylene Flame Cutting Equipment and perform manual oxyacetylene flame cutting operations with an acceptable appearance.",
+    "Students will correctly setup Plasma Arc Cutting Equipment and perform manual plasma arc cutting operations with an acceptable appearance."
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "WELD 120",
-    "why": "named only in the certificate section; no A.S. section in text"
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WELD 149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 159",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "WELD 130",
-    "why": "named only in the certificate section; no A.S. section in text"
-   },
-   {
-    "code": "WELD 149",
-    "why": "named only in the certificate section; no A.S. section in text"
-   },
-   {
-    "code": "WELD 155",
-    "why": "named only in the certificate section; no A.S. section in text"
-   },
-   {
-    "code": "WELD 159",
-    "why": "named only in the certificate section; no A.S. section in text"
-   },
-   {
-    "code": "WELD 200",
-    "why": "named only in the certificate section; no A.S. section in text"
-   },
-   {
-    "code": "WELD222",
-    "why": "named only in the certificate section (as WELD 222); no A.S. section in text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WELD 120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 155",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 222",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The requested award is the A.S. Degree, but the source page (URL combination-welder-certificate) prints only 'Welding Technology: Combination Welder (CERT)', a Certificate of Achievement. No A.S. section appears in the text, so no blocks, total or outcomes are recorded for the A.S.",
-   "For reviewer reference, the certificate section prints: Core Requirements WELD 149 (4.0) and WELD 159 (4.0); Required Courses WELD 120 (5.0), WELD 155 (2.0), WELD 130 (5.0), WELD 200 (4.0), WELD 222 (1.0); Total Units 25.",
-   "The certificate section prints three Program Student Learning Outcomes; they are not recorded because they belong to the certificate, not the A.S. degree.",
-   "Title discrepancies vs. the closed list in the certificate section: WELD 149 is printed as 'Welding Industry Project Planning and Estimation' (closed list: Welding Shop Math); WELD 155 as 'Industrial Pipe Fitting Fundamentals' (closed list: Welding Industry Project Planning and Estimation); WELD 130 as 'Gas Tungsten Arc Welding Fundamentals'. Closed list code 'WELD222' appears printed as 'WELD 222'.",
-   "The A.S. degree page for this program should be located to complete this record."
+   "WELD 222 in the catalog is matched to closed-list entry 'WELD222' (same title, Aerospace Welding Inspection; the closed list omits the space and stores no units). Catalog prints 1.0 unit.",
+   "Title mismatches between catalog and closed list: catalog prints WELD 149 as 'Welding Industry Project Planning and Estimation' (closed list: 'Welding Shop Math'); WELD 155 as 'Industrial Pipe Fitting Fundamentals' (closed list: 'Welding Industry Project Planning and Estimation'); WELD 130 as 'Gas Tungsten Arc Welding Fundamentals'. Reviewer should check whether the WELD 149 title is a catalog error.",
+   "Printed Total Units 25 matches the sum of the listed courses (4+4+5+5+2+4+1).",
+   "The degree requires 'the General Education requirements' and electives to reach 60 units but does not name a GE pattern, so ge_pattern is null.",
+   "Outcomes are printed under 'Program Student Learning Outcomes' on the A.S. page and recorded as printed."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "37966828676"
 }

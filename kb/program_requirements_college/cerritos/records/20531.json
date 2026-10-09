@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "International Studies: Global Resources",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/global-studies-certificate-achievement/",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/global-resources-cert/",
  "record_shape": 3,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5790,
+  "input_tokens": 5669,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5790,
-    "output_tokens": 2544,
+    "input_tokens": 5669,
+    "output_tokens": 1280,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,66 +30,36 @@
     "model": null
    }
   ],
-  "output_tokens": 2544,
+  "output_tokens": 1280,
   "output_tokens_details": {
-   "thinking_tokens": 866
+   "thinking_tokens": 282
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07404,
- "ms": 29529,
- "seconds": 29.9,
+ "cost_usd": 0.04828,
+ "ms": 9972,
+ "seconds": 10.3,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 9,
    "listed": 10,
-   "share": 0.5,
+   "share": 0.9,
    "missing": [
-    "ENGL106",
-    "ESCI104",
-    "GEOG101",
-    "GEOL101",
     "POL210"
    ],
    "unexplained": [],
    "pass": true
   },
   "invented": {
-   "count": 14,
+   "count": 1,
    "codes": [
-    "ANTH170",
-    "COMM110",
-    "ECON102",
-    "ECONC2001",
-    "ECONC2002",
-    "HIST246",
-    "HIST275",
-    "POLS210",
-    "POLS220",
-    "POLS230",
-    "POLS240",
-    "SOC215",
-    "SOCIC1000",
-    "WGS206"
+    "POLS210"
    ],
    "flagged": [
-    "ANTH170",
-    "COMM110",
-    "ECON102",
-    "ECONC2001",
-    "ECONC2002",
-    "HIST246",
-    "HIST275",
-    "POLS210",
-    "POLS220",
-    "POLS230",
-    "POLS240",
-    "SOC215",
-    "SOCIC1000",
-    "WGS206"
+    "POLS210"
    ],
    "pass": true
   },
@@ -97,12 +67,12 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    24.0,
-    24.0
+    21.0,
+    21.0
    ],
    "stated": [
-    24.0,
-    24.0
+    21.0,
+    21.0
    ],
    "why": []
   },
@@ -111,12 +81,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -124,47 +94,27 @@
  },
  "record": {
   "program": {
-   "section_heading": "International Studies: Global Studies (CERT)",
+   "section_heading": "International Studies: Global Resources (CERT)",
    "measure": "units",
    "total_units": {
-    "min": 24,
-    "max": 24
+    "min": 21,
+    "max": 21
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [
-    "Students analyze the impact of fiscal and monetary policy on the economy.",
-    "Students describe how households maximize utilities and firms maximize profits in different market structures",
-    "Students evaluate the costs and benefits of government intervention in markets.",
-    "Students locate and utilize data to critically interpret economic information using quantitative methods.",
-    "Students understand the basic principles of a market economy and its principal economic institutions"
-   ]
+   "outcomes": []
   },
   "blocks": [
    {
-    "name": "Core Requirements (15 units)",
+    "name": "Core Requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 15,
-     "max": 15
+     "min": null,
+     "max": null
     },
     "courses": [
-     {
-      "code": "ANTH 100",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ECON C2002",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
      {
       "code": "GEOG 105",
       "units": 3,
@@ -173,105 +123,31 @@
       "catalog_addition": false
      },
      {
-      "code": "HIST 275",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "POLS 210",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Option 1: Political-Economic Option (select three courses)",
-    "rule": "choose_courses",
-    "minimum": 3,
-    "option_group": "Division Requirements",
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
+     },
      {
       "code": "BA 101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "ECON 102",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "WGS 206",
-        "units": null,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 246",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POLS 220",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POLS 230",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POLS 240",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ECON C2001",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    },
    {
-    "name": "Option 2: Socio-Cultural (select three courses)",
+    "name": "Any one of the following",
     "rule": "choose_courses",
-    "minimum": 3,
-    "option_group": "Division Requirements",
+    "minimum": 1,
+    "option_group": null,
     "stated": {
-     "min": 9,
-     "max": 9
+     "min": 3,
+     "max": 3
     },
     "courses": [
-     {
-      "code": "ANTH 170",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
      {
       "code": "PHIL 200",
       "units": 3,
@@ -280,28 +156,66 @@
       "catalog_addition": false
      },
      {
-      "code": "SOC 215",
+      "code": "ANTH 100",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
-     },
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Division requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
-      "code": "COMM 110",
+      "code": "ENGL 106",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
-     },
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 6 units from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
      {
-      "code": "SOCI C1000",
+      "code": "GEOG 101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "GEOG 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESCI 104",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -314,34 +228,15 @@
   "missing_explained": [
    {
     "code": "POL 210",
-    "why": "catalog prints POLS 210 (International Relations); likely the same course under a different subject code"
-   },
-   {
-    "code": "ENGL 106",
-    "why": "not in the text"
-   },
-   {
-    "code": "ESCI 104",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOG 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOL 101",
-    "why": "not in the text"
+    "why": "not in the text; catalog prints POLS 210 International Relations instead"
    }
   ],
   "notes": [
-   "Program title mismatch: the requested program is 'International Studies: Global Resources', but the catalog page is 'International Studies: Global Studies (CERT)'. The closed list includes courses (ENGL 106, ESCI 104, GEOG 101, GEOL 101) that do not appear here; reviewer should confirm this page is the right program.",
-   "The Program Student Learning Outcomes printed are all economics outcomes and appear unrelated to Global Studies; copied as printed, but they may belong to a different program.",
-   "POLS 210 recorded as catalog addition because the closed list names POL 210; titles match (International Relations).",
-   "The 9.0 units are printed beside 'Division Requirements - Select one Option'; recorded as stated on each option block since each option is three 3-unit courses.",
-   "ANTH 170 and WGS 206 have no units printed beside them.",
-   "ECON 102 or WGS 206 (both 'Women in the Global Economy') recorded as one entry with WGS 206 as alternative.",
-   "Note printed: One year of Foreign Language study is recommended (not a requirement)."
+   "The catalog prints POLS 210 (International Relations); the closed list has POL 210 with the same title. Recorded POLS 210 as a catalog addition; likely the same course under a different subject code.",
+   "The 'Division requirements' heading lists only ENGL 106 directly, then 'Select 6 units from the following:'; recorded ENGL 106 as a required block and the 6-unit selection as a separate choose_units block. Reviewer may check whether the 6-unit selection belongs under Division requirements.",
+   "Selecting GEOL 101 (4 units) in the 6-unit choice could bring the total above the stated 21 units.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "37966828676"
 }
