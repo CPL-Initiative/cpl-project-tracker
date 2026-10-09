@@ -46,6 +46,9 @@ run "orphan-parent worklist"   "python3 kb/_build_orphan_parent_worklist.py --ch
 # stripped it out of main twenty minutes later. The SkyView lane file already told
 # people to run THIS script before a push — the page just was not in it.
 run "SkyView built page"      "python3 tests/skyview_built_from_source_test.py >/dev/null"
+# The public veteran map is built by veteran-sprint-map/build_selfcontained.py (S350
+# ported it to First Light); an edit made in the page is lost at the next build.
+run "veteran map built page"  "python3 veteran-sprint-map/build_selfcontained.py --check"
 # The standing open-asks sheet (Sam, 2026-09-22: "Always give me a decision
 # sheet for any outstanding items for me"). This is a COVERAGE check, never a
 # byte-equality one: the cards are hand-written, so what has to stay true is
