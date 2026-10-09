@@ -17,8 +17,9 @@ before it started.
 
 1. **One writer.** `list_sessions` (`mine: true`); S353 may still hold PR subscriptions (below).
 2. **Rule 8:** `cpl_memory` tags `phase-2`, `harvest`, `first-light`, `explainer`.
-3. **Open PRs:** #1941 (the Cerritos read, draft) and #1942 (First Light controls, CI was running). Merge #1942 on a green
-   `test`. Read #1941's head before anything else.
+3. **Open PRs:** #1943 (this checkpoint) and CPLBrain#288 (the session note): merge each on a green `test` (the vault's
+   coverage check after #1943 lands). #1941 (the Cerritos read, draft): its `lints` failed on a stale dependency-map view,
+   fixed in d62bf5d; read its head and the re-run's commit before anything else. #1942 merged (fa57477).
 
 ## Priority 1: finish the Cerritos load (Sam: "Cerritos first", 2026-10-09)
 
@@ -53,7 +54,7 @@ programs that lose a sibling's page in the re-run). They go to review with the f
 - **#1940 (merged):** the explainer's eleven typed passages are rich TEXT_BLOCKS on the tab (*The explainer's text*,
   curator only; `{base award}` figures stay live); the masthead from Sam's marks (CPL Initiative lockup, title, the
   controls as underlined words, "Ver: M/D/YY" after PDF, the video last in Contents).
-- **#1942 (open):** First Light rule, controls are underlined words; the Fact Sheet's bar and the Sierra launcher
+- **#1942 (merged):** First Light rule, controls are underlined words; the Fact Sheet's bar and the Sierra launcher
   converted; theme prototype v1.7; `presentation_doctrine` anchors First Light on "invent a palette".
 - **#1941 (open):** Phase 2 at Cerritos, above.
 
@@ -92,4 +93,6 @@ nothing waits on Sam that a card would carry. `cpl_memory_log` not written (the 
 
 ## What S353 lets go of at sign-off
 
-PR subscriptions #1941 and #1942; check-in `trig_011NgcbbgewWXaJxcPeCeSTE` (17:55Z).
+An EMERGENCY sign-off at 49k tokens of context, minutes after the full checkpoint (#1943); every Rule 9 artifact was
+refreshed there, and only this handoff changed after it. Let go: PR subscriptions #1941, #1943 and CPLBrain#288, and
+the check-in `trig_011NgcbbgewWXaJxcPeCeSTE` (17:55Z), deleted.
