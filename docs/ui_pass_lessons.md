@@ -69,3 +69,43 @@ line numbers also restales `kb/dependency_map.json`; regenerate it before the pu
 **A full local `npm test` here runs about 25 minutes, and the funding files alone run longer than the 10-minute shell
 limit.** Run the tests that read the changed files, then let CI's four shards (about 8 minutes) run the suite before the
 merge.
+
+## S352 (SkyMeridian, 2026-10-09): the Dashboard, and the Fact Sheet's port
+
+**A theme flip that scopes its override to the cards it knew leaves the base rule painting for the rest.** The
+"How this is calculated" panels (`ALGO_DETAILS_CSS` in `excel_to_dashboard.py`) were written for dark ink cards:
+white-alpha text, a mustard tint. First Light turned the KPI cards light and added a `.kpi-card` override, which
+fixed those eleven and left the base untouched. The two trend cards and the seven exhibit cards had also turned
+opaque white, and nothing overrode them: their summary, source and meta read white on white, 1:1, on every light
+Dashboard since. A probe of each panel's real ground (`getComputedStyle` up the ancestors) showed no dark card left,
+so the base rules now read theme tokens and the override is gone (#1937). Before keeping a base rule's "the other
+cards are dark" premise, measure every instance's ground.
+
+**Inline styles beat the stylesheet's focus ring.** The four College Activity filters set `outline:none` inline; COBI's
+`:focus-visible` rule could not reach them. Removing the inline declaration restored the ring. The template is emitted
+verbatim by the generator, so the fix went in `college_activity_template.html` and both HTMLs together (#1937).
+
+**A page that hosts a shared script must define what the script reads.** `factsheet_sierra.js` writes
+`var(--on-accent)` on its cobalt fills. The funding explainer defines the token; the Fact Sheet never did, so Ask
+Sierra on hover and the drawer's Send painted the body's ink on cobalt, 1.35:1, behind a clean sweep (one paints on
+hover, the other in a shut drawer). `tests/factsheet_a11y.test.js` (g) now fails any bare `var()` the page or its
+scripts read that `factsheet.css` does not define (#1934). Third worked case of
+[`methodology-an-undefined-css-token-fails-to-an-invisible-state`](kb-notes/methodology-an-undefined-css-token-fails-to-an-invisible-state.md).
+
+**A whole public page mocks up as itself.** The Fact Sheet's First Light mock-up is the page rendered by its own code
+with the curator's live overrides answered from a fixture, then given two stylesheets switched by their `media`
+attribute (*Look: First Light / Today*). An artifact loads nothing from another host, so the fonts and the page's own
+images went in as data URIs and the story photos (staging2.map.rccd.edu) were left out with a note. The port then
+copied the proposal over `factsheet.css` unchanged in substance (#1935, #1938).
+
+**A test that reads tokens from the whole stylesheet takes the last value.** Once `factsheet.css` gained dark blocks
+restating `--paper` and the rest, `factsheet_a11y.test.js`'s token map would have computed its light pairs with dark
+values. It reads the first `:root` block for light and the explicit dark block for its 15 new dark pairs.
+
+**The Supabase guard blocks an `update` through `execute_sql`.** The open-asks Library record's version 57 went to Sam
+as a paste with its receipt, as version 56 did (`apply_migration` times out on `cpl_library`).
+
+**A symlinked `node_modules` is a file to git.** `.gitignore` named `node_modules/`, which matches a directory only, so
+the handoff's worktree pattern (symlink `node_modules` into each worktree) put the link into #1934 through `git add -A`.
+The ignore line has no slash now; stage named paths in a worktree anyway.
+

@@ -4914,7 +4914,7 @@
      ],
      "title": "An undefined CSS custom property fails to an invisible state, and no jsdom test can see it",
      "type": "methodology",
-     "updated": "2026-09-06"
+     "updated": "2026-10-09"
     },
     {
      "created": "2026-08-07",
@@ -15133,8 +15133,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 323,
+   "count": 324,
    "docs": [
+    {
+     "created": "2026-10-09",
+     "governs": [],
+     "n": 353,
+     "path": "docs/session_353_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ui-pass",
+      "fact-sheet",
+      "first-light",
+      "dark-mode",
+      "dashboard",
+      "checkpoint"
+     ],
+     "title": "the Fact Sheet on First Light, and the Dashboard's first pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-09",
      "governs": [],
@@ -20640,5 +20659,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1079
+ "total": 1080
 }

@@ -274,7 +274,10 @@ The whole ecosystem, end-to-end:
 7. **A public CPL Fact Sheet** — a self-contained, shareable page at
    [`/fact-sheet/`](https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/)
    that recreates the journalist Fact Sheet, pulls the headline KPIs live from
-   `live_metrics.json`, and prints to a clean PDF. It **"sits alone"** (no
+   `live_metrics.json`, and prints to a clean PDF. On screen it is on First Light
+   (Playfair Display and Source Sans 3, and a dark mode that follows COBI's
+   theme control, S352); print and the Word download keep Cambria and Calibri.
+   It **"sits alone"** (no
    dashboard nav) so it can be shared publicly without exposing the internal
    tabs; a "📄 CPL Fact Sheet" link in the left nav rail opens it. It carries a
    rotating "My CPL Stories" section and is **reviewer-Curate-editable** in place
