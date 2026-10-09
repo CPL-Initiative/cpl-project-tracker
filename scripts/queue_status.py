@@ -132,6 +132,19 @@ def faults(q, root=ROOT, parts=None):
                  and (v["href"].startswith("https://") or re.match(r"^#[A-Za-z0-9_.~-]+$", v["href"])),
                  w + ".view.href must be an https address or a COBI tab's bare hash (#cpl-pathways)")
             text((v or {}).get("text") if isinstance(v, dict) else None, w + ".view.text")
+        # A call that names records (S354): the Progress card lists each with Confirm and
+        # Needs a fix, so each needs the key the verdict RPC takes.
+        recs = c.get("records")
+        if recs is not None:
+            need(isinstance(recs, list) and len(recs) > 0, w + ".records must be a non-empty list when present")
+            for j, r in enumerate(recs if isinstance(recs, list) else []):
+                rw = "%s.records[%d]" % (w, j)
+                if not isinstance(r, dict):
+                    out.append(rw + " must be an object")
+                    continue
+                text(r.get("college"), rw + ".college")
+                text(r.get("control_number"), rw + ".control_number")
+                text(r.get("label"), rw + ".label", required=False)
     notes = q.get("notes", {})
     need(isinstance(notes, dict), "notes must map a part id to its foot line")
     known = parts if parts is not None else part_ids()

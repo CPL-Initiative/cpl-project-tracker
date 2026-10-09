@@ -928,6 +928,53 @@ block("(13)", function () {
   });
 });
 
+// ── (14) A call answers its records on its card (Sam, 2026-10-09, on his phone) ──
+// "I see this but can't respond there I don't think... can we add a way to respond on the
+// sheet that you could read?" The failures this guards: a call that lists records with no
+// way to answer them, an answer that writes anywhere but the verdict RPC, a signed-out
+// reader shown buttons that cannot save, and a link that loses the record it names.
+block("(14)", function () {
+  const CALL = { title: "Read two records", text: "Open each below.",
+    records: [{ college: "Irvine Valley College", control_number: "10265", label: "Art A.A." },
+              { college: "Cerritos College", control_number: "42158", label: "Field Ironworkers A.S." }] };
+  const out = progressReady(20);
+  out.M._state.progress.queue.calls = [CALL]; out.M._render();
+  let card = out.root.querySelector('details[data-sec="progress:call:0"]');
+  check("(14) signed out, the call names its records and offers the sign-in, with no button that cannot save",
+    !!card && card.querySelectorAll(".prh-callrec").length === 2 && /10265 Art A\.A\./.test(card.textContent) &&
+    !!card.querySelector(".prh-signin") && !card.querySelector(".prh-verdict"));
+
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    const f = progressFixture(20);
+    r.M._state.progress = { addenda: f.addenda, active: 20282, queue: Object.assign({}, f.queue, { calls: [CALL] }), errors: {},
+      readAt: new Date("2026-10-07T21:40:00Z") };
+    r.M._state.view = "progress"; r.M._render();
+    card = r.root.querySelector('details[data-sec="progress:call:0"]');
+    const recs = card.querySelectorAll(".prh-callrec");
+    const art = recs[0];
+    check("(14) signed in, each record carries its state in its summary", /Waiting on your reading/.test(art.querySelector("summary").textContent) &&
+      /Checked by Sam/.test(recs[1].querySelector("summary").textContent));
+    check("(14) each record opens to its catalog page and Confirm and Needs a fix",
+      !!art.querySelector('a[href="https://example.org/art"]') && !!art.querySelector(".prh-verdict") &&
+      art.querySelectorAll(".prh-verdict button")[0].textContent === "Confirm");
+    check("(14) the open control is an underlined word, 24px tall", /\.prh-word \{[^}]*text-decoration:underline[^}]*\}/.test(SRC) &&
+      /\.prh-word \{[^}]*min-height:24px/.test(SRC) && art.querySelector("button.prh-word").textContent === "Open it on Program records");
+    art.querySelector(".prh-verdict button").click();
+    return tick().then(tick).then(function () {
+      check("(14) Confirm on the card writes the verdict through the one RPC, with the record's fingerprint",
+        r.posts.length === 1 && r.posts[0].body.p_college === "Irvine Valley College" && r.posts[0].body.p_control_number === "10265" &&
+        r.posts[0].body.p_verdict === "confirm" && r.posts[0].body.p_requirements_fp === "fp-art", JSON.stringify(r.posts.map(function (p) { return p.body; })));
+      check("(14) the summary says the answer without a reload", /^Confirmed by you/.test(art.querySelector("summary .prh-state").textContent),
+        art.querySelector("summary .prh-state").textContent);
+      art.querySelector("button.prh-word").click();
+      const q = r.root.querySelector("#prh-rq");
+      check("(14) Open it lands on Program records, searched to the record", r.M._state.view === "records" && !!q && q.value === "10265" &&
+        r.root.querySelectorAll("article.prh-rec").length === 1);
+    });
+  });
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {
