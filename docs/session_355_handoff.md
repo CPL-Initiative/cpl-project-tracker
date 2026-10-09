@@ -84,7 +84,7 @@ note PR are merged in the same turn. No check-in, routine or artifact watch was 
 
 ## Added after sign-off (EMERGENCY checkpoint, S354, 2026-10-09 ~21:05Z, 43k context left)
 
-Sam came back with a verdict and two asks. Rule 9 artifacts NOT refreshed for this addendum: the lessons doc,
+**Merge #1949 (this addendum) on a green `test` first.** Sam came back with a verdict and two asks. Rule 9 artifacts NOT refreshed for this addendum: the lessons doc,
 KB notes, INDEX rebuild, pipeline tab, kb/README, README, queue status, vault note, the UI pass. Only this
 handoff, the harvest lane line and one `cpl_memory` row were written.
 
