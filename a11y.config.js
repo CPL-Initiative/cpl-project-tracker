@@ -684,6 +684,13 @@ module.exports = {
     title: "Privacy: the CPL Library filer (public)",
     mayHideBelow: [],
   },
+  /* The same page dark (S351, its first UI pass put it on the cpl_theme contract). */
+  "privacy-dark": {
+    file: "privacy.html",
+    title: "Privacy: the CPL Library filer, dark",
+    mayHideBelow: [],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),
+  },
 
   /* ── The public funding explainer ────────────────────────────────────────
      funding-model/index.html hosts the Implementation Funding tab's own

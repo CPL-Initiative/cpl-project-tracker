@@ -49,6 +49,13 @@
 //       embedded layout (?embed=1) that fills COBI's iframe without an inner
 //       scroll. Each is asserted so a later edit cannot quietly undo it.
 //
+//  PRIVACY  (privacy.html, the page Google's consent screen links for the
+//            Library filer)
+//   (j) S351's UI pass found it on First Light's colors but not its type
+//       (system-ui) and with no dark mode. Now the theme's two faces, self-hosted
+//       from sierra/fonts/ (a move of those files would fall back silently, so
+//       the files are checked), and dark on the cpl_theme contract.
+//
 // Run from repo root: `npm test` (or `node tests/public_pages_a11y.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -261,6 +268,29 @@ val("map: above 980px a shorter map keeps the approved marker size (COBI's frame
 });
 val("map: the committed HTML is a full build (no template placeholder left)",
   () => !/__FONTS__|__DATA_JS__/.test(M_HTML) && /const DATA = \{"colleges"/.test(M_HTML));
+
+// ─────────────────────────── Privacy ───────────────────────────
+// (j) First Light: the palette, the dark contract, the type
+const P_HTML = fs.readFileSync("privacy.html", "utf8");
+const P_HEAD = P_HTML.slice(0, P_HTML.indexOf("<style>"));
+const P_CSS = (P_HTML.match(/<style>([\s\S]*?)<\/style>/) || ["", ""])[1].replace(/\/\*[\s\S]*?\*\//g, "");
+val("privacy: every color lives in a :root block (no raw hex in a component rule)", () => {
+  const rest = P_CSS.replace(/@font-face\s*\{[^}]*\}/g, "").replace(/:root[^{]*\{[^}]*\}/g, "");
+  return P_CSS.length > 0 && !/#[0-9a-fA-F]{3,8}\b/.test(rest) && !/rgba?\(/.test(rest);
+});
+val("privacy: dark follows the OS unless the reader chose light, and an explicit dark choice",
+  () => /@media \(prefers-color-scheme: dark\)\s*\{\s*:root:not\(\[data-theme="light"\]\)\s*\{[^}]*--paper:\s*#151514/.test(P_CSS) &&
+        /:root\[data-theme="dark"\]\s*\{[^}]*--paper:\s*#151514/.test(P_CSS));
+val("privacy: the COBI theme choice is read before the first paint",
+  () => /localStorage\.getItem\("cpl_theme"\)/.test(P_HEAD) && /setAttribute\("data-theme",t\)/.test(P_HEAD));
+val("privacy: the body and the heading set First Light's two faces", () =>
+  /body\s*\{[^}]*font-family:\s*var\(--font-body\)/.test(P_CSS) &&
+  /h1\s*\{[^}]*font-family:\s*var\(--font-display\)/.test(P_CSS) &&
+  /--font-body:\s*'Source Sans 3'/.test(P_CSS) && /--font-display:\s*'Playfair Display'/.test(P_CSS));
+val("privacy: the faces are self-hosted, and every file the page names exists", () => {
+  const urls = [...P_HTML.matchAll(/(?:href=|url\()\s*['"]?(sierra\/fonts\/[^'")\s]+\.woff2)/g)].map((m) => m[1]);
+  return urls.length >= 4 && urls.every((u) => fs.existsSync(u)) && !/https?:\/\/fonts\./.test(P_HTML);
+});
 
 // ── report ──
 let failed = 0;
