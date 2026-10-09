@@ -6,7 +6,7 @@
   "edge_functions": 6,
   "file_datasets": 610,
   "external_services": 162,
-  "consumers": 421,
+  "consumers": 420,
   "workflows": 45,
   "data_js_files": 69,
   "tabs": 39
@@ -1566,7 +1566,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 29
+     "line": 39
     },
     {
      "id": "script:veteran-sprint-map/build_web.py",
@@ -3158,18 +3158,11 @@
      ]
     },
     {
-     "id": "script:prototype/veteran_map_mockup.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 243
-    },
-    {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 260
+     "line": 338
     }
    ],
    "main_committers": []
@@ -14542,13 +14535,6 @@
      "line": 135
     },
     {
-     "id": "script:prototype/veteran_map_mockup.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 40
-    },
-    {
      "id": "script:veteran-sprint-map/extract_military.py",
      "kind": "script",
      "direction": "read",
@@ -15536,26 +15522,6 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
-  },
-  "file:prototype/veteran_map_mockup.html": {
-   "consumers": [
-    {
-     "id": "script:prototype/veteran_map_mockup.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 524
-    },
-    {
-     "id": "script:prototype/veteran_map_mockup.py",
-     "kind": "script",
-     "direction": "write",
-     "how": "literal",
-     "line": 524
-    }
-   ],
-   "served": true,
-   "main_committers": []
   },
   "file:quickstart.js": {
    "consumers": [
@@ -18312,15 +18278,21 @@
     "workflow:daily-dashboard.yml"
    ]
   },
-  "file:veteran-sprint-map/ca_cpl_map_selfcontained.html": {
+  "file:veteran-sprint-map/build_selfcontained.py": {
    "consumers": [
     {
-     "id": "page:CPL_Dashboard.html",
-     "kind": "page",
-     "direction": "read",
-     "how": "markup",
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
      "line": 0
-    },
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:veteran-sprint-map/ca_cpl_map_selfcontained.html": {
+   "consumers": [
     {
      "id": "script:scripts/ui_pass.py",
      "kind": "script",
@@ -18333,14 +18305,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 741
+     "line": 640
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 741
+     "line": 640
     }
    ],
    "served": true,
@@ -18353,7 +18325,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 63
     },
     {
      "id": "script:veteran-sprint-map/build_static.py",
@@ -18380,7 +18352,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 35
+     "line": 45
     },
     {
      "id": "script:veteran-sprint-map/build_web.py",
@@ -18400,7 +18372,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 45
+     "line": 55
     },
     {
      "id": "script:veteran-sprint-map/build_static.py",
@@ -22619,6 +22591,7 @@
     "tests/merge_candidate_queue_test.py",
     "tests/alias_chain_single_source_test.py",
     "tests/skyview_built_from_source_test.py",
+    "veteran-sprint-map/build_selfcontained.py",
     "tests/stop_hook_git_check_test.py",
     "tests/video_context_test.py",
     "tests/kpi_history_no_gaps_test.py"

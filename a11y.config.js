@@ -398,6 +398,79 @@ async function seedMyCollegeReports(page, signin) {
   await page.waitForTimeout(400);
 }
 
+/* ── The veteran map (S350: First Light, one builder, three targets) ─────────
+   The pin exemption and the keyboard checks are shared by the page as a reader
+   opens it, the same page dark, and the embedded layout COBI's Military
+   Partnerships iframe opens (?embed=1). */
+/* WCAG 2.2 SC 2.5.8 has an "Essential" and an "Equivalent" exception, and
+   the map pins are both. A pin's position and size ENCODE geography: at a
+   390px viewport the whole state is ~390px wide, so growing 159 markers to
+   24px would make the Los Angeles basin one solid blob and MISSTATE where
+   the colleges are. And every one of them is reachable another way.
+
+   The exemption is not a skip. `equivalent` must exist and must itself pass
+   the 24px floor, so if anyone ever deletes the directory lists — the thing
+   that makes the pins optional — this stops being exempt and the run fails.
+   Measured: 115 college rows + 44 installation rows at 362x28 on a phone. */
+const VETERAN_PIN_EXEMPT = [{
+  selector: "#g-colleges .mk, #g-bases .mk",
+  reason: "geographic pin — size and position are essential (SC 2.5.8 Essential)",
+  /* `revealBy` is part of the claim, not a convenience: the equivalent
+     route is behind a tab, so saying so is what makes the exemption
+     checkable. A first cut asserted the lists directly, measured them
+     while their panel was display:none, and reported the exemption broken
+     — the honest failure, and the fix is to state the path. */
+  equivalent: [
+    { sel: "#list-col li", revealBy: '.tab[data-tab="colleges"]', what: "college directory" },
+    { sel: "#list-base li", revealBy: '.tab[data-tab="bases"]', what: "installation directory" },
+  ],
+}];
+
+/* Shape is not behaviour. tabindex on a <g> proves it can be focused; only
+   pressing Enter proves it DOES anything. Every marker and every directory
+   row was mouse-only before this run, so these are the checks that say the
+   fix landed rather than that the attributes did. */
+async function veteranMapChecks(page) {
+  const out = [];
+  out.push(await page.evaluate(() => {
+    const mk = document.querySelector("#g-colleges .mk");
+    if (!mk) return { name: "a college pin is focusable", ok: false, detail: "no marker found" };
+    mk.focus();
+    return {
+      name: "a college pin is focusable and named",
+      ok: document.activeElement === mk && !!mk.getAttribute("aria-label"),
+      detail: "label=" + (mk.getAttribute("aria-label") || "(none)").slice(0, 46),
+    };
+  }));
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(200);
+  out.push(await page.evaluate(() => {
+    const h = document.querySelector("#detail h2");
+    return {
+      name: "Enter on a pin renders that college's detail",
+      ok: !!h && h.textContent.trim().length > 0,
+      detail: h ? h.textContent.trim().slice(0, 40) : "detail pane still empty",
+    };
+  }));
+  out.push(await page.evaluate(() => {
+    const t = document.querySelector('.tab[data-tab="colleges"]');
+    if (t) t.click();
+    const li = document.querySelector("#list-col li");
+    if (!li) return { name: "a directory row is operable", ok: false, detail: "no rows" };
+    li.focus();
+    const focused = document.activeElement === li;
+    li.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+    const h = document.querySelector("#detail h2");
+    return {
+      name: "a directory row is focusable and Enter selects it",
+      ok: focused && !!h && h.textContent.trim().length > 0,
+      detail: "focusable=" + focused + ", detail=" + (h ? h.textContent.trim().slice(0, 30) : "empty"),
+    };
+  }));
+  return out;
+}
+
+
 module.exports = {
   /* Served over http from the repo root — same-origin is load-bearing, not
      tidiness; the engine header says why. */
@@ -456,72 +529,27 @@ module.exports = {
     file: "veteran-sprint-map/ca_cpl_map_selfcontained.html",
     title: "Veteran Sprint map (colleges x installations)",
     mayHideBelow: [],
-    /* WCAG 2.2 SC 2.5.8 has an "Essential" and an "Equivalent" exception, and
-       the map pins are both. A pin's position and size ENCODE geography: at a
-       390px viewport the whole state is ~390px wide, so growing 159 markers to
-       24px would make the Los Angeles basin one solid blob and MISSTATE where
-       the colleges are. And every one of them is reachable another way.
-
-       The exemption is not a skip. `equivalent` must exist and must itself pass
-       the 24px floor, so if anyone ever deletes the directory lists — the thing
-       that makes the pins optional — this stops being exempt and the run fails.
-       Measured: 115 college rows + 44 installation rows at 362x28 on a phone. */
-    targetSizeExempt: [{
-      selector: "#g-colleges .mk, #g-bases .mk",
-      reason: "geographic pin — size and position are essential (SC 2.5.8 Essential)",
-      /* `revealBy` is part of the claim, not a convenience: the equivalent
-         route is behind a tab, so saying so is what makes the exemption
-         checkable. A first cut asserted the lists directly, measured them
-         while their panel was display:none, and reported the exemption broken
-         — the honest failure, and the fix is to state the path. */
-      equivalent: [
-        { sel: "#list-col li", revealBy: '.tab[data-tab="colleges"]', what: "college directory" },
-        { sel: "#list-base li", revealBy: '.tab[data-tab="bases"]', what: "installation directory" },
-      ],
-    }],
-    /* Shape is not behaviour. tabindex on a <g> proves it can be focused; only
-       pressing Enter proves it DOES anything. Every marker and every directory
-       row was mouse-only before this run, so these are the checks that say the
-       fix landed rather than that the attributes did. */
-    keyboard: async (page) => {
-      const out = [];
-      out.push(await page.evaluate(() => {
-        const mk = document.querySelector("#g-colleges .mk");
-        if (!mk) return { name: "a college pin is focusable", ok: false, detail: "no marker found" };
-        mk.focus();
-        return {
-          name: "a college pin is focusable and named",
-          ok: document.activeElement === mk && !!mk.getAttribute("aria-label"),
-          detail: "label=" + (mk.getAttribute("aria-label") || "(none)").slice(0, 46),
-        };
-      }));
-      await page.keyboard.press("Enter");
-      await page.waitForTimeout(200);
-      out.push(await page.evaluate(() => {
-        const h = document.querySelector("#detail h2");
-        return {
-          name: "Enter on a pin renders that college's detail",
-          ok: !!h && h.textContent.trim().length > 0,
-          detail: h ? h.textContent.trim().slice(0, 40) : "detail pane still empty",
-        };
-      }));
-      out.push(await page.evaluate(() => {
-        const t = document.querySelector('.tab[data-tab="colleges"]');
-        if (t) t.click();
-        const li = document.querySelector("#list-col li");
-        if (!li) return { name: "a directory row is operable", ok: false, detail: "no rows" };
-        li.focus();
-        const focused = document.activeElement === li;
-        li.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
-        const h = document.querySelector("#detail h2");
-        return {
-          name: "a directory row is focusable and Enter selects it",
-          ok: focused && !!h && h.textContent.trim().length > 0,
-          detail: "focusable=" + focused + ", detail=" + (h ? h.textContent.trim().slice(0, 30) : "empty"),
-        };
-      }));
-      return out;
-    },
+    targetSizeExempt: VETERAN_PIN_EXEMPT,
+    keyboard: async (page) => veteranMapChecks(page),
+  },
+  "veteran-map-dark": {
+    file: "veteran-sprint-map/ca_cpl_map_selfcontained.html",
+    title: "Veteran Sprint map, dark",
+    mayHideBelow: [],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),
+    targetSizeExempt: VETERAN_PIN_EXEMPT,
+    keyboard: async (page) => veteranMapChecks(page),
+  },
+  /* COBI's iframe opens the page with ?embed=1: above 980px it fills the frame as
+     one column with its h1 and lede for the screen reader only. The harness's
+     900px height sits inside the frame's range (calc(100vh - 170px), 700 up). */
+  "veteran-map-embed": {
+    file: "veteran-sprint-map/ca_cpl_map_selfcontained.html",
+    query: "?embed=1",
+    title: "Veteran Sprint map, embedded in COBI",
+    mayHideBelow: [],
+    targetSizeExempt: VETERAN_PIN_EXEMPT,
+    keyboard: async (page) => veteranMapChecks(page),
   },
 
   /* ── COBI, the monolith ──────────────────────────────────────────────────

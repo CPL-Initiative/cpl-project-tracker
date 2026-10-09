@@ -778,6 +778,11 @@ jobs:
       # by a cron run days later with nothing to point at. It happened on #1618.
       - name: SkyView is built from its sources (prototype/build_ccr_atlas.py)
         run: python3 tests/skyview_built_from_source_test.py
+      # The public veteran map is BUILT the same way (S350): its page is the output of
+      # veteran-sprint-map/build_selfcontained.py, so an edit made in the page passes
+      # review and is gone at the next build.
+      - name: Veteran map is built from its builder (veteran-sprint-map/build_selfcontained.py)
+        run: python3 veteran-sprint-map/build_selfcontained.py --check
       - name: Stop-hook unpushed check (scripts/patch_stop_hook.py)
         run: python3 tests/stop_hook_git_check_test.py
       # Video context frame planner (Session 234) — scene detection is right for

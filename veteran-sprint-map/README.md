@@ -12,8 +12,8 @@ Credit for Prior Learning (CPL)** to service members and veterans.
 
 | File | Purpose |
 |---|---|
-| **`ca_cpl_map_selfcontained.html`** | **The deliverable.** A single, fully **self-contained** interactive map — *zero external dependencies* (no CDN, no tile server). Works offline, inside any iframe, and on locked-down networks. Click a ★ installation to rank the nearest partner colleges (with veteran counts + one-click CPL links); click a ● college for its CPL landing page. Zoom/pan, region presets, layer toggles, searchable directories. |
-| `build_selfcontained.py` | Generator for the HTML above. Reads `data.py` + `colleges_cpl.csv` + `california.geojson` + `military_by_college.json`. |
+| **`ca_cpl_map_selfcontained.html`** | **The deliverable.** A single, fully **self-contained** interactive map — *zero external dependencies* (no CDN, no tile server). Works offline, inside any iframe, and on locked-down networks. Click a ★ installation to rank the nearest partner colleges (with veteran counts + one-click CPL links); click a ● college for its CPL landing page. Zoom/pan, region presets, layer toggles, searchable directories. On First Light since S350 (Sam approved the mock-up, Open Asks Sheet 55): its tokens in `:root`, light and dark on the `cpl_theme` contract, Playfair Display and Source Sans 3 embedded. |
+| `build_selfcontained.py` | Generator for the HTML above. Reads `data.py` + `colleges_cpl.csv` + `california.geojson` + `military_by_college.json`, and the two fonts in `../sierra/fonts/`. `--check` fails if the committed page is not its build (CI and `scripts/check_generated.sh` run it), so change the generator, never the page. |
 | `build_static.py` | High-res slide/Word PNG (`ca_cpl_military_map.png`); college circles **sized by veterans served**. |
 | `build_static_ref.py` | Numbered full-reference PNG (`ca_cpl_military_map_reference.png`) — every college + base labeled. |
 | `extract_military.py` | Snapshots per-college service-member/veteran counts from `live_metrics.json` → `military_by_college.json`. |
@@ -51,10 +51,16 @@ python3 build_static_ref.py          # → ca_cpl_military_map_reference.png (nu
 ## Embedding
 
 ```html
-<iframe src="veteran-sprint-map/ca_cpl_map_selfcontained.html" width="100%" height="700"
+<iframe src="veteran-sprint-map/ca_cpl_map_selfcontained.html?embed=1" width="100%" height="700"
         style="border:0;" loading="lazy"
         title="California Community Colleges & Military Installations — CPL"></iframe>
 ```
+
+`?embed=1` is the layout COBI's Military Partnerships tab uses: above 980px the page
+fills its frame as one column (the map and panel take what the figures, controls, key
+and footer leave), with its h1 and lede for the screen reader only, since the host page
+introduces the map. Without it the page is the full document and scrolls. Inside COBI the
+map follows COBI's theme control live (the `storage` event on `cpl_theme`).
 
 ## Demonstration-project pairings
 

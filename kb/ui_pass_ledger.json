@@ -14,8 +14,8 @@
    "name": "Veteran map",
    "page": "veteran-sprint-map/ca_cpl_map_selfcontained.html",
    "audience": "public",
-   "last": "2026-10-08",
-   "outcome": "AA, the 24px targets and the keyboard pass at nine widths; not First Light (its own palette, 30 raw hex outside :root, the system font stack, no dark mode). No fix shipped: a public page's look changes through a mock-up first, so the port is the Sierra redesign lane's next public page."
+   "last": "2026-10-09",
+   "outcome": "Ported to First Light on Sam's Sheet 55 ruling (S350): tokens in :root only, dark on the cpl_theme contract and followed live inside COBI, the two faces embedded; AA, the 24px floor (pins exempt through the two directories) and the keyboard pass at nine widths, light, dark and embedded. Fixed on the way: COBI's Military Partnerships frame overflowed by 170 to 280px and shrank the stars to 4px; ?embed=1 fills the frame and a marker size floor holds the approved size."
   },
   {
    "id": "skyview",
