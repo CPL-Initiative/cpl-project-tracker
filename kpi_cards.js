@@ -82,10 +82,14 @@
       CARD_SEL + ":hover .kc-caret { opacity: 0.6; }",
       CARD_SEL + ".kc-collapsed .kc-caret { transform: rotate(-90deg); }",
       // Hide × (right corner).
-      CARD_SEL + " .kc-hide { position: absolute; top: 0.4rem; right: 0.5rem; background: none; border: none; "
+      // 24px square (WCAG 2.5.8; it measured 16.8x19.2), and shown while it holds keyboard focus, so a
+      // keyboard reader sees what Enter will hide (S352 UI pass).
+      CARD_SEL + " .kc-hide { position: absolute; top: 0.3rem; right: 0.4rem; background: none; border: none; "
         + "cursor: pointer; font-size: 0.95rem; line-height: 1; color: var(--text-muted, #5C5C55); "
-        + "opacity: 0; transition: opacity 0.15s ease; padding: 2px 4px; border-radius: 4px; }",
+        + "opacity: 0; transition: opacity 0.15s ease; padding: 0; border-radius: 4px; "
+        + "min-width: 24px; min-height: 24px; display: inline-flex; align-items: center; justify-content: center; }",
       CARD_SEL + ":hover .kc-hide { opacity: 0.5; }",
+      CARD_SEL + " .kc-hide:focus-visible { opacity: 1; }",
       CARD_SEL + " .kc-hide:hover { opacity: 1; background: rgba(28,28,26,0.06); }",
       // Hidden card — removed from the grid.
       CARD_SEL + ".kc-hidden { display: none !important; }",
@@ -95,7 +99,7 @@
       ".kpi-section-wrapper.collapsed .kc-bar { display: none; }",
       ".kc-bar button { background: var(--surface-opaque, #fff); border: 1px solid var(--border, rgba(28,28,26,.14)); "
         + "border-radius: 6px; cursor: pointer; font-size: 0.68rem; color: var(--navy-primary, #1C1C1A); "
-        + "padding: 3px 9px; opacity: 0.85; }",
+        + "padding: 3px 9px; opacity: 0.85; min-height: 24px; }",
       ".kc-bar button:hover { opacity: 1; background: rgba(28,28,26,0.04); }",
       // Hidden-cards restore tray.
       ".kc-tray { position: absolute; top: 100%; right: 2rem; z-index: 50; margin-top: 4px; "
@@ -280,7 +284,7 @@
     bar.innerHTML = "";
     var toggle = document.createElement("button");
     toggle.type = "button";
-    toggle.textContent = anyExpanded ? "⊟ Collapse all" : "⊞ Expand all";
+    toggle.textContent = anyExpanded ? "Collapse all" : "Expand all";
     toggle.title = anyExpanded ? "Collapse every KPI card to its title row" : "Expand every KPI card";
     toggle.addEventListener("click", function () { setAll(!anyExpanded); });
     bar.appendChild(toggle);

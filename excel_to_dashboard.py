@@ -3397,15 +3397,15 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
     data_json = _json.dumps(chart_data)
 
     html = f'''        <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-            <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
+            <h2 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h2>
             <p style="color:var(--text-muted);font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
                 <div style="flex:1;min-width:min(340px, 100%);">
-                    <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
+                    <h3 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h3>
                     <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
                 <div style="flex:1;min-width:min(340px, 100%);">
-                    <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
+                    <h3 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h3>
                     <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
             </div>
@@ -3963,7 +3963,7 @@ def render_kpi_history_card(history, kpi_params=None):
         </div>
         <span style="font-size:0.65rem;color:var(--text-muted);">{since_note}</span>
       </div>
-      <div style="overflow-x:auto;">
+      <div style="overflow-x:auto;" tabindex="0" role="region" aria-label="KPI Trends">
         <table style="width:100%;border-collapse:collapse;">
           <thead>{header}</thead>
           <tbody>{rows_html}</tbody>
@@ -10104,13 +10104,13 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None,
             f'  <div class="exhibit-card-header">\n'
             f'    <div class="exhibit-card-title-row">\n'
             f'      <div>\n'
-            f'        <div class="exhibit-card-title">{title}</div>\n'
+            f'        <div class="exhibit-card-title" id="{card_id}-title">{title}</div>\n'
             f'        <div class="exhibit-card-subtitle">{subtitle}</div>\n'
             f'      </div>\n'
             + export_btn +
             f'    </div>\n'
             f'  </div>\n'
-            f'  <div class="exhibit-card-body">\n'
+            f'  <div class="exhibit-card-body" tabindex="0" role="region" aria-labelledby="{card_id}-title">\n'
             f'    <table class="exhibit-table">\n'
             f'      <thead><tr>{header_cells}</tr></thead>\n'
             f'      <tbody>{body_rows}</tbody>\n'
