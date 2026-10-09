@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-325 document(s).
+326 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 355 | [Cerritos loaded; Sam reads the sample from his phone](../session_355_handoff.md) | 2026-10-09 |
 | 354 | [Phase 2 opens at Cerritos; the explainer is editable; controls are words](../session_354_handoff.md) | 2026-10-09 |
 | 353 | [the Fact Sheet on First Light, and the Dashboard's first pass](../session_353_handoff.md) | 2026-10-09 |
 | 352 | [three UI passes and the picker](../session_352_handoff.md) | 2026-10-09 |

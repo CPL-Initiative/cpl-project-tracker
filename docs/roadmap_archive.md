@@ -5887,3 +5887,8 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### From docs/INDEX.md update history (trimmed S351)
 
 - 2026-10-08 (S344 SkyWaypoint, scheduled): every pilot college has a reading procedure, 7 of 118 (#1906); map searches at West Los Angeles (mapper 403), Riverside City and Mt. San Antonio (no map page yet) took three records to v2; Sierra's smoke passed in full on `main`. Handoff 345.
+
+## INDEX update history, moved 2026-10-09 (S354)
+
+- 2026-10-08 (S347 SkyTrellis): the Chancellor headline, Palo Verde read, the To-Do retired for a UI pass, the Sierra redesign lane; KB note methodology-a-lapsed-name-is-not-a-refusal.
+- 2026-10-08 (S346 SkyCairn): KB note `methodology-a-site-search-needs-the-domain-filter`; harvest lane compacted below its limit (two paragraphs to the lessons doc); lessons S346; handoff 347.

@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T20:27:37Z",
+  "written_at": "2026-10-09T20:40:41Z",
   "session": 354,
   "moniker": "SkyFurrow",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_354_handoff.md",
+  "handoff": "docs/session_355_handoff.md",
   "unchecked": [
     {
       "college": "Irvine Valley College",
@@ -1914,7 +1914,7 @@
   ],
   "next_step": {
     "title": "Read a sample of Cerritos's records",
-    "text": "Every Cerritos program the harvest could read is loaded for your reading, unchecked. Your verdicts on a sample decide whether the method goes to a second college."
+    "text": "Every Cerritos program the harvest could read is loaded for your reading, unchecked. Answer the ten on the call card below; your verdicts decide whether the method goes to a second college."
   },
   "calls": [
     {
@@ -2008,6 +2008,14 @@
     "reading": "Cerritos, the first full college: 274 of 288 programs read from their own pages and drafted on Oct 9; 238 pass the three machine checks. All 274 are loaded; 270 wait on a reading, beside the four checked in the pilot."
   },
   "changes": [
+    {
+      "at": "2026-10-09T20:39:00Z",
+      "text": "The call card answers its records: open each to its catalog page and choose Confirm or Needs a fix right there."
+    },
+    {
+      "at": "2026-10-09T19:22:00Z",
+      "text": "Program records can be searched by name or control number and narrowed to the records waiting on your reading; each Cerritos card says how many listed courses it placed."
+    },
     {
       "at": "2026-10-09T18:04:21Z",
       "text": "Every Cerritos program the harvest read is loaded for your reading: 270 records, unchecked, beside the four checked in the pilot."

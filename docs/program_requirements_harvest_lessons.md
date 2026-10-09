@@ -1040,3 +1040,12 @@ and not applied.
    capture-only run files `capture_preview.json` beside the read it did not replace.
 7. **A college's records do not fit the connector.** About 1 MB of record JSON for 283 programs, against migrations
    that time out near 40 KB: the load runs on the runner through one insert-only function, unchecked, keyed by run id.
+
+## S354 SkyFurrow, 2026-10-09: Cerritos loaded, and the reading made possible from a phone
+
+- **The load is its own job, reading committed records.** The `[load]` job posts what the branch holds, so what loads is what a reviewer can diff; the receipt names every inserted key, and those keys still unchecked are the rollback. 270 inserted, the four checked pilot rows kept (run 37970640026).
+- **A function closed by its grant is closed twice when its body checks the role.** `auth.role() <> 'service_role'` raises before any write, so the function was safe between the create and the revoke (the revoke applied this time; S318's timeout did not recur). A call from the connector without the role is refused, which proves it.
+- **A capture is free in dollars and costly in page loads.** Any push to the script ran ~360 Cerritos page loads; the read job now needs `[read]` or `[extract]`. A bot's push (the filing and receipt commits) triggers no CI, so a PR whose head is the bot's commit needs a session push before `test` runs on it.
+- **Keep each record's own extraction run.** A re-run keeps records read from the same page; stamping the load's run on them would have lied about provenance. Rollback goes by the receipt's keys instead.
+- **Show what the scorer measured before the display build reaches a college.** Phase 2 rows carried no `display`, so every card read "Not measured" although coverage had run; the loader now writes `placed`/`listed` into `checks`, and the view falls back to them. A passing record can still read "11 of 40 placed" (02226): coverage accepts explained absences, and the explanation stays in the repo's copy.
+- **Sam reads on his phone, so the reading has to come to him** (2026-10-09): 274 cards with no search defeated him; Find a record (#1946) and answers on the Progress call card (#1947) followed within the hour. A call that names records is answerable where it is read, through the same verdict RPC.
