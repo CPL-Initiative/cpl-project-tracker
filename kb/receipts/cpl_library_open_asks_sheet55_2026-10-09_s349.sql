@@ -4,8 +4,9 @@
 -- was written (read live 2026-10-09 ~00:50Z: version 50). Two guarded statements; exactly one applies:
 --   from version 50 (the S348 paste never ran): Sheets 55, 54, 53, 52, 51 join the versions list above Sheet 50;
 --   from version 54 (it ran): Sheet 55 joins above Sheet 54.
--- NOT YET APPLIED: apply_migration timed out once (~00:52Z) with nothing written (read back: version 50), as S348's
--- three attempts did. Paste it in the SQL editor; read back version 55 and Sheet 55 first in versions.
+-- APPLIED 2026-10-09 01:46:45Z: Sam pasted it in the SQL editor ("success"), after apply_migration had timed out once
+-- (~00:52Z, nothing written). Statement 1 applied (from version 50). Read back by S350 SkyTide: version 55, 28
+-- entries, Sheet 55 first and Current, Sheets 54 to 50 Earlier.
 -- Before-values (read live 2026-10-09 ~00:50Z): version 50, url https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr,
 -- file_name 2026-10-08-open-asks-50.html, extent '5 cards (sheet 50)', made_by 'S341 SkyTerrace (sheets 46-48); the
 -- library side session (sheet 49); S345 SkyLantern (sheet 50); each earlier sheet by the session that built it',
