@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T17:35:28Z",
-  "session": 353,
-  "moniker": "SkyHearth",
+  "written_at": "2026-10-09T18:31:36Z",
+  "session": 354,
+  "moniker": "SkyFurrow",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_354_handoff.md",
@@ -20,13 +20,1912 @@
       "award": "A.S.",
       "control_number": "43767",
       "loaded": "2026-10-07"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Architectural Technology",
+      "award": "A.A.",
+      "control_number": "02201",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Natural Sciences - General",
+      "award": "A.S.",
+      "control_number": "02202",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Biology",
+      "award": "A.A.",
+      "control_number": "02203",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Botany",
+      "award": "A.A.",
+      "control_number": "02204",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Zoology",
+      "award": "A.A.",
+      "control_number": "02205",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration - Plan A",
+      "award": "A.A.",
+      "control_number": "02206",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Professional Accounting",
+      "award": "A.A.",
+      "control_number": "02207",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: Business Management",
+      "award": "A.A.",
+      "control_number": "02208",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: Business Marketing",
+      "award": "A.A.",
+      "control_number": "02210",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Real Estate",
+      "award": "A.A.",
+      "control_number": "02212",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Communications Office Technology: Secretary/Administrative Assistant",
+      "award": "A.A.",
+      "control_number": "02213",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Journalism",
+      "award": "A.A.",
+      "control_number": "02214",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Computer and Information Sciences: Computer Science",
+      "award": "A.S.",
+      "control_number": "02215",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Computer and Information Sciences: Programmer",
+      "award": "A.S.",
+      "control_number": "02217",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Physical Education",
+      "award": "A.A.",
+      "control_number": "02219",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Technology: Industrial Arts Education",
+      "award": "A.S.",
+      "control_number": "02220",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering",
+      "award": "A.S.",
+      "control_number": "02221",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: General Technician",
+      "award": "A.S.",
+      "control_number": "02224",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Collision Repair: General Automotive Collision Repair",
+      "award": "A.S.",
+      "control_number": "02225",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Design Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "02226",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Composites Manufacturing",
+      "award": "A.S.",
+      "control_number": "02227",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Advanced Manufacturing and Automation",
+      "award": "A.S.",
+      "control_number": "02228",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Dance",
+      "award": "A.A.",
+      "control_number": "02234",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Photography",
+      "award": "A.A.",
+      "control_number": "02235",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "French",
+      "award": "A.A.",
+      "control_number": "02236",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "German",
+      "award": "A.A.",
+      "control_number": "02237",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Registered Nursing",
+      "award": "A.S.",
+      "control_number": "02239",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Pharmacy Technology",
+      "award": "A.S.",
+      "control_number": "02244",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Physical Therapist Assistant",
+      "award": "A.S.",
+      "control_number": "02245",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Paralegal",
+      "award": "A.A.",
+      "control_number": "02247",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "English",
+      "award": "A.A.",
+      "control_number": "02248",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Communication Studies",
+      "award": "A.A.",
+      "control_number": "02249",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Anthropology",
+      "award": "A.A.",
+      "control_number": "02260",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Chicano Studies",
+      "award": "A.A.",
+      "control_number": "02261",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Economics",
+      "award": "A.A.",
+      "control_number": "02262",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Culinary Arts: Professional Cooking",
+      "award": "A.S.",
+      "control_number": "02267",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Cosmetology",
+      "award": "A.S.",
+      "control_number": "02268",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Architectural Studies",
+      "award": "A.A.",
+      "control_number": "09896",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Vocational Accounting",
+      "award": "A.A.",
+      "control_number": "09899",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Real Estate",
+      "award": "Certificate of Achievement",
+      "control_number": "09907",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Communications Office Technology: Legal Secretary",
+      "award": "A.A.",
+      "control_number": "09910",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Computer and Information Sciences: IT Support Specialist",
+      "award": "A.S.",
+      "control_number": "09912",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Engine Performance & Electrical Diagnosis",
+      "award": "A.S.",
+      "control_number": "09920",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Manufacture Specialty",
+      "award": "A.S.",
+      "control_number": "09922",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Design Technology",
+      "award": "A.S.",
+      "control_number": "09924",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Composite Inspection",
+      "award": "A.S.",
+      "control_number": "09925",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Composite Tool Design",
+      "award": "A.S.",
+      "control_number": "09926",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Plastics Manufacturing",
+      "award": "A.S.",
+      "control_number": "09927",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Pipe Welding",
+      "award": "A.S.",
+      "control_number": "09931",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Art and Design: Ceramics",
+      "award": "A.A.",
+      "control_number": "09933",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Art and Design: Drawing and Painting",
+      "award": "A.A.",
+      "control_number": "09936",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Art and Design: Graphic Design",
+      "award": "A.A.",
+      "control_number": "09937",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Art and Design: Printmaking",
+      "award": "A.A.",
+      "control_number": "09938",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Music: Commercial Music",
+      "award": "A.A.",
+      "control_number": "09940",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Culinary Arts: Professional Baking and Pastry",
+      "award": "A.S.",
+      "control_number": "09948",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Communications Office Technology: General Office",
+      "award": "A.A.",
+      "control_number": "09950",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Global Studies",
+      "award": "A.A.",
+      "control_number": "09955",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "International Studies: Global Resources",
+      "award": "A.A.",
+      "control_number": "09956",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "International Studies: World Cultures",
+      "award": "A.A.",
+      "control_number": "09959",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Public Relations",
+      "award": "Certificate of Achievement",
+      "control_number": "09960",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Microbiology",
+      "award": "A.A.",
+      "control_number": "09963",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration",
+      "award": "A.A.",
+      "control_number": "11393",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Theatre Arts: Acting or Technical",
+      "award": "A.A.",
+      "control_number": "11396",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Human Resource Management",
+      "award": "A.A.",
+      "control_number": "11397",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: Entrepreneurship and Innovation",
+      "award": "A.A.",
+      "control_number": "11398",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Educational Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "11804",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Instructional MultiMedia",
+      "award": "Certificate of Achievement",
+      "control_number": "11805",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Network/Systems Administration",
+      "award": "A.S.",
+      "control_number": "12136",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: Retail Management",
+      "award": "A.A.",
+      "control_number": "12731",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Women's and Gender Studies",
+      "award": "A.A.",
+      "control_number": "14275",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Administration of Justice",
+      "award": "A.A.",
+      "control_number": "14565",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Exercise Science: Fitness",
+      "award": "A.A.",
+      "control_number": "14667",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Exercise Science: Athletic Trainer Aide",
+      "award": "A.A.",
+      "control_number": "14668",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Digital Arts: Computer Animation",
+      "award": "A.A.",
+      "control_number": "15184",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: International Business",
+      "award": "A.A.",
+      "control_number": "15478",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Woodworking Manufacturing Technologies: Cabinetmaking",
+      "award": "A.S.",
+      "control_number": "15512",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Esthetician",
+      "award": "A.S.",
+      "control_number": "16308",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Machine Tool Technology: Machinist Option",
+      "award": "Certificate of Achievement",
+      "control_number": "16718",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Machine Tool Technology: Tool and Die Maker Option",
+      "award": "Certificate of Achievement",
+      "control_number": "16719",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Machine Tool Technology: Numerical Control Machine Operator Option",
+      "award": "A.S.",
+      "control_number": "16720",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Machine Tool Technology: Computer Numerical Control Programmer",
+      "award": "Certificate of Achievement",
+      "control_number": "16721",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Welding Fabrication and Layout",
+      "award": "Certificate of Achievement",
+      "control_number": "18481",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Professional Accounting",
+      "award": "Certificate of Achievement",
+      "control_number": "18956",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Manufacture Specialty",
+      "award": "Certificate of Achievement",
+      "control_number": "18958",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Pipe Welding",
+      "award": "Certificate of Achievement",
+      "control_number": "18960",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Arc Welding",
+      "award": "Certificate of Achievement",
+      "control_number": "18961",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "New Product Development: Automotive Aftermarket Product Development Option",
+      "award": "Certificate of Achievement",
+      "control_number": "19089",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "New Product Development: Automotive Aftermarket Product Development Option",
+      "award": "A.S.",
+      "control_number": "19090",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "New Product Development: New Product Development and Fabrication Option",
+      "award": "Certificate of Achievement",
+      "control_number": "19091",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "New Product Development and Fabrication",
+      "award": "A.S.",
+      "control_number": "19092",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Liberal Arts and Sciences: Communication",
+      "award": "A.A.",
+      "control_number": "19163",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Liberal Arts and Sciences: Historical Perspectives",
+      "award": "A.A.",
+      "control_number": "19170",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Liberal Arts and Sciences: Literature and Languages",
+      "award": "A.A.",
+      "control_number": "19172",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Vocational Accounting",
+      "award": "Certificate of Achievement",
+      "control_number": "19409",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Communications Office Technology: General Office",
+      "award": "Certificate of Achievement",
+      "control_number": "19411",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Gas Tungsten Arc Welding",
+      "award": "Certificate of Achievement",
+      "control_number": "19413",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Machine Tool Technology: Numerical Control Machine Operator Option",
+      "award": "Certificate of Achievement",
+      "control_number": "19414",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Pharmacy Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "19415",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Alternative Fuels Service Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "19670",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Architectural Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "20467",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration",
+      "award": "Certificate of Achievement",
+      "control_number": "20469",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: Business Management",
+      "award": "Certificate of Achievement",
+      "control_number": "20470",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: Entrepreneurship and Innovation",
+      "award": "Certificate of Achievement",
+      "control_number": "20473",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: Retail Management",
+      "award": "Certificate of Achievement",
+      "control_number": "20475",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: International Business",
+      "award": "Certificate of Achievement",
+      "control_number": "20476",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: Business Marketing",
+      "award": "Certificate of Achievement",
+      "control_number": "20477",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "California Real Estate",
+      "award": "Certificate of Achievement",
+      "control_number": "20480",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Communications Office Technology: Secretary/Administrative Assistant",
+      "award": "Certificate of Achievement",
+      "control_number": "20482",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Communications Office Technology: Legal Secretary",
+      "award": "Certificate of Achievement",
+      "control_number": "20484",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Journalism",
+      "award": "Certificate of Achievement",
+      "control_number": "20485",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Digital Arts: Computer Animation",
+      "award": "Certificate of Achievement",
+      "control_number": "20486",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Computer and Information Sciences: IT Support Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "20488",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Computer and Information Sciences:  Programmer",
+      "award": "Certificate of Achievement",
+      "control_number": "20491",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Network/Systems Administration",
+      "award": "Certificate of Achievement",
+      "control_number": "20493",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Exercise Science: Fitness Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "20495",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Engine Performance & Electrical Diagnosis",
+      "award": "Certificate of Achievement",
+      "control_number": "20500",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: General Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "20501",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Collision Repair:  General Automotive Collision Repair",
+      "award": "Certificate of Achievement",
+      "control_number": "20502",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Woodworking Manufacturing Technologies: Cabinetmaking",
+      "award": "Certificate of Achievement",
+      "control_number": "20504",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Design and Production Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "20506",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Composite Tool Design",
+      "award": "Certificate of Achievement",
+      "control_number": "20507",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Plastics Manufacturing",
+      "award": "Certificate of Achievement",
+      "control_number": "20508",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Composite Inspection",
+      "award": "Certificate of Achievement",
+      "control_number": "20509",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Composites Manufacturing",
+      "award": "Certificate of Achievement",
+      "control_number": "20510",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Advanced Manufacturing and Automation",
+      "award": "Certificate of Achievement",
+      "control_number": "20511",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Medical Assistant",
+      "award": "Certificate of Achievement",
+      "control_number": "20512",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Speech-Language Pathology Aide",
+      "award": "Certificate of Achievement",
+      "control_number": "20513",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Exercise Science: Athletic Trainer Aide",
+      "award": "Certificate of Achievement",
+      "control_number": "20514",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Dental Assisting",
+      "award": "Certificate of Achievement",
+      "control_number": "20515",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Culinary Arts: Professional Cooking",
+      "award": "Certificate of Achievement",
+      "control_number": "20520",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Culinary Arts: Professional Baking and Pastry",
+      "award": "Certificate of Achievement",
+      "control_number": "20521",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Paralegal",
+      "award": "Certificate of Achievement",
+      "control_number": "20522",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Global Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "20530",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "International Studies: Global Resources",
+      "award": "Certificate of Achievement",
+      "control_number": "20531",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "International Studies: World Cultures",
+      "award": "Certificate of Achievement",
+      "control_number": "20533",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Cosmetology",
+      "award": "Certificate of Achievement",
+      "control_number": "20534",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Esthetician",
+      "award": "Certificate of Achievement",
+      "control_number": "20535",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Courses in GED Test Preparation in Spanish",
+      "award": "Noncredit",
+      "control_number": "24026",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Courses in English as a Second Language",
+      "award": "Noncredit",
+      "control_number": "24046",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Pre-Apprenticeship",
+      "award": "Noncredit",
+      "control_number": "24102",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Machine Tool Technology: Machinist Option",
+      "award": "A.S.",
+      "control_number": "30549",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Machine Tool Technology: Computer Numerical Control Programmer",
+      "award": "A.S.",
+      "control_number": "30550",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Machine Tool Technology: Tool and Die Maker Option",
+      "award": "A.S.",
+      "control_number": "30551",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Communication Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "31111",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Art History",
+      "award": "A.A.-T",
+      "control_number": "31608",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Film Production",
+      "award": "A.A.",
+      "control_number": "31739",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Technology",
+      "award": "A.S.",
+      "control_number": "31740",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Kinesiology",
+      "award": "A.A.-T",
+      "control_number": "31746",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "History",
+      "award": "A.A.-T",
+      "control_number": "31749",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Physics",
+      "award": "A.S.-T",
+      "control_number": "31750",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Psychology",
+      "award": "A.A.-T",
+      "control_number": "31827",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Journalism",
+      "award": "A.A.-T",
+      "control_number": "31836",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Technology: Electrical and Electronic Engineering Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "31919",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Technology: Industrial Engineering Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "31920",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Technology: Mechanical Engineering Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "31921",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Religious Studies",
+      "award": "A.A.",
+      "control_number": "32223",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Religious Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "32224",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Anthropology",
+      "award": "A.A.-T",
+      "control_number": "32355",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Collision Repair: Automotive Refinishing",
+      "award": "Certificate of Achievement",
+      "control_number": "32411",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Early Childhood Education",
+      "award": "A.S.-T",
+      "control_number": "32476",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Mathematics",
+      "award": "A.S.-T",
+      "control_number": "32489",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Spanish",
+      "award": "A.A.-T",
+      "control_number": "32510",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Collision Repair: Automotive Damage Appraisal and Management",
+      "award": "Certificate of Achievement",
+      "control_number": "32550",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Music",
+      "award": "A.A.-T",
+      "control_number": "32563",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Studio Arts",
+      "award": "A.A.-T",
+      "control_number": "32622",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Theatre Arts",
+      "award": "A.A.-T",
+      "control_number": "32667",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Computer Science",
+      "award": "A.S.-T",
+      "control_number": "32689",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Welding Fabrication and Layout",
+      "award": "A.S.",
+      "control_number": "32749",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A.-T",
+      "control_number": "32766",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Geology",
+      "award": "A.S.-T",
+      "control_number": "33093",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Geography",
+      "award": "A.A.-T",
+      "control_number": "33343",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Machine Tool Technology: Coordinate Metrology",
+      "award": "Certificate of Achievement",
+      "control_number": "33517",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Economics",
+      "award": "A.A.-T",
+      "control_number": "33534",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "GED Test Preparation in English",
+      "award": "Noncredit",
+      "control_number": "33556",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Human Resource Management",
+      "award": "Certificate of Achievement",
+      "control_number": "33840",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Woodworking Manufacturing Technologies: CNC Woodworking",
+      "award": "Certificate of Achievement",
+      "control_number": "33901",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration: Business Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "35025",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Visual and Cultural Studies",
+      "award": "A.A.",
+      "control_number": "35166",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Culinary Arts Management",
+      "award": "Certificate of Achievement",
+      "control_number": "35193",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Culinary Arts Management",
+      "award": "A.S.",
+      "control_number": "35220",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Client-Side Web Page Development",
+      "award": "Certificate of Achievement",
+      "control_number": "35298",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Cybersecurity",
+      "award": "Certificate of Achievement",
+      "control_number": "35313",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Cybersecurity",
+      "award": "A.S.",
+      "control_number": "35314",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Advanced English as a Second Language",
+      "award": "Noncredit",
+      "control_number": "35318",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "American Sign Language",
+      "award": "A.A.",
+      "control_number": "35454",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Technology: Electrical and Electronic Engineering Design Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "35664",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering Technology: Mechanical Engineering Design Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "35665",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Chemistry",
+      "award": "A.S.-T",
+      "control_number": "35685",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Women in Management",
+      "award": "A.A.",
+      "control_number": "35693",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Women in Management",
+      "award": "Certificate of Achievement",
+      "control_number": "35694",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Chinese",
+      "award": "A.A.",
+      "control_number": "35741",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering: Aerospace and Mechanical Specialty",
+      "award": "A.S.",
+      "control_number": "35884",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Exercise Science: Athletic Injury Management",
+      "award": "Certificate of Achievement",
+      "control_number": "35985",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Exercise Science: Fitness Trainer",
+      "award": "Certificate of Achievement",
+      "control_number": "35987",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Apprenticeship: Field Ironworkers Reinforcing",
+      "award": "Certificate of Achievement",
+      "control_number": "36002",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Apprenticeship: Field Ironworkers Structural",
+      "award": "Certificate of Achievement",
+      "control_number": "36003",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Dance Foundations",
+      "award": "Certificate of Achievement",
+      "control_number": "36066",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Alternative Fuels Service Technician",
+      "award": "A.S.",
+      "control_number": "36103",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "College Readiness",
+      "award": "Noncredit",
+      "control_number": "36189",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Engineering: Electrical Specialty",
+      "award": "A.S.",
+      "control_number": "36260",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Pre GED Spanish",
+      "award": "Noncredit",
+      "control_number": "36281",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Pre GED",
+      "award": "Noncredit",
+      "control_number": "36283",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Music: Audio Systems Solutions",
+      "award": "Certificate of Achievement",
+      "control_number": "36573",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Health Education",
+      "award": "A.A.",
+      "control_number": "36729",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "LGBT Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "37716",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Workforce Preparedness",
+      "award": "Noncredit",
+      "control_number": "37745",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Tools and Equipment",
+      "award": "Noncredit",
+      "control_number": "37787",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Dance: Commercial Dance",
+      "award": "Certificate of Achievement",
+      "control_number": "37844",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Architectural Practice",
+      "award": "Certificate of Achievement",
+      "control_number": "37865",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Architectural Computer-Aided Drafting and Design",
+      "award": "Certificate of Achievement",
+      "control_number": "37881",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Architectural Drafting and Design",
+      "award": "Certificate of Achievement",
+      "control_number": "37887",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Dance Teaching",
+      "award": "Certificate of Achievement",
+      "control_number": "38756",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Computer and Information Sciences: Cloud Computing",
+      "award": "Certificate of Achievement",
+      "control_number": "38911",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Film, Television and Electronic Media",
+      "award": "A.S.-T",
+      "control_number": "39132",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Social Justice Studies: African American Studies",
+      "award": "A.A.-T",
+      "control_number": "39218",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Fine Art Photography",
+      "award": "Certificate of Achievement",
+      "control_number": "39470",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: General Motors Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "39797",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: General Motors Advanced",
+      "award": "Certificate of Achievement",
+      "control_number": "39798",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Entrepreneurship-Small Business Growth",
+      "award": "Noncredit",
+      "control_number": "40651",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Introduction to Basic Entrepreneurship",
+      "award": "Noncredit",
+      "control_number": "40652",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Applied Photography",
+      "award": "Certificate of Achievement",
+      "control_number": "41062",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Ford Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "41067",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Ford Advanced",
+      "award": "Certificate of Achievement",
+      "control_number": "41070",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Automotive Electrical & Engine Performance Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "41071",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Entry Level Quick Service Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "41073",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Intermediate Level Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "41074",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: Fleet Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "41077",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Acting",
+      "award": "Certificate of Achievement",
+      "control_number": "41773",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Business Administration 2.0",
+      "award": "A.S.-T",
+      "control_number": "41822",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Public Health Science",
+      "award": "A.S.-T",
+      "control_number": "42020",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Chicano Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "42091",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Social Justice Studies: LGBTQ Studies",
+      "award": "A.A.-T",
+      "control_number": "42261",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Renewable Energy",
+      "award": "Noncredit",
+      "control_number": "42264",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Music: Computer Music Performance",
+      "award": "Certificate of Achievement",
+      "control_number": "42400",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Technology: General Motors Automotive Service Educational Program (GM ASEP)",
+      "award": "A.S.",
+      "control_number": "42443",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Collision Repair: Structural Damage",
+      "award": "Certificate of Achievement",
+      "control_number": "42444",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Biotechnology",
+      "award": "A.S.",
+      "control_number": "42689",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Biotechnology II: Biomanufacturing",
+      "award": "Certificate of Achievement",
+      "control_number": "42690",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Biotechnology I: Basic Wet Lab Skills",
+      "award": "Certificate of Achievement",
+      "control_number": "42699",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Automotive Collision Repair: Automotive Multi-Coat and Custom Paint",
+      "award": "Certificate of Achievement",
+      "control_number": "43123",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Spanish for Non-Heritage Students",
+      "award": "Certificate of Achievement",
+      "control_number": "43127",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Spanish Language for Heritage Speakers",
+      "award": "Certificate of Achievement",
+      "control_number": "43128",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Gender and Sexuality in Visual and Cultural Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "43129",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Race and Ethnicity in Visual and Cultural Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "43130",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Technology in Visual and Cultural Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "43131",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Black/Africana Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "43136",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A.-T",
+      "control_number": "43486",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Social Justice Studies: Chicano Studies",
+      "award": "A.A.-T",
+      "control_number": "43535",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Social Justice Studies: Gender Studies",
+      "award": "A.A.-T",
+      "control_number": "43541",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Global Studies",
+      "award": "A.A.-T",
+      "control_number": "43693",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Dental Hygiene",
+      "award": "B.S.",
+      "control_number": "44153",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Chemical Technology - Polymer",
+      "award": "Certificate of Achievement",
+      "control_number": "44302",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Non-Residential Lighting Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "44394",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Whole Residential Electrician",
+      "award": "Certificate of Achievement",
+      "control_number": "44395",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Entertainment Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "44401",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Music: Commercial Music Performance",
+      "award": "Certificate of Achievement",
+      "control_number": "44402",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A.-T",
+      "control_number": "44491",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Nutrition and Dietics",
+      "award": "A.S.-T",
+      "control_number": "44497",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Asian American and Asian Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "44802",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Native American and Indigenous Studies",
+      "award": "A.A.",
+      "control_number": "44825",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Education Studies: Special Education",
+      "award": "Certificate of Achievement",
+      "control_number": "44984",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Process Pipe Welding",
+      "award": "Certificate of Achievement",
+      "control_number": "45255",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Process Pipe Welding",
+      "award": "A.S.",
+      "control_number": "45259",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Structural Steel Fabricator",
+      "award": "A.S.",
+      "control_number": "45260",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Aerospace Welding",
+      "award": "A.S.",
+      "control_number": "45261",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Combination Welder",
+      "award": "A.S.",
+      "control_number": "45262",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Structural Steel Fabricator",
+      "award": "Certificate of Achievement",
+      "control_number": "45297",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Welding Technology: Combination Welder",
+      "award": "Certificate of Achievement",
+      "control_number": "45298",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Black/Africana Studies: Social Change and Social Justice",
+      "award": "Certificate of Achievement",
+      "control_number": "45910",
+      "loaded": "2026-10-09"
+    },
+    {
+      "college": "Cerritos College",
+      "program": "Marine Biology",
+      "award": "A.S.",
+      "control_number": "46199",
+      "loaded": "2026-10-09"
     }
   ],
   "next_step": {
-    "title": "Load Cerritos's programs for your reading",
-    "text": "Every Cerritos program was read from its own catalog page and drafted; the next session loads the records unchecked so you can read a sample from the Records view."
+    "title": "Read a sample of Cerritos's records",
+    "text": "Every Cerritos program the harvest could read is loaded for your reading, unchecked. Your verdicts on a sample decide whether the method goes to a second college."
   },
   "calls": [
+    {
+      "title": "Read ten Cerritos records from the tab",
+      "text": "Six pass the three machine checks: 02201 Architectural Technology A.A., 02213 Secretary/Administrative Assistant A.A., 02226 Engineering Design Technology, 20520 Culinary Arts: Professional Cooking, 24026 GED Test Preparation in Spanish, 31608 Art History A.A.-T. Four fail one: 32563 Music A.A.-T, 44153 Dental Hygiene B.S., 15512 Woodworking A.S., 02235 Photography A.A. Sign in on the Records view and choose Confirm or Needs a fix on each.",
+      "if_no_reply": "The Cerritos records stay unchecked, and Sierra does not quote them.",
+      "view": {
+        "href": "#program-requirements",
+        "text": "Open the Program Requirements tab"
+      }
+    },
     {
       "title": "Read two records from the tab",
       "text": "Irvine Valley's Art A.A. and Santa Monica's Barbering A.S. wait on your reading. Sign in on the Records view, open each record, and choose Confirm or Needs a fix.",
@@ -42,9 +1941,13 @@
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
-    "reading": "Cerritos, the first full college: 283 of 288 programs read from their own pages on Oct 9 and drafted; 235 pass the three machine checks. Not yet loaded."
+    "reading": "Cerritos, the first full college: 274 of 288 programs read from their own pages and drafted on Oct 9; 238 pass the three machine checks. All 274 are loaded; 270 wait on a reading, beside the four checked in the pilot."
   },
   "changes": [
+    {
+      "at": "2026-10-09T18:04:21Z",
+      "text": "Every Cerritos program the harvest read is loaded for your reading: 270 records, unchecked, beside the four checked in the pilot."
+    },
     {
       "at": "2026-10-09T17:30:00Z",
       "text": "Every Cerritos program was matched to its own catalog page and drafted; 235 of 283 pass the three machine checks."
