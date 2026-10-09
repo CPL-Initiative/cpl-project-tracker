@@ -111,7 +111,7 @@
   var NOTE_KINDS = { "Reader's note": 1, "Fixed by a rerun": 1 };
 
   var state = { registry: null, records: null, error: null, loading: false, progress: null,
-    view: "progress", q: "", show: "all", platform: "all", open: {}, secs: null,
+    view: "progress", q: "", show: "all", platform: "all", rq: "", rshow: "all", rcollege: "all", open: {}, secs: null,
     review: null, sessionWired: false };
 
   /* ── small helpers ── */
@@ -395,8 +395,10 @@
     var cov = d.coverage || {};
     var reviewer = d.reviewer || (c.reviewer && c.reviewer.verdict) || null;
     var arith = d.arithmetic || c.arithmetic || null;
+    /* A record loaded with its college (Phase 2) carries the scorer's counts in its checks
+       until a display build reaches it; the display build wins where there is one. */
     return {
-      placed: cov.placed, listed: cov.listed,
+      placed: cov.placed != null ? cov.placed : c.placed, listed: cov.listed != null ? cov.listed : c.listed,
       additions: d.additions || 0,
       arithmetic: arith,
       reviewer: reviewer,
@@ -976,21 +978,79 @@
         fact(withCpl + " of " + P.length, "programs hold a course with CPL at the college")
       ])]));
     var drafts = collegeDrafts(P);
-    var order = [], byCollege = {};
-    P.forEach(function (p) {
-      if (!byCollege[p.college]) { byCollege[p.college] = []; order.push(p.college); }
-      byCollege[p.college].push(p);
-    });
-    order.forEach(function (c) {
-      var list = byCollege[c];
-      var reg = R.filter(function (r) { return r.college === c; })[0] || {};
-      var nd = (drafts[c] || []).length;
-      var meta = ((PLATFORM[reg.catalog_platform] || "") + " catalog, " + yr(list[0].catalog_year)).trim() + " · " +
-        list.length + (list.length === 1 ? " program" : " programs") + (nd ? " · " + nd + (nd === 1 ? " draft" : " drafts") + " for the college" : "");
-      box.appendChild(section("records:" + c, c, meta, [drafts[c] ? draftsBox(c, drafts[c]) : null].concat(list.map(recordCard)),
-        { cls: "prh-college" }));
-    });
+    var reviewing = !!(Rv && Rv.records);
+    var totals = {};
+    P.forEach(function (p) { totals[p.college] = (totals[p.college] || 0) + 1; });
+    /* Find a record (Sam, 2026-10-09, reading Cerritos's 274 on his phone: "Yes, do them"):
+       a search by name or control number, what to show, and one college, in the first
+       section (open until the reader closes it); the college sections follow it. */
+    var q = el("input", { id: "prh-rq", type: "search", placeholder: "Name or control number", autocomplete: "off" });
+    q.value = state.rq;
+    var shows = [["all", "All records"]].concat(reviewing ? [["waiting", "Waiting on your reading"]] : [])
+      .concat([["fail", "Fail a machine check"], ["pass", "Pass the machine checks"], ["checked", "Checked"]]);
+    if (!shows.some(function (o) { return o[0] === state.rshow; })) state.rshow = "all";
+    var showSel = el("select", { id: "prh-rshow" }, shows.map(function (o) { return el("option", { value: o[0], text: o[1] }); }));
+    showSel.value = state.rshow;
+    var names = Object.keys(totals).sort();
+    if (state.rcollege !== "all" && !totals[state.rcollege]) state.rcollege = "all";
+    var colSel = el("select", { id: "prh-rcollege" }, [el("option", { value: "all", text: "All colleges" })]
+      .concat(names.map(function (c) { return el("option", { value: c, text: shortCollege(c) + " (" + totals[c] + ")" }); })));
+    colSel.value = state.rcollege;
+    var count = el("span", { cls: "prh-count", "aria-live": "polite" });
+    var drawn = [];
+    function draw() {
+      state.rq = q.value; state.rshow = showSel.value; state.rcollege = colSel.value;
+      var rows = filterRecords(P, state.rq, state.rshow, state.rcollege, reviewing ? isWaiting : null);
+      var narrowed = !!String(state.rq).trim() || state.rshow !== "all" || state.rcollege !== "all";
+      var order = [], byCollege = {};
+      rows.forEach(function (p) {
+        if (!byCollege[p.college]) { byCollege[p.college] = []; order.push(p.college); }
+        byCollege[p.college].push(p);
+      });
+      drawn.forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+      drawn = [];
+      if (!rows.length) drawn.push(box.appendChild(el("div", { cls: "prh-empty", text: "No record matches. Clear the search or choose All records." })));
+      order.forEach(function (c) {
+        var list = byCollege[c];
+        var reg = R.filter(function (r) { return r.college === c; })[0] || {};
+        var nd = (drafts[c] || []).length;
+        var n = list.length < totals[c] ? list.length + " of " + totals[c] : String(totals[c]);
+        var meta = ((PLATFORM[reg.catalog_platform] || "") + " catalog, " + yr(list[0].catalog_year)).trim() + " · " +
+          n + (totals[c] === 1 ? " program" : " programs") + (nd ? " · " + nd + (nd === 1 ? " draft" : " drafts") + " for the college" : "");
+        var sec = section("records:" + c, c, meta, [drafts[c] && !narrowed ? draftsBox(c, drafts[c]) : null].concat(list.map(recordCard)),
+          { cls: "prh-college" });
+        /* A narrowed list opens its colleges, so a match is never hidden in a closed section. */
+        if (narrowed) sec.setAttribute("open", "");
+        drawn.push(box.appendChild(sec));
+      });
+      count.textContent = "Showing " + rows.length + " of " + P.length;
+    }
+    [q, showSel, colSel].forEach(function (c) { c.addEventListener("input", draw); c.addEventListener("change", draw); });
+    box.appendChild(section("records:find", "Find a record", "By name or control number, what waits, and the college", [
+      el("div", { cls: "prh-controls prh-rfind", role: "search", "aria-label": "Find a program record" }, [
+        el("label", { "for": "prh-rq" }, ["Find a program", q]),
+        el("label", { "for": "prh-rshow" }, ["Show", showSel]),
+        el("label", { "for": "prh-rcollege" }, ["College", colSel]),
+        count])]));
+    draw();
     return box;
+  }
+  function isWaiting(p) { var sl = stateLine(p); return !!(sl && sl.waiting); }
+  /* The Records view's filter, pure so a test reads it: the search matches the program's
+     name or its control number; show narrows to the records waiting on the reader (when one
+     is signed in), those failing or passing the three machine checks, or the checked ones. */
+  function filterRecords(P, q, show, college, waiting) {
+    var t = String(q || "").trim().toLowerCase();
+    return (P || []).filter(function (p) {
+      if (college && college !== "all" && p.college !== college) return false;
+      if (t && String(p.control_number || "").toLowerCase().indexOf(t) < 0 &&
+          String(p.program_title || "").toLowerCase().indexOf(t) < 0) return false;
+      if (show === "waiting") return waiting ? waiting(p) : true;
+      if (show === "fail") return machineFails(p).length > 0;
+      if (show === "pass") return machineFails(p).length === 0;
+      if (show === "checked") return !!p.checked;
+      return true;
+    });
   }
 
   function recordCard(p) {
@@ -1658,7 +1718,7 @@
   window.CPL_PROGRAM_REQUIREMENTS = {
     activate: activate,
     _state: state, _load: load, _render: render, mountSierra: mountSierra, SIERRA_SURFACE: SIERRA_SURFACE,
-    catalogStatus: catalogStatus, filterRegistry: filterRegistry, recordChecks: recordChecks,
+    catalogStatus: catalogStatus, filterRegistry: filterRegistry, filterRecords: filterRecords, recordChecks: recordChecks,
     ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span,
     collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary,
     machineFails: machineFails, verdictError: verdictError, VERDICT_RPC: VERDICT_RPC,

@@ -862,6 +862,72 @@ block("(12c)", function () {
     "Not saved: needs a fix takes a note saying what should change.");
 });
 
+// ── (13) Find a record: search, show and college (Sam, 2026-10-09, "Yes, do them") ──
+// Sam read Cerritos's 274 records on his phone with no way to find one. The failures this
+// guards: a search that misses a control number, a "waiting" filter offered to a reader who
+// cannot see the unchecked records, a match hidden inside a closed college section, and a
+// Phase 2 record showing "Not measured" when its loader carried the scorer's counts.
+const CERR = {
+  college: "Cerritos College", control_number: "02201", program_title: "Architectural Technology", award: "A.A. Degree",
+  catalog_year: "2026-2027", source_url: "https://example.org/arch", measure: "units", total_min: 34, total_max: 34,
+  checked: false, checked_by: null, checked_at: null,
+  checks: { coverage: true, invented: true, arithmetic: "equal", placed: 12, listed: 12 },
+  record: { program: { measure: "units" }, blocks: [{ name: "Required", rule: "all", courses: [{ code: "ARCH 110", units: 3, alternatives: [] }] }] }
+};
+const MUSIC = Object.assign(JSON.parse(JSON.stringify(CERR)), { control_number: "32563", program_title: "Music",
+  checks: { coverage: true, invented: true, arithmetic: "unequal", placed: 9, listed: 9 } });
+block("(13)", function () {
+  const { M } = loadModule();
+  const P = [IRONWORKER, CERR, MUSIC, ART];
+  const keys = function (rows) { return rows.map(function (p) { return p.control_number; }).join(","); };
+  check("(13) a control number finds its record", keys(M.filterRecords(P, "02201", "all", "all")) === "02201");
+  check("(13) a word of the name finds it, in any case", keys(M.filterRecords(P, "  music ", "all", "all")) === "32563");
+  check("(13) Fail a machine check keeps the records the server would leave unchecked",
+    keys(M.filterRecords(P, "", "fail", "all")) === "32563");
+  check("(13) Checked keeps the checked records", keys(M.filterRecords(P, "", "checked", "all")) === "42158");
+  check("(13) a college narrows to its records", keys(M.filterRecords(P, "", "all", "Irvine Valley College")) === "10265");
+  check("(13) Waiting asks the page who waits", keys(M.filterRecords(P, "", "waiting", "all",
+    function (p) { return !p.checked; })) === "02201,32563,10265");
+  check("(13) a Phase 2 record shows the scorer's counts", M.recordChecks(CERR).placed === 12 && M.recordChecks(CERR).listed === 12);
+  check("(13) a display build still wins over the loader's counts", M.recordChecks(ART).placed === 21 && M.recordChecks(ART).listed === 23);
+
+  const m = loadModule();
+  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER, CERR, MUSIC];
+  m.M._state.view = "records"; m.M._render();
+  const root = m.root;
+  const q = root.querySelector("#prh-rq"), show = root.querySelector("#prh-rshow"), col = root.querySelector("#prh-rcollege");
+  const secKeys = Array.prototype.map.call(root.querySelectorAll('[role="tabpanel"] details.prh-sec'), function (d) { return d.getAttribute("data-sec"); });
+  check("(13) the find controls are labeled, in an open section above the colleges", !!q && !!show && !!col &&
+    !!q.closest('details[data-sec="records:find"][open]') && !!root.querySelector('label[for="prh-rq"]') &&
+    root.querySelector(".prh-rfind").getAttribute("role") === "search" &&
+    secKeys.indexOf("records:find") >= 0 && secKeys.indexOf("records:find") < secKeys.indexOf("records:Cerritos College"), secKeys.join(","));
+  check("(13) signed out, no Waiting on your reading: the public read holds checked records only",
+    !Array.prototype.some.call(show.options, function (o) { return o.value === "waiting"; }));
+  check("(13) the count starts at every record", /Showing 3 of 3/.test(root.querySelector(".prh-count").textContent));
+  check("(13) the Phase 2 card says how many courses it placed", /12 of 12 placed/.test(root.textContent));
+  root.querySelector('details[data-sec="records:Cerritos College"]').removeAttribute("open");
+  q.value = "32563"; q.dispatchEvent(new m.w.Event("input"));
+  const arts = root.querySelectorAll("article.prh-rec");
+  check("(13) typing narrows the cards and the count", arts.length === 1 && /^Music/.test(arts[0].getAttribute("aria-label")) &&
+    /Showing 1 of 3/.test(root.querySelector(".prh-count").textContent));
+  check("(13) a narrowed list opens the college it found the record in",
+    root.querySelector('details[data-sec="records:Cerritos College"]').hasAttribute("open"));
+  check("(13) the search box keeps its focus target through a redraw", root.querySelector("#prh-rq") === q);
+  q.value = "no such program"; q.dispatchEvent(new m.w.Event("input"));
+  check("(13) no match says how to widen it", /No record matches/.test(root.textContent) && /Showing 0 of 3/.test(root.textContent));
+
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    r.M._state.view = "records"; r.M._render();
+    const sel = r.root.querySelector("#prh-rshow");
+    check("(13) signed in, Waiting on your reading is offered", Array.prototype.some.call(sel.options, function (o) { return o.value === "waiting"; }));
+    sel.value = "waiting"; sel.dispatchEvent(new r.w.Event("change"));
+    const labels = Array.prototype.map.call(r.root.querySelectorAll("article.prh-rec"), function (a) { return a.getAttribute("aria-label"); });
+    check("(13) Waiting shows the unchecked record and hides the checked one",
+      labels.join("|") === "Art, Irvine Valley College", labels.join("|"));
+  });
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {
