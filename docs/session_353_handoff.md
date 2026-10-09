@@ -20,7 +20,23 @@ Nothing waits on Sam on a sheet. The Library record reads Sheet 57 (Sam's paste,
    SAM. The last sheet, [Open Asks Sheet 57](https://claude.ai/artifact/XGgsHHu54rJmNGeEuT1teL), was answered in chat.
 3. **Rule 8:** `cpl_memory` tags `ui-pass`, `first-light`, `dark-mode`, `fact-sheet`.
 
-## Priority 1: the next UI pass, the Activities tab
+## Priority 1: the Catalog ROEP harvest (Sam's direction)
+
+Sam, at S352's close (2026-10-09): *"I want to get back to our main focus of building out Catalog ROEP harvest..."*
+Start there. Read the lane, [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md) (its
+Status section is the state), then [`program_requirements_harvest_lessons`](program_requirements_harvest_lessons.md),
+and `cpl_memory` tags for the harvest. `kb/queue_status.json` notes the reading agent starts after the Oct 11 census
+apply. Confirm the next step with Sam in one line if the lane does not name it.
+
+## Priority 2: the guard change, if the session runs outside Auto
+
+Sam ruled *"Turn the guard off on updates"* (2026-10-08) and agreed again at S352's close to do it in a session not in
+Auto mode. Spec (S348): in `scripts/supabase_sql_guard.py` allow a statement whose only write verb is UPDATE; keep the
+deny for an UPDATE of `cpl_memory_log` and for every other write verb; flip the "update" case in
+`tests/supabase_sql_guard_test.py`. Then the Library's version bumps (and harvest UPDATEs) run directly instead of as
+Sam's pastes. Auto mode refuses the edit to the hook; in Accept edits it lands.
+
+## The next UI pass (at the checkpoint): the Activities tab
 
 `python3 scripts/ui_pass.py --next` names **`cobi:activities-projects`** (never audited). Run
 [`/a11y-pass`](../.claude/commands/a11y-pass.md) light and dark:
@@ -35,13 +51,13 @@ that no longer exists, and inline `outline:none` ([`ui_pass_lessons`](ui_pass_le
 
 - **Two program records** (S347): Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767, Confirm or Needs a
   fix from the Records view. `program_record_verdicts` was empty at S352's checkpoint.
-- **The guard change** (S347, *"Turn the guard off on updates"*): lands only in a session Sam runs in Accept edits.
 - **Sam's reaction** to the docked Sierra full screen (S349) and the veteran map in COBI (S350).
 - **The CPL Queue routine** (`trig_01L8K64ZKYb5eALdT4HW6NAV`) still reads `enabled: false`; turning it on is his call.
 
 ## Decisions Sam made this run
 
 - **Sheet 56 card 1, *Mock it up*** (14:08Z, his own call): `cpl_memory` `sam-mock-up-fact-sheet-first-light-2026-10-09`.
+- **At the close: back to the Catalog ROEP harvest** (Priority 1), and yes to the guard change outside Auto mode.
 - **In chat, ~15:00Z: *"Fact Sheet looks great!"*** No reply on Sheet 57; taken as its *Port it*, as *"Love the Sierra
   mock up"* carried that port: `sam-fact-sheet-first-light-looks-great-2026-10-09`.
 

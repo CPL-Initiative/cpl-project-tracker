@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T15:30:32Z",
+  "written_at": "2026-10-09T15:34:47Z",
   "session": 352,
   "moniker": "SkyMeridian",
   "run": "Sam's session",
@@ -23,8 +23,8 @@
     }
   ],
   "next_step": {
-    "title": "The next accessibility pass: the Activities tab",
-    "text": "The UI pass names COBI's Activities tab, never checked before. The Dashboard passed in light and dark today, and the Fact Sheet moved to First Light."
+    "title": "Back to the Catalog program harvest",
+    "text": "Your direction at the close: the next session starts on the Catalog ROEP harvest, then turns the Supabase guard off for updates if it runs outside Auto mode."
   },
   "calls": [
     {
