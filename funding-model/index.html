@@ -84,10 +84,14 @@ a:hover{text-decoration-thickness:2px}
   padding:10px 16px; border:1px solid var(--border-strong); border-radius:0 0 6px 0; z-index:20; font-weight:600}
 .skip:focus{left:0}
 
-/* ── the controls (Sam, 2026-10-01: the Fact Sheet's layout; 2026-10-09: on the
-   version's row in the masthead). Each control is a word; Ask Sierra is
-   injected by fact-sheet/factsheet_sierra.js ahead of the PDF button. 44px of
-   height clears WCAG 2.2 target size. */
+/* ── the controls (Sam, 2026-10-01: the Fact Sheet's layout; 2026-10-09: in
+   the masthead, as underlined words without boxes, "simpler and less
+   obtrusive"). Each control is a word; Ask Sierra is injected by
+   fact-sheet/factsheet_sierra.js ahead of the PDF button. The .btn rule is the
+   boxed form; .mh-actions turns it into a text link: the underline is the cue
+   that is not color, cobalt on white reads above 4.5:1, and 24px of height
+   clears WCAG 2.2 target size (2.5.8). They stay <button>s where they act, so
+   a screen reader still names them as buttons. */
 .btn{font:inherit; font-size:.9rem; font-weight:600; line-height:1.2; color:var(--cobalt);
   background:var(--surface-opaque); border:1px solid var(--cobalt); border-radius:4px;
   padding:8px 16px; min-height:44px; cursor:pointer; display:inline-flex; align-items:center;
@@ -107,13 +111,18 @@ a:hover{text-decoration-thickness:2px}
 .head .logo{height:52px; width:auto; max-width:100%; flex:0 0 auto}
 .mh-text{flex:1 1 320px; min-width:0}
 .masthead h1{font-size:clamp(1.5rem,1.2rem + 1.25vw,2.1rem); color:var(--seal-blue); text-wrap:pretty}
-.mh-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 16px; margin-top:12px}
-.meta{display:flex; flex-wrap:wrap; gap:6px; max-width:none}
-.mh-actions{display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px}
+.mh-title{display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 14px}
+.ver{margin:0; font-size:.8rem; color:var(--text-muted); white-space:nowrap; font-variant-numeric:tabular-nums}
+.ver abbr{text-decoration:none}
+.mh-row{margin-top:10px}
+.mh-actions{display:flex; flex-wrap:wrap; align-items:center; gap:4px 22px}
+.mh-actions .btn, .mh-actions .btn.primary, .mh-actions .fs-sierra-launch{
+  background:none; border:0; border-radius:2px; padding:2px 0; min-height:24px;
+  color:var(--cobalt); font-size:.95rem; font-weight:600;
+  text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px}
+.mh-actions .btn:hover, .mh-actions .btn.primary:hover, .mh-actions .fs-sierra-launch:hover{
+  background:none; color:var(--seal-blue); text-decoration-thickness:2px}
 @media (max-width:560px){ .head .logo{height:40px} }
-.tag{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--border-strong);
-  border-radius:999px; padding:3px 11px; font-size:.78rem; color:var(--text-muted); background:var(--surface-subtle)}
-.tag b{color:var(--text-strong); font-weight:600}
 
 /* ── contents (Sam, 2026-10-01: a link to each section that opens it) ───── */
 .toc-wrap{display:block; margin-top:clamp(18px,3vw,28px)}
@@ -390,11 +399,13 @@ section[hidden]{display:none}
     <img class="logo" src="../sierra/cpl-initiative-logo-navy.png"
          alt="California Community Colleges, Credit for Prior Learning Initiative" width="1115" height="209">
     <div class="mh-text">
-      <h1>2026-2028 CPL Initiative Funding</h1>
+      <!-- The version rides the title's line in small type (Sam, 2026-10-09:
+           "cut Version and just use Ver: 10/9/26 -- It doesn't need a chip"). -->
+      <div class="mh-title">
+        <h1>2026-2028 CPL Initiative Funding</h1>
+        <p class="ver"><abbr title="Version">Ver</abbr>: <span id="x-version">8/31/26</span></p>
+      </div>
       <div class="mh-row">
-        <div class="meta">
-          <span class="tag">Version as of <b id="x-version">2026-08-31</b></span>
-        </div>
         <div class="mh-actions" data-sierra-bar>
           <button type="button" class="btn" id="btn-collapse-all" aria-controls="start">Collapse all</button>
           <!-- My CPL Funding (Sam, 2026-09-30): opens the institution table's
@@ -879,7 +890,12 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   };
   // The masthead identity tags come from the engine too — the version the tab
   // prints and the scenario this browser has selected — never typed here.
-  if (D.model_version) setText("x-version", D.model_version);
+  // "Ver: 10/9/26" (Sam, 2026-10-09): the model's version date, month/day/year,
+  // without the ".N" a sub-revision carries.
+  if (D.model_version) {
+    var vm = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(D.model_version));
+    setText("x-version", vm ? (+vm[2]) + "/" + (+vm[3]) + "/" + vm[1].slice(2) : String(D.model_version));
+  }
   // The introduction video is per scenario: each one is typed from its scenario's
   // dials, so a page showing Scenario 2 links Scenario 2's introduction (Sam,
   // 2026-09-26). Scenario 1's stays the default for every other name. Scenario 2
