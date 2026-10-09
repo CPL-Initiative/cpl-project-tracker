@@ -540,7 +540,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 196
+     "line": 309
     }
    ],
    "main_committers": []
@@ -1087,7 +1087,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 232
+     "line": 216
     }
    ],
    "main_committers": []
@@ -4955,7 +4955,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 264
+     "line": 377
     },
     {
      "id": "module:college_briefing.js",
@@ -19004,7 +19004,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 570,
+     "line": 592,
      "tabs": [
       "chatbot"
      ]

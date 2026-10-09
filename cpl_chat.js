@@ -261,6 +261,28 @@
   // ── Chat transcript helpers ──
   var logEl, inputEl, sendBtn, statusEl, audEl, viewerEl;
 
+  /* ── A docked Sierra fills the window when she answers (Sam, 2026-10-08) ────
+   * "What do you think about having Sierra expand full screen for when
+   * responding?" — ruled Expand when answering (Sheet 54 card 1) and Expand in
+   * place (Sheet 53 card 3). A DOCK is a mountInto() host (My College, Program
+   * Requirements); the dedicated CPL Assistant pane is already the whole tab and
+   * gets no control.
+   *
+   * IN PLACE means the same wrap, so the answer keeps the tab's college
+   * (`hostScope`), its surface and the reader's credential. The wrap moves to
+   * <body> while expanded: First Light's glass cards set backdrop-filter, and an
+   * ancestor with a filter, transform or backdrop-filter traps position:fixed
+   * inside itself. A placeholder holds its seat in the tab.
+   *
+   * `wentBack`: a reader who returns to the tab stays docked for the rest of
+   * that conversation until they choose Full screen, so a follow-up never pulls
+   * them away from the tab twice. A new subject (clearTranscript) clears it. */
+  var wrapEl = null, wrapIsDock = false, dockBtn = null, dockNameSeq = 0;
+  var expanded = false, dockHold = null, wentBack = false, inerted = [];
+  // Above every COBI overlay a tab opens (10000), below First Light's daily
+  // greeting (12000), which may open over her and must stay dismissable.
+  var DOCK_Z = 11000;
+
   // ── Audience (primary population) ──
   // Required before the first question (Sam, 2026-07-01): the visitor picks who
   // they are so Sierra tailors tone + content per audience — students shouldn't
@@ -719,7 +741,11 @@
       // sibling is injected instead, so the confirm prompt needs no Rule-4
       // mirror. Cobalt on the subtle surface, not the crimson of an error.
       '.cplchat-status.cplchat-confirm { color:var(--cobalt, #0047AB); font-weight:600; }',
-      '.cplchat-fb { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:2px 0 8px 38px; font-size:.78rem; color:var(--text-faint, #8a94a6); }',
+      // The row's words in --text-muted and its pills at full strength with a 24px
+      // floor: the first seeded conversation the sweep measured (S349, the
+      // full-screen dock) found --text-faint at 3.24:1 and the .75 fade at
+      // 2.48:1, and every pill 23.4px tall. The public page's row already does this.
+      '.cplchat-fb { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:2px 0 8px 38px; font-size:.78rem; color:var(--text-muted, #5C5C55); }',
       // The rating buttons carry WORDS now (Helpful / Not helpful), not thumbs.
       // A <button> inherits neither font-family nor color — which is why the
       // Copy pill below spells both out — and a glyph did not care, but a word
@@ -727,15 +753,15 @@
       // button font and color right beside a Copy pill that does not. nowrap
       // keeps "Not helpful" on one line; the row still wraps (.cplchat-fb is
       // flex-wrap).
-      '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; line-height:1.4; opacity:.75; color:inherit; font-family:inherit; white-space:nowrap; }',
-      '.cplchat-fb-btn:hover { opacity:1; border-color:var(--cobalt, #0047AB); }',
-      '.cplchat-fb-btn.on { opacity:1; background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; line-height:1.4; min-height:24px; color:inherit; font-family:inherit; white-space:nowrap; }',
+      '.cplchat-fb-btn:hover { border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-fb-btn.on { background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
       // Copy shares the pill shape but NOT the .cplchat-fb-btn class — that class
       // means "a rating button" to the code (btns.up/btns.down) and to the tests,
       // which assert exactly two of them.
-      '.cplchat-fb-copy { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; font-family:inherit; line-height:1.4; opacity:.75; color:inherit; white-space:nowrap; }',
-      '.cplchat-fb-copy:hover { opacity:1; border-color:var(--cobalt, #0047AB); }',
-      '.cplchat-fb-copy.on { opacity:1; background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-fb-copy { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; font-family:inherit; line-height:1.4; min-height:24px; color:inherit; white-space:nowrap; }',
+      '.cplchat-fb-copy:hover { border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-fb-copy.on { background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
       // THE ROOT DEFECT. An author `display` rule beats the UA stylesheet's
       // `[hidden] { display:none }`, so `noteWrap.hidden = true` was INERT:
       // the composer never closed on success, and it was on screen from the
@@ -748,7 +774,7 @@
       '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:var(--on-accent); font-size:.8rem; font-weight:600; }',
       '.cplchat-fb-note button:disabled { opacity:.6; cursor:default; }',
       '.cplchat-fb-done { color:var(--text-muted, #5a6478); font-weight:600; }',
-      '.cplchat-fb-sending { color:var(--text-faint, #8a94a6); font-weight:600; }',
+      '.cplchat-fb-sending { color:var(--text-muted, #5C5C55); font-weight:600; }',
       '.cplchat-fb-fail { color:var(--crimson, #920000); font-weight:600; }',
       // Sierra-mark avatar (SVG roundel replaces the emoji glyph)
       '.cplchat-avatar { background: transparent; }',
@@ -804,6 +830,45 @@
     document.head.appendChild(st);
   }
 
+  /* The full-screen dock, injected like the rest (one static file, no Rule-4
+   * mirror). Tokens only: --paper is First Light's page color in both themes, so
+   * the expanded column reads as the public page's asking view. Selectors carry
+   * `html .cplchat.cplchat-full` to outrank both the HTML rules and the dark
+   * rules above, which reach (0,3,0). */
+  function ensureDockCss() {
+    if (document.getElementById('cplchat-dock-css')) return;
+    var css = [
+      '.cplchat-dockbar { display:flex; align-items:center; justify-content:flex-end; gap:12px; margin:4px 0 6px; }',
+      '.cplchat-dock-name { display:none; align-items:center; gap:8px; margin-right:auto; font-weight:700; color:var(--navy-primary, #0b3d61); }',
+      '.cplchat-dock-name svg { width:1.5em; height:1.5em; display:block; }',
+      '.cplchat-dock-btn { font:inherit; font-size:.85rem; font-weight:600; min-height:34px; padding:4px 14px; border-radius:999px;'
+        + ' border:1px solid var(--border-strong, #cdd6e3); background:var(--surface-opaque, #fff); color:var(--seal-blue-text, #002F6D); cursor:pointer; }',
+      '.cplchat-dock-btn:hover { border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-full-note { display:none; }',
+      'html.cplchat-locked, html.cplchat-locked body { overflow:hidden; }',
+      'html .cplchat.cplchat-full { position:fixed; inset:0; margin:0; max-width:none; box-sizing:border-box;'
+        + ' display:flex; flex-direction:column; overflow-y:auto; overscroll-behavior:contain;'
+        + ' padding:0 16px; background:var(--paper, #F4F2ED); color:var(--text-body, #3A3A36); }',
+      'html .cplchat.cplchat-full { z-index:' + DOCK_Z + '; }',
+      'html .cplchat.cplchat-full:focus { outline:none; }',
+      'html .cplchat.cplchat-full > * { width:100%; max-width:46rem; margin-left:auto; margin-right:auto; box-sizing:border-box; }',
+      'html .cplchat.cplchat-full .cplchat-intro { display:none; }',
+      'html .cplchat.cplchat-full .cplchat-dockbar { position:sticky; top:0; z-index:1; margin-top:0; margin-bottom:0; padding:12px 0 10px;'
+        + ' background:var(--paper, #F4F2ED); border-bottom:1px solid var(--border, #d8dde6); }',
+      'html .cplchat.cplchat-full .cplchat-dock-name { display:flex; }',
+      'html .cplchat.cplchat-full .cplchat-log { flex:1 0 auto; min-height:0; max-height:none; overflow:visible;'
+        + ' border:0; border-radius:0; background:transparent; padding:8px 0; margin-top:0; margin-bottom:0; }',
+      'html .cplchat.cplchat-full .cplchat-inputrow { position:sticky; bottom:0; z-index:1; padding:10px 0 12px; background:var(--paper, #F4F2ED); }',
+      'html .cplchat.cplchat-full .cplchat-full-note { display:block; margin-top:0; margin-bottom:0; padding:0 0 14px; font-size:.8rem; color:var(--text-muted, #5C5C55); }',
+      '@media (prefers-reduced-motion: no-preference) { html .cplchat.cplchat-full { animation:cplchatFull .16s ease-out; } }',
+      '@keyframes cplchatFull { from { opacity:0; } to { opacity:1; } }',
+    ].join('\n');
+    var st = document.createElement('style');
+    st.id = 'cplchat-dock-css';
+    st.textContent = css;
+    document.head.appendChild(st);
+  }
+
   // A themed rule on cpl_theme.js's contract: dark when the OS is dark and the reader
   // has not chosen light, and dark when the reader chose dark. Selectors gain
   // :root, so these outrank the widget's base rules in the HTML.
@@ -834,6 +899,10 @@
   var windowScrollWatched = false;
   function nearBottom() {
     var slack = 120;                                    // a comfortable "still at the end"
+    // Full screen: the wrap is the scroller and the page underneath is locked.
+    if (expanded && wrapEl) {
+      return wrapEl.scrollTop + wrapEl.clientHeight >= wrapEl.scrollHeight - slack;
+    }
     if (logEl && logEl.scrollHeight > logEl.clientHeight + 1) {
       return logEl.scrollTop + logEl.clientHeight >= logEl.scrollHeight - slack;
     }
@@ -848,6 +917,12 @@
     if (!logEl) return;
     requestAnimationFrame(function () {
       if (!logEl) return;
+      // Full screen: the log grows inside the wrap, so the wrap scrolls, and
+      // only while the reader is still following (same `stick` rule).
+      if (expanded && wrapEl && wrapEl.contains(logEl)) {
+        if (stick) wrapEl.scrollTop = wrapEl.scrollHeight;
+        return;
+      }
       // Internal scroll first. Still correct for a long answer that has hit the
       // max-height cap; a harmless no-op while the box is still growing.
       logEl.scrollTop = logEl.scrollHeight;
@@ -907,6 +982,8 @@
    * caught it: EXACTLY ONE cluster -> found 0. Clear what the turns created —
    * message rows and their feedback bars — and leave the furniture alone. */
   function clearTranscript() {
+    // A new subject is a new conversation: the next answer may expand again.
+    wentBack = false;
     if (!logEl) return;
     var kill = logEl.querySelectorAll('.cplchat-msg, .cplchat-fb');
     for (var i = 0; i < kill.length; i++) {
@@ -1064,6 +1141,94 @@
     return got ? out : null;
   }
 
+  // ── Full screen and back (see `wrapEl` above) ──
+  function setDockBtn() {
+    if (dockBtn) dockBtn.textContent = expanded ? 'Back to the tab' : 'Full screen';
+  }
+
+  /* A fixed layer that paints above the dialog stays live. Made inert, it would
+   * be a cover nobody can dismiss: First Light's greeting (z 12000) can open
+   * over her from its keystroke, and its own Escape and close button must work. */
+  function paintsAbove(k) {
+    try {
+      var cs = window.getComputedStyle(k);
+      return cs.position === 'fixed' && (parseInt(cs.zIndex, 10) || 0) > DOCK_Z;
+    } catch (e) { return false; }
+  }
+
+  function expandDock(focusBox) {
+    if (expanded || !wrapIsDock || !wrapEl || !wrapEl.parentNode || !document.body) return false;
+    if (!document.documentElement.contains(wrapEl)) return false;
+    dockHold = document.createElement('div');
+    dockHold.className = 'cplchat-dock-hold';
+    dockHold.hidden = true;
+    wrapEl.parentNode.insertBefore(dockHold, wrapEl);
+    document.body.appendChild(wrapEl);
+    // Everything else on the page sits behind the dialog: unreachable by Tab,
+    // by a pointer and by a screen reader's browse mode.
+    inerted = [];
+    var kids = document.body.children;
+    for (var i = 0; i < kids.length; i++) {
+      var k = kids[i];
+      if (k === wrapEl || k.hasAttribute('inert') || paintsAbove(k)) continue;
+      k.setAttribute('inert', '');
+      inerted.push(k);
+    }
+    wrapEl.classList.add('cplchat-full');
+    wrapEl.setAttribute('role', 'dialog');
+    wrapEl.setAttribute('aria-modal', 'true');
+    var name = wrapEl.querySelector('.cplchat-dock-name');
+    if (name && name.id) wrapEl.setAttribute('aria-labelledby', name.id);
+    else wrapEl.setAttribute('aria-label', 'Sierra AI');
+    wrapEl.setAttribute('tabindex', '-1');
+    document.documentElement.classList.add('cplchat-locked');
+    expanded = true;
+    setDockBtn();
+    // Moving the wrap dropped focus to <body>. From submit() the box is about
+    // to be disabled while she answers (a disabled box loses focus), so focus
+    // lands on the dialog and submit() returns it to the box when she is done;
+    // from Full screen it lands in the box.
+    var target = (focusBox && inputEl && wrapEl.contains(inputEl) && !inputEl.disabled) ? inputEl : wrapEl;
+    try { target.focus({ preventScroll: true }); } catch (e) { /* no focus support */ }
+    stick = true;
+    scrollDown();
+    return true;
+  }
+
+  /* `byReader`: Back to the tab, Escape, or the reader leaving for another tab.
+   * mountInto() also collapses, to rebuild, and re-expands at once; that one is
+   * not the reader going back. */
+  function collapseDock(byReader) {
+    if (!expanded) return false;
+    expanded = false;
+    for (var i = 0; i < inerted.length; i++) inerted[i].removeAttribute('inert');
+    inerted = [];
+    document.documentElement.classList.remove('cplchat-locked');
+    if (wrapEl) {
+      wrapEl.classList.remove('cplchat-full');
+      ['role', 'aria-modal', 'aria-labelledby', 'aria-label', 'tabindex'].forEach(function (a) {
+        wrapEl.removeAttribute(a);
+      });
+      if (dockHold && dockHold.parentNode) dockHold.parentNode.insertBefore(wrapEl, dockHold);
+      else if (wrapEl.parentNode) wrapEl.parentNode.removeChild(wrapEl);   // its tab is gone
+    }
+    if (dockHold && dockHold.parentNode) dockHold.parentNode.removeChild(dockHold);
+    dockHold = null;
+    setDockBtn();
+    if (byReader) {
+      wentBack = true;
+      try { if (dockBtn && document.documentElement.contains(dockBtn)) dockBtn.focus(); } catch (e) { /* hidden pane */ }
+    }
+    return true;
+  }
+
+  var dockKeysWatched = false;
+  function onDockKey(e) {
+    if (!expanded || e.key !== 'Escape' || e.defaultPrevented || e.isComposing) return;
+    e.preventDefault();
+    collapseDock(true);
+  }
+
   // ── Submit flow ──
   var busy = false;
   async function submit() {
@@ -1077,6 +1242,9 @@
      * leaves the question in the box for setAudience() to resume. */
     if (!audienceConfirmed) { confirmAudience(); return; }
     pendingAsk = null;
+    // A docked Sierra fills the window as she starts answering, unless the
+    // reader already went back to the tab in this conversation.
+    if (wrapIsDock && !wentBack && !expanded && wrapEl && wrapEl.contains(inputEl)) expandDock();
     busy = true;
     // Asking is an explicit "show me the answer", so re-arm page-follow even if
     // the reader had scrolled up to look at an earlier turn.
@@ -1106,9 +1274,12 @@
   }
 
   // ── Build the panel ──
-  function build(mount) {
+  function build(mount, dock) {
     ensureChatCss();
     var wrap = el('div', { className: 'cplchat' });
+    wrapEl = wrap;
+    wrapIsDock = !!dock;
+    dockBtn = null;
 
     // ── The one heading (Sam, 2026-08-17) ──────────────────────────────────
     // "Change CPL Assistant title to Sierra AI with her mountain logo". She is
@@ -1152,6 +1323,40 @@
         'note if you notice an improvement to be made. Please don\'t enter ' +
         'personal information; questions are logged to improve responses.'),
     ]));
+
+    /* The dock's one control, a word (Full screen / Back to the tab). A direct
+     * child of the wrap, never inside the intro: My College hoists the intro's
+     * heading into its <summary> and the rest of the intro above the box, and a
+     * control that moved with it would be left behind when the wrap goes full
+     * screen. Expanded, the bar names her and stays at the top. */
+    if (dock) {
+      ensureDockCss();
+      var nameId = 'cplchat-dock-name-' + (++dockNameSeq);
+      var dockName = el('span', { className: 'cplchat-dock-name', id: nameId });
+      var dockMark = el('span', { 'aria-hidden': 'true' });
+      dockMark.innerHTML = SIERRA_MARK;             // static, trusted (see SIERRA_MARK)
+      dockName.appendChild(dockMark);
+      dockName.appendChild(el('span', null, 'Sierra AI'));
+      dockBtn = el('button', { type: 'button', className: 'cplchat-dock-btn' });
+      dockBtn.addEventListener('click', function () {
+        // A box left in a tab another mount has since taken over is stale; its
+        // control must not move the live one.
+        if (wrap !== wrapEl) return;
+        if (expanded) { collapseDock(true); return; }
+        wentBack = false;
+        expandDock(true);
+      });
+      setDockBtn();
+      wrap.appendChild(el('div', { className: 'cplchat-dockbar' }, [dockName, dockBtn]));
+      if (!dockKeysWatched) {
+        document.addEventListener('keydown', onDockKey);
+        dockKeysWatched = true;
+      }
+      // Expanded, the wrap is the scroller; the reader scrolling up takes
+      // control exactly as on the page.
+      try { wrap.addEventListener('scroll', noteReaderScroll, { passive: true }); }
+      catch (e) { /* no options support — follow stays armed */ }
+    }
 
     /* ⚠ role="group", NOT "radiogroup" — the children are `aria-pressed`
      * toggle buttons, and a radiogroup promises `role="radio"` + `aria-checked`
@@ -1212,6 +1417,13 @@
     sendBtn.addEventListener('click', submit);
     row.appendChild(inputEl); row.appendChild(sendBtn);
     wrap.appendChild(row);
+    // Expanded, the intro is hidden, so the privacy sentence the reader needs
+    // before typing a follow-up rides under the box (the public page's footer
+    // line). Docked, the intro carries it and this stays hidden.
+    if (dock) {
+      wrap.appendChild(el('p', { className: 'cplchat-full-note' },
+        'Please don\'t enter personal information; questions are logged to improve responses.'));
+    }
 
     mount.appendChild(wrap);
   }
@@ -1325,6 +1537,12 @@
     // not consumed until an input is actually found, so listening on the wrong
     // one costs nothing.
     var t = e && e.detail && e.detail.tab;
+    // Full screen covers the tab it came from; arriving anywhere else (the
+    // browser's Back, a deep link) takes it back to its seat first.
+    if (expanded && dockHold && t) {
+      var pane = document.getElementById('tab-' + t);
+      if (!pane || !pane.contains(dockHold)) collapseDock(true);
+    }
     if (t === 'chatbot' || t === 'college-briefing') consumeTestQuestion();
   });
 
@@ -1360,9 +1578,23 @@
   // Only one host is live at a time (they are tab panes), and build() re-points
   // the module's element refs, so re-mounting on tab switch is correct rather
   // than duplicative. `_host` tracks which one currently owns the widget.
-  var _host = null;
+  var _host = null, _hostPane = null;
+  function paneOf(node) {
+    for (var n = node; n && n.nodeType === 1; n = n.parentNode) {
+      if (n.classList && n.classList.contains('cpl-tab-pane')) return n;
+    }
+    return null;
+  }
   function mountInto(host, surface) {
     if (!host || host === _host) return;
+    /* ⚠ A FULL-SCREEN SIERRA SURVIVES THE TAB REPAINTING UNDER HER. The wrap
+     * sits in <body>, so the repaint did not touch it, but the rebuild below
+     * reads the old mount: collapse it back into its seat (in the old, possibly
+     * detached, host), rebuild, and expand the new wrap. Not the reader going
+     * back, so `wentBack` is untouched. */
+    var wasFull = expanded;
+    var hadFocus = !!(wasFull && wrapEl && wrapEl.contains(document.activeElement));
+    if (wasFull) collapseDock(false);
     /* ⚠ CARRY UNSENT TYPING ACROSS A RE-MOUNT. The embedding tab re-renders for
      * reasons that are not the reader's — My College repaints when its roster,
      * the live metrics or the funding model arrive — and every repaint hands
@@ -1372,18 +1604,48 @@
      * Only the previous mount's own input is carried: if the CPL Assistant pane
      * built last, `inputEl` is that pane's and stays where it is. */
     var carried = (_host && inputEl && _host.contains(inputEl)) ? inputEl.value : '';
+    /* ⚠ AND THE CONVERSATION, WHEN THE SAME TAB REPAINTS. `convo` is sent with
+     * the next question, so a rebuilt log that starts empty breaks "what we send
+     * is never more than what is on screen" — and an answer still streaming
+     * would write into the old, detached bubble. The turn rows move (the same
+     * nodes, so a streaming bubble keeps streaming). A different tab is a
+     * different place on the page and keeps today's empty log; a new subject
+     * still clears through setScope(). */
+    var samePane = !!(_host && _hostPane && paneOf(host) === _hostPane);
+    var oldLog = (samePane && logEl && _host.contains(logEl)) ? logEl : null;
     _host = host;
+    _hostPane = paneOf(host);
     /* The embedding tab declares which surface it is. Absent -> null -> every
      * guidance rule, i.e. exactly today's behavior, so an older host that has
      * not been updated is unaffected rather than mis-scoped. */
     hostSurface = surface || null;
     host.innerHTML = '';
     host.setAttribute('data-cplchat-mounted', '1');
-    build(host);
+    build(host, true);
     if (carried && inputEl && !inputEl.value) inputEl.value = carried;
+    if (oldLog && logEl) {
+      var turns = [];
+      for (var i = 0; i < oldLog.children.length; i++) {
+        var c = oldLog.children[i];
+        if (c.classList.contains('cplchat-msg') || c.classList.contains('cplchat-fb')) turns.push(c);
+      }
+      turns.forEach(function (t) { logEl.appendChild(t); });
+    }
+    // Mid-answer, the new box waits as the old one did.
+    if (busy && sendBtn && inputEl) { sendBtn.disabled = true; inputEl.disabled = true; setStatus('Thinking…', 'pending'); }
     // A Sierra Training hand-off addressed to My College lands in the box this
     // mount just built. The default hand-off is still never consumed here.
     if (testDest() === DEST_MY_COLLEGE) consumeTestQuestion(host);
+    /* Re-expand once the host has finished with its new box, not now: My College
+     * goes on to hoist the box's heading into its <summary> and hand it the
+     * scope and questions, and it looks for the box inside its own section. A
+     * microtask runs before the next paint, so nothing flickers. */
+    if (wasFull) {
+      var built = wrapEl;
+      Promise.resolve().then(function () {
+        if (!expanded && wrapEl === built) expandDock(hadFocus);
+      });
+    }
   }
 
   if (document.readyState === 'loading') {
@@ -1408,6 +1670,10 @@
     // rect at zero. Test seams, not API — underscored, and nothing calls them.
     _scrollDown: scrollDown,
     _setStick: function (v) { stick = !!v; },
+    // The full-screen dock (tests/cpl_chat_dock_full.test.js). Seams, not API.
+    _dockExpanded: function () { return expanded; },
+    _expandDock: function () { return expandDock(true); },
+    _collapseDock: function () { return collapseDock(true); },
     // Embed the one assistant elsewhere (My College). See mountInto above.
     mountInto: mountInto,
     // Prefill the box without sending — the visitor edits before asking.

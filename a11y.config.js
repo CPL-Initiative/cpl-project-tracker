@@ -180,6 +180,119 @@ async function seedCollegeSelect(page) {
 // 2026-10-07 (S343). The sweep aborts every request off the origin, so the
 // tab's Supabase reads fail; the status file (kb/queue_status.json) is served
 // and read for real. Each count matches what the tables held that day.
+/* The docked Sierra, full screen with a conversation (S349). Seeded through
+   the real path: the reader's role is confirmed on the chip, only the chat
+   function's stream is stubbed, and six questions are asked, so the first one
+   expands the dock exactly as a reader's would and every answer carries the
+   feedback row cpl_chat.js writes. One answer carries a table wider than a
+   phone. Program Requirements, because its Sierra is open by default. */
+async function seedSierraDockFull(page, theme) {
+  // The sweep aborts the tab's reads, and the read-failed state has no Sierra
+  // section; the Progress seed paints the tab whole first.
+  await seedProgress(page, theme);
+  // First Light's once-a-day greeting opens 650 ms after load and would cover
+  // the screenshots: mark the day seen and close it if it is up.
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForFunction(() => window.CPL_CHAT && document.querySelector("#prh-sierra-mount .cplchat .cplchat-dock-btn"),
+    null, { timeout: 60000 });
+  await page.evaluate(async () => {
+    const wrap = document.querySelector("#prh-sierra-mount .cplchat");
+    const chip = Array.from(wrap.querySelectorAll(".cplchat-aud-chip")).find((b) => /Faculty/.test(b.textContent));
+    if (chip) chip.click();
+    const table = "\n\n| Credential | Course | Units | College | C-ID |\n|---|---|---|---|---|\n" +
+      "| FIW Orientation | WELD 100 Introduction to Welding Technology | 3.0 | Cerritos College | none |\n" +
+      "| Post Tensioning 3 | WELD 244 D1.1 Code Clinic | 2.0 | Santa Ana College | none |\n";
+    let n = 0;
+    const real = window.fetch;
+    window.fetch = function (url) {
+      // The chat function's request, by the name its URL ends in. Spelled as a
+      // pattern so kb/_build_dependency_map.py does not read the stub as a caller.
+      if (!/\/cpl-chat(\?|$)/.test(String(url))) return real.apply(this, arguments);
+      const text = "Seeded answer " + (++n) + " for layout measurement, long enough to wrap on a narrow viewport " +
+        "and push the dialog past its own height. Ask the [CPL coordinator](https://example.org/cpl) at the college " +
+        "you plan to attend." + (n === 1 ? table : "");
+      const sse = "event: text\ndata: " + JSON.stringify({ text: text }) + "\n\nevent: done\ndata: {}\n\n";
+      return Promise.resolve(new Response(sse, { status: 200, headers: { "Content-Type": "text/event-stream" } }));
+    };
+    const idle = () => new Promise((resolve) => {
+      const t0 = Date.now();
+      (function poll() {
+        const box = document.querySelector(".cplchat-full .cplchat-input");
+        if ((box && !box.disabled) || Date.now() - t0 > 5000) resolve(); else setTimeout(poll, 30);
+      })();
+    });
+    for (let i = 0; i < 6; i++) {
+      window.CPL_CHAT.ask("Seeded question " + (i + 1) + ": I have a journey worker license as an Iron and Steel worker. What CPL can I get here?");
+      await new Promise((r) => setTimeout(r, 30));
+      await idle();
+    }
+  });
+  await page.waitForTimeout(200);
+}
+async function sierraDockFullChecks(page) {
+  const out = [];
+  out.push(await page.evaluate(() => {
+    const w = document.querySelector(".cplchat.cplchat-full");
+    const lab = w && document.getElementById(w.getAttribute("aria-labelledby") || "");
+    return {
+      name: "a send expands the dock: a modal dialog in <body>, named",
+      ok: !!w && w.parentNode === document.body && w.getAttribute("role") === "dialog" &&
+        w.getAttribute("aria-modal") === "true" && !!lab && lab.textContent.trim() === "Sierra AI",
+      detail: w ? "role=" + w.getAttribute("role") + ", name=" + (lab ? '"' + lab.textContent.trim() + '"' : "none") : "not expanded",
+    };
+  }));
+  out.push(await page.evaluate(() => {
+    const w = document.querySelector(".cplchat-full");
+    // A fixed layer above the dialog (First Light's greeting) stays live on purpose.
+    const above = (k) => { const cs = getComputedStyle(k); return cs.position === "fixed" && (parseInt(cs.zIndex, 10) || 0) > 11000; };
+    const open = Array.from(document.body.children).filter((k) => k !== w && !k.hasAttribute("inert") &&
+      !above(k) && !/^(SCRIPT|STYLE|LINK|TEMPLATE)$/.test(k.tagName));
+    return {
+      name: "the page behind is inert and does not scroll",
+      ok: !open.length && getComputedStyle(document.documentElement).overflowY === "hidden",
+      detail: open.length + " body children not inert; html overflow-y=" + getComputedStyle(document.documentElement).overflowY,
+    };
+  }));
+  out.push(await page.evaluate(() => {
+    const w = document.querySelector(".cplchat-full");
+    w.scrollTop = 0;
+    const r = w.querySelector(".cplchat-inputrow").getBoundingClientRect();
+    return {
+      name: "the question box stays on screen while reading from the top",
+      ok: r.top >= 0 && r.bottom <= window.innerHeight + 1,
+      detail: "box top=" + Math.round(r.top) + ", bottom=" + Math.round(r.bottom) + ", viewport=" + window.innerHeight,
+    };
+  }));
+  await page.evaluate(() => { const w = document.querySelector(".cplchat-full"); w.scrollTop = 0; w.focus(); });
+  await page.keyboard.press("End");
+  await page.waitForTimeout(300);
+  out.push(await page.evaluate(() => {
+    const w = document.querySelector(".cplchat-full");
+    return {
+      name: "End reaches the latest answer",
+      ok: w.scrollTop > 0 && w.scrollTop + w.clientHeight >= w.scrollHeight - 2,
+      detail: "scrollTop after End = " + Math.round(w.scrollTop) + " of " + Math.round(w.scrollHeight - w.clientHeight),
+    };
+  }));
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(100);
+  out.push(await page.evaluate(() => {
+    const w = document.querySelector("#prh-sierra-mount > .cplchat");
+    return {
+      name: "Escape takes her back to the tab, the conversation with her",
+      ok: !document.querySelector(".cplchat-full") && !!w && w.querySelectorAll(".cplchat-msg").length === 12 &&
+        !document.querySelector("body > [inert]") && document.activeElement === w.querySelector(".cplchat-dock-btn"),
+      detail: (w ? w.querySelectorAll(".cplchat-msg").length + " turns in the tab" : "not in the tab") +
+        ", focus on " + (document.activeElement && document.activeElement.className),
+    };
+  }));
+  return out;
+}
+
 async function seedProgress(page, theme) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "program-requirements") location.hash = "program-requirements"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
@@ -698,6 +811,27 @@ module.exports = {
     routes: [{ hash: "program-requirements", name: "records-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedRecords(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── The docked Sierra, full screen (S349, Sheet 54 card 1) ─────────────
+     Expanded over Program Requirements with six seeded turns, one per theme:
+     the dialog, the page behind it inert, the sticky box, End and Escape. */
+  "sierra-dock-full": {
+    file: "index.html",
+    title: "Sierra docked, full screen while she answers",
+    routes: [{ hash: "program-requirements", name: "dock-full" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSierraDockFull(page, "light"),
+    keyboard: async (page) => sierraDockFullChecks(page),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "sierra-dock-full-dark": {
+    file: "index.html",
+    title: "Sierra docked, full screen while she answers, dark",
+    routes: [{ hash: "program-requirements", name: "dock-full-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSierraDockFull(page, "dark"),
+    keyboard: async (page) => sierraDockFullChecks(page),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "my-college-reports-signin": {
