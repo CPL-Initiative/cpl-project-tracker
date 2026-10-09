@@ -242,18 +242,118 @@ sm = C.summarize(recs, {"college": "Cerritos College", "programs": 292, "with_cl
 check(sm["passed_machine_checks"] == 1 and sm["failed"]["arithmetic"] == 1 and sm["errors"] == 1
       and sm["cost_usd"] == 0.12, "the account counts passes, each failed check, errors and cost")
 
-# ── the workflow: reads on a push, spends only when asked ───────────────────
+# ── the workflow: reads only when asked, spends only when asked ─────────────
 wf = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml")).read()
+read_job = wf.split("\n  read:\n")[1].split("\n  load:\n")[0]
+load_job = wf.split("\n  load:\n")[1]
 check("CENSUS_DELAY_MS: '4000'" in wf, "the capture reads at the census's pace")
 check("startsWith(github.event.head_commit.message, '[extract]')" in wf and "workflow_dispatch" in wf
       and "contains(github.event.head_commit.message" not in wf,
       "the extraction spends model calls only on a dispatch or a commit whose message STARTS with [extract]")
-check(wf.count("contents: write") == 1 and 'git push origin "HEAD:${{ github.ref_name }}"' in wf,
-      "the run writes only to the branch that ran it")
-check("if: env.EXTRACT == 'true'" in wf and "SUPABASE_SERVICE_KEY" in wf.split("name: Extract and score")[1].split("name: File the run")[0]
-      and "SUPABASE_SERVICE_KEY" not in wf.split("name: Extract and score")[0],
-      "the service key reaches the extraction step alone")
-check("github.actor != 'github-actions[bot]'" in wf, "the filing commit never runs the workflow again")
+check("startsWith(github.event.head_commit.message, '[read]')" in read_job.split("runs-on:")[0]
+      and "github.event.inputs.step != 'load'" in read_job.split("runs-on:")[0],
+      "a push reads the catalog only when its message starts with [read] or [extract]: an edit to the "
+      "script never re-reads 360 pages of a college's catalog")
+check("startsWith(github.event.head_commit.message, '[load]')" in load_job.split("runs-on:")[0]
+      and "github.event.inputs.step == 'load'" in load_job.split("runs-on:")[0],
+      "the load runs only on a dispatch with step=load or a commit whose message STARTS with [load]")
+check(wf.count("contents: write") == 2 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 2
+      and wf.count("git push") == 2,
+      "each job writes only to the branch that ran it")
+
+
+def steps(job):
+    return ["- name:" + x for x in job.split("- name:")[1:]]
+
+
+key_line = "SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}"
+holders = [st.splitlines()[0] for st in steps(read_job) + steps(load_job) if "SUPABASE_SERVICE_KEY" in st]
+check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 4
+      and holders == ["- name: Extract and score", "- name: Load the committed records, unchecked"],
+      "the service key reaches the extraction step and the load step, and no other: %r" % holders)
+check("if: env.EXTRACT == 'true'" in read_job, "the extraction step runs only when asked")
+check(wf.count("github.actor != 'github-actions[bot]'") == 2, "the filing and receipt commits never run the workflow again")
+
+# ── the load: unchecked, insert-only, and reversible from its receipt ───────
+import json  # noqa: E402
+import shutil  # noqa: E402
+import tempfile  # noqa: E402
+
+parent = tempfile.mkdtemp()
+tmp = os.path.join(parent, C.slug_of("Cerritos College"))
+try:
+    os.makedirs(os.path.join(tmp, "records"))
+    with open(os.path.join(tmp, "capture.json"), "w") as fh:
+        json.dump({"college": "Cerritos College", "catalog_year": "2026-2027"}, fh)
+
+    def rec(key, **kw):
+        base = {"college": "Cerritos College", "control_number": key, "title": "T" + key, "award": "A.S. Degree",
+                "source_url": "https://example.edu/" + key, "extracted_run": "37961137169", "error": None,
+                "score": {"coverage": {"pass": True}, "invented": {"pass": True},
+                          "arithmetic": {"status": "equal"}, "pass": True},
+                "record": {"program": {"measure": "units", "total_units": {"min": 18, "max": 18.5}},
+                           "blocks": [{"rule": "all", "courses": []}], "notes": "the model's working",
+                           "missing_explained": []}}
+        base.update(kw)
+        with open(os.path.join(tmp, "records", key + ".json"), "w") as fh:
+            json.dump(base, fh)
+
+    rec("00001")
+    rec("00002", extracted_run="37966828676")
+    rec("00003", error="timeout", record=None)
+    rec("00004", college="Mt. San Antonio College")
+    rec("00005", record={"program": {"measure": "credits", "total_units": {}}, "blocks": []})
+    rec("00006", record={"program": {"measure": "units", "total_units": {"min": "18"}}, "blocks": []})
+    rec("00007", extracted_run=None)
+    rows, skipped = C.load_rows("Cerritos College", folder=tmp)
+    check([r["control_number"] for r in rows] == ["00001", "00002"]
+          and [s["control_number"] for s in skipped] == ["00003", "00004", "00005", "00006", "00007"],
+          "the load leaves out an errored record, another college's, an unknown measure, a total that is "
+          "not a number and a record with no run, each with its reason: %r" % skipped)
+    check(all(not {"checked", "checked_by", "checked_at"} & set(r) for r in rows),
+          "a load row never carries checked: the function writes every row unchecked")
+    check([r["extracted_run"] for r in rows] == ["37961137169", "37966828676"],
+          "each row keeps the extraction run that read it, so a record kept from an earlier run says so")
+    check(set(rows[0]["record"]) == {"program", "blocks"} and rows[0]["catalog_year"] == "2026-2027"
+          and rows[0]["checks"] == {"coverage": True, "invented": True, "arithmetic": "equal"},
+          "a row carries the record as a reader renders it (no working notes), the year, and the three checks")
+
+    posted = []
+
+    def post(body):
+        posted.append(body)
+        if len(posted) == 2:
+            raise RuntimeError("HTTP Error 500")
+        return {"inserted_keys": [r["control_number"] for r in body["p_rows"]], "kept_keys": []}
+
+    real = (C.COLLEGE_DIR, C.RECEIPTS)
+    C.COLLEGE_DIR, C.RECEIPTS = parent, os.path.join(parent, "receipts")
+    try:
+        code = C.load("Cerritos College", "38000000001", batch=1, post=post)
+        receipt = json.load(open(C.receipt_path("Cerritos College", "38000000001")))
+        refused = C.load("Cerritos College", "not-a-run", post=post)
+    finally:
+        C.COLLEGE_DIR, C.RECEIPTS = real
+    check(code == 1 and receipt["inserted_keys"] == ["00001"] and receipt["error"].startswith("batch 2")
+          and receipt["posted"] == 2 and len(receipt["skipped"]) == 5,
+          "a load that stops mid-way still files a receipt naming what it inserted and where it stopped")
+    check(receipt["rollback"] and "checked = false" in receipt["rollback"] and "'00001'" in receipt["rollback"]
+          and "'00002'" not in receipt["rollback"],
+          "the rollback names only the keys this load inserted, and only while they are unchecked")
+    check(refused == 2, "a load without a numeric run id refuses")
+finally:
+    shutil.rmtree(parent, ignore_errors=True)
+
+sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
+body = sql.split("as $$")[1].split("$$;")[0]
+check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()
+      and "delete" not in body.lower(),
+      "the load function only inserts, and never touches a row already there")
+check("r->'record', r->'checks', false, null, null," in body,
+      "the load function writes every row unchecked, with no checked_by or checked_at")
+check("auth.role(), '') <> 'service_role'" in body
+      and "from public, anon, authenticated;" in sql and "to service_role;" in sql.split("grant execute")[1],
+      "only the service role may load: the body checks the caller's role, and the grant names service_role alone")
 
 if failures:
     print("FAIL: %d" % len(failures))

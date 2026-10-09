@@ -177,6 +177,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `match_document_sections` | `edgefn:cpl-chat` | — |
 | `nc_artifact_revise` | tabs: `nc-learning-partners` | — |
 | `nc_partner_note_revise` | tabs: `nc-learning-partners` | — |
+| `program_requirement_records_college_load` | scripts: `kb/_program_requirements_college.py` | — |
 | `program_source_addenda_apply` | scripts: `kb/_program_source_census.py` | — |
 | `program_source_census_apply` | scripts: `kb/_program_source_census.py` | — |
 | `program_typical_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
@@ -598,6 +599,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/projects_validation.md` | none found | scripts: `kb/_validate_projects.py` · committed by: `projects-seed-apply.yml` |
 | `kb/promotions.json` | scripts: `excel_to_dashboard.py`, `kb/_analyze_official_fold_evidence.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_remint_blast_radius.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_esl_package_dryrun.py`, `kb/_rekey_promotions.py`, `kb/_remint_apply.py`, `kb/_seed_authority_codes.py`, `kb/_title_consolidation_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py` | scripts: `kb/_rekey_promotions.py` |
 | `kb/queue_status.json` | tabs: `program-requirements` · scripts: `scripts/queue_status.py` | — |
+| `kb/receipts` | none found | committed by: `program-requirements-college.yml` |
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
 | `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
 | `kb/reference/CIPCode2020.csv` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_it_ai_credential_catalog.py` | — |
@@ -1055,5 +1057,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 35 RPCs · 6 edge functions · 616 file
+Coverage: 97 Supabase tables · 36 RPCs · 6 edge functions · 617 file
 datasets · 163 external services · 423 consumers · 46 workflows · 39 tabs.

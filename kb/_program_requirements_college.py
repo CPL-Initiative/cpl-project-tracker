@@ -30,6 +30,10 @@ scales to a college. So this pass turns the search around:
   file       copies the records and the run's account into the repository
              (kb/program_requirements_college/<slug>/), which the workflow
              commits to the branch that ran it: no session reads a job log.
+  load       posts the committed records, unchecked, to
+             program_requirement_records_college_load() with the service key,
+             and writes the receipt (kb/receipts/program_requirement_records_
+             college_<slug>_<run>.json) that names every key it inserted.
 
 The reads follow the census's rules, as the pilot's do (Sam's call 5 on sheet
 23): robots.txt first for every host, CENSUS_DELAY_MS between loads, the census
@@ -614,6 +618,129 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     return 0
 
 
+# ── load: the filed records into program_requirement_records ───────────────
+# Sam, 2026-10-09 (S353, as proposed): the records load UNCHECKED, and a person's
+# Confirm on the Records view is the only way one becomes checked. The load reads
+# the records committed under the college's folder, so what loads is what the
+# branch shows, and posts them a batch at a time to the one function that may
+# write them (chatbox/supabase_program_requirement_records_college_load.sql),
+# which inserts and never touches a row already there.
+LOAD_RPC = "rpc/program_requirement_records_college_load"
+LOAD_FUNCTION = LOAD_RPC.split("/", 1)[1]
+LOAD_BATCH = 25           # about 6 KB a record: a batch stays well under a request's limit
+RECEIPTS = os.path.join(HERE, "receipts")
+
+
+def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list[dict]]:
+    """The rows a load posts, and the records it leaves out with the reason. A row
+    carries the record as a reader renders it (the pilot's record_read), the three
+    machine checks and its own extraction run; it never carries checked, which
+    the function writes false."""
+    from _program_requirements_load import record_read
+    dest = folder or os.path.join(COLLEGE_DIR, slug_of(college))
+    with open(os.path.join(dest, "capture.json")) as fh:
+        year = json.load(fh).get("catalog_year")
+    rows, skipped = [], []
+    for path in sorted(glob.glob(os.path.join(dest, "records", "*.json"))):
+        with open(path) as fh:
+            rec = json.load(fh)
+        key = rec.get("control_number") or os.path.splitext(os.path.basename(path))[0]
+        record = rec.get("record") if isinstance(rec.get("record"), dict) else None
+        program = (record or {}).get("program")
+        total = (program or {}).get("total_units") or {}
+        run = str(rec.get("extracted_run") or "")
+        why = None
+        if rec.get("college") != college:
+            why = "a record of %s" % rec.get("college")
+        elif rec.get("error"):
+            why = "extraction error: %s" % str(rec["error"])[:120]
+        elif not isinstance(program, dict) or not isinstance(record.get("blocks"), list):
+            why = "no record"
+        elif (program.get("measure") or "units") not in ("units", "hours"):
+            why = "measure %r" % program.get("measure")
+        elif any(v is not None and (isinstance(v, bool) or not isinstance(v, (int, float)))
+                 for v in (total.get("min"), total.get("max"))):
+            why = "a total that is not a number"
+        elif not run.isdigit():
+            why = "no extraction run"
+        if why:
+            skipped.append({"control_number": key, "why": why})
+            continue
+        score = rec.get("score") or {}
+        rows.append({
+            "college": college, "control_number": key,
+            "program_title": rec.get("title"), "award": rec.get("award"), "catalog_year": year,
+            "source_url": rec.get("source_url"), "measure": program.get("measure") or "units",
+            "total_min": total.get("min"), "total_max": total.get("max"),
+            "record": record_read(record),
+            "checks": {"coverage": (score.get("coverage") or {}).get("pass"),
+                       "invented": (score.get("invented") or {}).get("pass"),
+                       "arithmetic": (score.get("arithmetic") or {}).get("status")},
+            "extracted_run": run})
+    return rows, skipped
+
+
+def receipt_path(college: str, run_id: str) -> str:
+    return os.path.join(RECEIPTS, "program_requirement_records_college_%s_%s.json" % (slug_of(college), run_id))
+
+
+def load_receipt(college: str, run_id: str, rows: list[dict], skipped: list[dict],
+                 results: list[dict], error: str | None = None) -> dict:
+    """What the load wrote, and how to take it back: the inserted keys, still
+    unchecked, are the whole of it (Rule 10 a2)."""
+    inserted = [k for r in results for k in (r.get("inserted_keys") or [])]
+    kept = [k for r in results for k in (r.get("kept_keys") or [])]
+    keys = ", ".join("'%s'" % k for k in inserted)
+    return {
+        "college": college, "load_run": run_id, "function": LOAD_FUNCTION,
+        "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "records": len(rows) + len(skipped), "posted": len(rows), "batches": len(results),
+        "inserted": len(inserted), "kept": len(kept), "skipped": skipped, "error": error,
+        "extracted_runs": sorted({r["extracted_run"] for r in rows}),
+        "machine_pass": sum(1 for r in rows if r["checks"]["coverage"] is True and r["checks"]["invented"] is True
+                            and r["checks"]["arithmetic"] in ("equal", "unstated")),
+        "inserted_keys": inserted, "kept_keys": kept,
+        "rollback": ("delete from public.program_requirement_records where college = '%s' and checked = false "
+                     "and control_number in (%s);" % (college.replace("'", "''"), keys)) if inserted else None,
+    }
+
+
+def _rpc(path: str, body: dict, key: str) -> dict:
+    import urllib.request
+    req = urllib.request.Request(
+        P.SUPABASE_URL + "/rest/v1/" + path, data=json.dumps(body).encode(),
+        headers={"apikey": key, "Authorization": "Bearer " + key, "Content-Type": "application/json"},
+        method="POST")
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        return json.loads(resp.read().decode() or "{}")
+
+
+def load(college: str, run_id: str | None, batch: int = LOAD_BATCH, post=None) -> int:
+    key = os.environ.get("SUPABASE_SERVICE_KEY")
+    if not key and post is None:
+        print("SUPABASE_SERVICE_KEY is not set; the load function takes only the service role.")
+        return 2
+    if not (run_id and str(run_id).isdigit()):
+        print("a numeric run id is required (--run, or GITHUB_RUN_ID)")
+        return 2
+    post = post or (lambda body: _rpc(LOAD_RPC, body, key))
+    rows, skipped = load_rows(college)
+    results, error = [], None
+    for i in range(0, len(rows), max(1, batch)):
+        try:
+            results.append(post({"p_college": college, "p_run": str(run_id), "p_rows": rows[i:i + batch]}))
+        except Exception as exc:   # the receipt still files what loaded before it
+            error = "batch %d: %s" % (i // batch + 1, str(exc).splitlines()[0][:300])
+            break
+    receipt = load_receipt(college, str(run_id), rows, skipped, results, error)
+    os.makedirs(RECEIPTS, exist_ok=True)
+    _write(receipt_path(college, str(run_id)), receipt)
+    print("load of %s: %d posted, %d inserted, %d kept, %d skipped%s"
+          % (college, len(rows), receipt["inserted"], receipt["kept"], len(skipped),
+             "; STOPPED at " + error if error else ""))
+    return 1 if error else 0
+
+
 def _write(path: str, obj) -> None:
     with open(path, "w") as fh:
         json.dump(obj, fh, ensure_ascii=False, indent=1)
@@ -622,7 +749,7 @@ def _write(path: str, obj) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("step", choices=["capture", "extract", "file"])
+    ap.add_argument("step", choices=["capture", "extract", "file", "load"])
     ap.add_argument("--college", default="Cerritos College")
     ap.add_argument("--out", default="out")
     ap.add_argument("--shard", type=int, default=0)
@@ -634,6 +761,8 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     if args.step == "capture":
         return capture(args.college, args.out, args.limit)
+    if args.step == "load":
+        return load(args.college, args.run)
     if args.step == "extract":
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
         return extract(args.out, args.shard, args.shards, args.run, args.workers, keep)

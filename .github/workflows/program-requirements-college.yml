@@ -3,14 +3,17 @@ name: Program requirements, one college
 # Phase 2 of the program requirements harvest
 # (docs/reference/lanes/program-requirements-harvest.md): every active program
 # at one college. Sam, 2026-10-09 (S353, as proposed): Cerritos first, by the
-# method that passed the pilot, records unchecked until read. One job, three
-# steps, so nothing passes between runners:
+# method that passed the pilot, records unchecked until read. Two jobs, and a
+# run does one of them; nothing passes between runners.
 #
+# read, three steps:
 #   capture  kb/_program_requirements_college.py lists the catalog's program
 #            pages once (sitemap.xml, robots first, 4 s between loads, the
 #            census user agent that names the CPL Initiative: Sam's call 5 on
 #            sheet 23) and gives each program the page naming its listed
-#            courses. Anon reads only. Free, so a push runs it.
+#            courses. Anon reads only. Free in model calls, but about 360 page
+#            loads at a college, so a push reads only when its message starts
+#            with [read] (capture alone) or [extract].
 #   extract  posts each source to the program-requirements-extract Edge Function
 #            (Sam's call 6: the function holds the Anthropic key), six calls at
 #            a time, and scores each record. It SPENDS MODEL CALLS (about $0.06
@@ -21,6 +24,15 @@ name: Program requirements, one college
 #            the branch that ran the workflow (kb/program_requirements_college/
 #            <slug>/), so no session reads a job log. The page text stays in the
 #            run's artifact for 90 days.
+#
+# load (a dispatch with step=load, or a push whose message starts with [load]):
+#   posts the records COMMITTED on the branch to
+#   program_requirement_records_college_load() with the service key, a batch at
+#   a time. The function inserts each record unchecked and never touches a row
+#   already there; the job commits the receipt that names every key it inserted
+#   (kb/receipts/program_requirement_records_college_<slug>_<run>.json), which
+#   is how the load rolls back. kb/governance_surface_map.json dismisses this
+#   workflow with its reason (public catalog data).
 
 on:
   workflow_dispatch:
@@ -37,6 +49,10 @@ on:
         description: "The first N programs only (0 = all)"
         required: false
         default: "0"
+      step:
+        description: "read (capture, extract, file) or load (the committed records, unchecked)"
+        required: false
+        default: "read"
   push:
     branches: ['claude/**']
     paths:
@@ -49,7 +65,12 @@ concurrency:
 
 jobs:
   read:
-    if: github.actor != 'github-actions[bot]'
+    # The filing commit (github-actions[bot]) never runs the workflow again.
+    if: >-
+      github.actor != 'github-actions[bot]' && (
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.step != 'load') ||
+      (github.event_name == 'push' && (startsWith(github.event.head_commit.message, '[read]') ||
+                                       startsWith(github.event.head_commit.message, '[extract]'))))
     runs-on: ubuntu-latest
     timeout-minutes: 240
     permissions:
@@ -98,3 +119,37 @@ jobs:
           name: program-requirements-${{ github.run_id }}
           path: out
           retention-days: 90
+
+  load:
+    if: >-
+      github.actor != 'github-actions[bot]' && (
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.step == 'load') ||
+      (github.event_name == 'push' && startsWith(github.event.head_commit.message, '[load]')))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      COLLEGE: ${{ github.event.inputs.college || 'Cerritos College' }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Load the committed records, unchecked
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 kb/_program_requirements_college.py load --college "$COLLEGE"
+      - name: Commit the receipt to the branch that ran it
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/receipts
+          if git diff --cached --quiet; then echo "no receipt"; exit 0; fi
+          git commit -m "Receipt: the load of $COLLEGE's program records (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git push origin "HEAD:${{ github.ref_name }}" && exit 0
+            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+          done
+          exit 1
