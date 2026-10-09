@@ -1,0 +1,306 @@
+{
+ "college": "Cerritos College",
+ "control_number": "45549",
+ "shape": "adt",
+ "title": "Public Health",
+ "award": "A.S. T Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/public-health-science-as-t/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6203,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6203,
+    "output_tokens": 1929,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1929,
+  "output_tokens_details": {
+   "thinking_tokens": 453
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06339,
+ "ms": 14603,
+ "seconds": 15.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    25.5
+   ],
+   "stated": [
+    24.0,
+    25.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Public Health (AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 25.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Describe the relationships between the prevention, transmission, intervention, and treatment of chronic and infectious diseases",
+    "Explain methods for tracing chronic and infectious disease outbreaks",
+    "Identify the primary social determinants of health that influence health outcomes in communities",
+    "Identify the impact of economic factors on population demographics and disease outbreaks",
+    "Evaluate the influence of the environment on a community’s health and the role of public policy"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HED 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HO 102",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 210",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A (Select one course for 4-5 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "A&P 150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "A&P 151",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 110",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "CHEM 111",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 200",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one course - 3 units",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HED 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HO 103",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C - Select one course - 3 units",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HED 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WGS 103",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HO 245",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 245",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Units are not printed beside the 'or' alternative courses (HO 102, STAT C1000E, PSYC 210, A&P 151, CHEM 111, HO 103, WGS 103, PSYC 245); their units are recorded as null.",
+   "The 4.0-4.5 range on the statistics row is printed once for the STAT C1000 / STAT C1000E / PSYC 210 group; recorded on STAT C1000 as 4-4.5.",
+   "The 4-5 range for List A's CHEM row is printed beside CHEM 110 and covers the CHEM 110 / CHEM 111 choice.",
+   "Degree names Cal-GETC; the catalog notes CSU GE or IGETC may be used in some cases.",
+   "Page notes the program was formerly known as Public Health Science (AS-T)."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

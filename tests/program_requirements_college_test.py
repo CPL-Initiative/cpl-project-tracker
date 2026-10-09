@@ -1,0 +1,363 @@
+#!/usr/bin/env python3
+"""Phase 2 of the program requirements harvest reads every program at one
+college, and gives each program its own page.
+
+WHY. Sam chose Cerritos for the first full-college read (2026-10-09, S353):
+288 programs where the pilot read four. kb/_program_requirements_college.py
+lists the catalog's program pages once and matches each program to the page
+that names its listed courses. The ways that goes wrong are known in advance:
+
+  * A sitemap lists every page a catalog has: course descriptions, policies,
+    archives and PDFs beside the programs. Reading those wastes the colleges'
+    patience and the runner's hour; dropping a program section loses programs.
+  * An A.A. and the certificate inside it name the same courses, so both pages
+    pass the pilot's coverage test for either program. The award named on the
+    page, then its title words, must decide, or two programs read one page.
+  * The state's Program Course File answers a thousand rows a request, and
+    Cerritos lists 4,504: a read that stops at the first page loses programs
+    silently.
+  * The extraction runs in shards; a shard rule that skips or repeats a program
+    spends money twice or drops a record.
+
+Each is pinned below against the module's OWN functions, with no browser and no
+network. Run from repo root: python3 tests/program_requirements_college_test.py
+"""
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "kb"))
+import _program_requirements_college as C  # noqa: E402
+
+failures = []
+checks = [0]
+
+
+def check(cond, msg):
+    checks[0] += 1
+    if not cond:
+        failures.append(msg)
+
+
+check(not {"playwright", "pypdf", "pdfminer"} & set(sys.modules),
+      "importing the college pass pulled in a runner-only dependency")
+
+# ── the sitemap: pages and nested sitemaps ──────────────────────────────────
+SITEMAP = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ <url><loc>https://cerritos-public.courseleaf.com/</loc></url>
+ <url><loc>https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/field-ironworkers-aa/</loc></url>
+ <url><loc>https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/public-health-science-as-t/</loc></url>
+ <url><loc>https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/energy-corps-certificate-completion/</loc></url>
+ <url><loc>https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/iwap/</loc></url>
+ <url><loc>https://cerritos-public.courseleaf.com/academic-policies/</loc></url>
+ <url><loc>https://cerritos-public.courseleaf.com/archive/2024-2025/degrees-certificates-programs-majors/field-ironworkers-aa/</loc></url>
+ <url><loc>https://cerritos-public.courseleaf.com/pdf/2026-2027-catalog.pdf</loc></url>
+ <url><loc>https://elsewhere.example.edu/degrees/x-aa/</loc></url>
+ <url><loc>https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/field-ironworkers-aa/</loc></url>
+</urlset>"""
+pages, nested = C.sitemap_urls(SITEMAP)
+check(len(pages) == 10 and nested == [], "a urlset lists its pages and no nested sitemap")
+INDEX = """<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ <sitemap><loc>https://x.edu/sitemap-1.xml</loc></sitemap><sitemap><loc>https://x.edu/sitemap-2.xml</loc></sitemap>
+</sitemapindex>"""
+p2, n2 = C.sitemap_urls(INDEX)
+check(p2 == [] and n2 == ["https://x.edu/sitemap-1.xml", "https://x.edu/sitemap-2.xml"],
+      "a sitemap index lists nested sitemaps, which the reader follows one level")
+check(C.sitemap_urls("<html>not a sitemap") == ([], []), "malformed XML reads as no pages, never an error")
+
+start = "https://cerritos-public.courseleaf.com/"
+cand = C.program_candidates(pages, start)
+check(len(cand) == 3, "three program pages kept: %r" % cand)
+check(not any("course-descriptions" in u or "archive" in u or u.endswith(".pdf") or "policies" in u for u in cand),
+      "course descriptions, archives, policies and PDFs are never read as program pages")
+check(not any("elsewhere.example.edu" in u for u in cand), "another host's page is never read")
+check(len(set(cand)) == len(cand), "a page the sitemap lists twice is read once")
+
+# ── the state's file, a thousand rows at a time ─────────────────────────────
+calls = []
+real_get = C.P._get
+
+
+def fake_get(path_qs):
+    calls.append(path_qs)
+    offset = int(path_qs.rsplit("offset=", 1)[1])
+    n = 1000 if offset < 4000 else 504
+    return [{"i": offset + k} for k in range(n)]
+
+
+C.P._get = fake_get
+rows = C.fetch_all("coci_program_courses?select=x&college=eq.Cerritos%20College")
+C.P._get = real_get
+check(len(rows) == 4504 and len(calls) == 5 and rows[-1]["i"] == 4503,
+      "every row is read: 4,504 rows in five requests of up to a thousand")
+
+# ── programs grouped with their closed lists ────────────────────────────────
+progs = [{"control_number": "42158", "program_title": "Apprenticeship: Field Ironworkers", "award": "A.A. Degree", "status": "Active"},
+         {"control_number": "41982", "program_title": "Community Health Worker",
+          "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units", "status": "Active"},
+         {"control_number": "99999", "program_title": "No Courses Listed", "award": "A.S. Degree", "status": "Active - Teachout Only"},
+         {"control_number": "45549", "program_title": "Public Health", "award": "A.S. T Degree", "status": "Active"},
+         {"control_number": "36675", "program_title": "Energy Corps", "award": "Noncredit program", "status": "Active"}]
+crs = [{"program_control_number": "42158", "course_control_number": "1", "course_code": "IWAP 40.1", "units": 3, "load_id": "L"},
+       {"program_control_number": "42158", "course_control_number": "2", "course_code": "IWAP 40.2", "units": 3, "load_id": "L"},
+       {"program_control_number": "41982", "course_control_number": "3", "course_code": "HED 100", "units": 3, "load_id": "L"}]
+g = C.group_programs(progs, crs)
+byc = {p["control_number"]: p for p in g}
+check(len(g) == 5 and [c["code"] for c in byc["42158"]["closed_list"]] == ["IWAP 40.1", "IWAP 40.2"],
+      "each program carries its own closed list, in the pilot's shape")
+check(byc["99999"]["closed_list"] == [] and byc["99999"]["status"] == "Active - Teachout Only",
+      "a program the state lists no course for is kept and marked, never dropped")
+check([byc[k]["shape"] for k in ("42158", "41982", "45549", "36675")] == ["degree", "certificate", "adt", "noncredit"],
+      "each program's shape comes from its award")
+
+# ── the page each program is read from ──────────────────────────────────────
+AA_TEXT = "Field Ironworkers, A.A. Required courses IWAP 40.10 Rigging IWAP 40.20 Welding Total 60 units"
+CERT_TEXT = "Field Ironworkers Certificate of Achievement IWAP 40.10 IWAP 40.20 Total 30 units"
+OTHER = "Public Health Science, A.S.-T HED 100 KIN 101"
+
+
+def page(url, h1, text):
+    return {"url": url, "h1": h1, "title": h1, "body": text, "content": text,
+            "got": {"body": text, "content": text, "title": h1, "h1": h1}, "codes": C.page_codes(text)}
+
+
+PAGES = [page(start + "degrees/field-ironworkers-certificate-achievement/", "Field Ironworkers, Certificate of Achievement", CERT_TEXT),
+         page(start + "degrees/field-ironworkers-aa/", "Field Ironworkers, A.A.", AA_TEXT),
+         page(start + "degrees/public-health-science-as-t/", "Public Health Science, A.S.-T", OTHER)]
+check("IWAP401" in C.page_codes(AA_TEXT) and "HED100" in C.page_codes(OTHER),
+      "the coarse net reads codes in the pilot's normal form")
+aa = dict(byc["42158"])
+best = C.choose_page(aa, PAGES)
+check(best is not None and best["url"].endswith("field-ironworkers-aa/"),
+      "the A.A. reads the A.A.'s page, though the certificate's page names the same courses")
+cert = dict(aa, control_number="X", award="Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")
+best_c = C.choose_page(cert, PAGES)
+check(best_c is not None and "certificate" in best_c["url"],
+      "the certificate reads the certificate's page")
+check(C.choose_page(byc["99999"], PAGES) is None, "a program with no listed course is given no page")
+lone = dict(byc["41982"], closed_list=[{"code": "HED 100"}, {"code": "HED 200"}, {"code": "HED 300"}])
+check(C.choose_page(lone, PAGES) is None, "a page naming a third of the listed courses is not the program's page")
+
+# ── the award an address names (run 37961137169's misses) ───────────────────
+check([C.slug_award(start + "x/" + slug + "/") for slug in
+       ("anthropology-aa-t", "public-health-science-as-t", "natural-sciences-general-as", "field-ironworkers-aa",
+        "medical-assistant-certifciate-achievement", "energy-corps-certificate-completion", "courses-in-ged-test-prep-english")]
+      == ["adt", "adt", "as", "aa", "coa", "noncredit", None],
+      "an address names its award as it stands, hyphens and the catalog's own spelling included")
+aat = {"url": start + "x/anthropology-aa-t/", "h1": "Anthropology, A.A.-T", "title": "Anthropology"}
+check(C.label_score(aat, {"award": "A.A. Degree", "title": "Anthropology"})[0] == 0 and
+      C.label_score(aat, {"award": "A.A- T Degree", "title": "Anthropology"})[0] == 1,
+      "an A.A. does not read an A.A.-T page as its own, though 'A.A.' appears in 'A.A.-T'")
+
+
+def claim(award, title, cov=1.0):
+    return {"label": {"award": award, "title": title}, "coverage": cov, "found": {}}
+
+
+check(C.page_winners([("02260", claim(0, 1.0)), ("32355", claim(1, 1.0))]) == {"32355"},
+      "the program whose award the page names keeps it (Anthropology A.A.-T over the A.A.)")
+check(C.page_winners([("02267", claim(1, 0.5)), ("35220", claim(1, 1.0))]) == {"35220"},
+      "between two programs of one award, the page goes to the title it names more fully (Culinary Arts Management)")
+check(C.page_winners([("42020", claim(1, 1.0)), ("45549", claim(1, 1.0))]) == {"42020", "45549"},
+      "two state records the page names equally share it (Public Health, Public Health Science)")
+check(len(C.page_winners([("19163", claim(0, .75)), ("19170", claim(0, .6))])) == 1,
+      "a page naming no claimant's award goes to one program only")
+
+# assign(): a loser moves to its next page; one with none left reads no page
+PG = [page(start + "degrees/x-aa-t/", "X, A.A.-T", "X AA-T ABC 101 ABC 102 ABC 103"),
+      page(start + "degrees/x-aa/", "X, A.A.", "X A.A. ABC 101 ABC 102 ABC 103 ABC 104"),
+      page(start + "degrees/y-aa-t/", "Y, A.A.-T", "Y AA-T DEF 101 DEF 102")]
+progs3 = [{"control_number": "1", "title": "X", "award": "A.A- T Degree",
+           "closed_list": [{"code": "ABC 101"}, {"code": "ABC 102"}, {"code": "ABC 103"}]},
+          {"control_number": "2", "title": "X", "award": "A.A. Degree",
+           "closed_list": [{"code": "ABC 101"}, {"code": "ABC 102"}, {"code": "ABC 103"}]},
+          {"control_number": "3", "title": "Y", "award": "A.A. Degree",
+           "closed_list": [{"code": "DEF 101"}, {"code": "DEF 102"}, {"code": "DEF 103"}]}]
+got = C.assign(progs3, PG)
+check(got["1"]["best"]["url"].endswith("x-aa-t/") and got["2"]["best"]["url"].endswith("x-aa/"),
+      "each of two programs naming the same courses reads its own award's page")
+check(got["3"]["best"] is None or not got["3"]["best"]["url"].endswith("y-aa-t/") or got["3"]["best"]["label"]["award"] == 0,
+      "a program whose own page is missing is not handed a sibling's as its own award")
+progs4 = progs3[:1] + [dict(progs3[1], control_number="4")]
+got4 = C.assign(progs4, PG[:1])
+check(got4["4"]["best"] is None and got4["4"]["lost"] == [PG[0]["url"]],
+      "a program that loses its only page reads no page, and names the page it lost")
+tiny = {"control_number": "5", "title": "Automotive Electrical", "award": "Certificate of Achievement",
+        "closed_list": [{"code": "ABC 101"}]}
+check(C.candidates(tiny, PG) == [], "a one-course list takes no page whose label does not name the program")
+
+# a re-run keeps a record filed from the same page
+prev = {"source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]}
+check(C.unchanged(prev, {"source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]}) and
+      not C.unchanged(prev, {"source": {"url": "v"}, "coverage": 1.0, "codes_found": ["A1"]}) and
+      not C.unchanged(None, prev), "only a source from the same page, naming the same courses, keeps its record")
+
+# ── the source a full college files keeps the pilot's shape ─────────────────
+reg = {"catalog_url": start, "catalog_year": "2026-2027", "catalog_platform": "courseleaf", "catalog_format": "html_per_program"}
+src = C.source_record("Cerritos College", aa, reg, best, "sitemap_page")
+check(all(k in src for k in ("college", "control_number", "shape", "title", "award", "catalog_year",
+                             "closed_list", "coverage", "codes_found", "text", "source")),
+      "a source carries every field the pilot's extraction reads")
+check(src["source"]["url"].endswith("field-ironworkers-aa/") and src["coverage"] == 1.0,
+      "the source names its page and its coverage")
+miss = C.source_record("Cerritos College", byc["99999"], reg, None, "no_closed_list")
+check(miss["text"] == "" and miss["coverage"] == 0.0 and miss["method"] == "no_closed_list",
+      "a program without a page files an empty source the extraction skips")
+
+# ── filing: a capture-only run never replaces the read it did not redo ──────
+import json as _json, tempfile as _tf
+_root = _tf.mkdtemp()
+_saved_dir = C.COLLEGE_DIR
+C.COLLEGE_DIR = _root
+_out = os.path.join(_root, "out")
+os.makedirs(os.path.join(_out, "sources"))
+open(os.path.join(_out, "capture.json"), "w").write(_json.dumps({"college": "Cerritos College"}))
+_dest = os.path.join(_root, "cerritos")
+os.makedirs(os.path.join(_dest, "records"))
+open(os.path.join(_dest, "records", "OLD.json"), "w").write("{}")
+C.file_run("Cerritos College", _out, "1")
+check(os.path.exists(os.path.join(_dest, "capture_preview.json")) and os.path.exists(os.path.join(_dest, "records", "OLD.json")),
+      "a capture-only run files a preview and leaves the filed records alone")
+os.makedirs(os.path.join(_out, "records"))
+open(os.path.join(_out, "records", "NEW.json"), "w").write(_json.dumps({"score": None}))
+C.file_run("Cerritos College", _out, "2")
+check(os.listdir(os.path.join(_dest, "records")) == ["NEW.json"] and not os.path.exists(os.path.join(_dest, "capture_preview.json")),
+      "a run that extracted replaces the records whole, so a program that lost its page loses its record")
+C.COLLEGE_DIR = _saved_dir
+
+# ── shards ──────────────────────────────────────────────────────────────────
+items = list(range(23))
+parts = [C.shard_of(items, i, 6) for i in range(6)]
+check(sorted(x for p in parts for x in p) == items and max(map(len, parts)) - min(map(len, parts)) <= 1,
+      "six shards take every source exactly once, evenly")
+check(C.slug_of("Cerritos College") == "cerritos" and C.slug_of("Mt. San Antonio College") == "mt_san_antonio",
+      "a college files under a plain slug")
+
+# ── the run's account ───────────────────────────────────────────────────────
+recs = [{"score": {"pass": True, "coverage": {"pass": True}, "arithmetic": {"pass": True}}, "cost_usd": 0.05},
+        {"score": {"pass": False, "coverage": {"pass": True}, "arithmetic": {"pass": False}}, "cost_usd": 0.07},
+        {"score": None, "error": "HTTP 500", "cost_usd": None}]
+sm = C.summarize(recs, {"college": "Cerritos College", "programs": 292, "with_closed_list": 288, "found": 270})
+check(sm["passed_machine_checks"] == 1 and sm["failed"]["arithmetic"] == 1 and sm["errors"] == 1
+      and sm["cost_usd"] == 0.12, "the account counts passes, each failed check, errors and cost")
+
+# ── the workflow: reads only when asked, spends only when asked ─────────────
+wf = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml")).read()
+read_job = wf.split("\n  read:\n")[1].split("\n  load:\n")[0]
+load_job = wf.split("\n  load:\n")[1]
+check("CENSUS_DELAY_MS: '4000'" in wf, "the capture reads at the census's pace")
+check("startsWith(github.event.head_commit.message, '[extract]')" in wf and "workflow_dispatch" in wf
+      and "contains(github.event.head_commit.message" not in wf,
+      "the extraction spends model calls only on a dispatch or a commit whose message STARTS with [extract]")
+check("startsWith(github.event.head_commit.message, '[read]')" in read_job.split("runs-on:")[0]
+      and "github.event.inputs.step != 'load'" in read_job.split("runs-on:")[0],
+      "a push reads the catalog only when its message starts with [read] or [extract]: an edit to the "
+      "script never re-reads 360 pages of a college's catalog")
+check("startsWith(github.event.head_commit.message, '[load]')" in load_job.split("runs-on:")[0]
+      and "github.event.inputs.step == 'load'" in load_job.split("runs-on:")[0],
+      "the load runs only on a dispatch with step=load or a commit whose message STARTS with [load]")
+check(wf.count("contents: write") == 2 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 2
+      and wf.count("git push") == 2,
+      "each job writes only to the branch that ran it")
+
+
+def steps(job):
+    return ["- name:" + x for x in job.split("- name:")[1:]]
+
+
+key_line = "SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}"
+holders = [st.splitlines()[0] for st in steps(read_job) + steps(load_job) if "SUPABASE_SERVICE_KEY" in st]
+check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 4
+      and holders == ["- name: Extract and score", "- name: Load the committed records, unchecked"],
+      "the service key reaches the extraction step and the load step, and no other: %r" % holders)
+check("if: env.EXTRACT == 'true'" in read_job, "the extraction step runs only when asked")
+check(wf.count("github.actor != 'github-actions[bot]'") == 2, "the filing and receipt commits never run the workflow again")
+
+# ── the load: unchecked, insert-only, and reversible from its receipt ───────
+import json  # noqa: E402
+import shutil  # noqa: E402
+import tempfile  # noqa: E402
+
+parent = tempfile.mkdtemp()
+tmp = os.path.join(parent, C.slug_of("Cerritos College"))
+try:
+    os.makedirs(os.path.join(tmp, "records"))
+    with open(os.path.join(tmp, "capture.json"), "w") as fh:
+        json.dump({"college": "Cerritos College", "catalog_year": "2026-2027"}, fh)
+
+    def rec(key, **kw):
+        base = {"college": "Cerritos College", "control_number": key, "title": "T" + key, "award": "A.S. Degree",
+                "source_url": "https://example.edu/" + key, "extracted_run": "37961137169", "error": None,
+                "score": {"coverage": {"pass": True}, "invented": {"pass": True},
+                          "arithmetic": {"status": "equal"}, "pass": True},
+                "record": {"program": {"measure": "units", "total_units": {"min": 18, "max": 18.5}},
+                           "blocks": [{"rule": "all", "courses": []}], "notes": "the model's working",
+                           "missing_explained": []}}
+        base.update(kw)
+        with open(os.path.join(tmp, "records", key + ".json"), "w") as fh:
+            json.dump(base, fh)
+
+    rec("00001")
+    rec("00002", extracted_run="37966828676")
+    rec("00003", error="timeout", record=None)
+    rec("00004", college="Mt. San Antonio College")
+    rec("00005", record={"program": {"measure": "credits", "total_units": {}}, "blocks": []})
+    rec("00006", record={"program": {"measure": "units", "total_units": {"min": "18"}}, "blocks": []})
+    rec("00007", extracted_run=None)
+    rows, skipped = C.load_rows("Cerritos College", folder=tmp)
+    check([r["control_number"] for r in rows] == ["00001", "00002"]
+          and [s["control_number"] for s in skipped] == ["00003", "00004", "00005", "00006", "00007"],
+          "the load leaves out an errored record, another college's, an unknown measure, a total that is "
+          "not a number and a record with no run, each with its reason: %r" % skipped)
+    check(all(not {"checked", "checked_by", "checked_at"} & set(r) for r in rows),
+          "a load row never carries checked: the function writes every row unchecked")
+    check([r["extracted_run"] for r in rows] == ["37961137169", "37966828676"],
+          "each row keeps the extraction run that read it, so a record kept from an earlier run says so")
+    check(set(rows[0]["record"]) == {"program", "blocks"} and rows[0]["catalog_year"] == "2026-2027"
+          and rows[0]["checks"] == {"coverage": True, "invented": True, "arithmetic": "equal"},
+          "a row carries the record as a reader renders it (no working notes), the year, and the three checks")
+
+    posted = []
+
+    def post(body):
+        posted.append(body)
+        if len(posted) == 2:
+            raise RuntimeError("HTTP Error 500")
+        return {"inserted_keys": [r["control_number"] for r in body["p_rows"]], "kept_keys": []}
+
+    real = (C.COLLEGE_DIR, C.RECEIPTS)
+    C.COLLEGE_DIR, C.RECEIPTS = parent, os.path.join(parent, "receipts")
+    try:
+        code = C.load("Cerritos College", "38000000001", batch=1, post=post)
+        receipt = json.load(open(C.receipt_path("Cerritos College", "38000000001")))
+        refused = C.load("Cerritos College", "not-a-run", post=post)
+    finally:
+        C.COLLEGE_DIR, C.RECEIPTS = real
+    check(code == 1 and receipt["inserted_keys"] == ["00001"] and receipt["error"].startswith("batch 2")
+          and receipt["posted"] == 2 and len(receipt["skipped"]) == 5,
+          "a load that stops mid-way still files a receipt naming what it inserted and where it stopped")
+    check(receipt["rollback"] and "checked = false" in receipt["rollback"] and "'00001'" in receipt["rollback"]
+          and "'00002'" not in receipt["rollback"],
+          "the rollback names only the keys this load inserted, and only while they are unchecked")
+    check(refused == 2, "a load without a numeric run id refuses")
+finally:
+    shutil.rmtree(parent, ignore_errors=True)
+
+sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
+body = sql.split("as $$")[1].split("$$;")[0]
+check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()
+      and "delete" not in body.lower(),
+      "the load function only inserts, and never touches a row already there")
+check("r->'record', r->'checks', false, null, null," in body,
+      "the load function writes every row unchecked, with no checked_by or checked_at")
+check("auth.role(), '') <> 'service_role'" in body
+      and "from public, anon, authenticated;" in sql and "to service_role;" in sql.split("grant execute")[1],
+      "only the service role may load: the body checks the caller's role, and the grant names service_role alone")
+
+if failures:
+    print("FAIL: %d" % len(failures))
+    for f in failures:
+        print("  -", f)
+    sys.exit(1)
+print("ok: program requirements college pass (%d checks)" % checks[0])

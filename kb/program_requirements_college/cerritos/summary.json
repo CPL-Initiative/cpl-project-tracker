@@ -1,0 +1,46 @@
+{
+ "college": "Cerritos College",
+ "programs": 292,
+ "with_closed_list": 288,
+ "found": 274,
+ "extracted": 274,
+ "errors": 0,
+ "passed_machine_checks": 238,
+ "failed": {
+  "coverage": 4,
+  "invented": 0,
+  "arithmetic": 35,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 14.83,
+ "cost_per_program": 0.0541,
+ "not_found": [
+  {
+   "control_number": "02243",
+   "title": "Dental Hygienist",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19162",
+   "title": "Liberal Arts and Sciences: Art and Culture",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19174",
+   "title": "Liberal Arts and Sciences: Media Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19180",
+   "title": "Liberal Arts and Sciences: Visual Communication",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "32485",
+   "title": "Political Science",
+   "award": "A.A- T Degree"
+  }
+ ],
+ "run": "37966828676"
+}

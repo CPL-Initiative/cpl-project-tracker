@@ -1,0 +1,340 @@
+{
+ "college": "Cerritos College",
+ "control_number": "31740",
+ "shape": "degree",
+ "title": "Engineering Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/engineering-technology-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6571,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6571,
+    "output_tokens": 3044,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3044,
+  "output_tokens_details": {
+   "thinking_tokens": 954
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08716,
+ "ms": 24055,
+ "seconds": 24.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 21,
+   "share": 0.714,
+   "missing": [
+    "ENGT100",
+    "ENGT102",
+    "ENGT104",
+    "ENGT105",
+    "ENGT106",
+    "ENGT153"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    25.0,
+    27.0
+   ],
+   "stated": [
+    24.0,
+    27.0
+   ],
+   "why": [
+    "the blocks sum to 25.0-27.0; the catalog states 24.0-27.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering Technology (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "an ability to identify, formulate, and solve engineering problems by applying principles of engineering, science, and mathematics.",
+    "an ability to apply engineering design to produce solutions that meet specified needs with consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors.",
+    "an ability to communicate effectively with a range of audiences.",
+    "an ability to recognize ethical and professional responsibilities in engineering situations and make informed judgments, which must consider the impact of engineering solutions in global, economic, environmental, and societal contexts.",
+    "an ability to function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet objectives.",
+    "an ability to develop and conduct appropriate experimentation, analyze and interpret data, and use engineering judgment to draw conclusions.",
+    "an ability to acquire and apply new knowledge as needed, using appropriate learning strategies."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ET 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 105",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 1: Emphasis in Electrical and Electronic Engineering Technician",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis option",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ET 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2: Emphasis in Industrial Engineering Technician",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis option",
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "ET 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 3: Emphasis in Mechanical Engineering Technician",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis option",
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "ENGT 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 117",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 259",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGT 100",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ENGT 102",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ENGT 104",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ENGT 105",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ENGT 106",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ENGT 153",
+    "why": "listed as a recommended course"
+   }
+  ],
+  "notes": [
+   "Option 3 prints 'ENGT 117 & ENGT 111' on one row with a combined '(3-4)'. Read as both courses required: ENGT 117 at 4 units and ENGT 111 at 3 units, which sums to the stated 17 units for Option 3. The individual units come from the closed list and the course titles, not from separate printed values; please verify.",
+   "'Select one of the following options' prints 14.0-17.0 units for the option choice as a whole. Each option's own printed total (15, 14, 17) is recorded in its stated.",
+   "Total Units 24-27 is the major total. The 60-unit degree total includes General Education, but no specific GE pattern is named, so ge_pattern is null.",
+   "The 'electives as needed' line refers to the 60-unit degree, not to the major total, so open_elective_units is null.",
+   "The Recommended Courses list is not required and is not recorded as a block. It includes ENGT 237, ENGT 258, ENGT 260, ENGT 261, ENGT 262 and ENGT 263, which are not in the closed list. It prints ENGT 106 at 4.0 units, while the closed list stores 2.",
+   "The page prints one Program Student Learning Outcomes list for the A.S. program; it is recorded as this award's outcomes.",
+   "The source URL slug says 'engineering-technology-aa' but the page heading and award are A.S.",
+   "The page text spells it 'Solidworks Introduction' for ENGT 259."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

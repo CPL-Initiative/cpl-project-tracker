@@ -1,0 +1,244 @@
+{
+ "college": "Cerritos College",
+ "control_number": "20508",
+ "shape": "certificate",
+ "title": "Plastics Manufacturing",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/plastics-manufacturing-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6031,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6031,
+    "output_tokens": 1625,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1625,
+  "output_tokens_details": {
+   "thinking_tokens": 457
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05662,
+ "ms": 13225,
+ "seconds": 13.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 19,
+   "share": 0.368,
+   "missing": [
+    "ENGT251",
+    "ENGT260",
+    "ENGT263",
+    "ENGT281",
+    "ET101",
+    "ET103",
+    "MTT100",
+    "MTT131",
+    "MTT180",
+    "MTT68",
+    "NPD101",
+    "NPD103"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    18.0
+   ],
+   "stated": [
+    17.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Plastics Manufacturing (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Student demonstrate safe work habits around plastics machinery.",
+    "Students communicate clear technical instructions.",
+    "Students differentiate between the various types of plastic.",
+    "Students employ shop drawings to produce plastic parts to drawing specifications.",
+    "Students identify the specific applications of plastic resign systems.",
+    "Students recognize the process for manufacturing various plastic parts.",
+    "Students use percentages to mix resigns, fillers, and colors.",
+    "Students utilize ratios and fractions to mix materials."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ENGT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 117",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 103",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENGT 131",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGT 259",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGT 251",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ENGT 260",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ENGT 263",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ENGT 281",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "MTT 100",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "MTT 131",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "MTT 180",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "NPD 101",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "NPD 103",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ET 101",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "ET 103",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "MTT 68",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The 'Total Units 17-18' line is printed at the end of the Required Courses list; recorded as both the certificate total and the block's stated total.",
+   "ENGT 103 / ENGT 131 / ENGT 259 are printed as 'or' rows sharing one unit range (3.0-4.0) beside ENGT 103; the alternatives have no units printed beside them, so their units are null.",
+   "ENGT 259 also appears in the Recommended Courses list (4.0 units); it is placed only as an alternative in the required block.",
+   "Recommended Courses list (not required) was not recorded as a block.",
+   "Catalog prints ENGT 209 as 'Plastics Injection Molding I' and NPD 103 as 'Tooling and Materials for New Product Development'; titles differ slightly from the closed list.",
+   "Outcomes copied verbatim, including the catalog's spellings 'Student demonstrate', 'resign' and 'resigns'."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

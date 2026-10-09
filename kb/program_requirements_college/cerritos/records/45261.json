@@ -1,0 +1,191 @@
+{
+ "college": "Cerritos College",
+ "control_number": "45261",
+ "shape": "degree",
+ "title": "Welding Technology: Aerospace Welding",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/gas-tungsten-arc-welding-as/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6078,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6078,
+    "output_tokens": 1486,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1486,
+  "output_tokens_details": {
+   "thinking_tokens": 433
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05403,
+ "ms": 12558,
+ "seconds": 12.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 8,
+   "share": 0.375,
+   "missing": [
+    "WELD155",
+    "WELD222",
+    "WELD240L",
+    "WELD250L",
+    "WELD260L"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "WELD120"
+   ],
+   "flagged": [
+    "WELD120"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Welding Technology: Gas Tungsten Arc Welding (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will fabricate and weld various projects by converting decimal measurements into the fractional measurement system.",
+    "Students will interpret groove weld symbols used on blueprints to assemble and weld various structural joint designs.",
+    "Students will interpret fillet weld symbols used on blueprints to assemble and weld various structural joint designs.",
+    "Students will fillet weld aluminum lap and tee joint projects using various sizes of ER5356 and ER4043 aluminum filler wires with an acceptable appearance."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "WELD 149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 159",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WELD 130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WELD 155",
+    "why": "listed only as a recommended elective"
+   },
+   {
+    "code": "WELD 240L",
+    "why": "listed only as a recommended elective"
+   },
+   {
+    "code": "WELD 250L",
+    "why": "listed only as a recommended elective"
+   },
+   {
+    "code": "WELD 260L",
+    "why": "listed only as a recommended elective"
+   },
+   {
+    "code": "WELD222",
+    "why": "listed only as a recommended elective (printed as WELD 222)"
+   }
+  ],
+  "notes": [
+   "The catalog page is titled 'Welding Technology: Gas Tungsten Arc Welding (A.S.)', not 'Aerospace Welding'; its description targets aerospace welders, so it was read as the same award under a different name. Reviewer should confirm.",
+   "The 'Recommended Electives' list (MTT 100, WELD 100, 155, 160, 172L, 212L, 214L, 220, 222, 240L, 250L, 254L, 256L, 258L, 260L, 270, 281L, 282L, 283L) is not part of the 18-unit major total and was not recorded as a block.",
+   "WELD 120 Beginning Arc Welding (5.0) is required in the catalog but missing from the closed list.",
+   "Title mismatches: the catalog titles WELD 149 'Welding Industry Project Planning and Estimation' (closed list: 'Welding Shop Math') and WELD 155 'Industrial Pipe Fitting Fundamentals' (closed list: 'Welding Industry Project Planning and Estimation').",
+   "The degree requires a minimum of 60 units including 'the General Education requirements'; no specific GE pattern is named, so ge_pattern is null.",
+   "The Program Student Learning Outcomes are printed on this A.S. degree page."
+  ]
+ },
+ "extracted_run": "37966828676"
+}

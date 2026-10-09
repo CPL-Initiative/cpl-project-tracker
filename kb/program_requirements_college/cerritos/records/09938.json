@@ -1,0 +1,201 @@
+{
+ "college": "Cerritos College",
+ "control_number": "09938",
+ "shape": "degree",
+ "title": "Art and Design: Printmaking",
+ "award": "A.A. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/printmaking-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5506,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5506,
+    "output_tokens": 1409,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1409,
+  "output_tokens_details": {
+   "thinking_tokens": 327
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0502,
+ "ms": 12204,
+ "seconds": 12.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Art and Design: Printmaking (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students develop an understanding of art history and how it has affected the evolution of classical and contemporary approaches to printmaking.",
+    "Students incorporate principles of drawing and design such as line, shape, value and composition, when exercising intaglio process.",
+    "Students critically discuss their printed work in terms content and form in both a written and an oral communication.",
+    "Students maintain and clean-up professional printmaking facilities and use relevant tools, equipment and chemicals safely, including hand- tools exposure unit printing press, etchant, grounds, and photosensitive chemicals.",
+    "Students present a portfolio of print work that represents their knowledge of various printmaking techniques and defines their individual approach to communicating with imagery.",
+    "Students will demonstrate a basic understanding of Intaglio, relief printing and silkscreen techniques and apply it to their original print work."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Recommended Foundational Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 103",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 218",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 219",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The only heading inside the course list reads 'Recommended Foundational Courses', yet the list ends with 'Total Units 24' and the degree text requires 'the above major requirements'; recorded as a single required ('all') block. Reviewer should confirm these are required rather than merely recommended.",
+   "The 24-unit total matches the eight required positions at 3 units each, counting each 'or' pair once.",
+   "ART 103 and ART 219 appear only as 'or' alternatives with no units printed beside them, so their units are recorded as null (the state file lists 3 units for each).",
+   "The degree text refers to 'the General Education requirements' without naming a pattern (CSU GE, IGETC, Cal-GETC, local), so ge_pattern is null.",
+   "The printed outcomes are copied as shown, including 'in terms content and form' and 'hand- tools exposure unit printing press'."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

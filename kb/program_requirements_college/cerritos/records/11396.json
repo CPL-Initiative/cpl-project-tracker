@@ -1,0 +1,383 @@
+{
+ "college": "Cerritos College",
+ "control_number": "11396",
+ "shape": "degree",
+ "title": "Theatre Arts: Acting or Technical",
+ "award": "A.A. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/acting-technical-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6231,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6231,
+    "output_tokens": 2580,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2580,
+  "output_tokens_details": {
+   "thinking_tokens": 583
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07652,
+ "ms": 19868,
+ "seconds": 20.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 21,
+   "share": 0.905,
+   "missing": [
+    "ART198",
+    "TH104"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "TH134",
+    "TH212"
+   ],
+   "flagged": [
+    "TH134",
+    "TH212"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    34.0,
+    37.5
+   ],
+   "stated": [
+    36.0,
+    36.5
+   ],
+   "why": [
+    "the blocks sum to 34.0-37.5; the catalog states 36.0-36.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre Arts: Acting or Technical (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students identify the stage acting areas.",
+    "Students participate in the process of \"striking\" a show.",
+    "Students evaluate all aspects of theatre as a participant",
+    "Students conduct themselves safely in a backstage environment.",
+    "Students integrate the technical aspects of a production into a play.",
+    "Students participate in the mounting of a college theatrical production.",
+    "Students recognize the importance of teamwork in working on theatrical production.",
+    "Students recognize the value and uniqueness of the actor-audience relationship.",
+    "Students recognize theatre as a collaborative form of art."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "TH 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 110",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 130",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 131",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 133",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 134",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Option 1 - Acting",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select one of the following options",
+    "stated": {
+     "min": 8.5,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "TH 111",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 114",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2 - Technical",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select one of the following options",
+    "stated": {
+     "min": 8.5,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "TH 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two of the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "TH 106A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 108",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 111",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 114",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 136",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 212",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TH 221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH 226",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 198",
+    "why": "not in the text"
+   },
+   {
+    "code": "TH 104",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The printed total 8.5-9.0 belongs to the line 'Select one of the following options:' as a whole; it is recorded as stated on both option blocks (Option 1 sums to 8.5, Option 2 to 9).",
+   "TH 134 (Technical Production, 2.0) and TH 212 (Scene Study, 3.5) appear in the catalog but are not on the closed list; recorded as catalog additions.",
+   "TH 226 is printed with 3 units in the catalog; the closed list stores 2 units.",
+   "Courses TH 111, TH 114, TH 115, TH 120, TH 221 and TH 222 appear both in the option blocks and in the 'Select two' list; the catalog does not say whether a course used for an option may also count toward the 'Select two' requirement.",
+   "The 'Select two of the following' list prints 6.0 units, although some two-course combinations would total more or less than 6.",
+   "The degree text refers only to 'the General Education requirements' without naming a pattern, so ge_pattern is null.",
+   "Program Student Learning Outcomes are printed once on the page for this A.A. degree and recorded as printed."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

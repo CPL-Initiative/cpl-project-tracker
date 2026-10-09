@@ -1,0 +1,204 @@
+{
+ "college": "Cerritos College",
+ "control_number": "19091",
+ "shape": "certificate",
+ "title": "New Product Development: New Product Development and Fabrication Option",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/new-product-development-fabrication-option-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5499,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5499,
+    "output_tokens": 923,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 923,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04046,
+ "ms": 7462,
+ "seconds": 7.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 9,
+   "share": 0.667,
+   "missing": [
+    "MTT278",
+    "WELD130",
+    "WMT111L"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MTT112"
+   ],
+   "flagged": [
+    "MTT112"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "New Product Development and Fabrication Option (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students create a design presentation.",
+    "Students develop machine tool technology based fabrication plans.",
+    "Students evaluate the feasibility of the rapid prototyping various products.",
+    "Students produce a cost-effective plan for an automation product.",
+    "Students produce a portfolio of new design technology for the production of new products.",
+    "Students select a plan for manufacturing and procurement.",
+    "Students take a product through the stages of new product development."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "NPD 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NPD 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NPD 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ET 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MTT 278",
+    "why": "listed as a recommended elective, not a requirement"
+   },
+   {
+    "code": "WELD 130",
+    "why": "listed as a recommended elective, not a requirement"
+   },
+   {
+    "code": "WMT 111L",
+    "why": "listed as a recommended elective, not a requirement"
+   }
+  ],
+  "notes": [
+   "MTT 112 (Variable Frequency Drives in Automated Manufacturing) is a required course in the catalog but is not in the closed list; recorded as catalog addition.",
+   "NPD 103 is titled 'Tooling and Materials for New Product Development' in the catalog vs. 'Advanced Tooling and Materials...' in the state file.",
+   "Recommended Electives (MTT 278, WELD 130, WMT 111L) are not counted toward the 21-unit total and were not placed in a block.",
+   "Award is a Certificate of Achievement requiring 16-<30 units; catalog total of 21 units fits that range.",
+   "The program description mentions an engineering technology project development class and classes to finalize designs and obtain quotations, which do not appear clearly in the course list; reviewer may check."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

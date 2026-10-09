@@ -1,0 +1,244 @@
+{
+ "college": "Cerritos College",
+ "control_number": "09926",
+ "shape": "degree",
+ "title": "Composite Tool Design",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/tool-design-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6176,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6176,
+    "output_tokens": 1735,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1735,
+  "output_tokens_details": {
+   "thinking_tokens": 478
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0594,
+ "ms": 14384,
+ "seconds": 14.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 18,
+   "share": 0.444,
+   "missing": [
+    "ENGT100",
+    "ENGT131",
+    "ENGT281",
+    "ET101",
+    "ET103",
+    "MTT100",
+    "MTT131",
+    "MTT180",
+    "NPD101",
+    "NPD103"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    22.0,
+    23.5
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "why": [
+    "the blocks sum to 22.0-23.5; the catalog states 22.0-22.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Composite Tool Design (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Student demonstrate safe work habits around plastics machinery.",
+    "Students communicate clear technical instructions.",
+    "Students differentiate between the various types of plastic.",
+    "Students employ shop drawings to produce plastic parts to drawing specifications.",
+    "Students identify the specific applications of plastic resign systems.",
+    "Students recognize the process for manufacturing various plastic parts.",
+    "Students use percentages to mix resigns, fillers, and colors.",
+    "Students utilize ratios and fractions to mix materials."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "ENGT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 117",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 259",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 263",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGT 250",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGT 251",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGT 100",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 131",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 281",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "MTT 100",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "MTT 131",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "MTT 180",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ET 101",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ET 103",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "NPD 101",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "NPD 103",
+    "why": "listed as a recommended elective"
+   }
+  ],
+  "notes": [
+   "The 'Required Courses' total of 22 units is printed in the course list; the 'or' options ENGT 250 and ENGT 251 print no units beside them (state file stores 3 and 4.5).",
+   "ENGT 209 appears both as the required choice (with ENGT 250 or ENGT 251) and in the Recommended Electives list; it is placed only in the required block.",
+   "Recommended Electives ('students are recommended to take one or more') are not required toward the 22-unit total and were not recorded as a block.",
+   "The URL slug is 'tool-design-aa' and the description says 'Associate in Arts in Plastic/Composite Tool Design', while the heading and degree requirements say Associate of Science; reviewer may want to confirm the award type.",
+   "The catalog's titles differ slightly from the state file for ENGT 250 ('Fiberglass and Vacuum Infusion Process Technology') and NPD 103 ('Tooling and Materials for New Product Development').",
+   "Outcomes are copied as printed, including 'Student demonstrate' and 'resign'/'resigns' spellings.",
+   "The degree requires General Education requirements but the text names no specific GE pattern, so ge_pattern is null."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

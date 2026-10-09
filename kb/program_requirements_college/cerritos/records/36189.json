@@ -1,0 +1,159 @@
+{
+ "college": "Cerritos College",
+ "control_number": "36189",
+ "shape": "noncredit",
+ "title": "College Readiness",
+ "award": "Noncredit program",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/college-readiness-certificate-completion/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5185,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5185,
+    "output_tokens": 949,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 949,
+  "output_tokens_details": {
+   "thinking_tokens": 317
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03972,
+ "ms": 9009,
+ "seconds": 10.2,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "AED4298",
+    "AED4299"
+   ],
+   "flagged": [
+    "AED4298",
+    "AED4299"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    306.0,
+    306.0
+   ],
+   "stated": [
+    306.0,
+    306.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "College Readiness (Non Credit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 306,
+    "max": 306
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AED 42.98",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED 42.99",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED 90.06",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AED 90.07",
+        "units": 90,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Measure is hours: the catalog prints hours beside each course (the Units column shows 0.0) and states 'Total Hours of Completion (306 hours)'.",
+   "AED 90.07 has no hours printed on its row; 90 hours is taken from footnote 1 ('Students may take AED 90.06 or 90.07 for 90 hours').",
+   "AED 42.98 and AED 42.99 appear in the catalog requirements but are not in the closed list; recorded as catalog additions.",
+   "The block is labeled 'Degree Requirements' in the course list, though the award is a noncredit Certificate of Completion.",
+   "Two closing statements ('The Non-Credit Certificate of Completion College Readiness will prepare the student to successfully matriculate into college.' and 'As a noncredit basic skills student, the transition to college will be facilitated...') are not labeled as program learning outcomes, so they were not recorded as outcomes; reviewer may verify whether they are PLOs on the source page."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

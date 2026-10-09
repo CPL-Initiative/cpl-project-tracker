@@ -1,0 +1,227 @@
+{
+ "college": "Cerritos College",
+ "control_number": "20477",
+ "shape": "certificate",
+ "title": "Business Administration: Business Marketing",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/business-marketing-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5703,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5703,
+    "output_tokens": 1320,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1320,
+  "output_tokens_details": {
+   "thinking_tokens": 284
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04921,
+ "ms": 10543,
+ "seconds": 10.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration: Business Marketing (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students demonstrate effective communication through professional written and oral presentations of marketing materials.",
+    "Students create a marketing plan.",
+    "Students gather and interpret demographic and market data.",
+    "Students identify advertising and marketing trends.",
+    "Students utilize current and emerging technologies for management decision-making."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Business Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BA 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 156",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BCOT 148",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 100",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1000",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JAMS 157",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Certificate Specific Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "BA 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BA 155",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Units are not printed beside the 'or' alternatives (BCOT 148, COMM 100, COMM C1000, JAMS 157, BA 155), so their units are recorded as null; the state file stores 3 units for each.",
+   "The certificate page also prints an 'ASSOCIATE OF ARTS DEGREE REQUIREMENTS' paragraph (60 units including major, GE and electives) even though the page is for the Certificate of Achievement and notes the certificate is nontransferable; this degree text was not used for the certificate record and no GE pattern is named.",
+   "Catalog titles differ slightly from the state file for some courses (e.g., BA 156 'Motivational Presentation Skills for Managers', COMM C1000 'Introduction to Public Speaking').",
+   "Program Student Learning Outcomes are printed on the certificate page and recorded for this award."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

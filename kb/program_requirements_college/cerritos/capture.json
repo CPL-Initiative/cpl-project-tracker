@@ -1,0 +1,164 @@
+{
+ "college": "Cerritos College",
+ "catalog_url": "https://cerritos-public.courseleaf.com/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 292,
+ "with_closed_list": 288,
+ "started": "2026-10-09T17:32:04Z",
+ "sitemap": {
+  "url": "https://cerritos-public.courseleaf.com/sitemap.xml",
+  "status": 200,
+  "listed": 520,
+  "nested": 0,
+  "program_pages": 364,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 364,
+ "loads": 367,
+ "seconds": 1750.4,
+ "found": 274,
+ "by_method": {
+  "link_search": 2,
+  "no_closed_list": 4,
+  "not_found": 5,
+  "page_claimed": 9,
+  "sitemap_page": 272
+ },
+ "shared_pages": {
+  "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/general-technician-aa/": [
+   "02224",
+   "41071"
+  ],
+  "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/california-real-estate-certificate-achievement/": [
+   "09907",
+   "20480"
+  ],
+  "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/public-health-science-as-t/": [
+   "42020",
+   "45549"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "02243",
+   "title": "Dental Hygienist",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19162",
+   "title": "Liberal Arts and Sciences: Art and Culture",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19174",
+   "title": "Liberal Arts and Sciences: Media Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19180",
+   "title": "Liberal Arts and Sciences: Visual Communication",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "32485",
+   "title": "Political Science",
+   "award": "A.A- T Degree"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "02229",
+   "title": "Welding Technology: Arc Welding",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/arc-welding-as/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/arc-welding-certificate-achievement/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/gas-tungsten-arc-welding-as/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/gas-tungsten-arc-welding-certificate-achievement/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/pipe-welding-as/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/pipe-welding-certificate-achievement/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/welding-fabrication-layout-as/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/welding-fabrication-layout-certificate-achievement/"
+   ]
+  },
+  {
+   "control_number": "02241",
+   "title": "Medical Assistant",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/medical-assistant-certifciate-achievement/"
+   ]
+  },
+  {
+   "control_number": "02242",
+   "title": "Dental Assisting",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/dental-assisting-certificate-achievement/"
+   ]
+  },
+  {
+   "control_number": "09930",
+   "title": "Welding Technology : Gas Tungsten Arc Welding",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/gas-tungsten-arc-welding-as/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/gas-tungsten-arc-welding-certificate-achievement/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/arc-welding-as/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/arc-welding-certificate-achievement/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/pipe-welding-as/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/pipe-welding-certificate-achievement/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/welding-fabrication-layout-as/",
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/welding-fabrication-layout-certificate-achievement/"
+   ]
+  },
+  {
+   "control_number": "19166",
+   "title": "Liberal Arts and Sciences: Culture and Society",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/history-aa-t/"
+   ]
+  },
+  {
+   "control_number": "19168",
+   "title": "Liberal Arts and Sciences: Earth and Space Sciences",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/natural-sciences-general-as/"
+   ]
+  },
+  {
+   "control_number": "19176",
+   "title": "Liberal Arts & Sciences: Self-Development and  Social Behavior",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/"
+   ]
+  },
+  {
+   "control_number": "19178",
+   "title": "Liberal Arts and Sciences: Social & Behavioral Science",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/"
+   ]
+  },
+  {
+   "control_number": "24018",
+   "title": "Courses in High School Equivalency",
+   "award": "Noncredit program",
+   "pages": [
+    "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/courses-in-ged-test-prep-english/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 17,
+  "0.8-1.0": 63,
+  "1.0": 194
+ },
+ "run": "37966828676"
+}

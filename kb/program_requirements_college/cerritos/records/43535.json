@@ -1,0 +1,400 @@
+{
+ "college": "Cerritos College",
+ "control_number": "43535",
+ "shape": "adt",
+ "title": "Social Justice Studies: Chicano Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/socialjustice-chicano-studies-aa-t/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7056,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7056,
+    "output_tokens": 3478,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3478,
+  "output_tokens_details": {
+   "thinking_tokens": 1168
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09778,
+ "ms": 27437,
+ "seconds": 27.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 30,
+   "listed": 35,
+   "share": 0.857,
+   "missing": [
+    "ETHN275",
+    "HIST102",
+    "HIST235",
+    "SOC210",
+    "WGS202"
+   ],
+   "unexplained": [
+    "HIST235"
+   ],
+   "pass": false
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "HIST250",
+    "HISTC1001"
+   ],
+   "flagged": [
+    "HIST250",
+    "HISTC1001"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.0,
+    19.5
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": [
+    "the blocks sum to 18.0-19.5; the catalog states 18.0-18.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Justice Studies: Chicano Studies (AA-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Identify and analyze the ways injustices are institutionalized in social, political, and economic structures.",
+    "Recognize and connect the ways individuals and institutions may be beneficiaries and/or victims of social injustice.",
+    "Identify and practice the methods people use to fight for social justice at local, national, and international levels.",
+    "Demonstrate an awareness of the major theories and concepts that help explain the life experiences of the Chicana/o.",
+    "Evaluate the Chicana/o experience as part of the local and global community."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core (9 Units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 245",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select three courses from at least two of the following areas (Minimum 9 units)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 105A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WGS 109",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 210",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 261",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WGS 204",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 105",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": 4.5,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 210",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 205",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 220",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ETHN 275",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 210",
+    "why": "not in the text"
+   },
+   {
+    "code": "WGS 202",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "List A is recorded as one block of three courses drawn from Areas 1-5; the catalog requires courses from at least two areas and allows only one course from Area 4. Area headings print '(3 Units)' each for Areas 1-3.",
+   "Area 1 courses: HIST C1001, HIST C1002, HIST 230, HIST 250; Area 2: ART 105A through PHIL 109/WGS 109; Area 3: ANTH 202 through WGS 105/ETHN 105; Area 4: STAT C1000/STAT C1000E/PSYC 210/SOC 205/PSYC 220.",
+   "Area 5 (Major Preparation) reads 'Any course not already used' and lists ENGL 223 and ENGL 225, which are already in Area 2; they are listed once in the List A block.",
+   "Area 3 prints 'SOC 202 Gender and Society or ETHN 210 Race and Ethnic Relations in the U.S.' - SOC 202 is also in the Required Core and the pairing appears to be a catalog error (likely SOC 210 or ETHN 210 intended). Recorded as printed; reviewer should check.",
+   "Area 4 prints all five courses as one 'or' chain with a single unit range (3-4.5) beside STAT C1000; units for the alternatives are not printed. SOC 205 and PSYC 220 are research methods courses but are printed as 'or' options in the same chain.",
+   "HIST C1001 and HIST 250 are not in the closed list; recorded as catalog additions.",
+   "The program description paragraph 'Upon completion of this program...' is printed twice; it is narrative, not a numbered outcome, and was not recorded as an outcome.",
+   "Degree requirements name Cal-GETC; CSU GE or IGETC may be used in some cases per a counselor."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

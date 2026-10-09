@@ -1,0 +1,279 @@
+{
+ "college": "Cerritos College",
+ "control_number": "14565",
+ "shape": "degree",
+ "title": "Administration of Justice",
+ "award": "A.A. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/administration-justice-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6102,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6102,
+    "output_tokens": 1733,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1733,
+  "output_tokens_details": {
+   "thinking_tokens": 447
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05907,
+ "ms": 13300,
+ "seconds": 13.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 20,
+   "share": 0.55,
+   "missing": [
+    "AJ107",
+    "AJ221",
+    "AJ222",
+    "BCOT131",
+    "LAW100",
+    "LAW101",
+    "LAW103",
+    "SOC201",
+    "SPAN223"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PSYC261"
+   ],
+   "flagged": [
+    "PSYC261"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administration of Justice (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students employ the basic process of a preliminary investigation.",
+    "Students distinguish between local, state, and federal jurisdictional authority.",
+    "Students identify major case law decisions impacting law enforcement.",
+    "Students identify the basic elements of the criminal trial process.",
+    "Students recognize how cultural diversity impacts police-community relations.",
+    "Students recognize the parameters regarding search and seizure and use of force."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AJ 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Additional Department Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AJ 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 261",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AJ 107",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "AJ 221",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "AJ 222",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "BCOT 131",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "LAW 100",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "LAW 101",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "LAW 103",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "SPAN 223",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "SOC 201",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "SOCI C1000 (printed with a space) was matched to closed-list code SOCIC1000; catalog_addition set false. The catalog title is 'Introductory Sociology Principles' versus closed-list 'Introduction to Sociology'; reviewer should confirm.",
+   "PSYC 261 Social Psychology is printed as an 'or' option to PSYC C1000 with no units shown; it is not in the closed list.",
+   "Recommended Courses list also names AJ 208, PHOT 100 and JAMS 101, which are not in the closed list; recommended courses were not placed in blocks.",
+   "Degree text refers to 'the General Education requirements' without naming a specific pattern, so ge_pattern is null.",
+   "Neither block prints its own subtotal; Total Units 33 is stated for the major."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

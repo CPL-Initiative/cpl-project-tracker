@@ -1,0 +1,264 @@
+{
+ "college": "Cerritos College",
+ "control_number": "20486",
+ "shape": "certificate",
+ "title": "Digital Arts: Computer Animation",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/digital-arts-computer-animation-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5628,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5628,
+    "output_tokens": 1443,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1443,
+  "output_tokens_details": {
+   "thinking_tokens": 258
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05137,
+ "ms": 11099,
+ "seconds": 11.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 11,
+   "share": 0.909,
+   "missing": [
+    "ART192B"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ART120",
+    "ART191B",
+    "ART194A",
+    "ART195B",
+    "FILM159"
+   ],
+   "flagged": [
+    "ART120",
+    "ART191B",
+    "ART194A",
+    "ART195B",
+    "FILM159"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Digital Arts: Computer Animation (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students prepare and assemble a body of work for entry into the workplace that include 3D modeling, 3D animated shorts, and video assembly.",
+    "Students analyze multiple forms of animation and assemble animated shorts using current computer technology.",
+    "Students apply professional practices to creatively express their personal experience with visual skill and clarity.",
+    "Students appraise works of art that inform their own creative process by analyzing principles of visual composition, color theory, and lighting techniques.",
+    "Students demonstrate through the creation of personal animated work, an understanding of the animation process and its use as a storytelling medium."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 103",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "FILM 159",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 191A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 191B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 193",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 195",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 194A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 198",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 195B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 192B",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "ART 103 and FILM 159 are printed as 'or' alternatives to ART 102 without units beside them; units left null.",
+   "Catalog title for ART 114 ('Storyboarding and Animation Principles for Film') and ART 195 ('3D Modeling for Animation') differ from the closed-list titles; codes match.",
+   "ART 120, ART 191B, ART 194A, ART 195B and FILM 159 appear in the catalog but not in the closed list; recorded as catalog additions.",
+   "Required courses sum to 27 units plus 3 from the selection block, matching the printed total of 30."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

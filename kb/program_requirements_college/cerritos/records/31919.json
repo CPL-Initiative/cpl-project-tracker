@@ -1,0 +1,269 @@
+{
+ "college": "Cerritos College",
+ "control_number": "31919",
+ "shape": "certificate",
+ "title": "Engineering Technology: Electrical and Electronic Engineering Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/electrical-electronic-engineering-technician-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6280,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6280,
+    "output_tokens": 1510,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1510,
+  "output_tokens_details": {
+   "thinking_tokens": 249
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05532,
+ "ms": 12241,
+ "seconds": 12.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 21,
+   "share": 0.429,
+   "missing": [
+    "ENGT100",
+    "ENGT102",
+    "ENGT104",
+    "ENGT105",
+    "ENGT106",
+    "ENGT153",
+    "ENGT237",
+    "ENGT258",
+    "ENGT260",
+    "ENGT261",
+    "ENGT262",
+    "ENGT263"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering Technology: Electrical and Electronic Engineering Technician (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Student apply principles of engineering technology to  design and troubleshoot industrial electrical, electronics and mechatronics systems.",
+    "Student design industrial electrical and electronics systems",
+    "Student troubleshoot industrial electrical and electronics systems",
+    "Student design, install and maintain industrial flexible robotics/mechatronics systems.",
+    "Student integrates electrical/electronic systems with mechanical counterpart",
+    "Student design electronics schematics and printed circuit board using  contemporary CAD/ eCAD  software."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ET 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 105",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Additional Required Electives",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ET 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGT 100",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 102",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 104",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 105",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 106",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 153",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 237",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 258",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 260",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 261",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 262",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "ENGT 263",
+    "why": "listed as a recommended elective"
+   }
+  ],
+  "notes": [
+   "The 'Additional Required Electives' heading gives no selection rule; recorded as 'all' because the core (10 units) plus all five listed courses (15 units) equals the stated Total Units of 25. Reviewer should confirm.",
+   "Recommended Electives (ENGT 100-263) are printed after the Total Units line and are not part of the 25-unit requirement; not placed in blocks.",
+   "Catalog prints ENGT 106 at 4.0 units in the recommended list while the state file stores 2 units.",
+   "Outcome text copied as printed, including the catalog's double spaces and grammar."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

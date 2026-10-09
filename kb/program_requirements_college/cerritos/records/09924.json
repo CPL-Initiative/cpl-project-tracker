@@ -1,0 +1,247 @@
+{
+ "college": "Cerritos College",
+ "control_number": "09924",
+ "shape": "degree",
+ "title": "Engineering Design Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/engineering-design-technology-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5871,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5871,
+    "output_tokens": 1426,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1426,
+  "output_tokens_details": {
+   "thinking_tokens": 182
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.052,
+ "ms": 11093,
+ "seconds": 11.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    24.0
+   ],
+   "stated": [
+    23.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering Design Technology (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Student use basic principles of statics and strength of materials, aided by computer simulations, to dimension parts.",
+    "Student create and interpret 2D blueprints.",
+    "Student create parametric parts and assembly drawings.",
+    "Student learn how to do design for manufacturing, 3D printing, and concurrent engineering.",
+    "Student learn how to make 2D assembly drawings.",
+    "Student perform basic machine design.",
+    "Student use and interpret GD&T.",
+    "Student use AutoCAD to make 2D drawings and basic 3D models."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "ENGT 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 117",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "2D and 3-D Design with Autocad Specialty Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialty Tracks",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGT 138",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 213",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "3-D Parametric Modelling Design with Solidworks Specialty Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialty Tracks",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGT 259",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "3-D Parametric Modelling Design with Autodesk Inventor Specialty Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialty Tracks",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGT 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 257",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints '7.0-8.0' units for the Specialty Tracks selection as a whole ('Select one of the following tracks'), not per track; individual track blocks therefore have stated null. The AutoCAD and SolidWorks tracks total 8 units, the Inventor track 7.",
+   "Track course units are printed in parentheses beside course titles, e.g. '(4)'.",
+   "The source URL ends in 'engineering-design-technology-aa' although the page heading and award are A.S.; reviewer may confirm.",
+   "Degree requires 60 units including General Education requirements; no specific GE pattern (CSU GE, IGETC, Cal-GETC) is named in the text, so ge_pattern is null."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

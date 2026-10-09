@@ -1,0 +1,324 @@
+{
+ "college": "Cerritos College",
+ "control_number": "42158",
+ "shape": "degree",
+ "title": "Apprenticeship: Field Ironworkers",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/field-ironworkers-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6455,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6455,
+    "output_tokens": 2361,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2361,
+  "output_tokens_details": {
+   "thinking_tokens": 426
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07304,
+ "ms": 18096,
+ "seconds": 18.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 24,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.0,
+    38.0
+   ],
+   "stated": [
+    34.0,
+    38.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Apprenticeship: Field Ironworkers (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate knowledge of safety guidelines for ironworkers and apprenticeship journeymen in the construction industry.",
+    "Conduct basic and supervisory tasks functions within the construction trades.",
+    "Explain job function differences between structural and reinforcing.",
+    "Recognized resources offered by Cerritos Community College to ironworker's apprentice program.",
+    "Identify industry leaders, government groups, and apprenticeship originations to analyze career goals.",
+    "Demonstrate knowledge of welding, cranes, detailing, reinforcing, structural steel, and rigging in order to perform and supervise ironworker’s job functions."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements: FIELD IRONWORKERS ESSENTIAL CLASSES FOR REINFORCING AND STRUCTURAL",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "IWAP 40.07",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.50",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.56",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.63",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.09",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.22",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.10",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.11",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 1: Reinforcing Program",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Reinforcing or Structural option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IWAP 40.12",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 41.03",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.15",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 41.07",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.53",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.55",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 41.08",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 41.09",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2: Structural Program",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Reinforcing or Structural option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IWAP 40.21",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 41.06",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.05",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.60",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 41.05",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.61",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 41.04",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IWAP 40.26",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints IWAP 40.50, IWAP 40.10 and IWAP 40.60; the closed list stores these as IWAP 40.5, IWAP 40.1 and IWAP 40.6 (same titles and units). Treated as the same courses (trailing zero formatting), so catalog_addition is false; reviewer may confirm.",
+   "The catalog prints '15.0-19.0' for 'Select one of the following options' as a whole rather than per option; the option blocks' stated are left null. Option 1 courses sum to 15 units and Option 2 to 19 units as printed.",
+   "Catalog title for IWAP 40.56 is 'IW-Ironworker History Reinforcing' vs closed-list 'IW - Trade Science/Ironworker History'; IWAP 40.26 printed as 'Metal Building Erection I/Foreman Training'.",
+   "Degree requires 60 semester units including general education requirements; no specific GE pattern is named in the text, so ge_pattern is null."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

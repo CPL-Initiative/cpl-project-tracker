@@ -1,0 +1,239 @@
+{
+ "college": "Cerritos College",
+ "control_number": "02213",
+ "shape": "degree",
+ "title": "Business Communications Office Technology: Secretary/Administrative Assistant",
+ "award": "A.A. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/secretary-administrative-assistant-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6101,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6101,
+    "output_tokens": 1578,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1578,
+  "output_tokens_details": {
+   "thinking_tokens": 412
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05596,
+ "ms": 18512,
+ "seconds": 19.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "BCOT60"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BCOT155"
+   ],
+   "flagged": [
+    "BCOT155"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    31.5
+   ],
+   "stated": [
+    30.0,
+    31.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Communications Office Technology: Secretary/Administrative Assistant (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 31.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students apply correct customer service/telephone techniques in a business environment.",
+    "Students apply correct filing principles, spelling/proofreading skills, and office procedures for the office.",
+    "Students apply the steps for effective job search in the business field.",
+    "Students apply standard English grammar and writing skills to write effective business documents.",
+    "Students employ the correct application of Microsoft Office software for editing and formatting office documents."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Division/Department Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BCOT 96",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 97",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 112",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 113",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 118",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 131",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 152",
+      "units": 1.5,
+      "units_max": 3,
+      "alternatives": [
+       {
+        "code": "BCOT 247",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 155",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BCOT 71",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BCOT 161",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 248",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BCOT 60",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The range 1.5-3.0 is printed on the 'BCOT 152 or BCOT 247' row as a whole; it likely reflects BCOT 152 (1.5) vs BCOT 247 (3.0). No units printed beside BCOT 247 itself.",
+   "No units printed beside BCOT 71 (alternative to BCOT 155); the 3.5 on the row is printed beside BCOT 155.",
+   "BCOT 155 Administrative Secretarial Procedures is not in the closed list; recorded as catalog addition.",
+   "Catalog notes BCOT 71 may be taken in lieu of BCOT 155 for students pursuing the medical sector, and says to see counselors for additional alternatives.",
+   "Total Units 30-31.5 is the major total; degree requires 60 units including GE and electives as needed (no GE pattern named)."
+  ]
+ },
+ "extracted_run": "37966828676"
+}

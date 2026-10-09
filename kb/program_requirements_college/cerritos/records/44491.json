@@ -1,0 +1,648 @@
+{
+ "college": "Cerritos College",
+ "control_number": "44491",
+ "shape": "adt",
+ "title": "Law, Public Policy, and Society",
+ "award": "A.A- T Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/law-publicpolicy-society/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8205,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8205,
+    "output_tokens": 5026,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5026,
+  "output_tokens_details": {
+   "thinking_tokens": 1374
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.13334,
+ "ms": 35619,
+ "seconds": 36.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 55,
+   "listed": 63,
+   "share": 0.873,
+   "missing": [
+    "HED104",
+    "HIST102",
+    "POL201",
+    "POL210",
+    "POL220",
+    "POL240",
+    "POL280",
+    "WGS202"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "HISTC1001",
+    "POLS201",
+    "POLS210",
+    "POLS220",
+    "POLS240",
+    "POLS280",
+    "PSYC262"
+   ],
+   "flagged": [
+    "HISTC1001",
+    "POLS201",
+    "POLS210",
+    "POLS220",
+    "POLS240",
+    "POLS280",
+    "PSYC262"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    29.0,
+    35.0
+   ],
+   "stated": [
+    32.0,
+    35.0
+   ],
+   "why": [
+    "the blocks sum to 29.0-35.0; the catalog states 32.0-35.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Law, Public Policy, and Society (AA-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Understand the American political and legal system and how it applies in society.",
+    "Be able to apply critical thinking to social science concepts and theories.",
+    "Understand the academic foundation necessary to successfully transfer and eventually enroll in law school.",
+    "Understand career opportunities in the legal profession."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "AJ 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AJ 102",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 103",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BA 113",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "LAW 110",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 103",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENGL C1001",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 106",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 132",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 210",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 210",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select two courses from two of the Areas listed below",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "AJ 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 222",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LAW 110",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 201",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "POLS 210",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "POLS 220",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HO 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAMS 157",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BA 157",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 245",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HO 245",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRS 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRS 108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 135",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 108",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 280",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 262",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 262",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 202",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 210",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 105",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "READ 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW 171",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW 172",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW 173",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW 174",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "POL 201",
+    "why": "catalog prints POLS 201 instead (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 210",
+    "why": "catalog prints POLS 210 instead (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 220",
+    "why": "catalog prints POLS 220 instead (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 240",
+    "why": "catalog prints POLS 240 instead (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 280",
+    "why": "catalog prints POLS 280 instead (recorded as catalog addition)"
+   },
+   {
+    "code": "HIST 102",
+    "why": "not in the text; catalog prints HIST C1001 in its place"
+   },
+   {
+    "code": "HED 104",
+    "why": "not in the text"
+   },
+   {
+    "code": "WGS 202",
+    "why": "not in the text; only SOC 202 printed"
+   }
+  ],
+  "notes": [
+   "List A is one block of 2 courses, but the catalog requires the two courses to come from two different Areas: Area 1 Administration of Justice (AJ 101, 102, 103, 104, 105, 107, 222; 'Courses not already used'), Area 2 Business (BA 113/LAW 110), Area 3 Economics (ECON C2002/C2001), Area 4 Political Science (POLS 240/201/210/220), Area 5 Public Policy (CS 101, HO 103, JAMS 157/BA 157, PSYC 245/HO 245), Area 6 Diversity (AFRS 100, 101, 108, ANTH 100, GEOG 102, GEOG 135/ETHN 135, HIST C1002, HIST 108/CS 108, HIST 110, POLS 280/ETHN 280, PSYC 262/ETHN 262, SOC 202, SOC 210/ETHN 210, SOC 215, WGS 105/ETHN 105), Area 7 College Success (COUN 200, READ 101), Area 8 Internship (LAW 171-174).",
+   "Area 1 courses, BA 113, LAW 110 and HIST C1002 also appear as options in Required Courses; Area 1 says 'Courses not already used'.",
+   "Unit ranges in Required Courses (e.g. COMM 103 3.0-4.0, STAT C1000 4.0-4.5) are printed on the first row and cover the 'or' alternatives; alternatives' own units are not printed.",
+   "HIST C1001, POLS 240/201/210/220/280 and PSYC 262 are not in the closed list (closed list uses POL prefixes and ETHN 262).",
+   "Catalog heading for Area 1 reads 'Administrative of Justice/Criminal Justice/Criminology'.",
+   "Program Student Learning Outcomes are printed for the program page as a whole; this AA-T is the only award on the page.",
+   "GE: Cal-GETC required; CSU GE or IGETC may be used in some cases per counselor."
+  ]
+ },
+ "extracted_run": "37961137169"
+}
