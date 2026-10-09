@@ -4,9 +4,9 @@
   "supabase_tables": 97,
   "rpcs": 35,
   "edge_functions": 6,
-  "file_datasets": 610,
-  "external_services": 162,
-  "consumers": 420,
+  "file_datasets": 612,
+  "external_services": 163,
+  "consumers": 421,
   "workflows": 45,
   "data_js_files": 69,
   "tabs": 39
@@ -1458,6 +1458,18 @@
      "direction": "read",
      "how": "url",
      "line": 25
+    }
+   ],
+   "main_committers": []
+  },
+  "external:localhost:": {
+   "consumers": [
+    {
+     "id": "script:prototype/mockup_harness/capture_fact_sheet.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 31
     }
    ],
    "main_committers": []
@@ -15356,6 +15368,32 @@
      "direction": "read",
      "how": "literal",
      "line": 23
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:prototype/mockup_harness/capture.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/mockup_harness/capture_fact_sheet.mjs",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 73
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:prototype/mockup_harness/live_metrics.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/mockup_harness/capture_fact_sheet.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 69
     }
    ],
    "served": false,
