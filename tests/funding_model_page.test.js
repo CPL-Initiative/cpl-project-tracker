@@ -164,11 +164,13 @@ check("...and a curator's FAQ edit on the tab reaches this page, escaped",
   })());
 // THE CONTENTS: one link per section, each to the section's own id, and a
 // link opens its section's fold. Driven through the page's own handler.
-check("the Contents list carries one link per section, in page order, to each section's id",
+check("the Contents list carries one link per section, in page order, to each section's id, then the video last",
   (function () {
-    const links = Array.from(doc.querySelectorAll("#toc-list a"));
+    const links = Array.from(doc.querySelectorAll('#toc-list a[href^="#"]'));
     const ids = Array.from(doc.querySelectorAll("main > section")).map((sec) => sec.id);
-    return links.length === ids.length && links.every((a, i) => a.getAttribute("href") === "#" + ids[i]);
+    const items = Array.from(doc.querySelectorAll("#toc-list > li"));
+    return links.length === ids.length && links.every((a, i) => a.getAttribute("href") === "#" + ids[i]) &&
+      items.length === ids.length + 1 && !!items[items.length - 1].querySelector("#video-link");
   })());
 check("a Contents link OPENS its section's fold, and Collapse all / Expand all flips every fold",
   (function () {

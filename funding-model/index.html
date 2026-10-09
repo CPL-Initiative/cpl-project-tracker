@@ -111,7 +111,6 @@ a:hover{text-decoration-thickness:2px}
 .head .logo{height:52px; width:auto; max-width:100%; flex:0 0 auto}
 .mh-text{flex:1 1 320px; min-width:0}
 .masthead h1{font-size:clamp(1.5rem,1.2rem + 1.25vw,2.1rem); color:var(--seal-blue); text-wrap:pretty}
-.mh-title{display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 14px}
 .ver{margin:0; font-size:.8rem; color:var(--text-muted); white-space:nowrap; font-variant-numeric:tabular-nums}
 .ver abbr{text-decoration:none}
 .mh-row{margin-top:10px}
@@ -132,10 +131,8 @@ a:hover{text-decoration-thickness:2px}
 .toc{list-style:none; margin:0; padding:0; columns:2; column-gap:32px; max-width:none}
 .toc li{break-inside:avoid; margin:0; max-width:none}
 .toc a{display:block; padding:5px 0}   /* ≥24px target height (WCAG 2.5.8) */
-.toc-watch{margin:1em 0 0; padding-top:.9em; border-top:1px solid var(--border);
-  display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 16px; max-width:none}
-.toc-watch a{font-weight:600}
-.toc-note{margin:.6em 0 0; font-size:.84rem; color:var(--text-muted); max-width:none}
+.toc-note{margin:.9em 0 0; padding-top:.8em; border-top:1px solid var(--border);
+  font-size:.84rem; color:var(--text-muted); max-width:none}
 @media (max-width:560px){ .toc{columns:1} }
 
 /* ── sections ─────────────────────────────────────────────────────────── */
@@ -399,12 +396,7 @@ section[hidden]{display:none}
     <img class="logo" src="../sierra/cpl-initiative-logo-navy.png"
          alt="California Community Colleges, Credit for Prior Learning Initiative" width="1115" height="209">
     <div class="mh-text">
-      <!-- The version rides the title's line in small type (Sam, 2026-10-09:
-           "cut Version and just use Ver: 10/9/26 -- It doesn't need a chip"). -->
-      <div class="mh-title">
-        <h1>2026-2028 CPL Initiative Funding</h1>
-        <p class="ver"><abbr title="Version">Ver</abbr>: <span id="x-version">8/31/26</span></p>
-      </div>
+      <h1>2026-2028 CPL Initiative Funding</h1>
       <div class="mh-row">
         <div class="mh-actions" data-sierra-bar>
           <button type="button" class="btn" id="btn-collapse-all" aria-controls="start">Collapse all</button>
@@ -419,6 +411,10 @@ section[hidden]{display:none}
                controls, and repeats the table header on each page. -->
           <button type="button" class="btn" id="pdf-btn" data-sierra-before
                   aria-describedby="pdf-note">PDF</button>
+          <!-- The version, in small type after PDF (Sam, 2026-10-09: "cut
+               Version and just use Ver: 10/9/26 -- It doesn't need a chip",
+               then "Put the Ver next to pdf"). -->
+          <span class="ver"><abbr title="Version">Ver</abbr>: <span id="x-version">8/31/26</span></span>
         </div>
       </div>
     </div>
@@ -445,10 +441,11 @@ section[hidden]{display:none}
       <li><a href="#disbursement">Disbursement and the funding window</a></li>
       <li><a href="#choices">What is a choice, and what is a given</a></li>
       <li><a href="#questions">Frequently asked questions</a></li>
+      <!-- The introduction video, the list's last item (Sam, 2026-10-09). The
+           list is rebuilt from the sections after every paint, and this item
+           rides the rebuild to the end (contentsFromSections). -->
+      <li class="toc-video"><a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a></li>
     </ul>
-    <p class="toc-watch">
-      <a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a>
-    </p>
     <p class="toc-note" id="pdf-note">PDF opens your browser&rsquo;s print dialog; choose
       &ldquo;Save as PDF&rdquo;. The file holds the figures as they stand the day you save it.</p>
   </div>
@@ -1500,8 +1497,13 @@ window.CPL_SIERRA_SUGGESTED = [
       li.appendChild(a);
       frag.appendChild(li);
     });
+    // The introduction video stays the list's last item (Sam, 2026-10-09): the
+    // same element, so the href the painter set for this scenario rides along.
+    var video = document.getElementById("video-link");
+    var videoItem = video && video.closest("li");
     list.textContent = "";
     list.appendChild(frag);
+    if (videoItem) list.appendChild(videoItem);
     syncCollapseAll();
   }
   window.CPL_CONTENTS = { rebuild: contentsFromSections, open: openSection, sync: syncCollapseAll };
