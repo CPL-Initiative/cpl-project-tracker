@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T15:34:47Z",
-  "session": 352,
-  "moniker": "SkyMeridian",
+  "written_at": "2026-10-09T17:35:28Z",
+  "session": 353,
+  "moniker": "SkyHearth",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_353_handoff.md",
+  "handoff": "docs/session_354_handoff.md",
   "unchecked": [
     {
       "college": "Irvine Valley College",
@@ -23,8 +23,8 @@
     }
   ],
   "next_step": {
-    "title": "Back to the Catalog program harvest",
-    "text": "Your direction at the close: the next session starts on the Catalog ROEP harvest, then turns the Supabase guard off for updates if it runs outside Auto mode."
+    "title": "Load Cerritos's programs for your reading",
+    "text": "Every Cerritos program was read from its own catalog page and drafted; the next session loads the records unchecked so you can read a sample from the Records view."
   },
   "calls": [
     {
@@ -40,10 +40,19 @@
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
-    "sierra": "The Fact Sheet is on First Light since Oct 9, in light and dark, and follows the theme you choose in COBI; print and the Word download keep their document type. The veteran map moved the same day, and the docked Sierra expands to full screen when she answers.",
-    "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening."
+    "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
+    "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
+    "reading": "Cerritos, the first full college: 283 of 288 programs read from their own pages on Oct 9 and drafted; 235 pass the three machine checks. Not yet loaded."
   },
   "changes": [
+    {
+      "at": "2026-10-09T17:30:00Z",
+      "text": "Every Cerritos program was matched to its own catalog page and drafted; 235 of 283 pass the three machine checks."
+    },
+    {
+      "at": "2026-10-09T17:16:00Z",
+      "text": "The funding explainer's typed passages can be edited on the tab, and its header was cleaned to your marks."
+    },
     {
       "at": "2026-10-09T15:31:00Z",
       "text": "The Library tab's open-asks record points at Sheet 57, after your paste."
@@ -83,14 +92,6 @@
     {
       "at": "2026-10-09T02:32:56Z",
       "text": "The Fact Sheet's links and buttons reach the 24px size, its toolbar uses words, and on a phone the toolbar scrolls away."
-    },
-    {
-      "at": "2026-10-09T01:46:45Z",
-      "text": "The Library's record of the decision sheets points at Sheet 55."
-    },
-    {
-      "at": "2026-10-09T01:51:41Z",
-      "text": "The public veteran map is on First Light, light and dark; inside COBI it fills its frame."
     }
   ],
   "next_run": {

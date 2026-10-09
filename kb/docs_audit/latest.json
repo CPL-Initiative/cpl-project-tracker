@@ -10,59 +10,60 @@
     "other": 150000
   },
   "summary": {
-    "files": 1093,
-    "bytes": 11401503,
+    "files": 1095,
+    "bytes": 11414116,
     "over_budget": 6,
-    "handoff_max": 353,
+    "handoff_max": 354,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59965,
+    "always_loaded_bytes": 59972,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59965,
+        "bytes": 59972,
         "over": 0
       },
       "other": {
         "files": 118,
-        "bytes": 3347041,
+        "bytes": 3347521,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9680,
+        "bytes": 9314,
         "over": 0
       },
       "lessons": {
         "files": 81,
-        "bytes": 2343505,
+        "bytes": 2349155,
         "over": 2
       },
       "kb_note": {
-        "files": 532,
-        "bytes": 2663043,
+        "files": 533,
+        "bytes": 2664688,
         "over": 0
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 332209,
+        "bytes": 330494,
         "over": 1
       },
       "handoff": {
-        "files": 324,
-        "bytes": 2646060,
+        "files": 325,
+        "bytes": 2652972,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 6,
+      "unindexed_kb_note": 1,
       "vault_heavy_path": 59
     },
     "vault": {
-      "files": 3814,
-      "bytes": 1813954812,
+      "files": 3816,
+      "bytes": 1813979347,
       "heavy_bytes": 817696958,
       "heavy_share": 0.451,
       "ignore_filters": [
@@ -302,6 +303,15 @@
       "path": "docs/kb-notes/methodology-an-unadopted-item-is-a-shelf-not-an-absence.md"
     },
     {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-anchor-a-marker-a-workflow-reads"
+      },
+      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-anchor-a-marker-a-workflow-reads.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -414,13 +424,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 706982,
+        "bytes": 707348,
         "limit": 150000,
         "lane": "other",
-        "over_by": 556982,
-        "ratio": 4.71
+        "over_by": 557348,
+        "ratio": 4.72
       },
-      "message": "706,982 B is 4.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "707,348 B is 4.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
