@@ -213,6 +213,14 @@ emit from, a radius, and a ghost lifetime. ⚠️ Do **not** "fix" it in `island
 ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
 link, never a github.io URL.
 
+**UI pass (S351).** AA, targets and the keyboard hold at all 11 routes, and the sweep passes 233 of 233
+(with the description shards built: `python3 kb/_build_ccr_universe.py --shards-only`; without them its
+description check fails for that reason alone). First Light: the template's component rules carry no raw hex.
+The status chips read `--chip-<role>` and `--chip-<role>-edge` by day and at night, and text on a cobalt or
+seal-blue fill writes `var(--on-accent)`. White on the night canvas's `#7DA1D4` read 2.65:1 on the member-row
+hover, Put back's hover and the pressed Night word; no route reaches those states. Guard:
+`tests/ccr_skyview_first_light.test.js`.
+
 ## NEXT
 
 ⭐ **CPL MODE IS A SECOND UNIVERSE, NOT A RELABELING** (Sam's ruling, 2026-09-10).
