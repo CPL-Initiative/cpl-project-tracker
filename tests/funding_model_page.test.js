@@ -164,11 +164,13 @@ check("...and a curator's FAQ edit on the tab reaches this page, escaped",
   })());
 // THE CONTENTS: one link per section, each to the section's own id, and a
 // link opens its section's fold. Driven through the page's own handler.
-check("the Contents list carries one link per section, in page order, to each section's id",
+check("the Contents list carries one link per section, in page order, to each section's id, then the video last",
   (function () {
-    const links = Array.from(doc.querySelectorAll("#toc-list a"));
+    const links = Array.from(doc.querySelectorAll('#toc-list a[href^="#"]'));
     const ids = Array.from(doc.querySelectorAll("main > section")).map((sec) => sec.id);
-    return links.length === ids.length && links.every((a, i) => a.getAttribute("href") === "#" + ids[i]);
+    const items = Array.from(doc.querySelectorAll("#toc-list > li"));
+    return links.length === ids.length && links.every((a, i) => a.getAttribute("href") === "#" + ids[i]) &&
+      items.length === ids.length + 1 && !!items[items.length - 1].querySelector("#video-link");
   })());
 check("a Contents link OPENS its section's fold, and Collapse all / Expand all flips every fold",
   (function () {
@@ -421,13 +423,14 @@ check("the status line is empty on a successful paint",
 // no built file, because a file built once is the snapshot page this one
 // replaced. So the print rules ARE the PDF, and they are guarded like markup.
 {
-  // In the action bar since 2026-10-01 (the Fact Sheet's title row).
-  check("a PDF control sits in the action bar at the top, as a word rather than a mark",
+  // In the masthead's control row since 2026-10-09 (Sam's marked-up screenshot
+  // moved the controls onto the version's row and the label to "PDF").
+  check("a PDF control sits in the masthead's control row, as a word rather than a mark",
     (function () {
       const b = doc.getElementById("pdf-btn");
-      return !!b && b.tagName === "BUTTON" && /Download PDF/.test(b.textContent) &&
-        !!doc.querySelector(".actionbar #pdf-btn") &&
-        !!(doc.querySelector(".actionbar").compareDocumentPosition(doc.querySelector("main")) & 4);
+      return !!b && b.tagName === "BUTTON" && b.textContent.trim() === "PDF" &&
+        !!doc.querySelector(".masthead .mh-actions #pdf-btn") &&
+        !!(doc.querySelector(".mh-actions").compareDocumentPosition(doc.querySelector("main")) & 4);
     })());
   const print = (html.match(/@media print\{[\s\S]*?\n\}/) || [""])[0];
   check("the print stylesheet exists and sets a page box",
@@ -451,8 +454,8 @@ check("the status line is empty on a successful paint",
   check("print drops the table's controls, which have no meaning on paper",
     /cplfund-toolbar/.test(print) && /cplfund-colmenu/.test(print) &&
     /cplfund-optin-jump/.test(print) && /input\[type="search"\]/.test(print));
-  check("...and the PDF button prints nothing of itself (the action bar and the Contents are screen navigation)",
-    /\.actionbar, #contents/.test(print));
+  check("...and the PDF button prints nothing of itself (the control row and the Contents are screen navigation)",
+    /\.mh-actions, #contents/.test(print));
   // The College Dashboard's table states its screen minimum INLINE (tableHtml,
   // 2026-09-28), and an inline style outranks every rule but an !important one:
   // before 2026-09-29 the printed table ran 898px wide in a 720px page box.

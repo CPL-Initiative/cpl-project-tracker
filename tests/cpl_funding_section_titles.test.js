@@ -59,10 +59,16 @@ function clickSel(window, doc, sel) {
 
   window.CPL_SESSION = reviewerSession();
   T.render();
+  // The explainer's text (2026-10-09) is the one curator-only section: it is
+  // never public, so it has no Rename or Hide, and it says so by its mark.
+  const curatorOnly = Array.from(doc.querySelectorAll(".cplfund-sec[data-curator-only]"));
   check("signed in, EVERY rendered section carries Rename and a public-visibility word",
-    doc.querySelectorAll(".cplfund-sec").length === nSections &&
+    doc.querySelectorAll(".cplfund-sec:not([data-curator-only])").length === nSections &&
     doc.querySelectorAll("[data-secrename]").length === nSections &&
     doc.querySelectorAll("[data-sechide], [data-secshow]").length === nSections);
+  check("...and the one curator-only section is the explainer's text, with neither control",
+    curatorOnly.length === 1 && curatorOnly[0].getAttribute("data-sec") === "explainer_text" &&
+    !curatorOnly[0].querySelector("[data-secrename], [data-sechide], [data-secshow]"));
   check("the controls sit in the section BODY, never inside the <summary>",
     !doc.querySelector(".cplfund-sec-sum [data-secrename]") &&
     !doc.querySelector(".cplfund-sec-sum button") &&

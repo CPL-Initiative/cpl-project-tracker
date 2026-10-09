@@ -1,7 +1,7 @@
 ---
 title: Reference — Dashboard UI design system (tokens + canonical components)
 created: 2026-06-04
-updated: 2026-06-12
+updated: 2026-10-09
 tags: [reference, ui, design-system, css, dashboard, aesthetics]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -116,6 +116,46 @@ lock the design with Sam, **then** port it into the monolith — instead of
 blind-editing 14k lines of HTML. The in-repo analog is the EACR **versioned
 prototype gallery** (`docs/kb-notes/methodology-versioned-prototype-gallery.md`):
 keep v1, stack v2 beside it, graduate the winner.
+
+## Controls: underlined words (Sam, 2026-10-09)
+
+Sam, on the funding explainer: *"I think our buttons could be simpler and less
+obtrusive. What if we show them without boxes and just underlined text link a
+link? Does that violate any AA or do you have a more elegant option?"* Answered
+that it meets AA with the underline kept, he ruled: *"Yes, make it a First Light
+rule."*
+
+**The rule: a control that acts is an underlined cobalt word, with no border and
+no fill.** The lead action too: a filled "primary" button is retired, and the
+order of the words carries the lead.
+
+| Requirement | Why it keeps AA |
+|---|---|
+| Underlined **at rest**, thicker on hover | The underline is the cue that is not color (1.4.1). Underline on hover alone leaves color as the only cue, against First Light's own rule. |
+| `var(--cobalt)` text | Clears 4.5:1 on white and on the page ground in both themes (the Fact Sheet's dark `--cobalt` is `#7DA1D4`). |
+| `min-height: 24px`, words at least 18px apart | WCAG 2.2 target size, 2.5.8 (AA). The old boxed buttons met the 44px AAA size; AA does not require it. |
+| A visible `:focus-visible` ring | Keyboard focus, 2.4.7. Never `outline:none` inline. |
+| `<button>` where it acts, `<a>` where it goes | A screen reader names the role from the element, so the look can change without the meaning changing. |
+
+**Not covered:** a form field keeps its outline (a field needs a boundary to be
+found); a chip is a category, not a control (the glass-quiet chip spec stands); a
+toggle in a set marks its selected state with weight and `aria-pressed`, never
+color alone.
+
+**The CSS** (the Fact Sheet's `.btn`, `fact-sheet/factsheet.css`):
+
+```css
+.btn { border:0; background:none; color:var(--cobalt); font-weight:600;
+  padding:2px 0; min-height:24px; text-decoration:underline;
+  text-decoration-thickness:1px; text-underline-offset:3px; }
+.btn:hover { text-decoration-thickness:2px; }
+```
+
+**Rollout.** The funding explainer (#1940) and the Fact Sheet with its Sierra
+launcher went first (S353), and `prototype/first_light_theme_v1.html` is v1.7.
+Every other view converts at its UI pass (`/a11y-pass` step 7), measured, rather
+than by a blind sweep: COBI's tabs carry hundreds of boxed buttons, and a target
+that shrinks from 44px to 24px has to be re-measured where it sits.
 
 ## Glyphs: decorative ones are out; state ones stay
 

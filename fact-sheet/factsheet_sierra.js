@@ -368,7 +368,9 @@
   // ── Launcher in the action bar (the "title row", per Sam) ───────────────────
   function injectLauncher() {
     if (document.getElementById('btn-sierra')) { launcher = document.getElementById('btn-sierra'); return; }
-    var bar = document.querySelector('.actionbar .wrap');
+    // A host page names its control row with [data-sierra-bar] (the funding
+    // explainer's masthead, 2026-10-09); the Fact Sheet's is its action bar.
+    var bar = document.querySelector('[data-sierra-bar]') || document.querySelector('.actionbar .wrap');
     if (!bar) return;
     launcher = el('button', { type: 'button', id: 'btn-sierra', className: 'btn fs-sierra-launch no-print',
       title: 'Ask ' + NAME + ', the CPL assistant', 'aria-haspopup': 'dialog', 'aria-expanded': 'false',
@@ -386,8 +388,11 @@
     var css =
       // Let the action bar wrap so the added button never forces horizontal scroll.
       '.actionbar .wrap{flex-wrap:wrap;}' +
-      '.fs-sierra-launch{border-color:var(--cobalt);color:var(--cobalt);background:rgba(0,71,171,.06);}' +
-      '.fs-sierra-launch:hover{background:var(--cobalt);color:var(--on-accent);border-color:var(--cobalt);}' +
+      // A control is an underlined word (First Light, Sam 2026-10-09): the
+      // launcher reads like the bar's other controls, without a box or a fill.
+      '.fs-sierra-launch{border:0;background:none;color:var(--cobalt);text-decoration:underline;' +
+        'text-decoration-thickness:1px;text-underline-offset:3px;}' +
+      '.fs-sierra-launch:hover{background:none;color:var(--cobalt);text-decoration-thickness:2px;}' +
       '.fs-sra-backdrop{position:fixed;inset:0;z-index:80;background:rgba(28,28,26,.42);opacity:0;visibility:hidden;' +
         'transition:opacity .18s,visibility .18s;}' +
       '.fs-sra-backdrop.on{opacity:1;visibility:visible;}' +

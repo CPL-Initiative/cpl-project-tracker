@@ -1003,3 +1003,40 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, which had 
 10. **A write surface reaches past its table.** Confirm sets `checked`, and the loader's upsert sets `checked` from the
    repo's files, so a reload would have undone a person's reading. A trigger now applies the latest verdict while its
    fingerprint matches the row. Ask what else writes the column before shipping a person's write to it.
+
+
+### Moved from the lane (S353 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, at 19,977 bytes against its 20,000 limit before Phase 2's paragraph.
+
+**[Sheet 50](https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr) (Sam, Oct 8):** cards 1-2 follow up with a mock-up, card 4 as proposed, card 5 as proposed. ✅ **Card 4 built and merged (S346, #1910):** `accepts()` takes a map whose listed courses outnumber its off-list ones; each off-list course rides its item (`off_list`) to CPL Pathways as *Recommended by the college outside the program*; a map naming two options of one choice marks no pick. Mt. San Antonio's Fire Technology map (03086) is accepted and its Early Childhood Education AS-T map (33876) filed. ✅ **Display build 2360b83e8100 is on the page and on all 22 live rows** (Sam, Sheet 51 card 2, *go*, 20:35Z, confirmed in chat; S347): a delta receipt guarded on the live build, applied in four migrations after the 22-statement one timed out, and `--verify-sql` reads 22 of 22 match. Mock-up for cards 1-2: [Program Records Review](https://claude.ai/artifact/2JofNdHZvVTtz9bKQTsa4g). ✅ **Maps settled (S346, #1911):** one search restricted to each refused college's own domain (the search tool ignores `site:` in a query; only its domain filter restricts), seven reads of the leads, and procedure records for 28 colleges: **34 of 118 colleges hold a procedure**. **Palo Verde is read (S347, #1915):** its Guided Pathways guide's custom name `guides.paloverde.edu` lapsed; the guide answers at `paloverde.libguides.com/pathways` (run 37835928900), and its CIS A.S. and Building Construction Technology A.S. pages print a two-year map (last changed 2023-10-25, so check each against the catalog). Procedure v2 is live (md5 3879b5d0); the registry's map columns landed (statement 1 of `kb/receipts/program_source_pvc_map_read_2026-10-08_s347.sql`, Sam's receipt option; migration `program_source_registry_pvc_map_read_s347`, read back): **32 of 32 published maps are settled**. Its search also lists an Acalog catalog at `catalog.paloverde.edu` beside the census's eLumen 2025-26 (open on the procedure). Own-site sequences exist only as department PDFs (Canyons, Las Positas 2020, Miramar 2020-21) or single programs. ✅ **The headline for the Chancellor (S347, #1913; Sam's yes):** the Progress view's head pairs COCI's active programs (20,282 at 118 colleges, read live) with the checked records (20 at 5 colleges; complete means the four checks), a bar, and a line beneath (19 with outcomes, 0 with a map); the Every program milestone reads *20 of 20,282*. Each checkpoint records the pair in `kb/queue_status.json` `headline[]` (`queue_status.py --stamp --headline`), and the band shows *Up from N on <day>* once the count passes the first entry. Later, SkyView as the hub.
+
+## S353 SkyHearth, 2026-10-09: Phase 2 opens at Cerritos, and a page goes to one program
+
+**What shipped (PR #1941 open; Sam's "Cerritos first", as proposed).** `kb/_program_requirements_college.py` and
+`program-requirements-college.yml`: one job reads a college's sitemap, its program pages once each, matches programs to
+pages, extracts six calls at a time, and commits the run's account and records to its own branch. Run 37961137169: the
+sitemap listed 520 addresses, 364 of them program pages, read in 29 minutes; 283 of 288 programs got a page (196 at full
+coverage); all 283 extracted for $15.80 ($0.056 a program), 235 pass the three machine checks (46 arithmetic, 6
+coverage, 2 invented). The load function (`chatbox/supabase_program_requirement_records_college_load.sql`) is written
+and not applied.
+
+1. **Turn the search around for a whole college.** The pilot followed links per program (up to eight loads each); a
+   sitemap read once and every program page read once costs one load a program, and the coverage test picks the page.
+2. **A tie-break that only ranks cannot reject.** The label score chose between pages that passed the coverage test,
+   so a program whose own page does not exist still took a sibling's: the Anthropology A.A. took the A.A.-T page,
+   Culinary Arts: Professional Cooking took Culinary Arts Management's. 22 pages went to two or more programs.
+   `assign()` now gives a page only to the programs whose award its address names and whose title it names most
+   fully; a loser moves to its next page or reads none (`page_claimed`). Two state records the page names equally
+   (Public Health and Public Health Science, both A.S.-T) still share it.
+3. **Read the award from the address as it stands.** Turning hyphens into spaces before matching read no award from
+   `anthropology-aa-t`. The catalog's own spelling counts too (`medical-assistant-certifciate-achievement`).
+4. **A one- or two-course list names its courses on many pages.** Below three listed courses the page must also name
+   half the program's title.
+5. **A marker a workflow reads in a commit message must be anchored.** `contains(message, '[extract]')` fired on the
+   commit that described the marker, and the run spent $15.80 before the matching was read. `startsWith` now; the spend
+   stayed inside Sam's approved $19. KB note `methodology-anchor-a-marker-a-workflow-reads`.
+6. **Pay only for what moved.** A re-run keeps each record read from the same page naming the same courses; a
+   capture-only run files `capture_preview.json` beside the read it did not replace.
+7. **A college's records do not fit the connector.** About 1 MB of record JSON for 283 programs, against migrations
+   that time out near 40 KB: the load runs on the runner through one insert-only function, unchecked, keyed by run id.

@@ -643,6 +643,9 @@ file.
     for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
     carry sequence. ⚠️ **RULED, not pending — do not sweep them**; none is an
     emoji, and a plain-words reading does not override his ruling.
+- **Controls are underlined words (Sam, 2026-10-09).** No border and no fill,
+  underlined at rest, 24px tall, a `<button>` where it acts; each view converts
+  at its UI pass. Spec: [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).
 - **American spelling, always** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 
@@ -667,10 +670,6 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
-- **Stop-hook:** a nag about unpushed commits that a squash-merge already
-  landed means the hook is unpatched; `python3 scripts/check_hooks_live.py --fix`
-  patches it through `scripts/patch_stop_hook.py` (a three-repo session never
-  loads the SessionStart hook). See [`troubleshooting`](docs/reference/troubleshooting.md).
 
 ## Deployed site
 
@@ -796,7 +795,7 @@ stays here.
 | **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |
 | **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
-| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · pilot passed — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
+| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · Phase 2 at Cerritos — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
@@ -819,6 +818,7 @@ the date moved · **duplicate sections / HTML growing** on every run ·
 404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
 **docx library errors**.
 
-**The stop-hook nags** are covered there too — including the "Unverified
+**The stop-hook nags** are covered there too (a squash-merged branch still
+nagging: `python3 scripts/check_hooks_live.py --fix`) — including the "Unverified
 `noreply@github.com`" false positive, where the fix is to do nothing (amending
 rewrites `main`, Rule 5).

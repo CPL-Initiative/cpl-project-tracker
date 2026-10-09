@@ -396,8 +396,9 @@ function shareSumAll(T) {
     /src="\.\.\/cpl_funding_data\.js"/.test(exp) && /src="\.\.\/cpl_funding\.js"/.test(exp) &&
     !/CPL_Data\.js|dashboard_filters\.js|cobi_orgs\.js/.test(exp));
   check("U8: it mounts where the consumer looks (#cplFundingMount)", /id="cplFundingMount"/.test(exp));
+  // The masthead's "Draft — not adopted policy" tag left on 2026-10-09 (Sam's
+  // marked-up screenshot); the footer's sentence still says so.
   check("U8: it states plainly that this is a draft, not adopted policy (the model sweep, 2026-10-01)",
-    /Draft &mdash; not adopted policy/.test(exp) &&
     /working draft for discussion, not adopted policy/.test(exp));
 }
 

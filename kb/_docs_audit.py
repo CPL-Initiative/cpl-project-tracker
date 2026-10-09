@@ -881,7 +881,9 @@ def rule_critical_rule_doctrine(entry):
 # pattern that drifts onto a neighbouring bullet fails the suite rather than
 # quietly satisfying itself from the wrong rule.
 PRESENTATION_DOCTRINE = {
-    "First Light design": (r"first light",),
+    # Anchored on the directive since 2026-10-09: the controls rule quotes Sam's
+    # "make it a First Light rule", which a bare "first light" took as this rule.
+    "First Light design": (r"invent a palette",),
     # ⚠️ NOT a bare "accessib" / "mobile-friendly": Sam's quote inside the First
     # Light bullet ("make it always accessible and mobile friendly") contains
     # both, so those two rules could be deleted entirely and this stayed silent.
@@ -895,6 +897,8 @@ PRESENTATION_DOCTRINE = {
     "American spelling": (r"american spelling",),
     "no horizontal scroll": (r"horizontal scroll",),
     "text measure": (r"cpl-measure", r"full width"),
+    # Sam, 2026-10-09: a First Light rule.
+    "controls are underlined words": (r"underlined words", r"no border and no fill"),
 }
 
 

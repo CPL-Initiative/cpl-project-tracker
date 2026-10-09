@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-530 document(s).
+531 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -338,6 +338,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Methodology — a frequency is not a rule](../kb-notes/methodology-a-frequency-is-not-a-rule.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [Methodology — a governance artifact must measure itself, and render what it lacks](../kb-notes/methodology-a-governance-artifact-must-measure-itself.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [Methodology — a hybrid live-vs-manual value column (single source by construction)](../kb-notes/methodology-live-vs-manual-hybrid-column.md) | methodology | published | 2026-06-30 |  |
+| [Methodology — anchor a marker a workflow reads in a commit message](../kb-notes/methodology-anchor-a-marker-a-workflow-reads.md) | methodology | published | 2026-10-09 | 2026-10-09 |
 | [Methodology — build a packaging dry-run: title-primary carve-outs, safe-default under-claim, review-bucket when no authoritative flag](../kb-notes/methodology-packaging-dryrun-classification.md) | methodology | published | 2026-07-15 | 2026-07-15 |
 | [Methodology — Commit the test harness; don't let verification evaporate](../kb-notes/methodology-commit-the-test-harness.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 | [Methodology — Cosmetic relabel via a display-label map, not a stored-value rename](../kb-notes/methodology-display-label-map-vs-data-rename.md) | methodology | published | 2026-05-31 | 2026-05-31 |
@@ -526,7 +527,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Reference — CCCCO HUMANS principles for responsible AI](../kb-notes/reference-humans-principles.md) | reference | published | 2026-06-25 | 2026-06-25 |
 | [Reference — College short-name dataset + resolver](../kb-notes/reference-college-short-names.md) | reference | published | 2026-06-02 | 2026-06-02 |
 | [Reference — CPL at the pre-apprenticeship stage (three mechanisms, and the CSU catch)](../kb-notes/reference-cpl-at-the-pre-apprenticeship-stage.md) | reference | published | 2026-08-10 | 2026-08-10 |
-| [Reference — Dashboard UI design system (tokens + canonical components)](../kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-06-12 |
+| [Reference — Dashboard UI design system (tokens + canonical components)](../kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-10-09 |
 | [Reference — Funding priority metrics, measurability map (2026-07-03 metric set)](../kb-notes/reference-funding-metrics-measurability.md) | reference | published | 2026-07-03 | 2026-07-03 |
 | [Reference — The P1 completion-data gap (why completions aren't in MAP, and the strategy to close it)](../kb-notes/reference-p1-completion-data-gap.md) | reference | published | 2026-06-11 | 2026-06-11 |
 | [Reference — TMC / ADT data model & the C-ID auto-match](../kb-notes/reference-tmc-adt-data-model.md) | reference | published | 2026-06-16 |  |

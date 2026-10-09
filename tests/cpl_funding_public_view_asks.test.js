@@ -192,10 +192,10 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const html = read("funding-model/index.html");
-  // In the action bar at the top since 2026-10-01 (the Fact Sheet's title row),
-  // the one filled button there.
-  const bar = html.slice(html.indexOf('<div class="actionbar">'), html.indexOf("<header", html.indexOf('<div class="actionbar">')));
-  check("4a: the explainer's action bar carries My CPL Funding as its lead button, linked to the table",
+  // In the masthead's control row since 2026-10-09 (the action bar above the
+  // masthead before that), the one filled button there.
+  const bar = html.slice(html.indexOf('<div class="mh-actions"'), html.indexOf("</header>"));
+  check("4a: the explainer's control row carries My CPL Funding as its lead button, linked to the table",
     /<a class="btn primary" id="my-funding-btn" href="#institutions">My CPL Funding<\/a>/.test(bar) &&
     (bar.match(/class="btn primary"/g) || []).length === 1);
   check("4b: …and its click opens the table's fold, then the one-institution view through the module",

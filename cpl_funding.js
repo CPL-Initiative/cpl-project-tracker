@@ -1083,6 +1083,17 @@
     ".cplfund-textbtn.primary { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }",
     ".cplfund-prose-ta { display: block; width: 100%; box-sizing: border-box; font: inherit; font-size: .9rem; line-height: 1.5; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 10px; resize: vertical; }",
     ".cplfund-prose-ta:focus { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
+    // The explainer's passages on the tab (2026-10-09): a figure's name reads
+    // as a placeholder, quieter than the words around it, and each passage is
+    // placed in words under its explainer heading.
+    ".cplfund-fig-token { color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }",
+    ".cplfund-xtext-lead { margin: 0 0 10px; color: var(--text-body); }",
+    ".cplfund-xtext-h { margin: 18px 0 4px; font-size: .95rem; color: var(--text-strong); }",
+    ".cplfund-xtext-k { margin: 10px 0 4px; font-size: .78rem; font-weight: 600; color: var(--text-muted); }",
+    ".cplfund-prose.cplfund-xtext ul { margin: .4em 0 .8em; padding-left: 1.3em; }",
+    ".cplfund-xtext-figs { margin-top: 16px; font-size: .85rem; color: var(--text-body); }",
+    ".cplfund-xtext-figs summary { cursor: pointer; min-height: 24px; }",
+    ".cplfund-xtext-figs ul { margin: .4em 0 0; padding-left: 1.3em; }",
     // The section curator row (Rename / Hide on the public page) and the state
     // word beside a held-back title. Both are quiet by construction: no color
     // carries the meaning, the words do.
@@ -3383,6 +3394,7 @@
     "institution meets, and a star marks the third, the Veteran Star. Click an institution to see its conditions " +
     "and each priority&#39;s maximum and actual FTES and funding.</p>";
   function textDefaultHtml(key) {
+    if (isRich(key)) return richPlainToHtml(richDefaultPlain(key), "tab");
     if (key === "about") return ABOUT_DEFAULT_HTML;
     if (key === "reading") return READING_DEFAULT_HTML;
     if (key === "nc_rules") return NC_RULES_DEFAULT_HTML;
@@ -3456,17 +3468,255 @@
   }
   function textIsCustom(key) { return textOverride(key) != null; }
   function textPlain(key) { var o = textOverride(key);
+    if (o == null && isRich(key)) return richDefaultPlain(key);
     if (key === "faq" && o == null) return plainNormalize(FAQ_DEFAULT_PLAIN); return o != null ? plainNormalize(o) : htmlToPlain(textDefaultHtml(key)); }
-  function textHtml(key) { var o = textOverride(key); return o != null ? plainToHtml(o) : textDefaultHtml(key); }
+  function textHtml(key) {
+    if (isRich(key)) return richPlainToHtml(textPlain(key), "tab");
+    var o = textOverride(key); return o != null ? plainToHtml(o) : textDefaultHtml(key);
+  }
   function setText(key, v) {
     var ov = activeOverride();
     var clean = plainNormalize(v);
     ov.text = isPlainObj(ov.text) ? ov.text : {};
-    if (!clean || clean === htmlToPlain(textDefaultHtml(key))) delete ov.text[key];
+    if (!clean || clean === (isRich(key) ? richDefaultPlain(key) : htmlToPlain(textDefaultHtml(key)))) delete ov.text[key];
     else ov.text[key] = clean;
     if (!Object.keys(ov.text).length) delete ov.text;
     if (key === "elig_intro") delete ov.eligIntro;   // the legacy key this block replaced
     persistActive();
+  }
+  // ── THE EXPLAINER'S OWN PROSE (Sam, 2026-10-09: "want to be able to edit the
+  //    How This Model Works page but can't see how to do that") ─────────────
+  // The explainer (funding-model/) typed most of its prose into its own
+  // markup, so the tab reached only the blocks the two pages share: the
+  // institution introduction, the eligibility introduction and the FAQ.
+  // Offered three ways, he chose to make the typed passages editable blocks
+  // like the FAQ. Each is a TEXT_BLOCKS entry marked `rich`, its house text
+  // written here as the plain text a curator edits; the explainer paints
+  // whatever the layers resolve to (T.explainerTextHtml), and the tab lists
+  // every passage in one curator-only section (explainerTextSectionHtml).
+  //
+  // RICH PLAIN TEXT, and still no markup an author can inject: **bold**,
+  // *italic*, a paragraph whose every line opens with "- " is a bulleted list,
+  // "> " lines a quotation as elsewhere, and a figure the model computes is a
+  // name in braces, {base award}, which the explainer paints live, so an edit
+  // never freezes a number. A name this list does not hold stays as typed,
+  // which shows the curator the slip.
+  //
+  // ⚠️ THE PAGE KEEPS ITS TYPED MARKUP inside each block, as the reading for a
+  // browser whose script has not run. That makes it a second copy of these
+  // defaults, so tests/cpl_funding_explainer_text.test.js converts each copy
+  // and requires the two to agree: editing one without the other fails.
+  var FIG_TOKENS = [   // [the name a curator types, the id the explainer's painter fills, what it shows]
+    ["base award", "f-floorv", "the base award per institution"],
+    ["cap", "f-capv", "the cap per institution"],
+    ["priority count", "l-nprio", "how many priorities, as a word"],
+    ["to institutions", "f-main", "the total allocated to institutions"],
+    ["noncredit total", "f-nc", "the noncredit shares of the awards"],
+    ["noncredit awards", "l-nc-count", "how many awards carry a noncredit share"],
+    ["institutions", "l-basis-n", "how many institutions"],
+    ["median award", "f-med", "the median award"],
+    ["total FTES", "l-basis", "the combined credit and noncredit FTES"],
+    ["base award count", "l-floorn", "how many institutions are brought up to the base award"],
+    ["cap count", "l-capn", "how many institutions are held at the cap"],
+    ["cap redirect", "l-capr", "the funding redirected from the cap"],
+    ["state rate", "l-rate", "the state rate per FTES, to the cent"],
+    ["state rate rounded", "f-rate", "the state rate per FTES, to the dollar"],
+    ["factors", "l-factors", "the sentence that states the funding factors"],
+    ["effective rate", "f-eff", "what an institution above the base award qualifies for per FTES"]
+  ];
+  var FIG_ID = {}, FIG_NAME = {};
+  FIG_TOKENS.forEach(function (t) { FIG_ID[t[0].toLowerCase()] = t[1]; FIG_NAME[t[1]] = t[0]; });
+  // The page's typed markup paints three figures under a second id as well;
+  // each reads back as the one name.
+  var FIG_ID_ALIAS = { "l-floor": "f-floorv", "l-cap": "f-capv", "l-avg-n": "l-basis-n" };
+  // In page order. `sec` is the explainer section's data-fsec and `title` its
+  // heading; `where` places the passage inside it for the curator.
+  var EXPLAINER_BLOCKS = [
+    { key: "x_lede", sec: "lede", title: "Overview", where: "Above the headline figures", rows: 16, plain: [
+      "Senate Bill 135 (Statutes of 2026, Chapter 79), the 2026 education trailer bill, added Article 9 " +
+        "to the Education Code, sections 78093 through 78093.2, effective July 13, 2026. The article " +
+        "establishes the Credit for Prior Learning Initiative and directs the Chancellor\u2019s Office, upon " +
+        "appropriation by the Legislature, to allocate designated funds to support implementation at each " +
+        "campus using four goals: increasing access to credit for prior learning opportunities equitably " +
+        "for all eligible students, increasing completion through credit for prior learning awards, " +
+        "advancing career attainment through credit for prior learning, and supporting credit for prior " +
+        "learning opportunities through the Chancellor\u2019s Office\u2019s pilot projects, \u201csuch as the California " +
+        "Mapping Articulated Pathways Initiative.\u201d Each campus demonstrates its implementation through " +
+        "those metrics (\u00a7\u00a078093.2(d)(2)). This page sets out how the Chancellor\u2019s Office proposes to " +
+        "allocate the 2026-27 one-time appropriation across the 2026-27 and 2027-28 fiscal years under " +
+        "that article, and how an institution\u2019s outcomes determine what it qualifies for.",
+      "Most of the one-time appropriation is allocated **directly to institutions** \u2014 all 118 of them, " +
+        "the 115 colleges and the three noncredit-only campuses \u2014 in proportion to how much teaching each " +
+        "one does, credit and noncredit together. The rest funds the statewide CPL projects and " +
+        "technology that serve every college, and two Chancellor\u2019s Office posts supporting that work. " +
+        "Every institution\u2019s **max award** \u2014 the most it can qualify for on its outcomes \u2014 sits between a " +
+        "base award of **{base award}** and a cap of **{cap}** across the two years.",
+      "**An institution\u2019s CPL outcomes determine what it qualifies for.** The Chancellor\u2019s Office " +
+        "measures the prior-learning credit each institution puts on students\u2019 records, from that " +
+        "institution\u2019s own MAP data, against {priority count} priorities. An institution meets the " +
+        "baseline requirements to take part; from that point the funding follows the outcomes."
+    ].join("\n\n") },
+    { key: "x_lede_figs", sec: "lede", title: "Overview", where: "Beneath the two figures", rows: 6, plain: [
+      "Those two lines account for the whole appropriation. The **{to institutions}** to institutions " +
+        "is **one funding total**, shared among all 118 in proportion to combined credit + noncredit size " +
+        "within the base award and the cap. Every award then splits into a credit share and a " +
+        "**noncredit** share by the institution\u2019s own teaching mix: statewide, **{noncredit total}** is " +
+        "noncredit, carried within **{noncredit awards}** college awards and restricted to noncredit " +
+        "outcomes. The $9.04\u00a0million remaining from 2025-26 is a separate distribution."
+    ].join("\n\n") },
+    { key: "x_lede_range", sec: "lede", title: "Overview", where: "Beneath the lowest, average and highest awards", rows: 3, plain: [
+      "A few very large institutions raise the average: half of the {institutions} institutions are " +
+        "allocated **{median award}** or less."
+    ].join("\n\n") },
+    { key: "x_alloc", sec: "allocation", title: "How an allocation is computed", where: "Above the two worked examples", rows: 12, plain: [
+      "The Chancellor\u2019s Office measures an institution\u2019s size in **full-time equivalent students**, its " +
+        "standard measure of instructional volume, counting credit and noncredit instruction together. " +
+        "Across the {institutions} institutions the combined total is {total FTES} FTES. An institution " +
+        "accounting for two percent of that total begins with two percent of the amount allocated to " +
+        "institutions.",
+      "The Chancellor\u2019s Office then makes two adjustments to that proportional figure:",
+      "- **The base award, {base award}**, across the two years. {base award count} institutions\u2019 " +
+        "proportional share fell below that amount and is brought up to it, funded from within the same " +
+        "total.\n- **The cap, {cap}**, across the two years. {cap count} institutions\u2019 proportional share " +
+        "exceeded that amount and is held there. The Chancellor\u2019s Office redirects the difference, {cap " +
+        "redirect}, to the institutions below the cap. An institution held at the cap is assessed against " +
+        "a correspondingly smaller target, so it qualifies at the same rate as every institution above " +
+        "the base award."
+    ].join("\n\n") },
+    { key: "x_count", sec: "earning", title: "How outcomes count toward funding", where: "The opening", rows: 4, plain: [
+      "The priorities and their shares are above. This is the arithmetic underneath them.",
+      "The Chancellor\u2019s Office measures outcomes in **units of credit for prior learning**, converted " +
+        "to equivalent FTES on the college\u2019s own calendar: 30 semester units make one FTES, or 45 on a " +
+        "quarter calendar."
+    ].join("\n\n") },
+    { key: "x_count_target", sec: "earning", title: "How outcomes count toward funding", where: "Under How a share becomes a target", rows: 4, plain: [
+      "The Chancellor\u2019s Office divides each priority\u2019s share by its FTES reimbursement rate to set its " +
+        "target. That rate is the 2026-27 state rate of **{state rate} per FTES**, multiplied by that " +
+        "priority\u2019s **funding factor**. {factors}"
+    ].join("\n\n") },
+    { key: "x_count_factor", sec: "earning", title: "How outcomes count toward funding", where: "The note on the funding factor", rows: 5, plain: [
+      "**What the funding factor does.** A factor above 1.0 raises the FTES reimbursement rate, so " +
+        "*fewer* units of prior learning reach the priority\u2019s share, which gives more weight to outcomes " +
+        "the Chancellor\u2019s Office intends to encourage. A factor below 1.0 has the opposite effect. The " +
+        "share sets how much funding stands behind a priority; the factor sets the volume of prior " +
+        "learning that qualifies for it."
+    ].join("\n\n") },
+    { key: "x_count_half", sec: "earning", title: "How outcomes count toward funding", where: "Beneath the worked table", rows: 3, plain: [
+      "An institution that reaches half of a priority\u2019s target qualifies for half of that priority\u2019s " +
+        "share. Exceeding the target does not increase the amount: the share is the ceiling."
+    ].join("\n\n") },
+    { key: "x_count_base", sec: "earning", title: "How outcomes count toward funding", where: "The note on the base award", rows: 6, plain: [
+      "**One consequence of the base award.** Because the base award is funded from within the same " +
+        "total, an institution above it qualifies for approximately **{effective rate}** rather than the " +
+        "full {state rate rounded}, while an institution brought up to the base award reaches its target " +
+        "on considerably less. That is the intended trade: the rate per FTES is not uniform across " +
+        "institutions, and the smallest institutions are the ones it favors."
+    ].join("\n\n") },
+    { key: "x_timing", sec: "timing", title: "Disbursement and the funding window", where: "The whole section", rows: 10, plain: [
+      "Two timing settings are in effect. Neither changes the amount an institution can qualify for.",
+      "- **The full two-year amount is made available in year one.** The capacity this work requires \u2014 " +
+        "staff time, faculty review of credit recommendations, and local process design \u2014 is concentrated " +
+        "at the outset, and withholding half of the allocation until year two would delay it. Funding " +
+        "remaining at the end of year one carries forward. Because the entire allocation is available in " +
+        "year one, the targets shown are the full two-year figures.\n- **Year two mirrors year one.** The " +
+        "two years are held identical so that a change to one is reflected in the other. Disabling the " +
+        "mirror leaves both years as they were, so nothing is overwritten."
+    ].join("\n\n") },
+    { key: "x_choices", sec: "choices", title: "What is a choice, and what is a given", where: "Above the table", rows: 3, plain: [
+      "The Chancellor\u2019s Office sets some of these figures as policy and can change them. Others are " +
+        "given, and it uses them as they are."
+    ].join("\n\n") }
+  ];
+  var EXPLAINER_BY_KEY = {};
+  EXPLAINER_BLOCKS.forEach(function (b) {
+    EXPLAINER_BY_KEY[b.key] = b;
+    TEXT_BLOCKS[b.key] = { label: b.title + ": " + b.where.toLowerCase(), rows: b.rows, rich: true };
+  });
+  function isRich(key) { return !!(TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich); }
+  function richDefaultPlain(key) { return plainNormalize(EXPLAINER_BY_KEY[key] ? EXPLAINER_BY_KEY[key].plain : ""); }
+  // One line of rich text. `mode` "page" paints a figure as the span the
+  // explainer's painter fills (seeded with the figure already on the page, so
+  // nothing blinks empty between the two paints); "tab" shows the name, since
+  // the tab does not build the explainer's payload.
+  function richInline(line, mode, seeds) {
+    var h = esc(line).replace(/\{([^{}]+)\}/g, function (m, name) {
+      var id = FIG_ID[String(name).trim().toLowerCase()];
+      if (!id) return m;
+      if (mode === "page") {
+        return '<span data-fig="' + id + '">' + esc(seeds && seeds[id] != null ? seeds[id] : "") + "</span>";
+      }
+      return '<span class="cplfund-fig-token">{' + esc(FIG_NAME[id]) + "}</span>";
+    });
+    return h.replace(/\*\*([^*]+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/(^|[^*\w])\*([^*\s](?:[^*]*?[^*\s])?)\*(?![*\w])/g, "$1<em>$2</em>");
+  }
+  var BULLET_LINE = /^[-•][ \t]+/;
+  function richPlainToHtml(t, mode, seeds) {
+    return plainNormalize(t).split(/\n\n/).map(function (para) {
+      var lines = para.split("\n");
+      if (lines.every(function (ln) { return BULLET_LINE.test(ln); })) {
+        return "<ul>" + lines.map(function (ln) {
+          return "<li>" + richInline(ln.replace(BULLET_LINE, ""), mode, seeds) + "</li>";
+        }).join("") + "</ul>";
+      }
+      var quoted = isQuoteBlock(para);
+      var body = lines.map(function (ln) {
+        return richInline(quoted ? ln.replace(QUOTE_LINE, "") : ln, mode, seeds);
+      }).join("<br>");
+      return quoted ? "<blockquote><p>" + body + "</p></blockquote>" : "<p>" + body + "</p>";
+    }).join("");
+  }
+  // The explainer's typed markup → the plain text a curator edits. Whitespace
+  // in markup is layout, so it collapses first; a figure's element becomes its
+  // name in braces, bold kept as bold. The test reads the page through this.
+  function richHtmlToPlain(html) {
+    var t = String(html || "").replace(/<!--[\s\S]*?-->/g, "").replace(/\s+/g, " ")
+      .replace(/&nbsp;/g, " ")
+      .replace(/<(b|strong|span|em|i)\b[^>]*?\s(?:id|data-fig)="([^"]+)"[^>]*>[\s\S]*?<\/\1>/gi, function (m, tag, id) {
+        var name = FIG_NAME[FIG_ID_ALIAS[id] || id];
+        if (!name) return m;
+        return /^(b|strong)$/i.test(tag) ? "**{" + name + "}**" : "{" + name + "}";
+      })
+      .replace(/<(strong|b)\b[^>]*>([\s\S]*?)<\/\1>/gi, "**$2**")
+      .replace(/<(em|i)\b[^>]*>([\s\S]*?)<\/\1>/gi, "*$2*")
+      .replace(/<\/?(ul|ol)\b[^>]*>/gi, "</p>")
+      .replace(/\s*<li\b[^>]*>\s*/gi, "<br>- ")
+      .replace(/\s*<\/li>/gi, "");
+    return plainNormalize(htmlToPlain(t).split("\n").map(function (ln) { return ln.trim(); }).join("\n"));
+  }
+  function explainerTextHtml(key, seeds) {
+    if (!EXPLAINER_BY_KEY[key]) return "";
+    return richPlainToHtml(textPlain(key), "page", seeds);
+  }
+  // The curator's view of every passage, at the foot of the tab: signed in,
+  // never on a public rendering. Grouped under the explainer's own headings
+  // (a curator's rename of one shows here too), each passage placed in words.
+  function explainerTextSectionHtml() {
+    if (!unlocked() || publicMode()) return "";
+    var body = '<p class="cplfund-xtext-lead">The words on the public explainer, ' +
+      '<a href="funding-model/" target="_blank" rel="noopener">funding-model/</a>, that no other section of this tab ' +
+      "carries. Save an edit here and the explainer shows it the next time it reads the model; Refresh everything " +
+      "reaches an explainer already open. A name in braces is a figure the explainer paints from the model, so it " +
+      "stays current.</p>";
+    var last = null;
+    EXPLAINER_BLOCKS.forEach(function (b) {
+      if (b.sec !== last) {
+        last = b.sec;
+        body += '<h4 class="cplfund-xtext-h">' + esc(titleOverride(b.sec) || b.title) + "</h4>";
+      }
+      body += '<p class="cplfund-xtext-k">' + esc(b.where) + "</p>" + proseBlockHtml(b.key, "cplfund-xtext");
+    });
+    body += '<details class="cplfund-xtext-figs"><summary>The figures a passage can name</summary><ul>' +
+      FIG_TOKENS.map(function (t) {
+        return "<li><code>{" + esc(t[0]) + "}</code> " + esc(t[2]) + "</li>";
+      }).join("") + "</ul></details>";
+    // data-curator-only: never a public section, so it carries no Rename or
+    // Hide (cpl_funding_section_titles excludes it by this mark alone).
+    return '<details class="cplfund-sec" data-sec="explainer_text" data-curator-only="1"' + (sectionOpen("explainer_text") ? " open" : "") + ">" +
+      '<summary class="cplfund-sec-sum"><h3>The explainer&rsquo;s text</h3>' +
+      '<span class="cplfund-sec-flag">Curator only</span>' +
+      '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
+      '<div class="cplfund-sec-body">' + body + "</div></details>";
   }
   // ── section titles and public visibility (Sam, 2026-09-09) ───────────────
   // "I also need to be able to edit the section titles, not just the text
@@ -3779,7 +4029,11 @@
         '<button type="button" class="cplfund-textbtn" data-textcancel="' + esc(key) + '">Cancel</button>' +
         (custom ? '<button type="button" class="cplfund-textbtn" data-textreset="' + esc(key) + '">Restore the default text</button>' : "") +
         (key === "faq" ? '<span class="dk">Start each question on its own line with Q: and put its answer in the paragraphs below it.</span>' : "") +
-        '<span class="dk">Plain text. A blank line starts a new paragraph; start every line with &gt; to set a passage as a quotation. Saves for everyone.</span></div>';
+        (TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich
+          ? '<span class="dk">Plain text. A blank line starts a new paragraph. **Two asterisks** on each side make words bold and ' +
+            '*one* makes them italic; a paragraph whose every line starts with - is a bulleted list. A name in braces, such as ' +
+            '{base award}, is a figure the explainer fills in from the model. Saves for everyone.</span></div>'
+          : '<span class="dk">Plain text. A blank line starts a new paragraph; start every line with &gt; to set a passage as a quotation. Saves for everyone.</span></div>');
     } else {
       html += key === "faq" ? faqHtml(textPlain(key)) : textHtml(key);
       if (canEdit) {
@@ -12602,6 +12856,9 @@
         SEC.timing = collapseH3("timing", timingSectionHtml());
         SEC.faq = section("faq", "Frequently asked questions", proseBlockHtml("faq"));
       }) +
+      // The explainer's own passages, last and closed: a curator's tool, never
+      // one of the sections a college reads (Sam, 2026-10-09).
+      explainerTextSectionHtml() +
       "</div>";
     updateCount();
     wire();
@@ -14057,6 +14314,16 @@
     // editable block (TEXT_BLOCKS.faq), so his edit reaches both pages. The
     // markup is faqHtml()'s, which escapes every question and answer.
     publicFaqHtml: function () { return faqHtml(textPlain("faq")); },
+    // The explainer's own passages (Sam, 2026-10-09), each a rich prose block
+    // edited on the tab. `seeds` maps a figure's id to the text the page shows
+    // now, so a repaint never blanks a number before the painter refills it.
+    explainerTextHtml: explainerTextHtml,
+    // Every id a passage's figure can carry, for the page to seed and to give
+    // the first copy of each its id (the painter and a deep link read by id).
+    explainerFigIds: function () { return FIG_TOKENS.map(function (t) { return t[1]; }); },
+    _explainerBlocks: function () { return EXPLAINER_BLOCKS.slice(); },
+    _explainerHtmlToPlain: richHtmlToPlain,
+    _richPlainToHtml: richPlainToHtml,
     // The statutory outcomes carried by DESIGNATED PROJECTS rather than by a
     // campus measure (Sam, 2026-09-11). Read by the public explainer, which has
     // no Activities register to look a project up in — so the NAME travels in
