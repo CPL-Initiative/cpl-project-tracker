@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-09T13:24:07.251877+00:00",
+  "scraped_at": "2026-10-09T16:15:21.611051+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28902,
+    "jst": 28909,
     "star_colleges": 60
   },
   "computed_star_colleges": 60,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 582,
+      "jst": 585,
       "star": true
     },
     "Norco College": {
@@ -182,7 +182,7 @@
     },
     "Clovis Community College": {
       "vets": 117,
-      "jst": 196,
+      "jst": 197,
       "star": true
     },
     "Antelope Valley College": {
@@ -197,7 +197,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 150,
+      "jst": 151,
       "star": false
     },
     "Fullerton College": {
@@ -222,7 +222,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 187,
+      "jst": 188,
       "star": false
     },
     "Los Angeles Mission College": {
@@ -272,7 +272,7 @@
     },
     "Golden West College": {
       "vets": 219,
-      "jst": 99,
+      "jst": 100,
       "star": false
     },
     "Cerritos College": {
