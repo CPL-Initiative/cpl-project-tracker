@@ -170,7 +170,8 @@ The whole ecosystem, end-to-end:
    its tier with the missing criteria named, who MAP has on file for it, what
    occupations in its region it could already give credit for — matched against
    its own catalog, with the accuracy disclosed — and a
-   Sierra AI box with questions computed from that college's own figures), and
+   Sierra AI box with questions computed from that college's own figures, which
+   fills the screen while she answers), and
    a **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,

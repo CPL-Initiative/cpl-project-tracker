@@ -4,6 +4,8 @@ date: 2026-10-08
 session: 345 (SkyLantern)
 tags: [handoff, program-requirements-harvest, cpl-pathways, roep, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_350_handoff.md
 ---
 
 # You are Session 346

@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-09)
+
+- 2026-10-07 (S342 SkyBeacon): Sierra finds a college asked by its initials and matches aliases as whole words (#1897; NOCE's Google IT Support pre-apprenticeship, smoke 7v; new note `methodology-match-a-short-name-as-a-whole-word`); display build 8292780f6cd5 live on all 22 records as a delta (#1898); the harvest's Progress view mocked up for the CPL Queue run (`prototype/roep_progress_mockup.html`); handoff 343.
+- 2026-10-07 (S341 SkyTerrace): Sierra names each course's term on a read map and By requirement marks a map's pick inside a choice (#1895, neither shown until a map names one or the load lands); Santa Monica's Salon Experience prints no minimum, so the up-to figure counts none of its CPL; Open Asks Sheet 47 card 9 asks how a choice the map leaves open counts; lessons S341; handoff 342.
+
 ## INDEX update-history entries rotated out (2026-10-07)
 
 - 2026-10-05 (S333 SkyHarbor): KB note `methodology-an-additive-sync-cannot-carry-a-correction`; handoff 334; the *Ext & Review* rename ran on main; display build 799bfb9a7dbf applied as a two-path guarded update (#1866); sheet 39 ruled: OSHA has one name as issuer, CTCNC its trainer, five curator rows replaced and the CER applier's guarded replace (#1868); Sam's issuer rule and sheet 39 in memory (#1865).
