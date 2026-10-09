@@ -1,0 +1,57 @@
+name: Catalog framing check
+
+# Can a college's catalog page show inside COBI's Program Requirements tab, beside
+# the record a person is reading? Sam, 2026-10-09: "It would be nice if you could
+# show a split view like this on the Prog Rev tab so I don't have to do it
+# manually." scripts/catalog_framing.py loads one page per catalog host and the
+# same page framed under COBI's origin, and prints the JSON a session commits to
+# kb/catalog_framing.json. The session container cannot reach college sites; the
+# runner can (Sam's call 5 on sheet 23, the census user agent).
+#
+# READ-ONLY: it writes nothing anywhere and commits nothing. Run it by hand when
+# a college's records load from a new host, or push a change to the script.
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Only hosts or colleges containing this text (blank = all)"
+        required: false
+        default: ""
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/catalog-framing.yml'
+      - 'scripts/catalog_framing.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalog-framing-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Check framing
+        env:
+          ONLY: ${{ github.event.inputs.only }}
+        run: |
+          args=()
+          [ -n "$ONLY" ] && args+=(--only "$ONLY")
+          python3 scripts/catalog_framing.py "${args[@]}"
