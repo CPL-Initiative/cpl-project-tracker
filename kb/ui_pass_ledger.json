@@ -31,7 +31,7 @@
    "page": "fact-sheet/index.html",
    "audience": "public",
    "last": "2026-10-09",
-   "outcome": "First pass (S350, #1926): 141 targets under 24px fixed, the action bar no longer pins 200px of a phone, raw hex and injected fallbacks became tokens, the recs toggle's undefined --accent became --cobalt, three toolbar glyphs became words. S352 (#1934): the page never defined --on-accent, so Ask Sierra on hover and the drawer's Send painted body ink on cobalt (1.35:1); defined, and a guard fails any bare var() the page does not define. Sam ruled Mock it up (Sheet 56): the First Light mock-up (Playfair Display and Source Sans 3, a screen-only dark palette, print keeps Cambria and Calibri) is built, and Sheet 57 asks whether to port it."
+   "outcome": "First pass (S350, #1926): 141 targets under 24px fixed, the action bar no longer pins 200px of a phone, raw hex and injected fallbacks became tokens, the recs toggle's undefined --accent became --cobalt, three toolbar glyphs became words. S352: the page never defined --on-accent, so Ask Sierra on hover and the drawer's Send painted body ink on cobalt at 1.35:1 (#1934, with a guard on any bare var() the page does not define). Then First Light (#1938, Sam: 'Fact Sheet looks great!'): Playfair Display and Source Sans 3 self-hosted, COBI's dark palette screen-only on the cpl_theme contract, seal navy split into fill and ink; print and Save as Word keep Cambria and Calibri. fact-sheet and fact-sheet-dark pass at nine widths."
   },
   {
    "id": "privacy",

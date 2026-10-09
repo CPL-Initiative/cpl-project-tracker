@@ -121,10 +121,18 @@ check("the total row's 4th column is still positional (no data-tcol) as the CSS 
 check("CSS: reduced motion is honoured", /@media \(prefers-reduced-motion: reduce\)/.test(CSS));
 
 // ── (e) contrast — computed, not claimed ──
-const tok = {};
-(CSS.match(/--[\w-]+:\s*#[0-9A-Fa-f]{6}/g) || []).forEach((m) => {
-  const [k, v] = m.split(/:\s*/); tok[k.trim()] = v.trim();
-});
+// The light palette is the first :root block; the dark blocks (S352, screen-only)
+// restate the same names, so a whole-file read would take the dark values.
+const tokensOf = (src) => {
+  const t = {};
+  (src.match(/--[\w-]+:\s*#[0-9A-Fa-f]{6}/g) || []).forEach((m) => {
+    const [k, v] = m.split(/:\s*/); if (!(k.trim() in t)) t[k.trim()] = v.trim();
+  });
+  return t;
+};
+const LIGHT_ROOT = (CSS.match(/(^|\n):root \{[^}]*\}/) || [""])[0];
+const DARK_ROOT = (CSS.match(/:root\[data-theme="dark"\] \{[^}]*\}/) || [""])[0];
+const tok = tokensOf(LIGHT_ROOT);
 const h2rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
 const lin = (v) => { v /= 255; return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
 const lum = (c) => 0.2126 * lin(c[0]) + 0.7152 * lin(c[1]) + 0.0722 * lin(c[2]);
@@ -162,6 +170,22 @@ const PAIRS = [
   ["KPI top rule on card", T("seal-blue"), T("surface"), 3.0],
   ["savings KPI rule on card", T("hunter"), T("surface"), 3.0],
 ];
+// Dark (S352): the same roles on the night ground, from the explicit dark block
+// (the OS block carries the same values; tests/factsheet_first_light.test.js
+// holds them equal).
+const dk = Object.assign({}, tok, tokensOf(DARK_ROOT));
+const D = (n) => dk["--" + n];
+check("factsheet.css carries a dark palette", !!D("paper") && D("paper") !== T("paper"));
+[
+  ["dark: body on paper", D("body"), D("paper"), 4.5], ["dark: body on card", D("body"), D("surface"), 4.5],
+  ["dark: ink on total row", D("ink"), D("surface-muted"), 4.5], ["dark: muted on zebra row", D("muted"), D("surface-subtle"), 4.5],
+  ["dark: muted on total row", D("muted"), D("surface-muted"), 4.5], ["dark: faint on total row", D("faint"), D("surface-muted"), 4.5],
+  ["dark: seal ink on paper", D("seal-blue-text"), D("paper"), 4.5], ["dark: seal ink on card", D("seal-blue-text"), D("surface"), 4.5],
+  ["dark: link on zebra row", D("cobalt"), D("surface-subtle"), 4.5], ["dark: hunter on card", D("hunter"), D("surface"), 4.5],
+  ["dark: crimson on card", D("crimson"), D("surface"), 4.5], ["dark: mustard-text on card", D("mustard-text"), D("surface"), 4.5],
+  ["dark: --on-accent on cobalt", D("on-accent"), D("cobalt"), 4.5], ["dark: --on-accent on crimson", D("on-accent"), D("crimson"), 4.5],
+  ["dark: white on the navy table head", "#FFFFFF", D("seal-blue"), 4.5],
+].forEach((p) => PAIRS.push(p));
 PAIRS.forEach(([label, fg, bg, target]) => {
   // A token factsheet.css does not define reads as a failed pair, not a throw.
   const r = fg && bg ? ratio(h2rgb(fg), h2rgb(bg)) : 0;

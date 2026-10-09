@@ -400,7 +400,7 @@
       '.fs-sra-head-avatar{flex:0 0 auto;width:28px;height:28px;}' +
       '.fs-sra-head-avatar svg,.fs-sra-avatar svg{width:100%;height:100%;display:block;}' +
       '.fs-sra-head-name{display:flex;flex-direction:column;line-height:1.15;margin-right:auto;}' +
-      '.fs-sra-head-name strong{color:var(--seal-blue);font-size:1.06rem;}' +
+      '.fs-sra-head-name strong{color:var(--seal-blue-text,var(--seal-blue));font-size:1.06rem;}' +
       '.fs-sra-head-role{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;}' +
       '.fs-sra-close{border:1px solid var(--border-strong);background:var(--surface);color:var(--ink);cursor:pointer;' +
         'width:30px;height:30px;border-radius:50%;font:600 14px var(--font-data);}' +
@@ -413,13 +413,13 @@
         'background:var(--surface-subtle);color:var(--ink);border:1px solid var(--border);overflow-wrap:anywhere;}' +
       '.fs-sra-bubble p{margin:0 0 8px;}.fs-sra-bubble p:last-child{margin-bottom:0;}' +
       '.fs-sra-bubble ul,.fs-sra-bubble ol{margin:4px 0 8px;padding-left:19px;}.fs-sra-bubble a{color:var(--cobalt);}' +
-      '.fs-sra-bubble h3,.fs-sra-bubble h4,.fs-sra-bubble h5{margin:12px 0 4px;line-height:1.3;color:var(--seal-blue);}' +
+      '.fs-sra-bubble h3,.fs-sra-bubble h4,.fs-sra-bubble h5{margin:12px 0 4px;line-height:1.3;color:var(--seal-blue-text,var(--seal-blue));}' +
       '.fs-sra-bubble h3{font-size:1rem;}.fs-sra-bubble h4{font-size:.94rem;}.fs-sra-bubble h5{font-size:.88rem;}' +
       '.fs-sra-bubble h3:first-child,.fs-sra-bubble h4:first-child,.fs-sra-bubble h5:first-child{margin-top:2px;}' +
       '.fs-sra-bubble hr{border:none;border-top:1px solid var(--border);margin:10px 0;}' +
       '.fs-sra-bubble table{border-collapse:collapse;margin:8px 0;font-size:.92em;display:block;max-width:100%;overflow-x:auto;}' +
       '.fs-sra-bubble th,.fs-sra-bubble td{border:1px solid var(--border);padding:3px 9px;text-align:left;vertical-align:top;}' +
-      '.fs-sra-bubble th{background:var(--surface-muted);color:var(--seal-blue);font-weight:700;}' +
+      '.fs-sra-bubble th{background:var(--surface-muted);color:var(--seal-blue-text,var(--seal-blue));font-weight:700;}' +
       '.fs-sra-user .fs-sra-bubble{background:var(--seal-blue);color:var(--on-seal);border-color:var(--seal-blue);}' +
       '.fs-sra-beta{color:var(--faint);font-size:.8rem;}' +
       '.fs-sra-typing{letter-spacing:2px;color:var(--muted);animation:fs-sra-pulse 1.1s infinite;}' +
