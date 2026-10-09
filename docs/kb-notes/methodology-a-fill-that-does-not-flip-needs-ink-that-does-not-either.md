@@ -1,7 +1,7 @@
 ---
 title: A fill that does not flip needs ink that does not flip either
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-10-09
 tags: [methodology, dark-mode, ui, tokens, a11y]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -13,6 +13,8 @@ artifacts:
   - CPL_Dashboard.html
   - tests/cpl_theme.test.js
   - docs/reference/lanes/cobi-dark-mode.md
+  - prototype/ccr_atlas_v1.html
+  - tests/ccr_skyview_first_light.test.js
 ---
 
 # A fill that does not flip needs ink that does not flip either
@@ -84,3 +86,16 @@ and restoring the flipping ink each fail exactly their own check.
 badge is unreadable at night". The instinct is to change the badge's color. The
 defect is one line away, in a token whose declaration has not been edited in
 months and reads correctly on its own.
+
+## The other branch, found by reading: literal white on a fill that flips (S351)
+
+The first branch of the rule broke in SkyView with no token involved on the ink side. Three rules wrote
+`color:#fff` on `var(--cobalt)` or `var(--seal-blue)`: the member-row hover, Put back's hover, and the pressed
+Night word in the More panel. The night canvas redefines both fills to `#7DA1D4`, so each read **2.65:1**
+(measured in Chromium). `var(--on-accent)` reads **6.95:1**, the cobalt row of the table above.
+
+No sweep reported it. All three states paint only on hover or inside a shut `<details>`, so every route
+measured clean (`methodology-a-sweep-sees-only-the-states-its-seed-reaches`). The finding came from reading the
+CSS: list every declaration whose ink is a literal while its fill is a token, then ask whether that fill flips.
+`tests/ccr_skyview_first_light.test.js` pins the three rules to `var(--on-accent)` and the template to no raw hex
+outside a token declaration.

@@ -67,11 +67,11 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 530 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
-| Lessons docs | 84 | [`catalog/lessons.md`](catalog/lessons.md) |
+| Lessons docs | 85 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 322 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1077** | |
+| Session handoffs | 323 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1079** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-09 (S351 SkyLark): UI passes on the privacy page (First Light's type and dark, #1929), the funding explainer (the Columns menu opens on the screen, #1930) and SkyView (chip tokens; on-accent ink on three dark fills at 2.65:1, #1932); the picker reaches a view nobody has audited before a re-pass (#1931); new lessons doc `ui_pass_lessons.md`; the fill-and-ink KB note gains its second case; handoff 352.
 - 2026-10-09 (S350 SkyTide): the veteran map ported to First Light on Sam's Sheet 55 ruling, COBI's frame on `?embed=1` with a marker size floor, `build_selfcontained.py --check` in CI (#1924); the Library record at version 55 (Sam's paste); KB note `methodology-check-a-page-inside-every-frame-that-embeds-it`; the Fact Sheet's first UI pass (#1926; the glyph sweep reads the standalone pages now) and Open Asks Sheet 56; handoff 351.
 - 2026-10-09 (S349 SkyHarbor): the docked Sierra full screen when she answers (#1921); the first UI pass on Sierra's public page; the veteran map mock-up and Sheet 55 (#1922); KB note `methodology-a-sweep-sees-only-the-states-its-seed-reaches`; handoff 350.
 - 2026-10-08 (S348 SkyMeadow): Sierra's public page ported to the approved mock-up, her logo set in five rounds with Sam; new lessons doc `sierra_page_redesign_lessons.md`; handoff 349.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-08 (S347 SkyTrellis): the Chancellor headline, Palo Verde read, the To-Do retired for a UI pass, the Sierra redesign lane; KB note methodology-a-lapsed-name-is-not-a-refusal.
 - 2026-10-08 (S346 SkyCairn): KB note `methodology-a-site-search-needs-the-domain-filter`; harvest lane compacted below its limit (two paragraphs to the lessons doc); lessons S346; handoff 347.
 - **2026-10-08 (S345 SkyLantern):** map sources read at sixteen colleges, every Program Mapper refused and Mt. San Antonio's own Guided Pathways pages publish a sequence per program; 19 of 118 colleges hold a procedure; the Progress view links each of Sam's calls to its sheet card (#1908); Open Asks Sheet 50 answered, its card 5 built (settled maps). Handoff 346.
-- 2026-10-08 (S344 SkyWaypoint, scheduled): every pilot college has a reading procedure, 7 of 118 (#1906); map searches at West Los Angeles (mapper 403), Riverside City and Mt. San Antonio (no map page yet) took three records to v2; Sierra's smoke passed in full on `main`. Handoff 345.

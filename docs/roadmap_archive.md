@@ -5882,3 +5882,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### From docs/INDEX.md update history (trimmed S346)
 
 - 2026-10-06 (S338 SkyLantern): the Noncredit Summit deck's draft 2 (vault #247: live count, funding read from the model, Sam's Mt. SAC / NOCE / Calbright calls, Nadia's CompTIA bundle) filed in CPLLibrary/Drafts with its Library record (#1889); the Library filer's Google sign-in set with Sam (#1887 privacy page, #1888 guide); new lessons doc `library_lessons.md`; handoff 339 (SkyReel: the film re-cut first).
+
+### From docs/INDEX.md update history (trimmed S351)
+
+- 2026-10-08 (S344 SkyWaypoint, scheduled): every pilot college has a reading procedure, 7 of 118 (#1906); map searches at West Los Angeles (mapper 403), Riverside City and Mt. San Antonio (no map page yet) took three records to v2; Sierra's smoke passed in full on `main`. Handoff 345.

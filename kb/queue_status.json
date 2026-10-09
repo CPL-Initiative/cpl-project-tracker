@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T03:19:16Z",
-  "session": 350,
-  "moniker": "SkyTide",
+  "written_at": "2026-10-09T06:34:12Z",
+  "session": 351,
+  "moniker": "SkyLark",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_351_handoff.md",
+  "handoff": "docs/session_352_handoff.md",
   "unchecked": [
     {
       "college": "Irvine Valley College",
@@ -23,8 +23,8 @@
     }
   ],
   "next_step": {
-    "title": "Carry out Sheet 56, then the privacy page's UI pass",
-    "text": "Sheet 56 asks whether to mock up the Fact Sheet on First Light's type with a dark mode. The next view the UI pass names is the privacy page."
+    "title": "Carry out Sheet 56, then the first COBI tab's UI pass",
+    "text": "Sheet 56 asks whether to mock up the Fact Sheet on First Light's type with a dark mode. The next view the UI pass names is COBI's Dashboard tab."
   },
   "calls": [
     {
@@ -49,10 +49,26 @@
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
-    "sierra": "The docked Sierra expands to full screen when she answers, since Oct 9. The veteran map is on First Light since Oct 9, and the Fact Sheet passed its first accessibility pass the same day.",
+    "sierra": "The docked Sierra expands to full screen when she answers, since Oct 9. The veteran map is on First Light since Oct 9. The Fact Sheet, the privacy page, the funding explainer and SkyView passed their accessibility passes the same day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening."
   },
   "changes": [
+    {
+      "at": "2026-10-09T06:33:56Z",
+      "text": "SkyView's chip colors follow the house palette by day and at night, and three of its controls read clearly at night."
+    },
+    {
+      "at": "2026-10-09T06:21:37Z",
+      "text": "The accessibility pass now reaches a screen nobody has checked before it checks one again."
+    },
+    {
+      "at": "2026-10-09T06:07:28Z",
+      "text": "The funding explainer's Columns menu opens on the screen at every width, here and on this tab."
+    },
+    {
+      "at": "2026-10-09T05:51:16Z",
+      "text": "The privacy page uses the house fonts and follows the dark setting."
+    },
     {
       "at": "2026-10-09T03:18:37Z",
       "text": "The Library's record of the decision sheets points at Sheet 56."
@@ -68,14 +84,6 @@
     {
       "at": "2026-10-09T01:51:41Z",
       "text": "The public veteran map is on First Light, light and dark; inside COBI it fills its frame."
-    },
-    {
-      "at": "2026-10-09T00:39:53Z",
-      "text": "The docked Sierra on this tab and My College expands to full screen when she answers; her answer buttons now meet AA."
-    },
-    {
-      "at": "2026-10-09T00:03:01Z",
-      "text": "Sierra's public page follows the approved redesign."
     }
   ],
   "next_run": {
