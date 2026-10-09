@@ -579,15 +579,15 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--navy-primary);
-            opacity: 0.6;
+            /* --text-muted, not ink dimmed to 60%, which blended to #72726E on
+               paper, 4.33:1 (S352 UI pass). Same for the two rules below. */
+            color: var(--text-muted);
         }
 
         .kpi-section-header .kpi-section-updated {
             font-size: 0.7rem;
             font-weight: 500;
-            color: var(--navy-primary);
-            opacity: 0.55;
+            color: var(--text-muted);
             margin-left: auto;
             margin-right: 0.75rem;
             letter-spacing: 0.2px;
@@ -595,8 +595,7 @@
 
         .kpi-section-header .kpi-toggle-arrow {
             font-size: 0.65rem;
-            color: var(--navy-primary);
-            opacity: 0.5;
+            color: var(--text-muted);
             transition: transform 0.2s ease;
         }
 
@@ -3953,7 +3952,9 @@
     z-index: 2;
 }
 .exhibit-table th {
-    background: var(--surface-muted);
+    /* --surface-subtle under the mustard label: on --surface-muted it read
+       4.25:1, on this fill 4.73:1 (S352 UI pass). */
+    background: var(--surface-subtle);
     color: var(--mustard-text);
     font-size: 0.65rem;
     font-weight: 600;
@@ -4213,15 +4214,21 @@
 
 
 /* ═══ Collapsible Algorithm Descriptions ═══ */
+/* Every panel reads theme tokens (S352 UI pass). The base rules once assumed a
+   dark ink card (white-alpha text, a mustard tint), and the cards that kept
+   them, the two trend cards and the seven exhibit cards, now paint the opaque
+   surface: in light their "How this is calculated" read white on white (1:1),
+   and in dark the summary sat at 4.41:1. Text roles: muted for the summary and
+   the meta line, body for the explanation, mustard-text for the labels. */
 .algo-details {
     margin-top: 0.6rem;
     padding-top: 0.4rem;
-    border-top: 1px dashed rgba(255,255,255,0.12);
+    border-top: 1px dashed var(--border);
     font-size: 0.72rem;
 }
 .algo-details summary {
     cursor: pointer;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-muted);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -4239,44 +4246,32 @@
     display: inline-block;
     font-size: 0.65rem;
     transition: transform 0.15s ease;
-    color: rgba(227,179,65,0.7);
+    color: var(--mustard-text);
 }
 .algo-details[open] summary::before { transform: rotate(90deg); }
-.algo-details summary:hover { color: rgba(227,179,65,0.9); }
-.algo-details[open] summary { color: var(--gold-accent); }
+.algo-details summary:hover { color: var(--text-strong); }
+.algo-details[open] summary { color: var(--mustard-text); }
 .algo-details .algo-body {
     padding: 0.55rem 0 0.3rem;
-    color: rgba(255,255,255,0.72);
+    color: var(--text-body);
     line-height: 1.55;
 }
 .algo-details .algo-row { margin-bottom: 0.35rem; }
 .algo-details .algo-label {
     font-weight: 700;
-    color: rgba(227,179,65,0.9);
+    color: var(--mustard-text);
     margin-right: 0.3rem;
     text-transform: uppercase;
     font-size: 0.62rem;
     letter-spacing: 0.4px;
 }
-.algo-details .algo-value { color: rgba(255,255,255,0.78); }
+.algo-details .algo-value { color: var(--text-body); }
 .algo-details .algo-meta {
     margin-top: 0.6rem;
     font-size: 0.62rem;
-    color: rgba(255,255,255,0.35);
+    color: var(--text-muted);
     font-style: italic;
 }
-/* First Light (PR-2): headline KPI cards are light glass — algo text flips
-   to the ink scale there. The class-less dark cards (trend, College
-   Activity) keep the white-alpha base above. */
-.kpi-card .algo-details { border-top: 1px dashed var(--border); }
-.kpi-card .algo-details summary { color: var(--text-muted); }
-.kpi-card .algo-details summary::before { color: var(--mustard-text); }
-.kpi-card .algo-details summary:hover { color: var(--text-strong); }
-.kpi-card .algo-details[open] summary { color: var(--mustard-text); }
-.kpi-card .algo-details .algo-body { color: var(--text-body); }
-.kpi-card .algo-details .algo-label { color: var(--mustard-text); }
-.kpi-card .algo-details .algo-value { color: var(--text-body); }
-.kpi-card .algo-details .algo-meta { color: var(--text-muted); }
 /* ═══ End Collapsible Algorithm Descriptions ═══ */
 
 </style>
@@ -4805,7 +4800,7 @@
         <span id="caStarLegend" style="font-size:0.61rem;color:var(--text-muted);margin-left:4px;">Veteran Star — JSTs uploaded for ≥75% of reported veterans (Vets)</span>
         <span style="font-size:0.61rem;color:var(--text-muted);margin-left:1rem;">Last Activity: </span>
         <span style="font-size:0.61rem;color:var(--hunter);">● ≤30d</span>
-        <span style="font-size:0.61rem;color:#FF9800;margin-left:0.3rem;">● 31–90d</span>
+        <span style="font-size:0.61rem;color:var(--mustard-text);margin-left:0.3rem;">● 31–90d</span>
         <span style="font-size:0.61rem;color:var(--crimson);margin-left:0.3rem;">● 90+d</span>
       </div>
       <details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">CCCCO MAP CPL Dashboard via Cloudflare worker — per-college tier classifications.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Same 3-of-5 criteria as Active Colleges. Leading (≥3 met), Advancing (1-2 met), Inactive (<10 students and 0 units). Tiers sorted by criteria met desc, then by students desc.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Criteria: Students ≥ 500; Units ≥ 3000; Avg Units/Student ≥ 5; Transcription Rate ≥ 25%; Avg Transcribed/Student ≥ 3.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">⭐ indicates MAP Star College status (at least one criterion met). JST column derives from View_StudentAggregatedValues rows where Military Credits > 0.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details>
@@ -5215,7 +5210,7 @@
         </div>
         <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
-            <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
+            <p style="color:var(--text-muted);font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
                 <div style="flex:1;min-width:min(340px, 100%);">
                     <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
@@ -5231,7 +5226,7 @@
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--mustard-text);vertical-align:middle;margin-right:4px;"></span> Military</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--cobalt);vertical-align:middle;margin-right:4px;"></span> Workforce/Other</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--green-progress);vertical-align:middle;margin-right:4px;"></span> Apprentice</span>
-                <span style="color:#aaa;">&mdash; Solid = actual &nbsp; - - - Dashed = projected</span>
+                <span style="color:var(--text-muted);">&mdash; Solid = actual &nbsp; - - - Dashed = projected</span>
             </div>
         </div>
         <script>
