@@ -40,6 +40,8 @@ related:
 - **The tab repainting under her.** `mountInto()` collapses, rebuilds and re-expands after the host has finished with the new box (a microtask, so My College's hoist still finds it). The turn rows move to the new log when the same tab repaints (the same nodes, so a streaming answer keeps streaming), which also closes an older gap: a docked repaint used to empty the visible log while `convo` still sent it.
 - **Verified.** `tests/cpl_chat_dock_full.test.js` (55); `npm run a11y -- sierra-dock-full sierra-dock-full-dark` (four widths, AA, 24px, rings, and the dialog, inert page, sticky box, End and Escape). The first seeded conversation the sweep measured found the answer's feedback row below AA (`--text-faint` 3.24:1, a .75 fade 2.48:1) and 23.4px tall; fixed for every COBI surface. The engine skips inert controls in its focus-ring pass.
 
-**NEXT.** ④ The checkpoint's UI pass audits the new public page (its hold in `kb/ui_pass_ledger.json` is lifted). Show Sam the docked Sierra full screen and take his reaction.
+**UI pass (S349).** The public page passed its first pass: AA, 24px targets, rings, keyboard and reduced motion at nine widths in all four views; First Light holds; the chat function and feedback RPC agree with the COBI surfaces. Nothing to fix (`kb/ui_pass_ledger.json`).
+
+**NEXT.** Sam's reaction to the docked Sierra full screen (screenshots sent in S349); then the veteran map below.
 
 **The next public page: the veteran map (UI pass, S347).** `veteran-sprint-map/ca_cpl_map_selfcontained.html` passes AA, the 24px targets (its pins through the two directories) and the keyboard at nine widths, and is not First Light: its own palette (navy, CO blue, crimson, gold), 30 raw hex values outside `:root`, the system font stack, no dark mode. Its builder is `veteran-sprint-map/build_selfcontained.py`. After Sierra's port lands, the same order: a mock-up with real assets for Sam, then the port in the builder.
