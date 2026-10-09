@@ -42,9 +42,6 @@ Light checks; a small fix ships in its own PR; `--record` the outcome.
 
 ## Carried, waiting on Sam
 
-- **The Library paste for Sheet 56.** `kb/receipts/cpl_library_open_asks_sheet56_2026-10-09_s350.sql` takes the
-  open-asks record from version 55 to 56 (read 55 at 02:35Z). Hand Sam the paste if he has not run it; read back
-  version 56, 29 versions, Sheet 56 first.
 - **Two program records** (S347): Irvine Valley Art A.A. 10265 and Santa Monica Barbering A.S. 43767, Confirm or
   Needs a fix from the Records view. `program_record_verdicts` was empty at 02:35Z.
 - **The guard change** (S347, *"Turn the guard off on updates"*): lands only in a session Sam runs in Accept edits.
@@ -54,6 +51,8 @@ Light checks; a small fix ships in its own PR; `--record` the outcome.
 
 - **Sheet 55 card 1: Port it** (00:42Z, his own call). Built in #1924. `cpl_memory` `sam-port-veteran-map-2026-10-09`.
 - **The Sheet 55 Library paste**: *"I pasted the Library update, it said success"* (01:46Z); read back at version 55.
+- **The Sheet 56 Library paste**: *"I pasted the Sheet 56 Library update, it said success"* (03:18Z); read back at
+  version 56, 29 versions, Sheet 56 first.
 - **"go ahead with the Fact Sheet UI pass"** (in chat): built in #1926.
 
 ## What shipped (S350)
@@ -90,5 +89,5 @@ ledger and `CLAUDE.md`'s standing-sheet pointer (Sheet 56) moved in #1924 to #19
 ## What S350 let go of at sign-off
 
 PR subscriptions: #1924, #1925, #1926, vault #282 and #283, all merged. Check-ins: the three safety-net check-ins
-(#1924, #1925, and #1926 with Sheet 56), canceled. Artifact watches: Sheet 56's publish armed one; it stays only as
-the platform keeps it, and the next session reads the sheet directly.
+(#1924, #1925, and #1926 with Sheet 56), canceled. Artifact watches: Sheet 56's, stopped at sign-off; the next session reads
+the sheet directly.

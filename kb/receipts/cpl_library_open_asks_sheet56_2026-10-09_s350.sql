@@ -1,7 +1,7 @@
 -- S350 SkyTide, 2026-10-09: Open Asks Sheet 56 becomes the open-asks series record's current version (Sam's sheet 47
 -- card 5: one record per series, each new sheet a version). One guarded statement; it applies only from version 55.
--- Handed to Sam to paste: apply_migration times out on cpl_library and on no other table (five times through S349).
--- Paste it in the SQL editor; read back version 56, 29 versions, Sheet 56 first and Current.
+-- APPLIED 2026-10-09 03:18:37Z: Sam pasted it in the SQL editor ("success"; apply_migration times out on cpl_library).
+-- Read back by S350 SkyTide: version 56, 29 versions, Sheet 56 first and Current, Sheet 55 Earlier.
 -- Before-values (read live 2026-10-09 ~02:20Z): version 55, url https://claude.ai/artifact/FfCtXWkFBdSBX4BGcitj5o,
 -- file_name 2026-10-09-open-asks-55.html, extent '1 card (sheet 55)', made_by 'S341 SkyTerrace (sheets 46-48); the
 -- library side session (sheet 49); S345 SkyLantern (sheet 50); S346 SkyCairn (sheet 51); S347 SkyTrellis (sheet 52);

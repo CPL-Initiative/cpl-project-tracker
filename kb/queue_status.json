@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T02:34:22Z",
+  "written_at": "2026-10-09T03:19:16Z",
   "session": 350,
   "moniker": "SkyTide",
   "run": "Sam's session",
@@ -44,11 +44,6 @@
         "href": "https://claude.ai/artifact/By4Q1M7KVPzaMkRaJkb48m",
         "text": "Open Sheet 56"
       }
-    },
-    {
-      "title": "Paste the Library record for Sheet 56",
-      "text": "One receipt moves the open-asks record from Sheet 55 to Sheet 56; the connector times out on this table, so it goes in by paste.",
-      "if_no_reply": "The Library's open-asks record keeps pointing at Sheet 55."
     }
   ],
   "notes": {
@@ -58,6 +53,10 @@
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening."
   },
   "changes": [
+    {
+      "at": "2026-10-09T03:18:37Z",
+      "text": "The Library's record of the decision sheets points at Sheet 56."
+    },
     {
       "at": "2026-10-09T02:32:56Z",
       "text": "The Fact Sheet's links and buttons reach the 24px size, its toolbar uses words, and on a phone the toolbar scrolls away."
@@ -77,10 +76,6 @@
     {
       "at": "2026-10-09T00:03:01Z",
       "text": "Sierra's public page follows the approved redesign."
-    },
-    {
-      "at": "2026-10-08T21:33:02Z",
-      "text": "A reviewer can now confirm a record or note a fix from the Records view, and each record shows its flags."
     }
   ],
   "next_run": {
