@@ -4,6 +4,8 @@ date: 2026-10-08
 session: 347 (SkyTrellis)
 tags: [handoff, sierra, program-requirements-harvest, decision-sheets, checkpoint]
 status: current
+superseded: true
+superseded_by: session_350_handoff.md
 ---
 
 # You are Session 348

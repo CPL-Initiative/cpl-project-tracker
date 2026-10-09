@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-528 document(s).
+529 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -216,6 +216,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A summary field will be read as the whole record](../kb-notes/methodology-a-summary-field-is-not-the-record.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A summary surface must share the unit of the detail it summarizes](../kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md) | methodology | published | 2026-08-01 | 2026-08-01 |
 | [A sweep scoped by a proxy leaves a shadow](../kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [A sweep sees only the states its seed reaches — seed through the code that paints them](../kb-notes/methodology-a-sweep-sees-only-the-states-its-seed-reaches.md) | methodology | published | 2026-10-09 | 2026-10-09 |
 | [A tag scan cannot see a fetch](../kb-notes/methodology-a-tag-scan-cannot-see-a-fetch.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |

@@ -4,6 +4,8 @@ date: 2026-10-08
 session: 348 (SkyMeadow)
 tags: [handoff, sierra, sierra-page-redesign, decision-sheets, checkpoint]
 status: current
+superseded: true
+superseded_by: session_350_handoff.md
 ---
 
 # You are Session 349

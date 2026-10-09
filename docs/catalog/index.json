@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 528,
+   "count": 529,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3908,6 +3908,26 @@
      "title": "A sweep scoped by a proxy leaves a shadow",
      "type": "methodology",
      "updated": "2026-08-09"
+    },
+    {
+     "created": "2026-10-09",
+     "governs": [
+      "a11y.config.js",
+      "scripts/a11y.js",
+      "cpl_chat.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-sweep-sees-only-the-states-its-seed-reaches.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "accessibility",
+      "testing",
+      "verification",
+      "sierra"
+     ],
+     "title": "A sweep sees only the states its seed reaches \u2014 seed through the code that paints them",
+     "type": "methodology",
+     "updated": "2026-10-09"
     },
     {
      "created": "2026-08-19",
@@ -12273,7 +12293,8 @@
       "sierra",
       "first-light",
       "accessibility",
-      "logotype"
+      "logotype",
+      "veteran-map"
      ],
      "title": "Sierra's page redesign \u2014 lessons",
      "type": null,
@@ -15062,8 +15083,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 320,
+   "count": 321,
    "docs": [
+    {
+     "created": "2026-10-09",
+     "governs": [],
+     "n": 350,
+     "path": "docs/session_350_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "sierra-page-redesign",
+      "veteran-map",
+      "decision-sheets",
+      "checkpoint"
+     ],
+     "title": "the veteran map waits on Sheet 55",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-08",
      "governs": [],
@@ -20512,5 +20551,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1073
+ "total": 1075
 }

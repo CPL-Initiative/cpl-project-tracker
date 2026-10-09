@@ -4,6 +4,8 @@ date: 2026-10-08
 session: 346 (SkyCairn)
 tags: [handoff, program-requirements-harvest, cpl-pathways, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_350_handoff.md
 ---
 
 # You are Session 347
