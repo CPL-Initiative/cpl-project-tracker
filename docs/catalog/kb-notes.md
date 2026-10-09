@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-530 document(s).
+531 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -338,6 +338,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Methodology — a frequency is not a rule](../kb-notes/methodology-a-frequency-is-not-a-rule.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [Methodology — a governance artifact must measure itself, and render what it lacks](../kb-notes/methodology-a-governance-artifact-must-measure-itself.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [Methodology — a hybrid live-vs-manual value column (single source by construction)](../kb-notes/methodology-live-vs-manual-hybrid-column.md) | methodology | published | 2026-06-30 |  |
+| [Methodology — anchor a marker a workflow reads in a commit message](../kb-notes/methodology-anchor-a-marker-a-workflow-reads.md) | methodology | published | 2026-10-09 | 2026-10-09 |
 | [Methodology — build a packaging dry-run: title-primary carve-outs, safe-default under-claim, review-bucket when no authoritative flag](../kb-notes/methodology-packaging-dryrun-classification.md) | methodology | published | 2026-07-15 | 2026-07-15 |
 | [Methodology — Commit the test harness; don't let verification evaporate](../kb-notes/methodology-commit-the-test-harness.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 | [Methodology — Cosmetic relabel via a display-label map, not a stored-value rename](../kb-notes/methodology-display-label-map-vs-data-rename.md) | methodology | published | 2026-05-31 | 2026-05-31 |

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 530,
+   "count": 531,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6322,6 +6322,21 @@
      "title": "Methodology \u2014 a hybrid live-vs-manual value column (single source by construction)",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-10-09",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-anchor-a-marker-a-workflow-reads.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ci",
+      "github-actions",
+      "cost"
+     ],
+     "title": "Methodology \u2014 anchor a marker a workflow reads in a commit message",
+     "type": "methodology",
+     "updated": "2026-10-09"
     },
     {
      "created": "2026-07-15",
@@ -14717,7 +14732,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-08"
+     "updated": "2026-10-09"
     },
     {
      "created": "2026-08-28",
@@ -15133,8 +15148,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 324,
+   "count": 325,
    "docs": [
+    {
+     "created": "2026-10-09",
+     "governs": [],
+     "n": 354,
+     "path": "docs/session_354_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "funding-explainer",
+      "first-light",
+      "checkpoint"
+     ],
+     "title": "Phase 2 opens at Cerritos; the explainer is editable; controls are words",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-09",
      "governs": [],
@@ -20659,5 +20693,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1080
+ "total": 1082
 }
