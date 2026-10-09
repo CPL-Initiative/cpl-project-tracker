@@ -5,7 +5,9 @@ Sam, 2026-10-08: the checkpoint picks one view a run for a UI audit and fix (wir
 every view that shares its data, AA, mobile, First Light), in place of the retired To-Do
 step. The failures this guards: a tab added to COBI's nav that the pass never reaches; a
 ledger row naming a view that is gone; a pass stamped with no outcome; --next choosing a
-view on hold, or a COBI tab before a public page nobody has audited.
+view on hold, or a COBI tab before a public page nobody has audited; and a view nobody has
+audited waiting behind a re-pass (S351: once the six public pages had passed, --next
+offered Sierra again, passed that morning, ahead of 41 COBI tabs never reached).
 
 Run from repo root: python3 tests/ui_pass_test.py
 """
@@ -58,8 +60,11 @@ rows = [
     {"id": "cobi:b", "name": "B", "page": "index.html#b", "audience": "staff", "last": "2026-08-01", "outcome": "y"},
 ]
 order = [r["id"] for r in M.rank(rows)]
-check("--next: a public page never audited first, a held one never",
-      order == ["pub-new", "pub-old", "cobi:a", "cobi:b"], order)
+check("--next: a public page never audited first, then a COBI tab never audited, a held one never",
+      order == ["pub-new", "cobi:a", "pub-old", "cobi:b"], order)
+done = [dict(r, last="2026-10-09", outcome="z") if r["audience"] == "public" else r for r in rows]
+check("--next: with every public page passed, a COBI tab nobody has audited comes before a re-pass",
+      M.rank(done)[0]["id"] == "cobi:a", [r["id"] for r in M.rank(done)])
 
 deps = {"datasets": {
     "table:t1": {"consumers": [{"tabs": ["program-requirements", "cpl-pathways"]}, {"pages": ["sierra/index.html"]}]},
