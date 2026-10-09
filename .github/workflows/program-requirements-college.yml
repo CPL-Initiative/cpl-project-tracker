@@ -15,7 +15,8 @@ name: Program requirements, one college
 #            (Sam's call 6: the function holds the Anthropic key), six calls at
 #            a time, and scores each record. It SPENDS MODEL CALLS (about $0.06
 #            a program), so it runs on a dispatch or when the pushed commit's
-#            message says [extract], never on a schedule.
+#            message starts with [extract], never on a schedule. A record filed
+#            from the same page is kept, so a re-run pays only for what moved.
 #   file     commits the run's account, and the records when there are any, to
 #            the branch that ran the workflow (kb/program_requirements_college/
 #            <slug>/), so no session reads a job log. The page text stays in the
@@ -56,7 +57,9 @@ jobs:
     env:
       COLLEGE: ${{ github.event.inputs.college || 'Cerritos College' }}
       LIMIT: ${{ github.event.inputs.limit || '0' }}
-      EXTRACT: ${{ github.event.inputs.extract == '1' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[extract]')) }}
+      # A push extracts only when its message STARTS with [extract]: the first
+      # run's commit merely described the marker, and contains() spent $15.80.
+      EXTRACT: ${{ github.event.inputs.extract == '1' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, '[extract]')) }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -74,7 +77,7 @@ jobs:
         if: env.EXTRACT == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_program_requirements_college.py extract --out out --workers 6
+        run: python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6
       - name: File the run
         run: python3 kb/_program_requirements_college.py file --college "$COLLEGE" --out out
       - name: Commit to the branch that ran it

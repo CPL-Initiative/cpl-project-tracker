@@ -11955,6 +11955,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_requirements_college/cerritos/capture.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 402
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_maps_sample.json": {
    "consumers": [
     {
@@ -14766,19 +14779,6 @@
      "direction": "read",
      "how": "inline",
      "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:news/sources.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_program_requirements_college.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 469
     }
    ],
    "served": true,

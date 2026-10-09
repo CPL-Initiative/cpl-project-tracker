@@ -139,6 +139,60 @@ check(C.choose_page(byc["99999"], PAGES) is None, "a program with no listed cour
 lone = dict(byc["41982"], closed_list=[{"code": "HED 100"}, {"code": "HED 200"}, {"code": "HED 300"}])
 check(C.choose_page(lone, PAGES) is None, "a page naming a third of the listed courses is not the program's page")
 
+# ── the award an address names (run 37961137169's misses) ───────────────────
+check([C.slug_award(start + "x/" + slug + "/") for slug in
+       ("anthropology-aa-t", "public-health-science-as-t", "natural-sciences-general-as", "field-ironworkers-aa",
+        "medical-assistant-certifciate-achievement", "energy-corps-certificate-completion", "courses-in-ged-test-prep-english")]
+      == ["adt", "adt", "as", "aa", "coa", "noncredit", None],
+      "an address names its award as it stands, hyphens and the catalog's own spelling included")
+aat = {"url": start + "x/anthropology-aa-t/", "h1": "Anthropology, A.A.-T", "title": "Anthropology"}
+check(C.label_score(aat, {"award": "A.A. Degree", "title": "Anthropology"})[0] == 0 and
+      C.label_score(aat, {"award": "A.A- T Degree", "title": "Anthropology"})[0] == 1,
+      "an A.A. does not read an A.A.-T page as its own, though 'A.A.' appears in 'A.A.-T'")
+
+
+def claim(award, title, cov=1.0):
+    return {"label": {"award": award, "title": title}, "coverage": cov, "found": {}}
+
+
+check(C.page_winners([("02260", claim(0, 1.0)), ("32355", claim(1, 1.0))]) == {"32355"},
+      "the program whose award the page names keeps it (Anthropology A.A.-T over the A.A.)")
+check(C.page_winners([("02267", claim(1, 0.5)), ("35220", claim(1, 1.0))]) == {"35220"},
+      "between two programs of one award, the page goes to the title it names more fully (Culinary Arts Management)")
+check(C.page_winners([("42020", claim(1, 1.0)), ("45549", claim(1, 1.0))]) == {"42020", "45549"},
+      "two state records the page names equally share it (Public Health, Public Health Science)")
+check(len(C.page_winners([("19163", claim(0, .75)), ("19170", claim(0, .6))])) == 1,
+      "a page naming no claimant's award goes to one program only")
+
+# assign(): a loser moves to its next page; one with none left reads no page
+PG = [page(start + "degrees/x-aa-t/", "X, A.A.-T", "X AA-T ABC 101 ABC 102 ABC 103"),
+      page(start + "degrees/x-aa/", "X, A.A.", "X A.A. ABC 101 ABC 102 ABC 103 ABC 104"),
+      page(start + "degrees/y-aa-t/", "Y, A.A.-T", "Y AA-T DEF 101 DEF 102")]
+progs3 = [{"control_number": "1", "title": "X", "award": "A.A- T Degree",
+           "closed_list": [{"code": "ABC 101"}, {"code": "ABC 102"}, {"code": "ABC 103"}]},
+          {"control_number": "2", "title": "X", "award": "A.A. Degree",
+           "closed_list": [{"code": "ABC 101"}, {"code": "ABC 102"}, {"code": "ABC 103"}]},
+          {"control_number": "3", "title": "Y", "award": "A.A. Degree",
+           "closed_list": [{"code": "DEF 101"}, {"code": "DEF 102"}, {"code": "DEF 103"}]}]
+got = C.assign(progs3, PG)
+check(got["1"]["best"]["url"].endswith("x-aa-t/") and got["2"]["best"]["url"].endswith("x-aa/"),
+      "each of two programs naming the same courses reads its own award's page")
+check(got["3"]["best"] is None or not got["3"]["best"]["url"].endswith("y-aa-t/") or got["3"]["best"]["label"]["award"] == 0,
+      "a program whose own page is missing is not handed a sibling's as its own award")
+progs4 = progs3[:1] + [dict(progs3[1], control_number="4")]
+got4 = C.assign(progs4, PG[:1])
+check(got4["4"]["best"] is None and got4["4"]["lost"] == [PG[0]["url"]],
+      "a program that loses its only page reads no page, and names the page it lost")
+tiny = {"control_number": "5", "title": "Automotive Electrical", "award": "Certificate of Achievement",
+        "closed_list": [{"code": "ABC 101"}]}
+check(C.candidates(tiny, PG) == [], "a one-course list takes no page whose label does not name the program")
+
+# a re-run keeps a record filed from the same page
+prev = {"source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]}
+check(C.unchanged(prev, {"source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]}) and
+      not C.unchanged(prev, {"source": {"url": "v"}, "coverage": 1.0, "codes_found": ["A1"]}) and
+      not C.unchanged(None, prev), "only a source from the same page, naming the same courses, keeps its record")
+
 # ── the source a full college files keeps the pilot's shape ─────────────────
 reg = {"catalog_url": start, "catalog_year": "2026-2027", "catalog_platform": "courseleaf", "catalog_format": "html_per_program"}
 src = C.source_record("Cerritos College", aa, reg, best, "sitemap_page")
@@ -150,6 +204,27 @@ check(src["source"]["url"].endswith("field-ironworkers-aa/") and src["coverage"]
 miss = C.source_record("Cerritos College", byc["99999"], reg, None, "no_closed_list")
 check(miss["text"] == "" and miss["coverage"] == 0.0 and miss["method"] == "no_closed_list",
       "a program without a page files an empty source the extraction skips")
+
+# ── filing: a capture-only run never replaces the read it did not redo ──────
+import json as _json, tempfile as _tf
+_root = _tf.mkdtemp()
+_saved_dir = C.COLLEGE_DIR
+C.COLLEGE_DIR = _root
+_out = os.path.join(_root, "out")
+os.makedirs(os.path.join(_out, "sources"))
+open(os.path.join(_out, "capture.json"), "w").write(_json.dumps({"college": "Cerritos College"}))
+_dest = os.path.join(_root, "cerritos")
+os.makedirs(os.path.join(_dest, "records"))
+open(os.path.join(_dest, "records", "OLD.json"), "w").write("{}")
+C.file_run("Cerritos College", _out, "1")
+check(os.path.exists(os.path.join(_dest, "capture_preview.json")) and os.path.exists(os.path.join(_dest, "records", "OLD.json")),
+      "a capture-only run files a preview and leaves the filed records alone")
+os.makedirs(os.path.join(_out, "records"))
+open(os.path.join(_out, "records", "NEW.json"), "w").write(_json.dumps({"score": None}))
+C.file_run("Cerritos College", _out, "2")
+check(os.listdir(os.path.join(_dest, "records")) == ["NEW.json"] and not os.path.exists(os.path.join(_dest, "capture_preview.json")),
+      "a run that extracted replaces the records whole, so a program that lost its page loses its record")
+C.COLLEGE_DIR = _saved_dir
 
 # ── shards ──────────────────────────────────────────────────────────────────
 items = list(range(23))
@@ -170,8 +245,9 @@ check(sm["passed_machine_checks"] == 1 and sm["failed"]["arithmetic"] == 1 and s
 # ── the workflow: reads on a push, spends only when asked ───────────────────
 wf = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml")).read()
 check("CENSUS_DELAY_MS: '4000'" in wf, "the capture reads at the census's pace")
-check("[extract]" in wf and "workflow_dispatch" in wf,
-      "the extraction spends model calls only on a dispatch or a commit that asks for it")
+check("startsWith(github.event.head_commit.message, '[extract]')" in wf and "workflow_dispatch" in wf
+      and "contains(github.event.head_commit.message" not in wf,
+      "the extraction spends model calls only on a dispatch or a commit whose message STARTS with [extract]")
 check(wf.count("contents: write") == 1 and 'git push origin "HEAD:${{ github.ref_name }}"' in wf,
       "the run writes only to the branch that ran it")
 check("if: env.EXTRACT == 'true'" in wf and "SUPABASE_SERVICE_KEY" in wf.split("name: Extract and score")[1].split("name: File the run")[0]

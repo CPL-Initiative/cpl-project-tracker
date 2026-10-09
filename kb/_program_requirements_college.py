@@ -59,6 +59,7 @@ PAGE_SIZE = 1000          # PostgREST answers at most this many rows a request
 MAX_PAGES = 900           # program pages read at one college, at most
 FALLBACK_LOADS = 4        # the pilot's link search, per program no page accepted
 MAX_FALLBACKS = 40        # programs given that search in one run (160 loads at most)
+SMALL_LIST = 3            # below this many listed courses, coverage alone cannot pick a page
 COLLEGE_DIR = os.path.join(HERE, "program_requirements_college")
 
 # A sitemap address names the program pages by their path. These words mark a
@@ -174,28 +175,58 @@ def page_codes(text: str) -> set[str]:
             {P.norm_code(a + " " + b) for a, b in CODE_TOKEN_2.findall(t)})
 
 
-def label_score(page: dict, program: dict) -> tuple[int, int]:
-    """(award words named, title words named) by the page's heading, title and
-    address: the tie-break between pages that pass the coverage test."""
+# A CourseLeaf address names the award in its last segment: field-ironworkers-aa,
+# public-health-science-as-t, medical-assistant-certifciate-achievement (the
+# catalog's own spelling), energy-corps-certificate-completion. Read from the
+# address as it stands: the first cut read it with its hyphens turned to spaces,
+# so "aa-t" read as no award at all and the Anthropology A.A. took the A.A.-T's
+# page (run 37961137169).
+SLUG_AWARD = [
+    ("adt", re.compile(r"-a[as]-?t/?$")),
+    ("as", re.compile(r"-as/?$")),
+    ("aa", re.compile(r"-aa/?$")),
+    ("bs", re.compile(r"-bs/?$|bachelor")),
+    ("coa", re.compile(r"certif\w*-(?:of-)?achievement|-coa/?$")),
+    ("noncredit", re.compile(r"certif\w*-(?:of-)?(?:completion|competency)|noncredit")),
+]
+
+
+def slug_award(url: str) -> str | None:
+    """The award an address names in its last segment, or None."""
+    path = urllib.parse.unquote(urllib.parse.urlparse(url or "").path).lower()
+    for kind, pat in SLUG_AWARD:
+        if pat.search(path):
+            return kind
+    return None
+
+
+def label_score(page: dict, program: dict) -> tuple[int, float]:
+    """(1 when the page names the program's award, the share of the program's
+    title words the page names) from its heading, title and address. An address
+    that names an award decides the first: an A.A. program on an A.A.-T page
+    scores 0 though "A.A." appears in "A.A.-T"."""
     words = " ".join([page.get("h1") or "", page.get("title") or "",
                       urllib.parse.unquote(urllib.parse.urlparse(page.get("url") or "").path).replace("-", " ")]).lower()
     kind = P.award_kind(program.get("award"))
-    award_hit = int(any(re.search(p, words) for p in P.AWARD_WORDS.get(kind, [])))
+    named = slug_award(page.get("url") or "")
+    if named:
+        award_hit = int(named == kind)
+    else:
+        award_hit = int(any(re.search(p, words) for p in P.AWARD_WORDS.get(kind, [])))
     tokens = P.title_tokens(program.get("title") or "")
-    title_hit = sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", words))
-    return award_hit, title_hit
+    hits = sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", words))
+    return award_hit, round(hits / len(tokens), 3) if tokens else 0.0
 
 
-def choose_page(program: dict, pages: list[dict]) -> dict | None:
-    """The page this program's record is read from: among the pages naming at
-    least ACCEPT_SHARE of its listed courses, the one whose label names its
-    award, then the most title words, then the highest coverage. None when no
-    page passes."""
+def candidates(program: dict, pages: list[dict]) -> list[dict]:
+    """Every page naming at least ACCEPT_SHARE of the program's listed courses,
+    best first: the page naming its award, then the larger share of its title,
+    then the higher coverage."""
     courses = program["closed_list"]
     if not courses:
-        return None
+        return []
     want = {P.norm_code(c.get("code") or "") for c in courses}
-    best, best_key = None, None
+    out = []
     for pg in pages:
         if len(want & pg["codes"]) < P.ACCEPT_SHARE * len(want) * 0.8:   # the coarse net, with slack
             continue
@@ -205,13 +236,71 @@ def choose_page(program: dict, pages: list[dict]) -> dict | None:
         cov = P.coverage(found, courses)
         if cov < P.ACCEPT_SHARE:
             continue
-        award_hit, title_hit = label_score(pg, program)
-        key = (award_hit, title_hit, round(cov, 3))
-        if best_key is None or key > best_key:
-            best_key = key
-            best = {"url": pg["url"], "coverage": cov, "found": found, "text": text,
-                    "field": field, "got": pg["got"], "label": {"award": award_hit, "title": title_hit}}
-    return best
+        award_hit, title = label_score(pg, program)
+        if len(want) < SMALL_LIST and title < 0.5:
+            continue   # a list this short names its courses on many pages; the page must name the program too
+        out.append({"url": pg["url"], "coverage": cov, "found": found, "text": text, "field": field,
+                    "got": pg["got"], "label": {"award": award_hit, "title": title},
+                    "key": (award_hit, title, round(cov, 3))})
+    out.sort(key=lambda c: c["key"], reverse=True)
+    return out
+
+
+def choose_page(program: dict, pages: list[dict]) -> dict | None:
+    """The program's best page, ignoring the other programs (assign() decides
+    between them)."""
+    c = candidates(program, pages)
+    return c[0] if c else None
+
+
+def page_winners(claims: list[tuple[str, dict]]) -> set[str]:
+    """Which of the programs claiming one page keep it. Those whose award the
+    page names, and among them the ones it names most fully: two state records
+    of one catalog program (Public Health and Public Health Science, both A.S.-T,
+    every title word named) share it; Culinary Arts: Professional Cooking A.S.
+    loses the Culinary Arts Management A.S. page. When the page names no
+    claimant's award, the one it names most fully keeps it, more listed courses
+    breaking a tie."""
+    named = [(cn, c) for cn, c in claims if c["label"]["award"]]
+    if named:
+        top = max(c["label"]["title"] for _, c in named)
+        return {cn for cn, c in named if c["label"]["title"] == top}
+    best = max(claims, key=lambda x: (x[1]["label"]["title"], x[1]["coverage"], len(x[1]["found"]), -int(x[0]) if x[0].isdigit() else 0))
+    return {best[0]}
+
+
+def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
+    """Each program's page, a page going only to the programs page_winners()
+    lets keep it. A program that loses moves to its next page and tries again;
+    one with none left is read from no page, and says which page went to whom
+    (method page_claimed), so a sibling's requirements never stand in for its own.
+    Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
+    ranked = {p["control_number"]: candidates(p, pages) for p in programs if p["closed_list"]}
+    pos = {cn: 0 for cn in ranked}
+    lost: dict[str, list[str]] = {}
+    for _ in range(12):
+        by_page: dict[str, list[tuple[str, dict]]] = {}
+        for cn, cands in ranked.items():
+            if pos[cn] < len(cands):
+                c = cands[pos[cn]]
+                by_page.setdefault(c["url"], []).append((cn, c))
+        moved = False
+        for url, claims in by_page.items():
+            if len(claims) < 2:
+                continue
+            keep = page_winners(claims)
+            for cn, _ in claims:
+                if cn not in keep:
+                    lost.setdefault(cn, []).append(url)
+                    pos[cn] += 1
+                    moved = True
+        if not moved:
+            break
+    out = {}
+    for cn, cands in ranked.items():
+        best = cands[pos[cn]] if pos[cn] < len(cands) else None
+        out[cn] = {"best": best, "lost": lost.get(cn, [])}
+    return out
 
 
 def source_record(college: str, program: dict, reg: dict, best: dict | None, method: str) -> dict:
@@ -342,12 +431,22 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         report["pages_read"] = len(pages)
         recs, fallback = [], 0
         P.MAX_LOADS = FALLBACK_LOADS      # the link search, shorter here: most programs already have a page
+        given = assign(programs, pages)
         for prog in programs:
             if not prog["closed_list"]:
                 rec = source_record(college, prog, reg, None, "no_closed_list")
             else:
-                best = choose_page(prog, pages)
-                method = "sitemap_page"
+                g = given.get(prog["control_number"]) or {}
+                best, method = g.get("best"), "sitemap_page"
+                if best is None and g.get("lost"):
+                    # Its pages went to programs they name more fully; the link
+                    # search would only find one of them again.
+                    rec = source_record(college, prog, reg, None, "page_claimed")
+                    rec["lost_pages"] = g["lost"]
+                    recs.append(rec)
+                    _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
+                    print("%-6s page_claimed %s" % (prog["control_number"], g["lost"][0]), flush=True)
+                    continue
                 if best is None and fallback < MAX_FALLBACKS:
                     fallback += 1
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
@@ -375,6 +474,8 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         shared_pages={u: cns for u, cns in urls_used.items() if len(cns) > 1},
         not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"]}
                    for r in recs if r["method"] == "not_found"],
+        page_claimed=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
+                       "pages": r.get("lost_pages")} for r in recs if r["method"] == "page_claimed"],
         coverage_bands={band: sum(1 for r in recs if r.get("source") and lo <= r["coverage"] < hi)
                         for band, lo, hi in (("0.5-0.8", .5, .8), ("0.8-1.0", .8, 1.0), ("1.0", 1.0, 9))})
     _write(os.path.join(out_dir, "capture.json"), report)
@@ -382,7 +483,16 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
     return 0
 
 
-def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6) -> int:
+def unchanged(prev: dict | None, src: dict) -> bool:
+    """A source read from the same page as the filed one, naming the same
+    courses, so the filed record still stands and the model need not be asked
+    again."""
+    return bool(prev) and (prev.get("source") or {}).get("url") == (src.get("source") or {}).get("url") \
+        and prev.get("coverage") == src.get("coverage") and prev.get("codes_found") == src.get("codes_found")
+
+
+def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,
+            keep_from: str | None = None) -> int:
     import _program_requirements_extract as X
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:
@@ -394,8 +504,25 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             src = json.load(fh)
         if (src.get("coverage") or 0) >= X.MIN_COVERAGE and src.get("text"):
             sources.append(src)
-    mine = shard_of(sources, shard, shards)
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    # A record filed from the same page stays: only a program whose page
+    # changed, or that has no record, goes to the model again.
+    kept = 0
+    if keep_from and os.path.isfile(os.path.join(keep_from, "sources.json")):
+        with open(os.path.join(keep_from, "sources.json")) as fh:
+            prev = {x["control_number"]: x for x in json.load(fh)}
+        fresh = []
+        for src in sources:
+            path = os.path.join(keep_from, "records", src["control_number"] + ".json")
+            if unchanged(prev.get(src["control_number"]), src) and os.path.isfile(path):
+                with open(path) as fh:
+                    _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
+                kept += 1
+            else:
+                fresh.append(src)
+        sources = fresh
+        print("kept %d records filed from the same page" % kept, flush=True)
+    mine = shard_of(sources, shard, shards)
     print("extraction, shard %d of %d: %d of %d sources, %d at a time"
           % (shard + 1, shards, len(mine), len(sources), workers), flush=True)
 
@@ -444,12 +571,25 @@ def summarize(records: list[dict], capture_report: dict) -> dict:
 
 
 def file_run(college: str, out_dir: str, run_id: str | None) -> int:
-    """Copy the run's records and account into the repository."""
+    """Copy the run's records and account into the repository. A run that
+    extracted replaces the records, sources and summary together, so the three
+    always describe one read; a capture-only run files its account alone, as
+    capture_preview.json, beside the read it has not replaced."""
     dest = os.path.join(COLLEGE_DIR, slug_of(college))
-    os.makedirs(os.path.join(dest, "records"), exist_ok=True)
     with open(os.path.join(out_dir, "capture.json")) as fh:
         report = json.load(fh)
     report["run"] = run_id
+    if not os.path.isdir(os.path.join(out_dir, "records")):
+        os.makedirs(dest, exist_ok=True)
+        _write(os.path.join(dest, "capture_preview.json"), report)
+        print("capture only: filed capture_preview.json under %s" % os.path.relpath(dest, os.path.dirname(HERE)))
+        return 0
+    os.makedirs(os.path.join(dest, "records"), exist_ok=True)
+    for old in glob.glob(os.path.join(dest, "records", "*.json")):
+        os.remove(old)
+    preview = os.path.join(dest, "capture_preview.json")
+    if os.path.exists(preview):
+        os.remove(preview)
     records = []
     for path in sorted(glob.glob(os.path.join(out_dir, "records", "*.json"))):
         with open(path) as fh:
@@ -488,13 +628,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--shard", type=int, default=0)
     ap.add_argument("--shards", type=int, default=1)
     ap.add_argument("--workers", type=int, default=6, help="extraction calls at once")
+    ap.add_argument("--fresh", action="store_true", help="extract every program, keeping no filed record")
     ap.add_argument("--limit", type=int, default=0, help="the first N programs only (a trial)")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
     args = ap.parse_args(argv)
     if args.step == "capture":
         return capture(args.college, args.out, args.limit)
     if args.step == "extract":
-        return extract(args.out, args.shard, args.shards, args.run, args.workers)
+        keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
+        return extract(args.out, args.shard, args.shards, args.run, args.workers, keep)
     return file_run(args.college, args.out, args.run)
 
 
