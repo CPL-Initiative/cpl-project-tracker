@@ -217,7 +217,7 @@
           th.setAttribute('aria-expanded', anyOpen ? 'false' : 'true');
         }
       }
-      btn.textContent = anyOpen ? '⊞ Expand all' : '⊟ Collapse all';
+      btn.textContent = anyOpen ? 'Expand all' : 'Collapse all';
     });
   }
 

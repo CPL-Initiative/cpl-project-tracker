@@ -30,6 +30,13 @@
 //
 //  (e) CONTRAST. Every foreground/background pair the page actually paints,
 //      against AA 4.5:1 text / 3:1 non-text, computed — not asserted.
+//  (f) THE S350 UI PASS. The harness found 141 targets under 24px (the
+//      statewide-recs toggles at 21px, resource titles at 18, team emails and
+//      links in running text at 15-18) and the action bar pinned at 200px of a
+//      390px phone. First Light: four raw hex in factsheet.css, hex fallbacks in
+//      the injected CSS, and the recs toggle reading an --accent token this page
+//      never defines (it painted #1c5d99). Three toolbar glyphs (the glyph sweep
+//      never read this page's HTML) became words.
 //
 // Run from repo root: `npm test` (or `node tests/factsheet_a11y.test.js`).
 const fs = require("fs");
@@ -166,6 +173,34 @@ check("decorative mustard rules are still only decorative (no text uses --mustar
   // Anchored: an unanchored /color:/ also matches `outline-color`, which is the
   // focus ring — non-text, verified at 3:1 above, and not a decorative rule at all.
   !/(^|[;{\s])color:\s*var\(--mustard-fill\)/m.test(CSS));
+
+// ── (f) the S350 UI pass ──
+const RECS = fs.readFileSync("fact-sheet/statewide_recs_render.js", "utf8");
+const STORIES_R = fs.readFileSync("fact-sheet/cpl_stories_render.js", "utf8");
+const EDIT = fs.readFileSync("fact-sheet/factsheet_edit.js", "utf8");
+const SRA = fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8");
+const HEX = /#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?\b/;
+const cssNoComments = CSS.replace(/\/\*[\s\S]*?\*\//g, "");
+check("factsheet.css: every color outside :root is a token (no raw hex)",
+  !/:[^;{}]*#[0-9a-fA-F]{3,8}\b/.test(cssNoComments.replace(/:root[^{]*\{[^}]*\}/g, "")));
+check("the injected CSS of the recs list, the stories and the editor carries no raw hex",
+  !HEX.test(RECS) && !HEX.test(STORIES_R) && !HEX.test(EDIT));
+check("Sierra's question bubble names its text color as a token",
+  /\.fs-sra-user \.fs-sra-bubble\{background:var\(--seal-blue\);color:var\(--on-seal\);/.test(SRA));
+check("the recs toggle uses First Light's link blue, never the undefined --accent",
+  /\.sw-rec-tg\{[^}]*color:var\(--cobalt\)/.test(RECS) && !/--accent/.test(RECS));
+check("the recs toggle reaches the 24px floor", /\.sw-rec-tg\{[^}]*min-height:24px/.test(RECS));
+check("resource titles reach 24px", /\.res a\.res-title \{[^}]*min-height: 24px/.test(CSS));
+check("team emails reach 24px", /\.person \.pe a \{[^}]*min-height: 24px/.test(CSS));
+check("links in running text get a 24px pressable box without moving the line",
+  /\.mh-text \.sub a, \.note a, figure figcaption a, h3\.h-sub a \{ padding-block: 5px; \}/.test(CSS));
+check("the action bar scrolls away on a phone instead of pinning 200px",
+  /@media \(max-width: 560px\) \{ \.actionbar \{ position: static; \} \}/.test(CSS));
+const GLYPH = /[\u{1F300}-\u{1FAFF}\u2190-\u21FF\u2300-\u23FF\u2600-\u27BF\u2B00-\u2BFF\u229E-\u22A1]/u;
+check("the toolbar's controls are words (the Curate pencil is one of the 26 Sam kept)",
+  [...d.querySelectorAll(".actionbar button")].filter((b) => b.id !== "btn-curate")
+    .every((b) => !GLYPH.test(b.textContent)) &&
+  /btn\.textContent = anyOpen \? 'Expand all' : 'Collapse all';/.test(JS));
 
 // ── report ──
 let failed = 0;

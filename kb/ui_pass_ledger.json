@@ -30,8 +30,8 @@
    "name": "Fact Sheet",
    "page": "fact-sheet/index.html",
    "audience": "public",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-09",
+   "outcome": "First pass (S350): 141 targets under 24px fixed (recs toggles, resource titles, team emails, links in running text), the action bar no longer pins 200px of a phone, raw hex and injected hex fallbacks became tokens, the recs toggle's undefined --accent became --cobalt, three toolbar glyphs became words; wiring agrees with live_metrics.json and the veteran map. Open: the type (Cambria and Calibri, for the Word download) and no dark mode; Sheet 56 asks Sam whether to mock it up on First Light."
   },
   {
    "id": "privacy",

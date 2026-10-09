@@ -73,19 +73,19 @@
     if (document.getElementById('sw-rec-css')) return;
     var css = ''
       + '.sw-rec{display:block;margin:3px 0 2px;}'
-      + '.sw-rec-tg{font:inherit;font-size:.78rem;color:var(--accent,#1c5d99);background:none;border:0;'
-        + 'padding:1px 0;cursor:pointer;display:inline-flex;align-items:center;gap:4px;}'
+      + '.sw-rec-tg{font:inherit;font-size:.78rem;color:var(--cobalt);background:none;border:0;'
+        + 'padding:1px 0;min-height:24px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;}'
       + '.sw-rec-tg:hover{text-decoration:underline;}'
       + '.sw-rec-tg .sw-rec-ar{font-size:.7rem;transition:transform .12s;}'
       + '.sw-rec-tg[aria-expanded="true"] .sw-rec-ar{transform:rotate(90deg);}'
       + '.sw-rec-list{list-style:none;margin:4px 0 6px;padding:6px 0 4px 14px;'
-        + 'border-left:2px solid var(--border-strong,#d9d4c8);}'
-      + '.sw-rec-list li{margin:2px 0;font-size:.8rem;line-height:1.4;color:var(--muted,#555);}'
+        + 'border-left:2px solid var(--border-strong);}'
+      + '.sw-rec-list li{margin:2px 0;font-size:.8rem;line-height:1.4;color:var(--muted);}'
       + '.sw-rec-cid{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.02em;'
-        + 'color:var(--ink,#1a1a2e);background:var(--surface-muted,#f0ede6);'
-        + 'border:1px solid var(--border-strong,#d9d4c8);border-radius:4px;padding:0 4px;margin-right:2px;}'
-      + '.sw-rec-t{color:var(--ink,#1a1a2e);}'
-      + '.sw-rec-u{color:var(--muted,#555);white-space:nowrap;}'
+        + 'color:var(--ink);background:var(--surface-muted);'
+        + 'border:1px solid var(--border-strong);border-radius:4px;padding:0 4px;margin-right:2px;}'
+      + '.sw-rec-t{color:var(--ink);}'
+      + '.sw-rec-u{color:var(--muted);white-space:nowrap;}'
       // Print: show every rec list (collapsed-on-screen detail is irrelevant on paper).
       + '@media print{.sw-rec-list{display:block!important;}.sw-rec-tg{display:none;}}';
     var st = document.createElement('style');

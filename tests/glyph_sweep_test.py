@@ -48,6 +48,15 @@ check("a hint string classifies as status",
 check("anything else is decoration",
       gs.classify('var legend = "★ means adopted";') == "decoration")
 
+# ── what counts as a glyph (S350: the squared operators, the standalone pages) ─
+check("⊟ and ⊞ are glyphs (the Fact Sheet's Collapse all wore one, unseen until S350)",
+      gs.EMOJI.search("⊟ Collapse all") and gs.EMOJI.search("⊞ Expand all"))
+check("the rest of the math block is typography: − ≤ ≥ are not glyphs",
+      not gs.EMOJI.search("a − b ≤ c ≥ d"))
+check("× and · stay typography", not gs.EMOJI.search("3 × 4 · 5"))
+check("the standalone pages' own markup is read, not only the .js beside it",
+      "fact-sheet/index.html" in gs.targets() and "sierra/index.html" in gs.targets())
+
 # ── ⭐ the rewrite envelope: what it strips ─────────────────────────────────
 check("strips a leading glyph and its space from a label",
       rewrite('btn.textContent = "\U0001F513 Unlock editing";')
