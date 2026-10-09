@@ -289,7 +289,7 @@ try:
     def rec(key, **kw):
         base = {"college": "Cerritos College", "control_number": key, "title": "T" + key, "award": "A.S. Degree",
                 "source_url": "https://example.edu/" + key, "extracted_run": "37961137169", "error": None,
-                "score": {"coverage": {"pass": True}, "invented": {"pass": True},
+                "score": {"coverage": {"pass": True, "placed": 11, "listed": 12}, "invented": {"pass": True},
                           "arithmetic": {"status": "equal"}, "pass": True},
                 "record": {"program": {"measure": "units", "total_units": {"min": 18, "max": 18.5}},
                            "blocks": [{"rule": "all", "courses": []}], "notes": "the model's working",
@@ -315,8 +315,9 @@ try:
     check([r["extracted_run"] for r in rows] == ["37961137169", "37966828676"],
           "each row keeps the extraction run that read it, so a record kept from an earlier run says so")
     check(set(rows[0]["record"]) == {"program", "blocks"} and rows[0]["catalog_year"] == "2026-2027"
-          and rows[0]["checks"] == {"coverage": True, "invented": True, "arithmetic": "equal"},
-          "a row carries the record as a reader renders it (no working notes), the year, and the three checks")
+          and rows[0]["checks"] == {"coverage": True, "invented": True, "arithmetic": "equal", "placed": 11, "listed": 12},
+          "a row carries the record as a reader renders it (no working notes), the year, the three checks, "
+          "and the scorer's placed and listed counts for the Records view")
 
     posted = []
 

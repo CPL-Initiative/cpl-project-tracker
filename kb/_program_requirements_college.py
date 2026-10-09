@@ -673,9 +673,13 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
             "source_url": rec.get("source_url"), "measure": program.get("measure") or "units",
             "total_min": total.get("min"), "total_max": total.get("max"),
             "record": record_read(record),
+            # The scorer's counts ride with the three checks, so the Records view can say
+            # "N of M placed" before a display build reaches the college (S354).
             "checks": {"coverage": (score.get("coverage") or {}).get("pass"),
                        "invented": (score.get("invented") or {}).get("pass"),
-                       "arithmetic": (score.get("arithmetic") or {}).get("status")},
+                       "arithmetic": (score.get("arithmetic") or {}).get("status"),
+                       "placed": (score.get("coverage") or {}).get("placed"),
+                       "listed": (score.get("coverage") or {}).get("listed")},
             "extracted_run": run})
     return rows, skipped
 
