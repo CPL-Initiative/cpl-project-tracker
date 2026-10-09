@@ -868,6 +868,9 @@
     ".cplfund-colmenu > summary::-webkit-details-marker { display: none; }",
     ".cplfund-colmenu > summary::marker { content: ''; }",
     ".cplfund-colmenu-panel { position: absolute; z-index: 30; top: 100%; left: 0; margin-top: 4px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 9px 11px; box-shadow: 0 3px 12px rgba(0,0,0,.14); min-width: 180px; max-height: 320px; overflow-y: auto; display: grid; gap: 4px; }",
+    // Hung from the summary's right edge instead where the left-hung panel would
+    // pass the viewport (placeColMenu below decides, per width).
+    ".cplfund-colmenu.cplfund-colmenu-end > .cplfund-colmenu-panel { left: auto; right: 0; }",
     ".cplfund-colmenu-h { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; }",
     /* ⚠ THE FLOOR GOES ON THE LABEL HERE, AND THAT IS THE OPPOSITE OF THE
        OPT-IN FIELDS ABOVE — the difference is which box the engine MEASURES. A
@@ -13266,6 +13269,27 @@
     (function () {
       var menu = document.querySelector(".cplfund-colmenu");
       if (!menu) return;
+      // ⚠️ AND IT OPENS ON THE SCREEN (S351, the explainer's UI pass). The panel
+      // hangs from the summary's left edge, and where the toolbar sets Columns
+      // toward the right (the explainer at 560px: measured 53px past the edge)
+      // it opened off the page and the page scrolled sideways. Placed on every
+      // render, open and resize: hung from the right edge when the left-hung
+      // panel would pass the viewport and the right-hung one fits.
+      var place = function () {
+        var panel = menu.querySelector(".cplfund-colmenu-panel");
+        var sum = menu.querySelector("summary");
+        if (!panel || !sum) return;
+        menu.classList.remove("cplfund-colmenu-end");
+        var r = panel.getBoundingClientRect();
+        if (!r.width) return;   // not laid out while shut in this browser: placed again on open
+        var vw = document.documentElement.clientWidth || window.innerWidth;
+        if (r.right > vw - 8 && sum.getBoundingClientRect().right - r.width >= 8) {
+          menu.classList.add("cplfund-colmenu-end");
+        }
+      };
+      place();
+      menu.addEventListener("toggle", function () { if (menu.open) place(); });
+      window.addEventListener("resize", place);
       var onDown = function (e) {
         if (!menu.open) return;
         if (menu.contains(e.target)) return;      // inside: a checkbox, or the summary's own toggle
@@ -13285,6 +13309,7 @@
       COLMENU_OFF = [function () {
         document.removeEventListener("mousedown", onDown, true);
         document.removeEventListener("keydown", onKey, true);
+        window.removeEventListener("resize", place);
       }];
     })();
 
