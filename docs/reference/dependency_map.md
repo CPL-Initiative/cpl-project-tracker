@@ -581,6 +581,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/preseed_out/2026-07-07/live_values.json` | scripts: `kb/_preseed_unclassified.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml` |
+| `kb/program_requirements_college/cerritos/capture.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py` | — |
 | `kb/program_requirements_pilot/registry_read.json` | scripts: `kb/_build_roep_display.py` | — |
@@ -689,7 +690,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `nav_groups.js` | pages: `CPL_Dashboard.html` | — |
 | `nav_overlay.js` | pages: `CPL_Dashboard.html` | — |
 | `nc_learning_partners.js` | pages: `CPL_Dashboard.html` | — |
-| `news/sources.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `nudges/team_directory.json` | scripts: `nudges/build_nudges.py` | — |
 | `our_process.js` | pages: `CPL_Dashboard.html` | — |
 | `package.json` | scripts: `kb/doctrine.py` | — |
