@@ -579,15 +579,15 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--navy-primary);
-            opacity: 0.6;
+            /* --text-muted, not ink dimmed to 60%, which blended to #72726E on
+               paper, 4.33:1 (S352 UI pass). Same for the two rules below. */
+            color: var(--text-muted);
         }
 
         .kpi-section-header .kpi-section-updated {
             font-size: 0.7rem;
             font-weight: 500;
-            color: var(--navy-primary);
-            opacity: 0.55;
+            color: var(--text-muted);
             margin-left: auto;
             margin-right: 0.75rem;
             letter-spacing: 0.2px;
@@ -595,8 +595,7 @@
 
         .kpi-section-header .kpi-toggle-arrow {
             font-size: 0.65rem;
-            color: var(--navy-primary);
-            opacity: 0.5;
+            color: var(--text-muted);
             transition: transform 0.2s ease;
         }
 
@@ -1163,6 +1162,9 @@
         .tab-teaser-card p { margin: 0; font-size: 0.82rem; color:var(--text-muted); line-height: 1.4; flex: 1; }
         .tab-teaser-link {
             display: inline-block;
+            /* 24px tall (WCAG 2.5.8; the line box measured 19.9px, S352 UI pass). */
+            min-height: 24px;
+            padding-block: 2px;
             margin-top: 0.4rem;
             font-size: 0.78rem;
             font-weight: 700;
@@ -3953,7 +3955,9 @@
     z-index: 2;
 }
 .exhibit-table th {
-    background: var(--surface-muted);
+    /* --surface-subtle under the mustard label: on --surface-muted it read
+       4.25:1, on this fill 4.73:1 (S352 UI pass). */
+    background: var(--surface-subtle);
     color: var(--mustard-text);
     font-size: 0.65rem;
     font-weight: 600;
@@ -4213,15 +4217,21 @@
 
 
 /* ═══ Collapsible Algorithm Descriptions ═══ */
+/* Every panel reads theme tokens (S352 UI pass). The base rules once assumed a
+   dark ink card (white-alpha text, a mustard tint), and the cards that kept
+   them, the two trend cards and the seven exhibit cards, now paint the opaque
+   surface: in light their "How this is calculated" read white on white (1:1),
+   and in dark the summary sat at 4.41:1. Text roles: muted for the summary and
+   the meta line, body for the explanation, mustard-text for the labels. */
 .algo-details {
     margin-top: 0.6rem;
     padding-top: 0.4rem;
-    border-top: 1px dashed rgba(255,255,255,0.12);
+    border-top: 1px dashed var(--border);
     font-size: 0.72rem;
 }
 .algo-details summary {
     cursor: pointer;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-muted);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -4239,44 +4249,32 @@
     display: inline-block;
     font-size: 0.65rem;
     transition: transform 0.15s ease;
-    color: rgba(227,179,65,0.7);
+    color: var(--mustard-text);
 }
 .algo-details[open] summary::before { transform: rotate(90deg); }
-.algo-details summary:hover { color: rgba(227,179,65,0.9); }
-.algo-details[open] summary { color: var(--gold-accent); }
+.algo-details summary:hover { color: var(--text-strong); }
+.algo-details[open] summary { color: var(--mustard-text); }
 .algo-details .algo-body {
     padding: 0.55rem 0 0.3rem;
-    color: rgba(255,255,255,0.72);
+    color: var(--text-body);
     line-height: 1.55;
 }
 .algo-details .algo-row { margin-bottom: 0.35rem; }
 .algo-details .algo-label {
     font-weight: 700;
-    color: rgba(227,179,65,0.9);
+    color: var(--mustard-text);
     margin-right: 0.3rem;
     text-transform: uppercase;
     font-size: 0.62rem;
     letter-spacing: 0.4px;
 }
-.algo-details .algo-value { color: rgba(255,255,255,0.78); }
+.algo-details .algo-value { color: var(--text-body); }
 .algo-details .algo-meta {
     margin-top: 0.6rem;
     font-size: 0.62rem;
-    color: rgba(255,255,255,0.35);
+    color: var(--text-muted);
     font-style: italic;
 }
-/* First Light (PR-2): headline KPI cards are light glass — algo text flips
-   to the ink scale there. The class-less dark cards (trend, College
-   Activity) keep the white-alpha base above. */
-.kpi-card .algo-details { border-top: 1px dashed var(--border); }
-.kpi-card .algo-details summary { color: var(--text-muted); }
-.kpi-card .algo-details summary::before { color: var(--mustard-text); }
-.kpi-card .algo-details summary:hover { color: var(--text-strong); }
-.kpi-card .algo-details[open] summary { color: var(--mustard-text); }
-.kpi-card .algo-details .algo-body { color: var(--text-body); }
-.kpi-card .algo-details .algo-label { color: var(--mustard-text); }
-.kpi-card .algo-details .algo-value { color: var(--text-body); }
-.kpi-card .algo-details .algo-meta { color: var(--text-muted); }
 /* ═══ End Collapsible Algorithm Descriptions ═══ */
 
 </style>
@@ -4548,7 +4546,7 @@
         </div>
         <span style="font-size:0.65rem;color:var(--text-muted);">Tracking since 2026-04-14 &nbsp;·&nbsp; 179 daily snapshots</span>
       </div>
-      <div style="overflow-x:auto;">
+      <div style="overflow-x:auto;" tabindex="0" role="region" aria-label="KPI Trends">
         <table style="width:100%;border-collapse:collapse;">
           <thead><tr><th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:left;">Metric</th><th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:right;">Today</th><th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">1d</th><th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">7d</th><th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">30d</th><th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">QTD</th><th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;white-space:nowrap;">1yr</th><th style="font-size:0.65rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;padding:0.2rem 0.5rem;text-align:center;">30-Day Trend</th></tr></thead>
           <tbody><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:var(--text-body);white-space:nowrap;border-top:1px solid var(--border);">CPL Students</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:var(--mustard-text);text-align:right;white-space:nowrap;border-top:1px solid var(--border);">54,736</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲4.5%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲6.9%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲4.6%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid var(--border);"><svg width="110" height="30" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B6800" stop-opacity="0.25"/><stop offset="100%" stop-color="#8B6800" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,26.0 L 4.0,26.0 L 7.5,25.2 L 11.0,24.7 L 14.6,24.7 L 18.1,24.7 L 21.6,24.2 L 25.1,23.9 L 28.6,23.5 L 32.1,23.0 L 35.7,22.8 L 39.2,22.8 L 42.7,22.8 L 46.2,22.7 L 49.7,22.3 L 53.2,21.6 L 56.8,21.2 L 60.3,20.9 L 63.8,20.9 L 67.3,20.8 L 70.8,19.4 L 74.3,19.4 L 77.9,19.2 L 81.4,19.1 L 84.9,19.1 L 88.4,18.9 L 91.9,18.7 L 95.4,18.4 L 99.0,16.6 L 102.5,4.1 L 106.0,4.0 L 106.0,26.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,26.0 L 7.5,25.2 L 11.0,24.7 L 14.6,24.7 L 18.1,24.7 L 21.6,24.2 L 25.1,23.9 L 28.6,23.5 L 32.1,23.0 L 35.7,22.8 L 39.2,22.8 L 42.7,22.8 L 46.2,22.7 L 49.7,22.3 L 53.2,21.6 L 56.8,21.2 L 60.3,20.9 L 63.8,20.9 L 67.3,20.8 L 70.8,19.4 L 74.3,19.4 L 77.9,19.2 L 81.4,19.1 L 84.9,19.1 L 88.4,18.9 L 91.9,18.7 L 95.4,18.4 L 99.0,16.6 L 102.5,4.1 L 106.0,4.0" fill="none" stroke="#8B6800" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="#8B6800"/></svg></td></tr><tr><td style="padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;color:var(--text-muted);white-space:nowrap;border-top:1px solid rgba(28,28,26,0.05);">↳ Military</td><td style="padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;color:var(--text-muted);text-align:right;white-space:nowrap;border-top:1px solid rgba(28,28,26,0.05);">  28,902</td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲0.1%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲1.0%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲4.1%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲1.1%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--text-muted);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.8rem;border-top:1px solid rgba(28,28,26,0.05);"><svg width="110" height="20" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(139,104,0,0.55)" stop-opacity="0.25"/><stop offset="100%" stop-color="rgba(139,104,0,0.55)" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,16.0 L 4.0,16.0 L 7.5,14.7 L 11.0,13.8 L 14.6,13.8 L 18.1,13.8 L 21.6,13.0 L 25.1,12.4 L 28.6,11.9 L 32.1,11.1 L 35.7,10.8 L 39.2,10.8 L 42.7,10.7 L 46.2,10.5 L 49.7,10.2 L 53.2,9.1 L 56.8,8.9 L 60.3,8.4 L 63.8,8.4 L 67.3,8.3 L 70.8,7.6 L 74.3,7.6 L 77.9,7.4 L 81.4,7.2 L 84.9,7.2 L 88.4,7.1 L 91.9,6.7 L 95.4,6.4 L 99.0,4.4 L 102.5,4.2 L 106.0,4.0 L 106.0,16.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,16.0 L 7.5,14.7 L 11.0,13.8 L 14.6,13.8 L 18.1,13.8 L 21.6,13.0 L 25.1,12.4 L 28.6,11.9 L 32.1,11.1 L 35.7,10.8 L 39.2,10.8 L 42.7,10.7 L 46.2,10.5 L 49.7,10.2 L 53.2,9.1 L 56.8,8.9 L 60.3,8.4 L 63.8,8.4 L 67.3,8.3 L 70.8,7.6 L 74.3,7.6 L 77.9,7.4 L 81.4,7.2 L 84.9,7.2 L 88.4,7.1 L 91.9,6.7 L 95.4,6.4 L 99.0,4.4 L 102.5,4.2 L 106.0,4.0" fill="none" stroke="rgba(139,104,0,0.55)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="rgba(139,104,0,0.55)"/></svg></td></tr><tr><td style="padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;color:var(--text-muted);white-space:nowrap;border-top:1px solid rgba(28,28,26,0.05);">↳ Workforce / Other</td><td style="padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;color:var(--text-muted);text-align:right;white-space:nowrap;border-top:1px solid rgba(28,28,26,0.05);">  25,928</td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--text-muted);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲8.8%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲10.3%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲8.8%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--text-muted);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.8rem;border-top:1px solid rgba(28,28,26,0.05);"><svg width="110" height="20" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(139,104,0,0.55)" stop-opacity="0.25"/><stop offset="100%" stop-color="rgba(139,104,0,0.55)" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,16.0 L 4.0,16.0 L 7.5,16.0 L 11.0,16.0 L 14.6,16.0 L 18.1,16.0 L 21.6,16.0 L 25.1,15.9 L 28.6,15.9 L 32.1,15.9 L 35.7,15.9 L 39.2,15.9 L 42.7,15.9 L 46.2,15.8 L 49.7,15.7 L 53.2,15.7 L 56.8,15.4 L 60.3,15.4 L 63.8,15.4 L 67.3,15.4 L 70.8,14.6 L 74.3,14.6 L 77.9,14.5 L 81.4,14.5 L 84.9,14.5 L 88.4,14.4 L 91.9,14.4 L 95.4,14.3 L 99.0,13.8 L 102.5,4.0 L 106.0,4.0 L 106.0,16.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,16.0 L 7.5,16.0 L 11.0,16.0 L 14.6,16.0 L 18.1,16.0 L 21.6,16.0 L 25.1,15.9 L 28.6,15.9 L 32.1,15.9 L 35.7,15.9 L 39.2,15.9 L 42.7,15.9 L 46.2,15.8 L 49.7,15.7 L 53.2,15.7 L 56.8,15.4 L 60.3,15.4 L 63.8,15.4 L 67.3,15.4 L 70.8,14.6 L 74.3,14.6 L 77.9,14.5 L 81.4,14.5 L 84.9,14.5 L 88.4,14.4 L 91.9,14.4 L 95.4,14.3 L 99.0,13.8 L 102.5,4.0 L 106.0,4.0" fill="none" stroke="rgba(139,104,0,0.55)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="rgba(139,104,0,0.55)"/></svg></td></tr><tr><td style="padding:0.15rem 0.5rem 0.15rem 1.2rem;font-size:0.68rem;color:var(--text-muted);white-space:nowrap;border-top:1px solid rgba(28,28,26,0.05);">↳ Apprentice</td><td style="padding:0.15rem 0.5rem;font-size:0.68rem;font-weight:600;color:var(--text-muted);text-align:right;white-space:nowrap;border-top:1px solid rgba(28,28,26,0.05);">  949</td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--text-muted);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲11.3%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲11.5%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--hunter);font-size:0.62rem;font-weight:700;white-space:nowrap;">▲11.3%</span></td><td style="padding:0.15rem 0.5rem;text-align:center;border-top:1px solid rgba(28,28,26,0.05);"><span style="color:var(--text-muted);font-size:0.62rem;">—</span></td><td style="padding:0.15rem 0.8rem;border-top:1px solid rgba(28,28,26,0.05);"><svg width="110" height="20" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(139,104,0,0.55)" stop-opacity="0.25"/><stop offset="100%" stop-color="rgba(139,104,0,0.55)" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,16.0 L 4.0,15.9 L 7.5,15.9 L 11.0,15.9 L 14.6,15.9 L 18.1,15.9 L 21.6,15.9 L 25.1,15.9 L 28.6,15.9 L 32.1,15.9 L 35.7,15.9 L 39.2,15.9 L 42.7,16.0 L 46.2,16.0 L 49.7,15.9 L 53.2,15.9 L 56.8,15.9 L 60.3,15.9 L 63.8,15.9 L 67.3,15.6 L 70.8,15.6 L 74.3,15.6 L 77.9,15.6 L 81.4,15.6 L 84.9,15.6 L 88.4,15.6 L 91.9,15.6 L 95.4,15.3 L 99.0,4.1 L 102.5,4.0 L 106.0,4.0 L 106.0,16.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,15.9 L 7.5,15.9 L 11.0,15.9 L 14.6,15.9 L 18.1,15.9 L 21.6,15.9 L 25.1,15.9 L 28.6,15.9 L 32.1,15.9 L 35.7,15.9 L 39.2,15.9 L 42.7,16.0 L 46.2,16.0 L 49.7,15.9 L 53.2,15.9 L 56.8,15.9 L 60.3,15.9 L 63.8,15.9 L 67.3,15.6 L 70.8,15.6 L 74.3,15.6 L 77.9,15.6 L 81.4,15.6 L 84.9,15.6 L 88.4,15.6 L 91.9,15.6 L 95.4,15.3 L 99.0,4.1 L 102.5,4.0 L 106.0,4.0" fill="none" stroke="rgba(139,104,0,0.55)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="rgba(139,104,0,0.55)"/></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:var(--text-body);white-space:nowrap;border-top:1px solid var(--border);">Credit Recs</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:var(--mustard-text);text-align:right;white-space:nowrap;border-top:1px solid var(--border);">14,165</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲0.2%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲1.3%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲6.7%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲1.6%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid var(--border);"><svg width="110" height="30" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B6800" stop-opacity="0.25"/><stop offset="100%" stop-color="#8B6800" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,26.0 L 4.0,26.0 L 7.5,25.9 L 11.0,25.8 L 14.6,25.6 L 18.1,25.6 L 21.6,25.6 L 25.1,25.5 L 28.6,25.3 L 32.1,25.0 L 35.7,24.7 L 39.2,24.3 L 42.7,24.2 L 46.2,24.9 L 49.7,23.8 L 53.2,20.1 L 56.8,20.1 L 60.3,12.5 L 63.8,12.5 L 67.3,11.6 L 70.8,10.0 L 74.3,9.9 L 77.9,9.5 L 81.4,8.7 L 84.9,8.7 L 88.4,8.7 L 91.9,8.7 L 95.4,7.6 L 99.0,7.0 L 102.5,4.7 L 106.0,4.0 L 106.0,26.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,26.0 L 7.5,25.9 L 11.0,25.8 L 14.6,25.6 L 18.1,25.6 L 21.6,25.6 L 25.1,25.5 L 28.6,25.3 L 32.1,25.0 L 35.7,24.7 L 39.2,24.3 L 42.7,24.2 L 46.2,24.9 L 49.7,23.8 L 53.2,20.1 L 56.8,20.1 L 60.3,12.5 L 63.8,12.5 L 67.3,11.6 L 70.8,10.0 L 74.3,9.9 L 77.9,9.5 L 81.4,8.7 L 84.9,8.7 L 88.4,8.7 L 91.9,8.7 L 95.4,7.6 L 99.0,7.0 L 102.5,4.7 L 106.0,4.0" fill="none" stroke="#8B6800" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="#8B6800"/></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:var(--text-body);white-space:nowrap;border-top:1px solid var(--border);">Active Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:var(--mustard-text);text-align:right;white-space:nowrap;border-top:1px solid var(--border);">103</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲1</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid var(--border);"><svg width="110" height="30" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B6800" stop-opacity="0.25"/><stop offset="100%" stop-color="#8B6800" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,26.0 L 4.0,26.0 L 7.5,26.0 L 11.0,4.0 L 14.6,4.0 L 18.1,4.0 L 21.6,4.0 L 25.1,4.0 L 28.6,4.0 L 32.1,4.0 L 35.7,4.0 L 39.2,4.0 L 42.7,4.0 L 46.2,4.0 L 49.7,4.0 L 53.2,4.0 L 56.8,4.0 L 60.3,4.0 L 63.8,4.0 L 67.3,4.0 L 70.8,4.0 L 74.3,4.0 L 77.9,4.0 L 81.4,4.0 L 84.9,4.0 L 88.4,4.0 L 91.9,4.0 L 95.4,4.0 L 99.0,4.0 L 102.5,4.0 L 106.0,4.0 L 106.0,26.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,26.0 L 7.5,26.0 L 11.0,4.0 L 14.6,4.0 L 18.1,4.0 L 21.6,4.0 L 25.1,4.0 L 28.6,4.0 L 32.1,4.0 L 35.7,4.0 L 39.2,4.0 L 42.7,4.0 L 46.2,4.0 L 49.7,4.0 L 53.2,4.0 L 56.8,4.0 L 60.3,4.0 L 63.8,4.0 L 67.3,4.0 L 70.8,4.0 L 74.3,4.0 L 77.9,4.0 L 81.4,4.0 L 84.9,4.0 L 88.4,4.0 L 91.9,4.0 L 95.4,4.0 L 99.0,4.0 L 102.5,4.0 L 106.0,4.0" fill="none" stroke="#8B6800" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="#8B6800"/></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:var(--text-body);white-space:nowrap;border-top:1px solid var(--border);">Est. Savings</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:var(--mustard-text);text-align:right;white-space:nowrap;border-top:1px solid var(--border);">$353M</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲4.1%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲8.0%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲4.2%</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid var(--border);"><svg width="110" height="30" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B6800" stop-opacity="0.25"/><stop offset="100%" stop-color="#8B6800" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,26.0 L 4.0,26.0 L 7.5,24.9 L 11.0,24.1 L 14.6,24.1 L 18.1,24.1 L 21.6,23.6 L 25.1,23.0 L 28.6,22.5 L 32.1,21.7 L 35.7,21.2 L 39.2,21.2 L 42.7,21.1 L 46.2,20.9 L 49.7,20.0 L 53.2,19.3 L 56.8,18.9 L 60.3,18.6 L 63.8,18.6 L 67.3,18.4 L 70.8,16.4 L 74.3,16.4 L 77.9,16.2 L 81.4,16.0 L 84.9,16.0 L 88.4,15.2 L 91.9,15.0 L 95.4,14.6 L 99.0,11.8 L 102.5,4.0 L 106.0,4.0 L 106.0,26.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,26.0 L 7.5,24.9 L 11.0,24.1 L 14.6,24.1 L 18.1,24.1 L 21.6,23.6 L 25.1,23.0 L 28.6,22.5 L 32.1,21.7 L 35.7,21.2 L 39.2,21.2 L 42.7,21.1 L 46.2,20.9 L 49.7,20.0 L 53.2,19.3 L 56.8,18.9 L 60.3,18.6 L 63.8,18.6 L 67.3,18.4 L 70.8,16.4 L 74.3,16.4 L 77.9,16.2 L 81.4,16.0 L 84.9,16.0 L 88.4,15.2 L 91.9,15.0 L 95.4,14.6 L 99.0,11.8 L 102.5,4.0 L 106.0,4.0" fill="none" stroke="#8B6800" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="#8B6800"/></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:var(--text-body);white-space:nowrap;border-top:1px solid var(--border);">Common Exhibit Titles</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:var(--mustard-text);text-align:right;white-space:nowrap;border-top:1px solid var(--border);">2,991</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲14</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲82</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲414</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲112</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid var(--border);"><svg width="110" height="30" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B6800" stop-opacity="0.25"/><stop offset="100%" stop-color="#8B6800" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,26.0 L 4.0,26.0 L 7.5,25.3 L 11.0,25.2 L 14.6,24.7 L 18.1,24.7 L 21.6,24.7 L 25.1,24.3 L 28.6,24.0 L 32.1,23.3 L 35.7,23.1 L 39.2,22.5 L 42.7,22.3 L 46.2,22.0 L 49.7,21.4 L 53.2,18.0 L 56.8,17.9 L 60.3,13.7 L 63.8,13.7 L 67.3,11.7 L 70.8,9.9 L 74.3,9.8 L 77.9,10.2 L 81.4,8.5 L 84.9,8.5 L 88.4,8.5 L 91.9,8.5 L 95.4,7.4 L 99.0,6.2 L 102.5,4.8 L 106.0,4.0 L 106.0,26.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,26.0 L 7.5,25.3 L 11.0,25.2 L 14.6,24.7 L 18.1,24.7 L 21.6,24.7 L 25.1,24.3 L 28.6,24.0 L 32.1,23.3 L 35.7,23.1 L 39.2,22.5 L 42.7,22.3 L 46.2,22.0 L 49.7,21.4 L 53.2,18.0 L 56.8,17.9 L 60.3,13.7 L 63.8,13.7 L 67.3,11.7 L 70.8,9.9 L 74.3,9.8 L 77.9,10.2 L 81.4,8.5 L 84.9,8.5 L 88.4,8.5 L 91.9,8.5 L 95.4,7.4 L 99.0,6.2 L 102.5,4.8 L 106.0,4.0" fill="none" stroke="#8B6800" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="#8B6800"/></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:var(--text-body);white-space:nowrap;border-top:1px solid var(--border);">CCC Common Titles</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:var(--mustard-text);text-align:right;white-space:nowrap;border-top:1px solid var(--border);">162</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲8</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲23</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲25</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲25</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid var(--border);"><svg width="110" height="30" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B6800" stop-opacity="0.25"/><stop offset="100%" stop-color="#8B6800" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,26.0 L 4.0,26.0 L 7.5,26.0 L 11.0,26.0 L 14.6,26.0 L 18.1,26.0 L 21.6,26.0 L 25.1,26.0 L 28.6,26.0 L 32.1,26.0 L 35.7,26.0 L 39.2,26.0 L 42.7,26.0 L 46.2,26.0 L 49.7,26.0 L 53.2,26.0 L 56.8,26.0 L 60.3,26.0 L 63.8,26.0 L 67.3,26.0 L 70.8,26.0 L 74.3,26.0 L 77.9,26.0 L 81.4,24.2 L 84.9,24.2 L 88.4,24.2 L 91.9,24.2 L 95.4,24.2 L 99.0,24.2 L 102.5,11.0 L 106.0,4.0 L 106.0,26.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,26.0 L 7.5,26.0 L 11.0,26.0 L 14.6,26.0 L 18.1,26.0 L 21.6,26.0 L 25.1,26.0 L 28.6,26.0 L 32.1,26.0 L 35.7,26.0 L 39.2,26.0 L 42.7,26.0 L 46.2,26.0 L 49.7,26.0 L 53.2,26.0 L 56.8,26.0 L 60.3,26.0 L 63.8,26.0 L 67.3,26.0 L 70.8,26.0 L 74.3,26.0 L 77.9,26.0 L 81.4,24.2 L 84.9,24.2 L 88.4,24.2 L 91.9,24.2 L 95.4,24.2 L 99.0,24.2 L 102.5,11.0 L 106.0,4.0" fill="none" stroke="#8B6800" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="#8B6800"/></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:var(--text-body);white-space:nowrap;border-top:1px solid var(--border);">Articulating Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:var(--mustard-text);text-align:right;white-space:nowrap;border-top:1px solid var(--border);">100</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid var(--border);"><svg width="110" height="30" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B6800" stop-opacity="0.25"/><stop offset="100%" stop-color="#8B6800" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,26.0 L 4.0,26.0 L 7.5,26.0 L 11.0,26.0 L 14.6,26.0 L 18.1,26.0 L 21.6,26.0 L 25.1,26.0 L 28.6,26.0 L 32.1,26.0 L 35.7,26.0 L 39.2,26.0 L 42.7,26.0 L 46.2,26.0 L 49.7,26.0 L 53.2,26.0 L 56.8,26.0 L 60.3,26.0 L 63.8,26.0 L 67.3,26.0 L 70.8,26.0 L 74.3,26.0 L 77.9,26.0 L 81.4,26.0 L 84.9,26.0 L 88.4,26.0 L 91.9,26.0 L 95.4,26.0 L 99.0,26.0 L 102.5,26.0 L 106.0,26.0 L 106.0,26.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,26.0 L 7.5,26.0 L 11.0,26.0 L 14.6,26.0 L 18.1,26.0 L 21.6,26.0 L 25.1,26.0 L 28.6,26.0 L 32.1,26.0 L 35.7,26.0 L 39.2,26.0 L 42.7,26.0 L 46.2,26.0 L 49.7,26.0 L 53.2,26.0 L 56.8,26.0 L 60.3,26.0 L 63.8,26.0 L 67.3,26.0 L 70.8,26.0 L 74.3,26.0 L 77.9,26.0 L 81.4,26.0 L 84.9,26.0 L 88.4,26.0 L 91.9,26.0 L 95.4,26.0 L 99.0,26.0 L 102.5,26.0 L 106.0,26.0" fill="none" stroke="#8B6800" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="26.0" r="3" fill="#8B6800"/></svg></td></tr><tr><td style="padding:0.3rem 0.5rem;font-size:0.75rem;color:var(--text-body);white-space:nowrap;border-top:1px solid var(--border);">Veteran Star Colleges</td><td style="padding:0.3rem 0.5rem;font-size:0.8rem;font-weight:700;color:var(--mustard-text);text-align:right;white-space:nowrap;border-top:1px solid var(--border);">60</td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲2</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲3</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--hunter);font-size:0.68rem;font-weight:700;white-space:nowrap;">▲1</span></td><td style="padding:0.3rem 0.5rem;text-align:center;border-top:1px solid var(--border);"><span style="color:var(--text-muted);font-size:0.68rem;">—</span></td><td style="padding:0.3rem 0.8rem;border-top:1px solid var(--border);"><svg width="110" height="30" style="display:block;overflow:visible"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B6800" stop-opacity="0.25"/><stop offset="100%" stop-color="#8B6800" stop-opacity="0.02"/></linearGradient></defs><path d="M 4.0,26.0 L 4.0,26.0 L 7.5,26.0 L 11.0,26.0 L 14.6,26.0 L 18.1,26.0 L 21.6,26.0 L 25.1,26.0 L 28.6,26.0 L 32.1,26.0 L 35.7,26.0 L 39.2,26.0 L 42.7,26.0 L 46.2,18.7 L 49.7,11.3 L 53.2,11.3 L 56.8,11.3 L 60.3,11.3 L 63.8,11.3 L 67.3,11.3 L 70.8,11.3 L 74.3,11.3 L 77.9,11.3 L 81.4,18.7 L 84.9,18.7 L 88.4,18.7 L 91.9,18.7 L 95.4,18.7 L 99.0,11.3 L 102.5,4.0 L 106.0,4.0 L 106.0,26.0 Z" fill="url(#sg)" stroke="none"/><path d="M 4.0,26.0 L 7.5,26.0 L 11.0,26.0 L 14.6,26.0 L 18.1,26.0 L 21.6,26.0 L 25.1,26.0 L 28.6,26.0 L 32.1,26.0 L 35.7,26.0 L 39.2,26.0 L 42.7,26.0 L 46.2,18.7 L 49.7,11.3 L 53.2,11.3 L 56.8,11.3 L 60.3,11.3 L 63.8,11.3 L 67.3,11.3 L 70.8,11.3 L 74.3,11.3 L 77.9,11.3 L 81.4,18.7 L 84.9,18.7 L 88.4,18.7 L 91.9,18.7 L 95.4,18.7 L 99.0,11.3 L 102.5,4.0 L 106.0,4.0" fill="none" stroke="#8B6800" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="106.0" cy="4.0" r="3" fill="#8B6800"/></svg></td></tr></tbody>
@@ -4564,7 +4562,7 @@
       <!-- Header -->
       <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1rem;">
         <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;color:var(--mustard-text);">
-          &#127942; College Activity
+          College Activity
         </span>
         <div style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;">
           <span style="font-size:0.55rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--mustard-text);border:1px solid var(--gold-accent);border-radius:2px;padding:0.04rem 0.25rem;white-space:nowrap;">Leading</span>
@@ -4579,10 +4577,10 @@
         <input id="collegeSearchBox" type="text" placeholder="Search college..."
                style="flex:1;min-width:140px;max-width:220px;padding:0.35rem 0.5rem;font-size:0.68rem;
                       background:var(--surface-opaque);border:1px solid var(--border);
-                      border-radius:4px;color:var(--text-body);outline:none;appearance:none;-webkit-appearance:none;" />
+                      border-radius:4px;color:var(--text-body);appearance:none;-webkit-appearance:none;" />
         <select id="caDistrictFilter" style="padding:0.35rem 0.3rem;font-size:0.68rem;max-width:200px;
                       background:var(--surface-opaque);border:1px solid var(--border);
-                      border-radius:4px;color:var(--text-body);outline:none;appearance:none;-webkit-appearance:none;">
+                      border-radius:4px;color:var(--text-body);appearance:none;-webkit-appearance:none;">
           <option value="">All Districts</option>
           <option value="Antelope Valley Community College District">Antelope Valley Community College District</option>
           <option value="Barstow Community College District">Barstow Community College District</option>
@@ -4661,7 +4659,7 @@
         </select>
         <select id="tierFilter" style="padding:0.35rem 0.3rem;font-size:0.68rem;
                       background:var(--surface-opaque);border:1px solid var(--border);
-                      border-radius:4px;color:var(--text-body);outline:none;appearance:none;-webkit-appearance:none;">
+                      border-radius:4px;color:var(--text-body);appearance:none;-webkit-appearance:none;">
           <option value="">All Tiers</option>
           <option value="Leading">Leading</option>
           <option value="Advancing">Advancing</option>
@@ -4669,7 +4667,7 @@
         </select>
         <select id="caDisciplineFilter" style="padding:0.35rem 0.3rem;font-size:0.68rem;max-width:200px;
                       background:var(--surface-opaque);border:1px solid var(--border);
-                      border-radius:4px;color:var(--text-body);outline:none;appearance:none;-webkit-appearance:none;">
+                      border-radius:4px;color:var(--text-body);appearance:none;-webkit-appearance:none;">
           <option value="">All Disciplines</option>
           <option value="Agriculture and Natural Resources">Agriculture and Natural Resources</option>
           <option value="Architecture and Related Technologies">Architecture and Related Technologies</option>
@@ -4695,23 +4693,23 @@
           <option value="Social Sciences">Social Sciences</option>
         </select>
         <div style="margin-left:auto;display:flex;gap:0.4rem;align-items:center;">
-          <button id="exportExcelBtn" style="padding:0.3rem 0.5rem;font-size:0.63rem;
+          <button id="exportExcelBtn" style="min-height:24px;padding:0.3rem 0.5rem;font-size:0.63rem;
                         background:var(--gold-accent);color:#000;border:none;border-radius:3px;
                         cursor:pointer;font-weight:bold;">Excel</button>
-          <button id="exportCSVBtn" style="padding:0.3rem 0.5rem;font-size:0.63rem;
+          <button id="exportCSVBtn" style="min-height:24px;padding:0.3rem 0.5rem;font-size:0.63rem;
                         background:var(--cobalt);color:var(--on-accent);border:none;border-radius:3px;
                         cursor:pointer;font-weight:bold;">CSV</button>
-          <button id="exportJSONBtn" style="padding:0.3rem 0.5rem;font-size:0.63rem;
+          <button id="exportJSONBtn" style="min-height:24px;padding:0.3rem 0.5rem;font-size:0.63rem;
                         background:var(--hunter);color:var(--on-accent);border:none;border-radius:3px;
                         cursor:pointer;font-weight:bold;">JSON</button>
-          <button id="caCustomReportBtn" style="padding:0.3rem 0.6rem;font-size:0.63rem;
+          <button id="caCustomReportBtn" style="min-height:24px;padding:0.3rem 0.6rem;font-size:0.63rem;
                         background:linear-gradient(135deg,var(--gold-accent),#FF9800);color:#000;border:none;border-radius:3px;
                         cursor:pointer;font-weight:bold;">Custom Report</button>
         </div>
       </div>
 
       <!-- Main Table Container -->
-      <div style="max-height:600px;overflow-y:auto;border:1px solid var(--border);
+      <div tabindex="0" role="region" aria-label="College Activity table" style="max-height:600px;overflow-y:auto;border:1px solid var(--border);
                   border-radius:4px;scrollbar-width:thin;
                   scrollbar-color:var(--border) transparent;">
         <table id="collegeActivityTable" style="width:100%;border-collapse:collapse;">
@@ -4805,7 +4803,7 @@
         <span id="caStarLegend" style="font-size:0.61rem;color:var(--text-muted);margin-left:4px;">Veteran Star — JSTs uploaded for ≥75% of reported veterans (Vets)</span>
         <span style="font-size:0.61rem;color:var(--text-muted);margin-left:1rem;">Last Activity: </span>
         <span style="font-size:0.61rem;color:var(--hunter);">● ≤30d</span>
-        <span style="font-size:0.61rem;color:#FF9800;margin-left:0.3rem;">● 31–90d</span>
+        <span style="font-size:0.61rem;color:var(--mustard-text);margin-left:0.3rem;">● 31–90d</span>
         <span style="font-size:0.61rem;color:var(--crimson);margin-left:0.3rem;">● 90+d</span>
       </div>
       <details class="algo-details"><summary>How this is calculated</summary><div class="algo-body"><div class="algo-row"><span class="algo-label">Source:</span> <span class="algo-value">CCCCO MAP CPL Dashboard via Cloudflare worker — per-college tier classifications.</span></div><div class="algo-row"><span class="algo-label">Formula:</span> <span class="algo-value">Same 3-of-5 criteria as Active Colleges. Leading (≥3 met), Advancing (1-2 met), Inactive (<10 students and 0 units). Tiers sorted by criteria met desc, then by students desc.</span></div><div class="algo-row"><span class="algo-label">Assumptions:</span> <span class="algo-value">Criteria: Students ≥ 500; Units ≥ 3000; Avg Units/Student ≥ 5; Transcription Rate ≥ 25%; Avg Transcribed/Student ≥ 3.</span></div><div class="algo-row"><span class="algo-label">Caveats:</span> <span class="algo-value">⭐ indicates MAP Star College status (at least one criterion met). JST column derives from View_StudentAggregatedValues rows where Military Credits > 0.</span></div><div class="algo-meta">Description last updated: 2026-04-19</div></div></details>
@@ -4834,13 +4832,13 @@
   <div class="exhibit-card-header">
     <div class="exhibit-card-title-row">
       <div>
-        <div class="exhibit-card-title">CCC Collaborative vs. Local Exhibits</div>
+        <div class="exhibit-card-title" id="exhibit-collaborative-title">CCC Collaborative vs. Local Exhibits</div>
         <div class="exhibit-card-subtitle">Statewide faculty workgroup articulations vs. individual college articulations</div>
       </div>
     <a class="analytics-export-btn" href="exports/exhibit-collaborative.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
     </div>
   </div>
-  <div class="exhibit-card-body">
+  <div class="exhibit-card-body" tabindex="0" role="region" aria-labelledby="exhibit-collaborative-title">
     <table class="exhibit-table">
       <thead><tr><th class="exhibit-th-name">Category</th><th class="exhibit-th-num">Credit Recs</th><th class="exhibit-th-num">Exhibits</th><th class="exhibit-th-num">Colleges</th><th class="exhibit-th-num">Disciplines</th><th class="exhibit-th-pct">%</th></tr></thead>
       <tbody><tr><td class="exhibit-cell-name">Local</td><td class="exhibit-cell-num">12,459</td><td class="exhibit-cell-num">5,826</td><td class="exhibit-cell-num">98</td><td class="exhibit-cell-num">23</td><td class="exhibit-cell-pct">88.0%<div style="display:inline-block;width:60px;height:8px;background:rgba(28,28,26,0.08);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:88.0%;height:100%;background:var(--gold-accent);border-radius:4px;"></div></div></td></tr>
@@ -4857,13 +4855,13 @@
   <div class="exhibit-card-header">
     <div class="exhibit-card-title-row">
       <div>
-        <div class="exhibit-card-title">Credit Recommendations by CPL Type</div>
+        <div class="exhibit-card-title" id="exhibit-by-cpl-type-title">Credit Recommendations by CPL Type</div>
         <div class="exhibit-card-subtitle">6 CPL types</div>
       </div>
     <a class="analytics-export-btn" href="exports/exhibit-by-cpl-type.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
     </div>
   </div>
-  <div class="exhibit-card-body">
+  <div class="exhibit-card-body" tabindex="0" role="region" aria-labelledby="exhibit-by-cpl-type-title">
     <table class="exhibit-table">
       <thead><tr><th class="exhibit-th-name">CPL Type</th><th class="exhibit-th-num">Credit Recs</th><th class="exhibit-th-num">Exhibits</th><th class="exhibit-th-num">Colleges</th><th class="exhibit-th-pct">%</th></tr></thead>
       <tbody><tr><td class="exhibit-cell-name">Standardized Assessment</td><td class="exhibit-cell-num">7,356</td><td class="exhibit-cell-num">2,668</td><td class="exhibit-cell-num">83</td><td class="exhibit-cell-pct">51.9%<div style="display:inline-block;width:60px;height:8px;background:rgba(28,28,26,0.08);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:51.9%;height:100%;background:var(--gold-accent);border-radius:4px;"></div></div></td></tr>
@@ -4883,13 +4881,13 @@
   <div class="exhibit-card-header">
     <div class="exhibit-card-title-row">
       <div>
-        <div class="exhibit-card-title">Credit Recommendations by Mode of Learning</div>
+        <div class="exhibit-card-title" id="exhibit-by-mol-title">Credit Recommendations by Mode of Learning</div>
         <div class="exhibit-card-subtitle">10 modes</div>
       </div>
     <a class="analytics-export-btn" href="exports/exhibit-by-mol.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
     </div>
   </div>
-  <div class="exhibit-card-body">
+  <div class="exhibit-card-body" tabindex="0" role="region" aria-labelledby="exhibit-by-mol-title">
     <table class="exhibit-table">
       <thead><tr><th class="exhibit-th-name">Mode of Learning</th><th class="exhibit-th-num">Credit Recs</th><th class="exhibit-th-num">Exhibits</th><th class="exhibit-th-num">Colleges</th><th class="exhibit-th-pct">%</th></tr></thead>
       <tbody><tr><td class="exhibit-cell-name">Self-study, exam preparation, other (S)</td><td class="exhibit-cell-num">8,743</td><td class="exhibit-cell-num">3,733</td><td class="exhibit-cell-num">91</td><td class="exhibit-cell-pct">61.7%<div style="display:inline-block;width:60px;height:8px;background:rgba(28,28,26,0.08);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:61.7%;height:100%;background:var(--gold-accent);border-radius:4px;"></div></div></td></tr>
@@ -4913,13 +4911,13 @@
   <div class="exhibit-card-header">
     <div class="exhibit-card-title-row">
       <div>
-        <div class="exhibit-card-title">Credit Recommendations by CCC Discipline</div>
+        <div class="exhibit-card-title" id="exhibit-by-discipline-title">Credit Recommendations by CCC Discipline</div>
         <div class="exhibit-card-subtitle">23 discipline areas</div>
       </div>
     <a class="analytics-export-btn" href="exports/exhibit-by-discipline.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
     </div>
   </div>
-  <div class="exhibit-card-body">
+  <div class="exhibit-card-body" tabindex="0" role="region" aria-labelledby="exhibit-by-discipline-title">
     <table class="exhibit-table">
       <thead><tr><th class="exhibit-th-name">Discipline</th><th class="exhibit-th-num">Credit Recs</th><th class="exhibit-th-num">Exhibits</th><th class="exhibit-th-num">Courses</th><th class="exhibit-th-num">Colleges</th><th class="exhibit-th-num">CCC Collab</th><th class="exhibit-th-pct">%</th></tr></thead>
       <tbody><tr><td class="exhibit-cell-name">Not Mapped</td><td class="exhibit-cell-num">6,020</td><td class="exhibit-cell-num">2,186</td><td class="exhibit-cell-num">337</td><td class="exhibit-cell-num">87</td><td class="exhibit-cell-num">32</td><td class="exhibit-cell-pct">42.5%<div style="display:inline-block;width:60px;height:8px;background:rgba(28,28,26,0.08);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:42.5%;height:100%;background:var(--gold-accent);border-radius:4px;"></div></div></td></tr>
@@ -4956,13 +4954,13 @@
   <div class="exhibit-card-header">
     <div class="exhibit-card-title-row">
       <div>
-        <div class="exhibit-card-title">Credit Recommendations by College</div>
+        <div class="exhibit-card-title" id="exhibit-by-college-title">Credit Recommendations by College</div>
         <div class="exhibit-card-subtitle">100 articulating colleges | 14,165 total credit recs</div>
       </div>
     <a class="analytics-export-btn" href="exports/exhibit-by-college.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
     </div>
   </div>
-  <div class="exhibit-card-body">
+  <div class="exhibit-card-body" tabindex="0" role="region" aria-labelledby="exhibit-by-college-title">
     <table class="exhibit-table">
       <thead><tr><th>#</th><th class="exhibit-th-name">College</th><th class="exhibit-th-num">Credit Recs</th><th class="exhibit-th-num">Exhibits</th><th class="exhibit-th-num">Disciplines</th><th class="exhibit-th-num">CCC Collab</th><th class="exhibit-th-num">Industry Certs</th><th class="exhibit-th-pct">%</th></tr></thead>
       <tbody><tr><td>1</td><td class="exhibit-cell-name">Modesto Junior College</td><td class="exhibit-cell-num">560</td><td class="exhibit-cell-num">533</td><td class="exhibit-cell-num">20</td><td class="exhibit-cell-num">2</td><td class="exhibit-cell-num">163</td><td class="exhibit-cell-pct">4.0%<div style="display:inline-block;width:60px;height:8px;background:rgba(28,28,26,0.08);border-radius:4px;vertical-align:middle;margin-left:6px;"><div style="width:4.0%;height:100%;background:var(--gold-accent);border-radius:4px;"></div></div></td></tr>
@@ -5077,13 +5075,13 @@
   <div class="exhibit-card-header">
     <div class="exhibit-card-title-row">
       <div>
-        <div class="exhibit-card-title">Top 50 Most-Articulated Exhibits</div>
+        <div class="exhibit-card-title" id="exhibit-top-50-title">Top 50 Most-Articulated Exhibits</div>
         <div class="exhibit-card-subtitle">Ranked by total credit recommendations across all colleges</div>
       </div>
     <a class="analytics-export-btn" href="exports/exhibit-top-50.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
     </div>
   </div>
-  <div class="exhibit-card-body">
+  <div class="exhibit-card-body" tabindex="0" role="region" aria-labelledby="exhibit-top-50-title">
     <table class="exhibit-table">
       <thead><tr><th>#</th><th class="exhibit-th-name">Exhibit Title</th><th class="exhibit-th-num">Credit Recs</th><th class="exhibit-th-num">Courses</th><th class="exhibit-th-num">Colleges</th><th>CPL Type</th><th>Discipline</th></tr></thead>
       <tbody><tr><td>1</td><td class="exhibit-cell-name">AP Biology (score 3-5): Cal-GETC Area 5B and 5C</td><td class="exhibit-cell-num">158</td><td class="exhibit-cell-num">2</td><td class="exhibit-cell-num">79</td><td>Standardized Assessment</td><td>Interdisciplinary Studies</td></tr>
@@ -5146,13 +5144,13 @@
   <div class="exhibit-card-header">
     <div class="exhibit-card-title-row">
       <div>
-        <div class="exhibit-card-title">Articulations by Unified Course</div>
+        <div class="exhibit-card-title" id="articulations-by-course-title">Articulations by Unified Course</div>
         <div class="exhibit-card-subtitle">2,319 unified course identities &middot; 357 earned at &gt;1 college &middot; top 50 by adoption leverage</div>
       </div>
     <a class="analytics-export-btn" href="exports/articulations-by-course.xlsx" download title="Download as Excel (.xlsx)"><span style="font-size:0.7rem;">&#11015;</span> Excel</a>
     </div>
   </div>
-  <div class="exhibit-card-body">
+  <div class="exhibit-card-body" tabindex="0" role="region" aria-labelledby="articulations-by-course-title">
     <table class="exhibit-table">
       <thead><tr><th>#</th><th class="exhibit-th-name">Unified Course</th><th>Discipline</th><th class="exhibit-th-num">Colleges Earned</th><th>Credit Recommendation</th><th>Credential</th><th class="exhibit-th-num">Adoption Leverage</th></tr></thead>
       <tbody><tr><td>1</td><td class="exhibit-cell-name">Introduction to Statistics<div style="font-size:0.72rem;opacity:0.7;">MATH 110 &middot; CID</div></td><td>—</td><td class="exhibit-cell-num">10</td><td>4 hours in Introduction to Statistics</td><td>AP Statistics <span style="opacity:0.6;">(+3)</span></td><td><span class="exhibit-cell-num">84</span></td></tr>
@@ -5214,15 +5212,15 @@
 
         </div>
         <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-            <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
-            <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
+            <h2 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h2>
+            <p style="color:var(--text-muted);font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
                 <div style="flex:1;min-width:min(340px, 100%);">
-                    <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
+                    <h3 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h3>
                     <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
                 <div style="flex:1;min-width:min(340px, 100%);">
-                    <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
+                    <h3 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h3>
                     <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
             </div>
@@ -5231,7 +5229,7 @@
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--mustard-text);vertical-align:middle;margin-right:4px;"></span> Military</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--cobalt);vertical-align:middle;margin-right:4px;"></span> Workforce/Other</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--green-progress);vertical-align:middle;margin-right:4px;"></span> Apprentice</span>
-                <span style="color:#aaa;">&mdash; Solid = actual &nbsp; - - - Dashed = projected</span>
+                <span style="color:var(--text-muted);">&mdash; Solid = actual &nbsp; - - - Dashed = projected</span>
             </div>
         </div>
         <script>

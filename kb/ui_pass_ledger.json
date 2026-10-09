@@ -31,7 +31,7 @@
    "page": "fact-sheet/index.html",
    "audience": "public",
    "last": "2026-10-09",
-   "outcome": "First pass (S350): 141 targets under 24px fixed (recs toggles, resource titles, team emails, links in running text), the action bar no longer pins 200px of a phone, raw hex and injected hex fallbacks became tokens, the recs toggle's undefined --accent became --cobalt, three toolbar glyphs became words; wiring agrees with live_metrics.json and the veteran map. Open: the type (Cambria and Calibri, for the Word download) and no dark mode; Sheet 56 asks Sam whether to mock it up on First Light."
+   "outcome": "First pass (S350, #1926): 141 targets under 24px fixed, the action bar no longer pins 200px of a phone, raw hex and injected fallbacks became tokens, the recs toggle's undefined --accent became --cobalt, three toolbar glyphs became words. S352 (#1934): the page never defined --on-accent, so Ask Sierra on hover and the drawer's Send painted body ink on cobalt (1.35:1); defined, and a guard fails any bare var() the page does not define. Sam ruled Mock it up (Sheet 56): the First Light mock-up (Playfair Display and Source Sans 3, a screen-only dark palette, print keeps Cambria and Calibri) is built, and Sheet 57 asks whether to port it."
   },
   {
    "id": "privacy",
@@ -54,8 +54,8 @@
    "name": "Dashboard",
    "page": "index.html#dashboard",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-09",
+   "outcome": "First pass (S352, #1937): clean in light and dark. Before, 16 and 10 contrast findings, 20 targets under 24px, 9 keyboard-unreachable scrollers, an h1 to h3 skip and 4 controls with no focus ring. The 'How this is calculated' panels read white on white on nine cards (the base CSS assumed a dark card that no longer exists); College Activity's literal hex inks kept their light values in dark; its four filters suppressed their focus rings inline; the trophy and the toolbar's squared operators are gone. Fixed in excel_to_dashboard.py, its College Activity template, kpi_cards.js, college_activity.js and both HTMLs. Wiring: the tab reads no dataset the dependency map names (its sections are generated). First Light: College Activity's and KPI Trends' titles still set Georgia rather than Playfair Display."
   },
   {
    "id": "cobi:activities-projects",

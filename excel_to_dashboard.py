@@ -521,15 +521,21 @@ def render_algo_details(card_id, params=None, container_style=None):
 
 ALGO_DETAILS_CSS = """
 /* ═══ Collapsible Algorithm Descriptions ═══ */
+/* Every panel reads theme tokens (S352 UI pass). The base rules once assumed a
+   dark ink card (white-alpha text, a mustard tint), and the cards that kept
+   them, the two trend cards and the seven exhibit cards, now paint the opaque
+   surface: in light their "How this is calculated" read white on white (1:1),
+   and in dark the summary sat at 4.41:1. Text roles: muted for the summary and
+   the meta line, body for the explanation, mustard-text for the labels. */
 .algo-details {
     margin-top: 0.6rem;
     padding-top: 0.4rem;
-    border-top: 1px dashed rgba(255,255,255,0.12);
+    border-top: 1px dashed var(--border);
     font-size: 0.72rem;
 }
 .algo-details summary {
     cursor: pointer;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-muted);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -547,44 +553,32 @@ ALGO_DETAILS_CSS = """
     display: inline-block;
     font-size: 0.65rem;
     transition: transform 0.15s ease;
-    color: rgba(227,179,65,0.7);
+    color: var(--mustard-text);
 }
 .algo-details[open] summary::before { transform: rotate(90deg); }
-.algo-details summary:hover { color: rgba(227,179,65,0.9); }
-.algo-details[open] summary { color: var(--gold-accent); }
+.algo-details summary:hover { color: var(--text-strong); }
+.algo-details[open] summary { color: var(--mustard-text); }
 .algo-details .algo-body {
     padding: 0.55rem 0 0.3rem;
-    color: rgba(255,255,255,0.72);
+    color: var(--text-body);
     line-height: 1.55;
 }
 .algo-details .algo-row { margin-bottom: 0.35rem; }
 .algo-details .algo-label {
     font-weight: 700;
-    color: rgba(227,179,65,0.9);
+    color: var(--mustard-text);
     margin-right: 0.3rem;
     text-transform: uppercase;
     font-size: 0.62rem;
     letter-spacing: 0.4px;
 }
-.algo-details .algo-value { color: rgba(255,255,255,0.78); }
+.algo-details .algo-value { color: var(--text-body); }
 .algo-details .algo-meta {
     margin-top: 0.6rem;
     font-size: 0.62rem;
-    color: rgba(255,255,255,0.35);
+    color: var(--text-muted);
     font-style: italic;
 }
-/* First Light (PR-2): headline KPI cards are light glass — algo text flips
-   to the ink scale there. The class-less dark cards (trend, College
-   Activity) keep the white-alpha base above. */
-.kpi-card .algo-details { border-top: 1px dashed var(--border); }
-.kpi-card .algo-details summary { color: var(--text-muted); }
-.kpi-card .algo-details summary::before { color: var(--mustard-text); }
-.kpi-card .algo-details summary:hover { color: var(--text-strong); }
-.kpi-card .algo-details[open] summary { color: var(--mustard-text); }
-.kpi-card .algo-details .algo-body { color: var(--text-body); }
-.kpi-card .algo-details .algo-label { color: var(--mustard-text); }
-.kpi-card .algo-details .algo-value { color: var(--text-body); }
-.kpi-card .algo-details .algo-meta { color: var(--text-muted); }
 /* ═══ End Collapsible Algorithm Descriptions ═══ */
 """
 
@@ -3403,15 +3397,15 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
     data_json = _json.dumps(chart_data)
 
     html = f'''        <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-            <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
-            <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
+            <h2 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h2>
+            <p style="color:var(--text-muted);font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
                 <div style="flex:1;min-width:min(340px, 100%);">
-                    <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
+                    <h3 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h3>
                     <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
                 <div style="flex:1;min-width:min(340px, 100%);">
-                    <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
+                    <h3 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h3>
                     <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
             </div>
@@ -3420,7 +3414,7 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--mustard-text);vertical-align:middle;margin-right:4px;"></span> Military</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--cobalt);vertical-align:middle;margin-right:4px;"></span> Workforce/Other</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--green-progress);vertical-align:middle;margin-right:4px;"></span> Apprentice</span>
-                <span style="color:#aaa;">&mdash; Solid = actual &nbsp; - - - Dashed = projected</span>
+                <span style="color:var(--text-muted);">&mdash; Solid = actual &nbsp; - - - Dashed = projected</span>
             </div>
         </div>
         <script>
@@ -3969,7 +3963,7 @@ def render_kpi_history_card(history, kpi_params=None):
         </div>
         <span style="font-size:0.65rem;color:var(--text-muted);">{since_note}</span>
       </div>
-      <div style="overflow-x:auto;">
+      <div style="overflow-x:auto;" tabindex="0" role="region" aria-label="KPI Trends">
         <table style="width:100%;border-collapse:collapse;">
           <thead>{header}</thead>
           <tbody>{rows_html}</tbody>
@@ -10110,13 +10104,13 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None,
             f'  <div class="exhibit-card-header">\n'
             f'    <div class="exhibit-card-title-row">\n'
             f'      <div>\n'
-            f'        <div class="exhibit-card-title">{title}</div>\n'
+            f'        <div class="exhibit-card-title" id="{card_id}-title">{title}</div>\n'
             f'        <div class="exhibit-card-subtitle">{subtitle}</div>\n'
             f'      </div>\n'
             + export_btn +
             f'    </div>\n'
             f'  </div>\n'
-            f'  <div class="exhibit-card-body">\n'
+            f'  <div class="exhibit-card-body" tabindex="0" role="region" aria-labelledby="{card_id}-title">\n'
             f'    <table class="exhibit-table">\n'
             f'      <thead><tr>{header_cells}</tr></thead>\n'
             f'      <tbody>{body_rows}</tbody>\n'
@@ -10551,7 +10545,9 @@ EXHIBIT_ANALYSIS_CSS = """
     z-index: 2;
 }
 .exhibit-table th {
-    background: var(--surface-muted);
+    /* --surface-subtle under the mustard label: on --surface-muted it read
+       4.25:1, on this fill 4.73:1 (S352 UI pass). */
+    background: var(--surface-subtle);
     color: var(--mustard-text);
     font-size: 0.65rem;
     font-weight: 600;
