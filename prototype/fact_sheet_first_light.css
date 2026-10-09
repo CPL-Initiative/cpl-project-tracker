@@ -1,9 +1,32 @@
 /* ===========================================================================
-   CPL Fact Sheet — standalone public page styles
-   Self-contained. Brand tokens mirror COBI's :root (cpl-project-tracker index.html)
-   so the sheet feels native, but this page carries NO COBI nav/chrome — it
-   "sits alone" so it can be shared publicly without exposing the other tabs.
+   CPL Fact Sheet on First Light — the PROPOSED stylesheet (S352 mock-up)
+   Sam, Open Asks Sheet 56 card 1 (2026-10-09): "Mock it up". This file is
+   fact-sheet/factsheet.css with three changes, and it is what the port would
+   copy over that file if Sam approves it:
+     1. First Light's type on screen: Playfair Display 600 for the masthead,
+        section and card headings and the KPI figures; Source Sans 3 for
+        everything else. Self-hosted from sierra/fonts/ (the privacy page's
+        pattern), so the page sends nothing to a third party.
+     2. COBI's dark palette on the cpl_theme contract, written twice so an
+        explicit choice beats the OS in both directions. Screen only: paper
+        always prints light.
+     3. Seal navy split into a fill (--seal-blue, unchanged in dark: white
+        rides on it) and an ink (--seal-blue-text, lifted to #7DA1D4 in dark,
+        where the navy is 1.29:1), as COBI split it.
+   Print and the Word export keep Cambria and Calibri: the @media print block
+   below restores them, and factsheet_word.js writes its own stylesheet.
+   prototype/mockup_harness/assemble_fact_sheet.py rewrites the font paths
+   when it builds the mock-up.
    =========================================================================== */
+
+@font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../sierra/fonts/playfair-display-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../sierra/fonts/source-sans-3-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../sierra/fonts/source-sans-3-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Source Sans 3'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url('../sierra/fonts/source-sans-3-latin-700-normal.woff2') format('woff2'); }
 
 :root {
   --paper:        #F4F2ED;
@@ -16,27 +39,70 @@
   --faint:        #69695F;   /* small-text grade — ≥4.5:1 on white (WCAG 1.4.3 AA) */
   --border:       rgba(28,28,26,.14);
   --border-strong:rgba(28,28,26,.30);
-  --seal-blue:    #002F6D;   /* CCCCO seal navy — the masthead/heading hue */
+  --seal-blue:    #002F6D;   /* CCCCO seal navy as a FILL: table heads, the primary button */
+  --seal-blue-text:#002F6D;  /* the same navy as INK: headings, figures, titles, rules */
   --seal-blue-hover:#013A86; /* the primary button's hover fill */
   --on-seal:      #FFFFFF;   /* text on a seal-blue, cobalt or other dark fill */
-  /* The name factsheet_sierra.js and factsheet_edit.js write on their cobalt and
-     crimson fills (Ask Sierra on hover, the drawer's Send, the editor's buttons).
-     The funding explainer and COBI define it; this page never did, so each of
-     those labels inherited the body's ink: 1.35:1 on cobalt (S352). */
+  /* The name factsheet_sierra.js and factsheet_edit.js write on their cobalt
+     and crimson fills (Ask Sierra on hover, the drawer's Send, the editor). */
   --on-accent:    #FFFFFF;
   --cobalt:       #0047AB;   /* links / interactive */
   --hunter:       #2C601A;   /* positive · savings · live */
   --crimson:      #920000;   /* alerts */
   --mustard-fill: #E3B341;   /* bright brand accent (bars/dots/on-dark) */
   --mustard-text: #7A5B00;   /* caution/brand text grade on light — ≥4.5:1 (AA) */
+  /* Grounds that were literals, named so dark can restate them. */
+  --bar-bg:       rgba(255,255,255,.92);   /* the sticky action bar's glass */
+  --hunter-tint:  rgba(44,96,26,.10);      /* the live chip */
+  --hunter-edge:  rgba(44,96,26,.25);
+  --mustard-tint: rgba(139,104,0,.10);     /* the stale chip */
+  --mustard-edge: rgba(139,104,0,.30);
+  --logo-plate:   transparent;             /* the CCC logo is drawn on white */
+  --logo-pad:     0;
   --radius: 12px;
   --radius-sm: 8px;
   --shadow: 0 1px 3px rgba(28,28,26,.08), 0 8px 24px rgba(28,28,26,.06);
   --maxw: 940px;
-  /* Document typography: Cambria for prose/headings; Calibri for data + KPIs.
-     Caladea/Carlito are the metric-compatible Linux clones (harmless if absent). */
-  --font-body: 'Cambria', 'Caladea', Georgia, 'Times New Roman', serif;
-  --font-data: 'Calibri', 'Carlito', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  /* First Light's type on screen. Print restores the document pair, Cambria for
+     prose and headings and Calibri for data (the @media print block). */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --font-data: var(--font-body);
+}
+
+/* COBI's dark values (index.html, :root[data-theme="dark"]), written twice so
+   an explicit choice beats the OS in both directions, and scoped to the screen
+   so paper always prints light. On #1E1E1C: ink 13.9:1, body 11.0, muted 6.9,
+   faint 6.0, the link and the seal ink 6.5, hunter 5.65, mustard 7.7. */
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #151514; --surface: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+    --ink: #ECE9E2; --body: #D6D6D0; --muted: #ABABA3; --faint: #9C9C94;
+    --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+    --seal-blue-text: #7DA1D4; --cobalt: #7DA1D4; --on-accent: #141413;
+    --hunter: #89A67F; --crimson: #CF8F8F; --mustard-text: #E3B341;
+    --shadow: 0 1px 3px rgba(0,0,0,.40), 0 8px 24px rgba(0,0,0,.30);
+    --bar-bg: rgba(30,30,28,.92);
+    --hunter-tint: rgba(137,166,127,.12); --hunter-edge: rgba(137,166,127,.35);
+    --mustard-tint: rgba(227,179,65,.10); --mustard-edge: rgba(227,179,65,.35);
+    --logo-plate: #FFFFFF; --logo-pad: 6px 10px;
+    color-scheme: dark;
+  }
+}
+@media screen {
+  :root[data-theme="dark"] {
+    --paper: #151514; --surface: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+    --ink: #ECE9E2; --body: #D6D6D0; --muted: #ABABA3; --faint: #9C9C94;
+    --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+    --seal-blue-text: #7DA1D4; --cobalt: #7DA1D4; --on-accent: #141413;
+    --hunter: #89A67F; --crimson: #CF8F8F; --mustard-text: #E3B341;
+    --shadow: 0 1px 3px rgba(0,0,0,.40), 0 8px 24px rgba(0,0,0,.30);
+    --bar-bg: rgba(30,30,28,.92);
+    --hunter-tint: rgba(137,166,127,.12); --hunter-edge: rgba(137,166,127,.35);
+    --mustard-tint: rgba(227,179,65,.10); --mustard-edge: rgba(227,179,65,.35);
+    --logo-plate: #FFFFFF; --logo-pad: 6px 10px;
+    color-scheme: dark;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -52,8 +118,16 @@ body {
   font-size: 16px;
 }
 
-/* Data + KPIs render in Calibri; everything else stays Cambria. */
+/* Data + KPIs take the data face (Source Sans 3 on screen, Calibri on paper). */
 .kpi, .stat, table.data { font-family: var(--font-data); }
+
+/* First Light's display face: the masthead, the section and card headings, and
+   the figures a reader comes for. Lining figures, so a number sits on the line. */
+.masthead h1, section > h2, h2.h-card, h3:not(.h-sub),
+.kpi .kpi-value, .stat .big {
+  font-family: var(--font-display); font-weight: 600;
+  font-variant-numeric: lining-nums;
+}
 
 a { color: var(--cobalt); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -63,7 +137,7 @@ a:hover { text-decoration: underline; }
 /* ── Sticky action bar (screen only) ───────────────────────────────────── */
 .actionbar {
   position: sticky; top: 0; z-index: 20;
-  background: rgba(255,255,255,.92);
+  background: var(--bar-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
@@ -71,7 +145,7 @@ a:hover { text-decoration: underline; }
   display: flex; align-items: center; gap: 14px;
   min-height: 54px; padding-top: 8px; padding-bottom: 8px;
 }
-.actionbar .ab-title { font-weight: 700; color: var(--seal-blue); font-size: 1rem; margin-right:auto; }
+.actionbar .ab-title { font-weight: 700; color: var(--seal-blue-text); font-size: 1rem; margin-right:auto; }
 /* On a phone the bar wraps to three rows, 200px of an 844px screen (measured
    S350 at 390px), and a sticky bar that size hides a quarter of every screen
    the reader scrolls. Below 561px it sits at the top and scrolls away. */
@@ -79,10 +153,10 @@ a:hover { text-decoration: underline; }
 .live-chip {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: .82rem; font-weight: 600; color: var(--hunter);
-  background: rgba(44,96,26,.10); border: 1px solid rgba(44,96,26,.25);
+  background: var(--hunter-tint); border: 1px solid var(--hunter-edge);
   border-radius: 999px; padding: 4px 11px; white-space: nowrap;
 }
-.live-chip.stale { color: var(--mustard-text); background: rgba(139,104,0,.10); border-color: rgba(139,104,0,.30); }
+.live-chip.stale { color: var(--mustard-text); background: var(--mustard-tint); border-color: var(--mustard-edge); }
 .live-chip .dot {
   width: 8px; height: 8px; border-radius: 50%; background: var(--hunter);
   box-shadow: 0 0 0 0 rgba(44,96,26,.55); animation: pulse 2.4s infinite;
@@ -155,17 +229,17 @@ a:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; border-
 /* ── Masthead ──────────────────────────────────────────────────────────── */
 .masthead { background: var(--surface); border-bottom: 4px solid var(--mustard-fill); }
 .masthead .wrap { padding-top: 26px; padding-bottom: 24px; display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
-.masthead img.logo { height: 58px; width: auto; }
+.masthead img.logo { height: 58px; width: auto; background: var(--logo-plate); padding: var(--logo-pad); border-radius: var(--radius-sm); box-sizing: content-box; }
 .masthead .mh-text { min-width: 240px; flex: 1; }
 .masthead .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; font-weight: 700; color: var(--mustard-text); }
-.masthead h1 { margin: 4px 0 2px; font-size: 1.9rem; line-height: 1.15; color: var(--seal-blue); }
+.masthead h1 { margin: 4px 0 2px; font-size: 1.9rem; line-height: 1.15; color: var(--seal-blue-text); }
 .masthead .sub { color: var(--muted); font-size: 1rem; }
 
 /* ── Section + headings ────────────────────────────────────────────────── */
 main { padding: 8px 0 60px; }
 section { margin-top: 38px; scroll-margin-top: 70px; }
 section > h2 {
-  font-size: 1.42rem; color: var(--seal-blue); margin: 0 0 4px;
+  font-size: 1.42rem; color: var(--seal-blue-text); margin: 0 0 4px;
   padding-bottom: 8px; border-bottom: 2px solid var(--surface-muted);
 }
 section > .lede { color: var(--muted); margin: 2px 0 14px; }
@@ -177,7 +251,7 @@ section.collapsed > h2.sec-toggle::before { content: "▸"; }
 section.collapsed > *:not(h2) { display: none; }
 h2.sec-toggle:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
 h3 { font-size: 1.12rem; color: var(--ink); margin: 22px 0 6px; }
-h4 { font-size: 1rem; color: var(--seal-blue); margin: 16px 0 4px; }
+h4 { font-size: 1rem; color: var(--seal-blue-text); margin: 16px 0 4px; }
 /* Heading LEVEL follows the document outline; heading LOOK follows the role.
    These two utilities let the two disagree without skipping a level (WCAG 1.3.1
    / technique G141), so the semantics could be corrected and the page not move:
@@ -188,7 +262,7 @@ h4 { font-size: 1rem; color: var(--seal-blue); margin: 16px 0 4px; }
    MUST be tag-qualified per level. An h2 does not match `h3.h-sub`, so classing
    the Contents heading with h-sub dropped it to the browser's default 2em h2 —
    caught by a before/after screenshot, not by any test. */
-h3.h-sub  { font-size: 1rem;    color: var(--seal-blue); margin: 16px 0 4px; }
+h3.h-sub  { font-size: 1rem;    color: var(--seal-blue-text); margin: 16px 0 4px; }
 h2.h-card { font-size: 1.12rem; color: var(--ink);       margin: 22px 0 6px; }
 p { margin: 8px 0; }
 ul, ol { margin: 8px 0; padding-left: 22px; }
@@ -207,10 +281,10 @@ strong { color: var(--ink); }
 .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(218px, 1fr)); gap: 12px; }
 .kpi {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-  box-shadow: var(--shadow); padding: 13px 15px; border-top: 4px solid var(--seal-blue);
+  box-shadow: var(--shadow); padding: 13px 15px; border-top: 4px solid var(--seal-blue-text);
 }
 .kpi .kpi-label { font-size: .74rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
-.kpi .kpi-value { font-size: 1.72rem; font-weight: 800; color: var(--seal-blue); line-height: 1.05; margin: 3px 0 2px; }
+.kpi .kpi-value { font-size: 1.72rem; color: var(--seal-blue-text); line-height: 1.05; margin: 3px 0 2px; }
 .kpi .kpi-sub { font-size: .74rem; color: var(--faint); margin: 0 0 7px; }
 .kpi.savings { border-top-color: var(--hunter); }
 .kpi.savings .kpi-value { color: var(--hunter); }
@@ -227,7 +301,7 @@ strong { color: var(--ink); }
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   box-shadow: var(--shadow); padding: 16px 18px; text-align: left;
 }
-.stat .big { font-size: 1.85rem; font-weight: 800; color: var(--seal-blue); line-height: 1.05; }
+.stat .big { font-size: 1.85rem; color: var(--seal-blue-text); line-height: 1.05; }
 .stat.green .big { color: var(--hunter); }
 .stat .cap { font-size: .92rem; color: var(--muted); margin-top: 4px; }
 
@@ -255,7 +329,7 @@ table.data tr.total td, table.data tr.total th { font-weight: 800; background: v
   box-shadow: var(--shadow); overflow: hidden; margin-top: 8px; }
 .sw-grid summary { cursor: pointer; list-style: none; }
 .sw-grid summary::-webkit-details-marker { display: none; }
-.sw-grid .sw-sec { font-weight: 700; color: var(--seal-blue); min-width: 0; }
+.sw-grid .sw-sec { font-weight: 700; color: var(--seal-blue-text); min-width: 0; }
 .sw-grid summary .sw-sec::before { content: "▸"; color: var(--mustard-text); margin-right: 8px; }
 .sw-grid details[open] summary .sw-sec::before { content: "▾"; }
 .sw-grid .sw-col { text-align: center; font-family: var(--font-data); font-variant-numeric: tabular-nums; line-height: 1.15; }
@@ -312,7 +386,7 @@ table.data tr.total td, table.data tr.total th { font-weight: 800; background: v
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
   padding: 12px 14px; box-shadow: var(--shadow);
 }
-.res a.res-title { font-weight: 700; color: var(--seal-blue); display: inline-block; min-height: 24px; padding: 3px 0 0; }
+.res a.res-title { font-weight: 700; color: var(--seal-blue-text); display: inline-block; min-height: 24px; padding: 3px 0 0; }
 .res .res-desc { font-size: .86rem; color: var(--muted); margin-top: 3px; }
 
 /* ── Image figures (preserved screenshots) ─────────────────────────────── */
@@ -325,7 +399,7 @@ figure figcaption { font-size: .85rem; color: var(--muted); padding: 8px 14px; b
 .story img { width: 100%; height: 100%; min-width: 0; object-fit: cover; display: block; }
 .story .story-body { padding: 18px 22px; }
 .story blockquote { margin: 0; font-size: 1.02rem; color: var(--ink); }
-.story .story-by { margin-top: 10px; font-weight: 700; color: var(--seal-blue); }
+.story .story-by { margin-top: 10px; font-weight: 700; color: var(--seal-blue-text); }
 @media (max-width: 620px) { .story { grid-template-columns: 1fr; } .story img { max-height: 320px; } }
 
 /* ── Two-column feature blocks ─────────────────────────────────────────── */
@@ -353,7 +427,7 @@ figure figcaption { font-size: .85rem; color: var(--muted); padding: 8px 14px; b
 @media (max-width: 560px) { .toc { columns: 1; } }
 
 /* ── Footer ────────────────────────────────────────────────────────────── */
-footer.foot { border-top: 4px solid var(--seal-blue); background: var(--surface); margin-top: 40px; }
+footer.foot { border-top: 4px solid var(--seal-blue-text); background: var(--surface); margin-top: 40px; }
 footer.foot .wrap { padding: 22px; color: var(--muted); font-size: .9rem; }
 footer.foot strong { color: var(--ink); }
 
@@ -362,7 +436,16 @@ footer.foot strong { color: var(--ink); }
    =========================================================================== */
 @media print {
   @page { size: letter; margin: 0.4in; }
-  :root { --shadow: none; }
+  /* Paper keeps the document pair, and the figures their old weight. The dark
+     palette is screen-only above, so print always takes the light values. */
+  :root {
+    --shadow: none;
+    --font-display: 'Cambria', 'Caladea', Georgia, 'Times New Roman', serif;
+    --font-body: 'Cambria', 'Caladea', Georgia, 'Times New Roman', serif;
+    --font-data: 'Calibri', 'Carlito', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  .masthead h1, section > h2, h2.h-card, h3:not(.h-sub) { font-weight: 700; }
+  .kpi .kpi-value, .stat .big { font-family: var(--font-data); font-weight: 800; }
   body { background: var(--surface); font-size: 10.5pt; line-height: 1.4; }
   .actionbar, .no-print, .skip-link { display: none !important; }
   .wrap { max-width: none; padding: 0; }

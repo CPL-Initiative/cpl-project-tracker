@@ -147,11 +147,7 @@ claude.ai.
 
 ## Next
 
-- **The open-asks series record reads version 56 (Sam pasted it, 03:18Z 2026-10-09, "success").** It sits at sheet
-  56's link with sheets 55 to 50 before it, 29 versions, Sheet 56 first and Current (read back by S350; receipt
-  `kb/receipts/cpl_library_open_asks_sheet56_2026-10-09_s350.sql`). `apply_migration` times out on `cpl_library` and on
-  no other table (five times through S349), so this table's writes go to Sam as a paste, one receipt that reaches the
-  new version from any earlier state the record could be in.
+- **The open-asks series record reads version 56; version 57 waits on Sam's paste.** Sam pasted version 56 at 03:18Z 2026-10-09 (receipt `kb/receipts/cpl_library_open_asks_sheet56_2026-10-09_s350.sql`). S352 wrote version 57 (Sheet 57, https://claude.ai/artifact/XGgsHHu54rJmNGeEuT1teL) as one guarded statement that applies only from version 56: `kb/receipts/cpl_library_open_asks_sheet57_2026-10-09_s352.sql`, handed to Sam in chat. This table's writes go to Sam as a paste: `apply_migration` times out on `cpl_library` and on no other table (five times through S349), and the repo's Supabase guard blocks an `update` through `execute_sql` (S352). After the paste, read back version 57, 30 versions, Sheet 57 first and Current.
 - **PR 2, the move (call 5):** once a session with the Microsoft 365 connector has read the SharePoint copies,
   each record points at its SharePoint link (a guarded update per record). Then remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
   `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's
