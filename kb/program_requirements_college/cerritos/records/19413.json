@@ -1,0 +1,260 @@
+{
+ "college": "Cerritos College",
+ "control_number": "19413",
+ "shape": "certificate",
+ "title": "Welding Technology: Gas Tungsten Arc Welding",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/gas-tungsten-arc-welding-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6446,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6446,
+    "output_tokens": 1647,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1647,
+  "output_tokens_details": {
+   "thinking_tokens": 311
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05872,
+ "ms": 14068,
+ "seconds": 14.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 24,
+   "share": 0.167,
+   "missing": [
+    "MTT100",
+    "WELD100",
+    "WELD155",
+    "WELD160",
+    "WELD172L",
+    "WELD210L",
+    "WELD212L",
+    "WELD214L",
+    "WELD220",
+    "WELD222",
+    "WELD240L",
+    "WELD250L",
+    "WELD254L",
+    "WELD256L",
+    "WELD258L",
+    "WELD260L",
+    "WELD270",
+    "WELD281L",
+    "WELD282L",
+    "WELD283L"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Welding Technology: Gas Tungsten Arc Welding (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will fabricate and weld various projects by converting decimal measurements into the fractional measurement system.",
+    "Students will interpret groove weld symbols used on blueprints to assemble and weld various structural joint designs.",
+    "Students will interpret fillet weld symbols used on blueprints to assemble and weld various structural joint designs.",
+    "Students will fillet weld aluminum lap and tee joint projects using various sizes of ER5356 and ER4043 aluminum filler wires with an acceptable appearance."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "WELD 149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 159",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MTT 100",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 100",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 155",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 160",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 172L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 210L",
+    "why": "not in the text"
+   },
+   {
+    "code": "WELD 212L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 214L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 220",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 240L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 250L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 254L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 256L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 258L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 260L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 270",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 281L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 282L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 283L",
+    "why": "listed as a recommended elective (GTAW Specialty Laboratory)"
+   },
+   {
+    "code": "WELD222",
+    "why": "listed as a recommended elective (printed as WELD 222, 1.0 unit)"
+   }
+  ],
+  "notes": [
+   "The 'Recommended Electives' list is not stated as required and carries no unit minimum; its courses were not recorded as a block. The certificate total of 18 units equals the four required courses.",
+   "Title mismatches between catalog and closed list: catalog prints WELD 149 as 'Welding Industry Project Planning and Estimation' (closed list: 'Welding Shop Math'); catalog prints WELD 155 as 'Industrial Pipe Fitting Fundamentals' (closed list: 'Welding Industry Project Planning and Estimation'). Reviewer should verify which title belongs to which code.",
+   "Closed list stores 'WELD222' without a space; the catalog prints 'WELD 222' among recommended electives.",
+   "The fourth program outcome (aluminum fillet welds with ER5356/ER4043 wires) is copied as printed though it reads like a GMAW/specialty outcome; reviewer may check."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

@@ -1,0 +1,253 @@
+{
+ "college": "Cerritos College",
+ "control_number": "20535",
+ "shape": "certificate",
+ "title": "Esthetician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/esthetician-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5770,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5770,
+    "output_tokens": 1749,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1749,
+  "output_tokens_details": {
+   "thinking_tokens": 423
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05806,
+ "ms": 15184,
+ "seconds": 15.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 12,
+   "share": 0.75,
+   "missing": [
+    "COS102",
+    "COS103",
+    "COS106"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "COS102E",
+    "COS103E",
+    "COS106E"
+   ],
+   "flagged": [
+    "COS102E",
+    "COS103E",
+    "COS106E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Esthetician (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will develop the necessary theoretical and practical skills to define, maintain and complete their personal educational and career goals.",
+    "Students will demonstrate the ability to communicate effectively and appropriately with peers and clients from different cultural and social backgrounds.",
+    "Students will demonstrate the ability to evaluate client needs, assess different options and develop the best approach to achieve desired results.",
+    "Students will develop values and beliefs in their role as members of a culturally diverse society and provide services for their community."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses: First Session",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COS 115A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 115B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 116A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 116B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 102E",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COS 103E",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Second Session",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COS 117A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 117B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 118A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 118B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 106E",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COS 119",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COS 102",
+    "why": "not in the text; catalog prints COS 102E with the same title"
+   },
+   {
+    "code": "COS 103",
+    "why": "not in the text; catalog prints COS 103E with the same title"
+   },
+   {
+    "code": "COS 106",
+    "why": "not in the text; catalog prints COS 106E with the same title"
+   }
+  ],
+  "notes": [
+   "The source page is the Esthetician (A.A.) degree page (body text says 'ASSOCIATE OF SCIENCE'); it prints no separate Certificate of Achievement section. The only program requirements on the page were recorded; a reviewer should confirm the certificate shares these requirements.",
+   "The page heading says A.A. but the body says Associate of Science and the degree requirements refer to Associate of Arts General Education; inconsistent degree labeling.",
+   "The program student learning outcomes are printed once for the program page as a whole; recorded on the assumption the certificate shares them.",
+   "The degree requirements name the Associate of Arts Degree General Education requirements; ge_pattern left null because the award is a certificate and GE applies only to the degree.",
+   "The catalog prints COS 102E, COS 103E and COS 106E where the closed list has COS 102, COS 103 and COS 106 (same titles and units); recorded as catalog additions. Likely the same courses under revised codes.",
+   "Required Courses are printed in two sub-headings (First Session, Second Session), recorded as two 'all' blocks. Total Units 20 is printed for the whole list."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

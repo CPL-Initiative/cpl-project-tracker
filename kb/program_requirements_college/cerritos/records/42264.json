@@ -1,0 +1,150 @@
+{
+ "college": "Cerritos College",
+ "control_number": "42264",
+ "shape": "noncredit",
+ "title": "Renewable Energy",
+ "award": "Noncredit program",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/renewable-energy-certificate-completion/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5249,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5249,
+    "output_tokens": 687,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 687,
+  "output_tokens_details": {
+   "thinking_tokens": 140
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03474,
+ "ms": 5426,
+ "seconds": 5.8,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "AED9005"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    170.0,
+    170.0
+   ],
+   "stated": [
+    170.0,
+    170.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Renewable Energy (Non Credit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 170,
+    "max": 170
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Describe the basic element of green construction and green energy buildings.",
+    "Explain residential and commercial photo-voltaic system terminology and installation techniques.",
+    "Perform the assembly of solar panels.",
+    "Differentiate between the approaches and methodologies for sizing different types of (PV) systems.",
+    "Identify the common issues addressed in interconnection agreements for (PV) systems."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AED 90.08",
+      "units": 80,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AED 90.09",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AED 90.05",
+    "why": "listed as a recommended elective (16 hours), not a requirement; not counted in the 170-hour total"
+   }
+  ],
+  "notes": [
+   "Noncredit Certificate of Completion counted in hours: 'Total Hours of Completion (170 Hours)'; course hours taken from the titles (80 and 90 hours). The Units column prints 0.0 for each course.",
+   "AED 90.05 OSHA-10 Training (16 hours) is printed under 'Recommended Elective' and is not part of the required 170 hours, so it is not placed in a block."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

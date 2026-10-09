@@ -1,0 +1,138 @@
+{
+ "college": "Cerritos College",
+ "control_number": "36281",
+ "shape": "noncredit",
+ "title": "Pre GED Spanish",
+ "award": "Noncredit program",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/pre-ged-spanish-certificate-completion/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5368,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5368,
+    "output_tokens": 675,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 675,
+  "output_tokens_details": {
+   "thinking_tokens": 256
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03497,
+ "ms": 6358,
+ "seconds": 6.8,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    144.0,
+    144.0
+   ],
+   "stated": [
+    144.0,
+    144.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pre GED Spanish (Non Credit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 144,
+    "max": 144
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [
+   {
+    "name": "Department Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AED 42.21",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AED 42.23",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion counted in hours: 'Total Hours of Completion (144 Hours)'. Each course is printed with 72 hours in its title and 0.0 in the units column; hours are recorded.",
+   "The closed list writes the second course as 'AED4223' (no space or period); it was matched to the catalog's 'AED 42.23' (same title) and not flagged as a catalog addition. A reviewer should confirm this match.",
+   "The page prints no program learning outcomes, so program.outcomes is empty."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

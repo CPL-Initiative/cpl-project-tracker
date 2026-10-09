@@ -1,0 +1,211 @@
+{
+ "college": "Cerritos College",
+ "control_number": "32550",
+ "shape": "certificate",
+ "title": "Automotive Collision Repair: Automotive Damage Appraisal and Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/automotive-damage-appraisal-management-ceritificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5358,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5358,
+    "output_tokens": 1572,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1572,
+  "output_tokens_details": {
+   "thinking_tokens": 243
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05287,
+ "ms": 11962,
+ "seconds": 12.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.5,
+    18.5
+   ],
+   "stated": [
+    18.5,
+    18.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Collision Repair Damage Appraisal and Management Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 18.5,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will learn how to identify various personality types including their own and demonstrate ways of adapting their responses to improve customer relations.",
+    "Students will learn to organize their time at work and in their personal lives by tracking their time use and selecting alternative activities as they see fit to enhance their lives.",
+    "Students will properly analyze structural damage to crashed vehicles and develop appropriate repair plans to correct structural realignment to factory specifications.",
+    "Students will properly format and write hand-written estimates using information from Motor Crash guides or Mitchell Estimating guides and Procedure Pages.",
+    "Students will use suspension design and geometry together with suspension theory to correctly identify damaged or bent components.",
+    "Students will work as teams to create and operate a simulated collision repair shops including: market area, size, location, number of employees, production and office space, capacity, operating budget, and compensation for it’s’ employees.",
+    "Students will analyze and determine a given shop’s production capacity and use process improvement methods to improve on the existing layout and production plan.",
+    "Students will demonstrate how to properly create and format computerized damage estimates in each estimating software platform and develop appropriate supplements.",
+    "Students will describe various elements and aspects of ethics in handling automotive insurance claims, including detecting fraudulent claims and how to prevent perpetuation of fraud in collision repair while providing appropriate compensation for collision repair procedures.",
+    "Students will fairly negotiate simulated insurance claims involving automotive collisions.",
+    "Students will identify appropriate ethical behavior as related to preparing damage reports and in negotiating settlements for repair work."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AB 151",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB 181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AB 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB 183P",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB 183U",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB 188",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB 281",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB 282",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AB 283",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-word ('utomotive Collision Repair Damage Appraisal and Management Certificate') and prints no separate heading; section_heading is taken from that opening phrase.",
+   "The 'Required Electives' heading states no number of courses or units to choose. The listed electives sum to 11 units and the core to 7.5 units, which together equal the stated Total Units of 18.5, so the block is recorded as 'all'. Reviewer should confirm whether a choice was intended.",
+   "Outcomes are printed under 'Program Student Learning Outcomes' for this certificate page; copied verbatim, including the original wording 'a simulated collision repair shops' and 'it’s’ employees'."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

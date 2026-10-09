@@ -1,0 +1,183 @@
+{
+ "college": "Cerritos College",
+ "control_number": "02213",
+ "shape": "degree",
+ "title": "Business Communications Office Technology: Secretary/Administrative Assistant",
+ "award": "A.A. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/secretary-administrative-assistant-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5778,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5778,
+    "output_tokens": 1549,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1549,
+  "output_tokens_details": {
+   "thinking_tokens": 476
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05409,
+ "ms": 13623,
+ "seconds": 14.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "BCOT112",
+    "BCOT113",
+    "BCOT118",
+    "BCOT131",
+    "BCOT146",
+    "BCOT152",
+    "BCOT161",
+    "BCOT162",
+    "BCOT247",
+    "BCOT248",
+    "BCOT60",
+    "BCOT71",
+    "BCOT96",
+    "BCOT97"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Communications Office Technology: Secretary/Administrative Assistant (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BCOT 60",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 96",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 97",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 112",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 113",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 118",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 131",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 146",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 152",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 247",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 71",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 161",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 162",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   },
+   {
+    "code": "BCOT 248",
+    "why": "named only in the Certificate of Achievement section; no A.A. section in text"
+   }
+  ],
+  "notes": [
+   "The requested award is the A.A. Degree, but the source page (URL slug 'secretary-administrative-assistant-certificate-achievement') prints only the Certificate of Achievement section, headed 'Business Communications Office Technology: Secretary/Administrative Assistant (CERT)'. No A.A. section, A.A. requirements, A.A. total or A.A.-specific outcomes appear in the text, so no blocks, total or outcomes are recorded for the A.A.",
+   "For reviewer reference, the certificate lists: BCOT 60, 96, 97, 112, 113, 118, 131, 146, 161, 162, 248 required; BCOT 152 (1.5-3.0) or BCOT 247; BCOT 155 (3.5) or BCOT 71; Total Units 31-32.5. BCOT 155 Administrative Secretarial Procedures is not in the closed list.",
+   "The Program Student Learning Outcomes printed on the page are under the Certificate of Achievement heading and are not stated to apply to the A.A., so they are not recorded here.",
+   "Check whether the A.A. Degree has its own catalog page (likely a different URL) and re-extract from that page."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

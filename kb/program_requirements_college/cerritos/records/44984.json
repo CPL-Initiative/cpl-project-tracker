@@ -1,0 +1,631 @@
+{
+ "college": "Cerritos College",
+ "control_number": "44984",
+ "shape": "certificate",
+ "title": "Education Studies: Special Education",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/special-education-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7075,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7075,
+    "output_tokens": 4578,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4578,
+  "output_tokens_details": {
+   "thinking_tokens": 1436
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.11986,
+ "ms": 33973,
+ "seconds": 34.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 17,
+   "share": 0.882,
+   "missing": [
+    "COMM120",
+    "PHIL215"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 36,
+   "codes": [
+    "ART100",
+    "BIOL120",
+    "COMM100",
+    "COMM103",
+    "COMM110",
+    "COMMC1000",
+    "COMMC1004",
+    "DANC101",
+    "ECON210",
+    "ENGL230A",
+    "ENGL230B",
+    "ENGL246A",
+    "ENGL246B",
+    "ENGL248A",
+    "ENGL248B",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1002",
+    "ENGLC1003",
+    "ESCI110",
+    "GEOG105",
+    "GEOL101",
+    "HIST245",
+    "HISTC1001",
+    "MATH110A",
+    "MATH114",
+    "MATH114S",
+    "MUS100",
+    "MUS105",
+    "PHIL103",
+    "PHIL106",
+    "POLSC1000",
+    "PS112",
+    "PSYC103",
+    "PSYC210",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "ART100",
+    "BIOL120",
+    "COMM100",
+    "COMM103",
+    "COMM110",
+    "COMMC1000",
+    "COMMC1004",
+    "DANC101",
+    "ECON210",
+    "ENGL230A",
+    "ENGL230B",
+    "ENGL246A",
+    "ENGL246B",
+    "ENGL248A",
+    "ENGL248B",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1002",
+    "ENGLC1003",
+    "ESCI110",
+    "GEOG105",
+    "GEOL101",
+    "HIST245",
+    "HISTC1001",
+    "MATH110A",
+    "MATH114",
+    "MATH114S",
+    "MUS100",
+    "MUS105",
+    "PHIL103",
+    "PHIL106",
+    "POLSC1000",
+    "PS112",
+    "PSYC103",
+    "PSYC210",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    27.0,
+    31.5
+   ],
+   "stated": [
+    27.0,
+    30.5
+   ],
+   "why": [
+    "the blocks sum to 27.0-31.5; the catalog states 27.0-30.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Education: Special Education (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 30.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Facilitate undergraduate access of any major to fundamental knowledge and experience important to working with student with disabilities",
+    "Strengthen the preparation of those interested in working with students with disabilities",
+    "Develop an understanding of the theories and the legal premises upon which special education practices are based",
+    "Evaluate the best practices in creating equitable teaching and learning environments",
+    "Provide a degree pathway for students who would like to become Special Education Teachers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses – Section 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "EDEL 110",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDEL 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDEL 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EDT 140",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select one Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ASL 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "A&P 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDSE 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDSE 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Section 2: Communication Skills & Analytical Thinking – Select One Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "COMM 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "READ 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Mathematical Concepts & Natural Sciences – Select One Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "BIOL 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESCI 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 110A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [
+       {
+        "code": "ECON 210",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 210",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 114",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [
+       {
+        "code": "MATH 114S",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Social Sciences – Select One Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEOG 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 245",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Arts and Humanities – Select One Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 230A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 230B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 246A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 246B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 248A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 248B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TH 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC 101",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 120",
+    "why": "not in the text; List A prints COMM C1004 Interpersonal Communication instead"
+   },
+   {
+    "code": "PHIL 215",
+    "why": "not in the text; only EDEL 215 Philosophy of Education is printed"
+   }
+  ],
+  "notes": [
+   "The requested award is a Certificate of Achievement, but the text prints only the 'Education: Special Education (A.A.)' section; no certificate section appears. This record reads the A.A. major requirements as the only section available; a reviewer should confirm whether the certificate shares these requirements.",
+   "The A.A. major total 27-30.5 exceeds the 'fewer than 30 units' range of the stated award type at its upper end.",
+   "Program outcomes are printed for the A.A. program; recorded on the assumption the certificate shares them.",
+   "The closed-list code CDEVC1000 was matched to the catalog's CDEV C1000.",
+   "EDT 110 and EDT 140 are printed without units. A Spring 2027 update raises EDT 110 from 2.0 to 3.0 units and changes its title; the Section 1 stated total of 12.0 matches the former 2-unit value (1+3+3+2+3). The program total range was updated from 27-31.5 to 27-30.5.",
+   "STAT C1000 and MATH 114 print a 4-4.5 range; their 'or' alternatives print no units.",
+   "EDT 140 title in catalog ('Accessibility and Inclusive Design in Education') differs from the closed list title; EDEL 210 title also differs ('Disability and American Education')."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

@@ -1,0 +1,326 @@
+{
+ "college": "Cerritos College",
+ "control_number": "20530",
+ "shape": "certificate",
+ "title": "Global Studies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/global-studies-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5995,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5995,
+    "output_tokens": 2451,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2451,
+  "output_tokens_details": {
+   "thinking_tokens": 697
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.073,
+ "ms": 20012,
+ "seconds": 20.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 20,
+   "share": 0.75,
+   "missing": [
+    "HUM100",
+    "POL210",
+    "POL220",
+    "POL230",
+    "POL240"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "POLS210",
+    "POLS220",
+    "POLS230",
+    "POLS240"
+   ],
+   "flagged": [
+    "POLS210",
+    "POLS220",
+    "POLS230",
+    "POLS240"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "International Studies: Global Studies (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students analyze the impact of fiscal and monetary policy on the economy.",
+    "Students describe how households maximize utilities and firms maximize profits in different market structures",
+    "Students evaluate the costs and benefits of government intervention in markets.",
+    "Students locate and utilize data to critically interpret economic information using quantitative methods.",
+    "Students understand the basic principles of a market economy and its principal economic institutions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ANTH 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Option 1: Political-Economic Option (select three courses)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": "Division Requirements",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BA 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WGS 206",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 246",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2: Socio-Cultural (select three courses)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": "Division Requirements",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ANTH 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "POL 210",
+    "why": "catalog prints it as POLS 210 (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 220",
+    "why": "catalog prints it as POLS 220 (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 230",
+    "why": "catalog prints it as POLS 230 (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 240",
+    "why": "catalog prints it as POLS 240 (recorded as catalog addition)"
+   },
+   {
+    "code": "HUM 100",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The Program Student Learning Outcomes printed in this section are all about economics (fiscal/monetary policy, market structures) and appear to belong to an economics program rather than Global Studies; recorded verbatim as printed, but a reviewer should check.",
+   "Catalog prints the political science subject as POLS while the closed list uses POL; the POLS codes are recorded as catalog additions and the POL codes listed as missing. They are likely the same courses.",
+   "Closed list code 'SOCIC1000' (units not stored) was treated as the same course as the catalog's 'SOCI C1000' (Introductory Sociology Principles, 3 units), so catalog_addition is false; titles differ slightly (closed list: Introduction to Sociology).",
+   "The 9.0 units are printed beside 'Division Requirements - Select one Option'; recorded as the stated total of each option block since the student completes one option of three 3-unit courses.",
+   "ANTH 170 is printed without units; WGS 206 (alternative to ECON 102) is printed without units.",
+   "Heading reads 'International Studies: Global Studies (CERT)'; the page also notes one year of Foreign Language study is recommended (not a requirement)."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

@@ -1,0 +1,509 @@
+{
+ "college": "Cerritos College",
+ "control_number": "44153",
+ "shape": "degree",
+ "title": "Dental Hygiene",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/dental_hygience_bachelor-of-science_baccalaureate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7578,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7578,
+    "output_tokens": 5001,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5001,
+  "output_tokens_details": {
+   "thinking_tokens": 1880
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.13033,
+ "ms": 40482,
+ "seconds": 40.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 45,
+   "listed": 50,
+   "share": 0.9,
+   "missing": [
+    "COMM103",
+    "COMM120",
+    "DH498",
+    "DH499",
+    "ENGLC1000"
+   ],
+   "unexplained": [
+    "ENGLC1000"
+   ],
+   "pass": false
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "COMM125",
+    "COMMC1004"
+   ],
+   "flagged": [
+    "COMM125",
+    "COMMC1004"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    114.0,
+    116.5
+   ],
+   "stated": [
+    120.0,
+    122.0
+   ],
+   "why": [
+    "the blocks sum to 114.0-116.5; the catalog states 120.0-122.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 120,
+    "max": 122
+   },
+   "open_elective_units": 15,
+   "ge_pattern": "One of: Intersegmental General Education Transfer Curriculum (IGETC), CSU General Education Breadth Requirements (CSUGE), California General Education Transfer Curriculum (Cal-GETC), or Cerritos General Education Curriculum (CGEC), completed prior to applying",
+   "outcomes": [
+    "Graduates must be competent in applying ethical, legal, and regulatory concepts to the provision and/or support of oral health care services.",
+    "To encourage the student to develop professional behavior that is founded in evidence-based decision making, self-directed learning, and self-assessment to enhance professional competence.",
+    "Graduates must be competent in the application of self-assessment skills to prepare them for life-long learning.",
+    "Graduates must be competent in the evaluation of current scientific literature.",
+    "Graduates must be competent in problem solving strategies related to comprehensive patient care and management of patients.",
+    "To defend the value of systemic health through oral health and the patient’s role as a co-therapist."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "PART I: LOWER DIVISION COURSEWORK",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "A&P 200",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "A&P 150",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "A&P 201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "A&P 151",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 110",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HO 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 200",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ADDITIONAL REQUIRED COURSEWORK",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13.5
+    },
+    "courses": [
+     {
+      "code": "COMM 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 125",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 132",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 210",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 210",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "PART II: UPPER DIVISION COURSEWORK",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 66,
+     "max": 66
+    },
+    "courses": [
+     {
+      "code": "DH 310",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 311",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 312",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 315C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 316",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 319",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 320",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 325",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 325C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 328",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 329",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 327",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 350C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 432L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 434",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 435",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 435C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 438L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 439",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 444",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 445",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 445C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 448L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH 449",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 410",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 120",
+    "why": "not in the text; the catalog lists COMM C1004 Interpersonal Communication instead"
+   },
+   {
+    "code": "DH 498",
+    "why": "not in the text"
+   },
+   {
+    "code": "DH 499",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-way through an outcomes/goals list; the first visible line ('s and professional associations.') is a truncated fragment and was not recorded. The heading of that list is not in the text, so a reviewer should confirm whether these lines are program learning outcomes, program goals or competencies. The lines beginning 'To encourage...' and 'To defend...' read like program goals rather than outcomes.",
+   "Lower division also requires '*Biochemistry or Organic Chemistry with Biochemistry' (4.0-5.0 units). It has no course code because Cerritos does not offer it and it must be taken at another institution, so it is not recorded as a course.",
+   "The lower division block prints 'Total Units for Lower Division Coursework 26-27' under the table, but the summary at the end prints 26.0-27.5. The block's stated value uses the table figure.",
+   "The 4.0-4.5 range is printed on the PSYC 210 row and covers the statistics choice as a whole (PSYC 210, STAT C1000, STAT C1000E or ECON 210). Units are not printed beside the alternatives.",
+   "The catalog prints SOCI C1000; the closed list stores it as 'SOCIC1000' with no units. This is treated as the same course.",
+   "DH 315C and DH 432L appear in the closed list as 'DH 315c' and 'DH 432l'. These are treated as the same courses.",
+   "COMM C1004 and COMM 125 appear as alternatives to COMM 100 but are not on the closed list. COMM C1000 is titled 'Introduction to Public Speaking' in the catalog.",
+   "The upper division courses are printed by term (Semester One, Semester Two, Summer Semester, Semester Three, Semester Four). They are recorded as one required block totaling the stated 66 units.",
+   "The total of 120-122 units includes 15 elective units 'to meet the minimum of 120 units'. General education is completed before applying and is not counted in the listed coursework totals.",
+   "The lower division science prerequisites carry recency, GPA and wet-lab requirements; see the catalog text."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

@@ -1,0 +1,142 @@
+{
+ "college": "Cerritos College",
+ "control_number": "32411",
+ "shape": "certificate",
+ "title": "Automotive Collision Repair: Automotive Refinishing",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/general-automotive-collision-repair-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5317,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5317,
+    "output_tokens": 1084,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1084,
+  "output_tokens_details": {
+   "thinking_tokens": 472
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04295,
+ "ms": 10000,
+ "seconds": 10.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "AB151",
+    "AB161",
+    "AB161L",
+    "AB163",
+    "AB165",
+    "AB181"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AB 151",
+    "why": "named only in the General Automotive Collision Repair (CERT) section, a different program"
+   },
+   {
+    "code": "AB 161",
+    "why": "named only in the General Automotive Collision Repair (CERT) section, a different program"
+   },
+   {
+    "code": "AB 161L",
+    "why": "named only in the General Automotive Collision Repair (CERT) section, a different program"
+   },
+   {
+    "code": "AB 163",
+    "why": "not in the text"
+   },
+   {
+    "code": "AB 165",
+    "why": "not in the text"
+   },
+   {
+    "code": "AB 181",
+    "why": "named only in the General Automotive Collision Repair (CERT) section, a different program"
+   }
+  ],
+  "notes": [
+   "The supplied text and source URL are for 'Automotive Collision Repair: General Automotive Collision Repair (CERT)', not the requested 'Automotive Collision Repair: Automotive Refinishing' certificate. No section for the Automotive Refinishing award appears in the text, so no requirements, total or outcomes were recorded.",
+   "The General certificate printed here requires AB 151 (4.5) and AB 181 (3.0) as core, lists AB 154 (4.5), AB 156 (2.0), AB 161 (3.0) and AB 161L (1.5) under 'Required Electives', and totals 18.5 units. It also prints eight Program Student Learning Outcomes. None of this was recorded because it belongs to another award.",
+   "The closed list includes the refinishing courses AB 163 and AB 165, which are absent from this page. A reviewer should fetch the Automotive Refinishing certificate page from the 2026-2027 Cerritos catalog."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

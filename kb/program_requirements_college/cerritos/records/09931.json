@@ -1,0 +1,289 @@
+{
+ "college": "Cerritos College",
+ "control_number": "09931",
+ "shape": "degree",
+ "title": "Welding Technology: Pipe Welding",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/pipe-welding-as/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6476,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6476,
+    "output_tokens": 1910,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1910,
+  "output_tokens_details": {
+   "thinking_tokens": 308
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0641,
+ "ms": 14262,
+ "seconds": 14.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 26,
+   "share": 0.231,
+   "missing": [
+    "MTT100",
+    "WELD100",
+    "WELD155",
+    "WELD160",
+    "WELD172L",
+    "WELD212L",
+    "WELD214L",
+    "WELD220",
+    "WELD222",
+    "WELD240L",
+    "WELD250L",
+    "WELD254L",
+    "WELD256L",
+    "WELD258L",
+    "WELD260L",
+    "WELD270",
+    "WELD281L",
+    "WELD282L",
+    "WELD283L",
+    "WELD52"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "WELD252L"
+   ],
+   "flagged": [
+    "WELD252L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Welding Technology: Pipe Welding (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will assemble and weld various projects using a standard tape measure to make accurate measurements using the fractional measurement system.",
+    "Students will fabricate and weld various projects by converting decimal measurements into the fractional measurement system.",
+    "Students will interpret fillet weld symbols used on blueprints to assemble and weld various structural joint designs.",
+    "Students will interpret groove weld symbols used on blueprints to assemble and weld various structural joint designs.",
+    "Students will make measurements on pipe using templates, pipe wraparounds, and layout tooling to accurately cut pipe with and acceptable appearance.",
+    "Students will use oxyacetylene flame cutting equipment and plasma arc cutting equipment to prepare groove welding and pipe welding joint geometry with and acceptable appearance."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23,
+     "max": 23
+    },
+    "courses": [
+     {
+      "code": "WELD 120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 153",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 159",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 210L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 252L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MTT 100",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 100",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 155",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 160",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 172L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 212L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 214L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 220",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD222",
+    "why": "listed as a recommended elective (printed as WELD 222, 1.0 units)"
+   },
+   {
+    "code": "WELD 240L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 250L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 254L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 256L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 258L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 260L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 270",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 281L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 282L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 283L",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "WELD 52",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The 'Total Units 23' printed under Required Courses is recorded as the major total and the block's stated total.",
+   "WELD 252L (Pipe Welding Level 1, 2.0 units) is a required course not in the closed list.",
+   "The catalog titles WELD 149 'Welding Industry Project Planning and Estimation' while the closed list titles it 'Welding Shop Math'; the closed list gives that title to WELD 155, which the catalog titles 'Industrial Pipe Fitting Fundamentals'. Reviewer should check the course numbering/titles.",
+   "A 'Recommended Electives' list (MTT 100, WELD 100, 155, 160, 172L, 212L, 214L, 220, 222, 240L, 250L, 254L, 256L, 258L, 260L, 270, 281L, 282L, 283L) is printed after the required total; it is not stated as a requirement, so it is not recorded as a block.",
+   "Outcomes copied verbatim, including the printed typo 'with and acceptable appearance'.",
+   "Degree text says to complete 60 units including major requirements, General Education requirements and electives, but names no specific GE pattern."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

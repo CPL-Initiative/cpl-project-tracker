@@ -1,0 +1,202 @@
+{
+ "college": "Cerritos College",
+ "control_number": "09922",
+ "shape": "degree",
+ "title": "Automotive Technology: Manufacture Specialty",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/manufacture-specialty-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5800,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5800,
+    "output_tokens": 1273,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1273,
+  "output_tokens_details": {
+   "thinking_tokens": 239
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04866,
+ "ms": 10663,
+ "seconds": 11.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 11,
+   "share": 0.636,
+   "missing": [
+    "BCOT148",
+    "BCOT247",
+    "MTT100",
+    "WELD100"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Technology: Manufacture Specialty (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate safe practices when working on all types of vehicles.",
+    "Analyze service information in order to diagnose and repair vehicle faults.",
+    "Practice repairing faults related to engine repair, automatic transmission/transaxle, manual drivetrain and axle, suspension and steering, brakes, electrical/electronics, HVAC, and engine performance."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 121",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 151",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 161",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 173",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 179",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 181",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BCOT 148",
+    "why": "listed as a recommended elective, outside the major requirements"
+   },
+   {
+    "code": "BCOT 247",
+    "why": "listed as a recommended elective, outside the major requirements"
+   },
+   {
+    "code": "MTT 100",
+    "why": "listed as a recommended elective, outside the major requirements"
+   },
+   {
+    "code": "WELD 100",
+    "why": "listed as a recommended elective, outside the major requirements"
+   }
+  ],
+  "notes": [
+   "AUTO 161 is printed at 5.0 units in the catalog; the state file stores 2.5 units.",
+   "AUTO 173 is printed at 12.0 units with the note that students must repeat the course for a total of 12 units (footnote: repeated four times); the state file stores 3 units.",
+   "Footnote: AUTO 100 can substitute 3 units of AUTO 173. AUTO 100 is not in the closed list and was not recorded as an alternative because it replaces only part of AUTO 173's units.",
+   "The degree requires a minimum of 60 units including the major, General Education requirements and electives as needed; no specific GE pattern is named.",
+   "Course titles in the catalog differ slightly from the state file (e.g., AUTO 111 'Ford Automotive Engine Operation and Diagnosis', AUTO 179 'Ford Automotive Air Conditioning').",
+   "The page URL slug ends in 'manufacture-specialty-aa' while the heading says A.S.; the A.S. section was read."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

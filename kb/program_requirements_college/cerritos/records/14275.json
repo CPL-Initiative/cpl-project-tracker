@@ -1,0 +1,362 @@
+{
+ "college": "Cerritos College",
+ "control_number": "14275",
+ "shape": "degree",
+ "title": "Women's and Gender Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/womens-gender-studies-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6513,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6513,
+    "output_tokens": 2548,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2548,
+  "output_tokens_details": {
+   "thinking_tokens": 728
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07701,
+ "ms": 19133,
+ "seconds": 19.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 27,
+   "listed": 30,
+   "share": 0.9,
+   "missing": [
+    "WGS118",
+    "WGS202",
+    "WGS207"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "WGS105",
+    "WGS250"
+   ],
+   "flagged": [
+    "WGS105",
+    "WGS250"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Women's and Gender Studies (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Describe how the effects of gender, sexuality, race, and class intersect in the construction of identity.",
+    "Demonstrate an understanding of the obstacles, struggles and achievements of women throughout history.",
+    "Use feminist frameworks to analyze the structure of gendered representations in media, language, and texts.",
+    "Engage in critical self-reflection in order to demonstrate an understanding of agency and social responsibility in personal, professional, and community settings."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WGS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HED 103",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select at least 12 units from the following:",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "WGS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WGS 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KIN 108",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 109",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 204",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 205",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 102",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 208",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BA 208",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGS 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM 109",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 236",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WGS 118",
+    "why": "not in the text; only ART 118 is listed"
+   },
+   {
+    "code": "WGS 202",
+    "why": "not in the text; only SOC 202 is listed"
+   },
+   {
+    "code": "WGS 207",
+    "why": "not in the text; only ART 207 is listed"
+   }
+  ],
+  "notes": [
+   "Cross-listed 'or' alternatives (HED 103, KIN 108, PHIL 109, HIST 204, ANTH 205, ECON 102, BA 208, HUM 109) are printed without units in the catalog, so their units are recorded as null; the state file lists each at 3 units.",
+   "WGS 105 and WGS 250 appear in the elective list but are not in the closed list; recorded as catalog additions.",
+   "Several courses carry a footnote marker '1'; the footnote text after 'Total Units 18' prints only '1' with no text. The following note says cross-listed courses may not both be used for credit.",
+   "Catalog prints the title of WGS 107 as 'Men and Masculinities: Constructing Manhood in America', slightly different from the closed-list title.",
+   "Degree requirements refer to 'the General Education requirements' without naming a specific pattern, so ge_pattern is left null.",
+   "Program Student Learning Outcomes are printed for the A.A. program; the page covers only this award."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

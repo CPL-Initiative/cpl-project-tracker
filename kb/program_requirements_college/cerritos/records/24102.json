@@ -1,0 +1,153 @@
+{
+ "college": "Cerritos College",
+ "control_number": "24102",
+ "shape": "noncredit",
+ "title": "Pre-Apprenticeship",
+ "award": "Noncredit program",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/pre-apprenticeship-certificate-completion/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5222,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5222,
+    "output_tokens": 886,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 886,
+  "output_tokens_details": {
+   "thinking_tokens": 304
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03861,
+ "ms": 7917,
+ "seconds": 8.4,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    188.0,
+    188.0
+   ],
+   "stated": [
+    188.0,
+    188.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pre-Apprenticeship (Non Credit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 188,
+    "max": 188
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [
+   {
+    "name": "Division/Department Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AED 36.02",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AED 36.03",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AED 36.04",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AED 80.01",
+      "units": 80,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is counted in hours. Each course's hours come from the title text (e.g. '(36 hours)'). The Units column prints 0.0 for every course. Total Hours of Completion is 188.",
+   "The closed list's 'AED3603' (Basic Reading Skills BTC) is matched to the catalog's 'AED 36.03' (Basic Reading Skills for the Building Trades and Construction Industry). The match is by number and title, so it is not flagged as a catalog addition. A reviewer should confirm this.",
+   "The section is headed 'CERTIFICATE OF COMPLETION'. Its descriptive paragraph talks about apprenticeship programs generally, not this pre-apprenticeship certificate.",
+   "The text prints no program learning outcomes."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

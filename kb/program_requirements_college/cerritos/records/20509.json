@@ -1,0 +1,184 @@
+{
+ "college": "Cerritos College",
+ "control_number": "20509",
+ "shape": "certificate",
+ "title": "Composite Inspection",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/composite-inspection-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5488,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5488,
+    "output_tokens": 1106,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1106,
+  "output_tokens_details": {
+   "thinking_tokens": 256
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04407,
+ "ms": 9119,
+ "seconds": 9.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENGT250"
+   ],
+   "flagged": [
+    "ENGT250"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    18.5
+   ],
+   "stated": [
+    17.0,
+    18.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Composite Inspection (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Student demonstrate safe work habits around plastics machinery.",
+    "Student utilize non-destructive procedures to inspect the quality of a manufactured part.",
+    "Students communicate clear technical instructions.",
+    "Students differentiate between the various types of plastic.",
+    "Students identify by visual inspection the quality of a manufactured part.",
+    "Students use percentages to mix resigns, fillers, and colors.",
+    "Students use physical testing to validate the strength of a manufactured part.",
+    "Students utilize ratios and fractions to mix materials."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 117",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 209",
+      "units": 3,
+      "units_max": 4.5,
+      "alternatives": [
+       {
+        "code": "ENGT 250",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGT 251",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The range 3.0-4.5 is printed on the ENGT 209 row and appears to cover the whole three-way choice (ENGT 209 or ENGT 250 or ENGT 251); no units are printed beside the alternatives individually, so their units are null. The state file lists ENGT 209 at 3 and ENGT 251 at 4.5.",
+   "ENGT 250 (Fiberglass and Vacuum Infusion Process Technology) is not in the closed list; recorded as a catalog addition.",
+   "The catalog prints the ENGT 209 title as 'Plastics Injection Molding I' versus the state file's 'Plastic Injection Molding I'.",
+   "Outcomes copied as printed, including 'resigns' (likely meant 'resins') and 'Student demonstrate'/'Student utilize'."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

@@ -1,0 +1,199 @@
+{
+ "college": "Cerritos College",
+ "control_number": "19089",
+ "shape": "certificate",
+ "title": "New Product Development: Automotive Aftermarket Product Development Option",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/automotive-aftermarket-product-development-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5442,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5442,
+    "output_tokens": 1038,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1038,
+  "output_tokens_details": {
+   "thinking_tokens": 234
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04253,
+ "ms": 9075,
+ "seconds": 9.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 6,
+   "share": 0.667,
+   "missing": [
+    "NPD105",
+    "WELD130"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ENGT131",
+    "ENGT137",
+    "ENGT259"
+   ],
+   "flagged": [
+    "ENGT131",
+    "ENGT137",
+    "ENGT259"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    17.0
+   ],
+   "stated": [
+    16.0,
+    17.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "New Product Development: Automotive Aftermarket Product Development Option (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students take a product through the stages of new products development.",
+    "Students create a design presentation.",
+    "Students design products for OEM and aftermarket automotive or autobody products.",
+    "Students evaluate the feasibility of the rapid prototyping products of their choice.",
+    "Students produce a cost-effective plan for an automation product of choice.",
+    "Students produce portfolio for a new design.",
+    "Students select a plan for manufacturing and procurement."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NPD 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NPD 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NPD 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 137",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENGT 131",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGT 259",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NPD 105",
+    "why": "not in the text"
+   },
+   {
+    "code": "WELD 130",
+    "why": "listed as a recommended course"
+   }
+  ],
+  "notes": [
+   "The 3.0-4.0 range is printed only on the ENGT 137 row; ENGT 131 and ENGT 259 'or' rows print no units, so their units are left null.",
+   "Recommended Courses (MTT 278, WELD 130, WMT 111L) are not requirements and were not placed in a block.",
+   "The catalog prints NPD 103 as 'Tooling and Materials for New Product Development' and AUTO 100 as 'Automotive Maintenance and Operation'; the state file titles differ slightly.",
+   "Total Units 16-17 is printed once for the program requirements list and recorded as the certificate total."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

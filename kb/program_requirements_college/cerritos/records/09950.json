@@ -1,0 +1,208 @@
+{
+ "college": "Cerritos College",
+ "control_number": "09950",
+ "shape": "degree",
+ "title": "Business Communications Office Technology: General Office",
+ "award": "A.A. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/general-office-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5779,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5779,
+    "output_tokens": 1607,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1607,
+  "output_tokens_details": {
+   "thinking_tokens": 532
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05526,
+ "ms": 13393,
+ "seconds": 13.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    26.5
+   ],
+   "stated": [
+    25.0,
+    26.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Communications Office Technology: General Office (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 26.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students apply correct filing principles, spelling/proofreading skills, and office procedures for the office.",
+    "Students apply correct customer service/telephone techniques in a business environment.",
+    "Students apply standard English grammar and writing skills to write effective business documents.",
+    "Students apply the steps for effective job search in the business field.",
+    "Students use correct keyboarding skills in applying Microsoft Office software for creating, editing, and formatting office documents."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BCOT 96",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 97",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 112",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 114",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 131",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 152",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BCOT 247",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 161",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCOT 248",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints '1.5-3.0' beside the row 'BCOT 152 ... or BCOT 247'; this range was read as BCOT 152 = 1.5 units and BCOT 247 = 3.0 units (matching the state file), so BCOT 152 is recorded with units 1.5 and its alternative BCOT 247 with 3; no separate units are printed beside BCOT 247.",
+   "The total 25-26.5 units reflects the BCOT 152 / BCOT 247 choice.",
+   "The degree requires 60 units including 'the General Education requirements' without naming a specific GE pattern, so ge_pattern is null.",
+   "Catalog prints BCOT 114 title as 'Introduction to Microsoft Office'; the state file title is 'Introduction Microsoft Office' — same code, treated as on the closed list.",
+   "The page's note refers to 'this Certificate/A.A. degree' as non-transferable; only the A.A. requirements are shown in this section."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

@@ -1,0 +1,457 @@
+{
+ "college": "Cerritos College",
+ "control_number": "19166",
+ "shape": "degree",
+ "title": "Liberal Arts and Sciences: Culture and Society",
+ "award": "A.A. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/history-aa-t/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9446,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9446,
+    "output_tokens": 3408,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3408,
+  "output_tokens_details": {
+   "thinking_tokens": 958
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10594,
+ "ms": 26171,
+ "seconds": 26.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 69,
+   "share": 0.0,
+   "missing": [
+    "ANTH100",
+    "ANTH170",
+    "ANTH200",
+    "ART100",
+    "ART102",
+    "ART103",
+    "ART104",
+    "ART105A",
+    "ART105B",
+    "ART107",
+    "ART123",
+    "ARTHC1100",
+    "DANC101",
+    "DANC109",
+    "ENGL221A",
+    "ENGL221B",
+    "ENGL223",
+    "ENGL224",
+    "ENGL225",
+    "ENGL228",
+    "ENGL235",
+    "ENGL236",
+    "ENGL237",
+    "ENGL246A",
+    "ENGL246B",
+    "ENGL248A",
+    "ENGL248B",
+    "FILM159",
+    "GEOG102",
+    "HIST101",
+    "HIST102",
+    "HIST110",
+    "HIST120",
+    "HIST204",
+    "HIST210",
+    "HIST220",
+    "HIST221",
+    "HIST230",
+    "HIST235",
+    "HIST241",
+    "HIST242",
+    "HIST245",
+    "HIST246",
+    "HIST250",
+    "HIST255",
+    "HIST260",
+    "HIST265",
+    "HISTC1002",
+    "HUM100",
+    "JAMS100",
+    "JAMS151",
+    "JAMS152",
+    "MUS101",
+    "PHIL104",
+    "PHIL200",
+    "PHIL201",
+    "POL201",
+    "POL210",
+    "POL220",
+    "POL230",
+    "POLSC1000",
+    "SOC201",
+    "SOC215",
+    "SOCIC1000",
+    "SPAN210",
+    "TH102",
+    "TH103",
+    "WGS102",
+    "WGS204"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "History (AA-T)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 100",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ANTH 170",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ANTH 200",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ART 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 104",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 105A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 105B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 107",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 123",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC 109",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 221A",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 221B",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 223",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 224",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 225",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 228",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 235",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 236",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 237",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 246A",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 246B",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 248A",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "ENGL 248B",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "FILM 159",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 101",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 110",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 120",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 204",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 210",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 220",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 221",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 230",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 235",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 241",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 242",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 245",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 246",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 250",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 255",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 260",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST 265",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "HUM 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAMS 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAMS 151",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAMS 152",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 104",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "PHIL 200",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "PHIL 201",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "POL 201",
+    "why": "not in the text as printed; POLS 201 appears only in the History (AA-T) section"
+   },
+   {
+    "code": "POL 210",
+    "why": "not in the text as printed; POLS 210 appears only in the History (AA-T) section"
+   },
+   {
+    "code": "POL 220",
+    "why": "not in the text as printed; POLS 220 appears only in the History (AA-T) section"
+   },
+   {
+    "code": "POL 230",
+    "why": "not in the text as printed; POLS 230 appears only in the History (AA-T) section"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "SOC 201",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "SOC 215",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "printed as SOCI C1000 only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "SPAN 210",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "TH 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "TH 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "WGS 102",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   },
+   {
+    "code": "WGS 204",
+    "why": "appears only in the History (AA-T) section, not this award's"
+   }
+  ],
+  "notes": [
+   "The supplied page (URL .../history-aa-t/) prints only the History (AA-T) program; no section for Liberal Arts and Sciences: Culture and Society (A.A.) appears in the text. section_heading names the only program section on the page, but no requirements, totals, GE pattern or outcomes were recorded from it because they belong to a different award.",
+   "The History (AA-T) section lists Program Student Learning Outcomes, a Total Units of 18-20 and Cal-GETC; these were deliberately not attributed to the Culture and Society A.A.",
+   "Reviewer should fetch the correct catalog page for Liberal Arts and Sciences: Culture and Society (A.A.) for 2026-2027 and re-run extraction."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

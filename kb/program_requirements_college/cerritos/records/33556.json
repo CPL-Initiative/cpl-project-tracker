@@ -1,0 +1,516 @@
+{
+ "college": "Cerritos College",
+ "control_number": "33556",
+ "shape": "noncredit",
+ "title": "GED Test Preparation in English",
+ "award": "Noncredit program",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/courses-in-ged-test-prep-english/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6339,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6339,
+    "output_tokens": 3021,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3021,
+  "output_tokens_details": {
+   "thinking_tokens": 534
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08578,
+ "ms": 22680,
+ "seconds": 23.2,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 38,
+   "codes": [
+    "AEDCR10A",
+    "AEDCR10B",
+    "AEDCR11A",
+    "AEDCR11B",
+    "AEDCR12A",
+    "AEDCR12B",
+    "AEDCR13A",
+    "AEDCR13B",
+    "AEDCR14A",
+    "AEDCR14B",
+    "AEDCR15A",
+    "AEDCR15B",
+    "AEDCR16A",
+    "AEDCR16B",
+    "AEDCR17A",
+    "AEDCR17B",
+    "AEDCR18A",
+    "AEDCR18B",
+    "AEDCR19A",
+    "AEDCR19B",
+    "AEDCR1A",
+    "AEDCR1B",
+    "AEDCR2A",
+    "AEDCR2B",
+    "AEDCR3A",
+    "AEDCR3B",
+    "AEDCR4A",
+    "AEDCR4B",
+    "AEDCR5A",
+    "AEDCR5B",
+    "AEDCR6A",
+    "AEDCR6B",
+    "AEDCR7A",
+    "AEDCR7B",
+    "AEDCR8A",
+    "AEDCR8B",
+    "AEDCR9A",
+    "AEDCR9B"
+   ],
+   "flagged": [
+    "AEDCR10A",
+    "AEDCR10B",
+    "AEDCR11A",
+    "AEDCR11B",
+    "AEDCR12A",
+    "AEDCR12B",
+    "AEDCR13A",
+    "AEDCR13B",
+    "AEDCR14A",
+    "AEDCR14B",
+    "AEDCR15A",
+    "AEDCR15B",
+    "AEDCR16A",
+    "AEDCR16B",
+    "AEDCR17A",
+    "AEDCR17B",
+    "AEDCR18A",
+    "AEDCR18B",
+    "AEDCR19A",
+    "AEDCR19B",
+    "AEDCR1A",
+    "AEDCR1B",
+    "AEDCR2A",
+    "AEDCR2B",
+    "AEDCR3A",
+    "AEDCR3B",
+    "AEDCR4A",
+    "AEDCR4B",
+    "AEDCR5A",
+    "AEDCR5B",
+    "AEDCR6A",
+    "AEDCR6B",
+    "AEDCR7A",
+    "AEDCR7B",
+    "AEDCR8A",
+    "AEDCR8B",
+    "AEDCR9A",
+    "AEDCR9B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    216.0,
+    216.0
+   ],
+   "stated": [
+    216.0,
+    216.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Courses in High School Equivalency (Non Credit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 216,
+    "max": 216
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "HSE (High School Equivalency) students will demonstrate the ability to communicate effectively in writing by constructing a persuasive essay.",
+    "HSE (High School Equivalency) students will analyze and interpret U.S. history and functions of government through non-fiction reading.",
+    "HSE (High School Equivalency) students will apply number sense and operations to solve math word problems."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Option 1",
+    "rule": "choose_units",
+    "minimum": 216,
+    "option_group": "Option",
+    "stated": {
+     "min": 216,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "AED 48.05",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AED 49.01",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AED CR1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR1B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR2B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR3A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR3B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR4A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR4B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR5A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR5B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR6A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR6B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR7A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR7B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR8A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR8B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR9A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR9B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR10A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR10B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR11A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR11B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR12A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR12B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR13A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR13B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR14A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR14B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR15A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR15B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR16A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR16B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR17A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR17B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR18A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR18B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR19A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AED CR19B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Option",
+    "stated": {
+     "min": 216,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "AED 42.12",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AED 42.13",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program has been renamed: the catalog section is 'Courses in High School Equivalency (Non Credit)', a Certificate of Competency, 'Formerly known as Courses in GED Test Preparation in English - Certificate of Completion'.",
+   "Measure is hours: the units column prints 0.0 for every course; hours are taken from parenthetical notes. In Option 1 only AED 49.01 prints hours (108); all other Option 1 courses, including AED 48.05, print no hours, so their units are null.",
+   "Option 1 reads 'Students can select from any offered courses to complete the required 216 hours'; recorded as choose_units 216 over the listed courses, but the wording may allow any offered course beyond the list.",
+   "A 'Recommended Electives' list (AED 48.05 108 hours, AED 49.01 108 hours) follows Option 2; it is not recorded as a block since it is recommended, not required. Both courses are already placed in Option 1. The narrative mentions additional elective hours beyond the 216 required.",
+   "The total of 216 hours is stated for each option and as 'The total number of hours for division requirements'.",
+   "The Program Student Learning Outcomes are printed for the program as a whole (the single award on the page).",
+   "The catalog text is cut off at the end (Career Pathways section); requirements appear complete."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

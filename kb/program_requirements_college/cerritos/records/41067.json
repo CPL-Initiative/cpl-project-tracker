@@ -1,0 +1,162 @@
+{
+ "college": "Cerritos College",
+ "control_number": "41067",
+ "shape": "certificate",
+ "title": "Automotive Technology: Ford Essentials",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/automotive-heavy-line--chasis-technician-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5357,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5357,
+    "output_tokens": 889,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 889,
+  "output_tokens_details": {
+   "thinking_tokens": 186
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03921,
+ "ms": 7745,
+ "seconds": 8.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AUTO151"
+   ],
+   "flagged": [
+    "AUTO151"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Technology: Ford Essentials (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate safe practices when working on all types of vehicles.",
+    "Analyze service information in order to diagnose and repair vehicle faults.",
+    "Practice repairing faults related to engine repair, electrical/electronics, suspension and steering, and brakes."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 151",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 161",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 173",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The source URL slug refers to the program's former name (Automotive Heavy Line and Chassis Technician); the page states 'Formerly known as: Automotive Technology: Automotive Heavy Line and Chassis Technician'.",
+   "AUTO 151 (Ford Brake, Steering, and Suspension, 5.0) is not in the closed list; recorded as a catalog addition.",
+   "AUTO 161 is printed at 5.0 units; the state file stores 2.5 units.",
+   "AUTO 111 is titled 'Ford Automotive Engine Operation and Diagnosis' in the catalog vs 'Automotive Engines' in the state file; units match (4).",
+   "AUTO 173 is printed at 6.0 units with the note '(Course must be taken twice for 2 units)', which is ambiguous; the state file stores 3 units. The printed course units sum to the stated total of 20."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

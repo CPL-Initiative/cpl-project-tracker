@@ -1,0 +1,209 @@
+{
+ "college": "Cerritos College",
+ "control_number": "31750",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/physics-2.0-as-t/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5743,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5743,
+    "output_tokens": 1088,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1088,
+  "output_tokens_details": {
+   "thinking_tokens": 159
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04473,
+ "ms": 9009,
+ "seconds": 9.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CIS180",
+    "CIS181",
+    "CIS183",
+    "MATH250"
+   ],
+   "flagged": [
+    "CIS180",
+    "CIS181",
+    "CIS183",
+    "MATH250"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.5,
+    33.5
+   ],
+   "stated": [
+    33.5,
+    33.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Physics 2.0 (AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 33.5,
+    "max": 33.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Demonstrate understanding of units and dimensions in physics problems.",
+    "Demonstrate the use of mathematical and problem solving techniques to solve physics problems.",
+    "Demonstrate the ability to analyze a problem or experimental data in terms of related physical concepts.",
+    "Demonstrate the ability to obtain real-world experimental data and present it in a correct format, including significant figures and units.",
+    "Demonstrate the ability to solve physical non-analytic problems using numerical methods."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 203",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 190",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 225",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 250",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 180",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 181",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "CIS 183",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "MATH 250, CIS 180, CIS 181 and CIS 183 appear in the catalog's Required Core but are not in the closed list; recorded as catalog additions.",
+   "The catalog prints no units beside CIS 181 or CIS 183 (only 3.5 beside CIS 180); their units are left null.",
+   "The page notes 'Effective Fall 2026 catalog addendum' and that the program was formerly Physics AS-T; the closed list may reflect the earlier version of the degree.",
+   "Degree requires Cal-GETC; the page says CSU GE or IGETC may be used in some cases.",
+   "Total Units 33.5 is the major total printed in the course list; the 60-unit figure is the degree total."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

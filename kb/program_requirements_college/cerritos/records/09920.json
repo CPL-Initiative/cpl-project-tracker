@@ -1,0 +1,158 @@
+{
+ "college": "Cerritos College",
+ "control_number": "09920",
+ "shape": "degree",
+ "title": "Automotive Technology: Engine Performance & Electrical Diagnosis",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/electrical-diagnosis-technician-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5546,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5546,
+    "output_tokens": 1017,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1017,
+  "output_tokens_details": {
+   "thinking_tokens": 229
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04252,
+ "ms": 8845,
+ "seconds": 9.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Technology: Engine Performance & Electrical Diagnosis (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate how to use wiring diagrams for diagnosis.",
+    "Demonstrate on vehicle diagnosis using a scan tool.",
+    "Demonstrate on vehicle diagnosis using a digital multimeter (DMM)."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 160",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Required Courses list is printed under 'First Semester' (AUTO 160, AUTO 180) and 'Second Semester' (AUTO 260, AUTO 280) subheadings; these are recorded as one 'all' block, and the semester grouping is preserved in course order.",
+   "AUTO 100 (Automotive Maintenance and Operation, 4.0) is listed only under 'Recommended Electives'. It is not part of the 18-unit major and is not placed in a block. It is also not in the closed list.",
+   "The degree requires 60 units including 'the General Education requirements' and 'electives as needed'. No specific GE pattern is named, so ge_pattern is null. The degree electives are not part of the stated 18-unit major total, so open_elective_units is null.",
+   "The catalog titles AUTO 180 'Electronic Engine Management Systems', while the closed list has 'Electrical Engine Management Systems'. The same code and units appear in both.",
+   "The source URL slug reads 'electrical-diagnosis-technician-aa', but the page heading and text describe an A.S. degree. Verify that the URL matches the intended program."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

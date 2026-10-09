@@ -1,0 +1,284 @@
+{
+ "college": "Cerritos College",
+ "control_number": "30550",
+ "shape": "degree",
+ "title": "Machine Tool Technology: Computer Numerical Control Programmer",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/machine-tool-technology-numerical-control-tool-programmer-option-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6371,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6371,
+    "output_tokens": 2090,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2090,
+  "output_tokens_details": {
+   "thinking_tokens": 530
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06728,
+ "ms": 17262,
+ "seconds": 17.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 20,
+   "share": 0.85,
+   "missing": [
+    "MTT56",
+    "WELD120",
+    "WELD130"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    35.0,
+    37.0
+   ],
+   "stated": [
+    36.0,
+    38.5
+   ],
+   "why": [
+    "the blocks sum to 35.0-37.0; the catalog states 36.0-38.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Machine Tool Technology: Computer Numerical Control Programmer (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 38.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply industry standard safety practices and specific safety requirement for different machining operations.",
+    "Create the digital geometry necessary for machine programming.",
+    "Generate a tool path and verify its execution.",
+    "Inspect the produced part to ensure completion per blueprint requirements.",
+    "Interpret blueprint information and translate into actionable items.",
+    "Perform basic setup and operation of CNC lathe & mill."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MTT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 140",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 151",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 152",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 157",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 191L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 195L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 278",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 279",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 280",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two of the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 7.5
+    },
+    "courses": [
+     {
+      "code": "MTT 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTT 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 258",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 259",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WELD 120",
+    "why": "listed only as a recommended elective"
+   },
+   {
+    "code": "WELD 130",
+    "why": "listed only as a recommended elective"
+   },
+   {
+    "code": "MTT 56",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "In the 'Select two of the following' block the catalog prints units in parentheses that conflict with other sources: MTT 110 (2) vs. 3 in the state file; ENGT 258 (2) vs. 4.0 in the catalog's own Recommended Electives list and 4 in the state file. Units recorded as printed in the block; reviewer should verify.",
+   "The block's stated range 5.0-7.5 does not match the printed course units (two courses at 2-4 units would give 4-6).",
+   "Stated total 36-38.5 does not equal core (31.5) plus the 5.0-7.5 choice (36.5-39); recorded as stated.",
+   "The text under the A.S. section is headed 'ASSOCIATE OF ARTS DEGREE REQUIREMENTS', apparently a heading error; it names 'the General Education requirements' without a specific pattern, so ge_pattern is null.",
+   "Recommended Electives list (ENGT 258, ENGT 259, MTT 120, WELD 120, WELD 130) is advisory and not recorded as a block; ENGT 258, ENGT 259 and MTT 120 are placed in the choice block.",
+   "Source URL slug refers to 'numerical-control-tool-programmer-option-aa' while the page heading is the A.S.; content read from the A.S. section."
+  ]
+ },
+ "extracted_run": "37961137169"
+}

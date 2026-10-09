@@ -1,0 +1,204 @@
+{
+ "college": "Cerritos College",
+ "control_number": "20515",
+ "shape": "certificate",
+ "title": "Dental Assisting",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/dental-assisting-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5426,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5426,
+    "output_tokens": 1354,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1354,
+  "output_tokens_details": {
+   "thinking_tokens": 232
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04878,
+ "ms": 10751,
+ "seconds": 11.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CERTIFICATE OF ACHIEVEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "The student applies ethical, legal and regulatory concepts to the provision and/or support of oral health care services.",
+    "The student applies self-assessment skills to continually evaluate their clinical skill and knowledge to prepare them for life-long learning.",
+    "The student critically examines current scientific literature as it applies to dental hygiene skills and knowledge.",
+    "The student demonstrates problem solving strategies related to comprehensive patient care and management of patients.",
+    "The student demonstrates progressive skill attainment in providing dental hygiene care for all types of classifications of periodontal disease including patients who present with moderate to severe periodontal disease.",
+    "The student demonstrates progressive skill attainment in providing dental hygiene care to children, adolescents, adults, geriatrics and patients with special needs.",
+    "The student employs interpersonal and communication skills to effectively interact with diverse population groups.",
+    "The student examines the assessment, planning, implementation and evaluation of community-based oral health programs including, health promotion and disease prevention activities."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DA 51",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA 52",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA 54",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA 63",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA 64",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA 65",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA 75",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog groups the required courses by term (First Semester: DA 51-54; Second Semester: DA 61-65; Summer Semester: DA 75); all are required and recorded as one 'Required Courses' block.",
+   "The Program Student Learning Outcomes are printed once for the page and the certificate shares them; they refer repeatedly to dental hygiene care and skills rather than dental assisting, so a reviewer should check whether they belong to a Dental Hygiene program.",
+   "The catalog text begins mid-sentence ('am to:'), so earlier content of the page (e.g., program description) is cut off.",
+   "The A.A. degree section states it requires all certificate courses plus electives and General Education to reach 60 units; not recorded here as it is a different award."
+  ]
+ },
+ "extracted_run": "37961137169"
+}
