@@ -526,7 +526,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Reference — CCCCO HUMANS principles for responsible AI](../kb-notes/reference-humans-principles.md) | reference | published | 2026-06-25 | 2026-06-25 |
 | [Reference — College short-name dataset + resolver](../kb-notes/reference-college-short-names.md) | reference | published | 2026-06-02 | 2026-06-02 |
 | [Reference — CPL at the pre-apprenticeship stage (three mechanisms, and the CSU catch)](../kb-notes/reference-cpl-at-the-pre-apprenticeship-stage.md) | reference | published | 2026-08-10 | 2026-08-10 |
-| [Reference — Dashboard UI design system (tokens + canonical components)](../kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-06-12 |
+| [Reference — Dashboard UI design system (tokens + canonical components)](../kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-10-09 |
 | [Reference — Funding priority metrics, measurability map (2026-07-03 metric set)](../kb-notes/reference-funding-metrics-measurability.md) | reference | published | 2026-07-03 | 2026-07-03 |
 | [Reference — The P1 completion-data gap (why completions aren't in MAP, and the strategy to close it)](../kb-notes/reference-p1-completion-data-gap.md) | reference | published | 2026-06-11 | 2026-06-11 |
 | [Reference — TMC / ADT data model & the C-ID auto-match](../kb-notes/reference-tmc-adt-data-model.md) | reference | published | 2026-06-16 |  |

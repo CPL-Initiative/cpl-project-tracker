@@ -643,6 +643,9 @@ file.
     for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
     carry sequence. ⚠️ **RULED, not pending — do not sweep them**; none is an
     emoji, and a plain-words reading does not override his ruling.
+- **Controls are underlined words (Sam, 2026-10-09).** No border and no fill,
+  underlined at rest, 24px tall, a `<button>` where it acts; each view converts
+  at its UI pass. Spec: [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).
 - **American spelling, always** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 
@@ -667,10 +670,6 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
-- **Stop-hook:** a nag about unpushed commits that a squash-merge already
-  landed means the hook is unpatched; `python3 scripts/check_hooks_live.py --fix`
-  patches it through `scripts/patch_stop_hook.py` (a three-repo session never
-  loads the SessionStart hook). See [`troubleshooting`](docs/reference/troubleshooting.md).
 
 ## Deployed site
 
@@ -819,6 +818,7 @@ the date moved · **duplicate sections / HTML growing** on every run ·
 404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
 **docx library errors**.
 
-**The stop-hook nags** are covered there too — including the "Unverified
+**The stop-hook nags** are covered there too (a squash-merged branch still
+nagging: `python3 scripts/check_hooks_live.py --fix`) — including the "Unverified
 `noreply@github.com`" false positive, where the fix is to do nothing (amending
 rewrites `main`, Rule 5).
