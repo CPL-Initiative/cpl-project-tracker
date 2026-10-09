@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-08
+updated: 2026-10-09
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -145,9 +145,11 @@ claude.ai.
 
 ## Next
 
-- **Sheet 50 card 3, pasted (Sam, 17:17Z 2026-10-08, "Success. No rows returned").** The open-asks series record reads
-  version 50 at sheet 50's link, with sheets 49 and 48 before it (23 versions; read back by S345). `apply_migration` had
-  timed out on `cpl_library` four times and on no other table, so this table's writes go to Sam as a paste.
+- **The open-asks series record reads version 55 (Sam pasted it, 01:46Z 2026-10-09, "success").** It sits at sheet
+  55's link with sheets 54 to 50 before it, 28 versions, Sheet 55 first and Current (read back by S350; receipt
+  `kb/receipts/cpl_library_open_asks_sheet55_2026-10-09_s349.sql`). `apply_migration` times out on `cpl_library` and on
+  no other table (five times through S349), so this table's writes go to Sam as a paste, one receipt that reaches the
+  new version from any earlier state the record could be in.
 - **PR 2, the move (call 5):** once a session with the Microsoft 365 connector has read the SharePoint copies,
   each record points at its SharePoint link (a guarded update per record). Then remove the deliverable binaries from main (the five Title 5 files can go now; `.gitignore`
   `exports/*.docx`, and `kb/_build_55050_redline_docx.py` still writes there), take the Summit film's

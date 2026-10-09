@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-529 document(s).
+530 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -287,6 +287,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Calibrate a signal against an independent source before you rank the queue](../kb-notes/methodology-calibrate-a-signal-before-you-rank-the-queue.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [CER ⇄ CCR crossover — course-identity integrations for exhibit-title curation](../kb-notes/cer-ccr-crossover-integrations.md) | methodology | published | 2026-07-07 |  |
 | [Change the input, not the consumers — derive the old field at the single seam](../kb-notes/methodology-invert-an-input-derive-at-the-single-seam.md) | methodology | published | 2026-07-27 |  |
+| [Check a page inside every frame that embeds it](../kb-notes/methodology-check-a-page-inside-every-frame-that-embeds-it.md) | methodology | published | 2026-10-09 | 2026-10-09 |
 | [Coarse TOP-division discipline fallback — make the orphan tail visible without faking precision](../kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [College-homonym subject codes — detect, scope, retract](../kb-notes/methodology-college-homonym-subject-codes.md) | methodology | published | 2026-06-11 |  |
 | [Confirmed merges via a decision row — never infer, never block the clean set](../kb-notes/methodology-confirmed-merge-via-decision-row.md) | methodology | published | 2026-07-08 |  |

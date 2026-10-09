@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T00:50:04Z",
-  "session": 349,
-  "moniker": "SkyHarbor",
+  "written_at": "2026-10-09T01:56:03Z",
+  "session": 350,
+  "moniker": "SkyTide",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_350_handoff.md",
+  "handoff": "docs/session_351_handoff.md",
   "unchecked": [
     {
       "college": "Irvine Valley College",
@@ -23,8 +23,8 @@
     }
   ],
   "next_step": {
-    "title": "Port the veteran map to First Light once Sam answers Sheet 55",
-    "text": "The mock-up is up with today's counts; on Port it, a session moves it into the page's builder and the accessibility checks carry over."
+    "title": "The UI pass on the Fact Sheet",
+    "text": "The public Fact Sheet has never had a pass: accessibility, phone layout, First Light and the figures it shares with other views. Small fixes ship; a change to its look goes to Sam as a mock-up first."
   },
   "calls": [
     {
@@ -35,29 +35,23 @@
         "href": "#program-requirements",
         "text": "Open the Program Requirements tab"
       }
-    },
-    {
-      "title": "Answer Open Asks Sheet 55",
-      "text": "One card: port the veteran map's First Light mock-up into the live page.",
-      "if_no_reply": "The live map keeps its look, with today's counts.",
-      "view": {
-        "href": "https://claude.ai/artifact/FfCtXWkFBdSBX4BGcitj5o",
-        "text": "Open Sheet 55"
-      }
-    },
-    {
-      "title": "Paste the Library record for Sheets 51 to 55",
-      "text": "One receipt brings the open-asks record from Sheet 50 to Sheet 55; the connector times out on this table, so it goes in by paste.",
-      "if_no_reply": "The Library's open-asks record keeps pointing at Sheet 50."
     }
   ],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
-    "sierra": "The docked Sierra expands to full screen when she answers, since Oct 9.",
+    "sierra": "The docked Sierra expands to full screen when she answers, since Oct 9. The veteran map is on First Light since Oct 9.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening."
   },
   "changes": [
+    {
+      "at": "2026-10-09T01:46:45Z",
+      "text": "The Library's record of the decision sheets points at Sheet 55."
+    },
+    {
+      "at": "2026-10-09T01:51:41Z",
+      "text": "The public veteran map is on First Light, light and dark; inside COBI it fills its frame."
+    },
     {
       "at": "2026-10-09T00:39:53Z",
       "text": "The docked Sierra on this tab and My College expands to full screen when she answers; her answer buttons now meet AA."
@@ -73,10 +67,6 @@
     {
       "at": "2026-10-08T21:21:18Z",
       "text": "Palo Verde's map columns written; all 32 published maps are settled."
-    },
-    {
-      "at": "2026-10-08T21:20:33Z",
-      "text": "Display build 2360b83e8100 reached all 22 live records; Sierra reads Fire Technology's and Early Childhood Education's maps."
     }
   ],
   "next_run": {

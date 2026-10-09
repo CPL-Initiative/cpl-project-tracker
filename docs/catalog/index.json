@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 529,
+   "count": 530,
    "docs": [
     {
      "created": "2026-08-14",
@@ -5289,6 +5289,26 @@
      "title": "Change the input, not the consumers \u2014 derive the old field at the single seam",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-10-09",
+     "governs": [
+      "veteran-sprint-map/build_selfcontained.py",
+      "a11y.config.js",
+      "tests/public_pages_a11y.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-check-a-page-inside-every-frame-that-embeds-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "accessibility",
+      "first-light",
+      "embedding"
+     ],
+     "title": "Check a page inside every frame that embeds it",
+     "type": "methodology",
+     "updated": "2026-10-09"
     },
     {
      "created": "2026-06-09",
@@ -14524,7 +14544,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-10-08"
+     "updated": "2026-10-09"
     },
     {
      "created": "2026-08-28",
@@ -15083,8 +15103,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 321,
+   "count": 322,
    "docs": [
+    {
+     "created": "2026-10-09",
+     "governs": [],
+     "n": 351,
+     "path": "docs/session_351_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ui-pass",
+      "fact-sheet",
+      "veteran-map",
+      "sierra-page-redesign",
+      "checkpoint"
+     ],
+     "title": "the UI pass on the Fact Sheet",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-09",
      "governs": [],
@@ -20551,5 +20589,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1075
+ "total": 1077
 }

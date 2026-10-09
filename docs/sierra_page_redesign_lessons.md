@@ -96,3 +96,35 @@ for 100 days; today's figure is 28,884. The mock-up prints the date, and the liv
 
 **`apply_migration` on `cpl_library` timed out again** (once, nothing written). One receipt that reaches the new
 version from either earlier state (50 or 54) replaces two queued pastes.
+
+## 2026-10-09 (S350 SkyTide): the veteran map ported to First Light
+
+**An approved mock-up is approved for the page it showed, never for the frames that embed it.** Sam approved the
+standalone page. COBI's Military Partnerships tab frames the same file at `calc(100vh - 170px)`, at least 700px, and
+nobody had looked at it there. Measured: the new document-flow page overflowed the frame by 170 to 280px at desktop
+heights, repeated the tab's own heading, and left the reader scrolling inside the frame while the wheel zoomed the
+map. The old page had filled its frame because it was a 100dvh app column. The fix is a mode the host asks for
+(`?embed=1`, both HTMLs): above 980px the h1 and lede go to the screen reader only and the page fills the frame as one
+column. Below 981px it is the ordinary page. KB note
+[`methodology-check-a-page-inside-every-frame-that-embeds-it`](kb-notes/methodology-check-a-page-inside-every-frame-that-embeds-it.md).
+
+**A marker counter-scaled for zoom still shrinks with the map's drawn size.** `rescaleMarkers()` divided by the zoom
+alone, so in the frame's 352px map the installation stars drew at 4px against 7.7px on the approved laptop view.
+Above 980px a floor now holds the approved size (0.55 screen px per map unit, capped at 1.8x). Phones keep the drawn
+size, where a bigger pin would merge the Los Angeles basin, the reason the pins carry an SC 2.5.8 exemption.
+
+**A page in someone else's frame follows that frame's theme only if it listens.** Reading `cpl_theme` before the
+first paint covers a fresh load; COBI's control changes the theme while the frame is open. The `storage` event fires
+in every other same-origin document, the iframe included, so a few lines in the page's head follow it live.
+
+**Port the template, retire the mock-up.** The mock-up's generator imported the builder's data and carried its own
+copy of the template. Once the builder holds the template, a second copy can only drift, so it went. The approved
+look stays on claude.ai. `build_selfcontained.py --check` (CI and `check_generated.sh`) now fails when the committed
+page is not its build. The jsdom checks were rewritten to guard the old failure modes in the new layout: the panel
+never hidden, one column below 981px, 100vh only in the embedded desktop layout.
+
+**Format a date by hand when the script may run on Windows.** `strftime("%-d")` is a glibc extension that Windows
+rejects; Sam's Cowork sessions run there.
+
+**The Library paste landed.** Sam pasted the Sheet 55 receipt (01:46Z): the record reads version 55, 28 entries,
+Sheet 55 first. It went in as a paste after `apply_migration` on `cpl_library` timed out once more in S349.
