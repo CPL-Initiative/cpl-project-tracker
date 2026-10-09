@@ -735,9 +735,12 @@ applyVB();
     "GOLD": GOLD, "DATA_JS": DATA_JS,
 }
 
-out = os.path.join(HERE, "ca_cpl_map_selfcontained.html")
-with open(out, "w", encoding="utf-8") as f:
-    f.write(HTML)
-print("saved", out)
-print("colleges:", len(colleges), "| bases:", len(bases), "| pairs:", len(pairs),
-      "| size:", round(len(HTML)/1024, 1), "KB | external deps: 0")
+# Written only when run, so prototype/veteran_map_mockup.py can import the data
+# above (colleges, bases, pairs, the projection) without rewriting the page.
+if __name__ == "__main__":
+    out = os.path.join(HERE, "ca_cpl_map_selfcontained.html")
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(HTML)
+    print("saved", out)
+    print("colleges:", len(colleges), "| bases:", len(bases), "| pairs:", len(pairs),
+          "| size:", round(len(HTML)/1024, 1), "KB | external deps: 0")

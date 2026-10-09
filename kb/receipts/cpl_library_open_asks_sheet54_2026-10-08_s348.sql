@@ -3,6 +3,8 @@
 -- 22:44Z) were published without a Library step; they join the versions list beneath 54, so the series lists every
 -- sheet.
 -- Guarded UPDATE: it applies only while the row still reads version 50 at sheet 50's link.
+-- SUPERSEDED (S349, 2026-10-09): never applied; cpl_library_open_asks_sheet55_2026-10-09_s349.sql takes the record
+-- from version 50 straight to 55 (Sheets 51-55 in one paste). Paste that one instead.
 -- NOT YET APPLIED: apply_migration timed out three times (~22:55-23:05Z, written for sheet 53) with nothing written
 -- (read back: version 50); the sheet 49 receipt timed out four times the same way and went in by paste. Paste it in
 -- the SQL editor; read back version 54 and Sheet 54 first in versions.
