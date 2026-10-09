@@ -22,8 +22,8 @@
    "name": "SkyView",
    "page": "prototype/skyview.html",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-09",
+   "outcome": "First pass (S351): AA, targets and the keyboard hold at all 11 routes (Sky by night, Globe, Map, the comprehensive view, the workspace tabs, the outline, the work sheet) and its sweep passes 233 of 233. First Light: 20 raw-hex declarations in the template's component rules. Three were dark failures no route reaches (white on the night canvas's #7DA1D4 at 2.65:1: the member-row hover, Put back's hover, the pressed Night word); they write var(--on-accent) now (6.95:1). The four status chips read role tokens by day and at night, and dark's four chip rules are gone. Wiring: three pass RPCs, shared with COBI's phrase gates."
   },
   {
    "id": "fact-sheet",
