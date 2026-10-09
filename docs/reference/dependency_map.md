@@ -721,6 +721,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/ironworker_video/ironworker_in_motion.html` | scripts: `prototype/ironworker_video/build.py` | scripts: `prototype/ironworker_video/build.py` |
 | `prototype/ironworker_video/ironworker_in_motion.src.html` | scripts: `prototype/ironworker_video/build.py` | — |
 | `prototype/mockup_harness/CPL_Dashboard.html` | scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` | — |
+| `prototype/mockup_harness/capture.json` | none found | scripts: `prototype/mockup_harness/capture_fact_sheet.mjs` |
+| `prototype/mockup_harness/live_metrics.json` | scripts: `prototype/mockup_harness/capture_fact_sheet.mjs` | — |
 | `prototype/noncredit_video/narration.json` | scripts: `prototype/noncredit_video/cues.py`, `prototype/noncredit_video/narrate.py` | — |
 | `prototype/noncredit_video/narration_layout.json` | scripts: `prototype/noncredit_video/build.py`, `prototype/noncredit_video/cues.py` | scripts: `prototype/noncredit_video/cues.py`, `prototype/noncredit_video/narrate.py` |
 | `prototype/noncredit_video/narration_words.json` | scripts: `prototype/noncredit_video/cues.py` | scripts: `prototype/noncredit_video/cues.py` |
@@ -916,6 +918,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `laney.edu` | tabs: `map-queue`, `map-users` |
 | `launchapprenticeship.org` | tabs: `map-queue`, `map-users` |
 | `localhost` | `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `localhost:` | scripts: `prototype/mockup_harness/capture_fact_sheet.mjs` |
 | `localhost:3000` | `edgefn:cpl-chat` |
 | `localhost:8000` | modules: `prototype/ccr_universe.js` · `edgefn:cpl-chat` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01` | scripts: `chatbox/scrape_landing_pages.py` |
@@ -1048,5 +1051,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 35 RPCs · 6 edge functions · 610 file
-datasets · 162 external services · 420 consumers · 45 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 35 RPCs · 6 edge functions · 612 file
+datasets · 163 external services · 421 consumers · 45 workflows · 39 tabs.
