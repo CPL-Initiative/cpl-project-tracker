@@ -1318,7 +1318,7 @@
       '.fs-add:hover{background:var(--cobalt);color:var(--on-accent);}' +
       '.fs-add-img{display:inline-flex;align-items:center;gap:6px;margin:10px 8px 0 0;padding:7px 14px;' +
         'border:1px dashed var(--seal-blue);border-radius:var(--radius-sm);background:rgba(10,34,64,.05);' +
-        'color:var(--seal-blue);font:600 13px var(--font-data);cursor:pointer;}' +
+        'color:var(--seal-blue-text,var(--seal-blue));font:600 13px var(--font-data);cursor:pointer;}' +
       '.fs-add-img:hover{background:var(--seal-blue);color:var(--on-seal);}' +
       'body.fs-curating [data-fsk].fs-imgblock{position:relative;display:inline-block;}' +
       '.fs-imgbar{position:absolute;top:6px;right:6px;display:none;gap:4px;align-items:center;' +
@@ -1347,7 +1347,7 @@
         'color:var(--crimson);font:700 11px var(--font-data);box-shadow:0 1px 5px rgba(28,28,26,.14);' +
         '-webkit-user-select:none;user-select:none;}' +
       '.fs-sec-hide:hover{background:var(--crimson);color:var(--on-accent);}' +
-      '.fs-sec-hide.is-hidden{border-color:var(--seal-blue);color:var(--seal-blue);}' +
+      '.fs-sec-hide.is-hidden{border-color:var(--seal-blue);color:var(--seal-blue-text,var(--seal-blue));}' +
       '.fs-sec-hide.is-hidden:hover{background:var(--seal-blue);color:var(--on-seal);}' +
       // Keep the handle + hide toggle visible even when its section is collapsed (the
       // collapse rule hides every non-h2 child) so a collapsed page is easiest to curate.

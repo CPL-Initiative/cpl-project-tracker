@@ -676,6 +676,13 @@ module.exports = {
        Measured S350 at 390px: 56 figures, none without its label. */
     mayHideBelow: [".sw-head"],
   },
+  /* The same page dark (S352: First Light's port put it on the cpl_theme contract). */
+  "fact-sheet-dark": {
+    file: "fact-sheet/index.html",
+    title: "CPL Fact Sheet (public), dark",
+    mayHideBelow: [".sw-head"],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")),
+  },
 
   /* The privacy page Google's consent screen links for the Library filer
      (scripts/library_file.py); public, one column of prose (2026-10-06). */

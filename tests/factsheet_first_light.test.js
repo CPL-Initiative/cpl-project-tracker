@@ -1,18 +1,18 @@
-/* The Fact Sheet on First Light: the proposed stylesheet (S352).
+/* The Fact Sheet on First Light (S352).
  *
- * Sam, Open Asks Sheet 56 card 1 (2026-10-09): "Mock it up". The mock-up
- * (https://claude.ai/artifact/VLgB5mNnRCYVYdhneEeLus) is built from
- * prototype/fact_sheet_first_light.css, and a port would copy that file over
- * fact-sheet/factsheet.css. These checks pin what the card promised Sam: First
- * Light's type on screen, a dark palette that never reaches paper, and print
- * that keeps Cambria and Calibri. Text checks, because jsdom computes no
+ * Sam, Open Asks Sheet 56 card 1 (2026-10-09): "Mock it up"; on the mock-up
+ * (https://claude.ai/artifact/VLgB5mNnRCYVYdhneEeLus), in chat the same day:
+ * "Fact Sheet looks great!" The proposal was ported into fact-sheet/factsheet.css.
+ * These checks pin what the cards promised him: First Light's type on screen, a
+ * dark palette that never reaches paper and follows COBI's theme control, and
+ * print that keeps Cambria and Calibri. Text checks, because jsdom computes no
  * cascade across media.
  */
 const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
-const CSS = fs.readFileSync(path.join(ROOT, "prototype/fact_sheet_first_light.css"), "utf8");
-const TODAY = fs.readFileSync(path.join(ROOT, "fact-sheet/factsheet.css"), "utf8");
+const CSS = fs.readFileSync(path.join(ROOT, "fact-sheet/factsheet.css"), "utf8");
+const HTML = fs.readFileSync(path.join(ROOT, "fact-sheet/index.html"), "utf8");
 const code = CSS.replace(/\/\*[\s\S]*?\*\//g, "");
 
 let pass = 0, total = 0;
@@ -67,10 +67,25 @@ check("seal navy is never screen text except as --seal-blue-text",
   !/(^|[;{\s])color:\s*var\(--seal-blue\)/m.test(screenOnly));
 check("dark lifts the seal ink to the on-dark grade", /--seal-blue-text:\s*#7DA1D4/.test(darkOs || ""));
 
-// ── no phantom tokens: the proposal defines what today's page and its scripts read ──
+// ── the page follows COBI's one theme control ──
+check("index.html reads cpl_theme before the stylesheet, and follows a change in another tab",
+  HTML.indexOf('localStorage.getItem("cpl_theme")') > -1 &&
+  HTML.indexOf('localStorage.getItem("cpl_theme")') < HTML.indexOf('href="./factsheet.css"') &&
+  /addEventListener\("storage",function\(e\)\{if\(e&&e\.key==="cpl_theme"\)/.test(HTML));
+check("index.html preloads the two faces the first screen paints, and both files exist",
+  [...HTML.matchAll(/<link rel="preload" href="\.\.\/(sierra\/fonts\/[\w.-]+)" as="font"/g)]
+    .filter((m) => fs.existsSync(path.join(ROOT, m[1]))).length === 2);
+// The drawer and the editor write seal navy as text through the ink token, so
+// it lifts in dark; the fallback keeps the funding explainer, which hosts the
+// drawer and defines only --seal-blue, as it was.
+for (const f of ["fact-sheet/factsheet_sierra.js", "fact-sheet/factsheet_edit.js"]) {
+  const src = fs.readFileSync(path.join(ROOT, f), "utf8");
+  check(`${f} writes no seal navy text except through --seal-blue-text`,
+    !/(^|[^-\w])color:var\(--seal-blue\)/m.test(src) && /color:var\(--seal-blue-text,var\(--seal-blue\)\)/.test(src));
+}
+
+// ── no phantom tokens ──
 const defined = new Set(code.match(/--[\w-]+(?=\s*:)/g) || []);
-const lost = [...new Set(TODAY.match(/--[\w-]+(?=\s*:)/g) || [])].filter((t) => !defined.has(t));
-check("the proposal keeps every token today's stylesheet defines", lost.length === 0, lost.join(", "));
 const bare = [...code.matchAll(/var\(\s*(--[\w-]+)\s*\)/g)].map((m) => m[1]).filter((t) => !defined.has(t));
 check("every bare var() it reads is defined", bare.length === 0, [...new Set(bare)].join(", "));
 check("no raw hex outside the token blocks",

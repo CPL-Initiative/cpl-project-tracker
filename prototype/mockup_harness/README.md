@@ -60,7 +60,8 @@ card 14 ruling to the explainer and the tab's public text.
 Sam, Open Asks Sheet 56 card 1 (2026-10-09): *"Mock it up"*. The whole public page, restyled.
 
     node prototype/mockup_harness/capture_fact_sheet.mjs <repo tree> <out dir> <overrides.json>
-    python3 prototype/mockup_harness/assemble_fact_sheet.py <repo tree> <out dir>/capture.json out.html
+    git show f98b271:fact-sheet/factsheet.css > today.css   # the stylesheet before the port
+    python3 prototype/mockup_harness/assemble_fact_sheet.py <repo tree> <out dir>/capture.json out.html today.css
 
 - `overrides.json` is the `factsheet_overrides` rows for page `fact-sheet` (`block_key, html,
   hidden`), read through the Supabase MCP. The capture answers the page's anon read with them, so
@@ -68,9 +69,9 @@ Sam, Open Asks Sheet 56 card 1 (2026-10-09): *"Mock it up"*. The whole public pa
 - `capture_fact_sheet.mjs` loads `fact-sheet/index.html` with its own scripts, waits for the
   figures, and writes the body (scripts removed) and the four style blocks its scripts inject.
   The story photos come from `staging2.map.rccd.edu`, which the sandbox cannot reach.
-- `assemble_fact_sheet.py` puts two stylesheets on one page: `prototype/fact_sheet_first_light.css`
-  (the proposal, and what a port copies over `fact-sheet/factsheet.css`) and today's
-  `factsheet.css`, switched by the strip's Look control, with a Theme control beside it. An
+- `assemble_fact_sheet.py` puts two stylesheets on one page: First Light (since the port,
+  `fact-sheet/factsheet.css` itself; Sam: *"Fact Sheet looks great!"*) and the stylesheet before the
+  port, switched by the strip's Look control, with a Theme control beside it. An
   artifact loads nothing from another host, so the fonts and the page's images are data URIs and
   the story photos are left out with a note. Published as
   https://claude.ai/artifact/VLgB5mNnRCYVYdhneEeLus.

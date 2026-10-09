@@ -5,16 +5,17 @@ Sam, Open Asks Sheet 56 card 1: "Mock it up". The mock-up is the public Fact
 Sheet as capture_fact_sheet.mjs received it from the page's own code (today's
 figures, the curator's live overrides), dressed two ways on one page:
 
-  First Light  prototype/fact_sheet_first_light.css, the stylesheet the port
-               would copy over fact-sheet/factsheet.css
-  Today        fact-sheet/factsheet.css as it ships
+  First Light  fact-sheet/factsheet.css (Sam approved it, "Fact Sheet looks
+               great!", and S352 ported it from prototype/)
+  Today        the stylesheet before the port, passed as a path: e.g.
+               git show f98b271:fact-sheet/factsheet.css > today.css
 
 A strip above the page switches the look and the theme. The page's own folds
 (section headings, Collapse all, the statewide rec lists) are re-wired by a
 small script, since the capture carries markup and no listeners; Save as Word,
 Print, Ask Sierra and Curate are inert here and the strip says so.
 
-    python3 assemble_fact_sheet.py <tree> <capture.json> <out.html>
+    python3 assemble_fact_sheet.py <tree> <capture.json> <out.html> <today.css>
 
 The output is one self-contained file: an artifact page loads nothing from
 another host, so the fonts and the page's four images are data URIs, and the
@@ -29,7 +30,7 @@ import os
 import re
 import sys
 
-tree, cap_path, out_path = sys.argv[1:4]
+tree, cap_path, out_path, today_path = sys.argv[1:5]
 cap = json.load(open(cap_path, encoding="utf-8"))
 E = html.escape
 
@@ -39,8 +40,8 @@ def data_uri(path, mime):
         return "data:%s;base64,%s" % (mime, base64.b64encode(f.read()).decode("ascii"))
 
 
-today_css = open(os.path.join(tree, "fact-sheet/factsheet.css"), encoding="utf-8").read()
-fl_css = open(os.path.join(tree, "prototype/fact_sheet_first_light.css"), encoding="utf-8").read()
+today_css = open(today_path, encoding="utf-8").read()
+fl_css = open(os.path.join(tree, "fact-sheet/factsheet.css"), encoding="utf-8").read()
 
 # The proposed stylesheet names the fonts where the port would serve them.
 fonts = re.findall(r"url\('\.\./sierra/fonts/([\w.-]+\.woff2)'\)", fl_css)
