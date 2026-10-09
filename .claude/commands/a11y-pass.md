@@ -149,7 +149,9 @@ is First Light formatted."* Checkpoint step 9 runs this loop on the one view
   differs between two views of one dataset is a finding, whichever view is right.
 - **First Light.** Tokens only (no raw hex in the view's CSS or its injected
   CSS), the theme's type, and the same view in dark. A missing role is a token in
-  both HTMLs (Rule 4), never a hand-picked color.
+  both HTMLs (Rule 4), never a hand-picked color. **Controls are underlined
+  words** (Sam, 2026-10-09): convert the view's boxed and filled buttons to the
+  word form in `reference-ui-design-system`, "Controls", and re-measure targets.
 
 Measure at 390 px as well as desktop. Then
 `python3 scripts/ui_pass.py --record <id> "<what it found and fixed>"`. A fix too

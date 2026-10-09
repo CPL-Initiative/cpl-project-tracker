@@ -386,8 +386,11 @@
     var css =
       // Let the action bar wrap so the added button never forces horizontal scroll.
       '.actionbar .wrap{flex-wrap:wrap;}' +
-      '.fs-sierra-launch{border-color:var(--cobalt);color:var(--cobalt);background:rgba(0,71,171,.06);}' +
-      '.fs-sierra-launch:hover{background:var(--cobalt);color:var(--on-accent);border-color:var(--cobalt);}' +
+      // A control is an underlined word (First Light, Sam 2026-10-09): the
+      // launcher reads like the bar's other controls, without a box or a fill.
+      '.fs-sierra-launch{border:0;background:none;color:var(--cobalt);text-decoration:underline;' +
+        'text-decoration-thickness:1px;text-underline-offset:3px;}' +
+      '.fs-sierra-launch:hover{background:none;color:var(--cobalt);text-decoration-thickness:2px;}' +
       '.fs-sra-backdrop{position:fixed;inset:0;z-index:80;background:rgba(28,28,26,.42);opacity:0;visibility:hidden;' +
         'transition:opacity .18s,visibility .18s;}' +
       '.fs-sra-backdrop.on{opacity:1;visibility:visible;}' +

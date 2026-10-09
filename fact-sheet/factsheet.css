@@ -41,7 +41,6 @@
   --border-strong:rgba(28,28,26,.30);
   --seal-blue:    #002F6D;   /* CCCCO seal navy as a FILL: table heads, the primary button */
   --seal-blue-text:#002F6D;  /* the same navy as INK: headings, figures, titles, rules */
-  --seal-blue-hover:#013A86; /* the primary button's hover fill */
   --on-seal:      #FFFFFF;   /* text on a seal-blue, cobalt or other dark fill */
   /* The name factsheet_sierra.js and factsheet_edit.js write on their cobalt and
      crimson fills (Ask Sierra on hover, the drawer's Send, the editor's buttons).
@@ -144,7 +143,7 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--border);
 }
 .actionbar .wrap {
-  display: flex; align-items: center; gap: 14px;
+  display: flex; align-items: center; gap: 10px 20px;
   min-height: 54px; padding-top: 8px; padding-bottom: 8px;
 }
 .actionbar .ab-title { font-weight: 700; color: var(--seal-blue-text); font-size: 1rem; margin-right:auto; }
@@ -207,26 +206,32 @@ main:focus { outline: none; }
    the `fs-withheld` class from the section and its Contents link. */
 .fs-withheld { display: none !important; }
 
+/* Controls are underlined words (Sam, 2026-10-09, a First Light rule: "Yes,
+   make it a First Light rule", after "our buttons could be simpler and less
+   obtrusive ... without boxes and just underlined text"). No border, no fill:
+   the underline is the cue that is not color and stays at rest, cobalt clears
+   4.5:1 in both themes, and 24px of height meets WCAG 2.2 target size (2.5.8).
+   They stay <button>s, so a screen reader still names them as buttons.
+   docs/kb-notes/reference-ui-design-system.md, "Controls". */
 .btn {
   font: inherit; font-weight: 600; cursor: pointer;
-  border: 1px solid var(--border-strong); background: var(--surface);
-  color: var(--ink); border-radius: var(--radius-sm); padding: 8px 14px;
-  display: inline-flex; align-items: center; gap: 8px; transition: background .12s, border-color .12s;
+  border: 0; background: none; color: var(--cobalt);
+  border-radius: 2px; padding: 2px 0; min-height: 24px;
+  display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
 }
-.btn:hover { background: var(--surface-subtle); }
+.btn:hover { text-decoration-thickness: 2px; }
 /* `.btn` sets display:inline-flex, which outranks the UA sheet's
    [hidden]{display:none} — so a button shipped hidden (#btn-curate) would
    paint anyway. Declared here rather than in the JS-injected block so the
    public never sees a flash of it before factsheet_edit.js boots. */
 .btn[hidden] { display: none !important; }
-.btn-primary { background: var(--seal-blue); border-color: var(--seal-blue); color: var(--on-seal); }
-.btn-primary:hover { background: var(--seal-blue-hover); }
+/* The lead control is a word like the rest: no fill marks it. */
 /* Visible keyboard focus on all interactive controls (WCAG 2.4.7 AA). The
    action-bar buttons + the statewide <summary> rows + the TOC links previously
    relied on the (often-suppressed) UA ring. */
 .btn:focus-visible, .sw-grid summary:focus-visible, .toc a:focus-visible,
 a:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; border-radius: 4px; }
-.btn-primary:focus-visible { outline-color: var(--mustard-fill); }
 
 /* ── Masthead ──────────────────────────────────────────────────────────── */
 .masthead { background: var(--surface); border-bottom: 4px solid var(--mustard-fill); }
