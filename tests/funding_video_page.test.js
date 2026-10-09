@@ -68,28 +68,17 @@ const explainer = fs.readFileSync("funding-model/index.html", "utf8");
 check("a1 the explainer's link says introduction, not guide, and the film's true length",
   /id="video-link"[^>]*>Watch the 100-second introduction</.test(explainer));
 check("a2 the Scenario 2 label says introduction and names no scenario (it is the published one)",
-  explainer.includes('label: "Watch the 100-second introduction",') && !/label: "Watch[^"]*Scenario/.test(explainer));
-check("a3 the explainer's MP4 link downloads", /id="video-mp4"[^>]*\sdownload[\s>]/.test(explainer));
+  explainer.includes('label: "Watch the 100-second introduction"') && !/label: "Watch[^"]*Scenario/.test(explainer));
+// Sam, 2026-10-09 (a marked-up screenshot of the explainer): the Contents keeps
+// the introduction alone; the MP4 download and the narrated cut left it. The
+// files stay where the narrated checks below read them.
+check("a3 the explainer offers the introduction alone: no MP4 download, no narrated cut",
+  !/id="video-mp4"/.test(explainer) && !/id="video-narrated"/.test(explainer) && !/\.mp4"/.test(explainer));
 check("a4 the source never calls itself a guide for colleges", !/guide for colleges|Play the guide/i.test(src));
-// A re-version renames the MP4s (the original date code and a version suffix),
-// so the explainer's two download links must follow or they break.
-const explainerMp4 = Array.from(explainer.matchAll(/\.\.\/prototype\/funding_video\/([^"]+\.mp4)"/g)).map((m) => m[1]);
-check("a5 the explainer's MP4 links (Scenario 1 and 2) point at files that exist",
-  explainerMp4.length === 2 && explainerMp4.every((f) => fs.existsSync(path.join(DIR, f))));
+// a5 (the MP4 links point at files that exist) retired with the links, 2026-10-09.
 
-// Sheet 4 card 4 (Sam, 2026-09-29): draft 4 approved, so the explainer links the
-// narrated cut beside the introduction. It is Scenario 1's, so the Scenario 2
-// branch hides it rather than pointing a Scenario 2 reader at Scenario 1's figures.
-check("a6 the explainer links the narrated cut, which exists",
-  /id="video-narrated" href="\.\.\/prototype\/funding_video\/funding_in_motion_n1\.html">or watch the narrated version \(3 minutes\)</.test(explainer)
-    && fs.existsSync(path.join(DIR, "funding_in_motion_n1.html")));
-// Sam, 2026-10-02: "Narration sounds good to start with" -- the Scenario 2 view
-// points the link at Sierra's narration of that scenario, and a scenario with no
-// narrated cut of its own still hides it.
-check("a7 the Scenario 2 view links Sierra's narrated cut; a scenario without one hides the link",
-  /narrated: \{ page: "\.\.\/prototype\/funding_video\/funding_in_motion_n2\.html",\s*label: "or watch the narrated version \(2\.5 minutes\)" \}/.test(explainer)
-    && /if \(narrated && v\.narrated\) \{ narrated\.href = v\.narrated\.page; narrated\.textContent = v\.narrated\.label; \}\s*else if \(narrated\) narrated\.hidden = true;/.test(explainer)
-    && fs.existsSync(path.join(DIR, "funding_in_motion_n2.html")));
+// a6 and a7 (the explainer links each scenario's narrated cut) retired with the
+// link, 2026-10-09; the cuts themselves stay checked below.
 
 const readScript = (s) => JSON.parse(fs.readFileSync(path.join(DIR, "narration_" + s + ".json"), "utf8"));
 // Each scene's film span, from the source's scene() calls, as film_spans.py reads them: a
@@ -351,8 +340,8 @@ NARRATED.forEach(({ tag, v, s }) => {
   check("k3 a short script (" + words + " words, under 360) voicing each of the picture's eleven scenes, the targets slide included, in its order",
     words < 360 && s2.scenes.length === 11 && L2.scenes.map((x) => x.scene).join("|") === s2.scenes.map((x) => x.scene).join("|")
       && s2.scenes[5].scene === "How a target is set" && /^Hi, I'm Sierra\./.test(s2.scenes[0].text));
-  check("k4 every scene is read (the plan moved to paid, 2026-10-02), so the explainer's Scenario 2 view links the cut",
-    s2.scenes.every((x) => !x.pending && x.read) && /funding_in_motion_n2\.html/.test(explainer));
+  check("k4 every scene is read (the plan moved to paid, 2026-10-02)",
+    s2.scenes.every((x) => !x.pending && x.read));
   const cfgOf2 = (file) => JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(fs.readFileSync(path.join(DIR, file), "utf8"))[1]);
   const cfg = cfgOf2("funding_in_motion_n2.html"), intro = cfgOf2("funding_in_motion_s2.html");
   const PICTURE = ["prios", "prioText", "how", "split", "ex", "target", "timing", "deadline", "close", "explainer", "kick", "titleText"];

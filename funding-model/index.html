@@ -56,7 +56,7 @@
    explainer-defines-only-its-own-tokens): on :root they painted its header
    navy behind body-colored text, 1.13:1 (npm run a11y, 2026-10-01). So they
    are defined only where this page's own chrome and the Sierra drawer read them. */
-.actionbar, .masthead, .fs-sra-drawer, .fs-sra-backdrop{
+.masthead, .fs-sra-drawer, .fs-sra-backdrop{
   --seal-blue:#002F6D; --on-accent:#FFFFFF; --surface:var(--surface-opaque);
 }
 *{box-sizing:border-box}
@@ -83,20 +83,15 @@ a:hover{text-decoration-thickness:2px}
 .skip{position:absolute; left:-9999px; top:0; background:var(--surface-opaque); color:var(--cobalt);
   padding:10px 16px; border:1px solid var(--border-strong); border-radius:0 0 6px 0; z-index:20; font-weight:600}
 .skip:focus{left:0}
-.eyebrow{font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700;
-  color:var(--text-muted); margin:0 0 .55em}
 
-/* ── the action bar (Sam, 2026-10-01: the Fact Sheet's layout) ───────────
-   The Fact Sheet's sticky title row: the page's name, then each control as a
-   word. Ask Sierra is injected by fact-sheet/factsheet_sierra.js ahead of the
-   PDF button. Sticky from a tablet up; on a phone it scrolls away with the
-   masthead, because two rows of 44px buttons pinned over a 375px screen leave
-   the reader too little page. 44px of height clears WCAG 2.2 target size. */
-.actionbar{position:sticky; top:0; z-index:30; background:var(--surface-opaque);
-  border-bottom:1px solid var(--border)}
-.actionbar .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; padding-block:9px}
-.ab-title{font-weight:700; color:var(--seal-blue); margin-right:auto; text-decoration:none; font-size:1rem}
-.ab-title:hover{text-decoration:underline}
+/* ── the controls (Sam, 2026-10-01: the Fact Sheet's layout; 2026-10-09: in
+   the masthead, as underlined words without boxes, "simpler and less
+   obtrusive"). Each control is a word; Ask Sierra is injected by
+   fact-sheet/factsheet_sierra.js ahead of the PDF button. The .btn rule is the
+   boxed form; .mh-actions turns it into a text link: the underline is the cue
+   that is not color, cobalt on white reads above 4.5:1, and 24px of height
+   clears WCAG 2.2 target size (2.5.8). They stay <button>s where they act, so
+   a screen reader still names them as buttons. */
 .btn{font:inherit; font-size:.9rem; font-weight:600; line-height:1.2; color:var(--cobalt);
   background:var(--surface-opaque); border:1px solid var(--cobalt); border-radius:4px;
   padding:8px 16px; min-height:44px; cursor:pointer; display:inline-flex; align-items:center;
@@ -104,10 +99,6 @@ a:hover{text-decoration-thickness:2px}
 .btn:hover{background:var(--tint-cobalt)}
 .btn.primary{background:var(--seal-blue); border-color:var(--seal-blue); color:var(--on-accent)}
 .btn.primary:hover{background:var(--cobalt); border-color:var(--cobalt)}
-@media (max-width:560px), (max-height:520px){
-  .actionbar{position:static}
-  .ab-title{flex-basis:100%}
-}
 
 /* ── masthead: the Fact Sheet's, logo beside the title ───────────────── */
 .masthead{background:var(--surface-opaque); border-bottom:4px solid var(--mustard-fill)}
@@ -115,15 +106,22 @@ a:hover{text-decoration-thickness:2px}
    gutter, so the header ran flush to the screen edge on a phone (margin
    audit, 2026-09-30). */
 .head{padding-block:clamp(20px,4vw,30px); display:flex; flex-wrap:wrap; align-items:center; gap:14px 24px}
-.head .logo{height:58px; width:auto; flex:0 0 auto}
+/* The lockup is 1115 x 209; at 52px tall it reads at 277px, and below 560px
+   it shrinks so the title keeps the row. */
+.head .logo{height:52px; width:auto; max-width:100%; flex:0 0 auto}
 .mh-text{flex:1 1 320px; min-width:0}
-.mh-text .eyebrow{color:var(--mustard-text)}
 .masthead h1{font-size:clamp(1.5rem,1.2rem + 1.25vw,2.1rem); color:var(--seal-blue); text-wrap:pretty}
-.meta{display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; max-width:none}
-.tag{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--border-strong);
-  border-radius:999px; padding:3px 11px; font-size:.78rem; color:var(--text-muted); background:var(--surface-subtle)}
-.tag b{color:var(--text-strong); font-weight:600}
-.tag.draft{color:var(--text-muted); font-weight:600}
+.ver{margin:0; font-size:.8rem; color:var(--text-muted); white-space:nowrap; font-variant-numeric:tabular-nums}
+.ver abbr{text-decoration:none}
+.mh-row{margin-top:10px}
+.mh-actions{display:flex; flex-wrap:wrap; align-items:center; gap:4px 22px}
+.mh-actions .btn, .mh-actions .btn.primary, .mh-actions .fs-sierra-launch{
+  background:none; border:0; border-radius:2px; padding:2px 0; min-height:24px;
+  color:var(--cobalt); font-size:.95rem; font-weight:600;
+  text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px}
+.mh-actions .btn:hover, .mh-actions .btn.primary:hover, .mh-actions .fs-sierra-launch:hover{
+  background:none; color:var(--seal-blue); text-decoration-thickness:2px}
+@media (max-width:560px){ .head .logo{height:40px} }
 
 /* ── contents (Sam, 2026-10-01: a link to each section that opens it) ───── */
 .toc-wrap{display:block; margin-top:clamp(18px,3vw,28px)}
@@ -133,11 +131,8 @@ a:hover{text-decoration-thickness:2px}
 .toc{list-style:none; margin:0; padding:0; columns:2; column-gap:32px; max-width:none}
 .toc li{break-inside:avoid; margin:0; max-width:none}
 .toc a{display:block; padding:5px 0}   /* ≥24px target height (WCAG 2.5.8) */
-.toc-watch{margin:1em 0 0; padding-top:.9em; border-top:1px solid var(--border);
-  display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 16px; max-width:none}
-.toc-watch a{font-weight:600}
-.toc-watch a.toc-alt{font-weight:400; font-size:.9rem}
-.toc-note{margin:.6em 0 0; font-size:.84rem; color:var(--text-muted); max-width:none}
+.toc-note{margin:.9em 0 0; padding-top:.8em; border-top:1px solid var(--border);
+  font-size:.84rem; color:var(--text-muted); max-width:none}
 @media (max-width:560px){ .toc{columns:1} }
 
 /* ── sections ─────────────────────────────────────────────────────────── */
@@ -145,7 +140,7 @@ a:hover{text-decoration-thickness:2px}
    column of headings: a folded section is one line, not a 120px band. */
 section{padding:clamp(16px,2.6vw,26px) 0; border-bottom:1px solid var(--border)}
 section:last-of-type{border-bottom:0}
-main > section, #contents{scroll-margin-top:calc(var(--ab-h, 0px) + 12px)}
+main > section, #contents{scroll-margin-top:12px}
 main{margin-top:clamp(8px,2vw,16px)}
 
 /* ── folded steps (Sam, 2026-09-02) ───────────────────────────────────────
@@ -209,7 +204,10 @@ details.fold > .fold-body{padding-top:1.4em}
 .topline .k{font-size:.9rem; color:var(--text-muted); margin:.35em 0 0; max-width:none}
 .figs.two{grid-template-columns:repeat(2,1fr); margin-top:14px}
 .figs-note{margin:1em 0 0; font-size:.92rem; color:var(--text-muted)}
-.figs-note b{color:var(--text-strong); font-variant-numeric:tabular-nums; font-weight:600}
+.figs-note b, .figs-note strong{color:var(--text-strong); font-variant-numeric:tabular-nums; font-weight:600}
+/* The passage blocks (2026-10-09) wrap their paragraphs in a div, so the
+   note's own margin sits on the div and its last paragraph adds none. */
+.figs-note > p:last-child, .rng-note > p:last-child{margin-bottom:0}
 
 .range{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px; max-width:none}
 .rng{background:var(--surface-subtle); border:1px solid var(--border); border-radius:4px; padding:13px 16px}
@@ -329,7 +327,7 @@ footer p{max-width:none}
   @page{size:letter portrait; margin:.6in}
   /* the action bar (with Ask Sierra in it) and the Contents are screen
      navigation; the PDF opens every fold instead */
-  .skip, .actionbar, #contents, #live-status{display:none}
+  .skip, .mh-actions, #contents, #live-status{display:none}
   .masthead{border-bottom-width:3px}
   .head{padding-block:4pt 10pt}
   body{background:#FFFFFF; font-size:10.5pt; line-height:1.45}
@@ -384,41 +382,40 @@ section[hidden]{display:none}
 
 <a class="skip" href="#start">Skip to the explanation</a>
 
-<!-- ── THE ACTION BAR (Sam, 2026-10-01: "revise the Explainer funding view based on
-     how the CPL Fact Sheet is formatted and organized"). The Fact Sheet's sticky
-     title row: the page's name, then its controls as words. Ask Sierra is
-     injected here by fact-sheet/factsheet_sierra.js, just ahead of the PDF
-     button ([data-sierra-before]), as on the Fact Sheet. Outside <main>, so a
-     reorder of the sections never moves it and print drops it whole. -->
-<div class="actionbar">
-  <div class="wrap">
-    <a class="ab-title" href="#contents">CPL Implementation Funding</a>
-    <button type="button" class="btn" id="btn-collapse-all" aria-controls="start">Collapse all</button>
-    <!-- My CPL Funding (Sam, 2026-09-30): opens the institution table's
-         one-institution view, below, on its chooser. -->
-    <a class="btn primary" id="my-funding-btn" href="#institutions">My CPL Funding</a>
-    <!-- PDF (Sam, 2026-09-15: "Add a pdf download link to the top").
-         It prints THIS page rather than fetching a file, and that is the
-         point: every figure here is computed live, so a PDF built once and
-         committed would be stale the first time a dial moved. The print
-         stylesheet at the foot of the CSS opens every fold, drops the
-         controls, and repeats the table header on each page. -->
-    <button type="button" class="btn" id="pdf-btn" data-sierra-before
-            aria-describedby="pdf-note">Download PDF</button>
-  </div>
-</div>
-
+<!-- ── THE MASTHEAD (Sam, 2026-10-09, on a screenshot: "Let's clean up the
+     explainer page formatting a bit"). The CPL Initiative's lockup replaces the
+     colleges' logo; the title drops "How It Works"; the eyebrow and the draft,
+     scenario and window tags go; the version stays. The page's controls, which
+     had their own sticky bar above the masthead, sit on the version's row, so
+     the page opens on one band. Ask Sierra is injected into that row by
+     fact-sheet/factsheet_sierra.js ([data-sierra-bar]), just ahead of the PDF
+     button ([data-sierra-before]). Outside <main>, so a reorder of the sections
+     never moves it, and print drops the controls. -->
 <header class="masthead">
   <div class="wrap head">
-    <img class="logo" src="../fact-sheet/img/ccc-logo.png" alt="California Community Colleges" width="244" height="115">
+    <img class="logo" src="../sierra/cpl-initiative-logo-navy.png"
+         alt="California Community Colleges, Credit for Prior Learning Initiative" width="1115" height="209">
     <div class="mh-text">
-      <p class="eyebrow">CPL Implementation Funding · Chancellor&rsquo;s Office</p>
-      <h1>2026-2028 CPL Initiative Funding: How It Works</h1>
-      <div class="meta">
-        <span class="tag draft">Draft &mdash; not adopted policy</span>
-        <span class="tag">Scenario <b id="x-scenario">1</b></span>
-        <span class="tag">Window <b>2026-27 &amp; 2027-28</b></span>
-        <span class="tag">Version as of <b id="x-version">2026-08-31</b></span>
+      <h1>2026-2028 CPL Initiative Funding</h1>
+      <div class="mh-row">
+        <div class="mh-actions" data-sierra-bar>
+          <button type="button" class="btn" id="btn-collapse-all" aria-controls="start">Collapse all</button>
+          <!-- My CPL Funding (Sam, 2026-09-30): opens the institution table's
+               one-institution view, below, on its chooser. -->
+          <a class="btn primary" id="my-funding-btn" href="#institutions">My CPL Funding</a>
+          <!-- PDF (Sam, 2026-09-15: "Add a pdf download link to the top").
+               It prints THIS page rather than fetching a file, and that is the
+               point: every figure here is computed live, so a PDF built once and
+               committed would be stale the first time a dial moved. The print
+               stylesheet at the foot of the CSS opens every fold, drops the
+               controls, and repeats the table header on each page. -->
+          <button type="button" class="btn" id="pdf-btn" data-sierra-before
+                  aria-describedby="pdf-note">PDF</button>
+          <!-- The version, in small type after PDF (Sam, 2026-10-09: "cut
+               Version and just use Ver: 10/9/26 -- It doesn't need a chip",
+               then "Put the Ver next to pdf"). -->
+          <span class="ver"><abbr title="Version">Ver</abbr>: <span id="x-version">8/31/26</span></span>
+        </div>
       </div>
     </div>
   </div>
@@ -444,15 +441,12 @@ section[hidden]{display:none}
       <li><a href="#disbursement">Disbursement and the funding window</a></li>
       <li><a href="#choices">What is a choice, and what is a given</a></li>
       <li><a href="#questions">Frequently asked questions</a></li>
+      <!-- The introduction video, the list's last item (Sam, 2026-10-09). The
+           list is rebuilt from the sections after every paint, and this item
+           rides the rebuild to the end (contentsFromSections). -->
+      <li class="toc-video"><a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a></li>
     </ul>
-    <p class="toc-watch">
-      <a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a>
-      <a class="toc-alt" id="video-mp4" href="../prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4" download>or download the video (MP4)</a>
-      <!-- The narrated cut (Sam approved draft 4, sheet 4 card 4, 2026-09-29). This is Scenario 1's;
-           the Scenario 2 view points it at Sierra's narration of that scenario (2026-10-02). -->
-      <a class="toc-alt" id="video-narrated" href="../prototype/funding_video/funding_in_motion_n1.html">or watch the narrated version (3 minutes)</a>
-    </p>
-    <p class="toc-note" id="pdf-note">Download PDF opens your browser&rsquo;s print dialog; choose
+    <p class="toc-note" id="pdf-note">PDF opens your browser&rsquo;s print dialog; choose
       &ldquo;Save as PDF&rdquo;. The file holds the figures as they stand the day you save it.</p>
   </div>
 </nav>
@@ -473,7 +467,8 @@ section[hidden]{display:none}
          authenticated PDFs (docs/gr_sb135_row_sweep.md); the four goals are
          the statute's own words, and the platform is named as the statute
          names it. -->
-    <p class="intro">Senate Bill 135 (Statutes of 2026, Chapter 79), the 2026 education trailer bill, added
+    <div data-ftext="x_lede">
+    <p>Senate Bill 135 (Statutes of 2026, Chapter 79), the 2026 education trailer bill, added
       Article 9 to the Education Code, sections 78093 through 78093.2, effective July 13, 2026. The article
       establishes the Credit for Prior Learning Initiative and directs the Chancellor&rsquo;s Office, upon
       appropriation by the Legislature, to allocate designated funds to support implementation at each campus
@@ -496,6 +491,7 @@ section[hidden]{display:none}
       Chancellor&rsquo;s Office measures the prior-learning credit each institution puts on students&rsquo; records, from that
       institution&rsquo;s own MAP data, against <span id="l-nprio">four</span> priorities. An institution meets the baseline
       requirements to take part; from that point the funding follows the outcomes.</p>
+    </div>
     <div class="topline">
       <div class="v num" id="f-total">$35,000,000</div>
       <p class="k">one-time 2026-27 appropriation for CPL implementation</p>
@@ -509,13 +505,15 @@ section[hidden]{display:none}
       <div class="fig"><div class="v num" id="f-inst">$25,240,308</div><p class="k">allocated to the 118 institutions, on their CPL outcomes</p></div>
       <div class="fig"><div class="v num" id="f-proj">$9,759,692</div><p class="k">statewide CPL projects and technology, and two Chancellor&rsquo;s Office posts supporting colleges across the two years</p></div>
     </div>
-    <p class="figs-note">Those two lines account for the whole appropriation. The
+    <div class="figs-note" data-ftext="x_lede_figs">
+    <p>Those two lines account for the whole appropriation. The
       <b id="f-main">$25,240,308</b> to institutions is <b>one funding total</b>, shared among all 118 in
       proportion to combined credit + noncredit size within the base award and the cap. Every award then
       splits into a credit share and a <b>noncredit</b> share by the institution&rsquo;s own teaching mix:
       statewide, <b id="f-nc">$1,783,399</b> is noncredit, carried within <b id="l-nc-count">108</b> college
       awards and restricted to noncredit outcomes. The $9.04&nbsp;million remaining from 2025-26 is a
       separate distribution.</p>
+    </div>
     <div class="range">
       <div class="rng">
         <p class="rk">Lowest</p>
@@ -536,8 +534,10 @@ section[hidden]{display:none}
         <p class="rs" id="r-max-s">the cap, and where 7 of the 118 institutions are held</p>
       </div>
     </div>
-    <p class="rng-note">A few very large institutions raise the average: half of the
+    <div class="rng-note" data-ftext="x_lede_range">
+    <p>A few very large institutions raise the average: half of the
       <span id="l-avg-n">118</span> institutions are allocated <b id="f-med">$172,314</b> or less.</p>
+    </div>
     </div>
     </details>
   </div>
@@ -612,6 +612,7 @@ section[hidden]{display:none}
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
+    <div data-ftext="x_alloc">
     <p>The Chancellor&rsquo;s Office measures an institution&rsquo;s size in <strong>full-time equivalent
       students</strong>, its standard measure of instructional volume, counting credit and
       noncredit instruction together. Across the <span id="l-basis-n">118</span> institutions
@@ -628,6 +629,7 @@ section[hidden]{display:none}
         to the institutions below the cap. An institution held at the cap is assessed against a correspondingly
         smaller target, so it qualifies at the same rate as every institution above the base award.</li>
     </ul>
+    </div>
     <!-- Built from the payload (D.cards) — see build_funding_model_explainer.js.
          Hand-typing these is how two of the four figures went stale. -->
     <div class="duo" id="cards"></div>
@@ -685,22 +687,28 @@ section[hidden]{display:none}
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
+    <div data-ftext="x_count">
     <p>The priorities and their shares are above. This is the arithmetic underneath them.</p>
     <p>The Chancellor&rsquo;s Office measures outcomes in <strong>units of credit for prior learning</strong>,
       converted to equivalent FTES on the college&rsquo;s own calendar: 30 semester units make one FTES, or 45 on a
       quarter calendar.</p>
+    </div>
 
     <h3 style="margin-top:1.6em">How a share becomes a target</h3>
+    <div data-ftext="x_count_target">
     <p>The Chancellor&rsquo;s Office divides each priority&rsquo;s share by its FTES reimbursement rate to set its target. That rate is the 2026-27
       state rate of <strong><span id="l-rate">$5,649.63</span> per FTES</strong>, multiplied by that
       priority&rsquo;s <strong>funding factor</strong>. <span id="l-factors">The factors currently set are 1.0, 1.0
       and 1.0.</span></p>
+    </div>
     <div class="note plain">
+      <div data-ftext="x_count_factor">
       <p><strong>What the funding factor does.</strong> A factor above 1.0 raises the FTES reimbursement rate, so
         <em>fewer</em> units of prior learning reach the priority&rsquo;s share, which gives more weight to outcomes
         the Chancellor&rsquo;s Office intends to encourage. A factor below 1.0 has the opposite effect. The
         share sets how much funding stands behind a priority; the factor sets the volume of prior learning
         that qualifies for it.</p>
+    </div>
     </div>
     <!-- ⚠ tabindex + a name are the SCROLLER pair, and BOTH are required: the
          region scrolls sideways at ≤430px, so a keyboard user must be able to
@@ -722,16 +730,20 @@ section[hidden]{display:none}
         <tbody id="workedbody"></tbody>
       </table>
     </div>
-    <p style="margin-top:1.1em">An institution that reaches half of a priority&rsquo;s target qualifies for
+    <div data-ftext="x_count_half" style="margin-top:1.1em">
+    <p>An institution that reaches half of a priority&rsquo;s target qualifies for
       half of that priority&rsquo;s share. Exceeding the target does not increase the amount: the share
       is the ceiling.</p>
+    </div>
     <div class="note">
+      <div data-ftext="x_count_base">
       <p><strong>One consequence of the base award.</strong> Because the base award is funded from within
         the same total, an institution above it qualifies for approximately <strong id="f-eff">$5,158 for
         each FTES of prior learning it records</strong> rather than the full
         <span id="f-rate">$5,650</span>, while an institution brought up to the base award reaches its
         target on considerably less. That is the intended trade: the rate per FTES is not uniform across
         institutions, and the smallest institutions are the ones it favors.</p>
+    </div>
     </div>
     </div>
     </details>
@@ -746,6 +758,7 @@ section[hidden]{display:none}
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
+    <div data-ftext="x_timing">
     <p>Two timing settings are in effect. Neither changes the amount an institution
       can qualify for.</p>
     <ul>
@@ -755,9 +768,10 @@ section[hidden]{display:none}
         delay it. Funding remaining at the end of year one carries forward. Because the entire allocation is
         available in year one, the targets shown are the full two-year figures.</li>
       <li><strong>Year two mirrors year one.</strong> The two years are held identical so that a change to
-        one is reflected in the other. Nothing is overwritten: disabling the mirror leaves both years as
-        they were.</li>
+        one is reflected in the other. Disabling the mirror leaves both years as they were, so nothing
+        is overwritten.</li>
     </ul>
+    </div>
     <!-- The milestone LIST moved up into "What counts, and when" (2026-09-15);
          this step keeps the two disbursement settings, which are about how the
          funding arrives rather than about dates. One list, one place. -->
@@ -774,8 +788,10 @@ section[hidden]{display:none}
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
+    <div data-ftext="x_choices">
     <p>The Chancellor&rsquo;s Office sets some of these figures as policy and can change them. Others are
       given, and it uses them as they are.</p>
+    </div>
     <div class="tablebox" role="region" tabindex="0"
          aria-label="Which figures are policy choices and which are given">
       <table>
@@ -862,32 +878,36 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // through it, so a section this painter stops filling — or one an edit
   // removes from the markup — is a no-op rather than a thrown TypeError that
   // leaves the placeholder figures standing and the rest of the page unpainted.
-  var setText = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
+  // A curator's passage (the tab's explainer blocks, 2026-10-09) may name one
+  // figure more than once, so every copy carries data-fig and takes the value too.
+  var setText = function (id, v) {
+    var el = document.getElementById(id); if (el) el.textContent = v;
+    var copies = document.querySelectorAll('[data-fig="' + id + '"]');
+    for (var i = 0; i < copies.length; i++) copies[i].textContent = v;
+  };
   // The masthead identity tags come from the engine too — the version the tab
   // prints and the scenario this browser has selected — never typed here.
-  if (D.model_version) document.getElementById("x-version").textContent = D.model_version;
-  if (D.scenario) document.getElementById("x-scenario").textContent = String(D.scenario).replace(/^Scenario\s+/i, "");
+  // "Ver: 10/9/26" (Sam, 2026-10-09): the model's version date, month/day/year,
+  // without the ".N" a sub-revision carries.
+  if (D.model_version) {
+    var vm = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(D.model_version));
+    setText("x-version", vm ? (+vm[2]) + "/" + (+vm[3]) + "/" + vm[1].slice(2) : String(D.model_version));
+  }
   // The introduction video is per scenario: each one is typed from its scenario's
   // dials, so a page showing Scenario 2 links Scenario 2's introduction (Sam,
   // 2026-09-26). Scenario 1's stays the default for every other name. Scenario 2
-  // is the published one, so its link names no scenario (Sam, 2026-10-01).
+  // is the published one, so its link names no scenario (Sam, 2026-10-01). The
+  // MP4 and narrated alternates left the Contents on 2026-10-09 (Sam's
+  // screenshot); the introduction alone stays.
   (function () {
     var VIDEOS = {
       "Scenario 2": { page: "../prototype/funding_video/funding_in_motion_s2.html",
-        mp4: "../prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v7.mp4",
-        label: "Watch the 100-second introduction",
-        // Sierra's narration (Sam, 2026-10-02: "Narration sounds good to start with")
-        narrated: { page: "../prototype/funding_video/funding_in_motion_n2.html",
-          label: "or watch the narrated version (2.5 minutes)" } }
+        label: "Watch the 100-second introduction" }
     };
     var v = VIDEOS[String(D.scenario || "").trim()];
-    var link = document.getElementById("video-link"), mp4 = document.getElementById("video-mp4");
+    var link = document.getElementById("video-link");
     if (!v || !link) return;
     link.href = v.page; link.textContent = v.label;
-    if (mp4) mp4.href = v.mp4;
-    var narrated = document.getElementById("video-narrated");
-    if (narrated && v.narrated) { narrated.href = v.narrated.page; narrated.textContent = v.narrated.label; }
-    else if (narrated) narrated.hidden = true;   // no narrated cut of this scenario yet
   })();
   // A draft scenario opened by ?scenario= (Sam, 2026-09-25) says so in words
   // at the top, so a preview link passed along is never mistaken for the
@@ -1477,8 +1497,13 @@ window.CPL_SIERRA_SUGGESTED = [
       li.appendChild(a);
       frag.appendChild(li);
     });
+    // The introduction video stays the list's last item (Sam, 2026-10-09): the
+    // same element, so the href the painter set for this scenario rides along.
+    var video = document.getElementById("video-link");
+    var videoItem = video && video.closest("li");
     list.textContent = "";
     list.appendChild(frag);
+    if (videoItem) list.appendChild(videoItem);
     syncCollapseAll();
   }
   window.CPL_CONTENTS = { rebuild: contentsFromSections, open: openSection, sync: syncCollapseAll };
@@ -1505,19 +1530,31 @@ window.CPL_SIERRA_SUGGESTED = [
   document.addEventListener("toggle", function (e) {
     if (e.target && e.target.classList && e.target.classList.contains("fold")) syncCollapseAll();
   }, true);
-  // The sticky bar's height, so a section a link moves to starts below it
-  // rather than under it (scroll-margin-top reads --ab-h). On a phone the bar
-  // is not sticky and the offset is zero.
-  var bar = document.querySelector(".actionbar");
-  function barOffset() {
-    if (!bar) return;
-    var sticky = window.getComputedStyle(bar).position === "sticky";
-    document.documentElement.style.setProperty("--ab-h", (sticky ? bar.offsetHeight : 0) + "px");
+  // THE PAGE'S OWN PASSAGES come from the tab (Sam, 2026-10-09: he could not
+  // edit this page's text). Each [data-ftext] block holds the typed markup as
+  // the reading for a browser without script; this replaces it with what the
+  // curator's layers resolve to, BEFORE the painter runs, so the painter fills
+  // the figures the passage names. Seeded with the figures on screen, so a
+  // repaint never blanks a number.
+  function paintPassages() {
+    if (typeof T.explainerTextHtml !== "function") return;
+    var ids = T.explainerFigIds(), seeds = {};
+    ids.forEach(function (id) { var el = document.getElementById(id); if (el) seeds[id] = el.textContent; });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-ftext]"), function (box) {
+      var html = T.explainerTextHtml(box.getAttribute("data-ftext"), seeds);
+      if (html) box.innerHTML = html;
+    });
+    // The first copy of each figure carries its id: the painter, the tests and
+    // a reader's link all find a figure by id.
+    ids.forEach(function (id) {
+      if (document.getElementById(id)) return;
+      var first = document.querySelector('[data-fig="' + id + '"]');
+      if (first) first.id = id;
+    });
   }
-  window.addEventListener("resize", barOffset);
-  barOffset();
   function paint() {
     try {
+      paintPassages();
       window.CPL_PAINT_EXPLAINER(B.buildPayload(T, window.CPL_FUNDING));
       var faq = document.getElementById("faq-body");
       if (faq && typeof T.publicFaqHtml === "function") faq.innerHTML = T.publicFaqHtml();

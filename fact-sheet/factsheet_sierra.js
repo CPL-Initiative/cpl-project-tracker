@@ -368,7 +368,9 @@
   // ── Launcher in the action bar (the "title row", per Sam) ───────────────────
   function injectLauncher() {
     if (document.getElementById('btn-sierra')) { launcher = document.getElementById('btn-sierra'); return; }
-    var bar = document.querySelector('.actionbar .wrap');
+    // A host page names its control row with [data-sierra-bar] (the funding
+    // explainer's masthead, 2026-10-09); the Fact Sheet's is its action bar.
+    var bar = document.querySelector('[data-sierra-bar]') || document.querySelector('.actionbar .wrap');
     if (!bar) return;
     launcher = el('button', { type: 'button', id: 'btn-sierra', className: 'btn fs-sierra-launch no-print',
       title: 'Ask ' + NAME + ', the CPL assistant', 'aria-haspopup': 'dialog', 'aria-expanded': 'false',
