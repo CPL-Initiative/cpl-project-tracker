@@ -212,11 +212,12 @@ function mountWords(doc) {
   const pub = read("cpl_funding_public.html");
   check("the public page's header and description no longer say 'pools'", !/pools/.test(pub));
   const exp = read("funding-model/index.html");
-  check("the explainer's draft tag is words, its shares read '% of the funding', and its masthead tags are painted ids",
-    /<span class="tag draft">Draft &mdash; not adopted policy<\/span>/.test(exp) &&
+  // Sam, 2026-10-09 (a marked-up screenshot): the masthead keeps the version
+  // tag alone; the draft, scenario and window tags went.
+  check("the explainer's shares read '% of the funding', and its masthead keeps one tag, the painted version",
     /% of the funding/.test(exp) && !/% of the money/.test(exp) &&
-    /id="x-version"/.test(exp) && /id="x-scenario"/.test(exp) &&
-    /D\.model_version/.test(exp) && /D\.scenario/.test(exp));
+    /id="x-version"/.test(exp) && /D\.model_version/.test(exp) &&
+    !/class="tag draft"/.test(exp) && !/id="x-scenario"/.test(exp));
 }
 
 // ── 4. editable prose, end to end ───────────────────────────────────────────
