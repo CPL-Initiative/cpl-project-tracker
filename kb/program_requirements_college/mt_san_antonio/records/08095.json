@@ -1,0 +1,256 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "08095",
+ "shape": "certificate",
+ "title": "Child Development - Level III",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-iii-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6651,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6651,
+    "output_tokens": 2012,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2012,
+  "output_tokens_details": {
+   "thinking_tokens": 258
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06684,
+ "ms": 15310,
+ "seconds": 15.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CHLD84"
+   ],
+   "flagged": [
+    "CHLD84"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development - Level III (Certificate N0655)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Understand and use a wide array of developmentally appropriate approaches, instructional strategies, and tools to connect with children and families and positively influence each child's development and learning.",
+    "Be able to evaluate Early care and Education Program regulations, standards, and policies according to Title 22 California.",
+    "Be grounded in Child Development knowledge (theory) and use their understanding of young children and their needs to create environments that are healthy, respectful, supportive, and challenging for each child.",
+    "Understand that child observation, documentation and other forms of assessment are central to the practices of all early childhood professionals. Students use systematic observations, documentation, and other effective assessment strategies to positively influence the development of every child.",
+    "Understand that successful programs depend upon partnerships with children's families and communities. They use this understanding to create respectful, reciprocal relationship that support and empower families and to involve all families in their children's development and learning.",
+    "Understand the importance of developmental domains and academic content areas. Students use their knowledge and other resources to design, implement, and evaluate meaningful curriculum.",
+    "Be able to identify and conduct themselves as members of the early childhood profession. They know ethical guidelines and other professional standards related to early childhood education. They are life-long, collaborative learners who continue to broaden their knowledge and skills, remain informed about child development issues, and are informed advocates for sound educational practices and policies.",
+    "Be able to apply effective guidance and interaction strategies that support all children's social learning, identity, and self-confidence."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Child Development - Level I Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CHLD 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Child Development - Level II Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHLD 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Child Development - Level III Coursework",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHLD 51",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 61",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 62",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 63",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 68",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 73",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 84",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Stated totals for the Level I (12) and Level II (6) blocks come from the summary course list ('Completion of the Child Development - Level I coursework 12', 'Level II coursework 6'); Level III block's 6 is printed beside 'Choose two courses from the following:'.",
+   "No units are printed beside the individual Level III elective courses, so their units are null.",
+   "The trailing '1' after some course names (CHLD 5, 6, 11, 68, 73) is a footnote marker: 'Documentation of tuberculosis (TB) clearance is required.'",
+   "CHLD 84 (Guidance and Discipline in Child Development Settings) is not in the closed list; recorded as a catalog addition.",
+   "Overview mentions 175 days of experience and 16 specific G.E. units in Areas A, B, C and D to meet Title 5 fully qualified teacher requirements; these are not part of the certificate's 24-unit total and are not recorded as blocks.",
+   "Program learning outcomes come from the page's Outcomes tab under 'Program Learning Outcomes'; they appear to be the department's shared program outcomes applied to this certificate. A link to separate SLOs ('Review Student Learning Outcomes (SLOs) for this program.') is not reproduced in the text.",
+   "Outcome 5 is copied as printed, including 'reciprocal relationship that support' (grammar as in source)."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

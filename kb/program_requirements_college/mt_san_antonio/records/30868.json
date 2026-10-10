@@ -1,0 +1,174 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "30868",
+ "shape": "certificate",
+ "title": "Consumer Relations",
+ "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/consumer-relations/consumer-relations-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5395,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5395,
+    "output_tokens": 884,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 884,
+  "output_tokens_details": {
+   "thinking_tokens": 176
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03926,
+ "ms": 7682,
+ "seconds": 8.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FCS41"
+   ],
+   "flagged": [
+    "FCS41"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Consumer Relations (Certificate M0479)",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate meaningful self-evaluation related to increasing their lifelong personal well-being.",
+    "Identify, prioritize, and evaluate their personal and personal financial goals.",
+    "Identify consumer related laws and government agencies."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUSO 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSO 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FCS 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FCS 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FCS 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSA 71",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "FCS 41 (Life Management and Adulting, 3 units) is listed as required in the catalog but is not on the closed list; recorded as a catalog addition.",
+   "BUSA 71 is printed as 'or BUSA 71' beneath FCS 80 with no units beside it; units left null (state file stores 3).",
+   "Outcomes come from the page's Outcomes tab under 'Program Learning Outcomes' for this certificate page; the final line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded.",
+   "Award title in the request is truncated ('Certificate of Achievement: 12 to fewer than 18 semester...'); the catalog's 15-unit total fits that range."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

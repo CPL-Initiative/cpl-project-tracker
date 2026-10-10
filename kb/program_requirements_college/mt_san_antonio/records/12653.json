@@ -1,0 +1,260 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "12653",
+ "shape": "degree",
+ "title": "Television Production",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/television/television-production-degree/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5818,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5818,
+    "output_tokens": 1532,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1532,
+  "output_tokens_details": {
+   "thinking_tokens": 254
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05391,
+ "ms": 11892,
+ "seconds": 12.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 11,
+   "share": 0.909,
+   "missing": [
+    "RTV29"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "PHOT10",
+    "RTV18",
+    "RTV21",
+    "RTV23"
+   ],
+   "flagged": [
+    "PHOT10",
+    "RTV18",
+    "RTV21",
+    "RTV23"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Television Production (AS Degree S0602)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Feel that they have an increased possession of the skills required for entry-level work in the entertainment industry.",
+    "Function in three types of production: Narrative (film-style), TV Studio, and live Remote Multicamera production in any role.",
+    "Use communication, artistic, and technical skills to collaboratively create programs as part of a team in any role, from writer to editor.",
+    "Use Avid Media Composer to the level necessary for an editing internship.",
+    "Present an ePortfolio containing video and written work to prospective employers, universities, and scholarship committees.",
+    "Apply aesthetic and technical skills in telling a story visually."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Choose two courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "R-TV 01",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 28",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose 12 units from the following courses, or any of the above courses not taken:",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "PHOT 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "R-TV 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "R-TV 19A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 19B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "R-TV 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 23",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "R-TV 24",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "R TV 29",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside individual courses, only block totals (6 and 12) and the total (18); course units are left null.",
+   "The 12-unit elective block also allows any course from the first block (R-TV 01, R-TV 14, R-TV 28) not already taken; those courses are recorded only once, in the first block.",
+   "Catalog codes 'R-TV 01' etc. were matched to closed-list 'R TV 1' etc.; R-TV 18, R-TV 21, R-TV 23 and PHOT 10 are not in the closed list.",
+   "The degree requires General Education coursework but names no specific GE pattern.",
+   "Program Learning Outcomes are taken from the page's Outcomes tab for this degree; the page also links to separate SLOs not included in the text."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

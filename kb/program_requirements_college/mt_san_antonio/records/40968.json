@@ -1,0 +1,280 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "40968",
+ "shape": "certificate",
+ "title": "Geotech",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/geology/geotech-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6140,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6140,
+    "output_tokens": 1699,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1699,
+  "output_tokens_details": {
+   "thinking_tokens": 387
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05854,
+ "ms": 12957,
+ "seconds": 13.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 23,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "GEOL2"
+   ],
+   "flagged": [
+    "GEOL2"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.5,
+    37.5
+   ],
+   "stated": [
+    33.5,
+    37.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geotech (Certificate T0677)",
+   "measure": "units",
+   "total_units": {
+    "min": 33.5,
+    "max": 37.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGOR 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 9",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "CHEM 10",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 40",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISB 15",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 2",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "GEOL 24",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 25",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 29",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 9L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 31",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 32",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 33",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 100",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "MATH 120",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 130",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 150",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The outcomes tab prints a 'Program Learning Outcomes' heading with only a link ('Review Student Learning Outcomes (SLOs) for this program.') and no outcomes text, so program.outcomes is empty.",
+   "GEOL 2 (Historical Geology) is printed as the first option of the GEOL 2/24/25/29 choice but is not in the closed list; recorded with catalog_addition true.",
+   "The unit ranges for the 'or' groups (CHEM 3-5, GEOL 2 group 3-4, MATH/STAT group 3-4) are printed on the first row only; alternatives' individual units are not printed and are left null.",
+   "GEOL 32 is printed as a variable unit course with the note 'Variable Unit Course. One unit required.' and 1 unit; recorded as 1 unit.",
+   "GEOL 31 title is printed as 'Geotechnical Methods for Geotechnical' versus the closed list's 'Geotechnical Methods for Geotech'; same code."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

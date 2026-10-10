@@ -1,0 +1,466 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "31650",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/history/aa-history-for-transfer/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7018,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7018,
+    "output_tokens": 3347,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3347,
+  "output_tokens_details": {
+   "thinking_tokens": 680
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09501,
+ "ms": 25719,
+ "seconds": 26.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 26,
+   "share": 0.846,
+   "missing": [
+    "HIST7",
+    "HIST7H",
+    "HIST8",
+    "HIST8H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "flagged": [
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "History (AA-T Degree A0334)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "identify causes of change in human society, including social, political, economic, and environmental factors, and their historical significance.",
+    "Both individually and in groups, critically evaluate primary sources, (documents, images, and objects) as informed by secondary sources.",
+    "compose logically organized arguments, both orally and in writing.",
+    "understand the difference between misinformation, opinion, and substantiated scholarly theories, and will identify and describe the contours of debates among historians over time.",
+    "identify and articulate the diversity of human experience, including religion, ethnicity, race, language, class, abilities, sex, gender, and sexuality, by comparing different historical experiences and perspectives.",
+    "develop a historical perspective that creates an understanding of personal responsibility as a participant in history."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIST 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 3H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 4H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Area 1 Diversity",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 10H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 11H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 35",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 44",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Area 2",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 10H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 11H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 16",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 35",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 39",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 44",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMA 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMA 1H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIST 7",
+    "why": "not in the text; catalog lists HIST C1001 (United States History to 1877) instead, likely common course renumbering"
+   },
+   {
+    "code": "HIST 7H",
+    "why": "not in the text; catalog lists HIST C1001H instead, likely common course renumbering"
+   },
+   {
+    "code": "HIST 8",
+    "why": "not in the text; catalog lists HIST C1002 (United States History since 1865) instead, likely common course renumbering"
+   },
+   {
+    "code": "HIST 8H",
+    "why": "not in the text; catalog lists HIST C1002H instead, likely common course renumbering"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside individual courses, only block totals (Core Courses 6, List A 6, List B 6, Area 1 3 units, Area 2 3 units); course units are left null.",
+   "List B (6 units) is printed as 'Choose one course from each Area'; recorded as two blocks, Area 1 Diversity and Area 2, each choose 1 course (3 units). Many courses appear in both areas; presumably one course cannot satisfy both areas, but the text does not say so explicitly.",
+   "HIST C1001/C1001H and HIST C1002/C1002H are not in the closed list (marked catalog additions); they appear to be Common Course Numbering replacements for HIST 7/7H and HIST 8/8H in the closed list. Reviewer should confirm.",
+   "Closed list stores 'HIST30' (no space, units not stored); the catalog prints 'HIST 30' History of African Americans, 1619-1877. Treated as the same closed-list course (catalog_addition false).",
+   "Program learning outcomes come from the page's Outcomes tab for this History AA-T program page; recorded as this award's outcomes. The line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome.",
+   "Total Units 60 includes Cal-GETC 34 units; total_units records the 18-unit major only. Courses may be double-counted for the major and Cal-GETC."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

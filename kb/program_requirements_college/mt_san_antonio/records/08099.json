@@ -1,0 +1,323 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "08099",
+ "shape": "certificate",
+ "title": "Child Development – Early Childhood Teacher",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-early-childhood-teacher-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7152,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7152,
+    "output_tokens": 2680,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2680,
+  "output_tokens_details": {
+   "thinking_tokens": 629
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08221,
+ "ms": 20653,
+ "seconds": 21.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CHLD84"
+   ],
+   "flagged": [
+    "CHLD84"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": [
+    41.0,
+    41.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development - Early Childhood Teacher (Certificate T0865)",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Understand and use a wide array of developmentally appropriate approaches, instructional strategies, and tools to connect with children and families and positively influence each child's development and learning.",
+    "Be able to evaluate Early care and Education Program regulations, standards, and policies according to Title 22 California.",
+    "Be grounded in Child Development knowledge (theory) and use their understanding of young children and their needs to create environments that are healthy, respectful, supportive, and challenging for each child.",
+    "Understand that child observation, documentation and other forms of assessment are central to the practices of all early childhood professionals. Students use systematic observations, documentation, and other effective assessment strategies to positively influence the development of every child.",
+    "Understand the importance of developmental domains and academic content areas. Students use their knowledge and other resources to design implement, and evaluate meaningful challenging curricula and environments that promotes comprehensive developmental learning outcomes for every child.",
+    "Understand that successful programs depend upon partnerships with children's families and communities. They use this understanding to create respectful, reciprocal relationships that support and empower families and to involve all families in their children's development and learning.",
+    "Acquire strategies and developmentally appropriate techniques for effective teaching and classroom management.",
+    "Understand theoretical and practical implications of oppression and privilege as they apply to young children, families, programs, classrooms, and teaching. Various classroom strategies to deal with bias are developed."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHLD 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 66",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 66L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 68",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 69",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 75",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 84",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHLD 91",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one of the following course pairs: CHLD 67 and CHLD 67L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Practicum course pair",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CHLD 67",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 67L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one of the following course pairs: CHLD 86 and CHLD 87",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Practicum course pair",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CHLD 86",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 87",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHLD 51",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 61",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 62",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 63",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list stores 'CHLD91' without a space; the catalog prints 'CHLD 91'. Treated as the same course (not a catalog addition).",
+   "CHLD 84 (Guidance and Discipline in Child Development Settings, 3 units) is in the Core Courses but not in the closed list; recorded as a catalog addition.",
+   "Trailing digits after course names (1, 2) were read as footnote markers referring to immunization/TB documentation notes, not units. Courses in the practicum pairs and Required Electives have no units printed beside them, so units are null; the catalog prints 3 units for the course-pair choice and 6 units for the elective choice.",
+   "The '3' printed for 'Choose one of the following course pairs' is recorded as stated on each pair block.",
+   "Program Learning Outcomes are taken from the page's outcomes tab for this certificate; the line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome.",
+   "Catalog text is the 2026-2027 page as supplied; no indication of a different catalog year."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

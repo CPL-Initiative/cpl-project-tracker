@@ -1,0 +1,593 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "33831",
+ "shape": "adt",
+ "title": "Journalism",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/communication/as-journalism-transfer/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7897,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7897,
+    "output_tokens": 3887,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3887,
+  "output_tokens_details": {
+   "thinking_tokens": 773
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10933,
+ "ms": 28362,
+ "seconds": 28.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 47,
+   "listed": 57,
+   "share": 0.825,
+   "missing": [
+    "BUSC1A",
+    "BUSC1AH",
+    "BUSC1B",
+    "BUSC1BH",
+    "ENGL1B",
+    "ENGL1BH",
+    "HIST7",
+    "HIST7H",
+    "HIST8",
+    "HIST8H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
+    "ENGLC1002",
+    "ENGLC1002H",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
+    "ENGLC1002",
+    "ENGLC1002H",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Journalism (AA-T Degree A0400)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Critically and ethically evaluate and apply functions of the mass media.",
+    "Create and/or analyze content in diverse settings."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "JOUR 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "JOUR 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON C2002",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 17",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 10",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 23",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 20H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 26",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 26H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 30H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGR 1C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 8",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 9",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 9H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 5",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "READ 100",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 44",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 3H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 4",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 35",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 02",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 19A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUSC 1A",
+    "why": "not in the text; catalog lists ECON C2002 instead"
+   },
+   {
+    "code": "BUSC 1AH",
+    "why": "not in the text; catalog lists ECON C2002H instead"
+   },
+   {
+    "code": "BUSC 1B",
+    "why": "not in the text; catalog lists ECON C2001 instead"
+   },
+   {
+    "code": "BUSC 1BH",
+    "why": "not in the text; catalog lists ECON C2001H instead"
+   },
+   {
+    "code": "ENGL 1B",
+    "why": "not in the text; catalog lists ENGL C1002 instead"
+   },
+   {
+    "code": "ENGL 1BH",
+    "why": "not in the text; catalog lists ENGL C1002H instead"
+   },
+   {
+    "code": "HIST 7",
+    "why": "not in the text; catalog lists HIST C1001 instead"
+   },
+   {
+    "code": "HIST 7H",
+    "why": "not in the text; catalog lists HIST C1001H instead"
+   },
+   {
+    "code": "HIST 8",
+    "why": "not in the text; catalog lists HIST C1002 instead"
+   },
+   {
+    "code": "HIST 8H",
+    "why": "not in the text; catalog lists HIST C1002H instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside individual courses, only block totals (Core 9, List A 3, List B 6-8); course units are left null.",
+   "ECON 17 matched to closed-list entry 'ECON17' and HIST 30 to 'HIST30' (spacing differs); marked as not additions.",
+   "R-TV 02 and R-TV 19A matched to closed-list 'R TV 2' and 'R TV 19A' (prefix punctuation and leading zero differ); marked as not additions.",
+   "ECON C2001/C2001H/C2002/C2002H, ENGL C1002/C1002H, HIST C1001/C1001H, HIST C1002/C1002H appear to be common-course-numbered replacements for BUSC 1B/1BH/1A/1AH, ENGL 1B/1BH, HIST 7/7H, HIST 8/8H in the closed list; recorded as catalog additions.",
+   "List B 'or' rows were read as one choice per row group (e.g., ECON C2001 or C2001H or C2002 or C2002H counts as one course choice).",
+   "Program Learning Outcomes are printed on the page's outcomes tab for this program; recorded for this AA-T.",
+   "Total Units for Major 18-20; Cal-GETC 34; degree total 60. Courses may be double-counted for the major and Cal-GETC."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

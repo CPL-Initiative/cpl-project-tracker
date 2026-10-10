@@ -1,0 +1,163 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "42849",
+ "shape": "noncredit",
+ "title": "Social Media Marketing",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-social-media-marketing/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5631,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5631,
+    "output_tokens": 919,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 919,
+  "output_tokens_details": {
+   "thinking_tokens": 221
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0409,
+ "ms": 8304,
+ "seconds": 8.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 4,
+   "share": 0.75,
+   "missing": [
+    "VOCBM50"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "VOCBS50"
+   ],
+   "flagged": [
+    "VOCBS50"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Media Marketing",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will develop a basic knowledge of social media marketing terminology.",
+    "Students will be able to apply social media marketing strategies and techniques used in the marketing of products and services.",
+    "Students will explain social media marketing considerations in a diverse online marketplace."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC BS33",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC BS34",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC BS36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC BS50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "VOC BM50",
+    "why": "not in the text; the catalog lists VOC BS50 Retail Store Management and Merchandising instead"
+   }
+  ],
+  "notes": [
+   "Noncredit Certificate of Completion (#42849). The catalog prints a 'Units' column but no units or hours beside any course and no total hours, so measure is recorded as 'units' with all values null; a reviewer may wish to confirm the program's hours.",
+   "VOC BS50 (Retail Store Management and Merchandising) is in the catalog's required list but not in the closed list; the closed list's VOC BM50 (World Culture: A Business Perspective) is not named in the catalog text.",
+   "The outcomes come from the page's outcomes tab (#tgl0) under the 'Program Learning Outcomes' heading; the trailing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

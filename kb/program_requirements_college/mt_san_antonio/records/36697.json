@@ -1,0 +1,276 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "36697",
+ "shape": "adt",
+ "title": "Film, Television, and Electronic Media",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/television/film-television-electronic-media/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6058,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6058,
+    "output_tokens": 2161,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2161,
+  "output_tokens_details": {
+   "thinking_tokens": 886
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06745,
+ "ms": 17418,
+ "seconds": 17.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "RTV11A",
+    "RTV2",
+    "RTV5"
+   ],
+   "flagged": [
+    "RTV11A",
+    "RTV2",
+    "RTV5"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.5
+   ],
+   "why": [
+    "the blocks sum to 18.0-18.0; the catalog states 18.0-18.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Film, Television, and Electronic Media (AS-T Degree S0442)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6.5
+    },
+    "courses": [
+     {
+      "code": "R-TV 01",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "R-TV 28",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "R-TV 11A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "R-TV 29",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "R-TV 19A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "R-TV 20",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "R-TV 19B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 24",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "R-TV 02",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "R-TV 05",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "R-TV 11B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "R-TV 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside individual courses; only block totals are printed, so course units are null.",
+   "Catalog codes (e.g. R-TV 01, R-TV 18) were matched to closed-list codes R TV 1 and RTV18 as the same courses.",
+   "List A is recorded as one block of two required choices: one Audio course (R-TV 11A or R-TV 29) and one Video or Film course (R-TV 19A or R-TV 20); the catalog states 'six units minimum'.",
+   "List B also allows 'any course not already used in List A'; List C also allows 'any course not already used from List A or List B'.",
+   "In Core Courses, R-TV 18 and R-TV 28 are printed as an 'or' pair, recorded as one choice with an alternative.",
+   "Total Units for the Major is 18-18.5; degree total 60 units with Cal-GETC 34 units.",
+   "The Outcomes tab prints a 'Program Learning Outcomes' heading with only a link-style line ('Review Student Learning Outcomes (SLOs) for this program.') and no outcomes, so outcomes are left empty."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

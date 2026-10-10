@@ -1,0 +1,236 @@
+{
+ "college": "Mt. San Antonio College",
+ "catalog_url": "https://catalog.mtsac.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 385,
+ "with_closed_list": 344,
+ "started": "2026-10-10T14:31:22Z",
+ "sitemap": {
+  "url": "https://catalog.mtsac.edu/sitemap.xml",
+  "status": 200,
+  "listed": 741,
+  "nested": 0,
+  "program_pages": 565,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 564,
+ "loads": 572,
+ "seconds": 2775.7,
+ "found": 317,
+ "by_method": {
+  "link_search": 16,
+  "no_closed_list": 41,
+  "not_found": 20,
+  "page_claimed": 7,
+  "sitemap_page": 301
+ },
+ "shared_pages": {
+  "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/": [
+   "08075",
+   "22176",
+   "41116"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-certificate/": [
+   "12544",
+   "14039"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-international-business/international-business--level-2/": [
+   "24107",
+   "24431"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/": [
+   "24171",
+   "41569"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/college-readiness-healthcare-programs/": [
+   "30805",
+   "38783"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/": [
+   "30847",
+   "45123"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/surveying-engineering-technology-certificate/": [
+   "42022",
+   "42359"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "15574",
+   "title": "Radio Broadcasting On-the-Air",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "22151",
+   "title": "Landscape Equipment Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "22161",
+   "title": "Radio Broadcasting: On-Air",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "24056",
+   "title": "Health Care Interpreting",
+   "award": null
+  },
+  {
+   "control_number": "24075",
+   "title": "Sports Turf Management",
+   "award": null
+  },
+  {
+   "control_number": "24088",
+   "title": "Landscape Irrigation",
+   "award": null
+  },
+  {
+   "control_number": "24111",
+   "title": "Landscape Equipment Technology",
+   "award": null
+  },
+  {
+   "control_number": "24113",
+   "title": "Landscape and Park Maintenance",
+   "award": null
+  },
+  {
+   "control_number": "24215",
+   "title": "Tree Care and Maintenance",
+   "award": null
+  },
+  {
+   "control_number": "24248",
+   "title": "Landscape Design and Construction",
+   "award": null
+  },
+  {
+   "control_number": "24284",
+   "title": "Computer Systems Technology",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "24342",
+   "title": "Interior Landscaping",
+   "award": null
+  },
+  {
+   "control_number": "24374",
+   "title": "Park Management",
+   "award": null
+  },
+  {
+   "control_number": "36115",
+   "title": "Financial and Database Management",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36843",
+   "title": "HSE Reading and Language Arts",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36870",
+   "title": "ASVAB Test Preparation",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36871",
+   "title": "HSE Mathematics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "39518",
+   "title": "iOS Programming",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "40187",
+   "title": "Android Programming",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "43729",
+   "title": "Engineering Topics",
+   "award": "Noncredit program"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "03020",
+   "title": "Electronics: Industrial Systems",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-2-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-and-computer-engineering-technology/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-engineering-technology-as/",
+    "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology/"
+   ]
+  },
+  {
+   "control_number": "12334",
+   "title": "Digital Systems Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-2-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-and-computer-engineering-technology/",
+    "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-engineering-technology-as/"
+   ]
+  },
+  {
+   "control_number": "18241",
+   "title": "Associate of Arts in Liberal Arts and Sciences: Music",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/music/commercial-music-degree/"
+   ]
+  },
+  {
+   "control_number": "24400",
+   "title": "Certified Nursing and Acute Care Nursing Assistant",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/certified-nursing-assistant/"
+   ]
+  },
+  {
+   "control_number": "32542",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/"
+   ]
+  },
+  {
+   "control_number": "33436",
+   "title": "Landscape Design -  Level II",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/park-sports-turf-management/",
+    "https://catalog.mtsac.edu/programs/programsaz/horticulture/ornamental-horticulture-degree/",
+    "https://catalog.mtsac.edu/programs/programsaz/animal-science/agricultural-science-and-technology-degree/"
+   ]
+  },
+  {
+   "control_number": "37544",
+   "title": "HS English Competency",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 15,
+  "0.8-1.0": 42,
+  "1.0": 260
+ },
+ "run": "38059865531"
+}

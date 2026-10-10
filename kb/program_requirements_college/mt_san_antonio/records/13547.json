@@ -1,0 +1,188 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "13547",
+ "shape": "certificate",
+ "title": "Child Development - Level II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-ii-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6278,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6278,
+    "output_tokens": 1405,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1405,
+  "output_tokens_details": {
+   "thinking_tokens": 237
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05321,
+ "ms": 11016,
+ "seconds": 12.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development - Level II (Certificate N0656)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Understand and use a wide array of developmentally appropriate approaches, instructional strategies, and tools to connect with children and families and positively influence each child's development and learning.",
+    "Be able to evaluate Early Care and Education Program regulations, standards, and policies according to Title 22 California.",
+    "Be grounded in Child Development knowledge (theory) and use their understanding of young children and their needs to create environments that are healthy, respectful, supportive, and challenging for each child.",
+    "Understand that child observation, documentation and other forms of assessment are central to the practices of all early childhood professionals. Students use systematic observations, documentation, and other effective assessment strategies to positively influence the development of every child.",
+    "Understand that successful programs depend upon partnerships with children's families and communities. They use this understanding to create respectful, reciprocal relationship that support and empower families and to involve all families in their children's development and learning.",
+    "Understand the importance of developmental domains and academic content areas. Students use their knowledge and other resources to design, implement, and evaluate meaningful curriculum.",
+    "Be able to identify and conduct themselves as members of the early childhood profession. They know ethical guidelines and other professional standards related to early childhood education.",
+    "Be able to apply effective guidance and interaction strategies that support all children's social learning, identity, and self-confidence."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Child Development - Level I Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CHLD 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Child Development - Level II Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHLD 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Block stated totals (12 and 6) come from the summary course list ('Completion of the Child Development - Level I coursework 12', 'Completion of the Child Development- Level II coursework 6').",
+   "The trailing '1' after CHLD 5, CHLD 6 and CHLD 11 is a footnote marker, not units: footnote 1 states 'Documentation of tuberculosis (TB) clearance is required.'",
+   "Outcomes come from the page's outcomes tab under 'Program Learning Outcomes' for this certificate; the closing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded.",
+   "Catalog prints CHLD 64 title as 'Health, Safety, and Nutrition of Children' (with an extra comma vs. the state file)."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

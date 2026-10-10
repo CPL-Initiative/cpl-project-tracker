@@ -1,0 +1,870 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "18236",
+ "shape": "degree",
+ "title": "Humanities",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/humanities/aa-liberal-arts-sciences/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9241,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9241,
+    "output_tokens": 6699,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6699,
+  "output_tokens_details": {
+   "thinking_tokens": 1725
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.17094,
+ "ms": 48921,
+ "seconds": 49.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 68,
+   "listed": 84,
+   "share": 0.81,
+   "missing": [
+    "AHIS11",
+    "AHIS12",
+    "AHIS12H",
+    "AHIS13",
+    "AHIS14",
+    "AHIS15",
+    "AHIS3",
+    "AHIS5",
+    "AHIS6",
+    "AHIS8",
+    "AHIS9",
+    "HIST10H",
+    "HIST7",
+    "HIST7H",
+    "HIST8",
+    "HIST8H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 16,
+   "codes": [
+    "ARTH11",
+    "ARTH12",
+    "ARTH12H",
+    "ARTH13",
+    "ARTH14",
+    "ARTH15",
+    "ARTH3",
+    "ARTH6",
+    "ARTH8",
+    "ARTH9",
+    "ARTHC1100",
+    "ARTHC1200",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "flagged": [
+    "ARTH11",
+    "ARTH12",
+    "ARTH12H",
+    "ARTH13",
+    "ARTH14",
+    "ARTH15",
+    "ARTH3",
+    "ARTH6",
+    "ARTH8",
+    "ARTH9",
+    "ARTHC1100",
+    "ARTHC1200",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    15.0,
+    16.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": [
+    "'List A: Art History and Classics' chooses 1 courses but 0 carry units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Humanities Emphasis (AA Degree A8984)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "identify the influence and interrelationship of culture on human and artistic expression",
+    "demonstrate an understanding of other cultures, including through the study of foreign language, the arts, and humanistic thought",
+    "analyze modes of artistic expression (visual arts, music, and literature)",
+    "demonstrate knowledge of philosophy and politics and the natural environment, including the relationship between social, political, and/or economic institutions and human behavior"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HUMA 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMA 1H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Art History and Classics",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARTH 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH C1100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH C1200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1200H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH 11H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH 12H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH 3H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH 6H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B: World Languages and History",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIST 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 3H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 4H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LATN 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LATN 2H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 35",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARAB 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHIN 2",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "FRCH 2",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "GERM 2",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ITAL 2",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPN 2",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 2",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 16",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 39",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 44",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: Literature, Drama, and Film",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIT 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 46",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 47",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 6A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 6B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRCH 60",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 60",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 11A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 11B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIT 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List D: Music and Dance",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DN-T 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 14A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 14B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 15H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List E: Philosophy and Religion",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHIL 20A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 20AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 20B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 20BH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 5H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 15H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 12H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AHIS 11",
+    "why": "catalog prints this course under prefix ARTH (ARTH 11)"
+   },
+   {
+    "code": "AHIS 12",
+    "why": "catalog prints this course under prefix ARTH (ARTH 12)"
+   },
+   {
+    "code": "AHIS 12H",
+    "why": "catalog prints this course under prefix ARTH (ARTH 12H)"
+   },
+   {
+    "code": "AHIS 13",
+    "why": "catalog prints this course under prefix ARTH (ARTH 13)"
+   },
+   {
+    "code": "AHIS 14",
+    "why": "catalog prints this course under prefix ARTH (ARTH 14)"
+   },
+   {
+    "code": "AHIS 15",
+    "why": "catalog prints this course under prefix ARTH (ARTH 15)"
+   },
+   {
+    "code": "AHIS 3",
+    "why": "catalog prints this course under prefix ARTH (ARTH 3)"
+   },
+   {
+    "code": "AHIS 5",
+    "why": "not in the text (catalog lists ARTH C1200 for the Renaissance-to-modern survey)"
+   },
+   {
+    "code": "AHIS 6",
+    "why": "catalog prints this course under prefix ARTH (ARTH 6)"
+   },
+   {
+    "code": "AHIS 8",
+    "why": "catalog prints this course under prefix ARTH (ARTH 8)"
+   },
+   {
+    "code": "AHIS 9",
+    "why": "catalog prints this course under prefix ARTH (ARTH 9)"
+   },
+   {
+    "code": "HIST 10H",
+    "why": "not in the text; HIST 10 is printed without an honors option"
+   },
+   {
+    "code": "HIST 7",
+    "why": "not in the text; catalog lists HIST C1001 instead"
+   },
+   {
+    "code": "HIST 7H",
+    "why": "not in the text; catalog lists HIST C1001H instead"
+   },
+   {
+    "code": "HIST 8",
+    "why": "not in the text; catalog lists HIST C1002 instead"
+   },
+   {
+    "code": "HIST 8H",
+    "why": "not in the text; catalog lists HIST C1002H instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside individual courses; only block totals are printed (Required Core 3; 'Choose one course from each of the five categories (List A through List E)' 15; Total Units 18). The 15 units apply to Lists A-E together, so each list block's stated is left null.",
+   "Each of Lists A-E is recorded as a choose-1-course block; the subheadings within each list (Classical Humanities, Western Humanities, Global Humanities, Modern American Humanities, etc.) are groupings only and do not appear to impose separate requirements.",
+   "HIST 3/3H and HIST 4/4H appear under both 'Classical and Western' and 'Global' in List B; recorded once. PHIL 20A/20AH appears under both Classical and Western Humanities, and PHIL 20B/20BH under both Western and 'Modern America Humanities' in List E; recorded once.",
+   "Catalog uses prefix ARTH where the closed list uses AHIS for most art history courses (ARTH 3, 6, 8, 9, 11, 12, 12H, 13, 14, 15); these are marked catalog_addition true by code, but likely correspond to the AHIS courses of the same number. ARTH 10, ARTH 11H, ARTH 3H, ARTH 6H, ARTH C1100H and ARTH C1200H match closed-list entries apart from spacing. ARTH C1100 and ARTH C1200 (non-honors) are not in the closed list.",
+   "HIST C1001/C1001H and HIST C1002/C1002H are not in the closed list; they appear to replace HIST 7/7H and HIST 8/8H (Cal-GETC common course numbering).",
+   "DN-T 20 matched to closed-list DN T 20; HIST 31 matched to HIST31.",
+   "General Education is required but no specific GE pattern is named, so ge_pattern is null.",
+   "The outcomes are printed on the program's Outcomes tab as Program Learning Outcomes for this program; recorded as this award's outcomes. The page also links to separate SLOs not included in the text."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

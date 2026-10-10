@@ -1,0 +1,133 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "40142",
+ "shape": "certificate",
+ "title": "CIS Professional in Excel and Acces",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/computer-database-management-systems/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5842,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5842,
+    "output_tokens": 1003,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1003,
+  "output_tokens_details": {
+   "thinking_tokens": 464
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04343,
+ "ms": 14715,
+ "seconds": 15.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "CISB21",
+    "CISD11",
+    "CISD11L",
+    "CISD40"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CISB 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "CISD 11",
+    "why": "named only in the AS Degree S0706 section"
+   },
+   {
+    "code": "CISD 11L",
+    "why": "named only in the AS Degree S0706 section"
+   },
+   {
+    "code": "CISD 40",
+    "why": "named only in the AS Degree S0706 section"
+   }
+  ],
+  "notes": [
+   "The catalog text has no section for the CIS Professional in Excel and Access certificate. Its navigation lists Big Data Analytics (M0452), CIS Professional in SQL (M0811), the AS Degree S0706, the AA Degree A8985 and Certificate E0712, but no Excel and Access certificate. The only requirements printed are for Computer - Database Management Systems (AS Degree S0706).",
+   "Because the AS degree requirements belong to a different award, they were not recorded. No blocks, total units or outcomes were recorded for this certificate, and section_heading is left empty because no heading for this award is printed.",
+   "The Program Learning Outcomes printed in the outcomes tab ('Apply normalization rules to database design.' and 'Create a program using script and stored procedure.') appear to belong to the AS Degree S0706 page. They were not attributed to this certificate.",
+   "A reviewer should find the certificate's own catalog page, likely under the Computer Information Systems or CIS Professional program listings, and read it."
+  ]
+ },
+ "extracted_run": "38059865531"
+}
