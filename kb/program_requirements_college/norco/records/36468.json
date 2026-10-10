@@ -1,0 +1,225 @@
+{
+ "college": "Norco College",
+ "control_number": "36468",
+ "shape": "certificate",
+ "title": "Business Information Worker",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5150",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5083,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5083,
+    "output_tokens": 1859,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1859,
+  "output_tokens_details": {
+   "thinking_tokens": 738
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05751,
+ "ms": 15322,
+ "seconds": 15.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "CAT90",
+    "CAT93",
+    "CAT98A",
+    "CAT98B",
+    "CIS90"
+   ],
+   "flagged": [
+    "CAT90",
+    "CAT93",
+    "CAT98A",
+    "CAT98B",
+    "CIS90"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Information Worker - Associate of Science Degree and Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate computer literacy with respect to computer hardware and software applications.",
+    "Apply standard rules of business conduct and customer service.",
+    "Develop specialized keyboarding skills at an employable level of accuracy and speed.",
+    "Use word processing, spreadsheet, presentation graphics, and scheduling software to perform business and office tasks.",
+    "Apply oral and written communication skills in various business and office environments.",
+    "Design, modify, query, and manipulate lists (database and information in workbooks using common formulas, data and what if scenario tools to organize and convey information."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "CAT-1A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-3",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-90",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-90",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAT-93",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAT-98A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-98A",
+        "units": 1.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAT-98B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-98B",
+        "units": 1.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. degree and the Certificate of Achievement; the single requirements list (19 units) and the Program Learning Outcomes are shared by both awards and recorded here for the certificate.",
+   "Each 'Choose one course' group pairs cross-listed CAT/CIS twins (same title and units), recorded as one entry with an alternative.",
+   "CAT-93 (Computers for Beginners) is printed directly after the 'Choose one course 3.00' group of CAT-90 OR CIS-90, with no OR before it. It is recorded as a separate required course because the stated 19-unit total equals the sum only if CAT-93 is required (otherwise 16). Reviewer should confirm whether CAT-93 is instead a third choice in that group.",
+   "CAT-90, CIS-90, CAT-93, CAT-98A and CAT-98B are not in the closed list and are marked as catalog additions.",
+   "The outcome beginning 'Design, modify, query...' is copied as printed, including the unclosed parenthesis."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

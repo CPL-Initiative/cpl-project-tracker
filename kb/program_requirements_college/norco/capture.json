@@ -5,11 +5,16 @@
  "catalog_year": "2026-2027",
  "programs": 161,
  "with_closed_list": 150,
- "started": "2026-10-10T20:16:04Z",
+ "started": "2026-10-10T20:54:13Z",
  "curriqunet": {
   "catalog": 116,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/",
-  "errors": [],
+  "errors": [
+   "https://rccd.curriqunet.com/Catalog/_getPage?catalogId=116&id=5157: APIRequestContext.get: socket hang up",
+   "https://rccd.curriqunet.com/Catalog/_getPage?catalogId=116&id=5222: APIRequestContext.get: socket hang up",
+   "https://rccd.curriqunet.com/Catalog/_getPage?catalogId=116&id=5298: APIRequestContext.get: socket hang up",
+   "https://rccd.curriqunet.com/Catalog/_getPage?catalogId=116&id=5335: APIRequestContext.get: socket hang up"
+  ],
   "sections": [
    "Degrees and Certificates"
   ],
@@ -18,9 +23,9 @@
   "entries": 277,
   "stopped_at_cap": false
  },
- "pages_read": 277,
+ "pages_read": 273,
  "loads": 289,
- "seconds": 1426.2,
+ "seconds": 1365.8,
  "found": 141,
  "by_method": {
   "no_closed_list": 11,
@@ -90,7 +95,7 @@
    "31376",
    "31669"
   ],
-  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5157": [
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5279": [
    "31636",
    "31641"
   ],
@@ -232,5 +237,5 @@
   "0.8-1.0": 22,
   "1.0": 110
  },
- "run": "38083003673"
+ "run": "38085495452"
 }

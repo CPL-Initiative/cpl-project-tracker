@@ -1,0 +1,224 @@
+{
+ "college": "Norco College",
+ "control_number": "33952",
+ "shape": "adt",
+ "title": "Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5153",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5207,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5207,
+    "output_tokens": 2277,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2277,
+  "output_tokens_details": {
+   "thinking_tokens": 1041
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06637,
+ "ms": 20259,
+ "seconds": 20.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 9,
+   "share": 0.778,
+   "missing": [
+    "MAT1A",
+    "MAT1B"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry - Associate in Science for Transfer (ADT) - NAS769 (Cal-GETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Master content in inorganic and organic chemistry by describing chemical and physical structures and nomenclature, stoichiometry and solving of chemical equations, and analyzing and describing the nature of chemical reactions and energy.",
+    "Measure and characterize properties of matter using a variety of research-level chemical instrumentation, laboratory techniques, statistical and computational methods.",
+    "Display effective cooperation with others on projects and clearly communicate experimental results through oral and written means.",
+    "Demonstrate professional integrity, safety, and environmental stewardship."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHE-1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-12A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-12B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY-4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY-4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MATH-C2210H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAT 1A",
+    "why": "not in the text; catalog prints MATH-C2210 (Calculus I: Early Transcendentals) instead"
+   },
+   {
+    "code": "MAT 1B",
+    "why": "not in the text; catalog prints MATH-C2220 (Calculus II: Early Transcendentals) instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints 'Units: 36.00' under the Required Courses heading, which covers the whole list including the math choice; it is recorded as the program total, not as the stated total of the 'all' block (which sums to 32).",
+   "MATH-C2220 is printed after the 'Select one of the following: 4.00' choice (MATH-C2210H OR MATH-C2210). Because the choice is stated as 4.00 units and the total is 36.00 (28 CHE/PHY + 4 choice + 4), MATH-C2220 is read as a required course and placed in the Required Courses block; reviewer should confirm it is not part of the choice.",
+   "MATH-C2210 and MATH-C2220 are not in the closed list (catalog additions); the closed list's MAT 1A and MAT 1B appear to be the older numbering of these calculus courses.",
+   "Closed-list code MATHC2210H matched to catalog code MATH-C2210H.",
+   "Program Learning Outcomes are printed for this ADT section and recorded as printed."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

@@ -1,0 +1,337 @@
+{
+ "college": "Norco College",
+ "control_number": "30572",
+ "shape": "certificate",
+ "title": "Graphic Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5198",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5306,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5306,
+    "output_tokens": 3501,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3501,
+  "output_tokens_details": {
+   "thinking_tokens": 1679
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09124,
+ "ms": 28965,
+ "seconds": 29.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "CIS78B"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ADM62",
+    "CAT78A",
+    "CAT78B",
+    "CAT79",
+    "CIS72A",
+    "CIS72B"
+   ],
+   "flagged": [
+    "ADM62",
+    "CAT78A",
+    "CAT78B",
+    "CAT79",
+    "CIS72A",
+    "CIS72B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    27.5
+   ],
+   "stated": [
+    26.0,
+    27.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Graphic Design - Associate of Science Degree and Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 27.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Design and create images used for printed media in advertising web design.",
+    "Understand and apply the techniques used to create and modify artwork using a vector-based program or bit-mapped program.",
+    "Integrate text and graphics in a document layout program to create professional-quality, full-color documents.",
+    "Format and combine text, numerical data, photographs, charts, and other visual graphic elements to produce publication- ready material.",
+    "Demonstrate the knowledge of workflow process in the creation of printed media in advertising.",
+    "Demonstrate the knowledge of design principles in advertising and layout design, type, and lettering applications.",
+    "Incorporate two dimensional design visual media of printed media in advertising."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Choose one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1.5,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-66",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-72A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS-72B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-78A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-78A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CAT-78B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS-81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-59",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-44",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 78B",
+    "why": "not in the text; catalog lists CAT-78B Advanced Adobe Photoshop instead"
+   }
+  ],
+  "notes": [
+   "The page prints one requirements list and one Program Learning Outcomes list shared by the A.S. degree and the Certificate of Achievement; the certificate shares both and they are recorded here.",
+   "Each 'Choose one course' group was read as the first course OR the second; the course(s) printed after the OR pair (CIS-72B, CAT-78B, CIS-81, ART-22, ART-39, CIS-44) were read as required courses outside the choice. This reading reproduces the printed total of 26.00-27.50 (1.5-3 + 1.5 + 3 + 3 + 3 + 3 + 3 + 3 + 3 + 2). Reviewer should verify, since requiring CIS-72B alongside a choice of CIS-66 or CIS-72A is unusual; an alternative reading (CIS-66 or CIS-72A+CIS-72B) would not match the printed total.",
+   "The pairs CIS-78A/CAT-78A, CIS-79/CAT-79 and CIS-59/ADM-62 share titles and appear to be cross-listed equivalents.",
+   "Catalog prints CAT-78B (Advanced Adobe Photoshop) where the closed list names CIS 78B; recorded CAT-78B as a catalog addition.",
+   "Section heading also carries codes NAS647/C/NCE647 in the page title."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

@@ -1,0 +1,199 @@
+{
+ "college": "Norco College",
+ "control_number": "33906",
+ "shape": "degree",
+ "title": "Electrician Apprenticeship",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5175",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5858,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5858,
+    "output_tokens": 1430,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1430,
+  "output_tokens_details": {
+   "thinking_tokens": 187
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05203,
+ "ms": 11160,
+ "seconds": 11.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electrician Apprenticeship - Associate of Science Degree and Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply a working knowledge of math formulas and complex solution methods related to the electrical trades, along with blueprint symbols and drawings of wiring diagrams with common schematic symbols, including troubleshooting of common system faults, detection and repair, while properly applying OSHA construction site safety standards to all practices.",
+    "Properly apply all pertinent National Electric Code (NEC) to all workplace practices involving DC, AC single and poly-phase systems, utilizing proper grounding, bonding, lightning protection, wire sizing, conduit fill, overload protection, layout, connections, installations, troubleshooting, fault isolation, repairs or modifications.",
+    "Demonstrate appropriate leadership and expertise in applying special control and monitoring functions related to layout, installation, testing, and troubleshooting of digital and analog systems involving such ancillary equipment as CATV, CCTV, telephone circuits, Programmable Logic Controllers (PLCs), sensors, actuators, low-voltage and high-voltage, transformation, interfacing, hardware, setup, and programming services needed to comply with all NFPA-70E (NEC) and OSHA regulations for safety and fitness."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 35,
+     "max": 35
+    },
+    "courses": [
+     {
+      "code": "ELE-400",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-401",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-402",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-403",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-404",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-405",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-406",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-407",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-408",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-409",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. Degree and the Certificate of Achievement; the program requirements (35 units) and the Program Learning Outcomes are shared by both awards and are recorded here for the A.S. Degree.",
+   "The catalog prints codes with a hyphen (e.g. ELE-400); these match closed-list codes written with a space (ELE 400), so none are catalog additions.",
+   "No specific general education pattern is named; the text only says the degree requires 'general education and other graduation requirements as described in the college catalog', so ge_pattern is null.",
+   "The program description mentions students may obtain an 'Associate in Arts Degree' by fulfilling general graduation requirements, while the award heading is Associate of Science; reviewer may wish to check this inconsistency in the catalog text."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

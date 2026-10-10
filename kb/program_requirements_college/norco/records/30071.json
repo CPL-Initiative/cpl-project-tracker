@@ -1,0 +1,276 @@
+{
+ "college": "Norco College",
+ "control_number": "30071",
+ "shape": "certificate",
+ "title": "Business Administration: Logistics Management Concentration",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5147",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5619,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5619,
+    "output_tokens": 2097,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2097,
+  "output_tokens_details": {
+   "thinking_tokens": 546
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06442,
+ "ms": 18850,
+ "seconds": 19.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS580/C/NCE580",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Use technology to analyze business decisions and to enhance business communications.",
+    "Apply basic business and accounting calculations and analyses.",
+    "Have an understanding of legal practices relating to business.",
+    "Apply sound management practices.",
+    "Compare roles and objectives of the logistics disciplines.",
+    "Understand how logistics functions can interact to efficiently use total personnel, facilities and equipment.",
+    "Contribute knowledge needed by multidisciplinary teams to effectively integrate and exceed end user (customer) expectations.",
+    "Analyze, prepare, file and process claims when unavoidable freight disputes arise.",
+    "Explain how the overall flow of goods, services and information can be optimized to satisfy customer and business goals.",
+    "Identify 3rd party logistics provider and client needs in negotiations, bidding and contracts, as well as legal and regulatory constraints to integrated logistics.",
+    "Describe roles and value added by global logistics intermediaries."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ACC-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS-10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-18A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS-24",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-3",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT-3",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Concentration Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS-80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUS-82",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-83",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-85",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-86",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-87",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-90",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. degree and the Certificate of Achievement; the certificate shares the same course requirements (Total: 30.00) and the same Program Learning Outcomes list, recorded here for the certificate.",
+   "Codes are written as the catalog prints them with hyphens (e.g. ACC-1A); they match closed-list codes written with spaces (ACC 1A), so none are catalog additions.",
+   "The three 'Select one:' choices (BUS-10/BUS-10H, BUS-22/BUS-24, CIS-1A/CIS-3/CAT-3) inside Major Core Requirements are recorded as single entries with alternatives; each prints 3.00 units and the core totals 18.00.",
+   "Elective Courses lists no explicit selection instruction; the rule is read as choose 9 units from the printed 'Units: 9.00'.",
+   "The GE pattern applies only to the A.S. degree and is not named; not applicable to the certificate."
+  ]
+ },
+ "extracted_run": "38085495452"
+}
