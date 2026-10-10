@@ -89,12 +89,21 @@ def fetch_all(path_qs: str) -> list[dict]:
         offset += PAGE_SIZE
 
 
+# Which COCI statuses the harvest reads. Active and Active - Teachout Only from the
+# start; Approved since Sam's go on 2026-10-10 (S356, "go on call 2"): a college
+# may offer an Approved program, and 1,423 statewide (33 at Cerritos, 84 at Mt.
+# San Antonio) had gone unread. A re-read pays only for them, because extract
+# keeps every record filed from the same page.
+STATUS_FILTER = "or=(status.like.Active*,status.eq.Approved)"
+
+
 def college_programs(college: str) -> list[dict]:
-    """The college's active programs (Active and Active - Teachout Only), each
-    with its closed list, in control-number order. A program the state's file
-    lists no course for is kept, marked, and never read."""
+    """The college's programs the harvest reads (STATUS_FILTER: Active, Active -
+    Teachout Only and Approved), each with its closed list, in control-number
+    order. A program the state's file lists no course for is kept, marked, and
+    never read."""
     progs = fetch_all("coci_college_programs?select=control_number,program_title,award,status,top_code"
-                      "&college=eq.%s&status=like.Active*&order=control_number" % P.q(college))
+                      "&college=eq.%s&%s&order=control_number" % (P.q(college), STATUS_FILTER))
     rows = fetch_all("coci_program_courses?select=program_control_number,course_control_number,"
                      "course_code,course_title,units,cid,course_college,load_id"
                      "&college=eq.%s&order=program_control_number,course_code" % P.q(college))

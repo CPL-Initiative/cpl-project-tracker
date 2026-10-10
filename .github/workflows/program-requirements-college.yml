@@ -33,6 +33,15 @@ name: Program requirements, one college
 #   (kb/receipts/program_requirement_records_college_<slug>_<run>.json), which
 #   is how the load rolls back. kb/governance_surface_map.json dismisses this
 #   workflow with its reason (public catalog data).
+#
+# display (a dispatch with step=display, never a push): applies the receipt of
+#   the display build cpl_pathways_roep_data.js carries
+#   (kb/_program_requirements_display_apply.py), one PATCH of display a program,
+#   with the service key. A checked program's display changes only on Sam's go,
+#   so a dispatch is that go carried out. It reads each row's build first and
+#   commits the applied record beside the receipt, which is the rollback. Until
+#   S356 a session pushed each receipt through apply_migration; a college's is
+#   megabytes.
 
 on:
   workflow_dispatch:
@@ -50,7 +59,7 @@ on:
         required: false
         default: "0"
       step:
-        description: "read (capture, extract, file) or load (the committed records, unchecked)"
+        description: "read (capture, extract, file), load (the committed records, unchecked) or display (the page's display build)"
         required: false
         default: "read"
   push:
@@ -68,7 +77,7 @@ jobs:
     # The filing commit (github-actions[bot]) never runs the workflow again.
     if: >-
       github.actor != 'github-actions[bot]' && (
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.step != 'load') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.step != 'load' && github.event.inputs.step != 'display') ||
       (github.event_name == 'push' && (startsWith(github.event.head_commit.message, '[read]') ||
                                        startsWith(github.event.head_commit.message, '[extract]'))))
     runs-on: ubuntu-latest
@@ -148,6 +157,37 @@ jobs:
           git add kb/receipts
           if git diff --cached --quiet; then echo "no receipt"; exit 0; fi
           git commit -m "Receipt: the load of $COLLEGE's program records (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git push origin "HEAD:${{ github.ref_name }}" && exit 0
+            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+          done
+          exit 1
+
+  display:
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      github.event_name == 'workflow_dispatch' && github.event.inputs.step == 'display'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Apply the display build the page carries
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 kb/_program_requirements_display_apply.py --apply
+      - name: Commit the applied record to the branch that ran it
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/receipts
+          if git diff --cached --quiet; then echo "no applied record"; exit 0; fi
+          git commit -m "Applied record: the page's display build (run ${{ github.run_id }})"
           for i in 1 2 3 4; do
             git push origin "HEAD:${{ github.ref_name }}" && exit 0
             sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"

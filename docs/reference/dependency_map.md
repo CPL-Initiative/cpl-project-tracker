@@ -256,7 +256,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_pathways_ccr_data.js` | `CPL_PATHWAY_CCR` | `kb/_build_cpl_pathway_ccr.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_ccr.py` |
 | `cpl_pathways_data.js` | `CPL_PATHWAYS` | not stated in header | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` |
 | `cpl_pathways_membership_data.js` | `CPL_PATHWAY_MEMBERSHIP` | `kb/_build_cpl_pathway_membership.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_membership.py` |
-| `cpl_pathways_roep_data.js` | `CPL_PATHWAYS_ROEP` | `kb/_build_roep_display.py` | tabs: `cpl-pathways` · scripts: `kb/_build_roep_display.py` |
+| `cpl_pathways_roep_data.js` | `CPL_PATHWAYS_ROEP` | `kb/_build_roep_display.py` | tabs: `cpl-pathways` · scripts: `kb/_build_roep_display.py`, `kb/_program_requirements_display_apply.py` |
 | `credential_reference_data.js` | `CPL_CREDENTIAL_REFERENCE` | `excel_to_dashboard.py:export_credential_reference()` | tabs: `cpl-pathways`, `credential-reference`, `map-export`, `nc-learning-partners` · modules: `kb/_carp_apprentice_plan_s109.js`, `kb/_college_apprenticeship_cpl_roster.js` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `kb/_build_baccalaureate_pathways.py`, `kb/_build_ccr_cpl.py`, `kb/_build_ccr_cpl_universe.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_peer_articulations.py`, `kb/_build_roep_display.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_college_short_names.py`, `kb/_sync_credential_catalog.py`, `kb/_trail_crew.py`, `kb/_trail_crew_assemble.py`, `kb/_verify_issuer_preseed.py` |
 | `fact-sheet/cpl_stories.js` | `CPL_STORIES` | `tools/source_cpl_stories.mjs` | tabs: `college-briefing`, `implementation-funding` · pages: `fact-sheet/index.html` · scripts: `tools/source_cpl_stories.mjs` |
 | `fact-sheet/statewide_recs.js` | `CPL_STATEWIDE_RECS` | `fact-sheet/_build_statewide_recs.py` | pages: `fact-sheet/index.html` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_occupation_cpl_crosswalk.py` |
@@ -457,6 +457,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_probe_lifecycle_checks.py` | workflows: `discover-map-datasets.yml` | — |
 | `kb/_program_requirements_college.py` | workflows: `program-requirements-college.yml` | — |
+| `kb/_program_requirements_display_apply.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
 | `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
@@ -829,6 +830,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_map_parse_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_record_verdicts_sql_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_college_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_display_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
@@ -1060,5 +1062,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 6 edge functions · 619 file
-datasets · 164 external services · 425 consumers · 47 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 36 RPCs · 6 edge functions · 621 file
+datasets · 164 external services · 426 consumers · 47 workflows · 39 tabs.
