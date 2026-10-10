@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-10T12:38:38.195437+00:00",
+  "scraped_at": "2026-10-10T15:25:39.323488+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
