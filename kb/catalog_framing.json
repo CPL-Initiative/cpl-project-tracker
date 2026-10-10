@@ -1,0 +1,1371 @@
+{
+ "about": "Which catalog hosts let COBI (https://cpl-initiative.github.io) frame their pages, for the Program Requirements tab's Side by side. Written by scripts/catalog_framing.py on catalog-framing.yml (read-only); a session commits its JSON. frames: true shows the page in the split, false opens it in its own window on the left half, null is unknown (framed, with its own window one word away). The 17 hosts that served a PDF as a download in run 38005833715 are null here; the script now reads their headers.",
+ "checked_at": "2026-10-09T23:45:47Z",
+ "hosts": {
+  "arc.losrios.edu": {
+   "colleges": [
+    "American River College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://arc.losrios.edu/2026-2027-official-catalog",
+   "status": 404,
+   "xfo": "SAMEORIGIN"
+  },
+  "avc.elumenapp.com": {
+   "colleges": [
+    "Antelope Valley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+   "status": 200,
+   "xfo": null
+  },
+  "bakersfield.elumenapp.com": {
+   "colleges": [
+    "Bakersfield College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+   "status": 200,
+   "xfo": null
+  },
+  "bcc.curriqunet.com": {
+   "colleges": [
+    "Berkeley City College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://bcc.curriqunet.com/catalog/view//iq/40258",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://bcc.curriqunet.com/catalog/view//iq/40258",
+   "status": 200,
+   "xfo": null
+  },
+  "butte.curriqunet.com": {
+   "colleges": [
+    "Butte College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://butte.curriqunet.com/Catalog//iq/25371",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://butte.curriqunet.com/Catalog/",
+   "status": 200,
+   "xfo": null
+  },
+  "cabrillo.elumenapp.com": {
+   "colleges": [
+    "Cabrillo College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "status": 200,
+   "xfo": null
+  },
+  "canadacollege.edu": {
+   "colleges": [
+    "Ca\u00f1ada College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://canadacollege.edu/catalogschedule/",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://canadacollege.edu/catalogschedule/",
+   "status": 200,
+   "xfo": null
+  },
+  "catalog.cccd.edu": {
+   "colleges": [
+    "Coastline Community College",
+    "Golden West College",
+    "Orange Coast College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.cccd.edu/coastline/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.citruscollege.edu": {
+   "colleges": [
+    "Citrus College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.citruscollege.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.collegeofsanmateo.edu": {
+   "colleges": [
+    "College of San Mateo"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://catalog.collegeofsanmateo.edu/current/",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://catalog.collegeofsanmateo.edu/current/",
+   "status": 200,
+   "xfo": null
+  },
+  "catalog.collegeofthedesert.edu": {
+   "colleges": [
+    "College of the Desert"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.collegeofthedesert.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.cos.edu": {
+   "colleges": [
+    "College of the Sequoias"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.cos.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.deltacollege.edu": {
+   "colleges": [
+    "San Joaquin Delta College"
+   ],
+   "frame_ancestors": "'self'",
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.deltacollege.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.elcamino.edu": {
+   "colleges": [
+    "El Camino College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "http://catalog.elcamino.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN\nSAMEORIGIN"
+  },
+  "catalog.evc.edu": {
+   "colleges": [
+    "Evergreen Valley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.evc.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.foothill.edu": {
+   "colleges": [
+    "Foothill College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.foothill.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.gcccd.edu": {
+   "colleges": [
+    "Cuyamaca College",
+    "Grossmont College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.gcccd.edu/cuyamaca/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.mccd.edu": {
+   "colleges": [
+    "Merced College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://catalog.mccd.edu/",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://catalog.mccd.edu/",
+   "status": 200,
+   "xfo": null
+  },
+  "catalog.miracosta.edu": {
+   "colleges": [
+    "MiraCosta College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.miracosta.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.mpc.edu": {
+   "colleges": [
+    "Monterey Peninsula College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.mpc.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.msjc.edu": {
+   "colleges": [
+    "Mt. San Jacinto College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.msjc.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.mtsac.edu": {
+   "colleges": [
+    "Mt. San Antonio College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/vocational-nursing/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.napavalley.edu": {
+   "colleges": [
+    "Napa Valley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.napavalley.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.nocccd.edu": {
+   "colleges": [
+    "Cypress College",
+    "Fullerton College",
+    "North Orange Continuing Education"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.nocccd.edu/cypress-college/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.santarosa.edu": {
+   "colleges": [
+    "Santa Rosa Junior College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.santarosa.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.sbcc.edu": {
+   "colleges": [
+    "Santa Barbara City College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.sbcc.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.sierracollege.edu": {
+   "colleges": [
+    "Sierra College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.sierracollege.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.sjcc.edu": {
+   "colleges": [
+    "San Jose City College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.sjcc.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.skylinecollege.edu": {
+   "colleges": [
+    "Skyline College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://catalog.skylinecollege.edu/current/",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://catalog.skylinecollege.edu/current/",
+   "status": 200,
+   "xfo": null
+  },
+  "catalog.smc.edu": {
+   "colleges": [
+    "Santa Monica College"
+   ],
+   "frame_ancestors": "'self' https://a.cms.omniupdate.com",
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.smc.edu/current/index.php",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.swccd.edu": {
+   "colleges": [
+    "Southwestern College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.swccd.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.valleycollege.edu": {
+   "colleges": [
+    "San Bernardino Valley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.valleycollege.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.vcccd.edu": {
+   "colleges": [
+    "Moorpark College",
+    "Oxnard College",
+    "Ventura College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.vcccd.edu/moorpark/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "catalog.vvc.edu": {
+   "colleges": [
+    "Victor Valley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://catalog.vvc.edu/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "ccc.elumenapp.com": {
+   "colleges": [
+    "Contra Costa College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/home",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://ccc.elumenapp.com/catalog/ccc-2026-27/home",
+   "status": 200,
+   "xfo": null
+  },
+  "cerritos-public.courseleaf.com": {
+   "colleges": [
+    "Cerritos College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/architectural-technology-aa/",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "chabot.curriqunet.com": {
+   "colleges": [
+    "Chabot College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/6077",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/6077",
+   "status": 200,
+   "xfo": null
+  },
+  "chaffey.curriqunet.com": {
+   "colleges": [
+    "Chaffey College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://chaffey.curriqunet.com/catalog/iq/18783",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://chaffey.curriqunet.com/catalog/iq/18783",
+   "status": 200,
+   "xfo": null
+  },
+  "coa.curriqunet.com": {
+   "colleges": [
+    "College of Alameda"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://coa.curriqunet.com/catalog/iq/47367",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://coa.curriqunet.com/catalog/iq/47367",
+   "status": 200,
+   "xfo": null
+  },
+  "coalingacollege.edu": {
+   "colleges": [
+    "Coalinga College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://coalingacollege.edu/catalog/2026-2027/",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://coalingacollege.edu/catalog/2026-2027/",
+   "status": 200,
+   "xfo": null
+  },
+  "craftonhills.smartcatalogiq.com": {
+   "colleges": [
+    "Crafton Hills College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+   "status": 200,
+   "xfo": null
+  },
+  "dvc.elumenapp.com": {
+   "colleges": [
+    "Diablo Valley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation",
+   "status": 200,
+   "xfo": null
+  },
+  "flc.losrios.edu": {
+   "colleges": [
+    "Folsom Lake College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://flc.losrios.edu/2026-2027-official-catalog",
+   "status": 404,
+   "xfo": "SAMEORIGIN"
+  },
+  "frc.curriqunet.com": {
+   "colleges": [
+    "Feather River College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://frc.curriqunet.com/Catalog/iq/1452",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://frc.curriqunet.com/Catalog/iq/1452",
+   "status": 200,
+   "xfo": null
+  },
+  "fresno.curriqunet.com": {
+   "colleges": [
+    "Fresno City College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
+   "status": 200,
+   "xfo": null
+  },
+  "gavilan.curriqunet.com": {
+   "colleges": [
+    "Gavilan College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://gavilan.curriqunet.com/catalog/alias/2026-2027catalog",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://gavilan.curriqunet.com/catalog/alias/2026-2027catalog",
+   "status": 200,
+   "xfo": null
+  },
+  "gocolumbia.elumenapp.com": {
+   "colleges": [
+    "Columbia College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/admissions/getting-started",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/admissions/getting-started",
+   "status": 200,
+   "xfo": null
+  },
+  "hancockcollege.curriqunet.com": {
+   "colleges": [
+    "Allan Hancock College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+   "status": 200,
+   "xfo": null
+  },
+  "hartnell.catalog.prod.coursedog.com": {
+   "colleges": [
+    "Hartnell College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://hartnell.catalog.prod.coursedog.com/",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://hartnell.catalog.prod.coursedog.com/",
+   "status": 200,
+   "xfo": null
+  },
+  "imperial.curriqunet.com": {
+   "colleges": [
+    "Imperial Valley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://imperial.curriqunet.com/catalog/iq/8512/8586",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://imperial.curriqunet.com/catalog/iq/8512/8586",
+   "status": 200,
+   "xfo": null
+  },
+  "irvine.curriqunet.com": {
+   "colleges": [
+    "Irvine Valley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://irvine.curriqunet.com/Catalog/iq/48953",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://irvine.curriqunet.com/Catalog/iq/48953",
+   "status": 200,
+   "xfo": null
+  },
+  "lan.curriqunet.com": {
+   "colleges": [
+    "Laney College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://lan.curriqunet.com/catalog/view/iq/44232",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://lan.curriqunet.com/catalog/view/iq/44232",
+   "status": 200,
+   "xfo": null
+  },
+  "laspositas.curriqunet.com": {
+   "colleges": [
+    "Las Positas College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://laspositas.curriqunet.com/catalog/iq/881",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://laspositas.curriqunet.com/catalog/iq/881",
+   "status": 200,
+   "xfo": null
+  },
+  "lmc.elumenapp.com": {
+   "colleges": [
+    "Los Medanos College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://lmc.elumenapp.com/catalog/26-27/art",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://lmc.elumenapp.com/catalog/26-27/art",
+   "status": 200,
+   "xfo": null
+  },
+  "ltcc.elumenapp.com": {
+   "colleges": [
+    "Lake Tahoe Community College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog",
+   "status": 200,
+   "xfo": null
+  },
+  "madera.curriqunet.com": {
+   "colleges": [
+    "Madera College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover",
+   "status": 200,
+   "xfo": null
+  },
+  "marin.elumenapp.com": {
+   "colleges": [
+    "College of Marin"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://marin.elumenapp.com/catalog/current/home",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://marin.elumenapp.com/catalog/current/home",
+   "status": 200,
+   "xfo": null
+  },
+  "mc.curriqunet.com": {
+   "colleges": [
+    "Merritt College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://mc.curriqunet.com/catalog/iq/46097",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://mc.curriqunet.com/catalog/iq/46097",
+   "status": 200,
+   "xfo": null
+  },
+  "mission.elumenapp.com": {
+   "colleges": [
+    "Mission College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://mission.elumenapp.com/catalog/24-25/cataloghome",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://mission.elumenapp.com/catalog/24-25/cataloghome",
+   "status": 200,
+   "xfo": null
+  },
+  "mjc.elumenapp.com": {
+   "colleges": [
+    "Modesto Junior College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
+   "status": 200,
+   "xfo": null
+  },
+  "palomar.curriqunet.com": {
+   "colleges": [
+    "Palomar College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/Cover",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://palomar.curriqunet.com/catalog/alias/college/iq/Cover",
+   "status": 200,
+   "xfo": null
+  },
+  "pasadena.edu": {
+   "colleges": [
+    "Pasadena City College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://pasadena.edu/academics/catalog-schedule-calendar.php",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://pasadena.edu/academics/catalog-schedule-calendar.php",
+   "status": 200,
+   "xfo": null
+  },
+  "pvc.elumenapp.com": {
+   "colleges": [
+    "Palo Verde College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome",
+   "status": 200,
+   "xfo": null
+  },
+  "rccd.curriqunet.com": {
+   "colleges": [
+    "Moreno Valley College",
+    "Norco College",
+    "Riverside City College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5941",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5941",
+   "status": 200,
+   "xfo": null
+  },
+  "redwoods.elumenapp.com": {
+   "colleges": [
+    "College of the Redwoods"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
+   "status": 200,
+   "xfo": null
+  },
+  "reedley.curriqunet.com": {
+   "colleges": [
+    "Reedley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100",
+   "status": 200,
+   "xfo": null
+  },
+  "riohondo.curriqunet.com": {
+   "colleges": [
+    "Rio Hondo College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22177",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22177",
+   "status": 200,
+   "xfo": null
+  },
+  "sac.curriqunet.com": {
+   "colleges": [
+    "Santa Ana College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/36562",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/36562",
+   "status": 200,
+   "xfo": null
+  },
+  "saddleback.curriqunet.com": {
+   "colleges": [
+    "Saddleback College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://saddleback.curriqunet.com/catalog/iq/45443",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://saddleback.curriqunet.com/catalog/iq/45443",
+   "status": 200,
+   "xfo": null
+  },
+  "scc.losrios.edu": {
+   "colleges": [
+    "Sacramento City College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://scc.losrios.edu/2026-2027-official-catalog",
+   "status": 404,
+   "xfo": "SAMEORIGIN"
+  },
+  "sccollege.elumenapp.com": {
+   "colleges": [
+    "Santiago Canyon College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://sccollege.elumenapp.com/catalog/catalog/home",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://sccollege.elumenapp.com/catalog/catalog/home",
+   "status": 200,
+   "xfo": null
+  },
+  "scmainweb.s3.us-west-1.amazonaws.com": {
+   "colleges": [
+    "Shasta College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf"
+  },
+  "sdccd.curriqunet.com": {
+   "colleges": [
+    "San Diego City College",
+    "San Diego Miramar College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20041"
+  },
+  "siskiyous.elumenapp.com": {
+   "colleges": [
+    "College of the Siskiyous"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/2026-27cataloghomepage",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/2026-27cataloghomepage",
+   "status": 200,
+   "xfo": null
+  },
+  "taftcollege.smartcatalogiq.com": {
+   "colleges": [
+    "Taft College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://taftcollege.smartcatalogiq.com/2026-2027/2026-2027-catalog",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://taftcollege.smartcatalogiq.com/2026-2027/2026-2027-catalog",
+   "status": 200,
+   "xfo": null
+  },
+  "wcc.yccd.edu": {
+   "colleges": [
+    "Woodland Community College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf"
+  },
+  "westhillslemoore.elumenapp.com": {
+   "colleges": [
+    "Lemoore College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/Welcome",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://westhillslemoore.elumenapp.com/catalog/26-27/Welcome",
+   "status": 200,
+   "xfo": null
+  },
+  "www.barstow.edu": {
+   "colleges": [
+    "Barstow Community College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf"
+  },
+  "www.calbright.edu": {
+   "colleges": [
+    "Calbright College Credit"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf"
+  },
+  "www.canyons.edu": {
+   "colleges": [
+    "College of the Canyons"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf"
+  },
+  "www.ccsf.edu": {
+   "colleges": [
+    "City College of San Francisco"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.ccsf.edu/catalog",
+   "status": 403,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.cerrocoso.edu": {
+   "colleges": [
+    "Cerro Coso Community College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf"
+  },
+  "www.cloviscollege.edu": {
+   "colleges": [
+    "Clovis Community College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf"
+  },
+  "www.cmccd.edu": {
+   "colleges": [
+    "Copper Mountain College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://www.cmccd.edu/academic-catalogs/",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://www.cmccd.edu/academic-catalogs/",
+   "status": 200,
+   "xfo": null
+  },
+  "www.compton.edu": {
+   "colleges": [
+    "Compton College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf"
+  },
+  "www.crc.losrios.edu": {
+   "colleges": [
+    "Cosumnes River College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.crc.losrios.edu/catalog",
+   "status": 404,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.cuesta.edu": {
+   "colleges": [
+    "Cuesta College"
+   ],
+   "frame_ancestors": "https://*.cuesta.edu 'self'",
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.cuesta.edu/become-student/findclasses/index.html",
+   "status": 200,
+   "xfo": null
+  },
+  "www.deanza.edu": {
+   "colleges": [
+    "De Anza College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.deanza.edu/catalog/",
+   "status": 403,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.elac.edu": {
+   "colleges": [
+    "East Los Angeles College"
+   ],
+   "frame_ancestors": "'self' *.laccd.edu *.elac.edu *.wlac.edu *.lapc.edu *.lamission.edu *.lavc.edu *.lasc.edu *.lahc.edu *.lacc.edu *.lattc.edu",
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.elac.edu/academic-resources/catalog",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.glendale.edu": {
+   "colleges": [
+    "Glendale Community College"
+   ],
+   "frame_ancestors": "'self' https://a.cms.omniupdate.com",
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.glendale.edu/academics/catalogs/index.html",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.lacc.edu": {
+   "colleges": [
+    "Los Angeles City College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.lacc.edu/sites/lacc.edu/files/2025-10/Complete%20LACC%202025-26%20College%20Catalog_0.pdf"
+  },
+  "www.lahc.edu": {
+   "colleges": [
+    "Los Angeles Harbor College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf"
+  },
+  "www.lamc.edu": {
+   "colleges": [
+    "Los Angeles Mission College"
+   ],
+   "frame_ancestors": "'self' *.laccd.edu *.elac.edu *.wlac.edu *.lapc.edu *.lamission.edu *.lavc.edu *.lasc.edu *.lahc.edu *.lacc.edu *.lattc.edu",
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.lamc.edu/academics/calendar-schedules/schedules-catalog",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.lapc.edu": {
+   "colleges": [
+    "Los Angeles Pierce College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf"
+  },
+  "www.lasc.edu": {
+   "colleges": [
+    "Los Angeles Southwest College"
+   ],
+   "frame_ancestors": "'self' *.laccd.edu *.elac.edu *.wlac.edu *.lapc.edu *.lamission.edu *.lavc.edu *.lasc.edu *.lahc.edu *.lacc.edu *.lattc.edu",
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.lasc.edu/academic-resources/catalog",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.lassencollege.edu": {
+   "colleges": [
+    "Lassen College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf"
+  },
+  "www.lattc.edu": {
+   "colleges": [
+    "Los Angeles Trade Technical College"
+   ],
+   "frame_ancestors": "'self' *.laccd.edu *.elac.edu *.wlac.edu *.lapc.edu *.lamission.edu *.lavc.edu *.lasc.edu *.lahc.edu *.lacc.edu *.lattc.edu",
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.lattc.edu/academic-resources/catalog",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.lavc.edu": {
+   "colleges": [
+    "Los Angeles Valley College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf"
+  },
+  "www.lbcc.edu": {
+   "colleges": [
+    "Long Beach City College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://www.lbcc.edu/college-catalog",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://www.lbcc.edu/college-catalog",
+   "status": 200,
+   "xfo": null
+  },
+  "www.mendocino.edu": {
+   "colleges": [
+    "Mendocino College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf"
+  },
+  "www.ohlone.edu": {
+   "colleges": [
+    "Ohlone College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.ohlone.edu/catalog",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.portervillecollege.edu": {
+   "colleges": [
+    "Porterville College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.portervillecollege.edu/programs-and-classes/academics/catalog.html",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.sdccd.edu": {
+   "colleges": [
+    "San Diego College of Continuing Education"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://www.sdccd.edu/students/college-catalogs/index.aspx",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://www.sdccd.edu/students/college-catalogs/index.aspx",
+   "status": 200,
+   "xfo": null
+  },
+  "www.sdmesa.edu": {
+   "colleges": [
+    "San Diego Mesa College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://www.sdmesa.edu/student-support/evaluations/catalog-course-information.shtml",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://www.sdmesa.edu/student-support/evaluations/catalog-course-information.shtml",
+   "status": 200,
+   "xfo": null
+  },
+  "www.solano.edu": {
+   "colleges": [
+    "Solano Community College"
+   ],
+   "frame_ancestors": "'self' https://a.cms.omniupdate.com",
+   "frame_url": "chrome-error://chromewebdata/",
+   "frames": false,
+   "headers_say": false,
+   "pdf": false,
+   "sample": "https://www.solano.edu/administrative-offices/academic-affairs/course-catalog.php",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
+  },
+  "www.westvalley.edu": {
+   "colleges": [
+    "West Valley College"
+   ],
+   "frame_ancestors": null,
+   "frame_url": "https://www.westvalley.edu/catalog/index.html",
+   "frames": true,
+   "headers_say": null,
+   "pdf": false,
+   "sample": "https://www.westvalley.edu/catalog/index.html",
+   "status": 200,
+   "xfo": null
+  },
+  "www.wlac.edu": {
+   "colleges": [
+    "West Los Angeles College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf"
+  },
+  "yc.yccd.edu": {
+   "colleges": [
+    "Yuba College"
+   ],
+   "error": "Page.goto: Download is starting",
+   "frame_url": "",
+   "frames": null,
+   "headers_say": null,
+   "sample": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf"
+  }
+ },
+ "origin": "https://cpl-initiative.github.io",
+ "run": "38005833715"
+}
