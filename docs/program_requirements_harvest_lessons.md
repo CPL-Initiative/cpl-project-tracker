@@ -746,8 +746,9 @@ PR head it creates carries no checks and `test` cannot pass on it. Merge the bas
 extracted 37 for $2.42; Mt. San Antonio (run 38064250199) filed 382, 346 passing, and extracted 71 for $4.47: $6.89 against
 Sam's $6.50. ⚠️ A college's `summary.json` reports `cost_usd` over every record it files, so a re-read that keeps earlier
 records reports the running total ($16.78 at Cerritos); count `extracted_run` in the records for this run's spend. The loads
-inserted 33 and 70. Eight records lost their pages to Approved programs that name them more fully (Cerritos 19170, 19172;
-Mt. San Antonio 31598, 32892, 38942, 43373, 43777, 43999): the filing drops them, the insert-only load leaves their live rows,
+inserted 33 and 70. Eight records dropped out of the filing (Cerritos 19170, 19172; Mt. San Antonio 31598, 32892, 38942,
+43373, 43777, 43999): five lost their page to a program it names more fully (`page_claimed`), and three found no page
+(`not_found`; S357 read the filed sources). The filing drops them, the insert-only load leaves their live rows,
 and those rows keep the previous display build (`153ead0ce992`) while 700 hold `ee814befc65d` (combined md5
 977aaaebe1171b9af65db321cfc125cc). Whether a row the filing no longer carries keeps its old display or is marked is open.
 The two sibling branches merged into one cleanly except the generated dependency map, which was regenerated.
