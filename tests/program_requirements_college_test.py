@@ -74,6 +74,27 @@ check(not any("course-descriptions" in u or "archive" in u or u.endswith(".pdf")
 check(not any("elsewhere.example.edu" in u for u in cand), "another host's page is never read")
 check(len(set(cand)) == len(cand), "a page the sitemap lists twice is read once")
 
+# ── a district catalog: one host, several colleges ───────────────────────────
+DISTRICT = ["https://catalog.nocccd.edu/fullerton-college/programs/accounting-aa/",
+            "https://catalog.nocccd.edu/cypress-college/programs/accounting-aa/",
+            "https://catalog.nocccd.edu/noce/programs/esl-certificate-completion/"]
+REG = ["https://catalog.nocccd.edu/fullerton-college/", "https://catalog.nocccd.edu/cypress-college/",
+       "https://catalog.nocccd.edu/noce/", "https://cerritos-public.courseleaf.com/"]
+ful = "https://catalog.nocccd.edu/fullerton-college/"
+check(C.district_scope(ful, REG) == "/fullerton-college/",
+      "a college on a shared district host reads under its own path")
+check(C.program_candidates(DISTRICT, ful, C.district_scope(ful, REG)) == DISTRICT[:1],
+      "Fullerton's read never offers Cypress's or NOCE's pages: %r"
+      % C.program_candidates(DISTRICT, ful, C.district_scope(ful, REG)))
+check(C.district_scope(start, REG) is None and C.program_candidates(pages, start, C.district_scope(start, REG)) == cand,
+      "a host no other college shares keeps the whole host, as Cerritos read")
+check(C.district_scope("https://catalog.nocccd.edu/", REG) is None,
+      "an address at a shared host's root names no scope rather than guessing one")
+check(C.in_scope("https://catalog.nocccd.edu/fullerton-college/x/", "/fullerton-college/")
+      and not C.in_scope("https://catalog.nocccd.edu/cypress-college/x/", "/fullerton-college/")
+      and C.in_scope("https://anything/", None),
+      "the link search's page is kept only inside the college's scope")
+
 # ── the state's file, a thousand rows at a time ─────────────────────────────
 calls = []
 real_get = C.P._get

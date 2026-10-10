@@ -156,14 +156,35 @@ def sitemap_urls(xml_text: str) -> tuple[list[str], list[str]]:
     return pages, nested
 
 
-def program_candidates(urls: list[str], start: str) -> list[str]:
+def district_scope(start: str, registry_urls: list[str]) -> str | None:
+    """The path a district catalog gives this college, when another college's
+    catalog address is on the same host. Four districts publish one CourseLeaf
+    host for several colleges (catalog.cccd.edu/orange-coast/, /golden-west/,
+    /coastline/; catalog.nocccd.edu, catalog.gcccd.edu, catalog.vcccd.edu), and
+    the host's sitemap lists every college's pages, so without it Fullerton's
+    Accounting A.A. competes with Cypress's for one page. The scope is the first
+    segment of this college's own address; a host no other college shares has
+    none, and the read keeps the whole host as it did at Cerritos."""
+    host = urllib.parse.urlparse(start).netloc.lower()
+    others = [u for u in registry_urls
+              if u and urllib.parse.urlparse(u).netloc.lower() == host and u.rstrip("/") != start.rstrip("/")]
+    seg = [x for x in (urllib.parse.urlparse(start).path or "/").split("/") if x]
+    return "/%s/" % seg[0] if others and seg else None
+
+
+def in_scope(url: str, scope: str | None) -> bool:
+    return not scope or (urllib.parse.urlparse(url).path or "/").startswith(scope)
+
+
+def program_candidates(urls: list[str], start: str, scope: str | None = None) -> list[str]:
     """The sitemap's pages that sit in a program section of this catalog: the
-    catalog's own host, a path a program section uses, and nothing a course
-    list, policy, archive or PDF uses. Deduplicated, in the sitemap's order."""
+    catalog's own host (and, on a district host, this college's own path), a
+    path a program section uses, and nothing a course list, policy, archive or
+    PDF uses. Deduplicated, in the sitemap's order."""
     out, seen = [], set()
     for u in urls:
         u = u.split("#")[0]
-        if not P.same_site(u, start) or u in seen:
+        if not P.same_site(u, start) or u in seen or not in_scope(u, scope):
             continue
         path = urllib.parse.urlparse(u).path or "/"
         if path.count("/") < 2 or NOT_PROGRAM_PATH.search(path) or not PROGRAM_PATH.search(path):
@@ -351,6 +372,13 @@ def slug_of(college: str) -> str:
 
 
 # ── the passes ─────────────────────────────────────────────────────────────
+def host_registry_urls(start: str) -> list[str]:
+    """Every registry catalog address on this college's catalog host."""
+    host = urllib.parse.urlparse(start).netloc.lower()
+    rows = P._get("program_source_registry?select=catalog_url&catalog_url=like.*%s*" % urllib.parse.quote(host))
+    return [r.get("catalog_url") for r in rows if r.get("catalog_url")]
+
+
 def read_sitemap(reader, start: str) -> dict:
     """The catalog's sitemap.xml, robots first and the census's delay before
     each request; a sitemap index is followed one level."""
@@ -419,13 +447,15 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
     pw, browser, reader = P.open_reader(delay)
     cache: dict = {}
     try:
+        scope = district_scope(start, host_registry_urls(start))
+        report["scope"] = scope
         sm = read_sitemap(reader, start)
-        urls = program_candidates(sm["pages"], start)
+        urls = program_candidates(sm["pages"], start, scope)
         report["sitemap"] = {"url": sm["url"], "status": sm["status"], "listed": len(sm["pages"]),
                              "nested": len(sm["nested"]), "program_pages": len(urls),
                              "refused": sm.get("refused"), "errors": sm.get("errors")}
         if len(urls) < 0.3 * report["with_closed_list"]:
-            urls = program_candidates(index_links(reader, start, cache), start)
+            urls = program_candidates(index_links(reader, start, cache), start, scope)
             report["index_fallback"] = len(urls)
         urls = urls[:MAX_PAGES]
         pages = []
@@ -465,7 +495,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)
                     b = res["best"] or {}
-                    if b.get("coverage", 0.0) >= P.ACCEPT_SHARE:
+                    if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and in_scope(b.get("url") or "", scope):
                         best, method = dict(b, label=None), "link_search"
                 rec = source_record(college, prog, reg, best, method if best else "not_found")
             recs.append(rec)
