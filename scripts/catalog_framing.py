@@ -81,7 +81,8 @@ def frame_ancestors(csp: str) -> str | None:
 
 
 def headers_allow(xfo: str | None, fa: str | None) -> bool | None:
-    """What the headers alone say about framing at COBI's origin; None when they say nothing."""
+    """What the headers say about framing at COBI's origin. Neither header means a browser
+    frames the page; None only for an X-Frame-Options value a browser may read either way."""
     if fa is not None:
         srcs = fa.split()
         if any(s in ("*", "https:", COBI, COBI + "/") or s == "https://*.github.io" for s in srcs):
@@ -89,7 +90,7 @@ def headers_allow(xfo: str | None, fa: str | None) -> bool | None:
         return False
     if xfo:
         return False if re.match(r"\s*(deny|sameorigin)\b", xfo, re.I) else None
-    return None
+    return True
 
 
 def check(ctx, host: str, sample: str) -> dict:
@@ -104,6 +105,24 @@ def check(ctx, host: str, sample: str) -> dict:
         row["pdf"] = "pdf" in (hdr.get("content-type") or "").lower()
     except Exception as exc:  # a host that never answers is recorded, not fatal
         row["error"] = str(exc).splitlines()[0][:200]
+        if "Download is starting" in row["error"]:
+            # A PDF served as a download never renders in headless Chromium, so read its
+            # headers with a plain request instead (run 38005833715: 17 such hosts).
+            try:
+                # HEAD, never GET: a whole catalog PDF took 16 minutes to download in run
+                # 38009803753 and timed the job out. GET only where a host refuses HEAD.
+                r = ctx.request.fetch(sample, method="HEAD", timeout=45000, max_redirects=5)
+                if r.status in (405, 501):
+                    r = ctx.request.get(sample, timeout=45000, max_redirects=5)
+                hdr = r.headers
+                row["attachment"] = "attachment" in (hdr.get("content-disposition") or "").lower()
+                row["status"] = r.status
+                row["xfo"] = hdr.get("x-frame-options")
+                row["frame_ancestors"] = frame_ancestors(hdr.get("content-security-policy", ""))
+                row["pdf"] = True
+                row.pop("error", None)
+            except Exception as exc2:
+                row["error"] = str(exc2).splitlines()[0][:200]
     finally:
         page.close()
     time.sleep(3)
@@ -131,11 +150,14 @@ def check(ctx, host: str, sample: str) -> dict:
         row["frame_error"] = str(exc).splitlines()[0][:200]
     finally:
         parent.close()
-    row["headers_say"] = headers_allow(row.get("xfo"), row.get("frame_ancestors"))
-    if row.get("pdf"):
+    # Headers not read (the host never answered) say nothing, so neither does the verdict.
+    read = row.get("status") is not None and "error" not in row
+    row["headers_say"] = headers_allow(row.get("xfo"), row.get("frame_ancestors")) if read else None
+    if row.get("pdf") or not read:
         # Headless Chromium draws no PDF in a frame, so the frame test cannot see one;
-        # a PDF host is judged by its headers alone (None when they say nothing).
-        row["frames"] = row["headers_say"] if row["headers_say"] is not None else None
+        # a PDF host is judged by its headers alone, and an unread host stays unknown.
+        # A file sent as an attachment downloads from a frame too, so it gets its own window.
+        row["frames"] = False if row.get("attachment") else row["headers_say"]
     time.sleep(3)
     return row
 

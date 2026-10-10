@@ -180,7 +180,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 87
+     "line": 88
     }
    ],
    "main_committers": []
@@ -7859,7 +7859,7 @@
      ]
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": []
   },
   "file:kb/ccr_cpl_funnel.json": {
