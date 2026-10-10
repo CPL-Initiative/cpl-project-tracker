@@ -756,3 +756,37 @@ The two sibling branches merged into one cleanly except the generated dependency
 ### Moved from the lane (S356 compaction)
 
 ✅ **Flags and a person's reading are built (S347; Sam, Sheet 51 card 1, *build*, 20:35Z, confirmed in chat).** The Records view places each question the reading raised on the block whose courses it names, as a numbered flag that says who fixes it (the college or the reading procedure); a row printing a flagged course carries the number; reader's notes stay notes. A reviewer signed in with the magic link also reads the unchecked records, and each record ends with Confirm and Needs a fix: one write, `program_record_verdict_add` (`chatbox/supabase_program_record_verdicts.sql`), into the append-only log `program_record_verdicts`, holding the fingerprint of the requirements the page showed (`requirements_fp`). Confirm checks a record only while that fingerprint matches and its three machine checks pass; Needs a fix files the note on the college's procedure (`open`) through `program_source_procedure_set`. A trigger keeps a person's reading across a reload of the same requirements. Live (receipt `kb/receipts/program_record_verdicts_2026-10-08_s347.sql`; a rolled-back self-test passed ten cases); governance dismisses both surfaces with the reason; guards `tests/program_record_verdicts_sql_test.py` and the tab test's blocks 11-12.
+
+## S357 SkyCanopy, 2026-10-10: the next college asked, district catalogs scoped, and a curriQunet catalog read as data
+
+**The next college is a card (Open Asks Sheet 58 card 1).** The read lists program pages from a CourseLeaf sitemap only.
+Long Beach City is the one Leading-tier CourseLeaf college unread (825 CPL students, 391 programs; the registry holds
+www.lbcc.edu/college-catalog, a page that names CourseLeaf, so one runner read finds the catalog's own address first).
+RCCD's three colleges are all Leading (Moreno Valley 2,557, Norco 907, Riverside City 900; 578 programs) and sit on one
+curriQunet host. Card 2 asks about the eight rows the Approved re-reads dropped (five `page_claimed`, three `not_found`).
+
+**A district catalog's college reads only its own path (#1959).** Coast, North Orange, Grossmont-Cuyamaca and Ventura each
+publish one CourseLeaf host for several colleges, and the read kept every page on the host. `district_scope()` gives a
+college the first segment of its own address when another registry address shares the host; a host no other college
+shares has no scope.
+
+**A curriQunet catalog is data (#1960).** The college page read gained `"network": true`: a plan page prints each fetch or
+XHR its own scripts made to its own host while it loaded. Two reads at Riverside City (runs 38075620248, 38076194967, four
+page loads, no model call) found the catalog's calls:
+
+- `_getNavigation?id=<catalog>&parentId=<node>` lists a section. Riverside City is catalog 124; Degrees and Certificates
+  (5852) holds a tablist (6313) whose Degrees and Certificates Index (6117) holds one linklist (6323) of 229 entries. Each
+  entry carries its node id and a title naming its awards and local codes: *Acting - Associate of Arts Degree and
+  Certificate of Achievement - AA1050/AA1050C/CE1050*.
+- `_getPage?catalogId=<catalog>&id=<node>` returns one page as JSON. A program's page carries curriculum blocks
+  (`catalogblocktypeid` 4, `EntityTypeId` 2, `curriculumCriteria` naming curriQunet's program id, `catalogblockheader` naming
+  the award) whose HTML holds the whole of the requirements: the required courses, *Select one of the following*,
+  *Complete 9 units from the following*, and the total. The view makes no other content call.
+- Calls that need a sign-in answer 302, and nothing the read needs sits behind them.
+
+So the curriQunet listing is one navigation call per section plus one page call per program, read as JSON with no
+rendering and no PDF export. What it still needs: each college's catalog id (Moreno Valley and Norco are other modules on
+the same host), a walk from the catalog's top navigation to its program index, and a match from a page's award blocks to
+COCI's programs (one page serves the A.A. and the certificate of one discipline). Memory row
+`roep-curriqunet-catalog-json-2026-10-10`.
+

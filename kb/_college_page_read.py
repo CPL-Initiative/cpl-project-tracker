@@ -21,6 +21,8 @@ sections first ("expand"), print a long table's matching rows ("rows"), and
 may also submit one of its
 forms (a public search such as a class schedule, never a sign-in): robots.txt
 for the form's action first, the same delay, and the fields it sent printed.
+A page with "network": true also prints the data its own scripts fetched from
+its own host while it loaded (no request of the reader's own).
 
 Usage (runner): python3 kb/_college_page_read.py kb/college_reads/cerritos_ironworker_ladder.json
 """
@@ -338,19 +340,67 @@ ROWS_JS = """(src) => {
 }""" % ROWS_CAP
 
 
+# A JavaScript catalog draws its outline from data its own scripts fetch (S357:
+# curriQunet's views are paths of outline ids, /catalog/alias/rcc-catalog/iq/5852/
+# 6117/5941, and draw their menus without links). A plan's page with
+# "network": true records each response the page's own scripts fetched from its
+# own host while it loaded and printed: the address, the status, the type and the
+# opening of the body. The reader requests nothing more; the browser made these
+# requests for the page.
+NETWORK_CAP = 40         # responses printed per page
+NETWORK_BODY = 1500      # characters of each body printed
+
+
+def network_kept(url: str, resource_type: str, page_url: str) -> bool:
+    """A fetch or XHR the page made to its own host."""
+    return resource_type in ("xhr", "fetch") and same_site(url, page_url)
+
+
+def network_listen(page, page_url: str) -> tuple[list, object]:
+    got: list = []
+
+    def on_response(resp):
+        try:
+            if network_kept(resp.url, resp.request.resource_type, page_url) and len(got) < NETWORK_CAP:
+                got.append(resp)
+        except Exception:
+            pass
+    page.on("response", on_response)
+    return got, on_response
+
+
+def network_read(got: list) -> list[dict]:
+    out = []
+    for resp in got:
+        rec = {"url": resp.url, "status": resp.status, "method": resp.request.method,
+               "content_type": (resp.headers or {}).get("content-type")}
+        try:
+            body = resp.text()
+            rec["bytes"], rec["body"] = len(body), body[:NETWORK_BODY]
+        except Exception as exc:
+            rec["error"] = str(exc).splitlines()[0][:160]
+        out.append(rec)
+    return out
+
+
 def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = False,
-             rows: str | None = None) -> dict:
+             rows: str | None = None, network: bool = False) -> dict:
     """One page through the census's Reader (or the pilot's PDF reader), with
     its text, its links and the excerpts around the plan's keywords."""
     from _program_requirements_pilot import read_pdf, pdfminer_pages
     out = {"url": url}
     if not is_pdf(url):
+        heard, listener = network_listen(reader.page, url) if network else ([], None)
         got = reader.load(url)
         out.update({k: got.get(k) for k in ("status", "final_url", "content_type",
                                              "access", "error", "title")})
         if got.get("access") == "ok" and not is_pdf(url, got.get("content_type")):
             try:
                 reader.page.wait_for_timeout(1500)   # a script-built page fills in late
+                if network:
+                    reader.page.wait_for_timeout(3500)   # its data calls finish
+                    reader.page.remove_listener("response", listener)
+                    out["network"] = network_read(heard)
                 opened = None
                 if expand:
                     opened = reader.page.evaluate(EXPAND_JS)
@@ -426,6 +476,15 @@ def print_page(n: int, rec: dict, pattern: re.Pattern) -> None:
         for r in got:
             links = "; ".join("%s -> %s" % (l["text"], l["href"]) for l in r.get("links") or [])
             print(" | ".join(c for c in r.get("cells") or [] if c) + ((" [" + links + "]") if links else ""))
+    if "network" in rec:
+        print("--- data the page's own scripts fetched (%d) ---" % len(rec["network"]))
+        for r in rec["network"]:
+            print("%s %s -> %s %s, %s bytes" % (r.get("method"), r.get("url"), r.get("status"),
+                  r.get("content_type"), r.get("bytes")))
+            if r.get("body"):
+                print(fold(r["body"]))
+            if r.get("error"):
+                print("  error: " + r["error"])
     if rec.get("followed"):
         print("--- links followed ---")
         for f in rec["followed"]:
@@ -483,7 +542,8 @@ def main(argv: list[str] | None = None) -> int:
                 else:
                     rec = read_one(reader, url, pattern, cache,
                                    expand=bool(target.get("expand")) and not parent,
-                                   rows=None if parent else target.get("rows"))
+                                   rows=None if parent else target.get("rows"),
+                                   network=bool(target.get("network")) and not parent)
                 rec["answers"] = target.get("answers") or []
                 if parent:
                     rec["from"] = parent
