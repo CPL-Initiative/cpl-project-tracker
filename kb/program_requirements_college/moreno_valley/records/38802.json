@@ -1,0 +1,177 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "38802",
+ "shape": "noncredit",
+ "title": "Enterprise Communication",
+ "award": "Noncredit program",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4514",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4717,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4717,
+    "output_tokens": 1081,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1081,
+  "output_tokens_details": {
+   "thinking_tokens": 283
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04049,
+ "ms": 9212,
+ "seconds": 9.8,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Enterprise Communication - Certificate of Completion - MCC8014",
+   "measure": "hours",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Describe and apply different strategic communication techniques to a workplace scenario.",
+    "Identify your professional EI strengths and limitations. Develop a plan using behavioral techniques to increase your EI competencies.",
+    "Apply business writing concepts to writing letters and emails using complete sentences with sentence variety, clarity with pronouns, proper punctuation, paragraphing and clear organization of ideas."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PDS-809",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PDS-812",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses (Choose 2)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "PDS-806",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PDS-807",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PDS-813",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is a noncredit Certificate of Completion counted in hours; all unit fields hold hours.",
+   "'Hours 48.00' is printed beside the 'Required Courses:' heading, but the two required courses total 24 hours. The 48 appears to be the program total, which matches 'Total : 48.00'. The required block's stated total is therefore left null.",
+   "The catalog prints codes with a hyphen (e.g., PDS-809). These match the closed-list codes (e.g., PDS 809).",
+   "Every course is labeled '( Historical )' in the catalog. A reviewer should check whether these courses are still active for 2026-2027.",
+   "The second outcome is printed as a single line containing two sentences and is recorded as one outcome."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

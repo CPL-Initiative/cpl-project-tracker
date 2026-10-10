@@ -1,0 +1,143 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "38179",
+ "shape": "noncredit",
+ "title": "Introduction to Education Profession for ESL Students",
+ "award": "Noncredit program",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4534",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4786,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4786,
+    "output_tokens": 831,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 831,
+  "output_tokens_details": {
+   "thinking_tokens": 195
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03576,
+ "ms": 7126,
+ "seconds": 7.6,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Introduction to Education Profession for ESL Students - Certificate of Competency - MCC8007",
+   "measure": "hours",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Produce well-organized and well-developed descriptive and expository paragraphs about the Amer i can Public Education system (K-12).",
+    "Explain the fundamental concepts (e.g. IEP , LRE , FAPE, and Special Education Categories) that shape educational services.",
+    "Develop and compose short (400-700 word) essays using APA or MLA format on Education issues regarding federal legislation, state mandates, or educational practices.",
+    "Analyze the readings as it pertains to the multicultural perspectives of education professionals, includ ing teachers an d teacher assistants."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 48,
+     "max": 48
+    },
+    "courses": [
+     {
+      "code": "ESL-804",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL-805",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is a noncredit Certificate of Competency counted in hours. Course and total values are hours: 24 + 24, with a printed total of 48.00 hours.",
+   "The catalog prints the codes with a hyphen (ESL-804, ESL-805). They match closed-list ESL 804 and ESL 805, so they are not marked as catalog additions.",
+   "The outcomes are copied as printed and keep apparent text-extraction spacing artifacts: 'Amer i can', 'IEP , LRE ,', 'includ ing teachers an d'. A reviewer may want to check these against the source page."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

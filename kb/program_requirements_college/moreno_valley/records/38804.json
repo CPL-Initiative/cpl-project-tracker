@@ -1,0 +1,144 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "38804",
+ "shape": "noncredit",
+ "title": "Sales Techniques",
+ "award": "Noncredit program",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4558",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4579,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4579,
+    "output_tokens": 710,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 710,
+  "output_tokens_details": {
+   "thinking_tokens": 158
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03252,
+ "ms": 6234,
+ "seconds": 6.7,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sales Techniques - Certificate of Completion - MCC8016",
+   "measure": "hours",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Develop and deliver a series of sales scripts to fit a given sales situation and effectively deliver the scripts.",
+    "Describe and demonstrate techniques for closing sales.",
+    "Describe and demonstrate how to ask for the sale when a potential customer is resistant.",
+    "Develop and deliver scripts for call center or ‘inside sales”."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "PDS-814",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PDS-815",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion counted in hours; course hours (12 each) and total (24) are taken from the catalog, not the closed list's 0 units.",
+   "Catalog prints codes with a hyphen (PDS-814, PDS-815); these match closed-list PDS 814 and PDS 815.",
+   "Both courses are labeled '( Historical )' in the catalog, which may mean they are inactive or being replaced; a reviewer should check whether the program is current for 2026-2027.",
+   "The fourth outcome is copied as printed, with its mismatched quotation marks (‘inside sales”)."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

@@ -1,0 +1,210 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "33953",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4467",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5345,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5345,
+    "output_tokens": 1657,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1657,
+  "output_tokens_details": {
+   "thinking_tokens": 539
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05452,
+ "ms": 13852,
+ "seconds": 14.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "MAT1A"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHE1BH",
+    "MATHC2210"
+   ],
+   "flagged": [
+    "CHE1BH",
+    "MATHC2210"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biology - Associate in Science for Transfer (ADT) - MAS768 (Cal-GETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Be able to identify and explain fundamental biological concepts and principles on the molecular, cellular, organismal, population, ecological, environmental and evolutionary levels.",
+    "Apply knowledge of biological concepts to formulate questions and hypotheses for research and demonstrate ability to find, read, understand, and critically evaluate scientific papers.",
+    "Develop experimental skills and techniques used in laboratory and field research and use the scientific method to develop hypotheses, design and execute experiments."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "BIO-61",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-60",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO-60H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHE-1AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHE-1BH",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHY-4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY-4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAT 1A",
+    "why": "not in the text; the catalog prints MATH-C2210 Calculus I: Early Transcendentals in its place (likely a common-course renumbering)"
+   }
+  ],
+  "notes": [
+   "Each 'Select one of the following' pair (BIO-60/BIO-60H, CHE-1A/CHE-1AH, CHE-1B/CHE-1BH) is an honors-twin choice printed with 'OR', recorded as one entry with an alternative inside the required block.",
+   "CHE-1BH (Honors General Chemistry, II) and MATH-C2210 are not in the closed list; recorded as catalog additions.",
+   "Catalog codes are printed with hyphens (e.g., BIO-61, PHY-4B); matched to closed-list codes BIO 61, PHY4B etc.",
+   "The page prints three headings: two for MAS768 (Cal-GETC) and one for 'MAS767 (CSUGE)/MAS768 (IGETC)', which may be a leftover from an earlier catalog version; the degree text names Cal-GETC as the GE pattern.",
+   "Total of 32 units is stated in the catalog ('Units: 32.00' and 'Total : 32.00'); the 60-unit figure is the degree total."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

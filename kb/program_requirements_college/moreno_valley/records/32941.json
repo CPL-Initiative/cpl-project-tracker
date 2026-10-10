@@ -1,0 +1,313 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "32941",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4554",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5965,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5965,
+    "output_tokens": 2788,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2788,
+  "output_tokens_details": {
+   "thinking_tokens": 912
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07962,
+ "ms": 21410,
+ "seconds": 21.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 20,
+   "share": 0.85,
+   "missing": [
+    "ECO7",
+    "HIS6",
+    "HIS7"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ECONC2002",
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "flagged": [
+    "ECONC2002",
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Political Science - Associate in Arts for Transfer (ADT) - MAA755 (Cal-GETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Describe, explain, and evaluate American political institutions, political systems, policies and processes.",
+    "Identify and analyze the major current global and domestic political theories and ideologies.",
+    "Objectively explain critical issues in American, Comparative and World politics and be able to use theories and debates to argue convincingly in defense of a position, selecting examples to illustrate points and organizing these appropriately.",
+    "Employ a variety of current social scientific methodologies in the research, analysis and evaluation of data.",
+    "Demonstrate critical thinking ability including the understanding of alternative explanations and the forming of conclusions from the data presented."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "POLS-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "POLS-5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-6",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC-48",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC-48",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECO 7",
+    "why": "not in the text; catalog prints ECON-C2002 (Principles of Macroeconomics) instead, likely a renumbering"
+   },
+   {
+    "code": "HIS 6",
+    "why": "not in the text; catalog prints HIST-C1001 (United States History to 1877) instead, likely a renumbering"
+   },
+   {
+    "code": "HIS 7",
+    "why": "not in the text; catalog prints HIST-C1002 (United States History since 1865) instead, likely a renumbering"
+   }
+  ],
+  "notes": [
+   "The page prints three headings (MAA755 Cal-GETC twice and MAA754 CSUGE/MAA755 IGETC); the requirements text and closing paragraph refer to Cal-GETC, so that heading was used.",
+   "Required Courses reads 'Select 9 units from the following' with POLS-C1000 (or POLS-C1000H), POLS-2, POLS-4, POLS-11; recorded as choose 9 units as printed. The state TMC typically requires POLS C1000 plus two others; reviewer should verify whether POLS-C1000 is mandatory.",
+   "List A states 'Any course not selected from the Required Core' may count; the unselected core courses (POLS-2, POLS-4, POLS-11) are not repeated in the List A block.",
+   "List B states 'Any course not selected above' may count; courses from the Required Core and List A not already used are not repeated in the List B block.",
+   "'Only one of the following may be used' groups (ECON-6/POLS-6; STAT-C1000/STAT-C1000H/PSYC-48/SOC-48; ECON-C2002/ECON-C2002H; HIST-C1001/HIST-C1001H; HIST-C1002/HIST-C1002H) recorded as a single entry with alternatives.",
+   "ECON-C2002, HIST-C1001 and HIST-C1002 are not in the closed list (closed list carries ECO 7, HIS 6, HIS 7 with matching titles); marked as catalog additions.",
+   "Program learning outcomes are printed for the program as a whole and recorded for this award."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

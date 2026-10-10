@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 149,
  "with_closed_list": 144,
- "started": "2026-10-10T20:15:46Z",
+ "started": "2026-10-10T20:54:07Z",
  "curriqunet": {
   "catalog": 115,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/",
@@ -20,7 +20,7 @@
  },
  "pages_read": 252,
  "loads": 264,
- "seconds": 1288.9,
+ "seconds": 1234.4,
  "found": 132,
  "by_method": {
   "no_closed_list": 5,
@@ -205,5 +205,5 @@
   "0.8-1.0": 29,
   "1.0": 99
  },
- "run": "38083001418"
+ "run": "38085493318"
 }
