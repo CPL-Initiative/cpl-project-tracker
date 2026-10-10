@@ -441,9 +441,9 @@ function makeWin(opts) {
     (FB["Gavilan College"].contacts || []).length === 2);
 
   const curCell = T._fallbackCell("Gavilan College");
-  check("fallback cell: curator-supplied shows who gave it", /from Jessica/.test(curCell));
+  check("fallback cell: curator-supplied shows who gave it", /[Ss]upplied by Jessica/.test(curCell));
   check("fallback cell: a curator who cited a source shows BOTH",
-    /from Jessica/.test(curCell) && /their source/.test(curCell)
+    /[Ss]upplied by Jessica/.test(curCell) && /their source/.test(curCell)
       && /counseling_team\.php/.test(curCell));
   check("fallback cell: curator-supplied says it is NOT a MAP designation",
     /not a MAP designation/.test(curCell));

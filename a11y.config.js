@@ -403,6 +403,44 @@ async function seedSplit(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Seeds MAP Users as a signed-in reviewer sees it (S358 UI pass): the cobi sweep opens
+// the tab signed out with its reads aborted, so it paints only "Could not load". The
+// "all" lens has one roster open and a nudge logged; the "gaps" lens has a curator's
+// proposal editor open beside an ask, so every control and the proposed-fill tag paint.
+async function seedMapUsers(page, theme, lens) {
+  await page.evaluate(() => { try { localStorage.setItem("cpl_team_pass", "seed"); } catch (e) {} });
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "map-users") location.hash = "map-users"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => { const M = window.CPL_MAP_USERS_TAB; return M && !M._state.loading; }, null, { timeout: 60000 });
+  await page.evaluate((lens) => {
+    const M = window.CPL_MAP_USERS_TAB, S = M._state, root = document.getElementById("map-users-root");
+    const mix = { "CPL Coordinator": 1, Faculty: 6, Counselor: 3, Evaluator: 2 };
+    S.summary = [];
+    for (let i = 0; i < 14; i++) S.summary.push({ college: ["Foothill College", "Chaffey College", "Norco College"][i] || "College " + i,
+      user_count: 20 - i, active_count: 15 - i, role_mix: mix, last_synced: "2026-10-09T18:55:30Z" });
+    S.error = null; S.loading = false; S.lens = lens;
+    S.nudges = { "Chaffey College": { last_nudged_at: "2026-10-02T17:00:00Z", last_nudged_by: "Ashley" } };
+    S.rosterOpen = lens === "all" ? { "Foothill College": true } : {};
+    S.gaps = [
+      { college: "Alpha College", college_kind: "college", has_student_contact: false, proposed_source: "CPL Coordinator",
+        proposed_name: "Pat Vega", proposed_email: "pat@alpha.edu", needs_ask: false, landing_page_url: "https://map.example/alpha", active_users: 4 },
+      { college: "Beta College", college_kind: "college", has_student_contact: false, proposed_source: "CPL Assistant",
+        proposed_name: null, proposed_email: "asst@beta.edu", needs_ask: false, landing_page_url: null, active_users: 2 },
+      { college: "Gamma College", college_kind: "college", has_student_contact: false, proposed_source: null, proposed_name: null,
+        proposed_email: null, needs_ask: true, ask_reason: "leadership only", landing_page_url: "https://map.example/gamma", active_users: 3 },
+    ];
+    S.propEdit = lens === "gaps" ? M._ckey("Alpha College") : null;
+    M.render(root);
+    const cell = root.querySelector('[data-roster-cell="Foothill College"]');
+    if (cell) cell.innerHTML = M._rosterHtml([
+      { first_name: "Ada", last_name: "Lovelace", email: "ada@foothill.edu", role_name: "CPL Coordinator", user_status: "Active",
+        disciplines: "Mathematics, Computer Science, Engineering", last_updated_on: "2026-06-15", username: "alovelace" },
+      { first_name: "Grace", last_name: "Hopper", email: "grace@foothill.edu", role_name: "Faculty", user_status: "Inactive",
+        disciplines: "Computer Science", last_updated_on: "2025-11-02", username: "ghopper" }]);
+  }, lens);
+  await page.waitForTimeout(300);
+}
+
 // Seeds My College's Reported expenditures section for the two targets below.
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
@@ -956,6 +994,41 @@ module.exports = {
     routes: [{ hash: "college-briefing", name: "reports-signin" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedMyCollegeReports(page, true),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── MAP Users, signed in (S358 UI pass) ─────────────────────────────────
+     The roster lens with one roster open, and the student-contact worklist
+     with a proposal editor open, one per theme. */
+  "map-users-roster": {
+    file: "index.html",
+    title: "MAP Users, signed in: the roster",
+    routes: [{ hash: "map-users", name: "roster" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedMapUsers(page, "light", "all"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "map-users-roster-dark": {
+    file: "index.html",
+    title: "MAP Users, signed in: the roster, dark",
+    routes: [{ hash: "map-users", name: "roster-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedMapUsers(page, "dark", "all"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "map-users-gaps": {
+    file: "index.html",
+    title: "MAP Users, signed in: the student-contact worklist",
+    routes: [{ hash: "map-users", name: "gaps" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedMapUsers(page, "light", "gaps"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "map-users-gaps-dark": {
+    file: "index.html",
+    title: "MAP Users, signed in: the student-contact worklist, dark",
+    routes: [{ hash: "map-users", name: "gaps-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedMapUsers(page, "dark", "gaps"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   },
