@@ -1,0 +1,403 @@
+{
+ "college": "Riverside City College",
+ "catalog_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 268,
+ "with_closed_list": 262,
+ "started": "2026-10-10T18:51:28Z",
+ "curriqunet": {
+  "catalog": 124,
+  "view_prefix": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Degrees and Certificates"
+  ],
+  "nodes_read": 5,
+  "calls": 11,
+  "entries": 435,
+  "stopped_at_cap": false
+ },
+ "pages_read": 435,
+ "loads": 447,
+ "seconds": 2166.2,
+ "found": 228,
+ "by_method": {
+  "no_closed_list": 6,
+  "not_found": 34,
+  "sitemap_page": 228
+ },
+ "shared_pages": {
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6081": [
+   "04455",
+   "22737"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5911": [
+   "04456",
+   "22739"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5935": [
+   "04458",
+   "22817"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6083": [
+   "04459",
+   "22743"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5914": [
+   "04460",
+   "22745"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5909": [
+   "04461",
+   "22749"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5972": [
+   "04462",
+   "22752"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5930": [
+   "04465",
+   "22757"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5996": [
+   "04470",
+   "22770"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5894": [
+   "04471",
+   "22773"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5897": [
+   "04472",
+   "22775"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6068": [
+   "04476",
+   "22785"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6032": [
+   "04482",
+   "22789"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6065": [
+   "04486",
+   "22796"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5951": [
+   "04492",
+   "22801"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Admin_Justice_AS_Cert": [
+   "04504",
+   "22808"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5941": [
+   "04512",
+   "22804"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5891": [
+   "10070",
+   "22772"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5896": [
+   "10073",
+   "22777"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6047": [
+   "10087",
+   "22763"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5934": [
+   "10102",
+   "22815"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5978": [
+   "12134",
+   "22753"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5974": [
+   "14670",
+   "22760"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5975": [
+   "14671",
+   "22794"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5976": [
+   "14672",
+   "22762"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5954": [
+   "15406",
+   "22802"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5956": [
+   "15495",
+   "22758"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5913": [
+   "17018",
+   "22742"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5928": [
+   "30578",
+   "42892"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5990": [
+   "31766",
+   "31767"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5966": [
+   "31892",
+   "31898"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014": [
+   "32692",
+   "46237"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034": [
+   "32745",
+   "46317"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910": [
+   "33829",
+   "41364"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6022": [
+   "37382",
+   "46049"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5924": [
+   "37847",
+   "44190"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Baking_Pastry_ASCE": [
+   "38257",
+   "39125"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5995": [
+   "39086",
+   "39105"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5895": [
+   "39087",
+   "39135"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5893": [
+   "39088",
+   "39130"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5989": [
+   "39098",
+   "39128"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Auto_Engine_Perf_ASCE": [
+   "40439",
+   "40440"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Auto_Undercar_ASCE": [
+   "40441",
+   "40442"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5912": [
+   "41558",
+   "41559"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5965": [
+   "41728",
+   "41732"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Acting": [
+   "42683",
+   "46045"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5944": [
+   "42878",
+   "43043"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6357": [
+   "46061",
+   "46079"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "04513",
+   "title": "Cosmetology",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "18108",
+   "title": "Administration & Information Systems",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18109",
+   "title": "Communication, Media & Languages",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18110",
+   "title": "Fine & Applied Arts",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18111",
+   "title": "Humanities, Philosophy & Arts",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18112",
+   "title": "Kinesiology, Health and Wellness",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18113",
+   "title": "Social and Behavioral Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18114",
+   "title": "Math & Sciences",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "22814",
+   "title": "Cosmetology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "31163",
+   "title": "American Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "33230",
+   "title": "History",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "37474",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "38929",
+   "title": "Cosmetology Concepts",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "38930",
+   "title": "Barbering Concepts",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "39084",
+   "title": "Building Inspection Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39085",
+   "title": "Zero Net Energy",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39096",
+   "title": "Esthetician Concepts",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39097",
+   "title": "Hairstyling Concepts",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "40271",
+   "title": "Dance",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "40446",
+   "title": "Pilates Dance/Conditioning Instructor",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "44001",
+   "title": "Advanced Professional Skills in Baking & Pastry Arts",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "44002",
+   "title": "Intermediate Professional Skills Baking & Pastry Arts",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "44003",
+   "title": "Introduction to Professional Skills in Baking & Pastry Arts",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "44032",
+   "title": "Mathematics Readiness",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44144",
+   "title": "Anesthesia Technology",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "44145",
+   "title": "Professional Skills of Baking & Pastry Arts",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "44146",
+   "title": "Anesthesia Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "44156",
+   "title": "Advanced Professional Skills in Baking & Pastry Arts Non-Credit",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44157",
+   "title": "Intermediate Professional Skills in Baking & Pastry Arts Non-Credit",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44158",
+   "title": "Introduction to Professional Skills in Baking & Pastry Arts Non-Credit",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44159",
+   "title": "Professional Skills of Baking & Pastry Arts Non-Credit",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44948",
+   "title": "Barbering Concepts",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "44949",
+   "title": "Cosmetology Concepts",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "44950",
+   "title": "Esthetician Concepts",
+   "award": "A.S. Degree"
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 12,
+  "0.8-1.0": 51,
+  "1.0": 165
+ },
+ "run": "38077405309"
+}
