@@ -1,0 +1,29 @@
+{
+ "_readme": "S357 SkyCanopy, 2026-10-10. Sheet 58 card 1 weighs RCCD's three colleges (Moreno Valley, Norco, Riverside City, all Leading tier, 578 programs) against Long Beach City; either way the harvest needs a read that lists every program in a curriQunet catalog, which 27 colleges use. The pilot reached four Riverside City programs by clicking through the catalog's menus (views at /catalog/alias/rcc-catalog/iq/5852/6117/<id>), one program at a time. This read loads the registry's catalog address and the program section those four views sit in, with \"network\": true, to learn which address the catalog's own scripts fetch its outline from. No model call; two page loads and the data calls the browser makes for them.",
+ "college": "Riverside City College",
+ "questions": {
+  "outline_source": "Which address the catalog's scripts fetch the outline (sections and program ids) from, and in what shape.",
+  "program_section": "What the program section lists: each program's title, award and outline id."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "[Oo]utline",
+  "[Pp]rogram"
+ ],
+ "pages": [
+  {
+   "answers": ["outline_source"],
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
+   "network": true
+  },
+  {
+   "answers": ["outline_source", "program_section"],
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117",
+   "network": true
+  }
+ ]
+}

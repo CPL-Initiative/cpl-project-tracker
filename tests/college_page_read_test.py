@@ -182,6 +182,58 @@ for path in plans:
     check(len(own - {"courseleaf.com"}) == 1 or (not own and declared) or catalog_only,
           "%s: one college domain, plus its catalog vendor and the named outside hosts (%s)" % (name, sorted(own)))
 
+# ── a page's own data calls (S357, "network": true) ──────────────────────────
+print("network")
+page_url = "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117"
+check(cpr.network_kept("https://rccd.curriqunet.com/Catalog/GetOutline?id=1", "xhr", page_url),
+      "a data call to the page's own host is kept")
+check(not cpr.network_kept("https://www.google-analytics.com/collect", "fetch", page_url),
+      "a call to another host is never kept")
+check(not cpr.network_kept("https://rccd.curriqunet.com/Content/site.css", "stylesheet", page_url),
+      "a stylesheet or image is not a data call")
+
+
+class _Req:
+    def __init__(self, rt, method="GET"):
+        self.resource_type, self.method = rt, method
+
+
+class _Resp:
+    def __init__(self, url, rt, body, status=200, fail=False):
+        self.url, self.request, self.status = url, _Req(rt), status
+        self.headers, self._body, self._fail = {"content-type": "application/json"}, body, fail
+
+    def text(self):
+        if self._fail:
+            raise RuntimeError("body gone\nsecond line")
+        return self._body
+
+
+class _Page:
+    def __init__(self):
+        self.handlers = {}
+
+    def on(self, ev, fn):
+        self.handlers[ev] = fn
+
+    def remove_listener(self, ev, fn):
+        if self.handlers.get(ev) is fn:
+            del self.handlers[ev]
+
+
+pg = _Page()
+heard, fn = cpr.network_listen(pg, page_url)
+for i in range(cpr.NETWORK_CAP + 5):
+    pg.handlers["response"](_Resp("https://rccd.curriqunet.com/api/%d" % i, "xhr", "x" * 4000))
+pg.handlers["response"](_Resp("https://cdn.example.com/a.json", "fetch", "{}"))
+pg.remove_listener("response", fn)
+check(len(heard) == cpr.NETWORK_CAP and "response" not in pg.handlers,
+      "at most NETWORK_CAP responses are kept, and the listener comes off after the load")
+read = cpr.network_read(heard[:1] + [_Resp("https://rccd.curriqunet.com/x", "xhr", "", fail=True)])
+check(read[0]["bytes"] == 4000 and len(read[0]["body"]) == cpr.NETWORK_BODY,
+      "a body prints its opening and reports its whole length")
+check(read[1]["error"] == "body gone", "an unreadable body is reported, never raised")
+
 if FAILS:
     print("\n%d FAILED" % len(FAILS))
     sys.exit(1)
