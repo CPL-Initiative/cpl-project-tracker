@@ -40,7 +40,7 @@ function loadModule(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body>'
     + '<div id="program-requirements-root" style="text-align:center;padding:28px;">Loading&hellip;</div>'
-    + "</body></html>", { url: "https://example.org/", runScripts: "dangerously" });
+    + "</body></html>", { url: opts.url || "https://example.org/", runScripts: "dangerously" });
   const w = dom.window;
   w.fetch = opts.fetch || function () { return new Promise(function () {}); };
   if (opts.noStorage) {
@@ -765,7 +765,7 @@ block("(11)", function () {
 // The failures this guards: a write that sends no fingerprint (so a reviewer could confirm
 // requirements the page never showed), a write under the anon key, an empty Needs a fix,
 // a refusal that reads as a success, and an unread record a signed-in reviewer cannot see.
-function reviewerReady(answer) {
+function reviewerReady(answer, url) {
   const posts = [], asked = [];
   const ART_FP = Object.assign(JSON.parse(JSON.stringify(ART)), { requirements_fp: "fp-art" });
   const IW_FP = Object.assign(JSON.parse(JSON.stringify(IRONWORKER)), { requirements_fp: "fp-iw" });
@@ -773,7 +773,7 @@ function reviewerReady(answer) {
     return Promise.resolve({ ok: status < 300, status: status, json: function () { return Promise.resolve(body); },
       text: function () { return Promise.resolve(body == null ? "" : JSON.stringify(body)); } });
   }
-  const m = loadModule({ fetch: function (url, opts) {
+  const m = loadModule({ url: url, fetch: function (url, opts) {
     asked.push({ url: url, opts: opts || {} });
     if (/\/rpc\/program_record_verdict_add/.test(url)) {
       const body = JSON.parse(opts.body); posts.push({ body: body, opts: opts });
@@ -1069,6 +1069,7 @@ block("(15d)", function () {
 });
 block("(15e)", function () {
   const m = loadModule();
+  Object.defineProperty(m.w, "innerWidth", { value: 390, configurable: true });
   const opened = [];
   m.w.open = function (u, n, f) { opened.push([u, n, f]); return null; };
   m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER]; m.M._state.view = "records";
@@ -1077,11 +1078,124 @@ block("(15e)", function () {
   check("(15e) the framing file decides per host", m.M.framingOf(IRONWORKER.source_url) === false && m.M.framingOf("https://other.example/x") === null);
   wordButton(m.root.querySelector("article.prh-rec"), "Side by side").click();
   const d = m.w.document.querySelector(".prh-split");
-  check("(15e) a host that refuses framing opens in its own window on the left half, named, without the opener",
+  check("(15e) on a phone, a host that refuses framing opens in its own named window, the record staying here",
     opened.length === 1 && opened[0][0] === IRONWORKER.source_url && opened[0][1] === "prh-catalog" &&
-    /left=0/.test(opened[0][2]) && /noopener/.test(opened[0][2]), JSON.stringify(opened));
+    /left=0/.test(opened[0][2]), JSON.stringify(opened));
   check("(15e) and the split says why, with no empty frame", !!d && !d.querySelector("iframe") && /does not let another site show its pages/.test(d.textContent));
   m.M.closeSplit();
+});
+
+// ── (16) Sam, 2026-10-10, after confirming the Cerritos sample ──
+// "it closes when I click on the program requirements side to scroll down and I have to click
+// show each time"; "it would be nice to have a check mark on the block showing needs changes
+// status"; "The side by side view should be the default view when I click in to start
+// confirming." The failures this guards: a finished call still reading "Needs Sam's call"; a
+// record click that only expands the card; a refusing host's catalog that COBI's own window
+// covers on the first click (the record must get a window of its own, on the right half); a
+// reading room that cannot move to the next record; and a tab that misses a verdict saved in
+// the other window.
+const SPLIT_URL = "https://example.org/?prh_split=" + encodeURIComponent("Irvine Valley College|10265") + "#program-requirements";
+function callReady(r, calls) {
+  const f = progressFixture(20);
+  r.M._state.progress = { addenda: f.addenda, active: 20282, queue: Object.assign({}, f.queue, { calls: calls }), errors: {},
+    readAt: new Date("2026-10-07T21:40:00Z") };
+}
+block("(16a)", function () {
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    callReady(r, [CALL2]); r.M._state.view = "progress"; r.M._render();
+    let card = r.root.querySelector('details[data-sec="progress:call:0"]');
+    const recs = card.querySelectorAll(".prh-callrec");
+    check("(16a) a call with a record still open reads Needs Sam's call; the answered record carries the mark",
+      /Needs Sam's call/.test(card.querySelector(".prh-sec-label").textContent) && /prh-pg-call/.test(card.className) &&
+      !recs[0].classList.contains("prh-answered") && recs[1].classList.contains("prh-answered") &&
+      recs[1].querySelector(".prh-done-mark").getAttribute("aria-hidden") === "true");
+    recs[0].querySelector(".prh-verdict button").click();
+    return tick().then(tick).then(function () {
+      card = r.root.querySelector('details[data-sec="progress:call:0"]');
+      check("(16a) the last answer turns the call to Answered, with the check, in place",
+        card.querySelector(".prh-sec-label").textContent === "Answered" && !!card.querySelector(".prh-sec-label .prh-done-mark") &&
+        /prh-pg-answered/.test(card.className) && !/prh-pg-call/.test(card.className) && recs[0].classList.contains("prh-answered"),
+        card.className + " | " + card.querySelector(".prh-sec-label").textContent);
+      check("(16a) the run status stops counting it", r.root.querySelector("#prh-pg-waitcount").textContent === "Nothing waiting on Sam");
+      check("(16a) the verdict pings any other COBI window", /Irvine Valley College\|10265$/.test(r.w.localStorage.getItem("cplProgramRequirements.verdictPing.v1") || ""));
+      check("(16a) the mark is drawn in CSS on a token, never a glyph", /\.prh-done-mark \{[^}]*border-right:2px solid var\(--seal-blue-text\)/.test(SRC));
+    });
+  });
+});
+block("(16b)", function () {
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    callReady(r, [CALL2]); r.M._state.view = "progress"; r.M._render();
+    const rec = r.root.querySelector('details[data-sec="progress:call:0"] .prh-callrec');
+    rec.querySelector("summary").click();
+    const d = r.w.document.querySelector(".prh-split");
+    check("(16b) opening a record on the call starts side by side, not the expanded card",
+      !!d && !!d.querySelector('iframe[src="https://example.org/art"]') && !rec.hasAttribute("open"));
+    r.M.closeSplit();
+    check("(16b) closing returns focus to the record's line", r.w.document.activeElement === rec.querySelector("summary"));
+  });
+});
+block("(16c)", function () {
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    callReady(r, [CALL2]);
+    r.M._state.framing = { "example.org": { frames: false } };
+    const opened = [], win = { location: { href: "" }, focus: function () {} };
+    r.w.open = function (u, n, f) { opened.push([u, n, f]); return win; };
+    Object.defineProperty(r.w, "innerWidth", { value: 1440, configurable: true });
+    Object.defineProperty(r.w, "screen", { value: { availWidth: 1440, availHeight: 900, availLeft: 0, availTop: 0 }, configurable: true });
+    r.M._state.view = "progress"; r.M._render();
+    r.root.querySelector('details[data-sec="progress:call:0"] .prh-callrec summary').click();
+    check("(16c) on a wide screen, a refusing host's record opens in a window of its own on the right half",
+      opened.length === 1 && opened[0][1] === "prh-record" && /left=720,top=0,width=720,height=900/.test(opened[0][2]) &&
+      win.location.href === "/?prh_split=" + encodeURIComponent("Irvine Valley College|10265") + "#program-requirements",
+      JSON.stringify(opened) + " " + win.location.href);
+    check("(16c) and nothing covers this window instead", !r.w.document.querySelector(".prh-split"));
+  });
+});
+block("(16d)", function () {
+  const r = reviewerReady(null, SPLIT_URL);
+  const opened = []; let closed = 0;
+  r.w.open = function (u, n, f) { opened.push([u, n, f]); return { focus: function () {} }; };
+  r.w.close = function () { closed++; };
+  Object.defineProperty(r.w, "screen", { value: { availWidth: 1440, availHeight: 900, availLeft: 0, availTop: 0 }, configurable: true });
+  return r.M._load().then(function () {
+    callReady(r, [CALL2]);
+    r.M._state.framing = { "example.org": { frames: false } };
+    r.M.closeSplit(true); r.M.openKey("Irvine Valley College|10265");
+    const d = r.w.document.querySelector(".prh-split");
+    check("(16d) the record window opens its record by itself, the whole window, no frame",
+      r.M.RECORD_KEY === "Irvine Valley College|10265" && !!d && /prh-split-solo/.test(d.className) && !d.querySelector("iframe") &&
+      /^Art/.test(d.querySelector("#prh-split-t").textContent));
+    wordButton(d, "Show the catalog on the left").click();
+    check("(16d) Show the catalog on the left opens the named catalog window on the left half",
+      opened.length === 1 && opened[0][0] === "https://example.org/art" && opened[0][1] === "prh-catalog" &&
+      /left=0,top=0,width=720,height=900/.test(opened[0][2]), JSON.stringify(opened));
+    wordButton(d, "Next waiting record").click();
+    check("(16d) with nothing else waiting, Next says so and stays", /Every record on this call has your reading/.test(d.textContent) &&
+      r.w.document.querySelector(".prh-split") === d);
+    r.M._state.review.records[0].checked = false;
+    wordButton(d, "Next waiting record").click();
+    const d2 = r.w.document.querySelector(".prh-split");
+    check("(16d) Next moves the record and the catalog window on one click",
+      d2 !== d && d2.querySelector("#prh-split-t").textContent.indexOf(IRONWORKER.program_title) === 0 &&
+      opened.length === 2 && opened[1][0] === IRONWORKER.source_url && opened[1][1] === "prh-catalog", JSON.stringify(opened));
+    wordButton(d2, "Close").click();
+    check("(16d) Close closes the reading room's window", closed === 1);
+  });
+});
+block("(16e)", function () {
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    r.M.activate();
+    const before = r.asked.filter(function (a) { return /program_record_verdicts/.test(a.url); }).length;
+    r.w.dispatchEvent(new r.w.StorageEvent("storage", { key: "cplProgramRequirements.verdictPing.v1", newValue: "1" }));
+    return tick().then(tick).then(function () {
+      const after = r.asked.filter(function (a) { return /program_record_verdicts/.test(a.url); }).length;
+      check("(16e) a verdict saved in the reading room re-reads the verdicts in the tab that opened it", after === before + 1, before + " -> " + after);
+    });
+  });
 });
 
 Promise.all(pending).then(function () {

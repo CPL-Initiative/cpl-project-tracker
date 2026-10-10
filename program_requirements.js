@@ -88,6 +88,13 @@
      and committed by a session. A host not in it is unknown: the side by side view frames it
      and keeps its own window one word away. */
   var FRAMING_URL = "kb/catalog_framing.json";
+  /* The reading room (Sam, 2026-10-10): a record opened in a window of its own on the right
+     half carries ?prh_split=<college>|<control number>; a verdict saved there pings the tab
+     that opened it through this key, so its cards and counts catch up. */
+  var RECORD_KEY = (function () {
+    try { return new URLSearchParams(window.location.search).get("prh_split") || null; } catch (e) { return null; }
+  })();
+  var PING_KEY = "cplProgramRequirements.verdictPing.v1";
   var PT = "America/Los_Angeles";
 
   var PLATFORM = { courseleaf: "CourseLeaf", curriqunet: "curriQunet", elumen: "eLumen", pdf: "PDF",
@@ -167,6 +174,41 @@
   function findRecord(rows, ref) {
     return rows ? rows.filter(function (r) { return r.college === ref.college && r.control_number === ref.control_number; })[0] || null : null;
   }
+  function recordFor(ref) {
+    return findRecord(state.review && state.review.records, ref) || findRecord(state.records, ref);
+  }
+  /* Answered: a verdict on the record's current requirements, or checked. A record the
+     reader cannot see counts as open. */
+  function refAnswered(ref) { var p = recordFor(ref); return !!p && !stateLine(p).waiting; }
+  function callAnswered(c) { var refs = callRefs(c); return refs.length > 0 && refs.every(refAnswered); }
+  /* The check Sam asked for on a finished call (2026-10-10: "it would be nice to have a check
+     mark on the block"): drawn in CSS, ghosted, beside the word that says it. */
+  function doneMark() { return el("span", { cls: "prh-done-mark", "aria-hidden": "true" }); }
+  /* After a verdict: the cards, the waiting count and the to-do word catch up in place. */
+  function refreshCalls() {
+    var root = document.getElementById(ROOT_ID), Q = state.progress && state.progress.queue;
+    if (!root || !Q || !Array.isArray(Q.calls)) return;
+    var who = Q.decider || "Sam";
+    Array.prototype.forEach.call(root.querySelectorAll("[data-call]"), function (card) {
+      var c = Q.calls[Number(card.getAttribute("data-call"))];
+      if (!c) return;
+      var done = callAnswered(c), label = card.querySelector(".prh-sec-label");
+      card.classList.toggle("prh-pg-answered", done);
+      card.classList.toggle("prh-pg-call", !done);
+      if (label) { label.textContent = ""; if (done) label.appendChild(doneMark()); label.appendChild(document.createTextNode(done ? "Answered" : "Needs " + who + "'s call")); }
+      Array.prototype.forEach.call(card.querySelectorAll(".prh-callrec[data-key]"), function (d) {
+        var k = d.getAttribute("data-key").split("|");
+        d.classList.toggle("prh-answered", refAnswered({ college: k[0], control_number: k.slice(1).join("|") }));
+      });
+    });
+    var li = document.getElementById("prh-pg-waitcount");
+    if (li) {
+      var n = Q.calls.filter(function (c) { return !callAnswered(c); }).length;
+      li.textContent = n ? n + " waiting on " + who : "Nothing waiting on " + who;
+      li.className = n ? "prh-pg-waiting" : "prh-quiet";
+    }
+    refreshTodo();
+  }
   function callRecords(c) {
     var refs = callRefs(c);
     if (!refs.length) return null;
@@ -185,11 +227,18 @@
       var body = [el("p", { cls: "prh-pg-links" }, [p && p.source_url ? link(p.source_url, "The catalog page") : null,
         p && p.source_url ? splitButton(p) : null, read])];
       if (p && p.requirements_fp) body.push(verdictBox(p, flagsFor(p).flags, line));
-      return el("details", { cls: "prh-callrec" }, [
-        el("summary", {}, [el("span", { cls: "prh-callrec-t" }, [el("b", { text: ref.control_number }), " " + name]), line]),
-        el("div", { cls: "prh-callrec-b" }, body)]);
+      var key = ref.college + "|" + ref.control_number;
+      var sum = el("summary", {}, [el("span", { cls: "prh-callrec-t" }, [doneMark(), el("b", { text: ref.control_number }), " " + name]), line]);
+      /* Opening a record starts the reading side by side (Sam, 2026-10-10: "The side by side view
+         should be the default view when I click in to start confirming"). */
+      if (p && p.source_url && p.requirements_fp) {
+        sum.setAttribute("data-split", key);
+        sum.addEventListener("click", function (e) { e.preventDefault(); openSplit(p, sum); });
+      }
+      return el("details", { cls: "prh-callrec" + (refAnswered(ref) ? " prh-answered" : ""), "data-key": key }, [
+        sum, el("div", { cls: "prh-callrec-b" }, body)]);
     });
-    var head = mine ? el("p", { cls: "prh-small prh-quiet", text: "Open a record to read its catalog page and answer here." })
+    var head = mine ? el("p", { cls: "prh-small prh-quiet", text: "Open a record to read it beside its catalog page and answer there." })
       : Rv && Rv.error ? el("p", { cls: "prh-small prh-caution", role: "status", text: "Your sign-in could not read the records (" + Rv.error + "). Reload the tab to answer here." })
       : signInBox();
     return el("div", { cls: "prh-callrecs" }, [head].concat(items));
@@ -218,7 +267,7 @@
     opts = opts || {};
     var d = el("details", { cls: "prh-sec" + (opts.cls ? " " + opts.cls : ""), "data-sec": key }, [
       el("summary", { cls: "prh-sec-sum" }, [
-        opts.label ? el("span", { cls: "prh-sec-label", text: opts.label }) : null,
+        opts.label ? el("span", { cls: "prh-sec-label" }, [opts.mark ? doneMark() : null, opts.label]) : null,
         el(opts.h || "h3", { cls: "prh-sec-t", text: title }),
         meta ? el("span", { cls: "prh-sec-meta", text: meta }) : null]),
       el("div", { cls: "prh-sec-b" }, kids)]);
@@ -261,6 +310,7 @@
     return Promise.all([core, loadProgress(), loadReview(), loadFraming()]).then(function () {
       state.loading = false;
       render();
+      if (RECORD_KEY && !state.recordOpened) { state.recordOpened = true; openKey(RECORD_KEY); }
     });
   }
 
@@ -306,6 +356,10 @@
     if (state.sessionWired) return;
     state.sessionWired = true;
     window.addEventListener("cpl-session-changed", function () {
+      loadReview().then(function () { if (document.getElementById(ROOT_ID)) render(); });
+    });
+    window.addEventListener("storage", function (e) {
+      if (e.key !== PING_KEY || RECORD_KEY) return;
       loadReview().then(function () { if (document.getElementById(ROOT_ID)) render(); });
     });
   }
@@ -487,7 +541,11 @@
       ".prh-todo-go:hover { text-decoration-thickness:2px; }",
       ".prh-todo-go.prh-todo-clear { color:var(--cobalt); }",
       ".prh-todo-what { font-size:.875rem; color:var(--text-muted); }",
-      ".prh-pg-call { scroll-margin-top:16px; }",
+      ".prh-pg-call, .prh-pg-answered { scroll-margin-top:16px; }",
+      /* the done mark: a check drawn in CSS, ghosted, always beside the word that says it */
+      ".prh-done-mark { display:inline-block; width:5px; height:10px; margin:0 8px 2px 2px; border-right:2px solid var(--seal-blue-text); border-bottom:2px solid var(--seal-blue-text); transform:rotate(45deg); vertical-align:middle; }",
+      ".prh-callrec:not(.prh-answered) .prh-done-mark { visibility:hidden; }",
+      ".prh-pg-answered .prh-sec-label { color:var(--seal-blue-text); }",
       ".prh h2 { margin:0; color:var(--text-strong); font-size:clamp(1.4rem, 2.6vw, 1.9rem); line-height:1.2; display:flex; flex-wrap:wrap; align-items:center; gap:10px; }",
       ".prh h3 { margin:0; color:var(--text-strong); font-size:1.05rem; }",
       ".prh h4 { margin:0 0 6px; color:var(--text-strong); font-size:.95rem; display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }",
@@ -714,6 +772,7 @@
       ".prh-split-refused p { margin:0; max-width:var(--cpl-measure,none); }",
       ".prh-split-rec { min-height:0; overflow:auto; padding:14px 16px; background:var(--paper); }",
       ".prh-split-rec .prh-rec { margin:0; }",
+      ".prh-split-solo .prh-split-panes { grid-template-columns:minmax(0, 1fr); grid-template-rows:minmax(0, 1fr); }",
       "@media (max-width: 900px) { .prh-split-panes { grid-template-columns:minmax(0, 1fr); grid-template-rows:minmax(0, 1fr) minmax(0, 1fr); }" +
         " .prh-split-cat { border-right:0; border-bottom:1px solid var(--border-strong); } .prh-split-rec { padding:10px 12px; } }",
       "@media (prefers-reduced-motion: reduce) { .prh * { transition:none !important; animation:none !important; } }"
@@ -989,7 +1048,8 @@
       var sl = stateLine(p);
       line.textContent = sl.text;
       line.className = "prh-state" + (sl.waiting ? " prh-state-waiting" : "");
-      refreshTodo();
+      refreshCalls();
+      safeSet(PING_KEY, Date.now() + " " + p.college + "|" + p.control_number);
       if (split.on) split.changed = true;
     }
     confirm.addEventListener("click", function () {
@@ -1608,9 +1668,9 @@
       var nr = nextRun(Q, now);
       meta.appendChild(el("li", {}, ["Next " + ((Q.next_run && Q.next_run.name) || "queue") + " run ",
         el("b", { text: nr ? stampOf(nr) : "not on record" })]));
-      var calls = Array.isArray(Q.calls) ? Q.calls : [];
-      meta.appendChild(el("li", { cls: calls.length ? "prh-pg-waiting" : "prh-quiet",
-        text: calls.length ? calls.length + " waiting on " + x.decider : "Nothing waiting on " + x.decider }));
+      var waiting = (Array.isArray(Q.calls) ? Q.calls : []).filter(function (c) { return !callAnswered(c); }).length;
+      meta.appendChild(el("li", { id: "prh-pg-waitcount", cls: waiting ? "prh-pg-waiting" : "prh-quiet",
+        text: waiting ? waiting + " waiting on " + x.decider : "Nothing waiting on " + x.decider }));
     } else {
       meta.appendChild(el("li", { cls: "prh-caution", text: missingText(["Q"], x) }));
     }
@@ -1675,12 +1735,16 @@
       if (Q.next_step && Q.next_step.title) side.appendChild(section("progress:next", Q.next_step.title, null,
         [Q.next_step.text ? el("p", { text: Q.next_step.text }) : null], { cls: "prh-pg-box", h: "h4", label: "Next step" }));
       (Array.isArray(Q.calls) ? Q.calls : []).forEach(function (c, i) {
-        side.appendChild(section("progress:call:" + i, c.title || "", null, [
+        var done = callAnswered(c);
+        var card = section("progress:call:" + i, c.title || "", null, [
           c.text ? el("p", { text: c.text }) : null,
-          c.if_no_reply ? el("p", { cls: "prh-pg-foot", text: "No reply: " + c.if_no_reply }) : null,
+          c.if_no_reply && !done ? el("p", { cls: "prh-pg-foot", text: "No reply: " + c.if_no_reply }) : null,
           callRecords(c),
           callLinks(c)],
-          { cls: "prh-pg-box prh-pg-call", h: "h4", label: "Needs " + x.decider + "'s call" }));
+          { cls: "prh-pg-box " + (done ? "prh-pg-answered" : "prh-pg-call"), h: "h4", mark: done,
+            label: done ? "Answered" : "Needs " + x.decider + "'s call" });
+        card.setAttribute("data-call", String(i));
+        side.appendChild(card);
       });
       var ch = Array.isArray(Q.changes) ? Q.changes : [];
       if (ch.length) side.appendChild(section("progress:changes", "Changed recently", ch.length + (ch.length === 1 ? " change" : " changes"), [
@@ -1703,15 +1767,11 @@
    * one. Signed out, a record the public read cannot see counts as open. */
   function todoCount(Q) {
     var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
-    var mine = state.review && state.review.records ? state.review.records : null;
     var open = 0, first = -1;
     calls.forEach(function (c, i) {
       var refs = callRefs(c), n = 0;
       if (!refs.length) n = 1;
-      refs.forEach(function (ref) {
-        var p = findRecord(mine, ref) || findRecord(state.records, ref);
-        if (!p || stateLine(p).waiting) n++;
-      });
+      refs.forEach(function (ref) { if (!refAnswered(ref)) n++; });
       if (n && first < 0) first = i;
       open += n;
     });
@@ -1756,21 +1816,60 @@
    * "It would be nice if you could show a split view like this on the Prog Rev tab so I don't have
    * to do it manually." Side by side opens the record beside its catalog page: the page in a frame
    * on the left (on top below 900px), the record with its blocks and Your reading on the right,
-   * each scrolling on its own. A college's site may refuse to be framed, and the browser does not
-   * tell this page; kb/catalog_framing.json says which hosts refused when the runner asked. Such a
-   * host's page opens in a window of its own on the left half of the screen instead. The frame is
-   * sandboxed without top navigation, so a catalog's frame-busting script cannot take the tab. */
+   * each scrolling on its own. The frame is sandboxed without top navigation, so a catalog's
+   * frame-busting script cannot take the tab.
+   *
+   * A college's site may refuse to be framed, and the browser does not tell this page;
+   * kb/catalog_framing.json says which hosts refused when the runner asked (Cerritos's among
+   * them). Such a page opens in a window of its own on the left half. Sam, 2026-10-10: "it closes
+   * when I click on the program requirements side to scroll down and I have to click show each
+   * time": COBI's window filled the screen, so a click on it covered the catalog. On a wide
+   * screen the record therefore opens in a window of its own on the right half (the reading
+   * room), and the two windows never overlap. A browser lets one click open one window, so the
+   * first record takes two clicks (the record, then Show the catalog on the left); Next waiting
+   * record then moves both windows on one click. A narrow screen keeps the record here and opens
+   * the catalog in a tab. */
   var split = { on: false, node: null, opener: null, inert: [], key: null, changed: false };
   function hostOf(url) { var m = /^https?:\/\/([^\/?#:]+)/i.exec(String(url || "")); return m ? m[1].toLowerCase() : ""; }
   function framingOf(url) {
     var h = state.framing && state.framing[hostOf(url)];
     return h && typeof h.frames === "boolean" ? h.frames : null;
   }
-  function openCatalogWindow(url) {
+  function screenBox() {
     var sc = window.screen || {};
-    var w = Math.max(480, Math.floor((sc.availWidth || window.innerWidth || 1280) / 2));
-    var h = sc.availHeight || window.innerHeight || 800;
-    window.open(url, "prh-catalog", "popup,noopener,left=0,top=0,width=" + w + ",height=" + h);
+    var w = sc.availWidth || window.innerWidth || 1280, h = sc.availHeight || window.innerHeight || 800;
+    return { left: sc.availLeft || 0, top: sc.availTop || 0, half: Math.max(480, Math.floor(w / 2)), w: w, h: h };
+  }
+  function wideScreen() { return (window.innerWidth || 0) >= 900 && screenBox().w >= 1000; }
+  /* The catalog in its named window on the left half: a second call moves the same window to
+     the next page. Its opener is cut, so the college's page cannot reach this one. */
+  function openCatalogWindow(url) {
+    var b = screenBox();
+    var w = window.open(url, "prh-catalog", "popup,left=" + b.left + ",top=" + b.top + ",width=" + b.half + ",height=" + b.h);
+    if (!w) return null;
+    try { w.opener = null; } catch (e) { /* already the college's page */ }
+    try { w.focus(); } catch (e) { /* the browser decides */ }
+    return w;
+  }
+  /* The record in COBI's own page, in a named window on the right half. A window already
+     reading takes the next record in place; a new one loads the tab and opens it there. */
+  function openRecordWindow(p) {
+    var b = screenBox(), key = p.college + "|" + p.control_number;
+    var w = window.open("", "prh-record", "popup,left=" + (b.left + b.half) + ",top=" + b.top + ",width=" + (b.w - b.half) + ",height=" + b.h);
+    if (!w) return false;
+    var M = null;
+    try { M = w.CPL_PROGRAM_REQUIREMENTS; } catch (e) { M = null; }
+    if (M && typeof M.openKey === "function" && M.openKey(key)) { try { w.focus(); } catch (e) { /* */ } return true; }
+    var u = window.location.pathname + "?prh_split=" + encodeURIComponent(key) + "#program-requirements";
+    try { w.location.href = u; } catch (e) { return false; }
+    return true;
+  }
+  function openKey(key) {
+    var k = String(key || "").split("|");
+    var p = recordFor({ college: k[0], control_number: k.slice(1).join("|") });
+    if (!p) return false;
+    openSplit(p, null);
+    return true;
   }
   function splitButton(p) {
     var b = el("button", { cls: "prh-word", type: "button", text: "Side by side",
@@ -1779,20 +1878,60 @@
     b.addEventListener("click", function () { openSplit(p, b); });
     return b;
   }
+  /* The next record on the same call still waiting on a reading, after this one. */
+  function nextWaiting(p) {
+    var Q = state.progress && state.progress.queue, calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    for (var i = 0; i < calls.length; i++) {
+      var refs = callRefs(calls[i]);
+      var at = -1;
+      refs.forEach(function (r, j) { if (r.college === p.college && r.control_number === p.control_number) at = j; });
+      if (at < 0) continue;
+      for (var n = 1; n < refs.length; n++) {
+        var ref = refs[(at + n) % refs.length], q = recordFor(ref);
+        if (q && q.source_url && q.requirements_fp && stateLine(q).waiting) return q;
+      }
+      return null;
+    }
+    return null;
+  }
+  function onCall(p) {
+    var Q = state.progress && state.progress.queue;
+    return !!(Q && Array.isArray(Q.calls) && Q.calls.some(function (c) {
+      return callRefs(c).some(function (r) { return r.college === p.college && r.control_number === p.control_number; });
+    }));
+  }
   function openSplit(p, opener) {
+    var frames = framingOf(p.source_url);
+    if (frames === false && !RECORD_KEY && wideScreen() && openRecordWindow(p)) return;
+    var carry = split.changed, back = split.on ? split.opener : null;
     closeSplit(true);
     var name = p.program_title + " " + award(p.award);
-    var frames = framingOf(p.source_url);
-    var own = el("button", { cls: "prh-word", type: "button", text: "Open the catalog in its own window" });
+    /* In the reading room the catalog always has its window, so the record takes the whole one. */
+    var solo = !!RECORD_KEY;
+    var said = el("span", { cls: "prh-small prh-quiet", "aria-live": "polite" });
+    var own = el("button", { cls: "prh-word", type: "button",
+      text: solo ? "Show the catalog on the left" : "Open the catalog in its own window" });
     own.addEventListener("click", function () { openCatalogWindow(p.source_url); });
+    var next = null;
+    if (onCall(p)) {
+      next = el("button", { cls: "prh-word", type: "button", text: "Next waiting record" });
+      next.addEventListener("click", function () {
+        var q = nextWaiting(p);
+        if (!q) { said.textContent = "Every record on this call has your reading."; return; }
+        if (solo || framingOf(q.source_url) === false) openCatalogWindow(q.source_url);
+        openSplit(q, split.opener);
+      });
+    }
     var close = el("button", { cls: "prh-word", type: "button", text: "Close", "aria-label": "Close side by side" });
     close.addEventListener("click", function () { closeSplit(); });
-    var cat;
-    if (frames === false) {
-      var again = el("button", { cls: "prh-word", type: "button", text: "Open it again on the left" });
+    var cat = null;
+    if (solo) {
+      cat = null;
+    } else if (frames === false) {
+      var again = el("button", { cls: "prh-word", type: "button", text: "Open it again" });
       again.addEventListener("click", function () { openCatalogWindow(p.source_url); });
       cat = el("div", { cls: "prh-split-cat prh-split-refused" }, [
-        el("p", { text: shortCollege(p.college) + "'s catalog site does not let another site show its pages, so the catalog page opened in a window of its own on the left half of your screen." }),
+        el("p", { text: shortCollege(p.college) + "'s catalog site does not let another site show its pages, so the catalog page opened in a window of its own." }),
         el("p", {}, [again])]);
       openCatalogWindow(p.source_url);
     } else {
@@ -1802,8 +1941,8 @@
     }
     var bar = el("div", { cls: "prh-split-bar" }, [
       el("h3", { id: "prh-split-t", tabindex: "-1" }, [name, el("span", { cls: "prh-small prh-quiet", text: shortCollege(p.college) + " · " + p.control_number })]),
-      frames === false ? null : own, close]);
-    var node = el("div", { cls: "prh prh-split", role: "dialog", "aria-modal": "true", "aria-labelledby": "prh-split-t" }, [
+      frames === false && !solo ? null : own, next, close, said]);
+    var node = el("div", { cls: "prh prh-split" + (solo ? " prh-split-solo" : ""), role: "dialog", "aria-modal": "true", "aria-labelledby": "prh-split-t" }, [
       bar, el("div", { cls: "prh-split-panes" }, [cat,
         el("div", { cls: "prh-split-rec", tabindex: "0", role: "region", "aria-label": "The record for " + name }, [recordCard(p, { split: true })])])]);
     node.addEventListener("keydown", function (e) {
@@ -1815,12 +1954,13 @@
     split.inert.forEach(function (n) { n.setAttribute("inert", ""); });
     document.documentElement.classList.add("prh-split-open");
     document.body.appendChild(node);
-    split.on = true; split.node = node; split.opener = opener || null; split.changed = false;
+    split.on = true; split.node = node; split.opener = opener || back || null; split.changed = carry;
     split.key = p.college + "|" + p.control_number;
     document.getElementById("prh-split-t").focus();
   }
   /* quiet: a new split replaces this one, so focus stays where the new one puts it. A verdict
-     saved here redraws the tab, so the card behind shows it too. */
+     saved here redraws the tab, so the card behind shows it too. In the reading room, Close
+     closes the window. */
   function closeSplit(quiet) {
     if (!split.on) return;
     var key = split.key, opener = split.opener, changed = split.changed;
@@ -1829,6 +1969,7 @@
     document.documentElement.classList.remove("prh-split-open");
     split.on = false; split.node = null; split.opener = null; split.inert = []; split.key = null; split.changed = false;
     if (quiet) return;
+    if (RECORD_KEY) { try { window.close(); } catch (e) { /* a window the reader opened by hand stays */ } }
     if (changed && document.getElementById(ROOT_ID)) {
       render();
       opener = null;
@@ -1964,6 +2105,7 @@
     collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary,
     machineFails: machineFails, verdictError: verdictError, VERDICT_RPC: VERDICT_RPC,
     todoCount: todoCount, goToTodos: goToTodos, openSplit: openSplit, closeSplit: closeSplit, framingOf: framingOf, FRAMING_URL: FRAMING_URL,
+    openKey: openKey, nextWaiting: nextWaiting, callAnswered: callAnswered, RECORD_KEY: RECORD_KEY,
     MILESTONES: MILESTONES, PARTS: PARTS, progressContext: progressContext, headlineFacts: headlineFacts, nextRun: nextRun, nextWeekly: nextWeekly
   };
 })();
