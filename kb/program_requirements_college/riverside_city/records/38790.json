@@ -1,0 +1,260 @@
+{
+ "college": "Riverside City College",
+ "control_number": "38790",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5985",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5498,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5498,
+    "output_tokens": 2147,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2147,
+  "output_tokens_details": {
+   "thinking_tokens": 600
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06493,
+ "ms": 17633,
+ "seconds": 18.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 10,
+   "share": 0.8,
+   "missing": [
+    "MAT1A",
+    "MAT1B"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "why": [
+    "the blocks sum to 22.0-22.0; the catalog states 26.0-26.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geology - Associate in Science for Transfer (ADT) - AS942 (CalGETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Demonstrate an understanding of the physical structure and natural processes which have shaped the universe, solar system, and Earth.",
+    "Identify and classify geological materials and demonstrate an understanding of their chemical composition andstructure.",
+    "Apply the scientific method to solve geological problems.",
+    "Summarize the geologic timescale and explain its scientific basis, recount significant events in Earth history and understand the basics of common absolute- and relative-age dating methods.",
+    "Express the role of geology in everyday life, appreciate the extent of human impact on Earth systems and environments, and explain the geological processes potentially giving rise to natural hazards."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "GEO-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEO-1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEO-1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHE-1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-1AH",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHE-1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-1BH",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MATH-C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-C2210H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAT 1A",
+    "why": "not in the text; catalog lists MATH-C2210/MATH-C2210H instead"
+   },
+   {
+    "code": "MAT 1B",
+    "why": "not in the text; catalog lists MATH-C2220 instead"
+   }
+  ],
+  "notes": [
+   "The 'Units: 26.00' figure appears under the 'Required Courses' heading but equals the program total; it was recorded as the stated total for the first block, though it likely refers to all requirements combined.",
+   "The math block is printed as 'Select one of the following: 4.00' over MATH-C2210, MATH-C2210H and MATH-C2220. The stated total of 26 units (3+1+4+5+5+8) and the description's 'two semesters of single variable calculus' suggest the intended rule is MATH-C2210 or MATH-C2210H plus MATH-C2220. The rule was recorded as printed; a reviewer should check it.",
+   "The page prints three headings: two read 'AS942 (CalGETC)' and one reads 'AS941 (CSUGE)/ AS942 (IGETC)'. The closing text names Cal-GETC, so the Cal-GETC heading was used. The other heading may be left over from an earlier catalog year.",
+   "GEO-1, GEO-1L, GEO-1B and CHE-1BH are marked '( Historical )' in the catalog.",
+   "The closed list names MATH C2210H but not MATH C2210 or MATH C2220, so those two were marked as catalog additions.",
+   "Codes are recorded as the catalog prints them, with hyphens (e.g. GEO-1), and match the closed-list codes that use spaces.",
+   "The program learning outcomes are printed once for the Geology ADT page and were recorded for this award. The typo 'andstructure' was kept as printed."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

@@ -1,0 +1,301 @@
+{
+ "college": "Riverside City College",
+ "control_number": "43896",
+ "shape": "adt",
+ "title": "Social Justice: LGBTQ Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6253",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6235,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6235,
+    "output_tokens": 2718,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2718,
+  "output_tokens_details": {
+   "thinking_tokens": 790
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0793,
+ "ms": 21579,
+ "seconds": 22.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 18,
+   "share": 0.889,
+   "missing": [
+    "HIS34",
+    "HIS38"
+   ],
+   "unexplained": [
+    "HIS34",
+    "HIS38"
+   ],
+   "pass": false
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "HIST34",
+    "HIST38",
+    "SOC48"
+   ],
+   "flagged": [
+    "SOC48"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    15.0,
+    16.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "why": [
+    "the blocks sum to 15.0-16.0; the catalog states 18.0-19.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Justice: LGBTQ Studies - Associate in Arts for Transfer (ADT) - AA1080 (CalGETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Utilize queer and transgender theory along with feminist theory to explore and analyze conceptions of power and oppression.",
+    "Employ the principles of Queer and Transgender Studies to identify, explore, and analyze examples of prejudice, discrimination, or oppression in historical or cultural frameworks.",
+    "Examine the process of gender socialization and critique gender binaries.",
+    "Analyze queer and transgender experiences and gender/sexuality politics across cultures.",
+    "Engage critical thinking and communication skills with a focus on cultural and global awareness.",
+    "Use statistics or research methods in the behavioral and social sciences to better analyze issues related to Queer and Transgender Studies.",
+    "Analyze issues across multiple disciplines through the lens of gender and sexuality."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ETS-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC-15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "HIST-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-38",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHI-14",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC-48",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC-48",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Required Courses' heading prints Units: 9.00, but the courses listed under it (ETS-1 at 3 units plus one 3-unit course from the 'Select one of the following' list) total 6 units; the stated 9 is recorded on the Required Courses block as printed. With 9-10 elective units the printed program total of 18-19 also implies 9 required units. Reviewer should check whether a required course is missing from the text.",
+   "Elective Courses: 'Choose three courses from at least two areas.' Area 1 – History or Government: HIST-34, HIST-38. Area 2 - Arts and Humanities: ETS-7, ETS-8, ETS-13/PHI-14. Area 3 - Social Science: BIO-16, COMM-13, ETS-40, PSYC-11, SOC-21. Area 4 - Quantitative Reasoning and Research Methods: STAT-C1000, STAT-C1000H, PSYC-48, SOC-48. The at-least-two-areas constraint is not captured by the block rule.",
+   "ETS-13 and PHI-14 are printed under 'Only one may be used', so they are recorded as alternatives of a single choice. STAT-C1000, STAT-C1000H, PSYC-48 and SOC-48 are also printed under 'Only one may be used' and are recorded as alternatives of a single choice.",
+   "The catalog prints HIST-34 and HIST-38, while the closed list has HIS 34 and HIS 38 with the same numbers and titles. They are treated as the same courses (catalog_addition false). Reviewer should confirm the subject prefix.",
+   "SOC-48 (Statistics for the Behavioral Sciences) is not in the closed list and is marked catalog_addition true.",
+   "Closed-list PSYC48 is matched to the printed PSYC-48.",
+   "The catalog's ETS-8 title is 'Introduction to Black Feminism and Womanism', which differs slightly from the closed-list title 'Introduction to Black Feminism'."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

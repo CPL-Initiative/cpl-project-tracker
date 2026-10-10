@@ -1,0 +1,150 @@
+{
+ "college": "Riverside City College",
+ "control_number": "44190",
+ "shape": "certificate",
+ "title": "CISCO Networking",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5924",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4945,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4945,
+    "output_tokens": 1024,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1024,
+  "output_tokens_details": {
+   "thinking_tokens": 265
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04026,
+ "ms": 8716,
+ "seconds": 9.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CISCO Networking - Certificate of Achievement - CE1083",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate an understanding of routing fundamentals,subnets and IP addressing schemes.",
+    "Explain the command and steps required to configurerouter host tables, and interfaces within the RIP, EIGRPand OSPF protocols.",
+    "Demonstrate an understanding of switching concepts andLAN design to include the use of Virtual LANs with LANtrunking configured by the Spanning Tree Protocol.",
+    "Define and demonstrate the concepts of Cisco’simplementation of ISDN networking including WAN linkoptions."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CIS-26A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-26B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-26C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page header prints 'CISCO Networking - Certificate of Achievement - CE1083' twice and then 'CISCO Networking - Certificate of Achievement - CE920'. Only one requirements section follows. A reviewer should confirm which control number applies to this award.",
+   "The catalog prints codes with a hyphen (CIS-26A, CIS-26B, CIS-26C). These were matched to the closed-list codes CIS 26A, CIS 26B and CIS 26C, so they are not marked as catalog additions.",
+   "The outcomes are copied as printed. The source text joins some words with no space (e.g., 'fundamentals,subnets', 'configurerouter', 'EIGRPand', 'andLAN', 'LANtrunking', 'Cisco’simplementation', 'linkoptions'), probably where line breaks were lost. A reviewer may want to check these against the original page."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

@@ -1,0 +1,273 @@
+{
+ "college": "Riverside City College",
+ "control_number": "40831",
+ "shape": "adt",
+ "title": "Film, Television, and Electronic Media",
+ "award": "A.S. T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5979",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5819,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5819,
+    "output_tokens": 2461,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2461,
+  "output_tokens_details": {
+   "thinking_tokens": 786
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0725,
+ "ms": 19429,
+ "seconds": 19.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.5
+   ],
+   "stated": [
+    18.0,
+    18.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Film, Television, and Electronic Media - Associate in Science for Transfer (ADT) - AS994 (CalGETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Demonstrate proficiency in the use of key technologies of motion picture and video production including cinematography, editing, sound recording and editing, and lighting.",
+    "Plan and produce film projects from concept to finished product, meeting industry standards for camerawork, sound, lighting, and editing and demonstrating understanding of film-making as an aesthetic, cultural, technological, and collaborative form of expression.",
+    "Identify the major elements of film expression: mise-enscene, the shot, editing, sound, narrative, and genre in film; perceive the historical, multicultural, and international technologies, traditions, and values that have influenced film's development; and apply college-level methods of research, analysis, and evaluation to film, and produce college-level essays and research papers."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FTV-38A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-48",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-71A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the list below",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FST-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FST-1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the list below",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3.5
+    },
+    "courses": [
+     {
+      "code": "FST-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FST-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FST-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FST-5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-44A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-64A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-65",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-72",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first 'Select one course from the list below' lists only FST-1 and its honors twin FST-1H; recorded as one required entry (rule 'all') with FST-1H as an alternative.",
+   "The 'Units: 18.00- 18.50' under Required Courses and 'Total : 18.00- 18.50' cover the whole major; the four required FTV courses have no separate printed block total.",
+   "Headings are inconsistent: two lines read 'AS994 (CalGETC)' and one reads 'AS993 (CSUGE)/AS994 (IGETC)'. The description calls it an 'Associate in Arts' and names IGETC/CSUGE, while the closing paragraph names an Associate in Science and Cal-GETC; ge_pattern recorded as Cal-GETC per the closing paragraph and the first heading. Reviewer should confirm the description text is not carried over from an earlier catalog year.",
+   "Program Learning Outcomes are printed once for the program and recorded for this award.",
+   "Several courses are marked '( Historical )' in the catalog (FTV-38A, FTV-41, FTV-71A, FTV-42, FTV-44A, FTV-64A, FTV-72, FTV-79); they are still listed as requirements.",
+   "Catalog prints FTV-65 title as 'The Director’s Art in Filmmaking'; closed list reads 'Director's Art in Filmmaking'."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

@@ -1,0 +1,329 @@
+{
+ "college": "Riverside City College",
+ "control_number": "22742",
+ "shape": "certificate",
+ "title": "Business Administration: Human Resources",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5913",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5153,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5153,
+    "output_tokens": 2491,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2491,
+  "output_tokens_details": {
+   "thinking_tokens": 808
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07043,
+ "ms": 20655,
+ "seconds": 21.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 13,
+   "codes": [
+    "ACC1A",
+    "BUS10",
+    "BUS10H",
+    "BUS18A",
+    "BUS20",
+    "BUS22",
+    "BUS24",
+    "CAT3",
+    "CIS1A",
+    "CIS3",
+    "MAG51",
+    "MAG52",
+    "MAG56"
+   ],
+   "flagged": [
+    "ACC1A",
+    "BUS10",
+    "BUS10H",
+    "BUS18A",
+    "BUS20",
+    "BUS22",
+    "BUS24",
+    "CAT3",
+    "CIS1A",
+    "CIS3",
+    "MAG51",
+    "MAG52",
+    "MAG56"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Use technology to analyze business decisions and to enhance business communications.",
+    "Apply basic business and accounting calculations and analyses. Have an understanding of legal practices relating to business.",
+    "Apply sound management practices.",
+    "Apply sound human resources management practices. Identify, describe and analyze the role of training and development, along with key influences that impact this function within human resources management.",
+    "Describe and analyze the role of employee labor relations in human resources management, along with key influences impacting labor relations today.",
+    "Understand the role that Human Resources Management plays in the successful operations of a business or organization.",
+    "Analyze and explain various human resources laws and policies required for a professional in the field to know and understand."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ACC-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS-18A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS-10H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS-24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAT-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Concentration Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MAG-56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MAG-51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAG-52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAG-54",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG-70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one requirements list (codes AS623C/CE623) shared by the A.S. degree and the Certificate of Achievement; no separate certificate section heading exists, so 'Program Requirements' is recorded as the section heading.",
+   "The program learning outcomes are printed once for the program as a whole; the certificate shares them and they are recorded here.",
+   "Two outcome lines each contain two sentences (e.g., 'Apply basic business and accounting calculations and analyses. Have an understanding of legal practices relating to business.'); recorded as printed, one entry per line. A reviewer may check whether these were meant as separate outcomes.",
+   "The 'Units: 18.00' total for Required Core Courses covers the three required courses plus the three 'Select one course' choices; it is recorded on the first block, and each 'Select one course' block carries its own printed 3.00.",
+   "BUS-10H is treated as the honors twin of BUS-10.",
+   "ACC-1A, BUS-10H and CIS-1A are marked '( Historical )' in the catalog; their status in the 2026-2027 catalog should be checked.",
+   "Closed-list codes MAG 54 and MAG 70 appear in the catalog as MAG-54 and MAG-70 and are treated as the same courses.",
+   "Total of 30.00 units is printed for the program; the certificate award title cites 18 or greater semester units, consistent with the 30-unit total."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

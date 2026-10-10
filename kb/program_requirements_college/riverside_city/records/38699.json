@@ -1,0 +1,229 @@
+{
+ "college": "Riverside City College",
+ "control_number": "38699",
+ "shape": "certificate",
+ "title": "Music Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6021",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4847,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4847,
+    "output_tokens": 1457,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1457,
+  "output_tokens_details": {
+   "thinking_tokens": 401
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04853,
+ "ms": 11205,
+ "seconds": 11.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "MUS10",
+    "MUS11",
+    "MUS8A",
+    "MUS8B",
+    "MUS9",
+    "MUSP11"
+   ],
+   "flagged": [
+    "MUS10",
+    "MUS11",
+    "MUS8A",
+    "MUS8B",
+    "MUS9",
+    "MUSP11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    17.0
+   ],
+   "stated": [
+    16.0,
+    17.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Music Technology - Certificate of Achievement - CE928",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Assemble, mix and master complete MIDI/Digital Audio compositions and film scores.",
+    "Utilize MIDI/Digital audio software and hardware including computers, controllers, synthesizers, sequencers, samplers, effects processors, microphones and mixers.",
+    "Communicate effectively and work cooperatively with film directors and music producers."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "MUS-9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS-11",
+        "units": 2,
+        "catalog_addition": true
+       },
+       {
+        "code": "MUS-P11",
+        "units": 2,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS-3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-8A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS-8B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Elective Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "MUS-32A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-32B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-32C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-32D",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes with a hyphen (MUS-3, MUS-32A); these were matched to the closed-list codes MUS 3 and MUS 32A-32D.",
+   "Within Required Courses, the student takes one of MUS-9 (3 units), MUS-11 (2 units), or MUS-P11 (2 units). This was recorded as one entry with alternatives. The catalog prints this choice as 2.00-3.00 units, which accounts for the block range of 15-16.",
+   "MUS-11, MUS-P11, MUS-8A, MUS-8B and MUS-10 are marked '( Historical )' in the catalog, yet they are still listed as requirements. None of them, nor MUS-9, appears in the closed list. A reviewer should check whether these requirements are current.",
+   "The total of 16-17 units is below the 16-to-fewer-than-30-unit range only at its low end boundary; 16 units falls within the award category."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

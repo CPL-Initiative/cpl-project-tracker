@@ -1,0 +1,267 @@
+{
+ "college": "Riverside City College",
+ "control_number": "14672",
+ "shape": "degree",
+ "title": "Exercise, Sport and Wellness: Coaching",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5976",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5312,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5312,
+    "output_tokens": 1766,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1766,
+  "output_tokens_details": {
+   "thinking_tokens": 357
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05657,
+ "ms": 13609,
+ "seconds": 14.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "KIN10",
+    "KIN14",
+    "KIN16",
+    "KIN25",
+    "KIN27",
+    "KIN29",
+    "KIN33",
+    "KIN34"
+   ],
+   "flagged": [
+    "KIN10",
+    "KIN14",
+    "KIN16",
+    "KIN25",
+    "KIN27",
+    "KIN29",
+    "KIN33",
+    "KIN34"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Exercise, Sports & Wellness: Coaching - Associate of Science Degree and Certificate of Achievement - AS2002/AS2002C/CE2002",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate and apply knowledge of health-related fitness and wellness, injury prevention and management, strength and conditioning, and nutrition.",
+    "Identify, utilize, and apply necessary principles of sport management, event management, emergency management, legal liability, and problem solving.",
+    "Demonstrate an organized approach to communication while utilizing appropriate behavior skills and recognizing different social attitudes.",
+    "Recognize, describe, utilize and apply the basic principles of coaching theory including goal setting and solution-oriented practice planning."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (21 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "KIN-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses (3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "KIN-24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-29",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page heading covers both the A.S. Degree and the Certificate of Achievement (AS2002/AS2002C/CE2002); one set of requirements and one Program Learning Outcomes list are printed for the program as a whole, and the A.S. Degree shares them.",
+   "A third heading line names 'Coaching Emphasis' with codes AS599/AS599B/AS599C/CE599, and the closing degree paragraph also says 'Coaching Emphasis'; this may be a legacy/prior program title — reviewer should confirm the requirements belong to the 2026-2027 AS2002 award.",
+   "Several required courses are marked '( Historical )' in the catalog (KIN-4, KIN-14, KIN-16, KIN-35) as is elective KIN-33; recorded as printed.",
+   "Closed-list codes 'KIN4' and 'KIN28' (no space) were matched to catalog KIN-4 and KIN-28.",
+   "The degree text mentions general education but names no specific GE pattern.",
+   "Elective block 'Elective Courses (3 units)' read as choose courses totaling 3 units (one 3-unit course)."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

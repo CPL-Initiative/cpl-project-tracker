@@ -1,0 +1,347 @@
+{
+ "college": "Riverside City College",
+ "control_number": "44363",
+ "shape": "adt",
+ "title": "Social Justice Studies: Chicano Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5876",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6364,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6364,
+    "output_tokens": 3208,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3208,
+  "output_tokens_details": {
+   "thinking_tokens": 960
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08962,
+ "ms": 25528,
+ "seconds": 26.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 21,
+   "share": 0.81,
+   "missing": [
+    "HIS25",
+    "HIS31",
+    "HIS32",
+    "HIS33"
+   ],
+   "unexplained": [
+    "HIS25",
+    "HIS31",
+    "HIS32",
+    "HIS33"
+   ],
+   "pass": false
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ENGL25",
+    "HIST25",
+    "HIST31",
+    "HIST32",
+    "HIST33",
+    "SOC48"
+   ],
+   "flagged": [
+    "ENGL25",
+    "SOC48"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Understand the historical foundations of Chicanx and Latinx Studies and make connections with contemporary white supremacy and racial justice issues.",
+    "Read, write, and discuss orally a variety of texts written by and about Chicanxs and the Chicanx movement.",
+    "Use art, film, music, and literature to critically examine and explore the history and struggle of Chicanxs and Latinxs in the United States and throughout Latin America.",
+    "Analyze the histories and experiences of Chicanxs and Latinxs and the contributions they have made to racial justice, social justice, and the fight for equality in the United States.",
+    "Examine the ethical and moral implications inherent in the experiences of Chicanxs and Latinxs in their quest for social, moral, and economic justice.",
+    "Compare and contrast Chicanx and Latinx experiences with other experiences that are a part of or separate from Latin American tradition.",
+    "Use qualitative and quantitative research methods in the behavioral and social sciences to better analyze issues related to Chicanx and Latinx Studies."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ETS-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC-15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETS-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ETS-21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-21",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETS-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC-10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC-48",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC-48",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog page does not print a program title heading for this section; 'Program Requirements' is the heading used. The text begins mid-word ('icanx and Latinx Studies...'), so an earlier heading may have been cut off.",
+   "The 'Required Courses' heading prints 'Units: 9.00' covering ETS-1 plus the two 'Select one of the following' choices; the total is not attached to the ETS-1 block alone.",
+   "Elective Courses: 'Choose three courses from at least two areas' (9.00-10.00 units). Areas: Area 1 History or Government (ETS-21/POLS-21, HIST-25, HIST-32, HIST-33, POLS-20); Area 2 Arts and Humanities (ARTH-13, ARTH-14, ENGL-25, ETS-7, SPA-12); Area 3 Social Science (ETS-40, SOC-10/SOC-10H); Area 4 Quantitative Reasoning and Research Methods (STAT-C1000/STAT-C1000H/PSYC-48/SOC-48). Recorded as one block of three courses; the at-least-two-areas constraint is not expressible in the block structure.",
+   "'Only one may be used' groups (ETS-21/POLS-21; SOC-10/SOC-10H; STAT-C1000/STAT-C1000H/PSYC-48/SOC-48) are recorded as one entry with alternatives.",
+   "Catalog prints HIST-25, HIST-31, HIST-32, HIST-33 while the closed list stores HIS 25, HIS 31, HIS 32, HIS 33 with matching titles; treated as the same courses (not catalog additions). PSYC-48 matched to closed-list PSYC48.",
+   "ENGL-25 (Latinx Literature of the United States) and SOC-48 (Statistics for the Behavioral Sciences) are not in the closed list and are marked as catalog additions.",
+   "The description mentions the California State General Education Pattern, while the degree award paragraph names Cal-GETC; Cal-GETC recorded as the GE pattern.",
+   "Program Learning Outcomes are printed once for the program; this A.A-T degree is the only award in the section and they are recorded for it."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

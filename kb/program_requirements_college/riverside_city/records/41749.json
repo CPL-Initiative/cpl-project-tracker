@@ -1,0 +1,502 @@
+{
+ "college": "Riverside City College",
+ "control_number": "41749",
+ "shape": "adt",
+ "title": "Social Justice Studies: General",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6050",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7352,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7352,
+    "output_tokens": 5054,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5054,
+  "output_tokens_details": {
+   "thinking_tokens": 1938
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.13049,
+ "ms": 39846,
+ "seconds": 40.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 37,
+   "listed": 43,
+   "share": 0.86,
+   "missing": [
+    "HIS14",
+    "HIS15",
+    "HIS28",
+    "HIS31",
+    "HIS34",
+    "HIS44"
+   ],
+   "unexplained": [
+    "HIS14",
+    "HIS15",
+    "HIS28",
+    "HIS31",
+    "HIS34",
+    "HIS44"
+   ],
+   "pass": false
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "ENGL25",
+    "ETS28",
+    "HIST14",
+    "HIST15",
+    "HIST28",
+    "HIST29",
+    "HIST31",
+    "HIST34",
+    "HIST44",
+    "SOC48"
+   ],
+   "flagged": [
+    "ENGL25",
+    "ETS28",
+    "HIST29",
+    "SOC48"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    12.0,
+    13.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "why": [
+    "the blocks sum to 12.0-13.0; the catalog states 18.0-19.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Justice Studies - Associate in Arts for Transfer (ADT)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Utilize theoretical perspectives as they relate to structures and systems of power and oppression including critical ethnic studies, Critical Race Theory (CRT), feminist theory, or queer and trans theory.",
+    "Employ the principles of Social Justice Studies, Ethnic Studies, or Women, Gender, & Sexuality Studies to identify, explore, and analyze examples of prejudice, discrimination, or oppression in historical or cultural frameworks.",
+    "Engage critical thinking and communication skills with a focus on cultural and global awareness.",
+    "Use statistics or research methods in the behavioral and social sciences to better analyze issues related to Social Justice Studies.",
+    "Analyze issues across multiple disciplines through a social justice lens."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETS-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC-10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "HIST-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-14",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-15",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-28",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETS-29",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-29",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-31",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-44",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-21",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-23",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHI-14",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETS-27",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-9H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC-48",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC-48",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints two headings for this degree: 'Social Justice Studies: General - Associate in Arts for Transfer (ADT) - AA1004 (CalGETC)' and '... - AAA1004 (CalGETC)', followed by 'Social Justice Studies - Associate in Arts for Transfer (ADT)'. All appear to refer to the same single program section.",
+   "Required Courses heading states 'Units: 9.00' but only one 'Select one of the following' list (3.00 units) is printed under it. The program total of 18.00-19.00 equals 9 + 9-10, so the required section may be cut off or mislabelled; recorded only the printed select-one list (stated 3). Reviewer should check the source.",
+   "Elective Courses rule is 'Select 3 courses from at least two areas' (9.00-10.00 units). Recorded as one choose_courses block of 3. The two-area constraint is not expressible in the schema. Area membership: Area 1 - History or Government (HIST-34 through ETS-23/POLS-23); Area 2 - Arts and Humanities (ENGL-18 through PHI-34); Area 3 - Social Science (ANT-4/ETS-27 through SOC-50); Area 4 - Qualitative Reasoning and Research Methods (STAT-C1000/STAT-C1000H/PSYC-48/SOC-48).",
+   "Area unit figures printed (Area 1 6.00, Area 2 36.00, Area 3 12.00, Area 4 4.00) do not appear to be selection minimums; they were not recorded as block totals.",
+   "HIST-34 is printed twice in Area 1; listed once.",
+   "The catalog prints history courses as 'HIST-' while the closed list uses 'HIS'. HIST-14, HIST-15, HIST-28, HIST-31, HIST-34 and HIST-44 were treated as the closed-list HIS courses (catalog_addition false). HIST-29 has no HIS 29 in the closed list, so it is marked as an addition.",
+   "Catalog additions not in the closed list: ETS-28, HIST-29, ENGL-25 and SOC-48.",
+   "PSYC-48 is matched to closed-list 'PSYC48', for which the state file stores no units; the catalog prints 4.00.",
+   "ETS-1 appears both in the Required Courses select-one list and in Area 2 of the electives; it is recorded in both blocks.",
+   "ETS-8 is titled 'Introduction to Black Feminism and Womanism' in the catalog, versus 'Introduction to Black Feminism' in the closed list.",
+   "The program learning outcomes are printed once for the program, and this award shares them.",
+   "Degree requires 60 CSU-transferable units with Cal-GETC and minimum 2.0 GPA; major courses need a grade of C or better (or P)."
+  ]
+ },
+ "extracted_run": "38082999076"
+}
