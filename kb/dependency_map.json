@@ -4,8 +4,8 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 6,
-  "file_datasets": 620,
-  "external_services": 164,
+  "file_datasets": 621,
+  "external_services": 165,
   "consumers": 426,
   "workflows": 47,
   "data_js_files": 69,
@@ -1906,6 +1906,18 @@
      "direction": "read",
      "how": "url",
      "line": 119
+    }
+   ],
+   "main_committers": []
+  },
+  "external:rccd.curriqunet.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 463
     }
    ],
    "main_committers": []
@@ -12010,6 +12022,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_requirements_college/riverside_city/capture_preview.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 820
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_maps_sample.json": {
    "consumers": [
     {
@@ -19009,7 +19034,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 667
+     "line": 860
     }
    ],
    "main_committers": []

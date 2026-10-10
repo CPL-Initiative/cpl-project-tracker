@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-10T17:16:55Z",
-  "session": 356,
-  "moniker": "SkyThicket",
+  "written_at": "2026-10-10T19:37:31Z",
+  "session": 357,
+  "moniker": "SkyCanopy",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_357_handoff.md",
+  "handoff": "docs/session_358_handoff.md",
   "unchecked": [
     {
       "college": "Santa Monica College",
@@ -4776,10 +4776,19 @@
     }
   ],
   "next_step": {
-    "title": "Read a sample of Mt. San Antonio's records",
-    "text": "Every Mt. San Antonio program the harvest could read is loaded for your reading, unchecked, with its course titles and CPL counts. Answer the ten on the call card below; the Approved programs at both colleges are being read and loaded."
+    "title": "Choose the next college on Open Asks Sheet 59",
+    "text": "The harvest now reads curriQunet catalogs as well as CourseLeaf ones; a free read of Riverside City found a page for 228 of its 262 programs. Sheet 59 proposes RCCD's three colleges next, and asks what to do with eight records the Approved re-reads no longer carry."
   },
   "calls": [
+    {
+      "title": "Choose the next college and the eight dropped records on Open Asks Sheet 59",
+      "text": "Card 1 proposes RCCD's three colleges next, each read free first and extracted where that read finds 85% of its programs (about $29). Card 2 proposes removing eight unchecked records that now show no page or another program's page, each kept in a receipt.",
+      "if_no_reply": "No new college is read, and the eight records stay as they are, unchecked.",
+      "view": {
+        "href": "https://claude.ai/artifact/5TquL7JV4vEQcGfsxx5V62",
+        "text": "Open Open Asks Sheet 59"
+      }
+    },
     {
       "title": "Read ten Mt. San Antonio records from the tab",
       "text": "Six pass the three machine checks and four fail one. Open each below to read its catalog page, then choose Confirm or Needs a fix right here; your answers go to the verdict log the next session reads.",
@@ -4847,9 +4856,25 @@
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
-    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10, each re-read the same day for the programs COCI lists as Approved: Cerritos files 305 records (265 passing the three machine checks), Mt. San Antonio 382 (346 passing)."
+    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10, each re-read the same day for the programs COCI lists as Approved: Cerritos files 305 records (265 passing the three machine checks), Mt. San Antonio 382 (346 passing). On Oct 10 the read learned curriQunet catalogs: Riverside City, read with no model calls, found a page for 228 of its 262 programs."
   },
   "changes": [
+    {
+      "at": "2026-10-10T18:05:00Z",
+      "text": "Open Asks Sheet 58 asked which college reads next and what to do with eight dropped records."
+    },
+    {
+      "at": "2026-10-10T18:21:00Z",
+      "text": "A college on a shared district catalog reads only its own part of the site."
+    },
+    {
+      "at": "2026-10-10T19:27:00Z",
+      "text": "The read learned curriQunet catalogs; Riverside City found a page for 228 of 262 programs with no model calls."
+    },
+    {
+      "at": "2026-10-10T19:30:00Z",
+      "text": "Open Asks Sheet 59 replaced sheet 58 before any reply, with RCCD's three colleges proposed next."
+    },
     {
       "at": "2026-10-10T16:51:00Z",
       "text": "The Approved records show their course titles, C-ID, CCN and M-ID numbers and CPL counts, like the rest."

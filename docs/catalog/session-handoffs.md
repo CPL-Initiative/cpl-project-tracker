@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-328 document(s).
+329 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 358 | [curriQunet catalogs read as data; the next college on Open Asks Sheet 59](../session_358_handoff.md) | 2026-10-10 |
 | 357 | [the display applied from the runner; Mt. San Antonio loaded; Approved programs read](../session_357_handoff.md) | 2026-10-10 |
 | 356 | [the sample held; the reading room; the blocks given their numbers](../session_356_handoff.md) | 2026-10-10 |
 | 355 | [Cerritos loaded; Sam reads the sample from his phone](../session_355_handoff.md) | 2026-10-09 |

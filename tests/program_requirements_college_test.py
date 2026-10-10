@@ -22,7 +22,9 @@ that names its listed courses. The ways that goes wrong are known in advance:
 Each is pinned below against the module's OWN functions, with no browser and no
 network. Run from repo root: python3 tests/program_requirements_college_test.py
 """
+import json
 import os
+import urllib.parse
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -207,6 +209,74 @@ check(got4["4"]["best"] is None and got4["4"]["lost"] == [PG[0]["url"]],
 tiny = {"control_number": "5", "title": "Automotive Electrical", "award": "Certificate of Achievement",
         "closed_list": [{"code": "ABC 101"}]}
 check(C.candidates(tiny, PG) == [], "a one-course list takes no page whose label does not name the program")
+
+check({"COS60A1", "COS60B3", "BAK80", "THE30"} <= C.page_codes("COS-60A1 Cosmetology\nCOS-60B3\nBAK-80 THE-30"),
+      "the code net reads a number ending in letters and digits (COS 60A1), as the exact test does")
+
+# ── curriQunet: the catalog's own JSON (S357) ──────────────────────────────
+print("curriQunet")
+check(C.cq_catalog_id(["https://rccd.curriqunet.com/Content/x.css",
+                       "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/124"]) == 124
+      and C.cq_catalog_id(["https://x.curriqunet.com/Catalog/_getNavigation?id=88&navigationtypeId=1"]) == 88
+      and C.cq_catalog_id(["https://x.edu/"]) is None,
+      "the catalog id comes from the calls the start page's scripts made")
+check(C.cq_base("https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111") ==
+      ("https://rccd.curriqunet.com", "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/")
+      and C.cq_base("https://irvine.curriqunet.com/Catalog/iq/48953")[1] == "https://irvine.curriqunet.com/Catalog/iq/",
+      "a node's view address is the catalog's prefix and the node's aliaspath")
+ACT = json.load(open(os.path.join(ROOT, "tests", "fixtures", "curriqunet_rcc_getpage_5878.json")))
+ttl, txt = C.cq_page_text(ACT)
+check(ttl.startswith("Acting - Associate of Arts Degree and Certificate of Achievement")
+      and "Select one of the following:" in txt and "Complete 9 units from the following:" in txt
+      and "Total : 18.00" in txt and "\nTHE-30\n" in txt,
+      "a program page reads as its title, then the requirements line by line (the real Acting page, run 38076194967)")
+check("<" not in txt and "&nbsp;" not in txt, "no tag or entity survives into the text")
+ENTRY = {"id": 5878, "text": ttl, "aliaspath": "5852/6117/Acting", "haschildbodynavs": False}
+check(C.cq_is_program(ENTRY) and not C.cq_is_program({"text": "Degrees and Certificates Explained"})
+      and not C.cq_is_program({"text": "Degrees and Certificates Index", "haschildbodynavs": True}),
+      "a program entry is a leaf naming an award after a dash")
+NAV = {
+    "top": {"navs": [{"id": 5842, "text": "Introduction to Riverside City College"},
+                     {"id": 5852, "text": "Degrees and Certificates"},
+                     {"id": 5900, "text": "Courses"}]},
+    "page:5852": {"body": [{"navlist": [{"id": 6313}]}]},
+    "nav:6313": {"navs": [{"id": 6283, "text": "Degrees and Certificates Explained"},
+                          {"id": 6117, "text": "Degrees and Certificates Index", "haschildbodynavs": True},
+                          {"id": 6118, "text": "Associate Degree for Transfer", "haschildbodynavs": True}]},
+    "page:6117": {"body": [{"navlist": [{"id": 6323}]}]},
+    "nav:6323": {"navs": [ENTRY, {"id": 5877, "text": "Accounting Basics for Small Business - Certificate of Completion - CC8009"}]},
+    "page:6118": {"body": [{"navlist": [{"id": 6400}]}]},
+    "nav:6400": {"navs": [ENTRY, {"id": 5990, "text": "Anthropology - Associate in Arts for Transfer Degree - AAT1234"}]},
+}
+asked = []
+
+
+def fake_get(url):
+    asked.append(url)
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "navigationtypeId" in q:
+        return NAV["top"]
+    if "parentId" in q:
+        return NAV.get("nav:" + q["parentId"][0])
+    return NAV.get("page:" + q["id"][0])
+
+
+ents, acct = C.cq_index(fake_get, 124, "https://rccd.curriqunet.com")
+check([e["id"] for e in ents] == [5878, 5877, 5990] and acct["sections"] == ["Degrees and Certificates"],
+      "the walk reads only degree and certificate sections and lists each entry once: %r" % [e["id"] for e in ents])
+check(not any("id=5900" in a or "id=5842&" in a for a in asked) and acct["calls"] == len(asked),
+      "the Courses and Introduction sections are never read, and every call is counted")
+PGQ = C.cq_page(ENTRY, ACT, "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/")
+check(PGQ["url"] == "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Acting"
+      and {"THE30", "THE5", "THE39"} <= PGQ["codes"] and C.cq_page(ENTRY, None, "x") is None,
+      "a program page carries its view address and its course codes")
+ACT_LIST = [{"code": c} for c in ("THE-30", "THE-32", "THE-38", "THE-5", "THE-6", "THE-33", "THE-34")]
+acting = [{"control_number": "A1", "title": "Acting", "award": "A.A. Degree", "closed_list": ACT_LIST},
+          {"control_number": "A2", "title": "Acting", "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+           "closed_list": ACT_LIST}]
+gq = C.assign(acting, [PGQ])
+check(all(gq[cn]["best"] and gq[cn]["best"]["url"] == PGQ["url"] for cn in ("A1", "A2")),
+      "the A.A. and the certificate one curriQunet page names both read that page")
 
 # a re-run keeps a record filed from the same page
 prev = {"source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]}

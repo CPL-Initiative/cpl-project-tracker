@@ -790,3 +790,13 @@ the same host), a walk from the catalog's top navigation to its program index, a
 COCI's programs (one page serves the A.A. and the certificate of one discipline). Memory row
 `roep-curriqunet-catalog-json-2026-10-10`.
 
+**The curriQunet read, first run (#1961; run 38077405309, Riverside City, capture only, no model calls).** The start page's
+scripts named catalog 124; the walk read one section (Degrees and Certificates), five nodes and eleven calls, and listed
+435 program entries; 447 loads in 36 minutes, no errors. 228 of the 262 programs with a state course list found a page
+(165 at full coverage, 51 at 0.8 to 1.0, 12 at 0.5 to 0.8); 48 pages serve two programs each, an A.A. and its
+certificate, as designed. 34 found none: seven Liberal Arts emphasis degrees (their state lists run to 33 courses), the
+Cosmetology, Barbering and Esthetician Concepts awards, nine Baking and Pastry awards credit and noncredit, Anesthesia
+Technology, and the History and Kinesiology ADTs. One cause was the read's own: the code net (`CODE_TOKEN`) read no code
+in a number ending in letters and digits (COS 60A1), so those pages never reached the exact test, which reads them; fixed
+in the same pull request, for CourseLeaf catalogs too. The rest wait for a look at their pages. Card 1 moved to Open Asks
+Sheet 59 with the read built.

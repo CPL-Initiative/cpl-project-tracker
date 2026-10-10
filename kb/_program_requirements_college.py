@@ -16,7 +16,8 @@ scales to a college. So this pass turns the search around:
   capture    lists the college's active programs and their closed course lists
              (coci_college_programs, coci_program_courses, read with the anon
              key), lists the catalog's program pages ONCE (its sitemap.xml, else
-             the program index the catalog's own front page links), reads each
+             the program index the catalog's own front page links; for a
+             curriQunet catalog, its own program index as JSON), reads each
              page once, and gives each program the page that names the largest
              share of its listed courses, the pilot's acceptance test, with the
              award and title words on the page breaking a tie (an A.A. and the
@@ -195,8 +196,11 @@ def program_candidates(urls: list[str], start: str, scope: str | None = None) ->
 
 
 # ── giving each program its page ───────────────────────────────────────────
-CODE_TOKEN = re.compile(r"\b([A-Z][A-Z&]{0,7})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,2})\b")
-CODE_TOKEN_2 = re.compile(r"\b([A-Z][A-Z&]{0,7}\s[A-Z&]{1,6})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,2})\b")
+# A number may end in letters and digits: Riverside City's Cosmetology Concepts
+# lists COS 60A1 and COS 60B3, which the net read as no code at all, so the page
+# never reached the exact test (S357, run 38077405309).
+CODE_TOKEN = re.compile(r"\b([A-Z][A-Z&]{0,7})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?(?:[A-Z]{1,2}\d{0,2})?)\b")
+CODE_TOKEN_2 = re.compile(r"\b([A-Z][A-Z&]{0,7}\s[A-Z&]{1,6})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?(?:[A-Z]{1,2}\d{0,2})?)\b")
 
 
 def page_codes(text: str) -> set[str]:
@@ -425,6 +429,186 @@ def index_links(reader, start: str, cache: dict) -> list[str]:
     return [u for u in urls if u]
 
 
+# ── curriQunet: the catalog's own JSON ─────────────────────────────────────
+# A curriQunet catalog draws every view from JSON its scripts fetch from its own
+# host, and its menus carry no links (S357, runs 38075620248 and 38076194967 at
+# Riverside City). _getNavigation?id=<catalog>&parentId=<node> lists the nodes a
+# list holds; _getPage?catalogId=<catalog>&id=<node> returns one node's page,
+# whose body carries the lists it shows and, on a program's page, curriculum
+# blocks holding each award's requirements as HTML. Riverside City's Degrees and
+# Certificates section (5852) shows a tab list (6313) whose Index (6117) shows a
+# link list (6323) of 229 program entries, each titled with its awards and local
+# codes: "Acting - Associate of Arts Degree and Certificate of Achievement -
+# AA1050/AA1050C/CE1050". So the read is one navigation call per list and one
+# page call per program, with no rendering and no PDF export.
+CQ_CATALOG_ID = re.compile(r"/catalog/(?:_getnavigation\?id=|_getactivecatalogbyid/|_getpage\?catalogid=)(\d+)", re.I)
+CQ_SECTION = re.compile(r"degree|certificate|program|major|award", re.I)
+CQ_AWARD = re.compile(r"\b(?:associate|certificate|a\.\s?a\.|a\.\s?s\.|bachelor|noncredit|non-credit)\b", re.I)
+CQ_MAX_CALLS = 80         # navigation and section pages, before any program page
+CQ_MAX_DEPTH = 4
+CQ_BREAK = re.compile(r"<\s*(?:br|/p|/div|/tr|/li|/h[1-6]|/table)\b[^>]*>", re.I)
+
+
+def cq_catalog_id(urls: list[str]) -> int | None:
+    """The catalog id the catalog's own scripts asked for while its start page loaded."""
+    for u in urls:
+        m = CQ_CATALOG_ID.search(u or "")
+        if m:
+            return int(m.group(1))
+    return None
+
+
+def cq_base(start: str) -> tuple[str, str]:
+    """(the host root, the view prefix a node's aliaspath follows): Riverside City's
+    https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111 gives
+    https://rccd.curriqunet.com and .../catalog/alias/rcc-catalog/iq/."""
+    u = urllib.parse.urlparse(start)
+    root = "%s://%s" % (u.scheme or "https", u.netloc)
+    path = u.path or "/"
+    i = path.lower().find("/iq/")
+    prefix = root + (path[:i] if i >= 0 else "/catalog") + "/iq/"
+    return root, prefix
+
+
+def cq_text(html_text: str) -> str:
+    """A block's HTML as the lines a reader sees: a break at each paragraph, row,
+    item and heading, tags dropped, entities read, blank lines removed."""
+    import html as _html
+    t = CQ_BREAK.sub("\n", html_text or "")
+    t = re.sub(r"<[^>]+>", " ", t)
+    t = _html.unescape(t).replace("\xa0", " ")
+    lines = (re.sub(r"[ \t\r\f\v]+", " ", ln).strip() for ln in t.split("\n"))
+    return "\n".join(ln for ln in lines if ln)
+
+
+def cq_page_text(page: dict) -> tuple[str, str]:
+    """(the node's title, its page's text): the title, then every block in order."""
+    node = (page or {}).get("page") or {}
+    title = (node.get("text") or "").strip()
+    parts = [title]
+    for b in (page or {}).get("body") or []:
+        head = (b.get("catalogblockheader") or "").strip()
+        body = cq_text(b.get("text") or "")
+        if head and head not in parts:
+            parts.append(head)
+        if body:
+            parts.append(body)
+    return title, "\n".join(p for p in parts if p)
+
+
+def cq_lists(page: dict) -> list[dict]:
+    """The lists a node's page shows (a tab list, a link list)."""
+    return [nl for b in (page or {}).get("body") or [] for nl in (b.get("navlist") or [])]
+
+
+def cq_is_program(nav: dict) -> bool:
+    """A program entry: a leaf whose title names an award after a dash, as the
+    index writes them. "Degrees and Certificates Explained" names no award and
+    has no dash; the index itself has children."""
+    text = nav.get("text") or ""
+    return not nav.get("haschildbodynavs") and " - " in text and bool(CQ_AWARD.search(text))
+
+
+def cq_index(get, catalog: int, root: str) -> tuple[list[dict], dict]:
+    """Every program entry under the catalog's degree and certificate sections,
+    by id, in the order found; and the account of the walk. `get(url)` returns
+    the JSON at url, or None."""
+    top = get("%s/Catalog/_getNavigation?id=%d&navigationtypeId=1" % (root, catalog)) or {}
+    sections = [n for n in top.get("navs") or [] if CQ_SECTION.search(n.get("text") or "")]
+    entries: dict[int, dict] = {}
+    seen: set = set()
+    calls = 1
+    queue = [(n, 0) for n in sections]
+    while queue and calls < CQ_MAX_CALLS:
+        node, depth = queue.pop(0)
+        if node.get("id") in seen:
+            continue
+        seen.add(node.get("id"))
+        page = get("%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, node.get("id")))
+        calls += 1
+        for nl in cq_lists(page):
+            if calls >= CQ_MAX_CALLS:
+                break
+            kids = get("%s/Catalog/_getNavigation?id=%d&parentId=%s" % (root, catalog, nl.get("id"))) or {}
+            calls += 1
+            for k in kids.get("navs") or []:
+                if cq_is_program(k):
+                    entries.setdefault(k.get("id"), k)
+                elif k.get("haschildbodynavs") and depth + 1 < CQ_MAX_DEPTH:
+                    queue.append((k, depth + 1))
+    account = {"catalog": catalog, "sections": [n.get("text") for n in sections],
+               "nodes_read": len(seen), "calls": calls, "entries": len(entries),
+               "stopped_at_cap": calls >= CQ_MAX_CALLS}
+    return list(entries.values()), account
+
+
+def cq_page(entry: dict, page: dict | None, prefix: str) -> dict | None:
+    """One program entry's page in the shape assign() reads."""
+    if not page:
+        return None
+    title, text = cq_page_text(page)
+    title = title or (entry.get("text") or "")
+    url = prefix + (entry.get("aliaspath") or str(entry.get("id")))
+    got = {"final_url": url, "title": title, "h1": title, "body": text, "content": text,
+           "status": 200, "access": "ok", "links": []}
+    return {"url": url, "title": title, "h1": title, "body": text, "content": text, "got": got,
+            "codes": page_codes(text), "node": entry.get("id")}
+
+
+def cq_json(reader, url: str, errors: list) -> dict | None:
+    """One JSON call through the census's rules: robots first, the delay, one load."""
+    from _program_source_census import robots_allows
+    if not robots_allows(reader._robots_for(url), url):
+        errors.append("%s: robots disallows" % url)
+        return None
+    time.sleep(reader.delay)
+    reader.loads += 1
+    try:
+        resp = reader.request.get(url, timeout=60000)
+        if not resp.ok:
+            errors.append("%s: HTTP %s" % (url, resp.status))
+            return None
+        return resp.json()
+    except Exception as exc:
+        errors.append("%s: %s" % (url, str(exc).splitlines()[0][:160]))
+        return None
+
+
+def cq_pages(reader, start: str, report: dict) -> list[dict]:
+    """The catalog's program pages, read as its own JSON: the start page loads
+    once in the browser so the catalog's scripts name its id, then the index
+    walk, then one page call per program entry."""
+    heard: list = []
+
+    def on_response(resp):
+        heard.append(resp.url)
+    reader.page.on("response", on_response)
+    try:
+        reader.load(start)
+        reader.page.wait_for_timeout(3000)
+    finally:
+        reader.page.remove_listener("response", on_response)
+    catalog = cq_catalog_id(heard)
+    root, prefix = cq_base(start)
+    errors: list = []
+    report["curriqunet"] = {"catalog": catalog, "view_prefix": prefix, "errors": errors}
+    if catalog is None:
+        report["curriqunet"]["stopped"] = "the start page's scripts named no catalog id"
+        return []
+    entries, account = cq_index(lambda u: cq_json(reader, u, errors), catalog, root)
+    report["curriqunet"].update(account)
+    pages = []
+    for i, e in enumerate(entries[:MAX_PAGES]):
+        pg = cq_page(e, cq_json(reader, "%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, e.get("id")),
+                                errors), prefix)
+        if pg:
+            pages.append(pg)
+        if i % 50 == 49:
+            print("  read %d of %d program pages" % (i + 1, len(entries)), flush=True)
+    del errors[40:]
+    return pages
+
+
 def capture(college: str, out_dir: str, limit: int = 0) -> int:
     t0 = time.time()
     programs = college_programs(college)
@@ -437,9 +621,10 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
               "with_closed_list": sum(1 for p in programs if p["closed_list"]),
               "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
-    if not start or reg.get("catalog_platform") != "courseleaf":
-        # Phase 2 opens on CourseLeaf (Cerritos); another platform names its own enumeration first.
-        report["stopped"] = "this pass enumerates CourseLeaf catalogs; %s reads %s" % (college, reg.get("catalog_platform"))
+    platform = reg.get("catalog_platform")
+    if not start or platform not in ("courseleaf", "curriqunet"):
+        # Phase 2 opens on CourseLeaf (Cerritos) and curriQunet (S357); another platform names its own enumeration first.
+        report["stopped"] = "this pass enumerates CourseLeaf and curriQunet catalogs; %s reads %s" % (college, platform)
         _write(os.path.join(out_dir, "capture.json"), report)
         print(report["stopped"])
         return 1
@@ -447,20 +632,27 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
     pw, browser, reader = P.open_reader(delay)
     cache: dict = {}
     try:
-        scope = district_scope(start, host_registry_urls(start))
-        report["scope"] = scope
-        sm = read_sitemap(reader, start)
-        urls = program_candidates(sm["pages"], start, scope)
-        report["sitemap"] = {"url": sm["url"], "status": sm["status"], "listed": len(sm["pages"]),
-                             "nested": len(sm["nested"]), "program_pages": len(urls),
-                             "refused": sm.get("refused"), "errors": sm.get("errors")}
-        if len(urls) < 0.3 * report["with_closed_list"]:
-            urls = program_candidates(index_links(reader, start, cache), start, scope)
-            report["index_fallback"] = len(urls)
-        urls = urls[:MAX_PAGES]
-        pages = []
-        print("%s: %d programs (%d with a course list), %d candidate pages, %.1f s between loads"
-              % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
+        scope = None
+        if platform == "curriqunet":
+            urls = []
+            pages = cq_pages(reader, start, report)
+            print("%s: %d programs (%d with a course list), %d curriQunet program pages, %.1f s between loads"
+                  % (college, len(programs), report["with_closed_list"], len(pages), delay / 1000), flush=True)
+        else:
+            scope = district_scope(start, host_registry_urls(start))
+            report["scope"] = scope
+            sm = read_sitemap(reader, start)
+            urls = program_candidates(sm["pages"], start, scope)
+            report["sitemap"] = {"url": sm["url"], "status": sm["status"], "listed": len(sm["pages"]),
+                                 "nested": len(sm["nested"]), "program_pages": len(urls),
+                                 "refused": sm.get("refused"), "errors": sm.get("errors")}
+            if len(urls) < 0.3 * report["with_closed_list"]:
+                urls = program_candidates(index_links(reader, start, cache), start, scope)
+                report["index_fallback"] = len(urls)
+            urls = urls[:MAX_PAGES]
+            pages = []
+            print("%s: %d programs (%d with a course list), %d candidate pages, %.1f s between loads"
+                  % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
         for i, u in enumerate(urls):
             got = P.load(reader, u, cache, False)
             if got.get("access") != "ok":
@@ -490,7 +682,8 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
                     print("%-6s page_claimed %s" % (prog["control_number"], g["lost"][0]), flush=True)
                     continue
-                if best is None and fallback < MAX_FALLBACKS:
+                # A curriQunet catalog has no links to search: its index is the whole list.
+                if best is None and fallback < MAX_FALLBACKS and platform != "curriqunet":
                     fallback += 1
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)
