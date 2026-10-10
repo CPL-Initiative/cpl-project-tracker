@@ -1,8 +1,8 @@
 {
- "_what": "The harvest registry's catalog and map columns for the harvest's seven colleges (the pilot's five, Santa Monica and Irvine Valley), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
+ "_what": "The harvest registry's catalog and map columns for the harvest's nine colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley and Norco), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
  "_source": "public.program_source_registry (census columns written by the weekly census; the four sequence_* columns written by S326's receipts)",
- "_read_at": "2026-10-06",
- "_read_by": "SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
+ "_read_at": "2026-10-10",
+ "_read_by": "SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
  "_refresh": "Reread when the census applies or a sequence receipt lands: select the columns below for the harvest's colleges and file them here.",
  "colleges": {
   "Cerritos College": {
@@ -29,11 +29,35 @@
    "sequence_note": "The college publishes its program maps on its own site (All Program Maps), and the page answered on 2026-10-04.",
    "sequence_checked_run": "program-sequence-ppm run 37198225537"
   },
+  "Moreno Valley College": {
+   "catalog_platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4710",
+   "census_run_id": "census-20261004T152834Z-s1of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
   "Mt. San Antonio College": {
    "catalog_platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.mtsac.edu/",
    "census_run_id": "census-20261004T152834Z-s2of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Norco College": {
+   "catalog_platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5358",
+   "census_run_id": "census-20261004T152834Z-s1of4",
    "sequence_source": "none_found",
    "sequence_access": null,
    "sequence_host": null,
