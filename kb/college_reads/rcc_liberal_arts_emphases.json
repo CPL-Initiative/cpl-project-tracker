@@ -1,0 +1,30 @@
+{
+ "_readme": "S359 SkyMoss, 2026-10-10. The seven RCCD Liberal Arts emphasis degrees (Administration & Information Systems; Communication, Media & Languages; Fine & Applied Arts; Humanities, Philosophy & Arts; Kinesiology, Health and Wellness; Math & Sciences; Social and Behavioral Studies) found no page at any of the district's three colleges in S358's reads (21 programs; memory row roep-district-liberal-arts-emphases-miss-2026-10-10). The college read walks only the top sections whose title names a degree, certificate, program, major or award (CQ_SECTION) and keeps an entry only when its title names an award after a dash (cq_is_program). This read asks Riverside City's catalog (124) where the emphases sit: its top navigation, and the Degrees and Certificates Index list (6323) the walk already reads. Two JSON loads, no model call.",
+ "college": "Riverside City College",
+ "questions": {
+  "where_listed": "Which section and list name the Liberal Arts degree or its emphases, and how each entry's title is written.",
+  "entry_ids": "The outline id of each Liberal Arts entry, for a second read of its page."
+ },
+ "keywords": [
+  "Liberal",
+  "[Ee]mphas",
+  "Administration (?:&|and|&amp;) Information",
+  "Communication, Media",
+  "Fine (?:&|and|&amp;) Applied",
+  "Humanities, Philosophy",
+  "Kinesiology, Health",
+  "Math(?:ematics)? (?:&|and|&amp;) Sciences?",
+  "Social and Behavioral",
+  "General Education"
+ ],
+ "pages": [
+  {
+   "answers": ["where_listed"],
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=124&navigationtypeId=1"
+  },
+  {
+   "answers": ["where_listed", "entry_ids"],
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=124&parentId=6323"
+  }
+ ]
+}
