@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 531,
+   "count": 532,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3660,6 +3660,26 @@
      "title": "A source file that abbreviates titles fakes an absence",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-10-10",
+     "governs": [
+      "scripts/catalog_framing.py",
+      ".github/workflows/catalog-framing.yml",
+      "kb/catalog_framing.json",
+      "program_requirements.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-split-view-needs-the-host-to-allow-framing.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements",
+      "ui",
+      "framing"
+     ],
+     "title": "A split view needs the host to allow framing, and two windows must not overlap",
+     "type": "methodology",
+     "updated": "2026-10-10"
     },
     {
      "created": "2026-09-07",
@@ -10661,7 +10681,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 85,
+   "count": 86,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12029,6 +12049,21 @@
      "title": "Partner occupation \u2192 CPL crosswalk \u2014 lessons",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-10-10",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive (S320-S326)",
+     "type": null,
+     "updated": "2026-10-10"
     },
     {
      "created": "2026-10-03",
@@ -15148,8 +15183,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 326,
+   "count": 327,
    "docs": [
+    {
+     "created": "2026-10-10",
+     "governs": [],
+     "n": 356,
+     "path": "docs/session_356_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "records",
+      "checkpoint",
+      "emergency"
+     ],
+     "title": "the sample held; the reading room; the blocks given their numbers",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-09",
      "governs": [],
@@ -20712,5 +20766,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1083
+ "total": 1086
 }

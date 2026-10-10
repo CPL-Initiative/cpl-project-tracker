@@ -4,6 +4,8 @@ date: 2026-10-09
 session: 349 (SkyHarbor)
 tags: [handoff, sierra, sierra-page-redesign, veteran-map, decision-sheets, checkpoint]
 status: current
+superseded: true
+superseded_by: session_356_handoff.md
 ---
 
 # You are Session 350

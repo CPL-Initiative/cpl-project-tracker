@@ -4,6 +4,8 @@ date: 2026-10-09
 session: 351 (SkyLark)
 tags: [handoff, ui-pass, privacy, funding-model, skyview, first-light, dark-mode, checkpoint]
 status: current
+superseded: true
+superseded_by: session_356_handoff.md
 ---
 
 # You are Session 352
