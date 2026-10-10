@@ -1,0 +1,303 @@
+{
+ "college": "Norco College",
+ "catalog_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5358",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 161,
+ "with_closed_list": 150,
+ "started": "2026-10-10T22:50:24Z",
+ "curriqunet": {
+  "catalog": 116,
+  "view_prefix": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Degrees and Certificates"
+  ],
+  "nodes_read": 5,
+  "calls": 11,
+  "entries": 277,
+  "stopped_at_cap": false
+ },
+ "pages_read": 277,
+ "loads": 289,
+ "seconds": 1382.3,
+ "found": 147,
+ "by_method": {
+  "no_closed_list": 11,
+  "not_found": 3,
+  "sitemap_page": 147
+ },
+ "shared_pages": {
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5145": [
+   "30057",
+   "30058"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5148": [
+   "30061",
+   "30062"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5226": [
+   "30067",
+   "30068"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5147": [
+   "30071",
+   "30072",
+   "30073",
+   "30074"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5149": [
+   "30075",
+   "30076"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5158": [
+   "30081",
+   "30082"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5169": [
+   "30091",
+   "40079"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5200": [
+   "30092",
+   "30093"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5171": [
+   "30098",
+   "30099"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5133": [
+   "30102",
+   "30104"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5198": [
+   "30572",
+   "30667"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5209": [
+   "30606",
+   "30607"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5208": [
+   "31313",
+   "31375"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5195": [
+   "31316",
+   "31371"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5168": [
+   "31376",
+   "31669"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5157": [
+   "31636",
+   "31641"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5197": [
+   "31793",
+   "31808"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5237": [
+   "33751",
+   "33854"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5175": [
+   "33887",
+   "33906"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5174": [
+   "33905",
+   "33940"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5233": [
+   "35308",
+   "35405"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5191": [
+   "35938",
+   "35958"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5150": [
+   "36468",
+   "36469"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5161": [
+   "37676",
+   "38022"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5139": [
+   "39998",
+   "40064"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5196": [
+   "39999",
+   "40012"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5194": [
+   "40000",
+   "40013"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5129": [
+   "40001",
+   "40014"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5140": [
+   "40290",
+   "40319"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5130": [
+   "40291",
+   "40318"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5516": [
+   "43309",
+   "45364"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5517": [
+   "43314",
+   "45092"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5518": [
+   "43315",
+   "45367"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5519": [
+   "43320",
+   "45365"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5520": [
+   "43321",
+   "45366"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5136": [
+   "43323",
+   "43588"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5137": [
+   "43324",
+   "43589"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "30103",
+   "title": "Kinesiology, Health & Wellness",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "31317",
+   "title": "Game Art: Environments and Vehicles",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "37169",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree"
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 9,
+  "0.8-1.0": 27,
+  "1.0": 111
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/norco",
+  "kept": 138,
+  "programs": 9,
+  "list": [
+   {
+    "control_number": "30105",
+    "title": "Administration & Information Systems",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5541",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30106",
+    "title": "Communication, Media & Languages",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5542",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30107",
+    "title": "Math & Sciences",
+    "award": "A.S. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5546",
+    "coverage": 0.954,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30108",
+    "title": "Fine & Applied Arts",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5543",
+    "coverage": 0.866,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30109",
+    "title": "Humanities, Philosophy & Arts",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5551",
+    "coverage": 0.877,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30110",
+    "title": "Social and Behavioral Studies",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5547",
+    "coverage": 0.91,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31636",
+    "title": "Computer Numerical Control Programming",
+    "award": "A.S. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5157",
+    "coverage": 0.583,
+    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5279",
+    "was_coverage": 0.583,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31641",
+    "title": "Computer Numerical Control Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5157",
+    "coverage": 0.615,
+    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5279",
+    "was_coverage": 0.615,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32626",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5222",
+    "coverage": 1.0,
+    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5568/5257",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ]
+ },
+ "run": "38092843158"
+}
