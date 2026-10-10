@@ -1,0 +1,3119 @@
+{
+ "_what": "S359 SkyMoss, 2026-10-10: the eight program_requirement_records rows the Approved re-reads no longer carry, removed on Sam's ruling. Each full row is below, as read live just before the delete; this file is the rollback.",
+ "ruling": {
+  "by": "Sam",
+  "at": "2026-10-10T23:52:04Z",
+  "sheet": "Open Asks Sheet 60 (https://claude.ai/artifact/7asFQExdaXFHRmEMnCxiM2, SHEET_ID 2026-10-10-open-asks-60)",
+  "item": 1,
+  "chip": "remove (Remove them)",
+  "note": "",
+  "complete": "through 1, ruled 1",
+  "proposal": "Remove them. A session deletes the eight rows with a receipt that holds each full row (the rollback), so the live table matches the filing."
+ },
+ "read_before_delete": {
+  "at": "2026-10-10T23:55Z",
+  "rows": 8,
+  "all_unchecked": true,
+  "verdicts_in_program_record_verdicts": 0,
+  "table_rows": 1214,
+  "table_checked": 27,
+  "row_md5": "md5(to_jsonb(r)::text) per row, the delete's guard"
+ },
+ "row_md5": {
+  "19170": "5ac6d9a77b6f69594b9c117327efe552",
+  "19172": "b8b1515eb0d3dd441664eb697b9e4727",
+  "31598": "b8d69b3caa1fce1606a1a12a818a0ea0",
+  "32892": "8e4b04ae93d0f48a2fbe8c902209b98e",
+  "38942": "9b47b68ddad82e935ebe60306fc576c5",
+  "43373": "43e11d3b4011530556f342f816b10bd4",
+  "43777": "c93582994623c92b4c5036103f96d182",
+  "43999": "7bccec1cc05d108d9fb3307d67ee9b56"
+ },
+ "rollback": "insert into public.program_requirement_records select * from jsonb_populate_recordset(null::public.program_requirement_records, '<the rows array below>'::jsonb) on conflict (college, control_number) do nothing; then check md5(to_jsonb(r)::text) per row against row_md5.",
+ "rows": [
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 36,
+    "placed": 0,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [],
+    "program": {
+     "measure": "units",
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Liberal Arts and Sciences: Historical Perspectives (section not present in supplied text)",
+     "open_elective_units": null
+    }
+   },
+   "checked": false,
+   "college": "Cerritos College",
+   "display": {
+    "v": 1,
+    "map": {
+     "url": null,
+     "host": null,
+     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261004T152831Z-s3of4).",
+     "status": "none",
+     "checked_run": "census-20261004T152831Z-s3of4"
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ANTH 200; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ANTH 202; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ART 102; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ART 103; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ART 104; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ART 105A; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ART 105B; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ART 107; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ARTHC1100; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ASTR 106; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists DANC 101; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 101; the reader found it Historical Perspectives section not in text; appears only in other emphases (Self-Development, Social and Behavioral Sciences).",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 102; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 110; the reader found it Historical Perspectives section not in text; appears only in other emphases (Self-Development, Social and Behavioral Sciences).",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 120; the reader found it Historical Perspectives section not in text; appears only in other emphases (Self-Development, Social and Behavioral Sciences).",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 204; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 210; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 220; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 221; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 230; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 235; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 241; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 242; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 245; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 246; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 250; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 255; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 260; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST 265; the reader found it Historical Perspectives section not in text; appears only in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HIST C1002; the reader found it Historical Perspectives section not in text; appears only in other emphases (Self-Development, Social and Behavioral Sciences).",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists MUS 104B; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists PHOT 160; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists TH 102; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists TH 103; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists TH 104; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists WGS 204; the reader found it Historical Perspectives section not in text; appears only as an alternative to HIST 204 in the Social and Behavioral Sciences emphasis.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "No printed total",
+      "text": "The catalog prints no program total, so the units cannot be checked against one.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The supplied catalog text covers only the Self-Development and Social Behavior emphasis and part of the Social and Behavioral Sciences emphasis; it is cut off mid-list (ends at 'PSYC ') before any Historical Perspectives section appears. No blocks, total units, or outcomes could be recorded for the named award.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "Courses from other emphases were not placed, because the instructions limit the record to the named award's section.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The general rules printed at the top (repeatable courses count once; courses in more than one section apply once) apply to all areas of emphasis, but no Historical Perspectives requirements were visible.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "A reviewer should retrieve the full page to read the Historical Perspectives course list, its unit total (likely 18 units like the other emphases, but not stated in the text), and any program learning outcomes.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     }
+    ],
+    "build": "153ead0ce992",
+    "built": "2026-10-06",
+    "checks": {
+     "checked": null,
+     "coverage": {
+      "listed": 36,
+      "placed": 0
+     },
+     "reviewer": null,
+     "additions": 0,
+     "arithmetic": "incomplete"
+    },
+    "counts": {
+     "here": 0,
+     "adopt": 0,
+     "courses": 0,
+     "consider": 0
+    },
+    "figure": {
+     "path": null,
+     "picks": [],
+     "total": {
+      "max": null,
+      "min": null
+     },
+     "up_to": 0,
+     "measure": "units",
+     "path_why": "No pathway map has been read for this program.",
+     "path_picks": []
+    },
+    "courses": {}
+   },
+   "measure": "units",
+   "loaded_at": "2026-10-09T18:04:18.760152+00:00",
+   "total_max": null,
+   "total_min": null,
+   "checked_at": null,
+   "checked_by": null,
+   "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 37961137169,
+   "program_title": "Liberal Arts and Sciences: Historical Perspectives",
+   "control_number": "19170"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 65,
+    "placed": 0,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [],
+    "program": {
+     "measure": "units",
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English (AA-T)",
+     "open_elective_units": null
+    }
+   },
+   "checked": false,
+   "college": "Cerritos College",
+   "display": {
+    "v": 1,
+    "map": {
+     "url": null,
+     "host": null,
+     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261004T152831Z-s3of4).",
+     "status": "none",
+     "checked_run": "census-20261004T152831Z-s3of4"
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ANTH 100; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ANTH 170; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ART 108; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ART 109; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ASL 110; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ASL 111; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ASL 210; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ASL 211; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists CHIN 101; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 106; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 221A; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 221B; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 223; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 224; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 225; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 227; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 228; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 230A; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 230B; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 232; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 233; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 234; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 235; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 240; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 241; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 246A; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 246B; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 248A; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL 248B; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ENGL C1003; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FILM 159; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FILM 241; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FREN 101; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FREN 102; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FREN 201; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FREN 202; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FREN 203; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FREN 281; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FREN 282; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists FREN 283; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists GERM 101; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists GERM 102; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists GERM 201; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists GERM 202; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists GERM 203; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists GERM 204; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists GERM 281; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists GERM 282; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists GERM 283; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HUM 108; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists HUM 109; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists JAPN 101; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists JAPN 102; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists JAPN 201; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists JAPN 202; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists KOR 101; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists KOR 102; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists SPAN 101; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists SPAN 102; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists SPAN 111; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists SPAN 112; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists SPAN 201; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists SPAN 202; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists SPAN 210; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists SPAN 245; the reader found it named only in the English (AA-T) section.",
+      "owner": "college",
+      "where": "Cerritos College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "No printed total",
+      "text": "The catalog prints no program total, so the units cannot be checked against one.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "Source mismatch: the catalog text is the page for English (AA-T), an Associate in Arts for Transfer, not Liberal Arts and Sciences: Literature and Languages (A.A. Degree). The text contains no section for the named award, so no blocks, total, GE pattern or outcomes were recorded. section_heading names the only program section on the page, which was not used for this award.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The English (AA-T) section prints its own Program Student Learning Outcomes, a Required Core with Option 1/Option 2, Lists A, B and C, and a total of 19-21 units with Cal-GETC. None of this was attributed to the Literature and Languages A.A., since nothing in the text says that award shares these requirements or outcomes.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "A reviewer should locate the Cerritos College 2026-2027 catalog page for Liberal Arts and Sciences: Literature and Languages (A.A.) and rerun the extraction against it.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "Many closed-list courses (ASL, CHIN, ENGL, FILM 241, FREN, GERM, JAPN, SPAN) appear in the English (AA-T) lists. The others (ANTH 100, ANTH 170, ART 108, ART 109, FILM 159, GERM 203, GERM 204, GERM 281-283, HUM 108, HUM 109, KOR 101, KOR 102) do not appear anywhere in the text.",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure"
+     }
+    ],
+    "build": "153ead0ce992",
+    "built": "2026-10-06",
+    "checks": {
+     "checked": null,
+     "coverage": {
+      "listed": 65,
+      "placed": 0
+     },
+     "reviewer": null,
+     "additions": 0,
+     "arithmetic": "incomplete"
+    },
+    "counts": {
+     "here": 0,
+     "adopt": 0,
+     "courses": 0,
+     "consider": 0
+    },
+    "figure": {
+     "path": null,
+     "picks": [],
+     "total": {
+      "max": null,
+      "min": null
+     },
+     "up_to": 0,
+     "measure": "units",
+     "path_why": "No pathway map has been read for this program.",
+     "path_picks": []
+    },
+    "courses": {}
+   },
+   "measure": "units",
+   "loaded_at": "2026-10-09T18:04:18.760152+00:00",
+   "total_max": null,
+   "total_min": null,
+   "checked_at": null,
+   "checked_by": null,
+   "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/english-aa-t/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 37961137169,
+   "program_title": "Liberal Arts and Sciences: Literature and Languages",
+   "control_number": "19172"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unstated"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BSHS BIO",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS CHEM",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS EASC",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS PHSC",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS CIV",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS ECON",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS GEOG",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS PSY",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS SOC",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS USH",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS WHS",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS ART1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS ART2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS MUSC",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS SPN1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BSHS SPNS1",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS SPN2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BSHS SPNS2",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS ENG1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS ENG2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS ENG3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS ENG4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS WREX",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS WRIT1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS WRIT2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS ALG1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS ALG2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS GEOM",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS PREA",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BSHS INMA1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS INMA2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS INMA3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS HLTH",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS ETHN",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS PRFN",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS CPTC",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS READ",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS PLNG",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS SSK",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BSHS ELD",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "There will be an increase in the number of diplomas earned by Adult High School Diploma students.",
+      "Students will improve overall completion rates of certificates, courses, and transitions to work and college for ABE students."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Secondary Education/ High School Diploma",
+     "open_elective_units": null
+    }
+   },
+   "checked": false,
+   "college": "Mt. San Antonio College",
+   "display": {
+    "v": 1,
+    "map": {
+     "url": null,
+     "host": null,
+     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4).",
+     "status": "none",
+     "checked_run": "census-20261004T152834Z-s2of4"
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The catalog prints BSHS BIO, BSHS CHEM, BSHS EASC, BSHS PHSC, BSHS CIV, BSHS GEOG, BSHS ART1, BSHS ART2, BSHS MUSC, BSHS SPN1, BSHS SPNS1, BSHS SPN2, BSHS SPNS2, BSHS WREX, BSHS WRIT1, BSHS WRIT2, BSHS INMA1, BSHS INMA2, BSHS INMA3, BSHS HLTH, BSHS ETHN, BSHS PRFN, BSHS CPTC, BSHS READ, BSHS PLNG, BSHS SSK, BSHS ELD for this program; the state's Program Course File does not list them.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "No printed total",
+      "text": "The catalog prints no program total, so the units cannot be checked against one.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Possible misread",
+      "text": "A noncredit program recorded in units; noncredit programs count hours.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The catalog section is titled 'Secondary Education/ High School Diploma' and is labeled a Certificate of Competency (#36743); the request names it 'Adult High School Diploma'. Confirm it is the same award.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The catalog prints no units or hours beside any course; all units fields are null.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The text says students complete 'a total of 160 high school credits'. These are high school credits, not college units or hours, so total_units was left null. A reviewer may decide whether to record 160 as the total.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The 'Required Courses' list is recorded with rule 'all' because the catalog prints it under that heading. However, it combines alternative paths, such as the traditional math sequence and Integrated Math 1-3, and elective-type courses. Students likely complete a subset adding up to 160 high school credits, and earlier equivalent coursework may count. Actual selection rules are not stated in the text.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "BSHS SPN1 and BSHS SPN2 are printed with 'or' alternatives (BSHS SPNS1, BSHS SPNS2), and these are recorded as alternatives.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "All 13 closed-list courses appear in the list. The 25 other courses in the section are not in the closed list and are marked catalog_addition true.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The page links to separate SLOs that are not included in the text. The two Program Learning Outcomes printed are recorded word for word.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     }
+    ],
+    "build": "153ead0ce992",
+    "built": "2026-10-06",
+    "checks": {
+     "checked": null,
+     "coverage": {
+      "listed": 13,
+      "placed": 13
+     },
+     "reviewer": null,
+     "additions": 27,
+     "arithmetic": "unstated"
+    },
+    "counts": {
+     "here": 0,
+     "adopt": 0,
+     "courses": 40,
+     "consider": 0
+    },
+    "figure": {
+     "path": null,
+     "picks": [],
+     "total": {
+      "max": null,
+      "min": null
+     },
+     "up_to": 0,
+     "measure": "units",
+     "path_why": "No pathway map has been read for this program.",
+     "path_picks": []
+    },
+    "courses": {
+     "BSHS BIO": {
+      "ids": [
+       {
+        "id": "ELEC M9017",
+        "kind": "M-ID",
+        "title": "High School Biology"
+       }
+      ],
+      "title": "High School Biology",
+      "identity": {
+       "id": "ELEC M9017",
+       "kind": "CCR",
+       "title": "High School Biology"
+      }
+     },
+     "BSHS CIV": {
+      "ids": [
+       {
+        "id": "IDST M9180",
+        "kind": "M-ID",
+        "title": "High School Civics"
+       }
+      ],
+      "title": "High School Civics",
+      "identity": {
+       "id": "IDST M9180",
+       "kind": "CCR",
+       "title": "High School Civics"
+      }
+     },
+     "BSHS ELD": {
+      "ids": [
+       {
+        "id": "IDST M91AB",
+        "kind": "M-ID",
+        "title": "High School English Language Development"
+       }
+      ],
+      "title": "High School English Language Development",
+      "identity": {
+       "id": "IDST M91AB",
+       "kind": "CCR",
+       "title": "High School English Language Development"
+      }
+     },
+     "BSHS PSY": {
+      "ids": [
+       {
+        "id": "PSYC M9008",
+        "kind": "M-ID",
+        "title": "Psychology"
+       }
+      ],
+      "title": "High School Psychology",
+      "identity": {
+       "id": "PSYC M9008",
+       "kind": "CCR",
+       "title": "Psychology"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS SOC": {
+      "ids": [
+       {
+        "id": "SOCI M90AA",
+        "kind": "M-ID",
+        "title": "High School Sociology"
+       }
+      ],
+      "title": "High School Sociology",
+      "identity": {
+       "id": "SOCI M90AA",
+       "kind": "CCR",
+       "title": "High School Sociology"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS SSK": {
+      "ids": [
+       {
+        "id": "IDST M91GX",
+        "kind": "M-ID",
+        "title": "High School Study Skills"
+       }
+      ],
+      "title": "High School Study Skills",
+      "identity": {
+       "id": "IDST M91GX",
+       "kind": "CCR",
+       "title": "High School Study Skills"
+      }
+     },
+     "BSHS USH": {
+      "ids": [
+       {
+        "id": "ELEC M9050",
+        "kind": "M-ID",
+        "title": "High School U.S. History"
+       }
+      ],
+      "title": "High School U.S. History",
+      "identity": {
+       "id": "ELEC M9050",
+       "kind": "CCR",
+       "title": "High School U.S. History"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS WHS": {
+      "ids": [
+       {
+        "id": "HIST M9004",
+        "kind": "M-ID",
+        "title": "World History A"
+       }
+      ],
+      "title": "High School World History",
+      "identity": {
+       "id": "HIST M9004",
+       "kind": "CCR",
+       "title": "World History A"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS ALG1": {
+      "ids": [
+       {
+        "id": "IDST M9007",
+        "kind": "M-ID",
+        "title": "High School Algebra 1"
+       }
+      ],
+      "title": "High School Algebra 1",
+      "identity": {
+       "id": "IDST M9007",
+       "kind": "CCR",
+       "title": "High School Algebra 1"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS ALG2": {
+      "ids": [
+       {
+        "id": "ELEC M9004",
+        "kind": "M-ID",
+        "title": "High School Algebra 2"
+       }
+      ],
+      "title": "High School Algebra 2",
+      "identity": {
+       "id": "ELEC M9004",
+       "kind": "CCR",
+       "title": "High School Algebra 2"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS ART1": {
+      "ids": [
+       {
+        "id": "ELEC M9009",
+        "kind": "M-ID",
+        "title": "High School Art and Creative Expression 6A"
+       }
+      ],
+      "title": "High School Art and Creative Expression",
+      "identity": {
+       "id": "ELEC M9009",
+       "kind": "CCR",
+       "title": "High School Art and Creative Expression"
+      }
+     },
+     "BSHS ART2": {
+      "ids": [
+       {
+        "id": "IDST M90DL",
+        "kind": "M-ID",
+        "title": "High School Art 2"
+       }
+      ],
+      "title": "High School Art 2",
+      "identity": {
+       "id": "IDST M90DL",
+       "kind": "CCR",
+       "title": "High School Art 2"
+      }
+     },
+     "BSHS CHEM": {
+      "ids": [
+       {
+        "id": "ELEC M9020",
+        "kind": "M-ID",
+        "title": "High School Chemistry A"
+       }
+      ],
+      "title": "High School Chemistry",
+      "identity": {
+       "id": "ELEC M9020",
+       "kind": "CCR",
+       "title": "High School Chemistry"
+      }
+     },
+     "BSHS CPTC": {
+      "ids": [
+       {
+        "id": "IDST M90YK",
+        "kind": "M-ID",
+        "title": "High School Computer Technology"
+       }
+      ],
+      "title": "High School Computer Technology",
+      "identity": {
+       "id": "IDST M90YK",
+       "kind": "CCR",
+       "title": "High School Computer Technology"
+      }
+     },
+     "BSHS EASC": {
+      "ids": [
+       {
+        "id": "IDST M9218",
+        "kind": "M-ID",
+        "title": "High School Earth Science"
+       }
+      ],
+      "title": "High School Earth Science",
+      "identity": {
+       "id": "IDST M9218",
+       "kind": "CCR",
+       "title": "High School Earth Science"
+      }
+     },
+     "BSHS ECON": {
+      "ids": [
+       {
+        "id": "ECON M9002",
+        "kind": "M-ID",
+        "title": "Economics"
+       }
+      ],
+      "title": "High School Economics",
+      "identity": {
+       "id": "ECON M9002",
+       "kind": "CCR",
+       "title": "Economics"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS ENG1": {
+      "ids": [
+       {
+        "id": "ELEC M9001",
+        "kind": "M-ID",
+        "title": "High School English 1"
+       }
+      ],
+      "title": "High School English 1",
+      "identity": {
+       "id": "ELEC M9001",
+       "kind": "CCR",
+       "title": "High School English 1"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS ENG2": {
+      "ids": [
+       {
+        "id": "ELEC M9005",
+        "kind": "M-ID",
+        "title": "High School English 2"
+       }
+      ],
+      "title": "High School English 2",
+      "identity": {
+       "id": "ELEC M9005",
+       "kind": "CCR",
+       "title": "High School English 2"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS ENG3": {
+      "ids": [
+       {
+        "id": "IDST M9053",
+        "kind": "M-ID",
+        "title": "High School English 3"
+       }
+      ],
+      "title": "High School English 3",
+      "identity": {
+       "id": "IDST M9053",
+       "kind": "CCR",
+       "title": "High School English 3"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS ENG4": {
+      "ids": [
+       {
+        "id": "IDST M9054",
+        "kind": "M-ID",
+        "title": "High School English 4"
+       }
+      ],
+      "title": "High School English 4",
+      "identity": {
+       "id": "IDST M9054",
+       "kind": "CCR",
+       "title": "High School English 4"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS ETHN": {
+      "ids": [
+       {
+        "id": "IDST M9239",
+        "kind": "M-ID",
+        "title": "Ethnic Studies"
+       }
+      ],
+      "title": "High School Ethnic Studies",
+      "identity": {
+       "id": "IDST M9239",
+       "kind": "CCR",
+       "title": "Ethnic Studies"
+      }
+     },
+     "BSHS GEOG": {
+      "ids": [
+       {
+        "id": "GEOG M90AG",
+        "kind": "M-ID",
+        "title": "High School Geography"
+       }
+      ],
+      "title": "High School Geography",
+      "identity": {
+       "id": "GEOG M90AG",
+       "kind": "CCR",
+       "title": "High School Geography"
+      }
+     },
+     "BSHS GEOM": {
+      "ids": [
+       {
+        "id": "IDST M9258",
+        "kind": "M-ID",
+        "title": "High School Geometry"
+       }
+      ],
+      "title": "High School Geometry",
+      "identity": {
+       "id": "IDST M9258",
+       "kind": "CCR",
+       "title": "High School Geometry"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS HLTH": {
+      "ids": [
+       {
+        "id": "IDST M9263",
+        "kind": "M-ID",
+        "title": "Health"
+       }
+      ],
+      "title": "High School Health",
+      "identity": {
+       "id": "IDST M9263",
+       "kind": "CCR",
+       "title": "Health"
+      }
+     },
+     "BSHS MUSC": {
+      "ids": [
+       {
+        "id": "MUSI M9017",
+        "kind": "M-ID",
+        "title": "High School Music Appreciation"
+       }
+      ],
+      "title": "High School Music Appreciation",
+      "identity": {
+       "id": "MUSI M9017",
+       "kind": "CCR",
+       "title": "High School Music Appreciation"
+      }
+     },
+     "BSHS PHSC": {
+      "ids": [
+       {
+        "id": "IDST M9274",
+        "kind": "M-ID",
+        "title": "High School Physical Science"
+       }
+      ],
+      "title": "High School Physical Science",
+      "identity": {
+       "id": "IDST M9274",
+       "kind": "CCR",
+       "title": "High School Physical Science"
+      }
+     },
+     "BSHS PLNG": {
+      "ids": [
+       {
+        "id": "IDST M91FU",
+        "kind": "M-ID",
+        "title": "High School Planning and Guidance"
+       }
+      ],
+      "title": "High School Planning and Guidance",
+      "identity": {
+       "id": "IDST M91FU",
+       "kind": "CCR",
+       "title": "High School Planning and Guidance"
+      }
+     },
+     "BSHS PREA": {
+      "ids": [
+       {
+        "id": "IDST M9081",
+        "kind": "M-ID",
+        "title": "High School Pre-Algebra - A"
+       }
+      ],
+      "title": "High School Pre-Algebra",
+      "identity": {
+       "id": "IDST M9081",
+       "kind": "CCR",
+       "title": "High School Pre-Algebra"
+      },
+      "units_from_state_file": 0
+     },
+     "BSHS PRFN": {
+      "ids": [
+       {
+        "id": "IDST M91DQ",
+        "kind": "M-ID",
+        "title": "High School Personal Finance"
+       }
+      ],
+      "title": "High School Personal Finance",
+      "identity": {
+       "id": "IDST M91DQ",
+       "kind": "CCR",
+       "title": "High School Personal Finance"
+      }
+     },
+     "BSHS READ": {
+      "ids": [
+       {
+        "id": "IDST M91GV",
+        "kind": "M-ID",
+        "title": "High School Reading"
+       }
+      ],
+      "title": "High School Reading",
+      "identity": {
+       "id": "IDST M91GV",
+       "kind": "CCR",
+       "title": "High School Reading"
+      }
+     },
+     "BSHS SPN1": {
+      "ids": [
+       {
+        "id": "ELEC M9003",
+        "kind": "M-ID",
+        "title": "High School Spanish 1"
+       }
+      ],
+      "title": "High School Spanish 1",
+      "identity": {
+       "id": "ELEC M9003",
+       "kind": "CCR",
+       "title": "High School Spanish 1"
+      }
+     },
+     "BSHS SPN2": {
+      "ids": [
+       {
+        "id": "ELEC M9007",
+        "kind": "M-ID",
+        "title": "High School Spanish 2"
+       }
+      ],
+      "title": "High School Spanish 2",
+      "identity": {
+       "id": "ELEC M9007",
+       "kind": "CCR",
+       "title": "High School Spanish 2"
+      }
+     },
+     "BSHS WREX": {
+      "ids": [
+       {
+        "id": "IDST M91DO",
+        "kind": "M-ID",
+        "title": "High School Expository Writing"
+       }
+      ],
+      "title": "High School Expository Writing",
+      "identity": {
+       "id": "IDST M91DO",
+       "kind": "CCR",
+       "title": "High School Expository Writing"
+      }
+     },
+     "BSHS INMA1": {
+      "ids": [
+       {
+        "id": "IDST M90BH",
+        "kind": "M-ID",
+        "title": "HS Integrated Math 1"
+       }
+      ],
+      "title": "HS Integrated Math 1",
+      "identity": {
+       "id": "IDST M90BH",
+       "kind": "CCR",
+       "title": "HS Integrated Math 1"
+      }
+     },
+     "BSHS INMA2": {
+      "ids": [
+       {
+        "id": "IDST M90EC",
+        "kind": "M-ID",
+        "title": "HS Integrated Math 2"
+       }
+      ],
+      "title": "HS Integrated Math 2",
+      "identity": {
+       "id": "IDST M90EC",
+       "kind": "CCR",
+       "title": "HS Integrated Math 2"
+      }
+     },
+     "BSHS INMA3": {
+      "ids": [
+       {
+        "id": "IDST M90FC",
+        "kind": "M-ID",
+        "title": "HS Integrated Math 3"
+       }
+      ],
+      "title": "HS Integrated Math 3",
+      "identity": {
+       "id": "IDST M90FC",
+       "kind": "CCR",
+       "title": "HS Integrated Math 3"
+      }
+     },
+     "BSHS SPNS1": {
+      "ids": [
+       {
+        "id": "SPAN M90AB",
+        "kind": "M-ID",
+        "title": "HS Spanish for Native Speakers 1"
+       }
+      ],
+      "title": "HS Spanish for Native Speakers 1",
+      "identity": {
+       "id": "SPAN M90AB",
+       "kind": "CCR",
+       "title": "HS Spanish for Native Speakers 1"
+      }
+     },
+     "BSHS SPNS2": {
+      "ids": [
+       {
+        "id": "SPAN M90AE",
+        "kind": "M-ID",
+        "title": "High School Spanish for Native Speakers 2"
+       }
+      ],
+      "title": "High School Spanish for Native Speakers 2",
+      "identity": {
+       "id": "SPAN M90AE",
+       "kind": "CCR",
+       "title": "High School Spanish for Native Speakers 2"
+      }
+     },
+     "BSHS WRIT1": {
+      "ids": [
+       {
+        "id": "IDST M90BD",
+        "kind": "M-ID",
+        "title": "Literature and Writing Fundamentals 1"
+       }
+      ],
+      "title": "Literature and Writing Fundamentals 1",
+      "identity": {
+       "id": "IDST M90BD",
+       "kind": "CCR",
+       "title": "Literature and Writing Fundamentals 1"
+      }
+     },
+     "BSHS WRIT2": {
+      "ids": [
+       {
+        "id": "IDST M90DX",
+        "kind": "M-ID",
+        "title": "Literature and Writing Fundamentals 2"
+       }
+      ],
+      "title": "Literature and Writing Fundamentals 2",
+      "identity": {
+       "id": "IDST M90DX",
+       "kind": "CCR",
+       "title": "Literature and Writing Fundamentals 2"
+      }
+     }
+    }
+   },
+   "measure": "units",
+   "loaded_at": "2026-10-10T15:36:31.521224+00:00",
+   "total_max": null,
+   "total_min": null,
+   "checked_at": null,
+   "checked_by": null,
+   "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Adult High School Diploma",
+   "control_number": "31598"
+  },
+  {
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "checks": {
+    "listed": 3,
+    "placed": 0,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [],
+    "program": {
+     "measure": "units",
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "",
+     "open_elective_units": null
+    }
+   },
+   "checked": false,
+   "college": "Mt. San Antonio College",
+   "display": {
+    "v": 1,
+    "map": {
+     "url": null,
+     "host": null,
+     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4).",
+     "status": "none",
+     "checked_run": "census-20261004T152834Z-s2of4"
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists DNCE 39; the reader found it appears only in the Kinesiology & Wellness A.A. activity list, not a Dance Teacher section.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists DNCE32; the reader found it DNCE 32 appears only in the Kinesiology & Wellness A.A. activity list, not a Dance Teacher section.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists DNT38; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "No printed total",
+      "text": "The catalog prints no program total, so the units cannot be checked against one.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The source URL and text are for the A.A. Liberal Arts & Sciences, Emphasis in Kinesiology & Wellness (clusters of science and behavioral courses plus a 'Required Electives' activity list), not the Dance Teacher Certificate of Achievement. No section for the Dance Teacher certificate appears in the text, so no heading, blocks, or total are recorded.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The text begins mid-list (cut off at 'Development and Aging') and ends mid-entry ('Women's Se'), so it is truncated at both ends.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The 'Program Learning Objectives' on the outcomes tab belong to the Kinesiology & Wellness emphasis degree, not to the Dance Teacher certificate, so they are not recorded as this award's outcomes.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The award title in the request ('18 or greater semester (or 27 or greater quarter) u') is a unit-threshold descriptor and is not a stated total. Reviewer should locate the correct Dance Teacher catalog page (likely listing DNT 38 Dance Teaching Methods).",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     }
+    ],
+    "build": "153ead0ce992",
+    "built": "2026-10-06",
+    "checks": {
+     "checked": null,
+     "coverage": {
+      "listed": 3,
+      "placed": 0
+     },
+     "reviewer": null,
+     "additions": 0,
+     "arithmetic": "incomplete"
+    },
+    "counts": {
+     "here": 0,
+     "adopt": 0,
+     "courses": 0,
+     "consider": 0
+    },
+    "figure": {
+     "path": null,
+     "picks": [],
+     "total": {
+      "max": null,
+      "min": null
+     },
+     "up_to": 0,
+     "measure": "units",
+     "path_why": "No pathway map has been read for this program.",
+     "path_picks": []
+    },
+    "courses": {}
+   },
+   "measure": "units",
+   "loaded_at": "2026-10-10T15:36:31.716638+00:00",
+   "total_max": null,
+   "total_min": null,
+   "checked_at": null,
+   "checked_by": null,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/aa-liberal-arts-sciences-emphasis-kinesiology-wellness/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Dance Teacher",
+   "control_number": "32892"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 9,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARTC 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTG 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTG 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTG 22A",
+        "units": 2,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTG 23",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTG 24",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ARTH C1200",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH C1200H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH 6H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 9",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH 11H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Identify various roles in the museum and gallery systems.",
+      "Apply and analyze historic and contemporary art theory within museum and gallery systems.",
+      "Apply design concepts, installation and lighting techniques, and fabrication skills towards a cohesive exhibition design.",
+      "Operate equipment and tools, common to the field, safely toward fabrication related to exhibition installation, packing, and presentation.",
+      "Communicate effectively and timely within the network of museum and gallery systems to publicize artists, exhibitions, and programs.",
+      "Analyze, critique, and evaluate exhibition design, concepts, planning and installation, and execution of contemporary exhibitions.",
+      "Analyze artwork, design, installation, fabrication, and concept, within the context of historic and contemporary theory.",
+      "Apply design concepts, installation techniques, fabrication skills, and exhibition concept toward the production of a purposeful exhibition.",
+      "Demonstrate networking and communication knowledge related to approaching and interacting with museum and art gallery professionals in relation to contemporary practice."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 21,
+      "min": 20
+     },
+     "section_heading": "Museum Studies and Art Gallery (Certificate N0988)",
+     "open_elective_units": null
+    }
+   },
+   "checked": false,
+   "college": "Mt. San Antonio College",
+   "display": {
+    "v": 1,
+    "map": {
+     "url": null,
+     "host": null,
+     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4).",
+     "status": "none",
+     "checked_run": "census-20261004T152834Z-s2of4"
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists AHIS 5; the reader found it not in the text; the page lists ARTH C1200/C1200H instead.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists AHIS 6; the reader found it not in the text; the page lists ARTH 6 (same title) instead.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists ARTG 21B; the reader found it not in the text.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The catalog prints ARTG 22A, ARTH C1200, ARTH C1200H, ARTH 6, ARTH 7, ARTH 9, ARTH 11, ARTH 11H, ARTH 13 for this program; the state's Program Course File does not list them.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The program title in the state file is 'Exhibition Concept, Design, and Production', but the catalog page is titled 'Museum Studies and Art Gallery (Certificate N0988)'. The closed list also differs from the page: it has AHIS 5, AHIS 6, and ARTG 21B, while the page has ARTG 22A and ARTH courses. Check that this page is the matching program and version.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The page prints two outcome lists, both recorded in page order. The first six come from the overview ('Students who successfully complete the program will be able to:'). The last three come from the Outcomes tab under 'Program Learning Outcomes'. A reviewer may want to keep only the formal PLO list.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "ARTG 22A is a variable-unit course; the catalog prints 2-3 and says 'A minimum of two units required.'",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "Required Electives: the catalog prints 6 units and no units beside the individual elective courses, so their units are null.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "ARTH 6H matches the closed-list entry 'ARTH6H' apart from spacing, so it is treated as on the list. ARTH 6 is not on the list, which has AHIS 6 under the same title, so it is marked as a catalog addition.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The Outcomes tab ends with a link to 'Review Student Learning Outcomes (SLOs)'; no further outcomes are printed.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     }
+    ],
+    "build": "153ead0ce992",
+    "built": "2026-10-06",
+    "checks": {
+     "checked": null,
+     "coverage": {
+      "listed": 9,
+      "placed": 6
+     },
+     "reviewer": null,
+     "additions": 9,
+     "arithmetic": "equal"
+    },
+    "counts": {
+     "here": 0,
+     "adopt": 1,
+     "courses": 15,
+     "consider": 0
+    },
+    "figure": {
+     "path": null,
+     "picks": [],
+     "total": {
+      "max": 21,
+      "min": 20
+     },
+     "up_to": 0,
+     "measure": "units",
+     "path_why": "No pathway map has been read for this program.",
+     "path_picks": []
+    },
+    "courses": {
+     "ARTH 6": {
+      "title": null,
+      "identity": null
+     },
+     "ARTH 7": {
+      "title": null,
+      "identity": null
+     },
+     "ARTH 9": {
+      "title": null,
+      "identity": null
+     },
+     "ARTG 20": {
+      "ids": [
+       {
+        "id": "ARTS M1577",
+        "kind": "M-ID",
+        "title": "Art and Culture - Galleries, Museums, and Their Communities"
+       }
+      ],
+      "title": "Art and Culture - Galleries, Museums, and Their Communities",
+      "identity": {
+       "id": "ARTS M1577",
+       "kind": "CCR",
+       "title": "Art and Culture - Galleries, Museums, and Their Communities"
+      }
+     },
+     "ARTG 21": {
+      "ids": [
+       {
+        "id": "ARTS M1577",
+        "kind": "M-ID",
+        "title": "Art and Culture - Galleries, Museums, and Their Communities"
+       }
+      ],
+      "title": "Art Galleries and Museums - Professional Practices",
+      "identity": {
+       "id": "ARTS M1577",
+       "kind": "CCR",
+       "title": "Art and Culture - Galleries, Museums, and Their Communities"
+      }
+     },
+     "ARTG 23": {
+      "ids": [
+       {
+        "id": "ARTG M10AT",
+        "kind": "M-ID",
+        "title": "Writing for Arts Careers"
+       }
+      ],
+      "title": "Writing for Arts Careers",
+      "identity": {
+       "id": "ARTG M10AT",
+       "kind": "CCR",
+       "title": "Writing for Arts Careers"
+      }
+     },
+     "ARTG 24": {
+      "ids": [
+       {
+        "id": "ARTG M10AQ",
+        "kind": "M-ID",
+        "title": "Shop Practices for Art Careers and Exhibitions"
+       }
+      ],
+      "title": "Shop Practices for Art Careers and Exhibitions",
+      "identity": {
+       "id": "ARTG M10AQ",
+       "kind": "CCR",
+       "title": "Shop Practices for Art Careers and Exhibitions"
+      }
+     },
+     "ARTH 11": {
+      "title": null,
+      "identity": null
+     },
+     "ARTH 13": {
+      "title": null,
+      "identity": null
+     },
+     "ARTH 6H": {
+      "title": "History of Modern Art - Honors",
+      "identity": null
+     },
+     "ARTC 100": {
+      "ids": [
+       {
+        "id": "ARTS 250",
+        "kind": "C-ID",
+        "title": "Introduction to Digital Art"
+       }
+      ],
+      "adopt": {
+       "colleges_n": 6,
+       "credentials": [
+        {
+         "colleges": [
+          "San Jose City College",
+          "Santa Ana College"
+         ],
+         "credential": "Introduction to Digital Media Arts"
+        },
+        {
+         "colleges": [
+          "Los Angeles Mission College"
+         ],
+         "credential": "Adobe Certified Professional — Visual Design (Photoshop)"
+        },
+        {
+         "colleges": [
+          "Santa Ana College"
+         ],
+         "credential": "Art of Graphic Design 1"
+        },
+        {
+         "colleges": [
+          "Los Angeles Pierce College"
+         ],
+         "credential": "Graphic Design 1"
+        }
+       ],
+       "credentials_n": 6
+      },
+      "title": "Fundamentals of Graphic Design",
+      "identity": {
+       "id": "ARTS 250",
+       "kind": "C-ID",
+       "title": "Introduction to Digital Art"
+      }
+     },
+     "ARTG 22A": {
+      "ids": [
+       {
+        "id": "WEXP M1001",
+        "kind": "M-ID",
+        "title": "Work Experience Education"
+       }
+      ],
+      "title": "Exhibition Design and Art Gallery Operation Work Experience",
+      "identity": {
+       "id": "WEXP M1001",
+       "kind": "CCR",
+       "title": "Work Experience Education"
+      }
+     },
+     "ARTH 11H": {
+      "title": "History of African, Oceanic, and Native American Art - Honors",
+      "identity": null
+     },
+     "ARTH C1200": {
+      "title": null,
+      "identity": null
+     },
+     "ARTH C1200H": {
+      "title": "Survey of Art from the Renaissance to Contemporary - Honors",
+      "identity": null
+     }
+    }
+   },
+   "measure": "units",
+   "loaded_at": "2026-10-10T15:36:32.083901+00:00",
+   "total_max": 21,
+   "total_min": 20,
+   "checked_at": null,
+   "checked_by": null,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Exhibition Concept, Design, and Production",
+   "control_number": "38942"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "R-TV 19A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "R-TV 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "R-TV 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "R-TV 29",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "R-TV 41A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "R-TV 42",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "section_heading": "Post Production for Film and Television (Certificate N0935)",
+     "open_elective_units": null
+    }
+   },
+   "checked": false,
+   "college": "Mt. San Antonio College",
+   "display": {
+    "v": 1,
+    "map": {
+     "url": null,
+     "host": null,
+     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4).",
+     "status": "none",
+     "checked_run": "census-20261004T152834Z-s2of4"
+    },
+    "gaps": [
+     {
+      "kind": "Reader's note",
+      "text": "The catalog prints the subject as 'R-TV' while the closed list uses 'R TV'; these were treated as the same courses (catalog_addition false).",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The Outcomes tab prints a 'Program Learning Outcomes' heading with only a link ('Review Student Learning Outcomes (SLOs) for this program.') and no outcomes, so program.outcomes is empty.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "Total Units 18 is printed after the Required Courses list and recorded as the certificate total; no separate block total was printed.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     }
+    ],
+    "build": "153ead0ce992",
+    "built": "2026-10-06",
+    "checks": {
+     "checked": null,
+     "coverage": {
+      "listed": 6,
+      "placed": 6
+     },
+     "reviewer": null,
+     "additions": 0,
+     "arithmetic": "equal"
+    },
+    "counts": {
+     "here": 0,
+     "adopt": 0,
+     "courses": 6,
+     "consider": 0
+    },
+    "figure": {
+     "path": null,
+     "picks": [],
+     "total": {
+      "max": 18,
+      "min": 18
+     },
+     "up_to": 0,
+     "measure": "units",
+     "path_why": "No pathway map has been read for this program.",
+     "path_picks": []
+    },
+    "courses": {
+     "R-TV 20": {
+      "ids": [
+       {
+        "id": "BCST M1057",
+        "kind": "M-ID",
+        "title": "Beginning TV Studio Production"
+       }
+      ],
+      "title": "Beginning TV Studio Production",
+      "identity": {
+       "id": "BCST M1057",
+       "kind": "CCR",
+       "title": "Beginning TV Studio Production"
+      }
+     },
+     "R-TV 22": {
+      "ids": [
+       {
+        "id": "BCST M10FV",
+        "kind": "M-ID",
+        "title": "Editing for Film and Television"
+       }
+      ],
+      "title": "Editing for Film and Television",
+      "identity": {
+       "id": "BCST M10FV",
+       "kind": "CCR",
+       "title": "Editing for Film and Television"
+      }
+     },
+     "R-TV 29": {
+      "ids": [
+       {
+        "id": "BCST M10CN",
+        "kind": "M-ID",
+        "title": "Introduction to Audio Production for Film and Television"
+       }
+      ],
+      "title": "Introduction to Audio Production for Film and Television",
+      "identity": {
+       "id": "BCST M10CN",
+       "kind": "CCR",
+       "title": "Introduction to Audio Production for Film and Television"
+      }
+     },
+     "R-TV 42": {
+      "ids": [
+       {
+        "id": "BCST M10CH",
+        "kind": "M-ID",
+        "title": "Assistant Editing for Film and Television"
+       }
+      ],
+      "title": "Assistant Editing for Film and Television",
+      "identity": {
+       "id": "BCST M10CH",
+       "kind": "CCR",
+       "title": "Assistant Editing for Film and Television"
+      }
+     },
+     "R-TV 19A": {
+      "ids": [
+       {
+        "id": "BCST M1005",
+        "kind": "M-ID",
+        "title": "Beginning Video Production"
+       }
+      ],
+      "title": "Beginning Video Production",
+      "identity": {
+       "id": "BCST M1005",
+       "kind": "CCR",
+       "title": "Beginning Video Production"
+      }
+     },
+     "R-TV 41A": {
+      "ids": [
+       {
+        "id": "BCST M10DA",
+        "kind": "M-ID",
+        "title": "Beginning Video Engineering"
+       }
+      ],
+      "title": "Beginning Video Engineering",
+      "identity": {
+       "id": "BCST M10DA",
+       "kind": "CCR",
+       "title": "Beginning Video Engineering"
+      }
+     }
+    }
+   },
+   "measure": "units",
+   "loaded_at": "2026-10-10T15:36:32.6031+00:00",
+   "total_max": 18,
+   "total_min": 18,
+   "checked_at": null,
+   "checked_by": null,
+   "source_url": "https://catalog.mtsac.edu/programs/programsaz/television/post-production-for-film-and-television-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Post Production for Film and Television",
+   "control_number": "43373"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 6,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unstated"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "VOC DCIS",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOC DMB",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "VOC CPNET",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Students will be able to demonstrate proficiency in using digital media tools and software for content creation, editing, and production.",
+      "Students will be able to apply design principles and techniques to develop visually appealing and engaging digital media assets.",
+      "Students will be able to create and implement effective digital media strategies across various platforms, targeting specific audiences and goals.",
+      "Students will be able to utilize analytics tools to measure the performance and effectiveness of digital media campaigns and make data-driven decisions.",
+      "Students will be able to apply knowledge of copyright laws, intellectual property, and ethical guidelines in the creation and distribution of digital media content.",
+      "Students will be able to develop a professional portfolio showcasing their digital media projects and skills to enhance employment opportunities."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Digital Media Specialist",
+     "open_elective_units": null
+    }
+   },
+   "checked": false,
+   "college": "Mt. San Antonio College",
+   "display": {
+    "v": 1,
+    "map": {
+     "url": null,
+     "host": null,
+     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4).",
+     "status": "none",
+     "checked_run": "census-20261004T152834Z-s2of4"
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists VOC MIT; the reader found it listed as a recommended elective, not required.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists VOC BCDP; the reader found it listed as a recommended elective, not required.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists VOC OCBA; the reader found it listed as a recommended elective, not required.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "No printed total",
+      "text": "The catalog prints no program total, so the units cannot be checked against one.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Possible misread",
+      "text": "A noncredit program recorded in units; noncredit programs count hours.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "This is a noncredit Certificate of Completion (#43777), but the text prints no hours or units for any course or for the program; measure is left as 'units' and all unit and hour fields are null. A reviewer may want to confirm the hours from another source.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The Units column in both course tables is empty.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "Program outcomes are taken from the page's outcomes tab (#tgl0) under the 'Program Learning Outcomes' heading. The closing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The Recommended Electives (VOC MIT, VOC BCDP, VOC OCBA) are not recorded as a block because the text presents them as recommended, not required.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     }
+    ],
+    "build": "153ead0ce992",
+    "built": "2026-10-06",
+    "checks": {
+     "checked": null,
+     "coverage": {
+      "listed": 6,
+      "placed": 3
+     },
+     "reviewer": null,
+     "additions": 0,
+     "arithmetic": "unstated"
+    },
+    "counts": {
+     "here": 0,
+     "adopt": 0,
+     "courses": 3,
+     "consider": 0
+    },
+    "figure": {
+     "path": null,
+     "picks": [],
+     "total": {
+      "max": null,
+      "min": null
+     },
+     "up_to": 0,
+     "measure": "units",
+     "path_why": "No pathway map has been read for this program.",
+     "path_picks": []
+    },
+    "courses": {
+     "VOC DMB": {
+      "ids": [
+       {
+        "id": "VOCE M90GO",
+        "kind": "M-ID",
+        "title": "Digital Media Basics for the Workplace"
+       }
+      ],
+      "title": "Digital Media Basics for the Workplace",
+      "identity": {
+       "id": "VOCE M90GO",
+       "kind": "CCR",
+       "title": "Digital Media Basics for the Workplace"
+      },
+      "units_from_state_file": 0
+     },
+     "VOC DCIS": {
+      "ids": [
+       {
+        "id": "VOCE M90KK",
+        "kind": "M-ID",
+        "title": "Digital Citizenship - Internet Safety Course"
+       }
+      ],
+      "title": "Digital Citizenship - Internet Safety Course",
+      "identity": {
+       "id": "VOCE M90KK",
+       "kind": "CCR",
+       "title": "Digital Citizenship - Internet Safety Course"
+      },
+      "units_from_state_file": 0
+     },
+     "VOC CPNET": {
+      "ids": [
+       {
+        "id": "VOCE M90PR",
+        "kind": "M-ID",
+        "title": "Internet Research - an Introduction"
+       }
+      ],
+      "title": "Internet Research - an Introduction",
+      "identity": {
+       "id": "VOCE M90PR",
+       "kind": "CCR",
+       "title": "Internet Research - an Introduction"
+      },
+      "units_from_state_file": 0
+     }
+    }
+   },
+   "measure": "units",
+   "loaded_at": "2026-10-10T15:36:32.6031+00:00",
+   "total_max": null,
+   "total_min": null,
+   "checked_at": null,
+   "checked_by": null,
+   "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/digitalmediaspecialisttext/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Digital Media Specialist",
+   "control_number": "43777"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unstated"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "VOC RG",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOC FS",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "measure": "units",
+     "outcomes": [
+      "Students will be able to gain entry-level employment in an organization connected to food systems, community sustainability, or environmental stewardship.",
+      "Students will be able to demonstrate the application of sustainable and regenerative principles to a broad range of industries and facets of the community.",
+      "Students will be able to become leaders for change, improving community resilience by implementing sustainable and regenerative practices in their chosen industry."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Regenerative Communities",
+     "open_elective_units": null
+    }
+   },
+   "checked": false,
+   "college": "Mt. San Antonio College",
+   "display": {
+    "v": 1,
+    "map": {
+     "url": null,
+     "host": null,
+     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4).",
+     "status": "none",
+     "checked_run": "census-20261004T152834Z-s2of4"
+    },
+    "gaps": [
+     {
+      "kind": "Catalog and state file differ",
+      "text": "The state's Program Course File lists VOC LFC; the reader found it listed as a recommended elective, not required.",
+      "owner": "college",
+      "where": "Mt. San Antonio College's program record in the state's curriculum inventory"
+     },
+     {
+      "kind": "No printed total",
+      "text": "The catalog prints no program total, so the units cannot be checked against one.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Possible misread",
+      "text": "A noncredit program recorded in units; noncredit programs count hours.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "This is a noncredit Certificate of Completion (#43999), but the catalog text prints no hours or units beside any course and no program total, so measure is left as 'units' and all unit/total fields are null. A reviewer should check whether hours appear elsewhere, such as the course pages.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The text states that students must pass all required courses to earn the certificate. VOC LFC appears under 'Recommended Elective' and is not part of the requirements.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     },
+     {
+      "kind": "Reader's note",
+      "text": "The page links to separate Student Learning Outcomes (SLOs) for this program; those are not in the text and were not recorded.",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure"
+     }
+    ],
+    "build": "153ead0ce992",
+    "built": "2026-10-06",
+    "checks": {
+     "checked": null,
+     "coverage": {
+      "listed": 3,
+      "placed": 2
+     },
+     "reviewer": null,
+     "additions": 0,
+     "arithmetic": "unstated"
+    },
+    "counts": {
+     "here": 0,
+     "adopt": 0,
+     "courses": 2,
+     "consider": 0
+    },
+    "figure": {
+     "path": null,
+     "picks": [],
+     "total": {
+      "max": null,
+      "min": null
+     },
+     "up_to": 0,
+     "measure": "units",
+     "path_why": "No pathway map has been read for this program.",
+     "path_picks": []
+    },
+    "courses": {
+     "VOC FS": {
+      "ids": [
+       {
+        "id": "ESCI M9001",
+        "kind": "M-ID",
+        "title": "Fundamentals of Sustainability"
+       }
+      ],
+      "title": "Fundamentals of Sustainability",
+      "identity": {
+       "id": "ESCI M9001",
+       "kind": "CCR",
+       "title": "Fundamentals of Sustainability"
+      },
+      "units_from_state_file": 0
+     },
+     "VOC RG": {
+      "ids": [
+       {
+        "id": "VOCE M90OS",
+        "kind": "M-ID",
+        "title": "Regenerative Gardening"
+       }
+      ],
+      "title": "Regenerative Gardening",
+      "identity": {
+       "id": "VOCE M90OS",
+       "kind": "CCR",
+       "title": "Regenerative Gardening"
+      },
+      "units_from_state_file": 0
+     }
+    }
+   },
+   "measure": "units",
+   "loaded_at": "2026-10-10T15:36:32.798663+00:00",
+   "total_max": null,
+   "total_min": null,
+   "checked_at": null,
+   "checked_by": null,
+   "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/regenerativecommunitiestext/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38059865531,
+   "program_title": "Regenerative Communities",
+   "control_number": "43999"
+  }
+ ]
+}
