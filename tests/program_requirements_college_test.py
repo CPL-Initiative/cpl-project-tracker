@@ -289,6 +289,9 @@ check(C.cq_subject_lists("Mathematics (MATH): C2210, C2210H, 5, 70A") ==
       "each bare number after a subject's code reads with that code, with or without a colon")
 check(C.cq_subject_lists("Psychology (PSYC): 2, 2H or 48") == "Psychology (PSYC): PSYC 2, PSYC 2H or PSYC 48",
       "the words between the numbers stay as printed")
+check(C.cq_subject_lists("Kinesiology (KIN): 4, 6, A03, A31A, V01") ==
+      "Kinesiology (KIN): KIN 4, KIN 6, KIN A03, KIN A31A, KIN V01",
+      "a number leading with a letter (KIN A03, V01; DAN D10) reads too, so a list never stops at the first one")
 check(C.cq_subject_lists("Accounting (ACC) 3 units") == "Accounting (ACC) 3 units"
       and C.cq_subject_lists("Course (CIS) CIS 5") == "Course (CIS) CIS 5"
       and C.cq_subject_lists("(Take one course in each) 1, 2") == "(Take one course in each) 1, 2",
