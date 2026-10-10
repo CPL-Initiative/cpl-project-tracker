@@ -109,3 +109,28 @@ as a paste with its receipt, as version 56 did (`apply_migration` times out on `
 the handoff's worktree pattern (symlink `node_modules` into each worktree) put the link into #1934 through `git add -A`.
 The ignore line has no slash now; stage named paths in a worktree anyway.
 
+## S356 SkyThicket, 2026-10-10: Team & RACI, the first pass (#1957)
+
+**A tab is every module that mounts in it.** Team & RACI is `raci.js` and `mission_control.js` (the Lift Off block below
+the matrix); each injects its own CSS, so the pass read both. The dependency map attributes only `raci.js` to the tab, so
+`ui_pass.py --wiring cobi:raci` leaves out `liftoff_state` and `kb/liftoff_plan.json`. The fix is one `MODULE_ALIASES`
+entry (`"raci": ["mission_control.js"]`) in `kb/_build_cobi_admin_surface.py`; it was left out of the pass because it
+regenerates shared artifacts.
+
+**One cause can be 36 findings.** Every row's Update button was 15px tall: 36 targets under 24px, one rule. Contrast came
+from four causes: a decorative token (`--text-faint`) as text, an undefined token (`--text`, whose fallback painted in
+both themes), a fill (`--gold-accent`) as text, and `opacity:.72` on a row, which dims every ink inside it.
+
+**A `role="button"` on a `<th>` erases the column header.** Sortable headers are `th scope="col"` with `aria-sort` and a
+real `<button>` inside.
+
+**The measuring engine dedupes contrast by tag and color, ignoring the background.** `scripts/a11y.js` skipped a `span` on
+the dark header fill once a `span` of the same color had passed elsewhere on the page, which hid one regression the pass
+introduced and then caught (the directory's check-all label). Read a changed ink against every ground it sits on, not
+only what the sweep reports.
+
+**A pass can run beside other work.** A background agent in its own worktree ran the whole pass (signed out and, with a
+scratch config it did not commit, signed in) and opened its own PR; the session recorded the ledger on that branch.
+Deferred: edit-mode keyboard access (clickable `<td>` cells need a button inside) and the dark focused-row highlight
+(cobalt words on `--gold-soft` at 4.16:1).
+
