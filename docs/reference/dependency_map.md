@@ -934,6 +934,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `localhost:8000` | modules: `prototype/ccr_universe.js` · `edgefn:cpl-chat` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net` | scripts: `chatbox/scrape_landing_pages.py` |
+| `map.example` | modules: `a11y.config.js` |
 | `map.rccd.edu` | tabs: `college-briefing`, `implementation-funding` · scripts: `kb/_seed_statewide_categories.py`, `tools/source_cpl_stories.mjs`, `veteran-sprint-map/build_selfcontained.py`, `veteran-sprint-map/build_web.py` · `edgefn:cpl-chat` |
 | `mapwebapinew.azurewebsites.net` | scripts: `fetch_custom_report.py`, `kb/_discover_map_datasets.py`, `kb/_probe_confirmed_custom_reports.py`, `kb/_probe_exhibit_evidence_fields.py`, `kb/_probe_lifecycle_checks.py`, `kb/_probe_new_custom_reports.py`, `kb/_probe_new_custom_reports_followup.py`, `kb/_probe_student_detail_view.py`, `map/probe_users_schema.py`, `map/sync_map_users.py`, `statewide/_probe_exhibit_authority.py` |
 | `merritt.edu` | tabs: `map-queue`, `map-users` |
@@ -1064,4 +1065,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 97 Supabase tables · 36 RPCs · 6 edge functions · 621 file
-datasets · 165 external services · 426 consumers · 47 workflows · 39 tabs.
+datasets · 166 external services · 426 consumers · 47 workflows · 39 tabs.

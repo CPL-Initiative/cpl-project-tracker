@@ -70,20 +70,24 @@
     var css = [
       ".mapu { max-width: 1100px; margin: 0 auto; color: var(--text-body); }",
       ".mapu h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
-      ".mapu-intro { color: var(--text-muted); max-width: 860px; margin: 0 0 12px; font-size: .92rem; }",
+      ".mapu-intro { color: var(--text-muted); max-width: var(--cpl-measure,none); margin: 0 0 12px; font-size: .92rem; }",
       ".mapu-stat { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 14px; }",
       ".mapu-stat .box { flex:1 1 150px; border:1px solid var(--border); border-radius:8px; background: var(--surface-subtle); padding:10px 12px; }",
       ".mapu-stat .box .n { font-size:1.5rem; font-weight:700; color: var(--navy-primary); }",
       ".mapu-stat .box .l { font-size:.74rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }",
       ".mapu-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 12px; }",
       ".mapu-toolbar input.q { flex:1 1 220px; min-width:180px; padding:8px 12px; border:1px solid var(--border-strong); border-radius:6px; font-size:.9rem; }",
-      ".mapu-toolbar input.q:focus { outline:none; border-color: var(--navy-secondary); }",
+      ".mapu-toolbar input.q:focus { border-color: var(--navy-secondary); }",
       ".mapu-select { padding:7px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); }",
       ".mapu-count { font-size:.82rem; color: var(--text-muted); margin-left:auto; }",
       ".mapu-auth { font-size:.78rem; color: var(--text-muted); }",
-      ".mapu-auth b { color: var(--hunter, #2c601a); }",
+      ".mapu-auth b { color: var(--hunter); }",
       ".mapu-table { width:100%; border-collapse:collapse; font-size:.88rem; }",
-      ".mapu-table th { text-align:left; background: var(--seal-blue); color:#fff; padding:7px 10px; font-size:.74rem; text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0; }",
+      // A wide table scrolls inside its own named region on a phone, so the page
+      // never scrolls sideways; at desktop widths the sticky header still holds.
+      ".mapu-scroll { max-width:100%; }",
+      "@media (max-width: 560px) { .mapu-scroll { overflow-x:auto; } }",
+      ".mapu-table th { text-align:left; background: var(--seal-blue); color: var(--white); padding:7px 10px; font-size:.74rem; text-transform:uppercase; letter-spacing:.04em; position:sticky; top:0; }",
       ".mapu-table th.num, .mapu-table td.num { text-align:right; }",
       ".mapu-table td { padding:7px 10px; border-bottom:1px solid var(--border); vertical-align:top; }",
       ".mapu-table tr:hover { background: var(--surface-subtle); }",
@@ -98,54 +102,62 @@
       ".mapu-propedit-lbl { display:inline-block; margin:0 14px 8px 0; font-size:.74rem;"
         + " color: var(--text-muted); }",
       ".mapu-propedit-inp { display:block; margin-top:3px; padding:4px 7px; font-size:.82rem;"
-        + " min-width:230px; border:1px solid var(--border-subtle,#ccc); border-radius:4px;"
-        + " background: var(--surface-page,#fff); color: var(--text-body); }",
+        + " min-width:230px; border:1px solid var(--border-subtle); border-radius:4px;"
+        + " background: var(--surface-page); color: var(--text-body); }",
       ".mapu-propedit-act { margin-top:2px; }",
-      ".mapu-rosterbtn { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:2px 9px; cursor:pointer; color: var(--text-body); font-size:.76rem; }",
-      ".mapu-rosterbtn:hover { background: var(--surface-muted); }",
+      // Controls are underlined words (Sam, 2026-10-09; reference-ui-design-system,
+      // "Controls"): no border, no fill, underlined at rest, cobalt, 24px tall,
+      // the words at least 18px apart.
+      ".mapu-rosterbtn { border:0; background:none; color: var(--cobalt); font-family:inherit; font-weight:600; font-size:.78rem; padding:2px 0; min-height:24px; min-width:24px; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; cursor:pointer; }",
+      ".mapu-rosterbtn:hover { text-decoration-thickness:2px; }",
+      ".mapu-rosterbtn:disabled { color: var(--text-muted); text-decoration:none; cursor:default; }",
+      ".mapu-rosterbtn + .mapu-rosterbtn { margin-left:18px; }",
       ".mapu-roster { background: var(--surface-subtle); }",
       ".mapu-roster table { width:100%; border-collapse:collapse; font-size:.82rem; }",
       ".mapu-roster td, .mapu-roster th { padding:4px 8px; border-bottom:1px solid var(--border); }",
       ".mapu-roster th { color: var(--text-muted); text-transform:uppercase; font-size:.66rem; letter-spacing:.04em; text-align:left; }",
       // Session 88 — active count + status/disciplines in the roster
-      ".mapu-active { color: var(--hunter,#2C601A); font-size:.74rem; font-weight:600; margin-left:3px; }",
+      ".mapu-active { color: var(--hunter); font-size:.74rem; font-weight:600; margin-left:3px; }",
       ".mapu-st { font-size:.72rem; font-weight:600; padding:1px 7px; border-radius:10px; white-space:nowrap; }",
-      ".mapu-st-active { color: var(--hunter,#2C601A); background: rgba(44,96,26,.10); }",
-      ".mapu-st-inactive { color: var(--text-muted,#5C5C55); background: var(--surface-muted); }",
+      ".mapu-st-active { color: var(--hunter); background: color-mix(in srgb, var(--hunter) 12%, transparent); }",
+      ".mapu-st-inactive { color: var(--text-muted); background: var(--surface-muted); }",
       ".mapu-disc { cursor: help; }",
       // ── Student-contact worklist (Session 120) ──
       ".mapu-lens { display:flex; gap:6px; margin:0 0 10px; flex-wrap:wrap; }",
       ".mapu-lensbtn { font-size:.8rem; padding:5px 12px; border:1px solid var(--border);"
         + " border-radius:14px; background: var(--surface); color: var(--text-muted); cursor:pointer; }",
-      ".mapu-lensbtn:hover { border-color: var(--seal-blue); color:var(--seal-blue-text,#002F6D); }",
-      ".mapu-lensbtn.on { background: var(--seal-blue); border-color: var(--seal-blue); color:#fff; }",
+      // A toggle in a set marks its selected state with weight and aria-pressed
+      // as well as the fill (reference-ui-design-system, "Controls": not covered).
+      ".mapu-lensbtn { min-height:24px; }",
+      ".mapu-lensbtn:hover { border-color: var(--seal-blue); color: var(--seal-blue-text); }",
+      ".mapu-lensbtn.on { background: var(--seal-blue); border-color: var(--seal-blue); color: var(--white); font-weight:700; }",
       ".mapu-lenscount { font-weight:700; }",
       ".mapu-subh { color: var(--navy-primary); margin:22px 0 2px; font-size:1rem; }",
       ".mapu-gaptable td { vertical-align: top; }",
-      ".mapu-lp { text-decoration:none; color: var(--link,var(--accent-link)); }",
+      ".mapu-lp { display:inline-block; min-height:24px; line-height:24px; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px; }",
       ".mapu-propose { border-left:3px solid var(--seal-blue); padding-left:9px; }",
-      ".mapu-src { font-size:.72rem; color: var(--link,var(--accent-link)); text-decoration:none; }",
+      ".mapu-src { font-size:.72rem; color: var(--accent-link); text-decoration:none; }",
       ".mapu-src:hover { text-decoration:underline; }",
       ".mapu-fb { margin:0 0 4px; }",
       ".mapu-fb-t { font-size:.72rem; color: var(--text-muted); }",
-      ".mapu-warn { font-size:.72rem; color: var(--red-alert,#920000); cursor:help; }",
+      ".mapu-warn { font-size:.72rem; color: var(--red-alert); cursor:help; }",
       // Proposed-for-MAP treatment (SkyWire, 2026-08-09). Deliberately distinct
       // from every "this is what MAP holds" cell: a temporary fill that reads as
       // MAP data is the whole risk of this feature.
-      ".mapu-prop { border-left:3px solid var(--gold-accent); background:#FFFBEC; padding:4px 7px; border-radius:4px; }",
-      ".mapu-prop-tag { display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.02em; text-transform:uppercase; color:#92400E; background:#FEF3C7; padding:1px 6px; border-radius:9px; margin-bottom:3px; }",
+      ".mapu-prop { border-left:3px solid var(--gold-accent); background: var(--surface-subtle); padding:4px 7px; border-radius:4px; }",
+      ".mapu-prop-tag { display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.02em; text-transform:uppercase; color: var(--on-mustard); background: var(--mustard-fill); padding:1px 6px; border-radius:9px; margin-bottom:3px; }",
       ".mapu-prop-em { font-family:ui-monospace,Menlo,monospace; font-size:.74rem; }",
       ".mapu-prop-none { font-size:.72rem; color: var(--text-muted); font-style:italic; }",
       ".mapu-dirtable td { vertical-align: top; font-size:.8rem; }",
-      ".mapu-via-cur { color: var(--hunter, #2c601a); }",
+      ".mapu-via-cur { color: var(--hunter); }",
       ".mapu-gate { color: var(--text-muted); font-size:.82rem; padding:8px 4px; }",
       ".mapu-gate a { color: var(--navy-secondary); cursor:pointer; text-decoration:underline; }",
       ".mapu-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
-      ".mapu-draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".mapu-draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
       ".mapu-nudged { display:block; font-size:.68rem; color: var(--text-muted); margin-top:3px; }",
       // recipient picker (the confirm/uncheck dialog before the mailto opens)
       ".mapu-picker-ov { position:fixed; inset:0; background:rgba(15,23,42,.45); display:flex; align-items:center; justify-content:center; z-index:9999; padding:16px; }",
-      ".mapu-picker { background: var(--surface-opaque, #fff); color: var(--text-body); border-radius:10px; max-width:520px; width:100%; max-height:86vh; overflow:auto; padding:18px 20px; box-shadow:0 14px 40px rgba(0,0,0,.3); }",
+      ".mapu-picker { background: var(--surface-opaque); color: var(--text-body); border-radius:10px; max-width:520px; width:100%; max-height:86vh; overflow:auto; padding:18px 20px; box-shadow:0 14px 40px rgba(0,0,0,.3); }",
       ".mapu-picker h3 { margin:0 0 6px; color: var(--navy-primary); font-size:1.05rem; }",
       ".mapu-pick-note { font-size:.8rem; color: var(--text-muted); margin:0 0 12px; line-height:1.4; }",
       ".mapu-pick-list { display:flex; flex-direction:column; gap:6px; margin:0 0 14px; }",
@@ -155,9 +167,10 @@
       ".mapu-pick .mapu-pick-l { font-weight:600; font-size:.86rem; }",
       ".mapu-pick .mapu-pick-n { font-size:.78rem; color: var(--text-body); }",
       ".mapu-pick .mapu-pick-e { grid-column:2; font-size:.74rem; color: var(--text-muted); }",
-      ".mapu-pick-actions { display:flex; justify-content:flex-end; gap:8px; }",
-      ".mapu-pick-go { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); }",
-      ".mapu-pick-go:hover { background: var(--navy-secondary); }",
+      ".mapu-pick-actions { display:flex; justify-content:flex-end; gap:18px; }",
+      // The lead action is a word too; the filled primary button is retired.
+      ".mapu-pick-actions .mapu-rosterbtn + .mapu-rosterbtn { margin-left:0; }",
+      ".mapu-pick-go { font-size:.86rem; }",
       // user-roster checklist (Check-All header + per-user rows, scroll-capped)
       ".mapu-roster-pick { margin:0 0 14px; }",
       ".mapu-roster-head { background: var(--surface-subtle); border-color: var(--border-strong); }",
@@ -1160,7 +1173,7 @@
     if (state.propErr) h += '<div class="mapu-warn" style="margin:6px 0">' + esc(state.propErr) + "</div>";
     h += '<div class="mapu-propedit-act">'
       + '<button class="mapu-rosterbtn" data-prop-save="' + esc(ckey(g.college)) + '"'
-      + (state.propBusy ? " disabled" : "") + ">💾 Save proposal</button> "
+      + (state.propBusy ? " disabled" : "") + ">Save proposal</button> "
       + '<button class="mapu-rosterbtn" data-prop-cancel>Cancel</button>'
       + (cur ? ' <button class="mapu-rosterbtn" data-prop-clear="' + esc(ckey(g.college)) + '"'
                + ' title="Remove our proposal. The row falls back to whatever MAP designates.">'
@@ -1589,16 +1602,16 @@
     if (signedIn()) {
       var nGaps = gapRows().length;
       html += '<div class="mapu-lens">'
-        + '<button class="mapu-lensbtn' + (state.lens === "all" ? " on" : "") + '" data-lens="all">'
+        + '<button class="mapu-lensbtn' + (state.lens === "all" ? " on" : "") + '" data-lens="all" aria-pressed="' + (state.lens === "all") + '">'
         + "All colleges</button>"
-        + '<button class="mapu-lensbtn' + (state.lens === "gaps" ? " on" : "") + '" data-lens="gaps"'
+        + '<button class="mapu-lensbtn' + (state.lens === "gaps" ? " on" : "") + '" data-lens="gaps" aria-pressed="' + (state.lens === "gaps") + '"'
         + ' title="Colleges whose MAP landing page has no Primary Contact — the address MAP routes student CPL requests to">'
         + "⚠ No student contact"
         + (state.gaps ? ' <span class="mapu-lenscount">' + nGaps + "</span>" : "")
         + "</button>"
-        + '<button class="mapu-lensbtn' + (state.lens === "contacts" ? " on" : "") + '" data-lens="contacts"'
+        + '<button class="mapu-lensbtn' + (state.lens === "contacts" ? " on" : "") + '" data-lens="contacts" aria-pressed="' + (state.lens === "contacts") + '"'
         + ' title="Every college with its Primary Contact, CPL Assistant, and published counseling inbox — exportable">'
-        + "📇 Contact directory"
+        + "Contact directory"
         + (state.gaps ? ' <span class="mapu-lenscount">' + state.gaps.filter(function (g) {
             return g.college_kind === "college"; }).length + "</span>" : "")
         + "</button></div>";
@@ -1614,7 +1627,7 @@
       + '<option value="college"' + (state.sort === "college" ? " selected" : "") + ">College A–Z</option>"
       + "</select>"
       + '<span class="mapu-auth">' + (signedIn()
-        ? "Signed in <b>✓</b> — roster visible"
+        ? "Signed in — roster visible"
         : "Unlock with the team phrase (the About menu in the header) to see names &amp; emails") + "</span>"
       + '<span class="mapu-count">' + rows.length + " college" + (rows.length === 1 ? "" : "s") + "</span>"
       + "</div>";
@@ -1627,14 +1640,14 @@
     }
 
     var canNudge = signedIn();
-    html += '<table class="mapu-table"><thead><tr>'
+    html += '<div class="mapu-scroll" role="region" tabindex="0" aria-label="MAP users by college"><table class="mapu-table"><thead><tr>'
       + "<th>College</th><th class=\"num\">Users</th><th>Role mix</th><th>Actions</th>"
       + "</tr></thead><tbody>";
     rows.forEach(function (r) {
       var open = !!state.rosterOpen[r.college];
       var nudgeBtn = canNudge
         ? ' <button class="mapu-rosterbtn" data-nudge="' + esc(r.college)
-          + '" title="Email this college’s Primary Contact + VP of Instruction + VP of Student Services + CEO to refresh their MAP users (you pick the recipients; opens your mail app — nothing is auto-sent)">\u{1F4E3} nudge</button>'
+          + '" title="Email this college’s Primary Contact + VP of Instruction + VP of Student Services + CEO to refresh their MAP users (you pick the recipients; opens your mail app — nothing is auto-sent)">nudge</button>'
         : "";
       var nudged = canNudge && state.nudges[r.college];
       var nudgedLine = nudged
@@ -1651,14 +1664,14 @@
         + "</td>"
         + '<td><div class="mapu-roles">' + roleChips(r.role_mix) + "</div></td>"
         + '<td><button class="mapu-rosterbtn" data-roster="' + esc(r.college) + '">'
-        + (open ? "✕ hide" : "\u{1F465} roster") + "</button>" + nudgeBtn + nudgedLine + "</td>"
+        + (open ? "✕ hide" : "roster") + "</button>" + nudgeBtn + nudgedLine + "</td>"
         + "</tr>";
       if (open) {
         html += '<tr class="mapu-roster"><td colspan="4" data-roster-cell="' + esc(r.college) + '">'
           + '<div class="mapu-gate">Loading roster…</div></td></tr>';
       }
     });
-    html += "</tbody></table></div>";
+    html += "</tbody></table></div></div>";
     root.innerHTML = html;
     wire(root);
     // Fill any open roster cells.
@@ -1708,7 +1721,7 @@
       + '<span class="mapu-auth">Nothing here writes to MAP — MAP has no write API. '
       + "Set the value in MAP; this list clears itself at the next sync.</span></div>";
 
-    h += '<table class="mapu-table mapu-gaptable"><thead><tr>'
+    h += '<div class="mapu-scroll" role="region" tabindex="0" aria-label="Colleges with a person to propose"><table class="mapu-table mapu-gaptable"><thead><tr>'
       + "<th>College</th><th>Proposed student contact</th>"
       + '<th title="Where this proposal came from — the role that college has '
       + 'designated in MAP, or a person a curator typed in here.">Proposed because</th>'
@@ -1726,13 +1739,13 @@
         + '<td><button class="mapu-rosterbtn" data-prop-edit="' + esc(ckey(g.college)) + '"'
         + ' title="Propose a different person. Yours replaces the suggestion above on this list;'
         + ' it never changes MAP.">'
-        + (curatorProposalFor(g.college) ? "✏️ edit" : "✏️ change") + "</button> "
+        + (curatorProposalFor(g.college) ? "edit" : "change") + "</button> "
         + '<button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '"'
         + ' title="Draft the email telling this college we are routing their landing page to this person">'
-        + "\u{1F4E3} tell them</button></td></tr>";
+        + "tell them</button></td></tr>";
       if (state.propEdit === ckey(g.college)) h += propEditorRow(g, 4);
     });
-    h += "</tbody></table>";
+    h += "</tbody></table></div>";
 
     if (asks.length) {
       h += '<h3 class="mapu-subh">Must be asked (' + asks.length + ")</h3>"
@@ -1745,7 +1758,7 @@
         + "<b>You can propose a person here</b> once you know who it should be; it is recorded "
         + "as ours, never as MAP's, and these rows stay on this list until the value is actually "
         + "set in MAP.</p>"
-        + '<table class="mapu-table mapu-gaptable"><thead><tr>'
+        + '<div class="mapu-scroll" role="region" tabindex="0" aria-label="Colleges to ask"><table class="mapu-table mapu-gaptable"><thead><tr>'
         + "<th>College</th><th>Why</th><th>Proposed / fallback contact</th><th>Actions</th>"
         + "</tr></thead><tbody>";
       asks.forEach(function (g) {
@@ -1754,12 +1767,12 @@
           + '<td><span class="mapu-st mapu-st-inactive">' + esc(g.ask_reason || "—") + "</span></td>"
           + "<td>" + (c ? proposalCell(g) : fallbackCell(g.college)) + "</td>"
           + '<td><button class="mapu-rosterbtn" data-prop-edit="' + esc(ckey(g.college)) + '">'
-          + (c ? "✏️ edit proposal" : "✏️ propose") + "</button> "
+          + (c ? "edit proposal" : "propose") + "</button> "
           + '<button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '">'
-          + "\u{1F4E3} ask them</button></td></tr>";
+          + "ask them</button></td></tr>";
         if (state.propEdit === ckey(g.college)) h += propEditorRow(g, 4);
       });
-      h += "</tbody></table>";
+      h += "</tbody></table></div>";
     }
     return h;
   }
@@ -1783,7 +1796,7 @@
       h += '<span class="mapu-st mapu-st-inactive">no published inbox</span>';
     }
     if (f.via === "curator") {
-      h += '<div class="mapu-src mapu-via-cur">✔ from ' + esc(f.by || "the CPL team")
+      h += '<div class="mapu-src mapu-via-cur">Supplied by ' + esc(f.by || "the CPL team")
         + (f.on ? ", " + esc(f.on) : "") + " — not a MAP designation</div>";
       // A curator who also cites their source gives the strongest provenance we
       // hold: a human judgment AND the page behind it. Show both.
@@ -1857,7 +1870,7 @@
       + '<span class="mapu-auth">Downloads a spreadsheet file — double-click it to open in Excel.</span>'
       + "</div>";
 
-    h += '<table class="mapu-table mapu-dirtable"><thead><tr>'
+    h += '<div class="mapu-scroll" role="region" tabindex="0" aria-label="Contact directory"><table class="mapu-table mapu-dirtable"><thead><tr>'
       + "<th>College</th><th>Primary contact</th><th>Primary contact email</th>"
       + "<th>CPL Assistant email</th><th>CPL contact (their CPL page)</th>"
       + "<th>Counseling email / proposed fill</th>"
@@ -1869,7 +1882,7 @@
       if (f) {
         var withEmail = (f.contacts || []).filter(function (c) { return c.email; });
         var srcLink = '<a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
-          + (f.via === "curator" ? "✔ from " + esc(f.by || "the CPL team") : "source") + " ↗</a>";
+          + (f.via === "curator" ? "source, supplied by " + esc(f.by || "the CPL team") : "source") + " ↗</a>";
         if (prop) {
           // MAP holds nothing here, so this reads as a PROPOSAL — labelled, and
           // never presented as something MAP has designated.
@@ -1903,7 +1916,7 @@
         + "<td>" + cplLiaisonCell(r.college) + "</td>"
         + "<td>" + couns + "</td></tr>";
     });
-    return h + "</tbody></table>";
+    return h + "</tbody></table></div>";
   }
 
   // The handover list: exactly the colleges where MAP holds no primary contact and

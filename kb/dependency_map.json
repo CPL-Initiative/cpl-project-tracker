@@ -5,7 +5,7 @@
   "rpcs": 36,
   "edge_functions": 6,
   "file_datasets": 621,
-  "external_services": 165,
+  "external_services": 166,
   "consumers": 426,
   "workflows": 47,
   "data_js_files": 69,
@@ -291,7 +291,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 345,
+     "line": 358,
      "tabs": [
       "map-queue",
       "map-users"
@@ -444,7 +444,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 319,
+     "line": 332,
      "tabs": [
       "map-queue",
       "map-users"
@@ -536,7 +536,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 334,
+     "line": 347,
      "tabs": [
       "map-queue",
       "map-users"
@@ -710,7 +710,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 459,
+     "line": 472,
      "tabs": [
       "map-queue",
       "map-users"
@@ -751,7 +751,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1275,
+     "line": 1288,
      "tabs": [
       "map-queue",
       "map-users"
@@ -997,7 +997,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 300,
+     "line": 313,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1118,7 +1118,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 875,
+     "line": 888,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1134,7 +1134,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 514,
+     "line": 527,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1251,7 +1251,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 517,
+     "line": 530,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1267,7 +1267,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 585,
+     "line": 598,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1430,7 +1430,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 394,
+     "line": 407,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1446,7 +1446,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 591,
+     "line": 604,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1544,6 +1544,18 @@
      "direction": "read",
      "how": "url",
      "line": 7
+    }
+   ],
+   "main_committers": []
+  },
+  "external:map.example": {
+   "consumers": [
+    {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 426
     }
    ],
    "main_committers": []
@@ -1698,7 +1710,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 425,
+     "line": 438,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1714,7 +1726,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 428,
+     "line": 441,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1742,7 +1754,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 523,
+     "line": 536,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1785,7 +1797,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 312,
+     "line": 325,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1813,7 +1825,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 527,
+     "line": 540,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1829,7 +1841,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 446,
+     "line": 459,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1929,7 +1941,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 531,
+     "line": 544,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1957,7 +1969,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 291,
+     "line": 304,
      "tabs": [
       "map-queue",
       "map-users"
@@ -1997,7 +2009,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 471,
+     "line": 484,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2013,7 +2025,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 474,
+     "line": 487,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2029,7 +2041,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 348,
+     "line": 361,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2070,7 +2082,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 341,
+     "line": 354,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2108,7 +2120,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 947,
+     "line": 960,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2124,7 +2136,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 322,
+     "line": 335,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2140,7 +2152,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 325,
+     "line": 338,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2156,7 +2168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 328,
+     "line": 341,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2172,7 +2184,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 331,
+     "line": 344,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2188,7 +2200,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 315,
+     "line": 328,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2204,7 +2216,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 556,
+     "line": 569,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2264,7 +2276,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 338,
+     "line": 351,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2280,7 +2292,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 549,
+     "line": 562,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2296,7 +2308,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 506,
+     "line": 519,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2312,7 +2324,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 351,
+     "line": 364,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2328,7 +2340,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 359,
+     "line": 372,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2344,7 +2356,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 363,
+     "line": 376,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2360,7 +2372,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 355,
+     "line": 368,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2376,7 +2388,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 510,
+     "line": 523,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2392,7 +2404,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 367,
+     "line": 380,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2408,7 +2420,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 370,
+     "line": 383,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2443,7 +2455,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 373,
+     "line": 386,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2471,7 +2483,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 304,
+     "line": 317,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2487,7 +2499,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 377,
+     "line": 390,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2503,7 +2515,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 280,
+     "line": 293,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2519,7 +2531,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 380,
+     "line": 393,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2562,7 +2574,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 520,
+     "line": 533,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2578,7 +2590,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 503,
+     "line": 516,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2594,7 +2606,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 308,
+     "line": 321,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2610,7 +2622,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 384,
+     "line": 397,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2626,7 +2638,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 388,
+     "line": 401,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2642,7 +2654,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 401,
+     "line": 414,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2658,7 +2670,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 404,
+     "line": 417,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2674,7 +2686,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 408,
+     "line": 421,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2690,7 +2702,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 398,
+     "line": 411,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2706,7 +2718,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 412,
+     "line": 425,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2722,7 +2734,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 391,
+     "line": 404,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2738,7 +2750,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 416,
+     "line": 429,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2766,7 +2778,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 422,
+     "line": 435,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2782,7 +2794,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 419,
+     "line": 432,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2798,7 +2810,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 923,
+     "line": 936,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2814,7 +2826,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 431,
+     "line": 444,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2842,7 +2854,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 435,
+     "line": 448,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2901,7 +2913,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 439,
+     "line": 452,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2917,7 +2929,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 564,
+     "line": 577,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2933,7 +2945,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 442,
+     "line": 455,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2949,7 +2961,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 887,
+     "line": 900,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2965,7 +2977,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 450,
+     "line": 463,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2981,7 +2993,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 453,
+     "line": 466,
      "tabs": [
       "map-queue",
       "map-users"
@@ -2997,7 +3009,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 570,
+     "line": 583,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3025,7 +3037,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 456,
+     "line": 469,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3041,7 +3053,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 463,
+     "line": 476,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3057,7 +3069,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 927,
+     "line": 940,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3073,7 +3085,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 467,
+     "line": 480,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3089,7 +3101,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 295,
+     "line": 308,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3117,7 +3129,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 477,
+     "line": 490,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3133,7 +3145,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 480,
+     "line": 493,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3149,7 +3161,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 484,
+     "line": 497,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3229,7 +3241,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 534,
+     "line": 547,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3260,7 +3272,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 487,
+     "line": 500,
      "tabs": [
       "map-queue",
       "map-users"
@@ -3288,7 +3300,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 576,
+     "line": 589,
      "tabs": [
       "map-queue",
       "map-users"
@@ -4998,7 +5010,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 410
+     "line": 448
     },
     {
      "id": "module:college_briefing.js",
@@ -18976,7 +18988,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 204,
+     "line": 217,
      "tabs": [
       "map-queue",
       "map-users"
@@ -20836,7 +20848,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1200,
+     "line": 1213,
      "tabs": [
       "map-queue",
       "map-users"
@@ -21126,7 +21138,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1380,
+     "line": 1393,
      "tabs": [
       "map-queue",
       "map-users"
@@ -21137,7 +21149,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1373,
+     "line": 1386,
      "tabs": [
       "map-queue",
       "map-users"
@@ -21153,7 +21165,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 218,
+     "line": 231,
      "tabs": [
       "map-queue",
       "map-users"
@@ -21207,7 +21219,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 654,
+     "line": 667,
      "tabs": [
       "map-queue",
       "map-users"
@@ -21257,7 +21269,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1010,
+     "line": 1023,
      "tabs": [
       "map-queue",
       "map-users"
@@ -21273,7 +21285,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1035,
+     "line": 1048,
      "tabs": [
       "map-queue",
       "map-users"
@@ -21284,7 +21296,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1064,
+     "line": 1077,
      "tabs": [
       "map-queue",
       "map-users"
