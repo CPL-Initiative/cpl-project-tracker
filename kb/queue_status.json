@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-10T15:51:13Z",
+  "written_at": "2026-10-10T16:25:02Z",
   "session": 356,
   "moniker": "SkyThicket",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_356_handoff.md",
+  "handoff": "docs/session_357_handoff.md",
   "unchecked": [
     {
       "college": "Santa Monica College",
@@ -4056,7 +4056,7 @@
   ],
   "next_step": {
     "title": "Read a sample of Mt. San Antonio's records",
-    "text": "Every Mt. San Antonio program the harvest could read is loaded for your reading, unchecked. Answer the ten on the call card below; the Approved programs at both colleges are being read now."
+    "text": "Every Mt. San Antonio program the harvest could read is loaded for your reading, unchecked, with its course titles and CPL counts. Answer the ten on the call card below; the Approved programs at both colleges are being read and loaded."
   },
   "calls": [
     {
@@ -4129,6 +4129,10 @@
     "reading": "Cerritos, the first full college, read on Oct 9; Mt. San Antonio, the second, on Oct 10: 317 of 344 programs read from their own pages, 289 of the 313 loaded passing the three machine checks. Since Oct 10 the harvest also reads programs COCI lists as Approved, 33 at Cerritos and 84 at Mt. San Antonio."
   },
   "changes": [
+    {
+      "at": "2026-10-10T16:13:28Z",
+      "text": "Mt. San Antonio's records show their course titles, C-ID, CCN and M-ID numbers and CPL counts; every record carries the new facts, after your standing go."
+    },
     {
       "at": "2026-10-10T15:37:00Z",
       "text": "Every Mt. San Antonio program the harvest read is loaded for your reading: 313 records, unchecked, beside the four checked in the pilot."

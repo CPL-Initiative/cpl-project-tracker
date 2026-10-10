@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-327 document(s).
+328 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 357 | [the display applied from the runner; Mt. San Antonio loaded; Approved programs read](../session_357_handoff.md) | 2026-10-10 |
 | 356 | [the sample held; the reading room; the blocks given their numbers](../session_356_handoff.md) | 2026-10-10 |
 | 355 | [Cerritos loaded; Sam reads the sample from his phone](../session_355_handoff.md) | 2026-10-09 |
 | 354 | [Phase 2 opens at Cerritos; the explainer is editable; controls are words](../session_354_handoff.md) | 2026-10-09 |

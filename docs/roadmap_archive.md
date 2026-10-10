@@ -5892,3 +5892,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 - 2026-10-08 (S347 SkyTrellis): the Chancellor headline, Palo Verde read, the To-Do retired for a UI pass, the Sierra redesign lane; KB note methodology-a-lapsed-name-is-not-a-refusal.
 - 2026-10-08 (S346 SkyCairn): KB note `methodology-a-site-search-needs-the-domain-filter`; harvest lane compacted below its limit (two paragraphs to the lessons doc); lessons S346; handoff 347.
+
+### docs/INDEX.md update history, moved 2026-10-10 (S356)
+
+- 2026-10-08 (S347 SkyTrellis, re-checkpoint): Sheet 51 carried out (display build 2360b83e8100 live, #1918; flags and Confirm / Needs a fix on the Records view, #1919), all 32 maps settled; KB note methodology-a-persons-write-must-survive-the-next-reload.

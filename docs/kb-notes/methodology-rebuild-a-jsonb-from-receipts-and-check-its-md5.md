@@ -1,7 +1,7 @@
 ---
 title: Rebuild a jsonb value from its receipts and check its md5
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-10
 tags: [methodology, supabase, implementation-funding, verification]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -35,6 +35,10 @@ Apply the committed plans, in order, to the committed fixture, checking each edi
 - numbers as stored (`0.5`, `12620154`)
 
 `scripts/pg_jsonb_md5.py <file>` prints that hash.
+
+## Many rows: one combined hash (2026-10-10)
+
+The same serialization proves a many-row write without a many-row query. Hash each row's `md5(col::text)`, join the key and hash per row in byte order, and hash the whole: `md5(string_agg(k||'|'||md5(col::text), ',' order by k collate "C"))`. Build the same string locally from the committed values. S356 checked 605 program displays this way in one row of output; see [[methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner]].
 
 ## How we got here
 

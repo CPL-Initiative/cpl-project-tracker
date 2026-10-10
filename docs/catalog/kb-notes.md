@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-532 document(s).
+533 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -171,6 +171,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A ranking rule is a claim about where variance lives — re-derive it per corpus](../kb-notes/methodology-a-ranking-rule-is-a-claim-about-where-variance-lives.md) | methodology | internal | 2026-09-21 |  |
 | [A reader fix moves rows it was not aimed at, so compare each full read row by row](../kb-notes/methodology-a-reader-fix-moves-rows-it-was-not-aimed-at.md) | methodology | published | 2026-10-03 | 2026-10-03 |
 | [A receipt measures a worklist once; a lane recomputes it every build](../kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [A receipt too large for the connector applies from the runner](../kb-notes/methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner.md) | methodology | published | 2026-10-10 | 2026-10-10 |
 | [A remembered toggle hides the default from its author](../kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
@@ -397,7 +398,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Re-key every id-keyed artifact — a re-mint isn't done until the side manifests move](../kb-notes/methodology-rekey-every-id-keyed-artifact.md) | methodology | published | 2026-06-11 | 2026-07-27 |
 | [Re-mint applies — recompute through the dry-run's own allocator, gate on byte-fidelity to the reviewed plan](../kb-notes/methodology-apply-equals-spec-via-shared-allocator.md) | methodology | published | 2026-06-12 |  |
 | [Re-mint split invariants — id↔SUBJ4, control-number atomicity, dry-run↔apply cross-check](../kb-notes/methodology-remint-split-invariants.md) | methodology | published | 2026-05-29 | 2026-05-29 |
-| [Rebuild a jsonb value from its receipts and check its md5](../kb-notes/methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5.md) | methodology | published | 2026-10-02 | 2026-10-02 |
+| [Rebuild a jsonb value from its receipts and check its md5](../kb-notes/methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5.md) | methodology | published | 2026-10-02 | 2026-10-10 |
 | [Recompute a source's own summary statistics from its line items](../kb-notes/methodology-recompute-a-sources-own-summary-statistics.md) | methodology | published | 2026-07-30 |  |
 | [Recover a music bed from a mixed video by subtracting the clean voice stem](../kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction.md) | methodology | published | 2026-07-23 | 2026-07-23 |
 | [Refresh the access token before every write (don't trust a format-valid JWT)](../kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-06-26 |
