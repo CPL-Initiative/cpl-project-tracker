@@ -1,0 +1,173 @@
+{
+ "college": "Riverside City College",
+ "control_number": "39130",
+ "shape": "degree",
+ "title": "Automotive Hybrid and Electrical Vehicle",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5893",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4968,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4968,
+    "output_tokens": 1129,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1129,
+  "output_tokens_details": {
+   "thinking_tokens": 255
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04245,
+ "ms": 8723,
+ "seconds": 9.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Hybrid and Electrical Vehicle - Associate of Science Degree and Certificate of Achievement - AS954/AS954C/CE954",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate personal and shop safety procedures neededto safely work with high voltage systems.",
+    "Diagnose hybrid/electric vehicle control systems.",
+    "Use a systematic, industry-standard process totroubleshoot, evaluate, and diagnose malfunctions ofcomputer-controlled devices.",
+    "Diagnose and repair electrical and electronic circuits."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "AUT-50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-8A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-8B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-13A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-13B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The heading is printed three times; the third version lists codes AS954/AS954B/AS954C/CE954 while the first two list AS954/AS954C/CE954. The section covers both the A.S. degree and the Certificate of Achievement with one shared requirements list.",
+   "The program learning outcomes are printed once for the program as a whole (degree and certificate); the A.S. degree shares them. They are copied as printed, including run-together words such as 'neededto', 'totroubleshoot' and 'ofcomputer-controlled'.",
+   "Every course is labeled '( Historical )' in the catalog, which may mean the course records are archived versions; a reviewer should confirm that the requirements are current for 2026-2027.",
+   "The catalog prints codes with a hyphen (AUT-50); these match the closed-list codes (AUT 50, etc.).",
+   "The degree text mentions general education requirements 'as described in the college catalog' but does not name a specific GE pattern."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

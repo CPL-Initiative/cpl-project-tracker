@@ -1,0 +1,240 @@
+{
+ "college": "Riverside City College",
+ "control_number": "14670",
+ "shape": "degree",
+ "title": "Exercise, Sport & Wellness: Fitness Professions",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5974",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5159,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5159,
+    "output_tokens": 1664,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1664,
+  "output_tokens_details": {
+   "thinking_tokens": 350
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05392,
+ "ms": 14148,
+ "seconds": 14.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 8,
+   "share": 0.875,
+   "missing": [
+    "KIN44"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "KIN10",
+    "KIN14",
+    "KIN16",
+    "KIN44A"
+   ],
+   "flagged": [
+    "KIN10",
+    "KIN14",
+    "KIN16",
+    "KIN44A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    25.0
+   ],
+   "stated": [
+    24.0,
+    25.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Exercise, Sport & Wellness - Fitness Professions - Associate of Science Degree and Certificate of Achievement - AS595/AS595C/CE595",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate an acceptable level of health-related fitness.",
+    "Demonstrate appropriate knowledge of fitness testing and of issues specific to different populations.",
+    "Identify physiological principles of human movement in exercise and sport settings.",
+    "Identify, explain, and apply appropriate principles of physical activity and nutrition for physical well-being and life-long learning."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (21 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "KIN-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses (3-4 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "KIN-42",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-44A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KIN 44",
+    "why": "not in the text; the elective list names KIN-44A Yoga Instructor Fundamentals instead"
+   }
+  ],
+  "notes": [
+   "The page prints one combined section for the A.S. degree and Certificate of Achievement (AS595/AS595C/CE595); the requirements and the Program Learning Outcomes are shared by both awards and recorded here for the A.S. Degree.",
+   "The section heading is printed three times with slight variations (AS595/AS595C/CE595 and AS595/AS595B/AS595C/CE595); the first is used.",
+   "The description paragraph refers to 'the Exercise, Sport, and Wellness Certificate' although this record is for the A.S. degree.",
+   "Elective block does not state how many courses to pick; its printed 3-4 unit range implies choosing one course, recorded as choose_units with minimum 3.",
+   "KIN-44A (Yoga Instructor Fundamentals) differs from closed-list KIN 44 (Yoga Instructor Training); recorded as a catalog addition. Reviewer should check whether they are the same course renumbered.",
+   "KIN-10, KIN-14 and KIN-16 are not on the closed list and are recorded as catalog additions.",
+   "Several courses are marked '( Historical )' (KIN-4, KIN-14, KIN-16, KIN-35, KIN-45), which may indicate inactive courses for the 2026-2027 catalog year.",
+   "The degree text names general education and graduation requirements but no specific GE pattern."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

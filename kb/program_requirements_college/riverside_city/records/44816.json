@@ -1,0 +1,155 @@
+{
+ "college": "Riverside City College",
+ "control_number": "44816",
+ "shape": "noncredit",
+ "title": "Data Quick Start Non-Credit",
+ "award": "Noncredit program",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5871",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4595,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4595,
+    "output_tokens": 654,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 654,
+  "output_tokens_details": {
+   "thinking_tokens": 119
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03146,
+ "ms": 5664,
+ "seconds": 6.0,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    198.0,
+    198.0
+   ],
+   "stated": [
+    198.0,
+    198.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Data Quick Start Non-Credit - Certificate of Completion - CC8053",
+   "measure": "hours",
+   "total_units": {
+    "min": 198,
+    "max": 198
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Analyze data using Microsoft Excel data, financial, and Business Intelligence tools and functions.",
+    "Create a database to organize, query, and provide data reports using Microsoft Access.",
+    "Formulate and present solutions to business case problems using Microsoft Excel and Microsoft Access."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 198,
+     "max": 198
+    },
+    "courses": [
+     {
+      "code": "CAT-898A",
+      "units": 45,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-898B",
+      "units": 45,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-862",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-894",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with a hyphen (e.g., CAT-898A); these match closed-list codes written with a space (CAT 898A, etc.), so none are marked as catalog additions.",
+   "Award is a noncredit Certificate of Completion counted in hours; all unit fields hold hours (total 198 hours)."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

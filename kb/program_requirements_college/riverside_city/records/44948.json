@@ -1,0 +1,199 @@
+{
+ "college": "Riverside City College",
+ "control_number": "44948",
+ "shape": "degree",
+ "title": "Barbering Concepts",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/BarberingConcepts",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5123,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5123,
+    "output_tokens": 1330,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1330,
+  "output_tokens_details": {
+   "thinking_tokens": 280
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04709,
+ "ms": 10896,
+ "seconds": 11.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 8,
+   "share": 0.875,
+   "missing": [
+    "COS60B2"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "COS60B3"
+   ],
+   "flagged": [
+    "COS60B3"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": [
+    41.0,
+    41.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Barbering Concepts - Associate of Science Degree and Certificate of Achievement - AS959/AS959C/CE959",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Identify the organizations responsible for advancing the barbering profession and explain the function of state barber boards.",
+    "Deduce valid conclusions, compare viable techniques and apply principles in preparation of the California State Board of Barbering and Cosmetology practical and written exam.",
+    "Identify and analyze concepts leading to synthesis of theory for the state board written exam. Produce a business plan and portfolio.",
+    "Demonstrate entry level skills in a clinic laboratory setting.",
+    "Demonstrate workplace behaviors (soft skills) necessary for success in the cosmetology industry."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 41,
+     "max": 41
+    },
+    "courses": [
+     {
+      "code": "COS-60A1",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS-60A2",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS-60B1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS-60B3",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COS-60C1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS-60C2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS-60D1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS-60D2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COS 60B2",
+    "why": "not in the text; COS-60B3 (Level II Haircutting Barbering Concepts, 7 units) appears in its position"
+   }
+  ],
+  "notes": [
+   "The page prints a combined heading for the A.S. Degree and Certificate of Achievement (AS959/AS959C/CE959) plus a separate Certificate of Achievement (CE959) heading, but only one requirements list and one outcomes list; the A.S. degree appears to share both, and they are recorded here.",
+   "The outcome 'Identify and analyze concepts leading to synthesis of theory for the state board written exam. Produce a business plan and portfolio.' is printed as a single line and is kept as one entry.",
+   "Most required courses are marked '( Historical )' in the catalog; only COS-60B3 is marked '( Active )'. Reviewer may want to confirm the list is current for 2026-2027.",
+   "Codes are recorded as printed with a hyphen (COS-60A1); the closed list writes them with a space (COS 60A1).",
+   "No general education pattern is named in the text."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

@@ -1,0 +1,352 @@
+{
+ "college": "Riverside City College",
+ "control_number": "33229",
+ "shape": "adt",
+ "title": "Economics",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5955",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5812,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5812,
+    "output_tokens": 2949,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2949,
+  "output_tokens_details": {
+   "thinking_tokens": 1004
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08223,
+ "ms": 23589,
+ "seconds": 24.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 19,
+   "share": 0.789,
+   "missing": [
+    "ECO7",
+    "ECO8",
+    "MAT1A",
+    "MAT1B"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    21.0
+   ],
+   "stated": [
+    20.0,
+    21.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Economics - Associate in Arts for Transfer (ADT) - AA757 (CalGETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Describe, analyze and evaluate economic concepts, paradigms, and theories of the economy.",
+    "Analyze data to identify major current economic problems and use economic theory to analyze and evaluate the problems.",
+    "Identify current governmental policies to remedy economics problems and assess the effectiveness of these policies."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses - Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON-C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses - Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses - Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses - Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MATH-C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH-C2210H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ACC-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACC-1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON-5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-9H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECO 7",
+    "why": "not in the text; catalog prints ECON-C2002 for Principles of Macroeconomics"
+   },
+   {
+    "code": "ECO 8",
+    "why": "not in the text; catalog prints ECON-C2001 for Principles of Microeconomics"
+   },
+   {
+    "code": "MAT 1A",
+    "why": "not in the text; catalog prints MATH-C2210 (Calculus I: Early Transcendentals)"
+   },
+   {
+    "code": "MAT 1B",
+    "why": "not in the text; catalog prints MATH-C2220 (Calculus II: Early Transcendentals)"
+   }
+  ],
+  "notes": [
+   "The page prints three heading lines: two read 'AA757 (CalGETC)' and a third reads 'AA756 (CSUGE)/ AA757 (IGETC)'. The degree statement names Cal-GETC, so that pattern is recorded; reviewer may confirm the heading variant.",
+   "'Required Courses' prints Units: 14.00 as a whole; it consists of four nested 'Select one of the following' choices, each recorded as its own block with its printed units (3, 3, 4, 4).",
+   "Honors twins (ECON-C2001H, ECON-C2002H, STAT-C1000H, MATH-C2210H, ECON-9H) are recorded as alternatives of their non-honors courses.",
+   "ECON-6 and POLS-6 share the title 'Introduction To Political Economy' and are likely cross-listed, but the catalog prints them as separate rows, so they are recorded as separate entries.",
+   "ACC-1A and ACC-1B are marked '( Historical )' in the catalog.",
+   "ECON-C2001, ECON-C2002, MATH-C2210 and MATH-C2220 are not in the closed list (which carries older codes ECO 8, ECO 7, MAT 1A, MAT 1B) and are marked as catalog additions.",
+   "The outcomes list is printed for the program as a whole within this ADT section."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

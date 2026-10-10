@@ -1,0 +1,345 @@
+{
+ "college": "Riverside City College",
+ "control_number": "22757",
+ "shape": "certificate",
+ "title": "Computer Programming",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5930",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6233,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6233,
+    "output_tokens": 2542,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2542,
+  "output_tokens_details": {
+   "thinking_tokens": 888
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07577,
+ "ms": 19635,
+ "seconds": 20.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "CIS21",
+    "CIS5",
+    "CIS72A",
+    "CSC12",
+    "CSC21",
+    "CSC5"
+   ],
+   "flagged": [
+    "CIS21",
+    "CIS5",
+    "CIS72A",
+    "CSC12",
+    "CSC21",
+    "CSC5"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.5,
+    26.5
+   ],
+   "stated": [
+    26.5,
+    26.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Programming - Associate of Science Degree and Certificate of Achievement - AS728/AS728C/CE728",
+   "measure": "units",
+   "total_units": {
+    "min": 26.5,
+    "max": 26.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Design structured programs using C++, Javascript, orJava. Design and use object oriented programs in one ofthese languages C++, Java or PHP.",
+    "Design and use advanced programming techniques in C++ or Java."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (14.5 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14.5,
+     "max": 14.5
+    },
+    "courses": [
+     {
+      "code": "CIS-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-72A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-2",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-5",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-21",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - Group 1 (6 units)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CIS-14B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-12",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-14A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-14A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-17A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-17A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-18A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-18A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - Group 2",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CIS-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-11",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-17B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-17B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-17C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-17C",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-18B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-18B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-18C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-18C",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. degree and the Certificate of Achievement; the requirements and the 26.50 total are shared by both awards and were recorded for the certificate.",
+   "The program learning outcomes are printed once for the program as a whole; the certificate shares them. The first outcome line contains two sentences printed as a single item and was kept as one entry; the spacing errors ('orJava', 'ofthese') are copied as printed.",
+   "The heading is printed three times; the third version lists codes AS728/AS728B/AS728C/CE728 instead of AS728/AS728C/CE728.",
+   "The elective groups print only 'Units: 6.00' with no explicit 'select' wording; they were read as choosing 6 units from each list.",
+   "CIS 12 in the closed list ('CIS12') was matched to CIS-12; CSC 14A ('CSC14A') and CSC 17C ('CSC17C') were matched to CSC-14A and CSC-17C.",
+   "CSC-21 is marked '( Historical )' in the catalog."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

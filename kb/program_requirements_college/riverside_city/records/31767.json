@@ -1,0 +1,436 @@
+{
+ "college": "Riverside City College",
+ "control_number": "31767",
+ "shape": "degree",
+ "title": "Graphic Design and Printing",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5990",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6305,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6305,
+    "output_tokens": 3911,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3911,
+  "output_tokens_details": {
+   "thinking_tokens": 1278
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10344,
+ "ms": 30063,
+ "seconds": 30.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 26,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ADM62",
+    "ADM63B",
+    "ADM69A",
+    "ADM69B",
+    "ADM83"
+   ],
+   "flagged": [
+    "ADM62",
+    "ADM63B",
+    "ADM69A",
+    "ADM69B",
+    "ADM83"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    31.0,
+    34.0
+   ],
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "why": [
+    "the blocks sum to 31.0-34.0; the catalog states 34.0-34.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Graphic Design and Printing - Associate of Science Degree and Certificate of Achievement - AS653/AS653C/CE653",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate the ability to communicate effectively with clients and co-workers.",
+    "Demonstrate ethical, economic, civic, and moral responsibility.",
+    "Compare print-focused and graphic communication techniques in successful marketing and promotional strategies, including successful elements in effective advertisement practices.",
+    "Evaluate and assign the proper ink and substrate to a variety of printed projects.",
+    "Calculate costs of paper and ink to offer value and alternatives to a client.",
+    "Complete a preflight and prepress checklist and prepare a project for print.",
+    "Demonstrate proper set-up, safe operation, and clean-up of printing press equipment.",
+    "Demonstrate the ability to estimate costs, document materials and time spent on production, and anability to meet deadlines.",
+    "Create and print a project suitable for a portfolio that demonstrates effective design and proper production technique."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ADM-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-2A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-2B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-63A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-71A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-77A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-84A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-85A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Commercial Printing Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADM-84B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-85B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Packaging Design Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADM-77B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-83",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Graphic Design Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADM-62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Graphic Design Emphasis: Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADM-63B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADM-71B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-77B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Cross-Discipline Emphasis",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADM-67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-68A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-68B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-69A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADM-69B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADM-74A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-74B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-36A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-36B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV-64A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT-40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHO-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. Degree and Certificate of Achievement (heading repeated three times with slightly different codes: AS653/AS653C/CE653 and AS653/AS653B/AS653C/CE653); the requirements, total (34 units) and program learning outcomes are shared by both awards and recorded here for the A.S. Degree.",
+   "Electives (Units: 6.00): 'Choose six units from one emphasis.' Each emphasis is recorded in option_group 'Emphasis'. The Graphic Design Emphasis consists of two blocks taken together (ADM-62 required plus one course from the 'Select one of the following' list, 3 units); a reviewer should treat those two blocks as one option, not two separate options.",
+   "ADM-77B appears in both the Packaging Design Emphasis and the Graphic Design Emphasis choice list.",
+   "Catalog titles differ from the closed list for some courses (e.g., ADM-63A printed as 'Design For Print Publication' vs. 'Adobe InDesign, Beginning'; ADM-77A 'Adobe Illustrator for Graphic Art'; ADM-71B 'Adobe Photoshop, Advanced'; ADM-77B 'Adobe Illustrator, Advanced'); codes match.",
+   "Courses not in the closed list recorded as catalog additions: ADM-83, ADM-62, ADM-63B, ADM-69A, ADM-69B.",
+   "No general education pattern is named; the text refers only to 'general education and other graduation requirements as described in the college catalog.'",
+   "Outcome 8 is copied as printed, including the run-together 'anability'."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

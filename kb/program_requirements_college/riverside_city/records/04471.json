@@ -1,0 +1,176 @@
+{
+ "college": "Riverside City College",
+ "control_number": "04471",
+ "shape": "degree",
+ "title": "Automotive Powertrain Specialist",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5894",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4975,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4975,
+    "output_tokens": 1215,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1215,
+  "output_tokens_details": {
+   "thinking_tokens": 274
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0442,
+ "ms": 10862,
+ "seconds": 11.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Powertrain Specialist - Associate of Science Degree and Certificate of Achievement - AS990/AS990B/AS990C/CE990",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate personal and shop safety procedures neededto safely work in an automotive shop environment.",
+    "Utilize common shop equipment to diagnose and repairtrans missions and related control systems.",
+    "Demonstrate the ability to perform industry standardre build procedures.",
+    "Identify root cause of common engine failures",
+    "Demonstrate ability to utilize precision measuringequipment required to properly rebuild engines and transmissions."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (24 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "AUT-1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. degree and Certificate of Achievement; the program learning outcomes and the 24-unit requirement list are shared by both awards and recorded here for the A.S. degree.",
+   "Outcomes are copied exactly as printed, including apparent run-together words from line-break artifacts ('neededto', 'repairtrans missions', 'standardre build', 'measuringequipment').",
+   "Catalog prints codes with hyphens (AUT-1A etc.); matched to closed-list codes (AUT 1A etc.) as the same courses.",
+   "Every course is labeled '( Historical )' in the catalog text; reviewer may want to confirm these courses are current for 2026-2027.",
+   "Catalog title for AUT-50 is 'Automotive Principles' versus closed list 'Automotive Principle'.",
+   "The heading is printed three times with differing award codes (AS990/AS990C/CE990 and AS990/AS990B/AS990C/CE990); the last version is used as section_heading.",
+   "The degree text refers to general education requirements described in the college catalog but names no specific GE pattern."
+  ]
+ },
+ "extracted_run": "38082999076"
+}
