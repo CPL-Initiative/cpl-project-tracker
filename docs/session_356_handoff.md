@@ -19,6 +19,7 @@ kb/README, README, and the `cpl_memory_log` entries for this run's five memory r
 
 ## First, in this order
 
+0. **Merge #1954 (this checkpoint) on a green `test`**, after merging main into its branch if the Mt. San Antonio filing landed on it.
 1. **One writer.** `list_sessions` (`mine: true`); S355 holds one check-in (`trig_01N3xqWChAokzGP4Q2ZaTEg1`, fires
    ~15:13Z 2026-10-10: "Read the Mt SAC run"). If it already fired into S355, nothing waits; otherwise delete it.
 2. **Rule 8:** `cpl_memory` tags `program-requirements-harvest`, `phase-2`, `sam-ruling` (five S355 rows, slugs
