@@ -1,0 +1,27 @@
+{
+ "_readme": "S357 SkyCanopy, 2026-10-10, second curriQunet read. The first (rccd_curriqunet_outline, run 38075620248) found the catalog's own data calls: _getNavigation?id=124&parentId=6323 lists all 229 entries of Riverside City's Degrees and Certificates Index (each a title naming its awards and local codes, an outline id and an alias), and _getPage?catalogId=124&id=<id> returns one outline node's page as JSON. This read loads the Acting entry (outline 5878) two ways: its view with \"network\": true, to see whether the requirements come from _getPage or a further call, and the _getPage JSON itself, to see how the requirements are written in it. Two page loads, no model call.",
+ "college": "Riverside City College",
+ "questions": {
+  "page_source": "Which call delivers a program's requirements, and whether one call holds the whole of them.",
+  "page_shape": "How the requirements are written in that call: HTML blocks, course rows, units, choose-N wording."
+ },
+ "keywords": [
+  "THE-?\\d+",
+  "[Uu]nits?",
+  "[Rr]equired",
+  "[Cc]hoose|[Ss]elect",
+  "catalogblocktypeid",
+  "curriculum"
+ ],
+ "pages": [
+  {
+   "answers": ["page_source"],
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Acting",
+   "network": true
+  },
+  {
+   "answers": ["page_shape"],
+   "url": "https://rccd.curriqunet.com/Catalog/_getPage?catalogId=124&id=5878"
+  }
+ ]
+}
