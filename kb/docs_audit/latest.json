@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1101,
-    "bytes": 11462827,
+    "files": 1103,
+    "bytes": 11474896,
     "over_budget": 7,
-    "handoff_max": 357,
+    "handoff_max": 358,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59998,
     "superseded_files": 0,
@@ -26,32 +26,32 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3375343,
+        "bytes": 3375547,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10027,
+        "bytes": 10231,
         "over": 0
       },
       "lessons": {
         "files": 81,
-        "bytes": 2338991,
+        "bytes": 2342941,
         "over": 2
       },
       "kb_note": {
-        "files": 535,
-        "bytes": 2675396,
+        "files": 536,
+        "bytes": 2677929,
         "over": 0
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 332687,
+        "bytes": 333033,
         "over": 2
       },
       "handoff": {
-        "files": 328,
-        "bytes": 2670385,
+        "files": 329,
+        "bytes": 2675217,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 60
     },
     "vault": {
-      "files": 4540,
-      "bytes": 1838865170,
-      "heavy_bytes": 832386809,
+      "files": 4547,
+      "bytes": 1838947516,
+      "heavy_bytes": 832388821,
       "heavy_share": 0.453,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -403,13 +403,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20705,
+        "bytes": 21051,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 705,
-        "ratio": 1.04
+        "over_by": 1051,
+        "ratio": 1.05
       },
-      "message": "20,705 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "21,051 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -552,10 +552,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 14274421,
+        "bytes": 14276433,
         "kind": "dir"
       },
-      "message": "directory totals 14,274,421 B inside the vault"
+      "message": "directory totals 14,276,433 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

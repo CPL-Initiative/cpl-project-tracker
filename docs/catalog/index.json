@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 533,
+   "count": 534,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2079,6 +2079,25 @@
      "title": "A human-gated practice becomes a machine-checked one",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-10-10",
+     "governs": [
+      "kb/_college_page_read.py",
+      "kb/_program_requirements_college.py",
+      "kb/college_reads/rccd_curriqunet_outline.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-javascript-catalog-is-data-read-what-it-fetches.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements-harvest",
+      "curriqunet",
+      "scraping"
+     ],
+     "title": "A JavaScript catalog is data; read what its own scripts fetch",
+     "type": "methodology",
+     "updated": "2026-10-10"
     },
     {
      "created": "2026-08-09",
@@ -15203,8 +15222,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 328,
+   "count": 329,
    "docs": [
+    {
+     "created": "2026-10-10",
+     "governs": [],
+     "n": 358,
+     "path": "docs/session_358_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "curriqunet",
+      "decision-sheet",
+      "checkpoint"
+     ],
+     "title": "curriQunet catalogs read as data; the next college on Open Asks Sheet 59",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-10",
      "governs": [],
@@ -20805,5 +20843,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1088
+ "total": 1090
 }
