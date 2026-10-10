@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-531 document(s).
+532 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -203,6 +203,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A soft-delete overlay on dual-rendered rows must be scoped to ONE render layer](../kb-notes/methodology-layer-scoped-soft-delete-dual-rendered-rows.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A solved prerequisite does not notify its consumers](../kb-notes/methodology-a-solved-prerequisite-does-not-notify-its-consumers.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A source file that abbreviates titles fakes an absence](../kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A split view needs the host to allow framing, and two windows must not overlap](../kb-notes/methodology-a-split-view-needs-the-host-to-allow-framing.md) | methodology | published | 2026-10-10 | 2026-10-10 |
 | [A staged state lives on the model, and every view asks it](../kb-notes/methodology-a-staged-state-lives-on-the-model-and-every-view-asks-it.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A static guard should assert the contract, not the argument order](../kb-notes/methodology-assert-the-contract-not-the-argument-order.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A status lane must link to the remedy lane, or "done" measures attention](../kb-notes/methodology-a-status-lane-must-link-to-the-remedy-lane.md) | methodology | published | 2026-08-12 | 2026-08-12 |

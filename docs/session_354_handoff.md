@@ -4,6 +4,8 @@ date: 2026-10-09
 session: 353 (SkyHearth)
 tags: [handoff, program-requirements, harvest, phase-2, funding-explainer, first-light, checkpoint]
 status: current
+superseded: true
+superseded_by: session_356_handoff.md
 ---
 
 # You are Session 354

@@ -4,6 +4,8 @@ date: 2026-10-09
 session: 352 (SkyMeridian)
 tags: [handoff, ui-pass, fact-sheet, first-light, dark-mode, dashboard, checkpoint]
 status: current
+superseded: true
+superseded_by: session_356_handoff.md
 ---
 
 # You are Session 353

@@ -4,6 +4,8 @@ date: 2026-10-09
 session: 350 (SkyTide)
 tags: [handoff, ui-pass, fact-sheet, veteran-map, sierra-page-redesign, decision-sheets, checkpoint]
 status: current
+superseded: true
+superseded_by: session_356_handoff.md
 ---
 
 # You are Session 351

@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-85 document(s).
+86 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -75,6 +75,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Obsidian vault hygiene — lessons](../obsidian_vault_hygiene_lessons.md) | `obsidian_vault_hygiene_lessons.md` | 2026-08-28 | 2026-08-28 |
 | [OpenClassrooms Digital Marketer → CCC CPL crosswalk — lessons](../openclassrooms_crosswalk_lessons.md) | `openclassrooms_crosswalk_lessons.md` | 2026-09-29 |  |
 | [Partner occupation → CPL crosswalk — lessons](../partner_crosswalk_lessons.md) | `partner_crosswalk_lessons.md` | 2026-08-05 |  |
+| [Program requirements harvest lessons — archive (S320-S326)](../program_requirements_harvest_lessons_archive.md) | `program_requirements_harvest_lessons_archive.md` | 2026-10-10 | 2026-10-10 |
 | [Program requirements harvest — Decisions & Lessons](../program_requirements_harvest_lessons.md) | `program_requirements_harvest_lessons.md` | 2026-10-03 |  |
 | [Project lifecycle — Table / Archive a project (soft-delete) lessons](../project_lifecycle_lessons.md) | `project_lifecycle_lessons.md` | 2026-06-29 |  |
 | [Public standalone pages — accessibility and mobile lessons](../public_pages_a11y_lessons.md) | `public_pages_a11y_lessons.md` | 2026-08-20 | 2026-09-09 |
