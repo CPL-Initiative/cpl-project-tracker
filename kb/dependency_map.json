@@ -1323,7 +1323,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1371,
+     "line": 1522,
      "tabs": [
       "program-requirements"
      ]
@@ -4986,7 +4986,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 392
+     "line": 410
     },
     {
      "id": "module:college_briefing.js",
@@ -5354,14 +5354,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 94
+     "line": 99
     },
     {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 94
+     "line": 99
     }
    ],
    "producers": [
@@ -5597,7 +5597,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 93
+     "line": 98
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -8035,7 +8035,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 88
+     "line": 93
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -8704,7 +8704,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 91
+     "line": 96
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -11993,6 +11993,13 @@
   "file:kb/program_requirements_college/cerritos/capture.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_roep_display.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 405
+    },
+    {
      "id": "script:kb/_program_requirements_college.py",
      "kind": "script",
      "direction": "read",
@@ -14260,7 +14267,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 92
+     "line": 97
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -18095,7 +18102,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 90
+     "line": 95
     },
     {
      "id": "script:kb/_esl_package_actionable.py",
@@ -18235,7 +18242,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 89
+     "line": 94
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
