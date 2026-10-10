@@ -1,5 +1,5 @@
 {
- "about": "Which catalog hosts let COBI (https://cpl-initiative.github.io) frame their pages, for the Program Requirements tab's Side by side. Written by scripts/catalog_framing.py on catalog-framing.yml (read-only); a session commits its JSON. frames: true shows the page in the split, false opens it in its own window on the left half, null is unknown (framed, with its own window one word away). The 17 hosts that served a PDF as a download in run 38005833715 are null here; the script now reads their headers.",
+ "about": "Which catalog hosts let COBI (https://cpl-initiative.github.io) frame their pages, for the Program Requirements tab's Side by side. Written by scripts/catalog_framing.py on catalog-framing.yml (read-only); a session commits its JSON. frames: true shows the page in the split, false opens it in its own window on the left half, null is unknown (framed, with its own window one word away). 17 hosts served a PDF as a download in run 38005833715; run 38009803753 read the headers of 15 of them (headers_from_run) before it timed out, and www.wlac.edu and yc.yccd.edu stay null. A PDF is judged by its headers: headless Chromium draws none in a frame.",
  "checked_at": "2026-10-09T23:45:47Z",
  "hosts": {
   "arc.losrios.edu": {
@@ -938,22 +938,30 @@
    "colleges": [
     "Shasta College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
+   "status": 200,
+   "xfo": null
   },
   "sdccd.curriqunet.com": {
    "colleges": [
     "San Diego City College",
     "San Diego Miramar College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20041"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://sdccd.curriqunet.com/Catalog/Export?id=71&outlineId=20041",
+   "status": 200,
+   "xfo": null
   },
   "siskiyous.elumenapp.com": {
    "colleges": [
@@ -985,11 +993,15 @@
    "colleges": [
     "Woodland Community College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
+   "status": 200,
+   "xfo": null
   },
   "westhillslemoore.elumenapp.com": {
    "colleges": [
@@ -1008,31 +1020,43 @@
    "colleges": [
     "Barstow Community College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.calbright.edu": {
    "colleges": [
     "Calbright College Credit"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.canyons.edu": {
    "colleges": [
     "College of the Canyons"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": "'self' https://*.canyons.edu",
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf"
+   "frames": false,
+   "headers_from_run": "38009803753",
+   "headers_say": false,
+   "pdf": true,
+   "sample": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.ccsf.edu": {
    "colleges": [
@@ -1051,21 +1075,29 @@
    "colleges": [
     "Cerro Coso Community College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf"
+   "frames": false,
+   "headers_from_run": "38009803753",
+   "headers_say": false,
+   "pdf": true,
+   "sample": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+   "status": 200,
+   "xfo": "SAMEORIGIN"
   },
   "www.cloviscollege.edu": {
    "colleges": [
     "Clovis Community College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.cmccd.edu": {
    "colleges": [
@@ -1084,11 +1116,15 @@
    "colleges": [
     "Compton College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.crc.losrios.edu": {
    "colleges": [
@@ -1159,21 +1195,29 @@
    "colleges": [
     "Los Angeles City College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.lacc.edu/sites/lacc.edu/files/2025-10/Complete%20LACC%202025-26%20College%20Catalog_0.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.lacc.edu/sites/lacc.edu/files/2025-10/Complete%20LACC%202025-26%20College%20Catalog_0.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.lahc.edu": {
    "colleges": [
     "Los Angeles Harbor College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.lamc.edu": {
    "colleges": [
@@ -1192,11 +1236,15 @@
    "colleges": [
     "Los Angeles Pierce College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.lasc.edu": {
    "colleges": [
@@ -1215,11 +1263,15 @@
    "colleges": [
     "Lassen College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.lattc.edu": {
    "colleges": [
@@ -1238,11 +1290,15 @@
    "colleges": [
     "Los Angeles Valley College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.lbcc.edu": {
    "colleges": [
@@ -1261,11 +1317,15 @@
    "colleges": [
     "Mendocino College"
    ],
-   "error": "Page.goto: Download is starting",
+   "frame_ancestors": null,
    "frame_url": "",
-   "frames": null,
-   "headers_say": null,
-   "sample": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf"
+   "frames": true,
+   "headers_from_run": "38009803753",
+   "headers_say": true,
+   "pdf": true,
+   "sample": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf",
+   "status": 200,
+   "xfo": null
   },
   "www.ohlone.edu": {
    "colleges": [

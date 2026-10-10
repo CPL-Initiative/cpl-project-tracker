@@ -109,8 +109,13 @@ def check(ctx, host: str, sample: str) -> dict:
             # A PDF served as a download never renders in headless Chromium, so read its
             # headers with a plain request instead (run 38005833715: 17 such hosts).
             try:
-                r = ctx.request.get(sample, timeout=45000, max_redirects=5)
+                # HEAD, never GET: a whole catalog PDF took 16 minutes to download in run
+                # 38009803753 and timed the job out. GET only where a host refuses HEAD.
+                r = ctx.request.fetch(sample, method="HEAD", timeout=45000, max_redirects=5)
+                if r.status in (405, 501):
+                    r = ctx.request.get(sample, timeout=45000, max_redirects=5)
                 hdr = r.headers
+                row["attachment"] = "attachment" in (hdr.get("content-disposition") or "").lower()
                 row["status"] = r.status
                 row["xfo"] = hdr.get("x-frame-options")
                 row["frame_ancestors"] = frame_ancestors(hdr.get("content-security-policy", ""))
@@ -151,7 +156,8 @@ def check(ctx, host: str, sample: str) -> dict:
     if row.get("pdf") or not read:
         # Headless Chromium draws no PDF in a frame, so the frame test cannot see one;
         # a PDF host is judged by its headers alone, and an unread host stays unknown.
-        row["frames"] = row["headers_say"]
+        # A file sent as an attachment downloads from a frame too, so it gets its own window.
+        row["frames"] = False if row.get("attachment") else row["headers_say"]
     time.sleep(3)
     return row
 
