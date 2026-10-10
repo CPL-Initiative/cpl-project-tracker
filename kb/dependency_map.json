@@ -4,10 +4,10 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 6,
-  "file_datasets": 617,
-  "external_services": 163,
-  "consumers": 423,
-  "workflows": 46,
+  "file_datasets": 619,
+  "external_services": 164,
+  "consumers": 425,
+  "workflows": 47,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -169,6 +169,18 @@
      "direction": "read",
      "how": "url",
      "line": 421
+    }
+   ],
+   "main_committers": []
+  },
+  "external:*.github.io": {
+   "consumers": [
+    {
+     "id": "script:scripts/catalog_framing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 87
     }
    ],
    "main_committers": []
@@ -795,6 +807,13 @@
      "line": 26
     },
     {
+     "id": "script:scripts/catalog_framing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 13
+    },
+    {
      "id": "script:scripts/fetch_sierra_art.py",
      "kind": "script",
      "direction": "read",
@@ -1304,7 +1323,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1256,
+     "line": 1311,
      "tabs": [
       "program-requirements"
      ]
@@ -4967,7 +4986,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 377
+     "line": 392
     },
     {
      "id": "module:college_briefing.js",
@@ -7826,6 +7845,22 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:kb/catalog_framing.json": {
+   "consumers": [
+    {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 90,
+     "tabs": [
+      "program-requirements"
+     ]
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:kb/ccr_cpl_funnel.json": {
    "consumers": [
@@ -15883,6 +15918,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:scripts/catalog_framing.py": {
+   "consumers": [
+    {
+     "id": "workflow:catalog-framing.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:scripts/fetch_sierra_art.py": {
    "consumers": [
     {
@@ -19561,7 +19609,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 309,
+     "line": 321,
      "tabs": [
       "program-requirements"
      ]
@@ -21413,7 +21461,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 285,
+     "line": 297,
      "tabs": [
       "program-requirements"
      ]
@@ -21445,7 +21493,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 242,
+     "line": 254,
      "tabs": [
       "program-requirements"
      ]
@@ -21456,6 +21504,13 @@
      "direction": "read",
      "how": "literal",
      "line": 846
+    },
+    {
+     "id": "script:scripts/catalog_framing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     }
    ],
    "main_committers": []
@@ -21467,7 +21522,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 308,
+     "line": 320,
      "tabs": [
       "program-requirements"
      ]
@@ -21492,7 +21547,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 241,
+     "line": 253,
      "tabs": [
       "program-requirements"
      ]
@@ -21510,6 +21565,13 @@
      "direction": "read",
      "how": "literal",
      "line": 147
+    },
+    {
+     "id": "script:scripts/catalog_framing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     }
    ],
    "main_committers": []
@@ -22195,6 +22257,18 @@
   ]
  },
  "workflows": {
+  "catalog-framing.yml": {
+   "name": "Catalog framing check",
+   "crons": [],
+   "scripts": [
+    "scripts/catalog_framing.py"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "cer-decision-apply.yml": {
    "name": "CER decision apply",
    "crons": [],

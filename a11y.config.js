@@ -370,6 +370,21 @@ async function seedRecords(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Seeds the side by side view (S355, Sam 2026-10-09: "show a split view like this on the
+// Prog Rev tab so I don't have to do it manually"): the signed-in record above, opened
+// beside its catalog page, so the bar, the frame's pane and the record pane are measured
+// with the page behind inert. The frame's request leaves the origin and is aborted, which
+// is fine: what is measured is ours.
+async function seedSplit(page, theme) {
+  await seedRecords(page, theme);
+  await page.evaluate(() => {
+    const b = Array.prototype.filter.call(document.querySelectorAll("#program-requirements-root button.prh-word"),
+      (x) => x.textContent === "Side by side")[0];
+    if (b) b.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds My College's Reported expenditures section for the two targets below.
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
@@ -857,6 +872,25 @@ module.exports = {
     routes: [{ hash: "program-requirements", name: "records-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedRecords(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Program Requirements: side by side (S355) ─────────────────────────
+     A record beside its catalog page, one per theme: the dialog over the
+     tab, its bar, the frame's pane and the record with Your reading. */
+  "program-requirements-split": {
+    file: "index.html",
+    title: "Program Requirements: a record side by side with its catalog page",
+    routes: [{ hash: "program-requirements", name: "split" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSplit(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "program-requirements-split-dark": {
+    file: "index.html",
+    title: "Program Requirements: side by side, dark",
+    routes: [{ hash: "program-requirements", name: "split-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSplit(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── The docked Sierra, full screen (S349, Sheet 54 card 1) ─────────────

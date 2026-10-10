@@ -83,6 +83,11 @@
      program_source_registry_history, so the unchecked records and the day's changes come
      from here, never from a widened policy. */
   var QUEUE_URL = "kb/queue_status.json";
+  /* Which catalog hosts let another site frame their pages, measured from COBI's origin by
+     scripts/catalog_framing.py on a runner (the session container cannot reach college sites)
+     and committed by a session. A host not in it is unknown: the side by side view frames it
+     and keeps its own window one word away. */
+  var FRAMING_URL = "kb/catalog_framing.json";
   var PT = "America/Los_Angeles";
 
   var PLATFORM = { courseleaf: "CourseLeaf", curriqunet: "curriQunet", elumen: "eLumen", pdf: "PDF",
@@ -112,7 +117,7 @@
 
   var state = { registry: null, records: null, error: null, loading: false, progress: null,
     view: "progress", q: "", show: "all", platform: "all", rq: "", rshow: "all", rcollege: "all", open: {}, secs: null,
-    review: null, sessionWired: false };
+    review: null, sessionWired: false, framing: null };
 
   /* ── small helpers ── */
   function el(tag, attrs, kids) {
@@ -156,13 +161,19 @@
      that you could read?"). The answer is the verdict the Records view writes, through the
      same one RPC, so a session reads it from program_record_verdicts. Each record opens to
      its catalog page, its verdict box and a word that opens it on Program records. */
+  function callRefs(c) {
+    return (c && Array.isArray(c.records) ? c.records : []).filter(function (r) { return r && r.college && r.control_number; });
+  }
+  function findRecord(rows, ref) {
+    return rows ? rows.filter(function (r) { return r.college === ref.college && r.control_number === ref.control_number; })[0] || null : null;
+  }
   function callRecords(c) {
-    var refs = (Array.isArray(c.records) ? c.records : []).filter(function (r) { return r && r.college && r.control_number; });
+    var refs = callRefs(c);
     if (!refs.length) return null;
     var Rv = state.review;
     var mine = Rv && Rv.records ? Rv.records : null;
     var items = refs.map(function (ref) {
-      var p = mine ? mine.filter(function (r) { return r.college === ref.college && r.control_number === ref.control_number; })[0] : null;
+      var p = findRecord(mine, ref);
       var name = ref.label || (p ? p.program_title + " " + award(p.award) : shortCollege(ref.college));
       var sl = p && p.requirements_fp ? stateLine(p) : null;
       var line = el("span", { cls: "prh-state" + (sl && sl.waiting ? " prh-state-waiting" : ""), text: sl ? sl.text : "" });
@@ -171,7 +182,8 @@
         state.rq = ref.control_number; state.rshow = "all"; state.rcollege = ref.college;
         choose("records", true);
       });
-      var body = [el("p", { cls: "prh-pg-links" }, [p && p.source_url ? link(p.source_url, "The catalog page") : null, read])];
+      var body = [el("p", { cls: "prh-pg-links" }, [p && p.source_url ? link(p.source_url, "The catalog page") : null,
+        p && p.source_url ? splitButton(p) : null, read])];
       if (p && p.requirements_fp) body.push(verdictBox(p, flagsFor(p).flags, line));
       return el("details", { cls: "prh-callrec" }, [
         el("summary", {}, [el("span", { cls: "prh-callrec-t" }, [el("b", { text: ref.control_number }), " " + name]), line]),
@@ -246,7 +258,7 @@
     }).catch(function (e) {
       state.error = (e && e.message) || "the read failed";
     });
-    return Promise.all([core, loadProgress(), loadReview()]).then(function () {
+    return Promise.all([core, loadProgress(), loadReview(), loadFraming()]).then(function () {
       state.loading = false;
       render();
     });
@@ -322,6 +334,17 @@
           G.queue = j;
         }).catch(miss("Q"))
     ]).then(function () { state.progress = G; });
+  }
+
+  /* The framing check's file (FRAMING_URL). A failed read leaves every host unknown, which
+     still frames the page with its own window one word away; it never blocks the tab. */
+  function loadFraming() {
+    return fetch(FRAMING_URL, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error(FRAMING_URL + " answered " + r.status);
+      return r.json();
+    }).then(function (j) {
+      state.framing = j && j.hosts && typeof j.hosts === "object" ? j.hosts : {};
+    }, function () { state.framing = {}; });
   }
 
   /* ── pure derivations (exported for the tests) ── */
@@ -458,6 +481,13 @@
       ".prh { color: var(--text-body); }",
       ".prh-mast { display:grid; gap:6px; padding-bottom:14px; border-bottom:1px solid var(--border); }",
       ".prh-titlerow { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 16px; }",
+      /* Sam's to-dos: an underlined word under the title; crimson while something waits on him */
+      ".prh-todo { margin:0; display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 12px; }",
+      ".prh-todo-go { font:inherit; font-size:1rem; font-weight:700; color:var(--crimson); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".prh-todo-go:hover { text-decoration-thickness:2px; }",
+      ".prh-todo-go.prh-todo-clear { color:var(--cobalt); }",
+      ".prh-todo-what { font-size:.875rem; color:var(--text-muted); }",
+      ".prh-pg-call { scroll-margin-top:16px; }",
       ".prh h2 { margin:0; color:var(--text-strong); font-size:clamp(1.4rem, 2.6vw, 1.9rem); line-height:1.2; display:flex; flex-wrap:wrap; align-items:center; gap:10px; }",
       ".prh h3 { margin:0; color:var(--text-strong); font-size:1.05rem; }",
       ".prh h4 { margin:0 0 6px; color:var(--text-strong); font-size:.95rem; display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }",
@@ -515,6 +545,10 @@
       ".prh-cpl { font-size:.875rem; min-width:0; }",
       ".prh-cpl b { color:var(--text-strong); font-variant-numeric:tabular-nums; }",
       ".prh-body { padding:14px; display:grid; gap:16px; }",
+      /* A class's display beats the hidden attribute, so Show the blocks needs this to hide them
+         (Sam, 2026-10-09: "the Show Blocks doesn't seem to do anything"). */
+      ".prh-body[hidden] { display:none; }",
+      ".prh-rctl { display:flex; flex-wrap:wrap; align-items:center; gap:4px 14px; }",
       ".prh-rule { font-size:.8125rem; font-weight:600; color:var(--seal-blue-text); background:var(--surface-muted); border-radius:10px; padding:2px 8px; }",
       ".prh-notes summary { cursor:pointer; font-weight:600; color:var(--cobalt); min-height:32px; }",
       ".prh-notes ul, .prh-card ul { margin:6px 0 0; padding-left:20px; }",
@@ -666,6 +700,22 @@
         " .prh-pg-step.prh-pg-into-next::after, .prh-pg-step.prh-pg-into-later::after { border-left:3px dashed var(--border-strong); }" +
         " .prh-pg-node { top:0; left:0; } .prh-pg-youare { position:static; order:-1; } .prh-pg-road > .prh-sec-b { padding-top:8px; } }",
       "@media (max-width: 560px) { .prh-pg-pair { grid-template-columns:minmax(0, 1fr); } .prh-pg-grid { grid-template-columns:minmax(0, 1fr); } .prh-pg-log li { grid-template-columns:minmax(0, 1fr); gap:0; } }",
+      /* side by side: the catalog page beside the record, each scrolling on its own; stacked below 900px */
+      "html.prh-split-open, html.prh-split-open body { overflow:hidden; }",
+      ".prh-split { position:fixed; inset:0; z-index:10000; background:var(--paper); display:grid; grid-template-rows:auto minmax(0, 1fr); }",
+      ".prh-split-bar { display:flex; flex-wrap:wrap; align-items:center; gap:4px 18px; padding:8px 16px; border-bottom:1px solid var(--border-strong); background:var(--surface-opaque); }",
+      ".prh-split-bar h3 { flex:1 1 18rem; min-width:0; display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 10px; font-size:1rem; }",
+      /* the dialog's title takes focus when it opens so a screen reader names it; it is not a control */
+      ".prh .prh-split-bar h3[tabindex]:focus, .prh .prh-split-bar h3[tabindex]:focus-visible { outline:none; }",
+      ".prh-split-panes { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); min-height:0; }",
+      ".prh-split-cat { min-height:0; display:grid; border-right:1px solid var(--border-strong); background:var(--surface-opaque); }",
+      ".prh-split-cat iframe { width:100%; height:100%; border:0; color-scheme:light; }",
+      ".prh-split-refused { align-content:start; gap:10px; padding:20px; }",
+      ".prh-split-refused p { margin:0; max-width:var(--cpl-measure,none); }",
+      ".prh-split-rec { min-height:0; overflow:auto; padding:14px 16px; background:var(--paper); }",
+      ".prh-split-rec .prh-rec { margin:0; }",
+      "@media (max-width: 900px) { .prh-split-panes { grid-template-columns:minmax(0, 1fr); grid-template-rows:minmax(0, 1fr) minmax(0, 1fr); }" +
+        " .prh-split-cat { border-right:0; border-bottom:1px solid var(--border-strong); } .prh-split-rec { padding:10px 12px; } }",
       "@media (prefers-reduced-motion: reduce) { .prh * { transition:none !important; animation:none !important; } }"
     ].join("\n");
     document.head.appendChild(el("style", { id: "prh-css", text: css }));
@@ -939,6 +989,8 @@
       var sl = stateLine(p);
       line.textContent = sl.text;
       line.className = "prh-state" + (sl.waiting ? " prh-state-waiting" : "");
+      refreshTodo();
+      if (split.on) split.changed = true;
     }
     confirm.addEventListener("click", function () {
       fix.hidden = true; fixBtn.setAttribute("aria-expanded", "false");
@@ -1056,7 +1108,7 @@
         var n = list.length < totals[c] ? list.length + " of " + totals[c] : String(totals[c]);
         var meta = ((PLATFORM[reg.catalog_platform] || "") + " catalog, " + yr(list[0].catalog_year)).trim() + " · " +
           n + (totals[c] === 1 ? " program" : " programs") + (nd ? " · " + nd + (nd === 1 ? " draft" : " drafts") + " for the college" : "");
-        var sec = section("records:" + c, c, meta, [drafts[c] && !narrowed ? draftsBox(c, drafts[c]) : null].concat(list.map(recordCard)),
+        var sec = section("records:" + c, c, meta, [drafts[c] && !narrowed ? draftsBox(c, drafts[c]) : null].concat(list.map(function (p) { return recordCard(p); })),
           { cls: "prh-college" });
         /* A narrowed list opens its colleges, so a match is never hidden in a closed section. */
         if (narrowed) sec.setAttribute("open", "");
@@ -1092,7 +1144,9 @@
     });
   }
 
-  function recordCard(p) {
+  /* opts.split: the card drawn in the side by side view, its blocks open and no Side by side word. */
+  function recordCard(p, opts) {
+    opts = opts || {};
     var key = p.college + "|" + p.control_number;
     var unit = p.measure === "hours" ? "hours" : "units";
     var ck = recordChecks(p);
@@ -1116,12 +1170,13 @@
     var sl = reviewing ? stateLine(p) : null;
     var line = sl ? el("span", { cls: "prh-state" + (sl.waiting ? " prh-state-waiting" : ""), text: sl.text }) : null;
     var bodyId = "prh-body-" + String(key).replace(/[^A-Za-z0-9]+/g, "-");
-    var isOpen = !!state.open[key];
+    var isOpen = !!opts.split || !!state.open[key];
     var btn = el("button", { cls: "prh-toggle", type: "button", "aria-expanded": isOpen ? "true" : "false",
       "aria-controls": bodyId, text: isOpen ? "Hide the blocks" : "Show the blocks" });
     var head = el("div", { cls: "prh-rhead" }, [
       el("div", { cls: "prh-rtitle" }, [el("strong", { text: p.program_title }),
-        el("span", { cls: "prh-small prh-quiet", text: award(p.award) + " · " + p.control_number }), line, btn]),
+        el("span", { cls: "prh-small prh-quiet", text: award(p.award) + " · " + p.control_number }), line,
+        el("span", { cls: "prh-rctl" }, [btn, !opts.split && p.source_url ? splitButton(p) : null])]),
       el("dl", { cls: "prh-checks" }, [dd("Courses", placed),
         dd("Off the state list", ck.additions ? ck.additions + ", printed in the catalog" : "None"),
         dd("Units", arith), dd("Person's reading", reader),
@@ -1639,6 +1694,151 @@
     return box;
   }
 
+  /* ── Sam's to-dos ──
+   * Sam, 2026-10-09: "Put a button to my todo items on the front of Program Requirements so I
+   * can go right to them." His to-dos are the calls on the Progress view's side column, which a
+   * phone draws below the milestones and all eight parts. A word under the tab's title counts
+   * them and goes there, opening every call. Each record a call names is one to-do until it is
+   * answered (a verdict on its current requirements, or checked); a call that names no record is
+   * one. Signed out, a record the public read cannot see counts as open. */
+  function todoCount(Q) {
+    var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    var mine = state.review && state.review.records ? state.review.records : null;
+    var open = 0, first = -1;
+    calls.forEach(function (c, i) {
+      var refs = callRefs(c), n = 0;
+      if (!refs.length) n = 1;
+      refs.forEach(function (ref) {
+        var p = findRecord(mine, ref) || findRecord(state.records, ref);
+        if (!p || stateLine(p).waiting) n++;
+      });
+      if (n && first < 0) first = i;
+      open += n;
+    });
+    return { calls: calls.length, open: open, first: first < 0 ? 0 : first };
+  }
+  function todoLabel(t, who) {
+    return t.open ? who + "'s to-dos (" + t.open + ")" : who + "'s to-dos: all answered";
+  }
+  function todoLine() {
+    var G = state.progress, Q = G && G.queue;
+    if (!Q || !Array.isArray(Q.calls) || !Q.calls.length) return null;
+    var who = Q.decider || "Sam", t = todoCount(Q);
+    var go = el("button", { cls: "prh-todo-go" + (t.open ? "" : " prh-todo-clear"), id: "prh-todo-go", type: "button",
+      text: todoLabel(t, who) });
+    go.addEventListener("click", goToTodos);
+    return el("p", { cls: "prh-todo" }, [go,
+      el("span", { cls: "prh-todo-what", text: "The calls on the Progress view and the records they name" })]);
+  }
+  function refreshTodo() {
+    var go = document.getElementById("prh-todo-go"), Q = state.progress && state.progress.queue;
+    if (!go || !Q) return;
+    var t = todoCount(Q);
+    go.textContent = todoLabel(t, Q.decider || "Sam");
+    go.className = "prh-todo-go" + (t.open ? "" : " prh-todo-clear");
+  }
+  function goToTodos() {
+    var Q = state.progress && state.progress.queue;
+    var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    calls.forEach(function (c, i) { secSet("progress:call:" + i, true); });
+    var to = todoCount(Q).first;
+    choose("progress", false);
+    var card = document.querySelector("#" + ROOT_ID + ' details[data-sec="progress:call:' + to + '"]');
+    if (!card) return;
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (card.scrollIntoView) card.scrollIntoView({ block: "start", behavior: still ? "auto" : "smooth" });
+    var sum = card.querySelector("summary");
+    if (sum) { try { sum.focus({ preventScroll: true }); } catch (e) { sum.focus(); } }
+  }
+
+  /* ── side by side ──
+   * Sam, 2026-10-09 ~21:00Z, after reading Cerritos 02201 beside its catalog page in two windows:
+   * "It would be nice if you could show a split view like this on the Prog Rev tab so I don't have
+   * to do it manually." Side by side opens the record beside its catalog page: the page in a frame
+   * on the left (on top below 900px), the record with its blocks and Your reading on the right,
+   * each scrolling on its own. A college's site may refuse to be framed, and the browser does not
+   * tell this page; kb/catalog_framing.json says which hosts refused when the runner asked. Such a
+   * host's page opens in a window of its own on the left half of the screen instead. The frame is
+   * sandboxed without top navigation, so a catalog's frame-busting script cannot take the tab. */
+  var split = { on: false, node: null, opener: null, inert: [], key: null, changed: false };
+  function hostOf(url) { var m = /^https?:\/\/([^\/?#:]+)/i.exec(String(url || "")); return m ? m[1].toLowerCase() : ""; }
+  function framingOf(url) {
+    var h = state.framing && state.framing[hostOf(url)];
+    return h && typeof h.frames === "boolean" ? h.frames : null;
+  }
+  function openCatalogWindow(url) {
+    var sc = window.screen || {};
+    var w = Math.max(480, Math.floor((sc.availWidth || window.innerWidth || 1280) / 2));
+    var h = sc.availHeight || window.innerHeight || 800;
+    window.open(url, "prh-catalog", "popup,noopener,left=0,top=0,width=" + w + ",height=" + h);
+  }
+  function splitButton(p) {
+    var b = el("button", { cls: "prh-word", type: "button", text: "Side by side",
+      "data-split": p.college + "|" + p.control_number,
+      "aria-label": "Read " + p.program_title + " side by side with its catalog page" });
+    b.addEventListener("click", function () { openSplit(p, b); });
+    return b;
+  }
+  function openSplit(p, opener) {
+    closeSplit(true);
+    var name = p.program_title + " " + award(p.award);
+    var frames = framingOf(p.source_url);
+    var own = el("button", { cls: "prh-word", type: "button", text: "Open the catalog in its own window" });
+    own.addEventListener("click", function () { openCatalogWindow(p.source_url); });
+    var close = el("button", { cls: "prh-word", type: "button", text: "Close", "aria-label": "Close side by side" });
+    close.addEventListener("click", function () { closeSplit(); });
+    var cat;
+    if (frames === false) {
+      var again = el("button", { cls: "prh-word", type: "button", text: "Open it again on the left" });
+      again.addEventListener("click", function () { openCatalogWindow(p.source_url); });
+      cat = el("div", { cls: "prh-split-cat prh-split-refused" }, [
+        el("p", { text: shortCollege(p.college) + "'s catalog site does not let another site show its pages, so the catalog page opened in a window of its own on the left half of your screen." }),
+        el("p", {}, [again])]);
+      openCatalogWindow(p.source_url);
+    } else {
+      cat = el("div", { cls: "prh-split-cat" }, [el("iframe", { src: p.source_url, title: "The catalog page for " + name,
+        referrerpolicy: "no-referrer",
+        sandbox: "allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms" })]);
+    }
+    var bar = el("div", { cls: "prh-split-bar" }, [
+      el("h3", { id: "prh-split-t", tabindex: "-1" }, [name, el("span", { cls: "prh-small prh-quiet", text: shortCollege(p.college) + " · " + p.control_number })]),
+      frames === false ? null : own, close]);
+    var node = el("div", { cls: "prh prh-split", role: "dialog", "aria-modal": "true", "aria-labelledby": "prh-split-t" }, [
+      bar, el("div", { cls: "prh-split-panes" }, [cat,
+        el("div", { cls: "prh-split-rec", tabindex: "0", role: "region", "aria-label": "The record for " + name }, [recordCard(p, { split: true })])])]);
+    node.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { e.preventDefault(); closeSplit(); }
+    });
+    split.inert = Array.prototype.filter.call(document.body.children, function (n) {
+      return n !== node && !n.hasAttribute("inert") && n.tagName !== "SCRIPT";
+    });
+    split.inert.forEach(function (n) { n.setAttribute("inert", ""); });
+    document.documentElement.classList.add("prh-split-open");
+    document.body.appendChild(node);
+    split.on = true; split.node = node; split.opener = opener || null; split.changed = false;
+    split.key = p.college + "|" + p.control_number;
+    document.getElementById("prh-split-t").focus();
+  }
+  /* quiet: a new split replaces this one, so focus stays where the new one puts it. A verdict
+     saved here redraws the tab, so the card behind shows it too. */
+  function closeSplit(quiet) {
+    if (!split.on) return;
+    var key = split.key, opener = split.opener, changed = split.changed;
+    if (split.node && split.node.parentNode) split.node.parentNode.removeChild(split.node);
+    split.inert.forEach(function (n) { n.removeAttribute("inert"); });
+    document.documentElement.classList.remove("prh-split-open");
+    split.on = false; split.node = null; split.opener = null; split.inert = []; split.key = null; split.changed = false;
+    if (quiet) return;
+    if (changed && document.getElementById(ROOT_ID)) {
+      render();
+      opener = null;
+      Array.prototype.forEach.call(document.querySelectorAll("#" + ROOT_ID + " [data-split]"), function (b) {
+        if (!opener && b.getAttribute("data-split") === key) opener = b;
+      });
+    }
+    if (opener && opener.isConnected !== false && opener.focus) opener.focus();
+  }
+
   /* ── frame ── */
   function counts() {
     var R = state.registry || [], P = state.records || [];
@@ -1659,6 +1859,7 @@
       el("h2", {}, ["Program Requirements", el("span", { cls: "prh-draft", text: "Beta draft" })])]);
     wrap.appendChild(el("header", { cls: "prh-mast" }, [
       titlerow,
+      state.error || !state.registry ? null : todoLine(),
       el("p", { cls: "prh-meta", text: "How each program's courses count toward its award, read from the college's own catalog, and the reading procedure each college's agent runs by. With these records, CPL Pathways shows which courses a learner can clear through CPL and how many units that saves." }),
       meta]));
     if (state.error) {
@@ -1762,6 +1963,7 @@
     ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span,
     collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary,
     machineFails: machineFails, verdictError: verdictError, VERDICT_RPC: VERDICT_RPC,
+    todoCount: todoCount, goToTodos: goToTodos, openSplit: openSplit, closeSplit: closeSplit, framingOf: framingOf, FRAMING_URL: FRAMING_URL,
     MILESTONES: MILESTONES, PARTS: PARTS, progressContext: progressContext, headlineFacts: headlineFacts, nextRun: nextRun, nextWeekly: nextWeekly
   };
 })();
