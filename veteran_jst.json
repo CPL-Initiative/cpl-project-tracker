@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-09T18:26:05.803480+00:00",
+  "scraped_at": "2026-10-10T12:38:38.195437+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28920,
+    "jst": 28974,
     "star_colleges": 60
   },
   "computed_star_colleges": 60,
@@ -22,7 +22,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1787,
+      "jst": 1822,
       "star": true
     },
     "San Diego Mesa College": {
@@ -180,6 +180,11 @@
       "jst": 414,
       "star": true
     },
+    "Los Angeles Pierce College": {
+      "vets": 296,
+      "jst": 151,
+      "star": false
+    },
     "Clovis Community College": {
       "vets": 117,
       "jst": 197,
@@ -193,11 +198,6 @@
     "Shasta College": {
       "vets": 343,
       "jst": 187,
-      "star": false
-    },
-    "Los Angeles Pierce College": {
-      "vets": 296,
-      "jst": 151,
       "star": false
     },
     "Fullerton College": {
@@ -234,6 +234,11 @@
       "vets": 278,
       "jst": 133,
       "star": false
+    },
+    "Napa Valley College": {
+      "vets": 38,
+      "jst": 53,
+      "star": true
     },
     "College of the Sequoias": {
       "vets": 260,
@@ -305,11 +310,6 @@
       "jst": 80,
       "star": true
     },
-    "Napa Valley College": {
-      "vets": 38,
-      "jst": 53,
-      "star": true
-    },
     "Los Angeles Harbor College": {
       "vets": 109,
       "jst": 140,
@@ -375,6 +375,11 @@
       "jst": 63,
       "star": false
     },
+    "College of the Redwoods": {
+      "vets": 98,
+      "jst": 51,
+      "star": false
+    },
     "Porterville College": {
       "vets": 52,
       "jst": 29,
@@ -408,11 +413,6 @@
     "Compton College": {
       "vets": 42,
       "jst": 21,
-      "star": false
-    },
-    "College of the Redwoods": {
-      "vets": 98,
-      "jst": 33,
       "star": false
     },
     "Cañada College": {
@@ -487,7 +487,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 114,
+      "jst": 115,
       "star": false
     },
     "Butte College": {

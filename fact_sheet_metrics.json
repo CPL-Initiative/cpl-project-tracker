@@ -1,29 +1,29 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-10-09T18:26:05.387Z",
+ "_as_of": "2026-10-10T12:38:38.036Z",
  "credit_recommendations": {
-  "total": "14,166",
-  "ccc": "1,455",
-  "local": "12,711",
+  "total": "14,195",
+  "ccc": "1,452",
+  "local": "12,743",
   "by_type": [
-   "Standardized Assessment: 7,356",
-   "Industry Certification: 3,952",
-   "Credit By Exam: 2,211",
+   "Standardized Assessment: 7,352",
+   "Industry Certification: 3,970",
+   "Credit By Exam: 2,224",
    "Portfolio Review: 404",
-   "Military: 148"
+   "Military: 150"
   ]
  },
  "map_exhibits": {
-  "total": "2,992",
+  "total": "3,027",
   "ccc": "162",
-  "local": "2,830",
+  "local": "2,865",
   "originating_colleges": "87"
  },
  "statewide_exhibits": {
   "total": "162",
   "program_areas": "12",
-  "distinct_credit_recs": "1,256",
-  "adoptions": "1,442",
+  "distinct_credit_recs": "1,253",
+  "adoptions": "1,439",
   "adopting_colleges": "64",
   "by_sector": [
    {
@@ -57,8 +57,8 @@
    {
     "sector": "Automotive Technology",
     "exhibits": 11,
-    "credit_recs": 145,
-    "adoptions": 145,
+    "credit_recs": 142,
+    "adoptions": 142,
     "could_adopt": 65
    },
    {
