@@ -375,6 +375,72 @@
   "text_chars": 3942
  },
  {
+  "control_number": "03024",
+  "title": "Aviation Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO100",
+   "AERO102",
+   "AERO104",
+   "AERO152",
+   "AERO200",
+   "AERO250",
+   "AERO252",
+   "AERO98",
+   "AIRT151",
+   "AIRT201",
+   "AIRT203",
+   "AIRT251"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aviation-science/aviation-science/",
+   "title": "Aviation Science (AS Degree S0910) < Mt. San Antonio College",
+   "h1": "Aviation Science (AS Degree S0910)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3798
+ },
+ {
+  "control_number": "03027",
+  "title": "Commercial Flight",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO100",
+   "AERO102",
+   "AERO104",
+   "AERO150",
+   "AERO152",
+   "AERO200",
+   "AERO202",
+   "AERO250",
+   "AERO252",
+   "AERO98"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aeronautics/commercial-flight/",
+   "title": "Commercial Flight (AS Degree S0912) < Mt. San Antonio College",
+   "h1": "Commercial Flight (AS Degree S0912)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4711
+ },
+ {
   "control_number": "03030",
   "title": "Manufacturing Technology",
   "award": "A.S. Degree",
@@ -453,6 +519,58 @@
   },
   "listed": 15,
   "text_chars": 4761
+ },
+ {
+  "control_number": "03054",
+  "title": "Nursing - Registered Nursing (RN) Generic Option",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.968,
+  "codes_found": [
+   "AMLA1A",
+   "ANAT10A",
+   "ANAT10B",
+   "ANAT35",
+   "ANAT36",
+   "CHLD10",
+   "CHLD10H",
+   "COMM2",
+   "COMM8",
+   "COMM8H",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "MICR1",
+   "MICR22",
+   "NURS100",
+   "NURS101",
+   "NURS102",
+   "NURS113",
+   "NURS114",
+   "NURS115",
+   "NURS206",
+   "NURS207",
+   "NURS210",
+   "NURS211",
+   "PSYC14",
+   "PSYC14H",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-nursing-registered-nursing-rn-generic-option-degree/",
+   "title": "Nursing - Registered Nursing (RN) Generic Option (AS Degree S0958) < Mt. San Antonio College",
+   "h1": "Nursing - Registered Nursing (RN) Generic Option (AS Degree S0958)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 9780
  },
  {
   "control_number": "03056",
@@ -1266,6 +1384,36 @@
   "text_chars": 4493
  },
  {
+  "control_number": "08078",
+  "title": "Airframe and Aircraft Powerplant Maintenance Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRM65A",
+   "AIRM65B",
+   "AIRM66A",
+   "AIRM66B",
+   "AIRM70A",
+   "AIRM70B",
+   "AIRM71",
+   "AIRM72"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-and-aircraft-powerplant-maintenance-technology-day/",
+   "title": "Airframe and Aircraft Powerplant Maintenance Technology - Day (AS Degree S0911) < Mt. San Antonio College",
+   "h1": "Airframe and Aircraft Powerplant Maintenance Technology - Day (AS Degree S0911)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 5391
+ },
+ {
   "control_number": "08079",
   "title": "Architectural Technology Concentration",
   "award": "A.S. Degree",
@@ -1302,6 +1450,154 @@
   },
   "listed": 4,
   "text_chars": 2939
+ },
+ {
+  "control_number": "08086",
+  "title": "Nursing- Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "AMLA1A",
+   "ANAT10A",
+   "ANAT10B",
+   "ANAT35",
+   "ANAT36",
+   "CHLD10",
+   "CHLD10H",
+   "COMM2",
+   "COMM8",
+   "COMM8H",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "MICR1",
+   "MICR22",
+   "NURS114",
+   "NURS115",
+   "NURS206",
+   "NURS207",
+   "NURS210",
+   "NURS211",
+   "PSYC14",
+   "PSYC14H",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/",
+   "title": "Nursing - Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option (AS Degree S0957) < Mt. San Antonio College",
+   "h1": "Nursing - Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option (AS Degree S0957)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 10631
+ },
+ {
+  "control_number": "08087",
+  "title": "Nursing- Licensed Psychiatric Technician (LPT) to Registered Nurse (RN) Option",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "AMLA1A",
+   "ANAT10A",
+   "ANAT10B",
+   "ANAT35",
+   "ANAT36",
+   "CHLD10",
+   "CHLD10H",
+   "COMM2",
+   "COMM8",
+   "COMM8H",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "MICR1",
+   "MICR22",
+   "NURS113",
+   "NURS114",
+   "NURS206",
+   "NURS210",
+   "NURS211",
+   "PSYC14",
+   "PSYC14H",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/nursing-licensed-psychiatric-technician-lpt-to-registered-nurse-rn-option-degree/",
+   "title": "Nursing - Licensed Psychiatric Technician (LPT) to Registered Nurse (RN) Option (AS Degree S0959) < Mt. San Antonio College",
+   "h1": "Nursing - Licensed Psychiatric Technician (LPT) to Registered Nurse (RN) Option (AS Degree S0959)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 10633
+ },
+ {
+  "control_number": "08089",
+  "title": "Addiction Counseling",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AD1",
+   "AD10",
+   "AD11",
+   "AD15",
+   "AD16",
+   "AD2",
+   "AD3",
+   "AD4",
+   "AD6",
+   "AD8",
+   "AD85",
+   "AD9",
+   "CHLD10",
+   "CHLD10H",
+   "PSYC14",
+   "PSYC14H",
+   "PSYC15",
+   "PSYC19",
+   "PSYC1B",
+   "PSYC1BH",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC14",
+   "SOC14H",
+   "SOC15",
+   "SOC20",
+   "SOC20H",
+   "SOC5",
+   "SOC5H",
+   "SOC7"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/addiction-counseling/addiction-counseling-as-degree/",
+   "title": "Addiction Counseling (AS Degree S0657) < Mt. San Antonio College",
+   "h1": "Addiction Counseling (AS Degree S0657)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 4636
  },
  {
   "control_number": "08093",
@@ -1678,6 +1974,43 @@
   "text_chars": 4000
  },
  {
+  "control_number": "11111",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE1",
+   "FIRE10",
+   "FIRE11",
+   "FIRE12",
+   "FIRE13",
+   "FIRE2",
+   "FIRE3",
+   "FIRE4",
+   "FIRE5",
+   "FIRE6",
+   "FIRE7",
+   "FIRE8",
+   "FIRE86",
+   "FIRE9",
+   "KINF53"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/fire-technology-degree/",
+   "title": "Fire Technology (AS Degree S2105) < Mt. San Antonio College",
+   "h1": "Fire Technology (AS Degree S2105)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4199
+ },
+ {
   "control_number": "11120",
   "title": "Audio Media",
   "award": "A.S. Degree",
@@ -1798,6 +2131,34 @@
   "text_chars": 0
  },
  {
+  "control_number": "12009",
+  "title": "Airframe Maintenance Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRM66A",
+   "AIRM66B",
+   "AIRM70A",
+   "AIRM70B",
+   "AIRM71",
+   "AIRM72"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-maintenance-technology-day-certificate/",
+   "title": "Airframe Maintenance Technology - Day (Certificate T0991) < Mt. San Antonio College",
+   "h1": "Airframe Maintenance Technology - Day (Certificate T0991)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 5479
+ },
+ {
   "control_number": "12010",
   "title": "Aircraft Powerplant Maintenance Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -1823,6 +2184,60 @@
   },
   "listed": 5,
   "text_chars": 5702
+ },
+ {
+  "control_number": "12073",
+  "title": "Registered Veterinary Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGHE54",
+   "AGHE61",
+   "AGHE62A",
+   "AGHE62B",
+   "AGHE64",
+   "AGHE65",
+   "AGHE79",
+   "AGHE84B",
+   "AGHE85",
+   "AGHE86",
+   "AGHE90A",
+   "AGHE90B",
+   "AGHE90C",
+   "AGHE90D",
+   "ASCI1",
+   "ASCI12",
+   "ASCI14",
+   "ASCI16",
+   "ASCI17",
+   "ASCI18",
+   "ASCI19",
+   "ASCI2",
+   "ASCI30",
+   "ASCI51",
+   "ASCI70",
+   "ASCI71",
+   "ASCI72",
+   "ASCI73",
+   "ASCI74",
+   "ASCI76",
+   "ASCI94",
+   "ASCI96"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/registered-veterinary-technology-degree/",
+   "title": "Registered Veterinary Technology (AS Degree S0105) < Mt. San Antonio College",
+   "h1": "Registered Veterinary Technology (AS Degree S0105)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 5680
  },
  {
   "control_number": "12076",
@@ -1948,6 +2363,35 @@
   },
   "listed": 4,
   "text_chars": 3991
+ },
+ {
+  "control_number": "12158",
+  "title": "Fashion design - Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH10",
+   "FASH12",
+   "FASH16",
+   "FASH17",
+   "FASH21",
+   "FASH24",
+   "FASH25"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-design-level-i-certificate/",
+   "title": "Fashion Design - Level I (Certificate N0482) < Mt. San Antonio College",
+   "h1": "Fashion Design - Level I (Certificate N0482)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3241
  },
  {
   "control_number": "12162",
@@ -2878,6 +3322,94 @@
   "text_chars": 4201
  },
  {
+  "control_number": "18235",
+  "title": "Fine Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "ANIM101A",
+   "ANIM101B",
+   "ANIM101C",
+   "ANIM107",
+   "ANIM110",
+   "ANIM167",
+   "ARTC100",
+   "ARTC120",
+   "ARTC140",
+   "ARTC160",
+   "ARTC163",
+   "ARTC165",
+   "ARTC167",
+   "ARTC169",
+   "ARTC200",
+   "ARTC220",
+   "ARTC290",
+   "ARTD15A",
+   "ARTD15B",
+   "ARTD16",
+   "ARTD17A",
+   "ARTD17B",
+   "ARTD19A",
+   "ARTD20",
+   "ARTD21",
+   "ARTD23A",
+   "ARTD23B",
+   "ARTD25A",
+   "ARTD25B",
+   "ARTD26A",
+   "ARTD26B",
+   "ARTD27",
+   "ARTD43A",
+   "ARTD43B",
+   "ARTD44A",
+   "ARTD45A",
+   "ARTD45B",
+   "ARTD46A",
+   "ARTD47A",
+   "ARTD48A",
+   "ARTD75",
+   "ARTG20",
+   "ARTG21",
+   "ARTG23",
+   "ARTG24",
+   "ARTHC1100H",
+   "ARTHC1200H",
+   "ARTS22",
+   "ARTS30A",
+   "ARTS30B",
+   "ARTS31",
+   "ARTS33",
+   "ARTS34",
+   "ARTS40A",
+   "ARTS40B",
+   "ARTS40C",
+   "ARTS41A",
+   "ARTS41B",
+   "ARTS42",
+   "ARTS46A",
+   "ARTS46B",
+   "PHOT10",
+   "PHOT12",
+   "PHOT17",
+   "PHOT20",
+   "PHOT9"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fine-arts/aa-liberal-arts-sciences-emphasis-fine-arts/",
+   "title": "Fine Arts Emphasis (AA Degree A8983) < Mt. San Antonio College",
+   "h1": "Fine Arts Emphasis (AA Degree A8983)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 69,
+  "text_chars": 7346
+ },
+ {
   "control_number": "18236",
   "title": "Humanities",
   "award": "A.A. Degree",
@@ -3006,6 +3538,186 @@
   "text_chars": 5081
  },
  {
+  "control_number": "18238",
+  "title": "Kinesiology and Wellness",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.981,
+  "codes_found": [
+   "ANAT10A",
+   "ANAT10B",
+   "ANAT35",
+   "ANAT36",
+   "ANTH5",
+   "ANTH5H",
+   "BIOL1",
+   "BIOL13",
+   "BIOL4",
+   "BIOL4H",
+   "BIOL5",
+   "CHEM10",
+   "CHEM40",
+   "CHEM50",
+   "CHEM50H",
+   "CHLD1",
+   "CHLD10",
+   "CHLD10H",
+   "COUN2",
+   "COUN5",
+   "DNCE1",
+   "DNCE10",
+   "DNCE11A",
+   "DNCE11B",
+   "DNCE12A",
+   "DNCE12B",
+   "DNCE13",
+   "DNCE14A",
+   "DNCE14B",
+   "DNCE15",
+   "DNCE17",
+   "DNCE18A",
+   "DNCE18B",
+   "DNCE19",
+   "DNCE28",
+   "DNCE29",
+   "DNCE2A",
+   "DNCE2B",
+   "DNCE3",
+   "DNCE30",
+   "DNCE31",
+   "DNCE32",
+   "DNCE33",
+   "DNCE36",
+   "DNCE39",
+   "DNCE4",
+   "DNCE40",
+   "DNCE41",
+   "DNCE42",
+   "DNCE43",
+   "DNCE8",
+   "DNT18",
+   "DNT20",
+   "DNT9",
+   "KIN13",
+   "KIN17",
+   "KIN19",
+   "KIN24",
+   "KIN3",
+   "KIN38",
+   "KIN39",
+   "KIN40",
+   "KIN44",
+   "KIN5",
+   "KINA14",
+   "KINA20",
+   "KINA22A",
+   "KINA8A",
+   "KINA8B",
+   "KINA8C",
+   "KINF10A",
+   "KINF10B",
+   "KINF19",
+   "KINF20A",
+   "KINF20B",
+   "KINF20C",
+   "KINF25",
+   "KINF34A",
+   "KINF34B",
+   "KINF36A",
+   "KINF36B",
+   "KINF38A",
+   "KINF38B",
+   "KINI18A",
+   "KINI18B",
+   "KINI18C",
+   "KINI25",
+   "KINI27A",
+   "KINI27B",
+   "KINI29",
+   "KINI30A",
+   "KINI30B",
+   "KINI33A",
+   "KINI33B",
+   "KINI34",
+   "KINI34B",
+   "KINI37A",
+   "KINI37B",
+   "KINI37C",
+   "KINI40A",
+   "KINI40B",
+   "KINI40C",
+   "KINI41A",
+   "KINI41B",
+   "KINI47",
+   "KINI4A",
+   "KINI4B",
+   "KINI4C",
+   "KINI50A",
+   "KINI50B",
+   "KINI50C",
+   "KINL18",
+   "KINL2",
+   "KINS10A",
+   "KINS10B",
+   "KINS11A",
+   "KINS11B",
+   "KINS12A",
+   "KINS12B",
+   "KINS16A",
+   "KINS16B",
+   "KINS22A",
+   "KINS22B",
+   "KINS24A",
+   "KINS24B",
+   "KINS24C",
+   "KINS26A",
+   "KINS26B",
+   "KINS2A",
+   "KINS2B",
+   "KINX88",
+   "KINX89",
+   "MICR1",
+   "MICR22",
+   "NF10",
+   "NF12",
+   "NF25",
+   "NF25H",
+   "PHYS1",
+   "PHYS2AG",
+   "PSYC14",
+   "PSYC14H",
+   "PSYC15",
+   "PSYC1B",
+   "PSYC1BH",
+   "PSYC26",
+   "PSYC3",
+   "PSYC33",
+   "PSYC3H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC15",
+   "SOC1H",
+   "SOC2",
+   "SOC20",
+   "SOC20H",
+   "SOC2H"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/aa-liberal-arts-sciences-emphasis-kinesiology-wellness/",
+   "title": "Kinesiology and Wellness Emphasis (AA Degree A8986) < Mt. San Antonio College",
+   "h1": "Kinesiology and Wellness Emphasis (AA Degree A8986)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 161,
+  "text_chars": 9901
+ },
+ {
   "control_number": "18239",
   "title": "Language Arts",
   "award": "A.A. Degree",
@@ -3109,6 +3821,41 @@
   },
   "listed": 86,
   "text_chars": 6066
+ },
+ {
+  "control_number": "18240",
+  "title": "Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI110",
+   "CSCI140",
+   "CSCI145",
+   "MATH130",
+   "MATH140",
+   "MATH150",
+   "MATH160",
+   "MATH180",
+   "MATH181",
+   "MATH260",
+   "MATH280",
+   "MATH285",
+   "MATH290"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/mathematics/aa-liberal-arts-sciences-emphasis-mathematics/",
+   "title": "Mathematics Emphasis (AA Degree A8989) < Mt. San Antonio College",
+   "h1": "Mathematics Emphasis (AA Degree A8989)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3310
  },
  {
   "control_number": "18241",
@@ -3588,6 +4335,32 @@
   "text_chars": 0
  },
  {
+  "control_number": "22162",
+  "title": "Film and Television Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "RTV100",
+   "RTV19A",
+   "RTV19B",
+   "RTV20",
+   "RTV21",
+   "RTV22",
+   "RTV23"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/television/film-and-television-production-certificate/",
+   "title": "Film and Television Production (Certificate N1009) < Mt. San Antonio College",
+   "h1": "Film and Television Production (Certificate N1009)",
+   "text_from": "innerText",
+   "label": null
+  },
+  "listed": 7,
+  "text_chars": 3325
+ },
+ {
   "control_number": "22167",
   "title": "Programming in C++",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -3611,6 +4384,39 @@
   },
   "listed": 6,
   "text_chars": 4070
+ },
+ {
+  "control_number": "22172",
+  "title": "Computer and Networking Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET50",
+   "CNET52",
+   "CNET54",
+   "CNET56",
+   "CNET58",
+   "CNET60",
+   "CNET62",
+   "CNET64",
+   "CNET66",
+   "ELEC56",
+   "TECH60"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-certificate/",
+   "title": "Computer and Networking Technology (Certificate T0960) < Mt. San Antonio College",
+   "h1": "Computer and Networking Technology (Certificate T0960)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3326
  },
  {
   "control_number": "22175",
@@ -3993,6 +4799,60 @@
   },
   "listed": 9,
   "text_chars": 3689
+ },
+ {
+  "control_number": "22187",
+  "title": "Addiction Counseling",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AD1",
+   "AD10",
+   "AD11",
+   "AD15",
+   "AD16",
+   "AD2",
+   "AD3",
+   "AD4",
+   "AD6",
+   "AD8",
+   "AD85",
+   "AD9",
+   "CHLD10",
+   "CHLD10H",
+   "PSYC14",
+   "PSYC14H",
+   "PSYC15",
+   "PSYC19",
+   "PSYC1B",
+   "PSYC1BH",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC14",
+   "SOC14H",
+   "SOC15",
+   "SOC1H",
+   "SOC20",
+   "SOC20H",
+   "SOC5",
+   "SOC5H",
+   "SOC7"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/addiction-counseling/addiction-counseling-certificate/",
+   "title": "Addiction Counseling (Certificate T0658) < Mt. San Antonio College",
+   "h1": "Addiction Counseling (Certificate T0658)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 4616
  },
  {
   "control_number": "22188",
@@ -5402,39 +6262,108 @@
   "text_chars": 3508
  },
  {
+  "control_number": "31566",
+  "title": "Industrial Design Engineering - Level III",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IDE110",
+   "IDE120",
+   "IDE130",
+   "IDE150",
+   "IDE160",
+   "IDE170",
+   "IDE210",
+   "IDE220",
+   "IDE230",
+   "IDE250",
+   "IDE270"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/industrial-design-engineering/industrial-design-engineering-level-iii/",
+   "title": "Industrial Design Engineering - Level III (Certificate T0328) < Mt. San Antonio College",
+   "h1": "Industrial Design Engineering - Level III (Certificate T0328)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3811
+ },
+ {
+  "control_number": "31568",
+  "title": "Industrial Design Engineering - Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IDE110",
+   "IDE120",
+   "IDE130",
+   "IDE150",
+   "IDE160",
+   "IDE170",
+   "IDE210",
+   "IDE220",
+   "IDE230"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/industrial-design-engineering/industrial-design-engineering-level-ii/",
+   "title": "Industrial Design Engineering - Level II (Certificate N0620) < Mt. San Antonio College",
+   "h1": "Industrial Design Engineering - Level II (Certificate N0620)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3602
+ },
+ {
+  "control_number": "31569",
+  "title": "Industrial Design Engineering - Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IDE110",
+   "IDE120",
+   "IDE130",
+   "IDE150",
+   "IDE160",
+   "IDE170"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/industrial-design-engineering/industrial-design-engineering-level-i/",
+   "title": "Industrial Design Engineering - Level I (Certificate N0651) < Mt. San Antonio College",
+   "h1": "Industrial Design Engineering - Level I (Certificate N0651)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3254
+ },
+ {
   "control_number": "31598",
   "title": "Adult High School Diploma",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "BSHSALG1",
-   "BSHSALG2",
-   "BSHSECON",
-   "BSHSENG1",
-   "BSHSENG2",
-   "BSHSENG3",
-   "BSHSENG4",
-   "BSHSGEOM",
-   "BSHSPREA",
-   "BSHSPSY",
-   "BSHSSOC",
-   "BSHSUSH",
-   "BSHSWHS"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/",
-   "title": "Secondary Education/ High School Diploma < Mt. San Antonio College",
-   "h1": "Secondary Education/ High School Diploma",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.75
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 3741
+  "text_chars": 0
  },
  {
   "control_number": "31604",
@@ -5538,6 +6467,39 @@
   },
   "listed": 45,
   "text_chars": 8113
+ },
+ {
+  "control_number": "31635",
+  "title": "Industrial Desing Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IDE110",
+   "IDE120",
+   "IDE130",
+   "IDE150",
+   "IDE160",
+   "IDE170",
+   "IDE210",
+   "IDE220",
+   "IDE230",
+   "IDE250",
+   "IDE270"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/industrial-design-engineering/industrial-design-engineering-degree/",
+   "title": "Industrial Design Engineering (AS Degree S0331) < Mt. San Antonio College",
+   "h1": "Industrial Design Engineering (AS Degree S0331)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 11,
+  "text_chars": 3708
  },
  {
   "control_number": "31650",
@@ -5851,24 +6813,12 @@
   "title": "Dance Teacher",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.667,
-  "codes_found": [
-   "DNCE32",
-   "DNCE39"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/aa-liberal-arts-sciences-emphasis-kinesiology-wellness/",
-   "title": "Kinesiology and Wellness Emphasis (AA Degree A8986) < Mt. San Antonio College",
-   "h1": "Kinesiology and Wellness Emphasis (AA Degree A8986)",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 4792
+  "text_chars": 0
  },
  {
   "control_number": "33309",
@@ -6300,6 +7250,68 @@
   "text_chars": 3951
  },
  {
+  "control_number": "35611",
+  "title": "VESL Career Paths",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35635",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT10A",
+   "ANAT10B",
+   "BIOL1",
+   "BIOL4",
+   "BIOL4H",
+   "BIOL5",
+   "CHEM10",
+   "CHEM20",
+   "CHEM40",
+   "CHEM50",
+   "CHEM50H",
+   "CHEM51",
+   "CHEM51H",
+   "CHEM80",
+   "ECON17",
+   "MATH130",
+   "MATH160",
+   "MICR1",
+   "MICR22",
+   "NF25",
+   "NF30",
+   "PSYC10",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "PUBH26",
+   "SOC23",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nutrition/nutrition-ditetics-transfer/",
+   "title": "Nutrition and Dietetics (AS-T Degree S0422) < Mt. San Antonio College",
+   "h1": "Nutrition and Dietetics (AS-T Degree S0422)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4271
+ },
+ {
   "control_number": "35718",
   "title": "Philosophy",
   "award": "A.A- T Degree",
@@ -6695,6 +7707,68 @@
   "text_chars": 4478
  },
  {
+  "control_number": "36743",
+  "title": "Secondary Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSHSALG1",
+   "BSHSALG2",
+   "BSHSART1",
+   "BSHSART2",
+   "BSHSBIO",
+   "BSHSCHEM",
+   "BSHSCIV",
+   "BSHSCPTC",
+   "BSHSEASC",
+   "BSHSECON",
+   "BSHSELD",
+   "BSHSENG1",
+   "BSHSENG2",
+   "BSHSENG3",
+   "BSHSENG4",
+   "BSHSETHN",
+   "BSHSGEOG",
+   "BSHSGEOM",
+   "BSHSHLTH",
+   "BSHSINMA1",
+   "BSHSINMA2",
+   "BSHSINMA3",
+   "BSHSMUSC",
+   "BSHSPHSC",
+   "BSHSPLNG",
+   "BSHSPREA",
+   "BSHSPRFN",
+   "BSHSPSY",
+   "BSHSREAD",
+   "BSHSSOC",
+   "BSHSSPN1",
+   "BSHSSPN2",
+   "BSHSSPNS1",
+   "BSHSSPNS2",
+   "BSHSSSK",
+   "BSHSUSH",
+   "BSHSWHS",
+   "BSHSWREX",
+   "BSHSWRIT1",
+   "BSHSWRIT2"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/",
+   "title": "Secondary Education/ High School Diploma < Mt. San Antonio College",
+   "h1": "Secondary Education/ High School Diploma",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 3741
+ },
+ {
   "control_number": "36803",
   "title": "Sewing and Tailoring",
   "award": "Noncredit program",
@@ -6866,6 +7940,78 @@
   },
   "listed": 18,
   "text_chars": 3779
+ },
+ {
+  "control_number": "36931",
+  "title": "Culinary Arts Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL101",
+   "CUL102",
+   "CUL103",
+   "CUL104",
+   "CUL105",
+   "CUL106",
+   "CUL107",
+   "CUL108",
+   "CUL111",
+   "CUL112",
+   "CUL113",
+   "CUL114",
+   "CUL115",
+   "CUL117",
+   "CUL118",
+   "CUL121",
+   "CUL125",
+   "CUL91",
+   "HRM52",
+   "HRM56",
+   "HRM57",
+   "HRM59"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/culinary-arts-management/",
+   "title": "Culinary Arts Management (AS Degree S0448) < Mt. San Antonio College",
+   "h1": "Culinary Arts Management (AS Degree S0448)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3894
+ },
+ {
+  "control_number": "36941",
+  "title": "Digital Supply Chain Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSM10",
+   "BUSM51",
+   "BUSM52",
+   "BUSM53",
+   "CISB21",
+   "CISN71"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/supply-chain-management/",
+   "title": "Digital Supply Chain Management (Certificate N0980) < Mt. San Antonio College",
+   "h1": "Digital Supply Chain Management (Certificate N0980)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3578
  },
  {
   "control_number": "37023",
@@ -7091,6 +8237,33 @@
   },
   "listed": 2,
   "text_chars": 3526
+ },
+ {
+  "control_number": "37444",
+  "title": "General Office Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSABE5",
+   "BSCNSL5",
+   "VOCAIW",
+   "VOCCS41",
+   "VOCCSB15"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-general-office-skills/",
+   "title": "General Office Skills < Mt. San Antonio College",
+   "h1": "General Office Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4462
  },
  {
   "control_number": "37445",
@@ -7422,6 +8595,64 @@
   "text_chars": 8493
  },
  {
+  "control_number": "38020",
+  "title": "Graphic Design - Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC100",
+   "ARTC120",
+   "ARTC140",
+   "ARTC160",
+   "ARTC90",
+   "ARTD20",
+   "PHOT58"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-generalist/",
+   "title": "Graphic Design - Level 2 - Generalist (Certificate T0683) < Mt. San Antonio College",
+   "h1": "Graphic Design - Level 2 - Generalist (Certificate T0683)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3758
+ },
+ {
+  "control_number": "38082",
+  "title": "ESL - Beginning Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "link_search",
+  "coverage": 0.909,
+  "codes_found": [
+   "ESLCULTR",
+   "ESLGVRA",
+   "ESLLANG1",
+   "ESLLANG3",
+   "ESLLVL1",
+   "ESLLVL2",
+   "ESLPRONA",
+   "ESLREADA",
+   "ESLSPKA",
+   "ESLWRTA"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
+   "h1": "English as a Second Language (ESL)",
+   "text_from": "innerText",
+   "label": null
+  },
+  "listed": 11,
+  "text_chars": 15860
+ },
+ {
   "control_number": "38083",
   "title": "Care Coordinator – Level 1",
   "award": "Noncredit program",
@@ -7445,6 +8676,36 @@
   },
   "listed": 3,
   "text_chars": 2680
+ },
+ {
+  "control_number": "38084",
+  "title": "Baking and Pastry - Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL102",
+   "CUL105",
+   "CUL106",
+   "CUL113",
+   "CUL115",
+   "CUL117",
+   "CUL118",
+   "HRM52"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-and-pastry-advanced-certificate/",
+   "title": "Baking and Pastry - Advanced (Certificate T0934) < Mt. San Antonio College",
+   "h1": "Baking and Pastry - Advanced (Certificate T0934)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3784
  },
  {
   "control_number": "38085",
@@ -7480,6 +8741,126 @@
   },
   "listed": 13,
   "text_chars": 4379
+ },
+ {
+  "control_number": "38086",
+  "title": "Culinary - Advanced",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL101",
+   "CUL102",
+   "CUL103",
+   "CUL104",
+   "CUL105",
+   "CUL106",
+   "CUL107",
+   "CUL108",
+   "CUL111",
+   "CUL112",
+   "CUL113",
+   "CUL114",
+   "CUL115",
+   "CUL117",
+   "CUL118",
+   "CUL121",
+   "CUL125",
+   "CUL91",
+   "HRM52",
+   "HRM56",
+   "HRM57",
+   "HRM59"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/culinary-cert-advanced/",
+   "title": "Culinary - Advanced (Certificate T0457) < Mt. San Antonio College",
+   "h1": "Culinary - Advanced (Certificate T0457)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3864
+ },
+ {
+  "control_number": "38091",
+  "title": "Baking and Pastry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL101",
+   "CUL102",
+   "CUL103",
+   "CUL105",
+   "CUL106",
+   "CUL108",
+   "CUL111",
+   "CUL112",
+   "CUL113",
+   "CUL114",
+   "CUL115",
+   "CUL117",
+   "CUL118",
+   "CUL121",
+   "CUL125",
+   "CUL91",
+   "HRM52",
+   "HRM56",
+   "HRM57",
+   "HRM59"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-pastry-as/",
+   "title": "Baking and Pastry (AS Degree S0456) < Mt. San Antonio College",
+   "h1": "Baking and Pastry (AS Degree S0456)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4094
+ },
+ {
+  "control_number": "38094",
+  "title": "ESL - Advanced Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "link_search",
+  "coverage": 0.938,
+  "codes_found": [
+   "ESL72",
+   "ESL80",
+   "ESL81",
+   "ESLCULTR",
+   "ESLGVRC",
+   "ESLLANG1",
+   "ESLLANG3",
+   "ESLLVL5",
+   "ESLLVL6",
+   "ESLPRONC",
+   "ESLREADC",
+   "ESLSPKC",
+   "ESLTOEFL",
+   "ESLVHLTH",
+   "ESLWRTC"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
+   "h1": "English as a Second Language (ESL)",
+   "text_from": "innerText",
+   "label": null
+  },
+  "listed": 16,
+  "text_chars": 16000
  },
  {
   "control_number": "38095",
@@ -7528,6 +8909,35 @@
   },
   "listed": 2,
   "text_chars": 3187
+ },
+ {
+  "control_number": "38097",
+  "title": "ESL - Intermediate Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "link_search",
+  "coverage": 0.909,
+  "codes_found": [
+   "ESLCULTR",
+   "ESLGVRB",
+   "ESLLANG1",
+   "ESLLANG3",
+   "ESLLVL3",
+   "ESLLVL4",
+   "ESLPRONB",
+   "ESLREADB",
+   "ESLSPKB",
+   "ESLWRTB"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
+   "h1": "English as a Second Language (ESL)",
+   "text_from": "innerText",
+   "label": null
+  },
+  "listed": 11,
+  "text_chars": 16000
  },
  {
   "control_number": "38102",
@@ -7670,6 +9080,32 @@
   },
   "listed": 1,
   "text_chars": 2523
+ },
+ {
+  "control_number": "38108",
+  "title": "Medical Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCHTH5",
+   "VOCHTH6",
+   "VOCMAF",
+   "VOCMAST"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/medical-assistant/",
+   "title": "Medical Assistant < Mt. San Antonio College",
+   "h1": "Medical Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2736
  },
  {
   "control_number": "38111",
@@ -7853,32 +9289,130 @@
   "text_chars": 2653
  },
  {
+  "control_number": "38833",
+  "title": "Fashion Design - Level 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCFSH10",
+   "VOCFSH12",
+   "VOCFSH16",
+   "VOCFSH17",
+   "VOCFSH21",
+   "VOCFSH24",
+   "VOCFSH25"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-fashion-design-level-1/",
+   "title": "Fashion Design - Level 1 < Mt. San Antonio College",
+   "h1": "Fashion Design - Level 1",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3657
+ },
+ {
   "control_number": "38942",
   "title": "Exhibition Concept, Design, and Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39212",
+  "title": "Unmanned Aircraft System",
+  "award": "A.S. Degree",
+  "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
-   "ARTC100",
-   "ARTG20",
-   "ARTG21",
-   "ARTG23",
-   "ARTG24",
-   "ARTH6H"
+   "AERO100",
+   "AERO102",
+   "AERO160",
+   "AERO170",
+   "AERO180",
+   "AERO190",
+   "AERO210",
+   "AERO98",
+   "PHOT10",
+   "PHOT50"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
-   "title": "Museum Studies and Art Gallery (Certificate N0988) < Mt. San Antonio College",
-   "h1": "Museum Studies and Art Gallery (Certificate N0988)",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aviation-science/unmanned-aircraft-systems-as/",
+   "title": "Unmanned Aircraft Systems (AS Degree S0661) < Mt. San Antonio College",
+   "h1": "Unmanned Aircraft Systems (AS Degree S0661)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.667
    }
   },
-  "listed": 9,
-  "text_chars": 4588
+  "listed": 10,
+  "text_chars": 2648
+ },
+ {
+  "control_number": "39411",
+  "title": "Unmanned Aircraft Systems",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO160",
+   "AERO170",
+   "AERO210",
+   "AERO98",
+   "PHOT10"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aviation-science/unmanned-aircraft-systems-certificate/",
+   "title": "Unmanned Aircraft Systems (Certificate M0662) < Mt. San Antonio College",
+   "h1": "Unmanned Aircraft Systems (Certificate M0662)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2841
+ },
+ {
+  "control_number": "39517",
+  "title": "Child Development - Level I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD1",
+   "CHLD11",
+   "CHLD5",
+   "CHLD6"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-administration-certificate/",
+   "title": "Child Development - Program Administration (Certificate T0863) < Mt. San Antonio College",
+   "h1": "Child Development - Program Administration (Certificate T0863)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 5171
  },
  {
   "control_number": "39518",
@@ -8628,6 +10162,58 @@
   "text_chars": 3394
  },
  {
+  "control_number": "40274",
+  "title": "Artificial Intelligence in Business",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISB60",
+   "CISB63",
+   "CISD41"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/artificial-intelligence/artificial-intelligence-in-business-certificate/",
+   "title": "Artificial Intelligence in Business (Certificate M0671) < Mt. San Antonio College",
+   "h1": "Artificial Intelligence in Business (Certificate M0671)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2834
+ },
+ {
+  "control_number": "40282",
+  "title": "Computed Tomography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RAD70",
+   "RAD71",
+   "RAD72",
+   "RAD7A",
+   "RAD7B"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computed-tomography/computed-tomography-certificate/",
+   "title": "Computed Tomography (Certificate N0687) < Mt. San Antonio College",
+   "h1": "Computed Tomography (Certificate N0687)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3373
+ },
+ {
   "control_number": "40299",
   "title": "Music Studies - Level I",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -8888,6 +10474,183 @@
   "text_chars": 3729
  },
  {
+  "control_number": "41168",
+  "title": "Pharmacy Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSHCM1",
+   "VOCNWE",
+   "VOCPPCCR",
+   "VOCPTEC1",
+   "VOCPTEC2",
+   "VOCPTEC3"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/pharmacy-technician/",
+   "title": "Pharmacy Technician < Mt. San Antonio College",
+   "h1": "Pharmacy Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2990
+ },
+ {
+  "control_number": "41228",
+  "title": "Graphic Design - Level 2 - Generalist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM104",
+   "ARTC100",
+   "ARTC120",
+   "ARTC140",
+   "ARTC160",
+   "ARTC200",
+   "ARTC210",
+   "ARTC220",
+   "ARTC286",
+   "ARTC290",
+   "ARTC298",
+   "ARTC299",
+   "ARTC90",
+   "ARTD15A",
+   "ARTD20",
+   "PHOT58"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-generalist/",
+   "title": "Graphic Design - Level 2 - Generalist (Certificate T0683) < Mt. San Antonio College",
+   "h1": "Graphic Design - Level 2 - Generalist (Certificate T0683)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3758
+ },
+ {
+  "control_number": "41229",
+  "title": "Graphic Design - Level 2 - Motion Graphics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC100",
+   "ARTC120",
+   "ARTC140",
+   "ARTC160",
+   "ARTC200",
+   "ARTC220",
+   "ARTC272",
+   "ARTC286",
+   "ARTC290",
+   "ARTC298",
+   "ARTC299",
+   "ARTC90",
+   "ARTD20",
+   "PHOT58",
+   "RTV19A"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-motion-graphics/",
+   "title": "Graphic Design - Level 2 - Motion Graphics (Certificate T0685) < Mt. San Antonio College",
+   "h1": "Graphic Design - Level 2 - Motion Graphics (Certificate T0685)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3694
+ },
+ {
+  "control_number": "41230",
+  "title": "Graphic Design - Level 2 - UI/UX and Web Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC100",
+   "ARTC120",
+   "ARTC140",
+   "ARTC160",
+   "ARTC200",
+   "ARTC230",
+   "ARTC286",
+   "ARTC290",
+   "ARTC298",
+   "ARTC299",
+   "ARTC90",
+   "ARTD20",
+   "CISW17",
+   "CISW31",
+   "PHOT58"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-web-design/",
+   "title": "Graphic Design - Level 2 - UI/UX and Web Design (Certificate T0953) < Mt. San Antonio College",
+   "h1": "Graphic Design - Level 2 - UI/UX and Web Design (Certificate T0953)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3882
+ },
+ {
+  "control_number": "41235",
+  "title": "Graphic Design - Level 2 - Marketing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC100",
+   "ARTC120",
+   "ARTC140",
+   "ARTC160",
+   "ARTC200",
+   "ARTC210",
+   "ARTC286",
+   "ARTC290",
+   "ARTC298",
+   "ARTC299",
+   "ARTC90",
+   "ARTD20",
+   "BUSM20",
+   "BUSS36",
+   "PHOT58"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-marketing/",
+   "title": "Graphic Design - Level 2 - Marketing (Certificate T0684) < Mt. San Antonio College",
+   "h1": "Graphic Design - Level 2 - Marketing (Certificate T0684)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3687
+ },
+ {
   "control_number": "41412",
   "title": "California State University General Education (CSUGE) Completion",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -9134,6 +10897,47 @@
   },
   "listed": 4,
   "text_chars": 3361
+ },
+ {
+  "control_number": "41644",
+  "title": "Engineering with Emphasis in Electrical Engineering Applications Level 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMLA1A",
+   "CHEM50",
+   "CHEM50H",
+   "CHEM55",
+   "COMMC1000",
+   "COMMC1000H",
+   "CSCI110",
+   "CSCI140",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGR1",
+   "ENGR16",
+   "ENGR1C",
+   "ENGR6",
+   "MATH150",
+   "MATH160",
+   "MATH180",
+   "MATH181",
+   "PHYS2AG"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-electrical-engineering-applications-level-2/",
+   "title": "Engineering with Emphasis in Electrical Engineering Applications Level - 2 (Certificate T0837) < Mt. San Antonio College",
+   "h1": "Engineering with Emphasis in Electrical Engineering Applications Level - 2 (Certificate T0837)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4959
  },
  {
   "control_number": "41646",
@@ -9417,6 +11221,45 @@
   "text_chars": 4556
  },
  {
+  "control_number": "41664",
+  "title": "Engineering with Emphasis in Software Engineering Applications Level 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMLA1A",
+   "COMMC1000",
+   "COMMC1000H",
+   "CSCI110",
+   "CSCI140",
+   "CSCI190",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGR1",
+   "ENGR16",
+   "ENGR1C",
+   "ENGR6",
+   "MATH150",
+   "MATH160",
+   "MATH180",
+   "MATH181",
+   "PHYS2AG"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-software-engineering-applications-certificate-level-2/",
+   "title": "Engineering with Emphasis in Software Engineering Applications Level - 2 (Certificate T0843) < Mt. San Antonio College",
+   "h1": "Engineering with Emphasis in Software Engineering Applications Level - 2 (Certificate T0843)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4907
+ },
+ {
   "control_number": "41665",
   "title": "Engineering with Emphasis in Chemical and Materials Engineering Applications - Level 1",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -9573,6 +11416,36 @@
   "text_chars": 4351
  },
  {
+  "control_number": "41671",
+  "title": "Engineering with Emphasis in Software Engineering Applications",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI110",
+   "CSCI150",
+   "ENGR1",
+   "ENGR16",
+   "ENGR1C",
+   "ENGR6",
+   "MATH160",
+   "MATH180"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-software-engineering-applications-degree/",
+   "title": "Engineering with Emphasis in Software Engineering Applications (AS Degree S0841) < Mt. San Antonio College",
+   "h1": "Engineering with Emphasis in Software Engineering Applications (AS Degree S0841)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4317
+ },
+ {
   "control_number": "41685",
   "title": "Forensics Competition Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -9606,6 +11479,40 @@
   },
   "listed": 13,
   "text_chars": 2748
+ },
+ {
+  "control_number": "41694",
+  "title": "Artificial Intelligence for Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISB11",
+   "CISB60",
+   "CISB63",
+   "CISD21",
+   "CISD21L",
+   "CISD31",
+   "CISD31L",
+   "CISD41",
+   "CISP71",
+   "CISP71L",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/artificial-intelligence/artificial-intelligence-for-business-as/",
+   "title": "Artificial Intelligence for Business (AS Degree S0844) < Mt. San Antonio College",
+   "h1": "Artificial Intelligence for Business (AS Degree S0844)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3414
  },
  {
   "control_number": "41807",
@@ -9661,6 +11568,63 @@
   },
   "listed": 7,
   "text_chars": 2683
+ },
+ {
+  "control_number": "41813",
+  "title": "Sales Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM50",
+   "CHEM50H",
+   "CHEM51",
+   "CHEM51H",
+   "CHEM55",
+   "CHEM80",
+   "CSCI110",
+   "CSCI150",
+   "ENGR1",
+   "ENGR16",
+   "ENGR18",
+   "ENGR1C",
+   "ENGR24",
+   "ENGR285",
+   "ENGR40",
+   "ENGR40T",
+   "ENGR41",
+   "ENGR42",
+   "ENGR44",
+   "ENGR50A",
+   "ENGR6",
+   "ENGR7",
+   "ENGR8",
+   "ENGT10A",
+   "ENGT10B",
+   "MATH160",
+   "MATH180",
+   "MATH181",
+   "MATH280",
+   "PHYS2AG",
+   "PHYS2BG",
+   "PHYS4A",
+   "PHYS4B",
+   "SURV1A",
+   "SURV1B"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/sales-engineering-degree/",
+   "title": "Sales Engineering (AS Degree S0852) < Mt. San Antonio College",
+   "h1": "Sales Engineering (AS Degree S0852)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 8361
  },
  {
   "control_number": "41815",
@@ -9985,6 +11949,18 @@
   },
   "listed": 8,
   "text_chars": 3835
+ },
+ {
+  "control_number": "42033",
+  "title": "College Readiness for Math and English",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
  },
  {
   "control_number": "42212",
@@ -10387,6 +12363,48 @@
   "text_chars": 4225
  },
  {
+  "control_number": "42726",
+  "title": "ESL Written Communication - Advanced Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLREADC",
+   "ESLWRTC"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
+   "h1": "English as a Second Language (ESL)",
+   "text_from": "innerText",
+   "label": null
+  },
+  "listed": 2,
+  "text_chars": 8711
+ },
+ {
+  "control_number": "42727",
+  "title": "ESL Written Communication - Intermediate Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLREADB",
+   "ESLWRTB"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+   "title": "English as a Second Language (ESL) < Mt. San Antonio College",
+   "h1": "English as a Second Language (ESL)",
+   "text_from": "innerText",
+   "label": null
+  },
+  "listed": 2,
+  "text_chars": 8750
+ },
+ {
   "control_number": "42732",
   "title": "Construction Management - Level I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
@@ -10410,6 +12428,78 @@
   },
   "listed": 3,
   "text_chars": 2298
+ },
+ {
+  "control_number": "42753",
+  "title": "ESL Oral Communication - Literacy Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42754",
+  "title": "ESL Oral Communication - Advanced Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42755",
+  "title": "ESL Written Communication - Beginning Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42756",
+  "title": "ESL Oral Communication - Beginning Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42757",
+  "title": "ESL Oral Communication - Intermediate Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42758",
+  "title": "ESL Written Communication - Literacy Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
  },
  {
   "control_number": "42788",
@@ -10439,6 +12529,46 @@
   },
   "listed": 7,
   "text_chars": 2602
+ },
+ {
+  "control_number": "42789",
+  "title": "Construction Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ARCH142",
+   "ARCH145",
+   "BUSA7",
+   "BUSA8",
+   "CMGT121",
+   "CMGT130",
+   "CMGT140",
+   "CMGT150",
+   "CMGT160",
+   "ECT17",
+   "ECT67",
+   "ECT70",
+   "ECT71",
+   "ECT87",
+   "ENGR1C",
+   "ENGR40",
+   "ENGR42",
+   "SURV1A"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/construction-management/construction-management-as-degree/",
+   "title": "Construction Management (AS Degree S0881) < Mt. San Antonio College",
+   "h1": "Construction Management (AS Degree S0881)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3660
  },
  {
   "control_number": "42849",
@@ -10507,6 +12637,34 @@
   "text_chars": 3983
  },
  {
+  "control_number": "42896",
+  "title": "Digital Supply Chain Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCBM10",
+   "VOCBM51",
+   "VOCBM52",
+   "VOCBM53",
+   "VOCCSB21",
+   "VOCCSN71"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-supply-chain-management/",
+   "title": "Digital Supply Chain Management < Mt. San Antonio College",
+   "h1": "Digital Supply Chain Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3786
+ },
+ {
   "control_number": "42916",
   "title": "Vocational Nursing",
   "award": "Noncredit program",
@@ -10564,6 +12722,47 @@
   },
   "listed": 4,
   "text_chars": 2632
+ },
+ {
+  "control_number": "43032",
+  "title": "Wildland Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE1",
+   "FIRE10",
+   "FIRE11",
+   "FIRE12",
+   "FIRE6",
+   "FIRE7",
+   "FIRE8",
+   "FIRE9",
+   "FIREWF101",
+   "FIREWF102",
+   "FIREWF103",
+   "FIREWF104",
+   "FIREWF105",
+   "FIREWF87",
+   "KINF51A",
+   "KINF51B",
+   "KINF52A",
+   "KINF52B",
+   "KINF54"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/wildland-fire-technology-degree/",
+   "title": "Wildland Fire Technology (AS Degree S0890) < Mt. San Antonio College",
+   "h1": "Wildland Fire Technology (AS Degree S0890)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3872
  },
  {
   "control_number": "43220",
@@ -10662,29 +12861,90 @@
   "text_chars": 3404
  },
  {
+  "control_number": "43275",
+  "title": "Baking and Pastry - Advanced",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL101",
+   "CUL102",
+   "CUL103",
+   "CUL105",
+   "CUL106",
+   "CUL108",
+   "CUL111",
+   "CUL112",
+   "CUL113",
+   "CUL114",
+   "CUL115",
+   "CUL117",
+   "CUL118",
+   "CUL121",
+   "CUL125",
+   "CUL91",
+   "HRM52",
+   "HRM56",
+   "HRM57",
+   "HRM59"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-and-pastry-advanced-certificate/",
+   "title": "Baking and Pastry - Advanced (Certificate T0934) < Mt. San Antonio College",
+   "h1": "Baking and Pastry - Advanced (Certificate T0934)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3784
+ },
+ {
+  "control_number": "43276",
+  "title": "Culinary Arts - Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL101",
+   "CUL102",
+   "CUL103",
+   "CUL104",
+   "CUL105",
+   "CUL107",
+   "CUL108",
+   "CUL113",
+   "CUL121",
+   "HRM52"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/culinary-arts-level-ii-certificate/",
+   "title": "Culinary Arts - Level II (Certificate N0898) < Mt. San Antonio College",
+   "h1": "Culinary Arts - Level II (Certificate N0898)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3419
+ },
+ {
   "control_number": "43373",
   "title": "Post Production for Film and Television",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "RTV19A",
-   "RTV20",
-   "RTV22",
-   "RTV29",
-   "RTV41A",
-   "RTV42"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/programsaz/television/post-production-for-film-and-television-certificate/",
-   "title": "Post Production for Film and Television (Certificate N0935) < Mt. San Antonio College",
-   "h1": "Post Production for Film and Television (Certificate N0935)",
-   "text_from": "innerText",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 2874
+  "text_chars": 0
  },
  {
   "control_number": "43411",
@@ -10723,6 +12983,59 @@
   },
   "listed": 16,
   "text_chars": 4569
+ },
+ {
+  "control_number": "43572",
+  "title": "Music Studies Level II - Jazz",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.969,
+  "codes_found": [
+   "MUS110A",
+   "MUS125",
+   "MUS130",
+   "MUS135",
+   "MUS140",
+   "MUS145",
+   "MUS160",
+   "MUS161A",
+   "MUS161B",
+   "MUS170",
+   "MUS171",
+   "MUS172J",
+   "MUS173J",
+   "MUS207",
+   "MUS27",
+   "MUS31",
+   "MUS39",
+   "MUS44",
+   "MUS44B",
+   "MUS45",
+   "MUS47",
+   "MUS48",
+   "MUS49",
+   "MUS50",
+   "MUS51",
+   "MUS52",
+   "MUS53",
+   "MUS54",
+   "MUS55",
+   "MUS57",
+   "MUS70"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/music-studies-level-ii-jazz/",
+   "title": "Music Studies Level II - Jazz (Certificate T0946) < Mt. San Antonio College",
+   "h1": "Music Studies Level II - Jazz (Certificate T0946)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 4856
  },
  {
   "control_number": "43617",
@@ -10787,6 +13100,31 @@
   "text_chars": 3066
  },
  {
+  "control_number": "43630",
+  "title": "Ownership Services Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCCIO1",
+   "VOCCIO2",
+   "VOCPPCCR"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-ownership-services-technician/",
+   "title": "Ownership Services Technician < Mt. San Antonio College",
+   "h1": "Ownership Services Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4055
+ },
+ {
   "control_number": "43670",
   "title": "Consumer Affairs - Accredited Financial Counselor",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -10814,6 +13152,68 @@
   },
   "listed": 7,
   "text_chars": 2789
+ },
+ {
+  "control_number": "43684",
+  "title": "Music Studies Level II - Music Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS110A",
+   "MUS120",
+   "MUS125",
+   "MUS130",
+   "MUS135",
+   "MUS140",
+   "MUS145",
+   "MUS160",
+   "MUS161A",
+   "MUS161B",
+   "MUS170",
+   "MUS171",
+   "MUS172",
+   "MUS172J",
+   "MUS173",
+   "MUS173J",
+   "MUS27",
+   "MUS30",
+   "MUS31",
+   "MUS33",
+   "MUS34",
+   "MUS36",
+   "MUS38",
+   "MUS39",
+   "MUS44",
+   "MUS45",
+   "MUS47",
+   "MUS48",
+   "MUS49",
+   "MUS50",
+   "MUS51",
+   "MUS52",
+   "MUS53",
+   "MUS54",
+   "MUS55",
+   "MUS56",
+   "MUS57",
+   "MUS60",
+   "MUS61",
+   "MUS70"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/music-studies-level-ii-music-education/",
+   "title": "Music Studies Level II - Music Education (Certificate T0947) < Mt. San Antonio College",
+   "h1": "Music Studies Level II - Music Education (Certificate T0947)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 5533
  },
  {
   "control_number": "43706",
@@ -10981,6 +13381,18 @@
   "text_chars": 0
  },
  {
+  "control_number": "43747",
+  "title": "ESL - Literacy Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
   "control_number": "43751",
   "title": "Criminal Justice",
   "award": "Noncredit program",
@@ -11055,29 +13467,28 @@
   "text_chars": 3335
  },
  {
+  "control_number": "43754",
+  "title": "Registered Behavior Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
   "control_number": "43777",
   "title": "Digital Media Specialist",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "VOCBCDP",
-   "VOCCPNET",
-   "VOCDCIS",
-   "VOCDMB",
-   "VOCMIT",
-   "VOCOCBA"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/digitalmediaspecialisttext/",
-   "title": "Vocational Re-Entry < Mt. San Antonio College",
-   "h1": "Vocational Re-Entry",
-   "text_from": "innerText",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 3393
+  "text_chars": 0
  },
  {
   "control_number": "43853",
@@ -11116,22 +13527,12 @@
   "title": "Regenerative Communities",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "VOCFS",
-   "VOCLFC",
-   "VOCRG"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/regenerativecommunitiestext/",
-   "title": "Vocational Re-Entry < Mt. San Antonio College",
-   "h1": "Vocational Re-Entry",
-   "text_from": "innerText",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 2909
+  "text_chars": 0
  },
  {
   "control_number": "44198",
@@ -11250,6 +13651,18 @@
   },
   "listed": 2,
   "text_chars": 3642
+ },
+ {
+  "control_number": "44367",
+  "title": "Dietary Manager",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
  },
  {
   "control_number": "44520",
@@ -11454,6 +13867,110 @@
   "text_chars": 3829
  },
  {
+  "control_number": "44694",
+  "title": "Illustration Level 2: Entertainment Arts Emphasis",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM104",
+   "ANIM116",
+   "ANIM167",
+   "ARTC100",
+   "ARTC163",
+   "ARTC165",
+   "ARTC167",
+   "ARTC169",
+   "ARTC286",
+   "ARTC290",
+   "ARTC90",
+   "ARTD15A",
+   "ARTD16",
+   "ARTD17A",
+   "ARTD20"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/illustration/illustration-level-2-entertainment-arts-emphasis-certificate/",
+   "title": "Illustration Level 2: Entertainment Arts Emphasis (Certificate T0970) < Mt. San Antonio College",
+   "h1": "Illustration Level 2: Entertainment Arts Emphasis (Certificate T0970)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3978
+ },
+ {
+  "control_number": "44695",
+  "title": "Illustration Level 2: Narrative Illustration Emphasis",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM101A",
+   "ANIM104",
+   "ANIM167",
+   "ARTC100",
+   "ARTC163",
+   "ARTC165",
+   "ARTC167",
+   "ARTC169",
+   "ARTC286",
+   "ARTC290",
+   "ARTC90",
+   "ARTD15A",
+   "ARTD17A",
+   "ARTD20",
+   "ARTD21"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/illustration/illustration-level-2-narrative-illustration-emphasis-certificate/",
+   "title": "Illustration Level 2: Narrative Illustration Emphasis (Certificate T0971) < Mt. San Antonio College",
+   "h1": "Illustration Level 2: Narrative Illustration Emphasis (Certificate T0971)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3995
+ },
+ {
+  "control_number": "44696",
+  "title": "Illustration Level 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM104",
+   "ARTC100",
+   "ARTC163",
+   "ARTC165",
+   "ARTC90",
+   "ARTD15A",
+   "ARTD17A",
+   "ARTD20"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/illustration/illustration-level-1-certificate/",
+   "title": "Illustration Level 1 (Certificate N0969) < Mt. San Antonio College",
+   "h1": "Illustration Level 1 (Certificate N0969)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3592
+ },
+ {
   "control_number": "44929",
   "title": "Real Estate Styling and Staging",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
@@ -11595,6 +14112,18 @@
   "text_chars": 3752
  },
  {
+  "control_number": "45423",
+  "title": "Speech Language Pathology Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
   "control_number": "45453",
   "title": "Biology",
   "award": "A.S. T Degree",
@@ -11626,5 +14155,313 @@
   },
   "listed": 11,
   "text_chars": 3951
+ },
+ {
+  "control_number": "45828",
+  "title": "Library Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LIBR1A",
+   "LIBT100",
+   "LIBT101",
+   "LIBT102",
+   "LIBT110",
+   "LIBT111",
+   "LIBT112"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/librarytechnology/librarytechnology/",
+   "title": "Library Technology (Certificate N0983) < Mt. San Antonio College",
+   "h1": "Library Technology (Certificate N0983)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2810
+ },
+ {
+  "control_number": "45976",
+  "title": "Music Studies Level 2 - Performance",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.969,
+  "codes_found": [
+   "MUS110A",
+   "MUS125",
+   "MUS130",
+   "MUS135",
+   "MUS140",
+   "MUS160",
+   "MUS170",
+   "MUS171",
+   "MUS180",
+   "MUS181",
+   "MUS185",
+   "MUS27",
+   "MUS31",
+   "MUS39",
+   "MUS44",
+   "MUS45",
+   "MUS47",
+   "MUS48",
+   "MUS49",
+   "MUS50",
+   "MUS51",
+   "MUS51B",
+   "MUS52",
+   "MUS53",
+   "MUS54",
+   "MUS55",
+   "MUS56",
+   "MUS57",
+   "MUS60",
+   "MUS61",
+   "MUS70"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/music-studies-level-ii-performance/",
+   "title": "Music Studies Level II - Performance (Certificate T1000) < Mt. San Antonio College",
+   "h1": "Music Studies Level II - Performance (Certificate T1000)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 5266
+ },
+ {
+  "control_number": "46187",
+  "title": "Yoga",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KIN24",
+   "KIN3",
+   "KIN34",
+   "KIN61",
+   "KIN65",
+   "KIN86",
+   "KINI50A",
+   "KINI50B",
+   "KINI50C"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/yoga/",
+   "title": "Yoga (Certificate N0984) < Mt. San Antonio College",
+   "h1": "Yoga (Certificate N0984)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3516
+ },
+ {
+  "control_number": "46341",
+  "title": "American Sign Language (ASL)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SIGN101",
+   "SIGN101H",
+   "SIGN102",
+   "SIGN103",
+   "SIGN104",
+   "SIGN105",
+   "SIGN202"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/sign-language-interpreting/american-sign-language-asl-certificate/",
+   "title": "American Sign Language (ASL) (Certificate N0987) < Mt. San Antonio College",
+   "h1": "American Sign Language (ASL) (Certificate N0987)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3734
+ },
+ {
+  "control_number": "46344",
+  "title": "Linguistics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.98,
+  "codes_found": [
+   "ARAB1",
+   "ARAB2",
+   "CHIN1",
+   "CHIN2",
+   "CHIN3",
+   "CHIN4",
+   "FRCH1",
+   "FRCH2",
+   "FRCH3",
+   "FRCH4",
+   "GERM1",
+   "GERM2",
+   "GERM3",
+   "ITAL1",
+   "ITAL2",
+   "ITAL3",
+   "ITAL4",
+   "JAPN1",
+   "JAPN2",
+   "JAPN3",
+   "JAPN4",
+   "JAPN5",
+   "KORE1",
+   "KORE2",
+   "KORE3",
+   "KORE4",
+   "LATN1",
+   "LATN1H",
+   "LATN2",
+   "LATN2H",
+   "LING1",
+   "LING2",
+   "LING4",
+   "LING5",
+   "LING6",
+   "PHIL3",
+   "PHIL3H",
+   "SIGN101",
+   "SIGN101H",
+   "SIGN102",
+   "SIGN103",
+   "SIGN104",
+   "SIGN105",
+   "SPAN1",
+   "SPAN1S",
+   "SPAN2",
+   "SPAN2S",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/world-languages-global-studies/linguistics-degree/",
+   "title": "Linguistics (AA Degree A0986) < Mt. San Antonio College",
+   "h1": "Linguistics (AA Degree A0986)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 50,
+  "text_chars": 5844
+ },
+ {
+  "control_number": "46352",
+  "title": "Museum Studies and Art Gallery",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "ARTC100",
+   "ARTG20",
+   "ARTG21",
+   "ARTG22A",
+   "ARTG23",
+   "ARTG24",
+   "ARTH11H",
+   "ARTH6H",
+   "ARTHC1200H"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
+   "title": "Museum Studies and Art Gallery (Certificate N0988) < Mt. San Antonio College",
+   "h1": "Museum Studies and Art Gallery (Certificate N0988)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4588
+ },
+ {
+  "control_number": "46371",
+  "title": "Business Management and Financial Systems",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCBM66",
+   "VOCFDB1"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-business-management-financial-systems/",
+   "title": "Business Management and Financial Systems < Mt. San Antonio College",
+   "h1": "Business Management and Financial Systems",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3887
+ },
+ {
+  "control_number": "46523",
+  "title": "Printmaking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "ARTC100",
+   "ARTD20",
+   "ARTD43A",
+   "ARTD45A",
+   "ARTD47A",
+   "ARTD48A"
+  ],
+  "source": {
+   "url": "https://catalog.mtsac.edu/programs/programsaz/printmaking-certificate/",
+   "title": "Printmaking (Certificate N0653) < Mt. San Antonio College",
+   "h1": "Printmaking (Certificate N0653)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3659
+ },
+ {
+  "control_number": "46551",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 38,
+  "text_chars": 0
  }
 ]

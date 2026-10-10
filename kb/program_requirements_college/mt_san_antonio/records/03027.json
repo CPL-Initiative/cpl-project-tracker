@@ -1,0 +1,201 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "03027",
+ "shape": "degree",
+ "title": "Commercial Flight",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/aeronautics/commercial-flight/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6081,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6081,
+    "output_tokens": 1570,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1570,
+  "output_tokens_details": {
+   "thinking_tokens": 246
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05572,
+ "ms": 12581,
+ "seconds": 13.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.5,
+    29.5
+   ],
+   "stated": [
+    29.5,
+    29.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Commercial Flight (AS Degree S0912)",
+   "measure": "units",
+   "total_units": {
+    "min": 29.5,
+    "max": 29.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Recognize and comprehend terms and vocabulary associated with piloting and air traffic control; early federal legislation that was influential in shaping the aviation industry; the function of government in regulating the aviation industry; airline economics and demand; and career planning skills and resources.",
+    "Recognize and comprehend physiology limitations humans experience in flight; comprehend the skills, techniques, and procedures of advanced crew resource management (ACRM), and applying ACRM principles in problem-solving scenarios; analyze aircraft accident case-studies and identify key factors leading to aircraft accidents.",
+    "Identify and determine the characteristics of North American continental and worldwide weather systems; encode and decode hourly surface weather observations and pilot reports; encode and decode aviation weather forecasts and meteorological advisories; and summarize aviation weather conditions and forecasts using a variety of charts, observations, and forecasts with the goal of demonstrating good decision-making and problem-solving skills.",
+    "Comprehend the skills, techniques, and procedures for safely operating aircraft in primary, instrument, and commercial flight operations. Students will be able to explain the principles of flight and aerodynamics as they relate to airplanes, helicopters, and other high-performance aircraft; analyze aircraft performance data necessary for takeoff and landing and evaluate problem-solving scenarios for “go” and “no-go” decisions; analyze and apply weight and balance principles in problem-solving scenarios."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AERO 98",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The degree requires 'General Education coursework' but the text does not name a specific GE pattern, so ge_pattern is null.",
+   "Total Units 29.5 is printed for the Required Courses list; the Core Courses block itself has no separate printed total.",
+   "The catalog note recommends 'selected elective courses chosen from the list above', yet every listed course is shown as a required core course; no elective list or elective units are printed. Reviewer may wish to check.",
+   "The Program Learning Outcomes come from the page's Outcomes tab under the Commercial Flight (AS Degree S0912) toggle; the page also has a separate FAA Aircraft Dispatcher (Certificate E0408) toggle, which was not read.",
+   "The outcomes tab also links to 'Review Student Learning Outcomes (SLOs) for this program', which is not included in the text."
+  ]
+ },
+ "extracted_run": "38064250199"
+}
