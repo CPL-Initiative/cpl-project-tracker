@@ -1,0 +1,176 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "38876",
+ "shape": "degree",
+ "title": "Administration of Justice/Corrections",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4457",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5220,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5220,
+    "output_tokens": 1126,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1126,
+  "output_tokens_details": {
+   "thinking_tokens": 255
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0434,
+ "ms": 9761,
+ "seconds": 10.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ADJ22"
+   ],
+   "flagged": [
+    "ADJ22"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administration of Justice/Corrections - Associate of Science Degree - MAS932/MAS932B/MAS932C",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Identify the basic safety components of working in a correctional facility, including, but not limited to inmate safety, personal safety and facility safety.",
+    "Demonstrate an understanding of the importance of classification of inmates.",
+    "Identify the key liability issues that impact the individual correctional officer and the facility as a whole.",
+    "Interpret codes, statutes, and policies as they relate to the care and custody of inmates in a correctional facility.",
+    "Apply principles and tactics to maintain control and security while working with groups of inmates in a correctional facility."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADJ-C1D",
+      "units": 15,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses (3 units) Choose one:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADJ-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADJ-24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Units: 18.00' printed under the 'Required Courses' heading appears to cover the whole program (ADJ-C1D 15 + one 3-unit elective) and matches 'Total : 18.00'; it was recorded as the program total rather than as the stated total of the ADJ-C1D block.",
+   "ADJ-22 (Legal Aspects of Corrections) is listed in the catalog but not in the closed list; recorded as a catalog addition.",
+   "Footnote markers (* and **) are printed without clear attachment to specific courses; footnotes refer to California Board of Corrections and Rehabilitation mandates.",
+   "General education is required per the degree statement but no specific GE pattern is named, so ge_pattern is null.",
+   "The heading line also lists program codes MAS932/C; the fuller heading MAS932/MAS932B/MAS932C was used as the section heading."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

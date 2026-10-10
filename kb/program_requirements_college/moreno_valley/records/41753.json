@@ -1,0 +1,227 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "41753",
+ "shape": "certificate",
+ "title": "Emergency Management and Homeland Security - Fire Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4507",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5638,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5638,
+    "output_tokens": 1472,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1472,
+  "output_tokens_details": {
+   "thinking_tokens": 260
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05199,
+ "ms": 12482,
+ "seconds": 13.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    27.5
+   ],
+   "stated": [
+    24.0,
+    27.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Emergency Management and Homeland Security - Fire Technology - Associate of Science Degree and Certificate of Achievement - MAS1089/C/MCE1089",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 27.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Recognize the types of natural, manmade, and technological hazards that can negatively impact a community.",
+    "Compare and contrast various forms of National and International Terrorism.",
+    "Distinguish the fundamental roles and responsibilities of the professional emergency manager.",
+    "Demonstrate skills necessary to prepare for, mitigate, respond to, and recover from manmade and natural disasters.",
+    "Demonstrate the skills necessary to function in the FIRE branch of the Incident Command System."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "HLS-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLS-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLS-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLS-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLS-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 12.5
+    },
+    "courses": [
+     {
+      "code": "FIT-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIT-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIT-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIT-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIT-5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIT-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIT-S3",
+      "units": 21.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. degree and Certificate of Achievement; the program requirements, total (24.00-27.50) and Program Learning Outcomes are shared by both awards and recorded here for the certificate.",
+   "The heading line is printed three times; the third copy carries different codes (MAS1017/MAS1017B/MAS1017C/MCE1017) than the first two (MAS1089/C/MCE1089). Reviewer should confirm which program code applies.",
+   "FIT-S3 (21.50 units) is matched to closed-list FITS3; the catalog prints it with a hyphen. Its 21.50 units exceed the elective block's stated maximum of 12.50 and the program total maximum of 27.50, so the printed ranges appear inconsistent with selecting FIT-S3.",
+   "Codes are printed with hyphens (e.g., HLS-1) and are treated as the same courses as the closed-list codes (e.g., HLS 1)."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

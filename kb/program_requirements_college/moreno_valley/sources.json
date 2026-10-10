@@ -1,0 +1,4977 @@
+[
+ {
+  "control_number": "30113",
+  "title": "Business Administration: General Business Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "BUS10",
+   "BUS18A",
+   "BUS18B",
+   "BUS20",
+   "BUS200",
+   "BUS22",
+   "BUS40",
+   "BUS47",
+   "BUS80",
+   "CIS1A",
+   "MAG47",
+   "MAG51",
+   "MAG53",
+   "MKT20"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4470",
+   "title": "Business Administration: General Business Concentration - Associate of Science Degree and Certificate of Achievement - MAS524/C/MCE524",
+   "h1": "Business Administration: General Business Concentration - Associate of Science Degree and Certificate of Achievement - MAS524/C/MCE524",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3351
+ },
+ {
+  "control_number": "30114",
+  "title": "Business Administration: General Business Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "BUS10",
+   "BUS18A",
+   "BUS18B",
+   "BUS20",
+   "BUS200",
+   "BUS22",
+   "BUS40",
+   "BUS47",
+   "BUS80",
+   "CIS1A",
+   "MAG47",
+   "MAG51",
+   "MAG53",
+   "MKT20"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4470",
+   "title": "Business Administration: General Business Concentration - Associate of Science Degree and Certificate of Achievement - MAS524/C/MCE524",
+   "h1": "Business Administration: General Business Concentration - Associate of Science Degree and Certificate of Achievement - MAS524/C/MCE524",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3351
+ },
+ {
+  "control_number": "30115",
+  "title": "Business Administration: Accounting Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "ACC62",
+   "ACC63",
+   "ACC65",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS47",
+   "CIS1A",
+   "MAG47"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4469",
+   "title": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate of Achievement - MAS523/C/MCE523",
+   "h1": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate of Achievement - MAS523/C/MCE523",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2919
+ },
+ {
+  "control_number": "30116",
+  "title": "Business Administration: Accounting Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "ACC62",
+   "ACC63",
+   "ACC65",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS47",
+   "CIS1A",
+   "MAG47"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4469",
+   "title": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate of Achievement - MAS523/C/MCE523",
+   "h1": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate of Achievement - MAS523/C/MCE523",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2919
+ },
+ {
+  "control_number": "30117",
+  "title": "Business Administration: Management Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS47",
+   "BUS48",
+   "CIS1A",
+   "MAG200",
+   "MAG44",
+   "MAG47",
+   "MAG53",
+   "MAG56",
+   "MAG60"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4472",
+   "title": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - MAS521/C/MCE521",
+   "h1": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - MAS521/C/MCE521",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2674
+ },
+ {
+  "control_number": "30118",
+  "title": "Business Administration: Management Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS47",
+   "BUS48",
+   "CIS1A",
+   "MAG200",
+   "MAG44",
+   "MAG47",
+   "MAG53",
+   "MAG56",
+   "MAG60"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4472",
+   "title": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - MAS521/C/MCE521",
+   "h1": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - MAS521/C/MCE521",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2674
+ },
+ {
+  "control_number": "30119",
+  "title": "Business Administration: Marketing Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS43",
+   "BUS80",
+   "CIS1A",
+   "MKT20",
+   "MKT40",
+   "MKT41"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4473",
+   "title": "Business Administration: Marketing Concentration - Associate of Science Degree and Certificate of Achievement - MAS525/C/MCE525",
+   "h1": "Business Administration: Marketing Concentration - Associate of Science Degree and Certificate of Achievement - MAS525/C/MCE525",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2408
+ },
+ {
+  "control_number": "30120",
+  "title": "Business Administration: Marketing Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS43",
+   "BUS80",
+   "CIS1A",
+   "MKT20",
+   "MKT40",
+   "MKT41"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4473",
+   "title": "Business Administration: Marketing Concentration - Associate of Science Degree and Certificate of Achievement - MAS525/C/MCE525",
+   "h1": "Business Administration: Marketing Concentration - Associate of Science Degree and Certificate of Achievement - MAS525/C/MCE525",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2408
+ },
+ {
+  "control_number": "30121",
+  "title": "Business Administration: Real Estate Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "CIS1A",
+   "RLE200",
+   "RLE80",
+   "RLE81",
+   "RLE82",
+   "RLE83",
+   "RLE84",
+   "RLE85",
+   "RLE86"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4474",
+   "title": "Business Administration: Real Estate Concentration - Associate of Science Degree and Certificate of Achievement - MAS527/C/MCE527",
+   "h1": "Business Administration: Real Estate Concentration - Associate of Science Degree and Certificate of Achievement - MAS527/C/MCE527",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2861
+ },
+ {
+  "control_number": "30122",
+  "title": "Business Administration: Real Estate Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "CIS1A",
+   "RLE200",
+   "RLE80",
+   "RLE81",
+   "RLE82",
+   "RLE83",
+   "RLE84",
+   "RLE85",
+   "RLE86"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4474",
+   "title": "Business Administration: Real Estate Concentration - Associate of Science Degree and Certificate of Achievement - MAS527/C/MCE527",
+   "h1": "Business Administration: Real Estate Concentration - Associate of Science Degree and Certificate of Achievement - MAS527/C/MCE527",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2861
+ },
+ {
+  "control_number": "30123",
+  "title": "Simulation and Gaming: Game Art",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADM71A",
+   "ART17",
+   "ART18",
+   "ART22",
+   "ART23",
+   "ART36A",
+   "ART40A",
+   "CIS35",
+   "CIS37",
+   "CIS38A",
+   "CIS38B",
+   "CIS38C",
+   "CIS39"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4559",
+   "title": "Simulation and Gaming: Game Art - Associate of Science Degree and Certificate of Achievement - MAS739/C/MCE739",
+   "h1": "Simulation and Gaming: Game Art - Associate of Science Degree and Certificate of Achievement - MAS739/C/MCE739",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2681
+ },
+ {
+  "control_number": "30124",
+  "title": "Simulation and Gaming: Game Art",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADM71A",
+   "ART17",
+   "ART18",
+   "ART22",
+   "ART23",
+   "ART36A",
+   "ART40A",
+   "CIS35",
+   "CIS37",
+   "CIS38A",
+   "CIS38B",
+   "CIS38C",
+   "CIS39"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4559",
+   "title": "Simulation and Gaming: Game Art - Associate of Science Degree and Certificate of Achievement - MAS739/C/MCE739",
+   "h1": "Simulation and Gaming: Game Art - Associate of Science Degree and Certificate of Achievement - MAS739/C/MCE739",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2681
+ },
+ {
+  "control_number": "30127",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "CIS11",
+   "CIS14B",
+   "CIS17A",
+   "CIS17C",
+   "CIS18A",
+   "CIS1A",
+   "CIS2",
+   "CIS5",
+   "CSC11",
+   "CSC17A",
+   "CSC17B",
+   "CSC18A",
+   "CSC18B",
+   "CSC18C",
+   "CSC2"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4487",
+   "title": "Computer Programming - Associate of Science Degree and Certificate of Achievement - MAS728/C/MCE728",
+   "h1": "Computer Programming - Associate of Science Degree and Certificate of Achievement - MAS728/C/MCE728",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3441
+ },
+ {
+  "control_number": "30128",
+  "title": "Computer Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "CIS11",
+   "CIS14B",
+   "CIS17A",
+   "CIS17C",
+   "CIS18A",
+   "CIS1A",
+   "CIS2",
+   "CIS5",
+   "CSC11",
+   "CSC17A",
+   "CSC17B",
+   "CSC18A",
+   "CSC18B",
+   "CSC18C",
+   "CSC2"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4487",
+   "title": "Computer Programming - Associate of Science Degree and Certificate of Achievement - MAS728/C/MCE728",
+   "h1": "Computer Programming - Associate of Science Degree and Certificate of Achievement - MAS728/C/MCE728",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3441
+ },
+ {
+  "control_number": "30129",
+  "title": "Education Paraprofessional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1",
+   "BIO1H",
+   "COMMC1000",
+   "COMMC1000H",
+   "EAR20",
+   "EDU1",
+   "EDU200",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "HES1"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4503",
+   "title": "Education Paraprofessional - Associate of Science Degree and Certificate of Achievement - MAS603/C/MCE603",
+   "h1": "Education Paraprofessional - Associate of Science Degree and Certificate of Achievement - MAS603/C/MCE603",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2320
+ },
+ {
+  "control_number": "30130",
+  "title": "Education Paraprofessional",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BIO1",
+   "BIO1H",
+   "COMMC1000",
+   "COMMC1000H",
+   "EAR20",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "HES1"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4503",
+   "title": "Education Paraprofessional - Associate of Science Degree and Certificate of Achievement - MAS603/C/MCE603",
+   "h1": "Education Paraprofessional - Associate of Science Degree and Certificate of Achievement - MAS603/C/MCE603",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2320
+ },
+ {
+  "control_number": "30133",
+  "title": "Administrative/Clinical Medical Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO45",
+   "CIS1A",
+   "MDA10",
+   "MDA100",
+   "MDA11",
+   "MDA50",
+   "MDA54B",
+   "MDA59",
+   "MDA60",
+   "MDA61"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4460",
+   "title": "Administrative/Clinical Medical Assisting - Associate of Science Degree and Certificate of Achievement - MAS718/C/MCE718",
+   "h1": "Administrative/Clinical Medical Assisting - Associate of Science Degree and Certificate of Achievement - MAS718/C/MCE718",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2391
+ },
+ {
+  "control_number": "30134",
+  "title": "Administrative/Clinical Medical Assisting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO45",
+   "CIS1A",
+   "MDA10",
+   "MDA100",
+   "MDA11",
+   "MDA50",
+   "MDA54B",
+   "MDA59",
+   "MDA60",
+   "MDA61"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4460",
+   "title": "Administrative/Clinical Medical Assisting - Associate of Science Degree and Certificate of Achievement - MAS718/C/MCE718",
+   "h1": "Administrative/Clinical Medical Assisting - Associate of Science Degree and Certificate of Achievement - MAS718/C/MCE718",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2391
+ },
+ {
+  "control_number": "30135",
+  "title": "Transcriptionist/Health Documentation Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO45",
+   "CAT3",
+   "CAT30",
+   "CAT50",
+   "CAT80",
+   "CIS3",
+   "CIS80",
+   "MDA10",
+   "MDA11",
+   "MDA58A",
+   "MDA60",
+   "MDA61"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4569",
+   "title": "Transcriptionist/Health Documentation Specialist - Associate of Science Degree and Certificate of Achievement - MAS1040/C/MCE1040",
+   "h1": "Transcriptionist/Health Documentation Specialist - Associate of Science Degree and Certificate of Achievement - MAS1040/C/MCE1040",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2978
+ },
+ {
+  "control_number": "30136",
+  "title": "Transcriptionist/Health Documentation Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO45",
+   "CAT3",
+   "CAT30",
+   "CAT50",
+   "CAT80",
+   "CIS3",
+   "CIS80",
+   "MDA10",
+   "MDA11",
+   "MDA58A",
+   "MDA60",
+   "MDA61"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4569",
+   "title": "Transcriptionist/Health Documentation Specialist - Associate of Science Degree and Certificate of Achievement - MAS1040/C/MCE1040",
+   "h1": "Transcriptionist/Health Documentation Specialist - Associate of Science Degree and Certificate of Achievement - MAS1040/C/MCE1040",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2978
+ },
+ {
+  "control_number": "30137",
+  "title": "Dental Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DEA10",
+   "DEA20",
+   "DEA21",
+   "DEA22",
+   "DEA23",
+   "DEA24",
+   "DEA30",
+   "DEA31",
+   "DEA32",
+   "DEA40A",
+   "DEA40B",
+   "DEA40C",
+   "DEA41"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4493",
+   "title": "Dental Assistant - Associate of Science Degree and Certificate of Achievement - MAS621/C/MCE621",
+   "h1": "Dental Assistant - Associate of Science Degree and Certificate of Achievement - MAS621/C/MCE621",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3602
+ },
+ {
+  "control_number": "30138",
+  "title": "Dental Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DEA10",
+   "DEA20",
+   "DEA21",
+   "DEA22",
+   "DEA23",
+   "DEA24",
+   "DEA30",
+   "DEA31",
+   "DEA32",
+   "DEA40A",
+   "DEA40B",
+   "DEA40C",
+   "DEA41"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4493",
+   "title": "Dental Assistant - Associate of Science Degree and Certificate of Achievement - MAS621/C/MCE621",
+   "h1": "Dental Assistant - Associate of Science Degree and Certificate of Achievement - MAS621/C/MCE621",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3602
+ },
+ {
+  "control_number": "30139",
+  "title": "Dental Hygiene",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30142",
+  "title": "Paramedic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS60",
+   "EMS61",
+   "EMS62",
+   "EMS63",
+   "EMS70",
+   "EMS71",
+   "EMS80",
+   "EMS81",
+   "EMS82",
+   "EMS83",
+   "EMS91"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4552",
+   "title": "Paramedic - Associate of Science Degree and Certificate of Achievement - MAS585/C/MCE585",
+   "h1": "Paramedic - Associate of Science Degree and Certificate of Achievement - MAS585/C/MCE585",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2540
+ },
+ {
+  "control_number": "30143",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS60",
+   "EMS61",
+   "EMS62",
+   "EMS63",
+   "EMS70",
+   "EMS71",
+   "EMS80",
+   "EMS81",
+   "EMS82",
+   "EMS83",
+   "EMS91"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4552",
+   "title": "Paramedic - Associate of Science Degree and Certificate of Achievement - MAS585/C/MCE585",
+   "h1": "Paramedic - Associate of Science Degree and Certificate of Achievement - MAS585/C/MCE585",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2540
+ },
+ {
+  "control_number": "30144",
+  "title": "Early Childhood Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR19",
+   "EAR20",
+   "EAR24",
+   "EAR25",
+   "EAR26",
+   "EAR28",
+   "EAR30",
+   "EAR33",
+   "EAR34",
+   "EAR38",
+   "EAR40",
+   "EAR41",
+   "EAR42",
+   "EAR43",
+   "EAR44",
+   "EAR45",
+   "EAR46",
+   "EAR47",
+   "EAR53",
+   "EAR54",
+   "EDU1",
+   "ENGL30",
+   "KIN30"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4497",
+   "title": "Early Childhood Education - Associate of Science Degree and Certificate of Achievement - MAS544/C/MCE544",
+   "h1": "Early Childhood Education - Associate of Science Degree and Certificate of Achievement - MAS544/C/MCE544",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3901
+ },
+ {
+  "control_number": "30145",
+  "title": "Early Childhood Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "EAR19",
+   "EAR20",
+   "EAR24",
+   "EAR25",
+   "EAR26",
+   "EAR28",
+   "EAR30",
+   "EAR33",
+   "EAR34",
+   "EAR38",
+   "EAR40",
+   "EAR41",
+   "EAR42",
+   "EAR43",
+   "EAR44",
+   "EAR45",
+   "EAR46",
+   "EAR47",
+   "EAR53",
+   "EAR54",
+   "EDU1",
+   "KIN30"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4497",
+   "title": "Early Childhood Education - Associate of Science Degree and Certificate of Achievement - MAS544/C/MCE544",
+   "h1": "Early Childhood Education - Associate of Science Degree and Certificate of Achievement - MAS544/C/MCE544",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3901
+ },
+ {
+  "control_number": "30146",
+  "title": "Early Childhood Intervention Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR19",
+   "EAR20",
+   "EAR24",
+   "EAR28",
+   "EAR33",
+   "EAR34",
+   "EAR38",
+   "EAR40",
+   "EAR41",
+   "EAR42",
+   "EAR43",
+   "EAR44",
+   "EAR46",
+   "EAR47"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4501",
+   "title": "Early Childhood Intervention Assistant - Associate of Science Degree and Certificate of Achievement - MAS601/C/MCE601",
+   "h1": "Early Childhood Intervention Assistant - Associate of Science Degree and Certificate of Achievement - MAS601/C/MCE601",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3775
+ },
+ {
+  "control_number": "30147",
+  "title": "Early Childhood Intervention Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR19",
+   "EAR20",
+   "EAR24",
+   "EAR28",
+   "EAR33",
+   "EAR34",
+   "EAR38",
+   "EAR40",
+   "EAR41",
+   "EAR42",
+   "EAR43",
+   "EAR44",
+   "EAR46",
+   "EAR47"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4501",
+   "title": "Early Childhood Intervention Assistant - Associate of Science Degree and Certificate of Achievement - MAS601/C/MCE601",
+   "h1": "Early Childhood Intervention Assistant - Associate of Science Degree and Certificate of Achievement - MAS601/C/MCE601",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3775
+ },
+ {
+  "control_number": "30148",
+  "title": "Social Work, Human Services, & Counseling Practices",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMS13",
+   "HMS16",
+   "HMS17",
+   "HMS18",
+   "HMS19",
+   "HMS20",
+   "HMS200",
+   "HMS21",
+   "HMS22",
+   "HMS23",
+   "HMS24",
+   "HMS25",
+   "HMS26",
+   "HMS27",
+   "HMS28",
+   "HMS29",
+   "HMS30",
+   "HMS31",
+   "HMS32",
+   "HMS33",
+   "HMS36",
+   "HMS39",
+   "HMS4",
+   "HMS41",
+   "HMS42",
+   "HMS43",
+   "HMS44",
+   "HMS46",
+   "HMS47",
+   "HMS48",
+   "HMS5",
+   "HMS50",
+   "HMS51",
+   "HMS52",
+   "HMS53",
+   "HMS6",
+   "HMS60",
+   "HMS61",
+   "HMS62",
+   "HMS7",
+   "HMS71",
+   "HMS8",
+   "WKX200"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4564",
+   "title": "Social Work, Human Services, & Counseling Practices - Associate of Science Degree and Certificate of Achievement - MAS987/C/MCE987",
+   "h1": "Social Work, Human Services, & Counseling Practices - Associate of Science Degree and Certificate of Achievement - MAS987/C/MCE987",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 5485
+ },
+ {
+  "control_number": "30149",
+  "title": "Social Work, Human Services, & Counseling Practices",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMS13",
+   "HMS16",
+   "HMS17",
+   "HMS18",
+   "HMS19",
+   "HMS20",
+   "HMS200",
+   "HMS21",
+   "HMS22",
+   "HMS23",
+   "HMS24",
+   "HMS25",
+   "HMS26",
+   "HMS27",
+   "HMS28",
+   "HMS29",
+   "HMS30",
+   "HMS31",
+   "HMS32",
+   "HMS33",
+   "HMS36",
+   "HMS39",
+   "HMS4",
+   "HMS41",
+   "HMS42",
+   "HMS43",
+   "HMS44",
+   "HMS47",
+   "HMS48",
+   "HMS5",
+   "HMS50",
+   "HMS51",
+   "HMS52",
+   "HMS53",
+   "HMS6",
+   "HMS60",
+   "HMS61",
+   "HMS62",
+   "HMS7",
+   "HMS71",
+   "HMS8",
+   "WKX200"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4564",
+   "title": "Social Work, Human Services, & Counseling Practices - Associate of Science Degree and Certificate of Achievement - MAS987/C/MCE987",
+   "h1": "Social Work, Human Services, & Counseling Practices - Associate of Science Degree and Certificate of Achievement - MAS987/C/MCE987",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 5485
+ },
+ {
+  "control_number": "30150",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ20",
+   "ADJ3",
+   "ADJ4",
+   "ADJ5",
+   "ADJ8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4454",
+   "title": "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)",
+   "h1": "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3307
+ },
+ {
+  "control_number": "30151",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ20",
+   "ADJ3",
+   "ADJ4",
+   "ADJ5",
+   "ADJ8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4455",
+   "title": "Administration of Justice - Associate of Science Degree and Certificate of Achievement - MAS504/C/MCE504",
+   "h1": "Administration of Justice - Associate of Science Degree and Certificate of Achievement - MAS504/C/MCE504",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1923
+ },
+ {
+  "control_number": "30152",
+  "title": "Administration of Justice/Law Enforcement Basic Peace Officer Academy Intensive",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJB1B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4459",
+   "title": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy - Associate of Science Degree and Certificate of Achievement - MAS922/C/MCE922",
+   "h1": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy - Associate of Science Degree and Certificate of Achievement - MAS922/C/MCE922",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.889
+   }
+  },
+  "listed": 1,
+  "text_chars": 2785
+ },
+ {
+  "control_number": "30158",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS50",
+   "EMS51",
+   "FIT1",
+   "FIT2",
+   "FIT3",
+   "FIT4",
+   "FIT5",
+   "FIT7"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4522",
+   "title": "Fire Technology - Associate of Science Degree and Certificate of Achievement - MAS555/C/MCE555",
+   "h1": "Fire Technology - Associate of Science Degree and Certificate of Achievement - MAS555/C/MCE555",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3152
+ },
+ {
+  "control_number": "30159",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS50",
+   "EMS51",
+   "FIT1",
+   "FIT2",
+   "FIT3",
+   "FIT4",
+   "FIT5",
+   "FIT7"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4522",
+   "title": "Fire Technology - Associate of Science Degree and Certificate of Achievement - MAS555/C/MCE555",
+   "h1": "Fire Technology - Associate of Science Degree and Certificate of Achievement - MAS555/C/MCE555",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3152
+ },
+ {
+  "control_number": "30160",
+  "title": "Firefighter Academy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS50",
+   "EMS51",
+   "FITS3",
+   "FITS3A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4523",
+   "title": "Firefighter Academy - Associate of Science Degree and Certificate of Achievement - MAS669/C/MCE669",
+   "h1": "Firefighter Academy - Associate of Science Degree and Certificate of Achievement - MAS669/C/MCE669",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1680
+ },
+ {
+  "control_number": "30161",
+  "title": "Firefighter Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS50",
+   "EMS51",
+   "FITS3",
+   "FITS3A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4523",
+   "title": "Firefighter Academy - Associate of Science Degree and Certificate of Achievement - MAS669/C/MCE669",
+   "h1": "Firefighter Academy - Associate of Science Degree and Certificate of Achievement - MAS669/C/MCE669",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1680
+ },
+ {
+  "control_number": "30162",
+  "title": "Community Interpretation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMI61",
+   "CMI81",
+   "CMI91"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4484",
+   "title": "Community Interpretation - Associate of Science Degree and Certificate of Achievement - MAS557/C/MCE557",
+   "h1": "Community Interpretation - Associate of Science Degree and Certificate of Achievement - MAS557/C/MCE557",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2410
+ },
+ {
+  "control_number": "30163",
+  "title": "Community Interpretation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMI61",
+   "CMI81",
+   "CMI91"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4484",
+   "title": "Community Interpretation - Associate of Science Degree and Certificate of Achievement - MAS557/C/MCE557",
+   "h1": "Community Interpretation - Associate of Science Degree and Certificate of Achievement - MAS557/C/MCE557",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2410
+ },
+ {
+  "control_number": "30164",
+  "title": "Kinesiology, Health and Wellness",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 109,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30165",
+  "title": "Administration & Information Systems",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 31,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30166",
+  "title": "Communication, Media & Languages",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 99,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30167",
+  "title": "Math & Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 112,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30168",
+  "title": "Fine & Applied Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 209,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30169",
+  "title": "Humanities, Philosophy & Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 296,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30170",
+  "title": "Social and Behavioral Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 130,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30171",
+  "title": "CSU General Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30172",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30584",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "PSYC8",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC10",
+   "SOC10H",
+   "SOC12",
+   "SOC15",
+   "SOC2",
+   "SOC20",
+   "SOC21",
+   "SOC48",
+   "SOC50",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4565",
+   "title": "Sociology - Associate in Arts for Transfer (ADT) - MAA696 (Cal-GETC)",
+   "h1": "Sociology - Associate in Arts for Transfer (ADT) - MAA696 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3489
+ },
+ {
+  "control_number": "31220",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR19",
+   "EAR20",
+   "EAR24",
+   "EAR25",
+   "EAR26",
+   "EAR28",
+   "EAR30",
+   "EAR42"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4496",
+   "title": "Early Childhood Education - Associate in Science for Transfer (ADT) - MAS530 (Cal-GETC)",
+   "h1": "Early Childhood Education - Associate in Science for Transfer (ADT) - MAS530 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3041
+ },
+ {
+  "control_number": "31232",
+  "title": "American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 54,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32142",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS101",
+   "MUS19",
+   "MUS19H",
+   "MUS29",
+   "MUS3",
+   "MUS32A",
+   "MUS32B",
+   "MUS32C",
+   "MUS4",
+   "MUS5",
+   "MUS57",
+   "MUS58",
+   "MUS6",
+   "MUS70",
+   "MUS83",
+   "MUS87",
+   "MUSP70"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4546",
+   "title": "Music - Associate in Arts for Transfer (ADT) - MAA705 (Cal-GETC)",
+   "h1": "Music - Associate in Arts for Transfer (ADT) - MAA705 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4207
+ },
+ {
+  "control_number": "32156",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "ANT8",
+   "ARTH13",
+   "ARTH14",
+   "COMM12",
+   "ETS1",
+   "ETS2",
+   "ETS21",
+   "ETS23",
+   "GEG2",
+   "HIST31",
+   "POLS21",
+   "POLS23",
+   "SOC1",
+   "SOC10",
+   "SOC10H",
+   "SPA1",
+   "SPA11",
+   "SPA12",
+   "SPA2",
+   "SPA2H",
+   "SPA3",
+   "SPA4",
+   "SPA8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4566",
+   "title": "Spanish - Associate in Arts for Transfer (ADT) - MAA708 (Cal-GETC)",
+   "h1": "Spanish - Associate in Arts for Transfer (ADT) - MAA708 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3964
+ },
+ {
+  "control_number": "32265",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT8",
+   "COMM7",
+   "ENGL11",
+   "ENGL14",
+   "ENGL15",
+   "ENGL16",
+   "ENGL30",
+   "ENGL6",
+   "ENGL9",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "JOU1"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4513",
+   "title": "English - Associate in Arts for Transfer (ADT) - MAA649 (Cal-GETC)",
+   "h1": "English - Associate in Arts for Transfer (ADT) - MAA649 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4051
+ },
+ {
+  "control_number": "32266",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART17",
+   "ART18",
+   "ART22",
+   "ART23",
+   "ART24",
+   "ART26",
+   "ARTH12",
+   "ARTH5"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4567",
+   "title": "Studio Arts - Associate in Arts for Transfer (ADT) - MAA694 (Cal-GETC)",
+   "h1": "Studio Arts - Associate in Arts for Transfer (ADT) - MAA694 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2788
+ },
+ {
+  "control_number": "32638",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "ANT1",
+   "ANT10",
+   "ANT1H",
+   "ANT1L",
+   "ANT2",
+   "ANT2H",
+   "ANT3",
+   "ANT4",
+   "ANT5",
+   "ANT6",
+   "ANT7",
+   "ANT8",
+   "ASL22",
+   "ETS2",
+   "GEG1",
+   "GEG2",
+   "GEG3",
+   "GEG7",
+   "HIST1",
+   "HIST31",
+   "SOC48",
+   "SPA12",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4462",
+   "title": "Anthropology - Associate in Arts for Transfer (ADT) - MAA618 (Cal-GETC)",
+   "h1": "Anthropology - Associate in Arts for Transfer (ADT) - MAA618 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4143
+ },
+ {
+  "control_number": "32639",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CIS11",
+   "CIS17A",
+   "CIS5",
+   "CIS7",
+   "PHY4A",
+   "PHY4B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4488",
+   "title": "Computer Science - Associate in Science for Transfer (ADT) - MAS650 (Cal-GETC)",
+   "h1": "Computer Science - Associate in Science for Transfer (ADT) - MAS650 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2263
+ },
+ {
+  "control_number": "32660",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "PSYC10",
+   "PSYC2",
+   "PSYC33",
+   "PSYC35",
+   "PSYC35H",
+   "PSYC50",
+   "PSYC8",
+   "PSYC9",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4556",
+   "title": "Psychology - Associate in Arts for Transfer (ADT) - MAA568 (Cal-GETC)",
+   "h1": "Psychology - Associate in Arts for Transfer (ADT) - MAA568 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2457
+ },
+ {
+  "control_number": "32941",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ECON4",
+   "ECON6",
+   "ECONC2002H",
+   "HISTC1001H",
+   "HISTC1002H",
+   "POLS11",
+   "POLS2",
+   "POLS23",
+   "POLS4",
+   "POLS5",
+   "POLS6",
+   "POLSC1000",
+   "POLSC1000H",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4554",
+   "title": "Political Science - Associate in Arts for Transfer (ADT) - MAA755 (Cal-GETC)",
+   "h1": "Political Science - Associate in Arts for Transfer (ADT) - MAA755 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3810
+ },
+ {
+  "control_number": "32946",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ETS14",
+   "ETS15",
+   "HIST1",
+   "HIST14",
+   "HIST15",
+   "HUM10",
+   "HUM35",
+   "HUM4",
+   "HUM5",
+   "MATH32",
+   "PHI10",
+   "PHI10H",
+   "PHI11",
+   "PHI12",
+   "PHI18",
+   "PHI32"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4553",
+   "title": "Philosophy - Associate in Arts for Transfer (ADT) - MAA717 (Cal-GETC)",
+   "h1": "Philosophy - Associate in Arts for Transfer (ADT) - MAA717 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3285
+ },
+ {
+  "control_number": "33240",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ANT1",
+   "ANT1H",
+   "ANT2",
+   "ANT2H",
+   "ETS14",
+   "ETS15",
+   "ETS21",
+   "ETS23",
+   "HIST1",
+   "HIST14",
+   "HIST15",
+   "HIST25",
+   "HIST26",
+   "HIST31",
+   "HIST32",
+   "HIST33",
+   "HIST34",
+   "HIST38",
+   "HIST60",
+   "HIST61",
+   "HISTC1001H",
+   "HISTC1002H",
+   "HUM10",
+   "HUM4",
+   "POLS2",
+   "POLS21",
+   "POLS23",
+   "POLS4",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC10",
+   "SOC10H",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4527",
+   "title": "History - Associate in Arts for Transfer (ADT) - MAA745 (Cal-GETC)",
+   "h1": "History - Associate in Arts for Transfer (ADT) - MAA745 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 4866
+ },
+ {
+  "control_number": "33953",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BIO60",
+   "BIO60H",
+   "BIO61",
+   "CHE1A",
+   "CHE1AH",
+   "CHE1B",
+   "PHY4A",
+   "PHY4B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4467",
+   "title": "Biology - Associate in Science for Transfer (ADT) - MAS768 (Cal-GETC)",
+   "h1": "Biology - Associate in Science for Transfer (ADT) - MAS768 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2815
+ },
+ {
+  "control_number": "37196",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ12",
+   "ADJ13",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ20",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ5",
+   "ADJ8",
+   "ADJ9",
+   "ADJ9H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4454",
+   "title": "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)",
+   "h1": "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3307
+ },
+ {
+  "control_number": "37393",
+  "title": "Fire Service Leadership",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37431",
+  "title": "Fire Service Leadership",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37440",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "BIO50A",
+   "BIO50B",
+   "CHE1A",
+   "CHE1AH",
+   "DAND21",
+   "DAND31",
+   "KIN10",
+   "KIN30",
+   "KIN36",
+   "KINA40",
+   "KINA41",
+   "KINA46",
+   "KINA47",
+   "KINA62",
+   "KINA64A",
+   "KINA64B",
+   "KINA75A",
+   "KINA75B",
+   "KINA81A",
+   "KINA81B",
+   "PHY4A",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4542",
+   "title": "Kinesiology - Associate in Arts for Transfer (ADT) - MAA891 (Cal-GETC)",
+   "h1": "Kinesiology - Associate in Arts for Transfer (ADT) - MAA891 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3652
+ },
+ {
+  "control_number": "37533",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART17",
+   "ART18",
+   "ART22",
+   "ART23",
+   "ART24",
+   "ART26",
+   "ART36A",
+   "ARTH10",
+   "ARTH12",
+   "ARTH13",
+   "ARTH14",
+   "ARTH3",
+   "ARTH5",
+   "ARTH7",
+   "ARTH8",
+   "ARTH9",
+   "PHO20"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4463",
+   "title": "Art History - Associate in Arts for Transfer (ADT) - MAA743 (Cal-GETC)",
+   "h1": "Art History - Associate in Arts for Transfer (ADT) - MAA743 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4022
+ },
+ {
+  "control_number": "37549",
+  "title": "Military Social Work",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMS13",
+   "HMS16",
+   "HMS17",
+   "HMS19",
+   "HMS20",
+   "HMS21",
+   "HMS22",
+   "HMS23",
+   "HMS24",
+   "HMS25",
+   "HMS26",
+   "HMS27",
+   "HMS28",
+   "HMS29",
+   "HMS30",
+   "HMS31",
+   "HMS32",
+   "HMS33",
+   "HMS36",
+   "HMS39",
+   "HMS4",
+   "HMS41",
+   "HMS42",
+   "HMS43",
+   "HMS44",
+   "HMS46",
+   "HMS47",
+   "HMS48",
+   "HMS5",
+   "HMS50",
+   "HMS51",
+   "HMS52",
+   "HMS53",
+   "HMS6",
+   "HMS60",
+   "HMS61",
+   "HMS62",
+   "HMS7",
+   "HMS71",
+   "HMS8",
+   "WKX200"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4544",
+   "title": "Military Social Work - Certificate of Achievement - MCE903",
+   "h1": "Military Social Work - Certificate of Achievement - MCE903",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 4590
+ },
+ {
+  "control_number": "37550",
+  "title": "Behavioral Therapist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMS13",
+   "HMS16",
+   "HMS17",
+   "HMS18",
+   "HMS19",
+   "HMS20",
+   "HMS200",
+   "HMS21",
+   "HMS22",
+   "HMS23",
+   "HMS24",
+   "HMS25",
+   "HMS26",
+   "HMS27",
+   "HMS28",
+   "HMS29",
+   "HMS30",
+   "HMS31",
+   "HMS32",
+   "HMS33",
+   "HMS36",
+   "HMS39",
+   "HMS4",
+   "HMS41",
+   "HMS42",
+   "HMS43",
+   "HMS44",
+   "HMS46",
+   "HMS47",
+   "HMS48",
+   "HMS5",
+   "HMS50",
+   "HMS51",
+   "HMS52",
+   "HMS53",
+   "HMS6",
+   "HMS60",
+   "HMS61",
+   "HMS62",
+   "HMS7",
+   "HMS71",
+   "HMS8",
+   "WKX200"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4466",
+   "title": "Behavioral Therapist - Certificate of Achievement - MCE1044",
+   "h1": "Behavioral Therapist - Certificate of Achievement - MCE1044",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 4378
+ },
+ {
+  "control_number": "37552",
+  "title": "Child Welfare and Family Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMS13",
+   "HMS16",
+   "HMS17",
+   "HMS18",
+   "HMS19",
+   "HMS20",
+   "HMS200",
+   "HMS21",
+   "HMS22",
+   "HMS23",
+   "HMS24",
+   "HMS25",
+   "HMS26",
+   "HMS27",
+   "HMS28",
+   "HMS29",
+   "HMS30",
+   "HMS31",
+   "HMS32",
+   "HMS33",
+   "HMS36",
+   "HMS39",
+   "HMS4",
+   "HMS41",
+   "HMS42",
+   "HMS43",
+   "HMS44",
+   "HMS46",
+   "HMS47",
+   "HMS48",
+   "HMS5",
+   "HMS50",
+   "HMS51",
+   "HMS52",
+   "HMS53",
+   "HMS6",
+   "HMS60",
+   "HMS61",
+   "HMS62",
+   "HMS7",
+   "HMS71",
+   "HMS8",
+   "WKX200"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4479",
+   "title": "Child Welfare and Family Studies - Certificate of Achievement - MCE1038",
+   "h1": "Child Welfare and Family Studies - Certificate of Achievement - MCE1038",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 4637
+ },
+ {
+  "control_number": "37553",
+  "title": "Drug and Alcohol Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMS13",
+   "HMS16",
+   "HMS17",
+   "HMS18",
+   "HMS19",
+   "HMS20",
+   "HMS21",
+   "HMS22",
+   "HMS23",
+   "HMS24",
+   "HMS25",
+   "HMS26",
+   "HMS27",
+   "HMS28",
+   "HMS29",
+   "HMS30",
+   "HMS31",
+   "HMS32",
+   "HMS33",
+   "HMS36",
+   "HMS39",
+   "HMS4",
+   "HMS41",
+   "HMS42",
+   "HMS43",
+   "HMS44",
+   "HMS46",
+   "HMS47",
+   "HMS48",
+   "HMS5",
+   "HMS50",
+   "HMS51",
+   "HMS52",
+   "HMS53",
+   "HMS6",
+   "HMS60",
+   "HMS61",
+   "HMS62",
+   "HMS63",
+   "HMS64",
+   "HMS65",
+   "HMS66",
+   "HMS7",
+   "HMS71",
+   "HMS8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4495",
+   "title": "Drug and Alcohol Studies - Associate of Science Degree and Certificate of Achievement - MAS1045/C/MCE1045",
+   "h1": "Drug and Alcohol Studies - Associate of Science Degree and Certificate of Achievement - MAS1045/C/MCE1045",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 45,
+  "text_chars": 5879
+ },
+ {
+  "control_number": "37554",
+  "title": "Multicultural Counseling & Advocacy Resources",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "HMS200",
+   "HMS22",
+   "HMS24",
+   "HMS25",
+   "HMS27",
+   "HMS29",
+   "HMS30",
+   "HMS31",
+   "HMS32",
+   "HMS33",
+   "HMS36",
+   "HMS41",
+   "HMS42",
+   "HMS43",
+   "HMS50",
+   "HMS51",
+   "HMS52",
+   "HMS53",
+   "WKX200"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4545",
+   "title": "Multicultural Counseling & Advocacy Resources - Certificate of Achievement - MCE1039",
+   "h1": "Multicultural Counseling & Advocacy Resources - Certificate of Achievement - MCE1039",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3138
+ },
+ {
+  "control_number": "37555",
+  "title": "Social Justice System Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMS13",
+   "HMS16",
+   "HMS17",
+   "HMS18",
+   "HMS19",
+   "HMS20",
+   "HMS200",
+   "HMS21",
+   "HMS22",
+   "HMS23",
+   "HMS24",
+   "HMS25",
+   "HMS26",
+   "HMS27",
+   "HMS28",
+   "HMS29",
+   "HMS30",
+   "HMS31",
+   "HMS32",
+   "HMS33",
+   "HMS36",
+   "HMS39",
+   "HMS4",
+   "HMS41",
+   "HMS42",
+   "HMS43",
+   "HMS46",
+   "HMS47",
+   "HMS48",
+   "HMS5",
+   "HMS50",
+   "HMS51",
+   "HMS52",
+   "HMS53",
+   "HMS6",
+   "HMS60",
+   "HMS61",
+   "HMS62",
+   "HMS7",
+   "HMS71",
+   "HMS8",
+   "WKX200"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4562",
+   "title": "Social Justice System Studies - Certificate of Achievement - MCE988",
+   "h1": "Social Justice System Studies - Certificate of Achievement - MCE988",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 4482
+ },
+ {
+  "control_number": "37667",
+  "title": "IT Technician Pathway: IT Systems Support and Sales",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS24",
+   "BUS47",
+   "CIS1A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4540",
+   "title": "IT Technician Pathway: IT Systems Support and Sales - Certificate of Achievement - MCE905",
+   "h1": "IT Technician Pathway: IT Systems Support and Sales - Certificate of Achievement - MCE905",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1284
+ },
+ {
+  "control_number": "37800",
+  "title": "Basic Graphic Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADM1",
+   "ADM2A",
+   "ADM63A",
+   "ADM71A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4464",
+   "title": "Basic Graphic Design - Certificate of Achievement - MCE939",
+   "h1": "Basic Graphic Design - Certificate of Achievement - MCE939",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2484
+ },
+ {
+  "control_number": "38179",
+  "title": "Introduction to Education Profession for ESL Students",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL804",
+   "ESL805"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4534",
+   "title": "Introduction to Education Profession for ESL Students - Certificate of Competency - MCC8007",
+   "h1": "Introduction to Education Profession for ESL Students - Certificate of Competency - MCC8007",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1990
+ },
+ {
+  "control_number": "38294",
+  "title": "Computer Maintenance and Security",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS824A",
+   "CIS824B",
+   "CIS824C"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4486",
+   "title": "Computer Maintenance and Security - Certificate of Completion - MCC8006",
+   "h1": "Computer Maintenance and Security - Certificate of Completion - MCC8006",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1105
+ },
+ {
+  "control_number": "38295",
+  "title": "Operating Systems and Internet Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS897A",
+   "CIS897B",
+   "CIS897C"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4551",
+   "title": "Operating Systems and Internet Literacy - Certificate of Completion - MCC8008",
+   "h1": "Operating Systems and Internet Literacy - Certificate of Completion - MCC8008",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1109
+ },
+ {
+  "control_number": "38458",
+  "title": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38758",
+  "title": "Guitar Performance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS3",
+   "MUS4",
+   "MUS5",
+   "MUS70",
+   "MUS87"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4526",
+   "title": "Guitar Performance - Certificate of Achievement - MCE930",
+   "h1": "Guitar Performance - Certificate of Achievement - MCE930",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2014
+ },
+ {
+  "control_number": "38799",
+  "title": "Social Media for Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38801",
+  "title": "Emerging Leaders",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS801",
+   "PDS802",
+   "PDS803",
+   "PDS804"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4511",
+   "title": "Emerging Leaders - Certificate of Completion - MCC8013",
+   "h1": "Emerging Leaders - Certificate of Completion - MCC8013",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1403
+ },
+ {
+  "control_number": "38802",
+  "title": "Enterprise Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS806",
+   "PDS807",
+   "PDS809",
+   "PDS812",
+   "PDS813"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4514",
+   "title": "Enterprise Communication - Certificate of Completion - MCC8014",
+   "h1": "Enterprise Communication - Certificate of Completion - MCC8014",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1474
+ },
+ {
+  "control_number": "38803",
+  "title": "Workplace Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS808",
+   "PDS809",
+   "PDS810",
+   "PDS812"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4572",
+   "title": "Workplace Essentials - Certificate of Completion - MCC8017",
+   "h1": "Workplace Essentials - Certificate of Completion - MCC8017",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1469
+ },
+ {
+  "control_number": "38804",
+  "title": "Sales Techniques",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS814",
+   "PDS815"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4558",
+   "title": "Sales Techniques - Certificate of Completion - MCC8016",
+   "h1": "Sales Techniques - Certificate of Completion - MCC8016",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1311
+ },
+ {
+  "control_number": "38805",
+  "title": "Customer Relations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS806",
+   "PDS807",
+   "PDS813"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4490",
+   "title": "Customer Relations - Certificate of Completion - MCC8012",
+   "h1": "Customer Relations - Certificate of Completion - MCC8012",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1219
+ },
+ {
+  "control_number": "38821",
+  "title": "Coding Prep",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS834",
+   "CIS835",
+   "CIS836",
+   "CIS837",
+   "CIS838",
+   "CIS839"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4480",
+   "title": "Coding Prep - Certificate of Completion - MCC8010",
+   "h1": "Coding Prep - Certificate of Completion - MCC8010",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1838
+ },
+ {
+  "control_number": "38822",
+  "title": "Accounting Basics for Small Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC801",
+   "ACC802",
+   "ACC803"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4453",
+   "title": "Accounting Basics for Small Business - Certificate of Completion - MCC8009",
+   "h1": "Accounting Basics for Small Business - Certificate of Completion - MCC8009",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1266
+ },
+ {
+  "control_number": "38823",
+  "title": "Internet of Things (IoT): Embedded Systems & Microcontrollers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS833A",
+   "CIS833B",
+   "CIS833C"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4532",
+   "title": "Internet of Things (IoT): Embedded Systems & Microcontrollers - Certificate of Completion - MCC8018",
+   "h1": "Internet of Things (IoT): Embedded Systems & Microcontrollers - Certificate of Completion - MCC8018",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1595
+ },
+ {
+  "control_number": "38874",
+  "title": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38876",
+  "title": "Administration of Justice/Corrections",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ13",
+   "ADJ24",
+   "ADJC1D"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4457",
+   "title": "Administration of Justice/Corrections - Associate of Science Degree - MAS932/C",
+   "h1": "Administration of Justice/Corrections - Associate of Science Degree - MAS932/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3197
+ },
+ {
+  "control_number": "38934",
+  "title": "Web Master: Web Developer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ADM71A",
+   "CIS18A",
+   "CIS30A",
+   "CIS5",
+   "CIS72B",
+   "CIS76B",
+   "CIS78A",
+   "CSC18A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4571",
+   "title": "Web Master: Web Developer - Certificate of Achievement - MCE934",
+   "h1": "Web Master: Web Developer - Certificate of Achievement - MCE934",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2834
+ },
+ {
+  "control_number": "38935",
+  "title": "Web Master: Web Designer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADM2A",
+   "ADM67",
+   "ADM71A",
+   "CIS72B",
+   "CIS76B",
+   "CIS78A",
+   "CIS79"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4570",
+   "title": "Web Master: Web Designer - Certificate of Achievement - MCE933",
+   "h1": "Web Master: Web Designer - Certificate of Achievement - MCE933",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2456
+ },
+ {
+  "control_number": "38937",
+  "title": "IT Technician Pathway: IT Systems Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS27",
+   "CIS40A",
+   "CIS40C",
+   "CIS40D"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4539",
+   "title": "IT Technician Pathway: IT Systems Specialist - Certificate of Achievement - MCE937",
+   "h1": "IT Technician Pathway: IT Systems Specialist - Certificate of Achievement - MCE937",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1185
+ },
+ {
+  "control_number": "38938",
+  "title": "IT Technician Pathway: Cybersecurity Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS27",
+   "CIS27A",
+   "CIS30A",
+   "CIS41A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4538",
+   "title": "IT Technician Pathway: Cybersecurity Specialist - Certificate of Achievement - MCE936",
+   "h1": "IT Technician Pathway: Cybersecurity Specialist - Certificate of Achievement - MCE936",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1231
+ },
+ {
+  "control_number": "38939",
+  "title": "Python Programming",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS30A",
+   "CIS30B",
+   "CIS30C",
+   "CIS30D",
+   "CIS30E"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4557",
+   "title": "Python Programming - Certificate of Achievement - MCE938",
+   "h1": "Python Programming - Certificate of Achievement - MCE938",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1388
+ },
+ {
+  "control_number": "39002",
+  "title": "College Student Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GUI845",
+   "GUI848"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4482",
+   "title": "College Student Success - Locally Approved Certificate - MCC8021",
+   "h1": "College Student Success - Locally Approved Certificate - MCC8021",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1337
+ },
+ {
+  "control_number": "39003",
+  "title": "College Career Readiness and Student Educational Planning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GUI847A",
+   "GUI847B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4481",
+   "title": "College Career Readiness and Student Educational Planning - Locally Approved Certificate - MCC8020",
+   "h1": "College Career Readiness and Student Educational Planning - Locally Approved Certificate - MCC8020",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1471
+ },
+ {
+  "control_number": "39162",
+  "title": "Information Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "BUS24",
+   "CIS1A",
+   "CIS2",
+   "CIS27",
+   "CIS27A",
+   "CIS40A",
+   "CIS40B",
+   "CIS5",
+   "CIS61",
+   "CSC2",
+   "MATH5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4530",
+   "title": "Information Technology - Certificate of Achievement - MCE958",
+   "h1": "Information Technology - Certificate of Achievement - MCE958",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2564
+ },
+ {
+  "control_number": "40328",
+  "title": "Advanced American College English",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL848",
+   "ESL849",
+   "ESL850"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4461",
+   "title": "Advanced American College English - Certificate of Competency - MCC8027",
+   "h1": "Advanced American College English - Certificate of Competency - MCC8027",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1176
+ },
+ {
+  "control_number": "40329",
+  "title": "Beginning American College English",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40336",
+  "title": "Successful Career Transitions",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS809",
+   "PDS812"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4568",
+   "title": "Successful Career Transitions - Certificate of Completion - MCC8038",
+   "h1": "Successful Career Transitions - Certificate of Completion - MCC8038",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1131
+ },
+ {
+  "control_number": "40355",
+  "title": "Non-Credit Entrepreneurial Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP850",
+   "ENP851",
+   "ENP852",
+   "ENP853"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4548",
+   "title": "Non-Credit Entrepreneurial Essentials - Certificate of Completion - MCC8035",
+   "h1": "Non-Credit Entrepreneurial Essentials - Certificate of Completion - MCC8035",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1183
+ },
+ {
+  "control_number": "40356",
+  "title": "Non-Credit Entrepreneurial Foundations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP850",
+   "ENP851",
+   "ENP853",
+   "ENP854"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4549",
+   "title": "Non-Credit Entrepreneurial Foundations - Certificate of Completion - MCC8036",
+   "h1": "Non-Credit Entrepreneurial Foundations - Certificate of Completion - MCC8036",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1476
+ },
+ {
+  "control_number": "40357",
+  "title": "Non-Credit Entrepreneurship and the Team",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP850",
+   "ENP851",
+   "ENP853",
+   "ENP854",
+   "ENP870",
+   "ENP871"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4550",
+   "title": "Non-Credit Entrepreneurship and the Team - Certificate of Completion - MCC8037",
+   "h1": "Non-Credit Entrepreneurship and the Team - Certificate of Completion - MCC8037",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1821
+ },
+ {
+  "control_number": "40390",
+  "title": "IT Technician Pathway: Cybersecurity Healthcare Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS27",
+   "CIS40D",
+   "CIS41A",
+   "CIS41B",
+   "CIS8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4537",
+   "title": "IT Technician Pathway: Cybersecurity Healthcare Specialist - Certificate of Achievement - MCE986",
+   "h1": "IT Technician Pathway: Cybersecurity Healthcare Specialist - Certificate of Achievement - MCE986",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1342
+ },
+ {
+  "control_number": "40467",
+  "title": "Entrepreneurial Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP50",
+   "ENP51",
+   "ENP52",
+   "ENP53"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4515",
+   "title": "Entrepreneurial Essentials - Certificate of Achievement - MCE977",
+   "h1": "Entrepreneurial Essentials - Certificate of Achievement - MCE977",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1151
+ },
+ {
+  "control_number": "40468",
+  "title": "Project Management Professional",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS77A",
+   "BUS77B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4555",
+   "title": "Project Management Professional - Certificate of Achievement - MCE984",
+   "h1": "Project Management Professional - Certificate of Achievement - MCE984",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1382
+ },
+ {
+  "control_number": "40492",
+  "title": "Entrepreneurial Foundations",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP50",
+   "ENP51",
+   "ENP53",
+   "ENP54",
+   "ENP55"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4516",
+   "title": "Entrepreneurial Foundations - Certificate of Achievement - MCE978",
+   "h1": "Entrepreneurial Foundations - Certificate of Achievement - MCE978",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1443
+ },
+ {
+  "control_number": "40493",
+  "title": "Entrepreneurship and the Team",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP50",
+   "ENP51",
+   "ENP53",
+   "ENP54",
+   "ENP70",
+   "ENP71"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4518",
+   "title": "Entrepreneurship and the Team - Certificate of Achievement - MCE979",
+   "h1": "Entrepreneurship and the Team - Certificate of Achievement - MCE979",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1792
+ },
+ {
+  "control_number": "40505",
+  "title": "IT Technician Pathway: Cybersecurity Analyst",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS27",
+   "CIS30A",
+   "CIS40D",
+   "CIS41A",
+   "CIS41D"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4536",
+   "title": "IT Technician Pathway: Cybersecurity Analyst - Certificate of Achievement - MCE985",
+   "h1": "IT Technician Pathway: Cybersecurity Analyst - Certificate of Achievement - MCE985",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1384
+ },
+ {
+  "control_number": "40564",
+  "title": "Family Childcare Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR810",
+   "EAR811",
+   "EAR812"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4519",
+   "title": "Family Childcare Provider - Certificate of Completion - MCC8033",
+   "h1": "Family Childcare Provider - Certificate of Completion - MCC8033",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1623
+ },
+ {
+  "control_number": "40586",
+  "title": "Fitness Professionals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KIN12",
+   "KIN30",
+   "KIN35",
+   "KIN4",
+   "KIN43",
+   "KINA81A",
+   "KINA81B",
+   "KINA81C"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4524",
+   "title": "Fitness Professionals - Certificate of Achievement - MCE1061",
+   "h1": "Fitness Professionals - Certificate of Achievement - MCE1061",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2051
+ },
+ {
+  "control_number": "41389",
+  "title": "Information Technology (IT) Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS24",
+   "CIS1A",
+   "CIS21",
+   "CIS25",
+   "CIS27",
+   "CIS27A",
+   "CIS27B",
+   "CIS30A",
+   "CIS30C",
+   "CIS40A",
+   "CIS40B",
+   "CIS40C",
+   "CIS40D",
+   "CIS41A",
+   "CIS61",
+   "CIS64",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4531",
+   "title": "Information Technology (IT) Cybersecurity - Associate of Science Degree - MAS1012/C",
+   "h1": "Information Technology (IT) Cybersecurity - Associate of Science Degree - MAS1012/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2552
+ },
+ {
+  "control_number": "41529",
+  "title": "Emergency Management and Homeland Security - Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS27",
+   "CIS27A",
+   "CIS41A",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4505",
+   "title": "Emergency Management and Homeland Security - Cybersecurity - Associate of Science Degree and Certificate of Achievement - MAS1087/C/MCE1087",
+   "h1": "Emergency Management and Homeland Security - Cybersecurity - Associate of Science Degree and Certificate of Achievement - MAS1087/C/MCE1087",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3005
+ },
+ {
+  "control_number": "41544",
+  "title": "Emergency Management and Homeland Security - Emergency Medical Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS50",
+   "EMS51",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4506",
+   "title": "Emergency Management and Homeland Security - Emergency Medical Services - Associate of Science Degree and Certificate of Achievement - MAS1088/C/MCE1088",
+   "h1": "Emergency Management and Homeland Security - Emergency Medical Services - Associate of Science Degree and Certificate of Achievement - MAS1088/C/MCE1088",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2999
+ },
+ {
+  "control_number": "41566",
+  "title": "Emergency Management and Homeland Security - Cybersecurity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS27",
+   "CIS27A",
+   "CIS41A",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4505",
+   "title": "Emergency Management and Homeland Security - Cybersecurity - Associate of Science Degree and Certificate of Achievement - MAS1087/C/MCE1087",
+   "h1": "Emergency Management and Homeland Security - Cybersecurity - Associate of Science Degree and Certificate of Achievement - MAS1087/C/MCE1087",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3005
+ },
+ {
+  "control_number": "41630",
+  "title": "Emergency Management and Homeland Security- Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ12",
+   "ADJ13",
+   "ADJ19",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ20",
+   "ADJ21",
+   "ADJ24",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ40",
+   "ADJ41",
+   "ADJ42",
+   "ADJ43",
+   "ADJ5",
+   "ADJ8",
+   "ADJB1B",
+   "ADJC1D",
+   "ADJD1A",
+   "ADJR1A2",
+   "ADJR1B",
+   "ADJR1C",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4508",
+   "title": "Emergency Management and Homeland Security - Law Enforcement - Associate of Science Degree and Certificate of Achievement - MAS1090/C/MCE1090",
+   "h1": "Emergency Management and Homeland Security - Law Enforcement - Associate of Science Degree and Certificate of Achievement - MAS1090/C/MCE1090",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4360
+ },
+ {
+  "control_number": "41635",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "BUS10",
+   "BUS18A",
+   "ECONC2001H",
+   "ECONC2002H",
+   "MATH5",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4468",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - MAS1002 (Cal-GETC)",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - MAS1002 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2973
+ },
+ {
+  "control_number": "41654",
+  "title": "Crime and Intelligence Analysis",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ADJ1",
+   "ADJ1H",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ40",
+   "ADJ41",
+   "ADJ42",
+   "ADJ43",
+   "CAT98A",
+   "CIS61",
+   "CIS98A",
+   "CSC61",
+   "GEG8",
+   "PSYC50",
+   "SOC48",
+   "SOC50",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4489",
+   "title": "Crime and Intelligence Analysis - Associate of Science Degree and Certificate of Achievement - MAS1013/C/MCE1013",
+   "h1": "Crime and Intelligence Analysis - Associate of Science Degree and Certificate of Achievement - MAS1013/C/MCE1013",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3576
+ },
+ {
+  "control_number": "41655",
+  "title": "Emergency Management and Homeland Security - Law Enforcement",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ12",
+   "ADJ13",
+   "ADJ19",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ20",
+   "ADJ21",
+   "ADJ24",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ40",
+   "ADJ41",
+   "ADJ43",
+   "ADJ5",
+   "ADJ8",
+   "ADJB1B",
+   "ADJC1D",
+   "ADJR1A2",
+   "ADJR1B",
+   "ADJR1C",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4508",
+   "title": "Emergency Management and Homeland Security - Law Enforcement - Associate of Science Degree and Certificate of Achievement - MAS1090/C/MCE1090",
+   "h1": "Emergency Management and Homeland Security - Law Enforcement - Associate of Science Degree and Certificate of Achievement - MAS1090/C/MCE1090",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4360
+ },
+ {
+  "control_number": "41670",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "GEG1",
+   "GEG1H",
+   "GEG1L",
+   "GEG2",
+   "GEG3",
+   "GEG30A",
+   "GEG30B",
+   "GEG30C",
+   "GEG4",
+   "GEG7"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4525",
+   "title": "Geography - Associate in Arts for Transfer (ADT) - MAA759 (Cal-GETC)",
+   "h1": "Geography - Associate in Arts for Transfer (ADT) - MAA759 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3267
+ },
+ {
+  "control_number": "41676",
+  "title": "Crime and Intelligence Analysis",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ADJ1",
+   "ADJ1H",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ40",
+   "ADJ41",
+   "ADJ42",
+   "ADJ43",
+   "CAT98A",
+   "CIS61",
+   "CIS98A",
+   "CSC61",
+   "GEG8",
+   "PSYC50",
+   "SOC48",
+   "SOC50",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4489",
+   "title": "Crime and Intelligence Analysis - Associate of Science Degree and Certificate of Achievement - MAS1013/C/MCE1013",
+   "h1": "Crime and Intelligence Analysis - Associate of Science Degree and Certificate of Achievement - MAS1013/C/MCE1013",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3576
+ },
+ {
+  "control_number": "41711",
+  "title": "IT Project Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS77A",
+   "BUS77B",
+   "CIS1A",
+   "CIS27",
+   "CIS48A",
+   "CIS87A",
+   "CIS87B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4535",
+   "title": "IT Project Management - Certificate of Achievement - MCE1010",
+   "h1": "IT Project Management - Certificate of Achievement - MCE1010",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1820
+ },
+ {
+  "control_number": "41720",
+  "title": "Data Analytics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.895,
+  "codes_found": [
+   "CIS1A",
+   "CIS2",
+   "CIS20",
+   "CIS30A",
+   "CIS30E",
+   "CIS61",
+   "CIS63",
+   "CIS64",
+   "CIS68A",
+   "CIS68B",
+   "CSC2",
+   "CSC20",
+   "CSC61",
+   "CSC63",
+   "CSC8",
+   "MATH70A",
+   "MATH70B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4491",
+   "title": "Data Analytics - Certificate of Achievement - MCE1009",
+   "h1": "Data Analytics - Certificate of Achievement - MCE1009",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2799
+ },
+ {
+  "control_number": "41738",
+  "title": "Emergency Management and Homeland Security",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ12",
+   "ADJ13",
+   "ADJ19",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ20",
+   "ADJ21",
+   "ADJ24",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ40",
+   "ADJ41",
+   "ADJ42",
+   "ADJ43",
+   "ADJ5",
+   "ADJ8",
+   "ADJB1B",
+   "ADJC1D",
+   "ADJD1A",
+   "ADJR1A2",
+   "ADJR1B",
+   "ADJR1C",
+   "EMS50",
+   "EMS51",
+   "EMS60",
+   "EMS61",
+   "EMS62",
+   "EMS63",
+   "FIT1",
+   "FIT2",
+   "FIT3",
+   "FIT4",
+   "FIT5",
+   "FIT7",
+   "FITS3",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4504",
+   "title": "Emergency Management and Homeland Security - Associate of Science Degree and Certificate of Achievement - MAS1086/C/MCE1086",
+   "h1": "Emergency Management and Homeland Security - Associate of Science Degree and Certificate of Achievement - MAS1086/C/MCE1086",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 4753
+ },
+ {
+  "control_number": "41743",
+  "title": "Emergency Management and Homeland Security",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ12",
+   "ADJ13",
+   "ADJ19",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ20",
+   "ADJ21",
+   "ADJ24",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ40",
+   "ADJ41",
+   "ADJ42",
+   "ADJ43",
+   "ADJ5",
+   "ADJ8",
+   "ADJB1B",
+   "ADJC1D",
+   "ADJD1A",
+   "ADJR1A2",
+   "ADJR1B",
+   "ADJR1C",
+   "EMS50",
+   "EMS51",
+   "EMS60",
+   "EMS61",
+   "EMS62",
+   "EMS63",
+   "FIT1",
+   "FIT2",
+   "FIT3",
+   "FIT4",
+   "FIT5",
+   "FIT7",
+   "FITS3",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4504",
+   "title": "Emergency Management and Homeland Security - Associate of Science Degree and Certificate of Achievement - MAS1086/C/MCE1086",
+   "h1": "Emergency Management and Homeland Security - Associate of Science Degree and Certificate of Achievement - MAS1086/C/MCE1086",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 4753
+ },
+ {
+  "control_number": "41745",
+  "title": "Emergency Management and Homeland Security - Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIT1",
+   "FIT2",
+   "FIT3",
+   "FIT4",
+   "FIT5",
+   "FIT7",
+   "FITS3",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4507",
+   "title": "Emergency Management and Homeland Security - Fire Technology - Associate of Science Degree and Certificate of Achievement - MAS1089/C/MCE1089",
+   "h1": "Emergency Management and Homeland Security - Fire Technology - Associate of Science Degree and Certificate of Achievement - MAS1089/C/MCE1089",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3311
+ },
+ {
+  "control_number": "41748",
+  "title": "Data Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "CIS1A",
+   "CIS2",
+   "CIS20",
+   "CIS30A",
+   "CIS30E",
+   "CIS61",
+   "CIS63",
+   "CIS64",
+   "CIS68A",
+   "CIS68B",
+   "CSC2",
+   "CSC20",
+   "CSC61",
+   "CSC63",
+   "CSC8",
+   "MATH1C",
+   "MATH3",
+   "MATH70A",
+   "MATH70B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4492",
+   "title": "Data Science - Associate of Science Degree - MAS1011/C",
+   "h1": "Data Science - Associate of Science Degree - MAS1011/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3188
+ },
+ {
+  "control_number": "41752",
+  "title": "Emergency Management and Homeland Security - Emergency Medical Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS50",
+   "EMS51",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4506",
+   "title": "Emergency Management and Homeland Security - Emergency Medical Services - Associate of Science Degree and Certificate of Achievement - MAS1088/C/MCE1088",
+   "h1": "Emergency Management and Homeland Security - Emergency Medical Services - Associate of Science Degree and Certificate of Achievement - MAS1088/C/MCE1088",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2999
+ },
+ {
+  "control_number": "41753",
+  "title": "Emergency Management and Homeland Security - Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIT1",
+   "FIT2",
+   "FIT3",
+   "FIT4",
+   "FIT5",
+   "FIT7",
+   "FITS3",
+   "HLS1",
+   "HLS101",
+   "HLS2",
+   "HLS3",
+   "HLS4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4507",
+   "title": "Emergency Management and Homeland Security - Fire Technology - Associate of Science Degree and Certificate of Achievement - MAS1089/C/MCE1089",
+   "h1": "Emergency Management and Homeland Security - Fire Technology - Associate of Science Degree and Certificate of Achievement - MAS1089/C/MCE1089",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3311
+ },
+ {
+  "control_number": "42484",
+  "title": "Early Childhood Education School Age",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR19",
+   "EAR20",
+   "EAR24",
+   "EAR25",
+   "EAR26",
+   "EAR28",
+   "EAR42",
+   "EAR57",
+   "EAR58",
+   "EAR59"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4500",
+   "title": "Early Childhood Education School Age - Certificate of Achievement - MCE1060",
+   "h1": "Early Childhood Education School Age - Certificate of Achievement - MCE1060",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1661
+ },
+ {
+  "control_number": "42688",
+  "title": "Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP50",
+   "ENP51",
+   "ENP52",
+   "ENP53",
+   "ENP54",
+   "ENP55",
+   "ENP70",
+   "ENP71"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4517",
+   "title": "Entrepreneurship - Associate of Science Degree - MAS531/C",
+   "h1": "Entrepreneurship - Associate of Science Degree - MAS531/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2723
+ },
+ {
+  "control_number": "42794",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "BUS18A",
+   "ECON4",
+   "ECON5",
+   "ECON6",
+   "ECONC2001H",
+   "ECONC2002H",
+   "MATH1C",
+   "MATH3",
+   "MATH5",
+   "POLS6",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4502",
+   "title": "Economics - Associate in Arts for Transfer (ADT) - MAA757 (Cal-GETC)",
+   "h1": "Economics - Associate in Arts for Transfer (ADT) - MAA757 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4586
+ },
+ {
+  "control_number": "42826",
+  "title": "Business Administration: Logistics Management Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS80",
+   "BUS85",
+   "BUS87",
+   "BUS90",
+   "CIS1A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4471",
+   "title": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - MAS580/C/MCE580",
+   "h1": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - MAS580/C/MCE580",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2703
+ },
+ {
+  "control_number": "42828",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "COMM12",
+   "COMM13",
+   "COMM2",
+   "COMM20",
+   "COMM3",
+   "COMM6",
+   "COMM7",
+   "COMM9",
+   "COMM9H",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "JOU1",
+   "JOU7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4483",
+   "title": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - MAA1059 (Cal-GETC)",
+   "h1": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - MAA1059 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3090
+ },
+ {
+  "control_number": "42829",
+  "title": "Business Administration: Logistics Management Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS80",
+   "BUS85",
+   "BUS87",
+   "BUS90",
+   "CIS1A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4471",
+   "title": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - MAS580/C/MCE580",
+   "h1": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - MAS580/C/MCE580",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2703
+ },
+ {
+  "control_number": "43792",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "MATH1C",
+   "PHY4A",
+   "PHY4B",
+   "PHY4C",
+   "PHY4D"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4966",
+   "title": "Physics 2.0 - Associate in Science for Transfer (ADT) - MAS1108 (Cal-GETC)",
+   "h1": "Physics 2.0 - Associate in Science for Transfer (ADT) - MAS1108 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1835
+ },
+ {
+  "control_number": "43882",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "BIO1",
+   "BIO1H",
+   "EAR20",
+   "EAR24",
+   "EAR25",
+   "EAR28",
+   "EAR30",
+   "EAR42",
+   "HES1",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC9",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC10",
+   "SOC10H",
+   "SOC12",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4867",
+   "title": "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - MAA886 (Cal-GETC)",
+   "h1": "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - MAA886 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3953
+ },
+ {
+  "control_number": "43884",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIO19",
+   "BIO60",
+   "BIO60H",
+   "CHE1A",
+   "CHE1AH",
+   "CHE1B",
+   "ECONC2001H",
+   "GEG1",
+   "GEG1H",
+   "GEG1L",
+   "MATH5",
+   "PHY4A",
+   "PHY4B",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4868",
+   "title": "Environmental Science - Associate in Science for Transfer (ADT) - MAS893 (Cal-GETC)",
+   "h1": "Environmental Science - Associate in Science for Transfer (ADT) - MAS893 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3434
+ },
+ {
+  "control_number": "44790",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.967,
+  "codes_found": [
+   "ADJ1",
+   "ADJ13",
+   "ADJ150",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ5",
+   "ADJ8",
+   "ART6",
+   "ART6H",
+   "ARTH6",
+   "ARTH6H",
+   "COMM12",
+   "COMMC1000",
+   "COMMC1000H",
+   "EAR42",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ETS1",
+   "PHI12",
+   "PSYC8",
+   "SOC20",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4723",
+   "title": "Modern Policing - Associate of Science Degree - MAS1096/C",
+   "h1": "Modern Policing - Associate of Science Degree - MAS1096/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 4164
+ },
+ {
+  "control_number": "45017",
+  "title": "Drug and Alcohol Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMS13",
+   "HMS16",
+   "HMS17",
+   "HMS18",
+   "HMS19",
+   "HMS20",
+   "HMS21",
+   "HMS22",
+   "HMS23",
+   "HMS24",
+   "HMS25",
+   "HMS26",
+   "HMS27",
+   "HMS28",
+   "HMS29",
+   "HMS30",
+   "HMS31",
+   "HMS32",
+   "HMS33",
+   "HMS36",
+   "HMS39",
+   "HMS4",
+   "HMS41",
+   "HMS42",
+   "HMS43",
+   "HMS44",
+   "HMS46",
+   "HMS47",
+   "HMS48",
+   "HMS5",
+   "HMS50",
+   "HMS51",
+   "HMS52",
+   "HMS53",
+   "HMS6",
+   "HMS60",
+   "HMS61",
+   "HMS62",
+   "HMS63",
+   "HMS64",
+   "HMS65",
+   "HMS66",
+   "HMS7",
+   "HMS71",
+   "HMS8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4495",
+   "title": "Drug and Alcohol Studies - Associate of Science Degree and Certificate of Achievement - MAS1045/C/MCE1045",
+   "h1": "Drug and Alcohol Studies - Associate of Science Degree and Certificate of Achievement - MAS1045/C/MCE1045",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 45,
+  "text_chars": 5879
+ },
+ {
+  "control_number": "45447",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.894,
+  "codes_found": [
+   "ADJ1",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ20",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ5",
+   "ADJ8",
+   "ADJ9",
+   "ADJ9H",
+   "ANT2",
+   "ANT2H",
+   "BUS18A",
+   "COMM12",
+   "COMM2",
+   "COMM3",
+   "COMM6",
+   "COMMC1000",
+   "COMMC1000H",
+   "ECONC2001H",
+   "ECONC2002H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "GEG2",
+   "GUI48",
+   "HISTC1001H",
+   "HISTC1002H",
+   "PHI12",
+   "POLS11",
+   "POLS2",
+   "POLS4",
+   "POLSC1000",
+   "POLSC1000H",
+   "SOC10",
+   "SOC10H",
+   "SOC20",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4718",
+   "title": "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - MAA1008 (Cal-GETC)",
+   "h1": "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - MAA1008 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 47,
+  "text_chars": 5658
+ },
+ {
+  "control_number": "45914",
+  "title": "Global Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "ANT5",
+   "ANT6",
+   "ANT7",
+   "ANT8",
+   "ARA1",
+   "ARA11",
+   "ARA11H",
+   "ARA2",
+   "ARA3",
+   "ARA8",
+   "ARTH12",
+   "ARTH13",
+   "ARTH14",
+   "ARTH3",
+   "ARTH5",
+   "ARTH9",
+   "BIO19",
+   "BUS40",
+   "BUS43",
+   "BUS46",
+   "BUS48",
+   "CHE17",
+   "CHI1",
+   "CHI11",
+   "CHI2",
+   "ECON6",
+   "ENGL34",
+   "ENGL40",
+   "ENGL41",
+   "ENGL45",
+   "ENGL6",
+   "ENGL7",
+   "ENGL8",
+   "ENGL9",
+   "ETS13",
+   "FRE1",
+   "FRE11",
+   "FRE2",
+   "FST3",
+   "GEG1",
+   "GEG1H",
+   "GEG2",
+   "GEG3",
+   "HIST1",
+   "HIST25",
+   "HIST2H",
+   "HIST32",
+   "HIST33",
+   "HIST60",
+   "HIST61",
+   "HUM10",
+   "HUM35",
+   "HUM4",
+   "HUM5",
+   "HUM8",
+   "ITA1",
+   "ITA11",
+   "ITA2",
+   "JPN11",
+   "JPN2",
+   "JPN3",
+   "JPN4",
+   "MUS19",
+   "MUS19H",
+   "MUS22",
+   "PHI14",
+   "PHI33",
+   "PHI36",
+   "POLS10",
+   "POLS11",
+   "POLS13",
+   "POLS17",
+   "POLS2",
+   "POLS20",
+   "POLS4",
+   "POLS6",
+   "RUS1",
+   "RUS11",
+   "RUS2",
+   "RUS3",
+   "SPA1",
+   "SPA11",
+   "SPA12",
+   "SPA2",
+   "SPA2H",
+   "SPA3",
+   "SPA4",
+   "SPA51",
+   "SPA8",
+   "THE3",
+   "THE34",
+   "THE35",
+   "THE9"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6365",
+   "title": "Global Studies -  Certificate of Achievement - MCE1119",
+   "h1": "Global Studies -  Certificate of Achievement - MCE1119",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 104,
+  "text_chars": 8211
+ },
+ {
+  "control_number": "46200",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "BIO35",
+   "BIO50A",
+   "BIO50B",
+   "BIO55",
+   "CHE12A",
+   "CHE1A",
+   "CHE1AH",
+   "CHE1B",
+   "HES1",
+   "KIN35",
+   "KIN36",
+   "KIN4",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6380",
+   "title": "Nutrition and Dietetics - Associate in Science Degree for Transfer (ADT) - MAS908 (Cal-GETC )",
+   "h1": "Nutrition and Dietetics - Associate in Science Degree for Transfer (ADT) - MAS908 (Cal-GETC )",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3740
+ },
+ {
+  "control_number": "46215",
+  "title": "Emergency Management",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "ENGL304",
+   "GEG305",
+   "PSF301",
+   "PSF302",
+   "PSF308",
+   "PSF309",
+   "PSF310",
+   "PSF311",
+   "PSF312",
+   "PSF313",
+   "PSF314",
+   "PSF315",
+   "PSF316"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6376",
+   "title": "Emergency Management - Bachelor of Science Degree - MBS3001/MBS3001C",
+   "h1": "Emergency Management - Bachelor of Science Degree - MBS3001/MBS3001C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3658
+ },
+ {
+  "control_number": "46236",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "CIS5",
+   "MATH1C",
+   "MATH2",
+   "MATH3",
+   "PHY4A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4543",
+   "title": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - MAS1107 (Cal-GETC)",
+   "h1": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - MAS1107 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1859
+ },
+ {
+  "control_number": "46532",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.968,
+  "codes_found": [
+   "ART6",
+   "ART6H",
+   "ARTH6",
+   "ARTH6H",
+   "BIO1",
+   "BIO1H",
+   "BIO35",
+   "CHE2A",
+   "COMMC1000",
+   "COMMC1000H",
+   "EAR20",
+   "EAR25",
+   "EDU1",
+   "ENGL30",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "GEG2",
+   "GEG3",
+   "HES1",
+   "HIST1",
+   "HIST26",
+   "HISTC1001H",
+   "MUS19",
+   "MUS19H",
+   "PHY10",
+   "POLSC1000",
+   "POLSC1000H",
+   "THE3"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4858",
+   "title": "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer (ADT) - MAA1106 (Cal-GETC)",
+   "h1": "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer (ADT) - MAA1106 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 4552
+ }
+]
