@@ -1,0 +1,120 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "30805",
+ "shape": "noncredit",
+ "title": "Basic Career Readiness",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/college-readiness-healthcare-programs/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5309,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5309,
+    "output_tokens": 1011,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1011,
+  "output_tokens_details": {
+   "thinking_tokens": 499
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04146,
+ "ms": 9735,
+ "seconds": 10.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "BSABE5",
+    "BSLRN6"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BS ABE05",
+    "why": "named only as a recommended elective in the College Readiness for Healthcare Programs section, a different program"
+   },
+   {
+    "code": "BS LRN06",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied page has no section for the Basic Career Readiness noncredit program. Its only program section is 'College Readiness for Healthcare Programs' (Certificate of Competency #38783), a different award. No requirements were recorded for Basic Career Readiness.",
+   "The College Readiness for Healthcare Programs section lists: Required Courses BS ABE02, plus choose one (1) of BS HCM1 or VOC HEP. Recommended Electives are BS ABE01 and BS ABE05. No units or hours are printed beside any course, and no total is stated.",
+   "The outcomes on the page's outcomes tab belong to the College Readiness for Healthcare program, not this award, so they were not recorded: 'Students will achieve sufficient score on occupational and college program entry level tests.', 'Students will be prepared to transition to college or career programs.', 'Students will demonstrate job readiness skills.'",
+   "A reviewer should find the catalog page for Basic Career Readiness (likely under the noncredit Basic Skills programs) and re-run the extraction from that page."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

@@ -1,0 +1,378 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "35774",
+ "shape": "degree",
+ "title": "Public Health",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/public-health/public-health-as-degree/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7247,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7247,
+    "output_tokens": 3467,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3467,
+  "output_tokens_details": {
+   "thinking_tokens": 957
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09833,
+ "ms": 25787,
+ "seconds": 26.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 31,
+   "listed": 31,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    52.0
+   ],
+   "stated": [
+    48.0,
+    52.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Public Health (AS Degree S0428)",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 52
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Explain how the history, philosophy, and literature of public health reflect broader social influences and movements that influence our view of health.",
+    "Explain the population health perspective and the methods used in public health to define and address population-wide/social concerns and the needs of vulnerable populations through the provision of essential services.",
+    "Apply options for intervention frameworks including when (primary, secondary, tertiary), who (individual, population at risk, general population), and how (education, motivation, obligation) to intervene.",
+    "Explain principles of epidemiology that are necessary in order to understand health and impairments of health, including the uses of rates, the meaning of causation, and the evaluation of the effectiveness of interventions.",
+    "Apply the principles of epidemiology to assigned reading of research articles, including case-control, cohort studies, and randomized clinical trials.",
+    "Explain from a global perspective the burden of disease, socioeconomical determinants of health, the links between health and development, and approaches to global cooperation to monitor, promote, and protect health.",
+    "Describe biological principles needed to understand public health issues across the life span and apply these principles to public health interventions to eliminate, prevent, and control disease and to minimize the impact of disease on health.",
+    "Explain the use of clinical interventions for assessing, protecting, and improving health and preventing, detecting, treating, and minimizing the impact of disease.",
+    "Explain the way biological, environmental, and social/cultural factors interact in disease production and understand how these influences can impact prevention strategies.",
+    "Describe the historical examples of the changing definitions of public health in a variety of cultures and times, including major scientific advancements."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Select one of the following sequences: (ANAT 10A and ANAT 10B)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "ANAT sequence",
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANAT 10A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 10B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following sequences: (ANAT 35 and ANAT 36)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "ANAT sequence",
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANAT 35",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 1",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 1H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 4",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 4H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 40",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 1",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MICR 22",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBH 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBH 24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBH 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBH 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBH 28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 10",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "SOC 23",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANAT 38",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 26",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NF 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NF 25H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBH 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBH 29",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUBH 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Select one of the following sequences: 8-10' heading prints its courses as paired 'or' rows (ANAT 10A or ANAT 35; ANAT 10B or ANAT 36); recorded as two sequence blocks (ANAT 10A + ANAT 10B, or ANAT 35 + ANAT 36) in one option_group. The 8-10 total is printed once for the whole choice and is copied to both blocks; no units are printed beside the individual ANAT courses.",
+   "Units printed on 'or' rows apply to the row; alternatives have no units printed beside them, so they are null. MICR 1 row prints '4 - 5' and PSYC 10 row prints '3-4' (range likely reflects the different alternatives).",
+   "Catalog prints MICR 1 as 'Medical Microbiology'; the closed list titles it 'Principles of Microbiology'.",
+   "Total Units 48-52 recorded per the printed table and the 9/15/2025 correction note. The overview narrative says program completion requires 61-64 unit credits, which appears to include general education; reviewer may wish to check.",
+   "The degree requires 'General Education coursework' without naming a specific pattern, so ge_pattern is null.",
+   "Program learning outcomes are taken from the page's Outcomes tab; the closing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was omitted.",
+   "The page also links a Public Health AS-T Degree (S1014); only the AS Degree S0428 section was read."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

@@ -1,0 +1,19 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "24171",
+ "shape": "noncredit",
+ "title": "Electronics and Computer Engineering Technology",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/",
+ "record_shape": 3,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 150.2,
+ "error": "HTTP 504: {\"code\":\"IDLE_TIMEOUT\",\"message\":\"Request idle timeout limit (150s) reached\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "38059865531"
+}

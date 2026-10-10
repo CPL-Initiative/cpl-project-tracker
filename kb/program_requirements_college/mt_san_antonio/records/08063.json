@@ -1,0 +1,265 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "08063",
+ "shape": "certificate",
+ "title": "Administrative Assistant Level III",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-level-iii-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5830,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5830,
+    "output_tokens": 2287,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2287,
+  "output_tokens_details": {
+   "thinking_tokens": 811
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06906,
+ "ms": 27119,
+ "seconds": 27.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "CISB15",
+    "CISB16",
+    "CISB21",
+    "CISB51",
+    "CISS11"
+   ],
+   "flagged": [
+    "CISB15",
+    "CISB16",
+    "CISB21",
+    "CISB51",
+    "CISS11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.5,
+    27.0
+   ],
+   "stated": [
+    25.5,
+    27.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Assistant - Level III (Certificate N0464)",
+   "measure": "units",
+   "total_units": {
+    "min": 25.5,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Touch type effectively.",
+    "Effectively use formulas and functions in worksheets.",
+    "Use Microsoft Word to create professional looking reports.",
+    "Design and create visual presentations utilizing desktop presentation software (i.e. Power Point).",
+    "Demonstrate ability to effectively produce a variety of professional-looking business publications (at least five) i.e. newsletter, flyer, brochure, letterhead, business card, event program, etc."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Administrative Assistant - Level I Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9.5,
+     "max": 9.5
+    },
+    "courses": [
+     {
+      "code": "CISB 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISB 15",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISB 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Administrative Assistant - Level II Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUSO 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISB 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISB 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Administrative Assistant - Level III Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 8.5
+    },
+    "courses": [
+     {
+      "code": "BUSO 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISB 16",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose one course or any lecture-lab combination from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3.5
+    },
+    "courses": [
+     {
+      "code": "CISD 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISD 11L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Level III certificate is built cumulatively: completion of Level I coursework (9.5), Level II coursework (9) and Level III coursework (7-8.5), total 25.5-27 units.",
+   "The stated 7-8.5 units for Level III coursework covers BUSO 26, CISB 16 and the choice block together; it is recorded on the required Level III block.",
+   "In the choice block, the catalog prints 'CISD 11 & 11L' as a lecture-lab combination that counts as one choice ('one course or any lecture-lab combination'); CISD 11 and CISD 11L are listed separately and should be taken together as one selection. No units are printed beside the choice-block courses; the block total is 2-3.5.",
+   "CISB 51 Microsoft PowerPoint is listed under Level II coursework but its title row carries '(Administrative Assistant - Level III Coursework)'; reviewer should check which level it belongs to. Level II total of 9 units matches BUSO 25, CISB 21 and CISB 51.",
+   "The award title in the request says 18 or greater semester units; the catalog states 25.5-27 total units.",
+   "Outcomes are from the page's Outcomes tab ('Program Level Outcomes'), which appears to be shared program-level outcomes; the lead-in 'Upon successful completion of this program, a students will be able to:' was omitted. Outcomes mention worksheets and publications that relate to courses across levels."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

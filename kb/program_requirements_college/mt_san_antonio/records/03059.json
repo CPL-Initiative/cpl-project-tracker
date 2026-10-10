@@ -1,0 +1,170 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "03059",
+ "shape": "degree",
+ "title": "Emergency Medical Services - Paramedic",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/emergency-medical/emergency-medical-services-degree/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5909,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5909,
+    "output_tokens": 1471,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1471,
+  "output_tokens_details": {
+   "thinking_tokens": 402
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05306,
+ "ms": 11971,
+ "seconds": 12.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "EMS80"
+   ],
+   "flagged": [
+    "EMS80"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.5,
+    32.5
+   ],
+   "stated": [
+    32.5,
+    32.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Emergency Medical Services - Paramedic (AS Degree S1210)",
+   "measure": "units",
+   "total_units": {
+    "min": 32.5,
+    "max": 32.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate competence in the following areas: patient assessment skills, scene management, knowledge of the laws governing Paramedic scope of practice, knowledge of the functions of cells, tissues, organs and organ systems as they relate to paramedic practices and patient care, the ability to utilize appropriate communications skills and demeanor with patients, family members, and field/hospital staff as well as display assertiveness in emergency situations as evidenced by proper assessment and selection of interventions.",
+    "Demonstrate competence in the assessment and treatment of the following: Cardiovascular emergencies, Neurological emergencies, Respiratory emergencies, Abdominal emergencies, Diabetic emergencies, Endocrine/renal emergencies, Behavioral emergencies, Traumatic emergencies, Environmental emergencies, Obstetrical emergencies, and Pediatric emergencies.",
+    "Be employable/seeking employment in the field of paramedicine or a related field.",
+    "Have demonstrated skills competency to State & National standards."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32.5,
+     "max": 32.5
+    },
+    "courses": [
+     {
+      "code": "EMS 10",
+      "units": 11,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMS 40",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMS 50",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMS 70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMS 80",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "EMS 80 Paramedic Field Externship (9 units) is required in the catalog but missing from the closed list; recorded as a catalog addition.",
+   "The degree requires 'General Education coursework' and the graduation requirements of Mt. San Antonio College, but no specific GE pattern (CSU GE, IGETC, Cal-GETC, local) is named, so ge_pattern is null.",
+   "A 'Recommended Electives' list (ANAT 10A 4; FIRE 1 3; PSYC C1000 3 or PSYC C1000H; SOC 1 3 or SOC 1H) is printed as faculty recommendations only, not requirements, so it is not recorded as a block.",
+   "Program Learning Outcomes come from the page's Outcomes tab, which appears to serve the program page as a whole (the page also hosts the Paramedic Certificate T0425); the A.S. degree is read as sharing this list.",
+   "The page notes the degree is awarded for completing the Paramedic Certificate required courses plus graduation requirements; the certificate section itself was not provided."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

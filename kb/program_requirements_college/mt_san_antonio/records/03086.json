@@ -1,0 +1,252 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "03086",
+ "shape": "certificate",
+ "title": "Fire Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/fire-technology-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6214,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6214,
+    "output_tokens": 1929,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1929,
+  "output_tokens_details": {
+   "thinking_tokens": 470
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06344,
+ "ms": 14652,
+ "seconds": 15.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    40.0
+   ],
+   "stated": [
+    24.0,
+    40.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Technology (Certificate N0486)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Define fire department organization, culture, and methods of communication of entry level fire department personnel.",
+    "Analyze and assess firefighter hazards, and demonstrate safe practices by using minimum standard safety procedures.",
+    "Demonstrate knowledge of fire prevention efforts and a resulting reduction of life and property loss.",
+    "Demonstrate knowledge of strategy and tactics required for the proper selection and safe use of firefighting methods, techniques, tools, and equipment.",
+    "Identify fire chemistry and behavior for the purpose of predicting fire dynamics and flame spread characteristics.",
+    "Identify components of built-in and portable fire protections systems and alarm and notification devises.",
+    "Demonstrate knowledge of the 5 basic types of construction. Identify the components and hazards related to each type.",
+    "Demonstrate knowledge of Leadership and Management concepts as they relate to emergency and non-emergency situations."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FIRE 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose two FIRE courses or FIRE 86 and KINF 53 plus one other FIRE Course:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "FIRE 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 86",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 53",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The elective block offers two paths: any two FIRE courses from the list, or FIRE 86 and KINF 53 plus one other FIRE course (three courses). Recorded as choose_courses with minimum 2; the alternative path is described here.",
+   "The catalog prints no units beside the courses in the elective block, so their units are null; the block total 6-22 is recorded in stated.",
+   "The closed list writes FIRE2 and FIRE86 without a space; these were matched to the catalog's FIRE 2 and FIRE 86 and not marked as catalog additions. Reviewer should confirm.",
+   "Program Learning Outcomes come from the page's outcomes tab for this certificate; a link line 'Review Student Learning Outcomes (SLOs) for this program.' was not treated as an outcome.",
+   "The overview text calls this the 'Fire Science Certificate' while the heading reads Fire Technology (Certificate N0486)."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

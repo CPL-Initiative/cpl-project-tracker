@@ -1,0 +1,202 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "12310",
+ "shape": "certificate",
+ "title": "Business: Retail Management - Level II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/business/business-retail-management-level-ii/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5806,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5806,
+    "output_tokens": 1029,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1029,
+  "output_tokens_details": {
+   "thinking_tokens": 212
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0438,
+ "ms": 10010,
+ "seconds": 10.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "BUSM61",
+    "BUSM62",
+    "BUSS36",
+    "BUSS50",
+    "CISB15"
+   ],
+   "flagged": [
+    "BUSM61",
+    "BUSM62",
+    "BUSS36",
+    "BUSS50",
+    "CISB15"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.5,
+    21.5
+   ],
+   "stated": [
+    21.5,
+    21.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business: Retail Management - Level II (Certificate N0474)",
+   "measure": "units",
+   "total_units": {
+    "min": 21.5,
+    "max": 21.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply management concepts and functions.",
+    "Explain theory and practical application of Equal Employment Opportunity current employment laws.",
+    "Have developed a working knowledge of marketing terminology."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Business: Retail Management - Level I Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9.5,
+     "max": 9.5
+    },
+    "courses": [
+     {
+      "code": "BUSO 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSS 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISB 15",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Business: Retail Management - Level II Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "BUSA 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSM 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSM 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSS 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The certificate requires completion of the Retail Management - Level I coursework (9.5 units, stated in the summary table) plus the Level II coursework (12 units); both are recorded as required blocks, with block totals taken from the summary table.",
+   "The Level I coursework block sums to 9.5 and the Level II block to 12, matching the printed total of 21.5 units.",
+   "The outcomes come from the page's outcomes tab for this program. The trailing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded.",
+   "The page also lists other Business certificates and degrees in navigation; only the Level II (N0474) section was read."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

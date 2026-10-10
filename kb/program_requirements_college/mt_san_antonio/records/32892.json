@@ -1,0 +1,128 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "32892",
+ "shape": "certificate",
+ "title": "Dance Teacher",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/aa-liberal-arts-sciences-emphasis-kinesiology-wellness/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6603,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6603,
+    "output_tokens": 896,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 896,
+  "output_tokens_details": {
+   "thinking_tokens": 325
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04433,
+ "ms": 9102,
+ "seconds": 9.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "DNCE32",
+    "DNCE39",
+    "DNT38"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DNCE 39",
+    "why": "appears only in the Kinesiology & Wellness A.A. activity list, not a Dance Teacher section"
+   },
+   {
+    "code": "DNCE32",
+    "why": "DNCE 32 appears only in the Kinesiology & Wellness A.A. activity list, not a Dance Teacher section"
+   },
+   {
+    "code": "DNT38",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source URL and text are for the A.A. Liberal Arts & Sciences, Emphasis in Kinesiology & Wellness (clusters of science and behavioral courses plus a 'Required Electives' activity list), not the Dance Teacher Certificate of Achievement. No section for the Dance Teacher certificate appears in the text, so no heading, blocks, or total are recorded.",
+   "The text begins mid-list (cut off at 'Development and Aging') and ends mid-entry ('Women's Se'), so it is truncated at both ends.",
+   "The 'Program Learning Objectives' on the outcomes tab belong to the Kinesiology & Wellness emphasis degree, not to the Dance Teacher certificate, so they are not recorded as this award's outcomes.",
+   "The award title in the request ('18 or greater semester (or 27 or greater quarter) u') is a unit-threshold descriptor and is not a stated total. Reviewer should locate the correct Dance Teacher catalog page (likely listing DNT 38 Dance Teaching Methods)."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

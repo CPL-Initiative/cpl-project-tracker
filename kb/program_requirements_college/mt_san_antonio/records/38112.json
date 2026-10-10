@@ -1,0 +1,143 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "38112",
+ "shape": "noncredit",
+ "title": "Payroll and Tax Accounting",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-accounting/payroll-tax-accounting/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5173,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5173,
+    "output_tokens": 767,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 767,
+  "output_tokens_details": {
+   "thinking_tokens": 201
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03603,
+ "ms": 6920,
+ "seconds": 7.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "VOCBA70"
+   ],
+   "flagged": [
+    "VOCBA70"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Payroll and Tax Accounting",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will gain employment in an introductory payroll and/or tax accounting position in the business department of any business or organization.",
+    "Students will demonstrate job readiness skills.",
+    "Students will progress through the business and accounting career ladder by enrolling in further business and accounting courses or programs."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC BA70",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BS ABE05",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Certificate of Completion #38112, a noncredit program. The course table has a Units column, but no units or hours are printed beside either course, and the page states no total hours. Measure is left as 'units', with all unit fields null.",
+   "VOC BA70 (Payroll Accounting) is not in the closed list, so it is recorded as a catalog addition.",
+   "The catalog states that students must pass both core courses to earn the certificate. This is recorded as an 'all' block.",
+   "The outcomes come from the page's outcomes tab (#tgl0), which follows the 'Program Learning Outcomes' heading. The trailing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, so it is excluded."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

@@ -1,0 +1,145 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "43999",
+ "shape": "noncredit",
+ "title": "Regenerative Communities",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/regenerativecommunitiestext/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5340,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5340,
+    "output_tokens": 859,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 859,
+  "output_tokens_details": {
+   "thinking_tokens": 289
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03854,
+ "ms": 7479,
+ "seconds": 7.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "VOCLFC"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Regenerative Communities",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will be able to gain entry-level employment in an organization connected to food systems, community sustainability, or environmental stewardship.",
+    "Students will be able to demonstrate the application of sustainable and regenerative principles to a broad range of industries and facets of the community.",
+    "Students will be able to become leaders for change, improving community resilience by implementing sustainable and regenerative practices in their chosen industry."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC RG",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC FS",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "VOC LFC",
+    "why": "listed as a recommended elective, not required"
+   }
+  ],
+  "notes": [
+   "This is a noncredit Certificate of Completion (#43999), but the catalog text prints no hours or units beside any course and no program total, so measure is left as 'units' and all unit/total fields are null. A reviewer should check whether hours appear elsewhere, such as the course pages.",
+   "The text states that students must pass all required courses to earn the certificate. VOC LFC appears under 'Recommended Elective' and is not part of the requirements.",
+   "The page links to separate Student Learning Outcomes (SLOs) for this program; those are not in the text and were not recorded."
+  ]
+ },
+ "extracted_run": "38059865531"
+}
