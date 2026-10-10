@@ -1,0 +1,31 @@
+{
+ "_readme": "S359 SkyMoss, 2026-10-10. Long Beach City is the next college after RCCD (Sam's ruling on Sheet 59 card 1). Its registry row holds https://www.lbcc.edu/college-catalog, the college's page about its catalog (census platform courseleaf, 391 programs Active or Approved), so the college read needs the catalog's own address and its sitemap before a capture. This read loads that page and prints its catalog links, then the catalog's front page and sitemap where the links name them. Page loads only, no model call.",
+ "college": "Long Beach City College",
+ "questions": {
+  "catalog_address": "The address of the current catalog itself (a CourseLeaf host such as catalog.lbcc.edu), and its year.",
+  "sitemap": "Whether the catalog publishes /sitemap.xml and how its program pages are addressed."
+ },
+ "keywords": [
+  "[Cc]atalog",
+  "courseleaf",
+  "sitemap",
+  "20\\d\\d-\\d\\d",
+  "[Pp]rograms? of [Ss]tudy",
+  "[Dd]egrees? and [Cc]ertificates?"
+ ],
+ "pages": [
+  {
+   "answers": ["catalog_address"],
+   "url": "https://www.lbcc.edu/college-catalog",
+   "links": "catalog|courseleaf|program"
+  },
+  {
+   "answers": ["catalog_address", "sitemap"],
+   "url": "https://catalog.lbcc.edu/"
+  },
+  {
+   "answers": ["sitemap"],
+   "url": "https://catalog.lbcc.edu/sitemap.xml"
+  }
+ ]
+}
