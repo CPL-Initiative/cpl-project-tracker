@@ -73,21 +73,28 @@
   }
   // A clickable <th> that toggles the given sort state's column/direction and
   // re-renders. Shows a ▲/▼ caret on the active column.
+  // ⚠️ The header stays a COLUMN HEADER: role="button" on the <th> itself (the
+  // old shape) replaced its columnheader role, so a screen reader lost which
+  // column a cell belongs to. The cell keeps scope="col" + aria-sort and a real
+  // <button> inside carries the action (S356 UI pass). The click listener stays
+  // on the th, so a click anywhere in the header cell still sorts.
   function sortableTh(label, col, sortState, onChange, attrs) {
     var active = sortState.col === col;
     var caret = active ? (sortState.dir > 0 ? " ▲" : " ▼") : "";
     var a = attrs || {};
     a["class"] = (a["class"] ? a["class"] + " " : "") + "raci-th-sort" + (active ? " raci-th-active" : "");
     a.title = (a.title ? a.title + " — " : "") + "Click to sort";
-    a.role = "button"; a.tabindex = "0";
-    var th = el("th", a, [label + caret]);
+    a.scope = "col";
+    a["aria-sort"] = active ? (sortState.dir > 0 ? "ascending" : "descending") : "none";
+    var btn = el("button", { type: "button", "class": "raci-th-btn" },
+      [label, caret ? el("span", { "aria-hidden": "true" }, [caret]) : null]);
+    var th = el("th", a, [btn]);
     function go() {
       if (sortState.col === col) sortState.dir = -sortState.dir;
       else { sortState.col = col; sortState.dir = 1; }
       onChange();
     }
     th.addEventListener("click", go);
-    th.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
     return th;
   }
 
@@ -215,7 +222,7 @@
   function unlockBox(blurb, afterUnlock) {
     var inp = el("input", { type: "password", placeholder: "team phrase", "class": "raci-in" });
     var st = el("span", { "class": "raci-auth-msg" }, []);
-    var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["🔓 Unlock editing"]);
+    var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["Unlock editing"]);
     function go() {
       var p = (inp.value || "").trim();
       if (!p) { st.textContent = "Enter the team phrase."; return; }
@@ -601,7 +608,9 @@
   function openUpdate(item) {
     var c = cplItem(item);
     var canEdit = !!state.sess;
-    var hist = el("div", { "class": "raci-upd-hist" }, []);
+    // Capped at 44vh, so a long history scrolls: reachable and named (WCAG 2.1.1).
+    var hist = el("div", { "class": "raci-upd-hist", tabindex: "0", role: "region",
+      "aria-label": "Update history, scrolls" }, []);
     // Header carries a live count so it's clear EVERY entry is shown (the list
     // scrolls if there are many). Updated by paintHist on add/edit/delete.
     var histH = el("div", { "class": "raci-upd-h" }, ["Updates"]);
@@ -619,8 +628,8 @@
         // u.id is the row PK — absent only on a just-posted row whose representation
         // didn't return (rare); skip the affordances then.
         if (canEdit && u.id != null) {
-          var editBtn = el("button", { "class": "raci-upd-act", title: "Edit this update" }, ["✏️ Edit"]);
-          var delBtn = el("button", { "class": "raci-upd-act raci-upd-del", title: "Delete this update" }, ["🗑 Delete"]);
+          var editBtn = el("button", { "class": "raci-upd-act", title: "Edit this update" }, ["Edit"]);
+          var delBtn = el("button", { "class": "raci-upd-act raci-upd-del", title: "Delete this update" }, ["Delete"]);
           entry.appendChild(el("div", { "class": "raci-upd-acts" }, [editBtn, delBtn]));
           editBtn.addEventListener("click", function () {
             var ta = el("textarea", { "class": "raci-in raci-upd-ta", rows: "3" }, []);
@@ -676,7 +685,7 @@
       var ta = el("textarea", { "class": "raci-in raci-upd-ta", rows: "4",
         placeholder: "Brain-dump a few details — bullets, fragments, whatever. CC will write it up." }, []);
       var msg = el("div", { "class": "raci-modal-msg" }, []);
-      var polish = el("button", { "class": "raci-btn", title: window.CPL_REPORT_PROXY_URL ? "Let CC turn your brain-dump into a clean update" : "AI proxy not configured" }, ["✨ Let CC write it up"]);
+      var polish = el("button", { "class": "raci-btn", title: window.CPL_REPORT_PROXY_URL ? "Let CC turn your brain-dump into a clean update" : "AI proxy not configured" }, ["Let CC write it up"]);
       if (!window.CPL_REPORT_PROXY_URL) polish.disabled = true;
       var save = el("button", { "class": "raci-btn raci-btn-go" }, ["Save update"]);
       polish.addEventListener("click", function () {
@@ -763,7 +772,7 @@
     closeModal();
     var box = el("div", { "class": "raci-modal" }, [
       el("div", { "class": "raci-modal-h" }, [el("strong", {}, [title]),
-        el("button", { "class": "raci-x", onclick: closeModal }, ["×"])]),
+        el("button", { "class": "raci-x", type: "button", "aria-label": "Close", onclick: closeModal }, ["×"])]),
       el("div", { "class": "raci-modal-b" }, bodyKids),
       el("div", { "class": "raci-modal-f" }, (actionKids || []).concat([
         el("button", { "class": "raci-btn", onclick: closeModal }, ["Cancel"])]))
@@ -827,7 +836,7 @@
       ROLES.map(function (r) {
         return sortableTh(r.k + " · " + r.label, r.k, state.msort, rerun, { title: r.label + " — " + r.desc });
       })));
-    tbl.appendChild(head);
+    tbl.appendChild(el("thead", {}, [head]));
     var items = visibleMatrixItems();
     // When a column sort is active, FLATTEN the tree into a flat sorted list
     // (each row carries its full id, so it stays self-describing without the
@@ -856,7 +865,7 @@
       // the RACI cells' openRoleEditor.
       if (canEdit && hasAny(rc)) {
         var cpBtn = el("button", { "class": "raci-copy-btn",
-          title: "Copy this row's R/A/C/I to other rows" }, ["⧉ copy"]);
+          title: "Copy this row's R/A/C/I to other rows" }, ["Copy"]);
         (function (src) {
           cpBtn.addEventListener("click", function (e) { e.stopPropagation(); openCopyRaci(src); });
         })(item);
@@ -876,7 +885,7 @@
       // alerts gracefully when a row has no one eligible to nudge yet.
       if (canEdit) {
         var inBtn = el("button", { "class": "raci-itemnudge-btn",
-          title: "Nudge this item's Responsible/Accountable people — emails the card + a link to update it" }, ["📣"]);
+          title: "Nudge this item's Responsible/Accountable people — emails the card + a link to update it" }, ["Nudge"]);
         (function (it) { inBtn.addEventListener("click", function (e) { e.stopPropagation(); openItemNudge(it); }); })(item);
         itemCell.appendChild(inBtn);
       }
@@ -900,13 +909,13 @@
     var total = state.items.filter(function (i) { return !i.isActivity; }).length;
     var countKids = [
       (state.mfilter.scope === "all" && !state.mfilter.q)
-        ? total + " sub-activities & projects across 4 Activities"
+        ? total + " sub-activities & projects across " + ACTIVITIES.length + " Activities"
         : "Showing " + nShown + " of " + total + " sub-activities & projects"];
     // When a sort is active the tree is flattened — offer a one-click way back.
     if (sorted) {
       var reset = el("button", { "class": "raci-tree-reset",
         title: "Clear the column sort and restore the Activity → sub-activity → project tree" },
-        ["⤺ tree view"]);
+        ["Tree view"]);
       reset.addEventListener("click", function () { state.msort.col = null; state.msort.dir = 1; fillMatrixTable(holder); });
       countKids.push(el("span", { "class": "raci-sort-note" }, [" · sorted by column — "]));
       countKids.push(reset);
@@ -952,8 +961,8 @@
     var nudgeBtn = null;
     if (state.sess) {
       nudgeBtn = el("button", { "class": "raci-btn raci-filter-nudge",
-        title: "Email ALL opted-in team members for status updates (opens your mail app — nothing is auto-sent). Use a row's 📣 to nudge just that one item." },
-        ["📣 Nudge All"]);
+        title: "Email ALL opted-in team members for status updates (opens your mail app — nothing is auto-sent). Use a row's Nudge to nudge just that one item." },
+        ["Nudge All"]);
       nudgeBtn.addEventListener("click", openNudge);
     }
     wrap.appendChild(el("div", { "class": "raci-filter-bar" }, [sel, search, clear, nudgeBtn]));
@@ -1018,18 +1027,18 @@
     allCb.disabled = !canEdit || !emailMembers.length;
     allCb.title = canEdit ? "Check all / clear all" : "Sign in to change";
     allCb.addEventListener("change", function () { setAllNudge(allCb.checked); });
-    var nudgeTh = el("th", { "class": "raci-th-nudge", title: "Include members in the update nudges" }, [
+    var nudgeTh = el("th", { "class": "raci-th-nudge", scope: "col", title: "Include members in the update nudges" }, [
       el("div", { "class": "raci-th-nudge-wrap" }, ["Nudge for Updates",
         canEdit ? el("label", { "class": "raci-nudge-all-lbl", title: "Check all / clear all" },
           [allCb, el("span", {}, ["all"])]) : null])]);
     var tbl = el("table", { "class": "raci-table raci-dir" }, [
-      el("tr", {}, [
+      el("thead", {}, [el("tr", {}, [
         sortableTh("Name", "name", state.dsort, render),
         sortableTh("Role / title", "role", state.dsort, render),
         sortableTh("Email", "email", state.dsort, render),
         nudgeTh,
         sortableTh("Last nudged", "nudged", state.dsort, render, { "class": "raci-th-nudge", title: "When this member was last nudged" }),
-        sortableTh("Status", "status", state.dsort, render, { "class": "raci-th-nudge", title: "Whether a response has been recorded since the last nudge" })])]);
+        sortableTh("Status", "status", state.dsort, render, { "class": "raci-th-nudge", title: "Whether a response has been recorded since the last nudge" })])])]);
     // Sort a COPY (never mutate state.members order — the matrix + saves rely on it).
     var dmembers = state.members.slice();
     if (state.dsort.col) {
@@ -1042,7 +1051,8 @@
     }
     dmembers.forEach(function (m) {
       var on = m.nudge !== false; // default true
-      var cb = el("input", { type: "checkbox", "class": "raci-nudge-cb" });
+      var cb = el("input", { type: "checkbox", "class": "raci-nudge-cb",
+        "aria-label": "Nudge " + (m.name || "this member") + " for updates" });
       cb.checked = on; cb.disabled = !canEdit || !m.email;
       cb.title = !m.email ? "Add an email before enabling nudges" : (canEdit ? "" : "Sign in to change");
       if (canEdit && m.email) cb.addEventListener("change", function () { toggleNudge(m, cb); });
@@ -1059,7 +1069,9 @@
         editCell(m, "name", "raci-dir-n"),
         editCell(m, "role", "raci-dir-r"),
         editCell(m, "email", "raci-dir-e"),
-        el("td", { "class": "raci-nudge-cell" }, [cb]),
+        // The 16px box sits in a 24px label: the label is the hit area WCAG
+        // 2.2 SC 2.5.8 measures (S356: the bare box measured 16x16 on every row).
+        el("td", { "class": "raci-nudge-cell" }, [el("label", { "class": "raci-nudge-hit" }, [cb])]),
         nudgedTd, statusTd]));
     });
     var nudgeOn = state.members.filter(function (m) { return m.nudge !== false && m.email; }).length;
@@ -1067,8 +1079,13 @@
       el("span", {}, [state.members.length + " team members · " +
         state.members.filter(function (m) { return m.email; }).length + " with email · " +
         nudgeOn + " set to nudge"])]);
-    if (canEdit) head.appendChild(el("button", { "class": "raci-btn raci-btn-go", onclick: openAddMember }, ["+ Add member"]));
-    return el("div", {}, [head, tbl,
+    if (canEdit) head.appendChild(el("button", { "class": "raci-btn raci-btn-go", onclick: openAddMember }, ["Add member"]));
+    // The directory is ~610px wide; at 390px it pushed the PAGE sideways by
+    // 223px (S356, measured signed in). Same holder as the matrix: it scrolls
+    // inside itself, is keyboard-reachable and is named.
+    var dirHolder = el("div", { "class": "raci-table-holder", tabindex: "0",
+      role: "region", "aria-label": "Team directory, scrolls horizontally" }, [tbl]);
+    return el("div", {}, [head, dirHolder,
       el("div", { "class": "raci-legend" }, [canEdit
         ? "Uncheck a member to hold them out of the update nudges (re-check to re-enable anytime)."
         : "“Nudge for Updates” controls who receives the weekly update reminders — sign in to change."])]);
@@ -1237,10 +1254,10 @@
   function nudgeStatus(m) {
     var nud = m.last_nudged_at ? new Date(m.last_nudged_at).getTime() : 0;
     var resp = m.last_response_at ? new Date(m.last_response_at).getTime() : 0;
-    if (resp && resp >= nud) return { txt: "✓ responded " + relTime(m.last_response_at), cls: "raci-st-ok" };
+    if (resp && resp >= nud) return { txt: "responded " + relTime(m.last_response_at), cls: "raci-st-ok" };
     if (nud) {
       var days = Math.floor((Date.now() - nud) / 86400000);
-      return { txt: "⏳ awaiting" + (days >= 1 ? " " + days + "d" : ""),
+      return { txt: "awaiting" + (days >= 1 ? " " + days + "d" : ""),
         cls: days >= 7 ? "raci-st-overdue" : "raci-st-wait" };
     }
     return { txt: "—", cls: "raci-st-none" };
@@ -1339,6 +1356,10 @@
     var root = document.getElementById("raci-root");
     if (!root) return;
     root.innerHTML = "";
+    // Drop the shell's dashed loading placeholder (border, tint, centered text):
+    // left on, it framed the finished tab and centered every matrix cell, the
+    // tree's indent included (S356 UI pass; map_export.js does the same).
+    root.removeAttribute("style");
 
     // Header + intro
     root.appendChild(el("div", { "class": "raci-intro" }, [
@@ -1360,14 +1381,15 @@
       (state.sess ? "  —  click any cell to assign people" : "  —  sign in to edit")]));
   }
   function mkToggle(view, label) {
-    return el("button", { "class": "raci-tg" + (state.view === view ? " on" : ""),
+    return el("button", { "class": "raci-tg" + (state.view === view ? " on" : ""), type: "button",
+      "aria-pressed": state.view === view ? "true" : "false",
       onclick: function () { state.view = view; render(); } }, [label]);
   }
   function renderAuth() {
     var w = el("div", { "class": "raci-auth" }, []);
     if (state.sess) {
       var who = state.sess.teamPass ? "team phrase" : (state.sess.email || "(no email)");
-      w.appendChild(el("span", {}, ["✓ Editing unlocked (", who, ")"]));
+      w.appendChild(el("span", {}, ["Editing unlocked (", who, ")"]));
       // Shown to phrase users too, now that it just opens the Team Phrases TAB.
       // Hiding it was half of why Sam lost track of it: a phrase holder had no
       // way to learn the surface existed. The tab states plainly that viewing
@@ -1376,12 +1398,12 @@
         "class": "raci-btn",
         title: "Open the Team Phrases tab — viewing or changing a phrase needs a reviewer sign-in",
         onclick: openPhraseAdmin
-      }, ["⚙ Manage team phrases"]));
+      }, ["Manage team phrases"]));
       w.appendChild(el("button", { "class": "raci-btn", onclick: function () { signOut(); load(render); } }, ["Lock"]));
     } else {
       var inp = el("input", { type: "password", placeholder: "team phrase", "class": "raci-in" });
       var st = el("span", { "class": "raci-auth-msg" }, []);
-      var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["🔓 Unlock editing"]);
+      var btn = el("button", { "class": "raci-btn raci-btn-go" }, ["Unlock editing"]);
       function tryUnlock() {
         var p = (inp.value || "").trim();
         if (!p) { st.textContent = "Enter the team phrase."; return; }
@@ -1424,112 +1446,116 @@
     if (document.getElementById("raci-css")) return;
     var css = "" +
       "#raci-root{padding:0 0 2rem;max-width:1100px;margin:0 auto;font-family:'Source Sans 3',Arial,sans-serif;}" +
-      ".raci-intro h2{color:var(--navy-primary,#0A2240);margin:0 0 .25rem;}" +
-      ".raci-intro p{color:var(--text-faint,#555);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);}" +
+      ".raci-intro h2{color:var(--navy-primary);margin:0 0 .25rem;}" +
+      ".raci-intro p{color:var(--text-muted);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);}" +
       ".raci-bar{display:flex;flex-wrap:wrap;gap:.75rem 1rem;align-items:center;justify-content:space-between;margin-bottom:.9rem;}" +
-      ".raci-toggle{display:inline-flex;border:1px solid var(--border,#ddd);border-radius:7px;overflow:hidden;}" +
-      ".raci-tg{background:var(--surface-opaque);border:0;padding:.4rem .9rem;font-size:.85rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);cursor:pointer;}" +
-      ".raci-tg.on{background:var(--navy-primary,#0A2240);color:var(--on-accent);}" +
-      ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.85rem;color:var(--text-muted);}" +
-      ".raci-in{padding:.35rem .5rem;border:1px solid var(--border,#ccc);border-radius:5px;font-size:.85rem;font-family:inherit;min-width:0;max-width:100%;}"  /* a <select> has an intrinsic width flex will not shrink past without min-width:0 */ +
-      ".raci-auth-msg{font-size:.8rem;color:#2A7D4F;flex-basis:100%;}" +
-      ".raci-auth-hint{font-size:.75rem;color:var(--text-muted,#777);flex-basis:100%;}" +
-      ".raci-btn{background:var(--surface-opaque);border:1px solid var(--border,#ccc);border-radius:5px;padding:.35rem .7rem;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--navy-secondary,#1c3d5a);}" +
-      ".raci-btn-go{background:var(--navy-primary,#0A2240);color:var(--on-accent);border-color:var(--navy-primary,#0A2240);}" +
-      ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:var(--surface-opaque);border:1px solid var(--border,#e6e6e6);border-radius:8px;overflow:hidden;}" +
+      ".raci-toggle{display:inline-flex;border:1px solid var(--border);border-radius:7px;overflow:hidden;}" +
+      ".raci-tg{background:var(--surface-opaque);border:0;padding:.4rem .9rem;font-size:.85rem;font-weight:600;color:var(--navy-secondary);cursor:pointer;}" +
+      ".raci-tg.on{background:var(--navy-primary);color:var(--on-accent);}" +
+      ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem 18px;align-items:center;font-size:.85rem;color:var(--text-muted);}" +
+      ".raci-in{padding:.35rem .5rem;border:1px solid var(--border);border-radius:5px;font-size:.85rem;font-family:inherit;min-width:0;max-width:100%;}"  /* a <select> has an intrinsic width flex will not shrink past without min-width:0 */ +
+      ".raci-auth-msg{font-size:.8rem;color:var(--text-body);flex-basis:100%;}" +
+      ".raci-auth-hint{font-size:.75rem;color:var(--text-muted);flex-basis:100%;}" +
+      // Controls are underlined words (Sam, 2026-10-09; reference-ui-design-system,
+      // "Controls"): no border, no fill, underlined at rest, cobalt, 24px tall.
+      // The filled "go" button is retired with the rest; the order of the words
+      // carries the lead. One rule for every control this tab draws, so a new
+      // one cannot reintroduce the 15px "Update" target the S356 pass measured.
+      ".raci-btn,.raci-upd-btn,.raci-copy-btn,.raci-tree-reset,.raci-upd-act,.raci-itemnudge-btn{border:0;background:none;color:var(--cobalt);font-family:inherit;font-weight:600;padding:2px 0;min-height:24px;min-width:24px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;cursor:pointer;}" +
+      ".raci-btn:hover,.raci-upd-btn:hover,.raci-copy-btn:hover,.raci-tree-reset:hover,.raci-upd-act:hover,.raci-itemnudge-btn:hover{text-decoration-thickness:2px;}" +
+      ".raci-btn:disabled{color:var(--text-muted);text-decoration:none;cursor:default;}" +
+      ".raci-btn{font-size:.85rem;}" +
+      ".raci-upd-btn,.raci-copy-btn,.raci-itemnudge-btn{margin-left:18px;font-size:.78rem;vertical-align:middle;}" +
+      ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;overflow:hidden;}" +
       ".raci-table-holder{overflow-x:auto;max-width:100%;}" +
-      ".raci-table th{background:var(--navy-primary,#0A2240);color:var(--on-accent);font-weight:600;text-align:left;padding:.5rem .6rem;font-size:.78rem;}" +
-      ".raci-th-sort{cursor:pointer;user-select:none;}.raci-th-sort:hover{background:var(--navy-secondary,#1b3a5c);}" +
-      ".raci-th-active{background:var(--navy-secondary,#1b3a5c);}" +
-      ".raci-tree-reset{background:none;border:1px solid var(--border,#ccc);border-radius:4px;color:var(--accent-link,#1b6ec2);" +
-      "cursor:pointer;font-size:.72rem;padding:.1rem .4rem;margin-left:.15rem;}.raci-tree-reset:hover{background:var(--surface-muted,#f0f0f0);}" +
-      ".raci-sort-note{color:var(--text-faint,#777);}" +
+      ".raci-table th{background:var(--navy-primary);color:var(--on-accent);font-weight:600;text-align:left;padding:.5rem .6rem;font-size:.78rem;}" +
+      ".raci-th-btn{border:0;background:none;color:inherit;font:inherit;padding:0;min-height:24px;text-align:left;cursor:pointer;}.raci-th-btn:focus-visible{outline-color:var(--on-accent);}" +
+      ".raci-th-sort{cursor:pointer;user-select:none;}.raci-th-sort:hover{background:var(--navy-secondary);}" +
+      ".raci-th-active{background:var(--navy-secondary);}" +
+      ".raci-tree-reset{font-size:.78rem;margin-left:.15rem;}" +
+      ".raci-sort-note{color:var(--text-muted);}" +
       ".raci-th-item{min-width:240px;}" +
-      ".raci-table td{padding:.45rem .6rem;border-top:1px solid var(--border,#eee);vertical-align:top;}" +
-      ".raci-row-act{background:var(--surface-2,#f4f7fb);}" +
-      ".raci-row-act .raci-item-id{background:var(--gold-accent,#B8860B);color:var(--on-mustard);}" +
+      ".raci-table td{padding:.45rem .6rem;border-top:1px solid var(--border);vertical-align:top;}" +
+      ".raci-row-act{background:var(--surface-2);}" +
+      ".raci-row-act .raci-item-id{background:var(--gold-accent);color:var(--on-mustard);}" +
       ".raci-row-act .raci-item-name{font-weight:700;}" +
-      ".raci-row-sub{background:var(--surface-1,#fafcff);}" +
-      ".raci-row-sub .raci-item-id{background:var(--navy-secondary,#1c3d5a);}" +
+      ".raci-row-sub{background:var(--surface-1);}" +
+      ".raci-row-sub .raci-item-id{background:var(--navy-secondary);}" +
       ".raci-row-sub .raci-item-name{font-weight:600;}" +
-      ".raci-row-proj .raci-item-id{background:var(--surface-2,#eef3f9);color:var(--navy-secondary,#1c3d5a);border:1px solid var(--border,#d4dde7);}" +
-      ".raci-row-proj .raci-item-name{color:var(--text-faint,#555);}" +
-      ".raci-tier-tag{display:inline-block;margin-left:.45rem;font-size:.62rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy-secondary,#1c3d5a);background:var(--surface-2,#eef3f9);border-radius:3px;padding:.02rem .3rem;vertical-align:middle;}" +
+      ".raci-row-proj .raci-item-id{background:var(--surface-2);color:var(--navy-secondary);border:1px solid var(--border);}" +
+      ".raci-row-proj .raci-item-name{color:var(--text-muted);}" +
+      ".raci-tier-tag{display:inline-block;margin-left:.45rem;font-size:.62rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy-secondary);background:var(--surface-2);border-radius:3px;padding:.02rem .3rem;vertical-align:middle;}" +
       ".raci-item-cell{line-height:1.25;}" +
-      ".raci-item-id{display:inline-block;font-weight:700;font-size:.72rem;background:var(--navy-secondary,#1c3d5a);color:var(--on-accent);border-radius:4px;padding:.05rem .35rem;margin-right:.4rem;}" +
-      ".raci-item-name{color:var(--text-strong,#222);}" +
+      ".raci-item-id{display:inline-block;font-weight:700;font-size:.72rem;background:var(--navy-secondary);color:var(--on-accent);border-radius:4px;padding:.05rem .35rem;margin-right:.4rem;}" +
+      ".raci-item-name{color:var(--text-strong);}" +
       ".raci-cell{min-width:120px;}" +
-      ".raci-cell-edit{cursor:pointer;}.raci-cell-edit:hover{background:var(--surface-2,#eef3f9);}" +
-      ".raci-chip{display:inline-block;background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);color:var(--navy-secondary,#1c3d5a);border-radius:11px;padding:.05rem .5rem;margin:.1rem .2rem .1rem 0;font-size:.75rem;font-weight:600;}" +
-      ".raci-empty{color:var(--text-muted,#aaa);font-size:.78rem;}" +
+      ".raci-cell-edit{cursor:pointer;}.raci-cell-edit:hover{background:var(--surface-2);}" +
+      ".raci-chip{display:inline-block;background:var(--surface-2);border:1px solid var(--border);color:var(--navy-secondary);border-radius:11px;padding:.05rem .5rem;margin:.1rem .2rem .1rem 0;font-size:.75rem;font-weight:600;}" +
+      ".raci-empty{color:var(--text-muted);font-size:.78rem;}" +
       ".raci-filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.7rem;}" +
       ".raci-filter-sel{max-width:340px;}" +
       ".raci-filter-q{flex:1 1 200px;min-width:160px;}" +
-      ".raci-filter-clear{padding:.35rem .6rem;}" +
-      ".raci-count{margin-top:.45rem;color:var(--text-muted,#777);font-size:.78rem;}" +
-      ".raci-row-focus td{background:var(--gold-soft,#fbf3d9)!important;box-shadow:inset 3px 0 0 var(--gold-accent,#B8860B);animation:raciFocusFade 2.6s ease-out;}" +
-      "@keyframes raciFocusFade{0%{background:var(--gold-accent,#B8860B);}30%{background:var(--gold-soft,#fbf3d9);}100%{background:transparent;}}" +
-      ".raci-legend{margin-top:.5rem;color:var(--text-muted,#777);font-size:.78rem;}" +
+      ".raci-count{margin-top:.45rem;color:var(--text-muted);font-size:.78rem;}" +
+      ".raci-row-focus td{background:var(--gold-soft,#fbf3d9)!important;box-shadow:inset 3px 0 0 var(--gold-accent);animation:raciFocusFade 2.6s ease-out;}" +
+      "@keyframes raciFocusFade{0%{background:var(--gold-accent);}30%{background:var(--gold-soft,#fbf3d9);}100%{background:transparent;}}" +
+      ".raci-legend{margin-top:.5rem;color:var(--text-muted);font-size:.78rem;}" +
       ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:var(--text-muted);font-size:.85rem;}" +
-      ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:var(--text-muted);}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
+      ".raci-dir-n{font-weight:600;color:var(--text-strong);}.raci-dir-r{color:var(--text-muted);}.raci-dir-e a{color:var(--accent-link);}" +
       ".raci-th-nudge{text-align:center;white-space:nowrap;}.raci-nudge-cell{text-align:center;}" +
       ".raci-th-nudge-wrap{display:flex;flex-direction:column;align-items:center;gap:.15rem;}" +
-      ".raci-nudge-all-lbl{display:inline-flex;align-items:center;gap:.25rem;font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--text-faint,#888);cursor:pointer;}" +
-      ".raci-filter-nudge{margin-left:auto;background:var(--navy-primary,#0A2240);color:var(--on-accent);border-color:var(--navy-primary,#0A2240);}" +
-      ".raci-filter-nudge:hover{background:var(--navy-secondary,#1c3d5a);}" +
-      ".raci-nudged-cell{text-align:center;font-size:.78rem;color:var(--text-faint,#777);white-space:nowrap;}" +
+      // Sits on the header's ink fill, so it takes the header's own ink (--on-accent).
+      // A page ink here (--text-faint, then --text-muted) measured 2.5:1 light, 2.0:1 dark.
+      ".raci-nudge-all-lbl{display:inline-flex;align-items:center;gap:.25rem;min-height:24px;font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:inherit;cursor:pointer;}" +
+      ".raci-filter-nudge{margin-left:auto;}" +
+      ".raci-nudged-cell{text-align:center;font-size:.78rem;color:var(--text-muted);white-space:nowrap;}" +
       ".raci-status-cell{text-align:center;font-size:.78rem;white-space:nowrap;}" +
-      ".raci-st-ok{color:var(--ok,#2e7d32);font-weight:600;}" +
-      ".raci-st-wait{color:var(--text-faint,#777);}" +
-      ".raci-st-overdue{color:#b3261e;font-weight:600;}" +
-      ".raci-st-none{color:var(--text-faint,#aaa);}" +
-      ".raci-upd-btn{margin-left:.4rem;font-size:.66rem;font-weight:600;color:var(--text-muted,#777);background:none;border:1px solid transparent;border-radius:4px;padding:.04rem .3rem;cursor:pointer;vertical-align:middle;}" +
-      ".raci-upd-btn:hover{background:var(--surface-2,#eef3f9);border-color:var(--border,#d4dde7);}" +
-      ".raci-upd-btn.has{color:var(--navy-secondary,#1c3d5a);}" +
-      ".raci-upd-summary{background:var(--surface-2,#f4f7fb);border-radius:6px;padding:.5rem .6rem;margin:.2rem 0 .6rem;font-size:.82rem;line-height:1.4;}" +
-      ".raci-upd-prev{color:var(--text-faint,#555);margin-top:.2rem;}.raci-upd-desc{color:var(--text-faint,#777);margin-top:.2rem;font-size:.78rem;}" +
-      ".raci-upd-h{font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.03em;color:var(--text-faint,#888);margin:.6rem 0 .3rem;}" +
+      ".raci-st-ok{color:var(--hunter);font-weight:600;}" +
+      ".raci-st-wait{color:var(--text-muted);}" +
+      ".raci-st-overdue{color:var(--crimson);font-weight:600;}" +
+      ".raci-st-none{color:var(--text-muted);}" +
+
+      ".raci-upd-summary{background:var(--surface-2);border-radius:6px;padding:.5rem .6rem;margin:.2rem 0 .6rem;font-size:.82rem;line-height:1.4;}" +
+      ".raci-upd-prev{color:var(--text-muted);margin-top:.2rem;}.raci-upd-desc{color:var(--text-muted);margin-top:.2rem;font-size:.78rem;}" +
+      ".raci-upd-h{font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.03em;color:var(--text-muted);margin:.6rem 0 .3rem;}" +
       ".raci-upd-hist{display:flex;flex-direction:column;gap:.4rem;max-height:44vh;overflow:auto;}" +
-      ".raci-upd-entry{border-left:3px solid var(--gold-accent,#B8860B);padding:.2rem .5rem;background:var(--surface-2,#f8fafc);border-radius:0 5px 5px 0;}" +
-      ".raci-upd-body{font-size:.85rem;color:var(--text-strong,#222);}" +
-      ".raci-upd-meta{font-size:.72rem;color:var(--text-faint,#999);margin-top:.15rem;}" +
-      ".raci-upd-acts{display:flex;gap:.4rem;margin-top:.3rem;}" +
-      ".raci-upd-act{font-size:.68rem;font-weight:600;color:var(--text-faint,#777);background:none;border:1px solid var(--border,#d4dde7);border-radius:4px;padding:.08rem .4rem;cursor:pointer;}" +
-      ".raci-upd-act:hover{background:var(--surface-2,#eef3f9);color:var(--navy-secondary,#1c3d5a);}" +
-      ".raci-upd-del:hover{background:#fdecec;color:#b3261e;border-color:#e9b9b4;}" +
+      ".raci-upd-entry{border-left:3px solid var(--gold-accent);padding:.2rem .5rem;background:var(--surface-2);border-radius:0 5px 5px 0;}" +
+      ".raci-upd-body{font-size:.85rem;color:var(--text-strong);}" +
+      ".raci-upd-meta{font-size:.72rem;color:var(--text-muted);margin-top:.15rem;}" +
+      ".raci-upd-acts{display:flex;gap:18px;margin-top:.3rem;}" +
+      ".raci-upd-act{font-size:.78rem;}" +
+      ".raci-upd-del:hover{color:var(--crimson);text-decoration-color:var(--crimson);}" +
       ".raci-upd-ta{width:100%;box-sizing:border-box;font-family:inherit;font-size:.85rem;}" +
-      ".raci-upd-actions{display:flex;gap:.5rem;margin:.3rem 0;}" +
-      ".raci-itemnudge-btn{margin-left:.3rem;font-size:.66rem;background:none;border:1px solid transparent;border-radius:4px;padding:.04rem .3rem;cursor:pointer;vertical-align:middle;}" +
-      ".raci-itemnudge-btn:hover{background:var(--gold-soft,#fbf3d9);border-color:var(--gold-accent,#B8860B);}" +
-      ".raci-nudge-cb{width:16px;height:16px;cursor:pointer;accent-color:var(--navy-primary,#0A2240);}" +
-      ".raci-row-muted{opacity:.5;}.raci-row-muted .raci-dir-n{font-weight:500;}" +
-      ".raci-edit-cell{cursor:text;border-radius:4px;}.raci-edit-cell:hover{background:var(--surface-2,#eef3f9);outline:1px dashed var(--border,#cdd7e1);}" +
+      ".raci-upd-actions{display:flex;gap:18px;margin:.3rem 0;}" +
+
+      ".raci-nudge-cb{width:16px;height:16px;cursor:pointer;accent-color:var(--navy-primary);}" +
+      ".raci-nudge-hit{display:inline-flex;align-items:center;justify-content:center;min-width:24px;min-height:24px;cursor:pointer;}" +
+      ".raci-row-muted .raci-dir-n,.raci-row-muted .raci-dir-r{color:var(--text-muted);}.raci-row-muted .raci-dir-n{font-weight:500;}" +
+      ".raci-edit-cell{cursor:text;border-radius:4px;}.raci-edit-cell:hover{background:var(--surface-2);outline:1px dashed var(--border);}" +
       ".raci-cell-in{width:100%;box-sizing:border-box;}" +
       ".raci-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;display:flex;align-items:flex-start;justify-content:center;padding:4vh 1rem;overflow:auto;}" +
       ".raci-modal{background:var(--surface-opaque);border-radius:10px;max-width:480px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);}" +
-      ".raci-modal-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;background:var(--navy-primary,#0A2240);color:var(--on-accent);border-radius:10px 10px 0 0;font-size:.92rem;}" +
-      ".raci-x{background:none;border:0;color:#fff;font-size:1.3rem;cursor:pointer;line-height:1;}" +
+      ".raci-modal-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;background:var(--navy-primary);color:var(--on-accent);border-radius:10px 10px 0 0;font-size:.92rem;}" +
+      ".raci-x{background:none;border:0;color:var(--on-accent);font-size:1.3rem;cursor:pointer;line-height:1;min-width:24px;min-height:24px;}.raci-x:focus-visible{outline-color:var(--on-accent);}" +
       ".raci-modal-b{padding:1rem;max-height:60vh;overflow:auto;}.raci-modal-sub{color:var(--text-muted);font-size:.82rem;margin-bottom:.6rem;}" +
-      ".raci-modal-f{display:flex;gap:.5rem;justify-content:flex-end;padding:.7rem 1rem;border-top:1px solid var(--border,#eee);}" +
-      ".raci-modal-msg{font-size:.82rem;color:#A33;margin-top:.5rem;min-height:1em;}" +
-      ".raci-unlock{margin-top:.4rem;padding-top:.6rem;border-top:1px solid var(--border,#eee);}" +
+      ".raci-modal-f{display:flex;gap:18px;justify-content:flex-end;padding:.7rem 1rem;border-top:1px solid var(--border);}" +
+      ".raci-modal-msg{font-size:.82rem;color:var(--crimson);margin-top:.5rem;min-height:1em;}" +
+      ".raci-unlock{margin-top:.4rem;padding-top:.6rem;border-top:1px solid var(--border);}" +
       ".raci-unlock-row{margin:.5rem 0 .2rem;}" +
       ".raci-pick-list{display:flex;flex-direction:column;gap:.1rem;}" +
       ".raci-pick{display:flex;align-items:center;gap:.5rem;padding:.3rem .35rem;border-radius:5px;cursor:pointer;}" +
-      ".raci-pick:hover{background:var(--surface-2,#f4f7fb);}" +
-      ".raci-pick-n{font-weight:600;color:var(--text-strong,#222);font-size:.85rem;}" +
-      ".raci-pick-r{color:#888;font-size:.76rem;margin-left:auto;text-align:right;}" +
+      ".raci-pick:hover{background:var(--surface-2);}" +
+      ".raci-pick-n{font-weight:600;color:var(--text-strong);font-size:.85rem;}" +
+      ".raci-pick-r{color:var(--text-muted);font-size:.76rem;margin-left:auto;text-align:right;}" +
       ".raci-modal-b .raci-in{display:block;width:100%;margin-bottom:.5rem;box-sizing:border-box;}" +
-      ".raci-copy-btn{margin-left:.5rem;font-size:.64rem;font-weight:600;color:var(--accent-link,#1c5d99);background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);border-radius:4px;padding:.04rem .35rem;cursor:pointer;vertical-align:middle;}" +
-      ".raci-copy-btn:hover{background:var(--gold-soft,#fbf3d9);border-color:var(--gold-accent,#B8860B);}" +
-      ".raci-copy-summary{display:flex;flex-direction:column;gap:.25rem;margin:0 0 .7rem;padding:.5rem .6rem;background:var(--surface-2,#f4f7fb);border-radius:6px;}" +
+
+      ".raci-copy-summary{display:flex;flex-direction:column;gap:.25rem;margin:0 0 .7rem;padding:.5rem .6rem;background:var(--surface-2);border-radius:6px;}" +
       ".raci-copy-role{display:flex;align-items:center;gap:.5rem;}" +
-      ".raci-copy-rk{font-weight:700;color:var(--navy-secondary,#1c3d5a);min-width:1.1rem;}" +
+      ".raci-copy-rk{font-weight:700;color:var(--navy-secondary);min-width:1.1rem;}" +
       ".raci-copy-tools{display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem;}" +
       ".raci-copy-tools .raci-in{flex:1 1 auto;margin-bottom:0;}" +
       ".raci-copy-all{display:flex;align-items:center;gap:.35rem;white-space:nowrap;font-size:.78rem;color:var(--text-muted);cursor:pointer;}" +
-      ".raci-copy-list{max-height:38vh;overflow:auto;border:1px solid var(--border,#e3e9f0);border-radius:6px;padding:.2rem;}" +
-      ".raci-copy-warn{margin-top:.5rem;font-size:.76rem;color:#A33;}";
+      ".raci-copy-list{max-height:38vh;overflow:auto;border:1px solid var(--border);border-radius:6px;padding:.2rem;}" +
+      ".raci-copy-warn{margin-top:.5rem;font-size:.76rem;color:var(--crimson);}";
     document.head.appendChild(el("style", { id: "raci-css", html: css }));
   }
 
@@ -1542,7 +1568,7 @@
   // ─── Boot ──────────────────────────────────────────────────────────────────
   function boot() {
     var root = document.getElementById("raci-root");
-    if (root) root.innerHTML = '<p style="color:#888;padding:1rem;">Loading Team & RACI…</p>';
+    if (root) root.innerHTML = '<p style="color:var(--text-muted);padding:1rem;">Loading Team & RACI…</p>';
     load(function () { render(); consumePendingFocus(); });
   }
 
