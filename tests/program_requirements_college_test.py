@@ -242,23 +242,36 @@ sm = C.summarize(recs, {"college": "Cerritos College", "programs": 292, "with_cl
 check(sm["passed_machine_checks"] == 1 and sm["failed"]["arithmetic"] == 1 and sm["errors"] == 1
       and sm["cost_usd"] == 0.12, "the account counts passes, each failed check, errors and cost")
 
+# ── which statuses the harvest reads (Sam's go, 2026-10-10: Approved too) ──
+check("status.like.Active*" in C.STATUS_FILTER and "status.eq.Approved" in C.STATUS_FILTER
+      and C.STATUS_FILTER.startswith("or=("),
+      "the read takes Active, Active - Teachout Only and Approved programs: a college may offer an Approved "
+      "program, and 1,423 statewide had gone unread")
+
 # ── the workflow: reads only when asked, spends only when asked ─────────────
 wf = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml")).read()
 read_job = wf.split("\n  read:\n")[1].split("\n  load:\n")[0]
-load_job = wf.split("\n  load:\n")[1]
+load_job = wf.split("\n  load:\n")[1].split("\n  display:\n")[0]
+display_job = wf.split("\n  display:\n")[1]
 check("CENSUS_DELAY_MS: '4000'" in wf, "the capture reads at the census's pace")
 check("startsWith(github.event.head_commit.message, '[extract]')" in wf and "workflow_dispatch" in wf
       and "contains(github.event.head_commit.message" not in wf,
       "the extraction spends model calls only on a dispatch or a commit whose message STARTS with [extract]")
 check("startsWith(github.event.head_commit.message, '[read]')" in read_job.split("runs-on:")[0]
-      and "github.event.inputs.step != 'load'" in read_job.split("runs-on:")[0],
+      and "github.event.inputs.step != 'load'" in read_job.split("runs-on:")[0]
+      and "github.event.inputs.step != 'display'" in read_job.split("runs-on:")[0],
       "a push reads the catalog only when its message starts with [read] or [extract]: an edit to the "
       "script never re-reads 360 pages of a college's catalog")
 check("startsWith(github.event.head_commit.message, '[load]')" in load_job.split("runs-on:")[0]
       and "github.event.inputs.step == 'load'" in load_job.split("runs-on:")[0],
       "the load runs only on a dispatch with step=load or a commit whose message STARTS with [load]")
-check(wf.count("contents: write") == 2 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 2
-      and wf.count("git push") == 2,
+display_if = display_job.split("runs-on:")[0]
+check("github.event.inputs.step == 'display'" in display_if and "github.event_name == 'workflow_dispatch'" in display_if
+      and "head_commit" not in display_if,
+      "the display write runs only on a dispatch with step=display, never on a push: it changes checked "
+      "programs, which waits on Sam's go")
+check(wf.count("contents: write") == 3 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 3
+      and wf.count("git push") == 3,
       "each job writes only to the branch that ran it")
 
 
@@ -267,12 +280,14 @@ def steps(job):
 
 
 key_line = "SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}"
-holders = [st.splitlines()[0] for st in steps(read_job) + steps(load_job) if "SUPABASE_SERVICE_KEY" in st]
-check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 4
-      and holders == ["- name: Extract and score", "- name: Load the committed records, unchecked"],
-      "the service key reaches the extraction step and the load step, and no other: %r" % holders)
+holders = [st.splitlines()[0] for st in steps(read_job) + steps(load_job) + steps(display_job)
+           if "SUPABASE_SERVICE_KEY" in st]
+check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 6
+      and holders == ["- name: Extract and score", "- name: Load the committed records, unchecked",
+                      "- name: Apply the display build the page carries"],
+      "the service key reaches the extraction, load and display steps, and no other: %r" % holders)
 check("if: env.EXTRACT == 'true'" in read_job, "the extraction step runs only when asked")
-check(wf.count("github.actor != 'github-actions[bot]'") == 2, "the filing and receipt commits never run the workflow again")
+check(wf.count("github.actor != 'github-actions[bot]'") == 3, "the filing and receipt commits never run the workflow again")
 
 # ── the load: unchecked, insert-only, and reversible from its receipt ───────
 import json  # noqa: E402

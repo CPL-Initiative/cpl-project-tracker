@@ -1,0 +1,180 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "08074",
+ "shape": "certificate",
+ "title": "Electronic Communications",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-communications-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5886,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5886,
+    "output_tokens": 1076,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1076,
+  "output_tokens_details": {
+   "thinking_tokens": 203
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04506,
+ "ms": 13296,
+ "seconds": 13.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electronic Communications (Certificate N0973)",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "be able to employ polar and/or rectangular notation to determine the magnitude and phase shift of an unknown circuit parameter (voltage, current, impedance, and/or power).",
+    "demonstrate proper use of electronic test equipment and associate measurement results with circuit behaviors in the laboratory.",
+    "quantitatively determine unknown electrical parameters from given or measured values and use these results to assess or troubleshoot faults in circuit and system operation.",
+    "communicate, both verbally and in writing, knowledge of electrical concepts and their application to the observed behaviors of circuits and systems.",
+    "in advanced courses, connect concepts learned in introductory courses to more general principles applicable in the employment context."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CNET 56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 50A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 50B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 51",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 53",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 55",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 76",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list stores this course as 'ELEC76' (no space) with no units; the catalog prints 'ELEC 76' with the same title and 2 units. It is treated as the same course, not a catalog addition.",
+   "The program learning outcomes come from the page's Outcomes tab for this certificate. The page also links to separate SLOs, which are not included in the text.",
+   "The catalog prints ELEC 50B's title as 'Electronic Circuits (AC)'; the state file has 'Electronics Circuits (AC)'.",
+   "The 26-unit total is printed in the catalog. The course units add up to 26, which matches."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

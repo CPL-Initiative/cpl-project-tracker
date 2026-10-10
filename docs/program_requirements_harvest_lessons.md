@@ -695,3 +695,53 @@ program. Whether to read Approved programs waits on Sam.
 
 **Moved from the lane (S355 compaction).** The Show the blocks fix: a class's `display:grid` beats `[hidden]`, so the toggle
 changed only its label; `.prh-body[hidden] { display:none; }` fixed it.
+
+## S356 SkyThicket, 2026-10-10: the display applied from the runner, Mt. San Antonio loaded, Approved programs read
+
+**What Sam ruled, in order.** "Yes build" (apply display build `5be53871ebf4`, Cerritos 270 and the pilot 22); "go on call 2"
+(read COCI Approved programs too); "Go" to a standing go: each display build that follows a college load applies without a
+new ask, the checked programs among it included, because every apply files its own rollback. All three are `cpl_memory`
+rows with Sam in `verified_by`.
+
+**A large data write rides the runner that holds the key.** The 22-program receipt (185 KB) had already timed out through
+`apply_migration`; Cerritos made it 2.2 MB and Mt. San Antonio 4.5 MB. Passing that through a session costs hundreds of
+thousands of tokens and the connector's patience. The database has no `pg_net` or `http` extension (enabling one is not a
+session's call), and the service role holds UPDATE on `program_requirement_records.display`. So the college workflow
+gained a `display` job (dispatch `step=display`): `kb/_program_requirements_display_apply.py` parses the committed receipt
+(a doubled quote is a quote; any line of another shape stops the parse), refuses a page that mixes builds or a receipt whose
+statements carry another build, reads each row's build, PATCHes `display` alone, and commits
+`<receipt>.applied_<run>.json` with every prior build: the rollback (null back to null, an older build by its own receipt).
+The new job lives in the existing workflow so it dispatches from a branch before merge (a new workflow file dispatches only
+once it is on the default branch).
+
+**Verify a megabyte write with one hash, not a megabyte query.** The builder's `--verify-sql` prints 44 KB of SQL for 605
+rows. Instead: `md5(string_agg(college||'|'||control_number||'|'||md5(display::text), ',' order by college collate "C",
+control_number collate "C"))` in the database, and the same over the receipt's displays through `_build_roep_display.jsonb_text`
+in Python. Both builds matched exactly: `5be53871ebf4` on 292 (a57878388c658c9bda439024c9226809), `153ead0ce992` on 605
+(ea203a054800313b80804d3a08c8c53b). The `collate "C"` makes both sides sort by bytes, so the two strings are built in the same order.
+
+**The verdict trigger is safe for a display write.** `program_requirement_records_follow_verdict` (BEFORE INSERT OR UPDATE)
+re-applies the latest verdict from `record` and `checks`; a display write changes neither, and the checked count held at 27
+through both applies.
+
+**A college's filing changes the page's build for every row.** The builder hashes its data, so filing Mt. San Antonio made it
+differ from the committed receipt on all 292 rows, and `tests/roep_display_test.py` (the receipt must write every filed
+program) turned `lints` red, which turns `test` red. Rebuild in the same PR as the filing.
+
+**Mt. San Antonio, the second full college.** Run 38059865531: 385 programs, 344 with a state list, 741 sitemap addresses, 564
+program pages read in 46 min (572 loads); 301 matched by the sitemap, 16 by the link search, 20 not found, 7 page claimed;
+317 extracted for $17.27 ($0.0545 each); 291 pass the three machine checks (25 fail arithmetic, 1 extraction error). Load run
+38064248268: 313 inserted unchecked, 3 kept (the pilot rows), 1 skipped (the error). The filing landed on S355's branch, which
+GitHub had deleted at #1954's merge and the workflow recreated off the run's checkout; a cherry-pick carried it here.
+
+**Approved programs.** `STATUS_FILTER = "or=(status.like.Active*,status.eq.Approved)"`. All 117 Approved programs at the two
+colleges carry a state course list (33 Cerritos, 84 Mt. San Antonio). An Approved program competes for pages in `assign()` like
+any other, which is right: the page goes to the program it names most fully. Re-reads run on sibling branches, because the
+workflow's concurrency group allows one running and one pending run per branch and a third dispatch replaces the pending one.
+
+**A commit the workflow pushes runs no CI.** The display job's applied-record commit is pushed with the workflow token, so the
+PR head it creates carries no checks and `test` cannot pass on it. Merge the base (or push the next real change) on top.
+
+### Moved from the lane (S356 compaction)
+
+✅ **Flags and a person's reading are built (S347; Sam, Sheet 51 card 1, *build*, 20:35Z, confirmed in chat).** The Records view places each question the reading raised on the block whose courses it names, as a numbered flag that says who fixes it (the college or the reading procedure); a row printing a flagged course carries the number; reader's notes stay notes. A reviewer signed in with the magic link also reads the unchecked records, and each record ends with Confirm and Needs a fix: one write, `program_record_verdict_add` (`chatbox/supabase_program_record_verdicts.sql`), into the append-only log `program_record_verdicts`, holding the fingerprint of the requirements the page showed (`requirements_fp`). Confirm checks a record only while that fingerprint matches and its three machine checks pass; Needs a fix files the note on the college's procedure (`open`) through `program_source_procedure_set`. A trigger keeps a person's reading across a reload of the same requirements. Live (receipt `kb/receipts/program_record_verdicts_2026-10-08_s347.sql`; a rolled-back self-test passed ten cases); governance dismisses both surfaces with the reason; guards `tests/program_record_verdicts_sql_test.py` and the tab test's blocks 11-12.

@@ -1,0 +1,260 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "42657",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/business/business-administration2-transfer/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6115,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6115,
+    "output_tokens": 1736,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1736,
+  "output_tokens_details": {
+   "thinking_tokens": 456
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05918,
+ "ms": 20360,
+ "seconds": 20.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 16,
+   "share": 0.75,
+   "missing": [
+    "BUSC1A",
+    "BUSC1AH",
+    "BUSC1B",
+    "BUSC1BH"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    30.0
+   ],
+   "stated": [
+    28.0,
+    30.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0 (AS-T Degree S0872)",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "BUSA 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSA 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSL 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSM 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSO 25",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 17",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 10",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 140",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 180",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUSC 1A",
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "BUSC 1AH",
+    "why": "not in the text; catalog lists ECON C2002H Principles of Macroeconomics - Honors instead"
+   },
+   {
+    "code": "BUSC 1B",
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
+   },
+   {
+    "code": "BUSC 1BH",
+    "why": "not in the text; catalog lists ECON C2001H Principles of Microeconomics - Honors instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside individual courses; only the Core Courses block total (28-30) and Total Units for the Major (28-30) are printed, so all course units are null.",
+   "Closed-list code 'ECON17' was matched to the catalog's 'ECON 17' (Applied Business Statistics); treated as the same course, not a catalog addition.",
+   "ECON C2001/C2001H and ECON C2002/C2002H are not in the closed list (marked catalog additions); they appear to replace the closed list's BUSC 1B/1BH and BUSC 1A/1AH (same titles), likely a Cal-GETC common course renumbering. Reviewer should confirm.",
+   "Every row in Core Courses is required; 'or' rows are recorded as alternatives on a single entry.",
+   "The outcomes tab prints a 'Program Learning Outcomes' heading with only a link ('Review Student Learning Outcomes (SLOs) for this program.') and no outcomes, so program.outcomes is empty.",
+   "General Education (Cal-GETC) 34 units and 60 total degree units are stated; GE courses are not recorded in blocks."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

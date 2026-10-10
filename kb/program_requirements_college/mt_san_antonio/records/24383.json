@@ -1,0 +1,237 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "24383",
+ "shape": "noncredit",
+ "title": "Retail Management - Level 3",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-retail-management/retail-management-level-3/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5467,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5467,
+    "output_tokens": 1413,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1413,
+  "output_tokens_details": {
+   "thinking_tokens": 371
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05013,
+ "ms": 11562,
+ "seconds": 12.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "VOCBA11",
+    "VOCBM61",
+    "VOCBM62",
+    "VOCBO25",
+    "VOCBO26",
+    "VOCBS36",
+    "VOCBS50",
+    "VOCCSB15"
+   ],
+   "flagged": [
+    "VOCBA11",
+    "VOCBM61",
+    "VOCBM62",
+    "VOCBO25",
+    "VOCBO26",
+    "VOCBS36",
+    "VOCBS50",
+    "VOCCSB15"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Retail Management – Level 3",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will describe the basic accounting system and how it is used to serve business needs.",
+    "Students will define organizational culture, socialization and mentoring.",
+    "Students will apply communication skills in simulated business situations such as conferences and business groups."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Retail Management - Level 1 Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC BO25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC BS50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC CSB15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Retail Management - Level 2 Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC BA11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC BM61",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC BM62",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC BS36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Retail Management - Level 3 Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC BA07",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC BM60",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC BO26",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The certificate requires completion of the Level 1, Level 2 and Level 3 coursework; each level is recorded as its own 'all' block.",
+   "The catalog prints no units or hours beside any course and no program total; measure is left as 'units' because the text states no hours, though this is a noncredit Certificate of Completion. Reviewer may wish to check hours elsewhere.",
+   "Only VOC BA07 and VOC BM60 (Level 3 coursework) are on the closed list; the Level 1 and Level 2 courses and VOC BO26 are recorded as catalog additions.",
+   "Outcomes were taken from the page's outcomes tab (#tgl0), printed after the page footer; the trailing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was omitted."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

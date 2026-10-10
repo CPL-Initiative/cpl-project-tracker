@@ -1,0 +1,252 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "31790",
+ "shape": "adt",
+ "title": "Theater Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/theater-arts/aa-theater-arts-transfer/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6252,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6252,
+    "output_tokens": 1951,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1951,
+  "output_tokens_details": {
+   "thinking_tokens": 583
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06403,
+ "ms": 15849,
+ "seconds": 16.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theater Arts (AA-T Degree A0346)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Use script analysis and performance techniques to create a character in a live theater performance.",
+    "Analyze and critique the various aspects of a theater production (acting, directing and design) without making value judgments.",
+    "Perform various tasks associated with the creation and implementation of the technical elements (lights, sound, lighting, costumes, and makeup) of a live theater production.",
+    "Understand the interactions of the various theater disciplines and be able to usefully participate in the collaborative environment of theater.",
+    "Analyze and critique elements of the production in their historical and cultural context."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "THTR 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 10",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose three units maximum from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THTR 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 15",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "THTR 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 15",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 16",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog's Units column is blank beside each course; only block totals are printed (Core Courses 9, List A 9), so course units are recorded as null.",
+   "The Core Courses total of 9 printed on the Core Courses block covers THTR 9/10, THTR 11, and the nested 'Choose three units maximum' choice of THTR 13 or THTR 15; the nested choice is recorded as its own block. THTR 13/15 are 1-unit courses, so reaching 3 units presumably means repeating them; the catalog wording 'three units maximum' is ambiguous as a minimum—review.",
+   "List A says 'Choose three courses (nine units)'; recorded as choose_courses 3 with stated 9.",
+   "The closed list prints THTR16, THTR19, THTR22 without a space; the catalog prints THTR 16, THTR 19, THTR 22. Treated as the same courses (not catalog additions).",
+   "THTR 13 and THTR 15 appear in both the Core nested choice and List A.",
+   "Program Learning Outcomes are taken from the page's Outcomes tab for this program; the closing link 'Review Student Learning Outcomes (SLOs) for this program.' is not recorded as an outcome."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

@@ -197,6 +197,11 @@ jobs:
       # a thousand rows. Pure-stdlib python; same non-required check.
       - name: Program requirements, one college (sitemap, matching, shards)
         run: python3 tests/program_requirements_college_test.py
+      # The display apply (S356): the college workflow's display job writes a
+      # display build's receipt from a runner, exactly as reviewed, and files
+      # each row's prior build as the rollback. Pure-stdlib python.
+      - name: Program requirements display apply (receipt parse, rollback)
+        run: python3 tests/program_requirements_display_apply_test.py
       # The college page read (S329) reads a named list of one college's
       # pages from a runner for lines marked To confirm: it follows links only
       # on the college's own domain and prints the part that answers.

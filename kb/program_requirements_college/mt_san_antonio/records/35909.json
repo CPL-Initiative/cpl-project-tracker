@@ -1,0 +1,158 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "35909",
+ "shape": "noncredit",
+ "title": "Electronic Systems Technology - Cabling and Wiring",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronic_systems_technology_cabling_wiring/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5579,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5579,
+    "output_tokens": 899,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 899,
+  "output_tokens_details": {
+   "thinking_tokens": 262
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0403,
+ "ms": 7815,
+ "seconds": 8.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 5,
+   "share": 0.6,
+   "missing": [
+    "VOCEL11",
+    "VOCEST52"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electronic Systems Technology - Cabling and Wiring",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will demonstrate job readiness",
+    "Students will be employed or seeking employment in the field or a related field.",
+    "Students will demonstrate technical competence by constructing a completely wired telecommunications network using electronic test equipment and hand tools."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC EST50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC EST54",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC EST56",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "VOC EL11",
+    "why": "listed as a recommended elective"
+   },
+   {
+    "code": "VOC EST52",
+    "why": "listed as a recommended elective"
+   }
+  ],
+  "notes": [
+   "Noncredit Certificate of Completion #35909. The catalog prints no hours or units for any course or for the program; the 'Units' column is empty, so all unit fields and total_units are null. Measure is set to 'units' by default because no hours are stated; a reviewer may wish to confirm the hours from another source.",
+   "Recommended Electives (VOC EL11, VOC EST52) are printed as recommended, not required, so they are not recorded as a block.",
+   "The first program learning outcome is printed without ending punctuation and is copied as printed.",
+   "The page also links to separate SLOs ('Review Student Learning Outcomes (SLOs) for this program.'), which are not included in the text."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

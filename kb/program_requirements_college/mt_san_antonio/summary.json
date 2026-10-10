@@ -1,0 +1,121 @@
+{
+ "college": "Mt. San Antonio College",
+ "programs": 385,
+ "with_closed_list": 344,
+ "found": 317,
+ "extracted": 317,
+ "errors": 1,
+ "passed_machine_checks": 291,
+ "failed": {
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 25,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 17.27,
+ "cost_per_program": 0.0545,
+ "not_found": [
+  {
+   "control_number": "15574",
+   "title": "Radio Broadcasting On-the-Air",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "22151",
+   "title": "Landscape Equipment Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "22161",
+   "title": "Radio Broadcasting: On-Air",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "24056",
+   "title": "Health Care Interpreting",
+   "award": null
+  },
+  {
+   "control_number": "24075",
+   "title": "Sports Turf Management",
+   "award": null
+  },
+  {
+   "control_number": "24088",
+   "title": "Landscape Irrigation",
+   "award": null
+  },
+  {
+   "control_number": "24111",
+   "title": "Landscape Equipment Technology",
+   "award": null
+  },
+  {
+   "control_number": "24113",
+   "title": "Landscape and Park Maintenance",
+   "award": null
+  },
+  {
+   "control_number": "24215",
+   "title": "Tree Care and Maintenance",
+   "award": null
+  },
+  {
+   "control_number": "24248",
+   "title": "Landscape Design and Construction",
+   "award": null
+  },
+  {
+   "control_number": "24284",
+   "title": "Computer Systems Technology",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "24342",
+   "title": "Interior Landscaping",
+   "award": null
+  },
+  {
+   "control_number": "24374",
+   "title": "Park Management",
+   "award": null
+  },
+  {
+   "control_number": "36115",
+   "title": "Financial and Database Management",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36843",
+   "title": "HSE Reading and Language Arts",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36870",
+   "title": "ASVAB Test Preparation",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36871",
+   "title": "HSE Mathematics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "39518",
+   "title": "iOS Programming",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "40187",
+   "title": "Android Programming",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "43729",
+   "title": "Engineering Topics",
+   "award": "Noncredit program"
+  }
+ ],
+ "run": "38059865531"
+}

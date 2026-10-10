@@ -1,0 +1,235 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "17854",
+ "shape": "certificate",
+ "title": "Architectural Design Concentration Level III",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/architectural-design-concentration/architectural-design-concentration-level-lll-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5939,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5939,
+    "output_tokens": 1273,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1273,
+  "output_tokens_details": {
+   "thinking_tokens": 275
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04922,
+ "ms": 9603,
+ "seconds": 9.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 11,
+   "share": 0.636,
+   "missing": [
+    "ARCH141",
+    "ARCH142",
+    "ARCH250",
+    "ARCH251"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ARCH222"
+   ],
+   "flagged": [
+    "ARCH222"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Architectural Design Concentration - Level III (Certificate T0386)",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Be employed or actively seeking employment in the field or a related field.",
+    "Be technically competent.",
+    "Present and evaluate the pros and cons of particular design alternative solution.",
+    "Synthesize preliminary design alternatives into one well-presented final architectural design solution."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Architectural Design Concentration - Level I Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "ARCH 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 122",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Architectural Design Concentration - Level II Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ARCH 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Architectural Design Concentration - Level III Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ARCH 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARCH 141",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARCH 142",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARCH 250",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARCH 251",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Block stated totals (16, 7, 7) come from the summary list 'Completion of the Architectural Design Concentration - Level I/II/III coursework' printed above the detailed course list.",
+   "ARCH 222 (Advanced Digital Media, Generative, and Algorithmic Design and Illustration, 3 units) is not in the closed list; recorded as a catalog addition.",
+   "Program learning outcomes are taken from the page's Outcomes tab; the line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

@@ -1,0 +1,220 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "12309",
+ "shape": "degree",
+ "title": "Business:  Retail Management",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/business/business-retail-management-degree/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5842,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5842,
+    "output_tokens": 1456,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1456,
+  "output_tokens_details": {
+   "thinking_tokens": 470
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05249,
+ "ms": 12567,
+ "seconds": 12.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "BUSM60",
+    "BUSM61",
+    "BUSM62",
+    "BUSS36",
+    "BUSS50",
+    "CISB15"
+   ],
+   "flagged": [
+    "BUSM60",
+    "BUSM61",
+    "BUSM62",
+    "BUSS36",
+    "BUSS50",
+    "CISB15"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.5,
+    32.5
+   ],
+   "stated": [
+    32.5,
+    32.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business: Retail Management (AS Degree S0509)",
+   "measure": "units",
+   "total_units": {
+    "min": 32.5,
+    "max": 32.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Define organizational culture, socialization, and mentoring.",
+    "Apply management concepts and functions.",
+    "Explain theory and practical application of Equal Employment Opportunity current employment laws."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32.5,
+     "max": 32.5
+    },
+    "courses": [
+     {
+      "code": "BUSA 7",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSA 72",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSA 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSM 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSM 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSM 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSO 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSO 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSS 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSS 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISB 15",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside the alternative BUSA 72 (closed list stores 5), so its units are recorded as null.",
+   "The 'Total Units 32.5' printed under the single required course list is recorded as both the program total and the block's stated total.",
+   "The degree requires 'General Education coursework' but the text does not name a specific GE pattern, so ge_pattern is null.",
+   "Outcomes come from the page's outcomes tab (#outcomestextcontainer), which the navigation places under Business: Retail Management (AS Degree S0509); a reviewer may confirm the tab belongs to this degree rather than a related certificate. The line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded.",
+   "BUSM 60, BUSM 61, BUSM 62, BUSS 36, BUSS 50 and CISB 15 appear in the catalog's required list but not in the closed list; recorded as catalog additions."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

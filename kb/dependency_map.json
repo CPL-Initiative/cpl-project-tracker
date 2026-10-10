@@ -4,9 +4,9 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 6,
-  "file_datasets": 619,
+  "file_datasets": 620,
   "external_services": 164,
-  "consumers": 425,
+  "consumers": 426,
   "workflows": 47,
   "data_js_files": 69,
   "tabs": 39
@@ -5362,6 +5362,13 @@
      "direction": "write",
      "how": "literal",
      "line": 99
+    },
+    {
+     "id": "script:kb/_program_requirements_display_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 58
     }
    ],
    "producers": [
@@ -7427,6 +7434,19 @@
    "main_committers": []
   },
   "file:kb/_program_requirements_college.py": {
+   "consumers": [
+    {
+     "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_program_requirements_display_apply.py": {
    "consumers": [
     {
      "id": "workflow:program-requirements-college.yml",
@@ -11988,26 +12008,6 @@
     }
    ],
    "served": false,
-   "main_committers": []
-  },
-  "file:kb/program_requirements_college/cerritos/capture.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_roep_display.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 405
-    },
-    {
-     "id": "script:kb/_program_requirements_college.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 406
-    }
-   ],
-   "served": true,
    "main_committers": []
   },
   "file:kb/program_requirements_maps_sample.json": {
@@ -17315,6 +17315,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/program_requirements_display_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/program_requirements_pilot_test.py": {
    "consumers": [
     {
@@ -18996,7 +19009,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 628
+     "line": 637
     }
    ],
    "main_committers": []
@@ -22708,6 +22721,7 @@
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
     "tests/program_requirements_college_test.py",
+    "tests/program_requirements_display_apply_test.py",
     "tests/college_page_read_test.py",
     "tests/program_map_parse_test.py",
     "tests/queue_status_test.py",
@@ -22964,10 +22978,12 @@
    "name": "Program requirements, one college",
    "crons": [],
    "scripts": [
-    "kb/_program_requirements_college.py"
+    "kb/_program_requirements_college.py",
+    "kb/_program_requirements_display_apply.py"
    ],
    "adds": [
     "kb/program_requirements_college",
+    "kb/receipts",
     "kb/receipts"
    ],
    "push": null,

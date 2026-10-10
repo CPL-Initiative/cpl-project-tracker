@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-09
+updated: 2026-10-10
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 532 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 533 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 86 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 327 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1086** | |
+| Session handoffs | 328 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1088** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-10 (S356 SkyThicket): Sam's three rulings (apply display build 5be53871ebf4; read Approved programs; a standing go for each display build after a college load); the college workflow's display job applies a receipt from the runner, verified by one combined hash (5be53871ebf4 on 292, 153ead0ce992 on 605); Mt. San Antonio read and loaded (313 records); KB note `methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner`; handoff 357.
 - 2026-10-09 (S354 SkyFurrow): Cerritos loaded unchecked through `program_requirement_records_college_load()` (#1941, 270 records, receipt per load); reads gated on `[read]`/`[extract]`; the Activities UI pass (#1945); Program records gains Find a record and the scorer's course counts (#1946); a Progress call answers its records on its card (#1947), all for Sam reading on his phone.
 - 2026-10-09 (S353 SkyHearth): Phase 2 of the ROEP harvest opens at Cerritos (#1941: sitemap-first read, 283 of 288 programs, a page goes to one program); the funding explainer's typed passages edit on the tab and its masthead follows Sam's marks (#1940); First Light rule, controls are underlined words (#1942); KB note `methodology-anchor-a-marker-a-workflow-reads`; handoff 354.
 - 2026-10-09 (S352 SkyMeridian): the Fact Sheet's `--on-accent` (#1934); its First Light mock-up built from its own code (#1935) and, on Sam's "Fact Sheet looks great!", ported with a screen-only dark mode (#1938); the Dashboard's first UI pass, clean light and dark (#1937); `ui_pass_lessons` S352 section; KB note `methodology-an-undefined-css-token-fails-to-an-invisible-state` third case; handoff 353.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-09 (S350 SkyTide): the veteran map ported to First Light on Sam's Sheet 55 ruling, COBI's frame on `?embed=1` with a marker size floor, `build_selfcontained.py --check` in CI (#1924); the Library record at version 55 (Sam's paste); KB note `methodology-check-a-page-inside-every-frame-that-embeds-it`; the Fact Sheet's first UI pass (#1926; the glyph sweep reads the standalone pages now) and Open Asks Sheet 56; handoff 351.
 - 2026-10-09 (S349 SkyHarbor): the docked Sierra full screen when she answers (#1921); the first UI pass on Sierra's public page; the veteran map mock-up and Sheet 55 (#1922); KB note `methodology-a-sweep-sees-only-the-states-its-seed-reaches`; handoff 350.
 - 2026-10-08 (S348 SkyMeadow): Sierra's public page ported to the approved mock-up, her logo set in five rounds with Sam; new lessons doc `sierra_page_redesign_lessons.md`; handoff 349.
-- 2026-10-08 (S347 SkyTrellis, re-checkpoint): Sheet 51 carried out (display build 2360b83e8100 live, #1918; flags and Confirm / Needs a fix on the Records view, #1919), all 32 maps settled; KB note methodology-a-persons-write-must-survive-the-next-reload.

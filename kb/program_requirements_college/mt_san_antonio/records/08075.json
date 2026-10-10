@@ -1,0 +1,242 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "08075",
+ "shape": "certificate",
+ "title": "Electronics Technology",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6003,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6003,
+    "output_tokens": 1594,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1594,
+  "output_tokens_details": {
+   "thinking_tokens": 406
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05589,
+ "ms": 13078,
+ "seconds": 13.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ELEC11",
+    "ELEC12",
+    "ELEC50A",
+    "ELEC50B",
+    "ELEC53",
+    "ELEC54A",
+    "ELEC54B",
+    "ELEC55",
+    "ELEC74"
+   ],
+   "flagged": [
+    "ELEC11",
+    "ELEC12",
+    "ELEC50A",
+    "ELEC50B",
+    "ELEC53",
+    "ELEC54A",
+    "ELEC54B",
+    "ELEC55",
+    "ELEC74"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.0,
+    45.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electronics and Computer Engineering Technology (Certificate T0906)",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply knowledge of electronic principles to the areas of communications, industrial electronics, and microcontrollers.",
+    "Demonstrate proper use of electronic test equipment and associate measurement results with circuit behaviors in the laboratory.",
+    "Quantitatively determine unknown electrical parameters from given or measured values and use these results to assess or troubleshoot faults in circuit and system operation.",
+    "Communicate, both verbally and in writing, knowledge of electrical concepts and their application to the observed behaviors of circuits and systems.",
+    "In advanced courses, connect concepts learned in introductory courses to more general principles applicable in the employment context."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ELEC 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELEC 12",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELEC 50A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELEC 50B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELEC 51",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 53",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELEC 54A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELEC 54B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELEC 55",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELEC 56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 74",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TECH 60",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program is named 'Electronics Technology' but the source page is the 'Electronics and Computer Engineering Technology (Certificate T0906)' section; the page's navigation also lists 'Electronics Technology - Level 1 (Certificate M0679)' and 'Electronics Technology - Level 2 (Certificate N0680)', whose requirements are not in the text. The closed list (4 courses, ~13 units) does not match this 45-unit certificate; a reviewer should confirm the correct section/page for this award.",
+   "Nine courses in the section are not on the closed list and are recorded as catalog additions.",
+   "'Total Units 45' is printed at the end of the single required course list; recorded as the certificate total.",
+   "Program Learning Outcomes come from the page's outcomes tab for this certificate; the page also links to separate SLOs not included in the text."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

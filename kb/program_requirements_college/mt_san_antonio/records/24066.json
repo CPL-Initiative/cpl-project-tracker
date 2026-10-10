@@ -1,0 +1,188 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "24066",
+ "shape": "noncredit",
+ "title": "Administrative Assistant - Level 2",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-administrative-assistant-level-2/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5688,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5688,
+    "output_tokens": 1033,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1033,
+  "output_tokens_details": {
+   "thinking_tokens": 244
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04341,
+ "ms": 8710,
+ "seconds": 9.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "VOCBO25",
+    "VOCCSB10",
+    "VOCCSB15",
+    "VOCCSB31"
+   ],
+   "flagged": [
+    "VOCBO25",
+    "VOCCSB10",
+    "VOCCSB15",
+    "VOCCSB31"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Assistant - Level 2",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will be prepared to enter into entry level administrative assistant and general office jobs.",
+    "Students will be employed or seeking employment in the field for a related field.",
+    "Students will demonstrate job readiness skills."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Completion of the Administrative Assistant - Level 1 coursework as follows:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC CSB10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC CSB15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC CSB31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "PLUS the level 2 coursework as follows:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC BO25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC CSB21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC CSB51",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion (#24066). The catalog prints no hours or units beside any course and no program total, so measure is left as 'units' (the column header) with all values null; reviewer may wish to confirm hours from another source.",
+   "The Level 1 courses (VOC CSB10, VOC CSB15, VOC CSB31) and VOC BO25 are printed as required but are not in the closed list; recorded as catalog additions.",
+   "Outcomes taken from the page's outcomes tab (#tgl0), which follows the page footer in the extracted text; the trailing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

@@ -1,0 +1,404 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "44520",
+ "shape": "degree",
+ "title": "Histotechnology",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/histotechnology/histotechnology-bachelors-degree/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7522,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7522,
+    "output_tokens": 3510,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3510,
+  "output_tokens_details": {
+   "thinking_tokens": 1054
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10029,
+ "ms": 41661,
+ "seconds": 42.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 32,
+   "listed": 37,
+   "share": 0.865,
+   "missing": [
+    "ANTH314",
+    "ANTH316",
+    "COMM300",
+    "PHIL312",
+    "SOC300"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    85.0,
+    86.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Histotechnology (BS Degree BS0962)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "demonstrate competence and skill in all aspects associated with and practiced in a contemporary histotechnology laboratory.",
+    "prioritize and perform laboratory testing",
+    "troubleshoot instrumentation problems and resolve-staining inconsistencies",
+    "organize, supervise, and manage laboratory personnel and effectively manage a histotechnology laboratory",
+    "implement quality control standards",
+    "correlate clinical data with laboratory findings",
+    "maintain accurate and complete records and communicate effectively orally and in writing with members of the health care team",
+    "apply safety and government regulations and standards as applied to the histotechnology laboratory",
+    "demonstrate professional conduct and engage in continuing education and professional development"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Bachelor of Science - Lower Division Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 46,
+     "max": 47
+    },
+    "courses": [
+     {
+      "code": "BIOL 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 4",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 4H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 35",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 40",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 50",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 50H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 1",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MICR 22",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HT 1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HT 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HT 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HT 12",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HT 14",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HT 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HT 17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HT 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Bachelor of Science - Upper Division Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HTL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 390",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 404",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 410",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 432",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "HTL 330",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 406",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTL 440",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 314",
+    "why": "listed under Upper Division General Education Requirements (GE, not placed in a block)"
+   },
+   {
+    "code": "ANTH 316",
+    "why": "listed under Upper Division General Education Requirements (GE, not placed in a block)"
+   },
+   {
+    "code": "COMM 300",
+    "why": "listed under Upper Division General Education Requirements (GE, not placed in a block)"
+   },
+   {
+    "code": "PHIL 312",
+    "why": "listed under Upper Division General Education Requirements (GE, not placed in a block)"
+   },
+   {
+    "code": "SOC 300",
+    "why": "listed under Upper Division General Education Requirements (GE, not placed in a block)"
+   }
+  ],
+  "notes": [
+   "The catalog states no single total for the major: Lower Division Major Requirements 46-47 and Upper Division Major Requirements 39 (which includes the 9 units of Required Electives); the degree total of 128-129 includes 34 units of Cal-GETC and 9 units of upper division GE. total_units left null rather than computed.",
+   "The 39-unit total printed for the Upper Division Major Requirements covers both the required HTL courses and the Required Electives; it is not recorded on either block's stated. The required HTL courses sum to 30 at the printed units.",
+   "Required Electives: 9 units from HTL 330, HTL 406, HTL 440; no units printed beside these courses (state file lists 3 each, so effectively all three may be needed). Reviewer should confirm.",
+   "HT 17 is printed with 4 units in the catalog; the state file stores 1 unit.",
+   "MICR 1 is printed as 'Medical Microbiology' 4-5 in the catalog; the state file titles it 'Principles of Microbiology' with 5 units. Units for 'or' alternatives are not printed beside them and are left null.",
+   "Upper Division General Education Requirements: 'Choose three of the following courses' (9 units) from ANTH 314, ANTH 316, COMM 300, PHIL 312, SOC 300. These are labeled general education by the catalog, so they are not placed in a block.",
+   "The lower division courses are stated as 'must be completed before admittance to the program.'",
+   "Outcomes are taken from the page's outcomes tab ('Program Level Outcomes') on the BS degree page; they appear to apply to this award."
+  ]
+ },
+ "extracted_run": "38059865531"
+}

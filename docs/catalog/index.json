@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 532,
+   "count": 533,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3034,6 +3034,26 @@
      "title": "A receipt measures a worklist once; a lane recomputes it every build",
      "type": "methodology",
      "updated": "2026-09-04"
+    },
+    {
+     "created": "2026-10-10",
+     "governs": [
+      "kb/_program_requirements_display_apply.py",
+      ".github/workflows/program-requirements-college.yml",
+      "tests/program_requirements_display_apply_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "data-write",
+      "rollback",
+      "ci"
+     ],
+     "title": "A receipt too large for the connector applies from the runner",
+     "type": "methodology",
+     "updated": "2026-10-10"
     },
     {
      "created": "2026-09-02",
@@ -7527,7 +7547,7 @@
      ],
      "title": "Rebuild a jsonb value from its receipts and check its md5",
      "type": "methodology",
-     "updated": "2026-10-02"
+     "updated": "2026-10-10"
     },
     {
      "created": "2026-07-30",
@@ -15183,8 +15203,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 327,
+   "count": 328,
    "docs": [
+    {
+     "created": "2026-10-10",
+     "governs": [],
+     "n": 357,
+     "path": "docs/session_357_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "display",
+      "approved",
+      "checkpoint"
+     ],
+     "title": "the display applied from the runner; Mt. San Antonio loaded; Approved programs read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-10",
      "governs": [],
@@ -20766,5 +20805,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1086
+ "total": 1088
 }

@@ -1,0 +1,177 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "24074",
+ "shape": "noncredit",
+ "title": "Accounting - Payroll",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-accounting/accounting-payroll/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5404,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5404,
+    "output_tokens": 1010,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1010,
+  "output_tokens_details": {
+   "thinking_tokens": 250
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04182,
+ "ms": 8587,
+ "seconds": 8.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "VOCBA70",
+    "VOCBA72"
+   ],
+   "flagged": [
+    "VOCBA70",
+    "VOCBA72"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Accounting - Payroll",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Identify payroll records required by the employer in preparation for filing tax forms for Social Security, federal and state income tax, state disability benefits, and federal and state unemployment.",
+    "Calculate wages and withholding amounts in payroll problems.",
+    "Assemble payroll record keeping requirements for employers under current state and federal laws."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Accounting - Bookkeeping Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC BA07",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "VOC BA72",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC BA75",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC BA76",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Accounting - Payroll Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC BA70",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion (#24074). The catalog prints no hours or units beside any course and no program total, so measure is left as 'units' with all values null; a reviewer may wish to confirm the hours from another source.",
+   "The certificate requires completion of the Accounting - Bookkeeping coursework plus the Accounting - Payroll coursework; both blocks are recorded as required.",
+   "VOC BA72 (alternative to VOC BA07) and VOC BA70 are not in the closed list and are marked as catalog additions.",
+   "The outcomes were taken from the page's outcomes tab. The trailing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome, and was not recorded."
+  ]
+ },
+ "extracted_run": "38059865531"
+}
