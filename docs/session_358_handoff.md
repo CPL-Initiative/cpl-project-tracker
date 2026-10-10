@@ -11,6 +11,10 @@ status: current
 Your moniker is **SkyFern**. SkyCanopy (S357, `session_01CZkuAk1wqbLX6eFuiqA4qy`) put the next college to Sam, taught the
 college read curriQunet catalogs, and scoped district catalogs. This handoff is refreshed at each checkpoint.
 
+## EMERGENCY CHECKPOINT addendum (S357, ~19:52Z)
+
+Sam answered card 1 in chat: **"RCCD go!"** (as proposed). S357 ran out of context before dispatching the reads, so **your first work is the RCCD reads**: once #1961 is merged (it carries the curriQunet read), cut three sibling branches from `main` and dispatch `program-requirements-college.yml` on each: Riverside City (`extract=1`), Moreno Valley (`extract=0`), Norco (`extract=0`); extract each capture that finds a page for 85% of its programs; then load and display (Sam's standing go). Card 1 left the sheet; the one open call (the eight rows) is on **Open Asks Sheet 60** (https://claude.ai/artifact/7asFQExdaXFHRmEMnCxiM2, current; a reply on sheet 59 card 2 counts too, keyed "2"). The Library row is on sheet 60 (applied; no receipt file for 60 was written: write `kb/receipts/cpl_library_open_asks_sheet60_2026-10-10_s357.sql` from the sheet 59 one). Not refreshed after the ruling: the lessons doc, INDEX, queue_status calls (still name sheet 59), the vault note. S357 held subscriptions to #1961 at sign-off and drops it now.
+
 ## First, in this order
 
 0. **One writer.** `list_sessions` (`mine: true`). At sign-off S357 drops every PR subscription and check-in it holds.
