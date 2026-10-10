@@ -1,20 +1,20 @@
 {
  "college": "Mt. San Antonio College",
- "programs": 385,
- "with_closed_list": 344,
- "found": 317,
- "extracted": 317,
+ "programs": 469,
+ "with_closed_list": 428,
+ "found": 382,
+ "extracted": 382,
  "errors": 1,
- "passed_machine_checks": 291,
+ "passed_machine_checks": 346,
  "failed": {
   "coverage": 0,
   "invented": 0,
-  "arithmetic": 25,
+  "arithmetic": 35,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 17.27,
- "cost_per_program": 0.0545,
+ "cost_usd": 21.42,
+ "cost_per_program": 0.0561,
  "not_found": [
   {
    "control_number": "15574",
@@ -82,6 +82,11 @@
    "award": null
   },
   {
+   "control_number": "35611",
+   "title": "VESL Career Paths",
+   "award": "Noncredit program"
+  },
+  {
    "control_number": "36115",
    "title": "Financial and Database Management",
    "award": "Noncredit program"
@@ -112,10 +117,80 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
   },
   {
+   "control_number": "42033",
+   "title": "College Readiness for Math and English",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42753",
+   "title": "ESL Oral Communication - Literacy Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42754",
+   "title": "ESL Oral Communication - Advanced Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42755",
+   "title": "ESL Written Communication - Beginning Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42756",
+   "title": "ESL Oral Communication - Beginning Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42757",
+   "title": "ESL Oral Communication - Intermediate Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42758",
+   "title": "ESL Written Communication - Literacy Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43373",
+   "title": "Post Production for Film and Television",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
    "control_number": "43729",
    "title": "Engineering Topics",
    "award": "Noncredit program"
+  },
+  {
+   "control_number": "43747",
+   "title": "ESL - Literacy Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43754",
+   "title": "Registered Behavior Technician",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43777",
+   "title": "Digital Media Specialist",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43999",
+   "title": "Regenerative Communities",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44367",
+   "title": "Dietary Manager",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "45423",
+   "title": "Speech Language Pathology Assistant",
+   "award": "A.S. Degree"
   }
  ],
- "run": "38059865531"
+ "run": "38064250199"
 }

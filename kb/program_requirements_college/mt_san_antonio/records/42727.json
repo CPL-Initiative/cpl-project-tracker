@@ -1,0 +1,120 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "42727",
+ "shape": "noncredit",
+ "title": "ESL Written Communication - Intermediate Level",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7132,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7132,
+    "output_tokens": 806,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 806,
+  "output_tokens_details": {
+   "thinking_tokens": 324
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04465,
+ "ms": 8251,
+ "seconds": 8.5,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "ESLREADB",
+    "ESLWRTB"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the record states no figure, but the catalog text names 0 Units, 0 Units, 0 Units, 0 Units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ESL READB",
+    "why": "not in a program requirements section; the text prints it only as a course description (0 Units, Lecture: 4-100)"
+   },
+   {
+    "code": "ESLWRTB",
+    "why": "not in a program requirements section; the text prints 'ESL WRTB ESL - Writing B' only as a course description (0 Units, Lecture: 4-100)"
+   }
+  ],
+  "notes": [
+   "The supplied text is only the ESL course description listing (starting mid-entry with 'ture: 14-400'). It prints no section, heading, requirements, total hours or outcomes for 'ESL Written Communication - Intermediate Level', so no blocks were recorded and section_heading is left empty.",
+   "The measure is set to hours because this is a noncredit program. No program total in hours is printed, so total_units is null.",
+   "The closed-list code 'ESLWRTB' appears in the catalog as 'ESL WRTB' (ESL - Writing B), with a space.",
+   "Each course entry prints 'Lecture: 4-100' (hours range) and '0 Units'. A reviewer should locate the program's own section on the catalog page to confirm its required courses (likely ESL READB and ESL WRTB) and total hours."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

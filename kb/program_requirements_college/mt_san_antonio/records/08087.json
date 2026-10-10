@@ -1,0 +1,341 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "08087",
+ "shape": "degree",
+ "title": "Nursing- Licensed Psychiatric Technician (LPT) to Registered Nurse (RN) Option",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/nursing/nursing-licensed-psychiatric-technician-lpt-to-registered-nurse-rn-option-degree/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8923,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8923,
+    "output_tokens": 3349,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3349,
+  "output_tokens_details": {
+   "thinking_tokens": 1273
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10267,
+ "ms": 27154,
+ "seconds": 29.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 25,
+   "listed": 26,
+   "share": 0.962,
+   "missing": [
+    "NURS11"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "NURS115",
+    "NURS212"
+   ],
+   "flagged": [
+    "NURS115",
+    "NURS212"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    50.5,
+    53.5
+   ],
+   "stated": [
+    50.5,
+    53.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Required Courses",
+   "measure": "units",
+   "total_units": {
+    "min": 50.5,
+    "max": 53.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "local GE",
+   "outcomes": [
+    "Complete the Role Transition course to be accepted into the Nursing Program in the second semester."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Select one of the following sequences: ANAT 10A and ANAT 10B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and Physiology sequence",
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANAT 10A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 10B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following sequences: ANAT 35 and ANAT 36",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and Physiology sequence",
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANAT 35",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHLD 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHLD 10H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 14",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 14H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 2",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 8",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 8H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "AMLA 1A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 1",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MICR 22",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 113",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS 206",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 212",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NURS 11",
+    "why": "not in the text; catalog prints NURS 212 Preceptorship in Nursing (2 units) instead"
+   }
+  ],
+  "notes": [
+   "The anatomy/physiology sequences are printed as paired 'or' rows (ANAT 10A or ANAT 35; ANAT 10B or ANAT 36) under 'Select one of the following sequences: 8-10'; recorded as two sequence blocks sharing one option_group. The 8-10 total is printed once for the whole choice and is copied onto both blocks. No units are printed beside the individual ANAT courses.",
+   "Units are printed only on the first row of each 'or' group; alternatives have units null because the catalog prints none beside them.",
+   "The catalog prints 'MICR 1'; the closed list stores it as 'MICR1' with no units. Treated as the same course (catalog_addition false); reviewer should confirm.",
+   "NURS 115 and NURS 212 are not in the closed list and are recorded as catalog additions. NURS 212 shares the title 'Preceptorship in Nursing' and 2 units with closed-list NURS 11, which may be a renumbering.",
+   "The Prerequisite Courses and ADN General Education Requirements lists repeat courses also listed under Required Courses; only the Required Courses list is recorded. Footnotes there say CHLD 10 group must be completed before NURS 115 and PSYC C1000 before NURS 207 (NURS 207 is not in the required list).",
+   "NURS 200 Role Transition is a non-course admission requirement and is not in the required course list; it is not recorded.",
+   "ge_pattern recorded as local GE: the text says students must complete additional associate degree GE areas (Mathematics and Quantitative Reasoning, Arts and Humanities, Social Political and Economic Institutions, Ethnic Studies) plus Physical Well-Being and Reading Competency graduation requirements, without naming a transfer pattern.",
+   "The single Program Learning Outcome printed on the outcomes tab is an admission-step statement rather than a typical learning outcome; copied as printed. The tab also refers to SLOs elsewhere ('Review Student Learning Outcomes (SLOs) for this program') which are not in the text.",
+   "The page also lists other Nursing options (LVN 30-Unit, LVN to RN, RN Generic) in navigation only; their sections are not read."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

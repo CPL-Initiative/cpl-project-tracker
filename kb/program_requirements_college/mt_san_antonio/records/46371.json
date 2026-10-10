@@ -1,0 +1,139 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "46371",
+ "shape": "noncredit",
+ "title": "Business Management and Financial Systems",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-business-management-financial-systems/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5627,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5627,
+    "output_tokens": 801,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 801,
+  "output_tokens_details": {
+   "thinking_tokens": 224
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03853,
+ "ms": 7568,
+ "seconds": 8.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Management and Financial Systems",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will identify appropriate business structures and legal ownership forms.",
+    "Students will develop a small business plan that incorporates financing and marketing strategies.",
+    "Students will create and manage simple databases, using queries and reports to organize and analyze business data effectively.",
+    "Students will manage customer and vendor transactions, reconcile bank records, and generate financial reports using QuickBooks and Excel.",
+    "Students will apply financial terminology in customer and vendor financial transactions."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC BM66",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC FDB1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "This is a noncredit Certificate of Completion (#46371), but the text prints no hours or units beside either course and no program total. Measure is left as \"units\" because no hours count is stated, and all unit fields are null. A reviewer should check whether the catalog states hours elsewhere.",
+   "The 'Program Learning Outcomes' heading appears empty in the main text. The five outcomes were taken from the page's outcomes tab (#tgl0). The trailing line 'Review Student Learning Outcomes (SLOs) for this program.' is a link and is not recorded as an outcome."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

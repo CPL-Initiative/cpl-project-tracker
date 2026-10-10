@@ -1,0 +1,367 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "03054",
+ "shape": "degree",
+ "title": "Nursing - Registered Nursing (RN) Generic Option",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-nursing-registered-nursing-rn-generic-option-degree/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8726,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8726,
+    "output_tokens": 3403,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3403,
+  "output_tokens_details": {
+   "thinking_tokens": 1080
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10296,
+ "ms": 41186,
+ "seconds": 42.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 30,
+   "listed": 31,
+   "share": 0.968,
+   "missing": [
+    "NURS11"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NURS212"
+   ],
+   "flagged": [
+    "NURS212"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    63.0,
+    66.0
+   ],
+   "stated": [
+    63.0,
+    66.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nursing - Registered Nursing (RN) Generic Option (AS Degree S0958)",
+   "measure": "units",
+   "total_units": {
+    "min": 63,
+    "max": 66
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Deliver safe and competent patient care as newly licensed registered nurses."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Select one of the following sequences: ANAT 10A and ANAT 10B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and physiology sequence",
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANAT 10A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 10B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following sequences: ANAT 35 and ANAT 36",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and physiology sequence",
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANAT 35",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHLD 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHLD 10H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 14",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 14H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 2",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 8",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 8H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "AMLA 1A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 1",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MICR 22",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 100",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 101",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 102",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 113",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 206",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 207",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 212",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NURS 11",
+    "why": "not in the text; the catalog lists Preceptorship in Nursing as NURS 212 instead"
+   }
+  ],
+  "notes": [
+   "Blocks are read from the 'Required Courses' list, which carries the stated Total Units 63-66. The 'Prerequisite Courses' (ANAT sequence, MICR 1/22, ENGL C1000/C1000H/AMLA 1A) and 'ADN General Education Requirements' (COMM, PSYC C1000, PSYC 14/CHLD 10) lists on the page repeat courses that also appear in Required Courses and are not recorded separately.",
+   "The catalog prints 'Select one of the following sequences: 8-10' with paired 'or' rows (ANAT 10A or ANAT 35; ANAT 10B or ANAT 36); recorded as two sequence blocks in one option_group. The 8-10 total is printed once for the whole choice and is recorded as stated on both sequence blocks; no units are printed beside the individual ANAT courses.",
+   "The closed list stores 'MICR1' (no space, units not stored); the catalog prints 'MICR 1 Medical Microbiology 4-5'. Treated as the same course, so catalog_addition is false; reviewer should confirm.",
+   "NURS 212 Preceptorship in Nursing (2 units) is printed in the catalog but not in the closed list, which instead has NURS 11 Preceptorship in Nursing (2 units); likely a renumbering. NURS 212 marked as catalog addition.",
+   "Units for 'or' alternatives are not printed beside them in the catalog and are left null.",
+   "COMM, PSYC and CHLD/PSYC 14 courses are labeled 'ADN General Education Requirements' elsewhere on the page but are included in the Required Courses list and its 63-66 total, so they are recorded in the block.",
+   "Footnotes in the ADN GE list: PSYC 14 (and alternatives) must be completed before NURS 115; PSYC C1000 must be completed before NURS 207.",
+   "The page lists additional general education areas and graduation requirements (Mathematics, Arts and Humanities, History/Political Science, Ethnic Studies, Physical Well-Being, Reading Competency) but names no specific GE pattern; ge_pattern left null.",
+   "The Program Learning Outcome comes from the program's outcomes tab; it is printed once for the program, and this award (the only award on the page) shares it. A link 'Review Student Learning Outcomes (SLOs) for this program' is printed but no further outcomes appear in the text."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

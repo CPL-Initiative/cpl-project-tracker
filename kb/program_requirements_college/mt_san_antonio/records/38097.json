@@ -1,0 +1,166 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "38097",
+ "shape": "noncredit",
+ "title": "ESL - Intermediate Level",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9936,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9936,
+    "output_tokens": 1012,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1012,
+  "output_tokens_details": {
+   "thinking_tokens": 215
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05998,
+ "ms": 8363,
+ "seconds": 8.8,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 11,
+   "share": 0.0,
+   "missing": [
+    "BSLRN50",
+    "ESLCULTR",
+    "ESLGVRB",
+    "ESLLANG1",
+    "ESLLANG3",
+    "ESLLVL3",
+    "ESLLVL4",
+    "ESLPRONB",
+    "ESLREADB",
+    "ESLSPKB",
+    "ESLWRTB"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the record states no figure, but the catalog text names 0 Units, 0 Units, 0 Units, 0 Units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "English as a Second Language (ESL)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BS LRN50",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESL CULTR",
+    "why": "appears only as a course description; no program requirements printed"
+   },
+   {
+    "code": "ESL GVRB",
+    "why": "appears only as a course description; no program requirements printed"
+   },
+   {
+    "code": "ESL LVL3",
+    "why": "appears only as a course description; no program requirements printed"
+   },
+   {
+    "code": "ESL LVL4",
+    "why": "appears only as a course description; no program requirements printed"
+   },
+   {
+    "code": "ESL READB",
+    "why": "appears only as a course description; no program requirements printed"
+   },
+   {
+    "code": "ESLLANG1",
+    "why": "appears only as a course description (printed as ESL LANG1); no program requirements printed"
+   },
+   {
+    "code": "ESLLANG3",
+    "why": "appears only as a course description (printed as ESL LANG3); no program requirements printed"
+   },
+   {
+    "code": "ESLPRONB",
+    "why": "appears only as a course description (printed as ESL PRONB); no program requirements printed"
+   },
+   {
+    "code": "ESLSPKB",
+    "why": "appears only as a course description (printed as ESL SPKB); no program requirements printed"
+   },
+   {
+    "code": "ESLWRTB",
+    "why": "appears only as a course description (printed as ESL WRTB); no program requirements printed"
+   }
+  ],
+  "notes": [
+   "The supplied text is the catalog's ESL course-description listing (Adult & Continuing Education Courses), not a program page. It prints no section, requirements, total hours, or outcomes for the 'ESL - Intermediate Level' noncredit program, so no blocks were recorded.",
+   "Measure set to hours because this is a noncredit program; course descriptions print lecture/lab hour ranges (e.g., ESL LVL3 Lecture: 14-320, ESL READB Lecture: 4-100), but no program total is stated.",
+   "The text is cut off at the end (ESL WRTP1 description truncated).",
+   "A reviewer should locate the actual program page (likely under Noncredit Programs) for the ESL - Intermediate Level certificate requirements and outcomes.",
+   "BS LRN50 (Learning Support Laboratory) does not appear on this ESL course page at all."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

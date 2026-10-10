@@ -1,0 +1,334 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "42789",
+ "shape": "degree",
+ "title": "Construction Management",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/construction-management/construction-management-as-degree/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6028,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6028,
+    "output_tokens": 1908,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1908,
+  "output_tokens_details": {
+   "thinking_tokens": 360
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06227,
+ "ms": 14016,
+ "seconds": 14.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 22,
+   "share": 0.818,
+   "missing": [
+    "BUSC1A",
+    "BUSC1AH",
+    "BUSC1B",
+    "BUSC1BH"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    39.0
+   ],
+   "stated": [
+    36.0,
+    39.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Construction Management (AS Degree S0881)",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCH 142",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 160",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose One Course From the Following List",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BUSA 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSA 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose two courses from the following list:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ARCH 145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 17",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 87",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 1C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 42",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SURV 1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUSC 1A",
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "BUSC 1AH",
+    "why": "not in the text; catalog lists ECON C2002H instead"
+   },
+   {
+    "code": "BUSC 1B",
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
+   },
+   {
+    "code": "BUSC 1BH",
+    "why": "not in the text; catalog lists ECON C2001H instead"
+   }
+  ],
+  "notes": [
+   "Units are not printed beside individual courses in the two choice lists, so those units are null; the blocks' printed totals (3-5 and 6-7) are recorded in stated.",
+   "CMGT 160 is printed as a variable unit course with one unit required; recorded as 1 unit.",
+   "ECON C2001/C2001H and ECON C2002/C2002H (common course numbering) are not in the closed list and are marked as catalog additions; they appear to replace closed-list BUSC 1B/1BH and BUSC 1A/1AH, which the text does not name.",
+   "No general education pattern is named in the text, so ge_pattern is null.",
+   "The text prints no program learning outcomes for this award."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

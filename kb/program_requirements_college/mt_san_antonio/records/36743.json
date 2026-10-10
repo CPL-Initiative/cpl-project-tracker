@@ -1,15 +1,15 @@
 {
  "college": "Mt. San Antonio College",
- "control_number": "31598",
+ "control_number": "36743",
  "shape": "noncredit",
- "title": "Adult High School Diploma",
+ "title": "Secondary Education",
  "award": "Noncredit program",
  "source_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/",
  "record_shape": 3,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6017,
+  "input_tokens": 6567,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6017,
-    "output_tokens": 2870,
+    "input_tokens": 6567,
+    "output_tokens": 2608,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,87 +30,31 @@
     "model": null
    }
   ],
-  "output_tokens": 2870,
+  "output_tokens": 2608,
   "output_tokens_details": {
-   "thinking_tokens": 532
+   "thinking_tokens": 298
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.08147,
- "ms": 22357,
- "seconds": 22.7,
+ "cost_usd": 0.07843,
+ "ms": 19181,
+ "seconds": 19.5,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
-   "listed": 13,
+   "placed": 40,
+   "listed": 40,
    "share": 1.0,
    "missing": [],
    "unexplained": [],
    "pass": true
   },
   "invented": {
-   "count": 27,
-   "codes": [
-    "BSHSART1",
-    "BSHSART2",
-    "BSHSBIO",
-    "BSHSCHEM",
-    "BSHSCIV",
-    "BSHSCPTC",
-    "BSHSEASC",
-    "BSHSELD",
-    "BSHSETHN",
-    "BSHSGEOG",
-    "BSHSHLTH",
-    "BSHSINMA1",
-    "BSHSINMA2",
-    "BSHSINMA3",
-    "BSHSMUSC",
-    "BSHSPHSC",
-    "BSHSPLNG",
-    "BSHSPRFN",
-    "BSHSREAD",
-    "BSHSSPN1",
-    "BSHSSPN2",
-    "BSHSSPNS1",
-    "BSHSSPNS2",
-    "BSHSSSK",
-    "BSHSWREX",
-    "BSHSWRIT1",
-    "BSHSWRIT2"
-   ],
-   "flagged": [
-    "BSHSART1",
-    "BSHSART2",
-    "BSHSBIO",
-    "BSHSCHEM",
-    "BSHSCIV",
-    "BSHSCPTC",
-    "BSHSEASC",
-    "BSHSELD",
-    "BSHSETHN",
-    "BSHSGEOG",
-    "BSHSHLTH",
-    "BSHSINMA1",
-    "BSHSINMA2",
-    "BSHSINMA3",
-    "BSHSMUSC",
-    "BSHSPHSC",
-    "BSHSPLNG",
-    "BSHSPRFN",
-    "BSHSREAD",
-    "BSHSSPN1",
-    "BSHSSPN2",
-    "BSHSSPNS1",
-    "BSHSSPNS2",
-    "BSHSSSK",
-    "BSHSWREX",
-    "BSHSWRIT1",
-    "BSHSWRIT2"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -169,35 +113,35 @@
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS CHEM",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS EASC",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS PHSC",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS CIV",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS ECON",
@@ -211,7 +155,7 @@
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS PSY",
@@ -246,21 +190,21 @@
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS ART2",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS MUSC",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS SPN1",
@@ -270,10 +214,10 @@
        {
         "code": "BSHS SPNS1",
         "units": null,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS SPN2",
@@ -283,10 +227,10 @@
        {
         "code": "BSHS SPNS2",
         "units": null,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS ENG1",
@@ -321,21 +265,21 @@
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS WRIT1",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS WRIT2",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS ALG1",
@@ -370,77 +314,77 @@
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS INMA2",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS INMA3",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS HLTH",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS ETHN",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS PRFN",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS CPTC",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS READ",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS PLNG",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS SSK",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "BSHS ELD",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    }
@@ -448,14 +392,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog section is titled 'Secondary Education/ High School Diploma' and is labeled a Certificate of Competency (#36743); the request names it 'Adult High School Diploma'. Confirm it is the same award.",
-   "The catalog prints no units or hours beside any course; all units fields are null.",
-   "The text says students complete 'a total of 160 high school credits'. These are high school credits, not college units or hours, so total_units was left null. A reviewer may decide whether to record 160 as the total.",
-   "The 'Required Courses' list is recorded with rule 'all' because the catalog prints it under that heading. However, it combines alternative paths, such as the traditional math sequence and Integrated Math 1-3, and elective-type courses. Students likely complete a subset adding up to 160 high school credits, and earlier equivalent coursework may count. Actual selection rules are not stated in the text.",
-   "BSHS SPN1 and BSHS SPN2 are printed with 'or' alternatives (BSHS SPNS1, BSHS SPNS2), and these are recorded as alternatives.",
-   "All 13 closed-list courses appear in the list. The 25 other courses in the section are not in the closed list and are marked catalog_addition true.",
-   "The page links to separate SLOs that are not included in the text. The two Program Learning Outcomes printed are recorded word for word."
+   "The award is a Certificate of Competency (#36743) leading to a high school diploma; the catalog counts it in high school credits ('Students will complete a total of 160 high school credits'; 'A minimum of 20 residency credits must be completed at Mt. San Antonio College'), not units or hours. total_units left null because the stated total is in high school credits, a different measure; measure set to 'units' by default since no hours are printed.",
+   "The Units column of the course table is blank for every course, so all course units are null.",
+   "All courses are printed under 'Required Courses' with no selection rule, so the block is recorded as 'all'. In practice the list (including overlapping math paths such as Algebra 1/2 and Integrated Math 1-3, and Pre-Algebra, ELD, Study Skills) likely functions as a menu toward 160 credits; a reviewer should verify the actual graduation requirements.",
+   "BSHS SPNS1 and BSHS SPNS2 are printed as 'or' options to BSHS SPN1 and BSHS SPN2 and are recorded as alternatives.",
+   "Page also refers to 'Review Student Learning Outcomes (SLOs) for this program' (a link not included in the text); only the two printed Program Learning Outcomes are recorded."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "38064250199"
 }

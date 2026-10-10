@@ -1,0 +1,190 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "08078",
+ "shape": "degree",
+ "title": "Airframe and Aircraft Powerplant Maintenance Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-and-aircraft-powerplant-maintenance-technology-day/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6605,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6605,
+    "output_tokens": 1423,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1423,
+  "output_tokens_details": {
+   "thinking_tokens": 311
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05488,
+ "ms": 12086,
+ "seconds": 13.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    67.5,
+    67.5
+   ],
+   "stated": [
+    67.5,
+    67.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Airframe and Aircraft Powerplant Maintenance Technology - Day (AS Degree S0911)",
+   "measure": "units",
+   "total_units": {
+    "min": 67.5,
+    "max": 67.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Connect learned theory with real-world problems and develop a logical solution to the problem.",
+    "Locate, interpret, and apply technical data from industry manuals and apply that technical data to a maintenance situation.",
+    "Determine several possible solutions for dealing with a given situation and then decide which solution(s) are ethical and which are not.",
+    "Demonstrate proper use of aircraft repair equipment.",
+    "Apply knowledge of aeronautics, aircraft maintenance, and aviation regulations.",
+    "Inspect an aircraft/aircraft component and determine if the unit conforms to industry established standards."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 67.5,
+     "max": 67.5
+    },
+    "courses": [
+     {
+      "code": "AIRM 65A",
+      "units": 13,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRM 65B",
+      "units": 13,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRM 66A",
+      "units": 13,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRM 66B",
+      "units": 13,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRM 70A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRM 70B",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRM 71",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRM 72",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "This record reads the Day option (AS Degree S0911), matching the source URL; the page also lists an Evening AS Degree (S0951) and several certificates, which were not read.",
+   "Closed list writes 'AIRM70A' and 'AIRM72' without a space; matched to catalog 'AIRM 70A' and 'AIRM 72' (catalog_addition false). Closed-list title for AIRM 72 is 'Aviation Material and Processess' vs catalog 'Aircraft Materials and Processes'.",
+   "Recommended Electives (AIRM 74 2 units, AIRM 80 0.5 units, PHYS 1 4 units) are listed as recommended, not required, and are not recorded in a block.",
+   "The degree requires 'General Education coursework' without naming a specific GE pattern; ge_pattern left null.",
+   "The program learning outcomes come from the page's Outcomes tab for this program; the degree is assumed to share that list. The page also links to separate SLOs not included in the text.",
+   "The overview states day courses AIRM 65A/65B and 66A/66B are equivalent to evening courses AIRM 90A-98B; those evening courses belong to the Evening degree and are not recorded here."
+  ]
+ },
+ "extracted_run": "38064250199"
+}
