@@ -481,6 +481,28 @@ def cq_text(html_text: str) -> str:
     return "\n".join(ln for ln in lines if ln)
 
 
+# RCCD's seven Liberal Arts emphasis degrees name each subject once and then
+# its course numbers alone: "Mathematics (MATH): C2210, C2210H, 5, 9" and
+# "Biology (BIO) 1, 1H, 4". Read as printed, the page names no listed course
+# but the first of each line, so no emphasis found a page at any of the three
+# colleges (21 programs, S358's reads; the Math and Science page, run
+# 38092480434). Each number is read with its subject: "MATH C2210, MATH 5".
+# A number followed by "units" or "hours" is a quantity, never a course.
+CQ_NUM = r"C?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,3}\d{0,2}\b"
+CQ_SEP = r"(?:[ \t]*,[ \t]*(?:and[ \t]+|or[ \t]+)?|[ \t]+(?:and|or)[ \t]+)"
+CQ_SUBJECT_LIST = re.compile(r"\(([A-Z][A-Z&]{1,7})\)([ \t]*:?[ \t]*)(%s(?:%s%s)*)(?![ \t]*(?i:units?|hours?|credits?)\b)"
+                             % (CQ_NUM, CQ_SEP, CQ_NUM))
+
+
+def cq_subject_lists(text: str) -> str:
+    """Each bare course number after a subject's code in parentheses, read with
+    that code. A line that already writes "CIS 5" is left as it stands."""
+    def one(m):
+        listed = re.sub(CQ_NUM, lambda n: "%s %s" % (m.group(1), n.group(0)), m.group(3))
+        return "(%s)%s%s" % (m.group(1), m.group(2), listed)
+    return CQ_SUBJECT_LIST.sub(one, text or "")
+
+
 def cq_page_text(page: dict) -> tuple[str, str]:
     """(the node's title, its page's text): the title, then every block in order."""
     node = (page or {}).get("page") or {}
@@ -488,7 +510,7 @@ def cq_page_text(page: dict) -> tuple[str, str]:
     parts = [title]
     for b in (page or {}).get("body") or []:
         head = (b.get("catalogblockheader") or "").strip()
-        body = cq_text(b.get("text") or "")
+        body = cq_subject_lists(cq_text(b.get("text") or ""))
         if head and head not in parts:
             parts.append(head)
         if body:
@@ -714,6 +736,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                        "pages": r.get("lost_pages")} for r in recs if r["method"] == "page_claimed"],
         coverage_bands={band: sum(1 for r in recs if r.get("source") and lo <= r["coverage"] < hi)
                         for band, lo, hi in (("0.5-0.8", .5, .8), ("0.8-1.0", .8, 1.0), ("1.0", 1.0, 9))})
+    report["would_extract"] = would_extract(college, recs)
     _write(os.path.join(out_dir, "capture.json"), report)
     print(json.dumps({k: v for k, v in report.items() if k not in ("not_found", "shared_pages")}, indent=1))
     return 0
@@ -725,6 +748,36 @@ def unchanged(prev: dict | None, src: dict) -> bool:
     again."""
     return bool(prev) and (prev.get("source") or {}).get("url") == (src.get("source") or {}).get("url") \
         and prev.get("coverage") == src.get("coverage") and prev.get("codes_found") == src.get("codes_found")
+
+
+def would_extract(college: str, recs: list[dict], folder: str | None = None) -> dict:
+    """What an extraction after this capture would send to the model, against
+    the read filed for the college: each source that reaches the extraction's
+    bar and is new or moved (unchanged() is the test the extraction applies).
+    A capture-only run files this in its preview, so Sam's go on an extraction
+    names its programs and its cost before a model call is made."""
+    folder = folder or os.path.join(COLLEGE_DIR, slug_of(college))
+    prev: dict = {}
+    if os.path.isfile(os.path.join(folder, "sources.json")):
+        with open(os.path.join(folder, "sources.json")) as fh:
+            prev = {x["control_number"]: x for x in json.load(fh)}
+    from _program_requirements_extract import MIN_COVERAGE as bar
+    out, kept = [], 0
+    for r in recs:
+        if (r.get("coverage") or 0) < bar or not r.get("text"):
+            continue
+        cn = r["control_number"]
+        filed = os.path.isfile(os.path.join(folder, "records", cn + ".json"))
+        if filed and unchanged(prev.get(cn), r):
+            kept += 1
+            continue
+        was = prev.get(cn) or {}
+        out.append({"control_number": cn, "title": r.get("title"), "award": r.get("award"),
+                    "url": (r.get("source") or {}).get("url"), "coverage": r.get("coverage"),
+                    "was_url": (was.get("source") or {}).get("url"), "was_coverage": was.get("coverage"),
+                    "was_method": was.get("method")})
+    return {"against": os.path.relpath(folder, os.path.dirname(HERE)) if prev else None,
+            "kept": kept, "programs": len(out), "list": out}
 
 
 def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,

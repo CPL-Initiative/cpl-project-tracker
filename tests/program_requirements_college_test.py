@@ -24,12 +24,15 @@ network. Run from repo root: python3 tests/program_requirements_college_test.py
 """
 import json
 import os
+import shutil
+import tempfile
 import urllib.parse
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _program_requirements_college as C  # noqa: E402
+import _program_requirements_pilot as P  # noqa: E402
 
 failures = []
 checks = [0]
@@ -277,6 +280,53 @@ acting = [{"control_number": "A1", "title": "Acting", "award": "A.A. Degree", "c
 gq = C.assign(acting, [PGQ])
 check(all(gq[cn]["best"] and gq[cn]["best"]["url"] == PGQ["url"] for cn in ("A1", "A2")),
       "the A.A. and the certificate one curriQunet page names both read that page")
+
+# an emphasis page names each subject once, then its numbers (S359, RCCD's
+# seven Liberal Arts emphasis degrees: 21 programs found no page)
+check(C.cq_subject_lists("Mathematics (MATH): C2210, C2210H, 5, 70A") ==
+      "Mathematics (MATH): MATH C2210, MATH C2210H, MATH 5, MATH 70A"
+      and C.cq_subject_lists("Astronomy (AST) 1A, 1AH") == "Astronomy (AST) AST 1A, AST 1AH",
+      "each bare number after a subject's code reads with that code, with or without a colon")
+check(C.cq_subject_lists("Psychology (PSYC): 2, 2H or 48") == "Psychology (PSYC): PSYC 2, PSYC 2H or PSYC 48",
+      "the words between the numbers stay as printed")
+check(C.cq_subject_lists("Accounting (ACC) 3 units") == "Accounting (ACC) 3 units"
+      and C.cq_subject_lists("Course (CIS) CIS 5") == "Course (CIS) CIS 5"
+      and C.cq_subject_lists("(Take one course in each) 1, 2") == "(Take one course in each) 1, 2",
+      "a quantity, a code already written whole, and a parenthesis naming no code are left alone")
+MS = json.load(open(os.path.join(ROOT, "tests", "fixtures", "curriqunet_rcc_getpage_6290.json")))
+PMS = C.cq_page({"id": 6290, "text": "Math and Science - Associate of Science - AS493/AS493C",
+                 "aliaspath": "5852/6117/6290"}, MS, "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/")
+# A sample of Riverside City's Math & Sciences list in the Program Course File
+# (control number 18114, 110 courses), each a bare number on the page.
+MS_LIST = [{"code": c} for c in ("MATH 5", "MATH 9", "MATH 70A", "MATH C2210H", "STAT C1000", "PSYC 48",
+                                 "AST 1A", "CHE 1A", "GEG 1L", "GEO 3", "OCE 1", "PHS 1", "PHY 2A",
+                                 "BIO 1", "BIO 60H", "ANT 1H", "CIS 17A", "CSC 18C", "ELE 23", "ENE 35")]
+gms = C.assign([{"control_number": "18114", "title": "Math & Sciences", "award": "A.S. Degree",
+                 "closed_list": MS_LIST}], [PMS])["18114"]["best"]
+check(gms and gms["url"].endswith("/5852/6117/6290") and gms["coverage"] == 1.0,
+      "the real Math and Science page (run 38092480434) is the Math & Sciences emphasis's page: %r"
+      % ((gms and (gms["url"], gms["coverage"])),))
+raw = "\n".join(C.cq_text(b.get("text") or "") for b in MS["body"])
+check(P.coverage(P.find_codes(raw, MS_LIST), MS_LIST) < 0.5,
+      "read as printed, the page names under half the list: the failure the expansion fixes")
+
+# what an extraction after a capture would pay for, against the filed read
+_wx = tempfile.mkdtemp()
+try:
+    os.makedirs(os.path.join(_wx, "records"))
+    json.dump([{"control_number": "1", "source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]},
+               {"control_number": "2", "source": None, "coverage": 0.0, "codes_found": [], "method": "not_found"}],
+              open(os.path.join(_wx, "sources.json"), "w"))
+    open(os.path.join(_wx, "records", "1.json"), "w").write("{}")
+    wx = C.would_extract("X", [
+        {"control_number": "1", "source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"], "text": "t"},
+        {"control_number": "2", "source": {"url": "v"}, "coverage": 0.9, "codes_found": ["B1"], "text": "t"},
+        {"control_number": "3", "source": None, "coverage": 0.0, "codes_found": [], "text": ""}], folder=_wx)
+    check(wx["kept"] == 1 and wx["programs"] == 1 and wx["list"][0]["control_number"] == "2"
+          and wx["list"][0]["was_method"] == "not_found",
+          "a capture names the programs an extraction would send to the model, and keeps the rest: %r" % wx)
+finally:
+    shutil.rmtree(_wx, ignore_errors=True)
 
 # a re-run keeps a record filed from the same page
 prev = {"source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]}
