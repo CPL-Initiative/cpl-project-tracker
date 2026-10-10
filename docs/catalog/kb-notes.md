@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-534 document(s).
+535 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -218,6 +218,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A successful import is not a correct one](../kb-notes/methodology-a-successful-import-is-not-a-correct-one.md) | methodology | published | 2026-08-08 | 2026-08-08 |
 | [A summary field will be read as the whole record](../kb-notes/methodology-a-summary-field-is-not-the-record.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A summary surface must share the unit of the detail it summarizes](../kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md) | methodology | published | 2026-08-01 | 2026-08-01 |
+| [A sweep of a gated view measures the gate](../kb-notes/methodology-a-sweep-of-a-gated-view-measures-the-gate.md) | methodology | published | 2026-10-10 | 2026-10-10 |
 | [A sweep scoped by a proxy leaves a shadow](../kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A sweep sees only the states its seed reaches — seed through the code that paints them](../kb-notes/methodology-a-sweep-sees-only-the-states-its-seed-reaches.md) | methodology | published | 2026-10-09 | 2026-10-09 |
 | [A tag scan cannot see a fetch](../kb-notes/methodology-a-tag-scan-cannot-see-a-fetch.md) | methodology | published | 2026-08-19 | 2026-08-19 |

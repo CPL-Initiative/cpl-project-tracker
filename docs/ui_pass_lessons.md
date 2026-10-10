@@ -134,3 +134,25 @@ scratch config it did not commit, signed in) and opened its own PR; the session 
 Deferred: edit-mode keyboard access (clickable `<td>` cells need a button inside) and the dark focused-row highlight
 (cobalt words on `--gold-soft` at 4.16:1).
 
+
+## S358 SkyFern, 2026-10-10: MAP Users, the first pass (#1963)
+
+**The signed-out sweep passed a view it never saw.** `cobi:map-users` and `cobi-dark:map-users` passed because the tab
+painted its could-not-load box. S356 measured Team & RACI signed in with a scratch config it did not commit; this pass
+committed the seeds instead: four targets in `a11y.config.js` (`map-users-roster`, `map-users-gaps`, each with `-dark`),
+so every later pass measures the reviewer's view by name. KB note:
+[`methodology-a-sweep-of-a-gated-view-measures-the-gate`](kb-notes/methodology-a-sweep-of-a-gated-view-measures-the-gate.md).
+
+**Before, seeded:** 28 controls under 24px (roster, nudge, hide at 20px), the search box's focus ring removed by
+`outline:none`, the roster table 17px and the worklist 102px past a 390px viewport, the Open link 16px. **After:** all four
+pass. Controls are underlined cobalt words 18px apart; the filled Open email draft button is a word; the lens toggles keep
+their fill and add `aria-pressed` and weight (a toggle in a set is outside the controls rule); each table sits in a named,
+focusable region that scrolls below 560px, so the desktop sticky header still holds.
+
+**`--on-accent` is not the ink for `--seal-blue`.** It is white in light and `#141413` in dark, while `--seal-blue` stays
+`#002F6D` in both: the first cut measured 1.43:1 in dark. `--white` is the pair (eight sites already used it).
+
+**The glyph sweep missed split labels.** `kb/_glyph_sweep.py` found one control-class emoji in `map_users.js`; there were
+ten labels at eight sites, because each label sat on its own concatenated line after the `<button` line, and four were
+`\u{1F...}` escapes.
+`tests/map_users_first_light.test.js` reads the rendered buttons instead, and fails on the old code 14 of 16.

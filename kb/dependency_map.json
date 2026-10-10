@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 6,
-  "file_datasets": 621,
+  "file_datasets": 620,
   "external_services": 166,
   "consumers": 426,
   "workflows": 47,
@@ -12032,19 +12032,6 @@
     }
    ],
    "served": false,
-   "main_committers": []
-  },
-  "file:kb/program_requirements_college/riverside_city/capture_preview.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_program_requirements_college.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 820
-    }
-   ],
-   "served": true,
    "main_committers": []
   },
   "file:kb/program_requirements_maps_sample.json": {
