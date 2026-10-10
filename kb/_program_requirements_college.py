@@ -487,8 +487,11 @@ def cq_text(html_text: str) -> str:
 # but the first of each line, so no emphasis found a page at any of the three
 # colleges (21 programs, S358's reads; the Math and Science page, run
 # 38092480434). Each number is read with its subject: "MATH C2210, MATH 5".
-# A number followed by "units" or "hours" is a quantity, never a course.
-CQ_NUM = r"C?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,3}\d{0,2}\b"
+# A number followed by "units" or "hours" is a quantity, never a course. A
+# number may lead with a letter: Kinesiology's activity courses are A03, V01,
+# A31A and Dance's D10, so a list read only after a C stopped at the first of
+# them, and Kinesiology, Health and Wellness still found no page (S359).
+CQ_NUM = r"[A-Z]?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,3}\d{0,2}\b"
 CQ_SEP = r"(?:[ \t]*,[ \t]*(?:and[ \t]+|or[ \t]+)?|[ \t]+(?:and|or)[ \t]+)"
 CQ_SUBJECT_LIST = re.compile(r"\(([A-Z][A-Z&]{1,7})\)([ \t]*:?[ \t]*)(%s(?:%s%s)*)(?![ \t]*(?i:units?|hours?|credits?)\b)"
                              % (CQ_NUM, CQ_SEP, CQ_NUM))
