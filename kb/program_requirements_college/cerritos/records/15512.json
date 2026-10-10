@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Woodworking Manufacturing Technologies: Cabinetmaking",
  "award": "A.S. Degree",
- "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/woodworking-manufacturing-technologies/",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/cabinetmaking/",
  "record_shape": 3,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6211,
+  "input_tokens": 6210,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6211,
-    "output_tokens": 1677,
+    "input_tokens": 6210,
+    "output_tokens": 2019,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,179 +30,259 @@
     "model": null
    }
   ],
-  "output_tokens": 1677,
+  "output_tokens": 2019,
   "output_tokens_details": {
-   "thinking_tokens": 553
+   "thinking_tokens": 591
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.05838,
- "ms": 14138,
- "seconds": 14.7,
+ "cost_usd": 0.06522,
+ "ms": 16299,
+ "seconds": 18.2,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 18,
    "listed": 19,
-   "share": 0.0,
+   "share": 0.947,
    "missing": [
-    "WMT101",
-    "WMT102",
-    "WMT144",
-    "WMT151",
-    "WMT153",
-    "WMT155",
-    "WMT157",
-    "WMT171A",
-    "WMT171B",
-    "WMT171C",
-    "WMT181",
-    "WMT182",
-    "WMT184",
-    "WMT187",
-    "WMT201",
-    "WMT251",
-    "WMT282",
-    "WMT291",
-    "WMT292"
+    "WMT251"
    ],
    "unexplained": [],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "WMT107",
+    "WMT154"
+   ],
+   "flagged": [
+    "WMT107",
+    "WMT154"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    24.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    24.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Woodworking Manufacturing Technologies: Cabinetmaking (A.S.)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 24
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": []
+   "outcomes": [
+    "Students build a face frame or frameless cabinet project to meet the requirements of specified planning documents.",
+    "Students design and construct a cabinet using traditional woodworking and CNC machines."
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "WMT Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 17.5
+    },
+    "courses": [
+     {
+      "code": "WMT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 151",
+      "units": 4,
+      "units_max": 6.5,
+      "alternatives": [
+       {
+        "code": "WMT 153",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "WMT 171B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 154",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMT 155",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMT 181",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "WMT 182",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select a minimum of 4-6.5 units of the following:",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 6.5
+    },
+    "courses": [
+     {
+      "code": "WMT 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMT 144",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 157",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 184",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMT 171C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 187",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMT 171A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 282",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 291",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 292",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "WMT 101",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 102",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 144",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 151",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 153",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 155",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 157",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 171A",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 171B",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 171C",
-    "why": "not in the text"
-   },
-   {
-    "code": "WMT 181",
-    "why": "not in the text"
-   },
-   {
-    "code": "WMT 182",
-    "why": "not in the text"
-   },
-   {
-    "code": "WMT 184",
-    "why": "not in the text"
-   },
-   {
-    "code": "WMT 187",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
-    "code": "WMT 201",
-    "why": "named only in the general Woodworking Manufacturing Technologies (A.S.) section, not the Cabinetmaking A.S."
-   },
-   {
     "code": "WMT 251",
-    "why": "not in the text"
-   },
-   {
-    "code": "WMT 282",
-    "why": "not in the text"
-   },
-   {
-    "code": "WMT 291",
-    "why": "not in the text"
-   },
-   {
-    "code": "WMT 292",
     "why": "not in the text"
    }
   ],
   "notes": [
-   "The supplied catalog text does not contain the section for Woodworking Manufacturing Technologies: Cabinetmaking (A.S.). That title appears only as an entry in the navigation list.",
-   "The only program section printed is 'Woodworking Manufacturing Technologies (A.S.)', the general WMT degree, with a 19-24 unit total. Its requirements and its three Program Student Learning Outcomes belong to that award and were not recorded for the Cabinetmaking A.S.",
-   "No blocks, total units, or outcomes could be recorded. A reviewer should fetch the Cabinetmaking (A.S.) page from the 2026-2027 catalog.",
-   "section_heading is left empty because no section for this award was found in the text."
+   "Core 'or' groups print a single unit value or range on the first row only (e.g. 'WMT 151 ... 4.0-6.5', 'WMT 181 ... 3.0-4.0'); alternatives (WMT 153, WMT 171B, WMT 155, WMT 182) have no units printed beside them, so their units are recorded as null.",
+   "WMT 154 (Introduction to Cabinet Installation, 4.0) and WMT 107 (Wood Finishing, 3) appear in the catalog but are not on the closed list; recorded as catalog additions.",
+   "Elective block states 'Select a minimum of 4-6.5 units'; the minimum is printed as a range, recorded as minimum 4 with stated 4-6.5. Reviewer should confirm (the upper end likely reflects selecting a 6.5-unit WMT 171 course).",
+   "WMT 187 has no units printed beside it in the elective list.",
+   "Alternatives WMT 171C and WMT 171A in the elective list have no units printed beside them.",
+   "Degree requires 60 units including unspecified 'General Education requirements'; no named GE pattern is given, so ge_pattern is null."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "38064252862"
 }
