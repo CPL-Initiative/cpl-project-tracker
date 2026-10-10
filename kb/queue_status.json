@@ -1,32 +1,18 @@
 {
   "schema": 1,
-  "written_at": "2026-10-09T20:40:41Z",
-  "session": 354,
-  "moniker": "SkyFurrow",
+  "written_at": "2026-10-10T15:51:13Z",
+  "session": 356,
+  "moniker": "SkyThicket",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_355_handoff.md",
+  "handoff": "docs/session_356_handoff.md",
   "unchecked": [
-    {
-      "college": "Irvine Valley College",
-      "program": "Art",
-      "award": "A.A.",
-      "control_number": "10265",
-      "loaded": "2026-10-07"
-    },
     {
       "college": "Santa Monica College",
       "program": "Barbering",
       "award": "A.S.",
       "control_number": "43767",
       "loaded": "2026-10-07"
-    },
-    {
-      "college": "Cerritos College",
-      "program": "Architectural Technology",
-      "award": "A.A.",
-      "control_number": "02201",
-      "loaded": "2026-10-09"
     },
     {
       "college": "Cerritos College",
@@ -93,13 +79,6 @@
     },
     {
       "college": "Cerritos College",
-      "program": "Business Communications Office Technology: Secretary/Administrative Assistant",
-      "award": "A.A.",
-      "control_number": "02213",
-      "loaded": "2026-10-09"
-    },
-    {
-      "college": "Cerritos College",
       "program": "Journalism",
       "award": "A.A.",
       "control_number": "02214",
@@ -152,13 +131,6 @@
       "program": "Automotive Collision Repair: General Automotive Collision Repair",
       "award": "A.S.",
       "control_number": "02225",
-      "loaded": "2026-10-09"
-    },
-    {
-      "college": "Cerritos College",
-      "program": "Engineering Design Technology",
-      "award": "Certificate of Achievement",
-      "control_number": "02226",
       "loaded": "2026-10-09"
     },
     {
@@ -926,13 +898,6 @@
     },
     {
       "college": "Cerritos College",
-      "program": "Culinary Arts: Professional Cooking",
-      "award": "Certificate of Achievement",
-      "control_number": "20520",
-      "loaded": "2026-10-09"
-    },
-    {
-      "college": "Cerritos College",
       "program": "Culinary Arts: Professional Baking and Pastry",
       "award": "Certificate of Achievement",
       "control_number": "20521",
@@ -982,13 +947,6 @@
     },
     {
       "college": "Cerritos College",
-      "program": "Courses in GED Test Preparation in Spanish",
-      "award": "Noncredit",
-      "control_number": "24026",
-      "loaded": "2026-10-09"
-    },
-    {
-      "college": "Cerritos College",
       "program": "Courses in English as a Second Language",
       "award": "Noncredit",
       "control_number": "24046",
@@ -1027,13 +985,6 @@
       "program": "Communication Studies",
       "award": "Certificate of Achievement",
       "control_number": "31111",
-      "loaded": "2026-10-09"
-    },
-    {
-      "college": "Cerritos College",
-      "program": "Art History",
-      "award": "A.A.-T",
-      "control_number": "31608",
       "loaded": "2026-10-09"
     },
     {
@@ -1910,92 +1861,2262 @@
       "award": "A.S.",
       "control_number": "46199",
       "loaded": "2026-10-09"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Agricultural Science and Technology",
+      "award": "A.S.",
+      "control_number": "02990",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Landscape Design  - Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "02994",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Park and Sports Turf Management",
+      "award": "A.S.",
+      "control_number": "02996",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Accounting",
+      "award": "A.S.",
+      "control_number": "03001",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Real Estate",
+      "award": "A.S.",
+      "control_number": "03006",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Administrative Assistant",
+      "award": "A.S.",
+      "control_number": "03007",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Sign Language Interpreting",
+      "award": "A.S.",
+      "control_number": "03014",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronics and Computer Engineering Technology",
+      "award": "A.S.",
+      "control_number": "03019",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Air Conditioning and Refrigeration",
+      "award": "A.S.",
+      "control_number": "03023",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering and Construction Technology",
+      "award": "A.S.",
+      "control_number": "03034",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Photography",
+      "award": "A.S.",
+      "control_number": "03047",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Respiratory Therapy",
+      "award": "A.S.",
+      "control_number": "03056",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Radiologic Technology",
+      "award": "A.S.",
+      "control_number": "03057",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Mental Health Technology - Psychiatric Technician",
+      "award": "A.S.",
+      "control_number": "03058",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Emergency Medical Services - Paramedic",
+      "award": "A.S.",
+      "control_number": "03059",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Interior Design: Kitchen and Bath",
+      "award": "A.S.",
+      "control_number": "03061",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Fashion Merchandising",
+      "award": "A.S.",
+      "control_number": "03064",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Administration of Justice",
+      "award": "A.S.",
+      "control_number": "03081",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development",
+      "award": "A.S.",
+      "control_number": "03083",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Horse Ranch Management",
+      "award": "A.S.",
+      "control_number": "08042",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Animal Science",
+      "award": "A.S.",
+      "control_number": "08043",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Ornamental Horticulture",
+      "award": "A.S.",
+      "control_number": "08045",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Interior Landscaping",
+      "award": "Certificate of Achievement",
+      "control_number": "08046",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Landscape and Park Maintenance",
+      "award": "Certificate of Achievement",
+      "control_number": "08047",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Nursery Management",
+      "award": "Certificate of Achievement",
+      "control_number": "08048",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Tree Care & Maintenance",
+      "award": "Certificate of Achievement",
+      "control_number": "08051",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Sports Turf Management",
+      "award": "Certificate of Achievement",
+      "control_number": "08052",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Accounting - Computerized",
+      "award": "Certificate of Achievement",
+      "control_number": "08053",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Administrative Assistant Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "08062",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Administrative Assistant Level III",
+      "award": "Certificate of Achievement",
+      "control_number": "08063",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Microcomputer Productivity Software",
+      "award": "Certificate of Achievement",
+      "control_number": "08069",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronic Communications",
+      "award": "Certificate of Achievement",
+      "control_number": "08074",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronics Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "08075",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Architectural Design Concentration Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "08081",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development - Infant/Toddler Care Teacher",
+      "award": "Certificate of Achievement",
+      "control_number": "08093",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development - School Age Child",
+      "award": "Certificate of Achievement",
+      "control_number": "08094",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development - Level III",
+      "award": "Certificate of Achievement",
+      "control_number": "08095",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development - Program Administration",
+      "award": "Certificate of Achievement",
+      "control_number": "08098",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development – Early Childhood Teacher",
+      "award": "Certificate of Achievement",
+      "control_number": "08099",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Animation",
+      "award": "A.S.",
+      "control_number": "08101",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Social and Behavioral Sciences",
+      "award": "A.A.",
+      "control_number": "10180",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Interior Design",
+      "award": "A.S.",
+      "control_number": "11095",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Audio Media",
+      "award": "A.S.",
+      "control_number": "11120",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "International Business",
+      "award": "A.S.",
+      "control_number": "11894",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Aircraft Powerplant Maintenance Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "12010",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Architectural Technology Concentration Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "12076",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Architectural Technology Concentration Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "12077",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Histotechnician Training",
+      "award": "A.S.",
+      "control_number": "12146",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Human Resources Management",
+      "award": "A.S.",
+      "control_number": "12157",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business: Human Resources Mgmt - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "12162",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Fashion Design and Technologies",
+      "award": "A.S.",
+      "control_number": "12164",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Accounting - Financial Planning",
+      "award": "Certificate of Achievement",
+      "control_number": "12193",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Accounting - Managerial",
+      "award": "Certificate of Achievement",
+      "control_number": "12194",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Computer and Networking Technology",
+      "award": "A.S.",
+      "control_number": "12263",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business:  Retail Management",
+      "award": "A.S.",
+      "control_number": "12309",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business: Retail Management - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "12310",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Hospitality: Restaurant Management - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "12344",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Hospitality & Restaurant Management",
+      "award": "A.S.",
+      "control_number": "12345",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Hospitality: Hospitality Management - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "12346",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Computer and Networking Technology - Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "12544",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Animation - Junior Animator Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "12632",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Junior Game Designer - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "12633",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Television Production",
+      "award": "A.S.",
+      "control_number": "12653",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "13547",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronic Systems Technology - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "14039",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Interior Design: Level III",
+      "award": "Certificate of Achievement",
+      "control_number": "14115",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Interior Design - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "15228",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Educational Paraprofessional (Instructional Assistant)",
+      "award": "A.S.",
+      "control_number": "15398",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Applied Laboratory Science Technology",
+      "award": "A.S.",
+      "control_number": "16430",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Cloud and Network Cyber Security Administration",
+      "award": "A.S.",
+      "control_number": "16544",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Welder - Licensed",
+      "award": "Certificate of Achievement",
+      "control_number": "17592",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Welder-Automotive, Cutting & Modification",
+      "award": "Certificate of Achievement",
+      "control_number": "17593",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Welder - Gas Tungsten Arc Welding",
+      "award": "Certificate of Achievement",
+      "control_number": "17594",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Welding - Semiautomatic Arc Welding",
+      "award": "Certificate of Achievement",
+      "control_number": "17595",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Architectural Design Concentration",
+      "award": "A.S.",
+      "control_number": "17787",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Architectural Design Concentration Level ll",
+      "award": "Certificate of Achievement",
+      "control_number": "17853",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Architectural Design Concentration Level III",
+      "award": "Certificate of Achievement",
+      "control_number": "17854",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Liberal Arts and Sciences: Communication",
+      "award": "A.A.",
+      "control_number": "18234",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Humanities",
+      "award": "A.A.",
+      "control_number": "18236",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Liberal Arts and Sciences: Information Technology",
+      "award": "A.A.",
+      "control_number": "18237",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Language Arts",
+      "award": "A.A.",
+      "control_number": "18239",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Natural Sciences",
+      "award": "A.A.",
+      "control_number": "18242",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Computer Programming",
+      "award": "A.S.",
+      "control_number": "19250",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Pet Science",
+      "award": "Certificate of Achievement",
+      "control_number": "22147",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Horse Ranch Management - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "22148",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Park Management",
+      "award": "Certificate of Achievement",
+      "control_number": "22150",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Accounting - Professional Accounting",
+      "award": "Certificate of Achievement",
+      "control_number": "22152",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business:  Human Resources Management--Level III",
+      "award": "Certificate of Achievement",
+      "control_number": "22153",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business:  Retail Management - Level III",
+      "award": "Certificate of Achievement",
+      "control_number": "22154",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business: International - Level III",
+      "award": "Certificate of Achievement",
+      "control_number": "22155",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Real Estate Broker",
+      "award": "Certificate of Achievement",
+      "control_number": "22157",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Audio Media",
+      "award": "Certificate of Achievement",
+      "control_number": "22160",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Programming in C++",
+      "award": "Certificate of Achievement",
+      "control_number": "22167",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Sign Language Interpreting",
+      "award": "Certificate of Achievement",
+      "control_number": "22175",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronics and Computer Engineering Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "22176",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Air Conditioning and Refrigeracion",
+      "award": "Certificate of Achievement",
+      "control_number": "22177",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Manufacturing Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "22179",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering and Construction Technology - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "22180",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Photography - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "22181",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Mental Health Technology - Psychiatric Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "22182",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement",
+      "control_number": "22183",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Interior Design: Kitchen and Bath Specialization",
+      "award": "Certificate of Achievement",
+      "control_number": "22184",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Fashion Design - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "22185",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Fashion Merchandising - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "22186",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Administration of Justice",
+      "award": "Certificate of Achievement",
+      "control_number": "22188",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Small Business Management - Level 2",
+      "award": "Noncredit",
+      "control_number": "24034",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Small Business Management - Level 1",
+      "award": "Noncredit",
+      "control_number": "24035",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Livestock Production Management",
+      "award": "Noncredit",
+      "control_number": "24057",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Basic Skills",
+      "award": "Noncredit",
+      "control_number": "24058",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Administrative Assistant - Level 2",
+      "award": "Noncredit",
+      "control_number": "24066",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Accounting - Payroll",
+      "award": "Noncredit",
+      "control_number": "24074",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Accounting - Bookkeeping",
+      "award": "Noncredit",
+      "control_number": "24089",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "International Business - Level 1",
+      "award": "Noncredit",
+      "control_number": "24107",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business Management - Level 1",
+      "award": "Noncredit",
+      "control_number": "24108",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business Management - Level 2",
+      "award": "Noncredit",
+      "control_number": "24110",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronic Assembly and Fabrication",
+      "award": "Noncredit",
+      "control_number": "24162",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Pet Science",
+      "award": "Noncredit",
+      "control_number": "24172",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Nursery Management",
+      "award": "Noncredit",
+      "control_number": "24209",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronics Communications",
+      "award": "Noncredit",
+      "control_number": "24210",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Small Business Management - Level 3",
+      "award": "Noncredit",
+      "control_number": "24235",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Floral Design",
+      "award": "Noncredit",
+      "control_number": "24242",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Photography - Level 1",
+      "award": "Noncredit",
+      "control_number": "24245",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Accounting - Computerized",
+      "award": "Noncredit",
+      "control_number": "24246",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business Management - Level 3",
+      "award": "Noncredit",
+      "control_number": "24249",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Human Resource Management Level 1",
+      "award": "Noncredit",
+      "control_number": "24320",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Horse Ranch Management",
+      "award": "Noncredit",
+      "control_number": "24340",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Retail Management - Level 2",
+      "award": "Noncredit",
+      "control_number": "24359",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Welding Technologies",
+      "award": "Noncredit",
+      "control_number": "24373",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Retail Management - Level 3",
+      "award": "Noncredit",
+      "control_number": "24383",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Retail Management - Level 1",
+      "award": "Noncredit",
+      "control_number": "24418",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "International Business - Level 2",
+      "award": "Noncredit",
+      "control_number": "24431",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Building Automation",
+      "award": "Certificate of Achievement",
+      "control_number": "30317",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Building Automation",
+      "award": "A.S.",
+      "control_number": "30318",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Integrated Pest Management",
+      "award": "A.S.",
+      "control_number": "30537",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Paralegal/Legal Assistant",
+      "award": "A.S.",
+      "control_number": "30541",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Fashion Merchandising - Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "30545",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Psychology",
+      "award": "A.A.-T",
+      "control_number": "30762",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Basic Career Readiness",
+      "award": "Noncredit",
+      "control_number": "30805",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Communication Studies",
+      "award": "A.A.-T",
+      "control_number": "30847",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Consumer Relations",
+      "award": "Certificate of Achievement",
+      "control_number": "30868",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Interior Design - Level 1",
+      "award": "Noncredit",
+      "control_number": "31012",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Adult High School Diploma",
+      "award": "Noncredit",
+      "control_number": "31598",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "English",
+      "award": "A.A.-T",
+      "control_number": "31604",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Art History",
+      "award": "A.A.-T",
+      "control_number": "31607",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "History",
+      "award": "A.A.-T",
+      "control_number": "31650",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Mathematics",
+      "award": "A.S.-T",
+      "control_number": "31668",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Political Science",
+      "award": "A.A.-T",
+      "control_number": "31773",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Theater Arts",
+      "award": "A.A.-T",
+      "control_number": "31790",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Music",
+      "award": "A.A.-T",
+      "control_number": "31865",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Geography",
+      "award": "A.A.-T",
+      "control_number": "32278",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Photography - Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "32338",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Dance Teacher",
+      "award": "Certificate of Achievement",
+      "control_number": "32892",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Landscape Constructions",
+      "award": "Certificate of Achievement",
+      "control_number": "33309",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Horticulture Science",
+      "award": "Certificate of Achievement",
+      "control_number": "33311",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Studio Arts",
+      "award": "A.A.-T",
+      "control_number": "33391",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Personal Care Aide",
+      "award": "Noncredit",
+      "control_number": "33703",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Journalism",
+      "award": "A.A.-T",
+      "control_number": "33831",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Environmental Studies",
+      "award": "A.A.",
+      "control_number": "35116",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Photography Video Production",
+      "award": "Certificate of Achievement",
+      "control_number": "35351",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Sociology",
+      "award": "A.A.-T",
+      "control_number": "35534",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S.-T",
+      "control_number": "35586",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Philosophy",
+      "award": "A.A.-T",
+      "control_number": "35718",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Public Health",
+      "award": "A.S.",
+      "control_number": "35774",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "World Languages and Global Studies",
+      "award": "A.A.",
+      "control_number": "35796",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronic Systems Technology - Cabling and Wiring",
+      "award": "Noncredit",
+      "control_number": "35909",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Basic Excel Applications",
+      "award": "Noncredit",
+      "control_number": "36278",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Office Computer Applications - Level 1",
+      "award": "Noncredit",
+      "control_number": "36375",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Video Engineering",
+      "award": "Certificate of Achievement",
+      "control_number": "36441",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Basic Computer Presentation and Publication",
+      "award": "Noncredit",
+      "control_number": "36560",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Film, Television, and Electronic Media",
+      "award": "A.S.-T",
+      "control_number": "36697",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Sewing and Tailoring",
+      "award": "Noncredit",
+      "control_number": "36803",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Office Computer Applications - Level 2",
+      "award": "Noncredit",
+      "control_number": "36834",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Certified Nursing Assistant (CNA)",
+      "award": "Noncredit",
+      "control_number": "36872",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Dance",
+      "award": "A.A.",
+      "control_number": "36926",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Drone Camera Operator",
+      "award": "A.S.",
+      "control_number": "37023",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Audio Arts",
+      "award": "A.S.",
+      "control_number": "37041",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Virtual Reality Designer",
+      "award": "Certificate of Achievement",
+      "control_number": "37042",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Technical Theater",
+      "award": "Certificate of Achievement",
+      "control_number": "37052",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Architectural Design Concentration - Level 1",
+      "award": "Noncredit",
+      "control_number": "37313",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Human Prosection",
+      "award": "Certificate of Achievement",
+      "control_number": "37437",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Appliance Repair",
+      "award": "Noncredit",
+      "control_number": "37443",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Manufacturing and Electrical Systems",
+      "award": "Noncredit",
+      "control_number": "37445",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Medical Secretary",
+      "award": "Noncredit",
+      "control_number": "37446",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Welding Basics",
+      "award": "Noncredit",
+      "control_number": "37598",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Trades Pre-Apprenticeships",
+      "award": "Noncredit",
+      "control_number": "37599",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Hospitality Management",
+      "award": "A.S.-T",
+      "control_number": "37603",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Nutrition",
+      "award": "Certificate of Achievement",
+      "control_number": "37884",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Big Data Analytics",
+      "award": "Certificate of Achievement",
+      "control_number": "37886",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Kinesiology",
+      "award": "A.A.-T",
+      "control_number": "37907",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Care Coordinator – Level 1",
+      "award": "Noncredit",
+      "control_number": "38083",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development - Early Intervention and Inclusion",
+      "award": "Certificate of Achievement",
+      "control_number": "38085",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Sports Medicine",
+      "award": "Noncredit",
+      "control_number": "38095",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Occupational Therapy Aide",
+      "award": "Noncredit",
+      "control_number": "38096",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Surgical Technician",
+      "award": "Noncredit",
+      "control_number": "38102",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Hospitality",
+      "award": "Noncredit",
+      "control_number": "38103",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Emergency Medical Technician",
+      "award": "Noncredit",
+      "control_number": "38104",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Solar Panel",
+      "award": "Noncredit",
+      "control_number": "38105",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Care Coordinator – Level 2",
+      "award": "Noncredit",
+      "control_number": "38106",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "General Accounting",
+      "award": "Noncredit",
+      "control_number": "38107",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Administrative Assistant - Level 1",
+      "award": "Noncredit",
+      "control_number": "38111",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Payroll and Tax Accounting",
+      "award": "Noncredit",
+      "control_number": "38112",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Microenterprise",
+      "award": "Noncredit",
+      "control_number": "38725",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Biology",
+      "award": "A.S.",
+      "control_number": "38731",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Printmaking",
+      "award": "Certificate of Achievement",
+      "control_number": "38766",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "College Readiness for Healthcare Program",
+      "award": "Noncredit",
+      "control_number": "38783",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Exhibition Concept, Design, and Production",
+      "award": "Certificate of Achievement",
+      "control_number": "38942",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Fashion Computer Aided Design",
+      "award": "Noncredit",
+      "control_number": "39646",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Introduction to Computer Information Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "39689",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Pilates Professional Teacher Training: Cadillac, Chair, Auxiliary",
+      "award": "Certificate of Achievement",
+      "control_number": "39709",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Pilates Professional Teacher Training: Mat and Reformer",
+      "award": "Certificate of Achievement",
+      "control_number": "39710",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Anthropology",
+      "award": "A.A.-T",
+      "control_number": "39842",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Social Justice Studies: General",
+      "award": "A.A.-T",
+      "control_number": "39844",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Geology",
+      "award": "A.S.-T",
+      "control_number": "39845",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in JAVA Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "40141",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in Excel and Acces",
+      "award": "Certificate of Achievement",
+      "control_number": "40142",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in Linux",
+      "award": "Certificate of Achievement",
+      "control_number": "40143",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Fashion Historical Costuming",
+      "award": "Certificate of Achievement",
+      "control_number": "40154",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in Networking",
+      "award": "Certificate of Achievement",
+      "control_number": "40158",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in Telecommunications",
+      "award": "Certificate of Achievement",
+      "control_number": "40159",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in SQL",
+      "award": "Certificate of Achievement",
+      "control_number": "40160",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in Network Security",
+      "award": "Certificate of Achievement",
+      "control_number": "40180",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in Information and Operating Systems Security",
+      "award": "Certificate of Achievement",
+      "control_number": "40184",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Cloud Computing for Amazon Web Services",
+      "award": "Certificate of Achievement",
+      "control_number": "40185",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in Web Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "40186",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in Object-Oriented Design and Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "40188",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Contact Tracer",
+      "award": "Noncredit",
+      "control_number": "40254",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Fashion Merchandising - Level 1",
+      "award": "Noncredit",
+      "control_number": "40255",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Music Studies - Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "40299",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Fashion Retailing Fundamentals Online",
+      "award": "Certificate of Achievement",
+      "control_number": "40525",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "CIS Professional in Python Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "40567",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Geotech",
+      "award": "Certificate of Achievement",
+      "control_number": "40968",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Computer Networking Technology Fundamentals",
+      "award": "Certificate of Achievement",
+      "control_number": "41115",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronics Technology - Level 1",
+      "award": "Certificate of Achievement",
+      "control_number": "41116",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronics Technology - Level 2",
+      "award": "Certificate of Achievement",
+      "control_number": "41117",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronics Engineering Technology",
+      "award": "A.S.",
+      "control_number": "41118",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering Fundamentals",
+      "award": "Certificate of Achievement",
+      "control_number": "41543",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Chemical and Materials Engineering Applications AS",
+      "award": "A.S.",
+      "control_number": "41560",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Electrical Engineering Applications AS",
+      "award": "A.S.",
+      "control_number": "41561",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronics Technology - Level 1",
+      "award": "Noncredit",
+      "control_number": "41569",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Electronics Technology - Level 2",
+      "award": "Noncredit",
+      "control_number": "41570",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Computer Networking Technology Fundamentals",
+      "award": "Noncredit",
+      "control_number": "41601",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Computer Networking Technology Industry Certifications",
+      "award": "Noncredit",
+      "control_number": "41622",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Big Data Analytics for Business",
+      "award": "A.S.",
+      "control_number": "41646",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Chemical and Materials Engineering Applications - Level 2",
+      "award": "Certificate of Achievement",
+      "control_number": "41656",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Mechanical Engineering Applications Level 2",
+      "award": "Certificate of Achievement",
+      "control_number": "41657",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Civil Engineering Applications Level 1",
+      "award": "Certificate of Achievement",
+      "control_number": "41660",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Software Engineering Applications Level 1",
+      "award": "Certificate of Achievement",
+      "control_number": "41661",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Civil Engineering Applications Level 2",
+      "award": "Certificate of Achievement",
+      "control_number": "41662",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Civil Engineering Applications AS",
+      "award": "A.S.",
+      "control_number": "41663",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Chemical and Materials Engineering Applications - Level 1",
+      "award": "Certificate of Achievement",
+      "control_number": "41665",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Mechanical Engineering Applications",
+      "award": "A.S.",
+      "control_number": "41666",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Mechanical Engineering Applications Level 1",
+      "award": "Certificate of Achievement",
+      "control_number": "41667",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Engineering with Emphasis in Electrical Engineering Applications Level - 1",
+      "award": "Certificate of Achievement",
+      "control_number": "41668",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Forensics Competition Management",
+      "award": "Certificate of Achievement",
+      "control_number": "41685",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Computer Networking Technology Industry Certification",
+      "award": "Certificate of Achievement",
+      "control_number": "41807",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Geographic Information Systems (GIS)",
+      "award": "A.S.",
+      "control_number": "41812",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Geographic Information Systems (GIS)",
+      "award": "Certificate of Achievement",
+      "control_number": "41815",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Technical Sales",
+      "award": "Certificate of Achievement",
+      "control_number": "41903",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Public Health",
+      "award": "A.S.-T",
+      "control_number": "41993",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Theater Performance",
+      "award": "Certificate of Achievement",
+      "control_number": "41998",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "American Language Advanced Proficiency English for English Language Learners",
+      "award": "Certificate of Achievement",
+      "control_number": "42011",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "American Language Foundational English for English Language Learners",
+      "award": "Certificate of Achievement",
+      "control_number": "42019",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "American Language Communication for English Language Learners",
+      "award": "Certificate of Achievement",
+      "control_number": "42021",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Surveying Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "42022",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Logistics Analyst",
+      "award": "Noncredit",
+      "control_number": "42212",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Logistics Operations Specialist",
+      "award": "Noncredit",
+      "control_number": "42213",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Logistics Technician",
+      "award": "Noncredit",
+      "control_number": "42214",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Horse Ranch Management - Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "42265",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Livestock Production Management",
+      "award": "Certificate of Achievement",
+      "control_number": "42289",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Animal Science Fundamentals",
+      "award": "Certificate of Achievement",
+      "control_number": "42291",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Commercial Music",
+      "award": "Certificate of Achievement",
+      "control_number": "42337",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Commercial Music",
+      "award": "A.S.",
+      "control_number": "42340",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Surveying Engineering Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "42359",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Social Media Marketing",
+      "award": "Certificate of Achievement",
+      "control_number": "42545",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Agriculture Animal Sciences",
+      "award": "A.S.-T",
+      "control_number": "42652",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Business Administration 2.0",
+      "award": "A.S.-T",
+      "control_number": "42657",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Construction Management - Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "42732",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Construction Management - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "42788",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Social Media Marketing",
+      "award": "Noncredit",
+      "control_number": "42849",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Wildland Fire Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "42876",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "eDiscovery Litigation Support",
+      "award": "Certificate of Achievement",
+      "control_number": "42952",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Cannabis - Level 1",
+      "award": "Certificate of Achievement",
+      "control_number": "43220",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Cannabis - Level 2",
+      "award": "Certificate of Achievement",
+      "control_number": "43261",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Cannabis Operations",
+      "award": "A.S.",
+      "control_number": "43262",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Post Production for Film and Television",
+      "award": "Certificate of Achievement",
+      "control_number": "43373",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development - Early Intervention and Inclusion",
+      "award": "A.S.",
+      "control_number": "43411",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development - Classroom Curriculum",
+      "award": "Certificate of Achievement",
+      "control_number": "43617",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Real Estate Sales",
+      "award": "Certificate of Achievement",
+      "control_number": "43623",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Consumer Affairs - Accredited Financial Counselor",
+      "award": "Certificate of Achievement",
+      "control_number": "43670",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Deaf Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "43706",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Deaf Studies",
+      "award": "A.A.",
+      "control_number": "43709",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Consumer Affairs",
+      "award": "A.S.",
+      "control_number": "43714",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A.-T",
+      "control_number": "43715",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Criminal Justice",
+      "award": "Noncredit",
+      "control_number": "43751",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Law Enforcement",
+      "award": "Noncredit",
+      "control_number": "43752",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Manufacturing Foundation",
+      "award": "Noncredit",
+      "control_number": "43753",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Digital Media Specialist",
+      "award": "Noncredit",
+      "control_number": "43777",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Social Media Content Creator - Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "43853",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Regenerative Communities",
+      "award": "Noncredit",
+      "control_number": "43999",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Social Media Content Creator - Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "44198",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Phlebotomy Technician",
+      "award": "Noncredit",
+      "control_number": "44262",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Child Development",
+      "award": "Noncredit",
+      "control_number": "44263",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Food Services",
+      "award": "Noncredit",
+      "control_number": "44279",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Histotechnology",
+      "award": "B.S.",
+      "control_number": "44520",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Supermarket Refrigeration",
+      "award": "A.S.",
+      "control_number": "44688",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Audio Arts Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "44689",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Audio Arts Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "44690",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Paralegal/Legal Assistant",
+      "award": "Certificate of Achievement",
+      "control_number": "44693",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Real Estate Styling and Staging",
+      "award": "Certificate of Achievement",
+      "control_number": "44929",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Cybersecurity Essentials",
+      "award": "Noncredit",
+      "control_number": "45109",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A.-T",
+      "control_number": "45123",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Graphic Design Basics",
+      "award": "Noncredit",
+      "control_number": "45126",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Mt. San Antonio College",
+      "program": "Biology",
+      "award": "A.S.-T",
+      "control_number": "45453",
+      "loaded": "2026-10-10"
     }
   ],
   "next_step": {
-    "title": "Read a sample of Cerritos's records",
-    "text": "Every Cerritos program the harvest could read is loaded for your reading, unchecked. Answer the ten on the call card below; your verdicts decide whether the method goes to a second college."
+    "title": "Read a sample of Mt. San Antonio's records",
+    "text": "Every Mt. San Antonio program the harvest could read is loaded for your reading, unchecked. Answer the ten on the call card below; the Approved programs at both colleges are being read now."
   },
   "calls": [
     {
-      "title": "Read ten Cerritos records from the tab",
+      "title": "Read ten Mt. San Antonio records from the tab",
       "text": "Six pass the three machine checks and four fail one. Open each below to read its catalog page, then choose Confirm or Needs a fix right here; your answers go to the verdict log the next session reads.",
-      "if_no_reply": "The Cerritos records stay unchecked, and Sierra does not quote them.",
+      "if_no_reply": "The Mt. San Antonio records stay unchecked, and Sierra does not quote them.",
       "view": {
         "href": "#program-requirements",
         "text": "Open the Program Requirements tab"
       },
       "records": [
         {
-          "college": "Cerritos College",
-          "control_number": "02201",
-          "label": "Architectural Technology A.A."
+          "college": "Mt. San Antonio College",
+          "control_number": "31650",
+          "label": "History A.A.-T"
         },
         {
-          "college": "Cerritos College",
-          "control_number": "02213",
-          "label": "Secretary/Administrative Assistant A.A."
+          "college": "Mt. San Antonio College",
+          "control_number": "43670",
+          "label": "Consumer Affairs - Accredited Financial Counselor"
         },
         {
-          "college": "Cerritos College",
-          "control_number": "02226",
-          "label": "Engineering Design Technology"
+          "college": "Mt. San Antonio College",
+          "control_number": "03059",
+          "label": "Emergency Medical Services - Paramedic A.S."
         },
         {
-          "college": "Cerritos College",
-          "control_number": "20520",
-          "label": "Culinary Arts: Professional Cooking"
+          "college": "Mt. San Antonio College",
+          "control_number": "03061",
+          "label": "Interior Design: Kitchen and Bath A.S."
         },
         {
-          "college": "Cerritos College",
-          "control_number": "24026",
-          "label": "GED Test Preparation in Spanish"
+          "college": "Mt. San Antonio College",
+          "control_number": "44690",
+          "label": "Audio Arts Level I"
         },
         {
-          "college": "Cerritos College",
-          "control_number": "31608",
-          "label": "Art History A.A.-T"
+          "college": "Mt. San Antonio College",
+          "control_number": "24431",
+          "label": "International Business - Level 2"
         },
         {
-          "college": "Cerritos College",
-          "control_number": "32563",
-          "label": "Music A.A.-T"
+          "college": "Mt. San Antonio College",
+          "control_number": "30762",
+          "label": "Psychology A.A.-T"
         },
         {
-          "college": "Cerritos College",
-          "control_number": "44153",
-          "label": "Dental Hygiene B.S."
+          "college": "Mt. San Antonio College",
+          "control_number": "39710",
+          "label": "Pilates Professional Teacher Training: Mat and Reformer"
         },
         {
-          "college": "Cerritos College",
-          "control_number": "15512",
-          "label": "Woodworking A.S."
+          "college": "Mt. San Antonio College",
+          "control_number": "40185",
+          "label": "CIS Cloud Computing for Amazon Web Services"
         },
         {
-          "college": "Cerritos College",
-          "control_number": "02235",
-          "label": "Photography A.A."
-        }
-      ]
-    },
-    {
-      "title": "Read two records from the tab",
-      "text": "Irvine Valley's Art A.A. and Santa Monica's Barbering A.S. wait on your reading. Open each below and choose Confirm or Needs a fix.",
-      "if_no_reply": "Both records stay unchecked, and Sierra does not quote them.",
-      "view": {
-        "href": "#program-requirements",
-        "text": "Open the Program Requirements tab"
-      },
-      "records": [
-        {
-          "college": "Irvine Valley College",
-          "control_number": "10265",
-          "label": "Art A.A."
-        },
-        {
-          "college": "Santa Monica College",
-          "control_number": "43767",
-          "label": "Barbering A.S."
+          "college": "Mt. San Antonio College",
+          "control_number": "02990",
+          "label": "Agricultural Science and Technology A.S."
         }
       ]
     }
@@ -2005,9 +4126,37 @@
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
-    "reading": "Cerritos, the first full college: 274 of 288 programs read from their own pages and drafted on Oct 9; 238 pass the three machine checks. All 274 are loaded; 270 wait on a reading, beside the four checked in the pilot."
+    "reading": "Cerritos, the first full college, read on Oct 9; Mt. San Antonio, the second, on Oct 10: 317 of 344 programs read from their own pages, 289 of the 313 loaded passing the three machine checks. Since Oct 10 the harvest also reads programs COCI lists as Approved, 33 at Cerritos and 84 at Mt. San Antonio."
   },
   "changes": [
+    {
+      "at": "2026-10-10T15:37:00Z",
+      "text": "Every Mt. San Antonio program the harvest read is loaded for your reading: 313 records, unchecked, beside the four checked in the pilot."
+    },
+    {
+      "at": "2026-10-10T15:36:07Z",
+      "text": "The records' course titles, C-ID, CCN and M-ID numbers and CPL counts reached all 292 Cerritos and pilot records, after your go."
+    },
+    {
+      "at": "2026-10-10T15:35:00Z",
+      "text": "The harvest reads programs COCI lists as Approved too, after your go; Cerritos and Mt. San Antonio are being read for them now."
+    },
+    {
+      "at": "2026-10-10T15:30:49Z",
+      "text": "Every Mt. San Antonio program was matched to its own catalog page and drafted; 291 of 317 pass the three machine checks."
+    },
+    {
+      "at": "2026-10-10T15:05:37Z",
+      "text": "Each course on a record shows its title, its C-ID, CCN and M-ID numbers with their titles, and its CPL count, which opens the exhibits behind it."
+    },
+    {
+      "at": "2026-10-10T02:15:56Z",
+      "text": "An answered call carries a check, and opening a call's record starts side by side; where a catalog will not show inside the tab, the record opens in a window on the right half beside it."
+    },
+    {
+      "at": "2026-10-10T00:03:44Z",
+      "text": "Your to-dos sit under the tab's title, every record has Side by side, and Show the blocks works."
+    },
     {
       "at": "2026-10-09T20:39:00Z",
       "text": "The call card answers its records: open each to its catalog page and choose Confirm or Needs a fix right there."
@@ -2086,6 +4235,12 @@
       "active": 20282,
       "checked": 20,
       "colleges": 5
+    },
+    {
+      "day": "2026-10-10",
+      "active": 20282,
+      "checked": 27,
+      "colleges": 6
     }
   ]
 }

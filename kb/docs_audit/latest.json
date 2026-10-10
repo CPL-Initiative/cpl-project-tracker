@@ -11,13 +11,13 @@
   },
   "summary": {
     "files": 1099,
-    "bytes": 11441783,
+    "bytes": 11444303,
     "over_budget": 7,
     "handoff_max": 356,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60020,
-    "superseded_files": 6,
-    "superseded_bytes": 38126,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3374063,
+        "bytes": 3374824,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 81,
-        "bytes": 2330421,
+        "bytes": 2331709,
         "over": 2
       },
       "kb_note": {
@@ -46,25 +46,23 @@
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 331968,
+        "bytes": 331974,
         "over": 1
       },
       "handoff": {
         "files": 327,
-        "bytes": 2665039,
+        "bytes": 2665504,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 7,
       "house_voice": 23,
-      "unindexed_kb_note": 1,
-      "superseded_handoff": 6,
       "vault_heavy_path": 60
     },
     "vault": {
-      "files": 4111,
-      "bytes": 1826002979,
+      "files": 4435,
+      "bytes": 1828205777,
       "heavy_bytes": 820300610,
       "heavy_share": 0.449,
       "ignore_filters": [
@@ -306,15 +304,6 @@
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-a-split-view-needs-the-host-to-allow-framing"
-      },
-      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-a-split-view-needs-the-host-to-allow-framing.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -459,72 +448,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 350,
-        "authoritative": 356,
-        "has_frontmatter": true
-      },
-      "message": "handoff 350 is below the authoritative 356 but is not stamped `superseded: true`",
-      "path": "docs/session_350_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 351,
-        "authoritative": 356,
-        "has_frontmatter": true
-      },
-      "message": "handoff 351 is below the authoritative 356 but is not stamped `superseded: true`",
-      "path": "docs/session_351_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 352,
-        "authoritative": 356,
-        "has_frontmatter": true
-      },
-      "message": "handoff 352 is below the authoritative 356 but is not stamped `superseded: true`",
-      "path": "docs/session_352_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 353,
-        "authoritative": 356,
-        "has_frontmatter": true
-      },
-      "message": "handoff 353 is below the authoritative 356 but is not stamped `superseded: true`",
-      "path": "docs/session_353_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 354,
-        "authoritative": 356,
-        "has_frontmatter": true
-      },
-      "message": "handoff 354 is below the authoritative 356 but is not stamped `superseded: true`",
-      "path": "docs/session_354_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 355,
-        "authoritative": 356,
-        "has_frontmatter": true
-      },
-      "message": "handoff 355 is below the authoritative 356 but is not stamped `superseded: true`",
-      "path": "docs/session_355_handoff.md"
     },
     {
       "rule": "house_voice",

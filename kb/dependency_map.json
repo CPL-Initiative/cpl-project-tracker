@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 6,
-  "file_datasets": 621,
+  "file_datasets": 620,
   "external_services": 164,
   "consumers": 426,
   "workflows": 47,
@@ -12008,26 +12008,6 @@
     }
    ],
    "served": false,
-   "main_committers": []
-  },
-  "file:kb/program_requirements_college/cerritos/capture.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_roep_display.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 405
-    },
-    {
-     "id": "script:kb/_program_requirements_college.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 415
-    }
-   ],
-   "served": true,
    "main_committers": []
   },
   "file:kb/program_requirements_maps_sample.json": {
