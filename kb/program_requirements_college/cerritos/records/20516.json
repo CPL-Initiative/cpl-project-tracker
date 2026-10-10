@@ -1,0 +1,301 @@
+{
+ "college": "Cerritos College",
+ "control_number": "20516",
+ "shape": "certificate",
+ "title": "Child Development/Early Childhood",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/child-development-early-childhood-certificate-achievement/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6191,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6191,
+    "output_tokens": 2739,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2739,
+  "output_tokens_details": {
+   "thinking_tokens": 1038
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07954,
+ "ms": 23256,
+ "seconds": 23.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "CDEC63"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CDSE150",
+    "CDSE152"
+   ],
+   "flagged": [
+    "CDSE150",
+    "CDSE152"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": [
+    "the blocks sum to 30.0-30.0; the catalog states 24.0-24.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development/Early Childhood (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Create highly engaging, stimulating, and safe learning environments that promote the holistic development of young children.",
+    "Examine children’s individual differences and plan intentional learning experiences based on the unique developmental abilities and interests of the children in their care.",
+    "Apply critical thinking skills to explain early childhood and child development theories to inform teaching principles and practices.",
+    "Observe, analyze, and document children’s learning and development while demonstrating proficiency in written and oral communication.",
+    "Value positive relationships with others and demonstrate an inclusive and culturally responsive approach in interactions with children, families, colleagues, staff, and community."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Start with Core Classes",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEC 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEC 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEC 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Next complete these four classes:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CD 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEC 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEC 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Infant/Toddler Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialty Options",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDIT 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDIT 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Special Education Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialty Options",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDSE 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDSE 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "ECE Curriculum Planning Specialization",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": "Specialty Options",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CDEC 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEC 65",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEC 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEC 63",
+    "why": "not in the text; CDEC 62 is printed twice in the ECE Curriculum Planning list, possibly in place of CDEC 63"
+   }
+  ],
+  "notes": [
+   "CDEV C1000 is printed with a space; matched to closed-list CDEVC1000 (same course), so not marked as a catalog addition.",
+   "The certificate's stated Total Units is 24 (the eight core courses). The Specialty Options heading says '6 ADDITIONAL UNITS REQUIRED FOR CD CORE PLUS CERTIFICATE AND A.A. DEGREE', which may refer to a different award than this certificate; the specialty blocks are recorded (option_group 'Specialty Options') because they print on this page and appear in the closed list, but a reviewer should confirm whether they belong to this Certificate of Achievement. Adding them would make 30 units, which conflicts with the award's 'fewer than 30' range.",
+   "In the ECE Curriculum Planning Specialization list, CDEC 62 is printed twice; recorded once. The closed list includes CDEC 63 (Language Arts and Social Sciences), which may be the intended second entry.",
+   "CDSE 150 and CDSE 152 are not in the closed list and are marked as catalog additions.",
+   "Note in text: all four core classes must be completed before enrolling in CDEC 164.",
+   "The Program Student Learning Outcomes print once on this certificate page and are recorded for this award."
+  ]
+ },
+ "extracted_run": "38064252862"
+}

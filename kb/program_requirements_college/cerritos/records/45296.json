@@ -1,0 +1,190 @@
+{
+ "college": "Cerritos College",
+ "control_number": "45296",
+ "shape": "certificate",
+ "title": "Welding Technology: Aerospace Welding",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/aerospace-welding-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5492,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5492,
+    "output_tokens": 1335,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1335,
+  "output_tokens_details": {
+   "thinking_tokens": 313
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04867,
+ "ms": 11132,
+ "seconds": 11.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Welding Technology: Aerospace Welding (CERT)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students will systematically set up Gas Tungsten Arc Welding machines for aluminum welding operations to include: Required amperage, polarity, frequency, balance, gas type, gas flow, tungsten type, size, and preparation.",
+    "Students will systematically set up Gas Tungsten Arc Welding machines for stainless steel welding operations to include: Required amperage, polarity, frequency, balance, gas type, gas flow, tungsten type, size, and preparation.",
+    "Students will systematically set up Gas Tungsten Arc Welding machines for chromoly welding operations to include: Required amperage, polarity, frequency, balance, gas type, gas flow, tungsten type, size, and preparation."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WELD 149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 155",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 159",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WELD 130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 222",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 240L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 250L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "WELD 222 matched to closed-list entry 'WELD222' (same code without a space; title 'Aerospace Welding Inspection' matches), so catalog_addition is false.",
+   "Title mismatches between catalog and closed list: catalog prints WELD 149 as 'Welding Industry Project Planning and Estimation' (closed list: 'Welding Shop Math') and WELD 155 as 'Industrial Pipe Fitting Fundamentals' (closed list: 'Welding Industry Project Planning and Estimation'). Codes and units match the closed list; reviewer should check whether the catalog table titles are misprinted.",
+   "Program description names a 'Gas Tungsten Arc Welding Specialty Lab' course, which does not appear by that title in the course list.",
+   "Total Units 20 as printed; equals the sum of listed course units."
+  ]
+ },
+ "extracted_run": "38064252862"
+}

@@ -1393,6 +1393,44 @@
   "text_chars": 3725
  },
  {
+  "control_number": "02257",
+  "title": "Child Development/Early Childhood",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD124",
+   "CD139",
+   "CDEC111",
+   "CDEC112",
+   "CDEC113",
+   "CDEC133",
+   "CDEC161",
+   "CDEC164",
+   "CDEC62",
+   "CDEC63",
+   "CDEC65",
+   "CDEVC1000",
+   "CDIT151",
+   "CDIT152",
+   "CDSE150",
+   "CDSE152"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/child-development-early-childhood-aa/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4636
+ },
+ {
   "control_number": "02260",
   "title": "Anthropology",
   "award": "A.A. Degree",
@@ -1831,6 +1869,47 @@
   "text_chars": 3472
  },
  {
+  "control_number": "09923",
+  "title": "Woodworking Manufacturing Technologies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WMT101",
+   "WMT102",
+   "WMT102L",
+   "WMT103",
+   "WMT103L",
+   "WMT107",
+   "WMT118",
+   "WMT123",
+   "WMT144",
+   "WMT151",
+   "WMT153",
+   "WMT154",
+   "WMT155",
+   "WMT157",
+   "WMT171A",
+   "WMT171B",
+   "WMT183",
+   "WMT201",
+   "WMT218"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/woodworking-manufacturing-technologies/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3744
+ },
+ {
   "control_number": "09924",
   "title": "Engineering Design Technology",
   "award": "A.S. Degree",
@@ -2191,6 +2270,47 @@
   },
   "listed": 12,
   "text_chars": 3159
+ },
+ {
+  "control_number": "09945",
+  "title": "Child Development/Preschool Director",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD124",
+   "CD139",
+   "CDEC111",
+   "CDEC112",
+   "CDEC113",
+   "CDEC133",
+   "CDEC161",
+   "CDEC164",
+   "CDEC166",
+   "CDEC167",
+   "CDEC230",
+   "CDEC62",
+   "CDEC63",
+   "CDEC65",
+   "CDEVC1000",
+   "CDIT151",
+   "CDIT152",
+   "CDSE150",
+   "CDSE152"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/departments/childdevelopment-earlychildhood/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4090
  },
  {
   "control_number": "09948",
@@ -2694,6 +2814,43 @@
   "text_chars": 4242
  },
  {
+  "control_number": "12204",
+  "title": "Speech-Language Pathology Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "A&P120",
+   "A&P150",
+   "ASL110",
+   "CD139",
+   "CDEVC1000",
+   "CDSE150",
+   "CDSE152",
+   "EDEL210",
+   "SLP100",
+   "SLP101",
+   "SLP105",
+   "SLP208",
+   "SLP225",
+   "SLP235",
+   "SLP250"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/speech-language-pathology-assistant-as/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 15736
+ },
+ {
   "control_number": "12731",
   "title": "Business Administration: Retail Management",
   "award": "A.A. Degree",
@@ -2982,12 +3139,78 @@
   "text_chars": 3675
  },
  {
+  "control_number": "15511",
+  "title": "Woodworking Manufacturing Technologies: Furniture Making",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART126",
+   "WMT100",
+   "WMT101",
+   "WMT102",
+   "WMT102L",
+   "WMT103",
+   "WMT103L",
+   "WMT108",
+   "WMT117",
+   "WMT118",
+   "WMT119L",
+   "WMT123",
+   "WMT124",
+   "WMT126",
+   "WMT130",
+   "WMT135",
+   "WMT144",
+   "WMT151",
+   "WMT171A",
+   "WMT171B",
+   "WMT171C",
+   "WMT171L",
+   "WMT172L",
+   "WMT180",
+   "WMT182",
+   "WMT183",
+   "WMT184",
+   "WMT187",
+   "WMT201",
+   "WMT202",
+   "WMT204",
+   "WMT205",
+   "WMT206",
+   "WMT218",
+   "WMT219L",
+   "WMT221",
+   "WMT222",
+   "WMT224",
+   "WMT231",
+   "WMT232",
+   "WMT233",
+   "WMT237",
+   "WMT245",
+   "WMT246"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/furniture-making/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.4
+   }
+  },
+  "listed": 44,
+  "text_chars": 4849
+ },
+ {
   "control_number": "15512",
   "title": "Woodworking Manufacturing Technologies: Cabinetmaking",
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.579,
+  "coverage": 0.947,
   "codes_found": [
    "WMT101",
    "WMT102",
@@ -2998,21 +3221,28 @@
    "WMT157",
    "WMT171A",
    "WMT171B",
+   "WMT171C",
+   "WMT181",
+   "WMT182",
+   "WMT184",
    "WMT187",
-   "WMT201"
+   "WMT201",
+   "WMT282",
+   "WMT291",
+   "WMT292"
   ],
   "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/woodworking-manufacturing-technologies/",
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/cabinetmaking/",
    "title": "Cerritos College Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.75
+    "title": 0.25
    }
   },
   "listed": 19,
-  "text_chars": 3744
+  "text_chars": 3717
  },
  {
   "control_number": "16308",
@@ -3178,6 +3408,43 @@
   },
   "listed": 17,
   "text_chars": 3751
+ },
+ {
+  "control_number": "16846",
+  "title": "Mental Health Worker",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HO245",
+   "PSYC103",
+   "PSYC150",
+   "PSYC220",
+   "PSYC241",
+   "PSYC245",
+   "PSYC251",
+   "PSYC261",
+   "PSYC271",
+   "PSYCC1000",
+   "SWHS151",
+   "SWHS152",
+   "SWHS272",
+   "SWHS273A",
+   "SWHS273B"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/mental-health-worker-aa/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3629
  },
  {
   "control_number": "18481",
@@ -3555,24 +3822,24 @@
   "method": "sitemap_page",
   "coverage": 0.5,
   "codes_found": [
-   "ENGLC1003",
-   "PHIL103",
-   "PHIL106",
-   "PSYC103",
-   "READ103"
+   "COUN150",
+   "COUN200",
+   "LIBR100",
+   "PSYC220",
+   "SOC205"
   ],
   "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/education-studies-aa/",
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
    "title": "Cerritos College Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 0.75
    }
   },
   "listed": 10,
-  "text_chars": 4227
+  "text_chars": 11468
  },
  {
   "control_number": "19166",
@@ -3603,116 +3870,24 @@
   "title": "Liberal Arts and Sciences: Historical Perspectives",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.583,
-  "codes_found": [
-   "ANTH200",
-   "ANTH202",
-   "HIST101",
-   "HIST110",
-   "HIST120",
-   "HIST204",
-   "HIST210",
-   "HIST220",
-   "HIST221",
-   "HIST230",
-   "HIST235",
-   "HIST241",
-   "HIST242",
-   "HIST245",
-   "HIST246",
-   "HIST250",
-   "HIST255",
-   "HIST260",
-   "HIST265",
-   "HISTC1002",
-   "WGS204"
-  ],
-  "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
-   "title": "Cerritos College Academic Catalog",
-   "h1": "Academic Catalog",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.6
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 36,
-  "text_chars": 11255
+  "text_chars": 0
  },
  {
   "control_number": "19172",
   "title": "Liberal Arts and Sciences: Literature and Languages",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.785,
-  "codes_found": [
-   "ASL110",
-   "ASL111",
-   "ASL210",
-   "ASL211",
-   "CHIN101",
-   "ENGL106",
-   "ENGL221A",
-   "ENGL221B",
-   "ENGL223",
-   "ENGL224",
-   "ENGL225",
-   "ENGL227",
-   "ENGL228",
-   "ENGL230A",
-   "ENGL230B",
-   "ENGL232",
-   "ENGL233",
-   "ENGL234",
-   "ENGL235",
-   "ENGL240",
-   "ENGL241",
-   "ENGL246A",
-   "ENGL246B",
-   "ENGL248A",
-   "ENGL248B",
-   "ENGLC1003",
-   "FILM241",
-   "FREN101",
-   "FREN102",
-   "FREN201",
-   "FREN202",
-   "FREN203",
-   "FREN281",
-   "FREN282",
-   "FREN283",
-   "GERM101",
-   "GERM102",
-   "GERM201",
-   "GERM202",
-   "JAPN101",
-   "JAPN102",
-   "JAPN201",
-   "JAPN202",
-   "SPAN101",
-   "SPAN102",
-   "SPAN111",
-   "SPAN112",
-   "SPAN201",
-   "SPAN202",
-   "SPAN210",
-   "SPAN245"
-  ],
-  "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/english-aa-t/",
-   "title": "Cerritos College Academic Catalog",
-   "h1": "Academic Catalog",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 65,
-  "text_chars": 7129
+  "text_chars": 0
  },
  {
   "control_number": "19174",
@@ -4606,12 +4781,54 @@
   "text_chars": 2824
  },
  {
+  "control_number": "20503",
+  "title": "Woodworking Manufacturing Technologies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "WMT101",
+   "WMT102",
+   "WMT102L",
+   "WMT103",
+   "WMT103L",
+   "WMT107",
+   "WMT118",
+   "WMT123",
+   "WMT144",
+   "WMT151",
+   "WMT153",
+   "WMT154",
+   "WMT157",
+   "WMT171A",
+   "WMT171B",
+   "WMT183",
+   "WMT187",
+   "WMT201",
+   "WMT211",
+   "WMT218"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/woodworking-manufacturing-technologies-certificate-achievement/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3476
+ },
+ {
   "control_number": "20504",
   "title": "Woodworking Manufacturing Technologies: Cabinetmaking",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.556,
+  "coverage": 0.944,
   "codes_found": [
    "WMT102",
    "WMT107",
@@ -4622,20 +4839,91 @@
    "WMT157",
    "WMT171A",
    "WMT171B",
-   "WMT187"
+   "WMT171C",
+   "WMT181",
+   "WMT182",
+   "WMT184",
+   "WMT187",
+   "WMT282",
+   "WMT291",
+   "WMT292"
   ],
   "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/woodworking-manufacturing-technologies-certificate-achievement/",
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/cabinetmaking-certificate-achievement/",
    "title": "Cerritos College Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.25
    }
   },
   "listed": 18,
-  "text_chars": 3436
+  "text_chars": 3499
+ },
+ {
+  "control_number": "20505",
+  "title": "Woodworking Manufacturing Technologies: Furniture Making",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "ART126",
+   "WMT100",
+   "WMT101",
+   "WMT102",
+   "WMT102L",
+   "WMT103",
+   "WMT103L",
+   "WMT108",
+   "WMT117",
+   "WMT118",
+   "WMT123",
+   "WMT126",
+   "WMT130",
+   "WMT135",
+   "WMT144",
+   "WMT151",
+   "WMT171A",
+   "WMT171B",
+   "WMT171C",
+   "WMT171L",
+   "WMT172L",
+   "WMT180",
+   "WMT182",
+   "WMT183",
+   "WMT184",
+   "WMT187",
+   "WMT201",
+   "WMT202",
+   "WMT204",
+   "WMT205",
+   "WMT206",
+   "WMT218",
+   "WMT219L",
+   "WMT221",
+   "WMT222",
+   "WMT224",
+   "WMT231",
+   "WMT232",
+   "WMT233",
+   "WMT237",
+   "WMT245",
+   "WMT246"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/furniture-making-certificate-achievement/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.4
+   }
+  },
+  "listed": 44,
+  "text_chars": 4577
  },
  {
   "control_number": "20506",
@@ -4970,6 +5258,82 @@
   "text_chars": 3285
  },
  {
+  "control_number": "20516",
+  "title": "Child Development/Early Childhood",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "CD124",
+   "CD139",
+   "CDEC111",
+   "CDEC112",
+   "CDEC113",
+   "CDEC133",
+   "CDEC161",
+   "CDEC164",
+   "CDEC62",
+   "CDEC65",
+   "CDEVC1000",
+   "CDIT151",
+   "CDIT152"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/child-development-early-childhood-certificate-achievement/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4424
+ },
+ {
+  "control_number": "20518",
+  "title": "Child Development/Preschool Director",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD124",
+   "CD139",
+   "CDEC111",
+   "CDEC112",
+   "CDEC113",
+   "CDEC133",
+   "CDEC161",
+   "CDEC164",
+   "CDEC166",
+   "CDEC167",
+   "CDEC230",
+   "CDEC62",
+   "CDEC63",
+   "CDEC65",
+   "CDEVC1000",
+   "CDIT151",
+   "CDIT152",
+   "CDSE150",
+   "CDSE152"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/child-development-preschool-director-certificate-achievement/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 5598
+ },
+ {
   "control_number": "20520",
   "title": "Culinary Arts: Professional Cooking",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -5079,6 +5443,43 @@
   },
   "listed": 33,
   "text_chars": 6382
+ },
+ {
+  "control_number": "20528",
+  "title": "Mental Health Worker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HO245",
+   "PSYC103",
+   "PSYC150",
+   "PSYC220",
+   "PSYC241",
+   "PSYC245",
+   "PSYC251",
+   "PSYC261",
+   "PSYC271",
+   "PSYCC1000",
+   "SWHS151",
+   "SWHS152",
+   "SWHS272",
+   "SWHS273A",
+   "SWHS273B"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/mental-health-worker-certificate-achievement/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3310
  },
  {
   "control_number": "20530",
@@ -5268,6 +5669,33 @@
   "text_chars": 0
  },
  {
+  "control_number": "24025",
+  "title": "Vocational English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AED2206",
+   "AED3606",
+   "AED4902",
+   "AED9037",
+   "AED9037S"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/noncredit-career-development-college-preparation/vocational-english-second-language-certificate-completion/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
+  "listed": 5,
+  "text_chars": 3027
+ },
+ {
   "control_number": "24026",
   "title": "Courses in GED Test Preparation in Spanish",
   "award": "Noncredit program",
@@ -5449,6 +5877,43 @@
   "text_chars": 3251
  },
  {
+  "control_number": "30761",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANTH100",
+   "ETHN210",
+   "PSYCC1000",
+   "SOC110",
+   "SOC120",
+   "SOC201",
+   "SOC202",
+   "SOC205",
+   "SOC210",
+   "SOC215",
+   "SOC220",
+   "SOC230",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/sociology-aa-t/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4112
+ },
+ {
   "control_number": "31111",
   "title": "Communication Studies",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
@@ -5484,6 +5949,107 @@
   },
   "listed": 17,
   "text_chars": 3516
+ },
+ {
+  "control_number": "31114",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.975,
+  "codes_found": [
+   "ASL110",
+   "ASL111",
+   "ASL210",
+   "ASL211",
+   "ASL220",
+   "CHIN101",
+   "CHIN102",
+   "CHIN201",
+   "CHIN202",
+   "CHIN260",
+   "COMM140",
+   "ENGL106",
+   "ENGL107",
+   "ENGL155",
+   "ENGL221A",
+   "ENGL221B",
+   "ENGL222",
+   "ENGL223",
+   "ENGL224",
+   "ENGL225",
+   "ENGL226",
+   "ENGL227",
+   "ENGL228",
+   "ENGL230A",
+   "ENGL230B",
+   "ENGL231",
+   "ENGL232",
+   "ENGL233",
+   "ENGL234",
+   "ENGL235",
+   "ENGL236",
+   "ENGL237",
+   "ENGL240",
+   "ENGL241",
+   "ENGL242",
+   "ENGL243",
+   "ENGL244",
+   "ENGL245",
+   "ENGL246A",
+   "ENGL246B",
+   "ENGL247",
+   "ENGL248A",
+   "ENGL248B",
+   "ENGL249",
+   "ENGL257",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ENGLC1003",
+   "FILM241",
+   "FREN101",
+   "FREN102",
+   "FREN201",
+   "FREN202",
+   "FREN203",
+   "FREN281",
+   "FREN282",
+   "FREN283",
+   "FREN285",
+   "GERM101",
+   "GERM102",
+   "GERM201",
+   "GERM202",
+   "JAMS100",
+   "JAMS101",
+   "JAPN101",
+   "JAPN102",
+   "JAPN201",
+   "JAPN202",
+   "SPAN101",
+   "SPAN102",
+   "SPAN111",
+   "SPAN112",
+   "SPAN201",
+   "SPAN202",
+   "SPAN210",
+   "SPAN245",
+   "SPAN260",
+   "SPAN285",
+   "TH101"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/english-aa-t/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 81,
+  "text_chars": 7254
  },
  {
   "control_number": "31608",
@@ -6717,6 +7283,40 @@
   "text_chars": 5822
  },
  {
+  "control_number": "33834",
+  "title": "Music: Commercial Music",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS105",
+   "MUS110",
+   "MUS112",
+   "MUS113",
+   "MUS135",
+   "MUS144A",
+   "MUS144B",
+   "MUS146A",
+   "MUS146B",
+   "MUS155",
+   "MUS156",
+   "MUS158"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/commercial-music-production-certificate-achievement/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2963
+ },
+ {
   "control_number": "33840",
   "title": "Human Resource Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -7182,6 +7782,36 @@
   },
   "listed": 8,
   "text_chars": 4250
+ },
+ {
+  "control_number": "35686",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL200",
+   "BIOL201",
+   "CHEM111",
+   "CHEM112",
+   "MATH116",
+   "MATH170",
+   "PHYS101",
+   "PHYS102"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/biology-as-t/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3624
  },
  {
   "control_number": "35693",
@@ -7703,6 +8333,51 @@
   "text_chars": 3485
  },
  {
+  "control_number": "37223",
+  "title": "Creative Writer's Studio",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.92,
+  "codes_found": [
+   "ENGL223",
+   "ENGL224",
+   "ENGL225",
+   "ENGL226",
+   "ENGL231",
+   "ENGL232",
+   "ENGL234",
+   "ENGL235",
+   "ENGL236",
+   "ENGL237",
+   "ENGL240",
+   "ENGL241",
+   "ENGL242",
+   "ENGL243",
+   "ENGL244",
+   "ENGL247",
+   "ENGL249",
+   "ENGL250",
+   "ENGL251",
+   "ENGL257",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "FILM241"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/creative-writers-studio-certificate-achievement/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 25,
+  "text_chars": 4040
+ },
+ {
   "control_number": "37716",
   "title": "LGBT Studies",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
@@ -7924,6 +8599,66 @@
   },
   "listed": 5,
   "text_chars": 2782
+ },
+ {
+  "control_number": "38531",
+  "title": "Child Development Core",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEC111",
+   "CDEC112",
+   "CDEC113",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/child-development-core-certificate-achievement/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2821
+ },
+ {
+  "control_number": "38534",
+  "title": "Child Development Core Plus",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEC111",
+   "CDEC112",
+   "CDEC113",
+   "CDEC133",
+   "CDEC62",
+   "CDEC63",
+   "CDEC65",
+   "CDEVC1000",
+   "CDIT151",
+   "CDIT152",
+   "CDSE150",
+   "CDSE152"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/child-development-core-plus-certificate-achievement/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3594
  },
  {
   "control_number": "38756",
@@ -8234,6 +8969,45 @@
   },
   "listed": 4,
   "text_chars": 2781
+ },
+ {
+  "control_number": "40736",
+  "title": "Black/Africana Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFRS100",
+   "AFRS101",
+   "AFRS103",
+   "AFRS104",
+   "AFRS106",
+   "AFRS107",
+   "AFRS108",
+   "AFRS111",
+   "AFRS113",
+   "AFRS215",
+   "AFRS218",
+   "AFRS219",
+   "AFRS220",
+   "AFRS222",
+   "AFRS224",
+   "AFRS225",
+   "AFRS230"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/black-africana-studies-aa/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3961
  },
  {
   "control_number": "41062",
@@ -9356,6 +10130,39 @@
   "text_chars": 2724
  },
  {
+  "control_number": "44393",
+  "title": "Hairstyling",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COS100A",
+   "COS100B",
+   "COS101A",
+   "COS101B",
+   "COS103C",
+   "COS104A",
+   "COS104B",
+   "COS105A",
+   "COS105B",
+   "COS106C",
+   "COS107"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/hairstyling-cert/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3085
+ },
+ {
   "control_number": "44394",
   "title": "Non-Residential Lighting Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -9496,6 +10303,40 @@
   },
   "listed": 15,
   "text_chars": 3099
+ },
+ {
+  "control_number": "44451",
+  "title": "Hairstyling",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COS100A",
+   "COS100B",
+   "COS101A",
+   "COS101B",
+   "COS102C",
+   "COS103C",
+   "COS104A",
+   "COS104B",
+   "COS105A",
+   "COS105B",
+   "COS106C",
+   "COS107"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/hairstyling-aa/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3268
  },
  {
   "control_number": "44491",
@@ -9698,12 +10539,142 @@
   "text_chars": 3955
  },
  {
+  "control_number": "44982",
+  "title": "Education Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "ART100",
+   "BIOL120",
+   "CDEVC1000",
+   "COMM100",
+   "COMM103",
+   "COMMC1000",
+   "DANC101",
+   "ECON210",
+   "EDEL100",
+   "EDEL105",
+   "EDEL110",
+   "EDEL210",
+   "EDEL215",
+   "ENGL230A",
+   "ENGL230B",
+   "ENGL246A",
+   "ENGL246B",
+   "ENGL248A",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ENGLC1003",
+   "ESCI110",
+   "GEOG105",
+   "GEOL101",
+   "HIST245",
+   "MATH110A",
+   "MATH110B",
+   "MATH114",
+   "MUS100",
+   "MUS105",
+   "PHIL103",
+   "PHIL106",
+   "POLSC1000",
+   "PS112",
+   "PSYC103",
+   "PSYC210",
+   "READ103",
+   "STATC1000",
+   "STATC1000E",
+   "TH101"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/education-studies-aa/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 44,
+  "text_chars": 5272
+ },
+ {
+  "control_number": "44983",
+  "title": "Education Studies: Special Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "A&P120",
+   "ART100",
+   "ASL110",
+   "BIOL120",
+   "CDEVC1000",
+   "CDSE150",
+   "CDSE152",
+   "COMM100",
+   "COMM103",
+   "COMM110",
+   "COMMC1000",
+   "DANC101",
+   "ECON210",
+   "EDEL110",
+   "EDEL210",
+   "EDEL215",
+   "EDT110",
+   "EDT140",
+   "ENGL230A",
+   "ENGL230B",
+   "ENGL246A",
+   "ENGL246B",
+   "ENGL248A",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "GEOG105",
+   "HIST245",
+   "MATH110A",
+   "MATH114",
+   "MUS100",
+   "MUS105",
+   "PHIL103",
+   "PHIL106",
+   "POLSC1000",
+   "PS112",
+   "PSYC103",
+   "PSYC210",
+   "PSYC251",
+   "PSYC271",
+   "READ103",
+   "STATC1000",
+   "STATC1000E",
+   "TH101"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/special-education-aa/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 48,
+  "text_chars": 5876
+ },
+ {
   "control_number": "44984",
   "title": "Education Studies: Special Education",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.882,
+  "coverage": 0.706,
   "codes_found": [
    "A&P120",
    "ASL110",
@@ -9716,13 +10687,10 @@
    "EDT110",
    "EDT140",
    "PSYC251",
-   "PSYC271",
-   "READ103",
-   "STATC1000",
-   "TH101"
+   "PSYC271"
   ],
   "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/special-education-aa/",
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/special-education-cert/",
    "title": "Cerritos College Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
@@ -9732,7 +10700,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 5876
+  "text_chars": 3558
  },
  {
   "control_number": "45255",
@@ -9883,6 +10851,35 @@
   "text_chars": 3094
  },
  {
+  "control_number": "45296",
+  "title": "Welding Technology: Aerospace Welding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD130",
+   "WELD149",
+   "WELD155",
+   "WELD159",
+   "WELD222",
+   "WELD240L",
+   "WELD250L"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/aerospace-welding-certificate/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 7,
+  "text_chars": 2949
+ },
+ {
   "control_number": "45297",
   "title": "Welding Technology: Structural Steel Fabricator",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -9996,6 +10993,41 @@
   "text_chars": 4377
  },
  {
+  "control_number": "45886",
+  "title": "Pathway to Law School",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "COMM100",
+   "COMM103",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "HISTC1002",
+   "LAW101",
+   "PHIL103",
+   "POLSC1000",
+   "PSYC210",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/pathway-to-law-school-cert/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3817
+ },
+ {
   "control_number": "45910",
   "title": "Black/Africana Studies: Social Change and Social Justice",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -10066,5 +11098,253 @@
   },
   "listed": 12,
   "text_chars": 3222
+ },
+ {
+  "control_number": "46288",
+  "title": "Certified Wellness Coach",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "CDEVC1000",
+   "PSYC271",
+   "PSYC278",
+   "PSYCC1000",
+   "SWHS151",
+   "SWHS152",
+   "SWHS153",
+   "SWHS272",
+   "SWHS273A",
+   "SWHS273B"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/certified-wellness-coach-cert/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3038
+ },
+ {
+  "control_number": "46467",
+  "title": "Data Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS151",
+   "CIS155",
+   "CIS160",
+   "CIS162",
+   "CIS170L",
+   "CIS171B",
+   "CIS181",
+   "CIS193",
+   "CIS204",
+   "CIS207",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/computer-information-science-data-science-as/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3262
+ },
+ {
+  "control_number": "46478",
+  "title": "Data Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS151",
+   "CIS155",
+   "CIS160",
+   "CIS162",
+   "CIS170L",
+   "CIS171B",
+   "CIS181",
+   "CIS193",
+   "CIS204",
+   "CIS207",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/computer-information-science-data-science-cert/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3118
+ },
+ {
+  "control_number": "46505",
+  "title": "Woodworking Manufacturing Technologies: Furniture Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WMT123",
+   "WMT126",
+   "WMT130",
+   "WMT135",
+   "WMT184",
+   "WMT202",
+   "WMT204",
+   "WMT205",
+   "WMT206",
+   "WMT231",
+   "WMT232",
+   "WMT233",
+   "WMT246"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/furniture-design-as/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.4
+   }
+  },
+  "listed": 13,
+  "text_chars": 3293
+ },
+ {
+  "control_number": "46506",
+  "title": "Woodworking Manufacturing Technologies: Furniture Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WMT123",
+   "WMT126",
+   "WMT130",
+   "WMT135",
+   "WMT184",
+   "WMT202",
+   "WMT204",
+   "WMT205",
+   "WMT206",
+   "WMT231",
+   "WMT232",
+   "WMT233",
+   "WMT246"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/furniture-design-cert/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.4
+   }
+  },
+  "listed": 13,
+  "text_chars": 3105
+ },
+ {
+  "control_number": "46514",
+  "title": "Computer Information Sciences: Applied Artificial Intelligence",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS105",
+   "CIS158A",
+   "CIS172A",
+   "CIS172B",
+   "CIS172C",
+   "CIS172D"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/applied-artificial-intelligence-cert/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 6,
+  "text_chars": 2856
+ },
+ {
+  "control_number": "46581",
+  "title": "Athletic Coaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.966,
+  "codes_found": [
+   "HED110",
+   "HED200",
+   "KIN102",
+   "KIN106",
+   "KIN108",
+   "KIN110",
+   "KIN130",
+   "KIN131",
+   "KIN132",
+   "KIN133",
+   "KIN134",
+   "KIN200",
+   "KIN201",
+   "KIN203",
+   "KIN205",
+   "KIN207",
+   "PEX101",
+   "PEX107",
+   "PEX107A",
+   "PEX108",
+   "PEX161",
+   "PEX166",
+   "PEX178",
+   "PEX185",
+   "PEX186",
+   "PEX189",
+   "PEX192",
+   "PEX194"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/coaching-athletic%20coaching-cert/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 2525
  }
 ]
