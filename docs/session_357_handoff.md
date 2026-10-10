@@ -14,19 +14,18 @@ the latest state is below.
 
 ## First, in this order
 
-0. **One writer.** `list_sessions` (`mine: true`). S356 may still hold PR #1955's subscription and a check-in; if it is
-   idle, you take both over (subscribe to #1955, and read `list_triggers` for its `send_later`).
+0. **One writer.** `list_sessions` (`mine: true`). S356 may still hold PR #1956's subscription and a check-in; if it is
+   idle, you take both over (subscribe to #1956, and read `list_triggers` for its `send_later`).
 1. **Rule 8:** `cpl_memory` tags `program-requirements-harvest`, `phase-2`, `display`, `sam-ruling` (S356's three rows:
    `sam-display-5be5-go-and-approved-programs-2026-10-10`, `sam-standing-go-display-builds-2026-10-10`,
    `roep-display-apply-from-runner-2026-10-10`).
-2. **#1955** (`claude/wizardly-edison-glgcyb`): merge on a green `test` on its current head. A head the workflow pushed
-   (an applied record or a receipt) carries no checks; merge main or push the next change on top first.
-3. **The Approved re-reads.** Cerritos (run 38064252862, branch `claude/s356-approved-cerritos`) filed 305 records, 265
-   passing, 37 extracted this run for $2.42 (the summary's $16.78 is the running total); its load was dispatched at
-   ~16:25Z. Mt. San Antonio (run 38064250199, branch `claude/s356-approved-mtsac`) was still reading. For each: read
-   `summary.json`, load (`step=load` on its branch), then bring the filing and the receipt into one branch (merge the
-   sibling branches; they touch only their own college folders), rebuild (`python3 kb/_build_roep_display.py`), and
-   dispatch `step=display`. **Sam's standing go covers that apply.** Verify with the combined md5 (lessons S356).
+2. **#1956** (`claude/wizardly-edison-glgcyb`): merge on a green `test` on its current head if S356 has not. #1955 merged
+   (241b5f7). A head the workflow pushed (an applied record or a receipt) carries no checks; push the next change on top.
+3. **The Approved programs are loaded** at both colleges (Cerritos +33, Mt. San Antonio +70, $6.89 for the re-reads), and
+   display build `ee814befc65d` holds on 700 rows (run 38068711585, combined md5 977aaaebe1171b9af65db321cfc125cc). Eight
+   live rows whose pages went to Approved programs stay on `153ead0ce992`: Cerritos 19170, 19172; Mt. San Antonio 31598,
+   32892, 38942, 43373, 43777, 43999. Decide with Sam whether a row the filing no longer carries keeps its old display or
+   is marked; nothing reads them wrong today.
 
 ## Priority: the next college
 
@@ -37,7 +36,8 @@ one, or the work is a second platform's enumeration.
 ## What shipped (S356)
 
 - #1954 (S355's emergency checkpoint) merged.
-- #1955 (open): the display job (`kb/_program_requirements_display_apply.py`, `step=display`), `STATUS_FILTER` (Active,
+- #1956 (open at this writing): the Approved filings and loads at both colleges, display build `ee814befc65d`.
+- #1955 (merged, 241b5f7): the display job (`kb/_program_requirements_display_apply.py`, `step=display`), `STATUS_FILTER` (Active,
   Active - Teachout Only, Approved), the Mt. San Antonio filing and load receipt, display build `153ead0ce992`,
   `kb/queue_status.json` (ten Mt. San Antonio records on the call), the lane, and this checkpoint.
 - Live: display `5be53871ebf4` on 292 rows (run 38064154661), then `153ead0ce992` on 605 (run 38066520396), each verified by

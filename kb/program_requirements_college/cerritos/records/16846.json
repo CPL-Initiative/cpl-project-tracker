@@ -1,0 +1,227 @@
+{
+ "college": "Cerritos College",
+ "control_number": "16846",
+ "shape": "degree",
+ "title": "Mental Health Worker",
+ "award": "A.A. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/mental-health-worker-aa/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5803,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5803,
+    "output_tokens": 1480,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1480,
+  "output_tokens_details": {
+   "thinking_tokens": 235
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05281,
+ "ms": 12285,
+ "seconds": 12.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 15,
+   "share": 0.467,
+   "missing": [
+    "HO245",
+    "PSYC103",
+    "PSYC150",
+    "PSYC220",
+    "PSYC241",
+    "PSYC245",
+    "PSYC251",
+    "PSYC261"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mental Health Worker (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students differentiate between the psychosocial and the medical paradigms of mental illness, rehabilitation, and recovery.",
+    "Students use personal and professional communication appropriate to the client's developmental age, educational level, communication style, and cultural/ethnic identify.",
+    "Students apply psychological content and skills to career goals.",
+    "Students employ basic documentation of client care and care coordination.",
+    "Students engage in problem solving that will lead to the client's desired outcome.",
+    "Students identify clients' individual needs, wants, choices, and preferences.",
+    "Students recognize the ethical, legal, and confidentiality issues that apply to the community mental health field.",
+    "Students use basic interviewing techniques and the active listening skills of empathy, compassion, and self-awareness.",
+    "Students utilize the DSM classification system, not as a diagnostic but as an assessment tool, to distinguish and assess abnormal behaviors."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SWHS 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 272",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 273A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SWHS 273B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PSYC 103",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "PSYC 150",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "PSYC 220",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "PSYC 241",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "PSYC 245",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "HO 245",
+    "why": "listed as a recommended course (alternative to PSYC 245)"
+   },
+   {
+    "code": "PSYC 251",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "PSYC 261",
+    "why": "listed as a recommended course"
+   }
+  ],
+  "notes": [
+   "Catalog prints SWHS codes with a space (e.g. 'SWHS 151'); the closed list stores them without a space (SWHS151). Treated as the same courses, not catalog additions.",
+   "SWHS 273B is printed as 'or SWHS 273B' with no units beside it; its units are left null.",
+   "The 'Recommended Courses' list is not required for the award and is not recorded as a block. It also names PSYC 210 Elementary Statistics (4.0) and PSYC 275 Cultural Psychology (3.0), which are not in the closed list.",
+   "The degree requires 60 units including unspecified 'General Education requirements' and electives as needed; no specific GE pattern is named, so ge_pattern is null.",
+   "Total Units 18 is the major total printed in the section.",
+   "Outcomes are copied verbatim, including the apparent typo 'cultural/ethnic identify'. The program description mentions a Certificate as well; this record covers only the A.A. page."
+  ]
+ },
+ "extracted_run": "38064252862"
+}

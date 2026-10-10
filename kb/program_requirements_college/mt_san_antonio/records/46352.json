@@ -1,15 +1,15 @@
 {
  "college": "Mt. San Antonio College",
- "control_number": "38942",
+ "control_number": "46352",
  "shape": "certificate",
- "title": "Exhibition Concept, Design, and Production",
+ "title": "Museum Studies and Art Gallery",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
  "record_shape": 3,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6222,
+  "input_tokens": 6392,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6222,
-    "output_tokens": 2532,
+    "input_tokens": 6392,
+    "output_tokens": 2803,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,54 +30,51 @@
     "model": null
    }
   ],
-  "output_tokens": 2532,
+  "output_tokens": 2803,
   "output_tokens_details": {
-   "thinking_tokens": 856
+   "thinking_tokens": 952
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07553,
- "ms": 20747,
- "seconds": 21.0,
+ "cost_usd": 0.08163,
+ "ms": 21651,
+ "seconds": 22.0,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
-   "listed": 9,
-   "share": 0.667,
+   "placed": 9,
+   "listed": 15,
+   "share": 0.6,
    "missing": [
+    "AHIS11",
+    "AHIS13",
     "AHIS5",
     "AHIS6",
-    "ARTG21B"
+    "AHIS7",
+    "AHIS9"
    ],
    "unexplained": [],
    "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 6,
    "codes": [
-    "ARTG22A",
     "ARTH11",
-    "ARTH11H",
     "ARTH13",
     "ARTH6",
     "ARTH7",
     "ARTH9",
-    "ARTHC1200",
-    "ARTHC1200H"
+    "ARTHC1200"
    ],
    "flagged": [
-    "ARTG22A",
     "ARTH11",
-    "ARTH11H",
     "ARTH13",
     "ARTH6",
     "ARTH7",
     "ARTH9",
-    "ARTHC1200",
-    "ARTHC1200H"
+    "ARTHC1200"
    ],
    "pass": true
   },
@@ -169,7 +166,7 @@
       "units": 2,
       "units_max": 3,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "ARTG 23",
@@ -205,7 +202,7 @@
        {
         "code": "ARTH C1200H",
         "units": null,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
       "catalog_addition": true
@@ -245,7 +242,7 @@
        {
         "code": "ARTH 11H",
         "units": null,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
       "catalog_addition": true
@@ -264,25 +261,37 @@
   "missing_explained": [
    {
     "code": "AHIS 5",
-    "why": "not in the text; the page lists ARTH C1200/C1200H instead"
+    "why": "not in the text; catalog lists ARTH C1200 instead (likely renumbered)"
    },
    {
     "code": "AHIS 6",
-    "why": "not in the text; the page lists ARTH 6 (same title) instead"
+    "why": "not in the text; catalog lists ARTH 6 instead (likely renumbered)"
    },
    {
-    "code": "ARTG 21B",
-    "why": "not in the text"
+    "code": "AHIS 7",
+    "why": "not in the text; catalog lists ARTH 7 instead (likely renumbered)"
+   },
+   {
+    "code": "AHIS 9",
+    "why": "not in the text; catalog lists ARTH 9 instead (likely renumbered)"
+   },
+   {
+    "code": "AHIS 11",
+    "why": "not in the text; catalog lists ARTH 11 instead (likely renumbered)"
+   },
+   {
+    "code": "AHIS 13",
+    "why": "not in the text; catalog lists ARTH 13 instead (likely renumbered)"
    }
   ],
   "notes": [
-   "The program title in the state file is 'Exhibition Concept, Design, and Production', but the catalog page is titled 'Museum Studies and Art Gallery (Certificate N0988)'. The closed list also differs from the page: it has AHIS 5, AHIS 6, and ARTG 21B, while the page has ARTG 22A and ARTH courses. Check that this page is the matching program and version.",
-   "The page prints two outcome lists, both recorded in page order. The first six come from the overview ('Students who successfully complete the program will be able to:'). The last three come from the Outcomes tab under 'Program Learning Outcomes'. A reviewer may want to keep only the formal PLO list.",
-   "ARTG 22A is a variable-unit course; the catalog prints 2-3 and says 'A minimum of two units required.'",
-   "Required Electives: the catalog prints 6 units and no units beside the individual elective courses, so their units are null.",
-   "ARTH 6H matches the closed-list entry 'ARTH6H' apart from spacing, so it is treated as on the list. ARTH 6 is not on the list, which has AHIS 6 under the same title, so it is marked as a catalog addition.",
-   "The Outcomes tab ends with a link to 'Review Student Learning Outcomes (SLOs)'; no further outcomes are printed."
+   "Program outcomes come from two lists on the page: the first six are printed in the Overview after 'Students who successfully complete the program will be able to:'; the last three are printed under the Outcomes tab heading 'Program Learning Outcomes'. Reviewer should confirm whether both lists should be retained.",
+   "ARTG 22A is a variable unit course; the catalog states 'A minimum of two units required' and prints 2-3.",
+   "The Required Electives block prints 6 units as its total but no units beside the individual ARTH courses; course units left null.",
+   "Closed list uses AHIS prefix (AHIS 5, 6, 7, 9, 11, 13) while the catalog prints ARTH (ARTH C1200, 6, 7, 9, 11, 13); these ARTH codes are marked catalog additions. AHIS 5 (History of Western Art: Renaissance Through Modern) appears to correspond to ARTH C1200 (Survey of Art from the Renaissance to Contemporary) under common course numbering.",
+   "Honors codes ARTH C1200H, ARTH 6H, ARTH 11H matched to closed-list entries ARTHC1200H, ARTH6H, ARTH11H despite spacing differences.",
+   "The page also references SLOs ('Review Student Learning Outcomes (SLOs) for this program.') via a link not included in the text."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "38064250199"
 }

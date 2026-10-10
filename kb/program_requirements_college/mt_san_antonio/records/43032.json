@@ -1,0 +1,267 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "43032",
+ "shape": "degree",
+ "title": "Wildland Fire Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/wildland-fire-technology-degree/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6347,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6347,
+    "output_tokens": 2072,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2072,
+  "output_tokens_details": {
+   "thinking_tokens": 681
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06683,
+ "ms": 17095,
+ "seconds": 17.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.5,
+    41.5
+   ],
+   "stated": [
+    28.5,
+    41.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Wildland Fire Technology (AS Degree S0890)",
+   "measure": "units",
+   "total_units": {
+    "min": 28.5,
+    "max": 41.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FIRE 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE WF101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE WF102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE WF103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE WF104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE WF105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 51A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINF 51B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 52A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 52B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose three FIRE courses or FIRE WF87 and KINF 54 plus one other FIRE course",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "FIRE 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE WF87",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 54",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The elective block offers two paths: (a) any three FIRE courses from the list, or (b) FIRE WF87 and KINF 54 taken together (printed as one row 'FIRE WF87 & KINF 54') plus one other FIRE course. Recorded as choose 3 courses with FIRE WF87 and KINF 54 listed once each; reviewer should note WF87 and KINF 54 must be taken together.",
+   "No units are printed beside the courses in the elective block or beside the KINF 51B/52A/52B alternatives; units left null.",
+   "The KINF row is printed as KINF 51A (1.5) or KINF 51B or KINF 52A or KINF 52B; recorded as one entry with alternatives.",
+   "Closed list stores 'KINF51A', 'KINF52A' and 'FIREWF87' without spaces; matched to catalog codes 'KINF 51A', 'KINF 52A' and 'FIRE WF87' as the same courses (not catalog additions).",
+   "The outcomes tab prints a 'Program Learning Outcomes' heading with only a link to review SLOs; no outcomes are printed, so outcomes are empty.",
+   "No general education pattern is named in the section text."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

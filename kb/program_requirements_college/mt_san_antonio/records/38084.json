@@ -1,0 +1,153 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "38084",
+ "shape": "certificate",
+ "title": "Baking and Pastry - Level I",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-and-pastry-advanced-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6003,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6003,
+    "output_tokens": 989,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 989,
+  "output_tokens_details": {
+   "thinking_tokens": 231
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04379,
+ "ms": 9064,
+ "seconds": 9.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "CUL102",
+    "CUL105",
+    "CUL106",
+    "CUL113",
+    "CUL115",
+    "CUL117",
+    "CUL118",
+    "HRM52"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Baking and Pastry - Level I (Certificate N0888) (navigation entry only; no section printed)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CUL 102",
+    "why": "Not in the text for Level I; listed only in the Advanced certificate (T0934) section"
+   },
+   {
+    "code": "CUL 105",
+    "why": "Not in the text for Level I; listed only in the Advanced certificate (T0934) section"
+   },
+   {
+    "code": "CUL 106",
+    "why": "Not in the text for Level I; listed only in the Advanced certificate (T0934) section"
+   },
+   {
+    "code": "CUL 113",
+    "why": "Not in the text for Level I; listed only in the Advanced certificate (T0934) section"
+   },
+   {
+    "code": "CUL 115",
+    "why": "Not in the text for Level I; listed only in the Advanced certificate (T0934) section"
+   },
+   {
+    "code": "CUL 117",
+    "why": "Not in the text for Level I; listed only in the Advanced certificate (T0934) section"
+   },
+   {
+    "code": "CUL118",
+    "why": "Not in the text for Level I; CUL 118 appears only in the Advanced certificate (T0934) section"
+   },
+   {
+    "code": "HRM 52",
+    "why": "Not in the text for Level I; listed only in the Advanced certificate (T0934) section"
+   }
+  ],
+  "notes": [
+   "The source page is the Baking and Pastry - Advanced (Certificate T0934) page. The Level I certificate (N0888) appears only as a collapsed navigation toggle, and its requirements are not printed in the supplied text, so no blocks were recorded.",
+   "The Advanced certificate section lists CUL 101-118, HRM 52/56/57/59 plus 2-4 elective units (total 40-42). It belongs to a different award and was not used for Level I.",
+   "The outcomes tab prints a 'Program Learning Outcomes' heading with only a link ('Review Student Learning Outcomes (SLOs) for this program.') and no outcomes. That tab also belongs to the Advanced certificate page. Outcomes are left empty.",
+   "A reviewer should fetch the Level I certificate page (N0888) to record its requirements."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

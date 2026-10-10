@@ -1,0 +1,1239 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "18238",
+ "shape": "degree",
+ "title": "Kinesiology and Wellness",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/aa-liberal-arts-sciences-emphasis-kinesiology-wellness/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12527,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12527,
+    "output_tokens": 8971,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 8971,
+  "output_tokens_details": {
+   "thinking_tokens": 2108
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.22953,
+ "ms": 62073,
+ "seconds": 62.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 158,
+   "listed": 161,
+   "share": 0.981,
+   "missing": [
+    "KINI31A",
+    "KINI31B",
+    "PSYC17"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHLD11",
+    "KIN34"
+   ],
+   "flagged": [
+    "CHLD11",
+    "KIN34"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    13.0,
+    23.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": [
+    "the blocks sum to 13.0-23.0; the catalog states 18.0-18.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology and Wellness Emphasis (AA Degree A8986)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Have an understanding of kinesiology, health promotion, and the mechanics of human bodily movement.",
+    "Have an understanding of Anatomy, Nutrition as well as Behavior Development as it applies to Kinesiology.",
+    "Be able to demonstrate competence in several activities.",
+    "Be provided with an opportunity to prepare for transfer or a career in the field of human movement and wellness.",
+    "Be able to examine personal health-related behavioral patterns, select goals, and formulate appropriate health and fitness strategies."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Cluster 1: Kinesiology, Movement, and Dance",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "DN-T 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DN-T 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KIN 5",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 17",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 24",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 34",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 38",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 39",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 44",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Cluster 2: Scientific and Nutrition Background",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ANAT 10A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 10B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 35",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 4H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 50H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NF 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NF 12",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NF 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NF 25H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2AG",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 1B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 1BH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Cluster 3: Behavioral Development and Diversity",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANTH 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 5H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHLD 10H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COUN 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 3H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 14H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 26",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 33",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 1H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 2H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 20H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives: Activity Courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "DNCE 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DNCE 2A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "DNCE 2B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "DNCE 3",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DN-T 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 11A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DNCE 11B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 12A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DNCE 12B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "DNCE 13",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 14A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DNCE 14B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "DNCE 15",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "DNCE 17",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 18A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DNCE 18B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "DNCE 19",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 28",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DNCE 29",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 32",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 33",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 36",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 39",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DNCE 41",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "DNCE 42",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "DNCE 43",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINA 8A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINA 8B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINA 8C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINA 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINA 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINA 22A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 10A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINF 10B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 20A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINF 20B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 20C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 34A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINF 34B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 36A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINF 36B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINF 38A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINF 38B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 4A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 4B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINI 4C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 18A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 18B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINI 18C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 27A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 27B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 29",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 30A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 30B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 33A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 33B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 34",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 34B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 37A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 37B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINI 37C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 40A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 40B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINI 40C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 41A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 41B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 47",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 50A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINI 50B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINI 50C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINL 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINL 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINS 2B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 10A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINS 10B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 11A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINS 11B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 12A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINS 12B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 16A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINS 16B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 22A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINS 22B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 24A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINS 24B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 24C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 26A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINS 26B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINX 88",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINX 89",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KINI 31A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINI 31B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 17",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside individual courses, only cluster totals (Cluster 1 6-8, Cluster 2 3-5, Cluster 3 3-4, Required Electives 1-6); all course units are therefore null.",
+   "The catalog does not state an explicit selection rule for Clusters 1-3; they are recorded as choose_units with the low end of each printed cluster range as the minimum. The overall rule reads: 'Must complete at least 18 units from clusters 1 – 3 including activity courses.' Reviewer should confirm.",
+   "Activity Courses: 'Choose a minimum of two courses from the following: (these units count towards the 18 required for the degree 1 - 6 units)'; recorded as choose_courses minimum 2 with stated 1-6 from the 'Required Electives 1-6' line.",
+   "Codes are written as printed: 'DN-T 18', 'DN-T 20', 'DN-T 9' match closed-list 'DN T' entries; 'KIN 3', 'KIN 5', 'KIN 39', 'MICR 1', 'KINX 89' match closed-list entries stored without a space (KIN3, KIN5, KIN39, MICR1, KINX89); treated as closed-list courses.",
+   "KIN 34 (Fitness for Living) and CHLD 11 (Child and Adolescent Development) are not in the closed list and are marked catalog_addition.",
+   "Degree requires General Education coursework but the text names no specific GE pattern; ge_pattern left null.",
+   "Outcomes copied from the page's 'Program Learning Objectives' tab for this award; the page also says 'Review Student Learning Outcomes (SLOs) for this program.' with a link not included in the text.",
+   "DNCE 40 is printed as 'Conditioning Through Dance' while the closed list titles it 'Condition Through Dance'."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

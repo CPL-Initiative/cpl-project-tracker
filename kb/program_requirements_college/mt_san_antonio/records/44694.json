@@ -1,0 +1,248 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "44694",
+ "shape": "certificate",
+ "title": "Illustration Level 2: Entertainment Arts Emphasis",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/illustration/illustration-level-2-entertainment-arts-emphasis-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6051,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6051,
+    "output_tokens": 1995,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1995,
+  "output_tokens_details": {
+   "thinking_tokens": 639
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0641,
+ "ms": 15610,
+ "seconds": 16.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.5,
+    33.5
+   ],
+   "stated": [
+    33.5,
+    33.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Illustration Level 2: Entertainment Arts Emphasis (Certificate T0970)",
+   "measure": "units",
+   "total_units": {
+    "min": 33.5,
+    "max": 33.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Generate new story concepts and visuals",
+    "Communicate story beats with clear visual narration",
+    "Demonstrate the synthesis of story, style, character, location, emotion, and symbology in compositional studies",
+    "Clearly communicate character and emotion visually",
+    "Utilize quick study drawing skills through visual notes and personal studies as a basis for planning larger extended works of art.",
+    "Create original concepts that interpret a new visual world."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Completion of Illustration Level 1 Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ARTC 90",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTD 15A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ANIM 104",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTD 17A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTD 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Completion of Illustration Level 2: Entertainment Arts Emphasis Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15.5,
+     "max": 15.5
+    },
+    "courses": [
+     {
+      "code": "ANIM 116",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 167",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANIM 167",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 169",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 286",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 290",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTD 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints 'ARTD 20'; the closed list stores it as 'ARTD20' with no units. Treated as the same course (catalog_addition false); reviewer should confirm.",
+   "The Level 1 block (18 units) is the prerequisite Illustration Level 1 certificate coursework; the catalog includes it in the 33.5-unit total for this award.",
+   "Block stated totals (18 and 15.5) come from the summary table above the course list. The catalog notes this table was corrected on 9/9/2026.",
+   "Units for the 'or' alternatives (ARTD 15A, ANIM 104, ANIM 167) are not printed beside them, so they are recorded as null.",
+   "ANIM 115 Storyboarding (3) is listed under Recommended Electives only. It is not a requirement, is not in the closed list, and was not placed in a block.",
+   "The six program outcomes are printed in the overview under 'Students who successfully complete the program will be able to:'. The Outcomes tab prints only a 'Program Learning Outcomes' heading and a link to review SLOs, with no outcomes text.",
+   "Courses must be completed with a grade of C or higher."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

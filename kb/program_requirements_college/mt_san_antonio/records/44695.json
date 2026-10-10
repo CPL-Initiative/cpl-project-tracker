@@ -1,0 +1,248 @@
+{
+ "college": "Mt. San Antonio College",
+ "control_number": "44695",
+ "shape": "certificate",
+ "title": "Illustration Level 2: Narrative Illustration Emphasis",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.mtsac.edu/programs/programsaz/illustration/illustration-level-2-narrative-illustration-emphasis-certificate/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6065,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6065,
+    "output_tokens": 1906,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1906,
+  "output_tokens_details": {
+   "thinking_tokens": 522
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06238,
+ "ms": 16325,
+ "seconds": 16.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Illustration Level 2: Narrative Illustration Emphasis (Certificate T0971)",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Communicate narrative concepts through design",
+    "Demonstrate a unique and versatile visual language",
+    "Communicate concepts with clear direction and movement through composition",
+    "Clearly communicate character and emotion visually",
+    "Utilize quick study drawing skills through visual notes and personal studies as a basis for planning larger extended works of art.",
+    "Summarize contemporary art trends",
+    "Create a portfolio representative of their ability to communicate clear compositions with cultural, social, or political ideas"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Completion of Illustration Level 1 Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ARTC 90",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTD 15A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ANIM 104",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTD 17A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTD 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Completion of Illustration Level 2: Narrative Illustration Emphasis Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "ANIM 101A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 167",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANIM 167",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 169",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 286",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTC 290",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTD 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints ARTD 20; the closed list stores it as 'ARTD20' (no space, units not stored). Treated as the same course, so catalog_addition is false.",
+   "Alternatives ARTD 15A, ANIM 104 and ANIM 167 have no units printed beside them in the catalog, so their units are null.",
+   "Block stated totals (18 and 17) come from the summary table: 'Completion of Illustration Level 1 Coursework 18' and 'Completion of Illustration Level 2: Narrative Illustration Emphasis Coursework 17'. Total Units 35.",
+   "The Level 1 coursework is the prerequisite Illustration Level 1 certificate, which the catalog counts within this certificate's 35-unit total.",
+   "ANIM 115 Storyboarding (3) is listed under Recommended Electives; it is not required and is not in the closed list, so it was not placed in a block.",
+   "Outcomes were taken from the Overview text ('Students who successfully complete the program will be able to:'). The Outcomes tab prints a 'Program Learning Outcomes' heading with only a link ('Review Student Learning Outcomes (SLOs) for this program.') and no outcomes under it."
+  ]
+ },
+ "extracted_run": "38064250199"
+}

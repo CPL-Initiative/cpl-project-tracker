@@ -3,9 +3,9 @@
  "catalog_url": "https://catalog.mtsac.edu/",
  "platform": "courseleaf",
  "catalog_year": "2026-2027",
- "programs": 385,
- "with_closed_list": 344,
- "started": "2026-10-10T14:31:22Z",
+ "programs": 469,
+ "with_closed_list": 428,
+ "started": "2026-10-10T15:36:42Z",
  "sitemap": {
   "url": "https://catalog.mtsac.edu/sitemap.xml",
   "status": 200,
@@ -16,15 +16,15 @@
   "errors": null
  },
  "pages_read": 564,
- "loads": 572,
- "seconds": 2775.7,
- "found": 317,
+ "loads": 575,
+ "seconds": 2803.0,
+ "found": 382,
  "by_method": {
-  "link_search": 16,
+  "link_search": 19,
   "no_closed_list": 41,
-  "not_found": 20,
-  "page_claimed": 7,
-  "sitemap_page": 301
+  "not_found": 35,
+  "page_claimed": 11,
+  "sitemap_page": 363
  },
  "shared_pages": {
   "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/": [
@@ -32,9 +32,14 @@
    "22176",
    "41116"
   ],
+  "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-administration-certificate/": [
+   "08098",
+   "39517"
+  ],
   "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-certificate/": [
    "12544",
-   "14039"
+   "14039",
+   "22172"
   ],
   "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-international-business/international-business--level-2/": [
    "24107",
@@ -51,6 +56,25 @@
   "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/": [
    "30847",
    "45123"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-generalist/": [
+   "38020",
+   "41228"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/esl/": [
+   "38082",
+   "38094",
+   "38097",
+   "42726",
+   "42727"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-and-pastry-advanced-certificate/": [
+   "38084",
+   "43275"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/printmaking-certificate/": [
+   "38766",
+   "46523"
   ],
   "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/surveying-engineering-technology-certificate/": [
    "42022",
@@ -124,6 +148,11 @@
    "award": null
   },
   {
+   "control_number": "35611",
+   "title": "VESL Career Paths",
+   "award": "Noncredit program"
+  },
+  {
    "control_number": "36115",
    "title": "Financial and Database Management",
    "award": "Noncredit program"
@@ -154,9 +183,79 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
   },
   {
+   "control_number": "42033",
+   "title": "College Readiness for Math and English",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42753",
+   "title": "ESL Oral Communication - Literacy Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42754",
+   "title": "ESL Oral Communication - Advanced Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42755",
+   "title": "ESL Written Communication - Beginning Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42756",
+   "title": "ESL Oral Communication - Beginning Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42757",
+   "title": "ESL Oral Communication - Intermediate Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42758",
+   "title": "ESL Written Communication - Literacy Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43373",
+   "title": "Post Production for Film and Television",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
    "control_number": "43729",
    "title": "Engineering Topics",
    "award": "Noncredit program"
+  },
+  {
+   "control_number": "43747",
+   "title": "ESL - Literacy Level",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43754",
+   "title": "Registered Behavior Technician",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43777",
+   "title": "Digital Media Specialist",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43999",
+   "title": "Regenerative Communities",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44367",
+   "title": "Dietary Manager",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "45423",
+   "title": "Speech Language Pathology Assistant",
+   "award": "A.S. Degree"
   }
  ],
  "page_claimed": [
@@ -201,11 +300,29 @@
    ]
   },
   {
+   "control_number": "31598",
+   "title": "Adult High School Diploma",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/"
+   ]
+  },
+  {
    "control_number": "32542",
    "title": "Administration of Justice",
    "award": "A.S. T Degree",
    "pages": [
     "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/"
+   ]
+  },
+  {
+   "control_number": "32892",
+   "title": "Dance Teacher",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/dance-aa/",
+    "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/aa-liberal-arts-sciences-emphasis-kinesiology-wellness/",
+    "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/kinesiology-aa-t/"
    ]
   },
   {
@@ -225,12 +342,29 @@
    "pages": [
     "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/"
    ]
+  },
+  {
+   "control_number": "38942",
+   "title": "Exhibition Concept, Design, and Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/fine-arts/aa-liberal-arts-sciences-emphasis-fine-arts/"
+   ]
+  },
+  {
+   "control_number": "46551",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/"
+   ]
   }
  ],
  "coverage_bands": {
   "0.5-0.8": 15,
-  "0.8-1.0": 42,
-  "1.0": 260
+  "0.8-1.0": 54,
+  "1.0": 313
  },
- "run": "38059865531"
+ "run": "38064250199"
 }

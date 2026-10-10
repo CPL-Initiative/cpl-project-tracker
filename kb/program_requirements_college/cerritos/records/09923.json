@@ -1,0 +1,296 @@
+{
+ "college": "Cerritos College",
+ "control_number": "09923",
+ "shape": "degree",
+ "title": "Woodworking Manufacturing Technologies",
+ "award": "A.S. Degree",
+ "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/woodworking-manufacturing-technologies/",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6181,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6181,
+    "output_tokens": 2350,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2350,
+  "output_tokens_details": {
+   "thinking_tokens": 851
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07172,
+ "ms": 19233,
+ "seconds": 21.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "WMT187",
+    "WMT211"
+   ],
+   "flagged": [
+    "WMT187",
+    "WMT211"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    24.0
+   ],
+   "stated": [
+    19.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [
+    "WMT171B in 'WMT Core Courses'"
+   ],
+   "pass": false
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Woodworking Manufacturing Technologies (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Students build a face frame or frameless cabinet project to meet the requirements of specified planning documents.",
+    "Students build a table project to meet the requirements of specified planning documents.",
+    "Students convert rough lumber to a flat, straight, and square-edged piece suitable for project use."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "WMT Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "WMT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 102",
+      "units": 4,
+      "units_max": 6.5,
+      "alternatives": [
+       {
+        "code": "WMT 103",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "WMT 171A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "WMT 171B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 107",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 118",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 151",
+      "units": 4,
+      "units_max": 6.5,
+      "alternatives": [
+       {
+        "code": "WMT 153",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "WMT 171B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose from the following for a minimum of Four (4) units",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "WMT 102L",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 103L",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 123",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 144",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 154",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMT 155",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 157",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 183",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 187",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMT 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMT 211",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMT 218",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "WMT 171B is printed as an 'or' option in two core rows (with WMT 102 and with WMT 151); it is recorded as an alternative in both entries. Reviewer should check whether one WMT 171B enrollment may satisfy both rows.",
+   "The units range 4.0-6.5 is printed only on the first row of each 'or' group (WMT 102 and WMT 151); the alternatives have no units printed beside them, so their units are null. Per the state file, WMT 103 is 4, WMT 171A and WMT 171B are 6.5, WMT 153 and WMT 155 are 4.",
+   "WMT 155 is printed as 'or WMT 155' under WMT 154 in the elective list without units; recorded as an alternative to WMT 154.",
+   "WMT 187 and WMT 211 appear in the elective list but are not on the closed list; recorded as catalog additions.",
+   "The degree requirements refer generically to 'the General Education requirements' without naming a pattern, so ge_pattern is null.",
+   "Total Units 19-24 is the major total; the 60-unit degree total includes GE and electives as needed, which are not part of the major total."
+  ]
+ },
+ "extracted_run": "38064252862"
+}
