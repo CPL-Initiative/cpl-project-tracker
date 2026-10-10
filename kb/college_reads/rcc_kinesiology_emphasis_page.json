@@ -1,0 +1,18 @@
+{
+ "_readme": "S359 SkyMoss, 2026-10-10, third emphasis read. With cq_subject_lists() (#1965), the re-captures gave Moreno Valley and Norco six of their seven emphasis degrees a page; Kinesiology, Health and Wellness still found none. Its Program Course File list is mostly courses numbered with a leading letter (KIN A03, KIN V01, KIN A31A), which CQ_NUM reads only after a C. This read loads Riverside City's Kinesiology, Health and Wellness entry (6289, \"Kinesiology, Health and Wellness - Associate of Arts - AA498/AA498C\") as _getPage JSON to see how its list is printed. One load, no model call.",
+ "college": "Riverside City College",
+ "questions": {
+  "page_shape": "How the emphasis prints its Kinesiology course numbers (A03, V01) after the subject's code."
+ },
+ "keywords": [
+  "KIN",
+  "Kinesiology",
+  "[Uu]nits?"
+ ],
+ "pages": [
+  {
+   "answers": ["page_shape"],
+   "url": "https://rccd.curriqunet.com/Catalog/_getPage?catalogId=124&id=6289"
+  }
+ ]
+}
