@@ -52,9 +52,10 @@ one, or the work is a second platform's enumeration.
 
 ## Not done at this checkpoint
 
-- The UI pass on `cobi:raci` (Team & RACI) ran in a background agent on `claude/s356-ui-pass-raci`; if its PR is open,
-  watch and merge it, and record the pass (`python3 scripts/ui_pass.py --record cobi:raci "<sentence>"`) if the ledger
-  does not show it.
+- The UI pass on `cobi:raci` (Team & RACI) is done and recorded (#1957; merge it on a green `test` if it is still open).
+  Deferred from it: edit-mode keyboard access (the clickable RACI, directory and status cells need a button inside), and
+  the Mission Control wiring entry (`"raci": ["mission_control.js"]` in `MODULE_ALIASES`,
+  `kb/_build_cobi_admin_surface.py`, then regenerate). The next view due is `cobi:map-users`.
 - Sam has not yet read the ten Mt. San Antonio records on the Progress call.
 
 ## Patterns that worked
