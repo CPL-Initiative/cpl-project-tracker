@@ -1,0 +1,260 @@
+{
+ "college": "Norco College",
+ "control_number": "40291",
+ "shape": "degree",
+ "title": "3D MECHANICAL DRAFTING",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5130",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5476,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5476,
+    "output_tokens": 1610,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1610,
+  "output_tokens_details": {
+   "thinking_tokens": 415
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0541,
+ "ms": 13633,
+ "seconds": 14.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    25.0
+   ],
+   "stated": [
+    23.0,
+    25.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "3D Mechanical Drafting - Associate of Science Degree and Certificate of Achievement - NAS995/C/NCE995",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate an understanding of 3D mechanical modeling so as to be able to capture design intent in a 3D model.",
+    "Map out the most efficient path in 3D model creation.",
+    "Reverse engineer existing parts and recreate them as 3D computer models."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "DFT-21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENE-21",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DFT-27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENE-27",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DFT-51",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENE-51",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DFT-42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENE-42",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DFT-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENE-30",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DFT-42B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENE-42B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DFT-52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENE-52",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH-36",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAN-56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAN-35",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DFT-62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints one combined section for the A.S. Degree and the Certificate of Achievement; the requirements, the 23-25 unit total and the program learning outcomes are shared by both awards and recorded here for the A.S.",
+   "Each required course is printed as 'Select one of the following:' between a DFT course and its identical ENE twin (same title and units); recorded as one required entry with the ENE course as an alternative, inside a single 'all' block whose stated total is the printed 20.00 units.",
+   "Catalog prints codes with hyphens (e.g., DFT-21, MATH-36); they match closed-list codes DFT 21 and MATH36.",
+   "The total of 23-25 units excludes general education; the degree text refers to general education requirements but names no specific GE pattern."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

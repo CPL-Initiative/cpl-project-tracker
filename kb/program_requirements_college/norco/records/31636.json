@@ -1,0 +1,249 @@
+{
+ "college": "Norco College",
+ "control_number": "31636",
+ "shape": "degree",
+ "title": "Computer Numerical Control Programming",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5279",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5498,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5498,
+    "output_tokens": 2009,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2009,
+  "output_tokens_details": {
+   "thinking_tokens": 742
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06217,
+ "ms": 16940,
+ "seconds": 17.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 12,
+   "share": 0.583,
+   "missing": [
+    "DFT30",
+    "DFT51",
+    "DFT52",
+    "DFT60",
+    "ELE55"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ENE42",
+    "ENE52",
+    "MAN35"
+   ],
+   "flagged": [
+    "ENE42",
+    "ENE52",
+    "MAN35"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    28.0
+   ],
+   "stated": [
+    27.0,
+    28.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Create a steam or stirling engine based on blueprints that involves parts using both the mill and the lathe.",
+    "Create five-axis part drawing files using Computer Aided Manufacturing program such as Mastercam, numerical code files and Solid Works.",
+    "Compose written assignments on occupation safety in general industry.",
+    "Solve mathematical formulas by using unknowns and apply this knowledge to solve problems for the industry.",
+    "Establish a systematic approach to recognizing the essential information given on a blueprint."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ENE-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENE-42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENE-51",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENE-52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAN-35",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAN-55",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAN-56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAN-57",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENE-60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-36",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DFT 30",
+    "why": "not in the text (catalog uses ENE-30)"
+   },
+   {
+    "code": "DFT 51",
+    "why": "not in the text (catalog uses ENE-51)"
+   },
+   {
+    "code": "DFT 52",
+    "why": "not in the text (catalog uses ENE-52)"
+   },
+   {
+    "code": "DFT 60",
+    "why": "not in the text (catalog uses ENE-60)"
+   },
+   {
+    "code": "ELE 55",
+    "why": "not in the text (catalog uses MAN-55)"
+   }
+  ],
+  "notes": [
+   "The 'Units: 27.00- 28.00' printed under 'Required Courses' covers the whole list, including the 'Select one' choice (3-4 units); it is recorded on the Required Courses block but is really the program total.",
+   "The 'Select one' list (ENE-60 or MATH-36) sits in the middle of the required list; MAN-35 through MAN-57 were read as required courses after the choice, since the choice's stated 3-4 units match only ENE-60 (3) and MATH-36 (4), and the sum 27-28 confirms this.",
+   "ENE-42, ENE-52 and MAN-35 are not in the closed list (the closed list has DFT 52 rather than ENE 52); marked as catalog additions.",
+   "The page prints one Program Learning Outcomes list; the text says the A.S. degree students achieve the certificate's program learning outcomes plus GE outcomes, so the list is shared with the certificate and recorded here.",
+   "The page text begins mid-word and the program title heading is cut off; no GE pattern is named in the text."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

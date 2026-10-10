@@ -1,0 +1,147 @@
+{
+ "college": "Norco College",
+ "control_number": "42717",
+ "shape": "noncredit",
+ "title": "Noncredit Essential CAD",
+ "award": "Noncredit program",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5570/5341",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4534,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4534,
+    "output_tokens": 609,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 609,
+  "output_tokens_details": {
+   "thinking_tokens": 130
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03032,
+ "ms": 5414,
+ "seconds": 5.6,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DFT830"
+   ],
+   "flagged": [
+    "DFT830"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    216.0,
+    216.0
+   ],
+   "stated": [
+    216.0,
+    216.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Noncredit Essential CAD - Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 216,
+    "max": 216
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Prepare two- and three-dimensional Computer Aided Design drawings and models.",
+    "Prepare drawings such as orthographic and auxiliary views, sections with standard annotation and details using a CAD program.",
+    "Prepare virtual rendering for computer models using CAD program."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 216,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "DFT-830",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DFT-831",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program is counted in hours (noncredit); every units field holds hours.",
+   "DFT-830 (Computer Aided Drafting (CAD), 108 hours) is required in the catalog but is not on the closed list; it is recorded as a catalog addition.",
+   "The catalog prints codes with a hyphen (DFT-831); this matches closed-list DFT 831.",
+   "The 216-hour total is printed by the catalog as both the block total and the program total."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

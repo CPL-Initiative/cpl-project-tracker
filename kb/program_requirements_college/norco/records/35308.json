@@ -1,0 +1,178 @@
+{
+ "college": "Norco College",
+ "control_number": "35308",
+ "shape": "certificate",
+ "title": "Sound and Communication Systems Installer Apprenticeship",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5233",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5368,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5368,
+    "output_tokens": 1169,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1169,
+  "output_tokens_details": {
+   "thinking_tokens": 293
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04485,
+ "ms": 9466,
+ "seconds": 9.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    25.0
+   ],
+   "stated": [
+    22.0,
+    25.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sound and Communication Systems Installer Apprenticeship - Associate of Science Degree and Certificate of Achievement - NAS644/C/NCE644",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Analysis a circuit of electrical device(s) with the appropriate meters or testing equipment so that troubleshooting of common system faults can be detected and repair.",
+    "Demonstrate electrical wiring of circuits or devices to meet the standards and requirement of the NEC."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Major Total",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "ELE-423",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-420",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-424",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-421",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-422",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-425",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-499",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one section and one requirements list shared by the A.S. degree and the Certificate of Achievement; the certificate is read from that shared list.",
+   "The Program Learning Outcomes are printed once for the program as a whole (degree and certificate); the certificate shares them.",
+   "The introduction calls this a '37 unit' certificate and AS degree, but the requirements state 'Units: 22.00- 25.00' and 'Total : 22.00- 25.00'; the stated requirements total was recorded. The award level (30 to fewer than 60 units) also does not match the 22-25 unit total; reviewer should check.",
+   "Codes are printed with hyphens (e.g., ELE-423); they correspond to the closed-list codes (ELE 423 etc.), so none are marked as catalog additions.",
+   "ELE-499 is printed with a variable range of 1.00-4.00 units, while the closed list stores 1 unit."
+  ]
+ },
+ "extracted_run": "38085495452"
+}
