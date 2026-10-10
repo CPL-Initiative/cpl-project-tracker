@@ -1,0 +1,209 @@
+{
+ "college": "Moreno Valley College",
+ "catalog_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4710",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 149,
+ "with_closed_list": 144,
+ "started": "2026-10-10T20:15:46Z",
+ "curriqunet": {
+  "catalog": 115,
+  "view_prefix": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Degrees and Certificates"
+  ],
+  "nodes_read": 5,
+  "calls": 11,
+  "entries": 252,
+  "stopped_at_cap": false
+ },
+ "pages_read": 252,
+ "loads": 264,
+ "seconds": 1288.9,
+ "found": 132,
+ "by_method": {
+  "no_closed_list": 5,
+  "not_found": 12,
+  "sitemap_page": 132
+ },
+ "shared_pages": {
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4470": [
+   "30113",
+   "30114"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4469": [
+   "30115",
+   "30116"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4472": [
+   "30117",
+   "30118"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4473": [
+   "30119",
+   "30120"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4474": [
+   "30121",
+   "30122"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4559": [
+   "30123",
+   "30124"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4487": [
+   "30127",
+   "30128"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4503": [
+   "30129",
+   "30130"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4460": [
+   "30133",
+   "30134"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4569": [
+   "30135",
+   "30136"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4493": [
+   "30137",
+   "30138"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4552": [
+   "30142",
+   "30143"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4497": [
+   "30144",
+   "30145"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4501": [
+   "30146",
+   "30147"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4564": [
+   "30148",
+   "30149"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4454": [
+   "30150",
+   "37196"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4522": [
+   "30158",
+   "30159"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4523": [
+   "30160",
+   "30161"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4484": [
+   "30162",
+   "30163"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4495": [
+   "37553",
+   "45017"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4505": [
+   "41529",
+   "41566"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4506": [
+   "41544",
+   "41752"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4508": [
+   "41630",
+   "41655"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4489": [
+   "41654",
+   "41676"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4504": [
+   "41738",
+   "41743"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4507": [
+   "41745",
+   "41753"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4471": [
+   "42826",
+   "42829"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "30164",
+   "title": "Kinesiology, Health and Wellness",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "30165",
+   "title": "Administration & Information Systems",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "30166",
+   "title": "Communication, Media & Languages",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "30167",
+   "title": "Math & Sciences",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "30168",
+   "title": "Fine & Applied Arts",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "30169",
+   "title": "Humanities, Philosophy & Arts",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "30170",
+   "title": "Social and Behavioral Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "31232",
+   "title": "American Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "37393",
+   "title": "Fire Service Leadership",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "37431",
+   "title": "Fire Service Leadership",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "38458",
+   "title": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "38874",
+   "title": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy",
+   "award": "A.S. Degree"
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 4,
+  "0.8-1.0": 29,
+  "1.0": 99
+ },
+ "run": "38083001418"
+}
