@@ -5,7 +5,7 @@
   "rpcs": 36,
   "edge_functions": 6,
   "file_datasets": 620,
-  "external_services": 164,
+  "external_services": 165,
   "consumers": 426,
   "workflows": 47,
   "data_js_files": 69,
@@ -1906,6 +1906,18 @@
      "direction": "read",
      "how": "url",
      "line": 119
+    }
+   ],
+   "main_committers": []
+  },
+  "external:rccd.curriqunet.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 460
     }
    ],
    "main_committers": []
@@ -19009,7 +19021,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 667
+     "line": 857
     }
    ],
    "main_committers": []
