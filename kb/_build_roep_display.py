@@ -85,6 +85,11 @@ SEQUENCES = os.path.join(PILOT, "sequences")
 # unchecked whose live write waits on Sam's go (S338). The page shows both, and
 # the receipt's insert-select skips a key the table does not hold yet.
 RECORD_FOLDERS = ("records", "records_maps")
+# Phase 2 (S353 on): every program at a college, filed by kb/_program_requirements_college.py
+# under program_requirements_college/<slug>/records/. Their facts go to the display column
+# (the tab and Sierra read it); CPL Pathways keeps the pilot's programs until its file
+# splits per college (366 KB for 22 programs would reach megabytes).
+COLLEGE_RECORDS = os.path.join(HERE, "program_requirements_college")
 ARTICS = os.path.join(HERE, "coci_articulations.json")
 LIVE_MEMBERS = os.path.join(ROOT, "unified_courses_members.js")
 LIVE_INDEX = os.path.join(ROOT, "unified_courses_index.js")
@@ -192,6 +197,33 @@ class Identity:
         ids = self.ids(college, code, control)
         return ids[0] if ids else None
 
+    SHOW_KIND = {"CCN-ID": "CCN", "C-ID": "C-ID", "Course": "M-ID", "Stand-Alone": "M-ID"}
+    SHOW_ORDER = {"CCN": 0, "C-ID": 1, "M-ID": 2}
+
+    def all_ids(self, ids, cid=None) -> list[dict]:
+        """Every number a course carries, each with its title (Sam, 2026-10-10: "If there is
+        a CID, CCN, MID, show those numbers on the blocks as well with a hover over for their
+        titles"): the ids the course sits under, the C-ID and CCN its minted record names, and
+        the C-ID the state's course list gives it."""
+        out, seen = [], set()
+
+        def add(kind, i, title):
+            i = _clean(i)
+            if kind and i and i.upper() not in seen:
+                seen.add(i.upper())
+                out.append({"kind": kind, "id": i, "title": _clean(title) or None})
+        for i in ids:
+            live = self.live.get(i) or {}
+            add(self.SHOW_KIND.get(live.get("kind")), i, live.get("title"))
+            rec = self.minted.get(i) or {}
+            common = _clean(rec.get("common_title")) or live.get("title")
+            add("CCN", rec.get("ccn_id"), (self.live.get(_clean(rec.get("ccn_id"))) or {}).get("title") or common)
+            add("C-ID", rec.get("c_id"), (self.live.get(_clean(rec.get("c_id"))) or {}).get("title") or common)
+        if cid:
+            c = re.sub(r"\s+", " ", str(cid)).strip().upper()
+            add("C-ID", c, (self.live.get(c) or {}).get("title"))
+        return sorted(out, key=lambda r: self.SHOW_ORDER.get(r["kind"], 9))
+
     def cross_disciplinary(self, mid: str | None) -> bool:
         return bool((self.minted.get(mid) or {}).get("cross_disciplinary")) if mid else False
 
@@ -225,6 +257,7 @@ def articulation_index(ident: Identity):
     its courses, and, per identity, which colleges articulated which credentials."""
     feed = json.load(open(ARTICS))
     here = defaultdict(OrderedDict)                      # (college, ck) -> {label: True}
+    detail = defaultdict(list)                           # (college, ck) -> [exhibit facts]
     by_identity = defaultdict(lambda: defaultdict(set))  # mid -> label -> {college}
     for a in feed["articulations"]:
         cols = [c for c in (a.get("earned_by_colleges") or []) if _clean(c)]
@@ -241,10 +274,14 @@ def articulation_index(ident: Identity):
             code = "%s %s" % (subj, num)
             for col in cols:
                 here[(norm_college(col), ck(code))].setdefault(label, True)
+                detail[(norm_college(col), ck(code))].append(OrderedDict([
+                    ("exhibit", _clean(a.get("exhibit_id")) or None), ("title", _clean(a.get("exhibit_title")) or None),
+                    ("credential", label), ("type", _clean(a.get("cpl_type_description")) or None),
+                    ("recs", [r for r in (a.get("credit_recommendations") or []) if _clean(r)][:6])]))
                 for mid in ident.ids(col, code):
                     by_identity[mid][label].add(col)
     stamp = feed.get("_authority_recode_applied_at") or feed.get("_generated_by")
-    return here, by_identity, stamp
+    return here, by_identity, stamp, detail
 
 
 # Words a recommendation and a course title share by field, never by form.
@@ -330,6 +367,51 @@ def cer_adopters() -> tuple[dict, str | None]:
                 cols.update(lc.get("colleges") or [])
         n[u["ut"]] = len(cols)
     return n, cer.get("_generated_at")
+
+
+def state_lists(colleges) -> tuple[dict, dict]:
+    """The state's Program Course File for these colleges, assembled the way
+    coci_program_courses is (chatbox/build_program_courses.py, imported, never re-made), so
+    a full-college record's closed list carries the codes, titles, control numbers and C-IDs
+    the pilot's sources carry. Returns (college, program) -> closed list, and (college, ck)
+    -> the course, which titles a course the catalog prints off the list."""
+    want = {norm_college(c) for c in colleges}
+    if not want:
+        return {}, {}
+    sys.path.insert(0, os.path.join(ROOT, "chatbox"))
+    import build_program_courses as bpc
+    courses = bpc.load_courses()
+    resolve = bpc.make_college_resolver(sorted({c["college"] for v in courses.values() for c in v}))
+    prog_path = sorted(glob.glob(bpc.PROG_GLOB))[-1]
+    mem = bpc.load_membership()
+    xwalk, _ = bpc.college_crosswalk(mem, bpc.load_program_colleges(prog_path, resolve),
+                                     {k: {c["college"] for c in v} for k, v in courses.items()})
+    rows, _ = bpc.assemble(mem, xwalk, bpc.program_keys(resolve, prog_path), courses, bpc.load_mis_owner())
+    by_program, by_code = defaultdict(list), {}
+    for r in rows:
+        col = norm_college(r["college"])
+        if col not in want:
+            continue
+        e = {"ccn": r["course_control_number"], "code": r["course_code"], "title": r["course_title"],
+             "units": r["units"], "cid": r["cid"], "course_college": r["course_college"]}
+        by_program[(col, r["program_control_number"])].append(e)
+        by_code.setdefault((col, ck(r["course_code"])), e)
+    return by_program, by_code
+
+
+def college_records(pilot_keys: set) -> list[tuple]:
+    """Every full-college record a program the pilot did not file: (key, path, filed, capture)."""
+    out = []
+    for cap_path in sorted(glob.glob(os.path.join(COLLEGE_RECORDS, "*", "capture.json"))):
+        folder = os.path.dirname(cap_path)
+        cap = json.load(open(cap_path))
+        for path in sorted(glob.glob(os.path.join(folder, "records", "*.json"))):
+            filed = json.load(open(path))
+            if filed.get("error") or not filed.get("record") or \
+                    (filed["college"], filed["control_number"]) in pilot_keys:
+                continue
+            out.append(("%s_%s" % (os.path.basename(folder), filed["control_number"]), path, filed, cap))
+    return out
 
 
 # ── the figure: the mock-up's plan(), ported ────────────────────────────────────
@@ -568,7 +650,7 @@ def build() -> dict:
     # on the course that holds it (S332).
     unified = {k: v.get("unified_title") for k, v in json.load(open(UNIFIED)).items()
                if isinstance(v, dict) and v.get("unified_title")}
-    feed_here, by_identity, feed_stamp = articulation_index(ident)
+    feed_here, by_identity, feed_stamp, feed_detail = articulation_index(ident)
     second = second_courses()
     statewide = statewide_cid_index()
     adopters, cer_at = cer_adopters()
@@ -576,13 +658,24 @@ def build() -> dict:
     verdicts = review.get("verdicts") or {}
     loaded = {(r["college"], r["control_number"]): r for f in RECORD_FOLDERS for r in loader.rows(f)}
 
-    programs = []
+    work = []
     for path in sorted(p for f in RECORD_FOLDERS for p in glob.glob(os.path.join(PILOT, f, "*.json"))):
-        key = os.path.splitext(os.path.basename(path))[0]
         filed = json.load(open(path))
-        src = json.load(open(os.path.join(ROOT, filed["source_file"])))
+        work.append((os.path.splitext(os.path.basename(path))[0], os.path.basename(os.path.dirname(path)), path,
+                     filed, json.load(open(os.path.join(ROOT, filed["source_file"]))),
+                     loaded[(filed["college"], filed["control_number"])]))
+    phase2 = college_records(set(loaded))
+    lists, by_code = state_lists({w[3]["college"] for w in work} | {c[2]["college"] for c in phase2})
+    for key, path, filed, cap in phase2:
+        work.append((key, "college", path, filed,
+                     {"closed_list": lists.get((norm_college(filed["college"]), filed["control_number"]), []),
+                      "platform": cap.get("platform")},
+                     {"program_title": filed["title"], "award": filed.get("award"), "catalog_year": cap.get("catalog_year"),
+                      "source_url": filed.get("source_url"), "checked": None, "record": filed["record"]}))
+
+    programs = []
+    for key, folder, path, filed, src, row in work:
         college, control = filed["college"], filed["control_number"]
-        row = loaded[(college, control)]
         reg = registry["colleges"].get(college) or {}
         listed = {ck(c["code"]): c for c in src.get("closed_list") or []}
         crs = map_read["colleges"].get(college) or {}
@@ -598,14 +691,20 @@ def build() -> dict:
                     if x["code"] in courses:
                         continue
                     lc = listed.get(k) or {}
-                    ids = ident.ids(college, x["code"], lc.get("ccn"))
+                    off = by_code.get((norm_college(college), k)) or {}
+                    ids = ident.ids(college, x["code"], lc.get("ccn") or off.get("ccn"))
                     mid = ids[0] if ids else None
                     ref = ident.ref(mid, ids)
                     entry = OrderedDict()
-                    entry["title"] = lc.get("title")
+                    # a course the catalog prints off the program's list keeps the title the
+                    # state's file gives it elsewhere at the college (Sam, 2026-10-10)
+                    entry["title"] = lc.get("title") or off.get("title")
                     if x.get("units") is None and lc.get("units") is not None:
                         entry["units_from_state_file"] = lc["units"]
                     entry["identity"] = {k2: v for k2, v in (ref or {}).items() if k2 in ("kind", "id", "title")} or None
+                    numbers = ident.all_ids(ids, lc.get("cid") or off.get("cid"))
+                    if numbers:
+                        entry["ids"] = numbers
                     # here
                     mr = crs.get(k) or {}
                     labels = OrderedDict()
@@ -615,8 +714,32 @@ def build() -> dict:
                         labels.setdefault(t, True)
                     here_set = {t.lower() for t in labels} | {unified[t].lower() for t in labels if t in unified}
                     if mr.get("recs") or labels:
+                        # The exhibits articulated here, for the CPL count and its drill-down (Sam,
+                        # 2026-10-10: "the number should be the count of exhibits articulated to the
+                        # course"): MAP's credit recommendations by title, then the feed's exhibits
+                        # whose title MAP's list does not already carry.
+                        exhibits, titled = [], set()
+                        for t in mr.get("titles") or []:
+                            titled.add(str(t["title"]).lower())
+                            exhibits.append(OrderedDict([("title", t["title"]), ("source", t.get("source")),
+                                                         ("recs_n", t.get("recs"))]))
+                        fed, seen_ex = 0, set()
+                        for d in feed_detail.get((norm_college(college), k), []):
+                            tag = d["exhibit"] or d["title"] or d["credential"]
+                            if tag in seen_ex or str(d["title"] or "").lower() in titled:
+                                continue
+                            seen_ex.add(tag)
+                            fed += 1
+                            exhibits.append(d)
+                        # MAP's untitled rows (its "Default Credit" for basic military service) are
+                        # the feed's named exhibits more often than not: Cerritos's HED 100 carries
+                        # one of each for Basic Military Training. They count only past the feed's.
+                        untitled = max(0, (mr.get("untitled_exhibits") or 0) - fed)
                         entry["here"] = {"recs": mr.get("recs") or 0, "credentials_n": len(labels),
-                                         "credentials": list(labels)[:4]}
+                                         "credentials": list(labels)[:4],
+                                         "exhibits_n": len(exhibits) + untitled,
+                                         "untitled_n": untitled,
+                                         "exhibits": exhibits[:40]}
                     # could adopt
                     pooled = defaultdict(set)
                     for i in ids:
@@ -689,7 +812,7 @@ def build() -> dict:
                              "additions": adds, "arithmetic": (score.get("arithmetic") or {}).get("status"),
                              "reviewer": verdict}
         programs.append(OrderedDict([
-            ("key", key), ("filed", os.path.basename(os.path.dirname(path))),
+            ("key", key), ("filed", folder),
             ("college", college), ("control_number", control),
             ("title", row["program_title"]), ("award", row["award"]), ("catalog_year", row["catalog_year"]),
             ("source_url", row["source_url"]), ("platform", reg.get("catalog_platform") or src.get("platform")),
@@ -720,7 +843,7 @@ def js_text(b: dict) -> str:
                   "program_requirement_records.display, where Sierra reads them; both carry this build stamp. "
                   "Do not edit; rerun the builder."),
         ("build", b["build"]), ("built", b["built"]), ("inputs", b["inputs"]),
-        ("definitions", DEFINITIONS), ("programs", b["programs"])])
+        ("definitions", DEFINITIONS), ("programs", [p for p in b["programs"] if p.get("filed") in RECORD_FOLDERS])])
     return "window.CPL_PATHWAYS_ROEP = " + json.dumps(payload, ensure_ascii=False, indent=1) + ";\n"
 
 
@@ -742,7 +865,7 @@ def sql_text(b: dict, prior: str | None = None) -> str:
     else:
         lines.append("-- The column was added empty, so setting display back to null for these keys rolls this back.")
     lines.append("-- The page reads the same facts from cpl_pathways_roep_data.js (same build stamp).")
-    waiting = [p["key"] for p in b["programs"] if p.get("filed") != "records"]
+    waiting = [p["key"] for p in b["programs"] if p.get("filed") == "records_maps"]
     if waiting:
         lines.append("-- %d of them (%s) are filed in records_maps/ and are not in the table: their statements "
                      "select no row and change nothing until the load adds them on Sam's go."

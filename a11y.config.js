@@ -350,7 +350,14 @@ async function seedRecords(page, theme) {
           { code: "ARTH 4", units: 3, alternatives: [], catalog_addition: true },
           { code: "ARTH 27", units: 3, alternatives: [] }] }] },
       display: { build: "2360b83e8100", built: "2026-10-06", checks: { coverage: { listed: 23, placed: 21 }, additions: 4, arithmetic: "equal" },
-        counts: { here: 0, courses: 2 }, figure: {}, courses: {},
+        counts: { here: 1, courses: 2 }, figure: {},
+        courses: {
+          "ARTH 4": { title: "Art History Survey", ids: [{ kind: "C-ID", id: "ARTH 110", title: "Survey of Western Art from Prehistory through the Middle Ages" },
+            { kind: "M-ID", id: "ARTH M1001", title: "Art History: Prehistoric to Gothic" }],
+            here: { recs: 1, credentials_n: 1, exhibits_n: 2, untitled_n: 1, exhibits: [{ exhibit: "MAPCX-AP-1-001", title: "AP Art History",
+              credential: "AP Art History", type: "Credit By Exam", recs: ["3 units in Art History"] }] },
+            adopt: { credentials_n: 1, colleges_n: 1, credentials: [{ credential: "CLEP Humanities", colleges: ["Saddleback College"] }] } },
+          "ARTH 27": { title: "Art of the Americas", identity: { kind: "CCR", id: "ARTH M1027", title: "Art of the Americas" } } },
         gaps: [
           { kind: "Catalog and state file differ", owner: "college", text: "The state's Program Course File lists ARTH C1100; the reader found it not in the text." },
           { kind: "Check not met", owner: "procedure", text: "The blocks add to 25.5 units; the catalog prints 26.5 units." },
@@ -366,6 +373,17 @@ async function seedRecords(page, theme) {
     M._render();
     const fix = document.querySelector("#program-requirements-root .prh-verdict button[aria-expanded]");
     if (fix) fix.click();
+  });
+  await page.waitForTimeout(300);
+}
+
+// Seeds the exhibits view over the signed-in record (S355, Sam 2026-10-10: "a click drill down
+// to pop up an exhibits view"): the dialog, its list, the leads, the page behind inert.
+async function seedExhibits(page, theme) {
+  await seedRecords(page, theme);
+  await page.evaluate(() => {
+    const b = document.querySelector("#program-requirements-root button.prh-cplbtn");
+    if (b) b.click();
   });
   await page.waitForTimeout(300);
 }
@@ -872,6 +890,24 @@ module.exports = {
     routes: [{ hash: "program-requirements", name: "records-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedRecords(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Program Requirements: the exhibits view (S355) ─────────────────────
+     A course's CPL count opened: what is articulated here, the leads. */
+  "program-requirements-exhibits": {
+    file: "index.html",
+    title: "Program Requirements: the exhibits articulated to a course",
+    routes: [{ hash: "program-requirements", name: "exhibits" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedExhibits(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "program-requirements-exhibits-dark": {
+    file: "index.html",
+    title: "Program Requirements: the exhibits view, dark",
+    routes: [{ hash: "program-requirements", name: "exhibits-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedExhibits(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: side by side (S355) ─────────────────────────

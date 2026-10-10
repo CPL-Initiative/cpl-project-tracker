@@ -148,7 +148,22 @@ for k in ("here", "adopt", "consider", "up_to"):
 receipt = b.receipt_path(data)
 check(os.path.exists(receipt), "the display receipt for build date %s exists" % data["built"])
 sql = sql_displays(receipt) if os.path.exists(receipt) else {}
-check(len(sql) == len(progs), "the receipt writes every program (%d of %d)" % (len(sql), len(progs)))
+# The page carries the pilot's programs; the receipt carries them and every full-college
+# record (S355: the blocks of Cerritos's 270 lacked titles, ids and CPL counts because no
+# build reached them). A full-college record of a program the pilot filed stays the pilot's.
+pilot_keys = {(p["college"], p["control_number"]) for p in progs}
+phase2 = b.college_records(pilot_keys)
+check(len(sql) == len(progs) + len(phase2),
+      "the receipt writes every program: the page's %d and %d full-college records (got %d)" % (len(progs), len(phase2), len(sql)))
+check(all(k in sql for k in pilot_keys) and all((f["college"], f["control_number"]) in sql for _, _, f, _ in phase2),
+      "every program the page or a college folder files is in the receipt")
+cer = sql.get(("Cerritos College", "02201")) or {}
+arch = (cer.get("courses") or {}).get("ARCH 110") or {}
+check(arch.get("title") and any(i["kind"] == "M-ID" and i["id"] and i.get("title") for i in arch.get("ids") or []),
+      "a full-college record carries its course's title and every id with its title (Cerritos ARCH 110: %s)" % arch)
+hed = ((sql.get(("Cerritos College", "41982")) or {}).get("courses") or {}).get("HED 100", {}).get("here") or {}
+check(hed.get("exhibits_n") == 1 and hed.get("exhibits") and hed["exhibits"][0].get("credential") == "Basic Military Training",
+      "the CPL count is the exhibits articulated here, MAP's untitled row not counted beside the feed's named one (HED 100: %s)" % hed)
 for p in progs:
     d = p["display"]
     key = (p["college"], p["control_number"])

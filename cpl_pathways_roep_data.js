@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "2360b83e8100",
+ "build": "5be53871ebf4",
  "built": "2026-10-06",
  "inputs": {
-  "records": 22,
+  "records": 292,
   "map_read_at": "2026-10-06",
   "registry_read_at": "2026-10-06",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-10-08 16:46",
-  "cer": "2026-10-08T16:46:25+00:00"
+  "memberships": "2026-10-10 12:39",
+  "cer": "2026-10-10T12:39:58+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -124,7 +124,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ELEC M9043",
        "title": "Introduction to Energy Surveying"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ELEC M9043",
+        "title": "Introduction to Energy Surveying"
+       }
+      ]
      },
      "AED 90.02": {
       "title": "Basic Electricity and Wiring Fundamentals",
@@ -132,7 +139,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ELEC M9013",
        "title": "Basic Electricity and Wiring Fundamentals"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ELEC M9013",
+        "title": "Basic Electricity and Wiring Fundamentals"
+       }
+      ]
      },
      "AED 90.03": {
       "title": "Introduction to Lighting Retrofits",
@@ -140,7 +154,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ELEC M9052",
        "title": "Introduction to Lighting Retrofits"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ELEC M9052",
+        "title": "Introduction to Lighting Retrofits"
+       }
+      ]
      },
      "AED 90.05": {
       "title": "OSHA-10 Training",
@@ -148,7 +169,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ELEC M90AC",
        "title": "OSHA-10 Training"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ELEC M90AC",
+        "title": "OSHA-10 Training"
+       }
+      ]
      }
     },
     "gaps": [
@@ -206,7 +234,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -344,11 +372,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "PH 100",
        "title": "Personal Health and Wellness"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 100",
+        "title": "Personal Health and Wellness"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "Basic Military Training"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPMM-BMT-1-001",
+         "title": "Basic Military Training",
+         "credential": "Basic Military Training",
+         "type": "Military",
+         "recs": [
+          "3 hours in Contemporary Health Problems"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -376,7 +424,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 101",
        "title": "Introduction to Public Health"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 101",
+        "title": "Introduction to Public Health"
+       }
+      ]
      },
      "HO 102": {
       "title": "Introduction to Public Health",
@@ -385,7 +440,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 101",
        "title": "Introduction to Public Health"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 101",
+        "title": "Introduction to Public Health"
+       }
+      ]
      },
      "HED 110": {
       "title": "Community First Aid and CPR",
@@ -394,6 +456,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "KIN 101",
        "title": "First Aid, CPR and AED"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "KIN 101",
+        "title": "First Aid, CPR and AED"
+       }
+      ],
       "adopt": {
        "credentials_n": 10,
        "colleges_n": 10,
@@ -438,6 +507,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "KIN 101",
        "title": "First Aid, CPR and AED"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "KIN 101",
+        "title": "First Aid, CPR and AED"
+       }
+      ],
       "adopt": {
        "credentials_n": 10,
        "colleges_n": 10,
@@ -480,7 +556,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "HLTH M1203",
        "title": "Principles of the Community Health Worker"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "HLTH M1203",
+        "title": "Principles of the Community Health Worker"
+       }
+      ]
      },
      "HED 202": {
       "title": "Health Systems and Perspectives",
@@ -488,7 +571,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 110",
        "title": "Navigating the U.S. Health Care System, Health Insurance, Public Assistance, and Benefits Programs"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 110",
+        "title": "Navigating the U.S. Health Care System, Health Insurance, Public Assistance, and Benefits Programs"
+       }
+      ]
      },
      "HED 204": {
       "title": "Work Experience in Community Health Worker",
@@ -496,7 +586,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "WEXP M1001",
        "title": "Work Experience Education"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "WEXP M1001",
+        "title": "Work Experience Education"
+       }
+      ]
      },
      "STAT C1000": {
       "title": "Introduction to Statistics",
@@ -505,6 +602,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "STAT C1000",
        "title": "Introduction to Statistics"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "STAT C1000",
+        "title": "Introduction to Statistics"
+       },
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -604,7 +713,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -889,11 +998,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ELEC M9046",
        "title": "FIW - Orientation"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ELEC M9046",
+        "title": "FIW - Orientation"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "FIW Orientation"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-FO-1-001",
+         "title": "FIW Orientation",
+         "credential": "FIW Orientation",
+         "type": "Credit By Exam",
+         "recs": [
+          "4 hours in FIW - Orientation"
+         ]
+        }
        ]
       }
      },
@@ -904,11 +1033,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ELEC M9011",
        "title": "Iw-Mixed Base-Reinforcing"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ELEC M9011",
+        "title": "IW Ironworker History Reinforcing"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Mixed Base"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-IMB-1-001",
+         "title": "IW- Mixed Base",
+         "credential": "Ironworker Apprenticeship — Mixed Base",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Mixed Base - Reinforcing"
+         ]
+        }
        ]
       }
      },
@@ -919,11 +1068,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "MANU M10IH",
        "title": "IW - Trade Science/Ironworker History"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "MANU M10IH",
+        "title": "IW - Trade Science/Ironworker History"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Ironworker History"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-IH-1-001",
+         "title": "IW-Ironworker History",
+         "credential": "Ironworker Apprenticeship — Ironworker History",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Trade Science/Ironworker History"
+         ]
+        }
        ]
       }
      },
@@ -934,11 +1103,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "INDT M1149",
        "title": "IW - Structural Lead Hazard"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1149",
+        "title": "IW - Structural Lead Hazard"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Lead Hazard"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-ILH-1-001",
+         "title": "IW- Lead Hazard",
+         "credential": "Ironworker Apprenticeship — Lead Hazard",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Structural Lead Hazard"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -961,11 +1150,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "MANU M10HZ",
        "title": "IW - GEN Rigging"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "MANU M10HZ",
+        "title": "IW - GEN Rigging"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — General Rigging"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-IGR-1-001",
+         "title": "IW- Gen Rigging",
+         "credential": "Ironworker Apprenticeship — General Rigging",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - GEN Rigging"
+         ]
+        }
        ]
       }
      },
@@ -976,11 +1185,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "INDT M10OD",
        "title": "IW - Cranes"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M10OD",
+        "title": "IW - Cranes"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Cranes"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-I1-1-001",
+         "title": "IW-Cranes",
+         "credential": "Ironworker Apprenticeship — Cranes",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Cranes"
+         ]
+        }
        ]
       }
      },
@@ -990,7 +1219,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "WELD M1111",
        "title": "Welding L - Reinforcing"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "WELD M1111",
+        "title": "IW - Detailing/Reinforcing Iron"
+       }
+      ]
      },
      "IWAP 40.11": {
       "title": "Welding ll- Reinforcing",
@@ -999,11 +1235,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "INDT M1152",
        "title": "IW - Structural Steel Ll"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1152",
+        "title": "IW - Structural Steel Ll"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Welding 2"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-WI-1-001",
+         "title": "IW- Welding II",
+         "credential": "Ironworker Apprenticeship — Welding 2",
+         "type": "Credit By Exam",
+         "recs": [
+          "2.5 hours in Welding ll- Reinforcing"
+         ]
+        }
        ]
       }
      },
@@ -1014,11 +1270,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "WELD M1111",
        "title": "Welding L - Reinforcing"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "WELD M1111",
+        "title": "IW - Detailing/Reinforcing Iron"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Reinforcing 1"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-RI-1-001",
+         "title": "Reinforcing I",
+         "credential": "Reinforcing 1",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Reinforcing Iron l"
+         ]
+        }
        ]
       }
      },
@@ -1029,11 +1305,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "INDT M1152",
        "title": "IW - Structural Steel Ll"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1152",
+        "title": "IW - Structural Steel Ll"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Reinforcing 2"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-II-1-001",
+         "title": "IW-Reinforcing II",
+         "credential": "Ironworker Apprenticeship — Reinforcing 2",
+         "type": "Credit By Exam",
+         "recs": [
+          "1 hour in IW - Reinforcing ll"
+         ]
+        }
        ]
       }
      },
@@ -1044,11 +1340,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "INDT M1153",
        "title": "IW - Post - Tension Lll"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1153",
+        "title": "IW - Post - Tension Lll"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Post Tensioning 1"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-IPTI-1-001",
+         "title": "IW- Post Tensioning I",
+         "credential": "Ironworker Apprenticeship — Post Tensioning 1",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Post Tension l"
+         ]
+        }
        ]
       }
      },
@@ -1059,11 +1375,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "INDT M1150",
        "title": "Reinforcing II/Post Tension"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1150",
+        "title": "Reinforcing II/Post Tension"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Post Tensioning 2"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-IPTI1-1-001",
+         "title": "IW- Post Tensioning II",
+         "credential": "Ironworker Apprenticeship — Post Tensioning 2",
+         "type": "Credit By Exam",
+         "recs": [
+          "2.5 hours in Post - Tension ll"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -1086,11 +1422,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "WELD M1111",
        "title": "Welding L - Reinforcing"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "WELD M1111",
+        "title": "IW - Detailing/Reinforcing Iron"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — Detailing"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-ID-1-001",
+         "title": "IW- Detailing",
+         "credential": "Ironworker Apprenticeship — Detailing",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Detailing/Reinforcing Iron"
+         ]
+        }
        ]
       }
      },
@@ -1101,11 +1457,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "INDT M10TW",
        "title": "IWS - Reinforcing Foreman Training"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M10TW",
+        "title": "IWS - Reinforcing Foreman Training"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Foreman Training"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-FT-1-001",
+         "title": "Foreman Training",
+         "credential": "Foreman Training",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IWS - Reinforcing Foreman Training"
+         ]
+        }
        ]
       }
      },
@@ -1116,11 +1492,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "INDT M1153",
        "title": "IW - Post - Tension Lll"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1153",
+        "title": "IW - Post - Tension Lll"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Post Tensioning 3"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-PTI-1-001",
+         "title": "Post Tensioning III",
+         "credential": "Post Tensioning 3",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in IW - Post - Tension lll"
+         ]
+        }
        ]
       }
      },
@@ -1131,11 +1527,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "WELD M10CA",
        "title": "OSHA 30/Extension Review"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "WELD M10CA",
+        "title": "OSHA 30/Extension Review"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Ironworker Apprenticeship — OSHA 30/Extension Review"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPCXA-E&R-1-001",
+         "title": "Ext & Review",
+         "credential": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+         "type": "Credit By Exam",
+         "recs": [
+          "1.5 hours in OSHA 30/Extension Review"
+         ]
+        }
        ]
       }
      },
@@ -1146,6 +1562,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "WELD M1120",
        "title": "Structural Steel/Welding"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "WELD M1120",
+        "title": "Heavy Plate, Structural Steel and Welding Certification"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -1165,7 +1588,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "INDT M1152",
        "title": "IW - Structural Steel Ll"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1152",
+        "title": "IW - Structural Steel Ll"
+       }
+      ]
      },
      "IWAP 40.05": {
       "title": "IW- Welding lll",
@@ -1173,7 +1603,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "INDT M1153",
        "title": "IW - Post - Tension Lll"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1153",
+        "title": "IW - Post - Tension Lll"
+       }
+      ]
      },
      "IWAP 40.60": {
       "title": "Structural Arch Orn l",
@@ -1181,7 +1618,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "INDT M1026",
        "title": "Structural Arch Orn L"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1026",
+        "title": "Structural Arch Orn L"
+       }
+      ]
      },
      "IWAP 41.05": {
       "title": "IW - Architectural ll",
@@ -1189,7 +1633,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "INDT M1152",
        "title": "IW - Structural Steel Ll"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1152",
+        "title": "IW - Structural Steel Ll"
+       }
+      ]
      },
      "IWAP 40.61": {
       "title": "IW - Structural Precast Concrete/Qualified Rigger",
@@ -1197,7 +1648,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "MANU M10FT",
        "title": "IW - Structural Precast Concrete/Qualified Rigger"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "MANU M10FT",
+        "title": "IW - Structural Precast Concrete/Qualified Rigger"
+       }
+      ]
      },
      "IWAP 41.04": {
       "title": "IW - Architectural lll",
@@ -1205,7 +1663,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "INDT M1153",
        "title": "IW - Post - Tension Lll"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "INDT M1153",
+        "title": "IW - Post - Tension Lll"
+       }
+      ]
      },
      "IWAP 40.26": {
       "title": "Metal Building Erection /Foreman Training",
@@ -1213,7 +1678,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "MANU M10ED",
        "title": "Metal Building Erection /Foreman Training"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "MANU M10ED",
+        "title": "Metal Building Erection /Foreman Training"
+       }
+      ]
      }
     },
     "gaps": [
@@ -1265,7 +1737,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -1517,11 +1989,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "PH 100",
        "title": "Personal Health and Wellness"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 100",
+        "title": "Personal Health and Wellness"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "Basic Military Training"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPMM-BMT-1-001",
+         "title": "Basic Military Training",
+         "credential": "Basic Military Training",
+         "type": "Military",
+         "recs": [
+          "3 hours in Contemporary Health Problems"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -1549,7 +2041,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 101",
        "title": "Introduction to Public Health"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 101",
+        "title": "Introduction to Public Health"
+       }
+      ]
      },
      "HO 102": {
       "title": "Introduction to Public Health",
@@ -1558,7 +2057,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 101",
        "title": "Introduction to Public Health"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 101",
+        "title": "Introduction to Public Health"
+       }
+      ]
      },
      "STAT C1000": {
       "title": "Introduction to Statistics",
@@ -1567,6 +2073,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "STAT C1000",
        "title": "Introduction to Statistics"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "STAT C1000",
+        "title": "Introduction to Statistics"
+       },
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -1612,6 +2130,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "STAT C1000E",
        "title": "Introduction to Statistics"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "STAT C1000E",
+        "title": "Introduction to Statistics"
+       },
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -1657,6 +2187,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "MATH 110",
        "title": "Introduction to Statistics"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -1700,7 +2237,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BIOL M1054",
        "title": "Introduction to the Biological Sciences 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BIOL M1054",
+        "title": "Introduction to the Biological Sciences 1"
+       }
+      ]
      },
      "A&P 150": {
       "title": "Introduction to Human Anatomy",
@@ -1709,6 +2253,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BIOL 110 B",
        "title": "Human Anatomy with Lab"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BIOL 110 B",
+        "title": "Human Anatomy with Lab"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 2,
@@ -1731,6 +2282,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BIOL 120 B",
        "title": "Human Physiology with Lab"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BIOL 120 B",
+        "title": "Human Physiology with Lab"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -1751,6 +2309,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CHEM 101",
        "title": "Introduction to Chemistry"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "CHEM 101",
+        "title": "Introduction to Chemistry"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 9,
@@ -1797,6 +2362,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CHEM 110",
        "title": "General Chemistry for Science Majors I, with Lab"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "CHEM 110",
+        "title": "General Chemistry for Science Majors I, with Lab"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 5,
@@ -1825,7 +2397,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BIOL M1256",
        "title": "Principles of Microbiology"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BIOL M1256",
+        "title": "Principles and Applications of Microbiology"
+       }
+      ]
      },
      "HED 104": {
       "title": "Introduction to Health and Society",
@@ -1833,7 +2412,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 102",
        "title": "Health and Social Justice"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 102",
+        "title": "Health and Social Justice"
+       }
+      ]
      },
      "HO 103": {
       "title": "Health and Social Justice",
@@ -1842,7 +2428,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PHS 102",
        "title": "Health and Social Justice (Archived - for reference only)"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PHS 102",
+        "title": "Health and Social Justice (Archived - for reference only)"
+       }
+      ]
      },
      "HED 106": {
       "title": "Cultural Competence in Health and Social Services",
@@ -1850,7 +2443,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 104",
        "title": "Cultural Competence in Health and Social Services"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 104",
+        "title": "Cultural Competence in Health and Social Services"
+       }
+      ]
      },
      "HED 103": {
       "title": "Women, Their Bodies and Health",
@@ -1858,7 +2458,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 116",
        "title": "Women’s Health"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 116",
+        "title": "Women’s Health"
+       }
+      ]
      },
      "WGS 103": {
       "title": "Women, their Bodies and Health",
@@ -1867,7 +2474,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 116",
        "title": "Women’s Health"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 116",
+        "title": "Women’s Health"
+       }
+      ]
      },
      "HED 108": {
       "title": "Explorations of Health Professions",
@@ -1876,6 +2490,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "PH 105",
        "title": "Introduction to Health and Healthcare Careers"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 105",
+        "title": "Introduction to Health and Healthcare Careers"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -1895,7 +2516,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 110",
        "title": "Navigating the U.S. Health Care System, Health Insurance, Public Assistance, and Benefits Programs"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 110",
+        "title": "Navigating the U.S. Health Care System, Health Insurance, Public Assistance, and Benefits Programs"
+       }
+      ]
      },
      "HO 245": {
       "title": "Drugs and Behavior",
@@ -1903,7 +2531,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 103",
        "title": "Drugs, Health, and Society"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 103",
+        "title": "Drugs, Health, and Society"
+       }
+      ]
      },
      "PSYC 245": {
       "title": "Drugs and Behavior",
@@ -1912,7 +2547,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "PH 103",
        "title": "Drugs, Health, and Society"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PH 103",
+        "title": "Drugs, Health, and Society"
+       }
+      ]
      }
     },
     "gaps": [
@@ -1964,7 +2606,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -2272,6 +2914,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ARTS 100",
        "title": "2-D Foundations"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ARTS 100",
+        "title": "2-D Foundations"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 10,
@@ -2313,6 +2962,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ARTS 101",
        "title": "3-D Foundations"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ARTS 101",
+        "title": "3-D Foundations"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 7,
@@ -2339,6 +2995,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ARTS 210",
        "title": "Introduction to Painting"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ARTS 210",
+        "title": "Introduction to Painting"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -2359,6 +3022,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ARTS 110",
        "title": "Fundamentals of Drawing"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ARTS 110",
+        "title": "Fundamentals of Drawing"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 11,
@@ -2400,19 +3070,36 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ARTS 200",
        "title": "Figure Drawing"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ARTS 200",
+        "title": "Figure Drawing"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 0,
-       "credentials": []
+       "credentials": [],
+       "exhibits_n": 1,
+       "untitled_n": 1,
+       "exhibits": []
       }
      },
      "ARTH 4": {
-      "title": null,
+      "title": "INTRODUCTION TO ART THEORY",
       "identity": {
        "kind": "CCR",
        "id": "ARTH M10DD",
        "title": "Introduction to Art Theory"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTH M10DD",
+        "title": "Introduction to Art Theory"
+       }
+      ]
      },
      "ARTH 25": {
       "title": null,
@@ -2428,7 +3115,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTH M10CW",
        "title": "Art History Survey 3 - Non-Western"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTH M10CW",
+        "title": "Art History Survey 3 - Non-Western"
+       }
+      ]
      },
      "ARTH 22": {
       "title": "SURVEY OF ASIAN ART",
@@ -2436,7 +3130,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ARTH 130",
        "title": "Survey of Asian Art"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ARTH 130",
+        "title": "Survey of Asian Art"
+       }
+      ]
      },
      "ARTH 23": {
       "title": "AFRICAN, OCEANIC, AND INDIGENOUS NORTH AMERICAN ART",
@@ -2445,6 +3146,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ARTH 140",
        "title": "Arts of Africa, Oceania, and Indigenous North America"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ARTH 140",
+        "title": "Arts of Africa, Oceania, and Indigenous North America"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -2464,15 +3172,29 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTH M1011",
        "title": "Ancient Art"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTH M1011",
+        "title": "Ancient Art"
+       }
+      ]
      },
      "ARTH 28": {
-      "title": null,
+      "title": "Contemporary Art History",
       "identity": {
        "kind": "CCR",
        "id": "ARTH M1114",
        "title": "History of Contemporary Art"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTH M1114",
+        "title": "History of Contemporary Art"
+       }
+      ]
      },
      "ARTH 29": {
       "title": "19TH AND EARLY 20TH CENTURY ART",
@@ -2480,7 +3202,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTS M1011",
        "title": "Art of the 20TH Century"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTS M1011",
+        "title": "Interpretation of 20TH Century Piano Music"
+       }
+      ]
      },
      "ARTH 30": {
       "title": "RENAISSANCE AND BAROQUE ART",
@@ -2488,7 +3217,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTS M1104",
        "title": "Renaissance & Baroque Art"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTS M1104",
+        "title": "Renaissance and Baroque Art"
+       }
+      ]
      },
      "ARTH 31": {
       "title": "MEDIEVAL ART",
@@ -2496,7 +3232,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTH M1027",
        "title": "Medieval Art"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTH M1027",
+        "title": "European Art: Medieval and Renaissance"
+       }
+      ]
      },
      "ART 81": {
       "title": "REPRESENTATIONAL DRAWING",
@@ -2504,7 +3247,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ARTS 205",
        "title": "Intermediate Drawing"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ARTS 205",
+        "title": "Intermediate Drawing"
+       }
+      ]
      },
      "ART 82": {
       "title": "ADVANCED DRAWING",
@@ -2512,7 +3262,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTS M1044",
        "title": "Advanced Drawing"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTS M1044",
+        "title": "Advanced Drawing"
+       }
+      ]
      },
      "ART 86": {
       "title": "ADVANCED LIFE DRAWING",
@@ -2520,7 +3277,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ARTS 200",
        "title": "Figure Drawing"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ARTS 200",
+        "title": "Figure Drawing"
+       }
+      ]
      },
      "ART 186": {
       "title": "DRAWING THE HEAD AND HANDS",
@@ -2528,7 +3292,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTD M1635",
        "title": "Drawing the Head and Hands"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTD M1635",
+        "title": "Drawing the Head and Hands"
+       }
+      ]
      },
      "ART 195": {
       "title": "ILLUSTRATION",
@@ -2536,7 +3307,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTS M1446",
        "title": "Illustration"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTS M1446",
+        "title": "Illustration"
+       }
+      ]
      },
      "ART 51": {
       "title": "INTERMEDIATE PAINTING",
@@ -2544,7 +3322,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTS M1024",
        "title": "Acrylic Painting 2"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTS M1024",
+        "title": "Painting 2"
+       }
+      ]
      },
      "ART 52": {
       "title": "ADVANCED PAINTING",
@@ -2552,7 +3337,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTS M1057",
        "title": "Advanced Painting"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTS M1057",
+        "title": "Painting - Advanced"
+       }
+      ]
      },
      "ART 53": {
       "title": "BEGINNING LIFE PAINTING",
@@ -2560,7 +3352,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTS M11BQ",
        "title": "Beginning Life Painting"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTS M11BQ",
+        "title": "Beginning Life Painting"
+       }
+      ]
      },
      "ART 91": {
       "title": "PORTFOLIO DEVELOPMENT",
@@ -2568,7 +3367,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ARTS M1338",
        "title": "Portfolio Development"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ARTS M1338",
+        "title": "Portfolio Development"
+       }
+      ]
      }
     },
     "gaps": [
@@ -2843,7 +3649,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -2985,6 +3791,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 100 X",
        "title": "Principles of Emergency Services"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 100 X",
+        "title": "Principles of Emergency Services"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 7,
@@ -2993,6 +3806,79 @@ window.CPL_PATHWAYS_ROEP = {
         "Credit By Exam Miramar",
         "Fire Protection Organization",
         "Firefighter EMT Certificate"
+       ],
+       "exhibits_n": 9,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Fire Protection Organization 1 or 1A Certification",
+         "source": "MAP",
+         "recs_n": 2
+        },
+        {
+         "title": "Credit By Exam Miramar",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "Fire Protection Organization",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICA-CFEC-1-001",
+         "title": "Cal-JAC Firefighter EMT Certificate",
+         "credential": "Firefighter EMT Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-CFJC-1-001",
+         "title": "Cal-JAC Firefighter Journeyperson Certificate",
+         "credential": "Firefighter Journeyperson Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C-1-001",
+         "title": "Firefighter 1 Certification",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C1-1-001",
+         "title": "Firefighter 1A Certification",
+         "credential": "Firefighter 1A",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-F1OF-1-001",
+         "title": "Firefighter 1 or Firefighter 1A Certification",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-FC1A-1-001",
+         "title": "Firefighter Certificate 1 A",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Principles of Emergency Services"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -3046,12 +3932,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 110 X",
        "title": "Fire Prevention"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 110 X",
+        "title": "Fire Prevention"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 2,
        "credentials": [
         "Fire Prevention Technology Fire Inspector 1A Certification",
         "Fire Inspector 1A"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Fire Prevention Technology Fire Inspector 1A Certification",
+         "source": "MAP",
+         "recs_n": 2
+        }
        ]
       },
       "adopt": {
@@ -3099,12 +4001,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 120 X",
        "title": "Fire Protection Systems"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 120 X",
+        "title": "Fire Protection Systems"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Fire Protection Equipment and Systems Fire Inspector 1C Certification",
         "Fire Inspector 1C"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Fire Protection Equipment and Systems Fire Inspector 1C Certification",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -3172,6 +4090,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1274",
        "title": "Building Construction for Fire Protection"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1274",
+        "title": "Building Construction for Fire Protection"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 5,
@@ -3180,6 +4105,64 @@ window.CPL_PATHWAYS_ROEP = {
         "Firefighter Journeyperson Certificate",
         "Firefighter 1",
         "Firefighter 1A"
+       ],
+       "exhibits_n": 6,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-CFEC-1-001",
+         "title": "Cal-JAC Firefighter EMT Certificate",
+         "credential": "Firefighter EMT Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-CFJC-1-001",
+         "title": "Cal-JAC Firefighter Journeyperson Certificate",
+         "credential": "Firefighter Journeyperson Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C-1-001",
+         "title": "Firefighter 1 Certification",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C1-1-001",
+         "title": "Firefighter 1A Certification",
+         "credential": "Firefighter 1A",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-BCFF-1-001",
+         "title": "Building Construction for Fire Protection 1 or 1A or 2C Certification",
+         "credential": "Building Construction for Fire Protection",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-FC1A-1-001",
+         "title": "Firefighter Certificate 1 A",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -3223,6 +4206,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1268",
        "title": "Fire Behavior and Combustion"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1268",
+        "title": "Fire Behavior and Combustion"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 5,
@@ -3231,6 +4221,51 @@ window.CPL_PATHWAYS_ROEP = {
         "Firefighter EMT Certificate",
         "Firefighter Journeyperson Certificate",
         "Firefighter 1"
+       ],
+       "exhibits_n": 5,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Firefighter 1 Certification",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICA-CFEC-1-001",
+         "title": "Cal-JAC Firefighter EMT Certificate",
+         "credential": "Firefighter EMT Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Behavior and Combustion"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-CFJC-1-001",
+         "title": "Cal-JAC Firefighter Journeyperson Certificate",
+         "credential": "Firefighter Journeyperson Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Behavior and Combustion"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C1-1-001",
+         "title": "Firefighter 1A Certification",
+         "credential": "Firefighter 1A",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Behavior and Combustion"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-FC1A-1-001",
+         "title": "Firefighter Certificate 1 A",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Behavior and Combustion"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -3270,6 +4305,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1358",
        "title": "Firefighter Survival"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1358",
+        "title": "Wildland Firefighter Safety and Survival CalFire Level 1"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -3290,6 +4332,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "EMST M10LH",
        "title": "Emergency Medical Technician - National Registry"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "EMST M10LH",
+        "title": "Emergency Medical Technician - National Registry"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 4,
@@ -3298,6 +4347,38 @@ window.CPL_PATHWAYS_ROEP = {
         "Credit By Exam Miramar",
         "Firefighter EMT Certificate",
         "EMT Certification"
+       ],
+       "exhibits_n": 4,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Emergency Medical Technician (EMT)",
+         "source": "MAP",
+         "recs_n": 2
+        },
+        {
+         "title": "Credit By Exam Miramar",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICA-CFEC-1-001",
+         "title": "Cal-JAC Firefighter EMT Certificate",
+         "credential": "Firefighter EMT Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "7 hours in Emergency Medical Technician - National Registry"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-CECO-1-001",
+         "title": "Current EMT Certification or Paramedic License",
+         "credential": "EMT Certification",
+         "type": "Industry Certification",
+         "recs": [
+          "6 hours in Emergency Medical Technician - National Registry"
+         ]
+        }
        ]
       }
      },
@@ -3308,12 +4389,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "EMST M10EJ",
        "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "EMST M10EJ",
+        "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Current EMT Certification or Paramedic License",
         "EMT Certification"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Current EMT Certification or Paramedic License",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      }
@@ -3349,7 +4446,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -3491,6 +4588,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 100 X",
        "title": "Principles of Emergency Services"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 100 X",
+        "title": "Principles of Emergency Services"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 7,
@@ -3499,6 +4603,79 @@ window.CPL_PATHWAYS_ROEP = {
         "Credit By Exam Miramar",
         "Fire Protection Organization",
         "Firefighter EMT Certificate"
+       ],
+       "exhibits_n": 9,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Fire Protection Organization 1 or 1A Certification",
+         "source": "MAP",
+         "recs_n": 2
+        },
+        {
+         "title": "Credit By Exam Miramar",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "Fire Protection Organization",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICA-CFEC-1-001",
+         "title": "Cal-JAC Firefighter EMT Certificate",
+         "credential": "Firefighter EMT Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-CFJC-1-001",
+         "title": "Cal-JAC Firefighter Journeyperson Certificate",
+         "credential": "Firefighter Journeyperson Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C-1-001",
+         "title": "Firefighter 1 Certification",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C1-1-001",
+         "title": "Firefighter 1A Certification",
+         "credential": "Firefighter 1A",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-F1OF-1-001",
+         "title": "Firefighter 1 or Firefighter 1A Certification",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Protection Organization"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-FC1A-1-001",
+         "title": "Firefighter Certificate 1 A",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Principles of Emergency Services"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -3552,12 +4729,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 110 X",
        "title": "Fire Prevention"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 110 X",
+        "title": "Fire Prevention"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 2,
        "credentials": [
         "Fire Prevention Technology Fire Inspector 1A Certification",
         "Fire Inspector 1A"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Fire Prevention Technology Fire Inspector 1A Certification",
+         "source": "MAP",
+         "recs_n": 2
+        }
        ]
       },
       "adopt": {
@@ -3605,12 +4798,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 120 X",
        "title": "Fire Protection Systems"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 120 X",
+        "title": "Fire Protection Systems"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Fire Protection Equipment and Systems Fire Inspector 1C Certification",
         "Fire Inspector 1C"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Fire Protection Equipment and Systems Fire Inspector 1C Certification",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -3678,6 +4887,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1274",
        "title": "Building Construction for Fire Protection"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1274",
+        "title": "Building Construction for Fire Protection"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 5,
@@ -3686,6 +4902,64 @@ window.CPL_PATHWAYS_ROEP = {
         "Firefighter Journeyperson Certificate",
         "Firefighter 1",
         "Firefighter 1A"
+       ],
+       "exhibits_n": 6,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICA-CFEC-1-001",
+         "title": "Cal-JAC Firefighter EMT Certificate",
+         "credential": "Firefighter EMT Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-CFJC-1-001",
+         "title": "Cal-JAC Firefighter Journeyperson Certificate",
+         "credential": "Firefighter Journeyperson Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C-1-001",
+         "title": "Firefighter 1 Certification",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C1-1-001",
+         "title": "Firefighter 1A Certification",
+         "credential": "Firefighter 1A",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-BCFF-1-001",
+         "title": "Building Construction for Fire Protection 1 or 1A or 2C Certification",
+         "credential": "Building Construction for Fire Protection",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-FC1A-1-001",
+         "title": "Firefighter Certificate 1 A",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Building Construction for Fire Protection"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -3729,6 +5003,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1268",
        "title": "Fire Behavior and Combustion"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1268",
+        "title": "Fire Behavior and Combustion"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 5,
@@ -3737,6 +5018,51 @@ window.CPL_PATHWAYS_ROEP = {
         "Firefighter EMT Certificate",
         "Firefighter Journeyperson Certificate",
         "Firefighter 1"
+       ],
+       "exhibits_n": 5,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Firefighter 1 Certification",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICA-CFEC-1-001",
+         "title": "Cal-JAC Firefighter EMT Certificate",
+         "credential": "Firefighter EMT Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Behavior and Combustion"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-CFJC-1-001",
+         "title": "Cal-JAC Firefighter Journeyperson Certificate",
+         "credential": "Firefighter Journeyperson Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Behavior and Combustion"
+         ]
+        },
+        {
+         "exhibit": "MAPICA-F1C1-1-001",
+         "title": "Firefighter 1A Certification",
+         "credential": "Firefighter 1A",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Behavior and Combustion"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-FC1A-1-001",
+         "title": "Firefighter Certificate 1 A",
+         "credential": "Firefighter 1",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Fire Behavior and Combustion"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -3776,6 +5102,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1358",
        "title": "Firefighter Survival"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1358",
+        "title": "Wildland Firefighter Safety and Survival CalFire Level 1"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -3796,6 +5129,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "EMST M10LH",
        "title": "Emergency Medical Technician - National Registry"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "EMST M10LH",
+        "title": "Emergency Medical Technician - National Registry"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 4,
@@ -3804,6 +5144,38 @@ window.CPL_PATHWAYS_ROEP = {
         "Credit By Exam Miramar",
         "Firefighter EMT Certificate",
         "EMT Certification"
+       ],
+       "exhibits_n": 4,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Emergency Medical Technician (EMT)",
+         "source": "MAP",
+         "recs_n": 2
+        },
+        {
+         "title": "Credit By Exam Miramar",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICA-CFEC-1-001",
+         "title": "Cal-JAC Firefighter EMT Certificate",
+         "credential": "Firefighter EMT Certificate",
+         "type": "Industry Certification",
+         "recs": [
+          "7 hours in Emergency Medical Technician - National Registry"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-CECO-1-001",
+         "title": "Current EMT Certification or Paramedic License",
+         "credential": "EMT Certification",
+         "type": "Industry Certification",
+         "recs": [
+          "6 hours in Emergency Medical Technician - National Registry"
+         ]
+        }
        ]
       }
      },
@@ -3814,12 +5186,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "EMST M10EJ",
        "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "EMST M10EJ",
+        "title": "Perilaryngeal Airway Adjuncts/Defibrillation Training"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Current EMT Certification or Paramedic License",
         "EMT Certification"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Current EMT Certification or Paramedic License",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      }
@@ -3861,7 +5249,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -4291,12 +5679,33 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUS 110",
        "title": "Introduction to Business"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BUS 110",
+        "title": "Introduction to Business"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Credit By Exam Miramar",
         "Introduction to Business"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Credit By Exam Miramar",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "Introduction to Business",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -4336,7 +5745,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BUSI M1202",
        "title": "Business Mathematics"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1202",
+        "title": "Mathematics for Business"
+       }
+      ]
      },
      "BUSE 102": {
       "title": "Introduction to Customer Service",
@@ -4345,6 +5761,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUSI M1259",
        "title": "Introduction to Customer Service"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1259",
+        "title": "Introduction to Customer Service"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -4364,7 +5787,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BUSI M1181",
        "title": "Human Relations in Business"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1181",
+        "title": "Human Relations in Business"
+       }
+      ]
      },
      "BUSE 119": {
       "title": "Business Communications",
@@ -4373,11 +5803,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUS 115",
        "title": "Business Communication"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BUS 115",
+        "title": "Business Communication"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "Machinist's Mate"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Machinist's Mate",
+         "source": "ACE",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -4407,6 +5853,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUSI M1286",
        "title": "Introduction to Entrepreneurship"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1286",
+        "title": "Introduction to Entrepreneurship"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -4414,6 +5867,20 @@ window.CPL_PATHWAYS_ROEP = {
         "Credit By Exam Miramar",
         "Intro to Entrepreneurship",
         "Introduction to Entrepreneurship"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Credit By Exam Miramar",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "Intro to Entrepreneurship",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -4437,7 +5904,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BUSI M1199",
        "title": "Small Business Management"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1199",
+        "title": "Small Business Management"
+       }
+      ]
      },
      "BUSE 157": {
       "title": "Developing a Plan for the Small Business",
@@ -4445,7 +5919,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ENTR M1007",
        "title": "Developing a Plan for the Small Business"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ENTR M1007",
+        "title": "Developing a Plan for the Small Business"
+       }
+      ]
      },
      "MARK 100": {
       "title": "Principles of Marketing",
@@ -4454,6 +5935,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUSI M1420",
        "title": "Marketing Principles"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1420",
+        "title": "Principles of Marketing"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 5,
@@ -4491,6 +5979,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUS 120",
        "title": "Legal Environment of Business"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BUS 120",
+        "title": "Legal Environment of Business"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -4511,6 +6006,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUSI M1401",
        "title": "Organization and Management"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1401",
+        "title": "Principles of Management and Organization"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -4530,7 +6032,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ENTR M10AU",
        "title": "Gazelle Path Business Incubator 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ENTR M10AU",
+        "title": "Gazelle Path Business Incubator 1"
+       }
+      ]
      },
      "BUSE 229B": {
       "title": "Gazelle Path Business Incubator II",
@@ -4538,7 +6047,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ENTR M10AV",
        "title": "Gazelle Path Business Incubator 2"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ENTR M10AV",
+        "title": "Gazelle Path Business Incubator 2"
+       }
+      ]
      },
      "BUSE 229C": {
       "title": "Gazelle Path Business Incubator III",
@@ -4546,7 +6062,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ENTR M10AW",
        "title": "Gazelle Path Business Incubator 3"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ENTR M10AW",
+        "title": "Gazelle Path Business Incubator 3"
+       }
+      ]
      },
      "BUSE 229D": {
       "title": "Gazelle Path Business Incubator IV",
@@ -4554,7 +6077,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ENTR M10AX",
        "title": "Gazelle Path Business Incubator 4"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ENTR M10AX",
+        "title": "Gazelle Path Business Incubator 4"
+       }
+      ]
      },
      "ACCT 102": {
       "title": "Basic Accounting",
@@ -4562,7 +6092,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BUSI M1017",
        "title": "Basic Accounting"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1017",
+        "title": "Basic Accounting"
+       }
+      ]
      },
      "ACCT 150": {
       "title": "Computer Accounting Applications",
@@ -4570,7 +6107,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BUSI M1010",
        "title": "Computer Accounting Applications"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1010",
+        "title": "Computer Accounting Applications"
+       }
+      ]
      },
      "CISC 181": {
       "title": "Principles of Information Systems",
@@ -4579,6 +6123,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUS 140",
        "title": "Business Information Systems, Computer Information Systems"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BUS 140",
+        "title": "Business Information Systems, Computer Information Systems"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 5,
@@ -4625,7 +6176,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BUSI M1313",
        "title": "Personal Financial Management"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BUSI M1313",
+        "title": "Personal Financial Management"
+       }
+      ]
      },
      "BUSE 270": {
       "title": "Business Internship / Work Experience",
@@ -4633,7 +6191,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "WEXP M1001",
        "title": "Work Experience Education"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "WEXP M1001",
+        "title": "Work Experience Education"
+       }
+      ]
      },
      "BUSE 290": {
       "title": "Independent Study",
@@ -4645,7 +6210,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "AUTO M11EV",
        "title": "Honda/Toyota Quick Service Lube, Pre-Delivery Inspection Technician"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "AUTO M11EV",
+        "title": "Honda/Toyota Quick Service Lube, Pre-Delivery Inspection Technician"
+       }
+      ]
      },
      "AUTO 153G": {
       "title": "Introduction to Automotive Technology",
@@ -4654,12 +6226,33 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AUTO M1118",
        "title": "Introduction to Automotive Technology"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "AUTO M1118",
+        "title": "Introduction to Automotive Technology"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 2,
        "credentials": [
         "Credit By Exam Miramar",
         "Introduction to Automotive Technology"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Credit By Exam Miramar",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "Introduction to Automotive Technology",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -4688,6 +6281,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AUTO M1241",
        "title": "Honda/Toyota Advanced Engine Performance"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "AUTO M1241",
+        "title": "Honda/Toyota Advanced Engine Performance"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 5,
@@ -4696,6 +6296,56 @@ window.CPL_PATHWAYS_ROEP = {
         "Engine and Related Systems",
         "ASE A1 — Engine Repair",
         "EMT Certification"
+       ],
+       "exhibits_n": 6,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Credit By Exam Miramar",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "Engine and Related Systems",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "CPLICI-ASE1-1-001",
+         "title": "Automotive Services Excellence 1 (A1) Certificate",
+         "credential": "ASE A1 — Engine Repair",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Engine Repair"
+         ]
+        },
+        {
+         "exhibit": "MAPCBEH-EARS-1-001",
+         "title": "Engine and Related Systems ASE A1",
+         "credential": "ASE A1 — Engine Repair",
+         "type": "Credit By Exam",
+         "recs": [
+          "2 hours in Engine and Related Systems"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-CECO-1-001",
+         "title": "Current EMT Certification or Paramedic License",
+         "credential": "EMT Certification",
+         "type": "Industry Certification",
+         "recs": [
+          "0.3 hours in Perilaryngeal Airway Adjuncts/Defibrillation Training"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-DO1C-1-001",
+         "title": "Driver Operator 1B Certification",
+         "credential": "Fire Apparatus Driver/Operator 1B",
+         "type": "Industry Certification",
+         "recs": [
+          "0.3 hours in Driver Operator - Pumping"
+         ]
+        }
        ]
       }
      },
@@ -4705,7 +6355,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "AUTO M1241",
        "title": "Honda/Toyota Advanced Engine Performance"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "AUTO M1241",
+        "title": "Honda/Toyota Advanced Engine Performance"
+       }
+      ]
      },
      "AVIA 101": {
       "title": "Private Pilot Grounded School",
@@ -4714,6 +6371,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AVIA M10PH",
        "title": "Private Pilot Grounded School"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "AVIA M10PH",
+        "title": "Private Pilot Grounded School"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -4721,6 +6385,24 @@ window.CPL_PATHWAYS_ROEP = {
         "FAA-issued Private Pilot Certificate",
         "FAA Certified Flight Instructor (CFI)",
         "FAA Private Pilot Certificate"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "FAA-issued Private Pilot Certificate",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-FFIC-1-001",
+         "title": "FAA-issued Flight Instructor Certificate",
+         "credential": "FAA Certified Flight Instructor (CFI)",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Private Pilot Ground School"
+         ]
+        }
        ]
       }
      },
@@ -4730,7 +6412,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "AVIA M1060",
        "title": "Introduction to Aviation and Aerospace"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "AVIA M1060",
+        "title": "Introduction to Aviation and Aerospace"
+       }
+      ]
      },
      "AVIM 101G": {
       "title": "General Aviation Technology Theory I",
@@ -4739,11 +6428,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AVIA M10KW",
        "title": "General Aviation Technology Theory 1"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "AVIA M10KW",
+        "title": "General Aviation Technology Theory 1"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "FAA Mechanic Certificate — Airframe or Powerplant Rating"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICI-MCWA-1-001",
+         "title": "Mechanic Certificate with Airframe Rating OR with Powerplant Rating",
+         "credential": "FAA Mechanic Certificate — Airframe or Powerplant Rating",
+         "type": "Industry Certification",
+         "recs": [
+          "6 hours in General Aviation Technology Theory I"
+         ]
+        }
        ]
       }
      },
@@ -4753,7 +6462,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BSOT M10LB",
        "title": "Webpage Creation with Dreamweaver"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BSOT M10LB",
+        "title": "Webpage Creation with Dreamweaver"
+       }
+      ]
      },
      "CBTE 180": {
       "title": "Microsoft Office",
@@ -4761,7 +6477,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BSOT M1215",
        "title": "Microsoft Office"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BSOT M1215",
+        "title": "Microsoft Office (Word, Excel, PowerPoint)"
+       }
+      ]
      },
      "CBTE 210": {
       "title": "Computers in Business",
@@ -4769,7 +6492,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BSOT M1090",
        "title": "Computers in Business"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BSOT M1090",
+        "title": "Computers in Business"
+       }
+      ]
      },
      "CHIL 101": {
       "title": "Human Growth and Development",
@@ -4778,6 +6508,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CDEV 100",
        "title": "Child Growth and Development"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "CDEV 100",
+        "title": "Child Growth and Development"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 4,
@@ -4810,7 +6547,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "AUTO M1173",
        "title": "Introduction to Diesel Technology"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "AUTO M1173",
+        "title": "Introduction to Diesel Technology"
+       }
+      ]
      },
      "DIES 105": {
       "title": "Measuring Tools and Applied Mathematics",
@@ -4818,7 +6562,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "AUTD M10AX",
        "title": "Measuring Tools and Applied Mathematics"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "AUTD M10AX",
+        "title": "Measuring Tools and Applied Mathematics"
+       }
+      ]
      },
      "EXSC 292A": {
       "title": "Yoga Teacher Training Essentials",
@@ -4826,7 +6577,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "KINE M1517",
        "title": "Yoga Teacher Training Essentials"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1517",
+        "title": "Yoga Teacher Training 4 - Social Applications of Yoga"
+       }
+      ]
      },
      "EXSC 242B": {
       "title": "Care and Prevention of Injuries",
@@ -4835,6 +6593,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "KINE M1402",
        "title": "Care and Prevention of Injuries"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1402",
+        "title": "Introduction to Care/Prevention of Activity/Sports-Related Injuries"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -4855,6 +6620,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CMUS 100 X",
        "title": "Introduction to Music Technology"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "CMUS 100 X",
+        "title": "Introduction to Music Technology"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 2,
@@ -4882,6 +6654,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "REAL M1040",
        "title": "Real Estate Principles"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1040",
+        "title": "Real Estate Principles"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 12,
@@ -4934,7 +6713,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "WEXP M1001",
        "title": "Work Experience Education"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "WEXP M1001",
+        "title": "Work Experience Education"
+       }
+      ]
      }
     },
     "gaps": [
@@ -5010,7 +6796,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -5182,11 +6968,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUS 115",
        "title": "Business Communication"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BUS 115",
+        "title": "Business Communication"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "Machinist's Mate"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Machinist's Mate",
+         "source": "ACE",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -5216,6 +7018,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUS 120",
        "title": "Legal Environment of Business"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BUS 120",
+        "title": "Legal Environment of Business"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -5236,6 +7045,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ACCT 110",
        "title": "Financial Accounting"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ACCT 110",
+        "title": "Financial Accounting"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 3,
@@ -5258,6 +7074,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ACCT 120",
        "title": "Managerial Accounting"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ACCT 120",
+        "title": "Managerial Accounting"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 2,
@@ -5287,6 +7110,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "MATH 110",
        "title": "Introduction to Statistics"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -5335,6 +7165,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "MATH 140",
        "title": "Business Calculus"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "MATH 140",
+        "title": "Business Calculus"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 3,
@@ -5368,6 +7205,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "MATH 210",
        "title": "Single Variable Calculus I Early Transcendentals"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "MATH 210",
+        "title": "Single Variable Calculus I Early Transcendentals"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 11,
@@ -5472,7 +7316,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -5670,6 +7514,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 100 X",
        "title": "Principles of Emergency Services"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 100 X",
+        "title": "Principles of Emergency Services"
+       }
+      ],
       "adopt": {
        "credentials_n": 16,
        "colleges_n": 16,
@@ -5762,6 +7613,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 110 X",
        "title": "Fire Prevention"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 110 X",
+        "title": "Fire Prevention"
+       }
+      ],
       "adopt": {
        "credentials_n": 6,
        "colleges_n": 11,
@@ -5807,6 +7665,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 120 X",
        "title": "Fire Protection Systems"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 120 X",
+        "title": "Fire Protection Systems"
+       }
+      ],
       "adopt": {
        "credentials_n": 11,
        "colleges_n": 13,
@@ -5872,6 +7737,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 130 X",
        "title": "Building Construction for Fire Protection"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 130 X",
+        "title": "Building Construction for Fire Protection"
+       }
+      ],
       "adopt": {
        "credentials_n": 9,
        "colleges_n": 10,
@@ -5948,6 +7820,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1268",
        "title": "Fire Behavior and Combustion"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1268",
+        "title": "Fire Behavior and Combustion"
+       }
+      ],
       "adopt": {
        "credentials_n": 7,
        "colleges_n": 7,
@@ -6004,6 +7883,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE 150 X",
        "title": "Principles of Fire and Emergency Services Safety and Survival"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "FIRE 150 X",
+        "title": "Principles of Fire and Emergency Services Safety and Survival"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 3,
@@ -6032,6 +7918,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1373",
        "title": "Hazardous Materials - ICS"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1373",
+        "title": "Hazardous Materials - ICS"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -6053,6 +7946,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1325",
        "title": "Fire Fighting Tactics and Strategy"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1325",
+        "title": "Fire Fighting Tactics and Strategy"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 2,
@@ -6085,7 +7985,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "FIRE M1290",
        "title": "Fire Company Organization and Management"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1290",
+        "title": "Fire Company Organization and Management"
+       }
+      ]
      },
      "FIRE 9": {
       "title": "Fire Hydraulics",
@@ -6095,6 +8002,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1332",
        "title": "Fire Hydraulics"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1332",
+        "title": "Fire Protection Hydraulics and Water Supply"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 3,
@@ -6127,7 +8041,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "FIRE M1443",
        "title": "Nat Fire Acad Arson Detection"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1443",
+        "title": "Nat Fire Acad Arson Detection"
+       }
+      ]
      },
      "FIRE 11": {
       "title": "Fire Apparatus and Equipment",
@@ -6137,6 +8058,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1249",
        "title": "Fire Apparatus and Equipment"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1249",
+        "title": "Fire Apparatus and Equipment"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 4,
@@ -6173,6 +8101,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "FIRE M1297",
        "title": "Wildland Fire Control"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1297",
+        "title": "Wildland Fire Control"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 22,
@@ -6181,6 +8116,120 @@ window.CPL_PATHWAYS_ROEP = {
         "Airman",
         "Aviation Ordnanceman",
         "Aviation Ordnanceman 'A' School, Class A1"
+       ],
+       "exhibits_n": 22,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Aircrew Survival Equipment Class A1",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Airman",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Aviation Ordnanceman",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Aviation Ordnanceman 'A' School, Class A1",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Aviation Ordnanceman (AO)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Boatswain's Mate",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Electronic Technician (Navigation)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Electronics Technician Class 'A' School",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Fire Controlman (Aegis) (FCA)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Gunner's Mate 'A' School (Block 0)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Gunner's Mate (GM)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Hull Maintenance Technician",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Machinery Technician",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Machinist's Mate, Non-Nuclear, Submarine Auxiliary",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Naval Nuclear Power School, Enlisted",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Nuclear Field 'A ' School (Electrician's Mates)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Nuclear Field 'A' School ( Machinist's Mates)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Prototype Training (Electronics Technicians)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Recovery Operations (Wheeled)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Senior Maintenance Supervisor",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Sonar Technician (Surface) (STG)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Total Army Training System (TATS) Multiple Launch Rocket System (MLRS) Crewmember",
+         "source": "ACE",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -6222,7 +8271,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "FIRE M1209",
        "title": "Basic Fire Academy"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "FIRE M1209",
+        "title": "Basic Fire Academy"
+       }
+      ]
      },
      "KINF 53": {
       "title": "Physical Training for the Basic Fire Academy",
@@ -6231,7 +8287,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "KINE M10HS",
        "title": "Physical Training for the Basic Fire Academy"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M10HS",
+        "title": "Physical Training for the Basic Fire Academy"
+       }
+      ]
      }
     },
     "gaps": [
@@ -6436,7 +8499,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -6705,6 +8768,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BIOL 110 B",
        "title": "Human Anatomy with Lab"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BIOL 110 B",
+        "title": "Human Anatomy with Lab"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 2,
@@ -6727,6 +8797,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BIOL 120 B",
        "title": "Human Physiology with Lab"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BIOL 120 B",
+        "title": "Human Physiology with Lab"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -6748,6 +8825,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BIOL 110 B",
        "title": "Human Anatomy with Lab"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BIOL 110 B",
+        "title": "Human Anatomy with Lab"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 2,
@@ -6770,6 +8854,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BIOL 120 B",
        "title": "Human Physiology with Lab"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BIOL 120 B",
+        "title": "Human Physiology with Lab"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -6789,7 +8880,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CDEV M1280",
        "title": "Human Development Through the Lifespan"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CDEV M1280",
+        "title": "Human Development Through the Lifespan"
+       }
+      ]
      },
      "CHLD 10H": {
       "title": "Human Growth and Lifespan Development - Honors",
@@ -6798,7 +8896,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CDEV M11GJ",
        "title": "Human Growth and Lifespan Development - Honors"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CDEV M11GJ",
+        "title": "Human Growth and Lifespan Development - Honors"
+       }
+      ]
      },
      "PSYC 14": {
       "title": "Developmental Psychology",
@@ -6808,6 +8913,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "PSY 180",
        "title": "Introduction to Lifespan Psychology"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PSY 180",
+        "title": "Introduction to Lifespan Psychology"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 2,
@@ -6835,6 +8947,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "PSY 180",
        "title": "Introduction to Lifespan Psychology"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "PSY 180",
+        "title": "Introduction to Lifespan Psychology"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 2,
@@ -6861,6 +8980,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COMM C1000",
        "title": "Introduction to Public Speaking"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "COMM C1000",
+        "title": "Introduction to Public Speaking"
+       },
+       {
+        "kind": "C-ID",
+        "id": "COMM 110",
+        "title": "Public Speaking"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 1,
@@ -6888,6 +9019,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COMM C1000H",
        "title": "Introduction to Public Speaking - Honors"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "COMM C1000H",
+        "title": "Introduction to Public Speaking - Honors"
+       },
+       {
+        "kind": "C-ID",
+        "id": "COMM 110",
+        "title": "Public Speaking"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 1,
@@ -6915,6 +9058,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COMM 115",
        "title": "Survey of Human Communication"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "COMM 115",
+        "title": "Survey of Human Communication"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -6935,7 +9085,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "COMM M10IB",
        "title": "Professional and Organizational Speaking"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COMM M10IB",
+        "title": "Professional and Organizational Speaking"
+       }
+      ]
      },
      "COMM 8H": {
       "title": "Professional and Organizational Speaking - Honors",
@@ -6944,7 +9101,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "COMM M1112",
        "title": "Professional and Organizational Speaking Honors"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COMM M1112",
+        "title": "Professional and Organizational Speaking Honors"
+       }
+      ]
      },
      "ENGL C1000": {
       "title": "Academic Reading and Writing",
@@ -6953,6 +9117,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ENGL C1000",
        "title": "Academic Writing and Reading"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "ENGL C1000",
+        "title": "Academic Writing and Reading"
+       },
+       {
+        "kind": "C-ID",
+        "id": "ENGL 100",
+        "title": "College Composition"
+       }
+      ],
       "adopt": {
        "credentials_n": 6,
        "colleges_n": 11,
@@ -7007,6 +9183,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ENGL C1000H",
        "title": "Academic Reading and Writing - Honors"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "ENGL C1000H",
+        "title": "Academic Reading and Writing - Honors"
+       },
+       {
+        "kind": "C-ID",
+        "id": "ENGL 100",
+        "title": "College Composition"
+       }
+      ],
       "adopt": {
        "credentials_n": 6,
        "colleges_n": 11,
@@ -7061,6 +9249,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ENGL 100",
        "title": "College Composition"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ENGL 100",
+        "title": "College Composition"
+       }
+      ],
       "adopt": {
        "credentials_n": 6,
        "colleges_n": 11,
@@ -7113,7 +9308,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "BIOL M1256",
        "title": "Principles of Microbiology"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BIOL M1256",
+        "title": "Principles and Applications of Microbiology"
+       }
+      ]
      },
      "MICR 22": {
       "title": "Microbiology",
@@ -7123,6 +9325,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BIOL M1254",
        "title": "Microbiology"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "BIOL M1254",
+        "title": "Microbiology"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -7143,6 +9352,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "NRSR M1081",
        "title": "Maternal Newborn Health Concepts"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "NRSR M1081",
+        "title": "Advanced Medical Surgical and Maternal-Newborn Nursing"
+       },
+       {
+        "kind": "M-ID",
+        "id": "NRSR M1169",
+        "title": "Intermediate Concepts of Vocational Nursing - Maternity and Pediatrics"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 3,
@@ -7180,7 +9401,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "NRSR M1175",
        "title": "Pediatric Nursing"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "NRSR M1175",
+        "title": "Pediatric Nursing"
+       }
+      ]
      },
      "NURS 206": {
       "title": "Medical-Surgical Nursing: Nutrition/Elimination/ Surgical Asepsis",
@@ -7188,7 +9416,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "HTEC M1015",
        "title": "Medical Asepsis and Surgical Procedures"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "HTEC M1015",
+        "title": "Medical-Surgical Nursing: Nutrition/Elimination/ Surgical Asepsis"
+       }
+      ]
      },
      "NURS 207": {
       "title": "Psychiatric Mental Health Nursing",
@@ -7197,6 +9432,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "NRSR M1115",
        "title": "Mental Health/Psychiatric Nursing"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "NRSR M1115",
+        "title": "Mental Health and Psychiatric Nursing"
+       },
+       {
+        "kind": "M-ID",
+        "id": "NRSR M1186",
+        "title": "Psychiatric Nursing for Psychiatric Technicians Clinical"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -7216,7 +9463,19 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "NRSR M10VB",
        "title": "Medical-Surgical Nursing: Circulation and Oxygenation"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "NRSR M10VB",
+        "title": "Medical-Surgical Nursing: Circulation and Oxygenation"
+       },
+       {
+        "kind": "M-ID",
+        "id": "NRSR M11OW",
+        "title": "Medical-Surgical Nursing: Perfusion and Oxygenation"
+       }
+      ]
      },
      "NURS 211": {
       "title": "Medical-Surgical Nursing: Integration/Regulation",
@@ -7224,7 +9483,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "NRSR M1143",
        "title": "Medical-Surgical Nursing: Integration/Regulation"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "NRSR M1143",
+        "title": "Medical-Surgical Nursing: Integration/Regulation"
+       }
+      ]
      },
      "NURS 212": {
       "title": null,
@@ -7232,7 +9498,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "NRSR M1182",
        "title": "Preceptorship in Nursing"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "NRSR M1182",
+        "title": "Nursing Management, Leadership, and Preceptorship"
+       }
+      ]
      },
      "PSYC C1000": {
       "title": "Introduction to Psychology",
@@ -7241,6 +9514,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "PSYC C1000",
        "title": "Introduction to Psychology"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "PSYC C1000",
+        "title": "Introduction to Psychology"
+       },
+       {
+        "kind": "C-ID",
+        "id": "PSY 110",
+        "title": "Introductory Psychology"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 11,
@@ -7290,6 +9575,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "PSYC C1000H",
        "title": "Introduction to Psychology - Honors"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "PSYC C1000H",
+        "title": "Introduction to Psychology - Honors"
+       },
+       {
+        "kind": "C-ID",
+        "id": "PSY 110",
+        "title": "Introductory Psychology"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 11,
@@ -7417,7 +9714,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -7596,6 +9893,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CDEV 110",
        "title": "Child Family and Community"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "CDEV 110",
+        "title": "Child Family and Community"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -7617,6 +9921,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ECE 120",
        "title": "Principles & Practices of Teaching Young Children"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ECE 120",
+        "title": "Principles & Practices of Teaching Young Children"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -7638,6 +9949,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ECE 130",
        "title": "Introduction to Curriculum"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ECE 130",
+        "title": "Introduction to Curriculum"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 2,
@@ -7665,6 +9983,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CDEV 100",
        "title": "Child Growth and Development"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "CDEV 100",
+        "title": "Child Growth and Development"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 4,
@@ -7698,7 +10023,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ECE 230",
        "title": "Teaching in a Diverse Society"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ECE 230",
+        "title": "Teaching in a Diverse Society"
+       }
+      ]
      },
      "CHLD 64": {
       "title": "Health, Safety and Nutrition of Children",
@@ -7707,7 +10039,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ECE 220",
        "title": "Health, Safety and Nutrition"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ECE 220",
+        "title": "Health, Safety and Nutrition"
+       }
+      ]
      },
      "CHLD 66": {
       "title": "Early Childhood Development Observation and Assessment",
@@ -7716,7 +10055,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ECE 200",
        "title": "Observation and Assessment"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ECE 200",
+        "title": "Observation and Assessment"
+       }
+      ]
      },
      "CHLD 66L": {
       "title": "Early Childhood Development Observation and Assessment Laboratory",
@@ -7725,7 +10071,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CDEV M10LH",
        "title": "Early Childhood Development Observation and Assessment Laboratory"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CDEV M10LH",
+        "title": "Early Childhood Development Observation and Assessment Laboratory"
+       }
+      ]
      },
      "CHLD 67": {
       "title": "Early Childhood Education Practicum",
@@ -7734,7 +10087,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ECE 210",
        "title": "Practicum in Early Childhood Education"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ECE 210",
+        "title": "Practicum in Early Childhood Education"
+       }
+      ]
      },
      "CHLD 67L": {
       "title": "Early Childhood Education Practicum Laboratory",
@@ -7743,7 +10103,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ECE 210",
        "title": "Practicum in Early Childhood Education"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ECE 210",
+        "title": "Practicum in Early Childhood Education"
+       }
+      ]
      },
      "CHLD 86": {
       "title": "Infant Toddler Practicum Seminar",
@@ -7752,7 +10119,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ECE 210",
        "title": "Practicum in Early Childhood Education"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ECE 210",
+        "title": "Practicum in Early Childhood Education"
+       }
+      ]
      },
      "CHLD 87": {
       "title": "Infant Toddler Practicum Field Work Experience",
@@ -7761,7 +10135,19 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "ECE 210",
        "title": "Practicum in Early Childhood Education"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ECE 210",
+        "title": "Practicum in Early Childhood Education"
+       },
+       {
+        "kind": "M-ID",
+        "id": "WEXP M1001",
+        "title": "Work Experience Education"
+       }
+      ]
      }
     },
     "gaps": [
@@ -8043,7 +10429,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -8181,7 +10567,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90EI",
        "title": "Vocational Nursing Anatomy and Physiology"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90EI",
+        "title": "Vocational Nursing Anatomy and Physiology"
+       }
+      ]
      },
      "VOC VN101": {
       "title": "Fundamentals of Vocational Nursing Practice",
@@ -8190,7 +10583,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M1001",
        "title": "Fundamentals of Vocational Nursing Practice"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M1001",
+        "title": "Fundamentals of Vocational Nursing Practice"
+       }
+      ]
      },
      "VOC VN102": {
       "title": "Vocational Nursing Pharmacology",
@@ -8199,7 +10599,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90QY",
        "title": "Vocational Nursing Pharmacology"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90QY",
+        "title": "Vocational Nursing Pharmacology"
+       }
+      ]
      },
      "VOC VN120": {
       "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 1",
@@ -8208,7 +10615,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90AA",
        "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90AA",
+        "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 1"
+       }
+      ]
      },
      "VOC VN122": {
       "title": "Life Span Development for Vocational Nurses",
@@ -8217,7 +10631,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90MO",
        "title": "Life Span Development for Vocational Nurses"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90MO",
+        "title": "Life Span Development for Vocational Nurses"
+       }
+      ]
      },
      "VOC VN124": {
       "title": "Psychology and Behavioral Health Vocational Nursing",
@@ -8226,7 +10647,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90HC",
        "title": "Psychology and Behavioral Health Vocational Nursing"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90HC",
+        "title": "Psychology and Behavioral Health Vocational Nursing"
+       }
+      ]
      },
      "VOC VN130": {
       "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 2",
@@ -8235,7 +10663,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90BC",
        "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 2"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90BC",
+        "title": "Vocational Nursing Care of the Adult with Medical-Surgical Diagnosis 2"
+       }
+      ]
      },
      "VOC VN132": {
       "title": "Leadership and Supervision in Vocational Nursing",
@@ -8244,7 +10679,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90QN",
        "title": "Leadership and Supervision in Vocational Nursing"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90QN",
+        "title": "Leadership and Supervision in Vocational Nursing"
+       }
+      ]
      },
      "VOC VN134": {
       "title": "Vocational Nursing Care of the Family",
@@ -8253,7 +10695,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90JA",
        "title": "Vocational Nursing Care of the Family"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90JA",
+        "title": "Vocational Nursing Care of the Family"
+       }
+      ]
      }
     },
     "gaps": [
@@ -8317,7 +10766,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -8438,6 +10887,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CULN M1039",
        "title": "Baking Fundamentals 1"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M1039",
+        "title": "Fundamentals of Baking 1"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 2,
@@ -8464,6 +10920,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CULN M1027",
        "title": "Introduction to Culinary Arts"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M1027",
+        "title": "Introduction to Culinary Arts"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -8483,7 +10946,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CULN M10EG",
        "title": "Intermediate Culinary Arts"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M10EG",
+        "title": "Intermediate Culinary Arts"
+       }
+      ]
      },
      "CUL-38": {
       "title": "Advanced Culinary Arts",
@@ -8491,7 +10961,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CULN M1003",
        "title": "Advanced Culinary Arts"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M1003",
+        "title": "Advanced Culinary Arts"
+       }
+      ]
      },
      "KIN-4": {
       "title": "Nutrition",
@@ -8499,7 +10976,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "C-ID",
        "id": "NUTR 110",
        "title": "Introduction to Nutrition Science"
-      }
+      },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "NUTR 110",
+        "title": "Introduction to Nutrition Science"
+       }
+      ]
      },
      "MAG-56": {
       "title": "HRM: Human Resources Management",
@@ -8508,6 +10992,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "MGMT M1023",
        "title": "HRM: Human Resources Management"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "MGMT M1023",
+        "title": "HRM: Human Resources Management"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 7,
@@ -8516,6 +11007,65 @@ window.CPL_PATHWAYS_ROEP = {
         "Military Police",
         "Center for Financial Training (CFT) — Human Resources Management",
         "McDonald's Business Leadership Practices"
+       ],
+       "exhibits_n": 7,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Infantry Unit Leader",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Military Police",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CFFT3-1-001",
+         "title": "Center for Financial Training: CFTA-0025 Human Resources Management;",
+         "credential": "Center for Financial Training (CFT) — Human Resources Management",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in HRM: Human Resources Management"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-MCMB-1-001",
+         "title": "McDonald's Corporation MCD-0051 Business Leadership Practices;",
+         "credential": "McDonald's Business Leadership Practices",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in HRM: Human Resources Management"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-MCMB1-1-001",
+         "title": "McDonald's Corporation MCD-0056 Business Management",
+         "credential": "McDonald's Business Management",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in HRM: Human Resources Management"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-MCMO-1-001",
+         "title": "McDonald's Corporation: MCD-0057 Operations Supervisor MDP",
+         "credential": "McDonald's Operations Supervisor MDP",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in HRM: Human Resources Management"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-WDCW2-1-001",
+         "title": "Walt Disney Co. WALT-0005 Disney Human Resource Management",
+         "credential": "Disney Human Resource Management",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in HRM: Human Resources Management"
+         ]
+        }
        ]
       }
      }
@@ -8557,7 +11107,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -8840,6 +11390,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 110",
        "title": "Introduction to Criminal Justice"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 110",
+        "title": "Introduction to Criminal Justice"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 5,
@@ -8848,6 +11405,35 @@ window.CPL_PATHWAYS_ROEP = {
         "Maritime Enforcement Specialist",
         "Maritime Enforcement Specialist 'A' School (ME 'A')",
         "Maritime Enforcement Specialist Second Class"
+       ],
+       "exhibits_n": 5,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Basic Military Police One Station Unit Training (OSUT)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Maritime Enforcement Specialist",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Maritime Enforcement Specialist 'A' School (ME 'A')",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Maritime Enforcement Specialist Second Class",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Military Police",
+         "source": "ACE",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -8921,6 +11507,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 110",
        "title": "Introduction to Criminal Justice"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 110",
+        "title": "Introduction to Criminal Justice"
+       }
+      ],
       "adopt": {
        "credentials_n": 7,
        "colleges_n": 26,
@@ -8992,11 +11585,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 120",
        "title": "Concepts of Criminal Law"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 120",
+        "title": "Concepts of Criminal Law"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "POST Basic Academy"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICI-POST-1-002",
+         "title": "Peace Officer Standards Training (POST) Basic Academy",
+         "credential": "POST Basic Academy",
+         "type": "Industry Certification",
+         "recs": [
+          "3.0 hours in Concepts of Criminal Law"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -9051,6 +11664,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 120",
        "title": "Concepts of Criminal Law"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 120",
+        "title": "Concepts of Criminal Law"
+       }
+      ],
       "adopt": {
        "credentials_n": 6,
        "colleges_n": 28,
@@ -9134,11 +11754,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 122",
        "title": "Criminal Court Process"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 122",
+        "title": "Criminal Court Process"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "POST Basic Academy"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICI-POST-1-002",
+         "title": "Peace Officer Standards Training (POST) Basic Academy",
+         "credential": "POST Basic Academy",
+         "type": "Industry Certification",
+         "recs": [
+          "3.0 hours in Principles and Procedures of the Justice System"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -9179,11 +11819,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 124",
        "title": "Legal Aspects of Evidence"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 124",
+        "title": "Legal Aspects of Evidence"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "POST Basic Academy"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICI-POST-1-002",
+         "title": "Peace Officer Standards Training (POST) Basic Academy",
+         "credential": "POST Basic Academy",
+         "type": "Industry Certification",
+         "recs": [
+          "3.0 hours in Legal Aspects of Evidence"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -9226,11 +11886,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 160",
        "title": "Community and the Justice System"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 160",
+        "title": "Community and the Justice System"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "POST Basic Academy"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICI-POST-1-002",
+         "title": "Peace Officer Standards Training (POST) Basic Academy",
+         "credential": "POST Basic Academy",
+         "type": "Industry Certification",
+         "recs": [
+          "3.0 hours in Community Relations"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -9280,6 +11960,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 150",
        "title": "Introduction to Forensics"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 150",
+        "title": "Introduction to Forensics"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 3,
@@ -9319,6 +12006,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 140",
        "title": "Criminal Investigation"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 140",
+        "title": "Criminal Investigation"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 5,
@@ -9327,6 +12021,39 @@ window.CPL_PATHWAYS_ROEP = {
         "Master-At-Arms",
         "Military Police",
         "Military Police Advanced Noncommissioned Officer (TATS)"
+       ],
+       "exhibits_n": 5,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Basic Military Police One Station Unit Training (OSUT)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Master-At-Arms",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Military Police",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-POST-1-002",
+         "title": "Peace Officer Standards Training (POST) Basic Academy",
+         "credential": "POST Basic Academy",
+         "type": "Industry Certification",
+         "recs": [
+          "3.0 hours in Criminal Investigation"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -9380,6 +12107,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 200",
        "title": "Introduction to Corrections"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 200",
+        "title": "Introduction to Corrections"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 4,
@@ -9388,6 +12122,44 @@ window.CPL_PATHWAYS_ROEP = {
         "Correctional Officer Core Course (CDCR/CPOST)",
         "Standards and Training for Corrections (STC) / Board of Parole Hearings",
         "Basic Correctional Officer Academy"
+       ],
+       "exhibits_n": 4,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Internment/Resettlement Specialist Advanced Individual Training",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-COC1-1-001",
+         "title": "Correctional Officers: CDCR/CPOST",
+         "credential": "Correctional Officer Core Course (CDCR/CPOST)",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Control and Supervision in Corrections OR Control and Supervision of Inmates",
+          "3 hours in Introduction to Corrections"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-COSA-1-001",
+         "title": "Correctional Officers: Standards and Training for Corrections (STC) and BOP",
+         "credential": "Standards and Training for Corrections (STC) / Board of Parole Hearings",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Control and Supervision in Corrections OR Control and Supervision of Inmates",
+          "3 hours in Introduction to Corrections"
+         ]
+        },
+        {
+         "exhibit": "MAPPRA-CDOC-1-001",
+         "title": "California Department of Corrections and Rehabilitation Correctional Officer",
+         "credential": "Basic Correctional Officer Academy",
+         "type": "Portfolio Review",
+         "recs": [
+          "3 hours in Introduction to Corrections"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -9460,7 +12232,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CRIM M1068",
        "title": "Law in American Society"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CRIM M1068",
+        "title": "Law in American Society"
+       }
+      ]
      },
      "ADJ-9H": {
       "title": "Honors Law in American Society",
@@ -9468,7 +12247,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CRIM M1066",
        "title": "Honors Law in American Society"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CRIM M1066",
+        "title": "Honors Law in American Society"
+       }
+      ]
      },
      "ADJ-19": {
       "title": "Introduction to Policing",
@@ -9477,6 +12263,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CRIM M1268",
        "title": "Introduction to Policing"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CRIM M1268",
+        "title": "Introduction to Transformational Policing"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 9,
@@ -9485,6 +12278,59 @@ window.CPL_PATHWAYS_ROEP = {
         "Internment/Resettlement Specialist Advanced Individual Training",
         "Internment/Resettlement Specialist MOS Training Course (TATS)",
         "Master-At-Arms"
+       ],
+       "exhibits_n": 9,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Basic Military Police One Station Unit Training (OSUT)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Internment/Resettlement Specialist Advanced Individual Training",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Internment/Resettlement Specialist MOS Training Course (TATS)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Master-At-Arms",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Military Police",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Military Police Basic",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Military Police, Advanced Leader (ALC) (TATS)",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-POST-1-002",
+         "title": "Peace Officer Standards Training (POST) Basic Academy",
+         "credential": "POST Basic Academy",
+         "type": "Industry Certification",
+         "recs": [
+          "3.0 hours in Introduction to Policing"
+         ]
+        }
        ]
       }
      },
@@ -9495,12 +12341,41 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CRIM M1265",
        "title": "Interviewing & Interrogation"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CRIM M1265",
+        "title": "Interviewing, Interrogation and Crisis Intervention"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 2,
        "credentials": [
         "Correctional Officer Core Course (CDCR/CPOST)",
         "Standards and Training for Corrections (STC) / Board of Parole Hearings"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICI-COC1-1-001",
+         "title": "Correctional Officers: CDCR/CPOST",
+         "credential": "Correctional Officer Core Course (CDCR/CPOST)",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Interview & Interrogation"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-COSA-1-001",
+         "title": "Correctional Officers: Standards and Training for Corrections (STC) and BOP",
+         "credential": "Standards and Training for Corrections (STC) / Board of Parole Hearings",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Interview and Interrogation"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -9522,7 +12397,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CRIM M1159",
        "title": "Forensic & Crime Scene Photography"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CRIM M1159",
+        "title": "Crime Scene and Forensic Photography"
+       }
+      ]
      },
      "PHO-27": {
       "title": "Forensic & Crime Scene Photography",
@@ -9530,7 +12412,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CRIM M1159",
        "title": "Forensic & Crime Scene Photography"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CRIM M1159",
+        "title": "Crime Scene and Forensic Photography"
+       }
+      ]
      },
      "ADJ-28": {
       "title": "Crime Scene Investigation",
@@ -9539,6 +12428,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "AJ 150",
        "title": "Introduction to Forensics"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "AJ 150",
+        "title": "Introduction to Forensics"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 3,
@@ -9577,7 +12473,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CRIM M1192",
        "title": "Cybercrime & Digital Forensics"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CRIM M1192",
+        "title": "Cybercrime and Computer Forensics"
+       }
+      ]
      },
      "PSYC-C1000": {
       "title": "Introduction to Psychology",
@@ -9586,6 +12489,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "PSYC C1000",
        "title": "Introduction to Psychology"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "PSYC C1000",
+        "title": "Introduction to Psychology"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 11,
@@ -9633,7 +12543,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCN",
        "id": "PSYC C1000H",
        "title": "Introduction to Psychology - Honors"
-      }
+      },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "PSYC C1000H",
+        "title": "Introduction to Psychology - Honors"
+       }
+      ]
      },
      "SOC-1": {
       "title": "Introduction to Sociology",
@@ -9642,11 +12559,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "SOCI 110",
        "title": "Introduction to Sociology"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "SOCI 110",
+        "title": "Introduction to Sociology"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "CLEP Introductory Sociology"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPSAS-CEIS1-1-001",
+         "title": "CLEP Exam: Introductory Sociology",
+         "credential": "CLEP Introductory Sociology",
+         "type": "Standardized Assessment",
+         "recs": [
+          "3 hours in Introduction to Sociology"
+         ]
+        }
        ]
       }
      },
@@ -9657,6 +12594,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "SOCI 110",
        "title": "Introduction to Sociology"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "SOCI 110",
+        "title": "Introduction to Sociology"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 3,
@@ -9679,6 +12623,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "SOCI 160",
        "title": "Introduction to Crime"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "SOCI 160",
+        "title": "Introduction to Crime"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -9699,6 +12650,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "STAT C1000",
        "title": "Introduction to Statistics"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "STAT C1000",
+        "title": "Introduction to Statistics"
+       },
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -9743,6 +12706,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "STAT C1000H",
        "title": "Introduction to Statistics - Honors"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "STAT C1000H",
+        "title": "Introduction to Statistics - Honors"
+       },
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -9787,6 +12762,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "MATH 110",
        "title": "Introduction to Statistics"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -9825,12 +12807,19 @@ window.CPL_PATHWAYS_ROEP = {
       }
      },
      "SOC-48": {
-      "title": null,
+      "title": "Statistics for the Behavioral Sciences",
       "identity": {
        "kind": "C-ID",
        "id": "MATH 110",
        "title": "Introduction to Statistics"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -9924,7 +12913,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -10055,7 +13044,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CULN M1130",
        "title": "ServSafe Food Safety"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M1130",
+        "title": "ServSafe Food Safety"
+       }
+      ]
      },
      "CUL-825": {
       "title": "Menu Planning",
@@ -10064,6 +13060,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CULN M1147",
        "title": "Menu Planning"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M1147",
+        "title": "Menu Planning for Child Nutrition"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -10083,7 +13086,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CULN M90AE",
        "title": "Food Cost Accounting"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M90AE",
+        "title": "Food Cost Accounting"
+       }
+      ]
      },
      "CUL-827": {
       "title": "Culinary Purchasing and Receiving",
@@ -10091,7 +13101,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CULN M90CI",
        "title": "Culinary Purchasing and Receiving"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M90CI",
+        "title": "Culinary Purchasing and Receiving"
+       }
+      ]
      },
      "CUL-828A": {
       "title": "Culinary Food Preparation I",
@@ -10099,7 +13116,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CULN M90CD",
        "title": "Culinary Food Preparation 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M90CD",
+        "title": "Culinary Food Preparation 1"
+       }
+      ]
      },
      "CUL-828B": {
       "title": "Culinary Food Preparation II",
@@ -10107,7 +13131,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CULN M90CE",
        "title": "Culinary Food Preparation 2"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M90CE",
+        "title": "Culinary Food Preparation 2"
+       }
+      ]
      },
      "CUL-824": {
       "title": "The Art Of Garde Manger",
@@ -10116,6 +13147,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CULN M1135",
        "title": "Garde Manger"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M1135",
+        "title": "Art Garde Manger (Preparation and Presentation of Garnished Foods)"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -10135,7 +13173,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "CULN M1092",
        "title": "International Cuisine"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "CULN M1092",
+        "title": "International Cuisine"
+       }
+      ]
      }
     },
     "gaps": [
@@ -10175,7 +13220,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -10361,12 +13406,41 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS M10IX",
        "title": "Linux Operating System Administration"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M10IX",
+        "title": "Linux Operating System Administration"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 2,
        "credentials": [
         "CompTIA Linux+",
         "LPIC-1 Linux Administrator"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICI-CL-1-001",
+         "title": "COMPTIA LINUX+",
+         "credential": "CompTIA Linux+",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Linux Operating System Admin"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-LPIL-1-001",
+         "title": "LINUX PROFESSIONAL INSTITUTE LPI-1",
+         "credential": "LPIC-1 Linux Administrator",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Linux Operating System Admin"
+         ]
+        }
        ]
       }
      },
@@ -10377,12 +13451,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS 110",
        "title": "Information & Communication Technology Essentials"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ITIS 110",
+        "title": "Information & Communication Technology Essentials"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "CompTIA A+ (CIS-25)",
         "CompTIA A+"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CompTIA A+ (CIS-25)",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -10405,12 +13495,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS 150",
        "title": "Computer Network Fundamentals"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ITIS 150",
+        "title": "Computer Network Fundamentals"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "CISCO CERTIFIED NETWORK ASSOCIATE",
         "Cisco Certified Network Associate (CCNA)"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CISCO CERTIFIED NETWORK ASSOCIATE",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -10471,12 +13577,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS 151",
        "title": "Switching, Routing and Wireless Essentials"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ITIS 151",
+        "title": "Switching, Routing and Wireless Essentials"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "CISCO CERTIFIED NETWORK ASSOCIATE",
         "Cisco Certified Network Associate (CCNA)"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CISCO CERTIFIED NETWORK ASSOCIATE",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -10487,11 +13609,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS 160",
        "title": "Introduction to Information Systems Security"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ITIS 160",
+        "title": "Introduction to Information Systems Security"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "CompTIA Security+ (CIS-27)"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CompTIA Security+ (CIS-27)",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -10514,6 +13652,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS 130",
        "title": "Introduction to Programming Concepts and Methodologies"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ITIS 130",
+        "title": "Introduction to Programming Concepts and Methodologies"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 4,
@@ -10554,6 +13699,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS 165",
        "title": "Digital Forensics Fundamentals"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ITIS 165",
+        "title": "Digital Forensics Fundamentals"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 2,
@@ -10580,11 +13732,31 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS 164",
        "title": "Introduction to Cybersecurity: Ethical Hacking"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ITIS 164",
+        "title": "Introduction to Cybersecurity: Ethical Hacking"
+       }
+      ],
       "here": {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
         "Certified Ethical Hacker (CEH)"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "exhibit": "MAPICI-ECEH1-1-001",
+         "title": "EC-COUNCIL CERTIFIED ETHICAL HACKER CEH",
+         "credential": "Certified Ethical Hacker (CEH)",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Ethical Hacking"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -10606,12 +13778,19 @@ window.CPL_PATHWAYS_ROEP = {
       }
      },
      "CIS-5": {
-      "title": null,
+      "title": "Programming Concepts and Methodology I: C++",
       "identity": {
        "kind": "C-ID",
        "id": "COMP 122",
        "title": "Programming Concepts and Methodology I"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "COMP 122",
+        "title": "Programming Concepts and Methodology I"
+       }
+      ],
       "adopt": {
        "credentials_n": 10,
        "colleges_n": 9,
@@ -10654,7 +13833,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ITIS M11FJ",
        "title": "CISCO Networking Security"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M11FJ",
+        "title": "CISCO Networking Security"
+       }
+      ]
      },
      "CIS-21B": {
       "title": "Linux Operating System Administration II",
@@ -10662,7 +13848,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ITIS M10IP",
        "title": "Linux Operating System Administration 2"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M10IP",
+        "title": "Linux Operating System Administration 2"
+       }
+      ]
      },
      "CIS-27C": {
       "title": "Palo Alto Networks Firewall Essentials",
@@ -10670,7 +13863,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ITIS M1523",
        "title": "Palo Alto Networks Firewall Configuration, Management, and Threat Prevention"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1523",
+        "title": "Palo Alto Networks Firewall Configuration, Management, and Threat Prevention"
+       }
+      ]
      },
      "CIS-87A": {
       "title": "Introduction to IT Project Management",
@@ -10678,7 +13878,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ITIS M1410",
        "title": "Introduction to IT Project Management"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1410",
+        "title": "Introduction to IT Project Management"
+       }
+      ]
      }
     },
     "gaps": [
@@ -10730,7 +13937,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -11075,6 +14282,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M10AT",
        "title": "Related Science 1A"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M10AT",
+        "title": "Related Science 1A"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11082,6 +14296,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Related Science 1A"
+         ]
+        }
        ]
       }
      },
@@ -11092,6 +14324,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M10AU",
        "title": "Related Science 1B"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M10AU",
+        "title": "Related Science 1B"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11099,6 +14338,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Related Science 1B"
+         ]
+        }
        ]
       }
      },
@@ -11109,6 +14366,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1105",
        "title": "Hair Cutting and Product Knowledge"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1105",
+        "title": "Hair Cutting and Product Knowledge"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11116,6 +14380,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Hair Cutting 1"
+         ]
+        }
        ]
       }
      },
@@ -11126,6 +14408,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1072",
        "title": "Hair Styling Services 1"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1072",
+        "title": "Hair Styling Services 1"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11133,6 +14422,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Hair Styling 1"
+         ]
+        }
        ]
       }
      },
@@ -11143,6 +14450,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1102",
        "title": "Introduction to Hair Coloring"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1102",
+        "title": "Introduction to Hair Coloring"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11150,6 +14464,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Hair Coloring 1"
+         ]
+        }
        ]
       }
      },
@@ -11160,6 +14492,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1075",
        "title": "Permanent Waving 2"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1075",
+        "title": "Permanent Waving 2"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11167,6 +14506,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Permanent Waving"
+         ]
+        }
        ]
       }
      },
@@ -11177,6 +14534,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M10BI",
        "title": "Related Science 2"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M10BI",
+        "title": "Related Science 2"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11184,6 +14548,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Related Science 2"
+         ]
+        }
        ]
       }
      },
@@ -11194,6 +14576,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M10BD",
        "title": "Hair Cutting 2"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M10BD",
+        "title": "Hair Cutting 2"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11201,6 +14590,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Hair Cutting 2"
+         ]
+        }
        ]
       }
      },
@@ -11211,6 +14618,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1101",
        "title": "Intermediate Hair Coloring and Styling"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1101",
+        "title": "Intermediate Hair Coloring and Styling"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11218,6 +14632,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Hair Styling 2"
+         ]
+        }
        ]
       }
      },
@@ -11228,6 +14660,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1101",
        "title": "Intermediate Hair Coloring and Styling"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1101",
+        "title": "Intermediate Hair Coloring and Styling"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11235,6 +14674,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Hair Coloring 2"
+         ]
+        }
        ]
       }
      },
@@ -11245,6 +14702,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M10BC",
        "title": "Curly Hair Techniques 2"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M10BC",
+        "title": "Curly Hair Techniques 2"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11252,6 +14716,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Curly Hair Techniques 2"
+         ]
+        }
        ]
       }
      },
@@ -11262,6 +14744,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1086",
        "title": "Advanced Short Hair Cutting Techniques"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1086",
+        "title": "Advanced Short Hair Cutting Techniques"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11269,6 +14758,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Short Hair Cutting"
+         ]
+        }
        ]
       }
      },
@@ -11279,6 +14786,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M10BR",
        "title": "Related Science 3"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M10BR",
+        "title": "Related Science 3"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11286,6 +14800,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Related Science 3"
+         ]
+        }
        ]
       }
      },
@@ -11296,12 +14828,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1086",
        "title": "Advanced Short Hair Cutting Techniques"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1086",
+        "title": "Advanced Short Hair Cutting Techniques"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Barbering license",
         "Barbering License (California)"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -11312,12 +14860,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1085",
        "title": "Advanced Hair Coloring and Styling"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1085",
+        "title": "Advanced Hair Coloring and Styling"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Barbering license",
         "Barbering License (California)"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -11328,12 +14892,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1069",
        "title": "Multi-Texture Design (Level 1-2)"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1069",
+        "title": "Multi-Texture Design (Level 1-2)"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Barbering license",
         "Barbering License (California)"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -11344,12 +14924,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1023",
        "title": "Barbering"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1023",
+        "title": "Barbering"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Barbering license",
         "Barbering License (California)"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -11360,12 +14956,28 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1004",
        "title": "Barbering: Level 2"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1004",
+        "title": "Barbering: Level 2"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Barbering license",
         "Barbering License (California)"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -11375,7 +14987,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "COSM M1095",
        "title": "Tactical Planning for the California Hair Styling State Board Exam"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1095",
+        "title": "Tactical Planning for the California Hair Styling State Board Exam"
+       }
+      ]
      },
      "COSM 50R": {
       "title": "Written Preparation for Barbering State Board Exam",
@@ -11384,6 +15003,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1096",
        "title": "Written Preparation for Cosmetology State Board Exam"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1096",
+        "title": "Written Preparation for Cosmetology State Board Exam"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11391,6 +15017,24 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Written Preparation for Barbering State Board Exam"
+         ]
+        }
        ]
       }
      },
@@ -11401,6 +15045,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1059",
        "title": "Salon Experience"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1059",
+        "title": "Hairstyling Salon Experience - Cosmetology"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11408,6 +15059,26 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Salon Experience",
+          "2 hours in Salon Experience",
+          "3 hours in Salon Experience"
+         ]
+        }
        ]
       }
      },
@@ -11418,6 +15089,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1059",
        "title": "Salon Experience"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1059",
+        "title": "Hairstyling Salon Experience - Cosmetology"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11425,6 +15103,26 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Salon Experience",
+          "2 hours in Salon Experience",
+          "3 hours in Salon Experience"
+         ]
+        }
        ]
       }
      },
@@ -11435,6 +15133,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "COSM M1059",
        "title": "Salon Experience"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COSM M1059",
+        "title": "Hairstyling Salon Experience - Cosmetology"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 3,
@@ -11442,6 +15147,26 @@ window.CPL_PATHWAYS_ROEP = {
         "Barbering license",
         "Barbering License (California)",
         "Cosmetology License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Barbering license",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CL3-1-001",
+         "title": "Cosmetology License",
+         "credential": "Cosmetology License",
+         "type": "Industry Certification",
+         "recs": [
+          "1 hour in Salon Experience",
+          "2 hours in Salon Experience",
+          "3 hours in Salon Experience"
+         ]
+        }
        ]
       }
      }
@@ -11833,7 +15558,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -12040,11 +15765,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS 160",
        "title": "Introduction to Information Systems Security"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ITIS 160",
+        "title": "Introduction to Information Systems Security"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "TATS Signal Support Systems Specialist"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "TATS Signal Support Systems Specialist",
+         "source": "ACE",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -12087,11 +15828,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS M1190",
        "title": "A+ Certification Preparation-Software"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1190",
+        "title": "A+ Certification Preparation-Software"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "CompTIA A+"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CompTIA A+",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -12102,6 +15859,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS 150",
        "title": "Computer Network Fundamentals"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ITIS 150",
+        "title": "Computer Network Fundamentals"
+       }
+      ],
       "here": {
        "recs": 2,
        "credentials_n": 3,
@@ -12109,6 +15873,20 @@ window.CPL_PATHWAYS_ROEP = {
         "CompTIA Network +",
         "Signal Support Systems Specialist",
         "CompTIA Network+"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CompTIA Network +",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "Signal Support Systems Specialist",
+         "source": "ACE",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -12162,6 +15940,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS M1368",
        "title": "Network Security Fundamentals"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1368",
+        "title": "Network Security Fundamentals"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -12182,11 +15967,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS M1052",
        "title": "Server Administration and Network Security"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1052",
+        "title": "Server Administration and Network Security"
+       }
+      ],
       "here": {
        "recs": 3,
        "credentials_n": 1,
        "credentials": [
         "Signal Support Systems Specialist"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Signal Support Systems Specialist",
+         "source": "ACE",
+         "recs_n": 3
+        }
        ]
       }
      },
@@ -12197,11 +15998,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS M11EZ",
        "title": "Introduction to Cisco Network Fundamentals"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M11EZ",
+        "title": "Introduction to Cisco Network Fundamentals"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "Signal Support Systems Specialist"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Signal Support Systems Specialist",
+         "source": "ACE",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -12211,7 +16028,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ITIS M1139",
        "title": "Enterprise Networking, Security, & Automation"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1139",
+        "title": "Enterprise Networking, Security, and Automation"
+       }
+      ]
      },
      "CIS 230": {
       "title": "Introduction to Cisco Routers",
@@ -12220,21 +16044,44 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS M1571",
        "title": "Introduction to Cisco Routers"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1571",
+        "title": "Introduction to Cisco Routers"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "Signal Support Systems Specialist"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Signal Support Systems Specialist",
+         "source": "ACE",
+         "recs_n": 1
+        }
        ]
       }
      },
      "CIS 104": {
-      "title": null,
+      "title": "Microcomputer Application Software",
       "identity": {
        "kind": "CCR",
        "id": "ITIS M1486",
        "title": "Spreadsheet: Software"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1486",
+        "title": "Advanced Microcomputer Spreadsheets Software"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -12254,7 +16101,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ITIS M10NU",
        "title": "Introduction to the Foundations of AI"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M10NU",
+        "title": "Introduction to the Foundations of AI"
+       }
+      ]
      },
      "CIS 107": {
       "title": null,
@@ -12262,7 +16116,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ITIS M1344",
        "title": "Introduction to Prompt Engineering"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1344",
+        "title": "AI Generative Prompt Engineering and Applications"
+       }
+      ]
      },
      "CIS 110": {
       "title": "Apple Administration",
@@ -12270,7 +16131,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ITIS M1509",
        "title": "Apple Macos System Administration"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1509",
+        "title": "Apple Macos System Administration"
+       }
+      ]
      },
      "CIS 112": {
       "title": "OPERATING SYSTEMS - BEGINNING LINUX",
@@ -12278,7 +16146,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "ITIS M1152",
        "title": "Operating Systems - Beginning Linux"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1152",
+        "title": "Operating Systems - Beginning Linux"
+       }
+      ]
      },
      "CIS 192": {
       "title": "Introduction to Cloud Computing",
@@ -12287,6 +16162,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS M1197",
        "title": "Introduction to Cloud Computing"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1197",
+        "title": "Introduction to Cloud Computing"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 3,
@@ -12328,11 +16210,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ITIS M1184",
        "title": "A+ Certification Preparation-Hardware"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "ITIS M1184",
+        "title": "IT Essentials: PC Hardware & Software (for A+ Certification)"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "CompTIA A+"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CompTIA A+",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -12354,7 +16252,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "COMP M10GF",
        "title": "Artificial Intelligence and Machine Learning"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "COMP M10GF",
+        "title": "Artificial Intelligence and Machine Learning"
+       }
+      ]
      }
     },
     "gaps": [
@@ -12424,7 +16329,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -12664,6 +16569,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BIOL 110 B",
        "title": "Human Anatomy with Lab"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BIOL 110 B",
+        "title": "Human Anatomy with Lab"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 2,
@@ -12685,6 +16597,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "KIN 100",
        "title": "Introduction to Kinesiology"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "KIN 100",
+        "title": "Introduction to Kinesiology"
+       }
+      ],
       "adopt": {
        "credentials_n": 2,
        "colleges_n": 2,
@@ -12711,6 +16630,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BIOL 120 B",
        "title": "Human Physiology with Lab"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BIOL 120 B",
+        "title": "Human Physiology with Lab"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -12730,7 +16656,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "DANC M1073",
        "title": "Ballet Techniques 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "DANC M1073",
+        "title": "Ballet Techniques 1"
+       }
+      ]
      },
      "DANCETQ 121": {
       "title": "JAZZ DANCE TECHNIQUES I",
@@ -12738,7 +16671,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "DANC M1215",
        "title": "Jazz Dance Techniques 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "DANC M1215",
+        "title": "Jazz Dance Techniques 1"
+       }
+      ]
      },
      "KIN 229": {
       "title": "BODY CONDITIONING SKILLS",
@@ -12746,7 +16686,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "KINE M1357",
        "title": "Body Conditioning Skills"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1357",
+        "title": "Body Conditioning Skills"
+       }
+      ]
      },
      "KIN 250": {
       "title": null,
@@ -12755,6 +16702,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "KINE M1013",
        "title": "Weight Training 1"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1013",
+        "title": "Weight Training (Beg)"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 8,
@@ -12796,12 +16750,33 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "KINE M1454",
        "title": "Individual Conditioning 1"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1454",
+        "title": "Conditioning Beginning"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 2,
        "credentials": [
         "Basic Military Training",
         "Recruit Basic Military Training (BMT)"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "Basic Military Training",
+         "source": "ACE",
+         "recs_n": 1
+        },
+        {
+         "title": "Recruit Basic Military Training (BMT)",
+         "source": "ACE",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -12812,6 +16787,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "KINE M1683",
        "title": "Walking 1"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1683",
+        "title": "Walking Beginning"
+       }
+      ],
       "adopt": {
        "credentials_n": 3,
        "colleges_n": 2,
@@ -12844,6 +16826,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "KINE M1013",
        "title": "Weight Training 1"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1013",
+        "title": "Weight Training (Beg)"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 8,
@@ -12884,7 +16873,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "KINE M1674",
        "title": "Yoga Skills 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1674",
+        "title": "Yoga Skills 1"
+       }
+      ]
      },
      "KIN 251-1": {
       "title": "YOGA SKILLS- I",
@@ -12892,7 +16888,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "KINE M1674",
        "title": "Yoga Skills 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1674",
+        "title": "Yoga Skills 1"
+       }
+      ]
      },
      "KIN 287": {
       "title": "BASKETBALL SKILLS",
@@ -12900,7 +16903,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "KINE M1255",
        "title": "Basketball Skills 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1255",
+        "title": "Basketball Skills 1"
+       }
+      ]
      },
      "KIN 387": {
       "title": "BASKETBALL",
@@ -12908,7 +16918,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "KINE M1244",
        "title": "Basketball"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "KINE M1244",
+        "title": "Basketball"
+       }
+      ]
      },
      "STAT C1000": {
       "title": "Introduction to Statistics",
@@ -12917,6 +16934,18 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "STAT C1000",
        "title": "Introduction to Statistics"
       },
+      "ids": [
+       {
+        "kind": "CCN",
+        "id": "STAT C1000",
+        "title": "Introduction to Statistics"
+       },
+       {
+        "kind": "C-ID",
+        "id": "MATH 110",
+        "title": "Introduction to Statistics"
+       }
+      ],
       "adopt": {
        "credentials_n": 5,
        "colleges_n": 10,
@@ -12961,6 +16990,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "KIN 101",
        "title": "First Aid, CPR and AED"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "KIN 101",
+        "title": "First Aid, CPR and AED"
+       }
+      ],
       "adopt": {
        "credentials_n": 10,
        "colleges_n": 10,
@@ -13003,7 +17039,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "PHYS M1045",
        "title": "General Physics 1"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "PHYS M1045",
+        "title": "General Physics 1"
+       }
+      ]
      },
      "CHEM 051": {
       "title": "Fundamentals Of Chemistry I",
@@ -13012,6 +17055,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CHEM 101",
        "title": "Introduction to Chemistry"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "CHEM 101",
+        "title": "Introduction to Chemistry"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 9,
@@ -13057,6 +17107,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CHEM 101",
        "title": "Introduction to Chemistry"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "CHEM 101",
+        "title": "Introduction to Chemistry"
+       }
+      ],
       "adopt": {
        "credentials_n": 4,
        "colleges_n": 9,
@@ -13102,6 +17159,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "CHEM 120 S",
        "title": "General Chemistry for Science Majors Sequence A"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "CHEM 120 S",
+        "title": "General Chemistry for Science Majors Sequence A"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 3,
@@ -13209,7 +17273,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -13378,6 +17442,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "REAL M1040",
        "title": "Real Estate Principles"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1040",
+        "title": "Real Estate Principles"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 4,
@@ -13386,6 +17457,25 @@ window.CPL_PATHWAYS_ROEP = {
         "CA Real Estate Salesperson",
         "Real Estate Principles",
         "California Real Estate Salesperson License"
+       ],
+       "exhibits_n": 3,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CA Real Estate Broker",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "CA Real Estate Salesperson",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "Real Estate Principles",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -13420,6 +17510,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "REAL M1039",
        "title": "Real Estate Practices"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1039",
+        "title": "Real Estate Practices"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 4,
@@ -13428,6 +17525,20 @@ window.CPL_PATHWAYS_ROEP = {
         "CA Real Estate Salesperson",
         "California Real Estate Broker License",
         "California Real Estate Salesperson License"
+       ],
+       "exhibits_n": 2,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CA Real Estate Broker",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "CA Real Estate Salesperson",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -13458,6 +17569,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "ACCT 110",
        "title": "Financial Accounting"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "ACCT 110",
+        "title": "Financial Accounting"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 3,
@@ -13480,6 +17598,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "BUS 125",
        "title": "Business Law"
       },
+      "ids": [
+       {
+        "kind": "C-ID",
+        "id": "BUS 125",
+        "title": "Business Law"
+       }
+      ],
       "adopt": {
        "credentials_n": 1,
        "colleges_n": 1,
@@ -13499,7 +17624,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "REAL M1005",
        "title": "Real Estate Office Administration"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1005",
+        "title": "Real Estate Office Administration"
+       }
+      ]
      },
      "REAL ES 005": {
       "title": "LEGAL ASPECTS OF REAL ESTATE I",
@@ -13508,6 +17640,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "REAL M1014",
        "title": "Legal Aspects of Real Estate"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1014",
+        "title": "Legal Aspects of Real Estate"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 7,
@@ -13516,6 +17655,83 @@ window.CPL_PATHWAYS_ROEP = {
         "CA Real Estate Salesperson",
         "California State Bar Membership",
         "California Real Estate Broker License"
+       ],
+       "exhibits_n": 9,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CA Real Estate Broker",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "CA Real Estate Salesperson",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CBM-1-001",
+         "title": "CA Bar Membership",
+         "credential": "California State Bar Membership",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in LEGAL ASPECTS OF REAL ESTATE"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-CREL-1-001",
+         "title": "California Real Estate License",
+         "credential": "California Real Estate Salesperson License",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Legal Aspects of Real Estate"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-DREB-1-001",
+         "title": "DRE Real Estate Broker v2",
+         "credential": "California Real Estate Broker License",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Legal Aspects of Real Estate"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-DREB1-1-001",
+         "title": "DRE Real Estate Broker v1",
+         "credential": "California Real Estate Broker License",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Legal Aspects of Real Estate"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-FTRE-1-001",
+         "title": "First Tuesday Real Estate School",
+         "credential": "First Tuesday Real Estate Courses",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Legal Aspects of Real Estate"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-R3AO-1-001",
+         "title": "RLES 382\tLegal Aspects of Real Estate - Industry Certificate",
+         "credential": "Legal Aspects of Real Estate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Legal Aspects of Real Estate"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-RESL-1-001",
+         "title": "Real Estate Salesperson: Legal Aspects of Real Estate",
+         "credential": "Legal Aspects of Real Estate",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Legal Aspects of Real Estate"
+         ]
+        }
        ]
       }
      },
@@ -13526,6 +17742,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "REAL M1032",
        "title": "Real Estate Finance"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1032",
+        "title": "Real Estate Finance"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 5,
@@ -13534,6 +17757,69 @@ window.CPL_PATHWAYS_ROEP = {
         "California State Bar Membership",
         "California Real Estate Broker License",
         "California Real Estate Salesperson License"
+       ],
+       "exhibits_n": 7,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CA Real Estate Broker",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CBM-1-001",
+         "title": "CA Bar Membership",
+         "credential": "California State Bar Membership",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in REAL ESTATE FINANCE"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-CREL-1-001",
+         "title": "California Real Estate License",
+         "credential": "California Real Estate Salesperson License",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Real Estate Finance"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-DREB-1-001",
+         "title": "DRE Real Estate Broker v2",
+         "credential": "California Real Estate Broker License",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Real Estate Finance"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-DREB1-1-001",
+         "title": "DRE Real Estate Broker v1",
+         "credential": "California Real Estate Broker License",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Real Estate Finance"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-R3\tE-1-001",
+         "title": "RLES 384 \tReal Estate Finance - Industry Certification",
+         "credential": "Real Estate Finance",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Real Estate Finance"
+         ]
+        },
+        {
+         "exhibit": "MAPICI-RESR-1-001",
+         "title": "Real Estate Salesperson: Real Estate Finance",
+         "credential": "Real Estate Finance",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in Real Estate Finance"
+         ]
+        }
        ]
       }
      },
@@ -13544,6 +17830,13 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "REAL M1012",
        "title": "Real Estate Appraisal"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1012",
+        "title": "Appraisal 2: Residential Real Estate Appraisal"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 5,
@@ -13552,6 +17845,29 @@ window.CPL_PATHWAYS_ROEP = {
         "CA Real Estate Broker",
         "California Real Estate Appraiser License",
         "California State Bar Membership"
+       ],
+       "exhibits_n": 3,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CA BREA Appraiser",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "title": "CA Real Estate Broker",
+         "source": "MAP",
+         "recs_n": 1
+        },
+        {
+         "exhibit": "MAPICI-CBM-1-001",
+         "title": "CA Bar Membership",
+         "credential": "California State Bar Membership",
+         "type": "Industry Certification",
+         "recs": [
+          "3 hours in REAL ESTATE APPRAISAL I"
+         ]
+        }
        ]
       },
       "adopt": {
@@ -13588,11 +17904,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "REAL M1027",
        "title": "Escrow Principles"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1027",
+        "title": "Escrow Principles"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "CA Real Estate Broker"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CA Real Estate Broker",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -13603,11 +17935,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "REAL M1043",
        "title": "Property Management"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1043",
+        "title": "Introduction to Property Management"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "CA Real Estate Broker"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CA Real Estate Broker",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       }
      },
@@ -13618,11 +17966,27 @@ window.CPL_PATHWAYS_ROEP = {
        "id": "REAL M1022",
        "title": "Real Estate Economics"
       },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "REAL M1022",
+        "title": "Real Estate Economics"
+       }
+      ],
       "here": {
        "recs": 1,
        "credentials_n": 1,
        "credentials": [
         "CA Real Estate Broker"
+       ],
+       "exhibits_n": 1,
+       "untitled_n": 0,
+       "exhibits": [
+        {
+         "title": "CA Real Estate Broker",
+         "source": "MAP",
+         "recs_n": 1
+        }
        ]
       },
       "adopt": {
@@ -13679,7 +18043,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   },
@@ -13771,7 +18135,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90EO",
        "title": "Supervisory/Trainee Real Estate Appraiser"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90EO",
+        "title": "Supervisory/Trainee Real Estate Appraiser"
+       }
+      ]
      },
      "VOC ED 198CE": {
       "title": "Fed & State Laws and Regs. for CA Appraisers",
@@ -13779,7 +18150,14 @@ window.CPL_PATHWAYS_ROEP = {
        "kind": "CCR",
        "id": "VOCE M90EP",
        "title": "Fed & State Laws and Regs. for CA Appraisers"
-      }
+      },
+      "ids": [
+       {
+        "kind": "M-ID",
+        "id": "VOCE M90EP",
+        "title": "Fed & State Laws and Regs. for CA Appraisers"
+       }
+      ]
      }
     },
     "gaps": [
@@ -13813,7 +18191,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2360b83e8100",
+    "build": "5be53871ebf4",
     "built": "2026-10-06"
    }
   }

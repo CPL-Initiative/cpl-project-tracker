@@ -772,6 +772,24 @@
       ".prh-split-refused p { margin:0; max-width:var(--cpl-measure,none); }",
       ".prh-split-rec { min-height:0; overflow:auto; padding:14px 16px; background:var(--paper); }",
       ".prh-split-rec .prh-rec { margin:0; }",
+      /* a course's numbers, its CPL count and the exhibits view (Sam, 2026-10-10) */
+      ".prh-ids { display:flex; flex-wrap:wrap; gap:0 8px; margin-top:2px; }",
+      ".prh-id { font:inherit; font-size:.75rem; font-weight:600; color:var(--text-muted); background:none; border:0; padding:2px 0; min-height:24px; cursor:help; text-decoration:underline dotted; text-underline-offset:3px; white-space:nowrap; }",
+      ".prh-id:hover, .prh-id:focus-visible { color:var(--seal-blue-text); }",
+      ".prh-tip { position:fixed; z-index:10002; max-width:280px; box-sizing:border-box; padding:6px 10px; border-radius:6px; background:var(--text-strong); color:var(--paper); font-size:.8125rem; line-height:1.35; pointer-events:none; }",
+      ".prh-tip[hidden] { display:none; }",
+      ".prh-cplbtn { font:inherit; font-weight:700; color:var(--cobalt); background:none; border:0; padding:2px 4px; min-height:24px; min-width:24px; cursor:pointer; text-decoration:underline; text-underline-offset:3px; }",
+      ".prh-cplbtn.prh-cplbtn-zero { font-weight:400; color:var(--text-muted); }",
+      ".prh-cplbtn:hover { text-decoration-thickness:2px; }",
+      ".prh-exback { position:fixed; inset:0; z-index:10001; background:color-mix(in srgb, var(--text-strong) 40%, transparent); display:grid; place-items:center; padding:16px; }",
+      ".prh-exdialog { width:min(640px, 100%); max-height:min(80vh, 720px); overflow:auto; box-sizing:border-box; background:var(--surface-opaque); color:var(--text-body); border:1px solid var(--border-strong); border-radius:12px; padding:14px 16px 18px; display:grid; gap:10px; }",
+      ".prh-exhead { display:flex; align-items:baseline; gap:8px 16px; }",
+      ".prh-exhead h3 { flex:1 1 auto; min-width:0; display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 10px; font-size:1rem; }",
+      ".prh .prh-exhead h3[tabindex]:focus, .prh .prh-exhead h3[tabindex]:focus-visible { outline:none; }",
+      ".prh-exbody h4 { margin:6px 0 4px; }",
+      ".prh-exlist { list-style:none; margin:0; padding:0; display:grid; gap:8px; }",
+      ".prh-exlist li { display:grid; gap:2px; padding:8px 10px; border:1px solid var(--border); border-radius:8px; background:var(--surface-subtle); }",
+      ".prh-extype { justify-self:start; font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); }",
       ".prh-split-solo .prh-split-panes { grid-template-columns:minmax(0, 1fr); grid-template-rows:minmax(0, 1fr); }",
       "@media (max-width: 900px) { .prh-split-panes { grid-template-columns:minmax(0, 1fr); grid-template-rows:minmax(0, 1fr) minmax(0, 1fr); }" +
         " .prh-split-cat { border-right:0; border-bottom:1px solid var(--border-strong); } .prh-split-rec { padding:10px 12px; } }",
@@ -934,6 +952,140 @@
       el("p", { text: f.text }),
       college ? el("p", { cls: "prh-small prh-quiet", text: "The college's draft carries it, under Drafts for the college above." }) : null]);
   }
+  /* ── a course's numbers and its CPL (Sam, 2026-10-10) ──
+   * "If there is a CID, CCN, MID, show those numbers on the blocks as well with a hover over for
+   * their titles (since space is limited). For the CPL column the number should be the count of
+   * exhibits articulated to the course with a click drill down to pop up an exhibits view." The
+   * display build carries both (kb/_build_roep_display.py: `ids`, and `here.exhibits` with its
+   * count); a record built before them shows its one identity and the older count. */
+  var ID_WORD = { "CCN": "CCN", "C-ID": "C-ID", "M-ID": "M-ID", "CCR": "M-ID" };
+  function courseIds(info) {
+    if (info.ids && info.ids.length) return info.ids;
+    var i = info.identity;
+    return i && i.id ? [{ kind: ID_WORD[i.kind] || i.kind, id: i.id, title: i.title }] : [];
+  }
+  function idChips(info) {
+    var ids = courseIds(info);
+    if (!ids.length) return null;
+    return el("span", { cls: "prh-ids" }, ids.map(function (i) {
+      var word = ID_WORD[i.kind] || i.kind;
+      var b = el("button", { cls: "prh-id", type: "button", "data-tip": i.title || "No title on record",
+        "aria-label": word + " " + i.id + ": " + (i.title || "no title on record") }, [word + " " + i.id]);
+      wireTip(b);
+      return b;
+    }));
+  }
+  function exhibitCount(info) {
+    var h = info.here || {};
+    return h.exhibits_n != null ? h.exhibits_n : (h.recs || 0) + (h.credentials_n || 0);
+  }
+  function hasLeads(info) { return !!((info.adopt && info.adopt.credentials_n) || (info.consider && info.consider.length)); }
+  function cplButton(p, code, info, n) {
+    var b = el("button", { cls: "prh-cplbtn" + (n ? "" : " prh-cplbtn-zero"), type: "button",
+      "aria-label": n + (n === 1 ? " exhibit" : " exhibits") + " articulated to " + code + " at " + shortCollege(p.college) +
+        (hasLeads(info) ? ", with leads from other colleges" : "") + "; show them" }, [String(n)]);
+    b.addEventListener("click", function () { openExhibits(p, code, info, b); });
+    return b;
+  }
+
+  /* One tooltip for every number: shown on hover and on focus (a tap focuses the button on a
+     phone), placed beside the button in the page, so a scrolling table never clips it. */
+  var tipNode = null;
+  function showTip(b) {
+    if (!tipNode) {
+      tipNode = el("div", { cls: "prh prh-tip", role: "tooltip", id: "prh-tip" });
+      document.body.appendChild(tipNode);
+    }
+    tipNode.textContent = b.getAttribute("data-tip") || "";
+    tipNode.hidden = false;
+    b.setAttribute("aria-describedby", "prh-tip");
+    var r = b.getBoundingClientRect ? b.getBoundingClientRect() : { left: 0, bottom: 0, top: 0 };
+    var x = Math.max(8, Math.min(r.left, (window.innerWidth || 800) - 288));
+    var below = r.bottom + 6, above = r.top - 6;
+    tipNode.style.left = x + "px";
+    tipNode.style.top = (below + 60 > (window.innerHeight || 600) && above > 60 ? above - (tipNode.offsetHeight || 40) : below) + "px";
+  }
+  function hideTip(b) {
+    if (tipNode) tipNode.hidden = true;
+    if (b) b.removeAttribute("aria-describedby");
+  }
+  function wireTip(b) {
+    b.addEventListener("mouseenter", function () { showTip(b); });
+    b.addEventListener("focus", function () { showTip(b); });
+    b.addEventListener("mouseleave", function () { if (document.activeElement !== b) hideTip(b); });
+    b.addEventListener("blur", function () { hideTip(b); });
+    b.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.stopPropagation(); hideTip(b); } });
+  }
+
+  /* The exhibits view: what is articulated to the course at this college, then the leads (a peer
+     articulated it to a course of the same identity; a statewide recommendation names its C-ID),
+     the three kinds the display build defines. A dialog over whatever is open, the split view
+     included; Escape or Close returns to the number that opened it. */
+  var exDialog = null;
+  function openExhibits(p, code, info, opener) {
+    closeExhibits();
+    hideTip();
+    var h = info.here || {}, n = exhibitCount(info);
+    var list = el("ul", { cls: "prh-exlist" });
+    (h.exhibits || []).forEach(function (x) {
+      var recs = x.recs && x.recs.length ? x.recs.join("; ")
+        : x.recs_n ? x.recs_n + (x.recs_n === 1 ? " credit recommendation in MAP" : " credit recommendations in MAP") : "";
+      list.appendChild(el("li", {}, [
+        el("b", { text: x.credential || x.title || "An exhibit" }),
+        x.type ? el("span", { cls: "prh-extype", text: x.type }) : null,
+        x.title && x.credential && x.title !== x.credential ? el("span", { cls: "prh-alts", text: "MAP exhibit: " + x.title + (x.exhibit ? " (" + x.exhibit + ")" : "") })
+          : x.exhibit ? el("span", { cls: "prh-alts", text: "MAP exhibit " + x.exhibit }) : null,
+        recs ? el("span", { cls: "prh-alts", text: recs }) : null]));
+    });
+    if (h.untitled_n) list.appendChild(el("li", { cls: "prh-quiet", text: h.untitled_n + (h.untitled_n === 1 ? " more exhibit in MAP carries no title." : " more exhibits in MAP carry no title.") }));
+    var kids = [el("h4", { text: "Articulated at " + shortCollege(p.college) + " (" + n + ")" }),
+      n ? list : el("p", { cls: "prh-quiet", text: "No exhibit is articulated to this course at " + shortCollege(p.college) + " yet." })];
+    var ad = info.adopt;
+    if (ad && ad.credentials && ad.credentials.length) {
+      kids.push(el("h4", { text: "Could adopt (" + ad.credentials_n + ")" }));
+      kids.push(el("ul", { cls: "prh-exlist" }, ad.credentials.map(function (a) {
+        return el("li", {}, [el("b", { text: a.credential }),
+          el("span", { cls: "prh-alts", text: "Articulated to a course of the same identity at " + (a.colleges || []).map(shortCollege).join(", ") })]);
+      })));
+      if (ad.credentials_n > ad.credentials.length) kids.push(el("p", { cls: "prh-small prh-quiet", text: "And " + (ad.credentials_n - ad.credentials.length) + " more." }));
+    }
+    if (info.consider && info.consider.length) {
+      kids.push(el("h4", { text: "For consideration (" + info.consider.length + ")" }));
+      kids.push(el("ul", { cls: "prh-exlist" }, info.consider.map(function (c) {
+        return el("li", {}, [el("b", { text: c.credential }),
+          el("span", { cls: "prh-alts", text: (c.credit ? c.credit + "; " : "") + "a statewide recommendation names C-ID " + c.cid })]);
+      })));
+    }
+    var close = el("button", { cls: "prh-word", type: "button", text: "Close", "aria-label": "Close the exhibits for " + code });
+    var node = el("div", { cls: "prh prh-exback" }, [
+      el("div", { cls: "prh-exdialog", role: "dialog", "aria-modal": "true", "aria-labelledby": "prh-ex-t" }, [
+        el("div", { cls: "prh-exhead" }, [
+          el("h3", { id: "prh-ex-t", tabindex: "-1" }, [code + (info.title ? " " + info.title : ""),
+            el("span", { cls: "prh-small prh-quiet", text: shortCollege(p.college) })]),
+          close]),
+        idChips(info),
+        el("div", { cls: "prh-exbody" }, kids)])]);
+    close.addEventListener("click", function () { closeExhibits(); });
+    node.addEventListener("click", function (e) { if (e.target === node) closeExhibits(); });
+    node.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); closeExhibits(); } });
+    var inert = Array.prototype.filter.call(document.body.children, function (x) {
+      return x !== node && x !== tipNode && !x.hasAttribute("inert") && x.tagName !== "SCRIPT";
+    });
+    inert.forEach(function (x) { x.setAttribute("inert", ""); });
+    document.body.appendChild(node);
+    exDialog = { node: node, opener: opener, inert: inert };
+    document.getElementById("prh-ex-t").focus();
+  }
+  function closeExhibits() {
+    if (!exDialog) return;
+    var d = exDialog;
+    exDialog = null;
+    hideTip();
+    if (d.node.parentNode) d.node.parentNode.removeChild(d.node);
+    d.inert.forEach(function (x) { x.removeAttribute("inert"); });
+    if (d.opener && d.opener.focus) d.opener.focus();
+  }
+
   function rowMark(c, byCode) {
     var ns = [];
     [c.code].concat((c.alternatives || []).map(function (a) { return a && (a.code || a); })).forEach(function (x) {
@@ -1260,14 +1412,13 @@
         { label: "CPL here", w: "18%", num: true }
       ], (b.courses || []).map(function (c) {
         var info = courses[c.code] || {};
-        var here = info.here || {};
-        var n = (here.recs || 0) + (here.credentials_n || 0);
+        var n = exhibitCount(info);
         var alts = (c.alternatives || []).map(function (a) { return a.code || a; });
         return [
-          [c.code, alts.length ? el("span", { cls: "prh-alts", text: "or " + alts.join(", ") }) : null],
+          [c.code, alts.length ? el("span", { cls: "prh-alts", text: "or " + alts.join(", ") }) : null, idChips(info)],
           [info.title || "", rowMark(c, F.byCode)],
           span(c.units, c.units_max),
-          n ? el("strong", { text: String(n) }) : el("span", { cls: "prh-quiet", text: "0" })
+          n || hasLeads(info) ? cplButton(p, c.code, info, n) : el("span", { cls: "prh-quiet", text: "0" })
         ];
       }), p.program_title + ": " + (b.name || "courses"), true)])));
     });
@@ -2106,6 +2257,7 @@
     machineFails: machineFails, verdictError: verdictError, VERDICT_RPC: VERDICT_RPC,
     todoCount: todoCount, goToTodos: goToTodos, openSplit: openSplit, closeSplit: closeSplit, framingOf: framingOf, FRAMING_URL: FRAMING_URL,
     openKey: openKey, nextWaiting: nextWaiting, callAnswered: callAnswered, RECORD_KEY: RECORD_KEY,
+    exhibitCount: exhibitCount, openExhibits: openExhibits, closeExhibits: closeExhibits,
     MILESTONES: MILESTONES, PARTS: PARTS, progressContext: progressContext, headlineFacts: headlineFacts, nextRun: nextRun, nextWeekly: nextWeekly
   };
 })();

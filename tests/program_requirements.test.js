@@ -1198,6 +1198,62 @@ block("(16e)", function () {
   });
 });
 
+// ── (17) A course's numbers and its CPL (Sam, 2026-10-10) ──
+// "If there is a CID, CCN, MID, show those numbers on the blocks as well with a hover over for
+// their titles (since space is limited). For the CPL column the number should be the count of
+// exhibits articulated to the course with a click drill down to pop up an exhibits view." The
+// failures this guards: a number shown without its title anywhere a phone can reach (hover
+// alone never fires on a touch screen), a count that is not the exhibits, a drill-down that
+// leaves focus behind, and an older build's record that loses its one identity.
+const NUMBERED = {
+  college: "Cerritos College", control_number: "41982", program_title: "Kinesiology", award: "A.A. Degree",
+  catalog_year: "2026-2027", source_url: "https://example.org/kin", measure: "units", total_min: 6, total_max: 6, checked: true,
+  checks: { coverage: true, invented: true, arithmetic: "equal", reviewer: { by: "Sam", verdict: "ok" } },
+  record: { program: { measure: "units" }, blocks: [{ name: "Required", rule: "all", courses: [
+    { code: "HED 100", units: 3, alternatives: [] }, { code: "ENGL C1000", units: 3, alternatives: [] }, { code: "ART 110", units: 3, alternatives: [] }] }] },
+  display: { build: "test", counts: { here: 1, courses: 3 }, figure: {}, checks: {},
+    courses: {
+      "HED 100": { title: "Contemporary Health Problems",
+        ids: [{ kind: "C-ID", id: "HLTH 100", title: "Health Education" }, { kind: "M-ID", id: "HLTH M1001", title: "Personal Health" }],
+        here: { recs: 1, credentials_n: 1, exhibits_n: 2, untitled_n: 1, exhibits: [
+          { exhibit: "MAPMM-BMT-1-001", title: "Basic Military Training", credential: "Basic Military Training", type: "Military", recs: ["3 hours in Contemporary Health Problems"] }] } },
+      "ENGL C1000": { title: "Academic Reading and Writing", identity: { kind: "CCN", id: "ENGL C1000", title: "Academic Reading and Writing" } },
+      "ART 110": { title: "Drawing", identity: { kind: "CCR", id: "ARTS M1010", title: "Drawing I" } } } }
+};
+block("(17)", function () {
+  const m = loadModule();
+  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED]; m.M._state.view = "records";
+  m.M._state.open = { "Cerritos College|41982": true }; m.M._render();
+  const rows = m.root.querySelectorAll("article.prh-rec tbody tr");
+  const hed = rows[0], engl = rows[1], art = rows[2];
+  const chips = Array.prototype.map.call(hed.querySelectorAll("button.prh-id"), function (b) { return b.textContent; });
+  check("(17) each number the course carries shows under its code, a button a tap can focus", chips.join("|") === "C-ID HLTH 100|M-ID HLTH M1001", chips.join("|"));
+  check("(17) each number names its title for a screen reader", hed.querySelector("button.prh-id").getAttribute("aria-label") === "C-ID HLTH 100: Health Education");
+  const chip = hed.querySelector("button.prh-id");
+  chip.dispatchEvent(new m.w.Event("focus"));
+  const tip = m.w.document.getElementById("prh-tip");
+  check("(17) focus (a tap on a phone) or hover shows the title in a tooltip outside the scrolling table",
+    !!tip && !tip.hidden && tip.textContent === "Health Education" && chip.getAttribute("aria-describedby") === "prh-tip" && tip.parentNode === m.w.document.body);
+  chip.dispatchEvent(new m.w.Event("blur"));
+  check("(17) and hides it again", tip.hidden === true && !chip.hasAttribute("aria-describedby"));
+  check("(17) a record built before the numbers keeps its one identity (CCN, and a CCR id as an M-ID)",
+    engl.querySelector("button.prh-id").textContent === "CCN ENGL C1000" && art.querySelector("button.prh-id").textContent === "M-ID ARTS M1010");
+  const cpl = hed.querySelector("button.prh-cplbtn");
+  check("(17) the CPL column counts the exhibits articulated here", !!cpl && cpl.textContent === "2" &&
+    /2 exhibits articulated to HED 100 at Cerritos/.test(cpl.getAttribute("aria-label")));
+  check("(17) a course with none and no leads shows a plain 0", !engl.querySelector("button.prh-cplbtn") && engl.lastChild.textContent === "0");
+  cpl.click();
+  const d = m.w.document.querySelector('.prh-exdialog[role="dialog"][aria-modal="true"]');
+  check("(17) the count opens the exhibits: each exhibit, its type, its recommendation, and the untitled one counted",
+    !!d && /Articulated at Cerritos \(2\)/.test(d.textContent) && /Basic Military Training/.test(d.textContent) &&
+    /Military/.test(d.textContent) && /3 hours in Contemporary Health Problems/.test(d.textContent) && /1 more exhibit in MAP carries no title/.test(d.textContent),
+    d && d.textContent.slice(0, 300));
+  check("(17) the page behind is inert while it is open", m.root.closest("[inert]") === m.root);
+  d.parentNode.dispatchEvent(new m.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+  check("(17) Escape closes it and returns to the count", !m.w.document.querySelector(".prh-exdialog") && m.w.document.activeElement === cpl && !m.root.hasAttribute("inert"));
+  check("(17) tokens only in the new CSS", !/\.prh-(id|tip|cplbtn|exback|exdialog|exlist|extype)[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {
