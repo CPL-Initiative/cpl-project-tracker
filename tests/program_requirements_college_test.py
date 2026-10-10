@@ -309,6 +309,15 @@ gms = C.assign([{"control_number": "18114", "title": "Math & Sciences", "award":
 check(gms and gms["url"].endswith("/5852/6117/6290") and gms["coverage"] == 1.0,
       "the real Math and Science page (run 38092480434) is the Math & Sciences emphasis's page: %r"
       % ((gms and (gms["url"], gms["coverage"])),))
+KHW = json.load(open(os.path.join(ROOT, "tests", "fixtures", "curriqunet_rcc_getpage_6289.json")))
+PKH = C.cq_page(KHW["page"], KHW, "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/")
+KH_LIST = [{"code": c} for c in ("KIN 4", "KIN 39", "KIN A03", "KIN A31A", "KIN A90C", "KIN V01", "KIN V95",
+                                 "KINA11", "KINV78", "HES 1", "BIO 50B", "GUI 48", "EAR 26", "PSYC 11")]
+gkh = C.assign([{"control_number": "18112", "title": "Kinesiology, Health and Wellness", "award": "A.A. Degree",
+                 "closed_list": KH_LIST}], [PKH])["18112"]["best"]
+check(gkh and gkh["coverage"] == 1.0,
+      "the real Kinesiology, Health and Wellness page (run 38094747667) names its activity and varsity courses: %r"
+      % ((gkh and gkh["coverage"]),))
 raw = "\n".join(C.cq_text(b.get("text") or "") for b in MS["body"])
 check(P.coverage(P.find_codes(raw, MS_LIST), MS_LIST) < 0.5,
       "read as printed, the page names under half the list: the failure the expansion fixes")
