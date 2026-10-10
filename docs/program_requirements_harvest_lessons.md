@@ -799,4 +799,6 @@ Cosmetology, Barbering and Esthetician Concepts awards, nine Baking and Pastry a
 Technology, and the History and Kinesiology ADTs. One cause was the read's own: the code net (`CODE_TOKEN`) read no code
 in a number ending in letters and digits (COS 60A1), so those pages never reached the exact test, which reads them; fixed
 in the same pull request, for CourseLeaf catalogs too. The rest wait for a look at their pages. Card 1 moved to Open Asks
-Sheet 59 with the read built.
+Sheet 59 with the read built. Sam answered it in chat the same evening ("RCCD go!", ~19:45Z, as proposed); card 2, the eight
+dropped rows, moved to Open Asks Sheet 60. S358 dispatched the three reads on sibling branches at 20:15Z: Riverside City
+with extraction (run 38082999076), Moreno Valley (run 38083001418) and Norco (run 38083003673) capture only.
