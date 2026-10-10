@@ -1,0 +1,31 @@
+{
+ "_readme": "S359 SkyMoss, 2026-10-10, second read. The first (rcc_liberal_arts_emphases, run 38092150229) found six of the seven emphasis degrees in Riverside City's Degrees and Certificates Index, each titled as cq_is_program() reads a program (6290 \"Math and Science - Associate of Science - AS493/AS493C\", 6284 \"Administration and Information Systems - Associate of Arts Degree - AA494/AA494C\"). So the walk reaches them, and assign() finds no candidate on their pages: none names half the courses the Program Course File lists (110 for Math & Sciences). This read loads the Math and Science entry two ways, its view with \"network\": true (does a further call carry the course lists?) and its _getPage JSON (how the requirements are written there), and the Administration and Information Systems _getPage JSON beside it. Three page loads, no model call.",
+ "college": "Riverside City College",
+ "questions": {
+  "page_source": "Which call delivers an emphasis degree's course lists, and whether _getPage holds them.",
+  "page_shape": "How the emphasis requirements are written: a course list per area, a pointer to the GE pattern, or a list of disciplines."
+ },
+ "keywords": [
+  "[Uu]nits?",
+  "[Ss]elect|[Cc]hoose|[Cc]omplete",
+  "[Ee]mphasis",
+  "[Ll]iberal",
+  "catalogblocktypeid",
+  "BIO-?\\s?\\d|MAT-?\\s?\\d|ACC-?\\s?\\d|BUS-?\\s?\\d"
+ ],
+ "pages": [
+  {
+   "answers": ["page_source"],
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
+   "network": true
+  },
+  {
+   "answers": ["page_shape"],
+   "url": "https://rccd.curriqunet.com/Catalog/_getPage?catalogId=124&id=6290"
+  },
+  {
+   "answers": ["page_shape"],
+   "url": "https://rccd.curriqunet.com/Catalog/_getPage?catalogId=124&id=6284"
+  }
+ ]
+}
