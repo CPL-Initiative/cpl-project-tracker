@@ -196,8 +196,11 @@ def program_candidates(urls: list[str], start: str, scope: str | None = None) ->
 
 
 # ── giving each program its page ───────────────────────────────────────────
-CODE_TOKEN = re.compile(r"\b([A-Z][A-Z&]{0,7})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,2})\b")
-CODE_TOKEN_2 = re.compile(r"\b([A-Z][A-Z&]{0,7}\s[A-Z&]{1,6})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,2})\b")
+# A number may end in letters and digits: Riverside City's Cosmetology Concepts
+# lists COS 60A1 and COS 60B3, which the net read as no code at all, so the page
+# never reached the exact test (S357, run 38077405309).
+CODE_TOKEN = re.compile(r"\b([A-Z][A-Z&]{0,7})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?(?:[A-Z]{1,2}\d{0,2})?)\b")
+CODE_TOKEN_2 = re.compile(r"\b([A-Z][A-Z&]{0,7}\s[A-Z&]{1,6})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?(?:[A-Z]{1,2}\d{0,2})?)\b")
 
 
 def page_codes(text: str) -> set[str]:

@@ -210,6 +210,9 @@ tiny = {"control_number": "5", "title": "Automotive Electrical", "award": "Certi
         "closed_list": [{"code": "ABC 101"}]}
 check(C.candidates(tiny, PG) == [], "a one-course list takes no page whose label does not name the program")
 
+check({"COS60A1", "COS60B3", "BAK80", "THE30"} <= C.page_codes("COS-60A1 Cosmetology\nCOS-60B3\nBAK-80 THE-30"),
+      "the code net reads a number ending in letters and digits (COS 60A1), as the exact test does")
+
 # ── curriQunet: the catalog's own JSON (S357) ──────────────────────────────
 print("curriQunet")
 check(C.cq_catalog_id(["https://rccd.curriqunet.com/Content/x.css",
