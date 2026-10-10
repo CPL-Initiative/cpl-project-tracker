@@ -742,6 +742,16 @@ workflow's concurrency group allows one running and one pending run per branch a
 **A commit the workflow pushes runs no CI.** The display job's applied-record commit is pushed with the workflow token, so the
 PR head it creates carries no checks and `test` cannot pass on it. Merge the base (or push the next real change) on top.
 
+**The Approved re-reads (S356, later the same day).** Cerritos (run 38064252862) filed 305 records, 265 passing, and
+extracted 37 for $2.42; Mt. San Antonio (run 38064250199) filed 382, 346 passing, and extracted 71 for $4.47: $6.89 against
+Sam's $6.50. ⚠️ A college's `summary.json` reports `cost_usd` over every record it files, so a re-read that keeps earlier
+records reports the running total ($16.78 at Cerritos); count `extracted_run` in the records for this run's spend. The loads
+inserted 33 and 70. Eight records lost their pages to Approved programs that name them more fully (Cerritos 19170, 19172;
+Mt. San Antonio 31598, 32892, 38942, 43373, 43777, 43999): the filing drops them, the insert-only load leaves their live rows,
+and those rows keep the previous display build (`153ead0ce992`) while 700 hold `ee814befc65d` (combined md5
+977aaaebe1171b9af65db321cfc125cc). Whether a row the filing no longer carries keeps its old display or is marked is open.
+The two sibling branches merged into one cleanly except the generated dependency map, which was regenerated.
+
 ### Moved from the lane (S356 compaction)
 
 ✅ **Flags and a person's reading are built (S347; Sam, Sheet 51 card 1, *build*, 20:35Z, confirmed in chat).** The Records view places each question the reading raised on the block whose courses it names, as a numbered flag that says who fixes it (the college or the reading procedure); a row printing a flagged course carries the number; reader's notes stay notes. A reviewer signed in with the magic link also reads the unchecked records, and each record ends with Confirm and Needs a fix: one write, `program_record_verdict_add` (`chatbox/supabase_program_record_verdicts.sql`), into the append-only log `program_record_verdicts`, holding the fingerprint of the requirements the page showed (`requirements_fp`). Confirm checks a record only while that fingerprint matches and its three machine checks pass; Needs a fix files the note on the college's procedure (`open`) through `program_source_procedure_set`. A trigger keeps a person's reading across a reload of the same requirements. Live (receipt `kb/receipts/program_record_verdicts_2026-10-08_s347.sql`; a rolled-back self-test passed ten cases); governance dismisses both surfaces with the reason; guards `tests/program_record_verdicts_sql_test.py` and the tab test's blocks 11-12.

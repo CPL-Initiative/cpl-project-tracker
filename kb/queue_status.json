@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-10T16:40:28Z",
+  "written_at": "2026-10-10T17:16:55Z",
   "session": 356,
   "moniker": "SkyThicket",
   "run": "Sam's session",
@@ -4850,6 +4850,10 @@
     "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10, each re-read the same day for the programs COCI lists as Approved: Cerritos files 305 records (265 passing the three machine checks), Mt. San Antonio 382 (346 passing)."
   },
   "changes": [
+    {
+      "at": "2026-10-10T16:51:00Z",
+      "text": "The Approved records show their course titles, C-ID, CCN and M-ID numbers and CPL counts, like the rest."
+    },
     {
       "at": "2026-10-10T16:39:08Z",
       "text": "The programs COCI lists as Approved are loaded for your reading: 33 at Cerritos and 70 at Mt. San Antonio, unchecked."

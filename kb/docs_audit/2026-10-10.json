@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1101,
-    "bytes": 11458464,
+    "bytes": 11458747,
     "over_budget": 6,
     "handoff_max": 357,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3375207,
+        "bytes": 3375343,
         "over": 3
       },
       "index": {
@@ -46,25 +46,25 @@
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 331948,
+        "bytes": 331953,
         "over": 1
       },
       "handoff": {
         "files": 328,
-        "bytes": 2670066,
+        "bytes": 2670208,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 6,
-      "vault_heavy_path": 121
+      "vault_heavy_path": 120
     },
     "vault": {
-      "files": 8676,
-      "bytes": 3661835397,
-      "heavy_bytes": 1645089831,
-      "heavy_share": 0.449,
+      "files": 9206,
+      "bytes": 3680889842,
+      "heavy_bytes": 1664769658,
+      "heavy_share": 0.452,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/kb/regional_cpl_out",
@@ -76,6 +76,8 @@
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/tmc",
+        "cpl-project-tracker/kb/receipts",
+        "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/kb/receipts",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
@@ -146,7 +148,6 @@
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/coci_lookup_desc_M.js",
         "cpl-project-tracker/coci_lookup_desc_P.js",
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/coci_lookup_desc_P.js",
-        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-06_153ead0ce992.sql",
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/tools/first_light_candidates.json",
@@ -181,8 +182,6 @@
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/coci_lookup_desc_F.js",
         "cpl-project-tracker/prototype/funding_video/narration_s1.mp3",
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/prototype/funding_video/narration_s1.mp3",
-        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-06_5be53871ebf4.sql",
-        "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/kb/receipts/program_requirement_records_display_2026-10-06_5be53871ebf4.sql",
         "cpl-project-tracker/kb/authority_recode_out/2026-09-03/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-af23691592498fe7b/kb/authority_recode_out/2026-09-03/alias_map.json",
         "cpl-project-tracker/coci_lookup_desc_K.js",
@@ -644,6 +643,26 @@
         "kind": "dir"
       },
       "message": "directory totals 14,868,311 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts",
+      "detail": {
+        "bytes": 14272440,
+        "kind": "dir"
+      },
+      "message": "directory totals 14,272,440 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": ".claude/worktrees/agent-af23691592498fe7b/kb/receipts",
+      "detail": {
+        "bytes": 14272440,
+        "kind": "dir"
+      },
+      "message": "directory totals 14,272,440 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1348,16 +1367,6 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "kb/receipts/program_requirement_records_display_2026-10-06_153ead0ce992.sql",
-      "detail": {
-        "bytes": 4488517,
-        "kind": "file"
-      },
-      "message": "4,488,517 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
       "detail": {
         "bytes": 4454134,
@@ -1694,26 +1703,6 @@
         "kind": "file"
       },
       "message": "2,242,124 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/receipts/program_requirement_records_display_2026-10-06_5be53871ebf4.sql",
-      "detail": {
-        "bytes": 2188268,
-        "kind": "file"
-      },
-      "message": "2,188,268 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-af23691592498fe7b/kb/receipts/program_requirement_records_display_2026-10-06_5be53871ebf4.sql",
-      "detail": {
-        "bytes": 2188268,
-        "kind": "file"
-      },
-      "message": "2,188,268 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

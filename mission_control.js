@@ -222,7 +222,7 @@
     if (ts.state === "pending") {
       var dn = findNode(plan, task.needs);
       body.appendChild(mk(doc, "div", { class: "mc-task-sub mc-pending-note",
-        text: "⌛ waiting on decision: " + (dn ? dn.title : task.needs) }));
+        text: "Waiting on decision: " + (dn ? dn.title : task.needs) }));
     } else if (ts.state === "archived") {
       body.appendChild(mk(doc, "div", { class: "mc-task-sub mc-archived-note", text: "branch not taken" }));
     } else if (task.note) {
@@ -236,7 +236,6 @@
     var chosenId = decisionChosen(dec.id, plan, overlay);
     var card = mk(doc, "div", { class: "mc-decision" + (chosenId ? " mc-decided" : ""), "data-id": dec.id });
     var head = mk(doc, "div", { class: "mc-decision-head" });
-    head.appendChild(mk(doc, "span", { class: "mc-decision-icon", text: "⌥" }));
     head.appendChild(mk(doc, "span", { class: "mc-decision-title", text: "Decision: " + dec.title }));
     if (dec.owner) head.appendChild(chip(doc, "mc-owner", dec.owner));
     card.appendChild(head);
@@ -252,11 +251,11 @@
       if (opt.summary) oEl.appendChild(mk(doc, "div", { class: "mc-option-sum", text: opt.summary }));
       if (ctx.signedIn && typeof ctx.onChoose === "function") {
         var btn = mk(doc, "button", { class: "mc-choose" + (isChosen ? " mc-choose-on" : ""), type: "button",
-          text: isChosen ? "✓ Chosen" : "Choose" });
+          text: isChosen ? "Chosen" : "Choose" });
         if (!isChosen) btn.addEventListener("click", function () { ctx.onChoose(dec.id, opt.id); });
         oEl.appendChild(btn);
       } else if (isChosen) {
-        oEl.appendChild(mk(doc, "span", { class: "mc-chosen-tag", text: "✓ chosen" }));
+        oEl.appendChild(mk(doc, "span", { class: "mc-chosen-tag", text: "Chosen" }));
       }
       card.appendChild(oEl);
     });
@@ -277,7 +276,7 @@
     var sec = mk(doc, "details", { class: "mc-section mc-collapsible" });
     sec.setAttribute("open", "open");
     var sum = mk(doc, "summary", { class: "mc-sumhead" });
-    sum.appendChild(mk(doc, "span", { class: "mc-h3", text: "🚀 " + ((plan && plan._mission) || "Lift Off") + " — " + ((plan && plan._surface) || "Mission Control") }));
+    sum.appendChild(mk(doc, "span", { class: "mc-h3", text: ((plan && plan._mission) || "Lift Off") + " — " + ((plan && plan._surface) || "Mission Control") }));
     sec.appendChild(sum);
     if (!plan || !plan.phases) {
       sec.appendChild(mk(doc, "p", { class: "mc-empty", text: "Mission Control plan unavailable." }));
@@ -304,7 +303,7 @@
       psum.appendChild(mk(doc, "span", { class: "mc-phase-count", text: st.done + "/" + st.active }));
       psum.appendChild(progressBar(doc, st.pct, ph.label));
       det.appendChild(psum);
-      if (ph.gate) det.appendChild(mk(doc, "div", { class: "mc-gate", text: "⛳ Gate to next: " + ph.gate }));
+      if (ph.gate) det.appendChild(mk(doc, "div", { class: "mc-gate", text: "Gate to next: " + ph.gate }));
       var list = mk(doc, "div", { class: "mc-list" });
       ph.nodes.forEach(function (n) {
         if (n.type === "decision") list.appendChild(decisionCard(doc, n, plan, overlay, ctx));
@@ -393,68 +392,66 @@
   function ensureCss() {
     if (document.getElementById("mc-css")) return;
     var css =
-      ".mc-section{margin:0 0 1.4rem;border:1px solid var(--border,#d4dde7);border-radius:10px;background:var(--surface,#fff);padding:.9rem 1rem;}" +
+      ".mc-section{margin:0 0 1.4rem;border:1px solid var(--border);border-radius:10px;background:var(--surface-opaque);padding:.9rem 1rem;}" +
       ".mc-section>summary.mc-sumhead{list-style:none;cursor:pointer;display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;flex-wrap:wrap;}" +
       ".mc-section>summary.mc-sumhead::-webkit-details-marker{display:none;}" +
-      ".mc-collapsible>summary .mc-h3::before{content:'\\25BE  ';font-size:.85em;color:var(--text-muted,#778);}" +
+      ".mc-collapsible>summary .mc-h3::before{content:'\\25BE  ';font-size:.85em;color:var(--text-muted);}" +
       ".mc-collapsible:not([open])>summary .mc-h3::before{content:'\\25B8  ';}" +
       ".mc-body{margin-top:.7rem;}" +
-      ".mc-phase>summary .mc-phase-label::before{content:'\\25BE  ';font-size:.8em;color:var(--text-muted,#778);}" +
+      ".mc-phase>summary .mc-phase-label::before{content:'\\25BE  ';font-size:.8em;color:var(--text-muted);}" +
       ".mc-phase:not([open])>summary .mc-phase-label::before{content:'\\25B8  ';}" +
-      ".mc-h3{margin:0;font-size:1.05rem;color:var(--navy-secondary,#1c3d5a);}" +
-      ".mc-count{font-size:.78rem;color:var(--text-muted,#667);font-weight:600;}" +
-      ".mc-status-line{margin:.45rem 0 .2rem;font-size:.82rem;color:var(--text-muted,#556);font-style:italic;}" +
-      ".mc-auth-hint{font-size:.75rem;color:var(--text-muted,#667);margin-top:.25rem;}" +
-      ".mc-prog{height:7px;border-radius:5px;background:var(--surface-2,#eef3f9);overflow:hidden;margin:.4rem 0;min-width:0;flex:1 1 90px;}"  /* the 90px floor plus the label exceeded a phone row; flex-basis still asks for 90 */ +
-      ".mc-prog-fill{height:100%;background:var(--ok,#2e7d32);border-radius:5px;transition:width .3s;}" +
-      ".mc-phase{border-top:1px solid var(--border,#e3e9f0);padding:.35rem 0;}" +
+      ".mc-h3{margin:0;font-size:1.05rem;color:var(--navy-secondary);}" +
+      ".mc-count{font-size:.78rem;color:var(--text-muted);font-weight:600;}" +
+      ".mc-status-line{margin:.45rem 0 .2rem;font-size:.82rem;color:var(--text-muted);font-style:italic;}" +
+      ".mc-auth-hint{font-size:.75rem;color:var(--text-muted);margin-top:.25rem;}" +
+      ".mc-prog{height:7px;border-radius:5px;background:var(--surface-2);overflow:hidden;margin:.4rem 0;min-width:0;flex:1 1 90px;}"  /* the 90px floor plus the label exceeded a phone row; flex-basis still asks for 90 */ +
+      ".mc-prog-fill{height:100%;background:var(--hunter);border-radius:5px;transition:width .3s;}" +
+      ".mc-phase{border-top:1px solid var(--border);padding:.35rem 0;}" +
       ".mc-phase>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.6rem;padding:.4rem .1rem;}" +
       ".mc-phase>summary::-webkit-details-marker{display:none;}" +
-      ".mc-phase-label{font-weight:700;color:var(--navy-secondary,#1c3d5a);font-size:.9rem;flex:1 1 auto;min-width:0;overflow-wrap:anywhere;}"  /* flex:0 0 auto held a 396px label on one line at 390px */ +
-      ".mc-phase-count{font-size:.74rem;color:var(--text-muted,#667);font-weight:600;}" +
-      ".mc-gate{font-size:.74rem;color:var(--text-muted,#667);background:var(--surface-2,#f4f7fb);border-radius:6px;padding:.3rem .5rem;margin:.2rem 0 .5rem;}" +
+      ".mc-phase-label{font-weight:700;color:var(--navy-secondary);font-size:.9rem;flex:1 1 auto;min-width:0;overflow-wrap:anywhere;}"  /* flex:0 0 auto held a 396px label on one line at 390px */ +
+      ".mc-phase-count{font-size:.74rem;color:var(--text-muted);font-weight:600;}" +
+      ".mc-gate{font-size:.74rem;color:var(--text-muted);background:var(--surface-2);border-radius:6px;padding:.3rem .5rem;margin:.2rem 0 .5rem;}" +
       ".mc-list{display:flex;flex-direction:column;gap:.35rem;}" +
-      ".mc-task{display:flex;align-items:flex-start;gap:.5rem;padding:.35rem .5rem;border:1px solid var(--border,#e3e9f0);border-radius:7px;background:var(--surface,#fff);flex-wrap:wrap;}" +
+      ".mc-task{display:flex;align-items:flex-start;gap:.5rem;padding:.35rem .5rem;border:1px solid var(--border);border-radius:7px;background:var(--surface-opaque);flex-wrap:wrap;}" +
       ".mc-task-body{flex:1 1 240px;min-width:160px;}" +
-      ".mc-task-title{font-size:.84rem;color:var(--text,#243b53);line-height:1.3;}" +
-      ".mc-task-sub{font-size:.72rem;color:var(--text-muted,#778);margin-top:.15rem;}" +
-      ".mc-state-pending{opacity:.72;border-style:dashed;}" +
-      ".mc-state-archived{opacity:.5;}" +
-      ".mc-state-archived .mc-task-title{text-decoration:line-through;}" +
-      ".mc-pending-note{color:var(--gold-accent,#B8860B);}" +
+      ".mc-task-title{font-size:.84rem;color:var(--text-body);line-height:1.3;}" +
+      ".mc-task-sub{font-size:.72rem;color:var(--text-muted);margin-top:.15rem;}" +
+      ".mc-state-pending{border-style:dashed;}" +
+      // Not taken is said by the badge, the strike and the muted ink, never by
+      // opacity: .5 on the row took every ink inside it below AA (S356).
+      ".mc-state-archived{border-style:dotted;}" +
+      ".mc-state-archived .mc-task-title{text-decoration:line-through;color:var(--text-muted);}" +
+      ".mc-pending-note{color:var(--mustard-text);}" +
       ".mc-badge{font-size:.66rem;font-weight:700;border-radius:4px;padding:.12rem .4rem;white-space:nowrap;}" +
-      ".mc-st-not{background:var(--surface-2,#eef3f9);color:var(--text-muted,#667);}" +
-      ".mc-st-prog{background:#e3eefb;color:#1c5d99;}" +
-      ".mc-st-blk{background:#fbe4e2;color:#b3261e;}" +
-      ".mc-st-pend{background:var(--gold-soft,#fbf3d9);color:var(--gold-accent,#8a6608);}" +
-      ".mc-st-done{background:#e2f3e6;color:#2e7d32;}" +
-      ".mc-st-skip{background:#f0f0f2;color:#999;}" +
-      ".mc-status-sel{font-size:.7rem;border:1px solid var(--border,#d4dde7);border-radius:5px;padding:.1rem .2rem;background:var(--surface,#fff);color:var(--text,#243b53);}" +
+      ".mc-st-not{background:var(--surface-2);color:var(--text-muted);}" +
+      ".mc-st-prog{background:var(--surface-2);color:var(--cobalt);}" +
+      ".mc-st-blk{background:var(--surface-2);color:var(--crimson);}" +
+      ".mc-st-pend{background:var(--gold-soft,#fbf3d9);color:var(--mustard-text);}" +
+      ".mc-st-done{background:var(--surface-2);color:var(--hunter);}" +
+      ".mc-st-skip{background:var(--surface-2);color:var(--text-muted);}" +
+      ".mc-status-sel{font-size:.7rem;min-height:24px;border:1px solid var(--border-strong);border-radius:5px;padding:.1rem .2rem;background:var(--surface-opaque);color:var(--text-body);}" +
       ".mc-chip{font-size:.66rem;border-radius:4px;padding:.12rem .4rem;white-space:nowrap;}" +
-      // ⚠️ RAW INK, NOT A TOKEN, on a surface that now flips: --surface-2 was a
-      // phantom until this run, so #4a5b70 sat on a permanently light fill and
-      // read fine. The moment the surface goes dark it is 1.5:1. It is the ONLY
-      // one of the 26 --surface-1/-2 sites with an unthemed color; the rest
-      // inherit or already use a token, which is why they were merely low
-      // contrast rather than wrong.
-      ".mc-lane{background:var(--surface-2,#eef3f9);color:var(--text-body,#4a5b70);}" +
-      ".mc-owner{background:var(--navy-secondary,#1c3d5a);color:var(--on-accent);}" +
-      ".mc-decision{border:1px solid var(--gold-accent,#B8860B);border-radius:8px;background:var(--gold-soft,#fbf3d9);padding:.5rem .6rem;}" +
-      ".mc-decided{border-color:var(--ok,#2e7d32);background:#eef7f0;}" +
+      // The lane chip's ink is the themed --text-body. Its old fallback, a raw
+      // #4a5b70, read fine only while --surface-2 was a light phantom; on the
+      // dark fill it measured 1.5:1. Every ink in this block is now a token.
+      ".mc-lane{background:var(--surface-2);color:var(--text-body);}" +
+      ".mc-owner{background:var(--navy-secondary);color:var(--on-accent);}" +
+      ".mc-decision{border:1px solid var(--gold-accent);border-radius:8px;background:var(--gold-soft,#fbf3d9);padding:.5rem .6rem;}" +
+      ".mc-decided{border-color:var(--hunter);background:var(--surface-opaque);}" +
       ".mc-decision-head{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}" +
-      ".mc-decision-icon{font-weight:800;color:var(--gold-accent,#8a6608);}" +
-      ".mc-decision-title{font-weight:700;font-size:.86rem;color:var(--navy-secondary,#1c3d5a);}" +
-      ".mc-decision-q{font-size:.76rem;color:var(--text-muted,#556);margin:.25rem 0 .4rem;}" +
-      ".mc-option{display:flex;flex-direction:column;gap:.15rem;padding:.35rem .45rem;margin:.3rem 0;border:1px solid var(--border,#e3e9f0);border-radius:6px;background:var(--surface,#fff);}" +
-      ".mc-option-chosen{border-color:var(--ok,#2e7d32);box-shadow:0 0 0 1px var(--ok,#2e7d32) inset;}" +
-      ".mc-option-label{font-size:.8rem;font-weight:600;color:var(--text,#243b53);}" +
-      ".mc-option-sum{font-size:.72rem;color:var(--text-muted,#778);}" +
-      ".mc-rec{color:var(--gold-accent,#B8860B);}" +
-      ".mc-choose{align-self:flex-start;margin-top:.2rem;font-size:.7rem;font-weight:600;color:var(--accent-link,#1c5d99);background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);border-radius:5px;padding:.12rem .5rem;cursor:pointer;}" +
-      ".mc-choose:hover{background:var(--gold-soft,#fbf3d9);border-color:var(--gold-accent,#B8860B);}" +
-      ".mc-choose-on{color:#2e7d32;background:#e2f3e6;border-color:#2e7d32;cursor:default;}" +
-      ".mc-chosen-tag{align-self:flex-start;font-size:.7rem;font-weight:700;color:#2e7d32;}" +
-      ".mc-empty{color:var(--text-muted,#888);font-size:.85rem;padding:.5rem;}";
+      ".mc-decision-title{font-weight:700;font-size:.86rem;color:var(--navy-secondary);}" +
+      ".mc-decision-q{font-size:.76rem;color:var(--text-muted);margin:.25rem 0 .4rem;}" +
+      ".mc-option{display:flex;flex-direction:column;gap:.15rem;padding:.35rem .45rem;margin:.3rem 0;border:1px solid var(--border);border-radius:6px;background:var(--surface-opaque);}" +
+      ".mc-option-chosen{border-color:var(--hunter);box-shadow:0 0 0 1px var(--hunter) inset;}" +
+      ".mc-option-label{font-size:.8rem;font-weight:600;color:var(--text-body);}" +
+      ".mc-option-sum{font-size:.72rem;color:var(--text-muted);}" +
+      ".mc-rec{color:var(--mustard-text);}" +
+      ".mc-choose{align-self:flex-start;margin-top:.2rem;font-family:inherit;font-size:.78rem;font-weight:600;color:var(--cobalt);background:none;border:0;padding:2px 0;min-height:24px;min-width:24px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;cursor:pointer;}" +
+      ".mc-choose:hover{text-decoration-thickness:2px;}" +
+      ".mc-choose-on{color:var(--hunter);text-decoration:none;cursor:default;}" +
+      ".mc-chosen-tag{align-self:flex-start;font-size:.78rem;font-weight:700;color:var(--hunter);}" +
+      ".mc-empty{color:var(--text-muted);font-size:.85rem;padding:.5rem;}";
     var st = document.createElement("style");
     st.id = "mc-css";
     st.textContent = css;

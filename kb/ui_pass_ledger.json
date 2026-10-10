@@ -70,8 +70,8 @@
    "name": "Team & RACI",
    "page": "index.html#raci",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-10",
+   "outcome": "First pass on Team & RACI: fixed 36 sub-24px Update targets and every contrast finding in both themes (decorative and undefined inks, the mustard fill used as text, row opacity, a white close mark on a header that turns light in dark mode), made every control an underlined word, gave the sortable headers real column-header semantics, contained the directory's 223px sideways scroll at 390px, and removed the loading placeholder that centered the matrix; edit-mode keyboard access and the Mission Control wiring entry are deferred."
   },
   {
    "id": "cobi:map-users",
